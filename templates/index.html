@@ -114,10 +114,10 @@
     }
     #lib-btn:hover { background: #74b9ff; color: #141414; }
 
-    #plex-btn {
+    #unmatched-btn {
       background: transparent;
-      border: 2px solid #00cec9;
-      color: #00cec9;
+      border: 2px solid #a29bfe;
+      color: #a29bfe;
       padding: 8px 20px;
       border-radius: 6px;
       font-size: 0.9rem;
@@ -126,29 +126,23 @@
       transition: background 0.2s, color 0.2s;
       white-space: nowrap;
     }
-    #plex-btn:hover { background: #00cec9; color: #141414; }
+    #unmatched-btn:hover { background: #a29bfe; color: #141414; }
 
-    #plex-cfg-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,0.82); z-index: 300;
-      align-items: center; justify-content: center;
+    #settings-btn {
+      background: transparent;
+      border: 2px solid #636e72;
+      color: #636e72;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
     }
-    #plex-cfg-overlay.active { display: flex; }
-    .plex-cfg-box {
-      background: #1e1e1e; border: 1px solid #00cec944;
-      border-radius: 12px; padding: 28px; width: 100%; max-width: 440px;
-    }
-    .plex-cfg-box h3 { color: #00cec9; margin-bottom: 6px; font-size: 1rem; }
-    .plex-cfg-hint { font-size: 0.75rem; color: #555; margin-bottom: 16px; line-height: 1.5; }
-    .plex-cfg-box label { display: block; font-size: 0.8rem; color: #888; margin-bottom: 4px; margin-top: 12px; }
-    .plex-cfg-box input {
-      width: 100%; background: #252525; border: 1px solid #444;
-      color: #ddd; padding: 9px 12px; border-radius: 6px; font-size: 0.9rem;
-    }
-    .plex-cfg-box input:focus { outline: none; border-color: #00cec9; }
-    .plex-cfg-actions { display: flex; gap: 8px; margin-top: 18px; justify-content: flex-end; }
-    .btn-plex-save { background: #00cec9; color: #141414; border: none; padding: 8px 20px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
-    .btn-plex-save:hover { background: #00b4b0; }
+    #settings-btn:hover { background: #636e72; color: #fff; }
+    #settings-btn.open { background: #636e72; color: #fff; }
+
     .lib-row-unmatched { border-left: 3px solid #e5a00d !important; }
     .lib-row-unmatched td:first-child { padding-left: 9px; }
     .plex-col-matched { font-size: 0.82rem; }
@@ -543,32 +537,53 @@
     .btn-confirm-delete { background: #c0392b; color: #fff; border: none; padding: 9px 18px; border-radius: 6px; font-size: 0.88rem; font-weight: 700; cursor: pointer; }
     .btn-confirm-delete:hover { background: #e74c3c; }
 
-    /* ── Prowlarr ── */
-    #prowlarr-btn {
-      background: transparent; border: 2px solid #a29bfe; color: #a29bfe;
-      padding: 8px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: 700;
-      cursor: pointer; transition: background 0.2s, color 0.2s; white-space: nowrap;
+    /* ── Settings dropdown ── */
+    #settings-dropdown {
+      display: none; position: fixed; top: 62px; right: 16px;
+      background: #1e1e1e; border: 1px solid #333; border-radius: 10px;
+      padding: 20px; width: 360px; z-index: 500;
+      box-shadow: 0 8px 32px #0008;
     }
-    #prowlarr-btn:hover { background: #a29bfe; color: #141414; }
-    .prowlarr-cfg-overlay {
-      display: none; position: fixed; inset: 0; background: #000000cc;
-      z-index: 300; align-items: center; justify-content: center;
+    #settings-dropdown.open { display: block; }
+    .settings-section { margin-bottom: 20px; }
+    .settings-section:last-child { margin-bottom: 0; }
+    .settings-section-title {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em;
+      color: #555; margin-bottom: 10px; padding-bottom: 6px;
+      border-bottom: 1px solid #2a2a2a;
     }
-    .prowlarr-cfg-overlay.active { display: flex; }
-    .prowlarr-cfg-box {
-      background: #222; border: 1px solid #a29bfe66; border-radius: 12px;
-      padding: 28px; width: 92%; max-width: 440px;
+    .settings-field { margin-bottom: 10px; }
+    .settings-field label { display: block; font-size: 0.78rem; color: #888; margin-bottom: 4px; }
+    .settings-field input[type=text] {
+      width: 100%; background: #252525; border: 1px solid #333; color: #ddd;
+      padding: 7px 10px; border-radius: 6px; font-size: 0.83rem; box-sizing: border-box;
     }
-    .prowlarr-cfg-box h3 { color: #a29bfe; margin-bottom: 18px; font-size: 1rem; }
-    .prowlarr-cfg-box label { display: block; font-size: 0.8rem; color: #888; margin-bottom: 4px; margin-top: 12px; }
-    .prowlarr-cfg-box input {
-      width: 100%; background: #1a1a1a; border: 1px solid #444; color: #ddd;
-      padding: 8px 12px; border-radius: 6px; font-size: 0.88rem;
+    .settings-field input[type=text]:focus { outline: none; border-color: #636e72; }
+    .settings-btn-row { display: flex; gap: 8px; margin-top: 12px; }
+    .btn-settings-save {
+      background: #636e72; color: #fff; border: none; padding: 7px 18px;
+      border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; flex: 1;
     }
-    .prowlarr-cfg-box input:focus { outline: none; border-color: #a29bfe; }
-    .prowlarr-cfg-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
-    .btn-prowlarr-save { background: #a29bfe; color: #141414; border: none; padding: 8px 20px; border-radius: 6px; font-size: 0.88rem; font-weight: 700; cursor: pointer; }
-    .btn-prowlarr-save:hover { background: #b5b0ff; }
+    .btn-settings-save:hover { background: #7f8c8d; }
+    .btn-settings-test {
+      background: #252525; color: #aaa; border: 1px solid #444; padding: 7px 14px;
+      border-radius: 6px; font-size: 0.82rem; cursor: pointer;
+    }
+    .btn-settings-test:hover { background: #333; color: #fff; }
+    .settings-hint { font-size: 0.72rem; color: #555; line-height: 1.5; margin-bottom: 10px; }
+    .settings-status { font-size: 0.78rem; margin-top: 6px; min-height: 16px; }
+    .always-sync-row {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 12px; border-radius: 7px; cursor: pointer;
+      background: #252525; border: 1px solid #2a2a2a;
+    }
+    .always-sync-row:hover { border-color: #00cec944; }
+    .always-sync-row input[type=checkbox] { accent-color: #00cec9; width: 15px; height: 15px; cursor: pointer; margin-top: 2px; flex-shrink: 0; }
+    .asr-text { flex: 1; }
+    .asr-label { font-size: 0.83rem; color: #bbb; }
+    .asr-sub { font-size: 0.72rem; color: #555; margin-top: 2px; }
+    .always-sync-row.active { border-color: #00cec966; background: #00cec90e; }
+    .always-sync-row.active .asr-label { color: #00cec9; }
     /* Prowlarr search results panel */
     #prowlarr-results-panel {
       display: none; position: fixed; inset: 0; background: #000000dd;
@@ -617,9 +632,7 @@
 
     #no-dupes { text-align: center; padding: 60px 20px; color: #2ecc71; font-size: 1.1rem; }
 
-    /* ── Fix Unmatched panel ── */
-    #fix-btn { background: #6c5ce722; color: #a29bfe; border: 1px solid #6c5ce744; }
-    #fix-btn:hover { background: #6c5ce7; color: #fff; }
+    /* ── Unmatched panel ── */
     .fix-panel { display:none; position:fixed; inset:0; background:#0009; z-index:200; overflow-y:auto; }
     .fix-panel.active { display:block; }
     .fix-panel-inner { background:#1a1a1a; min-height:100vh; padding:32px 28px; max-width:1400px; margin:0 auto; }
@@ -675,16 +688,6 @@
       border-top-color: #fff; border-radius: 50%;
       animation: spin 0.75s linear infinite; flex-shrink: 0;
     }
-    /* Always-sync toggle in header */
-    .always-sync-wrap {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 0.78rem; color: #666; white-space: nowrap;
-      cursor: pointer; padding: 4px 8px;
-      border: 1px solid #2a2a2a; border-radius: 6px;
-    }
-    .always-sync-wrap:hover { color: #00cec9; border-color: #00cec944; }
-    .always-sync-wrap input[type=checkbox] { accent-color: #00cec9; cursor: pointer; width: 14px; height: 14px; }
-    .always-sync-wrap.active { color: #00cec9; border-color: #00cec966; background: #00cec911; }
   </style>
 </head>
 <body>
@@ -692,22 +695,13 @@
 <header>
   <h1><img src="/static/logo.svg" class="logo-img" alt="logo" />My Library Organizer</h1>
   <div class="header-right">
-    <form id="folder-form" onsubmit="changeFolder(event)">
-      <input type="text" id="folder-input" placeholder="Movies folder path..." />
-      <button type="submit" class="btn-folder">Set Folder</button>
-    </form>
     <button id="scan-btn" onclick="scanMovies()">Scan for Duplicates</button>
     <button id="smart-btn" onclick="openSmartClean()" style="display:none">⚡ Smart Clean</button>
     <button id="lq-btn" onclick="openLowQuality()">🔍 Low Quality</button>
     <button id="lib-btn" onclick="openLibrary()">📂 Library</button>
     <button id="dash-btn" onclick="openDashboard()">📊 Dashboard</button>
-    <button id="plex-btn" onclick="openPlexCfg()">🎬 Plex</button>
-    <label class="always-sync-wrap" id="always-sync-wrap" title="Bypass 5-min cache — always fetch fresh data from Plex when opening a panel">
-      <input type="checkbox" id="always-sync-chk" onchange="toggleAlwaysSync(this)" />
-      Always sync Plex
-    </label>
-    <button id="fix-btn" onclick="openFixUnmatched()">🔧 Fix Unmatched</button>
-    <button id="prowlarr-btn" onclick="openProwlarrCfg()" title="Configure Prowlarr">⚙ Prowlarr</button>
+    <button id="unmatched-btn" onclick="openFixUnmatched()">🔍 Unmatched</button>
+    <button id="settings-btn" onclick="toggleSettings(event)">⚙ Settings</button>
   </div>
 </header>
 
@@ -892,38 +886,63 @@
   </div>
 </div>
 
-<!-- Plex Config -->
-<div id="plex-cfg-overlay">
-  <div class="plex-cfg-box">
-    <h3>🎬 Plex Configuration</h3>
-    <p class="plex-cfg-hint">Find your token: Plex → Settings → Troubleshooting → <strong>Get Online Media</strong> OR open any media item, click ··· → Get Info → View XML — the URL contains <code>X-Plex-Token=…</code></p>
-    <label>Plex URL</label>
-    <input type="text" id="plex-url-input" placeholder="http://localhost:32400" />
-    <label>X-Plex-Token</label>
-    <input type="text" id="plex-token-input" placeholder="Your Plex token" autocomplete="off" />
-    <div id="plex-test-status" style="margin-top:10px;font-size:0.8rem;min-height:18px"></div>
-    <div class="plex-cfg-actions">
-      <button class="btn-cancel" onclick="closePlexCfg()">Cancel</button>
-      <button class="btn-sel-all-sm" onclick="testPlexCfg()" id="plex-test-btn">Test Connection</button>
-      <button class="btn-plex-save" onclick="savePlexCfg()">Save</button>
+<!-- Settings Dropdown -->
+<div id="settings-dropdown">
+  <div class="settings-section">
+    <div class="settings-section-title">📁 Movies Folder</div>
+    <div class="settings-field">
+      <label>Folder path</label>
+      <input type="text" id="folder-input" placeholder="e.g. E:\Movies" />
+    </div>
+    <div class="settings-btn-row">
+      <button class="btn-settings-save" onclick="changeFolder(event)">Set Folder</button>
     </div>
   </div>
-</div>
 
-<!-- Prowlarr Config -->
-<div class="prowlarr-cfg-overlay" id="prowlarr-cfg-overlay">
-  <div class="prowlarr-cfg-box">
-    <h3>⚙ Prowlarr Configuration</h3>
-    <label>Prowlarr URL (e.g. http://localhost:9696)</label>
-    <input type="text" id="prowlarr-url-input" placeholder="http://localhost:9696" />
-    <label>API Key</label>
-    <input type="text" id="prowlarr-key-input" placeholder="Your Prowlarr API key" />
-    <div id="prowlarr-test-status" style="margin-top:10px;font-size:0.8rem;min-height:18px"></div>
-    <div class="prowlarr-cfg-actions">
-      <button class="btn-cancel" onclick="closeProwlarrCfg()">Cancel</button>
-      <button class="btn-sel-all-sm" onclick="testProwlarrCfg()" id="prowlarr-test-btn">Test Connection</button>
-      <button class="btn-prowlarr-save" onclick="saveProwlarrCfg()">Save</button>
+  <div class="settings-section">
+    <div class="settings-section-title">🎬 Plex</div>
+    <p class="settings-hint">Find your token: Plex → Settings → Troubleshooting → Get Online Media, or open any media item → ··· → Get Info → View XML.</p>
+    <div class="settings-field">
+      <label>Plex URL</label>
+      <input type="text" id="plex-url-input" placeholder="http://localhost:32400" />
     </div>
+    <div class="settings-field">
+      <label>X-Plex-Token</label>
+      <input type="text" id="plex-token-input" placeholder="Your Plex token" autocomplete="off" />
+    </div>
+    <div id="plex-test-status" class="settings-status"></div>
+    <div class="settings-btn-row">
+      <button class="btn-settings-test" onclick="testPlexCfg()" id="plex-test-btn">Test</button>
+      <button class="btn-settings-save" onclick="savePlexCfg()">Save Plex</button>
+    </div>
+  </div>
+
+  <div class="settings-section">
+    <div class="settings-section-title">⚙ Prowlarr</div>
+    <div class="settings-field">
+      <label>Prowlarr URL</label>
+      <input type="text" id="prowlarr-url-input" placeholder="http://localhost:9696" />
+    </div>
+    <div class="settings-field">
+      <label>API Key</label>
+      <input type="text" id="prowlarr-key-input" placeholder="Your Prowlarr API key" />
+    </div>
+    <div id="prowlarr-test-status" class="settings-status"></div>
+    <div class="settings-btn-row">
+      <button class="btn-settings-test" onclick="testProwlarrCfg()" id="prowlarr-test-btn">Test</button>
+      <button class="btn-settings-save" onclick="saveProwlarrCfg()">Save Prowlarr</button>
+    </div>
+  </div>
+
+  <div class="settings-section">
+    <div class="settings-section-title">🔄 Plex Sync</div>
+    <label class="always-sync-row" id="always-sync-row" onclick="toggleAlwaysSyncRow()">
+      <input type="checkbox" id="always-sync-chk" onclick="event.stopPropagation(); toggleAlwaysSync(this)" />
+      <div class="asr-text">
+        <div class="asr-label">Always sync with Plex</div>
+        <div class="asr-sub">Bypass 5-min cache — fetch fresh Plex data every time you open a panel</div>
+      </div>
+    </label>
   </div>
 </div>
 
@@ -1016,7 +1035,7 @@
   });
 
   async function changeFolder(e) {
-    e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
     const val = document.getElementById('folder-input').value.trim();
     if (!val) return;
     try {
@@ -1027,7 +1046,8 @@
       });
       const data = await res.json();
       if (data.error) { showToast(data.error, true); return; }
-      showToast('Folder updated - click Scan to refresh');
+      showToast('Folder updated — click Scan to refresh');
+      closeSettings();
     } catch (err) { showToast(err.message, true); }
   }
 
@@ -1897,7 +1917,12 @@
 
   function toggleAlwaysSync(chk) {
     _alwaysSyncPlex = chk.checked;
-    document.getElementById('always-sync-wrap').classList.toggle('active', _alwaysSyncPlex);
+    document.getElementById('always-sync-row').classList.toggle('active', _alwaysSyncPlex);
+  }
+  function toggleAlwaysSyncRow() {
+    const chk = document.getElementById('always-sync-chk');
+    chk.checked = !chk.checked;
+    toggleAlwaysSync(chk);
   }
 
   function _plexQuery() {
@@ -1947,12 +1972,28 @@
     } catch (e) { showToast(e.message, true); }
   }
 
-  function openPlexCfg() {
-    document.getElementById('plex-cfg-overlay').classList.add('active');
+  function toggleSettings(e) {
+    if (e) e.stopPropagation();
+    const dd  = document.getElementById('settings-dropdown');
+    const btn = document.getElementById('settings-btn');
+    const open = dd.classList.toggle('open');
+    btn.classList.toggle('open', open);
   }
-  function closePlexCfg() {
-    document.getElementById('plex-cfg-overlay').classList.remove('active');
+  function closeSettings() {
+    document.getElementById('settings-dropdown').classList.remove('open');
+    document.getElementById('settings-btn').classList.remove('open');
   }
+  document.addEventListener('click', function(e) {
+    const dd = document.getElementById('settings-dropdown');
+    if (dd.classList.contains('open') &&
+        !dd.contains(e.target) &&
+        e.target.id !== 'settings-btn') {
+      closeSettings();
+    }
+  });
+
+  function openPlexCfg() { toggleSettings(); }
+  function closePlexCfg() { closeSettings(); }
   async function savePlexCfg() {
     const url   = document.getElementById('plex-url-input').value.trim();
     const token = document.getElementById('plex-token-input').value.trim();
@@ -1966,7 +2007,6 @@
       const d = await r.json();
       if (d.error) { setPlexStatus(d.error, '#e74c3c'); return; }
       showToast('Plex settings saved');
-      closePlexCfg();
     } catch (e) { setPlexStatus(e.message, '#e74c3c'); }
   }
   async function testPlexCfg() {
@@ -1992,9 +2032,7 @@
     const el = document.getElementById('plex-test-status');
     el.textContent = msg; el.style.color = color;
   }
-  document.getElementById('plex-cfg-overlay').addEventListener('click', function(e) {
-    if (e.target === this) closePlexCfg();
-  });
+
   window.addEventListener('load', async () => {
     try {
       const r = await fetch('/api/plex/config');
@@ -2014,12 +2052,8 @@
     } catch {}
   });
 
-  function openProwlarrCfg() {
-    document.getElementById('prowlarr-cfg-overlay').classList.add('active');
-  }
-  function closeProwlarrCfg() {
-    document.getElementById('prowlarr-cfg-overlay').classList.remove('active');
-  }
+  function openProwlarrCfg() { toggleSettings(); }
+  function closeProwlarrCfg() { closeSettings(); }
   async function saveProwlarrCfg() {
     const url = document.getElementById('prowlarr-url-input').value.trim();
     const key = document.getElementById('prowlarr-key-input').value.trim();
@@ -2033,7 +2067,6 @@
       const d = await r.json();
       if (d.error) { setProwlarrStatus(d.error, 'red'); return; }
       showToast('Prowlarr settings saved');
-      closeProwlarrCfg();
     } catch (e) { setProwlarrStatus(e.message, 'red'); }
   }
 
@@ -2159,9 +2192,7 @@
   document.getElementById('prowlarr-results-panel').addEventListener('click', function(e) {
     if (e.target === this) closeProwlarrResults();
   });
-  document.getElementById('prowlarr-cfg-overlay').addEventListener('click', function(e) {
-    if (e.target === this) closeProwlarrCfg();
-  });
+
 
   // ── Generic delete (LQ + Library panels) ────────────────────────
   async function doGenericDelete() {
