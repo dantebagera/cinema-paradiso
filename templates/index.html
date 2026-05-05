@@ -806,6 +806,9 @@
       </div>
     </div>
     <div class="lq-summary" id="lq-summary"></div>
+    <div style="padding:0 0 10px">
+      <input type="text" id="lq-search" placeholder="Search by title or filename…" oninput="applyLQFilters()" style="background:#252525;border:1px solid #333;color:#e0e0e0;border-radius:6px;padding:8px 14px;font-size:0.85rem;width:280px" />
+    </div>
     <div class="panel-select-bar" id="lq-select-bar">
       <button class="btn-sel-all-sm" onclick="lqSelectAll(true)">Select All</button>
       <button class="btn-sel-all-sm" onclick="lqSelectAll(false)">Deselect All</button>
@@ -1658,10 +1661,12 @@
   }
 
   function applyLQFilters() {
+    const q         = (document.getElementById('lq-search')?.value || '').trim().toLowerCase();
     const resFilter = document.getElementById('lq-filter-res').value;
     const ripFilter = document.getElementById('lq-filter-rip').value;
     const sizeSort  = document.getElementById('lq-sort-size').value;
     let filtered = lqItems.filter(it =>
+      (!q         || it.filename.toLowerCase().includes(q) || (it.plex_title || '').toLowerCase().includes(q)) &&
       (!resFilter || it.resolution === resFilter) &&
       (!ripFilter || it.rip_source === ripFilter)
     );
@@ -1784,7 +1789,7 @@
       // Reflect server-side plex state
       if (data.plex_enabled) _plexSynced = true;
       populateLibFilters(libItems);
-      applyLibFilters();
+      _doApplyLibFilters();
       _updatePlexSyncStatus();
       document.getElementById('lib-panel').classList.add('active');
     } catch (err) {
@@ -1805,7 +1810,12 @@
     ripEl.innerHTML = '<option value="">All</option>' + ripVals.map(v => `<option value="${v}">${v}</option>`).join('');
   }
 
+  let _libFilterTimer = null;
   function applyLibFilters() {
+    clearTimeout(_libFilterTimer);
+    _libFilterTimer = setTimeout(_doApplyLibFilters, 80);
+  }
+  function _doApplyLibFilters() {
     const q      = document.getElementById('lib-search').value.trim().toLowerCase();
     const resF   = document.getElementById('lib-filter-res').value;
     const ripF   = document.getElementById('lib-filter-rip').value;
@@ -1831,48 +1841,73 @@
       return 0;
     });
 
-    renderLibTable(filtered);
     document.getElementById('lib-count').textContent =
       filtered.length === libItems.length
         ? `${libItems.length} files`
         : `${filtered.length} of ${libItems.length} files`;
+    renderLibTable(filtered);
   }
 
+  const _RIP_COLOR = { 'BD Remux':'#a29bfe','Remux':'#a29bfe','Blu-ray':'#74b9ff','BDRip':'#81ecec',
+    'WEB-DL':'#55efc4','WEBRip':'#00b894','HDRip':'#fdcb6e','HDTV':'#e17055',
+    'DVDRip':'#d63031','DVDScr':'#b2bec3','CAMRip':'#636e72','HDCAM':'#636e72','Unknown':'#636e72' };
+  const _RES_COLOR = { '4K':'#a29bfe','1080p':'#74b9ff','720p':'#e5a00d','480p':'#e17055','Unknown':'#636e72' };
+
   function renderLibTable(items) {
-    const RIP_COLOR = { 'BD Remux':'#a29bfe','Remux':'#a29bfe','Blu-ray':'#74b9ff','BDRip':'#81ecec',
-      'WEB-DL':'#55efc4','WEBRip':'#00b894','HDRip':'#fdcb6e','HDTV':'#e17055',
-      'DVDRip':'#d63031','DVDScr':'#b2bec3','CAMRip':'#636e72','HDCAM':'#636e72','Unknown':'#636e72' };
-    const RES_COLOR = { '4K':'#a29bfe','1080p':'#74b9ff','720p':'#e5a00d','480p':'#e17055','Unknown':'#636e72' };
+    const RIP_COLOR = _RIP_COLOR;
+    const RES_COLOR = _RES_COLOR;
     const tbody = document.getElementById('lib-tbody');
     if (items.length === 0) {
       tbody.innerHTML = '<tr><td colspan="7" class="lib-empty">No files match the current filters.</td></tr>';
       libUpdateSelBar();
       return;
     }
-    tbody.innerHTML = items.map(it => {
-      const resCol = RES_COLOR[it.resolution] || '#636e72';
-      const ripCol = RIP_COLOR[it.rip_source] || '#636e72';
-      const rowClass = (_plexSynced && !it.plex_matched) ? 'lib-row-unmatched' : '';
-      let plexCell;
-      if (!_plexSynced) {
-        plexCell = '<span style="color:#333;font-size:0.75rem">—</span>';
-      } else if (it.plex_matched) {
-        const genres = (it.plex_genres || []).slice(0, 3).map(g => `<span class="plex-genre-tag">${g}</span>`).join('');
-        plexCell = `<div class="plex-col-matched"><span style="color:#fff;font-weight:600">${it.plex_title}${it.plex_year ? ' (' + it.plex_year + ')' : ''}</span><div style="margin-top:3px">${genres}</div></div>`;
-      } else {
-        plexCell = '<span class="plex-col-unmatched">⚠ No Plex data</span>';
-      }
-      return `<tr data-path="${it.path}" class="${rowClass}">
-        <td class="lib-check-col"><input type="checkbox" class="item-check lib-check" onchange="libUpdateSelBar()" /></td>
-        <td class="lib-title-cell">${it.title}<br><button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px;margin-top:4px" onclick="prowlarrSearch(${JSON.stringify(it.title)})">&#128270; Search Prowlarr</button></td>
-        <td><span class="res-badge" style="background:${resCol}22;color:${resCol};border:1px solid ${resCol}66">${it.resolution}</span></td>
-        <td><span class="res-badge" style="background:${ripCol}22;color:${ripCol};border:1px solid ${ripCol}66">${it.rip_source}</span></td>
-        <td class="lib-size-cell">${it.size_human}</td>
-        <td>${plexCell}</td>
-        <td class="lib-path-cell" title="${it.path}">${it.path}</td>
-      </tr>`;
-    }).join('');
-    libUpdateSelBar();
+    // Render in chunks to avoid blocking the UI thread
+    const CHUNK = 200;
+    if (items.length <= CHUNK) {
+      tbody.innerHTML = items.map(it => _libRow(it, RES_COLOR, RIP_COLOR)).join('');
+      libUpdateSelBar();
+      return;
+    }
+    tbody.innerHTML = '';
+    let i = 0;
+    function renderChunk() {
+      const frag = document.createDocumentFragment();
+      const end  = Math.min(i + CHUNK, items.length);
+      const tmp  = document.createElement('tbody');
+      tmp.innerHTML = items.slice(i, end).map(it => _libRow(it, RES_COLOR, RIP_COLOR)).join('');
+      while (tmp.firstChild) frag.appendChild(tmp.firstChild);
+      tbody.appendChild(frag);
+      i = end;
+      if (i < items.length) requestAnimationFrame(renderChunk);
+      else libUpdateSelBar();
+    }
+    requestAnimationFrame(renderChunk);
+    return; // libUpdateSelBar called after last chunk
+  }
+
+  function _libRow(it, RES_COLOR, RIP_COLOR) {
+    const resCol = RES_COLOR[it.resolution] || '#636e72';
+    const ripCol = RIP_COLOR[it.rip_source] || '#636e72';
+    const rowClass = (_plexSynced && !it.plex_matched) ? 'lib-row-unmatched' : '';
+    let plexCell;
+    if (!_plexSynced) {
+      plexCell = '<span style="color:#333;font-size:0.75rem">—</span>';
+    } else if (it.plex_matched) {
+      const genres = (it.plex_genres || []).slice(0, 3).map(g => `<span class="plex-genre-tag">${g}</span>`).join('');
+      plexCell = `<div class="plex-col-matched"><span style="color:#fff;font-weight:600">${it.plex_title}${it.plex_year ? ' (' + it.plex_year + ')' : ''}</span><div style="margin-top:3px">${genres}</div></div>`;
+    } else {
+      plexCell = '<span class="plex-col-unmatched">⚠ No Plex data</span>';
+    }
+    return `<tr data-path="${it.path}" class="${rowClass}">
+      <td class="lib-check-col"><input type="checkbox" class="item-check lib-check" onchange="libUpdateSelBar()" /></td>
+      <td class="lib-title-cell">${it.title}<br><button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px;margin-top:4px" onclick="prowlarrSearch(${JSON.stringify(it.title)})">&#128270; Search Prowlarr</button></td>
+      <td><span class="res-badge" style="background:${resCol}22;color:${resCol};border:1px solid ${resCol}66">${it.resolution}</span></td>
+      <td><span class="res-badge" style="background:${ripCol}22;color:${ripCol};border:1px solid ${ripCol}66">${it.rip_source}</span></td>
+      <td class="lib-size-cell">${it.size_human}</td>
+      <td>${plexCell}</td>
+      <td class="lib-path-cell" title="${it.path}">${it.path}</td>
+    </tr>`;
   }
 
   function libUpdateSelBar() {
