@@ -36,8 +36,15 @@ _prowlarr_url   = _cfg.get('prowlarr_url', '')
 _prowlarr_key   = _cfg.get('prowlarr_key', '')
 _plex_url       = _cfg.get('plex_url', 'http://localhost:32400')
 _plex_token     = _cfg.get('plex_token', '')
-_plex_cache     = {}   # os.path.normpath(file_path) -> {plex_title, plex_year, plex_genres}
-_plex_unmatched = {}   # normpath -> {rating_key, plex_title}  (Plex has file but no metadata)
+_plex_cache     = {}   # _norm(file_path) -> {plex_title, plex_year, plex_genres}
+_plex_unmatched = {}   # _norm(path) -> {rating_key, plex_title}  (Plex has file but no metadata)
+
+def _norm(path):
+    """Normalise a file path for use as a cache key.
+    Uses normcase so Windows drive-letter case differences don't cause misses.
+    e.g. Plex returns 'e:\\...' while os.walk gives 'E:\\...'
+    """
+    return os.path.normcase(os.path.normpath(path))
 _plex_section_ids = [] # movie section keys — used for triggering rescans
 _plex_cache_time = 0.0
 _PLEX_TTL        = 300  # seconds before auto-refresh
@@ -250,7 +257,7 @@ def _fetch_plex_library():
                 for part in media.get('Part', []):
                     fp = part.get('file', '')
                     if fp:
-                        norm = os.path.normpath(fp)
+                        norm = _norm(fp)
                         if is_local:
                             unmatched[norm] = {
                                 'rating_key': rating_key,
@@ -435,7 +442,7 @@ def get_duplicates():
         duplicates, stats = scan_duplicates(get_movies_dir())
         for group in duplicates:
             for f in group['files']:
-                plex_data = _plex_cache.get(os.path.normpath(f['path']), {})
+                plex_data = _plex_cache.get(_norm(f['path']), {})
                 f['plex_title']   = plex_data.get('plex_title', '')
                 f['plex_year']    = plex_data.get('plex_year', '')
                 f['plex_genres']  = plex_data.get('plex_genres', [])
@@ -520,7 +527,7 @@ def library():
                 if not title_key[0]:
                     continue
                 display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
-                norm_path = os.path.normpath(full_path)
+                norm_path = _norm(full_path)
                 plex_data = _plex_cache.get(norm_path, {})
                 items.append({
                     'title': display_title,
@@ -572,7 +579,7 @@ def low_quality():
                 is_low = res_rank < MIN_RES_RANK
                 if is_low:
                     display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
-                    norm_path = os.path.normpath(full_path)
+                    norm_path = _norm(full_path)
                     plex_data = _plex_cache.get(norm_path, {})
                     items.append({
                         'title': display_title,
@@ -738,7 +745,7 @@ def library_stats():
         plex_matched = None
         plex_unmatched = None
         if _plex_cache:
-            plex_matched = sum(1 for f in all_files if os.path.normpath(f['path']) in _plex_cache)
+            plex_matched = sum(1 for f in all_files if _norm(f['path']) in _plex_cache)
             plex_unmatched = len(all_files) - plex_matched
 
         return jsonify({
@@ -801,7 +808,7 @@ def fix_unmatched():
                 if ext not in VIDEO_EXTENSIONS:
                     continue
                 full_path = os.path.join(root, file)
-                norm_path = os.path.normpath(full_path)
+                norm_path = _norm(full_path)
                 if norm_path in _plex_cache:
                     continue  # already matched by Plex — skip
                 title_key = parse_movie_title(file)
@@ -827,7 +834,7 @@ def fix_unmatched():
                     'resolution': orig_res,
                     'rip_source': orig_rip,
                     'file_size': _fmt_size(os.path.getsize(full_path)),
-                    'folder':    os.path.relpath(root, movies_dir),
+                    'folder':    root,
                     'depth': rel_depth,
                     'fixable_path': rel_depth > 2,
                     'in_plex':    bool(plex_entry),
@@ -878,7 +885,7 @@ def rename_file():
     try:
         os.rename(abs_old, new_path)
         # Remove old path from caches
-        old_norm = os.path.normpath(abs_old)
+        old_norm = _norm(abs_old)
         _plex_cache.pop(old_norm, None)
         _plex_unmatched.pop(old_norm, None)
         # Ask Plex to rescan so it picks up the renamed file
@@ -917,7 +924,7 @@ def fix_path():
         return jsonify({'error': 'File not found'}), 404
 
     # Safety: refuse to move files Plex already matched
-    norm = os.path.normpath(abs_path)
+    norm = _norm(abs_path)
     if norm in _plex_cache:
         return jsonify({'error': 'This file is already matched in Plex — not moving it'}), 409
 

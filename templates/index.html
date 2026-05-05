@@ -873,8 +873,15 @@
       <label style="margin-left:8px">Show:</label>
       <select id="fix-filter-plex" onchange="applyFixSearch()" style="background:#252525;border:1px solid #333;color:#e0e0e0;border-radius:6px;padding:6px 10px;font-size:0.85rem">
         <option value="">All unmatched</option>
-        <option value="inplex">In Plex (unmatched) 🟡</option>
-        <option value="notplex">Not in Plex ⚫</option>
+        <option value="inplex">In Plex (unmatched) &#127921;</option>
+        <option value="notplex">Not in Plex &#9899;</option>
+      </select>
+      <label style="margin-left:8px">Sort:</label>
+      <select id="fix-sort" onchange="applyFixSearch()" style="background:#252525;border:1px solid #333;color:#e0e0e0;border-radius:6px;padding:6px 10px;font-size:0.85rem">
+        <option value="name">Name A&#8209;Z</option>
+        <option value="name-desc">Name Z&#8209;A</option>
+        <option value="size-desc">Size (largest)</option>
+        <option value="size-asc">Size (smallest)</option>
       </select>
     </div>
     <table class="fix-table">
@@ -892,6 +899,7 @@
     </table>
     <div class="fix-bar" id="fix-bar">
       <span id="fix-sel-count">0 selected</span>
+      <button id="fix-delete-btn" class="btn-sel-delete" onclick="fixDeleteSelected()" style="display:none">🗑 Delete Selected</button>
       <button id="fix-refresh-btn" class="btn-scan-plex" onclick="openFixUnmatched()" style="display:none">&#8635; Refresh List</button>
     </div>
   </div>
@@ -2349,11 +2357,25 @@
   function applyFixSearch() {
     const q    = document.getElementById('fix-search').value.trim().toLowerCase();
     const pf   = document.getElementById('fix-filter-plex').value;
-    const filtered = fixItems.filter(it => {
+    const sort = document.getElementById('fix-sort').value;
+    let filtered = fixItems.filter(it => {
       const matchQ  = !q || it.filename.toLowerCase().includes(q) || it.suggested_title.toLowerCase().includes(q);
       const matchPf = !pf || (pf === 'inplex' ? it.in_plex : !it.in_plex);
       return matchQ && matchPf;
     });
+    // Parse file_size back to bytes for sorting (e.g. "1.2 GB" -> number)
+    function sizeToBytes(s) {
+      if (!s) return 0;
+      const m = s.match(/([\d.]+)\s*(B|KB|MB|GB|TB)/i);
+      if (!m) return 0;
+      const n = parseFloat(m[1]);
+      const u = m[2].toUpperCase();
+      return n * ({ B:1, KB:1024, MB:1024**2, GB:1024**3, TB:1024**4 }[u] || 1);
+    }
+    if (sort === 'name')      filtered.sort((a,b) => a.filename.localeCompare(b.filename));
+    if (sort === 'name-desc') filtered.sort((a,b) => b.filename.localeCompare(a.filename));
+    if (sort === 'size-desc') filtered.sort((a,b) => sizeToBytes(b.file_size) - sizeToBytes(a.file_size));
+    if (sort === 'size-asc')  filtered.sort((a,b) => sizeToBytes(a.file_size) - sizeToBytes(b.file_size));
     renderFixPanel(filtered);
   }
 
@@ -2384,7 +2406,7 @@
         <td><input type="checkbox" class="fix-check" onchange="fixUpdateSelBar()" /></td>
         <td class="fix-file-cell" title="${escAttr(it.filename)}">${escHtml(it.filename)}${qualBadge}${depthNote}</td>
         <td style="color:#888;font-size:0.8rem;white-space:nowrap">${escHtml(it.file_size||'')}</td>
-        <td style="color:#888;font-size:0.78rem;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${escAttr(it.folder||'')}">${folderDisplay}</td>
+        <td style="color:#888;font-size:0.78rem;word-break:break-all;max-width:220px" title="${escAttr(it.folder||'')}">${folderDisplay}</td>
         <td>${statusBadge}</td>
         <td>${actionBtn}</td>
       </tr>`;
@@ -2395,6 +2417,37 @@
   function fixUpdateSelBar() {
     const checked = document.querySelectorAll('.fix-check:checked');
     document.getElementById('fix-sel-count').textContent = checked.length + ' selected';
+    const delBtn = document.getElementById('fix-delete-btn');
+    if (delBtn) delBtn.style.display = checked.length > 0 ? '' : 'none';
+  }
+
+  async function fixDeleteSelected() {
+    const rows = [...document.querySelectorAll('#fix-tbody tr')].
+      filter(tr => tr.querySelector('.fix-check:checked') && !tr.classList.contains('fix-done'));
+    if (!rows.length) return;
+    const count = rows.length;
+    if (!confirm(`Delete ${count} file${count>1?'s':''}? They will be sent to the Recycle Bin.`)) return;
+    for (const row of rows) {
+      const path = row.dataset.path;
+      if (!path) continue;
+      try {
+        const res  = await fetch('/api/delete', {
+          method: 'POST', headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ path, trash: true })
+        });
+        const data = await res.json();
+        if (data.error) { showToast(data.error, true); continue; }
+        row.classList.add('fix-done');
+        const td = row.querySelector('.fix-file-cell');
+        if (td) td.innerHTML = '<span style="color:#e74c3c">✓ Deleted</span>';
+        row.querySelectorAll('button, input[type=checkbox]').forEach(el => el.disabled = true);
+      } catch (e) {
+        showToast(e.message, true);
+      }
+    }
+    showToast(`Deleted ${count} file${count>1?'s':''}`);
+    const rb = document.getElementById('fix-refresh-btn');
+    if (rb) rb.style.display = '';
   }
 
   function fixSelectAll(state) {
