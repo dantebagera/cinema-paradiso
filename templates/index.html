@@ -892,7 +892,6 @@
     </table>
     <div class="fix-bar" id="fix-bar">
       <span id="fix-sel-count">0 selected</span>
-      <button class="btn-fix-rename" id="fix-rename-sel-btn" onclick="renameSelected()" disabled>✏ Rename Selected</button>
     </div>
   </div>
 </div>
@@ -2361,58 +2360,37 @@
     const tbody = document.getElementById('fix-tbody');
     document.getElementById('fix-count').textContent = items.length + ' files';
     if (items.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#555;padding:24px">No items match the current filter.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#555;padding:24px">No items match the current filter.</td></tr>';
       fixUpdateSelBar(); return;
     }
     tbody.innerHTML = items.map((it, i) => {
       const qualTagDisplay = [it.resolution, it.rip_source].filter(t => t && t !== 'Unknown').join(' · ');
       const qualBadge = qualTagDisplay ? `<br><span class="fix-qual-badge">${escHtml(qualTagDisplay)}</span>` : '';
+      const depthNote = it.fixable_path ? `<br><span style="color:#e17055;font-size:0.7rem">⚠ Folder too deep (level ${it.depth}) — Plex skips it</span>` : '';
       const statusBadge = it.in_plex
         ? '<span class="badge-in-plex">🟡 In Plex (unmatched)</span>'
         : '<span class="badge-not-plex">⚫ Not in Plex</span>';
-      const matchBtn = it.in_plex
-        ? `<button class="btn-fix-plex" onclick="openMatchModal(${i})">🎬 Match in Plex</button>`
-        : '';
-      const safeTitle = escAttr(it.suggested_title);
-      const safeYear  = escAttr(it.suggested_year);
-      return `<tr id="fix-row-${i}" data-path="${escAttr(it.path)}" data-rating-key="${escAttr(it.rating_key)}" data-res="${escAttr(it.resolution||'')}" data-rip="${escAttr(it.rip_source||'')}">
+      let actionBtn = '';
+      if (it.in_plex) {
+        actionBtn = `<button class="btn-fix-plex" onclick="openMatchModal(${i})">🎬 Match in Plex</button>`;
+      } else if (it.fixable_path) {
+        actionBtn = `<button class="btn-fix-path" onclick="fixPath(${i})">📁 Fix Path</button>`;
+      } else {
+        actionBtn = '<span class="fix-not-fixable">Use Scan Plex Library ↑</span>';
+      }
+      return `<tr id="fix-row-${i}" data-path="${escAttr(it.path)}" data-rating-key="${escAttr(it.rating_key)}" data-res="${escAttr(it.resolution||''  )}" data-rip="${escAttr(it.rip_source||''  )}">
         <td><input type="checkbox" class="fix-check" onchange="fixUpdateSelBar()" /></td>
-        <td class="fix-file-cell" title="${escAttr(it.filename)}">${escHtml(it.filename)}${qualBadge}</td>
-        <td>
-          <div class="fix-input-row">
-            <input class="fix-title-in" id="fix-t-${i}" value="${safeTitle}" oninput="updateFixPreview(${i})" />
-            <input class="fix-year-in"  id="fix-y-${i}" value="${safeYear}"  oninput="updateFixPreview(${i})" placeholder="Year" />
-          </div>
-        </td>
-        <td class="fix-preview" id="fix-prev-${i}">&rarr; <em>${escHtml(it.suggested_name)}</em></td>
+        <td class="fix-file-cell" title="${escAttr(it.filename)}">${escHtml(it.filename)}${qualBadge}${depthNote}</td>
         <td>${statusBadge}</td>
-        <td>
-          <button class="btn-fix-rename" onclick="renameFile(${i})">&#9998; Rename</button>
-          ${matchBtn}
-        </td>
+        <td>${actionBtn}</td>
       </tr>`;
     }).join('');
     fixUpdateSelBar();
   }
 
-  function updateFixPreview(i) {
-    const title = document.getElementById('fix-t-' + i).value.trim();
-    const year  = document.getElementById('fix-y-' + i).value.trim();
-    const row   = document.getElementById('fix-row-' + i);
-    const path  = row ? row.dataset.path : '';
-    const ext   = path && path.lastIndexOf('.') !== -1 ? path.slice(path.lastIndexOf('.')) : '';
-    const res = row?.dataset.res || '';
-    const rip = row?.dataset.rip || '';
-    const qualTag = [res, rip].filter(t => t && t !== 'Unknown').join(' ');
-    const name  = title + (year ? ' (' + year + ')' : '') + (qualTag ? ' [' + qualTag + ']' : '') + ext;
-    const prev  = document.getElementById('fix-prev-' + i);
-    if (prev) prev.innerHTML = '&rarr; <em>' + escHtml(name) + '</em>';
-  }
-
   function fixUpdateSelBar() {
     const checked = document.querySelectorAll('.fix-check:checked');
     document.getElementById('fix-sel-count').textContent = checked.length + ' selected';
-    document.getElementById('fix-rename-sel-btn').disabled = checked.length === 0;
   }
 
   function fixSelectAll(state) {
@@ -2420,46 +2398,27 @@
     fixUpdateSelBar();
   }
 
-  async function renameFile(rowIdx) {
-    const row   = document.getElementById('fix-row-' + rowIdx);
+  async function fixPath(rowIdx) {
+    const row = document.getElementById('fix-row-' + rowIdx);
     if (!row) return;
-    const path  = row.dataset.path;
-    const title = document.getElementById('fix-t-' + rowIdx).value.trim();
-    const year  = document.getElementById('fix-y-' + rowIdx).value.trim();
-    if (!title) { showToast('Title cannot be empty', true); return; }
-    const btn = row.querySelector('.btn-fix-rename');
-    if (btn) { btn.disabled = true; btn.textContent = 'Renaming...'; }
+    const path = row.dataset.path;
+    const btn  = row.querySelector('.btn-fix-path');
+    if (btn) { btn.disabled = true; btn.textContent = 'Moving…'; }
     try {
-      const res  = await fetch('/api/rename-file', {
+      const res  = await fetch('/api/fix-path', {
         method: 'POST', headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ path, title, year })
+        body: JSON.stringify({ path })
       });
       const data = await res.json();
-      if (data.error) { showToast(data.error, true); if (btn) { btn.disabled = false; btn.textContent = '\u270e Rename'; } return; }
-      // Update row to show success
+      if (data.error) { showToast(data.error, true); if (btn) { btn.disabled = false; btn.textContent = '📁 Fix Path'; } return; }
       row.classList.add('fix-done');
       const td = row.querySelector('.fix-file-cell');
-      if (td) td.innerHTML = '<span style="color:#2ecc71">\u2713 ' + escHtml(data.new_filename) + '</span>';
-      const prevEl = document.getElementById('fix-prev-' + rowIdx);
-      if (prevEl) prevEl.innerHTML = '<span class="badge-fixed">\u2713 Renamed</span>';
-      if (btn) { btn.disabled = true; btn.textContent = '\u2713 Done'; }
-      row.querySelectorAll('input').forEach(el => el.disabled = true);
-      row.querySelectorAll('.btn-fix-plex').forEach(el => el.disabled = true);
-      showToast('Renamed \u2014 Plex rescan triggered');
+      if (td) td.innerHTML = '<span style="color:#2ecc71">✓ Moved — Plex rescanning…</span>';
+      if (btn) { btn.disabled = true; btn.textContent = '✓ Done'; }
+      showToast('File moved — Plex rescan triggered. Open Unmatched again in a moment.');
     } catch (e) {
       showToast(e.message, true);
-      if (btn) { btn.disabled = false; btn.textContent = '\u270e Rename'; }
-    }
-  }
-
-  async function renameSelected() {
-    const rows = document.querySelectorAll('#fix-tbody tr .fix-check:checked');
-    for (const chk of rows) {
-      const row = chk.closest('tr');
-      if (!row || row.classList.contains('fix-done')) continue;
-      const idMatch = row.id.match(/fix-row-(\d+)/);
-      if (!idMatch) continue;
-      await renameFile(parseInt(idMatch[1]));
+      if (btn) { btn.disabled = false; btn.textContent = '📁 Fix Path'; }
     }
   }
 
@@ -2467,12 +2426,16 @@
   function openMatchModal(rowIdx) {
     const row = document.getElementById('fix-row-' + rowIdx);
     if (!row) return;
+    const it = fixItems[rowIdx];
     _fixMatchCtx = { ratingKey: row.dataset.ratingKey, rowIdx };
-    const filename = row.querySelector('.fix-file-cell')?.textContent?.trim() || '';
-    document.getElementById('match-modal-file').textContent = filename;
-    document.getElementById('match-search-title').value = document.getElementById('fix-t-' + rowIdx)?.value || '';
-    document.getElementById('match-search-year').value  = document.getElementById('fix-y-' + rowIdx)?.value || '';
-    document.getElementById('match-results').innerHTML  = '<div style="color:#666;font-size:0.85rem">Click Search to find matches.</div>';
+    if (!_fixMatchCtx.ratingKey) {
+      showToast('No Plex ID for this file — use Fix Path or Scan Plex Library first', true);
+      return;
+    }
+    document.getElementById('match-modal-file').textContent = it ? it.filename : '';
+    document.getElementById('match-search-title').value = it ? it.suggested_title : '';
+    document.getElementById('match-search-year').value  = it ? it.suggested_year  : '';
+    document.getElementById('match-results').innerHTML  = '<div style="color:#666;font-size:0.85rem">Click Search to find matches in Plex agents.</div>';
     document.getElementById('match-modal').classList.add('active');
   }
 
@@ -2491,7 +2454,11 @@
       const params = new URLSearchParams({ rating_key: ratingKey, title, year });
       const res  = await fetch('/api/plex/match-search?' + params);
       const data = await res.json();
-      if (data.error) { document.getElementById('match-results').innerHTML = '<div style="color:#e74c3c">' + escHtml(data.error) + '</div>'; return; }
+      if (data.error) {
+        showToast('Match failed: ' + data.error, true);
+        document.getElementById('match-results').innerHTML = '<div style="color:#e74c3c;font-weight:600">❌ ' + escHtml(data.error) + '</div>';
+        return;
+      }
       if (!data.results.length) {
         document.getElementById('match-results').innerHTML = '<div style="color:#888;font-size:0.85rem">No results found. Try a different title or year.</div>';
         return;
@@ -2512,7 +2479,9 @@
 
   async function applyMatch(guid, name) {
     const { ratingKey, rowIdx } = _fixMatchCtx;
-    if (!ratingKey) return;
+    if (!ratingKey) { showToast('Cannot apply — no Plex ID. Close the panel and try Scan Plex Library first.', true); return; }
+    const allBtns = document.querySelectorAll('#match-results .btn-apply-match');
+    allBtns.forEach(b => b.disabled = true);
     document.getElementById('match-results').innerHTML = '<div style="color:#888;font-size:0.85rem">Applying match\u2026</div>';
     try {
       const res  = await fetch('/api/plex/match-apply', {
@@ -2525,10 +2494,10 @@
       // Update status badge in the row
       const row = document.getElementById('fix-row-' + rowIdx);
       if (row) {
-        const td = row.cells[4];
+        const td = row.cells[2];
         if (td) td.innerHTML = '<span class="badge-fixed">\u2713 Plex matched \u2014 refreshing</span>';
         row.classList.add('fix-done');
-        row.querySelectorAll('.btn-fix-rename, .btn-fix-plex').forEach(b => b.disabled = true);
+        row.querySelectorAll('button').forEach(b => b.disabled = true);
       }
       showToast('Plex match applied \u2014 metadata refresh triggered');
     } catch (e) {

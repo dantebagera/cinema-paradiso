@@ -809,6 +809,7 @@ def fix_unmatched():
                     suggested_name += f' [{quality_tag}]'
                 suggested_name += ext
                 plex_entry = _plex_unmatched.get(norm_path, {})
+                rel_depth = len(os.path.relpath(full_path, movies_dir).split(os.sep)) - 1
                 items.append({
                     'filename': file,
                     'path': full_path,
@@ -817,6 +818,8 @@ def fix_unmatched():
                     'suggested_name':  suggested_name,
                     'resolution': orig_res,
                     'rip_source': orig_rip,
+                    'depth': rel_depth,
+                    'fixable_path': rel_depth > 2,
                     'in_plex':    bool(plex_entry),
                     'rating_key': plex_entry.get('rating_key', ''),
                     'plex_title': plex_entry.get('plex_title', ''),
@@ -882,9 +885,57 @@ def plex_force_scan():
         return jsonify({'error': 'Plex not configured'}), 400
     try:
         _plex_rescan()
-        _plex_cache_time = 0.0  # Force full re-sync on next request
+        _plex_cache_time = 0.0
         return jsonify({'success': True})
     except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/fix-path', methods=['POST'])
+def fix_path():
+    """Move a file one directory level up so Plex can find it.
+    Only allowed on files that are NOT already in Plex's matched cache."""
+    data = request.get_json(silent=True)
+    if not data or 'path' not in data:
+        return jsonify({'error': 'No path provided'}), 400
+
+    abs_path = os.path.abspath(data['path'])
+    abs_dir  = os.path.abspath(get_movies_dir())
+    if not abs_path.startswith(abs_dir + os.sep):
+        return jsonify({'error': 'Path is outside the allowed movies directory'}), 403
+    if not os.path.isfile(abs_path):
+        return jsonify({'error': 'File not found'}), 404
+
+    # Safety: refuse to move files Plex already matched
+    norm = os.path.normpath(abs_path)
+    if norm in _plex_cache:
+        return jsonify({'error': 'This file is already matched in Plex — not moving it'}), 409
+
+    parent      = os.path.dirname(abs_path)
+    grandparent = os.path.dirname(parent)
+    if os.path.normpath(grandparent) == os.path.normpath(abs_dir) or \
+       grandparent.startswith(abs_dir):
+        new_path = os.path.join(grandparent, os.path.basename(abs_path))
+    else:
+        return jsonify({'error': 'Cannot move file — destination would be outside library'}), 400
+
+    if os.path.exists(new_path):
+        return jsonify({'error': f'A file named "{os.path.basename(abs_path)}" already exists in the destination folder'}), 409
+
+    try:
+        os.rename(abs_path, new_path)
+        # Remove empty source folder (silently skip if not empty)
+        try:
+            os.rmdir(parent)
+        except OSError:
+            pass
+        # Remove from caches
+        _plex_cache.pop(norm, None)
+        _plex_unmatched.pop(norm, None)
+        # Ask Plex to rescan
+        _plex_rescan()
+        return jsonify({'success': True, 'new_path': new_path})
+    except OSError as e:
         return jsonify({'error': str(e)}), 500
 
 
