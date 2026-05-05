@@ -3,7 +3,52 @@
 > A local web application for managing, cleaning, and enriching a Plex movie library.  
 > Runs entirely on your own machine — no cloud, no accounts, no internet required (except for Prowlarr search).
 
-**Version 1.0**
+**Version 1.1** — May 2026
+
+---
+
+## Changelog
+
+### v1.1 (May 2026)
+
+#### New Feature — Unmatched Panel
+A dedicated panel for video files buried in deep subfolder structures that Plex cannot match. Access it from the **🔧 Fix Unmatched** button in the header after loading Plex data.
+
+Per-file actions:
+- **Fix Path** — moves the file one level up in the folder hierarchy and triggers a Plex rescan
+- **Match** — search Plex agents by title/year and apply the correct match manually (uses Plex's own agent search)
+- **Delete** — sends the file to the Recycle Bin immediately
+
+Panel controls:
+- **Search** — filter files by filename or detected title in real time
+- **Show** — filter by Plex status (All / Not in Plex / In Plex)
+- **Sort** — Name A–Z, Name Z–A, Size (largest first), Size (smallest first)
+- **Select All / Delete Selected** — bulk delete with Recycle Bin safety
+- **Refresh List** — reloads the panel after Fix Path or Delete operations
+- **Force Scan Plex** — triggers an immediate Plex section rescan and resets the metadata cache
+
+Columns: Filename + quality badge + depth note · Size · Full folder path · Plex status · Actions
+
+#### Improvements
+- File sizes shown as human-readable strings (`2.3 GB`, `850 MB`) across all panels
+- Full absolute folder path shown in Unmatched panel with word-wrap (no truncation)
+- Refresh List button appears after any Fix Path or Delete to prompt a panel reload
+
+#### Bug Fixes
+- **False "Not in Plex" on Windows** — Plex returns paths with a lowercase drive letter (`e:\Movies\...`) but `os.walk` yields an uppercase letter (`E:\Movies\...`). Added `_norm()` helper (`os.path.normcase` + `os.path.normpath`) applied to every cache key and lookup. Files already in Plex now show the correct status.
+- **Empty folder not cleaned up after Fix Path** — junk files (`desktop.ini`, `Thumbs.db`, `.DS_Store`, `folder.jpg`, `folder.png`) are silently removed before `os.rmdir()` so empty parent folders are properly deleted.
+
+---
+
+### v1.0 (initial release)
+- Duplicate Scanner with quality ranking and Smart Clean
+- Low Quality Scanner (< 1080p)
+- Library Browser with filters, sort, and bulk delete
+- Dashboard with charts (resolution, source, decade, Plex coverage)
+- Plex integration (auto-cache, 5-minute TTL)
+- Prowlarr integration (1080p+ torrent search)
+- Recycle Bin and permanent delete modes
+- Windows launcher (`run.bat`)
 
 ---
 
@@ -21,6 +66,7 @@
    - 5.5 [Dashboard](#55-dashboard)
    - 5.6 [Plex Integration](#56-plex-integration)
    - 5.7 [Prowlarr Integration](#57-prowlarr-integration)
+   - 5.8 [Unmatched Panel](#58-unmatched-panel)
 6. [Delete Modes](#6-delete-modes)
 7. [How Titles Are Detected](#7-how-titles-are-detected)
 8. [How Resolution Is Detected](#8-how-resolution-is-detected)
@@ -338,6 +384,49 @@ In the Low Quality panel, each file has a **🔎 Search Prowlarr** button. Click
 
 ---
 
+### 5.8 Unmatched Panel *(v1.1)*
+
+Click **🔧 Fix Unmatched** in the header (visible once Plex data is loaded) to open the panel.
+
+This panel finds video files that are buried inside subfolder structures deeper than expected — typically files in `Movies/Category/Subfolder/movie.mkv` instead of `Movies/Subfolder/movie.mkv`. Plex often fails to match these automatically.
+
+**Panel columns:**
+
+| Column | Description |
+|---|---|
+| ☐ | Checkbox for bulk selection |
+| Filename & Quality | Detected filename + resolution badge + depth note (`depth X`) |
+| Size | Human-readable file size (e.g. `2.3 GB`) |
+| Folder | Full absolute path of the containing folder (wraps if long) |
+| Plex Status | Whether the file is known to Plex (`In Plex (unmatched)` / `Not in Plex`) |
+| Actions | Fix Path / Match / (fixable indicator) |
+
+**Filter & sort controls:**
+
+| Control | Description |
+|---|---|
+| Search | Live filter on filename or detected title |
+| Show | All / Not in Plex / In Plex (unmatched) |
+| Sort | Name A–Z, Name Z–A, Size (largest first), Size (smallest first) |
+
+**Actions per file:**
+
+- **Fix Path** — moves the file one directory level up (e.g. from `Movies/Action/Films/movie.mkv` to `Movies/Action/movie.mkv`), silently removes junk files from the vacated folder, deletes the folder if empty, then triggers a Plex rescan. The row is marked done and a **Refresh List** button appears.
+- **Match** — opens a search dialog. Enter a title and optional year, click Search, and pick the correct Plex entry from the results. The app calls Plex's agent search and applies the match + triggers a Plex refresh on that item.
+- **Not fixable** — shown when the file is already at depth 1 (no parent to move up to). Use Match instead.
+
+**Bulk actions:**
+
+- Check multiple rows (or use the header checkbox to select all visible)
+- **🗑 Delete Selected** appears in the bar — sends all checked files to the Recycle Bin, marks rows done
+- **↻ Refresh List** appears after any Fix Path or Delete — reloads the full panel from the server
+
+**Force Scan Plex** — button in the panel header that triggers an immediate Plex library rescan (`/library/sections/{id}/refresh`) and resets the local metadata cache so newly matched files are picked up right away.
+
+> **Tip:** After using Fix Path on several files, wait ~30 seconds for Plex to finish scanning, then click **Force Scan Plex** and finally **Refresh List** to see the updated Plex status.
+
+---
+
 ## 6. Delete Modes
 
 The **delete mode toggle** at the top of the main view controls how all deletions work throughout the app.
@@ -476,6 +565,11 @@ All endpoints return JSON. Base URL: `http://localhost:5000`
 | POST | `/api/plex/config` | Save Plex URL and token `{"url": "...", "token": "..."}` |
 | GET | `/api/plex/test` | Test connection, returns library count |
 | GET | `/api/plex/sync` | Fetch all file paths from Plex into memory cache |
+| GET | `/api/fix-unmatched` | Return files in deep subfolders that Plex may not match *(v1.1)* |
+| POST | `/api/fix-path` | Move a file one level up + trigger Plex rescan `{"path": "..."}` *(v1.1)* |
+| POST | `/api/plex/force-scan` | Trigger Plex section rescan and reset local cache *(v1.1)* |
+| GET | `/api/plex/match-search?rating_key=&title=&year=` | Search Plex agents for matching entries *(v1.1)* |
+| POST | `/api/plex/match-apply` | Apply a Plex agent match `{"rating_key": "...", "guid": "..."}` *(v1.1)* |
 
 ### Prowlarr
 
