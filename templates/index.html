@@ -1,0 +1,2048 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Library Organizer</title>
+  <link rel="icon" type="image/svg+xml" href="/static/logo.svg" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #141414;
+      color: #e5e5e5;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #1a1a1a;
+      border-bottom: 2px solid #e5a00d;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+
+    header h1 { font-size: 1.3rem; font-weight: 700; color: #fff; white-space: nowrap; display: flex; align-items: center; gap: 10px; }
+    .logo-img { width: 38px; height: 38px; flex-shrink: 0; }
+
+    .header-right { margin-left: auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+    #folder-form { display: flex; align-items: center; gap: 8px; }
+    #folder-input {
+      background: #252525;
+      border: 1px solid #444;
+      color: #ddd;
+      padding: 7px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      width: 260px;
+    }
+    #folder-input:focus { outline: none; border-color: #e5a00d; }
+    .btn-folder {
+      background: #2a2a2a;
+      border: 1px solid #555;
+      color: #ccc;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+    .btn-folder:hover { border-color: #e5a00d; color: #e5a00d; }
+
+    #scan-btn {
+      background: #e5a00d;
+      color: #141414;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    #scan-btn:hover { background: #f0b429; }
+    #scan-btn:disabled { background: #555; color: #999; cursor: not-allowed; }
+
+    #smart-btn {
+      background: transparent;
+      border: 2px solid #2ecc71;
+      color: #2ecc71;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    #smart-btn:hover { background: #2ecc71; color: #141414; }
+    #smart-btn:disabled { border-color: #555; color: #555; cursor: not-allowed; }
+
+    #lq-btn {
+      background: transparent;
+      border: 2px solid #e5a00d;
+      color: #e5a00d;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    #lq-btn:hover { background: #e5a00d; color: #141414; }
+
+    #lib-btn {
+      background: transparent;
+      border: 2px solid #74b9ff;
+      color: #74b9ff;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    #lib-btn:hover { background: #74b9ff; color: #141414; }
+
+    #plex-btn {
+      background: transparent;
+      border: 2px solid #00cec9;
+      color: #00cec9;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    #plex-btn:hover { background: #00cec9; color: #141414; }
+
+    #plex-cfg-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.82); z-index: 300;
+      align-items: center; justify-content: center;
+    }
+    #plex-cfg-overlay.active { display: flex; }
+    .plex-cfg-box {
+      background: #1e1e1e; border: 1px solid #00cec944;
+      border-radius: 12px; padding: 28px; width: 100%; max-width: 440px;
+    }
+    .plex-cfg-box h3 { color: #00cec9; margin-bottom: 6px; font-size: 1rem; }
+    .plex-cfg-hint { font-size: 0.75rem; color: #555; margin-bottom: 16px; line-height: 1.5; }
+    .plex-cfg-box label { display: block; font-size: 0.8rem; color: #888; margin-bottom: 4px; margin-top: 12px; }
+    .plex-cfg-box input {
+      width: 100%; background: #252525; border: 1px solid #444;
+      color: #ddd; padding: 9px 12px; border-radius: 6px; font-size: 0.9rem;
+    }
+    .plex-cfg-box input:focus { outline: none; border-color: #00cec9; }
+    .plex-cfg-actions { display: flex; gap: 8px; margin-top: 18px; justify-content: flex-end; }
+    .btn-plex-save { background: #00cec9; color: #141414; border: none; padding: 8px 20px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+    .btn-plex-save:hover { background: #00b4b0; }
+    .lib-row-unmatched { border-left: 3px solid #e5a00d !important; }
+    .lib-row-unmatched td:first-child { padding-left: 9px; }
+    .plex-col-matched { font-size: 0.82rem; }
+    .plex-col-unmatched { color: #e5a00d; font-size: 0.78rem; }
+    .plex-genre-tag {
+      display: inline-block; font-size: 0.68rem; color: #00cec9;
+      background: #00cec911; border: 1px solid #00cec933;
+      border-radius: 3px; padding: 1px 5px; margin: 1px 2px 1px 0;
+    }
+    .btn-plex-sync {
+      background: #00cec922; border: 1px solid #00cec966; color: #00cec9;
+      padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer;
+    }
+    .btn-plex-sync:hover { background: #00cec944; }
+    .btn-plex-sync:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    #dash-btn {
+      background: transparent;
+      border: 2px solid #fd79a8;
+      color: #fd79a8;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    #dash-btn:hover { background: #fd79a8; color: #141414; }
+
+    #dash-panel {
+      display: none; position: fixed; inset: 0;
+      background: #000000ee; z-index: 200;
+      align-items: flex-start; justify-content: center;
+      padding: 24px 16px; overflow-y: auto;
+    }
+    #dash-panel.active { display: flex; }
+    .dash-inner {
+      background: #1a1a1a; border: 1px solid #fd79a844;
+      border-radius: 14px; width: 100%; max-width: 1120px;
+      padding: 28px;
+    }
+    .dash-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; flex-wrap: wrap; }
+    .dash-header h2 { color: #fd79a8; font-size: 1.3rem; flex: 1; }
+    .dash-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 14px; margin-bottom: 28px;
+    }
+    .dash-card {
+      background: #252525; border: 1px solid #333;
+      border-radius: 10px; padding: 18px 16px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .dash-card-val { font-size: 1.55rem; font-weight: 700; color: #fff; line-height: 1.2; }
+    .dash-card-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: #666; margin-top: 2px; }
+    .dash-card-sub { font-size: 0.75rem; color: #555; margin-top: 3px; }
+    .dash-card.accent-pink  .dash-card-val { color: #fd79a8; }
+    .dash-card.accent-red   .dash-card-val { color: #e74c3c; }
+    .dash-card.accent-yellow .dash-card-val { color: #e5a00d; }
+    .dash-card.accent-green .dash-card-val { color: #2ecc71; }
+    .dash-card.accent-blue  .dash-card-val { color: #74b9ff; }
+    .dash-card.accent-purple .dash-card-val { color: #a29bfe; }
+    .dash-charts {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px; margin-bottom: 28px;
+    }
+    .dash-chart-box {
+      background: #252525; border: 1px solid #333;
+      border-radius: 10px; padding: 18px;
+    }
+    .dash-chart-box h3 { font-size: 0.78rem; color: #888; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .dash-section-title { font-size: 0.78rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+    .dash-top-table { width: 100%; border-collapse: collapse; }
+    .dash-top-table th { font-size: 0.7rem; color: #555; text-transform: uppercase; padding: 6px 10px; border-bottom: 1px solid #2a2a2a; text-align: left; }
+    .dash-top-table td { padding: 8px 10px; border-bottom: 1px solid #1e1e1e; font-size: 0.83rem; color: #ccc; vertical-align: middle; }
+    .dash-top-table tr:hover td { background: #2a2a2a; }
+    .dash-loading { text-align: center; padding: 60px; color: #555; font-size: 1rem; }
+
+    #lib-panel {
+      display: none; position: fixed; inset: 0;
+      background: #000000dd; z-index: 200;
+      align-items: flex-start; justify-content: center;
+      padding: 24px 16px; overflow-y: auto;
+    }
+    #lib-panel.active { display: flex; }
+    .lib-panel-inner {
+      background: #1e1e1e; border: 1px solid #74b9ff44;
+      border-radius: 14px; width: 100%; max-width: 980px;
+      padding: 28px;
+    }
+    .lib-panel-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
+    .lib-panel-header h2 { color: #74b9ff; font-size: 1.2rem; flex: 1; }
+    .btn-lib-close { background: #333; border: none; color: #aaa; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; }
+    .btn-lib-close:hover { background: #444; color: #fff; }
+    .lib-search-row {
+      display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .lib-search-row input {
+      flex: 1; min-width: 180px;
+      background: #252525; border: 1px solid #444; color: #ccc;
+      padding: 7px 12px; border-radius: 6px; font-size: 0.88rem;
+    }
+    .lib-search-row input:focus { outline: none; border-color: #74b9ff; }
+    .lib-filters {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+      margin-bottom: 14px;
+    }
+    .lib-filters select {
+      background: #252525; border: 1px solid #444; color: #ccc;
+      padding: 6px 10px; border-radius: 6px; font-size: 0.82rem; cursor: pointer;
+    }
+    .lib-filters select:focus { outline: none; border-color: #74b9ff; }
+    .lib-filters label { font-size: 0.8rem; color: #666; }
+    .lib-count { font-size: 0.8rem; color: #666; margin-left: auto; }
+    .lib-table { width: 100%; border-collapse: collapse; }
+    .lib-table th {
+      text-align: left; font-size: 0.75rem; text-transform: uppercase;
+      color: #555; padding: 6px 10px; border-bottom: 1px solid #2a2a2a;
+      cursor: pointer; user-select: none; white-space: nowrap;
+    }
+    .lib-table th:hover { color: #74b9ff; }
+    .lib-table th.sorted-asc::after { content: ' ▲'; color: #74b9ff; }
+    .lib-table th.sorted-desc::after { content: ' ▼'; color: #74b9ff; }
+    .lib-table td {
+      padding: 8px 10px; border-bottom: 1px solid #1a1a1a;
+      font-size: 0.83rem; color: #ccc; vertical-align: middle;
+    }
+    .lib-table tr:hover td { background: #252525; }
+    .lib-title-cell { font-weight: 600; color: #fff; max-width: 320px; }
+    .lib-path-cell { color: #555; font-size: 0.73rem; word-break: break-all; max-width: 300px; }
+    .lib-size-cell { white-space: nowrap; color: #888; text-align: right; }
+    .lib-empty { text-align: center; color: #555; padding: 40px 0; font-size: 0.9rem; }
+    .panel-select-bar {
+      display: none; align-items: center; gap: 10px; flex-wrap: wrap;
+      background: #1a1a1a; border: 1px solid #444; border-radius: 8px;
+      padding: 8px 14px; margin-bottom: 12px;
+    }
+    .panel-select-bar.visible { display: flex; }
+    .panel-select-bar span { font-size: 0.83rem; color: #ccc; flex: 1; }
+    .btn-sel-delete {
+      background: #c0392b; color: #fff; border: none;
+      padding: 6px 16px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer;
+    }
+    .btn-sel-delete:hover { background: #e74c3c; }
+    .btn-sel-all-sm { background: #252525; border: 1px solid #555; color: #ccc; padding: 5px 12px; border-radius: 6px; font-size: 0.78rem; cursor: pointer; }
+    .btn-sel-all-sm:hover { border-color: #aaa; color: #fff; }
+    .item-check { width: 16px; height: 16px; accent-color: #e74c3c; cursor: pointer; flex-shrink: 0; margin-top: 2px; }
+    .lib-check-col { width: 32px; text-align: center; }
+    .lq-item { display: flex; gap: 12px; align-items: flex-start; }
+      display: none; position: fixed; inset: 0;
+      background: #000000dd; z-index: 200;
+      align-items: flex-start; justify-content: center;
+      padding: 24px 16px; overflow-y: auto;
+    }
+    #lq-panel.active { display: flex; }
+    .lq-panel-inner {
+      background: #1e1e1e; border: 1px solid #e5a00d55;
+      border-radius: 14px; width: 100%; max-width: 860px;
+      padding: 28px;
+    }
+    .lq-panel-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap; }
+    .lq-panel-header h2 { color: #e5a00d; font-size: 1.2rem; flex: 1; }
+    .btn-lq-copy { background: #252525; border: 1px solid #e5a00d88; color: #e5a00d; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; }
+    .btn-lq-copy:hover { background: #e5a00d22; }
+    .btn-lq-close { background: #333; border: none; color: #aaa; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; }
+    .btn-lq-close:hover { background: #444; color: #fff; }
+    .lq-summary { font-size: 0.82rem; color: #777; margin-bottom: 16px; }
+    .lq-summary span { color: #e5a00d; font-weight: 600; }
+    .lq-filters {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+      margin-bottom: 14px;
+    }
+    .lq-filters select {
+      background: #252525; border: 1px solid #444; color: #ccc;
+      padding: 6px 10px; border-radius: 6px; font-size: 0.82rem; cursor: pointer;
+    }
+    .lq-filters select:focus { outline: none; border-color: #e5a00d; }
+    .lq-filters label { font-size: 0.8rem; color: #666; }
+    .lq-filter-count { font-size: 0.8rem; color: #666; margin-left: auto; }
+    .lq-item:hover { border-color: #e5a00d44; }
+    .lq-item-body { flex: 1; min-width: 0; }
+    .lq-title { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .lq-meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .lq-file { font-size: 0.78rem; color: #888; word-break: break-all; margin-top: 4px; }
+
+    #stats-bar {
+      display: none;
+      background: #1e1e1e;
+      border-bottom: 1px solid #2a2a2a;
+      padding: 12px 28px;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    #stats-bar.visible { display: flex; }
+    .stat-item { display: flex; flex-direction: column; align-items: center; }
+    .stat-value { font-size: 1.4rem; font-weight: 700; color: #e5a00d; }
+    .stat-label { font-size: 0.72rem; color: #777; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+    #trash-toggle-wrap {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 28px;
+      background: #1a1a1a;
+      border-bottom: 1px solid #2a2a2a;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+    #trash-toggle-wrap.visible { display: flex; }
+    .toggle-switch { position: relative; display: inline-block; width: 42px; height: 22px; }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider {
+      position: absolute; inset: 0;
+      background: #444; border-radius: 22px; cursor: pointer; transition: background 0.2s;
+    }
+    .toggle-slider::before {
+      content: ''; position: absolute;
+      width: 16px; height: 16px; left: 3px; top: 3px;
+      background: #fff; border-radius: 50%; transition: transform 0.2s;
+    }
+    .toggle-switch input:checked + .toggle-slider { background: #2ecc71; }
+    .toggle-switch input:checked + .toggle-slider::before { transform: translateX(20px); }
+    #trash-label { font-weight: 600; color: #2ecc71; }
+
+    #search-wrap { display: none; padding: 14px 28px; background: #141414; }
+    #search-wrap.visible { display: block; }
+    #search-input {
+      width: 100%; max-width: 500px;
+      background: #1e1e1e; border: 1px solid #333; color: #ddd;
+      padding: 10px 16px; border-radius: 8px; font-size: 0.95rem;
+    }
+    #search-input:focus { outline: none; border-color: #e5a00d; }
+    #search-count { display: inline-block; margin-left: 12px; font-size: 0.82rem; color: #666; }
+
+    main { padding: 14px 28px 40px; max-width: 1100px; margin: 0 auto; }
+
+    #status-bar { text-align: center; padding: 60px 20px; color: #666; font-size: 1.1rem; }
+    #status-bar .spinner {
+      display: inline-block; width: 36px; height: 36px;
+      border: 4px solid #333; border-top-color: #e5a00d;
+      border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .movie-group {
+      background: #1e1e1e; border: 1px solid #2a2a2a;
+      border-radius: 10px; margin-bottom: 16px; overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .movie-group:hover { border-color: #444; }
+    .movie-group.hidden { display: none; }
+
+    .group-header {
+      background: #252525; padding: 12px 18px;
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .group-title { font-size: 1rem; font-weight: 600; color: #fff; flex: 1; }
+    .badge-count {
+      background: #e5a00d22; color: #e5a00d;
+      border: 1px solid #e5a00d55; padding: 3px 10px;
+      border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+    }
+    .badge-wasted {
+      background: #c0392b22; color: #e74c3c;
+      border: 1px solid #c0392b55; padding: 3px 10px;
+      border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+    }
+    .delete-selected-btn {
+      background: #c0392b; color: #fff; border: none;
+      padding: 6px 16px; border-radius: 6px;
+      font-size: 0.8rem; font-weight: 700; cursor: pointer;
+      transition: background 0.15s; white-space: nowrap; display: none;
+    }
+    .delete-selected-btn.visible { display: inline-block; }
+    .delete-selected-btn:hover { background: #e74c3c; }
+
+    .file-list { padding: 0; }
+    .file-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 18px; border-top: 1px solid #2a2a2a;
+      transition: background 0.15s; position: relative;
+    }
+    .file-row:hover { background: #252525; }
+    .file-row.best-copy::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; background: #2ecc71;
+    }
+    .file-row.selected { background: #2a1a1a; }
+
+    .file-checkbox { width: 17px; height: 17px; accent-color: #e74c3c; cursor: pointer; flex-shrink: 0; }
+
+    .file-info { flex: 1; min-width: 0; }
+    .file-name {
+      font-size: 0.9rem; color: #ddd;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 3px;
+    }
+    .file-path { font-size: 0.73rem; color: #555; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .file-meta { display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
+    .res-badge { padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+    .res-4K    { background: #6c3483; color: #e8d8f5; }
+    .res-1080p { background: #1a5276; color: #d6eaf8; }
+    .res-720p  { background: #145a32; color: #d5f5e3; }
+    .res-480p  { background: #7e5109; color: #fdebd0; }
+    .res-Unknown { background: #333; color: #aaa; }
+    .rip-badge { padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background: #1c3a4a; color: #7ec8e3; border: 1px solid #2a5a72; }
+    .rip-badge.rip-unknown { background: #2a2a2a; color: #555; border-color: #333; }
+    .file-size { font-size: 0.85rem; color: #aaa; min-width: 68px; text-align: right; }
+
+    .delete-btn {
+      background: transparent; border: 1px solid #c0392b; color: #e74c3c;
+      padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+      cursor: pointer; transition: background 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .delete-btn:hover { background: #c0392b; color: #fff; }
+    .delete-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: #000000cc; z-index: 200;
+      align-items: center; justify-content: center;
+    }
+
+    /* Smart Clean Panel */
+    #smart-panel {
+      display: none; position: fixed; inset: 0;
+      background: #000000dd; z-index: 200;
+      align-items: flex-start; justify-content: center;
+      padding: 24px 16px; overflow-y: auto;
+    }
+    #smart-panel.active { display: flex; }
+    .smart-panel-inner {
+      background: #1e1e1e; border: 1px solid #2ecc7155;
+      border-radius: 14px; width: 100%; max-width: 860px;
+      padding: 28px;
+    }
+    .smart-panel-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap; }
+    .smart-panel-header h2 { color: #2ecc71; font-size: 1.2rem; flex: 1; }
+    .smart-panel-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-sel-all { background: #252525; border: 1px solid #555; color: #ccc; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; }
+    .btn-sel-all:hover { border-color: #2ecc71; color: #2ecc71; }
+    .btn-smart-proceed {
+      background: #2ecc71; color: #141414; border: none;
+      padding: 7px 18px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer;
+    }
+    .btn-smart-proceed:hover { background: #27ae60; }
+    .btn-smart-proceed:disabled { background: #333; color: #666; cursor: not-allowed; }
+    .btn-smart-close { background: #333; border: none; color: #aaa; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; }
+    .btn-smart-close:hover { background: #444; color: #fff; }
+
+    .smart-summary { font-size: 0.82rem; color: #777; margin-bottom: 16px; }
+    .smart-summary span { color: #2ecc71; font-weight: 600; }
+
+    .smart-item {
+      background: #252525; border: 1px solid #2a2a2a; border-radius: 8px;
+      padding: 14px 16px; margin-bottom: 10px; display: flex; gap: 12px; align-items: flex-start;
+      transition: border-color 0.15s;
+    }
+    .smart-item:hover { border-color: #444; }
+    .smart-item.skipped { opacity: 0.5; border-style: dashed; }
+    .smart-item.selected { border-color: #2ecc7155; background: #1a2a1a; }
+    .smart-item-check { margin-top: 2px; width: 17px; height: 17px; accent-color: #2ecc71; flex-shrink: 0; cursor: pointer; }
+    .smart-item-body { flex: 1; min-width: 0; }
+    .smart-movie-title { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .smart-row { display: flex; gap: 10px; align-items: center; margin-bottom: 5px; flex-wrap: wrap; }
+    .smart-label { font-size: 0.72rem; color: #666; text-transform: uppercase; min-width: 52px; }
+    .smart-file { font-size: 0.82rem; color: #ccc; word-break: break-all; }
+    .smart-reason {
+      margin-top: 8px; font-size: 0.78rem;
+      background: #1a1a1a; border-left: 3px solid #2ecc71;
+      padding: 5px 10px; border-radius: 0 4px 4px 0; color: #aaa;
+    }
+    .smart-reason.skip-reason { border-left-color: #e5a00d; color: #888; }
+    .skip-tag { font-size: 0.72rem; background: #e5a00d22; color: #e5a00d; border: 1px solid #e5a00d55; padding: 2px 8px; border-radius: 12px; margin-left: 8px; }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: #222; border: 1px solid #444;
+      border-radius: 12px; padding: 28px; max-width: 540px; width: 92%;
+    }
+    .modal h2 { color: #e74c3c; margin-bottom: 10px; font-size: 1.1rem; }
+    .modal p { color: #ccc; font-size: 0.88rem; line-height: 1.6; }
+    .modal-file {
+      background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
+      padding: 10px 14px; margin: 14px 0; font-size: 0.8rem;
+      color: #aaa; word-break: break-all; max-height: 160px; overflow-y: auto; line-height: 1.7;
+    }
+    .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 18px; }
+    .btn-cancel { background: #333; color: #ccc; border: none; padding: 9px 18px; border-radius: 6px; font-size: 0.88rem; cursor: pointer; }
+    .btn-confirm-delete { background: #c0392b; color: #fff; border: none; padding: 9px 18px; border-radius: 6px; font-size: 0.88rem; font-weight: 700; cursor: pointer; }
+    .btn-confirm-delete:hover { background: #e74c3c; }
+
+    /* ── Prowlarr ── */
+    #prowlarr-btn {
+      background: transparent; border: 2px solid #a29bfe; color: #a29bfe;
+      padding: 8px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: 700;
+      cursor: pointer; transition: background 0.2s, color 0.2s; white-space: nowrap;
+    }
+    #prowlarr-btn:hover { background: #a29bfe; color: #141414; }
+    .prowlarr-cfg-overlay {
+      display: none; position: fixed; inset: 0; background: #000000cc;
+      z-index: 300; align-items: center; justify-content: center;
+    }
+    .prowlarr-cfg-overlay.active { display: flex; }
+    .prowlarr-cfg-box {
+      background: #222; border: 1px solid #a29bfe66; border-radius: 12px;
+      padding: 28px; width: 92%; max-width: 440px;
+    }
+    .prowlarr-cfg-box h3 { color: #a29bfe; margin-bottom: 18px; font-size: 1rem; }
+    .prowlarr-cfg-box label { display: block; font-size: 0.8rem; color: #888; margin-bottom: 4px; margin-top: 12px; }
+    .prowlarr-cfg-box input {
+      width: 100%; background: #1a1a1a; border: 1px solid #444; color: #ddd;
+      padding: 8px 12px; border-radius: 6px; font-size: 0.88rem;
+    }
+    .prowlarr-cfg-box input:focus { outline: none; border-color: #a29bfe; }
+    .prowlarr-cfg-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+    .btn-prowlarr-save { background: #a29bfe; color: #141414; border: none; padding: 8px 20px; border-radius: 6px; font-size: 0.88rem; font-weight: 700; cursor: pointer; }
+    .btn-prowlarr-save:hover { background: #b5b0ff; }
+    /* Prowlarr search results panel */
+    #prowlarr-results-panel {
+      display: none; position: fixed; inset: 0; background: #000000dd;
+      z-index: 300; align-items: flex-start; justify-content: center;
+      padding: 24px 16px; overflow-y: auto;
+    }
+    #prowlarr-results-panel.active { display: flex; }
+    .pr-inner {
+      background: #1e1e1e; border: 1px solid #a29bfe44;
+      border-radius: 14px; width: 100%; max-width: 900px; padding: 28px;
+    }
+    .pr-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+    .pr-header h2 { color: #a29bfe; font-size: 1.1rem; flex: 1; }
+    .pr-searching { color: #888; font-size: 0.88rem; padding: 30px 0; text-align: center; }
+    .pr-result {
+      background: #252525; border: 1px solid #2a2a2a; border-radius: 8px;
+      padding: 12px 16px; margin-bottom: 8px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    }
+    .pr-result:hover { border-color: #a29bfe44; }
+    .pr-title { flex: 1; min-width: 200px; font-size: 0.85rem; color: #ddd; word-break: break-word; }
+    .pr-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 0.78rem; color: #666; }
+    .pr-seeders { color: #2ecc71; font-weight: 600; }
+    .pr-indexer { color: #888; font-size: 0.75rem; }
+    .btn-pr-magnet {
+      background: #a29bfe22; border: 1px solid #a29bfe66; color: #a29bfe;
+      padding: 5px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; white-space: nowrap;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-pr-magnet:hover { background: #a29bfe44; }
+    .btn-pr-dl {
+      background: #2ecc7122; border: 1px solid #2ecc7166; color: #2ecc71;
+      padding: 5px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; white-space: nowrap;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-pr-dl:hover { background: #2ecc7144; }
+
+    .toast {      position: fixed; bottom: 22px; right: 22px;
+      background: #2ecc71; color: #000;
+      padding: 11px 20px; border-radius: 8px;
+      font-weight: 600; font-size: 0.88rem;
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.3s, transform 0.3s; z-index: 300;
+    }
+    .toast.error { background: #e74c3c; color: #fff; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    #no-dupes { text-align: center; padding: 60px 20px; color: #2ecc71; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><img src="/static/logo.svg" class="logo-img" alt="logo" />My Library Organizer</h1>
+  <div class="header-right">
+    <form id="folder-form" onsubmit="changeFolder(event)">
+      <input type="text" id="folder-input" placeholder="Movies folder path..." />
+      <button type="submit" class="btn-folder">Set Folder</button>
+    </form>
+    <button id="scan-btn" onclick="scanMovies()">Scan for Duplicates</button>
+    <button id="smart-btn" onclick="openSmartClean()" style="display:none">⚡ Smart Clean</button>
+    <button id="lq-btn" onclick="openLowQuality()">🔍 Low Quality</button>
+    <button id="lib-btn" onclick="openLibrary()">📂 Library</button>
+    <button id="dash-btn" onclick="openDashboard()">📊 Dashboard</button>
+    <button id="plex-btn" onclick="openPlexCfg()">🎬 Plex</button>
+    <button id="prowlarr-btn" onclick="openProwlarrCfg()" title="Configure Prowlarr">⚙ Prowlarr</button>
+  </div>
+</header>
+
+<div id="stats-bar">
+  <div class="stat-item"><span class="stat-value" id="stat-groups">0</span><span class="stat-label">Duplicate Groups</span></div>
+  <div class="stat-item"><span class="stat-value" id="stat-copies">0</span><span class="stat-label">Extra Copies</span></div>
+  <div class="stat-item"><span class="stat-value" id="stat-wasted">0</span><span class="stat-label">Wasted Space</span></div>
+  <div class="stat-item" style="margin-left:auto; align-items:flex-end">
+    <span style="font-size:0.8rem;color:#666" id="stat-dir"></span>
+  </div>
+</div>
+
+<div id="trash-toggle-wrap">
+  <label class="toggle-switch">
+    <input type="checkbox" id="trash-toggle" checked onchange="updateTrashLabel()" />
+    <span class="toggle-slider"></span>
+  </label>
+  <span>Delete mode:</span>
+  <span id="trash-label">Recycle Bin</span>
+  <span style="color:#555; font-size:0.78rem; margin-left:6px">(toggle to permanently delete)</span>
+</div>
+
+<div id="search-wrap">
+  <input type="text" id="search-input" placeholder="Search by movie title..." oninput="filterGroups()" />
+  <span id="search-count"></span>
+</div>
+
+<main>
+  <div id="status-bar">Click <strong style="color:#e5a00d">Scan for Duplicates</strong> to begin.</div>
+  <div id="results"></div>
+</main>
+
+<!-- Library Panel -->
+<div id="lib-panel">
+  <div class="lib-panel-inner">
+    <div class="lib-panel-header">
+      <h2>📂 Movie Library</h2>
+      <span class="lib-count" id="lib-count"></span>
+      <span id="plex-sync-status" style="font-size:0.78rem;color:#666"></span>
+      <button class="btn-lib-close" onclick="closeLibrary()">Close</button>
+    </div>
+    <div class="lib-search-row">
+      <input type="text" id="lib-search" placeholder="Search by title or filename..." oninput="applyLibFilters()" />
+    </div>
+    <div class="lib-filters">
+      <label>Resolution:</label>
+      <select id="lib-filter-res" onchange="applyLibFilters()"><option value="">All</option></select>
+      <label>Source:</label>
+      <select id="lib-filter-rip" onchange="applyLibFilters()"><option value="">All</option></select>
+      <label>Plex:</label>
+      <select id="lib-filter-plex" onchange="applyLibFilters()">
+        <option value="">All</option>
+        <option value="matched">Matched ✓</option>
+        <option value="unmatched">No Plex data ⚠</option>
+      </select>
+      <label>Sort:</label>
+      <select id="lib-sort" onchange="applyLibFilters()">
+        <option value="title-asc">Name A→Z</option>
+        <option value="title-desc">Name Z→A</option>
+        <option value="size-desc">Size (largest)</option>
+        <option value="size-asc">Size (smallest)</option>
+        <option value="res-desc">Resolution (best)</option>
+        <option value="res-asc">Resolution (worst)</option>
+        <option value="rip-desc">Source (best)</option>
+        <option value="rip-asc">Source (worst)</option>
+      </select>
+    </div>
+    <table class="lib-table">
+      <thead>
+        <tr>
+          <th class="lib-check-col"><input type="checkbox" id="lib-check-all" onchange="libSelectAll(this.checked)" title="Select all visible" /></th>
+          <th>Title</th>
+          <th>Resolution</th>
+          <th>Source</th>
+          <th>Size</th>
+          <th>Plex Title &amp; Genres</th>
+          <th>Path</th>
+        </tr>
+      </thead>
+      <tbody id="lib-tbody"></tbody>
+    </table>
+    <div class="panel-select-bar" id="lib-select-bar" style="margin-top:12px;margin-bottom:0">
+      <span id="lib-sel-count">0 selected</span>
+      <button class="btn-sel-delete" onclick="libDeleteSelected()">🗑 Delete Selected</button>
+    </div>
+  </div>
+</div>
+
+<!-- Low Quality Panel -->
+<div id="lq-panel">
+  <div class="lq-panel-inner">
+    <div class="lq-panel-header">
+      <h2>🔍 Low Quality Files</h2>
+      <div class="smart-panel-actions">
+        <button class="btn-lq-copy" onclick="copyLQList()">📋 Copy Titles</button>
+        <button class="btn-lq-close" onclick="closeLQPanel()">Close</button>
+      </div>
+    </div>
+    <div class="lq-summary" id="lq-summary"></div>
+    <div class="panel-select-bar" id="lq-select-bar">
+      <button class="btn-sel-all-sm" onclick="lqSelectAll(true)">Select All</button>
+      <button class="btn-sel-all-sm" onclick="lqSelectAll(false)">Deselect All</button>
+      <span id="lq-sel-count">0 selected</span>
+      <button class="btn-sel-delete" id="lq-delete-btn" onclick="lqDeleteSelected()">🗑 Delete Selected</button>
+    </div>
+    <div class="lq-filters" id="lq-filters" style="display:none">
+      <label>Resolution:</label>
+      <select id="lq-filter-res" onchange="applyLQFilters()">
+        <option value="">All</option>
+      </select>
+      <label>Source:</label>
+      <select id="lq-filter-rip" onchange="applyLQFilters()">
+        <option value="">All</option>
+      </select>
+      <label>Sort by size:</label>
+      <select id="lq-sort-size" onchange="applyLQFilters()">
+        <option value="">Default (A-Z)</option>
+        <option value="asc">Smallest first</option>
+        <option value="desc">Largest first</option>
+      </select>
+      <span class="lq-filter-count" id="lq-filter-count"></span>
+    </div>
+    <div id="lq-list"></div>
+  </div>
+</div>
+
+<!-- Plex Config -->
+<div id="plex-cfg-overlay">
+  <div class="plex-cfg-box">
+    <h3>🎬 Plex Configuration</h3>
+    <p class="plex-cfg-hint">Find your token: Plex → Settings → Troubleshooting → <strong>Get Online Media</strong> OR open any media item, click ··· → Get Info → View XML — the URL contains <code>X-Plex-Token=…</code></p>
+    <label>Plex URL</label>
+    <input type="text" id="plex-url-input" placeholder="http://localhost:32400" />
+    <label>X-Plex-Token</label>
+    <input type="text" id="plex-token-input" placeholder="Your Plex token" autocomplete="off" />
+    <div id="plex-test-status" style="margin-top:10px;font-size:0.8rem;min-height:18px"></div>
+    <div class="plex-cfg-actions">
+      <button class="btn-cancel" onclick="closePlexCfg()">Cancel</button>
+      <button class="btn-sel-all-sm" onclick="testPlexCfg()" id="plex-test-btn">Test Connection</button>
+      <button class="btn-plex-save" onclick="savePlexCfg()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Prowlarr Config -->
+<div class="prowlarr-cfg-overlay" id="prowlarr-cfg-overlay">
+  <div class="prowlarr-cfg-box">
+    <h3>⚙ Prowlarr Configuration</h3>
+    <label>Prowlarr URL (e.g. http://localhost:9696)</label>
+    <input type="text" id="prowlarr-url-input" placeholder="http://localhost:9696" />
+    <label>API Key</label>
+    <input type="text" id="prowlarr-key-input" placeholder="Your Prowlarr API key" />
+    <div id="prowlarr-test-status" style="margin-top:10px;font-size:0.8rem;min-height:18px"></div>
+    <div class="prowlarr-cfg-actions">
+      <button class="btn-cancel" onclick="closeProwlarrCfg()">Cancel</button>
+      <button class="btn-sel-all-sm" onclick="testProwlarrCfg()" id="prowlarr-test-btn">Test Connection</button>
+      <button class="btn-prowlarr-save" onclick="saveProwlarrCfg()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Prowlarr Search Results -->
+<div id="prowlarr-results-panel">
+  <div class="pr-inner">
+    <div class="pr-header">
+      <h2 id="pr-results-title">🔎 Prowlarr Results</h2>
+      <button class="btn-lib-close" onclick="closeProwlarrResults()">Close</button>
+    </div>
+    <div class="lib-search-row" id="pr-controls" style="display:none">
+      <input type="text" id="pr-search" placeholder="Filter by title..." oninput="applyPrFilters()" style="min-width:200px" />
+      <label style="font-size:0.8rem;color:#666">Resolution:</label>
+      <select id="pr-filter-res" onchange="applyPrFilters()" style="background:#252525;border:1px solid #444;color:#ccc;padding:6px 10px;border-radius:6px;font-size:0.82rem">
+        <option value="">All</option>
+      </select>
+      <label style="font-size:0.8rem;color:#666">Indexer:</label>
+      <select id="pr-filter-idx" onchange="applyPrFilters()" style="background:#252525;border:1px solid #444;color:#ccc;padding:6px 10px;border-radius:6px;font-size:0.82rem">
+        <option value="">All</option>
+      </select>
+      <label style="font-size:0.8rem;color:#666">Sort:</label>
+      <select id="pr-sort" onchange="applyPrFilters()" style="background:#252525;border:1px solid #444;color:#ccc;padding:6px 10px;border-radius:6px;font-size:0.82rem">
+        <option value="size-desc">Size (largest)</option>
+        <option value="size-asc">Size (smallest)</option>
+        <option value="seeders-desc">Seeders (most)</option>
+        <option value="seeders-asc">Seeders (least)</option>
+        <option value="res-desc">Resolution (best)</option>
+        <option value="title-asc">Title A→Z</option>
+      </select>
+      <span id="pr-count" style="font-size:0.8rem;color:#666;margin-left:auto"></span>
+    </div>
+    <div id="pr-results-body"></div>
+  </div>
+</div>
+
+<!-- Dashboard Panel -->
+<div id="dash-panel">
+  <div class="dash-inner">
+    <div class="dash-header">
+      <h2>📊 Library Dashboard</h2>
+      <button class="btn-lib-close" onclick="closeDashboard()">Close</button>
+    </div>
+    <div id="dash-body"><div class="dash-loading">Loading…</div></div>
+  </div>
+</div>
+
+<!-- Smart Clean Panel -->
+<div id="smart-panel">
+  <div class="smart-panel-inner">
+    <div class="smart-panel-header">
+      <h2>⚡ Smart Clean Recommendations</h2>
+      <div class="smart-panel-actions">
+        <button class="btn-sel-all" onclick="smartSelectAll(true)">Select All</button>
+        <button class="btn-sel-all" onclick="smartSelectAll(false)">Deselect All</button>
+        <button class="btn-smart-proceed" id="smart-proceed-btn" onclick="smartProceed()" disabled>Delete Selected (0)</button>
+        <button class="btn-smart-close" onclick="closeSmartPanel()">Close</button>
+      </div>
+    </div>
+    <div class="smart-summary" id="smart-summary"></div>
+    <div id="smart-list"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h2>Confirm Delete</h2>
+    <p>You are about to <span id="modal-mode-label">move to Recycle Bin</span>:</p>
+    <div class="modal-file" id="modal-path"></div>
+    <p id="modal-permanent-warning" style="display:none; color:#e74c3c; font-weight:600">This will permanently delete the file(s). This cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-confirm-delete" id="btn-confirm">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  let pendingDelete = null;
+  let allGroups = [];
+
+  window.addEventListener('load', async () => {
+    try {
+      const res = await fetch('/api/config');
+      const data = await res.json();
+      if (data.directory) document.getElementById('folder-input').value = data.directory;
+    } catch {}
+    updateTrashLabel();
+  });
+
+  async function changeFolder(e) {
+    e.preventDefault();
+    const val = document.getElementById('folder-input').value.trim();
+    if (!val) return;
+    try {
+      const res = await fetch('/api/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ directory: val })
+      });
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); return; }
+      showToast('Folder updated - click Scan to refresh');
+    } catch (err) { showToast(err.message, true); }
+  }
+
+  function updateTrashLabel() {
+    const trash = document.getElementById('trash-toggle').checked;
+    const label = document.getElementById('trash-label');
+    label.textContent = trash ? 'Recycle Bin' : 'Permanent Delete';
+    label.style.color = trash ? '#2ecc71' : '#e74c3c';
+  }
+
+  async function scanMovies() {
+    const btn = document.getElementById('scan-btn');
+    const statusBar = document.getElementById('status-bar');
+    const results = document.getElementById('results');
+
+    btn.disabled = true;
+    btn.textContent = 'Scanning...';
+    document.getElementById('stats-bar').classList.remove('visible');
+    document.getElementById('trash-toggle-wrap').classList.remove('visible');
+    document.getElementById('search-wrap').classList.remove('visible');
+    document.getElementById('smart-btn').style.display = 'none';
+    results.innerHTML = '';
+    statusBar.innerHTML = '<div class="spinner"></div><br>Scanning your movies folder, please wait...';
+    statusBar.style.display = 'block';
+
+    try {
+      const res = await fetch('/api/duplicates');
+      const data = await res.json();
+      if (data.error) throw new Error(data.error);
+
+      allGroups = data.duplicates;
+      if (data.plex_enabled) _plexSynced = true;
+      const s = data.stats;
+      document.getElementById('stat-groups').textContent = s.groups;
+      document.getElementById('stat-copies').textContent = s.extra_copies;
+      document.getElementById('stat-wasted').textContent = s.wasted_human;
+      document.getElementById('stat-dir').textContent = data.directory;
+      document.getElementById('stats-bar').classList.add('visible');
+      document.getElementById('trash-toggle-wrap').classList.add('visible');
+      statusBar.style.display = 'none';
+
+      if (allGroups.length === 0) {
+        results.innerHTML = '<div id="no-dupes">No duplicates found in your library!</div>';
+        document.getElementById('smart-btn').style.display = 'none';
+      } else {
+        renderDuplicates(allGroups);
+        document.getElementById('search-wrap').classList.add('visible');
+        document.getElementById('search-input').value = '';
+        document.getElementById('search-count').textContent = '';
+        document.getElementById('smart-btn').style.display = '';
+      }
+    } catch (err) {
+      statusBar.innerHTML = '<span style="color:#e74c3c">Error: ' + err.message + '</span>';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Re-Scan';
+    }
+  }
+
+  function renderDuplicates(groups) {
+    const results = document.getElementById('results');
+    results.innerHTML = '';
+    groups.forEach((group, gi) => {
+      const div = document.createElement('div');
+      div.className = 'movie-group';
+      div.id = 'group-' + gi;
+      div.dataset.title = group.title.toLowerCase();
+
+      let filesHtml = '';
+      group.files.forEach((file, fi) => {
+        const isBest = fi === 0;
+        filesHtml += '<div class="file-row ' + (isBest ? 'best-copy' : '') + '" id="file-' + gi + '-' + fi + '">' +
+          '<input type="checkbox" class="file-checkbox" id="chk-' + gi + '-' + fi + '" onchange="onCheckChange(' + gi + ')" data-path="' + escAttr(file.path) + '" data-gi="' + gi + '" data-fi="' + fi + '" />' +
+          '<div class="file-info">' +
+            '<div class="file-name" title="' + escHtml(file.filename) + '">' + escHtml(file.filename) + '</div>' +
+            '<div class="file-path" title="' + escHtml(file.path) + '">' + escHtml(file.path) + '</div>' +
+            (_plexSynced && file.plex_matched
+              ? '<div style="margin-top:3px;font-size:0.78rem"><span style="color:#00cec9;font-weight:600">&#127916; ' + escHtml(file.plex_title) + (file.plex_year ? ' (' + file.plex_year + ')' : '') + '</span>' +
+                (file.plex_genres || []).slice(0,3).map(g => ' <span class="plex-genre-tag">' + escHtml(g) + '</span>').join('') + '</div>'
+              : (_plexSynced ? '<div style="font-size:0.75rem;color:#e5a00d;margin-top:3px">⚠ No Plex data</div>' : '')) +
+          '</div>' +
+          '<div class="file-meta">' +
+            '<span class="res-badge res-' + file.resolution + '">' + file.resolution + '</span>' +
+            '<span class="rip-badge' + (file.rip_source === 'Unknown' ? ' rip-unknown' : '') + '">' + escHtml(file.rip_source) + '</span>' +
+            '<span class="file-size">' + file.size_human + '</span>' +
+            '<button class="btn-pr-magnet" style="font-size:0.72rem;padding:3px 10px" onclick="prowlarrSearch(\'' + escAttr(group.title) + '\')">&#128270; Search Prowlarr</button>' +
+            '<button class="delete-btn" onclick="confirmSingle(\'' + escAttr(file.path) + '\',' + gi + ',' + fi + ')">Delete</button>' +
+          '</div></div>';
+      });
+
+      div.innerHTML =
+        '<div class="group-header">' +
+          '<div class="group-title">' + escHtml(group.title) + '</div>' +
+          '<span class="badge-count">' + group.files.length + ' copies</span>' +
+          '<span class="badge-wasted">~' + group.wasted_human + ' wasted</span>' +
+          '<button class="delete-selected-btn" id="del-sel-' + gi + '" onclick="confirmSelected(' + gi + ')">Delete Selected</button>' +
+        '</div>' +
+        '<div class="file-list">' + filesHtml + '</div>';
+
+      results.appendChild(div);
+    });
+  }
+
+  function filterGroups() {
+    const q = document.getElementById('search-input').value.toLowerCase().trim();
+    let visible = 0;
+    document.querySelectorAll('.movie-group').forEach(g => {
+      const match = !q || g.dataset.title.includes(q);
+      g.classList.toggle('hidden', !match);
+      if (match) visible++;
+    });
+    document.getElementById('search-count').textContent = q ? (visible + ' of ' + allGroups.length + ' shown') : '';
+  }
+
+  function onCheckChange(gi) {
+    const group = document.getElementById('group-' + gi);
+    const checked = group.querySelectorAll('.file-checkbox:checked');
+    group.querySelectorAll('.file-row').forEach(r => {
+      const chk = r.querySelector('.file-checkbox');
+      r.classList.toggle('selected', chk && chk.checked);
+    });
+    const btn = document.getElementById('del-sel-' + gi);
+    if (btn) btn.classList.toggle('visible', checked.length > 0);
+  }
+
+  function useTrash() { return document.getElementById('trash-toggle').checked; }
+
+  function confirmSingle(path, gi, fi) {
+    pendingDelete = { items: [{ path, gi, fi }] };
+    const trash = useTrash();
+    document.getElementById('modal-mode-label').textContent = trash ? 'move to Recycle Bin' : 'permanently delete';
+    document.getElementById('modal-permanent-warning').style.display = trash ? 'none' : '';
+    document.getElementById('modal-path').textContent = path;
+    document.getElementById('modal').classList.add('active');
+    document.getElementById('btn-confirm').onclick = doDelete;
+  }
+
+  function confirmSelected(gi) {
+    const group = document.getElementById('group-' + gi);
+    const checked = group.querySelectorAll('.file-checkbox:checked');
+    if (!checked.length) return;
+    const items = Array.from(checked).map(chk => ({ path: chk.dataset.path, gi: parseInt(chk.dataset.gi), fi: parseInt(chk.dataset.fi) }));
+    pendingDelete = { items };
+    const trash = useTrash();
+    document.getElementById('modal-mode-label').textContent = trash ? 'move to Recycle Bin' : 'permanently delete';
+    document.getElementById('modal-permanent-warning').style.display = trash ? 'none' : '';
+    document.getElementById('modal-path').innerHTML = items.map(i => escHtml(i.path)).join('<br>');
+    document.getElementById('modal').classList.add('active');
+    document.getElementById('btn-confirm').onclick = doDelete;
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+    pendingDelete = null;
+  }
+
+  async function doDelete() {
+    if (!pendingDelete) return;
+    const { items } = pendingDelete;
+    const trash = useTrash();
+    closeModal();
+
+    let successCount = 0, foldersCleaned = 0;
+    const errors = [];
+
+    for (const { path, gi, fi } of items) {
+      const row = document.getElementById('file-' + gi + '-' + fi);
+      const btn = row ? row.querySelector('.delete-btn') : null;
+      if (btn) btn.disabled = true;
+      try {
+        const res = await fetch('/api/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ path, trash })
+        });
+        const data = await res.json();
+        if (!res.ok || data.error) throw new Error(data.error || 'Delete failed');
+        successCount++;
+        if (data.folder_removed) foldersCleaned++;
+        if (row) {
+          row.style.transition = 'opacity 0.3s';
+          row.style.opacity = '0';
+          setTimeout(() => { row.remove(); refreshGroup(gi); }, 300);
+        }
+      } catch (err) {
+        errors.push(err.message);
+        if (btn) btn.disabled = false;
+      }
+    }
+
+    if (successCount > 0) {
+      let msg = successCount === 1
+        ? (trash ? 'Moved to Recycle Bin' : 'File deleted')
+        : (successCount + ' files ' + (trash ? 'moved to Recycle Bin' : 'deleted'));
+      if (foldersCleaned > 0) msg += ' - ' + foldersCleaned + ' empty folder' + (foldersCleaned > 1 ? 's' : '') + ' cleaned';
+      showToast(msg);
+    }
+    errors.forEach(e => showToast(e, true));
+  }
+
+  function refreshGroup(gi) {
+    const group = document.getElementById('group-' + gi);
+    if (!group) return;
+    const remaining = group.querySelectorAll('.file-row');
+    if (remaining.length <= 1) {
+      group.style.transition = 'opacity 0.4s';
+      group.style.opacity = '0';
+      setTimeout(() => group.remove(), 400);
+      const el = document.getElementById('stat-groups');
+      if (el) el.textContent = Math.max(0, parseInt(el.textContent) - 1);
+    } else {
+      remaining.forEach((r, i) => r.classList.toggle('best-copy', i === 0));
+      onCheckChange(gi);
+    }
+  }
+
+  function showToast(msg, isError) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast' + (isError ? ' error' : '');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function escAttr(s) {
+    return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+  }
+
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ── Dashboard ─────────────────────────────────────────────────
+
+  let _dashCharts = {};
+
+  async function openDashboard() {
+    const panel = document.getElementById('dash-panel');
+    const body  = document.getElementById('dash-body');
+    panel.classList.add('active');
+    body.innerHTML = '<div class="dash-loading">Loading statistics…</div>';
+    // Destroy previous chart instances
+    Object.values(_dashCharts).forEach(c => c.destroy());
+    _dashCharts = {};
+    try {
+      const r = await fetch('/api/stats');
+      const d = await r.json();
+      if (d.error) { body.innerHTML = `<div class="dash-loading" style="color:#e74c3c">${d.error}</div>`; return; }
+      renderDashboard(d);
+    } catch (e) {
+      body.innerHTML = `<div class="dash-loading" style="color:#e74c3c">${e.message}</div>`;
+    }
+  }
+
+  function closeDashboard() {
+    document.getElementById('dash-panel').classList.remove('active');
+  }
+
+  function renderDashboard(d) {
+    const RES_COL = { '4K':'#a29bfe','1080p':'#74b9ff','720p':'#e5a00d','480p':'#fd79a8','Unknown':'#636e72' };
+    const SRC_COL = {
+      'BD Remux':'#00b894','Remux':'#00cec9','Blu-ray':'#6c5ce7','BDRip':'#0984e3',
+      'WEB-DL':'#74b9ff','WEBRip':'#55efc4','HDRip':'#fdcb6e','HDTV':'#e17055',
+      'DVDRip':'#d63031','DVDScr':'#b2bec3','CAMRip':'#636e72','HDCAM':'#2d3436','Unknown':'#555'
+    };
+    const total = d.total_files;
+    const pct = (n) => total ? Math.round(n / total * 100) + '%' : '0%';
+    const dupPct  = pct(d.extra_copies);
+    const lqPct   = pct(d.low_quality_count);
+
+    document.getElementById('dash-body').innerHTML = `
+      <div class="dash-cards">
+        <div class="dash-card accent-blue">
+          <div class="dash-card-val">${total.toLocaleString()}</div>
+          <div class="dash-card-label">Total Files</div>
+        </div>
+        <div class="dash-card accent-purple">
+          <div class="dash-card-val">${d.unique_titles.toLocaleString()}</div>
+          <div class="dash-card-label">Unique Titles</div>
+          <div class="dash-card-sub">${total - d.unique_titles > 0 ? (total - d.unique_titles) + ' duplicates' : 'no duplicates'}</div>
+        </div>
+        <div class="dash-card accent-green">
+          <div class="dash-card-val">${d.total_size_human}</div>
+          <div class="dash-card-label">Library Size</div>
+          <div class="dash-card-sub">avg ${d.avg_size_human} / file</div>
+        </div>
+        <div class="dash-card ${d.duplicate_groups > 0 ? 'accent-red' : 'accent-green'}">
+          <div class="dash-card-val">${d.duplicate_groups}</div>
+          <div class="dash-card-label">Dup. Groups</div>
+          <div class="dash-card-sub">${d.extra_copies} extra copies · ${dupPct}</div>
+        </div>
+        <div class="dash-card accent-red">
+          <div class="dash-card-val">${d.wasted_human}</div>
+          <div class="dash-card-label">Wasted Space</div>
+          <div class="dash-card-sub">from duplicates</div>
+        </div>
+        <div class="dash-card ${d.low_quality_count > 0 ? 'accent-yellow' : 'accent-green'}">
+          <div class="dash-card-val">${d.low_quality_count}</div>
+          <div class="dash-card-label">Low Quality</div>
+          <div class="dash-card-sub">below 1080p · ${lqPct}</div>
+        </div>
+        ${d.plex_matched !== null ? `
+        <div class="dash-card accent-green">
+          <div class="dash-card-val">${d.plex_matched.toLocaleString()}</div>
+          <div class="dash-card-label">Plex Matched</div>
+          <div class="dash-card-sub">${pct(d.plex_matched)} of library</div>
+        </div>
+        <div class="dash-card ${d.plex_unmatched > 0 ? 'accent-yellow' : 'accent-green'}">
+          <div class="dash-card-val">${d.plex_unmatched.toLocaleString()}</div>
+          <div class="dash-card-label">No Plex Data</div>
+          <div class="dash-card-sub">${pct(d.plex_unmatched)} unmatched</div>
+        </div>` : `
+        <div class="dash-card" style="opacity:0.4">
+          <div class="dash-card-val" style="color:#555">—</div>
+          <div class="dash-card-label">Plex Coverage</div>
+          <div class="dash-card-sub">sync Plex first</div>
+        </div>`}
+      </div>
+      <div class="dash-charts">
+        <div class="dash-chart-box">
+          <h3>Resolution</h3>
+          <div style="position:relative;height:220px"><canvas id="chart-res"></canvas></div>
+        </div>
+        <div class="dash-chart-box">
+          <h3>Source / Rip Type</h3>
+          <div style="position:relative;height:220px"><canvas id="chart-src"></canvas></div>
+        </div>
+        <div class="dash-chart-box">
+          <h3>By Decade</h3>
+          <div style="position:relative;height:220px"><canvas id="chart-decade"></canvas></div>
+        </div>
+        ${d.plex_matched !== null ? `
+        <div class="dash-chart-box">
+          <h3>Plex Coverage</h3>
+          <div style="position:relative;height:220px"><canvas id="chart-plex"></canvas></div>
+        </div>` : ''}
+      </div>
+      <div class="dash-section-title">Top 10 Largest Files</div>
+      <table class="dash-top-table">
+        <thead><tr><th>#</th><th>Title</th><th>Resolution</th><th>Source</th><th style="text-align:right">Size</th></tr></thead>
+        <tbody>${d.top_largest.map((f, i) => {
+          const rc = RES_COL[f.resolution] || '#74b9ff';
+          return `<tr>
+            <td style="color:#555;width:32px">${i + 1}</td>
+            <td style="color:#fff;font-weight:600">${f.title}</td>
+            <td><span class="res-badge" style="background:${rc}22;color:${rc};border:1px solid ${rc}66">${f.resolution}</span></td>
+            <td style="color:#888">${f.rip_source}</td>
+            <td style="color:#74b9ff;font-weight:600;text-align:right;white-space:nowrap">${f.size_human}</td>
+          </tr>`;
+        }).join('')}</tbody>
+      </table>
+    `;
+
+    const chartDefaults = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom', labels: { color: '#aaa', font: { size: 11 }, padding: 10, boxWidth: 14 } } }
+    };
+
+    // Resolution donut
+    const resLabels = Object.keys(d.by_resolution);
+    _dashCharts.res = new Chart(document.getElementById('chart-res'), {
+      type: 'doughnut',
+      data: { labels: resLabels, datasets: [{ data: resLabels.map(k => d.by_resolution[k].count), backgroundColor: resLabels.map(k => RES_COL[k] || '#888'), borderColor: '#252525', borderWidth: 2 }] },
+      options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw} files (${pct(ctx.raw)})` } } } }
+    });
+
+    // Source donut
+    const srcLabels = Object.keys(d.by_source).sort((a, b) => d.by_source[b].count - d.by_source[a].count);
+    _dashCharts.src = new Chart(document.getElementById('chart-src'), {
+      type: 'doughnut',
+      data: { labels: srcLabels, datasets: [{ data: srcLabels.map(k => d.by_source[k].count), backgroundColor: srcLabels.map(k => SRC_COL[k] || '#888'), borderColor: '#252525', borderWidth: 2 }] },
+      options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw} files (${pct(ctx.raw)})` } } } }
+    });
+
+    // Decade bar
+    const decadeLabels = Object.keys(d.by_decade).filter(k => k !== 'Unknown').sort();
+    if (d.by_decade['Unknown']) decadeLabels.push('Unknown');
+    _dashCharts.decade = new Chart(document.getElementById('chart-decade'), {
+      type: 'bar',
+      data: { labels: decadeLabels, datasets: [{ label: 'Movies', data: decadeLabels.map(k => d.by_decade[k] || 0), backgroundColor: '#74b9ff44', borderColor: '#74b9ff', borderWidth: 1.5, borderRadius: 4 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` ${ctx.raw} movies` } } },
+        scales: {
+          x: { ticks: { color: '#888', font: { size: 11 } }, grid: { color: '#2a2a2a' } },
+          y: { ticks: { color: '#888', font: { size: 11 } }, grid: { color: '#2a2a2a' } }
+        }
+      }
+    });
+
+    // Plex coverage donut
+    if (d.plex_matched !== null && document.getElementById('chart-plex')) {
+      _dashCharts.plex = new Chart(document.getElementById('chart-plex'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Matched', 'No Plex Data'],
+          datasets: [{ data: [d.plex_matched, d.plex_unmatched], backgroundColor: ['#00cec9', '#e5a00d44'], borderColor: '#252525', borderWidth: 2 }]
+        },
+        options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw} files (${pct(ctx.raw)})` } } } }
+      });
+    }
+  }
+
+  document.getElementById('dash-panel').addEventListener('click', function(e) {
+    if (e.target === this) closeDashboard();
+  });
+
+  // ── Smart Clean ──────────────────────────────────────────────
+
+  let smartRecs = [];
+
+  async function openSmartClean() {
+    const btn = document.getElementById('smart-btn');
+    btn.disabled = true;
+    btn.textContent = 'Scanning...';
+
+    try {
+      const res = await fetch('/api/smart-scan');
+      const data = await res.json();
+      if (data.error) throw new Error(data.error);
+      smartRecs = data.recommendations;
+      renderSmartPanel(smartRecs);
+      document.getElementById('smart-panel').classList.add('active');
+    } catch (err) {
+      showToast(err.message, true);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '⚡ Smart Clean';
+    }
+  }
+
+  function closeSmartPanel() {
+    document.getElementById('smart-panel').classList.remove('active');
+  }
+
+  function renderSmartPanel(recs) {
+    const list = document.getElementById('smart-list');
+    const summary = document.getElementById('smart-summary');
+    list.innerHTML = '';
+
+    const actionable = recs.filter(r => !r.skipped);
+    const skipped = recs.filter(r => r.skipped);
+
+    summary.innerHTML =
+      '<span>' + actionable.length + '</span> deletions recommended · ' +
+      '<span style="color:#e5a00d">' + skipped.length + '</span> skipped (size difference ≥5%, manual review) · ' +
+      'Total: ' + recs.length + ' items';
+
+    if (recs.length === 0) {
+      list.innerHTML = '<div style="text-align:center;padding:40px;color:#2ecc71;font-size:1rem">No smart recommendations — your library looks clean!</div>';
+      return;
+    }
+
+    recs.forEach((rec, i) => {
+      const div = document.createElement('div');
+      div.className = 'smart-item' + (rec.skipped ? ' skipped' : '');
+      div.id = 'smart-item-' + i;
+
+      const checkHtml = rec.skipped
+        ? ''
+        : '<input type="checkbox" class="smart-item-check" id="smart-chk-' + i + '" checked onchange="smartCheckChanged()" />';
+
+      div.innerHTML =
+        checkHtml +
+        '<div class="smart-item-body">' +
+          '<div class="smart-movie-title">' + escHtml(rec.movie) + (rec.skipped ? '<span class="skip-tag">Manual Review</span>' : '') + '</div>' +
+          '<div class="smart-row">' +
+            '<span class="smart-label">Delete</span>' +
+            '<span class="res-badge res-' + rec.delete_resolution + '">' + rec.delete_resolution + '</span>' +
+            '<span class="rip-badge">' + escHtml(rec.delete_rip) + '</span>' +
+            '<span class="file-size">' + rec.delete_size + '</span>' +
+            '<span class="smart-file">' + escHtml(rec.delete_filename) + '</span>' +
+          '</div>' +
+          '<div class="smart-row">' +
+            '<span class="smart-label">Keep</span>' +
+            '<span class="res-badge res-' + rec.keep_resolution + '">' + rec.keep_resolution + '</span>' +
+            '<span class="rip-badge">' + escHtml(rec.keep_rip) + '</span>' +
+            '<span class="file-size">' + rec.keep_size + '</span>' +
+            '<span class="smart-file">' + escHtml(rec.keep_filename) + '</span>' +
+          '</div>' +
+          '<div class="smart-reason' + (rec.skipped ? ' skip-reason' : '') + '">' + escHtml(rec.reason) + '</div>' +
+        '</div>';
+
+      list.appendChild(div);
+    });
+
+    smartCheckChanged();
+  }
+
+  function smartCheckChanged() {
+    const checked = document.querySelectorAll('.smart-item-check:checked');
+    const btn = document.getElementById('smart-proceed-btn');
+    btn.disabled = checked.length === 0;
+    btn.textContent = 'Delete Selected (' + checked.length + ')';
+    document.querySelectorAll('.smart-item:not(.skipped)').forEach(item => {
+      const chk = item.querySelector('.smart-item-check');
+      item.classList.toggle('selected', chk && chk.checked);
+    });
+  }
+
+  function smartSelectAll(state) {
+    document.querySelectorAll('.smart-item-check').forEach(chk => chk.checked = state);
+    smartCheckChanged();
+  }
+
+  async function smartProceed() {
+    const checked = Array.from(document.querySelectorAll('.smart-item-check:checked'));
+    if (!checked.length) return;
+
+    const trash = useTrash();
+    const indices = checked.map(chk => parseInt(chk.id.replace('smart-chk-', '')));
+    const toDelete = indices.map(i => smartRecs[i]).filter(r => r && !r.skipped && r.delete_path);
+
+    closeSmartPanel();
+
+    // Reuse the existing confirm modal
+    pendingDelete = {
+      items: toDelete.map(r => ({ path: r.delete_path, gi: null, fi: null, smart: true }))
+    };
+    document.getElementById('modal-mode-label').textContent = trash ? 'move to Recycle Bin' : 'permanently delete';
+    document.getElementById('modal-permanent-warning').style.display = trash ? 'none' : '';
+    document.getElementById('modal-path').innerHTML =
+      toDelete.map(r => escHtml(r.delete_filename) + ' <span style="color:#666;font-size:0.78rem">(' + r.reason + ')</span>').join('<br>');
+    document.getElementById('modal').classList.add('active');
+    document.getElementById('btn-confirm').onclick = doSmartDelete;
+  }
+
+  async function doSmartDelete() {
+    if (!pendingDelete) return;
+    const { items } = pendingDelete;
+    const trash = useTrash();
+    closeModal();
+
+    let successCount = 0, foldersCleaned = 0;
+    const errors = [];
+
+    for (const item of items) {
+      try {
+        const res = await fetch('/api/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ path: item.path, trash })
+        });
+        const data = await res.json();
+        if (!res.ok || data.error) throw new Error(data.error || 'Delete failed');
+        successCount++;
+        if (data.folder_removed) foldersCleaned++;
+      } catch (err) {
+        errors.push(err.message);
+      }
+    }
+
+    if (successCount > 0) {
+      let msg = successCount + ' file' + (successCount > 1 ? 's' : '') + ' ' + (trash ? 'moved to Recycle Bin' : 'deleted');
+      if (foldersCleaned > 0) msg += ' · ' + foldersCleaned + ' empty folder' + (foldersCleaned > 1 ? 's' : '') + ' cleaned';
+      showToast(msg);
+    }
+    errors.forEach(e => showToast(e, true));
+  }
+
+  document.getElementById('smart-panel').addEventListener('click', function(e) {
+    if (e.target === this) closeSmartPanel();
+  });
+
+  // ── Low Quality Scanner ──────────────────────────────────────────
+  let lqItems = [];
+
+  async function openLowQuality() {
+    const btn = document.getElementById('lq-btn');
+    btn.disabled = true;
+    btn.textContent = 'Scanning...';
+    try {
+      const res = await fetch('/api/low-quality');
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); return; }
+      lqItems = data.items;
+      if (data.plex_enabled) _plexSynced = true;
+      populateLQFilters(lqItems);
+      renderLQPanel(lqItems);
+      document.getElementById('lq-panel').classList.add('active');
+    } catch (err) {
+      showToast(err.message, true);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '🔍 Low Quality';
+    }
+  }
+
+  function populateLQFilters(items) {
+    const resVals = [...new Set(items.map(it => it.resolution))].sort();
+    const ripVals = [...new Set(items.map(it => it.rip_source))].sort();
+    const resEl = document.getElementById('lq-filter-res');
+    const ripEl = document.getElementById('lq-filter-rip');
+    resEl.innerHTML = '<option value="">All</option>' + resVals.map(v => `<option value="${v}">${v}</option>`).join('');
+    ripEl.innerHTML = '<option value="">All</option>' + ripVals.map(v => `<option value="${v}">${v}</option>`).join('');
+    document.getElementById('lq-filters').style.display = items.length > 0 ? 'flex' : 'none';
+  }
+
+  function applyLQFilters() {
+    const resFilter = document.getElementById('lq-filter-res').value;
+    const ripFilter = document.getElementById('lq-filter-rip').value;
+    const sizeSort  = document.getElementById('lq-sort-size').value;
+    let filtered = lqItems.filter(it =>
+      (!resFilter || it.resolution === resFilter) &&
+      (!ripFilter || it.rip_source === ripFilter)
+    );
+    if (sizeSort === 'asc')  filtered.sort((a, b) => a.size - b.size);
+    if (sizeSort === 'desc') filtered.sort((a, b) => b.size - a.size);
+    renderLQPanel(filtered);
+    document.getElementById('lq-filter-count').textContent =
+      filtered.length !== lqItems.length ? `Showing ${filtered.length} of ${lqItems.length}` : '';
+  }
+
+  function renderLQPanel(items) {
+    const RIP_COLOR = { 'BD Remux':'#a29bfe','Remux':'#a29bfe','Blu-ray':'#74b9ff','BDRip':'#81ecec',
+      'WEB-DL':'#55efc4','WEBRip':'#00b894','HDRip':'#fdcb6e','HDTV':'#e17055',
+      'DVDRip':'#d63031','DVDScr':'#b2bec3','CAMRip':'#636e72','HDCAM':'#636e72','Unknown':'#636e72' };
+    const RES_COLOR = { '4K':'#a29bfe','1080p':'#74b9ff','720p':'#e5a00d','480p':'#e17055','Unknown':'#636e72' };
+
+    document.getElementById('lq-summary').innerHTML =
+      lqItems.length === 0
+        ? 'No low quality files found — all movies are 1080p or better.'
+        : `Found <span>${lqItems.length} file${lqItems.length !== 1 ? 's' : ''}</span> below <span>1080p</span>.`;
+
+    const list = document.getElementById('lq-list');
+    if (items.length === 0) { list.innerHTML = '<div style="color:#666;padding:20px 0;text-align:center">No items match the current filters.</div>'; lqUpdateSelBar(); return; }
+
+    list.innerHTML = items.map((it, i) => {
+      const resCol = RES_COLOR[it.resolution] || '#636e72';
+      const ripCol = RIP_COLOR[it.rip_source] || '#636e72';
+      const safeTitle = it.title.replace(/'/g, "\\'");
+      const rowBorder = (_plexSynced && !it.plex_matched) ? 'border-left:3px solid #e5a00d' : '';
+      let plexLine = '';
+      if (_plexSynced) {
+        if (it.plex_matched) {
+          const genres = (it.plex_genres || []).slice(0, 3).map(g => `<span class="plex-genre-tag">${g}</span>`).join('');
+          plexLine = `<div style="margin-top:5px;font-size:0.8rem"><span style="color:#00cec9;font-weight:600">🎬 ${it.plex_title}${it.plex_year ? ' (' + it.plex_year + ')' : ''}</span> ${genres}</div>`;
+        } else {
+          plexLine = `<div style="margin-top:5px;font-size:0.75rem;color:#e5a00d">⚠ No Plex data</div>`;
+        }
+      }
+      return `
+      <div class="lq-item" style="background:#252525;border:1px solid #2a2a2a;border-radius:8px;padding:12px 16px;margin-bottom:8px;${rowBorder}" data-path="${it.path}">
+        <input type="checkbox" class="item-check lq-check" onchange="lqUpdateSelBar()" />
+        <div class="lq-item-body">
+          <div class="lq-title" style="display:flex;align-items:center;gap:10px">
+            ${it.title}
+            <button class="btn-pr-magnet" style="font-size:0.72rem;padding:3px 10px" onclick="prowlarrSearch('${safeTitle}')">&#128270; Search Prowlarr</button>
+          </div>
+          <div class="lq-meta">
+            <span class="res-badge" style="background:${resCol}22;color:${resCol};border:1px solid ${resCol}66">${it.resolution}</span>
+            <span class="res-badge" style="background:${ripCol}22;color:${ripCol};border:1px solid ${ripCol}66">${it.rip_source}</span>
+            <span style="color:#666;font-size:0.8rem">${it.size_human}</span>
+          </div>
+          ${plexLine}
+          <div class="lq-file">${it.path}</div>
+        </div>
+      </div>`;
+    }).join('');
+    lqUpdateSelBar();
+  }
+
+  function lqUpdateSelBar() {
+    const checked = document.querySelectorAll('.lq-check:checked');
+    const bar = document.getElementById('lq-select-bar');
+    bar.classList.toggle('visible', true);
+    document.getElementById('lq-sel-count').textContent = checked.length + ' selected';
+    document.getElementById('lq-delete-btn').disabled = checked.length === 0;
+  }
+
+  function lqSelectAll(state) {
+    document.querySelectorAll('.lq-check').forEach(c => c.checked = state);
+    lqUpdateSelBar();
+  }
+
+  function lqDeleteSelected() {
+    const checked = [...document.querySelectorAll('.lq-check:checked')];
+    if (!checked.length) return;
+    const paths = checked.map(c => c.closest('.lq-item').dataset.path);
+    const trash = document.getElementById('trash-toggle').checked;
+    const modeLabel = trash ? 'move to Recycle Bin' : 'permanently delete';
+    document.getElementById('modal-mode-label').textContent = modeLabel;
+    document.getElementById('modal-path').textContent = paths.join('\n');
+    document.getElementById('modal-permanent-warning').style.display = trash ? 'none' : '';
+    pendingDelete = { paths, source: 'lq' };
+    document.getElementById('btn-confirm').onclick = doGenericDelete;
+    document.getElementById('modal').classList.add('active');
+  }
+
+  function closeLQPanel() {
+    document.getElementById('lq-panel').classList.remove('active');
+  }
+
+  function copyLQList() {
+    const resFilter = document.getElementById('lq-filter-res').value;
+    const ripFilter = document.getElementById('lq-filter-rip').value;
+    let items = lqItems.filter(it =>
+      (!resFilter || it.resolution === resFilter) &&
+      (!ripFilter || it.rip_source === ripFilter)
+    );
+    if (!items.length) return;
+    const text = items.map(it => it.title).join('\n');
+    navigator.clipboard.writeText(text).then(() => showToast(`${items.length} title${items.length !== 1 ? 's' : ''} copied to clipboard`));
+  }
+
+  document.getElementById('lq-panel').addEventListener('click', function(e) {
+    if (e.target === this) closeLQPanel();
+  });
+
+  // ── Library Browser ──────────────────────────────────────────────
+  let libItems = [];
+
+  async function openLibrary() {
+    const btn = document.getElementById('lib-btn');
+    btn.disabled = true;
+    btn.textContent = 'Loading...';
+    try {
+      const res = await fetch('/api/library');
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); return; }
+      libItems = data.items;
+      // Reflect server-side plex state
+      if (data.plex_enabled) _plexSynced = true;
+      populateLibFilters(libItems);
+      applyLibFilters();
+      _updatePlexSyncStatus();
+      document.getElementById('lib-panel').classList.add('active');
+    } catch (err) {
+      showToast(err.message, true);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '📂 Library';
+    }
+  }
+
+  function populateLibFilters(items) {
+    const resVals = [...new Set(items.map(it => it.resolution))].sort();
+    const ripVals = [...new Set(items.map(it => it.rip_source))].sort();
+    const resEl = document.getElementById('lib-filter-res');
+    const ripEl = document.getElementById('lib-filter-rip');
+    resEl.innerHTML = '<option value="">All</option>' + resVals.map(v => `<option value="${v}">${v}</option>`).join('');
+    ripEl.innerHTML = '<option value="">All</option>' + ripVals.map(v => `<option value="${v}">${v}</option>`).join('');
+  }
+
+  function applyLibFilters() {
+    const q      = document.getElementById('lib-search').value.trim().toLowerCase();
+    const resF   = document.getElementById('lib-filter-res').value;
+    const ripF   = document.getElementById('lib-filter-rip').value;
+    const plexF  = document.getElementById('lib-filter-plex').value;
+    const sortBy = document.getElementById('lib-sort').value;
+
+    let filtered = libItems.filter(it =>
+      (!q    || it.title.toLowerCase().includes(q) || it.filename.toLowerCase().includes(q)) &&
+      (!resF || it.resolution === resF) &&
+      (!ripF || it.rip_source === ripF) &&
+      (!plexF || (plexF === 'matched' ? it.plex_matched : !it.plex_matched))
+    );
+
+    const [field, dir] = sortBy.split('-');
+    filtered.sort((a, b) => {
+      let va, vb;
+      if (field === 'title') { va = a.title.toLowerCase(); vb = b.title.toLowerCase(); }
+      else if (field === 'size') { va = a.size; vb = b.size; }
+      else if (field === 'res')  { va = a.resolution_rank; vb = b.resolution_rank; }
+      else if (field === 'rip')  { va = a.rip_rank; vb = b.rip_rank; }
+      if (va < vb) return dir === 'asc' ? -1 : 1;
+      if (va > vb) return dir === 'asc' ? 1 : -1;
+      return 0;
+    });
+
+    renderLibTable(filtered);
+    document.getElementById('lib-count').textContent =
+      filtered.length === libItems.length
+        ? `${libItems.length} files`
+        : `${filtered.length} of ${libItems.length} files`;
+  }
+
+  function renderLibTable(items) {
+    const RIP_COLOR = { 'BD Remux':'#a29bfe','Remux':'#a29bfe','Blu-ray':'#74b9ff','BDRip':'#81ecec',
+      'WEB-DL':'#55efc4','WEBRip':'#00b894','HDRip':'#fdcb6e','HDTV':'#e17055',
+      'DVDRip':'#d63031','DVDScr':'#b2bec3','CAMRip':'#636e72','HDCAM':'#636e72','Unknown':'#636e72' };
+    const RES_COLOR = { '4K':'#a29bfe','1080p':'#74b9ff','720p':'#e5a00d','480p':'#e17055','Unknown':'#636e72' };
+    const tbody = document.getElementById('lib-tbody');
+    if (items.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" class="lib-empty">No files match the current filters.</td></tr>';
+      libUpdateSelBar();
+      return;
+    }
+    tbody.innerHTML = items.map(it => {
+      const resCol = RES_COLOR[it.resolution] || '#636e72';
+      const ripCol = RIP_COLOR[it.rip_source] || '#636e72';
+      const rowClass = (_plexSynced && !it.plex_matched) ? 'lib-row-unmatched' : '';
+      let plexCell;
+      if (!_plexSynced) {
+        plexCell = '<span style="color:#333;font-size:0.75rem">—</span>';
+      } else if (it.plex_matched) {
+        const genres = (it.plex_genres || []).slice(0, 3).map(g => `<span class="plex-genre-tag">${g}</span>`).join('');
+        plexCell = `<div class="plex-col-matched"><span style="color:#fff;font-weight:600">${it.plex_title}${it.plex_year ? ' (' + it.plex_year + ')' : ''}</span><div style="margin-top:3px">${genres}</div></div>`;
+      } else {
+        plexCell = '<span class="plex-col-unmatched">⚠ No Plex data</span>';
+      }
+      return `<tr data-path="${it.path}" class="${rowClass}">
+        <td class="lib-check-col"><input type="checkbox" class="item-check lib-check" onchange="libUpdateSelBar()" /></td>
+        <td class="lib-title-cell">${it.title}<br><button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px;margin-top:4px" onclick="prowlarrSearch(${JSON.stringify(it.title)})">&#128270; Search Prowlarr</button></td>
+        <td><span class="res-badge" style="background:${resCol}22;color:${resCol};border:1px solid ${resCol}66">${it.resolution}</span></td>
+        <td><span class="res-badge" style="background:${ripCol}22;color:${ripCol};border:1px solid ${ripCol}66">${it.rip_source}</span></td>
+        <td class="lib-size-cell">${it.size_human}</td>
+        <td>${plexCell}</td>
+        <td class="lib-path-cell" title="${it.path}">${it.path}</td>
+      </tr>`;
+    }).join('');
+    libUpdateSelBar();
+  }
+
+  function libUpdateSelBar() {
+    const checked = document.querySelectorAll('.lib-check:checked');
+    const bar = document.getElementById('lib-select-bar');
+    bar.classList.toggle('visible', checked.length > 0);
+    document.getElementById('lib-sel-count').textContent = checked.length + ' selected';
+    const allVis = document.querySelectorAll('.lib-check');
+    const allChk = document.getElementById('lib-check-all');
+    if (allChk) allChk.checked = allVis.length > 0 && checked.length === allVis.length;
+  }
+
+  function libSelectAll(state) {
+    document.querySelectorAll('.lib-check').forEach(c => c.checked = state);
+    libUpdateSelBar();
+  }
+
+  function libDeleteSelected() {
+    const checked = [...document.querySelectorAll('.lib-check:checked')];
+    if (!checked.length) return;
+    const paths = checked.map(c => c.closest('tr').dataset.path);
+    const trash = document.getElementById('trash-toggle').checked;
+    document.getElementById('modal-mode-label').textContent = trash ? 'move to Recycle Bin' : 'permanently delete';
+    document.getElementById('modal-path').textContent = paths.join('\n');
+    document.getElementById('modal-permanent-warning').style.display = trash ? 'none' : '';
+    pendingDelete = { paths, source: 'lib' };
+    document.getElementById('btn-confirm').onclick = doGenericDelete;
+    document.getElementById('modal').classList.add('active');
+  }
+
+  function closeLibrary() {
+    document.getElementById('lib-panel').classList.remove('active');
+  }
+
+  document.getElementById('lib-panel').addEventListener('click', function(e) {
+    if (e.target === this) closeLibrary();
+  });
+
+  // ── Plex Integration ──────────────────────────────────────────────
+  let _plexSynced = false;
+
+  function _updatePlexSyncStatus() {
+    const el = document.getElementById('plex-sync-status');
+    if (!el) return;
+    if (!_plexSynced || !libItems.length) { el.textContent = ''; return; }
+    const matched = libItems.filter(it => it.plex_matched).length;
+    const pct = Math.round(matched / libItems.length * 100);
+    el.textContent = `\u2713 ${matched}/${libItems.length} matched (${pct}%)`;
+    el.style.color = pct >= 90 ? '#2ecc71' : pct >= 50 ? '#e5a00d' : '#e74c3c';
+  }
+
+  async function syncPlexLibrary() {
+    // Force-refresh Plex data (called after saving new Plex config)
+    try {
+      const r = await fetch('/api/plex/sync');
+      const d = await r.json();
+      if (d.error) { showToast(d.error, true); return; }
+      _plexSynced = true;
+      showToast('Plex synced \u2014 ' + d.cached + ' files indexed');
+      if (libItems.length > 0) {
+        const r2 = await fetch('/api/library');
+        const d2 = await r2.json();
+        if (!d2.error) { libItems = d2.items; applyLibFilters(); _updatePlexSyncStatus(); }
+      }
+      if (lqItems.length > 0) {
+        const r3 = await fetch('/api/low-quality');
+        const d3 = await r3.json();
+        if (!d3.error) { lqItems = d3.items; applyLQFilters(); }
+      }
+    } catch (e) { showToast(e.message, true); }
+  }
+
+  function openPlexCfg() {
+    document.getElementById('plex-cfg-overlay').classList.add('active');
+  }
+  function closePlexCfg() {
+    document.getElementById('plex-cfg-overlay').classList.remove('active');
+  }
+  async function savePlexCfg() {
+    const url   = document.getElementById('plex-url-input').value.trim();
+    const token = document.getElementById('plex-token-input').value.trim();
+    if (!url)   { setPlexStatus('Plex URL is required.', '#e74c3c'); return; }
+    if (!token) { setPlexStatus('Token is required.',    '#e74c3c'); return; }
+    try {
+      const r = await fetch('/api/plex/config', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, token })
+      });
+      const d = await r.json();
+      if (d.error) { setPlexStatus(d.error, '#e74c3c'); return; }
+      showToast('Plex settings saved');
+      closePlexCfg();
+    } catch (e) { setPlexStatus(e.message, '#e74c3c'); }
+  }
+  async function testPlexCfg() {
+    const url   = document.getElementById('plex-url-input').value.trim();
+    const token = document.getElementById('plex-token-input').value.trim();
+    if (!url || !token) { setPlexStatus('Fill in both URL and token first.', '#e74c3c'); return; }
+    await fetch('/api/plex/config', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, token })
+    });
+    const btn = document.getElementById('plex-test-btn');
+    btn.disabled = true; btn.textContent = 'Testing...';
+    setPlexStatus('Connecting...', '#888');
+    try {
+      const r = await fetch('/api/plex/test');
+      const d = await r.json();
+      if (d.error) setPlexStatus('✗ ' + d.error, '#e74c3c');
+      else setPlexStatus(`✓ Connected — ${d.movie_libraries} movie librar${d.movie_libraries !== 1 ? 'ies' : 'y'} found`, '#2ecc71');
+    } catch (e) { setPlexStatus('✗ ' + e.message, '#e74c3c'); }
+    finally { btn.disabled = false; btn.textContent = 'Test Connection'; }
+  }
+  function setPlexStatus(msg, color) {
+    const el = document.getElementById('plex-test-status');
+    el.textContent = msg; el.style.color = color;
+  }
+  document.getElementById('plex-cfg-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closePlexCfg();
+  });
+  window.addEventListener('load', async () => {
+    try {
+      const r = await fetch('/api/plex/config');
+      const d = await r.json();
+      if (d.url)   document.getElementById('plex-url-input').value   = d.url;
+      if (d.token) document.getElementById('plex-token-input').value = d.token;
+    } catch {}
+  });
+
+  // ── Prowlarr Integration ─────────────────────────────────────────
+  window.addEventListener('load', async () => {
+    try {
+      const r = await fetch('/api/prowlarr/config');
+      const d = await r.json();
+      if (d.url) document.getElementById('prowlarr-url-input').value = d.url;
+      if (d.key) document.getElementById('prowlarr-key-input').value = d.key;
+    } catch {}
+  });
+
+  function openProwlarrCfg() {
+    document.getElementById('prowlarr-cfg-overlay').classList.add('active');
+  }
+  function closeProwlarrCfg() {
+    document.getElementById('prowlarr-cfg-overlay').classList.remove('active');
+  }
+  async function saveProwlarrCfg() {
+    const url = document.getElementById('prowlarr-url-input').value.trim();
+    const key = document.getElementById('prowlarr-key-input').value.trim();
+    if (!url) { setProwlarrStatus('Prowlarr URL is required.', 'red'); return; }
+    if (!key) { setProwlarrStatus('API key is required.', 'red'); return; }
+    try {
+      const r = await fetch('/api/prowlarr/config', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, key })
+      });
+      const d = await r.json();
+      if (d.error) { setProwlarrStatus(d.error, 'red'); return; }
+      showToast('Prowlarr settings saved');
+      closeProwlarrCfg();
+    } catch (e) { setProwlarrStatus(e.message, 'red'); }
+  }
+
+  async function testProwlarrCfg() {
+    const url = document.getElementById('prowlarr-url-input').value.trim();
+    const key = document.getElementById('prowlarr-key-input').value.trim();
+    if (!url || !key) { setProwlarrStatus('Fill in both URL and API key first.', 'red'); return; }
+    // Save first so the backend uses the current values
+    await fetch('/api/prowlarr/config', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, key })
+    });
+    const btn = document.getElementById('prowlarr-test-btn');
+    btn.disabled = true; btn.textContent = 'Testing...';
+    setProwlarrStatus('Connecting...', '#888');
+    try {
+      const r = await fetch('/api/prowlarr/test');
+      const d = await r.json();
+      if (d.error) setProwlarrStatus('✗ ' + d.error, '#e74c3c');
+      else setProwlarrStatus(`✓ Connected — ${d.indexers} indexer${d.indexers !== 1 ? 's' : ''} found`, '#2ecc71');
+    } catch (e) { setProwlarrStatus('✗ ' + e.message, '#e74c3c'); }
+    finally { btn.disabled = false; btn.textContent = 'Test Connection'; }
+  }
+
+  function setProwlarrStatus(msg, color) {
+    const el = document.getElementById('prowlarr-test-status');
+    el.textContent = msg; el.style.color = color;
+  }
+
+  let prAllResults = [];
+
+  async function prowlarrSearch(title) {
+    const panel = document.getElementById('prowlarr-results-panel');
+    const body  = document.getElementById('pr-results-body');
+    const ctrl  = document.getElementById('pr-controls');
+    document.getElementById('pr-results-title').textContent = `🔎 Prowlarr: ${title}`;
+    body.innerHTML = '<div class="pr-searching">Searching Prowlarr...</div>';
+    ctrl.style.display = 'none';
+    panel.classList.add('active');
+    try {
+      const r = await fetch('/api/prowlarr/search?q=' + encodeURIComponent(title));
+      const d = await r.json();
+      if (d.error) { body.innerHTML = `<div class="pr-searching" style="color:#e74c3c">${d.error}</div>`; return; }
+      prAllResults = d.results;
+      if (prAllResults.length) {
+        populatePrFilters(prAllResults);
+        ctrl.style.display = 'flex';
+      }
+      applyPrFilters();
+    } catch (e) { body.innerHTML = `<div class="pr-searching" style="color:#e74c3c">${e.message}</div>`; }
+  }
+
+  function populatePrFilters(results) {
+    const resVals = [...new Set(results.map(r => r.resolution))].sort();
+    const idxVals = [...new Set(results.map(r => r.indexer))].sort();
+    document.getElementById('pr-filter-res').innerHTML =
+      '<option value="">All</option>' + resVals.map(v => `<option value="${v}">${v}</option>`).join('');
+    document.getElementById('pr-filter-idx').innerHTML =
+      '<option value="">All</option>' + idxVals.map(v => `<option value="${v}">${v}</option>`).join('');
+  }
+
+  function applyPrFilters() {
+    const q      = document.getElementById('pr-search').value.trim().toLowerCase();
+    const resF   = document.getElementById('pr-filter-res').value;
+    const idxF   = document.getElementById('pr-filter-idx').value;
+    const sortBy = document.getElementById('pr-sort').value;
+    const RES_RANK = { '4K': 4, '1080p': 3, '720p': 2, 'Unknown': 0 };
+
+    let filtered = prAllResults.filter(r =>
+      (!q    || r.title.toLowerCase().includes(q)) &&
+      (!resF || r.resolution === resF) &&
+      (!idxF || r.indexer === idxF)
+    );
+
+    const [field, dir] = sortBy.split('-');
+    filtered.sort((a, b) => {
+      let va, vb;
+      if (field === 'size')    { va = a.size;    vb = b.size; }
+      else if (field === 'seeders') { va = a.seeders; vb = b.seeders; }
+      else if (field === 'res')     { va = RES_RANK[a.resolution] || 0; vb = RES_RANK[b.resolution] || 0; }
+      else if (field === 'title')   { va = a.title.toLowerCase(); vb = b.title.toLowerCase(); }
+      if (va < vb) return dir === 'asc' ? -1 : 1;
+      if (va > vb) return dir === 'asc' ? 1 : -1;
+      return 0;
+    });
+
+    document.getElementById('pr-count').textContent =
+      filtered.length === prAllResults.length
+        ? `${prAllResults.length} results`
+        : `${filtered.length} of ${prAllResults.length} results`;
+
+    renderProwlarrResults(filtered);
+  }
+
+  function renderProwlarrResults(results) {
+    const RES_COLOR = { '4K':'#a29bfe','1080p':'#74b9ff','720p':'#e5a00d','Unknown':'#636e72' };
+    const body = document.getElementById('pr-results-body');
+    if (!results.length) {
+      body.innerHTML = '<div class="pr-searching">No results match the current filters.</div>';
+      return;
+    }
+    body.innerHTML = results.map(r => {
+      const resCol = RES_COLOR[r.resolution] || '#74b9ff';
+      const magnetBtn = r.magnet_url ? `<a class="btn-pr-magnet" href="${r.magnet_url}">🧲 Magnet</a>` : '';
+      const dlBtn = r.download_url  ? `<a class="btn-pr-dl" href="${r.download_url}" target="_blank">⬇ Torrent</a>` : '';
+      return `<div class="pr-result">
+        <div class="pr-title">${r.title}</div>
+        <div class="pr-meta">
+          <span class="res-badge" style="background:${resCol}22;color:${resCol};border:1px solid ${resCol}66">${r.resolution}</span>
+          <span>${r.size_human}</span>
+          <span class="pr-seeders">▲ ${r.seeders}</span>
+          <span class="pr-indexer">${r.indexer}</span>
+        </div>
+        <div style="display:flex;gap:6px">${magnetBtn}${dlBtn}</div>
+      </div>`;
+    }).join('');
+  }
+
+  function closeProwlarrResults() {
+    document.getElementById('prowlarr-results-panel').classList.remove('active');
+  }
+
+  document.getElementById('prowlarr-results-panel').addEventListener('click', function(e) {
+    if (e.target === this) closeProwlarrResults();
+  });
+  document.getElementById('prowlarr-cfg-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeProwlarrCfg();
+  });
+
+  // ── Generic delete (LQ + Library panels) ────────────────────────
+  async function doGenericDelete() {
+    document.getElementById('modal').classList.remove('active');
+    const { paths, source } = pendingDelete;
+    pendingDelete = null;
+    const trash = document.getElementById('trash-toggle').checked;
+    let ok = 0, errs = [];
+    for (const path of paths) {
+      try {
+        const r = await fetch('/api/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ path, trash })
+        });
+        const d = await r.json();
+        if (d.error) errs.push(d.error); else ok++;
+      } catch (e) { errs.push(e.message); }
+    }
+    if (ok > 0) {
+      showToast(`${ok} file${ok > 1 ? 's' : ''} ${trash ? 'moved to Recycle Bin' : 'deleted'}`);
+      // Remove deleted rows from the UI
+      if (source === 'lq') {
+        paths.forEach(p => {
+          const el = document.querySelector(`#lq-list .lq-item[data-path="${CSS.escape(p)}"]`);
+          if (el) { lqItems = lqItems.filter(it => it.path !== p); el.remove(); }
+        });
+        lqUpdateSelBar();
+        document.getElementById('lq-summary').innerHTML =
+          lqItems.length === 0
+            ? 'No low quality files found — all movies are 1080p or better.'
+            : `Found <span>${lqItems.length} file${lqItems.length !== 1 ? 's' : ''}</span> below <span>1080p</span>.`;
+      } else if (source === 'lib') {
+        paths.forEach(p => {
+          libItems = libItems.filter(it => it.path !== p);
+          const row = document.querySelector(`#lib-tbody tr[data-path="${CSS.escape(p)}"]`);
+          if (row) row.remove();
+        });
+        libUpdateSelBar();
+        document.getElementById('lib-count').textContent = `${libItems.length} files`;
+      }
+    }
+    errs.forEach(e => showToast(e, true));
+  }
+</script>
+</body>
+</html>
