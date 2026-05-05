@@ -3,11 +3,33 @@
 > A local web application for managing, cleaning, and enriching a Plex movie library.  
 > Runs entirely on your own machine — no cloud, no accounts, no internet required (except for Prowlarr search).
 
-**Version 1.1** — May 2026
+**Version 1.11** — May 2026
 
 ---
 
 ## Changelog
+
+### v1.11 (May 2026)
+
+#### Real File Resolution Detection
+Resolution is now read directly from the video stream using **pymediainfo** (ships with a bundled `MediaInfo.dll` on Windows — no PATH setup, no separate install required). Files that have no resolution tag in their filename (e.g. `Movie.mkv`) now report their true stream resolution (`1080p`, `4K`, `720p`, etc.) instead of `Unknown`. Results are cached in `res_cache.json` next to `app.py`; each file is probed at most once and the cache survives app restarts.
+
+#### Library Browser — Virtual Scroll
+The Library panel now renders only the visible rows (~30 at any time). All 3,600+ rows are kept in a JavaScript array; the DOM is updated on scroll via `requestAnimationFrame`. The table opens instantly and is immediately interactive regardless of library size. A fixed-height spacer div maintains the correct scrollbar proportion. Checkbox selection is tracked by file path in a `Set` so selections survive rows leaving the DOM while scrolling.
+
+#### Library Browser — Prowlarr Search Button
+Added a **🔍 Search Prowlarr** button to every row in the Library panel, consistent with the Low Quality and Duplicates panels.
+
+#### Library Load Cache
+The `/api/library` response is cached server-side (`_library_cache`) for 5 minutes (`_LIBRARY_TTL = 300`). A cached response is served when: the same movies directory is configured, `force_plex` is not set, and the TTL has not expired. Cache is invalidated on: directory change (`set_config`), file deletion (`delete_file`), and Plex sync (`_auto_sync_plex`).
+
+#### Scan Progress Status
+A new `/api/library/status` endpoint exposes `_library_status` — a string updated every 50 files during the scan. The frontend polls this endpoint every 600 ms while the library request is in-flight and updates the loading bar message (`Reading metadata… 150 / 3600`).
+
+#### Dependency: pymediainfo
+`pymediainfo>=6.0.0` added to `requirements.txt`. `run.bat` updated to prefer `.venv\Scripts\python.exe` so all dependencies resolve from the virtual environment.
+
+---
 
 ### v1.1 (May 2026)
 

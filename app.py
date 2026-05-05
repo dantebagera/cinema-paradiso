@@ -46,8 +46,13 @@ def _norm(path):
     """
     return os.path.normcase(os.path.normpath(path))
 _plex_section_ids = [] # movie section keys — used for triggering rescans
+_res_cache = {}  # (abspath, mtime) -> resolution_str  — resolution probe cache
+_RES_CACHE_FILE  = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'res_cache.json')
+_library_status  = ''  # live status string polled by the browser during a scan
 _plex_cache_time = 0.0
 _PLEX_TTL        = 300  # seconds before auto-refresh
+_library_cache   = {}   # keys: items, plex_enabled, plex_cached, time
+_LIBRARY_TTL     = 300  # seconds — same as Plex TTL
 
 def _all_config():
     return {
@@ -60,10 +65,91 @@ def _all_config():
 
 VIDEO_EXTENSIONS = {'.mkv', '.mp4', '.avi', '.m4v', '.mov', '.wmv', '.flv', '.ts', '.m2ts', '.iso'}
 
+try:
+    from pymediainfo import MediaInfo as _MediaInfo
+    _MEDIAINFO_AVAILABLE = True
+except ImportError:
+    _MediaInfo = None
+    _MEDIAINFO_AVAILABLE = False
+
 
 def get_movies_dir():
     return _movies_dir
 
+
+def _probe_resolution(filepath):
+    """Use pymediainfo to read actual video height. Returns resolution string or None."""
+    if not _MEDIAINFO_AVAILABLE:
+        return None
+    try:
+        info = _MediaInfo.parse(filepath)
+        for track in info.tracks:
+            if track.track_type == 'Video':
+                h = int(track.height or 0)
+                if h >= 2160: return '4K'
+                if h >= 1080: return '1080p'
+                if h >= 720:  return '720p'
+                if h >= 480:  return '480p'
+                if h > 0:     return f'{h}p'
+        return None
+    except Exception:
+        return None
+
+
+def get_resolution_from_file(filepath):
+    """Return resolution string for a video file.
+    Uses filename parsing first (fast). If the filename gives 'Unknown',
+    falls back to pymediainfo to read actual video stream dimensions.
+    Falls back gracefully if pymediainfo is not installed."""
+    filename = os.path.basename(filepath)
+    res = get_resolution(filename)
+    if res != 'Unknown':
+        return res
+    # Filename has no resolution tag — probe with mediainfo
+    try:
+        mtime = os.path.getmtime(filepath)
+    except OSError:
+        return res
+    key = (os.path.abspath(filepath), mtime)
+    if key in _res_cache:
+        return _res_cache[key]
+    probed = _probe_resolution(filepath)
+    result = probed if probed else res
+    _res_cache[key] = result
+    return result
+
+
+def get_resolution_rank_str(resolution):
+    """Return numeric rank for an already-resolved resolution string."""
+    order = {'4K': 4, '1080p': 3, '720p': 2, '480p': 1, 'Unknown': 0}
+    return order.get(resolution, 0)
+
+
+def _load_res_cache():
+    """Load persisted resolution cache from disk into _res_cache."""
+    global _res_cache
+    try:
+        with open(_RES_CACHE_FILE, 'r', encoding='utf-8') as f:
+            data = _json.load(f)
+        for path, v in data.items():
+            _res_cache[(path, float(v['mtime']))] = v['res']
+    except Exception:
+        pass
+
+
+def _save_res_cache():
+    """Persist resolution cache to disk so probed results survive app restarts."""
+    try:
+        data = {}
+        for (path, mtime), res in _res_cache.items():
+            data[path] = {'mtime': mtime, 'res': res}
+        with open(_RES_CACHE_FILE, 'w', encoding='utf-8') as f:
+            _json.dump(data, f, indent=2)
+    except Exception:
+        pass
+
+
+_load_res_cache()  # populate cache from disk at startup
 
 def parse_movie_title(filename):
     """Return a (title, year) key so remakes with the same name are not grouped together."""
@@ -168,13 +254,14 @@ def scan_duplicates(movies_dir):
             title_key = parse_movie_title(file)
             if not title_key[0]:
                 continue
+            res = get_resolution_from_file(full_path)
             groups.setdefault(title_key, []).append({
                 'path': full_path,
                 'filename': file,
                 'size': size,
                 'size_human': format_size(size),
-                'resolution': get_resolution(file),
-                'resolution_rank': get_resolution_rank(file),
+                'resolution': res,
+                'resolution_rank': get_resolution_rank_str(res),
                 'rip_source': get_rip_source(file),
             })
 
@@ -209,7 +296,7 @@ def scan_duplicates(movies_dir):
 def _auto_sync_plex(force=False):
     """Refresh _plex_cache if Plex is configured and cache is stale (>5 min). Silent on errors.
     Pass force=True to bypass the TTL and always fetch fresh data."""
-    global _plex_cache, _plex_unmatched, _plex_section_ids, _plex_cache_time
+    global _plex_cache, _plex_unmatched, _plex_section_ids, _plex_cache_time, _library_cache
     if not _plex_url or not _plex_token:
         return
     if not force and time.time() - _plex_cache_time < _PLEX_TTL:
@@ -217,6 +304,7 @@ def _auto_sync_plex(force=False):
     try:
         _plex_cache, _plex_unmatched, _plex_section_ids = _fetch_plex_library()
         _plex_cache_time = time.time()
+        _library_cache = {}  # Plex data refreshed — bust library cache so titles update
     except Exception:
         pass  # don't break scan if Plex is unreachable
 
@@ -339,7 +427,7 @@ def get_config():
 
 @app.route('/api/config', methods=['POST'])
 def set_config():
-    global _movies_dir
+    global _movies_dir, _library_cache
     data = request.get_json(silent=True)
     if not data or 'directory' not in data:
         return jsonify({'error': 'No directory provided'}), 400
@@ -347,6 +435,7 @@ def set_config():
     if not os.path.isdir(new_dir):
         return jsonify({'error': f'Directory not found: {new_dir}'}), 400
     _movies_dir = new_dir
+    _library_cache = {}  # directory changed — bust library cache
     _save_config(_all_config())
     return jsonify({'success': True, 'directory': _movies_dir})
 
@@ -399,7 +488,7 @@ def prowlarr_search():
         req = urllib.request.Request(url, headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'})
         with urllib.request.urlopen(req, timeout=15) as resp:
             results = _json.loads(resp.read().decode())
-        # Filter to 1080p+ and format
+        # Detect resolution from torrent title and format results (all resolutions)
         filtered = []
         for r in results:
             title = r.get('title', '')
@@ -412,8 +501,8 @@ def prowlarr_search():
                 res, res_rank = '1080p', 3
             elif '720p' in tl or re.search(r'[\.\-_ \[\(]720[\.\-_ \]\)\[]', tl):
                 res, res_rank = '720p', 2
-            if res_rank < 3:
-                continue  # skip below 1080p
+            elif '480p' in tl or re.search(r'[\.\-_ \[\(]480[\.\-_ \]\)\[]', tl):
+                res, res_rank = '480p', 1
             size = r.get('size', 0)
             filtered.append({
                 'title': title,
@@ -495,6 +584,7 @@ def delete_file():
                 shutil.rmtree(parent, ignore_errors=True)
                 folder_removed = True
 
+        _library_cache.pop('items', None)  # bust library cache — file list changed
         return jsonify({'success': True, 'deleted': abs_path, 'folder_removed': folder_removed, 'folder': parent, 'trashed': use_trash})
     except PermissionError:
         return jsonify({
@@ -505,23 +595,47 @@ def delete_file():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/library/status')
+def library_status():
+    return jsonify({'status': _library_status})
+
+
 @app.route('/api/library')
 def library():
+    global _library_cache, _library_status
+    force_plex = request.args.get('force_plex') == '1'
     try:
-        _auto_sync_plex(force=request.args.get('force_plex') == '1')
+        _auto_sync_plex(force=force_plex)
+        # Serve from cache if still fresh and directory hasn't changed
+        if (not force_plex
+                and _library_cache.get('items') is not None
+                and _library_cache.get('dir') == get_movies_dir()
+                and time.time() - _library_cache.get('time', 0) < _LIBRARY_TTL):
+            c = _library_cache
+            return jsonify({'items': c['items'], 'count': len(c['items']),
+                            'plex_enabled': c['plex_enabled'], 'plex_cached': c['plex_cached'],
+                            'cached': True})
         movies_dir = get_movies_dir()
+        _library_status = 'Scanning directory\u2026'
+        total = sum(1 for _, _, fs in os.walk(movies_dir)
+                    for f in fs if os.path.splitext(f)[1].lower() in VIDEO_EXTENSIONS)
+        _library_status = f'Reading metadata for {total} files\u2026'
         items = []
+        n = 0
         for root, dirs, files in os.walk(movies_dir):
             for file in files:
                 ext = os.path.splitext(file)[1].lower()
                 if ext not in VIDEO_EXTENSIONS:
                     continue
+                n += 1
+                if n % 50 == 0:
+                    _library_status = f'Reading metadata\u2026 {n}\u00a0/\u00a0{total}'
                 full_path = os.path.join(root, file)
                 try:
                     size = os.path.getsize(full_path)
                 except OSError:
                     size = 0
-                res = get_resolution(file)
+                res = get_resolution_from_file(full_path)
                 rip = get_rip_source(file)
                 title_key = parse_movie_title(file)
                 if not title_key[0]:
@@ -534,7 +648,7 @@ def library():
                     'filename': file,
                     'path': full_path,
                     'resolution': res,
-                    'resolution_rank': get_resolution_rank(file),
+                    'resolution_rank': get_resolution_rank_str(res),
                     'rip_source': rip,
                     'rip_rank': get_rip_rank(rip),
                     'size': size,
@@ -544,7 +658,15 @@ def library():
                     'plex_genres': plex_data.get('plex_genres', []),
                     'plex_matched': bool(plex_data),
                 })
+        _library_status = 'Sorting results\u2026'
         items.sort(key=lambda x: x['title'])
+        _library_status = ''
+        _save_res_cache()
+        _library_cache['items'] = items
+        _library_cache['plex_enabled'] = bool(_plex_token)
+        _library_cache['plex_cached'] = len(_plex_cache) > 0
+        _library_cache['time'] = time.time()
+        _library_cache['dir'] = movies_dir
         return jsonify({'items': items, 'count': len(items),
                         'plex_enabled': bool(_plex_token), 'plex_cached': len(_plex_cache) > 0})
     except Exception as e:
@@ -569,8 +691,8 @@ def low_quality():
                     size = os.path.getsize(full_path)
                 except OSError:
                     size = 0
-                res = get_resolution(file)
-                res_rank = get_resolution_rank(file)
+                res = get_resolution_from_file(full_path)
+                res_rank = get_resolution_rank_str(res)
                 rip = get_rip_source(file)
                 rip_rank = get_rip_rank(rip)
                 title_key = parse_movie_title(file)
@@ -691,7 +813,7 @@ def library_stats():
                     size = os.path.getsize(full_path)
                 except OSError:
                     size = 0
-                res = get_resolution(file)
+                res = get_resolution_from_file(full_path)
                 rip = get_rip_source(file)
                 title_key = parse_movie_title(file)
                 if not title_key[0]:
@@ -816,7 +938,7 @@ def fix_unmatched():
                     continue
                 suggested_title = title_key[0].title()
                 suggested_year  = title_key[1]
-                orig_res = get_resolution(file)
+                orig_res = get_resolution_from_file(full_path)
                 orig_rip = get_rip_source(file)
                 quality_tag = ' '.join(t for t in [orig_res, orig_rip] if t and t != 'Unknown')
                 suggested_name = suggested_title + (f' ({suggested_year})' if suggested_year else '')
@@ -868,7 +990,7 @@ def rename_file():
 
     ext = os.path.splitext(abs_old)[1]
     orig_basename = os.path.basename(abs_old)
-    orig_res = get_resolution(orig_basename)
+    orig_res = get_resolution_from_file(abs_old)
     orig_rip = get_rip_source(orig_basename)
     quality_tag = ' '.join(t for t in [orig_res, orig_rip] if t and t != 'Unknown')
     new_filename = new_title + (f' ({new_year})' if new_year else '')

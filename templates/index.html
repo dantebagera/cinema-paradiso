@@ -244,10 +244,7 @@
     .lib-table thead th {
       position: sticky; top: 0; background: #1e1e1e; z-index: 1;
     }
-    #lib-tbody tr {
-      content-visibility: auto;
-      contain-intrinsic-block-size: 56px;
-    }
+    #lib-virt-spacer { pointer-events: none; }
     .lib-panel-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
     .lib-panel-header h2 { color: #74b9ff; font-size: 1.2rem; flex: 1; }
     .btn-lib-close { background: #333; border: none; color: #aaa; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; }
@@ -808,6 +805,7 @@
       </thead>
       <tbody id="lib-tbody"></tbody>
     </table>
+    <div id="lib-virt-spacer"></div>
     </div>
     <div class="panel-select-bar" id="lib-select-bar" style="margin-top:12px;margin-bottom:0">
       <span id="lib-sel-count">0 selected</span>
@@ -1806,26 +1804,39 @@
 
   // ── Library Browser ──────────────────────────────────────────────
   let libItems = [];
+  let _libVirtItems = [];       // filtered+sorted array currently displayed
+  let _libSelected  = new Set(); // selected file paths (survives virtual scroll)
+  const _LIB_ROW_H  = 48;       // estimated row height in px
+  const _LIB_OVER   = 10;       // rows to render above/below viewport
 
   async function openLibrary() {
     const btn = document.getElementById('lib-btn');
     btn.disabled = true;
     btn.textContent = 'Syncing Plex…';
     _plexLoadingStart('Loading library — syncing with Plex… this may take a moment');
+    // Poll the status endpoint so the user sees progress during long scans
+    const statusInterval = setInterval(async () => {
+      try {
+        const s = await fetch('/api/library/status');
+        const d = await s.json();
+        if (d.status) _plexLoadingStart(d.status);
+      } catch {}
+    }, 600);
     try {
       const res = await fetch('/api/library' + _plexQuery());
       const data = await res.json();
       if (data.error) { showToast(data.error, true); return; }
       libItems = data.items;
-      // Reflect server-side plex state
       if (data.plex_enabled) _plexSynced = true;
+      _libSelected.clear();
       populateLibFilters(libItems);
-      _doApplyLibFilters();
       _updatePlexSyncStatus();
       document.getElementById('lib-panel').classList.add('active');
+      _doApplyLibFilters();
     } catch (err) {
       showToast(err.message, true);
     } finally {
+      clearInterval(statusInterval);
       _plexLoadingStop();
       btn.disabled = false;
       btn.textContent = '📂 Library';
@@ -1876,7 +1887,8 @@
       filtered.length === libItems.length
         ? `${libItems.length} files`
         : `${filtered.length} of ${libItems.length} files`;
-    renderLibTable(filtered);
+    _libVirtItems = filtered;
+    _libVirtRender();
   }
 
   const _RIP_COLOR = { 'BD Remux':'#a29bfe','Remux':'#a29bfe','Blu-ray':'#74b9ff','BDRip':'#81ecec',
@@ -1884,38 +1896,55 @@
     'DVDRip':'#d63031','DVDScr':'#b2bec3','CAMRip':'#636e72','HDCAM':'#636e72','Unknown':'#636e72' };
   const _RES_COLOR = { '4K':'#a29bfe','1080p':'#74b9ff','720p':'#e5a00d','480p':'#e17055','Unknown':'#636e72' };
 
-  function renderLibTable(items) {
-    const RIP_COLOR = _RIP_COLOR;
-    const RES_COLOR = _RES_COLOR;
-    const tbody = document.getElementById('lib-tbody');
+  // ── Virtual scroll engine ─────────────────────────────────────────
+  let _libVirtStart = 0; // index of first rendered row
+
+  function _libVirtRender() {
+    const scroller = document.getElementById('lib-vscroll');
+    const spacer   = document.getElementById('lib-virt-spacer');
+    const tbody    = document.getElementById('lib-tbody');
+    const items    = _libVirtItems;
+
     if (items.length === 0) {
+      spacer.style.height = '0';
       tbody.innerHTML = '<tr><td colspan="7" class="lib-empty">No files match the current filters.</td></tr>';
       libUpdateSelBar();
       return;
     }
-    // Render in chunks to avoid blocking the UI thread
-    const CHUNK = 200;
-    if (items.length <= CHUNK) {
-      tbody.innerHTML = items.map(it => _libRow(it, RES_COLOR, RIP_COLOR)).join('');
-      libUpdateSelBar();
-      return;
-    }
-    tbody.innerHTML = '';
-    let i = 0;
-    function renderChunk() {
-      const frag = document.createDocumentFragment();
-      const end  = Math.min(i + CHUNK, items.length);
-      const tmp  = document.createElement('tbody');
-      tmp.innerHTML = items.slice(i, end).map(it => _libRow(it, RES_COLOR, RIP_COLOR)).join('');
-      while (tmp.firstChild) frag.appendChild(tmp.firstChild);
-      tbody.appendChild(frag);
-      i = end;
-      if (i < items.length) requestAnimationFrame(renderChunk);
-      else libUpdateSelBar();
-    }
-    requestAnimationFrame(renderChunk);
-    return; // libUpdateSelBar called after last chunk
+
+    const viewH     = scroller.clientHeight || 600;
+    const scrollTop = scroller.scrollTop;
+    const rowH      = _LIB_ROW_H;
+    const visible   = Math.ceil(viewH / rowH);
+    const start     = Math.max(0, Math.floor(scrollTop / rowH) - _LIB_OVER);
+    const end       = Math.min(items.length, start + visible + _LIB_OVER * 2);
+
+    _libVirtStart = start;
+
+    // Spacer fills the full virtual height so the scrollbar is correct
+    spacer.style.height = (items.length * rowH) + 'px';
+
+    const RES_COLOR = _RES_COLOR;
+    const RIP_COLOR = _RIP_COLOR;
+    const html = items.slice(start, end).map(it => _libRow(it, RES_COLOR, RIP_COLOR)).join('');
+    tbody.innerHTML = html;
+
+    // Offset tbody so rows appear at the right scroll position
+    tbody.style.transform = `translateY(${start * rowH}px)`;
+
+    // Restore checkbox state for visible rows
+    tbody.querySelectorAll('tr').forEach(tr => {
+      const cb = tr.querySelector('.lib-check');
+      if (cb) cb.checked = _libSelected.has(tr.dataset.path);
+    });
+
+    libUpdateSelBar();
   }
+
+  // Attach scroll listener once
+  document.getElementById('lib-vscroll').addEventListener('scroll', () => {
+    requestAnimationFrame(_libVirtRender);
+  }, { passive: true });
 
   function _libRow(it, RES_COLOR, RIP_COLOR) {
     const resCol = RES_COLOR[it.resolution] || '#636e72';
@@ -1931,8 +1960,8 @@
       plexCell = '<span class="plex-col-unmatched">⚠ No Plex data</span>';
     }
     return `<tr data-path="${it.path}" class="${rowClass}">
-      <td class="lib-check-col"><input type="checkbox" class="item-check lib-check" onchange="libUpdateSelBar()" /></td>
-      <td class="lib-title-cell">${it.title} <button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px" onclick="prowlarrSearch(${JSON.stringify(it.title)})">&#128270;</button></td>
+      <td class="lib-check-col"><input type="checkbox" class="item-check lib-check" onchange="_libToggleSel(this)" /></td>
+      <td class="lib-title-cell">${it.title} <button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px" onclick="prowlarrSearch(${JSON.stringify(it.title)})">&#128270; Search Prowlarr</button></td>
       <td><span class="res-badge" style="background:${resCol}22;color:${resCol};border:1px solid ${resCol}66">${it.resolution}</span></td>
       <td><span class="res-badge" style="background:${ripCol}22;color:${ripCol};border:1px solid ${ripCol}66">${it.rip_source}</span></td>
       <td class="lib-size-cell">${it.size_human}</td>
@@ -1941,25 +1970,30 @@
     </tr>`;
   }
 
-  function libUpdateSelBar() {
-    const checked = document.querySelectorAll('.lib-check:checked');
-    const bar = document.getElementById('lib-select-bar');
-    bar.classList.toggle('visible', checked.length > 0);
-    document.getElementById('lib-sel-count').textContent = checked.length + ' selected';
-    const allVis = document.querySelectorAll('.lib-check');
-    const allChk = document.getElementById('lib-check-all');
-    if (allChk) allChk.checked = allVis.length > 0 && checked.length === allVis.length;
-  }
-
-  function libSelectAll(state) {
-    document.querySelectorAll('.lib-check').forEach(c => c.checked = state);
+  function _libToggleSel(cb) {
+    const path = cb.closest('tr').dataset.path;
+    if (cb.checked) _libSelected.add(path); else _libSelected.delete(path);
     libUpdateSelBar();
   }
 
+  function libUpdateSelBar() {
+    const n   = _libSelected.size;
+    const bar = document.getElementById('lib-select-bar');
+    bar.classList.toggle('visible', n > 0);
+    document.getElementById('lib-sel-count').textContent = n + ' selected';
+    const allChk = document.getElementById('lib-check-all');
+    if (allChk) allChk.checked = _libVirtItems.length > 0 && n === _libVirtItems.length;
+  }
+
+  function libSelectAll(state) {
+    if (state) _libVirtItems.forEach(it => _libSelected.add(it.path));
+    else _libSelected.clear();
+    _libVirtRender();
+  }
+
   function libDeleteSelected() {
-    const checked = [...document.querySelectorAll('.lib-check:checked')];
-    if (!checked.length) return;
-    const paths = checked.map(c => c.closest('tr').dataset.path);
+    if (!_libSelected.size) return;
+    const paths = [..._libSelected];
     const trash = document.getElementById('trash-toggle').checked;
     document.getElementById('modal-mode-label').textContent = trash ? 'move to Recycle Bin' : 'permanently delete';
     document.getElementById('modal-path').textContent = paths.join('\n');
