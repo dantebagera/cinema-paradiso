@@ -781,6 +781,14 @@ def _plex_rescan():
             pass
 
 
+def _fmt_size(n):
+    for unit in ('B', 'KB', 'MB', 'GB'):
+        if n < 1024:
+            return f'{n:.0f} {unit}'
+        n /= 1024
+    return f'{n:.1f} TB'
+
+
 @app.route('/api/fix-unmatched')
 def fix_unmatched():
     try:
@@ -818,6 +826,8 @@ def fix_unmatched():
                     'suggested_name':  suggested_name,
                     'resolution': orig_res,
                     'rip_source': orig_rip,
+                    'file_size': _fmt_size(os.path.getsize(full_path)),
+                    'folder':    os.path.relpath(root, movies_dir),
                     'depth': rel_depth,
                     'fixable_path': rel_depth > 2,
                     'in_plex':    bool(plex_entry),
@@ -925,6 +935,17 @@ def fix_path():
     try:
         os.rename(abs_path, new_path)
         # Remove empty source folder (silently skip if not empty)
+        # Remove common junk files so rmdir can succeed
+        _JUNK = {'desktop.ini', 'thumbs.db', '.ds_store', 'folder.jpg', 'folder.png'}
+        try:
+            for f in os.listdir(parent):
+                if f.lower() in _JUNK:
+                    try:
+                        os.remove(os.path.join(parent, f))
+                    except OSError:
+                        pass
+        except OSError:
+            pass
         try:
             os.rmdir(parent)
         except OSError:

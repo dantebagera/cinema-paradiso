@@ -881,9 +881,9 @@
       <thead>
         <tr>
           <th><input type="checkbox" id="fix-check-all" onchange="fixSelectAll(this.checked)" /></th>
-          <th>Current Filename</th>
-          <th>Suggested Title &amp; Year</th>
-          <th>New Filename Preview</th>
+          <th>Filename &amp; Quality</th>
+          <th style="width:80px">Size</th>
+          <th>Folder</th>
           <th>Plex Status</th>
           <th>Actions</th>
         </tr>
@@ -892,6 +892,7 @@
     </table>
     <div class="fix-bar" id="fix-bar">
       <span id="fix-sel-count">0 selected</span>
+      <button id="fix-refresh-btn" class="btn-scan-plex" onclick="openFixUnmatched()" style="display:none">&#8635; Refresh List</button>
     </div>
   </div>
 </div>
@@ -2360,27 +2361,30 @@
     const tbody = document.getElementById('fix-tbody');
     document.getElementById('fix-count').textContent = items.length + ' files';
     if (items.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#555;padding:24px">No items match the current filter.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#555;padding:24px">No items match the current filter.</td></tr>';
       fixUpdateSelBar(); return;
     }
     tbody.innerHTML = items.map((it, i) => {
-      const qualTagDisplay = [it.resolution, it.rip_source].filter(t => t && t !== 'Unknown').join(' · ');
+      const qualTagDisplay = [it.resolution, it.rip_source].filter(t => t && t !== 'Unknown').join(' \u00b7 ');
       const qualBadge = qualTagDisplay ? `<br><span class="fix-qual-badge">${escHtml(qualTagDisplay)}</span>` : '';
-      const depthNote = it.fixable_path ? `<br><span style="color:#e17055;font-size:0.7rem">⚠ Folder too deep (level ${it.depth}) — Plex skips it</span>` : '';
+      const depthNote = it.fixable_path ? `<br><span style="color:#e17055;font-size:0.7rem">\u26a0 Folder too deep (level ${it.depth}) \u2014 Plex skips it</span>` : '';
       const statusBadge = it.in_plex
-        ? '<span class="badge-in-plex">🟡 In Plex (unmatched)</span>'
-        : '<span class="badge-not-plex">⚫ Not in Plex</span>';
+        ? '<span class="badge-in-plex">\ud83d\udfe1 In Plex (unmatched)</span>'
+        : '<span class="badge-not-plex">\u26ab Not in Plex</span>';
       let actionBtn = '';
       if (it.in_plex) {
-        actionBtn = `<button class="btn-fix-plex" onclick="openMatchModal(${i})">🎬 Match in Plex</button>`;
+        actionBtn = `<button class="btn-fix-plex" onclick="openMatchModal(${i})">\ud83c\udfac Match in Plex</button>`;
       } else if (it.fixable_path) {
-        actionBtn = `<button class="btn-fix-path" onclick="fixPath(${i})">📁 Fix Path</button>`;
+        actionBtn = `<button class="btn-fix-path" onclick="fixPath(${i})">\ud83d\udcc1 Fix Path</button>`;
       } else {
-        actionBtn = '<span class="fix-not-fixable">Use Scan Plex Library ↑</span>';
+        actionBtn = '<span class="fix-not-fixable">Use Scan Plex Library \u2191</span>';
       }
-      return `<tr id="fix-row-${i}" data-path="${escAttr(it.path)}" data-rating-key="${escAttr(it.rating_key)}" data-res="${escAttr(it.resolution||''  )}" data-rip="${escAttr(it.rip_source||''  )}">
+      const folderDisplay = it.folder === '.' ? '<em style="color:#555">root</em>' : escHtml(it.folder);
+      return `<tr id="fix-row-${i}" data-path="${escAttr(it.path)}" data-rating-key="${escAttr(it.rating_key)}" data-res="${escAttr(it.resolution||'')}" data-rip="${escAttr(it.rip_source||'')}">
         <td><input type="checkbox" class="fix-check" onchange="fixUpdateSelBar()" /></td>
         <td class="fix-file-cell" title="${escAttr(it.filename)}">${escHtml(it.filename)}${qualBadge}${depthNote}</td>
+        <td style="color:#888;font-size:0.8rem;white-space:nowrap">${escHtml(it.file_size||'')}</td>
+        <td style="color:#888;font-size:0.78rem;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${escAttr(it.folder||'')}">${folderDisplay}</td>
         <td>${statusBadge}</td>
         <td>${actionBtn}</td>
       </tr>`;
@@ -2463,18 +2467,26 @@
         document.getElementById('match-results').innerHTML = '<div style="color:#888;font-size:0.85rem">No results found. Try a different title or year.</div>';
         return;
       }
-      document.getElementById('match-results').innerHTML = data.results.map(r => `
+      _matchResultsList = data.results;
+      document.getElementById('match-results').innerHTML = data.results.map((r, ri) => `
         <div class="match-result">
           <div class="match-result-info">
             <div class="match-result-title">${escHtml(r.name)}</div>
-            <div class="match-result-year">${r.year || '—'}</div>
+            <div class="match-result-year">${r.year || '\u2014'}</div>
           </div>
           <span class="match-score">Score: ${r.score}</span>
-          <button class="btn-apply-match" onclick="applyMatch(${JSON.stringify(r.guid)}, ${JSON.stringify(r.name)})">Apply</button>
+          <button class="btn-apply-match" onclick="applyMatchIdx(${ri})">Apply</button>
         </div>`).join('');
     } catch (e) {
       document.getElementById('match-results').innerHTML = '<div style="color:#e74c3c">' + escHtml(e.message) + '</div>';
     }
+  }
+
+  let _matchResultsList = [];
+
+  function applyMatchIdx(ri) {
+    const r = _matchResultsList[ri];
+    if (r) applyMatch(r.guid, r.name);
   }
 
   async function applyMatch(guid, name) {
@@ -2494,7 +2506,7 @@
       // Update status badge in the row
       const row = document.getElementById('fix-row-' + rowIdx);
       if (row) {
-        const td = row.cells[2];
+        const td = row.cells[4];
         if (td) td.innerHTML = '<span class="badge-fixed">\u2713 Plex matched \u2014 refreshing</span>';
         row.classList.add('fix-done');
         row.querySelectorAll('button').forEach(b => b.disabled = true);
