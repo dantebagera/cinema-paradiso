@@ -909,6 +909,7 @@
     <div class="fix-bar" id="fix-bar">
       <span id="fix-sel-count">0 selected</span>
       <button id="fix-delete-btn" class="btn-sel-delete" onclick="fixDeleteSelected()" style="display:none">🗑 Delete Selected</button>
+      <button id="fix-all-paths-btn" class="btn-scan-plex" onclick="fixAllPaths()" style="display:none">&#128194; Fix All Paths</button>
       <button id="fix-refresh-btn" class="btn-scan-plex" onclick="openFixUnmatched()" style="display:none">&#8635; Refresh List</button>
     </div>
   </div>
@@ -2405,6 +2406,8 @@
       document.getElementById('fix-search').value = '';
       document.getElementById('fix-filter-plex').value = '';
       renderFixPanel(fixItems);
+      document.getElementById('fix-all-paths-btn').style.display =
+        fixItems.some(it => it.fixable_path) ? '' : 'none';
       document.getElementById('fix-panel').classList.add('active');
     } catch (err) {
       showToast(err.message, true);
@@ -2533,6 +2536,30 @@
   function fixSelectAll(state) {
     document.querySelectorAll('.fix-check').forEach(c => c.checked = state);
     fixUpdateSelBar();
+  }
+
+  async function fixAllPaths() {
+    const fixable = fixItems.filter(it => it.fixable_path);
+    if (fixable.length === 0) { showToast('No fixable paths found.'); return; }
+    const btn = document.getElementById('fix-all-paths-btn');
+    btn.disabled = true; btn.textContent = 'Fixing… 0 / ' + fixable.length;
+    let done = 0, failed = 0;
+    for (const it of fixable) {
+      try {
+        const res = await fetch('/api/fix-path', {
+          method: 'POST', headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ path: it.path })
+        });
+        const d = await res.json();
+        if (d.error) { failed++; }
+        else { done++; }
+      } catch (e) { failed++; }
+      btn.textContent = `Fixing… ${done + failed} / ${fixable.length}`;
+    }
+    btn.disabled = false; btn.textContent = '&#128194; Fix All Paths';
+    const msg = `Fixed ${done} file${done !== 1 ? 's' : ''}` + (failed ? ` (${failed} failed)` : '') + ' — Plex rescan triggered. Refresh to see results.';
+    showToast(msg);
+    document.getElementById('fix-refresh-btn').style.display = '';
   }
 
   async function fixPath(rowIdx) {

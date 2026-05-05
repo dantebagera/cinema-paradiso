@@ -6,7 +6,7 @@ A local web application for managing, cleaning, and organizing a large Plex movi
 
 Built with Python + Flask. Designed for libraries with thousands of files — tested with 10,000+ movies.
 
-**Current version: v1.15** — May 2026
+**Current version: v1.16** — May 2026
 
 ---
 
@@ -51,6 +51,25 @@ Built with Python + Flask. Designed for libraries with thousands of files — te
 - Anyone who wants to **fix Plex metadata mismatches** without editing files or folder names manually
 
 > **Related searches:** Plex movie library cleaner · Plex duplicate finder alternative · fix Plex unmatched movies · bulk delete Plex duplicates · Plex library organizer tool · movie folder cleanup Windows · how to remove duplicate movies from Plex · Plex 720p movie list · find low quality movies in Plex · Plex unmatched files fixer · local movie database manager · self-hosted media library tool
+
+---
+
+## What's New in v1.16
+
+### Plex-Metadata Duplicate Detection
+The Duplicate Scanner now groups files by their **Plex-resolved title and year** (from TMDB/TVDB) instead of filename parsing. Files that Plex identifies as the same movie are now detected as duplicates even when their filenames look completely different.
+
+### Plex Bulk Mis-match Guard
+If Plex has incorrectly tagged an entire folder as the same movie (e.g. 20 Studio Ghibli films all mis-labeled as one title), the app automatically detects the bulk mis-match (any Plex group with more than 4 files) and falls back to filename-based grouping for those files instead.
+
+### Fix Path — Whole Folder Move
+The **Fix Path** button now moves the entire containing folder one level up (e.g. `Others\Batman (2010)\Batman.mkv` → `Cartoon\Batman (2010)\Batman.mkv`) instead of just the file. This preserves the folder name that Plex uses as its metadata hint, so Plex re-matches the movie correctly after the move instead of losing the match.
+
+### Fix Path — Deeper Threshold
+The Fix Path button now appears for files at depth 2 as well as depth 3+, allowing a second-pass move all the way to depth 1 where Plex reliably finds files.
+
+### Fix All Paths Button
+A **📁 Fix All Paths** button in the Unmatched panel runs Fix Path on every eligible file in one click, with live progress (`Fixing… 3 / 12`) and a summary toast on completion.
 
 ---
 

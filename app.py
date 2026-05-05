@@ -240,7 +240,14 @@ def format_size(size):
 
 
 def scan_duplicates(movies_dir):
-    groups = {}
+    # If Plex assigns more than this many files to the same title+year it has
+    # almost certainly bulk-mis-matched them (e.g. whole folder → one wrong film).
+    # Fall back to filename parsing for those files.
+    MAX_PLEX_GROUP = 4
+
+    groups     = {}   # title_key -> [file_dict, ...]
+    plex_keyed = set()  # title keys that came from Plex metadata
+
     for root, dirs, files in os.walk(movies_dir):
         for file in files:
             ext = os.path.splitext(file)[1].lower()
@@ -251,7 +258,14 @@ def scan_duplicates(movies_dir):
                 size = os.path.getsize(full_path)
             except OSError:
                 size = 0
-            title_key = parse_movie_title(file)
+            # Prefer Plex metadata title/year — matches exactly what Plex considers a duplicate.
+            # Fall back to filename parsing for files not yet in Plex.
+            plex_data = _plex_cache.get(_norm(full_path), {})
+            if plex_data.get('plex_title'):
+                title_key = (plex_data['plex_title'].strip().lower(), str(plex_data.get('plex_year', '')))
+                plex_keyed.add(title_key)
+            else:
+                title_key = parse_movie_title(file)
             if not title_key[0]:
                 continue
             res = get_resolution_from_file(full_path)
@@ -264,6 +278,15 @@ def scan_duplicates(movies_dir):
                 'resolution_rank': get_resolution_rank_str(res),
                 'rip_source': get_rip_source(file),
             })
+
+    # Detect Plex bulk mis-matches: a Plex-derived group with > MAX_PLEX_GROUP files
+    # means Plex tagged an entire folder as the same movie (wrong). Re-bucket those
+    # files by filename so they appear as individual titles instead.
+    for bad_key in [k for k in plex_keyed if len(groups.get(k, [])) > MAX_PLEX_GROUP]:
+        for entry in groups.pop(bad_key):
+            fallback_key = parse_movie_title(entry['filename'])
+            if fallback_key[0]:
+                groups.setdefault(fallback_key, []).append(entry)
 
     duplicates = []
     total_wasted = 0
@@ -971,7 +994,7 @@ def fix_unmatched():
                     'file_size': _fmt_size(os.path.getsize(full_path)),
                     'folder':    root,
                     'depth': rel_depth,
-                    'fixable_path': rel_depth > 2,
+                    'fixable_path': rel_depth > 1,
                     'in_plex':    bool(plex_entry),
                     'rating_key': plex_entry.get('rating_key', ''),
                     'plex_title': plex_entry.get('plex_title', ''),
@@ -1045,7 +1068,9 @@ def plex_force_scan():
 
 @app.route('/api/fix-path', methods=['POST'])
 def fix_path():
-    """Move a file one directory level up so Plex can find it.
+    """Move a file (or its containing folder) one directory level up so Plex can find it.
+    When the parent folder contains only this one video file, the whole folder is moved
+    so Plex retains the folder-name metadata hint (e.g. 'Batman (2010)') after the move.
     Only allowed on files that are NOT already in Plex's matched cache."""
     data = request.get_json(silent=True)
     if not data or 'path' not in data:
@@ -1065,37 +1090,61 @@ def fix_path():
 
     parent      = os.path.dirname(abs_path)
     grandparent = os.path.dirname(parent)
-    if os.path.normpath(grandparent) == os.path.normpath(abs_dir) or \
-       grandparent.startswith(abs_dir):
-        new_path = os.path.join(grandparent, os.path.basename(abs_path))
-    else:
+
+    # Grandparent must still be inside (or equal to) the movies root
+    if not (os.path.normpath(grandparent) == os.path.normpath(abs_dir) or
+            os.path.normpath(grandparent).startswith(os.path.normpath(abs_dir) + os.sep)):
         return jsonify({'error': 'Cannot move file — destination would be outside library'}), 400
 
-    if os.path.exists(new_path):
-        return jsonify({'error': f'A file named "{os.path.basename(abs_path)}" already exists in the destination folder'}), 409
+    # Decide: move entire folder or just the file?
+    # Count video files in parent to decide.
+    _JUNK = {'desktop.ini', 'thumbs.db', '.ds_store', 'folder.jpg', 'folder.png'}
+    try:
+        sibling_videos = [
+            f for f in os.listdir(parent)
+            if os.path.splitext(f)[1].lower() in VIDEO_EXTENSIONS
+        ]
+    except OSError:
+        sibling_videos = [os.path.basename(abs_path)]
 
     try:
-        os.rename(abs_path, new_path)
-        # Remove empty source folder (silently skip if not empty)
-        # Remove common junk files so rmdir can succeed
-        _JUNK = {'desktop.ini', 'thumbs.db', '.ds_store', 'folder.jpg', 'folder.png'}
-        try:
-            for f in os.listdir(parent):
-                if f.lower() in _JUNK:
-                    try:
-                        os.remove(os.path.join(parent, f))
-                    except OSError:
-                        pass
-        except OSError:
-            pass
-        try:
-            os.rmdir(parent)
-        except OSError:
-            pass
-        # Remove from caches
-        _plex_cache.pop(norm, None)
-        _plex_unmatched.pop(norm, None)
-        # Ask Plex to rescan
+        if len(sibling_videos) == 1:
+            # ── Whole-folder move ────────────────────────────────────────────
+            # Preserves the folder name (e.g. "Batman (2010)") so Plex can
+            # re-match using the same folder hint after the move.
+            parent_name = os.path.basename(parent)
+            dest_folder = os.path.join(grandparent, parent_name)
+            if os.path.exists(dest_folder):
+                return jsonify({'error': f'A folder named "{parent_name}" already exists in the destination'}), 409
+            os.rename(parent, dest_folder)
+            new_path = os.path.join(dest_folder, os.path.basename(abs_path))
+            # Update cache keys: old path -> new path
+            _plex_cache.pop(norm, None)
+            _plex_unmatched.pop(norm, None)
+        else:
+            # ── File-only move (multiple videos in same folder) ───────────────
+            new_path = os.path.join(grandparent, os.path.basename(abs_path))
+            if os.path.exists(new_path):
+                return jsonify({'error': f'A file named "{os.path.basename(abs_path)}" already exists in the destination folder'}), 409
+            os.rename(abs_path, new_path)
+            # Try to clean up junk and remove folder if now empty
+            try:
+                for f in os.listdir(parent):
+                    if f.lower() in _JUNK:
+                        try:
+                            os.remove(os.path.join(parent, f))
+                        except OSError:
+                            pass
+            except OSError:
+                pass
+            try:
+                os.rmdir(parent)
+            except OSError:
+                pass
+            _plex_cache.pop(norm, None)
+            _plex_unmatched.pop(norm, None)
+
+        # Ask Plex to rescan so it picks up the new location
         _plex_rescan()
         return jsonify({'success': True, 'new_path': new_path})
     except OSError as e:

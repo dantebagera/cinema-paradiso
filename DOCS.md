@@ -3,11 +3,30 @@
 > A local web application for managing, cleaning, and enriching a Plex movie library.  
 > Runs entirely on your own machine — no cloud, no accounts, no internet required (except for Prowlarr search).
 
-**Version 1.15** — May 2026
+**Version 1.16** — May 2026
 
 ---
 
 ## Changelog
+
+### v1.16 (May 2026)
+
+#### Plex-Metadata Duplicate Detection
+The Duplicate Scanner now uses `_plex_cache` title/year as the grouping key when available. Files matched by Plex to the same TMDB/TVDB entry are grouped as duplicates regardless of their filename. Files not in Plex still fall back to `parse_movie_title()` filename parsing.
+
+#### Plex Bulk Mis-match Guard
+`MAX_PLEX_GROUP = 4` constant added to `scan_duplicates()`. After building groups, any Plex-derived group with more than 4 entries is considered a bulk mis-match (Plex tagged a whole folder as one movie). Those files are re-bucketed by filename parsing. Legitimate duplicate pairs (2–4 copies) are unaffected.
+
+#### Fix Path — Whole Folder Move
+`fix_path()` now counts video files in the parent folder before moving. If the parent contains only one video file, the **entire folder** is moved one level up (`os.rename(parent, dest_folder)`) so the folder name (e.g. `Batman (2010)`) is preserved. Plex uses the folder name as a metadata hint, so it re-matches cleanly after rescan. If the parent contains multiple video files, the original file-only move is used as a fallback.
+
+#### Fix Path — Depth Threshold
+Changed `fixable_path: rel_depth > 2` to `rel_depth > 1`. Files at depth 2 (one subfolder under the movies root) now also show the Fix Path button.
+
+#### Fix All Paths Button
+Added `fixAllPaths()` JS function and `#fix-all-paths-btn` button to the Unmatched panel toolbar. The button is shown automatically when `fixItems.some(it => it.fixable_path)`. Iterates all fixable items sequentially, updates button text with live progress, shows a summary toast, and auto-shows the Refresh button on completion.
+
+---
 
 ### v1.15 (May 2026)
 
