@@ -661,6 +661,30 @@
     .match-score { color:#666; font-size:0.75rem; margin-right:8px; }
     .btn-apply-match { background:#a29bfe22; color:#a29bfe; border:1px solid #a29bfe55; border-radius:5px; padding:4px 12px; font-size:0.8rem; cursor:pointer; }
     .btn-apply-match:hover { background:#a29bfe; color:#141414; }
+
+    /* ── Plex loading bar ── */
+    #plex-loading-bar {
+      display: none; position: sticky; top: 0; z-index: 190;
+      background: linear-gradient(90deg, #00cec9 0%, #0984e3 100%);
+      color: #fff; font-size: 0.82rem; font-weight: 600;
+      padding: 7px 20px; text-align: center; letter-spacing: 0.03em;
+    }
+    #plex-loading-bar.visible { display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .plex-bar-spinner {
+      width: 14px; height: 14px; border: 2px solid #ffffff66;
+      border-top-color: #fff; border-radius: 50%;
+      animation: spin 0.75s linear infinite; flex-shrink: 0;
+    }
+    /* Always-sync toggle in header */
+    .always-sync-wrap {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; color: #666; white-space: nowrap;
+      cursor: pointer; padding: 4px 8px;
+      border: 1px solid #2a2a2a; border-radius: 6px;
+    }
+    .always-sync-wrap:hover { color: #00cec9; border-color: #00cec944; }
+    .always-sync-wrap input[type=checkbox] { accent-color: #00cec9; cursor: pointer; width: 14px; height: 14px; }
+    .always-sync-wrap.active { color: #00cec9; border-color: #00cec966; background: #00cec911; }
   </style>
 </head>
 <body>
@@ -678,10 +702,19 @@
     <button id="lib-btn" onclick="openLibrary()">📂 Library</button>
     <button id="dash-btn" onclick="openDashboard()">📊 Dashboard</button>
     <button id="plex-btn" onclick="openPlexCfg()">🎬 Plex</button>
+    <label class="always-sync-wrap" id="always-sync-wrap" title="Bypass 5-min cache — always fetch fresh data from Plex when opening a panel">
+      <input type="checkbox" id="always-sync-chk" onchange="toggleAlwaysSync(this)" />
+      Always sync Plex
+    </label>
     <button id="fix-btn" onclick="openFixUnmatched()">🔧 Fix Unmatched</button>
     <button id="prowlarr-btn" onclick="openProwlarrCfg()" title="Configure Prowlarr">⚙ Prowlarr</button>
   </div>
 </header>
+
+<div id="plex-loading-bar">
+  <div class="plex-bar-spinner"></div>
+  <span id="plex-loading-msg">Syncing with Plex… this may take a moment</span>
+</div>
 
 <div id="stats-bar">
   <div class="stat-item"><span class="stat-value" id="stat-groups">0</span><span class="stat-label">Duplicate Groups</span></div>
@@ -1017,11 +1050,12 @@
     document.getElementById('search-wrap').classList.remove('visible');
     document.getElementById('smart-btn').style.display = 'none';
     results.innerHTML = '';
-    statusBar.innerHTML = '<div class="spinner"></div><br>Scanning your movies folder, please wait...';
+    statusBar.innerHTML = '<div class="spinner"></div><br>Scanning your movies folder, please wait…';
     statusBar.style.display = 'block';
+    _plexLoadingStart('Scanning duplicates — syncing with Plex… this may take a moment');
 
     try {
-      const res = await fetch('/api/duplicates');
+      const res = await fetch('/api/duplicates' + _plexQuery());
       const data = await res.json();
       if (data.error) throw new Error(data.error);
 
@@ -1049,6 +1083,7 @@
     } catch (err) {
       statusBar.innerHTML = '<span style="color:#e74c3c">Error: ' + err.message + '</span>';
     } finally {
+      _plexLoadingStop();
       btn.disabled = false;
       btn.textContent = 'Re-Scan';
     }
@@ -1242,13 +1277,16 @@
     // Destroy previous chart instances
     Object.values(_dashCharts).forEach(c => c.destroy());
     _dashCharts = {};
+    _plexLoadingStart('Loading dashboard — syncing with Plex… this may take a moment');
     try {
-      const r = await fetch('/api/stats');
+      const r = await fetch('/api/stats' + _plexQuery());
       const d = await r.json();
       if (d.error) { body.innerHTML = `<div class="dash-loading" style="color:#e74c3c">${d.error}</div>`; return; }
       renderDashboard(d);
     } catch (e) {
       body.innerHTML = `<div class="dash-loading" style="color:#e74c3c">${e.message}</div>`;
+    } finally {
+      _plexLoadingStop();
     }
   }
 
@@ -1569,9 +1607,10 @@
   async function openLowQuality() {
     const btn = document.getElementById('lq-btn');
     btn.disabled = true;
-    btn.textContent = 'Scanning...';
+    btn.textContent = 'Syncing Plex…';
+    _plexLoadingStart('Loading low quality list — syncing with Plex… this may take a moment');
     try {
-      const res = await fetch('/api/low-quality');
+      const res = await fetch('/api/low-quality' + _plexQuery());
       const data = await res.json();
       if (data.error) { showToast(data.error, true); return; }
       lqItems = data.items;
@@ -1582,6 +1621,7 @@
     } catch (err) {
       showToast(err.message, true);
     } finally {
+      _plexLoadingStop();
       btn.disabled = false;
       btn.textContent = '🔍 Low Quality';
     }
@@ -1714,9 +1754,10 @@
   async function openLibrary() {
     const btn = document.getElementById('lib-btn');
     btn.disabled = true;
-    btn.textContent = 'Loading...';
+    btn.textContent = 'Syncing Plex…';
+    _plexLoadingStart('Loading library — syncing with Plex… this may take a moment');
     try {
-      const res = await fetch('/api/library');
+      const res = await fetch('/api/library' + _plexQuery());
       const data = await res.json();
       if (data.error) { showToast(data.error, true); return; }
       libItems = data.items;
@@ -1729,6 +1770,7 @@
     } catch (err) {
       showToast(err.message, true);
     } finally {
+      _plexLoadingStop();
       btn.disabled = false;
       btn.textContent = '📂 Library';
     }
@@ -1851,6 +1893,28 @@
 
   // ── Plex Integration ──────────────────────────────────────────────
   let _plexSynced = false;
+  let _alwaysSyncPlex = false;
+
+  function toggleAlwaysSync(chk) {
+    _alwaysSyncPlex = chk.checked;
+    document.getElementById('always-sync-wrap').classList.toggle('active', _alwaysSyncPlex);
+  }
+
+  function _plexQuery() {
+    return _alwaysSyncPlex ? '?force_plex=1' : '';
+  }
+
+  function _plexLoadingStart(msg) {
+    const bar = document.getElementById('plex-loading-bar');
+    const msgEl = document.getElementById('plex-loading-msg');
+    if (msgEl) msgEl.textContent = msg || 'Syncing with Plex\u2026 this may take a moment';
+    if (bar) bar.classList.add('visible');
+  }
+
+  function _plexLoadingStop() {
+    const bar = document.getElementById('plex-loading-bar');
+    if (bar) bar.classList.remove('visible');
+  }
 
   function _updatePlexSyncStatus() {
     const el = document.getElementById('plex-sync-status');
@@ -2149,9 +2213,10 @@
 
   async function openFixUnmatched() {
     const btn = document.getElementById('fix-btn');
-    btn.disabled = true; btn.textContent = 'Loading...';
+    btn.disabled = true; btn.textContent = 'Syncing Plex…';
+    _plexLoadingStart('Loading unmatched files — syncing with Plex… this may take a moment');
     try {
-      const res = await fetch('/api/fix-unmatched');
+      const res = await fetch('/api/fix-unmatched' + _plexQuery());
       const data = await res.json();
       if (data.error) { showToast(data.error, true); return; }
       fixItems = data.items;
@@ -2166,7 +2231,8 @@
     } catch (err) {
       showToast(err.message, true);
     } finally {
-      btn.disabled = false; btn.textContent = '\ud83d\udd27 Fix Unmatched';
+      _plexLoadingStop();
+      btn.disabled = false; btn.textContent = '🔧 Fix Unmatched';
     }
   }
 

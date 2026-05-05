@@ -199,12 +199,13 @@ def scan_duplicates(movies_dir):
     return duplicates, stats
 
 
-def _auto_sync_plex():
-    """Refresh _plex_cache if Plex is configured and cache is stale (>5 min). Silent on errors."""
+def _auto_sync_plex(force=False):
+    """Refresh _plex_cache if Plex is configured and cache is stale (>5 min). Silent on errors.
+    Pass force=True to bypass the TTL and always fetch fresh data."""
     global _plex_cache, _plex_unmatched, _plex_section_ids, _plex_cache_time
     if not _plex_url or not _plex_token:
         return
-    if time.time() - _plex_cache_time < _PLEX_TTL:
+    if not force and time.time() - _plex_cache_time < _PLEX_TTL:
         return  # cache is still fresh
     try:
         _plex_cache, _plex_unmatched, _plex_section_ids = _fetch_plex_library()
@@ -430,7 +431,7 @@ def prowlarr_search():
 @app.route('/api/duplicates')
 def get_duplicates():
     try:
-        _auto_sync_plex()
+        _auto_sync_plex(force=request.args.get('force_plex') == '1')
         duplicates, stats = scan_duplicates(get_movies_dir())
         for group in duplicates:
             for f in group['files']:
@@ -500,7 +501,7 @@ def delete_file():
 @app.route('/api/library')
 def library():
     try:
-        _auto_sync_plex()
+        _auto_sync_plex(force=request.args.get('force_plex') == '1')
         movies_dir = get_movies_dir()
         items = []
         for root, dirs, files in os.walk(movies_dir):
@@ -548,7 +549,7 @@ def low_quality():
     # Low quality = anything below 1080p (720p, 480p, Unknown resolution)
     MIN_RES_RANK = 3   # 1080p — only files BELOW this rank are flagged
     try:
-        _auto_sync_plex()
+        _auto_sync_plex(force=request.args.get('force_plex') == '1')
         movies_dir = get_movies_dir()
         items = []
         for root, dirs, files in os.walk(movies_dir):
@@ -664,7 +665,7 @@ def smart_scan():
 @app.route('/api/stats')
 def library_stats():
     try:
-        _auto_sync_plex()
+        _auto_sync_plex(force=request.args.get('force_plex') == '1')
         movies_dir = get_movies_dir()
         all_files = []
         title_set = set()
@@ -783,7 +784,7 @@ def _plex_rescan():
 @app.route('/api/fix-unmatched')
 def fix_unmatched():
     try:
-        _auto_sync_plex()
+        _auto_sync_plex(force=request.args.get('force_plex') == '1')
         movies_dir = get_movies_dir()
         items = []
         for root, dirs, files in os.walk(movies_dir):
