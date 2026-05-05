@@ -542,6 +542,19 @@ def get_duplicates():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/open-file', methods=['POST'])
+def open_file():
+    data = request.get_json(silent=True)
+    path = (data or {}).get('path', '').strip()
+    if not path or not os.path.isfile(path):
+        return jsonify({'error': 'File not found'}), 404
+    try:
+        os.startfile(path)
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/api/delete', methods=['POST'])
 def delete_file():
     global _movies_dir

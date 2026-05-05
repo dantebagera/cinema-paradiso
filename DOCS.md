@@ -3,11 +3,27 @@
 > A local web application for managing, cleaning, and enriching a Plex movie library.  
 > Runs entirely on your own machine — no cloud, no accounts, no internet required (except for Prowlarr search).
 
-**Version 1.11** — May 2026
+**Version 1.15** — May 2026
 
 ---
 
 ## Changelog
+
+### v1.15 (May 2026)
+
+#### Color-Coded Welcome Page
+The home screen now displays one line per panel button, each button name rendered in its exact matching nav-bar color (`#e5a00d` amber for Scan/Low Quality, `#74b9ff` blue for Library, `#fd79a8` pink for Dashboard, `#a29bfe` purple for Unmatched, `#636e72` grey for Settings). Descriptions are hidden automatically when a scan begins.
+
+#### Play Button in All Panels
+A green **▶ Play** button is now shown on every file row in the Duplicates, Low Quality, Library, and Unmatched panels. Clicking it POSTs `{path}` to the new `/api/open-file` route, which calls `os.startfile()` to open the file in the OS default video player. If the file is not found, a toast error is shown.
+
+#### Manual Rename in Unmatched Panel
+Each row in the Unmatched panel now has a purple **✎ Rename** button (`.btn-fix-rename` CSS class). Clicking it opens the `#rename-modal` pre-filled with `suggested_title` and `suggested_year` from the scan data. On confirm, POSTs `{path, title, year}` to the existing `/api/rename-file` route. The server appends quality tags (resolution, rip source), strips invalid Windows filename characters, renames the file, and triggers a Plex rescan. The Unmatched panel refreshes automatically on success.
+
+#### Low Quality Panel Centering Fix
+The `#lq-panel` CSS block was missing its selector line, causing the Low Quality panel to render left-aligned. The `#lq-panel {` selector has been restored so the panel is correctly centered on screen.
+
+---
 
 ### v1.11 (May 2026)
 

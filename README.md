@@ -6,7 +6,7 @@ A local web application for managing, cleaning, and organizing a large Plex movi
 
 Built with Python + Flask. Designed for libraries with thousands of files — tested with 10,000+ movies.
 
-**Current version: v1.11** — May 2026
+**Current version: v1.15** — May 2026
 
 ---
 
@@ -51,6 +51,22 @@ Built with Python + Flask. Designed for libraries with thousands of files — te
 - Anyone who wants to **fix Plex metadata mismatches** without editing files or folder names manually
 
 > **Related searches:** Plex movie library cleaner · Plex duplicate finder alternative · fix Plex unmatched movies · bulk delete Plex duplicates · Plex library organizer tool · movie folder cleanup Windows · how to remove duplicate movies from Plex · Plex 720p movie list · find low quality movies in Plex · Plex unmatched files fixer · local movie database manager · self-hosted media library tool
+
+---
+
+## What's New in v1.15
+
+### Color-Coded Welcome Page
+The home screen now shows a description for every panel button, each label styled in its exact matching nav-bar color — so new users immediately understand what each button does without opening anything.
+
+### Play Button in All Panels
+Every file row in the **Duplicates**, **Low Quality**, **Library**, and **Unmatched** panels now has a green **▶ Play** button. Clicking it opens the file in the system default video player (VLC, MPC-HC, etc.) via the new `/api/open-file` route.
+
+### Manual Rename in Unmatched Panel
+Each row in the Unmatched panel now has a purple **✎ Rename** button. Clicking it opens a modal pre-filled with the detected title and year. After editing, the file is renamed on disk — quality tags (resolution, rip source) are appended automatically. The panel refreshes instantly on success.
+
+### Low Quality Panel Centering Fix
+Fixed a missing CSS selector (`#lq-panel`) that caused the Low Quality panel to sit left-aligned instead of centered. The panel is now correctly centered on screen.
 
 ---
 
