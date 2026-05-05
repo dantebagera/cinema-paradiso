@@ -801,7 +801,13 @@ def fix_unmatched():
                     continue
                 suggested_title = title_key[0].title()
                 suggested_year  = title_key[1]
-                suggested_name  = suggested_title + (f' ({suggested_year})' if suggested_year else '') + ext
+                orig_res = get_resolution(file)
+                orig_rip = get_rip_source(file)
+                quality_tag = ' '.join(t for t in [orig_res, orig_rip] if t and t != 'Unknown')
+                suggested_name = suggested_title + (f' ({suggested_year})' if suggested_year else '')
+                if quality_tag:
+                    suggested_name += f' [{quality_tag}]'
+                suggested_name += ext
                 plex_entry = _plex_unmatched.get(norm_path, {})
                 items.append({
                     'filename': file,
@@ -809,6 +815,8 @@ def fix_unmatched():
                     'suggested_title': suggested_title,
                     'suggested_year':  suggested_year,
                     'suggested_name':  suggested_name,
+                    'resolution': orig_res,
+                    'rip_source': orig_rip,
                     'in_plex':    bool(plex_entry),
                     'rating_key': plex_entry.get('rating_key', ''),
                     'plex_title': plex_entry.get('plex_title', ''),
@@ -839,7 +847,14 @@ def rename_file():
         return jsonify({'error': 'File not found'}), 404
 
     ext = os.path.splitext(abs_old)[1]
-    new_filename = new_title + (f' ({new_year})' if new_year else '') + ext
+    orig_basename = os.path.basename(abs_old)
+    orig_res = get_resolution(orig_basename)
+    orig_rip = get_rip_source(orig_basename)
+    quality_tag = ' '.join(t for t in [orig_res, orig_rip] if t and t != 'Unknown')
+    new_filename = new_title + (f' ({new_year})' if new_year else '')
+    if quality_tag:
+        new_filename += f' [{quality_tag}]'
+    new_filename += ext
     # Strip characters not allowed in Windows filenames
     new_filename = re.sub(r'[<>:"/\\|?*]', '', new_filename).strip()
     new_path = os.path.join(os.path.dirname(abs_old), new_filename)
@@ -857,6 +872,19 @@ def rename_file():
         _plex_rescan()
         return jsonify({'success': True, 'new_path': new_path, 'new_filename': new_filename})
     except OSError as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/plex/force-scan', methods=['POST'])
+def plex_force_scan():
+    global _plex_cache_time
+    if not _plex_url or not _plex_token:
+        return jsonify({'error': 'Plex not configured'}), 400
+    try:
+        _plex_rescan()
+        _plex_cache_time = 0.0  # Force full re-sync on next request
+        return jsonify({'success': True})
+    except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 

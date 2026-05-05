@@ -688,6 +688,11 @@
     .match-score { color:#666; font-size:0.75rem; margin-right:8px; }
     .btn-apply-match { background:#a29bfe22; color:#a29bfe; border:1px solid #a29bfe55; border-radius:5px; padding:4px 12px; font-size:0.8rem; cursor:pointer; }
     .btn-apply-match:hover { background:#a29bfe; color:#141414; }
+    .btn-scan-plex { background:#0984e322; color:#74b9ff; border:1px solid #0984e355; border-radius:6px; padding:7px 14px; font-size:0.82rem; cursor:pointer; }
+    .btn-scan-plex:hover { background:#0984e3; color:#fff; }
+    .btn-scan-plex:disabled { opacity:0.5; cursor:not-allowed; }
+    .fix-qual-badge { display:inline-block; background:#25252566; color:#666; border:1px solid #2a2a2a; border-radius:3px; padding:1px 5px; font-size:0.68rem; margin-top:2px; }
+    .fix-workflow-tip { margin-bottom:14px; padding:10px 14px; background:#191919; border-radius:7px; border:1px solid #2a2a2a; font-size:0.8rem; line-height:1.7; color:#777; }
 
     /* ── Plex loading bar ── */
     #plex-loading-bar {
@@ -858,9 +863,11 @@
     <div class="fix-panel-header">
       <h2>🔧 Fix Unmatched Files</h2>
       <span id="fix-count" class="lib-count"></span>
+      <button id="fix-scan-btn" class="btn-scan-plex" onclick="doForceScan()" style="display:none">🔄 Scan Plex Library</button>
       <button class="btn-lib-close" onclick="closeFixPanel()">Close</button>
     </div>
     <div id="fix-summary" class="fix-summary"></div>
+    <div id="fix-workflow-tip" class="fix-workflow-tip" style="display:none"></div>
     <div class="fix-filters">
       <input type="text" id="fix-search" placeholder="Search by filename or title..." oninput="applyFixSearch()" />
       <label style="margin-left:8px">Show:</label>
@@ -2292,6 +2299,7 @@
   // ── Fix Unmatched ────────────────────────────────────────────────────────────
   let fixItems = [];
   let _fixMatchCtx = { ratingKey: '', rowIdx: -1 };
+  let _fixPlexEnabled = false;
 
   async function openFixUnmatched() {
     const btn = document.getElementById('unmatched-btn');
@@ -2322,6 +2330,22 @@
     document.getElementById('fix-panel').classList.remove('active');
   }
 
+  async function doForceScan() {
+    const btn = document.getElementById('fix-scan-btn');
+    if (btn) { btn.disabled = true; btn.textContent = 'Scanning…'; }
+    try {
+      const res  = await fetch('/api/plex/force-scan', { method: 'POST' });
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); return; }
+      showToast('Plex scan triggered — refreshing in 4s…');
+      setTimeout(() => openFixUnmatched(), 4000);
+    } catch (e) {
+      showToast(e.message, true);
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = '🔄 Scan Plex Library'; }
+    }
+  }
+
   function applyFixSearch() {
     const q    = document.getElementById('fix-search').value.trim().toLowerCase();
     const pf   = document.getElementById('fix-filter-plex').value;
@@ -2341,18 +2365,19 @@
       fixUpdateSelBar(); return;
     }
     tbody.innerHTML = items.map((it, i) => {
+      const qualTagDisplay = [it.resolution, it.rip_source].filter(t => t && t !== 'Unknown').join(' · ');
+      const qualBadge = qualTagDisplay ? `<br><span class="fix-qual-badge">${escHtml(qualTagDisplay)}</span>` : '';
       const statusBadge = it.in_plex
-        ? '<span class="badge-in-plex">\ud83d\udfe1 In Plex (unmatched)</span>'
-        : '<span class="badge-not-plex">\u26ab Not in Plex</span>';
+        ? '<span class="badge-in-plex">🟡 In Plex (unmatched)</span>'
+        : '<span class="badge-not-plex">⚫ Not in Plex</span>';
       const matchBtn = it.in_plex
-        ? `<button class="btn-fix-plex" onclick="openMatchModal(${i})">&#127916; Match in Plex</button>`
+        ? `<button class="btn-fix-plex" onclick="openMatchModal(${i})">🎬 Match in Plex</button>`
         : '';
       const safeTitle = escAttr(it.suggested_title);
       const safeYear  = escAttr(it.suggested_year);
-      const ext = it.filename.lastIndexOf('.') !== -1 ? it.filename.slice(it.filename.lastIndexOf('.')) : '';
-      return `<tr id="fix-row-${i}" data-path="${escAttr(it.path)}" data-rating-key="${escAttr(it.rating_key)}">
+      return `<tr id="fix-row-${i}" data-path="${escAttr(it.path)}" data-rating-key="${escAttr(it.rating_key)}" data-res="${escAttr(it.resolution||'')}" data-rip="${escAttr(it.rip_source||'')}">
         <td><input type="checkbox" class="fix-check" onchange="fixUpdateSelBar()" /></td>
-        <td class="fix-file-cell" title="${escAttr(it.filename)}">${escHtml(it.filename)}</td>
+        <td class="fix-file-cell" title="${escAttr(it.filename)}">${escHtml(it.filename)}${qualBadge}</td>
         <td>
           <div class="fix-input-row">
             <input class="fix-title-in" id="fix-t-${i}" value="${safeTitle}" oninput="updateFixPreview(${i})" />
@@ -2376,7 +2401,10 @@
     const row   = document.getElementById('fix-row-' + i);
     const path  = row ? row.dataset.path : '';
     const ext   = path && path.lastIndexOf('.') !== -1 ? path.slice(path.lastIndexOf('.')) : '';
-    const name  = title + (year ? ' (' + year + ')' : '') + ext;
+    const res = row?.dataset.res || '';
+    const rip = row?.dataset.rip || '';
+    const qualTag = [res, rip].filter(t => t && t !== 'Unknown').join(' ');
+    const name  = title + (year ? ' (' + year + ')' : '') + (qualTag ? ' [' + qualTag + ']' : '') + ext;
     const prev  = document.getElementById('fix-prev-' + i);
     if (prev) prev.innerHTML = '&rarr; <em>' + escHtml(name) + '</em>';
   }
