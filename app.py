@@ -37,6 +37,8 @@ _prowlarr_key   = _cfg.get('prowlarr_key', '')
 _plex_url       = _cfg.get('plex_url', 'http://localhost:32400')
 _plex_token     = _cfg.get('plex_token', '')
 _plex_cache     = {}   # os.path.normpath(file_path) -> {plex_title, plex_year, plex_genres}
+_plex_unmatched = {}   # normpath -> {rating_key, plex_title}  (Plex has file but no metadata)
+_plex_section_ids = [] # movie section keys — used for triggering rescans
 _plex_cache_time = 0.0
 _PLEX_TTL        = 300  # seconds before auto-refresh
 
@@ -199,22 +201,27 @@ def scan_duplicates(movies_dir):
 
 def _auto_sync_plex():
     """Refresh _plex_cache if Plex is configured and cache is stale (>5 min). Silent on errors."""
-    global _plex_cache, _plex_cache_time
+    global _plex_cache, _plex_unmatched, _plex_section_ids, _plex_cache_time
     if not _plex_url or not _plex_token:
         return
     if time.time() - _plex_cache_time < _PLEX_TTL:
         return  # cache is still fresh
     try:
-        _plex_cache = _fetch_plex_library()
+        _plex_cache, _plex_unmatched, _plex_section_ids = _fetch_plex_library()
         _plex_cache_time = time.time()
     except Exception:
         pass  # don't break scan if Plex is unreachable
 
 
 def _fetch_plex_library():
-    """Fetch all movie file paths + metadata from Plex. Returns a dict {normpath: metadata}."""
+    """Fetch all movie file paths + metadata from Plex.
+    Returns (matched_cache, unmatched_cache, section_ids).
+    matched_cache:   normpath -> {plex_title, plex_year, plex_genres}
+    unmatched_cache: normpath -> {rating_key, plex_title}  (Plex has file but no match)
+    section_ids: list of movie library section keys
+    """
     if not _plex_url or not _plex_token:
-        return {}
+        return {}, {}, []
 
     def plex_get(path):
         sep = '&' if '?' in path else '?'
@@ -227,23 +234,34 @@ def _fetch_plex_library():
     sections = data.get('MediaContainer', {}).get('Directory', [])
     movie_sections = [s['key'] for s in sections if s.get('type') == 'movie']
 
-    cache = {}
+    matched = {}
+    unmatched = {}
     for section_key in movie_sections:
         data = plex_get(f'/library/sections/{section_key}/all')
         for item in data.get('MediaContainer', {}).get('Metadata', []):
-            title  = item.get('title', '')
-            year   = str(item.get('year', '')) if item.get('year') else ''
-            genres = [g['tag'] for g in item.get('Genre', [])]
+            guid        = item.get('guid', '')
+            rating_key  = item.get('ratingKey', '')
+            title       = item.get('title', '')
+            year        = str(item.get('year', '')) if item.get('year') else ''
+            genres      = [g['tag'] for g in item.get('Genre', [])]
+            is_local    = (not guid) or guid.startswith('local://')
             for media in item.get('Media', []):
                 for part in media.get('Part', []):
                     fp = part.get('file', '')
                     if fp:
-                        cache[os.path.normpath(fp)] = {
-                            'plex_title': title,
-                            'plex_year': year,
-                            'plex_genres': genres,
-                        }
-    return cache
+                        norm = os.path.normpath(fp)
+                        if is_local:
+                            unmatched[norm] = {
+                                'rating_key': rating_key,
+                                'plex_title': title,
+                            }
+                        else:
+                            matched[norm] = {
+                                'plex_title': title,
+                                'plex_year': year,
+                                'plex_genres': genres,
+                            }
+    return matched, unmatched, movie_sections
 
 
 @app.route('/')
@@ -291,11 +309,11 @@ def plex_test():
 
 @app.route('/api/plex/sync')
 def plex_sync():
-    global _plex_cache, _plex_cache_time
+    global _plex_cache, _plex_unmatched, _plex_section_ids, _plex_cache_time
     if not _plex_url or not _plex_token:
         return jsonify({'error': 'Plex not configured.'}), 400
     try:
-        _plex_cache = _fetch_plex_library()
+        _plex_cache, _plex_unmatched, _plex_section_ids = _fetch_plex_library()
         _plex_cache_time = time.time()
         return jsonify({'success': True, 'cached': len(_plex_cache)})
     except urllib.error.HTTPError as e:
@@ -742,6 +760,169 @@ def library_stats():
             'plex_unmatched': plex_unmatched,
             'plex_enabled': bool(_plex_token),
         })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+# ── Fix Unmatched ──────────────────────────────────────────────────────────────
+
+def _plex_rescan():
+    """Trigger a Plex library refresh for all movie sections. Silent on errors."""
+    if not _plex_url or not _plex_token or not _plex_section_ids:
+        return
+    for sid in _plex_section_ids:
+        try:
+            url = f"{_plex_url}/library/sections/{sid}/refresh?X-Plex-Token={_plex_token}"
+            req = urllib.request.Request(url)
+            with urllib.request.urlopen(req, timeout=5):
+                pass
+        except Exception:
+            pass
+
+
+@app.route('/api/fix-unmatched')
+def fix_unmatched():
+    try:
+        _auto_sync_plex()
+        movies_dir = get_movies_dir()
+        items = []
+        for root, dirs, files in os.walk(movies_dir):
+            for file in files:
+                ext = os.path.splitext(file)[1].lower()
+                if ext not in VIDEO_EXTENSIONS:
+                    continue
+                full_path = os.path.join(root, file)
+                norm_path = os.path.normpath(full_path)
+                if norm_path in _plex_cache:
+                    continue  # already matched by Plex — skip
+                title_key = parse_movie_title(file)
+                if not title_key[0]:
+                    continue
+                suggested_title = title_key[0].title()
+                suggested_year  = title_key[1]
+                suggested_name  = suggested_title + (f' ({suggested_year})' if suggested_year else '') + ext
+                plex_entry = _plex_unmatched.get(norm_path, {})
+                items.append({
+                    'filename': file,
+                    'path': full_path,
+                    'suggested_title': suggested_title,
+                    'suggested_year':  suggested_year,
+                    'suggested_name':  suggested_name,
+                    'in_plex':    bool(plex_entry),
+                    'rating_key': plex_entry.get('rating_key', ''),
+                    'plex_title': plex_entry.get('plex_title', ''),
+                })
+        items.sort(key=lambda x: x['filename'].lower())
+        return jsonify({'items': items, 'count': len(items),
+                        'plex_enabled': bool(_plex_token)})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/rename-file', methods=['POST'])
+def rename_file():
+    data = request.get_json(silent=True)
+    if not data or 'path' not in data:
+        return jsonify({'error': 'No path provided'}), 400
+    old_path  = data['path']
+    new_title = data.get('title', '').strip()
+    new_year  = data.get('year', '').strip()
+    if not new_title:
+        return jsonify({'error': 'Title is required'}), 400
+
+    abs_old = os.path.abspath(old_path)
+    abs_dir = os.path.abspath(get_movies_dir())
+    if not abs_old.startswith(abs_dir + os.sep):
+        return jsonify({'error': 'Path is outside the allowed movies directory'}), 403
+    if not os.path.isfile(abs_old):
+        return jsonify({'error': 'File not found'}), 404
+
+    ext = os.path.splitext(abs_old)[1]
+    new_filename = new_title + (f' ({new_year})' if new_year else '') + ext
+    # Strip characters not allowed in Windows filenames
+    new_filename = re.sub(r'[<>:"/\\|?*]', '', new_filename).strip()
+    new_path = os.path.join(os.path.dirname(abs_old), new_filename)
+
+    if os.path.exists(new_path) and os.path.normpath(new_path) != os.path.normpath(abs_old):
+        return jsonify({'error': f'A file named "{new_filename}" already exists in that folder'}), 409
+
+    try:
+        os.rename(abs_old, new_path)
+        # Remove old path from caches
+        old_norm = os.path.normpath(abs_old)
+        _plex_cache.pop(old_norm, None)
+        _plex_unmatched.pop(old_norm, None)
+        # Ask Plex to rescan so it picks up the renamed file
+        _plex_rescan()
+        return jsonify({'success': True, 'new_path': new_path, 'new_filename': new_filename})
+    except OSError as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/plex/match-search')
+def plex_match_search():
+    if not _plex_url or not _plex_token:
+        return jsonify({'error': 'Plex not configured'}), 400
+    rating_key = request.args.get('rating_key', '').strip()
+    title      = request.args.get('title', '').strip()
+    year       = request.args.get('year', '').strip()
+    if not rating_key:
+        return jsonify({'error': 'rating_key is required'}), 400
+    try:
+        params = {k: v for k, v in {'title': title, 'year': year}.items() if v}
+        qs = urllib.parse.urlencode(params)
+        sep = '&' if qs else '?'
+        url = f"{_plex_url}/library/metadata/{rating_key}/matches?{qs}{sep}X-Plex-Token={_plex_token}"
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = _json.loads(resp.read().decode())
+        results = []
+        for r in data.get('MediaContainer', {}).get('SearchResult', []):
+            results.append({
+                'name':  r.get('name', ''),
+                'year':  str(r.get('year', '')),
+                'guid':  r.get('guid', ''),
+                'score': r.get('score', 0),
+            })
+        return jsonify({'results': results})
+    except urllib.error.HTTPError as e:
+        return jsonify({'error': f'Plex returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/plex/match-apply', methods=['POST'])
+def plex_match_apply():
+    global _plex_cache_time
+    if not _plex_url or not _plex_token:
+        return jsonify({'error': 'Plex not configured'}), 400
+    data = request.get_json(silent=True)
+    if not data:
+        return jsonify({'error': 'No data provided'}), 400
+    rating_key = data.get('rating_key', '').strip()
+    guid       = data.get('guid', '').strip()
+    name       = data.get('name', '').strip()
+    if not rating_key or not guid:
+        return jsonify({'error': 'rating_key and guid are required'}), 400
+    try:
+        # Apply the match
+        params = urllib.parse.urlencode({'guid': guid, 'name': name})
+        url = f"{_plex_url}/library/metadata/{rating_key}/match?{params}&X-Plex-Token={_plex_token}"
+        req = urllib.request.Request(url, method='PUT')
+        req.add_header('Content-Length', '0')
+        with urllib.request.urlopen(req, timeout=15):
+            pass
+        # Refresh the item's metadata from the agent
+        url2 = f"{_plex_url}/library/metadata/{rating_key}/refresh?X-Plex-Token={_plex_token}"
+        req2 = urllib.request.Request(url2, method='PUT')
+        req2.add_header('Content-Length', '0')
+        with urllib.request.urlopen(req2, timeout=10):
+            pass
+        # Force plex cache refresh next time
+        _plex_cache_time = 0.0
+        return jsonify({'success': True})
+    except urllib.error.HTTPError as e:
+        return jsonify({'error': f'Plex returned HTTP {e.code}'}), 502
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

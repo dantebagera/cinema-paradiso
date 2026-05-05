@@ -616,6 +616,51 @@
     .toast.show { opacity: 1; transform: translateY(0); }
 
     #no-dupes { text-align: center; padding: 60px 20px; color: #2ecc71; font-size: 1.1rem; }
+
+    /* ── Fix Unmatched panel ── */
+    #fix-btn { background: #6c5ce722; color: #a29bfe; border: 1px solid #6c5ce744; }
+    #fix-btn:hover { background: #6c5ce7; color: #fff; }
+    .fix-panel { display:none; position:fixed; inset:0; background:#0009; z-index:200; overflow-y:auto; }
+    .fix-panel.active { display:block; }
+    .fix-panel-inner { background:#1a1a1a; min-height:100vh; padding:32px 28px; max-width:1400px; margin:0 auto; }
+    .fix-panel-header { display:flex; align-items:center; gap:14px; margin-bottom:20px; flex-wrap:wrap; }
+    .fix-panel-header h2 { color:#a29bfe; font-size:1.2rem; flex:1; margin:0; }
+    .fix-summary { margin-bottom:16px; font-size:0.9rem; color:#888; }
+    .fix-summary span { color:#e0e0e0; font-weight:600; }
+    .fix-filters { display:flex; align-items:center; gap:10px; margin-bottom:16px; flex-wrap:wrap; }
+    .fix-filters input[type=text] { background:#252525; border:1px solid #333; color:#e0e0e0; border-radius:6px; padding:6px 12px; font-size:0.85rem; width:260px; }
+    .fix-table { width:100%; border-collapse:collapse; font-size:0.82rem; }
+    .fix-table th { text-align:left; padding:8px 10px; color:#666; border-bottom:1px solid #2a2a2a; white-space:nowrap; }
+    .fix-table td { padding:7px 10px; border-bottom:1px solid #1e1e1e; vertical-align:middle; }
+    .fix-table tr:hover td { background:#1f1f1f; }
+    .fix-table tr.fix-done td { opacity:0.45; }
+    .fix-file-cell { color:#888; font-size:0.78rem; max-width:280px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .fix-input-row { display:flex; gap:6px; align-items:center; }
+    .fix-title-in { background:#252525; border:1px solid #333; color:#e0e0e0; border-radius:5px; padding:4px 8px; font-size:0.82rem; width:200px; }
+    .fix-year-in  { background:#252525; border:1px solid #333; color:#e0e0e0; border-radius:5px; padding:4px 8px; font-size:0.82rem; width:68px; }
+    .fix-preview  { color:#888; font-size:0.76rem; white-space:nowrap; }
+    .fix-preview em { color:#a29bfe; font-style:normal; }
+    .badge-in-plex    { background:#e5a00d22; color:#e5a00d; border:1px solid #e5a00d55; border-radius:4px; padding:2px 7px; font-size:0.72rem; white-space:nowrap; }
+    .badge-not-plex   { background:#33333388; color:#555; border:1px solid #33333388; border-radius:4px; padding:2px 7px; font-size:0.72rem; white-space:nowrap; }
+    .badge-fixed      { background:#2ecc7122; color:#2ecc71; border:1px solid #2ecc7144; border-radius:4px; padding:2px 7px; font-size:0.72rem; }
+    .btn-fix-rename { background:#6c5ce722; color:#a29bfe; border:1px solid #6c5ce755; border-radius:5px; padding:4px 10px; font-size:0.78rem; cursor:pointer; white-space:nowrap; }
+    .btn-fix-rename:hover { background:#6c5ce7; color:#fff; }
+    .btn-fix-plex   { background:#00cec922; color:#00cec9; border:1px solid #00cec955; border-radius:5px; padding:4px 10px; font-size:0.78rem; cursor:pointer; white-space:nowrap; margin-left:4px; }
+    .btn-fix-plex:hover { background:#00cec9; color:#141414; }
+    .fix-bar { display:flex; align-items:center; gap:10px; margin-top:16px; flex-wrap:wrap; }
+    /* Match modal */
+    .match-modal { display:none; position:fixed; inset:0; background:#000a; z-index:400; align-items:center; justify-content:center; }
+    .match-modal.active { display:flex; }
+    .match-modal-inner { background:#1e1e1e; border:1px solid #333; border-radius:12px; padding:28px; width:600px; max-width:95vw; max-height:80vh; overflow-y:auto; }
+    .match-modal-inner h3 { color:#a29bfe; margin:0 0 6px; }
+    .match-result { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:7px; margin-bottom:6px; background:#252525; }
+    .match-result:hover { background:#2a2a2a; }
+    .match-result-info { flex:1; }
+    .match-result-title { font-weight:600; color:#e0e0e0; }
+    .match-result-year  { color:#888; font-size:0.8rem; }
+    .match-score { color:#666; font-size:0.75rem; margin-right:8px; }
+    .btn-apply-match { background:#a29bfe22; color:#a29bfe; border:1px solid #a29bfe55; border-radius:5px; padding:4px 12px; font-size:0.8rem; cursor:pointer; }
+    .btn-apply-match:hover { background:#a29bfe; color:#141414; }
   </style>
 </head>
 <body>
@@ -633,6 +678,7 @@
     <button id="lib-btn" onclick="openLibrary()">📂 Library</button>
     <button id="dash-btn" onclick="openDashboard()">📊 Dashboard</button>
     <button id="plex-btn" onclick="openPlexCfg()">🎬 Plex</button>
+    <button id="fix-btn" onclick="openFixUnmatched()">🔧 Fix Unmatched</button>
     <button id="prowlarr-btn" onclick="openProwlarrCfg()" title="Configure Prowlarr">⚙ Prowlarr</button>
   </div>
 </header>
@@ -757,6 +803,59 @@
       <span class="lq-filter-count" id="lq-filter-count"></span>
     </div>
     <div id="lq-list"></div>
+  </div>
+</div>
+
+<!-- Fix Unmatched Panel -->
+<div id="fix-panel" class="fix-panel">
+  <div class="fix-panel-inner">
+    <div class="fix-panel-header">
+      <h2>🔧 Fix Unmatched Files</h2>
+      <span id="fix-count" class="lib-count"></span>
+      <button class="btn-lib-close" onclick="closeFixPanel()">Close</button>
+    </div>
+    <div id="fix-summary" class="fix-summary"></div>
+    <div class="fix-filters">
+      <input type="text" id="fix-search" placeholder="Search by filename or title..." oninput="applyFixSearch()" />
+      <label style="margin-left:8px">Show:</label>
+      <select id="fix-filter-plex" onchange="applyFixSearch()" style="background:#252525;border:1px solid #333;color:#e0e0e0;border-radius:6px;padding:6px 10px;font-size:0.85rem">
+        <option value="">All unmatched</option>
+        <option value="inplex">In Plex (unmatched) 🟡</option>
+        <option value="notplex">Not in Plex ⚫</option>
+      </select>
+    </div>
+    <table class="fix-table">
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="fix-check-all" onchange="fixSelectAll(this.checked)" /></th>
+          <th>Current Filename</th>
+          <th>Suggested Title &amp; Year</th>
+          <th>New Filename Preview</th>
+          <th>Plex Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="fix-tbody"></tbody>
+    </table>
+    <div class="fix-bar" id="fix-bar">
+      <span id="fix-sel-count">0 selected</span>
+      <button class="btn-fix-rename" id="fix-rename-sel-btn" onclick="renameSelected()" disabled>✏ Rename Selected</button>
+    </div>
+  </div>
+</div>
+
+<!-- Plex Match Modal -->
+<div id="match-modal" class="match-modal">
+  <div class="match-modal-inner">
+    <h3>🎬 Match in Plex</h3>
+    <p id="match-modal-file" style="color:#888;font-size:0.82rem;margin:4px 0 14px"></p>
+    <div style="display:flex;gap:8px;margin-bottom:14px">
+      <input id="match-search-title" type="text" placeholder="Search title..." style="flex:1;background:#252525;border:1px solid #333;color:#e0e0e0;border-radius:6px;padding:7px 10px;font-size:0.85rem" />
+      <input id="match-search-year"  type="text" placeholder="Year" style="width:74px;background:#252525;border:1px solid #333;color:#e0e0e0;border-radius:6px;padding:7px 10px;font-size:0.85rem" />
+      <button onclick="doMatchSearch()" style="background:#a29bfe22;color:#a29bfe;border:1px solid #a29bfe55;border-radius:6px;padding:7px 14px;cursor:pointer;font-size:0.85rem">Search</button>
+    </div>
+    <div id="match-results"></div>
+    <button onclick="closeMatchModal()" style="margin-top:14px;background:#333;color:#aaa;border:1px solid #444;border-radius:6px;padding:7px 18px;cursor:pointer">Cancel</button>
   </div>
 </div>
 
@@ -2042,6 +2141,223 @@
       }
     }
     errs.forEach(e => showToast(e, true));
+  }
+
+  // ── Fix Unmatched ────────────────────────────────────────────────────────────
+  let fixItems = [];
+  let _fixMatchCtx = { ratingKey: '', rowIdx: -1 };
+
+  async function openFixUnmatched() {
+    const btn = document.getElementById('fix-btn');
+    btn.disabled = true; btn.textContent = 'Loading...';
+    try {
+      const res = await fetch('/api/fix-unmatched');
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); return; }
+      fixItems = data.items;
+      document.getElementById('fix-summary').innerHTML =
+        fixItems.length === 0
+          ? 'All files are matched in Plex \u2014 nothing to fix!'
+          : `Found <span>${fixItems.length} file${fixItems.length !== 1 ? 's' : ''}</span> not matched by Plex.${data.plex_enabled ? '' : ' <span style="color:#e5a00d">\u26a0 Configure Plex to enable Match in Plex.</span>'}`;
+      document.getElementById('fix-search').value = '';
+      document.getElementById('fix-filter-plex').value = '';
+      renderFixPanel(fixItems);
+      document.getElementById('fix-panel').classList.add('active');
+    } catch (err) {
+      showToast(err.message, true);
+    } finally {
+      btn.disabled = false; btn.textContent = '\ud83d\udd27 Fix Unmatched';
+    }
+  }
+
+  function closeFixPanel() {
+    document.getElementById('fix-panel').classList.remove('active');
+  }
+
+  function applyFixSearch() {
+    const q    = document.getElementById('fix-search').value.trim().toLowerCase();
+    const pf   = document.getElementById('fix-filter-plex').value;
+    const filtered = fixItems.filter(it => {
+      const matchQ  = !q || it.filename.toLowerCase().includes(q) || it.suggested_title.toLowerCase().includes(q);
+      const matchPf = !pf || (pf === 'inplex' ? it.in_plex : !it.in_plex);
+      return matchQ && matchPf;
+    });
+    renderFixPanel(filtered);
+  }
+
+  function renderFixPanel(items) {
+    const tbody = document.getElementById('fix-tbody');
+    document.getElementById('fix-count').textContent = items.length + ' files';
+    if (items.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#555;padding:24px">No items match the current filter.</td></tr>';
+      fixUpdateSelBar(); return;
+    }
+    tbody.innerHTML = items.map((it, i) => {
+      const statusBadge = it.in_plex
+        ? '<span class="badge-in-plex">\ud83d\udfe1 In Plex (unmatched)</span>'
+        : '<span class="badge-not-plex">\u26ab Not in Plex</span>';
+      const matchBtn = it.in_plex
+        ? `<button class="btn-fix-plex" onclick="openMatchModal(${i})">&#127916; Match in Plex</button>`
+        : '';
+      const safeTitle = escAttr(it.suggested_title);
+      const safeYear  = escAttr(it.suggested_year);
+      const ext = it.filename.lastIndexOf('.') !== -1 ? it.filename.slice(it.filename.lastIndexOf('.')) : '';
+      return `<tr id="fix-row-${i}" data-path="${escAttr(it.path)}" data-rating-key="${escAttr(it.rating_key)}">
+        <td><input type="checkbox" class="fix-check" onchange="fixUpdateSelBar()" /></td>
+        <td class="fix-file-cell" title="${escAttr(it.filename)}">${escHtml(it.filename)}</td>
+        <td>
+          <div class="fix-input-row">
+            <input class="fix-title-in" id="fix-t-${i}" value="${safeTitle}" oninput="updateFixPreview(${i})" />
+            <input class="fix-year-in"  id="fix-y-${i}" value="${safeYear}"  oninput="updateFixPreview(${i})" placeholder="Year" />
+          </div>
+        </td>
+        <td class="fix-preview" id="fix-prev-${i}">&rarr; <em>${escHtml(it.suggested_name)}</em></td>
+        <td>${statusBadge}</td>
+        <td>
+          <button class="btn-fix-rename" onclick="renameFile(${i})">&#9998; Rename</button>
+          ${matchBtn}
+        </td>
+      </tr>`;
+    }).join('');
+    fixUpdateSelBar();
+  }
+
+  function updateFixPreview(i) {
+    const title = document.getElementById('fix-t-' + i).value.trim();
+    const year  = document.getElementById('fix-y-' + i).value.trim();
+    const row   = document.getElementById('fix-row-' + i);
+    const path  = row ? row.dataset.path : '';
+    const ext   = path && path.lastIndexOf('.') !== -1 ? path.slice(path.lastIndexOf('.')) : '';
+    const name  = title + (year ? ' (' + year + ')' : '') + ext;
+    const prev  = document.getElementById('fix-prev-' + i);
+    if (prev) prev.innerHTML = '&rarr; <em>' + escHtml(name) + '</em>';
+  }
+
+  function fixUpdateSelBar() {
+    const checked = document.querySelectorAll('.fix-check:checked');
+    document.getElementById('fix-sel-count').textContent = checked.length + ' selected';
+    document.getElementById('fix-rename-sel-btn').disabled = checked.length === 0;
+  }
+
+  function fixSelectAll(state) {
+    document.querySelectorAll('.fix-check').forEach(c => c.checked = state);
+    fixUpdateSelBar();
+  }
+
+  async function renameFile(rowIdx) {
+    const row   = document.getElementById('fix-row-' + rowIdx);
+    if (!row) return;
+    const path  = row.dataset.path;
+    const title = document.getElementById('fix-t-' + rowIdx).value.trim();
+    const year  = document.getElementById('fix-y-' + rowIdx).value.trim();
+    if (!title) { showToast('Title cannot be empty', true); return; }
+    const btn = row.querySelector('.btn-fix-rename');
+    if (btn) { btn.disabled = true; btn.textContent = 'Renaming...'; }
+    try {
+      const res  = await fetch('/api/rename-file', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ path, title, year })
+      });
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); if (btn) { btn.disabled = false; btn.textContent = '\u270e Rename'; } return; }
+      // Update row to show success
+      row.classList.add('fix-done');
+      const td = row.querySelector('.fix-file-cell');
+      if (td) td.innerHTML = '<span style="color:#2ecc71">\u2713 ' + escHtml(data.new_filename) + '</span>';
+      const prevEl = document.getElementById('fix-prev-' + rowIdx);
+      if (prevEl) prevEl.innerHTML = '<span class="badge-fixed">\u2713 Renamed</span>';
+      if (btn) { btn.disabled = true; btn.textContent = '\u2713 Done'; }
+      row.querySelectorAll('input').forEach(el => el.disabled = true);
+      row.querySelectorAll('.btn-fix-plex').forEach(el => el.disabled = true);
+      showToast('Renamed \u2014 Plex rescan triggered');
+    } catch (e) {
+      showToast(e.message, true);
+      if (btn) { btn.disabled = false; btn.textContent = '\u270e Rename'; }
+    }
+  }
+
+  async function renameSelected() {
+    const rows = document.querySelectorAll('#fix-tbody tr .fix-check:checked');
+    for (const chk of rows) {
+      const row = chk.closest('tr');
+      if (!row || row.classList.contains('fix-done')) continue;
+      const idMatch = row.id.match(/fix-row-(\d+)/);
+      if (!idMatch) continue;
+      await renameFile(parseInt(idMatch[1]));
+    }
+  }
+
+  // ── Plex Match Modal ─────────────────────────────────────────────
+  function openMatchModal(rowIdx) {
+    const row = document.getElementById('fix-row-' + rowIdx);
+    if (!row) return;
+    _fixMatchCtx = { ratingKey: row.dataset.ratingKey, rowIdx };
+    const filename = row.querySelector('.fix-file-cell')?.textContent?.trim() || '';
+    document.getElementById('match-modal-file').textContent = filename;
+    document.getElementById('match-search-title').value = document.getElementById('fix-t-' + rowIdx)?.value || '';
+    document.getElementById('match-search-year').value  = document.getElementById('fix-y-' + rowIdx)?.value || '';
+    document.getElementById('match-results').innerHTML  = '<div style="color:#666;font-size:0.85rem">Click Search to find matches.</div>';
+    document.getElementById('match-modal').classList.add('active');
+  }
+
+  function closeMatchModal() {
+    document.getElementById('match-modal').classList.remove('active');
+    _fixMatchCtx = { ratingKey: '', rowIdx: -1 };
+  }
+
+  async function doMatchSearch() {
+    const title = document.getElementById('match-search-title').value.trim();
+    const year  = document.getElementById('match-search-year').value.trim();
+    const { ratingKey } = _fixMatchCtx;
+    if (!ratingKey) { showToast('No Plex rating key — this file is not in Plex', true); return; }
+    document.getElementById('match-results').innerHTML = '<div style="color:#888;font-size:0.85rem">Searching Plex agents\u2026</div>';
+    try {
+      const params = new URLSearchParams({ rating_key: ratingKey, title, year });
+      const res  = await fetch('/api/plex/match-search?' + params);
+      const data = await res.json();
+      if (data.error) { document.getElementById('match-results').innerHTML = '<div style="color:#e74c3c">' + escHtml(data.error) + '</div>'; return; }
+      if (!data.results.length) {
+        document.getElementById('match-results').innerHTML = '<div style="color:#888;font-size:0.85rem">No results found. Try a different title or year.</div>';
+        return;
+      }
+      document.getElementById('match-results').innerHTML = data.results.map(r => `
+        <div class="match-result">
+          <div class="match-result-info">
+            <div class="match-result-title">${escHtml(r.name)}</div>
+            <div class="match-result-year">${r.year || '—'}</div>
+          </div>
+          <span class="match-score">Score: ${r.score}</span>
+          <button class="btn-apply-match" onclick="applyMatch(${JSON.stringify(r.guid)}, ${JSON.stringify(r.name)})">Apply</button>
+        </div>`).join('');
+    } catch (e) {
+      document.getElementById('match-results').innerHTML = '<div style="color:#e74c3c">' + escHtml(e.message) + '</div>';
+    }
+  }
+
+  async function applyMatch(guid, name) {
+    const { ratingKey, rowIdx } = _fixMatchCtx;
+    if (!ratingKey) return;
+    document.getElementById('match-results').innerHTML = '<div style="color:#888;font-size:0.85rem">Applying match\u2026</div>';
+    try {
+      const res  = await fetch('/api/plex/match-apply', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ rating_key: ratingKey, guid, name })
+      });
+      const data = await res.json();
+      if (data.error) { document.getElementById('match-results').innerHTML = '<div style="color:#e74c3c">' + escHtml(data.error) + '</div>'; return; }
+      closeMatchModal();
+      // Update status badge in the row
+      const row = document.getElementById('fix-row-' + rowIdx);
+      if (row) {
+        const td = row.cells[4];
+        if (td) td.innerHTML = '<span class="badge-fixed">\u2713 Plex matched \u2014 refreshing</span>';
+        row.classList.add('fix-done');
+        row.querySelectorAll('.btn-fix-rename, .btn-fix-plex').forEach(b => b.disabled = true);
+      }
+      showToast('Plex match applied \u2014 metadata refresh triggered');
+    } catch (e) {
+      document.getElementById('match-results').innerHTML = '<div style="color:#e74c3c">' + escHtml(e.message) + '</div>';
+    }
   }
 </script>
 </body>
