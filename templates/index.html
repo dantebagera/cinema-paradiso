@@ -227,13 +227,26 @@
       display: none; position: fixed; inset: 0;
       background: #000000dd; z-index: 200;
       align-items: flex-start; justify-content: center;
-      padding: 24px 16px; overflow-y: auto;
+      padding: 24px 16px; overflow: hidden;
     }
     #lib-panel.active { display: flex; }
     .lib-panel-inner {
       background: #1e1e1e; border: 1px solid #74b9ff44;
       border-radius: 14px; width: 100%; max-width: 980px;
-      padding: 28px;
+      padding: 28px; padding-bottom: 0;
+      display: flex; flex-direction: column;
+      max-height: calc(100vh - 48px); overflow: hidden;
+    }
+    #lib-vscroll {
+      flex: 1; overflow-y: auto; min-height: 0;
+      padding-bottom: 16px;
+    }
+    .lib-table thead th {
+      position: sticky; top: 0; background: #1e1e1e; z-index: 1;
+    }
+    #lib-tbody tr {
+      content-visibility: auto;
+      contain-intrinsic-block-size: 56px;
     }
     .lib-panel-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
     .lib-panel-header h2 { color: #74b9ff; font-size: 1.2rem; flex: 1; }
@@ -543,6 +556,7 @@
       background: #1e1e1e; border: 1px solid #333; border-radius: 10px;
       padding: 20px; width: 360px; z-index: 500;
       box-shadow: 0 8px 32px #0008;
+      max-height: calc(100vh - 80px); overflow-y: auto;
     }
     #settings-dropdown.open { display: block; }
     .settings-section { margin-bottom: 20px; }
@@ -774,6 +788,7 @@
         <option value="rip-asc">Source (worst)</option>
       </select>
     </div>
+    <div id="lib-vscroll">
     <table class="lib-table">
       <thead>
         <tr>
@@ -788,6 +803,7 @@
       </thead>
       <tbody id="lib-tbody"></tbody>
     </table>
+    </div>
     <div class="panel-select-bar" id="lib-select-bar" style="margin-top:12px;margin-bottom:0">
       <span id="lib-sel-count">0 selected</span>
       <button class="btn-sel-delete" onclick="libDeleteSelected()">🗑 Delete Selected</button>
@@ -1901,7 +1917,7 @@
     }
     return `<tr data-path="${it.path}" class="${rowClass}">
       <td class="lib-check-col"><input type="checkbox" class="item-check lib-check" onchange="libUpdateSelBar()" /></td>
-      <td class="lib-title-cell">${it.title}<br><button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px;margin-top:4px" onclick="prowlarrSearch(${JSON.stringify(it.title)})">&#128270; Search Prowlarr</button></td>
+      <td class="lib-title-cell">${it.title} <button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px" onclick="prowlarrSearch(${JSON.stringify(it.title)})">&#128270;</button></td>
       <td><span class="res-badge" style="background:${resCol}22;color:${resCol};border:1px solid ${resCol}66">${it.resolution}</span></td>
       <td><span class="res-badge" style="background:${ripCol}22;color:${ripCol};border:1px solid ${ripCol}66">${it.rip_source}</span></td>
       <td class="lib-size-cell">${it.size_human}</td>
@@ -2278,8 +2294,8 @@
   let _fixMatchCtx = { ratingKey: '', rowIdx: -1 };
 
   async function openFixUnmatched() {
-    const btn = document.getElementById('fix-btn');
-    btn.disabled = true; btn.textContent = 'Syncing Plex…';
+    const btn = document.getElementById('unmatched-btn');
+    btn.disabled = true; btn.textContent = 'Syncing…';
     _plexLoadingStart('Loading unmatched files — syncing with Plex… this may take a moment');
     try {
       const res = await fetch('/api/fix-unmatched' + _plexQuery());
@@ -2298,7 +2314,7 @@
       showToast(err.message, true);
     } finally {
       _plexLoadingStop();
-      btn.disabled = false; btn.textContent = '🔧 Fix Unmatched';
+      btn.disabled = false; btn.textContent = '🔍 Unmatched';
     }
   }
 
