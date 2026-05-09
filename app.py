@@ -506,10 +506,28 @@ def prowlarr_search():
     if not query:
         return jsonify({'error': 'No query provided'}), 400
     try:
-        params = urllib.parse.urlencode({'query': query, 'type': 'search', 'limit': 100})
-        url = f"{_prowlarr_url}/api/v1/search?{params}"
+        # Fetch all enabled indexer IDs so every indexer is queried, not just the default subset
+        indexer_ids = []
+        try:
+            idx_req = urllib.request.Request(
+                f"{_prowlarr_url}/api/v1/indexer",
+                headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'}
+            )
+            with urllib.request.urlopen(idx_req, timeout=8) as idx_resp:
+                indexers = _json.loads(idx_resp.read().decode())
+            indexer_ids = [str(ix['id']) for ix in indexers if ix.get('enable', True)]
+        except Exception:
+            pass  # fall back to Prowlarr default if indexer fetch fails
+
+        qs = {'query': query, 'type': 'search', 'limit': 1000}
+        if indexer_ids:
+            qs['indexerIds'] = indexer_ids  # will be encoded as repeated params below
+        # urllib.parse.urlencode doesn't handle lists — build manually
+        parts = [(k, v) for k, v in qs.items() if k != 'indexerIds']
+        parts += [('indexerIds', iid) for iid in indexer_ids]
+        url = f"{_prowlarr_url}/api/v1/search?{urllib.parse.urlencode(parts)}"
         req = urllib.request.Request(url, headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'})
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        with urllib.request.urlopen(req, timeout=30) as resp:
             results = _json.loads(resp.read().decode())
         # Detect resolution from torrent title and format results (all resolutions)
         filtered = []
@@ -1046,6 +1064,7 @@ def rename_file():
         old_norm = _norm(abs_old)
         _plex_cache.pop(old_norm, None)
         _plex_unmatched.pop(old_norm, None)
+        _library_cache.pop('items', None)  # bust library cache — filename/path changed
         # Ask Plex to rescan so it picks up the renamed file
         _plex_rescan()
         return jsonify({'success': True, 'new_path': new_path, 'new_filename': new_filename})
@@ -1220,4 +1239,4 @@ def plex_match_apply():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, port=5000)
+    app.run(debug=False, port=5000, use_reloader=True)

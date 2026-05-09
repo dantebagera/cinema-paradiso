@@ -1997,7 +1997,7 @@
     }
     return `<tr data-path="${it.path}" class="${rowClass}">
       <td class="lib-check-col"><input type="checkbox" class="item-check lib-check" onchange="_libToggleSel(this)" /></td>
-      <td class="lib-title-cell">${it.title} <button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px" onclick="prowlarrSearch(${JSON.stringify(it.title)})">&#128270; Search Prowlarr</button> <button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px;background:#1a3a1a;border-color:#2ecc7188;color:#2ecc71" onclick="playFile(${JSON.stringify(it.path)})">&#9654; Play</button></td>
+      <td class="lib-title-cell">${it.title} <button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px" onclick="prowlarrSearch('${escAttr(it.title)}')">&#128270; Search Prowlarr</button> <button class="btn-pr-magnet" style="font-size:0.7rem;padding:2px 8px;background:#1a3a1a;border-color:#2ecc7188;color:#2ecc71" onclick="playFile(this.closest('tr').dataset.path)">&#9654; Play</button> <button class="btn-fix-rename" style="font-size:0.7rem;padding:2px 8px" onclick="openLibRenameModal(this.closest('tr').dataset.path)">&#9998; Rename</button></td>
       <td><span class="res-badge" style="background:${resCol}22;color:${resCol};border:1px solid ${resCol}66">${it.resolution}</span></td>
       <td><span class="res-badge" style="background:${ripCol}22;color:${ripCol};border:1px solid ${ripCol}66">${it.rip_source}</span></td>
       <td class="lib-size-cell">${it.size_human}</td>
@@ -2587,26 +2587,54 @@
   }
 
   // ── Rename Modal ──────────────────────────────────────────────────
-  let _renameRowIdx = -1;
+  // _renameCtx: { path, onSuccess } — set by whichever panel opens the modal
+  let _renameCtx = null;
 
   function openRenameModal(rowIdx) {
     const it = fixItems[rowIdx];
     if (!it) return;
-    _renameRowIdx = rowIdx;
+    _renameCtx = { path: it.path, onSuccess: () => openFixUnmatched() };
     document.getElementById('rename-modal-file').textContent = it.filename;
     document.getElementById('rename-title-input').value = it.suggested_title || '';
     document.getElementById('rename-year-input').value  = it.suggested_year  || '';
     document.getElementById('rename-modal').classList.add('active');
   }
 
+  function openLibRenameModal(path) {
+    const it = libItems.find(x => x.path === path);
+    if (!it) return;
+    // Parse title and year from the display title string (e.g. "Movie Name (2023)")
+    const m = it.title.match(/^(.+?)(?:\s*\((\d{4})\))?$/);
+    const title = m ? m[1].trim() : it.title;
+    const year  = m ? (m[2] || '') : '';
+    _renameCtx = {
+      path,
+      onSuccess: (d, newTitle, newYear) => {
+        // Update the item in-place so the row reflects the new filename/path immediately
+        const idx = libItems.findIndex(x => x.path === path);
+        if (idx >= 0) {
+          libItems[idx].path     = d.new_path;
+          libItems[idx].filename = d.new_filename;
+          libItems[idx].title    = newTitle + (newYear ? ' (' + newYear + ')' : '');
+        }
+        _libSelected.delete(path);
+        _doApplyLibFilters();
+      }
+    };
+    document.getElementById('rename-modal-file').textContent = it.filename;
+    document.getElementById('rename-title-input').value = title;
+    document.getElementById('rename-year-input').value  = year;
+    document.getElementById('rename-modal').classList.add('active');
+  }
+
   function closeRenameModal() {
     document.getElementById('rename-modal').classList.remove('active');
-    _renameRowIdx = -1;
+    _renameCtx = null;
   }
 
   async function submitRename() {
-    const it = fixItems[_renameRowIdx];
-    if (!it) return;
+    if (!_renameCtx) return;
+    const { path, onSuccess } = _renameCtx;
     const title = document.getElementById('rename-title-input').value.trim();
     const year  = document.getElementById('rename-year-input').value.trim();
     if (!title) { showToast('Title is required', true); return; }
@@ -2615,14 +2643,14 @@
     try {
       const r = await fetch('/api/rename-file', {
         method: 'POST', headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ path: it.path, title, year })
+        body: JSON.stringify({ path, title, year })
       });
       const d = await r.json();
       if (d.error) { showToast(d.error, true); }
       else {
         showToast('Renamed to: ' + d.new_filename);
         closeRenameModal();
-        openFixUnmatched();
+        if (onSuccess) onSuccess(d, title, year);
       }
     } catch (e) { showToast(e.message, true); }
     finally { btn.disabled = false; btn.textContent = '\u2713 Rename'; }

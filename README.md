@@ -6,7 +6,7 @@ A local web application for managing, cleaning, and organizing a large Plex movi
 
 Built with Python + Flask. Designed for libraries with thousands of files — tested with 10,000+ movies.
 
-**Current version: v1.16** — May 2026
+**Current version: v1.17** — May 2026
 
 ---
 
@@ -51,6 +51,22 @@ Built with Python + Flask. Designed for libraries with thousands of files — te
 - Anyone who wants to **fix Plex metadata mismatches** without editing files or folder names manually
 
 > **Related searches:** Plex movie library cleaner · Plex duplicate finder alternative · fix Plex unmatched movies · bulk delete Plex duplicates · Plex library organizer tool · movie folder cleanup Windows · how to remove duplicate movies from Plex · Plex 720p movie list · find low quality movies in Plex · Plex unmatched files fixer · local movie database manager · self-hosted media library tool
+
+---
+
+## What's New in v1.17
+
+### Rename in Library Browser
+Every row in the **Library Browser** now has a purple **✎ Rename** button, matching the Unmatched panel. Clicking it opens the rename modal pre-filled with the detected title and year. After saving, the row updates **in-place** immediately — no need to reopen the panel.
+
+### Library Rename Cache Fix
+Renaming a file from either the Library or Unmatched panel now immediately busts the server-side library cache. Previously, reopening the Library within 5 minutes would serve stale data with the old filename/path, causing "file not found" errors on any action.
+
+### Prowlarr — All Indexers Queried
+The Prowlarr search now explicitly fetches all your enabled indexer IDs first and passes them to the search API, so every indexer you have configured is queried — not just the small default subset Prowlarr picks. The result limit has also been raised from 100 to 1000.
+
+### Prowlarr Button Fixed in Library
+The **🔍 Search Prowlarr** button in Library rows was broken due to a quote-escaping bug in the generated HTML. Fixed — clicking it now correctly searches Prowlarr with the movie title.
 
 ---
 
