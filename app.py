@@ -34,6 +34,7 @@ _cfg = _load_config()
 _movies_dir     = _cfg.get('movies_dir', r"E:\Movies")
 _prowlarr_url   = _cfg.get('prowlarr_url', '')
 _prowlarr_key   = _cfg.get('prowlarr_key', '')
+_tmdb_key       = _cfg.get('tmdb_key', '')
 _plex_url       = _cfg.get('plex_url', 'http://localhost:32400')
 _plex_token     = _cfg.get('plex_token', '')
 _plex_cache     = {}   # _norm(file_path) -> {plex_title, plex_year, plex_genres}
@@ -46,6 +47,30 @@ def _norm(path):
     """
     return os.path.normcase(os.path.normpath(path))
 _plex_section_ids = [] # movie section keys — used for triggering rescans
+_metadata_cache  = {}  # "{title}_{year}" -> {poster_url, genres, plot, tmdb_rating} — memory-only
+_tmdb_genres     = {}  # genre_id -> genre_name, lazy-loaded once from TMDB
+_TV_RE = re.compile(
+    r'(?:s\d{1,2}e\d{1,2}|\d{1,2}x\d{2}|season[\s._-]*\d|episode[\s._-]*\d'
+    r'|\bep[\s._-]*\d{1,3}\b|complete[\s._-]+series|\bcomplete[\s._-]+season)',
+    re.IGNORECASE
+)
+_LANG_NAMES = {
+    'en':'English','fr':'French','es':'Spanish','de':'German','it':'Italian',
+    'pt':'Portuguese','ru':'Russian','ja':'Japanese','ko':'Korean','zh':'Chinese',
+    'ar':'Arabic','hi':'Hindi','tr':'Turkish','nl':'Dutch','sv':'Swedish',
+    'pl':'Polish','da':'Danish','fi':'Finnish','no':'Norwegian','th':'Thai',
+    'vi':'Vietnamese','id':'Indonesian','cs':'Czech','hu':'Hungarian','ro':'Romanian',
+}
+_LANG_COUNTRY = {
+    'en':'US','fr':'FR','es':'ES','de':'DE','it':'IT','pt':'PT','ru':'RU',
+    'ja':'JP','ko':'KR','zh':'CN','ar':'SA','hi':'IN','tr':'TR','nl':'NL',
+    'sv':'SE','pl':'PL','da':'DK','fi':'FI','no':'NO','th':'TH','vi':'VN',
+    'id':'ID','cs':'CZ','hu':'HU','ro':'RO',
+}
+def _country_flag(code):
+    if not code or len(code) != 2: return ''
+    return chr(ord(code[0].upper())+127397) + chr(ord(code[1].upper())+127397)
+
 _res_cache = {}  # (abspath, mtime) -> resolution_str  — resolution probe cache
 _RES_CACHE_FILE  = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'res_cache.json')
 _library_status  = ''  # live status string polled by the browser during a scan
@@ -61,6 +86,7 @@ def _all_config():
         'prowlarr_key': _prowlarr_key,
         'plex_url': _plex_url,
         'plex_token': _plex_token,
+        'tmdb_key': _tmdb_key,
     }
 
 VIDEO_EXTENSIONS = {'.mkv', '.mp4', '.avi', '.m4v', '.mov', '.wmv', '.flv', '.ts', '.m2ts', '.iso'}
@@ -1234,6 +1260,448 @@ def plex_match_apply():
         return jsonify({'success': True})
     except urllib.error.HTTPError as e:
         return jsonify({'error': f'Plex returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+# ── TMDB / Trending ──────────────────────────────────────────────────────────
+
+@app.route('/api/tmdb/config', methods=['GET'])
+def get_tmdb_config():
+    return jsonify({'key': _tmdb_key})
+
+
+@app.route('/api/tmdb/config', methods=['POST'])
+def set_tmdb_config():
+    global _tmdb_key, _tmdb_genres
+    data = request.get_json(silent=True)
+    if not data:
+        return jsonify({'error': 'No data provided'}), 400
+    _tmdb_key = data.get('key', '').strip()
+    _tmdb_genres = {}  # reset genre cache when key changes
+    _save_config(_all_config())
+    return jsonify({'success': True})
+
+
+@app.route('/api/tmdb/test')
+def tmdb_test():
+    key = request.args.get('key', _tmdb_key).strip()
+    if not key:
+        return jsonify({'error': 'No API key — enter your TMDB key in Settings.'}), 400
+    try:
+        url = f"https://api.themoviedb.org/3/configuration?api_key={urllib.parse.quote(key)}"
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            _json.loads(resp.read().decode())
+        return jsonify({'success': True})
+    except urllib.error.HTTPError as e:
+        if e.code == 401:
+            return jsonify({'error': 'Invalid API key — check your TMDB account settings.'}), 401
+        return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': f'Cannot reach TMDB: {e}'}), 502
+
+
+def _ensure_tmdb_genres():
+    """Lazy-load TMDB genre list into _tmdb_genres. Silent on error."""
+    global _tmdb_genres
+    if _tmdb_genres or not _tmdb_key:
+        return
+    try:
+        url = f"https://api.themoviedb.org/3/genre/movie/list?api_key={urllib.parse.quote(_tmdb_key)}&language=en"
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            data = _json.loads(resp.read().decode())
+        _tmdb_genres = {g['id']: g['name'] for g in data.get('genres', [])}
+    except Exception:
+        pass
+
+
+@app.route('/api/metadata')
+def get_metadata():
+    title = request.args.get('title', '').strip()
+    year  = request.args.get('year', '').strip()
+    if not title:
+        return jsonify({'error': 'title is required'}), 400
+    cache_key = f"{title.lower()}_{year}"
+    if cache_key in _metadata_cache:
+        return jsonify(_metadata_cache[cache_key])
+    if not _tmdb_key:
+        return jsonify({'poster_url': '', 'genres': [], 'plot': '', 'tmdb_rating': ''})
+    _ensure_tmdb_genres()
+    try:
+        params = urllib.parse.urlencode({'query': title, 'api_key': _tmdb_key, 'language': 'en-US', 'page': 1})
+        if year:
+            params += '&year=' + urllib.parse.quote(year)
+        url = f"https://api.themoviedb.org/3/search/movie?{params}"
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            data = _json.loads(resp.read().decode())
+        results = data.get('results', [])
+        result = results[0] if results else {}
+        poster_path = result.get('poster_path', '')
+        poster_url  = f"https://image.tmdb.org/t/p/w342{poster_path}" if poster_path else ''
+        genre_ids   = result.get('genre_ids', [])
+        genres      = [_tmdb_genres[gid] for gid in genre_ids if gid in _tmdb_genres][:3]
+        plot        = result.get('overview', '')
+        vote        = result.get('vote_average', 0)
+        tmdb_rating = f"{vote:.1f}" if isinstance(vote, (int, float)) and vote else ''
+        meta = {'poster_url': poster_url, 'genres': genres, 'plot': plot, 'tmdb_rating': tmdb_rating, 'tmdb_id': result.get('id', None)}
+        _metadata_cache[cache_key] = meta
+        return jsonify(meta)
+    except urllib.error.HTTPError as e:
+        return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/explore/browse')
+def explore_browse():
+    if not _prowlarr_url or not _prowlarr_key:
+        return jsonify({'error': 'Prowlarr not configured — click ⚙ Settings to enter your Prowlarr URL and API key.'}), 400
+    try:
+        # Fetch all enabled indexer IDs
+        indexer_ids   = []
+        indexer_names = []
+        try:
+            idx_req = urllib.request.Request(
+                f"{_prowlarr_url}/api/v1/indexer",
+                headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'}
+            )
+            with urllib.request.urlopen(idx_req, timeout=8) as idx_resp:
+                indexers = _json.loads(idx_resp.read().decode())
+            for ix in indexers:
+                if ix.get('enable', True):
+                    indexer_ids.append(str(ix['id']))
+                    indexer_names.append(ix.get('name', ''))
+        except Exception:
+            pass
+
+        def _fetch(query=''):
+            parts = [('query', query), ('type', 'search'), ('categories', '2000'), ('limit', '100')]
+            parts += [('indexerIds', iid) for iid in indexer_ids]
+            url = f"{_prowlarr_url}/api/v1/search?{urllib.parse.urlencode(parts)}"
+            req = urllib.request.Request(url, headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return _json.loads(resp.read().decode())
+
+        results = _fetch('')
+        if len(results) < 20:
+            fallback = _fetch('2025')
+            if len(fallback) > len(results):
+                results = fallback
+
+        # Build deduplicated movie list
+        movies = {}  # key -> {parsed_title, parsed_year, variants[]}
+        for r in results:
+            title = r.get('title', '')
+            # Skip TV episodes
+            if _TV_RE.search(title):
+                continue
+            tl = title.lower()
+            res = 'Unknown'
+            if '2160p' in tl or '4k' in tl or 'uhd' in tl:
+                res = '4K'
+            elif '1080p' in tl or re.search(r'[\.\-_ \[\(]1080[\.\-_ \]\)\[]', tl):
+                res = '1080p'
+            elif '720p' in tl or re.search(r'[\.\-_ \[\(]720[\.\-_ \]\)\[]', tl):
+                res = '720p'
+            elif '480p' in tl or re.search(r'[\.\-_ \[\(]480[\.\-_ \]\)\[]', tl):
+                res = '480p'
+            parsed = parse_movie_title(title)
+            parsed_title = parsed[0].title() if parsed[0] else title
+            parsed_year  = parsed[1] or ''
+            size = r.get('size', 0)
+            variant = {
+                'resolution': res,
+                'seeders': r.get('seeders', 0),
+                'magnet_url': r.get('magnetUrl', ''),
+                'download_url': r.get('downloadUrl', ''),
+                'info_url': r.get('infoUrl', ''),
+                'indexer': r.get('indexer', ''),
+                'size_human': format_size(size) if size else '?',
+                'title': title,
+            }
+            key = f"{parsed_title.lower()}_{parsed_year}"
+            if key not in movies:
+                movies[key] = {'parsed_title': parsed_title, 'parsed_year': parsed_year, 'variants': [variant]}
+            else:
+                movies[key]['variants'].append(variant)
+
+        # Sort variants within each movie by seeders desc; deduplicate by resolution (keep best per res)
+        processed = []
+        for m in movies.values():
+            by_res = {}
+            for v in m['variants']:
+                r = v['resolution']
+                if r not in by_res or v['seeders'] > by_res[r]['seeders']:
+                    by_res[r] = v
+            RES_ORDER = ['4K', '1080p', '720p', '480p', 'Unknown']
+            variants  = [by_res[r] for r in RES_ORDER if r in by_res]
+            best = variants[0]
+            processed.append({
+                'parsed_title': m['parsed_title'],
+                'parsed_year':  m['parsed_year'],
+                'best_seeders': best['seeders'],
+                'best_resolution': best['resolution'],
+                'indexer': best['indexer'],
+                'variants': variants,
+            })
+
+        processed.sort(key=lambda x: x['best_seeders'], reverse=True)
+        return jsonify({'results': processed[:100], 'tmdb_enabled': bool(_tmdb_key), 'all_indexers': sorted(indexer_names)})
+    except urllib.error.HTTPError as e:
+        return jsonify({'error': f'Prowlarr returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/tmdb/discover')
+def tmdb_discover():
+    if not _tmdb_key:
+        return jsonify({'error': 'TMDB key not configured — add it in ⚙ Settings.'}), 400
+    list_name = request.args.get('list', 'trending_week')
+    genre_id  = request.args.get('genre', '').strip()
+    try:
+        page = max(1, min(int(request.args.get('page', '1')), 10))
+    except ValueError:
+        page = 1
+
+    # Sort strategy per list when using genre filter via /discover/movie
+    _list_sort = {
+        'trending_week': 'popularity.desc',
+        'trending_today': 'popularity.desc',
+        'now_playing':   'popularity.desc',
+        'popular':       'popularity.desc',
+        'upcoming':      'primary_release_date.desc',
+        'top_rated':     'vote_average.desc',
+        'best_all_time': 'vote_count.desc',
+    }
+
+    _ensure_tmdb_genres()
+    try:
+        if genre_id:
+            # All genre-filtered lists go through /discover/movie
+            sort_by = _list_sort.get(list_name, 'popularity.desc')
+            params = urllib.parse.urlencode({
+                'api_key':        _tmdb_key,
+                'language':       'en-US',
+                'sort_by':        sort_by,
+                'with_genres':    genre_id,
+                'vote_count.gte': '50',
+                'page':           page,
+            })
+            if list_name == 'top_rated':
+                params += '&vote_average.gte=6.0'
+            elif list_name == 'best_all_time':
+                params += '&vote_average.gte=7.5&vote_count.gte=5000'
+            url = f"https://api.themoviedb.org/3/discover/movie?{params}"
+        elif list_name == 'best_all_time':
+            params = urllib.parse.urlencode({
+                'api_key':            _tmdb_key,
+                'language':           'en-US',
+                'sort_by':            'vote_count.desc',
+                'vote_average.gte':   '7.5',
+                'vote_count.gte':     '5000',
+                'page':               page,
+            })
+            url = f"https://api.themoviedb.org/3/discover/movie?{params}"
+        elif list_name == 'trending_today':
+            url = (f"https://api.themoviedb.org/3/trending/movie/day"
+                   f"?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US&page={page}")
+        else:
+            endpoint_map = {
+                'trending_week': 'https://api.themoviedb.org/3/trending/movie/week',
+                'now_playing':   'https://api.themoviedb.org/3/movie/now_playing',
+                'popular':       'https://api.themoviedb.org/3/movie/popular',
+                'upcoming':      'https://api.themoviedb.org/3/movie/upcoming',
+                'top_rated':     'https://api.themoviedb.org/3/movie/top_rated',
+            }
+            base_url = endpoint_map.get(list_name, endpoint_map['trending_week'])
+            url = f"{base_url}?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US&page={page}"
+
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = _json.loads(resp.read().decode())
+        movies = []
+        for m in data.get('results', []):
+            poster_path = m.get('poster_path', '')
+            release = m.get('release_date', '') or ''
+            year    = release[:4] if release else ''
+            genre_ids = m.get('genre_ids', [])
+            genres  = [_tmdb_genres[gid] for gid in genre_ids if gid in _tmdb_genres][:3]
+            vote    = m.get('vote_average', 0)
+            lang    = m.get('original_language', '')
+            countries = m.get('origin_country', [])
+            country_code = countries[0] if countries else _LANG_COUNTRY.get(lang, '')
+            movies.append({
+                'tmdb_id':    m.get('id'),
+                'title':      m.get('title', ''),
+                'year':       year,
+                'poster_url': f"https://image.tmdb.org/t/p/w342{poster_path}" if poster_path else '',
+                'genres':     genres,
+                'tmdb_rating': f"{vote:.1f}" if isinstance(vote, (int, float)) and vote else '',
+                'plot':       m.get('overview', ''),
+                'language':   _LANG_NAMES.get(lang, lang.upper() if lang else ''),
+                'country':    country_code,
+                'country_flag': _country_flag(country_code),
+            })
+        return jsonify({'results': movies, 'total_pages': min(data.get('total_pages', 1), 10), 'page': page})
+    except urllib.error.HTTPError as e:
+        if e.code == 401:
+            return jsonify({'error': 'Invalid TMDB API key — check Settings.'}), 401
+        return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/explore/search')
+def explore_search():
+    title = request.args.get('title', '').strip()
+    year  = request.args.get('year', '').strip()
+    if not title:
+        return jsonify({'error': 'title required'}), 400
+    if not _prowlarr_url or not _prowlarr_key:
+        return jsonify({'error': 'Prowlarr not configured — add it in ⚙ Settings.'}), 400
+    query = f"{title} {year}".strip()
+    try:
+        indexer_ids = []
+        try:
+            idx_req = urllib.request.Request(
+                f"{_prowlarr_url}/api/v1/indexer",
+                headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'}
+            )
+            with urllib.request.urlopen(idx_req, timeout=8) as idx_resp:
+                indexers = _json.loads(idx_resp.read().decode())
+            indexer_ids = [str(ix['id']) for ix in indexers if ix.get('enable', True)]
+        except Exception:
+            pass
+        parts = [('query', query), ('type', 'search'), ('categories', '2000'), ('limit', '100')]
+        parts += [('indexerIds', iid) for iid in indexer_ids]
+        url = f"{_prowlarr_url}/api/v1/search?{urllib.parse.urlencode(parts)}"
+        req = urllib.request.Request(url, headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            results = _json.loads(resp.read().decode())
+        hd_variants = []
+        fallback_variants = []
+        for r in results:
+            t = r.get('title', '')
+            if _TV_RE.search(t):
+                continue
+            tl = t.lower()
+            res = 'Unknown'
+            if '2160p' in tl or '4k' in tl or 'uhd' in tl:
+                res = '4K'
+            elif '1080p' in tl or re.search(r'[.\-_ \[(]1080[.\-_ \])]', tl):
+                res = '1080p'
+            elif '720p' in tl or re.search(r'[.\-_ \[(]720[.\-_ \])]', tl):
+                res = '720p'
+            elif '480p' in tl or re.search(r'[.\-_ \[(]480[.\-_ \])]', tl):
+                res = '480p'
+            size = r.get('size', 0)
+            seeders = r.get('seeders', 0)
+            entry = {
+                'resolution': res, 'seeders': seeders,
+                'magnet_url': r.get('magnetUrl', ''),
+                'download_url': r.get('downloadUrl', ''),
+                'info_url': r.get('infoUrl', ''),
+                'indexer': r.get('indexer', ''),
+                'size_human': format_size(size) if size else '?',
+                'size_bytes': size,
+                'title': t,
+            }
+            if res in ('4K', '1080p'):
+                hd_variants.append(entry)
+            else:
+                fallback_variants.append(entry)
+        # Sort: 4K first, then 1080p, within group by seeders desc
+        hd_variants.sort(key=lambda x: (0 if x['resolution'] == '4K' else 1, -x['seeders']))
+        if hd_variants:
+            variants = hd_variants
+        else:
+            fallback_variants.sort(key=lambda x: -x['seeders'])
+            variants = fallback_variants
+        return jsonify({'variants': variants})
+    except urllib.error.HTTPError as e:
+        return jsonify({'error': f'Prowlarr returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/tmdb/search')
+def tmdb_search():
+    if not _tmdb_key:
+        return jsonify({'error': 'TMDB key not configured — add it in ⚙ Settings.'}), 400
+    q = request.args.get('q', '').strip()
+    if not q:
+        return jsonify({'error': 'q (query) parameter required'}), 400
+    try:
+        page = max(1, min(int(request.args.get('page', '1')), 10))
+    except ValueError:
+        page = 1
+    _ensure_tmdb_genres()
+    try:
+        params = urllib.parse.urlencode({
+            'query': q, 'api_key': _tmdb_key,
+            'language': 'en-US', 'page': page, 'include_adult': 'false'
+        })
+        url = f"https://api.themoviedb.org/3/search/movie?{params}"
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = _json.loads(resp.read().decode())
+        movies = []
+        for m in data.get('results', []):
+            poster_path = m.get('poster_path', '')
+            release = m.get('release_date', '') or ''
+            year    = release[:4] if release else ''
+            genre_ids = m.get('genre_ids', [])
+            genres  = [_tmdb_genres[gid] for gid in genre_ids if gid in _tmdb_genres][:3]
+            vote    = m.get('vote_average', 0)
+            lang    = m.get('original_language', '')
+            country_code = _LANG_COUNTRY.get(lang, '')
+            movies.append({
+                'tmdb_id':    m.get('id'),
+                'title':      m.get('title', ''),
+                'year':       year,
+                'poster_url': f"https://image.tmdb.org/t/p/w342{poster_path}" if poster_path else '',
+                'genres':     genres,
+                'tmdb_rating': f"{vote:.1f}" if isinstance(vote, (int, float)) and vote else '',
+                'plot':       m.get('overview', ''),
+                'language':   _LANG_NAMES.get(lang, lang.upper() if lang else ''),
+                'country':    country_code,
+                'country_flag': _country_flag(country_code),
+            })
+        return jsonify({
+            'results': movies,
+            'total_pages': min(data.get('total_pages', 1), 10),
+            'page': page,
+            'total_results': data.get('total_results', 0),
+        })
+    except urllib.error.HTTPError as e:
+        if e.code == 401:
+            return jsonify({'error': 'Invalid TMDB API key — check Settings.'}), 401
+        return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/tmdb/imdb_id')
+def tmdb_imdb_id():
+    tmdb_id = request.args.get('tmdb_id', '').strip()
+    if not tmdb_id or not _tmdb_key:
+        return jsonify({'error': 'tmdb_id and TMDB key required'}), 400
+    try:
+        url = (f"https://api.themoviedb.org/3/movie/{urllib.parse.quote(str(tmdb_id))}"
+               f"?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US")
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            data = _json.loads(resp.read().decode())
+        imdb_id = data.get('imdb_id', '')
+        if not imdb_id:
+            return jsonify({'error': 'No IMDB ID found for this title'}), 404
+        return jsonify({'imdb_id': imdb_id})
+    except urllib.error.HTTPError as e:
+        return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

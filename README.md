@@ -6,7 +6,7 @@ A local web application for managing, cleaning, and organizing a large Plex movi
 
 Built with Python + Flask. Designed for libraries with thousands of files — tested with 10,000+ movies.
 
-**Current version: v1.17** — May 2026
+**Current version: v1.5** — May 2026
 
 ---
 
@@ -38,6 +38,7 @@ Built with Python + Flask. Designed for libraries with thousands of files — te
 | 🎬 **Plex Integration** | Automatically cross-references your files with Plex metadata. Shows Plex title, year, and genres on every file across all panels |
 | 🔎 **Prowlarr Integration** | Search for 1080p+ torrent replacements directly from the Duplicates, Low Quality, and Library panels |
 | 🗂️ **Unmatched Panel** *(v1.1)* | Finds files buried in deep subfolders that Plex can't match. Fix Path moves them up one level; Match lets you manually link them to a Plex entry |
+| 🔍 **Explore Torrents** *(v1.5)* | Search TMDB, browse trending/top-rated/genre lists, find torrents across all Prowlarr indexers, and stream any movie — all in one panel |
 
 ---
 
@@ -51,6 +52,34 @@ Built with Python + Flask. Designed for libraries with thousands of files — te
 - Anyone who wants to **fix Plex metadata mismatches** without editing files or folder names manually
 
 > **Related searches:** Plex movie library cleaner · Plex duplicate finder alternative · fix Plex unmatched movies · bulk delete Plex duplicates · Plex library organizer tool · movie folder cleanup Windows · how to remove duplicate movies from Plex · Plex 720p movie list · find low quality movies in Plex · Plex unmatched files fixer · local movie database manager · self-hosted media library tool
+
+---
+
+## What's New in v1.5
+
+### 🔍 Explore Torrents — Full Movie Discovery & Torrent Hub
+
+A brand new full-screen panel added in v1.5. Click **🔍 Explore Torrents** in the header.
+
+**Global TMDB Search**
+- Search bar above the tabs — type any title and press Enter to search the entire TMDB database
+- Results displayed as poster cards with Load More (up to 200 results) and a Clear button
+
+**TMDB Discover Tab**
+- Browse 6 curated lists: Trending Today, Popular Now, Now Playing, Top Rated, Upcoming, Best of All Time
+- Genre filter (15 genres), Load More per list
+- Cards show: poster, year, genre tags, ⭐ TMDB rating, language + country flag (🇰🇷 Korean, 🇯🇵 Japanese, etc.), expandable plot
+- **▶ Stream** — opens the movie on playimdb.com instantly
+- **🔍 Find Torrent** — searches all Prowlarr indexers and shows every 1080p+ / 4K result in a modal
+
+**Browse Indexers Tab**
+- Latest torrents from every enabled Prowlarr indexer, deduplicated into movie cards
+- Resolution variant pills per card (4K / 1080p / 720p) — click to switch target
+- Indexer dropdown lists **all** registered Prowlarr indexers, not just those that returned results
+- TMDB metadata (poster, rating, plot) loaded asynchronously per card
+- Filter by quality, indexer, and sort order
+
+**TMDB key required** for posters, ratings, Stream, and all discovery features — get a free key at [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) and add it in ⚙ Settings.
 
 ---
 
@@ -201,7 +230,8 @@ Settings are saved automatically to `config.json`:
   "plex_url": "http://localhost:32400",
   "plex_token": "your-token-here",
   "prowlarr_url": "http://localhost:9696",
-  "prowlarr_key": "your-api-key-here"
+  "prowlarr_key": "your-api-key-here",
+  "tmdb_key": "your-tmdb-api-key"
 }
 ```
 
@@ -220,90 +250,9 @@ Settings are saved automatically to `config.json`:
 - **Backend:** Python 3, Flask
 - **Frontend:** Vanilla HTML/CSS/JavaScript (no frameworks)
 - **Charts:** Chart.js 4
+- **Resolution probe:** pymediainfo (bundled MediaInfo.dll)
 - **Delete:** send2trash
-- **External APIs:** Plex HTTP API, Prowlarr HTTP API
-
----
-
-## License
-
-MIT
-
----
-
-## Requirements
-
-- Python 3.10+
-- [Plex Media Server](https://www.plex.tv/) (optional, for metadata enrichment)
-- [Prowlarr](https://prowlarr.com/) (optional, for torrent searching)
-
----
-
-## Installation
-
-```bash
-git clone https://github.com/dantebagera/10k-movie-library-organizer.git
-cd 10k-movie-library-organizer
-pip install -r requirements.txt
-```
-
----
-
-## Usage
-
-**Windows — double-click `run.bat`**
-
-Or manually:
-
-```bash
-python app.py
-```
-
-Then open **http://localhost:5000** in your browser.
-
----
-
-## How It Works
-
-All detection is **filename-based** — no external APIs required to scan duplicates or find low quality files. It works on any movie folder regardless of naming convention.
-
-**Plex integration** is layered on top: if you provide your Plex URL and token, the app automatically looks up each file in Plex and displays the real title, year, and genres. It refreshes the cache every 5 minutes in the background.
-
-**Duplicate grouping** works by extracting a normalised `(title, year)` key from each filename. Files that resolve to the same title and year are grouped together and ranked by quality (4K > 1080p > 720p, BD Remux > Blu-ray > WEB-DL > DVDRip, etc.).
-
----
-
-## Configuration
-
-Settings are saved automatically to `config.json`:
-
-```json
-{
-  "movies_dir": "E:\\Movies",
-  "plex_url": "http://localhost:32400",
-  "plex_token": "your-token-here",
-  "prowlarr_url": "http://localhost:9696",
-  "prowlarr_key": "your-api-key-here"
-}
-```
-
----
-
-## Delete Safety
-
-- **Recycle Bin mode** (default) — moves files to the Windows Recycle Bin via `send2trash`. Fully recoverable.
-- **Permanent mode** — irreversible. Requires confirmation.
-- The app will only delete files inside your configured movies directory. Any path outside it is rejected.
-
----
-
-## Tech Stack
-
-- **Backend:** Python 3, Flask
-- **Frontend:** Vanilla HTML/CSS/JavaScript (no frameworks)
-- **Charts:** Chart.js 4
-- **Delete:** send2trash
-- **External APIs:** Plex HTTP API, Prowlarr HTTP API
+- **External APIs:** Plex HTTP API · Prowlarr HTTP API · TMDB API v3
 
 ---
 

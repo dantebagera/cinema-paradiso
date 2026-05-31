@@ -143,6 +143,20 @@
     #settings-btn:hover { background: #636e72; color: #fff; }
     #settings-btn.open { background: #636e72; color: #fff; }
 
+    #explore-btn {
+      background: transparent;
+      border: 2px solid #fdcb6e;
+      color: #fdcb6e;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    #explore-btn:hover { background: #fdcb6e; color: #141414; }
+
     .lib-row-unmatched { border-left: 3px solid #e5a00d !important; }
     .lib-row-unmatched td:first-child { padding-left: 9px; }
     .plex-col-matched { font-size: 0.82rem; }
@@ -705,6 +719,266 @@
       border-top-color: #fff; border-radius: 50%;
       animation: spin 0.75s linear infinite; flex-shrink: 0;
     }
+
+    /* ── Explore Torrents Panel ── */
+    #explore-panel {
+      display: none; position: fixed; inset: 0;
+      background: #0d0d0d; z-index: 200;
+      overflow-y: auto;
+    }
+    #explore-panel.active { display: block; }
+    .explore-inner {
+      max-width: 1500px; margin: 0 auto;
+      padding: 28px 24px 60px;
+    }
+    .explore-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 18px; flex-wrap: wrap;
+    }
+    .explore-header h2 { color: #fdcb6e; font-size: 1.3rem; flex: 1; margin: 0; }
+    .explore-search-bar {
+      display: flex; gap: 8px; align-items: center;
+      margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .explore-search-bar input {
+      flex: 1; min-width: 200px; background: #1a1a1a; border: 1px solid #333;
+      border-radius: 8px; color: #eee; padding: 9px 14px; font-size: 0.9rem;
+      outline: none;
+    }
+    .explore-search-bar input:focus { border-color: #fdcb6e55; }
+    .explore-search-bar input::placeholder { color: #555; }
+    .explore-search-clear {
+      background: none; border: 1px solid #333; color: #666; border-radius: 8px;
+      padding: 8px 12px; cursor: pointer; font-size: 0.85rem;
+    }
+    .explore-search-clear:hover { border-color: #555; color: #aaa; }
+    #explore-search-results-count {
+      font-size: 0.78rem; color: #555; padding: 6px 0 12px;
+    }
+    .btn-explore-close {
+      background: #252525; border: 1px solid #333; color: #aaa;
+      padding: 7px 16px; border-radius: 6px; font-size: 0.85rem; cursor: pointer;
+    }
+    .btn-explore-close:hover { background: #333; color: #fff; }
+    /* Tab bar */
+    .explore-tabs {
+      display: flex; gap: 4px; margin-bottom: 20px;
+      border-bottom: 2px solid #222;
+    }
+    .explore-tab-btn {
+      background: transparent; border: none; border-bottom: 3px solid transparent;
+      color: #666; padding: 10px 20px; font-size: 0.9rem; font-weight: 700;
+      cursor: pointer; margin-bottom: -2px; transition: color 0.15s, border-color 0.15s;
+    }
+    .explore-tab-btn:hover { color: #ccc; }
+    .explore-tab-btn.active { color: #fdcb6e; border-bottom-color: #fdcb6e; }
+    /* Toolbar (Browse Indexers tab) */
+    .explore-toolbar {
+      display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+      margin-bottom: 22px; padding: 12px 16px;
+      background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px;
+    }
+    .explore-toolbar select {
+      background: #252525; border: 1px solid #3a3a3a; color: #ccc;
+      padding: 6px 10px; border-radius: 6px; font-size: 0.82rem; cursor: pointer;
+    }
+    .explore-toolbar select:focus { outline: none; border-color: #fdcb6e; }
+    .explore-toolbar label { font-size: 0.8rem; color: #666; }
+    #browse-count, #discover-count { font-size: 0.8rem; color: #666; margin-left: auto; }
+    /* Discover toolbar */
+    .discover-toolbar {
+      display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+      margin-bottom: 22px; padding: 12px 16px;
+      background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px;
+    }
+    .discover-toolbar label { font-size: 0.8rem; color: #666; }
+    .discover-toolbar select {
+      background: #252525; border: 1px solid #3a3a3a; color: #ccc;
+      padding: 6px 10px; border-radius: 6px; font-size: 0.82rem; cursor: pointer;
+    }
+    .discover-toolbar select:focus { outline: none; border-color: #fdcb6e; }
+    .btn-discover-load {
+      background: #fdcb6e22; border: 1px solid #fdcb6e66; color: #fdcb6e;
+      padding: 7px 18px; border-radius: 6px; font-size: 0.85rem; font-weight: 700;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .btn-discover-load:hover { background: #fdcb6e44; }
+    .btn-discover-load:disabled { opacity: 0.4; cursor: not-allowed; }
+    /* Card grid */
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+      gap: 18px;
+    }
+    .tr-card {
+      background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px;
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    }
+    .tr-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px #00000088;
+      border-color: #fdcb6e44;
+    }
+    .tr-poster-wrap {
+      position: relative; overflow: hidden;
+      aspect-ratio: 2 / 3; background: #252525;
+      flex-shrink: 0;
+    }
+    .tr-poster {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.3s ease; display: block;
+    }
+    .tr-card:hover .tr-poster { transform: scale(1.06); }
+    .tr-poster-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem; color: #333; background: #1e1e1e;
+    }
+    .tr-res-badge {
+      position: absolute; top: 7px; right: 7px;
+      padding: 2px 7px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.02em; z-index: 2;
+    }
+    .tr-res-4K    { background: #6c3483dd; color: #e8d8f5; }
+    .tr-res-1080p { background: #1a5276dd; color: #d6eaf8; }
+    .tr-res-720p  { background: #145a32dd; color: #d5f5e3; }
+    .tr-res-480p  { background: #7e5109dd; color: #fdebd0; }
+    .tr-res-Unknown { background: #333d; color: #aaa; }
+    .tr-skeleton {
+      background: linear-gradient(90deg, #1e1e1e 25%, #2a2a2a 50%, #1e1e1e 75%);
+      background-size: 200% 100%;
+      animation: tr-shimmer 1.4s infinite;
+    }
+    @keyframes tr-shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .tr-card-body {
+      padding: 10px 12px 8px; flex: 1;
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .tr-title {
+      font-size: 0.88rem; font-weight: 700; color: #fff;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.3;
+    }
+    .tr-year { font-size: 0.75rem; color: #666; }
+    .tr-genres {
+      display: flex; flex-wrap: wrap; gap: 4px; min-height: 18px;
+    }
+    .tr-genre-tag {
+      font-size: 0.64rem; padding: 2px 6px; border-radius: 10px;
+      background: #252525; border: 1px solid #333; color: #888;
+    }
+    .tr-rating-row {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    }
+    .tr-tmdb-score {
+      font-size: 0.78rem; font-weight: 700; color: #fdcb6e;
+    }
+    .tr-plot {
+      font-size: 0.72rem; color: #666; line-height: 1.5; flex: 1;
+    }
+    .tr-plot:not(.expanded) {
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .tr-plot.expanded { display: block; overflow: visible; }
+    .tr-plot-toggle {
+      font-size: 0.65rem; color: #555; cursor: pointer; margin-top: 2px;
+      display: block; user-select: none;
+    }
+    .tr-plot-toggle:hover { color: #fdcb6e; }
+    .tr-lang-row { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 3px; }
+    .tr-lang-tag {
+      font-size: 0.62rem; color: #777; background: #1e1e1e;
+      border: 1px solid #2a2a2a; border-radius: 10px; padding: 1px 6px;
+    }
+    .btn-stream {
+      display: block; width: 100%; margin-top: 5px;
+      background: #2ecc7108; border: 1px solid #2ecc7155; color: #2ecc71;
+      padding: 6px 0; border-radius: 6px; font-size: 0.78rem; font-weight: 700;
+      cursor: pointer; text-align: center; text-decoration: none;
+      transition: background 0.15s; box-sizing: border-box;
+    }
+    .btn-stream:hover { background: #2ecc7122; }
+    .btn-stream:disabled { opacity: 0.25; cursor: not-allowed; pointer-events: none; }
+    .torrent-modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 400;
+    }
+    .torrent-modal {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      z-index: 401; max-width: 860px; width: 90vw; max-height: 80vh;
+      overflow-y: auto; background: #161616; border: 1px solid #2a2a2a;
+      border-radius: 12px; padding: 24px;
+    }
+    .torrent-modal-header {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
+    }
+    .torrent-modal-header h3 { flex: 1; margin: 0; color: #fdcb6e; font-size: 1.1rem; }
+    .torrent-modal table { width: 100%; border-collapse: collapse; }
+    .torrent-modal th {
+      text-align: left; font-size: 0.72rem; color: #555; text-transform: uppercase;
+      letter-spacing: 0.05em; padding: 6px 10px; border-bottom: 1px solid #2a2a2a;
+    }
+    .torrent-modal td { padding: 8px 10px; border-bottom: 1px solid #1e1e1e; font-size: 0.82rem; color: #ccc; }
+    .torrent-modal tr:hover td { background: #1e1e1e; }
+    .tr-footer {
+      padding: 0 12px 10px; display: flex; flex-direction: column; gap: 3px;
+    }
+    .tr-seeders { font-size: 0.74rem; color: #2ecc71; font-weight: 600; }
+    .tr-indexer { font-size: 0.68rem; color: #555; }
+    /* Quality pills on Browse Indexers cards */
+    .tr-variants {
+      display: flex; flex-wrap: wrap; gap: 4px; padding: 0 12px 8px;
+    }
+    .tr-variant-pill {
+      font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px;
+      cursor: pointer; border: 1px solid transparent; transition: all 0.15s;
+      color: #aaa; background: #252525; border-color: #333;
+    }
+    .tr-variant-pill.active { background: #fdcb6e22; border-color: #fdcb6e; color: #fdcb6e; }
+    .tr-variant-pill:hover:not(.active) { border-color: #555; color: #ccc; }
+    /* Action buttons (magnet / fallback) */
+    .btn-tr-action {
+      display: block; width: 100%; margin-top: 6px;
+      background: #fdcb6e18; border: 1px solid #fdcb6e55; color: #fdcb6e;
+      padding: 6px 0; border-radius: 6px; font-size: 0.78rem; font-weight: 700;
+      cursor: pointer; text-align: center; text-decoration: none;
+      transition: background 0.15s; box-sizing: border-box;
+    }
+    .btn-tr-action:hover { background: #fdcb6e33; }
+    .btn-tr-action.secondary {
+      background: #1a1a2e18; border-color: #74b9ff55; color: #74b9ff;
+    }
+    .btn-tr-action.secondary:hover { background: #74b9ff22; }
+    .btn-tr-action.disabled { opacity: 0.3; pointer-events: none; cursor: default; }
+    /* Find Torrent button on Discover cards */
+    .btn-find-torrent {
+      display: block; width: 100%; margin: 6px 12px 10px; box-sizing: border-box;
+      width: calc(100% - 24px);
+      background: #fdcb6e18; border: 1px solid #fdcb6e55; color: #fdcb6e;
+      padding: 7px 0; border-radius: 6px; font-size: 0.8rem; font-weight: 700;
+      cursor: pointer; text-align: center; transition: background 0.15s;
+    }
+    .btn-find-torrent:hover { background: #fdcb6e33; }
+    .btn-find-torrent:disabled { opacity: 0.5; cursor: not-allowed; }
+    /* Inline torrent results on Discover cards */
+    .tr-find-results {
+      padding: 6px 12px 10px; border-top: 1px solid #252525;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .tr-find-empty { font-size: 0.72rem; color: #555; padding: 4px 0; }
+    .tr-find-error { font-size: 0.72rem; color: #e74c3c; padding: 4px 0; }
+    .explore-empty {
+      text-align: center; padding: 80px 20px;
+      color: #555; font-size: 1rem;
+    }
+    .explore-error {
+      background: #2a1a1a; border: 1px solid #c0392b44; border-radius: 8px;
+      padding: 18px 22px; color: #e74c3c; font-size: 0.9rem; margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -718,6 +992,7 @@
     <button id="lib-btn" onclick="openLibrary()">📂 Library</button>
     <button id="dash-btn" onclick="openDashboard()">📊 Dashboard</button>
     <button id="unmatched-btn" onclick="openFixUnmatched()">🔍 Unmatched</button>
+    <button id="explore-btn" onclick="openExplore()">🔍 Explore Torrents</button>
     <button id="settings-btn" onclick="toggleSettings(event)">⚙ Settings</button>
   </div>
 </header>
@@ -760,7 +1035,8 @@
       Click <strong style="color:#74b9ff">&#128194; Library</strong> to browse your full movie collection with resolution and Plex status.<br>
       Click <strong style="color:#fd79a8">&#128202; Dashboard</strong> to view statistics, charts, and insights about your library.<br>
       Click <strong style="color:#a29bfe">&#128269; Unmatched</strong> to find files not matched in Plex and fix their paths.<br>
-      Click <strong style="color:#636e72">&#9881; Settings</strong> to configure your library folder, Plex, and Prowlarr connections.
+      Click <strong style="color:#fdcb6e">&#128269; Explore Torrents</strong> to search the TMDB database by title, browse curated lists (trending, top-rated, best of all time, by genre), discover movie details with posters &amp; ratings, find torrents on your Prowlarr indexers, and stream any movie directly — all in one panel.<br>
+      Click <strong style="color:#636e72">&#9881; Settings</strong> to configure your library folder, Plex, Prowlarr, and TMDB connections.
     </div>
   </div>
   <div id="results"></div>
@@ -1001,6 +1277,20 @@
   </div>
 
   <div class="settings-section">
+    <div class="settings-section-title">🎬 TMDB Movie Metadata</div>
+    <p class="settings-hint">Used by the Trending panel to fetch movie posters, genres, plot and ratings. Free API key at <strong style="color:#fdcb6e">themoviedb.org/settings/api</strong> — no limits.</p>
+    <div class="settings-field">
+      <label>TMDB API Key (v3)</label>
+      <input type="text" id="tmdb-key-input" placeholder="Your TMDB API key" autocomplete="off" />
+    </div>
+    <div id="tmdb-test-status" class="settings-status"></div>
+    <div class="settings-btn-row">
+      <button class="btn-settings-test" onclick="testTmdbCfg()" id="tmdb-test-btn">Test</button>
+      <button class="btn-settings-save" onclick="saveTmdbCfg()">Save TMDB</button>
+    </div>
+  </div>
+
+  <div class="settings-section">
     <div class="settings-section-title">🔄 Plex Sync</div>
     <label class="always-sync-row" id="always-sync-row" onclick="toggleAlwaysSyncRow()">
       <input type="checkbox" id="always-sync-chk" onclick="event.stopPropagation(); toggleAlwaysSync(this)" />
@@ -1055,6 +1345,109 @@
   </div>
 </div>
 
+<!-- Trending Panel -->
+<!-- Explore Torrents Panel -->
+<div id="explore-panel">
+  <div class="explore-inner">
+    <div class="explore-header">
+      <h2>🔍 Explore Torrents</h2>
+      <button class="btn-explore-close" onclick="closeExplore()">Close</button>
+    </div>
+    <!-- Search Bar -->
+    <div class="explore-search-bar">
+      <input id="explore-search-input" type="text" placeholder="Search TMDB — e.g. The Dark Knight, Parasite…"
+        onkeydown="if(event.key==='Enter')searchExplore()">
+      <button class="btn-discover-load" onclick="searchExplore()">🔍 Search</button>
+      <button class="explore-search-clear" id="explore-search-clear" style="display:none" onclick="clearExploreSearch()">✕ Clear</button>
+    </div>
+
+    <!-- Search Results (shown when search active) -->
+    <div id="explore-search-results" style="display:none">
+      <div id="explore-search-results-count"></div>
+      <div id="explore-search-grid" class="explore-grid"></div>
+      <div id="explore-search-more-wrap" style="display:none;text-align:center;padding:18px 0">
+        <button class="btn-discover-load" id="explore-search-more-btn" onclick="loadSearchMore()">⬇ Load More</button>
+      </div>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="explore-tabs">
+      <button class="explore-tab-btn active" id="tab-btn-discover" onclick="switchExploreTab('discover')">🎬 TMDB Discover</button>
+      <button class="explore-tab-btn" id="tab-btn-browse" onclick="switchExploreTab('browse')">📡 Browse Indexers</button>
+    </div>
+
+    <!-- TMDB Discover Tab -->
+    <div id="explore-tab-discover">
+      <div class="discover-toolbar">
+        <label>List:</label>
+        <select id="discover-list-sel" onchange="loadDiscover()">
+          <option value="trending_week">Trending This Week</option>
+          <option value="trending_today">Trending Today</option>
+          <option value="now_playing">Now Playing</option>
+          <option value="popular">Most Popular</option>
+          <option value="upcoming">Upcoming</option>
+          <option value="top_rated">Top Rated</option>
+          <option value="best_all_time">Best of All Time</option>
+        </select>
+        <label style="margin-left:10px">Genre:</label>
+        <select id="discover-genre-sel" onchange="loadDiscover()">
+          <option value="">All Genres</option>
+          <option value="28">Action</option>
+          <option value="12">Adventure</option>
+          <option value="16">Animation</option>
+          <option value="35">Comedy</option>
+          <option value="80">Crime</option>
+          <option value="99">Documentary</option>
+          <option value="18">Drama</option>
+          <option value="10751">Family</option>
+          <option value="14">Fantasy</option>
+          <option value="27">Horror</option>
+          <option value="9648">Mystery</option>
+          <option value="10749">Romance</option>
+          <option value="878">Sci-Fi</option>
+          <option value="53">Thriller</option>
+          <option value="10752">War</option>
+        </select>
+        <button class="btn-discover-load" id="discover-refresh-btn" onclick="loadDiscover()">🔄 Refresh</button>
+        <span id="discover-count"></span>
+      </div>
+      <div id="discover-grid" class="explore-grid"></div>
+      <div id="discover-load-more-wrap" style="display:none;text-align:center;padding:18px 0">
+        <button class="btn-discover-load" id="discover-load-more-btn" onclick="loadDiscoverMore()">⬇ Load More</button>
+      </div>
+    </div>
+
+    <!-- Browse Indexers Tab -->
+    <div id="explore-tab-browse" style="display:none">
+      <div class="explore-toolbar">
+        <label>Quality:</label>
+        <select id="browse-filter-res" onchange="applyBrowseFilters()">
+          <option value="">All</option>
+          <option value="4K">4K</option>
+          <option value="1080p">1080p</option>
+          <option value="720p">720p</option>
+          <option value="480p">480p</option>
+          <option value="Unknown">Unknown</option>
+        </select>
+        <label>Indexer:</label>
+        <select id="browse-filter-idx" onchange="applyBrowseFilters()">
+          <option value="">All</option>
+        </select>
+        <label>Sort:</label>
+        <select id="browse-sort" onchange="applyBrowseFilters()">
+          <option value="seeders-desc">Seeders (most)</option>
+          <option value="seeders-asc">Seeders (least)</option>
+          <option value="title-asc">Title A→Z</option>
+          <option value="year-desc">Year (newest)</option>
+        </select>
+        <button class="btn-discover-load" id="browse-refresh-btn" onclick="loadBrowse()">🔄 Refresh</button>
+        <span id="browse-count"></span>
+      </div>
+      <div id="browse-grid" class="explore-grid"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Smart Clean Panel -->
 <div id="smart-panel">
   <div class="smart-panel-inner">
@@ -1085,6 +1478,16 @@
   </div>
 </div>
 
+<div id="torrent-modal" style="display:none">
+  <div class="torrent-modal-overlay" onclick="closeTorrentModal()"></div>
+  <div class="torrent-modal">
+    <div class="torrent-modal-header">
+      <h3 id="torrent-modal-title">Torrents</h3>
+      <button class="btn-explore-close" onclick="closeTorrentModal()">✕ Close</button>
+    </div>
+    <div id="torrent-modal-body"></div>
+  </div>
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -2199,6 +2602,15 @@
     } catch {}
   });
 
+  // ── TMDB Config Load ─────────────────────────────────────────────
+  window.addEventListener('load', async () => {
+    try {
+      const r = await fetch('/api/tmdb/config');
+      const d = await r.json();
+      if (d.key) document.getElementById('tmdb-key-input').value = d.key;
+    } catch {}
+  });
+
   function openProwlarrCfg() { toggleSettings(); }
   function closeProwlarrCfg() { closeSettings(); }
   async function saveProwlarrCfg() {
@@ -2745,6 +3157,509 @@
     } catch (e) {
       document.getElementById('match-results').innerHTML = '<div style="color:#e74c3c">' + escHtml(e.message) + '</div>';
     }
+  }
+
+  // ── Explore Torrents Panel ────────────────────────────────────────────────
+
+  let browseAllResults  = [];   // deduplicated movie list from /api/explore/browse
+  let discoverResults   = [];   // TMDB discover list
+  let activeExploreTab  = 'discover';
+
+  function openExplore() {
+    document.getElementById('explore-panel').classList.add('active');
+    if (activeExploreTab === 'discover' && discoverResults.length === 0) loadDiscover();
+    if (activeExploreTab === 'browse'   && browseAllResults.length === 0) loadBrowse();
+  }
+
+  function closeExplore() {
+    document.getElementById('explore-panel').classList.remove('active');
+  }
+
+  function switchExploreTab(tab) {
+    activeExploreTab = tab;
+    document.getElementById('explore-tab-discover').style.display = tab === 'discover' ? '' : 'none';
+    document.getElementById('explore-tab-browse').style.display   = tab === 'browse'   ? '' : 'none';
+    document.getElementById('tab-btn-discover').classList.toggle('active', tab === 'discover');
+    document.getElementById('tab-btn-browse').classList.toggle('active',   tab === 'browse');
+    if (tab === 'discover' && discoverResults.length === 0) loadDiscover();
+    if (tab === 'browse'   && browseAllResults.length === 0) loadBrowse();
+  }
+
+  // ── Explore helpers ───────────────────────────────────────────────────────
+
+  function togglePlot(el) {
+    const plot = el.previousElementSibling;
+    const expanded = plot.classList.toggle('expanded');
+    el.textContent = expanded ? '▴ less' : '▾ more';
+  }
+
+  async function streamMovie(tmdbId) {
+    try {
+      const res  = await fetch('/api/tmdb/imdb_id?tmdb_id=' + encodeURIComponent(tmdbId));
+      const data = await res.json();
+      if (data.error || !data.imdb_id) { showToast('IMDB ID not found for this title', true); return; }
+      window.open('https://www.playimdb.com/title/' + data.imdb_id + '/', '_blank', 'noopener,noreferrer');
+    } catch (e) { showToast(e.message, true); }
+  }
+
+  function closeTorrentModal() {
+    document.getElementById('torrent-modal').style.display = 'none';
+    document.getElementById('torrent-modal-body').innerHTML = '';
+  }
+
+  async function openTorrentModal(title, year) {
+    const modal = document.getElementById('torrent-modal');
+    const body  = document.getElementById('torrent-modal-body');
+    document.getElementById('torrent-modal-title').textContent = title + (year ? ' (' + year + ')' : '');
+    modal.style.display = '';
+    body.innerHTML = '<div class="explore-empty" style="padding:30px 0">Searching Prowlarr\u2026</div>';
+    try {
+      const params = new URLSearchParams({ title });
+      if (year) params.set('year', year);
+      const res  = await fetch('/api/explore/search?' + params.toString());
+      const data = await res.json();
+      if (data.error) { body.innerHTML = '<div style="padding:16px;color:#e74c3c">' + escHtml(data.error) + '</div>'; return; }
+      const variants = data.variants || [];
+      if (!variants.length) {
+        body.innerHTML = '<div class="explore-empty" style="padding:30px 0">No torrents found on your indexers.</div>';
+        return;
+      }
+      body.innerHTML = '<table><thead><tr><th>Quality</th><th>Title</th><th>Size</th><th>Seeds</th><th>Indexer</th><th>Action</th></tr></thead><tbody>' +
+        variants.map(v => {
+          const action = v.magnet_url
+            ? `<a class="btn-tr-action" style="padding:4px 10px;width:auto;display:inline-block" href="${escAttr(v.magnet_url)}">🧲 Magnet</a>`
+            : v.info_url
+              ? `<a class="btn-tr-action secondary" style="padding:4px 10px;width:auto;display:inline-block" href="${escAttr(v.info_url)}" target="_blank" rel="noopener noreferrer">🔗 Page</a>`
+              : v.download_url
+                ? `<a class="btn-tr-action secondary" style="padding:4px 10px;width:auto;display:inline-block" href="${escAttr(v.download_url)}" target="_blank" rel="noopener noreferrer">⬇ .torrent</a>`
+                : '<span style="color:#555;font-size:0.72rem">No link</span>';
+          const shortTitle = v.title.length > 45 ? v.title.slice(0, 43) + '\u2026' : v.title;
+          return `<tr>
+            <td><span class="tr-res-badge tr-res-${escHtml(v.resolution)}" style="position:static">${escHtml(v.resolution)}</span></td>
+            <td title="${escAttr(v.title)}" style="font-size:0.75rem;color:#888">${escHtml(shortTitle)}</td>
+            <td style="white-space:nowrap">${escHtml(v.size_human)}</td>
+            <td style="color:#2ecc71;font-weight:600">▲ ${v.seeders.toLocaleString()}</td>
+            <td style="color:#555;font-size:0.75rem">${escHtml(v.indexer)}</td>
+            <td>${action}</td>
+          </tr>`;
+        }).join('') + '</tbody></table>';
+    } catch (e) { body.innerHTML = '<div style="padding:16px;color:#e74c3c">' + escHtml(e.message) + '</div>'; }
+  }
+
+  // ── Explore Search (cross-tab) ────────────────────────────────────────────
+
+  let _searchPage = 1;
+  let _searchTotalPages = 1;
+  let _searchQuery = '';
+
+  function _setTabsVisible(visible) {
+    document.getElementById('explore-tab-discover').style.display = visible ? '' : 'none';
+    document.getElementById('explore-tab-browse').style.display   = 'none'; // managed by switchExploreTab
+    document.querySelector('.explore-tabs').style.display         = visible ? '' : 'none';
+    document.getElementById('explore-search-results').style.display = visible ? 'none' : '';
+    document.getElementById('explore-search-clear').style.display   = visible ? 'none' : '';
+    if (visible) {
+      // Restore whichever tab was active
+      const activeTab = document.querySelector('.explore-tab-btn.active');
+      const tabId = activeTab ? activeTab.id.replace('tab-btn-', '') : 'discover';
+      switchExploreTab(tabId);
+    }
+  }
+
+  function _updateSearchMoreBtn() {
+    const wrap = document.getElementById('explore-search-more-wrap');
+    if (_searchPage >= _searchTotalPages) { wrap.style.display = 'none'; return; }
+    wrap.style.display = '';
+    const btn = document.getElementById('explore-search-more-btn');
+    btn.disabled = false; btn.textContent = '⬇ Load More';
+  }
+
+  async function searchExplore() {
+    const q = document.getElementById('explore-search-input').value.trim();
+    if (!q) return;
+    _searchQuery = q;
+    _searchPage = 1;
+    _setTabsVisible(false);
+    const grid = document.getElementById('explore-search-grid');
+    const count = document.getElementById('explore-search-results-count');
+    document.getElementById('explore-search-more-wrap').style.display = 'none';
+    grid.innerHTML = '<div class="explore-empty">Searching TMDB…</div>';
+    count.textContent = '';
+    try {
+      const res  = await fetch('/api/tmdb/search?q=' + encodeURIComponent(q) + '&page=1');
+      const data = await res.json();
+      if (data.error) { grid.innerHTML = '<div class="explore-error">' + escHtml(data.error) + '</div>'; return; }
+      _searchTotalPages = data.total_pages || 1;
+      const results = data.results || [];
+      if (!results.length) {
+        grid.innerHTML = '<div class="explore-empty">No TMDB results for "' + escHtml(q) + '".</div>';
+        return;
+      }
+      count.textContent = (data.total_results || results.length) + ' results';
+      grid.innerHTML = results.map((m, i) => _discoverCardHtml(m, i)).join('');
+      _updateSearchMoreBtn();
+    } catch (e) { grid.innerHTML = '<div class="explore-error">' + escHtml(e.message) + '</div>'; }
+  }
+
+  async function loadSearchMore() {
+    const btn = document.getElementById('explore-search-more-btn');
+    btn.disabled = true; btn.textContent = '⏳ Loading…';
+    _searchPage++;
+    try {
+      const res  = await fetch('/api/tmdb/search?q=' + encodeURIComponent(_searchQuery) + '&page=' + _searchPage);
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); _searchPage--; return; }
+      _searchTotalPages = data.total_pages || _searchTotalPages;
+      const newMovies = data.results || [];
+      const grid = document.getElementById('explore-search-grid');
+      const startIdx = grid.querySelectorAll('.tr-card').length;
+      const frag = document.createElement('div');
+      frag.innerHTML = newMovies.map((m, ii) => _discoverCardHtml(m, startIdx + ii)).join('');
+      while (frag.firstChild) grid.appendChild(frag.firstChild);
+      _updateSearchMoreBtn();
+    } catch (e) { showToast(e.message, true); _searchPage--; _updateSearchMoreBtn(); }
+  }
+
+  function clearExploreSearch() {
+    document.getElementById('explore-search-input').value = '';
+    _searchQuery = '';
+    _searchPage = 1;
+    document.getElementById('explore-search-grid').innerHTML = '';
+    document.getElementById('explore-search-results-count').textContent = '';
+    document.getElementById('explore-search-more-wrap').style.display = 'none';
+    _setTabsVisible(true);
+  }
+
+  // ── TMDB Discover tab ─────────────────────────────────────────────────────
+
+  let _discoverPage      = 1;
+  let _discoverTotalPages = 1;
+
+  function _updateLoadMoreBtn() {
+    const wrap = document.getElementById('discover-load-more-wrap');
+    const btn  = document.getElementById('discover-load-more-btn');
+    if (_discoverPage >= _discoverTotalPages || _discoverPage >= 10) {
+      wrap.style.display = 'none';
+    } else {
+      wrap.style.display = '';
+      btn.disabled = false;
+      btn.textContent = '⬇ Load More';
+    }
+  }
+
+  function _updateDiscoverCount() {
+    const loaded = document.querySelectorAll('#discover-grid .tr-card').length;
+    const approx = _discoverTotalPages <= 10 ? _discoverTotalPages * 20 : '200+';
+    document.getElementById('discover-count').textContent =
+      loaded + (loaded !== approx ? ' / ~' + approx : '') + ' titles';
+  }
+
+  async function loadDiscover() {
+    const list  = document.getElementById('discover-list-sel').value;
+    const genre = document.getElementById('discover-genre-sel').value;
+    const btn   = document.getElementById('discover-refresh-btn');
+    const grid  = document.getElementById('discover-grid');
+    _discoverPage = 1;
+    btn.disabled = true; btn.textContent = '⏳ Loading…';
+    grid.innerHTML = '<div class="explore-empty">Loading from TMDB…</div>';
+    document.getElementById('discover-count').textContent = '';
+    document.getElementById('discover-load-more-wrap').style.display = 'none';
+    discoverResults = [];
+    try {
+      let url = '/api/tmdb/discover?list=' + encodeURIComponent(list) + '&page=1';
+      if (genre) url += '&genre=' + encodeURIComponent(genre);
+      const res  = await fetch(url);
+      const data = await res.json();
+      if (data.error) {
+        grid.innerHTML = '<div class="explore-error">' + escHtml(data.error) + '</div>';
+        return;
+      }
+      _discoverTotalPages = data.total_pages || 1;
+      discoverResults = data.results || [];
+      renderDiscoverCards(discoverResults);
+      _updateDiscoverCount();
+      _updateLoadMoreBtn();
+    } catch (e) {
+      grid.innerHTML = '<div class="explore-error">' + escHtml(e.message) + '</div>';
+    } finally {
+      btn.disabled = false; btn.textContent = '🔄 Refresh';
+    }
+  }
+
+  async function loadDiscoverMore() {
+    const list  = document.getElementById('discover-list-sel').value;
+    const genre = document.getElementById('discover-genre-sel').value;
+    const btn   = document.getElementById('discover-load-more-btn');
+    btn.disabled = true; btn.textContent = '⏳ Loading…';
+    _discoverPage++;
+    try {
+      let url = '/api/tmdb/discover?list=' + encodeURIComponent(list) + '&page=' + _discoverPage;
+      if (genre) url += '&genre=' + encodeURIComponent(genre);
+      const res  = await fetch(url);
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); _discoverPage--; return; }
+      const newMovies = data.results || [];
+      _discoverTotalPages = data.total_pages || _discoverTotalPages;
+      const startIdx = discoverResults.length;
+      discoverResults = discoverResults.concat(newMovies);
+      // Append new cards without clearing grid
+      const grid = document.getElementById('discover-grid');
+      const frag = document.createElement('div');
+      frag.innerHTML = newMovies.map((m, ii) => _discoverCardHtml(m, startIdx + ii)).join('');
+      while (frag.firstChild) grid.appendChild(frag.firstChild);
+      _updateDiscoverCount();
+      _updateLoadMoreBtn();
+    } catch (e) {
+      showToast(e.message, true);
+      _discoverPage--;
+      _updateLoadMoreBtn();
+    }
+  }
+
+  function _discoverCardHtml(m, i) {
+    const poster = m.poster_url
+      ? `<img class="tr-poster" src="${escAttr(m.poster_url)}" alt="" loading="lazy">`
+      : `<div class="tr-poster-placeholder">🎬</div>`;
+    const genres = m.genres && m.genres.length
+      ? m.genres.map(g => `<span class="tr-genre-tag">${escHtml(g)}</span>`).join('')
+      : '';
+    const rating = m.tmdb_rating ? `<span class="tr-tmdb-score">⭐ ${escHtml(m.tmdb_rating)}</span>` : '';
+    const langRow = (m.country_flag || m.language)
+      ? `<div class="tr-lang-row"><span class="tr-lang-tag">${escHtml((m.country_flag ? m.country_flag + ' ' : '') + (m.language || ''))}</span></div>`
+      : '';
+    const streamBtn = m.tmdb_id
+      ? `<button class="btn-stream" onclick="streamMovie(${m.tmdb_id})">▶ Stream</button>`
+      : '';
+    return `<div class="tr-card" id="dc-card-${i}">
+      <div class="tr-poster-wrap">${poster}</div>
+      <div class="tr-card-body">
+        <div class="tr-title" title="${escAttr(m.title)}">${escHtml(m.title)}</div>
+        <div class="tr-year">${escHtml(m.year || '')}</div>
+        <div class="tr-genres">${genres}</div>
+        <div class="tr-rating-row">${rating}</div>
+        ${langRow}
+        <div class="tr-plot">${escHtml(m.plot || '')}</div>
+        ${m.plot ? '<span class="tr-plot-toggle" onclick="togglePlot(this)">▾ more</span>' : ''}
+      </div>
+      <div style="padding:0 12px 10px;display:flex;flex-direction:column;gap:4px">
+        <button class="btn-find-torrent"
+          onclick="openTorrentModal('${escAttr(m.title)}', '${escAttr(m.year || '')}')">
+          🔍 Find Torrent
+        </button>
+        ${streamBtn}
+      </div>
+    </div>`;
+  }
+
+  function renderDiscoverCards(results) {
+    const grid = document.getElementById('discover-grid');
+    if (!results.length) {
+      grid.innerHTML = '<div class="explore-empty">No results — try a different list or genre.</div>';
+      return;
+    }
+    grid.innerHTML = results.map((m, i) => _discoverCardHtml(m, i)).join('');
+  }
+
+  // ── Browse Indexers tab ────────────────────────────────────────────────────
+
+  async function loadBrowse() {
+    const btn  = document.getElementById('browse-refresh-btn');
+    const grid = document.getElementById('browse-grid');
+    btn.disabled = true; btn.textContent = '⏳ Loading…';
+    grid.innerHTML = '<div class="explore-empty">Fetching latest torrents from Prowlarr…</div>';
+    document.getElementById('browse-count').textContent = '';
+    document.getElementById('browse-filter-idx').innerHTML = '<option value="">All</option>';
+    try {
+      const res  = await fetch('/api/explore/browse');
+      const data = await res.json();
+      if (data.error) {
+        grid.innerHTML = '<div class="explore-error">' + escHtml(data.error) + '</div>';
+        return;
+      }
+      browseAllResults = data.results || [];
+      const indexers = data.all_indexers && data.all_indexers.length
+        ? data.all_indexers
+        : [...new Set(browseAllResults.map(r => r.indexer).filter(Boolean))].sort();
+      const idxSel = document.getElementById('browse-filter-idx');
+      indexers.forEach(idx => {
+        const opt = document.createElement('option');
+        opt.value = idx; opt.textContent = idx;
+        idxSel.appendChild(opt);
+      });
+      applyBrowseFilters();
+      if (data.tmdb_enabled) loadBrowseMetadata(browseAllResults);
+    } catch (e) {
+      grid.innerHTML = '<div class="explore-error">' + escHtml(e.message) + '</div>';
+    } finally {
+      btn.disabled = false; btn.textContent = '🔄 Refresh';
+    }
+  }
+
+  function applyBrowseFilters() {
+    const resF = document.getElementById('browse-filter-res').value;
+    const idxF = document.getElementById('browse-filter-idx').value;
+    const sort = document.getElementById('browse-sort').value;
+    let filtered = browseAllResults.slice();
+    if (resF) filtered = filtered.filter(r => r.best_resolution === resF || r.variants.some(v => v.resolution === resF));
+    if (idxF) filtered = filtered.filter(r => r.indexer === idxF);
+    if (sort === 'seeders-asc')  filtered.sort((a,b) => a.best_seeders - b.best_seeders);
+    else if (sort === 'title-asc') filtered.sort((a,b) => a.parsed_title.localeCompare(b.parsed_title));
+    else if (sort === 'year-desc') filtered.sort((a,b) => (b.parsed_year||'').localeCompare(a.parsed_year||''));
+    else filtered.sort((a,b) => b.best_seeders - a.best_seeders);
+    document.getElementById('browse-count').textContent = filtered.length + ' movies';
+    renderBrowseCards(filtered);
+  }
+
+  function renderBrowseCards(results) {
+    const grid = document.getElementById('browse-grid');
+    if (!results.length) {
+      grid.innerHTML = '<div class="explore-empty">No results — try adjusting filters or refreshing.</div>';
+      return;
+    }
+    grid.innerHTML = results.map((m) => {
+      const dataIdx = browseAllResults.indexOf(m);
+      const best    = m.variants[0];
+      const pills   = m.variants.map((v, vi) => {
+        const active = vi === 0 ? ' active' : '';
+        return `<span class="tr-variant-pill${active}" onclick="selectBrowseVariant(${dataIdx},${vi})">${escHtml(v.resolution)}<br><small>▲${v.seeders.toLocaleString()}</small></span>`;
+      }).join('');
+      const actionHtml = _browseActionHtml(best);
+      return `<div class="tr-card" id="bc-card-${dataIdx}">
+        <div class="tr-poster-wrap tr-skeleton" id="bc-poster-wrap-${dataIdx}">
+          <div class="tr-poster-placeholder" id="bc-placeholder-${dataIdx}">🎬</div>
+          <span class="tr-res-badge tr-res-${escHtml(best.resolution)}" id="bc-res-badge-${dataIdx}">${escHtml(best.resolution)}</span>
+        </div>
+        <div class="tr-card-body">
+          <div class="tr-title" title="${escAttr(m.parsed_title)}">${escHtml(m.parsed_title)}</div>
+          <div class="tr-year">${escHtml(m.parsed_year || '')}</div>
+          <div class="tr-genres" id="bc-genres-${dataIdx}"></div>
+          <div class="tr-rating-row" id="bc-rating-${dataIdx}"></div>
+          <div class="tr-plot" id="bc-plot-${dataIdx}"></div>
+          <span class="tr-plot-toggle" id="bc-plot-toggle-${dataIdx}" style="display:none" onclick="togglePlot(this)">▾ more</span>
+        </div>
+        <div class="tr-variants">${pills}</div>
+        <div class="tr-footer" id="bc-footer-${dataIdx}">
+          <div class="tr-seeders" id="bc-seeders-${dataIdx}">▲ ${best.seeders.toLocaleString()} seeders</div>
+          <div class="tr-indexer">${escHtml(best.indexer)}</div>
+          <div id="bc-size-${dataIdx}" style="font-size:0.68rem;color:#444">${escHtml(best.size_human)}</div>
+          ${actionHtml}
+          <button class="btn-stream" id="bc-stream-${dataIdx}" disabled>▶ Stream</button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  function _browseActionHtml(variant) {
+    if (variant.magnet_url)
+      return `<a class="btn-tr-action" href="${escAttr(variant.magnet_url)}">🧲 Magnet</a>`;
+    if (variant.info_url)
+      return `<a class="btn-tr-action secondary" href="${escAttr(variant.info_url)}" target="_blank" rel="noopener noreferrer">🔗 Torrent Page</a>`;
+    if (variant.download_url)
+      return `<a class="btn-tr-action secondary" href="${escAttr(variant.download_url)}" target="_blank" rel="noopener noreferrer">⬇ Download .torrent</a>`;
+    return `<span class="btn-tr-action disabled">No link available</span>`;
+  }
+
+  function selectBrowseVariant(movieIdx, variantIdx) {
+    const m = browseAllResults[movieIdx];
+    if (!m) return;
+    const v = m.variants[variantIdx];
+    if (!v) return;
+    // Update active pill
+    const card = document.getElementById('bc-card-' + movieIdx);
+    if (card) {
+      card.querySelectorAll('.tr-variant-pill').forEach((p, i) => p.classList.toggle('active', i === variantIdx));
+    }
+    // Update res badge
+    const badge = document.getElementById('bc-res-badge-' + movieIdx);
+    if (badge) { badge.textContent = v.resolution; badge.className = 'tr-res-badge tr-res-' + v.resolution; }
+    // Update footer stats
+    const seedersEl = document.getElementById('bc-seeders-' + movieIdx);
+    if (seedersEl) seedersEl.textContent = '▲ ' + v.seeders.toLocaleString() + ' seeders';
+    const sizeEl = document.getElementById('bc-size-' + movieIdx);
+    if (sizeEl) sizeEl.textContent = v.size_human;
+    // Replace action button
+    const footer = document.getElementById('bc-footer-' + movieIdx);
+    if (footer) {
+      const old = footer.querySelector('.btn-tr-action, a.btn-tr-action');
+      if (old) old.outerHTML = _browseActionHtml(v);
+    }
+  }
+
+  async function loadBrowseMetadata(results) {
+    for (let i = 0; i < results.length; i++) {
+      const m = results[i];
+      if (!m.parsed_title) continue;
+      const dataIdx = browseAllResults.indexOf(m);
+      if (dataIdx < 0) continue;
+      try {
+        const params = new URLSearchParams({ title: m.parsed_title });
+        if (m.parsed_year) params.set('year', m.parsed_year);
+        const res  = await fetch('/api/metadata?' + params.toString());
+        const meta = await res.json();
+        if (meta && !meta.error) updateBrowseCard(dataIdx, meta);
+      } catch (e) { /* silent */ }
+      await new Promise(resolve => setTimeout(resolve, 120));
+    }
+  }
+
+  function updateBrowseCard(idx, meta) {
+    const wrap = document.getElementById('bc-poster-wrap-' + idx);
+    if (wrap) {
+      wrap.classList.remove('tr-skeleton');
+      if (meta.poster_url) {
+        const img = document.createElement('img');
+        img.className = 'tr-poster'; img.alt = ''; img.src = meta.poster_url;
+        const ph = document.getElementById('bc-placeholder-' + idx);
+        if (ph) ph.replaceWith(img);
+      }
+    }
+    const genreEl = document.getElementById('bc-genres-' + idx);
+    if (genreEl && meta.genres && meta.genres.length)
+      genreEl.innerHTML = meta.genres.map(g => `<span class="tr-genre-tag">${escHtml(g)}</span>`).join('');
+    const ratingEl = document.getElementById('bc-rating-' + idx);
+    if (ratingEl && meta.tmdb_rating)
+      ratingEl.innerHTML = `<span class="tr-tmdb-score">⭐ ${escHtml(meta.tmdb_rating)}</span>`;
+    const plotEl = document.getElementById('bc-plot-' + idx);
+    if (plotEl && meta.plot) {
+      plotEl.textContent = meta.plot;
+      const toggleEl = document.getElementById('bc-plot-toggle-' + idx);
+      if (toggleEl) toggleEl.style.display = '';
+    }
+    if (meta.tmdb_id) {
+      const streamBtn = document.getElementById('bc-stream-' + idx);
+      if (streamBtn) {
+        streamBtn.removeAttribute('disabled');
+        streamBtn.onclick = () => streamMovie(meta.tmdb_id);
+      }
+    }
+  }
+
+  // ── TMDB Settings ─────────────────────────────────────────────────────────
+
+  async function saveTmdbCfg() {
+    const key = document.getElementById('tmdb-key-input').value.trim();
+    try {
+      const res  = await fetch('/api/tmdb/config', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({key}) });
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); return; }
+      showToast('TMDB key saved');
+    } catch (e) { showToast(e.message, true); }
+  }
+
+  async function testTmdbCfg() {
+    const key    = document.getElementById('tmdb-key-input').value.trim();
+    const status = document.getElementById('tmdb-test-status');
+    const btn    = document.getElementById('tmdb-test-btn');
+    btn.disabled = true; btn.textContent = 'Testing…';
+    status.style.color = '#888'; status.textContent = 'Testing connection…';
+    try {
+      await fetch('/api/tmdb/config', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({key}) });
+      const res  = await fetch('/api/tmdb/test?key=' + encodeURIComponent(key));
+      const data = await res.json();
+      if (data.error) { status.style.color = '#e74c3c'; status.textContent = '✗ ' + data.error; }
+      else { status.style.color = '#2ecc71'; status.textContent = '✓ Connected to TMDB'; }
+    } catch (e) { status.style.color = '#e74c3c'; status.textContent = '✗ ' + e.message; }
+    finally { btn.disabled = false; btn.textContent = 'Test'; }
   }
 </script>
 </body>
