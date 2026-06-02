@@ -117,6 +117,20 @@ A new full-screen panel powered by your local Ollama installation:
 ## Earlier Version Highlights
 
 <details>
+<summary>v1.5 — Explore Movies: TMDB discovery, Browse Indexers, Find Torrent, Stream</summary>
+
+- Full-screen **Explore Movies** panel — a self-contained movie discovery and torrent hub
+- **TMDB Discover** — 6 curated lists (Trending Today, Popular, Now Playing, Top Rated, Upcoming, Best of All Time) with 15 genre filters and Load More pagination
+- **Global TMDB Search** — search any title, browse results as poster cards
+- **Browse Indexers** — latest movie torrents from all Prowlarr indexers as poster cards enriched with TMDB metadata; resolution variant pills (4K / 1080p / 720p); filter by quality, indexer, and sort
+- **Find Torrent modal** — per-movie search across all Prowlarr indexers, returning every 1080p+/4K result sorted 4K-first by seeders
+- **▶ Stream** button — one click to stream any movie via free streaming service (fetches IMDB ID from TMDB first)
+- Language/country flags on every card (e.g. 🇰🇷 Korean, 🇯🇵 Japanese)
+- TMDB API key configuration in Settings with Test button
+
+</details>
+
+<details>
 <summary>v1.17 — Rename in Library, Prowlarr improvements</summary>
 
 - Every Library row has a **✎ Rename** button — modal pre-filled with detected title and year; row updates in-place after saving
