@@ -1,13 +1,52 @@
-# My Library Organizer — Documentation
+# Cinema Paradiso — Documentation
 
-> A local web application for managing, cleaning, and enriching a Plex movie library.  
-> Runs entirely on your own machine — no cloud, no accounts, no internet required (except for Prowlarr/TMDB features).
+> A self-hosted movie library command centre: duplicate cleaner, quality scanner, full library browser, TMDB discovery suite, Prowlarr torrent finder, and AI-powered film recommendations.  
+> Runs entirely on your own machine — no cloud, no accounts, no data leaves your PC.
 
-**Version 1.17 (1.5)** — May 2026
+**v2.0** — June 2026
 
 ---
 
 ## Changelog
+
+### v2.0 (June 2026)
+
+#### 🎨 Cinema Paradiso — Full Cinematic UI Redesign
+
+The entire interface has been rebuilt around a **fixed left sidebar navigation** and a deep cinematic dark theme.
+
+- **New name:** Cinema Paradiso
+- **Sidebar navigation** (220px) replaces the old top button bar. Icon+label nav items with per-feature accent colours on hover. "Cinema / Paradiso" two-line logo wordmark at the top, Settings pinned at the bottom.
+- **Cinematic home screen** — bold hero heading ("Your Movie Library, Mastered."), gold accent line, and an 8-card responsive grid. Each card has a colour-coded 2px top bar, icon badge, 2–3 sentence feature description, and a direct action button.
+- **Deep dark background** (`#0a0a10`) — near-black canvas throughout with subtle card surfaces (`#10101e`).
+- **Per-feature colour identity:** Scan Duplicates (gold `#fdcb6e`), Smart Clean (green `#2ecc71`), Low Quality (orange `#e5a00d`), Library (blue `#74b9ff`), Dashboard (pink `#fd79a8`), Unmatched (purple `#a29bfe`), Explore/Pick (gold/purple).
+- Settings dropdown repositioned to `bottom: 20px; left: 228px` — adjacent to the bottom of the sidebar.
+
+#### 🤖 Pick My Movie — AI Film Recommendations (Ollama)
+
+New full-screen panel powered by a local Ollama installation:
+
+- Type any mood, era, actor, or half-remembered plot → press **🤖 Ask AI**
+- Ollama returns 5 picks with a one-sentence reason for each
+- Cards enriched with TMDB: poster, genres, rating, plot
+- **"In Your Library" detection** — after results arrive, the app silently fires `POST /api/library/check`. Cards for owned films show a green **✓ In Your Library · 1080p · 2.4 GB** badge and a **▶ Play from HDD** button. Stream button hidden for owned films.
+- Find Torrent on every card for immediate Prowlarr search
+- Ctrl+Enter submits the prompt
+- Configured in ⚙ Settings → Ollama (URL + model name, Test + Save)
+- Requires [Ollama](https://ollama.ai) running locally — free, no API key
+- New `config.json` fields: `ollama_url`, `ollama_model`
+
+#### New Backend Route (v2.0)
+
+| Method | Route | Description |
+|---|---|---|
+| POST | `/api/ollama/recommend` | Send a mood/description prompt → 5 AI recommendations enriched with TMDB |
+| GET | `/api/ollama/config` | Get saved Ollama URL + model |
+| POST | `/api/ollama/config` | Save Ollama URL + model |
+| GET | `/api/ollama/test` | Test Ollama reachability |
+| POST | `/api/library/check` | Check which of a list of `{title, year}` movies exist in the local library |
+
+---
 
 ### v1.5 (May 2026)
 
@@ -171,7 +210,8 @@ A dedicated panel for video files buried in deep subfolder structures that Plex 
    - 5.6 [Plex Integration](#56-plex-integration)
    - 5.7 [Prowlarr Integration](#57-prowlarr-integration)
    - 5.8 [Unmatched Panel](#58-unmatched-panel)
-   - 5.9 [Explore Torrents Panel *(v1.5)*](#59-explore-torrents-panel-v15)
+   - 5.9 [Explore Movies *(v1.5)*](#59-explore-movies-v15)
+   - 5.10 [Pick My Movie — AI Recommendations *(v2.0)*](#510-pick-my-movie--ai-recommendations-v20)
 6. [Delete Modes](#6-delete-modes)
 7. [How Titles Are Detected](#7-how-titles-are-detected)
 8. [How Resolution Is Detected](#8-how-resolution-is-detected)
@@ -185,18 +225,21 @@ A dedicated panel for video files buried in deep subfolder structures that Plex 
 
 ## 1. Overview
 
-**My Library Organizer** is a Flask-based web app that scans a folder of movie files and gives you:
+**Cinema Paradiso** is a Flask-based web app that is your complete personal movie library command centre:
 
-- **Duplicate detection** — finds multiple copies of the same film and identifies which one to keep
-- **Smart Clean** — automated recommendations for which duplicates are safe to delete
-- **Low Quality scanner** — lists every file below 1080p
-- **Library browser** — full table view of every movie file with filters and bulk delete
-- **Dashboard** — statistics, pie charts, and top-10 lists about your library
-- **Plex integration** — cross-references your files with Plex metadata (title, year, genres)
-- **Prowlarr integration** — search for 1080p+ torrent replacements directly from the app
-- **Explore Torrents** *(v1.5)* — browse TMDB lists, search any movie, find torrents, and stream instantly
+- **Duplicate detection** — finds every film you own more than once and ranks each copy by quality
+- **Smart Clean** — automated one-click cleanup of inferior duplicates
+- **Low Quality scanner** — lists every file below 1080p for targeted upgrades
+- **Library browser** — full table or poster-grid of every file with search, filters, play, rename, and bulk delete
+- **Dashboard** — live stats, charts, and insights about your entire collection
+- **Plex integration** — cross-references files with Plex metadata; grouping uses Plex TMDB/TVDB identity
+- **Prowlarr integration** — search 1080p+ torrent replacements from any panel
+- **Explore Movies** *(v1.5)* — TMDB discovery, global search, Browse Indexers, Find Torrent, Stream
+- **Pick My Movie** *(v2.0)* — describe a mood to your local Ollama AI, get 5 personalised picks with posters; green badge + Play button if you already own the film
 
-All detection is **filename-based**, not metadata-based. This means the app works even when Plex cannot identify a file. Plex data is layered on top as an optional enrichment.
+All detection is **filename-based** — the app works even when Plex cannot identify a file. Plex data is layered on top as optional enrichment.
+
+The full layout is a **fixed left sidebar** (220px) + scrollable content area. All feature panels are full-screen overlays that cover the entire viewport.
 
 ---
 
@@ -254,30 +297,35 @@ The server listens on port **5000** and is only accessible from your local machi
 ## 4. Interface Tour
 
 ```
-┌───────────────────────────────────────────────────────────────────────────┐
-│  [logo]  My Library Organizer  [folder path] [Set Folder]                 │
-│  [Scan for Duplicates] [⚡ Smart Clean] [🔍 Low Quality] [📂 Library]     │
-│  [📊 Dashboard] [🔧 Fix Unmatched] [🔍 Explore Torrents] [⚙ Settings]    │
-├───────────────────────────────────────────────────────────────────────────┤
-│  Click 🔍 Explore Torrents to search TMDB, browse curated lists,          │
-│  find torrents across Prowlarr indexers, and stream any title.            │
-└───────────────────────────────────────────────────────────────────────────┘
+┌──────────────┬─────────────────────────────────────────────────────────────┐
+│   CINEMA     │  🎬 CINEMA PARADISO                                         │
+│   PARADISO   │  Your Movie Library, Mastered.                              │
+│              │  Scan, clean, explore and discover — everything your        │
+│  🎬 Scan     │  collection needs, in one place.                            │
+│  🔍 Low Q.   │                                                             │
+│  📂 Library  │  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐       │
+│  📊 Dashboard│  │🎬 Scan Dupes │ │⚡ Smart Clean│ │🔍 Low Quality│       │
+│  🔗 Unmatched│  │ description  │ │ description  │ │ description  │       │
+│  🌐 Explore  │  │ Run Scan →   │ │ Open Smart → │ │ View LQ →    │       │
+│  🤖 Pick Me  │  └──────────────┘ └──────────────┘ └──────────────┘       │
+│              │  ┌──────────────┐ ┌──────────────┐ ...                     │
+│  ⚙ Settings  │  │📂 Library    │ │📊 Dashboard  │                         │
+└──────────────┴─────────────────────────────────────────────────────────────┘
 ```
 
-### Header controls
+### Sidebar controls
 
-| Control | Description |
+| Nav Item | Description |
 |---|---|
-| Folder path input | Type or paste the full path to your movies directory |
-| **Set Folder** | Saves the folder path (persists across restarts) |
-| **Scan for Duplicates** | Scans the folder and shows duplicate groups |
-| **⚡ Smart Clean** | Opens automated cleanup recommendations (appears after a scan) |
-| **🔍 Low Quality** | Opens the low quality files panel |
-| **📂 Library** | Opens the full library browser |
-| **📊 Dashboard** | Opens the statistics dashboard |
-| **🔧 Fix Unmatched** | Opens the Unmatched panel (visible after Plex sync) |
-| **🔍 Explore Torrents** | Opens the Explore panel — TMDB search, discovery, torrent finder, streaming |
-| **⚙ Settings** | Opens Prowlarr, TMDB, and Plex configuration |
+| 🎬 **Scan Duplicates** | Scans the library for duplicate films |
+| ⚡ **Smart Clean** | Auto-recommendations for safe duplicate deletion (appears after scan) |
+| 🔍 **Low Quality** | Opens the sub-1080p file scanner |
+| 📂 **Library** | Opens the full library browser |
+| 📊 **Dashboard** | Opens the statistics overlay |
+| 🔗 **Unmatched** | Opens the Plex-unmatched file fixer |
+| 🌐 **Explore Movies** | Full-screen TMDB discovery, torrent finder, and streaming |
+| 🤖 **Pick My Movie** | AI-powered film recommendation panel (Ollama) |
+| ⚙ **Settings** | Pinned at the bottom — configure Plex, Prowlarr, TMDB, Ollama |
 
 ---
 
@@ -457,9 +505,9 @@ Click **🔧 Fix Unmatched** (visible after Plex sync) to find files buried in d
 
 ---
 
-### 5.9 Explore Torrents Panel *(v1.5)*
+### 5.9 Explore Movies *(v1.5)*
 
-Click **🔍 Explore Torrents** in the header to open the full-screen explore panel.
+Click **🌐 Explore Movies** in the sidebar to open the full-screen explore panel.
 
 This panel is a self-contained movie discovery and torrent hub. It does not interact with your local library — it is purely for finding and streaming movies.
 
@@ -542,6 +590,55 @@ Required for: poster images, ratings, genres, plot, Stream button, all Discover/
 
 1. Get a free key at [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
 2. Open ⚙ Settings in the app → TMDB section → paste the key → Save & Test
+
+---
+
+### 5.10 Pick My Movie — AI Recommendations *(v2.0)*
+
+Click **🤖 Pick My Movie** in the sidebar to open the full-screen AI recommendation panel.
+
+This panel uses your local [Ollama](https://ollama.ai) installation to recommend films based on a natural-language description. It does not send any data to external AI services — everything runs on your machine.
+
+#### How it works
+
+1. Type any description in the text box — a mood, an era, an actor, a half-remembered plot
+2. Press **🤖 Ask AI** (or Ctrl+Enter)
+3. Ollama returns 5 film titles with reasons. The app then enriches each with TMDB metadata (poster, genres, rating, plot)
+4. Cards appear immediately. In the background, the app fires `POST /api/library/check` to see which films you already own.
+
+#### Card layout
+
+Each recommendation card shows:
+
+| Element | Description |
+|---|---|
+| Poster | TMDB poster (lazy-loaded) |
+| **✓ In Your Library** badge | Green pill — shown only for films found in your local folder. Shows resolution + file size (e.g. `· 1080p · 2.4 GB`) |
+| 💡 Reason badge | Purple pill — the AI's one-sentence reason this film fits your description |
+| Title, year | |
+| Genre tags | Up to 3 genres from TMDB |
+| ⭐ Rating | TMDB vote average |
+| Plot | Expandable synopsis |
+| **▶ Play from HDD** | Green button — shown only when the film is in your library. Opens the file in your default video player |
+| **🔍 Find Torrent** | Prowlarr torrent search (always shown) |
+| **▶ Stream** | Opens playimdb.com (shown only when NOT in your library) |
+
+#### In-Library Detection
+
+After the cards render, the app sends all 5 `{title, year}` pairs to `POST /api/library/check`. Matching strategy (in order):
+
+1. **Plex-matched title + year** — most reliable; uses `plex_title` and `plex_year` from the Plex cache
+2. **Filename-parsed title + year** — fallback when Plex is not synced
+
+Both the AI result title and the library titles are normalised before comparison: lowercased, punctuation stripped, leading article (`the/a/an`) removed. A year-agnostic second pass catches cases where TMDB and Plex disagree on the release year by ±1.
+
+If `movies_dir` is not configured, all results gracefully return `found: false` — no crash.
+
+#### Ollama Configuration
+
+1. Install [Ollama](https://ollama.ai) and pull a model: `ollama pull llama3`
+2. Open ⚙ Settings → Ollama section → set URL (default `http://localhost:11434`) and model name → Test + Save
+3. New `config.json` fields: `ollama_url`, `ollama_model`
 
 ---
 
@@ -643,9 +740,13 @@ Settings are automatically saved to `config.json` in the app folder whenever you
   "prowlarr_key": "your-prowlarr-api-key",
   "plex_url": "http://localhost:32400",
   "plex_token": "your-plex-token",
-  "tmdb_key": "your-tmdb-api-key"
+  "tmdb_key": "your-tmdb-api-key",
+  "ollama_url": "http://localhost:11434",
+  "ollama_model": "llama3"
 }
 ```
+
+Only `movies_dir` is required. All other fields are optional — features that require them will show a "not configured" message in the app.
 
 This file is loaded on startup so all settings persist across restarts. You can also edit it manually in a text editor while the app is not running.
 
@@ -701,7 +802,7 @@ All endpoints return JSON. Base URL: `http://localhost:5000`
 | GET | `/api/prowlarr/test` | Test connection, returns indexer count |
 | GET | `/api/prowlarr/search?q=title` | Search for torrents, 1080p+ only |
 
-### Explore Torrents *(v1.5)*
+### Explore Movies *(v1.5)*
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -714,6 +815,16 @@ All endpoints return JSON. Base URL: `http://localhost:5000`
 | POST | `/api/tmdb/config` | Save TMDB key `{"key": "..."}` |
 | GET | `/api/tmdb/test` | Test TMDB connection |
 | GET | `/api/metadata?title=&year=` | Fetch TMDB metadata for a title (used internally for Browse Indexers enrichment). Returns `tmdb_id`, `poster_url`, `genres`, `tmdb_rating`, `plot` |
+
+### Ollama / Pick My Movie *(v2.0)*
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/ollama/recommend` | Send a prompt → 5 AI picks enriched with TMDB. Body: `{"prompt": "..."}`. Response: `{"results": [{title, year, reason, poster_url, genres, tmdb_rating, plot, tmdb_id}], "model": "..."}` |
+| GET | `/api/ollama/config` | Get saved Ollama URL + model |
+| POST | `/api/ollama/config` | Save Ollama URL + model. Body: `{"url": "...", "model": "..."}` |
+| GET | `/api/ollama/test` | Test Ollama reachability |
+| POST | `/api/library/check` | Check which of a list of movies exist locally. Body: `{"movies": [{"title": "...", "year": "..."}]}`. Response: `{"results": [{title, year, found, path, resolution, size_human}]}` |
 
 ---
 
@@ -761,7 +872,7 @@ filebotx/
 | `openLibrary()` | Fetches and renders Library panel |
 | `openDashboard()` | Fetches stats and renders Dashboard |
 | `prowlarrSearch(title, year)` | Searches Prowlarr, shows results panel |
-| `openExplore()` | Opens the Explore Torrents panel |
+| `openExplore()` | Opens the Explore Movies panel |
 | `searchExplore()` | Runs a TMDB text search and shows card grid |
 | `clearExploreSearch()` | Clears search results and restores tab view |
 | `loadSearchMore()` | Appends next page of TMDB search results |
@@ -775,6 +886,12 @@ filebotx/
 | `togglePlot(el)` | Expands/collapses the plot summary on a card |
 | `_discoverCardHtml(m, i)` | Renders a TMDB discover/search card as HTML string |
 | `renderBrowseCards(results)` | Renders Browse Indexers card grid |
+| `openPickMyMovie()` | Opens the Pick My Movie panel |
+| `closePickMyMovie()` | Closes the Pick My Movie panel |
+| `sendPickPrompt()` | Sends Ollama prompt, renders cards, fires library check in background |
+| `_renderPickCards(results, libMap)` | Renders pick result cards; shows green badge + Play button for owned films |
+| `_normPickTitle(t)` | Normalises a title for library matching (lowercase, no punct, no leading article) |
+| `playFile(path)` | Opens a local file in the OS default video player via `/api/open-file` |
 | `showToast(msg, isError)` | Shows bottom-right notification toast |
 | `escHtml(s)` / `escAttr(s)` | XSS-safe HTML/attribute escaping helpers |
 

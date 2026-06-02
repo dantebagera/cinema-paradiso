@@ -17,6 +17,15 @@ env/
 # App data (user-specific, not committed)
 config.json
 
+# Chromium profile data
+_cf_profile/
+
+# Dev/test scripts
+_test_*.py
+
+# Windows EXE build (separate project)
+winapp/
+
 # OS
 .DS_Store
 Thumbs.db

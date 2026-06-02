@@ -3,159 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Library Organizer</title>
+  <title>Cinema Paradiso</title>
   <link rel="icon" type="image/svg+xml" href="/static/logo.svg" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #141414;
+      background: #0a0a10;
       color: #e5e5e5;
       font-family: 'Segoe UI', system-ui, sans-serif;
       min-height: 100vh;
+      display: flex;
+      overflow: hidden;
     }
 
-    header {
-      background: #1a1a1a;
-      border-bottom: 2px solid #e5a00d;
-      padding: 14px 28px;
+    /* ── Sidebar ── */
+    .sidebar {
+      width: 220px;
+      flex-shrink: 0;
+      background: #0a0a10;
+      border-right: 1px solid #1c1c28;
       display: flex;
-      align-items: center;
-      gap: 14px;
+      flex-direction: column;
+      height: 100vh;
       position: sticky;
       top: 0;
       z-index: 100;
-      flex-wrap: wrap;
+      overflow: hidden;
     }
 
-    header h1 { font-size: 1.3rem; font-weight: 700; color: #fff; white-space: nowrap; display: flex; align-items: center; gap: 10px; }
-    .logo-img { width: 38px; height: 38px; flex-shrink: 0; }
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 22px 20px 18px;
+      border-bottom: 1px solid #1c1c28;
+      flex-shrink: 0;
+    }
 
-    .header-right { margin-left: auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .logo-img { width: 30px; height: 30px; flex-shrink: 0; }
+    .sidebar-logo-text { display: flex; flex-direction: column; line-height: 1.1; gap: 1px; }
+    .sidebar-app-name { font-size: 0.78rem; font-weight: 800; color: #e0e0e0; letter-spacing: 0.08em; text-transform: uppercase; }
+    .sidebar-app-name.accent { color: #fdcb6e; }
 
-    #folder-form { display: flex; align-items: center; gap: 8px; }
-    #folder-input {
-      background: #252525;
-      border: 1px solid #444;
-      color: #ddd;
+    .sidebar-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 0;
+      scrollbar-width: none;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      width: 100%;
+      padding: 10px 20px;
+      background: transparent;
+      border: none;
+      border-left: 3px solid transparent;
+      color: #555;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.16s, color 0.16s, border-color 0.16s;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .nav-icon { font-size: 1rem; width: 20px; flex-shrink: 0; text-align: center; }
+    .nav-label { flex: 1; overflow: hidden; text-overflow: ellipsis; }
+
+    #scan-btn.nav-item:hover     { background: #fdcb6e0d; color: #fdcb6e; border-left-color: #fdcb6e; }
+    #scan-btn.nav-item:disabled  { color: #333; cursor: not-allowed; background: transparent; }
+    #smart-btn.nav-item          { color: #2ecc71; opacity: 0.85; }
+    #smart-btn.nav-item:hover    { background: #2ecc710d; color: #2ecc71; border-left-color: #2ecc71; opacity: 1; }
+    #lq-btn.nav-item:hover       { background: #e5a00d0d; color: #e5a00d; border-left-color: #e5a00d; }
+    #lib-btn.nav-item:hover      { background: #74b9ff0d; color: #74b9ff; border-left-color: #74b9ff; }
+    #dash-btn.nav-item:hover     { background: #fd79a80d; color: #fd79a8; border-left-color: #fd79a8; }
+    #unmatched-btn.nav-item:hover { background: #a29bfe0d; color: #a29bfe; border-left-color: #a29bfe; }
+    #explore-btn.nav-item:hover  { background: #fdcb6e0d; color: #fdcb6e; border-left-color: #fdcb6e; }
+    #pick-btn.nav-item:hover     { background: #a29bfe0d; color: #a29bfe; border-left-color: #a29bfe; }
+
+    .nav-divider { height: 1px; background: #1c1c28; margin: 6px 16px; }
+
+    .sidebar-footer {
+      border-top: 1px solid #1c1c28;
+      padding: 6px 0;
+      flex-shrink: 0;
+    }
+    #settings-btn.nav-item        { color: #555; }
+    #settings-btn.nav-item:hover  { background: #636e720d; color: #b0b8bc; border-left-color: #636e72; }
+    #settings-btn.nav-item.open   { background: #636e721a; color: #b0b8bc; border-left-color: #636e72; }
+
+    /* ── App content area ── */
+    .app-content {
+      flex: 1;
+      overflow-y: auto;
+      height: 100vh;
+      background: #0a0a10;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #pick-panel {
+      display: none; position: fixed; inset: 0;
+      background: #0d0d0d; z-index: 200;
+      overflow-y: auto;
+    }
+    #pick-panel.active { display: block; }
+    .pick-subtitle {
+      color: #888; font-size: 0.92rem; margin-bottom: 18px;
+    }
+    .pick-input-row {
+      display: flex; gap: 10px; align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .pick-input-row textarea {
+      flex: 1; background: #1a1a1a; border: 1px solid #333;
+      border-radius: 8px; color: #eee; padding: 12px 14px;
+      font-size: 0.92rem; outline: none; resize: vertical;
+      min-height: 80px; font-family: inherit;
+    }
+    .pick-input-row textarea:focus { border-color: #a29bfe55; }
+    .pick-input-row textarea::placeholder { color: #555; }
+    .pick-status {
+      min-height: 24px; font-size: 0.88rem; color: #888;
+      margin-bottom: 14px;
+    }
+    .tr-reason-badge {
+      display: inline-block; font-size: 0.75rem; color: #a29bfe;
+      background: #a29bfe11; border: 1px solid #a29bfe33;
+      border-radius: 4px; padding: 3px 8px; margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .tr-in-library-badge {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 700; color: #2ecc71;
+      background: #2ecc7111; border: 1px solid #2ecc7133;
+      border-radius: 4px; padding: 4px 9px; margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .tr-in-library-badge .lib-badge-detail {
+      font-weight: 400; color: #2ecc71aa; font-size: 0.72rem;
+    }
+    .btn-play-local {
+      background: #2ecc71;
+      color: #0a0a10;
+      border: none;
       padding: 7px 12px;
       border-radius: 6px;
-      font-size: 0.85rem;
-      width: 260px;
-    }
-    #folder-input:focus { outline: none; border-color: #e5a00d; }
-    .btn-folder {
-      background: #2a2a2a;
-      border: 1px solid #555;
-      color: #ccc;
-      padding: 7px 14px;
-      border-radius: 6px;
       font-size: 0.82rem;
-      cursor: pointer;
-    }
-    .btn-folder:hover { border-color: #e5a00d; color: #e5a00d; }
-
-    #scan-btn {
-      background: #e5a00d;
-      color: #141414;
-      border: none;
-      padding: 9px 22px;
-      border-radius: 6px;
-      font-size: 0.95rem;
       font-weight: 700;
       cursor: pointer;
-      transition: background 0.2s;
-      white-space: nowrap;
+      transition: background 0.15s;
+      font-family: inherit;
     }
-    #scan-btn:hover { background: #f0b429; }
-    #scan-btn:disabled { background: #555; color: #999; cursor: not-allowed; }
-
-    #smart-btn {
-      background: transparent;
-      border: 2px solid #2ecc71;
-      color: #2ecc71;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    #smart-btn:hover { background: #2ecc71; color: #141414; }
-    #smart-btn:disabled { border-color: #555; color: #555; cursor: not-allowed; }
-
-    #lq-btn {
-      background: transparent;
-      border: 2px solid #e5a00d;
-      color: #e5a00d;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    #lq-btn:hover { background: #e5a00d; color: #141414; }
-
-    #lib-btn {
-      background: transparent;
-      border: 2px solid #74b9ff;
-      color: #74b9ff;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    #lib-btn:hover { background: #74b9ff; color: #141414; }
-
-    #unmatched-btn {
-      background: transparent;
-      border: 2px solid #a29bfe;
-      color: #a29bfe;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    #unmatched-btn:hover { background: #a29bfe; color: #141414; }
-
-    #settings-btn {
-      background: transparent;
-      border: 2px solid #636e72;
-      color: #636e72;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    #settings-btn:hover { background: #636e72; color: #fff; }
-    #settings-btn.open { background: #636e72; color: #fff; }
-
-    #explore-btn {
-      background: transparent;
-      border: 2px solid #fdcb6e;
-      color: #fdcb6e;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    #explore-btn:hover { background: #fdcb6e; color: #141414; }
+    .btn-play-local:hover { background: #27ae60; }
 
     .lib-row-unmatched { border-left: 3px solid #e5a00d !important; }
     .lib-row-unmatched td:first-child { padding-left: 9px; }
@@ -239,30 +245,80 @@
 
     #lib-panel {
       display: none; position: fixed; inset: 0;
-      background: #000000dd; z-index: 200;
-      align-items: flex-start; justify-content: center;
-      padding: 24px 16px; overflow: hidden;
+      background: #0d0d0d; z-index: 200;
+      overflow-y: auto;
     }
-    #lib-panel.active { display: flex; }
+    #lib-panel.active { display: block; }
     .lib-panel-inner {
-      background: #1e1e1e; border: 1px solid #74b9ff44;
-      border-radius: 14px; width: 100%; max-width: 980px;
-      padding: 28px; padding-bottom: 0;
-      display: flex; flex-direction: column;
-      max-height: calc(100vh - 48px); overflow: hidden;
+      width: 100%; max-width: 1500px; margin: 0 auto;
+      padding: 28px 24px 60px;
     }
     #lib-vscroll {
-      flex: 1; overflow-y: auto; min-height: 0;
       padding-bottom: 16px;
     }
     .lib-table thead th {
-      position: sticky; top: 0; background: #1e1e1e; z-index: 1;
+      position: sticky; top: 0; background: #0d0d0d; z-index: 1;
     }
-    #lib-virt-spacer { pointer-events: none; }
+    #lib-pagination {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; padding: 14px 0 8px; flex-wrap: wrap;
+    }
+    #lib-pagination button {
+      background: #2a2a3e; border: 1px solid #555; color: #ccc;
+      padding: 6px 18px; border-radius: 6px; font-size: 0.82rem; cursor: pointer;
+    }
+    #lib-pagination button:hover:not(:disabled) { background: #3a3a55; color: #fff; }
+    #lib-pagination button:disabled { opacity: 0.3; cursor: default; }
+    #lib-page-label { font-size: 0.82rem; color: #777; min-width: 220px; text-align: center; }
     .lib-panel-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
     .lib-panel-header h2 { color: #74b9ff; font-size: 1.2rem; flex: 1; }
     .btn-lib-close { background: #333; border: none; color: #aaa; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; }
     .btn-lib-close:hover { background: #444; color: #fff; }
+
+    /* ── Offline badge (Library button) ──────────────────────────────── */
+    .offline-badge {
+      display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.04em;
+      background: #1a4a2a; color: #2ecc71; border: 1px solid #2ecc7166;
+      border-radius: 10px; padding: 1px 6px; margin-left: 5px;
+      vertical-align: middle; text-transform: lowercase;
+    }
+
+    /* ── Library grid view ───────────────────────────────────────────── */
+    .btn-lib-view-toggle {
+      background: #2a2a3e; border: 1px solid #555; color: #aaa;
+      padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-lib-view-toggle:hover { background: #3a3a55; color: #fff; }
+    .btn-lib-view-toggle.active { background: #5c6bc0; border-color: #7986cb; color: #fff; }
+    #library-grid-view {
+      display: none;
+      padding: 4px 0 16px;
+    }
+    #library-grid-view .explore-grid {
+      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+    }
+    .lib-grid-card { position: relative; }
+    .lib-grid-card .tr-card-actions {
+      display: flex; gap: 5px; flex-wrap: wrap;
+      padding: 0 10px 10px;
+    }
+    .lib-grid-card .btn-lga {
+      flex: 1; min-width: 0; font-size: 0.72rem; padding: 5px 6px;
+      border-radius: 5px; border: none; cursor: pointer; font-weight: 600;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .lib-grid-card .btn-lga-prowlarr { background: #1a2a4a; color: #74b9ff; border: 1px solid #74b9ff44; }
+    .lib-grid-card .btn-lga-prowlarr:hover { background: #243460; }
+    .lib-grid-card .btn-lga-play { background: #1a3a1a; color: #2ecc71; border: 1px solid #2ecc7144; }
+    .lib-grid-card .btn-lga-play:hover { background: #1e4a1e; }
+    .lib-grid-card .btn-lga-rename { background: #2a2a1a; color: #fdcb6e; border: 1px solid #fdcb6e44; }
+    .lib-grid-card .btn-lga-rename:hover { background: #3a3a1e; }
+    .lib-no-poster {
+      width: 100%; aspect-ratio: 2/3; background: #1a1a2a;
+      display: flex; align-items: center; justify-content: center;
+      color: #333; font-size: 2.8rem; border-radius: 8px 8px 0 0;
+    }
     .lib-search-row {
       display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
       margin-bottom: 12px;
@@ -395,7 +451,7 @@
     .toggle-switch input:checked + .toggle-slider::before { transform: translateX(20px); }
     #trash-label { font-weight: 600; color: #2ecc71; }
 
-    #search-wrap { display: none; padding: 14px 28px; background: #141414; }
+    #search-wrap { display: none; padding: 14px 28px; background: #0a0a10; }
     #search-wrap.visible { display: block; }
     #search-input {
       width: 100%; max-width: 500px;
@@ -405,9 +461,10 @@
     #search-input:focus { outline: none; border-color: #e5a00d; }
     #search-count { display: inline-block; margin-left: 12px; font-size: 0.82rem; color: #666; }
 
-    main { padding: 14px 28px 40px; max-width: 1100px; margin: 0 auto; }
+    main { padding: 0; flex: 1; }
+    #results { padding: 14px 28px 40px; }
 
-    #status-bar { text-align: center; padding: 60px 20px; color: #666; font-size: 1.1rem; }
+    #status-bar { font-size: 1.1rem; color: #666; }
     #status-bar .spinner {
       display: inline-block; width: 36px; height: 36px;
       border: 4px solid #333; border-top-color: #e5a00d;
@@ -564,7 +621,7 @@
 
     /* ── Settings dropdown ── */
     #settings-dropdown {
-      display: none; position: fixed; top: 62px; right: 16px;
+      display: none; position: fixed; bottom: 20px; left: 228px;
       background: #1e1e1e; border: 1px solid #333; border-radius: 10px;
       padding: 20px; width: 360px; z-index: 500;
       box-shadow: 0 8px 32px #0008;
@@ -979,24 +1036,140 @@
       background: #2a1a1a; border: 1px solid #c0392b44; border-radius: 8px;
       padding: 18px 22px; color: #e74c3c; font-size: 0.9rem; margin-top: 20px;
     }
+
+    /* ── Cinematic home screen ── */
+    .home-hero {
+      padding: 56px 48px 28px;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        90deg, transparent, transparent 72px,
+        #1c1c2808 72px, #1c1c2808 73px
+      );
+      pointer-events: none;
+    }
+    .home-hero-eyebrow {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: #fdcb6e66; margin-bottom: 14px;
+    }
+    .home-hero h2 {
+      font-size: 2.5rem; font-weight: 800; color: #fff;
+      line-height: 1.12; letter-spacing: -0.025em;
+      max-width: 640px; position: relative;
+    }
+    .home-hero p {
+      font-size: 0.95rem; color: #444;
+      margin-top: 12px; max-width: 520px; line-height: 1.7; position: relative;
+    }
+    .home-accent-line {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, #fdcb6e, #e5a00d);
+      border-radius: 2px; margin-top: 22px; position: relative;
+    }
+    .home-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+      gap: 14px;
+      padding: 8px 48px 60px;
+      text-align: left;
+    }
+    .home-card {
+      background: #10101e;
+      border: 1px solid #1c1c2e;
+      border-top: none;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .home-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 36px #00000099;
+    }
+    .home-card-accent-bar { height: 2px; width: 100%; flex-shrink: 0; }
+    .home-card-body {
+      padding: 18px 20px 16px;
+      display: flex; flex-direction: column; gap: 10px; flex: 1;
+    }
+    .home-card-top { display: flex; align-items: center; gap: 12px; }
+    .home-card-icon {
+      font-size: 1.25rem; width: 38px; height: 38px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .home-card-title { font-size: 0.95rem; font-weight: 700; color: #d8d8e8; line-height: 1.2; }
+    .home-card-desc { font-size: 0.78rem; color: #666; line-height: 1.75; flex: 1; }
+    .home-card-btn {
+      margin-top: 4px; align-self: flex-start;
+      background: transparent; border: 1px solid;
+      padding: 5px 14px; border-radius: 5px;
+      font-size: 0.76rem; font-weight: 700;
+      cursor: pointer; font-family: inherit;
+      transition: background 0.15s;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1><img src="/static/logo.svg" class="logo-img" alt="logo" />My Library Organizer</h1>
-  <div class="header-right">
-    <button id="scan-btn" onclick="scanMovies()">Scan for Duplicates</button>
-    <button id="smart-btn" onclick="openSmartClean()" style="display:none">⚡ Smart Clean</button>
-    <button id="lq-btn" onclick="openLowQuality()">🔍 Low Quality</button>
-    <button id="lib-btn" onclick="openLibrary()">📂 Library</button>
-    <button id="dash-btn" onclick="openDashboard()">📊 Dashboard</button>
-    <button id="unmatched-btn" onclick="openFixUnmatched()">🔍 Unmatched</button>
-    <button id="explore-btn" onclick="openExplore()">🔍 Explore Torrents</button>
-    <button id="settings-btn" onclick="toggleSettings(event)">⚙ Settings</button>
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <img src="/static/logo.svg" class="logo-img" alt="logo" />
+    <div class="sidebar-logo-text">
+      <span class="sidebar-app-name">Cinema</span>
+      <span class="sidebar-app-name accent">Paradiso</span>
+    </div>
   </div>
-</header>
+  <div class="sidebar-nav">
+    <div class="nav-divider" style="margin-top:2px"></div>
+    <button id="scan-btn" class="nav-item" onclick="scanMovies()">
+      <span class="nav-icon">🎬</span>
+      <span class="nav-label" id="scan-btn-label">Scan Duplicates</span>
+    </button>
+    <button id="smart-btn" class="nav-item" onclick="openSmartClean()" style="display:none">
+      <span class="nav-icon">⚡</span>
+      <span class="nav-label">Smart Clean</span>
+    </button>
+    <div class="nav-divider"></div>
+    <button id="lq-btn" class="nav-item" onclick="openLowQuality()">
+      <span class="nav-icon">🔍</span>
+      <span class="nav-label">Low Quality</span>
+    </button>
+    <button id="lib-btn" class="nav-item" onclick="openLibrary()">
+      <span class="nav-icon">📂</span>
+      <span class="nav-label">Library <span class="offline-badge">offline</span></span>
+    </button>
+    <button id="dash-btn" class="nav-item" onclick="openDashboard()">
+      <span class="nav-icon">📊</span>
+      <span class="nav-label">Dashboard</span>
+    </button>
+    <button id="unmatched-btn" class="nav-item" onclick="openFixUnmatched()">
+      <span class="nav-icon">🔗</span>
+      <span class="nav-label">Unmatched</span>
+    </button>
+    <div class="nav-divider"></div>
+    <button id="explore-btn" class="nav-item" onclick="openExplore()">
+      <span class="nav-icon">🌐</span>
+      <span class="nav-label">Explore Movies</span>
+    </button>
+    <button id="pick-btn" class="nav-item" onclick="openPickMyMovie()">
+      <span class="nav-icon">🤖</span>
+      <span class="nav-label">Pick My Movie</span>
+    </button>
+  </div>
+  <div class="sidebar-footer">
+    <button id="settings-btn" class="nav-item" onclick="toggleSettings(event)">
+      <span class="nav-icon">⚙</span>
+      <span class="nav-label">Settings</span>
+    </button>
+  </div>
+</nav>
 
+<div class="app-content">
 <div id="plex-loading-bar">
   <div class="plex-bar-spinner"></div>
   <span id="plex-loading-msg">Syncing with Plex… this may take a moment</span>
@@ -1028,19 +1201,113 @@
 
 <main>
   <div id="status-bar">
-    <div style="margin-bottom:16px;color:#777;font-size:1rem;font-weight:400">Welcome — use the buttons above to manage your library</div>
-    <div style="line-height:2.4;font-size:0.95rem">
-      Click <strong style="color:#e5a00d">Scan for Duplicates</strong> to scan your video library for duplicate movies and remove the extras.<br>
-      Click <strong style="color:#e5a00d">&#128269; Low Quality</strong> to find movies with low resolution or poor quality video.<br>
-      Click <strong style="color:#74b9ff">&#128194; Library</strong> to browse your full movie collection with resolution and Plex status.<br>
-      Click <strong style="color:#fd79a8">&#128202; Dashboard</strong> to view statistics, charts, and insights about your library.<br>
-      Click <strong style="color:#a29bfe">&#128269; Unmatched</strong> to find files not matched in Plex and fix their paths.<br>
-      Click <strong style="color:#fdcb6e">&#128269; Explore Torrents</strong> to search the TMDB database by title, browse curated lists (trending, top-rated, best of all time, by genre), discover movie details with posters &amp; ratings, find torrents on your Prowlarr indexers, and stream any movie directly — all in one panel.<br>
-      Click <strong style="color:#636e72">&#9881; Settings</strong> to configure your library folder, Plex, Prowlarr, and TMDB connections.
+    <div class="home-hero">
+      <div class="home-hero-eyebrow">🎬 Cinema Paradiso</div>
+      <h2>Your Movie Library,<br>Mastered.</h2>
+      <p>Scan, clean, explore and discover — everything your collection needs, in one place.</p>
+      <div class="home-accent-line"></div>
+    </div>
+    <div class="home-cards">
+      <div class="home-card">
+        <div class="home-card-accent-bar" style="background:#fdcb6e"></div>
+        <div class="home-card-body">
+          <div class="home-card-top">
+            <div class="home-card-icon" style="background:#fdcb6e11">🎬</div>
+            <div class="home-card-title">Scan Duplicates</div>
+          </div>
+          <div class="home-card-desc">Scans your entire library for duplicate titles and ranks each copy by resolution, rip source quality, and file size — showing you exactly which version to keep.</div>
+          <button class="home-card-btn" style="color:#fdcb6e;border-color:#fdcb6e55" onmouseover="this.style.background='#fdcb6e22'" onmouseout="this.style.background='transparent'" onclick="scanMovies()">Run Scan →</button>
+        </div>
+      </div>
+
+      <div class="home-card">
+        <div class="home-card-accent-bar" style="background:#2ecc71"></div>
+        <div class="home-card-body">
+          <div class="home-card-top">
+            <div class="home-card-icon" style="background:#2ecc7111">⚡</div>
+            <div class="home-card-title">Smart Clean</div>
+          </div>
+          <div class="home-card-desc">Auto-selects inferior duplicate copies for bulk deletion — keeping only the best version of each film. Reviews every decision before committing.</div>
+          <button class="home-card-btn" style="color:#2ecc71;border-color:#2ecc7155" onmouseover="this.style.background='#2ecc7122'" onmouseout="this.style.background='transparent'" onclick="openSmartClean()">Open Smart Clean →</button>
+        </div>
+      </div>
+
+      <div class="home-card">
+        <div class="home-card-accent-bar" style="background:#e5a00d"></div>
+        <div class="home-card-body">
+          <div class="home-card-top">
+            <div class="home-card-icon" style="background:#e5a00d11">🔍</div>
+            <div class="home-card-title">Low Quality</div>
+          </div>
+          <div class="home-card-desc">Surfaces every movie below 1080p in your library. Filter by resolution tier, bulk-copy the list for Prowlarr, or delete files directly from here.</div>
+          <button class="home-card-btn" style="color:#e5a00d;border-color:#e5a00d55" onmouseover="this.style.background='#e5a00d22'" onmouseout="this.style.background='transparent'" onclick="openLowQuality()">View Low Quality →</button>
+        </div>
+      </div>
+
+      <div class="home-card">
+        <div class="home-card-accent-bar" style="background:#74b9ff"></div>
+        <div class="home-card-body">
+          <div class="home-card-top">
+            <div class="home-card-icon" style="background:#74b9ff11">📂</div>
+            <div class="home-card-title">Library Browser</div>
+          </div>
+          <div class="home-card-desc">Browse your full collection in sortable table or poster-grid view. Filter by resolution, rip source, and Plex match status. Instant search across thousands of files.</div>
+          <button class="home-card-btn" style="color:#74b9ff;border-color:#74b9ff55" onmouseover="this.style.background='#74b9ff22'" onmouseout="this.style.background='transparent'" onclick="openLibrary()">Browse Library →</button>
+        </div>
+      </div>
+
+      <div class="home-card">
+        <div class="home-card-accent-bar" style="background:#fd79a8"></div>
+        <div class="home-card-body">
+          <div class="home-card-top">
+            <div class="home-card-icon" style="background:#fd79a811">📊</div>
+            <div class="home-card-title">Dashboard</div>
+          </div>
+          <div class="home-card-desc">Live charts showing resolution breakdown, decade distribution, top genres, biggest files, and wasted-space summary across your entire collection.</div>
+          <button class="home-card-btn" style="color:#fd79a8;border-color:#fd79a855" onmouseover="this.style.background='#fd79a822'" onmouseout="this.style.background='transparent'" onclick="openDashboard()">View Dashboard →</button>
+        </div>
+      </div>
+
+      <div class="home-card">
+        <div class="home-card-accent-bar" style="background:#a29bfe"></div>
+        <div class="home-card-body">
+          <div class="home-card-top">
+            <div class="home-card-icon" style="background:#a29bfe11">🔗</div>
+            <div class="home-card-title">Unmatched Files</div>
+          </div>
+          <div class="home-card-desc">Find every video Plex can't identify. Rename files to Plex-friendly format, fix deeply nested paths, or manually match metadata from your Plex server.</div>
+          <button class="home-card-btn" style="color:#a29bfe;border-color:#a29bfe55" onmouseover="this.style.background='#a29bfe22'" onmouseout="this.style.background='transparent'" onclick="openFixUnmatched()">Fix Unmatched →</button>
+        </div>
+      </div>
+
+      <div class="home-card">
+        <div class="home-card-accent-bar" style="background:#fdcb6e"></div>
+        <div class="home-card-body">
+          <div class="home-card-top">
+            <div class="home-card-icon" style="background:#fdcb6e11">🌐</div>
+            <div class="home-card-title">Explore Movies</div>
+          </div>
+          <div class="home-card-desc">Full discovery suite — TMDB trending lists, genre filters, poster cards with ratings and plots, find torrents on Prowlarr, and stream any movie directly.</div>
+          <button class="home-card-btn" style="color:#fdcb6e;border-color:#fdcb6e55" onmouseover="this.style.background='#fdcb6e22'" onmouseout="this.style.background='transparent'" onclick="openExplore()">Explore →</button>
+        </div>
+      </div>
+
+      <div class="home-card">
+        <div class="home-card-accent-bar" style="background:#a29bfe"></div>
+        <div class="home-card-body">
+          <div class="home-card-top">
+            <div class="home-card-icon" style="background:#a29bfe11">🤖</div>
+            <div class="home-card-title">Pick My Movie</div>
+          </div>
+          <div class="home-card-desc">Describe a mood or memory to your local Ollama AI and get 5 personalised picks — each with a poster, rating, and a one-sentence reason why it fits.</div>
+          <button class="home-card-btn" style="color:#a29bfe;border-color:#a29bfe55" onmouseover="this.style.background='#a29bfe22'" onmouseout="this.style.background='transparent'" onclick="openPickMyMovie()">Pick a Movie →</button>
+        </div>
+      </div>
     </div>
   </div>
   <div id="results"></div>
 </main>
+</div><!-- /.app-content -->
 
 <!-- Library Panel -->
 <div id="lib-panel">
@@ -1049,6 +1316,8 @@
       <h2>📂 Movie Library</h2>
       <span class="lib-count" id="lib-count"></span>
       <span id="plex-sync-status" style="font-size:0.78rem;color:#666"></span>
+      <button class="btn-lib-view-toggle" id="btn-lib-list" onclick="toggleLibraryView('list')" title="List view">☰ List</button>
+      <button class="btn-lib-view-toggle" id="btn-lib-grid" onclick="toggleLibraryView('grid')" title="Grid view">⊞ Grid</button>
       <button class="btn-lib-close" onclick="closeLibrary()">Close</button>
     </div>
     <div class="lib-search-row">
@@ -1077,6 +1346,10 @@
         <option value="rip-asc">Source (worst)</option>
       </select>
     </div>
+    <div class="panel-select-bar" id="lib-select-bar">
+      <span id="lib-sel-count">0 selected</span>
+      <button class="btn-sel-delete" onclick="libDeleteSelected()">🗑 Delete Selected</button>
+    </div>
     <div id="lib-vscroll">
     <table class="lib-table">
       <thead>
@@ -1092,11 +1365,18 @@
       </thead>
       <tbody id="lib-tbody"></tbody>
     </table>
-    <div id="lib-virt-spacer"></div>
+    <div id="lib-pagination">
+      <button id="lib-page-prev" onclick="_libPagePrev()">← Prev</button>
+      <span id="lib-page-label"></span>
+      <button id="lib-page-next" onclick="_libPageNext()">Next →</button>
     </div>
-    <div class="panel-select-bar" id="lib-select-bar" style="margin-top:12px;margin-bottom:0">
-      <span id="lib-sel-count">0 selected</span>
-      <button class="btn-sel-delete" onclick="libDeleteSelected()">🗑 Delete Selected</button>
+    </div>
+    <!-- Grid view (hidden by default, toggled by toggleLibraryView) -->
+    <div id="library-grid-view">
+      <div id="library-grid" class="explore-grid"></div>
+      <div id="lib-grid-more-wrap" style="display:none;text-align:center;padding:18px 0">
+        <button class="btn-discover-load" onclick="_libGridLoadMore()">⬇ Load More</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1186,7 +1466,7 @@
       <span id="fix-sel-count">0 selected</span>
       <button id="fix-delete-btn" class="btn-sel-delete" onclick="fixDeleteSelected()" style="display:none">🗑 Delete Selected</button>
       <button id="fix-all-paths-btn" class="btn-scan-plex" onclick="fixAllPaths()" style="display:none">&#128194; Fix All Paths</button>
-      <button id="fix-refresh-btn" class="btn-scan-plex" onclick="openFixUnmatched()" style="display:none">&#8635; Refresh List</button>
+      <button id="fix-refresh-btn" class="btn-scan-plex" onclick="openFixUnmatched(true)" style="display:none">&#8635; Refresh List</button>
     </div>
   </div>
 </div>
@@ -1291,6 +1571,24 @@
   </div>
 
   <div class="settings-section">
+    <div class="settings-section-title">🤖 Ollama AI</div>
+    <p class="settings-hint">Powers the "Pick My Movie" feature. Requires <strong style="color:#a29bfe">Ollama</strong> running locally. No API key needed.</p>
+    <div class="settings-field">
+      <label>Ollama URL</label>
+      <input type="text" id="ollama-url-input" placeholder="http://localhost:11434" autocomplete="off" />
+    </div>
+    <div class="settings-field">
+      <label>Model Name</label>
+      <input type="text" id="ollama-model-input" placeholder="gemma4:31b-cloud" autocomplete="off" />
+    </div>
+    <div id="ollama-test-status" class="settings-status"></div>
+    <div class="settings-btn-row">
+      <button class="btn-settings-test" onclick="testOllamaCfg()" id="ollama-test-btn">Test</button>
+      <button class="btn-settings-save" onclick="saveOllamaCfg()">Save Ollama</button>
+    </div>
+  </div>
+
+  <div class="settings-section">
     <div class="settings-section-title">🔄 Plex Sync</div>
     <label class="always-sync-row" id="always-sync-row" onclick="toggleAlwaysSyncRow()">
       <input type="checkbox" id="always-sync-chk" onclick="event.stopPropagation(); toggleAlwaysSync(this)" />
@@ -1299,6 +1597,25 @@
         <div class="asr-sub">Bypass 5-min cache — fetch fresh Plex data every time you open a panel</div>
       </div>
     </label>
+  </div>
+</div>
+
+<!-- Pick My Movie Panel -->
+<div id="pick-panel">
+  <div class="explore-inner">
+    <div class="explore-header">
+      <h2 style="color:#a29bfe">🎬 Pick My Movie</h2>
+      <button class="btn-explore-close" onclick="closePickMyMovie()">Close</button>
+    </div>
+    <div class="pick-subtitle">Describe what you want to watch — mood, era, actors, a feeling, a memory… anything.</div>
+    <div class="pick-input-row">
+      <textarea id="pick-input" rows="4"
+        placeholder="e.g. that 90s movie where a kid gets left home alone at christmas… or something funny but also a little sad, like an indie film…"
+        onkeydown="if((event.ctrlKey||event.metaKey)&&event.key==='Enter')sendPickPrompt()"></textarea>
+      <button class="btn-discover-load" id="pick-send-btn" onclick="sendPickPrompt()">🤖 Ask AI</button>
+    </div>
+    <div id="pick-status" class="pick-status"></div>
+    <div id="pick-grid" class="explore-grid"></div>
   </div>
 </div>
 
@@ -1346,11 +1663,11 @@
 </div>
 
 <!-- Trending Panel -->
-<!-- Explore Torrents Panel -->
+<!-- Explore Movies Panel -->
 <div id="explore-panel">
   <div class="explore-inner">
     <div class="explore-header">
-      <h2>🔍 Explore Torrents</h2>
+      <h2>🔍 Explore Movies</h2>
       <button class="btn-explore-close" onclick="closeExplore()">Close</button>
     </div>
     <!-- Search Bar -->
@@ -1373,7 +1690,7 @@
     <!-- Tab bar -->
     <div class="explore-tabs">
       <button class="explore-tab-btn active" id="tab-btn-discover" onclick="switchExploreTab('discover')">🎬 TMDB Discover</button>
-      <button class="explore-tab-btn" id="tab-btn-browse" onclick="switchExploreTab('browse')">📡 Browse Indexers</button>
+      <button class="explore-tab-btn" id="tab-btn-browse" onclick="switchExploreTab('browse')">📡 Browse Torrents</button>
     </div>
 
     <!-- TMDB Discover Tab -->
@@ -1533,13 +1850,13 @@
     const results = document.getElementById('results');
 
     btn.disabled = true;
-    btn.textContent = 'Scanning...';
+    document.getElementById('scan-btn-label').textContent = 'Scanning...';
     document.getElementById('stats-bar').classList.remove('visible');
     document.getElementById('trash-toggle-wrap').classList.remove('visible');
     document.getElementById('search-wrap').classList.remove('visible');
     document.getElementById('smart-btn').style.display = 'none';
     results.innerHTML = '';
-    statusBar.innerHTML = '<div class="spinner"></div><br>Scanning your movies folder, please wait…';
+    statusBar.innerHTML = '<div style="text-align:center;padding:60px 20px"><div class="spinner"></div><br>Scanning your movies folder, please wait…</div>';
     statusBar.style.display = 'block';
     _plexLoadingStart('Scanning duplicates — syncing with Plex… this may take a moment');
 
@@ -1570,11 +1887,11 @@
         document.getElementById('smart-btn').style.display = '';
       }
     } catch (err) {
-      statusBar.innerHTML = '<span style="color:#e74c3c">Error: ' + err.message + '</span>';
+      statusBar.innerHTML = '<div style="text-align:center;padding:40px 20px"><span style="color:#e74c3c">Error: ' + err.message + '</span></div>';
     } finally {
       _plexLoadingStop();
       btn.disabled = false;
-      btn.textContent = 'Re-Scan';
+      document.getElementById('scan-btn-label').textContent = 'Re-Scan';
     }
   }
 
@@ -2244,9 +2561,9 @@
   // ── Library Browser ──────────────────────────────────────────────
   let libItems = [];
   let _libVirtItems = [];       // filtered+sorted array currently displayed
-  let _libSelected  = new Set(); // selected file paths (survives virtual scroll)
-  const _LIB_ROW_H  = 48;       // estimated row height in px
-  const _LIB_OVER   = 10;       // rows to render above/below viewport
+  let _libSelected  = new Set(); // selected file paths (survives page turns)
+  let _libListPage  = 0;
+  const _LIB_PAGE_SIZE = 65;
 
   async function openLibrary() {
     const btn = document.getElementById('lib-btn');
@@ -2278,7 +2595,7 @@
       clearInterval(statusInterval);
       _plexLoadingStop();
       btn.disabled = false;
-      btn.textContent = '📂 Library';
+      btn.innerHTML = '📂 Library <span class="offline-badge">offline</span>';
     }
   }
 
@@ -2327,7 +2644,10 @@
         ? `${libItems.length} files`
         : `${filtered.length} of ${libItems.length} files`;
     _libVirtItems = filtered;
-    _libVirtRender();
+    _libListPage = 0;
+    _libPageRender();
+    // If grid view is active, re-render it with the newly filtered set
+    if (_libViewMode === 'grid') _libGridRenderAll();
   }
 
   const _RIP_COLOR = { 'BD Remux':'#a29bfe','Remux':'#a29bfe','Blu-ray':'#74b9ff','BDRip':'#81ecec',
@@ -2335,41 +2655,29 @@
     'DVDRip':'#d63031','DVDScr':'#b2bec3','CAMRip':'#636e72','HDCAM':'#636e72','Unknown':'#636e72' };
   const _RES_COLOR = { '4K':'#a29bfe','1080p':'#74b9ff','720p':'#e5a00d','480p':'#e17055','Unknown':'#636e72' };
 
-  // ── Virtual scroll engine ─────────────────────────────────────────
-  let _libVirtStart = 0; // index of first rendered row
+  // ── Pagination engine ─────────────────────────────────────────────
+  function _libPageRender() {
+    const tbody  = document.getElementById('lib-tbody');
+    const items  = _libVirtItems;
+    const total  = items.length;
+    const pages  = Math.max(1, Math.ceil(total / _LIB_PAGE_SIZE));
+    _libListPage = Math.min(_libListPage, pages - 1);
+    const start  = _libListPage * _LIB_PAGE_SIZE;
+    const end    = Math.min(total, start + _LIB_PAGE_SIZE);
 
-  function _libVirtRender() {
-    const scroller = document.getElementById('lib-vscroll');
-    const spacer   = document.getElementById('lib-virt-spacer');
-    const tbody    = document.getElementById('lib-tbody');
-    const items    = _libVirtItems;
-
-    if (items.length === 0) {
-      spacer.style.height = '0';
+    if (total === 0) {
       tbody.innerHTML = '<tr><td colspan="7" class="lib-empty">No files match the current filters.</td></tr>';
+      document.getElementById('lib-page-label').textContent = '';
+      document.getElementById('lib-page-prev').disabled = true;
+      document.getElementById('lib-page-next').disabled = true;
       libUpdateSelBar();
       return;
     }
 
-    const viewH     = scroller.clientHeight || 600;
-    const scrollTop = scroller.scrollTop;
-    const rowH      = _LIB_ROW_H;
-    const visible   = Math.ceil(viewH / rowH);
-    const start     = Math.max(0, Math.floor(scrollTop / rowH) - _LIB_OVER);
-    const end       = Math.min(items.length, start + visible + _LIB_OVER * 2);
-
-    _libVirtStart = start;
-
-    // Spacer fills the full virtual height so the scrollbar is correct
-    spacer.style.height = (items.length * rowH) + 'px';
-
     const RES_COLOR = _RES_COLOR;
     const RIP_COLOR = _RIP_COLOR;
-    const html = items.slice(start, end).map(it => _libRow(it, RES_COLOR, RIP_COLOR)).join('');
-    tbody.innerHTML = html;
-
-    // Offset tbody so rows appear at the right scroll position
-    tbody.style.transform = `translateY(${start * rowH}px)`;
+    tbody.innerHTML = items.slice(start, end).map(it => _libRow(it, RES_COLOR, RIP_COLOR)).join('');
+    tbody.style.transform = '';
 
     // Restore checkbox state for visible rows
     tbody.querySelectorAll('tr').forEach(tr => {
@@ -2377,13 +2685,22 @@
       if (cb) cb.checked = _libSelected.has(tr.dataset.path);
     });
 
+    // Pagination controls
+    document.getElementById('lib-page-label').textContent =
+      `Page ${_libListPage + 1} of ${pages} — ${start + 1}–${end} of ${total}`;
+    document.getElementById('lib-page-prev').disabled = _libListPage === 0;
+    document.getElementById('lib-page-next').disabled = _libListPage >= pages - 1;
+
     libUpdateSelBar();
   }
 
-  // Attach scroll listener once
-  document.getElementById('lib-vscroll').addEventListener('scroll', () => {
-    requestAnimationFrame(_libVirtRender);
-  }, { passive: true });
+  function _libPagePrev() {
+    if (_libListPage > 0) { _libListPage--; _libPageRender(); document.getElementById('lib-panel').scrollTo(0, 0); }
+  }
+  function _libPageNext() {
+    const pages = Math.ceil(_libVirtItems.length / _LIB_PAGE_SIZE);
+    if (_libListPage < pages - 1) { _libListPage++; _libPageRender(); document.getElementById('lib-panel').scrollTo(0, 0); }
+  }
 
   function _libRow(it, RES_COLOR, RIP_COLOR) {
     const resCol = RES_COLOR[it.resolution] || '#636e72';
@@ -2421,13 +2738,16 @@
     bar.classList.toggle('visible', n > 0);
     document.getElementById('lib-sel-count').textContent = n + ' selected';
     const allChk = document.getElementById('lib-check-all');
-    if (allChk) allChk.checked = _libVirtItems.length > 0 && n === _libVirtItems.length;
+    if (allChk) {
+      allChk.checked       = _libVirtItems.length > 0 && n === _libVirtItems.length;
+      allChk.indeterminate = n > 0 && n < _libVirtItems.length;
+    }
   }
 
   function libSelectAll(state) {
     if (state) _libVirtItems.forEach(it => _libSelected.add(it.path));
     else _libSelected.clear();
-    _libVirtRender();
+    _libPageRender();
   }
 
   function libDeleteSelected() {
@@ -2457,9 +2777,130 @@
     document.getElementById('lib-panel').classList.remove('active');
   }
 
-  document.getElementById('lib-panel').addEventListener('click', function(e) {
-    if (e.target === this) closeLibrary();
+  // ── Library List / Grid toggle ────────────────────────────────────────────
+  let _libViewMode = localStorage.getItem('libViewMode') || 'list';
+  let _libGridPage = 0;
+  const _LIB_GRID_PAGE_SIZE = 60;
+
+  // Apply saved view on load
+  window.addEventListener('DOMContentLoaded', function _initLibViewMode() {
+    if (_libViewMode === 'grid') {
+      document.getElementById('btn-lib-list').classList.remove('active');
+      document.getElementById('btn-lib-grid').classList.add('active');
+    } else {
+      document.getElementById('btn-lib-list').classList.add('active');
+    }
   });
+
+  function toggleLibraryView(mode) {
+    _libViewMode = mode;
+    localStorage.setItem('libViewMode', mode);
+
+    const listView = document.getElementById('lib-vscroll');
+    const gridWrap = document.getElementById('library-grid-view');
+    const btnList  = document.getElementById('btn-lib-list');
+    const btnGrid  = document.getElementById('btn-lib-grid');
+
+    if (mode === 'grid') {
+      listView.style.display = 'none';
+      gridWrap.style.display = 'block';
+      btnList.classList.remove('active');
+      btnGrid.classList.add('active');
+      _libGridPage = 0;
+      _libGridRenderAll();
+    } else {
+      listView.style.display = '';
+      gridWrap.style.display = 'none';
+      btnGrid.classList.remove('active');
+      btnList.classList.add('active');
+      _libPageRender();
+    }
+  }
+
+  function _libGridCardHtml(it) {
+    const RES_COLOR = _RES_COLOR;
+    const RIP_COLOR = _RIP_COLOR;
+    const resCol = RES_COLOR[it.resolution] || '#636e72';
+    const title  = it.plex_title || it.title;
+    const year   = it.plex_year  || (it.title.match(/\((\d{4})\)/) || [])[1] || '';
+    const genres = (it.plex_genres || []).slice(0, 3).map(g =>
+      `<span class="tr-genre-tag">${g}</span>`).join('');
+    const rating = it.plex_rating ? `<span class="tr-tmdb-score" style="color:#fdcb6e">⭐ ${parseFloat(it.plex_rating).toFixed(1)}</span>` : '';
+    const plot   = it.plex_summary
+      ? `<div class="tr-plot" style="max-height:52px;overflow:hidden">${it.plex_summary}</div>
+         <span class="tr-plot-toggle" onclick="togglePlot(this)">▾ more</span>`
+      : '';
+    const ripCol = RIP_COLOR[it.rip_source] || '#636e72';
+    const ripBadge = `<span style="font-size:0.7rem;background:${ripCol}22;color:${ripCol};border:1px solid ${ripCol}55;border-radius:4px;padding:1px 6px">${it.rip_source}</span>`;
+
+    const posterHtml = it.plex_poster
+      ? `<img class="tr-poster" src="/api/plex/image?url=${encodeURIComponent(it.plex_poster)}"
+           alt="${escAttr(title)}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\\'lib-no-poster\\'>🎬</div>'">`
+      : `<div class="lib-no-poster">🎬</div>`;
+
+    const safeTitle = escAttr(title);
+    const safeYear  = escAttr(year);
+    const safePath  = escAttr(it.path);
+
+    return `<div class="tr-card lib-grid-card" data-path="${safePath}">
+      <div class="tr-poster-wrap">
+        ${posterHtml}
+        <span class="tr-res-badge tr-res-${it.resolution.replace(/\s/g,'')}"
+              style="background:${resCol}33;color:${resCol};border:1px solid ${resCol}66">${it.resolution}</span>
+      </div>
+      <div class="tr-card-body">
+        <div class="tr-title">${title}</div>
+        <div class="tr-year">${year} &nbsp; ${ripBadge} &nbsp; <span style="color:#666;font-size:0.78rem">${it.size_human}</span></div>
+        ${genres ? `<div class="tr-genres">${genres}</div>` : ''}
+        ${rating ? `<div class="tr-rating-row">${rating}</div>` : ''}
+        ${plot}
+      </div>
+      <div class="tr-card-actions">
+        <button class="btn-lga btn-lga-prowlarr" onclick="prowlarrSearch('${safeTitle}')">🔎 Search</button>
+        <button class="btn-lga btn-lga-play"     onclick="playFile('${safePath}')">▶ Play</button>
+        <button class="btn-lga btn-lga-rename"   onclick="openLibRenameModal('${safePath}')">✏ Rename</button>
+      </div>
+    </div>`;
+  }
+
+  function _libGridRenderAll() {
+    const grid    = document.getElementById('library-grid');
+    const moreWrap = document.getElementById('lib-grid-more-wrap');
+    const items   = _libVirtItems;
+
+    if (!items || items.length === 0) {
+      grid.innerHTML = '<div style="color:#555;padding:40px;text-align:center;grid-column:1/-1">No files match the current filters.</div>';
+      moreWrap.style.display = 'none';
+      return;
+    }
+
+    const pageItems = items.slice(0, _LIB_GRID_PAGE_SIZE);
+    grid.innerHTML  = pageItems.map(_libGridCardHtml).join('');
+    _libGridPage    = 1;
+
+    const hasMore = items.length > _LIB_GRID_PAGE_SIZE;
+    moreWrap.style.display = hasMore ? 'block' : 'none';
+    if (hasMore) {
+      moreWrap.querySelector('button').textContent =
+        `⬇ Load More (${items.length - _LIB_GRID_PAGE_SIZE} remaining)`;
+    }
+  }
+
+  function _libGridLoadMore() {
+    const grid  = document.getElementById('library-grid');
+    const items = _libVirtItems;
+    const start = _libGridPage * _LIB_GRID_PAGE_SIZE;
+    const slice = items.slice(start, start + _LIB_GRID_PAGE_SIZE);
+    grid.insertAdjacentHTML('beforeend', slice.map(_libGridCardHtml).join(''));
+    _libGridPage++;
+    const remaining = items.length - _libGridPage * _LIB_GRID_PAGE_SIZE;
+    const moreWrap  = document.getElementById('lib-grid-more-wrap');
+    if (remaining <= 0) {
+      moreWrap.style.display = 'none';
+    } else {
+      moreWrap.querySelector('button').textContent = `⬇ Load More (${remaining} remaining)`;
+    }
+  }
 
   // ── Plex Integration ──────────────────────────────────────────────
   let _plexSynced = false;
@@ -2608,6 +3049,16 @@
       const r = await fetch('/api/tmdb/config');
       const d = await r.json();
       if (d.key) document.getElementById('tmdb-key-input').value = d.key;
+    } catch {}
+  });
+
+  // ── Ollama Config Load ────────────────────────────────────────────
+  window.addEventListener('load', async () => {
+    try {
+      const r = await fetch('/api/ollama/config');
+      const d = await r.json();
+      if (d.url)   document.getElementById('ollama-url-input').value   = d.url;
+      if (d.model) document.getElementById('ollama-model-input').value = d.model;
     } catch {}
   });
 
@@ -2802,12 +3253,13 @@
   let _fixMatchCtx = { ratingKey: '', rowIdx: -1 };
   let _fixPlexEnabled = false;
 
-  async function openFixUnmatched() {
+  async function openFixUnmatched(forcePlex = false) {
     const btn = document.getElementById('unmatched-btn');
     btn.disabled = true; btn.textContent = 'Syncing…';
     _plexLoadingStart('Loading unmatched files — syncing with Plex… this may take a moment');
     try {
-      const res = await fetch('/api/fix-unmatched' + _plexQuery());
+      const qs = (forcePlex || _alwaysSyncPlex) ? '?force_plex=1' : '';
+      const res = await fetch('/api/fix-unmatched' + qs);
       const data = await res.json();
       if (data.error) { showToast(data.error, true); return; }
       fixItems = data.items;
@@ -2840,8 +3292,8 @@
       const res  = await fetch('/api/plex/force-scan', { method: 'POST' });
       const data = await res.json();
       if (data.error) { showToast(data.error, true); return; }
-      showToast('Plex scan triggered — refreshing in 4s…');
-      setTimeout(() => openFixUnmatched(), 4000);
+      showToast('Plex scan triggered — refreshing in 8s…');
+      setTimeout(() => openFixUnmatched(true), 8000);
     } catch (e) {
       showToast(e.message, true);
     } finally {
@@ -2885,6 +3337,7 @@
       const qualTagDisplay = [it.resolution, it.rip_source].filter(t => t && t !== 'Unknown').join(' \u00b7 ');
       const qualBadge = qualTagDisplay ? `<br><span class="fix-qual-badge">${escHtml(qualTagDisplay)}</span>` : '';
       const depthNote = it.fixable_path ? `<br><span style="color:#e17055;font-size:0.7rem">\u26a0 Folder too deep (level ${it.depth}) \u2014 Plex skips it</span>` : '';
+      const hintNote  = (!it.fixable_path && it.plex_hint) ? `<br><span style="color:${it.unparseable ? '#e5a00d' : '#888'};font-size:0.7rem">\u2139 ${escHtml(it.plex_hint)}</span>` : '';
       const statusBadge = it.in_plex
         ? '<span class="badge-in-plex">\ud83d\udfe1 In Plex (unmatched)</span>'
         : '<span class="badge-not-plex">\u26ab Not in Plex</span>';
@@ -2899,7 +3352,7 @@
       const folderDisplay = it.folder === '.' ? '<em style="color:#555">root</em>' : escHtml(it.folder);
       return `<tr id="fix-row-${i}" data-path="${escAttr(it.path)}" data-rating-key="${escAttr(it.rating_key)}" data-res="${escAttr(it.resolution||'')}" data-rip="${escAttr(it.rip_source||'')}">
         <td><input type="checkbox" class="fix-check" onchange="fixUpdateSelBar()" /></td>
-        <td class="fix-file-cell" title="${escAttr(it.filename)}">${escHtml(it.filename)}${qualBadge}${depthNote}</td>
+        <td class="fix-file-cell" title="${escAttr(it.filename)}">${escHtml(it.filename)}${qualBadge}${depthNote}${hintNote}</td>
         <td style="color:#888;font-size:0.8rem;white-space:nowrap">${escHtml(it.file_size||'')}</td>
         <td style="color:#888;font-size:0.78rem;word-break:break-all;max-width:220px" title="${escAttr(it.folder||'')}">${folderDisplay}</td>
         <td>${statusBadge}</td>
@@ -3005,7 +3458,7 @@
   function openRenameModal(rowIdx) {
     const it = fixItems[rowIdx];
     if (!it) return;
-    _renameCtx = { path: it.path, onSuccess: () => openFixUnmatched() };
+    _renameCtx = { path: it.path, onSuccess: () => openFixUnmatched(true) };
     document.getElementById('rename-modal-file').textContent = it.filename;
     document.getElementById('rename-title-input').value = it.suggested_title || '';
     document.getElementById('rename-year-input').value  = it.suggested_year  || '';
@@ -3632,6 +4085,151 @@
         streamBtn.onclick = () => streamMovie(meta.tmdb_id);
       }
     }
+  }
+
+  // ── Pick My Movie ─────────────────────────────────────────────────────────
+
+  function openPickMyMovie() {
+    document.getElementById('pick-panel').classList.add('active');
+    document.getElementById('pick-input').focus();
+  }
+
+  function closePickMyMovie() {
+    document.getElementById('pick-panel').classList.remove('active');
+  }
+
+  async function saveOllamaCfg() {
+    const url   = document.getElementById('ollama-url-input').value.trim();
+    const model = document.getElementById('ollama-model-input').value.trim();
+    try {
+      const res  = await fetch('/api/ollama/config', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({url, model}) });
+      const data = await res.json();
+      if (data.error) { showToast(data.error, true); return; }
+      showToast('Ollama settings saved');
+    } catch (e) { showToast(e.message, true); }
+  }
+
+  async function testOllamaCfg() {
+    const url    = document.getElementById('ollama-url-input').value.trim();
+    const status = document.getElementById('ollama-test-status');
+    const btn    = document.getElementById('ollama-test-btn');
+    btn.disabled = true; btn.textContent = 'Testing…';
+    status.style.color = '#888'; status.textContent = 'Connecting to Ollama…';
+    try {
+      await fetch('/api/ollama/config', { method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({url, model: document.getElementById('ollama-model-input').value.trim()}) });
+      const res  = await fetch('/api/ollama/test?url=' + encodeURIComponent(url));
+      const data = await res.json();
+      if (data.error) { status.style.color = '#e74c3c'; status.textContent = '✗ ' + data.error; }
+      else { status.style.color = '#2ecc71'; status.textContent = '✓ Ollama is reachable'; }
+    } catch (e) { status.style.color = '#e74c3c'; status.textContent = '✗ ' + e.message; }
+    finally { btn.disabled = false; btn.textContent = 'Test'; }
+  }
+
+  function _normPickTitle(t) {
+    // Normalise for library match: lowercase, strip punctuation, strip leading article
+    if (!t) return '';
+    return String(t).toLowerCase()
+      .replace(/[^\w\s]/g, '')
+      .replace(/\s+/g, ' ').trim()
+      .replace(/^(the|a|an) /, '');
+  }
+
+  async function sendPickPrompt() {
+    const prompt  = document.getElementById('pick-input').value.trim();
+    const status  = document.getElementById('pick-status');
+    const grid    = document.getElementById('pick-grid');
+    const btn     = document.getElementById('pick-send-btn');
+    if (!prompt) { status.style.color = '#e74c3c'; status.textContent = 'Please describe what you want to watch.'; return; }
+    btn.disabled = true; btn.textContent = '⏳ Thinking…';
+    status.style.color = '#a29bfe'; status.textContent = '🤔 Ollama is thinking…';
+    grid.innerHTML = '';
+    try {
+      const res  = await fetch('/api/ollama/recommend', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({prompt}) });
+      const data = await res.json();
+      if (data.error) { status.style.color = '#e74c3c'; status.textContent = '✗ ' + data.error; return; }
+      const results = data.results || [];
+      status.style.color = '#2ecc71';
+      status.textContent = `✓ ${results.length} recommendation${results.length !== 1 ? 's' : ''} from ${data.model}`;
+      // Show cards immediately, then enrich with library check in background
+      _renderPickCards(results, {});
+      if (results.length) {
+        try {
+          const movies = results.map(m => ({ title: m.title, year: m.year || '' }));
+          const cr = await fetch('/api/library/check', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ movies }) });
+          const cd = await cr.json();
+          if (cd.results) {
+            const libMap = {};
+            cd.results.forEach(r => {
+              if (r.found) {
+                const key = _normPickTitle(r.title) + '|' + String(r.year || '').trim();
+                libMap[key] = r;
+              }
+            });
+            _renderPickCards(results, libMap);
+          }
+        } catch (_) { /* library check is best-effort — never block the UI */ }
+      }
+    } catch (e) { status.style.color = '#e74c3c'; status.textContent = '✗ ' + e.message; }
+    finally { btn.disabled = false; btn.textContent = '🤖 Ask AI'; }
+  }
+
+  function _renderPickCards(results, libMap) {
+    libMap = libMap || {};
+    const grid = document.getElementById('pick-grid');
+    if (!results.length) {
+      grid.innerHTML = '<div class="explore-empty">No recommendations returned — try rephrasing your description.</div>';
+      return;
+    }
+    grid.innerHTML = results.map((m, i) => {
+      const poster = m.poster_url
+        ? `<img class="tr-poster" src="${escAttr(m.poster_url)}" alt="" loading="lazy">`
+        : `<div class="tr-poster-placeholder">🎬</div>`;
+      const genres = m.genres && m.genres.length
+        ? m.genres.map(g => `<span class="tr-genre-tag">${escHtml(g)}</span>`).join('')
+        : '';
+      const rating = m.tmdb_rating ? `<span class="tr-tmdb-score">⭐ ${escHtml(m.tmdb_rating)}</span>` : '';
+      const reason = m.reason ? `<div class="tr-reason-badge">💡 ${escHtml(m.reason)}</div>` : '';
+
+      // Library lookup
+      const libKey = _normPickTitle(m.title) + '|' + String(m.year || '').trim();
+      const libEntry = libMap[libKey];
+      const inLibrary = !!libEntry;
+
+      const libraryBadge = inLibrary
+        ? `<div class="tr-in-library-badge">&#10003; In Your Library
+             <span class="lib-badge-detail">&middot; ${escHtml(libEntry.resolution)} &middot; ${escHtml(libEntry.size_human)}</span>
+           </div>`
+        : '';
+      const playBtn = inLibrary
+        ? `<button class="btn-play-local" onclick="playFile('${escAttr(libEntry.path)}')">&#9654; Play from HDD</button>`
+        : '';
+      const streamBtn = (!inLibrary && m.tmdb_id)
+        ? `<button class="btn-stream" onclick="streamMovie(${m.tmdb_id})">&#9658; Stream</button>`
+        : '';
+
+      return `<div class="tr-card" id="pick-card-${i}">
+        <div class="tr-poster-wrap">${poster}</div>
+        <div class="tr-card-body">
+          ${libraryBadge}
+          ${reason}
+          <div class="tr-title" title="${escAttr(m.title)}">${escHtml(m.title)}</div>
+          <div class="tr-year">${escHtml(m.year || '')}</div>
+          <div class="tr-genres">${genres}</div>
+          <div class="tr-rating-row">${rating}</div>
+          <div class="tr-plot">${escHtml(m.plot || '')}</div>
+          ${m.plot ? '<span class="tr-plot-toggle" onclick="togglePlot(this)">▾ more</span>' : ''}
+        </div>
+        <div style="padding:0 12px 10px;display:flex;flex-direction:column;gap:4px">
+          ${playBtn}
+          <button class="btn-find-torrent"
+            onclick="openTorrentModal('${escAttr(m.title)}', '${escAttr(m.year || '')}')">
+            🔍 Find Torrent
+          </button>
+          ${streamBtn}
+        </div>
+      </div>`;
+    }).join('');
   }
 
   // ── TMDB Settings ─────────────────────────────────────────────────────────

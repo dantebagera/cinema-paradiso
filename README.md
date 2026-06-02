@@ -1,28 +1,65 @@
-# 🎬 10K Movie Library Organizer
+﻿# 🎬 Cinema Paradiso
 
-> **Alternative to Plex DupeFinder** · **Bulk Plex organizer** · **How to fix unmatched Plex files** · **Plex duplicate movie cleaner** · **Large movie library manager for Plex**
+> **Self-hosted movie library manager** · **Plex duplicate cleaner** · **AI movie recommendations** · **TMDB movie discovery** · **Local Plex organizer for Windows**
 
-A local web application for managing, cleaning, and organizing a large Plex movie library on Windows. Runs entirely on your own machine — no cloud, no subscriptions, no data leaves your PC.
+A local web application for managing, discovering, and perfecting a large Plex movie library on Windows. Runs entirely on your own machine — no cloud, no subscriptions, no data leaves your PC.
 
 Built with Python + Flask. Designed for libraries with thousands of files — tested with 10,000+ movies.
 
-**Current version: v1.5** — May 2026
-
----
-
-## What problems does this solve?
-
-- **"My Plex library has hundreds of duplicate movies"** — the Duplicate Scanner finds every film you own more than once and tells you exactly which copy to keep based on resolution, rip source, and file size.
-- **"Plex won't match some of my movies"** — the Unmatched Panel finds files buried in deep subfolder structures that Plex can't identify, and lets you fix the path or manually match them to the correct Plex entry.
-- **"I have hundreds of 720p/480p movies I want to replace"** — the Low Quality Scanner lists every sub-1080p file so you can prioritize upgrades.
-- **"I want to see what's in my library without opening Plex"** — the Library Browser gives you a fully searchable, sortable table of every file with metadata.
-- **"How do I bulk delete bad movie copies from Plex?"** — Smart Clean automatically flags the inferior duplicates for one-click bulk deletion, using the Windows Recycle Bin so nothing is gone permanently.
+**Current version: v2.0** — June 2026
 
 ---
 
 ## Screenshots
 
-> Duplicate Scanner · Low Quality Scanner · Library Browser · Dashboard · Unmatched Panel
+### Home — Cinematic Dashboard
+
+![Cinema Paradiso Home](screenshots/01-home.png)
+
+### Library Browser — 3,598 files, 100% Plex matched
+
+![Library Browser](screenshots/02-library.png)
+
+### Explore Movies — TMDB Discovery + Torrent Search
+
+![Explore Movies](screenshots/03-explore.png)
+
+### Dashboard — Live Library Statistics
+
+![Dashboard](screenshots/04-dashboard.png)
+
+### Pick My Movie — AI Recommendations via Ollama
+
+![Pick My Movie](screenshots/05-pick-my-movie.png)
+
+### Low Quality Scanner
+
+![Low Quality Scanner](screenshots/06-low-quality.png)
+
+---
+
+## What is Cinema Paradiso?
+
+Cinema Paradiso started as a duplicate scanner and evolved into a complete **personal movie library command centre**. It handles every part of owning a large local movie collection:
+
+- **Cleaning** — find and remove duplicate copies, low-quality files, and Plex-unmatched stragglers
+- **Browsing** — your entire library in a fast searchable/sortable table or poster grid
+- **Discovering** — explore TMDB trending lists, top-rated films, genres, and find torrents for anything
+- **Recommending** — describe a mood or memory to your local Ollama AI and get 5 personalised picks
+- **Playing** — open any file in your default video player directly from any panel
+
+Everything runs locally. No accounts. No cloud. No subscriptions.
+
+---
+
+## What problems does this solve?
+
+- **"My Plex library has hundreds of duplicate movies"** — the Duplicate Scanner finds every film you own more than once and ranks each copy by resolution, rip source, and file size so you always know which one to keep.
+- **"Plex won't match some of my movies"** — the Unmatched Panel finds files buried in deep subfolder structures that Plex can't identify, and lets you fix the path or manually match them.
+- **"I have hundreds of 720p/480p movies I want to replace"** — the Low Quality Scanner lists every sub-1080p file so you can prioritise upgrades and bulk-copy titles to Prowlarr.
+- **"I want to browse my library without opening Plex"** — the Library Browser gives you a fully searchable, sortable table or poster grid of every file with metadata, resolution, rip source, and Plex status.
+- **"I want to discover new movies and find torrents without leaving the app"** — Explore Movies gives you TMDB trending lists, genre discovery, poster cards with ratings and plots, and direct Prowlarr torrent search.
+- **"I can't decide what to watch"** — describe your mood to your local Ollama AI (Pick My Movie) and get 5 personalised film picks with posters, ratings, and a reason why each fits. If you already own a pick, it shows a green badge and a Play from HDD button.
 
 ---
 
@@ -30,159 +67,115 @@ Built with Python + Flask. Designed for libraries with thousands of files — te
 
 | Feature | Description |
 |---|---|
-| 🔍 **Duplicate Scanner** | Finds every movie you own more than once. Ranks copies by resolution, rip source, and size so you always know which one to keep |
+| 🎬 **Scan Duplicates** | Finds every movie you own more than once. Ranks copies by resolution, rip source, and size so you always know which version to keep |
 | ⚡ **Smart Clean** | One-click automated recommendations — safely flags inferior duplicates for deletion without touching anything you should keep |
-| 📉 **Low Quality Scanner** | Lists every file below 1080p so you can find and replace your worst-quality movies |
-| 📂 **Library Browser** | Full table view of your entire library with search, filters, sort, and bulk delete. Virtual scroll keeps it instant even with 3,000+ files |
-| 📊 **Dashboard** | Library statistics with charts — resolution breakdown, rip source distribution, movies by decade, and Plex coverage |
-| 🎬 **Plex Integration** | Automatically cross-references your files with Plex metadata. Shows Plex title, year, and genres on every file across all panels |
-| 🔎 **Prowlarr Integration** | Search for 1080p+ torrent replacements directly from the Duplicates, Low Quality, and Library panels |
-| 🗂️ **Unmatched Panel** *(v1.1)* | Finds files buried in deep subfolders that Plex can't match. Fix Path moves them up one level; Match lets you manually link them to a Plex entry |
-| 🔍 **Explore Torrents** *(v1.5)* | Search TMDB, browse trending/top-rated/genre lists, find torrents across all Prowlarr indexers, and stream any movie — all in one panel |
+| 🔍 **Low Quality Scanner** | Lists every file below 1080p so you can find and replace your worst-quality movies |
+| 📂 **Library Browser** | Full table or poster-grid view of your entire library with search, filters, sort, play, rename, and bulk delete. Virtual scroll stays instant even with 3,000+ files |
+| 📊 **Dashboard** | Library statistics with charts — resolution breakdown, rip source distribution, movies by decade, biggest files, and Plex coverage |
+| 🎬 **Plex Integration** | Cross-references your files with Plex metadata. Shows Plex title, year, and genres on every file. Duplicate grouping uses Plex identity (TMDB/TVDB), not just filenames |
+| 🔗 **Unmatched Panel** | Finds files Plex can't identify. Fix Path moves them to where Plex finds them; Rename cleans the filename; Match lets you manually link a Plex entry |
+| 🌐 **Explore Movies** | Full TMDB discovery suite — trending lists, genre filters, poster cards with ratings and plots, find torrents across all Prowlarr indexers, stream any movie |
+| 🤖 **Pick My Movie** | Describe a mood, memory, or theme to your local Ollama AI — get 5 personalised picks with posters, genres, ratings, and a one-sentence reason. Green badge + Play button if you already own the film |
+| ▶ **Play Anywhere** | Every file in every panel has a Play button — opens in VLC, MPC-HC, or any system default player |
+
+---
+
+## What's New in v2.0
+
+### 🎨 Cinema Paradiso — Full UI Redesign
+
+The entire interface has been rebuilt with a cinematic dark aesthetic:
+
+- **New name:** Cinema Paradiso
+- **Sidebar navigation** replaces the old top button bar — a fixed 220px left panel with icon+label nav items, per-feature accent colours on hover, and a two-line logo wordmark
+- **Cinematic home screen** — bold hero heading, gold accent line, and 8 feature cards in a responsive grid. Each card has a colour-coded 2px top bar, icon badge, 2–3 sentence feature description, and a direct action button
+- **Deep dark background** (`#0a0a10`) throughout — near-black canvas with subtle card surfaces
+- **Per-feature colour identity:** Scan Duplicates (gold), Smart Clean (green), Low Quality (orange), Library (blue), Dashboard (pink), Unmatched (purple), Explore (gold), Pick My Movie (purple)
+
+### 🤖 Pick My Movie — AI Film Recommendations (Ollama)
+
+A new full-screen panel powered by your local Ollama installation:
+
+- Type anything — a mood, a decade, an actor, a half-remembered plot — and press **🤖 Ask AI**
+- Ollama returns 5 picks with a one-sentence reason for each
+- Cards enriched with TMDB: poster, genres, rating, and plot
+- **"In Your Library" detection:** the app checks your local movie folder after results arrive. If you already own a pick, the card shows a green **✓ In Your Library · 1080p · 2.4 GB** badge and a **▶ Play from HDD** button — Stream button hidden
+- Find Torrent on every card for immediate Prowlarr search
+- Ctrl+Enter submits the prompt
+- Requires [Ollama](https://ollama.ai) running locally — free, no API key
+
+### 🌐 Explore Movies — Full Discovery Suite
+
+- **Global TMDB Search** — search any title, browse results as poster cards with Load More
+- **TMDB Discover** — 6 curated lists (Trending Today, Popular, Now Playing, Top Rated, Upcoming, Best of All Time) with 15 genre filters and Load More
+- **Browse Indexers** — latest torrents from all Prowlarr indexers as poster cards with TMDB metadata, resolution variant pills, and filter by quality/indexer/sort
+- **Find Torrent modal** — per-movie: all 1080p+/4K results across every indexer
+- **▶ Stream** — one click to stream any movie via playimdb.com
+
+---
+
+## Earlier Version Highlights
+
+<details>
+<summary>v1.17 — Rename in Library, Prowlarr improvements</summary>
+
+- Every Library row has a **✎ Rename** button — modal pre-filled with detected title and year; row updates in-place after saving
+- Renaming busts the server-side library cache immediately
+- Prowlarr now queries **all** enabled indexer IDs explicitly; result limit raised to 1000
+- Fixed quote-escaping bug that broke the Prowlarr search button in Library rows
+
+</details>
+
+<details>
+<summary>v1.16 — Plex-metadata duplicate detection, Fix Path improvements</summary>
+
+- Duplicate Scanner groups by **Plex-resolved TMDB/TVDB identity** — catches duplicates with completely different filenames
+- Plex bulk mis-match guard (>4 files in same Plex group falls back to filename grouping)
+- Fix Path moves the **entire containing folder** one level up, preserving the folder name Plex uses as a metadata hint
+- **Fix All Paths** button — runs Fix Path on every eligible file in one click with live progress
+
+</details>
+
+<details>
+<summary>v1.15 — Play buttons, Manual Rename in Unmatched</summary>
+
+- **▶ Play** button in every panel row — opens file in system default player via `/api/open-file`
+- **✎ Rename** button in Unmatched panel with quality tags auto-appended
+
+</details>
+
+<details>
+<summary>v1.11 — Real resolution detection, Virtual scroll, Library cache</summary>
+
+- Real video stream resolution via **pymediainfo** — files without filename tags now show true resolution, results cached in `res_cache.json`
+- Library Browser virtual scroll — instant for 3,600+ files
+- Library result cached server-side for 5 minutes with live scan progress
+
+</details>
 
 ---
 
 ## Who is this for?
 
 - Plex users with a **large local movie collection** (hundreds to tens of thousands of files)
-- Anyone who has accumulated **duplicate movie files** over years of downloading
-- Users whose **Plex library has many unmatched or unidentified files**
-- People who want to **clean up their movie folder** without losing anything accidentally
-- Users looking for a **self-hosted, offline alternative** to online library managers
-- Anyone who wants to **fix Plex metadata mismatches** without editing files or folder names manually
+- Anyone who has accumulated **duplicate files** over years of downloading
+- Users whose **Plex library has unmatched or unidentified files**
+- People who want to **discover movies and find torrents** without leaving their library tool
+- Users who want **AI-powered recommendations** from a local Ollama model
+- Anyone who wants a **self-hosted, offline-first** library manager
 
-> **Related searches:** Plex movie library cleaner · Plex duplicate finder alternative · fix Plex unmatched movies · bulk delete Plex duplicates · Plex library organizer tool · movie folder cleanup Windows · how to remove duplicate movies from Plex · Plex 720p movie list · find low quality movies in Plex · Plex unmatched files fixer · local movie database manager · self-hosted media library tool
-
----
-
-## What's New in v1.5
-
-### 🔍 Explore Torrents — Full Movie Discovery & Torrent Hub
-
-A brand new full-screen panel added in v1.5. Click **🔍 Explore Torrents** in the header.
-
-**Global TMDB Search**
-- Search bar above the tabs — type any title and press Enter to search the entire TMDB database
-- Results displayed as poster cards with Load More (up to 200 results) and a Clear button
-
-**TMDB Discover Tab**
-- Browse 6 curated lists: Trending Today, Popular Now, Now Playing, Top Rated, Upcoming, Best of All Time
-- Genre filter (15 genres), Load More per list
-- Cards show: poster, year, genre tags, ⭐ TMDB rating, language + country flag (🇰🇷 Korean, 🇯🇵 Japanese, etc.), expandable plot
-- **▶ Stream** — opens the movie on playimdb.com instantly
-- **🔍 Find Torrent** — searches all Prowlarr indexers and shows every 1080p+ / 4K result in a modal
-
-**Browse Indexers Tab**
-- Latest torrents from every enabled Prowlarr indexer, deduplicated into movie cards
-- Resolution variant pills per card (4K / 1080p / 720p) — click to switch target
-- Indexer dropdown lists **all** registered Prowlarr indexers, not just those that returned results
-- TMDB metadata (poster, rating, plot) loaded asynchronously per card
-- Filter by quality, indexer, and sort order
-
-**TMDB key required** for posters, ratings, Stream, and all discovery features — get a free key at [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) and add it in ⚙ Settings.
-
----
-
-## What's New in v1.17
-
-### Rename in Library Browser
-Every row in the **Library Browser** now has a purple **✎ Rename** button, matching the Unmatched panel. Clicking it opens the rename modal pre-filled with the detected title and year. After saving, the row updates **in-place** immediately — no need to reopen the panel.
-
-### Library Rename Cache Fix
-Renaming a file from either the Library or Unmatched panel now immediately busts the server-side library cache. Previously, reopening the Library within 5 minutes would serve stale data with the old filename/path, causing "file not found" errors on any action.
-
-### Prowlarr — All Indexers Queried
-The Prowlarr search now explicitly fetches all your enabled indexer IDs first and passes them to the search API, so every indexer you have configured is queried — not just the small default subset Prowlarr picks. The result limit has also been raised from 100 to 1000.
-
-### Prowlarr Button Fixed in Library
-The **🔍 Search Prowlarr** button in Library rows was broken due to a quote-escaping bug in the generated HTML. Fixed — clicking it now correctly searches Prowlarr with the movie title.
-
----
-
-## What's New in v1.16
-
-### Plex-Metadata Duplicate Detection
-The Duplicate Scanner now groups files by their **Plex-resolved title and year** (from TMDB/TVDB) instead of filename parsing. Files that Plex identifies as the same movie are now detected as duplicates even when their filenames look completely different.
-
-### Plex Bulk Mis-match Guard
-If Plex has incorrectly tagged an entire folder as the same movie (e.g. 20 Studio Ghibli films all mis-labeled as one title), the app automatically detects the bulk mis-match (any Plex group with more than 4 files) and falls back to filename-based grouping for those files instead.
-
-### Fix Path — Whole Folder Move
-The **Fix Path** button now moves the entire containing folder one level up (e.g. `Others\Batman (2010)\Batman.mkv` → `Cartoon\Batman (2010)\Batman.mkv`) instead of just the file. This preserves the folder name that Plex uses as its metadata hint, so Plex re-matches the movie correctly after the move instead of losing the match.
-
-### Fix Path — Deeper Threshold
-The Fix Path button now appears for files at depth 2 as well as depth 3+, allowing a second-pass move all the way to depth 1 where Plex reliably finds files.
-
-### Fix All Paths Button
-A **📁 Fix All Paths** button in the Unmatched panel runs Fix Path on every eligible file in one click, with live progress (`Fixing… 3 / 12`) and a summary toast on completion.
-
----
-
-## What's New in v1.15
-
-### Color-Coded Welcome Page
-The home screen now shows a description for every panel button, each label styled in its exact matching nav-bar color — so new users immediately understand what each button does without opening anything.
-
-### Play Button in All Panels
-Every file row in the **Duplicates**, **Low Quality**, **Library**, and **Unmatched** panels now has a green **▶ Play** button. Clicking it opens the file in the system default video player (VLC, MPC-HC, etc.) via the new `/api/open-file` route.
-
-### Manual Rename in Unmatched Panel
-Each row in the Unmatched panel now has a purple **✎ Rename** button. Clicking it opens a modal pre-filled with the detected title and year. After editing, the file is renamed on disk — quality tags (resolution, rip source) are appended automatically. The panel refreshes instantly on success.
-
-### Low Quality Panel Centering Fix
-Fixed a missing CSS selector (`#lq-panel`) that caused the Low Quality panel to sit left-aligned instead of centered. The panel is now correctly centered on screen.
-
----
-
-## What's New in v1.11
-
-### Real File Resolution Detection
-Resolution is now read directly from the video stream using **pymediainfo** (bundled `MediaInfo.dll` on Windows — no separate install). Files without a resolution tag in their filename (`Movie.mkv`) now show their true resolution (`1080p`, `4K`, etc.) instead of `Unknown`. Probed results are cached to disk in `res_cache.json` so each file is only ever probed once — restarts are fast from the second run onward.
-
-### Library Browser — Virtual Scroll
-The Library panel now uses **virtual scroll**: only ~30 rows exist in the DOM at any time regardless of library size. Opening a 3,600-file library is instant and fully interactive from the first frame. Scrolling swaps rows in and out smoothly. Checkboxes and bulk-delete work correctly across the full list via path-based selection tracking.
-
-### Library Browser — Prowlarr Search Button
-Every row in the Library panel now has a **🔍 Search Prowlarr** button, matching the existing buttons in the Low Quality and Duplicates panels.
-
-### Library Load Cache
-The Library panel result is cached server-side for 5 minutes. Closing and reopening the panel within that window is instant — no rescan. Cache is automatically invalidated when the movies directory changes, a file is deleted, or a Plex sync runs.
-
-### Scan Progress Status
-The loading bar now shows live progress while the library is scanning: `Reading metadata… 150 / 3600`. Users with large libraries can see exactly where the scan is up to instead of staring at a spinner.
-
----
-
-## What's New in v1.1
-
-### New Feature — Unmatched Panel
-A dedicated panel for files that Plex cannot match because they are buried in deep subfolder structures. Per file you can:
-- **Fix Path** — moves the file one level up and triggers a Plex rescan
-- **Match** — search Plex agents by title/year and apply the correct match manually
-- **Delete** — send directly to the Recycle Bin
-
-Panel also shows file size, full folder path, Plex status, and quality badge per file.
-
-### Improvements
-- **Sort controls** in the Unmatched panel — sort by Name A–Z/Z–A or Size largest/smallest
-- **Delete Selected** bulk action in the Unmatched panel
-- **Full folder path** displayed with word-wrap (no more truncated paths)
-- **Refresh List** button appears after Fix Path or Delete to reload the panel
-- **Human-readable file sizes** shown in all panels (e.g. `2.3 GB`)
-- **Force Scan Plex** button to trigger an immediate Plex rescan and reset the metadata cache
-
-### Bug Fixes
-- **False "Not in Plex" on Windows** — fixed a Windows path case mismatch where Plex returns paths with a lowercase drive letter (`e:\Movies\...`) while `os.walk` yields an uppercase drive letter (`E:\Movies\...`). Added `_norm()` helper using `os.path.normcase()` so all cache key lookups are case-insensitive. Files already matched in Plex now correctly show their Plex status.
-- **Empty folder not removed after Fix Path** — common junk files (`desktop.ini`, `Thumbs.db`, `.DS_Store`, `folder.jpg/png`) are now silently removed before attempting `os.rmdir()` so empty folders are cleaned up properly.
+> **Related searches:** Plex movie library cleaner · Plex duplicate finder · fix Plex unmatched movies · bulk delete Plex duplicates · self-hosted movie discovery · local AI movie recommendations · Ollama movie picker · TMDB movie browser · Prowlarr movie search · find low quality movies in Plex · movie folder cleanup Windows
 
 ---
 
 ## Requirements
 
 - Python 3.10+
-- Windows (tested on Windows 10/11)
-- [Plex Media Server](https://www.plex.tv/) (optional, for metadata enrichment)
-- [Prowlarr](https://prowlarr.com/) (optional, for torrent searching)
+- Windows 10/11
+- [Plex Media Server](https://www.plex.tv/) *(optional — metadata enrichment and Plex-based duplicate grouping)*
+- [Prowlarr](https://prowlarr.com/) *(optional — torrent searching across all panels)*
+- [TMDB API key](https://www.themoviedb.org/settings/api) *(optional — free, for Explore Movies and Pick My Movie metadata)*
+- [Ollama](https://ollama.ai) *(optional — free, for Pick My Movie AI recommendations)*
 
 ---
 
@@ -210,19 +203,9 @@ Then open **http://localhost:5000** in your browser.
 
 ---
 
-## How It Works
-
-All detection is **filename-based** — no external APIs required to scan duplicates or find low quality files. It works on any movie folder regardless of naming convention.
-
-**Plex integration** is layered on top: if you provide your Plex URL and token, the app automatically looks up each file in Plex and displays the real title, year, and genres. It refreshes the cache every 5 minutes in the background.
-
-**Duplicate grouping** works by extracting a normalised `(title, year)` key from each filename. Files that resolve to the same title and year are grouped together and ranked by quality (4K > 1080p > 720p, BD Remux > Blu-ray > WEB-DL > DVDRip, etc.).
-
----
-
 ## Configuration
 
-Settings are saved automatically to `config.json`:
+All settings are saved from the ⚙ Settings panel in the app. They persist to `config.json`:
 
 ```json
 {
@@ -231,28 +214,42 @@ Settings are saved automatically to `config.json`:
   "plex_token": "your-token-here",
   "prowlarr_url": "http://localhost:9696",
   "prowlarr_key": "your-api-key-here",
-  "tmdb_key": "your-tmdb-api-key"
+  "tmdb_key": "your-tmdb-api-key",
+  "ollama_url": "http://localhost:11434",
+  "ollama_model": "llama3"
 }
 ```
+
+Only `movies_dir` is required. Everything else is optional.
 
 ---
 
 ## Delete Safety
 
 - **Recycle Bin mode** (default) — moves files to the Windows Recycle Bin via `send2trash`. Fully recoverable.
-- **Permanent mode** — irreversible. Requires confirmation.
-- The app will only delete files inside your configured movies directory. Any path outside it is rejected.
+- **Permanent mode** — irreversible. Toggle is clearly labelled.
+- The app only deletes files inside your configured `movies_dir`. Any path outside it is rejected.
+
+---
+
+## How It Works
+
+**Duplicate detection** extracts a normalised `(title, year)` key from each filename. When Plex is connected, it uses the Plex-resolved TMDB/TVDB identity instead — far more accurate than filename parsing alone.
+
+**Resolution ranking** reads tags from filenames first (fast). For files without tags, it probes the video stream via `pymediainfo`. Results cached in `res_cache.json` by `(path, mtime)`.
+
+**Library matching** (Pick My Movie) normalises both AI result titles and library filenames the same way — strips punctuation, collapses whitespace, removes leading "the/a/an" — and matches Plex title+year first, filename-parsed as fallback.
 
 ---
 
 ## Tech Stack
 
 - **Backend:** Python 3, Flask
-- **Frontend:** Vanilla HTML/CSS/JavaScript (no frameworks)
+- **Frontend:** Vanilla HTML/CSS/JavaScript — no frameworks
 - **Charts:** Chart.js 4
 - **Resolution probe:** pymediainfo (bundled MediaInfo.dll)
 - **Delete:** send2trash
-- **External APIs:** Plex HTTP API · Prowlarr HTTP API · TMDB API v3
+- **External APIs (all optional):** Plex HTTP API · Prowlarr HTTP API · TMDB API v3 · Ollama local LLM
 
 ---
 

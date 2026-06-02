@@ -6,7 +6,7 @@ import time
 import urllib.request
 import urllib.parse
 import json as _json
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, make_response
 from send2trash import send2trash
 
 app = Flask(__name__)
@@ -37,8 +37,12 @@ _prowlarr_key   = _cfg.get('prowlarr_key', '')
 _tmdb_key       = _cfg.get('tmdb_key', '')
 _plex_url       = _cfg.get('plex_url', 'http://localhost:32400')
 _plex_token     = _cfg.get('plex_token', '')
+_ollama_url     = _cfg.get('ollama_url', 'http://localhost:11434')
+_ollama_model   = _cfg.get('ollama_model', 'gemma4:31b-cloud')
 _plex_cache     = {}   # _norm(file_path) -> {plex_title, plex_year, plex_genres}
 _plex_unmatched = {}   # _norm(path) -> {rating_key, plex_title}  (Plex has file but no metadata)
+_plex_matched_by_fname   = {}  # filename.lower() -> matched entry   (path-mismatch fallback)
+_plex_unmatched_by_fname = {}  # filename.lower() -> unmatched entry (path-mismatch fallback)
 
 def _norm(path):
     """Normalise a file path for use as a cache key.
@@ -54,6 +58,7 @@ _TV_RE = re.compile(
     r'|\bep[\s._-]*\d{1,3}\b|complete[\s._-]+series|\bcomplete[\s._-]+season)',
     re.IGNORECASE
 )
+_MOVIE_FOLDER_RE = re.compile(r'\b(19|20)\d{2}\b')  # folder name looks like a movie title
 _LANG_NAMES = {
     'en':'English','fr':'French','es':'Spanish','de':'German','it':'Italian',
     'pt':'Portuguese','ru':'Russian','ja':'Japanese','ko':'Korean','zh':'Chinese',
@@ -87,6 +92,8 @@ def _all_config():
         'plex_url': _plex_url,
         'plex_token': _plex_token,
         'tmdb_key': _tmdb_key,
+        'ollama_url': _ollama_url,
+        'ollama_model': _ollama_model,
     }
 
 VIDEO_EXTENSIONS = {'.mkv', '.mp4', '.avi', '.m4v', '.mov', '.wmv', '.flv', '.ts', '.m2ts', '.iso'}
@@ -345,13 +352,15 @@ def scan_duplicates(movies_dir):
 def _auto_sync_plex(force=False):
     """Refresh _plex_cache if Plex is configured and cache is stale (>5 min). Silent on errors.
     Pass force=True to bypass the TTL and always fetch fresh data."""
-    global _plex_cache, _plex_unmatched, _plex_section_ids, _plex_cache_time, _library_cache
+    global _plex_cache, _plex_unmatched, _plex_matched_by_fname, _plex_unmatched_by_fname, \
+           _plex_section_ids, _plex_cache_time, _library_cache
     if not _plex_url or not _plex_token:
         return
     if not force and time.time() - _plex_cache_time < _PLEX_TTL:
         return  # cache is still fresh
     try:
-        _plex_cache, _plex_unmatched, _plex_section_ids = _fetch_plex_library()
+        _plex_cache, _plex_unmatched, _plex_matched_by_fname, _plex_unmatched_by_fname, \
+            _plex_section_ids = _fetch_plex_library()
         _plex_cache_time = time.time()
         _library_cache = {}  # Plex data refreshed — bust library cache so titles update
     except Exception:
@@ -360,13 +369,15 @@ def _auto_sync_plex(force=False):
 
 def _fetch_plex_library():
     """Fetch all movie file paths + metadata from Plex.
-    Returns (matched_cache, unmatched_cache, section_ids).
-    matched_cache:   normpath -> {plex_title, plex_year, plex_genres}
-    unmatched_cache: normpath -> {rating_key, plex_title}  (Plex has file but no match)
+    Returns (matched_cache, unmatched_cache, matched_by_fname, unmatched_by_fname, section_ids).
+    matched_cache:    normpath -> {plex_title, plex_year, plex_genres}
+    unmatched_cache:  normpath -> {rating_key, plex_title}  (Plex has file but no match)
+    matched_by_fname:   filename.lower() -> matched entry   (fallback for path-mismatch cases)
+    unmatched_by_fname: filename.lower() -> unmatched entry (fallback for path-mismatch cases)
     section_ids: list of movie library section keys
     """
     if not _plex_url or not _plex_token:
-        return {}, {}, []
+        return {}, {}, {}, {}, []
 
     def plex_get(path):
         sep = '&' if '?' in path else '?'
@@ -381,6 +392,8 @@ def _fetch_plex_library():
 
     matched = {}
     unmatched = {}
+    matched_by_fname = {}
+    unmatched_by_fname = {}
     for section_key in movie_sections:
         data = plex_get(f'/library/sections/{section_key}/all')
         for item in data.get('MediaContainer', {}).get('Metadata', []):
@@ -389,24 +402,27 @@ def _fetch_plex_library():
             title       = item.get('title', '')
             year        = str(item.get('year', '')) if item.get('year') else ''
             genres      = [g['tag'] for g in item.get('Genre', [])]
+            summary     = item.get('summary', '')
+            rating      = str(item.get('rating', '') or item.get('audienceRating', '') or '')
+            thumb       = item.get('thumb', '')
             is_local    = (not guid) or guid.startswith('local://')
             for media in item.get('Media', []):
                 for part in media.get('Part', []):
                     fp = part.get('file', '')
                     if fp:
-                        norm = _norm(fp)
+                        norm  = _norm(fp)
+                        fname = os.path.basename(fp).lower()
                         if is_local:
-                            unmatched[norm] = {
-                                'rating_key': rating_key,
-                                'plex_title': title,
-                            }
+                            entry = {'rating_key': rating_key, 'plex_title': title}
+                            unmatched[norm] = entry
+                            # filename fallback — only store first hit to avoid collisions
+                            unmatched_by_fname.setdefault(fname, entry)
                         else:
-                            matched[norm] = {
-                                'plex_title': title,
-                                'plex_year': year,
-                                'plex_genres': genres,
-                            }
-    return matched, unmatched, movie_sections
+                            entry = {'plex_title': title, 'plex_year': year, 'plex_genres': genres,
+                                     'plex_summary': summary, 'plex_rating': rating, 'plex_thumb': thumb}
+                            matched[norm] = entry
+                            matched_by_fname.setdefault(fname, entry)
+    return matched, unmatched, matched_by_fname, unmatched_by_fname, movie_sections
 
 
 @app.route('/')
@@ -450,6 +466,27 @@ def plex_test():
         return jsonify({'error': f'Plex returned HTTP {e.code}'}), 502
     except Exception as e:
         return jsonify({'error': f'Cannot reach Plex: {e}'}), 502
+
+
+@app.route('/api/plex/image')
+def plex_image():
+    url = request.args.get('url', '').strip()
+    if not url:
+        return '', 400
+    # Security: only proxy to the configured Plex server — reject any other origin
+    if not _plex_url or not url.startswith(_plex_url):
+        return '', 403
+    try:
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = resp.read()
+            ct   = resp.headers.get('Content-Type', 'image/jpeg')
+        response = make_response(data)
+        response.headers['Content-Type']  = ct
+        response.headers['Cache-Control'] = 'public, max-age=86400'
+        return response
+    except Exception:
+        return '', 502
 
 
 @app.route('/api/plex/sync')
@@ -723,6 +760,11 @@ def library():
                 display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
                 norm_path = _norm(full_path)
                 plex_data = _plex_cache.get(norm_path, {})
+                plex_thumb = plex_data.get('plex_thumb', '')
+                plex_poster = (
+                    f"{_plex_url}{plex_thumb}?X-Plex-Token={_plex_token}"
+                    if _plex_url and _plex_token and plex_thumb else ''
+                )
                 items.append({
                     'title': display_title,
                     'filename': file,
@@ -736,6 +778,9 @@ def library():
                     'plex_title': plex_data.get('plex_title', ''),
                     'plex_year': plex_data.get('plex_year', ''),
                     'plex_genres': plex_data.get('plex_genres', []),
+                    'plex_summary': plex_data.get('plex_summary', ''),
+                    'plex_rating': plex_data.get('plex_rating', ''),
+                    'plex_poster': plex_poster,
                     'plex_matched': bool(plex_data),
                 })
         _library_status = 'Sorting results\u2026'
@@ -749,6 +794,132 @@ def library():
         _library_cache['dir'] = movies_dir
         return jsonify({'items': items, 'count': len(items),
                         'plex_enabled': bool(_plex_token), 'plex_cached': len(_plex_cache) > 0})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/library/check', methods=['POST'])
+def library_check():
+    """Check which of the supplied movies exist in the local library.
+
+    Request body: {"movies": [{"title": "Inception", "year": "2010"}, …]}
+    Response:     {"results": [{"title": …, "year": …, "found": bool,
+                                "path": …, "resolution": …, "size_human": …}]}
+    Matching uses normalised title comparison (lowercase, no punctuation, no
+    leading article) against plex_title+plex_year first, then parsed filename
+    title+year.  Returns found:false for all entries when movies_dir is not set.
+    """
+    import re as _re_local
+
+    def _norm_title(t):
+        """Lowercase, strip punctuation, strip leading 'the/a/an '."""
+        if not t:
+            return ''
+        t = str(t).lower()
+        t = _re_local.sub(r'[^\w\s]', '', t)   # strip punctuation
+        t = _re_local.sub(r'\s+', ' ', t).strip()
+        t = _re_local.sub(r'^(the|a|an) ', '', t)
+        return t
+
+    try:
+        body = request.get_json(force=True, silent=True) or {}
+        queries = body.get('movies', [])
+        if not queries:
+            return jsonify({'results': []})
+
+        movies_dir = get_movies_dir()
+        if not movies_dir or not os.path.isdir(movies_dir):
+            return jsonify({'results': [
+                {'title': q.get('title', ''), 'year': str(q.get('year', '')),
+                 'found': False, 'path': '', 'resolution': '', 'size_human': ''}
+                for q in queries
+            ]})
+
+        # Build lookup: (norm_title, norm_year) -> best file info dict
+        # Use library cache if fresh, else walk the directory (no deep scan needed)
+        _auto_sync_plex(force=False)
+        lookup = {}  # (norm_title, norm_year) -> {path, resolution, size_human}
+
+        if (_library_cache.get('items') is not None
+                and _library_cache.get('dir') == movies_dir
+                and time.time() - _library_cache.get('time', 0) < _LIBRARY_TTL):
+            items_src = _library_cache['items']
+        else:
+            # Light scan: just filenames + plex cache, no resolution probing
+            items_src = []
+            for root, _, files in os.walk(movies_dir):
+                for file in files:
+                    ext = os.path.splitext(file)[1].lower()
+                    if ext not in VIDEO_EXTENSIONS:
+                        continue
+                    full_path = os.path.join(root, file)
+                    try:
+                        size = os.path.getsize(full_path)
+                    except OSError:
+                        size = 0
+                    res = get_resolution_from_file(full_path)
+                    parsed_title, parsed_year = parse_movie_title(file)
+                    norm_path = _norm(full_path)
+                    plex_data = _plex_cache.get(norm_path, {})
+                    items_src.append({
+                        'path': full_path,
+                        'resolution': res,
+                        'size_human': format_size(size),
+                        'plex_title': plex_data.get('plex_title', ''),
+                        'plex_year': str(plex_data.get('plex_year', '')),
+                        'plex_matched': bool(plex_data),
+                        '_parsed_title': parsed_title,
+                        '_parsed_year': parsed_year,
+                    })
+
+        for item in items_src:
+            # Prefer Plex-matched title/year as primary key
+            if item.get('plex_matched') and item.get('plex_title'):
+                key = (_norm_title(item['plex_title']), str(item.get('plex_year', '')).strip())
+            else:
+                key = (_norm_title(item.get('_parsed_title') or item.get('title', '')),
+                       str(item.get('_parsed_year') or '').strip())
+            # Keep the highest-resolution copy per title
+            existing = lookup.get(key)
+            cur_rank = get_resolution_rank_str(item['resolution'])
+            if existing is None or cur_rank > get_resolution_rank_str(existing['resolution']):
+                lookup[key] = {
+                    'path': item['path'],
+                    'resolution': item['resolution'],
+                    'size_human': item['size_human'],
+                }
+
+        results = []
+        for q in queries:
+            qt = _norm_title(q.get('title', ''))
+            qy = str(q.get('year', '')).strip()
+            # Try with year first, then without (year may be off by 1 from TMDB)
+            match = lookup.get((qt, qy))
+            if match is None:
+                # year-agnostic fallback
+                for (kt, ky), v in lookup.items():
+                    if kt == qt:
+                        match = v
+                        break
+            if match:
+                results.append({
+                    'title': q.get('title', ''),
+                    'year': q.get('year', ''),
+                    'found': True,
+                    'path': match['path'],
+                    'resolution': match['resolution'],
+                    'size_human': match['size_human'],
+                })
+            else:
+                results.append({
+                    'title': q.get('title', ''),
+                    'year': q.get('year', ''),
+                    'found': False,
+                    'path': '',
+                    'resolution': '',
+                    'size_human': '',
+                })
+        return jsonify({'results': results})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -1009,15 +1180,16 @@ def fix_unmatched():
                 ext = os.path.splitext(file)[1].lower()
                 if ext not in VIDEO_EXTENSIONS:
                     continue
-                full_path = os.path.join(root, file)
-                norm_path = _norm(full_path)
-                if norm_path in _plex_cache:
-                    continue  # already matched by Plex — skip
-                title_key = parse_movie_title(file)
-                if not title_key[0]:
+                full_path  = os.path.join(root, file)
+                norm_path  = _norm(full_path)
+                fname_lower = file.lower()
+                # Skip if already matched — full-path lookup first, filename fallback second
+                if norm_path in _plex_cache or fname_lower in _plex_matched_by_fname:
                     continue
-                suggested_title = title_key[0].title()
-                suggested_year  = title_key[1]
+                title_key = parse_movie_title(file)
+                unparseable = not title_key[0]
+                suggested_title = title_key[0].title() if title_key[0] else ''
+                suggested_year  = title_key[1] if title_key else ''
                 orig_res = get_resolution_from_file(full_path)
                 orig_rip = get_rip_source(file)
                 quality_tag = ' '.join(t for t in [orig_res, orig_rip] if t and t != 'Unknown')
@@ -1025,8 +1197,20 @@ def fix_unmatched():
                 if quality_tag:
                     suggested_name += f' [{quality_tag}]'
                 suggested_name += ext
-                plex_entry = _plex_unmatched.get(norm_path, {})
+                # Look up Plex entry — full-path first, filename fallback second
+                plex_entry = _plex_unmatched.get(norm_path) or \
+                             _plex_unmatched_by_fname.get(fname_lower, {})
                 rel_depth = len(os.path.relpath(full_path, movies_dir).split(os.sep)) - 1
+                # Build a diagnostic hint so the UI can explain WHY the file is unmatched
+                if plex_entry:
+                    plex_hint = 'Plex found the file but has no metadata match — use Match in Plex'
+                elif rel_depth > 1:
+                    plex_hint = (f'Folder is {rel_depth} levels deep — Plex skips it. '
+                                 'Use Fix Path to move it up')
+                elif unparseable:
+                    plex_hint = 'Filename cannot be parsed — rename it so Plex can identify it'
+                else:
+                    plex_hint = 'Plex has not indexed this file yet — try Scan Plex Library'
                 items.append({
                     'filename': file,
                     'path': full_path,
@@ -1042,6 +1226,8 @@ def fix_unmatched():
                     'in_plex':    bool(plex_entry),
                     'rating_key': plex_entry.get('rating_key', ''),
                     'plex_title': plex_entry.get('plex_title', ''),
+                    'unparseable': unparseable,
+                    'plex_hint':   plex_hint,
                 })
         items.sort(key=lambda x: x['filename'].lower())
         return jsonify({'items': items, 'count': len(items),
@@ -1128,9 +1314,10 @@ def fix_path():
     if not os.path.isfile(abs_path):
         return jsonify({'error': 'File not found'}), 404
 
-    # Safety: refuse to move files Plex already matched
+    # Safety: refuse to move files Plex already matched (full-path check + filename fallback)
     norm = _norm(abs_path)
-    if norm in _plex_cache:
+    fname_lower = os.path.basename(abs_path).lower()
+    if norm in _plex_cache or fname_lower in _plex_matched_by_fname:
         return jsonify({'error': 'This file is already matched in Plex — not moving it'}), 409
 
     parent      = os.path.dirname(abs_path)
@@ -1153,26 +1340,37 @@ def fix_path():
         sibling_videos = [os.path.basename(abs_path)]
 
     try:
-        if len(sibling_videos) == 1:
+        parent_name = os.path.basename(parent)
+        # Use whole-folder move only when:
+        #   1. There is exactly one video in the folder (folder acts as a Plex hint), AND
+        #   2. The folder name contains a year — i.e. it looks like a movie title.
+        # Generic names like "Downloads", "1080p", "Featurettes" would be useless as a hint.
+        use_folder_move = (len(sibling_videos) == 1 and
+                           bool(_MOVIE_FOLDER_RE.search(parent_name)))
+
+        if use_folder_move:
             # ── Whole-folder move ────────────────────────────────────────────
-            # Preserves the folder name (e.g. "Batman (2010)") so Plex can
-            # re-match using the same folder hint after the move.
-            parent_name = os.path.basename(parent)
-            dest_folder = os.path.join(grandparent, parent_name)
+            # Move the folder one level up so Plex can discover it using the
+            # folder name (e.g. "Batman (2010)") as a metadata hint.
+            great_grandparent = os.path.dirname(grandparent)
+            dest_folder = os.path.join(great_grandparent, parent_name)
+            if os.path.normpath(dest_folder) == os.path.normpath(parent):
+                return jsonify({'error': 'File is already at the correct depth — no move needed'}), 409
             if os.path.exists(dest_folder):
                 return jsonify({'error': f'A folder named "{parent_name}" already exists in the destination'}), 409
             os.rename(parent, dest_folder)
             new_path = os.path.join(dest_folder, os.path.basename(abs_path))
-            # Update cache keys: old path -> new path
             _plex_cache.pop(norm, None)
             _plex_unmatched.pop(norm, None)
         else:
-            # ── File-only move (multiple videos in same folder) ───────────────
+            # ── File-only move (multiple videos, or generic folder name) ──────
             new_path = os.path.join(grandparent, os.path.basename(abs_path))
+            if os.path.normpath(new_path) == os.path.normpath(abs_path):
+                return jsonify({'error': 'File is already at the correct depth — no move needed'}), 409
             if os.path.exists(new_path):
                 return jsonify({'error': f'A file named "{os.path.basename(abs_path)}" already exists in the destination folder'}), 409
             os.rename(abs_path, new_path)
-            # Try to clean up junk and remove folder if now empty
+            # Try to clean up junk files and remove folder if now empty
             try:
                 for f in os.listdir(parent):
                     if f.lower() in _JUNK:
@@ -1704,6 +1902,148 @@ def tmdb_imdb_id():
         return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+# ── Ollama / Pick My Movie ───────────────────────────────────────────────────
+
+@app.route('/api/ollama/config', methods=['GET'])
+def get_ollama_config():
+    return jsonify({'url': _ollama_url, 'model': _ollama_model})
+
+
+@app.route('/api/ollama/config', methods=['POST'])
+def set_ollama_config():
+    global _ollama_url, _ollama_model
+    data = request.get_json(silent=True)
+    if not data:
+        return jsonify({'error': 'No data provided'}), 400
+    _ollama_url   = data.get('url', 'http://localhost:11434').strip().rstrip('/')
+    _ollama_model = data.get('model', '').strip()
+    _save_config(_all_config())
+    return jsonify({'success': True})
+
+
+@app.route('/api/ollama/test')
+def ollama_test():
+    url = request.args.get('url', _ollama_url).strip().rstrip('/')
+    if not url:
+        return jsonify({'error': 'No Ollama URL configured — add it in Settings.'}), 400
+    try:
+        req = urllib.request.Request(f"{url}/api/tags", headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            _json.loads(resp.read().decode())
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': f'Cannot reach Ollama: {e}'}), 502
+
+
+def _ollama_enrich_with_tmdb(title, year):
+    """Search TMDB for a single title and return enriched movie dict. Returns None on failure."""
+    if not _tmdb_key:
+        return None
+    _ensure_tmdb_genres()
+    try:
+        params = urllib.parse.urlencode({
+            'query': title, 'api_key': _tmdb_key,
+            'language': 'en-US', 'page': 1, 'include_adult': 'false',
+            **(({'year': year}) if year else {})
+        })
+        url = f"https://api.themoviedb.org/3/search/movie?{params}"
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = _json.loads(resp.read().decode())
+        results = data.get('results', [])
+        if not results:
+            return None
+        m = results[0]
+        poster_path = m.get('poster_path', '')
+        release = m.get('release_date', '') or ''
+        yr = release[:4] if release else year
+        genre_ids = m.get('genre_ids', [])
+        genres = [_tmdb_genres[gid] for gid in genre_ids if gid in _tmdb_genres][:3]
+        vote = m.get('vote_average', 0)
+        lang = m.get('original_language', '')
+        country_code = _LANG_COUNTRY.get(lang, '')
+        return {
+            'tmdb_id':      m.get('id'),
+            'title':        m.get('title', title),
+            'year':         yr,
+            'poster_url':   f"https://image.tmdb.org/t/p/w342{poster_path}" if poster_path else '',
+            'genres':       genres,
+            'tmdb_rating':  f"{vote:.1f}" if isinstance(vote, (int, float)) and vote else '',
+            'plot':         m.get('overview', ''),
+            'language':     _LANG_NAMES.get(lang, lang.upper() if lang else ''),
+            'country':      country_code,
+            'country_flag': _country_flag(country_code),
+        }
+    except Exception:
+        return None
+
+
+@app.route('/api/ollama/recommend', methods=['POST'])
+def ollama_recommend():
+    if not _ollama_url or not _ollama_model:
+        return jsonify({'error': 'Ollama not configured — add URL and model in Settings.'}), 400
+    data = request.get_json(silent=True)
+    if not data:
+        return jsonify({'error': 'No data provided'}), 400
+    prompt = data.get('prompt', '').strip()
+    if not prompt:
+        return jsonify({'error': 'Prompt cannot be empty.'}), 400
+
+    system_msg = (
+        'You are a movie recommendation expert. '
+        'The user will describe a movie or what they want to watch by mood, memory, feeling, actors, or any detail. '
+        'Return ONLY valid JSON with this exact shape: '
+        '{"recommendations":[{"title":"...","year":"...","reason":"one sentence why this matches"}]}. '
+        'Give exactly 5 recommendations. '
+        'No markdown, no explanation, no extra text — only the JSON object.'
+    )
+
+    body = _json.dumps({
+        'model': _ollama_model,
+        'messages': [
+            {'role': 'system', 'content': system_msg},
+            {'role': 'user',   'content': prompt}
+        ],
+        'stream': False,
+        'format': 'json'
+    }).encode()
+
+    try:
+        req = urllib.request.Request(
+            f"{_ollama_url}/api/chat",
+            data=body,
+            headers={'Content-Type': 'application/json'}
+        )
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            raw = _json.loads(resp.read().decode())
+        parsed = _json.loads(raw['message']['content'])
+        recs = parsed.get('recommendations', [])
+    except _json.JSONDecodeError:
+        return jsonify({'error': 'Ollama returned invalid JSON. Try a different prompt.'}), 502
+    except urllib.error.HTTPError as e:
+        return jsonify({'error': f'Ollama returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': f'Cannot reach Ollama: {e}'}), 502
+
+    results = []
+    for rec in recs:
+        title  = rec.get('title', '').strip()
+        year   = rec.get('year', '').strip()
+        reason = rec.get('reason', '')
+        if not title:
+            continue
+        enriched = _ollama_enrich_with_tmdb(title, year)
+        if enriched:
+            enriched['reason'] = reason
+            results.append(enriched)
+        else:
+            results.append({'title': title, 'year': year, 'reason': reason,
+                            'poster_url': '', 'genres': [], 'tmdb_rating': '',
+                            'plot': '', 'tmdb_id': None})
+
+    return jsonify({'results': results, 'model': _ollama_model})
 
 
 if __name__ == '__main__':
