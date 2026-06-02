@@ -110,7 +110,7 @@ A new full-screen panel powered by your local Ollama installation:
 - **TMDB Discover** — 6 curated lists (Trending Today, Popular, Now Playing, Top Rated, Upcoming, Best of All Time) with 15 genre filters and Load More
 - **Browse Indexers** — latest torrents from all Prowlarr indexers as poster cards with TMDB metadata, resolution variant pills, and filter by quality/indexer/sort
 - **Find Torrent modal** — per-movie: all 1080p+/4K results across every indexer
-- **▶ Stream** — one click to stream any movie via playimdb.com
+- **▶ Stream** — one click to stream any movie via free streaming service
 
 ---
 
