@@ -2,58 +2,54 @@
 
 ## Theme
 
-[Describe the overall visual language — e.g. Dark only.
-No light mode. The design language is a dark technical
-workspace — near-black backgrounds, layered surfaces,
-and vivid accent colors for interactive elements.]
+Cinema Paradiso uses a dark cinematic archive-console visual language. The interface should feel private, precise, and powerful: near-black backgrounds, restrained dark panels, gold focus accents, and functional colors for state.
 
 ## Colors
 
-[Define your color tokens as CSS custom properties.
-All components must use these tokens — no hardcoded
-hex values.]
+Primary tokens live in `src/styles.css`.
 
-| Role            | CSS Variable       | Value    |
-| --------------- | ------------------ | -------- |
-| Page background | `--bg-base`        | `#[hex]` |
-| Surface         | `--bg-surface`     | `#[hex]` |
-| Primary text    | `--text-primary`   | `#[hex]` |
-| Muted text      | `--text-muted`     | `#[hex]` |
-| Primary accent  | `--accent-primary` | `#[hex]` |
-| Border          | `--border-default` | `#[hex]` |
-| Error           | `--state-error`    | `#[hex]` |
-| Success         | `--state-success`  | `#[hex]` |
+| Role | CSS Variable | Value |
+|---|---|---|
+| Base background | `--archive-black` | `#0a0a0b` |
+| Surface | `--surface` | `#121316` |
+| Raised surface | `--surface-raised` | `#1a1c20` |
+| Border | `--border` | `#26282d` |
+| Primary text | `--text-primary` | `#e6e6e6` |
+| Muted text | `--text-muted` | `#a3a6ad` |
+| Focus accent | `--projector-gold` | `#d4af37` |
+| Success/owned | `--success-green` | `#22c55e` |
+| Warning/quality | `--archive-amber` | `#f59e0b` |
+| AI | `--ai-violet` | `#8b5cf6` |
+| Library/info | `--library-blue` | `#3b82f6` |
+| Plex/system | `--plex-cyan` | `#06b6d4` |
+| Danger/delete | `--danger-red` | `#ef4444` |
 
 ## Typography
 
-| Role      | Font              | Variable      |
-| --------- | ----------------- | ------------- |
-| UI text   | [e.g. Geist Sans] | `--font-sans` |
-| Code/mono | [e.g. Geist Mono] | `--font-mono` |
+- Font stack: Inter, Segoe UI, system UI, sans-serif.
+- Body text should stay readable on dark surfaces.
+- Do not use oversized hero text inside dense tool panels.
+- Letter spacing should remain normal unless a specific styleguide component calls for uppercase labels.
 
 ## Border Radius
 
-| Context           | Class            |
-| ----------------- | ---------------- |
-| Inline / small UI | `rounded-[size]` |
-| Cards / panels    | `rounded-[size]` |
-| Modals / overlays | `rounded-[size]` |
+- Default panels and cards use 6-8px radius.
+- Pills and status chips use rounded capsule shapes only when they behave like tags/status labels.
+- Avoid nested decorative cards.
 
-## Component Library
+## Component Patterns
 
-[e.g. shadcn/ui on top of Tailwind. Components live
-in components/ui/. Use the CLI to add new components
-rather than writing from scratch.]
-
-## Layout Patterns
-
-- [Pattern — e.g. Editor: full-viewport split with
-  left sidebar, center canvas, right sidebar]
-- [Pattern — e.g. Sidebars: fixed width with border separator]
-- [Pattern — e.g. Modals: centered overlay with backdrop blur]
-- [Pattern — e.g. Navbar: top bar with bottom border]
+- Sidebar navigation is persistent, icon+label, and not duplicated inside page heroes.
+- Home uses a command-center layout with health, release watchlist, discovery rail, and inspector.
+- Library has Movie View and File View.
+- Cleanup is a tabbed offline maintenance workspace.
+- Discover is a tabbed online workspace: Explore Movies, Browse Indexers, Pick My Movie.
+- Settings is a system/integrations console.
 
 ## Icons
 
-[e.g. Lucide React. Stroke-based icons only. Sizes:
-h-4 w-4 for inline, h-5 w-5 for buttons.]
+Use Lucide React icons. Buttons should use icon+label when the action needs scanning speed. Icon-only buttons require clear labels/tooltips or `aria-label`.
+
+## Motion
+
+Use subtle transitions for hover, focus, active cards, loading, and notification state. Avoid noisy animation. Respect readability over spectacle.
