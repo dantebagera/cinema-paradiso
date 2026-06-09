@@ -234,6 +234,7 @@ All scan endpoints accept `?force_plex=1` to force a Plex cache refresh before s
 | GET | `/api/tmdb/discover?list=&genre=&page=` | Browse TMDB curated lists |
 | GET | `/api/tmdb/search?q=&page=` | Full TMDB text search |
 | GET | `/api/metadata?title=&year=` | TMDB metadata lookup (cached in memory) |
+| GET | `/api/tmdb/details?tmdb_id=` | TMDB cast/trailer details for expanded React movie cards |
 | GET | `/api/tmdb/imdb_id?tmdb_id=` | Look up IMDB ID from TMDB ID (used for streaming) |
 
 **TMDB discover lists:** `trending_week`, `trending_today`, `now_playing`, `popular`, `upcoming`, `top_rated`, `best_all_time`
@@ -401,6 +402,26 @@ Auto-refresh every 300 seconds (5 min) via `_auto_sync_plex()`. Forced by `?forc
 ---
 
 ## 10. Frontend Architecture
+
+### React/Vite Migration Note (June 2026)
+
+The new UI redesign has started a React/Vite frontend migration at the repo root:
+
+- `package.json`, `vite.config.js`, `index.html`, and `src/` define the new React frontend.
+- `npm.cmd run build` outputs the production frontend to `dist/`.
+- The Flask `/` route serves `dist/index.html` when it exists.
+- The original single-file Flask template remains available at `/legacy` during migration.
+- `templates/index.html` is still the legacy interface and should not be deleted until all panels have been rebuilt in React.
+- `winapp/` remains out of scope during active web development.
+
+Current React phase 1 scope:
+
+- New grouped app shell: Home, Library, Cleanup, Discover, Settings.
+- Home command center with library health, release watchlist, wide smart movie cards, and a right-side movie inspector.
+- Smart movie cards keep Play as the primary action for owned movies; Find Upgrade is secondary when local quality is low.
+- Expanded movie details load readable plot, cast, and official YouTube trailer data via `/api/tmdb/details`.
+
+Legacy details below describe the old single-template UI and are still relevant for functionality that has not yet migrated.
 
 The entire frontend lives in **one file: `templates/index.html`**. It contains:
 - All HTML structure

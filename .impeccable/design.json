@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-04T15:44:29+03:00",
+  "title": "Design System: Cinema Paradiso",
+  "extensions": {
+    "colorMeta": {
+      "archive-black": {
+        "role": "neutral",
+        "displayName": "Archive Black",
+        "canonical": "#0a0a10",
+        "tonalRamp": ["#050508", "#0a0a10", "#10101e", "#1a1a2a", "#252536", "#555566", "#888899", "#e5e5ee"]
+      },
+      "projector-gold": {
+        "role": "primary",
+        "displayName": "Projector Gold",
+        "canonical": "#fdcb6e",
+        "tonalRamp": ["#2a1c05", "#5a3a0d", "#8c5c15", "#bd842b", "#e5a00d", "#fdcb6e", "#ffe1a3", "#fff4d5"]
+      },
+      "ai-violet": {
+        "role": "secondary",
+        "displayName": "AI Violet",
+        "canonical": "#a29bfe",
+        "tonalRamp": ["#161233", "#2a2460", "#453c96", "#6c5ce7", "#a29bfe", "#c7c3ff", "#e4e2ff", "#f5f4ff"]
+      },
+      "library-blue": {
+        "role": "secondary",
+        "displayName": "Library Blue",
+        "canonical": "#74b9ff",
+        "tonalRamp": ["#07182b", "#0d3156", "#145082", "#1f78b8", "#74b9ff", "#a8d3ff", "#d4eaff", "#f2f8ff"]
+      },
+      "success-green": {
+        "role": "secondary",
+        "displayName": "Success Green",
+        "canonical": "#2ecc71",
+        "tonalRamp": ["#061b0d", "#0e3a1c", "#145a32", "#1f8f4d", "#2ecc71", "#80e0a6", "#c9f3d9", "#effcf4"]
+      },
+      "danger-red": {
+        "role": "tertiary",
+        "displayName": "Danger Red",
+        "canonical": "#e74c3c",
+        "tonalRamp": ["#260806", "#4b100c", "#7a1d16", "#c0392b", "#e74c3c", "#f18b80", "#facbc6", "#fff1ef"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home hero and rare screen-leading statements only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Panel titles, dashboard headings, and modal headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Feature cards, movie titles, compact section headers, and strong table cells."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Controls, modal copy, card descriptions, tables, and workflow text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Badges, metadata, table headers, and compact status labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-hover",
+        "value": "0 10px 36px #00000099",
+        "purpose": "Home feature cards and large clickable cards."
+      },
+      {
+        "name": "poster-hover",
+        "value": "0 12px 32px #00000088",
+        "purpose": "Movie poster cards that lift and scale on hover."
+      },
+      {
+        "name": "dropdown-ambient",
+        "value": "0 8px 32px #0008",
+        "purpose": "Settings dropdowns, compact popovers, and floating utility panels."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-fast",
+        "value": "150ms ease-out",
+        "purpose": "Button, chip, row, and control state changes."
+      },
+      {
+        "name": "card-lift",
+        "value": "200ms ease-out",
+        "purpose": "Home cards and major interactive containers."
+      },
+      {
+        "name": "poster-scale",
+        "value": "300ms ease",
+        "purpose": "Poster image scale on hover."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "opacity or instant state",
+        "purpose": "Fallback for users who request less motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "card-grid-min",
+        "value": "268px"
+      },
+      {
+        "name": "poster-grid-min",
+        "value": "168px"
+      },
+      {
+        "name": "sidebar-width",
+        "value": "220px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Gold Action Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary cinematic action for archive, scan, explore, and torrent actions.",
+      "html": "<button class=\"ds-btn-gold\">Find Torrent</button>",
+      "css": ".ds-btn-gold { background: #fdcb6e18; border: 1px solid #fdcb6e55; color: #fdcb6e; padding: 7px 18px; border-radius: 6px; font: 700 0.85rem 'Segoe UI', system-ui, sans-serif; cursor: pointer; transition: background 150ms ease-out, border-color 150ms ease-out; } .ds-btn-gold:hover { background: #fdcb6e33; border-color: #fdcb6e; } .ds-btn-gold:focus-visible { outline: 2px solid #fdcb6e; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Utility Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary utility action for close, select, test, and view toggle controls.",
+      "html": "<button class=\"ds-btn-ghost\">Close</button>",
+      "css": ".ds-btn-ghost { background: #252525; border: 1px solid #555; color: #ccc; padding: 7px 14px; border-radius: 6px; font: 600 0.82rem 'Segoe UI', system-ui, sans-serif; cursor: pointer; transition: background 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out; } .ds-btn-ghost:hover { background: #333; color: #fff; border-color: #aaa; } .ds-btn-ghost:focus-visible { outline: 2px solid #888; outline-offset: 2px; }"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Destructive confirmation or selected-file deletion.",
+      "html": "<button class=\"ds-btn-danger\">Delete Selected</button>",
+      "css": ".ds-btn-danger { background: #c0392b; border: none; color: #fff; padding: 9px 18px; border-radius: 6px; font: 700 0.88rem 'Segoe UI', system-ui, sans-serif; cursor: pointer; transition: background 150ms ease-out; } .ds-btn-danger:hover { background: #e74c3c; } .ds-btn-danger:focus-visible { outline: 2px solid #e74c3c; outline-offset: 2px; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-default",
+      "description": "Charcoal command field for searching titles, filenames, and filters.",
+      "html": "<input class=\"ds-input-search\" placeholder=\"Search by movie title...\" />",
+      "css": ".ds-input-search { width: 100%; background: #252525; border: 1px solid #333; color: #e5e5e5; padding: 8px 14px; border-radius: 6px; font: 400 0.88rem 'Segoe UI', system-ui, sans-serif; } .ds-input-search::placeholder { color: #777; } .ds-input-search:focus { outline: none; border-color: #fdcb6e; } .ds-input-search:focus-visible { box-shadow: 0 0 0 2px #fdcb6e33; }"
+    },
+    {
+      "name": "Sidebar Navigation Item",
+      "kind": "nav",
+      "refersTo": "sidebar-nav",
+      "description": "Compact feature navigation row with functional accent reveal.",
+      "html": "<button class=\"ds-nav-item\"><span class=\"ds-nav-icon\">AI</span><span class=\"ds-nav-label\">Pick My Movie</span></button>",
+      "css": ".ds-nav-item { display: flex; align-items: center; gap: 11px; width: 220px; padding: 10px 20px; background: #0a0a10; border: none; border-left: 3px solid transparent; color: #888; font: 600 0.86rem 'Segoe UI', system-ui, sans-serif; cursor: pointer; text-align: left; transition: background 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out; } .ds-nav-icon { width: 20px; text-align: center; font-size: 0.78rem; color: #a29bfe; } .ds-nav-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-nav-item:hover { background: #a29bfe0d; color: #a29bfe; border-left-color: #a29bfe; } .ds-nav-item:focus-visible { outline: 2px solid #a29bfe; outline-offset: -2px; }"
+    },
+    {
+      "name": "Feature Card",
+      "kind": "card",
+      "refersTo": "card-default",
+      "description": "Home command card with a rare top accent and hover lift.",
+      "html": "<article class=\"ds-feature-card\"><div class=\"ds-feature-accent\"></div><div class=\"ds-feature-body\"><div class=\"ds-feature-title\">Pick My Movie</div><p class=\"ds-feature-copy\">Describe a mood and let the local AI curator suggest films from the archive.</p></div></article>",
+      "css": ".ds-feature-card { background: #10101e; border: 1px solid #1c1c2e; border-top: none; border-radius: 10px; overflow: hidden; transition: transform 200ms ease-out, box-shadow 200ms ease-out, border-color 200ms ease-out; max-width: 320px; } .ds-feature-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px #00000099; } .ds-feature-accent { height: 2px; background: #fdcb6e; } .ds-feature-body { padding: 18px 20px 16px; } .ds-feature-title { color: #d8d8e8; font: 700 0.95rem/1.2 'Segoe UI', system-ui, sans-serif; margin-bottom: 8px; } .ds-feature-copy { color: #888; font: 400 0.78rem/1.75 'Segoe UI', system-ui, sans-serif; margin: 0; }"
+    },
+    {
+      "name": "Poster Card",
+      "kind": "card",
+      "refersTo": "poster-card",
+      "description": "Movie discovery card where cinematic richness is allowed without losing actions.",
+      "html": "<article class=\"ds-poster-card\"><div class=\"ds-poster-frame\"></div><div class=\"ds-poster-body\"><div class=\"ds-poster-title\">Cinema Title</div><div class=\"ds-poster-meta\">1994 | 8.7</div><button class=\"ds-poster-action\">In Your Library</button></div></article>",
+      "css": ".ds-poster-card { width: 180px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px; overflow: hidden; transition: transform 180ms ease-out, box-shadow 180ms ease-out, border-color 180ms ease-out; } .ds-poster-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px #00000088; border-color: #fdcb6e44; } .ds-poster-frame { aspect-ratio: 2 / 3; background: linear-gradient(145deg, #252525, #10101e); } .ds-poster-body { padding: 10px 12px; display: flex; flex-direction: column; gap: 5px; } .ds-poster-title { color: #fff; font: 700 0.88rem/1.3 'Segoe UI', system-ui, sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .ds-poster-meta { color: #fdcb6e; font: 700 0.78rem 'Segoe UI', system-ui, sans-serif; } .ds-poster-action { background: #2ecc7108; border: 1px solid #2ecc7155; color: #2ecc71; border-radius: 6px; padding: 6px 0; font: 700 0.78rem 'Segoe UI', system-ui, sans-serif; cursor: pointer; } .ds-poster-action:hover { background: #2ecc7122; }"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "refersTo": "chip-status",
+      "description": "Compact metadata or status tag for resolution, Plex state, ownership, and AI reasons.",
+      "html": "<span class=\"ds-chip-status\">In Your Library</span>",
+      "css": ".ds-chip-status { display: inline-flex; align-items: center; gap: 6px; color: #2ecc71; background: #2ecc7111; border: 1px solid #2ecc7133; border-radius: 4px; padding: 4px 9px; font: 700 0.75rem/1.4 'Segoe UI', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Archive Table Row",
+      "kind": "custom",
+      "refersTo": "table-row",
+      "description": "Dense library row for scanning large file collections.",
+      "html": "<div class=\"ds-table-row\"><strong>Movie Title</strong><span>1080p WEB-DL | 2.4 GB</span><button>Play</button></div>",
+      "css": ".ds-table-row { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: center; padding: 8px 10px; border-bottom: 1px solid #1a1a1a; background: #0d0d0d; color: #ccc; font: 400 0.83rem 'Segoe UI', system-ui, sans-serif; transition: background 150ms ease-out; } .ds-table-row:hover { background: #252525; } .ds-table-row strong { color: #fff; font-weight: 600; } .ds-table-row span { color: #888; white-space: nowrap; } .ds-table-row button { background: #1a3a1a; color: #2ecc71; border: 1px solid #2ecc7144; border-radius: 5px; padding: 4px 10px; font: 700 0.78rem 'Segoe UI', system-ui, sans-serif; cursor: pointer; } .ds-table-row button:hover { background: #1e4a1e; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Cinematic Archive Console",
+    "overview": "Cinema Paradiso should feel like a powerful local archive console with cinematic taste: dark, focused, fast, and quietly premium. The surface is not a theater lounge, not an awards-show poster, and not a generic entertainment website. It is a working command center for thousands of local movie files, with enough atmosphere to make library management feel pleasurable.\n\nThe default workspace is near-black. Gold is the projector light: rare, directional, and used to focus attention. Feature colors remain functional, not decorative. Violet belongs to AI and matching flows, blue to library inspection, green to owned or safe actions, amber to quality warnings, pink to dashboard analysis, cyan to Plex/system sync, and red to destructive actions.\n\nThis system rejects generic SaaS dashboards, cheap Plex clones, purple AI-gradient apps, glassy crypto-style interfaces, beige premium templates, cluttered torrent-indexer tables, and anything that makes dense workflows slower or harder to trust.",
+    "keyCharacteristics": [
+      "Near-black shell with layered charcoal panels.",
+      "Gold used as a rare cinematic signal, never as a full costume.",
+      "Compact product typography, not landing-page drama.",
+      "Poster imagery earns cinematic richness; tables stay operational.",
+      "Motion is tasteful, short, and tied to state."
+    ],
+    "rules": [
+      {
+        "name": "The Projector Light Rule",
+        "body": "Gold is the focus beam, not the wallpaper. If more than one major region is gold, the screen is overdressed.",
+        "section": "colors"
+      },
+      {
+        "name": "The Functional Accent Rule",
+        "body": "Purple, blue, green, pink, cyan, amber, and red must describe product meaning. Do not use them as random decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Oscars Costume Rule",
+        "body": "Keep the confidence of black and gold, but never add red-carpet, trophy, velvet-curtain, or awards-show visual language.",
+        "section": "colors"
+      },
+      {
+        "name": "The Product First Type Rule",
+        "body": "Use a fixed compact type scale. Do not use fluid landing-page typography inside the app.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Display Labels Rule",
+        "body": "Buttons, filters, tabs, badges, inputs, and table headers must stay in the product sans vocabulary.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Until Invited Rule",
+        "body": "Surfaces are flat at rest. Lift appears on hover, selection, modal focus, or poster interactions.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No Glass Rule",
+        "body": "Do not use backdrop blur or translucent glass cards as the visual system. Dark overlays are allowed for modal focus.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do make the app feel like \"The Cinematic Archive Console\": serious, dark, cinematic, and operational.",
+      "Do use Archive Black as the dominant canvas and Projector Gold as a rare focus signal.",
+      "Do keep feature colors functional: violet for AI, blue for library, green for safe/in-library, amber for quality warnings, pink for analytics, cyan for Plex, red for danger.",
+      "Do keep dense workflows fast, scannable, and calm.",
+      "Do use tasteful motion for hover, state change, loading, and reveal. Keep most transitions between 150ms and 250ms, with poster imagery allowed up to 300ms.",
+      "Do include reduced-motion fallbacks for poster scale, card lift, shimmer, and toast movement.",
+      "Do make delete, rename, and cleanup actions explicit and controlled.",
+      "Do keep gold accents scarce enough that they feel intentional."
+    ],
+    "donts": [
+      "Don't make the app look like a generic SaaS dashboard.",
+      "Don't make it a cheap Plex clone.",
+      "Don't use purple AI-gradient app styling.",
+      "Don't use glassy or blurred crypto-style interfaces.",
+      "Don't use beige premium templates.",
+      "Don't ship cluttered torrent-indexer tables without hierarchy.",
+      "Don't use decorative gradient text.",
+      "Don't use glassmorphism as a theme.",
+      "Don't repeat identical icon-card grids everywhere.",
+      "Don't put tiny uppercase eyebrows above every section.",
+      "Don't use oversized metric blocks as a default design move.",
+      "Don't use visual effects that make library management harder to read.",
+      "Don't literalize black and gold into Oscars imagery: no red carpet, trophies, velvet curtains, or ceremony language."
+    ]
+  }
+}

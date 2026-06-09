@@ -2,52 +2,46 @@
 
 ## General
 
-- [Principle — e.g. Keep modules small and single-purpose]
-- [Principle — e.g. Fix root causes, do not layer workarounds]
-- [Principle — e.g. Do not mix unrelated concerns in one
-  component or route]
+- Keep changes scoped to the workspace or API boundary being modified.
+- Prefer existing helpers and component patterns before introducing new abstractions.
+- Preserve local-first behavior and user control.
+- Do not silently perform destructive file operations.
+- Do not modify `winapp/` unless the user explicitly resumes that project.
 
-## TypeScript
+## React
 
-- [Rule — e.g. Strict mode is required throughout the project]
-- [Rule — e.g. Avoid any — use explicit interfaces or narrowly
-  scoped types]
-- [Rule — e.g. Validate unknown external input at system
-  boundaries before trusting it]
-
-## [Framework — e.g. Next.js]
-
-- [Convention — e.g. Default to server components]
-- [Convention — e.g. Add use client only when browser
-  interactivity requires it]
-- [Convention — e.g. Keep route handlers focused on a
-  single responsibility]
+- Keep shared helpers near the top of `src/App.jsx` unless a future refactor introduces modules.
+- Use stable keys for movie/file rows where possible.
+- Keep cards readable and proportional; avoid the old skinny-card pattern.
+- Reset pagination and expanded state when filters/search/mode change.
+- Use controlled inputs for filters, forms, and settings.
 
 ## Styling
 
-- [Rule — e.g. Use CSS custom property tokens — no
-  hardcoded hex values]
-- [Rule — e.g. Follow the border radius scale defined
-  in ui-context.md]
+- Use CSS variables from `src/styles.css`.
+- Keep gold as a focus/identity accent, not a blanket decoration.
+- Use functional colors consistently: green owned/success, amber quality warning, red destructive, violet AI, cyan Plex/system, blue library.
+- Maintain responsive layouts for desktop and mobile.
 
 ## API Routes
 
-- [Rule — e.g. Validate and parse request input before
-  any logic runs]
-- [Rule — e.g. Enforce auth and ownership before any mutation]
-- [Rule — e.g. Return consistent, predictable response shapes]
+- Validate required request fields before doing work.
+- Return JSON with either useful result data or an `error` string.
+- Keep file actions constrained to configured library roots.
+- Bust caches when file paths, settings, or Plex metadata change.
 
 ## Data and Storage
 
-- [Rule — e.g. Metadata belongs in the database]
-- [Rule — e.g. Large generated content belongs in file
-  or blob storage]
-- [Rule — e.g. Do not store large content directly in
-  the database]
+- User data belongs under `data/` or the configured user-data folder.
+- Rebuildable metadata cache belongs under `cache/` or the configured cache folder.
+- `config.json`, `data/`, `cache/`, and `res_cache.json` are local/user-specific and should not be committed.
 
-## File Organization
+## Verification
 
-- `[folder]/` — [What belongs here]
-- `[folder]/` — [What belongs here]
-- `[folder]/` — [What belongs here]
-- `[folder]/` — [What belongs here]s
+Before release-level changes:
+
+```bash
+python -m py_compile app.py
+python -m unittest tests.test_user_curation_store
+npm run build
+```

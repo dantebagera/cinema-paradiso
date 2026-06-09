@@ -6,13 +6,15 @@ import time
 import urllib.request
 import urllib.parse
 import json as _json
-from flask import Flask, render_template, jsonify, request, make_response
+from pathlib import Path
+from flask import Flask, render_template, jsonify, request, make_response, send_from_directory
 from send2trash import send2trash
 
 app = Flask(__name__)
+_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Config file stored next to app.py
-_CONFIG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.json')
+_CONFIG_FILE = os.path.join(_BASE_DIR, 'config.json')
 
 def _load_config():
     if os.path.exists(_CONFIG_FILE):
@@ -31,7 +33,26 @@ def _save_config(data):
         pass
 
 _cfg = _load_config()
-_movies_dir     = _cfg.get('movies_dir', r"E:\Movies")
+def _coerce_movie_dirs(config):
+    raw_dirs = config.get('movies_dirs')
+    if isinstance(raw_dirs, list):
+        dirs = [str(path or '').strip() for path in raw_dirs if str(path or '').strip()]
+    else:
+        dirs = []
+    legacy_dir = str(config.get('movies_dir', r"E:\Movies") or '').strip()
+    if legacy_dir and legacy_dir not in dirs:
+        dirs.insert(0, legacy_dir)
+    seen = set()
+    result = []
+    for path in dirs:
+        norm = os.path.normcase(os.path.normpath(path))
+        if norm not in seen:
+            seen.add(norm)
+            result.append(path)
+    return result or [r"E:\Movies"]
+
+_movies_dirs    = _coerce_movie_dirs(_cfg)
+_movies_dir     = _movies_dirs[0]
 _prowlarr_url   = _cfg.get('prowlarr_url', '')
 _prowlarr_key   = _cfg.get('prowlarr_key', '')
 _tmdb_key       = _cfg.get('tmdb_key', '')
@@ -39,6 +60,8 @@ _plex_url       = _cfg.get('plex_url', 'http://localhost:32400')
 _plex_token     = _cfg.get('plex_token', '')
 _ollama_url     = _cfg.get('ollama_url', 'http://localhost:11434')
 _ollama_model   = _cfg.get('ollama_model', 'gemma4:31b-cloud')
+_user_data_dir  = _cfg.get('user_data_dir', os.path.join(_BASE_DIR, 'data'))
+_tmdb_cache_dir = _cfg.get('tmdb_cache_dir', os.path.join(_BASE_DIR, 'cache'))
 _plex_cache     = {}   # _norm(file_path) -> {plex_title, plex_year, plex_genres}
 _plex_unmatched = {}   # _norm(path) -> {rating_key, plex_title}  (Plex has file but no metadata)
 _plex_matched_by_fname   = {}  # filename.lower() -> matched entry   (path-mismatch fallback)
@@ -53,6 +76,280 @@ def _norm(path):
 _plex_section_ids = [] # movie section keys — used for triggering rescans
 _metadata_cache  = {}  # "{title}_{year}" -> {poster_url, genres, plot, tmdb_rating} — memory-only
 _tmdb_genres     = {}  # genre_id -> genre_name, lazy-loaded once from TMDB
+_TMDB_CACHE_DIR = _tmdb_cache_dir
+_TMDB_LIBRARY_CACHE_FILE = os.path.join(_TMDB_CACHE_DIR, 'tmdb_library_cache.json')
+_TMDB_COLLECTION_CACHE_FILE = os.path.join(_TMDB_CACHE_DIR, 'tmdb_collection_cache.json')
+
+
+def _tmdb_image_url(path, size='w185'):
+    return f"https://image.tmdb.org/t/p/{size}{path}" if path else ''
+
+
+def _load_tmdb_library_cache():
+    try:
+        with open(_TMDB_LIBRARY_CACHE_FILE, 'r', encoding='utf-8') as f:
+            data = _json.load(f)
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _save_tmdb_library_cache(data):
+    try:
+        os.makedirs(_TMDB_CACHE_DIR, exist_ok=True)
+        with open(_TMDB_LIBRARY_CACHE_FILE, 'w', encoding='utf-8') as f:
+            _json.dump(data, f, indent=2)
+    except Exception:
+        pass
+
+
+def _load_tmdb_collection_cache():
+    try:
+        with open(_TMDB_COLLECTION_CACHE_FILE, 'r', encoding='utf-8') as f:
+            data = _json.load(f)
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _save_tmdb_collection_cache(data):
+    try:
+        os.makedirs(_TMDB_CACHE_DIR, exist_ok=True)
+        with open(_TMDB_COLLECTION_CACHE_FILE, 'w', encoding='utf-8') as f:
+            _json.dump(data, f, indent=2)
+    except Exception:
+        pass
+
+
+_tmdb_library_cache = _load_tmdb_library_cache()
+_tmdb_collection_cache = _load_tmdb_collection_cache()
+
+
+def _movie_identity_key(movie):
+    tmdb_id = str(movie.get('tmdb_id', '') or '').strip()
+    if tmdb_id:
+        return f"tmdb:{tmdb_id}"
+    path = str(movie.get('path', '') or '').strip()
+    if path:
+        return f"path:{_norm(path)}"
+    title = re.sub(r'\s+', ' ', str(movie.get('title', '') or '').lower()).strip()
+    year = str(movie.get('year', '') or '').strip()
+    return f"title:{title}|{year}"
+
+
+def _normalize_curated_movie(movie):
+    return {
+        'tmdb_id': str(movie.get('tmdb_id', '') or ''),
+        'title': str(movie.get('title', '') or ''),
+        'year': str(movie.get('year', '') or ''),
+        'path': str(movie.get('path', '') or ''),
+        'poster_url': str(movie.get('poster_url', '') or ''),
+    }
+
+
+class UserCurationStore:
+    def __init__(self, base_dir):
+        self.base_dir = Path(base_dir)
+        self.collections_file = self.base_dir / 'user_collections.json'
+        self.lists_file = self.base_dir / 'user_lists.json'
+        self.followed_file = self.base_dir / 'followed_releases.json'
+
+    def _read_json(self, path, fallback):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                data = _json.load(f)
+            return data if isinstance(data, type(fallback)) else fallback
+        except Exception:
+            return fallback
+
+    def _write_json(self, path, data):
+        self.base_dir.mkdir(parents=True, exist_ok=True)
+        with open(path, 'w', encoding='utf-8') as f:
+            _json.dump(data, f, indent=2)
+
+    def _collections(self):
+        data = self._read_json(self.collections_file, {'overrides': {}})
+        data.setdefault('overrides', {})
+        return data
+
+    def _save_collections(self, data):
+        self._write_json(self.collections_file, data)
+
+    def _lists(self):
+        data = self._read_json(self.lists_file, {'lists': []})
+        data.setdefault('lists', [])
+        return data
+
+    def _save_lists(self, data):
+        self._write_json(self.lists_file, data)
+
+    def _followed(self):
+        data = self._read_json(self.followed_file, {'movies': []})
+        data.setdefault('movies', [])
+        return data
+
+    def _save_followed(self, data):
+        self._write_json(self.followed_file, data)
+
+    def effective_collection(self, tmdb_collection):
+        collection_id = str(tmdb_collection.get('id', '') or '')
+        overrides = self._collections().get('overrides', {})
+        override = overrides.get(collection_id)
+        if override:
+            return {
+                **tmdb_collection,
+                **override,
+                'id': collection_id,
+                'source': 'User',
+                'is_edited': True,
+            }
+        return {
+            **tmdb_collection,
+            'source': 'TMDB',
+            'is_edited': False,
+        }
+
+    def save_collection_override(self, collection_id, original_collection, parts):
+        collection_id = str(collection_id)
+        data = self._collections()
+        override = {
+            'id': collection_id,
+            'name': original_collection.get('name', ''),
+            'parts': [_normalize_curated_movie(movie) for movie in parts],
+            'updated_at': time.time(),
+        }
+        data['overrides'][collection_id] = override
+        self._save_collections(data)
+        return {**override, 'source': 'User', 'is_edited': True}
+
+    def reset_collection(self, collection_id):
+        data = self._collections()
+        existed = str(collection_id) in data['overrides']
+        data['overrides'].pop(str(collection_id), None)
+        self._save_collections(data)
+        return existed
+
+    def list_all(self):
+        return self._lists()['lists']
+
+    def create_list(self, name):
+        data = self._lists()
+        clean_name = re.sub(r'\s+', ' ', str(name or '').strip())
+        if not clean_name:
+            raise ValueError('List name is required')
+        list_id = re.sub(r'[^a-z0-9]+', '-', clean_name.lower()).strip('-') or f"list-{int(time.time())}"
+        existing_ids = {item.get('id') for item in data['lists']}
+        base_id = list_id
+        suffix = 2
+        while list_id in existing_ids:
+            list_id = f"{base_id}-{suffix}"
+            suffix += 1
+        created = {'id': list_id, 'name': clean_name, 'movies': [], 'created_at': time.time(), 'updated_at': time.time()}
+        data['lists'].append(created)
+        self._save_lists(data)
+        return created
+
+    def rename_list(self, list_id, name):
+        data = self._lists()
+        target = self._find_list(data, list_id)
+        if target is None:
+            raise KeyError('List not found')
+        clean_name = re.sub(r'\s+', ' ', str(name or '').strip())
+        if not clean_name:
+            raise ValueError('List name is required')
+        target['name'] = clean_name
+        target['updated_at'] = time.time()
+        self._save_lists(data)
+        return target
+
+    def delete_list(self, list_id):
+        data = self._lists()
+        before = len(data['lists'])
+        data['lists'] = [item for item in data['lists'] if item.get('id') != list_id]
+        self._save_lists(data)
+        return len(data['lists']) != before
+
+    def _find_list(self, data, list_id):
+        for item in data['lists']:
+            if item.get('id') == list_id:
+                return item
+        return None
+
+    def add_movie_to_list(self, list_id, movie):
+        data = self._lists()
+        target = self._find_list(data, list_id)
+        if target is None:
+            raise KeyError('List not found')
+        normalized = _normalize_curated_movie(movie)
+        key = _movie_identity_key(normalized)
+        movies = target.setdefault('movies', [])
+        if all(_movie_identity_key(existing) != key for existing in movies):
+            movies.append(normalized)
+        target['updated_at'] = time.time()
+        self._save_lists(data)
+        return target
+
+    def remove_movie_from_list(self, list_id, movie):
+        data = self._lists()
+        target = self._find_list(data, list_id)
+        if target is None:
+            raise KeyError('List not found')
+        key = _movie_identity_key(_normalize_curated_movie(movie))
+        target['movies'] = [existing for existing in target.get('movies', []) if _movie_identity_key(existing) != key]
+        target['updated_at'] = time.time()
+        self._save_lists(data)
+        return target
+
+    def lists_for_movie(self, movie):
+        key = _movie_identity_key(_normalize_curated_movie(movie))
+        result = []
+        for item in self._lists()['lists']:
+            if any(_movie_identity_key(existing) == key for existing in item.get('movies', [])):
+                result.append({'id': item.get('id'), 'name': item.get('name')})
+        return result
+
+    def followed_all(self):
+        return self._followed()['movies']
+
+    def follow_movie(self, movie):
+        data = self._followed()
+        normalized = _normalize_curated_movie(movie)
+        key = _movie_identity_key(normalized)
+        now = time.time()
+        existing = next((item for item in data['movies'] if _movie_identity_key(item) == key), None)
+        if existing:
+            existing.update({k: v for k, v in normalized.items() if v})
+            existing['updated_at'] = now
+            self._save_followed(data)
+            return existing
+        created = {
+            **normalized,
+            'status': 'watching',
+            'followed_at': now,
+            'updated_at': now,
+            'last_checked': 0,
+            'best_release': {},
+        }
+        data['movies'].insert(0, created)
+        self._save_followed(data)
+        return created
+
+    def unfollow_movie(self, movie):
+        data = self._followed()
+        key = _movie_identity_key(_normalize_curated_movie(movie))
+        before = len(data['movies'])
+        data['movies'] = [item for item in data['movies'] if _movie_identity_key(item) != key]
+        self._save_followed(data)
+        return len(data['movies']) != before
+
+    def save_followed_all(self, movies):
+        data = {'movies': movies}
+        self._save_followed(data)
+        return movies
+
+
+def _curation_store():
+    return UserCurationStore(Path(_user_data_dir))
 _TV_RE = re.compile(
     r'(?:s\d{1,2}e\d{1,2}|\d{1,2}x\d{2}|season[\s._-]*\d|episode[\s._-]*\d'
     r'|\bep[\s._-]*\d{1,3}\b|complete[\s._-]+series|\bcomplete[\s._-]+season)',
@@ -77,7 +374,9 @@ def _country_flag(code):
     return chr(ord(code[0].upper())+127397) + chr(ord(code[1].upper())+127397)
 
 _res_cache = {}  # (abspath, mtime) -> resolution_str  — resolution probe cache
+_res_cache_reprobe = set()  # legacy cache entries that need one width-aware probe
 _RES_CACHE_FILE  = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'res_cache.json')
+_RES_CACHE_VERSION = 2
 _library_status  = ''  # live status string polled by the browser during a scan
 _plex_cache_time = 0.0
 _PLEX_TTL        = 300  # seconds before auto-refresh
@@ -87,6 +386,7 @@ _LIBRARY_TTL     = 300  # seconds — same as Plex TTL
 def _all_config():
     return {
         'movies_dir': _movies_dir,
+        'movies_dirs': _movies_dirs,
         'prowlarr_url': _prowlarr_url,
         'prowlarr_key': _prowlarr_key,
         'plex_url': _plex_url,
@@ -94,6 +394,8 @@ def _all_config():
         'tmdb_key': _tmdb_key,
         'ollama_url': _ollama_url,
         'ollama_model': _ollama_model,
+        'user_data_dir': _user_data_dir,
+        'tmdb_cache_dir': _tmdb_cache_dir,
     }
 
 VIDEO_EXTENSIONS = {'.mkv', '.mp4', '.avi', '.m4v', '.mov', '.wmv', '.flv', '.ts', '.m2ts', '.iso'}
@@ -110,20 +412,76 @@ def get_movies_dir():
     return _movies_dir
 
 
+def get_movies_dirs():
+    return list(_movies_dirs)
+
+
+def _library_cache_key():
+    return tuple(_norm(path) for path in get_movies_dirs())
+
+
+def _iter_movie_roots():
+    for root in get_movies_dirs():
+        if root and os.path.isdir(root):
+            yield root
+
+
+def _iter_video_files():
+    for movies_dir in _iter_movie_roots():
+        for root, _, files in os.walk(movies_dir):
+            for file in files:
+                ext = os.path.splitext(file)[1].lower()
+                if ext in VIDEO_EXTENSIONS:
+                    yield movies_dir, root, file, os.path.join(root, file)
+
+
+def _walk_movie_dirs():
+    for movies_dir in _iter_movie_roots():
+        for root, dirs, files in os.walk(movies_dir):
+            yield movies_dir, root, dirs, files
+
+
+def _path_library_root(path):
+    abs_path = os.path.abspath(path)
+    for root in _iter_movie_roots():
+        abs_root = os.path.abspath(root)
+        if abs_path == abs_root or abs_path.startswith(abs_root + os.sep):
+            return abs_root
+    return ''
+
+
+def _path_inside_library(path):
+    return bool(_path_library_root(path))
+
+
+def _classify_dimensions(width, height):
+    """Classify actual video dimensions, allowing normal cinematic crop."""
+    w = int(width or 0)
+    h = int(height or 0)
+    if w >= 3800 or h >= 2000:
+        return '4K'
+    if w >= 1900 or h >= 1000:
+        return '1080p'
+    if w >= 1200 or h >= 700:
+        return '720p'
+    if w >= 700 or h >= 450:
+        return '480p'
+    if h > 0:
+        return f'{h}p'
+    return None
+
+
 def _probe_resolution(filepath):
-    """Use pymediainfo to read actual video height. Returns resolution string or None."""
+    """Use pymediainfo to read actual video dimensions. Returns resolution string or None."""
     if not _MEDIAINFO_AVAILABLE:
         return None
     try:
         info = _MediaInfo.parse(filepath)
         for track in info.tracks:
             if track.track_type == 'Video':
+                w = int(track.width or 0)
                 h = int(track.height or 0)
-                if h >= 2160: return '4K'
-                if h >= 1080: return '1080p'
-                if h >= 720:  return '720p'
-                if h >= 480:  return '480p'
-                if h > 0:     return f'{h}p'
+                return _classify_dimensions(w, h)
         return None
     except Exception:
         return None
@@ -131,24 +489,24 @@ def _probe_resolution(filepath):
 
 def get_resolution_from_file(filepath):
     """Return resolution string for a video file.
-    Uses filename parsing first (fast). If the filename gives 'Unknown',
-    falls back to pymediainfo to read actual video stream dimensions.
+    Probes actual video stream dimensions first so cropped 1080p files are not
+    mislabeled as 720p. Falls back to filename parsing when probing is not
+    available.
     Falls back gracefully if pymediainfo is not installed."""
     filename = os.path.basename(filepath)
-    res = get_resolution(filename)
-    if res != 'Unknown':
-        return res
-    # Filename has no resolution tag — probe with mediainfo
+    filename_res = get_resolution(filename)
+    # Probe with mediainfo before trusting filename-derived resolution.
     try:
         mtime = os.path.getmtime(filepath)
     except OSError:
-        return res
+        return filename_res
     key = (os.path.abspath(filepath), mtime)
-    if key in _res_cache:
+    if key in _res_cache and key not in _res_cache_reprobe:
         return _res_cache[key]
     probed = _probe_resolution(filepath)
-    result = probed if probed else res
+    result = probed if probed else filename_res
     _res_cache[key] = result
+    _res_cache_reprobe.discard(key)
     return result
 
 
@@ -160,12 +518,29 @@ def get_resolution_rank_str(resolution):
 
 def _load_res_cache():
     """Load persisted resolution cache from disk into _res_cache."""
-    global _res_cache
+    global _res_cache, _res_cache_reprobe
     try:
         with open(_RES_CACHE_FILE, 'r', encoding='utf-8') as f:
             data = _json.load(f)
-        for path, v in data.items():
-            _res_cache[(path, float(v['mtime']))] = v['res']
+        if not isinstance(data, dict):
+            return
+        if data.get('_version') == _RES_CACHE_VERSION:
+            entries = data.get('entries', {})
+            legacy = False
+        else:
+            entries = data
+            legacy = True
+        for path, v in entries.items():
+            if not isinstance(v, dict) or 'mtime' not in v or 'res' not in v:
+                continue
+            res = v['res']
+            if legacy and res == '720p':
+                filename_res = get_resolution(os.path.basename(path))
+                path_has_1080_hint = bool(re.search(r'(^|[^\d])1080p?([^\d]|$)', path, re.IGNORECASE))
+                if filename_res == 'Unknown' and path_has_1080_hint:
+                    res = '1080p'
+            key = (path, float(v['mtime']))
+            _res_cache[key] = res
     except Exception:
         pass
 
@@ -173,9 +548,9 @@ def _load_res_cache():
 def _save_res_cache():
     """Persist resolution cache to disk so probed results survive app restarts."""
     try:
-        data = {}
+        data = {'_version': _RES_CACHE_VERSION, 'entries': {}}
         for (path, mtime), res in _res_cache.items():
-            data[path] = {'mtime': mtime, 'res': res}
+            data['entries'][path] = {'mtime': mtime, 'res': res}
         with open(_RES_CACHE_FILE, 'w', encoding='utf-8') as f:
             _json.dump(data, f, indent=2)
     except Exception:
@@ -272,7 +647,204 @@ def format_size(size):
     return f"{size:.1f} PB"
 
 
-def scan_duplicates(movies_dir):
+def _norm_movie_title(t):
+    if not t:
+        return ''
+    t = str(t).lower()
+    t = re.sub(r'[^\w\s]', '', t)
+    t = re.sub(r'\s+', ' ', t).strip()
+    t = re.sub(r'^(the|a|an) ', '', t)
+    return t
+
+
+_GOOD_RELEASE_SOURCES = {'WEB-DL', 'WEBRip', 'Blu-ray', 'BDRip', 'BD Remux', 'Remux'}
+_BAD_RELEASE_RE = re.compile(
+    r'(^|[.\-_\s\[\(])(cam|camrip|hdcam|ts|hdts|telesync|tc|telecine|scr|screener|dvdscr)([.\-_\s\]\)]|$)',
+    re.IGNORECASE
+)
+
+
+def _proper_release_from_title(title):
+    if not title or _BAD_RELEASE_RE.search(title):
+        return None
+    source = get_rip_source(title)
+    resolution = get_resolution(title)
+    if source not in _GOOD_RELEASE_SOURCES or get_resolution_rank_str(resolution) < 3:
+        return None
+    return {'source': source, 'resolution': resolution}
+
+
+def _find_owned_movie(movie):
+    title = str(movie.get('title', '') or '').strip()
+    year = str(movie.get('year', '') or '').strip()
+    if not title:
+        return None
+    cache_key = _library_cache_key()
+    if not any(True for _ in _iter_movie_roots()):
+        return None
+    _auto_sync_plex(force=False)
+    target_title = _norm_movie_title(title)
+    best = None
+
+    def consider(candidate_title, candidate_year, path, filename, size=0):
+        nonlocal best
+        if not candidate_title:
+            return
+        if _norm_movie_title(candidate_title) != target_title:
+            return
+        if year and candidate_year and str(candidate_year) != year:
+            return
+        if year and not candidate_year:
+            return
+        resolution = get_resolution_from_file(path)
+        current = {
+            'found': True,
+            'path': path,
+            'filename': filename,
+            'resolution': resolution,
+            'size_human': format_size(size) if size else '',
+        }
+        if best is None or get_resolution_rank_str(resolution) > get_resolution_rank_str(best.get('resolution')):
+            best = current
+
+    if (_library_cache.get('items') is not None
+            and _library_cache.get('dir') == cache_key
+            and time.time() - _library_cache.get('time', 0) < _LIBRARY_TTL):
+        for item in _library_cache['items']:
+            path = item.get('path', '')
+            if not path or not os.path.isfile(path):
+                continue
+            parsed_title, parsed_year = parse_movie_title(item.get('filename', '') or item.get('title', ''))
+            identity_title = item.get('plex_title') or parsed_title
+            identity_year = str(item.get('plex_year') or parsed_year or '')
+            consider(identity_title, identity_year, path, item.get('filename', os.path.basename(path)), NumberSafe(item.get('size')))
+        return best
+
+    for _, _, file, full_path in _iter_video_files():
+        try:
+            size = os.path.getsize(full_path)
+        except OSError:
+            size = 0
+        plex_data = _plex_cache.get(_norm(full_path), {})
+        if plex_data.get('plex_title'):
+            consider(plex_data.get('plex_title'), str(plex_data.get('plex_year', '') or ''), full_path, file, size)
+        parsed_title, parsed_year = parse_movie_title(file)
+        consider(parsed_title, parsed_year, full_path, file, size)
+    return best
+
+
+def NumberSafe(value):
+    try:
+        return int(value or 0)
+    except Exception:
+        return 0
+
+
+def _find_best_followed_release(movie):
+    if not _prowlarr_url or not _prowlarr_key:
+        return None
+    title = str(movie.get('title', '') or '').strip()
+    year = str(movie.get('year', '') or '').strip()
+    if not title:
+        return None
+    query = f"{title} {year}".strip()
+    try:
+        indexer_ids = []
+        try:
+            idx_req = urllib.request.Request(
+                f"{_prowlarr_url}/api/v1/indexer",
+                headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'}
+            )
+            with urllib.request.urlopen(idx_req, timeout=8) as idx_resp:
+                indexers = _json.loads(idx_resp.read().decode())
+            indexer_ids = [str(ix['id']) for ix in indexers if ix.get('enable', True)]
+        except Exception:
+            pass
+        parts = [('query', query), ('type', 'search'), ('categories', '2000'), ('limit', '100')]
+        parts += [('indexerIds', iid) for iid in indexer_ids]
+        url = f"{_prowlarr_url}/api/v1/search?{urllib.parse.urlencode(parts)}"
+        req = urllib.request.Request(url, headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            results = _json.loads(resp.read().decode())
+    except Exception:
+        return None
+
+    candidates = []
+    for r in results:
+        torrent_title = r.get('title', '')
+        if _TV_RE.search(torrent_title):
+            continue
+        quality = _proper_release_from_title(torrent_title)
+        if not quality:
+            continue
+        size = NumberSafe(r.get('size'))
+        candidates.append({
+            'title': torrent_title,
+            'resolution': quality['resolution'],
+            'source': quality['source'],
+            'seeders': NumberSafe(r.get('seeders')),
+            'size_bytes': size,
+            'size_human': format_size(size) if size else '?',
+            'indexer': r.get('indexer', ''),
+            'magnet_url': r.get('magnetUrl', ''),
+            'download_url': r.get('downloadUrl', ''),
+            'info_url': r.get('infoUrl', ''),
+        })
+    if not candidates:
+        return None
+    candidates.sort(key=lambda item: (
+        get_resolution_rank_str(item.get('resolution')),
+        get_rip_rank(item.get('source')),
+        NumberSafe(item.get('seeders')),
+        NumberSafe(item.get('size_bytes')),
+    ), reverse=True)
+    return candidates[0]
+
+
+def _sort_followed_releases(items):
+    status_rank = {'available': 0, 'watching': 1, 'owned': 2}
+    return sorted(items, key=lambda item: (
+        status_rank.get(item.get('status'), 3),
+        -float(item.get('updated_at') or item.get('followed_at') or 0),
+    ))
+
+
+def _check_followed_releases():
+    store = _curation_store()
+    current = store.followed_all()
+    checked = []
+    removed_owned = []
+    newly_available = []
+    now = time.time()
+    for item in current:
+        before_status = item.get('status', 'watching')
+        owned = _find_owned_movie(item)
+        if owned:
+            removed_owned.append({**item, 'status': 'owned', 'owned': owned, 'updated_at': now, 'last_checked': now})
+            continue
+        best_release = _find_best_followed_release(item)
+        updated = {**item, 'last_checked': now}
+        if best_release:
+            updated['status'] = 'available'
+            updated['best_release'] = best_release
+            updated['updated_at'] = now if before_status != 'available' else item.get('updated_at', now)
+            if before_status != 'available':
+                newly_available.append(updated)
+        else:
+            updated['status'] = 'watching'
+            updated['best_release'] = {}
+        checked.append(updated)
+    checked = _sort_followed_releases(checked)
+    store.save_followed_all(checked)
+    return {
+        'movies': checked,
+        'removed_owned': removed_owned,
+        'newly_available': newly_available,
+        'checked_at': now,
+    }
+
+
+def _scan_duplicates_legacy(movies_dir):
     # If Plex assigns more than this many files to the same title+year it has
     # almost certainly bulk-mis-matched them (e.g. whole folder → one wrong film).
     # Fall back to filename parsing for those files.
@@ -349,6 +921,84 @@ def scan_duplicates(movies_dir):
     return duplicates, stats
 
 
+def scan_duplicates(movies_dirs):
+    # Multi-root duplicate scanner. Groups are built across every configured
+    # library root, so copies on different drives still compare against each other.
+    MAX_PLEX_GROUP = 4
+    groups = {}
+    plex_keyed = set()
+    roots = movies_dirs if isinstance(movies_dirs, (list, tuple)) else [movies_dirs]
+
+    for movies_dir in roots:
+        if not any(True for _ in _iter_movie_roots()):
+            continue
+        for root, _, files in os.walk(movies_dir):
+            for file in files:
+                ext = os.path.splitext(file)[1].lower()
+                if ext not in VIDEO_EXTENSIONS:
+                    continue
+                full_path = os.path.join(root, file)
+                try:
+                    size = os.path.getsize(full_path)
+                except OSError:
+                    size = 0
+                plex_data = _plex_cache.get(_norm(full_path), {})
+                if plex_data.get('plex_title'):
+                    title_key = (plex_data['plex_title'].strip().lower(), str(plex_data.get('plex_year', '')))
+                    plex_keyed.add(title_key)
+                else:
+                    title_key = parse_movie_title(file)
+                if not title_key[0]:
+                    continue
+                res = get_resolution_from_file(full_path)
+                groups.setdefault(title_key, []).append({
+                    'path': full_path,
+                    'filename': file,
+                    'size': size,
+                    'size_human': format_size(size),
+                    'resolution': res,
+                    'resolution_rank': get_resolution_rank_str(res),
+                    'rip_source': get_rip_source(file),
+                    'library_root': movies_dir,
+                })
+
+    for bad_key in [k for k in plex_keyed if len(groups.get(k, [])) > MAX_PLEX_GROUP]:
+        for entry in groups.pop(bad_key):
+            fallback_key = parse_movie_title(entry['filename'])
+            if fallback_key[0]:
+                groups.setdefault(fallback_key, []).append(entry)
+
+    duplicates = []
+    total_wasted = 0
+    for (title, year), files in groups.items():
+        if len(files) < 2:
+            continue
+        files_sorted = sorted(
+            files,
+            key=lambda x: (x['resolution_rank'], get_rip_rank(x['rip_source']), x['size']),
+            reverse=True
+        )
+        wasted = sum(f['size'] for f in files_sorted[1:])
+        total_wasted += wasted
+        display_title = title.title() + (f' ({year})' if year else '')
+        duplicates.append({
+            'title': display_title,
+            'files': files_sorted,
+            'wasted': wasted,
+            'wasted_human': format_size(wasted),
+        })
+    duplicates.sort(key=lambda x: x['title'])
+
+    extra_copies = sum(len(d['files']) - 1 for d in duplicates)
+    stats = {
+        'groups': len(duplicates),
+        'extra_copies': extra_copies,
+        'wasted_human': format_size(total_wasted),
+        'wasted_bytes': total_wasted,
+    }
+    return duplicates, stats
+
+
 def _auto_sync_plex(force=False):
     """Refresh _plex_cache if Plex is configured and cache is stale (>5 min). Silent on errors.
     Pass force=True to bypass the TTL and always fetch fresh data."""
@@ -365,6 +1015,34 @@ def _auto_sync_plex(force=False):
         _library_cache = {}  # Plex data refreshed — bust library cache so titles update
     except Exception:
         pass  # don't break scan if Plex is unreachable
+
+
+def _plex_person_list(item, field_name):
+    people = []
+    for person in item.get(field_name, []) or []:
+        name = person.get('tag') or person.get('title') or person.get('name') or ''
+        if not name:
+            continue
+        people.append({
+            'id': str(person.get('id', '') or ''),
+            'name': name,
+            'character': person.get('role', '') if field_name == 'Role' else '',
+            'profile_url': (
+                f"{_plex_url}{person.get('thumb')}?X-Plex-Token={_plex_token}"
+                if _plex_url and _plex_token and person.get('thumb') else ''
+            ),
+        })
+    return people
+
+
+def _extract_tmdb_id_from_plex_item(item):
+    ids = [item.get('guid', '')]
+    ids.extend(g.get('id', '') for g in item.get('Guid', []) or [])
+    for value in ids:
+        match = re.search(r'tmdb://(\d+)', str(value))
+        if match:
+            return match.group(1)
+    return ''
 
 
 def _fetch_plex_library():
@@ -405,6 +1083,9 @@ def _fetch_plex_library():
             summary     = item.get('summary', '')
             rating      = str(item.get('rating', '') or item.get('audienceRating', '') or '')
             thumb       = item.get('thumb', '')
+            tmdb_id     = _extract_tmdb_id_from_plex_item(item)
+            directors   = _plex_person_list(item, 'Director')
+            cast        = _plex_person_list(item, 'Role')[:7]
             is_local    = (not guid) or guid.startswith('local://')
             for media in item.get('Media', []):
                 for part in media.get('Part', []):
@@ -418,8 +1099,19 @@ def _fetch_plex_library():
                             # filename fallback — only store first hit to avoid collisions
                             unmatched_by_fname.setdefault(fname, entry)
                         else:
+                            lang = item.get('originalLanguage', '')
+                            countries_raw = [c['tag'] for c in item.get('Country', [])]
+                            lang_name    = _LANG_NAMES.get(lang, lang.upper() if lang else '')
+                            cc           = _LANG_COUNTRY.get(lang, '')
+                            flag         = _country_flag(cc) if cc else ''
                             entry = {'plex_title': title, 'plex_year': year, 'plex_genres': genres,
-                                     'plex_summary': summary, 'plex_rating': rating, 'plex_thumb': thumb}
+                                     'plex_summary': summary, 'plex_rating': rating, 'plex_thumb': thumb,
+                                     'plex_language': lang_name,
+                                     'plex_country_flag': flag,
+                                     'plex_country': countries_raw[0] if countries_raw else '',
+                                     'plex_directors': directors,
+                                     'plex_cast': cast,
+                                     'tmdb_id': tmdb_id}
                             matched[norm] = entry
                             matched_by_fname.setdefault(fname, entry)
     return matched, unmatched, matched_by_fname, unmatched_by_fname, movie_sections
@@ -427,7 +1119,33 @@ def _fetch_plex_library():
 
 @app.route('/')
 def index():
+    dist_index = os.path.join(_BASE_DIR, 'dist', 'index.html')
+    if os.path.exists(dist_index):
+        return send_from_directory(os.path.join(_BASE_DIR, 'dist'), 'index.html')
     return render_template('index.html')
+
+
+@app.route('/styleguide')
+def styleguide_index():
+    return index()
+
+
+@app.route('/library')
+@app.route('/cleanup')
+@app.route('/discover')
+@app.route('/settings')
+def react_section_index():
+    return index()
+
+
+@app.route('/legacy')
+def legacy_index():
+    return render_template('index.html')
+
+
+@app.route('/assets/<path:filename>')
+def vite_assets(filename):
+    return send_from_directory(os.path.join(_BASE_DIR, 'dist', 'assets'), filename)
 
 
 @app.route('/api/plex/config', methods=['GET'])
@@ -491,12 +1209,15 @@ def plex_image():
 
 @app.route('/api/plex/sync')
 def plex_sync():
-    global _plex_cache, _plex_unmatched, _plex_section_ids, _plex_cache_time
+    global _plex_cache, _plex_unmatched, _plex_matched_by_fname, _plex_unmatched_by_fname, \
+           _plex_section_ids, _plex_cache_time, _library_cache
     if not _plex_url or not _plex_token:
         return jsonify({'error': 'Plex not configured.'}), 400
     try:
-        _plex_cache, _plex_unmatched, _plex_section_ids = _fetch_plex_library()
+        _plex_cache, _plex_unmatched, _plex_matched_by_fname, _plex_unmatched_by_fname, \
+            _plex_section_ids = _fetch_plex_library()
         _plex_cache_time = time.time()
+        _library_cache = {}  # bust library cache so new language/country fields appear
         return jsonify({'success': True, 'cached': len(_plex_cache)})
     except urllib.error.HTTPError as e:
         if e.code == 401:
@@ -508,22 +1229,74 @@ def plex_sync():
 
 @app.route('/api/config', methods=['GET'])
 def get_config():
-    return jsonify({'directory': get_movies_dir()})
+    return jsonify({'directory': get_movies_dir(), 'directories': get_movies_dirs()})
 
 
 @app.route('/api/config', methods=['POST'])
 def set_config():
-    global _movies_dir, _library_cache
+    global _movies_dir, _movies_dirs, _library_cache
     data = request.get_json(silent=True)
-    if not data or 'directory' not in data:
+    if not data:
         return jsonify({'error': 'No directory provided'}), 400
-    new_dir = data['directory'].strip()
-    if not os.path.isdir(new_dir):
-        return jsonify({'error': f'Directory not found: {new_dir}'}), 400
-    _movies_dir = new_dir
+    if isinstance(data.get('directories'), list):
+        requested_dirs = [str(path or '').strip() for path in data.get('directories', []) if str(path or '').strip()]
+    elif 'directory' in data:
+        requested_dirs = [str(data.get('directory') or '').strip()]
+    else:
+        requested_dirs = []
+    if not requested_dirs:
+        return jsonify({'error': 'At least one movie directory is required'}), 400
+    normalized_dirs = []
+    seen = set()
+    for path in requested_dirs:
+        if not os.path.isdir(path):
+            return jsonify({'error': f'Directory not found: {path}'}), 400
+        norm = _norm(path)
+        if norm in seen:
+            continue
+        abs_path = os.path.abspath(path)
+        for existing in normalized_dirs:
+            abs_existing = os.path.abspath(existing)
+            try:
+                common = os.path.commonpath([abs_path, abs_existing])
+            except ValueError:
+                common = ''
+            if common == abs_existing or common == abs_path:
+                return jsonify({'error': f'Library folders cannot be nested: {path}'}), 400
+        seen.add(norm)
+        normalized_dirs.append(path)
+    _movies_dirs = normalized_dirs
+    _movies_dir = _movies_dirs[0]
     _library_cache = {}  # directory changed — bust library cache
     _save_config(_all_config())
-    return jsonify({'success': True, 'directory': _movies_dir})
+    return jsonify({'success': True, 'directory': _movies_dir, 'directories': get_movies_dirs()})
+
+
+@app.route('/api/app-data/config', methods=['GET', 'POST'])
+def app_data_config():
+    global _user_data_dir, _tmdb_cache_dir, _TMDB_CACHE_DIR, _TMDB_LIBRARY_CACHE_FILE, \
+           _TMDB_COLLECTION_CACHE_FILE, _tmdb_library_cache, _tmdb_collection_cache
+    if request.method == 'GET':
+        return jsonify({'user_data_dir': _user_data_dir, 'tmdb_cache_dir': _tmdb_cache_dir})
+    data = request.get_json(force=True, silent=True) or {}
+    user_dir = str(data.get('user_data_dir', _user_data_dir) or '').strip()
+    cache_dir = str(data.get('tmdb_cache_dir', _tmdb_cache_dir) or '').strip()
+    if not user_dir or not cache_dir:
+        return jsonify({'error': 'User data and TMDB cache folders are required'}), 400
+    try:
+        os.makedirs(user_dir, exist_ok=True)
+        os.makedirs(cache_dir, exist_ok=True)
+    except Exception as e:
+        return jsonify({'error': f'Cannot create folder: {e}'}), 400
+    _user_data_dir = user_dir
+    _tmdb_cache_dir = cache_dir
+    _TMDB_CACHE_DIR = _tmdb_cache_dir
+    _TMDB_LIBRARY_CACHE_FILE = os.path.join(_TMDB_CACHE_DIR, 'tmdb_library_cache.json')
+    _TMDB_COLLECTION_CACHE_FILE = os.path.join(_TMDB_CACHE_DIR, 'tmdb_collection_cache.json')
+    _tmdb_library_cache = _load_tmdb_library_cache()
+    _tmdb_collection_cache = _load_tmdb_collection_cache()
+    _save_config(_all_config())
+    return jsonify({'success': True, 'user_data_dir': _user_data_dir, 'tmdb_cache_dir': _tmdb_cache_dir})
 
 
 @app.route('/api/prowlarr/config', methods=['GET'])
@@ -632,7 +1405,7 @@ def prowlarr_search():
 def get_duplicates():
     try:
         _auto_sync_plex(force=request.args.get('force_plex') == '1')
-        duplicates, stats = scan_duplicates(get_movies_dir())
+        duplicates, stats = scan_duplicates(get_movies_dirs())
         for group in duplicates:
             for f in group['files']:
                 plex_data = _plex_cache.get(_norm(f['path']), {})
@@ -640,7 +1413,7 @@ def get_duplicates():
                 f['plex_year']    = plex_data.get('plex_year', '')
                 f['plex_genres']  = plex_data.get('plex_genres', [])
                 f['plex_matched'] = bool(plex_data)
-        return jsonify({'duplicates': duplicates, 'directory': get_movies_dir(), 'stats': stats,
+        return jsonify({'duplicates': duplicates, 'directory': get_movies_dir(), 'directories': get_movies_dirs(), 'stats': stats,
                         'plex_enabled': bool(_plex_token), 'plex_cached': len(_plex_cache) > 0})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -661,7 +1434,6 @@ def open_file():
 
 @app.route('/api/delete', methods=['POST'])
 def delete_file():
-    global _movies_dir
     data = request.get_json(silent=True)
     if not data or 'path' not in data:
         return jsonify({'error': 'No path provided'}), 400
@@ -669,10 +1441,10 @@ def delete_file():
     path = data['path']
     use_trash = data.get('trash', True)  # default: Recycle Bin
     abs_path = os.path.abspath(path)
-    abs_dir = os.path.abspath(get_movies_dir())
+    abs_dir = _path_library_root(abs_path)
 
-    # Security: only allow deleting files inside the configured movies directory
-    if not abs_path.startswith(abs_dir + os.sep) and abs_path != abs_dir:
+    # Security: only allow deleting files inside a configured movie directory
+    if not abs_dir:
         return jsonify({'error': 'Path is outside the allowed movies directory'}), 403
 
     if not os.path.isfile(abs_path):
@@ -726,72 +1498,78 @@ def library():
         # Serve from cache if still fresh and directory hasn't changed
         if (not force_plex
                 and _library_cache.get('items') is not None
-                and _library_cache.get('dir') == get_movies_dir()
+                and _library_cache.get('dir') == _library_cache_key()
                 and time.time() - _library_cache.get('time', 0) < _LIBRARY_TTL):
             c = _library_cache
             return jsonify({'items': c['items'], 'count': len(c['items']),
                             'plex_enabled': c['plex_enabled'], 'plex_cached': c['plex_cached'],
                             'cached': True})
-        movies_dir = get_movies_dir()
         _library_status = 'Scanning directory\u2026'
-        total = sum(1 for _, _, fs in os.walk(movies_dir)
-                    for f in fs if os.path.splitext(f)[1].lower() in VIDEO_EXTENSIONS)
+        total = sum(1 for _ in _iter_video_files())
         _library_status = f'Reading metadata for {total} files\u2026'
         items = []
         n = 0
-        for root, dirs, files in os.walk(movies_dir):
-            for file in files:
-                ext = os.path.splitext(file)[1].lower()
-                if ext not in VIDEO_EXTENSIONS:
-                    continue
-                n += 1
-                if n % 50 == 0:
-                    _library_status = f'Reading metadata\u2026 {n}\u00a0/\u00a0{total}'
-                full_path = os.path.join(root, file)
-                try:
-                    size = os.path.getsize(full_path)
-                except OSError:
-                    size = 0
-                res = get_resolution_from_file(full_path)
-                rip = get_rip_source(file)
-                title_key = parse_movie_title(file)
-                if not title_key[0]:
-                    continue
-                display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
-                norm_path = _norm(full_path)
-                plex_data = _plex_cache.get(norm_path, {})
-                plex_thumb = plex_data.get('plex_thumb', '')
-                plex_poster = (
-                    f"{_plex_url}{plex_thumb}?X-Plex-Token={_plex_token}"
-                    if _plex_url and _plex_token and plex_thumb else ''
-                )
-                items.append({
-                    'title': display_title,
-                    'filename': file,
-                    'path': full_path,
-                    'resolution': res,
-                    'resolution_rank': get_resolution_rank_str(res),
-                    'rip_source': rip,
-                    'rip_rank': get_rip_rank(rip),
-                    'size': size,
-                    'size_human': format_size(size),
-                    'plex_title': plex_data.get('plex_title', ''),
-                    'plex_year': plex_data.get('plex_year', ''),
-                    'plex_genres': plex_data.get('plex_genres', []),
-                    'plex_summary': plex_data.get('plex_summary', ''),
-                    'plex_rating': plex_data.get('plex_rating', ''),
-                    'plex_poster': plex_poster,
-                    'plex_matched': bool(plex_data),
-                })
+        for movies_dir, root, file, full_path in _iter_video_files():
+            n += 1
+            if n % 50 == 0:
+                _library_status = f'Reading metadata\u2026 {n}\u00a0/\u00a0{total}'
+            try:
+                size = os.path.getsize(full_path)
+                added_time = os.path.getctime(full_path)
+                modified_time = os.path.getmtime(full_path)
+            except OSError:
+                size = 0
+                added_time = 0
+                modified_time = 0
+            res = get_resolution_from_file(full_path)
+            rip = get_rip_source(file)
+            title_key = parse_movie_title(file)
+            if not title_key[0]:
+                continue
+            display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
+            norm_path = _norm(full_path)
+            plex_data = _plex_cache.get(norm_path, {})
+            plex_thumb = plex_data.get('plex_thumb', '')
+            plex_poster = (
+                f"{_plex_url}{plex_thumb}?X-Plex-Token={_plex_token}"
+                if _plex_url and _plex_token and plex_thumb else ''
+            )
+            items.append({
+                'title': display_title,
+                'filename': file,
+                'path': full_path,
+                'library_root': movies_dir,
+                'resolution': res,
+                'resolution_rank': get_resolution_rank_str(res),
+                'rip_source': rip,
+                'rip_rank': get_rip_rank(rip),
+                'size': size,
+                'size_human': format_size(size),
+                'added_time': added_time,
+                'modified_time': modified_time,
+                'plex_title': plex_data.get('plex_title', ''),
+                'plex_year': plex_data.get('plex_year', ''),
+                'plex_genres': plex_data.get('plex_genres', []),
+                'plex_summary': plex_data.get('plex_summary', ''),
+                'plex_rating': plex_data.get('plex_rating', ''),
+                'plex_language': plex_data.get('plex_language', ''),
+                'plex_country_flag': plex_data.get('plex_country_flag', ''),
+                'plex_country': plex_data.get('plex_country', ''),
+                'plex_directors': plex_data.get('plex_directors', []),
+                'plex_cast': plex_data.get('plex_cast', []),
+                'tmdb_id': plex_data.get('tmdb_id', ''),
+                'plex_poster': plex_poster,
+                'plex_matched': bool(plex_data),
+            })
         _library_status = 'Sorting results\u2026'
-        items.sort(key=lambda x: x['title'])
+        items.sort(key=lambda x: (-float(x.get('added_time') or 0), x['title']))
         _library_status = ''
         _save_res_cache()
         _library_cache['items'] = items
         _library_cache['plex_enabled'] = bool(_plex_token)
         _library_cache['plex_cached'] = len(_plex_cache) > 0
         _library_cache['time'] = time.time()
-        _library_cache['dir'] = movies_dir
+        _library_cache['dir'] = _library_cache_key()
         return jsonify({'items': items, 'count': len(items),
                         'plex_enabled': bool(_plex_token), 'plex_cached': len(_plex_cache) > 0})
     except Exception as e:
@@ -827,8 +1605,8 @@ def library_check():
         if not queries:
             return jsonify({'results': []})
 
-        movies_dir = get_movies_dir()
-        if not movies_dir or not os.path.isdir(movies_dir):
+        cache_key = _library_cache_key()
+        if not any(True for _ in _iter_movie_roots()):
             return jsonify({'results': [
                 {'title': q.get('title', ''), 'year': str(q.get('year', '')),
                  'found': False, 'path': '', 'resolution': '', 'size_human': ''}
@@ -841,44 +1619,53 @@ def library_check():
         lookup = {}  # (norm_title, norm_year) -> {path, resolution, size_human}
 
         if (_library_cache.get('items') is not None
-                and _library_cache.get('dir') == movies_dir
+                and _library_cache.get('dir') == cache_key
                 and time.time() - _library_cache.get('time', 0) < _LIBRARY_TTL):
             items_src = _library_cache['items']
         else:
             # Light scan: just filenames + plex cache, no resolution probing
             items_src = []
-            for root, _, files in os.walk(movies_dir):
-                for file in files:
-                    ext = os.path.splitext(file)[1].lower()
-                    if ext not in VIDEO_EXTENSIONS:
-                        continue
-                    full_path = os.path.join(root, file)
-                    try:
-                        size = os.path.getsize(full_path)
-                    except OSError:
-                        size = 0
-                    res = get_resolution_from_file(full_path)
-                    parsed_title, parsed_year = parse_movie_title(file)
-                    norm_path = _norm(full_path)
-                    plex_data = _plex_cache.get(norm_path, {})
-                    items_src.append({
-                        'path': full_path,
-                        'resolution': res,
-                        'size_human': format_size(size),
-                        'plex_title': plex_data.get('plex_title', ''),
-                        'plex_year': str(plex_data.get('plex_year', '')),
-                        'plex_matched': bool(plex_data),
-                        '_parsed_title': parsed_title,
-                        '_parsed_year': parsed_year,
-                    })
+            for _, _, file, full_path in _iter_video_files():
+                try:
+                    size = os.path.getsize(full_path)
+                except OSError:
+                    size = 0
+                # Ownership checks must stay fast. Use filename-derived
+                # resolution for duplicate ranking, then probe only the
+                # matched file before returning it.
+                res = get_resolution(file)
+                parsed_title, parsed_year = parse_movie_title(file)
+                norm_path = _norm(full_path)
+                plex_data = _plex_cache.get(norm_path, {})
+                items_src.append({
+                    'path': full_path,
+                    'resolution': res,
+                    'size_human': format_size(size),
+                    'plex_title': plex_data.get('plex_title', ''),
+                    'plex_year': str(plex_data.get('plex_year', '')),
+                    'plex_matched': bool(plex_data),
+                    '_parsed_title': parsed_title,
+                    '_parsed_year': parsed_year,
+                })
 
         for item in items_src:
+            path = item.get('path', '')
+            if not path or not os.path.isfile(path):
+                continue
+            parsed_title = item.get('_parsed_title')
+            parsed_year = item.get('_parsed_year')
+            if (not parsed_title or parsed_year is None) and item.get('filename'):
+                parsed_title, parsed_year = parse_movie_title(item['filename'])
+            if not parsed_title and item.get('title'):
+                display_title, display_year = parse_movie_title(item['title'])
+                parsed_title = display_title or item.get('title', '')
+                parsed_year = parsed_year or display_year
             # Prefer Plex-matched title/year as primary key
             if item.get('plex_matched') and item.get('plex_title'):
                 key = (_norm_title(item['plex_title']), str(item.get('plex_year', '')).strip())
             else:
-                key = (_norm_title(item.get('_parsed_title') or item.get('title', '')),
-                       str(item.get('_parsed_year') or '').strip())
+                key = (_norm_title(parsed_title or ''),
+                       str(parsed_year or '').strip())
             # Keep the highest-resolution copy per title
             existing = lookup.get(key)
             cur_rank = get_resolution_rank_str(item['resolution'])
@@ -893,21 +1680,23 @@ def library_check():
         for q in queries:
             qt = _norm_title(q.get('title', ''))
             qy = str(q.get('year', '')).strip()
-            # Try with year first, then without (year may be off by 1 from TMDB)
+            # Try exact title+year first. Only fall back to title-only when the
+            # query itself has no year; otherwise remakes/upcoming films can
+            # false-match older local files.
             match = lookup.get((qt, qy))
-            if match is None:
-                # year-agnostic fallback
+            if match is None and not qy:
                 for (kt, ky), v in lookup.items():
                     if kt == qt:
                         match = v
                         break
-            if match:
+            if match and match.get('path') and os.path.isfile(match['path']):
+                match_resolution = get_resolution_from_file(match['path'])
                 results.append({
                     'title': q.get('title', ''),
                     'year': q.get('year', ''),
                     'found': True,
                     'path': match['path'],
-                    'resolution': match['resolution'],
+                    'resolution': match_resolution,
                     'size_human': match['size_human'],
                 })
             else:
@@ -930,43 +1719,37 @@ def low_quality():
     MIN_RES_RANK = 3   # 1080p — only files BELOW this rank are flagged
     try:
         _auto_sync_plex(force=request.args.get('force_plex') == '1')
-        movies_dir = get_movies_dir()
         items = []
-        for root, dirs, files in os.walk(movies_dir):
-            for file in files:
-                ext = os.path.splitext(file)[1].lower()
-                if ext not in VIDEO_EXTENSIONS:
-                    continue
-                full_path = os.path.join(root, file)
-                try:
-                    size = os.path.getsize(full_path)
-                except OSError:
-                    size = 0
-                res = get_resolution_from_file(full_path)
-                res_rank = get_resolution_rank_str(res)
-                rip = get_rip_source(file)
-                rip_rank = get_rip_rank(rip)
-                title_key = parse_movie_title(file)
-                if not title_key[0]:
-                    continue
-                is_low = res_rank < MIN_RES_RANK
-                if is_low:
-                    display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
-                    norm_path = _norm(full_path)
-                    plex_data = _plex_cache.get(norm_path, {})
-                    items.append({
-                        'title': display_title,
-                        'filename': file,
-                        'path': full_path,
-                        'resolution': res,
-                        'rip_source': rip,
-                        'size': size,
-                        'size_human': format_size(size),
-                        'plex_title': plex_data.get('plex_title', ''),
-                        'plex_year': plex_data.get('plex_year', ''),
-                        'plex_genres': plex_data.get('plex_genres', []),
-                        'plex_matched': bool(plex_data),
-                    })
+        for movies_dir, root, file, full_path in _iter_video_files():
+            try:
+                size = os.path.getsize(full_path)
+            except OSError:
+                size = 0
+            res = get_resolution_from_file(full_path)
+            res_rank = get_resolution_rank_str(res)
+            rip = get_rip_source(file)
+            title_key = parse_movie_title(file)
+            if not title_key[0]:
+                continue
+            is_low = res_rank < MIN_RES_RANK
+            if is_low:
+                display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
+                norm_path = _norm(full_path)
+                plex_data = _plex_cache.get(norm_path, {})
+                items.append({
+                    'title': display_title,
+                    'filename': file,
+                    'path': full_path,
+                    'library_root': movies_dir,
+                    'resolution': res,
+                    'rip_source': rip,
+                    'size': size,
+                    'size_human': format_size(size),
+                    'plex_title': plex_data.get('plex_title', ''),
+                    'plex_year': plex_data.get('plex_year', ''),
+                    'plex_genres': plex_data.get('plex_genres', []),
+                    'plex_matched': bool(plex_data),
+                })
         items.sort(key=lambda x: x['title'])
         return jsonify({'items': items, 'count': len(items),
                         'plex_enabled': bool(_plex_token), 'plex_cached': len(_plex_cache) > 0})
@@ -977,7 +1760,7 @@ def low_quality():
 @app.route('/api/smart-scan')
 def smart_scan():
     try:
-        duplicates, _ = scan_duplicates(get_movies_dir())
+        duplicates, _ = scan_duplicates(get_movies_dirs())
         recommendations = []
 
         for group in duplicates:
@@ -1046,7 +1829,6 @@ def smart_scan():
 def library_stats():
     try:
         _auto_sync_plex(force=request.args.get('force_plex') == '1')
-        movies_dir = get_movies_dir()
         all_files = []
         title_set = set()
         by_resolution = {}
@@ -1054,52 +1836,45 @@ def library_stats():
         by_decade = {}
         RES_RANK = {'4K': 4, '1080p': 3, '720p': 2, '480p': 1, 'Unknown': 0}
 
-        for root, dirs, files in os.walk(movies_dir):
-            for file in files:
-                ext = os.path.splitext(file)[1].lower()
-                if ext not in VIDEO_EXTENSIONS:
-                    continue
-                full_path = os.path.join(root, file)
+        for movies_dir, root, file, full_path in _iter_video_files():
+            try:
+                size = os.path.getsize(full_path)
+            except OSError:
+                size = 0
+            res = get_resolution_from_file(full_path)
+            rip = get_rip_source(file)
+            title_key = parse_movie_title(file)
+            if not title_key[0]:
+                continue
+            title_set.add(title_key)
+            display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
+            all_files.append({
+                'title': display_title,
+                'path': full_path,
+                'library_root': movies_dir,
+                'size': size,
+                'size_human': format_size(size),
+                'resolution': res,
+                'rip_source': rip,
+                'year': title_key[1],
+            })
+            br = by_resolution.setdefault(res, {'count': 0, 'size': 0})
+            br['count'] += 1
+            br['size'] += size
+            bs = by_source.setdefault(rip, {'count': 0, 'size': 0})
+            bs['count'] += 1
+            bs['size'] += size
+            if title_key[1]:
                 try:
-                    size = os.path.getsize(full_path)
-                except OSError:
-                    size = 0
-                res = get_resolution_from_file(full_path)
-                rip = get_rip_source(file)
-                title_key = parse_movie_title(file)
-                if not title_key[0]:
-                    continue
-                title_set.add(title_key)
-                display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
-                all_files.append({
-                    'title': display_title,
-                    'path': full_path,
-                    'size': size,
-                    'size_human': format_size(size),
-                    'resolution': res,
-                    'rip_source': rip,
-                    'year': title_key[1],
-                })
-                # by resolution
-                br = by_resolution.setdefault(res, {'count': 0, 'size': 0})
-                br['count'] += 1
-                br['size'] += size
-                # by source
-                bs = by_source.setdefault(rip, {'count': 0, 'size': 0})
-                bs['count'] += 1
-                bs['size'] += size
-                # by decade
-                if title_key[1]:
-                    try:
-                        decade = f"{(int(title_key[1]) // 10) * 10}s"
-                    except ValueError:
-                        decade = 'Unknown'
-                else:
+                    decade = f"{(int(title_key[1]) // 10) * 10}s"
+                except ValueError:
                     decade = 'Unknown'
-                by_decade[decade] = by_decade.get(decade, 0) + 1
+            else:
+                decade = 'Unknown'
+            by_decade[decade] = by_decade.get(decade, 0) + 1
 
         # Duplicates
-        duplicates, dup_stats = scan_duplicates(movies_dir)
+        duplicates, dup_stats = scan_duplicates(get_movies_dirs())
 
         # Low quality count
         lq_count = sum(1 for f in all_files if RES_RANK.get(f['resolution'], 0) < 3)
@@ -1173,9 +1948,8 @@ def _fmt_size(n):
 def fix_unmatched():
     try:
         _auto_sync_plex(force=request.args.get('force_plex') == '1')
-        movies_dir = get_movies_dir()
         items = []
-        for root, dirs, files in os.walk(movies_dir):
+        for movies_dir, root, dirs, files in _walk_movie_dirs():
             for file in files:
                 ext = os.path.splitext(file)[1].lower()
                 if ext not in VIDEO_EXTENSIONS:
@@ -1214,6 +1988,7 @@ def fix_unmatched():
                 items.append({
                     'filename': file,
                     'path': full_path,
+                    'library_root': movies_dir,
                     'suggested_title': suggested_title,
                     'suggested_year':  suggested_year,
                     'suggested_name':  suggested_name,
@@ -1248,8 +2023,8 @@ def rename_file():
         return jsonify({'error': 'Title is required'}), 400
 
     abs_old = os.path.abspath(old_path)
-    abs_dir = os.path.abspath(get_movies_dir())
-    if not abs_old.startswith(abs_dir + os.sep):
+    abs_dir = _path_library_root(abs_old)
+    if not abs_dir:
         return jsonify({'error': 'Path is outside the allowed movies directory'}), 403
     if not os.path.isfile(abs_old):
         return jsonify({'error': 'File not found'}), 404
@@ -1308,8 +2083,8 @@ def fix_path():
         return jsonify({'error': 'No path provided'}), 400
 
     abs_path = os.path.abspath(data['path'])
-    abs_dir  = os.path.abspath(get_movies_dir())
-    if not abs_path.startswith(abs_dir + os.sep):
+    abs_dir  = _path_library_root(abs_path)
+    if not abs_dir:
         return jsonify({'error': 'Path is outside the allowed movies directory'}), 403
     if not os.path.isfile(abs_path):
         return jsonify({'error': 'File not found'}), 404
@@ -1883,6 +2658,350 @@ def tmdb_search():
         return jsonify({'error': str(e)}), 500
 
 
+def _normalize_tmdb_person(person, include_character=False):
+    name = person.get('name', '')
+    if not name:
+        return None
+    result = {
+        'id': str(person.get('id', '') or ''),
+        'name': name,
+        'profile_url': _tmdb_image_url(person.get('profile_path')),
+    }
+    if include_character:
+        result['character'] = person.get('character', '')
+    return result
+
+
+def _normalize_tmdb_details_payload(data):
+    directors = []
+    for person in data.get('credits', {}).get('crew', []) or []:
+        if person.get('job') != 'Director':
+            continue
+        normalized = _normalize_tmdb_person(person)
+        if normalized:
+            directors.append(normalized)
+
+    cast = []
+    for person in (data.get('credits', {}).get('cast', []) or [])[:7]:
+        normalized = _normalize_tmdb_person(person, include_character=True)
+        if normalized:
+            cast.append(normalized)
+
+    collection = {}
+    raw_collection = data.get('belongs_to_collection') or {}
+    if raw_collection.get('id') and raw_collection.get('name'):
+        collection = {
+            'id': str(raw_collection.get('id')),
+            'name': raw_collection.get('name', ''),
+            'poster_url': _tmdb_image_url(raw_collection.get('poster_path')),
+            'backdrop_url': _tmdb_image_url(raw_collection.get('backdrop_path'), 'w780'),
+        }
+
+    trailer_url = ''
+    videos = data.get('videos', {}).get('results', []) or []
+    official_trailers = [
+        v for v in videos
+        if v.get('site') == 'YouTube'
+        and v.get('type') == 'Trailer'
+        and v.get('key')
+        and v.get('official', False)
+    ]
+    trailer = official_trailers[0] if official_trailers else next(
+        (v for v in videos if v.get('site') == 'YouTube' and v.get('type') == 'Trailer' and v.get('key')),
+        None
+    )
+    if trailer:
+        trailer_url = f"https://www.youtube.com/watch?v={trailer.get('key')}"
+
+    return {
+        'director': directors[0] if directors else {},
+        'directors': directors,
+        'cast': cast,
+        'collection': collection,
+        'trailer_url': trailer_url,
+        'runtime': data.get('runtime'),
+        'tagline': data.get('tagline', ''),
+    }
+
+
+def _normalize_tmdb_movie_summary(movie, fallback_title='', fallback_year=''):
+    poster_path = movie.get('poster_path', '')
+    release = movie.get('release_date', '') or ''
+    year = release[:4] if release else fallback_year
+    genre_ids = movie.get('genre_ids', []) or []
+    genres = [_tmdb_genres[gid] for gid in genre_ids if gid in _tmdb_genres][:3]
+    vote = movie.get('vote_average', 0)
+    lang = movie.get('original_language', '')
+    country_code = _LANG_COUNTRY.get(lang, '')
+    return {
+        'tmdb_id': str(movie.get('id', '') or ''),
+        'title': movie.get('title') or movie.get('name') or fallback_title,
+        'year': year,
+        'poster_url': _tmdb_image_url(poster_path, 'w342'),
+        'genres': genres,
+        'tmdb_rating': f"{vote:.1f}" if isinstance(vote, (int, float)) and vote else '',
+        'plot': movie.get('overview', ''),
+        'language': _LANG_NAMES.get(lang, lang.upper() if lang else ''),
+        'country': country_code,
+        'country_flag': _country_flag(country_code),
+        'release_date': release,
+    }
+
+
+def _normalize_tmdb_collection_payload(data):
+    parts = []
+    for movie in data.get('parts', []) or []:
+        parts.append(_normalize_tmdb_movie_summary(movie))
+    parts.sort(key=lambda item: item.get('release_date') or item.get('year') or '')
+    return {
+        'id': str(data.get('id', '') or ''),
+        'name': data.get('name', ''),
+        'poster_url': _tmdb_image_url(data.get('poster_path')),
+        'backdrop_url': _tmdb_image_url(data.get('backdrop_path'), 'w780'),
+        'parts': parts,
+    }
+
+
+@app.route('/api/tmdb/person_movies')
+def tmdb_person_movies():
+    person_id = request.args.get('person_id', '').strip()
+    role = request.args.get('role', 'actor').strip().lower()
+    if role not in ('actor', 'director'):
+        role = 'actor'
+    if not person_id or not _tmdb_key:
+        return jsonify({'error': 'person_id and TMDB key required'}), 400
+    try:
+        page = max(1, min(int(request.args.get('page', '1')), 10))
+    except ValueError:
+        page = 1
+    _ensure_tmdb_genres()
+    try:
+        safe_id = urllib.parse.quote(str(person_id))
+        url = (f"https://api.themoviedb.org/3/person/{safe_id}/movie_credits"
+               f"?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US")
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            raw = _json.loads(resp.read().decode())
+
+        credits = raw.get('cast', []) or []
+        if role == 'director':
+            credits = [
+                item for item in (raw.get('crew', []) or [])
+                if item.get('job') == 'Director'
+            ]
+
+        movies = []
+        seen = set()
+        for item in credits:
+            tmdb_id = str(item.get('id', '') or '')
+            if not tmdb_id or tmdb_id in seen:
+                continue
+            seen.add(tmdb_id)
+            movies.append(_normalize_tmdb_movie_summary(item))
+
+        movies.sort(key=lambda item: (
+            float(next((raw_item.get('popularity', 0) for raw_item in credits if str(raw_item.get('id', '') or '') == item.get('tmdb_id')), 0) or 0),
+            item.get('release_date') or ''
+        ), reverse=True)
+
+        page_size = 20
+        total_results = len(movies)
+        total_pages = min(max(1, (total_results + page_size - 1) // page_size), 10)
+        start = (page - 1) * page_size
+        end = start + page_size
+        return jsonify({
+            'results': movies[start:end],
+            'total_pages': total_pages,
+            'page': page,
+            'total_results': total_results,
+            'role': role,
+            'person_id': person_id,
+        })
+    except urllib.error.HTTPError as e:
+        if e.code == 401:
+            return jsonify({'error': 'Invalid TMDB API key — check Settings.'}), 401
+        return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/tmdb/details')
+def tmdb_details():
+    global _tmdb_library_cache
+    tmdb_id = request.args.get('tmdb_id', '').strip()
+    refresh = request.args.get('refresh') == '1'
+    if not tmdb_id or not _tmdb_key:
+        return jsonify({'error': 'tmdb_id and TMDB key required'}), 400
+    try:
+        cached = _tmdb_library_cache.get(str(tmdb_id))
+        if cached and not refresh:
+            data = dict(cached.get('data', {}))
+            data['cached'] = True
+            data['fetched_at'] = cached.get('fetched_at', 0)
+            return jsonify(data)
+
+        safe_id = urllib.parse.quote(str(tmdb_id))
+        url = (f"https://api.themoviedb.org/3/movie/{safe_id}"
+               f"?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US"
+               f"&append_to_response=credits,videos")
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            raw = _json.loads(resp.read().decode())
+
+        details = _normalize_tmdb_details_payload(raw)
+        details['tmdb_id'] = str(tmdb_id)
+        fetched_at = time.time()
+        _tmdb_library_cache[str(tmdb_id)] = {'fetched_at': fetched_at, 'data': details}
+        _save_tmdb_library_cache(_tmdb_library_cache)
+        result = dict(details)
+        result['cached'] = False
+        result['fetched_at'] = fetched_at
+        return jsonify(result)
+    except urllib.error.HTTPError as e:
+        return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/tmdb/collection')
+def tmdb_collection():
+    global _tmdb_collection_cache
+    collection_id = request.args.get('collection_id', '').strip()
+    refresh = request.args.get('refresh') == '1'
+    if not collection_id or not _tmdb_key:
+        return jsonify({'error': 'collection_id and TMDB key required'}), 400
+    try:
+        cached = _tmdb_collection_cache.get(str(collection_id))
+        if cached and not refresh:
+            data = _curation_store().effective_collection(dict(cached.get('data', {})))
+            data['cached'] = True
+            data['fetched_at'] = cached.get('fetched_at', 0)
+            return jsonify(data)
+
+        safe_id = urllib.parse.quote(str(collection_id))
+        url = (f"https://api.themoviedb.org/3/collection/{safe_id}"
+               f"?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US")
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            raw = _json.loads(resp.read().decode())
+
+        tmdb_details = _normalize_tmdb_collection_payload(raw)
+        fetched_at = time.time()
+        _tmdb_collection_cache[str(collection_id)] = {'fetched_at': fetched_at, 'data': tmdb_details}
+        _save_tmdb_collection_cache(_tmdb_collection_cache)
+        result = _curation_store().effective_collection(tmdb_details)
+        result['cached'] = False
+        result['fetched_at'] = fetched_at
+        return jsonify(result)
+    except urllib.error.HTTPError as e:
+        return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/user/collection', methods=['POST'])
+def save_user_collection():
+    body = request.get_json(force=True, silent=True) or {}
+    collection_id = str(body.get('collection_id', '') or '').strip()
+    original = body.get('original') or {}
+    parts = body.get('parts') or []
+    if not collection_id or not original.get('name'):
+        return jsonify({'error': 'collection_id and original collection are required'}), 400
+    try:
+        return jsonify(_curation_store().save_collection_override(collection_id, original, parts))
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/user/collection/<collection_id>/reset', methods=['POST'])
+def reset_user_collection(collection_id):
+    try:
+        reset = _curation_store().reset_collection(collection_id)
+        return jsonify({'success': True, 'reset': reset})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/user/followed-releases', methods=['GET', 'POST', 'DELETE'])
+def user_followed_releases():
+    store = _curation_store()
+    if request.method == 'GET':
+        if request.args.get('check') == '1':
+            return jsonify(_check_followed_releases())
+        return jsonify({'movies': _sort_followed_releases(store.followed_all())})
+    body = request.get_json(force=True, silent=True) or {}
+    movie = body.get('movie') or body
+    try:
+        if request.method == 'POST':
+            followed = store.follow_movie(movie)
+            return jsonify({'movie': followed, 'movies': _sort_followed_releases(store.followed_all())})
+        removed = store.unfollow_movie(movie)
+        return jsonify({'success': True, 'removed': removed, 'movies': _sort_followed_releases(store.followed_all())})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/user/followed-releases/check', methods=['POST'])
+def check_user_followed_releases():
+    try:
+        return jsonify(_check_followed_releases())
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/user/lists', methods=['GET', 'POST'])
+def user_lists():
+    store = _curation_store()
+    if request.method == 'GET':
+        movie = {
+            'tmdb_id': request.args.get('tmdb_id', ''),
+            'title': request.args.get('title', ''),
+            'year': request.args.get('year', ''),
+            'path': request.args.get('path', ''),
+        }
+        result = {'lists': store.list_all()}
+        if any(movie.values()):
+            result['movie_lists'] = store.lists_for_movie(movie)
+        return jsonify(result)
+    body = request.get_json(force=True, silent=True) or {}
+    try:
+        return jsonify(store.create_list(body.get('name', '')))
+    except ValueError as e:
+        return jsonify({'error': str(e)}), 400
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/user/lists/<list_id>', methods=['PATCH', 'DELETE'])
+def user_list_detail(list_id):
+    store = _curation_store()
+    try:
+        if request.method == 'DELETE':
+            return jsonify({'success': True, 'deleted': store.delete_list(list_id)})
+        body = request.get_json(force=True, silent=True) or {}
+        return jsonify(store.rename_list(list_id, body.get('name', '')))
+    except ValueError as e:
+        return jsonify({'error': str(e)}), 400
+    except KeyError:
+        return jsonify({'error': 'List not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/user/lists/<list_id>/movies', methods=['POST', 'DELETE'])
+def user_list_movies(list_id):
+    body = request.get_json(force=True, silent=True) or {}
+    movie = body.get('movie') or body
+    try:
+        if request.method == 'POST':
+            return jsonify(_curation_store().add_movie_to_list(list_id, movie))
+        return jsonify(_curation_store().remove_movie_from_list(list_id, movie))
+    except KeyError:
+        return jsonify({'error': 'List not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/api/tmdb/imdb_id')
 def tmdb_imdb_id():
     tmdb_id = request.args.get('tmdb_id', '').strip()
@@ -1996,7 +3115,7 @@ def ollama_recommend():
         'The user will describe a movie or what they want to watch by mood, memory, feeling, actors, or any detail. '
         'Return ONLY valid JSON with this exact shape: '
         '{"recommendations":[{"title":"...","year":"...","reason":"one sentence why this matches"}]}. '
-        'Give exactly 5 recommendations. '
+        'Give exactly 10 recommendations. '
         'No markdown, no explanation, no extra text — only the JSON object.'
     )
 

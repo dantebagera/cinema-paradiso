@@ -9,6 +9,9 @@ dist/
 build/
 .eggs/
 
+# Frontend dependencies
+node_modules/
+
 # Virtual environments
 venv/
 .venv/
@@ -16,6 +19,9 @@ env/
 
 # App data (user-specific, not committed)
 config.json
+res_cache.json
+cache/
+data/
 
 # Chromium profile data
 _cf_profile/

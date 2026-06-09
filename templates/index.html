@@ -1328,6 +1328,36 @@
       <select id="lib-filter-res" onchange="applyLibFilters()"><option value="">All</option></select>
       <label>Source:</label>
       <select id="lib-filter-rip" onchange="applyLibFilters()"><option value="">All</option></select>
+      <label>Genre:</label>
+      <select id="lib-filter-genre" onchange="applyLibFilters()"><option value="">All</option></select>
+      <label>Decade:</label>
+      <select id="lib-filter-decade" onchange="applyLibFilters()">
+        <option value="">All</option>
+        <option value="2020">2020s</option>
+        <option value="2010">2010s</option>
+        <option value="2000">2000s</option>
+        <option value="1990">1990s</option>
+        <option value="1980">1980s</option>
+        <option value="1970">1970s</option>
+        <option value="1960">1960s</option>
+        <option value="1950">1950s</option>
+        <option value="1940">1940s &amp; earlier</option>
+      </select>
+      <label>Rating:</label>
+      <select id="lib-filter-rating" onchange="applyLibFilters()">
+        <option value="">All</option>
+        <option value="9">9+</option>
+        <option value="8">8+</option>
+        <option value="7">7+</option>
+        <option value="6">6+</option>
+        <option value="5">5+</option>
+        <option value="0">Rated</option>
+        <option value="unrated">Unrated</option>
+      </select>
+      <label>Language:</label>
+      <select id="lib-filter-lang" onchange="applyLibFilters()"><option value="">All</option></select>
+      <label>Country:</label>
+      <select id="lib-filter-country" onchange="applyLibFilters()"><option value="">All</option></select>
       <label>Plex:</label>
       <select id="lib-filter-plex" onchange="applyLibFilters()">
         <option value="">All</option>
@@ -1344,6 +1374,10 @@
         <option value="res-asc">Resolution (worst)</option>
         <option value="rip-desc">Source (best)</option>
         <option value="rip-asc">Source (worst)</option>
+        <option value="rating-desc">Rating (best)</option>
+        <option value="rating-asc">Rating (worst)</option>
+        <option value="year-desc">Year (newest)</option>
+        <option value="year-asc">Year (oldest)</option>
       </select>
     </div>
     <div class="panel-select-bar" id="lib-select-bar">
@@ -1597,6 +1631,10 @@
         <div class="asr-sub">Bypass 5-min cache — fetch fresh Plex data every time you open a panel</div>
       </div>
     </label>
+    <div class="settings-btn-row" style="margin-top:10px">
+      <button class="btn-settings-save" id="plex-resync-btn" onclick="plexResyncNow()">🔄 Re-sync Now</button>
+      <span id="plex-resync-status" class="settings-status" style="margin-left:10px"></span>
+    </div>
   </div>
 </div>
 
@@ -2600,12 +2638,21 @@
   }
 
   function populateLibFilters(items) {
-    const resVals = [...new Set(items.map(it => it.resolution))].sort();
-    const ripVals = [...new Set(items.map(it => it.rip_source))].sort();
-    const resEl = document.getElementById('lib-filter-res');
-    const ripEl = document.getElementById('lib-filter-rip');
-    resEl.innerHTML = '<option value="">All</option>' + resVals.map(v => `<option value="${v}">${v}</option>`).join('');
-    ripEl.innerHTML = '<option value="">All</option>' + ripVals.map(v => `<option value="${v}">${v}</option>`).join('');
+    const resVals  = [...new Set(items.map(it => it.resolution))].sort();
+    const ripVals  = [...new Set(items.map(it => it.rip_source))].sort();
+    const genres   = [...new Set(items.flatMap(it => it.plex_genres || []))].sort();
+    const langs    = [...new Set(items.map(it => it.plex_language).filter(Boolean))].sort();
+    const countries= [...new Set(items.map(it => it.plex_country).filter(Boolean))].sort();
+    document.getElementById('lib-filter-res').innerHTML =
+      '<option value="">All</option>' + resVals.map(v => `<option value="${escHtml(v)}">${escHtml(v)}</option>`).join('');
+    document.getElementById('lib-filter-rip').innerHTML =
+      '<option value="">All</option>' + ripVals.map(v => `<option value="${escHtml(v)}">${escHtml(v)}</option>`).join('');
+    document.getElementById('lib-filter-genre').innerHTML =
+      '<option value="">All</option>' + genres.map(v => `<option value="${escHtml(v)}">${escHtml(v)}</option>`).join('');
+    document.getElementById('lib-filter-lang').innerHTML =
+      '<option value="">All</option>' + langs.map(v => `<option value="${escHtml(v)}">${escHtml(v)}</option>`).join('');
+    document.getElementById('lib-filter-country').innerHTML =
+      '<option value="">All</option>' + countries.map(v => `<option value="${escHtml(v)}">${escHtml(v)}</option>`).join('');
   }
 
   let _libFilterTimer = null;
@@ -2614,26 +2661,48 @@
     _libFilterTimer = setTimeout(_doApplyLibFilters, 80);
   }
   function _doApplyLibFilters() {
-    const q      = document.getElementById('lib-search').value.trim().toLowerCase();
-    const resF   = document.getElementById('lib-filter-res').value;
-    const ripF   = document.getElementById('lib-filter-rip').value;
-    const plexF  = document.getElementById('lib-filter-plex').value;
-    const sortBy = document.getElementById('lib-sort').value;
+    const q        = document.getElementById('lib-search').value.trim().toLowerCase();
+    const resF     = document.getElementById('lib-filter-res').value;
+    const ripF     = document.getElementById('lib-filter-rip').value;
+    const plexF    = document.getElementById('lib-filter-plex').value;
+    const genreF   = document.getElementById('lib-filter-genre').value;
+    const decadeF  = document.getElementById('lib-filter-decade').value;
+    const ratingF  = document.getElementById('lib-filter-rating').value;
+    const langF    = document.getElementById('lib-filter-lang').value;
+    const countryF = document.getElementById('lib-filter-country').value;
+    const sortBy   = document.getElementById('lib-sort').value;
 
-    let filtered = libItems.filter(it =>
-      (!q    || it.title.toLowerCase().includes(q) || it.filename.toLowerCase().includes(q)) &&
-      (!resF || it.resolution === resF) &&
-      (!ripF || it.rip_source === ripF) &&
-      (!plexF || (plexF === 'matched' ? it.plex_matched : !it.plex_matched))
-    );
+    let filtered = libItems.filter(it => {
+      if (q    && !it.title.toLowerCase().includes(q) && !it.filename.toLowerCase().includes(q)) return false;
+      if (resF && it.resolution !== resF) return false;
+      if (ripF && it.rip_source !== ripF) return false;
+      if (plexF && (plexF === 'matched' ? !it.plex_matched : it.plex_matched)) return false;
+      if (genreF && !(it.plex_genres || []).includes(genreF)) return false;
+      if (decadeF) {
+        const yr = parseInt(it.plex_year || (it.title.match(/\((\d{4})\)/) || [])[1] || 0, 10);
+        const d  = parseInt(decadeF, 10);
+        if (d === 1940) { if (yr > 1949 || yr === 0) return false; }
+        else { if (Math.floor(yr / 10) * 10 !== d) return false; }
+      }
+      if (ratingF) {
+        const r = parseFloat(it.plex_rating || '');
+        if (ratingF === 'unrated') { if (!isNaN(r)) return false; }
+        else { if (isNaN(r) || r < parseFloat(ratingF)) return false; }
+      }
+      if (langF    && it.plex_language !== langF) return false;
+      if (countryF && it.plex_country  !== countryF) return false;
+      return true;
+    });
 
     const [field, dir] = sortBy.split('-');
     filtered.sort((a, b) => {
       let va, vb;
-      if (field === 'title') { va = a.title.toLowerCase(); vb = b.title.toLowerCase(); }
-      else if (field === 'size') { va = a.size; vb = b.size; }
-      else if (field === 'res')  { va = a.resolution_rank; vb = b.resolution_rank; }
-      else if (field === 'rip')  { va = a.rip_rank; vb = b.rip_rank; }
+      if      (field === 'title')  { va = a.title.toLowerCase(); vb = b.title.toLowerCase(); }
+      else if (field === 'size')   { va = a.size; vb = b.size; }
+      else if (field === 'res')    { va = a.resolution_rank; vb = b.resolution_rank; }
+      else if (field === 'rip')    { va = a.rip_rank; vb = b.rip_rank; }
+      else if (field === 'rating') { va = parseFloat(a.plex_rating || '0') || 0; vb = parseFloat(b.plex_rating || '0') || 0; }
+      else if (field === 'year')   { va = parseInt(a.plex_year || (a.title.match(/\((\d{4})\)/) || [])[1] || 0, 10); vb = parseInt(b.plex_year || (b.title.match(/\((\d{4})\)/) || [])[1] || 0, 10); }
       if (va < vb) return dir === 'asc' ? -1 : 1;
       if (va > vb) return dir === 'asc' ? 1 : -1;
       return 0;
@@ -2826,6 +2895,9 @@
     const genres = (it.plex_genres || []).slice(0, 3).map(g =>
       `<span class="tr-genre-tag">${g}</span>`).join('');
     const rating = it.plex_rating ? `<span class="tr-tmdb-score" style="color:#fdcb6e">⭐ ${parseFloat(it.plex_rating).toFixed(1)}</span>` : '';
+    const langRow = (it.plex_country_flag || it.plex_language)
+      ? `<div class="tr-lang-row"><span class="tr-lang-tag">${escHtml((it.plex_country_flag ? it.plex_country_flag + ' ' : '') + (it.plex_language || ''))}</span></div>`
+      : '';
     const plot   = it.plex_summary
       ? `<div class="tr-plot" style="max-height:52px;overflow:hidden">${it.plex_summary}</div>
          <span class="tr-plot-toggle" onclick="togglePlot(this)">▾ more</span>`
@@ -2853,6 +2925,7 @@
         <div class="tr-year">${year} &nbsp; ${ripBadge} &nbsp; <span style="color:#666;font-size:0.78rem">${it.size_human}</span></div>
         ${genres ? `<div class="tr-genres">${genres}</div>` : ''}
         ${rating ? `<div class="tr-rating-row">${rating}</div>` : ''}
+        ${langRow}
         ${plot}
       </div>
       <div class="tr-card-actions">
@@ -3022,6 +3095,28 @@
   function setPlexStatus(msg, color) {
     const el = document.getElementById('plex-test-status');
     el.textContent = msg; el.style.color = color;
+  }
+
+  async function plexResyncNow() {
+    const btn    = document.getElementById('plex-resync-btn');
+    const status = document.getElementById('plex-resync-status');
+    btn.disabled = true; btn.textContent = '⏳ Syncing...';
+    status.textContent = ''; status.style.color = '#888';
+    try {
+      const r = await fetch('/api/plex/sync');
+      const d = await r.json();
+      if (d.error) {
+        status.textContent = '✗ ' + d.error; status.style.color = '#e74c3c';
+      } else {
+        status.textContent = `✓ Synced — ${d.cached} files matched`; status.style.color = '#2ecc71';
+        // Bust the in-memory library so next Library open re-fetches with new fields
+        libItems = [];
+      }
+    } catch (e) {
+      status.textContent = '✗ ' + e.message; status.style.color = '#e74c3c';
+    } finally {
+      btn.disabled = false; btn.textContent = '🔄 Re-sync Now';
+    }
   }
 
   window.addEventListener('load', async () => {
