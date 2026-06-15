@@ -4197,4 +4197,4 @@ def ollama_recommend():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, port=5000, use_reloader=True)
+    app.run(debug=False, port=5000, use_reloader=False)

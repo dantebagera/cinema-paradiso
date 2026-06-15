@@ -54,6 +54,14 @@ if not exist "dist\index.html" (
     )
 )
 
-start "" "http://localhost:5000"
+echo.
+echo Launching Flask backend at http://localhost:5000 ...
+start "" powershell -NoProfile -WindowStyle Hidden -Command "Start-Sleep -Seconds 2; Start-Process 'http://localhost:5000'"
 ".venv\Scripts\python.exe" app.py
+set APP_EXIT=%ERRORLEVEL%
+if not "%APP_EXIT%"=="0" (
+    echo Flask stopped with exit code %APP_EXIT%.
+    pause
+    exit /b %APP_EXIT%
+)
 pause
