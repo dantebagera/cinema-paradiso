@@ -7,7 +7,7 @@ import urllib.request
 import urllib.parse
 import json as _json
 from pathlib import Path
-from flask import Flask, render_template, jsonify, request, make_response, send_from_directory
+from flask import Flask, jsonify, request, make_response, send_from_directory
 from send2trash import send2trash
 
 app = Flask(__name__)
@@ -1542,7 +1542,12 @@ def index():
     dist_index = os.path.join(_BASE_DIR, 'dist', 'index.html')
     if os.path.exists(dist_index):
         return send_from_directory(os.path.join(_BASE_DIR, 'dist'), 'index.html')
-    return render_template('index.html')
+    response = make_response(
+        "React frontend has not been built. Run npm install and npm run build, or use run.bat on Windows.",
+        503,
+    )
+    response.mimetype = "text/plain"
+    return response
 
 
 @app.route('/styleguide')
@@ -1556,11 +1561,6 @@ def styleguide_index():
 @app.route('/settings')
 def react_section_index():
     return index()
-
-
-@app.route('/legacy')
-def legacy_index():
-    return render_template('index.html')
 
 
 @app.route('/assets/<path:filename>')

@@ -121,6 +121,14 @@ User lists, edited collections, followed releases, and manual metadata matches a
 
 ## Installation
 
+### Windows Quick Start
+
+Download the source ZIP or clone the repository, then double-click `run.bat`.
+
+The launcher creates `.venv`, installs Python dependencies, installs frontend dependencies, builds the React app when `dist/` is missing, starts Flask, and opens [http://localhost:5000](http://localhost:5000).
+
+### Manual Setup
+
 ```bash
 git clone https://github.com/dantebagera/cinema-paradiso.git
 cd cinema-paradiso
@@ -136,8 +144,6 @@ python app.py
 ```
 
 Open [http://localhost:5000](http://localhost:5000).
-
-On Windows you can also double-click `run.bat` after dependencies are installed and the frontend has been built.
 
 ---
 
@@ -200,7 +206,7 @@ These files are user-specific and should not be committed.
 - **Resolution probing:** pymediainfo
 - **Delete safety:** send2trash
 
-The old Flask template remains available at `/legacy` during migration, but the React app is the primary interface.
+Cinema Paradiso v2.6 uses the React frontend as the only public interface.
 
 ---
 

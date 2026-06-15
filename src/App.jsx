@@ -82,6 +82,8 @@ const navItems = [
   }
 ];
 
+const APP_VERSION = `v${import.meta.env.VITE_APP_VERSION || '0.0.0'}`;
+
 const fallbackMovies = [
   {
     tmdb_id: 155,
@@ -761,8 +763,11 @@ function Sidebar({ activeSection, onSelect }) {
         })}
       </nav>
       <div className="sidebar-footer">
-        <span className="status-dot" />
-        <span>Local-first archive</span>
+        <div className="sidebar-footer-status">
+          <span className="status-dot" />
+          <span>Local-first archive</span>
+        </div>
+        <span className="sidebar-version">{APP_VERSION}</span>
       </div>
     </aside>
   );

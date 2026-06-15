@@ -24,6 +24,9 @@ Cinema Paradiso v2.6 is the current stable baseline for the React/Vite movie arc
 
 ### Fixed
 
+- Removed the old Flask template UI from the public app so a missing React build can no longer show the pre-React interface.
+- Updated Windows `run.bat` to bootstrap `.venv`, install Python dependencies, install frontend dependencies when needed, build React when `dist/` is missing, then start Flask.
+- Flask now returns a clear setup error if the React build is missing instead of silently falling back to legacy HTML.
 - Reduced false "not in library" Discover results caused by title differences between Plex and TMDB.
 - Prevented Browse Indexers from timing out just by opening the tab; broad latest loading is now explicit.
 - Preserved indexer rows without TMDB metadata instead of hiding them.
@@ -33,7 +36,8 @@ Cinema Paradiso v2.6 is the current stable baseline for the React/Vite movie arc
 ### Notes
 
 - `config.json`, `data/`, `cache/`, `res_cache.json`, `node_modules/`, `dist/`, and `winapp/` are not part of the committed release.
-- Users should run `npm install` and `npm run build` after checkout because built frontend assets are generated locally.
+- Windows users can use `run.bat` to install dependencies and build the React frontend from a source ZIP or fresh clone.
+- Manual setup users should run `npm install` and `npm run build` after checkout because built frontend assets are generated locally.
 - `v2.6.0` is intended as the stable rollback point before larger code optimization/refactor work.
 
 ## v2.5.0 - June 2026
