@@ -12,16 +12,26 @@ import {
 
 test('buildOwnershipMap keeps only found movies with local paths', () => {
   const map = buildOwnershipMap([
-    { title: 'The Thing', year: '1982', found: true, path: 'E:/Movies/The Thing.mkv', resolution: '1080p' },
+    { tmdb_id: 1091, title: 'The Thing', year: '1982', found: true, path: 'E:/Movies/The Thing.mkv', resolution: '1080p' },
     { title: 'Alien', year: '1979', found: false, path: '', resolution: '' },
     { title: 'Heat', year: '1995', found: true, path: '', resolution: '720p' }
   ]);
 
-  assert.deepEqual(Object.keys(map), ['the thing|1982']);
+  assert.equal(map['the thing|1982'].resolution, '1080p');
+  assert.equal(map['title:the thing|1982'].resolution, '1080p');
   assert.equal(map[discoverMovieKey({ title: 'The Thing', year: '1982' })].resolution, '1080p');
+  assert.equal(map['tmdb:1091'].resolution, '1080p');
 });
 
-test('filterEnrichedIndexerResults hides browse rows without TMDB metadata', () => {
+test('buildOwnershipMap matches title variants through tmdb id', () => {
+  const map = buildOwnershipMap([
+    { tmdb_id: 601, title: 'E.T.', year: '1982', found: true, path: 'E:/Movies/ET.mkv', resolution: '1080p' }
+  ]);
+
+  assert.equal(map['tmdb:601'].path, 'E:/Movies/ET.mkv');
+});
+
+test('filterEnrichedIndexerResults keeps browse rows without TMDB metadata', () => {
   const rows = filterEnrichedIndexerResults([
     {
       parsed_title: 'Earth, Wind & Fire',
@@ -43,10 +53,13 @@ test('filterEnrichedIndexerResults hides browse rows without TMDB metadata', () 
     }
   ]);
 
-  assert.equal(rows.length, 1);
+  assert.equal(rows.length, 2);
   assert.equal(rows[0].title, 'Earth, Wind & Fire');
   assert.equal(rows[0].tmdb_id, 123);
   assert.equal(rows[0].variants[0].indexer, 'YTS');
+  assert.equal(rows[1].title, 'Strange.Indexer.Release.Name');
+  assert.equal(rows[1].best_resolution, '1080p');
+  assert.equal(rows[1].best_seeders, 4);
 });
 
 test('sortTorrentVariants prioritizes quality then seeders', () => {
@@ -71,6 +84,7 @@ test('discoverMoviePayload supports online movies and owned paths', () => {
 
   assert.deepEqual(payload, {
     tmdb_id: '155',
+    imdb_id: '',
     title: 'The Dark Knight',
     year: '2008',
     poster_url: 'poster.jpg',

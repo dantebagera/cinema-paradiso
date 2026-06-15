@@ -57,6 +57,7 @@ class TmdbDetailsTransformTest(unittest.TestCase):
                     "poster_path": "/future-one.jpg",
                     "genre_ids": [28, 878],
                     "vote_average": 7.25,
+                    "vote_count": 3200,
                     "overview": "A future starts here.",
                     "original_language": "en",
                 }
@@ -68,6 +69,7 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         self.assertEqual(result["parts"][0]["tmdb_id"], "10")
         self.assertEqual(result["parts"][0]["genres"], ["Action", "Sci-Fi"])
         self.assertEqual(result["parts"][0]["tmdb_rating"], "7.2")
+        self.assertEqual(result["parts"][0]["tmdb_vote_count"], 3200)
         self.assertEqual(result["parts"][0]["plot"], "A future starts here.")
         self.assertEqual(result["parts"][0]["language"], "English")
 

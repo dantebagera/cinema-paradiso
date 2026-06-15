@@ -14,6 +14,7 @@ function normalizeMovieTitle(title) {
 
 export function discoverIdentityKey(movie) {
   if (movie?.tmdb_id) return `tmdb:${String(movie.tmdb_id)}`;
+  if (movie?.imdb_id) return `imdb:${String(movie.imdb_id).toLowerCase()}`;
   if (movie?.path) return `path:${String(movie.path).toLowerCase()}`;
   return `title:${normalizeMovieTitle(movie?.title)}|${String(movie?.year || '')}`;
 }
@@ -21,6 +22,7 @@ export function discoverIdentityKey(movie) {
 export function discoverMoviePayload(movie, owned) {
   return {
     tmdb_id: String(movie?.tmdb_id || ''),
+    imdb_id: String(movie?.imdb_id || ''),
     title: movie?.title || '',
     year: String(movie?.year || ''),
     poster_url: movie?.poster_url || '',
@@ -39,10 +41,30 @@ export function buildOwnershipMap(results = []) {
   const map = {};
   for (const item of results) {
     if (item?.found && item.path) {
-      map[discoverMovieKey(item)] = item;
+      for (const key of ownershipKeys(item)) {
+        map[key] = item;
+      }
     }
   }
   return map;
+}
+
+export function ownershipKeys(movie = {}) {
+  const keys = [];
+  if (movie.tmdb_id) keys.push(`tmdb:${String(movie.tmdb_id)}`);
+  if (movie.imdb_id) keys.push(`imdb:${String(movie.imdb_id).toLowerCase()}`);
+  if (movie.plex_guid) keys.push(`plex:${String(movie.plex_guid).toLowerCase()}`);
+  const title = normalizeMovieTitle(movie.title);
+  if (title) keys.push(`${String(movie.title || '').toLowerCase()}|${String(movie.year || '')}`);
+  if (title) keys.push(`title:${title}|${String(movie.year || '')}`);
+  return [...new Set(keys)];
+}
+
+export function ownedMovieFor(movie, ownership = {}) {
+  for (const key of ownershipKeys(movie)) {
+    if (ownership[key]) return ownership[key];
+  }
+  return null;
 }
 
 export function resolutionRank(resolution) {
@@ -74,7 +96,6 @@ export function hasTmdbMetadata(metadata = {}) {
 
 export function filterEnrichedIndexerResults(results = []) {
   return results
-    .filter((row) => hasTmdbMetadata(row.metadata))
     .map((row) => {
       const metadata = row.metadata || {};
       const variants = sortTorrentVariants(row.variants || []);

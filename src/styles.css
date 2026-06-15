@@ -1399,6 +1399,19 @@ kbd {
   box-shadow: inset 0 1px 0 #ffffff08;
 }
 
+.library-stat-action {
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  transition: border-color 160ms var(--ease-out), transform 160ms var(--ease-out);
+}
+
+.library-stat-action:hover {
+  border-color: #d4af3765;
+  transform: translateY(-1px);
+}
+
 .library-stat svg {
   color: var(--projector-gold);
 }
@@ -2422,9 +2435,25 @@ kbd {
 
 .cleanup-match-form {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 120px auto;
+  grid-template-columns: minmax(0, 1fr) 120px;
   gap: var(--space-2);
   align-items: end;
+}
+
+.cleanup-match-form .dialog-field {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.cleanup-match-form .dialog-field input {
+  width: 100%;
+  min-width: 0;
+}
+
+.cleanup-match-submit {
+  grid-column: 1 / -1;
+  justify-self: end;
+  min-width: 168px;
 }
 
 .match-result-list {
@@ -2461,6 +2490,29 @@ kbd {
 .cleanup-empty-match {
   color: var(--text-muted);
   font-size: 0.82rem;
+}
+
+.tmdb-match-result-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+}
+
+.match-result-poster {
+  width: 42px;
+  aspect-ratio: 2 / 3;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.match-result-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .cleanup-empty-match {
@@ -2654,6 +2706,42 @@ kbd {
   gap: var(--space-2);
 }
 
+.settings-checkbox-field {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #0f1013;
+  padding: 11px 12px;
+}
+
+.settings-checkbox-field input {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  accent-color: var(--projector-gold);
+}
+
+.settings-checkbox-field strong,
+.settings-checkbox-field small {
+  display: block;
+}
+
+.settings-checkbox-field strong {
+  color: var(--text-strong);
+  font-size: 0.86rem;
+  line-height: 1.25;
+}
+
+.settings-checkbox-field small {
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
 .library-location-list {
   display: grid;
   gap: var(--space-2);
@@ -2838,7 +2926,7 @@ kbd {
 
 .discover-toolbar {
   display: grid;
-  grid-template-columns: repeat(3, minmax(150px, 1fr)) auto minmax(140px, auto);
+  grid-template-columns: repeat(auto-fit, minmax(136px, 1fr));
   gap: var(--space-2);
   align-items: center;
   border: 1px solid var(--border);
@@ -2856,6 +2944,10 @@ kbd {
   color: var(--text-primary);
   padding: 0 10px;
   font-size: 0.86rem;
+}
+
+.discover-toolbar .btn {
+  min-height: 40px;
 }
 
 .discover-count {
@@ -2878,6 +2970,15 @@ kbd {
 
 .discover-movie-card {
   min-height: 224px;
+  box-shadow: inset 0 1px 0 #ffffff06;
+  transition: border-color 200ms var(--ease-out), box-shadow 200ms var(--ease-out), background 200ms var(--ease-out);
+}
+
+.discover-movie-card:hover,
+.discover-card-expanded {
+  border-color: #d4af375a;
+  box-shadow: var(--shadow-card);
+  transform: none;
 }
 
 .discover-card-expanded {
@@ -2930,13 +3031,13 @@ kbd {
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, #121316 0%, #0d0e10 100%);
   padding: var(--space-3);
-  transition: border-color 200ms var(--ease-out), box-shadow 200ms var(--ease-out), transform 200ms var(--ease-out);
+  transition: border-color 200ms var(--ease-out), box-shadow 200ms var(--ease-out), background 200ms var(--ease-out);
 }
 
 .indexer-card:hover {
-  border-color: #d4af3770;
+  border-color: #d4af375a;
   box-shadow: var(--shadow-card);
-  transform: translateY(-2px);
+  transform: none;
 }
 
 .indexer-card:has(.discover-expanded-details) {

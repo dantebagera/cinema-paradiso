@@ -322,7 +322,7 @@ The server listens on port **5000** and is only accessible from your local machi
 | 🔍 **Low Quality** | Opens the sub-1080p file scanner |
 | 📂 **Library** | Opens the full library browser |
 | 📊 **Dashboard** | Opens the statistics overlay |
-| 🔗 **Unmatched** | Opens the Plex-unmatched file fixer |
+| 🔗 **Unmatched** | Opens the unmatched metadata fixer |
 | 🌐 **Explore Movies** | Full-screen TMDB discovery, torrent finder, and streaming |
 | 🤖 **Pick My Movie** | AI-powered film recommendation panel (Ollama) |
 | ⚙ **Settings** | Pinned at the bottom — configure Plex, Prowlarr, TMDB, Ollama |

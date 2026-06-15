@@ -45,6 +45,7 @@ import {
   discoverMoviePayload,
   filterEnrichedIndexerResults,
   listsForDiscoverMovie,
+  ownedMovieFor,
   sortTorrentVariants
 } from './discoverUtils.js';
 
@@ -197,6 +198,13 @@ function matchesLibraryResolutionFilter(resolution, filter) {
 }
 
 function getMovieIdentity(item) {
+  const canonical = item?.canonical_metadata || {};
+  if (canonical.accepted && canonical.title) {
+    return {
+      title: canonical.title,
+      year: String(canonical.year || '').trim()
+    };
+  }
   const parsed = splitLibraryTitle(item?.title);
   const plexTitle = String(item?.plex_title || '').trim();
   const title = plexTitle || parsed.title || String(item?.filename || '').replace(/\.[^.]+$/, '');
@@ -206,7 +214,8 @@ function getMovieIdentity(item) {
 
 function getTmdbCacheKey(item) {
   const identity = getMovieIdentity(item);
-  return item?.tmdb_id ? `tmdb:${item.tmdb_id}` : `${identity.title}|${identity.year}`;
+  const canonical = item?.canonical_metadata || {};
+  return canonical?.tmdb_id ? `tmdb:${canonical.tmdb_id}` : item?.tmdb_id ? `tmdb:${item.tmdb_id}` : `${identity.title}|${identity.year}`;
 }
 
 function normalizePersonName(name) {
@@ -258,12 +267,13 @@ function mergePeople(primary, fallback) {
 }
 
 function getRolePeople(item, details, role) {
+  const canonical = item?.canonical_metadata || {};
   if (role === 'director') {
-    const plexDirectors = item?.plex_directors || [];
+    const plexDirectors = canonical.directors?.length ? canonical.directors : item?.plex_directors || [];
     const tmdbDirectors = details?.directors?.length ? details.directors : details?.director?.name ? [details.director] : [];
     return mergePeople(plexDirectors, tmdbDirectors);
   }
-  const plexCast = item?.plex_cast || [];
+  const plexCast = canonical.cast?.length ? canonical.cast : item?.plex_cast || [];
   return mergePeople(plexCast, details?.cast || []);
 }
 
@@ -288,12 +298,14 @@ function itemMatchesCollectionFilter(item, details, filter) {
 
 function moviePayload(item) {
   const identity = getMovieIdentity(item);
+  const canonical = item?.canonical_metadata || {};
   return {
-    tmdb_id: String(item?.tmdb_id || ''),
+    tmdb_id: String(canonical.tmdb_id || item?.tmdb_id || ''),
+    imdb_id: String(canonical.imdb_id || item?.imdb_id || ''),
     title: identity.title || item?.title || '',
     year: identity.year || String(item?.year || '').trim(),
     path: item?.path || '',
-    poster_url: item?.plex_poster || item?.poster_url || ''
+    poster_url: canonical.poster_url || item?.plex_poster || item?.poster_url || ''
   };
 }
 
@@ -311,6 +323,7 @@ function listsForItem(item, lists) {
 }
 
 function getLocaleTag(item) {
+  const canonical = item?.canonical_metadata || {};
   const countryMap = {
     'United States of America': 'US',
     'United States': 'US',
@@ -342,8 +355,8 @@ function getLocaleTag(item) {
     Arabic: 'AR',
     Dutch: 'NL'
   };
-  const rawCountry = String(item?.plex_country_flag || item?.plex_country || '').trim();
-  const rawLanguage = String(item?.plex_language || '').trim();
+  const rawCountry = String(canonical.country_flag || canonical.country || item?.plex_country_flag || item?.plex_country || '').trim();
+  const rawLanguage = String(canonical.language || item?.plex_language || '').trim();
   const country = countryMap[rawCountry] || (rawCountry.length <= 3 ? rawCountry.toUpperCase() : rawCountry.slice(0, 2).toUpperCase());
   const language = languageMap[rawLanguage] || (rawLanguage.length <= 3 ? rawLanguage.toUpperCase() : rawLanguage.slice(0, 2).toUpperCase());
   if (country && language) return `${country} / ${language}`;
@@ -409,6 +422,11 @@ function ArchiveApp() {
   const [toast, setToast] = useState(null);
   const [torrentModal, setTorrentModal] = useState(null);
   const [libraryQuery, setLibraryQuery] = useState('');
+  const [discoverQuery, setDiscoverQuery] = useState('');
+  const [browseQuery, setBrowseQuery] = useState('');
+  const [discoverActiveTab, setDiscoverActiveTab] = useState('explore');
+  const [discoverSearchRequest, setDiscoverSearchRequest] = useState(0);
+  const [cleanupInitialTab, setCleanupInitialTab] = useState('duplicates');
 
   const notify = useCallback((message, tone = 'success') => {
     setToast({ message, tone });
@@ -450,17 +468,11 @@ function ArchiveApp() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              movies: results.map((movie) => ({ title: movie.title, year: movie.year || '' }))
+              movies: results.map((movie) => ({ tmdb_id: movie.tmdb_id || '', imdb_id: movie.imdb_id || '', title: movie.title, year: movie.year || '' }))
             })
           });
           if (!cancelled) {
-            const map = {};
-            for (const item of check.results || []) {
-              if (item.found && item.path) {
-                map[movieKey(item)] = item;
-              }
-            }
-            setOwnership(map);
+            setOwnership(buildOwnershipMap(check.results || []));
           }
         } catch {
           if (!cancelled) setOwnership({});
@@ -542,7 +554,7 @@ function ArchiveApp() {
     };
   }, [selectedMovie, details]);
 
-  const selectedOwnership = selectedMovie ? ownership[movieKey(selectedMovie)] : null;
+  const selectedOwnership = selectedMovie ? ownedMovieFor(selectedMovie, ownership) : null;
   const selectedDetails = selectedMovie?.tmdb_id ? details[selectedMovie.tmdb_id] : null;
 
   useEffect(() => {
@@ -560,6 +572,11 @@ function ArchiveApp() {
     if (window.location.pathname !== path) {
       window.history.pushState({}, '', path);
     }
+  }
+
+  function reviewUnmatchedMetadata() {
+    setCleanupInitialTab('unmatched');
+    selectSection('cleanup');
   }
 
   async function toggleFollow(movie) {
@@ -642,6 +659,15 @@ function ArchiveApp() {
           stats={stats}
           libraryQuery={libraryQuery}
           onLibraryQueryChange={setLibraryQuery}
+          discoverQuery={discoverQuery}
+          onDiscoverQueryChange={setDiscoverQuery}
+          browseQuery={browseQuery}
+          onBrowseQueryChange={setBrowseQuery}
+          discoverActiveTab={discoverActiveTab}
+          onDiscoverSearch={() => {
+            setActiveSection('discover');
+            setDiscoverSearchRequest((value) => value + 1);
+          }}
         />
         {activeSection === 'home' ? (
           <HomeWorkspace
@@ -668,6 +694,7 @@ function ArchiveApp() {
             notify={notify}
             query={libraryQuery}
             setQuery={setLibraryQuery}
+            onReviewUnmatched={reviewUnmatchedMetadata}
           />
         ) : activeSection === 'discover' ? (
           <DiscoverWorkspace
@@ -678,9 +705,16 @@ function ArchiveApp() {
             onFindTorrent={findTorrent}
             onManualTorrentSearch={searchTorrents}
             onFollow={toggleFollow}
+            tmdbQuery={discoverQuery}
+            setTmdbQuery={setDiscoverQuery}
+            browseQuery={browseQuery}
+            setBrowseQuery={setBrowseQuery}
+            searchRequest={discoverSearchRequest}
+            activeTab={discoverActiveTab}
+            setActiveTab={setDiscoverActiveTab}
           />
         ) : (
-          <MigrationWorkspace section={activeSection} notify={notify} onFindTorrent={findTorrent} />
+          <MigrationWorkspace section={activeSection} notify={notify} onFindTorrent={findTorrent} cleanupInitialTab={cleanupInitialTab} />
         )}
       </main>
       {toast && (
@@ -897,9 +931,33 @@ function TorrentModal({ state, onClose }) {
   );
 }
 
-function TopBar({ activeSection, stats, libraryQuery, onLibraryQueryChange }) {
+function TopBar({
+  activeSection,
+  stats,
+  libraryQuery,
+  onLibraryQueryChange,
+  discoverQuery,
+  onDiscoverQueryChange,
+  browseQuery,
+  onBrowseQueryChange,
+  discoverActiveTab,
+  onDiscoverSearch
+}) {
   const section = navItems.find((item) => item.id === activeSection);
   const isLibrary = activeSection === 'library';
+  const isDiscover = activeSection === 'discover';
+  const isBrowseSearch = isDiscover && discoverActiveTab === 'browse';
+  const isExploreSearch = isDiscover && discoverActiveTab === 'explore';
+  const searchValue = isLibrary ? libraryQuery : isBrowseSearch ? browseQuery : isExploreSearch ? discoverQuery : '';
+  const searchPlaceholder = isLibrary
+    ? 'Search your offline library...'
+    : isBrowseSearch
+      ? 'Search movie indexers...'
+      : isExploreSearch
+        ? 'Search TMDB discovery...'
+        : isDiscover
+          ? 'Use the AI prompt below...'
+          : 'Search movies, actions, TMDB...';
   return (
     <header className="topbar">
       <div>
@@ -909,19 +967,27 @@ function TopBar({ activeSection, stats, libraryQuery, onLibraryQueryChange }) {
           {isLibrary && <span className="offline-badge">Offline</span>}
         </h1>
       </div>
-      <div className="command-search">
+      <form
+        className="command-search"
+        onSubmit={(event) => {
+          event.preventDefault();
+          if (isExploreSearch || isBrowseSearch) onDiscoverSearch();
+        }}
+      >
         <Search size={17} />
         <input
-          aria-label={isLibrary ? 'Search offline library' : 'Command search'}
-          value={isLibrary ? libraryQuery : ''}
+          aria-label={isLibrary ? 'Search offline library' : isBrowseSearch ? 'Search movie indexers' : isExploreSearch ? 'Search TMDB discovery' : 'Command search'}
+          value={searchValue}
           onChange={(event) => {
             if (isLibrary) onLibraryQueryChange(event.target.value);
+            if (isExploreSearch) onDiscoverQueryChange(event.target.value);
+            if (isBrowseSearch) onBrowseQueryChange(event.target.value);
           }}
-          placeholder={isLibrary ? 'Search your offline library...' : 'Search movies, actions, TMDB...'}
-          readOnly={!isLibrary}
+          placeholder={searchPlaceholder}
+          readOnly={!isLibrary && !isExploreSearch && !isBrowseSearch}
         />
-        <kbd>Ctrl K</kbd>
-      </div>
+        <kbd>{isExploreSearch || isBrowseSearch ? 'Enter' : 'Ctrl K'}</kbd>
+      </form>
       <div className="topbar-stat">
         <Database size={16} />
         <span>{formatCount(stats?.total_files)} files</span>
@@ -991,7 +1057,7 @@ function HomeWorkspace(props) {
         ) : (
           <div className="movie-list">
             {movies.slice(0, 5).map((movie) => {
-              const owned = ownership[movieKey(movie)];
+              const owned = ownedMovieFor(movie, ownership);
               return (
                 <SmartMovieCard
                   key={movieKey(movie)}
@@ -1242,7 +1308,7 @@ function SmartMovieCard(props) {
             <h4>{movie.title}</h4>
             <span>{movie.year || 'Unknown year'}</span>
           </div>
-          <Rating value={movie.tmdb_rating} />
+          <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
         </div>
         <div className="chip-row">
           {genres.map((genre) => <span className="chip" key={genre}>{genre}</span>)}
@@ -1338,7 +1404,7 @@ function MovieInspector({ movie, owned, details, followed, onClose, onPlay, onSt
           <h3>{movie.title}</h3>
           <div className="inspector-meta">
             <span>{movie.year || 'Unknown year'}</span>
-            <Rating value={movie.tmdb_rating} />
+            <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
             {movie.language && <span>{movie.language}</span>}
             {(movie.country_flag || movie.country) && <span>{movie.country_flag || movie.country}</span>}
           </div>
@@ -1434,14 +1500,33 @@ const discoverGenres = [
   { value: '10752', label: 'War' }
 ];
 
-function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, onManualTorrentSearch, onFollow }) {
-  const [activeTab, setActiveTab] = useState('explore');
+function DiscoverWorkspace({
+  followed,
+  notify,
+  onPlay,
+  onStream,
+  onFindTorrent,
+  onManualTorrentSearch,
+  onFollow,
+  tmdbQuery,
+  setTmdbQuery,
+  browseQuery,
+  setBrowseQuery,
+  searchRequest,
+  activeTab,
+  setActiveTab
+}) {
   const [discoverList, setDiscoverList] = useState('trending_week');
   const [discoverGenre, setDiscoverGenre] = useState('');
-  const [tmdbQuery, setTmdbQuery] = useState('');
+  const [discoverMinVotes, setDiscoverMinVotes] = useState('0');
+  const [discoverYearFrom, setDiscoverYearFrom] = useState('');
+  const [discoverYearTo, setDiscoverYearTo] = useState('');
+  const [discoverMinRating, setDiscoverMinRating] = useState('0');
+  const [discoverSort, setDiscoverSort] = useState('auto');
   const [discoverResults, setDiscoverResults] = useState([]);
   const [discoverPage, setDiscoverPage] = useState(1);
   const [discoverTotalPages, setDiscoverTotalPages] = useState(1);
+  const [discoverTotalResults, setDiscoverTotalResults] = useState(0);
   const [discoverMode, setDiscoverMode] = useState('discover');
   const [discoverLoading, setDiscoverLoading] = useState(false);
   const [discoverError, setDiscoverError] = useState('');
@@ -1449,10 +1534,13 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
   const [browseHiddenCount, setBrowseHiddenCount] = useState(0);
   const [browseLoading, setBrowseLoading] = useState(false);
   const [browseError, setBrowseError] = useState('');
+  const [browseHasLoaded, setBrowseHasLoaded] = useState(false);
+  const [browseMode, setBrowseMode] = useState('idle');
   const [browseResolution, setBrowseResolution] = useState('all');
   const [browseIndexer, setBrowseIndexer] = useState('all');
+  const [browseIndexerOptions, setBrowseIndexerOptions] = useState([]);
+  const [browseIndexerLoading, setBrowseIndexerLoading] = useState(false);
   const [browseSort, setBrowseSort] = useState('seeders-desc');
-  const [browseQuery, setBrowseQuery] = useState('');
   const [selectedVariants, setSelectedVariants] = useState({});
   const [pickPrompt, setPickPrompt] = useState('');
   const [pickResults, setPickResults] = useState([]);
@@ -1473,7 +1561,7 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
   async function checkOwnership(movies) {
     const payload = (movies || [])
       .filter((movie) => movie?.title)
-      .map((movie) => ({ title: movie.title, year: movie.year || '' }));
+      .map((movie) => ({ tmdb_id: movie.tmdb_id || '', imdb_id: movie.imdb_id || '', title: movie.title, year: movie.year || '' }));
     if (!payload.length) return;
     try {
       const check = await fetchJson('/api/library/check', {
@@ -1514,10 +1602,16 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
       results: discoverResults,
       page: discoverPage,
       totalPages: discoverTotalPages,
+      totalResults: discoverTotalResults,
       mode: discoverMode,
       query: tmdbQuery,
       list: discoverList,
-      genre: discoverGenre
+      genre: discoverGenre,
+      minVotes: discoverMinVotes,
+      yearFrom: discoverYearFrom,
+      yearTo: discoverYearTo,
+      minRating: discoverMinRating,
+      sort: discoverSort
     };
   }
 
@@ -1534,8 +1628,14 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
     setDiscoverResults(snapshot.results || []);
     setDiscoverPage(snapshot.page || 1);
     setDiscoverTotalPages(snapshot.totalPages || 1);
+    setDiscoverTotalResults(snapshot.totalResults || 0);
     setDiscoverMode(snapshot.mode || 'discover');
     setDiscoverContext(snapshot.context || null);
+    setDiscoverMinVotes(snapshot.minVotes || '0');
+    setDiscoverYearFrom(snapshot.yearFrom || '');
+    setDiscoverYearTo(snapshot.yearTo || '');
+    setDiscoverMinRating(snapshot.minRating || '0');
+    setDiscoverSort(snapshot.sort || 'auto');
     setDiscoverError('');
     setDiscoverHistory(nextHistory || []);
     setExpandedMovieKey('');
@@ -1577,7 +1677,7 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
         try {
           const query = `${movie.title || ''} ${movie.year || ''}`.trim();
           if (!query) return movie;
-          const data = await fetchJson(`/api/tmdb/search?q=${encodeURIComponent(query)}&page=1`);
+          const data = await fetchJson(`/api/tmdb/search?q=${encodeURIComponent(query)}&page=1&include_adult=false`);
           const match = (data.results || []).find((candidate) => (
             movie.tmdb_id && String(candidate.tmdb_id) === String(movie.tmdb_id)
           )) || (data.results || []).find((candidate) => (
@@ -1593,24 +1693,31 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
     return enriched;
   }
 
-  async function loadDiscover({ append = false, search = '' } = {}) {
+  async function loadDiscover({ append = false, search = '', page } = {}) {
     const query = String(search || '').trim();
-    const nextPage = append ? discoverPage + 1 : 1;
+    const nextPage = page || (append ? discoverPage + 1 : 1);
     setDiscoverLoading(true);
     setDiscoverError('');
     try {
       let url = '';
       if (query) {
-        url = `/api/tmdb/search?q=${encodeURIComponent(query)}&page=${nextPage}`;
+        url = `/api/tmdb/search?q=${encodeURIComponent(query)}&page=${nextPage}&page_size=40&include_adult=false`;
+        if (discoverMinVotes !== '0') url += `&min_votes=${encodeURIComponent(discoverMinVotes)}`;
       } else {
-        url = `/api/tmdb/discover?list=${encodeURIComponent(discoverList)}&page=${nextPage}`;
+        url = `/api/tmdb/discover?list=${encodeURIComponent(discoverList)}&page=${nextPage}&page_size=40`;
         if (discoverGenre) url += `&genre=${encodeURIComponent(discoverGenre)}`;
+        if (discoverMinVotes !== '0') url += `&min_votes=${encodeURIComponent(discoverMinVotes)}`;
+        if (discoverYearFrom.trim()) url += `&year_from=${encodeURIComponent(discoverYearFrom.trim())}`;
+        if (discoverYearTo.trim()) url += `&year_to=${encodeURIComponent(discoverYearTo.trim())}`;
+        if (discoverMinRating !== '0') url += `&min_rating=${encodeURIComponent(discoverMinRating)}`;
+        if (discoverSort !== 'auto') url += `&sort=${encodeURIComponent(discoverSort)}`;
       }
       const data = await fetchJson(url);
       const nextResults = data.results || [];
       setDiscoverResults((state) => (append ? [...state, ...nextResults] : nextResults));
       setDiscoverPage(data.page || nextPage);
       setDiscoverTotalPages(data.total_pages || 1);
+      setDiscoverTotalResults(data.total_results || nextResults.length);
       setDiscoverMode(query ? 'search' : 'discover');
       if (!append) {
         setDiscoverContext(null);
@@ -1654,6 +1761,7 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
         setDiscoverResults((state) => (append ? [...state, ...nextResults] : nextResults));
         setDiscoverPage(data.page || nextPage);
         setDiscoverTotalPages(data.total_pages || 1);
+        setDiscoverTotalResults(data.total_results || nextResults.length);
         setDiscoverContext(nextContext);
         setDiscoverMode(context.type || 'related');
       }
@@ -1716,6 +1824,7 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
         setDiscoverResults(results);
         setDiscoverPage(1);
         setDiscoverTotalPages(1);
+        setDiscoverTotalResults(results.length);
         setDiscoverMode('collection');
         setDiscoverContext(context);
       }
@@ -1758,6 +1867,7 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
         setDiscoverResults(results);
         setDiscoverPage(1);
         setDiscoverTotalPages(1);
+        setDiscoverTotalResults(results.length);
         setDiscoverMode('list');
         setDiscoverContext(context);
       }
@@ -1861,26 +1971,56 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
     }
   }
 
-  async function loadBrowse() {
+  const loadBrowseIndexers = useCallback(async () => {
+    setBrowseIndexerLoading(true);
+    try {
+      const data = await fetchJson('/api/explore/indexers');
+      setBrowseIndexerOptions(data.indexers || []);
+    } catch (error) {
+      setBrowseError((current) => current || `Indexer list unavailable: ${error.message}`);
+    } finally {
+      setBrowseIndexerLoading(false);
+    }
+  }, []);
+
+  async function loadBrowse({ query = browseQuery } = {}) {
+    const search = String(query || '').trim();
     setBrowseLoading(true);
     setBrowseError('');
+    setBrowseHasLoaded(true);
+    setBrowseMode(search ? 'search' : 'latest');
     setBrowseHiddenCount(0);
     setBrowseRows([]);
     setSelectedVariants({});
     try {
-      const data = await fetchJson('/api/explore/browse');
+      const params = new URLSearchParams();
+      if (search) {
+        params.set('q', search);
+      } else {
+        params.set('latest', '1');
+      }
+      if (browseIndexer !== 'all') {
+        params.set('indexer_id', browseIndexer);
+      }
+      const url = `/api/explore/browse?${params.toString()}`;
+      const data = await fetchJson(url);
+      if (data.indexers?.length) setBrowseIndexerOptions(data.indexers);
       const rows = data.results || [];
+      const baseRows = filterEnrichedIndexerResults(rows);
+      setBrowseRows(baseRows);
+      setBrowseHiddenCount(baseRows.length);
+      checkOwnership(baseRows);
       const enriched = [];
       for (let index = 0; index < rows.length; index += 8) {
         const batch = await Promise.all(rows.slice(index, index + 8).map(fetchIndexerMetadata));
         enriched.push(...batch);
-        const filtered = filterEnrichedIndexerResults(enriched);
+        const filtered = filterEnrichedIndexerResults([...enriched, ...rows.slice(index + 8)]);
         setBrowseRows(filtered);
-        setBrowseHiddenCount(enriched.length - filtered.length);
+        setBrowseHiddenCount(filtered.filter((row) => !row.metadata || !row.metadata.tmdb_id).length);
       }
       const filtered = filterEnrichedIndexerResults(enriched);
       setBrowseRows(filtered);
-      setBrowseHiddenCount(enriched.length - filtered.length);
+      setBrowseHiddenCount(filtered.filter((row) => !row.metadata || !row.metadata.tmdb_id).length);
       checkOwnership(filtered);
     } catch (error) {
       setBrowseError(error.message);
@@ -1922,19 +2062,42 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
 
   useEffect(() => {
     loadDiscover({ append: false, search: '' });
-  }, [discoverList, discoverGenre]);
+  }, [discoverList, discoverGenre, discoverMinVotes, discoverYearFrom, discoverYearTo, discoverMinRating, discoverSort]);
 
   useEffect(() => {
-    if (activeTab === 'browse' && !browseRows.length && !browseLoading && !browseError) {
-      loadBrowse();
+    if (!searchRequest) return;
+    if (activeTab === 'browse') {
+      loadBrowse({ query: browseQuery });
+    } else if (activeTab === 'explore') {
+      loadDiscover({ append: false, search: tmdbQuery, page: 1 });
     }
-  }, [activeTab]);
+  }, [searchRequest]);
 
-  const browseIndexers = useMemo(() => getUniqueOptions(browseRows, (movie) => movie.variants.map((variant) => variant.indexer)), [browseRows]);
+  useEffect(() => {
+    if (activeTab === 'browse') {
+      setBrowseError('');
+      if (!browseIndexerOptions.length && !browseIndexerLoading) {
+        loadBrowseIndexers();
+      }
+    }
+  }, [activeTab, browseIndexerOptions.length, browseIndexerLoading, loadBrowseIndexers]);
+
+  useEffect(() => {
+    if (browseIndexer === 'all' || !browseIndexerOptions.length) return;
+    if (!browseIndexerOptions.some((indexer) => String(indexer.id) === String(browseIndexer))) {
+      setBrowseIndexer('all');
+    }
+  }, [browseIndexer, browseIndexerOptions]);
+
+  const selectedBrowseIndexerName = useMemo(() => {
+    if (browseIndexer === 'all') return 'All indexers';
+    return browseIndexerOptions.find((indexer) => String(indexer.id) === String(browseIndexer))?.name || 'Selected indexer';
+  }, [browseIndexer, browseIndexerOptions]);
+
   const filteredBrowseRows = useMemo(() => {
     const rows = browseRows.filter((movie) => {
       if (browseResolution !== 'all' && !movie.variants.some((variant) => (variant.resolution || 'Unknown') === browseResolution)) return false;
-      if (browseIndexer !== 'all' && !movie.variants.some((variant) => variant.indexer === browseIndexer)) return false;
+      if (browseIndexer !== 'all' && selectedBrowseIndexerName !== 'Selected indexer' && !movie.variants.some((variant) => variant.indexer === selectedBrowseIndexerName)) return false;
       return true;
     });
     const sorted = [...rows];
@@ -1945,7 +2108,7 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
       return b.best_seeders - a.best_seeders;
     });
     return sorted;
-  }, [browseRows, browseResolution, browseIndexer, browseSort]);
+  }, [browseRows, browseResolution, browseIndexer, browseSort, selectedBrowseIndexerName]);
 
   const tabs = [
     { id: 'explore', label: 'Explore Movies', icon: Compass },
@@ -2017,21 +2180,6 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
             onReset={resetDiscoverPath}
             onCrumb={jumpDiscoverPath}
           />
-          <form className="discover-search-row" onSubmit={(event) => { event.preventDefault(); loadDiscover({ append: false, search: tmdbQuery }); }}>
-            <label className="library-search">
-              <Search size={17} />
-              <input value={tmdbQuery} onChange={(event) => setTmdbQuery(event.target.value)} placeholder="Search TMDB by title..." />
-            </label>
-            <button type="submit" className="btn btn-primary" disabled={discoverLoading}>
-              {discoverLoading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search TMDB
-            </button>
-            {discoverMode === 'search' && (
-              <button type="button" className="btn btn-secondary" onClick={() => { setTmdbQuery(''); loadDiscover({ append: false, search: '' }); }}>
-                <X size={15} /> Clear search
-              </button>
-            )}
-          </form>
-
           <div className="discover-toolbar">
             <select value={discoverList} onChange={(event) => setDiscoverList(event.target.value)}>
               {discoverLists.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
@@ -2039,10 +2187,38 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
             <select value={discoverGenre} onChange={(event) => setDiscoverGenre(event.target.value)}>
               {discoverGenres.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
             </select>
+            <select value={discoverMinVotes} onChange={(event) => setDiscoverMinVotes(event.target.value)}>
+              <option value="0">Any votes</option>
+              <option value="500">500+ votes</option>
+              <option value="1000">1,000+ votes</option>
+              <option value="5000">5,000+ votes</option>
+              <option value="10000">10,000+ votes</option>
+            </select>
+            <input className="library-mini-input" value={discoverYearFrom} onChange={(event) => setDiscoverYearFrom(event.target.value)} placeholder="Year from" inputMode="numeric" />
+            <input className="library-mini-input" value={discoverYearTo} onChange={(event) => setDiscoverYearTo(event.target.value)} placeholder="Year to" inputMode="numeric" />
+            <select value={discoverMinRating} onChange={(event) => setDiscoverMinRating(event.target.value)}>
+              <option value="0">Any rating</option>
+              <option value="6">6+</option>
+              <option value="7">7+</option>
+              <option value="8">8+</option>
+              <option value="8.5">8.5+</option>
+            </select>
+            <select value={discoverSort} onChange={(event) => setDiscoverSort(event.target.value)}>
+              <option value="auto">List default sort</option>
+              <option value="popularity.desc">Popularity</option>
+              <option value="vote_average.desc">Rating</option>
+              <option value="vote_count.desc">Most voted</option>
+              <option value="primary_release_date.desc">Release date</option>
+            </select>
             <button type="button" className="btn btn-secondary" onClick={() => loadDiscover({ append: false, search: discoverMode === 'search' ? tmdbQuery : '' })} disabled={discoverLoading}>
               <RefreshCcw size={15} /> Refresh
             </button>
-            <span className="discover-count">{formatCount(discoverResults.length)} titles</span>
+            {discoverMode === 'search' && (
+              <button type="button" className="btn btn-secondary" onClick={() => { setTmdbQuery(''); loadDiscover({ append: false, search: '', page: 1 }); }}>
+                <X size={15} /> Clear search
+              </button>
+            )}
+            <span className="discover-count">{formatCount(discoverTotalResults || discoverResults.length)} titles</span>
           </div>
 
           <DiscoverResultGrid
@@ -2050,41 +2226,47 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
             loading={discoverLoading && !discoverResults.length}
             emptyText={discoverContext?.emptyText || 'No TMDB movies match this view.'}
           >
-            {discoverResults.map((movie) => (
-              <DiscoverMovieCard
-                key={`${movie.tmdb_id || movie.title}-${movie.year}`}
-                movie={movie}
-                owned={ownership[movieKey(movie)]}
-                followed={followed.some((item) => movieKey(item) === movieKey(movie))}
-                expanded={expandedMovieKey === movieKey(movie)}
-                details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
-                collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
-                itemLists={listsForDiscoverMovie(movie, userLists, ownership[movieKey(movie)])}
-                onPlay={onPlay}
-                onStream={onStream}
-                onFindTorrent={onFindTorrent}
-                onFollow={onFollow}
-                onTrailer={openTrailer}
-                onToggleDetails={() => toggleMovieDetails(movie)}
-                onPersonBrowse={(role, person) => browsePerson('explore', movie, role, person)}
-                onCollectionBrowse={(collectionItem) => browseCollection('explore', movie, collectionItem)}
-                onListBrowse={(list) => browseList('explore', movie, list)}
-                onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, ownership[movieKey(movie)]))}
-                onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, ownership[movieKey(movie)]))}
-              />
-            ))}
+            {discoverResults.map((movie) => {
+              const owned = ownedMovieFor(movie, ownership);
+              return (
+                <DiscoverMovieCard
+                  key={`${movie.tmdb_id || movie.title}-${movie.year}`}
+                  movie={movie}
+                  owned={owned}
+                  followed={followed.some((item) => movieKey(item) === movieKey(movie))}
+                  expanded={expandedMovieKey === movieKey(movie)}
+                  details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
+                  collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
+                  itemLists={listsForDiscoverMovie(movie, userLists, owned)}
+                  onPlay={onPlay}
+                  onStream={onStream}
+                  onFindTorrent={onFindTorrent}
+                  onFollow={onFollow}
+                  onTrailer={openTrailer}
+                  onToggleDetails={() => toggleMovieDetails(movie)}
+                  onPersonBrowse={(role, person) => browsePerson('explore', movie, role, person)}
+                  onCollectionBrowse={(collectionItem) => browseCollection('explore', movie, collectionItem)}
+                  onListBrowse={(list) => browseList('explore', movie, list)}
+                  onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}
+                  onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, owned))}
+                />
+              );
+            })}
           </DiscoverResultGrid>
 
-          {discoverResults.length > 0 && discoverPage < discoverTotalPages && discoverPage < 10 && (
-            <button
-              type="button"
-              className="load-more-button"
-              onClick={() => {
-                if (discoverContext?.baseUrl) loadContextPage('explore', discoverContext, { append: true });
-                else loadDiscover({ append: true, search: discoverMode === 'search' ? tmdbQuery : '' });
-              }}
-              disabled={discoverLoading}
-            >
+          {discoverResults.length > 0 && !discoverContext?.baseUrl && (
+            <LibraryPagination
+              page={discoverPage}
+              totalPages={discoverTotalPages}
+              total={discoverTotalResults || discoverResults.length}
+              pageStart={(discoverPage - 1) * 40}
+              pageEnd={(discoverPage - 1) * 40 + discoverResults.length}
+              onPageChange={(nextPage) => loadDiscover({ append: false, search: discoverMode === 'search' ? tmdbQuery : '', page: nextPage })}
+            />
+          )}
+
+          {discoverResults.length > 0 && discoverContext?.baseUrl && discoverPage < discoverTotalPages && discoverPage < 10 && (
+            <button type="button" className="load-more-button" onClick={() => loadContextPage('explore', discoverContext, { append: true })} disabled={discoverLoading}>
               {discoverLoading ? <Loader2 size={15} className="spin" /> : <CirclePlus size={15} />} Load more
             </button>
           )}
@@ -2093,16 +2275,6 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
 
       {activeTab === 'browse' && (
         <section className="discover-panel">
-          <form className="discover-search-row" onSubmit={(event) => { event.preventDefault(); onManualTorrentSearch(browseQuery); }}>
-            <label className="library-search">
-              <Search size={17} />
-              <input value={browseQuery} onChange={(event) => setBrowseQuery(event.target.value)} placeholder="Manual torrent search..." />
-            </label>
-            <button type="submit" className="btn btn-primary">
-              <Search size={15} /> Search torrents
-            </button>
-          </form>
-
           <div className="discover-toolbar">
             <select value={browseResolution} onChange={(event) => setBrowseResolution(event.target.value)}>
               <option value="all">All qualities</option>
@@ -2114,7 +2286,7 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
             </select>
             <select value={browseIndexer} onChange={(event) => setBrowseIndexer(event.target.value)}>
               <option value="all">All indexers</option>
-              {browseIndexers.map((value) => <option key={value} value={value}>{value}</option>)}
+              {browseIndexerOptions.map((indexer) => <option key={indexer.id} value={indexer.id}>{indexer.name}</option>)}
             </select>
             <select value={browseSort} onChange={(event) => setBrowseSort(event.target.value)}>
               <option value="seeders-desc">Seeders most</option>
@@ -2122,45 +2294,59 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
               <option value="year-desc">Year newest</option>
               <option value="title-asc">Title A-Z</option>
             </select>
-            <button type="button" className="btn btn-secondary" onClick={loadBrowse} disabled={browseLoading}>
+            <button type="button" className="btn btn-secondary" onClick={() => loadBrowse({ query: browseMode === 'latest' ? '' : browseQuery })} disabled={browseLoading || (!browseQuery.trim() && browseMode !== 'latest' && !browseHasLoaded)}>
               {browseLoading ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />} Refresh
             </button>
+            <button type="button" className="btn btn-secondary" onClick={() => loadBrowse({ query: '' })} disabled={browseLoading}>
+              {browseLoading && browseMode === 'latest' ? <Loader2 size={15} className="spin" /> : <Radio size={15} />} Load latest
+            </button>
             <span className="discover-count">
+              <span className="discover-filter-label">Indexer source</span>
+              {browseMode === 'search' && browseQuery.trim() ? `Search: ${browseQuery.trim()} / ${selectedBrowseIndexerName} - ` : browseMode === 'latest' ? `Latest / ${selectedBrowseIndexerName} - ` : ''}
               {formatCount(filteredBrowseRows.length)} movies
-              {browseHiddenCount > 0 ? `, ${formatCount(browseHiddenCount)} hidden without TMDB` : ''}
+              {browseHiddenCount > 0 ? `, ${formatCount(browseHiddenCount)} without TMDB details` : ''}
+              {browseIndexerLoading ? ', loading sources' : ''}
             </span>
           </div>
 
-          <DiscoverResultGrid
-            error={browseError}
-            loading={browseLoading && !browseRows.length}
-            emptyText="No TMDB-matched indexer movies found."
-            className="discover-indexer-grid"
-          >
-            {filteredBrowseRows.map((movie) => {
-              const selectedIndex = selectedVariants[movie.parsed_title] || 0;
-              return (
-                <IndexerMovieCard
-                  key={`${movie.parsed_title}-${movie.parsed_year}`}
-                  movie={movie}
-                  selectedIndex={selectedIndex}
-                  owned={ownership[movieKey(movie)]}
-                  expanded={expandedMovieKey === movieKey(movie)}
-                  details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
-                  collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
-                  itemLists={listsForDiscoverMovie(movie, userLists, ownership[movieKey(movie)])}
-                  onVariantSelect={(index) => setSelectedVariants((state) => ({ ...state, [movie.parsed_title]: index }))}
-                  onPlay={onPlay}
-                  onStream={onStream}
-                  onFindTorrent={onFindTorrent}
-                  onTrailer={openTrailer}
-                  onToggleDetails={() => toggleMovieDetails(movie)}
-                  onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, ownership[movieKey(movie)]))}
-                  onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, ownership[movieKey(movie)]))}
-                />
-              );
-            })}
-          </DiscoverResultGrid>
+          {!browseHasLoaded && !browseLoading ? (
+            <div className="empty-state discover-empty">
+              <strong>Search indexers by movie title.</strong>
+              <span>Choose an indexer source, use the top search for a targeted search, or click Load latest for a broad Prowlarr browse that may take longer.</span>
+            </div>
+          ) : (
+            <DiscoverResultGrid
+              error={browseError}
+              loading={browseLoading && !browseRows.length}
+              emptyText={browseMode === 'latest' ? `Latest feed for ${selectedBrowseIndexerName} timed out or returned no movies. Try a title search or switch source.` : `No ${selectedBrowseIndexerName} movies found for this search. Switch to All indexers to search every source.`}
+              className="discover-indexer-grid"
+            >
+              {filteredBrowseRows.map((movie) => {
+                const selectedIndex = selectedVariants[movie.parsed_title] || 0;
+                const owned = ownedMovieFor(movie, ownership);
+                return (
+                  <IndexerMovieCard
+                    key={`${movie.parsed_title}-${movie.parsed_year}`}
+                    movie={movie}
+                    selectedIndex={selectedIndex}
+                    owned={owned}
+                    expanded={expandedMovieKey === movieKey(movie)}
+                    details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
+                    collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
+                    itemLists={listsForDiscoverMovie(movie, userLists, owned)}
+                    onVariantSelect={(index) => setSelectedVariants((state) => ({ ...state, [movie.parsed_title]: index }))}
+                    onPlay={onPlay}
+                    onStream={onStream}
+                    onFindTorrent={onFindTorrent}
+                    onTrailer={openTrailer}
+                    onToggleDetails={() => toggleMovieDetails(movie)}
+                    onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}
+                    onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, owned))}
+                  />
+                );
+              })}
+            </DiscoverResultGrid>
+          )}
         </section>
       )}
 
@@ -2202,30 +2388,33 @@ function DiscoverWorkspace({ followed, notify, onPlay, onStream, onFindTorrent, 
             loading={pickLoading && !pickResults.length}
             emptyText={pickContext?.emptyText || 'No recommendations yet. Ask Ollama for a mood or memory.'}
           >
-            {pickResults.map((movie) => (
-              <DiscoverMovieCard
-                key={`${movie.title}-${movie.year}`}
-                movie={movie}
-                reason={movie.reason}
-                owned={ownership[movieKey(movie)]}
-                followed={followed.some((item) => movieKey(item) === movieKey(movie))}
-                expanded={expandedMovieKey === movieKey(movie)}
-                details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
-                collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
-                itemLists={listsForDiscoverMovie(movie, userLists, ownership[movieKey(movie)])}
-                onPlay={onPlay}
-                onStream={onStream}
-                onFindTorrent={onFindTorrent}
-                onFollow={onFollow}
-                onTrailer={openTrailer}
-                onToggleDetails={() => toggleMovieDetails(movie)}
-                onPersonBrowse={(role, person) => browsePerson('pick', movie, role, person)}
-                onCollectionBrowse={(collectionItem) => browseCollection('pick', movie, collectionItem)}
-                onListBrowse={(list) => browseList('pick', movie, list)}
-                onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, ownership[movieKey(movie)]))}
-                onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, ownership[movieKey(movie)]))}
-              />
-            ))}
+            {pickResults.map((movie) => {
+              const owned = ownedMovieFor(movie, ownership);
+              return (
+                <DiscoverMovieCard
+                  key={`${movie.title}-${movie.year}`}
+                  movie={movie}
+                  reason={movie.reason}
+                  owned={owned}
+                  followed={followed.some((item) => movieKey(item) === movieKey(movie))}
+                  expanded={expandedMovieKey === movieKey(movie)}
+                  details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
+                  collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
+                  itemLists={listsForDiscoverMovie(movie, userLists, owned)}
+                  onPlay={onPlay}
+                  onStream={onStream}
+                  onFindTorrent={onFindTorrent}
+                  onFollow={onFollow}
+                  onTrailer={openTrailer}
+                  onToggleDetails={() => toggleMovieDetails(movie)}
+                  onPersonBrowse={(role, person) => browsePerson('pick', movie, role, person)}
+                  onCollectionBrowse={(collectionItem) => browseCollection('pick', movie, collectionItem)}
+                  onListBrowse={(list) => browseList('pick', movie, list)}
+                  onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}
+                  onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, owned))}
+                />
+              );
+            })}
           </DiscoverResultGrid>
           {pickContext?.baseUrl && pickContext.page < pickContext.totalPages && (
             <button type="button" className="load-more-button" onClick={() => loadContextPage('pick', pickContext, { append: true })} disabled={pickLoading}>
@@ -2322,7 +2511,7 @@ function DiscoverMovieCard({
             <h4>{movie.title}</h4>
             <span>{movie.year || 'Unknown year'}</span>
           </div>
-          <Rating value={movie.tmdb_rating} />
+          <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
         </div>
         <MovieFactChips movie={movie} owned={owned} lowQuality={lowQuality} />
         {reason && <p className="ai-reason"><Sparkles size={14} /> {reason}</p>}
@@ -2439,7 +2628,7 @@ function IndexerMovieCard({
             <h4>{movie.title}</h4>
             <span>{movie.year || 'Unknown year'}</span>
           </div>
-          <Rating value={movie.tmdb_rating} />
+          <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
         </div>
         <MovieFactChips movie={movie} owned={owned} lowQuality={lowQuality} />
 
@@ -2644,17 +2833,25 @@ function DiscoverExpandedDetails({
   );
 }
 
-function Rating({ value }) {
+function formatVoteCount(value) {
+  const count = Number(value || 0);
+  if (!count) return '';
+  if (count >= 1000) return `${(count / 1000).toFixed(count >= 10000 ? 0 : 1)}k votes`;
+  return `${formatCount(count)} votes`;
+}
+
+function Rating({ value, votes }) {
   if (!value) return null;
+  const voteLabel = formatVoteCount(votes);
   return (
     <span className="rating">
       <Star size={14} fill="currentColor" />
-      {value}
+      {value}{voteLabel ? ` - ${voteLabel}` : ''}
     </span>
   );
 }
 
-function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
+function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onReviewUnmatched }) {
   const pageSize = 40;
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -2689,6 +2886,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
   const [listsManagerOpen, setListsManagerOpen] = useState(false);
   const [renameTarget, setRenameTarget] = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
+  const [showAdultMovies, setShowAdultMovies] = useState(true);
 
   const loadLibrary = useCallback(async (forcePlex = false) => {
     setLoading(true);
@@ -2711,6 +2909,20 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
   useEffect(() => {
     loadLibrary(false);
   }, [loadLibrary]);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function loadLibraryPreferences() {
+      try {
+        const data = await fetchJson('/api/config');
+        if (!cancelled) setShowAdultMovies(data.show_adult_movies !== false);
+      } catch {
+        if (!cancelled) setShowAdultMovies(true);
+      }
+    }
+    loadLibraryPreferences();
+    return () => { cancelled = true; };
+  }, []);
 
   const loadUserLists = useCallback(async () => {
     try {
@@ -2744,17 +2956,20 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
   }, [loading]);
 
   const optionSets = useMemo(() => ({
-    genres: getUniqueOptions(items, (item) => item.plex_genres || []),
+    genres: getUniqueOptions(items, (item) => item.canonical_metadata?.genres?.length ? item.canonical_metadata.genres : item.plex_genres || []),
     sources: getUniqueOptions(items, (item) => item.rip_source),
-    languages: getUniqueOptions(items, (item) => item.plex_language),
-    countries: getUniqueOptions(items, (item) => item.plex_country_flag || item.plex_country)
+    languages: getUniqueOptions(items, (item) => item.canonical_metadata?.language || item.plex_language),
+    countries: getUniqueOptions(items, (item) => item.canonical_metadata?.country_flag || item.canonical_metadata?.country || item.plex_country_flag || item.plex_country)
   }), [items]);
 
   const filteredItems = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
     const result = items.filter((item) => {
+      const canonical = item.canonical_metadata || {};
+      if (mode === 'movie' && !canonical.accepted) return false;
+      if (mode === 'movie' && !showAdultMovies && canonical.adult) return false;
       const identity = getMovieIdentity(item);
-      const rating = Number(item.plex_rating || 0);
+      const rating = Number(canonical.rating || item.plex_rating || 0);
       const year = Number(identity.year || 0);
       if (normalizedQuery) {
         const haystack = [
@@ -2762,8 +2977,8 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
           identity.year,
           item.filename,
           item.path,
-          item.plex_summary,
-          item.plex_genres?.join(' ')
+          canonical.summary || canonical.plot || item.plex_summary,
+          (canonical.genres?.length ? canonical.genres : item.plex_genres || []).join(' ')
         ].filter(Boolean).join(' ').toLowerCase();
         if (!haystack.includes(normalizedQuery)) return false;
       }
@@ -2772,9 +2987,9 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
       if (qualityFilter === '4k' && resolutionRank(item.resolution) !== 4) return false;
       if (!matchesLibraryResolutionFilter(item.resolution, resolutionFilter)) return false;
       if (sourceFilter !== 'all' && item.rip_source !== sourceFilter) return false;
-      if (genreFilter !== 'all' && !(item.plex_genres || []).includes(genreFilter)) return false;
-      if (languageFilter !== 'all' && item.plex_language !== languageFilter) return false;
-      if (countryFilter !== 'all' && (item.plex_country_flag || item.plex_country) !== countryFilter) return false;
+      if (genreFilter !== 'all' && !(canonical.genres?.length ? canonical.genres : item.plex_genres || []).includes(genreFilter)) return false;
+      if (languageFilter !== 'all' && (canonical.language || item.plex_language) !== languageFilter) return false;
+      if (countryFilter !== 'all' && (canonical.country_flag || canonical.country || item.plex_country_flag || item.plex_country) !== countryFilter) return false;
       if (mode === 'file' && plexFilter === 'matched' && !item.plex_matched) return false;
       if (mode === 'file' && plexFilter === 'unmatched' && item.plex_matched) return false;
       if (mode === 'movie' && minRating !== 'all' && rating < Number(minRating)) return false;
@@ -2805,7 +3020,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
       return aIdentity.title.localeCompare(bIdentity.title);
     });
     return sorted;
-  }, [items, query, qualityFilter, plexFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sizeFilter, mode, roleFilter, collectionFilter, listFilter, tmdbCache, userLists]);
+  }, [items, query, qualityFilter, plexFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sizeFilter, mode, roleFilter, collectionFilter, listFilter, tmdbCache, userLists, showAdultMovies]);
 
   const totalPages = Math.max(1, Math.ceil(filteredItems.length / pageSize));
   const safePage = Math.min(currentPage, totalPages);
@@ -2815,8 +3030,9 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
   const stats = useMemo(() => ({
     total: items.length,
     low: items.filter((item) => isLowQuality(item.resolution)).length,
-    matched: items.filter((item) => item.plex_matched).length,
-    unmatched: items.filter((item) => !item.plex_matched).length
+    matched: items.filter((item) => item.canonical_metadata?.accepted).length,
+    pending: items.filter((item) => item.metadata_status === 'pending').length,
+    unmatched: items.filter((item) => !item.canonical_metadata?.accepted && item.metadata_status !== 'pending').length
   }), [items]);
 
   useEffect(() => {
@@ -3058,11 +3274,13 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
           </div>
           <div className="library-action-row">
             <button type="button" className="btn btn-secondary" onClick={() => loadLibrary(false)} disabled={loading}>
-              {loading ? <Loader2 size={15} className="spin" /> : <Database size={15} />} Rescan
+              {loading ? <Loader2 size={15} className="spin" /> : <Database size={15} />} Rescan Files
             </button>
-            <button type="button" className="btn btn-secondary" onClick={() => loadLibrary(true)} disabled={loading}>
-              <LinkIcon size={15} /> Sync Plex
-            </button>
+            {stats.unmatched > 0 && (
+              <button type="button" className="btn btn-primary btn-violet" onClick={onReviewUnmatched}>
+                <LinkIcon size={15} /> Review Unmatched
+              </button>
+            )}
             <button type="button" className="btn btn-secondary" onClick={() => setListEditor({ item: null })}>
               <CirclePlus size={15} /> New list
             </button>
@@ -3076,8 +3294,9 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery }) {
       <div className="library-stat-strip">
         <LibraryStat icon={HardDrive} label="Files" value={formatCount(stats.total)} tone="blue" />
         <LibraryStat icon={AlertTriangle} label="Upgrade candidates" value={formatCount(stats.low)} tone="amber" />
-        <LibraryStat icon={LinkIcon} label="Plex matched" value={formatCount(stats.matched)} tone="cyan" />
-        <LibraryStat icon={Radio} label="Unmatched" value={formatCount(stats.unmatched)} tone="violet" />
+        <LibraryStat icon={LinkIcon} label="Metadata matched" value={formatCount(stats.matched)} tone="cyan" />
+        {stats.pending > 0 && <LibraryStat icon={Loader2} label="Metadata pending" value={formatCount(stats.pending)} tone="amber" />}
+        <LibraryStat icon={Radio} label="Unmatched metadata" value={formatCount(stats.unmatched)} tone="violet" onClick={stats.unmatched > 0 ? onReviewUnmatched : undefined} />
       </div>
 
       <div className="library-toolbar library-filter-toolbar">
@@ -3339,12 +3558,24 @@ function LibraryPagination({ total, page, totalPages, pageStart, pageEnd, onPage
   );
 }
 
-function LibraryStat({ icon: Icon, label, value, tone }) {
-  return (
-    <article className={cx('library-stat', `tone-${tone}`)}>
+function LibraryStat({ icon: Icon, label, value, tone, onClick }) {
+  const content = (
+    <>
       <Icon size={18} />
       <strong>{value}</strong>
       <span>{label}</span>
+    </>
+  );
+  if (onClick) {
+    return (
+      <button type="button" className={cx('library-stat', 'library-stat-action', `tone-${tone}`)} onClick={onClick}>
+        {content}
+      </button>
+    );
+  }
+  return (
+    <article className={cx('library-stat', `tone-${tone}`)}>
+      {content}
     </article>
   );
 }
@@ -3377,8 +3608,9 @@ function LibraryMovieCard({
   onRemoveFromList
 }) {
   const identity = getMovieIdentity(item);
+  const canonical = item.canonical_metadata || {};
   const lowQuality = isLowQuality(item.resolution);
-  const genres = (item.plex_genres || []).slice(0, expanded ? 10 : 3);
+  const genres = (canonical.genres?.length ? canonical.genres : item.plex_genres || []).slice(0, expanded ? 10 : 3);
   const directors = getRolePeople(item, details, 'director');
   const director = directors[0];
   const cast = getRolePeople(item, details, 'actor').slice(0, 6);
@@ -3389,7 +3621,7 @@ function LibraryMovieCard({
   return (
     <article className={cx('library-movie-card', expanded && 'library-movie-card-expanded')}>
       <div className="library-poster movie-view-poster">
-        {item.plex_poster ? <img src={item.plex_poster} alt={`${identity.title} poster`} loading="lazy" /> : <Film size={28} />}
+        {(canonical.poster_url || item.plex_poster) ? <img src={canonical.poster_url || item.plex_poster} alt={`${identity.title} poster`} loading="lazy" /> : <Film size={28} />}
       </div>
       <div className="library-item-body">
         <div className="library-item-title-row">
@@ -3397,7 +3629,7 @@ function LibraryMovieCard({
             <h3>{identity.title}</h3>
             <span>{identity.year || 'Unknown year'}</span>
           </div>
-          {item.plex_rating && <Rating value={item.plex_rating} />}
+          {(canonical.rating || item.plex_rating) && <Rating value={canonical.rating || item.plex_rating} votes={canonical.tmdb_vote_count} />}
         </div>
         <div className="chip-row">
           {genres.map((genre) => <span className="chip" key={genre}>{genre}</span>)}
@@ -3405,13 +3637,13 @@ function LibraryMovieCard({
           <span className={cx('chip', lowQuality && 'chip-warning')}>{getQualityLabel(item)}</span>
         </div>
         <p className={cx('library-summary movie-summary', expanded && 'movie-summary-expanded')}>
-          {item.plex_summary || 'No plot summary is available yet.'}
+          {canonical.summary || canonical.plot || item.plex_summary || 'No plot summary is available yet.'}
         </p>
         {expanded && (
           <>
             <div className="movie-expanded-meta">
-              <div><span>Country</span><strong>{item.plex_country || item.plex_country_flag || 'Unknown'}</strong></div>
-              <div><span>Language</span><strong>{item.plex_language || 'Unknown'}</strong></div>
+              <div><span>Country</span><strong>{canonical.country || canonical.country_flag || item.plex_country || item.plex_country_flag || 'Unknown'}</strong></div>
+              <div><span>Language</span><strong>{canonical.language || item.plex_language || 'Unknown'}</strong></div>
               <div><span>Resolution</span><strong>{item.resolution || 'Unknown'}</strong></div>
               <div><span>Source</span><strong>{item.rip_source || 'Unknown'}</strong></div>
             </div>
@@ -3927,8 +4159,8 @@ function ConfirmDialog({ title, body, confirmLabel, danger, onCancel, onConfirm 
   );
 }
 
-function MigrationWorkspace({ section, notify, onFindTorrent }) {
-  if (section === 'cleanup') return <CleanupWorkspace notify={notify} onFindTorrent={onFindTorrent} />;
+function MigrationWorkspace({ section, notify, onFindTorrent, cleanupInitialTab }) {
+  if (section === 'cleanup') return <CleanupWorkspace notify={notify} onFindTorrent={onFindTorrent} initialTab={cleanupInitialTab} />;
   if (section === 'settings') return <SettingsWorkspace notify={notify} />;
   const meta = {
     library: {
@@ -3940,8 +4172,8 @@ function MigrationWorkspace({ section, notify, onFindTorrent }) {
     cleanup: {
       icon: ShieldCheck,
       title: 'Cleanup workspace',
-      body: 'Offline maintenance belongs here: duplicates, Smart Clean, low-quality files, and unmatched Plex fixes.',
-      actions: ['Duplicates', 'Low quality', 'Plex fixes']
+      body: 'Offline maintenance belongs here: duplicates, Smart Clean, low-quality files, and unmatched metadata fixes.',
+      actions: ['Duplicates', 'Low quality', 'Metadata fixes']
     },
     discover: {
       icon: Compass,
@@ -3978,11 +4210,11 @@ const cleanupTabs = [
   { id: 'duplicates', label: 'Duplicates', icon: ShieldCheck },
   { id: 'smart', label: 'Smart Clean', icon: Wand2 },
   { id: 'low', label: 'Low Quality', icon: AlertTriangle },
-  { id: 'unmatched', label: 'Unmatched Plex', icon: LinkIcon }
+  { id: 'unmatched', label: 'Unmatched Metadata', icon: LinkIcon }
 ];
 
-function CleanupWorkspace({ notify, onFindTorrent }) {
-  const [activeTab, setActiveTab] = useState('duplicates');
+function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) {
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [loading, setLoading] = useState({});
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({ duplicates: [], smart: [], low: [], unmatched: [] });
@@ -3992,6 +4224,10 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
   const [renameTarget, setRenameTarget] = useState(null);
   const [matchModal, setMatchModal] = useState(null);
   const [rowStatus, setRowStatus] = useState({});
+
+  useEffect(() => {
+    setActiveTab(initialTab);
+  }, [initialTab]);
 
   const loadCleanup = useCallback(async (forcePlex = false) => {
     const suffix = forcePlex ? '?force_plex=1' : '';
@@ -4057,7 +4293,8 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
     duplicateFiles: Math.max(0, duplicateFiles.length - data.duplicates.length),
     smart: smartSelectablePaths.length,
     low: data.low.length,
-    unmatched: data.unmatched.length
+    pending: data.unmatched.filter((item) => item.metadata_status === 'pending').length,
+    unmatched: data.unmatched.filter((item) => item.metadata_status !== 'pending').length
   };
 
   function updateFilter(key, value) {
@@ -4102,8 +4339,8 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
     setConfirmAction({
       type: 'fix-path',
       item,
-      title: 'Move file for Plex?',
-      body: `Fix Path will move this file or its movie folder within the library root, then ask Plex to rescan.\n\n${item.path}`
+      title: 'Move file for metadata scan?',
+      body: `Fix Path will move this file or its movie folder within the library root, then refresh metadata scan paths.\n\n${item.path}`
     });
   }
 
@@ -4198,22 +4435,36 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
         ...state,
         unmatched: state.unmatched.map((entry) => entry.path === item.path ? { ...entry, path: result.new_path || entry.path, fixable_path: false } : entry)
       }));
-      notify('File moved, Plex rescan requested');
+      notify('File moved, metadata rescan requested');
     } catch (error) {
       setRowStatus((state) => ({ ...state, [item.path]: { tone: 'error', text: error.message } }));
       notify(`Fix Path failed: ${error.message}`, 'error');
     }
   }
 
-  function openMatch(item) {
+  function openPlexMatch(item) {
     if (!item.rating_key) {
       notify('No Plex rating key for this file. Try Scan Plex Library first.', 'error');
       return;
     }
     setMatchModal({
+      provider: 'plex',
       item,
       title: item.suggested_title || '',
       year: item.suggested_year || '',
+      loading: false,
+      applying: '',
+      error: '',
+      results: []
+    });
+  }
+
+  function openTmdbMatch(item) {
+    setMatchModal({
+      provider: 'tmdb',
+      item,
+      title: item.suggested_title || item.tmdb_title || '',
+      year: item.suggested_year || item.tmdb_year || '',
       loading: false,
       applying: '',
       error: '',
@@ -4238,6 +4489,24 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
     }
   }
 
+  async function searchTmdbMatch(event) {
+    event.preventDefault();
+    if (!matchModal?.item) return;
+    setMatchModal((state) => ({ ...state, loading: true, error: '', results: [] }));
+    try {
+      const query = String(matchModal.title || '').trim();
+      const tmdbParams = new URLSearchParams({ page: '1', metadata_context: 'unmatched' });
+      tmdbParams.set('q', query || matchModal.item.filename);
+      if (String(matchModal.year || '').trim()) {
+        tmdbParams.set('year', matchModal.year.trim());
+      }
+      const result = await fetchJson(`/api/tmdb/search?${tmdbParams.toString()}`);
+      setMatchModal((state) => ({ ...state, loading: false, results: result.results || [] }));
+    } catch (error) {
+      setMatchModal((state) => ({ ...state, loading: false, error: error.message }));
+    }
+  }
+
   async function applyPlexMatch(match) {
     if (!matchModal?.item?.rating_key || !match?.guid) return;
     setMatchModal((state) => ({ ...state, applying: match.guid, error: '' }));
@@ -4245,15 +4514,36 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
       await fetchJson('/api/plex/match-apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ rating_key: matchModal.item.rating_key, guid: match.guid, name: match.name })
+        body: JSON.stringify({ path: matchModal.item.path, rating_key: matchModal.item.rating_key, guid: match.guid, name: match.name })
       });
       setRowStatus((state) => ({ ...state, [matchModal.item.path]: { tone: 'success', text: `Plex match applied: ${match.name}` } }));
       setData((state) => ({
         ...state,
-        unmatched: state.unmatched.map((item) => item.path === matchModal.item.path ? { ...item, in_plex: true, plex_title: match.name, suggested_year: match.year || item.suggested_year } : item)
+        unmatched: state.unmatched.filter((item) => item.path !== matchModal.item.path)
       }));
       setMatchModal(null);
       notify('Plex match applied');
+    } catch (error) {
+      setMatchModal((state) => ({ ...state, applying: '', error: error.message }));
+    }
+  }
+
+  async function applyTmdbMatch(match) {
+    if (!matchModal?.item?.path || !match?.tmdb_id) return;
+    setMatchModal((state) => ({ ...state, applying: String(match.tmdb_id), error: '' }));
+    try {
+      await fetchJson('/api/tmdb/match-apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: matchModal.item.path, tmdb_id: match.tmdb_id, movie: match })
+      });
+      setData((state) => ({
+        ...state,
+        unmatched: state.unmatched.filter((item) => item.path !== matchModal.item.path)
+      }));
+      setRowStatus((state) => ({ ...state, [matchModal.item.path]: { tone: 'success', text: `TMDB match applied: ${match.title}` } }));
+      setMatchModal(null);
+      notify('TMDB match applied');
     } catch (error) {
       setMatchModal((state) => ({ ...state, applying: '', error: error.message }));
     }
@@ -4267,15 +4557,12 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
         <div>
           <p className="screen-kicker">Offline maintenance</p>
           <h2>Cleanup <span className="offline-badge">Offline</span></h2>
-          <p>Review duplicate copies, safe cleanup recommendations, low-quality files, and Plex-unmatched items before touching local files.</p>
+          <p>Review duplicate copies, safe cleanup recommendations, low-quality files, and files without accepted metadata before touching local files.</p>
         </div>
         <div className="library-header-actions">
           <div className="library-action-row">
             <button type="button" className="btn btn-secondary" onClick={() => loadCleanup(false)}>
               <RefreshCcw size={15} /> Refresh
-            </button>
-            <button type="button" className="btn btn-secondary" onClick={() => loadCleanup(true)}>
-              <LinkIcon size={15} /> Sync Plex data
             </button>
             {activeSelectedCount > 0 && (
               <button type="button" className="btn btn-danger" onClick={() => requestDelete(activeTab, [...selected[activeTab]], `Move ${activeSelectedCount} selected file${activeSelectedCount === 1 ? '' : 's'} to Recycle Bin?`)}>
@@ -4291,7 +4578,8 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
         <LibraryStat icon={Trash2} label="Extra copies" value={formatCount(summary.duplicateFiles)} tone="red" />
         <LibraryStat icon={Wand2} label="Smart picks" value={formatCount(summary.smart)} tone="green" />
         <LibraryStat icon={AlertTriangle} label="Low quality" value={formatCount(summary.low)} tone="amber" />
-        <LibraryStat icon={LinkIcon} label="Unmatched Plex" value={formatCount(summary.unmatched)} tone="violet" />
+        {summary.pending > 0 && <LibraryStat icon={Loader2} label="Metadata pending" value={formatCount(summary.pending)} tone="amber" />}
+        <LibraryStat icon={LinkIcon} label="Unmatched metadata" value={formatCount(summary.unmatched)} tone="violet" />
       </div>
 
       <div className="cleanup-tabs" role="tablist" aria-label="Cleanup workspace tabs">
@@ -4324,13 +4612,22 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
                 </select>
               </>
             )}
-            <select value={filters.plex} onChange={(event) => updateFilter('plex', event.target.value)}>
-              <option value="all">All Plex states</option>
-              <option value="matched">Plex matched</option>
-              <option value="unmatched">Plex unmatched</option>
-              <option value="inplex">In Plex, unmatched</option>
-              <option value="notplex">Not in Plex</option>
-            </select>
+            {activeTab === 'unmatched' ? (
+              <select value={filters.plex} onChange={(event) => updateFilter('plex', event.target.value)}>
+                <option value="all">All unmatched</option>
+                <option value="plex-unmatched">Plex unmatched</option>
+                <option value="tmdb-unmatched">TMDB unmatched</option>
+                <option value="pending">Pending metadata</option>
+                <option value="conflict">Conflict</option>
+                <option value="needs_review">Needs review</option>
+              </select>
+            ) : (
+              <select value={filters.plex} onChange={(event) => updateFilter('plex', event.target.value)}>
+                <option value="all">All Plex states</option>
+                <option value="matched">Plex matched</option>
+                <option value="unmatched">Plex unmatched</option>
+              </select>
+            )}
           </>
         )}
       </div>
@@ -4359,7 +4656,7 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
             <LowQualityCleanupTab items={filteredLow} selected={selected.low} onToggle={toggleSelected} onDelete={requestDelete} onFindTorrent={onFindTorrent} />
           )}
           {activeTab === 'unmatched' && (
-            <UnmatchedCleanupTab items={filteredUnmatched} selected={selected.unmatched} rowStatus={rowStatus} onToggle={toggleSelected} onDelete={requestDelete} onRename={setRenameTarget} onFixPath={requestFixPath} onMatch={openMatch} />
+            <UnmatchedCleanupTab items={filteredUnmatched} selected={selected.unmatched} rowStatus={rowStatus} onToggle={toggleSelected} onDelete={requestDelete} onRename={setRenameTarget} onFixPath={requestFixPath} onPlexMatch={openPlexMatch} onTmdbMatch={openTmdbMatch} />
           )}
         </>
       )}
@@ -4382,13 +4679,23 @@ function CleanupWorkspace({ notify, onFindTorrent }) {
         />
       )}
       {matchModal && (
-        <PlexMatchModal
-          state={matchModal}
-          onClose={() => setMatchModal(null)}
-          onChange={(patch) => setMatchModal((state) => ({ ...state, ...patch }))}
-          onSearch={searchPlexMatch}
-          onApply={applyPlexMatch}
-        />
+        matchModal.provider === 'tmdb' ? (
+          <TmdbMatchModal
+            state={matchModal}
+            onClose={() => setMatchModal(null)}
+            onChange={(patch) => setMatchModal((state) => ({ ...state, ...patch }))}
+            onSearch={searchTmdbMatch}
+            onApply={applyTmdbMatch}
+          />
+        ) : (
+          <PlexMatchModal
+            state={matchModal}
+            onClose={() => setMatchModal(null)}
+            onChange={(patch) => setMatchModal((state) => ({ ...state, ...patch }))}
+            onSearch={searchPlexMatch}
+            onApply={applyPlexMatch}
+          />
+        )
       )}
     </section>
   );
@@ -4413,11 +4720,14 @@ function filterUnmatchedItems(items, filters) {
   const q = filters.query.trim().toLowerCase();
   return items.filter((item) => {
     if (q) {
-      const haystack = [item.filename, item.path, item.suggested_title, item.suggested_year, item.plex_title, item.plex_hint, item.folder].filter(Boolean).join(' ').toLowerCase();
+      const haystack = [item.filename, item.path, item.suggested_title, item.suggested_year, item.plex_title, item.tmdb_title, item.metadata_hint, item.plex_hint, item.folder].filter(Boolean).join(' ').toLowerCase();
       if (!haystack.includes(q)) return false;
     }
-    if (filters.plex === 'inplex' && !item.in_plex) return false;
-    if (filters.plex === 'notplex' && item.in_plex) return false;
+    if (filters.plex === 'plex-unmatched' && item.plex_matched) return false;
+    if (filters.plex === 'tmdb-unmatched' && item.tmdb_id) return false;
+    if (filters.plex === 'pending' && item.metadata_status !== 'pending') return false;
+    if (filters.plex === 'conflict' && item.metadata_status !== 'conflict') return false;
+    if (filters.plex === 'needs_review' && item.metadata_status !== 'needs_review') return false;
     return true;
   });
 }
@@ -4559,7 +4869,7 @@ function LowQualityCleanupTab({ items, selected, onToggle, onDelete, onFindTorre
   );
 }
 
-function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onDelete, onRename, onFixPath, onMatch }) {
+function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onDelete, onRename, onFixPath, onPlexMatch, onTmdbMatch }) {
   return (
     <div className="cleanup-panel">
       <CleanupSelectionBar
@@ -4580,7 +4890,7 @@ function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onDelete, o
               <div className="cleanup-file-main">
                 <div className="cleanup-title-line">
                   <h3>{item.filename}</h3>
-                  <span className={cx('chip', item.in_plex ? 'chip-warning' : 'status-missing')}>{item.in_plex ? 'In Plex, unmatched' : 'Not in Plex'}</span>
+                  <span className={cx('chip', metadataStatusChipClass(item))}>{metadataStatusLabel(item)}</span>
                 </div>
                 <div className="cleanup-path" title={item.path}>{item.path}</div>
                 <div className="cleanup-meta-row">
@@ -4590,20 +4900,23 @@ function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onDelete, o
                   {item.library_root && <span className="chip chip-muted">{rootLabel(item.library_root)}</span>}
                   {item.fixable_path && <span className="chip chip-warning">Folder depth {item.depth}</span>}
                 </div>
-                <p className="cleanup-hint">{item.plex_hint || 'No Plex hint available.'}</p>
+                <p className="cleanup-hint">{item.metadata_hint || item.plex_hint || 'No metadata hint available.'}</p>
                 {rowStatus[item.path] && <p className={cx('cleanup-row-status', `cleanup-row-${rowStatus[item.path].tone}`)}>{rowStatus[item.path].text}</p>}
               </div>
               <div className="cleanup-row-actions">
+                <button type="button" className="btn btn-primary btn-violet" onClick={() => onTmdbMatch(item)}>
+                  <Search size={15} /> Search TMDB
+                </button>
                 {item.in_plex ? (
-                  <button type="button" className="btn btn-secondary" onClick={() => onMatch(item)}>
-                    <Clapperboard size={15} /> Match
+                  <button type="button" className="btn btn-secondary" onClick={() => onPlexMatch(item)}>
+                    <Clapperboard size={15} /> Search Plex
                   </button>
                 ) : item.fixable_path ? (
                   <button type="button" className="btn btn-secondary" onClick={() => onFixPath(item)}>
                     <Folder size={15} /> Fix path
                   </button>
                 ) : (
-                  <span className="cleanup-action-note">Scan Plex first</span>
+                  <span className="cleanup-action-note">Plex optional</span>
                 )}
                 <button type="button" className="btn btn-secondary" onClick={() => onRename(item)}>
                   <Clapperboard size={15} /> Rename
@@ -4615,9 +4928,24 @@ function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onDelete, o
             </article>
           ))}
         </div>
-      ) : <CleanupEmpty title="No unmatched Plex files match this view." text="Run Sync Plex data after Plex finishes scanning." />}
+      ) : <CleanupEmpty title="No unmatched metadata files match this view." text="Search TMDB or refresh metadata when new files are added." />}
     </div>
   );
+}
+
+function metadataStatusLabel(item) {
+  if (item.metadata_status === 'pending') return 'Pending metadata';
+  if (item.metadata_status === 'conflict') return 'Conflict';
+  if (item.metadata_status === 'needs_review') return 'Needs review';
+  if (item.in_plex && !item.plex_matched) return 'Plex unmatched';
+  if (!item.tmdb_id) return 'TMDB unmatched';
+  return 'Unmatched metadata';
+}
+
+function metadataStatusChipClass(item) {
+  if (item.metadata_status === 'pending') return 'chip-warning';
+  if (item.metadata_status === 'conflict') return 'chip-warning';
+  return 'status-missing';
 }
 
 function CleanupSelectionBar({ label, selectedCount, selectableCount, onSelectAll, onClear }) {
@@ -4676,6 +5004,57 @@ function CleanupEmpty({ title, text }) {
   );
 }
 
+function TmdbMatchModal({ state, onClose, onChange, onSearch, onApply }) {
+  return (
+    <div className="modal-backdrop" role="presentation" onClick={onClose}>
+      <section className="torrent-dialog cleanup-match-dialog" role="dialog" aria-modal="true" aria-label="TMDB match search" onClick={(event) => event.stopPropagation()}>
+        <div className="dialog-header">
+          <div>
+            <p className="screen-kicker">TMDB match</p>
+            <h2>{state.item.filename}</h2>
+          </div>
+          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close TMDB match dialog">
+            <X size={18} />
+          </button>
+        </div>
+        <form className="cleanup-match-form" onSubmit={onSearch}>
+          <label className="dialog-field">
+            <span>Search title</span>
+            <input value={state.title} onChange={(event) => onChange({ title: event.target.value })} />
+          </label>
+          <label className="dialog-field">
+            <span>Year</span>
+            <input value={state.year} onChange={(event) => onChange({ year: event.target.value })} inputMode="numeric" />
+          </label>
+          <button type="submit" className="btn btn-primary btn-violet cleanup-match-submit" disabled={state.loading}>
+            {state.loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search TMDB
+          </button>
+        </form>
+        {state.error && <p className="settings-inline-status settings-inline-error"><AlertTriangle size={15} /><span>{state.error}</span></p>}
+        <div className="match-result-list">
+          {state.results.length ? state.results.map((match) => (
+            <article className="match-result-row tmdb-match-result-row" key={match.tmdb_id}>
+              <span className="match-result-poster">
+                {match.poster_url ? <img src={match.poster_url} alt="" loading="lazy" /> : <Film size={18} />}
+              </span>
+              <div>
+                <strong>{match.title}</strong>
+                <span>{match.year || 'Unknown year'} | {match.tmdb_rating ? `${match.tmdb_rating} - ${formatVoteCount(match.tmdb_vote_count) || 'no votes'}` : 'No rating'}</span>
+                <small>{match.plot || 'No plot summary available.'}</small>
+              </div>
+              <button type="button" className="btn btn-secondary" onClick={() => onApply(match)} disabled={Boolean(state.applying)}>
+                {state.applying === String(match.tmdb_id) ? <Loader2 size={15} className="spin" /> : <CheckCircle2 size={15} />} Apply match
+              </button>
+            </article>
+          )) : (
+            <div className="cleanup-empty-match">Search TMDB, then choose the exact public movie identity.</div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function PlexMatchModal({ state, onClose, onChange, onSearch, onApply }) {
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
@@ -4698,7 +5077,7 @@ function PlexMatchModal({ state, onClose, onChange, onSearch, onApply }) {
             <span>Year</span>
             <input value={state.year} onChange={(event) => onChange({ year: event.target.value })} inputMode="numeric" />
           </label>
-          <button type="submit" className="btn btn-primary" disabled={state.loading}>
+          <button type="submit" className="btn btn-primary cleanup-match-submit" disabled={state.loading}>
             {state.loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search Plex
           </button>
         </form>
@@ -4724,11 +5103,11 @@ function PlexMatchModal({ state, onClose, onChange, onSearch, onApply }) {
 }
 
 const emptySettingsState = {
-  library: { directory: '', directories: [''] },
+  library: { directory: '', directories: [''], showAdultMovies: true },
   appData: { user_data_dir: '', tmdb_cache_dir: '' },
   plex: { url: '', token: '' },
   prowlarr: { url: '', key: '' },
-  tmdb: { key: '' },
+  tmdb: { key: '', includeAdult: false },
   ollama: { url: '', model: '' }
 };
 
@@ -4756,15 +5135,16 @@ function SettingsWorkspace({ notify }) {
       setForms({
         library: library.status === 'fulfilled' ? {
           directory: library.value.directory || '',
-          directories: (library.value.directories && library.value.directories.length ? library.value.directories : [library.value.directory || '']).filter((path) => path !== '')
-        } : { directory: '', directories: [''] },
+          directories: (library.value.directories && library.value.directories.length ? library.value.directories : [library.value.directory || '']).filter((path) => path !== ''),
+          showAdultMovies: library.value.show_adult_movies !== false
+        } : { directory: '', directories: [''], showAdultMovies: true },
         appData: appData.status === 'fulfilled' ? {
           user_data_dir: appData.value.user_data_dir || '',
           tmdb_cache_dir: appData.value.tmdb_cache_dir || ''
         } : { user_data_dir: '', tmdb_cache_dir: '' },
         plex: plex.status === 'fulfilled' ? { url: plex.value.url || '', token: plex.value.token || '' } : { url: '', token: '' },
         prowlarr: prowlarr.status === 'fulfilled' ? { url: prowlarr.value.url || '', key: prowlarr.value.key || '' } : { url: '', key: '' },
-        tmdb: tmdb.status === 'fulfilled' ? { key: tmdb.value.key || '' } : { key: '' },
+        tmdb: tmdb.status === 'fulfilled' ? { key: tmdb.value.key || '', includeAdult: Boolean(tmdb.value.include_adult) } : { key: '', includeAdult: false },
         ollama: ollama.status === 'fulfilled' ? { url: ollama.value.url || '', model: ollama.value.model || '' } : { url: '', model: '' }
       });
       const failed = requests.filter((request) => request.status === 'rejected');
@@ -4844,10 +5224,10 @@ function SettingsWorkspace({ notify }) {
       const data = await fetchJson('/api/config', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ directories })
+        body: JSON.stringify({ directories, show_adult_movies: Boolean(forms.library.showAdultMovies) })
       });
       const savedDirectories = data.directories && data.directories.length ? data.directories : [data.directory || ''];
-      setForms((state) => ({ ...state, library: { directory: data.directory || savedDirectories[0] || '', directories: savedDirectories } }));
+      setForms((state) => ({ ...state, library: { directory: data.directory || savedDirectories[0] || '', directories: savedDirectories, showAdultMovies: data.show_adult_movies !== false } }));
       setCardStatus('library', 'success', 'Library locations saved.', `${savedDirectories.length} folder${savedDirectories.length === 1 ? '' : 's'} configured.`);
       notify('Library locations saved');
     } catch (error) {
@@ -4886,7 +5266,7 @@ function SettingsWorkspace({ notify }) {
     const payloads = {
       plex: { url: forms.plex.url, token: forms.plex.token },
       prowlarr: { url: forms.prowlarr.url, key: forms.prowlarr.key },
-      tmdb: { key: forms.tmdb.key },
+      tmdb: { key: forms.tmdb.key, include_adult: Boolean(forms.tmdb.includeAdult) },
       ollama: { url: forms.ollama.url, model: forms.ollama.model }
     };
     setActionState(`${service}-save`, true);
@@ -4937,10 +5317,10 @@ function SettingsWorkspace({ notify }) {
     setActionState(`plex-${action}`, true);
     try {
       const data = await fetchJson(endpoint, { method });
-      setCardStatus('plex', 'success', action === 'sync' ? 'Plex cache synced.' : 'Plex scan requested.', data.cached ? `${formatCount(data.cached)} files cached.` : 'Plex will refresh its movie sections.');
-      notify(action === 'sync' ? 'Plex cache synced' : 'Plex scan requested');
+      setCardStatus('plex', 'success', action === 'sync' ? 'Plex cache refreshed.' : 'Plex scan requested.', data.cached ? `${formatCount(data.cached)} files cached.` : 'Plex will refresh its movie sections.');
+      notify(action === 'sync' ? 'Plex cache refreshed' : 'Plex scan requested');
     } catch (error) {
-      setCardStatus('plex', 'error', action === 'sync' ? 'Plex sync failed.' : 'Plex scan failed.', error.message);
+      setCardStatus('plex', 'error', action === 'sync' ? 'Plex cache refresh failed.' : 'Plex scan failed.', error.message);
     } finally {
       setActionState(`plex-${action}`, false);
     }
@@ -5004,6 +5384,17 @@ function SettingsWorkspace({ notify }) {
               </label>
             ))}
           </div>
+          <label className="settings-checkbox-field">
+            <input
+              type="checkbox"
+              checked={forms.library.showAdultMovies !== false}
+              onChange={(event) => updateField('library', 'showAdultMovies', event.target.checked)}
+            />
+            <span>
+              <strong>Show adult movies in Movie View</strong>
+              <small>File View and Cleanup still show every local file.</small>
+            </span>
+          </label>
           <SettingsInlineStatus status={statuses.library} />
           <div className="dialog-actions">
             <button type="button" className="btn btn-secondary" onClick={addLibraryDirectory}>
@@ -5067,8 +5458,8 @@ function SettingsWorkspace({ notify }) {
             <>
               <ActionButton loading={saving['plex-save']} icon={Save} label="Save Plex" onClick={() => saveIntegration('plex')} primary />
               <ActionButton loading={saving['plex-test']} icon={PlugZap} label="Test saved" onClick={() => testIntegration('plex')} />
-              <ActionButton loading={saving['plex-sync']} icon={RefreshCcw} label="Sync cache" onClick={() => runPlexAction('sync')} />
-              <ActionButton loading={saving['plex-scan']} icon={Radio} label="Force scan" onClick={() => runPlexAction('scan')} />
+              <ActionButton loading={saving['plex-sync']} icon={RefreshCcw} label="Refresh Plex Cache" onClick={() => runPlexAction('sync')} />
+              <ActionButton loading={saving['plex-scan']} icon={Radio} label="Force Plex Scan" onClick={() => runPlexAction('scan')} />
             </>
           )}
         />
@@ -5107,13 +5498,26 @@ function SettingsWorkspace({ notify }) {
           accent="green"
           status={statuses.tmdb}
           fields={(
-            <SecretField
-              label="TMDB API key"
-              value={forms.tmdb.key || ''}
-              revealed={revealed.tmdb}
-              onReveal={() => setRevealed((state) => ({ ...state, tmdb: !state.tmdb }))}
-              onChange={(value) => updateField('tmdb', 'key', value)}
-            />
+            <>
+              <SecretField
+                label="TMDB API key"
+                value={forms.tmdb.key || ''}
+                revealed={revealed.tmdb}
+                onReveal={() => setRevealed((state) => ({ ...state, tmdb: !state.tmdb }))}
+                onChange={(value) => updateField('tmdb', 'key', value)}
+              />
+              <label className="settings-checkbox-field">
+                <input
+                  type="checkbox"
+                  checked={Boolean(forms.tmdb.includeAdult)}
+                  onChange={(event) => updateField('tmdb', 'includeAdult', event.target.checked)}
+                />
+                <span>
+                  <strong>Include adult titles in metadata search</strong>
+                  <small>Used for matching and Unmatched Metadata search, not normal Discover browsing.</small>
+                </span>
+              </label>
+            </>
           )}
           actions={(
             <>
@@ -5203,7 +5607,7 @@ function IntegrationCard({ icon, title, accent, status, fields, actions }) {
 
 function integrationText(title) {
   return {
-    Plex: 'Metadata matching, library sync, and Plex scan controls.',
+    Plex: 'Read-only Plex cache and Plex server scan controls.',
     Prowlarr: 'Source search for upgrades and torrent lookup.',
     TMDB: 'Posters, plots, cast, discovery lists, and trailers.',
     Ollama: 'Local AI recommendations through your own model.'

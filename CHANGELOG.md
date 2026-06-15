@@ -1,5 +1,41 @@
 # Changelog
 
+## v2.6.0 - June 2026
+
+Cinema Paradiso v2.6 is the current stable baseline for the React/Vite movie archive console. It folds the recent UI, metadata, Discover, Library, Cleanup, Settings, and release-watchlist work into one recoverable GitHub release.
+
+### Added
+
+- App metadata storage for file facts, TMDB metadata, Plex metadata, manual matches, and conflicts under user data.
+- TMDB-based local metadata matching so users without Plex can still build a rich offline movie library.
+- Cleanup > Unmatched Metadata workflow with TMDB search/apply, optional Plex matching, rename, fix-path, and refresh actions.
+- Discover vote-count preservation and minimum vote filtering for stronger rating confidence.
+- Browse Indexers source selector that loads enabled Prowlarr indexers before search/load and can query one selected indexer.
+- Progressive Browse Indexers enrichment: raw Prowlarr rows appear first, then TMDB details are added when available.
+- Tests for metadata architecture, library ownership matching, Discover utilities, adult metadata settings, library action UX, and Prowlarr indexer scoping.
+
+### Changed
+
+- Movie View now focuses on files with accepted Plex or TMDB metadata; File View remains the complete local-file management surface.
+- Plex is optional for rich local metadata instead of being the only practical metadata source.
+- Discover/Home ownership matching prefers stable IDs such as TMDB/IMDb before title/year fallback.
+- Browse Indexers search and latest feeds can be scoped to `All indexers` or one selected Prowlarr source.
+- Project docs now describe v2.6 as the stable release baseline before future code optimization work.
+
+### Fixed
+
+- Reduced false "not in library" Discover results caused by title differences between Plex and TMDB.
+- Prevented Browse Indexers from timing out just by opening the tab; broad latest loading is now explicit.
+- Preserved indexer rows without TMDB metadata instead of hiding them.
+- Improved v2.6 metadata read-path performance by avoiding writes and TMDB fetches during normal library reads.
+- Kept local resolution probing so cropped 1080p files are not mislabeled as 720p.
+
+### Notes
+
+- `config.json`, `data/`, `cache/`, `res_cache.json`, `node_modules/`, `dist/`, and `winapp/` are not part of the committed release.
+- Users should run `npm install` and `npm run build` after checkout because built frontend assets are generated locally.
+- `v2.6.0` is intended as the stable rollback point before larger code optimization/refactor work.
+
 ## v2.5.0 - June 2026
 
 Cinema Paradiso v2.5 is the major release that moves the app from the old file-organizer interface into a React/Vite movie archive console.

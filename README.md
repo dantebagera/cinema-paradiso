@@ -2,11 +2,11 @@
 
 > **Local-first movie archive command console** for Plex collectors, large Windows libraries, TMDB discovery, Prowlarr source search, and local Ollama recommendations.
 
-Cinema Paradiso is a self-hosted movie library manager for people with hundreds or thousands of local movie files. It helps you browse what you own, clean duplicates and low-quality copies, fix Plex-unmatched files, discover movies online, search torrent indexers, stream titles, and ask a local AI curator what to watch.
+Cinema Paradiso is a self-hosted movie library manager for people with hundreds or thousands of local movie files. It helps you browse what you own, clean duplicates and low-quality copies, fix unmatched metadata, discover movies online, search torrent indexers, stream titles, and ask a local AI curator what to watch.
 
 Everything runs on your machine. No cloud account. No subscription. No remote database.
 
-**Current version: v2.5.0** - June 2026
+**Current version: v2.6.0** - June 2026
 
 ---
 
@@ -38,27 +38,21 @@ Everything runs on your machine. No cloud account. No subscription. No remote da
 
 ---
 
-## What Changed in v2.5
+## What Changed in v2.6
 
-Cinema Paradiso v2.5 is the major migration from the old all-in-one HTML interface to a modern React/Vite frontend served by the Flask backend.
+Cinema Paradiso v2.6 is the current stable baseline for the React/Vite movie archive console. It includes the black/gold interface, the redesigned Home/Library/Cleanup/Discover/Settings workspaces, and the newer metadata architecture that makes Plex optional instead of mandatory for rich local library browsing.
 
-- New black/gold cinematic interface based on the Cinema Paradiso styleguide.
-- Persistent left sidebar with larger brand presence and simplified navigation.
-- New Home command center with library health, trending discovery, selected movie inspector, and a backend-backed release watchlist.
-- Release watchlist now stores followed movies in user data, checks Prowlarr for proper WEB/Blu-ray releases, ignores CAM/TS/HDCAM/screener copies, highlights available releases, and auto-removes movies once they are owned locally.
-- Library now has separate **Movie View** and **File View**.
-- Movie View focuses on watching decisions: poster cards, metadata, rating, genres, country/language, plot, director, cast, trailer, collections, and user lists.
-- File View focuses on management: filename, path, Plex state, resolution, source, size, rename, delete, and source search.
-- Library search now searches locally on the Library page and ranks title matches above plot-only matches.
-- Library pagination now renders 40 results per page instead of growing the DOM with endless "show more" cards.
-- Library resolution filter is simplified to `4K`, `1080p`, `720p`, and `Below 720p`.
-- Added user lists and edited TMDB collection overrides stored separately from disposable TMDB cache.
-- Added Settings as a real system console for library paths, app data paths, Plex, Prowlarr, TMDB, and Ollama.
-- Added Cleanup as an offline maintenance center with duplicates, smart clean, low quality, and unmatched Plex workflows.
-- Added Discover workspace with Explore Movies, Browse Indexers, and Pick My Movie.
-- Discover cards are archive-aware: Play if owned, Stream and Find Sources if missing, Find Upgrade if owned but low quality.
-- Expanded cards now include TMDB details, trailers, directors, cast, collection context, and list controls.
-- Real video stream resolution probing is used so cropped 1080p files are not mislabeled as 720p.
+- New app metadata layer stores file facts, Plex metadata, TMDB metadata, manual matches, and conflicts separately under user data.
+- Movie View now shows files with accepted Plex or TMDB metadata, while File View remains the complete local-file management view.
+- Cleanup now uses **Unmatched Metadata** instead of Plex-only unmatched handling, with TMDB search/apply, optional Plex matching, rename, fix-path, and refresh workflows.
+- Plex remains supported and read-only by default, but TMDB can now enrich local library files and provide canonical movie identity.
+- Discover/Home ownership matching now prefers stable IDs such as TMDB/IMDb before title/year fallback, reducing false "not in library" results.
+- Discover adds TMDB vote-count preservation and minimum vote filters so low-confidence ratings can be filtered out.
+- Browse Indexers now loads Prowlarr indexer sources before search/load and can scope searches or latest feeds to one selected indexer such as YTS.
+- Browse Indexers renders raw Prowlarr rows first and enriches TMDB details progressively, so cards are not hidden just because TMDB metadata is missing.
+- Home release watchlist remains compact, supports a full list view, checks for proper WEB/Blu-ray releases, ignores CAM/TS/HDCAM/screener copies, and removes movies once they are owned locally.
+- Library keeps 40-item pagination, local title-first search ranking, simplified resolution buckets, real stream-resolution probing, user lists, edited collections, cast/director filters, trailers, and archive-aware actions.
+- Settings manages library roots, user data, cache folders, and optional Plex, Prowlarr, TMDB, and Ollama integrations.
 
 ---
 
@@ -72,8 +66,8 @@ The Home page is the command center. It shows library health, followed release a
 
 Library is the offline archive browser.
 
-- **Movie View:** for choosing what to watch.
-- **File View:** for file management.
+- **Movie View:** for choosing what to watch from files with accepted metadata.
+- **File View:** for managing every local video file, including files without accepted metadata.
 - Filters include quality, resolution bucket, source, genre, language, country, year, rating, Plex state, and size.
 - Actions include Play, Find Sources, Find Upgrade, Trailer, Rename, Delete, Add to List, and collection/list filtering.
 
@@ -84,8 +78,8 @@ Cleanup is the safe maintenance area for local files.
 - Duplicates
 - Smart Clean recommendations
 - Low-quality files
-- Unmatched Plex fixes
-- Rename, Fix Path, Plex match, source search, and Recycle Bin delete flows
+- Unmatched Metadata fixes
+- Rename, Fix Path, TMDB match, optional Plex match, source search, and Recycle Bin delete flows
 
 Destructive actions are explicit and confirmed. Delete defaults to the Windows Recycle Bin.
 
@@ -94,7 +88,7 @@ Destructive actions are explicit and confirmed. Delete defaults to the Windows R
 Discover is the online activity area.
 
 - **Explore Movies:** TMDB lists, genres, search, trailers, stream, sources.
-- **Browse Indexers:** Prowlarr latest/search results with resolution, seeders, size, indexer, and torrent/magnet/page links.
+- **Browse Indexers:** Prowlarr latest/search results with selectable indexer source, resolution, seeders, size, and torrent/magnet/page links.
 - **Pick My Movie:** local Ollama recommendations enriched with TMDB metadata and archive-aware actions.
 
 ### Settings
@@ -109,7 +103,7 @@ Settings manages:
 - TMDB API key
 - Ollama URL/model
 
-User lists, edited collections, and followed releases are persistent user data. TMDB metadata is disposable cache.
+User lists, edited collections, followed releases, and manual metadata matches are persistent user data. TMDB detail caches are rebuildable cache.
 
 ---
 
@@ -128,8 +122,8 @@ User lists, edited collections, and followed releases are persistent user data. 
 ## Installation
 
 ```bash
-git clone https://github.com/dantebagera/10k-movie-library-organizer.git
-cd 10k-movie-library-organizer
+git clone https://github.com/dantebagera/cinema-paradiso.git
+cd cinema-paradiso
 pip install -r requirements.txt
 npm install
 npm run build
@@ -177,8 +171,8 @@ Only a movie library folder is required. Integrations are optional.
 
 The app separates persistent user data from rebuildable cache:
 
-- `data/` stores user lists, edited collections, and followed releases.
-- `cache/` stores TMDB metadata cache.
+- `data/` stores user lists, edited collections, followed releases, and app metadata records for files, manual matches, Plex metadata, TMDB metadata, and conflicts.
+- `cache/` stores rebuildable TMDB detail/collection cache.
 - `res_cache.json` stores local resolution probe cache.
 - `config.json` stores local settings and secrets.
 
@@ -234,7 +228,8 @@ Basic verification:
 
 ```bash
 python -m py_compile app.py
-python -m unittest tests.test_user_curation_store
+python -m unittest discover -s tests -p "test_*.py"
+node --test tests/discoverUtils.test.mjs
 npm run build
 ```
 
