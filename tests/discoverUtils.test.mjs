@@ -7,6 +7,8 @@ import {
   discoverMovieKey,
   filterEnrichedIndexerResults,
   listsForDiscoverMovie,
+  ownedMovieFor,
+  ownershipKeys,
   sortTorrentVariants
 } from '../src/discoverUtils.js';
 
@@ -29,6 +31,15 @@ test('buildOwnershipMap matches title variants through tmdb id', () => {
   ]);
 
   assert.equal(map['tmdb:601'].path, 'E:/Movies/ET.mkv');
+});
+
+test('ownership never falls back from a conflicting strong id or a yearless title', () => {
+  const ownership = buildOwnershipMap([
+    { tmdb_id: 601, title: 'E.T.', year: '1982', found: true, path: 'E:/Movies/ET.mkv' }
+  ]);
+
+  assert.equal(ownedMovieFor({ tmdb_id: 999, title: 'E.T.', year: '1982' }, ownership), null);
+  assert.deepEqual(ownershipKeys({ title: 'Crash', year: '' }), []);
 });
 
 test('filterEnrichedIndexerResults keeps browse rows without TMDB metadata', () => {
@@ -85,6 +96,7 @@ test('discoverMoviePayload supports online movies and owned paths', () => {
   assert.deepEqual(payload, {
     tmdb_id: '155',
     imdb_id: '',
+    plex_guid: '',
     title: 'The Dark Knight',
     year: '2008',
     poster_url: 'poster.jpg',

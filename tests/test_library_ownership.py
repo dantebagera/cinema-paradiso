@@ -6,6 +6,56 @@ import app
 
 
 class LibraryOwnershipTest(unittest.TestCase):
+    def test_library_check_matches_et_title_variant_without_saved_external_id(self):
+        original_dirs = app._movies_dirs
+        original_dir = app._movies_dir
+        original_library_cache = dict(app._library_cache)
+        original_plex_cache = dict(app._plex_cache)
+        original_plex_by_fname = dict(app._plex_matched_by_fname)
+        original_plex_token = app._plex_token
+
+        original_user_data_dir = app._user_data_dir
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie_path = Path(tmp) / "E.T.The.Extra-Terrestrial.1982.1080p.mkv"
+            movie_path.write_bytes(b"")
+            try:
+                app._movies_dirs = [tmp]
+                app._movies_dir = tmp
+                app._user_data_dir = data_tmp
+                app._library_cache = {}
+                app._plex_cache = {
+                    app._norm(str(movie_path)): {
+                        "plex_title": "E.T.",
+                        "plex_year": "1982",
+                    }
+                }
+                app._plex_matched_by_fname = {}
+                app._plex_token = ""
+                app.AppMetadataStore(Path(data_tmp)).apply_plex_match(str(movie_path), {
+                    "plex_title": "E.T.",
+                    "plex_year": "1982",
+                })
+
+                response = app.app.test_client().post("/api/library/check", json={
+                    "movies": [{
+                        "tmdb_id": "601",
+                        "imdb_id": "tt0083866",
+                        "title": "E.T. the Extra-Terrestrial",
+                        "year": "1982",
+                    }]
+                })
+            finally:
+                app._movies_dirs = original_dirs
+                app._movies_dir = original_dir
+                app._user_data_dir = original_user_data_dir
+                app._library_cache = original_library_cache
+                app._plex_cache = original_plex_cache
+                app._plex_matched_by_fname = original_plex_by_fname
+                app._plex_token = original_plex_token
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.get_json()["results"][0]["found"])
+
     def test_library_check_matches_by_tmdb_id_before_title(self):
         original_dirs = app._movies_dirs
         original_dir = app._movies_dir

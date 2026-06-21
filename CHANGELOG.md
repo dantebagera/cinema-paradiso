@@ -1,5 +1,43 @@
 # Changelog
 
+## v2.6.3 - June 2026
+
+Cinema Paradiso v2.6.3 strengthens metadata identity, repair, and curation workflows while preserving the local-first behavior of the v2.6 stable line.
+
+### Added
+
+- Identity Review queue for uncertain matches, provider conflicts, and metadata discrepancies, with pause, resume, rescan, selection, and explicit apply controls.
+- Home metadata-health counts for unmatched, pending, and identity-review items, with direct Cleanup navigation.
+- Library reconciliation for stable files that are missing metadata records, including files predating the current metadata checkpoint.
+- Local title/year correction for owned movies without changing Plex metadata or renaming files.
+- Durable poster overrides using TMDB artwork, Plex artwork, or local uploads, with reset support.
+- Protected Watched and Watchlist system lists, poster controls, and Library viewing-state filters.
+- Richer manual Plex matching with local-only apply behavior and explicit retry after a Plex scan.
+
+### Changed
+
+- Unified Library, Discover, collections, lists, duplicates, posters, and ownership checks around accepted Cinema Paradiso identities.
+- Improved automatic TMDB decisions using exact titles, official alternative titles, provider evidence, and controlled release-year tolerance.
+- Preserved accepted movie identity when provider enrichment is missing, unavailable, or incomplete.
+- Grouped duplicate copies by shared strong identity while refusing to merge conflicting provider IDs.
+- Smart Match now keeps matching, review, apply, and rename as separate explicit operations.
+
+### Fixed
+
+- Prevented conflicting strong IDs or weak title-only evidence from silently replacing an accepted movie.
+- Rejected stale Smart Match proposals after the underlying identity revision changes.
+- Hardened metadata JSON writes and restart recovery, including repair backups for corrupt state.
+- Prevented Plex tokens and sensitive provider details from appearing in returned errors.
+- Kept poster and metadata overrides through provider refreshes and shared them only across conflict-safe duplicate identities.
+- Prevented previously unrecorded library files from remaining invisible to metadata repair workflows.
+
+### Notes
+
+- Plex matching remains local and read-only: applying a match does not modify the Plex server.
+- Watched applies only to owned movies; Watchlist can also contain online discovery results.
+- Runtime data, local posters, configuration, caches, generated builds, and dependencies are not committed.
+- `v2.6.0` remains the stable rollback point before the identity and metadata changes in this release.
+
 ## v2.6.0 - June 2026
 
 Cinema Paradiso v2.6 is the current stable baseline for the React/Vite movie archive console. It folds the recent UI, metadata, Discover, Library, Cleanup, Settings, and release-watchlist work into one recoverable GitHub release.

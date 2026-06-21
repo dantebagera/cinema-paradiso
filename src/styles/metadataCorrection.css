@@ -1,0 +1,45 @@
+.metadata-correction-dialog {
+  width: min(620px, calc(100vw - 28px));
+}
+
+.metadata-correction-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: var(--space-3);
+}
+
+.metadata-provider-comparison {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #0b0c0e;
+  padding: 11px 12px;
+}
+
+.metadata-provider-comparison span,
+.metadata-provider-comparison small {
+  color: var(--text-faint);
+  font-size: 0.72rem;
+}
+
+.metadata-provider-comparison strong {
+  color: var(--projector-gold);
+}
+
+.metadata-correction-actions {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 620px) {
+  .metadata-correction-form {
+    grid-template-columns: 1fr;
+  }
+
+  .metadata-correction-form .dialog-field,
+  .metadata-correction-actions,
+  .metadata-correction-actions .btn {
+    width: 100%;
+  }
+}

@@ -6,6 +6,73 @@ import app
 
 
 class UserCurationStoreTest(unittest.TestCase):
+    def test_system_lists_are_created_and_protected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = app.UserCurationStore(Path(tmp))
+
+            lists = store.list_all()
+
+            self.assertEqual([item["id"] for item in lists[:2]], ["watched", "watchlist"])
+            self.assertEqual(lists[0]["system_type"], "watched")
+            self.assertEqual(lists[1]["system_type"], "watchlist")
+            with self.assertRaises(ValueError):
+                store.rename_list("watched", "Seen")
+            with self.assertRaises(ValueError):
+                store.delete_list("watchlist")
+
+    def test_system_list_toggle_is_idempotent_and_states_are_independent(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = app.UserCurationStore(Path(tmp))
+            movie = {"tmdb_id": "348", "title": "Alien", "year": "1979"}
+
+            watched = store.set_system_list_state("watched", movie, True)
+            watched_again = store.set_system_list_state("watched", movie, True)
+            watchlisted = store.set_system_list_state("watchlist", movie, True)
+
+            self.assertTrue(watched["active"])
+            self.assertTrue(watched_again["active"])
+            self.assertTrue(watchlisted["active"])
+            self.assertEqual(len(next(item for item in store.list_all() if item["id"] == "watched")["movies"]), 1)
+            self.assertTrue(store.system_states_for_movie(movie)["watched"])
+            self.assertTrue(store.system_states_for_movie(movie)["watchlist"])
+            store.set_system_list_state("watched", movie, False)
+            states = store.system_states_for_movie(movie)
+            self.assertFalse(states["watched"])
+            self.assertTrue(states["watchlist"])
+
+    def test_system_state_uses_shared_provider_identity(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = app.UserCurationStore(Path(tmp))
+            store.set_system_list_state(
+                "watched",
+                {"tmdb_id": "348", "title": "Alien", "year": "1979", "path": "E:/Movies/Alien-a.mkv"},
+                True,
+            )
+
+            states = store.system_states_for_movie({
+                "tmdb_id": "348",
+                "title": "Alien",
+                "year": "1979",
+                "path": "F:/Movies/Alien-b.mkv",
+            })
+
+            self.assertTrue(states["watched"])
+
+    def test_system_state_falls_back_to_title_year_but_rejects_conflicting_ids(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = app.UserCurationStore(Path(tmp))
+            store.set_system_list_state(
+                "watched",
+                {"tmdb_id": "348", "title": "Alien", "year": "1979"},
+                True,
+            )
+
+            fallback = store.system_states_for_movie({"title": "Alien", "year": "1979"})
+            conflict = store.system_states_for_movie({"tmdb_id": "999", "title": "Alien", "year": "1979"})
+
+            self.assertTrue(fallback["watched"])
+            self.assertFalse(conflict["watched"])
+
     def test_collection_override_supersedes_tmdb_and_reset_restores_default(self):
         with tempfile.TemporaryDirectory() as tmp:
             store = app.UserCurationStore(Path(tmp))
@@ -50,7 +117,7 @@ class UserCurationStoreTest(unittest.TestCase):
             renamed = store.rename_list(created["id"], "Better Picks")
             self.assertEqual(renamed["name"], "Better Picks")
             self.assertTrue(store.delete_list(created["id"]))
-            self.assertEqual(store.list_all(), [])
+            self.assertEqual([item["id"] for item in store.list_all()], ["watched", "watchlist"])
 
     def test_followed_releases_can_be_added_updated_and_removed(self):
         with tempfile.TemporaryDirectory() as tmp:

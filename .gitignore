@@ -28,6 +28,18 @@ _cf_profile/
 
 # Dev/test scripts
 _test_*.py
+test-results/
+
+# Internal development material (private archive only)
+_internal_docs/
+docs/superpowers/
+Agent.md
+context/
+immigration docs/
+.impeccable/
+.github/skills/
+PRODUCT.md
+DESIGN.md
 
 # Windows EXE build (separate project)
 winapp/

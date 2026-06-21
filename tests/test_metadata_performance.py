@@ -127,6 +127,61 @@ class MetadataPerformanceTest(unittest.TestCase):
 
         self.assertNotEqual(before, after)
 
+    def test_library_cache_key_changes_when_file_is_added(self):
+        original_dirs = app._movies_dirs
+        original_dir = app._movies_dir
+
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                app._movies_dirs = [tmp]
+                app._movies_dir = tmp
+                before = app._library_cache_key()
+                Path(tmp, "Alien.1979.1080p.mkv").write_bytes(b"movie")
+                after = app._library_cache_key()
+            finally:
+                app._movies_dirs = original_dirs
+                app._movies_dir = original_dir
+
+        self.assertNotEqual(before, after)
+
+    def test_force_scan_bypasses_fresh_library_cache(self):
+        original_dirs = app._movies_dirs
+        original_dir = app._movies_dir
+        original_library_cache = dict(app._library_cache)
+        original_plex_token = app._plex_token
+        original_user_data = app._user_data_dir
+
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as data_tmp:
+            first_movie = Path(tmp, "Alien.1979.1080p.mkv")
+            first_movie.write_bytes(b"movie")
+            try:
+                app._movies_dirs = [tmp]
+                app._movies_dir = tmp
+                app._user_data_dir = data_tmp
+                app._library_cache = {}
+                app._plex_token = ""
+                client = app.app.test_client()
+                initial = client.get("/api/library")
+                second_movie = Path(tmp, "Aliens.1986.1080p.mkv")
+                second_movie.write_bytes(b"movie")
+                refreshed = client.get("/api/library")
+                third_movie = Path(tmp, "Alien.3.1992.1080p.mkv")
+                third_movie.write_bytes(b"movie")
+                forced = client.get("/api/library?force_scan=1")
+            finally:
+                app._movies_dirs = original_dirs
+                app._movies_dir = original_dir
+                app._user_data_dir = original_user_data
+                app._library_cache = original_library_cache
+                app._plex_token = original_plex_token
+
+        self.assertEqual(initial.get_json()["count"], 1)
+        self.assertEqual(refreshed.get_json()["count"], 2)
+        self.assertFalse(refreshed.get_json()["cached"])
+        self.assertEqual(forced.get_json()["count"], 3)
+        self.assertFalse(forced.get_json()["cached"])
+        self.assertEqual(forced.get_json()["new_files"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

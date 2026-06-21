@@ -23,6 +23,7 @@ export function discoverMoviePayload(movie, owned) {
   return {
     tmdb_id: String(movie?.tmdb_id || ''),
     imdb_id: String(movie?.imdb_id || ''),
+    plex_guid: String(movie?.plex_guid || owned?.plex_guid || ''),
     title: movie?.title || '',
     year: String(movie?.year || ''),
     poster_url: movie?.poster_url || '',
@@ -55,13 +56,20 @@ export function ownershipKeys(movie = {}) {
   if (movie.imdb_id) keys.push(`imdb:${String(movie.imdb_id).toLowerCase()}`);
   if (movie.plex_guid) keys.push(`plex:${String(movie.plex_guid).toLowerCase()}`);
   const title = normalizeMovieTitle(movie.title);
-  if (title) keys.push(`${String(movie.title || '').toLowerCase()}|${String(movie.year || '')}`);
-  if (title) keys.push(`title:${title}|${String(movie.year || '')}`);
+  const year = String(movie.year || '').trim();
+  if (title && year) keys.push(`${String(movie.title || '').toLowerCase()}|${year}`);
+  if (title && year) keys.push(`title:${title}|${year}`);
   return [...new Set(keys)];
 }
 
 export function ownedMovieFor(movie, ownership = {}) {
-  for (const key of ownershipKeys(movie)) {
+  const keys = ownershipKeys(movie);
+  const strongKeys = keys.filter((key) => /^(?:tmdb|imdb|plex):/.test(key));
+  for (const key of strongKeys) {
+    if (ownership[key]) return ownership[key];
+  }
+  if (strongKeys.length) return null;
+  for (const key of keys) {
     if (ownership[key]) return ownership[key];
   }
   return null;

@@ -1,7 +1,9 @@
 import {
   AlertTriangle,
   Bell,
+  Bookmark,
   Bot,
+  Check,
   CheckCircle2,
   Clapperboard,
   CirclePlus,
@@ -21,11 +23,13 @@ import {
   Loader2,
   MonitorPlay,
   MoreVertical,
+  Pencil,
   Play,
   PlugZap,
   Radio,
   RefreshCcw,
   Save,
+  ScanSearch,
   Search,
   Server,
   Settings,
@@ -40,6 +44,28 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import headerCropUrl from './assets/header.png';
 import logoUrl from './assets/logo.svg';
 import motifCropUrl from './assets/styleguide-motif-crop.png';
+import MetadataAuthorityPanel from './components/MetadataAuthorityPanel.jsx';
+import IdentityReviewPanel from './components/IdentityReviewPanel.jsx';
+import MetadataCorrectionModal from './components/MetadataCorrectionModal.jsx';
+import PosterEditorModal from './components/PosterEditorModal.jsx';
+import { SmartMatchControls, SmartMatchReviewModal } from './components/SmartMatchPanel.jsx';
+import {
+  cx,
+  formatCount,
+  getUniqueOptions,
+  movieKey,
+  sectionFromPath,
+  sortFollowedReleases,
+  torrentSizeBytes
+} from './utils/appUtils.js';
+import {
+  filterIdentityReviewItems,
+  filterCleanupItems,
+  filterUnmatchedItems,
+  metadataStatusChipClass,
+  metadataStatusLabel,
+  renameModalItem
+} from './utils/cleanupUtils.js';
 import {
   buildOwnershipMap,
   discoverMoviePayload,
@@ -48,6 +74,22 @@ import {
   ownedMovieFor,
   sortTorrentVariants
 } from './discoverUtils.js';
+import {
+  applyPosterOverrideToLibraryItems,
+  buildLibraryViewModel,
+  getMovieIdentity,
+  getQualityLabel,
+  getLocaleTag,
+  getRolePeople,
+  getTmdbCacheKey,
+  isLowQuality,
+  listsForItem,
+  movieHasSystemState,
+  movieIdentityKey,
+  moviePayload,
+  resolutionRank,
+  rootLabel
+} from './utils/libraryUtils.js';
 
 const navItems = [
   {
@@ -123,27 +165,6 @@ const fallbackMovies = [
   }
 ];
 
-function cx(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
-
-function formatCount(value) {
-  if (value === null || value === undefined || Number.isNaN(Number(value))) return '0';
-  return Number(value).toLocaleString();
-}
-
-function movieKey(movie) {
-  return `${String(movie.title || '').toLowerCase()}|${String(movie.year || '')}`;
-}
-
-function sortFollowedReleases(items) {
-  const rank = { available: 0, watching: 1, owned: 2 };
-  return [...(items || [])].sort((a, b) => (
-    (rank[a.status] ?? 3) - (rank[b.status] ?? 3)
-    || Number(b.updated_at || b.followed_at || 0) - Number(a.updated_at || a.followed_at || 0)
-  ));
-}
-
 function playReleaseAlertSound() {
   try {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -167,238 +188,22 @@ function playReleaseAlertSound() {
   }
 }
 
-function splitLibraryTitle(title) {
-  const raw = String(title || '');
-  const match = raw.match(/\s+\((\d{4})\)$/);
-  return {
-    title: match ? raw.slice(0, match.index) : raw,
-    year: match ? match[1] : ''
-  };
-}
-
-function resolutionRank(resolution) {
-  const value = String(resolution || '').toLowerCase();
-  if (value.includes('2160') || value.includes('4k')) return 4;
-  if (value.includes('1080')) return 3;
-  if (value.includes('720')) return 2;
-  if (value.includes('480')) return 1;
-  return 0;
-}
-
-function isLowQuality(resolution) {
-  return resolutionRank(resolution) < 3;
-}
-
-function matchesLibraryResolutionFilter(resolution, filter) {
-  const rank = resolutionRank(resolution);
-  if (filter === 'all') return true;
-  if (filter === '4k') return rank === 4;
-  if (filter === '1080p') return rank === 3;
-  if (filter === '720p') return rank === 2;
-  if (filter === 'below-720p') return rank < 2;
-  return true;
-}
-
-function getMovieIdentity(item) {
-  const canonical = item?.canonical_metadata || {};
-  if (canonical.accepted && canonical.title) {
-    return {
-      title: canonical.title,
-      year: String(canonical.year || '').trim()
-    };
-  }
-  const parsed = splitLibraryTitle(item?.title);
-  const plexTitle = String(item?.plex_title || '').trim();
-  const title = plexTitle || parsed.title || String(item?.filename || '').replace(/\.[^.]+$/, '');
-  const year = String(item?.plex_year || parsed.year || '').trim();
-  return { title, year };
-}
-
-function getTmdbCacheKey(item) {
-  const identity = getMovieIdentity(item);
-  const canonical = item?.canonical_metadata || {};
-  return canonical?.tmdb_id ? `tmdb:${canonical.tmdb_id}` : item?.tmdb_id ? `tmdb:${item.tmdb_id}` : `${identity.title}|${identity.year}`;
-}
-
-function normalizePersonName(name) {
-  return String(name || '').trim().toLowerCase();
-}
-
-function normalizeCollectionTitle(title) {
-  return String(title || '')
-    .toLowerCase()
-    .replace(/[³ł]/g, ' 3 ')
-    .replace(/[²]/g, ' 2 ')
-    .replace(/\b(directors?|special|extended|theatrical|ultimate|final|anniversary|edition|cut|dc)\b/g, ' ')
-    .replace(/[^\w\s]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function peopleMatch(person, filter) {
-  if (!person || !filter) return false;
-  const personId = String(person.id || '');
-  const filterId = String(filter.id || '');
-  if (personId && filterId) return personId === filterId;
-  return normalizePersonName(person.name) === normalizePersonName(filter.name);
-}
-
-function mergePeople(primary, fallback) {
-  if (!primary.length) return fallback;
-  if (!fallback.length) return primary;
-  const merged = primary.map((person) => {
-    const richMatch = fallback.find((candidate) => normalizePersonName(candidate.name) === normalizePersonName(person.name));
-    if (!richMatch) return person;
-    return {
-      ...richMatch,
-      ...person,
-      id: person.id || richMatch.id,
-      profile_url: person.profile_url || richMatch.profile_url,
-      character: person.character || richMatch.character
-    };
-  });
-  const existing = new Set(merged.map((person) => normalizePersonName(person.name)));
-  fallback.forEach((person) => {
-    const key = normalizePersonName(person.name);
-    if (key && !existing.has(key)) {
-      merged.push(person);
-      existing.add(key);
-    }
-  });
-  return merged;
-}
-
-function getRolePeople(item, details, role) {
-  const canonical = item?.canonical_metadata || {};
-  if (role === 'director') {
-    const plexDirectors = canonical.directors?.length ? canonical.directors : item?.plex_directors || [];
-    const tmdbDirectors = details?.directors?.length ? details.directors : details?.director?.name ? [details.director] : [];
-    return mergePeople(plexDirectors, tmdbDirectors);
-  }
-  const plexCast = canonical.cast?.length ? canonical.cast : item?.plex_cast || [];
-  return mergePeople(plexCast, details?.cast || []);
-}
-
-function itemMatchesRoleFilter(item, details, filter) {
-  if (!filter) return true;
-  return getRolePeople(item, details, filter.role).some((person) => peopleMatch(person, filter));
-}
-
-function itemMatchesCollectionFilter(item, details, filter) {
-  if (!filter) return true;
-  if (details?.collection?.id && String(details.collection.id) === String(filter.id)) return true;
-  const identity = getMovieIdentity(item);
-  const itemTitle = normalizeCollectionTitle(identity.title);
-  const itemYear = String(identity.year || '');
-  return (filter.parts || []).some((part) => {
-    if (item?.tmdb_id && part.tmdb_id && String(item.tmdb_id) === String(part.tmdb_id)) return true;
-    const partTitle = normalizeCollectionTitle(part.title);
-    const partYear = String(part.year || '');
-    return itemTitle === partTitle && (!partYear || !itemYear || partYear === itemYear);
-  });
-}
-
-function moviePayload(item) {
-  const identity = getMovieIdentity(item);
-  const canonical = item?.canonical_metadata || {};
-  return {
-    tmdb_id: String(canonical.tmdb_id || item?.tmdb_id || ''),
-    imdb_id: String(canonical.imdb_id || item?.imdb_id || ''),
-    title: identity.title || item?.title || '',
-    year: identity.year || String(item?.year || '').trim(),
-    path: item?.path || '',
-    poster_url: canonical.poster_url || item?.plex_poster || item?.poster_url || ''
-  };
-}
-
-function movieIdentityKey(movie) {
-  if (movie?.tmdb_id) return `tmdb:${movie.tmdb_id}`;
-  if (movie?.path) return `path:${String(movie.path).toLowerCase()}`;
-  return `title:${normalizeCollectionTitle(movie?.title)}|${String(movie?.year || '')}`;
-}
-
-function listsForItem(item, lists) {
-  const key = movieIdentityKey(moviePayload(item));
-  return (lists || []).filter((list) => (
-    (list.movies || []).some((movie) => movieIdentityKey(movie) === key)
-  ));
-}
-
-function getLocaleTag(item) {
-  const canonical = item?.canonical_metadata || {};
-  const countryMap = {
-    'United States of America': 'US',
-    'United States': 'US',
-    'United Kingdom': 'UK',
-    'Republic of Korea': 'KR',
-    'South Korea': 'KR',
-    France: 'FR',
-    Germany: 'DE',
-    Italy: 'IT',
-    Spain: 'ES',
-    Japan: 'JP',
-    China: 'CN',
-    Canada: 'CA',
-    Australia: 'AU',
-    Netherlands: 'NL',
-    India: 'IN',
-    Egypt: 'EG'
-  };
-  const languageMap = {
-    English: 'EN',
-    Korean: 'KO',
-    French: 'FR',
-    German: 'DE',
-    Italian: 'IT',
-    Spanish: 'ES',
-    Japanese: 'JA',
-    Chinese: 'ZH',
-    Hindi: 'HI',
-    Arabic: 'AR',
-    Dutch: 'NL'
-  };
-  const rawCountry = String(canonical.country_flag || canonical.country || item?.plex_country_flag || item?.plex_country || '').trim();
-  const rawLanguage = String(canonical.language || item?.plex_language || '').trim();
-  const country = countryMap[rawCountry] || (rawCountry.length <= 3 ? rawCountry.toUpperCase() : rawCountry.slice(0, 2).toUpperCase());
-  const language = languageMap[rawLanguage] || (rawLanguage.length <= 3 ? rawLanguage.toUpperCase() : rawLanguage.slice(0, 2).toUpperCase());
-  if (country && language) return `${country} / ${language}`;
-  return country || language || '';
-}
-
-function getQualityLabel(item) {
-  return [item?.resolution, item?.rip_source].filter((part) => part && part !== 'Unknown').join(' ') || 'Unknown quality';
-}
-
-function rootLabel(path) {
-  const value = String(path || '').replace(/[\\/]+$/, '');
-  const parts = value.split(/[\\/]+/).filter(Boolean);
-  return parts.length ? `Root: ${parts[parts.length - 1]}` : 'Library root';
-}
-
-function getUniqueOptions(items, getter) {
-  return [...new Set(items.flatMap((item) => {
-    const value = getter(item);
-    if (Array.isArray(value)) return value.filter(Boolean);
-    return value ? [value] : [];
-  }))].sort((a, b) => String(a).localeCompare(String(b)));
-}
-
-function torrentSizeBytes(item) {
-  return Number(item?.size_bytes || item?.size || 0);
-}
-
-function sectionFromPath(pathname) {
-  const section = String(pathname || '').replace(/^\/+/, '').split('/')[0];
-  return navItems.some((item) => item.id === section) ? section : 'home';
-}
-
 async function fetchJson(url, options) {
   const response = await fetch(url, options);
   const data = await response.json();
   if (!response.ok || data.error) {
-    throw new Error(data.error || `Request failed: ${response.status}`);
+    const error = new Error(data.error || `Request failed: ${response.status}`);
+    error.data = data;
+    error.status = response.status;
+    throw error;
   }
   return data;
+}
+
+function announceCurationChanged() {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new Event('cp-curation-changed'));
+  }
 }
 
 function App() {
@@ -411,7 +216,7 @@ function App() {
 
 function ArchiveApp() {
   const [activeSection, setActiveSection] = useState(() => (
-    typeof window === 'undefined' ? 'home' : sectionFromPath(window.location.pathname)
+    typeof window === 'undefined' ? 'home' : sectionFromPath(window.location.pathname, navItems)
   ));
   const [stats, setStats] = useState(null);
   const [movies, setMovies] = useState([]);
@@ -423,18 +228,87 @@ function ArchiveApp() {
   const [loading, setLoading] = useState({ stats: true, movies: true });
   const [toast, setToast] = useState(null);
   const [torrentModal, setTorrentModal] = useState(null);
+  const [posterEditor, setPosterEditor] = useState(null);
   const [libraryQuery, setLibraryQuery] = useState('');
   const [discoverQuery, setDiscoverQuery] = useState('');
   const [browseQuery, setBrowseQuery] = useState('');
   const [discoverActiveTab, setDiscoverActiveTab] = useState('explore');
   const [discoverSearchRequest, setDiscoverSearchRequest] = useState(0);
   const [cleanupInitialTab, setCleanupInitialTab] = useState('duplicates');
+  const [homeLists, setHomeLists] = useState([]);
 
   const notify = useCallback((message, tone = 'success') => {
     setToast({ message, tone });
     window.clearTimeout(window.__cpToastTimer);
     window.__cpToastTimer = window.setTimeout(() => setToast(null), 3200);
   }, []);
+
+  const refreshHealthStats = useCallback(async () => {
+    try {
+      setStats(await fetchJson('/api/stats'));
+    } catch (error) {
+      notify(`Stats unavailable: ${error.message}`, 'error');
+    }
+  }, [notify]);
+
+  const loadHomeLists = useCallback(async () => {
+    try {
+      const data = await fetchJson('/api/user/lists');
+      setHomeLists(data.lists || []);
+    } catch {
+      setHomeLists([]);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadHomeLists();
+    window.addEventListener('cp-curation-changed', loadHomeLists);
+    return () => window.removeEventListener('cp-curation-changed', loadHomeLists);
+  }, [loadHomeLists]);
+
+  async function toggleHomeSystemList(systemType, movie, owned) {
+    const payload = discoverMoviePayload(movie, owned);
+    const active = listsForDiscoverMovie(movie, homeLists, owned).some((list) => (
+      list.system_type === systemType || list.id === systemType
+    ));
+    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie: payload, active: !active })
+    });
+    await loadHomeLists();
+    announceCurationChanged();
+    notify(`${movie.title} ${active ? 'removed from' : 'added to'} ${systemType === 'watched' ? 'Watched' : 'Watchlist'}`);
+  }
+
+  useEffect(() => {
+    let cancelled = false;
+    let timer = 0;
+    async function checkReconcile() {
+      try {
+        const state = await fetchJson('/api/library/reconcile');
+        if (cancelled) return;
+        if (state.status === 'running') {
+          timer = window.setTimeout(checkReconcile, 2000);
+          return;
+        }
+        await refreshHealthStats();
+        window.dispatchEvent(new CustomEvent('cp-library-reconciled', { detail: state }));
+        if (state.matched > 0) {
+          notify(`${formatCount(state.matched)} new movie${state.matched === 1 ? '' : 's'} identified`, 'success');
+        }
+      } catch {
+        // Startup reconciliation is non-blocking; Library still exposes manual Rescan Files.
+      }
+    }
+    fetchJson('/api/library/reconcile', { method: 'POST' })
+      .then(() => checkReconcile())
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [notify, refreshHealthStats]);
 
   useEffect(() => {
     let cancelled = false;
@@ -561,7 +435,7 @@ function ArchiveApp() {
 
   useEffect(() => {
     function handlePopState() {
-      setActiveSection(sectionFromPath(window.location.pathname));
+      setActiveSection(sectionFromPath(window.location.pathname, navItems));
     }
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
@@ -578,6 +452,11 @@ function ArchiveApp() {
 
   function reviewUnmatchedMetadata() {
     setCleanupInitialTab('unmatched');
+    selectSection('cleanup');
+  }
+
+  function openCleanupTab(tab) {
+    setCleanupInitialTab(tab);
     selectSection('cleanup');
   }
 
@@ -649,6 +528,15 @@ function ArchiveApp() {
     }
   }
 
+  function updateOwnedPoster(path, posterUrl) {
+    setOwnership((state) => Object.fromEntries(
+      Object.entries(state).map(([key, value]) => [
+        key,
+        value?.path === path ? { ...value, poster_url: posterUrl } : value
+      ])
+    ));
+  }
+
   return (
     <div className="app-shell">
       <Sidebar
@@ -683,11 +571,15 @@ function ArchiveApp() {
             selectedOwnership={selectedOwnership}
             selectedDetails={selectedDetails}
             onSelectSection={selectSection}
+            onOpenCleanup={openCleanupTab}
             onSelectMovie={setSelectedMovie}
             onPlay={playLocal}
             onStream={streamMovie}
             onFindTorrent={findTorrent}
             onFollow={toggleFollow}
+            userLists={homeLists}
+            onToggleSystemList={toggleHomeSystemList}
+            onEditPoster={(owned, movie) => setPosterEditor({ path: owned.path, title: movie.title })}
           />
         ) : activeSection === 'library' ? (
           <LibraryWorkspace
@@ -716,7 +608,16 @@ function ArchiveApp() {
             setActiveTab={setDiscoverActiveTab}
           />
         ) : (
-          <MigrationWorkspace section={activeSection} notify={notify} onFindTorrent={findTorrent} cleanupInitialTab={cleanupInitialTab} />
+          <MigrationWorkspace
+            section={activeSection}
+            notify={notify}
+            onPlay={playLocal}
+            onFindTorrent={findTorrent}
+            cleanupInitialTab={cleanupInitialTab}
+            onReviewUnmatched={reviewUnmatchedMetadata}
+            onReviewIdentities={() => openCleanupTab('identity')}
+            onHealthChanged={refreshHealthStats}
+          />
         )}
       </main>
       {toast && (
@@ -728,6 +629,14 @@ function ArchiveApp() {
         <TorrentModal
           state={torrentModal}
           onClose={() => setTorrentModal(null)}
+        />
+      )}
+      {posterEditor && (
+        <PosterEditorModal
+          item={posterEditor}
+          notify={notify}
+          onClose={() => setPosterEditor(null)}
+          onSaved={(posterUrl) => updateOwnedPoster(posterEditor.path, posterUrl)}
         />
       )}
     </div>
@@ -1013,11 +922,15 @@ function HomeWorkspace(props) {
     selectedOwnership,
     selectedDetails,
     onSelectSection,
+    onOpenCleanup,
     onSelectMovie,
     onPlay,
     onStream,
     onFindTorrent,
-    onFollow
+    onFollow,
+    userLists,
+    onToggleSystemList,
+    onEditPoster
   } = props;
   const [releaseDrawerOpen, setReleaseDrawerOpen] = useState(false);
 
@@ -1035,7 +948,7 @@ function HomeWorkspace(props) {
         </div>
       </section>
 
-      <HealthPanel stats={stats} loading={loading.stats} />
+      <HealthPanel stats={stats} loading={loading.stats} onOpenCleanup={onOpenCleanup} />
       <ReleasePanel
         followed={followed}
         checking={followedChecking}
@@ -1070,12 +983,17 @@ function HomeWorkspace(props) {
                   owned={owned}
                   selected={movieKey(movie) === movieKey(selectedMovie || {})}
                   followed={followed.some((item) => movieKey(item) === movieKey(movie))}
+                  watched={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watched')}
+                  watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
                   details={movieKey(movie) === movieKey(selectedMovie || {}) ? selectedDetails : null}
                   onSelect={() => onSelectMovie(movie)}
                   onPlay={onPlay}
                   onStream={onStream}
                   onFindTorrent={onFindTorrent}
                   onFollow={onFollow}
+                  onToggleWatched={owned ? () => onToggleSystemList('watched', movie, owned) : undefined}
+                  onToggleWatchlist={() => onToggleSystemList('watchlist', movie, owned)}
+                  onEditPoster={owned ? () => onEditPoster(owned, movie) : undefined}
                 />
               );
             })}
@@ -1088,11 +1006,16 @@ function HomeWorkspace(props) {
         owned={selectedOwnership}
         details={selectedDetails}
         followed={followed.some((item) => movieKey(item) === movieKey(selectedMovie || {}))}
+        watched={listsForDiscoverMovie(selectedMovie || {}, userLists, selectedOwnership).some((list) => list.system_type === 'watched')}
+        watchlisted={listsForDiscoverMovie(selectedMovie || {}, userLists, selectedOwnership).some((list) => list.system_type === 'watchlist')}
         onClose={() => onSelectMovie(null)}
         onPlay={onPlay}
         onStream={onStream}
         onFindTorrent={onFindTorrent}
         onFollow={onFollow}
+        onToggleWatched={selectedOwnership ? () => onToggleSystemList('watched', selectedMovie, selectedOwnership) : undefined}
+        onToggleWatchlist={selectedMovie ? () => onToggleSystemList('watchlist', selectedMovie, selectedOwnership) : undefined}
+        onEditPoster={selectedOwnership ? () => onEditPoster(selectedOwnership, selectedMovie) : undefined}
       />
       {releaseDrawerOpen && (
         <FollowedReleasesDrawer
@@ -1109,7 +1032,7 @@ function HomeWorkspace(props) {
   );
 }
 
-function HealthPanel({ stats, loading }) {
+function HealthPanel({ stats, loading, onOpenCleanup }) {
   const cards = [
     {
       label: 'Files',
@@ -1123,21 +1046,32 @@ function HealthPanel({ stats, loading }) {
       value: stats?.low_quality_count,
       detail: 'below 1080p',
       icon: AlertTriangle,
-      tone: 'amber'
+      tone: 'amber',
+      tab: 'low'
     },
     {
       label: 'Duplicates',
-      value: stats?.dup_groups,
+      value: stats?.duplicate_groups,
       detail: `${formatCount(stats?.extra_copies)} extra copies`,
       icon: Trash2,
-      tone: 'red'
+      tone: 'red',
+      tab: 'duplicates'
     },
     {
-      label: 'Plex matched',
-      value: stats?.plex_matched,
-      detail: `${formatCount(stats?.plex_unmatched)} need attention`,
+      label: 'Unmatched',
+      value: stats?.unmatched_count,
+      detail: 'files without accepted metadata',
       icon: LinkIcon,
-      tone: 'cyan'
+      tone: 'violet',
+      tab: 'unmatched'
+    },
+    {
+      label: 'Identity review',
+      value: stats?.identity_review_count,
+      detail: `${formatCount(stats?.identity_review_recommended)} recommended corrections`,
+      icon: ScanSearch,
+      tone: 'cyan',
+      tab: 'identity'
     }
   ];
 
@@ -1153,13 +1087,19 @@ function HealthPanel({ stats, loading }) {
       <div className="health-cards">
         {cards.map((card) => {
           const Icon = card.icon;
+          const Card = card.tab ? 'button' : 'article';
           return (
-            <article key={card.label} className={cx('health-card', `tone-${card.tone}`)}>
+            <Card
+              type={card.tab ? 'button' : undefined}
+              key={card.label}
+              className={cx('health-card', card.tab && 'health-card-action', `tone-${card.tone}`)}
+              onClick={card.tab ? () => onOpenCleanup(card.tab) : undefined}
+            >
               <Icon size={18} />
               <strong>{loading ? '...' : formatCount(card.value)}</strong>
               <span>{card.label}</span>
               <small>{card.detail}</small>
-            </article>
+            </Card>
           );
         })}
       </div>
@@ -1300,13 +1240,24 @@ function FollowedReleasesDrawer({ followed, checking, selectedMovie, onClose, on
 }
 
 function SmartMovieCard(props) {
-  const { movie, owned, selected, followed, details, onSelect, onPlay, onStream, onFindTorrent, onFollow } = props;
+  const {
+    movie, owned, selected, followed, details, watched, watchlisted,
+    onSelect, onPlay, onStream, onFindTorrent, onFollow,
+    onToggleWatched, onToggleWatchlist, onEditPoster
+  } = props;
   const lowQuality = owned && isLowQuality(owned.resolution);
   const genres = (movie.genres || []).slice(0, 3);
 
   return (
     <article className={cx('movie-card', selected && 'movie-card-selected')} onClick={onSelect}>
-      <Poster movie={movie} />
+      <Poster
+        movie={owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie}
+        onEditPoster={owned ? onEditPoster : undefined}
+        watched={watched}
+        watchlisted={watchlisted}
+        onToggleWatched={owned ? onToggleWatched : undefined}
+        onToggleWatchlist={onToggleWatchlist}
+      />
       <div className="movie-card-body">
         <div className="movie-title-row">
           <div>
@@ -1382,7 +1333,11 @@ function SmartMovieCard(props) {
   );
 }
 
-function MovieInspector({ movie, owned, details, followed, onClose, onPlay, onStream, onFindTorrent, onFollow }) {
+function MovieInspector({
+  movie, owned, details, followed, watched, watchlisted,
+  onClose, onPlay, onStream, onFindTorrent, onFollow,
+  onToggleWatched, onToggleWatchlist, onEditPoster
+}) {
   if (!movie) {
     return (
       <aside className="inspector inspector-empty">
@@ -1403,7 +1358,15 @@ function MovieInspector({ movie, owned, details, followed, onClose, onPlay, onSt
         <X size={17} />
       </button>
       <div className="inspector-hero">
-        <Poster movie={movie} large />
+        <Poster
+          movie={owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie}
+          large
+          onEditPoster={owned ? onEditPoster : undefined}
+          watched={watched}
+          watchlisted={watchlisted}
+          onToggleWatched={owned ? onToggleWatched : undefined}
+          onToggleWatchlist={onToggleWatchlist}
+        />
         <div>
           <p className="screen-kicker">Selected movie</p>
           <h3>{movie.title}</h3>
@@ -1464,7 +1427,75 @@ function MovieInspector({ movie, owned, details, followed, onClose, onPlay, onSt
   );
 }
 
-function Poster({ movie, large }) {
+function PosterEditButton({ title, onEdit }) {
+  if (!onEdit) return null;
+  return (
+    <button
+      type="button"
+      className="poster-edit-trigger"
+      aria-label={`Edit poster for ${title || 'movie'}`}
+      title="Edit poster"
+      onClick={(event) => {
+        event.stopPropagation();
+        onEdit();
+      }}
+    >
+      <Pencil size={17} />
+    </button>
+  );
+}
+
+function PosterStateControls({
+  title,
+  watched,
+  watchlisted,
+  onToggleWatched,
+  onToggleWatchlist
+}) {
+  if (!onToggleWatched && !onToggleWatchlist) return null;
+  return (
+    <>
+      {onToggleWatched && (
+        <button
+          type="button"
+          className={cx('poster-state-control', 'poster-state-watched', watched && 'poster-state-control-active')}
+          aria-label={watched ? `Mark ${title} as unwatched` : `Mark ${title} as watched`}
+          title={watched ? 'Mark as unwatched' : 'Mark as watched'}
+          onClick={(event) => {
+            event.stopPropagation();
+            onToggleWatched();
+          }}
+        >
+          <Check size={17} />
+        </button>
+      )}
+      {onToggleWatchlist && (
+        <button
+          type="button"
+          className={cx('poster-state-control', 'poster-state-watchlist', watchlisted && 'poster-state-control-active')}
+          aria-label={watchlisted ? `Remove ${title} from watchlist` : `Add ${title} to watchlist`}
+          title={watchlisted ? 'Remove from watchlist' : 'Add to watchlist'}
+          onClick={(event) => {
+            event.stopPropagation();
+            onToggleWatchlist();
+          }}
+        >
+          <Bookmark size={16} fill={watchlisted ? 'currentColor' : 'none'} />
+        </button>
+      )}
+    </>
+  );
+}
+
+function Poster({
+  movie,
+  large,
+  onEditPoster,
+  watched,
+  watchlisted,
+  onToggleWatched,
+  onToggleWatchlist
+}) {
   return (
     <div className={cx('poster', large && 'poster-large')}>
       {movie.poster_url ? (
@@ -1472,6 +1503,14 @@ function Poster({ movie, large }) {
       ) : (
         <Film size={large ? 42 : 28} />
       )}
+      <PosterStateControls
+        title={movie.title}
+        watched={watched}
+        watchlisted={watchlisted}
+        onToggleWatched={onToggleWatched}
+        onToggleWatchlist={onToggleWatchlist}
+      />
+      <PosterEditButton title={movie.title} onEdit={onEditPoster} />
     </div>
   );
 }
@@ -1562,6 +1601,16 @@ function DiscoverWorkspace({
   const [discoverHistory, setDiscoverHistory] = useState([]);
   const [pickContext, setPickContext] = useState(null);
   const [pickHistory, setPickHistory] = useState([]);
+  const [posterEditor, setPosterEditor] = useState(null);
+
+  function updateOwnedPoster(path, posterUrl) {
+    setOwnership((state) => Object.fromEntries(
+      Object.entries(state).map(([key, value]) => [
+        key,
+        value?.path === path ? { ...value, poster_url: posterUrl } : value
+      ])
+    ));
+  }
 
   async function checkOwnership(movies) {
     const payload = (movies || [])
@@ -1591,6 +1640,8 @@ function DiscoverWorkspace({
 
   useEffect(() => {
     loadUserLists();
+    window.addEventListener('cp-curation-changed', loadUserLists);
+    return () => window.removeEventListener('cp-curation-changed', loadUserLists);
   }, [loadUserLists]);
 
   function discoverBaseLabel() {
@@ -1941,6 +1992,7 @@ function DiscoverWorkspace({
       body: JSON.stringify({ name })
     });
     await loadUserLists();
+    announceCurationChanged();
     notify(`List created: ${created.name}`);
     return created;
   }
@@ -1952,6 +2004,7 @@ function DiscoverWorkspace({
       body: JSON.stringify({ movie })
     });
     await loadUserLists();
+    announceCurationChanged();
     notify('Movie added to list');
   }
 
@@ -1962,7 +2015,22 @@ function DiscoverWorkspace({
       body: JSON.stringify({ movie })
     });
     await loadUserLists();
+    announceCurationChanged();
     notify('Movie removed from list');
+  }
+
+  async function toggleDiscoverSystemList(systemType, movie, owned) {
+    const payload = discoverMoviePayload(movie, owned);
+    const currentLists = listsForDiscoverMovie(movie, userLists, owned);
+    const active = currentLists.some((list) => list.system_type === systemType || list.id === systemType);
+    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie: payload, active: !active })
+    });
+    await loadUserLists();
+    announceCurationChanged();
+    notify(`${movie.title} ${active ? 'removed from' : 'added to'} ${systemType === 'watched' ? 'Watched' : 'Watchlist'}`);
   }
 
   async function fetchIndexerMetadata(row) {
@@ -2243,6 +2311,10 @@ function DiscoverWorkspace({
                   details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
                   collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
                   itemLists={listsForDiscoverMovie(movie, userLists, owned)}
+                  watched={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watched')}
+                  watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
+                  onToggleWatched={owned ? () => toggleDiscoverSystemList('watched', movie, owned) : undefined}
+                  onToggleWatchlist={() => toggleDiscoverSystemList('watchlist', movie, owned)}
                   onPlay={onPlay}
                   onStream={onStream}
                   onFindTorrent={onFindTorrent}
@@ -2254,6 +2326,7 @@ function DiscoverWorkspace({
                   onListBrowse={(list) => browseList('explore', movie, list)}
                   onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}
                   onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, owned))}
+                  onEditPoster={owned ? () => setPosterEditor({ path: owned.path, title: movie.title }) : undefined}
                 />
               );
             })}
@@ -2339,6 +2412,10 @@ function DiscoverWorkspace({
                     details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
                     collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
                     itemLists={listsForDiscoverMovie(movie, userLists, owned)}
+                    watched={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watched')}
+                    watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
+                    onToggleWatched={owned ? () => toggleDiscoverSystemList('watched', movie, owned) : undefined}
+                    onToggleWatchlist={() => toggleDiscoverSystemList('watchlist', movie, owned)}
                     onVariantSelect={(index) => setSelectedVariants((state) => ({ ...state, [movie.parsed_title]: index }))}
                     onPlay={onPlay}
                     onStream={onStream}
@@ -2347,6 +2424,7 @@ function DiscoverWorkspace({
                     onToggleDetails={() => toggleMovieDetails(movie)}
                     onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}
                     onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, owned))}
+                    onEditPoster={owned ? () => setPosterEditor({ path: owned.path, title: movie.title }) : undefined}
                   />
                 );
               })}
@@ -2406,6 +2484,10 @@ function DiscoverWorkspace({
                   details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
                   collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
                   itemLists={listsForDiscoverMovie(movie, userLists, owned)}
+                  watched={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watched')}
+                  watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
+                  onToggleWatched={owned ? () => toggleDiscoverSystemList('watched', movie, owned) : undefined}
+                  onToggleWatchlist={() => toggleDiscoverSystemList('watchlist', movie, owned)}
                   onPlay={onPlay}
                   onStream={onStream}
                   onFindTorrent={onFindTorrent}
@@ -2417,6 +2499,7 @@ function DiscoverWorkspace({
                   onListBrowse={(list) => browseList('pick', movie, list)}
                   onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}
                   onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, owned))}
+                  onEditPoster={owned ? () => setPosterEditor({ path: owned.path, title: movie.title }) : undefined}
                 />
               );
             })}
@@ -2437,6 +2520,14 @@ function DiscoverWorkspace({
           onClose={() => setListEditorTarget(null)}
           onCreate={createDiscoverList}
           onAdd={addDiscoverMovieToList}
+        />
+      )}
+      {posterEditor && (
+        <PosterEditorModal
+          item={posterEditor}
+          notify={notify}
+          onClose={() => setPosterEditor(null)}
+          onSaved={(posterUrl) => updateOwnedPoster(posterEditor.path, posterUrl)}
         />
       )}
     </section>
@@ -2504,12 +2595,24 @@ function DiscoverMovieCard({
   onCollectionBrowse,
   onListBrowse,
   onEditLists,
-  onRemoveFromList
+  onRemoveFromList,
+  onEditPoster,
+  watched,
+  watchlisted,
+  onToggleWatched,
+  onToggleWatchlist
 }) {
   const lowQuality = owned && isLowQuality(owned.resolution);
   return (
     <article className={cx('movie-card discover-movie-card', expanded && 'discover-card-expanded')}>
-      <Poster movie={movie} />
+      <Poster
+        movie={owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie}
+        onEditPoster={owned ? onEditPoster : undefined}
+        watched={watched}
+        watchlisted={watchlisted}
+        onToggleWatched={owned ? onToggleWatched : undefined}
+        onToggleWatchlist={onToggleWatchlist}
+      />
       <div className="movie-card-body">
         <div className="movie-title-row">
           <div>
@@ -2613,7 +2716,12 @@ function IndexerMovieCard({
   onTrailer,
   onToggleDetails,
   onEditLists,
-  onRemoveFromList
+  onRemoveFromList,
+  onEditPoster,
+  watched,
+  watchlisted,
+  onToggleWatched,
+  onToggleWatchlist
 }) {
   const lowQuality = owned && isLowQuality(owned.resolution);
   const variants = sortTorrentVariants(movie.variants || []);
@@ -2624,7 +2732,14 @@ function IndexerMovieCard({
   return (
     <article className="indexer-card">
       <div className="indexer-poster-wrap">
-        <Poster movie={movie} />
+        <Poster
+          movie={owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie}
+          onEditPoster={owned ? onEditPoster : undefined}
+          watched={watched}
+          watchlisted={watchlisted}
+          onToggleWatched={owned ? onToggleWatched : undefined}
+          onToggleWatchlist={onToggleWatchlist}
+        />
         <span className="indexer-resolution-badge">{selected.resolution || movie.best_resolution || 'Unknown'}</span>
       </div>
       <div className="indexer-card-body">
@@ -2678,9 +2793,11 @@ function IndexerMovieCard({
           <span className="torrent-no-link">No link</span>
         )}
         {owned ? (
-          <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
-            <Play size={15} /> Play
-          </button>
+          <>
+            <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
+              <Play size={15} /> Play
+            </button>
+          </>
         ) : (
           <button type="button" className="btn btn-secondary btn-green-outline" onClick={() => onStream(movie)}>
             <MonitorPlay size={15} /> Stream
@@ -2877,6 +2994,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
   const [yearTo, setYearTo] = useState('');
   const [minRating, setMinRating] = useState('all');
   const [sizeFilter, setSizeFilter] = useState('all');
+  const [viewingStateFilter, setViewingStateFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [expandedPath, setExpandedPath] = useState('');
   const [tmdbCache, setTmdbCache] = useState({});
@@ -2891,18 +3009,33 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
   const [listsManagerOpen, setListsManagerOpen] = useState(false);
   const [renameTarget, setRenameTarget] = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
+  const [posterEditor, setPosterEditor] = useState(null);
+  const [metadataCorrection, setMetadataCorrection] = useState(null);
   const [showAdultMovies, setShowAdultMovies] = useState(true);
 
-  const loadLibrary = useCallback(async (forcePlex = false) => {
+  const loadLibrary = useCallback(async (forceScan = false) => {
     setLoading(true);
     setError('');
-    setStatus(forcePlex ? 'Syncing Plex and scanning library...' : 'Scanning library...');
+    setStatus(forceScan ? 'Rescanning library folders...' : 'Loading library...');
     try {
-      const data = await fetchJson(`/api/library${forcePlex ? '?force_plex=1' : ''}`);
+      const data = await fetchJson(forceScan ? '/api/library?force_scan=1' : '/api/library');
       setItems(data.items || []);
       setCurrentPage(1);
-      setStatus(data.cached ? 'Loaded from cache' : '');
-      notify(`${formatCount(data.count)} library files loaded`, 'success');
+      if (forceScan) {
+        const discovered = Number(data.new_files || 0);
+        const identified = Number(data.metadata_matched || 0);
+        const pending = Number(data.metadata_pending || 0);
+        const summary = [
+          discovered ? `${formatCount(discovered)} new file${discovered === 1 ? '' : 's'}` : '',
+          identified ? `${formatCount(identified)} identified` : '',
+          pending ? `${formatCount(pending)} still copying` : ''
+        ].filter(Boolean).join(' · ');
+        setStatus(summary || 'Rescan complete — no changes found');
+        notify(summary || 'Library rescan complete — no changes found', discovered || identified ? 'success' : 'neutral');
+      } else {
+        setStatus(data.cached ? 'Loaded from cache' : '');
+        notify(`${formatCount(data.count)} library files loaded`, 'success');
+      }
     } catch (loadError) {
       setError(loadError.message);
       notify(`Library unavailable: ${loadError.message}`, 'error');
@@ -2913,6 +3046,14 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
 
   useEffect(() => {
     loadLibrary(false);
+  }, [loadLibrary]);
+
+  useEffect(() => {
+    function handleReconciled() {
+      loadLibrary(false);
+    }
+    window.addEventListener('cp-library-reconciled', handleReconciled);
+    return () => window.removeEventListener('cp-library-reconciled', handleReconciled);
   }, [loadLibrary]);
 
   useEffect(() => {
@@ -2940,6 +3081,8 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
 
   useEffect(() => {
     loadUserLists();
+    window.addEventListener('cp-curation-changed', loadUserLists);
+    return () => window.removeEventListener('cp-curation-changed', loadUserLists);
   }, [loadUserLists]);
 
   useEffect(() => {
@@ -2967,78 +3110,40 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
     countries: getUniqueOptions(items, (item) => item.canonical_metadata?.country_flag || item.canonical_metadata?.country || item.plex_country_flag || item.plex_country)
   }), [items]);
 
-  const filteredItems = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
-    const result = items.filter((item) => {
-      const canonical = item.canonical_metadata || {};
-      if (mode === 'movie' && !canonical.accepted) return false;
-      if (mode === 'movie' && !showAdultMovies && canonical.adult) return false;
-      const identity = getMovieIdentity(item);
-      const rating = Number(canonical.rating || item.plex_rating || 0);
-      const year = Number(identity.year || 0);
-      if (normalizedQuery) {
-        const haystack = [
-          identity.title,
-          identity.year,
-          item.filename,
-          item.path,
-          canonical.summary || canonical.plot || item.plex_summary,
-          (canonical.genres?.length ? canonical.genres : item.plex_genres || []).join(' ')
-        ].filter(Boolean).join(' ').toLowerCase();
-        if (!haystack.includes(normalizedQuery)) return false;
-      }
-      if (qualityFilter === 'upgrade' && !isLowQuality(item.resolution)) return false;
-      if (qualityFilter === 'good' && resolutionRank(item.resolution) < 3) return false;
-      if (qualityFilter === '4k' && resolutionRank(item.resolution) !== 4) return false;
-      if (!matchesLibraryResolutionFilter(item.resolution, resolutionFilter)) return false;
-      if (sourceFilter !== 'all' && item.rip_source !== sourceFilter) return false;
-      if (genreFilter !== 'all' && !(canonical.genres?.length ? canonical.genres : item.plex_genres || []).includes(genreFilter)) return false;
-      if (languageFilter !== 'all' && (canonical.language || item.plex_language) !== languageFilter) return false;
-      if (countryFilter !== 'all' && (canonical.country_flag || canonical.country || item.plex_country_flag || item.plex_country) !== countryFilter) return false;
-      if (mode === 'file' && plexFilter === 'matched' && !item.plex_matched) return false;
-      if (mode === 'file' && plexFilter === 'unmatched' && item.plex_matched) return false;
-      if (mode === 'movie' && minRating !== 'all' && rating < Number(minRating)) return false;
-      if (mode === 'movie' && yearFrom && (!year || year < Number(yearFrom))) return false;
-      if (mode === 'movie' && yearTo && (!year || year > Number(yearTo))) return false;
-      if (mode === 'file' && sizeFilter === 'small' && Number(item.size || 0) > 1.5 * 1024 * 1024 * 1024) return false;
-      if (mode === 'file' && sizeFilter === 'large' && Number(item.size || 0) < 6 * 1024 * 1024 * 1024) return false;
-      const details = tmdbCache[getTmdbCacheKey(item)];
-      if (mode === 'movie' && roleFilter && !itemMatchesRoleFilter(item, details, roleFilter)) return false;
-      if (mode === 'movie' && collectionFilter && !itemMatchesCollectionFilter(item, details, collectionFilter)) return false;
-      if (mode === 'movie' && listFilter && !listsForItem(item, [listFilter]).length) return false;
-      return true;
-    });
-
-    const sorted = [...result];
-    sorted.sort((a, b) => {
-      const aIdentity = getMovieIdentity(a);
-      const bIdentity = getMovieIdentity(b);
-      if (sortMode === 'rating') return Number(b.plex_rating || 0) - Number(a.plex_rating || 0) || aIdentity.title.localeCompare(bIdentity.title);
-      if (sortMode === 'added') return Number(b.added_time || b.modified_time || 0) - Number(a.added_time || a.modified_time || 0) || aIdentity.title.localeCompare(bIdentity.title);
-      if (sortMode === 'year-desc') return Number(bIdentity.year || 0) - Number(aIdentity.year || 0) || aIdentity.title.localeCompare(bIdentity.title);
-      if (sortMode === 'year-asc') return Number(aIdentity.year || 0) - Number(bIdentity.year || 0) || aIdentity.title.localeCompare(bIdentity.title);
-      if (sortMode === 'quality') return resolutionRank(b.resolution) - resolutionRank(a.resolution) || aIdentity.title.localeCompare(bIdentity.title);
-      if (sortMode === 'size') return Number(b.size || 0) - Number(a.size || 0) || a.filename.localeCompare(b.filename);
-      if (sortMode === 'plex') return Number(Boolean(b.plex_matched)) - Number(Boolean(a.plex_matched)) || a.filename.localeCompare(b.filename);
-      if (sortMode === 'source') return String(a.rip_source || '').localeCompare(String(b.rip_source || '')) || a.filename.localeCompare(b.filename);
-      if (sortMode === 'filename') return a.filename.localeCompare(b.filename);
-      return aIdentity.title.localeCompare(bIdentity.title);
-    });
-    return sorted;
-  }, [items, query, qualityFilter, plexFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sizeFilter, mode, roleFilter, collectionFilter, listFilter, tmdbCache, userLists, showAdultMovies]);
-
-  const totalPages = Math.max(1, Math.ceil(filteredItems.length / pageSize));
-  const safePage = Math.min(currentPage, totalPages);
-  const pageStart = filteredItems.length ? (safePage - 1) * pageSize : 0;
-  const pageEnd = Math.min(pageStart + pageSize, filteredItems.length);
-  const visibleItems = filteredItems.slice(pageStart, pageEnd);
-  const stats = useMemo(() => ({
-    total: items.length,
-    low: items.filter((item) => isLowQuality(item.resolution)).length,
-    matched: items.filter((item) => item.canonical_metadata?.accepted).length,
-    pending: items.filter((item) => item.metadata_status === 'pending').length,
-    unmatched: items.filter((item) => !item.canonical_metadata?.accepted && item.metadata_status !== 'pending').length
-  }), [items]);
+  const {
+    filteredItems,
+    totalPages,
+    safePage,
+    pageStart,
+    pageEnd,
+    visibleItems,
+    stats
+  } = useMemo(() => buildLibraryViewModel({
+    items,
+    pageSize,
+    currentPage,
+    query,
+    qualityFilter,
+    plexFilter,
+    sortMode,
+    genreFilter,
+    resolutionFilter,
+    sourceFilter,
+    languageFilter,
+    countryFilter,
+    yearFrom,
+    yearTo,
+    minRating,
+    sizeFilter,
+    mode,
+    roleFilter,
+    collectionFilter,
+    listFilter,
+    lists: userLists,
+    viewingStateFilter,
+    tmdbCache,
+    showAdultMovies
+  }), [items, query, qualityFilter, plexFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sizeFilter, mode, roleFilter, collectionFilter, listFilter, userLists, viewingStateFilter, tmdbCache, showAdultMovies, currentPage]);
 
   useEffect(() => {
     if (currentPage > totalPages) {
@@ -3075,7 +3180,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
         details = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(tmdbId)}`);
         setTmdbCache((cache) => ({ ...cache, [cacheKey]: details }));
         if (details.collection?.id && !collectionCache[details.collection.id]) {
-          fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(details.collection.id)}`)
+          fetchJson(`/api/library/collection/${encodeURIComponent(details.collection.id)}`)
             .then((collectionData) => setCollectionCache((cache) => ({ ...cache, [details.collection.id]: collectionData })))
             .catch(() => {});
         }
@@ -3112,12 +3217,17 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
     setMetadataStatus(`Loading ${collection.name} collection...`);
     setCollectionFilter({ ...collection, parts: [] });
     try {
-      const data = await fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(collection.id)}`);
+      const data = await fetchJson(`/api/library/collection/${encodeURIComponent(collection.id)}`);
       setCollectionCache((cache) => ({ ...cache, [data.id || collection.id]: data }));
       setCollectionFilter({
         id: data.id || collection.id,
         name: data.name || collection.name,
         parts: data.parts || [],
+        owned_paths: data.owned_paths || [],
+        owned_count: Number(data.owned_count || 0),
+        unresolved_count: Number(data.unresolved_count || 0),
+        unresolved_parts: data.unresolved_parts || [],
+        conflicts: data.conflicts || [],
         source: data.source,
         is_edited: data.is_edited
       });
@@ -3144,7 +3254,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
   }
 
   async function saveCollectionOverride(collection, parts) {
-    const data = await fetchJson('/api/user/collection', {
+    await fetchJson('/api/user/collection', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -3153,14 +3263,16 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
         parts
       })
     });
+    const data = await fetchJson(`/api/library/collection/${encodeURIComponent(collection.id)}`);
     setCollectionCache((cache) => ({ ...cache, [collection.id]: data }));
+    setCollectionFilter((filter) => (filter?.id === collection.id ? { ...data } : filter));
     setCollectionEditor(null);
     notify(`Collection saved as user edited`);
   }
 
   async function resetCollection(collection) {
     await fetchJson(`/api/user/collection/${encodeURIComponent(collection.id)}/reset`, { method: 'POST' });
-    const data = await fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(collection.id)}&refresh=1`);
+    const data = await fetchJson(`/api/library/collection/${encodeURIComponent(collection.id)}?refresh=1`);
     setCollectionCache((cache) => ({ ...cache, [collection.id]: data }));
     setCollectionFilter((filter) => (filter?.id === collection.id ? { ...data } : filter));
     notify('Collection reset to TMDB');
@@ -3173,6 +3285,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
       body: JSON.stringify({ name })
     });
     await loadUserLists();
+    announceCurationChanged();
     notify(`List created: ${created.name}`);
     return created;
   }
@@ -3184,6 +3297,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
       body: JSON.stringify({ movie: moviePayload(item) })
     });
     await loadUserLists();
+    announceCurationChanged();
     notify('Movie added to list');
   }
 
@@ -3194,6 +3308,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
       body: JSON.stringify({ name })
     });
     await loadUserLists();
+    announceCurationChanged();
     notify('List renamed');
   }
 
@@ -3201,6 +3316,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
     await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}`, { method: 'DELETE' });
     if (listFilter?.id === listId) setListFilter(null);
     await loadUserLists();
+    announceCurationChanged();
     notify('List deleted');
   }
 
@@ -3211,7 +3327,20 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
       body: JSON.stringify({ movie: moviePayload(item) })
     });
     await loadUserLists();
+    announceCurationChanged();
     notify('Movie removed from list');
+  }
+
+  async function toggleSystemList(systemType, item) {
+    const active = movieHasSystemState(item, userLists, systemType);
+    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie: moviePayload(item), active: !active })
+    });
+    await loadUserLists();
+    announceCurationChanged();
+    notify(`${getMovieIdentity(item).title} ${active ? 'removed from' : 'added to'} ${systemType === 'watched' ? 'Watched' : 'Watchlist'}`);
   }
 
   async function submitRename(event) {
@@ -3258,6 +3387,10 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
     }
   }
 
+  function applyPosterToSharedMovie(item, posterUrl, override) {
+    setItems((current) => applyPosterOverrideToLibraryItems(current, item, posterUrl, override));
+  }
+
   return (
     <section className="library-workspace">
       <div className="library-header">
@@ -3278,7 +3411,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
             </div>
           </div>
           <div className="library-action-row">
-            <button type="button" className="btn btn-secondary" onClick={() => loadLibrary(false)} disabled={loading}>
+            <button type="button" className="btn btn-secondary" onClick={() => loadLibrary(true)} disabled={loading}>
               {loading ? <Loader2 size={15} className="spin" /> : <Database size={15} />} Rescan Files
             </button>
             {stats.unmatched > 0 && (
@@ -3327,6 +3460,12 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
             <select value={genreFilter} onChange={(event) => { setGenreFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All genres</option>
               {optionSets.genres.map((value) => <option key={value} value={value}>{value}</option>)}
+            </select>
+            <select value={viewingStateFilter} onChange={(event) => { setViewingStateFilter(event.target.value); resetLibraryPage(); }}>
+              <option value="all">All viewing states</option>
+              <option value="watched">Watched</option>
+              <option value="unwatched">Unwatched</option>
+              <option value="watchlist">Watchlist</option>
             </select>
             <select value={languageFilter} onChange={(event) => { setLanguageFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All languages</option>
@@ -3406,6 +3545,8 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
           {collectionFilter && (
             <button type="button" className="metadata-filter-chip" onClick={clearMetadataFilters}>
               Collection: {collectionFilter.name}
+              {Number.isFinite(collectionFilter.owned_count) && ` · ${formatCount(collectionFilter.owned_count)} owned`}
+              {collectionFilter.unresolved_count > 0 && ` · ${formatCount(collectionFilter.unresolved_count)} need identity review`}
               <X size={14} />
             </button>
           )}
@@ -3461,6 +3602,12 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
                     onListFilter={applyListFilter}
                     onEditLists={() => setListEditor({ item })}
                     onRemoveFromList={(listId) => removeMovieFromList(listId, item)}
+                    onEditPoster={() => setPosterEditor({ item, path: item.path, title: getMovieIdentity(item).title })}
+                    onCorrectMetadata={() => setMetadataCorrection(item)}
+                    watched={movieHasSystemState(item, userLists, 'watched')}
+                    watchlisted={movieHasSystemState(item, userLists, 'watchlist')}
+                    onToggleWatched={() => toggleSystemList('watched', item)}
+                    onToggleWatchlist={() => toggleSystemList('watchlist', item)}
                   />
                 ) : (
                   <LibraryFileRow
@@ -3541,6 +3688,23 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
           onFilter={applyListFilter}
         />
       )}
+      {posterEditor && (
+        <PosterEditorModal
+          item={posterEditor}
+          notify={notify}
+          onClose={() => setPosterEditor(null)}
+          onSaved={(posterUrl, override) => applyPosterToSharedMovie(posterEditor.item, posterUrl, override)}
+        />
+      )}
+      {metadataCorrection && (
+        <MetadataCorrectionModal
+          item={metadataCorrection}
+          notify={notify}
+          resetLabel="Reset to provider metadata"
+          onClose={() => setMetadataCorrection(null)}
+          onSaved={() => loadLibrary(false)}
+        />
+      )}
     </section>
   );
 }
@@ -3610,7 +3774,13 @@ function LibraryMovieCard({
   onResetCollection,
   onListFilter,
   onEditLists,
-  onRemoveFromList
+  onRemoveFromList,
+  onEditPoster,
+  onCorrectMetadata,
+  watched,
+  watchlisted,
+  onToggleWatched,
+  onToggleWatchlist
 }) {
   const identity = getMovieIdentity(item);
   const canonical = item.canonical_metadata || {};
@@ -3627,6 +3797,14 @@ function LibraryMovieCard({
     <article className={cx('library-movie-card', expanded && 'library-movie-card-expanded')}>
       <div className="library-poster movie-view-poster">
         {(canonical.poster_url || item.plex_poster) ? <img src={canonical.poster_url || item.plex_poster} alt={`${identity.title} poster`} loading="lazy" /> : <Film size={28} />}
+        <PosterStateControls
+          title={identity.title}
+          watched={watched}
+          watchlisted={watchlisted}
+          onToggleWatched={onToggleWatched}
+          onToggleWatchlist={onToggleWatchlist}
+        />
+        <PosterEditButton title={identity.title} onEdit={onEditPoster} />
       </div>
       <div className="library-item-body">
         <div className="library-item-title-row">
@@ -3693,7 +3871,11 @@ function LibraryMovieCard({
                     <Clapperboard size={17} />
                     <span>
                       <strong>{activeCollection.name}</strong>
-                      <small>Collection made by {activeCollection.source || 'TMDB'}</small>
+                      <small>
+                        {Number.isFinite(activeCollection.owned_count)
+                          ? `${formatCount(activeCollection.owned_count)} owned${activeCollection.unresolved_count ? `, ${formatCount(activeCollection.unresolved_count)} need identity review` : ''}`
+                          : `Collection made by ${activeCollection.source || 'TMDB'}`}
+                      </small>
                     </span>
                   </button>
                   <div className="collection-actions">
@@ -3738,6 +3920,9 @@ function LibraryMovieCard({
           </button>
           <button type="button" className="btn btn-secondary" onClick={onToggle}>
             <Info size={15} /> {expanded ? 'Less' : 'Details'}
+          </button>
+          <button type="button" className="btn btn-secondary" onClick={onCorrectMetadata}>
+            <Pencil size={15} /> Correct metadata
           </button>
           {lowQuality && (
             <button type="button" className="btn btn-upgrade" onClick={() => onFindTorrent(movieForSearch, true)}>
@@ -3922,7 +4107,7 @@ function ListEditorModal({ item, items, lists, onClose, onCreate, onAdd }) {
         {item && lists.length > 0 && (
           <div className="existing-list-picker">
             <span className="mini-label">Existing lists</span>
-            {lists.map((list) => (
+            {lists.filter((list) => item?.path || list.system_type !== 'watched').map((list) => (
               <button type="button" key={list.id} onClick={() => addExisting(list.id)} disabled={busy}>
                 {list.name}
               </button>
@@ -3939,6 +4124,8 @@ function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDele
   const [newName, setNewName] = useState('');
   const [renameValue, setRenameValue] = useState('');
   const [search, setSearch] = useState('');
+  const [tmdbCandidates, setTmdbCandidates] = useState([]);
+  const [tmdbLoading, setTmdbLoading] = useState(false);
   const selectedList = lists.find((list) => list.id === selectedId) || lists[0] || null;
   const listMovieKeys = useMemo(() => new Set((selectedList?.movies || []).map((movie) => movieIdentityKey(movie))), [selectedList]);
   const candidates = useMemo(() => {
@@ -3978,6 +4165,17 @@ function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDele
     setSelectedId(remaining[0]?.id || '');
   }
 
+  async function searchTmdbWatchlist() {
+    if (selectedList?.system_type !== 'watchlist' || !search.trim()) return;
+    setTmdbLoading(true);
+    try {
+      const data = await fetchJson(`/api/tmdb/search?q=${encodeURIComponent(search.trim())}&page=1&include_adult=false`);
+      setTmdbCandidates((data.results || []).slice(0, 12));
+    } finally {
+      setTmdbLoading(false);
+    }
+  }
+
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
       <section className="torrent-dialog curation-dialog" role="dialog" aria-modal="true" aria-label="My lists" onClick={(event) => event.stopPropagation()}>
@@ -4007,17 +4205,24 @@ function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDele
             {selectedList ? (
               <>
                 <form className="list-rename-row" onSubmit={submitRename}>
-                  <input value={renameValue} onChange={(event) => setRenameValue(event.target.value)} />
-                  <button type="submit" className="mini-action">Rename</button>
+                  <input value={renameValue} onChange={(event) => setRenameValue(event.target.value)} disabled={Boolean(selectedList?.system_type)} />
+                  {selectedList?.system_type ? <span className="chip chip-muted">System list</span> : <button type="submit" className="mini-action">Rename</button>}
                   <button type="button" className="mini-action" onClick={() => onFilter(selectedList)}>Filter</button>
-                  <button type="button" className="mini-action mini-action-danger" onClick={deleteSelected}>
-                    <Trash2 size={13} /> Delete
-                  </button>
+                  {!selectedList?.system_type && (
+                    <button type="button" className="mini-action mini-action-danger" onClick={deleteSelected}>
+                      <Trash2 size={13} /> Delete
+                    </button>
+                  )}
                 </form>
                 <label className="library-search curation-search">
                   <Search size={17} />
-                  <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search local movies to add..." />
+                  <input value={search} onChange={(event) => { setSearch(event.target.value); setTmdbCandidates([]); }} placeholder={selectedList.system_type === 'watchlist' ? 'Search local movies or TMDB...' : 'Search local movies to add...'} />
                 </label>
+                {selectedList.system_type === 'watchlist' && search.trim() && (
+                  <button type="button" className="mini-action" onClick={searchTmdbWatchlist} disabled={tmdbLoading}>
+                    {tmdbLoading ? <Loader2 size={13} className="spin" /> : <Search size={13} />} Search TMDB to add to Watchlist
+                  </button>
+                )}
                 {candidates.length > 0 && (
                   <div className="curation-candidates">
                     {candidates.map((item) => {
@@ -4026,6 +4231,19 @@ function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDele
                         <button type="button" key={item.path} onClick={() => { onAdd(selectedList.id, item); setSearch(''); }}>
                           <CirclePlus size={15} />
                           {payload.title}{payload.year ? ` (${payload.year})` : ''}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+                {tmdbCandidates.length > 0 && selectedList.system_type === 'watchlist' && (
+                  <div className="curation-candidates">
+                    {tmdbCandidates.map((movie) => {
+                      const owned = items.some((item) => movieIdentityKey(moviePayload(item)) === movieIdentityKey(movie));
+                      return (
+                        <button type="button" key={movie.tmdb_id || movieIdentityKey(movie)} onClick={() => { onAdd(selectedList.id, movie); setSearch(''); setTmdbCandidates([]); }}>
+                          <CirclePlus size={15} />
+                          {movie.title}{movie.year ? ` (${movie.year})` : ''} · {owned ? 'Owned' : 'Not owned'}
                         </button>
                       );
                     })}
@@ -4164,9 +4382,21 @@ function ConfirmDialog({ title, body, confirmLabel, danger, onCancel, onConfirm 
   );
 }
 
-function MigrationWorkspace({ section, notify, onFindTorrent, cleanupInitialTab }) {
-  if (section === 'cleanup') return <CleanupWorkspace notify={notify} onFindTorrent={onFindTorrent} initialTab={cleanupInitialTab} />;
-  if (section === 'settings') return <SettingsWorkspace notify={notify} />;
+function MigrationWorkspace({ section, notify, onPlay, onFindTorrent, cleanupInitialTab, onReviewUnmatched, onReviewIdentities, onHealthChanged }) {
+  if (section === 'cleanup') {
+    return (
+      <CleanupWorkspace
+        notify={notify}
+        onPlay={onPlay}
+        onFindTorrent={onFindTorrent}
+        initialTab={cleanupInitialTab}
+        onHealthChanged={onHealthChanged}
+      />
+    );
+  }
+  if (section === 'settings') {
+    return <SettingsWorkspace notify={notify} onReviewUnmatched={onReviewUnmatched} onReviewIdentities={onReviewIdentities} />;
+  }
   const meta = {
     library: {
       icon: Library,
@@ -4215,20 +4445,28 @@ const cleanupTabs = [
   { id: 'duplicates', label: 'Duplicates', icon: ShieldCheck },
   { id: 'smart', label: 'Smart Clean', icon: Wand2 },
   { id: 'low', label: 'Low Quality', icon: AlertTriangle },
-  { id: 'unmatched', label: 'Unmatched Metadata', icon: LinkIcon }
+  { id: 'unmatched', label: 'Unmatched Metadata', icon: LinkIcon },
+  { id: 'identity', label: 'Identity Review', icon: ScanSearch }
 ];
 
-function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) {
+function CleanupWorkspace({ notify, onPlay, onFindTorrent, initialTab = 'duplicates', onHealthChanged }) {
   const [activeTab, setActiveTab] = useState(initialTab);
   const [loading, setLoading] = useState({});
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({ duplicates: [], smart: [], low: [], unmatched: [] });
   const [selected, setSelected] = useState({ duplicates: new Set(), smart: new Set(), low: new Set(), unmatched: new Set() });
-  const [filters, setFilters] = useState({ query: '', resolution: 'all', source: 'all', plex: 'all' });
+  const [filters, setFilters] = useState({ query: '', resolution: 'all', source: 'all', plex: 'all', identity: 'all' });
   const [confirmAction, setConfirmAction] = useState(null);
   const [renameTarget, setRenameTarget] = useState(null);
   const [matchModal, setMatchModal] = useState(null);
   const [rowStatus, setRowStatus] = useState({});
+  const [smartMatchJob, setSmartMatchJob] = useState(null);
+  const [lastSmartMatchJob, setLastSmartMatchJob] = useState(null);
+  const [identityAudit, setIdentityAudit] = useState(null);
+  const [identityApprovedProposal, setIdentityApprovedProposal] = useState(null);
+  const [identityHealthJob, setIdentityHealthJob] = useState('');
+  const [ollamaAvailable, setOllamaAvailable] = useState(false);
+  const [smartMatchProviders, setSmartMatchProviders] = useState({ tmdb: true, plex: true });
 
   useEffect(() => {
     setActiveTab(initialTab);
@@ -4236,34 +4474,78 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
 
   const loadCleanup = useCallback(async (forcePlex = false) => {
     const suffix = forcePlex ? '?force_plex=1' : '';
-    setLoading({ duplicates: true, smart: true, low: true, unmatched: true });
+    setLoading({ duplicates: true, smart: true, low: true, unmatched: true, identity: true });
     setErrors({});
     const requests = await Promise.allSettled([
       fetchJson(`/api/duplicates${suffix}`),
       fetchJson('/api/smart-scan'),
       fetchJson(`/api/low-quality${suffix}`),
-      fetchJson(`/api/fix-unmatched${suffix}`)
+      fetchJson(`/api/fix-unmatched${suffix}`),
+      fetchJson('/api/metadata/identity-audit')
     ]);
-    const [duplicates, smart, low, unmatched] = requests;
+    const [duplicates, smart, low, unmatched, identity] = requests;
     setData({
       duplicates: duplicates.status === 'fulfilled' ? duplicates.value.duplicates || [] : [],
       smart: smart.status === 'fulfilled' ? smart.value.recommendations || [] : [],
       low: low.status === 'fulfilled' ? low.value.items || [] : [],
       unmatched: unmatched.status === 'fulfilled' ? unmatched.value.items || [] : []
     });
+    if (identity.status === 'fulfilled') setIdentityAudit(identity.value);
     setSelected({ duplicates: new Set(), smart: new Set(), low: new Set(), unmatched: new Set() });
     setErrors({
       duplicates: duplicates.status === 'rejected' ? duplicates.reason.message : '',
       smart: smart.status === 'rejected' ? smart.reason.message : '',
       low: low.status === 'rejected' ? low.reason.message : '',
-      unmatched: unmatched.status === 'rejected' ? unmatched.reason.message : ''
+      unmatched: unmatched.status === 'rejected' ? unmatched.reason.message : '',
+      identity: identity.status === 'rejected' ? identity.reason.message : ''
     });
-    setLoading({ duplicates: false, smart: false, low: false, unmatched: false });
+    setLoading({ duplicates: false, smart: false, low: false, unmatched: false, identity: false });
   }, []);
 
   useEffect(() => {
     loadCleanup(false);
   }, [loadCleanup]);
+
+  useEffect(() => {
+    let cancelled = false;
+    Promise.allSettled([
+      fetchJson('/api/ollama/config'),
+      fetchJson('/api/metadata/smart-match')
+    ]).then(([ollama, smart]) => {
+      if (cancelled) return;
+      if (ollama.status === 'fulfilled') {
+        setOllamaAvailable(Boolean(ollama.value.url && ollama.value.model));
+      }
+      if (smart.status === 'fulfilled') {
+        setSmartMatchProviders(smart.value.providers || { tmdb: true, plex: true });
+        if (['running', 'paused'].includes(smart.value.status) && smart.value.id) {
+          setSmartMatchJob(smart.value);
+        } else if (smart.value.status === 'completed' && smart.value.id) {
+          setLastSmartMatchJob(smart.value);
+        }
+      }
+    })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, []);
+
+  useEffect(() => {
+    if (identityAudit?.status !== 'running' || !identityAudit.id) return undefined;
+    const timer = window.setInterval(async () => {
+      try {
+        setIdentityAudit(await fetchJson(`/api/metadata/identity-audit/${encodeURIComponent(identityAudit.id)}`));
+      } catch (pollError) {
+        setErrors((state) => ({ ...state, identity: pollError.message }));
+      }
+    }, 900);
+    return () => window.clearInterval(timer);
+  }, [identityAudit?.id, identityAudit?.status]);
+
+  useEffect(() => {
+    if (identityAudit?.status !== 'completed' || !identityAudit.id || identityHealthJob === identityAudit.id) return;
+    setIdentityHealthJob(identityAudit.id);
+    onHealthChanged();
+  }, [identityAudit?.id, identityAudit?.status, identityHealthJob, onHealthChanged]);
 
   const duplicateFiles = useMemo(() => data.duplicates.flatMap((group) => group.files || []), [data.duplicates]);
   const selectableDuplicatePaths = useMemo(() => data.duplicates.flatMap((group) => (group.files || []).slice(1).map((file) => file.path)), [data.duplicates]);
@@ -4276,6 +4558,10 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
 
   const filteredLow = useMemo(() => filterCleanupItems(data.low, filters), [data.low, filters]);
   const filteredUnmatched = useMemo(() => filterUnmatchedItems(data.unmatched, filters), [data.unmatched, filters]);
+  const filteredIdentity = useMemo(
+    () => filterIdentityReviewItems(identityAudit?.proposals || [], filters),
+    [identityAudit?.proposals, filters]
+  );
   const filteredDuplicates = useMemo(() => {
     const q = filters.query.trim().toLowerCase();
     if (!q) return data.duplicates;
@@ -4300,6 +4586,8 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
     low: data.low.length,
     pending: data.unmatched.filter((item) => item.metadata_status === 'pending').length,
     unmatched: data.unmatched.filter((item) => item.metadata_status !== 'pending').length
+    ,
+    identity: (identityAudit?.proposals || []).length
   };
 
   function updateFilter(key, value) {
@@ -4447,16 +4735,31 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
     }
   }
 
-  function openPlexMatch(item) {
-    if (!item.rating_key) {
-      notify('No Plex rating key for this file. Try Scan Plex Library first.', 'error');
-      return;
-    }
+  function openPlexMatch(item, context = 'unmatched') {
     setMatchModal({
       provider: 'plex',
+      context,
       item,
-      title: item.suggested_title || '',
-      year: item.suggested_year || '',
+      ratingKey: item.rating_key || '',
+      title: item.suggested_title || item.current?.title || item.candidate?.title || '',
+      year: item.suggested_year || item.current?.year || item.candidate?.year || '',
+      loading: false,
+      scanBusy: false,
+      scanRequested: false,
+      needsPlexScan: false,
+      applying: '',
+      error: '',
+      results: []
+    });
+  }
+
+  function openTmdbMatch(item, context = 'unmatched') {
+    setMatchModal({
+      provider: 'tmdb',
+      context,
+      item,
+      title: item.suggested_title || item.current?.title || item.tmdb_title || item.candidate?.title || '',
+      year: item.suggested_year || item.current?.year || item.tmdb_year || item.candidate?.year || '',
       loading: false,
       applying: '',
       error: '',
@@ -4464,33 +4767,51 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
     });
   }
 
-  function openTmdbMatch(item) {
-    setMatchModal({
-      provider: 'tmdb',
-      item,
-      title: item.suggested_title || item.tmdb_title || '',
-      year: item.suggested_year || item.tmdb_year || '',
-      loading: false,
-      applying: '',
-      error: '',
-      results: []
-    });
+  async function runPlexMatchSearch() {
+    if (!matchModal?.item?.path) return;
+    setMatchModal((state) => ({ ...state, loading: true, error: '', results: [] }));
+    try {
+      const params = new URLSearchParams({
+        path: matchModal.item.path,
+        title: matchModal.title,
+        year: matchModal.year
+      });
+      if (matchModal.ratingKey) params.set('rating_key', matchModal.ratingKey);
+      if (matchModal.context === 'identity') params.set('force_search', '1');
+      const result = await fetchJson(`/api/plex/match-search?${params.toString()}`);
+      setMatchModal((state) => ({
+        ...state,
+        loading: false,
+        needsPlexScan: false,
+        ratingKey: result.rating_key || state.ratingKey,
+        results: result.results || []
+      }));
+    } catch (error) {
+      setMatchModal((state) => ({
+        ...state,
+        loading: false,
+        needsPlexScan: error.data?.code === 'plex_item_not_indexed',
+        error: error.message
+      }));
+    }
   }
 
   async function searchPlexMatch(event) {
     event.preventDefault();
-    if (!matchModal?.item?.rating_key) return;
-    setMatchModal((state) => ({ ...state, loading: true, error: '', results: [] }));
+    await runPlexMatchSearch();
+  }
+
+  async function requestPlexScanAndRetry() {
+    if (!matchModal?.item?.path) return;
+    setMatchModal((state) => ({ ...state, scanBusy: true, error: '' }));
     try {
-      const params = new URLSearchParams({
-        rating_key: matchModal.item.rating_key,
-        title: matchModal.title,
-        year: matchModal.year
-      });
-      const result = await fetchJson(`/api/plex/match-search?${params.toString()}`);
-      setMatchModal((state) => ({ ...state, loading: false, results: result.results || [] }));
+      await fetchJson('/api/plex/force-scan', { method: 'POST' });
+      await new Promise((resolve) => window.setTimeout(resolve, 1500));
+      setMatchModal((state) => ({ ...state, scanRequested: true }));
+      await runPlexMatchSearch();
+      setMatchModal((state) => ({ ...state, scanBusy: false }));
     } catch (error) {
-      setMatchModal((state) => ({ ...state, loading: false, error: error.message }));
+      setMatchModal((state) => ({ ...state, scanBusy: false, scanRequested: true, error: error.message }));
     }
   }
 
@@ -4513,20 +4834,42 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
   }
 
   async function applyPlexMatch(match) {
-    if (!matchModal?.item?.rating_key || !match?.guid) return;
+    const ratingKey = matchModal?.ratingKey || matchModal?.item?.rating_key;
+    if (!ratingKey || !match?.guid) return;
     setMatchModal((state) => ({ ...state, applying: match.guid, error: '' }));
     try {
       await fetchJson('/api/plex/match-apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ path: matchModal.item.path, rating_key: matchModal.item.rating_key, guid: match.guid, name: match.name })
+        body: JSON.stringify({
+          path: matchModal.item.path,
+          rating_key: ratingKey,
+          guid: match.guid,
+          name: match.name || match.title,
+          year: match.year || '',
+          poster_url: match.poster_url || '',
+          summary: match.summary || ''
+        })
       });
       setRowStatus((state) => ({ ...state, [matchModal.item.path]: { tone: 'success', text: `Plex match applied: ${match.name}` } }));
-      setData((state) => ({
-        ...state,
-        unmatched: state.unmatched.filter((item) => item.path !== matchModal.item.path)
-      }));
+      if (matchModal.context === 'identity') {
+        setIdentityApprovedProposal({
+          ...matchModal.item,
+          candidate: {
+            plex_guid: match.guid,
+            title: match.name || match.title,
+            year: match.year || ''
+          }
+        });
+        setIdentityAudit(await fetchJson('/api/metadata/identity-audit'));
+      } else {
+        setData((state) => ({
+          ...state,
+          unmatched: state.unmatched.filter((item) => item.path !== matchModal.item.path)
+        }));
+      }
       setMatchModal(null);
+      onHealthChanged();
       notify('Plex match applied');
     } catch (error) {
       setMatchModal((state) => ({ ...state, applying: '', error: error.message }));
@@ -4542,15 +4885,66 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ path: matchModal.item.path, tmdb_id: match.tmdb_id, movie: match })
       });
-      setData((state) => ({
-        ...state,
-        unmatched: state.unmatched.filter((item) => item.path !== matchModal.item.path)
-      }));
+      if (matchModal.context === 'identity') {
+        setIdentityApprovedProposal({ ...matchModal.item, candidate: match });
+        setIdentityAudit(await fetchJson('/api/metadata/identity-audit'));
+      } else {
+        setData((state) => ({
+          ...state,
+          unmatched: state.unmatched.filter((item) => item.path !== matchModal.item.path)
+        }));
+      }
       setRowStatus((state) => ({ ...state, [matchModal.item.path]: { tone: 'success', text: `TMDB match applied: ${match.title}` } }));
       setMatchModal(null);
+      onHealthChanged();
       notify('TMDB match applied');
     } catch (error) {
       setMatchModal((state) => ({ ...state, applying: '', error: error.message }));
+    }
+  }
+
+  async function startIdentityAudit() {
+    if (!window.confirm('Start a new identity scan? Current scan progress and displayed results will be cleared. Previously verified unchanged movies will remain skipped.')) return;
+    try {
+      setIdentityAudit(await fetchJson('/api/metadata/identity-audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      }));
+      setErrors((state) => ({ ...state, identity: '' }));
+    } catch (auditError) {
+      setErrors((state) => ({ ...state, identity: auditError.message }));
+    }
+  }
+
+  async function pauseIdentityAudit() {
+    if (!identityAudit?.id) return;
+    try {
+      setIdentityAudit(await fetchJson(`/api/metadata/identity-audit/${encodeURIComponent(identityAudit.id)}/pause`, {
+        method: 'POST'
+      }));
+    } catch (auditError) {
+      setErrors((state) => ({ ...state, identity: auditError.message }));
+    }
+  }
+
+  async function resumeIdentityAudit() {
+    if (!identityAudit?.id) return;
+    try {
+      setIdentityAudit(await fetchJson(`/api/metadata/identity-audit/${encodeURIComponent(identityAudit.id)}/resume`, {
+        method: 'POST'
+      }));
+      setErrors((state) => ({ ...state, identity: '' }));
+    } catch (auditError) {
+      setErrors((state) => ({ ...state, identity: auditError.message }));
+    }
+  }
+
+  async function refreshIdentityAudit() {
+    try {
+      setIdentityAudit(await fetchJson('/api/metadata/identity-audit'));
+    } catch (auditError) {
+      setErrors((state) => ({ ...state, identity: auditError.message }));
     }
   }
 
@@ -4585,6 +4979,7 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
         <LibraryStat icon={AlertTriangle} label="Low quality" value={formatCount(summary.low)} tone="amber" />
         {summary.pending > 0 && <LibraryStat icon={Loader2} label="Metadata pending" value={formatCount(summary.pending)} tone="amber" />}
         <LibraryStat icon={LinkIcon} label="Unmatched metadata" value={formatCount(summary.unmatched)} tone="violet" />
+        <LibraryStat icon={ScanSearch} label="Identity review" value={formatCount(summary.identity)} tone="cyan" onClick={() => setActiveTab('identity')} />
       </div>
 
       <div className="cleanup-tabs" role="tablist" aria-label="Cleanup workspace tabs">
@@ -4603,7 +4998,7 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
           <Search size={17} />
           <input value={filters.query} onChange={(event) => updateFilter('query', event.target.value)} placeholder="Search files, paths, Plex titles..." />
         </label>
-        {(activeTab === 'low' || activeTab === 'unmatched') && (
+        {(activeTab === 'low' || activeTab === 'unmatched' || activeTab === 'identity') && (
           <>
             {activeTab === 'low' && (
               <>
@@ -4625,6 +5020,13 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
                 <option value="pending">Pending metadata</option>
                 <option value="conflict">Conflict</option>
                 <option value="needs_review">Needs review</option>
+              </select>
+            ) : activeTab === 'identity' ? (
+              <select value={filters.identity} onChange={(event) => updateFilter('identity', event.target.value)}>
+                <option value="all">All identity reviews</option>
+                <option value="recommended">Recommended corrections</option>
+                <option value="review">Needs review</option>
+                <option value="weak">Weak matches</option>
               </select>
             ) : (
               <select value={filters.plex} onChange={(event) => updateFilter('plex', event.target.value)}>
@@ -4661,7 +5063,54 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
             <LowQualityCleanupTab items={filteredLow} selected={selected.low} onToggle={toggleSelected} onDelete={requestDelete} onFindTorrent={onFindTorrent} />
           )}
           {activeTab === 'unmatched' && (
-            <UnmatchedCleanupTab items={filteredUnmatched} selected={selected.unmatched} rowStatus={rowStatus} onToggle={toggleSelected} onDelete={requestDelete} onRename={setRenameTarget} onFixPath={requestFixPath} onPlexMatch={openPlexMatch} onTmdbMatch={openTmdbMatch} />
+            <UnmatchedCleanupTab
+              items={filteredUnmatched}
+              selected={selected.unmatched}
+              rowStatus={rowStatus}
+              onToggle={toggleSelected}
+              onPlay={onPlay}
+              onDelete={requestDelete}
+              onRename={setRenameTarget}
+              onFixPath={requestFixPath}
+              onPlexMatch={openPlexMatch}
+              onTmdbMatch={openTmdbMatch}
+              plexAvailable={smartMatchProviders.plex !== false}
+              smartControls={selected.unmatched.size > 0 ? (
+                <SmartMatchControls
+                  selectedPaths={[...selected.unmatched]}
+                  ollamaAvailable={ollamaAvailable}
+                  providers={smartMatchProviders}
+                  onStarted={setSmartMatchJob}
+                  notify={notify}
+                />
+              ) : null}
+              lastSmartMatchControl={lastSmartMatchJob ? (
+                <button type="button" className="btn btn-secondary" onClick={() => setSmartMatchJob(lastSmartMatchJob)}>
+                  Open last Smart Match review
+                </button>
+              ) : null}
+            />
+          )}
+          {activeTab === 'identity' && (
+            <IdentityReviewPanel
+              audit={identityAudit}
+              items={filteredIdentity}
+              loading={Boolean(loading.identity)}
+              error={errors.identity}
+              plexAvailable={smartMatchProviders.plex !== false}
+              onStart={startIdentityAudit}
+              onPause={pauseIdentityAudit}
+              onResume={resumeIdentityAudit}
+              onRefresh={refreshIdentityAudit}
+              onAuditChanged={setIdentityAudit}
+              onPlay={onPlay}
+              onTmdbMatch={(proposal) => openTmdbMatch(proposal, 'identity')}
+              onPlexMatch={(proposal) => openPlexMatch(proposal, 'identity')}
+              onHealthChanged={onHealthChanged}
+              externalApproved={identityApprovedProposal}
+              onExternalApprovedConsumed={() => setIdentityApprovedProposal(null)}
+              notify={notify}
+            />
           )}
         </>
       )}
@@ -4698,49 +5147,30 @@ function CleanupWorkspace({ notify, onFindTorrent, initialTab = 'duplicates' }) 
             onClose={() => setMatchModal(null)}
             onChange={(patch) => setMatchModal((state) => ({ ...state, ...patch }))}
             onSearch={searchPlexMatch}
+            onScanRetry={requestPlexScanAndRetry}
             onApply={applyPlexMatch}
           />
         )
       )}
+      {smartMatchJob && (
+        <SmartMatchReviewModal
+          job={smartMatchJob}
+          items={data.unmatched}
+          onJobChange={setSmartMatchJob}
+          onClose={() => setSmartMatchJob(null)}
+          onApplied={(paths) => {
+            const applied = new Set(paths);
+            setData((state) => ({ ...state, unmatched: state.unmatched.filter((item) => !applied.has(item.path)) }));
+            setSelected((state) => ({ ...state, unmatched: new Set() }));
+          }}
+          onTmdbMatch={(item) => { setSmartMatchJob(null); openTmdbMatch(item); }}
+          onPlexMatch={(item) => { setSmartMatchJob(null); openPlexMatch(item); }}
+          plexAvailable={smartMatchProviders.plex !== false}
+          notify={notify}
+        />
+      )}
     </section>
   );
-}
-
-function filterCleanupItems(items, filters) {
-  const q = filters.query.trim().toLowerCase();
-  return items.filter((item) => {
-    if (q) {
-      const haystack = [item.title, item.filename, item.path, item.plex_title, item.plex_year, item.rip_source, item.resolution].filter(Boolean).join(' ').toLowerCase();
-      if (!haystack.includes(q)) return false;
-    }
-    if (filters.resolution !== 'all' && item.resolution !== filters.resolution) return false;
-    if (filters.source !== 'all' && item.rip_source !== filters.source) return false;
-    if (filters.plex === 'matched' && !item.plex_matched) return false;
-    if (filters.plex === 'unmatched' && item.plex_matched) return false;
-    return true;
-  });
-}
-
-function filterUnmatchedItems(items, filters) {
-  const q = filters.query.trim().toLowerCase();
-  return items.filter((item) => {
-    if (q) {
-      const haystack = [item.filename, item.path, item.suggested_title, item.suggested_year, item.plex_title, item.tmdb_title, item.metadata_hint, item.plex_hint, item.folder].filter(Boolean).join(' ').toLowerCase();
-      if (!haystack.includes(q)) return false;
-    }
-    if (filters.plex === 'plex-unmatched' && item.plex_matched) return false;
-    if (filters.plex === 'tmdb-unmatched' && item.tmdb_id) return false;
-    if (filters.plex === 'pending' && item.metadata_status !== 'pending') return false;
-    if (filters.plex === 'conflict' && item.metadata_status !== 'conflict') return false;
-    if (filters.plex === 'needs_review' && item.metadata_status !== 'needs_review') return false;
-    return true;
-  });
-}
-
-function renameModalItem(item) {
-  const title = item.suggested_title || getMovieIdentity(item).title;
-  const year = item.suggested_year || getMovieIdentity(item).year;
-  return { ...item, title: `${title}${year ? ` (${year})` : ''}` };
 }
 
 function DuplicatesCleanupTab({ groups, selected, selectablePaths, onToggle, onSelectPaths, onDelete }) {
@@ -4874,7 +5304,7 @@ function LowQualityCleanupTab({ items, selected, onToggle, onDelete, onFindTorre
   );
 }
 
-function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onDelete, onRename, onFixPath, onPlexMatch, onTmdbMatch }) {
+function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onPlay, onDelete, onRename, onFixPath, onPlexMatch, onTmdbMatch, plexAvailable, smartControls, lastSmartMatchControl }) {
   return (
     <div className="cleanup-panel">
       <CleanupSelectionBar
@@ -4884,6 +5314,8 @@ function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onDelete, o
         onSelectAll={() => items.forEach((item) => onToggle('unmatched', item.path, true))}
         onClear={() => items.forEach((item) => onToggle('unmatched', item.path, false))}
       />
+      {smartControls}
+      {lastSmartMatchControl && <div className="cleanup-secondary-action">{lastSmartMatchControl}</div>}
       {items.length ? (
         <div className="cleanup-file-list">
           {items.map((item) => (
@@ -4909,10 +5341,13 @@ function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onDelete, o
                 {rowStatus[item.path] && <p className={cx('cleanup-row-status', `cleanup-row-${rowStatus[item.path].tone}`)}>{rowStatus[item.path].text}</p>}
               </div>
               <div className="cleanup-row-actions">
+                <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(item.path)}>
+                  <Play size={15} /> Play file
+                </button>
                 <button type="button" className="btn btn-primary btn-violet" onClick={() => onTmdbMatch(item)}>
                   <Search size={15} /> Search TMDB
                 </button>
-                {item.in_plex ? (
+                {plexAvailable ? (
                   <button type="button" className="btn btn-secondary" onClick={() => onPlexMatch(item)}>
                     <Clapperboard size={15} /> Search Plex
                   </button>
@@ -4936,21 +5371,6 @@ function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onDelete, o
       ) : <CleanupEmpty title="No unmatched metadata files match this view." text="Search TMDB or refresh metadata when new files are added." />}
     </div>
   );
-}
-
-function metadataStatusLabel(item) {
-  if (item.metadata_status === 'pending') return 'Pending metadata';
-  if (item.metadata_status === 'conflict') return 'Conflict';
-  if (item.metadata_status === 'needs_review') return 'Needs review';
-  if (item.in_plex && !item.plex_matched) return 'Plex unmatched';
-  if (!item.tmdb_id) return 'TMDB unmatched';
-  return 'Unmatched metadata';
-}
-
-function metadataStatusChipClass(item) {
-  if (item.metadata_status === 'pending') return 'chip-warning';
-  if (item.metadata_status === 'conflict') return 'chip-warning';
-  return 'status-missing';
 }
 
 function CleanupSelectionBar({ label, selectedCount, selectableCount, onSelectAll, onClear }) {
@@ -5060,7 +5480,7 @@ function TmdbMatchModal({ state, onClose, onChange, onSearch, onApply }) {
   );
 }
 
-function PlexMatchModal({ state, onClose, onChange, onSearch, onApply }) {
+function PlexMatchModal({ state, onClose, onChange, onSearch, onScanRetry, onApply }) {
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
       <section className="torrent-dialog cleanup-match-dialog" role="dialog" aria-modal="true" aria-label="Plex match search" onClick={(event) => event.stopPropagation()}>
@@ -5087,12 +5507,32 @@ function PlexMatchModal({ state, onClose, onChange, onSearch, onApply }) {
           </button>
         </form>
         {state.error && <p className="settings-inline-status settings-inline-error"><AlertTriangle size={15} /><span>{state.error}</span></p>}
+        {state.needsPlexScan && (
+          <div className="cleanup-match-recovery">
+            <span>Plex must index this file before its matching agents can be searched.</span>
+            <button type="button" className="btn btn-secondary" onClick={onScanRetry} disabled={state.scanBusy}>
+              {state.scanBusy ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />}
+              {state.scanRequested ? 'Retry Plex lookup' : 'Request Plex scan'}
+            </button>
+          </div>
+        )}
         <div className="match-result-list">
           {state.results.length ? state.results.map((match) => (
-            <article className="match-result-row" key={match.guid}>
+            <article className="match-result-row plex-match-result-row" key={match.guid}>
+              <span className="match-result-poster">
+                {match.poster_url ? <img src={match.poster_url} alt="" loading="lazy" /> : <Film size={18} />}
+              </span>
               <div>
-                <strong>{match.name}</strong>
-                <span>{match.year || 'Unknown year'} | Score {match.score}</span>
+                <strong>{match.title || match.name}</strong>
+                <span>
+                  {match.year || 'Unknown year'}
+                  {match.exact_external_id ? ' · Exact external ID' : ''}
+                  {match.rank ? ` · Plex rank ${match.rank}` : ''}
+                </span>
+                <small>{match.summary || 'No plot summary available.'}</small>
+                {match.match_reasons?.length > 0 && (
+                  <small className="plex-match-reasons">{match.match_reasons.join(' · ')}</small>
+                )}
               </div>
               <button type="button" className="btn btn-secondary" onClick={() => onApply(match)} disabled={Boolean(state.applying)}>
                 {state.applying === match.guid ? <Loader2 size={15} className="spin" /> : <CheckCircle2 size={15} />} Apply match
@@ -5116,7 +5556,7 @@ const emptySettingsState = {
   ollama: { url: '', model: '' }
 };
 
-function SettingsWorkspace({ notify }) {
+function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
   const [forms, setForms] = useState(emptySettingsState);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState({});
@@ -5372,6 +5812,13 @@ function SettingsWorkspace({ notify }) {
       ) : statuses.page ? (
         <SettingsInlineStatus status={statuses.page} />
       ) : null}
+
+      <MetadataAuthorityPanel
+        fetchJson={fetchJson}
+        notify={notify}
+        onReviewUnmatched={onReviewUnmatched}
+        onReviewIdentities={onReviewIdentities}
+      />
 
       <div className="settings-grid">
         <form className="settings-panel settings-panel-wide" onSubmit={saveLibrary}>

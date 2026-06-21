@@ -6,7 +6,7 @@ Cinema Paradiso is a self-hosted movie library manager for people with hundreds 
 
 Everything runs on your machine. No cloud account. No subscription. No remote database.
 
-**Current version: v2.6.0** - June 2026
+**Current version: v2.6.3** - June 2026
 
 ---
 
@@ -38,21 +38,20 @@ Everything runs on your machine. No cloud account. No subscription. No remote da
 
 ---
 
-## What Changed in v2.6
+## What Changed in v2.6.3
 
-Cinema Paradiso v2.6 is the current stable baseline for the React/Vite movie archive console. It includes the black/gold interface, the redesigned Home/Library/Cleanup/Discover/Settings workspaces, and the newer metadata architecture that makes Plex optional instead of mandatory for rich local library browsing.
+Cinema Paradiso v2.6.3 makes the local library identity the durable source of truth. Accepted movies remain accepted when Plex or TMDB is temporarily unavailable, while uncertain or conflicting matches are routed into review instead of silently changing a movie.
 
-- New app metadata layer stores file facts, Plex metadata, TMDB metadata, manual matches, and conflicts separately under user data.
-- Movie View now shows files with accepted Plex or TMDB metadata, while File View remains the complete local-file management view.
-- Cleanup now uses **Unmatched Metadata** instead of Plex-only unmatched handling, with TMDB search/apply, optional Plex matching, rename, fix-path, and refresh workflows.
-- Plex remains supported and read-only by default, but TMDB can now enrich local library files and provide canonical movie identity.
-- Discover/Home ownership matching now prefers stable IDs such as TMDB/IMDb before title/year fallback, reducing false "not in library" results.
-- Discover adds TMDB vote-count preservation and minimum vote filters so low-confidence ratings can be filtered out.
-- Browse Indexers now loads Prowlarr indexer sources before search/load and can scope searches or latest feeds to one selected indexer such as YTS.
-- Browse Indexers renders raw Prowlarr rows first and enriches TMDB details progressively, so cards are not hidden just because TMDB metadata is missing.
-- Home release watchlist remains compact, supports a full list view, checks for proper WEB/Blu-ray releases, ignores CAM/TS/HDCAM/screener copies, and removes movies once they are owned locally.
-- Library keeps 40-item pagination, local title-first search ranking, simplified resolution buckets, real stream-resolution probing, user lists, edited collections, cast/director filters, trailers, and archive-aware actions.
-- Settings manages library roots, user data, cache folders, and optional Plex, Prowlarr, TMDB, and Ollama integrations.
+- **Authoritative movie identity:** accepted TMDB, Plex, and manual identities are resolved through one conflict-safe model used by Library, Discover, collections, lists, duplicates, posters, and ownership checks.
+- **Safer automatic matching:** exact titles, official alternative titles, provider evidence, and small release-year differences can be handled automatically without allowing conflicting strong IDs to overwrite an accepted movie.
+- **Identity Review:** Cleanup includes a dedicated review queue for uncertain matches, provider conflicts, and metadata discrepancies, with pause, resume, rescan, selection, and explicit apply controls.
+- **Metadata health:** Home reports unmatched, pending, and identity-review counts, with direct links to the relevant Cleanup view.
+- **Library reconciliation:** files missing from the metadata store are detected and reconciled, including files added before the current metadata checkpoint.
+- **Manual metadata correction:** owned movies can have their local title and year corrected without changing Plex or renaming the movie file.
+- **Durable poster editing:** choose from TMDB or Plex artwork, upload a local poster, or restore the provider default. Overrides survive metadata refreshes and apply safely to duplicate copies of the same identity.
+- **Watched and Watchlist:** built-in protected lists add quick poster controls and Library filtering. Watchlist can include online movies; Watched is restricted to owned titles.
+- **Safer Smart Match and Plex matching:** previews do not mutate metadata, stale proposals are rejected after identity changes, Plex tokens are kept out of errors, and manual Plex choices are stored locally without editing Plex.
+- **Reliable metadata storage:** JSON writes use safer replacement and recovery behavior so interrupted writes can be repaired without demoting accepted movies.
 
 ---
 
@@ -60,7 +59,7 @@ Cinema Paradiso v2.6 is the current stable baseline for the React/Vite movie arc
 
 ### Home
 
-The Home page is the command center. It shows library health, followed release alerts, trending movies, and a selected movie detail panel. The release watchlist is intentionally compact: the Home widget shows only slim rows, while `View all` opens the full followed list.
+The Home page is the command center. It shows library health, unmatched and identity-review counts, followed release alerts, trending movies, and a selected movie detail panel. Health cards open the exact Cleanup queue that needs attention. The release watchlist is intentionally compact: the Home widget shows only slim rows, while `View all` opens the full followed list.
 
 ### Library
 
@@ -68,8 +67,9 @@ Library is the offline archive browser.
 
 - **Movie View:** for choosing what to watch from files with accepted metadata.
 - **File View:** for managing every local video file, including files without accepted metadata.
-- Filters include quality, resolution bucket, source, genre, language, country, year, rating, Plex state, and size.
-- Actions include Play, Find Sources, Find Upgrade, Trailer, Rename, Delete, Add to List, and collection/list filtering.
+- Filters include quality, resolution bucket, source, genre, language, country, year, rating, Plex state, viewing state, and size.
+- Actions include Play, Find Sources, Find Upgrade, Trailer, Rename, Delete, metadata correction, poster editing, Watched, Watchlist, Add to List, and collection/list filtering.
+- A forced library scan reconciles stable files that do not yet have metadata records.
 
 ### Cleanup
 
@@ -79,9 +79,10 @@ Cleanup is the safe maintenance area for local files.
 - Smart Clean recommendations
 - Low-quality files
 - Unmatched Metadata fixes
+- Identity Review for uncertain matches, provider conflicts, and metadata discrepancies
 - Rename, Fix Path, TMDB match, optional Plex match, source search, and Recycle Bin delete flows
 
-Destructive actions are explicit and confirmed. Delete defaults to the Windows Recycle Bin.
+Identity Review scans can be paused and resumed. Metadata changes require explicit selection and confirmation. Destructive actions are explicit and confirmed, and Delete defaults to the Windows Recycle Bin.
 
 ### Discover
 
@@ -103,7 +104,7 @@ Settings manages:
 - TMDB API key
 - Ollama URL/model
 
-User lists, edited collections, followed releases, and manual metadata matches are persistent user data. TMDB detail caches are rebuildable cache.
+User lists, Watched and Watchlist states, edited collections, followed releases, manual metadata matches, metadata corrections, identity audit state, and poster overrides are persistent user data. TMDB detail caches are rebuildable cache.
 
 ---
 
@@ -177,7 +178,7 @@ Only a movie library folder is required. Integrations are optional.
 
 The app separates persistent user data from rebuildable cache:
 
-- `data/` stores user lists, edited collections, followed releases, and app metadata records for files, manual matches, Plex metadata, TMDB metadata, and conflicts.
+- `data/` stores user lists, viewing states, edited collections, followed releases, poster overrides, metadata corrections, identity audit state, and app metadata records for files, manual matches, Plex metadata, TMDB metadata, and conflicts.
 - `cache/` stores rebuildable TMDB detail/collection cache.
 - `res_cache.json` stores local resolution probe cache.
 - `config.json` stores local settings and secrets.

@@ -4,16 +4,23 @@ import unittest
 
 
 APP_JSX = Path(__file__).resolve().parents[1] / "src" / "App.jsx"
+LIBRARY_UTILS = Path(__file__).resolve().parents[1] / "src" / "utils" / "libraryUtils.js"
+CLEANUP_UTILS = Path(__file__).resolve().parents[1] / "src" / "utils" / "cleanupUtils.js"
 
 
 class LibraryActionUxTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.source = APP_JSX.read_text(encoding="utf-8")
+        cls.library_utils_source = LIBRARY_UTILS.read_text(encoding="utf-8")
+        cls.cleanup_utils_source = CLEANUP_UTILS.read_text(encoding="utf-8")
 
     def test_library_daily_actions_are_file_scan_and_unmatched_review(self):
         self.assertIn("Rescan Files", self.source)
         self.assertIn("Review Unmatched", self.source)
+        self.assertIn("/api/library?force_scan=1", self.source)
+        self.assertIn("/api/library/reconcile", self.source)
+        self.assertIn("cp-library-reconciled", self.source)
         self.assertNotIn("Fetch Metadata", self.source)
         self.assertNotIn("need metadata", self.source)
 
@@ -57,8 +64,15 @@ class LibraryActionUxTest(unittest.TestCase):
 
     def test_movie_view_hides_adult_titles_without_affecting_file_view(self):
         self.assertIn("showAdultMovies", self.source)
-        self.assertIn("mode === 'movie' && !showAdultMovies && canonical.adult", self.source)
-        self.assertNotIn("mode === 'file' && !showAdultMovies && canonical.adult", self.source)
+        self.assertIn("mode === 'movie' && !showAdultMovies && canonical.adult", self.library_utils_source)
+        self.assertNotIn("mode === 'file' && !showAdultMovies && canonical.adult", self.library_utils_source)
+
+    def test_library_view_model_safe_page_is_bound_for_pagination(self):
+        self.assertRegex(
+            self.source,
+            r"const \{\s*filteredItems,\s*totalPages,\s*safePage,\s*pageStart,\s*pageEnd,\s*visibleItems,\s*stats\s*\} = useMemo\(\(\) => buildLibraryViewModel",
+        )
+        self.assertIn("page={safePage}", self.source)
 
     def test_discover_search_forces_adult_titles_off(self):
         self.assertIn("include_adult=false", self.source)
@@ -69,12 +83,31 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("tmdbParams.set('year', matchModal.year.trim())", self.source)
         self.assertNotIn("`${matchModal.title || ''} ${matchModal.year || ''}`", self.source)
 
+    def test_plex_search_resolves_missing_keys_and_offers_scan_retry(self):
+        self.assertIn("path: matchModal.item.path", self.source)
+        self.assertIn("plex_item_not_indexed", self.source)
+        self.assertIn("Request Plex scan", self.source)
+        self.assertIn("Retry Plex lookup", self.source)
+        self.assertNotIn("No Plex rating key for this file", self.source)
+
     def test_pending_metadata_is_separate_from_unmatched_count(self):
         self.assertIn("label=\"Metadata pending\"", self.source)
         self.assertIn("metadata_status === 'pending'", self.source)
         self.assertIn("item.metadata_status !== 'pending'", self.source)
         self.assertIn('<option value="pending">Pending metadata</option>', self.source)
-        self.assertIn("if (item.metadata_status === 'pending') return 'Pending metadata';", self.source)
+        self.assertIn("if (item.metadata_status === 'pending') return 'Pending metadata';", self.cleanup_utils_source)
+
+    def test_home_health_uses_backend_cleanup_counts(self):
+        self.assertIn("value: stats?.duplicate_groups", self.source)
+        self.assertIn("value: stats?.unmatched_count", self.source)
+        self.assertIn("value: stats?.identity_review_count", self.source)
+        self.assertNotIn("label: 'Plex matched'", self.source)
+        self.assertNotIn("value: stats?.dup_groups", self.source)
+
+    def test_movie_view_exposes_local_metadata_correction(self):
+        self.assertIn("Correct metadata", self.source)
+        self.assertIn("MetadataCorrectionModal", self.source)
+        self.assertIn("Reset to provider metadata", self.source)
 
 
 if __name__ == "__main__":

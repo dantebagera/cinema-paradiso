@@ -1,0 +1,186 @@
+.smart-match-controls {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto auto auto;
+  align-items: end;
+  gap: var(--space-3);
+  border: 1px solid #d4af3740;
+  border-radius: var(--radius-md);
+  background: #d4af3708;
+  padding: 14px;
+}
+
+.smart-match-controls > div {
+  display: grid;
+  gap: 4px;
+}
+
+.smart-match-controls > div span,
+.smart-match-controls legend,
+.smart-match-footer span {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.smart-match-controls fieldset {
+  display: flex;
+  gap: 10px;
+  border: 0;
+  padding: 0;
+}
+
+.smart-match-controls label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  font-size: 0.76rem;
+}
+
+.smart-match-dialog {
+  display: grid;
+  gap: var(--space-4);
+  width: min(980px, 94vw);
+  max-height: 90vh;
+  overflow: auto;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: #0d0e10;
+  padding: 20px;
+}
+
+.smart-match-progress,
+.smart-match-result,
+.smart-rename-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 12px;
+}
+
+.smart-match-progress div,
+.smart-match-result > div,
+.smart-rename-row > span {
+  display: grid;
+  flex: 1;
+  gap: 4px;
+  min-width: 0;
+}
+
+.smart-match-progress button {
+  margin-left: auto;
+}
+
+.smart-match-result-list,
+.smart-rename-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.smart-match-bulk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 10px 12px;
+}
+
+.smart-match-bulk > label,
+.smart-match-bulk > div,
+.smart-match-evidence {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.smart-match-label-recommended {
+  border-color: #22c55e66;
+  color: #86efac;
+}
+
+.smart-match-label-review {
+  border-color: #d4af3766;
+  color: var(--projector-gold);
+}
+
+.smart-match-label-weak {
+  border-color: #f59e0b55;
+  color: #fbbf24;
+}
+
+.smart-match-warning {
+  color: #fbbf24 !important;
+}
+
+.smart-match-result b,
+.smart-rename-row b {
+  color: var(--projector-gold);
+}
+
+.smart-match-result small,
+.smart-rename-row small {
+  color: var(--text-muted);
+}
+
+.smart-match-unresolved {
+  border-color: #f59e0b55;
+}
+
+.smart-rename-row input {
+  flex: 0 0 auto;
+}
+
+.smart-rename-blocked {
+  opacity: 0.62;
+}
+
+.smart-match-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-3);
+}
+
+@media (max-width: 900px) {
+  .smart-match-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .smart-match-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .smart-match-controls fieldset,
+  .smart-match-footer,
+  .smart-match-result,
+  .smart-match-bulk {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .smart-match-bulk > div,
+  .smart-match-evidence {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .smart-match-dialog {
+    width: 100%;
+    max-height: 94vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 16px;
+  }
+
+  .smart-match-footer .btn,
+  .smart-match-controls .btn {
+    width: 100%;
+  }
+}
