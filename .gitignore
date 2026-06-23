@@ -44,6 +44,11 @@ DESIGN.md
 # Windows EXE build (separate project)
 winapp/
 
+# Portable release artifacts
+runtime/qbittorrent/
+release/
+*.zip
+
 # OS
 .DS_Store
 Thumbs.db

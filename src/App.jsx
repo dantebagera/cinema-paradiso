@@ -56,6 +56,8 @@ import {
   movieKey,
   sectionFromPath,
   sortFollowedReleases,
+  topBarSearchEnabled,
+  torrentPrimaryAction,
   torrentSizeBytes
 } from './utils/appUtils.js';
 import {
@@ -115,6 +117,18 @@ const navItems = [
     label: 'Discover',
     icon: Compass,
     accent: 'violet'
+  },
+  {
+    id: 'downloads',
+    label: 'Downloads',
+    icon: Download,
+    accent: 'gold'
+  },
+  {
+    id: 'help',
+    label: 'Help',
+    icon: Info,
+    accent: 'gold'
   },
   {
     id: 'settings',
@@ -442,8 +456,8 @@ function ArchiveApp() {
   }, []);
 
   function selectSection(id) {
-    setActiveSection(id);
     if (typeof window === 'undefined') return;
+    setActiveSection(id);
     const path = id === 'home' ? '/' : `/${id}`;
     if (window.location.pathname !== path) {
       window.history.pushState({}, '', path);
@@ -543,7 +557,7 @@ function ArchiveApp() {
         activeSection={activeSection}
         onSelect={selectSection}
       />
-      <main className="workspace">
+      <main className={cx('workspace', activeSection === 'downloads' && 'workspace-downloads')}>
         <TopBar
           activeSection={activeSection}
           stats={stats}
@@ -607,6 +621,10 @@ function ArchiveApp() {
             activeTab={discoverActiveTab}
             setActiveTab={setDiscoverActiveTab}
           />
+        ) : activeSection === 'downloads' ? (
+          <DownloadsWorkspace />
+        ) : activeSection === 'help' ? (
+          <HelpWorkspace />
         ) : (
           <MigrationWorkspace
             section={activeSection}
@@ -628,6 +646,7 @@ function ArchiveApp() {
       {torrentModal && (
         <TorrentModal
           state={torrentModal}
+          notify={notify}
           onClose={() => setTorrentModal(null)}
         />
       )}
@@ -682,7 +701,96 @@ function Sidebar({ activeSection, onSelect }) {
   );
 }
 
-function TorrentModal({ state, onClose }) {
+let torrentHandlingConfigPromise = null;
+
+function loadTorrentHandlingConfig(force = false) {
+  if (force || !torrentHandlingConfigPromise) {
+    torrentHandlingConfigPromise = fetchJson('/api/qbittorrent/config').catch((error) => {
+      torrentHandlingConfigPromise = null;
+      throw error;
+    });
+  }
+  return torrentHandlingConfigPromise;
+}
+
+function TorrentActions({ variant, movieTitle, movieYear, notify, primary = false }) {
+  const action = torrentPrimaryAction(variant);
+  const magnetUrl = action.kind === 'magnet' ? action.url : '';
+  const downloadUrl = action.kind === 'torrent' ? action.url : '';
+  const [mode, setMode] = useState('embedded');
+  const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadTorrentHandlingConfig()
+      .then((config) => {
+        if (!cancelled) setMode(config.mode || 'embedded');
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, []);
+
+  async function handlePrimary() {
+    if (action.kind === 'none' || action.kind === 'source') return;
+    setBusy(true);
+    try {
+      const config = await loadTorrentHandlingConfig();
+      setMode(config.mode || 'embedded');
+      if (config.mode === 'system') {
+        if (!magnetUrl) {
+          notify('This result has no magnet link. Use Open source page instead.', 'error');
+          return;
+        }
+        window.location.href = magnetUrl;
+        return;
+      }
+      await fetchJson('/api/qbittorrent/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          magnet_url: magnetUrl,
+          download_url: downloadUrl,
+          title: movieTitle || '',
+          year: movieYear || '',
+          release_title: variant.title || '',
+          indexer: variant.indexer || ''
+        })
+      });
+      notify(`${variant.title || movieTitle} download added`);
+    } catch (error) {
+      notify(`qBittorrent submission failed: ${error.message}`, 'error');
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const canSubmit = action.kind === 'magnet' || (action.kind === 'torrent' && mode === 'embedded');
+  return (
+    <div className="torrent-action-group">
+      {canSubmit ? (
+        <button type="button" className={cx('btn', primary ? 'btn-primary' : 'btn-secondary')} onClick={handlePrimary} disabled={busy}>
+          {busy ? <Loader2 size={15} className="spin" /> : <Download size={15} />}
+          {mode === 'system' ? 'Open magnet' : 'Download'}
+        </button>
+      ) : action.kind === 'torrent' ? (
+        <span className="torrent-no-link">No magnet</span>
+      ) : null}
+      {mode === 'embedded' && magnetUrl ? (
+        <a className="btn btn-secondary" href={magnetUrl}>
+          <ExternalLink size={15} /> Open externally
+        </a>
+      ) : null}
+      {variant.info_url ? (
+        <a className="btn btn-secondary" href={variant.info_url} target="_blank" rel="noreferrer">
+          <ExternalLink size={15} /> Open source page
+        </a>
+      ) : null}
+      {action.kind === 'none' ? <span className="torrent-no-link">No link</span> : null}
+    </div>
+  );
+}
+
+function TorrentModal({ state, onClose, notify }) {
   const initialQuery = `${state.title || ''} ${state.year || ''}`.trim();
   const [manualQuery, setManualQuery] = useState(initialQuery);
   const [titleFilter, setTitleFilter] = useState('');
@@ -809,8 +917,6 @@ function TorrentModal({ state, onClose }) {
         ) : filteredVariants.length ? (
           <div className="torrent-result-list">
             {filteredVariants.map((variant, index) => {
-              const actionUrl = variant.magnet_url || variant.download_url || variant.info_url;
-              const actionLabel = variant.magnet_url ? 'Magnet' : variant.download_url ? '.torrent' : 'Page';
               return (
                 <article className="torrent-result" key={`${variant.title}-${index}`}>
                   <span className="torrent-quality">{variant.resolution || 'Unknown'}</span>
@@ -822,14 +928,12 @@ function TorrentModal({ state, onClose }) {
                       <span>{variant.indexer || 'Unknown indexer'}</span>
                     </span>
                   </div>
-                  {actionUrl ? (
-                    <a className="btn btn-secondary" href={actionUrl} target="_blank" rel="noreferrer">
-                      {variant.magnet_url ? <ExternalLink size={15} /> : <Download size={15} />}
-                      {actionLabel}
-                    </a>
-                  ) : (
-                    <span className="torrent-no-link">No link</span>
-                  )}
+                  <TorrentActions
+                    variant={variant}
+                    movieTitle={state.title}
+                    movieYear={state.year}
+                    notify={notify}
+                  />
                 </article>
               );
             })}
@@ -862,6 +966,7 @@ function TopBar({
   const isDiscover = activeSection === 'discover';
   const isBrowseSearch = isDiscover && discoverActiveTab === 'browse';
   const isExploreSearch = isDiscover && discoverActiveTab === 'explore';
+  const searchEnabled = topBarSearchEnabled(activeSection, discoverActiveTab);
   const searchValue = isLibrary ? libraryQuery : isBrowseSearch ? browseQuery : isExploreSearch ? discoverQuery : '';
   const searchPlaceholder = isLibrary
     ? 'Search your offline library...'
@@ -876,16 +981,25 @@ function TopBar({
     <header className="topbar">
       <div>
         <p className="screen-kicker">Cinematic archive console</p>
-        <h1>
-          {section?.label || 'Home'}
-          {isLibrary && <span className="offline-badge">Offline</span>}
-        </h1>
+        <div className="topbar-title-row">
+          <h1>
+            {section?.label || 'Home'}
+            {isLibrary && <span className="offline-badge">Offline</span>}
+          </h1>
+          {activeSection === 'downloads' && (
+            <span className="downloads-title-credit">
+              <img src="/qbittorrent/images/qbittorrent32.png" alt="" />
+              <span>Powered by qBittorrent</span>
+            </span>
+          )}
+        </div>
       </div>
       <form
-        className="command-search"
+        className={cx('command-search', !searchEnabled && 'command-search-inactive')}
+        aria-disabled={!searchEnabled}
         onSubmit={(event) => {
           event.preventDefault();
-          if (isExploreSearch || isBrowseSearch) onDiscoverSearch();
+          if (searchEnabled && (isExploreSearch || isBrowseSearch)) onDiscoverSearch();
         }}
       >
         <Search size={17} />
@@ -898,15 +1012,437 @@ function TopBar({
             if (isBrowseSearch) onBrowseQueryChange(event.target.value);
           }}
           placeholder={searchPlaceholder}
-          readOnly={!isLibrary && !isExploreSearch && !isBrowseSearch}
+          disabled={!searchEnabled}
         />
-        <kbd>{isExploreSearch || isBrowseSearch ? 'Enter' : 'Ctrl K'}</kbd>
+        {searchEnabled && <kbd>{isExploreSearch || isBrowseSearch ? 'Enter' : 'Ctrl K'}</kbd>}
       </form>
       <div className="topbar-stat">
         <Database size={16} />
         <span>{formatCount(stats?.total_files)} files</span>
       </div>
     </header>
+  );
+}
+
+function DownloadsWorkspace() {
+  return (
+    <section className="downloads-workspace" aria-label="Downloads powered by qBittorrent">
+      <iframe
+        className="downloads-frame"
+        title="qBittorrent Downloads"
+        src="/qbittorrent/"
+      />
+    </section>
+  );
+}
+
+const manualSections = [
+  {
+    key: 'quick-start',
+    title: 'Quick Start',
+    summary: 'Start here on a new install: configure at least one movie library root, save Settings, then let CP build its local view of your archive.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Reads the movie folders you add in Settings and builds a local archive view.',
+          'Uses optional services only when you configure them: Plex, Prowlarr, TMDB, Ollama, and qBittorrent.',
+          'Shows Ready states and connection tests in Settings so you can see what is configured.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not require Plex, TMDB, Ollama, or Prowlarr just to browse local files.',
+          'It will not rename or delete movie files unless you use a specific cleanup action.',
+          'It will not make incomplete torrents visible as finished movies.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Expecting torrent search before Prowlarr is configured and tested.',
+          'Putting incomplete downloads inside a movie library folder.',
+          'Editing settings fields but forgetting to save before testing the integration.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'home-dashboard',
+    title: 'Home dashboard',
+    summary: 'Home is the command dashboard: library health, followed releases, selected movie details, and fast paths into cleanup or discovery.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Shows archive counts, health signals, and followed release alerts.',
+          'Lets you open local playback, find sources, follow a release, or jump into cleanup from one place.',
+          'Uses TMDB details when available to enrich the highlighted movie.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not scan every external service unless that service is configured.',
+          'It will not change your library just because a health warning appears.',
+          'It will not replace detailed Library or Cleanup workflows.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Treating Home as the only place to manage files; use Library and Cleanup for deeper work.',
+          'Assuming followed releases are downloads; they are alerts until you choose a source.',
+          'Ignoring Ready states when a card depends on an optional integration.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'library-workspace',
+    title: 'Library workspace',
+    summary: 'Library is for browsing and inspecting your accepted archive: movie view, file view, filters, posters, metadata, and playback actions.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Groups files into movie identities when metadata is available.',
+          'Shows quality, language, country, location, and local file details for archive decisions.',
+          'Lets you play files, edit posters, and search for sources or upgrades.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not assume every unmatched file is safe to rename.',
+          'It will not edit Plex metadata directly from normal browsing.',
+          'It will not move downloads into the library until qBittorrent completion handling says the payload is complete.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Looking for unknown files only in Movie View; File View is better for raw file inspection.',
+          'Expecting metadata to be perfect when folder names are messy.',
+          'Using upgrade search before confirming the existing file identity is correct.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'cleanup-workspace',
+    title: 'Cleanup workspace',
+    summary: 'Cleanup is the maintenance area for duplicates, low-quality items, unmatched metadata, and identity review before any destructive action.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Surfaces duplicate candidates, low-quality files, unmatched metadata, and identity conflicts.',
+          'Keeps review steps visible so you can inspect before acting.',
+          'Uses safer delete behavior through the system recycle bin when deletion is supported.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not silently delete movie contents.',
+          'It will not automatically rename folders from torrent names in this release.',
+          'It will not treat metadata suggestions as user approval.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Deleting duplicates before checking resolution, source, audio, and subtitles.',
+          'Using cleanup as a download organizer; downloads should finish first, then be reviewed.',
+          'Assuming unmatched means bad; unmatched often means the folder name needs human review.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'discover-workspace',
+    title: 'Discover workspace',
+    summary: 'Discover is for finding movies and torrent sources: TMDB exploration, Prowlarr indexer browsing, random picks, and owned/unowned checks.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Explores TMDB lists and details when a TMDB key is configured.',
+          'Browses Prowlarr indexers and searches torrent results when Prowlarr is configured.',
+          'Marks whether discovered movies appear to already exist in your local library.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not download from Prowlarr by opening a random browser window.',
+          'It will not bypass indexer availability, Prowlarr errors, or missing API keys.',
+          'It will not force a torrent into your system default client when embedded qBittorrent mode is selected.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Using Browse Indexer before adding and testing indexers inside Prowlarr.',
+          'Confusing TMDB discovery with torrent availability; they are different sources.',
+          'Closing an empty pop-up instead of reporting it; CP should submit through server routes, not random windows.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'downloads-workspace',
+    title: 'Downloads workspace',
+    summary: 'Downloads embeds the original qBittorrent WebUI while CP orchestrates CP-created submissions, folder policy, completion refresh, and safe handoff.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Sends CP magnet links and approved torrent files to the embedded qBittorrent runtime.',
+          'Uses the configured completed download folder, or the first library root when no folder is selected.',
+          'After 100%, removes the torrent from qBittorrent without deleting data, then moves the completed payload into the library.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not rename torrent folders during download.',
+          'It will not move incomplete payloads into the movie library.',
+          'It will not interfere with torrents you open manually in your separate default qBittorrent client.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Expecting the embedded client and your system default client to share the same profile.',
+          'Changing files underneath qBittorrent before CP completion handling runs.',
+          'Forgetting that qBittorrent’s visible UI is intentionally the original qBittorrent interface.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'settings-workspace',
+    title: 'Settings workspace',
+    summary: 'Settings is where CP stores library roots, user data location, integration URLs, API keys, qBittorrent mode, and download folder policy.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Saves configuration in CP config storage and shows Ready states for supported integrations.',
+          'Provides Test saved buttons for services where a live connection test matters.',
+          'Controls whether CP uses embedded qBittorrent or the classic system torrent-client behavior.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not guess secret API keys or Plex tokens.',
+          'It will not automatically install optional services like Plex, Prowlarr, TMDB accounts, or Ollama.',
+          'It will not auto-update bundled qBittorrent in version 2.6.4.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Testing unsaved values and thinking the saved integration is broken.',
+          'Using a remote path without considering what qBittorrent can actually see.',
+          'Leaving the completed folder empty without realizing CP will use the first library root.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'safety-rules',
+    title: 'Safety rules',
+    summary: 'CP is intentionally conservative: local-first browsing, explicit settings, no silent renaming, no hidden dependency installs, and no arbitrary download URL submission.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Treats movie files, metadata, torrent links, and external service responses as data that must be handled deliberately.',
+          'Keeps qBittorrent incomplete downloads outside the finished library flow.',
+          'Constrains torrent-file retrieval to configured Prowlarr results instead of accepting arbitrary browser URLs.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not silently modify Plex metadata, Prowlarr data, or movie contents.',
+          'It will not use a browser-submitted random URL as a server-side torrent fetch target.',
+          'It will not hide qBittorrent credit or restyle the qBittorrent WebUI as if CP wrote it.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Trying to make automation do identity decisions that still need human review.',
+          'Mixing temporary download folders with finished movie library folders.',
+          'Assuming external tools are CP bugs before checking their Ready state and local WebUI.'
+        ]
+      }
+    ]
+  }
+];
+
+const helpSections = [
+  {
+    key: 'plex',
+    title: 'Plex',
+    status: 'Optional',
+    summary: 'Use Plex if you want CP to read Plex metadata, match server items, and use Plex-related library workflows.',
+    links: [
+      ['Download Plex Media Server', 'https://www.plex.tv/media-server-downloads/'],
+      ['Find X-Plex-Token', 'https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/']
+    ],
+    steps: [
+      'Install Plex Media Server and create a movie library.',
+      'Open Plex Web App and sign in.',
+      'Open any library item XML and copy the X-Plex-Token from the URL.',
+      'Open CP Settings, paste the local Plex URL and token, then use Test saved.'
+    ],
+    settingsHash: 'plex'
+  },
+  {
+    key: 'prowlarr',
+    title: 'Prowlarr',
+    status: 'Optional, required for torrent search',
+    summary: 'Use Prowlarr if you want CP to search torrent indexers and submit results to embedded qBittorrent.',
+    links: [
+      ['Download Prowlarr', 'https://prowlarr.com/'],
+      ['Prowlarr Quick Start', 'https://wiki.servarr.com/prowlarr/quick-start-guide']
+    ],
+    steps: [
+      'Install Prowlarr and open its local WebUI, usually http://127.0.0.1:9696.',
+      'Add and test indexers inside Prowlarr.',
+      'Copy the API key from Prowlarr Settings > General.',
+      'Open CP Settings, paste the Prowlarr URL and API key, then use Test saved.'
+    ],
+    settingsHash: 'prowlarr'
+  },
+  {
+    key: 'tmdb',
+    title: 'TMDB',
+    status: 'Recommended',
+    summary: 'Use TMDB for posters, plots, cast, discovery lists, trailers, and richer movie matching.',
+    links: [
+      ['TMDB API Getting Started', 'https://developer.themoviedb.org/reference/intro/getting-started'],
+      ['TMDB Authentication', 'https://developer.themoviedb.org/docs/authentication-application']
+    ],
+    steps: [
+      'Create or sign in to a TMDB account.',
+      'Open account settings and request an API key.',
+      'Copy the v3 API key used by CP.',
+      'Open CP Settings, paste the TMDB key, then use Test saved.'
+    ],
+    settingsHash: 'tmdb'
+  },
+  {
+    key: 'ollama',
+    title: 'Ollama',
+    status: 'Optional',
+    summary: 'Use Ollama if you want local AI recommendations without sending your library to a cloud service.',
+    links: [
+      ['Download Ollama', 'https://ollama.com/'],
+      ['Ollama Quickstart', 'https://docs.ollama.com/quickstart'],
+      ['Ollama Model Library', 'https://ollama.com/library']
+    ],
+    steps: [
+      'Install Ollama.',
+      'Run or pull a model from the Ollama library.',
+      'Confirm Ollama is available at http://localhost:11434.',
+      'Open CP Settings, set the Ollama URL/model, then use Test saved.'
+    ],
+    settingsHash: 'ollama'
+  },
+  {
+    key: 'qbittorrent',
+    title: 'qBittorrent',
+    status: 'Bundled in CP 2.6.4',
+    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.6.4 release.',
+    links: [
+      ['qBittorrent Official Website', 'https://www.qbittorrent.org/'],
+      ['qBittorrent Downloads', 'https://www.qbittorrent.org/download']
+    ],
+    steps: [
+      'Use CP Settings to choose embedded qBittorrent or your system default client.',
+      'Set the completed movie folder or leave it empty to use the first CP library folder.',
+      'Keep incomplete downloads outside movie library folders.',
+      'Open Downloads from the sidebar to see the original qBittorrent WebUI inside CP.'
+    ],
+    settingsHash: 'qbittorrent'
+  }
+];
+
+function HelpWorkspace() {
+  return (
+    <section className="help-workspace" aria-label="Cinema Paradiso Help">
+      <div className="help-intro">
+        <p className="eyebrow">APP MANUAL & SETUP GUIDE</p>
+        <h2>Help</h2>
+        <p>
+          Use this page as the Cinema Paradiso Manual first, then as the setup guide for optional services.
+          Settings remains the place for Ready states, connection tests, and saved configuration.
+        </p>
+      </div>
+      <div className="help-section-heading">
+        <p className="eyebrow">APP MANUAL</p>
+        <h3>Cinema Paradiso Manual</h3>
+        <p>Each section below explains when to use the workspace, what CP controls, what it deliberately avoids, and the mistakes that usually create confusion.</p>
+      </div>
+      <div className="manual-section-stack">
+        {manualSections.map((section) => (
+          <article className="manual-card" key={section.key}>
+            <header className="manual-card-header">
+              <span className="manual-tag">{section.title}</span>
+              <h3>{section.title}</h3>
+              <p>{section.summary}</p>
+            </header>
+            <div className="manual-detail-grid">
+              {section.details.map((detail) => (
+                <div className="manual-detail" key={`${section.key}-${detail.title}`}>
+                  <h4>{detail.title}</h4>
+                  <ul>
+                    {detail.items.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="help-section-heading">
+        <p className="eyebrow">OPTIONAL INTEGRATIONS</p>
+        <h3>Dependency setup</h3>
+        <p>These integrations are optional pieces around Cinema Paradiso. Install only what matches the workflows you want to use.</p>
+      </div>
+      <div className="help-grid">
+        {helpSections.map((section) => (
+          <article className="help-card" key={section.key}>
+            <header className="help-card-header">
+              <div>
+                <span className="help-status-pill">{section.status}</span>
+                <h3>{section.title}</h3>
+              </div>
+              <a className="btn btn-secondary help-settings-link" href={`/settings#settings-${section.settingsHash}`}>Open Settings</a>
+            </header>
+            <p>{section.summary}</p>
+            <ol className="help-step-list">
+              {section.steps.map((step) => <li key={step}>{step}</li>)}
+            </ol>
+            <div className="help-link-row">
+              {section.links.map(([label, url]) => (
+                <a key={url} href={url} target="_blank" rel="noreferrer">
+                  <ExternalLink size={14} /> {label}
+                </a>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -1450,7 +1986,8 @@ function PosterStateControls({
   watched,
   watchlisted,
   onToggleWatched,
-  onToggleWatchlist
+  onToggleWatchlist,
+  notify
 }) {
   if (!onToggleWatched && !onToggleWatchlist) return null;
   return (
@@ -2416,6 +2953,7 @@ function DiscoverWorkspace({
                     watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
                     onToggleWatched={owned ? () => toggleDiscoverSystemList('watched', movie, owned) : undefined}
                     onToggleWatchlist={() => toggleDiscoverSystemList('watchlist', movie, owned)}
+                    notify={notify}
                     onVariantSelect={(index) => setSelectedVariants((state) => ({ ...state, [movie.parsed_title]: index }))}
                     onPlay={onPlay}
                     onStream={onStream}
@@ -2709,6 +3247,7 @@ function IndexerMovieCard({
   details,
   collection,
   itemLists,
+  notify,
   onVariantSelect,
   onPlay,
   onStream,
@@ -2726,8 +3265,6 @@ function IndexerMovieCard({
   const lowQuality = owned && isLowQuality(owned.resolution);
   const variants = sortTorrentVariants(movie.variants || []);
   const selected = variants[selectedIndex] || variants[0] || {};
-  const actionUrl = selected.magnet_url || selected.download_url || selected.info_url;
-  const actionLabel = selected.magnet_url ? 'Magnet' : selected.download_url ? '.torrent' : 'Source page';
 
   return (
     <article className="indexer-card">
@@ -2785,13 +3322,13 @@ function IndexerMovieCard({
           <span>{selected.indexer || 'Unknown tracker'}</span>
           <small>{selected.size_human || '?'}</small>
         </div>
-        {actionUrl ? (
-          <a className="btn btn-primary" href={actionUrl} target="_blank" rel="noreferrer">
-            {selected.magnet_url ? <ExternalLink size={15} /> : <Download size={15} />} {actionLabel}
-          </a>
-        ) : (
-          <span className="torrent-no-link">No link</span>
-        )}
+        <TorrentActions
+          variant={selected}
+          movieTitle={movie.title || movie.parsed_title}
+          movieYear={movie.year || movie.parsed_year}
+          notify={notify}
+          primary
+        />
         {owned ? (
           <>
             <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
@@ -5552,6 +6089,20 @@ const emptySettingsState = {
   appData: { user_data_dir: '', tmdb_cache_dir: '' },
   plex: { url: '', token: '' },
   prowlarr: { url: '', key: '' },
+  qbittorrent: {
+    mode: 'embedded',
+    download_dir: '',
+    incomplete_dir: '',
+    effective_download_dir: '',
+    effective_incomplete_dir: '',
+    download_dir_in_library: true,
+    installed: false,
+    running: false,
+    supported: true,
+    version: '',
+    latest_version: '',
+    update_available: false
+  },
   tmdb: { key: '', includeAdult: false },
   ollama: { url: '', model: '' }
 };
@@ -5572,11 +6123,12 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         fetchJson('/api/app-data/config'),
         fetchJson('/api/plex/config'),
         fetchJson('/api/prowlarr/config'),
+        fetchJson('/api/qbittorrent/config'),
         fetchJson('/api/tmdb/config'),
         fetchJson('/api/ollama/config')
       ]);
       if (cancelled) return;
-      const [library, appData, plex, prowlarr, tmdb, ollama] = requests;
+      const [library, appData, plex, prowlarr, qbittorrent, tmdb, ollama] = requests;
       setForms({
         library: library.status === 'fulfilled' ? {
           directory: library.value.directory || '',
@@ -5589,6 +6141,7 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         } : { user_data_dir: '', tmdb_cache_dir: '' },
         plex: plex.status === 'fulfilled' ? { url: plex.value.url || '', token: plex.value.token || '' } : { url: '', token: '' },
         prowlarr: prowlarr.status === 'fulfilled' ? { url: prowlarr.value.url || '', key: prowlarr.value.key || '' } : { url: '', key: '' },
+        qbittorrent: qbittorrent.status === 'fulfilled' ? qbittorrent.value : emptySettingsState.qbittorrent,
         tmdb: tmdb.status === 'fulfilled' ? { key: tmdb.value.key || '', includeAdult: Boolean(tmdb.value.include_adult) } : { key: '', includeAdult: false },
         ollama: ollama.status === 'fulfilled' ? { url: ollama.value.url || '', model: ollama.value.model || '' } : { url: '', model: '' }
       });
@@ -5730,6 +6283,36 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
     }
   }
 
+  async function saveQbittorrent() {
+    setActionState('qbittorrent-save', true);
+    try {
+      const config = await fetchJson('/api/qbittorrent/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          mode: forms.qbittorrent.mode,
+          download_dir: forms.qbittorrent.download_dir || '',
+          incomplete_dir: forms.qbittorrent.incomplete_dir || ''
+        })
+      });
+      torrentHandlingConfigPromise = Promise.resolve(config);
+      setForms((state) => ({ ...state, qbittorrent: { ...state.qbittorrent, ...config } }));
+      setCardStatus(
+        'qbittorrent',
+        config.download_dir_in_library ? 'success' : 'neutral',
+        'qBittorrent settings saved.',
+        config.download_dir_in_library
+          ? `Completed movies move to ${config.effective_download_dir}.`
+          : 'The completed folder is outside Cinema Paradiso libraries, so automatic metadata discovery is disabled.'
+      );
+      notify('qBittorrent settings saved');
+    } catch (error) {
+      setCardStatus('qbittorrent', 'error', 'qBittorrent settings not saved.', error.message);
+    } finally {
+      setActionState('qbittorrent-save', false);
+    }
+  }
+
   async function testIntegration(service) {
     const urls = {
       plex: '/api/plex/test',
@@ -5775,6 +6358,7 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
     { key: 'library', label: 'Library roots', ready: (forms.library.directories || []).some((path) => path.trim()), tone: 'blue' },
     { key: 'plex', label: 'Plex', ready: Boolean(forms.plex.url && forms.plex.token), tone: 'cyan' },
     { key: 'prowlarr', label: 'Prowlarr', ready: Boolean(forms.prowlarr.url && forms.prowlarr.key), tone: 'gold' },
+    { key: 'qbittorrent', label: 'qBittorrent', ready: forms.qbittorrent.mode === 'system' || Boolean(forms.qbittorrent.installed), tone: 'gold' },
     { key: 'tmdb', label: 'TMDB', ready: Boolean(forms.tmdb.key), tone: 'green' },
     { key: 'ollama', label: 'Ollama', ready: Boolean(forms.ollama.url && forms.ollama.model), tone: 'violet' }
   ];
@@ -5886,6 +6470,7 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
 
       <div className="settings-integration-grid">
         <IntegrationCard
+          id="settings-plex"
           icon={Server}
           title="Plex"
           accent="cyan"
@@ -5917,6 +6502,7 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         />
 
         <IntegrationCard
+          id="settings-prowlarr"
           icon={Search}
           title="Prowlarr"
           accent="gold"
@@ -5945,6 +6531,65 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         />
 
         <IntegrationCard
+          id="settings-qbittorrent"
+          icon={Download}
+          title="qBittorrent"
+          accent="gold"
+          status={statuses.qbittorrent}
+          fields={(
+            <>
+              <label className="dialog-field">
+                <span>Torrent handling</span>
+                <select value={forms.qbittorrent.mode || 'embedded'} onChange={(event) => updateField('qbittorrent', 'mode', event.target.value)}>
+                  <option value="embedded">Embedded qBittorrent</option>
+                  <option value="system">System default client</option>
+                </select>
+              </label>
+              <label className="dialog-field">
+                <span>Movie download folder</span>
+                <input
+                  value={forms.qbittorrent.download_dir || ''}
+                  onChange={(event) => updateField('qbittorrent', 'download_dir', event.target.value)}
+                  placeholder="Uses the primary movie folder when empty"
+                />
+                <small>Resolved: {forms.qbittorrent.effective_download_dir || forms.library.directory || 'Not configured'}</small>
+              </label>
+              <label className="dialog-field">
+                <span>Incomplete downloads folder</span>
+                <input
+                  value={forms.qbittorrent.incomplete_dir || ''}
+                  onChange={(event) => updateField('qbittorrent', 'incomplete_dir', event.target.value)}
+                  placeholder="Uses app data/qbittorrent/incomplete when empty"
+                />
+                <small>Resolved: {forms.qbittorrent.effective_incomplete_dir || 'Saved after configuration'}</small>
+              </label>
+              {forms.qbittorrent.download_dir_in_library === false ? (
+                <p className="settings-path-warning"><AlertTriangle size={14} /> Completed movies outside library roots are not discovered automatically.</p>
+              ) : null}
+              {forms.qbittorrent.incomplete_dir_in_library ? (
+                <p className="settings-path-warning"><AlertTriangle size={14} /> Incomplete downloads cannot be stored inside a movie library.</p>
+              ) : null}
+              <p className="settings-runtime-detail">
+                {forms.qbittorrent.installed
+                  ? `Bundled qBittorrent ${forms.qbittorrent.version || 'runtime'} · ${forms.qbittorrent.running ? 'Running' : 'Stopped'}`
+                  : forms.qbittorrent.supported === false
+                    ? 'Bundled qBittorrent is unavailable in this build.'
+                    : 'Bundled qBittorrent runtime will be used when included in the portable release.'}
+              </p>
+            </>
+          )}
+          actions={(
+            <>
+              <ActionButton loading={saving['qbittorrent-save']} icon={Save} label="Save qBittorrent" onClick={saveQbittorrent} primary />
+              {forms.qbittorrent.installed ? (
+                <ActionButton loading={false} icon={ExternalLink} label="Open Downloads" onClick={() => window.location.assign('/downloads')} />
+              ) : null}
+            </>
+          )}
+        />
+
+        <IntegrationCard
+          id="settings-tmdb"
           icon={Clapperboard}
           title="TMDB"
           accent="green"
@@ -5980,6 +6625,7 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         />
 
         <IntegrationCard
+          id="settings-ollama"
           icon={Bot}
           title="Ollama"
           accent="violet"
@@ -6042,9 +6688,9 @@ function SettingsInlineStatus({ status }) {
   );
 }
 
-function IntegrationCard({ icon, title, accent, status, fields, actions }) {
+function IntegrationCard({ id, icon, title, accent, status, fields, actions }) {
   return (
-    <section className={cx('settings-panel', 'integration-card', `integration-${accent}`)}>
+    <section id={id} className={cx('settings-panel', 'integration-card', `integration-${accent}`)}>
       <SettingsPanelHeader icon={icon} title={title} label="Integration" text={integrationText(title)} />
       <div className="settings-field-stack">
         {fields}
@@ -6061,6 +6707,7 @@ function integrationText(title) {
   return {
     Plex: 'Read-only Plex cache and Plex server scan controls.',
     Prowlarr: 'Source search for upgrades and torrent lookup.',
+    qBittorrent: 'Portable downloads powered by the original qBittorrent WebUI.',
     TMDB: 'Posters, plots, cast, discovery lists, and trailers.',
     Ollama: 'Local AI recommendations through your own model.'
   }[title] || '';

@@ -6,7 +6,7 @@ Cinema Paradiso is a self-hosted movie library manager for people with hundreds 
 
 Everything runs on your machine. No cloud account. No subscription. No remote database.
 
-**Current version: v2.6.3** - June 2026
+**Current version: v2.6.4** - June 2026
 
 ---
 
@@ -38,20 +38,15 @@ Everything runs on your machine. No cloud account. No subscription. No remote da
 
 ---
 
-## What Changed in v2.6.3
+## What Changed in v2.6.4
 
-Cinema Paradiso v2.6.3 makes the local library identity the durable source of truth. Accepted movies remain accepted when Plex or TMDB is temporarily unavailable, while uncertain or conflicting matches are routed into review instead of silently changing a movie.
+Cinema Paradiso v2.6.4 adds integrated torrent-client release behavior and clearer setup guidance while preserving the local-first v2.6 library identity model.
 
-- **Authoritative movie identity:** accepted TMDB, Plex, and manual identities are resolved through one conflict-safe model used by Library, Discover, collections, lists, duplicates, posters, and ownership checks.
-- **Safer automatic matching:** exact titles, official alternative titles, provider evidence, and small release-year differences can be handled automatically without allowing conflicting strong IDs to overwrite an accepted movie.
-- **Identity Review:** Cleanup includes a dedicated review queue for uncertain matches, provider conflicts, and metadata discrepancies, with pause, resume, rescan, selection, and explicit apply controls.
-- **Metadata health:** Home reports unmatched, pending, and identity-review counts, with direct links to the relevant Cleanup view.
-- **Library reconciliation:** files missing from the metadata store are detected and reconciled, including files added before the current metadata checkpoint.
-- **Manual metadata correction:** owned movies can have their local title and year corrected without changing Plex or renaming the movie file.
-- **Durable poster editing:** choose from TMDB or Plex artwork, upload a local poster, or restore the provider default. Overrides survive metadata refreshes and apply safely to duplicate copies of the same identity.
-- **Watched and Watchlist:** built-in protected lists add quick poster controls and Library filtering. Watchlist can include online movies; Watched is restricted to owned titles.
-- **Safer Smart Match and Plex matching:** previews do not mutate metadata, stale proposals are rejected after identity changes, Plex tokens are kept out of errors, and manual Plex choices are stored locally without editing Plex.
-- **Reliable metadata storage:** JSON writes use safer replacement and recovery behavior so interrupted writes can be repaired without demoting accepted movies.
+- **Help workspace:** a new sidebar page explains Plex, Prowlarr, TMDB, Ollama, and qBittorrent setup with official links and Settings shortcuts.
+- **Bundled qBittorrent release path:** the v2.6.4 portable release ZIP includes the tested qBittorrent runtime instead of asking users to install or update it from Settings.
+- **Cleaner Downloads behavior:** CP keeps the original qBittorrent WebUI embedded, runs its managed qBittorrent process hidden, and keeps the user's system/default torrent client separate.
+- **Frozen qBittorrent updates:** qBittorrent install/update controls are intentionally disabled for this release; future CP releases can ship a newly tested runtime.
+- **Release packaging helper:** maintainers can build a portable release artifact while excluding qBittorrent debug symbols, profiles, incomplete downloads, and user data.
 
 ---
 
@@ -89,8 +84,24 @@ Identity Review scans can be paused and resumed. Metadata changes require explic
 Discover is the online activity area.
 
 - **Explore Movies:** TMDB lists, genres, search, trailers, stream, sources.
-- **Browse Indexers:** Prowlarr latest/search results with selectable indexer source, resolution, seeders, size, and torrent/magnet/page links.
+- **Browse Indexers:** Prowlarr latest/search results with selectable indexer source, resolution, seeders, size, and direct submission to the embedded qBittorrent client.
 - **Pick My Movie:** local Ollama recommendations enriched with TMDB metadata and archive-aware actions.
+
+### Downloads
+
+Downloads uses the original qBittorrent WebUI inside Cinema Paradiso. The embedded client is isolated from any qBittorrent installation already registered as the operating system's default torrent client.
+
+- The v2.6.4 portable release ZIP includes a tested bundled qBittorrent runtime.
+- Cinema Paradiso submissions are tagged `cinema-paradiso` and download to an incomplete staging folder.
+- At 100%, Cinema Paradiso pauses and removes the torrent without deleting its data, then moves the unchanged payload into the selected movie destination.
+- A blank movie destination uses the first configured library folder.
+- The incomplete folder must remain outside every movie library so Plex and Cinema Paradiso cannot index partial files.
+- Settings can switch torrent handling back to the operating system's default client.
+- qBittorrent install and update are not exposed in v2.6.4; runtime upgrades come through future Cinema Paradiso releases.
+
+### Help
+
+Help is the static setup guide for optional dependencies. It explains why Plex, Prowlarr, TMDB, Ollama, and qBittorrent may be useful, links to official downloads/docs, describes where to find tokens or API keys, and provides shortcuts back to the matching Settings cards. Settings remains the only place that shows Ready/Missing states and runs connection tests.
 
 ### Settings
 
@@ -101,6 +112,8 @@ Settings manages:
 - TMDB cache folder
 - Plex URL/token
 - Prowlarr URL/API key
+- Embedded or system torrent handling
+- Completed movie destination and incomplete download folder
 - TMDB API key
 - Ollama URL/model
 
@@ -110,7 +123,7 @@ User lists, Watched and Watchlist states, edited collections, followed releases,
 
 ## Requirements
 
-- Windows 10/11
+- Windows 10/11 x64 for the bundled qBittorrent portable release
 - Python 3.10+
 - Node.js 18+ for building the React frontend
 - Optional: Plex Media Server
@@ -124,7 +137,9 @@ User lists, Watched and Watchlist states, edited collections, followed releases,
 
 ### Windows Quick Start
 
-Download the source ZIP or clone the repository, then double-click `run.bat`.
+For normal use, download the `Cinema-Paradiso-2.6.4-Portable.zip` artifact from GitHub Releases, extract it, and run Cinema Paradiso from that folder. The portable release includes the tested bundled qBittorrent runtime.
+
+The GitHub Source ZIP remains developer-oriented. If you download the source ZIP or clone the repository, double-click `run.bat`.
 
 The launcher creates `.venv`, installs Python dependencies, installs frontend dependencies, builds the React app when `dist/` is missing, starts Flask, and opens [http://localhost:5000](http://localhost:5000).
 
@@ -166,11 +181,17 @@ Example:
   "ollama_url": "http://localhost:11434",
   "ollama_model": "llama3",
   "user_data_dir": "C:\\Path\\To\\CinemaParadiso\\data",
-  "tmdb_cache_dir": "C:\\Path\\To\\CinemaParadiso\\cache"
+  "tmdb_cache_dir": "C:\\Path\\To\\CinemaParadiso\\cache",
+  "qbt_mode": "embedded",
+  "qbt_download_dir": "",
+  "qbt_incomplete_dir": "",
+  "qbt_webui_port": 8686
 }
 ```
 
 Only a movie library folder is required. Integrations are optional.
+
+The v2.6.4 portable release uses bundled qBittorrent. Settings lets you choose embedded qBittorrent or the system default torrent client, plus completed and incomplete folders. qBittorrent install/update controls are intentionally not part of v2.6.4.
 
 ---
 
@@ -178,7 +199,8 @@ Only a movie library folder is required. Integrations are optional.
 
 The app separates persistent user data from rebuildable cache:
 
-- `data/` stores user lists, viewing states, edited collections, followed releases, poster overrides, metadata corrections, identity audit state, and app metadata records for files, manual matches, Plex metadata, TMDB metadata, and conflicts.
+- `data/` stores user lists, viewing states, edited collections, followed releases, poster overrides, metadata corrections, identity audit state, app metadata records, and the isolated qBittorrent profile/jobs when the default user data folder is used.
+- `runtime/` in the portable release stores bundled third-party runtimes such as qBittorrent.
 - `cache/` stores rebuildable TMDB detail/collection cache.
 - `res_cache.json` stores local resolution probe cache.
 - `config.json` stores local settings and secrets.
@@ -193,6 +215,8 @@ These files are user-specific and should not be committed.
 - Permanent deletion is treated as dangerous and must be explicit where exposed.
 - File operations are restricted to configured movie library roots.
 - Cleanup workflows show paths and affected files before action.
+- Torrent-file retrieval is restricted to the configured Prowlarr origin; arbitrary browser-supplied download URLs are rejected.
+- Completed downloads are never renamed automatically.
 
 ---
 
@@ -203,6 +227,7 @@ These files are user-specific and should not be committed.
 - **Icons:** Lucide React
 - **Metadata:** Plex API, TMDB API
 - **Source search:** Prowlarr API
+- **Downloads:** qBittorrent WebUI API and original qBittorrent WebUI
 - **AI:** Ollama local chat API
 - **Resolution probing:** pymediainfo
 - **Delete safety:** send2trash

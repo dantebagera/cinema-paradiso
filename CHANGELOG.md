@@ -1,5 +1,26 @@
 # Changelog
 
+## v2.6.4 - June 2026
+
+Cinema Paradiso v2.6.4 adds the Help workspace and prepares the app for a portable release that includes a tested bundled qBittorrent runtime.
+
+### Added
+
+- Help sidebar page with setup guidance for Plex, Prowlarr, TMDB, Ollama, and qBittorrent.
+- Official dependency links and Settings shortcuts for each Help section.
+- Portable release packaging helper for building a ZIP artifact with the tested bundled qBittorrent runtime.
+
+### Changed
+
+- Settings remains the only dynamic Ready/Missing and connection-test area; Help is documentation only.
+- qBittorrent install/update controls are disabled for v2.6.4 because the portable release includes the tested runtime.
+- Embedded qBittorrent status now describes the bundled runtime and keeps the system default client option.
+
+### Fixed
+
+- CP-managed qBittorrent now runs hidden in the background instead of opening a standalone desktop window.
+- The portable release helper excludes qBittorrent debug symbols, profiles, incomplete downloads, and user data.
+
 ## v2.6.3 - June 2026
 
 Cinema Paradiso v2.6.3 strengthens metadata identity, repair, and curation workflows while preserving the local-first behavior of the v2.6 stable line.

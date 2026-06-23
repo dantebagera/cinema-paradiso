@@ -6,6 +6,7 @@ import time
 import uuid
 import hashlib
 import threading
+import subprocess
 import urllib.request
 import urllib.parse
 import json as _json
@@ -38,6 +39,15 @@ from services.smart_match import (
     parse_release_filename,
     rank_candidates,
     validate_rename_filename,
+)
+from services.qbittorrent import (
+    DEFAULT_WEBUI_PORT,
+    HOP_BY_HOP_HEADERS,
+    QBittorrentError,
+    QBittorrentManager,
+    build_downloads_html,
+    is_allowed_prowlarr_url,
+    is_path_within,
 )
 from flask import Flask, jsonify, request, make_response, send_from_directory
 from send2trash import send2trash
@@ -110,6 +120,10 @@ _ollama_url     = _cfg.get('ollama_url', 'http://localhost:11434')
 _ollama_model   = _cfg.get('ollama_model', 'gemma4:31b-cloud')
 _user_data_dir  = _cfg.get('user_data_dir', os.path.join(_BASE_DIR, 'data'))
 _tmdb_cache_dir = _cfg.get('tmdb_cache_dir', os.path.join(_BASE_DIR, 'cache'))
+_qbt_mode       = _cfg.get('qbt_mode', 'embedded')
+_qbt_download_dir = _cfg.get('qbt_download_dir', '')
+_qbt_incomplete_dir = _cfg.get('qbt_incomplete_dir', '')
+_qbt_webui_port = int(_cfg.get('qbt_webui_port', DEFAULT_WEBUI_PORT) or DEFAULT_WEBUI_PORT)
 _plex_cache     = {}   # _norm(file_path) -> {plex_title, plex_year, plex_genres}
 _plex_unmatched = {}   # _norm(path) -> {rating_key, plex_title}  (Plex has file but no metadata)
 _plex_matched_by_fname   = {}  # filename.lower() -> matched entry   (path-mismatch fallback)
@@ -1554,6 +1568,8 @@ _library_reconcile_state = {
     'failed': 0,
     'updated_at': 0,
 }
+_qbittorrent_manager = None
+_qbittorrent_manager_key = None
 
 def _all_config():
     return {
@@ -1570,6 +1586,10 @@ def _all_config():
         'ollama_model': _ollama_model,
         'user_data_dir': _user_data_dir,
         'tmdb_cache_dir': _tmdb_cache_dir,
+        'qbt_mode': _qbt_mode,
+        'qbt_download_dir': _qbt_download_dir,
+        'qbt_incomplete_dir': _qbt_incomplete_dir,
+        'qbt_webui_port': _qbt_webui_port,
     }
 
 VIDEO_EXTENSIONS = {'.mkv', '.mp4', '.avi', '.m4v', '.mov', '.wmv', '.flv', '.ts', '.m2ts', '.iso'}
@@ -1588,6 +1608,25 @@ def get_movies_dir():
 
 def get_movies_dirs():
     return list(_movies_dirs)
+
+
+def _get_qbittorrent_manager():
+    global _qbittorrent_manager, _qbittorrent_manager_key
+    settings = {
+        'mode': _qbt_mode,
+        'download_dir': _qbt_download_dir,
+        'incomplete_dir': _qbt_incomplete_dir,
+        'webui_port': _qbt_webui_port,
+    }
+    key = (
+        os.path.abspath(_user_data_dir),
+        tuple(get_movies_dirs()),
+        tuple(sorted(settings.items())),
+    )
+    if _qbittorrent_manager is None or _qbittorrent_manager_key != key:
+        _qbittorrent_manager = QBittorrentManager(_user_data_dir, settings, get_movies_dirs())
+        _qbittorrent_manager_key = key
+    return _qbittorrent_manager
 
 
 def _metadata_cache_revision():
@@ -2395,9 +2434,74 @@ def styleguide_index():
     return index()
 
 
+def _qbittorrent_proxy_response(path='', prepare_embedded_html=False):
+    try:
+        status, headers, payload = _get_qbittorrent_manager().proxy(
+            path,
+            method=request.method,
+            headers=dict(request.headers.items()),
+            body=request.get_data() or None,
+        )
+    except QBittorrentError as error:
+        response = make_response(str(error), 503)
+        response.mimetype = 'text/plain'
+        return response
+    if prepare_embedded_html and 'text/html' in headers.get('Content-Type', '').lower():
+        payload = build_downloads_html(payload.decode('utf-8', errors='replace')).encode('utf-8')
+    response = make_response(payload, status)
+    for key, value in headers.items():
+        if key.lower() in HOP_BY_HOP_HEADERS or key.lower() == 'content-length':
+            continue
+        response.headers[key] = value
+    response.headers['Content-Length'] = str(len(payload))
+    return response
+
+
+@app.route('/qbittorrent/')
+def qbittorrent_webui():
+    manager = _get_qbittorrent_manager()
+    if _qbt_mode != 'embedded':
+        return make_response(
+            '<!doctype html><title>Downloads</title><p>Embedded qBittorrent is disabled. '
+            '<a href="/settings">Open Cinema Paradiso Settings</a>.</p>',
+            409,
+        )
+    try:
+        if not manager.ensure_running():
+            return make_response(
+                '<!doctype html><title>Downloads</title><p>Embedded qBittorrent is not installed. '
+                '<a href="/settings">Open Cinema Paradiso Settings</a> to install it.</p>',
+                503,
+            )
+    except QBittorrentError as error:
+        return make_response(f'<!doctype html><title>Downloads</title><p>{error}</p>', 503)
+    return _qbittorrent_proxy_response('', prepare_embedded_html=True)
+
+
+@app.route('/qbittorrent/<path:filename>', methods=['GET', 'POST'])
+def qbittorrent_webui_asset(filename):
+    return _qbittorrent_proxy_response(filename)
+
+
+@app.route('/api/v2/<path:filename>', methods=['GET', 'POST'])
+@app.route('/scripts/<path:filename>')
+@app.route('/css/<path:filename>')
+@app.route('/images/<path:filename>')
+@app.route('/icons/<path:filename>')
+@app.route('/lang/<path:filename>')
+@app.route('/views/<path:filename>')
+def qbittorrent_proxy_asset(filename):
+    prefix = request.path.split('/', 2)[1]
+    if request.path.startswith('/api/v2/'):
+        return _qbittorrent_proxy_response(f'api/v2/{filename}')
+    return _qbittorrent_proxy_response(f'{prefix}/{filename}')
+
+
 @app.route('/library')
 @app.route('/cleanup')
 @app.route('/discover')
+@app.route('/downloads')
+@app.route('/help')
 @app.route('/settings')
 def react_section_index():
     return index()
@@ -2608,6 +2712,127 @@ def prowlarr_test():
         return jsonify({'error': f'Prowlarr returned HTTP {e.code}'}), 502
     except Exception as e:
         return jsonify({'error': f'Cannot reach Prowlarr: {e}'}), 502
+
+
+@app.route('/api/qbittorrent/config', methods=['GET', 'POST'])
+def qbittorrent_config():
+    global _qbt_mode, _qbt_download_dir, _qbt_incomplete_dir, _qbt_webui_port
+    if request.method == 'GET':
+        return jsonify(_get_qbittorrent_manager().status())
+    data = request.get_json(silent=True) or {}
+    mode = str(data.get('mode', _qbt_mode) or '').strip().lower()
+    if mode not in {'embedded', 'system'}:
+        return jsonify({'error': 'Torrent handling mode must be embedded or system'}), 400
+    download_dir = str(data.get('download_dir', _qbt_download_dir) or '').strip()
+    incomplete_dir = str(data.get('incomplete_dir', _qbt_incomplete_dir) or '').strip()
+    try:
+        port = int(data.get('webui_port', _qbt_webui_port) or DEFAULT_WEBUI_PORT)
+    except (TypeError, ValueError):
+        return jsonify({'error': 'qBittorrent WebUI port is invalid'}), 400
+    if port < 1024 or port > 65535:
+        return jsonify({'error': 'qBittorrent WebUI port must be between 1024 and 65535'}), 400
+    effective_incomplete = incomplete_dir or os.path.join(_user_data_dir, 'qbittorrent', 'incomplete')
+    if any(is_path_within(effective_incomplete, root) for root in get_movies_dirs()):
+        return jsonify({'error': 'Incomplete downloads folder must be outside every movie library'}), 400
+    try:
+        if download_dir:
+            os.makedirs(download_dir, exist_ok=True)
+        os.makedirs(effective_incomplete, exist_ok=True)
+    except OSError as error:
+        return jsonify({'error': f'Cannot create qBittorrent folder: {error}'}), 400
+    _qbt_mode = mode
+    _qbt_download_dir = download_dir
+    _qbt_incomplete_dir = incomplete_dir
+    _qbt_webui_port = port
+    _save_config(_all_config())
+    return jsonify(_get_qbittorrent_manager().configuration())
+
+
+@app.route('/api/qbittorrent/status')
+def qbittorrent_status():
+    try:
+        return jsonify(_get_qbittorrent_manager().status())
+    except QBittorrentError as error:
+        return jsonify({'error': str(error)}), 502
+
+
+@app.route('/api/qbittorrent/install', methods=['POST'])
+@app.route('/api/qbittorrent/update', methods=['POST'])
+def qbittorrent_install():
+    return jsonify({
+        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.6.4 because the tested portable runtime is bundled with the release.'
+    }), 410
+
+
+def _qbittorrent_submission_metadata(data):
+    return {
+        'title': str(data.get('title', '') or '').strip(),
+        'year': str(data.get('year', '') or '').strip(),
+        'release_title': str(data.get('release_title', data.get('title', '')) or '').strip(),
+        'indexer': str(data.get('indexer', '') or '').strip(),
+    }
+
+
+@app.route('/api/qbittorrent/submit', methods=['POST'])
+def qbittorrent_submit():
+    if _qbt_mode != 'embedded':
+        return jsonify({'error': 'Cinema Paradiso is configured to use the system torrent client'}), 409
+    data = request.get_json(silent=True) or {}
+    manager = _get_qbittorrent_manager()
+    metadata = _qbittorrent_submission_metadata(data)
+    magnet = str(data.get('magnet_url', '') or '').strip()
+    download_url = str(data.get('download_url', '') or '').strip()
+    try:
+        if magnet:
+            job = manager.submit_magnet(magnet, metadata)
+        elif download_url:
+            candidate = urllib.parse.urljoin(f"{_prowlarr_url}/", download_url)
+            if not is_allowed_prowlarr_url(candidate, _prowlarr_url):
+                return jsonify({'error': 'Torrent URL is not from the configured Prowlarr server'}), 400
+            req = urllib.request.Request(candidate, headers={
+                'X-Api-Key': _prowlarr_key,
+                'Accept': 'application/x-bittorrent, application/octet-stream',
+            })
+            with urllib.request.urlopen(req, timeout=30) as response:
+                torrent_bytes = response.read(10 * 1024 * 1024 + 1)
+                if len(torrent_bytes) > 10 * 1024 * 1024:
+                    return jsonify({'error': 'Torrent file is larger than 10 MB'}), 400
+                content_disposition = response.headers.get('Content-Disposition', '')
+            filename_match = re.search(r'filename="?([^";]+)', content_disposition, flags=re.I)
+            filename = filename_match.group(1) if filename_match else 'prowlarr-result.torrent'
+            if not filename.lower().endswith('.torrent'):
+                filename += '.torrent'
+            job = manager.submit_torrent(torrent_bytes, os.path.basename(filename), metadata)
+        else:
+            return jsonify({'error': 'No usable magnet or torrent URL was provided'}), 400
+        return jsonify(job)
+    except urllib.error.HTTPError as error:
+        return jsonify({'error': f'Prowlarr torrent download returned HTTP {error.code}'}), 502
+    except (QBittorrentError, OSError) as error:
+        return jsonify({'error': str(error)}), 400
+
+
+@app.route('/api/qbittorrent/jobs')
+def qbittorrent_jobs():
+    return jsonify({'jobs': list(_get_qbittorrent_manager().jobs.all().values())})
+
+
+@app.route('/api/qbittorrent/finalize', methods=['POST'])
+def qbittorrent_finalize():
+    global _library_cache
+    try:
+        results = _get_qbittorrent_manager().process_completed()
+        imported_inside_library = any(
+            item.get('state') == 'imported'
+            and any(is_path_within(path, root) for path in item.get('imported_paths', []) for root in get_movies_dirs())
+            for item in results
+        )
+        if imported_inside_library:
+            _library_cache = {}
+            _start_library_reconcile()
+        return jsonify({'results': results})
+    except QBittorrentError as error:
+        return jsonify({'error': str(error)}), 502
 
 
 @app.route('/api/prowlarr/search')
@@ -7766,5 +7991,29 @@ def ollama_recommend():
     return jsonify({'results': results, 'model': _ollama_model})
 
 
+def _qbittorrent_monitor_loop():
+    global _library_cache
+    while True:
+        try:
+            if _qbt_mode == 'embedded':
+                results = _get_qbittorrent_manager().process_completed()
+                imported_inside_library = any(
+                    item.get('state') == 'imported'
+                    and any(
+                        is_path_within(path, root)
+                        for path in item.get('imported_paths', [])
+                        for root in get_movies_dirs()
+                    )
+                    for item in results
+                )
+                if imported_inside_library:
+                    _library_cache = {}
+                    _start_library_reconcile()
+        except Exception:
+            pass
+        time.sleep(5)
+
+
 if __name__ == '__main__':
+    threading.Thread(target=_qbittorrent_monitor_loop, daemon=True).start()
     app.run(debug=False, port=5000, use_reloader=False)

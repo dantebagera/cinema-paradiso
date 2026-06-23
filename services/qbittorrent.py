@@ -1,0 +1,703 @@
+import base64
+import ctypes
+import hashlib
+import http.cookiejar
+import json
+import os
+import platform
+import re
+import shutil
+import subprocess
+import tempfile
+import threading
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+import uuid
+from pathlib import Path
+
+
+QBT_RELEASES_API = "https://api.github.com/repos/qbittorrent/qBittorrent/releases/latest"
+SEVEN_ZIP_RELEASES_API = "https://api.github.com/repos/ip7z/7zip/releases/latest"
+QBT_TAG = "cinema-paradiso"
+DEFAULT_WEBUI_PORT = 8686
+BUNDLED_QBT_VERSION = "5.2.2"
+HOP_BY_HOP_HEADERS = {
+    "connection", "keep-alive", "proxy-authenticate", "proxy-authorization",
+    "te", "trailers", "transfer-encoding", "upgrade",
+}
+
+
+class QBittorrentError(RuntimeError):
+    pass
+
+
+def normalize_architecture(value=None):
+    raw = str(value or platform.machine() or "").strip().lower()
+    if raw in {"amd64", "x86_64", "x64"}:
+        return "x86_64"
+    if raw in {"arm64", "aarch64"}:
+        return "arm64"
+    if raw in {"x86", "i386", "i686"}:
+        return "x86"
+    return raw or "unknown"
+
+
+def normalize_system(value=None):
+    raw = str(value or platform.system() or "").strip().lower()
+    return {"win32": "windows", "windows": "windows", "darwin": "darwin", "linux": "linux"}.get(raw, raw)
+
+
+def select_release_asset(assets, system=None, architecture=None):
+    system = normalize_system(system)
+    architecture = normalize_architecture(architecture)
+    if architecture != "x86_64":
+        return None
+    patterns = {
+        "windows": re.compile(r"^qbittorrent_[\d.]+_x64_setup\.exe$", re.I),
+        "darwin": re.compile(r"^qbittorrent-[\d.]+\.dmg$", re.I),
+        "linux": re.compile(r"^qbittorrent-[\d.]+_x86_64\.AppImage$", re.I),
+    }
+    pattern = patterns.get(system)
+    if not pattern:
+        return None
+    return next((asset for asset in assets if pattern.match(str(asset.get("name", "")))), None)
+
+
+def platform_is_supported(system=None, architecture=None):
+    return normalize_system(system) in {"windows", "darwin", "linux"} and normalize_architecture(architecture) == "x86_64"
+
+
+def bundled_runtime_root(app_root):
+    return Path(app_root) / "runtime" / "qbittorrent" / "versions" / BUNDLED_QBT_VERSION
+
+
+def process_launch_kwargs(os_name=None):
+    os_name = os_name or os.name
+    kwargs = {"stdout": subprocess.DEVNULL, "stderr": subprocess.DEVNULL}
+    if os_name == "nt":
+        startupinfo = subprocess.STARTUPINFO()
+        startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        startupinfo.wShowWindow = subprocess.SW_HIDE
+        kwargs["startupinfo"] = startupinfo
+        kwargs["creationflags"] = subprocess.CREATE_NEW_PROCESS_GROUP | subprocess.DETACHED_PROCESS
+    else:
+        kwargs["start_new_session"] = True
+    return kwargs
+
+
+def hide_process_windows(process_id):
+    if os.name != "nt" or not process_id:
+        return 0
+    user32 = ctypes.windll.user32
+    hidden = 0
+
+    @ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.c_void_p, ctypes.c_void_p)
+    def hide_window(window_handle, _):
+        nonlocal hidden
+        owner_process_id = ctypes.c_ulong()
+        user32.GetWindowThreadProcessId(window_handle, ctypes.byref(owner_process_id))
+        if owner_process_id.value == int(process_id) and user32.IsWindowVisible(window_handle):
+            user32.ShowWindow(window_handle, subprocess.SW_HIDE)
+            hidden += 1
+        return True
+
+    user32.EnumWindows(hide_window, 0)
+    return hidden
+
+
+def validate_magnet_url(value):
+    try:
+        parsed = urllib.parse.urlsplit(str(value or "").strip())
+    except ValueError:
+        return False
+    if parsed.scheme.lower() != "magnet":
+        return False
+    exact_topics = urllib.parse.parse_qs(parsed.query).get("xt", [])
+    return any(
+        re.fullmatch(r"urn:btih:(?:[A-Fa-f0-9]{40}|[A-Za-z2-7]{32})", topic)
+        or re.fullmatch(r"urn:btmh:1220[A-Fa-f0-9]{64}", topic)
+        for topic in exact_topics
+    )
+
+
+def magnet_hash(value):
+    if not validate_magnet_url(value):
+        return ""
+    topics = urllib.parse.parse_qs(urllib.parse.urlsplit(value).query).get("xt", [])
+    for topic in topics:
+        if topic.lower().startswith("urn:btih:"):
+            raw = topic.split(":", 2)[2]
+            if len(raw) == 32:
+                return base64.b32decode(raw.upper()).hex()
+            return raw.lower()
+    return ""
+
+
+def is_allowed_prowlarr_url(candidate, prowlarr_origin):
+    try:
+        candidate_url = urllib.parse.urlsplit(str(candidate or "").strip())
+        configured = urllib.parse.urlsplit(str(prowlarr_origin or "").strip())
+    except ValueError:
+        return False
+    if candidate_url.scheme not in {"http", "https"} or configured.scheme not in {"http", "https"}:
+        return False
+    try:
+        candidate_port = candidate_url.port or (443 if candidate_url.scheme == "https" else 80)
+        configured_port = configured.port or (443 if configured.scheme == "https" else 80)
+    except ValueError:
+        return False
+    return (
+        candidate_url.scheme.lower() == configured.scheme.lower()
+        and (candidate_url.hostname or "").lower() == (configured.hostname or "").lower()
+        and candidate_port == configured_port
+    )
+
+
+def is_path_within(path, root):
+    try:
+        return os.path.commonpath([os.path.realpath(path), os.path.realpath(root)]) == os.path.realpath(root)
+    except (OSError, ValueError, TypeError):
+        return False
+
+
+def destination_library_root(destination, library_roots):
+    destination = os.path.realpath(destination)
+    for root in library_roots or []:
+        if is_path_within(destination, root):
+            return str(root)
+    return ""
+
+
+def build_downloads_html(original_html):
+    rendered = str(original_html or "")
+    bridge = """
+<script id="cp-qbt-frame-bridge">
+(() => {
+  if (window.parent === window) return;
+  try {
+    Object.defineProperty(window.parent, "qBittorrent", {
+      configurable: true,
+      get: () => window.qBittorrent
+    });
+  } catch (_) {}
+})();
+</script>
+"""
+    return rendered.replace("</head>", f"{bridge}</head>", 1)
+
+
+def proxy_request_headers(headers, upstream_origin):
+    parsed = urllib.parse.urlsplit(upstream_origin)
+    result = {
+        key: value for key, value in (headers or {}).items()
+        if key.lower() not in HOP_BY_HOP_HEADERS and key.lower() != "accept-encoding"
+    }
+    result["Host"] = parsed.netloc
+    if result.get("Origin"):
+        result["Origin"] = upstream_origin
+    if result.get("Referer"):
+        ref = urllib.parse.urlsplit(result["Referer"])
+        result["Referer"] = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, ref.path, ref.query, ""))
+    return result
+
+
+def _atomic_json_write(path, data):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")
+    temporary.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    os.replace(temporary, path)
+
+
+class QBittorrentJobStore:
+    def __init__(self, path):
+        self.path = Path(path)
+        self._lock = threading.RLock()
+
+    def _read(self):
+        try:
+            data = json.loads(self.path.read_text(encoding="utf-8"))
+            return data if isinstance(data, dict) else {"jobs": {}}
+        except (OSError, ValueError):
+            return {"jobs": {}}
+
+    def all(self):
+        with self._lock:
+            return dict(self._read().get("jobs", {}))
+
+    def get(self, torrent_hash):
+        return self.all().get(str(torrent_hash or "").lower())
+
+    def upsert(self, torrent_hash, patch):
+        key = str(torrent_hash or "").lower()
+        if not key:
+            raise QBittorrentError("Torrent hash is required")
+        with self._lock:
+            data = self._read()
+            jobs = data.setdefault("jobs", {})
+            jobs[key] = {**jobs.get(key, {}), **(patch or {}), "hash": key, "updated_at": time.time()}
+            _atomic_json_write(self.path, data)
+            return jobs[key]
+
+    def move_completed_payload(self, torrent_hash, allowed_staging_root):
+        job = self.get(torrent_hash)
+        if not job:
+            raise QBittorrentError("Download job was not found")
+        destination = Path(job.get("destination", ""))
+        if not destination:
+            raise QBittorrentError("Download destination is missing")
+        destination.mkdir(parents=True, exist_ok=True)
+        payloads = [Path(item) for item in job.get("payload_paths", [])]
+        if not payloads:
+            raise QBittorrentError("Completed payload path is missing")
+        moves = []
+        for source in payloads:
+            if not is_path_within(source, allowed_staging_root):
+                raise QBittorrentError("Completed payload escaped the staging folder")
+            target = destination / source.name
+            if source.exists() and target.exists():
+                raise QBittorrentError(f"Destination already exists: {target}")
+            if not source.exists() and not target.exists():
+                raise QBittorrentError(f"Completed payload is missing: {source}")
+            moves.append((source, target))
+        moved = []
+        for source, target in moves:
+            if source.exists():
+                shutil.move(str(source), str(target))
+            moved.append(str(target))
+        return self.upsert(torrent_hash, {
+            "state": "imported",
+            "imported_at": time.time(),
+            "imported_paths": moved,
+            "last_error": "",
+        })
+
+
+class QBittorrentClient:
+    def __init__(self, base_url):
+        self.base_url = str(base_url).rstrip("/")
+        self.cookie_jar = http.cookiejar.CookieJar()
+        self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cookie_jar))
+
+    def request(self, path, fields=None, files=None, method=None, timeout=20):
+        url = f"{self.base_url}{path}"
+        headers = {"Referer": f"{self.base_url}/"}
+        body = None
+        if files:
+            boundary = f"----CinemaParadiso{uuid.uuid4().hex}"
+            chunks = []
+            for key, value in (fields or {}).items():
+                chunks.extend([
+                    f"--{boundary}\r\n".encode(),
+                    f'Content-Disposition: form-data; name="{key}"\r\n\r\n{value}\r\n'.encode(),
+                ])
+            for key, item in files.items():
+                filename, content, content_type = item
+                chunks.extend([
+                    f"--{boundary}\r\n".encode(),
+                    f'Content-Disposition: form-data; name="{key}"; filename="{filename}"\r\n'.encode(),
+                    f"Content-Type: {content_type}\r\n\r\n".encode(),
+                    content,
+                    b"\r\n",
+                ])
+            chunks.append(f"--{boundary}--\r\n".encode())
+            body = b"".join(chunks)
+            headers["Content-Type"] = f"multipart/form-data; boundary={boundary}"
+        elif fields is not None:
+            body = urllib.parse.urlencode(fields).encode()
+            headers["Content-Type"] = "application/x-www-form-urlencoded"
+        request = urllib.request.Request(url, data=body, headers=headers, method=method or ("POST" if body is not None else "GET"))
+        with self.opener.open(request, timeout=timeout) as response:
+            return response.status, response.headers, response.read()
+
+    def version(self):
+        return self.request("/api/v2/app/version", timeout=3)[2].decode("utf-8")
+
+    def add_magnet(self, magnet, save_path):
+        self.request("/api/v2/torrents/add", {
+            "urls": magnet, "savepath": save_path, "tags": QBT_TAG, "paused": "false",
+            "root_folder": "true",
+        })
+
+    def add_torrent(self, content, filename, save_path):
+        self.request(
+            "/api/v2/torrents/add",
+            fields={"savepath": save_path, "tags": QBT_TAG, "paused": "false", "root_folder": "true"},
+            files={"torrents": (filename, content, "application/x-bittorrent")},
+        )
+
+    def torrents(self):
+        payload = self.request("/api/v2/torrents/info", timeout=10)[2]
+        return json.loads(payload.decode("utf-8"))
+
+    def files(self, torrent_hash):
+        payload = self.request(f"/api/v2/torrents/files?hash={urllib.parse.quote(torrent_hash)}", timeout=10)[2]
+        return json.loads(payload.decode("utf-8"))
+
+    def pause(self, torrent_hash):
+        self.request("/api/v2/torrents/stop", {"hashes": torrent_hash})
+
+    def remove_without_files(self, torrent_hash):
+        self.request("/api/v2/torrents/delete", {"hashes": torrent_hash, "deleteFiles": "false"})
+
+    def shutdown(self):
+        self.request("/api/v2/app/shutdown", fields={})
+
+
+class QBittorrentManager:
+    _release_cache = {}
+    _release_cache_lock = threading.Lock()
+
+    def __init__(self, user_data_dir, settings, library_roots, app_root=None):
+        self.user_data_dir = Path(user_data_dir)
+        self.app_root = Path(app_root) if app_root else Path(__file__).resolve().parent.parent
+        self.settings = dict(settings or {})
+        self.library_roots = list(library_roots or [])
+        self.root = self.user_data_dir / "qbittorrent"
+        self.versions_dir = self.root / "versions"
+        self.profile_dir = self.root / "profile"
+        self.staging_dir = Path(self.settings.get("incomplete_dir") or (self.root / "incomplete"))
+        self.state_file = self.root / "runtime.json"
+        self.jobs = QBittorrentJobStore(self.root / "jobs.json")
+        self.port = int(self.settings.get("webui_port") or DEFAULT_WEBUI_PORT)
+        self.client = QBittorrentClient(f"http://127.0.0.1:{self.port}")
+        self._process = None
+
+    @property
+    def destination(self):
+        return Path(self.settings.get("download_dir") or (self.library_roots[0] if self.library_roots else ""))
+
+    def configuration(self):
+        destination = str(self.destination) if str(self.destination) != "." else ""
+        incomplete = str(self.staging_dir)
+        return {
+            "mode": self.settings.get("mode", "embedded"),
+            "download_dir": self.settings.get("download_dir", ""),
+            "effective_download_dir": destination,
+            "download_dir_in_library": bool(destination_library_root(destination, self.library_roots)) if destination else False,
+            "incomplete_dir": self.settings.get("incomplete_dir", ""),
+            "effective_incomplete_dir": incomplete,
+            "incomplete_dir_in_library": any(is_path_within(incomplete, root) for root in self.library_roots),
+            "webui_port": self.port,
+        }
+
+    def _runtime_state(self):
+        try:
+            return json.loads(self.state_file.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return {}
+
+    def _save_runtime_state(self, data):
+        _atomic_json_write(self.state_file, data)
+
+    def active_executable(self):
+        state = self._runtime_state()
+        path = Path(state.get("executable", ""))
+        if path.is_file():
+            return path
+        if normalize_system() == "windows":
+            bundled = bundled_runtime_root(self.app_root) / "qbittorrent.exe"
+            if bundled.is_file():
+                return bundled
+        return None
+
+    def _github_release(self, url):
+        with self._release_cache_lock:
+            cached = self._release_cache.get(url)
+            if cached and (time.time() - cached["time"]) < 900:
+                return cached["data"]
+        request = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json", "User-Agent": "Cinema-Paradiso"})
+        with urllib.request.urlopen(request, timeout=20) as response:
+            data = json.loads(response.read().decode("utf-8"))
+        with self._release_cache_lock:
+            self._release_cache[url] = {"time": time.time(), "data": data}
+        return data
+
+    @staticmethod
+    def _download_verified(asset, destination):
+        expected = str(asset.get("digest", ""))
+        if not expected.startswith("sha256:"):
+            raise QBittorrentError("Official release asset did not provide a SHA-256 digest")
+        request = urllib.request.Request(asset["browser_download_url"], headers={"User-Agent": "Cinema-Paradiso"})
+        digest = hashlib.sha256()
+        destination = Path(destination)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        with urllib.request.urlopen(request, timeout=120) as response, open(destination, "wb") as output:
+            while True:
+                chunk = response.read(1024 * 1024)
+                if not chunk:
+                    break
+                output.write(chunk)
+                digest.update(chunk)
+        if digest.hexdigest().lower() != expected.split(":", 1)[1].lower():
+            destination.unlink(missing_ok=True)
+            raise QBittorrentError("Downloaded release failed SHA-256 verification")
+        return destination
+
+    def latest_release(self):
+        release = self._github_release(QBT_RELEASES_API)
+        asset = select_release_asset(release.get("assets", []))
+        if not asset:
+            raise QBittorrentError("No official qBittorrent build is available for this OS and CPU architecture")
+        return {"version": str(release.get("tag_name", "")).removeprefix("release-"), "asset": asset}
+
+    def _windows_extract(self, package, destination):
+        tools = self.root / "tools" / "7zip"
+        seven = tools / "7z.exe"
+        if not seven.exists():
+            release = self._github_release(SEVEN_ZIP_RELEASES_API)
+            assets = {asset.get("name"): asset for asset in release.get("assets", [])}
+            compact = next((asset for name, asset in assets.items() if name == "7zr.exe"), None)
+            installer = next((asset for name, asset in assets.items() if re.fullmatch(r"7z\d+-x64\.exe", name or "")), None)
+            if not compact or not installer:
+                raise QBittorrentError("Official 7-Zip extraction tools were not available")
+            tools.mkdir(parents=True, exist_ok=True)
+            seven_r = self._download_verified(compact, tools / "7zr.exe")
+            seven_installer = self._download_verified(installer, tools / installer["name"])
+            subprocess.run([str(seven_r), "x", str(seven_installer), f"-o{tools}", "-y"], check=True, capture_output=True)
+        subprocess.run([str(seven), "x", str(package), f"-o{destination}", "-y"], check=True, capture_output=True)
+        plugin_dir = destination / "$PLUGINSDIR"
+        if plugin_dir.exists():
+            shutil.rmtree(plugin_dir)
+        executable = destination / "qbittorrent.exe"
+        if not executable.exists():
+            raise QBittorrentError("Extracted qBittorrent executable was not found")
+        return executable
+
+    def _mac_extract(self, package, destination):
+        mount = Path(tempfile.mkdtemp(prefix="cp-qbt-dmg-"))
+        try:
+            subprocess.run(["hdiutil", "attach", str(package), "-mountpoint", str(mount), "-nobrowse", "-readonly"], check=True, capture_output=True)
+            app = next(mount.glob("*.app"), None)
+            if not app:
+                raise QBittorrentError("qBittorrent app was not found in the DMG")
+            target = destination / app.name
+            shutil.copytree(app, target)
+            return target / "Contents" / "MacOS" / "qbittorrent"
+        finally:
+            subprocess.run(["hdiutil", "detach", str(mount)], check=False, capture_output=True)
+            shutil.rmtree(mount, ignore_errors=True)
+
+    def install_latest(self):
+        release = self.latest_release()
+        version = release["version"]
+        destination = self.versions_dir / version
+        staging = self.versions_dir / f".{version}.{uuid.uuid4().hex}.staging"
+        executable = None
+        staging.mkdir(parents=True, exist_ok=False)
+        package = self.root / "downloads" / release["asset"]["name"]
+        self._download_verified(release["asset"], package)
+        system = normalize_system()
+        if system == "windows":
+            executable = self._windows_extract(package, staging)
+        elif system == "darwin":
+            executable = self._mac_extract(package, staging)
+        elif system == "linux":
+            executable = staging / release["asset"]["name"]
+            shutil.copy2(package, executable)
+            executable.chmod(executable.stat().st_mode | 0o111)
+        else:
+            raise QBittorrentError("Unsupported operating system")
+        relative_executable = executable.relative_to(staging)
+        previous = self._runtime_state()
+        try:
+            self.client.shutdown()
+            for _ in range(40):
+                time.sleep(0.25)
+                try:
+                    self.client.version()
+                except Exception:
+                    break
+        except Exception:
+            pass
+        if destination.exists():
+            shutil.rmtree(destination)
+        staging.replace(destination)
+        executable = destination / relative_executable
+        self._save_runtime_state({
+            "version": version,
+            "executable": str(executable),
+            "previous": previous,
+            "installed_at": time.time(),
+        })
+        try:
+            self.ensure_running()
+        except Exception:
+            if previous.get("executable"):
+                self._save_runtime_state(previous)
+                self.ensure_running()
+            raise
+        return self.status()
+
+    def _write_profile(self):
+        config_dir = self.profile_dir / "qBittorrent" / "config"
+        config_dir.mkdir(parents=True, exist_ok=True)
+        self.staging_dir.mkdir(parents=True, exist_ok=True)
+        if any(is_path_within(self.staging_dir, root) for root in self.library_roots):
+            raise QBittorrentError("Incomplete downloads folder must be outside every movie library")
+        salt = b"CinemaParadisoQB"
+        key = hashlib.pbkdf2_hmac("sha512", b"cinema-paradiso-local", salt, 100000, dklen=64)
+        password = f"{base64.b64encode(salt).decode()}:{base64.b64encode(key).decode()}"
+        config = (
+            "[LegalNotice]\nAccepted=true\n\n[Preferences]\n"
+            "General\\NoSplashScreen=true\nGeneral\\StartMinimized=true\n"
+            "WebUI\\Address=127.0.0.1\nWebUI\\CSRFProtection=true\n"
+            "WebUI\\ClickjackingProtection=true\nWebUI\\Enabled=true\n"
+            "WebUI\\HostHeaderValidation=true\nWebUI\\LocalHostAuth=false\n"
+            f'WebUI\\Password_PBKDF2="@ByteArray({password})"\n'
+            f"WebUI\\Port={self.port}\nWebUI\\SecureCookie=false\n"
+            "WebUI\\ServerDomains=127.0.0.1,localhost\nWebUI\\UseUPnP=false\n"
+            "WebUI\\Username=admin\n"
+        )
+        (config_dir / "qBittorrent.ini").write_text(config, encoding="utf-8")
+
+    def ensure_running(self):
+        try:
+            self.client.version()
+            return True
+        except Exception:
+            pass
+        executable = self.active_executable()
+        if not executable:
+            return False
+        self._write_profile()
+        args = [str(executable), f"--profile={self.profile_dir}", f"--webui-port={self.port}", "--no-splash"]
+        self._process = subprocess.Popen(args, **process_launch_kwargs())
+        for _ in range(60):
+            time.sleep(0.25)
+            try:
+                self.client.version()
+                hide_process_windows(getattr(self._process, "pid", 0))
+                return True
+            except Exception:
+                continue
+        raise QBittorrentError("Embedded qBittorrent did not start")
+
+    def status(self):
+        installed = bool(self.active_executable())
+        running = False
+        version = self._runtime_state().get("version", "")
+        if installed:
+            try:
+                version = self.client.version().lstrip("v")
+                running = True
+            except Exception:
+                running = False
+            if not version:
+                version = BUNDLED_QBT_VERSION
+        latest = ""
+        update_available = False
+        supported = platform_is_supported()
+        return {
+            **self.configuration(),
+            "installed": installed,
+            "running": running,
+            "version": version,
+            "latest_version": latest,
+            "update_available": update_available,
+            "update_policy": "bundled",
+            "supported": supported,
+        }
+
+    def submit_magnet(self, magnet, metadata):
+        if not validate_magnet_url(magnet):
+            raise QBittorrentError("Invalid magnet link")
+        if not self.ensure_running():
+            raise QBittorrentError("Embedded qBittorrent is not installed")
+        self.client.add_magnet(magnet, str(self.staging_dir))
+        torrent_hash = magnet_hash(magnet)
+        if not torrent_hash:
+            time.sleep(0.5)
+            candidates = [item for item in self.client.torrents() if QBT_TAG in str(item.get("tags", ""))]
+            torrent_hash = str(candidates[-1].get("hash", "")) if candidates else ""
+        return self.jobs.upsert(torrent_hash, {
+            **(metadata or {}),
+            "state": "downloading",
+            "destination": str(self.destination),
+            "submitted_at": time.time(),
+            "source_type": "magnet",
+        })
+
+    def submit_torrent(self, content, filename, metadata):
+        if not content or not str(filename or "").lower().endswith(".torrent"):
+            raise QBittorrentError("Invalid torrent file")
+        if not self.ensure_running():
+            raise QBittorrentError("Embedded qBittorrent is not installed")
+        before = {item.get("hash") for item in self.client.torrents()}
+        self.client.add_torrent(content, filename, str(self.staging_dir))
+        torrent_hash = ""
+        for _ in range(20):
+            time.sleep(0.2)
+            after = self.client.torrents()
+            added = [item for item in after if item.get("hash") not in before]
+            if added:
+                torrent_hash = str(added[0].get("hash", ""))
+                break
+        if not torrent_hash:
+            raise QBittorrentError("qBittorrent accepted the torrent but its hash could not be identified")
+        return self.jobs.upsert(torrent_hash, {
+            **(metadata or {}),
+            "state": "downloading",
+            "destination": str(self.destination),
+            "submitted_at": time.time(),
+            "source_type": "torrent",
+        })
+
+    def _payload_paths(self, torrent, files):
+        save_path = Path(torrent.get("save_path") or self.staging_dir)
+        names = [str(item.get("name", "")).replace("\\", "/").strip("/") for item in files if item.get("name")]
+        if len(names) == 1 and "/" not in names[0]:
+            return [str(save_path / names[0])]
+        top_levels = []
+        for name in names:
+            top = name.split("/", 1)[0]
+            if top and top not in top_levels:
+                top_levels.append(top)
+        return [str(save_path / top) for top in top_levels]
+
+    def process_completed(self):
+        if not self.ensure_running():
+            return []
+        jobs = self.jobs.all()
+        torrents = {str(item.get("hash", "")).lower(): item for item in self.client.torrents()}
+        results = []
+        for torrent_hash, job in jobs.items():
+            if job.get("state") == "imported":
+                continue
+            torrent = torrents.get(torrent_hash)
+            if not torrent and job.get("payload_paths") and job.get("state") in {"finalizing", "move_failed"}:
+                try:
+                    results.append(self.jobs.move_completed_payload(torrent_hash, self.staging_dir))
+                except Exception as error:
+                    results.append(self.jobs.upsert(torrent_hash, {"state": "move_failed", "last_error": str(error)}))
+                continue
+            if not torrent or float(torrent.get("progress", 0)) < 1:
+                continue
+            try:
+                files = self.client.files(torrent_hash)
+                payload_paths = self._payload_paths(torrent, files)
+                self.jobs.upsert(torrent_hash, {"state": "finalizing", "payload_paths": payload_paths})
+                self.client.pause(torrent_hash)
+                self.client.remove_without_files(torrent_hash)
+                results.append(self.jobs.move_completed_payload(torrent_hash, self.staging_dir))
+            except Exception as error:
+                results.append(self.jobs.upsert(torrent_hash, {"state": "move_failed", "last_error": str(error)}))
+        return results
+
+    def proxy(self, path, method="GET", headers=None, body=None):
+        if not self.ensure_running():
+            raise QBittorrentError("Embedded qBittorrent is not running")
+        upstream = f"http://127.0.0.1:{self.port}"
+        request = urllib.request.Request(
+            f"{upstream}/{str(path or '').lstrip('/')}",
+            data=body,
+            headers=proxy_request_headers(headers or {}, upstream),
+            method=method,
+        )
+        try:
+            response = urllib.request.urlopen(request, timeout=30)
+        except urllib.error.HTTPError as error:
+            response = error
+        return response.status, response.headers, response.read()

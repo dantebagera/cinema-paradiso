@@ -8,7 +8,9 @@ import {
   movieKey,
   sectionFromPath,
   sortFollowedReleases,
-  torrentSizeBytes
+  topBarSearchEnabled,
+  torrentSizeBytes,
+  torrentPrimaryAction
 } from '../src/utils/appUtils.js';
 
 test('cx joins only truthy class names in order', () => {
@@ -70,6 +72,25 @@ test('torrentSizeBytes preserves size_bytes before size fallback', () => {
   assert.equal(torrentSizeBytes(null), 0);
 });
 
+test('torrentPrimaryAction never treats a Prowlarr download URL as a browser link', () => {
+  assert.deepEqual(
+    torrentPrimaryAction({ magnet_url: 'magnet:?xt=urn:btih:test', download_url: 'http://prowlarr/file' }),
+    { kind: 'magnet', url: 'magnet:?xt=urn:btih:test' }
+  );
+  assert.deepEqual(
+    torrentPrimaryAction({ download_url: 'http://prowlarr/file' }),
+    { kind: 'torrent', url: 'http://prowlarr/file' }
+  );
+  assert.deepEqual(
+    torrentPrimaryAction({ info_url: 'https://indexer/source' }),
+    { kind: 'source', url: 'https://indexer/source' }
+  );
+  assert.deepEqual(
+    torrentPrimaryAction({ magnet_url: 'http://localhost:9696/prowlarr/1/download?id=5' }),
+    { kind: 'torrent', url: 'http://localhost:9696/prowlarr/1/download?id=5' }
+  );
+});
+
 test('sectionFromPath resolves known sections and falls back home', () => {
   const sections = [{ id: 'home' }, { id: 'library' }, { id: 'cleanup' }];
 
@@ -78,4 +99,22 @@ test('sectionFromPath resolves known sections and falls back home', () => {
   assert.equal(sectionFromPath('/', sections), 'home');
   assert.equal(sectionFromPath('/settings', sections), 'home');
   assert.equal(sectionFromPath('', sections), 'home');
+});
+
+test('sectionFromPath resolves help and search is disabled on help', () => {
+  const sections = [{ id: 'home' }, { id: 'help' }];
+
+  assert.equal(sectionFromPath('/help', sections), 'help');
+  assert.equal(topBarSearchEnabled('help', 'explore'), false);
+});
+
+test('topBarSearchEnabled limits search to functional page contexts', () => {
+  assert.equal(topBarSearchEnabled('home', 'explore'), true);
+  assert.equal(topBarSearchEnabled('library', 'explore'), true);
+  assert.equal(topBarSearchEnabled('discover', 'explore'), true);
+  assert.equal(topBarSearchEnabled('discover', 'browse'), true);
+  assert.equal(topBarSearchEnabled('discover', 'pick'), false);
+  assert.equal(topBarSearchEnabled('settings', 'explore'), false);
+  assert.equal(topBarSearchEnabled('cleanup', 'explore'), false);
+  assert.equal(topBarSearchEnabled('downloads', 'explore'), false);
 });
