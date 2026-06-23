@@ -84,17 +84,17 @@ class QBittorrentUiTests(unittest.TestCase):
         self.assertIn("Bundled qBittorrent", self.source)
         self.assertIn("Open Downloads", self.source)
 
-    def test_readme_and_package_document_264_bundled_qbt_and_help(self):
+    def test_readme_and_package_document_265_bundled_qbt_and_help(self):
         root = Path(__file__).resolve().parents[1]
         readme = (root / "README.md").read_text(encoding="utf-8")
         changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
         package = json.loads((root / "package.json").read_text(encoding="utf-8"))
 
-        self.assertEqual(package["version"], "2.6.4")
-        self.assertIn("v2.6.4", readme)
+        self.assertEqual(package["version"], "2.6.5")
+        self.assertIn("v2.6.5", readme)
         self.assertIn("Help", readme)
         self.assertIn("bundled qbittorrent", readme.lower())
-        self.assertIn("v2.6.4", changelog)
+        self.assertIn("v2.6.5", changelog)
         self.assertIn("Help", changelog)
 
 

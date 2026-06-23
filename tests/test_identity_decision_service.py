@@ -84,6 +84,151 @@ class IdentityDecisionServiceTest(unittest.TestCase):
         self.assertEqual(decision["status"], "review")
         self.assertFalse(decision["automatic"])
 
+    def test_dominant_exact_title_year_accepts_popular_movie_over_zero_vote_duplicate(self):
+        decision = decide_identity(
+            [{"title": "Misery", "year": "1990", "source": "filename"}],
+            [
+                {
+                    "tmdb_id": "1700",
+                    "title": "Misery",
+                    "year": "1990",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 5262,
+                    "query_sources": ["filename", "title_with_year", "title_without_year"],
+                },
+                {
+                    "tmdb_id": "536304",
+                    "title": "Misery",
+                    "year": "1990",
+                    "provider_rank": 8,
+                    "tmdb_vote_count": 0,
+                    "query_sources": ["filename", "title_without_year"],
+                },
+            ],
+        )
+
+        self.assertEqual(decision["status"], "accepted")
+        self.assertTrue(decision["automatic"])
+        self.assertEqual(decision["candidate"]["tmdb_id"], "1700")
+
+    def test_dominant_exact_title_year_accepts_rank_one_movie_with_modest_votes(self):
+        decision = decide_identity(
+            [{"title": "Pressure", "year": "2026", "source": "filename"}],
+            [
+                {
+                    "tmdb_id": "1318413",
+                    "title": "Pressure",
+                    "year": "2026",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 78,
+                    "query_sources": ["filename", "title_with_year", "title_without_year"],
+                },
+                {
+                    "tmdb_id": "1701077",
+                    "title": "Pressure",
+                    "year": "2026",
+                    "provider_rank": 6,
+                    "tmdb_vote_count": 0,
+                    "query_sources": ["filename", "title_with_year"],
+                },
+                {
+                    "tmdb_id": "1687571",
+                    "title": "A Pressure",
+                    "year": "2026",
+                    "provider_rank": 8,
+                    "tmdb_vote_count": 0,
+                    "query_sources": ["filename", "title_with_year"],
+                },
+            ],
+        )
+
+        self.assertEqual(decision["status"], "accepted")
+        self.assertTrue(decision["automatic"])
+        self.assertEqual(decision["candidate"]["tmdb_id"], "1318413")
+
+    def test_dominant_exact_title_year_accepts_rank_one_theatrical_movie(self):
+        decision = decide_identity(
+            [{"title": "The Dark Tower", "year": "2017", "source": "filename"}],
+            [
+                {
+                    "tmdb_id": "353491",
+                    "title": "The Dark Tower",
+                    "year": "2017",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 5541,
+                    "query_sources": ["filename", "title_with_year", "title_without_year"],
+                },
+                {
+                    "tmdb_id": "1694198",
+                    "title": "The Dark Tower",
+                    "year": "2017",
+                    "provider_rank": 5,
+                    "tmdb_vote_count": 0,
+                    "query_sources": ["filename", "title_without_year"],
+                },
+            ],
+        )
+
+        self.assertEqual(decision["status"], "accepted")
+        self.assertTrue(decision["automatic"])
+        self.assertEqual(decision["candidate"]["tmdb_id"], "353491")
+
+    def test_exact_title_year_with_meaningful_competing_votes_requires_review(self):
+        decision = decide_identity(
+            [{"title": "Pressure", "year": "2026", "source": "filename"}],
+            [
+                {
+                    "tmdb_id": "1318413",
+                    "title": "Pressure",
+                    "year": "2026",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 78,
+                    "query_sources": ["filename", "title_with_year", "title_without_year"],
+                },
+                {
+                    "tmdb_id": "1701077",
+                    "title": "Pressure",
+                    "year": "2026",
+                    "provider_rank": 2,
+                    "tmdb_vote_count": 40,
+                    "query_sources": ["filename", "title_with_year"],
+                },
+            ],
+        )
+
+        self.assertEqual(decision["status"], "review")
+        self.assertFalse(decision["automatic"])
+
+    def test_plex_and_filename_agreement_accepts_rank_one_over_low_vote_duplicate(self):
+        decision = decide_identity(
+            [
+                {"title": "Pressure", "year": "2026", "source": "filename"},
+                {"title": "Pressure", "year": "2026", "source": "plex_hint"},
+            ],
+            [
+                {
+                    "tmdb_id": "1318413",
+                    "title": "Pressure",
+                    "year": "2026",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 78,
+                    "query_sources": ["filename", "title_with_year", "title_without_year"],
+                },
+                {
+                    "tmdb_id": "1701077",
+                    "title": "Pressure",
+                    "year": "2026",
+                    "provider_rank": 2,
+                    "tmdb_vote_count": 40,
+                    "query_sources": ["filename", "title_with_year"],
+                },
+            ],
+        )
+
+        self.assertEqual(decision["status"], "accepted")
+        self.assertTrue(decision["automatic"])
+        self.assertIn("filename and Plex agree", decision["reasons"])
+
     def test_similarity_does_not_turn_love_into_money_or_love(self):
         decision = decide_identity(
             [{"title": "Love", "year": "2011", "source": "filename"}],

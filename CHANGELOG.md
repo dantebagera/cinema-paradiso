@@ -1,5 +1,29 @@
 # Changelog
 
+## v2.6.5 - June 2026
+
+Cinema Paradiso v2.6.5 improves large-library metadata matching, followed-release availability, and bulk list workflows while keeping the local-first v2.6 architecture.
+
+### Added
+
+- Trusted Prowlarr indexer selection for followed-release availability, with YTS/YIFY used as the default trusted source when no explicit choice was saved.
+- Bulk selection and add-to-list workflows in Library and Discover.
+- List popup select-all and local-file copy export with a folder browser.
+- Library reset-filters control.
+
+### Changed
+
+- Followed releases only become Available from trusted Prowlarr indexers and approved sources: WEBRip, Blu-ray, BDRip, or BRRip.
+- Trusted release indexers are managed from a Prowlarr Settings popup instead of expanding the Settings card.
+- Automatic metadata matching accepts clearly dominant exact TMDB title/year matches while keeping strong provider conflicts in review.
+- Manual unmatched matches persist as accepted metadata across restarts.
+
+### Fixed
+
+- Rejected WEB-DL, Remux, BDRemux, HDCAM, and TELESYNC-style followed-release matches.
+- Improved adult-title handling through separate metadata-search and Movie View visibility settings.
+- Kept Movie View fast after restart by avoiding unnecessary full metadata fetches during normal library loading.
+
 ## v2.6.4 - June 2026
 
 Cinema Paradiso v2.6.4 adds the Help workspace and prepares the app for a portable release that includes a tested bundled qBittorrent runtime.

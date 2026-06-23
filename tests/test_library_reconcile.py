@@ -168,6 +168,78 @@ class LibraryReconcileTest(unittest.TestCase):
         self.assertEqual(result["checked"], 1)
         reconcile_path.assert_called_once()
 
+    def test_stale_review_record_is_retried_after_decision_rule_upgrade(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Cujo.1983.1080p.BluRay.x264.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_authority_state({"active_provider": "tmdb"})
+            fingerprint = {
+                "path": str(movie),
+                "size": movie.stat().st_size,
+                "modified_time": movie.stat().st_mtime,
+            }
+            store.save_library_inventory({app._norm(str(movie)): fingerprint})
+            store.update_file_record(str(movie), {
+                "metadata_status": "needs_review",
+                "identity_status": "review",
+                "metadata_accepted": False,
+                "candidate_tmdb_id": "10489",
+                "candidate_title": "Cujo",
+                "candidate_year": "1983",
+                "size": fingerprint["size"],
+                "modified_time": fingerprint["modified_time"],
+            })
+            candidate = {
+                "tmdb_id": "10489",
+                "title": "Cujo",
+                "year": "1983",
+                "match_source": "auto_tmdb",
+            }
+
+            with patch("app._file_copy_is_stable", return_value=True), \
+                    patch("app._accepted_tmdb_migration_metadata", return_value=(candidate, False)):
+                result = app._reconcile_library_files()
+            record = store.snapshot()["files"][app._norm(str(movie))]
+
+        self.assertEqual(result["checked"], 1)
+        self.assertEqual(result["matched"], 1)
+        self.assertEqual(record["metadata_status"], "accepted")
+        self.assertEqual(record["tmdb_id"], "10489")
+        self.assertEqual(record["identity_decision_version"], app.IDENTITY_DECISION_VERSION)
+
+    def test_current_review_record_is_not_retried_on_every_normal_reconcile(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Actually.Ambiguous.2026.1080p.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_authority_state({"active_provider": "tmdb"})
+            fingerprint = {
+                "path": str(movie),
+                "size": movie.stat().st_size,
+                "modified_time": movie.stat().st_mtime,
+            }
+            store.save_library_inventory({app._norm(str(movie)): fingerprint})
+            store.update_file_record(str(movie), {
+                "metadata_status": "needs_review",
+                "identity_status": "review",
+                "metadata_accepted": False,
+                "identity_decision_version": app.IDENTITY_DECISION_VERSION,
+                "candidate_tmdb_id": "123",
+                "candidate_title": "Actually Ambiguous",
+                "candidate_year": "2026",
+                "size": fingerprint["size"],
+                "modified_time": fingerprint["modified_time"],
+            })
+
+            with patch("app._reconcile_library_path") as reconcile_path:
+                result = app._reconcile_library_files()
+
+        self.assertEqual(result["checked"], 0)
+        reconcile_path.assert_not_called()
+
     def test_inventory_bootstrap_processes_files_newer_than_metadata_checkpoint(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
             movie = Path(movies_tmp) / "New.Movie.2026.1080p.mkv"

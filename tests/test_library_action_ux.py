@@ -109,6 +109,47 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("MetadataCorrectionModal", self.source)
         self.assertIn("Reset to provider metadata", self.source)
 
+    def test_library_and_discover_expose_bulk_add_to_list_selection(self):
+        self.assertIn("library-selection-checkbox", self.source)
+        self.assertIn("Select all filtered", self.source)
+        self.assertIn("discover-selection-checkbox", self.source)
+        self.assertIn("addMoviesToList", self.source)
+        self.assertIn("/movies/bulk", self.source)
+
+    def test_lists_popup_exposes_select_all_and_copy_export(self):
+        self.assertIn("list-select-all", self.source)
+        self.assertIn("Copy selected to", self.source)
+        self.assertIn("/api/library/export-jobs", self.source)
+        self.assertIn("ExportCopyDialog", self.source)
+
+    def test_bulk_add_to_list_falls_back_when_backend_route_is_missing(self):
+        self.assertIn("bulkError.status === 404", self.source)
+        self.assertIn("addMoviePayloadsIndividually", self.source)
+        self.assertIn("selectedPayloads.length", self.source)
+        self.assertIn("list-editor-error", self.source)
+
+    def test_fetch_json_preserves_status_for_non_json_errors(self):
+        self.assertIn("response.text()", self.source)
+        self.assertIn("Request failed: ${response.status}", self.source)
+        self.assertIn("Failed to parse response JSON", self.source)
+
+    def test_copy_dialog_has_folder_browser_and_library_has_reset_filters(self):
+        self.assertIn("FolderBrowserDialog", self.source)
+        self.assertIn("/api/system/folders", self.source)
+        self.assertIn("Browse...", self.source)
+        self.assertIn("Reset filters", self.source)
+        self.assertIn("resetAllLibraryFilters", self.source)
+
+    def test_settings_prowlarr_exposes_trusted_release_indexers(self):
+        self.assertIn("trusted_release_indexers", self.source)
+        self.assertIn("TrustedIndexerDialog", self.source)
+        self.assertIn("trusted-indexer-summary", self.source)
+        self.assertIn('label="Trusted indexers"', self.source)
+        self.assertIn("const saved = await onSave();", self.source)
+        self.assertIn("if (saved) onClose();", self.source)
+        self.assertIn("Trusted release watchlist indexers", self.source)
+        self.assertIn("No trusted indexers selected", self.source)
+
 
 if __name__ == "__main__":
     unittest.main()

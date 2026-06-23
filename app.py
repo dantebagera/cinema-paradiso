@@ -75,6 +75,21 @@ def _save_config(data):
         pass
 
 _cfg = _load_config()
+OLLAMA_CANDIDATE_LIMIT_DEFAULT = 15
+OLLAMA_CANDIDATE_LIMIT_MIN = 1
+OLLAMA_CANDIDATE_LIMIT_MAX = 50
+
+
+def _coerce_ollama_candidate_limit(value, default=OLLAMA_CANDIDATE_LIMIT_DEFAULT):
+    try:
+        candidate_limit = int(value)
+    except (TypeError, ValueError):
+        return default
+    if candidate_limit < OLLAMA_CANDIDATE_LIMIT_MIN or candidate_limit > OLLAMA_CANDIDATE_LIMIT_MAX:
+        return default
+    return candidate_limit
+
+
 def _coerce_bool(value, default=False):
     if value is None:
         return default
@@ -111,6 +126,8 @@ _movies_dirs    = _coerce_movie_dirs(_cfg)
 _movies_dir     = _movies_dirs[0]
 _prowlarr_url   = _cfg.get('prowlarr_url', '')
 _prowlarr_key   = _cfg.get('prowlarr_key', '')
+_trusted_release_indexers = [str(value).strip() for value in _cfg.get('trusted_release_indexers', []) if str(value).strip()]
+_trusted_release_indexers_configured = 'trusted_release_indexers' in _cfg
 _tmdb_key       = _cfg.get('tmdb_key', '')
 _tmdb_include_adult = _coerce_bool(_cfg.get('tmdb_include_adult'), False)
 _library_show_adult = _coerce_bool(_cfg.get('library_show_adult'), True)
@@ -118,6 +135,7 @@ _plex_url       = _cfg.get('plex_url', 'http://localhost:32400')
 _plex_token     = _cfg.get('plex_token', '')
 _ollama_url     = _cfg.get('ollama_url', 'http://localhost:11434')
 _ollama_model   = _cfg.get('ollama_model', 'gemma4:31b-cloud')
+_ollama_candidate_limit = _coerce_ollama_candidate_limit(_cfg.get('ollama_candidate_limit'))
 _user_data_dir  = _cfg.get('user_data_dir', os.path.join(_BASE_DIR, 'data'))
 _tmdb_cache_dir = _cfg.get('tmdb_cache_dir', os.path.join(_BASE_DIR, 'cache'))
 _qbt_mode       = _cfg.get('qbt_mode', 'embedded')
@@ -422,6 +440,27 @@ class UserCurationStore:
         self._save_lists(data)
         return target
 
+    def add_movies_to_list(self, list_id, movies):
+        data = self._lists()
+        target = self._find_list(data, list_id)
+        if target is None:
+            raise KeyError('List not found')
+        existing = target.setdefault('movies', [])
+        for movie in movies or []:
+            normalized = _normalize_curated_movie(movie or {})
+            if not any(normalized.get(key) for key in ('tmdb_id', 'imdb_id', 'title', 'path')):
+                continue
+            if any(_curated_movies_share_identity(current, normalized) for current in existing):
+                continue
+            if target.get('system_type') == 'watched':
+                normalized['watched_at'] = time.time()
+            elif target.get('system_type') == 'watchlist':
+                normalized['added_at'] = time.time()
+            existing.append(normalized)
+        target['updated_at'] = time.time()
+        self._save_lists(data)
+        return target
+
     def remove_movie_from_list(self, list_id, movie):
         data = self._lists()
         target = self._find_list(data, list_id)
@@ -534,6 +573,21 @@ def _fetch_enabled_prowlarr_indexers():
                 'name': ix.get('name', ''),
             })
     return [ix for ix in enabled if ix['id']]
+
+
+def _is_default_trusted_release_indexer(name):
+    text = str(name or '').lower()
+    return 'yts' in text or 'yify' in text
+
+
+def _default_trusted_release_indexer_ids(indexers):
+    return [ix['id'] for ix in indexers if _is_default_trusted_release_indexer(ix.get('name'))]
+
+
+def _effective_trusted_release_indexer_ids(indexers):
+    if _trusted_release_indexers_configured:
+        return list(_trusted_release_indexers)
+    return _default_trusted_release_indexer_ids(indexers)
 
 
 class MetadataStoreError(RuntimeError):
@@ -1549,6 +1603,7 @@ _PLEX_TTL        = 300  # seconds before auto-refresh
 _library_cache   = {}   # keys: items, plex_enabled, plex_cached, time
 _LIBRARY_TTL     = 300  # seconds — same as Plex TTL
 _FILE_STABILITY_SECONDS = 15
+IDENTITY_DECISION_VERSION = 2
 _metadata_migration_coordinator = None
 _metadata_migration_store_dir = ''
 _smart_match_coordinator = None
@@ -1572,7 +1627,7 @@ _qbittorrent_manager = None
 _qbittorrent_manager_key = None
 
 def _all_config():
-    return {
+    config = {
         'movies_dir': _movies_dir,
         'movies_dirs': _movies_dirs,
         'prowlarr_url': _prowlarr_url,
@@ -1584,6 +1639,7 @@ def _all_config():
         'library_show_adult': _library_show_adult,
         'ollama_url': _ollama_url,
         'ollama_model': _ollama_model,
+        'ollama_candidate_limit': _ollama_candidate_limit,
         'user_data_dir': _user_data_dir,
         'tmdb_cache_dir': _tmdb_cache_dir,
         'qbt_mode': _qbt_mode,
@@ -1591,6 +1647,9 @@ def _all_config():
         'qbt_incomplete_dir': _qbt_incomplete_dir,
         'qbt_webui_port': _qbt_webui_port,
     }
+    if _trusted_release_indexers_configured:
+        config['trusted_release_indexers'] = _trusted_release_indexers
+    return config
 
 VIDEO_EXTENSIONS = {'.mkv', '.mp4', '.avi', '.m4v', '.mov', '.wmv', '.flv', '.ts', '.m2ts', '.iso'}
 
@@ -1876,7 +1935,7 @@ def get_rip_source(filename):
         return 'BD Remux'
     elif 'bluray' in name or 'blu-ray' in name or 'bluray' in name:
         return 'Blu-ray'
-    elif 'bdrip' in name or 'bdrip' in name:
+    elif 'brrip' in name or 'br-rip' in name or 'bdrip' in name or 'bd-rip' in name:
         return 'BDRip'
     elif 'web-dl' in name or 'webdl' in name:
         return 'WEB-DL'
@@ -1907,9 +1966,9 @@ def format_size(size):
     return f"{size:.1f} PB"
 
 
-_GOOD_RELEASE_SOURCES = {'WEB-DL', 'WEBRip', 'Blu-ray', 'BDRip', 'BD Remux', 'Remux'}
+_GOOD_RELEASE_SOURCES = {'WEBRip', 'Blu-ray', 'BDRip'}
 _BAD_RELEASE_RE = re.compile(
-    r'(^|[.\-_\s\[\(])(cam|camrip|hdcam|ts|hdts|telesync|tc|telecine|scr|screener|dvdscr)([.\-_\s\]\)]|$)',
+    r'(^|[.\-_\s\[\(])(cam|camrip|hdcam|ts|hdts|tele[.\-_\s]*sync|tc|telecine|scr|screener|dvdscr)',
     re.IGNORECASE
 )
 
@@ -1999,17 +2058,17 @@ def _find_best_followed_release(movie):
         return None
     query = f"{title} {year}".strip()
     try:
-        indexer_ids = []
+        selected_indexers = []
         try:
-            idx_req = urllib.request.Request(
-                f"{_prowlarr_url}/api/v1/indexer",
-                headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'}
-            )
-            with urllib.request.urlopen(idx_req, timeout=8) as idx_resp:
-                indexers = _json.loads(idx_resp.read().decode())
-            indexer_ids = [str(ix['id']) for ix in indexers if ix.get('enable', True)]
+            enabled_indexers = _fetch_enabled_prowlarr_indexers()
+            trusted_ids = set(_effective_trusted_release_indexer_ids(enabled_indexers))
+            selected_indexers = [ix for ix in enabled_indexers if ix['id'] in trusted_ids]
         except Exception:
-            pass
+            selected_indexers = []
+        if not selected_indexers:
+            return None
+        indexer_ids = [ix['id'] for ix in selected_indexers]
+        trusted_indexer_names = {ix.get('name', '') for ix in selected_indexers if ix.get('name')}
         parts = [('query', query), ('type', 'search'), ('categories', '2000'), ('limit', '100')]
         parts += [('indexerIds', iid) for iid in indexer_ids]
         url = f"{_prowlarr_url}/api/v1/search?{urllib.parse.urlencode(parts)}"
@@ -2022,6 +2081,9 @@ def _find_best_followed_release(movie):
     candidates = []
     for r in results:
         torrent_title = r.get('title', '')
+        result_indexer = r.get('indexer', '')
+        if result_indexer and trusted_indexer_names and result_indexer not in trusted_indexer_names:
+            continue
         if _TV_RE.search(torrent_title):
             continue
         quality = _proper_release_from_title(torrent_title)
@@ -2035,7 +2097,7 @@ def _find_best_followed_release(movie):
             'seeders': NumberSafe(r.get('seeders')),
             'size_bytes': size,
             'size_human': format_size(size) if size else '?',
-            'indexer': r.get('indexer', ''),
+            'indexer': result_indexer,
             'magnet_url': r.get('magnetUrl', ''),
             'download_url': r.get('downloadUrl', ''),
             'info_url': r.get('infoUrl', ''),
@@ -2652,6 +2714,16 @@ def set_config():
     })
 
 
+@app.route('/api/system/folders')
+def system_folders():
+    try:
+        return jsonify(_browse_system_folder(request.args.get('path', '')))
+    except ValueError as e:
+        return jsonify({'error': str(e)}), 400
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/api/app-data/config', methods=['GET', 'POST'])
 def app_data_config():
     global _user_data_dir, _tmdb_cache_dir, _TMDB_CACHE_DIR, _TMDB_LIBRARY_CACHE_FILE, \
@@ -2681,17 +2753,35 @@ def app_data_config():
 
 @app.route('/api/prowlarr/config', methods=['GET'])
 def get_prowlarr_config():
-    return jsonify({'url': _prowlarr_url, 'key': _prowlarr_key})
+    indexers = []
+    if _prowlarr_url and _prowlarr_key:
+        try:
+            indexers = sorted(_fetch_enabled_prowlarr_indexers(), key=lambda ix: ix['name'].lower())
+        except Exception:
+            indexers = []
+    return jsonify({
+        'url': _prowlarr_url,
+        'key': _prowlarr_key,
+        'indexers': indexers,
+        'trusted_release_indexers': _effective_trusted_release_indexer_ids(indexers),
+        'trusted_release_indexers_configured': _trusted_release_indexers_configured,
+    })
 
 
 @app.route('/api/prowlarr/config', methods=['POST'])
 def set_prowlarr_config():
-    global _prowlarr_url, _prowlarr_key
+    global _prowlarr_url, _prowlarr_key, _trusted_release_indexers, _trusted_release_indexers_configured
     data = request.get_json(silent=True)
     if not data:
         return jsonify({'error': 'No data provided'}), 400
     _prowlarr_url = data.get('url', '').rstrip('/')
     _prowlarr_key = data.get('key', '')
+    _trusted_release_indexers = [
+        str(value).strip()
+        for value in data.get('trusted_release_indexers', [])
+        if str(value).strip()
+    ]
+    _trusted_release_indexers_configured = True
     _save_config(_all_config())
     return jsonify({'success': True})
 
@@ -2760,7 +2850,7 @@ def qbittorrent_status():
 @app.route('/api/qbittorrent/update', methods=['POST'])
 def qbittorrent_install():
     return jsonify({
-        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.6.4 because the tested portable runtime is bundled with the release.'
+        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.6.5 because the tested portable runtime is bundled with the release.'
     }), 410
 
 
@@ -5641,6 +5731,7 @@ def _reconcile_library_path(path, provider, store=None, previous=None):
             'metadata_source': 'filename',
             'metadata_accepted': False,
             'ingest_status': 'stable',
+            'identity_decision_version': IDENTITY_DECISION_VERSION,
             'observed_size': facts.get('size', 0),
             'observed_modified_time': facts.get('modified_time', 0),
             'observed_at': time.time(),
@@ -5661,17 +5752,20 @@ def _reconcile_library_path(path, provider, store=None, previous=None):
             patch.update({
                 'metadata_status': 'unmatched',
                 'metadata_accepted': False,
+                'identity_decision_version': IDENTITY_DECISION_VERSION,
             })
         else:
             patch.update({
                 'identity_status': 'review',
                 'metadata_status': 'needs_review',
                 'metadata_accepted': False,
+                'identity_decision_version': IDENTITY_DECISION_VERSION,
             })
     elif outcome == 'failed':
         patch.update({
             'metadata_status': 'unmatched',
             'metadata_accepted': False,
+            'identity_decision_version': IDENTITY_DECISION_VERSION,
         })
     store.update_file_record(path, patch)
     return outcome
@@ -5682,6 +5776,18 @@ def _library_inventory_bootstrap_cutoff(store):
         return store.files_file.stat().st_mtime
     except OSError:
         return 0
+
+
+def _record_needs_identity_decision_refresh(record):
+    record = record or {}
+    if record.get('metadata_accepted') or record.get('metadata_status') == 'accepted':
+        return False
+    if int(record.get('identity_decision_version') or 0) >= IDENTITY_DECISION_VERSION:
+        return False
+    return bool(
+        record.get('identity_status') in {'unmatched', 'review', 'conflict'}
+        or record.get('metadata_status') in {'unmatched', 'needs_review', 'conflict'}
+    )
 
 
 def _reconcile_library_files(force_unresolved=False):
@@ -5715,6 +5821,9 @@ def _reconcile_library_files(force_unresolved=False):
                 record.get('identity_status') in {'unmatched', 'review', 'conflict'}
                 or record.get('metadata_status') in {'unmatched', 'needs_review', 'conflict'}
             ):
+                candidates.append((path, record))
+                continue
+            if _record_needs_identity_decision_refresh(record):
                 candidates.append((path, record))
                 continue
             if not record:
@@ -5945,6 +6054,7 @@ def _migrate_locked_manual_match(path, facts, plex_data, store):
             'imdb_id': str(metadata.get('imdb_id', '') or manual_match.get('imdb_id', '') or ''),
             'manual_locked': True,
             'migration_status': 'matched',
+            'identity_decision_version': IDENTITY_DECISION_VERSION,
         })
         return 'matched'
     if provider == 'plex':
@@ -5969,6 +6079,7 @@ def _migrate_locked_manual_match(path, facts, plex_data, store):
             'rating_key': str(metadata.get('rating_key', '') or manual_match.get('rating_key', '') or ''),
             'manual_locked': True,
             'migration_status': 'matched',
+            'identity_decision_version': IDENTITY_DECISION_VERSION,
         })
         return 'matched'
     return ''
@@ -6001,6 +6112,7 @@ def _migrate_metadata_path(path, target):
             'metadata_status': 'unmatched',
             'metadata_source': 'filename',
             'metadata_accepted': False,
+            'identity_decision_version': IDENTITY_DECISION_VERSION,
         })
         return 'matched'
 
@@ -6012,6 +6124,7 @@ def _migrate_metadata_path(path, target):
                     'display_provider': 'plex',
                     'enrichment_status': 'incomplete',
                     'migration_status': 'matched',
+                    'identity_decision_version': IDENTITY_DECISION_VERSION,
                 })
                 return 'matched'
             if _tmdb_key:
@@ -6019,6 +6132,7 @@ def _migrate_metadata_path(path, target):
             store.update_file_record(path, {
                 **facts,
                 'migration_status': 'needs_review',
+                'identity_decision_version': IDENTITY_DECISION_VERSION,
             })
             return 'review'
         current_identity = resolve_authoritative_identity(current_record)
@@ -6039,6 +6153,7 @@ def _migrate_metadata_path(path, target):
                         'accepted': current_id,
                         'plex': plex_id,
                     },
+                    'identity_decision_version': IDENTITY_DECISION_VERSION,
                 })
                 return 'review'
         if not any(plex_data.get(key) for key in ('tmdb_id', 'imdb_id')):
@@ -6056,6 +6171,7 @@ def _migrate_metadata_path(path, target):
                     **facts,
                     'identity_status': plex_decision.get('status', 'review'),
                     'migration_status': 'needs_review',
+                    'identity_decision_version': IDENTITY_DECISION_VERSION,
                 })
                 return 'review'
         store.save_plex_metadata(path, plex_data)
@@ -6076,6 +6192,7 @@ def _migrate_metadata_path(path, target):
             'tmdb_id': str(plex_data.get('tmdb_id', '') or ''),
             'imdb_id': str(plex_data.get('imdb_id', '') or ''),
             'migration_status': 'matched',
+            'identity_decision_version': IDENTITY_DECISION_VERSION,
         })
         return 'matched'
 
@@ -6091,6 +6208,7 @@ def _migrate_metadata_path(path, target):
             'candidate_tmdb_id': str(metadata.get('tmdb_id', '') or ''),
             'candidate_title': metadata.get('title', ''),
             'candidate_year': str(metadata.get('year', '') or ''),
+            'identity_decision_version': IDENTITY_DECISION_VERSION,
         }
         if not resolve_authoritative_identity(current_record).get('accepted'):
             unresolved_patch.update({
@@ -6120,6 +6238,7 @@ def _migrate_metadata_path(path, target):
         'imdb_id': str(saved.get('imdb_id', '') or ''),
         'manual_locked': manual_locked,
         'migration_status': 'matched',
+        'identity_decision_version': IDENTITY_DECISION_VERSION,
     })
     return 'matched'
 
@@ -7786,6 +7905,24 @@ def user_list_movies(list_id):
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/user/lists/<list_id>/movies/bulk', methods=['POST'])
+def user_list_movies_bulk(list_id):
+    body = request.get_json(force=True, silent=True) or {}
+    movies = body.get('movies') or []
+    if not isinstance(movies, list) or not movies:
+        return jsonify({'error': 'At least one movie is required'}), 400
+    try:
+        if list_id == 'watched':
+            unowned = [movie for movie in movies if not _curated_movie_is_owned(movie)]
+            if unowned:
+                return jsonify({'error': 'Watched is available only for owned Library movies'}), 400
+        return jsonify(_curation_store().add_movies_to_list(list_id, movies))
+    except KeyError:
+        return jsonify({'error': 'List not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 @app.route('/api/user/system-lists/state')
 def user_system_list_state():
     movie = {
@@ -7803,6 +7940,304 @@ def _curated_movie_is_owned(movie):
     if path and os.path.isfile(path) and _path_library_root(path):
         return True
     return bool(_find_owned_movie(movie or {}))
+
+
+_copy_export_jobs = {}
+_copy_export_lock = threading.RLock()
+_COPY_EXPORT_CHUNK_SIZE = 1024 * 1024
+
+
+def _folder_browser_entry(path):
+    return {
+        'name': os.path.basename(os.path.normpath(path)) or path,
+        'path': path,
+        'type': 'folder',
+    }
+
+
+def _folder_browser_roots():
+    candidates = []
+    for path in _coerce_movie_dirs(_cfg):
+        if os.path.isdir(path):
+            candidates.append(path)
+    home = Path.home()
+    candidates.extend([
+        str(home),
+        str(home / 'Desktop'),
+        str(home / 'Downloads'),
+    ])
+    if os.name == 'nt':
+        for code in range(ord('A'), ord('Z') + 1):
+            drive = f'{chr(code)}:\\'
+            if os.path.isdir(drive):
+                candidates.append(drive)
+    seen = set()
+    roots = []
+    for path in candidates:
+        try:
+            resolved = str(Path(os.path.abspath(os.path.expanduser(path))).resolve())
+        except OSError:
+            continue
+        key = os.path.normcase(os.path.normpath(resolved))
+        if key in seen or not os.path.isdir(resolved):
+            continue
+        seen.add(key)
+        roots.append(_folder_browser_entry(resolved))
+    return sorted(roots, key=lambda entry: entry['name'].lower())
+
+
+def _browse_system_folder(path):
+    clean = str(path or '').strip()
+    if not clean:
+        return {
+            'current_path': '',
+            'parent': '',
+            'roots': _folder_browser_roots(),
+            'entries': [],
+        }
+    target = os.path.abspath(os.path.expanduser(clean))
+    if not os.path.isdir(target):
+        raise ValueError('Folder does not exist')
+    current = str(Path(target).resolve())
+    parent_path = os.path.dirname(current)
+    parent = parent_path if parent_path and os.path.normcase(parent_path) != os.path.normcase(current) else ''
+    entries = []
+    try:
+        with os.scandir(current) as scan:
+            for entry in scan:
+                try:
+                    if entry.is_dir(follow_symlinks=False):
+                        entries.append(_folder_browser_entry(str(Path(entry.path).resolve())))
+                except OSError:
+                    continue
+    except OSError as error:
+        raise ValueError(f'Could not open folder: {error}')
+    return {
+        'current_path': current,
+        'parent': parent,
+        'roots': _folder_browser_roots(),
+        'entries': sorted(entries, key=lambda entry: entry['name'].lower()),
+    }
+
+
+def _copy_export_job_snapshot(job_id):
+    with _copy_export_lock:
+        job = _copy_export_jobs.get(str(job_id))
+        if not job:
+            raise KeyError('Export job not found')
+        public = {key: value for key, value in job.items() if key != 'cancel_event'}
+        public['items'] = [dict(item) for item in job.get('items', [])]
+        return public
+
+
+def _set_copy_export_job(job_id, **updates):
+    with _copy_export_lock:
+        job = _copy_export_jobs[str(job_id)]
+        job.update(updates)
+        job['updated_at'] = time.time()
+
+
+def _prepare_copy_export_destination(destination):
+    clean = str(destination or '').strip()
+    if not clean:
+        raise ValueError('Destination folder is required')
+    abs_destination = os.path.abspath(os.path.expanduser(clean))
+    if os.path.isfile(abs_destination):
+        raise ValueError('Destination must be a folder')
+    os.makedirs(abs_destination, exist_ok=True)
+    return abs_destination
+
+
+def _copy_export_entry(movie, destination):
+    normalized = _normalize_curated_movie(movie or {})
+    title = normalized.get('title') or 'Untitled movie'
+    source = normalized.get('path', '')
+    entry = {
+        'title': title,
+        'year': normalized.get('year', ''),
+        'source': source,
+        'destination': '',
+        'status': 'pending',
+        'reason': '',
+        'bytes_total': 0,
+        'bytes_done': 0,
+    }
+    if not source:
+        entry.update({'status': 'skipped', 'reason': 'No local file path'})
+        return entry
+    abs_source = os.path.abspath(source)
+    entry['source'] = abs_source
+    if not os.path.isfile(abs_source):
+        entry.update({'status': 'skipped', 'reason': 'Local file is missing'})
+        return entry
+    if os.path.splitext(abs_source)[1].lower() not in VIDEO_EXTENSIONS:
+        entry.update({'status': 'skipped', 'reason': 'Not a supported video file'})
+        return entry
+    destination_path = os.path.join(destination, os.path.basename(abs_source))
+    entry['destination'] = destination_path
+    if _norm(abs_source) == _norm(destination_path):
+        entry.update({'status': 'skipped', 'reason': 'Source and destination are the same file'})
+        return entry
+    try:
+        source_size = os.path.getsize(abs_source)
+    except OSError:
+        entry.update({'status': 'skipped', 'reason': 'Could not read local file'})
+        return entry
+    entry['bytes_total'] = source_size
+    if os.path.exists(destination_path):
+        try:
+            existing_size = os.path.getsize(destination_path)
+        except OSError:
+            existing_size = -1
+        reason = 'File already exists' if existing_size == source_size else 'Filename conflict exists'
+        entry.update({'status': 'skipped', 'reason': reason})
+    return entry
+
+
+def _create_copy_export_job(movies, destination, start=True):
+    abs_destination = _prepare_copy_export_destination(destination)
+    items = [_copy_export_entry(movie, abs_destination) for movie in (movies or [])]
+    if not items:
+        raise ValueError('At least one movie is required')
+    job_id = uuid.uuid4().hex
+    pending_items = [item for item in items if item.get('status') == 'pending']
+    skipped_items = [item for item in items if item.get('status') == 'skipped']
+    job = {
+        'id': job_id,
+        'status': 'queued' if pending_items else 'completed',
+        'destination': abs_destination,
+        'total_count': len(items),
+        'copyable_count': len(pending_items),
+        'copied_count': 0,
+        'skipped_count': len(skipped_items),
+        'failed_count': 0,
+        'bytes_total': sum(int(item.get('bytes_total') or 0) for item in pending_items),
+        'bytes_done': 0,
+        'current': '',
+        'error': '',
+        'items': items,
+        'created_at': time.time(),
+        'updated_at': time.time(),
+        'cancel_event': threading.Event(),
+    }
+    with _copy_export_lock:
+        _copy_export_jobs[job_id] = job
+    if start and pending_items:
+        threading.Thread(target=_run_copy_export_job, args=(job_id,), daemon=True).start()
+    return _copy_export_job_snapshot(job_id)
+
+
+def _mark_copy_export_item(job_id, index, **updates):
+    with _copy_export_lock:
+        job = _copy_export_jobs[str(job_id)]
+        job['items'][index].update(updates)
+        job['updated_at'] = time.time()
+
+
+def _copy_file_with_progress(job_id, index, item):
+    source = item['source']
+    destination = item['destination']
+    os.makedirs(os.path.dirname(destination), exist_ok=True)
+    with open(source, 'rb') as src, open(destination, 'wb') as dst:
+        while True:
+            with _copy_export_lock:
+                cancel_event = _copy_export_jobs[str(job_id)]['cancel_event']
+            if cancel_event.is_set():
+                raise InterruptedError('Copy cancelled')
+            chunk = src.read(_COPY_EXPORT_CHUNK_SIZE)
+            if not chunk:
+                break
+            dst.write(chunk)
+            with _copy_export_lock:
+                job = _copy_export_jobs[str(job_id)]
+                item_state = job['items'][index]
+                item_state['bytes_done'] = int(item_state.get('bytes_done') or 0) + len(chunk)
+                job['bytes_done'] = int(job.get('bytes_done') or 0) + len(chunk)
+                job['updated_at'] = time.time()
+    shutil.copystat(source, destination)
+
+
+def _run_copy_export_job(job_id):
+    job_id = str(job_id)
+    try:
+        _set_copy_export_job(job_id, status='running')
+        with _copy_export_lock:
+            item_count = len(_copy_export_jobs[job_id].get('items', []))
+        for index in range(item_count):
+            with _copy_export_lock:
+                job = _copy_export_jobs[job_id]
+                item = dict(job['items'][index])
+                if job['cancel_event'].is_set():
+                    job['status'] = 'cancelled'
+                    job['updated_at'] = time.time()
+                    return _copy_export_job_snapshot(job_id)
+            if item.get('status') != 'pending':
+                continue
+            if os.path.exists(item.get('destination', '')):
+                _mark_copy_export_item(job_id, index, status='skipped', reason='File already exists')
+                with _copy_export_lock:
+                    _copy_export_jobs[job_id]['skipped_count'] += 1
+                continue
+            _mark_copy_export_item(job_id, index, status='copying')
+            _set_copy_export_job(job_id, current=os.path.basename(item.get('source', '')))
+            try:
+                _copy_file_with_progress(job_id, index, item)
+                _mark_copy_export_item(job_id, index, status='copied')
+                with _copy_export_lock:
+                    _copy_export_jobs[job_id]['copied_count'] += 1
+            except InterruptedError:
+                try:
+                    if os.path.exists(item.get('destination', '')):
+                        os.remove(item.get('destination', ''))
+                except OSError:
+                    pass
+                _mark_copy_export_item(job_id, index, status='cancelled', reason='Copy cancelled')
+                _set_copy_export_job(job_id, status='cancelled', current='')
+                return _copy_export_job_snapshot(job_id)
+            except Exception as error:
+                _mark_copy_export_item(job_id, index, status='failed', reason=str(error))
+                with _copy_export_lock:
+                    _copy_export_jobs[job_id]['failed_count'] += 1
+        final_status = 'completed'
+        with _copy_export_lock:
+            if _copy_export_jobs[job_id]['failed_count']:
+                final_status = 'completed_with_errors'
+        _set_copy_export_job(job_id, status=final_status, current='')
+    except Exception as error:
+        _set_copy_export_job(job_id, status='failed', error=str(error), current='')
+    return _copy_export_job_snapshot(job_id)
+
+
+@app.route('/api/library/export-jobs', methods=['POST'])
+def library_export_jobs():
+    body = request.get_json(force=True, silent=True) or {}
+    try:
+        return jsonify(_create_copy_export_job(body.get('movies') or [], body.get('destination', '')))
+    except ValueError as e:
+        return jsonify({'error': str(e)}), 400
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/library/export-jobs/<job_id>')
+def library_export_job_detail(job_id):
+    try:
+        return jsonify(_copy_export_job_snapshot(job_id))
+    except KeyError:
+        return jsonify({'error': 'Export job not found'}), 404
+
+
+@app.route('/api/library/export-jobs/<job_id>/cancel', methods=['POST'])
+def library_export_job_cancel(job_id):
+    with _copy_export_lock:
+        job = _copy_export_jobs.get(str(job_id))
+        if not job:
+            return jsonify({'error': 'Export job not found'}), 404
+        job['cancel_event'].set()
+        if job.get('status') == 'queued':
+            job['status'] = 'cancelled'
+        job['updated_at'] = time.time()
+    return jsonify(_copy_export_job_snapshot(job_id))
 
 
 @app.route('/api/user/system-lists/<system_type>/toggle', methods=['POST'])
@@ -7852,15 +8287,27 @@ def tmdb_imdb_id():
 
 @app.route('/api/ollama/config', methods=['GET'])
 def get_ollama_config():
-    return jsonify({'url': _ollama_url, 'model': _ollama_model})
+    return jsonify({
+        'url': _ollama_url,
+        'model': _ollama_model,
+        'candidate_limit': _ollama_candidate_limit,
+    })
 
 
 @app.route('/api/ollama/config', methods=['POST'])
 def set_ollama_config():
-    global _ollama_url, _ollama_model
+    global _ollama_url, _ollama_model, _ollama_candidate_limit
     data = request.get_json(silent=True)
     if not data:
         return jsonify({'error': 'No data provided'}), 400
+    if 'candidate_limit' in data:
+        try:
+            candidate_limit = int(data.get('candidate_limit'))
+        except (TypeError, ValueError):
+            return jsonify({'error': 'candidate_limit must be an integer from 1 to 50'}), 400
+        if candidate_limit < OLLAMA_CANDIDATE_LIMIT_MIN or candidate_limit > OLLAMA_CANDIDATE_LIMIT_MAX:
+            return jsonify({'error': 'candidate_limit must be an integer from 1 to 50'}), 400
+        _ollama_candidate_limit = candidate_limit
     _ollama_url   = data.get('url', 'http://localhost:11434').strip().rstrip('/')
     _ollama_model = data.get('model', '').strip()
     _save_config(_all_config())
@@ -7925,6 +8372,13 @@ def _ollama_enrich_with_tmdb(title, year):
         return None
 
 
+def _ollama_candidate_key(title, year):
+    clean_title = _norm_movie_title(str(title or '').strip())
+    clean_year = str(year or '').strip()
+    year_match = re.search(r'\b(19|20)\d{2}\b', clean_year)
+    return clean_title, year_match.group(0) if year_match else clean_year
+
+
 @app.route('/api/ollama/recommend', methods=['POST'])
 def ollama_recommend():
     if not _ollama_url or not _ollama_model:
@@ -7936,12 +8390,15 @@ def ollama_recommend():
     if not prompt:
         return jsonify({'error': 'Prompt cannot be empty.'}), 400
 
+    candidate_limit = _coerce_ollama_candidate_limit(_ollama_candidate_limit)
     system_msg = (
         'You are a movie recommendation expert. '
         'The user will describe a movie or what they want to watch by mood, memory, feeling, actors, or any detail. '
         'Return ONLY valid JSON with this exact shape: '
         '{"recommendations":[{"title":"...","year":"...","reason":"one sentence why this matches"}]}. '
-        'Give exactly 10 recommendations. '
+        f'Return at most {candidate_limit} feature-length movie candidates. '
+        'Exclude TV series, miniseries, episodes, books, games, and unreleased films. '
+        'Use the official movie title and release year. '
         'No markdown, no explanation, no extra text — only the JSON object.'
     )
 
@@ -7973,20 +8430,29 @@ def ollama_recommend():
         return jsonify({'error': f'Cannot reach Ollama: {e}'}), 502
 
     results = []
+    seen_candidates = set()
     for rec in recs:
         title  = rec.get('title', '').strip()
         year   = rec.get('year', '').strip()
         reason = rec.get('reason', '')
         if not title:
             continue
+        candidate_key = _ollama_candidate_key(title, year)
+        if candidate_key in seen_candidates:
+            continue
+        seen_candidates.add(candidate_key)
         enriched = _ollama_enrich_with_tmdb(title, year)
         if enriched:
             enriched['reason'] = reason
             results.append(enriched)
+        elif _tmdb_key:
+            continue
         else:
             results.append({'title': title, 'year': year, 'reason': reason,
                             'poster_url': '', 'genres': [], 'tmdb_rating': '',
                             'tmdb_vote_count': 0, 'plot': '', 'tmdb_id': None})
+        if len(results) >= candidate_limit:
+            break
 
     return jsonify({'results': results, 'model': _ollama_model})
 

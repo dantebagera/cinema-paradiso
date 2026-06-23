@@ -8,6 +8,7 @@ import {
   Clapperboard,
   CirclePlus,
   Compass,
+  Copy,
   Database,
   Download,
   Eye,
@@ -204,7 +205,18 @@ function playReleaseAlertSound() {
 
 async function fetchJson(url, options) {
   const response = await fetch(url, options);
-  const data = await response.json();
+  const raw = await response.text();
+  let data = {};
+  if (raw) {
+    try {
+      data = JSON.parse(raw);
+    } catch {
+      if (response.ok) {
+        throw new Error('Failed to parse response JSON');
+      }
+      data = {};
+    }
+  }
   if (!response.ok || data.error) {
     const error = new Error(data.error || `Request failed: ${response.status}`);
     error.data = data;
@@ -214,10 +226,45 @@ async function fetchJson(url, options) {
   return data;
 }
 
+async function addMoviePayloadsIndividually(listId, movies) {
+  for (const movie of movies || []) {
+    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie })
+    });
+  }
+}
+
+async function addMoviePayloadsToList(listId, movies) {
+  try {
+    return await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies/bulk`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movies })
+    });
+  } catch (bulkError) {
+    if (bulkError.status === 404) {
+      await addMoviePayloadsIndividually(listId, movies);
+      return { fallback: 'individual' };
+    }
+    throw bulkError;
+  }
+}
+
 function announceCurationChanged() {
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new Event('cp-curation-changed'));
   }
+}
+
+function SelectionCheckbox({ checked, onChange, label, className }) {
+  return (
+    <label className={cx('selection-checkbox', className, checked && 'selection-checkbox-checked')} onClick={(event) => event.stopPropagation()}>
+      <input type="checkbox" checked={checked} onChange={(event) => onChange(event.target.checked)} aria-label={label} />
+      <span aria-hidden="true">{checked ? <Check size={14} /> : null}</span>
+    </label>
+  );
 }
 
 function App() {
@@ -1241,7 +1288,7 @@ const manualSections = [
         items: [
           'It will not guess secret API keys or Plex tokens.',
           'It will not automatically install optional services like Plex, Prowlarr, TMDB accounts, or Ollama.',
-          'It will not auto-update bundled qBittorrent in version 2.6.4.'
+          'It will not auto-update bundled qBittorrent in version 2.6.5.'
         ]
       },
       {
@@ -1360,8 +1407,8 @@ const helpSections = [
   {
     key: 'qbittorrent',
     title: 'qBittorrent',
-    status: 'Bundled in CP 2.6.4',
-    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.6.4 release.',
+    status: 'Bundled in CP 2.6.5',
+    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.6.5 release.',
     links: [
       ['qBittorrent Official Website', 'https://www.qbittorrent.org/'],
       ['qBittorrent Downloads', 'https://www.qbittorrent.org/download']
@@ -2031,7 +2078,10 @@ function Poster({
   watched,
   watchlisted,
   onToggleWatched,
-  onToggleWatchlist
+  onToggleWatchlist,
+  selected,
+  onSelect,
+  selectionClassName
 }) {
   return (
     <div className={cx('poster', large && 'poster-large')}>
@@ -2048,6 +2098,14 @@ function Poster({
         onToggleWatchlist={onToggleWatchlist}
       />
       <PosterEditButton title={movie.title} onEdit={onEditPoster} />
+      {onSelect && (
+        <SelectionCheckbox
+          className={selectionClassName}
+          checked={Boolean(selected)}
+          onChange={onSelect}
+          label={`Select ${movie.title}`}
+        />
+      )}
     </div>
   );
 }
@@ -2139,6 +2197,7 @@ function DiscoverWorkspace({
   const [pickContext, setPickContext] = useState(null);
   const [pickHistory, setPickHistory] = useState([]);
   const [posterEditor, setPosterEditor] = useState(null);
+  const [selectedDiscoverKeys, setSelectedDiscoverKeys] = useState(() => new Set());
 
   function updateOwnedPoster(path, posterUrl) {
     setOwnership((state) => Object.fromEntries(
@@ -2720,6 +2779,35 @@ function DiscoverWorkspace({
     return sorted;
   }, [browseRows, browseResolution, browseIndexer, browseSort, selectedBrowseIndexerName]);
 
+  const activeDiscoverSelectionMovies = activeTab === 'pick' ? pickResults : activeTab === 'explore' ? discoverResults : [];
+  const selectedDiscoverMovies = useMemo(() => (
+    activeDiscoverSelectionMovies
+      .map((movie) => discoverMoviePayload(movie, ownedMovieFor(movie, ownership)))
+      .filter((movie) => selectedDiscoverKeys.has(movieIdentityKey(movie)))
+  ), [activeDiscoverSelectionMovies, ownership, selectedDiscoverKeys]);
+  const allDiscoverResultsSelected = activeDiscoverSelectionMovies.length > 0 && activeDiscoverSelectionMovies.every((movie) => {
+    const payload = discoverMoviePayload(movie, ownedMovieFor(movie, ownership));
+    return selectedDiscoverKeys.has(movieIdentityKey(payload));
+  });
+
+  function toggleDiscoverSelection(movie, owned, checked) {
+    const key = movieIdentityKey(discoverMoviePayload(movie, owned));
+    setSelectedDiscoverKeys((current) => {
+      const next = new Set(current);
+      if (checked) next.add(key);
+      else next.delete(key);
+      return next;
+    });
+  }
+
+  function selectAllDiscoverResults() {
+    setSelectedDiscoverKeys(new Set(activeDiscoverSelectionMovies.map((movie) => movieIdentityKey(discoverMoviePayload(movie, ownedMovieFor(movie, ownership))))));
+  }
+
+  function clearDiscoverSelection() {
+    setSelectedDiscoverKeys(new Set());
+  }
+
   const tabs = [
     { id: 'explore', label: 'Explore Movies', icon: Compass },
     { id: 'browse', label: 'Browse Indexers', icon: Radio },
@@ -2830,6 +2918,22 @@ function DiscoverWorkspace({
             )}
             <span className="discover-count">{formatCount(discoverTotalResults || discoverResults.length)} titles</span>
           </div>
+          {discoverResults.length > 0 && (
+            <div className="bulk-selection-bar discover-bulk-selection">
+              <SelectionCheckbox
+                className="discover-selection-master"
+                checked={allDiscoverResultsSelected}
+                onChange={(checked) => { if (checked) selectAllDiscoverResults(); else clearDiscoverSelection(); }}
+                label="Select all discover results"
+              />
+              <span>{selectedDiscoverMovies.length ? `${formatCount(selectedDiscoverMovies.length)} selected` : 'Select movies'}</span>
+              <button type="button" className="mini-action" onClick={selectAllDiscoverResults}>Select all results</button>
+              <button type="button" className="mini-action" onClick={clearDiscoverSelection} disabled={!selectedDiscoverMovies.length}>Clear</button>
+              <button type="button" className="mini-action" onClick={() => setListEditorTarget({ bulkItems: selectedDiscoverMovies })} disabled={!selectedDiscoverMovies.length}>
+                <CirclePlus size={13} /> Add to list
+              </button>
+            </div>
+          )}
 
           <DiscoverResultGrid
             error={discoverError}
@@ -2852,6 +2956,8 @@ function DiscoverWorkspace({
                   watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
                   onToggleWatched={owned ? () => toggleDiscoverSystemList('watched', movie, owned) : undefined}
                   onToggleWatchlist={() => toggleDiscoverSystemList('watchlist', movie, owned)}
+                  selected={selectedDiscoverKeys.has(movieIdentityKey(discoverMoviePayload(movie, owned)))}
+                  onSelect={(checked) => toggleDiscoverSelection(movie, owned, checked)}
                   onPlay={onPlay}
                   onStream={onStream}
                   onFindTorrent={onFindTorrent}
@@ -3003,6 +3109,22 @@ function DiscoverWorkspace({
             onReset={resetPickPath}
             onCrumb={jumpPickPath}
           />
+          {pickResults.length > 0 && (
+            <div className="bulk-selection-bar discover-bulk-selection">
+              <SelectionCheckbox
+                className="discover-selection-master"
+                checked={allDiscoverResultsSelected}
+                onChange={(checked) => { if (checked) selectAllDiscoverResults(); else clearDiscoverSelection(); }}
+                label="Select all AI pick results"
+              />
+              <span>{selectedDiscoverMovies.length ? `${formatCount(selectedDiscoverMovies.length)} selected` : 'Select movies'}</span>
+              <button type="button" className="mini-action" onClick={selectAllDiscoverResults}>Select all results</button>
+              <button type="button" className="mini-action" onClick={clearDiscoverSelection} disabled={!selectedDiscoverMovies.length}>Clear</button>
+              <button type="button" className="mini-action" onClick={() => setListEditorTarget({ bulkItems: selectedDiscoverMovies })} disabled={!selectedDiscoverMovies.length}>
+                <CirclePlus size={13} /> Add to list
+              </button>
+            </div>
+          )}
 
           <DiscoverResultGrid
             error={pickError && pickResults.length ? pickError : ''}
@@ -3026,6 +3148,8 @@ function DiscoverWorkspace({
                   watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
                   onToggleWatched={owned ? () => toggleDiscoverSystemList('watched', movie, owned) : undefined}
                   onToggleWatchlist={() => toggleDiscoverSystemList('watchlist', movie, owned)}
+                  selected={selectedDiscoverKeys.has(movieIdentityKey(discoverMoviePayload(movie, owned)))}
+                  onSelect={(checked) => toggleDiscoverSelection(movie, owned, checked)}
                   onPlay={onPlay}
                   onStream={onStream}
                   onFindTorrent={onFindTorrent}
@@ -3052,12 +3176,14 @@ function DiscoverWorkspace({
 
       {listEditorTarget && (
         <ListEditorModal
-          item={listEditorTarget}
+          item={listEditorTarget.bulkItems ? null : listEditorTarget}
+          bulkItems={listEditorTarget.bulkItems || []}
           items={[]}
           lists={userLists}
           onClose={() => setListEditorTarget(null)}
           onCreate={createDiscoverList}
           onAdd={addDiscoverMovieToList}
+          onAddBulk={addDiscoverMoviesToList}
         />
       )}
       {posterEditor && (
@@ -3138,7 +3264,9 @@ function DiscoverMovieCard({
   watched,
   watchlisted,
   onToggleWatched,
-  onToggleWatchlist
+  onToggleWatchlist,
+  selected,
+  onSelect
 }) {
   const lowQuality = owned && isLowQuality(owned.resolution);
   return (
@@ -3150,6 +3278,9 @@ function DiscoverMovieCard({
         watchlisted={watchlisted}
         onToggleWatched={owned ? onToggleWatched : undefined}
         onToggleWatchlist={onToggleWatchlist}
+        selected={selected}
+        onSelect={onSelect}
+        selectionClassName="discover-selection-checkbox"
       />
       <div className="movie-card-body">
         <div className="movie-title-row">
@@ -3549,6 +3680,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
   const [posterEditor, setPosterEditor] = useState(null);
   const [metadataCorrection, setMetadataCorrection] = useState(null);
   const [showAdultMovies, setShowAdultMovies] = useState(true);
+  const [selectedLibraryKeys, setSelectedLibraryKeys] = useState(() => new Set());
 
   const loadLibrary = useCallback(async (forceScan = false) => {
     setLoading(true);
@@ -3682,6 +3814,29 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
     showAdultMovies
   }), [items, query, qualityFilter, plexFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sizeFilter, mode, roleFilter, collectionFilter, listFilter, userLists, viewingStateFilter, tmdbCache, showAdultMovies, currentPage]);
 
+  const selectedLibraryItems = useMemo(() => (
+    items.filter((item) => selectedLibraryKeys.has(movieIdentityKey(moviePayload(item))))
+  ), [items, selectedLibraryKeys]);
+  const allFilteredLibrarySelected = filteredItems.length > 0 && filteredItems.every((item) => selectedLibraryKeys.has(movieIdentityKey(moviePayload(item))));
+
+  function toggleLibrarySelection(item, checked) {
+    const key = movieIdentityKey(moviePayload(item));
+    setSelectedLibraryKeys((current) => {
+      const next = new Set(current);
+      if (checked) next.add(key);
+      else next.delete(key);
+      return next;
+    });
+  }
+
+  function selectAllFilteredLibrary() {
+    setSelectedLibraryKeys(new Set(filteredItems.map((item) => movieIdentityKey(moviePayload(item)))));
+  }
+
+  function clearLibrarySelection() {
+    setSelectedLibraryKeys(new Set());
+  }
+
   useEffect(() => {
     if (currentPage > totalPages) {
       setCurrentPage(totalPages);
@@ -3689,9 +3844,38 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
     }
   }, [currentPage, totalPages]);
 
+  useEffect(() => {
+    if (mode !== 'movie' && selectedLibraryKeys.size) {
+      setSelectedLibraryKeys(new Set());
+    }
+  }, [mode, selectedLibraryKeys.size]);
+
   function resetLibraryPage() {
     setCurrentPage(1);
     setExpandedPath('');
+  }
+
+  function resetAllLibraryFilters() {
+    setQuery('');
+    setQualityFilter('all');
+    setPlexFilter('all');
+    setSortMode('added');
+    setGenreFilter('all');
+    setResolutionFilter('all');
+    setSourceFilter('all');
+    setLanguageFilter('all');
+    setCountryFilter('all');
+    setYearFrom('');
+    setYearTo('');
+    setMinRating('all');
+    setSizeFilter('all');
+    setViewingStateFilter('all');
+    setRoleFilter(null);
+    setCollectionFilter(null);
+    setListFilter(null);
+    setMetadataStatus('');
+    setSelectedLibraryKeys(new Set());
+    resetLibraryPage();
   }
 
   function goToLibraryPage(page) {
@@ -3836,6 +4020,23 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
     await loadUserLists();
     announceCurationChanged();
     notify('Movie added to list');
+  }
+
+  async function addDiscoverMoviesToList(listId, movies) {
+    await addMoviePayloadsToList(listId, movies);
+    await loadUserLists();
+    announceCurationChanged();
+    notify(`${formatCount((movies || []).length)} movie${(movies || []).length === 1 ? '' : 's'} added to list`);
+    setSelectedDiscoverKeys(new Set());
+  }
+
+  async function addMoviesToList(listId, movies) {
+    const payloads = (movies || []).map((movie) => moviePayload(movie));
+    await addMoviePayloadsToList(listId, payloads);
+    await loadUserLists();
+    announceCurationChanged();
+    notify(`${formatCount((movies || []).length)} movie${(movies || []).length === 1 ? '' : 's'} added to list`);
+    setSelectedLibraryKeys(new Set());
   }
 
   async function renameList(listId, name) {
@@ -4056,6 +4257,9 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
             </select>
           </>
         )}
+        <button type="button" className="btn btn-secondary library-reset-filters" onClick={resetAllLibraryFilters}>
+          <RefreshCcw size={15} /> Reset filters
+        </button>
       </div>
 
       {(loading || status || error) && (
@@ -4102,6 +4306,26 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
             <span>{formatCount(filteredItems.length)} matching {mode === 'movie' ? 'movies' : 'files'}</span>
             {filteredItems.length > 0 && <span>Showing {formatCount(pageStart + 1)}-{formatCount(pageEnd)} of {formatCount(filteredItems.length)}</span>}
           </div>
+          {mode === 'movie' && filteredItems.length > 0 && (
+            <div className="bulk-selection-bar library-bulk-selection">
+              <SelectionCheckbox
+                className="library-selection-master"
+                checked={allFilteredLibrarySelected}
+                onChange={(checked) => { if (checked) selectAllFilteredLibrary(); else clearLibrarySelection(); }}
+                label="Select all filtered library movies"
+              />
+              <span>{selectedLibraryItems.length ? `${formatCount(selectedLibraryItems.length)} selected` : 'Select movies'}</span>
+              <button type="button" className="mini-action" onClick={selectAllFilteredLibrary}>
+                Select all filtered
+              </button>
+              <button type="button" className="mini-action" onClick={clearLibrarySelection} disabled={!selectedLibraryItems.length}>
+                Clear
+              </button>
+              <button type="button" className="mini-action" onClick={() => setListEditor({ items: selectedLibraryItems })} disabled={!selectedLibraryItems.length}>
+                <CirclePlus size={13} /> Add to list
+              </button>
+            </div>
+          )}
           <LibraryPagination
             total={filteredItems.length}
             page={safePage}
@@ -4145,6 +4369,8 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
                     watchlisted={movieHasSystemState(item, userLists, 'watchlist')}
                     onToggleWatched={() => toggleSystemList('watched', item)}
                     onToggleWatchlist={() => toggleSystemList('watchlist', item)}
+                    selected={selectedLibraryKeys.has(movieIdentityKey(moviePayload(item)))}
+                    onSelect={(checked) => toggleLibrarySelection(item, checked)}
                   />
                 ) : (
                   <LibraryFileRow
@@ -4205,11 +4431,13 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
       {listEditor && (
         <ListEditorModal
           item={listEditor.item}
+          bulkItems={listEditor.items || []}
           items={items}
           lists={userLists}
           onClose={() => setListEditor(null)}
           onCreate={createList}
           onAdd={addMovieToList}
+          onAddBulk={addMoviesToList}
         />
       )}
       {listsManagerOpen && (
@@ -4223,6 +4451,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
           onAdd={addMovieToList}
           onRemove={removeMovieFromList}
           onFilter={applyListFilter}
+          notify={notify}
         />
       )}
       {posterEditor && (
@@ -4317,7 +4546,9 @@ function LibraryMovieCard({
   watched,
   watchlisted,
   onToggleWatched,
-  onToggleWatchlist
+  onToggleWatchlist,
+  selected,
+  onSelect
 }) {
   const identity = getMovieIdentity(item);
   const canonical = item.canonical_metadata || {};
@@ -4342,6 +4573,12 @@ function LibraryMovieCard({
           onToggleWatchlist={onToggleWatchlist}
         />
         <PosterEditButton title={identity.title} onEdit={onEditPoster} />
+        <SelectionCheckbox
+          className="library-selection-checkbox"
+          checked={Boolean(selected)}
+          onChange={onSelect}
+          label={`Select ${identity.title}`}
+        />
       </div>
       <div className="library-item-body">
         <div className="library-item-title-row">
@@ -4537,12 +4774,15 @@ function CollectionEditorModal({ collection, items, onClose, onSave }) {
   );
 }
 
-function ListEditorModal({ item, items, lists, onClose, onCreate, onAdd }) {
+function ListEditorModal({ item, bulkItems = [], items, lists, onClose, onCreate, onAdd, onAddBulk }) {
   const [name, setName] = useState('');
-  const [selected, setSelected] = useState(() => (item ? [item] : []));
+  const [selected, setSelected] = useState(() => (bulkItems.length ? bulkItems : item ? [item] : []));
   const [search, setSearch] = useState('');
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
   const selectedKeys = useMemo(() => new Set(selected.map((movie) => movieIdentityKey(moviePayload(movie)))), [selected]);
+  const selectedPayloads = useMemo(() => selected.map((movie) => moviePayload(movie)), [selected]);
+  const canAddWatched = selectedPayloads.length > 0 && selectedPayloads.every((movie) => movie.path);
   const candidates = useMemo(() => {
     const q = search.trim().toLowerCase();
     if (!q) return [];
@@ -4560,24 +4800,38 @@ function ListEditorModal({ item, items, lists, onClose, onCreate, onAdd }) {
     const cleanName = name.trim();
     if (!cleanName) return;
     setBusy(true);
+    setError('');
     try {
       const created = await onCreate(cleanName);
-      for (const movie of selected) {
-        await onAdd(created.id, movie);
+      if (onAddBulk && selected.length > 1) {
+        await onAddBulk(created.id, selected);
+      } else {
+        for (const movie of selected) {
+          await onAdd(created.id, movie);
+        }
       }
       setName('');
       onClose();
+    } catch (submitError) {
+      setError(submitError.message || 'Could not add movies to list');
     } finally {
       setBusy(false);
     }
   }
 
   async function addExisting(listId) {
-    if (!item) return;
+    if (!selected.length) return;
     setBusy(true);
+    setError('');
     try {
-      await onAdd(listId, item);
+      if (onAddBulk && selected.length > 1) {
+        await onAddBulk(listId, selected);
+      } else {
+        await onAdd(listId, selected[0]);
+      }
       onClose();
+    } catch (addError) {
+      setError(addError.message || 'Could not add movies to list');
     } finally {
       setBusy(false);
     }
@@ -4589,7 +4843,7 @@ function ListEditorModal({ item, items, lists, onClose, onCreate, onAdd }) {
         <div className="dialog-header">
           <div>
             <p className="screen-kicker">User lists</p>
-            <h2>{item ? 'Add movie to list' : 'Create list'}</h2>
+            <h2>{selected.length > 1 ? 'Add selected movies to list' : item ? 'Add movie to list' : 'Create list'}</h2>
           </div>
           <button type="button" className="inspector-close" onClick={onClose} aria-label="Close list editor">
             <X size={18} />
@@ -4600,7 +4854,12 @@ function ListEditorModal({ item, items, lists, onClose, onCreate, onAdd }) {
             <span>New list name</span>
             <input value={name} onChange={(event) => setName(event.target.value)} placeholder="My Best, Marvel Universe..." />
           </label>
-          {!item && (
+          {selected.length > 0 && (
+            <p className="dialog-body-path list-editor-selection-summary">
+              {formatCount(selectedPayloads.length)} selected movie{selectedPayloads.length === 1 ? '' : 's'} will be added.
+            </p>
+          )}
+          {!item && !bulkItems.length && (
             <>
               <label className="library-search curation-search">
                 <Search size={17} />
@@ -4634,6 +4893,7 @@ function ListEditorModal({ item, items, lists, onClose, onCreate, onAdd }) {
               </div>
             </>
           )}
+          {error && <p className="dialog-error list-editor-error"><AlertTriangle size={14} /> {error}</p>}
           <div className="dialog-actions">
             <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
             <button type="submit" className="btn btn-primary" disabled={busy || !name.trim() || (!item && selected.length === 0)}>
@@ -4641,10 +4901,10 @@ function ListEditorModal({ item, items, lists, onClose, onCreate, onAdd }) {
             </button>
           </div>
         </form>
-        {item && lists.length > 0 && (
+        {selected.length > 0 && lists.length > 0 && (
           <div className="existing-list-picker">
             <span className="mini-label">Existing lists</span>
-            {lists.filter((list) => item?.path || list.system_type !== 'watched').map((list) => (
+            {lists.filter((list) => canAddWatched || list.system_type !== 'watched').map((list) => (
               <button type="button" key={list.id} onClick={() => addExisting(list.id)} disabled={busy}>
                 {list.name}
               </button>
@@ -4656,15 +4916,21 @@ function ListEditorModal({ item, items, lists, onClose, onCreate, onAdd }) {
   );
 }
 
-function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDelete, onAdd, onRemove, onFilter }) {
+function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDelete, onAdd, onRemove, onFilter, notify }) {
   const [selectedId, setSelectedId] = useState(lists[0]?.id || '');
   const [newName, setNewName] = useState('');
   const [renameValue, setRenameValue] = useState('');
   const [search, setSearch] = useState('');
   const [tmdbCandidates, setTmdbCandidates] = useState([]);
   const [tmdbLoading, setTmdbLoading] = useState(false);
+  const [selectedMovieKeys, setSelectedMovieKeys] = useState(() => new Set());
+  const [copyMovies, setCopyMovies] = useState(null);
   const selectedList = lists.find((list) => list.id === selectedId) || lists[0] || null;
   const listMovieKeys = useMemo(() => new Set((selectedList?.movies || []).map((movie) => movieIdentityKey(movie))), [selectedList]);
+  const selectedMovies = useMemo(() => (
+    (selectedList?.movies || []).filter((movie) => selectedMovieKeys.has(movieIdentityKey(movie)))
+  ), [selectedList, selectedMovieKeys]);
+  const allListMoviesSelected = Boolean((selectedList?.movies || []).length) && (selectedList?.movies || []).every((movie) => selectedMovieKeys.has(movieIdentityKey(movie)));
   const candidates = useMemo(() => {
     const q = search.trim().toLowerCase();
     if (!q || !selectedList) return [];
@@ -4681,6 +4947,10 @@ function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDele
     if (!selectedList && lists[0]) setSelectedId(lists[0].id);
     if (selectedList) setRenameValue(selectedList.name || '');
   }, [lists, selectedList]);
+
+  useEffect(() => {
+    setSelectedMovieKeys(new Set());
+  }, [selectedId]);
 
   async function submitCreate(event) {
     event.preventDefault();
@@ -4700,6 +4970,32 @@ function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDele
     await onDelete(selectedList.id);
     const remaining = lists.filter((list) => list.id !== selectedList.id);
     setSelectedId(remaining[0]?.id || '');
+  }
+
+  function toggleListMovie(movie, checked) {
+    const key = movieIdentityKey(movie);
+    setSelectedMovieKeys((current) => {
+      const next = new Set(current);
+      if (checked) next.add(key);
+      else next.delete(key);
+      return next;
+    });
+  }
+
+  function selectAllListMovies() {
+    setSelectedMovieKeys(new Set((selectedList?.movies || []).map((movie) => movieIdentityKey(movie))));
+  }
+
+  function clearListSelection() {
+    setSelectedMovieKeys(new Set());
+  }
+
+  async function removeSelectedMovies() {
+    if (!selectedList || !selectedMovies.length) return;
+    for (const movie of selectedMovies) {
+      await onRemove(selectedList.id, movie);
+    }
+    setSelectedMovieKeys(new Set());
   }
 
   async function searchTmdbWatchlist() {
@@ -4786,9 +5082,34 @@ function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDele
                     })}
                   </div>
                 )}
+                {(selectedList.movies || []).length > 0 && (
+                  <div className="bulk-selection-bar list-bulk-selection">
+                    <SelectionCheckbox
+                      className="list-select-all"
+                      checked={allListMoviesSelected}
+                      onChange={(checked) => { if (checked) selectAllListMovies(); else clearListSelection(); }}
+                      label={`Select all movies in ${selectedList.name}`}
+                    />
+                    <span>{selectedMovies.length ? `${formatCount(selectedMovies.length)} selected` : 'Select list movies'}</span>
+                    <button type="button" className="mini-action" onClick={selectAllListMovies}>Select all</button>
+                    <button type="button" className="mini-action" onClick={clearListSelection} disabled={!selectedMovies.length}>Clear</button>
+                    <button type="button" className="mini-action mini-action-danger" onClick={removeSelectedMovies} disabled={!selectedMovies.length}>
+                      <Trash2 size={13} /> Remove selected
+                    </button>
+                    <button type="button" className="mini-action" onClick={() => setCopyMovies(selectedMovies)} disabled={!selectedMovies.length}>
+                      <Copy size={13} /> Copy selected to...
+                    </button>
+                  </div>
+                )}
                 <div className="curation-list">
                   {(selectedList.movies || []).map((movie) => (
                     <div className="curation-row" key={movieIdentityKey(movie)}>
+                      <SelectionCheckbox
+                        className="list-row-checkbox"
+                        checked={selectedMovieKeys.has(movieIdentityKey(movie))}
+                        onChange={(checked) => toggleListMovie(movie, checked)}
+                        label={`Select ${movie.title}`}
+                      />
                       <span>{movie.title}{movie.year ? ` (${movie.year})` : ''}</span>
                       <button type="button" className="mini-action mini-action-danger" onClick={() => onRemove(selectedList.id, movie)}>
                         <Trash2 size={13} /> Remove
@@ -4805,7 +5126,231 @@ function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDele
             )}
           </div>
         </div>
+        {copyMovies && (
+          <ExportCopyDialog
+            movies={copyMovies}
+            onClose={() => setCopyMovies(null)}
+            notify={notify}
+          />
+        )}
       </section>
+    </div>
+  );
+}
+
+function ExportCopyDialog({ movies, onClose, notify }) {
+  const [destination, setDestination] = useState('');
+  const [job, setJob] = useState(null);
+  const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [folderBrowserOpen, setFolderBrowserOpen] = useState(false);
+  const localCount = movies.filter((movie) => movie.path).length;
+  const completed = job && ['completed', 'completed_with_errors', 'failed', 'cancelled'].includes(job.status);
+  const percent = job?.bytes_total ? Math.min(100, Math.round((Number(job.bytes_done || 0) / Number(job.bytes_total || 1)) * 100)) : 0;
+
+  useEffect(() => {
+    if (!job?.id || completed) return undefined;
+    const timer = window.setInterval(async () => {
+      try {
+        const next = await fetchJson(`/api/library/export-jobs/${encodeURIComponent(job.id)}`);
+        setJob(next);
+        if (['completed', 'completed_with_errors'].includes(next.status)) {
+          notify?.(`Copied ${formatCount(next.copied_count || 0)} movie file${Number(next.copied_count || 0) === 1 ? '' : 's'}`);
+        }
+      } catch (pollError) {
+        setError(pollError.message);
+      }
+    }, 900);
+    return () => window.clearInterval(timer);
+  }, [job?.id, completed, notify]);
+
+  async function startCopy(event) {
+    event.preventDefault();
+    setBusy(true);
+    setError('');
+    try {
+      const created = await fetchJson('/api/library/export-jobs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ movies, destination })
+      });
+      setJob(created);
+    } catch (copyError) {
+      setError(copyError.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function cancelCopy() {
+    if (!job?.id) return;
+    try {
+      const cancelled = await fetchJson(`/api/library/export-jobs/${encodeURIComponent(job.id)}/cancel`, { method: 'POST' });
+      setJob(cancelled);
+      notify?.('Copy job cancelled', 'neutral');
+    } catch (cancelError) {
+      setError(cancelError.message);
+    }
+  }
+
+  return (
+    <>
+      <div className="modal-backdrop export-copy-backdrop" role="presentation" onClick={onClose}>
+        <form className="small-dialog export-copy-dialog" role="dialog" aria-modal="true" aria-label="Copy selected movies" onClick={(event) => event.stopPropagation()} onSubmit={startCopy}>
+          <div className="dialog-header">
+            <div>
+              <p className="screen-kicker">Export list movies</p>
+              <h2>Copy selected to...</h2>
+            </div>
+            <button type="button" className="inspector-close" onClick={onClose} aria-label="Close copy dialog">
+              <X size={18} />
+            </button>
+          </div>
+          <p className="dialog-body-path">
+            {formatCount(movies.length)} selected, {formatCount(localCount)} local file{localCount === 1 ? '' : 's'} available to copy. Existing files are skipped.
+          </p>
+          <label className="dialog-field">
+            <span>Destination folder</span>
+            <div className="folder-path-row">
+              <input value={destination} onChange={(event) => setDestination(event.target.value)} placeholder="E:\\Friend USB\\Movies or \\\\server\\share\\movies" disabled={Boolean(job && !completed)} />
+              <button type="button" className="btn btn-secondary" onClick={() => setFolderBrowserOpen(true)} disabled={Boolean(job && !completed)}>
+                <Folder size={15} /> Browse...
+              </button>
+            </div>
+          </label>
+          {job && (
+            <div className="export-progress">
+              <div className="export-progress-track"><span style={{ width: `${percent}%` }} /></div>
+              <p>
+                <strong>{job.status}</strong>
+                <span>{formatCount(job.copied_count || 0)} copied, {formatCount(job.skipped_count || 0)} skipped, {formatCount(job.failed_count || 0)} failed</span>
+              </p>
+              {job.current && <small>Copying {job.current}</small>}
+            </div>
+          )}
+          {error && <p className="dialog-error"><AlertTriangle size={14} /> {error}</p>}
+          <div className="dialog-actions">
+            <button type="button" className="btn btn-secondary" onClick={onClose}>Close</button>
+            {job && !completed ? (
+              <button type="button" className="btn btn-secondary" onClick={cancelCopy}>Cancel copy</button>
+            ) : (
+              <button type="submit" className="btn btn-primary" disabled={busy || !destination.trim() || !movies.length}>
+                {busy ? <Loader2 size={15} className="spin" /> : <Copy size={15} />} Start copy
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
+      {folderBrowserOpen && (
+        <FolderBrowserDialog
+          initialPath={destination}
+          onClose={() => setFolderBrowserOpen(false)}
+          onSelect={(path) => {
+            setDestination(path);
+            setFolderBrowserOpen(false);
+          }}
+        />
+      )}
+    </>
+  );
+}
+
+function FolderBrowserDialog({ initialPath, onSelect, onClose }) {
+  const [manualPath, setManualPath] = useState(initialPath || '');
+  const [data, setData] = useState({ current_path: '', parent: '', roots: [], entries: [] });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const loadFolder = useCallback(async (path = '') => {
+    const clean = String(path || '').trim();
+    setLoading(true);
+    setError('');
+    try {
+      const suffix = clean ? `?path=${encodeURIComponent(clean)}` : '';
+      const next = await fetchJson(`/api/system/folders${suffix}`);
+      setData(next);
+      if (next.current_path) setManualPath(next.current_path);
+    } catch (browseError) {
+      setError(browseError.message);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadFolder(initialPath || '');
+  }, [initialPath, loadFolder]);
+
+  const roots = data.roots || [];
+  const entries = data.entries || [];
+
+  return (
+    <div className="modal-backdrop folder-browser-backdrop" role="presentation" onClick={onClose}>
+      <div className="small-dialog folder-browser-dialog" role="dialog" aria-modal="true" aria-label="Browse destination folder" onClick={(event) => event.stopPropagation()}>
+        <div className="dialog-header">
+          <div>
+            <p className="screen-kicker">Copy destination</p>
+            <h2>Browse folders</h2>
+          </div>
+          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close folder browser">
+            <X size={18} />
+          </button>
+        </div>
+        <form className="folder-browser-path-form" onSubmit={(event) => { event.preventDefault(); loadFolder(manualPath); }}>
+          <input value={manualPath} onChange={(event) => setManualPath(event.target.value)} placeholder="Type a folder path or network share" />
+          <button type="submit" className="btn btn-secondary" disabled={loading}>
+            {loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Open
+          </button>
+        </form>
+        {data.current_path && (
+          <div className="folder-current-path">
+            <span>{data.current_path}</span>
+            <button type="button" className="btn btn-primary" onClick={() => onSelect(data.current_path)}>
+              <CheckCircle2 size={15} /> Use this folder
+            </button>
+          </div>
+        )}
+        {error && <p className="dialog-error"><AlertTriangle size={14} /> {error}</p>}
+        <div className="folder-browser-grid">
+          <div>
+            <h3>Quick locations</h3>
+            <div className="folder-browser-list">
+              {roots.map((entry) => (
+                <button type="button" key={entry.path} onClick={() => loadFolder(entry.path)}>
+                  <HardDrive size={15} /> <span>{entry.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3>Folders</h3>
+            <div className="folder-browser-list">
+              {data.parent && (
+                <button type="button" onClick={() => loadFolder(data.parent)}>
+                  <Folder size={15} /> <span>..</span>
+                </button>
+              )}
+              {entries.map((entry) => (
+                <button type="button" key={entry.path} onClick={() => loadFolder(entry.path)}>
+                  <Folder size={15} /> <span>{entry.name}</span>
+                </button>
+              ))}
+              {!loading && !entries.length && !data.parent && (
+                <span className="folder-browser-empty">Choose a quick location or type a path.</span>
+              )}
+              {!loading && data.current_path && !entries.length && (
+                <span className="folder-browser-empty">No child folders.</span>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="dialog-actions">
+          <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
+          <button type="button" className="btn btn-primary" onClick={() => onSelect(data.current_path)} disabled={!data.current_path}>
+            <CheckCircle2 size={15} /> Select folder
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -6088,7 +6633,7 @@ const emptySettingsState = {
   library: { directory: '', directories: [''], showAdultMovies: true },
   appData: { user_data_dir: '', tmdb_cache_dir: '' },
   plex: { url: '', token: '' },
-  prowlarr: { url: '', key: '' },
+  prowlarr: { url: '', key: '', indexers: [], trusted_release_indexers: [] },
   qbittorrent: {
     mode: 'embedded',
     download_dir: '',
@@ -6104,7 +6649,7 @@ const emptySettingsState = {
     update_available: false
   },
   tmdb: { key: '', includeAdult: false },
-  ollama: { url: '', model: '' }
+  ollama: { url: '', model: '', candidateLimit: 15 }
 };
 
 function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
@@ -6113,6 +6658,7 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
   const [saving, setSaving] = useState({});
   const [statuses, setStatuses] = useState({});
   const [revealed, setRevealed] = useState({});
+  const [trustedIndexerDialogOpen, setTrustedIndexerDialogOpen] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -6140,10 +6686,19 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
           tmdb_cache_dir: appData.value.tmdb_cache_dir || ''
         } : { user_data_dir: '', tmdb_cache_dir: '' },
         plex: plex.status === 'fulfilled' ? { url: plex.value.url || '', token: plex.value.token || '' } : { url: '', token: '' },
-        prowlarr: prowlarr.status === 'fulfilled' ? { url: prowlarr.value.url || '', key: prowlarr.value.key || '' } : { url: '', key: '' },
+        prowlarr: prowlarr.status === 'fulfilled' ? {
+          url: prowlarr.value.url || '',
+          key: prowlarr.value.key || '',
+          indexers: prowlarr.value.indexers || [],
+          trusted_release_indexers: prowlarr.value.trusted_release_indexers || []
+        } : { url: '', key: '', indexers: [], trusted_release_indexers: [] },
         qbittorrent: qbittorrent.status === 'fulfilled' ? qbittorrent.value : emptySettingsState.qbittorrent,
         tmdb: tmdb.status === 'fulfilled' ? { key: tmdb.value.key || '', includeAdult: Boolean(tmdb.value.include_adult) } : { key: '', includeAdult: false },
-        ollama: ollama.status === 'fulfilled' ? { url: ollama.value.url || '', model: ollama.value.model || '' } : { url: '', model: '' }
+        ollama: ollama.status === 'fulfilled' ? {
+          url: ollama.value.url || '',
+          model: ollama.value.model || '',
+          candidateLimit: ollama.value.candidate_limit || 15
+        } : { url: '', model: '', candidateLimit: 15 }
       });
       const failed = requests.filter((request) => request.status === 'rejected');
       if (failed.length) {
@@ -6163,6 +6718,24 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
       ...state,
       [section]: { ...state[section], [field]: value }
     }));
+  }
+
+  function updateTrustedReleaseIndexer(indexerId, checked) {
+    setForms((state) => {
+      const current = new Set(state.prowlarr.trusted_release_indexers || []);
+      if (checked) {
+        current.add(indexerId);
+      } else {
+        current.delete(indexerId);
+      }
+      return {
+        ...state,
+        prowlarr: {
+          ...state.prowlarr,
+          trusted_release_indexers: Array.from(current)
+        }
+      };
+    });
   }
 
   function updateLibraryDirectory(index, value) {
@@ -6263,9 +6836,13 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
     };
     const payloads = {
       plex: { url: forms.plex.url, token: forms.plex.token },
-      prowlarr: { url: forms.prowlarr.url, key: forms.prowlarr.key },
+      prowlarr: {
+        url: forms.prowlarr.url,
+        key: forms.prowlarr.key,
+        trusted_release_indexers: forms.prowlarr.trusted_release_indexers || []
+      },
       tmdb: { key: forms.tmdb.key, include_adult: Boolean(forms.tmdb.includeAdult) },
-      ollama: { url: forms.ollama.url, model: forms.ollama.model }
+      ollama: { url: forms.ollama.url, model: forms.ollama.model, candidate_limit: Number(forms.ollama.candidateLimit || 15) }
     };
     setActionState(`${service}-save`, true);
     try {
@@ -6274,10 +6851,24 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payloads[service])
       });
+      if (service === 'prowlarr') {
+        const config = await fetchJson('/api/prowlarr/config');
+        setForms((state) => ({
+          ...state,
+          prowlarr: {
+            url: config.url || '',
+            key: config.key || '',
+            indexers: config.indexers || [],
+            trusted_release_indexers: config.trusted_release_indexers || []
+          }
+        }));
+      }
       setCardStatus(service, 'success', `${serviceLabel(service)} settings saved.`, 'Run Test to verify the saved connection.');
       notify(`${serviceLabel(service)} settings saved`);
+      return true;
     } catch (error) {
       setCardStatus(service, 'error', `${serviceLabel(service)} settings not saved.`, error.message);
+      return false;
     } finally {
       setActionState(`${service}-save`, false);
     }
@@ -6352,6 +6943,18 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
     } finally {
       setActionState(`plex-${action}`, false);
     }
+  }
+
+  function trustedIndexerSummary() {
+    const trustedIds = new Set((forms.prowlarr.trusted_release_indexers || []).map(String));
+    if (!trustedIds.size) return 'None trusted';
+    const names = (forms.prowlarr.indexers || [])
+      .filter((indexer) => trustedIds.has(String(indexer.id)))
+      .map((indexer) => indexer.name || `Indexer ${indexer.id}`);
+    if (!names.length) return `${trustedIds.size} trusted`;
+    if (names.length === 1) return `${names[0]} trusted`;
+    if (names.length === 2) return `${names.join(', ')} trusted`;
+    return `${names.length} trusted`;
   }
 
   const summary = [
@@ -6520,12 +7123,17 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
                 onReveal={() => setRevealed((state) => ({ ...state, prowlarr: !state.prowlarr }))}
                 onChange={(value) => updateField('prowlarr', 'key', value)}
               />
+              <p className="trusted-indexer-summary">
+                <span>Release watchlist trust</span>
+                <strong>{trustedIndexerSummary()}</strong>
+              </p>
             </>
           )}
           actions={(
             <>
               <ActionButton loading={saving['prowlarr-save']} icon={Save} label="Save Prowlarr" onClick={() => saveIntegration('prowlarr')} primary />
               <ActionButton loading={saving['prowlarr-test']} icon={PlugZap} label="Test saved" onClick={() => testIntegration('prowlarr')} />
+              <ActionButton loading={false} icon={ShieldCheck} label="Trusted indexers" onClick={() => setTrustedIndexerDialogOpen(true)} />
             </>
           )}
         />
@@ -6640,6 +7248,18 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
                 <span>Model</span>
                 <input value={forms.ollama.model || ''} onChange={(event) => updateField('ollama', 'model', event.target.value)} placeholder="llama3" />
               </label>
+              <label className="dialog-field">
+                <span>AI candidate limit</span>
+                <input
+                  type="number"
+                  min="1"
+                  max="50"
+                  step="1"
+                  value={forms.ollama.candidateLimit || 15}
+                  onChange={(event) => updateField('ollama', 'candidateLimit', event.target.value)}
+                />
+                <small>CP asks Ollama for this many candidates, then validates them with TMDB. Final results may be fewer after duplicates, TV entries, or unresolved titles are removed. Allowed range: 1-50.</small>
+              </label>
             </>
           )}
           actions={(
@@ -6650,7 +7270,71 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
           )}
         />
       </div>
+      {trustedIndexerDialogOpen ? (
+        <TrustedIndexerDialog
+          prowlarr={forms.prowlarr}
+          saving={Boolean(saving['prowlarr-save'])}
+          onToggle={updateTrustedReleaseIndexer}
+          onSave={() => saveIntegration('prowlarr')}
+          onClose={() => setTrustedIndexerDialogOpen(false)}
+        />
+      ) : null}
     </section>
+  );
+}
+
+function TrustedIndexerDialog({ prowlarr, saving, onToggle, onSave, onClose }) {
+  const indexers = prowlarr.indexers || [];
+  const trustedIds = prowlarr.trusted_release_indexers || [];
+
+  async function saveAndClose() {
+    const saved = await onSave();
+    if (saved) onClose();
+  }
+
+  return (
+    <div className="modal-backdrop trusted-indexer-backdrop" role="presentation" onClick={onClose}>
+      <section className="small-dialog trusted-indexer-dialog" role="dialog" aria-modal="true" aria-label="Trusted release watchlist indexers" onClick={(event) => event.stopPropagation()}>
+        <header className="dialog-header">
+          <div>
+            <p className="screen-kicker">Prowlarr</p>
+            <h2>Trusted release watchlist indexers</h2>
+          </div>
+          <button type="button" className="icon-button" onClick={onClose} aria-label="Close trusted indexers">
+            <X size={20} />
+          </button>
+        </header>
+        <p className="trusted-indexer-detail">Only selected indexers can mark followed movies as Available. Normal Discover and torrent search still use Prowlarr normally.</p>
+        <div className="settings-checkbox-group trusted-indexer-list">
+          {indexers.length ? (
+            indexers.map((indexer) => (
+              <label className="settings-checkbox-field" key={indexer.id}>
+                <input
+                  type="checkbox"
+                  checked={trustedIds.includes(String(indexer.id))}
+                  onChange={(event) => onToggle(String(indexer.id), event.target.checked)}
+                />
+                <span>
+                  <strong>{indexer.name || `Indexer ${indexer.id}`}</strong>
+                  <small>{/yts|yify/i.test(indexer.name || '') ? 'Default trusted release source.' : 'Manual trust for followed-release availability.'}</small>
+                </span>
+              </label>
+            ))
+          ) : (
+            <p className="settings-empty-note">Save and test Prowlarr to load enabled indexers. No trusted indexers selected.</p>
+          )}
+          {indexers.length && !trustedIds.length ? (
+            <p className="settings-empty-note">No trusted indexers selected. Followed releases will stay Watching.</p>
+          ) : null}
+        </div>
+        <div className="dialog-actions">
+          <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
+          <button type="button" className="btn btn-primary" onClick={saveAndClose} disabled={saving}>
+            {saving ? <Loader2 size={15} className="spin" /> : <Save size={15} />} Save trusted indexers
+          </button>
+        </div>
+      </section>
+    </div>
   );
 }
 

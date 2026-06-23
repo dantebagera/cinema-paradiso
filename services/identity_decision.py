@@ -103,6 +103,74 @@ def _dominates_same_identity_candidates(top, ranked, provider):
     return top_signal >= 100 and top_signal >= max(1, rival_signal) * 5
 
 
+def _local_exact_title_year_sources(candidate, queries):
+    return {
+        str(query.get("source") or "")
+        for query in (queries or [])
+        if query.get("source") in {"filename", "folder", "plex_hint"}
+        and _exact_title_year(query, candidate)
+    }
+
+
+def _has_filename_or_folder_and_plex_agreement(candidate, queries):
+    sources = _local_exact_title_year_sources(candidate, queries)
+    return "plex_hint" in sources and bool(sources & {"filename", "folder"})
+
+
+def _plex_agreement_overrides_low_rivals(top, rivals, queries):
+    top = dict(top or {})
+    rivals = [dict(candidate or {}) for candidate in (rivals or [])]
+    if not top or not rivals:
+        return False
+    if not _has_filename_or_folder_and_plex_agreement(top, queries):
+        return False
+    if int(top.get("provider_rank", 0) or 0) != 1:
+        return False
+    top_sources = set(top.get("query_sources") or [])
+    if not {"title_with_year", "title_without_year"}.issubset(top_sources):
+        return False
+    top_signal = _provider_signal(top, "tmdb")
+    if top_signal < 50:
+        return False
+    for rival in rivals:
+        rival_signal = _provider_signal(rival, "tmdb")
+        rival_rank = int(rival.get("provider_rank", 999) or 999)
+        if rival_rank == 1:
+            return False
+        if rival_signal > top_signal:
+            return False
+        if rival_signal >= 100 and top_signal < rival_signal * 2:
+            return False
+    return True
+
+
+def _dominates_exact_title_year_rivals(top, rivals, queries=None):
+    top = dict(top or {})
+    rivals = [dict(candidate or {}) for candidate in (rivals or [])]
+    if not top or not rivals:
+        return True
+    if int(top.get("provider_rank", 0) or 0) != 1:
+        return False
+    top_sources = set(top.get("query_sources") or [])
+    if not {"title_with_year", "title_without_year"}.issubset(top_sources):
+        return False
+    top_signal = _provider_signal(top, "tmdb")
+    if top_signal <= 0:
+        return False
+
+    for rival in rivals:
+        rival_signal = _provider_signal(rival, "tmdb")
+        rival_rank = int(rival.get("provider_rank", 999) or 999)
+        if rival_signal == 0:
+            continue
+        if rival_rank >= 5 and top_signal >= rival_signal:
+            continue
+        if top_signal >= rival_signal * 5:
+            continue
+        return False
+    return True
+
+
 def classify_audit_decision(current, queries, ranked, provider):
     current = dict(current or {})
     ranked = list(ranked or [])
@@ -243,6 +311,28 @@ def decide_identity(queries, candidates, known_identity=None):
         chosen = next(candidate for candidate in exact_year if _candidate_identity_key(candidate) in exact_year_ids)
         return _result("accepted", ranked, queries, True, chosen)
     if len(exact_year_ids) > 1:
+        chosen = exact_year[0]
+        rivals = [
+            candidate for candidate in exact_year
+            if _candidate_identity_key(candidate) != _candidate_identity_key(chosen)
+        ]
+        if _dominates_exact_title_year_rivals(chosen, rivals):
+            return _result(
+                "accepted", ranked, queries, True, chosen,
+                reasons=[
+                    "dominant exact title and year match",
+                    *list(chosen.get("reasons") or []),
+                ],
+            )
+        if _plex_agreement_overrides_low_rivals(chosen, rivals, queries):
+            return _result(
+                "accepted", ranked, queries, True, chosen,
+                reasons=[
+                    "filename and Plex agree",
+                    "rank one exact title and year match",
+                    *list(chosen.get("reasons") or []),
+                ],
+            )
         return _result(
             "review", ranked, queries, candidate=exact_year[0],
             reasons=["multiple provider identities have the same exact title and year"],
