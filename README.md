@@ -16,13 +16,13 @@ Everything runs on your machine. No cloud account. No subscription. No remote da
 
 ![Cinema Paradiso Home](screenshots/react-home-desktop.png)
 
-### Library Movie View
+### Library
 
-![Library Movie View](screenshots/react-library-movie-view.png)
+![Cinema Paradiso Library](screenshots/react-library-movie-view.png)
 
-### Library File View
+### Cleanup
 
-![Library File View](screenshots/react-library-file-view.png)
+![Cleanup Workspace](screenshots/react-cleanup-desktop.png)
 
 ### Discover Movies
 
@@ -31,6 +31,22 @@ Everything runs on your machine. No cloud account. No subscription. No remote da
 ### Browse Indexers
 
 ![Browse Indexers](screenshots/react-discover-browse-loaded.png)
+
+### Ask AI
+
+![Ask AI Recommendations](screenshots/react-discover-ask-ai.png)
+
+### Downloads
+
+![Downloads Workspace](screenshots/react-downloads-desktop.png)
+
+### Help
+
+![Cinema Paradiso Help](screenshots/react-help-desktop.png)
+
+### Settings
+
+![Cinema Paradiso Settings](screenshots/react-settings-desktop.png)
 
 ### Styleguide
 
