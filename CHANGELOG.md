@@ -1,5 +1,33 @@
 # Changelog
 
+## v2.6.6 - July 2026
+
+Cinema Paradiso v2.6.6 polishes the movie-card experience, trailer playback, streaming configuration, and unreleased-movie handling while keeping the local-first v2.6 architecture.
+
+### Added
+
+- Unified movie-card component shared across Library, Discover, Ask AI, collection/person views, and expanded details.
+- In-app trailer modal with embedded YouTube playback and fullscreen support.
+- Streaming configuration API and Settings controls for enable/disable, action label, and URL template.
+- Unreleased-movie release-date labels for Discover/Home cards and selected movie details.
+
+### Changed
+
+- Movie posters use uncropped contain framing with stronger card sizing, cleaner expanded layouts, and top-right expanded ratings.
+- Discover and Home hide stream/source actions for unreleased unowned movies while still allowing indexer browsing where appropriate.
+- TMDB detail and collection transforms preserve runtime, release date, director, cast, collection metadata, trailer URL, and card-ready fields more consistently.
+
+### Fixed
+
+- Fresh Discover searches now clear stale cards before fetching and ignore older in-flight responses.
+- Duplicate TMDB rows in Discover use stable position-aware keys.
+- Cached TMDB details without release dates are refetched so unreleased gates and detail panels have current release data.
+
+### Notes
+
+- qBittorrent remains the bundled tested runtime path; install/update controls stay disabled in this release.
+- v2.6.5 remains the previous public rollback point before the card/trailer/streaming polish release.
+
 ## v2.6.5 - June 2026
 
 Cinema Paradiso v2.6.5 improves large-library metadata matching, followed-release availability, and bulk list workflows while keeping the local-first v2.6 architecture.

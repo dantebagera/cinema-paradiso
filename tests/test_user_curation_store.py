@@ -183,16 +183,68 @@ class UserCurationStoreTest(unittest.TestCase):
     def test_followed_releases_can_be_added_updated_and_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
             store = app.UserCurationStore(Path(tmp))
-            movie = {"tmdb_id": "945961", "title": "Alien: Romulus", "year": "2024", "poster_url": "poster-a"}
+            movie = {
+                "tmdb_id": "945961",
+                "title": "Alien: Romulus",
+                "year": "2024",
+                "release_date": "2024-08-13",
+                "poster_url": "poster-a",
+            }
 
             followed = store.follow_movie(movie)
             updated = store.follow_movie({**movie, "poster_url": "poster-b"})
 
             self.assertEqual(followed["status"], "watching")
             self.assertEqual(updated["poster_url"], "poster-b")
+            self.assertEqual(updated["release_date"], "2024-08-13")
             self.assertEqual(len(store.followed_all()), 1)
             self.assertTrue(store.unfollow_movie(movie))
             self.assertEqual(store.followed_all(), [])
+
+    def test_followed_release_check_backfills_missing_release_date(self):
+        original_user_data_dir = app._user_data_dir
+        with tempfile.TemporaryDirectory() as tmp:
+            app._user_data_dir = tmp
+            try:
+                store = app._curation_store()
+                store.follow_movie({
+                    "tmdb_id": "1368337",
+                    "title": "The Odyssey",
+                    "year": "2026",
+                    "poster_url": "poster-a",
+                })
+
+                with patch("app._find_owned_movie", return_value=None), \
+                     patch("app._find_best_followed_release", return_value=None), \
+                     patch("app._fetch_tmdb_metadata_by_id", return_value={"release_date": "2026-07-15"}):
+                    checked = app._check_followed_releases()
+            finally:
+                app._user_data_dir = original_user_data_dir
+
+        self.assertEqual(checked["movies"][0]["release_date"], "2026-07-15")
+        self.assertEqual(checked["movies"][0]["status"], "watching")
+
+    def test_followed_releases_get_backfills_missing_release_date_without_release_check(self):
+        original_user_data_dir = app._user_data_dir
+        with tempfile.TemporaryDirectory() as tmp:
+            app._user_data_dir = tmp
+            try:
+                store = app._curation_store()
+                store.follow_movie({
+                    "tmdb_id": "1368337",
+                    "title": "The Odyssey",
+                    "year": "2026",
+                    "poster_url": "poster-a",
+                })
+
+                with patch("app._fetch_tmdb_metadata_by_id", return_value={"release_date": "2026-07-15"}):
+                    response = app.app.test_client().get("/api/user/followed-releases")
+            finally:
+                app._user_data_dir = original_user_data_dir
+
+        self.assertEqual(response.status_code, 200)
+        movie = response.get_json()["movies"][0]
+        self.assertEqual(movie["release_date"], "2026-07-15")
 
     def test_followed_release_quality_gate_rejects_camera_rips(self):
         self.assertIsNone(app._proper_release_from_title("New Movie 2026 1080p HDCAM"))

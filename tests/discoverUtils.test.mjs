@@ -89,7 +89,7 @@ test('sortTorrentVariants prioritizes quality then seeders', () => {
 
 test('discoverMoviePayload supports online movies and owned paths', () => {
   const payload = discoverMoviePayload(
-    { tmdb_id: 155, title: 'The Dark Knight', year: '2008', poster_url: 'poster.jpg' },
+    { tmdb_id: 155, title: 'The Dark Knight', year: '2008', release_date: '2008-07-18', poster_url: 'poster.jpg' },
     { path: 'E:/Movies/The Dark Knight.mkv' }
   );
 
@@ -99,6 +99,7 @@ test('discoverMoviePayload supports online movies and owned paths', () => {
     plex_guid: '',
     title: 'The Dark Knight',
     year: '2008',
+    release_date: '2008-07-18',
     poster_url: 'poster.jpg',
     path: 'E:/Movies/The Dark Knight.mkv'
   });

@@ -199,6 +199,118 @@ class IdentityDecisionServiceTest(unittest.TestCase):
         self.assertEqual(decision["status"], "review")
         self.assertFalse(decision["automatic"])
 
+    def test_dominant_real_tmdb_candidate_beats_weak_duplicate_pages(self):
+        decision = decide_identity(
+            [{"title": "Obsession", "year": "2025", "source": "filename"}],
+            [
+                {
+                    "tmdb_id": "1339713",
+                    "title": "Obsession",
+                    "year": "2026",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 1046,
+                    "popularity": 95,
+                    "poster_path": "/real.jpg",
+                    "overview": "A real release with normal metadata.",
+                    "runtime": 98,
+                    "imdb_id": "tt3000000",
+                    "query_sources": ["filename", "title_without_year"],
+                },
+                {
+                    "tmdb_id": "1436161",
+                    "title": "Obsession",
+                    "year": "2025",
+                    "provider_rank": 3,
+                    "tmdb_vote_count": 0,
+                    "popularity": 1,
+                    "poster_path": "",
+                    "overview": "",
+                    "query_sources": ["filename", "title_with_year"],
+                },
+                {
+                    "tmdb_id": "1502633",
+                    "title": "Obsession",
+                    "year": "2025",
+                    "provider_rank": 5,
+                    "tmdb_vote_count": 1,
+                    "popularity": 1,
+                    "poster_path": "",
+                    "overview": "",
+                    "query_sources": ["filename", "title_with_year"],
+                },
+            ],
+        )
+
+        self.assertEqual(decision["status"], "accepted")
+        self.assertTrue(decision["automatic"])
+        self.assertEqual(decision["candidate"]["tmdb_id"], "1339713")
+
+    def test_plex_tmdb_agreement_accepts_one_year_filename_difference(self):
+        decision = decide_identity(
+            [
+                {"title": "Obsession", "year": "2025", "source": "filename"},
+                {"title": "Obsession", "year": "2026", "source": "plex_hint"},
+            ],
+            [
+                {
+                    "tmdb_id": "1339713",
+                    "title": "Obsession",
+                    "year": "2026",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 1046,
+                    "popularity": 95,
+                    "poster_path": "/real.jpg",
+                    "overview": "A real release with normal metadata.",
+                    "query_sources": ["plex_hint", "title_with_year", "title_without_year"],
+                },
+                {
+                    "tmdb_id": "1436161",
+                    "title": "Obsession",
+                    "year": "2025",
+                    "provider_rank": 3,
+                    "tmdb_vote_count": 0,
+                    "popularity": 1,
+                    "poster_path": "",
+                    "overview": "",
+                    "query_sources": ["filename", "title_with_year"],
+                },
+            ],
+        )
+
+        self.assertEqual(decision["status"], "accepted")
+        self.assertTrue(decision["automatic"])
+        self.assertEqual(decision["candidate"]["tmdb_id"], "1339713")
+
+    def test_plex_imdb_identity_accepts_matching_tmdb_candidate(self):
+        decision = decide_identity(
+            [
+                {"title": "Obsession", "year": "2025", "source": "filename"},
+                {"title": "Obsession", "year": "2026", "source": "plex_hint"},
+            ],
+            [
+                {
+                    "tmdb_id": "1339713",
+                    "imdb_id": "tt3000000",
+                    "title": "Obsession",
+                    "year": "2026",
+                    "provider_rank": 1,
+                    "query_sources": ["plex_hint", "title_with_year"],
+                },
+                {
+                    "tmdb_id": "1436161",
+                    "title": "Obsession",
+                    "year": "2025",
+                    "provider_rank": 3,
+                    "query_sources": ["filename", "title_with_year"],
+                },
+            ],
+            known_identity={"imdb_id": "tt3000000"},
+        )
+
+        self.assertEqual(decision["status"], "accepted")
+        self.assertTrue(decision["automatic"])
+        self.assertEqual(decision["candidate"]["tmdb_id"], "1339713")
+
     def test_plex_and_filename_agreement_accepts_rank_one_over_low_vote_duplicate(self):
         decision = decide_identity(
             [

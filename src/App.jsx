@@ -41,7 +41,7 @@ import {
   Wand2,
   X
 } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import headerCropUrl from './assets/header.png';
 import logoUrl from './assets/logo.svg';
 import motifCropUrl from './assets/styleguide-motif-crop.png';
@@ -50,6 +50,7 @@ import IdentityReviewPanel from './components/IdentityReviewPanel.jsx';
 import MetadataCorrectionModal from './components/MetadataCorrectionModal.jsx';
 import PosterEditorModal from './components/PosterEditorModal.jsx';
 import { SmartMatchControls, SmartMatchReviewModal } from './components/SmartMatchPanel.jsx';
+import { UnifiedMovieCard } from './components/movie-card/MovieCard.jsx';
 import {
   cx,
   formatCount,
@@ -57,9 +58,13 @@ import {
   movieKey,
   sectionFromPath,
   sortFollowedReleases,
+  buildStreamTemplateUrl,
+  streamTemplateTokens,
+  toYouTubeEmbedUrl,
   topBarSearchEnabled,
   torrentPrimaryAction,
-  torrentSizeBytes
+  torrentSizeBytes,
+  youtubeTrailerSearchUrl
 } from './utils/appUtils.js';
 import {
   filterIdentityReviewItems,
@@ -226,6 +231,32 @@ async function fetchJson(url, options) {
   return data;
 }
 
+function localDateString(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function isUnreleasedMovie(movie) {
+  const releaseDate = String(movie?.release_date || '').trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(releaseDate)) return false;
+  return releaseDate > localDateString();
+}
+
+const RELEASE_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function formatReleaseDateLabel(value) {
+  const releaseDate = String(value || '').trim();
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(releaseDate);
+  if (!match) return '';
+  const [, year, month, day] = match;
+  const monthIndex = Number(month) - 1;
+  const dayNumber = Number(day);
+  if (monthIndex < 0 || monthIndex > 11 || dayNumber < 1 || dayNumber > 31) return '';
+  return `${RELEASE_MONTHS[monthIndex]} ${dayNumber}, ${year}`;
+}
+
 async function addMoviePayloadsIndividually(listId, movies) {
   for (const movie of movies || []) {
     await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
@@ -267,7 +298,192 @@ function SelectionCheckbox({ checked, onChange, label, className }) {
   );
 }
 
+function CardLab() {
+  const compactCards = cardLabMovies.filter((movie) => !movie.expanded);
+  const expandedCards = cardLabMovies.filter((movie) => movie.expanded);
+
+  return (
+    <main className="card-lab-page">
+      <section className="card-lab-hero">
+        <div>
+          <span className="card-lab-kicker">Internal prototype</span>
+          <h1>Unified movie card anatomy</h1>
+          <p>
+            Static design lab for comparing owned, low-quality, discover, and indexer states before production cards are changed.
+          </p>
+        </div>
+        <div className="card-lab-legend" aria-label="Card anatomy">
+          {['Poster', 'Title', 'Metadata chips', 'Plot', 'People', 'Actions'].map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      </section>
+
+      <CardLabSection title="Compact Cards" description="Same footprint and hierarchy with state-specific actions only.">
+        <div className="card-lab-grid card-lab-grid-compact">
+          {compactCards.map((movie) => (
+            <CardLabMovieCard key={movie.id} movie={movie} />
+          ))}
+        </div>
+      </CardLabSection>
+
+      <CardLabSection title="Expanded Cards" description="Larger poster, readable plot, compact metadata, and stronger people presentation.">
+        <div className="card-lab-grid card-lab-grid-expanded">
+          {expandedCards.map((movie) => (
+            <CardLabMovieCard key={movie.id} movie={movie} expanded />
+          ))}
+        </div>
+      </CardLabSection>
+    </main>
+  );
+}
+
+function CardLabSection({ title, description, children }) {
+  return (
+    <section className="card-lab-section">
+      <div className="card-lab-section-heading">
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function CardLabMovieCard({ movie, expanded = false }) {
+  const actionIcons = {
+    Play,
+    Trailer: Clapperboard,
+    'Find sources': Search,
+    Upgrade: Wand2,
+    Follow: Bookmark,
+    Torrent: Download,
+    Details: Info
+  };
+
+  return (
+    <article className={cx('card-lab-card', expanded && 'card-lab-expanded', `card-lab-status-${movie.statusTone}`)}>
+      <div className="card-lab-poster">
+        {movie.poster ? <img src={movie.poster} alt={`${movie.title} poster`} /> : <CardLabPosterFallback title={movie.title} />}
+      </div>
+
+      <div className="card-lab-content">
+        <header className="card-lab-card-header">
+          <div>
+            <h3>{movie.title}</h3>
+            <div className="card-lab-subline">
+              <span>{movie.year}</span>
+              <span><Star size={15} /> {movie.rating}</span>
+            </div>
+          </div>
+          <span className="card-lab-status">{movie.status}</span>
+        </header>
+
+        <div className="card-lab-chip-row" aria-label="Movie metadata">
+          {movie.metadata.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+
+        <p className="card-lab-plot">{movie.plot}</p>
+
+        {expanded && (
+          <div className="card-lab-expanded-body">
+            <div className="card-lab-director">
+              <span className="card-lab-label">Director</span>
+              <button type="button" className="card-lab-person-card">
+                <CardLabAvatar person={movie.director} />
+                <span>
+                  <strong>{movie.director.name}</strong>
+                  <small>{movie.director.role}</small>
+                </span>
+              </button>
+            </div>
+
+            <div className="card-lab-cast">
+              <span className="card-lab-label">Top cast</span>
+              <div className="card-lab-cast-grid">
+                {movie.cast.slice(0, 6).map((person) => (
+                  <button type="button" className="card-lab-cast-person" key={`${movie.id}-${person.name}`}>
+                    <CardLabAvatar person={person} />
+                    <span>
+                      <strong>{person.name}</strong>
+                      <small>{person.role}</small>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="card-lab-collection">
+              <Film size={16} />
+              <span>{movie.collection}</span>
+            </div>
+          </div>
+        )}
+
+        {!expanded && (
+          <div className="card-lab-mini-people">
+            <CardLabAvatar person={movie.director} />
+            {movie.cast.slice(0, 3).map((person) => <CardLabAvatar key={person.name} person={person} />)}
+          </div>
+        )}
+
+        <div className="card-lab-actions">
+          {movie.actions.map((action) => {
+            const Icon = actionIcons[action] || Info;
+            return (
+              <button type="button" key={action} className={cx('card-lab-action', action === 'Upgrade' && 'card-lab-action-warning', action === 'Play' && 'card-lab-action-primary')}>
+                <Icon size={16} />
+                <span>{action}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function CardLabAvatar({ person }) {
+  const initials = String(person?.name || '?')
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
+
+  return (
+    <span className="card-lab-avatar" aria-hidden="true">
+      <span>{initials}</span>
+      {person?.photo ? (
+        <img
+          src={person.photo}
+          alt=""
+          onError={(event) => {
+            event.currentTarget.style.display = 'none';
+          }}
+        />
+      ) : null}
+    </span>
+  );
+}
+
+function CardLabPosterFallback({ title }) {
+  return (
+    <div className="card-lab-poster-fallback">
+      <Film size={34} />
+      <span>{title}</span>
+    </div>
+  );
+}
+
 function App() {
+  if (typeof window !== 'undefined' && window.location.pathname === '/card-lab') {
+    return <CardLab />;
+  }
+
   if (typeof window !== 'undefined' && window.location.pathname === '/styleguide') {
     return <StyleGuide />;
   }
@@ -289,6 +505,13 @@ function ArchiveApp() {
   const [loading, setLoading] = useState({ stats: true, movies: true });
   const [toast, setToast] = useState(null);
   const [torrentModal, setTorrentModal] = useState(null);
+  const [trailerModal, setTrailerModal] = useState(null);
+  const [streamModal, setStreamModal] = useState(null);
+  const [streamingConfig, setStreamingConfig] = useState({
+    enabled: true,
+    label: 'Stream',
+    url_template: 'https://streamimdb.ru/embed/movie/{tmdb_id}'
+  });
   const [posterEditor, setPosterEditor] = useState(null);
   const [libraryQuery, setLibraryQuery] = useState('');
   const [discoverQuery, setDiscoverQuery] = useState('');
@@ -491,8 +714,23 @@ function ArchiveApp() {
     };
   }, [selectedMovie, details]);
 
-  const selectedOwnership = selectedMovie ? ownedMovieFor(selectedMovie, ownership) : null;
   const selectedDetails = selectedMovie?.tmdb_id ? details[selectedMovie.tmdb_id] : null;
+  const selectedMovieWithDetails = selectedMovie ? { ...selectedMovie, release_date: selectedMovie.release_date || selectedDetails?.release_date || '' } : null;
+  const selectedOwnership = selectedMovieWithDetails ? ownedMovieFor(selectedMovieWithDetails, ownership) : null;
+  const streamingAvailable = Boolean(streamingConfig.enabled && String(streamingConfig.url_template || '').trim());
+  const streamingLabel = String(streamingConfig.label || '').trim() || 'Stream';
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchJson('/api/streaming/config')
+      .then((config) => {
+        if (!cancelled) setStreamingConfig(config);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     function handlePopState() {
@@ -524,7 +762,7 @@ function ArchiveApp() {
   async function toggleFollow(movie) {
     const key = movieKey(movie);
     const existing = followed.find((item) => movieKey(item) === key);
-    const payload = { title: movie.title, year: movie.year, tmdb_id: movie.tmdb_id, poster_url: movie.poster_url };
+    const payload = { title: movie.title, year: movie.year, tmdb_id: movie.tmdb_id, poster_url: movie.poster_url, release_date: movie.release_date || '' };
     try {
       const data = await fetchJson('/api/user/followed-releases', {
         method: existing ? 'DELETE' : 'POST',
@@ -552,14 +790,39 @@ function ArchiveApp() {
   }
 
   async function streamMovie(movie) {
-    if (!movie.tmdb_id) return;
+    const template = String(streamingConfig.url_template || '').trim();
+    if (!streamingConfig.enabled || !template) return;
     try {
-      const data = await fetchJson(`/api/tmdb/imdb_id?tmdb_id=${encodeURIComponent(movie.tmdb_id)}`);
-      if (data.imdb_id) window.open(`https://www.playimdb.com/title/${data.imdb_id}`, '_blank', 'noopener,noreferrer');
-      else notify('No IMDB stream id found for this movie', 'error');
+      const ids = {
+        tmdb_id: movie?.tmdb_id,
+        imdb_id: movie?.imdb_id
+      };
+      if (streamTemplateTokens(template).includes('imdb_id') && !ids.imdb_id) {
+        if (!ids.tmdb_id) throw new Error('Missing TMDB ID for IMDB lookup');
+        const data = await fetchJson(`/api/tmdb/imdb_id?tmdb_id=${encodeURIComponent(ids.tmdb_id)}`);
+        ids.imdb_id = data.imdb_id;
+      }
+      const embedUrl = buildStreamTemplateUrl(template, ids);
+      setStreamModal({
+        title: movie?.title || streamingLabel,
+        year: movie?.year || '',
+        embedUrl
+      });
     } catch (error) {
-      notify(`Stream lookup failed: ${error.message}`, 'error');
+      notify(`Stream unavailable: ${error.message}`, 'error');
     }
+  }
+
+  function openTrailerModal(movie, trailerUrl = '') {
+    const title = movie?.title || 'Trailer';
+    const year = movie?.year || '';
+    setTrailerModal({
+      title,
+      year,
+      sourceUrl: trailerUrl,
+      embedUrl: toYouTubeEmbedUrl(trailerUrl),
+      searchUrl: youtubeTrailerSearchUrl(title, year)
+    });
   }
 
   async function findTorrent(movie, upgrade = false) {
@@ -628,7 +891,7 @@ function ArchiveApp() {
             ownership={ownership}
             followed={followed}
             followedChecking={followedChecking}
-            selectedMovie={selectedMovie}
+            selectedMovie={selectedMovieWithDetails}
             selectedOwnership={selectedOwnership}
             selectedDetails={selectedDetails}
             onSelectSection={selectSection}
@@ -636,7 +899,10 @@ function ArchiveApp() {
             onSelectMovie={setSelectedMovie}
             onPlay={playLocal}
             onStream={streamMovie}
+            streamingAvailable={streamingAvailable}
+            streamingLabel={streamingLabel}
             onFindTorrent={findTorrent}
+            onTrailer={openTrailerModal}
             onFollow={toggleFollow}
             userLists={homeLists}
             onToggleSystemList={toggleHomeSystemList}
@@ -646,6 +912,7 @@ function ArchiveApp() {
           <LibraryWorkspace
             onPlay={playLocal}
             onFindTorrent={findTorrent}
+            onOpenTrailer={openTrailerModal}
             notify={notify}
             query={libraryQuery}
             setQuery={setLibraryQuery}
@@ -657,7 +924,10 @@ function ArchiveApp() {
             notify={notify}
             onPlay={playLocal}
             onStream={streamMovie}
+            streamingAvailable={streamingAvailable}
+            streamingLabel={streamingLabel}
             onFindTorrent={findTorrent}
+            onOpenTrailer={openTrailerModal}
             onManualTorrentSearch={searchTorrents}
             onFollow={toggleFollow}
             tmdbQuery={discoverQuery}
@@ -682,6 +952,7 @@ function ArchiveApp() {
             onReviewUnmatched={reviewUnmatchedMetadata}
             onReviewIdentities={() => openCleanupTab('identity')}
             onHealthChanged={refreshHealthStats}
+            onStreamingConfigChanged={setStreamingConfig}
           />
         )}
       </main>
@@ -695,6 +966,18 @@ function ArchiveApp() {
           state={torrentModal}
           notify={notify}
           onClose={() => setTorrentModal(null)}
+        />
+      )}
+      {trailerModal && (
+        <TrailerModal
+          state={trailerModal}
+          onClose={() => setTrailerModal(null)}
+        />
+      )}
+      {streamModal && (
+        <StreamPlayerModal
+          state={streamModal}
+          onClose={() => setStreamModal(null)}
         />
       )}
       {posterEditor && (
@@ -833,6 +1116,77 @@ function TorrentActions({ variant, movieTitle, movieYear, notify, primary = fals
         </a>
       ) : null}
       {action.kind === 'none' ? <span className="torrent-no-link">No link</span> : null}
+    </div>
+  );
+}
+
+function TrailerModal({ state, onClose }) {
+  const { title, year, embedUrl, searchUrl } = state;
+  const titleLabel = [title, year].filter(Boolean).join(' ');
+
+  return (
+    <div className="modal-backdrop trailer-backdrop" role="presentation" onClick={onClose}>
+      <section className="trailer-dialog" role="dialog" aria-modal="true" aria-label={`Trailer for ${titleLabel}`} onClick={(event) => event.stopPropagation()}>
+        <div className="dialog-header trailer-dialog-header">
+          <div>
+            <p className="screen-kicker">Trailer</p>
+            <h2>{titleLabel}</h2>
+          </div>
+          <button type="button" className="inspector-close" onClick={onClose} aria-label="Stop trailer">
+            <X size={18} />
+          </button>
+        </div>
+        {embedUrl ? (
+          <div className="trailer-player-shell">
+            <iframe
+              key={embedUrl}
+              title={`${titleLabel} trailer`}
+              src={embedUrl}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        ) : (
+          <div className="trailer-missing">
+            <Film size={32} />
+            <h3>No embeddable trailer found</h3>
+            <p>YouTube search results cannot be embedded as a player, but you can open the search externally.</p>
+            <a className="btn btn-secondary" href={searchUrl} target="_blank" rel="noreferrer">
+              <ExternalLink size={15} /> Open YouTube search
+            </a>
+          </div>
+        )}
+      </section>
+    </div>
+  );
+}
+
+function StreamPlayerModal({ state, onClose }) {
+  const { title, year, embedUrl } = state;
+  const titleLabel = [title, year].filter(Boolean).join(' ');
+
+  return (
+    <div className="modal-backdrop trailer-backdrop" role="presentation" onClick={onClose}>
+      <section className="trailer-dialog stream-dialog" role="dialog" aria-modal="true" aria-label={`Stream ${titleLabel}`} onClick={(event) => event.stopPropagation()}>
+        <div className="dialog-header trailer-dialog-header">
+          <div>
+            <p className="screen-kicker">Streaming</p>
+            <h2>{titleLabel}</h2>
+          </div>
+          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close stream">
+            <X size={18} />
+          </button>
+        </div>
+        <div className="trailer-player-shell stream-player-shell">
+          <iframe
+            key={embedUrl}
+            title={`${titleLabel} stream`}
+            src={embedUrl}
+            allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+            allowFullScreen
+          />
+        </div>
+      </section>
     </div>
   );
 }
@@ -1288,7 +1642,7 @@ const manualSections = [
         items: [
           'It will not guess secret API keys or Plex tokens.',
           'It will not automatically install optional services like Plex, Prowlarr, TMDB accounts, or Ollama.',
-          'It will not auto-update bundled qBittorrent in version 2.6.5.'
+          'It will not auto-update bundled qBittorrent in version 2.6.6.'
         ]
       },
       {
@@ -1331,6 +1685,161 @@ const manualSections = [
         ]
       }
     ]
+  }
+];
+
+const cardLabMovies = [
+  {
+    id: 'owned-compact',
+    section: 'Compact Cards',
+    title: 'Interstellar',
+    year: '2014',
+    rating: '8.7',
+    status: 'Owned',
+    statusTone: 'owned',
+    poster: 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+    plot: 'A pilot crosses space and time to find a future for humanity while the life he left behind keeps slipping away.',
+    metadata: ['1080p', 'BluRay', 'EN', 'US', 'Sci-Fi', 'Adventure'],
+    director: { name: 'Christopher Nolan', role: 'Director', photo: 'https://image.tmdb.org/t/p/w185/xuAIuYSmsUzKlUMBFGVZaWsY3DZ.jpg' },
+    cast: [
+      { name: 'Matthew McConaughey', role: 'Cooper', photo: 'https://image.tmdb.org/t/p/w185/wJiGedOCZhwMx9DezY8uwbNxmAY.jpg' },
+      { name: 'Anne Hathaway', role: 'Brand', photo: 'https://image.tmdb.org/t/p/w185/s6tflSD20MGz04ZR2R1lZvhmC4Y.jpg' },
+      { name: 'Jessica Chastain', role: 'Murph', photo: 'https://image.tmdb.org/t/p/w185/lodMzLKSdrPcBry6TdoDsMN3Vge.jpg' }
+    ],
+    collection: 'Nolan science fiction shelf',
+    actions: ['Play', 'Trailer', 'Find sources', 'Details']
+  },
+  {
+    id: 'upgrade-compact',
+    section: 'Compact Cards',
+    title: 'Princess Mononoke',
+    year: '1997',
+    rating: '8.3',
+    status: 'Low quality',
+    statusTone: 'warning',
+    poster: 'https://image.tmdb.org/t/p/w500/cMYCDADoLKLbB83g4WnJegaZimC.jpg',
+    plot: 'A prince enters a war between forest spirits and humans, where survival depends on seeing both wounds clearly.',
+    metadata: ['480p', 'DVD', 'JA', 'JP', 'Animation', 'Fantasy'],
+    director: { name: 'Hayao Miyazaki', role: 'Director', photo: 'https://image.tmdb.org/t/p/w185/mG3cfxtA5jqDc7fpKgyzZMKoXDh.jpg' },
+    cast: [
+      { name: 'Yoji Matsuda', role: 'Ashitaka', photo: '' },
+      { name: 'Yuriko Ishida', role: 'San', photo: '' },
+      { name: 'Yuko Tanaka', role: 'Eboshi', photo: '' }
+    ],
+    collection: 'Studio Ghibli',
+    actions: ['Play', 'Trailer', 'Upgrade', 'Details']
+  },
+  {
+    id: 'discover-compact',
+    section: 'Compact Cards',
+    title: 'Dune: Part Two',
+    year: '2024',
+    rating: '8.1',
+    status: 'Not owned',
+    statusTone: 'neutral',
+    poster: 'https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg',
+    plot: 'Paul Atreides unites with Chani and the Fremen while choosing between love, revenge, and a terrible future.',
+    metadata: ['4K', 'WEB-DL', 'EN', 'US', 'Sci-Fi', 'Drama'],
+    director: { name: 'Denis Villeneuve', role: 'Director', photo: 'https://image.tmdb.org/t/p/w185/8WUVHemHFH2ZIP6NWkwlHWsyrEL.jpg' },
+    cast: [
+      { name: 'Timothee Chalamet', role: 'Paul', photo: 'https://image.tmdb.org/t/p/w185/BE2sdjpgsa2rNTFa66f7upkaOP.jpg' },
+      { name: 'Zendaya', role: 'Chani', photo: 'https://image.tmdb.org/t/p/w185/3WdOloHpjtjL96uVOhFRRCcYSwq.jpg' },
+      { name: 'Rebecca Ferguson', role: 'Jessica', photo: 'https://image.tmdb.org/t/p/w185/lJloTOheuQSirSLXNA3JHsrMNfH.jpg' }
+    ],
+    collection: 'Dune Collection',
+    actions: ['Trailer', 'Find sources', 'Follow', 'Details']
+  },
+  {
+    id: 'indexer-compact',
+    section: 'Compact Cards',
+    title: 'Civil War',
+    year: '2024',
+    rating: '6.9',
+    status: 'Indexer',
+    statusTone: 'source',
+    poster: 'https://image.tmdb.org/t/p/w500/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg',
+    plot: 'A team of journalists races across a fractured country to document the final days of a collapsing order.',
+    metadata: ['2160p', 'WEBRip', 'EN', 'US', 'Drama', 'Thriller'],
+    director: { name: 'Alex Garland', role: 'Director', photo: 'https://image.tmdb.org/t/p/w185/1UKNef590A0ZaMnxsscIcWuK1Em.jpg' },
+    cast: [
+      { name: 'Kirsten Dunst', role: 'Lee', photo: 'https://image.tmdb.org/t/p/w185/wBXvh6PJd0IUVNpvatPC1kzuHtm.jpg' },
+      { name: 'Wagner Moura', role: 'Joel', photo: 'https://image.tmdb.org/t/p/w185/9j8W2mT5f5kN9ZbkuG6Ywtcnl7P.jpg' },
+      { name: 'Cailee Spaeny', role: 'Jessie', photo: 'https://image.tmdb.org/t/p/w185/30PZqK3ZaxA3n8K8rVw9qFZ8nYz.jpg' }
+    ],
+    collection: 'A24 shelf',
+    actions: ['Trailer', 'Torrent', 'Details']
+  },
+  {
+    id: 'owned-expanded',
+    section: 'Expanded Cards',
+    title: 'Alien',
+    year: '1979',
+    rating: '8.2',
+    status: 'Owned',
+    statusTone: 'owned',
+    expanded: true,
+    poster: 'https://image.tmdb.org/t/p/w500/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg',
+    plot: 'The crew of the Nostromo answers a distress signal and brings aboard a lifeform that turns a silent industrial ship into a closed corridor nightmare.',
+    metadata: ['1080p', 'BluRay', 'EN', 'UK/US', 'Horror', 'Sci-Fi'],
+    director: { name: 'Ridley Scott', role: 'Director', photo: 'https://image.tmdb.org/t/p/w185/zABJmN9opmqD4orWl3KSdCaSo7Q.jpg' },
+    cast: [
+      { name: 'Sigourney Weaver', role: 'Ripley', photo: 'https://image.tmdb.org/t/p/w185/flfhep27iBxseZIlxOMHt6zJFX1.jpg' },
+      { name: 'Tom Skerritt', role: 'Dallas', photo: 'https://image.tmdb.org/t/p/w185/gf5GyG6YrC0PbLjV3EqPk4VrKQh.jpg' },
+      { name: 'Veronica Cartwright', role: 'Lambert', photo: 'https://image.tmdb.org/t/p/w185/8A1sF2WpFZ0qXrYGEldlN10REuD.jpg' },
+      { name: 'Harry Dean Stanton', role: 'Brett', photo: 'https://image.tmdb.org/t/p/w185/mjP44mGZgG8G4kQ3JtV2zLQqpzQ.jpg' },
+      { name: 'John Hurt', role: 'Kane', photo: 'https://image.tmdb.org/t/p/w185/rpuH2YRLpxJjMxHq4T1Qz6YQlG5.jpg' },
+      { name: 'Ian Holm', role: 'Ash', photo: 'https://image.tmdb.org/t/p/w185/zdqBeiL7qH3fUPBVjLfrJ6C9kJg.jpg' }
+    ],
+    collection: 'Alien Collection',
+    actions: ['Play', 'Trailer', 'Find sources', 'Details']
+  },
+  {
+    id: 'discover-expanded',
+    section: 'Expanded Cards',
+    title: 'Furiosa: A Mad Max Saga',
+    year: '2024',
+    rating: '7.5',
+    status: 'Not owned',
+    statusTone: 'neutral',
+    expanded: true,
+    poster: 'https://image.tmdb.org/t/p/w500/iADOJ8Zymht2JPMoy3R7xceZprc.jpg',
+    plot: 'A young Furiosa is taken from the Green Place and pulled through the power games of a wasteland where every alliance has a price.',
+    metadata: ['4K', 'WEB-DL', 'EN', 'AU/US', 'Action', 'Adventure'],
+    director: { name: 'George Miller', role: 'Director', photo: 'https://image.tmdb.org/t/p/w185/fn8G1rj5dvkSkwu7Ejw7P2QX4X6.jpg' },
+    cast: [
+      { name: 'Anya Taylor-Joy', role: 'Furiosa', photo: 'https://image.tmdb.org/t/p/w185/jquY7wUp4HQuJkP8XdxJXm9xA2x.jpg' },
+      { name: 'Chris Hemsworth', role: 'Dementus', photo: 'https://image.tmdb.org/t/p/w185/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg' },
+      { name: 'Tom Burke', role: 'Praetorian Jack', photo: 'https://image.tmdb.org/t/p/w185/6BqKkNF3c7HJRwVXw8RY9vqE7Lu.jpg' },
+      { name: 'Alyla Browne', role: 'Young Furiosa', photo: '' },
+      { name: 'Lachy Hulme', role: 'Immortan Joe', photo: '' },
+      { name: 'John Howard', role: 'The People Eater', photo: '' }
+    ],
+    collection: 'Mad Max Collection',
+    actions: ['Trailer', 'Find sources', 'Follow', 'Details']
+  },
+  {
+    id: 'indexer-expanded',
+    section: 'Expanded Cards',
+    title: 'The Matrix',
+    year: '1999',
+    rating: '8.2',
+    status: 'Indexer',
+    statusTone: 'source',
+    expanded: true,
+    poster: 'https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg',
+    plot: 'A programmer discovers the world around him is a simulation and joins a rebellion that turns doubt, control, and choice into weapons.',
+    metadata: ['2160p', 'BluRay', 'EN', 'US/AU', 'Action', 'Sci-Fi'],
+    director: { name: 'The Wachowskis', role: 'Directors', photo: '' },
+    cast: [
+      { name: 'Keanu Reeves', role: 'Neo', photo: 'https://image.tmdb.org/t/p/w185/4D0PpNI0kmP58hgrwGC3wCjxhnm.jpg' },
+      { name: 'Laurence Fishburne', role: 'Morpheus', photo: 'https://image.tmdb.org/t/p/w185/8suOhUmPbfKqDQ17jQ1Gy0mI3P4.jpg' },
+      { name: 'Carrie-Anne Moss', role: 'Trinity', photo: 'https://image.tmdb.org/t/p/w185/xD4jTA3KmVp5Rq3aHcymL9DUGjD.jpg' },
+      { name: 'Hugo Weaving', role: 'Agent Smith', photo: 'https://image.tmdb.org/t/p/w185/8HLQLILZLhDQWO6JDpvY6XJLH75.jpg' },
+      { name: 'Joe Pantoliano', role: 'Cypher', photo: 'https://image.tmdb.org/t/p/w185/2cyKk5vlXUJsF8d2Dct1xgLe7sB.jpg' },
+      { name: 'Gloria Foster', role: 'Oracle', photo: '' }
+    ],
+    collection: 'The Matrix Collection',
+    actions: ['Trailer', 'Torrent', 'Details']
   }
 ];
 
@@ -1407,8 +1916,8 @@ const helpSections = [
   {
     key: 'qbittorrent',
     title: 'qBittorrent',
-    status: 'Bundled in CP 2.6.5',
-    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.6.5 release.',
+    status: 'Bundled in CP 2.6.6',
+    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.6.6 release.',
     links: [
       ['qBittorrent Official Website', 'https://www.qbittorrent.org/'],
       ['qBittorrent Downloads', 'https://www.qbittorrent.org/download']
@@ -1509,7 +2018,10 @@ function HomeWorkspace(props) {
     onSelectMovie,
     onPlay,
     onStream,
+    streamingAvailable,
+    streamingLabel,
     onFindTorrent,
+    onTrailer,
     onFollow,
     userLists,
     onToggleSystemList,
@@ -1572,7 +2084,10 @@ function HomeWorkspace(props) {
                   onSelect={() => onSelectMovie(movie)}
                   onPlay={onPlay}
                   onStream={onStream}
+                  streamingAvailable={streamingAvailable}
+                  streamingLabel={streamingLabel}
                   onFindTorrent={onFindTorrent}
+                  onTrailer={onTrailer}
                   onFollow={onFollow}
                   onToggleWatched={owned ? () => onToggleSystemList('watched', movie, owned) : undefined}
                   onToggleWatchlist={() => onToggleSystemList('watchlist', movie, owned)}
@@ -1594,7 +2109,10 @@ function HomeWorkspace(props) {
         onClose={() => onSelectMovie(null)}
         onPlay={onPlay}
         onStream={onStream}
+        streamingAvailable={streamingAvailable}
+        streamingLabel={streamingLabel}
         onFindTorrent={onFindTorrent}
+        onTrailer={onTrailer}
         onFollow={onFollow}
         onToggleWatched={selectedOwnership ? () => onToggleSystemList('watched', selectedMovie, selectedOwnership) : undefined}
         onToggleWatchlist={selectedMovie ? () => onToggleSystemList('watchlist', selectedMovie, selectedOwnership) : undefined}
@@ -1825,101 +2343,51 @@ function FollowedReleasesDrawer({ followed, checking, selectedMovie, onClose, on
 function SmartMovieCard(props) {
   const {
     movie, owned, selected, followed, details, watched, watchlisted,
-    onSelect, onPlay, onStream, onFindTorrent, onFollow,
-    onToggleWatched, onToggleWatchlist, onEditPoster
+    onSelect, onPlay, onStream, streamingAvailable, streamingLabel, onFindTorrent, onFollow,
+    onTrailer, onToggleWatched, onToggleWatchlist, onEditPoster
   } = props;
   const lowQuality = owned && isLowQuality(owned.resolution);
-  const genres = (movie.genres || []).slice(0, 3);
+  const unreleased = !owned && isUnreleasedMovie(movie);
+  const genres = (movie.genres || []).slice(0, 2);
+  const posterMovie = owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie;
 
   return (
-    <article className={cx('movie-card', selected && 'movie-card-selected')} onClick={onSelect}>
-      <Poster
-        movie={owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie}
-        onEditPoster={owned ? onEditPoster : undefined}
-        watched={watched}
-        watchlisted={watchlisted}
-        onToggleWatched={owned ? onToggleWatched : undefined}
-        onToggleWatchlist={onToggleWatchlist}
-      />
-      <div className="movie-card-body">
-        <div className="movie-title-row">
-          <div>
-            <h4>{movie.title}</h4>
-            <span>{movie.year || 'Unknown year'}</span>
-          </div>
-          <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
-        </div>
-        <div className="chip-row">
-          {genres.map((genre) => <span className="chip" key={genre}>{genre}</span>)}
-          {movie.language && <span className="chip chip-muted">{movie.language}</span>}
-          {(movie.country_flag || movie.country) && <span className="chip chip-muted">{movie.country_flag || movie.country}</span>}
-        </div>
-        <div className="ownership-row">
-          {owned ? (
-            <span
-              className={cx('status-badge', lowQuality ? 'status-warning' : 'status-owned')}
-              data-label={`Owned - ${owned.resolution || 'Unknown'} - ${owned.size_human || 'local file'}`}
-            >
-              <CheckCircle2 size={14} />
-              Owned - {owned.resolution || 'Unknown'} - {owned.size_human || 'local file'}
-            </span>
-          ) : (
-            <span className="status-badge status-missing">
-              <Radio size={14} />
-              Not in library
-            </span>
-          )}
-          <button type="button" className="expand-button" onClick={(event) => { event.stopPropagation(); onSelect(); }}>
-            Details
-          </button>
-        </div>
-        <p className="movie-card-plot">{movie.plot || 'No plot summary is available yet.'}</p>
-        {selected && details?.trailer_url && (
-          <a
-            className="inline-trailer"
-            href={details.trailer_url}
-            target="_blank"
-            rel="noreferrer"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <Film size={14} /> Play trailer
-          </a>
-        )}
-        <div className="card-actions" onClick={(event) => event.stopPropagation()}>
-          {owned ? (
-            <>
-              <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
-                <Play size={15} /> Play
-              </button>
-              {lowQuality && (
-                <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie, true)}>
-                  <Wand2 size={15} /> Find upgrade
-                </button>
-              )}
-            </>
-          ) : (
-            <>
-              <button type="button" className="btn btn-primary" onClick={() => onFindTorrent(movie)}>
-                <Search size={15} /> Find torrent
-              </button>
-              <button type="button" className="btn btn-secondary" onClick={() => onStream(movie)}>
-                <MonitorPlay size={15} /> Stream
-              </button>
-              <button type="button" className="btn btn-secondary" onClick={() => onFollow(movie)}>
-                <Bell size={15} /> {followed ? 'Following' : 'Follow'}
-              </button>
-            </>
-          )}
-        </div>
-      </div>
-    </article>
+    <UnifiedMovieCard
+      className="home-smart-movie-card"
+      title={movie.title}
+      year={movie.year}
+      posterUrl={posterMovie.poster_url}
+      rating={movie.tmdb_rating}
+      voteCount={formatVoteCount(movie.tmdb_vote_count)}
+      chips={genres}
+      mutedChips={[movie.language, movie.country_flag || movie.country, owned?.resolution, owned?.size_human]}
+      statusLabel={owned ? (lowQuality ? 'Upgrade candidate' : '') : (unreleased ? 'Unreleased' : (followed ? 'Following' : 'Not in library'))}
+      statusTone={owned ? (lowQuality ? 'warning' : 'neutral') : (unreleased ? 'warning' : 'missing')}
+      ownedBadge={Boolean(owned)}
+      selected={selected}
+      onToggle={onSelect}
+      showPlayOverlay={Boolean(owned?.path)}
+      onPlay={owned?.path ? () => onPlay(owned.path) : undefined}
+      cornerControls={(
+        <>
+          <PosterStateControls
+            title={movie.title}
+            watched={watched}
+            watchlisted={watchlisted}
+            onToggleWatched={owned ? onToggleWatched : undefined}
+            onToggleWatchlist={onToggleWatchlist}
+          />
+          <PosterEditButton title={movie.title} onEdit={owned ? onEditPoster : undefined} />
+        </>
+      )}
+    />
   );
 }
 
 function MovieInspector({
   movie, owned, details, followed, watched, watchlisted,
-  onClose, onPlay, onStream, onFindTorrent, onFollow,
-  onToggleWatched, onToggleWatchlist, onEditPoster
+  onClose, onPlay, onStream, streamingAvailable, streamingLabel, onFindTorrent, onFollow,
+  onTrailer, onToggleWatched, onToggleWatchlist, onEditPoster
 }) {
   if (!movie) {
     return (
@@ -1932,6 +2400,8 @@ function MovieInspector({
   }
 
   const lowQuality = owned && isLowQuality(owned.resolution);
+  const unreleased = !owned && isUnreleasedMovie(movie);
+  const releaseDateLabel = unreleased ? formatReleaseDateLabel(movie.release_date) : '';
   const cast = details?.cast || [];
   const trailerUrl = details?.trailer_url || '';
 
@@ -1956,6 +2426,8 @@ function MovieInspector({
           <div className="inspector-meta">
             <span>{movie.year || 'Unknown year'}</span>
             <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
+            {unreleased && <span>Unreleased</span>}
+            {releaseDateLabel && <span>Releases {releaseDateLabel}</span>}
             {movie.language && <span>{movie.language}</span>}
             {(movie.country_flag || movie.country) && <span>{movie.country_flag || movie.country}</span>}
           </div>
@@ -1989,21 +2461,25 @@ function MovieInspector({
           </>
         ) : (
           <>
-            <button type="button" className="btn btn-primary" onClick={() => onFindTorrent(movie)}>
-              <Search size={15} /> Find torrent
-            </button>
+            {!unreleased && (
+              <button type="button" className="btn btn-primary" onClick={() => onFindTorrent(movie)}>
+                <Search size={15} /> Find torrent
+              </button>
+            )}
             <button type="button" className="btn btn-secondary" onClick={() => onFollow(movie)}>
               <Bell size={15} /> {followed ? 'Following' : 'Follow release'}
             </button>
           </>
         )}
-        <button type="button" className="btn btn-secondary" onClick={() => onStream(movie)}>
-          <MonitorPlay size={15} /> Stream
-        </button>
-        {trailerUrl && (
-          <a className="btn btn-secondary" href={trailerUrl} target="_blank" rel="noreferrer">
+        {!unreleased && streamingAvailable && (
+          <button type="button" className="btn btn-secondary" onClick={() => onStream(movie)}>
+            <MonitorPlay size={15} /> {streamingLabel}
+          </button>
+        )}
+        {details && (
+          <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie, trailerUrl)}>
             <Film size={15} /> Play trailer
-          </a>
+          </button>
         )}
       </div>
     </aside>
@@ -2144,7 +2620,10 @@ function DiscoverWorkspace({
   notify,
   onPlay,
   onStream,
+  streamingAvailable,
+  streamingLabel,
   onFindTorrent,
+  onOpenTrailer,
   onManualTorrentSearch,
   onFollow,
   tmdbQuery,
@@ -2198,6 +2677,7 @@ function DiscoverWorkspace({
   const [pickHistory, setPickHistory] = useState([]);
   const [posterEditor, setPosterEditor] = useState(null);
   const [selectedDiscoverKeys, setSelectedDiscoverKeys] = useState(() => new Set());
+  const discoverRequestSeq = useRef(0);
 
   function updateOwnedPoster(path, posterUrl) {
     setOwnership((state) => Object.fromEntries(
@@ -2348,8 +2828,16 @@ function DiscoverWorkspace({
   async function loadDiscover({ append = false, search = '', page } = {}) {
     const query = String(search || '').trim();
     const nextPage = page || (append ? discoverPage + 1 : 1);
+    const requestSeq = discoverRequestSeq.current + 1;
+    discoverRequestSeq.current = requestSeq;
     setDiscoverLoading(true);
     setDiscoverError('');
+    if (!append) {
+      setDiscoverResults([]);
+      setDiscoverContext(null);
+      setDiscoverHistory([]);
+      setExpandedMovieKey('');
+    }
     try {
       let url = '';
       if (query) {
@@ -2365,22 +2853,22 @@ function DiscoverWorkspace({
         if (discoverSort !== 'auto') url += `&sort=${encodeURIComponent(discoverSort)}`;
       }
       const data = await fetchJson(url);
+      if (requestSeq !== discoverRequestSeq.current) return;
       const nextResults = data.results || [];
       setDiscoverResults((state) => (append ? [...state, ...nextResults] : nextResults));
       setDiscoverPage(data.page || nextPage);
       setDiscoverTotalPages(data.total_pages || 1);
       setDiscoverTotalResults(data.total_results || nextResults.length);
       setDiscoverMode(query ? 'search' : 'discover');
-      if (!append) {
-        setDiscoverContext(null);
-        setDiscoverHistory([]);
-      }
       checkOwnership(nextResults);
     } catch (error) {
+      if (requestSeq !== discoverRequestSeq.current) return;
       setDiscoverError(error.message);
       if (!append) setDiscoverResults([]);
     } finally {
-      setDiscoverLoading(false);
+      if (requestSeq === discoverRequestSeq.current) {
+        setDiscoverLoading(false);
+      }
     }
   }
 
@@ -2535,9 +3023,8 @@ function DiscoverWorkspace({
   }
 
   async function openTrailer(movie) {
-    const fallbackUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(`${movie.title || ''} ${movie.year || ''} trailer`)}`;
     if (!movie?.tmdb_id) {
-      window.open(fallbackUrl, '_blank', 'noopener,noreferrer');
+      onOpenTrailer(movie, '');
       return;
     }
     try {
@@ -2546,9 +3033,9 @@ function DiscoverWorkspace({
         details = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(movie.tmdb_id)}`);
         setDetailsCache((state) => ({ ...state, [movie.tmdb_id]: details }));
       }
-      window.open(details.trailer_url || fallbackUrl, '_blank', 'noopener,noreferrer');
+      onOpenTrailer(movie, details.trailer_url || '');
     } catch {
-      window.open(fallbackUrl, '_blank', 'noopener,noreferrer');
+      onOpenTrailer(movie, '');
     }
   }
 
@@ -2940,11 +3427,11 @@ function DiscoverWorkspace({
             loading={discoverLoading && !discoverResults.length}
             emptyText={discoverContext?.emptyText || 'No TMDB movies match this view.'}
           >
-            {discoverResults.map((movie) => {
+            {discoverResults.map((movie, index) => {
               const owned = ownedMovieFor(movie, ownership);
               return (
                 <DiscoverMovieCard
-                  key={`${movie.tmdb_id || movie.title}-${movie.year}`}
+                  key={`${movie.tmdb_id || movie.title}-${movie.year}-${index}`}
                   movie={movie}
                   owned={owned}
                   followed={followed.some((item) => movieKey(item) === movieKey(movie))}
@@ -2960,6 +3447,8 @@ function DiscoverWorkspace({
                   onSelect={(checked) => toggleDiscoverSelection(movie, owned, checked)}
                   onPlay={onPlay}
                   onStream={onStream}
+                  streamingAvailable={streamingAvailable}
+                  streamingLabel={streamingLabel}
                   onFindTorrent={onFindTorrent}
                   onFollow={onFollow}
                   onTrailer={openTrailer}
@@ -3063,6 +3552,8 @@ function DiscoverWorkspace({
                     onVariantSelect={(index) => setSelectedVariants((state) => ({ ...state, [movie.parsed_title]: index }))}
                     onPlay={onPlay}
                     onStream={onStream}
+                    streamingAvailable={streamingAvailable}
+                    streamingLabel={streamingLabel}
                     onFindTorrent={onFindTorrent}
                     onTrailer={openTrailer}
                     onToggleDetails={() => toggleMovieDetails(movie)}
@@ -3152,6 +3643,8 @@ function DiscoverWorkspace({
                   onSelect={(checked) => toggleDiscoverSelection(movie, owned, checked)}
                   onPlay={onPlay}
                   onStream={onStream}
+                  streamingAvailable={streamingAvailable}
+                  streamingLabel={streamingLabel}
                   onFindTorrent={onFindTorrent}
                   onFollow={onFollow}
                   onTrailer={openTrailer}
@@ -3251,6 +3744,8 @@ function DiscoverMovieCard({
   itemLists,
   onPlay,
   onStream,
+  streamingAvailable,
+  streamingLabel,
   onFindTorrent,
   onFollow,
   onTrailer,
@@ -3269,66 +3764,89 @@ function DiscoverMovieCard({
   onSelect
 }) {
   const lowQuality = owned && isLowQuality(owned.resolution);
+  const unreleased = !owned && isUnreleasedMovie(movie);
+  const posterMovie = owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie;
   return (
-    <article className={cx('movie-card discover-movie-card', expanded && 'discover-card-expanded')}>
-      <Poster
-        movie={owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie}
-        onEditPoster={owned ? onEditPoster : undefined}
-        watched={watched}
-        watchlisted={watchlisted}
-        onToggleWatched={owned ? onToggleWatched : undefined}
-        onToggleWatchlist={onToggleWatchlist}
-        selected={selected}
-        onSelect={onSelect}
-        selectionClassName="discover-selection-checkbox"
-      />
-      <div className="movie-card-body">
-        <div className="movie-title-row">
-          <div>
-            <h4>{movie.title}</h4>
-            <span>{movie.year || 'Unknown year'}</span>
-          </div>
-          <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
-        </div>
-        <MovieFactChips movie={movie} owned={owned} lowQuality={lowQuality} />
-        {reason && <p className="ai-reason"><Sparkles size={14} /> {reason}</p>}
-        <p className="movie-card-plot discover-plot-visible">{movie.plot || 'No plot summary is available yet.'}</p>
-        <div className="card-actions">
-          {owned ? (
-            <>
-              <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
-                <Play size={15} /> Play
-              </button>
-              {lowQuality && (
-                <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie, true)}>
-                  <Wand2 size={15} /> Find upgrade
+    <UnifiedMovieCard
+      className={cx('discover-movie-card', expanded && 'discover-card-expanded')}
+      title={movie.title}
+      year={movie.year}
+      posterUrl={posterMovie.poster_url}
+      rating={movie.tmdb_rating}
+      voteCount={formatVoteCount(movie.tmdb_vote_count)}
+      chips={(movie.genres || []).slice(0, 2)}
+      mutedChips={[
+        movie.language,
+        movie.country_flag || movie.country,
+        owned?.resolution,
+        owned?.size_human
+      ]}
+      statusLabel={owned ? (lowQuality ? 'Upgrade candidate' : '') : (unreleased ? 'Unreleased' : (followed ? 'Following' : 'Not in library'))}
+      statusTone={owned ? (lowQuality ? 'warning' : 'neutral') : (unreleased ? 'warning' : 'missing')}
+      ownedBadge={Boolean(owned)}
+      expanded={expanded}
+      onToggle={onToggleDetails}
+      showPlayOverlay={Boolean(owned)}
+      onPlay={owned?.path ? () => onPlay(owned.path) : undefined}
+      cornerControls={(
+        <>
+          <PosterStateControls
+            title={movie.title}
+            watched={watched}
+            watchlisted={watchlisted}
+            onToggleWatched={owned ? onToggleWatched : undefined}
+            onToggleWatchlist={onToggleWatchlist}
+          />
+          <PosterEditButton title={movie.title} onEdit={owned ? onEditPoster : undefined} />
+          <SelectionCheckbox
+            className="discover-selection-checkbox"
+            checked={Boolean(selected)}
+            onChange={onSelect}
+            label={`Select ${movie.title}`}
+          />
+        </>
+      )}
+    >
+      {expanded && (
+        <>
+          {reason && <p className="ai-reason"><Sparkles size={14} /> {reason}</p>}
+          <p className="movie-card-plot discover-plot-visible">{movie.plot || 'No plot summary is available yet.'}</p>
+          <div className="card-actions">
+            {owned ? (
+              <>
+                <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
+                  <Play size={15} /> Play
                 </button>
-              )}
-            </>
-          ) : (
-            <>
-              <button type="button" className="btn btn-primary" onClick={() => onFindTorrent(movie)}>
-                <Search size={15} /> Find sources
-              </button>
-              <button type="button" className="btn btn-secondary btn-green-outline" onClick={() => onStream(movie)}>
-                <MonitorPlay size={15} /> Stream
-              </button>
-            </>
-          )}
-          <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie)}>
-            <Film size={15} /> Trailer
-          </button>
-          <button type="button" className="btn btn-secondary" onClick={onToggleDetails}>
-            <Info size={15} /> {expanded ? 'Less' : 'Details'}
-          </button>
-          {!owned && (
-            <button type="button" className="btn btn-secondary" onClick={() => onFollow(movie)}>
-              <Bell size={15} /> {followed ? 'Following' : 'Follow'}
+                {lowQuality && (
+                  <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie, true)}>
+                    <Wand2 size={15} /> Find upgrade
+                  </button>
+                )}
+              </>
+            ) : (
+              <>
+                {!unreleased && (
+                  <button type="button" className="btn btn-primary" onClick={() => onFindTorrent(movie)}>
+                    <Search size={15} /> Find sources
+                  </button>
+                )}
+                {!unreleased && streamingAvailable && (
+                  <button type="button" className="btn btn-secondary btn-green-outline" onClick={() => onStream(movie)}>
+                    <MonitorPlay size={15} /> {streamingLabel}
+                  </button>
+                )}
+              </>
+            )}
+            <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie)}>
+              <Film size={15} /> Trailer
             </button>
-          )}
-        </div>
-        {expanded && (
-          <DiscoverExpandedDetails
+            {!owned && (
+              <button type="button" className="btn btn-secondary" onClick={() => onFollow(movie)}>
+                <Bell size={15} /> {followed ? 'Following' : 'Follow'}
+              </button>
+            )}
+          </div>
+          <MovieExpandedDetails
             movie={movie}
             details={details}
             collection={collection}
@@ -3339,9 +3857,9 @@ function DiscoverMovieCard({
             onEditLists={onEditLists}
             onRemoveFromList={onRemoveFromList}
           />
-        )}
-      </div>
-    </article>
+        </>
+      )}
+    </UnifiedMovieCard>
   );
 }
 
@@ -3382,6 +3900,8 @@ function IndexerMovieCard({
   onVariantSelect,
   onPlay,
   onStream,
+  streamingAvailable,
+  streamingLabel,
   onFindTorrent,
   onTrailer,
   onToggleDetails,
@@ -3396,48 +3916,62 @@ function IndexerMovieCard({
   const lowQuality = owned && isLowQuality(owned.resolution);
   const variants = sortTorrentVariants(movie.variants || []);
   const selected = variants[selectedIndex] || variants[0] || {};
+  const posterMovie = owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie;
 
   return (
-    <article className="indexer-card">
-      <div className="indexer-poster-wrap">
-        <Poster
-          movie={owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie}
-          onEditPoster={owned ? onEditPoster : undefined}
-          watched={watched}
-          watchlisted={watchlisted}
-          onToggleWatched={owned ? onToggleWatched : undefined}
-          onToggleWatchlist={onToggleWatchlist}
-        />
-        <span className="indexer-resolution-badge">{selected.resolution || movie.best_resolution || 'Unknown'}</span>
-      </div>
-      <div className="indexer-card-body">
-        <div className="movie-title-row">
-          <div>
-            <h4>{movie.title}</h4>
-            <span>{movie.year || 'Unknown year'}</span>
+    <UnifiedMovieCard
+      className={cx('indexer-card', expanded && 'discover-card-expanded')}
+      title={movie.title}
+      year={movie.year}
+      posterUrl={posterMovie.poster_url}
+      rating={movie.tmdb_rating}
+      voteCount={formatVoteCount(movie.tmdb_vote_count)}
+      chips={(movie.genres || []).slice(0, 2)}
+      mutedChips={[
+        selected.resolution || movie.best_resolution,
+        selected.indexer,
+        owned?.resolution,
+        owned?.size_human
+      ]}
+      statusLabel={owned ? (lowQuality ? 'Upgrade candidate' : '') : `${formatCount(selected.seeders)} seeders`}
+      statusTone={owned ? (lowQuality ? 'warning' : 'neutral') : 'neutral'}
+      ownedBadge={Boolean(owned)}
+      expanded={expanded}
+      onToggle={onToggleDetails}
+      showPlayOverlay={Boolean(owned)}
+      onPlay={owned?.path ? () => onPlay(owned.path) : undefined}
+      cornerControls={(
+        <>
+          <PosterStateControls
+            title={movie.title}
+            watched={watched}
+            watchlisted={watchlisted}
+            onToggleWatched={owned ? onToggleWatched : undefined}
+            onToggleWatchlist={onToggleWatchlist}
+          />
+          <PosterEditButton title={movie.title} onEdit={owned ? onEditPoster : undefined} />
+        </>
+      )}
+    >
+      {expanded && (
+        <>
+          <div className="variant-stack" aria-label={`Available releases for ${movie.title}`}>
+            {variants.map((variant, index) => (
+              <button
+                type="button"
+                key={`${variant.title}-${index}`}
+                className={cx('variant-option', index === selectedIndex && 'variant-option-active')}
+                onClick={() => onVariantSelect(index)}
+              >
+                <strong>{variant.resolution || 'Unknown'}</strong>
+                <span><span className="torrent-seeders">Seeders {formatCount(variant.seeders)}</span></span>
+                <span>{variant.size_human || '?'}</span>
+                <small>{variant.indexer || 'Unknown tracker'}</small>
+              </button>
+            ))}
           </div>
-          <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
-        </div>
-        <MovieFactChips movie={movie} owned={owned} lowQuality={lowQuality} />
-
-        <div className="variant-stack" aria-label={`Available releases for ${movie.title}`}>
-          {variants.map((variant, index) => (
-            <button
-              type="button"
-              key={`${variant.title}-${index}`}
-              className={cx('variant-option', index === selectedIndex && 'variant-option-active')}
-              onClick={() => onVariantSelect(index)}
-            >
-              <strong>{variant.resolution || 'Unknown'}</strong>
-              <span><span className="torrent-seeders">Seeders {formatCount(variant.seeders)}</span></span>
-              <span>{variant.size_human || '?'}</span>
-              <small>{variant.indexer || 'Unknown tracker'}</small>
-            </button>
-          ))}
-        </div>
-        <p className="movie-card-plot discover-plot-visible">{movie.plot || 'No plot summary is available yet.'}</p>
-        {expanded && (
-          <DiscoverExpandedDetails
+          <p className="movie-card-plot discover-plot-visible">{movie.plot || 'No plot summary is available yet.'}</p>
+          <MovieExpandedDetails
             movie={movie}
             details={details}
             collection={collection}
@@ -3445,90 +3979,96 @@ function IndexerMovieCard({
             onEditLists={onEditLists}
             onRemoveFromList={onRemoveFromList}
           />
-        )}
-      </div>
-      <div className="indexer-action-rail">
-        <div className="indexer-selected-meta">
-          <strong>{formatCount(selected.seeders)} seeders</strong>
-          <span>{selected.indexer || 'Unknown tracker'}</span>
-          <small>{selected.size_human || '?'}</small>
-        </div>
-        <TorrentActions
-          variant={selected}
-          movieTitle={movie.title || movie.parsed_title}
-          movieYear={movie.year || movie.parsed_year}
-          notify={notify}
-          primary
-        />
-        {owned ? (
-          <>
-            <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
-              <Play size={15} /> Play
+          <div className="indexer-action-rail indexer-action-rail-expanded">
+            <div className="indexer-selected-meta">
+              <strong>{formatCount(selected.seeders)} seeders</strong>
+              <span>{selected.indexer || 'Unknown tracker'}</span>
+              <small>{selected.size_human || '?'}</small>
+            </div>
+            <TorrentActions
+              variant={selected}
+              movieTitle={movie.title || movie.parsed_title}
+              movieYear={movie.year || movie.parsed_year}
+              notify={notify}
+              primary
+            />
+            {owned ? (
+              <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
+                <Play size={15} /> Play
+              </button>
+            ) : streamingAvailable ? (
+              <button type="button" className="btn btn-secondary btn-green-outline" onClick={() => onStream(movie)}>
+                <MonitorPlay size={15} /> {streamingLabel}
+              </button>
+            ) : null}
+            {lowQuality ? (
+              <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie, true)}>
+                <Wand2 size={15} /> Find upgrade
+              </button>
+            ) : (
+              <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie)}>
+                <Search size={15} /> Find sources
+              </button>
+            )}
+            <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie)}>
+              <Film size={15} /> Trailer
             </button>
-          </>
-        ) : (
-          <button type="button" className="btn btn-secondary btn-green-outline" onClick={() => onStream(movie)}>
-            <MonitorPlay size={15} /> Stream
-          </button>
-        )}
-        {lowQuality ? (
-          <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie, true)}>
-            <Wand2 size={15} /> Find upgrade
-          </button>
-        ) : (
-          <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie)}>
-            <Search size={15} /> Find sources
-          </button>
-        )}
-        <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie)}>
-          <Film size={15} /> Trailer
-        </button>
-        <button type="button" className="btn btn-secondary" onClick={onToggleDetails}>
-          <Info size={15} /> {expanded ? 'Less' : 'Details'}
-        </button>
-      </div>
-    </article>
+          </div>
+        </>
+      )}
+    </UnifiedMovieCard>
   );
 }
 
-function DiscoverExpandedDetails({
+function MovieExpandedDetails({
   movie,
   details,
   collection,
   itemLists = [],
+  directors,
+  cast,
   onPersonBrowse,
   onCollectionBrowse,
   onListBrowse,
   onEditLists,
-  onRemoveFromList
+  onRemoveFromList,
+  onEditCollection,
+  onResetCollection,
+  emptyListText = 'Not in any user list yet.'
 }) {
   const loading = details?.loading;
-  const directors = details?.directors?.length ? details.directors : details?.director?.name ? [details.director] : [];
-  const cast = (details?.cast || []).slice(0, 6);
+  const expandedDirectors = directors?.length ? directors : details?.directors?.length ? details.directors : details?.director?.name ? [details.director] : [];
+  const expandedCast = (cast?.length ? cast : details?.cast || []).slice(0, 6);
   const activeCollection = collection?.id ? collection : details?.collection || {};
+  const releaseDate = movie?.release_date || details?.release_date || '';
+  const releaseDateLabel = isUnreleasedMovie({ release_date: releaseDate }) ? formatReleaseDateLabel(releaseDate) : '';
   const canBrowsePeople = Boolean(onPersonBrowse);
   const canBrowseCollection = Boolean(onCollectionBrowse);
   const canBrowseLists = Boolean(onListBrowse);
+  const collectionDetail = Number.isFinite(activeCollection.owned_count)
+    ? `${formatCount(activeCollection.owned_count)} owned${activeCollection.unresolved_count ? `, ${formatCount(activeCollection.unresolved_count)} need identity review` : ''}`
+    : `${formatCount((activeCollection.parts || []).length)} movies, ${activeCollection.source || 'TMDB'} collection`;
 
   return (
-    <div className="discover-expanded-details">
+    <div className="movie-expanded-details">
       {loading ? (
         <div className="people-loading"><Loader2 size={15} className="spin" /> Loading TMDB details...</div>
       ) : details?.error ? (
         <p className="discover-detail-error"><AlertTriangle size={15} /> {details.error}</p>
       ) : (
         <>
-          {(details?.tagline || details?.runtime) && (
-            <div className="movie-expanded-meta discover-expanded-meta">
+          {(details?.tagline || details?.runtime || releaseDateLabel) && (
+            <div className="movie-expanded-facts">
+              {releaseDateLabel && <div><span>Release date</span><strong>Releases {releaseDateLabel}</strong></div>}
               {details?.tagline && <div><span>Tagline</span><strong>{details.tagline}</strong></div>}
               {details?.runtime && <div><span>Runtime</span><strong>{details.runtime} min</strong></div>}
             </div>
           )}
-          <div className="people-panel discover-people-panel">
+          <div className="people-panel movie-expanded-people-panel">
             <div className="director-panel">
               <span className="mini-label">Director</span>
-              {directors.length ? (
-                directors.slice(0, 2).map((person) => (
+              {expandedDirectors.length ? (
+                expandedDirectors.slice(0, 2).map((person) => (
                   canBrowsePeople ? (
                     <button type="button" className="director-person" key={person.id || person.name} onClick={() => onPersonBrowse('director', person)}>
                       <PersonAvatar person={person} />
@@ -3553,9 +4093,9 @@ function DiscoverExpandedDetails({
             </div>
             <div className="cast-panel">
               <span className="mini-label">Top cast</span>
-              {cast.length ? (
+              {expandedCast.length ? (
                 <div className="person-grid">
-                  {cast.map((person) => (
+                  {expandedCast.map((person) => (
                     canBrowsePeople ? (
                       <button type="button" className="person-card" key={`${person.id || person.name}-${person.character || ''}`} onClick={() => onPersonBrowse('actor', person)}>
                         <PersonAvatar person={person} />
@@ -3582,7 +4122,7 @@ function DiscoverExpandedDetails({
                     <Clapperboard size={17} />
                     <span>
                       <strong>{activeCollection.name}</strong>
-                      <small>{formatCount((activeCollection.parts || []).length)} movies, {activeCollection.source || 'TMDB'} collection</small>
+                      <small>{collectionDetail}</small>
                     </span>
                   </button>
                 ) : (
@@ -3590,30 +4130,42 @@ function DiscoverExpandedDetails({
                     <Clapperboard size={17} />
                     <span>
                       <strong>{activeCollection.name}</strong>
-                      <small>{formatCount((activeCollection.parts || []).length)} movies, {activeCollection.source || 'TMDB'} collection</small>
+                      <small>{collectionDetail}</small>
                     </span>
                   </div>
                 )}
+                {onEditCollection ? (
+                  <div className="collection-actions">
+                    <button type="button" className="mini-action" onClick={() => onEditCollection(activeCollection)}>Edit</button>
+                    {activeCollection.is_edited && onResetCollection ? (
+                      <button type="button" className="mini-action mini-action-danger" onClick={() => onResetCollection(activeCollection)}>
+                        <RefreshCcw size={13} /> Reset
+                      </button>
+                    ) : null}
+                  </div>
+                ) : null}
               </div>
             )}
             <div className="lists-panel">
               <div className="lists-panel-header">
                 <span className="mini-label">Lists</span>
-                <button type="button" className="mini-action" onClick={onEditLists}>Add to list</button>
+                {onEditLists ? <button type="button" className="mini-action" onClick={onEditLists}>Add to list</button> : null}
               </div>
               {itemLists.length ? (
                 <div className="list-chip-row">
                   {itemLists.map((list) => (
                     <span className="list-chip" key={list.id}>
                       <button type="button" onClick={canBrowseLists ? () => onListBrowse(list) : undefined}>{list.name}</button>
-                      <button type="button" aria-label={`Remove ${movie.title} from ${list.name}`} onClick={() => onRemoveFromList(list.id)}>
-                        <Trash2 size={13} />
-                      </button>
+                      {onRemoveFromList ? (
+                        <button type="button" aria-label={`Remove ${movie.title} from ${list.name}`} onClick={() => onRemoveFromList(list.id)}>
+                          <Trash2 size={13} />
+                        </button>
+                      ) : null}
                     </span>
                   ))}
                 </div>
               ) : (
-                <small>Not in any user list yet.</small>
+                <small>{emptyListText}</small>
               )}
             </div>
           </div>
@@ -3641,7 +4193,7 @@ function Rating({ value, votes }) {
   );
 }
 
-function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onReviewUnmatched }) {
+function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query, setQuery, onReviewUnmatched }) {
   const pageSize = 40;
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -3911,8 +4463,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, notify, query, setQuery, onRe
       }
     }
     if (openTrailer) {
-      if (details.trailer_url) window.open(details.trailer_url, '_blank', 'noopener,noreferrer');
-      else window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(`${identity.title} ${identity.year} trailer`)}`, '_blank', 'noopener,noreferrer');
+      onOpenTrailer({ title: identity.title, year: identity.year }, details.trailer_url || '');
     }
     return details;
   }
@@ -4555,157 +5106,87 @@ function LibraryMovieCard({
   const lowQuality = isLowQuality(item.resolution);
   const genres = (canonical.genres?.length ? canonical.genres : item.plex_genres || []).slice(0, expanded ? 10 : 3);
   const directors = getRolePeople(item, details, 'director');
-  const director = directors[0];
   const cast = getRolePeople(item, details, 'actor').slice(0, 6);
-  const activeCollection = collection?.id ? collection : details?.collection || {};
   const locale = getLocaleTag(item);
   const movieForSearch = { title: identity.title, year: identity.year };
+  const posterUrl = canonical.poster_url || item.plex_poster || '';
 
   return (
-    <article className={cx('library-movie-card', expanded && 'library-movie-card-expanded')}>
-      <div className="library-poster movie-view-poster">
-        {(canonical.poster_url || item.plex_poster) ? <img src={canonical.poster_url || item.plex_poster} alt={`${identity.title} poster`} loading="lazy" /> : <Film size={28} />}
-        <PosterStateControls
-          title={identity.title}
-          watched={watched}
-          watchlisted={watchlisted}
-          onToggleWatched={onToggleWatched}
-          onToggleWatchlist={onToggleWatchlist}
-        />
-        <PosterEditButton title={identity.title} onEdit={onEditPoster} />
-        <SelectionCheckbox
-          className="library-selection-checkbox"
-          checked={Boolean(selected)}
-          onChange={onSelect}
-          label={`Select ${identity.title}`}
-        />
-      </div>
-      <div className="library-item-body">
-        <div className="library-item-title-row">
-          <div>
-            <h3>{identity.title}</h3>
-            <span>{identity.year || 'Unknown year'}</span>
-          </div>
-          {(canonical.rating || item.plex_rating) && <Rating value={canonical.rating || item.plex_rating} votes={canonical.tmdb_vote_count} />}
-        </div>
-        <div className="chip-row">
-          {genres.map((genre) => <span className="chip" key={genre}>{genre}</span>)}
-          {locale && <span className="chip chip-muted">{locale}</span>}
-          <span className={cx('chip', lowQuality && 'chip-warning')}>{getQualityLabel(item)}</span>
-        </div>
-        <p className={cx('library-summary movie-summary', expanded && 'movie-summary-expanded')}>
-          {canonical.summary || canonical.plot || item.plex_summary || 'No plot summary is available yet.'}
-        </p>
-        {expanded && (
-          <>
-            <div className="movie-expanded-meta">
-              <div><span>Country</span><strong>{canonical.country || canonical.country_flag || item.plex_country || item.plex_country_flag || 'Unknown'}</strong></div>
-              <div><span>Language</span><strong>{canonical.language || item.plex_language || 'Unknown'}</strong></div>
-              <div><span>Resolution</span><strong>{item.resolution || 'Unknown'}</strong></div>
-              <div><span>Source</span><strong>{item.rip_source || 'Unknown'}</strong></div>
-            </div>
-            <div className="people-panel">
-              <div className="director-panel">
-                <span className="mini-label">Director</span>
-                {details?.loading ? (
-                  <div className="people-loading"><Loader2 size={15} className="spin" /> Loading director...</div>
-                ) : director?.name ? (
-                  <button type="button" className="director-person" onClick={() => onPersonFilter('director', director)}>
-                    <PersonAvatar person={director} />
-                    <span>
-                      <strong>{director.name}</strong>
-                      <small>Show directed movies</small>
-                    </span>
-                  </button>
-                ) : (
-                  <small>No director data found.</small>
-                )}
-              </div>
-              <div className="cast-panel">
-                <span className="mini-label">Top cast</span>
-                {details?.loading ? (
-                  <div className="people-loading"><Loader2 size={15} className="spin" /> Loading cast...</div>
-                ) : cast.length ? (
-                  <div className="person-grid">
-                    {cast.map((person) => (
-                      <button type="button" className="person-card" key={`${person.id || person.name}-${person.character || ''}`} onClick={() => onPersonFilter('actor', person)}>
-                        <PersonAvatar person={person} />
-                        <strong>{person.name}</strong>
-                        <small>{person.character || 'Cast'}</small>
-                      </button>
-                    ))}
-                  </div>
-                ) : (
-                  <small>No cast data found.</small>
-                )}
-              </div>
-              {activeCollection?.id && (
-                <div className="collection-panel">
-                  <button type="button" className="collection-main-action" onClick={() => onCollectionFilter(activeCollection)}>
-                    <Clapperboard size={17} />
-                    <span>
-                      <strong>{activeCollection.name}</strong>
-                      <small>
-                        {Number.isFinite(activeCollection.owned_count)
-                          ? `${formatCount(activeCollection.owned_count)} owned${activeCollection.unresolved_count ? `, ${formatCount(activeCollection.unresolved_count)} need identity review` : ''}`
-                          : `Collection made by ${activeCollection.source || 'TMDB'}`}
-                      </small>
-                    </span>
-                  </button>
-                  <div className="collection-actions">
-                    <button type="button" className="mini-action" onClick={() => onEditCollection(activeCollection)}>Edit</button>
-                    {activeCollection.is_edited && (
-                      <button type="button" className="mini-action mini-action-danger" onClick={() => onResetCollection(activeCollection)}>
-                        <RefreshCcw size={13} /> Reset
-                      </button>
-                    )}
-                  </div>
-                </div>
-              )}
-              <div className="lists-panel">
-                <div className="lists-panel-header">
-                  <span className="mini-label">Lists</span>
-                  <button type="button" className="mini-action" onClick={onEditLists}>Add to list</button>
-                </div>
-                {itemLists.length ? (
-                  <div className="list-chip-row">
-                    {itemLists.map((list) => (
-                      <span className="list-chip" key={list.id}>
-                        <button type="button" onClick={() => onListFilter(list)}>{list.name}</button>
-                        <button type="button" aria-label={`Remove from ${list.name}`} onClick={() => onRemoveFromList(list.id)}>
-                          <Trash2 size={13} />
-                        </button>
-                      </span>
-                    ))}
-                  </div>
-                ) : (
-                  <small>No user lists yet.</small>
-                )}
-              </div>
-            </div>
-          </>
-        )}
-        <div className="library-card-actions">
-          <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(item.path)}>
-            <Play size={15} /> Play
-          </button>
-          <button type="button" className="btn btn-secondary" onClick={onTrailer}>
-            <Film size={15} /> Trailer
-          </button>
-          <button type="button" className="btn btn-secondary" onClick={onToggle}>
-            <Info size={15} /> {expanded ? 'Less' : 'Details'}
-          </button>
-          <button type="button" className="btn btn-secondary" onClick={onCorrectMetadata}>
-            <Pencil size={15} /> Correct metadata
-          </button>
-          {lowQuality && (
-            <button type="button" className="btn btn-upgrade" onClick={() => onFindTorrent(movieForSearch, true)}>
-              <Wand2 size={15} /> Find upgrade
+    <UnifiedMovieCard
+      className={cx('library-movie-card', expanded && 'library-movie-card-expanded')}
+      title={identity.title}
+      year={identity.year}
+      posterUrl={posterUrl}
+      rating={canonical.rating || item.plex_rating}
+      voteCount={formatVoteCount(canonical.tmdb_vote_count)}
+      chips={genres.slice(0, 2)}
+      mutedChips={[locale, getQualityLabel(item), item.size_human]}
+      statusLabel={lowQuality ? 'Upgrade candidate' : ''}
+      statusTone={lowQuality ? 'warning' : 'neutral'}
+      expanded={expanded}
+      selected={selected}
+      onToggle={onToggle}
+      showPlayOverlay={Boolean(item.path)}
+      onPlay={() => onPlay(item.path)}
+      cornerControls={(
+        <>
+          <PosterStateControls
+            title={identity.title}
+            watched={watched}
+            watchlisted={watchlisted}
+            onToggleWatched={onToggleWatched}
+            onToggleWatchlist={onToggleWatchlist}
+          />
+          <PosterEditButton title={identity.title} onEdit={onEditPoster} />
+          <SelectionCheckbox
+            className="library-selection-checkbox"
+            checked={Boolean(selected)}
+            onChange={onSelect}
+            label={`Select ${identity.title}`}
+          />
+        </>
+      )}
+    >
+      {expanded && (
+        <>
+          <p className="library-summary movie-summary-expanded">
+            {canonical.summary || canonical.plot || item.plex_summary || 'No plot summary is available yet.'}
+          </p>
+          <div className="library-card-actions">
+            <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(item.path)}>
+              <Play size={15} /> Play
             </button>
-          )}
-        </div>
-      </div>
-    </article>
+            <button type="button" className="btn btn-secondary" onClick={onTrailer}>
+              <Film size={15} /> Trailer
+            </button>
+            <button type="button" className="btn btn-secondary" onClick={onCorrectMetadata}>
+              <Pencil size={15} /> Correct metadata
+            </button>
+            {lowQuality && (
+              <button type="button" className="btn btn-upgrade" onClick={() => onFindTorrent(movieForSearch, true)}>
+                <Wand2 size={15} /> Find upgrade
+              </button>
+            )}
+          </div>
+          <MovieExpandedDetails
+            movie={{ title: identity.title, year: identity.year }}
+            details={details}
+            collection={collection}
+            itemLists={itemLists}
+            directors={directors}
+            cast={cast}
+            onPersonBrowse={onPersonFilter}
+            onCollectionBrowse={onCollectionFilter}
+            onListBrowse={onListFilter}
+            onEditLists={onEditLists}
+            onRemoveFromList={onRemoveFromList}
+            onEditCollection={onEditCollection}
+            onResetCollection={onResetCollection}
+            emptyListText="No user lists yet."
+          />
+        </>
+      )}
+    </UnifiedMovieCard>
   );
 }
 
@@ -5464,7 +5945,7 @@ function ConfirmDialog({ title, body, confirmLabel, danger, onCancel, onConfirm 
   );
 }
 
-function MigrationWorkspace({ section, notify, onPlay, onFindTorrent, cleanupInitialTab, onReviewUnmatched, onReviewIdentities, onHealthChanged }) {
+function MigrationWorkspace({ section, notify, onPlay, onFindTorrent, cleanupInitialTab, onReviewUnmatched, onReviewIdentities, onHealthChanged, onStreamingConfigChanged }) {
   if (section === 'cleanup') {
     return (
       <CleanupWorkspace
@@ -5477,7 +5958,7 @@ function MigrationWorkspace({ section, notify, onPlay, onFindTorrent, cleanupIni
     );
   }
   if (section === 'settings') {
-    return <SettingsWorkspace notify={notify} onReviewUnmatched={onReviewUnmatched} onReviewIdentities={onReviewIdentities} />;
+    return <SettingsWorkspace notify={notify} onReviewUnmatched={onReviewUnmatched} onReviewIdentities={onReviewIdentities} onStreamingConfigChanged={onStreamingConfigChanged} />;
   }
   const meta = {
     library: {
@@ -6649,10 +7130,15 @@ const emptySettingsState = {
     update_available: false
   },
   tmdb: { key: '', includeAdult: false },
+  streaming: {
+    enabled: true,
+    label: 'Stream',
+    url_template: 'https://streamimdb.ru/embed/movie/{tmdb_id}'
+  },
   ollama: { url: '', model: '', candidateLimit: 15 }
 };
 
-function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
+function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onStreamingConfigChanged }) {
   const [forms, setForms] = useState(emptySettingsState);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState({});
@@ -6671,10 +7157,11 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         fetchJson('/api/prowlarr/config'),
         fetchJson('/api/qbittorrent/config'),
         fetchJson('/api/tmdb/config'),
+        fetchJson('/api/streaming/config'),
         fetchJson('/api/ollama/config')
       ]);
       if (cancelled) return;
-      const [library, appData, plex, prowlarr, qbittorrent, tmdb, ollama] = requests;
+      const [library, appData, plex, prowlarr, qbittorrent, tmdb, streaming, ollama] = requests;
       setForms({
         library: library.status === 'fulfilled' ? {
           directory: library.value.directory || '',
@@ -6694,6 +7181,11 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         } : { url: '', key: '', indexers: [], trusted_release_indexers: [] },
         qbittorrent: qbittorrent.status === 'fulfilled' ? qbittorrent.value : emptySettingsState.qbittorrent,
         tmdb: tmdb.status === 'fulfilled' ? { key: tmdb.value.key || '', includeAdult: Boolean(tmdb.value.include_adult) } : { key: '', includeAdult: false },
+        streaming: streaming.status === 'fulfilled' ? {
+          enabled: streaming.value.enabled !== false,
+          label: streaming.value.label || 'Stream',
+          url_template: streaming.value.url_template || ''
+        } : emptySettingsState.streaming,
         ollama: ollama.status === 'fulfilled' ? {
           url: ollama.value.url || '',
           model: ollama.value.model || '',
@@ -6832,6 +7324,7 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
       plex: '/api/plex/config',
       prowlarr: '/api/prowlarr/config',
       tmdb: '/api/tmdb/config',
+      streaming: '/api/streaming/config',
       ollama: '/api/ollama/config'
     };
     const payloads = {
@@ -6842,15 +7335,31 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         trusted_release_indexers: forms.prowlarr.trusted_release_indexers || []
       },
       tmdb: { key: forms.tmdb.key, include_adult: Boolean(forms.tmdb.includeAdult) },
+      streaming: {
+        enabled: Boolean(forms.streaming.enabled),
+        label: forms.streaming.label,
+        url_template: forms.streaming.url_template
+      },
       ollama: { url: forms.ollama.url, model: forms.ollama.model, candidate_limit: Number(forms.ollama.candidateLimit || 15) }
     };
     setActionState(`${service}-save`, true);
     try {
-      await fetchJson(endpoints[service], {
+      const saved = await fetchJson(endpoints[service], {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payloads[service])
       });
+      if (service === 'streaming') {
+        setForms((state) => ({
+          ...state,
+          streaming: {
+            enabled: saved.enabled !== false,
+            label: saved.label || 'Stream',
+            url_template: saved.url_template || ''
+          }
+        }));
+        onStreamingConfigChanged?.(saved);
+      }
       if (service === 'prowlarr') {
         const config = await fetchJson('/api/prowlarr/config');
         setForms((state) => ({
@@ -6963,6 +7472,7 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
     { key: 'prowlarr', label: 'Prowlarr', ready: Boolean(forms.prowlarr.url && forms.prowlarr.key), tone: 'gold' },
     { key: 'qbittorrent', label: 'qBittorrent', ready: forms.qbittorrent.mode === 'system' || Boolean(forms.qbittorrent.installed), tone: 'gold' },
     { key: 'tmdb', label: 'TMDB', ready: Boolean(forms.tmdb.key), tone: 'green' },
+    { key: 'streaming', label: 'Streaming', ready: Boolean(forms.streaming.enabled && forms.streaming.url_template), tone: 'green' },
     { key: 'ollama', label: 'Ollama', ready: Boolean(forms.ollama.url && forms.ollama.model), tone: 'violet' }
   ];
   const configuredCount = summary.filter((item) => item.ready).length;
@@ -7233,6 +7743,42 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities }) {
         />
 
         <IntegrationCard
+          id="settings-streaming"
+          icon={MonitorPlay}
+          title="Streaming Link"
+          accent="green"
+          status={statuses.streaming}
+          fields={(
+            <>
+              <label className="settings-checkbox-field">
+                <input
+                  type="checkbox"
+                  checked={forms.streaming.enabled !== false}
+                  onChange={(event) => updateField('streaming', 'enabled', event.target.checked)}
+                />
+                <span>
+                  <strong>Enable Stream buttons</strong>
+                  <small>When disabled, Stream is hidden from movie cards and details.</small>
+                </span>
+              </label>
+              <label className="dialog-field">
+                <span>Button label</span>
+                <input value={forms.streaming.label || ''} onChange={(event) => updateField('streaming', 'label', event.target.value)} placeholder="Stream" />
+              </label>
+              <label className="dialog-field">
+                <span>URL template</span>
+                <input value={forms.streaming.url_template || ''} onChange={(event) => updateField('streaming', 'url_template', event.target.value)} placeholder="https://streamimdb.ru/embed/movie/{tmdb_id}" />
+                <small>Use {'{tmdb_id}'} or {'{imdb_id}'} where the provider expects the movie ID. Example: https://streamimdb.ru/embed/movie/{'{tmdb_id}'}.</small>
+                <small>If you use {'{imdb_id}'}, CP resolves it from TMDB first.</small>
+              </label>
+            </>
+          )}
+          actions={(
+            <ActionButton loading={saving['streaming-save']} icon={Save} label="Save Streaming" onClick={() => saveIntegration('streaming')} primary />
+          )}
+        />
+
+        <IntegrationCard
           id="settings-ollama"
           icon={Bot}
           title="Ollama"
@@ -7343,6 +7889,7 @@ function serviceLabel(service) {
     plex: 'Plex',
     prowlarr: 'Prowlarr',
     tmdb: 'TMDB',
+    streaming: 'Streaming',
     ollama: 'Ollama'
   }[service] || service;
 }
@@ -7393,6 +7940,7 @@ function integrationText(title) {
     Prowlarr: 'Source search for upgrades and torrent lookup.',
     qBittorrent: 'Portable downloads powered by the original qBittorrent WebUI.',
     TMDB: 'Posters, plots, cast, discovery lists, and trailers.',
+    'Streaming Link': 'Configurable embedded movie stream URL template.',
     Ollama: 'Local AI recommendations through your own model.'
   }[title] || '';
 }

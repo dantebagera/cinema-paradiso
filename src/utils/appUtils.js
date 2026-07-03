@@ -50,3 +50,52 @@ export function topBarSearchEnabled(activeSection, discoverActiveTab) {
     || activeSection === 'library'
     || (activeSection === 'discover' && ['explore', 'browse'].includes(discoverActiveTab));
 }
+
+export function streamTemplateTokens(template) {
+  const source = String(template || '');
+  return ['imdb_id', 'tmdb_id'].filter((token) => source.includes(`{${token}}`));
+}
+
+export function buildStreamTemplateUrl(template, ids = {}) {
+  const source = String(template || '').trim();
+  if (!/^https?:\/\//i.test(source)) {
+    throw new Error('Streaming URL template must start with http:// or https://');
+  }
+  const labels = {
+    imdb_id: 'IMDB ID',
+    tmdb_id: 'TMDB ID'
+  };
+  let url = source;
+  for (const token of streamTemplateTokens(source)) {
+    const value = String(ids[token] || '').trim();
+    if (!value) throw new Error(`Missing ${labels[token]} for configured stream link`);
+    url = url.replaceAll(`{${token}}`, encodeURIComponent(value));
+  }
+  return url;
+}
+
+export function toYouTubeEmbedUrl(url) {
+  if (!url) return '';
+  let parsed;
+  try {
+    parsed = new URL(String(url));
+  } catch {
+    return '';
+  }
+
+  const host = parsed.hostname.replace(/^www\./, '').toLowerCase();
+  let videoId = '';
+  if (host === 'youtube.com' || host === 'm.youtube.com') {
+    if (parsed.pathname === '/watch') videoId = parsed.searchParams.get('v') || '';
+    else if (parsed.pathname.startsWith('/embed/')) videoId = parsed.pathname.split('/')[2] || '';
+  } else if (host === 'youtu.be') {
+    videoId = parsed.pathname.split('/').filter(Boolean)[0] || '';
+  }
+  if (!/^[\w-]+$/.test(videoId)) return '';
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+}
+
+export function youtubeTrailerSearchUrl(title, year) {
+  const query = [title, year, 'trailer'].filter(Boolean).join(' ');
+  return `https://www.youtube.com/results?search_query=${encodeURIComponent(query).replace(/%20/g, '+')}`;
+}

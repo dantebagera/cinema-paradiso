@@ -26,6 +26,7 @@ export function discoverMoviePayload(movie, owned) {
     plex_guid: String(movie?.plex_guid || owned?.plex_guid || ''),
     title: movie?.title || '',
     year: String(movie?.year || ''),
+    release_date: movie?.release_date || '',
     poster_url: movie?.poster_url || '',
     path: owned?.path || movie?.path || ''
   };

@@ -136,6 +136,11 @@ _plex_token     = _cfg.get('plex_token', '')
 _ollama_url     = _cfg.get('ollama_url', 'http://localhost:11434')
 _ollama_model   = _cfg.get('ollama_model', 'gemma4:31b-cloud')
 _ollama_candidate_limit = _coerce_ollama_candidate_limit(_cfg.get('ollama_candidate_limit'))
+_streaming_enabled = _coerce_bool(_cfg.get('streaming_enabled'), True)
+_streaming_label = str(_cfg.get('streaming_label', 'Stream') or 'Stream').strip() or 'Stream'
+_streaming_url_template = str(
+    _cfg.get('streaming_url_template', 'https://streamimdb.ru/embed/movie/{tmdb_id}') or ''
+).strip()
 _user_data_dir  = _cfg.get('user_data_dir', os.path.join(_BASE_DIR, 'data'))
 _tmdb_cache_dir = _cfg.get('tmdb_cache_dir', os.path.join(_BASE_DIR, 'cache'))
 _qbt_mode       = _cfg.get('qbt_mode', 'embedded')
@@ -252,6 +257,7 @@ def _normalize_curated_movie(movie):
         'year': str(movie.get('year', '') or ''),
         'path': str(movie.get('path', '') or ''),
         'poster_url': str(movie.get('poster_url', '') or ''),
+        'release_date': str(movie.get('release_date', '') or ''),
     }
 
 
@@ -1603,7 +1609,7 @@ _PLEX_TTL        = 300  # seconds before auto-refresh
 _library_cache   = {}   # keys: items, plex_enabled, plex_cached, time
 _LIBRARY_TTL     = 300  # seconds — same as Plex TTL
 _FILE_STABILITY_SECONDS = 15
-IDENTITY_DECISION_VERSION = 2
+IDENTITY_DECISION_VERSION = 3
 _metadata_migration_coordinator = None
 _metadata_migration_store_dir = ''
 _smart_match_coordinator = None
@@ -1640,6 +1646,9 @@ def _all_config():
         'ollama_url': _ollama_url,
         'ollama_model': _ollama_model,
         'ollama_candidate_limit': _ollama_candidate_limit,
+        'streaming_enabled': _streaming_enabled,
+        'streaming_label': _streaming_label,
+        'streaming_url_template': _streaming_url_template,
         'user_data_dir': _user_data_dir,
         'tmdb_cache_dir': _tmdb_cache_dir,
         'qbt_mode': _qbt_mode,
@@ -2121,9 +2130,26 @@ def _sort_followed_releases(items):
     ))
 
 
+def _backfill_followed_release_dates(store, movies):
+    enriched = []
+    changed = False
+    for item in movies or []:
+        updated = dict(item or {})
+        if not updated.get('release_date') and updated.get('tmdb_id'):
+            metadata = _fetch_tmdb_metadata_by_id(updated.get('tmdb_id'))
+            release_date = str(metadata.get('release_date', '') or '')
+            if release_date:
+                updated['release_date'] = release_date
+                changed = True
+        enriched.append(updated)
+    if changed:
+        store.save_followed_all(enriched)
+    return enriched
+
+
 def _check_followed_releases():
     store = _curation_store()
-    current = store.followed_all()
+    current = _backfill_followed_release_dates(store, store.followed_all())
     checked = []
     removed_owned = []
     newly_available = []
@@ -2565,6 +2591,7 @@ def qbittorrent_proxy_asset(filename):
 @app.route('/downloads')
 @app.route('/help')
 @app.route('/settings')
+@app.route('/card-lab')
 def react_section_index():
     return index()
 
@@ -2786,6 +2813,32 @@ def set_prowlarr_config():
     return jsonify({'success': True})
 
 
+@app.route('/api/streaming/config', methods=['GET', 'POST'])
+def streaming_config():
+    global _streaming_enabled, _streaming_label, _streaming_url_template
+    if request.method == 'GET':
+        return jsonify({
+            'enabled': _streaming_enabled,
+            'label': _streaming_label,
+            'url_template': _streaming_url_template,
+        })
+    data = request.get_json(silent=True) or {}
+    label = str(data.get('label', _streaming_label) or '').strip() or 'Stream'
+    url_template = str(data.get('url_template', _streaming_url_template) or '').strip()
+    if url_template and not re.match(r'^https?://', url_template, flags=re.IGNORECASE):
+        return jsonify({'error': 'Streaming URL template must start with http:// or https://'}), 400
+    _streaming_enabled = _coerce_bool(data.get('enabled'), _streaming_enabled)
+    _streaming_label = label
+    _streaming_url_template = url_template
+    _save_config(_all_config())
+    return jsonify({
+        'success': True,
+        'enabled': _streaming_enabled,
+        'label': _streaming_label,
+        'url_template': _streaming_url_template,
+    })
+
+
 @app.route('/api/prowlarr/test')
 def prowlarr_test():
     if not _prowlarr_url or not _prowlarr_key:
@@ -2850,7 +2903,7 @@ def qbittorrent_status():
 @app.route('/api/qbittorrent/update', methods=['POST'])
 def qbittorrent_install():
     return jsonify({
-        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.6.5 because the tested portable runtime is bundled with the release.'
+        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.6.6 because the tested portable runtime is bundled with the release.'
     }), 410
 
 
@@ -4772,6 +4825,7 @@ def tmdb_discover():
                 'language':   _LANG_NAMES.get(lang, lang.upper() if lang else ''),
                 'country':    country_code,
                 'country_flag': _country_flag(country_code),
+                'release_date': release,
                 'adult': bool(m.get('adult', False)),
             })
         total_pages = int(data.get('total_pages', 1) or 1)
@@ -4937,6 +4991,7 @@ def tmdb_search():
                 'language':   _LANG_NAMES.get(lang, lang.upper() if lang else ''),
                 'country':    country_code,
                 'country_flag': _country_flag(country_code),
+                'release_date': release,
             })
         return jsonify({
             'results': movies[:page_size],
@@ -5505,6 +5560,7 @@ def _normalize_tmdb_details_payload(data):
         'trailer_url': trailer_url,
         'runtime': data.get('runtime'),
         'tagline': data.get('tagline', ''),
+        'release_date': data.get('release_date', '') or '',
     }
 
 
@@ -5524,7 +5580,7 @@ def _fetch_tmdb_metadata_by_id(tmdb_id, store=None, refresh=False, match_source=
         return {}
     store = store or _metadata_store()
     cached = store.get_tmdb_metadata(tmdb_id)
-    if cached and not refresh:
+    if cached and not refresh and (cached.get('release_date') or not _tmdb_key):
         return {**cached, **({'match_source': match_source} if match_source else {})}
     if not _tmdb_key:
         return cached or {}
@@ -5778,16 +5834,49 @@ def _library_inventory_bootstrap_cutoff(store):
         return 0
 
 
-def _record_needs_identity_decision_refresh(record):
+def _record_has_unresolved_identity(record):
     record = record or {}
     if record.get('metadata_accepted') or record.get('metadata_status') == 'accepted':
-        return False
-    if int(record.get('identity_decision_version') or 0) >= IDENTITY_DECISION_VERSION:
         return False
     return bool(
         record.get('identity_status') in {'unmatched', 'review', 'conflict'}
         or record.get('metadata_status') in {'unmatched', 'needs_review', 'conflict'}
     )
+
+
+def _identity_evidence_fingerprint(path, file_facts=None, plex_data=None):
+    file_facts = file_facts or _metadata_file_facts(path)
+    plex_data = plex_data or {}
+    payload = {
+        'queries': [
+            {
+                'source': query.get('source', ''),
+                'title': _norm_movie_title(query.get('title', '')),
+                'year': str(query.get('year', '') or ''),
+            }
+            for query in _identity_queries(path, file_facts, plex_data)
+        ],
+        'plex': {
+            'tmdb_id': str(plex_data.get('tmdb_id', '') or ''),
+            'imdb_id': str(plex_data.get('imdb_id', '') or '').lower(),
+            'plex_guid': str(plex_data.get('plex_guid') or plex_data.get('guid') or '').lower(),
+            'rating_key': str(plex_data.get('rating_key', '') or ''),
+        },
+    }
+    encoded = _json.dumps(payload, sort_keys=True, separators=(',', ':'))
+    return hashlib.sha256(encoded.encode('utf-8')).hexdigest()
+
+
+def _record_needs_identity_decision_refresh(record, current_fingerprint=''):
+    record = record or {}
+    if not _record_has_unresolved_identity(record):
+        return False
+    if int(record.get('identity_decision_version') or 0) >= IDENTITY_DECISION_VERSION:
+        previous_fingerprint = str(record.get('identity_evidence_fingerprint') or '')
+        if current_fingerprint and previous_fingerprint and previous_fingerprint != current_fingerprint:
+            return True
+        return False
+    return True
 
 
 def _reconcile_library_files(force_unresolved=False):
@@ -5823,7 +5912,18 @@ def _reconcile_library_files(force_unresolved=False):
             ):
                 candidates.append((path, record))
                 continue
-            if _record_needs_identity_decision_refresh(record):
+            current_identity_fingerprint = ''
+            if _record_has_unresolved_identity(record):
+                file_facts = _metadata_file_facts(path)
+                filename = file_facts.get('filename', file)
+                plex_data = dict(
+                    snapshot.get('plex_files', {}).get(key, {})
+                    or _plex_cache.get(_norm(path), {})
+                    or _plex_matched_by_fname.get(str(filename).lower(), {})
+                    or {}
+                )
+                current_identity_fingerprint = _identity_evidence_fingerprint(path, file_facts, plex_data)
+            if _record_needs_identity_decision_refresh(record, current_identity_fingerprint):
                 candidates.append((path, record))
                 continue
             if not record:
@@ -5968,7 +6068,13 @@ def _accepted_tmdb_migration_metadata(path, file_facts, plex_data, store):
         }, False
 
     queries = _identity_queries(path, file_facts, plex_data)
-    decision = decide_identity(queries, _identity_tmdb_candidates(queries))
+    known_identity = {'imdb_id': str(plex_data.get('imdb_id', '') or '').lower()}
+    candidates = _identity_tmdb_candidates(queries)
+    decision = decide_identity(queries, candidates, known_identity=known_identity)
+    if decision.get('status') in {'review', 'unmatched'}:
+        enriched_candidates = _enriched_identity_tmdb_candidates(queries, candidates, store=store)
+        if enriched_candidates != candidates:
+            decision = decide_identity(queries, enriched_candidates, known_identity=known_identity)
     candidate = decision.get('candidate', {})
     if decision.get('status') == 'accepted' and candidate.get('tmdb_id'):
         metadata = _fetch_tmdb_metadata_by_id(
@@ -6034,6 +6140,29 @@ def _identity_tmdb_candidates(queries):
                     *[source for source in sources if source],
                 ]))
     return list(merged.values())
+
+
+def _enriched_identity_tmdb_candidates(queries, candidates, store=None):
+    enriched = []
+    for candidate in (candidates or [])[:5]:
+        tmdb_id = str(candidate.get('tmdb_id') or candidate.get('id') or '')
+        if not tmdb_id:
+            enriched.append(candidate)
+            continue
+        details = _fetch_tmdb_metadata_by_id(tmdb_id, store=store, refresh=False) or {}
+        if details:
+            enriched.append({
+                **candidate,
+                **details,
+                'provider_rank': candidate.get('provider_rank', details.get('provider_rank', 999)),
+                'query_sources': candidate.get('query_sources', []),
+                'alternative_titles': candidate.get('alternative_titles') or details.get('alternative_titles', []),
+                'original_title': candidate.get('original_title', details.get('original_title', '')),
+            })
+        else:
+            enriched.append(candidate)
+    enriched.extend(list(candidates or [])[5:])
+    return enriched
 
 
 def _migrate_locked_manual_match(path, facts, plex_data, store):
@@ -6112,6 +6241,7 @@ def _migrate_metadata_path(path, target):
             'metadata_status': 'unmatched',
             'metadata_source': 'filename',
             'metadata_accepted': False,
+            'identity_evidence_fingerprint': _identity_evidence_fingerprint(path, facts, {}),
             'identity_decision_version': IDENTITY_DECISION_VERSION,
         })
         return 'matched'
@@ -6132,6 +6262,7 @@ def _migrate_metadata_path(path, target):
             store.update_file_record(path, {
                 **facts,
                 'migration_status': 'needs_review',
+                'identity_evidence_fingerprint': _identity_evidence_fingerprint(path, facts, plex_data),
                 'identity_decision_version': IDENTITY_DECISION_VERSION,
             })
             return 'review'
@@ -6153,6 +6284,7 @@ def _migrate_metadata_path(path, target):
                         'accepted': current_id,
                         'plex': plex_id,
                     },
+                    'identity_evidence_fingerprint': _identity_evidence_fingerprint(path, facts, plex_data),
                     'identity_decision_version': IDENTITY_DECISION_VERSION,
                 })
                 return 'review'
@@ -6171,6 +6303,7 @@ def _migrate_metadata_path(path, target):
                     **facts,
                     'identity_status': plex_decision.get('status', 'review'),
                     'migration_status': 'needs_review',
+                    'identity_evidence_fingerprint': _identity_evidence_fingerprint(path, facts, plex_data),
                     'identity_decision_version': IDENTITY_DECISION_VERSION,
                 })
                 return 'review'
@@ -6208,6 +6341,7 @@ def _migrate_metadata_path(path, target):
             'candidate_tmdb_id': str(metadata.get('tmdb_id', '') or ''),
             'candidate_title': metadata.get('title', ''),
             'candidate_year': str(metadata.get('year', '') or ''),
+            'identity_evidence_fingerprint': _identity_evidence_fingerprint(path, facts, plex_data),
             'identity_decision_version': IDENTITY_DECISION_VERSION,
         }
         if not resolve_authoritative_identity(current_record).get('accepted'):
@@ -7671,7 +7805,7 @@ def tmdb_details():
         return jsonify({'error': 'tmdb_id and TMDB key required'}), 400
     try:
         cached = _tmdb_library_cache.get(str(tmdb_id))
-        if cached and not refresh:
+        if cached and not refresh and cached.get('data', {}).get('release_date'):
             data = dict(cached.get('data', {}))
             data['cached'] = True
             data['fetched_at'] = cached.get('fetched_at', 0)
@@ -7829,7 +7963,8 @@ def user_followed_releases():
     if request.method == 'GET':
         if request.args.get('check') == '1':
             return jsonify(_check_followed_releases())
-        return jsonify({'movies': _sort_followed_releases(store.followed_all())})
+        movies = _backfill_followed_release_dates(store, store.followed_all())
+        return jsonify({'movies': _sort_followed_releases(movies)})
     body = request.get_json(force=True, silent=True) or {}
     movie = body.get('movie') or body
     try:
@@ -8367,6 +8502,7 @@ def _ollama_enrich_with_tmdb(title, year):
             'language':     _LANG_NAMES.get(lang, lang.upper() if lang else ''),
             'country':      country_code,
             'country_flag': _country_flag(country_code),
+            'release_date': release,
         }
     except Exception:
         return None

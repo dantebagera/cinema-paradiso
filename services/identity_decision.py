@@ -144,6 +144,103 @@ def _plex_agreement_overrides_low_rivals(top, rivals, queries):
     return True
 
 
+def _metadata_text(candidate):
+    return " ".join(
+        str(candidate.get(key) or "")
+        for key in ("overview", "plot", "tagline", "poster_path", "poster_url", "backdrop_path", "backdrop_url")
+    ).strip()
+
+
+def _has_real_tmdb_metadata(candidate):
+    candidate = candidate or {}
+    return bool(
+        int(candidate.get("tmdb_vote_count", 0) or 0) >= 10
+        or int(float(candidate.get("popularity", 0) or 0)) >= 10
+        or candidate.get("imdb_id")
+        or candidate.get("runtime")
+        or len(_metadata_text(candidate)) >= 20
+    )
+
+
+def _weak_duplicate_like_candidate(candidate):
+    candidate = candidate or {}
+    signal = _provider_signal(candidate, "tmdb")
+    rank = int(candidate.get("provider_rank", 999) or 999)
+    if signal >= 10:
+        return False
+    if _has_real_tmdb_metadata(candidate):
+        return False
+    return rank >= 3 or signal <= 1
+
+
+def _year_difference(left, right):
+    left_year = _year(left)
+    right_year = _year(right)
+    if not left_year or not right_year:
+        return None
+    return abs(int(left_year) - int(right_year))
+
+
+def _title_matches_query(candidate, query):
+    return normalize_movie_title((query or {}).get("title")) in _title_variants(candidate or {})
+
+
+def _dominant_one_year_candidate_over_weak_duplicates(ranked, queries):
+    ranked = [dict(candidate or {}) for candidate in (ranked or [])]
+    queries = [dict(query or {}) for query in (queries or [])]
+    if not ranked or not queries:
+        return {}
+    viable = []
+    for candidate in ranked:
+        if candidate.get("identity_conflict"):
+            continue
+        if int(candidate.get("provider_rank", 0) or 0) != 1:
+            continue
+        if not _has_real_tmdb_metadata(candidate):
+            continue
+        if _provider_signal(candidate, "tmdb") < 50:
+            continue
+        local_queries = [
+            query for query in queries
+            if query.get("source") in {"filename", "folder", "plex_hint"}
+            and _title_matches_query(candidate, query)
+        ]
+        if not local_queries:
+            continue
+        differences = [
+            _year_difference(query.get("year"), candidate.get("year"))
+            for query in local_queries
+        ]
+        if not any(difference in {0, 1} for difference in differences):
+            continue
+        if not any(difference == 1 for difference in differences):
+            continue
+        viable.append((candidate, local_queries))
+    if not viable:
+        return {}
+    top, local_queries = max(viable, key=lambda item: _provider_signal(item[0], "tmdb"))
+    if top.get("identity_conflict"):
+        return {}
+    if "plex_hint" in {query.get("source") for query in local_queries}:
+        return top
+    if "title_without_year" not in set(top.get("query_sources") or []):
+        return {}
+    weak_rivals = [
+        candidate for candidate in ranked[1:]
+        if _candidate_identity_key(candidate) != _candidate_identity_key(top)
+        and any(
+            _title_matches_query(candidate, query)
+            and _year_difference(query.get("year"), candidate.get("year")) == 0
+            for query in local_queries
+        )
+    ]
+    if not weak_rivals:
+        return {}
+    if all(_weak_duplicate_like_candidate(rival) for rival in weak_rivals):
+        return top
+    return {}
+
+
 def _dominates_exact_title_year_rivals(top, rivals, queries=None):
     top = dict(top or {})
     rivals = [dict(candidate or {}) for candidate in (rivals or [])]
@@ -293,6 +390,17 @@ def decide_identity(queries, candidates, known_identity=None):
     non_conflicting = [candidate for candidate in ranked if not candidate.get("identity_conflict")]
     if not non_conflicting:
         return _result("conflict", ranked, queries, candidate=ranked[0])
+
+    dominant_one_year = _dominant_one_year_candidate_over_weak_duplicates(non_conflicting, queries)
+    if dominant_one_year:
+        return _result(
+            "accepted", ranked, queries, True, dominant_one_year,
+            reasons=[
+                "dominant provider candidate beats weak duplicate pages",
+                *list(dominant_one_year.get("reasons") or []),
+            ],
+            date_discrepancy=True,
+        )
 
     exact = [
         candidate for candidate in non_conflicting

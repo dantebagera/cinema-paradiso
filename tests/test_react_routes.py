@@ -8,7 +8,7 @@ class ReactRouteTest(unittest.TestCase):
     def test_react_sections_serve_built_index(self):
         client = app.app.test_client()
 
-        responses = [client.get(path) for path in ("/discover", "/downloads", "/help")]
+        responses = [client.get(path) for path in ("/discover", "/downloads", "/help", "/card-lab")]
 
         for response in responses:
             self.assertEqual(response.status_code, 200)

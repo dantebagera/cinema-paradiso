@@ -5,7 +5,7 @@ import zipfile
 from pathlib import Path
 
 
-CP_VERSION = "2.6.5"
+CP_VERSION = "2.6.6"
 QBT_VERSION = "5.2.2"
 EXCLUDED_QBT_NAMES = {
     "profile",
@@ -76,8 +76,13 @@ def build_release_zip(project_root, qbt_source=None, output_dir=None):
         "data",
         "cache",
         "release",
+        "runtime",
+        "winapp",
+        "_cf_profile",
         "test-results",
         "__pycache__",
+        "config.json",
+        "res_cache.json",
     }
     for item in project_root.iterdir():
         if item.name in ignored_roots:

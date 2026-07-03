@@ -13,6 +13,7 @@ class LibraryReconcileTest(unittest.TestCase):
         self.original_user_data = app._user_data_dir
         self.original_tmdb_key = app._tmdb_key
         self.original_library_cache = dict(app._library_cache)
+        self.original_plex_cache = dict(app._plex_cache)
 
     def tearDown(self):
         app._movies_dirs = self.original_dirs
@@ -20,6 +21,7 @@ class LibraryReconcileTest(unittest.TestCase):
         app._user_data_dir = self.original_user_data
         app._tmdb_key = self.original_tmdb_key
         app._library_cache = self.original_library_cache
+        app._plex_cache = self.original_plex_cache
 
     def configure(self, movies_dir, data_dir):
         app._movies_dirs = [movies_dir]
@@ -239,6 +241,45 @@ class LibraryReconcileTest(unittest.TestCase):
 
         self.assertEqual(result["checked"], 0)
         reconcile_path.assert_not_called()
+
+    def test_current_review_record_is_retried_when_provider_evidence_changes(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Obsession.2025.1080p.WEBRip.x264.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_authority_state({"active_provider": "tmdb"})
+            fingerprint = {
+                "path": str(movie),
+                "size": movie.stat().st_size,
+                "modified_time": movie.stat().st_mtime,
+            }
+            store.save_library_inventory({app._norm(str(movie)): fingerprint})
+            store.update_file_record(str(movie), {
+                "metadata_status": "needs_review",
+                "identity_status": "review",
+                "metadata_accepted": False,
+                "identity_decision_version": app.IDENTITY_DECISION_VERSION,
+                "identity_evidence_fingerprint": "filename:obsession:2025",
+                "candidate_tmdb_id": "1436161",
+                "candidate_title": "Obsession",
+                "candidate_year": "2025",
+                "size": fingerprint["size"],
+                "modified_time": fingerprint["modified_time"],
+            })
+            app._plex_cache[app._norm(str(movie))] = {
+                "plex_title": "Obsession",
+                "plex_year": "2026",
+                "tmdb_id": "1339713",
+                "imdb_id": "tt3000000",
+                "plex_guid": "plex://movie/obsession",
+            }
+
+            with patch("app._reconcile_library_path", return_value="matched") as reconcile_path:
+                result = app._reconcile_library_files()
+
+        self.assertEqual(result["checked"], 1)
+        reconcile_path.assert_called_once()
 
     def test_inventory_bootstrap_processes_files_newer_than_metadata_checkpoint(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:

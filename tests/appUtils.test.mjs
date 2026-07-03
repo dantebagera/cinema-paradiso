@@ -8,9 +8,13 @@ import {
   movieKey,
   sectionFromPath,
   sortFollowedReleases,
+  buildStreamTemplateUrl,
+  streamTemplateTokens,
+  toYouTubeEmbedUrl,
   topBarSearchEnabled,
   torrentSizeBytes,
-  torrentPrimaryAction
+  torrentPrimaryAction,
+  youtubeTrailerSearchUrl
 } from '../src/utils/appUtils.js';
 
 test('cx joins only truthy class names in order', () => {
@@ -117,4 +121,64 @@ test('topBarSearchEnabled limits search to functional page contexts', () => {
   assert.equal(topBarSearchEnabled('settings', 'explore'), false);
   assert.equal(topBarSearchEnabled('cleanup', 'explore'), false);
   assert.equal(topBarSearchEnabled('downloads', 'explore'), false);
+});
+
+test('streamTemplateTokens reports required movie identifiers', () => {
+  assert.deepEqual(streamTemplateTokens('https://example.test/embed/{tmdb_id}'), ['tmdb_id']);
+  assert.deepEqual(streamTemplateTokens('https://example.test/{imdb_id}/{tmdb_id}'), ['imdb_id', 'tmdb_id']);
+});
+
+test('buildStreamTemplateUrl replaces configured movie identifiers', () => {
+  assert.equal(
+    buildStreamTemplateUrl('https://streamimdb.ru/embed/movie/{tmdb_id}', { tmdb_id: 1413976 }),
+    'https://streamimdb.ru/embed/movie/1413976'
+  );
+  assert.equal(
+    buildStreamTemplateUrl('https://example.test/title/{imdb_id}', { imdb_id: 'tt0111161' }),
+    'https://example.test/title/tt0111161'
+  );
+});
+
+test('buildStreamTemplateUrl rejects missing ids and non-http templates', () => {
+  assert.throws(
+    () => buildStreamTemplateUrl('https://streamimdb.ru/embed/movie/{tmdb_id}', {}),
+    /Missing TMDB ID/
+  );
+  assert.throws(
+    () => buildStreamTemplateUrl('javascript:alert({tmdb_id})', { tmdb_id: '1413976' }),
+    /http/
+  );
+});
+
+test('toYouTubeEmbedUrl converts common YouTube trailer links to embeddable player URLs', () => {
+  assert.equal(
+    toYouTubeEmbedUrl('https://www.youtube.com/watch?v=official-key&feature=share'),
+    'https://www.youtube.com/embed/official-key?autoplay=1&rel=0'
+  );
+  assert.equal(
+    toYouTubeEmbedUrl('https://youtu.be/short-key?t=12'),
+    'https://www.youtube.com/embed/short-key?autoplay=1&rel=0'
+  );
+  assert.equal(
+    toYouTubeEmbedUrl('https://www.youtube.com/embed/already-embed'),
+    'https://www.youtube.com/embed/already-embed?autoplay=1&rel=0'
+  );
+});
+
+test('toYouTubeEmbedUrl rejects non-player and invalid trailer URLs', () => {
+  assert.equal(toYouTubeEmbedUrl('https://www.youtube.com/results?search_query=heat+trailer'), '');
+  assert.equal(toYouTubeEmbedUrl('https://example.com/watch?v=official-key'), '');
+  assert.equal(toYouTubeEmbedUrl(''), '');
+  assert.equal(toYouTubeEmbedUrl(null), '');
+});
+
+test('youtubeTrailerSearchUrl builds an external YouTube fallback search', () => {
+  assert.equal(
+    youtubeTrailerSearchUrl('Heat', 1995),
+    'https://www.youtube.com/results?search_query=Heat+1995+trailer'
+  );
+  assert.equal(
+    youtubeTrailerSearchUrl('The Matrix', ''),
+    'https://www.youtube.com/results?search_query=The+Matrix+trailer'
+  );
 });
