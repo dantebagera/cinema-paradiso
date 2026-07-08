@@ -6,25 +6,23 @@ Cinema Paradiso is a self-hosted movie library manager for people with hundreds 
 
 Everything runs on your machine. No cloud account. No subscription. No remote database.
 
-**Current version: v2.6.7** - July 2026
+**Current version: v2.6.5** - June 2026
 
 ---
 
 ## Screenshots
 
-Historical README and DOCS snapshots from earlier versions are preserved in [docs/history](docs/history/README.md).
-
 ### Home Command Center
 
 ![Cinema Paradiso Home](screenshots/react-home-desktop.png)
 
-### Library
+### Library Movie View
 
-![Cinema Paradiso Library](screenshots/react-library-movie-view.png)
+![Library Movie View](screenshots/react-library-movie-view.png)
 
-### Cleanup
+### Library File View
 
-![Cleanup Workspace](screenshots/react-cleanup-desktop.png)
+![Library File View](screenshots/react-library-file-view.png)
 
 ### Discover Movies
 
@@ -34,38 +32,21 @@ Historical README and DOCS snapshots from earlier versions are preserved in [doc
 
 ![Browse Indexers](screenshots/react-discover-browse-loaded.png)
 
-### Ask AI
-
-![Ask AI Recommendations](screenshots/react-discover-ask-ai.png)
-
-### Downloads
-
-![Downloads Workspace](screenshots/react-downloads-desktop.png)
-
-### Help
-
-![Cinema Paradiso Help](screenshots/react-help-desktop.png)
-
-### Settings
-
-![Cinema Paradiso Settings](screenshots/react-settings-desktop.png)
-
 ### Styleguide
 
 ![Cinema Paradiso Styleguide](screenshots/styleguide-page-wide.png)
 
 ---
 
-## What Changed in v2.6.7
+## What Changed in v2.6.5
 
-Cinema Paradiso v2.6.7 tightens source-search reliability, YTS handling, and local release packaging while preserving the v2.6.6 movie-card, trailer, streaming, and unreleased-movie improvements.
+Cinema Paradiso v2.6.5 improves large-library metadata matching, trusted followed-release availability, and bulk list workflows while preserving the local-first v2.6 library identity model.
 
-- **Safer source matching:** Explore, source search, and followed-release checks prefer IMDb IDs before title/year fallbacks and reject polluted wrong-title or wrong-year results.
-- **YTS reliability:** trusted YTS/Prowlarr searches now handle YTS title aliases, zero-seeder releases, RSS latest entries, and magnet links built from info hashes when Prowlarr returns redirect-style URLs.
-- **Progressive source search:** slow or timed-out indexers no longer hide fast valid results from other indexers.
-- **Alternative titles:** source searches can use TMDB original and alternative titles for movies whose release title differs from the display title.
-- **Portable release polish:** the v2.6.7 package keeps the tested bundled qBittorrent runtime path and includes refreshed Cinema Paradiso icon assets.
-- **Version display:** the sidebar footer is rebuilt from the `2.6.7` package version so the app UI matches the release tag.
+- **Smarter metadata acceptance:** dominant exact TMDB title/year matches can be accepted automatically while strong provider conflicts still go to review.
+- **Trusted release availability:** followed releases only become Available from trusted Prowlarr indexers and approved WEBRip/Blu-ray/BDRip/BRRip sources.
+- **Cleaner Prowlarr settings:** trusted release indexers live in a compact Settings popup, with YTS/YIFY selected by default when available.
+- **Bulk list workflows:** Library and Discover can select filtered results and add them to new or existing lists.
+- **Copy list exports:** list selections can be copied to another folder, drive, or network share through a folder browser.
 
 ---
 
@@ -110,13 +91,13 @@ Discover is the online activity area.
 
 Downloads uses the original qBittorrent WebUI inside Cinema Paradiso. The embedded client is isolated from any qBittorrent installation already registered as the operating system's default torrent client.
 
-- The v2.6.7 portable release ZIP includes a tested bundled qBittorrent runtime.
+- The v2.6.5 portable release ZIP includes a tested bundled qBittorrent runtime.
 - Cinema Paradiso submissions are tagged `cinema-paradiso` and download to an incomplete staging folder.
 - At 100%, Cinema Paradiso pauses and removes the torrent without deleting its data, then moves the unchanged payload into the selected movie destination.
 - A blank movie destination uses the first configured library folder.
 - The incomplete folder must remain outside every movie library so Plex and Cinema Paradiso cannot index partial files.
 - Settings can switch torrent handling back to the operating system's default client.
-- qBittorrent install and update are not exposed in v2.6.7; runtime upgrades come through future Cinema Paradiso releases.
+- qBittorrent install and update are not exposed in v2.6.5; runtime upgrades come through future Cinema Paradiso releases.
 
 ### Help
 
@@ -156,7 +137,7 @@ User lists, Watched and Watchlist states, edited collections, followed releases,
 
 ### Windows Quick Start
 
-For normal use, download the `Cinema-Paradiso-2.6.7-Portable.zip` artifact from GitHub Releases, extract it, and run Cinema Paradiso from that folder. The portable release includes the tested bundled qBittorrent runtime.
+For normal use, download the `Cinema-Paradiso-2.6.5-Portable.zip` artifact from GitHub Releases, extract it, and run Cinema Paradiso from that folder. The portable release includes the tested bundled qBittorrent runtime.
 
 The GitHub Source ZIP remains developer-oriented. If you download the source ZIP or clone the repository, double-click `run.bat`.
 
@@ -210,7 +191,7 @@ Example:
 
 Only a movie library folder is required. Integrations are optional.
 
-The v2.6.7 portable release uses bundled qBittorrent. Settings lets you choose embedded qBittorrent or the system default torrent client, plus completed and incomplete folders. qBittorrent install/update controls are intentionally not part of v2.6.7.
+The v2.6.5 portable release uses bundled qBittorrent. Settings lets you choose embedded qBittorrent or the system default torrent client, plus completed and incomplete folders. qBittorrent install/update controls are intentionally not part of v2.6.5.
 
 ---
 

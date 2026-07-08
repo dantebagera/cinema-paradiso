@@ -12,8 +12,6 @@ Everything runs on your machine. No cloud account. No subscription. No remote da
 
 ## Screenshots
 
-Historical README and DOCS snapshots from earlier versions are preserved in [docs/history](docs/history/README.md).
-
 ### Home Command Center
 
 ![Cinema Paradiso Home](screenshots/react-home-desktop.png)
