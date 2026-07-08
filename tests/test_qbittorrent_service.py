@@ -213,6 +213,32 @@ class QBittorrentJobStoreTests(unittest.TestCase):
             self.assertEqual(results[0]["state"], "imported")
             self.assertTrue((destination / payload.name / "movie.mkv").exists())
 
+    def test_manager_does_not_resubmit_already_imported_magnet(self):
+        with tempfile.TemporaryDirectory() as root:
+            staging = Path(root) / "incomplete"
+            destination = Path(root) / "library"
+            manager = QBittorrentManager(
+                root,
+                {"incomplete_dir": str(staging), "download_dir": str(destination)},
+                [str(destination)],
+            )
+            magnet = "magnet:?xt=urn:btih:48373C3569751AA5C51072E826DD43FFB350BA84&dn=Movie"
+            manager.jobs.upsert("48373c3569751aa5c51072e826dd43ffb350ba84", {
+                "title": "Movie",
+                "state": "imported",
+                "imported_paths": [str(destination / "Movie.mkv")],
+            })
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.add_magnet = MagicMock()
+
+            result = manager.submit_magnet(magnet, {"title": "Movie", "year": "2026"})
+
+            self.assertEqual(result["state"], "imported")
+            self.assertTrue(result["already_exists"])
+            self.assertEqual(result["imported_paths"], [str(destination / "Movie.mkv")])
+            manager.ensure_running.assert_not_called()
+            manager.client.add_magnet.assert_not_called()
+
 
 class QBittorrentProxyTests(unittest.TestCase):
     def test_embedded_html_preserves_qbt_without_copying_cp_navigation(self):

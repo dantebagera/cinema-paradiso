@@ -12,6 +12,7 @@ import {
   getRolePeople,
   itemMatchesCollectionFilter,
   itemMatchesRoleFilter,
+  listLibraryCoverage,
   listsForItem,
   movieHasSystemState,
   mergePeople,
@@ -332,6 +333,34 @@ test('listsForItem matches saved list movies by path when TMDB ids are missing f
   ];
 
   assert.deepEqual(listsForItem(libraryItem, lists).map((list) => list.name), ['toty']);
+});
+
+test('listLibraryCoverage reports list movies missing from the current library', () => {
+  const items = [
+    {
+      path: 'E:/Movies/Heat.mkv',
+      canonical_metadata: { accepted: true, tmdb_id: '949', title: 'Heat', year: '1995' }
+    },
+    {
+      title: 'Full Metal Jacket (1987)',
+      path: 'E:/Movies/Full Metal Jacket.mkv'
+    }
+  ];
+  const list = {
+    name: 'toty',
+    movies: [
+      { tmdb_id: '949', title: 'Heat', year: '1995' },
+      { tmdb_id: '77', title: 'Memento', year: '2000' },
+      { title: 'Full Metal Jacket', year: '1987', path: 'E:/Movies/Full Metal Jacket.mkv' }
+    ]
+  };
+
+  assert.deepEqual(listLibraryCoverage(items, list), {
+    total: 3,
+    matched: 2,
+    missingCount: 1,
+    missingMovies: [{ tmdb_id: '77', title: 'Memento', year: '2000' }]
+  });
 });
 
 test('movieHasSystemState shares provider identity across duplicate paths', () => {

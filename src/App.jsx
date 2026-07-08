@@ -91,6 +91,7 @@ import {
   getRolePeople,
   getTmdbCacheKey,
   isLowQuality,
+  listLibraryCoverage,
   listsForItem,
   movieHasSystemState,
   movieIdentityKey,
@@ -229,6 +230,10 @@ async function fetchJson(url, options) {
     throw error;
   }
   return data;
+}
+
+function wait(ms) {
+  return new Promise((resolve) => window.setTimeout(resolve, ms));
 }
 
 function localDateString(date = new Date()) {
@@ -520,6 +525,7 @@ function ArchiveApp() {
   const [discoverSearchRequest, setDiscoverSearchRequest] = useState(0);
   const [cleanupInitialTab, setCleanupInitialTab] = useState('duplicates');
   const [homeLists, setHomeLists] = useState([]);
+  const sourceSearchTokenRef = useRef(0);
 
   const notify = useCallback((message, tone = 'success') => {
     setToast({ message, tone });
@@ -829,13 +835,35 @@ function ArchiveApp() {
     const title = movie?.title || '';
     const year = movie?.year || '';
     if (!title) return;
-    setTorrentModal({ title, year, upgrade, loading: true, error: '', variants: [] });
+    const searchToken = sourceSearchTokenRef.current + 1;
+    sourceSearchTokenRef.current = searchToken;
+    setTorrentModal({ title, year, upgrade, loading: true, error: '', variants: [], sourceSearch: null });
     try {
-      const params = new URLSearchParams({ title });
-      if (year) params.set('year', year);
-      const data = await fetchJson(`/api/explore/search?${params.toString()}`);
-      setTorrentModal({ title, year, upgrade, loading: false, error: '', variants: data.variants || [] });
+      const payload = { title, year };
+      if (movie?.imdb_id) payload.imdb_id = movie.imdb_id;
+      if (movie?.tmdb_id) payload.tmdb_id = movie.tmdb_id;
+      let data = await fetchJson('/api/explore/search/jobs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      while (sourceSearchTokenRef.current === searchToken) {
+        const running = data.status === 'running';
+        setTorrentModal({
+          title,
+          year,
+          upgrade,
+          loading: running,
+          error: data.status === 'error' ? (data.error || 'Source search failed') : '',
+          variants: data.variants || [],
+          sourceSearch: data
+        });
+        if (!running || !data.search_id) break;
+        await wait(1000);
+        data = await fetchJson(`/api/explore/search/jobs/${encodeURIComponent(data.search_id)}`);
+      }
     } catch (error) {
+      if (sourceSearchTokenRef.current !== searchToken) return;
       setTorrentModal({ title, year, upgrade, loading: false, error: error.message, variants: [] });
     }
   }
@@ -843,6 +871,7 @@ function ArchiveApp() {
   async function searchTorrents(query) {
     const q = String(query || '').trim();
     if (!q) return;
+    sourceSearchTokenRef.current += 1;
     setTorrentModal({ title: q, year: '', upgrade: false, loading: true, error: '', variants: [] });
     try {
       const data = await fetchJson(`/api/prowlarr/search?q=${encodeURIComponent(q)}`);
@@ -850,6 +879,11 @@ function ArchiveApp() {
     } catch (error) {
       setTorrentModal({ title: q, year: '', upgrade: false, loading: false, error: error.message, variants: [] });
     }
+  }
+
+  function closeTorrentModal() {
+    sourceSearchTokenRef.current += 1;
+    setTorrentModal(null);
   }
 
   function updateOwnedPoster(path, posterUrl) {
@@ -867,22 +901,24 @@ function ArchiveApp() {
         activeSection={activeSection}
         onSelect={selectSection}
       />
-      <main className={cx('workspace', activeSection === 'downloads' && 'workspace-downloads')}>
-        <TopBar
-          activeSection={activeSection}
-          stats={stats}
-          libraryQuery={libraryQuery}
-          onLibraryQueryChange={setLibraryQuery}
-          discoverQuery={discoverQuery}
-          onDiscoverQueryChange={setDiscoverQuery}
-          browseQuery={browseQuery}
-          onBrowseQueryChange={setBrowseQuery}
-          discoverActiveTab={discoverActiveTab}
-          onDiscoverSearch={() => {
-            setActiveSection('discover');
-            setDiscoverSearchRequest((value) => value + 1);
-          }}
-        />
+      <main className={cx('workspace', activeSection === 'home' && 'workspace-home', activeSection === 'downloads' && 'workspace-downloads')}>
+        {activeSection !== 'home' && activeSection !== 'library' && activeSection !== 'cleanup' && activeSection !== 'discover' && activeSection !== 'help' && activeSection !== 'settings' && (
+          <TopBar
+            activeSection={activeSection}
+            stats={stats}
+            libraryQuery={libraryQuery}
+            onLibraryQueryChange={setLibraryQuery}
+            discoverQuery={discoverQuery}
+            onDiscoverQueryChange={setDiscoverQuery}
+            browseQuery={browseQuery}
+            onBrowseQueryChange={setBrowseQuery}
+            discoverActiveTab={discoverActiveTab}
+            onDiscoverSearch={() => {
+              setActiveSection('discover');
+              setDiscoverSearchRequest((value) => value + 1);
+            }}
+          />
+        )}
         {activeSection === 'home' ? (
           <HomeWorkspace
             stats={stats}
@@ -965,7 +1001,7 @@ function ArchiveApp() {
         <TorrentModal
           state={torrentModal}
           notify={notify}
-          onClose={() => setTorrentModal(null)}
+          onClose={closeTorrentModal}
         />
       )}
       {trailerModal && (
@@ -1074,7 +1110,7 @@ function TorrentActions({ variant, movieTitle, movieYear, notify, primary = fals
         window.location.href = magnetUrl;
         return;
       }
-      await fetchJson('/api/qbittorrent/submit', {
+      const job = await fetchJson('/api/qbittorrent/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1086,6 +1122,11 @@ function TorrentActions({ variant, movieTitle, movieYear, notify, primary = fals
           indexer: variant.indexer || ''
         })
       });
+      if (job.already_exists) {
+        const status = job.state === 'imported' ? 'already imported' : 'already added';
+        notify(`${variant.title || movieTitle} ${status}`);
+        return;
+      }
       notify(`${variant.title || movieTitle} download added`);
     } catch (error) {
       notify(`qBittorrent submission failed: ${error.message}`, 'error');
@@ -1164,6 +1205,26 @@ function TrailerModal({ state, onClose }) {
 function StreamPlayerModal({ state, onClose }) {
   const { title, year, embedUrl } = state;
   const titleLabel = [title, year].filter(Boolean).join(' ');
+  const [streamStatusVisible, setStreamStatusVisible] = useState(true);
+  const [streamLoaded, setStreamLoaded] = useState(false);
+  const [streamSlow, setStreamSlow] = useState(false);
+
+  useEffect(() => {
+    setStreamStatusVisible(true);
+    setStreamLoaded(false);
+    setStreamSlow(false);
+    const slowTimer = window.setTimeout(() => setStreamSlow(true), 12000);
+    const hideTimer = window.setTimeout(() => setStreamStatusVisible(false), 30000);
+    return () => {
+      window.clearTimeout(slowTimer);
+      window.clearTimeout(hideTimer);
+    };
+  }, [embedUrl]);
+
+  const statusTitle = streamLoaded ? 'Preparing stream...' : 'Loading stream...';
+  const statusDetail = streamSlow
+    ? 'This stream is taking longer than usual. You can keep waiting or close the player.'
+    : 'The player can take a moment to initialize.';
 
   return (
     <div className="modal-backdrop trailer-backdrop" role="presentation" onClick={onClose}>
@@ -1178,11 +1239,20 @@ function StreamPlayerModal({ state, onClose }) {
           </button>
         </div>
         <div className="trailer-player-shell stream-player-shell">
+          {streamStatusVisible && (
+            <div className={`stream-loading-overlay ${streamLoaded ? 'is-compact' : ''}`} role="status" aria-live="polite">
+              <Loader2 size={28} className="spin" />
+              <strong>{statusTitle}</strong>
+              <span className="stream-loading-bar" aria-hidden="true"><span /></span>
+              <small>{statusDetail}</small>
+            </div>
+          )}
           <iframe
             key={embedUrl}
             title={`${titleLabel} stream`}
             src={embedUrl}
             allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+            onLoad={() => setStreamLoaded(true)}
             allowFullScreen
           />
         </div>
@@ -1201,12 +1271,14 @@ function TorrentModal({ state, onClose, notify }) {
   const [variants, setVariants] = useState(state.variants || []);
   const [loading, setLoading] = useState(state.loading);
   const [error, setError] = useState(state.error || '');
+  const [sourceSearch, setSourceSearch] = useState(state.sourceSearch || null);
 
   useEffect(() => {
     setManualQuery(`${state.title || ''} ${state.year || ''}`.trim());
     setVariants(state.variants || []);
     setLoading(state.loading);
     setError(state.error || '');
+    setSourceSearch(state.sourceSearch || null);
     setTitleFilter('');
     setResolutionFilter('all');
     setIndexerFilter('all');
@@ -1240,12 +1312,20 @@ function TorrentModal({ state, onClose, notify }) {
     return sorted;
   }, [variants, titleFilter, resolutionFilter, indexerFilter, sortMode]);
 
+  const stillSearching = loading || sourceSearch?.status === 'running';
+  const pendingIndexers = [
+    ...(sourceSearch?.searching_indexers || []),
+    ...(sourceSearch?.pending_indexers || [])
+  ].filter(Boolean);
+  const timedOutIndexers = sourceSearch?.timed_out_indexers || [];
+
   async function runManualSearch(event) {
     event.preventDefault();
     const q = manualQuery.trim();
     if (!q) return;
     setLoading(true);
     setError('');
+    setSourceSearch(null);
     try {
       const data = await fetchJson(`/api/prowlarr/search?q=${encodeURIComponent(q)}`);
       setVariants(data.results || []);
@@ -1308,10 +1388,37 @@ function TorrentModal({ state, onClose, notify }) {
           </select>
         </div>
 
-        {loading ? (
+        {stillSearching && filteredVariants.length ? (
+          <div className="source-search-progress" role="status" aria-live="polite">
+            <Loader2 size={16} className="spin" />
+            <span>
+              <strong>Still searching</strong>
+              <small>
+                {pendingIndexers.length
+                  ? `Checking ${pendingIndexers.slice(0, 4).join(', ')}${pendingIndexers.length > 4 ? ` and ${pendingIndexers.length - 4} more` : ''}.`
+                  : 'Waiting for remaining indexers.'}
+              </small>
+            </span>
+          </div>
+        ) : null}
+
+        {!stillSearching && timedOutIndexers.length ? (
+          <div className="source-search-progress source-search-progress-muted">
+            <AlertTriangle size={15} />
+            <span>
+              <strong>Some indexers timed out</strong>
+              <small>{timedOutIndexers.slice(0, 4).join(', ')}{timedOutIndexers.length > 4 ? ` and ${timedOutIndexers.length - 4} more` : ''}</small>
+            </span>
+          </div>
+        ) : null}
+
+        {stillSearching && !filteredVariants.length ? (
           <div className="dialog-loading">
             <Loader2 size={20} className="spin" />
-            <span>Searching Prowlarr indexers...</span>
+            <span className="dialog-loading-copy">
+              <strong>Connecting to Prowlarr indexers...</strong>
+              <small>This may take some time while source aliases and indexers respond.</small>
+            </span>
           </div>
         ) : error ? (
           <div className="dialog-error">{error}</div>
@@ -1365,6 +1472,7 @@ function TopBar({
   const section = navItems.find((item) => item.id === activeSection);
   const isLibrary = activeSection === 'library';
   const isDiscover = activeSection === 'discover';
+  const isDownloads = activeSection === 'downloads';
   const isBrowseSearch = isDiscover && discoverActiveTab === 'browse';
   const isExploreSearch = isDiscover && discoverActiveTab === 'explore';
   const searchEnabled = topBarSearchEnabled(activeSection, discoverActiveTab);
@@ -1395,32 +1503,36 @@ function TopBar({
           )}
         </div>
       </div>
-      <form
-        className={cx('command-search', !searchEnabled && 'command-search-inactive')}
-        aria-disabled={!searchEnabled}
-        onSubmit={(event) => {
-          event.preventDefault();
-          if (searchEnabled && (isExploreSearch || isBrowseSearch)) onDiscoverSearch();
-        }}
-      >
-        <Search size={17} />
-        <input
-          aria-label={isLibrary ? 'Search offline library' : isBrowseSearch ? 'Search movie indexers' : isExploreSearch ? 'Search TMDB discovery' : 'Command search'}
-          value={searchValue}
-          onChange={(event) => {
-            if (isLibrary) onLibraryQueryChange(event.target.value);
-            if (isExploreSearch) onDiscoverQueryChange(event.target.value);
-            if (isBrowseSearch) onBrowseQueryChange(event.target.value);
+      {!isDownloads && (
+        <form
+          className={cx('command-search', !searchEnabled && 'command-search-inactive')}
+          aria-disabled={!searchEnabled}
+          onSubmit={(event) => {
+            event.preventDefault();
+            if (searchEnabled && (isExploreSearch || isBrowseSearch)) onDiscoverSearch();
           }}
-          placeholder={searchPlaceholder}
-          disabled={!searchEnabled}
-        />
-        {searchEnabled && <kbd>{isExploreSearch || isBrowseSearch ? 'Enter' : 'Ctrl K'}</kbd>}
-      </form>
-      <div className="topbar-stat">
-        <Database size={16} />
-        <span>{formatCount(stats?.total_files)} files</span>
-      </div>
+        >
+          <Search size={17} />
+          <input
+            aria-label={isLibrary ? 'Search offline library' : isBrowseSearch ? 'Search movie indexers' : isExploreSearch ? 'Search TMDB discovery' : 'Command search'}
+            value={searchValue}
+            onChange={(event) => {
+              if (isLibrary) onLibraryQueryChange(event.target.value);
+              if (isExploreSearch) onDiscoverQueryChange(event.target.value);
+              if (isBrowseSearch) onBrowseQueryChange(event.target.value);
+            }}
+            placeholder={searchPlaceholder}
+            disabled={!searchEnabled}
+          />
+          {searchEnabled && <kbd>{isExploreSearch || isBrowseSearch ? 'Enter' : 'Ctrl K'}</kbd>}
+        </form>
+      )}
+      {!isDownloads && (
+        <div className="topbar-stat">
+          <Database size={16} />
+          <span>{formatCount(stats?.total_files)} files</span>
+        </div>
+      )}
     </header>
   );
 }
@@ -1642,7 +1754,7 @@ const manualSections = [
         items: [
           'It will not guess secret API keys or Plex tokens.',
           'It will not automatically install optional services like Plex, Prowlarr, TMDB accounts, or Ollama.',
-          'It will not auto-update bundled qBittorrent in version 2.6.6.'
+          'It will not auto-update bundled qBittorrent in version 2.6.7.'
         ]
       },
       {
@@ -1916,8 +2028,8 @@ const helpSections = [
   {
     key: 'qbittorrent',
     title: 'qBittorrent',
-    status: 'Bundled in CP 2.6.6',
-    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.6.6 release.',
+    status: 'Bundled in CP 2.6.7',
+    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.6.7 release.',
     links: [
       ['qBittorrent Official Website', 'https://www.qbittorrent.org/'],
       ['qBittorrent Downloads', 'https://www.qbittorrent.org/download']
@@ -2034,6 +2146,7 @@ function HomeWorkspace(props) {
       <section className="hero-panel">
         <img className="home-hero-art" src={headerCropUrl} alt="" aria-hidden="true" />
         <div className="hero-copy">
+          <h1 className="hero-page-title">Home</h1>
           <p className="screen-kicker">Cinematic archive console</p>
           <h2>Your movie archive, under command.</h2>
           <p>
@@ -3325,6 +3438,15 @@ function DiscoverWorkspace({
     restorePickSnapshot(snapshot, pickHistory.slice(0, index));
   }
 
+  function runDiscoverSearch(event) {
+    event.preventDefault();
+    if (activeTab === 'browse') {
+      loadBrowse({ query: browseQuery });
+      return;
+    }
+    loadDiscover({ append: false, search: tmdbQuery, page: 1 });
+  }
+
   return (
     <section className="discover-workspace">
       <header className="library-header discover-header">
@@ -3354,6 +3476,23 @@ function DiscoverWorkspace({
           );
         })}
       </div>
+
+      {activeTab !== 'pick' && (
+        <form className="discover-search-panel" onSubmit={runDiscoverSearch}>
+          <label className="library-search discover-main-search">
+            <Search size={17} />
+            <input
+              value={activeTab === 'browse' ? browseQuery : tmdbQuery}
+              onChange={(event) => (activeTab === 'browse' ? setBrowseQuery : setTmdbQuery)(event.target.value)}
+              placeholder={activeTab === 'browse' ? 'Search movie indexers...' : 'Search TMDB discovery...'}
+              aria-label={activeTab === 'browse' ? 'Search movie indexers' : 'Search TMDB discovery'}
+            />
+          </label>
+          <button type="submit" className="btn btn-primary discover-search-submit" disabled={activeTab === 'browse' ? browseLoading : discoverLoading}>
+            {(activeTab === 'browse' ? browseLoading : discoverLoading) ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search
+          </button>
+        </form>
+      )}
 
       {activeTab === 'explore' && (
         <section className="discover-panel">
@@ -3979,7 +4118,7 @@ function IndexerMovieCard({
             onEditLists={onEditLists}
             onRemoveFromList={onRemoveFromList}
           />
-          <div className="indexer-action-rail indexer-action-rail-expanded">
+          <div className="indexer-action-row indexer-action-row-expanded">
             <div className="indexer-selected-meta">
               <strong>{formatCount(selected.seeders)} seeders</strong>
               <span>{selected.indexer || 'Unknown tracker'}</span>
@@ -4233,6 +4372,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
   const [metadataCorrection, setMetadataCorrection] = useState(null);
   const [showAdultMovies, setShowAdultMovies] = useState(true);
   const [selectedLibraryKeys, setSelectedLibraryKeys] = useState(() => new Set());
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const loadLibrary = useCallback(async (forceScan = false) => {
     setLoading(true);
@@ -4254,7 +4394,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
         setStatus(summary || 'Rescan complete — no changes found');
         notify(summary || 'Library rescan complete — no changes found', discovered || identified ? 'success' : 'neutral');
       } else {
-        setStatus(data.cached ? 'Loaded from cache' : '');
+        setStatus('');
         notify(`${formatCount(data.count)} library files loaded`, 'success');
       }
     } catch (loadError) {
@@ -4369,6 +4509,9 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
   const selectedLibraryItems = useMemo(() => (
     items.filter((item) => selectedLibraryKeys.has(movieIdentityKey(moviePayload(item))))
   ), [items, selectedLibraryKeys]);
+  const listMissingCoverage = useMemo(() => (
+    listFilter ? listLibraryCoverage(items, listFilter) : null
+  ), [items, listFilter]);
   const allFilteredLibrarySelected = filteredItems.length > 0 && filteredItems.every((item) => selectedLibraryKeys.has(movieIdentityKey(moviePayload(item))));
 
   function toggleLibrarySelection(item, checked) {
@@ -4718,34 +4861,45 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
         </div>
       </div>
 
-      <div className="library-stat-strip">
-        <LibraryStat icon={HardDrive} label="Files" value={formatCount(stats.total)} tone="blue" />
-        <LibraryStat icon={AlertTriangle} label="Upgrade candidates" value={formatCount(stats.low)} tone="amber" />
-        <LibraryStat icon={LinkIcon} label="Metadata matched" value={formatCount(stats.matched)} tone="cyan" />
-        {stats.pending > 0 && <LibraryStat icon={Loader2} label="Metadata pending" value={formatCount(stats.pending)} tone="amber" />}
-        <LibraryStat icon={Radio} label="Unmatched metadata" value={formatCount(stats.unmatched)} tone="violet" onClick={stats.unmatched > 0 ? onReviewUnmatched : undefined} />
-      </div>
+      <form className="library-search-panel" onSubmit={(event) => { event.preventDefault(); resetLibraryPage(); }}>
+        <label className="library-search library-main-search">
+          <Search size={17} />
+          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search your offline library..." />
+        </label>
+        <button type="submit" className="btn btn-primary library-search-submit">
+          <Search size={15} /> Search
+        </button>
+      </form>
 
-      <div className="library-toolbar library-filter-toolbar">
-        <select value={qualityFilter} onChange={(event) => { setQualityFilter(event.target.value); resetLibraryPage(); }}>
-          <option value="all">All qualities</option>
-          <option value="upgrade">Upgrade candidates</option>
-          <option value="good">1080p and above</option>
-          <option value="4k">4K only</option>
-        </select>
-        <select value={resolutionFilter} onChange={(event) => { setResolutionFilter(event.target.value); resetLibraryPage(); }}>
-          <option value="all">All resolutions</option>
-          <option value="4k">4K</option>
-          <option value="1080p">1080p</option>
-          <option value="720p">720p</option>
-          <option value="below-720p">Below 720p</option>
-        </select>
-        <select value={sourceFilter} onChange={(event) => { setSourceFilter(event.target.value); resetLibraryPage(); }}>
-          <option value="all">All sources</option>
-          {optionSets.sources.map((value) => <option key={value} value={value}>{value}</option>)}
-        </select>
-        {mode === 'movie' ? (
+      <div className={cx('library-toolbar library-filter-toolbar', !filtersOpen && 'library-filter-toolbar-collapsed')}>
+        {!filtersOpen ? (
           <>
+            <span>Filters collapsed: quality, resolution, source, genre, viewing state, language, country, year, rating, sort</span>
+            <button type="button" className="btn btn-secondary" onClick={() => setFiltersOpen(true)}>
+              Open Filters
+            </button>
+          </>
+        ) : (
+          <>
+            <select value={qualityFilter} onChange={(event) => { setQualityFilter(event.target.value); resetLibraryPage(); }}>
+              <option value="all">All qualities</option>
+              <option value="upgrade">Upgrade candidates</option>
+              <option value="good">1080p and above</option>
+              <option value="4k">4K only</option>
+            </select>
+            <select value={resolutionFilter} onChange={(event) => { setResolutionFilter(event.target.value); resetLibraryPage(); }}>
+              <option value="all">All resolutions</option>
+              <option value="4k">4K</option>
+              <option value="1080p">1080p</option>
+              <option value="720p">720p</option>
+              <option value="below-720p">Below 720p</option>
+            </select>
+            <select value={sourceFilter} onChange={(event) => { setSourceFilter(event.target.value); resetLibraryPage(); }}>
+              <option value="all">All sources</option>
+              {optionSets.sources.map((value) => <option key={value} value={value}>{value}</option>)}
+            </select>
+            {mode === 'movie' ? (
+              <>
             <select value={genreFilter} onChange={(event) => { setGenreFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All genres</option>
               {optionSets.genres.map((value) => <option key={value} value={value}>{value}</option>)}
@@ -4780,9 +4934,9 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
               <option value="year-asc">Year oldest</option>
               <option value="quality">Sort by quality</option>
             </select>
-          </>
-        ) : (
-          <>
+              </>
+            ) : (
+              <>
             <select value={plexFilter} onChange={(event) => { setPlexFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All Plex states</option>
               <option value="matched">Plex matched</option>
@@ -4806,11 +4960,16 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
               <option value="plex">Sort by Plex status</option>
               <option value="source">Sort by source</option>
             </select>
+              </>
+            )}
+            <button type="button" className="btn btn-secondary library-reset-filters" onClick={resetAllLibraryFilters}>
+              <RefreshCcw size={15} /> Reset filters
+            </button>
+            <button type="button" className="btn btn-secondary library-hide-filters" onClick={() => setFiltersOpen(false)}>
+              <X size={15} /> Hide Filters
+            </button>
           </>
         )}
-        <button type="button" className="btn btn-secondary library-reset-filters" onClick={resetAllLibraryFilters}>
-          <RefreshCcw size={15} /> Reset filters
-        </button>
       </div>
 
       {(loading || status || error) && (
@@ -4848,15 +5007,19 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
               <X size={14} />
             </button>
           )}
+          {listMissingCoverage?.missingCount > 0 && (
+            <span className="list-missing-warning">
+              <AlertTriangle size={14} />
+              {formatCount(listMissingCoverage.matched)} of {formatCount(listMissingCoverage.total)} list movies found in Library.
+              {' '}Missing: {listMissingCoverage.missingMovies.slice(0, 5).map((movie) => movie.title || 'Untitled').join(', ')}
+              {listMissingCoverage.missingCount > 5 && `, +${formatCount(listMissingCoverage.missingCount - 5)} more`}
+            </span>
+          )}
         </div>
       )}
 
       {!loading && !error && (
         <>
-          <div className="library-results-meta">
-            <span>{formatCount(filteredItems.length)} matching {mode === 'movie' ? 'movies' : 'files'}</span>
-            {filteredItems.length > 0 && <span>Showing {formatCount(pageStart + 1)}-{formatCount(pageEnd)} of {formatCount(filteredItems.length)}</span>}
-          </div>
           {mode === 'movie' && filteredItems.length > 0 && (
             <div className="bulk-selection-bar library-bulk-selection">
               <SelectionCheckbox
@@ -5108,7 +5271,12 @@ function LibraryMovieCard({
   const directors = getRolePeople(item, details, 'director');
   const cast = getRolePeople(item, details, 'actor').slice(0, 6);
   const locale = getLocaleTag(item);
-  const movieForSearch = { title: identity.title, year: identity.year };
+  const movieForSearch = {
+    title: identity.title,
+    year: identity.year,
+    imdb_id: canonical.imdb_id || item.imdb_id || '',
+    tmdb_id: canonical.tmdb_id || item.tmdb_id || ''
+  };
   const posterUrl = canonical.poster_url || item.plex_poster || '';
 
   return (
@@ -5839,7 +6007,7 @@ function FolderBrowserDialog({ initialPath, onSelect, onClose }) {
 function LibraryFileRow({ item, expanded, onToggle, onPlay, onFindTorrent, onRename, onDelete }) {
   const identity = getMovieIdentity(item);
   const lowQuality = isLowQuality(item.resolution);
-  const movieForSearch = { title: identity.title, year: identity.year };
+  const movieForSearch = { title: identity.title, year: identity.year, imdb_id: item.imdb_id || '', tmdb_id: item.tmdb_id || '' };
   return (
     <article className={cx('library-file-row', expanded && 'library-file-row-expanded')}>
       <div className="file-row-main">
@@ -6854,7 +7022,7 @@ function LowQualityCleanupTab({ items, selected, onToggle, onDelete, onFindTorre
                 onToggle={(checked) => onToggle('low', item.path, checked)}
                 onDelete={() => onDelete('low', [item.path], `Move ${item.filename} to Recycle Bin?`)}
                 actions={(
-                  <button type="button" className="btn btn-upgrade" onClick={() => onFindTorrent({ title: identity.title, year: identity.year }, true)}>
+                  <button type="button" className="btn btn-upgrade" onClick={() => onFindTorrent({ title: identity.title, year: identity.year, imdb_id: item.imdb_id || '', tmdb_id: item.tmdb_id || '' }, true)}>
                     <Wand2 size={15} /> Find sources
                   </button>
                 )}

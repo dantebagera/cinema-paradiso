@@ -4,6 +4,10 @@
   --movie-card-poster-height: 255px;
   --expanded-director-avatar-size: 96px;
   --expanded-cast-avatar-size: 90px;
+  --expanded-director-avatar-width: 96px;
+  --expanded-director-avatar-height: 118px;
+  --expanded-cast-avatar-width: 90px;
+  --expanded-cast-avatar-height: 112px;
 }
 
 .movie-list,

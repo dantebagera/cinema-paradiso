@@ -57,6 +57,10 @@ class QBittorrentUiTests(unittest.TestCase):
         self.assertIn("{mode === 'system' ? 'Open magnet' : 'Download'}", self.source)
         self.assertNotIn("Send to qBittorrent", self.source)
 
+    def test_torrent_submission_reports_existing_imported_jobs(self):
+        self.assertIn("job.already_exists", self.source)
+        self.assertIn("already imported", self.source)
+
     def test_indexer_cards_receive_notify_for_torrent_submission(self):
         component = self.source.split("function IndexerMovieCard({", 1)[1].split("}) {", 1)[0]
         self.assertIn("notify,", component)
@@ -91,17 +95,27 @@ class QBittorrentUiTests(unittest.TestCase):
         self.assertIn("StreamPlayerModal", self.source)
         self.assertNotIn("playimdb.com", self.source)
 
+    def test_streaming_modal_shows_loading_feedback_until_iframe_loads(self):
+        modal_source = self.source.split("function StreamPlayerModal(", 1)[1].split("function ", 1)[0]
+        self.assertIn("streamStatusVisible", modal_source)
+        self.assertIn("streamLoaded", modal_source)
+        self.assertIn("streamSlow", modal_source)
+        self.assertIn("onLoad={() => setStreamLoaded(true)}", modal_source)
+        self.assertIn("Loading stream", modal_source)
+        self.assertIn("Preparing stream", modal_source)
+        self.assertIn("This stream is taking longer than usual", modal_source)
+
     def test_readme_and_package_document_265_bundled_qbt_and_help(self):
         root = Path(__file__).resolve().parents[1]
         readme = (root / "README.md").read_text(encoding="utf-8")
         changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
         package = json.loads((root / "package.json").read_text(encoding="utf-8"))
 
-        self.assertEqual(package["version"], "2.6.6")
-        self.assertIn("v2.6.6", readme)
+        self.assertEqual(package["version"], "2.6.7")
+        self.assertIn("v2.6.7", readme)
         self.assertIn("Help", readme)
         self.assertIn("bundled qbittorrent", readme.lower())
-        self.assertIn("v2.6.6", changelog)
+        self.assertIn("v2.6.7", changelog)
         self.assertIn("Help", changelog)
 
 

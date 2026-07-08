@@ -116,6 +116,13 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("addMoviesToList", self.source)
         self.assertIn("/movies/bulk", self.source)
 
+    def test_library_list_filter_warns_when_list_movies_are_missing(self):
+        self.assertIn("listLibraryCoverage", self.source)
+        self.assertIn("listMissingCoverage", self.source)
+        self.assertIn("list-missing-warning", self.source)
+        self.assertIn("list movies found in Library", self.source)
+        self.assertIn("Missing:", self.source)
+
     def test_lists_popup_exposes_select_all_and_copy_export(self):
         self.assertIn("list-select-all", self.source)
         self.assertIn("Copy selected to", self.source)
@@ -140,6 +147,49 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("Reset filters", self.source)
         self.assertIn("resetAllLibraryFilters", self.source)
 
+    def test_library_chrome_is_condensed_without_removing_second_header(self):
+        library_source = self.source[
+            self.source.index("function LibraryWorkspace"):
+            self.source.index("function LibraryPagination")
+        ]
+        self.assertIn("activeSection !== 'home' && activeSection !== 'library'", self.source)
+        self.assertIn('className="library-header"', library_source)
+        self.assertNotIn('className="library-stat-strip"', library_source)
+        self.assertIn('className="library-search-panel"', library_source)
+        self.assertIn("filtersOpen", library_source)
+        self.assertIn("Open Filters", library_source)
+        self.assertNotIn('className="library-results-meta"', library_source)
+
+    def test_cleanup_help_and_settings_do_not_render_shared_topbar(self):
+        topbar_condition = self.source[:self.source.index("function TopBar")]
+        self.assertIn("activeSection !== 'cleanup'", topbar_condition)
+        self.assertIn("activeSection !== 'help'", topbar_condition)
+        self.assertIn("activeSection !== 'settings'", topbar_condition)
+
+    def test_downloads_keeps_topbar_without_search_or_file_badge(self):
+        topbar_source = self.source[
+            self.source.index("function TopBar"):
+            self.source.index("function DownloadsWorkspace")
+        ]
+        self.assertIn("const isDownloads = activeSection === 'downloads';", topbar_source)
+        self.assertIn("!isDownloads && (", topbar_source)
+        self.assertIn("downloads-title-credit", topbar_source)
+        self.assertNotIn("activeSection !== 'downloads'", self.source[:self.source.index("function TopBar")])
+
+    def test_discover_moves_search_below_tabs_without_shared_topbar(self):
+        discover_source = self.source[
+            self.source.index("function DiscoverWorkspace"):
+            self.source.index("function DiscoverResultGrid")
+        ]
+        self.assertIn("activeSection !== 'discover'", self.source[:self.source.index("function TopBar")])
+        self.assertIn('className="discover-search-panel"', discover_source)
+        self.assertIn("activeTab !== 'pick'", discover_source)
+        self.assertIn("activeTab === 'browse' ? browseQuery : tmdbQuery", discover_source)
+        self.assertIn("activeTab === 'browse' ? setBrowseQuery", discover_source)
+        self.assertIn("loadBrowse({ query: browseQuery })", discover_source)
+        self.assertIn("loadDiscover({ append: false, search: tmdbQuery, page: 1 })", discover_source)
+        self.assertIn("Search", discover_source)
+
     def test_settings_prowlarr_exposes_trusted_release_indexers(self):
         self.assertIn("trusted_release_indexers", self.source)
         self.assertIn("TrustedIndexerDialog", self.source)
@@ -149,6 +199,12 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("if (saved) onClose();", self.source)
         self.assertIn("Trusted release watchlist indexers", self.source)
         self.assertIn("No trusted indexers selected", self.source)
+
+    def test_source_search_loading_warns_that_prowlarr_indexers_can_take_time(self):
+        self.assertIn("Connecting to Prowlarr indexers", self.source)
+        self.assertIn("This may take some time", self.source)
+        self.assertIn("/api/explore/search/jobs", self.source)
+        self.assertIn("Still searching", self.source)
 
 
 if __name__ == "__main__":

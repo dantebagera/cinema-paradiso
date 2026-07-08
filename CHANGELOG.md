@@ -1,5 +1,35 @@
 # Changelog
 
+## v2.6.7 - July 2026
+
+Cinema Paradiso v2.6.7 tightens source-search reliability, YTS handling, and local release packaging while preserving the v2.6.6 movie-card, trailer, streaming, and unreleased-movie improvements.
+
+### Added
+
+- YTS RSS latest-feed supplement for Browse Indexers when the selected trusted YTS/Prowlarr source has no fresh latest rows.
+- IMDb-first source queries for Explore search and followed-release checks.
+- TMDB original-title and alternative-title fallbacks for source searches.
+- Refreshed Cinema Paradiso icon assets for packaging and Windows presentation.
+
+### Changed
+
+- Source searches now use a progressive per-indexer job path so slow or timed-out indexers do not hide fast valid results.
+- Prowlarr result links are normalized so redirect-style download URLs can still expose usable magnet links when an info hash is available.
+- Source-search query budgets are bounded per alias and per job to keep slow providers from blocking the UI.
+- The sidebar version is rebuilt from the package version and now identifies v2.6.7.
+
+### Fixed
+
+- Rejected polluted IMDb search results before falling back to title/year queries.
+- Accepted known alias titles while still rejecting wrong-year torrent results.
+- Preserved valid YTS results even when seeders are zero.
+- Prevented stale local builds from carrying the previous sidebar version into the release artifact.
+
+### Notes
+
+- qBittorrent remains the bundled tested runtime path; install/update controls stay disabled in this release.
+- v2.6.6 remains the previous public rollback point before the source-search/YTS reliability release.
+
 ## v2.6.6 - July 2026
 
 Cinema Paradiso v2.6.6 polishes the movie-card experience, trailer playback, streaming configuration, and unreleased-movie handling while keeping the local-first v2.6 architecture.

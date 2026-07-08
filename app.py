@@ -7,9 +7,12 @@ import uuid
 import hashlib
 import threading
 import subprocess
+import socket
+import concurrent.futures
 import urllib.request
 import urllib.parse
 import json as _json
+import xml.etree.ElementTree as _ET
 from pathlib import Path
 
 from services.movie_identity import (
@@ -48,6 +51,7 @@ from services.qbittorrent import (
     build_downloads_html,
     is_allowed_prowlarr_url,
     is_path_within,
+    magnet_hash,
 )
 from flask import Flask, jsonify, request, make_response, send_from_directory
 from send2trash import send2trash
@@ -78,6 +82,17 @@ _cfg = _load_config()
 OLLAMA_CANDIDATE_LIMIT_DEFAULT = 15
 OLLAMA_CANDIDATE_LIMIT_MIN = 1
 OLLAMA_CANDIDATE_LIMIT_MAX = 50
+SOURCE_SEARCH_ALIAS_LIMIT = 6
+SOURCE_SEARCH_QUERY_TIMEOUT_SECONDS = 10
+SOURCE_SEARCH_DEADLINE_SECONDS = 35
+SOURCE_SEARCH_INDEXER_TIMEOUT_SECONDS = 12
+SOURCE_SEARCH_JOB_DEADLINE_SECONDS = 60
+SOURCE_SEARCH_JOB_WORKERS = 5
+SOURCE_SEARCH_JOB_TTL_SECONDS = 900
+FOLLOWED_RELEASE_QUERY_TIMEOUT_SECONDS = 8
+FOLLOWED_RELEASE_DEADLINE_SECONDS = 25
+_source_search_jobs = {}
+_source_search_jobs_lock = threading.Lock()
 
 
 def _coerce_ollama_candidate_limit(value, default=OLLAMA_CANDIDATE_LIMIT_DEFAULT):
@@ -128,6 +143,11 @@ _prowlarr_url   = _cfg.get('prowlarr_url', '')
 _prowlarr_key   = _cfg.get('prowlarr_key', '')
 _trusted_release_indexers = [str(value).strip() for value in _cfg.get('trusted_release_indexers', []) if str(value).strip()]
 _trusted_release_indexers_configured = 'trusted_release_indexers' in _cfg
+_yts_rss_feeds = [
+    str(value).strip()
+    for value in _cfg.get('yts_rss_feeds', ['https://yts.gg/rss', 'https://yts.bz/rss', 'https://yts.lt/rss'])
+    if str(value).strip()
+]
 _tmdb_key       = _cfg.get('tmdb_key', '')
 _tmdb_include_adult = _coerce_bool(_cfg.get('tmdb_include_adult'), False)
 _library_show_adult = _coerce_bool(_cfg.get('library_show_adult'), True)
@@ -594,6 +614,330 @@ def _effective_trusted_release_indexer_ids(indexers):
     if _trusted_release_indexers_configured:
         return list(_trusted_release_indexers)
     return _default_trusted_release_indexer_ids(indexers)
+
+
+def _is_yts_indexer_name(name):
+    text = str(name or '').lower()
+    return 'yts' in text or 'yify' in text
+
+
+def _enabled_prowlarr_indexer_ids():
+    idx_req = urllib.request.Request(
+        f"{_prowlarr_url}/api/v1/indexer",
+        headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'}
+    )
+    with urllib.request.urlopen(idx_req, timeout=8) as idx_resp:
+        indexers = _json.loads(idx_resp.read().decode())
+    return [str(ix.get('id', '')) for ix in indexers if ix.get('enable', True) and str(ix.get('id', ''))]
+
+
+def _prowlarr_search(indexer_ids=None, query='', limit=100, categories='2000', timeout=30):
+    parts = [('query', str(query or '').strip()), ('type', 'search')]
+    if categories:
+        parts.append(('categories', categories))
+    parts.append(('limit', str(limit)))
+    for iid in indexer_ids or []:
+        parts.append(('indexerIds', str(iid)))
+    url = f"{_prowlarr_url}/api/v1/search?{urllib.parse.urlencode(parts)}"
+    req = urllib.request.Request(url, headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return _json.loads(resp.read().decode())
+
+
+def _movie_imdb_id(movie):
+    imdb_id = str((movie or {}).get('imdb_id', '') or '').strip()
+    if imdb_id:
+        return imdb_id
+    tmdb_id = str((movie or {}).get('tmdb_id', '') or '').strip()
+    if not tmdb_id:
+        return ''
+    try:
+        return str((_fetch_tmdb_metadata_by_id(tmdb_id) or {}).get('imdb_id', '') or '').strip()
+    except Exception:
+        return ''
+
+
+def _movie_tmdb_metadata_for_source_search(movie):
+    tmdb_id = str((movie or {}).get('tmdb_id', '') or '').strip()
+    if not tmdb_id:
+        return {}
+    try:
+        return _fetch_tmdb_metadata_by_id(tmdb_id) or {}
+    except Exception:
+        return {}
+
+
+def _append_source_title_alias(aliases, seen, title):
+    title = str(title or '').strip()
+    if not title:
+        return
+    key = _norm_movie_title(title)
+    if not key or key in seen:
+        return
+    seen.add(key)
+    aliases.append(title)
+
+
+def _iter_alternative_title_values(value):
+    for item in value or []:
+        if isinstance(item, dict):
+            yield item.get('title', '')
+        else:
+            yield item
+
+
+def _movie_source_title_aliases(movie, metadata=None):
+    metadata = metadata or {}
+    aliases = []
+    seen = set()
+    for title in (
+        (movie or {}).get('title', ''),
+        (movie or {}).get('original_title', ''),
+        metadata.get('original_title', ''),
+    ):
+        _append_source_title_alias(aliases, seen, title)
+        if len(aliases) >= SOURCE_SEARCH_ALIAS_LIMIT:
+            return aliases
+
+    for title in _iter_alternative_title_values((movie or {}).get('alternative_titles')):
+        _append_source_title_alias(aliases, seen, title)
+        if len(aliases) >= SOURCE_SEARCH_ALIAS_LIMIT:
+            return aliases
+
+    for title in _iter_alternative_title_values((movie or {}).get('title_aliases')):
+        _append_source_title_alias(aliases, seen, title)
+        if len(aliases) >= SOURCE_SEARCH_ALIAS_LIMIT:
+            return aliases
+
+    tmdb_id = str((movie or {}).get('tmdb_id', '') or '').strip()
+    if tmdb_id:
+        try:
+            for title in _smart_match_tmdb_alternative_titles(tmdb_id):
+                _append_source_title_alias(aliases, seen, title)
+                if len(aliases) >= SOURCE_SEARCH_ALIAS_LIMIT:
+                    return aliases
+        except Exception:
+            pass
+    return aliases
+
+
+def _movie_with_source_title_aliases(movie):
+    enriched = dict(movie or {})
+    metadata = _movie_tmdb_metadata_for_source_search(enriched)
+    if metadata and not enriched.get('imdb_id'):
+        enriched['imdb_id'] = metadata.get('imdb_id', '')
+    enriched['title_aliases'] = _movie_source_title_aliases(enriched, metadata)
+    return enriched
+
+
+def _movie_release_queries(movie):
+    title = str((movie or {}).get('title', '') or '').strip()
+    year = str((movie or {}).get('year', '') or '').strip()
+    queries = []
+    imdb_id = _movie_imdb_id(movie)
+    if imdb_id:
+        queries.append(imdb_id)
+    for alias in ((movie or {}).get('title_aliases') or [title]):
+        title_query = f"{alias} {year}".strip()
+        if title_query:
+            queries.append(title_query)
+    deduped = []
+    for query in queries:
+        if query and query not in deduped:
+            deduped.append(query)
+    return deduped
+
+
+def _prowlarr_result_matches_movie(result, movie):
+    wanted_titles = {
+        _norm_movie_title(title)
+        for title in [(movie or {}).get('title', ''), *((movie or {}).get('title_aliases') or [])]
+        if _norm_movie_title(title)
+    }
+    wanted_year = str((movie or {}).get('year', '') or '').strip()
+    if not wanted_titles:
+        return True
+    torrent_title = str((result or {}).get('title', '') or '')
+    parsed_title, parsed_year = parse_movie_title(torrent_title)
+    result_title = _norm_movie_title(parsed_title or torrent_title)
+    if result_title not in wanted_titles:
+        return False
+    if not wanted_year:
+        return True
+    if str(parsed_year or '') == wanted_year:
+        return True
+    return bool(re.search(rf'(?<!\d){re.escape(wanted_year)}(?!\d)', torrent_title))
+
+
+def _is_timeout_error(error):
+    if isinstance(error, (TimeoutError, socket.timeout)):
+        return True
+    reason = getattr(error, 'reason', None)
+    return isinstance(reason, (TimeoutError, socket.timeout))
+
+
+def _remaining_timeout(deadline_at, timeout):
+    if deadline_at is None:
+        return timeout
+    remaining = int(deadline_at - time.monotonic())
+    if remaining <= 0:
+        return 0
+    return max(1, min(timeout, remaining))
+
+
+def _prowlarr_search_movie(indexer_ids, movie, limit=100, categories='2000', timeout=30, deadline_seconds=None):
+    movie = _movie_with_source_title_aliases(movie)
+    deadline_at = None
+    if deadline_seconds:
+        deadline_at = time.monotonic() + max(1, int(deadline_seconds))
+    for query in _movie_release_queries(movie):
+        query_timeout = _remaining_timeout(deadline_at, timeout)
+        if query_timeout <= 0:
+            break
+        try:
+            results = _prowlarr_search(
+                indexer_ids=indexer_ids,
+                query=query,
+                limit=limit,
+                categories=categories,
+                timeout=query_timeout,
+            )
+        except Exception as error:
+            if _is_timeout_error(error):
+                continue
+            raise
+        exact_results = [result for result in results if _prowlarr_result_matches_movie(result, movie)]
+        if exact_results:
+            return exact_results
+    return []
+
+
+def _magnet_url_from_info_hash(info_hash, title=''):
+    value = str(info_hash or '').strip()
+    if not re.fullmatch(r'[A-Fa-f0-9]{40}', value):
+        return ''
+    magnet = f"magnet:?xt=urn:btih:{value.upper()}"
+    title = str(title or '').strip()
+    if title:
+        magnet += f"&dn={urllib.parse.quote(title)}"
+    return magnet
+
+
+def _prowlarr_result_links(result):
+    raw_magnet = str((result or {}).get('magnetUrl') or '').strip()
+    raw_download = str((result or {}).get('downloadUrl') or '').strip()
+    magnet_url = ''
+    download_url = raw_download
+    if raw_magnet.lower().startswith('magnet:'):
+        magnet_url = raw_magnet
+    elif raw_download.lower().startswith('magnet:'):
+        magnet_url = raw_download
+        download_url = ''
+    else:
+        magnet_url = _magnet_url_from_info_hash((result or {}).get('infoHash'), (result or {}).get('title', ''))
+        if not download_url and re.match(r'^https?://', raw_magnet, flags=re.I):
+            download_url = raw_magnet
+    return {'magnet_url': magnet_url, 'download_url': download_url}
+
+
+def _magnet_from_http_redirect(error):
+    if getattr(error, 'code', None) not in (301, 302, 303, 307, 308):
+        return ''
+    location = ''
+    headers = getattr(error, 'headers', None)
+    if headers:
+        location = headers.get('Location', '')
+    location = str(location or '').strip()
+    return location if location.lower().startswith('magnet:') else ''
+
+
+def _torrent_resolution_from_title(title):
+    text = str(title or '').lower()
+    if '2160p' in text or '4k' in text or 'uhd' in text:
+        return '4K'
+    if '1080p' in text or re.search(r'[\.\-_ \[\(]1080[\.\-_ \]\)\[]', text):
+        return '1080p'
+    if '720p' in text or re.search(r'[\.\-_ \[\(]720[\.\-_ \]\)\[]', text):
+        return '720p'
+    if '480p' in text or re.search(r'[\.\-_ \[\(]480[\.\-_ \]\)\[]', text):
+        return '480p'
+    return 'Unknown'
+
+
+def _yts_rss_variant_from_item(item):
+    title = item.findtext('title') or ''
+    link = item.findtext('link') or ''
+    enclosure = item.find('enclosure')
+    enclosure_url = enclosure.get('url', '') if enclosure is not None else ''
+    hash_match = re.search(r'([A-Fa-f0-9]{40})$', enclosure_url)
+    if not title or not link or not hash_match:
+        return None
+    info_hash = hash_match.group(1).upper()
+    parsed_title, parsed_year = parse_movie_title(title)
+    parsed_title = parsed_title.title() if parsed_title else re.sub(r'\s*\[[^\]]+\]', '', title).strip()
+    title_match = re.match(r'^(.*?)\s*\((\d{4})\)', title)
+    if title_match:
+        parsed_title = title_match.group(1).strip()
+        parsed_year = title_match.group(2)
+    return {
+        'parsed_title': parsed_title,
+        'parsed_year': parsed_year or '',
+        'variant': {
+            'resolution': _torrent_resolution_from_title(title),
+            'seeders': 0,
+            'magnet_url': f"magnet:?xt=urn:btih:{info_hash}&dn={urllib.parse.quote(title)}",
+            'download_url': '',
+            'info_url': link,
+            'indexer': 'YTS RSS',
+            'size_human': '?',
+            'title': title,
+        },
+    }
+
+
+def _fetch_yts_rss_latest(limit=100):
+    for feed_url in _yts_rss_feeds:
+        try:
+            req = urllib.request.Request(feed_url, headers={
+                'Accept': 'application/rss+xml, application/xml, text/xml',
+                'User-Agent': 'CinemaParadiso/2.6 (+https://local.app)',
+            })
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                root = _ET.fromstring(resp.read())
+            movies = {}
+            for item in root.findall('./channel/item'):
+                parsed = _yts_rss_variant_from_item(item)
+                if not parsed:
+                    continue
+                key = f"{parsed['parsed_title'].lower()}_{parsed['parsed_year']}"
+                if key not in movies:
+                    movies[key] = {
+                        'parsed_title': parsed['parsed_title'],
+                        'parsed_year': parsed['parsed_year'],
+                        'variants': [],
+                    }
+                movies[key]['variants'].append(parsed['variant'])
+            rows = []
+            for movie in movies.values():
+                variants = sorted(
+                    movie['variants'],
+                    key=lambda item: (get_resolution_rank_str(item.get('resolution')), NumberSafe(item.get('seeders'))),
+                    reverse=True,
+                )
+                best = variants[0] if variants else {}
+                rows.append({
+                    'parsed_title': movie['parsed_title'],
+                    'parsed_year': movie['parsed_year'],
+                    'best_seeders': best.get('seeders', 0),
+                    'best_resolution': best.get('resolution', 'Unknown'),
+                    'indexer': best.get('indexer', 'YTS RSS'),
+                    'variants': variants,
+                })
+            if rows:
+                return rows[:limit]
+        except Exception:
+            continue
+    return []
 
 
 class MetadataStoreError(RuntimeError):
@@ -1225,6 +1569,8 @@ def _normalize_tmdb_metadata(movie):
         'tmdb_id': tmdb_id,
         'imdb_id': str(movie.get('imdb_id', '') or ''),
         'title': movie.get('title') or movie.get('name') or '',
+        'original_title': movie.get('original_title') or movie.get('original_name') or '',
+        'original_language': lang,
         'year': _year_from_movie(movie),
         'poster_url': poster,
         'backdrop_url': backdrop,
@@ -1975,6 +2321,279 @@ def format_size(size):
     return f"{size:.1f} PB"
 
 
+def _torrent_variants_from_prowlarr_results(results):
+    hd_variants = []
+    fallback_variants = []
+    for r in results or []:
+        t = r.get('title', '')
+        if _TV_RE.search(t):
+            continue
+        tl = t.lower()
+        res = 'Unknown'
+        if '2160p' in tl or '4k' in tl or 'uhd' in tl:
+            res = '4K'
+        elif '1080p' in tl or re.search(r'[.\-_ \[(]1080[.\-_ \])]', tl):
+            res = '1080p'
+        elif '720p' in tl or re.search(r'[.\-_ \[(]720[.\-_ \])]', tl):
+            res = '720p'
+        elif '480p' in tl or re.search(r'[.\-_ \[(]480[.\-_ \])]', tl):
+            res = '480p'
+        size = r.get('size', 0)
+        seeders = r.get('seeders', 0)
+        links = _prowlarr_result_links(r)
+        entry = {
+            'resolution': res,
+            'seeders': seeders,
+            'magnet_url': links['magnet_url'],
+            'download_url': links['download_url'],
+            'info_url': r.get('infoUrl', ''),
+            'indexer': r.get('indexer', ''),
+            'size_human': format_size(size) if size else '?',
+            'size_bytes': size,
+            'title': t,
+        }
+        if res in ('4K', '1080p'):
+            hd_variants.append(entry)
+        else:
+            fallback_variants.append(entry)
+    if hd_variants:
+        return _sort_source_variants(hd_variants)
+    return _sort_source_variants(fallback_variants)
+
+
+def _sort_source_variants(variants):
+    rows = list(variants or [])
+    has_hd = any((row.get('resolution') in ('4K', '1080p')) for row in rows)
+    if has_hd:
+        rows.sort(key=lambda row: (
+            0 if row.get('resolution') == '4K' else 1 if row.get('resolution') == '1080p' else 2,
+            -int(row.get('seeders') or 0),
+        ))
+    else:
+        rows.sort(key=lambda row: -int(row.get('seeders') or 0))
+    return rows
+
+
+def _source_variant_key(variant):
+    return (
+        str((variant or {}).get('title', '')).casefold(),
+        str((variant or {}).get('indexer', '')).casefold(),
+        str((variant or {}).get('magnet_url', '') or (variant or {}).get('download_url', '')).casefold(),
+    )
+
+
+def _source_indexer_sort_key(indexer):
+    name = str((indexer or {}).get('name', '') or '').lower()
+    preferred = (
+        ('yts', 0),
+        ('yify', 0),
+        ('limetorrents', 1),
+        ('1337x', 2),
+        ('zamunda', 3),
+        ('bigfan', 4),
+        ('torrent9', 5),
+        ('world-torrent', 6),
+        ('rutor', 7),
+        ('pirate bay', 8),
+    )
+    for needle, rank in preferred:
+        if needle in name:
+            return (rank, name)
+    return (50, name)
+
+
+def _source_search_job_snapshot(job):
+    return {
+        'search_id': job.get('search_id', ''),
+        'status': job.get('status', 'running'),
+        'title': job.get('title', ''),
+        'year': job.get('year', ''),
+        'imdb_id': job.get('imdb_id', ''),
+        'tmdb_id': job.get('tmdb_id', ''),
+        'variants': list(job.get('variants', [])),
+        'pending_indexers': list(job.get('pending_indexers', [])),
+        'searching_indexers': list(job.get('searching_indexers', [])),
+        'completed_indexers': list(job.get('completed_indexers', [])),
+        'timed_out_indexers': list(job.get('timed_out_indexers', [])),
+        'failed_indexers': list(job.get('failed_indexers', [])),
+        'total_indexers': int(job.get('total_indexers', 0) or 0),
+        'finished_indexers': int(job.get('finished_indexers', 0) or 0),
+        'error': job.get('error', ''),
+        'queries': list(job.get('queries', [])),
+    }
+
+
+def _source_search_job_response(search_id):
+    with _source_search_jobs_lock:
+        job = _source_search_jobs.get(search_id)
+        if not job:
+            return None
+        return _source_search_job_snapshot(job)
+
+
+def _update_source_search_job(search_id, updater):
+    with _source_search_jobs_lock:
+        job = _source_search_jobs.get(search_id)
+        if not job:
+            return None
+        updater(job)
+        job['updated_at'] = time.time()
+        return _source_search_job_snapshot(job)
+
+
+def _prune_source_search_jobs():
+    cutoff = time.time() - SOURCE_SEARCH_JOB_TTL_SECONDS
+    with _source_search_jobs_lock:
+        stale = [
+            search_id for search_id, job in _source_search_jobs.items()
+            if float(job.get('updated_at', job.get('started_at', 0)) or 0) < cutoff
+        ]
+        for search_id in stale:
+            _source_search_jobs.pop(search_id, None)
+
+
+def _search_movie_on_single_indexer(indexer, movie, queries, timeout=SOURCE_SEARCH_INDEXER_TIMEOUT_SECONDS):
+    indexer_id = str((indexer or {}).get('id', '') or '')
+    if not indexer_id:
+        return {'indexer': indexer, 'results': [], 'timed_out': False, 'error': ''}
+    for query in queries:
+        try:
+            rows = _prowlarr_search(
+                indexer_ids=[indexer_id],
+                query=query,
+                limit=100,
+                categories='2000',
+                timeout=timeout,
+            )
+        except Exception as error:
+            if _is_timeout_error(error):
+                return {'indexer': indexer, 'results': [], 'timed_out': True, 'error': ''}
+            return {'indexer': indexer, 'results': [], 'timed_out': False, 'error': str(error)}
+        exact_results = [result for result in rows if _prowlarr_result_matches_movie(result, movie)]
+        if exact_results:
+            return {'indexer': indexer, 'results': exact_results, 'timed_out': False, 'error': ''}
+    return {'indexer': indexer, 'results': [], 'timed_out': False, 'error': ''}
+
+
+def _run_source_search_job(search_id):
+    snapshot = _source_search_job_response(search_id)
+    if not snapshot:
+        return
+    movie = {
+        'title': snapshot.get('title', ''),
+        'year': snapshot.get('year', ''),
+        'imdb_id': snapshot.get('imdb_id', ''),
+        'tmdb_id': snapshot.get('tmdb_id', ''),
+    }
+    try:
+        enriched = _movie_with_source_title_aliases(movie)
+        queries = _movie_release_queries(enriched)
+        indexers = sorted(_fetch_enabled_prowlarr_indexers(), key=_source_indexer_sort_key)
+        indexer_names = [indexer.get('name') or f"Indexer {indexer.get('id')}" for indexer in indexers]
+
+        def initialize(job):
+            job['queries'] = queries
+            job['pending_indexers'] = indexer_names
+            job['total_indexers'] = len(indexers)
+
+        _update_source_search_job(search_id, initialize)
+        if not indexers:
+            _update_source_search_job(search_id, lambda job: job.update({'status': 'complete'}))
+            return
+
+        max_workers = max(1, min(SOURCE_SEARCH_JOB_WORKERS, len(indexers)))
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {
+                executor.submit(
+                    _search_movie_on_single_indexer,
+                    indexer,
+                    enriched,
+                    queries,
+                    SOURCE_SEARCH_INDEXER_TIMEOUT_SECONDS,
+                ): indexer
+                for indexer in indexers
+            }
+            for future in concurrent.futures.as_completed(futures):
+                indexer = futures[future]
+                indexer_name = indexer.get('name') or f"Indexer {indexer.get('id')}"
+
+                def mark_searching(job, name=indexer_name):
+                    if name in job.get('pending_indexers', []):
+                        job['pending_indexers'].remove(name)
+                    if name not in job.get('searching_indexers', []):
+                        job['searching_indexers'].append(name)
+
+                _update_source_search_job(search_id, mark_searching)
+                try:
+                    outcome = future.result()
+                except Exception as error:
+                    outcome = {'indexer': indexer, 'results': [], 'timed_out': False, 'error': str(error)}
+                variants = _torrent_variants_from_prowlarr_results(outcome.get('results', []))
+
+                def merge_results(job, name=indexer_name, new_variants=variants, result=outcome):
+                    if name in job.get('searching_indexers', []):
+                        job['searching_indexers'].remove(name)
+                    if name in job.get('pending_indexers', []):
+                        job['pending_indexers'].remove(name)
+                    if result.get('timed_out'):
+                        if name not in job.get('timed_out_indexers', []):
+                            job['timed_out_indexers'].append(name)
+                    elif result.get('error'):
+                        job['failed_indexers'].append({'indexer': name, 'error': result.get('error', '')})
+                    else:
+                        if name not in job.get('completed_indexers', []):
+                            job['completed_indexers'].append(name)
+                    existing = {_source_variant_key(variant) for variant in job.get('variants', [])}
+                    for variant in new_variants:
+                        key = _source_variant_key(variant)
+                        if key in existing:
+                            continue
+                        existing.add(key)
+                        job['variants'].append(variant)
+                    job['variants'] = _sort_source_variants(job.get('variants', []))
+                    job['finished_indexers'] = (
+                        len(job.get('completed_indexers', []))
+                        + len(job.get('timed_out_indexers', []))
+                        + len(job.get('failed_indexers', []))
+                    )
+
+                _update_source_search_job(search_id, merge_results)
+
+        _update_source_search_job(search_id, lambda job: job.update({'status': 'complete', 'searching_indexers': [], 'pending_indexers': []}))
+    except Exception as error:
+        _update_source_search_job(search_id, lambda job: job.update({'status': 'error', 'error': str(error)}))
+
+
+def _create_source_search_job(movie):
+    _prune_source_search_jobs()
+    search_id = str(uuid.uuid4())
+    job = {
+        'search_id': search_id,
+        'status': 'running',
+        'title': str((movie or {}).get('title', '') or ''),
+        'year': str((movie or {}).get('year', '') or ''),
+        'imdb_id': str((movie or {}).get('imdb_id', '') or ''),
+        'tmdb_id': str((movie or {}).get('tmdb_id', '') or ''),
+        'variants': [],
+        'pending_indexers': [],
+        'searching_indexers': [],
+        'completed_indexers': [],
+        'timed_out_indexers': [],
+        'failed_indexers': [],
+        'total_indexers': 0,
+        'finished_indexers': 0,
+        'queries': [],
+        'error': '',
+        'started_at': time.time(),
+        'updated_at': time.time(),
+    }
+    with _source_search_jobs_lock:
+        _source_search_jobs[search_id] = job
+    worker = threading.Thread(target=_run_source_search_job, args=(search_id,), daemon=True)
+    worker.start()
+    return _source_search_job_response(search_id)
+
+
 _GOOD_RELEASE_SOURCES = {'WEBRip', 'Blu-ray', 'BDRip'}
 _BAD_RELEASE_RE = re.compile(
     r'(^|[.\-_\s\[\(])(cam|camrip|hdcam|ts|hdts|tele[.\-_\s]*sync|tc|telecine|scr|screener|dvdscr)',
@@ -2078,12 +2697,12 @@ def _find_best_followed_release(movie):
             return None
         indexer_ids = [ix['id'] for ix in selected_indexers]
         trusted_indexer_names = {ix.get('name', '') for ix in selected_indexers if ix.get('name')}
-        parts = [('query', query), ('type', 'search'), ('categories', '2000'), ('limit', '100')]
-        parts += [('indexerIds', iid) for iid in indexer_ids]
-        url = f"{_prowlarr_url}/api/v1/search?{urllib.parse.urlencode(parts)}"
-        req = urllib.request.Request(url, headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'})
-        with urllib.request.urlopen(req, timeout=25) as resp:
-            results = _json.loads(resp.read().decode())
+        results = _prowlarr_search_movie(
+            indexer_ids,
+            movie,
+            timeout=FOLLOWED_RELEASE_QUERY_TIMEOUT_SECONDS,
+            deadline_seconds=FOLLOWED_RELEASE_DEADLINE_SECONDS,
+        )
     except Exception:
         return None
 
@@ -2099,6 +2718,7 @@ def _find_best_followed_release(movie):
         if not quality:
             continue
         size = NumberSafe(r.get('size'))
+        links = _prowlarr_result_links(r)
         candidates.append({
             'title': torrent_title,
             'resolution': quality['resolution'],
@@ -2107,8 +2727,8 @@ def _find_best_followed_release(movie):
             'size_bytes': size,
             'size_human': format_size(size) if size else '?',
             'indexer': result_indexer,
-            'magnet_url': r.get('magnetUrl', ''),
-            'download_url': r.get('downloadUrl', ''),
+            'magnet_url': links['magnet_url'],
+            'download_url': links['download_url'],
             'info_url': r.get('infoUrl', ''),
         })
     if not candidates:
@@ -2903,7 +3523,7 @@ def qbittorrent_status():
 @app.route('/api/qbittorrent/update', methods=['POST'])
 def qbittorrent_install():
     return jsonify({
-        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.6.6 because the tested portable runtime is bundled with the release.'
+        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.6.7 because the tested portable runtime is bundled with the release.'
     }), 410
 
 
@@ -2914,6 +3534,20 @@ def _qbittorrent_submission_metadata(data):
         'release_title': str(data.get('release_title', data.get('title', '')) or '').strip(),
         'indexer': str(data.get('indexer', '') or '').strip(),
     }
+
+
+def _existing_qbittorrent_job_for_magnet(manager, magnet):
+    torrent_hash = magnet_hash(magnet)
+    if not torrent_hash:
+        return None
+    jobs = getattr(manager, 'jobs', None)
+    if not jobs:
+        return None
+    get_job = getattr(jobs, 'get', None)
+    if callable(get_job):
+        return get_job(torrent_hash)
+    all_jobs = getattr(jobs, 'all', None)
+    return all_jobs().get(torrent_hash) if callable(all_jobs) else None
 
 
 @app.route('/api/qbittorrent/submit', methods=['POST'])
@@ -2936,20 +3570,30 @@ def qbittorrent_submit():
                 'X-Api-Key': _prowlarr_key,
                 'Accept': 'application/x-bittorrent, application/octet-stream',
             })
-            with urllib.request.urlopen(req, timeout=30) as response:
-                torrent_bytes = response.read(10 * 1024 * 1024 + 1)
-                if len(torrent_bytes) > 10 * 1024 * 1024:
-                    return jsonify({'error': 'Torrent file is larger than 10 MB'}), 400
-                content_disposition = response.headers.get('Content-Disposition', '')
-            filename_match = re.search(r'filename="?([^";]+)', content_disposition, flags=re.I)
-            filename = filename_match.group(1) if filename_match else 'prowlarr-result.torrent'
-            if not filename.lower().endswith('.torrent'):
-                filename += '.torrent'
-            job = manager.submit_torrent(torrent_bytes, os.path.basename(filename), metadata)
+            try:
+                with urllib.request.urlopen(req, timeout=30) as response:
+                    torrent_bytes = response.read(10 * 1024 * 1024 + 1)
+                    if len(torrent_bytes) > 10 * 1024 * 1024:
+                        return jsonify({'error': 'Torrent file is larger than 10 MB'}), 400
+                    content_disposition = response.headers.get('Content-Disposition', '')
+                filename_match = re.search(r'filename="?([^";]+)', content_disposition, flags=re.I)
+                filename = filename_match.group(1) if filename_match else 'prowlarr-result.torrent'
+                if not filename.lower().endswith('.torrent'):
+                    filename += '.torrent'
+                job = manager.submit_torrent(torrent_bytes, os.path.basename(filename), metadata)
+            except urllib.error.HTTPError as error:
+                redirect_magnet = _magnet_from_http_redirect(error)
+                if not redirect_magnet:
+                    raise
+                job = manager.submit_magnet(redirect_magnet, metadata)
         else:
             return jsonify({'error': 'No usable magnet or torrent URL was provided'}), 400
         return jsonify(job)
     except urllib.error.HTTPError as error:
+        if magnet and getattr(error, 'code', None) == 409:
+            existing_job = _existing_qbittorrent_job_for_magnet(manager, magnet)
+            if existing_job:
+                return jsonify({**existing_job, 'already_exists': True})
         return jsonify({'error': f'Prowlarr torrent download returned HTTP {error.code}'}), 502
     except (QBittorrentError, OSError) as error:
         return jsonify({'error': str(error)}), 400
@@ -3025,6 +3669,7 @@ def prowlarr_search():
             elif '480p' in tl or re.search(r'[\.\-_ \[\(]480[\.\-_ \]\)\[]', tl):
                 res, res_rank = '480p', 1
             size = r.get('size', 0)
+            links = _prowlarr_result_links(r)
             filtered.append({
                 'title': title,
                 'indexer': r.get('indexer', ''),
@@ -3032,8 +3677,8 @@ def prowlarr_search():
                 'size': size,
                 'seeders': r.get('seeders', 0),
                 'resolution': res,
-                'download_url': r.get('downloadUrl', ''),
-                'magnet_url': r.get('magnetUrl', ''),
+                'download_url': links['download_url'],
+                'magnet_url': links['magnet_url'],
                 'info_url': r.get('infoUrl', ''),
             })
         # Sort: resolution desc, then seeders desc
@@ -4601,6 +5246,7 @@ def explore_browse():
                 return jsonify({'error': 'Selected indexer is not available in Prowlarr.'}), 400
             indexer_ids = [selected_indexer_id]
         indexer_names = [ix['name'] for ix in indexers]
+        selected_indexers = [ix for ix in indexers if ix['id'] in indexer_ids]
 
         def _fetch(query=''):
             parts = [('query', query), ('type', 'search'), ('categories', '2000'), ('limit', '100')]
@@ -4637,11 +5283,12 @@ def explore_browse():
             parsed_title = parsed[0].title() if parsed[0] else title
             parsed_year  = parsed[1] or ''
             size = r.get('size', 0)
+            links = _prowlarr_result_links(r)
             variant = {
                 'resolution': res,
                 'seeders': r.get('seeders', 0),
-                'magnet_url': r.get('magnetUrl', ''),
-                'download_url': r.get('downloadUrl', ''),
+                'magnet_url': links['magnet_url'],
+                'download_url': links['download_url'],
                 'info_url': r.get('infoUrl', ''),
                 'indexer': r.get('indexer', ''),
                 'size_human': format_size(size) if size else '?',
@@ -4673,7 +5320,30 @@ def explore_browse():
                 'variants': variants,
             })
 
-        processed.sort(key=lambda x: x['best_seeders'], reverse=True)
+        rss_prioritized = False
+        if latest and not browse_query and any(_is_yts_indexer_name(ix.get('name')) for ix in selected_indexers):
+            by_key = {f"{row.get('parsed_title', '').lower()}_{row.get('parsed_year', '')}": row for row in processed}
+            merged = []
+            for row in _fetch_yts_rss_latest(limit=100):
+                key = f"{row.get('parsed_title', '').lower()}_{row.get('parsed_year', '')}"
+                existing = by_key.pop(key, None)
+                if existing:
+                    seen = {
+                        (variant.get('magnet_url'), variant.get('download_url'), variant.get('info_url'))
+                        for variant in row.get('variants', [])
+                    }
+                    extra_variants = [
+                        variant for variant in existing.get('variants', [])
+                        if (variant.get('magnet_url'), variant.get('download_url'), variant.get('info_url')) not in seen
+                    ]
+                    row['variants'] = row.get('variants', []) + extra_variants
+                merged.append(row)
+            if merged:
+                processed = merged + list(by_key.values())
+                rss_prioritized = True
+
+        if not rss_prioritized:
+            processed.sort(key=lambda x: x['best_seeders'], reverse=True)
         return jsonify({
             'results': processed[:100],
             'tmdb_enabled': bool(_tmdb_key),
@@ -4853,69 +5523,55 @@ def explore_search():
         return jsonify({'error': 'title required'}), 400
     if not _prowlarr_url or not _prowlarr_key:
         return jsonify({'error': 'Prowlarr not configured — add it in ⚙ Settings.'}), 400
-    query = f"{title} {year}".strip()
     try:
         indexer_ids = []
         try:
-            idx_req = urllib.request.Request(
-                f"{_prowlarr_url}/api/v1/indexer",
-                headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'}
-            )
-            with urllib.request.urlopen(idx_req, timeout=8) as idx_resp:
-                indexers = _json.loads(idx_resp.read().decode())
-            indexer_ids = [str(ix['id']) for ix in indexers if ix.get('enable', True)]
+            indexer_ids = _enabled_prowlarr_indexer_ids()
         except Exception:
             pass
-        parts = [('query', query), ('type', 'search'), ('categories', '2000'), ('limit', '100')]
-        parts += [('indexerIds', iid) for iid in indexer_ids]
-        url = f"{_prowlarr_url}/api/v1/search?{urllib.parse.urlencode(parts)}"
-        req = urllib.request.Request(url, headers={'X-Api-Key': _prowlarr_key, 'Accept': 'application/json'})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            results = _json.loads(resp.read().decode())
-        hd_variants = []
-        fallback_variants = []
-        for r in results:
-            t = r.get('title', '')
-            if _TV_RE.search(t):
-                continue
-            tl = t.lower()
-            res = 'Unknown'
-            if '2160p' in tl or '4k' in tl or 'uhd' in tl:
-                res = '4K'
-            elif '1080p' in tl or re.search(r'[.\-_ \[(]1080[.\-_ \])]', tl):
-                res = '1080p'
-            elif '720p' in tl or re.search(r'[.\-_ \[(]720[.\-_ \])]', tl):
-                res = '720p'
-            elif '480p' in tl or re.search(r'[.\-_ \[(]480[.\-_ \])]', tl):
-                res = '480p'
-            size = r.get('size', 0)
-            seeders = r.get('seeders', 0)
-            entry = {
-                'resolution': res, 'seeders': seeders,
-                'magnet_url': r.get('magnetUrl', ''),
-                'download_url': r.get('downloadUrl', ''),
-                'info_url': r.get('infoUrl', ''),
-                'indexer': r.get('indexer', ''),
-                'size_human': format_size(size) if size else '?',
-                'size_bytes': size,
-                'title': t,
-            }
-            if res in ('4K', '1080p'):
-                hd_variants.append(entry)
-            else:
-                fallback_variants.append(entry)
-        # Sort: 4K first, then 1080p, within group by seeders desc
-        hd_variants.sort(key=lambda x: (0 if x['resolution'] == '4K' else 1, -x['seeders']))
-        if hd_variants:
-            variants = hd_variants
-        else:
-            fallback_variants.sort(key=lambda x: -x['seeders'])
-            variants = fallback_variants
+        results = _prowlarr_search_movie(
+            indexer_ids,
+            {
+                'title': title,
+                'year': year,
+                'imdb_id': request.args.get('imdb_id', '').strip(),
+                'tmdb_id': request.args.get('tmdb_id', '').strip(),
+            },
+            timeout=SOURCE_SEARCH_QUERY_TIMEOUT_SECONDS,
+            deadline_seconds=SOURCE_SEARCH_DEADLINE_SECONDS,
+        )
+        variants = _torrent_variants_from_prowlarr_results(results)
         return jsonify({'variants': variants})
     except urllib.error.HTTPError as e:
         return jsonify({'error': f'Prowlarr returned HTTP {e.code}'}), 502
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/explore/search/jobs', methods=['POST'])
+def explore_search_job_start():
+    data = request.get_json(silent=True) or {}
+    title = str(data.get('title', '') or '').strip()
+    year = str(data.get('year', '') or '').strip()
+    if not title:
+        return jsonify({'error': 'title required'}), 400
+    if not _prowlarr_url or not _prowlarr_key:
+        return jsonify({'error': 'Prowlarr not configured — add it in ⚙ Settings.'}), 400
+    snapshot = _create_source_search_job({
+        'title': title,
+        'year': year,
+        'imdb_id': str(data.get('imdb_id', '') or '').strip(),
+        'tmdb_id': str(data.get('tmdb_id', '') or '').strip(),
+    })
+    return jsonify(snapshot)
+
+
+@app.route('/api/explore/search/jobs/<search_id>')
+def explore_search_job_status(search_id):
+    snapshot = _source_search_job_response(search_id)
+    if not snapshot:
+        return jsonify({'error': 'Source search job not found'}), 404
+    return jsonify(snapshot)
 
 
 @app.route('/api/tmdb/search')

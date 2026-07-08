@@ -127,6 +127,50 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertIn("--expanded-cast-avatar-size: 90px", styles_source)
         self.assertIn("minmax(160px, 1fr)", styles_source)
 
+    def test_expanded_people_photos_use_rectangular_portrait_framing(self):
+        styles_source = APP_STYLES.read_text(encoding="utf-8")
+        self.assertIn("--expanded-director-avatar-width: 96px", styles_source)
+        self.assertIn("--expanded-director-avatar-height: 118px", styles_source)
+        self.assertIn("--expanded-cast-avatar-width: 90px", styles_source)
+        self.assertIn("--expanded-cast-avatar-height: 112px", styles_source)
+        self.assertIn("border-radius: 10px", styles_source)
+
+        expanded_avatar_styles = styles_source[
+            styles_source.index(".movie-expanded-people-panel .director-person .person-avatar"):
+            styles_source.index(".movie-expanded-people-panel .person-grid")
+        ]
+        self.assertIn("width: var(--expanded-director-avatar-width)", expanded_avatar_styles)
+        self.assertIn("height: var(--expanded-director-avatar-height)", expanded_avatar_styles)
+        self.assertIn("border-radius: 10px", expanded_avatar_styles)
+
+        expanded_cast_avatar_styles = styles_source[
+            styles_source.index(".movie-expanded-people-panel .person-card .person-avatar"):
+            styles_source.index(".movie-expanded-people-panel .person-card strong")
+        ]
+        self.assertIn("width: var(--expanded-cast-avatar-width)", expanded_cast_avatar_styles)
+        self.assertIn("height: var(--expanded-cast-avatar-height)", expanded_cast_avatar_styles)
+        self.assertIn("border-radius: 10px", expanded_cast_avatar_styles)
+
+    def test_indexer_expanded_card_uses_shared_content_width_and_action_row(self):
+        styles_source = APP_STYLES.read_text(encoding="utf-8")
+        self.assertIn(".indexer-card:has(.movie-expanded-details)", styles_source)
+        indexer_expanded_styles = styles_source[
+            styles_source.index(".indexer-card:has(.movie-expanded-details)"):
+            styles_source.index(".indexer-poster-wrap", styles_source.index(".indexer-card:has(.movie-expanded-details)"))
+        ]
+        self.assertIn("grid-template-columns: 220px minmax(0, 1fr)", indexer_expanded_styles)
+        self.assertNotIn("190px", indexer_expanded_styles)
+
+        self.assertIn("indexer-action-row indexer-action-row-expanded", APP)
+        self.assertNotIn("indexer-action-rail indexer-action-rail-expanded", APP)
+        self.assertIn(".indexer-action-row-expanded", styles_source)
+        action_row_styles = styles_source[
+            styles_source.index(".indexer-action-row-expanded"):
+            styles_source.index(".indexer-selected-meta", styles_source.index(".indexer-action-row-expanded"))
+        ]
+        self.assertIn("display: flex", action_row_styles)
+        self.assertIn("flex-wrap: wrap", action_row_styles)
+
 
 if __name__ == "__main__":
     unittest.main()

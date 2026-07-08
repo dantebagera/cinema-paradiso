@@ -604,10 +604,13 @@ class QBittorrentManager:
     def submit_magnet(self, magnet, metadata):
         if not validate_magnet_url(magnet):
             raise QBittorrentError("Invalid magnet link")
+        torrent_hash = magnet_hash(magnet)
+        existing = self.jobs.get(torrent_hash)
+        if existing:
+            return {**existing, "already_exists": True}
         if not self.ensure_running():
             raise QBittorrentError("Embedded qBittorrent is not installed")
         self.client.add_magnet(magnet, str(self.staging_dir))
-        torrent_hash = magnet_hash(magnet)
         if not torrent_hash:
             time.sleep(0.5)
             candidates = [item for item in self.client.torrents() if QBT_TAG in str(item.get("tags", ""))]

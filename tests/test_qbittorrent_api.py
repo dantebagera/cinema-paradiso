@@ -1,5 +1,7 @@
 import tempfile
 import unittest
+import urllib.error
+from email.message import Message
 from pathlib import Path
 from unittest.mock import patch
 
@@ -10,6 +12,7 @@ class FakeManager:
     def __init__(self):
         self.submitted = []
         self.installed = False
+        self.existing_jobs = {}
 
     def configuration(self):
         return {
@@ -43,7 +46,16 @@ class FakeManager:
 
     @property
     def jobs(self):
-        return type("Jobs", (), {"all": lambda self: {"abc": {"state": "downloading"}}})()
+        manager = self
+
+        class Jobs:
+            def all(self):
+                return manager.existing_jobs or {"abc": {"state": "downloading"}}
+
+            def get(self, torrent_hash):
+                return manager.existing_jobs.get(str(torrent_hash or "").lower())
+
+        return Jobs()
 
 
 class QBittorrentApiTests(unittest.TestCase):
@@ -55,6 +67,8 @@ class QBittorrentApiTests(unittest.TestCase):
             "port": app._qbt_webui_port,
             "dirs": list(app._movies_dirs),
             "dir": app._movies_dir,
+            "prowlarr_url": app._prowlarr_url,
+            "prowlarr_key": app._prowlarr_key,
         }
         self.temp = tempfile.TemporaryDirectory()
         app._movies_dirs = [self.temp.name]
@@ -63,6 +77,8 @@ class QBittorrentApiTests(unittest.TestCase):
         app._qbt_download_dir = ""
         app._qbt_incomplete_dir = ""
         app._qbt_webui_port = 8686
+        app._prowlarr_url = "http://prowlarr.test"
+        app._prowlarr_key = "prowlarr-key"
         self.manager = FakeManager()
         self.client = app.app.test_client()
         self.manager_patch = patch.object(app, "_get_qbittorrent_manager", return_value=self.manager)
@@ -79,6 +95,8 @@ class QBittorrentApiTests(unittest.TestCase):
         app._qbt_webui_port = self.original["port"]
         app._movies_dirs = self.original["dirs"]
         app._movies_dir = self.original["dir"]
+        app._prowlarr_url = self.original["prowlarr_url"]
+        app._prowlarr_key = self.original["prowlarr_key"]
         self.temp.cleanup()
 
     def test_config_defaults_to_embedded_and_primary_library(self):
@@ -127,6 +145,53 @@ class QBittorrentApiTests(unittest.TestCase):
         })
 
         self.assertEqual(response.status_code, 400)
+
+    def test_submit_uses_magnet_when_prowlarr_download_redirects_to_magnet(self):
+        magnet = "magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef01234567&dn=Movie"
+        headers = Message()
+        headers["Location"] = magnet
+
+        def fake_urlopen(request, timeout=0):
+            raise urllib.error.HTTPError(request.full_url, 301, "Moved Permanently", headers, None)
+
+        with patch("app.urllib.request.urlopen", side_effect=fake_urlopen):
+            response = self.client.post("/api/qbittorrent/submit", json={
+                "download_url": "http://prowlarr.test/prowlarr/6/download?id=1",
+                "title": "Movie",
+            })
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(self.manager.submitted[0][0], "magnet")
+        self.assertEqual(self.manager.submitted[0][1], magnet)
+
+    def test_submit_duplicate_magnet_conflict_returns_existing_job(self):
+        magnet = "magnet:?xt=urn:btih:48373C3569751AA5C51072E826DD43FFB350BA84&dn=Movie"
+        torrent_hash = "48373c3569751aa5c51072e826dd43ffb350ba84"
+        self.manager.existing_jobs[torrent_hash] = {
+            "hash": torrent_hash,
+            "state": "imported",
+            "title": "Movie",
+        }
+
+        def duplicate_magnet(_magnet, _metadata):
+            raise urllib.error.HTTPError(
+                "http://127.0.0.1:8686/api/v2/torrents/add",
+                409,
+                "Conflict",
+                Message(),
+                None,
+            )
+
+        self.manager.submit_magnet = duplicate_magnet
+
+        response = self.client.post("/api/qbittorrent/submit", json={
+            "magnet_url": magnet,
+            "title": "Movie",
+        })
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.get_json()["state"], "imported")
+        self.assertTrue(response.get_json()["already_exists"])
 
     def test_install_and_update_routes_are_disabled_for_bundled_runtime(self):
         installed = self.client.post("/api/qbittorrent/install")

@@ -5,7 +5,7 @@ import zipfile
 from pathlib import Path
 
 
-CP_VERSION = "2.6.6"
+CP_VERSION = "2.6.7"
 QBT_VERSION = "5.2.2"
 EXCLUDED_QBT_NAMES = {
     "profile",

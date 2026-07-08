@@ -206,6 +206,30 @@ export function listsForItem(item, lists) {
   ));
 }
 
+export function listLibraryCoverage(items = [], list = null) {
+  const movies = list?.movies || [];
+  if (!list || !movies.length) {
+    return { total: 0, matched: 0, missingCount: 0, missingMovies: [] };
+  }
+  const libraryKeys = new Set();
+  for (const item of items || []) {
+    for (const key of movieIdentityKeys(moviePayload(item))) {
+      libraryKeys.add(key);
+    }
+  }
+  const missingMovies = [];
+  for (const movie of movies) {
+    const matched = movieIdentityKeys(movie).some((key) => libraryKeys.has(key));
+    if (!matched) missingMovies.push(movie);
+  }
+  return {
+    total: movies.length,
+    matched: movies.length - missingMovies.length,
+    missingCount: missingMovies.length,
+    missingMovies
+  };
+}
+
 export function movieHasSystemState(item, lists, systemType) {
   return listsForItem(item, lists).some((list) => (
     list.system_type === systemType || list.id === systemType
