@@ -34,6 +34,7 @@ from services.authoritative_identity import (
     resolve_authoritative_identity,
 )
 from services.identity_repair import build_identity_repair
+from services import ai_control
 from services.plex_match import PlexMatchAdapter, PlexMatchError
 from services.smart_match import (
     SmartMatchCoordinator,
@@ -93,6 +94,7 @@ FOLLOWED_RELEASE_QUERY_TIMEOUT_SECONDS = 8
 FOLLOWED_RELEASE_DEADLINE_SECONDS = 25
 _source_search_jobs = {}
 _source_search_jobs_lock = threading.Lock()
+_ai_control_plan_store = ai_control.PlanStore(ttl_seconds=900)
 
 
 def _coerce_ollama_candidate_limit(value, default=OLLAMA_CANDIDATE_LIMIT_DEFAULT):
@@ -143,6 +145,9 @@ _prowlarr_url   = _cfg.get('prowlarr_url', '')
 _prowlarr_key   = _cfg.get('prowlarr_key', '')
 _trusted_release_indexers = [str(value).strip() for value in _cfg.get('trusted_release_indexers', []) if str(value).strip()]
 _trusted_release_indexers_configured = 'trusted_release_indexers' in _cfg
+_download_default_quality = str(_cfg.get('download_default_quality', '1080p') or '1080p').strip() or '1080p'
+_download_indexer_mode = str(_cfg.get('download_indexer_mode', 'release') or 'release').strip() or 'release'
+_download_trusted_indexers = [str(value).strip() for value in _cfg.get('download_trusted_indexers', []) if str(value).strip()]
 _yts_rss_feeds = [
     str(value).strip()
     for value in _cfg.get('yts_rss_feeds', ['https://yts.gg/rss', 'https://yts.bz/rss', 'https://yts.lt/rss'])
@@ -156,6 +161,14 @@ _plex_token     = _cfg.get('plex_token', '')
 _ollama_url     = _cfg.get('ollama_url', 'http://localhost:11434')
 _ollama_model   = _cfg.get('ollama_model', 'gemma4:31b-cloud')
 _ollama_candidate_limit = _coerce_ollama_candidate_limit(_cfg.get('ollama_candidate_limit'))
+_ai_control_config = ai_control.coerce_config({
+    'enabled': _cfg.get('ai_control_enabled', True),
+    'trusted_indexers': _cfg.get('ai_control_trusted_indexers', []),
+    'max_matched_movies': _cfg.get('ai_control_max_matched_movies', 25),
+    'max_download_searches': _cfg.get('ai_control_max_download_searches', 10),
+    'ollama_curated_lists': _cfg.get('ai_control_ollama_curated_lists', False),
+})
+_ai_control_trusted_indexers_configured = 'ai_control_trusted_indexers' in _cfg
 _streaming_enabled = _coerce_bool(_cfg.get('streaming_enabled'), True)
 _streaming_label = str(_cfg.get('streaming_label', 'Stream') or 'Stream').strip() or 'Stream'
 _streaming_url_template = str(
@@ -1955,7 +1968,7 @@ _PLEX_TTL        = 300  # seconds before auto-refresh
 _library_cache   = {}   # keys: items, plex_enabled, plex_cached, time
 _LIBRARY_TTL     = 300  # seconds — same as Plex TTL
 _FILE_STABILITY_SECONDS = 15
-IDENTITY_DECISION_VERSION = 3
+IDENTITY_DECISION_VERSION = 4
 _metadata_migration_coordinator = None
 _metadata_migration_store_dir = ''
 _smart_match_coordinator = None
@@ -1992,6 +2005,10 @@ def _all_config():
         'ollama_url': _ollama_url,
         'ollama_model': _ollama_model,
         'ollama_candidate_limit': _ollama_candidate_limit,
+        'ai_control_enabled': _ai_control_config['enabled'],
+        'ai_control_max_matched_movies': _ai_control_config['max_matched_movies'],
+        'ai_control_max_download_searches': _ai_control_config['max_download_searches'],
+        'ai_control_ollama_curated_lists': _ai_control_config['ollama_curated_lists'],
         'streaming_enabled': _streaming_enabled,
         'streaming_label': _streaming_label,
         'streaming_url_template': _streaming_url_template,
@@ -2001,7 +2018,12 @@ def _all_config():
         'qbt_download_dir': _qbt_download_dir,
         'qbt_incomplete_dir': _qbt_incomplete_dir,
         'qbt_webui_port': _qbt_webui_port,
+        'download_default_quality': _download_default_quality,
+        'download_indexer_mode': _download_indexer_mode,
+        'download_trusted_indexers': _download_trusted_indexers,
     }
+    if _ai_control_trusted_indexers_configured:
+        config['ai_control_trusted_indexers'] = _ai_control_config['trusted_indexers']
     if _trusted_release_indexers_configured:
         config['trusted_release_indexers'] = _trusted_release_indexers
     return config
@@ -3208,6 +3230,7 @@ def qbittorrent_proxy_asset(filename):
 @app.route('/library')
 @app.route('/cleanup')
 @app.route('/discover')
+@app.route('/ai-control')
 @app.route('/downloads')
 @app.route('/help')
 @app.route('/settings')
@@ -3412,12 +3435,16 @@ def get_prowlarr_config():
         'indexers': indexers,
         'trusted_release_indexers': _effective_trusted_release_indexer_ids(indexers),
         'trusted_release_indexers_configured': _trusted_release_indexers_configured,
+        'download_default_quality': _download_default_quality,
+        'download_indexer_mode': _download_indexer_mode,
+        'download_trusted_indexers': _download_trusted_indexers,
     })
 
 
 @app.route('/api/prowlarr/config', methods=['POST'])
 def set_prowlarr_config():
     global _prowlarr_url, _prowlarr_key, _trusted_release_indexers, _trusted_release_indexers_configured
+    global _download_default_quality, _download_indexer_mode, _download_trusted_indexers
     data = request.get_json(silent=True)
     if not data:
         return jsonify({'error': 'No data provided'}), 400
@@ -3429,8 +3456,453 @@ def set_prowlarr_config():
         if str(value).strip()
     ]
     _trusted_release_indexers_configured = True
+    quality = str(data.get('download_default_quality', _download_default_quality) or '1080p').strip()
+    _download_default_quality = '4K' if quality.lower() in {'4k', '2160p'} else '1080p'
+    mode = str(data.get('download_indexer_mode', _download_indexer_mode) or 'release').strip().lower()
+    _download_indexer_mode = mode if mode in {'release', 'all', 'custom'} else 'release'
+    _download_trusted_indexers = [
+        str(value).strip()
+        for value in data.get('download_trusted_indexers', _download_trusted_indexers)
+        if str(value).strip()
+    ]
     _save_config(_all_config())
     return jsonify({'success': True})
+
+
+def _ai_control_available_indexers():
+    if not _prowlarr_url or not _prowlarr_key:
+        return []
+    try:
+        return sorted(_fetch_enabled_prowlarr_indexers(), key=lambda ix: ix['name'].lower())
+    except Exception:
+        return []
+
+
+def _is_ai_control_default_indexer(indexer):
+    return bool(re.search(r'yts|yify', str(indexer.get('name') or ''), flags=re.I))
+
+
+def _effective_ai_control_config(indexers=None):
+    config = dict(_ai_control_config)
+    available_indexers = _ai_control_available_indexers() if indexers is None else indexers
+    if not _ai_control_trusted_indexers_configured:
+        config['trusted_indexers'] = [
+            str(indexer.get('id'))
+            for indexer in available_indexers
+            if indexer.get('id') is not None and _is_ai_control_default_indexer(indexer)
+        ]
+    return ai_control.coerce_config(config)
+
+
+def _ai_control_config_payload():
+    indexers = _ai_control_available_indexers()
+    effective_config = _effective_ai_control_config(indexers)
+    return {
+        **effective_config,
+        'download_quality': '1080p',
+        'delete_mode': 'recycle_bin',
+        'trusted_indexers_configured': _ai_control_trusted_indexers_configured,
+        'indexers': indexers,
+        'capabilities': ai_control.load_capabilities(),
+    }
+
+
+@app.route('/api/ai-control/config', methods=['GET', 'POST'])
+def ai_control_config():
+    global _ai_control_config, _ai_control_trusted_indexers_configured
+    if request.method == 'GET':
+        return jsonify(_ai_control_config_payload())
+    data = request.get_json(silent=True) or {}
+    if 'trusted_indexers' in data:
+        _ai_control_trusted_indexers_configured = True
+    _ai_control_config = ai_control.coerce_config({
+        **_ai_control_config,
+        'enabled': data.get('enabled', _ai_control_config['enabled']),
+        'trusted_indexers': data.get('trusted_indexers', _ai_control_config['trusted_indexers']),
+        'max_matched_movies': data.get('max_matched_movies', _ai_control_config['max_matched_movies']),
+        'max_download_searches': data.get('max_download_searches', _ai_control_config['max_download_searches']),
+        'ollama_curated_lists': data.get('ollama_curated_lists', _ai_control_config['ollama_curated_lists']),
+    })
+    _save_config(_all_config())
+    return jsonify(_ai_control_config_payload())
+
+
+def _ai_control_library_items():
+    if (
+            _library_cache.get('items') is not None
+            and _library_cache.get('dir') == _library_cache_key()
+            and time.time() - _library_cache.get('time', 0) < _LIBRARY_TTL):
+        return list(_library_cache.get('items') or [])
+    items = []
+    for _, _, filename, path in _iter_video_files():
+        try:
+            size = os.path.getsize(path)
+        except OSError:
+            size = 0
+        title, year = parse_movie_title(filename)
+        plex_data = _plex_cache.get(_norm(path), {})
+        genres = plex_data.get('plex_genres', [])
+        directors = plex_data.get('plex_directors', [])
+        cast = plex_data.get('plex_cast', [])
+        resolution = get_resolution(filename)
+        items.append({
+            'path': path,
+            'filename': filename,
+            'title': plex_data.get('plex_title') or title or os.path.splitext(filename)[0],
+            'year': str(plex_data.get('plex_year') or year or ''),
+            'size': size,
+            'size_human': format_size(size) if size else '',
+            'resolution': resolution,
+            'poster_url': plex_data.get('plex_poster', ''),
+            'genres': genres,
+            'plex_genres': genres,
+            'plot': plex_data.get('plex_summary', ''),
+            'summary': plex_data.get('plex_summary', ''),
+            'tmdb_rating': plex_data.get('plex_rating', ''),
+            'language': plex_data.get('plex_language', ''),
+            'country': plex_data.get('plex_country', ''),
+            'country_flag': plex_data.get('plex_country_flag', ''),
+            'directors': directors,
+            'director': directors[0] if directors else {},
+            'plex_directors': directors,
+            'cast': cast,
+            'plex_cast': cast,
+            'tmdb_id': str(plex_data.get('tmdb_id', '') or ''),
+            'imdb_id': str(plex_data.get('imdb_id', '') or ''),
+            'plex_guid': str(plex_data.get('plex_guid', '') or ''),
+            'source': 'Library',
+        })
+    return items
+
+
+def _ai_control_tmdb_movie_payload(raw):
+    release = raw.get('release_date', '') or ''
+    year = release[:4] if release else str(raw.get('year', '') or '')
+    poster_path = raw.get('poster_path', '')
+    genre_ids = raw.get('genre_ids', []) or []
+    genres = [_tmdb_genres[gid] for gid in genre_ids if gid in _tmdb_genres][:3]
+    vote = raw.get('vote_average', 0)
+    lang = raw.get('original_language', '')
+    countries = raw.get('origin_country', []) or []
+    country_code = countries[0] if countries else _LANG_COUNTRY.get(lang, '')
+    return {
+        'tmdb_id': str(raw.get('id') or raw.get('tmdb_id') or ''),
+        'title': raw.get('title') or raw.get('name') or '',
+        'year': year,
+        'poster_url': raw.get('poster_url') or (f"https://image.tmdb.org/t/p/w342{poster_path}" if poster_path else ''),
+        'genres': raw.get('genres') or genres,
+        'tmdb_rating': raw.get('tmdb_rating') or (f"{vote:.1f}" if isinstance(vote, (int, float)) and vote else ''),
+        'tmdb_vote_count': int(raw.get('vote_count', raw.get('tmdb_vote_count', 0)) or 0),
+        'plot': raw.get('overview') or raw.get('plot') or '',
+        'language': _LANG_NAMES.get(lang, lang.upper() if lang else ''),
+        'country': country_code,
+        'country_flag': _country_flag(country_code),
+        'release_date': release,
+        'source': 'TMDB',
+    }
+
+
+_AI_CONTROL_SKIP_CREDIT_TITLE_RE = re.compile(
+    r'\b('
+    r'behind the scenes|making of|tribute|hall of fame|anniversary special|'
+    r'many faces|interview|close up|lifetime of|induction ceremony'
+    r')\b',
+    re.I,
+)
+
+
+def _ai_control_credit_genre_names(row):
+    names = []
+    for genre_id in row.get('genre_ids', []) or []:
+        name = _tmdb_genres.get(genre_id) or _tmdb_genres.get(str(genre_id))
+        if name:
+            names.append(str(name))
+    for genre in row.get('genres', []) or []:
+        if isinstance(genre, dict):
+            names.append(str(genre.get('name') or ''))
+        else:
+            names.append(str(genre))
+    return [name for name in names if name]
+
+
+def _ai_control_filter_person_credit_rows(rows, role='actor'):
+    today = time.strftime('%Y-%m-%d')
+    filtered = []
+    seen = set()
+    for row in rows or []:
+        tmdb_id = str(row.get('id') or row.get('tmdb_id') or '').strip()
+        title = str(row.get('title') or row.get('name') or '').strip()
+        if not tmdb_id or not title or tmdb_id in seen:
+            continue
+        release_date = str(row.get('release_date') or '').strip()
+        if re.fullmatch(r'\d{4}-\d{2}-\d{2}', release_date) and release_date > today:
+            continue
+        genre_names = {name.lower() for name in _ai_control_credit_genre_names(row)}
+        if 'documentary' in genre_names:
+            continue
+        if _AI_CONTROL_SKIP_CREDIT_TITLE_RE.search(title):
+            continue
+        credit = str(row.get('character') if role != 'director' else row.get('job') or '').strip().lower()
+        if role != 'director' and (credit == 'self' or credit.startswith('self ') or 'archive footage' in credit):
+            continue
+        filtered.append(row)
+        seen.add(tmdb_id)
+    filtered.sort(key=lambda row: (
+        float(row.get('popularity') or 0),
+        float(row.get('vote_average') or 0),
+        int(row.get('vote_count') or 0),
+        str(row.get('release_date') or ''),
+    ), reverse=True)
+    return filtered
+
+
+def _ai_control_tmdb_discover(intent, config):
+    if not _tmdb_key:
+        return []
+    _ensure_tmdb_genres()
+    filters = intent.get('filters') or []
+    year_filter = next((item for item in filters if item.get('field') == 'year'), {})
+    genre_filter = next((item for item in filters if item.get('field') == 'genre'), {})
+    genre_name = _ai_control_normalized_genre_name(genre_filter.get('value'))
+    genre_id = next((str(key) for key, value in _tmdb_genres.items() if _ai_control_normalized_genre_name(value) == genre_name), '')
+    list_name = str(intent.get('list') or intent.get('source') or 'popular')
+    if list_name not in {'trending_week', 'trending_today', 'now_playing', 'popular', 'upcoming', 'top_rated', 'best_all_time'}:
+        list_name = 'popular'
+    sort_text = str(intent.get('sort') or intent.get('rating') or intent.get('name') or '').lower()
+    sort_by = 'vote_average.desc' if any(token in sort_text for token in ('top_rated', 'top rated', 'high rated', 'high')) else 'popularity.desc'
+    params = {
+        'api_key': _tmdb_key,
+        'language': 'en-US',
+        'page': '1',
+    }
+    if genre_id or year_filter:
+        params['sort_by'] = sort_by
+        url = f"https://api.themoviedb.org/3/discover/movie?{urllib.parse.urlencode(params)}"
+        if genre_id:
+            url += '&with_genres=' + urllib.parse.quote(genre_id)
+        year_start, year_end = _ai_control_year_filter_range(year_filter)
+        if year_start and year_end:
+            url += '&primary_release_date.gte=' + urllib.parse.quote(f'{year_start}-01-01')
+            url += '&primary_release_date.lte=' + urllib.parse.quote(f'{year_end}-12-31')
+        if sort_by == 'vote_average.desc':
+            url += '&vote_count.gte=500'
+    elif list_name == 'trending_today':
+        url = f"https://api.themoviedb.org/3/trending/movie/day?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US&page=1"
+    elif list_name == 'trending_week':
+        url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US&page=1"
+    else:
+        endpoint_map = {
+            'popular': 'popular',
+            'top_rated': 'top_rated',
+            'now_playing': 'now_playing',
+            'upcoming': 'upcoming',
+            'best_all_time': 'top_rated',
+        }
+        endpoint = endpoint_map.get(list_name, 'popular')
+        url = f"https://api.themoviedb.org/3/movie/{endpoint}?{urllib.parse.urlencode(params)}"
+    req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+    with urllib.request.urlopen(req, timeout=10) as response:
+        data = _json.loads(response.read().decode())
+    return [_ai_control_tmdb_movie_payload(row) for row in data.get('results', [])]
+
+
+def _ai_control_normalized_genre_name(value):
+    clean = re.sub(r'[^a-z0-9]+', ' ', str(value or '').lower()).strip()
+    if clean in {'sci fi', 'scifi', 'science fiction'}:
+        return 'science fiction'
+    return clean
+
+
+def _ai_control_year_filter_range(year_filter):
+    if not year_filter:
+        return '', ''
+    value = year_filter.get('value')
+    if str(year_filter.get('op') or '') == 'between' and isinstance(value, (list, tuple)) and len(value) >= 2:
+        start = re.search(r'(?:19|20)\d{2}', str(value[0] or ''))
+        end = re.search(r'(?:19|20)\d{2}', str(value[1] or ''))
+        if start and end:
+            start_year, end_year = start.group(0), end.group(0)
+            return (start_year, end_year) if start_year <= end_year else (end_year, start_year)
+    year_value = str(value or '')
+    if re.fullmatch(r'(?:19|20)\d{2}', year_value):
+        return year_value, year_value
+    year_range = re.findall(r'(?:19|20)\d{2}', year_value)
+    if len(year_range) >= 2:
+        start_year, end_year = year_range[0], year_range[1]
+        return (start_year, end_year) if start_year <= end_year else (end_year, start_year)
+    return '', ''
+
+
+def _ai_control_tmdb_search(query, config):
+    if not _tmdb_key:
+        return []
+    _ensure_tmdb_genres()
+    params = urllib.parse.urlencode({
+        'query': query,
+        'api_key': _tmdb_key,
+        'language': 'en-US',
+        'page': '1',
+        'include_adult': _tmdb_include_adult_value(False),
+    })
+    req = urllib.request.Request(f"https://api.themoviedb.org/3/search/movie?{params}", headers={'Accept': 'application/json'})
+    with urllib.request.urlopen(req, timeout=10) as response:
+        data = _json.loads(response.read().decode())
+    return [_ai_control_tmdb_movie_payload(row) for row in data.get('results', [])]
+
+
+def _ai_control_person_movies(name, role, config):
+    if not _tmdb_key:
+        return []
+    _ensure_tmdb_genres()
+    params = urllib.parse.urlencode({
+        'query': name,
+        'api_key': _tmdb_key,
+        'language': 'en-US',
+        'page': '1',
+        'include_adult': _tmdb_include_adult_value(False),
+    })
+    req = urllib.request.Request(f"https://api.themoviedb.org/3/search/person?{params}", headers={'Accept': 'application/json'})
+    with urllib.request.urlopen(req, timeout=10) as response:
+        data = _json.loads(response.read().decode())
+    person = next((row for row in data.get('results', []) if str(row.get('known_for_department', '')).lower() in {'acting', 'directing'}), None)
+    person = person or next(iter(data.get('results', [])), None)
+    if not person:
+        return []
+    person_id = str(person.get('id') or '')
+    safe_id = urllib.parse.quote(person_id)
+    url = f"https://api.themoviedb.org/3/person/{safe_id}/movie_credits?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US"
+    req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+    with urllib.request.urlopen(req, timeout=10) as response:
+        credits = _json.loads(response.read().decode())
+    rows = credits.get('crew', []) if role == 'director' else credits.get('cast', [])
+    if role == 'director':
+        rows = [row for row in rows if row.get('job') == 'Director']
+    rows = _ai_control_filter_person_credit_rows(rows, role)
+    movies = [_ai_control_tmdb_movie_payload(row) for row in rows if row.get('title')]
+    return movies
+
+
+def _ai_control_source_search(movie, config):
+    if not _prowlarr_url or not _prowlarr_key:
+        return []
+    enabled_indexers = _fetch_enabled_prowlarr_indexers()
+    trusted_ids = {str(value) for value in config.get('trusted_indexers') or []}
+    selected = [ix for ix in enabled_indexers if ix['id'] in trusted_ids]
+    if not selected:
+        return []
+    indexer_ids = [ix['id'] for ix in selected]
+    indexer_name_to_id = {ix['name']: ix['id'] for ix in selected}
+    results = _prowlarr_search_movie(
+        indexer_ids,
+        movie,
+        limit=50,
+        timeout=SOURCE_SEARCH_QUERY_TIMEOUT_SECONDS,
+        deadline_seconds=SOURCE_SEARCH_DEADLINE_SECONDS,
+    )
+    variants = _torrent_variants_from_prowlarr_results(results)
+    rows = []
+    for variant in variants:
+        indexer_name = variant.get('indexer', '')
+        if indexer_name_to_id and indexer_name not in indexer_name_to_id:
+            continue
+        rows.append({**variant, 'indexer_id': indexer_name_to_id.get(indexer_name, indexer_name)})
+    return rows
+
+
+def _ai_control_create_list(list_name, movies):
+    store = _curation_store()
+    created = store.create_list(list_name)
+    for movie in movies:
+        store.add_movie_to_list(created['id'], movie)
+    return {**created, 'count': len(movies)}
+
+
+def _ai_control_delete_file(path):
+    send2trash(path)
+    _library_cache.pop('items', None)
+    return {'deleted': path, 'trashed': True}
+
+
+def _ai_control_submit_download(item):
+    variant = item.get('variant') or {}
+    metadata = _qbittorrent_submission_metadata({
+        'title': item.get('title', ''),
+        'year': item.get('year', ''),
+        'tmdb_id': item.get('tmdb_id', ''),
+        'imdb_id': item.get('imdb_id', ''),
+        'source_title': variant.get('title', ''),
+        'indexer': variant.get('indexer', ''),
+    })
+    magnet = str(variant.get('magnet_url', '') or '').strip()
+    download_url = str(variant.get('download_url', '') or '').strip()
+    manager = _get_qbittorrent_manager()
+    if magnet:
+        return manager.submit_magnet(magnet, metadata)
+    if not download_url:
+        raise ValueError('No usable magnet or torrent URL was provided')
+    candidate = urllib.parse.urljoin(f"{_prowlarr_url}/", download_url)
+    if not is_allowed_prowlarr_url(candidate, _prowlarr_url):
+        raise ValueError('Torrent URL is not from the configured Prowlarr server')
+    req = urllib.request.Request(candidate, headers={
+        'X-Api-Key': _prowlarr_key,
+        'Accept': 'application/x-bittorrent, application/octet-stream',
+    })
+    with urllib.request.urlopen(req, timeout=30) as response:
+        torrent_bytes = response.read(10 * 1024 * 1024 + 1)
+        if len(torrent_bytes) > 10 * 1024 * 1024:
+            raise ValueError('Torrent file is larger than 10 MB')
+        content_disposition = response.headers.get('Content-Disposition', '')
+    filename_match = re.search(r'filename="?([^";]+)', content_disposition, flags=re.I)
+    filename = filename_match.group(1) if filename_match else 'ai-control-result.torrent'
+    if not filename.lower().endswith('.torrent'):
+        filename += '.torrent'
+    return manager.submit_torrent(torrent_bytes, os.path.basename(filename), metadata)
+
+
+@app.route('/api/ai-control/preview', methods=['POST'])
+def ai_control_preview():
+    data = request.get_json(silent=True) or {}
+    prompt = str(data.get('prompt', '') or '').strip()
+    if not prompt:
+        return jsonify({'error': 'Prompt cannot be empty'}), 400
+    try:
+        result = ai_control.preview_command(
+            prompt,
+            config=_effective_ai_control_config(),
+            library_items=_ai_control_library_items(),
+            library_roots=get_movies_dirs(),
+            plan_store=_ai_control_plan_store,
+            ollama_chat=_ollama_chat_content if _ollama_url and _ollama_model else None,
+            tmdb_discover=_ai_control_tmdb_discover,
+            tmdb_search=_ai_control_tmdb_search,
+            person_movies=_ai_control_person_movies,
+            source_search=_ai_control_source_search,
+            owned_movie_lookup=_find_owned_movie,
+        )
+        return jsonify(result)
+    except Exception as error:
+        return jsonify({'error': str(error)}), 500
+
+
+@app.route('/api/ai-control/execute', methods=['POST'])
+def ai_control_execute():
+    data = request.get_json(silent=True) or {}
+    plan_id = str(data.get('plan_id', '') or '').strip()
+    if not plan_id:
+        return jsonify({'error': 'plan_id is required'}), 400
+    try:
+        result = ai_control.execute_plan(
+            plan_id,
+            plan_store=_ai_control_plan_store,
+            library_roots=get_movies_dirs(),
+            delete_file=_ai_control_delete_file,
+            create_list=_ai_control_create_list,
+            submit_download=_ai_control_submit_download,
+        )
+        status = 409 if result.get('state') in {'unsafe', 'unsupported'} else 200
+        return jsonify(result), status
+    except Exception as error:
+        return jsonify({'error': str(error)}), 500
 
 
 @app.route('/api/streaming/config', methods=['GET', 'POST'])
@@ -3523,7 +3995,7 @@ def qbittorrent_status():
 @app.route('/api/qbittorrent/update', methods=['POST'])
 def qbittorrent_install():
     return jsonify({
-        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.6.7 because the tested portable runtime is bundled with the release.'
+        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.7.0 because the tested portable runtime is bundled with the release.'
     }), 410
 
 
@@ -8639,6 +9111,114 @@ def check_user_followed_releases():
         return jsonify(_check_followed_releases())
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+def _normalize_download_quality(value):
+    text = str(value or '').strip().lower()
+    return '4K' if text in {'4k', '2160p', 'uhd'} else '1080p'
+
+
+def _effective_download_trusted_indexer_ids(indexers=None):
+    if _download_indexer_mode == 'custom':
+        return [str(value) for value in _download_trusted_indexers if str(value).strip()]
+    available = indexers
+    if available is None:
+        try:
+            available = _fetch_enabled_prowlarr_indexers()
+        except Exception:
+            available = []
+    if _download_indexer_mode == 'all':
+        return [str(indexer.get('id')) for indexer in available if indexer.get('id') is not None]
+    return _effective_trusted_release_indexer_ids(available)
+
+
+def _best_download_variant(variants, quality, trusted_ids):
+    wanted = _normalize_download_quality(quality)
+    trusted = {str(value) for value in trusted_ids or []}
+    candidates = []
+    for variant in variants or []:
+        indexer_id = str(variant.get('indexer_id') or variant.get('indexer') or '')
+        if trusted and indexer_id not in trusted:
+            continue
+        if _normalize_download_quality(variant.get('resolution')) != wanted:
+            continue
+        candidates.append(variant)
+    candidates.sort(key=lambda item: (
+        int(item.get('seeders') or 0),
+        int(item.get('size') or item.get('size_bytes') or 0),
+    ), reverse=True)
+    return candidates[0] if candidates else None
+
+
+@app.route('/api/user/lists/fulfillment/preview', methods=['POST'])
+def user_list_fulfillment_preview():
+    body = request.get_json(force=True, silent=True) or {}
+    movies = body.get('movies') or []
+    if not isinstance(movies, list) or not movies:
+        return jsonify({'error': 'At least one movie is required'}), 400
+    quality = _normalize_download_quality(body.get('quality') or _download_default_quality)
+    try:
+        enabled_indexers = _fetch_enabled_prowlarr_indexers() if _prowlarr_url and _prowlarr_key else []
+    except Exception:
+        enabled_indexers = []
+    trusted_ids = _effective_download_trusted_indexer_ids(enabled_indexers)
+    config = {'trusted_indexers': trusted_ids}
+    rows = []
+    blocked = []
+    for movie in movies:
+        payload = _normalize_curated_movie(movie)
+        try:
+            variants = _ai_control_source_search(payload, config)
+        except Exception as error:
+            variants = []
+            payload['source_error'] = str(error)
+        variant = _best_download_variant(variants, quality, trusted_ids)
+        row = {
+            **payload,
+            'quality': quality,
+            'selected': bool(variant),
+            'status': 'ready' if variant else 'blocked',
+            'variant': variant,
+            'reason': '' if variant else payload.get('source_error') or f'No trusted {quality} source found',
+        }
+        if variant:
+            rows.append(row)
+        else:
+            blocked.append(row)
+            rows.append(row)
+    return jsonify({
+        'rows': rows,
+        'blocked': blocked,
+        'defaults': {
+            'quality': quality,
+            'download_indexer_mode': _download_indexer_mode,
+            'trusted_indexers': trusted_ids,
+        },
+    })
+
+
+@app.route('/api/user/lists/fulfillment/submit', methods=['POST'])
+def user_list_fulfillment_submit():
+    body = request.get_json(force=True, silent=True) or {}
+    rows = body.get('rows') or []
+    if not isinstance(rows, list):
+        return jsonify({'error': 'Rows must be a list'}), 400
+    selected = [
+        row for row in rows
+        if row.get('selected', True) is not False and row.get('status') == 'ready' and row.get('variant')
+    ]
+    if not selected:
+        return jsonify({'error': 'No selected ready downloads were submitted'}), 400
+    results = []
+    for row in selected:
+        try:
+            results.append({'movie': row.get('title', ''), 'result': _ai_control_submit_download(row)})
+        except Exception as error:
+            results.append({'movie': row.get('title', ''), 'error': str(error)})
+    return jsonify({
+        'submitted_count': len([result for result in results if not result.get('error')]),
+        'results': results,
+    })
 
 
 @app.route('/api/user/lists', methods=['GET', 'POST'])

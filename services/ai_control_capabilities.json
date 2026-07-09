@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "actions": ["find", "create_list", "download", "delete"],
+  "states": [
+    "valid_plan",
+    "needs_clarification",
+    "unsupported",
+    "too_broad",
+    "unsafe",
+    "no_matches",
+    "integration_missing"
+  ],
+  "filters": {
+    "title": ["contains", "equals"],
+    "year": ["=", ">", "<", "between"],
+    "size_gb": [">", "<", "between"],
+    "genre": ["any_of", "equals"],
+    "actor": ["equals"],
+    "director": ["equals"],
+    "resolution": ["equals", "at_most", "at_least"],
+    "owned": ["true", "false"]
+  },
+  "execution": {
+    "find": "safe_preview",
+    "create_list": "preview_required",
+    "download": "preview_required",
+    "delete": "preview_required"
+  }
+}

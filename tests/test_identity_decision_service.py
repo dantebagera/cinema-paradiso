@@ -311,6 +311,75 @@ class IdentityDecisionServiceTest(unittest.TestCase):
         self.assertTrue(decision["automatic"])
         self.assertEqual(decision["candidate"]["tmdb_id"], "1339713")
 
+    def test_same_year_rank_one_subtitle_match_is_accepted_when_rivals_are_wrong_years(self):
+        decision = decide_identity(
+            [{"title": "Black Box", "year": "2026", "source": "filename"}],
+            [
+                {
+                    "tmdb_id": "1321008",
+                    "imdb_id": "tt32315584",
+                    "title": "Black Box (Flight 298)",
+                    "year": "2026",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 7,
+                    "popularity": 20,
+                    "poster_url": "poster",
+                    "plot": "A routine domestic flight turns into the flight from hell.",
+                    "runtime": 85,
+                    "query_sources": ["filename", "title_with_year", "title_without_year"],
+                },
+                {
+                    "tmdb_id": "663260",
+                    "imdb_id": "tt10341034",
+                    "title": "Black Box",
+                    "year": "2021",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 1440,
+                    "poster_url": "poster",
+                    "plot": "A different older movie.",
+                    "runtime": 130,
+                    "query_sources": ["filename", "title_without_year"],
+                },
+            ],
+        )
+
+        self.assertEqual(decision["status"], "accepted")
+        self.assertTrue(decision["automatic"])
+        self.assertEqual(decision["candidate"]["tmdb_id"], "1321008")
+
+    def test_same_year_subtitle_match_requires_review_when_same_year_rival_is_real(self):
+        decision = decide_identity(
+            [{"title": "Black Box", "year": "2026", "source": "filename"}],
+            [
+                {
+                    "tmdb_id": "1321008",
+                    "title": "Black Box (Flight 298)",
+                    "year": "2026",
+                    "provider_rank": 1,
+                    "tmdb_vote_count": 7,
+                    "popularity": 20,
+                    "poster_url": "poster",
+                    "plot": "A routine domestic flight turns into the flight from hell.",
+                    "runtime": 85,
+                    "query_sources": ["filename", "title_with_year", "title_without_year"],
+                },
+                {
+                    "tmdb_id": "999999",
+                    "title": "Black Box: Flight 777",
+                    "year": "2026",
+                    "provider_rank": 2,
+                    "tmdb_vote_count": 50,
+                    "poster_url": "poster",
+                    "plot": "A separate real same-year movie.",
+                    "runtime": 92,
+                    "query_sources": ["filename", "title_with_year"],
+                },
+            ],
+        )
+
+        self.assertEqual(decision["status"], "review")
+        self.assertFalse(decision["automatic"])
+
     def test_plex_and_filename_agreement_accepts_rank_one_over_low_vote_duplicate(self):
         decision = decide_identity(
             [

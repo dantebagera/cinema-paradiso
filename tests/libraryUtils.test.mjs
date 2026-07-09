@@ -4,6 +4,7 @@ import test from 'node:test';
 import {
   applyPosterOverrideToLibraryItems,
   buildLibraryViewModel,
+  buildMovieListViewModel,
   getMovieIdentity,
   getQualityLabel,
   getTmdbCacheKey,
@@ -28,6 +29,49 @@ import {
   rootLabel,
   splitLibraryTitle
 } from '../src/utils/libraryUtils.js';
+
+test('movie list view model keeps owned and missing movies together with upgrade flags', () => {
+  const libraryItems = [
+    {
+      title: 'Heat (1995)',
+      resolution: '720p',
+      rip_source: 'WEB-DL',
+      path: 'E:/Movies/Heat.mkv',
+      canonical_metadata: { accepted: true, title: 'Heat', year: '1995', tmdb_id: '949', poster_url: 'heat-owned.jpg' }
+    },
+    {
+      title: 'Alien (1979)',
+      resolution: '1080p',
+      rip_source: 'BluRay',
+      path: 'E:/Movies/Alien.mkv',
+      canonical_metadata: { accepted: true, title: 'Alien', year: '1979', tmdb_id: '348' }
+    }
+  ];
+  const list = {
+    id: 'favorites',
+    name: 'Favorites',
+    movies: [
+      { tmdb_id: '949', title: 'Heat', year: '1995', poster_url: 'heat-list.jpg' },
+      { tmdb_id: '680', title: 'Pulp Fiction', year: '1994', poster_url: 'pulp.jpg' },
+      { tmdb_id: '348', title: 'Alien', year: '1979' }
+    ]
+  };
+
+  const model = buildMovieListViewModel({ libraryItems, list, query: '', statusFilter: 'all' });
+
+  assert.deepEqual(model.stats, { total: 3, owned: 2, missing: 1, upgrades: 1 });
+  assert.equal(model.rows.length, 3);
+  assert.equal(model.rows[0].status, 'upgrade');
+  assert.equal(model.rows[0].ownedItem.path, 'E:/Movies/Heat.mkv');
+  assert.equal(model.rows[0].poster_url, 'heat-owned.jpg');
+  assert.equal(model.rows[1].status, 'missing');
+  assert.equal(model.rows[1].poster_url, 'pulp.jpg');
+  assert.equal(model.rows[2].status, 'owned');
+
+  const missing = buildMovieListViewModel({ libraryItems, list, query: 'pulp', statusFilter: 'missing' });
+  assert.equal(missing.rows.length, 1);
+  assert.equal(missing.rows[0].title, 'Pulp Fiction');
+});
 
 test('ownership fallback requires a year and never crosses conflicting Plex identities', () => {
   assert.deepEqual(movieIdentityKeys({ title: 'Crash', year: '' }), []);

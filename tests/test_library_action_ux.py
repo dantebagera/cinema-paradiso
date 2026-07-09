@@ -104,6 +104,34 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertNotIn("label: 'Plex matched'", self.source)
         self.assertNotIn("value: stats?.dup_groups", self.source)
 
+    def test_home_health_refreshes_when_library_changes(self):
+        self.assertIn("function announceLibraryChanged", self.source)
+        self.assertIn("window.addEventListener('cp-library-changed', refreshHealthStats)", self.source)
+        self.assertIn("window.removeEventListener('cp-library-changed', refreshHealthStats)", self.source)
+        self.assertIn("announceLibraryChanged({ source: 'manual-rescan'", self.source)
+
+    def test_reconcile_poll_announces_backend_download_imports(self):
+        self.assertIn("function reconcileSignature(state)", self.source)
+        self.assertIn("fetchJson('/api/library/reconcile')", self.source)
+        self.assertIn("announceLibraryReconciled(state)", self.source)
+        self.assertIn("status === 'running' ? 2000 : 5000", self.source)
+
+    def test_workspaces_remain_mounted_after_first_visit(self):
+        self.assertIn("const [mountedSections, setMountedSections]", self.source)
+        self.assertIn("setMountedSections((sections) => new Set([...sections, activeSection]))", self.source)
+        self.assertIn("hidden={activeSection !== 'library'}", self.source)
+        self.assertIn("mountedSections.has('discover')", self.source)
+        self.assertIn("mountedSections.has('ai-control')", self.source)
+
+    def test_active_library_shows_refresh_notice_for_background_changes(self):
+        self.assertIn("function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query, setQuery, onReviewUnmatched, isActive })", self.source)
+        self.assertIn("const [libraryStale, setLibraryStale] = useState(false)", self.source)
+        self.assertIn("window.addEventListener('cp-library-changed', handleLibraryChanged)", self.source)
+        self.assertIn("if (isActive) {", self.source)
+        self.assertIn("setLibraryStale(true)", self.source)
+        self.assertIn("Library changed. Refresh view", self.source)
+        self.assertIn("setLibraryStale(false)", self.source)
+
     def test_movie_view_exposes_local_metadata_correction(self):
         self.assertIn("Correct metadata", self.source)
         self.assertIn("MetadataCorrectionModal", self.source)
@@ -115,6 +143,37 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("discover-selection-checkbox", self.source)
         self.assertIn("addMoviesToList", self.source)
         self.assertIn("/movies/bulk", self.source)
+
+    def test_discover_bulk_add_to_list_uses_discover_scoped_handler(self):
+        discover_source = self.source[
+            self.source.index("function DiscoverWorkspace"):
+            self.source.index("function DiscoverMovieCard")
+        ]
+        self.assertIn("async function addDiscoverMoviesToList", discover_source)
+        self.assertIn("onAddBulk={addDiscoverMoviesToList}", discover_source)
+
+    def test_browse_indexers_expose_selection_and_bulk_add_to_list(self):
+        discover_source = self.source[
+            self.source.index("function DiscoverWorkspace"):
+            self.source.index("function DiscoverMovieCard")
+        ]
+        browse_source = self.source[
+            self.source.index("{activeTab === 'browse'"):
+            self.source.index("{activeTab === 'pick'")
+        ]
+        indexer_card_source = self.source[
+            self.source.index("function IndexerMovieCard"):
+            self.source.index("function MovieExpandedDetails")
+        ]
+
+        self.assertIn("activeTab === 'browse' ? filteredBrowseRows", discover_source)
+        self.assertIn("Select all browse indexer results", browse_source)
+        self.assertIn("setListEditorTarget({ bulkItems: selectedDiscoverMovies })", browse_source)
+        self.assertIn("selected={selectedDiscoverKeys.has(movieIdentityKey(discoverMoviePayload(movie, owned)))}", browse_source)
+        self.assertIn("onSelect={(checked) => toggleDiscoverSelection(movie, owned, checked)}", browse_source)
+        self.assertIn("selected,", indexer_card_source)
+        self.assertIn("onSelect", indexer_card_source)
+        self.assertIn('className="discover-selection-checkbox"', indexer_card_source)
 
     def test_library_list_filter_warns_when_list_movies_are_missing(self):
         self.assertIn("listLibraryCoverage", self.source)
@@ -199,6 +258,61 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("if (saved) onClose();", self.source)
         self.assertIn("Trusted release watchlist indexers", self.source)
         self.assertIn("No trusted indexers selected", self.source)
+
+    def test_movie_lists_are_a_top_level_mixed_owned_missing_workspace(self):
+        self.assertIn("id: 'movie-lists'", self.source)
+        self.assertIn("label: 'Movie Lists'", self.source)
+        self.assertIn("MovieListsWorkspace", self.source)
+        self.assertIn("buildMovieListViewModel", self.library_utils_source)
+        self.assertIn("Find missing", self.source)
+        self.assertIn("Find upgrades", self.source)
+        self.assertIn("movie-list-fulfillment-dialog", self.source)
+        self.assertIn("/api/user/lists/fulfillment/preview", self.source)
+        self.assertIn("/api/user/lists/fulfillment/submit", self.source)
+
+    def test_movie_lists_reuses_global_movie_cards_and_normal_per_card_source_search(self):
+        movie_lists_source = self.source[
+            self.source.index("function MovieListsWorkspace"):
+            self.source.index("function MovieListFulfillmentDialog")
+        ]
+        self.assertIn("<LibraryMovieCard", movie_lists_source)
+        self.assertIn("<DiscoverMovieCard", movie_lists_source)
+        self.assertNotIn("function MovieListCard", self.source)
+        self.assertNotIn("movie-list-card", movie_lists_source)
+        self.assertIn("onFindTorrent={onFindTorrent}", movie_lists_source)
+        self.assertNotIn("onFindSources", movie_lists_source)
+        self.assertIn("openFulfillment('missing')", movie_lists_source)
+        self.assertIn("openFulfillment('upgrade')", movie_lists_source)
+
+    def test_movie_lists_has_full_list_management_without_duplicate_select_all_button(self):
+        movie_lists_source = self.source[
+            self.source.index("function MovieListsWorkspace"):
+            self.source.index("function MovieListFulfillmentDialog")
+        ]
+        self.assertIn("New list", movie_lists_source)
+        self.assertIn("Rename list", movie_lists_source)
+        self.assertIn("Delete list", movie_lists_source)
+        self.assertIn("Copy selected to", movie_lists_source)
+        self.assertIn("Remove selected", movie_lists_source)
+        self.assertIn("Add movie", movie_lists_source)
+        self.assertIn("TmdbListAddDialog", self.source)
+        self.assertIn("/api/tmdb/search", self.source)
+        self.assertIn("ExportCopyDialog", movie_lists_source)
+        self.assertNotIn(">Select all</button>", movie_lists_source)
+
+    def test_library_global_card_keeps_owned_badge(self):
+        library_card_source = self.source[
+            self.source.index("function LibraryMovieCard"):
+            self.source.index("function CollectionEditorModal")
+        ]
+        self.assertIn("ownedBadge", library_card_source)
+
+    def test_settings_prowlarr_exposes_movie_list_download_defaults(self):
+        self.assertIn("download_default_quality", self.source)
+        self.assertIn("download_indexer_mode", self.source)
+        self.assertIn("Automation defaults", self.source)
+        self.assertIn("Default download quality", self.source)
+        self.assertIn("Use release trusted indexers", self.source)
 
     def test_source_search_loading_warns_that_prowlarr_indexers_can_take_time(self):
         self.assertIn("Connecting to Prowlarr indexers", self.source)

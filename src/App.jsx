@@ -85,6 +85,7 @@ import {
 import {
   applyPosterOverrideToLibraryItems,
   buildLibraryViewModel,
+  buildMovieListViewModel,
   getMovieIdentity,
   getQualityLabel,
   getLocaleTag,
@@ -114,6 +115,12 @@ const navItems = [
     accent: 'blue'
   },
   {
+    id: 'movie-lists',
+    label: 'Movie Lists',
+    icon: Bookmark,
+    accent: 'gold'
+  },
+  {
     id: 'cleanup',
     label: 'Cleanup',
     icon: ShieldCheck,
@@ -124,6 +131,13 @@ const navItems = [
     label: 'Discover',
     icon: Compass,
     accent: 'violet'
+  },
+  {
+    id: 'ai-control',
+    label: 'AI Control',
+    icon: Bot,
+    accent: 'violet',
+    experimental: true
   },
   {
     id: 'downloads',
@@ -292,6 +306,31 @@ function announceCurationChanged() {
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new Event('cp-curation-changed'));
   }
+}
+
+function announceLibraryChanged(detail = {}) {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('cp-library-changed', { detail }));
+  }
+}
+
+function announceLibraryReconciled(state) {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('cp-library-reconciled', { detail: state }));
+  }
+  announceLibraryChanged({ source: 'reconcile', reconcile: state });
+}
+
+function reconcileSignature(state) {
+  return [
+    state?.status || 'idle',
+    Number(state?.updated_at || 0),
+    Number(state?.checked || 0),
+    Number(state?.matched || 0),
+    Number(state?.review || 0),
+    Number(state?.pending || 0),
+    Number(state?.failed || 0)
+  ].join(':');
 }
 
 function SelectionCheckbox({ checked, onChange, label, className }) {
@@ -500,6 +539,7 @@ function ArchiveApp() {
   const [activeSection, setActiveSection] = useState(() => (
     typeof window === 'undefined' ? 'home' : sectionFromPath(window.location.pathname, navItems)
   ));
+  const [mountedSections, setMountedSections] = useState(() => new Set([activeSection]));
   const [stats, setStats] = useState(null);
   const [movies, setMovies] = useState([]);
   const [ownership, setOwnership] = useState({});
@@ -526,12 +566,17 @@ function ArchiveApp() {
   const [cleanupInitialTab, setCleanupInitialTab] = useState('duplicates');
   const [homeLists, setHomeLists] = useState([]);
   const sourceSearchTokenRef = useRef(0);
+  const libraryReconcileSignatureRef = useRef('');
 
   const notify = useCallback((message, tone = 'success') => {
     setToast({ message, tone });
     window.clearTimeout(window.__cpToastTimer);
     window.__cpToastTimer = window.setTimeout(() => setToast(null), 3200);
   }, []);
+
+  useEffect(() => {
+    setMountedSections((sections) => new Set([...sections, activeSection]));
+  }, [activeSection]);
 
   const refreshHealthStats = useCallback(async () => {
     try {
@@ -540,6 +585,11 @@ function ArchiveApp() {
       notify(`Stats unavailable: ${error.message}`, 'error');
     }
   }, [notify]);
+
+  useEffect(() => {
+    window.addEventListener('cp-library-changed', refreshHealthStats);
+    return () => window.removeEventListener('cp-library-changed', refreshHealthStats);
+  }, [refreshHealthStats]);
 
   const loadHomeLists = useCallback(async () => {
     try {
@@ -574,31 +624,39 @@ function ArchiveApp() {
   useEffect(() => {
     let cancelled = false;
     let timer = 0;
+    function scheduleNext(status) {
+      timer = window.setTimeout(checkReconcile, status === 'running' ? 2000 : 5000);
+    }
     async function checkReconcile() {
       try {
         const state = await fetchJson('/api/library/reconcile');
         if (cancelled) return;
-        if (state.status === 'running') {
-          timer = window.setTimeout(checkReconcile, 2000);
-          return;
+        const status = state.status || 'idle';
+        const signature = reconcileSignature(state);
+        const isNewCompletedRun = status === 'completed' && signature !== libraryReconcileSignatureRef.current;
+        if (isNewCompletedRun) {
+          libraryReconcileSignatureRef.current = signature;
+          announceLibraryReconciled(state);
         }
-        await refreshHealthStats();
-        window.dispatchEvent(new CustomEvent('cp-library-reconciled', { detail: state }));
-        if (state.matched > 0) {
+        if (isNewCompletedRun && state.matched > 0) {
           notify(`${formatCount(state.matched)} new movie${state.matched === 1 ? '' : 's'} identified`, 'success');
         }
+        scheduleNext(status);
       } catch {
         // Startup reconciliation is non-blocking; Library still exposes manual Rescan Files.
+        if (!cancelled) timer = window.setTimeout(checkReconcile, 10000);
       }
     }
     fetchJson('/api/library/reconcile', { method: 'POST' })
-      .then(() => checkReconcile())
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => {
+        if (!cancelled) checkReconcile();
+      });
     return () => {
       cancelled = true;
       window.clearTimeout(timer);
     };
-  }, [notify, refreshHealthStats]);
+  }, [notify]);
 
   useEffect(() => {
     let cancelled = false;
@@ -902,7 +960,7 @@ function ArchiveApp() {
         onSelect={selectSection}
       />
       <main className={cx('workspace', activeSection === 'home' && 'workspace-home', activeSection === 'downloads' && 'workspace-downloads')}>
-        {activeSection !== 'home' && activeSection !== 'library' && activeSection !== 'cleanup' && activeSection !== 'discover' && activeSection !== 'help' && activeSection !== 'settings' && (
+        {activeSection !== 'home' && activeSection !== 'library' && activeSection !== 'movie-lists' && activeSection !== 'cleanup' && activeSection !== 'discover' && activeSection !== 'ai-control' && activeSection !== 'help' && activeSection !== 'settings' && (
           <TopBar
             activeSection={activeSection}
             stats={stats}
@@ -919,66 +977,144 @@ function ArchiveApp() {
             }}
           />
         )}
-        {activeSection === 'home' ? (
-          <HomeWorkspace
-            stats={stats}
-            loading={loading}
-            movies={movies}
-            ownership={ownership}
-            followed={followed}
-            followedChecking={followedChecking}
-            selectedMovie={selectedMovieWithDetails}
-            selectedOwnership={selectedOwnership}
-            selectedDetails={selectedDetails}
-            onSelectSection={selectSection}
-            onOpenCleanup={openCleanupTab}
-            onSelectMovie={setSelectedMovie}
-            onPlay={playLocal}
-            onStream={streamMovie}
-            streamingAvailable={streamingAvailable}
-            streamingLabel={streamingLabel}
-            onFindTorrent={findTorrent}
-            onTrailer={openTrailerModal}
-            onFollow={toggleFollow}
-            userLists={homeLists}
-            onToggleSystemList={toggleHomeSystemList}
-            onEditPoster={(owned, movie) => setPosterEditor({ path: owned.path, title: movie.title })}
-          />
-        ) : activeSection === 'library' ? (
-          <LibraryWorkspace
-            onPlay={playLocal}
-            onFindTorrent={findTorrent}
-            onOpenTrailer={openTrailerModal}
-            notify={notify}
-            query={libraryQuery}
-            setQuery={setLibraryQuery}
-            onReviewUnmatched={reviewUnmatchedMetadata}
-          />
-        ) : activeSection === 'discover' ? (
-          <DiscoverWorkspace
-            followed={followed}
-            notify={notify}
-            onPlay={playLocal}
-            onStream={streamMovie}
-            streamingAvailable={streamingAvailable}
-            streamingLabel={streamingLabel}
-            onFindTorrent={findTorrent}
-            onOpenTrailer={openTrailerModal}
-            onManualTorrentSearch={searchTorrents}
-            onFollow={toggleFollow}
-            tmdbQuery={discoverQuery}
-            setTmdbQuery={setDiscoverQuery}
-            browseQuery={browseQuery}
-            setBrowseQuery={setBrowseQuery}
-            searchRequest={discoverSearchRequest}
-            activeTab={discoverActiveTab}
-            setActiveTab={setDiscoverActiveTab}
-          />
-        ) : activeSection === 'downloads' ? (
-          <DownloadsWorkspace />
-        ) : activeSection === 'help' ? (
-          <HelpWorkspace />
-        ) : (
+        {mountedSections.has('home') && (
+          <div className="workspace-panel" hidden={activeSection !== 'home'}>
+            <HomeWorkspace
+              stats={stats}
+              loading={loading}
+              movies={movies}
+              ownership={ownership}
+              followed={followed}
+              followedChecking={followedChecking}
+              selectedMovie={selectedMovieWithDetails}
+              selectedOwnership={selectedOwnership}
+              selectedDetails={selectedDetails}
+              onSelectSection={selectSection}
+              onOpenCleanup={openCleanupTab}
+              onSelectMovie={setSelectedMovie}
+              onPlay={playLocal}
+              onStream={streamMovie}
+              streamingAvailable={streamingAvailable}
+              streamingLabel={streamingLabel}
+              onFindTorrent={findTorrent}
+              onTrailer={openTrailerModal}
+              onFollow={toggleFollow}
+              userLists={homeLists}
+              onToggleSystemList={toggleHomeSystemList}
+              onEditPoster={(owned, movie) => setPosterEditor({ path: owned.path, title: movie.title })}
+            />
+          </div>
+        )}
+        {mountedSections.has('library') && (
+          <div className="workspace-panel" hidden={activeSection !== 'library'}>
+            <LibraryWorkspace
+              onPlay={playLocal}
+              onFindTorrent={findTorrent}
+              onOpenTrailer={openTrailerModal}
+              notify={notify}
+              query={libraryQuery}
+              setQuery={setLibraryQuery}
+              onReviewUnmatched={reviewUnmatchedMetadata}
+              isActive={activeSection === 'library'}
+            />
+          </div>
+        )}
+        {mountedSections.has('movie-lists') && (
+          <div className="workspace-panel" hidden={activeSection !== 'movie-lists'}>
+            <MovieListsWorkspace
+              notify={notify}
+              onPlay={playLocal}
+              onFindTorrent={findTorrent}
+              onOpenTrailer={openTrailerModal}
+              onStream={streamMovie}
+              streamingAvailable={streamingAvailable}
+              streamingLabel={streamingLabel}
+              followed={followed}
+              onFollow={toggleFollow}
+              onEditPoster={(owned, movie) => setPosterEditor({ path: owned.path, title: movie.title })}
+            />
+          </div>
+        )}
+        {mountedSections.has('discover') && (
+          <div className="workspace-panel" hidden={activeSection !== 'discover'}>
+            <DiscoverWorkspace
+              followed={followed}
+              notify={notify}
+              onPlay={playLocal}
+              onStream={streamMovie}
+              streamingAvailable={streamingAvailable}
+              streamingLabel={streamingLabel}
+              onFindTorrent={findTorrent}
+              onOpenTrailer={openTrailerModal}
+              onManualTorrentSearch={searchTorrents}
+              onFollow={toggleFollow}
+              tmdbQuery={discoverQuery}
+              setTmdbQuery={setDiscoverQuery}
+              browseQuery={browseQuery}
+              setBrowseQuery={setBrowseQuery}
+              searchRequest={discoverSearchRequest}
+              activeTab={discoverActiveTab}
+              setActiveTab={setDiscoverActiveTab}
+            />
+          </div>
+        )}
+        {mountedSections.has('downloads') && (
+          <div className="workspace-panel" hidden={activeSection !== "downloads"}>
+            <DownloadsWorkspace />
+          </div>
+        )}
+        {mountedSections.has('ai-control') && (
+          <div className="workspace-panel" hidden={activeSection !== 'ai-control'}>
+            <AIControlWorkspace
+              followed={followed}
+              notify={notify}
+              onPlay={playLocal}
+              onStream={streamMovie}
+              streamingAvailable={streamingAvailable}
+              streamingLabel={streamingLabel}
+              onFindTorrent={findTorrent}
+              onOpenTrailer={openTrailerModal}
+              onFollow={toggleFollow}
+              onEditPoster={(owned, movie) => setPosterEditor({ path: owned.path, title: movie.title })}
+            />
+          </div>
+        )}
+        {mountedSections.has('help') && (
+          <div className="workspace-panel" hidden={!(activeSection === 'help')}>
+            <HelpWorkspace />
+          </div>
+        )}
+        {mountedSections.has('cleanup') && (
+          <div className="workspace-panel" hidden={activeSection !== 'cleanup'}>
+            <MigrationWorkspace
+              section="cleanup"
+              notify={notify}
+              onPlay={playLocal}
+              onFindTorrent={findTorrent}
+              cleanupInitialTab={cleanupInitialTab}
+              onReviewUnmatched={reviewUnmatchedMetadata}
+              onReviewIdentities={() => openCleanupTab('identity')}
+              onHealthChanged={refreshHealthStats}
+              onStreamingConfigChanged={setStreamingConfig}
+            />
+          </div>
+        )}
+        {mountedSections.has('settings') && (
+          <div className="workspace-panel" hidden={activeSection !== 'settings'}>
+            <MigrationWorkspace
+              section="settings"
+              notify={notify}
+              onPlay={playLocal}
+              onFindTorrent={findTorrent}
+              cleanupInitialTab={cleanupInitialTab}
+              onReviewUnmatched={reviewUnmatchedMetadata}
+              onReviewIdentities={() => openCleanupTab('identity')}
+              onHealthChanged={refreshHealthStats}
+              onStreamingConfigChanged={setStreamingConfig}
+            />
+          </div>
+        )}
+        {!['home', 'library', 'movie-lists', 'cleanup', 'discover', 'downloads', 'ai-control', 'help', 'settings'].includes(activeSection) && (
           <MigrationWorkspace
             section={activeSection}
             notify={notify}
@@ -1050,7 +1186,10 @@ function Sidebar({ activeSection, onSelect }) {
                 type="button"
               >
                 <span className="nav-icon-wrap"><Icon size={20} /></span>
-                <span className="nav-label">{item.label}</span>
+                <span className="nav-label">
+                  {item.label}
+                  {item.experimental && <ExperimentalBadge className="ai-control-nav-badge" />}
+                </span>
               </button>
             </div>
           );
@@ -1065,6 +1204,10 @@ function Sidebar({ activeSection, onSelect }) {
       </div>
     </aside>
   );
+}
+
+function ExperimentalBadge({ className = '' }) {
+  return <span className={cx('experimental-badge', className)}>Experimental</span>;
 }
 
 let torrentHandlingConfigPromise = null;
@@ -1622,7 +1765,7 @@ const manualSections = [
         items: [
           'Groups files into movie identities when metadata is available.',
           'Shows quality, language, country, location, and local file details for archive decisions.',
-          'Lets you play files, edit posters, and search for sources or upgrades.'
+          'Lets you play files, edit posters, correct metadata, mark Watched or Watchlist, use bulk selection, and search for sources or upgrades.'
         ]
       },
       {
@@ -1639,6 +1782,37 @@ const manualSections = [
           'Looking for unknown files only in Movie View; File View is better for raw file inspection.',
           'Expecting metadata to be perfect when folder names are messy.',
           'Using upgrade search before confirming the existing file identity is correct.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'movie-lists-workspace',
+    title: 'Movie Lists workspace',
+    summary: 'Movie Lists is the mixed owned and wanted list area: custom lists, protected system lists, missing titles, upgrade candidates, copy/export, and source fulfillment previews.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Keeps Watched and Watchlist as protected system lists while still allowing custom user lists.',
+          'Shows owned, missing, and upgrade candidates together so a list can be reviewed as a real acquisition plan.',
+          'Supports bulk selection, Add to List, Copy selected to a folder, and Find missing or Find upgrades previews.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not delete movie files when you delete a custom list.',
+          'It will not treat a Watchlist item as owned until the library actually contains a matched local file.',
+          'It will not submit list fulfillment without showing the review dialog first.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Using Library filters for wanted movies; Movie Lists is where owned and missing titles can live together.',
+          'Expecting protected Watched or Watchlist lists to be renamed or deleted like custom lists.',
+          'Running fulfillment before choosing trusted release indexers and download defaults in Settings.'
         ]
       }
     ]
@@ -1684,7 +1858,8 @@ const manualSections = [
         items: [
           'Explores TMDB lists and details when a TMDB key is configured.',
           'Browses Prowlarr indexers and searches torrent results when Prowlarr is configured.',
-          'Marks whether discovered movies appear to already exist in your local library.'
+          'Marks whether discovered movies appear to already exist in your local library.',
+          'Uses the in-app trailer modal, Streaming Link actions, unreleased labels, IMDb-first source searches, alternative-title fallback, and progressive per-indexer results.'
         ]
       },
       {
@@ -1692,7 +1867,8 @@ const manualSections = [
         items: [
           'It will not download from Prowlarr by opening a random browser window.',
           'It will not bypass indexer availability, Prowlarr errors, or missing API keys.',
-          'It will not force a torrent into your system default client when embedded qBittorrent mode is selected.'
+          'It will not force a torrent into your system default client when embedded qBittorrent mode is selected.',
+          'It will not show Stream or source actions for unreleased unowned movies just because TMDB can display the title.'
         ]
       },
       {
@@ -1701,6 +1877,37 @@ const manualSections = [
           'Using Browse Indexer before adding and testing indexers inside Prowlarr.',
           'Confusing TMDB discovery with torrent availability; they are different sources.',
           'Closing an empty pop-up instead of reporting it; CP should submit through server routes, not random windows.'
+        ]
+      }
+    ]
+  },
+  {
+    key: 'ai-control-workspace',
+    title: 'AI Control workspace',
+    summary: 'AI Control is experimental: it turns plain-language movie commands into reviewable CP plans for finding, listing, downloading, and cleanup.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Builds a preview plan before any action runs.',
+          'Can show validated find results as tables or movie cards, then reuse normal trailer, Streaming Link, source, follow, and poster actions.',
+          'Uses AI Control trusted indexers and configured limits when a command plans downloads.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not execute a command automatically from the prompt box.',
+          'It will not delete without the extra confirmation phrase when a dangerous batch action requires one.',
+          'It will not treat creative AI suggestions as factual identities without TMDB validation.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Typing a broad command and expecting instant results; CP checks TMDB, the local library, and trusted indexers first.',
+          'Forgetting AI Control can be disabled from Settings.',
+          'Assuming Ollama-curated lists are guaranteed factual; they are creative suggestions that CP still validates.'
         ]
       }
     ]
@@ -1739,14 +1946,15 @@ const manualSections = [
   {
     key: 'settings-workspace',
     title: 'Settings workspace',
-    summary: 'Settings is where CP stores library roots, user data location, integration URLs, API keys, qBittorrent mode, and download folder policy.',
+    summary: 'Settings is where CP stores library roots, user data location, integration URLs, API keys, qBittorrent mode, download folder policy, Streaming Link, and AI Control policy.',
     details: [
       {
         title: 'What CP does',
         items: [
           'Saves configuration in CP config storage and shows Ready states for supported integrations.',
           'Provides Test saved buttons for services where a live connection test matters.',
-          'Controls whether CP uses embedded qBittorrent or the classic system torrent-client behavior.'
+          'Controls whether CP uses embedded qBittorrent or the classic system torrent-client behavior.',
+          'Manages trusted release indexers, list download defaults, Streaming Link templates, Ollama candidate limits, and AI Control trusted indexers.'
         ]
       },
       {
@@ -1754,7 +1962,7 @@ const manualSections = [
         items: [
           'It will not guess secret API keys or Plex tokens.',
           'It will not automatically install optional services like Plex, Prowlarr, TMDB accounts, or Ollama.',
-          'It will not auto-update bundled qBittorrent in version 2.6.7.'
+          'It will not auto-update bundled qBittorrent in version 2.7.0.'
         ]
       },
       {
@@ -1777,7 +1985,8 @@ const manualSections = [
         items: [
           'Treats movie files, metadata, torrent links, and external service responses as data that must be handled deliberately.',
           'Keeps qBittorrent incomplete downloads outside the finished library flow.',
-          'Constrains torrent-file retrieval to configured Prowlarr results instead of accepting arbitrary browser URLs.'
+          'Constrains torrent-file retrieval to configured Prowlarr results instead of accepting arbitrary browser URLs.',
+          'Lets trusted release indexers decide followed-release availability instead of trusting every noisy source.'
         ]
       },
       {
@@ -1977,7 +2186,7 @@ const helpSections = [
     key: 'prowlarr',
     title: 'Prowlarr',
     status: 'Optional, required for torrent search',
-    summary: 'Use Prowlarr if you want CP to search torrent indexers and submit results to embedded qBittorrent.',
+    summary: 'Use Prowlarr if you want CP to search torrent indexers, check followed releases, preview list fulfillment, and submit results to embedded qBittorrent.',
     links: [
       ['Download Prowlarr', 'https://prowlarr.com/'],
       ['Prowlarr Quick Start', 'https://wiki.servarr.com/prowlarr/quick-start-guide']
@@ -1986,7 +2195,8 @@ const helpSections = [
       'Install Prowlarr and open its local WebUI, usually http://127.0.0.1:9696.',
       'Add and test indexers inside Prowlarr.',
       'Copy the API key from Prowlarr Settings > General.',
-      'Open CP Settings, paste the Prowlarr URL and API key, then use Test saved.'
+      'Open CP Settings, paste the Prowlarr URL and API key, then use Test saved.',
+      'Open Trusted indexers to choose which sources can mark followed releases available; YTS/YIFY is the default trusted release source when available.'
     ],
     settingsHash: 'prowlarr'
   },
@@ -2003,15 +2213,32 @@ const helpSections = [
       'Create or sign in to a TMDB account.',
       'Open account settings and request an API key.',
       'Copy the v3 API key used by CP.',
-      'Open CP Settings, paste the TMDB key, then use Test saved.'
+      'Open CP Settings, paste the TMDB key, then use Test saved.',
+      'Use the adult metadata-search toggle only when you want matching workflows to include adult titles.'
     ],
     settingsHash: 'tmdb'
+  },
+  {
+    key: 'streaming',
+    title: 'Streaming Link',
+    status: 'Optional',
+    summary: 'Use Streaming Link if you want CP movie cards and detail panels to open an embedded stream provider from a configurable URL template.',
+    links: [
+      ['TMDB API Getting Started', 'https://developer.themoviedb.org/reference/intro/getting-started']
+    ],
+    steps: [
+      'Open CP Settings and find Streaming Link.',
+      'Enable Stream buttons and choose the button label shown on movie cards.',
+      'Set a safe http or https URL template using {tmdb_id} or {imdb_id}.',
+      'Save Streaming; CP hides Stream buttons when the setting is disabled or the movie is unreleased and unowned.'
+    ],
+    settingsHash: 'streaming'
   },
   {
     key: 'ollama',
     title: 'Ollama',
     status: 'Optional',
-    summary: 'Use Ollama if you want local AI recommendations without sending your library to a cloud service.',
+    summary: 'Use Ollama if you want local AI recommendations or optional Ollama-curated lists without sending your library to a cloud service.',
     links: [
       ['Download Ollama', 'https://ollama.com/'],
       ['Ollama Quickstart', 'https://docs.ollama.com/quickstart'],
@@ -2021,15 +2248,33 @@ const helpSections = [
       'Install Ollama.',
       'Run or pull a model from the Ollama library.',
       'Confirm Ollama is available at http://localhost:11434.',
-      'Open CP Settings, set the Ollama URL/model, then use Test saved.'
+      'Open CP Settings, set the Ollama URL/model and candidate limit, then use Test saved.'
     ],
     settingsHash: 'ollama'
   },
   {
+    key: 'ai-control',
+    title: 'AI Control',
+    status: 'Experimental',
+    summary: 'Use AI Control if you want plain-language commands to become reviewable CP plans for finding, listing, downloading, and cleanup.',
+    links: [
+      ['Download Ollama', 'https://ollama.com/'],
+      ['Ollama Model Library', 'https://ollama.com/library']
+    ],
+    steps: [
+      'Configure Ollama first if you want AI-assisted interpretation or Ollama-curated lists.',
+      'Open CP Settings and enable AI Control Experimental.',
+      'Set max matched movies, max download searches, and whether Ollama-curated lists are allowed.',
+      'Open AI Control trusted indexers to choose which Prowlarr sources may be used for download planning.',
+      'Use the AI Control workspace to preview a command, review the plan, then confirm only if it is correct.'
+    ],
+    settingsHash: 'ai-control'
+  },
+  {
     key: 'qbittorrent',
     title: 'qBittorrent',
-    status: 'Bundled in CP 2.6.7',
-    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.6.7 release.',
+    status: 'Bundled in CP 2.7.0',
+    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.7.0 release.',
     links: [
       ['qBittorrent Official Website', 'https://www.qbittorrent.org/'],
       ['qBittorrent Downloads', 'https://www.qbittorrent.org/download']
@@ -3204,6 +3449,15 @@ function DiscoverWorkspace({
     notify('Movie added to list');
   }
 
+  async function addDiscoverMoviesToList(listId, movies) {
+    const payloads = (movies || []).map((movie) => moviePayload(movie));
+    await addMoviePayloadsToList(listId, payloads);
+    await loadUserLists();
+    announceCurationChanged();
+    notify(`${formatCount(payloads.length)} movie${payloads.length === 1 ? '' : 's'} added to list`);
+    setSelectedDiscoverKeys(new Set());
+  }
+
   async function removeDiscoverMovieFromList(listId, movie) {
     await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
       method: 'DELETE',
@@ -3261,6 +3515,7 @@ function DiscoverWorkspace({
     setBrowseHiddenCount(0);
     setBrowseRows([]);
     setSelectedVariants({});
+    setSelectedDiscoverKeys(new Set());
     try {
       const params = new URLSearchParams();
       if (search) {
@@ -3379,7 +3634,11 @@ function DiscoverWorkspace({
     return sorted;
   }, [browseRows, browseResolution, browseIndexer, browseSort, selectedBrowseIndexerName]);
 
-  const activeDiscoverSelectionMovies = activeTab === 'pick' ? pickResults : activeTab === 'explore' ? discoverResults : [];
+  const activeDiscoverSelectionMovies = activeTab === 'pick'
+    ? pickResults
+    : activeTab === 'explore'
+      ? discoverResults
+      : activeTab === 'browse' ? filteredBrowseRows : [];
   const selectedDiscoverMovies = useMemo(() => (
     activeDiscoverSelectionMovies
       .map((movie) => discoverMoviePayload(movie, ownedMovieFor(movie, ownership)))
@@ -3658,6 +3917,23 @@ function DiscoverWorkspace({
             </span>
           </div>
 
+          {filteredBrowseRows.length > 0 && (
+            <div className="bulk-selection-bar discover-bulk-selection">
+              <SelectionCheckbox
+                className="discover-selection-master"
+                checked={allDiscoverResultsSelected}
+                onChange={(checked) => { if (checked) selectAllDiscoverResults(); else clearDiscoverSelection(); }}
+                label="Select all browse indexer results"
+              />
+              <span>{selectedDiscoverMovies.length ? `${formatCount(selectedDiscoverMovies.length)} selected` : 'Select movies'}</span>
+              <button type="button" className="mini-action" onClick={selectAllDiscoverResults}>Select all results</button>
+              <button type="button" className="mini-action" onClick={clearDiscoverSelection} disabled={!selectedDiscoverMovies.length}>Clear</button>
+              <button type="button" className="mini-action" onClick={() => setListEditorTarget({ bulkItems: selectedDiscoverMovies })} disabled={!selectedDiscoverMovies.length}>
+                <CirclePlus size={13} /> Add to list
+              </button>
+            </div>
+          )}
+
           {!browseHasLoaded && !browseLoading ? (
             <div className="empty-state discover-empty">
               <strong>Search indexers by movie title.</strong>
@@ -3687,6 +3963,8 @@ function DiscoverWorkspace({
                     watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
                     onToggleWatched={owned ? () => toggleDiscoverSystemList('watched', movie, owned) : undefined}
                     onToggleWatchlist={() => toggleDiscoverSystemList('watchlist', movie, owned)}
+                    selected={selectedDiscoverKeys.has(movieIdentityKey(discoverMoviePayload(movie, owned)))}
+                    onSelect={(checked) => toggleDiscoverSelection(movie, owned, checked)}
                     notify={notify}
                     onVariantSelect={(index) => setSelectedVariants((state) => ({ ...state, [movie.parsed_title]: index }))}
                     onPlay={onPlay}
@@ -3990,6 +4268,8 @@ function DiscoverMovieCard({
             details={details}
             collection={collection}
             itemLists={itemLists}
+            directors={movie.directors}
+            cast={movie.cast}
             onPersonBrowse={onPersonBrowse}
             onCollectionBrowse={onCollectionBrowse}
             onListBrowse={onListBrowse}
@@ -4050,11 +4330,13 @@ function IndexerMovieCard({
   watched,
   watchlisted,
   onToggleWatched,
-  onToggleWatchlist
+  onToggleWatchlist,
+  selected,
+  onSelect
 }) {
   const lowQuality = owned && isLowQuality(owned.resolution);
   const variants = sortTorrentVariants(movie.variants || []);
-  const selected = variants[selectedIndex] || variants[0] || {};
+  const selectedVariant = variants[selectedIndex] || variants[0] || {};
   const posterMovie = owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie;
 
   return (
@@ -4067,12 +4349,12 @@ function IndexerMovieCard({
       voteCount={formatVoteCount(movie.tmdb_vote_count)}
       chips={(movie.genres || []).slice(0, 2)}
       mutedChips={[
-        selected.resolution || movie.best_resolution,
-        selected.indexer,
+        selectedVariant.resolution || movie.best_resolution,
+        selectedVariant.indexer,
         owned?.resolution,
         owned?.size_human
       ]}
-      statusLabel={owned ? (lowQuality ? 'Upgrade candidate' : '') : `${formatCount(selected.seeders)} seeders`}
+      statusLabel={owned ? (lowQuality ? 'Upgrade candidate' : '') : `${formatCount(selectedVariant.seeders)} seeders`}
       statusTone={owned ? (lowQuality ? 'warning' : 'neutral') : 'neutral'}
       ownedBadge={Boolean(owned)}
       expanded={expanded}
@@ -4089,6 +4371,12 @@ function IndexerMovieCard({
             onToggleWatchlist={onToggleWatchlist}
           />
           <PosterEditButton title={movie.title} onEdit={owned ? onEditPoster : undefined} />
+          <SelectionCheckbox
+            className="discover-selection-checkbox"
+            checked={Boolean(selected)}
+            onChange={onSelect}
+            label={`Select ${movie.title}`}
+          />
         </>
       )}
     >
@@ -4120,12 +4408,12 @@ function IndexerMovieCard({
           />
           <div className="indexer-action-row indexer-action-row-expanded">
             <div className="indexer-selected-meta">
-              <strong>{formatCount(selected.seeders)} seeders</strong>
-              <span>{selected.indexer || 'Unknown tracker'}</span>
-              <small>{selected.size_human || '?'}</small>
+              <strong>{formatCount(selectedVariant.seeders)} seeders</strong>
+              <span>{selectedVariant.indexer || 'Unknown tracker'}</span>
+              <small>{selectedVariant.size_human || '?'}</small>
             </div>
             <TorrentActions
-              variant={selected}
+              variant={selectedVariant}
               movieTitle={movie.title || movie.parsed_title}
               movieYear={movie.year || movie.parsed_year}
               notify={notify}
@@ -4332,7 +4620,1354 @@ function Rating({ value, votes }) {
   );
 }
 
-function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query, setQuery, onReviewUnmatched }) {
+const aiControlExamples = [
+  'Find Tom Cruise movies I own',
+  'Create a list of top rated sci-fi from 2010',
+  'Download unowned Nolan movies in 1080p',
+  'Delete files larger than 10 GB'
+];
+
+const aiControlPreviewStages = [
+  'Understanding request with Ollama...',
+  'Contacting TMDB...',
+  'Checking your library...',
+  'Searching trusted indexers...',
+  'Preparing review...'
+];
+
+function AIControlWorkspace({
+  followed = [],
+  notify,
+  onPlay,
+  onStream,
+  streamingAvailable,
+  streamingLabel,
+  onFindTorrent,
+  onOpenTrailer,
+  onFollow,
+  onEditPoster
+}) {
+  const [prompt, setPrompt] = useState('');
+  const [aiControlPlan, setAiControlPlan] = useState(null);
+  const [aiControlBusy, setAiControlBusy] = useState(false);
+  const [aiControlError, setAiControlError] = useState('');
+  const [aiControlLoadingStep, setAiControlLoadingStep] = useState(null);
+  const [aiControlCardView, setAiControlCardView] = useState(false);
+  const aiControlStageTimersRef = useRef([]);
+
+  function clearAiControlStageTimers() {
+    aiControlStageTimersRef.current.forEach((timer) => window.clearTimeout(timer));
+    aiControlStageTimersRef.current = [];
+  }
+
+  function startAiControlPreviewProgress() {
+    clearAiControlStageTimers();
+    setAiControlLoadingStep(0);
+    aiControlStageTimersRef.current = aiControlPreviewStages.slice(1).map((_, index) => (
+      window.setTimeout(() => setAiControlLoadingStep(index + 1), 1800 + index * 2600)
+    ));
+  }
+
+  useEffect(() => () => clearAiControlStageTimers(), []);
+
+  async function previewAiControlCommand(event) {
+    event.preventDefault();
+    const command = prompt.trim();
+    if (!command) {
+      setAiControlError('Enter a command first.');
+      return;
+    }
+    setAiControlBusy(true);
+    setAiControlError('');
+    setAiControlCardView(false);
+    startAiControlPreviewProgress();
+    try {
+      const data = await fetchJson('/api/ai-control/preview', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: command })
+      });
+      setAiControlPlan(data);
+      if (data.state === 'valid_plan') {
+        notify(data.message || 'AI Control preview ready', 'success');
+      } else {
+        notify(data.message || 'AI Control needs clarification', 'neutral');
+      }
+    } catch (error) {
+      setAiControlError(error.message);
+      notify(`AI Control preview failed: ${error.message}`, 'error');
+    } finally {
+      clearAiControlStageTimers();
+      setAiControlLoadingStep(null);
+      setAiControlBusy(false);
+    }
+  }
+
+  async function executeAiControlPlan() {
+    if (!aiControlPlan?.plan_id) return;
+    setAiControlBusy(true);
+    setAiControlError('');
+    setAiControlLoadingStep(null);
+    try {
+      const data = await fetchJson('/api/ai-control/execute', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan_id: aiControlPlan.plan_id })
+      });
+      setAiControlPlan(data);
+      notify(data.message || 'AI Control action executed', 'success');
+    } catch (error) {
+      setAiControlError(error.message);
+      notify(`AI Control execute failed: ${error.message}`, 'error');
+    } finally {
+      setAiControlBusy(false);
+    }
+  }
+
+  function useExample(example) {
+    setPrompt(example);
+    setAiControlError('');
+  }
+
+  return (
+    <section className="ai-control-workspace">
+      <header className="library-header ai-control-header">
+        <div>
+          <p className="screen-kicker">AI command console</p>
+          <h2>AI Control <ExperimentalBadge /></h2>
+          <p>Turn plain-language movie commands into reviewable CP actions for finding, lists, downloads, and cleanup.</p>
+        </div>
+      </header>
+
+      <form className="ai-control-command" onSubmit={previewAiControlCommand}>
+        <label className="ai-control-prompt">
+          <span>Command</span>
+          <textarea
+            value={prompt}
+            onChange={(event) => setPrompt(event.target.value)}
+            placeholder="Tell CP what to find, list, download, or delete..."
+            rows={4}
+          />
+        </label>
+        <div className="ai-control-command-actions">
+          <button type="submit" className="btn btn-primary btn-violet" disabled={aiControlBusy}>
+            {aiControlBusy ? <Loader2 size={15} className="spin" /> : <Sparkles size={15} />} Preview command
+          </button>
+          <button type="button" className="btn btn-secondary" onClick={() => { setPrompt(''); setAiControlPlan(null); setAiControlError(''); setAiControlCardView(false); }} disabled={aiControlBusy}>
+            <X size={15} /> Clear
+          </button>
+        </div>
+      </form>
+
+      <div className="ai-control-guide">
+        <div className="ai-control-example-row">
+          {aiControlExamples.map((example) => (
+            <button type="button" className="mini-action" key={example} onClick={() => useExample(example)}>
+              {example}
+            </button>
+          ))}
+        </div>
+        <strong>No action runs automatically. Every result is reviewed before you confirm it.</strong>
+      </div>
+
+      {aiControlBusy && aiControlLoadingStep !== null && (
+        <div className="ai-control-progress" role="status" aria-live="polite">
+          <Loader2 size={16} className="spin" />
+          <div>
+            <strong>{aiControlPreviewStages[aiControlLoadingStep]}</strong>
+            <small>Large actor/director requests can take a while because CP reviews TMDB, your library, and trusted indexers before showing a plan.</small>
+          </div>
+        </div>
+      )}
+
+      {aiControlError && (
+        <div className="library-status library-status-error">
+          <AlertTriangle size={16} />
+          <span>{aiControlError}</span>
+        </div>
+      )}
+
+      <AIControlResult
+        aiControlPlan={aiControlPlan}
+        busy={aiControlBusy}
+        onExecute={executeAiControlPlan}
+        aiControlCardView={aiControlCardView}
+        setAiControlCardView={setAiControlCardView}
+        followed={followed}
+        notify={notify}
+        onPlay={onPlay}
+        onStream={onStream}
+        streamingAvailable={streamingAvailable}
+        streamingLabel={streamingLabel}
+        onFindTorrent={onFindTorrent}
+        onOpenTrailer={onOpenTrailer}
+        onFollow={onFollow}
+        onEditPoster={onEditPoster}
+      />
+    </section>
+  );
+}
+
+function AIControlResult({
+  aiControlPlan,
+  busy,
+  onExecute,
+  aiControlCardView,
+  setAiControlCardView,
+  followed,
+  notify,
+  onPlay,
+  onStream,
+  streamingAvailable,
+  streamingLabel,
+  onFindTorrent,
+  onOpenTrailer,
+  onFollow,
+  onEditPoster
+}) {
+  const plan = aiControlPlan;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [aiControlDangerPhrase, setAiControlDangerPhrase] = useState('');
+  const planKey = `${plan?.plan_id || ''}-${plan?.summary || ''}-${plan?.message || ''}`;
+
+  useEffect(() => {
+    setCurrentPage(1);
+    setAiControlDangerPhrase('');
+    setAiControlCardView(false);
+  }, [planKey, setAiControlCardView]);
+
+  if (!plan) {
+    return (
+      <div className="empty-state library-empty ai-control-empty">
+        <Bot size={30} />
+        <strong>No command preview yet.</strong>
+        <span>Use an example or type a command to see the reviewed plan here.</span>
+      </div>
+    );
+  }
+  const ready = plan.state === 'valid_plan';
+  const rows = plan.items || [];
+  const blocked = plan.blocked || [];
+  const pageSize = Number(plan.page_size || 50);
+  const totalMatches = Number(plan.total_matches || rows.length);
+  const totalPages = Math.max(1, Math.ceil(rows.length / pageSize));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const pageStart = (safeCurrentPage - 1) * pageSize;
+  const visibleRows = rows.slice(pageStart, pageStart + pageSize);
+  const pageLabel = rows.length > pageSize
+    ? `Showing ${formatCount(pageStart + 1)}-${formatCount(Math.min(pageStart + pageSize, rows.length))} of ${formatCount(totalMatches)}`
+    : `${formatCount(totalMatches)} total`;
+  const requiresDeletePhrase = ready && plan.action === 'delete' && plan.requires_extra_confirmation;
+  const deletePhraseConfirmed = !requiresDeletePhrase || aiControlDangerPhrase.trim() === String(plan.confirmation_phrase || '').trim();
+  const canDisplayCards = ready && plan.action === 'find' && visibleRows.length > 0;
+  return (
+    <section className={cx('ai-control-result', ready ? 'ai-control-result-ready' : 'ai-control-result-blocked')}>
+      <div className="ai-control-result-header">
+        <div>
+          <p className="screen-kicker">{plan.state || 'AI Control'}</p>
+          <h3>{plan.summary || plan.message || 'Command result'}</h3>
+          {plan.message && <p>{plan.message}</p>}
+        </div>
+        <div className="ai-control-result-actions">
+          {canDisplayCards && (
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={() => {
+                if (aiControlCardView) setAiControlCardView(false);
+                else setAiControlCardView(true);
+              }}
+            >
+              {aiControlCardView ? <RefreshCcw size={15} /> : <Film size={15} />} {aiControlCardView ? 'Back to table' : 'Display as cards'}
+            </button>
+          )}
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={onExecute}
+            disabled={!aiControlPlan?.plan_id || busy || !ready || !deletePhraseConfirmed}
+          >
+            {busy ? <Loader2 size={15} className="spin" /> : <Check size={15} />} Confirm action
+          </button>
+        </div>
+      </div>
+      {ready && (
+        <AIControlPagination
+          pageLabel={pageLabel}
+          currentPage={safeCurrentPage}
+          totalPages={totalPages}
+          onPrevious={() => setCurrentPage((page) => Math.max(1, page - 1))}
+          onNext={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+        />
+      )}
+      {requiresDeletePhrase && (
+        <label className="ai-control-danger-confirm">
+          <span>Type the confirmation phrase before deleting this batch.</span>
+          <strong>{plan.confirmation_phrase}</strong>
+          <input
+            value={aiControlDangerPhrase}
+            onChange={(event) => setAiControlDangerPhrase(event.target.value)}
+            placeholder="Type the confirmation phrase"
+          />
+        </label>
+      )}
+      {canDisplayCards && aiControlCardView ? (
+        <AIControlCardResults
+          plan={plan}
+          rows={visibleRows}
+          followed={followed}
+          notify={notify}
+          onPlay={onPlay}
+          onStream={onStream}
+          streamingAvailable={streamingAvailable}
+          streamingLabel={streamingLabel}
+          onFindTorrent={onFindTorrent}
+          onOpenTrailer={onOpenTrailer}
+          onFollow={onFollow}
+          onEditPoster={onEditPoster}
+        />
+      ) : (
+        !aiControlCardView && visibleRows.length > 0 && <AIControlTable rows={visibleRows} action={plan.action} />
+      )}
+      {blocked.length > 0 && (
+        <div className="ai-control-blocked">
+          <h4>Blocked or skipped</h4>
+          <AIControlTable rows={blocked} action={plan.action} compact />
+        </div>
+      )}
+    </section>
+  );
+}
+
+function AIControlPagination({ pageLabel, currentPage, totalPages, onPrevious, onNext }) {
+  return (
+    <div className="ai-control-pagination">
+      <span>{pageLabel}</span>
+      {totalPages > 1 && (
+        <div>
+          <button type="button" className="mini-action" onClick={onPrevious} disabled={currentPage <= 1}>
+            Previous page
+          </button>
+          <strong>{formatCount(currentPage)} / {formatCount(totalPages)}</strong>
+          <button type="button" className="mini-action" onClick={onNext} disabled={currentPage >= totalPages}>
+            Next page
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function AIControlCardResults({
+  plan,
+  rows,
+  followed,
+  notify,
+  onPlay,
+  onStream,
+  streamingAvailable,
+  streamingLabel,
+  onFindTorrent,
+  onOpenTrailer,
+  onFollow,
+  onEditPoster
+}) {
+  const [ownership, setOwnership] = useState(() => buildAiControlOwnershipMap(rows));
+  const [userLists, setUserLists] = useState([]);
+  const [detailsCache, setDetailsCache] = useState({});
+  const [collectionCache, setCollectionCache] = useState({});
+  const [expandedMovieKey, setExpandedMovieKey] = useState('');
+  const [selectedAiControlKeys, setSelectedAiControlKeys] = useState(() => new Set());
+  const [listEditorTarget, setListEditorTarget] = useState(null);
+  const movies = rows || [];
+
+  const loadUserLists = useCallback(async () => {
+    try {
+      const data = await fetchJson('/api/user/lists');
+      setUserLists(data.lists || []);
+    } catch (error) {
+      notify?.(`Lists unavailable: ${error.message}`, 'error');
+    }
+  }, [notify]);
+
+  useEffect(() => {
+    loadUserLists();
+    window.addEventListener('cp-curation-changed', loadUserLists);
+    return () => window.removeEventListener('cp-curation-changed', loadUserLists);
+  }, [loadUserLists]);
+
+  useEffect(() => {
+    setOwnership(buildAiControlOwnershipMap(movies));
+    setSelectedAiControlKeys(new Set());
+    setExpandedMovieKey('');
+    checkAiControlOwnership(movies);
+  }, [plan?.summary]);
+
+  async function checkAiControlOwnership(items) {
+    const payload = (items || [])
+      .filter((movie) => movie?.title)
+      .map((movie) => ({ tmdb_id: movie.tmdb_id || '', imdb_id: movie.imdb_id || '', title: movie.title, year: movie.year || '' }));
+    if (!payload.length) return;
+    try {
+      const check = await fetchJson('/api/library/check', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ movies: payload })
+      });
+      setOwnership((state) => ({ ...state, ...buildOwnershipMap(check.results || []) }));
+    } catch {
+      // AI Control card view can still render without best-effort ownership enrichment.
+    }
+  }
+
+  async function loadAiControlDetails(movie) {
+    if (!movie?.tmdb_id) return null;
+    const id = String(movie.tmdb_id);
+    let details = detailsCache[id];
+    if (!details) {
+      setDetailsCache((state) => ({ ...state, [id]: { loading: true, cast: [], directors: [], collection: {}, trailer_url: '' } }));
+      try {
+        details = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(id)}`);
+        setDetailsCache((state) => ({ ...state, [id]: details }));
+      } catch (error) {
+        details = { error: error.message, cast: [], directors: [], collection: {}, trailer_url: '' };
+        setDetailsCache((state) => ({ ...state, [id]: details }));
+      }
+    }
+    if (details?.collection?.id && !collectionCache[details.collection.id]) {
+      fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(details.collection.id)}`)
+        .then((collectionData) => setCollectionCache((state) => ({ ...state, [details.collection.id]: collectionData })))
+        .catch(() => {});
+    }
+    return details;
+  }
+
+  function toggleAiControlDetails(movie) {
+    const key = movieKey(movie);
+    const nextKey = expandedMovieKey === key ? '' : key;
+    setExpandedMovieKey(nextKey);
+    if (nextKey) loadAiControlDetails(movie);
+  }
+
+  async function openAiControlTrailer(movie) {
+    if (!movie?.tmdb_id) {
+      onOpenTrailer(movie, '');
+      return;
+    }
+    const details = await loadAiControlDetails(movie);
+    onOpenTrailer(movie, details?.trailer_url || '');
+  }
+
+  async function createAiControlList(name) {
+    const created = await fetchJson('/api/user/lists', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name })
+    });
+    await loadUserLists();
+    announceCurationChanged();
+    notify?.(`List created: ${created.name}`);
+    return created;
+  }
+
+  async function addAiControlMovieToList(listId, movie) {
+    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie: moviePayload(movie) })
+    });
+    await loadUserLists();
+    announceCurationChanged();
+    notify?.('Movie added to list');
+  }
+
+  async function addAiControlMoviesToList(listId, moviesToAdd) {
+    await addMoviePayloadsToList(listId, (moviesToAdd || []).map((movie) => moviePayload(movie)));
+    await loadUserLists();
+    announceCurationChanged();
+    notify?.(`${formatCount((moviesToAdd || []).length)} movie${(moviesToAdd || []).length === 1 ? '' : 's'} added to list`);
+    setSelectedAiControlKeys(new Set());
+  }
+
+  async function removeAiControlMovieFromList(listId, movie) {
+    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie: moviePayload(movie) })
+    });
+    await loadUserLists();
+    announceCurationChanged();
+    notify?.('Movie removed from list');
+  }
+
+  async function toggleAiControlSystemList(systemType, movie, owned) {
+    const payload = discoverMoviePayload(movie, owned);
+    const currentLists = listsForDiscoverMovie(movie, userLists, owned);
+    const active = currentLists.some((list) => list.system_type === systemType || list.id === systemType);
+    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie: payload, active: !active })
+    });
+    await loadUserLists();
+    announceCurationChanged();
+    notify?.(`${movie.title} ${active ? 'removed from' : 'added to'} ${systemType === 'watched' ? 'Watched' : 'Watchlist'}`);
+  }
+
+  function toggleAiControlSelection(movie, owned, checked) {
+    const key = movieIdentityKey(discoverMoviePayload(movie, owned));
+    setSelectedAiControlKeys((current) => {
+      const next = new Set(current);
+      if (checked) next.add(key);
+      else next.delete(key);
+      return next;
+    });
+  }
+
+  function selectAllAiControlMovies() {
+    setSelectedAiControlKeys(new Set(movies.map((movie) => movieIdentityKey(discoverMoviePayload(movie, ownedMovieFor(movie, ownership))))));
+  }
+
+  function clearAiControlSelection() {
+    setSelectedAiControlKeys(new Set());
+  }
+
+  const selectedAiControlMovies = useMemo(() => (
+    movies
+      .map((movie) => discoverMoviePayload(movie, ownedMovieFor(movie, ownership)))
+      .filter((movie) => selectedAiControlKeys.has(movieIdentityKey(movie)))
+  ), [movies, ownership, selectedAiControlKeys]);
+  const allAiControlMoviesSelected = movies.length > 0 && movies.every((movie) => (
+    selectedAiControlKeys.has(movieIdentityKey(discoverMoviePayload(movie, ownedMovieFor(movie, ownership))))
+  ));
+
+  return (
+    <div className="ai-control-card-results">
+      <div className="bulk-selection-bar discover-bulk-selection ai-control-card-toolbar">
+        <SelectionCheckbox
+          className="discover-selection-master"
+          checked={allAiControlMoviesSelected}
+          onChange={(checked) => { if (checked) selectAllAiControlMovies(); else clearAiControlSelection(); }}
+          label="Select all AI Control results"
+        />
+        <span>{selectedAiControlMovies.length ? `${formatCount(selectedAiControlMovies.length)} selected` : `${formatCount(movies.length)} AI Control result${movies.length === 1 ? '' : 's'}`}</span>
+        <button type="button" className="mini-action" onClick={selectAllAiControlMovies}>Select all results</button>
+        <button type="button" className="mini-action" onClick={clearAiControlSelection} disabled={!selectedAiControlMovies.length}>Clear</button>
+        <button type="button" className="mini-action" onClick={() => setListEditorTarget({ bulkItems: selectedAiControlMovies })} disabled={!selectedAiControlMovies.length}>
+          <CirclePlus size={13} /> Add selected to list
+        </button>
+      </div>
+
+      <DiscoverResultGrid emptyText="No AI Control movies are available for card display.">
+        {movies.map((movie, index) => {
+          const owned = ownedMovieFor(movie, ownership) || (movie.path ? movie : null);
+          const key = movieIdentityKey(discoverMoviePayload(movie, owned));
+          const details = movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null;
+          const collection = movie.tmdb_id && details?.collection?.id ? collectionCache[details.collection.id] || details.collection : {};
+          const movieWithDetails = details ? { ...movie, plot: movie.plot || details.plot || '', release_date: movie.release_date || details.release_date || '' } : movie;
+          return (
+            <DiscoverMovieCard
+              key={`${movie.tmdb_id || movie.path || movie.title}-${movie.year}-${index}`}
+              movie={movieWithDetails}
+              owned={owned}
+              followed={followed.some((item) => movieKey(item) === movieKey(movie))}
+              expanded={expandedMovieKey === movieKey(movie)}
+              details={details}
+              collection={collection}
+              itemLists={listsForDiscoverMovie(movie, userLists, owned)}
+              watched={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watched')}
+              watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
+              onToggleWatched={owned ? () => toggleAiControlSystemList('watched', movie, owned) : undefined}
+              onToggleWatchlist={() => toggleAiControlSystemList('watchlist', movie, owned)}
+              selected={selectedAiControlKeys.has(key)}
+              onSelect={(checked) => toggleAiControlSelection(movie, owned, checked)}
+              onPlay={onPlay}
+              onStream={onStream}
+              streamingAvailable={streamingAvailable}
+              streamingLabel={streamingLabel}
+              onFindTorrent={onFindTorrent}
+              onFollow={onFollow}
+              onTrailer={openAiControlTrailer}
+              onToggleDetails={() => toggleAiControlDetails(movie)}
+              onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}
+              onRemoveFromList={(listId) => removeAiControlMovieFromList(listId, discoverMoviePayload(movie, owned))}
+              onEditPoster={owned?.path ? () => onEditPoster?.(owned, movie) : undefined}
+            />
+          );
+        })}
+      </DiscoverResultGrid>
+
+      {listEditorTarget && (
+        <ListEditorModal
+          item={listEditorTarget.bulkItems ? null : listEditorTarget}
+          bulkItems={listEditorTarget.bulkItems || []}
+          items={[]}
+          lists={userLists}
+          onClose={() => setListEditorTarget(null)}
+          onCreate={createAiControlList}
+          onAdd={addAiControlMovieToList}
+          onAddBulk={addAiControlMoviesToList}
+        />
+      )}
+    </div>
+  );
+}
+
+function buildAiControlOwnershipMap(movies) {
+  return buildOwnershipMap((movies || [])
+    .filter((movie) => movie?.path)
+    .map((movie) => ({ ...movie, found: true })));
+}
+
+function AIControlTable({ rows, action, compact = false }) {
+  return (
+    <div className={cx('ai-control-table', compact && 'ai-control-table-compact')}>
+      <div className="ai-control-table-head">
+        <span>Movie</span>
+        <span>{action === 'delete' ? 'Path' : action === 'download' ? 'Source' : 'Source'}</span>
+        <span>Status</span>
+        <span>Reason</span>
+      </div>
+      {rows.map((row, index) => (
+        <div className="ai-control-table-row" key={`${row.path || row.tmdb_id || row.title}-${index}`}>
+          <span>
+            <strong>{row.title || row.variant?.title || 'Untitled'}</strong>
+            <small>{row.year || row.size_gb ? [row.year, row.size_gb ? `${row.size_gb} GB` : ''].filter(Boolean).join(' - ') : 'No year'}</small>
+          </span>
+          <span title={row.path || row.variant?.title || row.source || row.reason || ''}>
+            {row.path || row.variant?.indexer || row.source || row.reason || 'Review'}
+          </span>
+          <span>{row.status || 'ready'}</span>
+          <span title={row.reason || ''}>{row.reason || (row.status === 'ready' ? 'Ready for review' : 'Review')}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function MovieListsWorkspace({
+  notify,
+  onPlay,
+  onFindTorrent,
+  onOpenTrailer,
+  onStream,
+  streamingAvailable,
+  streamingLabel,
+  followed = [],
+  onFollow,
+  onEditPoster
+}) {
+  const [libraryItems, setLibraryItems] = useState([]);
+  const [lists, setLists] = useState([]);
+  const [selectedListId, setSelectedListId] = useState('');
+  const [query, setQuery] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [selectedKeys, setSelectedKeys] = useState(() => new Set());
+  const [newListName, setNewListName] = useState('');
+  const [renameValue, setRenameValue] = useState('');
+  const [expandedKey, setExpandedKey] = useState('');
+  const [detailsCache, setDetailsCache] = useState({});
+  const [collectionCache, setCollectionCache] = useState({});
+  const [listEditorTarget, setListEditorTarget] = useState(null);
+  const [copyMovies, setCopyMovies] = useState(null);
+  const [tmdbAddOpen, setTmdbAddOpen] = useState(false);
+  const [metadataCorrection, setMetadataCorrection] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [fulfillment, setFulfillment] = useState(null);
+
+  const selectedList = lists.find((list) => list.id === selectedListId) || lists[0] || null;
+  const model = useMemo(() => buildMovieListViewModel({
+    libraryItems,
+    list: selectedList,
+    query,
+    statusFilter
+  }), [libraryItems, selectedList, query, statusFilter]);
+  const selectedRows = model.rows.filter((row) => selectedKeys.has(row.identityKey));
+  const allRowsSelected = model.rows.length > 0 && model.rows.every((row) => selectedKeys.has(row.identityKey));
+  const selectedListIsSystem = Boolean(selectedList?.system_type);
+  const selectedCopyMovies = selectedRows.map((row) => (row.ownedItem ? moviePayload(row.ownedItem) : movieListRowMovie(row)));
+
+  const loadMovieLists = useCallback(async () => {
+    setLoading(true);
+    setError('');
+    try {
+      const [libraryData, listsData] = await Promise.all([
+        fetchJson('/api/library'),
+        fetchJson('/api/user/lists')
+      ]);
+      setLibraryItems(libraryData.items || []);
+      const nextLists = listsData.lists || [];
+      setLists(nextLists);
+      setSelectedListId((current) => (nextLists.some((list) => list.id === current) ? current : nextLists[0]?.id || ''));
+    } catch (loadError) {
+      setError(loadError.message);
+      notify?.(`Movie lists unavailable: ${loadError.message}`, 'error');
+    } finally {
+      setLoading(false);
+    }
+  }, [notify]);
+
+  useEffect(() => {
+    loadMovieLists();
+    window.addEventListener('cp-curation-changed', loadMovieLists);
+    window.addEventListener('cp-library-reconciled', loadMovieLists);
+    return () => {
+      window.removeEventListener('cp-curation-changed', loadMovieLists);
+      window.removeEventListener('cp-library-reconciled', loadMovieLists);
+    };
+  }, [loadMovieLists]);
+
+  useEffect(() => {
+    setSelectedKeys(new Set());
+    setExpandedKey('');
+  }, [selectedListId, query, statusFilter]);
+
+  useEffect(() => {
+    setRenameValue(selectedList?.name || '');
+  }, [selectedList?.id, selectedList?.name]);
+
+  function toggleRow(row, checked) {
+    setSelectedKeys((current) => {
+      const next = new Set(current);
+      if (checked) next.add(row.identityKey);
+      else next.delete(row.identityKey);
+      return next;
+    });
+  }
+
+  function selectAllVisible() {
+    setSelectedKeys(new Set(model.rows.map((row) => row.identityKey)));
+  }
+
+  function clearSelection() {
+    setSelectedKeys(new Set());
+  }
+
+  function movieListRowMovie(row) {
+    return row.movie || {
+      tmdb_id: row.tmdb_id || '',
+      imdb_id: row.imdb_id || '',
+      title: row.title,
+      year: row.year,
+      poster_url: row.poster_url
+    };
+  }
+
+  async function loadMovieListDetails(row) {
+    const movie = movieListRowMovie(row);
+    const id = String(movie.tmdb_id || row.ownedPayload?.tmdb_id || '');
+    if (!id) return null;
+    let details = detailsCache[id];
+    if (!details) {
+      setDetailsCache((state) => ({ ...state, [id]: { loading: true, cast: [], directors: [], collection: {}, trailer_url: '' } }));
+      try {
+        details = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(id)}`);
+        setDetailsCache((state) => ({ ...state, [id]: details }));
+      } catch (detailsError) {
+        details = { error: detailsError.message, cast: [], directors: [], collection: {}, trailer_url: '' };
+        setDetailsCache((state) => ({ ...state, [id]: details }));
+      }
+    }
+    if (details?.collection?.id && !collectionCache[details.collection.id]) {
+      fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(details.collection.id)}`)
+        .then((collectionData) => setCollectionCache((state) => ({ ...state, [details.collection.id]: collectionData })))
+        .catch(() => {});
+    }
+    return details;
+  }
+
+  function toggleMovieListDetails(row) {
+    const nextKey = expandedKey === row.identityKey ? '' : row.identityKey;
+    setExpandedKey(nextKey);
+    if (nextKey) loadMovieListDetails(row);
+  }
+
+  async function openMovieListTrailer(row) {
+    const movie = movieListRowMovie(row);
+    try {
+      const details = await loadMovieListDetails(row);
+      onOpenTrailer(movie, details?.trailer_url || '');
+    } catch {
+      onOpenTrailer(movie, '');
+    }
+  }
+
+  async function createList(name) {
+    const created = await fetchJson('/api/user/lists', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name })
+    });
+    setNewListName('');
+    setSelectedListId(created.id);
+    await loadMovieLists();
+    announceCurationChanged();
+    notify?.(`List created: ${created.name}`);
+    return created;
+  }
+
+  async function createListFromRail(event) {
+    event.preventDefault();
+    const name = newListName.trim();
+    if (!name) return;
+    await createList(name);
+  }
+
+  async function renameSelectedList(event) {
+    event.preventDefault();
+    if (!selectedList || selectedListIsSystem || !renameValue.trim()) return;
+    const renamed = await fetchJson(`/api/user/lists/${encodeURIComponent(selectedList.id)}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: renameValue.trim() })
+    });
+    await loadMovieLists();
+    announceCurationChanged();
+    notify?.(`List renamed: ${renamed.name}`);
+  }
+
+  async function deleteSelectedList() {
+    if (!selectedList || selectedListIsSystem) return;
+    if (!window.confirm(`Delete list "${selectedList.name}"? Movies will not be deleted from Library.`)) return;
+    await fetchJson(`/api/user/lists/${encodeURIComponent(selectedList.id)}`, { method: 'DELETE' });
+    setSelectedListId('');
+    await loadMovieLists();
+    announceCurationChanged();
+    notify?.('List deleted');
+  }
+
+  async function addMovieToList(listId, item) {
+    const movie = item?.ownedItem ? moviePayload(item.ownedItem) : moviePayload(item);
+    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie })
+    });
+    await loadMovieLists();
+    announceCurationChanged();
+    notify?.('Movie added to list');
+  }
+
+  async function addMoviesToList(listId, movies) {
+    await addMoviePayloadsToList(listId, movies.map((movie) => moviePayload(movie)));
+    await loadMovieLists();
+    announceCurationChanged();
+    notify?.(`${formatCount(movies.length)} movie${movies.length === 1 ? '' : 's'} added to list`);
+  }
+
+  async function removeMovieFromList(listId, movie) {
+    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie })
+    });
+    await loadMovieLists();
+    announceCurationChanged();
+    notify?.('Movie removed from list');
+  }
+
+  async function removeSelectedFromActiveList() {
+    if (!selectedList || !selectedRows.length) return;
+    for (const row of selectedRows) {
+      await removeMovieFromList(selectedList.id, row.ownedItem ? moviePayload(row.ownedItem) : movieListRowMovie(row));
+    }
+    setSelectedKeys(new Set());
+    notify?.(`${formatCount(selectedRows.length)} movie${selectedRows.length === 1 ? '' : 's'} removed from ${selectedList.name}`);
+  }
+
+  async function addTmdbMovieToSelectedList(movie) {
+    if (!selectedList) return;
+    await addMovieToList(selectedList.id, movie);
+    setTmdbAddOpen(false);
+  }
+
+  async function toggleMovieListSystemList(systemType, row) {
+    const owned = row.ownedItem ? moviePayload(row.ownedItem) : null;
+    const movie = movieListRowMovie(row);
+    const currentLists = row.ownedItem ? listsForItem(row.ownedItem, lists) : listsForDiscoverMovie(movie, lists, owned);
+    const active = currentLists.some((list) => list.system_type === systemType || list.id === systemType);
+    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movie: discoverMoviePayload(movie, owned), active: !active })
+    });
+    await loadMovieLists();
+    announceCurationChanged();
+    notify?.(`${row.title} ${active ? 'removed from' : 'added to'} ${systemType === 'watched' ? 'Watched' : 'Watchlist'}`);
+  }
+
+  function selectListFromCard(list) {
+    if (list?.id) setSelectedListId(list.id);
+  }
+
+  async function openFulfillment(action, forcedRows = null) {
+    if (!selectedList) return;
+    const candidates = forcedRows || (selectedRows.length ? selectedRows : model.allRows.filter((row) => (
+      action === 'missing' ? row.status === 'missing' : row.status === 'upgrade'
+    )));
+    if (!candidates.length) {
+      notify?.(action === 'missing' ? 'No missing movies to find.' : 'No upgrade candidates to find.', 'neutral');
+      return;
+    }
+    setFulfillment({ action, loading: true, rows: [], error: '', title: action === 'missing' ? 'Find missing sources' : 'Find upgrade sources' });
+    try {
+      const data = await fetchJson('/api/user/lists/fulfillment/preview', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action,
+          movies: candidates.map((row) => ({
+            tmdb_id: row.tmdb_id || row.ownedPayload?.tmdb_id || '',
+            imdb_id: row.imdb_id || row.ownedPayload?.imdb_id || '',
+            title: row.title,
+            year: row.year,
+            poster_url: row.poster_url,
+            path: row.ownedItem?.path || ''
+          }))
+        })
+      });
+      setFulfillment({
+        action,
+        loading: false,
+        rows: data.rows || [],
+        blocked: data.blocked || [],
+        defaults: data.defaults || {},
+        error: '',
+        title: action === 'missing' ? 'Find missing sources' : 'Find upgrade sources'
+      });
+    } catch (previewError) {
+      setFulfillment((current) => ({ ...current, loading: false, error: previewError.message }));
+    }
+  }
+
+  return (
+    <section className="library-workspace movie-lists-workspace">
+      <header className="library-header movie-lists-header">
+        <div>
+          <p className="screen-kicker">Mixed owned and wanted lists</p>
+          <h2>Movie Lists</h2>
+          <p>Review full lists here. Library stays offline-only; this page shows owned, missing, and upgrade candidates together.</p>
+        </div>
+        <div className="movie-list-summary-strip" aria-label="Selected list summary">
+          <span><strong>{formatCount(model.stats.total)}</strong>Total</span>
+          <span><strong>{formatCount(model.stats.owned)}</strong>Owned</span>
+          <span><strong>{formatCount(model.stats.missing)}</strong>Missing</span>
+          <span><strong>{formatCount(model.stats.upgrades)}</strong>Upgrades</span>
+        </div>
+      </header>
+
+      <form className="library-search-panel movie-lists-search" onSubmit={(event) => event.preventDefault()}>
+        <label className="search-field library-main-search">
+          <Search size={18} />
+          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search the selected list..." />
+        </label>
+        <button type="submit" className="btn btn-primary library-search-submit"><Search size={16} /> Search</button>
+      </form>
+
+      <div className="movie-lists-layout">
+        <aside className="movie-lists-rail" aria-label="Movie lists">
+          <form className="movie-list-create-inline" onSubmit={createListFromRail}>
+            <input value={newListName} onChange={(event) => setNewListName(event.target.value)} placeholder="New list name..." />
+            <button type="submit" className="mini-action" disabled={!newListName.trim()}>
+              <CirclePlus size={13} /> New list
+            </button>
+          </form>
+          {lists.length ? lists.map((list) => (
+            <button
+              type="button"
+              key={list.id}
+              className={cx('movie-list-rail-item', selectedList?.id === list.id && 'movie-list-rail-item-active')}
+              onClick={() => setSelectedListId(list.id)}
+            >
+              <span>{list.name}</span>
+              <small>{formatCount((list.movies || []).length)} movies</small>
+            </button>
+          )) : (
+            <div className="empty-state"><strong>No lists yet.</strong><span>Create lists from Library or Discover.</span></div>
+          )}
+        </aside>
+
+        <div className="movie-lists-main">
+          <form className="movie-list-management-bar" onSubmit={renameSelectedList}>
+            <input
+              value={renameValue}
+              onChange={(event) => setRenameValue(event.target.value)}
+              disabled={!selectedList || selectedListIsSystem}
+              placeholder="No list selected"
+              aria-label="Selected list name"
+            />
+            <button type="submit" className="mini-action" disabled={!selectedList || selectedListIsSystem || !renameValue.trim()}>
+              <Pencil size={13} /> Rename list
+            </button>
+            <button type="button" className="mini-action" onClick={() => setTmdbAddOpen(true)} disabled={!selectedList}>
+              <Search size={13} /> Add movie
+            </button>
+            <button type="button" className="mini-action mini-action-danger" onClick={deleteSelectedList} disabled={!selectedList || selectedListIsSystem}>
+              <Trash2 size={13} /> Delete list
+            </button>
+          </form>
+
+          <div className="library-toolbar movie-lists-filterbar">
+            {[
+              ['all', 'All'],
+              ['owned', 'Owned'],
+              ['missing', 'Missing'],
+              ['upgrade', 'Upgrade candidates']
+            ].map(([value, label]) => (
+              <button type="button" key={value} className={cx('filter-chip-button', statusFilter === value && 'filter-chip-button-active')} onClick={() => setStatusFilter(value)}>
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {model.rows.length > 0 && (
+            <div className="bulk-selection-bar movie-lists-bulk">
+              <SelectionCheckbox
+                className="movie-lists-select-all"
+                checked={allRowsSelected}
+                onChange={(checked) => { if (checked) selectAllVisible(); else clearSelection(); }}
+                label="Select all visible list movies"
+              />
+              <span>{selectedRows.length ? `${formatCount(selectedRows.length)} selected` : 'Select movies'}</span>
+              <button type="button" className="mini-action" onClick={clearSelection} disabled={!selectedRows.length}>Clear</button>
+              <button type="button" className="mini-action" onClick={() => setCopyMovies(selectedCopyMovies)} disabled={!selectedRows.length}>
+                <Copy size={13} /> Copy selected to...
+              </button>
+              <button type="button" className="mini-action mini-action-danger" onClick={removeSelectedFromActiveList} disabled={!selectedRows.length || !selectedList}>
+                <Trash2 size={13} /> Remove selected
+              </button>
+              <button type="button" className="mini-action" onClick={() => openFulfillment('missing')} disabled={!selectedList || !model.allRows.some((row) => row.status === 'missing')}>
+                <Download size={13} /> Find missing
+              </button>
+              <button type="button" className="mini-action" onClick={() => openFulfillment('upgrade')} disabled={!selectedList || !model.allRows.some((row) => row.status === 'upgrade')}>
+                <Wand2 size={13} /> Find upgrades
+              </button>
+            </div>
+          )}
+
+          {error ? <div className="library-status library-status-error"><AlertTriangle size={16} /> {error}</div> : null}
+          {loading ? (
+            <div className="empty-state"><strong>Loading movie lists...</strong><span>Reading Library ownership and saved lists.</span></div>
+          ) : selectedList ? (
+            model.rows.length ? (
+              <div className="library-results library-movie-results movie-lists-card-grid">
+                {model.rows.map((row) => {
+                  const movie = movieListRowMovie(row);
+                  const tmdbId = String(movie.tmdb_id || row.ownedPayload?.tmdb_id || '');
+                  const details = tmdbId ? detailsCache[tmdbId] : null;
+                  const collection = tmdbId && details?.collection?.id ? collectionCache[details.collection.id] || details.collection : {};
+                  const rowLists = row.ownedItem ? listsForItem(row.ownedItem, lists) : listsForDiscoverMovie(movie, lists, null);
+                  const watched = rowLists.some((list) => list.system_type === 'watched');
+                  const watchlisted = rowLists.some((list) => list.system_type === 'watchlist');
+                  if (row.ownedItem) {
+                    return (
+                      <LibraryMovieCard
+                        key={row.identityKey}
+                        item={row.ownedItem}
+                        expanded={expandedKey === row.identityKey}
+                        details={details}
+                        collection={collection}
+                        itemLists={rowLists}
+                        onToggle={() => toggleMovieListDetails(row)}
+                        onPlay={onPlay}
+                        onFindTorrent={onFindTorrent}
+                        onTrailer={() => openMovieListTrailer(row)}
+                        onListFilter={selectListFromCard}
+                        onEditLists={() => setListEditorTarget({ item: row.ownedItem })}
+                        onRemoveFromList={(listId) => removeMovieFromList(listId, moviePayload(row.ownedItem))}
+                        onEditPoster={onEditPoster ? () => onEditPoster(row.ownedItem, movie) : undefined}
+                        onCorrectMetadata={() => setMetadataCorrection(row.ownedItem)}
+                        watched={watched}
+                        watchlisted={watchlisted}
+                        onToggleWatched={() => toggleMovieListSystemList('watched', row)}
+                        onToggleWatchlist={() => toggleMovieListSystemList('watchlist', row)}
+                        selected={selectedKeys.has(row.identityKey)}
+                        onSelect={(checked) => toggleRow(row, checked)}
+                      />
+                    );
+                  }
+                  return (
+                    <DiscoverMovieCard
+                      key={row.identityKey}
+                      movie={movie}
+                      owned={null}
+                      followed={followed.some((item) => movieKey(item) === movieKey(movie))}
+                      expanded={expandedKey === row.identityKey}
+                      details={details}
+                      collection={collection}
+                      itemLists={rowLists}
+                      watched={watched}
+                      watchlisted={watchlisted}
+                      onToggleWatchlist={() => toggleMovieListSystemList('watchlist', row)}
+                      selected={selectedKeys.has(row.identityKey)}
+                      onSelect={(checked) => toggleRow(row, checked)}
+                      onPlay={onPlay}
+                      onStream={onStream}
+                      streamingAvailable={streamingAvailable}
+                      streamingLabel={streamingLabel}
+                      onFindTorrent={onFindTorrent}
+                      onFollow={onFollow}
+                      onTrailer={() => openMovieListTrailer(row)}
+                      onToggleDetails={() => toggleMovieListDetails(row)}
+                      onListBrowse={selectListFromCard}
+                      onEditLists={() => setListEditorTarget(movie)}
+                      onRemoveFromList={(listId) => removeMovieFromList(listId, movie)}
+                    />
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="empty-state"><strong>No movies match this view.</strong><span>Change the search or filter chip.</span></div>
+            )
+          ) : (
+            <div className="empty-state"><strong>No list selected.</strong><span>Create or select a list first.</span></div>
+          )}
+        </div>
+      </div>
+
+      {fulfillment && (
+        <MovieListFulfillmentDialog
+          state={fulfillment}
+          setState={setFulfillment}
+          onClose={() => setFulfillment(null)}
+          notify={notify}
+        />
+      )}
+      {listEditorTarget && (
+        <ListEditorModal
+          item={listEditorTarget.item || listEditorTarget}
+          bulkItems={listEditorTarget.bulkItems || []}
+          items={libraryItems}
+          lists={lists}
+          onClose={() => setListEditorTarget(null)}
+          onCreate={createList}
+          onAdd={addMovieToList}
+          onAddBulk={addMoviesToList}
+        />
+      )}
+      {copyMovies && (
+        <ExportCopyDialog
+          movies={copyMovies}
+          onClose={() => setCopyMovies(null)}
+          notify={notify}
+        />
+      )}
+      {tmdbAddOpen && selectedList && (
+        <TmdbListAddDialog
+          list={selectedList}
+          onAdd={addTmdbMovieToSelectedList}
+          onClose={() => setTmdbAddOpen(false)}
+        />
+      )}
+      {metadataCorrection && (
+        <MetadataCorrectionModal
+          item={metadataCorrection}
+          notify={notify}
+          resetLabel="Reset to provider metadata"
+          onClose={() => setMetadataCorrection(null)}
+          onSaved={() => loadMovieLists()}
+        />
+      )}
+    </section>
+  );
+}
+
+function MovieListFulfillmentDialog({ state, setState, onClose, notify }) {
+  const readyRows = (state.rows || []).filter((row) => row.status === 'ready');
+  const selectedCount = readyRows.filter((row) => row.selected !== false).length;
+
+  function updateRows(updater) {
+    setState((current) => ({ ...current, rows: updater(current.rows || []) }));
+  }
+
+  function setAllRows(selected) {
+    updateRows((rows) => rows.map((row) => (row.status === 'ready' ? { ...row, selected } : row)));
+  }
+
+  function setSelectedQuality(quality) {
+    updateRows((rows) => rows.map((row) => (
+      row.status === 'ready' && row.selected !== false ? { ...row, quality } : row
+    )));
+  }
+
+  async function submitSelected() {
+    setState((current) => ({ ...current, submitting: true, error: '' }));
+    try {
+      const data = await fetchJson('/api/user/lists/fulfillment/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ rows: state.rows || [] })
+      });
+      notify?.(`Submitted ${formatCount(data.submitted_count || 0)} movie${Number(data.submitted_count || 0) === 1 ? '' : 's'} to qBittorrent`);
+      onClose();
+    } catch (submitError) {
+      setState((current) => ({ ...current, submitting: false, error: submitError.message }));
+    }
+  }
+
+  return (
+    <div className="modal-backdrop" role="presentation" onClick={onClose}>
+      <section className="torrent-dialog movie-list-fulfillment-dialog" role="dialog" aria-modal="true" aria-label={state.title || 'Movie list fulfillment'} onClick={(event) => event.stopPropagation()}>
+        <div className="dialog-header">
+          <div>
+            <p className="screen-kicker">Trusted source review</p>
+            <h2>{state.title || 'Review sources'}</h2>
+          </div>
+          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close source review">
+            <X size={18} />
+          </button>
+        </div>
+
+        {state.loading ? (
+          <div className="source-loading-panel"><Loader2 size={20} className="spin" /><strong>Finding trusted sources...</strong><span>This may take some time depending on selected indexers.</span></div>
+        ) : (
+          <>
+            <div className="bulk-selection-bar movie-list-review-actions">
+              <span>{formatCount(selectedCount)} selected for download</span>
+              <button type="button" className="mini-action" onClick={() => setAllRows(true)}>Select all</button>
+              <button type="button" className="mini-action" onClick={() => setAllRows(false)}>Select none</button>
+              <button type="button" className="mini-action" onClick={() => setSelectedQuality('1080p')}>Set selected to 1080p</button>
+              <button type="button" className="mini-action" onClick={() => setSelectedQuality('4K')}>Set selected to 4K</button>
+            </div>
+            {state.error ? <div className="library-status library-status-error"><AlertTriangle size={16} /> {state.error}</div> : null}
+            <div className="movie-list-review-table">
+              <div className="movie-list-review-head">
+                <span>Pick</span>
+                <span>Movie</span>
+                <span>Release</span>
+                <span>Indexer</span>
+                <span>Quality</span>
+                <span>Status</span>
+              </div>
+              {(state.rows || []).map((row, index) => (
+                <div className="movie-list-review-row" key={`${row.tmdb_id || row.title}-${index}`}>
+                  <SelectionCheckbox
+                    checked={row.status === 'ready' && row.selected !== false}
+                    onChange={(checked) => updateRows((rows) => rows.map((item, itemIndex) => itemIndex === index ? { ...item, selected: checked } : item))}
+                    label={`Select ${row.title}`}
+                  />
+                  <span><strong>{row.title}</strong><small>{row.year || 'Unknown year'}</small></span>
+                  <span title={row.variant?.title || row.reason || ''}>{row.variant?.title || row.reason || 'No release'}</span>
+                  <span>{row.variant?.indexer || '-'}</span>
+                  <select
+                    value={row.quality || state.defaults?.quality || '1080p'}
+                    disabled={row.status !== 'ready'}
+                    onChange={(event) => updateRows((rows) => rows.map((item, itemIndex) => itemIndex === index ? { ...item, quality: event.target.value } : item))}
+                  >
+                    <option value="1080p">1080p</option>
+                    <option value="4K">4K</option>
+                  </select>
+                  <span>{row.status === 'ready' ? [row.variant?.size_human, row.variant?.seeders ? `${row.variant.seeders} seeders` : ''].filter(Boolean).join(' - ') || 'Ready' : row.reason || row.status}</span>
+                </div>
+              ))}
+            </div>
+            {state.blocked?.length ? (
+              <p className="settings-empty-note">{formatCount(state.blocked.length)} movie{state.blocked.length === 1 ? '' : 's'} had no trusted source.</p>
+            ) : null}
+          </>
+        )}
+
+        <div className="dialog-actions">
+          <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
+          <button type="button" className="btn btn-primary" onClick={submitSelected} disabled={state.loading || state.submitting || !selectedCount}>
+            {state.submitting ? <Loader2 size={15} className="spin" /> : <Download size={15} />} Submit selected to qBittorrent
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function TmdbListAddDialog({ list, onAdd, onClose }) {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [addingKey, setAddingKey] = useState('');
+
+  async function searchTmdb(event) {
+    event.preventDefault();
+    const search = query.trim();
+    if (!search) return;
+    setLoading(true);
+    setError('');
+    setResults([]);
+    try {
+      const data = await fetchJson(`/api/tmdb/search?q=${encodeURIComponent(search)}&page=1&include_adult=false`);
+      setResults((data.results || []).slice(0, 12));
+    } catch (searchError) {
+      setError(searchError.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function addResult(movie) {
+    const key = String(movie.tmdb_id || movieIdentityKey(movie));
+    setAddingKey(key);
+    setError('');
+    try {
+      await onAdd(movie);
+    } catch (addError) {
+      setError(addError.message);
+      setAddingKey('');
+    }
+  }
+
+  return (
+    <div className="modal-backdrop" role="presentation" onClick={onClose}>
+      <section className="torrent-dialog tmdb-list-add-dialog" role="dialog" aria-modal="true" aria-label={`Add movie to ${list.name}`} onClick={(event) => event.stopPropagation()}>
+        <div className="dialog-header">
+          <div>
+            <p className="screen-kicker">Add movie</p>
+            <h2>{list.name}</h2>
+          </div>
+          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close add movie dialog">
+            <X size={18} />
+          </button>
+        </div>
+        <form className="library-search-panel tmdb-list-add-search" onSubmit={searchTmdb}>
+          <label className="library-search library-main-search">
+            <Search size={17} />
+            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search TMDB movies..." />
+          </label>
+          <button type="submit" className="btn btn-primary" disabled={!query.trim() || loading}>
+            {loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search
+          </button>
+        </form>
+        {error ? <p className="settings-inline-status settings-inline-error"><AlertTriangle size={15} /><span>{error}</span></p> : null}
+        <div className="tmdb-list-add-results">
+          {results.length ? results.map((movie) => {
+            const key = String(movie.tmdb_id || movieIdentityKey(movie));
+            return (
+              <article className="tmdb-list-add-row" key={key}>
+                <span className="match-result-poster">
+                  {movie.poster_url ? <img src={movie.poster_url} alt="" loading="lazy" /> : <Film size={18} />}
+                </span>
+                <div>
+                  <strong>{movie.title || 'Untitled'}</strong>
+                  <span>{movie.year || 'Unknown year'}</span>
+                  <small>{movie.plot || 'No plot summary available.'}</small>
+                </div>
+                <button type="button" className="btn btn-secondary" onClick={() => addResult(movie)} disabled={Boolean(addingKey)}>
+                  {addingKey === key ? <Loader2 size={15} className="spin" /> : <CirclePlus size={15} />} Add to list
+                </button>
+              </article>
+            );
+          }) : (
+            <div className="empty-state">
+              <strong>Search TMDB to add a movie.</strong>
+              <span>Owned movies will render as Library cards after they match your archive; missing movies stay Discover-style.</span>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query, setQuery, onReviewUnmatched, isActive }) {
   const pageSize = 40;
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -4373,8 +6008,10 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
   const [showAdultMovies, setShowAdultMovies] = useState(true);
   const [selectedLibraryKeys, setSelectedLibraryKeys] = useState(() => new Set());
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [libraryStale, setLibraryStale] = useState(false);
 
-  const loadLibrary = useCallback(async (forceScan = false) => {
+  const loadLibrary = useCallback(async (forceScan = false, options = {}) => {
+    const quiet = Boolean(options.quiet);
     setLoading(true);
     setError('');
     setStatus(forceScan ? 'Rescanning library folders...' : 'Loading library...');
@@ -4382,6 +6019,7 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
       const data = await fetchJson(forceScan ? '/api/library?force_scan=1' : '/api/library');
       setItems(data.items || []);
       setCurrentPage(1);
+      setLibraryStale(false);
       if (forceScan) {
         const discovered = Number(data.new_files || 0);
         const identified = Number(data.metadata_matched || 0);
@@ -4393,9 +6031,10 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
         ].filter(Boolean).join(' · ');
         setStatus(summary || 'Rescan complete — no changes found');
         notify(summary || 'Library rescan complete — no changes found', discovered || identified ? 'success' : 'neutral');
+        announceLibraryChanged({ source: 'manual-rescan', library: data });
       } else {
         setStatus('');
-        notify(`${formatCount(data.count)} library files loaded`, 'success');
+        if (!quiet) notify(`${formatCount(data.count)} library files loaded`, 'success');
       }
     } catch (loadError) {
       setError(loadError.message);
@@ -4410,12 +6049,31 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
   }, [loadLibrary]);
 
   useEffect(() => {
-    function handleReconciled() {
-      loadLibrary(false);
+    function handleLibraryChanged(event) {
+      if (event.detail?.source === 'manual-rescan') {
+        setLibraryStale(false);
+        return;
+      }
+      if (isActive) {
+        setLibraryStale(true);
+        return;
+      }
+      loadLibrary(false, { quiet: true });
     }
-    window.addEventListener('cp-library-reconciled', handleReconciled);
-    return () => window.removeEventListener('cp-library-reconciled', handleReconciled);
-  }, [loadLibrary]);
+    window.addEventListener('cp-library-changed', handleLibraryChanged);
+    return () => window.removeEventListener('cp-library-changed', handleLibraryChanged);
+  }, [isActive, loadLibrary]);
+
+  useEffect(() => {
+    if (!isActive && libraryStale) {
+      loadLibrary(false, { quiet: true });
+    }
+  }, [isActive, libraryStale, loadLibrary]);
+
+  async function refreshStaleLibrary() {
+    setLibraryStale(false);
+    await loadLibrary(false);
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -4858,6 +6516,14 @@ function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query,
               <Library size={15} /> My Lists
             </button>
           </div>
+          {libraryStale && (
+            <div className="library-stale-notice" role="status">
+              <span>Library changed. Refresh view</span>
+              <button type="button" className="btn btn-secondary" onClick={refreshStaleLibrary} disabled={loading}>
+                {loading ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />} Refresh view
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -5291,6 +6957,7 @@ function LibraryMovieCard({
       mutedChips={[locale, getQualityLabel(item), item.size_human]}
       statusLabel={lowQuality ? 'Upgrade candidate' : ''}
       statusTone={lowQuality ? 'warning' : 'neutral'}
+      ownedBadge
       expanded={expanded}
       selected={selected}
       onToggle={onToggle}
@@ -7282,7 +8949,14 @@ const emptySettingsState = {
   library: { directory: '', directories: [''], showAdultMovies: true },
   appData: { user_data_dir: '', tmdb_cache_dir: '' },
   plex: { url: '', token: '' },
-  prowlarr: { url: '', key: '', indexers: [], trusted_release_indexers: [] },
+  prowlarr: {
+    url: '',
+    key: '',
+    indexers: [],
+    trusted_release_indexers: [],
+    download_default_quality: '1080p',
+    download_indexer_mode: 'release'
+  },
   qbittorrent: {
     mode: 'embedded',
     download_dir: '',
@@ -7303,7 +8977,16 @@ const emptySettingsState = {
     label: 'Stream',
     url_template: 'https://streamimdb.ru/embed/movie/{tmdb_id}'
   },
-  ollama: { url: '', model: '', candidateLimit: 15 }
+  ollama: { url: '', model: '', candidateLimit: 15 },
+  aiControl: {
+    enabled: true,
+    trusted_indexers: [],
+    trusted_indexers_configured: false,
+    max_matched_movies: 25,
+    max_download_searches: 10,
+    ollama_curated_lists: false,
+    indexers: []
+  }
 };
 
 function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onStreamingConfigChanged }) {
@@ -7313,6 +8996,7 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
   const [statuses, setStatuses] = useState({});
   const [revealed, setRevealed] = useState({});
   const [trustedIndexerDialogOpen, setTrustedIndexerDialogOpen] = useState(false);
+  const [aiControlIndexerDialogOpen, setAiControlIndexerDialogOpen] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -7326,10 +9010,11 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
         fetchJson('/api/qbittorrent/config'),
         fetchJson('/api/tmdb/config'),
         fetchJson('/api/streaming/config'),
-        fetchJson('/api/ollama/config')
+        fetchJson('/api/ollama/config'),
+        fetchJson('/api/ai-control/config')
       ]);
       if (cancelled) return;
-      const [library, appData, plex, prowlarr, qbittorrent, tmdb, streaming, ollama] = requests;
+      const [library, appData, plex, prowlarr, qbittorrent, tmdb, streaming, ollama, aiControl] = requests;
       setForms({
         library: library.status === 'fulfilled' ? {
           directory: library.value.directory || '',
@@ -7345,8 +9030,10 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
           url: prowlarr.value.url || '',
           key: prowlarr.value.key || '',
           indexers: prowlarr.value.indexers || [],
-          trusted_release_indexers: prowlarr.value.trusted_release_indexers || []
-        } : { url: '', key: '', indexers: [], trusted_release_indexers: [] },
+          trusted_release_indexers: prowlarr.value.trusted_release_indexers || [],
+          download_default_quality: prowlarr.value.download_default_quality || '1080p',
+          download_indexer_mode: prowlarr.value.download_indexer_mode || 'release'
+        } : emptySettingsState.prowlarr,
         qbittorrent: qbittorrent.status === 'fulfilled' ? qbittorrent.value : emptySettingsState.qbittorrent,
         tmdb: tmdb.status === 'fulfilled' ? { key: tmdb.value.key || '', includeAdult: Boolean(tmdb.value.include_adult) } : { key: '', includeAdult: false },
         streaming: streaming.status === 'fulfilled' ? {
@@ -7358,7 +9045,16 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
           url: ollama.value.url || '',
           model: ollama.value.model || '',
           candidateLimit: ollama.value.candidate_limit || 15
-        } : { url: '', model: '', candidateLimit: 15 }
+        } : { url: '', model: '', candidateLimit: 15 },
+        aiControl: aiControl.status === 'fulfilled' ? {
+          enabled: aiControl.value.enabled !== false,
+          trusted_indexers: aiControl.value.trusted_indexers || [],
+          trusted_indexers_configured: Boolean(aiControl.value.trusted_indexers_configured),
+          max_matched_movies: aiControl.value.max_matched_movies || 25,
+          max_download_searches: aiControl.value.max_download_searches || 10,
+          ollama_curated_lists: Boolean(aiControl.value.ollama_curated_lists),
+          indexers: aiControl.value.indexers || []
+        } : emptySettingsState.aiControl
       });
       const failed = requests.filter((request) => request.status === 'rejected');
       if (failed.length) {
@@ -7393,6 +9089,24 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
         prowlarr: {
           ...state.prowlarr,
           trusted_release_indexers: Array.from(current)
+        }
+      };
+    });
+  }
+
+  function updateAiControlTrustedIndexer(indexerId, checked) {
+    setForms((state) => {
+      const current = new Set(state.aiControl.trusted_indexers || []);
+      if (checked) {
+        current.add(indexerId);
+      } else {
+        current.delete(indexerId);
+      }
+      return {
+        ...state,
+        aiControl: {
+          ...state.aiControl,
+          trusted_indexers: Array.from(current)
         }
       };
     });
@@ -7500,7 +9214,9 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
       prowlarr: {
         url: forms.prowlarr.url,
         key: forms.prowlarr.key,
-        trusted_release_indexers: forms.prowlarr.trusted_release_indexers || []
+        trusted_release_indexers: forms.prowlarr.trusted_release_indexers || [],
+        download_default_quality: forms.prowlarr.download_default_quality || '1080p',
+        download_indexer_mode: forms.prowlarr.download_indexer_mode || 'release'
       },
       tmdb: { key: forms.tmdb.key, include_adult: Boolean(forms.tmdb.includeAdult) },
       streaming: {
@@ -7530,14 +9246,23 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
       }
       if (service === 'prowlarr') {
         const config = await fetchJson('/api/prowlarr/config');
+        const aiControlConfig = await fetchJson('/api/ai-control/config').catch(() => null);
         setForms((state) => ({
           ...state,
           prowlarr: {
             url: config.url || '',
             key: config.key || '',
             indexers: config.indexers || [],
-            trusted_release_indexers: config.trusted_release_indexers || []
-          }
+            trusted_release_indexers: config.trusted_release_indexers || [],
+            download_default_quality: config.download_default_quality || '1080p',
+            download_indexer_mode: config.download_indexer_mode || 'release'
+          },
+          aiControl: aiControlConfig ? {
+            ...state.aiControl,
+            trusted_indexers: aiControlConfig.trusted_indexers || state.aiControl.trusted_indexers || [],
+            trusted_indexers_configured: Boolean(aiControlConfig.trusted_indexers_configured),
+            indexers: aiControlConfig.indexers || state.aiControl.indexers || []
+          } : state.aiControl
         }));
       }
       setCardStatus(service, 'success', `${serviceLabel(service)} settings saved.`, 'Run Test to verify the saved connection.');
@@ -7578,6 +9303,45 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
       setCardStatus('qbittorrent', 'error', 'qBittorrent settings not saved.', error.message);
     } finally {
       setActionState('qbittorrent-save', false);
+    }
+  }
+
+  async function saveAiControl(options = {}) {
+    const includeTrusted = Boolean(options.includeTrusted);
+    setActionState('ai-control-save', true);
+    try {
+      const payload = {
+        enabled: Boolean(forms.aiControl.enabled),
+        max_matched_movies: Number(forms.aiControl.max_matched_movies || 25),
+        max_download_searches: Number(forms.aiControl.max_download_searches || 10),
+        ollama_curated_lists: Boolean(forms.aiControl.ollama_curated_lists)
+      };
+      if (includeTrusted) {
+        payload.trusted_indexers = forms.aiControl.trusted_indexers || [];
+      }
+      const data = await fetchJson('/api/ai-control/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      setForms((state) => ({
+        ...state,
+        aiControl: {
+          enabled: data.enabled !== false,
+          trusted_indexers: data.trusted_indexers || [],
+          trusted_indexers_configured: Boolean(data.trusted_indexers_configured),
+          max_matched_movies: data.max_matched_movies || 25,
+          max_download_searches: data.max_download_searches || 10,
+          ollama_curated_lists: Boolean(data.ollama_curated_lists),
+          indexers: data.indexers || state.aiControl.indexers || []
+        }
+      }));
+      setCardStatus('ai-control', 'success', 'AI Control settings saved.', 'The experimental command policy is updated.');
+      notify('AI Control settings saved');
+    } catch (error) {
+      setCardStatus('ai-control', 'error', 'AI Control settings not saved.', error.message);
+    } finally {
+      setActionState('ai-control-save', false);
     }
   }
 
@@ -7634,6 +9398,19 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
     return `${names.length} trusted`;
   }
 
+  function aiControlIndexerSummary() {
+    const trustedIds = new Set((forms.aiControl.trusted_indexers || []).map(String));
+    if (!trustedIds.size && !forms.aiControl.trusted_indexers_configured) return 'YTS/YIFY default';
+    if (!trustedIds.size) return 'None trusted';
+    const names = (forms.aiControl.indexers || [])
+      .filter((indexer) => trustedIds.has(String(indexer.id)))
+      .map((indexer) => indexer.name || `Indexer ${indexer.id}`);
+    if (!names.length) return `${trustedIds.size} trusted`;
+    if (names.length === 1) return `${names[0]} trusted`;
+    if (names.length === 2) return `${names.join(', ')} trusted`;
+    return `${names.length} trusted`;
+  }
+
   const summary = [
     { key: 'library', label: 'Library roots', ready: (forms.library.directories || []).some((path) => path.trim()), tone: 'blue' },
     { key: 'plex', label: 'Plex', ready: Boolean(forms.plex.url && forms.plex.token), tone: 'cyan' },
@@ -7641,7 +9418,8 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
     { key: 'qbittorrent', label: 'qBittorrent', ready: forms.qbittorrent.mode === 'system' || Boolean(forms.qbittorrent.installed), tone: 'gold' },
     { key: 'tmdb', label: 'TMDB', ready: Boolean(forms.tmdb.key), tone: 'green' },
     { key: 'streaming', label: 'Streaming', ready: Boolean(forms.streaming.enabled && forms.streaming.url_template), tone: 'green' },
-    { key: 'ollama', label: 'Ollama', ready: Boolean(forms.ollama.url && forms.ollama.model), tone: 'violet' }
+    { key: 'ollama', label: 'Ollama', ready: Boolean(forms.ollama.url && forms.ollama.model), tone: 'violet' },
+    { key: 'ai-control', label: 'AI Control', ready: Boolean(forms.aiControl.enabled), tone: 'violet' }
   ];
   const configuredCount = summary.filter((item) => item.ready).length;
 
@@ -7805,6 +9583,31 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
                 <span>Release watchlist trust</span>
                 <strong>{trustedIndexerSummary()}</strong>
               </p>
+              <div className="settings-subsection">
+                <span className="settings-subsection-title">Automation defaults</span>
+                <div className="settings-two-column">
+                  <label className="dialog-field">
+                    <span>Default download quality</span>
+                    <select
+                      value={forms.prowlarr.download_default_quality || '1080p'}
+                      onChange={(event) => updateField('prowlarr', 'download_default_quality', event.target.value)}
+                    >
+                      <option value="1080p">1080p</option>
+                      <option value="4K">4K</option>
+                    </select>
+                  </label>
+                  <label className="dialog-field">
+                    <span>Download trusted indexers</span>
+                    <select
+                      value={forms.prowlarr.download_indexer_mode || 'release'}
+                      onChange={(event) => updateField('prowlarr', 'download_indexer_mode', event.target.value)}
+                    >
+                      <option value="release">Use release trusted indexers</option>
+                      <option value="all">Use all enabled indexers</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
             </>
           )}
           actions={(
@@ -7812,6 +9615,74 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
               <ActionButton loading={saving['prowlarr-save']} icon={Save} label="Save Prowlarr" onClick={() => saveIntegration('prowlarr')} primary />
               <ActionButton loading={saving['prowlarr-test']} icon={PlugZap} label="Test saved" onClick={() => testIntegration('prowlarr')} />
               <ActionButton loading={false} icon={ShieldCheck} label="Trusted indexers" onClick={() => setTrustedIndexerDialogOpen(true)} />
+            </>
+          )}
+        />
+
+        <IntegrationCard
+          id="settings-ai-control"
+          icon={Bot}
+          title="AI Control Experimental"
+          accent="violet"
+          status={statuses['ai-control']}
+          fields={(
+            <>
+              <label className="settings-checkbox-field">
+                <input
+                  type="checkbox"
+                  checked={forms.aiControl.enabled !== false}
+                  onChange={(event) => updateField('aiControl', 'enabled', event.target.checked)}
+                />
+                <span>
+                  <strong>Enable AI Control</strong>
+                  <small>Shows the experimental command workspace in the sidebar.</small>
+                </span>
+              </label>
+              <div className="settings-two-column">
+                <label className="dialog-field">
+                  <span>Max matched movies</span>
+                  <input
+                    type="number"
+                    min="1"
+                    max="100"
+                    value={forms.aiControl.max_matched_movies || 25}
+                    onChange={(event) => updateField('aiControl', 'max_matched_movies', event.target.value)}
+                  />
+                </label>
+                <label className="dialog-field">
+                  <span>Max download searches</span>
+                  <input
+                    type="number"
+                    min="1"
+                    max="50"
+                    value={forms.aiControl.max_download_searches || 10}
+                    onChange={(event) => updateField('aiControl', 'max_download_searches', event.target.value)}
+                  />
+                </label>
+              </div>
+              <p className="settings-runtime-detail">Download quality is fixed to 1080p and delete uses Recycle Bin in v1.</p>
+              <label className="settings-checkbox-field">
+                <input
+                  type="checkbox"
+                  checked={Boolean(forms.aiControl.ollama_curated_lists)}
+                  onChange={(event) => updateField('aiControl', 'ollama_curated_lists', event.target.checked)}
+                />
+                <span>
+                  <strong>Allow Ollama-curated lists</strong>
+                  <small>Creative AI lists are not guaranteed factual. TMDB still confirms saved movie identities.</small>
+                </span>
+              </label>
+              <p className="trusted-indexer-summary">
+                <span>AI Control download trust</span>
+                <strong>{aiControlIndexerSummary()}</strong>
+                <small>YTS/YIFY default when no AI Control-specific selection is saved.</small>
+              </p>
+            </>
+          )}
+          actions={(
+            <>
+              <ActionButton loading={saving['ai-control-save']} icon={Save} label="Save AI Control" onClick={() => saveAiControl()} primary />
+              <ActionButton loading={false} icon={ShieldCheck} label="Trusted indexers" onClick={() => setAiControlIndexerDialogOpen(true)} />
             </>
           )}
         />
@@ -7993,6 +9864,15 @@ function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onSt
           onClose={() => setTrustedIndexerDialogOpen(false)}
         />
       ) : null}
+      {aiControlIndexerDialogOpen ? (
+        <AIControlIndexerDialog
+          aiControl={forms.aiControl}
+          saving={Boolean(saving['ai-control-save'])}
+          onToggle={updateAiControlTrustedIndexer}
+          onSave={() => saveAiControl({ includeTrusted: true })}
+          onClose={() => setAiControlIndexerDialogOpen(false)}
+        />
+      ) : null}
     </section>
   );
 }
@@ -8045,6 +9925,61 @@ function TrustedIndexerDialog({ prowlarr, saving, onToggle, onSave, onClose }) {
           <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
           <button type="button" className="btn btn-primary" onClick={saveAndClose} disabled={saving}>
             {saving ? <Loader2 size={15} className="spin" /> : <Save size={15} />} Save trusted indexers
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function AIControlIndexerDialog({ aiControl, saving, onToggle, onSave, onClose }) {
+  const indexers = aiControl.indexers || [];
+  const trustedIds = aiControl.trusted_indexers || [];
+
+  async function saveAndClose() {
+    const saved = await onSave();
+    if (saved) onClose();
+  }
+
+  return (
+    <div className="modal-backdrop trusted-indexer-backdrop" role="presentation" onClick={onClose}>
+      <section className="small-dialog trusted-indexer-dialog" role="dialog" aria-modal="true" aria-label="AI Control trusted indexers" onClick={(event) => event.stopPropagation()}>
+        <header className="dialog-header">
+          <div>
+            <p className="screen-kicker">AI Control download trust</p>
+            <h2>AI Control trusted indexers</h2>
+          </div>
+          <button type="button" className="icon-button" onClick={onClose} aria-label="Close AI Control trusted indexers">
+            <X size={20} />
+          </button>
+        </header>
+        <p className="trusted-indexer-detail">Only selected indexers are used when AI Control plans downloads. YTS/YIFY is the default when no AI-specific selection is saved.</p>
+        <div className="settings-checkbox-group trusted-indexer-list">
+          {indexers.length ? (
+            indexers.map((indexer) => (
+              <label className="settings-checkbox-field" key={`ai-control-indexer-${indexer.id}`}>
+                <input
+                  type="checkbox"
+                  checked={trustedIds.includes(String(indexer.id))}
+                  onChange={(event) => onToggle(String(indexer.id), event.target.checked)}
+                />
+                <span>
+                  <strong>{indexer.name || `Indexer ${indexer.id}`}</strong>
+                  <small>{/yts|yify/i.test(indexer.name || '') ? 'Default AI Control download source.' : 'Manual trust for AI Control download planning.'}</small>
+                </span>
+              </label>
+            ))
+          ) : (
+            <p className="settings-empty-note">Save and test Prowlarr to load enabled indexers. YTS/YIFY is used by default when available.</p>
+          )}
+          {indexers.length && !trustedIds.length && aiControl.trusted_indexers_configured ? (
+            <p className="settings-empty-note">No AI Control trusted indexers selected. Download commands will be blocked.</p>
+          ) : null}
+        </div>
+        <div className="dialog-actions">
+          <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
+          <button type="button" className="btn btn-primary" onClick={saveAndClose} disabled={saving}>
+            {saving ? <Loader2 size={15} className="spin" /> : <Save size={15} />} Save AI Control indexers
           </button>
         </div>
       </section>

@@ -82,11 +82,11 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertIn("(details?.tagline || details?.runtime || releaseDateLabel)", expanded_details)
         self.assertIn("{releaseDateLabel && <div><span>Release date</span><strong>Releases {releaseDateLabel}</strong></div>}", expanded_details)
 
-    def test_library_cards_do_not_repeat_owned_state(self):
+    def test_library_cards_keep_owned_badge_without_owned_status_label(self):
         library_card_start = APP.index("className={cx('library-movie-card'")
         library_card_end = APP.index("cornerControls={(", library_card_start)
         library_card_props = APP[library_card_start:library_card_end]
-        self.assertNotIn("ownedBadge", library_card_props)
+        self.assertIn("ownedBadge", library_card_props)
         self.assertNotIn("statusLabel={lowQuality ? 'Upgrade candidate' : 'Owned'}", library_card_props)
 
     def test_card_grids_keep_multiple_cards_without_too_narrow_cards(self):

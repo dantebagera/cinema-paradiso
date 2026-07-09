@@ -1,4 +1,5 @@
 import os
+import re
 
 from services.movie_identity import normalize_movie_title
 from services.smart_match import rank_candidates
@@ -183,6 +184,63 @@ def _year_difference(left, right):
 
 def _title_matches_query(candidate, query):
     return normalize_movie_title((query or {}).get("title")) in _title_variants(candidate or {})
+
+
+def _title_has_query_plus_subtitle(title, query_title):
+    query = normalize_movie_title(query_title)
+    if not query:
+        return False
+    words = [re.escape(word) for word in query.split() if word]
+    if not words:
+        return False
+    pattern = r"^\s*(?:the|a|an)?\s*" + r"[\W_]+".join(words) + r"\s*(?:\(|:|[-\u2013\u2014])"
+    return bool(re.search(pattern, str(title or ""), re.IGNORECASE))
+
+
+def _candidate_has_query_plus_subtitle(candidate, query):
+    return any(
+        _title_has_query_plus_subtitle(value, (query or {}).get("title"))
+        for value in (
+            (candidate or {}).get("title"),
+            (candidate or {}).get("original_title"),
+            *((candidate or {}).get("alternative_titles") or []),
+        )
+        if value
+    )
+
+
+def _dominant_same_year_subtitle_candidate(ranked, queries):
+    ranked = [dict(candidate or {}) for candidate in (ranked or [])]
+    queries = [dict(query or {}) for query in (queries or [])]
+    for candidate in ranked:
+        if candidate.get("identity_conflict"):
+            continue
+        if int(candidate.get("provider_rank", 0) or 0) != 1:
+            continue
+        if int(candidate.get("evidence_score", 0) or 0) < 70:
+            continue
+        if "title_with_year" not in set(candidate.get("query_sources") or []):
+            continue
+        if not _has_real_tmdb_metadata(candidate):
+            continue
+        matching_queries = [
+            query for query in queries
+            if query.get("source") in {"filename", "folder", "plex_hint"}
+            and _year(query.get("year")) == _year(candidate.get("year"))
+            and _candidate_has_query_plus_subtitle(candidate, query)
+        ]
+        if not matching_queries:
+            continue
+        real_same_year_rivals = [
+            rival for rival in ranked
+            if _candidate_identity_key(rival) != _candidate_identity_key(candidate)
+            and _year(rival.get("year")) == _year(candidate.get("year"))
+            and _has_real_tmdb_metadata(rival)
+            and any(_candidate_has_query_plus_subtitle(rival, query) for query in matching_queries)
+        ]
+        if not real_same_year_rivals:
+            return candidate
+    return {}
 
 
 def _dominant_one_year_candidate_over_weak_duplicates(ranked, queries):
@@ -390,6 +448,16 @@ def decide_identity(queries, candidates, known_identity=None):
     non_conflicting = [candidate for candidate in ranked if not candidate.get("identity_conflict")]
     if not non_conflicting:
         return _result("conflict", ranked, queries, candidate=ranked[0])
+
+    dominant_subtitle = _dominant_same_year_subtitle_candidate(non_conflicting, queries)
+    if dominant_subtitle:
+        return _result(
+            "accepted", ranked, queries, True, dominant_subtitle,
+            reasons=[
+                "rank one same-year title with provider subtitle",
+                *list(dominant_subtitle.get("reasons") or []),
+            ],
+        )
 
     dominant_one_year = _dominant_one_year_candidate_over_weak_duplicates(non_conflicting, queries)
     if dominant_one_year:

@@ -180,6 +180,68 @@ class UserCurationStoreTest(unittest.TestCase):
             self.assertTrue(store.delete_list(created["id"]))
             self.assertEqual([item["id"] for item in store.list_all()], ["watched", "watchlist"])
 
+    def test_movie_list_fulfillment_preview_uses_quality_and_trusted_indexer_defaults(self):
+        previous_quality = getattr(app, "_download_default_quality", "1080p")
+        previous_mode = getattr(app, "_download_indexer_mode", "release")
+        previous_trusted = list(getattr(app, "_download_trusted_indexers", []))
+        app._download_default_quality = "1080p"
+        app._download_indexer_mode = "release"
+        app._download_trusted_indexers = []
+        movie = {"tmdb_id": "680", "title": "Pulp Fiction", "year": "1994"}
+
+        try:
+            with patch("app._effective_download_trusted_indexer_ids", return_value=["7"]), patch(
+                "app._ai_control_source_search",
+                return_value=[
+                    {"title": "Pulp Fiction 1994 4K", "resolution": "4K", "indexer": "Trusted", "indexer_id": "7", "seeders": 50},
+                    {"title": "Pulp Fiction 1994 1080p", "resolution": "1080p", "indexer": "Trusted", "indexer_id": "7", "seeders": 30},
+                ],
+            ):
+                response = app.app.test_client().post(
+                    "/api/user/lists/fulfillment/preview",
+                    json={"action": "missing", "movies": [movie]},
+                )
+        finally:
+            app._download_default_quality = previous_quality
+            app._download_indexer_mode = previous_mode
+            app._download_trusted_indexers = previous_trusted
+
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertEqual(data["defaults"]["quality"], "1080p")
+        self.assertEqual(data["rows"][0]["quality"], "1080p")
+        self.assertEqual(data["rows"][0]["variant"]["resolution"], "1080p")
+        self.assertEqual(data["rows"][0]["status"], "ready")
+
+    def test_movie_list_fulfillment_submit_only_downloads_selected_ready_rows(self):
+        ready = {
+            "selected": True,
+            "status": "ready",
+            "title": "Pulp Fiction",
+            "year": "1994",
+            "tmdb_id": "680",
+            "variant": {"title": "Pulp Fiction 1080p", "resolution": "1080p", "magnet_url": "magnet:?xt=urn:btih:abc"},
+        }
+        skipped = {
+            "selected": False,
+            "status": "ready",
+            "title": "Heat",
+            "year": "1995",
+            "variant": {"title": "Heat 1080p", "magnet_url": "magnet:?xt=urn:btih:def"},
+        }
+
+        with patch("app._ai_control_submit_download", return_value={"hash": "abc", "name": "Pulp Fiction"}) as submit:
+            response = app.app.test_client().post(
+                "/api/user/lists/fulfillment/submit",
+                json={"rows": [ready, skipped]},
+            )
+
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertEqual(data["submitted_count"], 1)
+        self.assertEqual(len(data["results"]), 1)
+        submit.assert_called_once()
+
     def test_followed_releases_can_be_added_updated_and_removed(self):
         with tempfile.TemporaryDirectory() as tmp:
             store = app.UserCurationStore(Path(tmp))

@@ -211,6 +211,37 @@ class LibraryReconcileTest(unittest.TestCase):
         self.assertEqual(record["tmdb_id"], "10489")
         self.assertEqual(record["identity_decision_version"], app.IDENTITY_DECISION_VERSION)
 
+    def test_version_three_review_record_is_retried_after_subtitle_rule_upgrade(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Black Box 2026 1080p WEB-DL HEVC x265 5.1 BONE.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_authority_state({"active_provider": "tmdb"})
+            fingerprint = {
+                "path": str(movie),
+                "size": movie.stat().st_size,
+                "modified_time": movie.stat().st_mtime,
+            }
+            store.save_library_inventory({app._norm(str(movie)): fingerprint})
+            store.update_file_record(str(movie), {
+                "metadata_status": "needs_review",
+                "identity_status": "review",
+                "metadata_accepted": False,
+                "identity_decision_version": 3,
+                "candidate_tmdb_id": "1321008",
+                "candidate_title": "Black Box (Flight 298)",
+                "candidate_year": "2026",
+                "size": fingerprint["size"],
+                "modified_time": fingerprint["modified_time"],
+            })
+
+            with patch("app._reconcile_library_path", return_value="matched") as reconcile_path:
+                result = app._reconcile_library_files()
+
+        self.assertEqual(result["checked"], 1)
+        reconcile_path.assert_called_once()
+
     def test_current_review_record_is_not_retried_on_every_normal_reconcile(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
             movie = Path(movies_tmp) / "Actually.Ambiguous.2026.1080p.mkv"

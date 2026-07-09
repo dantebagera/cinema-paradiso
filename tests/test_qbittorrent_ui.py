@@ -111,11 +111,11 @@ class QBittorrentUiTests(unittest.TestCase):
         changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
         package = json.loads((root / "package.json").read_text(encoding="utf-8"))
 
-        self.assertEqual(package["version"], "2.6.7")
-        self.assertIn("v2.6.7", readme)
+        self.assertEqual(package["version"], "2.7.0")
+        self.assertIn("v2.7.0", readme)
         self.assertIn("Help", readme)
         self.assertIn("bundled qbittorrent", readme.lower())
-        self.assertIn("v2.6.7", changelog)
+        self.assertIn("v2.7.0", changelog)
         self.assertIn("Help", changelog)
 
 

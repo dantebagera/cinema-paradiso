@@ -230,6 +230,69 @@ export function listLibraryCoverage(items = [], list = null) {
   };
 }
 
+export function buildMovieListViewModel({
+  libraryItems = [],
+  list = null,
+  query = '',
+  statusFilter = 'all'
+} = {}) {
+  const ownership = new Map();
+  for (const item of libraryItems || []) {
+    const payload = moviePayload(item);
+    for (const key of movieIdentityKeys(payload)) {
+      if (!ownership.has(key)) ownership.set(key, item);
+    }
+  }
+
+  const normalizedQuery = String(query || '').trim().toLowerCase();
+  const rows = (list?.movies || []).map((movie) => {
+    const ownedItem = movieIdentityKeys(movie).map((key) => ownership.get(key)).find(Boolean) || null;
+    const ownedPayload = ownedItem ? moviePayload(ownedItem) : null;
+    const upgrade = Boolean(ownedItem && isLowQuality(ownedItem.resolution));
+    const title = ownedPayload?.title || movie.title || 'Untitled';
+    const year = ownedPayload?.year || String(movie.year || '').trim();
+    const poster = ownedPayload?.poster_url || movie.poster_url || '';
+    return {
+      ...movie,
+      movie: {
+        ...movie,
+        title,
+        year,
+        poster_url: poster
+      },
+      title,
+      year,
+      poster_url: poster,
+      ownedItem,
+      ownedPayload,
+      status: ownedItem ? (upgrade ? 'upgrade' : 'owned') : 'missing',
+      upgrade,
+      quality: ownedItem ? getQualityLabel(ownedItem) : 'Missing from Library',
+      identityKey: movieIdentityKey(movie)
+    };
+  });
+
+  const stats = {
+    total: rows.length,
+    owned: rows.filter((row) => row.ownedItem).length,
+    missing: rows.filter((row) => !row.ownedItem).length,
+    upgrades: rows.filter((row) => row.upgrade).length
+  };
+
+  const filteredRows = rows.filter((row) => {
+    if (normalizedQuery) {
+      const haystack = [row.title, row.year, row.quality].filter(Boolean).join(' ').toLowerCase();
+      if (!haystack.includes(normalizedQuery)) return false;
+    }
+    if (statusFilter === 'owned') return row.status === 'owned';
+    if (statusFilter === 'missing') return row.status === 'missing';
+    if (statusFilter === 'upgrade') return row.status === 'upgrade';
+    return true;
+  });
+
+  return { rows: filteredRows, allRows: rows, stats };
+}
+
 export function movieHasSystemState(item, lists, systemType) {
   return listsForItem(item, lists).some((list) => (
     list.system_type === systemType || list.id === systemType

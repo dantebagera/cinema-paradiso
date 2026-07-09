@@ -6,7 +6,7 @@ Cinema Paradiso is a self-hosted movie library manager for people with hundreds 
 
 Everything runs on your machine. No cloud account. No subscription. No remote database.
 
-**Current version: v2.6.7** - July 2026
+**Current version: v2.7.0** - July 2026
 
 ---
 
@@ -56,16 +56,17 @@ Historical README and DOCS snapshots from earlier versions are preserved in [doc
 
 ---
 
-## What Changed in v2.6.7
+## What Changed in v2.7.0
 
-Cinema Paradiso v2.6.7 tightens source-search reliability, YTS handling, and local release packaging while preserving the v2.6.6 movie-card, trailer, streaming, and unreleased-movie improvements.
+Cinema Paradiso v2.7.0 adds an experimental AI Control workspace for review-first library actions while preserving the v2.6 source-search, qBittorrent, movie-card, trailer, streaming, identity-review, and metadata-repair foundations.
 
-- **Safer source matching:** Explore, source search, and followed-release checks prefer IMDb IDs before title/year fallbacks and reject polluted wrong-title or wrong-year results.
-- **YTS reliability:** trusted YTS/Prowlarr searches now handle YTS title aliases, zero-seeder releases, RSS latest entries, and magnet links built from info hashes when Prowlarr returns redirect-style URLs.
-- **Progressive source search:** slow or timed-out indexers no longer hide fast valid results from other indexers.
-- **Alternative titles:** source searches can use TMDB original and alternative titles for movies whose release title differs from the display title.
-- **Portable release polish:** the v2.6.7 package keeps the tested bundled qBittorrent runtime path and includes refreshed Cinema Paradiso icon assets.
-- **Version display:** the sidebar footer is rebuilt from the `2.6.7` package version so the app UI matches the release tag.
+- **AI Control workspace:** a new sidebar workspace turns plain-language requests into reviewable plans for finding movies, creating lists, planning downloads, and cleanup.
+- **Review-first execution:** AI Control separates preview from execute, requires explicit confirmation for destructive actions, and rejects delete execution if a file changed after preview.
+- **Safer download planning:** AI Control uses trusted Prowlarr indexers, defaults to YTS/YIFY when no trusted source is configured, and skips movies already owned.
+- **Reusable movie cards:** AI Control find results can switch between table and card views and preserve card-ready TMDB/Plex metadata for Discover-style cards and list actions.
+- **Better prompt handling:** vague or malformed prompts return clarification or safe no-match results instead of failing the request.
+- **Large delete guardrails:** high-risk delete plans require a confirmation phrase before execution.
+- **Version display:** the sidebar footer is rebuilt from the `2.7.0` package version so the app UI matches the release tag.
 
 ---
 
@@ -105,18 +106,30 @@ Discover is the online activity area.
 - **Explore Movies:** TMDB lists, genres, search, trailers, stream, sources.
 - **Browse Indexers:** Prowlarr latest/search results with selectable indexer source, resolution, seeders, size, and direct submission to the embedded qBittorrent client.
 - **Pick My Movie:** local Ollama recommendations enriched with TMDB metadata and archive-aware actions.
+- **AI Control handoff:** AI-created find and list results reuse the same card-ready metadata and list workflows used by Discover.
+
+### AI Control
+
+AI Control is an experimental review workspace for natural-language commands.
+
+- Supports find, create-list, download-planning, and delete-planning flows.
+- Shows a preview plan before any action runs.
+- Requires reviewed plan IDs for execution and extra confirmation for large delete plans.
+- Uses trusted Prowlarr indexers for download planning.
+- Keeps blocked rows visible with the reason they were blocked.
+- Never runs a vague command automatically; it asks for clarification.
 
 ### Downloads
 
 Downloads uses the original qBittorrent WebUI inside Cinema Paradiso. The embedded client is isolated from any qBittorrent installation already registered as the operating system's default torrent client.
 
-- The v2.6.7 portable release ZIP includes a tested bundled qBittorrent runtime.
+- The v2.7.0 portable release ZIP includes a tested bundled qBittorrent runtime.
 - Cinema Paradiso submissions are tagged `cinema-paradiso` and download to an incomplete staging folder.
 - At 100%, Cinema Paradiso pauses and removes the torrent without deleting its data, then moves the unchanged payload into the selected movie destination.
 - A blank movie destination uses the first configured library folder.
 - The incomplete folder must remain outside every movie library so Plex and Cinema Paradiso cannot index partial files.
 - Settings can switch torrent handling back to the operating system's default client.
-- qBittorrent install and update are not exposed in v2.6.7; runtime upgrades come through future Cinema Paradiso releases.
+- qBittorrent install and update are not exposed in v2.7.0; runtime upgrades come through future Cinema Paradiso releases.
 
 ### Help
 
@@ -156,7 +169,7 @@ User lists, Watched and Watchlist states, edited collections, followed releases,
 
 ### Windows Quick Start
 
-For normal use, download the `Cinema-Paradiso-2.6.7-Portable.zip` artifact from GitHub Releases, extract it, and run Cinema Paradiso from that folder. The portable release includes the tested bundled qBittorrent runtime.
+For normal use, download the `Cinema-Paradiso-2.7.0-Portable.zip` artifact from GitHub Releases, extract it, and run Cinema Paradiso from that folder. The portable release includes the tested bundled qBittorrent runtime.
 
 The GitHub Source ZIP remains developer-oriented. If you download the source ZIP or clone the repository, double-click `run.bat`.
 
@@ -210,7 +223,7 @@ Example:
 
 Only a movie library folder is required. Integrations are optional.
 
-The v2.6.7 portable release uses bundled qBittorrent. Settings lets you choose embedded qBittorrent or the system default torrent client, plus completed and incomplete folders. qBittorrent install/update controls are intentionally not part of v2.6.7.
+The v2.7.0 portable release uses bundled qBittorrent. Settings lets you choose embedded qBittorrent or the system default torrent client, plus completed and incomplete folders. qBittorrent install/update controls are intentionally not part of v2.7.0.
 
 ---
 

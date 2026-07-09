@@ -1,5 +1,39 @@
 # Changelog
 
+## v2.7.0 - July 2026
+
+Cinema Paradiso v2.7.0 adds an experimental AI Control workspace for review-first natural-language library actions while preserving the v2.6 source-search, qBittorrent, movie-card, trailer, streaming, identity-review, and metadata-repair foundations.
+
+### Added
+
+- AI Control sidebar workspace for plain-language find, create-list, download-planning, and delete-planning requests.
+- AI Control preview and execute APIs with a capability schema for supported actions and safety requirements.
+- Trusted-indexer controls for AI Control download planning, with YTS/YIFY used as the default trusted source when no explicit source is configured.
+- Card and table result views for AI Control find results, including pagination, total counts, list actions, and Discover-style card metadata.
+- Blocked-row reporting so skipped or unsafe rows remain visible with the reason they were blocked.
+- Staged preview-loading messages for long-running AI Control planning.
+
+### Changed
+
+- AI Control plans are review-first: commands produce a preview plan before execution, and execution requires the reviewed plan ID.
+- Download planning skips movies already owned locally and uses trusted Prowlarr sources for source searches.
+- Find and list planning can use TMDB genre, year-range, top-rated, and person-grounded discovery paths.
+- AI Control result rows preserve TMDB and Plex metadata needed by the shared movie-card/list workflow.
+- The sidebar version is rebuilt from the package version and now identifies v2.7.0.
+
+### Fixed
+
+- Vague prompts now return clarification requests instead of running an unintended action.
+- Malformed AI filters return safe no-match previews instead of server errors.
+- Delete execution is rejected if a file changed after the preview plan was created.
+- Large delete plans require an explicit confirmation phrase before execution.
+
+### Notes
+
+- AI Control is experimental and does not run actions automatically.
+- qBittorrent remains the bundled tested runtime path; install/update controls stay disabled in this release.
+- v2.6.7 remains the previous public rollback point before the AI Control release.
+
 ## v2.6.7 - July 2026
 
 Cinema Paradiso v2.6.7 tightens source-search reliability, YTS handling, and local release packaging while preserving the v2.6.6 movie-card, trailer, streaming, and unreleased-movie improvements.
