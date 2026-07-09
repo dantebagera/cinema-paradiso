@@ -22,9 +22,21 @@ Historical README and DOCS snapshots from earlier versions are preserved in [doc
 
 ![Cinema Paradiso Library](screenshots/react-library-movie-view.png)
 
+### Library File View
+
+![Cinema Paradiso Library File View](screenshots/react-library-file-view.png)
+
+### Movie Lists
+
+![Cinema Paradiso Movie Lists](screenshots/react-movie-lists-desktop.png)
+
 ### Cleanup
 
 ![Cleanup Workspace](screenshots/react-cleanup-desktop.png)
+
+### Identity Review
+
+![Cleanup Identity Review](screenshots/react-cleanup-identity-review.png)
 
 ### Discover Movies
 
@@ -37,6 +49,10 @@ Historical README and DOCS snapshots from earlier versions are preserved in [doc
 ### Ask AI
 
 ![Ask AI Recommendations](screenshots/react-discover-ask-ai.png)
+
+### AI Control
+
+![Cinema Paradiso AI Control](screenshots/react-ai-control-desktop.png)
 
 ### Downloads
 
