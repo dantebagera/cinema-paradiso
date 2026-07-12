@@ -2861,14 +2861,68 @@ def _check_followed_releases():
     }
 
 
+_DUPLICATE_MAX_PLEX_GROUP = 4
+
+
+def _duplicate_file_entry(full_path, filename, size, library_root=None):
+    res = get_resolution_from_file(full_path)
+    entry = {
+        'path': full_path,
+        'filename': filename,
+        'size': size,
+        'size_human': format_size(size),
+        'resolution': res,
+        'resolution_rank': get_resolution_rank_str(res),
+        'rip_source': get_rip_source(filename),
+    }
+    if library_root is not None:
+        entry['library_root'] = library_root
+    return entry
+
+
+def _split_bulk_plex_duplicate_groups(group_items, fallback_key_for):
+    # Plex can bulk-match a whole folder to one movie. Oversized Plex-derived
+    # groups are safer when re-bucketed by filename parsing.
+    split_groups = []
+
+    def append_group(group_key, group):
+        if group_key is not None:
+            for existing_key, existing_group in split_groups:
+                if existing_key == group_key:
+                    existing_group.extend(group)
+                    return
+        split_groups.append((group_key, group))
+
+    for group_key, group in group_items:
+        if len(group) > _DUPLICATE_MAX_PLEX_GROUP and any(item.get('_plex_keyed') for item in group):
+            fallback_groups = {}
+            for entry in group:
+                fallback_key = fallback_key_for(entry)
+                if fallback_key[0]:
+                    fallback_groups.setdefault(fallback_key, []).append(entry)
+            for fallback_key, fallback_group in fallback_groups.items():
+                append_group(fallback_key, fallback_group)
+        else:
+            append_group(group_key, group)
+
+    return split_groups
+
+
+def _duplicate_stats(duplicates, total_wasted):
+    extra_copies = sum(len(d['files']) - 1 for d in duplicates)
+    return {
+        'groups': len(duplicates),
+        'extra_copies': extra_copies,
+        'wasted_human': format_size(total_wasted),
+        'wasted_bytes': total_wasted,
+    }
+
+
 def _scan_duplicates_legacy(movies_dir):
     # If Plex assigns more than this many files to the same title+year it has
     # almost certainly bulk-mis-matched them (e.g. whole folder → one wrong film).
     # Fall back to filename parsing for those files.
-    MAX_PLEX_GROUP = 4
-
     groups     = {}   # title_key -> [file_dict, ...]
-    plex_keyed = set()  # title keys that came from Plex metadata
 
     for root, dirs, files in os.walk(movies_dir):
         for file in files:
@@ -2885,34 +2939,23 @@ def _scan_duplicates_legacy(movies_dir):
             plex_data = _plex_cache.get(_norm(full_path), {})
             if plex_data.get('plex_title'):
                 title_key = (plex_data['plex_title'].strip().lower(), str(plex_data.get('plex_year', '')))
-                plex_keyed.add(title_key)
+                plex_keyed = True
             else:
                 title_key = parse_movie_title(file)
+                plex_keyed = False
             if not title_key[0]:
                 continue
-            res = get_resolution_from_file(full_path)
-            groups.setdefault(title_key, []).append({
-                'path': full_path,
-                'filename': file,
-                'size': size,
-                'size_human': format_size(size),
-                'resolution': res,
-                'resolution_rank': get_resolution_rank_str(res),
-                'rip_source': get_rip_source(file),
-            })
-
-    # Detect Plex bulk mis-matches: a Plex-derived group with > MAX_PLEX_GROUP files
-    # means Plex tagged an entire folder as the same movie (wrong). Re-bucket those
-    # files by filename so they appear as individual titles instead.
-    for bad_key in [k for k in plex_keyed if len(groups.get(k, [])) > MAX_PLEX_GROUP]:
-        for entry in groups.pop(bad_key):
-            fallback_key = parse_movie_title(entry['filename'])
-            if fallback_key[0]:
-                groups.setdefault(fallback_key, []).append(entry)
+            entry = _duplicate_file_entry(full_path, file, size)
+            entry['_plex_keyed'] = plex_keyed
+            groups.setdefault(title_key, []).append(entry)
 
     duplicates = []
     total_wasted = 0
-    for (title, year), files in groups.items():
+    group_items = _split_bulk_plex_duplicate_groups(
+        groups.items(),
+        lambda entry: parse_movie_title(entry['filename'])
+    )
+    for (title, year), files in group_items:
         if len(files) < 2:
             continue
         files_sorted = sorted(files, key=lambda x: (x['resolution_rank'], get_rip_rank(x['rip_source']), x['size']), reverse=True)
@@ -2920,6 +2963,8 @@ def _scan_duplicates_legacy(movies_dir):
         wasted = sum(f['size'] for f in files_sorted[1:])
         total_wasted += wasted
         display_title = title.title() + (f' ({year})' if year else '')
+        for item in files_sorted:
+            item.pop('_plex_keyed', None)
         duplicates.append({
             'title': display_title,
             'files': files_sorted,
@@ -2928,20 +2973,12 @@ def _scan_duplicates_legacy(movies_dir):
         })
     duplicates.sort(key=lambda x: x['title'])
 
-    extra_copies = sum(len(d['files']) - 1 for d in duplicates)
-    stats = {
-        'groups': len(duplicates),
-        'extra_copies': extra_copies,
-        'wasted_human': format_size(total_wasted),
-        'wasted_bytes': total_wasted,
-    }
-    return duplicates, stats
+    return duplicates, _duplicate_stats(duplicates, total_wasted)
 
 
 def scan_duplicates(movies_dirs):
     # Multi-root duplicate scanner. Groups are built across every configured
     # library root, so copies on different drives still compare against each other.
-    MAX_PLEX_GROUP = 4
     records = []
     roots = movies_dirs if isinstance(movies_dirs, (list, tuple)) else [movies_dirs]
     store = _metadata_store()
@@ -2981,16 +3018,8 @@ def scan_duplicates(movies_dirs):
                 canonical_year = manual_match.get('year') or tmdb_metadata.get('year') or ''
                 if not (canonical_title or plex_data.get('plex_title') or parsed_title):
                     continue
-                res = get_resolution_from_file(full_path)
-                records.append({
-                    'path': full_path,
-                    'filename': file,
-                    'size': size,
-                    'size_human': format_size(size),
-                    'resolution': res,
-                    'resolution_rank': get_resolution_rank_str(res),
-                    'rip_source': get_rip_source(file),
-                    'library_root': movies_dir,
+                record = _duplicate_file_entry(full_path, file, size, library_root=movies_dir)
+                record.update({
                     'tmdb_id': tmdb_id,
                     'imdb_id': imdb_id,
                     'title': canonical_title,
@@ -3001,19 +3030,16 @@ def scan_duplicates(movies_dirs):
                     'parsed_year': str(parsed_year or ''),
                     '_plex_keyed': bool(plex_data.get('plex_title')),
                 })
+                records.append(record)
 
     identity_groups = group_identity_records(records)
-    groups = []
-    for group in identity_groups:
-        if len(group) > MAX_PLEX_GROUP and any(item.get('_plex_keyed') for item in group):
-            fallback_groups = {}
-            for entry in group:
-                fallback_key = (entry.get('parsed_title', ''), entry.get('parsed_year', ''))
-                if fallback_key[0]:
-                    fallback_groups.setdefault(fallback_key, []).append(entry)
-            groups.extend(fallback_groups.values())
-        else:
-            groups.append(group)
+    groups = [
+        group
+        for _, group in _split_bulk_plex_duplicate_groups(
+            ((None, group) for group in identity_groups),
+            lambda entry: (entry.get('parsed_title', ''), entry.get('parsed_year', ''))
+        )
+    ]
 
     duplicates = []
     total_wasted = 0
@@ -3041,14 +3067,7 @@ def scan_duplicates(movies_dirs):
         })
     duplicates.sort(key=lambda x: x['title'])
 
-    extra_copies = sum(len(d['files']) - 1 for d in duplicates)
-    stats = {
-        'groups': len(duplicates),
-        'extra_copies': extra_copies,
-        'wasted_human': format_size(total_wasted),
-        'wasted_bytes': total_wasted,
-    }
-    return duplicates, stats
+    return duplicates, _duplicate_stats(duplicates, total_wasted)
 
 
 def _auto_sync_plex(force=False):
