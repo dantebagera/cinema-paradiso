@@ -957,6 +957,48 @@ class MetadataStoreError(RuntimeError):
     pass
 
 
+def _accepted_identity_record_patch(
+    current_record,
+    identity,
+    *,
+    provider,
+    source,
+    facts=None,
+    manual_lock=False,
+    manual_locked=None,
+    metadata_status='accepted',
+    metadata_source=None,
+    metadata_accepted=True,
+    migration_status=None,
+    identity_decision_version=None,
+    extra=None,
+):
+    patch = {
+        **(facts or {}),
+        **accepted_identity_patch(
+            current_record,
+            identity,
+            source=source,
+            manual_lock=manual_lock,
+        ),
+        'display_provider': provider,
+        'metadata_status': metadata_status,
+        'metadata_source': metadata_source or source,
+        'metadata_accepted': bool(metadata_accepted),
+    }
+    if manual_locked is not None:
+        patch['manual_locked'] = bool(manual_locked)
+    elif manual_lock:
+        patch['manual_locked'] = True
+    if migration_status is not None:
+        patch['migration_status'] = migration_status
+    if identity_decision_version is not None:
+        patch['identity_decision_version'] = identity_decision_version
+    if extra:
+        patch.update(extra)
+    return patch
+
+
 class AppMetadataStore:
     _lock_guard = threading.Lock()
     _path_locks = {}
@@ -1235,19 +1277,14 @@ class AppMetadataStore:
                 return match
             self._mutate_json(self.manual_matches_file, {'matches': {}}, mutate)
             current = self._read_json(self.files_file, {'files': {}}).get('files', {}).get(key, {})
-            self.update_file_record(path, {
-                **accepted_identity_patch(
-                    current,
-                    metadata,
-                    source='manual_tmdb',
-                    manual_lock=True,
-                ),
-                'display_provider': 'tmdb',
-                'metadata_source': 'manual_tmdb',
-                'metadata_accepted': True,
-                'manual_locked': True,
-                'migration_status': 'matched',
-            })
+            self.update_file_record(path, _accepted_identity_record_patch(
+                current,
+                metadata,
+                provider='tmdb',
+                source='manual_tmdb',
+                manual_lock=True,
+                migration_status='matched',
+            ))
             return match
 
     def apply_plex_match(self, path, plex_metadata):
@@ -1268,21 +1305,21 @@ class AppMetadataStore:
                 return match
             self._mutate_json(self.manual_matches_file, {'matches': {}}, mutate)
             current = self._read_json(self.files_file, {'files': {}}).get('files', {}).get(key, {})
-            self.update_file_record(path, {
-                **accepted_identity_patch(current, {
+            self.update_file_record(path, _accepted_identity_record_patch(
+                current,
+                {
                     'title': saved.get('plex_title', ''),
                     'year': saved.get('plex_year', ''),
                     'tmdb_id': saved.get('tmdb_id', ''),
                     'imdb_id': saved.get('imdb_id', ''),
                     'plex_guid': saved.get('plex_guid', ''),
                     'rating_key': saved.get('rating_key', ''),
-                }, source='manual_plex', manual_lock=True),
-                'display_provider': 'plex',
-                'metadata_source': 'manual_plex',
-                'metadata_accepted': True,
-                'manual_locked': True,
-                'migration_status': 'matched',
-            })
+                },
+                provider='plex',
+                source='manual_plex',
+                manual_lock=True,
+                migration_status='matched',
+            ))
             return {**match, **saved}
 
     def get_manual_match(self, path):
@@ -2125,6 +2162,39 @@ def _iter_video_files():
                     yield movies_dir, root, file, os.path.join(root, file)
 
 
+def _video_file_facts(movies_dir, filename, full_path, *, include_timestamps=False, probe_resolution=True):
+    try:
+        size = os.path.getsize(full_path)
+        size_known = True
+    except OSError:
+        size = 0
+        size_known = False
+
+    parsed_title, parsed_year = parse_movie_title(filename)
+    facts = {
+        'path': full_path,
+        'filename': filename,
+        'library_root': movies_dir,
+        'parsed_title': parsed_title,
+        'parsed_year': parsed_year,
+        'resolution': get_resolution_from_file(full_path) if probe_resolution else get_resolution(filename),
+        'rip_source': get_rip_source(filename),
+        'size': size,
+        'size_known': size_known,
+        'size_human': format_size(size),
+    }
+    if include_timestamps:
+        try:
+            facts['added_time'] = os.path.getctime(full_path)
+        except OSError:
+            facts['added_time'] = 0
+        try:
+            facts['modified_time'] = os.path.getmtime(full_path)
+        except OSError:
+            facts['modified_time'] = 0
+    return facts
+
+
 def _walk_movie_dirs():
     for movies_dir in _iter_movie_roots():
         for root, dirs, files in os.walk(movies_dir):
@@ -2824,14 +2894,68 @@ def _check_followed_releases():
     }
 
 
+_DUPLICATE_MAX_PLEX_GROUP = 4
+
+
+def _duplicate_file_entry(full_path, filename, size, library_root=None):
+    res = get_resolution_from_file(full_path)
+    entry = {
+        'path': full_path,
+        'filename': filename,
+        'size': size,
+        'size_human': format_size(size),
+        'resolution': res,
+        'resolution_rank': get_resolution_rank_str(res),
+        'rip_source': get_rip_source(filename),
+    }
+    if library_root is not None:
+        entry['library_root'] = library_root
+    return entry
+
+
+def _split_bulk_plex_duplicate_groups(group_items, fallback_key_for, *, merge_keys=False):
+    # Plex can bulk-match a whole folder to one movie. Oversized Plex-derived
+    # groups are safer when re-bucketed by filename parsing.
+    split_groups = []
+
+    def append_group(group_key, group):
+        if merge_keys and group_key is not None:
+            for existing_key, existing_group in split_groups:
+                if existing_key == group_key:
+                    existing_group.extend(group)
+                    return
+        split_groups.append((group_key, group))
+
+    for group_key, group in group_items:
+        if len(group) > _DUPLICATE_MAX_PLEX_GROUP and any(item.get('_plex_keyed') for item in group):
+            fallback_groups = {}
+            for entry in group:
+                fallback_key = fallback_key_for(entry)
+                if fallback_key[0]:
+                    fallback_groups.setdefault(fallback_key, []).append(entry)
+            for fallback_key, fallback_group in fallback_groups.items():
+                append_group(fallback_key, fallback_group)
+        else:
+            append_group(group_key, group)
+
+    return split_groups
+
+
+def _duplicate_stats(duplicates, total_wasted):
+    extra_copies = sum(len(d['files']) - 1 for d in duplicates)
+    return {
+        'groups': len(duplicates),
+        'extra_copies': extra_copies,
+        'wasted_human': format_size(total_wasted),
+        'wasted_bytes': total_wasted,
+    }
+
+
 def _scan_duplicates_legacy(movies_dir):
     # If Plex assigns more than this many files to the same title+year it has
     # almost certainly bulk-mis-matched them (e.g. whole folder → one wrong film).
     # Fall back to filename parsing for those files.
-    MAX_PLEX_GROUP = 4
-
     groups     = {}   # title_key -> [file_dict, ...]
-    plex_keyed = set()  # title keys that came from Plex metadata
 
     for root, dirs, files in os.walk(movies_dir):
         for file in files:
@@ -2848,34 +2972,24 @@ def _scan_duplicates_legacy(movies_dir):
             plex_data = _plex_cache.get(_norm(full_path), {})
             if plex_data.get('plex_title'):
                 title_key = (plex_data['plex_title'].strip().lower(), str(plex_data.get('plex_year', '')))
-                plex_keyed.add(title_key)
+                plex_keyed = True
             else:
                 title_key = parse_movie_title(file)
+                plex_keyed = False
             if not title_key[0]:
                 continue
-            res = get_resolution_from_file(full_path)
-            groups.setdefault(title_key, []).append({
-                'path': full_path,
-                'filename': file,
-                'size': size,
-                'size_human': format_size(size),
-                'resolution': res,
-                'resolution_rank': get_resolution_rank_str(res),
-                'rip_source': get_rip_source(file),
-            })
-
-    # Detect Plex bulk mis-matches: a Plex-derived group with > MAX_PLEX_GROUP files
-    # means Plex tagged an entire folder as the same movie (wrong). Re-bucket those
-    # files by filename so they appear as individual titles instead.
-    for bad_key in [k for k in plex_keyed if len(groups.get(k, [])) > MAX_PLEX_GROUP]:
-        for entry in groups.pop(bad_key):
-            fallback_key = parse_movie_title(entry['filename'])
-            if fallback_key[0]:
-                groups.setdefault(fallback_key, []).append(entry)
+            entry = _duplicate_file_entry(full_path, file, size)
+            entry['_plex_keyed'] = plex_keyed
+            groups.setdefault(title_key, []).append(entry)
 
     duplicates = []
     total_wasted = 0
-    for (title, year), files in groups.items():
+    group_items = _split_bulk_plex_duplicate_groups(
+        groups.items(),
+        lambda entry: parse_movie_title(entry['filename']),
+        merge_keys=True,
+    )
+    for (title, year), files in group_items:
         if len(files) < 2:
             continue
         files_sorted = sorted(files, key=lambda x: (x['resolution_rank'], get_rip_rank(x['rip_source']), x['size']), reverse=True)
@@ -2883,6 +2997,8 @@ def _scan_duplicates_legacy(movies_dir):
         wasted = sum(f['size'] for f in files_sorted[1:])
         total_wasted += wasted
         display_title = title.title() + (f' ({year})' if year else '')
+        for item in files_sorted:
+            item.pop('_plex_keyed', None)
         duplicates.append({
             'title': display_title,
             'files': files_sorted,
@@ -2891,20 +3007,12 @@ def _scan_duplicates_legacy(movies_dir):
         })
     duplicates.sort(key=lambda x: x['title'])
 
-    extra_copies = sum(len(d['files']) - 1 for d in duplicates)
-    stats = {
-        'groups': len(duplicates),
-        'extra_copies': extra_copies,
-        'wasted_human': format_size(total_wasted),
-        'wasted_bytes': total_wasted,
-    }
-    return duplicates, stats
+    return duplicates, _duplicate_stats(duplicates, total_wasted)
 
 
 def scan_duplicates(movies_dirs):
     # Multi-root duplicate scanner. Groups are built across every configured
     # library root, so copies on different drives still compare against each other.
-    MAX_PLEX_GROUP = 4
     records = []
     roots = movies_dirs if isinstance(movies_dirs, (list, tuple)) else [movies_dirs]
     store = _metadata_store()
@@ -2944,16 +3052,8 @@ def scan_duplicates(movies_dirs):
                 canonical_year = manual_match.get('year') or tmdb_metadata.get('year') or ''
                 if not (canonical_title or plex_data.get('plex_title') or parsed_title):
                     continue
-                res = get_resolution_from_file(full_path)
-                records.append({
-                    'path': full_path,
-                    'filename': file,
-                    'size': size,
-                    'size_human': format_size(size),
-                    'resolution': res,
-                    'resolution_rank': get_resolution_rank_str(res),
-                    'rip_source': get_rip_source(file),
-                    'library_root': movies_dir,
+                record = _duplicate_file_entry(full_path, file, size, library_root=movies_dir)
+                record.update({
                     'tmdb_id': tmdb_id,
                     'imdb_id': imdb_id,
                     'title': canonical_title,
@@ -2964,19 +3064,16 @@ def scan_duplicates(movies_dirs):
                     'parsed_year': str(parsed_year or ''),
                     '_plex_keyed': bool(plex_data.get('plex_title')),
                 })
+                records.append(record)
 
     identity_groups = group_identity_records(records)
-    groups = []
-    for group in identity_groups:
-        if len(group) > MAX_PLEX_GROUP and any(item.get('_plex_keyed') for item in group):
-            fallback_groups = {}
-            for entry in group:
-                fallback_key = (entry.get('parsed_title', ''), entry.get('parsed_year', ''))
-                if fallback_key[0]:
-                    fallback_groups.setdefault(fallback_key, []).append(entry)
-            groups.extend(fallback_groups.values())
-        else:
-            groups.append(group)
+    groups = [
+        group
+        for _, group in _split_bulk_plex_duplicate_groups(
+            ((None, group) for group in identity_groups),
+            lambda entry: (entry.get('parsed_title', ''), entry.get('parsed_year', ''))
+        )
+    ]
 
     duplicates = []
     total_wasted = 0
@@ -3004,14 +3101,7 @@ def scan_duplicates(movies_dirs):
         })
     duplicates.sort(key=lambda x: x['title'])
 
-    extra_copies = sum(len(d['files']) - 1 for d in duplicates)
-    stats = {
-        'groups': len(duplicates),
-        'extra_copies': extra_copies,
-        'wasted_human': format_size(total_wasted),
-        'wasted_bytes': total_wasted,
-    }
-    return duplicates, stats
+    return duplicates, _duplicate_stats(duplicates, total_wasted)
 
 
 def _auto_sync_plex(force=False):
@@ -4293,18 +4383,14 @@ def library():
             n += 1
             if n % 50 == 0:
                 _library_status = f'Reading metadata\u2026 {n}\u00a0/\u00a0{total}'
-            try:
-                size = os.path.getsize(full_path)
-                added_time = os.path.getctime(full_path)
-                modified_time = os.path.getmtime(full_path)
-            except OSError:
-                size = 0
-                added_time = 0
-                modified_time = 0
-            res = get_resolution_from_file(full_path)
-            rip = get_rip_source(file)
-            title_key = parse_movie_title(file)
-            parsed_title, parsed_year = title_key
+            file_facts = _video_file_facts(movies_dir, file, full_path, include_timestamps=True)
+            size = file_facts['size']
+            added_time = file_facts['added_time']
+            modified_time = file_facts['modified_time']
+            res = file_facts['resolution']
+            rip = file_facts['rip_source']
+            parsed_title = file_facts['parsed_title']
+            parsed_year = file_facts['parsed_year']
             fallback_title = parsed_title.title() if parsed_title else os.path.splitext(file)[0]
             display_title = fallback_title + (f' ({parsed_year})' if parsed_year else '')
             norm_path = _norm(full_path)
@@ -4316,18 +4402,6 @@ def library():
             )
             if plex_poster:
                 plex_data['plex_poster'] = plex_poster
-            file_facts = {
-                'path': full_path,
-                'filename': file,
-                'library_root': movies_dir,
-                'parsed_title': parsed_title,
-                'parsed_year': parsed_year,
-                'resolution': res,
-                'rip_source': rip,
-                'size': size,
-                'added_time': added_time,
-                'modified_time': modified_time,
-            }
             manual_match = store.get_manual_match_from_snapshot(full_path, metadata_snapshot)
             file_record = metadata_snapshot.get('files', {}).get(store._key(full_path), {})
             file_facts['ingest_status'] = file_record.get('ingest_status', '')
@@ -4437,14 +4511,11 @@ def _library_check_v26():
         items_src = _library_cache['items']
     else:
         items_src = []
-        for _, _, file, full_path in _iter_video_files():
-            try:
-                size = os.path.getsize(full_path)
-            except OSError:
-                size = 0
-            parsed_title, parsed_year = parse_movie_title(file)
+        for movies_dir, _, file, full_path in _iter_video_files():
+            file_facts = _video_file_facts(movies_dir, file, full_path, probe_resolution=False)
+            parsed_title = file_facts['parsed_title']
+            parsed_year = file_facts['parsed_year']
             plex_data = dict(_plex_cache.get(_norm(full_path), {}) or _plex_matched_by_fname.get(file.lower(), {}) or {})
-            file_facts = {'path': full_path, 'filename': file, 'parsed_title': parsed_title, 'parsed_year': parsed_year}
             tmdb_data = _tmdb_metadata_for_file(file_facts, plex_data=plex_data, store=store,
                                                 refresh=False, snapshot=metadata_snapshot)
             file_record = metadata_snapshot.get('files', {}).get(store._key(full_path), {})
@@ -4478,9 +4549,9 @@ def _library_check_v26():
             items_src.append({
                 'path': full_path,
                 'filename': file,
-                'resolution': get_resolution(file),
-                'size_human': format_size(size),
-                'size': size,
+                'resolution': file_facts['resolution'],
+                'size_human': file_facts['size_human'],
+                'size': file_facts['size'],
                 'plex_title': plex_data.get('plex_title', ''),
                 'plex_year': str(plex_data.get('plex_year', '') or ''),
                 'plex_matched': bool(plex_data),
@@ -4590,139 +4661,6 @@ def _library_check_v26():
 @app.route('/api/library/check', methods=['POST'])
 def library_check():
     return _library_check_v26()
-    """Check which of the supplied movies exist in the local library.
-
-    Request body: {"movies": [{"title": "Inception", "year": "2010"}, …]}
-    Response:     {"results": [{"title": …, "year": …, "found": bool,
-                                "path": …, "resolution": …, "size_human": …}]}
-    Matching uses normalised title comparison (lowercase, no punctuation, no
-    leading article) against plex_title+plex_year first, then parsed filename
-    title+year.  Returns found:false for all entries when movies_dir is not set.
-    """
-    import re as _re_local
-
-    def _norm_title(t):
-        """Lowercase, strip punctuation, strip leading 'the/a/an '."""
-        if not t:
-            return ''
-        t = str(t).lower()
-        t = _re_local.sub(r'[^\w\s]', '', t)   # strip punctuation
-        t = _re_local.sub(r'\s+', ' ', t).strip()
-        t = _re_local.sub(r'^(the|a|an) ', '', t)
-        return t
-
-    try:
-        body = request.get_json(force=True, silent=True) or {}
-        queries = body.get('movies', [])
-        if not queries:
-            return jsonify({'results': []})
-
-        cache_key = _library_cache_key()
-        if not any(True for _ in _iter_movie_roots()):
-            return jsonify({'results': [
-                {'title': q.get('title', ''), 'year': str(q.get('year', '')),
-                 'found': False, 'path': '', 'resolution': '', 'size_human': ''}
-                for q in queries
-            ]})
-
-        # Build lookup: (norm_title, norm_year) -> best file info dict
-        # Use library cache if fresh, else walk the directory (no deep scan needed)
-        _auto_sync_plex(force=False)
-        lookup = {}  # (norm_title, norm_year) -> {path, resolution, size_human}
-
-        if (_library_cache.get('items') is not None
-                and _library_cache.get('dir') == cache_key
-                and time.time() - _library_cache.get('time', 0) < _LIBRARY_TTL):
-            items_src = _library_cache['items']
-        else:
-            # Light scan: just filenames + plex cache, no resolution probing
-            items_src = []
-            for _, _, file, full_path in _iter_video_files():
-                try:
-                    size = os.path.getsize(full_path)
-                except OSError:
-                    size = 0
-                # Ownership checks must stay fast. Use filename-derived
-                # resolution for duplicate ranking, then probe only the
-                # matched file before returning it.
-                res = get_resolution(file)
-                parsed_title, parsed_year = parse_movie_title(file)
-                norm_path = _norm(full_path)
-                plex_data = _plex_cache.get(norm_path, {})
-                items_src.append({
-                    'path': full_path,
-                    'resolution': res,
-                    'size_human': format_size(size),
-                    'plex_title': plex_data.get('plex_title', ''),
-                    'plex_year': str(plex_data.get('plex_year', '')),
-                    'plex_matched': bool(plex_data),
-                    '_parsed_title': parsed_title,
-                    '_parsed_year': parsed_year,
-                })
-
-        for item in items_src:
-            path = item.get('path', '')
-            if not path or not os.path.isfile(path):
-                continue
-            parsed_title = item.get('_parsed_title')
-            parsed_year = item.get('_parsed_year')
-            if (not parsed_title or parsed_year is None) and item.get('filename'):
-                parsed_title, parsed_year = parse_movie_title(item['filename'])
-            if not parsed_title and item.get('title'):
-                display_title, display_year = parse_movie_title(item['title'])
-                parsed_title = display_title or item.get('title', '')
-                parsed_year = parsed_year or display_year
-            # Prefer Plex-matched title/year as primary key
-            if item.get('plex_matched') and item.get('plex_title'):
-                key = (_norm_title(item['plex_title']), str(item.get('plex_year', '')).strip())
-            else:
-                key = (_norm_title(parsed_title or ''),
-                       str(parsed_year or '').strip())
-            # Keep the highest-resolution copy per title
-            existing = lookup.get(key)
-            cur_rank = get_resolution_rank_str(item['resolution'])
-            if existing is None or cur_rank > get_resolution_rank_str(existing['resolution']):
-                lookup[key] = {
-                    'path': item['path'],
-                    'resolution': item['resolution'],
-                    'size_human': item['size_human'],
-                }
-
-        results = []
-        for q in queries:
-            qt = _norm_title(q.get('title', ''))
-            qy = str(q.get('year', '')).strip()
-            # Try exact title+year first. Only fall back to title-only when the
-            # query itself has no year; otherwise remakes/upcoming films can
-            # false-match older local files.
-            match = lookup.get((qt, qy))
-            if match is None and not qy:
-                for (kt, ky), v in lookup.items():
-                    if kt == qt:
-                        match = v
-                        break
-            if match and match.get('path') and os.path.isfile(match['path']):
-                match_resolution = get_resolution_from_file(match['path'])
-                results.append({
-                    'title': q.get('title', ''),
-                    'year': q.get('year', ''),
-                    'found': True,
-                    'path': match['path'],
-                    'resolution': match_resolution,
-                    'size_human': match['size_human'],
-                })
-            else:
-                results.append({
-                    'title': q.get('title', ''),
-                    'year': q.get('year', ''),
-                    'found': False,
-                    'path': '',
-                    'resolution': '',
-                    'size_human': '',
-                })
-        return jsonify({'results': results})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
 
 
 @app.route('/api/low-quality')
@@ -4733,19 +4671,18 @@ def low_quality():
         _auto_sync_plex(force=request.args.get('force_plex') == '1')
         items = []
         for movies_dir, root, file, full_path in _iter_video_files():
-            try:
-                size = os.path.getsize(full_path)
-            except OSError:
-                size = 0
-            res = get_resolution_from_file(full_path)
+            file_facts = _video_file_facts(movies_dir, file, full_path)
+            size = file_facts['size']
+            res = file_facts['resolution']
             res_rank = get_resolution_rank_str(res)
-            rip = get_rip_source(file)
-            title_key = parse_movie_title(file)
-            if not title_key[0]:
+            rip = file_facts['rip_source']
+            if not file_facts['parsed_title']:
                 continue
             is_low = res_rank < MIN_RES_RANK
             if is_low:
-                display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
+                display_title = file_facts['parsed_title'].title() + (
+                    f" ({file_facts['parsed_year']})" if file_facts['parsed_year'] else ''
+                )
                 norm_path = _norm(full_path)
                 plex_data = _plex_cache.get(norm_path, {})
                 items.append({
@@ -4849,26 +4786,25 @@ def library_stats():
         RES_RANK = {'4K': 4, '1080p': 3, '720p': 2, '480p': 1, 'Unknown': 0}
 
         for movies_dir, root, file, full_path in _iter_video_files():
-            try:
-                size = os.path.getsize(full_path)
-            except OSError:
-                size = 0
-            res = get_resolution_from_file(full_path)
-            rip = get_rip_source(file)
-            title_key = parse_movie_title(file)
-            if title_key[0]:
-                title_set.add(title_key)
-            display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
+            file_facts = _video_file_facts(movies_dir, file, full_path)
+            size = file_facts['size']
+            res = file_facts['resolution']
+            rip = file_facts['rip_source']
+            parsed_title = file_facts['parsed_title']
+            parsed_year = file_facts['parsed_year']
+            if parsed_title:
+                title_set.add((parsed_title, parsed_year))
+            display_title = parsed_title.title() + (f' ({parsed_year})' if parsed_year else '')
             all_files.append({
                 'title': display_title,
                 'filename': file,
                 'path': full_path,
                 'library_root': movies_dir,
                 'size': size,
-                'size_human': format_size(size),
+                'size_human': file_facts['size_human'],
                 'resolution': res,
                 'rip_source': rip,
-                'year': title_key[1],
+                'year': parsed_year,
             })
             br = by_resolution.setdefault(res, {'count': 0, 'size': 0})
             br['count'] += 1
@@ -4876,9 +4812,9 @@ def library_stats():
             bs = by_source.setdefault(rip, {'count': 0, 'size': 0})
             bs['count'] += 1
             bs['size'] += size
-            if title_key[1]:
+            if parsed_year:
                 try:
-                    decade = f"{(int(title_key[1]) // 10) * 10}s"
+                    decade = f"{(int(parsed_year) // 10) * 10}s"
                 except ValueError:
                     decade = 'Unknown'
             else:
@@ -4926,11 +4862,12 @@ def library_stats():
                 or _plex_matched_by_fname.get(file_info['filename'].lower(), {})
                 or {}
             )
+            parsed_title, parsed_year = parse_movie_title(file_info['filename'])
             file_facts = {
                 'path': path,
                 'filename': file_info['filename'],
-                'parsed_title': parse_movie_title(file_info['filename'])[0],
-                'parsed_year': parse_movie_title(file_info['filename'])[1],
+                'parsed_title': parsed_title,
+                'parsed_year': parsed_year,
                 'ingest_status': record.get('ingest_status', ''),
                 'stored_metadata_status': record.get('metadata_status', ''),
             }
@@ -5043,14 +4980,14 @@ def _fix_unmatched_v26():
             if ext not in VIDEO_EXTENSIONS:
                 continue
             full_path = os.path.join(root, file)
+            file_facts = _video_file_facts(movies_dir, file, full_path, include_timestamps=True)
             norm_path = _norm(full_path)
             fname_lower = file.lower()
-            title_key = parse_movie_title(file)
-            unparseable = not title_key[0]
-            suggested_title = title_key[0].title() if title_key[0] else ''
-            suggested_year = title_key[1] if title_key else ''
-            orig_res = get_resolution_from_file(full_path)
-            orig_rip = get_rip_source(file)
+            unparseable = not file_facts['parsed_title']
+            suggested_title = file_facts['parsed_title'].title() if file_facts['parsed_title'] else ''
+            suggested_year = file_facts['parsed_year']
+            orig_res = file_facts['resolution']
+            orig_rip = file_facts['rip_source']
             quality_tag = ' '.join(t for t in [orig_res, orig_rip] if t and t != 'Unknown')
             suggested_name = suggested_title + (f' ({suggested_year})' if suggested_year else '')
             if quality_tag:
@@ -5061,20 +4998,6 @@ def _fix_unmatched_v26():
             plex_thumb = plex_data.get('plex_thumb', '')
             if plex_thumb and _plex_url and _plex_token:
                 plex_data['plex_poster'] = f"{_plex_url}{plex_thumb}?X-Plex-Token={_plex_token}"
-            try:
-                added_time = os.path.getctime(full_path)
-            except OSError:
-                added_time = 0
-            file_facts = {
-                'path': full_path,
-                'filename': file,
-                'library_root': movies_dir,
-                'parsed_title': title_key[0],
-                'parsed_year': title_key[1],
-                'resolution': orig_res,
-                'rip_source': orig_rip,
-                'added_time': added_time,
-            }
             file_record = metadata_snapshot.get('files', {}).get(store._key(full_path), {})
             file_facts['ingest_status'] = file_record.get('ingest_status', '')
             file_facts['stored_metadata_status'] = file_record.get('metadata_status', '')
@@ -5100,10 +5023,7 @@ def _fix_unmatched_v26():
                 continue
             rel_depth = len(os.path.relpath(full_path, movies_dir).split(os.sep)) - 1
             metadata_hint = _metadata_hint_for_unmatched(canonical.get('status'), plex_entry, tmdb_data, rel_depth, unparseable)
-            try:
-                file_size = _fmt_size(os.path.getsize(full_path))
-            except OSError:
-                file_size = '?'
+            file_size = _fmt_size(file_facts['size']) if file_facts.get('size_known') else '?'
             items.append({
                 'filename': file,
                 'path': full_path,
@@ -5139,69 +5059,6 @@ def _fix_unmatched_v26():
 @app.route('/api/fix-unmatched')
 def fix_unmatched():
     return _fix_unmatched_v26()
-    try:
-        _auto_sync_plex(force=request.args.get('force_plex') == '1')
-        items = []
-        for movies_dir, root, dirs, files in _walk_movie_dirs():
-            for file in files:
-                ext = os.path.splitext(file)[1].lower()
-                if ext not in VIDEO_EXTENSIONS:
-                    continue
-                full_path  = os.path.join(root, file)
-                norm_path  = _norm(full_path)
-                fname_lower = file.lower()
-                # Skip if already matched — full-path lookup first, filename fallback second
-                if norm_path in _plex_cache or fname_lower in _plex_matched_by_fname:
-                    continue
-                title_key = parse_movie_title(file)
-                unparseable = not title_key[0]
-                suggested_title = title_key[0].title() if title_key[0] else ''
-                suggested_year  = title_key[1] if title_key else ''
-                orig_res = get_resolution_from_file(full_path)
-                orig_rip = get_rip_source(file)
-                quality_tag = ' '.join(t for t in [orig_res, orig_rip] if t and t != 'Unknown')
-                suggested_name = suggested_title + (f' ({suggested_year})' if suggested_year else '')
-                if quality_tag:
-                    suggested_name += f' [{quality_tag}]'
-                suggested_name += ext
-                # Look up Plex entry — full-path first, filename fallback second
-                plex_entry = _plex_unmatched.get(norm_path) or \
-                             _plex_unmatched_by_fname.get(fname_lower, {})
-                rel_depth = len(os.path.relpath(full_path, movies_dir).split(os.sep)) - 1
-                # Build a diagnostic hint so the UI can explain WHY the file is unmatched
-                if plex_entry:
-                    plex_hint = 'Plex found the file but has no metadata match — use Match in Plex'
-                elif rel_depth > 1:
-                    plex_hint = (f'Folder is {rel_depth} levels deep — Plex skips it. '
-                                 'Use Fix Path to move it up')
-                elif unparseable:
-                    plex_hint = 'Filename cannot be parsed — rename it so Plex can identify it'
-                else:
-                    plex_hint = 'Plex has not indexed this file yet — try Scan Plex Library'
-                items.append({
-                    'filename': file,
-                    'path': full_path,
-                    'library_root': movies_dir,
-                    'suggested_title': suggested_title,
-                    'suggested_year':  suggested_year,
-                    'suggested_name':  suggested_name,
-                    'resolution': orig_res,
-                    'rip_source': orig_rip,
-                    'file_size': _fmt_size(os.path.getsize(full_path)),
-                    'folder':    root,
-                    'depth': rel_depth,
-                    'fixable_path': rel_depth > 1,
-                    'in_plex':    bool(plex_entry),
-                    'rating_key': plex_entry.get('rating_key', ''),
-                    'plex_title': plex_entry.get('plex_title', ''),
-                    'unparseable': unparseable,
-                    'plex_hint':   plex_hint,
-                })
-        items.sort(key=lambda x: x['filename'].lower())
-        return jsonify({'items': items, 'count': len(items),
-                        'plex_enabled': bool(_plex_token)})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
 
 
 @app.route('/api/rename-file', methods=['POST'])
@@ -5568,23 +5425,24 @@ def plex_match_apply():
             'plex_summary': str(data.get('summary', '') or ''),
         })
         current_record = store.snapshot().get('files', {}).get(store._key(abs_path), {})
-        store.update_file_record(abs_path, {
-            **facts,
-            **accepted_identity_patch(current_record, {
+        store.update_file_record(abs_path, _accepted_identity_record_patch(
+            current_record,
+            {
                 'title': name,
                 'year': str(data.get('year', '') or ''),
                 'plex_guid': guid,
                 'rating_key': rating_key,
-            }, source='manual_plex', manual_lock=True),
-            'display_provider': 'plex',
-            'metadata_status': 'accepted',
-            'metadata_source': 'manual_plex',
-            'metadata_accepted': True,
-            'rating_key': rating_key,
-            'plex_guid': guid,
-            'manual_locked': True,
-            'migration_status': 'matched',
-        })
+            },
+            provider='plex',
+            source='manual_plex',
+            facts=facts,
+            manual_lock=True,
+            migration_status='matched',
+            extra={
+                'rating_key': rating_key,
+                'plex_guid': guid,
+            },
+        ))
         _resolve_identity_audit_path(abs_path)
         _library_cache = {}
         return jsonify({'success': True, 'match': match})
@@ -6159,9 +6017,10 @@ def tmdb_match_apply():
         match = store.apply_tmdb_match(abs_path, metadata)
         parsed_title, parsed_year = parse_movie_title(os.path.basename(abs_path))
         current_record = store.snapshot().get('files', {}).get(store._key(abs_path), {})
-        identity_patch = accepted_identity_patch(
+        identity_patch = _accepted_identity_record_patch(
             current_record,
             metadata,
+            provider='tmdb',
             source='manual_tmdb',
             manual_lock=True,
         )
@@ -6174,15 +6033,14 @@ def tmdb_match_apply():
             file_record={**current_record, **identity_patch},
         )
         store.update_file_record(abs_path, {
+            **identity_patch,
             'path': abs_path,
             'filename': os.path.basename(abs_path),
             'parsed_title': parsed_title,
             'parsed_year': parsed_year,
-            **identity_patch,
             'metadata_status': canonical.get('status', 'accepted'),
             'metadata_source': canonical.get('source', 'manual_tmdb'),
             'metadata_accepted': bool(canonical.get('accepted')),
-            'display_provider': 'tmdb',
         })
         _resolve_identity_audit_path(abs_path)
         _library_cache.pop('items', None)
@@ -7218,30 +7076,63 @@ def _accepted_tmdb_migration_metadata(path, file_facts, plex_data, store):
     return {}, False
 
 
+def _query_from_parsed(parsed, source):
+    if isinstance(parsed, tuple):
+        title, year = parsed
+        parsed = {'title': title, 'year': year}
+    query = dict(parsed or {})
+    if not query.get('title'):
+        return {}
+    return {
+        **query,
+        'title': str(query.get('title') or ''),
+        'year': str(query.get('year') or ''),
+        'source': source,
+    }
+
+
+def _append_parsed_query(queries, parsed, source):
+    query = _query_from_parsed(parsed, source)
+    if query:
+        queries.append(query)
+
+
+def _append_folder_query(queries, path, parser):
+    library_root = _path_library_root(path)
+    parent = os.path.dirname(path)
+    if library_root and _norm(parent) != _norm(library_root):
+        _append_parsed_query(queries, parser(os.path.basename(parent)), 'folder')
+
+
+def _dedupe_title_year_queries(queries):
+    unique = []
+    seen = set()
+    for query in queries:
+        key = (
+            _norm_movie_title(query.get('title', '')),
+            str(query.get('year', '') or ''),
+        )
+        if not key[0] or key in seen:
+            continue
+        seen.add(key)
+        unique.append(query)
+    return unique
+
+
 def _identity_queries(path, file_facts=None, plex_data=None):
     file_facts = file_facts or _metadata_file_facts(path)
     plex_data = plex_data or {}
     queries = []
-    for title, year, source in (
-        (file_facts.get('parsed_title'), file_facts.get('parsed_year'), 'filename'),
-        (plex_data.get('plex_title'), plex_data.get('plex_year'), 'plex_hint'),
-    ):
-        if title:
-            queries.append({'title': str(title), 'year': str(year or ''), 'source': source})
-    library_root = _path_library_root(path)
-    parent = os.path.dirname(path)
-    if library_root and _norm(parent) != _norm(library_root):
-        folder_title, folder_year = parse_movie_title(os.path.basename(parent))
-        if folder_title:
-            queries.append({'title': folder_title, 'year': str(folder_year or ''), 'source': 'folder'})
-    unique = []
-    seen = set()
-    for query in queries:
-        key = (_norm_movie_title(query['title']), query['year'])
-        if key[0] and key not in seen:
-            seen.add(key)
-            unique.append(query)
-    return unique
+    _append_parsed_query(queries, {
+        'title': file_facts.get('parsed_title'),
+        'year': file_facts.get('parsed_year'),
+    }, 'filename')
+    _append_parsed_query(queries, {
+        'title': plex_data.get('plex_title'),
+        'year': plex_data.get('plex_year'),
+    }, 'plex_hint')
+    _append_folder_query(queries, path, parse_movie_title)
+    return _dedupe_title_year_queries(queries)
 
 
 def _identity_tmdb_candidates(queries):
@@ -7300,44 +7191,46 @@ def _migrate_locked_manual_match(path, facts, plex_data, store):
         tmdb_id = str(manual_match.get('tmdb_id', '') or '')
         metadata = store.get_tmdb_metadata(tmdb_id) or manual_match
         current = store.snapshot().get('files', {}).get(store._key(path), {})
-        store.update_file_record(path, {
-            **facts,
-            **accepted_identity_patch(current, metadata, source='manual_tmdb', manual_lock=True),
-            'display_provider': 'tmdb',
-            'metadata_status': 'accepted',
-            'metadata_source': 'manual_tmdb',
-            'metadata_accepted': True,
-            'tmdb_id': tmdb_id,
-            'imdb_id': str(metadata.get('imdb_id', '') or manual_match.get('imdb_id', '') or ''),
-            'manual_locked': True,
-            'migration_status': 'matched',
-            'identity_decision_version': IDENTITY_DECISION_VERSION,
-        })
+        store.update_file_record(path, _accepted_identity_record_patch(
+            current,
+            metadata,
+            provider='tmdb',
+            source='manual_tmdb',
+            facts=facts,
+            manual_lock=True,
+            migration_status='matched',
+            identity_decision_version=IDENTITY_DECISION_VERSION,
+            extra={
+                'tmdb_id': tmdb_id,
+                'imdb_id': str(metadata.get('imdb_id', '') or manual_match.get('imdb_id', '') or ''),
+            },
+        ))
         return 'matched'
     if provider == 'plex':
         metadata = store.get_plex_metadata(path) or plex_data
         current = store.snapshot().get('files', {}).get(store._key(path), {})
-        store.update_file_record(path, {
-            **facts,
-            **accepted_identity_patch(current, {
+        store.update_file_record(path, _accepted_identity_record_patch(
+            current,
+            {
                 'title': metadata.get('plex_title', ''),
                 'year': metadata.get('plex_year', ''),
                 'tmdb_id': metadata.get('tmdb_id', ''),
                 'imdb_id': metadata.get('imdb_id', ''),
                 'plex_guid': metadata.get('plex_guid', ''),
                 'rating_key': metadata.get('rating_key', ''),
-            }, source='manual_plex', manual_lock=True),
-            'display_provider': 'plex',
-            'metadata_status': 'accepted',
-            'metadata_source': 'manual_plex',
-            'metadata_accepted': True,
-            'tmdb_id': str(metadata.get('tmdb_id', '') or ''),
-            'imdb_id': str(metadata.get('imdb_id', '') or ''),
-            'rating_key': str(metadata.get('rating_key', '') or manual_match.get('rating_key', '') or ''),
-            'manual_locked': True,
-            'migration_status': 'matched',
-            'identity_decision_version': IDENTITY_DECISION_VERSION,
-        })
+            },
+            provider='plex',
+            source='manual_plex',
+            facts=facts,
+            manual_lock=True,
+            migration_status='matched',
+            identity_decision_version=IDENTITY_DECISION_VERSION,
+            extra={
+                'tmdb_id': str(metadata.get('tmdb_id', '') or ''),
+                'imdb_id': str(metadata.get('imdb_id', '') or ''),
+                'rating_key': str(metadata.get('rating_key', '') or manual_match.get('rating_key', '') or ''),
+            },
+        ))
         return 'matched'
     return ''
 
@@ -7436,25 +7329,26 @@ def _migrate_metadata_path(path, target):
                 })
                 return 'review'
         store.save_plex_metadata(path, plex_data)
-        store.update_file_record(path, {
-            **facts,
-            **accepted_identity_patch(current_record, {
+        store.update_file_record(path, _accepted_identity_record_patch(
+            current_record,
+            {
                 'title': plex_data.get('plex_title', ''),
                 'year': plex_data.get('plex_year', ''),
                 'tmdb_id': plex_data.get('tmdb_id', ''),
                 'imdb_id': plex_data.get('imdb_id', ''),
                 'plex_guid': plex_data.get('plex_guid', ''),
                 'rating_key': plex_data.get('rating_key', ''),
-            }, source='plex_snapshot'),
-            'display_provider': 'plex',
-            'metadata_status': 'accepted',
-            'metadata_source': 'plex_snapshot',
-            'metadata_accepted': True,
-            'tmdb_id': str(plex_data.get('tmdb_id', '') or ''),
-            'imdb_id': str(plex_data.get('imdb_id', '') or ''),
-            'migration_status': 'matched',
-            'identity_decision_version': IDENTITY_DECISION_VERSION,
-        })
+            },
+            provider='plex',
+            source='plex_snapshot',
+            facts=facts,
+            migration_status='matched',
+            identity_decision_version=IDENTITY_DECISION_VERSION,
+            extra={
+                'tmdb_id': str(plex_data.get('tmdb_id', '') or ''),
+                'imdb_id': str(plex_data.get('imdb_id', '') or ''),
+            },
+        ))
         return 'matched'
 
     if target != 'tmdb' or not _tmdb_key:
@@ -7484,24 +7378,21 @@ def _migrate_metadata_path(path, target):
     if not tmdb_id:
         return 'review'
     saved = store.save_tmdb_metadata(metadata)
-    store.update_file_record(path, {
-        **facts,
-        **accepted_identity_patch(
-            current_record,
-            saved,
-            source='manual_tmdb' if manual_locked else 'tmdb_snapshot',
-            manual_lock=manual_locked,
-        ),
-        'display_provider': 'tmdb',
-        'metadata_status': 'accepted',
-        'metadata_source': 'manual_tmdb' if manual_locked else 'tmdb_snapshot',
-        'metadata_accepted': True,
-        'tmdb_id': tmdb_id,
-        'imdb_id': str(saved.get('imdb_id', '') or ''),
-        'manual_locked': manual_locked,
-        'migration_status': 'matched',
-        'identity_decision_version': IDENTITY_DECISION_VERSION,
-    })
+    store.update_file_record(path, _accepted_identity_record_patch(
+        current_record,
+        saved,
+        provider='tmdb',
+        source='manual_tmdb' if manual_locked else 'tmdb_snapshot',
+        facts=facts,
+        manual_lock=manual_locked,
+        manual_locked=manual_locked,
+        migration_status='matched',
+        identity_decision_version=IDENTITY_DECISION_VERSION,
+        extra={
+            'tmdb_id': tmdb_id,
+            'imdb_id': str(saved.get('imdb_id', '') or ''),
+        },
+    ))
     return 'matched'
 
 
@@ -7775,23 +7666,24 @@ def _save_verified_identity(path, provider, candidate, facts, plex_data):
             'plex_title': candidate.get('title') or candidate.get('name') or '',
             'plex_year': str(candidate.get('year', '') or ''),
         })
-        store.update_file_record(path, {
-            **facts,
-            **accepted_identity_patch(current_record, {
+        store.update_file_record(path, _accepted_identity_record_patch(
+            current_record,
+            {
                 'title': saved.get('plex_title', ''),
                 'year': saved.get('plex_year', ''),
                 'tmdb_id': saved.get('tmdb_id', ''),
                 'imdb_id': saved.get('imdb_id', ''),
                 'plex_guid': saved.get('plex_guid', ''),
                 'rating_key': saved.get('rating_key', ''),
-            }, source='verified_plex'),
-            'display_provider': 'plex',
-            'metadata_status': 'accepted',
-            'metadata_source': 'verified_plex',
-            'metadata_accepted': True,
-            'rating_key': saved.get('rating_key', ''),
-            'plex_guid': saved.get('plex_guid', ''),
-        })
+            },
+            provider='plex',
+            source='verified_plex',
+            facts=facts,
+            extra={
+                'rating_key': saved.get('rating_key', ''),
+                'plex_guid': saved.get('plex_guid', ''),
+            },
+        ))
         fingerprint = _identity_audit_fingerprint(path, provider, store=store)
         if fingerprint:
             store.save_identity_audit_fingerprint(path, fingerprint)
@@ -7803,17 +7695,18 @@ def _save_verified_identity(path, provider, candidate, facts, plex_data):
         match_source='verified_tmdb',
     ) or candidate
     saved = store.save_tmdb_metadata(metadata)
-    store.update_file_record(path, {
-        **facts,
-        **accepted_identity_patch(current_record, saved, source='verified_tmdb'),
-        'display_provider': 'tmdb',
-        'metadata_status': 'accepted',
-        'metadata_source': 'verified_tmdb',
-        'metadata_accepted': True,
-        'tmdb_id': str(saved.get('tmdb_id', '') or ''),
-        'imdb_id': str(saved.get('imdb_id', '') or ''),
-        'manual_locked': False,
-    })
+    store.update_file_record(path, _accepted_identity_record_patch(
+        current_record,
+        saved,
+        provider='tmdb',
+        source='verified_tmdb',
+        facts=facts,
+        manual_locked=False,
+        extra={
+            'tmdb_id': str(saved.get('tmdb_id', '') or ''),
+            'imdb_id': str(saved.get('imdb_id', '') or ''),
+        },
+    ))
     fingerprint = _identity_audit_fingerprint(path, provider, store=store)
     if fingerprint:
         store.save_identity_audit_fingerprint(path, fingerprint)
@@ -8113,25 +8006,26 @@ def identity_audit_apply(job_id):
                     'plex_title': candidate.get('title') or candidate.get('name'),
                     'plex_year': str(candidate.get('year', '') or ''),
                 })
-                _metadata_store().update_file_record(path, {
-                    **facts,
-                    **accepted_identity_patch(record, {
+                _metadata_store().update_file_record(path, _accepted_identity_record_patch(
+                    record,
+                    {
                         'title': match.get('plex_title', ''),
                         'year': match.get('plex_year', ''),
                         'tmdb_id': match.get('tmdb_id', ''),
                         'imdb_id': match.get('imdb_id', ''),
                         'plex_guid': match.get('plex_guid', ''),
                         'rating_key': match.get('rating_key', ''),
-                    }, source='manual_plex', manual_lock=True),
-                    'display_provider': 'plex',
-                    'metadata_status': 'accepted',
-                    'metadata_source': 'manual_plex',
-                    'metadata_accepted': True,
-                    'rating_key': match.get('rating_key', ''),
-                    'plex_guid': match.get('plex_guid', ''),
-                    'manual_locked': True,
-                    'migration_status': 'matched',
-                })
+                    },
+                    provider='plex',
+                    source='manual_plex',
+                    facts=facts,
+                    manual_lock=True,
+                    migration_status='matched',
+                    extra={
+                        'rating_key': match.get('rating_key', ''),
+                        'plex_guid': match.get('plex_guid', ''),
+                    },
+                ))
             else:
                 metadata = _fetch_tmdb_metadata_by_id(
                     candidate.get('tmdb_id'),
@@ -8140,18 +8034,19 @@ def identity_audit_apply(job_id):
                     match_source='manual_tmdb',
                 ) or candidate
                 match = _metadata_store().apply_tmdb_match(path, metadata)
-                _metadata_store().update_file_record(path, {
-                    **facts,
-                    **accepted_identity_patch(record, metadata, source='manual_tmdb', manual_lock=True),
-                    'display_provider': 'tmdb',
-                    'metadata_status': 'accepted',
-                    'metadata_source': 'manual_tmdb',
-                    'metadata_accepted': True,
-                    'tmdb_id': match.get('tmdb_id', ''),
-                    'imdb_id': match.get('imdb_id', ''),
-                    'manual_locked': True,
-                    'migration_status': 'matched',
-                })
+                _metadata_store().update_file_record(path, _accepted_identity_record_patch(
+                    record,
+                    metadata,
+                    provider='tmdb',
+                    source='manual_tmdb',
+                    facts=facts,
+                    manual_lock=True,
+                    migration_status='matched',
+                    extra={
+                        'tmdb_id': match.get('tmdb_id', ''),
+                        'imdb_id': match.get('imdb_id', ''),
+                    },
+                ))
             fingerprint = _identity_audit_fingerprint(path, provider, store=_metadata_store())
             if fingerprint:
                 _metadata_store().save_identity_audit_fingerprint(path, fingerprint)
@@ -8397,44 +8292,25 @@ def _smart_match_context(path):
 
 def _smart_match_queries(abs_path, filename, record, plex_data, ai_match=None):
     parsed = parse_release_filename(filename)
-    queries = [{**parsed, 'source': 'filename'}]
-    library_root = _path_library_root(abs_path)
-    parent = os.path.dirname(abs_path)
-    if library_root and _norm(parent) != _norm(library_root):
-        folder = parse_release_filename(os.path.basename(parent))
-        if folder.get('title'):
-            queries.append({**folder, 'source': 'folder'})
+    queries = []
+    _append_parsed_query(queries, parsed, 'filename')
+    _append_folder_query(queries, abs_path, parse_release_filename)
     for title, year, source in (
         (record.get('candidate_title'), record.get('candidate_year'), 'saved_hint'),
         (plex_data.get('plex_title'), plex_data.get('plex_year'), 'plex_hint'),
     ):
-        if title:
-            queries.append({'title': str(title), 'year': str(year or ''), 'source': source})
+        _append_parsed_query(queries, {'title': title, 'year': year}, source)
     if ai_match and ai_match.get('title'):
-        queries.append({
+        _append_parsed_query(queries, {
             'title': ai_match['title'],
             'year': ai_match.get('year') or parsed.get('year', ''),
-            'source': 'ai_primary',
-        })
+        }, 'ai_primary')
         for alternative in (ai_match.get('alternatives') or [])[:3]:
-            if alternative.get('title'):
-                queries.append({
-                    'title': alternative['title'],
-                    'year': alternative.get('year') or parsed.get('year', ''),
-                    'source': 'ai_alternative',
-                })
-    deduplicated = []
-    seen = set()
-    for query in queries:
-        key = (
-            _norm_movie_title(query.get('title', '')),
-            str(query.get('year', '') or ''),
-        )
-        if not key[0] or key in seen:
-            continue
-        seen.add(key)
-        deduplicated.append(query)
-    return parsed, deduplicated
+            _append_parsed_query(queries, {
+                'title': alternative.get('title'),
+                'year': alternative.get('year') or parsed.get('year', ''),
+            }, 'ai_alternative')
+    return parsed, _dedupe_title_year_queries(queries)
 
 
 def _smart_match_candidates_for_queries(queries, provider, rating_key=''):
@@ -8708,39 +8584,31 @@ def smart_match_apply(job_id):
                     match_source='manual_tmdb',
                 ) or candidate
                 store.apply_tmdb_match(proposal['path'], metadata)
-                store.update_file_record(proposal['path'], {
-                    **accepted_identity_patch(
-                        record,
-                        metadata,
-                        source='manual_tmdb',
-                        manual_lock=True,
-                    ),
-                    'display_provider': 'tmdb',
-                    'metadata_source': 'manual_tmdb',
-                    'metadata_accepted': True,
-                    'migration_status': 'matched',
-                })
+                store.update_file_record(proposal['path'], _accepted_identity_record_patch(
+                    record,
+                    metadata,
+                    provider='tmdb',
+                    source='manual_tmdb',
+                    manual_lock=True,
+                    migration_status='matched',
+                ))
             else:
                 match = _apply_plex_smart_match(proposal)
-                store.update_file_record(proposal['path'], {
-                    **accepted_identity_patch(
-                        record,
-                        {
-                            'title': match.get('plex_title', ''),
-                            'year': match.get('plex_year', ''),
-                            'tmdb_id': match.get('tmdb_id', ''),
-                            'imdb_id': match.get('imdb_id', ''),
-                            'plex_guid': match.get('plex_guid', ''),
-                            'rating_key': match.get('rating_key', ''),
-                        },
-                        source='manual_plex',
-                        manual_lock=True,
-                    ),
-                    'display_provider': 'plex',
-                    'metadata_source': 'manual_plex',
-                    'metadata_accepted': True,
-                    'migration_status': 'matched',
-                })
+                store.update_file_record(proposal['path'], _accepted_identity_record_patch(
+                    record,
+                    {
+                        'title': match.get('plex_title', ''),
+                        'year': match.get('plex_year', ''),
+                        'tmdb_id': match.get('tmdb_id', ''),
+                        'imdb_id': match.get('imdb_id', ''),
+                        'plex_guid': match.get('plex_guid', ''),
+                        'rating_key': match.get('rating_key', ''),
+                    },
+                    provider='plex',
+                    source='manual_plex',
+                    manual_lock=True,
+                    migration_status='matched',
+                ))
             results.append({'id': proposal.get('id'), 'path': proposal.get('path'), 'success': True})
         except Exception as error:
             results.append({'id': proposal.get('id'), 'path': proposal.get('path'), 'success': False, 'error': str(error)})
