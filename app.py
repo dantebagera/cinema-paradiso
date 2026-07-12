@@ -2162,6 +2162,39 @@ def _iter_video_files():
                     yield movies_dir, root, file, os.path.join(root, file)
 
 
+def _video_file_facts(movies_dir, filename, full_path, *, include_timestamps=False, probe_resolution=True):
+    try:
+        size = os.path.getsize(full_path)
+        size_known = True
+    except OSError:
+        size = 0
+        size_known = False
+
+    parsed_title, parsed_year = parse_movie_title(filename)
+    facts = {
+        'path': full_path,
+        'filename': filename,
+        'library_root': movies_dir,
+        'parsed_title': parsed_title,
+        'parsed_year': parsed_year,
+        'resolution': get_resolution_from_file(full_path) if probe_resolution else get_resolution(filename),
+        'rip_source': get_rip_source(filename),
+        'size': size,
+        'size_known': size_known,
+        'size_human': format_size(size),
+    }
+    if include_timestamps:
+        try:
+            facts['added_time'] = os.path.getctime(full_path)
+        except OSError:
+            facts['added_time'] = 0
+        try:
+            facts['modified_time'] = os.path.getmtime(full_path)
+        except OSError:
+            facts['modified_time'] = 0
+    return facts
+
+
 def _walk_movie_dirs():
     for movies_dir in _iter_movie_roots():
         for root, dirs, files in os.walk(movies_dir):
@@ -4349,18 +4382,14 @@ def library():
             n += 1
             if n % 50 == 0:
                 _library_status = f'Reading metadata\u2026 {n}\u00a0/\u00a0{total}'
-            try:
-                size = os.path.getsize(full_path)
-                added_time = os.path.getctime(full_path)
-                modified_time = os.path.getmtime(full_path)
-            except OSError:
-                size = 0
-                added_time = 0
-                modified_time = 0
-            res = get_resolution_from_file(full_path)
-            rip = get_rip_source(file)
-            title_key = parse_movie_title(file)
-            parsed_title, parsed_year = title_key
+            file_facts = _video_file_facts(movies_dir, file, full_path, include_timestamps=True)
+            size = file_facts['size']
+            added_time = file_facts['added_time']
+            modified_time = file_facts['modified_time']
+            res = file_facts['resolution']
+            rip = file_facts['rip_source']
+            parsed_title = file_facts['parsed_title']
+            parsed_year = file_facts['parsed_year']
             fallback_title = parsed_title.title() if parsed_title else os.path.splitext(file)[0]
             display_title = fallback_title + (f' ({parsed_year})' if parsed_year else '')
             norm_path = _norm(full_path)
@@ -4372,18 +4401,6 @@ def library():
             )
             if plex_poster:
                 plex_data['plex_poster'] = plex_poster
-            file_facts = {
-                'path': full_path,
-                'filename': file,
-                'library_root': movies_dir,
-                'parsed_title': parsed_title,
-                'parsed_year': parsed_year,
-                'resolution': res,
-                'rip_source': rip,
-                'size': size,
-                'added_time': added_time,
-                'modified_time': modified_time,
-            }
             manual_match = store.get_manual_match_from_snapshot(full_path, metadata_snapshot)
             file_record = metadata_snapshot.get('files', {}).get(store._key(full_path), {})
             file_facts['ingest_status'] = file_record.get('ingest_status', '')
@@ -4493,14 +4510,11 @@ def _library_check_v26():
         items_src = _library_cache['items']
     else:
         items_src = []
-        for _, _, file, full_path in _iter_video_files():
-            try:
-                size = os.path.getsize(full_path)
-            except OSError:
-                size = 0
-            parsed_title, parsed_year = parse_movie_title(file)
+        for movies_dir, _, file, full_path in _iter_video_files():
+            file_facts = _video_file_facts(movies_dir, file, full_path, probe_resolution=False)
+            parsed_title = file_facts['parsed_title']
+            parsed_year = file_facts['parsed_year']
             plex_data = dict(_plex_cache.get(_norm(full_path), {}) or _plex_matched_by_fname.get(file.lower(), {}) or {})
-            file_facts = {'path': full_path, 'filename': file, 'parsed_title': parsed_title, 'parsed_year': parsed_year}
             tmdb_data = _tmdb_metadata_for_file(file_facts, plex_data=plex_data, store=store,
                                                 refresh=False, snapshot=metadata_snapshot)
             file_record = metadata_snapshot.get('files', {}).get(store._key(full_path), {})
@@ -4534,9 +4548,9 @@ def _library_check_v26():
             items_src.append({
                 'path': full_path,
                 'filename': file,
-                'resolution': get_resolution(file),
-                'size_human': format_size(size),
-                'size': size,
+                'resolution': file_facts['resolution'],
+                'size_human': file_facts['size_human'],
+                'size': file_facts['size'],
                 'plex_title': plex_data.get('plex_title', ''),
                 'plex_year': str(plex_data.get('plex_year', '') or ''),
                 'plex_matched': bool(plex_data),
@@ -4789,19 +4803,18 @@ def low_quality():
         _auto_sync_plex(force=request.args.get('force_plex') == '1')
         items = []
         for movies_dir, root, file, full_path in _iter_video_files():
-            try:
-                size = os.path.getsize(full_path)
-            except OSError:
-                size = 0
-            res = get_resolution_from_file(full_path)
+            file_facts = _video_file_facts(movies_dir, file, full_path)
+            size = file_facts['size']
+            res = file_facts['resolution']
             res_rank = get_resolution_rank_str(res)
-            rip = get_rip_source(file)
-            title_key = parse_movie_title(file)
-            if not title_key[0]:
+            rip = file_facts['rip_source']
+            if not file_facts['parsed_title']:
                 continue
             is_low = res_rank < MIN_RES_RANK
             if is_low:
-                display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
+                display_title = file_facts['parsed_title'].title() + (
+                    f" ({file_facts['parsed_year']})" if file_facts['parsed_year'] else ''
+                )
                 norm_path = _norm(full_path)
                 plex_data = _plex_cache.get(norm_path, {})
                 items.append({
@@ -4905,26 +4918,25 @@ def library_stats():
         RES_RANK = {'4K': 4, '1080p': 3, '720p': 2, '480p': 1, 'Unknown': 0}
 
         for movies_dir, root, file, full_path in _iter_video_files():
-            try:
-                size = os.path.getsize(full_path)
-            except OSError:
-                size = 0
-            res = get_resolution_from_file(full_path)
-            rip = get_rip_source(file)
-            title_key = parse_movie_title(file)
-            if title_key[0]:
-                title_set.add(title_key)
-            display_title = title_key[0].title() + (f' ({title_key[1]})' if title_key[1] else '')
+            file_facts = _video_file_facts(movies_dir, file, full_path)
+            size = file_facts['size']
+            res = file_facts['resolution']
+            rip = file_facts['rip_source']
+            parsed_title = file_facts['parsed_title']
+            parsed_year = file_facts['parsed_year']
+            if parsed_title:
+                title_set.add((parsed_title, parsed_year))
+            display_title = parsed_title.title() + (f' ({parsed_year})' if parsed_year else '')
             all_files.append({
                 'title': display_title,
                 'filename': file,
                 'path': full_path,
                 'library_root': movies_dir,
                 'size': size,
-                'size_human': format_size(size),
+                'size_human': file_facts['size_human'],
                 'resolution': res,
                 'rip_source': rip,
-                'year': title_key[1],
+                'year': parsed_year,
             })
             br = by_resolution.setdefault(res, {'count': 0, 'size': 0})
             br['count'] += 1
@@ -4932,9 +4944,9 @@ def library_stats():
             bs = by_source.setdefault(rip, {'count': 0, 'size': 0})
             bs['count'] += 1
             bs['size'] += size
-            if title_key[1]:
+            if parsed_year:
                 try:
-                    decade = f"{(int(title_key[1]) // 10) * 10}s"
+                    decade = f"{(int(parsed_year) // 10) * 10}s"
                 except ValueError:
                     decade = 'Unknown'
             else:
@@ -4982,11 +4994,12 @@ def library_stats():
                 or _plex_matched_by_fname.get(file_info['filename'].lower(), {})
                 or {}
             )
+            parsed_title, parsed_year = parse_movie_title(file_info['filename'])
             file_facts = {
                 'path': path,
                 'filename': file_info['filename'],
-                'parsed_title': parse_movie_title(file_info['filename'])[0],
-                'parsed_year': parse_movie_title(file_info['filename'])[1],
+                'parsed_title': parsed_title,
+                'parsed_year': parsed_year,
                 'ingest_status': record.get('ingest_status', ''),
                 'stored_metadata_status': record.get('metadata_status', ''),
             }
@@ -5099,14 +5112,14 @@ def _fix_unmatched_v26():
             if ext not in VIDEO_EXTENSIONS:
                 continue
             full_path = os.path.join(root, file)
+            file_facts = _video_file_facts(movies_dir, file, full_path, include_timestamps=True)
             norm_path = _norm(full_path)
             fname_lower = file.lower()
-            title_key = parse_movie_title(file)
-            unparseable = not title_key[0]
-            suggested_title = title_key[0].title() if title_key[0] else ''
-            suggested_year = title_key[1] if title_key else ''
-            orig_res = get_resolution_from_file(full_path)
-            orig_rip = get_rip_source(file)
+            unparseable = not file_facts['parsed_title']
+            suggested_title = file_facts['parsed_title'].title() if file_facts['parsed_title'] else ''
+            suggested_year = file_facts['parsed_year']
+            orig_res = file_facts['resolution']
+            orig_rip = file_facts['rip_source']
             quality_tag = ' '.join(t for t in [orig_res, orig_rip] if t and t != 'Unknown')
             suggested_name = suggested_title + (f' ({suggested_year})' if suggested_year else '')
             if quality_tag:
@@ -5117,20 +5130,6 @@ def _fix_unmatched_v26():
             plex_thumb = plex_data.get('plex_thumb', '')
             if plex_thumb and _plex_url and _plex_token:
                 plex_data['plex_poster'] = f"{_plex_url}{plex_thumb}?X-Plex-Token={_plex_token}"
-            try:
-                added_time = os.path.getctime(full_path)
-            except OSError:
-                added_time = 0
-            file_facts = {
-                'path': full_path,
-                'filename': file,
-                'library_root': movies_dir,
-                'parsed_title': title_key[0],
-                'parsed_year': title_key[1],
-                'resolution': orig_res,
-                'rip_source': orig_rip,
-                'added_time': added_time,
-            }
             file_record = metadata_snapshot.get('files', {}).get(store._key(full_path), {})
             file_facts['ingest_status'] = file_record.get('ingest_status', '')
             file_facts['stored_metadata_status'] = file_record.get('metadata_status', '')
@@ -5156,10 +5155,7 @@ def _fix_unmatched_v26():
                 continue
             rel_depth = len(os.path.relpath(full_path, movies_dir).split(os.sep)) - 1
             metadata_hint = _metadata_hint_for_unmatched(canonical.get('status'), plex_entry, tmdb_data, rel_depth, unparseable)
-            try:
-                file_size = _fmt_size(os.path.getsize(full_path))
-            except OSError:
-                file_size = '?'
+            file_size = _fmt_size(file_facts['size']) if file_facts.get('size_known') else '?'
             items.append({
                 'filename': file,
                 'path': full_path,
