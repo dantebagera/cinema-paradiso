@@ -2913,13 +2913,13 @@ def _duplicate_file_entry(full_path, filename, size, library_root=None):
     return entry
 
 
-def _split_bulk_plex_duplicate_groups(group_items, fallback_key_for):
+def _split_bulk_plex_duplicate_groups(group_items, fallback_key_for, *, merge_keys=False):
     # Plex can bulk-match a whole folder to one movie. Oversized Plex-derived
     # groups are safer when re-bucketed by filename parsing.
     split_groups = []
 
     def append_group(group_key, group):
-        if group_key is not None:
+        if merge_keys and group_key is not None:
             for existing_key, existing_group in split_groups:
                 if existing_key == group_key:
                     existing_group.extend(group)
@@ -2986,7 +2986,8 @@ def _scan_duplicates_legacy(movies_dir):
     total_wasted = 0
     group_items = _split_bulk_plex_duplicate_groups(
         groups.items(),
-        lambda entry: parse_movie_title(entry['filename'])
+        lambda entry: parse_movie_title(entry['filename']),
+        merge_keys=True,
     )
     for (title, year), files in group_items:
         if len(files) < 2:
