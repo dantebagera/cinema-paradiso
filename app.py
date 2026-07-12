@@ -7256,30 +7256,63 @@ def _accepted_tmdb_migration_metadata(path, file_facts, plex_data, store):
     return {}, False
 
 
+def _query_from_parsed(parsed, source):
+    if isinstance(parsed, tuple):
+        title, year = parsed
+        parsed = {'title': title, 'year': year}
+    query = dict(parsed or {})
+    if not query.get('title'):
+        return {}
+    return {
+        **query,
+        'title': str(query.get('title') or ''),
+        'year': str(query.get('year') or ''),
+        'source': source,
+    }
+
+
+def _append_parsed_query(queries, parsed, source):
+    query = _query_from_parsed(parsed, source)
+    if query:
+        queries.append(query)
+
+
+def _append_folder_query(queries, path, parser):
+    library_root = _path_library_root(path)
+    parent = os.path.dirname(path)
+    if library_root and _norm(parent) != _norm(library_root):
+        _append_parsed_query(queries, parser(os.path.basename(parent)), 'folder')
+
+
+def _dedupe_title_year_queries(queries):
+    unique = []
+    seen = set()
+    for query in queries:
+        key = (
+            _norm_movie_title(query.get('title', '')),
+            str(query.get('year', '') or ''),
+        )
+        if not key[0] or key in seen:
+            continue
+        seen.add(key)
+        unique.append(query)
+    return unique
+
+
 def _identity_queries(path, file_facts=None, plex_data=None):
     file_facts = file_facts or _metadata_file_facts(path)
     plex_data = plex_data or {}
     queries = []
-    for title, year, source in (
-        (file_facts.get('parsed_title'), file_facts.get('parsed_year'), 'filename'),
-        (plex_data.get('plex_title'), plex_data.get('plex_year'), 'plex_hint'),
-    ):
-        if title:
-            queries.append({'title': str(title), 'year': str(year or ''), 'source': source})
-    library_root = _path_library_root(path)
-    parent = os.path.dirname(path)
-    if library_root and _norm(parent) != _norm(library_root):
-        folder_title, folder_year = parse_movie_title(os.path.basename(parent))
-        if folder_title:
-            queries.append({'title': folder_title, 'year': str(folder_year or ''), 'source': 'folder'})
-    unique = []
-    seen = set()
-    for query in queries:
-        key = (_norm_movie_title(query['title']), query['year'])
-        if key[0] and key not in seen:
-            seen.add(key)
-            unique.append(query)
-    return unique
+    _append_parsed_query(queries, {
+        'title': file_facts.get('parsed_title'),
+        'year': file_facts.get('parsed_year'),
+    }, 'filename')
+    _append_parsed_query(queries, {
+        'title': plex_data.get('plex_title'),
+        'year': plex_data.get('plex_year'),
+    }, 'plex_hint')
+    _append_folder_query(queries, path, parse_movie_title)
+    return _dedupe_title_year_queries(queries)
 
 
 def _identity_tmdb_candidates(queries):
@@ -8439,44 +8472,25 @@ def _smart_match_context(path):
 
 def _smart_match_queries(abs_path, filename, record, plex_data, ai_match=None):
     parsed = parse_release_filename(filename)
-    queries = [{**parsed, 'source': 'filename'}]
-    library_root = _path_library_root(abs_path)
-    parent = os.path.dirname(abs_path)
-    if library_root and _norm(parent) != _norm(library_root):
-        folder = parse_release_filename(os.path.basename(parent))
-        if folder.get('title'):
-            queries.append({**folder, 'source': 'folder'})
+    queries = []
+    _append_parsed_query(queries, parsed, 'filename')
+    _append_folder_query(queries, abs_path, parse_release_filename)
     for title, year, source in (
         (record.get('candidate_title'), record.get('candidate_year'), 'saved_hint'),
         (plex_data.get('plex_title'), plex_data.get('plex_year'), 'plex_hint'),
     ):
-        if title:
-            queries.append({'title': str(title), 'year': str(year or ''), 'source': source})
+        _append_parsed_query(queries, {'title': title, 'year': year}, source)
     if ai_match and ai_match.get('title'):
-        queries.append({
+        _append_parsed_query(queries, {
             'title': ai_match['title'],
             'year': ai_match.get('year') or parsed.get('year', ''),
-            'source': 'ai_primary',
-        })
+        }, 'ai_primary')
         for alternative in (ai_match.get('alternatives') or [])[:3]:
-            if alternative.get('title'):
-                queries.append({
-                    'title': alternative['title'],
-                    'year': alternative.get('year') or parsed.get('year', ''),
-                    'source': 'ai_alternative',
-                })
-    deduplicated = []
-    seen = set()
-    for query in queries:
-        key = (
-            _norm_movie_title(query.get('title', '')),
-            str(query.get('year', '') or ''),
-        )
-        if not key[0] or key in seen:
-            continue
-        seen.add(key)
-        deduplicated.append(query)
-    return parsed, deduplicated
+            _append_parsed_query(queries, {
+                'title': alternative.get('title'),
+                'year': alternative.get('year') or parsed.get('year', ''),
+            }, 'ai_alternative')
+    return parsed, _dedupe_title_year_queries(queries)
 
 
 def _smart_match_candidates_for_queries(queries, provider, rating_key=''):
