@@ -957,6 +957,48 @@ class MetadataStoreError(RuntimeError):
     pass
 
 
+def _accepted_identity_record_patch(
+    current_record,
+    identity,
+    *,
+    provider,
+    source,
+    facts=None,
+    manual_lock=False,
+    manual_locked=None,
+    metadata_status='accepted',
+    metadata_source=None,
+    metadata_accepted=True,
+    migration_status=None,
+    identity_decision_version=None,
+    extra=None,
+):
+    patch = {
+        **(facts or {}),
+        **accepted_identity_patch(
+            current_record,
+            identity,
+            source=source,
+            manual_lock=manual_lock,
+        ),
+        'display_provider': provider,
+        'metadata_status': metadata_status,
+        'metadata_source': metadata_source or source,
+        'metadata_accepted': bool(metadata_accepted),
+    }
+    if manual_locked is not None:
+        patch['manual_locked'] = bool(manual_locked)
+    elif manual_lock:
+        patch['manual_locked'] = True
+    if migration_status is not None:
+        patch['migration_status'] = migration_status
+    if identity_decision_version is not None:
+        patch['identity_decision_version'] = identity_decision_version
+    if extra:
+        patch.update(extra)
+    return patch
+
+
 class AppMetadataStore:
     _lock_guard = threading.Lock()
     _path_locks = {}
@@ -1235,19 +1277,14 @@ class AppMetadataStore:
                 return match
             self._mutate_json(self.manual_matches_file, {'matches': {}}, mutate)
             current = self._read_json(self.files_file, {'files': {}}).get('files', {}).get(key, {})
-            self.update_file_record(path, {
-                **accepted_identity_patch(
-                    current,
-                    metadata,
-                    source='manual_tmdb',
-                    manual_lock=True,
-                ),
-                'display_provider': 'tmdb',
-                'metadata_source': 'manual_tmdb',
-                'metadata_accepted': True,
-                'manual_locked': True,
-                'migration_status': 'matched',
-            })
+            self.update_file_record(path, _accepted_identity_record_patch(
+                current,
+                metadata,
+                provider='tmdb',
+                source='manual_tmdb',
+                manual_lock=True,
+                migration_status='matched',
+            ))
             return match
 
     def apply_plex_match(self, path, plex_metadata):
@@ -1268,21 +1305,21 @@ class AppMetadataStore:
                 return match
             self._mutate_json(self.manual_matches_file, {'matches': {}}, mutate)
             current = self._read_json(self.files_file, {'files': {}}).get('files', {}).get(key, {})
-            self.update_file_record(path, {
-                **accepted_identity_patch(current, {
+            self.update_file_record(path, _accepted_identity_record_patch(
+                current,
+                {
                     'title': saved.get('plex_title', ''),
                     'year': saved.get('plex_year', ''),
                     'tmdb_id': saved.get('tmdb_id', ''),
                     'imdb_id': saved.get('imdb_id', ''),
                     'plex_guid': saved.get('plex_guid', ''),
                     'rating_key': saved.get('rating_key', ''),
-                }, source='manual_plex', manual_lock=True),
-                'display_provider': 'plex',
-                'metadata_source': 'manual_plex',
-                'metadata_accepted': True,
-                'manual_locked': True,
-                'migration_status': 'matched',
-            })
+                },
+                provider='plex',
+                source='manual_plex',
+                manual_lock=True,
+                migration_status='matched',
+            ))
             return {**match, **saved}
 
     def get_manual_match(self, path):
@@ -5568,23 +5605,24 @@ def plex_match_apply():
             'plex_summary': str(data.get('summary', '') or ''),
         })
         current_record = store.snapshot().get('files', {}).get(store._key(abs_path), {})
-        store.update_file_record(abs_path, {
-            **facts,
-            **accepted_identity_patch(current_record, {
+        store.update_file_record(abs_path, _accepted_identity_record_patch(
+            current_record,
+            {
                 'title': name,
                 'year': str(data.get('year', '') or ''),
                 'plex_guid': guid,
                 'rating_key': rating_key,
-            }, source='manual_plex', manual_lock=True),
-            'display_provider': 'plex',
-            'metadata_status': 'accepted',
-            'metadata_source': 'manual_plex',
-            'metadata_accepted': True,
-            'rating_key': rating_key,
-            'plex_guid': guid,
-            'manual_locked': True,
-            'migration_status': 'matched',
-        })
+            },
+            provider='plex',
+            source='manual_plex',
+            facts=facts,
+            manual_lock=True,
+            migration_status='matched',
+            extra={
+                'rating_key': rating_key,
+                'plex_guid': guid,
+            },
+        ))
         _resolve_identity_audit_path(abs_path)
         _library_cache = {}
         return jsonify({'success': True, 'match': match})
@@ -6159,9 +6197,10 @@ def tmdb_match_apply():
         match = store.apply_tmdb_match(abs_path, metadata)
         parsed_title, parsed_year = parse_movie_title(os.path.basename(abs_path))
         current_record = store.snapshot().get('files', {}).get(store._key(abs_path), {})
-        identity_patch = accepted_identity_patch(
+        identity_patch = _accepted_identity_record_patch(
             current_record,
             metadata,
+            provider='tmdb',
             source='manual_tmdb',
             manual_lock=True,
         )
@@ -6174,15 +6213,14 @@ def tmdb_match_apply():
             file_record={**current_record, **identity_patch},
         )
         store.update_file_record(abs_path, {
+            **identity_patch,
             'path': abs_path,
             'filename': os.path.basename(abs_path),
             'parsed_title': parsed_title,
             'parsed_year': parsed_year,
-            **identity_patch,
             'metadata_status': canonical.get('status', 'accepted'),
             'metadata_source': canonical.get('source', 'manual_tmdb'),
             'metadata_accepted': bool(canonical.get('accepted')),
-            'display_provider': 'tmdb',
         })
         _resolve_identity_audit_path(abs_path)
         _library_cache.pop('items', None)
@@ -7300,44 +7338,46 @@ def _migrate_locked_manual_match(path, facts, plex_data, store):
         tmdb_id = str(manual_match.get('tmdb_id', '') or '')
         metadata = store.get_tmdb_metadata(tmdb_id) or manual_match
         current = store.snapshot().get('files', {}).get(store._key(path), {})
-        store.update_file_record(path, {
-            **facts,
-            **accepted_identity_patch(current, metadata, source='manual_tmdb', manual_lock=True),
-            'display_provider': 'tmdb',
-            'metadata_status': 'accepted',
-            'metadata_source': 'manual_tmdb',
-            'metadata_accepted': True,
-            'tmdb_id': tmdb_id,
-            'imdb_id': str(metadata.get('imdb_id', '') or manual_match.get('imdb_id', '') or ''),
-            'manual_locked': True,
-            'migration_status': 'matched',
-            'identity_decision_version': IDENTITY_DECISION_VERSION,
-        })
+        store.update_file_record(path, _accepted_identity_record_patch(
+            current,
+            metadata,
+            provider='tmdb',
+            source='manual_tmdb',
+            facts=facts,
+            manual_lock=True,
+            migration_status='matched',
+            identity_decision_version=IDENTITY_DECISION_VERSION,
+            extra={
+                'tmdb_id': tmdb_id,
+                'imdb_id': str(metadata.get('imdb_id', '') or manual_match.get('imdb_id', '') or ''),
+            },
+        ))
         return 'matched'
     if provider == 'plex':
         metadata = store.get_plex_metadata(path) or plex_data
         current = store.snapshot().get('files', {}).get(store._key(path), {})
-        store.update_file_record(path, {
-            **facts,
-            **accepted_identity_patch(current, {
+        store.update_file_record(path, _accepted_identity_record_patch(
+            current,
+            {
                 'title': metadata.get('plex_title', ''),
                 'year': metadata.get('plex_year', ''),
                 'tmdb_id': metadata.get('tmdb_id', ''),
                 'imdb_id': metadata.get('imdb_id', ''),
                 'plex_guid': metadata.get('plex_guid', ''),
                 'rating_key': metadata.get('rating_key', ''),
-            }, source='manual_plex', manual_lock=True),
-            'display_provider': 'plex',
-            'metadata_status': 'accepted',
-            'metadata_source': 'manual_plex',
-            'metadata_accepted': True,
-            'tmdb_id': str(metadata.get('tmdb_id', '') or ''),
-            'imdb_id': str(metadata.get('imdb_id', '') or ''),
-            'rating_key': str(metadata.get('rating_key', '') or manual_match.get('rating_key', '') or ''),
-            'manual_locked': True,
-            'migration_status': 'matched',
-            'identity_decision_version': IDENTITY_DECISION_VERSION,
-        })
+            },
+            provider='plex',
+            source='manual_plex',
+            facts=facts,
+            manual_lock=True,
+            migration_status='matched',
+            identity_decision_version=IDENTITY_DECISION_VERSION,
+            extra={
+                'tmdb_id': str(metadata.get('tmdb_id', '') or ''),
+                'imdb_id': str(metadata.get('imdb_id', '') or ''),
+                'rating_key': str(metadata.get('rating_key', '') or manual_match.get('rating_key', '') or ''),
+            },
+        ))
         return 'matched'
     return ''
 
@@ -7436,25 +7476,26 @@ def _migrate_metadata_path(path, target):
                 })
                 return 'review'
         store.save_plex_metadata(path, plex_data)
-        store.update_file_record(path, {
-            **facts,
-            **accepted_identity_patch(current_record, {
+        store.update_file_record(path, _accepted_identity_record_patch(
+            current_record,
+            {
                 'title': plex_data.get('plex_title', ''),
                 'year': plex_data.get('plex_year', ''),
                 'tmdb_id': plex_data.get('tmdb_id', ''),
                 'imdb_id': plex_data.get('imdb_id', ''),
                 'plex_guid': plex_data.get('plex_guid', ''),
                 'rating_key': plex_data.get('rating_key', ''),
-            }, source='plex_snapshot'),
-            'display_provider': 'plex',
-            'metadata_status': 'accepted',
-            'metadata_source': 'plex_snapshot',
-            'metadata_accepted': True,
-            'tmdb_id': str(plex_data.get('tmdb_id', '') or ''),
-            'imdb_id': str(plex_data.get('imdb_id', '') or ''),
-            'migration_status': 'matched',
-            'identity_decision_version': IDENTITY_DECISION_VERSION,
-        })
+            },
+            provider='plex',
+            source='plex_snapshot',
+            facts=facts,
+            migration_status='matched',
+            identity_decision_version=IDENTITY_DECISION_VERSION,
+            extra={
+                'tmdb_id': str(plex_data.get('tmdb_id', '') or ''),
+                'imdb_id': str(plex_data.get('imdb_id', '') or ''),
+            },
+        ))
         return 'matched'
 
     if target != 'tmdb' or not _tmdb_key:
@@ -7484,24 +7525,21 @@ def _migrate_metadata_path(path, target):
     if not tmdb_id:
         return 'review'
     saved = store.save_tmdb_metadata(metadata)
-    store.update_file_record(path, {
-        **facts,
-        **accepted_identity_patch(
-            current_record,
-            saved,
-            source='manual_tmdb' if manual_locked else 'tmdb_snapshot',
-            manual_lock=manual_locked,
-        ),
-        'display_provider': 'tmdb',
-        'metadata_status': 'accepted',
-        'metadata_source': 'manual_tmdb' if manual_locked else 'tmdb_snapshot',
-        'metadata_accepted': True,
-        'tmdb_id': tmdb_id,
-        'imdb_id': str(saved.get('imdb_id', '') or ''),
-        'manual_locked': manual_locked,
-        'migration_status': 'matched',
-        'identity_decision_version': IDENTITY_DECISION_VERSION,
-    })
+    store.update_file_record(path, _accepted_identity_record_patch(
+        current_record,
+        saved,
+        provider='tmdb',
+        source='manual_tmdb' if manual_locked else 'tmdb_snapshot',
+        facts=facts,
+        manual_lock=manual_locked,
+        manual_locked=manual_locked,
+        migration_status='matched',
+        identity_decision_version=IDENTITY_DECISION_VERSION,
+        extra={
+            'tmdb_id': tmdb_id,
+            'imdb_id': str(saved.get('imdb_id', '') or ''),
+        },
+    ))
     return 'matched'
 
 
@@ -7775,23 +7813,24 @@ def _save_verified_identity(path, provider, candidate, facts, plex_data):
             'plex_title': candidate.get('title') or candidate.get('name') or '',
             'plex_year': str(candidate.get('year', '') or ''),
         })
-        store.update_file_record(path, {
-            **facts,
-            **accepted_identity_patch(current_record, {
+        store.update_file_record(path, _accepted_identity_record_patch(
+            current_record,
+            {
                 'title': saved.get('plex_title', ''),
                 'year': saved.get('plex_year', ''),
                 'tmdb_id': saved.get('tmdb_id', ''),
                 'imdb_id': saved.get('imdb_id', ''),
                 'plex_guid': saved.get('plex_guid', ''),
                 'rating_key': saved.get('rating_key', ''),
-            }, source='verified_plex'),
-            'display_provider': 'plex',
-            'metadata_status': 'accepted',
-            'metadata_source': 'verified_plex',
-            'metadata_accepted': True,
-            'rating_key': saved.get('rating_key', ''),
-            'plex_guid': saved.get('plex_guid', ''),
-        })
+            },
+            provider='plex',
+            source='verified_plex',
+            facts=facts,
+            extra={
+                'rating_key': saved.get('rating_key', ''),
+                'plex_guid': saved.get('plex_guid', ''),
+            },
+        ))
         fingerprint = _identity_audit_fingerprint(path, provider, store=store)
         if fingerprint:
             store.save_identity_audit_fingerprint(path, fingerprint)
@@ -7803,17 +7842,18 @@ def _save_verified_identity(path, provider, candidate, facts, plex_data):
         match_source='verified_tmdb',
     ) or candidate
     saved = store.save_tmdb_metadata(metadata)
-    store.update_file_record(path, {
-        **facts,
-        **accepted_identity_patch(current_record, saved, source='verified_tmdb'),
-        'display_provider': 'tmdb',
-        'metadata_status': 'accepted',
-        'metadata_source': 'verified_tmdb',
-        'metadata_accepted': True,
-        'tmdb_id': str(saved.get('tmdb_id', '') or ''),
-        'imdb_id': str(saved.get('imdb_id', '') or ''),
-        'manual_locked': False,
-    })
+    store.update_file_record(path, _accepted_identity_record_patch(
+        current_record,
+        saved,
+        provider='tmdb',
+        source='verified_tmdb',
+        facts=facts,
+        manual_locked=False,
+        extra={
+            'tmdb_id': str(saved.get('tmdb_id', '') or ''),
+            'imdb_id': str(saved.get('imdb_id', '') or ''),
+        },
+    ))
     fingerprint = _identity_audit_fingerprint(path, provider, store=store)
     if fingerprint:
         store.save_identity_audit_fingerprint(path, fingerprint)
@@ -8113,25 +8153,26 @@ def identity_audit_apply(job_id):
                     'plex_title': candidate.get('title') or candidate.get('name'),
                     'plex_year': str(candidate.get('year', '') or ''),
                 })
-                _metadata_store().update_file_record(path, {
-                    **facts,
-                    **accepted_identity_patch(record, {
+                _metadata_store().update_file_record(path, _accepted_identity_record_patch(
+                    record,
+                    {
                         'title': match.get('plex_title', ''),
                         'year': match.get('plex_year', ''),
                         'tmdb_id': match.get('tmdb_id', ''),
                         'imdb_id': match.get('imdb_id', ''),
                         'plex_guid': match.get('plex_guid', ''),
                         'rating_key': match.get('rating_key', ''),
-                    }, source='manual_plex', manual_lock=True),
-                    'display_provider': 'plex',
-                    'metadata_status': 'accepted',
-                    'metadata_source': 'manual_plex',
-                    'metadata_accepted': True,
-                    'rating_key': match.get('rating_key', ''),
-                    'plex_guid': match.get('plex_guid', ''),
-                    'manual_locked': True,
-                    'migration_status': 'matched',
-                })
+                    },
+                    provider='plex',
+                    source='manual_plex',
+                    facts=facts,
+                    manual_lock=True,
+                    migration_status='matched',
+                    extra={
+                        'rating_key': match.get('rating_key', ''),
+                        'plex_guid': match.get('plex_guid', ''),
+                    },
+                ))
             else:
                 metadata = _fetch_tmdb_metadata_by_id(
                     candidate.get('tmdb_id'),
@@ -8140,18 +8181,19 @@ def identity_audit_apply(job_id):
                     match_source='manual_tmdb',
                 ) or candidate
                 match = _metadata_store().apply_tmdb_match(path, metadata)
-                _metadata_store().update_file_record(path, {
-                    **facts,
-                    **accepted_identity_patch(record, metadata, source='manual_tmdb', manual_lock=True),
-                    'display_provider': 'tmdb',
-                    'metadata_status': 'accepted',
-                    'metadata_source': 'manual_tmdb',
-                    'metadata_accepted': True,
-                    'tmdb_id': match.get('tmdb_id', ''),
-                    'imdb_id': match.get('imdb_id', ''),
-                    'manual_locked': True,
-                    'migration_status': 'matched',
-                })
+                _metadata_store().update_file_record(path, _accepted_identity_record_patch(
+                    record,
+                    metadata,
+                    provider='tmdb',
+                    source='manual_tmdb',
+                    facts=facts,
+                    manual_lock=True,
+                    migration_status='matched',
+                    extra={
+                        'tmdb_id': match.get('tmdb_id', ''),
+                        'imdb_id': match.get('imdb_id', ''),
+                    },
+                ))
             fingerprint = _identity_audit_fingerprint(path, provider, store=_metadata_store())
             if fingerprint:
                 _metadata_store().save_identity_audit_fingerprint(path, fingerprint)
@@ -8708,39 +8750,31 @@ def smart_match_apply(job_id):
                     match_source='manual_tmdb',
                 ) or candidate
                 store.apply_tmdb_match(proposal['path'], metadata)
-                store.update_file_record(proposal['path'], {
-                    **accepted_identity_patch(
-                        record,
-                        metadata,
-                        source='manual_tmdb',
-                        manual_lock=True,
-                    ),
-                    'display_provider': 'tmdb',
-                    'metadata_source': 'manual_tmdb',
-                    'metadata_accepted': True,
-                    'migration_status': 'matched',
-                })
+                store.update_file_record(proposal['path'], _accepted_identity_record_patch(
+                    record,
+                    metadata,
+                    provider='tmdb',
+                    source='manual_tmdb',
+                    manual_lock=True,
+                    migration_status='matched',
+                ))
             else:
                 match = _apply_plex_smart_match(proposal)
-                store.update_file_record(proposal['path'], {
-                    **accepted_identity_patch(
-                        record,
-                        {
-                            'title': match.get('plex_title', ''),
-                            'year': match.get('plex_year', ''),
-                            'tmdb_id': match.get('tmdb_id', ''),
-                            'imdb_id': match.get('imdb_id', ''),
-                            'plex_guid': match.get('plex_guid', ''),
-                            'rating_key': match.get('rating_key', ''),
-                        },
-                        source='manual_plex',
-                        manual_lock=True,
-                    ),
-                    'display_provider': 'plex',
-                    'metadata_source': 'manual_plex',
-                    'metadata_accepted': True,
-                    'migration_status': 'matched',
-                })
+                store.update_file_record(proposal['path'], _accepted_identity_record_patch(
+                    record,
+                    {
+                        'title': match.get('plex_title', ''),
+                        'year': match.get('plex_year', ''),
+                        'tmdb_id': match.get('tmdb_id', ''),
+                        'imdb_id': match.get('imdb_id', ''),
+                        'plex_guid': match.get('plex_guid', ''),
+                        'rating_key': match.get('rating_key', ''),
+                    },
+                    provider='plex',
+                    source='manual_plex',
+                    manual_lock=True,
+                    migration_status='matched',
+                ))
             results.append({'id': proposal.get('id'), 'path': proposal.get('path'), 'success': True})
         except Exception as error:
             results.append({'id': proposal.get('id'), 'path': proposal.get('path'), 'success': False, 'error': str(error)})
