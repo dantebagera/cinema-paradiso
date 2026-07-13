@@ -3,7 +3,10 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-APP = (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
+APP = (
+    (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
+    + (ROOT / "src" / "components" / "SharedMovieCards.jsx").read_text(encoding="utf-8")
+)
 STYLES = (ROOT / "src" / "styles.css").read_text(encoding="utf-8")
 
 

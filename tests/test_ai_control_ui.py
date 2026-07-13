@@ -4,6 +4,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_SOURCE = (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
+SHARED_CARDS_SOURCE = (ROOT / "src" / "components" / "SharedMovieCards.jsx").read_text(encoding="utf-8")
 STYLES_SOURCE = (ROOT / "src" / "styles.css").read_text(encoding="utf-8")
 
 
@@ -86,9 +87,9 @@ class AiControlUiTest(unittest.TestCase):
         self.assertIn("!aiControlCardView && visibleRows.length > 0 && <AIControlTable", result_source)
 
     def test_ai_control_card_view_can_surface_preserved_cast_and_directors(self):
-        discover_card_source = APP_SOURCE[
-            APP_SOURCE.index("function DiscoverMovieCard"):
-            APP_SOURCE.index("function MovieFactChips")
+        discover_card_source = SHARED_CARDS_SOURCE[
+            SHARED_CARDS_SOURCE.index("function DiscoverMovieCard"):
+            SHARED_CARDS_SOURCE.index("function MovieExpandedDetails")
         ]
         self.assertIn("directors={movie.directors}", discover_card_source)
         self.assertIn("cast={movie.cast}", discover_card_source)

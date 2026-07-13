@@ -4,6 +4,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / "src" / "App.jsx"
+SHARED_CARDS = ROOT / "src" / "components" / "SharedMovieCards.jsx"
 EDITOR = ROOT / "src" / "components" / "PosterEditorModal.jsx"
 MAIN = ROOT / "src" / "main.jsx"
 STYLES = ROOT / "src" / "styles" / "posterEditor.css"
@@ -57,7 +58,7 @@ class PosterEditorUiTest(unittest.TestCase):
         self.assertIn("activeTab === 'pick'", app)
 
     def test_editing_uses_poster_pencil_overlays_instead_of_full_card_buttons(self):
-        app = APP.read_text(encoding="utf-8")
+        app = APP.read_text(encoding="utf-8") + SHARED_CARDS.read_text(encoding="utf-8")
         styles = (ROOT / "src" / "styles.css").read_text(encoding="utf-8")
 
         self.assertIn("function PosterEditButton", app)
