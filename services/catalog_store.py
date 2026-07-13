@@ -450,11 +450,34 @@ class CatalogStore:
                   AND (mf.identity_status = 'accepted' OR mf.metadata_accepted = 1)
                 ORDER BY mf.added_time DESC
             """, keys).fetchall()
-            result = []
-            for row in rows:
-                item = dict(row)
-                for column in ("raw_json", "plex_json", "manual_json", "tmdb_json"):
-                    item[column] = json.loads(item[column]) if item.get(column) else {}
+            return self._decode_media_rows(connection, rows, include_identity_keys=True)
+        finally:
+            connection.close()
+
+    def library_candidates(self):
+        connection = self.connect()
+        try:
+            rows = connection.execute("""
+                SELECT mf.*, pf.raw_json AS plex_json,
+                       mm.raw_json AS manual_json, tm.raw_json AS tmdb_json
+                FROM media_files mf
+                LEFT JOIN plex_files pf ON pf.path_key = mf.path_key
+                LEFT JOIN manual_matches mm ON mm.path_key = mf.path_key
+                LEFT JOIN tmdb_movies tm ON tm.tmdb_id = mf.tmdb_id
+                ORDER BY mf.added_time DESC, mf.identity_title COLLATE NOCASE
+            """).fetchall()
+            return self._decode_media_rows(connection, rows, include_identity_keys=False)
+        finally:
+            connection.close()
+
+    @staticmethod
+    def _decode_media_rows(connection, rows, include_identity_keys):
+        result = []
+        for row in rows:
+            item = dict(row)
+            for column in ("raw_json", "plex_json", "manual_json", "tmdb_json"):
+                item[column] = json.loads(item[column]) if item.get(column) else {}
+            if include_identity_keys:
                 item["identity_keys"] = [
                     key_row[0]
                     for key_row in connection.execute(
@@ -462,10 +485,8 @@ class CatalogStore:
                         (item["path_key"],),
                     ).fetchall()
                 ]
-                result.append(item)
-            return result
-        finally:
-            connection.close()
+            result.append(item)
+        return result
 
     def parity_report(self, expected_counts):
         table_map = {

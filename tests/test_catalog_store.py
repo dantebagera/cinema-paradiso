@@ -133,6 +133,18 @@ class CatalogStoreTest(unittest.TestCase):
         self.assertEqual([row["path"] for row in by_title], ["E:/Movies/Alien.mkv"])
         self.assertEqual(by_tmdb[0]["tmdb_json"]["title"], "Alien")
 
+    def test_library_candidates_return_provider_snapshots_without_filesystem_scan(self):
+        with tempfile.TemporaryDirectory() as root:
+            store = CatalogStore(Path(root) / "catalog.sqlite")
+            store.import_documents(self._documents(), {})
+
+            rows = store.library_candidates()
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["path"], "E:/Movies/Alien.mkv")
+        self.assertEqual(rows[0]["tmdb_json"]["title"], "Alien")
+        self.assertEqual(rows[0]["plex_json"]["plex_title"], "Alien")
+
     def test_import_is_idempotent(self):
         with tempfile.TemporaryDirectory() as root:
             store = CatalogStore(Path(root) / "catalog.sqlite")
