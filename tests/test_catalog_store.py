@@ -117,6 +117,21 @@ class CatalogStoreTest(unittest.TestCase):
         self.assertIn("idx_media_files_tmdb_id", indexes)
         self.assertIn("idx_media_files_title_year", indexes)
         self.assertIn("idx_media_files_quality", indexes)
+        self.assertIn("idx_media_identity_key", indexes)
+
+    def test_ownership_candidates_support_all_existing_identity_aliases(self):
+        with tempfile.TemporaryDirectory() as root:
+            store = CatalogStore(Path(root) / "catalog.sqlite")
+            store.import_documents(self._documents(), {})
+
+            by_tmdb = store.ownership_candidates(["tmdb:348"])
+            by_imdb = store.ownership_candidates(["imdb:tt0078748"])
+            by_title = store.ownership_candidates(["title:alien|1979"])
+
+        self.assertEqual([row["path"] for row in by_tmdb], ["E:/Movies/Alien.mkv"])
+        self.assertEqual([row["path"] for row in by_imdb], ["E:/Movies/Alien.mkv"])
+        self.assertEqual([row["path"] for row in by_title], ["E:/Movies/Alien.mkv"])
+        self.assertEqual(by_tmdb[0]["tmdb_json"]["title"], "Alien")
 
     def test_import_is_idempotent(self):
         with tempfile.TemporaryDirectory() as root:

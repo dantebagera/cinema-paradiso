@@ -4,10 +4,11 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
-from services.movie_identity import normalize_movie_title
+from services.movie_identity import normalize_movie_title, ownership_keys
+from services.smart_match import parse_release_filename
 
 
-CATALOG_SCHEMA_VERSION = 1
+CATALOG_SCHEMA_VERSION = 2
 
 
 class CatalogError(RuntimeError):
@@ -121,6 +122,14 @@ class CatalogStore:
                     raw_json TEXT NOT NULL
                 );
 
+                CREATE TABLE IF NOT EXISTS media_identity_keys (
+                    path_key TEXT NOT NULL,
+                    identity_key TEXT NOT NULL,
+                    key_source TEXT NOT NULL DEFAULT '',
+                    PRIMARY KEY (path_key, identity_key),
+                    FOREIGN KEY (path_key) REFERENCES media_files(path_key) ON DELETE CASCADE
+                );
+
                 CREATE TABLE IF NOT EXISTS tmdb_movies (
                     tmdb_id TEXT PRIMARY KEY,
                     imdb_id TEXT NOT NULL DEFAULT '',
@@ -221,6 +230,7 @@ class CatalogStore:
                 CREATE INDEX IF NOT EXISTS idx_media_files_status ON media_files(identity_status, metadata_status);
                 CREATE INDEX IF NOT EXISTS idx_media_files_quality ON media_files(resolution, rip_source);
                 CREATE INDEX IF NOT EXISTS idx_media_files_added ON media_files(added_time DESC);
+                CREATE INDEX IF NOT EXISTS idx_media_identity_key ON media_identity_keys(identity_key);
                 CREATE INDEX IF NOT EXISTS idx_list_items_identity ON list_items(identity_key);
                 CREATE INDEX IF NOT EXISTS idx_list_items_tmdb ON list_items(tmdb_id);
                 CREATE INDEX IF NOT EXISTS idx_followed_identity ON followed_releases(identity_key);
@@ -237,7 +247,7 @@ class CatalogStore:
             for table in (
                 "source_documents", "list_items", "user_lists", "collection_overrides",
                 "followed_releases", "download_jobs", "manual_matches", "plex_files",
-                "tmdb_movies", "media_files",
+                "tmdb_movies", "media_identity_keys", "media_files",
             ):
                 connection.execute(f"DELETE FROM {table}")
 
@@ -255,6 +265,7 @@ class CatalogStore:
             self._import_collections(connection, documents.get("user_collections.json", {}))
             self._import_followed(connection, documents.get("followed_releases.json", {}))
             self._import_download_jobs(connection, documents.get("qbittorrent/jobs.json", {}))
+            self._import_media_identity_keys(connection)
 
             connection.execute(
                 "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('backup_manifest', ?)",
@@ -383,6 +394,78 @@ class CatalogStore:
                  _text(job.get("year")), _text(job.get("destination")),
                  _number(job.get("updated_at")), _json_text(job)),
             )
+
+    @staticmethod
+    def _import_media_identity_keys(connection):
+        rows = connection.execute("""
+            SELECT mf.path_key, mf.raw_json AS file_json,
+                   pf.raw_json AS plex_json, mm.raw_json AS manual_json
+            FROM media_files mf
+            LEFT JOIN plex_files pf ON pf.path_key = mf.path_key
+            LEFT JOIN manual_matches mm ON mm.path_key = mf.path_key
+        """).fetchall()
+        for row in rows:
+            file_record = json.loads(row["file_json"])
+            authoritative = {
+                **file_record,
+                "title": file_record.get("identity_title") or file_record.get("accepted_title") or "",
+                "year": file_record.get("identity_year") or file_record.get("accepted_year") or "",
+            }
+            candidates = [(authoritative, "authoritative")]
+            if row["plex_json"]:
+                candidates.append((json.loads(row["plex_json"]), "plex_snapshot"))
+            if row["manual_json"]:
+                candidates.append((json.loads(row["manual_json"]), "manual_match"))
+            parsed_fallback = parse_release_filename(
+                file_record.get("filename") or Path(file_record.get("path") or row["path_key"]).name
+            )
+            parsed = {
+                "title": file_record.get("parsed_title") or parsed_fallback.get("title", ""),
+                "year": file_record.get("parsed_year") or parsed_fallback.get("year", ""),
+            }
+            candidates.append((parsed, "parsed_filename"))
+            for candidate, source in candidates:
+                for identity_key in ownership_keys(candidate):
+                    connection.execute(
+                        "INSERT OR IGNORE INTO media_identity_keys(path_key, identity_key, key_source) VALUES(?, ?, ?)",
+                        (row["path_key"], identity_key, source),
+                    )
+
+    def ownership_candidates(self, identity_keys):
+        keys = list(dict.fromkeys(_text(key) for key in identity_keys if _text(key)))
+        if not keys:
+            return []
+        placeholders = ",".join("?" for _ in keys)
+        connection = self.connect()
+        try:
+            rows = connection.execute(f"""
+                SELECT DISTINCT mf.*, pf.raw_json AS plex_json,
+                       mm.raw_json AS manual_json, tm.raw_json AS tmdb_json
+                FROM media_identity_keys mik
+                JOIN media_files mf ON mf.path_key = mik.path_key
+                LEFT JOIN plex_files pf ON pf.path_key = mf.path_key
+                LEFT JOIN manual_matches mm ON mm.path_key = mf.path_key
+                LEFT JOIN tmdb_movies tm ON tm.tmdb_id = mf.tmdb_id
+                WHERE mik.identity_key IN ({placeholders})
+                  AND (mf.identity_status = 'accepted' OR mf.metadata_accepted = 1)
+                ORDER BY mf.added_time DESC
+            """, keys).fetchall()
+            result = []
+            for row in rows:
+                item = dict(row)
+                for column in ("raw_json", "plex_json", "manual_json", "tmdb_json"):
+                    item[column] = json.loads(item[column]) if item.get(column) else {}
+                item["identity_keys"] = [
+                    key_row[0]
+                    for key_row in connection.execute(
+                        "SELECT identity_key FROM media_identity_keys WHERE path_key = ?",
+                        (item["path_key"],),
+                    ).fetchall()
+                ]
+                result.append(item)
+            return result
+        finally:
+            connection.close()
 
     def parity_report(self, expected_counts):
         table_map = {
