@@ -8,7 +8,7 @@ from services.movie_identity import normalize_movie_title, ownership_keys
 from services.smart_match import parse_release_filename
 
 
-CATALOG_SCHEMA_VERSION = 2
+CATALOG_SCHEMA_VERSION = 3
 
 
 class CatalogError(RuntimeError):
@@ -277,11 +277,9 @@ class CatalogStore:
             )
 
     @staticmethod
-    def _import_media_files(connection, document):
-        records = document.get("files", {}) if isinstance(document, dict) else {}
-        for path_key, record in records.items():
-            record = record if isinstance(record, dict) else {}
-            values = (
+    def _media_file_values(path_key, record):
+        record = record if isinstance(record, dict) else {}
+        return (
                 _text(path_key), _text(record.get("path") or path_key), _text(record.get("filename")),
                 _text(record.get("library_root")), int(_number(record.get("size"))),
                 _number(record.get("added_time")), _number(record.get("modified_time")),
@@ -296,9 +294,19 @@ class CatalogStore:
                 _text(record.get("metadata_source")), _bool(record.get("metadata_accepted")),
                 _text(record.get("enrichment_status")), _text(record.get("ingest_status")),
                 _bool(record.get("manual_lock")), _bool(record.get("manual_locked")), _json_text(record),
-            )
-            placeholders = ",".join("?" for _ in values)
-            connection.execute(f"INSERT INTO media_files VALUES ({placeholders})", values)
+        )
+
+    @classmethod
+    def _upsert_media_file(cls, connection, path_key, record):
+        values = cls._media_file_values(path_key, record)
+        placeholders = ",".join("?" for _ in values)
+        connection.execute(f"INSERT OR REPLACE INTO media_files VALUES ({placeholders})", values)
+
+    @classmethod
+    def _import_media_files(cls, connection, document):
+        records = document.get("files", {}) if isinstance(document, dict) else {}
+        for path_key, record in records.items():
+            cls._upsert_media_file(connection, path_key, record)
 
     @staticmethod
     def _import_tmdb_movies(connection, document):
@@ -396,14 +404,17 @@ class CatalogStore:
             )
 
     @staticmethod
-    def _import_media_identity_keys(connection):
-        rows = connection.execute("""
+    def _import_media_identity_keys(connection, path_key=None):
+        where = "WHERE mf.path_key = ?" if path_key else ""
+        parameters = (path_key,) if path_key else ()
+        rows = connection.execute(f"""
             SELECT mf.path_key, mf.raw_json AS file_json,
                    pf.raw_json AS plex_json, mm.raw_json AS manual_json
             FROM media_files mf
             LEFT JOIN plex_files pf ON pf.path_key = mf.path_key
             LEFT JOIN manual_matches mm ON mm.path_key = mf.path_key
-        """).fetchall()
+            {where}
+        """, parameters).fetchall()
         for row in rows:
             file_record = json.loads(row["file_json"])
             authoritative = {
