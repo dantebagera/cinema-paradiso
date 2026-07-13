@@ -8,6 +8,18 @@ from services.catalog_store import CatalogError
 
 
 class CatalogRepositoryTest(unittest.TestCase):
+    def setUp(self):
+        self.repositories = []
+
+    def tearDown(self):
+        for repository in reversed(self.repositories):
+            repository.close(flush=False)
+
+    def _repository(self, *args, **kwargs):
+        repository = CatalogRepository(*args, **kwargs)
+        self.repositories.append(repository)
+        return repository
+
     def _user_data(self, root):
         user_data = Path(root) / "user-data"
         metadata = user_data / "app_metadata"
@@ -38,11 +50,11 @@ class CatalogRepositoryTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as root:
             user_data = self._user_data(root)
             database = Path(root) / "catalog.sqlite"
-            repository = CatalogRepository(user_data, database, export_delay=60)
+            repository = self._repository(user_data, database, export_delay=60)
 
             self.assertTrue(repository.activate_from_json())
             (user_data / "app_metadata" / "files.json").write_text('{"files": {}}', encoding="utf-8")
-            restarted = CatalogRepository(user_data, database, export_delay=60)
+            restarted = self._repository(user_data, database, export_delay=60)
 
             self.assertFalse(restarted.activate_from_json())
             document = restarted.read_document("app_metadata/files.json", {"files": {}})
@@ -52,7 +64,7 @@ class CatalogRepositoryTest(unittest.TestCase):
     def test_file_upsert_is_row_level_and_export_is_deferred(self):
         with tempfile.TemporaryDirectory() as root:
             user_data = self._user_data(root)
-            repository = CatalogRepository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
             repository.activate_from_json()
             source_path = user_data / "app_metadata" / "files.json"
             before_export = source_path.read_text(encoding="utf-8")
@@ -76,7 +88,7 @@ class CatalogRepositoryTest(unittest.TestCase):
     def test_curation_document_replacement_updates_normalized_tables(self):
         with tempfile.TemporaryDirectory() as root:
             user_data = self._user_data(root)
-            repository = CatalogRepository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
             repository.activate_from_json()
             lists = {"lists": [{
                 "id": "watchlist",
@@ -110,7 +122,7 @@ class CatalogRepositoryTest(unittest.TestCase):
             metadata = user_data / "app_metadata"
             metadata.mkdir(parents=True)
             (metadata / "files.json").write_text("{broken", encoding="utf-8")
-            repository = CatalogRepository(user_data, Path(root) / "catalog.sqlite", export_delay=0)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=0)
 
             with self.assertRaises(CatalogError):
                 repository.activate_from_json()
@@ -118,7 +130,7 @@ class CatalogRepositoryTest(unittest.TestCase):
     def test_path_migration_updates_owned_records_in_one_generation(self):
         with tempfile.TemporaryDirectory() as root:
             user_data = self._user_data(root)
-            repository = CatalogRepository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
             repository.activate_from_json()
             repository.upsert_record("app_metadata/plex_metadata.json", "e:/movies/alien.mkv", {
                 "path": "E:/Movies/Alien.mkv",
@@ -146,7 +158,7 @@ class CatalogRepositoryTest(unittest.TestCase):
     def test_full_export_is_a_verified_rollback_snapshot(self):
         with tempfile.TemporaryDirectory() as root:
             user_data = self._user_data(root)
-            repository = CatalogRepository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
             repository.activate_from_json()
 
             names = repository.export_all()

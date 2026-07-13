@@ -2,9 +2,10 @@ from pathlib import Path
 import unittest
 
 
-APP_SOURCE = (Path(__file__).resolve().parents[1] / "src" / "App.jsx").read_text(encoding="utf-8")
-MANUAL_SOURCE = APP_SOURCE.split("const manualSections = [", 1)[1].split("const cardLabMovies = [", 1)[0]
-HELP_SOURCE = APP_SOURCE.split("const helpSections = [", 1)[1].split("function HelpWorkspace()", 1)[0]
+HELP_WORKSPACE = Path(__file__).resolve().parents[1] / "src" / "features" / "help" / "HelpWorkspace.jsx"
+HELP_WORKSPACE_SOURCE = HELP_WORKSPACE.read_text(encoding="utf-8")
+MANUAL_SOURCE = HELP_WORKSPACE_SOURCE.split("const manualSections = [", 1)[1].split("const helpSections = [", 1)[0]
+HELP_SOURCE = HELP_WORKSPACE_SOURCE.split("const helpSections = [", 1)[1].split("function HelpWorkspace()", 1)[0]
 
 
 class HelpPageManualTests(unittest.TestCase):

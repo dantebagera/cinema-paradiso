@@ -40,6 +40,7 @@ class CatalogRepository:
         self._cache = {}
         self._pending_exports = set()
         self._export_timer = None
+        self._closed = False
         self.store.initialize()
 
     @property
@@ -408,6 +409,8 @@ class CatalogRepository:
     def schedule_export(self, name):
         flush_now = False
         with self._lock:
+            if self._closed:
+                raise CatalogError("Catalog repository is closed")
             self._pending_exports.add(str(name).replace("\\", "/"))
             if self.export_delay <= 0:
                 flush_now = True
@@ -419,6 +422,17 @@ class CatalogRepository:
                 self._export_timer.start()
         if flush_now:
             self.flush_exports()
+
+    def close(self, flush=True):
+        if flush:
+            self.flush_exports()
+        with self._lock:
+            self._closed = True
+            if self._export_timer is not None:
+                self._export_timer.cancel()
+            self._export_timer = None
+            if not flush:
+                self._pending_exports.clear()
 
     def flush_exports(self):
         with self._lock:

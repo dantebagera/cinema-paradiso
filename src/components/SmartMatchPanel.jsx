@@ -1,12 +1,6 @@
 import { AlertTriangle, Bot, CheckCircle2, Clapperboard, Loader2, Search, Sparkles, Wand2, X } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
-
-async function fetchJson(url, options) {
-  const response = await fetch(url, options);
-  const data = await response.json();
-  if (!response.ok || data.error) throw new Error(data.error || `Request failed: ${response.status}`);
-  return data;
-}
+import { fetchJson } from '../api/client.js';
 
 function normalizeProposal(proposal) {
   const evidenceScore = proposal.evidence_score ?? proposal.confidence ?? 0;

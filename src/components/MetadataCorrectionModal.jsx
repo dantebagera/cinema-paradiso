@@ -1,12 +1,6 @@
 import { AlertTriangle, Loader2, RefreshCcw, Save, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-
-async function fetchJson(url, options) {
-  const response = await fetch(url, options);
-  const data = await response.json();
-  if (!response.ok || data.error) throw new Error(data.error || `Request failed: ${response.status}`);
-  return data;
-}
+import { fetchJson } from '../api/client.js';
 
 export default function MetadataCorrectionModal({
   item,

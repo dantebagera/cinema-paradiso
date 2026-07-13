@@ -8,6 +8,7 @@ class QBittorrentUiTests(unittest.TestCase):
     def setUpClass(cls):
         root = Path(__file__).resolve().parents[1]
         cls.source = (root / "src" / "App.jsx").read_text(encoding="utf-8")
+        cls.help_source = (root / "src" / "features" / "help" / "HelpWorkspace.jsx").read_text(encoding="utf-8")
         cls.backend_source = (root / "app.py").read_text(encoding="utf-8")
 
     def test_sidebar_has_downloads_navigation(self):
@@ -21,12 +22,12 @@ class QBittorrentUiTests(unittest.TestCase):
         self.assertIn("activeSection === 'help'", self.source)
 
     def test_help_workspace_documents_optional_integrations(self):
-        self.assertIn("function HelpWorkspace()", self.source)
+        self.assertIn("function HelpWorkspace()", self.help_source)
         for text in ["Plex", "Prowlarr", "TMDB", "Ollama", "qBittorrent", "Open Settings"]:
-            self.assertIn(text, self.source)
+            self.assertIn(text, self.help_source)
 
     def test_help_workspace_contains_medium_cp_manual(self):
-        self.assertIn("Cinema Paradiso Manual", self.source)
+        self.assertIn("Cinema Paradiso Manual", self.help_source)
         for text in [
             "Quick Start",
             "Home dashboard",
@@ -39,7 +40,7 @@ class QBittorrentUiTests(unittest.TestCase):
             "What CP does",
             "What CP will not do"
         ]:
-            self.assertIn(text, self.source)
+            self.assertIn(text, self.help_source)
 
     def test_downloads_workspace_keeps_cp_shell_and_frames_qbittorrent(self):
         self.assertIn("function DownloadsWorkspace()", self.source)

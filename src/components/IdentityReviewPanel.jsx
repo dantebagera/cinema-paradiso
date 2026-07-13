@@ -10,18 +10,8 @@ import {
   Sparkles
 } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { fetchJson } from '../api/client.js';
 import MetadataCorrectionModal from './MetadataCorrectionModal.jsx';
-
-async function fetchJson(url, options) {
-  const response = await fetch(url, options);
-  const data = await response.json();
-  if (!response.ok || data.error) {
-    const error = new Error(data.error || `Request failed: ${response.status}`);
-    error.data = data;
-    throw error;
-  }
-  return data;
-}
 
 function providerId(item, side) {
   const identity = item?.[side] || {};
