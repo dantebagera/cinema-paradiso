@@ -3,15 +3,23 @@ import hashlib
 import json
 import os
 import shutil
+import sqlite3
+import sys
 import tempfile
 import uuid
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from services.catalog_repository import catalog_database_path
+
 
 BACKUP_FORMAT = "cinema-paradiso-catalog-migration-backup"
-BACKUP_VERSION = 1
+BACKUP_VERSION = 2
 QBITTORRENT_STATE_FILES = {"jobs.json", "runtime.json"}
 
 
@@ -43,6 +51,7 @@ def resolve_backup_sources(project_root):
         "project_root": project_root,
         "config_path": config_path,
         "user_data_dir": user_data_dir.resolve(),
+        "catalog_path": catalog_database_path(user_data_dir),
     }
 
 
@@ -105,7 +114,7 @@ def _semantic_counts(payloads):
     followed = document("user-data/followed_releases.json", {})
     qbt_jobs = document("user-data/qbittorrent/jobs.json", {})
     list_rows = lists.get("lists", []) if isinstance(lists.get("lists", []), list) else []
-    return {
+    counts = {
         "file_records": _count_mapping(files, "files"),
         "tmdb_movies": _count_mapping(tmdb, "movies"),
         "plex_files": _count_mapping(plex, "files"),
@@ -120,6 +129,61 @@ def _semantic_counts(payloads):
         "followed_releases": _count_list(followed, "movies"),
         "qbittorrent_jobs": _count_mapping(qbt_jobs, "jobs"),
     }
+    catalog_payload = payloads.get("catalog/catalog.sqlite")
+    if catalog_payload:
+        temporary_name = ""
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".sqlite", delete=False) as handle:
+                handle.write(catalog_payload)
+                temporary_name = handle.name
+            connection = sqlite3.connect(temporary_name)
+            try:
+                table_counts = {
+                    "file_records": "media_files",
+                    "tmdb_movies": "tmdb_movies",
+                    "plex_files": "plex_files",
+                    "manual_matches": "manual_matches",
+                    "user_lists": "user_lists",
+                    "list_movies": "list_items",
+                    "collection_overrides": "collection_overrides",
+                    "followed_releases": "followed_releases",
+                }
+                for key, table in table_counts.items():
+                    counts[key] = int(connection.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0])
+            finally:
+                connection.close()
+        finally:
+            if temporary_name:
+                Path(temporary_name).unlink(missing_ok=True)
+    return counts
+
+
+def _catalog_snapshot(path):
+    path = Path(path)
+    if not path.is_file():
+        return None
+    temporary_name = ""
+    source = None
+    target = None
+    try:
+        with tempfile.NamedTemporaryFile(suffix=".sqlite", delete=False) as handle:
+            temporary_name = handle.name
+        source = sqlite3.connect(f"file:{path.as_posix()}?mode=ro", uri=True)
+        target = sqlite3.connect(temporary_name)
+        source.backup(target)
+        target.commit()
+        target.close()
+        target = None
+        source.close()
+        source = None
+        return Path(temporary_name).read_bytes()
+    finally:
+        if target is not None:
+            target.close()
+        if source is not None:
+            source.close()
+        if temporary_name:
+            Path(temporary_name).unlink(missing_ok=True)
 
 
 def _app_version(project_root):
@@ -153,6 +217,16 @@ def create_backup(project_root, output_dir=None, now=None):
             "source_kind": source_kind,
             "size": len(payload),
             "sha256": _sha256_bytes(payload),
+        })
+    catalog_payload = _catalog_snapshot(sources["catalog_path"])
+    if catalog_payload is not None:
+        name = "catalog/catalog.sqlite"
+        payloads[name] = catalog_payload
+        file_manifest.append({
+            "archive_path": name,
+            "source_kind": "catalog",
+            "size": len(catalog_payload),
+            "sha256": _sha256_bytes(catalog_payload),
         })
 
     manifest = {
@@ -196,7 +270,7 @@ def verify_backup(archive_path):
                 manifest = json.loads(archive.read("manifest.json").decode("utf-8"))
             except (KeyError, UnicodeDecodeError, ValueError) as error:
                 raise BackupError("Backup manifest is missing or invalid") from error
-            if manifest.get("format") != BACKUP_FORMAT or manifest.get("version") != BACKUP_VERSION:
+            if manifest.get("format") != BACKUP_FORMAT or manifest.get("version") not in {1, BACKUP_VERSION}:
                 raise BackupError("Unsupported backup format or version")
             payloads = {}
             for item in manifest.get("files", []):

@@ -64,7 +64,7 @@ class CatalogRepositoryTest(unittest.TestCase):
     def test_file_upsert_is_row_level_and_export_is_deferred(self):
         with tempfile.TemporaryDirectory() as root:
             user_data = self._user_data(root)
-            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60, auto_export=True)
             repository.activate_from_json()
             source_path = user_data / "app_metadata" / "files.json"
             before_export = source_path.read_text(encoding="utf-8")
@@ -84,6 +84,23 @@ class CatalogRepositoryTest(unittest.TestCase):
             exported = json.loads(source_path.read_text(encoding="utf-8"))
 
         self.assertEqual(exported["files"]["e:/movies/alien.mkv"]["resolution"], "4K")
+
+    def test_runtime_writes_do_not_maintain_json_metadata_mirrors(self):
+        with tempfile.TemporaryDirectory() as root:
+            user_data = self._user_data(root)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=0)
+            repository.activate_from_json()
+            source_path = user_data / "app_metadata" / "files.json"
+            before = source_path.read_text(encoding="utf-8")
+
+            repository.upsert_record("app_metadata/files.json", "e:/movies/new.mkv", {
+                "path": "E:/Movies/New.mkv",
+                "filename": "New.mkv",
+            })
+            repository.flush_exports()
+            after = source_path.read_text(encoding="utf-8")
+
+        self.assertEqual(after, before)
 
     def test_curation_document_replacement_updates_normalized_tables(self):
         with tempfile.TemporaryDirectory() as root:
@@ -108,6 +125,35 @@ class CatalogRepositoryTest(unittest.TestCase):
                 connection.close()
 
         self.assertEqual(counts, (1, 1))
+
+    def test_curation_changes_do_not_invalidate_media_revision(self):
+        with tempfile.TemporaryDirectory() as root:
+            user_data = self._user_data(root)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository.activate_from_json()
+            media_before = repository.generation('media')
+            curation_before = repository.generation('curation')
+
+            repository.replace_document("user_lists.json", {"lists": []})
+
+            self.assertEqual(repository.generation('media'), media_before)
+            self.assertEqual(repository.generation('curation'), curation_before + 1)
+
+    def test_media_changes_increment_only_media_revision(self):
+        with tempfile.TemporaryDirectory() as root:
+            user_data = self._user_data(root)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository.activate_from_json()
+            media_before = repository.generation('media')
+            curation_before = repository.generation('curation')
+
+            repository.upsert_record("app_metadata/files.json", "e:/movies/alien.mkv", {
+                "path": "E:/Movies/Alien.mkv",
+                "filename": "Alien.mkv",
+            })
+
+            self.assertEqual(repository.generation('media'), media_before + 1)
+            self.assertEqual(repository.generation('curation'), curation_before)
 
     def test_catalog_paths_are_isolated_by_user_data_directory(self):
         with tempfile.TemporaryDirectory() as root:

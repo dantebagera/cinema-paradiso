@@ -59,6 +59,7 @@ class MetadataOverrideTest(unittest.TestCase):
 
             displayed = app._apply_metadata_override(canonical, identity, store=store)
             removed = store.reset_metadata_override(identity)
+            reset_value = store.get_metadata_override(identity)
 
         self.assertEqual(displayed["title"], "The Amusement Park")
         self.assertEqual(displayed["year"], "1975")
@@ -66,7 +67,7 @@ class MetadataOverrideTest(unittest.TestCase):
         self.assertEqual(displayed["provider_year"], "2021")
         self.assertTrue(displayed["metadata_override"])
         self.assertTrue(removed)
-        self.assertEqual(store.get_metadata_override(identity), {})
+        self.assertEqual(reset_value, {})
 
     def test_override_api_saves_identity_level_title_year_and_resets(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:

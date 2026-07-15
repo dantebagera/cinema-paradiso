@@ -857,8 +857,7 @@ input:focus-visible {
 .topbar h1,
 .hero-copy h1,
 .hero-copy h2,
-.section-heading h3,
-.migration-panel h2 {
+.section-heading h3 {
   margin: 0;
   color: var(--text-strong);
   text-wrap: balance;
@@ -983,8 +982,7 @@ kbd {
 .health-panel,
 .release-panel,
 .movie-rail,
-.inspector,
-.migration-panel {
+.inspector {
   border: 1px solid var(--border);
   border-radius: var(--radius-panel);
   background: linear-gradient(180deg, #121316f2, #0d0e10f5);
@@ -1059,8 +1057,7 @@ kbd {
   text-wrap: pretty;
 }
 
-.hero-actions,
-.migration-actions {
+.hero-actions {
   position: relative;
   z-index: 2;
   display: flex;
@@ -1101,21 +1098,6 @@ kbd {
 
 .action-pill-primary {
   border-color: #d4af3770;
-  color: var(--projector-gold);
-}
-
-.migration-actions .action-pill {
-  cursor: default;
-}
-
-.legacy-fallback {
-  color: var(--text-faint);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.legacy-fallback:hover {
   color: var(--projector-gold);
 }
 
@@ -2697,9 +2679,7 @@ kbd {
   color: var(--projector-gold);
 }
 
-.library-search input,
-.library-toolbar select,
-.library-mini-input {
+.library-search input {
   width: 100%;
   min-width: 0;
   border: 0;
@@ -2990,7 +2970,6 @@ kbd {
 }
 
 .movie-expanded-meta,
-.movie-expanded-facts,
 .file-expanded-panel {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3032,7 +3011,9 @@ kbd {
 }
 
 .movie-expanded-facts {
+  display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(130px, 0.4fr);
+  gap: var(--space-2);
   border-top: 1px solid var(--border);
   padding-top: 12px;
 }
@@ -3080,7 +3061,6 @@ kbd {
 }
 
 .director-person strong,
-.person-card strong,
 .collection-panel strong,
 .list-chip button {
   display: block;
@@ -3163,8 +3143,14 @@ kbd {
 }
 
 .person-card strong {
+  display: block;
+  max-width: 100%;
   overflow: visible;
   overflow-wrap: anywhere;
+  color: var(--text-strong);
+  font-size: 0.84rem;
+  line-height: 1.25;
+  text-align: center;
   text-overflow: clip;
   white-space: normal;
 }
@@ -3565,6 +3551,7 @@ kbd {
   gap: 7px;
   margin: 0;
   color: #ff9b9b;
+  padding: 18px;
   font-weight: 800;
 }
 
@@ -5165,7 +5152,6 @@ kbd {
 
 .torrent-dialog,
 .small-dialog {
-  width: min(980px, 96vw);
   max-height: 86vh;
   overflow: auto;
   border: 1px solid var(--border-strong);
@@ -5186,6 +5172,10 @@ kbd {
   background: linear-gradient(180deg, #121316, #0a0a0b);
   box-shadow: var(--shadow-pop);
   padding: 18px;
+}
+
+.torrent-dialog {
+  width: min(980px, 96vw);
 }
 
 .person-bio-dialog {
@@ -5458,7 +5448,6 @@ kbd {
 }
 
 .dialog-loading,
-.dialog-error,
 .torrent-no-link {
   color: var(--text-muted);
   padding: 18px;
@@ -5549,10 +5538,6 @@ kbd {
 
 .settings-path-warning {
   color: #f2b95f;
-}
-
-.dialog-error {
-  color: #ff9b9b;
 }
 
 .torrent-result-list {
@@ -5660,38 +5645,6 @@ kbd {
 
 @keyframes shimmer {
   to { background-position: -200% 0; }
-}
-
-.migration-panel {
-  display: grid;
-  align-content: center;
-  gap: var(--space-4);
-  min-height: calc(100vh - 130px);
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 42px;
-  text-align: center;
-}
-
-.migration-panel > svg {
-  justify-self: center;
-  color: var(--projector-gold);
-}
-
-.migration-panel h2 {
-  font-size: 1.8rem;
-}
-
-.migration-panel p {
-  max-width: 68ch;
-  margin: 0 auto;
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.migration-actions {
-  justify-content: center;
 }
 
 .toast {

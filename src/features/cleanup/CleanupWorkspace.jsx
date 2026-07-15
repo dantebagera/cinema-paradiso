@@ -12,7 +12,6 @@ import {
   Search,
   ShieldCheck,
   Trash2,
-  Wand2,
   X,
 } from 'lucide-react'
 import { fetchJson } from '../../api/client.js'
@@ -20,38 +19,34 @@ import IdentityReviewPanel from '../../components/IdentityReviewPanel.jsx'
 import { ConfirmDialog, LibraryRenameModal, LibraryStat } from '../../components/LibraryControls.jsx'
 import Pagination from '../../components/Pagination.jsx'
 import { SmartMatchControls, SmartMatchReviewModal } from '../../components/SmartMatchPanel.jsx'
-import { cx, formatCount, getUniqueOptions } from '../../utils/appUtils.js'
+import { cx, formatCount } from '../../utils/appUtils.js'
 import {
-  filterCleanupItems,
-  filterMaintenanceIdentityItems,
   metadataStatusChipClass,
   metadataStatusLabel,
   renameModalItem,
 } from '../../utils/cleanupUtils.js'
-import { getMovieIdentity, isLowQuality, rootLabel } from '../../utils/libraryUtils.js'
+import { isLowQuality, rootLabel } from '../../utils/libraryUtils.js'
 import { formatVoteCount } from '../../utils/moviePresentation.js'
 
 const maintenanceTabs = [
   { id: 'storage', label: 'Storage', icon: ShieldCheck },
-  { id: 'upgrades', label: 'Upgrades', icon: Wand2 },
   { id: 'identity', label: 'Identity', icon: ScanSearch },
 ];
 const MAINTENANCE_PAGE_SIZE = 50;
 
 function maintenanceTab(initialTab) {
-  if (initialTab === 'low') return 'upgrades';
   if (initialTab === 'unmatched' || initialTab === 'identity') return 'identity';
   return 'storage';
 }
 
-export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initialTab = 'storage', onHealthChanged }) {
+export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage', onHealthChanged, onOpenLibraryUpgrades }) {
   const [activeTab, setActiveTab] = useState(maintenanceTab(initialTab));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [audit, setAudit] = useState({ summary: {}, storage: { groups: [] }, upgrades: { items: [] }, identity: { items: [] } });
+  const [audit, setAudit] = useState({ summary: {}, storage: { groups: [], pagination: {} }, identity: { items: [], pagination: {} } });
   const [selected, setSelected] = useState({ storage: new Set(), identity: new Set() });
-  const [pages, setPages] = useState({ upgrades: 1, identity: 1 });
-  const [filters, setFilters] = useState({ query: '', resolution: 'all', source: 'all', plex: 'all', identity: 'all' });
+  const [pages, setPages] = useState({ storage: 1, identity: 1 });
+  const [filters, setFilters] = useState({ query: '' });
   const [confirmAction, setConfirmAction] = useState(null);
   const [renameTarget, setRenameTarget] = useState(null);
   const [matchModal, setMatchModal] = useState(null);
@@ -68,14 +63,25 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
     setActiveTab(maintenanceTab(initialTab));
   }, [initialTab]);
 
-  const loadMaintenance = useCallback(async () => {
+  const loadMaintenanceSection = useCallback(async (section, page, query) => {
     setLoading(true);
     setError('');
     try {
-      const state = await fetchJson('/api/maintenance/audit');
-      setAudit(state);
-      setIdentityAudit(state.identity_review || null);
-      setSelected({ storage: new Set(), identity: new Set() });
+      const params = new URLSearchParams({
+        section,
+        page: String(page || 1),
+        page_size: String(MAINTENANCE_PAGE_SIZE),
+      });
+      if (query.trim()) params.set('q', query.trim());
+      const state = await fetchJson(`/api/maintenance/audit?${params.toString()}`);
+      setAudit((current) => ({
+        ...current,
+        ...state,
+        storage: state.storage || current.storage,
+        identity: state.identity || current.identity,
+      }));
+      if (state.identity_review) setIdentityAudit(state.identity_review);
+      setSelected((current) => ({ ...current, [section]: new Set() }));
     } catch (loadError) {
       setError(loadError.message);
     } finally {
@@ -84,11 +90,20 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
   }, []);
 
   useEffect(() => {
-    loadMaintenance();
-    const refreshForLibraryChange = () => loadMaintenance();
+    const timer = window.setTimeout(() => {
+      loadMaintenanceSection(activeTab, pages[activeTab] || 1, filters.query);
+    }, filters.query ? 180 : 0);
+    return () => window.clearTimeout(timer);
+  }, [activeTab, filters.query, loadMaintenanceSection, pages]);
+
+  useEffect(() => {
+    const refreshForLibraryChange = () => {
+      setPages((current) => ({ ...current, [activeTab]: 1 }));
+      loadMaintenanceSection(activeTab, 1, filters.query);
+    };
     window.addEventListener('cp-library-changed', refreshForLibraryChange);
     return () => window.removeEventListener('cp-library-changed', refreshForLibraryChange);
-  }, [loadMaintenance]);
+  }, [activeTab, filters.query, loadMaintenanceSection]);
 
   useEffect(() => {
     let cancelled = false;
@@ -132,48 +147,19 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
   }, [identityAudit?.id, identityAudit?.status, identityHealthJob, onHealthChanged]);
 
   const selectableDuplicatePaths = useMemo(() => audit.storage.groups.flatMap((group) => (group.files || []).filter((file) => file.role === 'candidate').map((file) => file.path)), [audit.storage.groups]);
-
-  const optionSets = useMemo(() => ({
-    upgradeResolutions: getUniqueOptions(audit.upgrades.items, (item) => item.resolution),
-    upgradeSources: getUniqueOptions(audit.upgrades.items, (item) => item.rip_source)
-  }), [audit.upgrades.items]);
-
-  const filteredUpgrades = useMemo(() => filterCleanupItems(audit.upgrades.items, filters), [audit.upgrades.items, filters]);
   const identityItems = useMemo(() => audit.identity.items || [], [audit.identity.items]);
-  const filteredIdentity = useMemo(() => filterMaintenanceIdentityItems(identityItems, filters), [identityItems, filters]);
-  const filteredDuplicates = useMemo(() => {
-    const q = filters.query.trim().toLowerCase();
-    if (!q) return audit.storage.groups;
-    return audit.storage.groups.filter((group) => {
-      const haystack = [
-        group.title,
-        ...(group.files || []).flatMap((file) => [file.filename, file.path, file.plex_title, file.plex_year])
-      ].filter(Boolean).join(' ').toLowerCase();
-      return haystack.includes(q);
-    });
-  }, [audit.storage.groups, filters.query]);
-  const upgradePage = Math.min(pages.upgrades, Math.max(1, Math.ceil(filteredUpgrades.length / MAINTENANCE_PAGE_SIZE)));
-  const identityPage = Math.min(pages.identity, Math.max(1, Math.ceil(filteredIdentity.length / MAINTENANCE_PAGE_SIZE)));
-  const visibleUpgrades = useMemo(
-    () => filteredUpgrades.slice((upgradePage - 1) * MAINTENANCE_PAGE_SIZE, upgradePage * MAINTENANCE_PAGE_SIZE),
-    [filteredUpgrades, upgradePage]
-  );
-  const visibleIdentity = useMemo(
-    () => filteredIdentity.slice((identityPage - 1) * MAINTENANCE_PAGE_SIZE, identityPage * MAINTENANCE_PAGE_SIZE),
-    [filteredIdentity, identityPage]
-  );
-  const visibleUnmatched = useMemo(() => visibleIdentity.filter((item) => !item.metadata_accepted), [visibleIdentity]);
+  const visibleUnmatched = useMemo(() => identityItems.filter((item) => !item.metadata_accepted), [identityItems]);
 
   const summary = audit.summary;
 
   function updateFilter(key, value) {
     setFilters((state) => ({ ...state, [key]: value }));
-    setPages({ upgrades: 1, identity: 1 });
+    setPages({ storage: 1, identity: 1 });
   }
 
   function selectMaintenanceTab(tab) {
     setActiveTab(tab);
-    if (tab === 'upgrades' || tab === 'identity') setPages((state) => ({ ...state, [tab]: 1 }));
+    setPages((state) => ({ ...state, [tab]: 1 }));
   }
 
   function toggleSelected(tab, path, checked) {
@@ -456,7 +442,7 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
         });
         setIdentityAudit(await fetchJson('/api/metadata/identity-audit'));
       } else {
-        await loadMaintenance();
+        await loadMaintenanceSection(activeTab, pages[activeTab] || 1, filters.query);
       }
       setMatchModal(null);
       onHealthChanged();
@@ -479,7 +465,7 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
         setIdentityApprovedProposal({ ...matchModal.item, candidate: match });
         setIdentityAudit(await fetchJson('/api/metadata/identity-audit'));
       } else {
-        await loadMaintenance();
+        await loadMaintenanceSection(activeTab, pages[activeTab] || 1, filters.query);
       }
       setRowStatus((state) => ({ ...state, [matchModal.item.path]: { tone: 'success', text: `TMDB match applied: ${match.title}` } }));
       setMatchModal(null);
@@ -536,7 +522,7 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
     }
   }
 
-  const activeSelectedCount = activeTab === 'upgrades' ? 0 : (selected[activeTab]?.size || 0);
+  const activeSelectedCount = selected[activeTab]?.size || 0;
 
   return (
     <section className="cleanup-workspace">
@@ -544,11 +530,11 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
         <div>
           <p className="screen-kicker">Catalog-backed maintenance</p>
           <h2>Library Maintenance <span className="offline-badge">Local</span></h2>
-          <p>One current audit for storage, upgrades, and movie identity. File actions remain explicit and use the Recycle Bin.</p>
+          <p>Archive integrity for duplicate files and movie identity. Upgrade discovery now lives in Library.</p>
         </div>
         <div className="library-header-actions">
           <div className="library-action-row">
-            <button type="button" className="btn btn-secondary" onClick={loadMaintenance} disabled={loading}>
+            <button type="button" className="btn btn-secondary" onClick={() => loadMaintenanceSection(activeTab, pages[activeTab] || 1, filters.query)} disabled={loading}>
               <RefreshCcw size={15} /> Refresh
             </button>
             {activeSelectedCount > 0 && (
@@ -564,7 +550,7 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
         <LibraryStat icon={ShieldCheck} label="Duplicate groups" value={formatCount(summary.duplicate_groups)} tone="amber" onClick={() => selectMaintenanceTab('storage')} />
         <LibraryStat icon={Trash2} label="Reclaimable space" value={summary.reclaimable_human || '0 B'} tone="red" onClick={() => selectMaintenanceTab('storage')} />
         <LibraryStat icon={CheckCircle2} label="Safe recommendations" value={formatCount(summary.recommended_removals)} tone="green" onClick={() => selectMaintenanceTab('storage')} />
-        <LibraryStat icon={Wand2} label="Upgrade candidates" value={formatCount(summary.upgrade_candidates)} tone="amber" onClick={() => selectMaintenanceTab('upgrades')} />
+        <LibraryStat icon={Clapperboard} label="Upgrade candidates" value={formatCount(summary.upgrade_candidates)} tone="amber" onClick={onOpenLibraryUpgrades} />
         <LibraryStat icon={ScanSearch} label="Unmatched files" value={formatCount(summary.unmatched_files)} tone="violet" onClick={() => selectMaintenanceTab('identity')} />
         <LibraryStat icon={AlertTriangle} label="Actionable identities" value={formatCount(summary.actionable_identities)} tone="amber" onClick={() => selectMaintenanceTab('identity')} />
         {summary.metadata_pending > 0 && <LibraryStat icon={Loader2} label="Metadata pending" value={formatCount(summary.metadata_pending)} tone="amber" />}
@@ -584,24 +570,8 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
       <div className="library-toolbar cleanup-toolbar">
         <label className="library-search cleanup-search">
           <Search size={17} />
-          <input value={filters.query} onChange={(event) => updateFilter('query', event.target.value)} placeholder="Search files, paths, Plex titles..." />
+          <input value={filters.query} onChange={(event) => updateFilter('query', event.target.value)} placeholder="Search files, paths, or catalog titles..." />
         </label>
-        {(activeTab === 'upgrades' || activeTab === 'identity') && (
-          <>
-            {activeTab === 'upgrades' && (
-              <>
-                <select value={filters.resolution} onChange={(event) => updateFilter('resolution', event.target.value)}>
-                  <option value="all">All resolutions</option>
-                  {optionSets.upgradeResolutions.map((value) => <option key={value} value={value}>{value}</option>)}
-                </select>
-                <select value={filters.source} onChange={(event) => updateFilter('source', event.target.value)}>
-                  <option value="all">All sources</option>
-                  {optionSets.upgradeSources.map((value) => <option key={value} value={value}>{value}</option>)}
-                </select>
-              </>
-            )}
-          </>
-        )}
       </div>
 
       {error && (
@@ -619,17 +589,14 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
       ) : (
         <>
           {activeTab === 'storage' && (
-            <DuplicatesCleanupTab groups={filteredDuplicates} selected={selected.storage} selectablePaths={selectableDuplicatePaths} onToggle={toggleSelected} onSelectPaths={setSelectedPaths} onDelete={requestDelete} />
-          )}
-          {activeTab === 'upgrades' && (
             <>
-              <Pagination total={filteredUpgrades.length} page={upgradePage} totalPages={Math.max(1, Math.ceil(filteredUpgrades.length / MAINTENANCE_PAGE_SIZE))} pageStart={(upgradePage - 1) * MAINTENANCE_PAGE_SIZE} pageEnd={Math.min(upgradePage * MAINTENANCE_PAGE_SIZE, filteredUpgrades.length)} onPageChange={(page) => setPages((state) => ({ ...state, upgrades: page }))} />
-              <LowQualityCleanupTab items={visibleUpgrades} onFindTorrent={onFindTorrent} />
+              <MaintenancePagination pagination={audit.storage.pagination} onPageChange={(page) => setPages((state) => ({ ...state, storage: page }))} />
+              <DuplicatesCleanupTab groups={audit.storage.groups} selected={selected.storage} selectablePaths={selectableDuplicatePaths} onToggle={toggleSelected} onSelectPaths={setSelectedPaths} onDelete={requestDelete} />
             </>
           )}
           {activeTab === 'identity' && (
             <>
-              <Pagination total={filteredIdentity.length} page={identityPage} totalPages={Math.max(1, Math.ceil(filteredIdentity.length / MAINTENANCE_PAGE_SIZE))} pageStart={(identityPage - 1) * MAINTENANCE_PAGE_SIZE} pageEnd={Math.min(identityPage * MAINTENANCE_PAGE_SIZE, filteredIdentity.length)} onPageChange={(page) => setPages((state) => ({ ...state, identity: page }))} />
+              <MaintenancePagination pagination={audit.identity.pagination} onPageChange={(page) => setPages((state) => ({ ...state, identity: page }))} />
               {visibleUnmatched.length > 0 && (
                 <UnmatchedCleanupTab
                   items={visibleUnmatched}
@@ -659,7 +626,7 @@ export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initia
                   ) : null}
                 />
               )}
-              {visibleIdentity.length === 0 && <CleanupEmpty title="No unmatched files." text="New unmatched files appear here after normal catalog reconciliation." />}
+              {identityItems.length === 0 && <CleanupEmpty title="No unmatched files." text="New unmatched files appear here after normal catalog reconciliation." />}
             </>
           )}
           {activeTab === 'identity' && (
@@ -783,35 +750,6 @@ function DuplicatesCleanupTab({ groups, selected, selectablePaths, onToggle, onS
   );
 }
 
-function LowQualityCleanupTab({ items, onFindTorrent }) {
-  return (
-    <div className="cleanup-panel">
-      {items.length ? (
-        <div className="cleanup-file-list">
-          {items.map((item) => {
-            const identity = getMovieIdentity(item);
-            return (
-              <CleanupFileRow
-                key={item.path}
-                item={item}
-                selected={false}
-                selectable={false}
-                badge="Upgrade candidate"
-                onToggle={() => {}}
-                actions={(
-                  <button type="button" className="btn btn-upgrade" onClick={() => onFindTorrent({ title: identity.title, year: identity.year, imdb_id: item.imdb_id || '', tmdb_id: item.tmdb_id || '' }, true)}>
-                    <Wand2 size={15} /> Find sources
-                  </button>
-                )}
-              />
-            );
-          })}
-        </div>
-      ) : <CleanupEmpty title="No upgrades currently needed." text="Titles appear here only when the catalog has no 1080p or better copy for that movie." />}
-    </div>
-  );
-}
-
 function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onPlay, onDelete, onRename, onFixPath, onPlexMatch, onTmdbMatch, plexAvailable, smartControls, lastSmartMatchControl }) {
   return (
     <div className="cleanup-panel">
@@ -894,6 +832,20 @@ function CleanupSelectionBar({ label, selectedCount, selectableCount, selectLabe
 
       </div>
     </div>
+  );
+}
+
+function MaintenancePagination({ pagination = {}, onPageChange }) {
+  const total = Number(pagination.total || 0);
+  return (
+    <Pagination
+      total={total}
+      page={Number(pagination.page || 1)}
+      totalPages={Number(pagination.total_pages || 1)}
+      pageStart={Number(pagination.page_start || 0)}
+      pageEnd={Number(pagination.page_end || 0)}
+      onPageChange={onPageChange}
+    />
   );
 }
 

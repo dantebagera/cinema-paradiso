@@ -6,11 +6,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
 import { announceLibraryChanged } from '../../api/library.js';
 import { addMoviePayloadsToList, announceCurationChanged, fetchUserListsCached } from '../../api/curation.js';
+import { previewSourceReview } from '../../api/sourceReview.js';
 import ExportCopyDialog from '../../components/ExportCopyDialog.jsx';
 import ListEditorModal from '../../components/ListEditorModal.jsx';
 import MetadataCorrectionModal from '../../components/MetadataCorrectionModal.jsx';
 import PosterEditorModal from '../../components/PosterEditorModal.jsx';
 import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
+import SourceReviewDialog from '../../components/SourceReviewDialog.jsx';
 import { LibraryMovieCard } from '../../components/SharedMovieCards.jsx';
 import Pagination from '../../components/Pagination.jsx';
 import { ConfirmDialog, LibraryRenameModal, LibraryStat } from '../../components/LibraryControls.jsx';
@@ -56,9 +58,16 @@ function LibraryPeopleSearchResults({ people, query, onOpenFilmography }) {
   );
 }
 
-export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query, setQuery, onReviewUnmatched, onOpenDiscoverPerson }) {
+function librarySelectionKey(item) {
+  return item.path || movieIdentityKey(moviePayload(item));
+}
+
+export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query, setQuery, onReviewUnmatched, onOpenDiscoverPerson, filterRequest }) {
   const pageSize = 40;
   const [items, setItems] = useState([]);
+  const [fileItems, setFileItems] = useState([]);
+  const [fileItemsLoaded, setFileItemsLoaded] = useState(false);
+  const [fileLoading, setFileLoading] = useState(false);
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState('');
   const [error, setError] = useState('');
@@ -66,7 +75,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('view') === 'file' ? 'file' : 'movie'
   ));
   const [qualityFilter, setQualityFilter] = useState('all');
-  const [plexFilter, setPlexFilter] = useState('all');
+  const [identityFilter, setIdentityFilter] = useState('all');
   const [sortMode, setSortMode] = useState('added');
   const [genreFilter, setGenreFilter] = useState('all');
   const [resolutionFilter, setResolutionFilter] = useState('all');
@@ -95,11 +104,20 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [posterEditor, setPosterEditor] = useState(null);
   const [metadataCorrection, setMetadataCorrection] = useState(null);
+  const [sourceReview, setSourceReview] = useState(null);
   const [showAdultMovies, setShowAdultMovies] = useState(true);
   const [selectedLibraryKeys, setSelectedLibraryKeys] = useState(() => new Set());
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [peopleLoaded, setPeopleLoaded] = useState(false);
   const libraryRequestSeq = useRef(0);
+
+  useEffect(() => {
+    if (!filterRequest?.id) return;
+    setMode('movie');
+    setQualityFilter(filterRequest.quality || 'all');
+    setCurrentPage(1);
+    setExpandedPath('');
+  }, [filterRequest]);
 
   const loadLibrary = useCallback(async (forceScan = false, options = {}) => {
     const requestSeq = libraryRequestSeq.current + 1;
@@ -114,6 +132,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
       );
       if (requestSeq !== libraryRequestSeq.current) return;
       setItems(data.items || []);
+      setFileItemsLoaded(false);
       setPeopleLoaded(false);
       if (!quiet) setCurrentPage(1);
       if (forceScan) {
@@ -144,6 +163,30 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   useEffect(() => {
     loadLibrary(false);
   }, [loadLibrary]);
+
+  useEffect(() => {
+    if (mode !== 'file' || fileItemsLoaded) return;
+    let cancelled = false;
+    setFileLoading(true);
+    setError('');
+    setStatus('Loading file inventory...');
+    fetchJson('/api/library?view=files')
+      .then((data) => {
+        if (cancelled) return;
+        setFileItems(data.items || []);
+        setFileItemsLoaded(true);
+        setStatus('');
+      })
+      .catch((loadError) => {
+        if (!cancelled) setError(loadError.message);
+      })
+      .finally(() => {
+        if (!cancelled) setFileLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [fileItemsLoaded, mode]);
 
   useEffect(() => {
     if (mode !== 'movie' || librarySearchKind !== 'people' || peopleLoaded) return;
@@ -231,12 +274,14 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     return () => window.clearInterval(timer);
   }, [loading]);
 
+  const activeItems = mode === 'file' ? fileItems : items;
+  const activeLoading = loading || (mode === 'file' && fileLoading);
   const optionSets = useMemo(() => ({
-    genres: getUniqueOptions(items, (item) => item.canonical_metadata?.genres?.length ? item.canonical_metadata.genres : item.plex_genres || []),
-    sources: getUniqueOptions(items, (item) => item.rip_source),
-    languages: getUniqueOptions(items, (item) => item.canonical_metadata?.language || item.plex_language),
-    countries: getUniqueOptions(items, (item) => item.canonical_metadata?.country_flag || item.canonical_metadata?.country || item.plex_country_flag || item.plex_country)
-  }), [items]);
+    genres: getUniqueOptions(activeItems, (item) => item.canonical_metadata?.genres?.length ? item.canonical_metadata.genres : item.plex_genres || []),
+    sources: getUniqueOptions(activeItems, (item) => item.rip_source),
+    languages: getUniqueOptions(activeItems, (item) => item.canonical_metadata?.language || item.plex_language),
+    countries: getUniqueOptions(activeItems, (item) => item.canonical_metadata?.country_flag || item.canonical_metadata?.country || item.plex_country_flag || item.plex_country)
+  }), [activeItems]);
 
   const {
     filteredItems,
@@ -247,12 +292,12 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     visibleItems,
     stats
   } = useMemo(() => buildLibraryViewModel({
-    items,
+    items: activeItems,
     pageSize,
     currentPage,
     query,
     qualityFilter,
-    plexFilter,
+    identityFilter,
     sortMode,
     genreFilter,
     resolutionFilter,
@@ -271,10 +316,10 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     viewingStateFilter,
     tmdbCache,
     showAdultMovies
-  }), [items, query, qualityFilter, plexFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sizeFilter, mode, roleFilter, collectionFilter, listFilter, userLists, viewingStateFilter, tmdbCache, showAdultMovies, currentPage]);
+  }), [activeItems, query, qualityFilter, identityFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sizeFilter, mode, roleFilter, collectionFilter, listFilter, userLists, viewingStateFilter, tmdbCache, showAdultMovies, currentPage]);
 
   const selectedLibraryItems = useMemo(() => (
-    items.filter((item) => selectedLibraryKeys.has(movieIdentityKey(moviePayload(item))))
+    items.filter((item) => selectedLibraryKeys.has(librarySelectionKey(item)))
   ), [items, selectedLibraryKeys]);
   const listMissingCoverage = useMemo(() => (
     listFilter ? listLibraryCoverage(items, listFilter) : null
@@ -282,10 +327,10 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   const libraryPeopleResults = useMemo(() => (
     buildLibraryPeopleIndex(items, query)
   ), [items, query]);
-  const allFilteredLibrarySelected = filteredItems.length > 0 && filteredItems.every((item) => selectedLibraryKeys.has(movieIdentityKey(moviePayload(item))));
+  const allFilteredLibrarySelected = filteredItems.length > 0 && filteredItems.every((item) => selectedLibraryKeys.has(librarySelectionKey(item)));
 
   function toggleLibrarySelection(item, checked) {
-    const key = movieIdentityKey(moviePayload(item));
+    const key = librarySelectionKey(item);
     setSelectedLibraryKeys((current) => {
       const next = new Set(current);
       if (checked) next.add(key);
@@ -295,11 +340,47 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   }
 
   function selectAllFilteredLibrary() {
-    setSelectedLibraryKeys(new Set(filteredItems.map((item) => movieIdentityKey(moviePayload(item)))));
+    setSelectedLibraryKeys(new Set(filteredItems.map(librarySelectionKey)));
   }
 
   function clearLibrarySelection() {
     setSelectedLibraryKeys(new Set());
+  }
+
+  async function openSelectedSourceReview() {
+    if (!selectedLibraryItems.length) {
+      notify('Select movies before finding sources.', 'neutral');
+      return;
+    }
+    setSourceReview({ loading: true, rows: [], error: '', title: 'Find sources' });
+    try {
+      const data = await previewSourceReview(selectedLibraryItems.map((item) => {
+        const movie = moviePayload(item);
+        return {
+          tmdb_id: movie.tmdb_id || '',
+          imdb_id: movie.imdb_id || '',
+          title: movie.title,
+          year: movie.year,
+          poster_url: movie.poster_url || '',
+          path: item.path || '',
+        };
+      }));
+      setSourceReview({
+        loading: false,
+        rows: data.rows || [],
+        blocked: data.blocked || [],
+        defaults: data.defaults || {},
+        error: '',
+        title: 'Find sources',
+      });
+    } catch (previewError) {
+      setSourceReview((current) => ({ ...current, loading: false, error: previewError.message }));
+    }
+  }
+
+  function requestBulkDelete() {
+    if (!selectedLibraryItems.length) return;
+    setDeleteTarget({ items: selectedLibraryItems });
   }
 
   useEffect(() => {
@@ -328,7 +409,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     setLibrarySearchKind('movies');
     setQuery('');
     setQualityFilter('all');
-    setPlexFilter('all');
+    setIdentityFilter('all');
     setSortMode('added');
     setGenreFilter('all');
     setResolutionFilter('all');
@@ -569,6 +650,11 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
           ? { ...item, path: data.new_path, filename: data.new_filename, title: `${title}${year ? ` (${year})` : ''}` }
           : item
       )));
+      setFileItems((current) => current.map((item) => (
+        item.path === renameTarget.path
+          ? { ...item, path: data.new_path, filename: data.new_filename, title: `${title}${year ? ` (${year})` : ''}` }
+          : item
+      )));
       setRenameTarget(null);
       notify(`Renamed to ${data.new_filename}`);
     } catch (renameError) {
@@ -578,18 +664,31 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
 
   async function confirmDelete() {
     if (!deleteTarget) return;
-    try {
-      await fetchJson('/api/delete', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ path: deleteTarget.path, trash: true })
-      });
-      setItems((current) => current.filter((item) => item.path !== deleteTarget.path));
-      setDeleteTarget(null);
-      notify('Moved file to Recycle Bin');
-    } catch (deleteError) {
-      notify(`Delete failed: ${deleteError.message}`, 'error');
+    const targets = deleteTarget.items || [deleteTarget];
+    const deletedPaths = [];
+    const failures = [];
+    for (const target of targets) {
+      try {
+        await fetchJson('/api/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ path: target.path, trash: true })
+        });
+        deletedPaths.push(target.path);
+      } catch (deleteError) {
+        failures.push(`${target.filename || target.path}: ${deleteError.message}`);
+      }
     }
+    const deleted = new Set(deletedPaths);
+    setItems((current) => current.filter((item) => !deleted.has(item.path)));
+    setFileItems((current) => current.filter((item) => !deleted.has(item.path)));
+    setSelectedLibraryKeys(new Set());
+    setDeleteTarget(null);
+    if (deletedPaths.length) {
+      notify(`${formatCount(deletedPaths.length)} file${deletedPaths.length === 1 ? '' : 's'} moved to Recycle Bin`);
+      announceLibraryChanged({ source: 'library-delete', deleted_paths: deletedPaths });
+    }
+    if (failures.length) notify(`Delete failed for ${formatCount(failures.length)} file${failures.length === 1 ? '' : 's'}: ${failures[0]}`, 'error');
   }
 
   function applyPosterToSharedMovie(item, posterUrl, override) {
@@ -602,7 +701,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
         <div>
           <p className="screen-kicker">Local archive</p>
           <h2>{mode === 'movie' ? 'Movie View' : 'File View'}</h2>
-          <p>{mode === 'movie' ? 'Choose what to watch using movie metadata, quality, rating, genre, country, and language.' : 'Manage local files with filename, path, Plex status, quality, rename, delete, and source search actions.'}</p>
+          <p>{mode === 'movie' ? 'Choose what to watch using movie metadata, quality, rating, genre, country, and language.' : 'Manage local files with canonical identity, provider evidence, quality, rename, delete, and source search actions.'}</p>
         </div>
         <div className="library-header-actions">
           <div className="library-view-row">
@@ -616,8 +715,8 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
             </div>
           </div>
           <div className="library-action-row">
-            <button type="button" className="btn btn-secondary" onClick={() => loadLibrary(true)} disabled={loading}>
-              {loading ? <Loader2 size={15} className="spin" /> : <Database size={15} />} Rescan Files
+            <button type="button" className="btn btn-secondary" onClick={() => loadLibrary(true)} disabled={activeLoading}>
+              {activeLoading ? <Loader2 size={15} className="spin" /> : <Database size={15} />} Rescan Files
             </button>
             {stats.unmatched > 0 && (
               <button type="button" className="btn btn-primary btn-violet" onClick={onReviewUnmatched}>
@@ -667,7 +766,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
           </>
         ) : (
           <>
-            <select value={qualityFilter} onChange={(event) => { setQualityFilter(event.target.value); resetLibraryPage(); }}>
+            <select aria-label="Library quality filter" value={qualityFilter} onChange={(event) => { setQualityFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All qualities</option>
               <option value="upgrade">Upgrade candidates</option>
               <option value="good">1080p and above</option>
@@ -723,10 +822,10 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
               </>
             ) : (
               <>
-            <select value={plexFilter} onChange={(event) => { setPlexFilter(event.target.value); resetLibraryPage(); }}>
-              <option value="all">All Plex states</option>
-              <option value="matched">Plex matched</option>
-              <option value="unmatched">Unmatched</option>
+            <select value={identityFilter} onChange={(event) => { setIdentityFilter(event.target.value); resetLibraryPage(); }}>
+              <option value="all">All identity states</option>
+              <option value="matched">Catalog matched</option>
+              <option value="unmatched">Needs identity</option>
             </select>
             <select value={genreFilter} onChange={(event) => { setGenreFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All genres</option>
@@ -743,7 +842,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
               <option value="title">Sort by movie title</option>
               <option value="quality">Sort by resolution</option>
               <option value="size">Sort by file size</option>
-              <option value="plex">Sort by Plex status</option>
+              <option value="identity">Sort by identity status</option>
               <option value="source">Sort by source</option>
             </select>
               </>
@@ -758,9 +857,9 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
         )}
       </div>}
 
-      {(loading || status || error) && (
+      {(activeLoading || status || error) && (
         <div className={cx('library-status', error && 'library-status-error')}>
-          {loading && <Loader2 size={16} className="spin" />}
+          {activeLoading && <Loader2 size={16} className="spin" />}
           <span>{error || status || 'Loading library...'}</span>
         </div>
       )}
@@ -804,7 +903,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
         </div>
       )}
 
-      {!loading && !error && (
+      {!activeLoading && !error && (
         librarySearchKind === 'people' && mode === 'movie' ? (
           <LibraryPeopleSearchResults
             people={libraryPeopleResults}
@@ -830,6 +929,12 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
               </button>
               <button type="button" className="mini-action" onClick={() => setListEditor({ items: selectedLibraryItems })} disabled={!selectedLibraryItems.length}>
                 <CirclePlus size={13} /> Add to list
+              </button>
+              <button type="button" className="mini-action mini-action-source" onClick={openSelectedSourceReview} disabled={!selectedLibraryItems.length}>
+                <Search size={13} /> Find sources
+              </button>
+              <button type="button" className="mini-action mini-action-danger" onClick={requestBulkDelete} disabled={!selectedLibraryItems.length}>
+                <Trash2 size={13} /> Delete selected
               </button>
             </div>
           )}
@@ -877,7 +982,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
                     watchlisted={movieHasSystemState(item, userLists, 'watchlist')}
                     onToggleWatched={() => toggleSystemList('watched', item)}
                     onToggleWatchlist={() => toggleSystemList('watchlist', item)}
-                    selected={selectedLibraryKeys.has(movieIdentityKey(moviePayload(item)))}
+                    selected={selectedLibraryKeys.has(librarySelectionKey(item))}
                     onSelect={(checked) => toggleLibrarySelection(item, checked)}
                   />
                 ) : (
@@ -921,12 +1026,20 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
       )}
       {deleteTarget && (
         <ConfirmDialog
-          title="Move file to Recycle Bin?"
-          body={deleteTarget.path}
+          title={deleteTarget.items ? `Move ${deleteTarget.items.length} selected files to Recycle Bin?` : 'Move file to Recycle Bin?'}
+          body={(deleteTarget.items || [deleteTarget]).map((item) => item.path).join('\n')}
           confirmLabel="Move to Recycle Bin"
           danger
           onCancel={() => setDeleteTarget(null)}
           onConfirm={confirmDelete}
+        />
+      )}
+      {sourceReview && (
+        <SourceReviewDialog
+          state={sourceReview}
+          setState={setSourceReview}
+          onClose={() => setSourceReview(null)}
+          notify={notify}
         />
       )}
       {collectionEditor && (
@@ -1278,6 +1391,7 @@ function MyListsManagerModal({ lists, items, onClose, onCreate, onRename, onDele
 
 function LibraryFileRow({ item, expanded, onToggle, onPlay, onFindTorrent, onRename, onDelete }) {
   const identity = getMovieIdentity(item);
+  const canonical = item.canonical_metadata || {};
   const lowQuality = isLowQuality(item.resolution);
   const movieForSearch = { title: identity.title, year: identity.year, imdb_id: item.imdb_id || '', tmdb_id: item.tmdb_id || '' };
   return (
@@ -1293,8 +1407,8 @@ function LibraryFileRow({ item, expanded, onToggle, onPlay, onFindTorrent, onRen
           <span className="chip chip-muted">{item.rip_source || 'Unknown source'}</span>
           <span className="chip chip-muted">{item.size_human || '?'}</span>
           {item.library_root && <span className="chip chip-muted">{rootLabel(item.library_root)}</span>}
-          <span className={cx('chip', item.plex_matched ? 'status-owned' : 'status-missing')}>{item.plex_matched ? 'Matched' : 'Unmatched'}</span>
-          {(item.plex_genres || []).slice(0, 2).map((genre) => <span className="chip chip-muted" key={genre}>{genre}</span>)}
+          <span className={cx('chip', item.metadata_accepted ? 'status-owned' : 'status-missing')}>{item.metadata_accepted ? 'Catalog matched' : 'Needs identity'}</span>
+          {(canonical.genres?.length ? canonical.genres : item.plex_genres || []).slice(0, 2).map((genre) => <span className="chip chip-muted" key={genre}>{genre}</span>)}
           {getLocaleTag(item) && <span className="chip chip-muted">{getLocaleTag(item)}</span>}
         </div>
       </div>
@@ -1318,13 +1432,14 @@ function LibraryFileRow({ item, expanded, onToggle, onPlay, onFindTorrent, onRen
       {expanded && (
         <div className="file-expanded-panel">
           <div><span>Full path</span><strong>{item.path}</strong></div>
-          <div><span>Plex title</span><strong>{item.plex_title || 'Not matched'}</strong></div>
-          <div><span>Plex year</span><strong>{item.plex_year || 'Unknown'}</strong></div>
-          <div><span>Language</span><strong>{item.plex_language || 'Unknown'}</strong></div>
-          <div><span>Country</span><strong>{item.plex_country || item.plex_country_flag || 'Unknown'}</strong></div>
+          <div><span>Catalog title</span><strong>{canonical.title || identity.title || 'Needs identity'}</strong></div>
+          <div><span>Catalog year</span><strong>{canonical.year || identity.year || 'Unknown'}</strong></div>
+          <div><span>Metadata source</span><strong>{item.metadata_source || canonical.source || 'None'}</strong></div>
+          <div><span>TMDB / IMDb</span><strong>{canonical.tmdb_id || item.tmdb_id || '—'} / {canonical.imdb_id || item.imdb_id || '—'}</strong></div>
+          <div><span>Plex evidence</span><strong>{item.plex_matched ? `${item.plex_title || 'Matched'}${item.plex_year ? ` (${item.plex_year})` : ''}` : 'Not available'}</strong></div>
+          <div><span>Locale</span><strong>{getLocaleTag(item) || 'Unknown'}</strong></div>
           <div><span>Size</span><strong>{item.size_human || '?'} ({formatCount(item.size)} bytes)</strong></div>
-          <div><span>Genres</span><strong>{(item.plex_genres || []).join(', ') || 'None'}</strong></div>
-          <div className="file-expanded-summary"><span>Summary</span><strong>{item.plex_summary || 'No summary available'}</strong></div>
+          <div><span>Genres</span><strong>{(canonical.genres?.length ? canonical.genres : item.plex_genres || []).join(', ') || 'None'}</strong></div>
         </div>
       )}
     </article>

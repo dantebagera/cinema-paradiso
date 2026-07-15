@@ -21,7 +21,6 @@ CATALOG_SOURCE_DOCUMENTS = frozenset({
     "user_lists.json",
     "user_collections.json",
     "followed_releases.json",
-    "qbittorrent/jobs.json",
 })
 
 

@@ -68,7 +68,10 @@ class CatalogFileMutationTest(unittest.TestCase):
         source = Path(app.__file__).read_text(encoding="utf-8")
 
         self.assertEqual(source.count(".migrate_path_records("), 2)
-        self.assertEqual(source.count(".remove_path_records("), 2)
+        self.assertNotIn("_metadata_store().remove_path_records(", source)
+        self.assertIn("return _delete_library_file(path, use_trash=True)", source)
+        mutation_source = (Path(app.__file__).parent / "services" / "library_mutations.py").read_text(encoding="utf-8")
+        self.assertEqual(mutation_source.count("metadata_store.remove_path_records("), 1)
         self.assertIn("_migrate_library_path(abs_path, new_path)", source)
         self.assertIn("_migrate_library_path(old_path, new_path)", source)
 

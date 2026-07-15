@@ -379,6 +379,7 @@ export function buildLibraryViewModel({
   currentPage = 1,
   query = '',
   qualityFilter = 'all',
+  identityFilter = '',
   plexFilter = 'all',
   sortMode = 'added',
   genreFilter = 'all',
@@ -399,6 +400,7 @@ export function buildLibraryViewModel({
   tmdbCache = {},
   showAdultMovies = true
 } = {}) {
+  const fileIdentityFilter = identityFilter || plexFilter;
   const normalizedQuery = query.trim().toLowerCase();
   const result = items.filter((item) => {
     const canonical = item.canonical_metadata || {};
@@ -426,8 +428,8 @@ export function buildLibraryViewModel({
     if (genreFilter !== 'all' && !(canonical.genres?.length ? canonical.genres : item.plex_genres || []).includes(genreFilter)) return false;
     if (languageFilter !== 'all' && (canonical.language || item.plex_language) !== languageFilter) return false;
     if (countryFilter !== 'all' && (canonical.country_flag || canonical.country || item.plex_country_flag || item.plex_country) !== countryFilter) return false;
-    if (mode === 'file' && plexFilter === 'matched' && !item.plex_matched) return false;
-    if (mode === 'file' && plexFilter === 'unmatched' && item.plex_matched) return false;
+    if (mode === 'file' && fileIdentityFilter === 'matched' && !item.metadata_accepted) return false;
+    if (mode === 'file' && fileIdentityFilter === 'unmatched' && item.metadata_accepted) return false;
     if (mode === 'movie' && minRating !== 'all' && rating < Number(minRating)) return false;
     if (mode === 'movie' && yearFrom && (!year || year < Number(yearFrom))) return false;
     if (mode === 'movie' && yearTo && (!year || year > Number(yearTo))) return false;
@@ -457,7 +459,7 @@ export function buildLibraryViewModel({
     if (sortMode === 'year-asc') return Number(aIdentity.year || 0) - Number(bIdentity.year || 0) || aIdentity.title.localeCompare(bIdentity.title);
     if (sortMode === 'quality') return resolutionRank(b.resolution) - resolutionRank(a.resolution) || aIdentity.title.localeCompare(bIdentity.title);
     if (sortMode === 'size') return Number(b.size || 0) - Number(a.size || 0) || a.filename.localeCompare(b.filename);
-    if (sortMode === 'plex') return Number(Boolean(b.plex_matched)) - Number(Boolean(a.plex_matched)) || a.filename.localeCompare(b.filename);
+    if (sortMode === 'identity' || sortMode === 'plex') return Number(Boolean(b.metadata_accepted)) - Number(Boolean(a.metadata_accepted)) || a.filename.localeCompare(b.filename);
     if (sortMode === 'source') return String(a.rip_source || '').localeCompare(String(b.rip_source || '')) || a.filename.localeCompare(b.filename);
     if (sortMode === 'filename') return a.filename.localeCompare(b.filename);
     return aIdentity.title.localeCompare(bIdentity.title);

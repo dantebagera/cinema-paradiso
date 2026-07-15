@@ -4,6 +4,9 @@ import unittest
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
+from unittest.mock import patch
+
+from services.catalog_repository import CatalogRepository
 
 from tools.catalog_migration_backup import (
     BackupError,
@@ -72,6 +75,22 @@ class CatalogMigrationBackupTest(unittest.TestCase):
 
         self.assertEqual(verified["totals"], expected["totals"])
         self.assertEqual(verified["semantic_counts"], expected["semantic_counts"])
+
+    def test_backup_includes_consistent_sqlite_catalog_snapshot(self):
+        with tempfile.TemporaryDirectory() as root, patch.dict("os.environ", {"LOCALAPPDATA": str(Path(root) / "local")}):
+            project, user_data = self._project(root)
+            repository = CatalogRepository(user_data)
+            try:
+                repository.activate_from_json()
+                archive, manifest = create_backup(project, Path(root) / "backups")
+            finally:
+                repository.close(flush=False)
+            names = {item["archive_path"] for item in manifest["files"]}
+            verified = verify_backup(archive)
+
+        self.assertIn("catalog/catalog.sqlite", names)
+        self.assertEqual(verified["semantic_counts"]["file_records"], 2)
+        self.assertEqual(verified["semantic_counts"]["user_lists"], 1)
 
     def test_verify_rejects_modified_archived_state(self):
         with tempfile.TemporaryDirectory() as root:

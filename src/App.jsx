@@ -219,7 +219,6 @@ function ArchiveApp() {
   const [activeSection, setActiveSection] = useState(() => (
     typeof window === 'undefined' ? 'home' : sectionFromPath(window.location.pathname, navItems)
   ));
-  const [mountedSections, setMountedSections] = useState(() => new Set([activeSection]));
   const [stats, setStats] = useState(null);
   const [movies, setMovies] = useState([]);
   const [ownership, setOwnership] = useState({});
@@ -245,6 +244,7 @@ function ArchiveApp() {
   const [discoverSearchRequest, setDiscoverSearchRequest] = useState(0);
   const [discoverPersonRequest, setDiscoverPersonRequest] = useState(null);
   const [cleanupInitialTab, setCleanupInitialTab] = useState('storage');
+  const [libraryFilterRequest, setLibraryFilterRequest] = useState(null);
   const [homeLists, setHomeLists] = useState([]);
   const sourceSearchTokenRef = useRef(0);
   const libraryReconcileSignatureRef = useRef('');
@@ -254,10 +254,6 @@ function ArchiveApp() {
     window.clearTimeout(window.__cpToastTimer);
     window.__cpToastTimer = window.setTimeout(() => setToast(null), 3200);
   }, []);
-
-  useEffect(() => {
-    setMountedSections((sections) => new Set([...sections, activeSection]));
-  }, [activeSection]);
 
   const refreshHealthStats = useCallback(async () => {
     try {
@@ -305,9 +301,6 @@ function ArchiveApp() {
   useEffect(() => {
     let cancelled = false;
     let timer = 0;
-    function scheduleNext(status) {
-      timer = window.setTimeout(checkReconcile, status === 'running' ? 2000 : 5000);
-    }
     async function checkReconcile() {
       try {
         const state = await fetchJson('/api/library/reconcile');
@@ -322,17 +315,14 @@ function ArchiveApp() {
         if (isNewCompletedRun && state.matched > 0) {
           notify(`${formatCount(state.matched)} new movie${state.matched === 1 ? '' : 's'} identified`, 'success');
         }
-        scheduleNext(status);
+        if (status === 'running') {
+          timer = window.setTimeout(checkReconcile, 2000);
+        }
       } catch {
-        // Startup reconciliation is non-blocking; Library still exposes manual Rescan Files.
-        if (!cancelled) timer = window.setTimeout(checkReconcile, 10000);
+        // Reconciliation is non-blocking; Library still exposes manual Rescan Files.
       }
     }
-    fetchJson('/api/library/reconcile', { method: 'POST' })
-      .catch(() => {})
-      .finally(() => {
-        if (!cancelled) checkReconcile();
-      });
+    checkReconcile();
     return () => {
       cancelled = true;
       window.clearTimeout(timer);
@@ -494,6 +484,11 @@ function ArchiveApp() {
   }
 
   function openCleanupTab(tab) {
+    if (tab === 'low' || tab === 'upgrades') {
+      setLibraryFilterRequest({ id: Date.now(), quality: 'upgrade' });
+      selectSection('library');
+      return;
+    }
     setCleanupInitialTab(tab);
     selectSection('cleanup');
   }
@@ -671,8 +666,8 @@ function ArchiveApp() {
             }}
           />
         )}
-        {mountedSections.has('home') && (
-          <div className="workspace-panel" hidden={activeSection !== 'home'}>
+        {activeSection === 'home' && (
+          <div className="workspace-panel">
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <HomeWorkspace
               stats={stats}
@@ -701,8 +696,8 @@ function ArchiveApp() {
             </Suspense>
           </div>
         )}
-        {mountedSections.has('library') && (
-          <div className="workspace-panel" hidden={activeSection !== 'library'}>
+        {activeSection === 'library' && (
+          <div className="workspace-panel">
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <LibraryWorkspace
                 onPlay={playLocal}
@@ -713,12 +708,13 @@ function ArchiveApp() {
                 setQuery={setLibraryQuery}
                 onReviewUnmatched={reviewUnmatchedMetadata}
                 onOpenDiscoverPerson={openPersonInDiscover}
+                filterRequest={libraryFilterRequest}
               />
             </Suspense>
           </div>
         )}
-        {mountedSections.has('movie-lists') && (
-          <div className="workspace-panel" hidden={activeSection !== 'movie-lists'}>
+        {activeSection === 'movie-lists' && (
+          <div className="workspace-panel">
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <MovieListsWorkspace
                 notify={notify}
@@ -735,8 +731,8 @@ function ArchiveApp() {
             </Suspense>
           </div>
         )}
-        {mountedSections.has('discover') && (
-          <div className="workspace-panel" hidden={activeSection !== 'discover'}>
+        {activeSection === 'discover' && (
+          <div className="workspace-panel">
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <DiscoverWorkspace
                 followed={followed}
@@ -761,15 +757,15 @@ function ArchiveApp() {
             </Suspense>
           </div>
         )}
-        {mountedSections.has('downloads') && (
-          <div className="workspace-panel" hidden={activeSection !== "downloads"}>
+        {activeSection === 'downloads' && (
+          <div className="workspace-panel">
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <DownloadsWorkspace />
             </Suspense>
           </div>
         )}
-        {mountedSections.has('ai-control') && (
-          <div className="workspace-panel" hidden={activeSection !== 'ai-control'}>
+        {activeSection === 'ai-control' && (
+          <div className="workspace-panel">
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <AIControlWorkspace
                 followed={followed}
@@ -786,15 +782,15 @@ function ArchiveApp() {
             </Suspense>
           </div>
         )}
-        {mountedSections.has('help') && (
-          <div className="workspace-panel" hidden={!(activeSection === 'help')}>
+        {activeSection === 'help' && (
+          <div className="workspace-panel">
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <HelpWorkspace />
             </Suspense>
           </div>
         )}
-        {mountedSections.has('cleanup') && (
-          <div className="workspace-panel" hidden={activeSection !== 'cleanup'}>
+        {activeSection === 'cleanup' && (
+          <div className="workspace-panel">
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <CleanupWorkspace
                 notify={notify}
@@ -802,12 +798,13 @@ function ArchiveApp() {
                 onFindTorrent={findTorrent}
                 initialTab={cleanupInitialTab}
                 onHealthChanged={refreshHealthStats}
+                onOpenLibraryUpgrades={() => openCleanupTab('upgrades')}
               />
             </Suspense>
           </div>
         )}
-        {mountedSections.has('settings') && (
-          <div className="workspace-panel" hidden={activeSection !== 'settings'}>
+        {activeSection === 'settings' && (
+          <div className="workspace-panel">
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <SettingsWorkspace
                 notify={notify}
@@ -817,19 +814,6 @@ function ArchiveApp() {
               />
             </Suspense>
           </div>
-        )}
-        {!['home', 'library', 'movie-lists', 'cleanup', 'discover', 'downloads', 'ai-control', 'help', 'settings'].includes(activeSection) && (
-          <MigrationWorkspace
-            section={activeSection}
-            notify={notify}
-            onPlay={playLocal}
-            onFindTorrent={findTorrent}
-            cleanupInitialTab={cleanupInitialTab}
-            onReviewUnmatched={reviewUnmatchedMetadata}
-            onReviewIdentities={() => openCleanupTab('identity')}
-            onHealthChanged={refreshHealthStats}
-            onStreamingConfigChanged={setStreamingConfig}
-          />
         )}
       </main>
       {toast && (
@@ -1285,51 +1269,6 @@ function TopBar({
         </div>
       )}
     </header>
-  );
-}
-
-function MigrationWorkspace({ section, notify, onPlay, onFindTorrent, cleanupInitialTab, onReviewUnmatched, onReviewIdentities, onHealthChanged, onStreamingConfigChanged }) {
-  const meta = {
-    library: {
-      icon: Library,
-      title: 'Library workspace',
-      body: 'Local browsing belongs here: list and grid views, filtering, search, play, rename, upgrade search, and Plex status.',
-      actions: ['List and grid', 'Filter by quality', 'Play stays primary']
-    },
-    cleanup: {
-      icon: ShieldCheck,
-      title: 'Cleanup workspace',
-      body: 'Offline maintenance belongs here: duplicates, Smart Clean, low-quality files, and unmatched metadata fixes.',
-      actions: ['Duplicates', 'Low quality', 'Metadata fixes']
-    },
-    discover: {
-      icon: Compass,
-      title: 'Discover workspace',
-      body: 'Online discovery belongs here: TMDB lists, Browse Torrents, Pick My Movie, and followed release checks.',
-      actions: ['TMDB lists', 'Browse torrents', 'Follow releases']
-    },
-    settings: {
-      icon: Settings,
-      title: 'Settings workspace',
-      body: 'Integrations should become a proper system panel with Plex, Prowlarr, TMDB, and Ollama status instead of a cramped dropdown.',
-      actions: ['Plex status', 'Prowlarr status', 'API privacy']
-    }
-  }[section];
-  const Icon = meta.icon;
-  return (
-    <section className="migration-panel">
-      <Icon size={28} />
-      <h2>{meta.title}</h2>
-      <p>{meta.body}</p>
-      <div className="migration-actions">
-        {meta.actions.map((action, index) => (
-          <span key={action} className={cx('action-pill', index === 0 && 'action-pill-primary')}>
-            {action}
-          </span>
-        ))}
-      </div>
-      <a href="/legacy" className="legacy-fallback">Open old interface fallback</a>
-    </section>
   );
 }
 

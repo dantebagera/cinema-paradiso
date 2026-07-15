@@ -8,7 +8,7 @@ from services.movie_identity import normalize_movie_title, ownership_keys
 from services.smart_match import parse_release_filename
 
 
-CATALOG_SCHEMA_VERSION = 4
+CATALOG_SCHEMA_VERSION = 5
 
 
 class CatalogError(RuntimeError):
@@ -223,16 +223,6 @@ class CatalogStore:
                     raw_json TEXT NOT NULL
                 );
 
-                CREATE TABLE IF NOT EXISTS download_jobs (
-                    torrent_hash TEXT PRIMARY KEY,
-                    state TEXT NOT NULL DEFAULT '',
-                    title TEXT NOT NULL DEFAULT '',
-                    year TEXT NOT NULL DEFAULT '',
-                    destination TEXT NOT NULL DEFAULT '',
-                    updated_at REAL NOT NULL DEFAULT 0,
-                    raw_json TEXT NOT NULL
-                );
-
                 CREATE INDEX IF NOT EXISTS idx_media_files_tmdb_id ON media_files(tmdb_id);
                 CREATE INDEX IF NOT EXISTS idx_media_files_imdb_id ON media_files(imdb_id);
                 CREATE INDEX IF NOT EXISTS idx_media_files_plex_guid ON media_files(plex_guid);
@@ -245,6 +235,7 @@ class CatalogStore:
                 CREATE INDEX IF NOT EXISTS idx_list_items_tmdb ON list_items(tmdb_id);
                 CREATE INDEX IF NOT EXISTS idx_followed_identity ON followed_releases(identity_key);
             """)
+            connection.execute("DROP TABLE IF EXISTS download_jobs")
             if not connection.execute(
                 "SELECT 1 FROM identity_audit_fingerprints LIMIT 1"
             ).fetchone():
@@ -271,7 +262,7 @@ class CatalogStore:
         with self.transaction() as connection:
             for table in (
                 "source_documents", "list_items", "user_lists", "collection_overrides",
-                "followed_releases", "download_jobs", "identity_audit_fingerprints",
+                "followed_releases", "identity_audit_fingerprints",
                 "manual_matches", "plex_files",
                 "tmdb_movies", "media_identity_keys", "media_files",
             ):
@@ -294,7 +285,6 @@ class CatalogStore:
             self._import_lists(connection, documents.get("user_lists.json", {}))
             self._import_collections(connection, documents.get("user_collections.json", {}))
             self._import_followed(connection, documents.get("followed_releases.json", {}))
-            self._import_download_jobs(connection, documents.get("qbittorrent/jobs.json", {}))
             self._import_media_identity_keys(connection)
 
             connection.execute(
@@ -440,18 +430,6 @@ class CatalogStore:
             )
 
     @staticmethod
-    def _import_download_jobs(connection, document):
-        jobs = document.get("jobs", {}) if isinstance(document, dict) else {}
-        for torrent_hash, job in jobs.items():
-            job = job if isinstance(job, dict) else {}
-            connection.execute(
-                "INSERT INTO download_jobs VALUES(?,?,?,?,?,?,?)",
-                (_text(torrent_hash).lower(), _text(job.get("state")), _text(job.get("title")),
-                 _text(job.get("year")), _text(job.get("destination")),
-                 _number(job.get("updated_at")), _json_text(job)),
-            )
-
-    @staticmethod
     def _import_media_identity_keys(connection, path_key=None):
         where = "WHERE mf.path_key = ?" if path_key else ""
         parameters = (path_key,) if path_key else ()
@@ -557,7 +535,6 @@ class CatalogStore:
             "list_movies": "list_items",
             "collection_overrides": "collection_overrides",
             "followed_releases": "followed_releases",
-            "qbittorrent_jobs": "download_jobs",
         }
         connection = self.connect()
         try:

@@ -150,14 +150,14 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("function reconcileSignature(state)", self.source)
         self.assertIn("fetchJson('/api/library/reconcile')", self.source)
         self.assertIn("announceLibraryReconciled(state)", self.source)
-        self.assertIn("status === 'running' ? 2000 : 5000", self.source)
+        self.assertIn("if (status === 'running')", self.source)
+        self.assertNotIn("fetchJson('/api/library/reconcile', { method: 'POST' })", self.source)
 
-    def test_workspaces_remain_mounted_after_first_visit(self):
-        self.assertIn("const [mountedSections, setMountedSections]", self.source)
-        self.assertIn("setMountedSections((sections) => new Set([...sections, activeSection]))", self.source)
-        self.assertIn("hidden={activeSection !== 'library'}", self.source)
-        self.assertIn("mountedSections.has('discover')", self.source)
-        self.assertIn("mountedSections.has('ai-control')", self.source)
+    def test_only_the_active_workspace_remains_mounted(self):
+        self.assertNotIn("mountedSections", self.source)
+        self.assertNotIn("hidden={activeSection !== 'library'}", self.source)
+        self.assertIn("activeSection === 'discover'", self.source)
+        self.assertIn("activeSection === 'ai-control'", self.source)
 
     def test_library_refreshes_quietly_for_background_changes(self):
         self.assertIn("function LibraryWorkspace({", self.source)
@@ -280,20 +280,24 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("activeSection !== 'help'", topbar_condition)
         self.assertIn("activeSection !== 'settings'", topbar_condition)
 
-    def test_maintenance_uses_one_catalog_audit_instead_of_per_tab_scans(self):
+    def test_maintenance_uses_paginated_catalog_sections_instead_of_per_tab_scans(self):
         cleanup_source = self.source[
             self.source.index("function CleanupWorkspace"):
             self.source.index("function DuplicatesCleanupTab")
         ]
-        self.assertIn("fetchJson('/api/maintenance/audit')", cleanup_source)
+        self.assertIn("fetchJson(`/api/maintenance/audit?${params.toString()}`)", cleanup_source)
+        self.assertIn("section,", cleanup_source)
+        self.assertIn("page_size: String(MAINTENANCE_PAGE_SIZE)", cleanup_source)
         self.assertIn("Catalog-backed maintenance", cleanup_source)
         self.assertIn("const maintenanceTabs", self.source)
         self.assertIn("Select recommended", self.source)
         self.assertIn("MAINTENANCE_PAGE_SIZE = 50", self.source)
-        self.assertIn("items={visibleUpgrades}", cleanup_source)
         self.assertIn("items={visibleUnmatched}", cleanup_source)
-        self.assertIn("setIdentityAudit(state.identity_review || null)", cleanup_source)
+        self.assertIn("if (state.identity_review) setIdentityAudit(state.identity_review)", cleanup_source)
         self.assertIn("items={identityAudit?.proposals || []}", cleanup_source)
+        self.assertNotIn("LowQualityCleanupTab", self.source)
+        self.assertNotIn("id: 'upgrades'", self.source)
+        self.assertIn("onOpenLibraryUpgrades", cleanup_source)
         self.assertNotIn("visibleVerification", cleanup_source)
         self.assertNotIn("IdentityVerificationList", cleanup_source)
         self.assertNotIn("/api/metadata/identity-verification/enrich", cleanup_source)

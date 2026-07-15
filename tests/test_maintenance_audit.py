@@ -114,7 +114,7 @@ class MaintenanceAuditTest(unittest.TestCase):
         self.assertEqual(audit["identity"]["items"], [])
         self.assertEqual(audit["identity"]["verification"][0]["metadata_status"], "conflict")
 
-    def test_unverified_accepted_identity_is_excluded_from_duplicate_and_upgrade_automation(self):
+    def test_unverified_duplicate_is_visible_but_never_recommended_automatically(self):
         first = candidate(
             "E:/Movies/Frailty.2001.One.mkv",
             identity_title="Temptation's Hour",
@@ -138,7 +138,12 @@ class MaintenanceAuditTest(unittest.TestCase):
 
         audit = build_maintenance_audit([first, second])
 
-        self.assertEqual(audit["storage"]["groups"], [])
+        self.assertEqual(len(audit["storage"]["groups"]), 1)
+        group = audit["storage"]["groups"][0]
+        self.assertFalse(group["identity_safe"])
+        self.assertTrue(group["needs_identity_review"])
+        self.assertEqual(group["files"][1]["recommendation"], "review")
+        self.assertEqual(audit["summary"]["recommended_removals"], 0)
         self.assertEqual(audit["upgrades"]["items"], [])
         self.assertEqual(audit["summary"]["verification_gaps"], 2)
 

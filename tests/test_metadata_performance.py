@@ -42,18 +42,9 @@ class MetadataPerformanceTest(unittest.TestCase):
         self.assertGreater(len(gzip.decompress(response.data)), len(response.data))
 
     def test_catalog_database_is_isolated_by_user_data_directory(self):
-        original_user_data = app._user_data_dir
-        original_cache = dict(app._catalog_read_model_cache)
         with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
-            try:
-                app._user_data_dir = first
-                first_path = app._catalog_read_model().database_path
-                app._user_data_dir = second
-                second_path = app._catalog_read_model().database_path
-            finally:
-                app._user_data_dir = original_user_data
-                app._catalog_read_model_cache.clear()
-                app._catalog_read_model_cache.update(original_cache)
+            first_path = app.AppMetadataStore(Path(first)).catalog.database_path
+            second_path = app.AppMetadataStore(Path(second)).catalog.database_path
 
         self.assertNotEqual(first_path, second_path)
 
@@ -249,6 +240,7 @@ class MetadataPerformanceTest(unittest.TestCase):
         }
 
         projected = app._movie_list_library_item(item)
+        card = app._library_card_item(item)
         people = app._library_people_item(item)
 
         self.assertNotIn("resolution_rank", projected)
@@ -262,6 +254,9 @@ class MetadataPerformanceTest(unittest.TestCase):
         self.assertEqual(len(people["plex_cast"]), 8)
         self.assertEqual(len(people["plex_directors"]), 4)
         self.assertNotIn("extra", people["canonical_metadata"]["cast"][0])
+        self.assertNotIn("plex_genres", card)
+        self.assertNotIn("plex_title", card)
+        self.assertEqual(card["canonical_metadata"]["title"], "Alien")
 
     def test_library_cache_key_changes_when_manual_metadata_changes(self):
         original_dirs = app._movies_dirs
@@ -293,9 +288,9 @@ class MetadataPerformanceTest(unittest.TestCase):
             try:
                 app._movies_dirs = [tmp]
                 app._movies_dir = tmp
-                before = app._library_cache_key()
+                before = app._library_cache_key(metadata_revision=('test-catalog', 1))
                 Path(tmp, "Alien.1979.1080p.mkv").write_bytes(b"movie")
-                after = app._library_cache_key()
+                after = app._library_cache_key(metadata_revision=('test-catalog', 1))
             finally:
                 app._movies_dirs = original_dirs
                 app._movies_dir = original_dir

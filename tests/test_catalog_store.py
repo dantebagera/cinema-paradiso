@@ -50,7 +50,6 @@ class CatalogStoreTest(unittest.TestCase):
             },
             "user_collections.json": {"overrides": {"10": {"name": "Alien Collection"}}},
             "followed_releases.json": {"movies": [{"tmdb_id": "679", "title": "Aliens", "year": "1986"}]},
-            "qbittorrent/jobs.json": {"jobs": {"abc": {"state": "imported", "title": "Alien"}}},
         }
 
     def _expected(self):
@@ -63,7 +62,6 @@ class CatalogStoreTest(unittest.TestCase):
             "list_movies": 1,
             "collection_overrides": 1,
             "followed_releases": 1,
-            "qbittorrent_jobs": 1,
         }
 
     def test_import_preserves_identity_provider_and_user_state(self):

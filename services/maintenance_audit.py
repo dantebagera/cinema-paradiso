@@ -168,17 +168,24 @@ def _recommendation(best, candidate):
 
 def _duplicate_groups(items):
     groups = []
-    grouped_items = _split_bulk_plex_groups(group_identity_records([item for item in items if item["identity_verified"]]))
+    grouped_items = _split_bulk_plex_groups(group_identity_records(items))
     for files in grouped_items:
         if len(files) < 2:
             continue
         ranked = sorted(files, key=lambda item: (item["resolution_rank"], item["rip_rank"], item["size"]), reverse=True)
         best = ranked[0]
+        identity_safe = all(file["identity_verified"] for file in ranked)
         output_files = []
         for index, file in enumerate(ranked):
             row = dict(file)
             if index == 0:
                 row.update({"role": "keep", "recommendation": "keep", "reason": "Best current copy by configured baseline."})
+            elif not identity_safe:
+                row.update({
+                    "role": "candidate",
+                    "recommendation": "review",
+                    "reason": "Duplicate files share an identity, but that identity must be confirmed before removal.",
+                })
             else:
                 recommendation, reason = _recommendation(best, row)
                 row.update({"role": "candidate", "recommendation": recommendation, "reason": reason})
@@ -190,6 +197,8 @@ def _duplicate_groups(items):
             "key": "|".join(file["path"] for file in ranked),
             "title": f"{title}{f' ({year})' if year else ''}",
             "files": output_files,
+            "identity_safe": identity_safe,
+            "needs_identity_review": not identity_safe,
             "reclaimable_bytes": reclaimable,
             "reclaimable_human": format_size(reclaimable),
             "recommended_count": sum(file["recommendation"] == "recommended" for file in output_files[1:]),

@@ -84,7 +84,7 @@ class LibraryStatsTest(unittest.TestCase):
                 app._stats_cache = {}
 
                 first = app.app.test_client().get("/api/stats")
-                with patch("app._duplicates_from_records", side_effect=AssertionError("stats should come from cache")):
+                with patch("app._maintenance_audit_from_catalog", side_effect=AssertionError("stats should come from cache")):
                     second = app.app.test_client().get("/api/stats")
             finally:
                 app._movies_dirs = original_dirs

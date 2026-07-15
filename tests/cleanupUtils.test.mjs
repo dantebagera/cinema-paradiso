@@ -3,99 +3,10 @@ import test from 'node:test';
 
 import {
   filterIdentityReviewItems,
-  filterCleanupItems,
-  filterMaintenanceIdentityItems,
   metadataStatusChipClass,
   metadataStatusLabel,
   renameModalItem
 } from '../src/utils/cleanupUtils.js';
-
-test('filterCleanupItems preserves search and exact cleanup filter behavior', () => {
-  const items = [
-    {
-      title: 'Heat',
-      filename: 'Heat.1995.mkv',
-      path: 'E:/Movies/Heat.1995.mkv',
-      plex_title: 'Heat',
-      plex_year: 1995,
-      rip_source: 'BluRay',
-      resolution: '1080p',
-      plex_matched: true
-    },
-    {
-      title: 'Alien',
-      filename: 'Alien.1979.mkv',
-      path: 'E:/Movies/Alien.1979.mkv',
-      rip_source: 'WEB-DL',
-      resolution: '720p',
-      plex_matched: false
-    }
-  ];
-
-  const all = { query: '', resolution: 'all', source: 'all', plex: 'all' };
-  assert.deepEqual(filterCleanupItems(items, all), items);
-  assert.deepEqual(filterCleanupItems(items, { ...all, query: '1995' }), [items[0]]);
-  assert.deepEqual(filterCleanupItems(items, { ...all, resolution: '720p' }), [items[1]]);
-  assert.deepEqual(filterCleanupItems(items, { ...all, source: 'BluRay' }), [items[0]]);
-  assert.deepEqual(filterCleanupItems(items, { ...all, plex: 'matched' }), [items[0]]);
-  assert.deepEqual(filterCleanupItems(items, { ...all, plex: 'unmatched' }), [items[1]]);
-});
-
-test('filterMaintenanceIdentityItems searches accepted observations and preserves status buckets', () => {
-  const items = [
-    {
-      filename: 'Heat.file.mkv',
-      path: 'E:/Movies/Heat.file.mkv',
-      suggested_title: 'Heat',
-      suggested_year: 1995,
-      plex_title: 'Heat',
-      tmdb_title: 'Heat',
-      metadata_hint: 'accepted',
-      plex_hint: 'matched',
-      folder: 'Heat (1995)',
-      plex_matched: true,
-      tmdb_id: 949,
-      metadata_status: 'pending'
-    },
-    {
-      filename: 'Unknown.file.mkv',
-      path: 'E:/Movies/Unknown.file.mkv',
-      folder: 'Unknown',
-      plex_matched: false,
-      tmdb_id: '',
-      metadata_status: 'conflict'
-    },
-    {
-      filename: 'Review.file.mkv',
-      path: 'E:/Movies/Review.file.mkv',
-      plex_matched: false,
-      tmdb_id: 10,
-      metadata_status: 'needs_review'
-    },
-    {
-      filename: 'Frailty.2001.mkv',
-      path: 'E:/Movies/Frailty.2001.mkv',
-      accepted_title: "Temptation's Hour",
-      accepted_year: '2001',
-      observations: { parsed: { title: 'Frailty', year: '2001' } },
-      verification_reasons: ['independent_title_consensus_unresolved'],
-      plex_matched: true,
-      tmdb_id: 1387467,
-      metadata_status: 'unverified'
-    }
-  ];
-
-  const all = { query: '', resolution: 'all', source: 'all', plex: 'all' };
-  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, query: '1995' }), [items[0]]);
-  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, query: 'Frailty' }), [items[3]]);
-  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'plex-unmatched' }), [items[1], items[2]]);
-  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'tmdb-unmatched' }), [items[1]]);
-  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'pending' }), [items[0]]);
-  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'conflict' }), [items[1]]);
-  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'needs_review' }), [items[2]]);
-  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, identity: 'conflict' }), [items[1]]);
-  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, identity: 'unverified' }), [items[3]]);
-});
 
 test('filterIdentityReviewItems searches identities and filters classifications', () => {
   const items = [

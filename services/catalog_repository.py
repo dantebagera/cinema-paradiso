@@ -23,6 +23,15 @@ CORE_DOCUMENTS = {
 EXTERNAL_DOCUMENTS = {"qbittorrent/jobs.json"}
 
 
+def _document_domain(name):
+    name = str(name or '').replace('\\', '/')
+    if name.startswith('app_metadata/'):
+        return 'media'
+    if name in {'user_lists.json', 'user_collections.json', 'followed_releases.json'}:
+        return 'curation'
+    return 'catalog'
+
+
 def catalog_database_path(user_data_dir, local_app_data=None):
     user_data_dir = Path(user_data_dir).resolve()
     root = Path(local_app_data or os.environ.get("LOCALAPPDATA") or (Path.home() / ".cinema-paradiso"))
@@ -31,12 +40,13 @@ def catalog_database_path(user_data_dir, local_app_data=None):
 
 
 class CatalogRepository:
-    """SQLite write authority with JSON files maintained as compatibility exports."""
+    """SQLite write authority with explicit JSON rollback exports."""
 
-    def __init__(self, user_data_dir, database_path=None, export_delay=0.5):
+    def __init__(self, user_data_dir, database_path=None, export_delay=0.5, auto_export=False):
         self.user_data_dir = Path(user_data_dir).resolve()
         self.store = CatalogStore(database_path or catalog_database_path(self.user_data_dir))
         self.export_delay = float(export_delay)
+        self.auto_export = bool(auto_export)
         self._lock = threading.RLock()
         self._cache = {}
         self._pending_exports = set()
@@ -69,6 +79,11 @@ class CatalogRepository:
                 connection.execute(
                     "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('generation', '1')"
                 )
+                for domain in ('media', 'curation', 'catalog'):
+                    connection.execute(
+                        "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES(?, '1')",
+                        (f'{domain}_generation',),
+                    )
             self._cache.clear()
             return True
 
@@ -82,9 +97,6 @@ class CatalogRepository:
             path = self.user_data_dir / name
             if path.is_file():
                 documents[name] = self._load_bootstrap_document(path)
-        jobs = self.user_data_dir / "qbittorrent" / "jobs.json"
-        if jobs.is_file():
-            documents["qbittorrent/jobs.json"] = self._load_bootstrap_document(jobs)
         return documents
 
     @staticmethod
@@ -101,20 +113,27 @@ class CatalogRepository:
                     pass
             raise CatalogError(f"Cannot activate catalog from invalid JSON: {path}") from current_error
 
-    def generation(self):
+    def generation(self, domain=None):
+        key = f'{domain}_generation' if domain else 'generation'
         connection = self.store.connect()
         try:
-            row = connection.execute("SELECT value FROM catalog_meta WHERE key='generation'").fetchone()
+            row = connection.execute("SELECT value FROM catalog_meta WHERE key=?", (key,)).fetchone()
             return int(row[0]) if row else 0
         finally:
             connection.close()
 
     @staticmethod
-    def _bump_generation(connection):
+    def _bump_generation(connection, document_names=()):
         connection.execute("""
             INSERT INTO catalog_meta(key, value) VALUES('generation', '1')
             ON CONFLICT(key) DO UPDATE SET value = CAST(value AS INTEGER) + 1
         """)
+        for domain in sorted({_document_domain(name) for name in document_names}):
+            key = f'{domain}_generation'
+            connection.execute("""
+                INSERT INTO catalog_meta(key, value) VALUES(?, '1')
+                ON CONFLICT(key) DO UPDATE SET value = CAST(value AS INTEGER) + 1
+            """, (key,))
         connection.execute(
             "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('export_dirty', '1')"
         )
@@ -184,7 +203,6 @@ class CatalogRepository:
                 "path_key",
             ),
             "user_collections.json": ("overrides", "collection_overrides", "collection_id"),
-            "qbittorrent/jobs.json": ("jobs", "download_jobs", "torrent_hash"),
         }
         if name in table_specs:
             root_key, table, key_column = table_specs[name]
@@ -207,7 +225,7 @@ class CatalogRepository:
                 (name, _json_text(document)),
             )
             self._replace_normalized_document(connection, name, document)
-            self._bump_generation(connection)
+            self._bump_generation(connection, (name,))
             self._cache.pop(name, None)
         self.schedule_export(name)
 
@@ -243,9 +261,6 @@ class CatalogRepository:
         elif name == "followed_releases.json":
             connection.execute("DELETE FROM followed_releases")
             self.store._import_followed(connection, document)
-        elif name == "qbittorrent/jobs.json":
-            connection.execute("DELETE FROM download_jobs")
-            self.store._import_download_jobs(connection, document)
 
     def upsert_record(self, name, key, record):
         return self.upsert_records(name, {str(key): record})[str(key)]
@@ -283,7 +298,7 @@ class CatalogRepository:
         with self._lock, self.store.transaction() as connection:
             for key, record in records.items():
                 self._upsert_record(connection, name, key, record)
-            self._bump_generation(connection)
+            self._bump_generation(connection, (name,))
             self._cache.pop(name, None)
         self.schedule_export(name)
         return records
@@ -365,7 +380,7 @@ class CatalogRepository:
                 for key in keys:
                     connection.execute("DELETE FROM media_identity_keys WHERE path_key = ?", (key,))
                     self.store._import_media_identity_keys(connection, key)
-            self._bump_generation(connection)
+            self._bump_generation(connection, (name,))
             self._cache.pop(name, None)
             changed = cursor.rowcount
         self.schedule_export(name)
@@ -415,7 +430,7 @@ class CatalogRepository:
                     (name, _json_text(document)),
                 )
                 changed_documents.add(name)
-            self._bump_generation(connection)
+            self._bump_generation(connection, changed_documents)
             for name in changed_documents:
                 self._cache.pop(name, None)
         for name in changed_documents:
@@ -460,7 +475,7 @@ class CatalogRepository:
                         (name, _json_text(document)),
                     )
                     changed_documents.add(name)
-            self._bump_generation(connection)
+            self._bump_generation(connection, changed_documents)
             for name in changed_documents:
                 self._cache.pop(name, None)
         for name in changed_documents:
@@ -468,6 +483,8 @@ class CatalogRepository:
         return removed
 
     def schedule_export(self, name):
+        if not self.auto_export:
+            return
         flush_now = False
         with self._lock:
             if self._closed:

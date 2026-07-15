@@ -48,6 +48,44 @@ class MaintenanceAuditApiTest(unittest.TestCase):
         self.assertTrue(payload["identity_review"]["shadow_mode"])
         self.assertFalse(payload["identity_review"]["mutates_metadata"])
 
+    def test_section_contract_returns_only_requested_paginated_projection(self):
+        maintenance = {
+            "source": "catalog",
+            "generation": 12,
+            "generated_at": 123.0,
+            "summary": {"duplicate_groups": 2, "unmatched_files": 0},
+            "storage": {
+                "groups": [
+                    {"title": "Alpha (2001)", "files": [{"filename": "Alpha.mkv", "path": "E:/Alpha.mkv"}]},
+                    {"title": "Beta (2002)", "files": [{"filename": "Beta.mkv", "path": "E:/Beta.mkv"}]},
+                ]
+            },
+            "upgrades": {"items": []},
+            "identity": {"items": [], "verification": []},
+        }
+        with patch.object(app, "_maintenance_audit_from_catalog", return_value=maintenance), \
+                patch.object(app, "_get_identity_audit_coordinator") as coordinator:
+            coordinator.return_value.status.return_value = {"status": "idle", "proposals": []}
+            response = app.app.test_client().get(
+                "/api/maintenance/audit?section=storage&q=beta&page=1&page_size=1"
+            )
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.get_json()
+        self.assertEqual(payload["generation"], 12)
+        self.assertEqual([group["title"] for group in payload["storage"]["groups"]], ["Beta (2002)"])
+        self.assertEqual(payload["storage"]["pagination"]["total"], 1)
+        self.assertNotIn("upgrades", payload)
+        self.assertNotIn("identity", payload)
+        self.assertNotIn("identity_review", payload)
+
+    def test_invalid_section_is_rejected(self):
+        with patch.object(app, "_maintenance_audit_from_catalog", return_value={"summary": {}}), \
+                patch.object(app, "_get_identity_audit_coordinator") as coordinator:
+            coordinator.return_value.status.return_value = {"status": "idle", "proposals": []}
+            response = app.app.test_client().get("/api/maintenance/audit?section=legacy")
+        self.assertEqual(response.status_code, 400)
+
 
 if __name__ == "__main__":
     unittest.main()

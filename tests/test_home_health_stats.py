@@ -54,13 +54,7 @@ class HomeHealthStatsTest(unittest.TestCase):
                     {"id": "r2", "classification": "review"},
                 ],
             })
-            with patch("app.scan_duplicates", return_value=([], {
-                "groups": 0,
-                "extra_copies": 0,
-                "wasted_bytes": 0,
-                "wasted_human": "0 B",
-            })):
-                response = app.app.test_client().get("/api/stats")
+            response = app.app.test_client().get("/api/stats")
 
         payload = response.get_json()
         self.assertEqual(payload["unmatched_count"], 1)
