@@ -17,5 +17,17 @@ export default defineConfig({
       '/static': 'http://127.0.0.1:5000',
       '/legacy': 'http://127.0.0.1:5000'
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined;
+          if (id.includes('lucide-react')) return 'vendor-icons';
+          if (id.includes('react') || id.includes('react-dom')) return 'vendor-react';
+          return 'vendor';
+        }
+      }
+    }
   }
 });

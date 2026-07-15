@@ -578,6 +578,66 @@ class AiControlServiceTest(unittest.TestCase):
             self.assertEqual(executed["state"], "unsafe")
             self.assertIn("changed", executed["message"].lower())
 
+    def test_create_list_plan_executes_once_and_returns_persisted_receipt(self):
+        store = ai_control.PlanStore(ttl_seconds=60)
+        plan = store.put({
+            "state": "valid_plan",
+            "action": "create_list",
+            "list_name": "AI Sci-Fi",
+            "items": [{"tmdb_id": "348", "title": "Alien", "year": "1979"}],
+        })
+        created_calls = []
+
+        def create_list(name, movies):
+            created_calls.append((name, movies))
+            return {"id": "ai-sci-fi", "name": name, "movies": movies, "count": len(movies)}
+
+        first = ai_control.execute_plan(plan["plan_id"], plan_store=store, create_list=create_list)
+        second = ai_control.execute_plan(plan["plan_id"], plan_store=store, create_list=create_list)
+
+        self.assertEqual(first["state"], "executed")
+        self.assertEqual(first["total_matches"], 1)
+        self.assertEqual(first["created"]["id"], "ai-sci-fi")
+        self.assertEqual(second["state"], "unsafe")
+        self.assertEqual(len(created_calls), 1)
+
+    def test_confirmation_phrase_is_checked_before_plan_is_consumed(self):
+        with tempfile.TemporaryDirectory() as root:
+            movie = os.path.join(root, "Large Movie.mkv")
+            with open(movie, "wb") as handle:
+                handle.write(b"movie")
+            store = ai_control.PlanStore(ttl_seconds=60)
+            plan = store.put({
+                "state": "valid_plan",
+                "action": "delete",
+                "items": [{
+                    "path": movie,
+                    "observed_size": os.path.getsize(movie),
+                }],
+                "requires_extra_confirmation": True,
+                "confirmation_phrase": "DELETE 1 FILE",
+            })
+
+            rejected = ai_control.execute_plan(
+                plan["plan_id"],
+                plan_store=store,
+                confirmation_phrase="wrong",
+                library_roots=[root],
+                delete_file=lambda path: {"deleted": path},
+            )
+            executed = ai_control.execute_plan(
+                plan["plan_id"],
+                plan_store=store,
+                confirmation_phrase="DELETE 1 FILE",
+                library_roots=[root],
+                delete_file=lambda path: {"deleted": path},
+            )
+
+            self.assertEqual(rejected["state"], "unsafe")
+            self.assertIn("confirmation phrase", rejected["message"].lower())
+            self.assertEqual(executed["state"], "executed")
+            self.assertIsNone(store.get(plan["plan_id"]))
+
 
 if __name__ == "__main__":
     unittest.main()

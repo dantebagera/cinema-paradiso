@@ -367,7 +367,8 @@ class PlexManualMatchTest(unittest.TestCase):
         urlopen.assert_not_called()
 
     def test_plex_match_ui_displays_rich_unified_results(self):
-        source = (Path(__file__).resolve().parents[1] / "src" / "App.jsx").read_text(encoding="utf-8")
+        from tests.frontend_source import read_frontend_source
+        source = read_frontend_source()
 
         self.assertIn("match.poster_url", source)
         self.assertIn("match.summary", source)

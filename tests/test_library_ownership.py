@@ -104,6 +104,55 @@ class LibraryOwnershipTest(unittest.TestCase):
         self.assertEqual(result["tmdb_id"], "601")
         self.assertEqual(result["path"], str(movie_path))
 
+    def test_library_check_can_include_movie_list_card_item(self):
+        original_dirs = app._movies_dirs
+        original_dir = app._movies_dir
+        original_library_cache = dict(app._library_cache)
+        original_plex_token = app._plex_token
+        original_user_data_dir = app._user_data_dir
+
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie_path = Path(tmp) / "Alien.1979.1080p.mkv"
+            movie_path.write_bytes(b"movie")
+            try:
+                app._movies_dirs = [tmp]
+                app._movies_dir = tmp
+                app._user_data_dir = data_tmp
+                app._plex_token = ""
+                app._library_cache = {}
+                metadata_store = app.AppMetadataStore(Path(data_tmp))
+                metadata_store.apply_tmdb_match(str(movie_path), {
+                    "tmdb_id": "348",
+                    "title": "Alien",
+                    "year": "1979",
+                    "cast": [{"id": index, "name": f"Actor {index}", "extra": "drop"} for index in range(10)],
+                })
+                metadata_store.update_file_record(str(movie_path), {
+                    "filename": movie_path.name,
+                    "parsed_title": "Alien",
+                    "parsed_year": "1979",
+                    "resolution": "1080p",
+                    "size": 5,
+                })
+
+                response = app.app.test_client().post("/api/library/check", json={
+                    "include_items": True,
+                    "movies": [{"tmdb_id": "348", "title": "Alien", "year": "1979"}],
+                })
+            finally:
+                app._movies_dirs = original_dirs
+                app._movies_dir = original_dir
+                app._user_data_dir = original_user_data_dir
+                app._library_cache = original_library_cache
+                app._plex_token = original_plex_token
+
+        self.assertEqual(response.status_code, 200)
+        result = response.get_json()["results"][0]
+        self.assertTrue(result["found"])
+        self.assertEqual(result["library_item"]["path"], str(movie_path))
+        self.assertEqual(len(result["library_item"]["canonical_metadata"]["cast"]), 8)
+        self.assertNotIn("extra", result["library_item"]["canonical_metadata"]["cast"][0])
+
 
 if __name__ == "__main__":
     unittest.main()

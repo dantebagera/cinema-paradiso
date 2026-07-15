@@ -1,19 +1,41 @@
+from concurrent.futures import ThreadPoolExecutor
 import threading
 import time
 import uuid
 
 
-IDENTITY_AUDIT_SCHEMA_VERSION = 4
+IDENTITY_AUDIT_SCHEMA_VERSION = 5
+
+
+def _empty_outcome_counts():
+    return {
+        "verified": 0,
+        "manual": 0,
+        "tolerated": 0,
+        "ambiguous": 0,
+        "actionable": 0,
+        "unmatched": 0,
+    }
 
 
 class IdentityAuditCoordinator:
-    def __init__(self, load_state, save_state, list_paths, process_path, batch_size=6, batch_delay=0.1):
+    def __init__(
+        self,
+        load_state,
+        save_state,
+        list_paths,
+        process_path,
+        batch_size=6,
+        batch_delay=0.1,
+        max_workers=1,
+    ):
         self._load_state = load_state
         self._save_state = save_state
         self._list_paths = list_paths
         self._process_path = process_path
         self._batch_size = batch_size
         self._batch_delay = batch_delay
+        self._max_workers = max(1, int(max_workers or 1))
         self._lock = threading.RLock()
         self._thread = None
         self._recover_interrupted_state()
@@ -30,6 +52,11 @@ class IdentityAuditCoordinator:
             "proposals": [],
             "automatic_fixes": [],
             "unresolved": [],
+            "diagnostic_samples": {
+                "ambiguous": [],
+                "unmatched": [],
+            },
+            "outcome_counts": _empty_outcome_counts(),
             "errors": [],
             "applied": 0,
             "automatically_verified": 0,
@@ -43,6 +70,8 @@ class IdentityAuditCoordinator:
             "completed_at": 0,
             "interrupted_at": 0,
             "requires_refresh": False,
+            "shadow_mode": True,
+            "mutates_metadata": False,
         }
 
     def _recover_interrupted_state(self):
@@ -132,45 +161,30 @@ class IdentityAuditCoordinator:
                 return state
             start = state["processed"]
             batch = state["paths"][start:start + (limit or self._batch_size)]
-        for path in batch:
+            provider = state.get("provider") or "tmdb"
+        if self._max_workers == 1 or len(batch) < 2:
+            results = []
+            for path in batch:
+                with self._lock:
+                    state = self.status()
+                    if state["status"] != "running":
+                        if results:
+                            self._record_results(results)
+                            return self.status()
+                        return state
+                results.append(self._run_path(path, provider))
+            self._record_results(results)
+        else:
             with self._lock:
                 state = self.status()
                 if state["status"] != "running":
                     return state
-                state["current_path"] = path
-                self._save_state(state)
-            try:
-                result = self._process_path(path, state.get("provider") or "tmdb") or {}
-                error = ""
-            except Exception as exc:
-                result = {}
-                error = str(exc)
-            with self._lock:
-                state = self.status()
-                if result.get("automatically_verified"):
-                    state["automatically_verified"] += 1
-                    automatic_fix = dict(result.get("automatic_fix") or {})
-                    if automatic_fix:
-                        automatic_fix.setdefault("id", uuid.uuid4().hex)
-                        automatic_fix.setdefault("applied_at", time.time())
-                        state["automatic_fixes"] = [*state["automatic_fixes"], automatic_fix]
-                elif result.get("candidate"):
-                    proposal = dict(result)
-                    proposal.setdefault("id", uuid.uuid4().hex)
-                    state["proposals"] = [*state["proposals"], proposal]
-                    if proposal.get("classification") == "recommended":
-                        state["recommended_count"] += 1
-                    else:
-                        state["review_count"] += 1
-                elif result:
-                    state["unresolved"] = [*state["unresolved"], {"path": path, **result}]
-                if error:
-                    state["errors"] = [*state["errors"], {"path": path, "error": error}]
-                state["processed"] += 1
-                state["remaining"] = max(0, state["total"] - state["processed"])
-                state["current_path"] = ""
-                state["updated_at"] = time.time()
-                self._save_state(state)
+            with ThreadPoolExecutor(max_workers=min(self._max_workers, len(batch))) as executor:
+                results = list(executor.map(
+                    lambda path: self._run_path(path, provider),
+                    batch,
+                ))
+            self._record_results(results)
         with self._lock:
             state = self.status()
             if state["status"] == "running" and state["processed"] >= state["total"]:
@@ -180,6 +194,59 @@ class IdentityAuditCoordinator:
                 state["updated_at"] = state["completed_at"]
                 self._save_state(state)
             return state
+
+    def _run_path(self, path, provider):
+        try:
+            return path, self._process_path(path, provider) or {}, ""
+        except Exception as exc:
+            return path, {}, str(exc)
+
+    def _record_result(self, path, result, error):
+        self._record_results([(path, result, error)])
+
+    def _record_results(self, results):
+        with self._lock:
+            state = self.status()
+            for path, result, error in results:
+                state["outcome_counts"] = {
+                    **_empty_outcome_counts(),
+                    **dict(state.get("outcome_counts") or {}),
+                }
+                outcome = ""
+                if not error:
+                    outcome = str(result.get("outcome") or "").strip().lower()
+                    outcome = {
+                        "accepted": "tolerated",
+                        "contradicted": "actionable",
+                    }.get(outcome, outcome)
+                    if outcome not in state["outcome_counts"]:
+                        outcome = "ambiguous" if result else "unmatched"
+                    state["outcome_counts"][outcome] += 1
+
+                if outcome == "actionable" and result.get("candidate"):
+                    proposal = dict(result)
+                    proposal["outcome"] = "actionable"
+                    proposal["classification"] = "actionable"
+                    proposal["preselected"] = False
+                    proposal.setdefault("id", uuid.uuid4().hex)
+                    state["proposals"] = [*state["proposals"], proposal]
+                    state["review_count"] += 1
+                elif outcome in {"ambiguous", "unmatched"} and result:
+                    samples = {
+                        "ambiguous": [],
+                        "unmatched": [],
+                        **dict(state.get("diagnostic_samples") or {}),
+                    }
+                    if len(samples[outcome]) < 25:
+                        samples[outcome] = [*samples[outcome], {"path": path, **result}]
+                    state["diagnostic_samples"] = samples
+                if error:
+                    state["errors"] = [*state["errors"], {"path": path, "error": error}]
+                state["processed"] += 1
+            state["remaining"] = max(0, state["total"] - state["processed"])
+            state["current_path"] = ""
+            state["updated_at"] = time.time()
+            self._save_state(state)
 
     def _ensure_thread(self):
         with self._lock:

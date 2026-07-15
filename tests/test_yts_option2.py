@@ -209,6 +209,121 @@ class YtsOption2Tests(unittest.TestCase):
             movie,
         ))
 
+    def test_splice_source_evidence_keeps_primary_and_earliest_tmdb_years(self):
+        metadata = {
+            "tmdb_id": "37707",
+            "imdb_id": "tt1017460",
+            "title": "Splice",
+            "original_title": "Splice",
+            "release_date": "2010-06-03",
+            "release_years": ["2010", "2009", "2011"],
+            "release_years_checked_at": 1,
+        }
+
+        with (
+            patch("app._movie_tmdb_metadata_for_source_search", return_value=metadata),
+            patch("app._smart_match_tmdb_alternative_titles", return_value=[]),
+        ):
+            movie = app._movie_with_source_title_aliases({
+                "title": "Splice",
+                "year": "2010",
+                "tmdb_id": "37707",
+            })
+
+        self.assertEqual(movie["imdb_id"], "tt1017460")
+        self.assertEqual(movie["release_years"], ["2010", "2009"])
+        self.assertEqual(app._movie_release_queries(movie)[:3], [
+            "tt1017460",
+            "Splice 2010",
+            "Splice 2009",
+        ])
+        self.assertTrue(app._prowlarr_result_matches_movie(
+            {"title": "Splice (2009) 1080p BRRip x264 -YTS"},
+            movie,
+        ))
+        self.assertFalse(app._prowlarr_result_matches_movie(
+            {"title": "Splice (2011) 1080p WEB-DL x264"},
+            movie,
+        ))
+
+    def test_movie_search_merges_and_deduplicates_results_across_queries(self):
+        requested_queries = []
+        shared = {
+            "title": "Splice (2009) 1080p BRRip x264 -YTS",
+            "indexer": "YTS",
+            "infoHash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        }
+        alternate = {
+            "title": "Splice (2010) 720p BluRay x264",
+            "indexer": "YTS",
+            "infoHash": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        }
+
+        def fake_search(indexer_ids=None, query="", limit=100, categories="2000", timeout=30):
+            requested_queries.append(query)
+            if query == "tt1017460":
+                return [shared]
+            if query == "Splice 2010":
+                return [shared, alternate]
+            return []
+
+        enriched = {
+            "title": "Splice",
+            "year": "2010",
+            "release_years": ["2010", "2009"],
+            "imdb_id": "tt1017460",
+            "title_aliases": ["Splice"],
+        }
+        with (
+            patch("app._movie_with_source_title_aliases", return_value=enriched),
+            patch("app._prowlarr_search", side_effect=fake_search),
+        ):
+            results = app._prowlarr_search_movie(["1"], enriched)
+
+        self.assertEqual(requested_queries, ["tt1017460", "Splice 2010", "Splice 2009"])
+        self.assertEqual([row["infoHash"] for row in results], [
+            "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        ])
+
+    def test_progressive_indexer_search_merges_queries_and_keeps_all_qualities(self):
+        shared = {
+            "title": "Splice (2009) 1080p BRRip x264 -YTS",
+            "indexer": "YTS",
+            "infoHash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        }
+        lower_quality = {
+            "title": "Splice (2009) 720p BRRip x264 -YTS",
+            "indexer": "YTS",
+            "infoHash": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        }
+
+        def fake_search(indexer_ids=None, query="", limit=100, categories="2000", timeout=30):
+            if query == "tt1017460":
+                return [shared]
+            if query == "Splice 2009":
+                return [shared, lower_quality]
+            return []
+
+        movie = {
+            "title": "Splice",
+            "year": "2010",
+            "release_years": ["2010", "2009"],
+            "imdb_id": "tt1017460",
+            "title_aliases": ["Splice"],
+        }
+        with patch("app._prowlarr_search", side_effect=fake_search):
+            outcome = app._search_movie_on_single_indexer(
+                {"id": "1", "name": "YTS"},
+                movie,
+                app._movie_release_queries(movie),
+                deadline_seconds=10,
+            )
+
+        variants = app._torrent_variants_from_prowlarr_results(outcome["results"])
+        self.assertEqual(len(outcome["results"]), 2)
+        self.assertEqual([row["resolution"] for row in variants], ["1080p", "720p"])
+
     def test_movie_search_stops_when_global_deadline_is_exhausted(self):
         requested_timeouts = []
 

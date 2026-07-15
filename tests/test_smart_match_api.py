@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import app
+from services.identity_decision import DECISION_ORIGIN_SMART_MATCH
 
 
 class SmartMatchApiTest(unittest.TestCase):
@@ -69,12 +70,13 @@ class SmartMatchApiTest(unittest.TestCase):
                 status = client.get(f"/api/metadata/smart-match/{started.get_json()['id']}")
 
             store = app.AppMetadataStore(Path(data_tmp))
+            manual_match = store.get_manual_match(str(movie))
 
         self.assertEqual(rejected.status_code, 403)
         self.assertEqual(started.status_code, 200)
         self.assertEqual(status.get_json()["status"], "completed")
         self.assertEqual(len(status.get_json()["proposals"]), 1)
-        self.assertEqual(store.get_manual_match(str(movie)), {})
+        self.assertEqual(manual_match, {})
 
     def test_apply_uses_explicit_proposal_ids_only(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
@@ -109,11 +111,15 @@ class SmartMatchApiTest(unittest.TestCase):
             store = app.AppMetadataStore(Path(data_tmp))
             first_match = store.get_manual_match(str(first))
             second_match = store.get_manual_match(str(second))
+            first_record = store.snapshot()["files"][app._norm(str(first))]
 
         self.assertEqual(applied.status_code, 200)
         self.assertEqual(applied.get_json()["applied"], 1)
-        self.assertTrue(first_match)
+        self.assertEqual(first_match, {})
         self.assertEqual(second_match, {})
+        self.assertEqual(first_record["tmdb_id"], "348")
+        self.assertEqual(first_record["decision_origin"], DECISION_ORIGIN_SMART_MATCH)
+        self.assertFalse(first_record["manual_lock"])
 
     def test_preview_rejects_an_already_accepted_identity(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:

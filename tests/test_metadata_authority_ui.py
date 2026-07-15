@@ -1,5 +1,6 @@
 from pathlib import Path
 import unittest
+from tests.frontend_source import read_frontend_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,7 +13,7 @@ MAIN = ROOT / "src" / "main.jsx"
 class MetadataAuthorityUiTest(unittest.TestCase):
     def test_settings_uses_dedicated_metadata_authority_panel(self):
         panel = PANEL.read_text(encoding="utf-8")
-        app = APP.read_text(encoding="utf-8")
+        app = read_frontend_source()
 
         self.assertIn("MetadataAuthorityPanel", app)
         self.assertIn("/api/metadata/authority", panel)
@@ -40,7 +41,7 @@ class MetadataAuthorityUiTest(unittest.TestCase):
 
     def test_uncertain_match_review_uses_cleanup_unmatched_navigation(self):
         panel = PANEL.read_text(encoding="utf-8")
-        app = APP.read_text(encoding="utf-8")
+        app = read_frontend_source()
 
         self.assertIn("onReviewUnmatched", panel)
         self.assertIn("onClick={onReviewUnmatched}", panel)
@@ -50,7 +51,7 @@ class MetadataAuthorityUiTest(unittest.TestCase):
 
     def test_identity_review_routes_from_settings_to_cleanup(self):
         panel = PANEL.read_text(encoding="utf-8")
-        app = APP.read_text(encoding="utf-8")
+        app = read_frontend_source()
 
         self.assertNotIn("/api/metadata/identity-audit", panel)
         self.assertIn("Review identity corrections", panel)

@@ -131,7 +131,7 @@ Every row in the **Library Browser** now has a purple **✎ Rename** button, mat
 The Duplicate Scanner now uses `_plex_cache` title/year as the grouping key when available. Files matched by Plex to the same TMDB/TVDB entry are grouped as duplicates regardless of their filename. Files not in Plex still fall back to `parse_movie_title()` filename parsing.
 
 #### Plex Bulk Mis-match Guard
-`MAX_PLEX_GROUP = 4` constant added to `scan_duplicates()`. After building groups, any Plex-derived group with more than 4 entries is considered a bulk mis-match (Plex tagged a whole folder as one movie). Those files are re-bucketed by filename parsing. Legitimate duplicate pairs (2–4 copies) are unaffected.
+Maintenance audit groups with more than four Plex-derived copies are re-bucketed by filename identity before they can be treated as duplicates. Legitimate duplicate pairs remain unaffected.
 
 #### Fix Path — Whole Folder Move
 `fix_path()` now counts video files in the parent folder before moving. If the parent contains only one video file, the **entire folder** is moved one level up so the folder name (e.g. `Batman (2010)`) is preserved. Plex uses the folder name as a metadata hint, so it re-matches cleanly after rescan. If the parent contains multiple video files, the original file-only move is used as a fallback.
@@ -769,11 +769,9 @@ All endpoints return JSON. Base URL: `http://localhost:5000`
 
 | Method | Endpoint | Description |
 |---|---|---|
-| GET | `/api/duplicates` | Scan and return duplicate groups + stats |
+| GET | `/api/maintenance/audit` | Return catalog-backed storage, upgrade, and identity maintenance queues |
 | GET | `/api/library` | Return all video files with metadata |
 | GET | `/api/library/status` | Return current scan progress string |
-| GET | `/api/low-quality` | Return files with resolution below 1080p |
-| GET | `/api/smart-scan` | Return Smart Clean recommendations |
 | GET | `/api/stats` | Return full library statistics (for Dashboard) |
 | POST | `/api/delete` | Delete a file `{"path": "...", "trash": true}` |
 | POST | `/api/open-file` | Open a file in the OS default player `{"path": "..."}` |
@@ -787,7 +785,6 @@ All endpoints return JSON. Base URL: `http://localhost:5000`
 | POST | `/api/plex/config` | Save Plex URL and token |
 | GET | `/api/plex/test` | Test connection, returns library count |
 | GET | `/api/plex/sync` | Fetch all file paths from Plex into memory cache |
-| GET | `/api/fix-unmatched` | Return files in deep subfolders Plex may not match |
 | POST | `/api/fix-path` | Move a file one level up + trigger Plex rescan |
 | POST | `/api/plex/force-scan` | Trigger Plex section rescan and reset local cache |
 | GET | `/api/plex/match-search` | Search Plex agents `?rating_key=&title=&year=` |
@@ -855,7 +852,7 @@ filebotx/
 | `get_resolution_rank(res)` | Returns numeric rank 0–4 |
 | `get_rip_source(filename)` | Returns rip type string |
 | `get_rip_rank(rip_source)` | Returns numeric rank -3 to 9 |
-| `scan_duplicates(movies_dir)` | Returns grouped duplicates + wasted-space stats |
+| `build_maintenance_audit(candidates)` | Projects storage, upgrade, and identity maintenance queues from catalog records |
 | `format_size(size)` | Formats bytes as human-readable string |
 | `_auto_sync_plex()` | Auto-refreshes Plex cache if stale (>5 min TTL) |
 | `_fetch_plex_library()` | Queries Plex API and returns `{path: metadata}` dict |
@@ -980,7 +977,7 @@ Every row in the **Library Browser** now has a purple **✎ Rename** button, mat
 The Duplicate Scanner now uses `_plex_cache` title/year as the grouping key when available. Files matched by Plex to the same TMDB/TVDB entry are grouped as duplicates regardless of their filename. Files not in Plex still fall back to `parse_movie_title()` filename parsing.
 
 #### Plex Bulk Mis-match Guard
-`MAX_PLEX_GROUP = 4` constant added to `scan_duplicates()`. After building groups, any Plex-derived group with more than 4 entries is considered a bulk mis-match (Plex tagged a whole folder as one movie). Those files are re-bucketed by filename parsing. Legitimate duplicate pairs (2–4 copies) are unaffected.
+Maintenance audit groups with more than four Plex-derived copies are re-bucketed by filename identity before they can be treated as duplicates. Legitimate duplicate pairs remain unaffected.
 
 #### Fix Path — Whole Folder Move
 `fix_path()` now counts video files in the parent folder before moving. If the parent contains only one video file, the **entire folder** is moved one level up (`os.rename(parent, dest_folder)`) so the folder name (e.g. `Batman (2010)`) is preserved. Plex uses the folder name as a metadata hint, so it re-matches cleanly after rescan. If the parent contains multiple video files, the original file-only move is used as a fallback.
@@ -1572,10 +1569,8 @@ All endpoints return JSON. Base URL: `http://localhost:5000`
 
 | Method | Endpoint | Description |
 |---|---|---|
-| GET | `/api/duplicates` | Scan and return duplicate groups + stats |
+| GET | `/api/maintenance/audit` | Return catalog-backed storage, upgrade, and identity maintenance queues |
 | GET | `/api/library` | Return all video files with metadata |
-| GET | `/api/low-quality` | Return files with resolution below 1080p |
-| GET | `/api/smart-scan` | Return Smart Clean recommendations |
 | GET | `/api/stats` | Return full library statistics (for Dashboard) |
 | POST | `/api/delete` | Delete a file `{"path": "...", "trash": true}` |
 
@@ -1587,7 +1582,6 @@ All endpoints return JSON. Base URL: `http://localhost:5000`
 | POST | `/api/plex/config` | Save Plex URL and token `{"url": "...", "token": "..."}` |
 | GET | `/api/plex/test` | Test connection, returns library count |
 | GET | `/api/plex/sync` | Fetch all file paths from Plex into memory cache |
-| GET | `/api/fix-unmatched` | Return files in deep subfolders that Plex may not match *(v1.1)* |
 | POST | `/api/fix-path` | Move a file one level up + trigger Plex rescan `{"path": "..."}` *(v1.1)* |
 | POST | `/api/plex/force-scan` | Trigger Plex section rescan and reset local cache *(v1.1)* |
 | GET | `/api/plex/match-search?rating_key=&title=&year=` | Search Plex agents for matching entries *(v1.1)* |
@@ -1628,7 +1622,7 @@ filebotx/
 | `get_resolution_rank(filename)` | Returns numeric rank 0–4 |
 | `get_rip_source(filename)` | Returns rip type string |
 | `get_rip_rank(rip_source)` | Returns numeric rank -3 to 9 |
-| `scan_duplicates(movies_dir)` | Returns grouped duplicates + wasted-space stats |
+| `build_maintenance_audit(candidates)` | Projects storage, upgrade, and identity maintenance queues from catalog records |
 | `format_size(size)` | Formats bytes as human-readable string |
 | `_auto_sync_plex()` | Auto-refreshes Plex cache if stale (>5 min TTL), called by every scan endpoint |
 | `_fetch_plex_library()` | Queries Plex API and returns `{path: metadata}` dict |

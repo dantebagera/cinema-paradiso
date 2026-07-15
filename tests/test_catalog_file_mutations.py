@@ -1,0 +1,180 @@
+import tempfile
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+import app
+
+
+class CatalogFileMutationTest(unittest.TestCase):
+    def test_rename_and_delete_refresh_catalog_without_rescan(self):
+        original_dirs = app._movies_dirs
+        original_dir = app._movies_dir
+        original_user_data = app._user_data_dir
+        original_library_cache = dict(app._library_cache)
+        original_plex_token = app._plex_token
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie_path = Path(movies_tmp) / "Alien.1979.1080p.mkv"
+            movie_path.write_bytes(b"movie")
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.apply_tmdb_match(str(movie_path), {
+                "tmdb_id": "348",
+                "title": "Alien",
+                "year": "1979",
+            })
+            store.update_file_record(str(movie_path), {
+                "filename": movie_path.name,
+                "library_root": movies_tmp,
+                "parsed_title": "Alien",
+                "parsed_year": "1979",
+                "resolution": "1080p",
+                "rip_source": "BluRay",
+                "size": movie_path.stat().st_size,
+            })
+            try:
+                app._movies_dirs = [movies_tmp]
+                app._movies_dir = movies_tmp
+                app._user_data_dir = data_tmp
+                app._library_cache = {}
+                app._plex_token = ""
+                client = app.app.test_client()
+
+                initial = client.get("/api/library").get_json()
+                with patch("app._plex_rescan"):
+                    renamed_response = client.post("/api/rename-file", json={
+                        "path": str(movie_path),
+                        "title": "Alien",
+                        "year": "1979",
+                    })
+                renamed_path = Path(renamed_response.get_json()["new_path"])
+                after_rename = client.get("/api/library").get_json()
+                deleted_response = client.post("/api/delete", json={"path": str(renamed_path), "trash": False})
+                after_delete = client.get("/api/library").get_json()
+            finally:
+                app._movies_dirs = original_dirs
+                app._movies_dir = original_dir
+                app._user_data_dir = original_user_data
+                app._library_cache = original_library_cache
+                app._plex_token = original_plex_token
+
+        self.assertEqual(initial["count"], 1)
+        self.assertEqual(renamed_response.status_code, 200)
+        self.assertEqual(after_rename["count"], 1)
+        self.assertEqual(after_rename["items"][0]["path"], str(renamed_path))
+        self.assertEqual(deleted_response.status_code, 200)
+        self.assertEqual(after_delete["count"], 0)
+
+    def test_only_shared_helpers_own_path_metadata_mutation(self):
+        source = Path(app.__file__).read_text(encoding="utf-8")
+
+        self.assertEqual(source.count(".migrate_path_records("), 2)
+        self.assertEqual(source.count(".remove_path_records("), 2)
+        self.assertIn("_migrate_library_path(abs_path, new_path)", source)
+        self.assertIn("_migrate_library_path(old_path, new_path)", source)
+
+    def test_prune_removes_only_paths_missing_from_complete_inventory(self):
+        with tempfile.TemporaryDirectory() as data_tmp:
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.update_file_record("E:/Movies/Alien.mkv", {"title": "Alien"})
+            store.update_file_record("E:/Movies/Aliens.mkv", {"title": "Aliens"})
+
+            removed = store.prune_missing_path_records(["E:/Movies/Alien.mkv"])
+            files = store.snapshot()["files"]
+
+        self.assertEqual(removed, 1)
+        self.assertIn(store._key("E:/Movies/Alien.mkv"), files)
+        self.assertNotIn(store._key("E:/Movies/Aliens.mkv"), files)
+
+    def test_reconcile_refreshes_changed_facts_without_rematching_accepted_identity(self):
+        original_dirs = app._movies_dirs
+        original_dir = app._movies_dir
+        original_user_data = app._user_data_dir
+        original_library_cache = dict(app._library_cache)
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie_path = Path(movies_tmp) / "Alien.1979.1080p.mkv"
+            movie_path.write_bytes(b"changed-size")
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_tmdb_metadata({
+                "tmdb_id": "348",
+                "title": "Alien",
+                "year": "1979",
+                "poster_url": "alien.jpg",
+            })
+            store.update_file_record(str(movie_path), {
+                "identity_status": "accepted",
+                "identity_title": "Alien",
+                "identity_year": "1979",
+                "metadata_status": "accepted",
+                "metadata_accepted": True,
+                "display_provider": "tmdb",
+                "tmdb_id": "348",
+                "decision_origin": app.DECISION_ORIGIN_LIBRARY_RECONCILE,
+                "identity_evidence_fingerprint": app._identity_evidence_fingerprint(
+                    str(movie_path), app._metadata_file_facts(str(movie_path)), {}
+                ),
+                "size": 0,
+                "modified_time": 0,
+            })
+            try:
+                app._movies_dirs = [movies_tmp]
+                app._movies_dir = movies_tmp
+                app._user_data_dir = data_tmp
+                app._library_cache = {}
+
+                with patch("app._revalidate_accepted_identity") as revalidate:
+                    result = app._reconcile_library_files()
+                refreshed = app.AppMetadataStore(Path(data_tmp)).snapshot()["files"][store._key(movie_path)]
+            finally:
+                app._movies_dirs = original_dirs
+                app._movies_dir = original_dir
+                app._user_data_dir = original_user_data
+                app._library_cache = original_library_cache
+
+        self.assertEqual(result["checked"], 0)
+        revalidate.assert_not_called()
+        self.assertEqual(refreshed["size"], len(b"changed-size"))
+        self.assertEqual(refreshed["resolution"], "1080p")
+        self.assertEqual(refreshed["identity_title"], "Alien")
+
+    def test_reconcile_fingerprint_uses_persisted_plex_snapshot_without_churn(self):
+        original_dirs = app._movies_dirs
+        original_dir = app._movies_dir
+        original_user_data = app._user_data_dir
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie_path = Path(movies_tmp) / "Unknown.1995.1080p.mkv"
+            movie_path.write_bytes(b"movie")
+            store = app.AppMetadataStore(Path(data_tmp))
+            facts = app._metadata_file_facts(str(movie_path))
+            store.save_plex_metadata(str(movie_path), {
+                "plex_title": "Unknown",
+                "plex_year": "1995",
+                "plex_guid": "plex://movie/unknown",
+            })
+            store.update_file_record(str(movie_path), {
+                **facts,
+                "identity_status": "unmatched",
+                "metadata_status": "unmatched",
+                "metadata_accepted": False,
+                "identity_decision_version": app.IDENTITY_DECISION_VERSION,
+                "identity_evidence_fingerprint": app._identity_evidence_fingerprint(str(movie_path), facts, {}),
+            })
+            try:
+                app._movies_dirs = [movies_tmp]
+                app._movies_dir = movies_tmp
+                app._user_data_dir = data_tmp
+                with patch("app._active_metadata_provider", return_value="tmdb"), \
+                        patch("app._resolve_tmdb_identity", return_value=app._identity_resolution("unmatched")), \
+                        patch("app._file_copy_is_stable", return_value=True):
+                    first = app._reconcile_library_files()
+                    second = app._reconcile_library_files()
+            finally:
+                app._movies_dirs = original_dirs
+                app._movies_dir = original_dir
+                app._user_data_dir = original_user_data
+
+        self.assertEqual(first["checked"], 1)
+        self.assertEqual(second["checked"], 0)
+
+
+if __name__ == "__main__":
+    unittest.main()

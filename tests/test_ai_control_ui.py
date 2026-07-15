@@ -1,9 +1,10 @@
 from pathlib import Path
 import unittest
+from tests.frontend_source import read_frontend_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
-APP_SOURCE = (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
+APP_SOURCE = read_frontend_source()
 SHARED_CARDS_SOURCE = (ROOT / "src" / "components" / "SharedMovieCards.jsx").read_text(encoding="utf-8")
 STYLES_SOURCE = (ROOT / "src" / "styles.css").read_text(encoding="utf-8")
 
@@ -108,8 +109,19 @@ class AiControlUiTest(unittest.TestCase):
         for text in [
             "requires_extra_confirmation",
             "confirmation_phrase",
+            "confirmation_phrase: confirmationPhrase",
             "Type the confirmation phrase",
             "setAiControlDangerPhrase",
+        ]:
+            self.assertIn(text, APP_SOURCE)
+
+    def test_ai_control_execution_uses_a_receipt_and_invalidates_list_cache(self):
+        for text in [
+            "aiControlReceipt",
+            "ai-control-execution-receipt",
+            "movies saved",
+            "clearUserListsCache()",
+            "announceCurationChanged()",
         ]:
             self.assertIn(text, APP_SOURCE)
 

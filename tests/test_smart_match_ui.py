@@ -1,5 +1,6 @@
 from pathlib import Path
 import unittest
+from tests.frontend_source import read_frontend_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -11,7 +12,7 @@ STYLES = ROOT / "src" / "styles" / "smartMatch.css"
 
 class SmartMatchUiTest(unittest.TestCase):
     def test_unmatched_tab_exposes_provider_method_and_selected_action(self):
-        app = APP.read_text(encoding="utf-8")
+        app = read_frontend_source()
         panel = PANEL.read_text(encoding="utf-8")
 
         self.assertIn("<SmartMatchControls", app)

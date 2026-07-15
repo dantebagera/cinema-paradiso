@@ -1,6 +1,7 @@
 @echo off
 setlocal
 cd /d "%~dp0"
+set "PROJECT_ROOT=%CD%"
 echo Starting Cinema Paradiso...
 echo Press Ctrl+C to stop the server
 echo.
@@ -36,7 +37,7 @@ if errorlevel 1 (
 
 if not exist "node_modules" (
     echo Installing frontend dependencies...
-    npm.cmd install
+    call npm.cmd install
     if errorlevel 1 (
         echo Failed to install frontend dependencies.
         pause
@@ -44,9 +45,19 @@ if not exist "node_modules" (
     )
 )
 
+echo.
+echo Stopping any old Cinema Paradiso backend from this folder...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\stop_stale_backend.ps1" -ProjectRoot "%PROJECT_ROOT%" -Port 5000
+if errorlevel 1 (
+    echo Failed to stop the old backend on port 5000.
+    pause
+    exit /b 1
+)
+
+echo.
 if not exist "dist\index.html" (
     echo Building React frontend...
-    npm.cmd run build
+    call npm.cmd run build
     if errorlevel 1 (
         echo Failed to build React frontend.
         pause

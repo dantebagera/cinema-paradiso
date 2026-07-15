@@ -1,0 +1,539 @@
+import {
+  AlertTriangle, Bell, Film, HardDrive, Link as LinkIcon, Loader2, MonitorPlay,
+  Play, ScanSearch, Search, Sparkles, Trash2, Wand2, X
+} from 'lucide-react';
+import { useState } from 'react';
+import headerCropUrl from '../../assets/header.png';
+import Rating from '../../components/Rating.jsx';
+import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
+import { PosterEditButton, PosterStateControls } from '../../components/SharedMovieCards.jsx';
+import { UnifiedMovieCard } from '../../components/movie-card/MovieCard.jsx';
+import { cx, formatCount, movieKey, sortFollowedReleases } from '../../utils/appUtils.js';
+import { listsForDiscoverMovie, ownedMovieFor } from '../../discoverUtils.js';
+import { isLowQuality } from '../../utils/libraryUtils.js';
+import { formatReleaseDateLabel, formatVoteCount, isUnreleasedMovie } from '../../utils/moviePresentation.js';
+
+export default function HomeWorkspace(props) {
+  const {
+    stats,
+    loading,
+    movies,
+    ownership,
+    followed,
+    followedChecking,
+    selectedMovie,
+    selectedOwnership,
+    selectedDetails,
+    onSelectSection,
+    onOpenCleanup,
+    onSelectMovie,
+    onPlay,
+    onStream,
+    streamingAvailable,
+    streamingLabel,
+    onFindTorrent,
+    onTrailer,
+    onFollow,
+    userLists,
+    onToggleSystemList,
+    onEditPoster
+  } = props;
+  const [releaseDrawerOpen, setReleaseDrawerOpen] = useState(false);
+
+  return (
+    <div className="home-grid">
+      <section className="hero-panel">
+        <img className="home-hero-art" src={headerCropUrl} alt="" aria-hidden="true" />
+        <div className="hero-copy">
+          <h1 className="hero-page-title">Home</h1>
+          <p className="screen-kicker">Cinematic archive console</p>
+          <h2>Your movie archive, under command.</h2>
+          <p>
+            Cinema Paradiso brings local files, Plex metadata, cleanup tools, torrent sources, TMDB discovery,
+            live streaming, and AI recommendations into one private console built for collectors who manage real libraries.
+          </p>
+        </div>
+      </section>
+
+      <HealthPanel stats={stats} loading={loading.stats} onOpenCleanup={onOpenCleanup} />
+      <ReleasePanel
+        followed={followed}
+        checking={followedChecking}
+        onSelectMovie={onSelectMovie}
+        onViewAll={() => setReleaseDrawerOpen(true)}
+      />
+
+      <section className="movie-rail">
+        <div className="section-heading">
+          <div>
+            <p className="screen-kicker">Discover</p>
+            <h3>Trending movies with archive-aware actions</h3>
+          </div>
+          <button type="button" className="ghost-link" onClick={() => onSelectSection('discover')}>
+            Open Discover
+          </button>
+        </div>
+        {loading.movies ? (
+          <div className="skeleton-stack">
+            <div className="movie-card skeleton-card" />
+            <div className="movie-card skeleton-card" />
+            <div className="movie-card skeleton-card" />
+          </div>
+        ) : (
+          <div className="movie-list">
+            {movies.slice(0, 5).map((movie) => {
+              const owned = ownedMovieFor(movie, ownership);
+              return (
+                <SmartMovieCard
+                  key={movieKey(movie)}
+                  movie={movie}
+                  owned={owned}
+                  selected={movieKey(movie) === movieKey(selectedMovie || {})}
+                  followed={followed.some((item) => movieKey(item) === movieKey(movie))}
+                  watched={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watched')}
+                  watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
+                  details={movieKey(movie) === movieKey(selectedMovie || {}) ? selectedDetails : null}
+                  onSelect={() => onSelectMovie(movie)}
+                  onPlay={onPlay}
+                  onStream={onStream}
+                  streamingAvailable={streamingAvailable}
+                  streamingLabel={streamingLabel}
+                  onFindTorrent={onFindTorrent}
+                  onTrailer={onTrailer}
+                  onFollow={onFollow}
+                  onToggleWatched={owned ? () => onToggleSystemList('watched', movie, owned) : undefined}
+                  onToggleWatchlist={() => onToggleSystemList('watchlist', movie, owned)}
+                  onEditPoster={owned ? () => onEditPoster(owned, movie) : undefined}
+                />
+              );
+            })}
+          </div>
+        )}
+      </section>
+
+      <MovieInspector
+        movie={selectedMovie}
+        owned={selectedOwnership}
+        details={selectedDetails}
+        followed={followed.some((item) => movieKey(item) === movieKey(selectedMovie || {}))}
+        watched={listsForDiscoverMovie(selectedMovie || {}, userLists, selectedOwnership).some((list) => list.system_type === 'watched')}
+        watchlisted={listsForDiscoverMovie(selectedMovie || {}, userLists, selectedOwnership).some((list) => list.system_type === 'watchlist')}
+        onClose={() => onSelectMovie(null)}
+        onPlay={onPlay}
+        onStream={onStream}
+        streamingAvailable={streamingAvailable}
+        streamingLabel={streamingLabel}
+        onFindTorrent={onFindTorrent}
+        onTrailer={onTrailer}
+        onFollow={onFollow}
+        onToggleWatched={selectedOwnership ? () => onToggleSystemList('watched', selectedMovie, selectedOwnership) : undefined}
+        onToggleWatchlist={selectedMovie ? () => onToggleSystemList('watchlist', selectedMovie, selectedOwnership) : undefined}
+        onEditPoster={selectedOwnership ? () => onEditPoster(selectedOwnership, selectedMovie) : undefined}
+      />
+      {releaseDrawerOpen && (
+        <FollowedReleasesDrawer
+          followed={followed}
+          checking={followedChecking}
+          selectedMovie={selectedMovie}
+          onClose={() => setReleaseDrawerOpen(false)}
+          onSelectMovie={onSelectMovie}
+          onFindTorrent={onFindTorrent}
+          onUnfollow={onFollow}
+        />
+      )}
+    </div>
+  );
+}
+
+function HealthPanel({ stats, loading, onOpenCleanup }) {
+  const cards = [
+    {
+      label: 'Files',
+      value: stats?.total_files,
+      detail: `${formatCount(stats?.unique_titles)} unique titles`,
+      icon: HardDrive,
+      tone: 'blue'
+    },
+    {
+      label: 'Low quality',
+      value: stats?.low_quality_count,
+      detail: 'below 1080p',
+      icon: AlertTriangle,
+      tone: 'amber',
+      tab: 'low'
+    },
+    {
+      label: 'Duplicates',
+      value: stats?.duplicate_groups,
+      detail: `${formatCount(stats?.extra_copies)} extra copies`,
+      icon: Trash2,
+      tone: 'red',
+      tab: 'duplicates'
+    },
+    {
+      label: 'Unmatched',
+      value: stats?.unmatched_count,
+      detail: 'files without accepted metadata',
+      icon: LinkIcon,
+      tone: 'violet',
+      tab: 'unmatched'
+    },
+    {
+      label: 'Identity review',
+      value: stats?.identity_review_count,
+      detail: `${formatCount(stats?.identity_review_recommended)} recommended corrections`,
+      icon: ScanSearch,
+      tone: 'cyan',
+      tab: 'identity'
+    }
+  ];
+
+  return (
+    <section className="health-panel">
+      <div className="section-heading">
+        <div>
+          <p className="screen-kicker">Library health</p>
+          <h3>Offline archive status</h3>
+        </div>
+        {loading && <Loader2 className="spin" size={18} />}
+      </div>
+      <div className="health-cards">
+        {cards.map((card) => {
+          const Icon = card.icon;
+          const Card = card.tab ? 'button' : 'article';
+          return (
+            <Card
+              type={card.tab ? 'button' : undefined}
+              key={card.label}
+              className={cx('health-card', card.tab && 'health-card-action', `tone-${card.tone}`)}
+              onClick={card.tab ? () => onOpenCleanup(card.tab) : undefined}
+            >
+              <Icon size={18} />
+              <strong>{loading ? '...' : formatCount(card.value)}</strong>
+              <span>{card.label}</span>
+              <small>{card.detail}</small>
+            </Card>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function releaseStatusLabel(movie) {
+  if (movie.status === 'available') return 'Available';
+  if (movie.status === 'owned') return 'Owned';
+  return 'Watching';
+}
+
+function ReleasePanel({ followed, checking, onSelectMovie, onViewAll }) {
+  const preview = sortFollowedReleases(followed).slice(0, 3);
+  return (
+    <section className="release-panel">
+      <div className="section-heading">
+        <div>
+          <p className="screen-kicker">Release watchlist</p>
+          <h3>Followed movies and upgrade signals</h3>
+        </div>
+        <div className="release-heading-actions">
+          {checking ? <Loader2 className="spin" size={17} /> : <Bell size={18} />}
+          {followed.length > 3 && (
+            <button type="button" className="ghost-link ghost-link-small" onClick={onViewAll}>
+              View all
+            </button>
+          )}
+        </div>
+      </div>
+      <div className="release-list">
+        {preview.length ? preview.map((movie, index) => (
+          <button
+            className={cx('release-item', `release-item-${movie.status || 'watching'}`)}
+            key={`${movie.tmdb_id || movie.title}-${index}`}
+            onClick={() => onSelectMovie(movie)}
+            type="button"
+          >
+            <span className="release-pulse" />
+            <span>
+              <strong>{movie.title}</strong>
+              <small>{movie.year || 'Unknown year'}</small>
+            </span>
+            <em>{releaseStatusLabel(movie)}</em>
+          </button>
+        )) : (
+          <div className="empty-state">
+            <strong>No followed releases yet.</strong>
+            <span>Use Follow on a Discover card to watch for a proper WEB-DL or Blu-ray copy.</span>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function FollowedReleasesDrawer({ followed, checking, selectedMovie, onClose, onSelectMovie, onFindTorrent, onUnfollow }) {
+  const [filter, setFilter] = useState('all');
+  const sorted = sortFollowedReleases(followed);
+  const visible = sorted.filter((movie) => filter === 'all' || (movie.status || 'watching') === filter);
+  const availableCount = sorted.filter((movie) => movie.status === 'available').length;
+
+  return (
+    <div className="modal-backdrop" role="presentation" onClick={onClose}>
+      <section className="followed-drawer" role="dialog" aria-modal="true" aria-label="Followed releases" onClick={(event) => event.stopPropagation()}>
+        <div className="dialog-header">
+          <div>
+            <p className="screen-kicker">Release watchlist</p>
+            <h2>Followed Releases</h2>
+          </div>
+          <span className={cx('release-drawer-count', availableCount > 0 && 'release-drawer-count-hot')}>
+            {checking ? 'Checking...' : `${formatCount(availableCount)} available`}
+          </span>
+          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close followed releases">
+            <X size={18} />
+          </button>
+        </div>
+
+        <div className="release-filter-row">
+          {['all', 'available', 'watching'].map((value) => (
+            <button
+              key={value}
+              type="button"
+              className={cx('release-filter-chip', filter === value && 'release-filter-chip-active')}
+              onClick={() => setFilter(value)}
+            >
+              {value === 'all' ? 'All' : value === 'available' ? 'Available' : 'Watching'}
+            </button>
+          ))}
+        </div>
+
+        <div className="followed-list-full">
+          {visible.length ? visible.map((movie, index) => (
+            <div
+              key={`${movie.tmdb_id || movie.title}-${index}`}
+              className={cx(
+                'followed-row',
+                `followed-row-${movie.status || 'watching'}`,
+                movieKey(movie) === movieKey(selectedMovie || {}) && 'followed-row-selected'
+              )}
+            >
+              <button type="button" onClick={() => onSelectMovie(movie)}>
+                <span className="followed-thumb">
+                  {movie.poster_url ? <img src={movie.poster_url} alt="" loading="lazy" /> : <Film size={18} />}
+                </span>
+                <span>
+                  <strong>{movie.title}</strong>
+                  <small>{movie.year || 'Unknown year'}</small>
+                </span>
+                <em>{releaseStatusLabel(movie)}</em>
+              </button>
+              {movie.status === 'available' && (
+                <button type="button" className="btn btn-secondary btn-green-outline" onClick={() => onFindTorrent(movie)}>
+                  <Search size={15} /> Sources
+                </button>
+              )}
+              <button
+                type="button"
+                className="followed-delete-button"
+                onClick={() => onUnfollow(movie)}
+                aria-label={`Remove ${movie.title} from followed releases`}
+                title="Remove from watchlist"
+              >
+                <Trash2 size={15} />
+              </button>
+            </div>
+          )) : (
+            <div className="empty-state">
+              <strong>No followed releases in this filter.</strong>
+              <span>Available movies are always sorted to the top when the backend finds a proper WEB or Blu-ray source.</span>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function SmartMovieCard(props) {
+  const {
+    movie, owned, selected, followed, details, watched, watchlisted,
+    onSelect, onPlay, onStream, streamingAvailable, streamingLabel, onFindTorrent, onFollow,
+    onTrailer, onToggleWatched, onToggleWatchlist, onEditPoster
+  } = props;
+  const lowQuality = owned && isLowQuality(owned.resolution);
+  const unreleased = !owned && isUnreleasedMovie(movie);
+  const genres = (movie.genres || []).slice(0, 2);
+  const posterMovie = owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie;
+
+  return (
+    <UnifiedMovieCard
+      className="home-smart-movie-card"
+      title={movie.title}
+      year={movie.year}
+      posterUrl={posterMovie.poster_url}
+      rating={movie.tmdb_rating}
+      voteCount={formatVoteCount(movie.tmdb_vote_count)}
+      chips={genres}
+      mutedChips={[movie.language, movie.country_flag || movie.country, owned?.resolution, owned?.size_human]}
+      statusLabel={owned ? (lowQuality ? 'Upgrade candidate' : '') : (unreleased ? 'Unreleased' : (followed ? 'Following' : 'Not in library'))}
+      statusTone={owned ? (lowQuality ? 'warning' : 'neutral') : (unreleased ? 'warning' : 'missing')}
+      ownedBadge={Boolean(owned)}
+      selected={selected}
+      onToggle={onSelect}
+      showPlayOverlay={Boolean(owned?.path)}
+      onPlay={owned?.path ? () => onPlay(owned.path) : undefined}
+      cornerControls={(
+        <>
+          <PosterStateControls
+            title={movie.title}
+            watched={watched}
+            watchlisted={watchlisted}
+            onToggleWatched={owned ? onToggleWatched : undefined}
+            onToggleWatchlist={onToggleWatchlist}
+          />
+          <PosterEditButton title={movie.title} onEdit={owned ? onEditPoster : undefined} />
+        </>
+      )}
+    />
+  );
+}
+
+function MovieInspector({
+  movie, owned, details, followed, watched, watchlisted,
+  onClose, onPlay, onStream, streamingAvailable, streamingLabel, onFindTorrent, onFollow,
+  onTrailer, onToggleWatched, onToggleWatchlist, onEditPoster
+}) {
+  if (!movie) {
+    return (
+      <aside className="inspector inspector-empty">
+        <Sparkles size={22} />
+        <h3>Select a movie</h3>
+        <p>Movie details, cast, trailer, and archive actions will appear here.</p>
+      </aside>
+    );
+  }
+
+  const lowQuality = owned && isLowQuality(owned.resolution);
+  const unreleased = !owned && isUnreleasedMovie(movie);
+  const releaseDateLabel = unreleased ? formatReleaseDateLabel(movie.release_date) : '';
+  const cast = details?.cast || [];
+  const trailerUrl = details?.trailer_url || '';
+
+  return (
+    <aside className="inspector">
+      <button className="inspector-close" type="button" onClick={onClose} aria-label="Close movie details">
+        <X size={17} />
+      </button>
+      <div className="inspector-hero">
+        <Poster
+          movie={owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie}
+          large
+          onEditPoster={owned ? onEditPoster : undefined}
+          watched={watched}
+          watchlisted={watchlisted}
+          onToggleWatched={owned ? onToggleWatched : undefined}
+          onToggleWatchlist={onToggleWatchlist}
+        />
+        <div>
+          <p className="screen-kicker">Selected movie</p>
+          <h3>{movie.title}</h3>
+          <div className="inspector-meta">
+            <span>{movie.year || 'Unknown year'}</span>
+            <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
+            {unreleased && <span>Unreleased</span>}
+            {releaseDateLabel && <span>Releases {releaseDateLabel}</span>}
+            {movie.language && <span>{movie.language}</span>}
+            {(movie.country_flag || movie.country) && <span>{movie.country_flag || movie.country}</span>}
+          </div>
+        </div>
+      </div>
+      <p className="plot-text">{movie.plot || 'No plot summary is available yet.'}</p>
+      <div className="chip-row">
+        {(movie.genres || []).slice(0, 5).map((genre) => <span className="chip" key={genre}>{genre}</span>)}
+      </div>
+      <div className="cast-strip">
+        <span className="mini-label">Top cast</span>
+        {details ? (
+          cast.length ? cast.slice(0, 5).map((person) => (
+            <span key={person.name} className="cast-chip">{person.name}</span>
+          )) : <small>No cast data found.</small>
+        ) : (
+          <small>Loading cast...</small>
+        )}
+      </div>
+      <div className="inspector-actions">
+        {owned ? (
+          <>
+            <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
+              <Play size={15} /> Play from HDD
+            </button>
+            {lowQuality && (
+              <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie, true)}>
+                <Wand2 size={15} /> Find upgrade
+              </button>
+            )}
+          </>
+        ) : (
+          <>
+            {!unreleased && (
+              <button type="button" className="btn btn-primary" onClick={() => onFindTorrent(movie)}>
+                <Search size={15} /> Find torrent
+              </button>
+            )}
+            <button type="button" className="btn btn-secondary" onClick={() => onFollow(movie)}>
+              <Bell size={15} /> {followed ? 'Following' : 'Follow release'}
+            </button>
+          </>
+        )}
+        {!unreleased && streamingAvailable && (
+          <button type="button" className="btn btn-secondary" onClick={() => onStream(movie)}>
+            <MonitorPlay size={15} /> {streamingLabel}
+          </button>
+        )}
+        {details && (
+          <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie, trailerUrl)}>
+            <Film size={15} /> Play trailer
+          </button>
+        )}
+      </div>
+    </aside>
+  );
+}
+
+
+function Poster({
+  movie,
+  large,
+  onEditPoster,
+  watched,
+  watchlisted,
+  onToggleWatched,
+  onToggleWatchlist,
+  selected,
+  onSelect,
+  selectionClassName
+}) {
+  return (
+    <div className={cx('poster', large && 'poster-large')}>
+      {movie.poster_url ? (
+        <img src={movie.poster_url} alt={`${movie.title} poster`} loading="lazy" />
+      ) : (
+        <Film size={large ? 42 : 28} />
+      )}
+      <PosterStateControls
+        title={movie.title}
+        watched={watched}
+        watchlisted={watchlisted}
+        onToggleWatched={onToggleWatched}
+        onToggleWatchlist={onToggleWatchlist}
+      />
+      <PosterEditButton title={movie.title} onEdit={onEditPoster} />
+      {onSelect && (
+        <SelectionCheckbox
+          className={selectionClassName}
+          checked={Boolean(selected)}
+          onChange={onSelect}
+          label={`Select ${movie.title}`}
+        />
+      )}
+    </div>
+  );
+}

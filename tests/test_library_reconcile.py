@@ -45,7 +45,9 @@ class LibraryReconcileTest(unittest.TestCase):
             }
 
             with patch("app._file_copy_is_stable", return_value=True), \
-                    patch("app._accepted_tmdb_migration_metadata", return_value=(candidate, False)):
+                    patch("app._resolve_tmdb_identity", return_value=app._identity_resolution(
+                        "accepted", candidate, {"status": "accepted", "outcome": "accepted"}, source="auto_tmdb"
+                    )):
                 result = app._reconcile_library_files()
             record = store.snapshot()["files"][app._norm(str(movie))]
 
@@ -55,6 +57,9 @@ class LibraryReconcileTest(unittest.TestCase):
         self.assertEqual(record["tmdb_id"], "9475")
         self.assertEqual(record["parsed_title"], "scent of a woman")
         self.assertEqual(record["parsed_year"], "1992")
+        self.assertEqual(record["decision_origin"], app.DECISION_ORIGIN_LIBRARY_RECONCILE)
+        self.assertEqual(record["identity_decision_outcome"], "accepted")
+        self.assertTrue(record["identity_evidence_fingerprint"])
 
     def test_changing_new_file_stays_pending_until_later_recheck(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
@@ -78,9 +83,20 @@ class LibraryReconcileTest(unittest.TestCase):
             movie.write_bytes(b"movie")
             self.configure(movies_tmp, data_tmp)
             store = app.AppMetadataStore(Path(data_tmp))
+            store.save_tmdb_metadata({
+                "tmdb_id": "348",
+                "title": "Alien",
+                "year": "1979",
+                "poster_url": "alien.jpg",
+            })
             store.update_file_record(str(movie), {
+                "identity_status": "accepted",
+                "identity_title": "Alien",
+                "identity_year": "1979",
                 "metadata_status": "accepted",
                 "metadata_accepted": True,
+                "display_provider": "tmdb",
+                "tmdb_id": "348",
                 "size": movie.stat().st_size,
                 "modified_time": movie.stat().st_mtime,
             })
@@ -90,6 +106,45 @@ class LibraryReconcileTest(unittest.TestCase):
 
         self.assertEqual(result["checked"], 0)
         reconcile_path.assert_not_called()
+
+    def test_reconcile_repairs_accepted_identity_with_missing_enrichment(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Alien.1979.1080p.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_authority_state({"active_provider": "tmdb"})
+            store.update_file_record(str(movie), {
+                "identity_status": "accepted",
+                "identity_title": "Alien",
+                "identity_year": "1979",
+                "metadata_status": "accepted",
+                "metadata_accepted": True,
+                "display_provider": "tmdb",
+                "tmdb_id": "348",
+                "size": movie.stat().st_size,
+                "modified_time": movie.stat().st_mtime,
+            })
+            metadata = {
+                "tmdb_id": "348",
+                "title": "Alien",
+                "year": "1979",
+                "poster_url": "alien.jpg",
+                "match_source": "saved_tmdb_id",
+            }
+
+            with patch("app._file_copy_is_stable", return_value=True), \
+                    patch("app._resolve_tmdb_identity", return_value=app._identity_resolution(
+                        "accepted", metadata, {"status": "accepted", "outcome": "accepted"}, source="saved_tmdb_id"
+                    )):
+                result = app._reconcile_library_files()
+            snapshot = store.snapshot()
+            record = snapshot["files"][app._norm(str(movie))]
+
+        self.assertEqual(result["checked"], 1)
+        self.assertEqual(result["matched"], 1)
+        self.assertEqual(record["display_provider"], "tmdb")
+        self.assertEqual(snapshot["tmdb_movies"]["348"]["poster_url"], "alien.jpg")
 
     def test_filename_authority_does_not_report_unmatched_file_as_identified(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
@@ -122,7 +177,9 @@ class LibraryReconcileTest(unittest.TestCase):
             }
 
             with patch("app._file_copy_is_stable", return_value=True), \
-                    patch("app._accepted_tmdb_migration_metadata", return_value=(candidate, False)):
+                    patch("app._resolve_tmdb_identity", return_value=app._identity_resolution(
+                        "accepted", candidate, {"status": "accepted", "outcome": "accepted"}, source="auto_tmdb"
+                    )):
                 outcome = app._reconcile_library_path(str(movie), "plex", store=store)
             record = store.snapshot()["files"][app._norm(str(movie))]
 
@@ -201,7 +258,9 @@ class LibraryReconcileTest(unittest.TestCase):
             }
 
             with patch("app._file_copy_is_stable", return_value=True), \
-                    patch("app._accepted_tmdb_migration_metadata", return_value=(candidate, False)):
+                    patch("app._resolve_tmdb_identity", return_value=app._identity_resolution(
+                        "accepted", candidate, {"status": "accepted", "outcome": "accepted"}, source="auto_tmdb"
+                    )):
                 result = app._reconcile_library_files()
             record = store.snapshot()["files"][app._norm(str(movie))]
 
@@ -328,6 +387,182 @@ class LibraryReconcileTest(unittest.TestCase):
         self.assertEqual(result["checked"], 1)
         self.assertEqual(result["matched"], 1)
         reconcile_path.assert_called_once()
+
+    def test_ambiguous_new_file_remains_unmatched(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Ambiguous.Movie.2026.1080p.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            candidate = {"tmdb_id": "123", "title": "Ambiguous Movie", "year": "2025"}
+
+            with patch("app._file_copy_is_stable", return_value=True), \
+                    patch("app._resolve_tmdb_identity", return_value=app._identity_resolution(
+                        "ambiguous",
+                        candidate,
+                        {"status": "review", "outcome": "ambiguous", "reasons": ["multiple releases are plausible"]},
+                        source="candidate_tmdb",
+                    )):
+                outcome = app._reconcile_library_path(str(movie), "tmdb", store=store)
+            record = store.snapshot()["files"][store._key(movie)]
+
+        self.assertEqual(outcome, "review")
+        self.assertEqual(record["identity_status"], "unmatched")
+        self.assertEqual(record["metadata_status"], "unmatched")
+        self.assertFalse(record["metadata_accepted"])
+        self.assertEqual(record["candidate_tmdb_id"], "123")
+        self.assertEqual(record["identity_decision_outcome"], "ambiguous")
+
+    def test_contradicted_new_file_is_blocked_as_conflict(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Conflicted.Movie.2026.1080p.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            candidate = {"tmdb_id": "456", "title": "Another Movie", "year": "2026"}
+
+            with patch("app._file_copy_is_stable", return_value=True), \
+                    patch("app._resolve_tmdb_identity", return_value=app._identity_resolution(
+                        "contradicted",
+                        candidate,
+                        {"status": "conflict", "outcome": "contradicted", "reasons": ["provider ID conflict"]},
+                        source="candidate_tmdb",
+                    )):
+                outcome = app._reconcile_library_path(str(movie), "tmdb", store=store)
+            record = store.snapshot()["files"][store._key(movie)]
+
+        self.assertEqual(outcome, "review")
+        self.assertEqual(record["identity_status"], "conflict")
+        self.assertEqual(record["metadata_status"], "conflict")
+        self.assertFalse(record["metadata_accepted"])
+        self.assertEqual(record["candidate_tmdb_id"], "456")
+        self.assertEqual(record["identity_decision_outcome"], "contradicted")
+
+    def test_changed_automatic_identity_is_revalidated_incrementally(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Alien.1979.1080p.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_authority_state({"active_provider": "tmdb"})
+            store.save_tmdb_metadata({"tmdb_id": "348", "title": "Alien", "year": "1979"})
+            facts = app._metadata_file_facts(str(movie))
+            store.update_file_record(str(movie), {
+                **facts,
+                "identity_status": "accepted",
+                "identity_title": "Alien",
+                "identity_year": "1979",
+                "metadata_status": "accepted",
+                "metadata_accepted": True,
+                "display_provider": "tmdb",
+                "tmdb_id": "348",
+                "decision_origin": app.DECISION_ORIGIN_LIBRARY_RECONCILE,
+                "identity_evidence_fingerprint": app._identity_evidence_fingerprint(str(movie), facts, {}),
+                "identity_evidence_changed": True,
+            })
+
+            with patch("app._file_copy_is_stable", return_value=True), \
+                    patch("app._revalidate_accepted_identity", return_value="matched") as revalidate:
+                result = app._reconcile_library_files()
+
+        self.assertEqual(result["checked"], 1)
+        self.assertEqual(result["matched"], 1)
+        revalidate.assert_called_once()
+
+    def test_changed_manual_identity_is_never_revalidated(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Wrong.Name.1979.1080p.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_authority_state({"active_provider": "tmdb"})
+            store.apply_tmdb_match(str(movie), {
+                "tmdb_id": "348",
+                "title": "Alien",
+                "year": "1979",
+            }, facts=app._metadata_file_facts(str(movie)))
+            store.update_file_record(str(movie), {"identity_evidence_changed": True})
+
+            with patch("app._revalidate_accepted_identity") as revalidate:
+                result = app._reconcile_library_files()
+            record = store.snapshot()["files"][store._key(movie)]
+
+        self.assertEqual(result["checked"], 0)
+        revalidate.assert_not_called()
+        self.assertEqual(record["identity_status"], "accepted")
+        self.assertEqual(record["tmdb_id"], "348")
+        self.assertTrue(record["manual_lock"])
+
+    def test_revalidation_conflict_preserves_old_id_without_accepting_replacement(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Splice.2009.1080p.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            facts = app._metadata_file_facts(str(movie))
+            store.update_file_record(str(movie), {
+                **facts,
+                "identity_status": "accepted",
+                "identity_title": "SPLICE",
+                "identity_year": "2009",
+                "metadata_status": "accepted",
+                "metadata_accepted": True,
+                "tmdb_id": "1629337",
+                "decision_origin": app.DECISION_ORIGIN_LIBRARY_RECONCILE,
+            })
+            current = store.snapshot()["files"][store._key(movie)]
+
+            with patch("app._process_identity_audit_path", return_value={
+                "outcome": "actionable",
+                "candidate": {"tmdb_id": "37707", "title": "Splice", "year": "2010"},
+                "reasons": ["independent provider content contradicts the accepted identity"],
+            }):
+                outcome = app._revalidate_accepted_identity(
+                    str(movie), "tmdb", store, current, facts, {}
+                )
+            record = store.snapshot()["files"][store._key(movie)]
+
+        self.assertEqual(outcome, "review")
+        self.assertEqual(record["identity_status"], "conflict")
+        self.assertFalse(record["metadata_accepted"])
+        self.assertEqual(record["tmdb_id"], "1629337")
+        self.assertEqual(record["candidate_tmdb_id"], "37707")
+
+    def test_revalidation_ambiguity_demotes_automatic_identity_to_unmatched(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(movies_tmp) / "Shared.Title.2026.1080p.mkv"
+            movie.write_bytes(b"movie")
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            facts = app._metadata_file_facts(str(movie))
+            store.update_file_record(str(movie), {
+                **facts,
+                "identity_status": "accepted",
+                "identity_title": "Shared Title",
+                "identity_year": "2026",
+                "metadata_status": "accepted",
+                "metadata_accepted": True,
+                "tmdb_id": "111",
+                "decision_origin": app.DECISION_ORIGIN_LIBRARY_RECONCILE,
+            })
+            current = store.snapshot()["files"][store._key(movie)]
+
+            with patch("app._process_identity_audit_path", return_value={
+                "outcome": "ambiguous",
+                "candidate": {"tmdb_id": "222", "title": "Shared Title", "year": "2026"},
+                "reasons": ["multiple provider identities are plausible"],
+            }):
+                outcome = app._revalidate_accepted_identity(
+                    str(movie), "tmdb", store, current, facts, {}
+                )
+            record = store.snapshot()["files"][store._key(movie)]
+
+        self.assertEqual(outcome, "review")
+        self.assertEqual(record["identity_status"], "unmatched")
+        self.assertEqual(record["metadata_status"], "unmatched")
+        self.assertFalse(record["metadata_accepted"])
+        self.assertEqual(record["tmdb_id"], "111")
+        self.assertEqual(record["identity_decision_outcome"], "ambiguous")
 
     def test_manual_rescan_runs_reconcile_before_returning_library(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:

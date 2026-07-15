@@ -171,7 +171,7 @@ class UserCurationStore:
     def list_all(self):
         return self._lists()['lists']
 
-    def create_list(self, name):
+    def create_list(self, name, movies=None):
         data = self._lists()
         clean_name = re.sub(r'\s+', ' ', str(name or '').strip())
         if not clean_name:
@@ -190,6 +190,7 @@ class UserCurationStore:
             'created_at': time.time(),
             'updated_at': time.time(),
         }
+        self._add_movies_to_target(created, movies or [])
         data['lists'].append(created)
         self._save_lists(data)
         return created
@@ -224,27 +225,19 @@ class UserCurationStore:
         return next((item for item in data['lists'] if item.get('id') == list_id), None)
 
     def add_movie_to_list(self, list_id, movie):
-        data = self._lists()
-        target = self._find_list(data, list_id)
-        if target is None:
-            raise KeyError('List not found')
-        normalized = normalize_curated_movie(movie)
-        movies = target.setdefault('movies', [])
-        if all(not curated_movies_share_identity(existing, normalized) for existing in movies):
-            if target.get('system_type') == 'watched':
-                normalized['watched_at'] = time.time()
-            elif target.get('system_type') == 'watchlist':
-                normalized['added_at'] = time.time()
-            movies.append(normalized)
-        target['updated_at'] = time.time()
-        self._save_lists(data)
-        return target
+        return self.add_movies_to_list(list_id, [movie])
 
     def add_movies_to_list(self, list_id, movies):
         data = self._lists()
         target = self._find_list(data, list_id)
         if target is None:
             raise KeyError('List not found')
+        self._add_movies_to_target(target, movies)
+        self._save_lists(data)
+        return target
+
+    @staticmethod
+    def _add_movies_to_target(target, movies):
         existing = target.setdefault('movies', [])
         for movie in movies or []:
             normalized = normalize_curated_movie(movie or {})
@@ -258,8 +251,6 @@ class UserCurationStore:
                 normalized['added_at'] = time.time()
             existing.append(normalized)
         target['updated_at'] = time.time()
-        self._save_lists(data)
-        return target
 
     def remove_movie_from_list(self, list_id, movie):
         data = self._lists()

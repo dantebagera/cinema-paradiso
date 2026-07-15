@@ -1,23 +1,27 @@
+import threading
+import time
 import unittest
 
-from services.identity_audit import IdentityAuditCoordinator
+from services.identity_audit import IDENTITY_AUDIT_SCHEMA_VERSION, IdentityAuditCoordinator
 
 
 class MemoryState:
     def __init__(self, state=None):
         self.state = dict(state or {})
+        self.save_count = 0
 
     def load(self):
         return dict(self.state)
 
     def save(self, state):
+        self.save_count += 1
         self.state = dict(state)
 
 
 class IdentityAuditCoordinatorTest(unittest.TestCase):
     def test_restarted_running_job_becomes_paused_without_processing(self):
         store = MemoryState({
-            "schema_version": 4,
+            "schema_version": IDENTITY_AUDIT_SCHEMA_VERSION,
             "id": "job-1",
             "status": "running",
             "paths": ["a.mkv", "b.mkv"],
@@ -57,7 +61,8 @@ class IdentityAuditCoordinatorTest(unittest.TestCase):
             return {
                 "path": path,
                 "candidate": {"tmdb_id": path},
-                "classification": "review",
+                "classification": "actionable",
+                "outcome": "actionable",
             }
 
         coordinator = IdentityAuditCoordinator(
@@ -109,33 +114,94 @@ class IdentityAuditCoordinatorTest(unittest.TestCase):
         self.assertEqual(state["automatic_fixes"], [])
         self.assertEqual(state["errors"], [])
 
-    def test_automatic_fix_record_is_saved_with_partial_results(self):
+    def test_verified_outcome_is_counted_without_creating_a_fix_record(self):
         store = MemoryState()
         coordinator = IdentityAuditCoordinator(
             load_state=store.load,
             save_state=store.save,
             list_paths=lambda: ["Elle.2016.mkv"],
             process_path=lambda path, provider: {
-                "automatically_verified": True,
-                "automatic_fix": {
-                    "id": "auto-elle",
-                    "path": path,
-                    "filename": path,
-                    "current": {"title": "Elle", "year": "2016"},
-                    "candidate": {"tmdb_id": "337674", "title": "Elle", "year": "2016"},
-                    "evidence_score": 100,
-                    "runner_up_gap": 20,
-                    "reasons": ["exact title or alias", "release year matches"],
-                },
+                "outcome": "verified",
+                "path": path,
             },
         )
         coordinator.start(provider="tmdb", background=False)
 
         state = coordinator.run_batch()
 
-        self.assertEqual(state["automatically_verified"], 1)
-        self.assertEqual(len(state["automatic_fixes"]), 1)
-        self.assertEqual(state["automatic_fixes"][0]["candidate"]["tmdb_id"], "337674")
+        self.assertEqual(state["outcome_counts"]["verified"], 1)
+        self.assertEqual(state["automatically_verified"], 0)
+        self.assertEqual(state["automatic_fixes"], [])
+
+    def test_ambiguous_outcome_is_counted_but_not_added_to_review(self):
+        store = MemoryState()
+        coordinator = IdentityAuditCoordinator(
+            load_state=store.load,
+            save_state=store.save,
+            list_paths=lambda: ["Love.2011.mkv"],
+            process_path=lambda path, provider: {
+                "outcome": "ambiguous",
+                "path": path,
+                "candidate": {"tmdb_id": "222"},
+            },
+        )
+        coordinator.start(provider="tmdb", background=False)
+
+        state = coordinator.run_batch()
+
+        self.assertEqual(state["outcome_counts"]["ambiguous"], 1)
+        self.assertEqual(state["proposals"], [])
+        self.assertEqual(len(state["diagnostic_samples"]["ambiguous"]), 1)
+
+    def test_provider_checks_can_run_concurrently_while_state_updates_stay_serial(self):
+        store = MemoryState()
+        active = 0
+        max_active = 0
+        activity_lock = threading.Lock()
+
+        def process(path, provider):
+            nonlocal active, max_active
+            with activity_lock:
+                active += 1
+                max_active = max(max_active, active)
+            time.sleep(0.03)
+            with activity_lock:
+                active -= 1
+            return {}
+
+        coordinator = IdentityAuditCoordinator(
+            load_state=store.load,
+            save_state=store.save,
+            list_paths=lambda: ["a.mkv", "b.mkv", "c.mkv"],
+            process_path=process,
+            batch_size=3,
+            max_workers=3,
+        )
+        coordinator.start(provider="tmdb", background=False)
+
+        state = coordinator.run_batch()
+
+        self.assertEqual(state["status"], "completed")
+        self.assertEqual(state["processed"], 3)
+        self.assertGreaterEqual(max_active, 2)
+
+    def test_batch_results_are_persisted_once_instead_of_once_per_file(self):
+        store = MemoryState()
+        coordinator = IdentityAuditCoordinator(
+            load_state=store.load,
+            save_state=store.save,
+            list_paths=lambda: [f"{index}.mkv" for index in range(6)],
+            process_path=lambda path, provider: {"outcome": "verified", "path": path},
+            batch_size=6,
+            max_workers=3,
+        )
+        coordinator.start(provider="tmdb", background=False)
+
+        state = coordinator.run_batch()
+
+        self.assertEqual(state["status"], "completed")
+        self.assertEqual(state["outcome_counts"]["verified"], 6)
+        self.assertEqual(store.save_count, 3)
 
 
 if __name__ == "__main__":

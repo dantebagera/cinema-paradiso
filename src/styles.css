@@ -37,8 +37,8 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --expanded-director-avatar-width: 96px;
   --expanded-director-avatar-height: 118px;
-  --expanded-cast-avatar-width: 90px;
-  --expanded-cast-avatar-height: 112px;
+  --expanded-cast-avatar-width: 106px;
+  --expanded-cast-avatar-height: 132px;
   font-family: Inter, "Segoe UI", system-ui, sans-serif;
   font-size: 16px;
   font-synthesis: none;
@@ -490,6 +490,22 @@ input:focus-visible {
 .ai-control-result-header p:not(.screen-kicker) {
   margin: 6px 0 0;
   color: var(--text-muted);
+}
+
+.ai-control-execution-count {
+  display: grid;
+  min-width: 112px;
+  text-align: right;
+}
+
+.ai-control-execution-count strong {
+  color: var(--text-strong);
+  font-size: 1.4rem;
+}
+
+.ai-control-execution-count span {
+  color: var(--text-muted);
+  font-size: 0.78rem;
 }
 
 .ai-control-pagination {
@@ -2255,10 +2271,89 @@ kbd {
 
 .discover-search-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, auto) auto;
   gap: var(--space-2);
   align-items: center;
   padding: 12px;
+}
+
+.library-search-panel[data-people-search="true"] {
+  grid-template-columns: minmax(0, 1fr) minmax(120px, auto) auto;
+}
+
+.discover-search-panel select,
+.library-search-panel[data-people-search="true"] select {
+  min-height: 44px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-raised);
+  color: var(--text-main);
+  padding: 0 34px 0 12px;
+}
+
+.person-search-grid {
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+
+.person-search-card {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 12px;
+  min-height: 154px;
+  padding: 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface-raised);
+}
+
+.person-search-card img,
+.person-search-avatar {
+  width: 76px;
+  height: 104px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: var(--surface-muted);
+}
+
+.person-search-avatar {
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+}
+
+.person-search-copy {
+  min-width: 0;
+}
+
+.person-search-copy h3,
+.person-search-copy p {
+  margin: 0;
+}
+
+.person-search-copy h3 {
+  font-size: 1rem;
+}
+
+.person-search-copy span,
+.person-search-copy p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.person-search-copy p {
+  margin-top: 8px;
+}
+
+.person-search-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+}
+
+.person-search-actions .btn {
+  flex: 1;
+  justify-content: center;
+  min-height: 34px;
 }
 
 .library-main-search {
@@ -2464,35 +2559,35 @@ kbd {
   gap: var(--space-3);
 }
 
-.movie-list-fulfillment-dialog {
+.source-review-dialog {
   width: min(1240px, 96vw);
 }
 
-.movie-list-review-actions {
+.source-review-actions {
   margin-bottom: 12px;
 }
 
-.movie-list-review-table {
+.source-review-table {
   display: grid;
   gap: 6px;
 }
 
-.movie-list-review-head,
-.movie-list-review-row {
+.source-review-head,
+.source-review-row {
   display: grid;
   grid-template-columns: 54px minmax(180px, 1.2fr) minmax(280px, 1.8fr) minmax(120px, 0.8fr) 118px minmax(140px, 0.9fr);
   gap: var(--space-2);
   align-items: center;
 }
 
-.movie-list-review-head {
+.source-review-head {
   color: var(--text-muted);
   font-size: 0.72rem;
   font-weight: 900;
   text-transform: uppercase;
 }
 
-.movie-list-review-row {
+.source-review-row {
   min-height: 58px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -2502,15 +2597,15 @@ kbd {
   font-size: 0.82rem;
 }
 
-.movie-list-review-row > span {
+.source-review-row > span {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.movie-list-review-row strong,
-.movie-list-review-row small {
+.source-review-row strong,
+.source-review-row small {
   display: block;
   min-width: 0;
   overflow: hidden;
@@ -2518,11 +2613,11 @@ kbd {
   white-space: nowrap;
 }
 
-.movie-list-review-row small {
+.source-review-row small {
   color: var(--text-muted);
 }
 
-.movie-list-review-row select {
+.source-review-row select {
   min-height: 34px;
 }
 
@@ -2975,6 +3070,7 @@ kbd {
 }
 
 .director-person {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -3006,6 +3102,7 @@ kbd {
 }
 
 .person-avatar {
+  position: relative;
   display: grid;
   flex: 0 0 auto;
   place-items: center;
@@ -3020,8 +3117,13 @@ kbd {
 }
 
 .person-avatar img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
   object-fit: cover;
 }
 
@@ -3032,6 +3134,7 @@ kbd {
 }
 
 .person-card {
+  position: relative;
   display: grid;
   justify-items: center;
   gap: 6px;
@@ -3064,6 +3167,46 @@ kbd {
   overflow-wrap: anywhere;
   text-overflow: clip;
   white-space: normal;
+}
+
+.person-credit-browse:focus-visible {
+  outline: 2px solid var(--projector-gold);
+  outline-offset: 3px;
+}
+
+.person-bio-button,
+.person-discover-button {
+  position: absolute;
+  right: 6px;
+  z-index: 2;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d4af3760;
+  border-radius: 999px;
+  background: #07080ae6;
+  color: var(--projector-gold);
+  cursor: pointer;
+  box-shadow: 0 8px 20px #00000045;
+  transition: border-color 160ms var(--ease-out), background 160ms var(--ease-out), transform 140ms var(--ease-out);
+}
+
+.person-bio-button {
+  top: 6px;
+}
+
+.person-discover-button {
+  bottom: 6px;
+}
+
+.person-bio-button:hover,
+.person-bio-button:focus-visible,
+.person-discover-button:hover,
+.person-discover-button:focus-visible {
+  border-color: var(--projector-gold);
+  background: #15120a;
+  transform: translateY(-1px);
 }
 
 .collection-panel {
@@ -3121,6 +3264,18 @@ kbd {
 .mini-action-danger {
   border-color: #ef444455;
   color: #ff9b9b;
+}
+
+.mini-action-source {
+  border-color: #d4af3780;
+  background: #2a2415;
+  color: var(--projector-gold);
+}
+
+.mini-action-source:hover:not(:disabled) {
+  border-color: var(--projector-gold);
+  background: #3a3019;
+  color: #ffe49a;
 }
 
 .lists-panel {
@@ -3510,7 +3665,7 @@ kbd {
 
 .cleanup-tabs {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-panel);
@@ -4796,6 +4951,16 @@ kbd {
   gap: 16px;
 }
 
+.movie-expanded-people-panel .director-person:has(.person-discover-button) {
+  min-height: var(--expanded-director-avatar-height);
+  padding-right: 38px;
+}
+
+.movie-expanded-people-panel .director-person .person-discover-button {
+  top: calc(var(--expanded-director-avatar-height) - 34px);
+  bottom: auto;
+}
+
 .movie-expanded-people-panel .director-person .person-avatar {
   width: var(--expanded-director-avatar-width);
   height: var(--expanded-director-avatar-height);
@@ -4808,10 +4973,18 @@ kbd {
 }
 
 .movie-expanded-people-panel .person-card {
+  grid-template-rows: var(--expanded-cast-avatar-height) auto auto;
+  align-content: start;
+  justify-items: start;
   min-height: 170px;
   justify-content: start;
-  gap: 10px;
-  padding: 14px 10px;
+  gap: 6px;
+  padding: 10px 46px 10px 10px;
+}
+
+.movie-expanded-people-panel .person-card .person-discover-button {
+  top: auto;
+  bottom: 18px;
 }
 
 .movie-expanded-people-panel .person-card .person-avatar {
@@ -4821,11 +4994,19 @@ kbd {
 }
 
 .movie-expanded-people-panel .person-card strong {
+  width: 142px;
+  overflow: hidden;
   font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .movie-expanded-people-panel .person-card small {
+  width: 142px;
+  overflow: hidden;
   font-size: 0.76rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .discover-person-static {
@@ -4978,6 +5159,10 @@ kbd {
   padding: 24px;
 }
 
+.person-bio-backdrop {
+  z-index: 90;
+}
+
 .torrent-dialog,
 .small-dialog {
   width: min(980px, 96vw);
@@ -5001,6 +5186,92 @@ kbd {
   background: linear-gradient(180deg, #121316, #0a0a0b);
   box-shadow: var(--shadow-pop);
   padding: 18px;
+}
+
+.person-bio-dialog {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: min(760px, 94vw);
+  max-height: 86vh;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-panel);
+  background: linear-gradient(180deg, #141518, #090a0b);
+  box-shadow: var(--shadow-pop);
+  padding: 20px;
+}
+
+.person-bio-header {
+  margin-bottom: 14px;
+}
+
+.person-bio-content {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  min-height: 0;
+}
+
+.person-bio-photo {
+  display: grid;
+  place-items: center;
+  width: 220px;
+  overflow: hidden;
+  border: 1px solid #d4af3745;
+  border-radius: 12px;
+  background: #1a1c20;
+  color: var(--projector-gold);
+  font-size: 2rem;
+  font-weight: 900;
+  aspect-ratio: 2 / 3;
+}
+
+.person-bio-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-bio-copy {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-width: 0;
+  min-height: 0;
+  max-height: calc(86vh - 118px);
+  overflow: auto;
+  padding-right: 6px;
+}
+
+.person-bio-copy p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.person-bio-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.person-bio-facts span {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #101113;
+  color: var(--text-muted);
+  padding: 7px 9px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.person-bio-loading,
+.person-bio-error {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #101113;
 }
 
 .trailer-dialog-header {
@@ -8046,4 +8317,36 @@ kbd {
   .card-lab-card-header {
     flex-direction: column;
   }
+}
+.app-crash-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 48px;
+  background: var(--background, #0a0a0b);
+  color: var(--text-primary, #e6e6e6);
+}
+
+.app-crash-panel {
+  width: min(620px, 100%);
+  border: 1px solid var(--border, #26282d);
+  border-left: 3px solid var(--danger, #ef4444);
+  padding: 32px;
+  background: var(--surface, #121316);
+}
+
+.app-crash-panel h1 {
+  margin: 8px 0 12px;
+  font-size: 24px;
+}
+
+.app-crash-panel > p:not(.screen-kicker) {
+  margin: 0;
+  color: var(--text-muted, #a3a6ad);
+}
+
+.app-crash-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
 }

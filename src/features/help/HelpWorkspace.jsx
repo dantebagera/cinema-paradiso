@@ -97,14 +97,14 @@ const manualSections = [
   {
     key: 'movie-lists-workspace',
     title: 'Movie Lists workspace',
-    summary: 'Movie Lists is the mixed owned and wanted list area: custom lists, protected system lists, missing titles, upgrade candidates, copy/export, and source fulfillment previews.',
+    summary: 'Movie Lists is the mixed owned and wanted list area: custom lists, protected system lists, missing titles, upgrade candidates, copy/export, and selected source reviews.',
     details: [
       {
         title: 'What CP does',
         items: [
           'Keeps Watched and Watchlist as protected system lists while still allowing custom user lists.',
           'Shows owned, missing, and upgrade candidates together so a list can be reviewed as a real acquisition plan.',
-          'Supports bulk selection, Add to List, Copy selected to a folder, and Find missing or Find upgrades previews.'
+          'Supports bulk selection, Add to List, Copy selected to a folder, and Find sources for selected movies.'
         ]
       },
       {
@@ -112,7 +112,7 @@ const manualSections = [
         items: [
           'It will not delete movie files when you delete a custom list.',
           'It will not treat a Watchlist item as owned until the library actually contains a matched local file.',
-          'It will not submit list fulfillment without showing the review dialog first.'
+          'It will not submit selected source-review rows without showing the review dialog first.'
         ]
       },
       {
@@ -120,21 +120,21 @@ const manualSections = [
         items: [
           'Using Library filters for wanted movies; Movie Lists is where owned and missing titles can live together.',
           'Expecting protected Watched or Watchlist lists to be renamed or deleted like custom lists.',
-          'Running fulfillment before choosing trusted release indexers and download defaults in Settings.'
+          'Running a source review before choosing trusted release indexers and download defaults in Settings.'
         ]
       }
     ]
   },
   {
     key: 'cleanup-workspace',
-    title: 'Cleanup workspace',
-    summary: 'Cleanup is the maintenance area for duplicates, low-quality items, unmatched metadata, and identity review before any destructive action.',
+    title: 'Library Maintenance workspace',
+    summary: 'Library Maintenance uses one catalog-backed audit for duplicate storage, upgrade candidates, and movie identity decisions before any destructive action.',
     details: [
       {
         title: 'What CP does',
         items: [
-          'Surfaces duplicate candidates, low-quality files, unmatched metadata, and identity conflicts.',
-          'Keeps review steps visible so you can inspect before acting.',
+          'Surfaces duplicate storage groups, upgrade candidates, and identity conflicts from the current local catalog.',
+          'Separates safe removal recommendations from copies that need a manual comparison.',
           'Uses safer delete behavior through the system recycle bin when deletion is supported.'
         ]
       },
@@ -150,7 +150,7 @@ const manualSections = [
         title: 'Common mistakes',
         items: [
           'Deleting duplicates before checking resolution, source, audio, and subtitles.',
-          'Using cleanup as a download organizer; downloads should finish first, then be reviewed.',
+          'Using Maintenance as a download organizer; downloads should finish first, then be reviewed.',
           'Assuming unmatched means bad; unmatched often means the folder name needs human review.'
         ]
       }
@@ -339,7 +339,7 @@ const helpSections = [
     key: 'prowlarr',
     title: 'Prowlarr',
     status: 'Optional, required for torrent search',
-    summary: 'Use Prowlarr if you want CP to search torrent indexers, check followed releases, preview list fulfillment, and submit results to embedded qBittorrent.',
+    summary: 'Use Prowlarr if you want CP to search torrent indexers, check followed releases, preview selected movie sources, and submit results to embedded qBittorrent.',
     links: [
       ['Download Prowlarr', 'https://prowlarr.com/'],
       ['Prowlarr Quick Start', 'https://wiki.servarr.com/prowlarr/quick-start-guide']

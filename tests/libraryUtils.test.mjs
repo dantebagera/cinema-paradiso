@@ -3,6 +3,7 @@ import test from 'node:test';
 
 import {
   applyPosterOverrideToLibraryItems,
+  buildLibraryPeopleIndex,
   buildLibraryViewModel,
   buildMovieListViewModel,
   getMovieIdentity,
@@ -11,6 +12,7 @@ import {
   getLocaleTag,
   isLowQuality,
   getRolePeople,
+  getStoredRolePeople,
   itemMatchesCollectionFilter,
   itemMatchesRoleFilter,
   listLibraryCoverage,
@@ -53,7 +55,7 @@ test('movie list view model keeps owned and missing movies together with upgrade
     movies: [
       { tmdb_id: '949', title: 'Heat', year: '1995', poster_url: 'heat-list.jpg' },
       { tmdb_id: '680', title: 'Pulp Fiction', year: '1994', poster_url: 'pulp.jpg' },
-      { tmdb_id: '348', title: 'Alien', year: '1979' }
+      { tmdb_id: '348', title: 'Alien', year: '1979', poster_url: 'alien-list.jpg' }
     ]
   };
 
@@ -67,6 +69,7 @@ test('movie list view model keeps owned and missing movies together with upgrade
   assert.equal(model.rows[1].status, 'missing');
   assert.equal(model.rows[1].poster_url, 'pulp.jpg');
   assert.equal(model.rows[2].status, 'owned');
+  assert.equal(model.rows[2].poster_url, '');
 
   const missing = buildMovieListViewModel({ libraryItems, list, query: 'pulp', statusFilter: 'missing' });
   assert.equal(missing.rows.length, 1);
@@ -276,6 +279,51 @@ test('getRolePeople and itemMatchesRoleFilter preserve canonical, Plex, and TMDB
   assert.equal(itemMatchesRoleFilter(item, details, { role: 'actor', id: 3, name: 'Other' }), true);
   assert.equal(itemMatchesRoleFilter(item, details, { role: 'actor', name: 'Veronica Cartwright' }), false);
   assert.equal(itemMatchesRoleFilter(item, details, null), true);
+});
+
+test('library people index stays local to accepted movies and can enforce a local role filter', () => {
+  const accepted = {
+    path: 'E:/Movies/Braveheart.mkv',
+    canonical_metadata: {
+      accepted: true,
+      title: 'Braveheart',
+      year: '1995',
+      directors: [{ id: 2461, name: 'Mel Gibson' }],
+      cast: [{ id: 2461, name: 'Mel Gibson' }, { name: 'Sophie Marceau' }]
+    }
+  };
+  const unaccepted = {
+    path: 'E:/Movies/Unmatched.mkv',
+    canonical_metadata: { accepted: false, cast: [{ name: 'Mel Gibson' }] }
+  };
+  const nameOnly = {
+    path: 'E:/Movies/What Women Want.mkv',
+    canonical_metadata: {
+      accepted: true,
+      title: 'What Women Want',
+      year: '2000',
+      cast: [{ name: 'Mel Gibson' }]
+    }
+  };
+  const index = buildLibraryPeopleIndex([accepted, unaccepted, nameOnly], 'melgibson');
+
+  assert.deepEqual(index, [{
+    id: '2461',
+    name: 'Mel Gibson',
+    roles: ['actor', 'director'],
+    movieCount: 2,
+    knownFor: ['Braveheart (1995)', 'What Women Want (2000)'],
+    localIdentity: false
+  }]);
+  assert.deepEqual(getStoredRolePeople(accepted, 'actor'), accepted.canonical_metadata.cast);
+  assert.equal(
+    itemMatchesRoleFilter(
+      { ...accepted, canonical_metadata: { ...accepted.canonical_metadata, cast: [] } },
+      { cast: [{ id: 2461, name: 'Mel Gibson' }] },
+      { role: 'actor', id: '2461', name: 'Mel Gibson', localOnly: true }
+    ),
+    false
+  );
 });
 
 test('collection normalization preserves current title cleanup behavior', () => {

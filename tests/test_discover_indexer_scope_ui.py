@@ -1,5 +1,6 @@
 from pathlib import Path
 import unittest
+from tests.frontend_source import read_frontend_source
 
 
 APP_JSX = Path(__file__).resolve().parents[1] / "src" / "App.jsx"
@@ -8,7 +9,7 @@ APP_JSX = Path(__file__).resolve().parents[1] / "src" / "App.jsx"
 class DiscoverIndexerScopeUiTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.source = APP_JSX.read_text(encoding="utf-8")
+        cls.source = read_frontend_source()
 
     def test_browse_indexer_dropdown_is_backend_scope(self):
         self.assertIn("/api/explore/indexers", self.source)

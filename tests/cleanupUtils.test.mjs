@@ -4,7 +4,7 @@ import test from 'node:test';
 import {
   filterIdentityReviewItems,
   filterCleanupItems,
-  filterUnmatchedItems,
+  filterMaintenanceIdentityItems,
   metadataStatusChipClass,
   metadataStatusLabel,
   renameModalItem
@@ -41,7 +41,7 @@ test('filterCleanupItems preserves search and exact cleanup filter behavior', ()
   assert.deepEqual(filterCleanupItems(items, { ...all, plex: 'unmatched' }), [items[1]]);
 });
 
-test('filterUnmatchedItems preserves metadata search and status buckets', () => {
+test('filterMaintenanceIdentityItems searches accepted observations and preserves status buckets', () => {
   const items = [
     {
       filename: 'Heat.file.mkv',
@@ -71,16 +71,30 @@ test('filterUnmatchedItems preserves metadata search and status buckets', () => 
       plex_matched: false,
       tmdb_id: 10,
       metadata_status: 'needs_review'
+    },
+    {
+      filename: 'Frailty.2001.mkv',
+      path: 'E:/Movies/Frailty.2001.mkv',
+      accepted_title: "Temptation's Hour",
+      accepted_year: '2001',
+      observations: { parsed: { title: 'Frailty', year: '2001' } },
+      verification_reasons: ['independent_title_consensus_unresolved'],
+      plex_matched: true,
+      tmdb_id: 1387467,
+      metadata_status: 'unverified'
     }
   ];
 
   const all = { query: '', resolution: 'all', source: 'all', plex: 'all' };
-  assert.deepEqual(filterUnmatchedItems(items, { ...all, query: '1995' }), [items[0]]);
-  assert.deepEqual(filterUnmatchedItems(items, { ...all, plex: 'plex-unmatched' }), [items[1], items[2]]);
-  assert.deepEqual(filterUnmatchedItems(items, { ...all, plex: 'tmdb-unmatched' }), [items[1]]);
-  assert.deepEqual(filterUnmatchedItems(items, { ...all, plex: 'pending' }), [items[0]]);
-  assert.deepEqual(filterUnmatchedItems(items, { ...all, plex: 'conflict' }), [items[1]]);
-  assert.deepEqual(filterUnmatchedItems(items, { ...all, plex: 'needs_review' }), [items[2]]);
+  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, query: '1995' }), [items[0]]);
+  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, query: 'Frailty' }), [items[3]]);
+  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'plex-unmatched' }), [items[1], items[2]]);
+  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'tmdb-unmatched' }), [items[1]]);
+  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'pending' }), [items[0]]);
+  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'conflict' }), [items[1]]);
+  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, plex: 'needs_review' }), [items[2]]);
+  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, identity: 'conflict' }), [items[1]]);
+  assert.deepEqual(filterMaintenanceIdentityItems(items, { ...all, identity: 'unverified' }), [items[3]]);
 });
 
 test('filterIdentityReviewItems searches identities and filters classifications', () => {
@@ -137,6 +151,8 @@ test('renameModalItem preserves suggested title and year precedence', () => {
 test('metadata status display helpers preserve current labels and chip classes', () => {
   assert.equal(metadataStatusLabel({ metadata_status: 'pending' }), 'Pending metadata');
   assert.equal(metadataStatusLabel({ metadata_status: 'conflict' }), 'Conflict');
+  assert.equal(metadataStatusLabel({ metadata_status: 'unverified' }), 'Verification gap');
+  assert.equal(metadataStatusLabel({ metadata_status: 'review' }), 'Needs review');
   assert.equal(metadataStatusLabel({ metadata_status: 'needs_review' }), 'Needs review');
   assert.equal(metadataStatusLabel({ in_plex: true, plex_matched: false, tmdb_id: 1 }), 'Plex unmatched');
   assert.equal(metadataStatusLabel({ in_plex: false, tmdb_id: '' }), 'TMDB unmatched');
@@ -144,5 +160,7 @@ test('metadata status display helpers preserve current labels and chip classes',
 
   assert.equal(metadataStatusChipClass({ metadata_status: 'pending' }), 'chip-warning');
   assert.equal(metadataStatusChipClass({ metadata_status: 'conflict' }), 'chip-warning');
+  assert.equal(metadataStatusChipClass({ metadata_status: 'unverified' }), 'chip-warning');
+  assert.equal(metadataStatusChipClass({ metadata_status: 'review' }), 'chip-warning');
   assert.equal(metadataStatusChipClass({ metadata_status: 'needs_review' }), 'status-missing');
 });

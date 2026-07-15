@@ -8,7 +8,7 @@ from services.movie_identity import normalize_movie_title, ownership_keys
 from services.smart_match import parse_release_filename
 
 
-CATALOG_SCHEMA_VERSION = 3
+CATALOG_SCHEMA_VERSION = 4
 
 
 class CatalogError(RuntimeError):
@@ -170,6 +170,16 @@ class CatalogStore:
                     raw_json TEXT NOT NULL
                 );
 
+                CREATE TABLE IF NOT EXISTS identity_audit_fingerprints (
+                    path_key TEXT PRIMARY KEY,
+                    path TEXT NOT NULL DEFAULT '',
+                    provider TEXT NOT NULL DEFAULT '',
+                    provider_id TEXT NOT NULL DEFAULT '',
+                    rule_version INTEGER NOT NULL DEFAULT 0,
+                    verified_at REAL NOT NULL DEFAULT 0,
+                    raw_json TEXT NOT NULL
+                );
+
                 CREATE TABLE IF NOT EXISTS user_lists (
                     list_id TEXT PRIMARY KEY,
                     name TEXT NOT NULL DEFAULT '',
@@ -235,6 +245,21 @@ class CatalogStore:
                 CREATE INDEX IF NOT EXISTS idx_list_items_tmdb ON list_items(tmdb_id);
                 CREATE INDEX IF NOT EXISTS idx_followed_identity ON followed_releases(identity_key);
             """)
+            if not connection.execute(
+                "SELECT 1 FROM identity_audit_fingerprints LIMIT 1"
+            ).fetchone():
+                source = connection.execute(
+                    "SELECT payload_json FROM source_documents WHERE name = ?",
+                    ("app_metadata/identity_audit_fingerprints.json",),
+                ).fetchone()
+                if source:
+                    try:
+                        self._import_identity_audit_fingerprints(
+                            connection,
+                            json.loads(source[0]),
+                        )
+                    except ValueError:
+                        pass
             connection.execute(
                 "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('schema_version', ?)",
                 (str(CATALOG_SCHEMA_VERSION),),
@@ -246,7 +271,8 @@ class CatalogStore:
         with self.transaction() as connection:
             for table in (
                 "source_documents", "list_items", "user_lists", "collection_overrides",
-                "followed_releases", "download_jobs", "manual_matches", "plex_files",
+                "followed_releases", "download_jobs", "identity_audit_fingerprints",
+                "manual_matches", "plex_files",
                 "tmdb_movies", "media_identity_keys", "media_files",
             ):
                 connection.execute(f"DELETE FROM {table}")
@@ -261,6 +287,10 @@ class CatalogStore:
             self._import_tmdb_movies(connection, documents.get("app_metadata/tmdb_metadata.json", {}))
             self._import_plex_files(connection, documents.get("app_metadata/plex_metadata.json", {}))
             self._import_manual_matches(connection, documents.get("app_metadata/manual_matches.json", {}))
+            self._import_identity_audit_fingerprints(
+                connection,
+                documents.get("app_metadata/identity_audit_fingerprints.json", {}),
+            )
             self._import_lists(connection, documents.get("user_lists.json", {}))
             self._import_collections(connection, documents.get("user_collections.json", {}))
             self._import_followed(connection, documents.get("followed_releases.json", {}))
@@ -345,6 +375,24 @@ class CatalogStore:
                  _text(record.get("plex_guid") or record.get("guid")), _text(record.get("title") or record.get("plex_title")),
                  _text(record.get("year") or record.get("plex_year")), _bool(record.get("accepted")),
                  _number(record.get("updated_at")), _json_text(record)),
+            )
+
+    @staticmethod
+    def _import_identity_audit_fingerprints(connection, document):
+        records = document.get("files", {}) if isinstance(document, dict) else {}
+        for path_key, record in records.items():
+            record = record if isinstance(record, dict) else {}
+            connection.execute(
+                "INSERT OR REPLACE INTO identity_audit_fingerprints VALUES(?,?,?,?,?,?,?)",
+                (
+                    _text(path_key),
+                    _text(record.get("path") or path_key),
+                    _text(record.get("provider")),
+                    _text(record.get("provider_id")),
+                    int(_number(record.get("rule_version"))),
+                    _number(record.get("verified_at")),
+                    _json_text(record),
+                ),
             )
 
     @staticmethod

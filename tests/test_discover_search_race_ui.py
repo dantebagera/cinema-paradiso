@@ -1,10 +1,11 @@
 from pathlib import Path
 import re
 import unittest
+from tests.frontend_source import read_frontend_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
-APP = (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
+APP = read_frontend_source()
 
 
 class DiscoverSearchRaceUiTest(unittest.TestCase):
@@ -32,7 +33,7 @@ class DiscoverSearchRaceUiTest(unittest.TestCase):
         )
 
     def test_discover_result_card_keys_include_position_to_handle_duplicate_tmdb_rows(self):
-        self.assertIn("discoverResults.map((movie, index)", APP)
+        self.assertIn("filteredDiscoverResults.map((movie, index)", APP)
         self.assertIn('key={`${movie.tmdb_id || movie.title}-${movie.year}-${index}`}', APP)
 
 

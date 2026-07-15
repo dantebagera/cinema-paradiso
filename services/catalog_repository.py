@@ -15,6 +15,7 @@ CORE_DOCUMENTS = {
     "app_metadata/tmdb_metadata.json",
     "app_metadata/plex_metadata.json",
     "app_metadata/manual_matches.json",
+    "app_metadata/identity_audit_fingerprints.json",
     "user_lists.json",
     "user_collections.json",
     "followed_releases.json",
@@ -132,6 +133,32 @@ class CatalogRepository:
             self._cache[name] = document
             return json.loads(json.dumps(document))
 
+    def find_plex_metadata_by_thumbs(self, thumbs):
+        wanted = list(dict.fromkeys(_text(thumb) for thumb in (thumbs or []) if _text(thumb)))
+        if not wanted:
+            return {}
+        placeholders = ",".join("?" for _ in wanted)
+        with self._lock:
+            connection = self.store.connect()
+            try:
+                rows = connection.execute(
+                    "SELECT raw_json FROM plex_files "
+                    f"WHERE json_extract(raw_json, '$.plex_thumb') IN ({placeholders})",
+                    wanted,
+                ).fetchall()
+            finally:
+                connection.close()
+        records = {}
+        for row in rows:
+            try:
+                record = json.loads(row[0])
+            except ValueError:
+                continue
+            thumb = _text(record.get("plex_thumb"))
+            if thumb:
+                records[thumb] = record
+        return records
+
     @staticmethod
     def _source_document(connection, name, fallback):
         row = connection.execute("SELECT payload_json FROM source_documents WHERE name = ?", (name,)).fetchone()
@@ -151,6 +178,11 @@ class CatalogRepository:
             "app_metadata/tmdb_metadata.json": ("movies", "tmdb_movies", "tmdb_id"),
             "app_metadata/plex_metadata.json": ("files", "plex_files", "path_key"),
             "app_metadata/manual_matches.json": ("matches", "manual_matches", "path_key"),
+            "app_metadata/identity_audit_fingerprints.json": (
+                "files",
+                "identity_audit_fingerprints",
+                "path_key",
+            ),
             "user_collections.json": ("overrides", "collection_overrides", "collection_id"),
             "qbittorrent/jobs.json": ("jobs", "download_jobs", "torrent_hash"),
         }
@@ -198,6 +230,9 @@ class CatalogRepository:
             self.store._import_manual_matches(connection, document)
             connection.execute("DELETE FROM media_identity_keys")
             self.store._import_media_identity_keys(connection)
+        elif name == "app_metadata/identity_audit_fingerprints.json":
+            connection.execute("DELETE FROM identity_audit_fingerprints")
+            self.store._import_identity_audit_fingerprints(connection, document)
         elif name == "user_lists.json":
             connection.execute("DELETE FROM list_items")
             connection.execute("DELETE FROM user_lists")
@@ -223,6 +258,10 @@ class CatalogRepository:
             "app_metadata/tmdb_metadata.json": ("tmdb_movies", "tmdb_id"),
             "app_metadata/plex_metadata.json": ("plex_files", "path_key"),
             "app_metadata/manual_matches.json": ("manual_matches", "path_key"),
+            "app_metadata/identity_audit_fingerprints.json": (
+                "identity_audit_fingerprints",
+                "path_key",
+            ),
         }
         if name not in table_map:
             raise KeyError(f"Document does not support row reads: {name}")
@@ -283,6 +322,19 @@ class CatalogRepository:
             )
             connection.execute("DELETE FROM media_identity_keys WHERE path_key = ?", (key,))
             self.store._import_media_identity_keys(connection, key)
+        elif name == "app_metadata/identity_audit_fingerprints.json":
+            connection.execute(
+                "INSERT OR REPLACE INTO identity_audit_fingerprints VALUES(?,?,?,?,?,?,?)",
+                (
+                    key,
+                    _text(record.get("path") or key),
+                    _text(record.get("provider")),
+                    _text(record.get("provider_id")),
+                    int(_number(record.get("rule_version"))),
+                    _number(record.get("verified_at")),
+                    _json_text(record),
+                ),
+            )
         else:
             raise KeyError(f"Document does not support row upserts: {name}")
 
@@ -296,6 +348,10 @@ class CatalogRepository:
             "app_metadata/plex_metadata.json": ("plex_files", "path_key"),
             "app_metadata/manual_matches.json": ("manual_matches", "path_key"),
             "app_metadata/tmdb_metadata.json": ("tmdb_movies", "tmdb_id"),
+            "app_metadata/identity_audit_fingerprints.json": (
+                "identity_audit_fingerprints",
+                "path_key",
+            ),
         }
         if name not in table_map:
             raise KeyError(f"Document does not support row deletion: {name}")
@@ -321,11 +377,11 @@ class CatalogRepository:
             ("app_metadata/files.json", "media_files"),
             ("app_metadata/plex_metadata.json", "plex_files"),
             ("app_metadata/manual_matches.json", "manual_matches"),
+            ("app_metadata/identity_audit_fingerprints.json", "identity_audit_fingerprints"),
         )
         generic = (
             ("app_metadata/conflicts.json", "conflicts"),
             ("app_metadata/library_inventory.json", "files"),
-            ("app_metadata/identity_audit_fingerprints.json", "files"),
         )
         changed_documents = set()
         with self._lock, self.store.transaction() as connection:
@@ -339,6 +395,7 @@ class CatalogRepository:
             connection.execute("DELETE FROM media_files WHERE path_key = ?", (old_key,))
             connection.execute("DELETE FROM plex_files WHERE path_key = ?", (old_key,))
             connection.execute("DELETE FROM manual_matches WHERE path_key = ?", (old_key,))
+            connection.execute("DELETE FROM identity_audit_fingerprints WHERE path_key = ?", (old_key,))
             for name, record in records.items():
                 record = {**record, "path": str(new_path)}
                 if name == "app_metadata/files.json" and file_patch:
@@ -373,12 +430,12 @@ class CatalogRepository:
         generic = (
             ("app_metadata/conflicts.json", "conflicts"),
             ("app_metadata/library_inventory.json", "files"),
-            ("app_metadata/identity_audit_fingerprints.json", "files"),
         )
         changed_documents = {
             "app_metadata/files.json",
             "app_metadata/plex_metadata.json",
             "app_metadata/manual_matches.json",
+            "app_metadata/identity_audit_fingerprints.json",
         }
         with self._lock, self.store.transaction() as connection:
             removed = connection.execute(
@@ -386,6 +443,10 @@ class CatalogRepository:
             ).rowcount
             connection.execute(f"DELETE FROM plex_files WHERE path_key IN ({placeholders})", path_keys)
             connection.execute(f"DELETE FROM manual_matches WHERE path_key IN ({placeholders})", path_keys)
+            connection.execute(
+                f"DELETE FROM identity_audit_fingerprints WHERE path_key IN ({placeholders})",
+                path_keys,
+            )
             for name, root_key in generic:
                 document = self._source_document(connection, name, {root_key: {}})
                 values = document.setdefault(root_key, {})

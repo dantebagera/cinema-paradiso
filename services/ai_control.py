@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import threading
 import time
 import uuid
 from copy import deepcopy
@@ -113,9 +114,20 @@ def preview_command(
     return _state("unsupported", f"{action} is not supported in AI Control v1.")
 
 
-def execute_plan(plan_id, *, plan_store, library_roots=None, delete_file=None, create_list=None, submit_download=None):
-    plan = plan_store.get(plan_id)
+def execute_plan(
+    plan_id,
+    *,
+    plan_store,
+    confirmation_phrase="",
+    library_roots=None,
+    delete_file=None,
+    create_list=None,
+    submit_download=None,
+):
+    plan, claim_error = plan_store.claim(plan_id, confirmation_phrase=confirmation_phrase)
     if not plan:
+        if claim_error == "confirmation_required":
+            return _state("unsafe", "The confirmation phrase does not match the reviewed plan.")
         return _state("unsafe", "The reviewed plan is missing or expired. Preview the command again.")
     action = plan.get("action")
     if action == "delete":
@@ -131,23 +143,42 @@ class PlanStore:
     def __init__(self, ttl_seconds=900):
         self.ttl_seconds = ttl_seconds
         self._plans = {}
+        self._lock = threading.RLock()
 
     def put(self, plan):
         plan_id = uuid.uuid4().hex
         stored = deepcopy(plan)
         stored["plan_id"] = plan_id
         stored["created_at"] = time.time()
-        self._plans[plan_id] = stored
+        with self._lock:
+            self._plans[plan_id] = stored
         return deepcopy(stored)
 
     def get(self, plan_id):
-        stored = self._plans.get(str(plan_id or ""))
+        with self._lock:
+            stored = self._active_plan(str(plan_id or ""))
+            return deepcopy(stored) if stored else None
+
+    def claim(self, plan_id, *, confirmation_phrase=""):
+        plan_id = str(plan_id or "")
+        with self._lock:
+            stored = self._active_plan(plan_id)
+            if not stored:
+                return None, "missing"
+            expected_phrase = str(stored.get("confirmation_phrase") or "").strip()
+            if stored.get("requires_extra_confirmation") and str(confirmation_phrase or "").strip() != expected_phrase:
+                return None, "confirmation_required"
+            self._plans.pop(plan_id, None)
+            return deepcopy(stored), ""
+
+    def _active_plan(self, plan_id):
+        stored = self._plans.get(plan_id)
         if not stored:
             return None
         if time.time() - float(stored.get("created_at") or 0) > self.ttl_seconds:
-            self._plans.pop(str(plan_id), None)
+            self._plans.pop(plan_id, None)
             return None
-        return deepcopy(stored)
+        return stored
 
 
 def _parse_intent(prompt, *, config, ollama_chat=None):
@@ -683,9 +714,11 @@ def _execute_delete(plan, library_roots, delete_file):
             return _state("unsafe", "A planned file changed after preview. Preview the command again.")
         deleted.append(delete_file(path))
     return {
-        "state": "valid_plan",
+        "state": "executed",
         "action": "delete",
+        "summary": "Files moved to Recycle Bin",
         "message": f"Moved {len(deleted)} file{'s' if len(deleted) != 1 else ''} to Recycle Bin.",
+        "total_matches": len(deleted),
         "executed": deleted,
     }
 
@@ -694,10 +727,16 @@ def _execute_create_list(plan, create_list):
     if not create_list:
         return _state("unsafe", "List creation is unavailable.")
     created = create_list(plan.get("list_name") or "AI Control List", plan.get("items") or [])
+    if not isinstance(created, dict) or not created.get("id"):
+        return _state("unsafe", "List creation did not return a persisted list.")
+    count = int(created.get("count", len(created.get("movies") or [])) or 0)
+    name = str(created.get("name") or plan.get("list_name") or "AI Control List")
     return {
-        "state": "valid_plan",
+        "state": "executed",
         "action": "create_list",
-        "message": "List created.",
+        "summary": f"List created: {name}",
+        "message": f"Created {name} with {count} movie{'s' if count != 1 else ''}.",
+        "total_matches": count,
         "created": created,
     }
 
@@ -707,9 +746,11 @@ def _execute_download(plan, submit_download):
         return _state("unsafe", "Download submission is unavailable.")
     submitted = [submit_download(item) for item in plan.get("items") or []]
     return {
-        "state": "valid_plan",
+        "state": "executed",
         "action": "download",
+        "summary": "Downloads submitted",
         "message": f"Submitted {len(submitted)} download{'s' if len(submitted) != 1 else ''}.",
+        "total_matches": len(submitted),
         "submitted": submitted,
     }
 

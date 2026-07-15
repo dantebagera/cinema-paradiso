@@ -1,0 +1,1060 @@
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import {
+  AlertTriangle,
+  CheckCircle2,
+  Clapperboard,
+  Film,
+  Folder,
+  Loader2,
+  Play,
+  RefreshCcw,
+  ScanSearch,
+  Search,
+  ShieldCheck,
+  Trash2,
+  Wand2,
+  X,
+} from 'lucide-react'
+import { fetchJson } from '../../api/client.js'
+import IdentityReviewPanel from '../../components/IdentityReviewPanel.jsx'
+import { ConfirmDialog, LibraryRenameModal, LibraryStat } from '../../components/LibraryControls.jsx'
+import Pagination from '../../components/Pagination.jsx'
+import { SmartMatchControls, SmartMatchReviewModal } from '../../components/SmartMatchPanel.jsx'
+import { cx, formatCount, getUniqueOptions } from '../../utils/appUtils.js'
+import {
+  filterCleanupItems,
+  filterMaintenanceIdentityItems,
+  metadataStatusChipClass,
+  metadataStatusLabel,
+  renameModalItem,
+} from '../../utils/cleanupUtils.js'
+import { getMovieIdentity, isLowQuality, rootLabel } from '../../utils/libraryUtils.js'
+import { formatVoteCount } from '../../utils/moviePresentation.js'
+
+const maintenanceTabs = [
+  { id: 'storage', label: 'Storage', icon: ShieldCheck },
+  { id: 'upgrades', label: 'Upgrades', icon: Wand2 },
+  { id: 'identity', label: 'Identity', icon: ScanSearch },
+];
+const MAINTENANCE_PAGE_SIZE = 50;
+
+function maintenanceTab(initialTab) {
+  if (initialTab === 'low') return 'upgrades';
+  if (initialTab === 'unmatched' || initialTab === 'identity') return 'identity';
+  return 'storage';
+}
+
+export default function CleanupWorkspace({ notify, onPlay, onFindTorrent, initialTab = 'storage', onHealthChanged }) {
+  const [activeTab, setActiveTab] = useState(maintenanceTab(initialTab));
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [audit, setAudit] = useState({ summary: {}, storage: { groups: [] }, upgrades: { items: [] }, identity: { items: [] } });
+  const [selected, setSelected] = useState({ storage: new Set(), identity: new Set() });
+  const [pages, setPages] = useState({ upgrades: 1, identity: 1 });
+  const [filters, setFilters] = useState({ query: '', resolution: 'all', source: 'all', plex: 'all', identity: 'all' });
+  const [confirmAction, setConfirmAction] = useState(null);
+  const [renameTarget, setRenameTarget] = useState(null);
+  const [matchModal, setMatchModal] = useState(null);
+  const [rowStatus, setRowStatus] = useState({});
+  const [smartMatchJob, setSmartMatchJob] = useState(null);
+  const [lastSmartMatchJob, setLastSmartMatchJob] = useState(null);
+  const [identityAudit, setIdentityAudit] = useState(null);
+  const [identityApprovedProposal, setIdentityApprovedProposal] = useState(null);
+  const [identityHealthJob, setIdentityHealthJob] = useState('');
+  const [ollamaAvailable, setOllamaAvailable] = useState(false);
+  const [smartMatchProviders, setSmartMatchProviders] = useState({ tmdb: true, plex: true });
+
+  useEffect(() => {
+    setActiveTab(maintenanceTab(initialTab));
+  }, [initialTab]);
+
+  const loadMaintenance = useCallback(async () => {
+    setLoading(true);
+    setError('');
+    try {
+      const state = await fetchJson('/api/maintenance/audit');
+      setAudit(state);
+      setIdentityAudit(state.identity_review || null);
+      setSelected({ storage: new Set(), identity: new Set() });
+    } catch (loadError) {
+      setError(loadError.message);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadMaintenance();
+    const refreshForLibraryChange = () => loadMaintenance();
+    window.addEventListener('cp-library-changed', refreshForLibraryChange);
+    return () => window.removeEventListener('cp-library-changed', refreshForLibraryChange);
+  }, [loadMaintenance]);
+
+  useEffect(() => {
+    let cancelled = false;
+    Promise.allSettled([
+      fetchJson('/api/ollama/config'),
+      fetchJson('/api/metadata/smart-match')
+    ]).then(([ollama, smart]) => {
+      if (cancelled) return;
+      if (ollama.status === 'fulfilled') {
+        setOllamaAvailable(Boolean(ollama.value.url && ollama.value.model));
+      }
+      if (smart.status === 'fulfilled') {
+        setSmartMatchProviders(smart.value.providers || { tmdb: true, plex: true });
+        if (['running', 'paused'].includes(smart.value.status) && smart.value.id) {
+          setSmartMatchJob(smart.value);
+        } else if (smart.value.status === 'completed' && smart.value.id) {
+          setLastSmartMatchJob(smart.value);
+        }
+      }
+    })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, []);
+
+  useEffect(() => {
+    if (identityAudit?.status !== 'running' || !identityAudit.id) return undefined;
+    const timer = window.setInterval(async () => {
+      try {
+        setIdentityAudit(await fetchJson(`/api/metadata/identity-audit/${encodeURIComponent(identityAudit.id)}`));
+      } catch (pollError) {
+        setError(pollError.message);
+      }
+    }, 900);
+    return () => window.clearInterval(timer);
+  }, [identityAudit?.id, identityAudit?.status]);
+
+  useEffect(() => {
+    if (identityAudit?.status !== 'completed' || !identityAudit.id || identityHealthJob === identityAudit.id) return;
+    setIdentityHealthJob(identityAudit.id);
+    onHealthChanged();
+  }, [identityAudit?.id, identityAudit?.status, identityHealthJob, onHealthChanged]);
+
+  const selectableDuplicatePaths = useMemo(() => audit.storage.groups.flatMap((group) => (group.files || []).filter((file) => file.role === 'candidate').map((file) => file.path)), [audit.storage.groups]);
+
+  const optionSets = useMemo(() => ({
+    upgradeResolutions: getUniqueOptions(audit.upgrades.items, (item) => item.resolution),
+    upgradeSources: getUniqueOptions(audit.upgrades.items, (item) => item.rip_source)
+  }), [audit.upgrades.items]);
+
+  const filteredUpgrades = useMemo(() => filterCleanupItems(audit.upgrades.items, filters), [audit.upgrades.items, filters]);
+  const identityItems = useMemo(() => audit.identity.items || [], [audit.identity.items]);
+  const filteredIdentity = useMemo(() => filterMaintenanceIdentityItems(identityItems, filters), [identityItems, filters]);
+  const filteredDuplicates = useMemo(() => {
+    const q = filters.query.trim().toLowerCase();
+    if (!q) return audit.storage.groups;
+    return audit.storage.groups.filter((group) => {
+      const haystack = [
+        group.title,
+        ...(group.files || []).flatMap((file) => [file.filename, file.path, file.plex_title, file.plex_year])
+      ].filter(Boolean).join(' ').toLowerCase();
+      return haystack.includes(q);
+    });
+  }, [audit.storage.groups, filters.query]);
+  const upgradePage = Math.min(pages.upgrades, Math.max(1, Math.ceil(filteredUpgrades.length / MAINTENANCE_PAGE_SIZE)));
+  const identityPage = Math.min(pages.identity, Math.max(1, Math.ceil(filteredIdentity.length / MAINTENANCE_PAGE_SIZE)));
+  const visibleUpgrades = useMemo(
+    () => filteredUpgrades.slice((upgradePage - 1) * MAINTENANCE_PAGE_SIZE, upgradePage * MAINTENANCE_PAGE_SIZE),
+    [filteredUpgrades, upgradePage]
+  );
+  const visibleIdentity = useMemo(
+    () => filteredIdentity.slice((identityPage - 1) * MAINTENANCE_PAGE_SIZE, identityPage * MAINTENANCE_PAGE_SIZE),
+    [filteredIdentity, identityPage]
+  );
+  const visibleUnmatched = useMemo(() => visibleIdentity.filter((item) => !item.metadata_accepted), [visibleIdentity]);
+
+  const summary = audit.summary;
+
+  function updateFilter(key, value) {
+    setFilters((state) => ({ ...state, [key]: value }));
+    setPages({ upgrades: 1, identity: 1 });
+  }
+
+  function selectMaintenanceTab(tab) {
+    setActiveTab(tab);
+    if (tab === 'upgrades' || tab === 'identity') setPages((state) => ({ ...state, [tab]: 1 }));
+  }
+
+  function toggleSelected(tab, path, checked) {
+    setSelected((state) => {
+      const next = new Set(state[tab]);
+      if (checked) next.add(path);
+      else next.delete(path);
+      return { ...state, [tab]: next };
+    });
+  }
+
+  function setSelectedPaths(tab, paths, checked) {
+    setSelected((state) => {
+      const next = new Set(state[tab]);
+      paths.forEach((path) => {
+        if (checked) next.add(path);
+        else next.delete(path);
+      });
+      return { ...state, [tab]: next };
+    });
+  }
+
+  function requestDelete(tab, paths, title) {
+    const uniquePaths = [...new Set(paths.filter(Boolean))];
+    if (!uniquePaths.length) return;
+    const preview = uniquePaths.slice(0, 5).join('\n');
+    const extra = uniquePaths.length > 5 ? `\n...and ${uniquePaths.length - 5} more` : '';
+    setConfirmAction({
+      type: 'delete',
+      tab,
+      paths: uniquePaths,
+      title,
+      body: `${uniquePaths.length} file${uniquePaths.length === 1 ? '' : 's'} will move to the Recycle Bin.\n\n${preview}${extra}`
+    });
+  }
+
+  function requestFixPath(item) {
+    setConfirmAction({
+      type: 'fix-path',
+      item,
+      title: 'Move file for metadata scan?',
+      body: `Fix Path will move this file or its movie folder within the library root, then refresh metadata scan paths.\n\n${item.path}`
+    });
+  }
+
+  async function runConfirmedAction() {
+    if (!confirmAction) return;
+    if (confirmAction.type === 'delete') {
+      await deletePaths(confirmAction.tab, confirmAction.paths);
+    } else if (confirmAction.type === 'fix-path') {
+      await fixPath(confirmAction.item);
+    }
+    setConfirmAction(null);
+  }
+
+  async function deletePaths(tab, paths) {
+    let deleted = 0;
+    const failed = [];
+    for (const path of paths) {
+      try {
+        await fetchJson('/api/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ path, trash: true })
+        });
+        deleted += 1;
+      } catch (error) {
+        failed.push(error.message);
+      }
+    }
+    if (deleted) {
+      removeDeletedPaths(paths);
+      notify(`${deleted} file${deleted === 1 ? '' : 's'} moved to Recycle Bin`);
+    }
+    failed.forEach((message) => notify(`Delete failed: ${message}`, 'error'));
+    setSelected((state) => ({ ...state, [tab]: new Set() }));
+  }
+
+  function removeDeletedPaths(paths) {
+    const pathSet = new Set(paths);
+    setAudit((state) => ({
+      ...state,
+      storage: {
+        groups: state.storage.groups
+        .map((group) => ({ ...group, files: (group.files || []).filter((file) => !pathSet.has(file.path)) }))
+        .filter((group) => (group.files || []).length > 1),
+      },
+      identity: {
+        ...state.identity,
+        items: state.identity.items.filter((item) => !pathSet.has(item.path)),
+      },
+    }));
+  }
+
+  async function submitRename(event) {
+    event.preventDefault();
+    if (!renameTarget) return;
+    const form = new FormData(event.currentTarget);
+    const title = String(form.get('title') || '').trim();
+    const year = String(form.get('year') || '').trim();
+    if (!title) {
+      notify('Title is required', 'error');
+      return;
+    }
+    try {
+      const result = await fetchJson('/api/rename-file', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: renameTarget.path, title, year })
+      });
+      setAudit((state) => ({
+        ...state,
+        identity: {
+          ...state.identity,
+          items: state.identity.items.map((item) => item.path === renameTarget.path ? {
+          ...item,
+          path: result.new_path,
+          filename: result.new_filename,
+          suggested_title: title,
+          suggested_year: year
+          } : item),
+        },
+      }));
+      setRenameTarget(null);
+      notify(`Renamed to ${result.new_filename}`);
+    } catch (error) {
+      notify(`Rename failed: ${error.message}`, 'error');
+    }
+  }
+
+  async function fixPath(item) {
+    setRowStatus((state) => ({ ...state, [item.path]: { tone: 'neutral', text: 'Moving file...' } }));
+    try {
+      const result = await fetchJson('/api/fix-path', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: item.path })
+      });
+      setRowStatus((state) => ({ ...state, [result.new_path || item.path]: { tone: 'success', text: `Moved to ${result.new_path}` } }));
+      setAudit((state) => ({
+        ...state,
+        identity: {
+          ...state.identity,
+          items: state.identity.items.map((entry) => entry.path === item.path ? { ...entry, path: result.new_path || entry.path, fixable_path: false } : entry),
+        },
+      }));
+      notify('File moved, metadata rescan requested');
+    } catch (error) {
+      setRowStatus((state) => ({ ...state, [item.path]: { tone: 'error', text: error.message } }));
+      notify(`Fix Path failed: ${error.message}`, 'error');
+    }
+  }
+
+  function openPlexMatch(item, context = 'unmatched') {
+    setMatchModal({
+      provider: 'plex',
+      context,
+      item,
+      ratingKey: item.rating_key || '',
+
+      title: item.suggested_title || item.current?.title || item.candidate?.title || '',
+      year: item.suggested_year || item.current?.year || item.candidate?.year || '',
+      loading: false,
+      scanBusy: false,
+      scanRequested: false,
+      needsPlexScan: false,
+      applying: '',
+      error: '',
+      results: []
+    });
+  }
+
+  function openTmdbMatch(item, context = 'unmatched') {
+    setMatchModal({
+      provider: 'tmdb',
+      context,
+      item,
+      title: item.suggested_title || item.current?.title || item.tmdb_title || item.candidate?.title || '',
+      year: item.suggested_year || item.current?.year || item.tmdb_year || item.candidate?.year || '',
+      loading: false,
+      applying: '',
+      error: '',
+      results: []
+    });
+  }
+
+  async function runPlexMatchSearch() {
+    if (!matchModal?.item?.path) return;
+    setMatchModal((state) => ({ ...state, loading: true, error: '', results: [] }));
+    try {
+      const params = new URLSearchParams({
+        path: matchModal.item.path,
+        title: matchModal.title,
+        year: matchModal.year
+      });
+      if (matchModal.ratingKey) params.set('rating_key', matchModal.ratingKey);
+      if (matchModal.context === 'identity') params.set('force_search', '1');
+      const result = await fetchJson(`/api/plex/match-search?${params.toString()}`);
+      setMatchModal((state) => ({
+        ...state,
+        loading: false,
+        needsPlexScan: false,
+        ratingKey: result.rating_key || state.ratingKey,
+        results: result.results || []
+      }));
+    } catch (error) {
+      setMatchModal((state) => ({
+        ...state,
+        loading: false,
+        needsPlexScan: error.data?.code === 'plex_item_not_indexed',
+        error: error.message
+      }));
+    }
+  }
+
+  async function searchPlexMatch(event) {
+    event.preventDefault();
+    await runPlexMatchSearch();
+  }
+
+  async function requestPlexScanAndRetry() {
+    if (!matchModal?.item?.path) return;
+    setMatchModal((state) => ({ ...state, scanBusy: true, error: '' }));
+    try {
+      await fetchJson('/api/plex/force-scan', { method: 'POST' });
+      await new Promise((resolve) => window.setTimeout(resolve, 1500));
+      setMatchModal((state) => ({ ...state, scanRequested: true }));
+      await runPlexMatchSearch();
+      setMatchModal((state) => ({ ...state, scanBusy: false }));
+    } catch (error) {
+      setMatchModal((state) => ({ ...state, scanBusy: false, scanRequested: true, error: error.message }));
+    }
+  }
+
+  async function searchTmdbMatch(event) {
+    event.preventDefault();
+    if (!matchModal?.item) return;
+    setMatchModal((state) => ({ ...state, loading: true, error: '', results: [] }));
+    try {
+      const query = String(matchModal.title || '').trim();
+      const tmdbParams = new URLSearchParams({ page: '1', metadata_context: 'unmatched' });
+      tmdbParams.set('q', query || matchModal.item.filename);
+      if (String(matchModal.year || '').trim()) {
+        tmdbParams.set('year', matchModal.year.trim());
+      }
+      const result = await fetchJson(`/api/tmdb/search?${tmdbParams.toString()}`);
+      setMatchModal((state) => ({ ...state, loading: false, results: result.results || [] }));
+    } catch (error) {
+      setMatchModal((state) => ({ ...state, loading: false, error: error.message }));
+    }
+  }
+
+  async function applyPlexMatch(match) {
+    const ratingKey = matchModal?.ratingKey || matchModal?.item?.rating_key;
+    if (!ratingKey || !match?.guid) return;
+    setMatchModal((state) => ({ ...state, applying: match.guid, error: '' }));
+    try {
+      await fetchJson('/api/plex/match-apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          path: matchModal.item.path,
+          rating_key: ratingKey,
+          guid: match.guid,
+          name: match.name || match.title,
+          year: match.year || '',
+          poster_url: match.poster_url || '',
+          summary: match.summary || ''
+        })
+      });
+      setRowStatus((state) => ({ ...state, [matchModal.item.path]: { tone: 'success', text: `Plex match applied: ${match.name}` } }));
+      if (matchModal.context === 'identity') {
+        setIdentityApprovedProposal({
+          ...matchModal.item,
+          candidate: {
+            plex_guid: match.guid,
+            title: match.name || match.title,
+            year: match.year || ''
+          }
+        });
+        setIdentityAudit(await fetchJson('/api/metadata/identity-audit'));
+      } else {
+        await loadMaintenance();
+      }
+      setMatchModal(null);
+      onHealthChanged();
+      notify('Plex match applied');
+    } catch (error) {
+      setMatchModal((state) => ({ ...state, applying: '', error: error.message }));
+    }
+  }
+
+  async function applyTmdbMatch(match) {
+    if (!matchModal?.item?.path || !match?.tmdb_id) return;
+    setMatchModal((state) => ({ ...state, applying: String(match.tmdb_id), error: '' }));
+    try {
+      await fetchJson('/api/tmdb/match-apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: matchModal.item.path, tmdb_id: match.tmdb_id, movie: match })
+      });
+      if (matchModal.context === 'identity') {
+        setIdentityApprovedProposal({ ...matchModal.item, candidate: match });
+        setIdentityAudit(await fetchJson('/api/metadata/identity-audit'));
+      } else {
+        await loadMaintenance();
+      }
+      setRowStatus((state) => ({ ...state, [matchModal.item.path]: { tone: 'success', text: `TMDB match applied: ${match.title}` } }));
+      setMatchModal(null);
+      onHealthChanged();
+      notify('TMDB match applied');
+    } catch (error) {
+      setMatchModal((state) => ({ ...state, applying: '', error: error.message }));
+    }
+
+  }
+
+  async function startIdentityAudit() {
+    if (!window.confirm('Start a new identity scan? Current scan progress and displayed results will be cleared. Previously verified unchanged movies will remain skipped.')) return;
+    try {
+      setIdentityAudit(await fetchJson('/api/metadata/identity-audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      }));
+      setError('');
+    } catch (auditError) {
+      setError(auditError.message);
+    }
+  }
+
+  async function pauseIdentityAudit() {
+    if (!identityAudit?.id) return;
+    try {
+      setIdentityAudit(await fetchJson(`/api/metadata/identity-audit/${encodeURIComponent(identityAudit.id)}/pause`, {
+        method: 'POST'
+      }));
+    } catch (auditError) {
+      setError(auditError.message);
+    }
+  }
+
+  async function resumeIdentityAudit() {
+    if (!identityAudit?.id) return;
+    try {
+      setIdentityAudit(await fetchJson(`/api/metadata/identity-audit/${encodeURIComponent(identityAudit.id)}/resume`, {
+        method: 'POST'
+      }));
+      setError('');
+    } catch (auditError) {
+      setError(auditError.message);
+    }
+  }
+
+  async function refreshIdentityAudit() {
+    try {
+      setIdentityAudit(await fetchJson('/api/metadata/identity-audit'));
+    } catch (auditError) {
+      setError(auditError.message);
+    }
+  }
+
+  const activeSelectedCount = activeTab === 'upgrades' ? 0 : (selected[activeTab]?.size || 0);
+
+  return (
+    <section className="cleanup-workspace">
+      <div className="library-header cleanup-header">
+        <div>
+          <p className="screen-kicker">Catalog-backed maintenance</p>
+          <h2>Library Maintenance <span className="offline-badge">Local</span></h2>
+          <p>One current audit for storage, upgrades, and movie identity. File actions remain explicit and use the Recycle Bin.</p>
+        </div>
+        <div className="library-header-actions">
+          <div className="library-action-row">
+            <button type="button" className="btn btn-secondary" onClick={loadMaintenance} disabled={loading}>
+              <RefreshCcw size={15} /> Refresh
+            </button>
+            {activeSelectedCount > 0 && (
+              <button type="button" className="btn btn-danger" onClick={() => requestDelete(activeTab, [...selected[activeTab]], `Move ${activeSelectedCount} selected file${activeSelectedCount === 1 ? '' : 's'} to Recycle Bin?`)}>
+                <Trash2 size={15} /> Delete selected ({activeSelectedCount})
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="library-stat-strip cleanup-stat-strip">
+        <LibraryStat icon={ShieldCheck} label="Duplicate groups" value={formatCount(summary.duplicate_groups)} tone="amber" onClick={() => selectMaintenanceTab('storage')} />
+        <LibraryStat icon={Trash2} label="Reclaimable space" value={summary.reclaimable_human || '0 B'} tone="red" onClick={() => selectMaintenanceTab('storage')} />
+        <LibraryStat icon={CheckCircle2} label="Safe recommendations" value={formatCount(summary.recommended_removals)} tone="green" onClick={() => selectMaintenanceTab('storage')} />
+        <LibraryStat icon={Wand2} label="Upgrade candidates" value={formatCount(summary.upgrade_candidates)} tone="amber" onClick={() => selectMaintenanceTab('upgrades')} />
+        <LibraryStat icon={ScanSearch} label="Unmatched files" value={formatCount(summary.unmatched_files)} tone="violet" onClick={() => selectMaintenanceTab('identity')} />
+        <LibraryStat icon={AlertTriangle} label="Actionable identities" value={formatCount(summary.actionable_identities)} tone="amber" onClick={() => selectMaintenanceTab('identity')} />
+        {summary.metadata_pending > 0 && <LibraryStat icon={Loader2} label="Metadata pending" value={formatCount(summary.metadata_pending)} tone="amber" />}
+      </div>
+
+      <div className="cleanup-tabs" role="tablist" aria-label="Cleanup workspace tabs">
+        {maintenanceTabs.map((tab) => {
+          const Icon = tab.icon;
+          return (
+            <button type="button" role="tab" aria-selected={activeTab === tab.id} className={cx(activeTab === tab.id && 'cleanup-tab-active')} key={tab.id} onClick={() => selectMaintenanceTab(tab.id)}>
+              <Icon size={16} /> {tab.label}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="library-toolbar cleanup-toolbar">
+        <label className="library-search cleanup-search">
+          <Search size={17} />
+          <input value={filters.query} onChange={(event) => updateFilter('query', event.target.value)} placeholder="Search files, paths, Plex titles..." />
+        </label>
+        {(activeTab === 'upgrades' || activeTab === 'identity') && (
+          <>
+            {activeTab === 'upgrades' && (
+              <>
+                <select value={filters.resolution} onChange={(event) => updateFilter('resolution', event.target.value)}>
+                  <option value="all">All resolutions</option>
+                  {optionSets.upgradeResolutions.map((value) => <option key={value} value={value}>{value}</option>)}
+                </select>
+                <select value={filters.source} onChange={(event) => updateFilter('source', event.target.value)}>
+                  <option value="all">All sources</option>
+                  {optionSets.upgradeSources.map((value) => <option key={value} value={value}>{value}</option>)}
+                </select>
+              </>
+            )}
+          </>
+        )}
+      </div>
+
+      {error && (
+        <div className="library-status library-status-error">
+          <AlertTriangle size={16} />
+          <span>{error}</span>
+        </div>
+      )}
+
+      {loading ? (
+        <div className="library-status">
+          <Loader2 size={16} className="spin" />
+          <span>Refreshing the maintenance audit...</span>
+        </div>
+      ) : (
+        <>
+          {activeTab === 'storage' && (
+            <DuplicatesCleanupTab groups={filteredDuplicates} selected={selected.storage} selectablePaths={selectableDuplicatePaths} onToggle={toggleSelected} onSelectPaths={setSelectedPaths} onDelete={requestDelete} />
+          )}
+          {activeTab === 'upgrades' && (
+            <>
+              <Pagination total={filteredUpgrades.length} page={upgradePage} totalPages={Math.max(1, Math.ceil(filteredUpgrades.length / MAINTENANCE_PAGE_SIZE))} pageStart={(upgradePage - 1) * MAINTENANCE_PAGE_SIZE} pageEnd={Math.min(upgradePage * MAINTENANCE_PAGE_SIZE, filteredUpgrades.length)} onPageChange={(page) => setPages((state) => ({ ...state, upgrades: page }))} />
+              <LowQualityCleanupTab items={visibleUpgrades} onFindTorrent={onFindTorrent} />
+            </>
+          )}
+          {activeTab === 'identity' && (
+            <>
+              <Pagination total={filteredIdentity.length} page={identityPage} totalPages={Math.max(1, Math.ceil(filteredIdentity.length / MAINTENANCE_PAGE_SIZE))} pageStart={(identityPage - 1) * MAINTENANCE_PAGE_SIZE} pageEnd={Math.min(identityPage * MAINTENANCE_PAGE_SIZE, filteredIdentity.length)} onPageChange={(page) => setPages((state) => ({ ...state, identity: page }))} />
+              {visibleUnmatched.length > 0 && (
+                <UnmatchedCleanupTab
+                  items={visibleUnmatched}
+                  selected={selected.identity}
+                  rowStatus={rowStatus}
+                  onToggle={toggleSelected}
+                  onPlay={onPlay}
+                  onDelete={requestDelete}
+                  onRename={setRenameTarget}
+                  onFixPath={requestFixPath}
+                  onPlexMatch={openPlexMatch}
+                  onTmdbMatch={openTmdbMatch}
+                  plexAvailable={smartMatchProviders.plex !== false}
+                  smartControls={selected.identity.size > 0 ? (
+                    <SmartMatchControls
+                      selectedPaths={[...selected.identity]}
+                      ollamaAvailable={ollamaAvailable}
+                      providers={smartMatchProviders}
+                      onStarted={setSmartMatchJob}
+                      notify={notify}
+                    />
+                  ) : null}
+                  lastSmartMatchControl={lastSmartMatchJob ? (
+                    <button type="button" className="btn btn-secondary" onClick={() => setSmartMatchJob(lastSmartMatchJob)}>
+                      Open last Smart Match review
+                    </button>
+                  ) : null}
+                />
+              )}
+              {visibleIdentity.length === 0 && <CleanupEmpty title="No unmatched files." text="New unmatched files appear here after normal catalog reconciliation." />}
+            </>
+          )}
+          {activeTab === 'identity' && (
+            <IdentityReviewPanel
+              audit={identityAudit}
+              items={identityAudit?.proposals || []}
+              loading={false}
+              error=""
+              plexAvailable={smartMatchProviders.plex !== false}
+              onStart={startIdentityAudit}
+              onPause={pauseIdentityAudit}
+              onResume={resumeIdentityAudit}
+              onRefresh={refreshIdentityAudit}
+              onAuditChanged={setIdentityAudit}
+              onPlay={onPlay}
+              onTmdbMatch={(proposal) => openTmdbMatch(proposal, 'identity')}
+              onPlexMatch={(proposal) => openPlexMatch(proposal, 'identity')}
+              onHealthChanged={onHealthChanged}
+              externalApproved={identityApprovedProposal}
+              onExternalApprovedConsumed={() => setIdentityApprovedProposal(null)}
+              notify={notify}
+            />
+          )}
+        </>
+      )}
+
+      {confirmAction && (
+        <ConfirmDialog
+          title={confirmAction.title}
+          body={confirmAction.body}
+          confirmLabel={confirmAction.type === 'delete' ? 'Move to Recycle Bin' : 'Move file'}
+          danger={confirmAction.type === 'delete'}
+          onCancel={() => setConfirmAction(null)}
+          onConfirm={runConfirmedAction}
+        />
+      )}
+      {renameTarget && (
+        <LibraryRenameModal
+          item={renameModalItem(renameTarget)}
+          onClose={() => setRenameTarget(null)}
+          onSubmit={submitRename}
+        />
+      )}
+      {matchModal && (
+        matchModal.provider === 'tmdb' ? (
+          <TmdbMatchModal
+            state={matchModal}
+            onClose={() => setMatchModal(null)}
+            onChange={(patch) => setMatchModal((state) => ({ ...state, ...patch }))}
+            onSearch={searchTmdbMatch}
+            onApply={applyTmdbMatch}
+          />
+        ) : (
+          <PlexMatchModal
+            state={matchModal}
+            onClose={() => setMatchModal(null)}
+            onChange={(patch) => setMatchModal((state) => ({ ...state, ...patch }))}
+            onSearch={searchPlexMatch}
+            onScanRetry={requestPlexScanAndRetry}
+            onApply={applyPlexMatch}
+          />
+        )
+      )}
+      {smartMatchJob && (
+        <SmartMatchReviewModal
+          job={smartMatchJob}
+          items={audit.identity.items}
+          onJobChange={setSmartMatchJob}
+          onClose={() => setSmartMatchJob(null)}
+          onApplied={(paths) => {
+            const applied = new Set(paths);
+            setAudit((state) => ({ ...state, identity: { ...state.identity, items: state.identity.items.filter((item) => !applied.has(item.path)) } }));
+            setSelected((state) => ({ ...state, identity: new Set() }));
+          }}
+          onTmdbMatch={(item) => { setSmartMatchJob(null); openTmdbMatch(item); }}
+          onPlexMatch={(item) => { setSmartMatchJob(null); openPlexMatch(item); }}
+          plexAvailable={smartMatchProviders.plex !== false}
+          notify={notify}
+        />
+      )}
+    </section>
+  );
+}
+
+function DuplicatesCleanupTab({ groups, selected, selectablePaths, onToggle, onSelectPaths, onDelete }) {
+  const visibleRecommended = groups.flatMap((group) => (group.files || []).filter((file) => file.recommendation === 'recommended').map((file) => file.path));
+  return (
+    <div className="cleanup-panel">
+      <CleanupSelectionBar
+        label={`${formatCount(groups.length)} duplicate groups`}
+        selectedCount={selected.size}
+        selectableCount={visibleRecommended.length}
+        selectLabel="Select recommended"
+        onSelectAll={() => onSelectPaths('storage', visibleRecommended, true)}
+        onClear={() => onSelectPaths('storage', selectablePaths, false)}
+      />
+      {groups.length ? groups.map((group) => (
+        <article className="duplicate-group-card" key={group.title}>
+          <header>
+            <div>
+              <h3>{group.title}</h3>
+              <p>{formatCount((group.files || []).length)} copies found. {formatCount(group.recommended_count)} removal recommendation{group.recommended_count === 1 ? '' : 's'}; the rest need a manual comparison.</p>
+            </div>
+          </header>
+          <div className="cleanup-file-list">
+            {(group.files || []).map((file) => (
+              <CleanupFileRow
+                key={file.path}
+                item={file}
+                selected={selected.has(file.path)}
+                selectable={file.role === 'candidate'}
+                badge={file.role === 'keep' ? 'Keep copy' : file.recommendation === 'recommended' ? 'Recommended removal' : 'Manual review'}
+                onToggle={(checked) => onToggle('storage', file.path, checked)}
+                onDelete={() => onDelete('storage', [file.path], `Move ${file.filename} to Recycle Bin?`)}
+              />
+            ))}
+          </div>
+        </article>
+      )) : <CleanupEmpty title="No duplicate groups match this view." text="Refresh or adjust search when new files are added." />}
+    </div>
+  );
+}
+
+function LowQualityCleanupTab({ items, onFindTorrent }) {
+  return (
+    <div className="cleanup-panel">
+      {items.length ? (
+        <div className="cleanup-file-list">
+          {items.map((item) => {
+            const identity = getMovieIdentity(item);
+            return (
+              <CleanupFileRow
+                key={item.path}
+                item={item}
+                selected={false}
+                selectable={false}
+                badge="Upgrade candidate"
+                onToggle={() => {}}
+                actions={(
+                  <button type="button" className="btn btn-upgrade" onClick={() => onFindTorrent({ title: identity.title, year: identity.year, imdb_id: item.imdb_id || '', tmdb_id: item.tmdb_id || '' }, true)}>
+                    <Wand2 size={15} /> Find sources
+                  </button>
+                )}
+              />
+            );
+          })}
+        </div>
+      ) : <CleanupEmpty title="No upgrades currently needed." text="Titles appear here only when the catalog has no 1080p or better copy for that movie." />}
+    </div>
+  );
+}
+
+function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onPlay, onDelete, onRename, onFixPath, onPlexMatch, onTmdbMatch, plexAvailable, smartControls, lastSmartMatchControl }) {
+  return (
+    <div className="cleanup-panel">
+      <CleanupSelectionBar
+        label={`${formatCount(items.length)} unmatched files`}
+        selectedCount={selected.size}
+        selectableCount={items.length}
+        onSelectAll={() => items.forEach((item) => onToggle('identity', item.path, true))}
+        onClear={() => items.forEach((item) => onToggle('identity', item.path, false))}
+      />
+      {smartControls}
+      {lastSmartMatchControl && <div className="cleanup-secondary-action">{lastSmartMatchControl}</div>}
+      {items.length ? (
+        <div className="cleanup-file-list">
+          {items.map((item) => (
+            <article className="cleanup-file-row unmatched-row" key={item.path}>
+              <label className="cleanup-check">
+                <input type="checkbox" checked={selected.has(item.path)} onChange={(event) => onToggle('identity', item.path, event.target.checked)} />
+                <span>Select</span>
+              </label>
+              <div className="cleanup-file-main">
+                <div className="cleanup-title-line">
+                  <h3>{item.filename}</h3>
+                  <span className={cx('chip', metadataStatusChipClass(item))}>{metadataStatusLabel(item)}</span>
+                </div>
+                <div className="cleanup-path" title={item.path}>{item.path}</div>
+                <div className="cleanup-meta-row">
+                  <span className="chip chip-muted">{item.resolution || 'Unknown'}</span>
+                  <span className="chip chip-muted">{item.rip_source || 'Unknown source'}</span>
+                  <span className="chip chip-muted">{item.file_size || '?'}</span>
+                  {item.library_root && <span className="chip chip-muted">{rootLabel(item.library_root)}</span>}
+                  {item.fixable_path && <span className="chip chip-warning">Folder depth {item.depth}</span>}
+                </div>
+                <p className="cleanup-hint">{item.metadata_hint || item.plex_hint || 'No metadata hint available.'}</p>
+                {rowStatus[item.path] && <p className={cx('cleanup-row-status', `cleanup-row-${rowStatus[item.path].tone}`)}>{rowStatus[item.path].text}</p>}
+              </div>
+              <div className="cleanup-row-actions">
+                <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(item.path)}>
+                  <Play size={15} /> Play file
+                </button>
+                <button type="button" className="btn btn-primary btn-violet" onClick={() => onTmdbMatch(item)}>
+                  <Search size={15} /> Search TMDB
+                </button>
+                {plexAvailable && (
+                  <button type="button" className="btn btn-secondary" onClick={() => onPlexMatch(item)}>
+                    <Clapperboard size={15} /> Search Plex
+                  </button>
+                )}
+                {item.fixable_path && (
+                  <button type="button" className="btn btn-secondary" onClick={() => onFixPath(item)}>
+                    <Folder size={15} /> Fix path
+                  </button>
+                )}
+                {!plexAvailable && !item.fixable_path && (
+                  <span className="cleanup-action-note">Plex optional</span>
+                )}
+                <button type="button" className="btn btn-secondary" onClick={() => onRename(item)}>
+                  <Clapperboard size={15} /> Rename
+                </button>
+                <button type="button" className="btn btn-danger" onClick={() => onDelete('identity', [item.path], `Move ${item.filename} to Recycle Bin?`)}>
+                  <Trash2 size={15} /> Delete
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : <CleanupEmpty title="No identity issues match this view." text="New library files appear here after the normal catalog reconciliation." />}
+    </div>
+  );
+}
+
+function CleanupSelectionBar({ label, selectedCount, selectableCount, selectLabel = 'Select all', onSelectAll, onClear }) {
+  return (
+    <div className="cleanup-selection-bar">
+      <span>{label}</span>
+      <strong>{formatCount(selectedCount)} selected</strong>
+      <div>
+        <button type="button" className="mini-action" onClick={onSelectAll} disabled={!selectableCount}>{selectLabel}</button>
+        <button type="button" className="mini-action" onClick={onClear} disabled={!selectedCount}>Clear</button>
+
+      </div>
+    </div>
+  );
+}
+
+function CleanupFileRow({ item, selected, selectable, badge, onToggle, onDelete, actions }) {
+  return (
+    <article className="cleanup-file-row">
+      <label className="cleanup-check">
+        <input type="checkbox" disabled={!selectable} checked={selectable && selected} onChange={(event) => onToggle(event.target.checked)} />
+        <span>{selectable ? 'Select' : 'Keep'}</span>
+      </label>
+      <div className="cleanup-file-main">
+        <div className="cleanup-title-line">
+          <h3>{item.filename}</h3>
+          <span className={cx('chip', badge === 'Keep copy' || badge === 'Recommended removal' ? 'status-owned' : 'chip-warning')}>{badge}</span>
+        </div>
+        <div className="cleanup-path" title={item.path}>{item.path}</div>
+        <div className="cleanup-meta-row">
+          <span className={cx('chip', isLowQuality(item.resolution) && 'chip-warning')}>{item.resolution || 'Unknown'}</span>
+          <span className="chip chip-muted">{item.rip_source || 'Unknown source'}</span>
+          <span className="chip chip-muted">{item.size_human || item.file_size || '?'}</span>
+          {item.library_root && <span className="chip chip-muted">{rootLabel(item.library_root)}</span>}
+          <span className={cx('chip', item.plex_matched ? 'status-owned' : 'status-missing')}>{item.plex_matched ? 'Plex matched' : 'Plex unmatched'}</span>
+          {item.plex_title && <span className="chip chip-muted">{item.plex_title}{item.plex_year ? ` (${item.plex_year})` : ''}</span>}
+        </div>
+      </div>
+      <div className="cleanup-row-actions">
+        {actions}
+        {selectable && (
+          <button type="button" className="btn btn-danger" onClick={onDelete}>
+            <Trash2 size={15} /> Delete
+          </button>
+        )}
+      </div>
+    </article>
+  );
+}
+
+function CleanupEmpty({ title, text }) {
+  return (
+    <div className="empty-state library-empty cleanup-empty">
+      <strong>{title}</strong>
+      <span>{text}</span>
+    </div>
+  );
+}
+
+function TmdbMatchModal({ state, onClose, onChange, onSearch, onApply }) {
+  return (
+    <div className="modal-backdrop" role="presentation" onClick={onClose}>
+      <section className="torrent-dialog cleanup-match-dialog" role="dialog" aria-modal="true" aria-label="TMDB match search" onClick={(event) => event.stopPropagation()}>
+        <div className="dialog-header">
+          <div>
+            <p className="screen-kicker">TMDB match</p>
+            <h2>{state.item.filename}</h2>
+          </div>
+          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close TMDB match dialog">
+            <X size={18} />
+          </button>
+        </div>
+        <form className="cleanup-match-form" onSubmit={onSearch}>
+          <label className="dialog-field">
+            <span>Search title</span>
+            <input value={state.title} onChange={(event) => onChange({ title: event.target.value })} />
+          </label>
+          <label className="dialog-field">
+            <span>Year</span>
+            <input value={state.year} onChange={(event) => onChange({ year: event.target.value })} inputMode="numeric" />
+          </label>
+          <button type="submit" className="btn btn-primary btn-violet cleanup-match-submit" disabled={state.loading}>
+            {state.loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search TMDB
+          </button>
+        </form>
+        {state.error && <p className="settings-inline-status settings-inline-error"><AlertTriangle size={15} /><span>{state.error}</span></p>}
+        <div className="match-result-list">
+          {state.results.length ? state.results.map((match) => (
+            <article className="match-result-row tmdb-match-result-row" key={match.tmdb_id}>
+              <span className="match-result-poster">
+                {match.poster_url ? <img src={match.poster_url} alt="" loading="lazy" /> : <Film size={18} />}
+              </span>
+              <div>
+                <strong>{match.title}</strong>
+                <span>{match.year || 'Unknown year'} | {match.tmdb_rating ? `${match.tmdb_rating} - ${formatVoteCount(match.tmdb_vote_count) || 'no votes'}` : 'No rating'}</span>
+                <small>{match.plot || 'No plot summary available.'}</small>
+              </div>
+              <button type="button" className="btn btn-secondary" onClick={() => onApply(match)} disabled={Boolean(state.applying)}>
+                {state.applying === String(match.tmdb_id) ? <Loader2 size={15} className="spin" /> : <CheckCircle2 size={15} />} Apply match
+              </button>
+            </article>
+          )) : (
+            <div className="cleanup-empty-match">Search TMDB, then choose the exact public movie identity.</div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function PlexMatchModal({ state, onClose, onChange, onSearch, onScanRetry, onApply }) {
+  return (
+    <div className="modal-backdrop" role="presentation" onClick={onClose}>
+      <section className="torrent-dialog cleanup-match-dialog" role="dialog" aria-modal="true" aria-label="Plex match search" onClick={(event) => event.stopPropagation()}>
+        <div className="dialog-header">
+          <div>
+            <p className="screen-kicker">Plex match</p>
+            <h2>{state.item.filename}</h2>
+          </div>
+          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close Plex match dialog">
+            <X size={18} />
+          </button>
+        </div>
+        <form className="cleanup-match-form" onSubmit={onSearch}>
+          <label className="dialog-field">
+            <span>Search title</span>
+            <input value={state.title} onChange={(event) => onChange({ title: event.target.value })} />
+          </label>
+          <label className="dialog-field">
+            <span>Year</span>
+            <input value={state.year} onChange={(event) => onChange({ year: event.target.value })} inputMode="numeric" />
+          </label>
+          <button type="submit" className="btn btn-primary cleanup-match-submit" disabled={state.loading}>
+            {state.loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search Plex
+          </button>
+        </form>
+        {state.error && <p className="settings-inline-status settings-inline-error"><AlertTriangle size={15} /><span>{state.error}</span></p>}
+        {state.needsPlexScan && (
+          <div className="cleanup-match-recovery">
+            <span>Plex must index this file before its matching agents can be searched.</span>
+            <button type="button" className="btn btn-secondary" onClick={onScanRetry} disabled={state.scanBusy}>
+              {state.scanBusy ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />}
+              {state.scanRequested ? 'Retry Plex lookup' : 'Request Plex scan'}
+            </button>
+          </div>
+        )}
+        <div className="match-result-list">
+          {state.results.length ? state.results.map((match) => (
+            <article className="match-result-row plex-match-result-row" key={match.guid}>
+              <span className="match-result-poster">
+                {match.poster_url ? <img src={match.poster_url} alt="" loading="lazy" /> : <Film size={18} />}
+              </span>
+              <div>
+                <strong>{match.title || match.name}</strong>
+                <span>
+                  {match.year || 'Unknown year'}
+                  {match.exact_external_id ? ' Â· Exact external ID' : ''}
+                  {match.rank ? ` Â· Plex rank ${match.rank}` : ''}
+                </span>
+                <small>{match.summary || 'No plot summary available.'}</small>
+                {match.match_reasons?.length > 0 && (
+                  <small className="plex-match-reasons">{match.match_reasons.join(' Â· ')}</small>
+                )}
+              </div>
+              <button type="button" className="btn btn-secondary" onClick={() => onApply(match)} disabled={Boolean(state.applying)}>
+                {state.applying === match.guid ? <Loader2 size={15} className="spin" /> : <CheckCircle2 size={15} />} Apply match
+              </button>
+            </article>
+          )) : (
+            <div className="cleanup-empty-match">Search Plex agents, then choose the exact metadata match.</div>
+          )}
+
+        </div>
+      </section>
+    </div>
+  );
+}

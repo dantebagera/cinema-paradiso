@@ -23,6 +23,7 @@ SEVEN_ZIP_RELEASES_API = "https://api.github.com/repos/ip7z/7zip/releases/latest
 QBT_TAG = "cinema-paradiso"
 DEFAULT_WEBUI_PORT = 8686
 BUNDLED_QBT_VERSION = "5.2.2"
+PAYLOAD_COLLISION_RULE_VERSION = 2
 HOP_BY_HOP_HEADERS = {
     "connection", "keep-alive", "proxy-authenticate", "proxy-authorization",
     "te", "trailers", "transfer-encoding", "upgrade",
@@ -211,6 +212,78 @@ def _atomic_json_write(path, data):
     os.replace(temporary, path)
 
 
+def _sha256_file(path):
+    digest = hashlib.sha256()
+    with open(path, "rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _payload_entries(path):
+    path = Path(path)
+    if path.is_symlink():
+        return None
+    if path.is_file():
+        return {".": ("file", path.stat().st_size)}
+    if not path.is_dir():
+        return None
+    entries = {}
+    for child in sorted(path.rglob("*"), key=lambda item: str(item.relative_to(path)).lower()):
+        relative = str(child.relative_to(path)).replace("\\", "/")
+        if child.is_symlink():
+            return None
+        if child.is_dir():
+            entries[relative] = ("directory", 0)
+        elif child.is_file():
+            entries[relative] = ("file", child.stat().st_size)
+        else:
+            return None
+    return entries
+
+
+def _payload_is_contained_by(source, destination):
+    source = Path(source)
+    destination = Path(destination)
+    source_entries = _payload_entries(source)
+    destination_entries = _payload_entries(destination)
+    if source_entries is None or destination_entries is None:
+        return False
+    if source.is_file():
+        return destination.is_file() and source_entries == destination_entries \
+            and _sha256_file(source) == _sha256_file(destination)
+    if not destination.is_dir() or any(
+        destination_entries.get(relative) != details
+        for relative, details in source_entries.items()
+    ):
+        return False
+    for relative, (kind, _size) in source_entries.items():
+        if kind != "file":
+            continue
+        if _sha256_file(source / relative) != _sha256_file(destination / relative):
+            return False
+    return True
+
+
+def _payload_signature(path):
+    if not str(path or "").strip():
+        return {"kind": "missing"}
+    path = Path(path)
+    if not path.exists():
+        return {"kind": "missing"}
+    entries = _payload_entries(path)
+    if entries is None:
+        return {"kind": "unsupported"}
+    if path.is_file():
+        stat = path.stat()
+        return {"kind": "file", "size": stat.st_size, "modified_ns": stat.st_mtime_ns}
+    signature = []
+    for relative, (kind, size) in entries.items():
+        child = path / relative
+        signature.append([relative, kind, size, child.stat().st_mtime_ns])
+    return {"kind": "directory", "entries": signature}
+
+
 class QBittorrentJobStore:
     def __init__(self, path):
         self.path = Path(path)
@@ -245,32 +318,99 @@ class QBittorrentJobStore:
         job = self.get(torrent_hash)
         if not job:
             raise QBittorrentError("Download job was not found")
-        destination = Path(job.get("destination", ""))
-        if not destination:
+        destination_text = str(job.get("destination", "") or "").strip()
+        if not destination_text:
             raise QBittorrentError("Download destination is missing")
+        destination = Path(destination_text)
         destination.mkdir(parents=True, exist_ok=True)
         payloads = [Path(item) for item in job.get("payload_paths", [])]
         if not payloads:
             raise QBittorrentError("Completed payload path is missing")
-        moves = []
+        previous_transfers = {
+            str(item.get("source", "")): item
+            for item in (job.get("transfer_plan") or [])
+            if item.get("source")
+        }
+        transfers = []
+        collisions = []
         for source in payloads:
             if not is_path_within(source, allowed_staging_root):
                 raise QBittorrentError("Completed payload escaped the staging folder")
             target = destination / source.name
             if source.exists() and target.exists():
-                raise QBittorrentError(f"Destination already exists: {target}")
+                if _payload_is_contained_by(source, target):
+                    transfers.append({"source": str(source), "target": str(target), "action": "duplicate"})
+                else:
+                    collisions.append({
+                        "source": str(source),
+                        "target": str(target),
+                        "source_signature": _payload_signature(source),
+                        "target_signature": _payload_signature(target),
+                    })
+                continue
             if not source.exists() and not target.exists():
                 raise QBittorrentError(f"Completed payload is missing: {source}")
-            moves.append((source, target))
-        moved = []
-        for source, target in moves:
-            if source.exists():
+            if not source.exists():
+                previous = previous_transfers.get(str(source), {})
+                if previous.get("action") not in {"move", "duplicate"} or previous.get("status") not in {
+                    "started", "completed",
+                }:
+                    collisions.append({
+                        "source": str(source),
+                        "target": str(target),
+                        "source_signature": _payload_signature(source),
+                        "target_signature": _payload_signature(target),
+                        "reason": "Source is missing and no CP transfer journal proves this target was imported",
+                    })
+                    continue
+            transfers.append({
+                "source": str(source),
+                "target": str(target),
+                "action": "move" if source.exists() else "resumed",
+            })
+        if collisions:
+            targets = ", ".join(item["target"] for item in collisions)
+            return self.upsert(torrent_hash, {
+                "state": "destination_conflict",
+                "collision": collisions,
+                "collision_rule_version": PAYLOAD_COLLISION_RULE_VERSION,
+                "last_error": f"Different content already exists at: {targets}",
+            })
+
+        self.upsert(torrent_hash, {
+            "state": "moving",
+            "transfer_plan": transfers,
+            "collision": [],
+            "last_error": "",
+        })
+        imported = []
+        deduplicated = []
+        for index, transfer in enumerate(transfers):
+            source = Path(transfer["source"])
+            target = Path(transfer["target"])
+            if transfer["action"] in {"move", "duplicate"} and source.exists():
+                transfers[index]["status"] = "started"
+                self.upsert(torrent_hash, {"state": "moving", "transfer_plan": transfers})
+            if transfer["action"] == "move" and source.exists():
                 shutil.move(str(source), str(target))
-            moved.append(str(target))
+            elif transfer["action"] == "duplicate" and source.exists():
+                if source.is_dir():
+                    shutil.rmtree(source)
+                else:
+                    source.unlink()
+                deduplicated.append(str(target))
+            if not target.exists():
+                raise QBittorrentError(f"Imported payload is missing: {target}")
+            transfers[index]["status"] = "completed"
+            imported.append(str(target))
+            self.upsert(torrent_hash, {"state": "moving", "transfer_plan": transfers})
         return self.upsert(torrent_hash, {
-            "state": "imported",
+            "state": "payload_imported",
             "imported_at": time.time(),
-            "imported_paths": moved,
+            "imported_paths": imported,
+            "deduplicated_paths": deduplicated,
+            "already_in_library": bool(imported) and len(deduplicated) == len(imported),
+            "library_scan_pending": True,
             "last_error": "",
         })
 
@@ -364,6 +504,7 @@ class QBittorrentManager:
         self.port = int(self.settings.get("webui_port") or DEFAULT_WEBUI_PORT)
         self.client = QBittorrentClient(f"http://127.0.0.1:{self.port}")
         self._process = None
+        self._completion_lock = threading.Lock()
 
     @property
     def destination(self):
@@ -606,21 +747,49 @@ class QBittorrentManager:
             raise QBittorrentError("Invalid magnet link")
         torrent_hash = magnet_hash(magnet)
         existing = self.jobs.get(torrent_hash)
-        if existing:
+        if existing and existing.get("state") == "imported":
             return {**existing, "already_exists": True}
         if not self.ensure_running():
             raise QBittorrentError("Embedded qBittorrent is not installed")
+        if existing and torrent_hash:
+            active_hashes = {
+                str(item.get("hash", "")).lower()
+                for item in self.client.torrents()
+            }
+            if torrent_hash in active_hashes:
+                return {**existing, "already_exists": True}
+            recoverable_paths = [
+                *existing.get("payload_paths", []),
+                *existing.get("imported_paths", []),
+                *[
+                    value
+                    for collision in existing.get("collision", [])
+                    for value in (collision.get("source"), collision.get("target"))
+                    if value
+                ],
+            ]
+            if any(Path(path).exists() for path in recoverable_paths):
+                return {**existing, "already_exists": True, "recovery_pending": True}
         self.client.add_magnet(magnet, str(self.staging_dir))
         if not torrent_hash:
             time.sleep(0.5)
             candidates = [item for item in self.client.torrents() if QBT_TAG in str(item.get("tags", ""))]
             torrent_hash = str(candidates[-1].get("hash", "")) if candidates else ""
+        submitted_at = time.time()
         return self.jobs.upsert(torrent_hash, {
             **(metadata or {}),
             "state": "downloading",
             "destination": str(self.destination),
-            "submitted_at": time.time(),
+            "submitted_at": submitted_at,
+            "resubmitted_at": submitted_at if existing else None,
             "source_type": "magnet",
+            "payload_paths": [],
+            "imported_paths": [],
+            "deduplicated_paths": [],
+            "transfer_plan": [],
+            "collision": [],
+            "library_scan_pending": False,
+            "last_error": "",
         })
 
     def submit_torrent(self, content, filename, metadata):
@@ -660,7 +829,32 @@ class QBittorrentManager:
                 top_levels.append(top)
         return [str(save_path / top) for top in top_levels]
 
+    @staticmethod
+    def _collision_is_unchanged(job):
+        collisions = job.get("collision") or []
+        return job.get("collision_rule_version") == PAYLOAD_COLLISION_RULE_VERSION \
+            and bool(collisions) and all(
+            _payload_signature(item.get("source", "")) == item.get("source_signature")
+            and _payload_signature(item.get("target", "")) == item.get("target_signature")
+            for item in collisions
+        )
+
+    def _finish_completed_import(self, torrent_hash, torrent_present):
+        if torrent_present:
+            try:
+                self.client.remove_without_files(torrent_hash)
+            except Exception as error:
+                return self.jobs.upsert(torrent_hash, {
+                    "state": "cleanup_failed",
+                    "last_error": f"Payload imported, but qBittorrent cleanup failed: {error}",
+                })
+        return self.jobs.upsert(torrent_hash, {"state": "imported", "last_error": ""})
+
     def process_completed(self):
+        with self._completion_lock:
+            return self._process_completed_locked()
+
+    def _process_completed_locked(self):
         if not self.ensure_running():
             return []
         jobs = self.jobs.all()
@@ -670,9 +864,20 @@ class QBittorrentManager:
             if job.get("state") == "imported":
                 continue
             torrent = torrents.get(torrent_hash)
-            if not torrent and job.get("payload_paths") and job.get("state") in {"finalizing", "move_failed"}:
+            if job.get("state") in {"payload_imported", "cleanup_failed"}:
+                results.append(self._finish_completed_import(torrent_hash, bool(torrent)))
+                continue
+            if job.get("state") == "destination_conflict" and self._collision_is_unchanged(job):
+                results.append(job)
+                continue
+            if not torrent and job.get("payload_paths") and job.get("state") in {
+                "finalizing", "moving", "move_failed", "destination_conflict",
+            }:
                 try:
-                    results.append(self.jobs.move_completed_payload(torrent_hash, self.staging_dir))
+                    result = self.jobs.move_completed_payload(torrent_hash, self.staging_dir)
+                    if result.get("state") == "payload_imported":
+                        result = self._finish_completed_import(torrent_hash, False)
+                    results.append(result)
                 except Exception as error:
                     results.append(self.jobs.upsert(torrent_hash, {"state": "move_failed", "last_error": str(error)}))
                 continue
@@ -683,8 +888,10 @@ class QBittorrentManager:
                 payload_paths = self._payload_paths(torrent, files)
                 self.jobs.upsert(torrent_hash, {"state": "finalizing", "payload_paths": payload_paths})
                 self.client.pause(torrent_hash)
-                self.client.remove_without_files(torrent_hash)
-                results.append(self.jobs.move_completed_payload(torrent_hash, self.staging_dir))
+                result = self.jobs.move_completed_payload(torrent_hash, self.staging_dir)
+                if result.get("state") == "payload_imported":
+                    result = self._finish_completed_import(torrent_hash, True)
+                results.append(result)
             except Exception as error:
                 results.append(self.jobs.upsert(torrent_hash, {"state": "move_failed", "last_error": str(error)}))
         return results

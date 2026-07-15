@@ -5,6 +5,50 @@ from services.movie_identity import normalize_movie_title
 from services.smart_match import rank_candidates
 
 
+IDENTITY_AUDIT_RULE_VERSION = 8
+DECISION_ORIGIN_USER_MANUAL = "user_manual"
+DECISION_ORIGIN_IDENTITY_AUDIT = "identity_audit"
+DECISION_ORIGIN_SMART_MATCH = "smart_match"
+DECISION_ORIGIN_LIBRARY_RECONCILE = "library_reconcile"
+DECISION_ORIGIN_LEGACY_IDENTITY_AUDIT = "legacy_identity_audit"
+
+_CONTENT_STOP_WORDS = {
+    "about", "after", "again", "against", "also", "among", "because", "before",
+    "being", "between", "both", "could", "from", "have", "into", "more", "most",
+    "movie", "only", "other", "over", "their", "there", "these", "they", "this",
+    "through", "under", "very", "when", "where", "which", "while", "with", "would",
+    "young", "film", "story", "must", "each", "than", "then", "them", "that",
+}
+
+
+def infer_decision_origin(record=None, manual=None, fingerprint=None):
+    """Recover who owned an accepted identity without trusting legacy source labels."""
+    record = dict(record or {})
+    manual = dict(manual or {})
+    fingerprint = dict(fingerprint or {})
+    explicit = str(
+        record.get("decision_origin")
+        or manual.get("decision_origin")
+        or fingerprint.get("decision_origin")
+        or ""
+    ).strip()
+    if explicit:
+        return explicit
+
+    manual_updated = float(manual.get("updated_at", 0) or 0)
+    verified_at = float(fingerprint.get("verified_at", 0) or 0)
+    fingerprint_rule = int(fingerprint.get("rule_version", 0) or 0)
+    # Rule 6 introduced deep audit refreshes. A refreshed fingerprint on a
+    # legacy manual row came from CP's audit, not from a user selection.
+    if manual and fingerprint_rule >= 6 and verified_at >= manual_updated:
+        return DECISION_ORIGIN_LEGACY_IDENTITY_AUDIT
+    if manual and manual_updated and verified_at and 0 <= verified_at - manual_updated <= 5:
+        return DECISION_ORIGIN_LEGACY_IDENTITY_AUDIT
+    if manual:
+        return DECISION_ORIGIN_USER_MANUAL
+    return ""
+
+
 def _year(value):
     text = str(value or "").strip()
     return text if len(text) == 4 and text.isdigit() else ""
@@ -57,6 +101,101 @@ def _candidate_identity_key(candidate):
         normalize_movie_title(candidate.get("title")),
         _year(candidate.get("year")),
     ))
+
+
+def _metadata_words(metadata):
+    metadata = dict(metadata or {})
+    text = " ".join(
+        str(metadata.get(key) or "")
+        for key in ("overview", "plot", "summary", "plex_summary", "tagline")
+    )
+    return {
+        word for word in normalize_movie_title(text).split()
+        if len(word) >= 4 and word not in _CONTENT_STOP_WORDS
+    }
+
+
+def _metadata_values(metadata, *keys):
+    metadata = dict(metadata or {})
+    values = []
+    for key in keys:
+        value = metadata.get(key)
+        if isinstance(value, (list, tuple, set)):
+            values.extend(value)
+        elif value:
+            values.append(value)
+    return values
+
+
+def _normalized_names(values):
+    names = set()
+    for value in values or []:
+        if isinstance(value, dict):
+            value = value.get("name") or value.get("title") or ""
+        normalized = normalize_movie_title(value)
+        if normalized:
+            names.add(normalized)
+    return names
+
+
+def compare_identity_content(left, right):
+    """Compare independent provider metadata without treating title/year as content proof."""
+    left = dict(left or {})
+    right = dict(right or {})
+    left_words = _metadata_words(left)
+    right_words = _metadata_words(right)
+    shared_words = left_words & right_words
+    smaller_text = min(len(left_words), len(right_words))
+    text_overlap = len(shared_words) / smaller_text if smaller_text else 0.0
+
+    left_genres = _normalized_names(_metadata_values(left, "genres", "plex_genres"))
+    right_genres = _normalized_names(_metadata_values(right, "genres", "plex_genres"))
+    shared_genres = left_genres & right_genres
+
+    left_directors = _normalized_names(_metadata_values(left, "director", "directors", "plex_directors"))
+    right_directors = _normalized_names(_metadata_values(right, "director", "directors", "plex_directors"))
+    shared_directors = left_directors & right_directors
+
+    left_cast = _normalized_names(_metadata_values(left, "cast", "plex_cast"))
+    right_cast = _normalized_names(_metadata_values(right, "cast", "plex_cast"))
+    shared_cast = left_cast & right_cast
+
+    support = 0
+    reasons = []
+    if len(shared_words) >= 4 and text_overlap >= 0.2:
+        support += 40
+        reasons.append("independent plot evidence agrees")
+    elif len(shared_words) >= 2 and text_overlap >= 0.15:
+        support += 20
+        reasons.append("independent plot evidence partially agrees")
+    if shared_genres:
+        support += 10
+        reasons.append("independent genres agree")
+    if shared_directors:
+        support += 35
+        reasons.append("independent director agrees")
+    if len(shared_cast) >= 2:
+        support += 30
+        reasons.append("independent cast agrees")
+    elif shared_cast:
+        support += 15
+        reasons.append("independent cast partially agrees")
+
+    contradictions = []
+    if len(left_words) >= 6 and len(right_words) >= 6 and len(shared_words) <= 1:
+        contradictions.append("provider plots are unrelated")
+    if left_genres and right_genres and not shared_genres:
+        contradictions.append("provider genres are unrelated")
+    if left_directors and right_directors and not shared_directors:
+        contradictions.append("provider directors disagree")
+    if len(left_cast) >= 2 and len(right_cast) >= 2 and not shared_cast:
+        contradictions.append("provider casts are unrelated")
+    return {
+        "support": min(100, support),
+        "conflict": len(contradictions) >= 2,
+        "reasons": reasons,
+        "contradictions": contradictions,
+    }
 
 
 def _matching_queries(candidate, queries):
@@ -116,6 +255,19 @@ def _local_exact_title_year_sources(candidate, queries):
 def _has_filename_or_folder_and_plex_agreement(candidate, queries):
     sources = _local_exact_title_year_sources(candidate, queries)
     return "plex_hint" in sources and bool(sources & {"filename", "folder"})
+
+
+def _has_filename_or_folder_support(candidate, queries):
+    candidate_sources = set((candidate or {}).get("query_sources") or [])
+    if not candidate_sources.intersection({"filename", "folder"}):
+        return False
+    if int((candidate or {}).get("provider_rank", 999) or 999) != 1:
+        return False
+    return any(
+        query.get("source") in {"filename", "folder"}
+        and _title_matches_query(candidate, query)
+        for query in (queries or [])
+    )
 
 
 def _plex_agreement_overrides_low_rivals(top, rivals, queries):
@@ -345,8 +497,13 @@ def classify_audit_decision(current, queries, ranked, provider):
         or (top.get("guid") if provider == "plex" else "")
         or ""
     )
+    verification_reasons = []
     if current_id and candidate_id and current_id == candidate_id:
-        classification = "verified"
+        if _has_filename_or_folder_support(top, queries):
+            classification = "verified"
+        else:
+            classification = "review"
+            verification_reasons.append("accepted provider identity lacks filename support")
     elif (
         not current_id
         and _exact_title_year(current, top)
@@ -390,6 +547,390 @@ def classify_audit_decision(current, queries, ranked, provider):
         "automatic": classification == "automatically_verified",
         "preselected": classification == "recommended",
         "candidate": top,
+        "verification_reasons": verification_reasons,
+    }
+
+
+def _provider_id(candidate, provider):
+    candidate = dict(candidate or {})
+    if provider == "plex":
+        return str(candidate.get("plex_guid") or candidate.get("guid") or "")
+    return str(candidate.get("tmdb_id") or candidate.get("id") or "")
+
+
+def _public_ids(metadata):
+    metadata = dict(metadata or {})
+    return {
+        "tmdb_id": str(metadata.get("tmdb_id") or "").strip(),
+        "imdb_id": str(metadata.get("imdb_id") or "").strip().lower(),
+        "plex_guid": str(metadata.get("plex_guid") or metadata.get("guid") or "").strip().lower(),
+    }
+
+
+def _candidate_matches_public_id(candidate, identity):
+    candidate_ids = _public_ids(candidate)
+    identity_ids = _public_ids(identity)
+    return any(
+        identity_ids[key] and identity_ids[key] == candidate_ids[key]
+        for key in identity_ids
+    )
+
+
+def _audit_result(
+    outcome,
+    candidate,
+    ranked,
+    queries,
+    *,
+    classification=None,
+    reasons=None,
+    automatic=False,
+    date_discrepancy=False,
+):
+    candidate = dict(candidate or {})
+    alternatives = [
+        item for item in ranked
+        if _candidate_identity_key(item) != _candidate_identity_key(candidate)
+    ][:3]
+    return {
+        "outcome": outcome,
+        "status": {
+            "verified": "accepted",
+            "accepted": "accepted",
+            "contradicted": "review",
+            "ambiguous": "review",
+            "unmatched": "unmatched",
+        }.get(outcome, "review"),
+        "classification": classification or {
+            "verified": "verified",
+            "accepted": "automatically_verified" if automatic else "accepted",
+            "contradicted": "actionable",
+            "ambiguous": "review",
+            "unmatched": "unmatched",
+        }.get(outcome, "review"),
+        "actionable": outcome == "contradicted",
+        "automatic": bool(automatic),
+        "preselected": False,
+        "candidate": candidate,
+        "alternatives": alternatives,
+        "evidence_score": int(candidate.get("evidence_score", 0) or 0),
+        "runner_up_gap": int(candidate.get("runner_up_gap", 0) or 0),
+        "reasons": list(dict.fromkeys(reasons or candidate.get("reasons") or [])),
+        "query_sources": list(dict.fromkeys(
+            query.get("source", "") for query in queries if query.get("source")
+        )),
+        "date_discrepancy": bool(date_discrepancy),
+    }
+
+
+def _content_evidence(candidate, independent_claims):
+    best = {"support": 0, "conflict": False, "reasons": [], "contradictions": []}
+    for claim in independent_claims or []:
+        comparison = compare_identity_content(candidate, claim)
+        if comparison["support"] > best["support"] or (
+            comparison["support"] == best["support"]
+            and len(comparison["contradictions"]) > len(best["contradictions"])
+        ):
+            best = comparison
+    return best
+
+
+def _strong_independent_match_candidate(decision, queries, independent_claims):
+    ranked = [
+        dict(candidate or {})
+        for candidate in [
+            decision.get("candidate", {}),
+            *(decision.get("alternatives") or []),
+        ]
+        if candidate
+    ]
+    supported = []
+    for candidate in ranked:
+        content = _content_evidence(candidate, independent_claims)
+        support = int(content.get("support", 0) or 0)
+        title_supported = any(_title_matches_query(candidate, query) for query in queries)
+        compatible_year = any(
+            _year_difference(query.get("year"), candidate.get("year")) <= 2
+            for query in queries
+            if _year(query.get("year")) and _year(candidate.get("year"))
+        )
+        if (
+            support >= 75
+            and not content.get("conflict")
+            and compatible_year
+            and (title_supported or support >= 90)
+            and _provider_signal(candidate, "tmdb") >= 50
+            and _has_real_tmdb_metadata(candidate)
+        ):
+            supported.append((candidate, content))
+    if len(supported) != 1:
+        return {}, {}
+    return supported[0]
+
+
+def _audit_existing_identity(current, queries, candidates, provider, independent_claims):
+    current = dict(current or {})
+    ranked = rank_candidates(queries, candidates or [])
+    if not ranked:
+        return _audit_result(
+            "ambiguous", {}, [], queries,
+            reasons=["No provider candidate was available to verify the accepted identity"],
+        )
+
+    current_provider_id = _provider_id(current, provider)
+    current_candidate = next(
+        (candidate for candidate in ranked if current_provider_id and _provider_id(candidate, provider) == current_provider_id),
+        {},
+    )
+    current_ids = _public_ids(current)
+    independent_id_matches = [
+        candidate for candidate in ranked
+        if any(_candidate_matches_public_id(candidate, claim) for claim in independent_claims or [])
+    ]
+
+    enriched = []
+    for candidate in ranked:
+        content = _content_evidence(candidate, independent_claims)
+        enriched.append({
+            **candidate,
+            "independent_content_score": content["support"],
+            "independent_content_conflict": content["conflict"],
+            "independent_reasons": content["reasons"],
+            "independent_contradictions": content["contradictions"],
+        })
+    ranked = enriched
+    current_candidate = next(
+        (candidate for candidate in ranked if current_provider_id and _provider_id(candidate, provider) == current_provider_id),
+        {},
+    )
+
+    hard_anchor = bool(
+        current_candidate
+        and (
+            current_ids["imdb_id"]
+            and current_ids["imdb_id"] == _public_ids(current_candidate)["imdb_id"]
+            or current_ids["plex_guid"]
+            and current_ids["plex_guid"] == _public_ids(current_candidate)["plex_guid"]
+        )
+    )
+    conflicting_independent_id = next(
+        (
+            candidate for candidate in independent_id_matches
+            if current_provider_id and _provider_id(candidate, provider) != current_provider_id
+        ),
+        {},
+    )
+    if hard_anchor and not conflicting_independent_id:
+        differences = [
+            _year_difference(query.get("year"), current_candidate.get("year"))
+            for query in queries
+            if _title_matches_query(current_candidate, query)
+        ]
+        return _audit_result(
+            "verified", current_candidate, ranked, queries,
+            reasons=["accepted identity retains its stable public ID"],
+            date_discrepancy=any(difference == 1 for difference in differences),
+        )
+
+    if conflicting_independent_id:
+        return _audit_result(
+            "contradicted", conflicting_independent_id, ranked, queries,
+            reasons=["independent provider ID contradicts the accepted identity"],
+        )
+
+    current_content = int(current_candidate.get("independent_content_score", 0) or 0)
+    alternatives = [
+        candidate for candidate in ranked
+        if not current_provider_id or _provider_id(candidate, provider) != current_provider_id
+    ]
+    best_supported = max(
+        alternatives,
+        key=lambda candidate: (
+            int(candidate.get("independent_content_score", 0) or 0),
+            _provider_signal(candidate, provider),
+        ),
+        default={},
+    )
+    best_support = int(best_supported.get("independent_content_score", 0) or 0)
+    current_conflicted = bool(current_candidate.get("independent_content_conflict"))
+    current_contradictions = list(current_candidate.get("independent_contradictions") or [])
+    alternative_dominates_provider = bool(
+        best_supported
+        and _provider_signal(best_supported, provider) >= 100
+        and _provider_signal(best_supported, provider) >= max(
+            5 * _provider_signal(current_candidate, provider),
+            100,
+        )
+    )
+    current_materially_contradicted = bool(
+        current_conflicted
+        or (
+            current_contradictions
+            and best_support >= 30
+            and alternative_dominates_provider
+        )
+    )
+    strong_content_identity = bool(
+        best_supported
+        and best_support >= 75
+        and not best_supported.get("independent_content_conflict")
+        and _provider_signal(best_supported, provider) >= 50
+        and _has_real_tmdb_metadata(best_supported)
+    )
+    supported_title = bool(
+        best_supported
+        and (
+            any(_title_matches_query(best_supported, query) for query in queries)
+            or strong_content_identity
+        )
+    )
+    compatible_year = bool(
+        best_supported
+        and (
+            any(
+                _year_difference(query.get("year"), best_supported.get("year")) in {0, 1}
+                for query in queries
+                if _title_matches_query(best_supported, query)
+            )
+            or (
+                strong_content_identity
+                and any(
+                    _year_difference(query.get("year"), best_supported.get("year")) <= 2
+                    for query in queries
+                    if _year(query.get("year")) and _year(best_supported.get("year"))
+                )
+            )
+        )
+    )
+    content_advantage = bool(
+        current_content <= 10
+        or best_support - current_content >= 50
+    )
+    if (
+        best_supported
+        and best_support >= 30
+        and content_advantage
+        and (current_materially_contradicted or not current_candidate)
+        and supported_title
+        and compatible_year
+        and _has_real_tmdb_metadata(best_supported)
+    ):
+        return _audit_result(
+            "contradicted", best_supported, ranked, queries,
+            reasons=[
+                *(best_supported.get("independent_reasons") or []),
+                *(current_candidate.get("independent_contradictions") or []),
+                "independent provider content contradicts the accepted identity",
+            ],
+            date_discrepancy=any(
+                _year_difference(query.get("year"), best_supported.get("year")) in {1, 2}
+                for query in queries
+                if _title_matches_query(best_supported, query) or strong_content_identity
+            ),
+        )
+
+    if current_candidate:
+        filename_supported = any(
+            query.get("source") in {"filename", "folder", "plex_hint"}
+            and _title_matches_query(current_candidate, query)
+            for query in queries
+        )
+        if filename_supported and not current_materially_contradicted:
+            return _audit_result(
+                "verified", current_candidate, ranked, queries,
+                reasons=["accepted provider identity remains compatible with available evidence"],
+                date_discrepancy=any(
+                    _year_difference(query.get("year"), current_candidate.get("year")) == 1
+                    for query in queries
+                    if _title_matches_query(current_candidate, query)
+                ),
+            )
+
+    return _audit_result(
+        "ambiguous", current_candidate or ranked[0], ranked, queries,
+        reasons=["available evidence does not prove that the accepted identity is wrong"],
+    )
+
+
+def evaluate_identity(
+    queries,
+    candidates,
+    *,
+    current=None,
+    provider="tmdb",
+    mode="match",
+    independent_claims=None,
+    known_identity=None,
+):
+    """Authoritative decision entry point for new matches and accepted-identity audits."""
+    if mode == "audit":
+        current = dict(current or {})
+        if not _provider_id(current, provider):
+            decision = decide_identity(queries, candidates, known_identity=known_identity or current)
+            classification = classify_audit_decision(
+                current,
+                queries,
+                [decision.get("candidate", {}), *(decision.get("alternatives") or [])],
+                provider,
+            )
+            outcome = "accepted" if classification.get("classification") == "automatically_verified" else "ambiguous"
+            return _audit_result(
+                outcome,
+                classification.get("candidate") or decision.get("candidate"),
+                [decision.get("candidate", {}), *(decision.get("alternatives") or [])],
+                queries,
+                classification=classification.get("classification"),
+                reasons=[*(decision.get("reasons") or []), *(classification.get("verification_reasons") or [])],
+                automatic=classification.get("automatic", False),
+                date_discrepancy=decision.get("date_discrepancy", False),
+            )
+        return _audit_existing_identity(current, queries, candidates, provider, independent_claims or [])
+    decision = decide_identity(queries, candidates, known_identity=known_identity)
+    if decision.get("status") == "accepted" and independent_claims:
+        content = _content_evidence(decision.get("candidate", {}), independent_claims)
+        if content.get("conflict"):
+            replacement, replacement_content = _strong_independent_match_candidate(
+                decision,
+                queries,
+                independent_claims,
+            )
+            if replacement and _candidate_identity_key(replacement) != _candidate_identity_key(decision.get("candidate", {})):
+                ranked = [decision.get("candidate", {}), *(decision.get("alternatives") or [])]
+                decision = _result(
+                    "accepted",
+                    ranked,
+                    queries,
+                    True,
+                    replacement,
+                    reasons=[
+                        *(replacement_content.get("reasons") or []),
+                        "one provider candidate uniquely matches independent content evidence",
+                    ],
+                    date_discrepancy=any(
+                        _year_difference(query.get("year"), replacement.get("year")) in {1, 2}
+                        for query in queries
+                        if _year(query.get("year")) and _year(replacement.get("year"))
+                    ),
+                )
+            else:
+                decision = {
+                    **decision,
+                    "status": "conflict",
+                    "automatic": False,
+                    "reasons": list(dict.fromkeys([
+                        *(decision.get("reasons") or []),
+                        *(content.get("contradictions") or []),
+                        "independent provider content contradicts the automatic candidate",
+                    ])),
+                }
+    return {
+        **decision,
+        "outcome": {
+            "accepted": "accepted",
+            "conflict": "contradicted",
+            "review": "ambiguous",
+            "unmatched": "unmatched",
+        }.get(decision.get("status"), "ambiguous"),
     }
 
 

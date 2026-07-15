@@ -13,6 +13,7 @@ class FakeManager:
         self.submitted = []
         self.installed = False
         self.existing_jobs = {}
+        self.completed_results = [{"hash": "abc", "state": "imported"}]
 
     def configuration(self):
         return {
@@ -42,7 +43,7 @@ class FakeManager:
         return {"hash": "def", "state": "downloading", **metadata}
 
     def process_completed(self):
-        return [{"hash": "abc", "state": "imported"}]
+        return self.completed_results
 
     @property
     def jobs(self):
@@ -54,6 +55,11 @@ class FakeManager:
 
             def get(self, torrent_hash):
                 return manager.existing_jobs.get(str(torrent_hash or "").lower())
+
+            def upsert(self, torrent_hash, values):
+                key = str(torrent_hash or "").lower()
+                manager.existing_jobs[key] = {**manager.existing_jobs.get(key, {}), **values, "hash": key}
+                return manager.existing_jobs[key]
 
         return Jobs()
 
@@ -205,6 +211,23 @@ class QBittorrentApiTests(unittest.TestCase):
         finalized = self.client.post("/api/qbittorrent/finalize")
 
         self.assertEqual(finalized.get_json()["results"][0]["state"], "imported")
+
+    def test_finalize_scans_imported_payload_even_when_qbittorrent_cleanup_failed(self):
+        imported = Path(self.temp.name) / "Splice.2009"
+        imported.mkdir()
+        self.manager.completed_results = [{
+            "hash": "abc",
+            "state": "cleanup_failed",
+            "imported_paths": [str(imported)],
+            "library_scan_pending": True,
+        }]
+
+        with patch.object(app, "_start_library_reconcile") as reconcile:
+            response = self.client.post("/api/qbittorrent/finalize")
+
+        self.assertEqual(response.status_code, 200)
+        reconcile.assert_called_once_with()
+        self.assertFalse(self.manager.existing_jobs["abc"]["library_scan_pending"])
 
 
 if __name__ == "__main__":

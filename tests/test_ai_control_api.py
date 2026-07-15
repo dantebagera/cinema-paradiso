@@ -90,6 +90,30 @@ class AiControlApiTest(unittest.TestCase):
             self.assertEqual(data["state"], "unsafe")
             self.assertIn("changed", data["message"].lower())
 
+    def test_execute_create_list_returns_receipt_and_rejects_replay(self):
+        plan = app._ai_control_plan_store.put({
+            "state": "valid_plan",
+            "action": "create_list",
+            "list_name": "AI Sci-Fi",
+            "items": [{"tmdb_id": "348", "title": "Alien", "year": "1979"}],
+        })
+        created = {
+            "id": "ai-sci-fi",
+            "name": "AI Sci-Fi",
+            "movies": plan["items"],
+            "count": 1,
+        }
+
+        with patch("app._ai_control_create_list", return_value=created) as create_list:
+            first = self.client.post("/api/ai-control/execute", json={"plan_id": plan["plan_id"]})
+            second = self.client.post("/api/ai-control/execute", json={"plan_id": plan["plan_id"]})
+
+        self.assertEqual(first.status_code, 200)
+        self.assertEqual(first.get_json()["state"], "executed")
+        self.assertEqual(first.get_json()["total_matches"], 1)
+        self.assertEqual(second.status_code, 409)
+        create_list.assert_called_once()
+
     def test_preview_nonsense_prompt_returns_clarification(self):
         response = self.client.post("/api/ai-control/preview", json={"prompt": "clean my movies"})
 

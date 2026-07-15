@@ -22,6 +22,33 @@ class _FakeResponse:
 
 
 class UserCurationStoreTest(unittest.TestCase):
+    def test_list_reads_reuse_store_json_cache(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = app.UserCurationStore(Path(tmp))
+            store.list_all()
+
+            with patch("builtins.open", side_effect=AssertionError("cached list read should not reopen JSON")):
+                lists = store.list_all()
+
+            self.assertEqual([item["id"] for item in lists[:2]], ["watched", "watchlist"])
+
+    def test_app_curation_store_is_reused_per_user_data_dir(self):
+        original_user_data_dir = app._user_data_dir
+        original_cache = dict(app._curation_store_cache)
+        with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
+            try:
+                app._user_data_dir = first
+                first_store = app._curation_store()
+                self.assertIs(first_store, app._curation_store())
+
+                app._user_data_dir = second
+                second_store = app._curation_store()
+                self.assertIsNot(first_store, second_store)
+                self.assertIs(second_store, app._curation_store())
+            finally:
+                app._user_data_dir = original_user_data_dir
+                app._curation_store_cache = original_cache
+
     def test_system_lists_are_created_and_protected(self):
         with tempfile.TemporaryDirectory() as tmp:
             store = app.UserCurationStore(Path(tmp))
@@ -136,6 +163,24 @@ class UserCurationStoreTest(unittest.TestCase):
 
             self.assertEqual([movie["title"] for movie in updated["movies"]], ["Alien", "Aliens"])
 
+    def test_create_list_with_movies_persists_once_and_returns_actual_contents(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = app.UserCurationStore(Path(tmp))
+            store.list_all()
+            alien = {"tmdb_id": "348", "title": "Alien", "year": "1979"}
+            aliens = {"tmdb_id": "679", "title": "Aliens", "year": "1986"}
+
+            with patch.object(store, "_save_lists", wraps=store._save_lists) as save_lists:
+                created = store.create_list(
+                    "AI Sci-Fi",
+                    movies=[alien, aliens, {**alien, "path": "E:/Copies/Alien.mkv"}],
+                )
+
+            self.assertEqual(save_lists.call_count, 1)
+            self.assertEqual([movie["title"] for movie in created["movies"]], ["Alien", "Aliens"])
+            persisted = next(item for item in store.list_all() if item["id"] == created["id"])
+            self.assertEqual(persisted["movies"], created["movies"])
+
     def test_copy_export_job_copies_local_movies_and_skips_unsafe_entries(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -180,7 +225,7 @@ class UserCurationStoreTest(unittest.TestCase):
             self.assertTrue(store.delete_list(created["id"]))
             self.assertEqual([item["id"] for item in store.list_all()], ["watched", "watchlist"])
 
-    def test_movie_list_fulfillment_preview_uses_quality_and_trusted_indexer_defaults(self):
+    def test_source_review_preview_uses_quality_and_trusted_indexer_defaults(self):
         previous_quality = getattr(app, "_download_default_quality", "1080p")
         previous_mode = getattr(app, "_download_indexer_mode", "release")
         previous_trusted = list(getattr(app, "_download_trusted_indexers", []))
@@ -198,8 +243,8 @@ class UserCurationStoreTest(unittest.TestCase):
                 ],
             ):
                 response = app.app.test_client().post(
-                    "/api/user/lists/fulfillment/preview",
-                    json={"action": "missing", "movies": [movie]},
+                    "/api/sources/review/preview",
+                    json={"movies": [movie]},
                 )
         finally:
             app._download_default_quality = previous_quality
@@ -213,7 +258,7 @@ class UserCurationStoreTest(unittest.TestCase):
         self.assertEqual(data["rows"][0]["variant"]["resolution"], "1080p")
         self.assertEqual(data["rows"][0]["status"], "ready")
 
-    def test_movie_list_fulfillment_submit_only_downloads_selected_ready_rows(self):
+    def test_source_review_submit_only_downloads_selected_ready_rows(self):
         ready = {
             "selected": True,
             "status": "ready",
@@ -232,7 +277,7 @@ class UserCurationStoreTest(unittest.TestCase):
 
         with patch("app._ai_control_submit_download", return_value={"hash": "abc", "name": "Pulp Fiction"}) as submit:
             response = app.app.test_client().post(
-                "/api/user/lists/fulfillment/submit",
+                "/api/sources/review/submit",
                 json={"rows": [ready, skipped]},
             )
 

@@ -1,5 +1,6 @@
 from pathlib import Path
 import unittest
+from tests.frontend_source import read_frontend_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,7 +34,7 @@ class PosterEditorUiTest(unittest.TestCase):
         self.assertIn("data.providers?.tmdb?.message", editor)
 
     def test_library_editor_is_wired_only_to_movie_cards(self):
-        app = APP.read_text(encoding="utf-8")
+        app = read_frontend_source()
 
         self.assertIn("onEditPoster", app)
         self.assertIn("<PosterEditorModal", app)
@@ -42,7 +43,7 @@ class PosterEditorUiTest(unittest.TestCase):
         self.assertNotIn("function CleanupFileRow({ item, selected, selectable, badge, onToggle, onDelete, actions, onEditPoster", app)
 
     def test_owned_home_and_discover_movies_get_editor_but_unowned_movies_do_not(self):
-        app = APP.read_text(encoding="utf-8")
+        app = read_frontend_source()
 
         self.assertIn("onEditPoster={owned ? onEditPoster : undefined}", app)
         self.assertIn("onEditPoster={owned ? () => onEditPoster(owned, movie) : undefined}", app)
@@ -58,7 +59,7 @@ class PosterEditorUiTest(unittest.TestCase):
         self.assertIn("activeTab === 'pick'", app)
 
     def test_editing_uses_poster_pencil_overlays_instead_of_full_card_buttons(self):
-        app = APP.read_text(encoding="utf-8") + SHARED_CARDS.read_text(encoding="utf-8")
+        app = read_frontend_source()
         styles = (ROOT / "src" / "styles.css").read_text(encoding="utf-8")
 
         self.assertIn("function PosterEditButton", app)
@@ -74,7 +75,7 @@ class PosterEditorUiTest(unittest.TestCase):
         self.assertIn(".poster:hover .poster-edit-trigger", styles)
 
     def test_library_duplicate_updates_use_conflict_safe_shared_identity_helper(self):
-        app = APP.read_text(encoding="utf-8")
+        app = read_frontend_source()
 
         self.assertIn("applyPosterOverrideToLibraryItems", app)
         self.assertNotIn("const selectedKeys = new Set(movieIdentityKeys(moviePayload(item)))", app)

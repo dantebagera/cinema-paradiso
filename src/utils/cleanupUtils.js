@@ -15,11 +15,31 @@ export function filterCleanupItems(items, filters) {
   });
 }
 
-export function filterUnmatchedItems(items, filters) {
+export function filterMaintenanceIdentityItems(items, filters) {
   const q = filters.query.trim().toLowerCase();
   return items.filter((item) => {
     if (q) {
-      const haystack = [item.filename, item.path, item.suggested_title, item.suggested_year, item.plex_title, item.tmdb_title, item.metadata_hint, item.plex_hint, item.folder].filter(Boolean).join(' ').toLowerCase();
+      const observations = item.observations || {};
+      const haystack = [
+        item.filename,
+        item.path,
+        item.accepted_title,
+        item.accepted_year,
+        item.suggested_title,
+        item.suggested_year,
+        item.plex_title,
+        item.tmdb_title,
+        item.metadata_hint,
+        item.plex_hint,
+        item.folder,
+        observations.parsed?.title,
+        observations.parsed?.year,
+        observations.plex?.title,
+        observations.plex?.year,
+        observations.tmdb?.title,
+        observations.tmdb?.year,
+        ...(item.verification_reasons || []),
+      ].filter(Boolean).join(' ').toLowerCase();
       if (!haystack.includes(q)) return false;
     }
     if (filters.plex === 'plex-unmatched' && item.plex_matched) return false;
@@ -27,6 +47,7 @@ export function filterUnmatchedItems(items, filters) {
     if (filters.plex === 'pending' && item.metadata_status !== 'pending') return false;
     if (filters.plex === 'conflict' && item.metadata_status !== 'conflict') return false;
     if (filters.plex === 'needs_review' && item.metadata_status !== 'needs_review') return false;
+    if (filters.identity && filters.identity !== 'all' && item.metadata_status !== filters.identity) return false;
     return true;
   });
 }
@@ -59,6 +80,8 @@ export function renameModalItem(item) {
 export function metadataStatusLabel(item) {
   if (item.metadata_status === 'pending') return 'Pending metadata';
   if (item.metadata_status === 'conflict') return 'Conflict';
+  if (item.metadata_status === 'unverified') return 'Verification gap';
+  if (item.metadata_status === 'review') return 'Needs review';
   if (item.metadata_status === 'needs_review') return 'Needs review';
   if (item.in_plex && !item.plex_matched) return 'Plex unmatched';
   if (!item.tmdb_id) return 'TMDB unmatched';
@@ -68,5 +91,7 @@ export function metadataStatusLabel(item) {
 export function metadataStatusChipClass(item) {
   if (item.metadata_status === 'pending') return 'chip-warning';
   if (item.metadata_status === 'conflict') return 'chip-warning';
+  if (item.metadata_status === 'unverified') return 'chip-warning';
+  if (item.metadata_status === 'review') return 'chip-warning';
   return 'status-missing';
 }

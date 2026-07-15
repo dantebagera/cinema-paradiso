@@ -88,20 +88,94 @@ export function mergePeople(primary, fallback) {
   return merged;
 }
 
-export function getRolePeople(item, details, role) {
+export function getStoredRolePeople(item, role) {
   const canonical = item?.canonical_metadata || {};
   if (role === 'director') {
-    const plexDirectors = canonical.directors?.length ? canonical.directors : item?.plex_directors || [];
-    const tmdbDirectors = details?.directors?.length ? details.directors : details?.director?.name ? [details.director] : [];
-    return mergePeople(plexDirectors, tmdbDirectors);
+    return canonical.directors?.length ? canonical.directors : item?.plex_directors || [];
   }
-  const plexCast = canonical.cast?.length ? canonical.cast : item?.plex_cast || [];
-  return mergePeople(plexCast, details?.cast || []);
+  return canonical.cast?.length ? canonical.cast : item?.plex_cast || [];
+}
+
+export function getRolePeople(item, details, role) {
+  if (role === 'director') {
+    const tmdbDirectors = details?.directors?.length ? details.directors : details?.director?.name ? [details.director] : [];
+    return mergePeople(getStoredRolePeople(item, role), tmdbDirectors);
+  }
+  return mergePeople(getStoredRolePeople(item, role), details?.cast || []);
 }
 
 export function itemMatchesRoleFilter(item, details, filter) {
   if (!filter) return true;
-  return getRolePeople(item, details, filter.role).some((person) => peopleMatch(person, filter));
+  const people = filter.localOnly ? getStoredRolePeople(item, filter.role) : getRolePeople(item, details, filter.role);
+  return people.some((person) => peopleMatch(person, filter));
+}
+
+function normalizePersonSearchText(value) {
+  return normalizePersonName(value).replace(/[^a-z0-9]/g, '');
+}
+
+export function buildLibraryPeopleIndex(items = [], query = '') {
+  const queryText = normalizePersonSearchText(query);
+  const people = new Map();
+
+  for (const item of items || []) {
+    if (!item?.canonical_metadata?.accepted) continue;
+    const identity = getMovieIdentity(item);
+    const movieKey = item.path ? `path:${String(item.path).toLowerCase()}` : movieIdentityKey(moviePayload(item));
+    for (const role of ['actor', 'director']) {
+      for (const person of getStoredRolePeople(item, role)) {
+        const name = String(person?.name || '').trim();
+        if (!name) continue;
+        const id = String(person.id || person.tmdb_id || '').trim();
+        const nameKey = normalizePersonSearchText(name);
+        if (!nameKey) continue;
+        const key = id ? `id:${id}` : `name:${nameKey}`;
+        const entry = people.get(key) || {
+          id,
+          name,
+          roles: new Set(),
+          movies: new Map(),
+          localIdentity: !id
+        };
+        entry.roles.add(role);
+        entry.movies.set(movieKey, { title: identity.title || 'Untitled', year: identity.year || '' });
+        people.set(key, entry);
+      }
+    }
+  }
+
+  const identifiedByName = new Map();
+  for (const person of people.values()) {
+    if (!person.id) continue;
+    const nameKey = normalizePersonSearchText(person.name);
+    const matches = identifiedByName.get(nameKey) || [];
+    matches.push(person);
+    identifiedByName.set(nameKey, matches);
+  }
+  for (const [key, person] of people.entries()) {
+    if (person.id) continue;
+    const matches = identifiedByName.get(normalizePersonSearchText(person.name)) || [];
+    if (matches.length !== 1) continue;
+    const identified = matches[0];
+    person.roles.forEach((role) => identified.roles.add(role));
+    person.movies.forEach((movie, movieKey) => identified.movies.set(movieKey, movie));
+    people.delete(key);
+  }
+
+  return [...people.values()]
+    .filter((person) => !queryText || normalizePersonSearchText(person.name).includes(queryText))
+    .map((person) => ({
+      id: person.id,
+      name: person.name,
+      roles: [...person.roles].sort(),
+      movieCount: person.movies.size,
+      knownFor: [...person.movies.values()]
+        .sort((left, right) => left.title.localeCompare(right.title))
+        .slice(0, 3)
+        .map((movie) => movie.year ? `${movie.title} (${movie.year})` : movie.title),
+      localIdentity: person.localIdentity
+    }))
+    .sort((left, right) => right.movieCount - left.movieCount || left.name.localeCompare(right.name));
 }
 
 export function normalizeCollectionTitle(title) {
@@ -251,7 +325,7 @@ export function buildMovieListViewModel({
     const upgrade = Boolean(ownedItem && isLowQuality(ownedItem.resolution));
     const title = ownedPayload?.title || movie.title || 'Untitled';
     const year = ownedPayload?.year || String(movie.year || '').trim();
-    const poster = ownedPayload?.poster_url || movie.poster_url || '';
+    const poster = ownedItem ? (ownedPayload?.poster_url || '') : (movie.poster_url || '');
     return {
       ...movie,
       movie: {

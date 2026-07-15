@@ -16,7 +16,7 @@ class MetadataJsonReliabilityTest(unittest.TestCase):
             backup = json.loads(Path(f"{store.files_file}.bak").read_text(encoding="utf-8"))
             self.assertIn("first", backup["files"])
 
-    def test_malformed_current_file_recovers_from_backup(self):
+    def test_malformed_export_cannot_override_catalog_state(self):
         with tempfile.TemporaryDirectory() as tmp:
             store = AppMetadataStore(Path(tmp))
             store._write_json(store.files_file, {"files": {"first": {"title": "Alien"}}})
@@ -25,16 +25,17 @@ class MetadataJsonReliabilityTest(unittest.TestCase):
 
             recovered = store._read_json(store.files_file, {"files": {}})
 
-            self.assertIn("first", recovered["files"])
+            self.assertIn("second", recovered["files"])
 
-    def test_malformed_store_without_backup_is_not_treated_as_empty(self):
+    def test_malformed_export_is_ignored_after_catalog_activation(self):
         with tempfile.TemporaryDirectory() as tmp:
             store = AppMetadataStore(Path(tmp))
             store.base_dir.mkdir(parents=True)
             store.files_file.write_text("{broken", encoding="utf-8")
 
-            with self.assertRaises(MetadataStoreError):
-                store._read_json(store.files_file, {"files": {}})
+            recovered = store._read_json(store.files_file, {"files": {}})
+
+            self.assertEqual(recovered, {"files": {}})
 
 
 if __name__ == "__main__":

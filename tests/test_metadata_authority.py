@@ -119,10 +119,12 @@ class MetadataAuthorityTest(unittest.TestCase):
                 "imdb_id": "tt0083866",
                 "title": "E.T. the Extra-Terrestrial",
                 "year": "1982",
+                "alternative_titles": ["E.T."],
                 "poster_url": "poster.jpg",
                 "match_source": "plex_tmdb_id",
             }
-            with patch("app._fetch_tmdb_metadata_by_id", return_value=metadata):
+            with patch("app._identity_tmdb_candidates", return_value=[]), \
+                    patch("app._fetch_tmdb_metadata_by_id", return_value=metadata):
                 outcome = app._migrate_metadata_path(str(movie), "tmdb")
 
             record = app.AppMetadataStore(Path(data_tmp)).snapshot()["files"][app._norm(str(movie))]
@@ -131,6 +133,67 @@ class MetadataAuthorityTest(unittest.TestCase):
         self.assertEqual(record["display_provider"], "tmdb")
         self.assertEqual(record["tmdb_id"], "601")
         self.assertTrue(record["metadata_accepted"])
+
+    def test_tmdb_target_does_not_trust_a_plex_external_id_without_filename_support(self):
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(tmp) / "Splice.2009.1080p.mkv"
+            movie.write_bytes(b"movie")
+            app._movies_dirs = [tmp]
+            app._movies_dir = tmp
+            app._user_data_dir = data_tmp
+            app._tmdb_key = "tmdb-key"
+            app._plex_cache = {
+                app._norm(str(movie)): {
+                    "plex_title": "Temptation's Hour",
+                    "plex_year": "2001",
+                    "tmdb_id": "1629337",
+                    "imdb_id": "tt0000001",
+                }
+            }
+            wrong = {
+                "tmdb_id": "1629337",
+                "title": "Temptation's Hour",
+                "year": "2001",
+                "match_source": "plex_tmdb_id",
+            }
+
+            with patch("app._identity_tmdb_candidates", return_value=[]), \
+                    patch("app._fetch_tmdb_metadata_by_id", return_value=wrong):
+                outcome = app._migrate_metadata_path(str(movie), "tmdb")
+            record = app.AppMetadataStore(Path(data_tmp)).snapshot()["files"][app._norm(str(movie))]
+
+        self.assertEqual(outcome, "review")
+        self.assertEqual(record["identity_status"], "unmatched")
+        self.assertEqual(record["metadata_status"], "unmatched")
+        self.assertFalse(record["metadata_accepted"])
+        self.assertEqual(record["candidate_tmdb_id"], "1629337")
+
+    def test_plex_stable_ids_do_not_override_a_filename_identity_mismatch(self):
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as data_tmp:
+            movie = Path(tmp) / "Splice.2009.1080p.mkv"
+            movie.write_bytes(b"movie")
+            app._movies_dirs = [tmp]
+            app._movies_dir = tmp
+            app._user_data_dir = data_tmp
+            app._plex_cache = {
+                app._norm(str(movie)): {
+                    "plex_title": "Temptation's Hour",
+                    "plex_year": "2001",
+                    "tmdb_id": "1629337",
+                    "imdb_id": "tt0000001",
+                    "plex_guid": "plex://movie/wrong",
+                    "rating_key": "44",
+                }
+            }
+
+            outcome = app._migrate_metadata_path(str(movie), "plex")
+            record = app.AppMetadataStore(Path(data_tmp)).snapshot()["files"][app._norm(str(movie))]
+
+        self.assertEqual(outcome, "review")
+        self.assertEqual(record["identity_status"], "unmatched")
+        self.assertEqual(record["metadata_status"], "unmatched")
+        self.assertFalse(record["metadata_accepted"])
+        self.assertEqual(record["candidate_title"], "Temptation's Hour")
 
     def test_provider_migrations_never_modify_local_movie_bytes_or_timestamp(self):
         cases = (
@@ -161,7 +224,8 @@ class MetadataAuthorityTest(unittest.TestCase):
                     "poster_url": "poster.jpg",
                     "match_source": "plex_tmdb_id",
                 }
-                with patch("app._fetch_tmdb_metadata_by_id", return_value=metadata):
+                with patch("app._identity_tmdb_candidates", return_value=[]), \
+                        patch("app._fetch_tmdb_metadata_by_id", return_value=metadata):
                     outcome = app._migrate_metadata_path(str(movie), target)
 
                 after = movie.stat()
@@ -198,7 +262,9 @@ class MetadataAuthorityTest(unittest.TestCase):
                 "match_source": "candidate_tmdb",
             }
 
-            with patch("app._accepted_tmdb_migration_metadata", return_value=(candidate, False)):
+            with patch("app._resolve_tmdb_identity", return_value=app._identity_resolution(
+                "ambiguous", candidate, {"status": "review", "outcome": "ambiguous"}, source="candidate_tmdb"
+            )):
                 outcome = app._migrate_metadata_path(str(movie), "tmdb")
 
             pending = store.snapshot()["files"][app._norm(str(movie))]
@@ -241,7 +307,7 @@ class MetadataAuthorityTest(unittest.TestCase):
                 process_path=app._migrate_metadata_path,
             )
 
-            with patch("app._accepted_tmdb_migration_metadata", side_effect=OSError("provider unavailable")):
+            with patch("app._resolve_tmdb_identity", side_effect=OSError("provider unavailable")):
                 coordinator.start("tmdb", background=False)
                 result = coordinator.run_batch(limit=1)
 

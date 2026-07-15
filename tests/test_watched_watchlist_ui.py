@@ -1,12 +1,10 @@
 from pathlib import Path
 import unittest
+from tests.frontend_source import read_frontend_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
-APP = (
-    (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
-    + (ROOT / "src" / "components" / "SharedMovieCards.jsx").read_text(encoding="utf-8")
-)
+APP = read_frontend_source()
 STYLES = (ROOT / "src" / "styles.css").read_text(encoding="utf-8")
 
 

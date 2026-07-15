@@ -123,6 +123,31 @@ class MetadataArchitectureTest(unittest.TestCase):
         self.assertTrue(canonical["accepted"])
         self.assertEqual(canonical["source"], "manual_tmdb")
 
+    def test_accepted_identity_uses_normalized_plex_enrichment_when_tmdb_snapshot_is_missing(self):
+        canonical = app._build_canonical_metadata(
+            {
+                "path": "E:/Movies/Alien.1979.mkv",
+                "parsed_title": "alien",
+                "parsed_year": "1979",
+            },
+            plex_data={
+                "plex_title": "Alien",
+                "plex_year": "1979",
+                "plex_poster": "plex-poster.jpg",
+            },
+            display_provider="tmdb",
+            file_record={
+                "identity_status": "accepted",
+                "identity_title": "Alien",
+                "identity_year": "1979",
+                "display_provider": "tmdb",
+            },
+        )
+
+        self.assertTrue(canonical["accepted"])
+        self.assertEqual(canonical["enrichment_status"], "complete")
+        self.assertEqual(canonical["poster_url"], "plex-poster.jpg")
+
     def test_auto_tmdb_exact_title_and_year_is_accepted(self):
         self.assertTrue(hasattr(app, "_build_canonical_metadata"), "canonical metadata builder is required")
 

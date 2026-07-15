@@ -1,9 +1,14 @@
 from pathlib import Path
 import unittest
+from tests.frontend_source import read_frontend_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
-APP = (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
+APP_SOURCE = read_frontend_source()
+SHARED_CARDS_SOURCE = (ROOT / "src" / "components" / "SharedMovieCards.jsx").read_text(encoding="utf-8")
+PRESENTATION_SOURCE = (ROOT / "src" / "utils" / "moviePresentation.js").read_text(encoding="utf-8")
+MOVIE_LISTS_SOURCE = (ROOT / "src" / "features" / "movie-lists" / "MovieListsWorkspace.jsx").read_text(encoding="utf-8")
+APP = APP_SOURCE
 MAIN = (ROOT / "src" / "main.jsx").read_text(encoding="utf-8")
 COMPONENT = ROOT / "src" / "components" / "movie-card" / "MovieCard.jsx"
 STYLES = ROOT / "src" / "components" / "movie-card" / "movieCard.css"
@@ -56,7 +61,10 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertIn("{!unreleased && streamingAvailable && (", APP)
         self.assertIn("{!unreleased && (", APP)
 
-        discover_card = APP[APP.index("function DiscoverMovieCard({"):APP.index("function MovieFactChips", APP.index("function DiscoverMovieCard({"))]
+        discover_card = SHARED_CARDS_SOURCE[
+            SHARED_CARDS_SOURCE.index("function DiscoverMovieCard({"):
+            SHARED_CARDS_SOURCE.index("function MovieExpandedDetails", SHARED_CARDS_SOURCE.index("function DiscoverMovieCard({"))
+        ]
         self.assertIn("const unreleased = !owned && isUnreleasedMovie(movie);", discover_card)
         self.assertIn("!unreleased", discover_card)
 
@@ -71,7 +79,7 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertIn("const selectedMovieWithDetails = selectedMovie ? { ...selectedMovie, release_date: selectedMovie.release_date || selectedDetails?.release_date || '' } : null;", APP)
         self.assertIn("selectedMovie={selectedMovieWithDetails}", APP)
 
-        indexer_card = APP[APP.index("function IndexerMovieCard({"):APP.index("function MovieExpandedDetails", APP.index("function IndexerMovieCard({"))]
+        indexer_card = APP[APP.index("function IndexerMovieCard({"):APP.index("function Rating", APP.index("function IndexerMovieCard({"))]
         self.assertNotIn("isUnreleasedMovie", indexer_card)
         self.assertIn("onFindTorrent(movie)", indexer_card)
 
@@ -111,10 +119,124 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertIn("details?.runtime", APP)
         self.assertIn("<span>Runtime</span>", APP)
 
+    def test_expanded_people_cards_include_biography_popup(self):
+        expanded_details = APP[APP.index("function MovieExpandedDetails({"):APP.index("function formatVoteCount", APP.index("function MovieExpandedDetails({"))]
+        self.assertIn("BookOpen", APP)
+        self.assertIn("import { createPortal } from 'react-dom';", APP)
+        self.assertIn("function PersonCreditCard", expanded_details)
+        self.assertIn("className=\"person-bio-button\"", expanded_details)
+        self.assertIn("className=\"person-discover-button\"", expanded_details)
+        self.assertIn("Show all movies for", expanded_details)
+        self.assertIn("<Film size={14} />", expanded_details)
+        self.assertIn("event.stopPropagation()", expanded_details)
+        self.assertIn("fetchJson(`/api/tmdb/person?person_id=${encodeURIComponent(person.id)}`)", expanded_details)
+        self.assertIn("function PersonBioModal", expanded_details)
+        self.assertIn("const biography = String(data.biography || '').trim();", expanded_details)
+        self.assertNotIn("personBioExcerpt(data.biography)", expanded_details)
+        self.assertIn("createPortal(modal, document.body)", expanded_details)
+
+        styles_source = APP_STYLES.read_text(encoding="utf-8")
+        self.assertIn(".person-bio-button", styles_source)
+        self.assertIn(".person-discover-button", styles_source)
+        self.assertIn("bottom: 6px", styles_source)
+        self.assertIn(".person-bio-dialog", styles_source)
+        self.assertIn(".person-bio-backdrop", styles_source)
+
+        bio_dialog_styles = styles_source[
+            styles_source.index(".person-bio-dialog {"):
+            styles_source.index(".person-bio-header")
+        ]
+        self.assertIn("grid-template-rows: auto minmax(0, 1fr)", bio_dialog_styles)
+        self.assertIn("overflow: hidden", bio_dialog_styles)
+
+        bio_copy_styles = styles_source[
+            styles_source.index(".person-bio-copy {"):
+            styles_source.index(".person-bio-copy p")
+        ]
+        self.assertIn("max-height: calc(86vh - 118px)", bio_copy_styles)
+        self.assertIn("overflow: auto", bio_copy_styles)
+
+    def test_library_people_cards_can_jump_to_discover_person_movies(self):
+        discover_source = APP[
+            APP.index("function DiscoverWorkspace({"):
+            APP.index("function DiscoverMovieCard", APP.index("function DiscoverWorkspace({"))
+        ]
+        library_source = APP[
+            APP.index("function LibraryWorkspace"):
+            APP.index("function LibraryFileRow", APP.index("function LibraryWorkspace"))
+        ]
+        library_card_source = SHARED_CARDS_SOURCE[
+            SHARED_CARDS_SOURCE.index("function LibraryMovieCard"):
+        ]
+        movie_lists_source = APP[
+            APP.index("function MovieListsWorkspace"):
+            APP.index("function LibraryWorkspace")
+        ]
+
+        self.assertIn("const [discoverPersonRequest, setDiscoverPersonRequest] = useState(null);", APP)
+        self.assertIn("function openPersonInDiscover(movie, role, person)", APP)
+        self.assertIn("onOpenDiscoverPerson={openPersonInDiscover}", APP)
+        self.assertIn("personRequest={discoverPersonRequest}", APP)
+        self.assertIn("personRequest,", discover_source)
+        self.assertIn("handledPersonRequestRef", discover_source)
+        self.assertIn("function buildPersonMoviesContext(movie, role, person, labelPrefix = '')", discover_source)
+        self.assertIn("setActiveTab('explore')", discover_source)
+        self.assertIn("loadContextPage('explore', context, { append: false })", discover_source)
+        self.assertIn("onPersonDiscover={onOpenDiscoverPerson}", library_source)
+        self.assertIn("onPersonDiscover ? (role, person) => onPersonDiscover({ title: identity.title, year: identity.year }, role, person) : undefined", library_card_source)
+        self.assertIn("onDiscover={onPersonDiscover}", APP)
+        self.assertNotIn("onPersonDiscover=", movie_lists_source)
+
+    def test_discover_relationship_contexts_preserve_filters_and_block_initial_feed_race(self):
+        discover_source = APP[
+            APP.index("function DiscoverWorkspace({"):
+            APP.index("function DiscoverMovieCard", APP.index("function DiscoverWorkspace({"))
+        ]
+
+        self.assertIn("const [isNavigatingDiscoverContext, setIsNavigatingDiscoverContext]", discover_source)
+        self.assertIn("if (isNavigatingDiscoverContext || discoverContext) return;", discover_source)
+        self.assertIn("function appendDiscoverCriteria(params)", discover_source)
+        self.assertIn("if (!isPick) appendDiscoverCriteria(params);", discover_source)
+        self.assertIn("function filterDiscoverContextResults(results)", discover_source)
+        self.assertIn("if (discoverContext.type === 'person' && discoverContext.baseUrl)", discover_source)
+        self.assertIn("loadContextPage('explore', discoverContext, { append: false });", discover_source)
+        self.assertIn("setDiscoverContextSourceResults(results);", discover_source)
+
+    def test_collection_browse_uses_the_tmdb_payload_and_keeps_default_criteria_non_destructive(self):
+        discover_source = (ROOT / "src" / "features" / "discover" / "DiscoverWorkspace.jsx").read_text(encoding="utf-8")
+        result_grid_source = (ROOT / "src" / "components" / "DiscoverResultGrid.jsx").read_text(encoding="utf-8")
+
+        self.assertIn("if (!hasAdvancedDiscoverCriteria()) return [...(results || [])];", discover_source)
+        self.assertIn("const collectionData = await fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(collection.id)}`);", discover_source)
+        self.assertIn("emptyHint={discoverContext?.type === 'collection'", discover_source)
+        self.assertIn("emptyHint || 'Check Settings if this depends on TMDB, Prowlarr, or Ollama.'", result_grid_source)
+
+    def test_discover_people_search_keeps_person_selection_separate_from_movie_cards(self):
+        discover_source = APP[
+            APP.index("function DiscoverWorkspace({"):
+            APP.index("function DiscoverMovieCard", APP.index("function DiscoverWorkspace({"))
+        ]
+
+        self.assertIn("const [discoverSearchKind, setDiscoverSearchKind] = useState('movies');", discover_source)
+        self.assertIn("/api/tmdb/people/search", discover_source)
+        self.assertIn('aria-label="TMDB search type"', discover_source)
+        self.assertIn('<option value="people">People</option>', discover_source)
+        self.assertIn("function openSearchedPersonFilmography(person, role)", discover_source)
+        self.assertIn("const personId = person?.id || person?.tmdb_id;", discover_source)
+        self.assertIn("const selectionSnapshot = {", discover_source)
+        self.assertIn("label: person.name || 'TMDB person'", discover_source)
+        self.assertIn("peopleResults: discoverPeopleResults", discover_source)
+        self.assertIn("setDiscoverHistory((history) => [...history, selectionSnapshot]);", discover_source)
+        self.assertIn("setDiscoverSearchKind(snapshot.searchKind || 'movies');", discover_source)
+        self.assertIn("setDiscoverPeopleResults(snapshot.peopleResults || []);", discover_source)
+        self.assertIn("<PeopleSearchResults", discover_source)
+        self.assertIn("function PeopleSearchResults", APP)
+        self.assertIn("Acting credits", APP)
+        self.assertIn("Directed films", APP)
+
     def test_library_expanded_card_removes_duplicate_metadata_strip(self):
         library_card_start = APP.index("function LibraryMovieCard")
-        library_card_end = APP.index("function CollectionEditorModal", library_card_start)
-        library_card_source = APP[library_card_start:library_card_end]
+        library_card_source = APP[library_card_start:]
         self.assertNotIn('className="movie-expanded-meta"', library_card_source)
         self.assertNotIn("<span>Country</span>", library_card_source)
         self.assertNotIn("<span>Language</span>", library_card_source)
@@ -124,15 +246,15 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
     def test_expanded_people_photos_use_approved_large_scale(self):
         styles_source = STYLES.read_text(encoding="utf-8") + APP_STYLES.read_text(encoding="utf-8")
         self.assertIn("--expanded-director-avatar-size: 96px", styles_source)
-        self.assertIn("--expanded-cast-avatar-size: 90px", styles_source)
+        self.assertIn("--expanded-cast-avatar-size: 106px", styles_source)
         self.assertIn("minmax(160px, 1fr)", styles_source)
 
     def test_expanded_people_photos_use_rectangular_portrait_framing(self):
         styles_source = APP_STYLES.read_text(encoding="utf-8")
         self.assertIn("--expanded-director-avatar-width: 96px", styles_source)
         self.assertIn("--expanded-director-avatar-height: 118px", styles_source)
-        self.assertIn("--expanded-cast-avatar-width: 90px", styles_source)
-        self.assertIn("--expanded-cast-avatar-height: 112px", styles_source)
+        self.assertIn("--expanded-cast-avatar-width: 106px", styles_source)
+        self.assertIn("--expanded-cast-avatar-height: 132px", styles_source)
         self.assertIn("border-radius: 10px", styles_source)
 
         expanded_avatar_styles = styles_source[
@@ -150,6 +272,36 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertIn("width: var(--expanded-cast-avatar-width)", expanded_cast_avatar_styles)
         self.assertIn("height: var(--expanded-cast-avatar-height)", expanded_cast_avatar_styles)
         self.assertIn("border-radius: 10px", expanded_cast_avatar_styles)
+
+    def test_expanded_people_photos_fill_stable_portrait_frames(self):
+        styles_source = APP_STYLES.read_text(encoding="utf-8")
+        avatar_styles = styles_source[
+            styles_source.index(".person-avatar {"):
+            styles_source.index(".person-avatar img")
+        ]
+        self.assertIn("position: relative", avatar_styles)
+        self.assertIn("overflow: hidden", avatar_styles)
+
+        avatar_image_styles = styles_source[
+            styles_source.index(".person-avatar img"):
+            styles_source.index(".person-grid")
+        ]
+        self.assertIn("position: absolute", avatar_image_styles)
+        self.assertIn("inset: 0", avatar_image_styles)
+        self.assertIn("width: 100%", avatar_image_styles)
+        self.assertIn("height: 100%", avatar_image_styles)
+        self.assertIn("min-width: 100%", avatar_image_styles)
+        self.assertIn("min-height: 100%", avatar_image_styles)
+        self.assertIn("object-fit: cover", avatar_image_styles)
+
+        expanded_card_styles = styles_source[
+            styles_source.index(".movie-expanded-people-panel .person-card {"):
+            styles_source.index(".movie-expanded-people-panel .person-card .person-avatar")
+        ]
+        self.assertIn("grid-template-rows: var(--expanded-cast-avatar-height) auto auto", expanded_card_styles)
+        self.assertIn("align-content: start", expanded_card_styles)
+        self.assertIn("justify-items: start", expanded_card_styles)
+        self.assertIn("padding: 10px 46px 10px 10px", expanded_card_styles)
 
     def test_indexer_expanded_card_uses_shared_content_width_and_action_row(self):
         styles_source = APP_STYLES.read_text(encoding="utf-8")

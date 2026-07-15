@@ -155,6 +155,24 @@ class CatalogRepositoryTest(unittest.TestCase):
         self.assertEqual(files["e:/movies/alien 1979.mkv"]["filename"], "Alien 1979.mkv")
         self.assertEqual(plex["e:/movies/alien 1979.mkv"]["path"], "E:/Movies/Alien 1979.mkv")
 
+    def test_finds_cached_plex_metadata_by_poster_thumb(self):
+        with tempfile.TemporaryDirectory() as root:
+            user_data = self._user_data(root)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository.activate_from_json()
+            repository.upsert_record("app_metadata/plex_metadata.json", "e:/movies/postcards.mkv", {
+                "path": "E:/Movies/Postcards.mkv",
+                "plex_title": "Film Postcards: Serbia",
+                "plex_thumb": "/library/metadata/1044/thumb/1777947200",
+                "plex_genres": ["Short"],
+            })
+
+            records = repository.find_plex_metadata_by_thumbs([
+                "/library/metadata/1044/thumb/1777947200",
+            ])
+
+        self.assertEqual(records["/library/metadata/1044/thumb/1777947200"]["plex_title"], "Film Postcards: Serbia")
+
     def test_full_export_is_a_verified_rollback_snapshot(self):
         with tempfile.TemporaryDirectory() as root:
             user_data = self._user_data(root)

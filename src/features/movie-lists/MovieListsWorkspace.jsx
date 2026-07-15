@@ -1,13 +1,15 @@
 import {
-  AlertTriangle, CirclePlus, Copy, Download, Film, Loader2, Pencil, Search, Trash2, Wand2, X
+  AlertTriangle, CirclePlus, Copy, Film, Loader2, Pencil, Search, Trash2, X
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
 import { addMoviePayloadsToList, announceCurationChanged, fetchUserListsCached } from '../../api/curation.js';
+import { previewSourceReview } from '../../api/sourceReview.js';
 import ExportCopyDialog from '../../components/ExportCopyDialog.jsx';
 import ListEditorModal from '../../components/ListEditorModal.jsx';
 import MetadataCorrectionModal from '../../components/MetadataCorrectionModal.jsx';
 import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
+import SourceReviewDialog from '../../components/SourceReviewDialog.jsx';
 import { DiscoverMovieCard, LibraryMovieCard } from '../../components/SharedMovieCards.jsx';
 import { cx, formatCount, movieKey } from '../../utils/appUtils.js';
 import { discoverMoviePayload, listsForDiscoverMovie } from '../../discoverUtils.js';
@@ -35,6 +37,7 @@ export default function MovieListsWorkspace({
   const [renameValue, setRenameValue] = useState('');
   const [expandedKey, setExpandedKey] = useState('');
   const [detailsCache, setDetailsCache] = useState({});
+  const [cardProjections, setCardProjections] = useState({});
   const [collectionCache, setCollectionCache] = useState({});
   const [listEditorTarget, setListEditorTarget] = useState(null);
   const [copyMovies, setCopyMovies] = useState(null);
@@ -44,8 +47,10 @@ export default function MovieListsWorkspace({
   const [ownershipLoading, setOwnershipLoading] = useState(false);
   const [ownershipRefreshKey, setOwnershipRefreshKey] = useState(0);
   const [error, setError] = useState('');
-  const [fulfillment, setFulfillment] = useState(null);
+  const [sourceReview, setSourceReview] = useState(null);
   const ownershipRequestSeq = useRef(0);
+  const cardProjectionInFlightKeys = useRef(new Set());
+  const cardProjectionMounted = useRef(false);
 
   const selectedList = lists.find((list) => list.id === selectedListId) || lists[0] || null;
   const model = useMemo(() => buildMovieListViewModel({
@@ -58,6 +63,20 @@ export default function MovieListsWorkspace({
   const allRowsSelected = model.rows.length > 0 && model.rows.every((row) => selectedKeys.has(row.identityKey));
   const selectedListIsSystem = Boolean(selectedList?.system_type);
   const selectedCopyMovies = selectedRows.map((row) => (row.ownedItem ? moviePayload(row.ownedItem) : movieListRowMovie(row)));
+  const missingCardProjectionMovies = useMemo(() => {
+    const seen = new Set();
+    return model.rows.filter((row) => !row.ownedItem).flatMap((row) => {
+      const movie = movieListRowMovie(row);
+      const key = movieIdentityKey(movie);
+      if (seen.has(key)) return [];
+      seen.add(key);
+      return [{
+        key,
+        tmdb_id: String(movie.tmdb_id || row.tmdb_id || '').trim(),
+        poster_url: movie.poster_url || '',
+      }];
+    });
+  }, [model.rows]);
 
   const loadMovieLists = useCallback(async (options = {}) => {
     const forceLists = Boolean(options?.forceLists);
@@ -133,6 +152,37 @@ export default function MovieListsWorkspace({
     setRenameValue(selectedList?.name || '');
   }, [selectedList?.id, selectedList?.name]);
 
+  useEffect(() => {
+    cardProjectionMounted.current = true;
+    return () => {
+      cardProjectionMounted.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    const movies = missingCardProjectionMovies
+      .filter((movie) => !cardProjections[movie.key] && !cardProjectionInFlightKeys.current.has(movie.key))
+      .slice(0, 50);
+    if (!movies.length) return undefined;
+
+    movies.forEach((movie) => cardProjectionInFlightKeys.current.add(movie.key));
+    fetchJson('/api/tmdb/card-projections', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ movies })
+    }).then((data) => {
+      if (!cardProjectionMounted.current) return;
+      const items = data.items || {};
+      if (Object.keys(items).length) {
+        setCardProjections((current) => ({ ...current, ...items }));
+      }
+    }).catch(() => {
+      // The next relevant render may retry a failed best-effort enrichment.
+    }).finally(() => {
+      movies.forEach((movie) => cardProjectionInFlightKeys.current.delete(movie.key));
+    });
+  }, [missingCardProjectionMovies, cardProjections]);
+
   function toggleRow(row, checked) {
     setSelectedKeys((current) => {
       const next = new Set(current);
@@ -191,11 +241,12 @@ export default function MovieListsWorkspace({
 
   async function openMovieListTrailer(row) {
     const movie = movieListRowMovie(row);
+    const projection = cardProjections[movieIdentityKey(movie)];
     try {
       const details = await loadMovieListDetails(row);
-      onOpenTrailer(movie, details?.trailer_url || '');
+      onOpenTrailer(movie, details?.trailer_url || projection?.trailer_url || '');
     } catch {
-      onOpenTrailer(movie, '');
+      onOpenTrailer(movie, projection?.trailer_url || '');
     }
   }
 
@@ -307,43 +358,31 @@ export default function MovieListsWorkspace({
     if (list?.id) setSelectedListId(list.id);
   }
 
-  async function openFulfillment(action, forcedRows = null) {
-    if (!selectedList) return;
-    const candidates = forcedRows || (selectedRows.length ? selectedRows : model.allRows.filter((row) => (
-      action === 'missing' ? row.status === 'missing' : row.status === 'upgrade'
-    )));
-    if (!candidates.length) {
-      notify?.(action === 'missing' ? 'No missing movies to find.' : 'No upgrade candidates to find.', 'neutral');
+  async function openSelectedSourceReview() {
+    if (!selectedRows.length) {
+      notify?.('Select movies before finding sources.', 'neutral');
       return;
     }
-    setFulfillment({ action, loading: true, rows: [], error: '', title: action === 'missing' ? 'Find missing sources' : 'Find upgrade sources' });
+    setSourceReview({ loading: true, rows: [], error: '', title: 'Find sources' });
     try {
-      const data = await fetchJson('/api/user/lists/fulfillment/preview', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action,
-          movies: candidates.map((row) => ({
-            tmdb_id: row.tmdb_id || row.ownedPayload?.tmdb_id || '',
-            imdb_id: row.imdb_id || row.ownedPayload?.imdb_id || '',
-            title: row.title,
-            year: row.year,
-            poster_url: row.poster_url,
-            path: row.ownedItem?.path || ''
-          }))
-        })
-      });
-      setFulfillment({
-        action,
+      const data = await previewSourceReview(selectedRows.map((row) => ({
+        tmdb_id: row.tmdb_id || row.ownedPayload?.tmdb_id || '',
+        imdb_id: row.imdb_id || row.ownedPayload?.imdb_id || '',
+        title: row.title,
+        year: row.year,
+        poster_url: row.poster_url,
+        path: row.ownedItem?.path || ''
+      })));
+      setSourceReview({
         loading: false,
         rows: data.rows || [],
         blocked: data.blocked || [],
         defaults: data.defaults || {},
         error: '',
-        title: action === 'missing' ? 'Find missing sources' : 'Find upgrade sources'
+        title: 'Find sources'
       });
     } catch (previewError) {
-      setFulfillment((current) => ({ ...current, loading: false, error: previewError.message }));
+      setSourceReview((current) => ({ ...current, loading: false, error: previewError.message }));
     }
   }
 
@@ -443,11 +482,8 @@ export default function MovieListsWorkspace({
               <button type="button" className="mini-action mini-action-danger" onClick={removeSelectedFromActiveList} disabled={!selectedRows.length || !selectedList}>
                 <Trash2 size={13} /> Remove selected
               </button>
-              <button type="button" className="mini-action" onClick={() => openFulfillment('missing')} disabled={!selectedList || !model.allRows.some((row) => row.status === 'missing')}>
-                <Download size={13} /> Find missing
-              </button>
-              <button type="button" className="mini-action" onClick={() => openFulfillment('upgrade')} disabled={!selectedList || !model.allRows.some((row) => row.status === 'upgrade')}>
-                <Wand2 size={13} /> Find upgrades
+              <button type="button" className="mini-action mini-action-source" onClick={openSelectedSourceReview} disabled={!selectedRows.length}>
+                <Search size={13} /> Find sources
               </button>
             </div>
           )}
@@ -461,8 +497,19 @@ export default function MovieListsWorkspace({
                 {model.rows.map((row) => {
                   const movie = movieListRowMovie(row);
                   const tmdbId = String(movie.tmdb_id || row.ownedPayload?.tmdb_id || '');
+                  const projection = !row.ownedItem ? cardProjections[movieIdentityKey(movie)] : null;
+                  const cardMovie = projection ? {
+                    ...movie,
+                    ...projection,
+                    poster_url: projection.poster_url || movie.poster_url || '',
+                  } : movie;
                   const details = tmdbId ? detailsCache[tmdbId] : null;
-                  const collection = tmdbId && details?.collection?.id ? collectionCache[details.collection.id] || details.collection : {};
+                  const cardDetails = projection
+                    ? { ...projection, ...(!details?.loading && !details?.error ? details : {}) }
+                    : details;
+                  const collection = tmdbId && cardDetails?.collection?.id
+                    ? collectionCache[cardDetails.collection.id] || cardDetails.collection
+                    : {};
                   const rowLists = row.ownedItem ? listsForItem(row.ownedItem, lists) : listsForDiscoverMovie(movie, lists, null);
                   const watched = rowLists.some((list) => list.system_type === 'watched');
                   const watchlisted = rowLists.some((list) => list.system_type === 'watchlist');
@@ -496,11 +543,11 @@ export default function MovieListsWorkspace({
                   return (
                     <DiscoverMovieCard
                       key={row.identityKey}
-                      movie={movie}
+                      movie={cardMovie}
                       owned={null}
-                      followed={followed.some((item) => movieKey(item) === movieKey(movie))}
+                      followed={followed.some((item) => movieKey(item) === movieKey(cardMovie))}
                       expanded={expandedKey === row.identityKey}
-                      details={details}
+                      details={cardDetails}
                       collection={collection}
                       itemLists={rowLists}
                       watched={watched}
@@ -532,11 +579,11 @@ export default function MovieListsWorkspace({
         </div>
       </div>
 
-      {fulfillment && (
-        <MovieListFulfillmentDialog
-          state={fulfillment}
-          setState={setFulfillment}
-          onClose={() => setFulfillment(null)}
+      {sourceReview && (
+        <SourceReviewDialog
+          state={sourceReview}
+          setState={setSourceReview}
+          onClose={() => setSourceReview(null)}
           notify={notify}
         />
       )}
@@ -576,112 +623,6 @@ export default function MovieListsWorkspace({
         />
       )}
     </section>
-  );
-}
-
-function MovieListFulfillmentDialog({ state, setState, onClose, notify }) {
-  const readyRows = (state.rows || []).filter((row) => row.status === 'ready');
-  const selectedCount = readyRows.filter((row) => row.selected !== false).length;
-
-  function updateRows(updater) {
-    setState((current) => ({ ...current, rows: updater(current.rows || []) }));
-  }
-
-  function setAllRows(selected) {
-    updateRows((rows) => rows.map((row) => (row.status === 'ready' ? { ...row, selected } : row)));
-  }
-
-  function setSelectedQuality(quality) {
-    updateRows((rows) => rows.map((row) => (
-      row.status === 'ready' && row.selected !== false ? { ...row, quality } : row
-    )));
-  }
-
-  async function submitSelected() {
-    setState((current) => ({ ...current, submitting: true, error: '' }));
-    try {
-      const data = await fetchJson('/api/user/lists/fulfillment/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ rows: state.rows || [] })
-      });
-      notify?.(`Submitted ${formatCount(data.submitted_count || 0)} movie${Number(data.submitted_count || 0) === 1 ? '' : 's'} to qBittorrent`);
-      onClose();
-    } catch (submitError) {
-      setState((current) => ({ ...current, submitting: false, error: submitError.message }));
-    }
-  }
-
-  return (
-    <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="torrent-dialog movie-list-fulfillment-dialog" role="dialog" aria-modal="true" aria-label={state.title || 'Movie list fulfillment'} onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header">
-          <div>
-            <p className="screen-kicker">Trusted source review</p>
-            <h2>{state.title || 'Review sources'}</h2>
-          </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close source review">
-            <X size={18} />
-          </button>
-        </div>
-
-        {state.loading ? (
-          <div className="source-loading-panel"><Loader2 size={20} className="spin" /><strong>Finding trusted sources...</strong><span>This may take some time depending on selected indexers.</span></div>
-        ) : (
-          <>
-            <div className="bulk-selection-bar movie-list-review-actions">
-              <span>{formatCount(selectedCount)} selected for download</span>
-              <button type="button" className="mini-action" onClick={() => setAllRows(true)}>Select all</button>
-              <button type="button" className="mini-action" onClick={() => setAllRows(false)}>Select none</button>
-              <button type="button" className="mini-action" onClick={() => setSelectedQuality('1080p')}>Set selected to 1080p</button>
-              <button type="button" className="mini-action" onClick={() => setSelectedQuality('4K')}>Set selected to 4K</button>
-            </div>
-            {state.error ? <div className="library-status library-status-error"><AlertTriangle size={16} /> {state.error}</div> : null}
-            <div className="movie-list-review-table">
-              <div className="movie-list-review-head">
-                <span>Pick</span>
-                <span>Movie</span>
-                <span>Release</span>
-                <span>Indexer</span>
-                <span>Quality</span>
-                <span>Status</span>
-              </div>
-              {(state.rows || []).map((row, index) => (
-                <div className="movie-list-review-row" key={`${row.tmdb_id || row.title}-${index}`}>
-                  <SelectionCheckbox
-                    checked={row.status === 'ready' && row.selected !== false}
-                    onChange={(checked) => updateRows((rows) => rows.map((item, itemIndex) => itemIndex === index ? { ...item, selected: checked } : item))}
-                    label={`Select ${row.title}`}
-                  />
-                  <span><strong>{row.title}</strong><small>{row.year || 'Unknown year'}</small></span>
-                  <span title={row.variant?.title || row.reason || ''}>{row.variant?.title || row.reason || 'No release'}</span>
-                  <span>{row.variant?.indexer || '-'}</span>
-                  <select
-                    value={row.quality || state.defaults?.quality || '1080p'}
-                    disabled={row.status !== 'ready'}
-                    onChange={(event) => updateRows((rows) => rows.map((item, itemIndex) => itemIndex === index ? { ...item, quality: event.target.value } : item))}
-                  >
-                    <option value="1080p">1080p</option>
-                    <option value="4K">4K</option>
-                  </select>
-                  <span>{row.status === 'ready' ? [row.variant?.size_human, row.variant?.seeders ? `${row.variant.seeders} seeders` : ''].filter(Boolean).join(' - ') || 'Ready' : row.reason || row.status}</span>
-                </div>
-              ))}
-            </div>
-            {state.blocked?.length ? (
-              <p className="settings-empty-note">{formatCount(state.blocked.length)} movie{state.blocked.length === 1 ? '' : 's'} had no trusted source.</p>
-            ) : null}
-          </>
-        )}
-
-        <div className="dialog-actions">
-          <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
-          <button type="button" className="btn btn-primary" onClick={submitSelected} disabled={state.loading || state.submitting || !selectedCount}>
-            {state.submitting ? <Loader2 size={15} className="spin" /> : <Download size={15} />} Submit selected to qBittorrent
-          </button>
-        </div>
-      </section>
-    </div>
   );
 }
 

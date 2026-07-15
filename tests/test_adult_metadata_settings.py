@@ -114,6 +114,111 @@ class AdultMetadataSettingsTest(unittest.TestCase):
         self.assertIn("year=1976", seen_urls[0])
         self.assertNotIn("query=Shining+Sex+1976", seen_urls[0])
 
+    def test_tmdb_search_refines_title_results_with_discover_criteria(self):
+        app._tmdb_key = "tmdb-key"
+        app._tmdb_genres = {16: "Animation", 18: "Drama"}
+        seen_urls = []
+
+        def fake_urlopen(request, timeout=0):
+            seen_urls.append(request.full_url)
+            return FakeResponse({
+                "total_pages": 1,
+                "total_results": 5,
+                "results": [
+                    {"id": 1, "title": "Tom Cartoon", "genre_ids": [16], "release_date": "1997-01-01", "vote_average": 7.2, "vote_count": 200, "popularity": 3},
+                    {"id": 2, "title": "Tom Cartoon Returns", "genre_ids": [16], "release_date": "1999-01-01", "vote_average": 8.5, "vote_count": 400, "popularity": 2},
+                    {"id": 3, "title": "Tom Drama", "genre_ids": [18], "release_date": "1999-01-01", "vote_average": 9.0, "vote_count": 500, "popularity": 4},
+                    {"id": 4, "title": "Old Tom Cartoon", "genre_ids": [16], "release_date": "1980-01-01", "vote_average": 9.0, "vote_count": 500, "popularity": 4},
+                    {"id": 5, "title": "Low Rated Tom Cartoon", "genre_ids": [16], "release_date": "1998-01-01", "vote_average": 6.0, "vote_count": 500, "popularity": 4},
+                ],
+            })
+
+        with patch.object(app, "_ensure_tmdb_genres"), patch.object(app.urllib.request, "urlopen", side_effect=fake_urlopen):
+            response = self.client.get(
+                "/api/tmdb/search?q=tom&genre=16&year_from=1990&year_to=2000&min_rating=7&min_votes=100&sort=vote_average.desc"
+            )
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.get_json()
+        self.assertEqual([movie["title"] for movie in payload["results"]], ["Tom Cartoon Returns", "Tom Cartoon"])
+        self.assertTrue(payload["criteria_applied"])
+        self.assertIn("query=tom", seen_urls[0])
+        self.assertNotIn("with_genres", seen_urls[0])
+
+    def test_tmdb_people_search_returns_selectable_people_with_known_for_titles(self):
+        app._tmdb_key = "tmdb-key"
+        seen_urls = []
+
+        def fake_urlopen(request, timeout=0):
+            seen_urls.append(request.full_url)
+            return FakeResponse({
+                "page": 1,
+                "total_pages": 1,
+                "total_results": 1,
+                "results": [{
+                    "id": 6941,
+                    "name": "Mel Gibson",
+                    "profile_path": "/mel.jpg",
+                    "known_for_department": "Acting",
+                    "popularity": 9.5,
+                    "known_for": [
+                        {"title": "Braveheart"},
+                        {"title": "Mad Max"},
+                    ],
+                }],
+            })
+
+        with patch.object(app.urllib.request, "urlopen", side_effect=fake_urlopen):
+            response = self.client.get("/api/tmdb/people/search?q=melgibson&page=1&include_adult=false")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.get_json()
+        self.assertEqual(payload["results"][0]["tmdb_id"], "6941")
+        self.assertEqual(payload["results"][0]["known_for"], ["Braveheart", "Mad Max"])
+        self.assertIn("/search/person?", seen_urls[0])
+        self.assertIn("query=melgibson", seen_urls[0])
+
+    def test_tmdb_people_search_recovers_an_unspaced_exact_name(self):
+        app._tmdb_key = "tmdb-key"
+        seen_urls = []
+
+        def fake_urlopen(request, timeout=0):
+            seen_urls.append(request.full_url)
+            if "query=mel+gibson" in request.full_url:
+                return FakeResponse({
+                    "page": 1,
+                    "total_pages": 1,
+                    "total_results": 1,
+                    "results": [{"id": 6941, "name": "Mel Gibson", "known_for": []}],
+                })
+            return FakeResponse({"page": 1, "total_pages": 1, "total_results": 0, "results": []})
+
+        with patch.object(app.urllib.request, "urlopen", side_effect=fake_urlopen):
+            response = self.client.get("/api/tmdb/people/search?q=melgibson&page=1")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.get_json()
+        self.assertEqual([person["name"] for person in payload["results"]], ["Mel Gibson"])
+        self.assertEqual(payload["total_results"], 1)
+        self.assertTrue(any("query=mel+gibson" in url for url in seen_urls))
+
+    def test_tmdb_catalog_uses_discover_endpoint_without_a_feed_preset(self):
+        app._tmdb_key = "tmdb-key"
+        app._tmdb_genres = {}
+        seen_urls = []
+
+        def fake_urlopen(request, timeout=0):
+            seen_urls.append(request.full_url)
+            return FakeResponse({"results": [], "total_pages": 1, "total_results": 0})
+
+        with patch.object(app, "_ensure_tmdb_genres"), patch.object(app.urllib.request, "urlopen", side_effect=fake_urlopen):
+            response = self.client.get("/api/tmdb/discover?list=catalog&page=1")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(seen_urls)
+        self.assertIn("/discover/movie?", seen_urls[0])
+        self.assertIn("sort_by=popularity.desc", seen_urls[0])
+
     def test_canonical_tmdb_metadata_preserves_adult_flag(self):
         canonical = app._build_canonical_metadata(
             {"parsed_title": "Shining Sex", "parsed_year": "1976"},

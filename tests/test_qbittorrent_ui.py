@@ -1,13 +1,14 @@
 from pathlib import Path
 import json
 import unittest
+from tests.frontend_source import read_frontend_source
 
 
 class QBittorrentUiTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         root = Path(__file__).resolve().parents[1]
-        cls.source = (root / "src" / "App.jsx").read_text(encoding="utf-8")
+        cls.source = read_frontend_source()
         cls.help_source = (root / "src" / "features" / "help" / "HelpWorkspace.jsx").read_text(encoding="utf-8")
         cls.backend_source = (root / "app.py").read_text(encoding="utf-8")
 
@@ -32,7 +33,7 @@ class QBittorrentUiTests(unittest.TestCase):
             "Quick Start",
             "Home dashboard",
             "Library workspace",
-            "Cleanup workspace",
+            "Library Maintenance workspace",
             "Discover workspace",
             "Downloads workspace",
             "Settings workspace",

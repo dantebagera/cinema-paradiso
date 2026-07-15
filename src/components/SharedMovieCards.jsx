@@ -15,7 +15,7 @@ import {
   formatReleaseDateLabel, formatVoteCount, isUnreleasedMovie
 } from '../utils/moviePresentation.js';
 
-function PosterEditButton({ title, onEdit }) {
+export function PosterEditButton({ title, onEdit }) {
   if (!onEdit) return null;
   return (
     <button
@@ -33,7 +33,7 @@ function PosterEditButton({ title, onEdit }) {
   );
 }
 
-function PosterStateControls({
+export function PosterStateControls({
   title,
   watched,
   watchlisted,
@@ -595,7 +595,7 @@ export function LibraryMovieCard({
       {expanded && (
         <>
           <p className="library-summary movie-summary-expanded">
-            {canonical.summary || canonical.plot || item.plex_summary || 'No plot summary is available yet.'}
+            {details?.summary || details?.plot || canonical.summary || canonical.plot || item.plex_summary || 'No plot summary is available yet.'}
           </p>
           <div className="library-card-actions">
             <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(item.path)}>

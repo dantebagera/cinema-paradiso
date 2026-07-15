@@ -43,12 +43,14 @@ function IdentityRows({
         const idChanged = Boolean(currentId && candidateId && currentId !== candidateId);
         const statusLabel = proposal.proposal_type === 'metadata_discrepancy'
           ? 'Metadata discrepancy'
+          : proposal.classification === 'actionable'
+            ? 'Actionable contradiction'
           : proposal.classification === 'recommended'
           ? 'Recommended correction'
           : proposal.classification === 'weak'
             ? 'Weak match'
             : proposal.classification === 'automatic'
-              ? 'Automatically applied'
+              ? 'Automatically verified'
               : 'Needs review';
         return (
           <article className={`identity-review-row identity-review-${proposal.classification || 'review'}`} key={proposal.id}>
@@ -58,7 +60,7 @@ function IdentityRows({
                 <span>Select</span>
               </label>
             ) : (
-              <span className="identity-review-applied"><CheckCircle2 size={17} /></span>
+              <span className="identity-review-applied"><AlertTriangle size={17} /></span>
             )}
             <span className="match-result-poster">
               {proposal.candidate?.poster_url ? <img src={proposal.candidate.poster_url} alt="" loading="lazy" /> : <Clapperboard size={20} />}
@@ -170,12 +172,14 @@ export default function IdentityReviewPanel({
     [items]
   );
   const automaticRows = audit?.automatic_fixes || [];
+  const shadowMode = audit?.shadow_mode !== false;
+  const outcomeCounts = audit?.outcome_counts || {};
 
   useEffect(() => {
     if (!audit?.id || selectedJob === audit.id) return;
-    setSelected(new Set(audit.status === 'completed' ? recommendedIds : []));
+    setSelected(new Set());
     setSelectedJob(audit.id);
-  }, [audit?.id, audit?.status, recommendedIds, selectedJob]);
+  }, [audit?.id, selectedJob]);
 
   useEffect(() => {
     if (!externalApproved) return;
@@ -321,7 +325,7 @@ export default function IdentityReviewPanel({
       <section className="identity-review-intro">
         <div>
           <strong>Review possible identity corrections</strong>
-          <p>These movies are already matched, but Cinema Paradiso found evidence that some may point to the wrong movie. Unmatched files are handled separately. Safe missing provider links are verified automatically; identity-changing corrections require your approval.</p>
+          <p>The full library check is read-only. Only identities contradicted by independent provider evidence appear below.</p>
           {audit?.requires_refresh && (
             <p className="identity-review-refresh-note">
               Previous results used older matching rules. Run the audit again to review only results
@@ -342,7 +346,7 @@ export default function IdentityReviewPanel({
           )}
           {audit?.status !== 'running' && (
             <button type="button" className="btn btn-secondary" onClick={onStart}>
-              <RefreshCcw size={15} /> Start new scan
+              <RefreshCcw size={15} /> Recheck all identities
             </button>
           )}
         </div>
@@ -359,18 +363,19 @@ export default function IdentityReviewPanel({
       )}
 
       <div className="identity-review-summary">
-        <span><CheckCircle2 size={14} /> {automaticRows.length} automatic fixes</span>
-        <span>{audit?.recommended_count || 0} recommended</span>
-        <span>{reviewRows.length} need review</span>
-        <span>{weakRows.length} weak</span>
+        <span><CheckCircle2 size={14} /> {outcomeCounts.verified || 0} verified</span>
+        <span>{outcomeCounts.manual || 0} manual identities protected</span>
+        <span>{outcomeCounts.actionable || 0} actionable</span>
+        <span>{outcomeCounts.ambiguous || 0} uncertain, no action</span>
+        <span>{outcomeCounts.unmatched || 0} unmatched</span>
         <span>{audit?.last_checked_at ? `Last checked ${new Date(audit.last_checked_at * 1000).toLocaleString()}` : 'Not checked yet'}</span>
       </div>
 
-      {automaticRows.length > 0 && (
+      {!shadowMode && automaticRows.length > 0 && (
         <details className="identity-review-automatic">
           <summary>
-            <span><CheckCircle2 size={16} /> Automatic fixes</span>
-            <small>{automaticRows.length} safely applied · inspect if you want to verify Cinema Paradiso’s judgement</small>
+            <span><CheckCircle2 size={16} /> Automatic verifications</span>
+            <small>{automaticRows.length} verified without changing the accepted identity</small>
           </summary>
           <p>These rows only added a missing provider link to the same exact movie identity. No existing provider identity was replaced.</p>
           <IdentityRows
@@ -387,7 +392,7 @@ export default function IdentityReviewPanel({
         </details>
       )}
 
-      {visibleIds.length > 0 && (
+      {!shadowMode && visibleIds.length > 0 && (
         <div className="smart-match-bulk">
           <label>
             <input
@@ -409,55 +414,65 @@ export default function IdentityReviewPanel({
         </div>
       )}
 
-      {selected.size > 0 && <ApplyControls label="Apply selected corrections" />}
+      {!shadowMode && selected.size > 0 && <ApplyControls label="Apply selected corrections" />}
 
-      <ReviewSection
+      {shadowMode && (
+        <ReviewSection
+          title="Actionable contradictions"
+          description="Independent provider IDs or content evidence contradict the accepted movie identity. Nothing has been changed."
+          rows={items || []}
+        >
+          <IdentityRows rows={items || []} selected={selected} selectable={false} plexAvailable={plexAvailable} onToggle={toggle} onPlay={onPlay} onTmdbMatch={onTmdbMatch} onPlexMatch={onPlexMatch} onCorrectMetadata={setCorrectionTarget} />
+        </ReviewSection>
+      )}
+
+      {!shadowMode && <ReviewSection
         title="Recommended corrections"
-        description="Strong identity-changing proposals. They are preselected but are never applied without your approval."
+        description="Strong identity-changing proposals. They remain unselected until you explicitly choose them."
         rows={recommendedRows}
       >
         <IdentityRows rows={recommendedRows} selected={selected} selectable plexAvailable={plexAvailable} onToggle={toggle} onPlay={onPlay} onTmdbMatch={onTmdbMatch} onPlexMatch={onPlexMatch} onCorrectMetadata={setCorrectionTarget} />
-      </ReviewSection>
+      </ReviewSection>}
 
-      <ReviewSection
+      {!shadowMode && <ReviewSection
         title="Metadata discrepancies"
         description="The accepted movie identity is exact, but the filename and provider years differ by at least three years. Review the display year before saving a local correction."
         rows={discrepancyRows}
       >
         <IdentityRows rows={discrepancyRows} selected={selected} selectable plexAvailable={plexAvailable} onToggle={toggle} onPlay={onPlay} onTmdbMatch={onTmdbMatch} onPlexMatch={onPlexMatch} onCorrectMetadata={setCorrectionTarget} />
-      </ReviewSection>
+      </ReviewSection>}
 
-      <ReviewSection
+      {!shadowMode && <ReviewSection
         title="Needs review"
         description="Plausible proposals with ambiguous evidence, a narrow runner-up gap, or a provider-ID conflict."
         rows={reviewRows}
       >
         <IdentityRows rows={reviewRows} selected={selected} selectable plexAvailable={plexAvailable} onToggle={toggle} onPlay={onPlay} onTmdbMatch={onTmdbMatch} onPlexMatch={onPlexMatch} onCorrectMetadata={setCorrectionTarget} />
-      </ReviewSection>
+      </ReviewSection>}
 
-      <ReviewSection
+      {!shadowMode && <ReviewSection
         title="Weak matches"
         description="Evidence score below 70. These are never preselected and need close manual inspection."
         rows={weakRows}
       >
         <IdentityRows rows={weakRows} selected={selected} selectable plexAvailable={plexAvailable} onToggle={toggle} onPlay={onPlay} onTmdbMatch={onTmdbMatch} onPlexMatch={onPlexMatch} onCorrectMetadata={setCorrectionTarget} />
-      </ReviewSection>
+      </ReviewSection>}
 
       {!items?.length && !automaticRows.length && !['running', 'paused'].includes(audit?.status) && (
         <div className="empty-state library-empty cleanup-empty">
           <strong>No matched identities currently need review.</strong>
-          <span>Start a new scan after changing metadata authority or adding provider metadata.</span>
+          <span>Run the full-library check after changing metadata authority or matching rules.</span>
         </div>
       )}
 
-      <footer className="identity-review-footer">
+      {!shadowMode && <footer className="identity-review-footer">
         <ApplyControls label="Apply selected corrections" />
         {approved.length > 0 && !renamePreview && (
           <button type="button" className="btn btn-secondary" onClick={previewRename} disabled={Boolean(busy)}>
             <Sparkles size={15} /> Preview rename corrected files
           </button>
         )}
-      </footer>
+      </footer>}
 
       {renamePreview && (
         <section className="identity-rename-preview">
