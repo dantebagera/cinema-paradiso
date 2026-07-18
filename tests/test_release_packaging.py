@@ -19,7 +19,7 @@ class PortableReleasePackagingTests(unittest.TestCase):
         self.assertEqual(manifest["name"], "qBittorrent")
         self.assertEqual(manifest["version"], "5.2.2")
         self.assertEqual(manifest["source"], "official qBittorrent Windows x64 release")
-        self.assertEqual(manifest["bundled_for"], "Cinema Paradiso 2.7.0")
+        self.assertEqual(manifest["bundled_for"], "Cinema Paradiso 2.8.0")
 
     def test_copy_qbt_runtime_excludes_profile_user_data_and_requires_exe(self):
         from tools.build_portable_release import copy_qbt_runtime

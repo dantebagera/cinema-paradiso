@@ -138,11 +138,45 @@ class QBittorrentApiTests(unittest.TestCase):
             "magnet_url": magnet,
             "title": "Movie",
             "year": "2026",
+            "tmdb_id": "800",
+            "imdb_id": "tt0000800",
         })
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(self.manager.submitted[0][0], "magnet")
         self.assertEqual(self.manager.submitted[0][2]["title"], "Movie")
+        self.assertEqual(self.manager.submitted[0][2]["tmdb_id"], "800")
+        self.assertEqual(self.manager.submitted[0][2]["imdb_id"], "tt0000800")
+        self.assertEqual(self.manager.submitted[0][2]["identity_handoff"]["state"], "pending")
+
+    def test_submit_blocks_owned_movies_unless_the_request_is_an_upgrade(self):
+        magnet = "magnet:?xt=urn:btih:1123456789abcdef0123456789abcdef01234567"
+        payload = {
+            "magnet_url": magnet,
+            "title": "Movie",
+            "year": "2026",
+            "tmdb_id": "800",
+        }
+
+        with patch("app._curated_movie_is_owned", return_value=True):
+            blocked = self.client.post("/api/qbittorrent/submit", json=payload)
+            upgrade = self.client.post("/api/qbittorrent/submit", json={**payload, "upgrade": True})
+
+        self.assertEqual(blocked.status_code, 409)
+        self.assertIn("already in the library", blocked.get_json()["error"])
+        self.assertEqual(upgrade.status_code, 200)
+        self.assertEqual(len(self.manager.submitted), 1)
+
+    def test_submit_rejects_title_only_jobs(self):
+        response = self.client.post("/api/qbittorrent/submit", json={
+            "magnet_url": "magnet:?xt=urn:btih:2123456789abcdef0123456789abcdef01234567",
+            "title": "Unidentified Movie",
+            "year": "2026",
+        })
+
+        self.assertEqual(response.status_code, 400)
+        self.assertIn("TMDB or IMDb identity", response.get_json()["error"])
+        self.assertEqual(self.manager.submitted, [])
 
     def test_submit_rejects_arbitrary_download_url(self):
         response = self.client.post("/api/qbittorrent/submit", json={
@@ -164,6 +198,7 @@ class QBittorrentApiTests(unittest.TestCase):
             response = self.client.post("/api/qbittorrent/submit", json={
                 "download_url": "http://prowlarr.test/prowlarr/6/download?id=1",
                 "title": "Movie",
+                "tmdb_id": "800",
             })
 
         self.assertEqual(response.status_code, 200)
@@ -193,6 +228,7 @@ class QBittorrentApiTests(unittest.TestCase):
         response = self.client.post("/api/qbittorrent/submit", json={
             "magnet_url": magnet,
             "title": "Movie",
+            "tmdb_id": "800",
         })
 
         self.assertEqual(response.status_code, 200)
@@ -227,7 +263,10 @@ class QBittorrentApiTests(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         reconcile.assert_called_once_with()
-        self.assertFalse(self.manager.existing_jobs["abc"]["library_scan_pending"])
+        job = self.manager.existing_jobs["abc"]
+        self.assertFalse(job["library_scan_pending"])
+        self.assertEqual(job["identity_handoff"]["state"], "deferred")
+        self.assertEqual(job["identity_handoff"]["reason"], "The download job has no stable identity")
 
 
 if __name__ == "__main__":

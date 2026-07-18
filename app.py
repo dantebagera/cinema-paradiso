@@ -1761,6 +1761,7 @@ def _build_canonical_metadata(
             'identity_status': 'accepted',
             'enrichment_status': resolved.get('enrichment_state', 'incomplete'),
             'source': resolved.get('identity_source') or canonical.get('source', ''),
+            'detail_provider': canonical.get('source', ''),
             'title': resolved.get('title') or canonical.get('title', ''),
             'year': resolved.get('year') or canonical.get('year', ''),
             'tmdb_id': resolved.get('tmdb_id') or canonical.get('tmdb_id', ''),
@@ -1781,6 +1782,7 @@ def _build_canonical_metadata(
             'identity_status': identity_status,
             'enrichment_status': resolved.get('enrichment_state', 'incomplete'),
             'source': '',
+            'detail_provider': _tmdb_to_canonical(candidate, 'tmdb_candidate').get('source', '') if candidate else '',
             'title': candidate.get('title', '') if candidate else '',
             'year': str(candidate.get('year', '') or '') if candidate else '',
             'tmdb_id': str(candidate.get('tmdb_id', '') or '') if candidate else '',
@@ -2107,25 +2109,145 @@ def _get_qbittorrent_manager():
     return _qbittorrent_manager
 
 
+def _completed_download_video_paths(imported_paths):
+    videos = []
+    seen = set()
+    for imported_path in imported_paths or []:
+        candidate = os.path.abspath(str(imported_path or ''))
+        if not candidate:
+            continue
+        if os.path.isfile(candidate):
+            paths = [candidate]
+        elif os.path.isdir(candidate):
+            paths = [
+                os.path.join(root, filename)
+                for root, _, filenames in os.walk(candidate)
+                for filename in filenames
+            ]
+        else:
+            paths = []
+        for path in paths:
+            if os.path.splitext(path)[1].lower() not in VIDEO_EXTENSIONS:
+                continue
+            key = _norm(path)
+            if key in seen:
+                continue
+            seen.add(key)
+            videos.append(path)
+    return sorted(videos, key=lambda path: (-int(_metadata_file_facts(path).get('size') or 0), _norm(path)))
+
+
+def _apply_completed_download_identity(job, store=None):
+    job = dict(job or {})
+    tmdb_id = str(job.get('tmdb_id') or '').strip()
+    imdb_id = str(job.get('imdb_id') or '').strip()
+    if not tmdb_id and not imdb_id:
+        return {
+            'state': 'deferred',
+            'reason': 'The download job has no stable identity',
+            'paths': [],
+        }
+    paths = _completed_download_video_paths(job.get('imported_paths') or [])
+    if not paths:
+        return {
+            'state': 'deferred',
+            'reason': 'No imported video file is available for identity handoff',
+            'paths': [],
+        }
+    path = paths[0]
+    store = store or _metadata_store()
+    if tmdb_id:
+        metadata = _fetch_tmdb_metadata_by_id(
+            tmdb_id,
+            store=store,
+            refresh=not bool(store.get_tmdb_metadata(tmdb_id)),
+            match_source='download_submission',
+        )
+    else:
+        metadata = _fetch_tmdb_metadata_by_imdb(imdb_id, store=store, match_source='download_submission')
+        tmdb_id = str(metadata.get('tmdb_id') or '').strip()
+    if not tmdb_id:
+        return {
+            'state': 'deferred',
+            'reason': 'The download identity could not be resolved to TMDB',
+            'paths': [],
+            'imdb_id': imdb_id,
+        }
+    metadata = {
+        **metadata,
+        'tmdb_id': tmdb_id,
+        'imdb_id': str(metadata.get('imdb_id') or imdb_id).strip(),
+        'title': str(metadata.get('title') or job.get('title') or '').strip(),
+        'year': str(metadata.get('year') or job.get('year') or '').strip(),
+    }
+    store.accept_tmdb_identity(
+        path,
+        metadata,
+        source='download_submission',
+        decision_origin=DECISION_ORIGIN_LIBRARY_RECONCILE,
+        facts=_metadata_file_facts(path),
+    )
+    return {'state': 'applied', 'paths': [path], 'tmdb_id': tmdb_id}
+
+
 def _handle_completed_qbittorrent_imports(manager, results):
     global _library_cache
-    pending = [
+    completed = [
         item for item in (results or [])
         if item.get('state') in {'imported', 'cleanup_failed'}
-        and item.get('library_scan_pending', item.get('state') == 'imported')
-        and any(
+        and (
+            item.get('library_scan_pending', item.get('state') == 'imported')
+            or not str((item.get('identity_handoff') or {}).get('state') or '')
+        )
+    ]
+    pending = [
+        item for item in completed
+        if any(
             is_path_within(path, root)
             for path in item.get('imported_paths', [])
             for root in get_movies_dirs()
         )
     ]
-    if not pending:
+    outside_library = [
+        item for item in completed
+        if item.get('state') == 'imported' and item not in pending
+    ]
+    if not pending and not outside_library:
         return False
-    _library_cache = {}
-    _start_library_reconcile()
-    for item in pending:
-        if item.get('hash') and item.get('library_scan_pending') is True:
-            manager.jobs.upsert(item['hash'], {'library_scan_pending': False})
+    if pending:
+        _library_cache = {}
+        store = _metadata_store()
+        handoffs = {}
+        for item in pending:
+            key = str(item.get('hash') or '')
+            try:
+                handoffs[key] = _apply_completed_download_identity(item, store=store)
+            except Exception as error:
+                handoffs[key] = {
+                    'state': 'failed',
+                    'reason': str(error),
+                    'paths': [],
+                }
+        if any(handoff.get('state') != 'failed' for handoff in handoffs.values()):
+            _start_library_reconcile()
+        for item in pending:
+            if not item.get('hash'):
+                continue
+            handoff = handoffs.get(str(item.get('hash') or ''), {})
+            manager.jobs.upsert(item['hash'], {
+                'library_scan_pending': handoff.get('state') == 'failed',
+                'identity_handoff': handoff,
+            })
+    for item in outside_library:
+        if item.get('hash'):
+            manager.jobs.upsert(item['hash'], {
+                'library_scan_pending': False,
+                'identity_handoff': {
+                    'state': 'deferred',
+                    'reason': 'Imported payload is outside the configured movie libraries',
+                    'paths': list(item.get('imported_paths') or []),
+                },
+            })
     return True
 
 
@@ -2962,61 +3084,75 @@ def _proper_release_from_title(title):
     return {'source': source, 'resolution': resolution}
 
 
-def _find_owned_movie(movie):
-    title = str(movie.get('title', '') or '').strip()
+def _catalog_owned_entries(candidates, store, metadata_snapshot):
+    entries = []
+    for candidate in candidates or []:
+        path = candidate.get('path', '')
+        if not path or not os.path.isfile(path):
+            continue
+        item = _catalog_library_item(candidate, store, metadata_snapshot)
+        canonical = item.get('canonical_metadata') or {}
+        if not canonical.get('accepted'):
+            continue
+        entries.append({
+            'item': item,
+            'keys': set(candidate.get('identity_keys') or []),
+            'title': canonical.get('title') or item.get('plex_title') or '',
+            'year': str(canonical.get('year') or item.get('plex_year') or ''),
+            'tmdb_id': str(item.get('tmdb_id') or ''),
+            'imdb_id': str(item.get('imdb_id') or ''),
+            'plex_guid': str(item.get('plex_guid') or ''),
+        })
+    return entries
+
+
+def _catalog_owned_movie(movie, *, store=None, metadata_snapshot=None, entries=None):
+    """Resolve one owned movie through the catalog's stable identity keys."""
+    movie = movie or {}
+    if entries is None:
+        if not any(True for _ in _iter_movie_roots()):
+            return None
+        store = store or _metadata_store()
+        metadata_snapshot = metadata_snapshot or store.snapshot()
+        candidates = _current_catalog_store(store).ownership_candidates(_ownership_keys(movie))
+        entries = _catalog_owned_entries(candidates, store, metadata_snapshot)
+    if not entries:
+        return None
+
+    def best_match(matches):
+        return max(matches, key=lambda row: get_resolution_rank_str(row['item'].get('resolution'))) if matches else None
+
+    for key in _ownership_keys(movie):
+        if key.startswith(('tmdb:', 'imdb:', 'plex:')):
+            match = best_match([entry for entry in entries if key in entry['keys']])
+            if match:
+                return match
     year = str(movie.get('year', '') or '').strip()
-    if not title:
+    title = _norm_movie_title(movie.get('title', ''))
+    title_key = f"title:{title}|{year}" if title and year else ''
+    exact = best_match([entry for entry in entries if title_key and title_key in entry['keys']])
+    if not exact:
         return None
-    if not any(True for _ in _iter_movie_roots()):
+    for field in ('tmdb_id', 'imdb_id', 'plex_guid'):
+        query_id = str(movie.get(field, '') or '').lower()
+        match_id = str(exact.get(field, '') or '').lower()
+        if query_id and match_id and query_id != match_id:
+            return None
+    return exact
+
+
+def _find_owned_movie(movie):
+    match = _catalog_owned_movie(movie)
+    if not match:
         return None
-    _auto_sync_plex(force=False)
-    target_title = _norm_movie_title(title)
-    best = None
-
-    def consider(candidate_title, candidate_year, path, filename, size=0):
-        nonlocal best
-        if not candidate_title:
-            return
-        if _norm_movie_title(candidate_title) != target_title:
-            return
-        if year and candidate_year and str(candidate_year) != year:
-            return
-        if year and not candidate_year:
-            return
-        resolution = get_resolution_from_file(path)
-        current = {
-            'found': True,
-            'path': path,
-            'filename': filename,
-            'resolution': resolution,
-            'size_human': format_size(size) if size else '',
-        }
-        if best is None or get_resolution_rank_str(resolution) > get_resolution_rank_str(best.get('resolution')):
-            best = current
-
-    cached_items = _fresh_library_cache_items()
-    if cached_items is not None:
-        for item in cached_items:
-            path = item.get('path', '')
-            if not path or not os.path.isfile(path):
-                continue
-            parsed_title, parsed_year = parse_movie_title(item.get('filename', '') or item.get('title', ''))
-            identity_title = item.get('plex_title') or parsed_title
-            identity_year = str(item.get('plex_year') or parsed_year or '')
-            consider(identity_title, identity_year, path, item.get('filename', os.path.basename(path)), NumberSafe(item.get('size')))
-        return best
-
-    for _, _, file, full_path in _iter_video_files():
-        try:
-            size = os.path.getsize(full_path)
-        except OSError:
-            size = 0
-        plex_data = _plex_cache.get(_norm(full_path), {})
-        if plex_data.get('plex_title'):
-            consider(plex_data.get('plex_title'), str(plex_data.get('plex_year', '') or ''), full_path, file, size)
-        parsed_title, parsed_year = parse_movie_title(file)
-        consider(parsed_title, parsed_year, full_path, file, size)
-    return best
+    item = match['item']
+    return {
+        'found': True,
+        'path': item['path'],
+        'filename': item.get('filename', os.path.basename(item['path'])),
+        'resolution': item.get('resolution', 'Unknown'),
+        'size_human': item.get('size_human', ''),
+    }
 
 
 def NumberSafe(value):
@@ -4092,7 +4228,7 @@ def qbittorrent_status():
 @app.route('/api/qbittorrent/update', methods=['POST'])
 def qbittorrent_install():
     return jsonify({
-        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.7.0 because the tested portable runtime is bundled with the release.'
+        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.8.0 because the tested portable runtime is bundled with the release.'
     }), 410
 
 
@@ -4100,9 +4236,16 @@ def _qbittorrent_submission_metadata(data):
     return {
         'title': str(data.get('title', '') or '').strip(),
         'year': str(data.get('year', '') or '').strip(),
+        'tmdb_id': str(data.get('tmdb_id', '') or '').strip(),
+        'imdb_id': str(data.get('imdb_id', '') or '').strip(),
+        'identity_handoff': {'state': 'pending'},
         'release_title': str(data.get('release_title', data.get('title', '')) or '').strip(),
         'indexer': str(data.get('indexer', '') or '').strip(),
     }
+
+
+def _download_job_has_stable_identity(data):
+    return bool(str((data or {}).get('tmdb_id') or '').strip() or str((data or {}).get('imdb_id') or '').strip())
 
 
 def _existing_qbittorrent_job_for_magnet(manager, magnet):
@@ -4124,6 +4267,10 @@ def qbittorrent_submit():
     if _qbt_mode != 'embedded':
         return jsonify({'error': 'Cinema Paradiso is configured to use the system torrent client'}), 409
     data = request.get_json(silent=True) or {}
+    if not _download_job_has_stable_identity(data):
+        return jsonify({'error': 'A TMDB or IMDb identity is required before CP can submit a download'}), 400
+    if _curated_movie_is_owned(data) and not bool(data.get('upgrade')):
+        return jsonify({'error': 'Movie is already in the library. Submit it as an upgrade to continue.'}), 409
     manager = _get_qbittorrent_manager()
     metadata = _qbittorrent_submission_metadata(data)
     magnet = str(data.get('magnet_url', '') or '').strip()
@@ -4171,6 +4318,118 @@ def qbittorrent_submit():
 @app.route('/api/qbittorrent/jobs')
 def qbittorrent_jobs():
     return jsonify({'jobs': list(_get_qbittorrent_manager().jobs.all().values())})
+
+
+_LEGACY_IMPORT_DEFERRED_REASON = 'The download job has no stable identity'
+
+
+def _legacy_import_audit(manager=None):
+    manager = manager or _get_qbittorrent_manager()
+    store = _metadata_store()
+    snapshot = store.snapshot()
+    candidates_by_path = {
+        _norm(candidate.get('path') or ''): candidate
+        for candidate in store.catalog.store.library_candidates()
+        if candidate.get('path')
+    }
+    items = []
+    for torrent_hash, job in manager.jobs.all().items():
+        job = dict(job or {})
+        handoff = dict(job.get('identity_handoff') or {})
+        if job.get('state') != 'imported' or handoff.get('state') != 'deferred':
+            continue
+        if handoff.get('reason') != _LEGACY_IMPORT_DEFERRED_REASON:
+            continue
+        paths = _completed_download_video_paths(job.get('imported_paths') or [])
+        row = {
+            'hash': str(job.get('hash') or torrent_hash),
+            'title': str(job.get('title') or ''),
+            'release_title': str(job.get('release_title') or ''),
+            'imported_paths': list(job.get('imported_paths') or []),
+            'paths': paths,
+            'classification': 'review_required',
+            'reason': '',
+            'identity': {},
+        }
+        if not paths:
+            row['reason'] = 'Imported video is no longer available at the recorded path'
+        elif len(paths) != 1:
+            row['reason'] = 'Multiple imported video files require review'
+        else:
+            candidate = candidates_by_path.get(_norm(paths[0]))
+            if not candidate:
+                row['reason'] = 'No exact SQL library record exists for the imported video'
+            else:
+                item = _catalog_library_item(candidate, store, snapshot)
+                canonical = item.get('canonical_metadata') or {}
+                identity = {
+                    'tmdb_id': str(item.get('tmdb_id') or ''),
+                    'imdb_id': str(item.get('imdb_id') or ''),
+                    'plex_guid': str(item.get('plex_guid') or ''),
+                    'title': str(canonical.get('title') or ''),
+                    'year': str(canonical.get('year') or ''),
+                }
+                if not item.get('metadata_accepted'):
+                    row['reason'] = 'Exact SQL library record has no accepted identity'
+                elif not any(identity.get(key) for key in ('tmdb_id', 'imdb_id', 'plex_guid')):
+                    row['reason'] = 'Exact SQL library identity has no stable provider key'
+                else:
+                    row.update({
+                        'classification': 'verified_candidate',
+                        'reason': 'Exact accepted SQL library identity',
+                        'identity': identity,
+                    })
+        items.append(row)
+    items.sort(key=lambda item: (item.get('classification') != 'verified_candidate', item.get('title', ''), item.get('hash', '')))
+    return {
+        'source': 'catalog',
+        'catalog_generation': store.catalog.generation('media'),
+        'summary': {
+            'deferred_jobs': len(items),
+            'verified_candidates': sum(item.get('classification') == 'verified_candidate' for item in items),
+            'review_required': sum(item.get('classification') == 'review_required' for item in items),
+        },
+        'items': items,
+    }
+
+
+@app.route('/api/qbittorrent/import-audit')
+def qbittorrent_import_audit():
+    try:
+        return jsonify(_legacy_import_audit())
+    except Exception as error:
+        return jsonify({'error': str(error)}), 500
+
+
+@app.route('/api/qbittorrent/import-audit/verify', methods=['POST'])
+def verify_legacy_qbittorrent_imports():
+    body = request.get_json(force=True, silent=True) or {}
+    hashes = {str(value or '').strip().lower() for value in (body.get('hashes') or []) if str(value or '').strip()}
+    if not hashes:
+        return jsonify({'error': 'At least one legacy import job is required'}), 400
+    manager = _get_qbittorrent_manager()
+    audit = _legacy_import_audit(manager)
+    candidates = {
+        str(item.get('hash') or '').lower(): item
+        for item in audit.get('items') or []
+        if item.get('classification') == 'verified_candidate'
+    }
+    verified = []
+    for torrent_hash in hashes:
+        item = candidates.get(torrent_hash)
+        if not item:
+            continue
+        manager.jobs.upsert(torrent_hash, {
+            'library_scan_pending': False,
+            'identity_handoff': {
+                'state': 'verified_legacy',
+                'reason': 'Exact SQL library identity verified after legacy import',
+                'paths': list(item.get('paths') or []),
+                'identity': dict(item.get('identity') or {}),
+            },
+        })
+        verified.append(torrent_hash)
+    return jsonify({'verified_count': len(verified), 'verified_hashes': verified})
 
 
 @app.route('/api/qbittorrent/finalize', methods=['POST'])
@@ -4282,7 +4541,10 @@ def delete_file():
 
 @app.route('/api/library/status')
 def library_status():
-    return jsonify({'status': _library_status})
+    return jsonify({
+        'status': _library_status,
+        'catalog_generation': _catalog_repository().generation('media'),
+    })
 
 
 @app.route('/api/library/reconcile', methods=['GET', 'POST'])
@@ -4292,8 +4554,25 @@ def library_reconcile():
     return jsonify(_start_library_reconcile())
 
 
+def _catalog_file_record(candidate):
+    """Expose the SQL-backed file contract, retaining raw JSON only for extended facts."""
+    file_record = dict(candidate.get('raw_json') or {})
+    for field in (
+        'path', 'filename', 'library_root', 'size', 'added_time', 'modified_time',
+        'resolution', 'rip_source', 'parsed_title', 'parsed_year', 'identity_status',
+        'identity_title', 'identity_year', 'identity_source', 'identity_revision',
+        'identity_decision_version', 'identity_evidence_fingerprint', 'tmdb_id',
+        'imdb_id', 'plex_guid', 'plex_rating_key', 'display_provider',
+        'metadata_status', 'metadata_source', 'metadata_accepted', 'enrichment_status',
+        'ingest_status', 'manual_lock', 'manual_locked',
+    ):
+        if field in candidate:
+            file_record[field] = candidate[field]
+    return file_record
+
+
 def _catalog_library_item(candidate, store, metadata_snapshot):
-    file_record = candidate.get('raw_json') or {}
+    file_record = _catalog_file_record(candidate)
     path = candidate.get('path', '')
     plex_data = candidate.get('plex_json') or {}
     tmdb_data = candidate.get('tmdb_json') or {}
@@ -4345,6 +4624,27 @@ def _catalog_library_item(candidate, store, metadata_snapshot):
         'metadata_source': canonical.get('source', ''),
         'metadata_accepted': bool(canonical.get('accepted')),
     }
+
+
+@app.route('/api/library/details')
+def library_details():
+    path = str(request.args.get('path') or '').strip()
+    if not path:
+        return jsonify({'error': 'Library path is required'}), 400
+    store = _metadata_store()
+    candidate = next(
+        (
+            value for value in store.catalog.store.library_candidates()
+            if _norm(value.get('path') or '') == _norm(path)
+        ),
+        None,
+    )
+    if not candidate:
+        return jsonify({'error': 'Library item was not found'}), 404
+    return jsonify({
+        'item': _catalog_library_item(candidate, store, store.snapshot()),
+        'catalog_generation': store.catalog.generation('media'),
+    })
 
 
 def _maintenance_audit_from_catalog():
@@ -4511,6 +4811,7 @@ def library():
                 'plex_cached': any(item.get('plex_matched') for item in items),
                 'cached': True,
                 'source': 'catalog',
+                'catalog_generation': store.catalog.generation('media'),
             })
         _auto_sync_plex(force=force_plex)
         # Serve from cache if still fresh and directory hasn't changed
@@ -4646,7 +4947,8 @@ def library():
                         'cached': False, 'new_files': new_files,
                         'metadata_matched': int(reconcile_result.get('matched', 0) or 0),
                         'metadata_pending': int(reconcile_result.get('pending', 0) or 0),
-                        'metadata_review': int(reconcile_result.get('review', 0) or 0)})
+                        'metadata_review': int(reconcile_result.get('review', 0) or 0),
+                        'catalog_generation': store.catalog.generation('media')})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -4656,63 +4958,18 @@ def _library_check_v26():
     queries = body.get('movies', [])
     include_items = bool(body.get('include_items'))
     if not queries:
-        return jsonify({'results': []})
-    if not any(True for _ in _iter_movie_roots()):
-        return jsonify({'results': [
-            {'title': q.get('title', ''), 'year': str(q.get('year', '')),
-             'tmdb_id': str(q.get('tmdb_id', '') or ''), 'imdb_id': str(q.get('imdb_id', '') or ''),
-             'found': False, 'path': '', 'resolution': '', 'size_human': ''}
-             for q in queries
-         ]})
+        return jsonify({'results': [], 'catalog_generation': _catalog_repository().generation('media')})
     store = _metadata_store()
     metadata_snapshot = store.snapshot()
-    requested_keys = [key for query in queries for key in _ownership_keys(query)]
-    catalog = _current_catalog_store(store)
-    candidates = catalog.ownership_candidates(requested_keys)
-
-    entries = []
-    for candidate in candidates:
-        path = candidate.get('path', '')
-        if not path or not os.path.isfile(path):
-            continue
-        item = _catalog_library_item(candidate, store, metadata_snapshot)
-        canonical = item.get('canonical_metadata') or {}
-        if not canonical.get('accepted'):
-            continue
-        entries.append({
-            'item': item,
-            'keys': set(candidate.get('identity_keys') or []),
-            'title': canonical.get('title') or item.get('plex_title') or '',
-            'year': str(canonical.get('year') or item.get('plex_year') or ''),
-            'tmdb_id': str(item.get('tmdb_id') or ''),
-            'imdb_id': str(item.get('imdb_id') or ''),
-            'plex_guid': str(item.get('plex_guid') or ''),
-        })
-
-    def best_match(matches):
-        return max(matches, key=lambda row: get_resolution_rank_str(row['item'].get('resolution'))) if matches else None
-
-    def find_match(query):
-        for key in _ownership_keys(query):
-            if key.startswith(('tmdb:', 'imdb:', 'plex:')):
-                match = best_match([entry for entry in entries if key in entry['keys']])
-                if match:
-                    return match
-        year = str(query.get('year', '') or '').strip()
-        title = _norm_movie_title(query.get('title', ''))
-        title_key = f"title:{title}|{year}" if title and year else ''
-        exact = best_match([entry for entry in entries if title_key and title_key in entry['keys']])
-        if exact:
-            for field in ('tmdb_id', 'imdb_id', 'plex_guid'):
-                query_id = str(query.get(field, '') or '').lower()
-                match_id = str(exact.get(field, '') or '').lower()
-                if query_id and match_id and query_id != match_id:
-                    return None
-        return exact
-
+    if any(True for _ in _iter_movie_roots()):
+        requested_keys = [key for query in queries for key in _ownership_keys(query)]
+        candidates = _current_catalog_store(store).ownership_candidates(requested_keys)
+        entries = _catalog_owned_entries(candidates, store, metadata_snapshot)
+    else:
+        entries = []
     results = []
     for q in queries:
-        match = find_match(q)
+        match = _catalog_owned_movie(q, entries=entries)
         if match:
             item = match['item']
             results.append({
@@ -4738,7 +4995,10 @@ def _library_check_v26():
                 'resolution': '',
                 'size_human': '',
             })
-    return jsonify({'results': results})
+    return jsonify({
+        'results': results,
+        'catalog_generation': store.catalog.generation('media'),
+    })
 
 
 @app.route('/api/library/check', methods=['POST'])
@@ -4906,6 +5166,7 @@ def library_stats():
         if not force_plex:
             cached_stats = _fresh_stats_cache(stats_cache_key)
             if cached_stats is not None:
+                cached_stats.setdefault('catalog_generation', _catalog_repository().generation('media'))
                 cached_stats['cached'] = True
                 return jsonify(cached_stats)
 
@@ -5039,6 +5300,7 @@ def library_stats():
         )
 
         payload = {
+            'catalog_generation': _catalog_repository().generation('media'),
             'total_files': len(all_files),
             'unique_titles': len(title_set),
             'total_size': total_size,
@@ -6705,6 +6967,35 @@ def _fetch_tmdb_metadata_by_id(tmdb_id, store=None, refresh=False, match_source=
         return cached or {}
 
 
+def _fetch_tmdb_metadata_by_imdb(imdb_id, store=None, match_source=''):
+    imdb_id = str(imdb_id or '').strip()
+    if not imdb_id or not _tmdb_key:
+        return {}
+    store = store or _metadata_store()
+    try:
+        safe_id = urllib.parse.quote(imdb_id)
+        url = (f"https://api.themoviedb.org/3/find/{safe_id}"
+               f"?api_key={urllib.parse.quote(_tmdb_key)}&external_source=imdb_id&language=en-US")
+        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            raw = _json.loads(resp.read().decode())
+        movie = next(iter(raw.get('movie_results') or []), {})
+        tmdb_id = str(movie.get('id') or '')
+        if not tmdb_id:
+            return {}
+        metadata = _normalize_tmdb_metadata(movie)
+        metadata.update(_normalize_tmdb_details_payload(movie))
+        metadata.update({
+            'tmdb_id': tmdb_id,
+            'imdb_id': imdb_id,
+        })
+        if match_source:
+            metadata['match_source'] = match_source
+        return store.save_tmdb_metadata(metadata)
+    except Exception:
+        return {}
+
+
 def _tmdb_card_projection_is_complete(metadata):
     metadata = metadata or {}
     return bool(
@@ -7286,7 +7577,10 @@ def _reconcile_library_files(force_unresolved=False):
 
 def _library_reconcile_status():
     with _library_reconcile_lock:
-        return dict(_library_reconcile_state)
+        return {
+            **_library_reconcile_state,
+            'catalog_generation': _catalog_repository().generation('media'),
+        }
 
 
 def _run_library_reconcile_loop():
@@ -9680,6 +9974,30 @@ def source_review_preview():
     blocked = []
     for movie in movies:
         payload = _normalize_curated_movie(movie)
+        if not _download_job_has_stable_identity(payload):
+            row = {
+                **payload,
+                'quality': quality,
+                'selected': False,
+                'status': 'identity_required',
+                'variant': None,
+                'reason': 'A TMDB or IMDb identity is required before download',
+            }
+            blocked.append(row)
+            rows.append(row)
+            continue
+        if _curated_movie_is_owned(payload):
+            row = {
+                **payload,
+                'quality': quality,
+                'selected': False,
+                'status': 'owned',
+                'variant': None,
+                'reason': 'Already in library',
+            }
+            blocked.append(row)
+            rows.append(row)
+            continue
         try:
             variants = _ai_control_source_search(payload, config)
         except Exception as error:
@@ -9724,12 +10042,20 @@ def source_review_submit():
         return jsonify({'error': 'No selected ready downloads were submitted'}), 400
     results = []
     for row in selected:
+        if _curated_movie_is_owned(row):
+            results.append({
+                'movie': row.get('title', ''),
+                'skipped': True,
+                'reason': 'Already in library',
+            })
+            continue
         try:
             results.append({'movie': row.get('title', ''), 'result': _ai_control_submit_download(row)})
         except Exception as error:
             results.append({'movie': row.get('title', ''), 'error': str(error)})
     return jsonify({
-        'submitted_count': len([result for result in results if not result.get('error')]),
+        'submitted_count': len([result for result in results if not result.get('error') and not result.get('skipped')]),
+        'skipped_count': len([result for result in results if result.get('skipped')]),
         'results': results,
     })
 

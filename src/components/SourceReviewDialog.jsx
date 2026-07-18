@@ -6,6 +6,8 @@ import SelectionCheckbox from './SelectionCheckbox.jsx';
 export default function SourceReviewDialog({ state, setState, onClose, notify }) {
   const readyRows = (state.rows || []).filter((row) => row.status === 'ready');
   const selectedCount = readyRows.filter((row) => row.selected !== false).length;
+  const unavailableCount = (state.blocked || []).filter((row) => row.status === 'blocked').length;
+  const ownedCount = (state.blocked || []).filter((row) => row.status === 'owned').length;
 
   function updateRows(updater) {
     setState((current) => ({ ...current, rows: updater(current.rows || []) }));
@@ -88,8 +90,12 @@ export default function SourceReviewDialog({ state, setState, onClose, notify })
                 </div>
               ))}
             </div>
-            {state.blocked?.length ? (
-              <p className="settings-empty-note">{formatCount(state.blocked.length)} movie{state.blocked.length === 1 ? '' : 's'} had no trusted source.</p>
+            {unavailableCount || ownedCount ? (
+              <p className="settings-empty-note">
+                {unavailableCount ? `${formatCount(unavailableCount)} movie${unavailableCount === 1 ? '' : 's'} had no trusted source.` : ''}
+                {unavailableCount && ownedCount ? ' ' : ''}
+                {ownedCount ? `${formatCount(ownedCount)} movie${ownedCount === 1 ? '' : 's'} already in library.` : ''}
+              </p>
             ) : null}
           </>
         )}

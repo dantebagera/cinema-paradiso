@@ -14,6 +14,7 @@ from tools.catalog_migration_backup import (
     restore_backup,
     verify_backup,
 )
+from tools.build_shadow_catalog import build_shadow_catalog
 
 
 class CatalogMigrationBackupTest(unittest.TestCase):
@@ -91,6 +92,32 @@ class CatalogMigrationBackupTest(unittest.TestCase):
         self.assertIn("catalog/catalog.sqlite", names)
         self.assertEqual(verified["semantic_counts"]["file_records"], 2)
         self.assertEqual(verified["semantic_counts"]["user_lists"], 1)
+
+    def test_backup_generates_rollback_json_from_sql_authority(self):
+        with tempfile.TemporaryDirectory() as root, patch.dict("os.environ", {"LOCALAPPDATA": str(Path(root) / "local")}):
+            project, user_data = self._project(root)
+            repository = CatalogRepository(user_data)
+            try:
+                repository.activate_from_json()
+                repository.upsert_record("app_metadata/files.json", "three", {"path": "E:/Movies/Three.mkv"})
+                archive, manifest = create_backup(project, Path(root) / "backups")
+                shadow_path, report = build_shadow_catalog(archive, Path(root) / "shadow.sqlite")
+                with zipfile.ZipFile(archive) as contents:
+                    rollback_files = json.loads(contents.read("user-data/app_metadata/files.json"))
+            finally:
+                repository.close(flush=False)
+            self.assertEqual(manifest["semantic_counts"]["file_records"], 3)
+            self.assertIn("three", rollback_files["files"])
+            self.assertTrue(shadow_path.is_file())
+            self.assertTrue(report["passed"])
+
+    def test_backup_requires_a_passing_temporary_shadow_catalog(self):
+        with tempfile.TemporaryDirectory() as root:
+            project, _ = self._project(root)
+            with patch("tools.build_shadow_catalog.build_shadow_catalog", return_value=(Path(root) / "shadow.sqlite", {"passed": True})) as shadow:
+                create_backup(project, Path(root) / "backups")
+
+        shadow.assert_called_once()
 
     def test_verify_rejects_modified_archived_state(self):
         with tempfile.TemporaryDirectory() as root:

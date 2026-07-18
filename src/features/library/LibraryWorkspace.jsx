@@ -4,7 +4,7 @@ import {
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
-import { announceLibraryChanged } from '../../api/library.js';
+import { announceLibraryChanged, observeCatalogGeneration } from '../../api/library.js';
 import { addMoviePayloadsToList, announceCurationChanged, fetchUserListsCached } from '../../api/curation.js';
 import { previewSourceReview } from '../../api/sourceReview.js';
 import ExportCopyDialog from '../../components/ExportCopyDialog.jsx';
@@ -131,6 +131,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
         forceScan ? '/api/library?force_scan=1&view=cards' : '/api/library?view=cards'
       );
       if (requestSeq !== libraryRequestSeq.current) return;
+      observeCatalogGeneration(data.catalog_generation);
       setItems(data.items || []);
       setFileItemsLoaded(false);
       setPeopleLoaded(false);
@@ -173,6 +174,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     fetchJson('/api/library?view=files')
       .then((data) => {
         if (cancelled) return;
+        observeCatalogGeneration(data.catalog_generation);
         setFileItems(data.items || []);
         setFileItemsLoaded(true);
         setStatus('');
@@ -194,6 +196,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     fetchJson('/api/library?view=people')
       .then((data) => {
         if (cancelled) return;
+        observeCatalogGeneration(data.catalog_generation);
         const peopleByPath = new Map((data.items || []).map((item) => [item.path, item]));
         setItems((current) => current.map((item) => {
           const people = peopleByPath.get(item.path);
@@ -439,8 +442,12 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     const identity = getMovieIdentity(item);
     const cacheKey = getTmdbCacheKey(item);
     let details = tmdbCache[cacheKey];
-    if (!details) {
-      setTmdbCache((cache) => ({ ...cache, [cacheKey]: { loading: true, cast: [], trailer_url: '' } }));
+    if (!details || (openTrailer && !details.loading && !details.trailer_url)) {
+      const persistedDetails = details && !details.loading ? details : {};
+      setTmdbCache((cache) => ({
+        ...cache,
+        [cacheKey]: { ...persistedDetails, loading: true, cast: persistedDetails.cast || [], trailer_url: persistedDetails.trailer_url || '' }
+      }));
       try {
         let tmdbId = item.tmdb_id;
         if (!tmdbId) {
@@ -449,7 +456,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
           if (!result?.tmdb_id) throw new Error('No TMDB match found');
           tmdbId = result.tmdb_id;
         }
-        details = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(tmdbId)}`);
+        details = { ...persistedDetails, ...await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(tmdbId)}`) };
         setTmdbCache((cache) => ({ ...cache, [cacheKey]: details }));
         if (details.collection?.id && !collectionCache[details.collection.id]) {
           fetchJson(`/api/library/collection/${encodeURIComponent(details.collection.id)}`)
@@ -457,12 +464,39 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
             .catch(() => {});
         }
       } catch (detailsError) {
-        details = { cast: [], trailer_url: '', error: detailsError.message };
+        details = { ...persistedDetails, cast: persistedDetails.cast || [], trailer_url: persistedDetails.trailer_url || '', error: detailsError.message };
         setTmdbCache((cache) => ({ ...cache, [cacheKey]: details }));
       }
     }
     if (openTrailer) {
       onOpenTrailer({ title: identity.title, year: identity.year }, details.trailer_url || '');
+    }
+    return details;
+  }
+
+  async function loadLibraryDetails(item) {
+    const cacheKey = getTmdbCacheKey(item);
+    let details = tmdbCache[cacheKey];
+    if (details && !details.loading && !details.error) return details;
+    setTmdbCache((cache) => ({ ...cache, [cacheKey]: { loading: true, cast: [], trailer_url: '' } }));
+    try {
+      const response = await fetchJson(`/api/library/details?path=${encodeURIComponent(item.path)}`);
+      observeCatalogGeneration(response.catalog_generation);
+      const fullItem = response.item || {};
+      const canonical = fullItem.canonical_metadata || {};
+      details = {
+        ...canonical,
+        summary: canonical.summary || canonical.plot || fullItem.plex_summary || '',
+        plot: canonical.plot || canonical.summary || fullItem.plex_summary || '',
+        cast: canonical.cast || [],
+        directors: canonical.directors || [],
+        collection: canonical.collection || {},
+        trailer_url: ''
+      };
+      setTmdbCache((cache) => ({ ...cache, [cacheKey]: details }));
+    } catch (detailsError) {
+      details = { cast: [], trailer_url: '', error: detailsError.message };
+      setTmdbCache((cache) => ({ ...cache, [cacheKey]: details }));
     }
     return details;
   }
@@ -963,7 +997,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
                     onToggle={() => {
                       const next = expandedPath === item.path ? '' : item.path;
                       setExpandedPath(next);
-                      if (next) loadTmdbDetails(item, false);
+                      if (next) loadLibraryDetails(item);
                     }}
                     onPlay={onPlay}
                     onFindTorrent={onFindTorrent}

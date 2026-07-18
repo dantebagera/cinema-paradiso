@@ -6,7 +6,7 @@ Cinema Paradiso is a self-hosted movie library manager for people with hundreds 
 
 Everything runs on your machine. No cloud account. No subscription. No remote database.
 
-**Current version: v2.7.0** - July 2026
+**Development version: v2.8.0** - July 2026
 
 ---
 
@@ -69,6 +69,20 @@ Historical README and DOCS snapshots from earlier versions are preserved in [doc
 ### Styleguide
 
 ![Cinema Paradiso Styleguide](screenshots/styleguide-page-wide.png)
+
+---
+
+## In Development for v2.8.0
+
+Cinema Paradiso v2.8.0 starts from the SQL catalog parity checkpoint and will add the new, separated IPTV workspace before the public release.
+
+- **SQL catalog parity:** active workflows now use the SQL catalog authority with generation-aware invalidation and legacy JSON retained only for rollback and shadow comparison.
+- **Consistent ownership:** Library, Discover, and Movie Lists refresh shared ownership state when the catalog generation changes.
+- **Persisted expanded details:** Library expanded cards load canonical SQL metadata instead of depending on transient frontend projections.
+- **Download identity handoff:** torrent submissions preserve TMDB and IMDb identity through completion and catalog reconciliation.
+- **Recoverable imports:** completed qBittorrent jobs can be replayed and audited when an earlier import did not finish cleanly.
+- **Parity evidence:** migration matrices, catalog audit tools, shadow comparisons, and focused regression tests document the SQL cutover.
+- **Version display:** the sidebar footer is rebuilt from the `2.8.0` package version so the app UI matches the release tag.
 
 ---
 
@@ -139,13 +153,13 @@ AI Control is an experimental review workspace for natural-language commands.
 
 Downloads uses the original qBittorrent WebUI inside Cinema Paradiso. The embedded client is isolated from any qBittorrent installation already registered as the operating system's default torrent client.
 
-- The v2.7.0 portable release ZIP includes a tested bundled qBittorrent runtime.
+- The current public v2.7.0 portable release ZIP includes a tested bundled qBittorrent runtime.
 - Cinema Paradiso submissions are tagged `cinema-paradiso` and download to an incomplete staging folder.
 - At 100%, Cinema Paradiso pauses and removes the torrent without deleting its data, then moves the unchanged payload into the selected movie destination.
 - A blank movie destination uses the first configured library folder.
 - The incomplete folder must remain outside every movie library so Plex and Cinema Paradiso cannot index partial files.
 - Settings can switch torrent handling back to the operating system's default client.
-- qBittorrent install and update are not exposed in v2.7.0; runtime upgrades come through future Cinema Paradiso releases.
+- qBittorrent install and update are not exposed in the public v2.7.0 release; runtime upgrades come through future Cinema Paradiso releases.
 
 ### Help
 
@@ -239,7 +253,7 @@ Example:
 
 Only a movie library folder is required. Integrations are optional.
 
-The v2.7.0 portable release uses bundled qBittorrent. Settings lets you choose embedded qBittorrent or the system default torrent client, plus completed and incomplete folders. qBittorrent install/update controls are intentionally not part of v2.7.0.
+The public v2.7.0 portable release uses bundled qBittorrent. Settings lets you choose embedded qBittorrent or the system default torrent client, plus completed and incomplete folders. qBittorrent install/update controls are intentionally not part of v2.7.0.
 
 ---
 

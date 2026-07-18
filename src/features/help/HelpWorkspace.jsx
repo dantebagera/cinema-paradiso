@@ -270,7 +270,7 @@ const manualSections = [
         items: [
           'It will not guess secret API keys or Plex tokens.',
           'It will not automatically install optional services like Plex, Prowlarr, TMDB accounts, or Ollama.',
-          'It will not auto-update bundled qBittorrent in version 2.7.0.'
+          'It will not auto-update bundled qBittorrent in version 2.8.0.'
         ]
       },
       {
@@ -426,8 +426,8 @@ const helpSections = [
   {
     key: 'qbittorrent',
     title: 'qBittorrent',
-    status: 'Bundled in CP 2.7.0',
-    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.7.0 release.',
+    status: 'Bundled in CP 2.8.0',
+    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.8.0 release.',
     links: [
       ['qBittorrent Official Website', 'https://www.qbittorrent.org/'],
       ['qBittorrent Downloads', 'https://www.qbittorrent.org/download']

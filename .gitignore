@@ -37,6 +37,8 @@ Agent.md
 context/
 immigration docs/
 .impeccable/
+.superpowers/
+/test.py
 .github/skills/
 PRODUCT.md
 DESIGN.md

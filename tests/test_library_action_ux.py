@@ -19,6 +19,7 @@ EXPORT_DIALOG = Path(__file__).resolve().parents[1] / "src" / "components" / "Ex
 METADATA_CORRECTION = Path(__file__).resolve().parents[1] / "src" / "components" / "MetadataCorrectionModal.jsx"
 SOURCE_REVIEW_API = Path(__file__).resolve().parents[1] / "src" / "api" / "sourceReview.js"
 SOURCE_REVIEW_DIALOG = Path(__file__).resolve().parents[1] / "src" / "components" / "SourceReviewDialog.jsx"
+STYLES = Path(__file__).resolve().parents[1] / "src" / "styles.css"
 
 
 class LibraryActionUxTest(unittest.TestCase):
@@ -307,6 +308,16 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertNotIn("/api/smart-scan", cleanup_source)
         self.assertNotIn("/api/low-quality", cleanup_source)
         self.assertNotIn("/api/fix-unmatched", cleanup_source)
+
+    def test_maintenance_tabs_fill_the_desktop_bar_for_the_current_tab_count(self):
+        styles = STYLES.read_text(encoding="utf-8")
+        cleanup_tabs = re.search(r"\.cleanup-tabs \{(?P<body>.*?)\n\}", styles, re.DOTALL)
+        cleanup_buttons = re.search(r"\.cleanup-tabs button \{(?P<body>.*?)\n\}", styles, re.DOTALL)
+
+        self.assertIsNotNone(cleanup_tabs)
+        self.assertIsNotNone(cleanup_buttons)
+        self.assertIn("display: flex;", cleanup_tabs.group("body"))
+        self.assertIn("flex: 1 1 0;", cleanup_buttons.group("body"))
 
     def test_maintenance_route_replaces_legacy_cleanup_routes(self):
         app_source = APP_PY.read_text(encoding="utf-8")

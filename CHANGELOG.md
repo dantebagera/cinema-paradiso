@@ -1,5 +1,29 @@
 # Changelog
 
+## v2.8.0 - In Development
+
+Cinema Paradiso v2.8.0 begins with the SQL catalog migration and performance checkpoint. The public release will also include the separated IPTV workspace; IPTV is not present in this checkpoint commit.
+
+### Added
+
+- SQL migration parity matrix and catalog audit tooling.
+- Historical JSON shadow comparison for cutover verification.
+- Browser ownership-cache regression coverage across shared movie-card workflows.
+- Recovery auditing for completed downloads that still need catalog import.
+
+### Changed
+
+- SQL is the active catalog authority, with legacy JSON retained for rollback and shadow comparison.
+- Library expanded cards load persisted canonical SQL details.
+- Download submissions preserve TMDB and IMDb identity through completion and reconciliation.
+- The sidebar version is rebuilt from the package version and now identifies v2.8.0.
+
+### Fixed
+
+- Stale ownership state after catalog generation changes.
+- Cross-workspace movie identity consistency.
+- Interrupted completed-download import recovery.
+
 ## v2.7.0 - July 2026
 
 Cinema Paradiso v2.7.0 adds an experimental AI Control workspace for review-first natural-language library actions while preserving the v2.6 source-search, qBittorrent, movie-card, trailer, streaming, identity-review, and metadata-repair foundations.

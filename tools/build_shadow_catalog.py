@@ -18,6 +18,7 @@ CATALOG_SOURCE_DOCUMENTS = frozenset({
     "app_metadata/tmdb_metadata.json",
     "app_metadata/plex_metadata.json",
     "app_metadata/manual_matches.json",
+    "app_metadata/identity_audit_fingerprints.json",
     "user_lists.json",
     "user_collections.json",
     "followed_releases.json",

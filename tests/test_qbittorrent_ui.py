@@ -49,6 +49,18 @@ class QBittorrentUiTests(unittest.TestCase):
         self.assertIn('src="/qbittorrent/"', self.source)
         self.assertIn("@app.route('/qbittorrent/')", self.backend_source)
 
+    def test_downloads_workspace_exposes_the_sql_only_legacy_import_audit(self):
+        root = Path(__file__).resolve().parents[1]
+        downloads_source = (root / "src" / "features" / "downloads" / "DownloadsWorkspace.jsx").read_text(encoding="utf-8")
+
+        self.assertIn("/api/qbittorrent/import-audit", downloads_source)
+        self.assertIn("/api/qbittorrent/import-audit/verify", downloads_source)
+        self.assertIn("Verify exact matches", downloads_source)
+        self.assertIn("Legacy import audit", downloads_source)
+        self.assertIn("verified_candidate", downloads_source)
+        self.assertIn("@app.route('/api/qbittorrent/import-audit')", self.backend_source)
+        self.assertIn("@app.route('/api/qbittorrent/import-audit/verify', methods=['POST'])", self.backend_source)
+
     def test_downloads_header_credits_qbittorrent_with_official_icon(self):
         self.assertIn('src="/qbittorrent/images/qbittorrent32.png"', self.source)
         self.assertIn("Powered by qBittorrent", self.source)
@@ -113,11 +125,11 @@ class QBittorrentUiTests(unittest.TestCase):
         changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
         package = json.loads((root / "package.json").read_text(encoding="utf-8"))
 
-        self.assertEqual(package["version"], "2.7.0")
-        self.assertIn("v2.7.0", readme)
+        self.assertEqual(package["version"], "2.8.0")
+        self.assertIn("v2.8.0", readme)
         self.assertIn("Help", readme)
         self.assertIn("bundled qbittorrent", readme.lower())
-        self.assertIn("v2.7.0", changelog)
+        self.assertIn("v2.8.0", changelog)
         self.assertIn("Help", changelog)
 
 

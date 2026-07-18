@@ -1703,6 +1703,9 @@ function IndexerMovieCard({
               variant={selectedVariant}
               movieTitle={movie.title || movie.parsed_title}
               movieYear={movie.year || movie.parsed_year}
+              tmdbId={movie.tmdb_id || ''}
+              imdbId={movie.imdb_id || ''}
+              upgrade={Boolean(lowQuality)}
               notify={notify}
               primary
             />

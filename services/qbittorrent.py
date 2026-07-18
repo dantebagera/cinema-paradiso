@@ -862,6 +862,9 @@ class QBittorrentManager:
         results = []
         for torrent_hash, job in jobs.items():
             if job.get("state") == "imported":
+                handoff_state = str((job.get("identity_handoff") or {}).get("state") or "")
+                if job.get("library_scan_pending") or not handoff_state:
+                    results.append(job)
                 continue
             torrent = torrents.get(torrent_hash)
             if job.get("state") in {"payload_imported", "cleanup_failed"}:

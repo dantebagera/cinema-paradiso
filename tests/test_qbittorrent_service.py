@@ -406,6 +406,74 @@ class QBittorrentJobStoreTests(unittest.TestCase):
             manager.client.remove_without_files.assert_called_once_with("abc")
             manager.jobs.move_completed_payload.assert_not_called()
 
+    def test_manager_replays_imported_job_with_pending_library_scan_after_restart(self):
+        with tempfile.TemporaryDirectory() as root:
+            staging = Path(root) / "incomplete"
+            destination = Path(root) / "library"
+            imported = destination / "Movie.2026.1080p-GROUP"
+            imported.mkdir(parents=True)
+            (imported / "movie.mkv").write_bytes(b"movie")
+            manager = QBittorrentManager(
+                root,
+                {"incomplete_dir": str(staging), "download_dir": str(destination)},
+                [str(destination)],
+            )
+            manager.jobs.upsert("abc", {
+                "state": "imported",
+                "library_scan_pending": True,
+                "identity_handoff": {"state": "pending"},
+                "imported_paths": [str(imported)],
+            })
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.torrents = MagicMock(return_value=[])
+
+            results = manager.process_completed()
+
+            self.assertEqual(len(results), 1)
+            self.assertEqual(results[0]["state"], "imported")
+            self.assertTrue(results[0]["library_scan_pending"])
+            self.assertEqual(results[0]["identity_handoff"]["state"], "pending")
+
+    def test_manager_does_not_replay_imported_job_after_identity_handoff_completes(self):
+        with tempfile.TemporaryDirectory() as root:
+            staging = Path(root) / "incomplete"
+            destination = Path(root) / "library"
+            manager = QBittorrentManager(
+                root,
+                {"incomplete_dir": str(staging), "download_dir": str(destination)},
+                [str(destination)],
+            )
+            manager.jobs.upsert("abc", {
+                "state": "imported",
+                "library_scan_pending": False,
+                "identity_handoff": {"state": "applied"},
+            })
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.torrents = MagicMock(return_value=[])
+
+            results = manager.process_completed()
+
+            self.assertEqual(results, [])
+
+    def test_manager_replays_legacy_imported_job_without_handoff_markers_once(self):
+        with tempfile.TemporaryDirectory() as root:
+            staging = Path(root) / "incomplete"
+            destination = Path(root) / "library"
+            manager = QBittorrentManager(
+                root,
+                {"incomplete_dir": str(staging), "download_dir": str(destination)},
+                [str(destination)],
+            )
+            manager.jobs.upsert("abc", {"state": "imported"})
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.torrents = MagicMock(return_value=[])
+
+            results = manager.process_completed()
+
+            self.assertEqual(len(results), 1)
+            self.assertEqual(results[0]["state"], "imported")
+            self.assertNotIn("identity_handoff", results[0])
+
     def test_manager_does_not_resubmit_already_imported_magnet(self):
         with tempfile.TemporaryDirectory() as root:
             staging = Path(root) / "incomplete"

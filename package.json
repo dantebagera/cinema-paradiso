@@ -1,12 +1,13 @@
 {
   "name": "cinema-paradiso-frontend",
   "private": true,
-  "version": "2.7.0",
+  "version": "2.8.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
+    "test:ownership-cache": "node --test tests/browser_ownership_cache.test.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {

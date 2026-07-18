@@ -4,10 +4,11 @@ import { fetchJson } from '../api/client.js';
 import { loadTorrentHandlingConfig } from '../api/qbittorrent.js';
 import { cx, torrentPrimaryAction } from '../utils/appUtils.js';
 
-export default function TorrentActions({ variant, movieTitle, movieYear, notify, primary = false }) {
+export default function TorrentActions({ variant, movieTitle, movieYear, tmdbId = '', imdbId = '', upgrade = false, notify, primary = false }) {
   const action = torrentPrimaryAction(variant);
   const magnetUrl = action.kind === 'magnet' ? action.url : '';
   const downloadUrl = action.kind === 'torrent' ? action.url : '';
+  const hasStableIdentity = Boolean(tmdbId || imdbId);
   const [mode, setMode] = useState('embedded');
   const [busy, setBusy] = useState(false);
 
@@ -39,6 +40,9 @@ export default function TorrentActions({ variant, movieTitle, movieYear, notify,
           download_url: downloadUrl,
           title: movieTitle || '',
           year: movieYear || '',
+          tmdb_id: tmdbId || '',
+          imdb_id: imdbId || '',
+          upgrade: Boolean(upgrade),
           release_title: variant.title || '',
           indexer: variant.indexer || ''
         })
@@ -55,7 +59,8 @@ export default function TorrentActions({ variant, movieTitle, movieYear, notify,
     }
   }
 
-  const canSubmit = action.kind === 'magnet' || (action.kind === 'torrent' && mode === 'embedded');
+  const canSubmit = (action.kind === 'magnet' || (action.kind === 'torrent' && mode === 'embedded'))
+    && (mode === 'system' || hasStableIdentity);
   return <div className="torrent-action-group">
     {canSubmit ? <button type="button" className={cx('btn', primary ? 'btn-primary' : 'btn-secondary')} onClick={handlePrimary} disabled={busy}>{busy ? <Loader2 size={15} className="spin" /> : <Download size={15} />}{mode === 'system' ? 'Open magnet' : 'Download'}</button> : action.kind === 'torrent' ? <span className="torrent-no-link">No magnet</span> : null}
     {mode === 'embedded' && magnetUrl ? <a className="btn btn-secondary" href={magnetUrl}><ExternalLink size={15} /> Open externally</a> : null}

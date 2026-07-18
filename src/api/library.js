@@ -3,9 +3,19 @@ import { fetchJson } from './client.js';
 
 const OWNERSHIP_CHECK_CACHE_TTL = 30000;
 let ownershipCheckCache = new Map();
+let ownershipCatalogGeneration = null;
 
 export function clearOwnershipCheckCache() {
   ownershipCheckCache = new Map();
+}
+
+export function observeCatalogGeneration(generation) {
+  const nextGeneration = Number(generation);
+  if (!Number.isFinite(nextGeneration)) return;
+  if (ownershipCatalogGeneration !== null && ownershipCatalogGeneration !== nextGeneration) {
+    clearOwnershipCheckCache();
+  }
+  ownershipCatalogGeneration = nextGeneration;
 }
 
 function ownershipCheckQuery(movie) {
@@ -55,6 +65,7 @@ export async function fetchOwnershipChecks(movies = []) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movies: missing })
     });
+    observeCatalogGeneration(check.catalog_generation);
     const freshTime = Date.now();
     (check.results || []).forEach((result, index) => {
       storeOwnershipCheck(missing[index] || result, result, freshTime);

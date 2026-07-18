@@ -15,12 +15,22 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from services.catalog_repository import catalog_database_path
+from services.catalog_repository import CatalogRepository, catalog_database_path
 
 
 BACKUP_FORMAT = "cinema-paradiso-catalog-migration-backup"
 BACKUP_VERSION = 2
 QBITTORRENT_STATE_FILES = {"jobs.json", "runtime.json"}
+CATALOG_ROLLBACK_DOCUMENTS = {
+    "app_metadata/files.json": {"files": {}},
+    "app_metadata/tmdb_metadata.json": {"movies": {}},
+    "app_metadata/plex_metadata.json": {"files": {}},
+    "app_metadata/manual_matches.json": {"matches": {}},
+    "app_metadata/identity_audit_fingerprints.json": {"files": {}},
+    "user_lists.json": {"lists": []},
+    "user_collections.json": {"overrides": {}},
+    "followed_releases.json": {"movies": []},
+}
 
 
 class BackupError(RuntimeError):
@@ -186,6 +196,33 @@ def _catalog_snapshot(path):
             Path(temporary_name).unlink(missing_ok=True)
 
 
+def _catalog_rollback_payloads(path):
+    path = Path(path)
+    if not path.is_file():
+        return {}
+    connection = None
+    try:
+        connection = sqlite3.connect(f"file:{path.as_posix()}?mode=ro", uri=True)
+        payloads = {}
+        for name, fallback in CATALOG_ROLLBACK_DOCUMENTS.items():
+            document = CatalogRepository._read_document(connection, name, fallback)
+            payloads[f"user-data/{name}"] = json.dumps(document, indent=2).encode("utf-8")
+        return payloads
+    finally:
+        if connection is not None:
+            connection.close()
+
+
+def _verify_rollback_shadow(archive_path):
+    from tools.build_shadow_catalog import build_shadow_catalog
+
+    with tempfile.TemporaryDirectory(prefix="cp-shadow-audit-") as root:
+        _, report = build_shadow_catalog(archive_path, Path(root) / "catalog-shadow.sqlite")
+    if not report.get("passed"):
+        raise BackupError(f"Rollback shadow verification failed: {json.dumps(report, sort_keys=True)}")
+    return report
+
+
 def _app_version(project_root):
     package = _read_json(Path(project_root) / "package.json", {})
     return str(package.get("version") or "unknown")
@@ -218,6 +255,21 @@ def create_backup(project_root, output_dir=None, now=None):
             "size": len(payload),
             "sha256": _sha256_bytes(payload),
         })
+    rollback_payloads = _catalog_rollback_payloads(sources["catalog_path"])
+    if rollback_payloads:
+        manifest_by_name = {item["archive_path"]: item for item in file_manifest}
+        for name, payload in rollback_payloads.items():
+            payloads[name] = payload
+            entry = manifest_by_name.get(name)
+            if entry is None:
+                entry = {"archive_path": name}
+                file_manifest.append(entry)
+                manifest_by_name[name] = entry
+            entry.update({
+                "source_kind": "catalog_rollback_export",
+                "size": len(payload),
+                "sha256": _sha256_bytes(payload),
+            })
     catalog_payload = _catalog_snapshot(sources["catalog_path"])
     if catalog_payload is not None:
         name = "catalog/catalog.sqlite"
@@ -254,7 +306,12 @@ def create_backup(project_root, output_dir=None, now=None):
         os.replace(temporary, archive_path)
     finally:
         temporary.unlink(missing_ok=True)
-    verify_backup(archive_path)
+    try:
+        verify_backup(archive_path)
+        _verify_rollback_shadow(archive_path)
+    except Exception:
+        archive_path.unlink(missing_ok=True)
+        raise
     return archive_path, manifest
 
 

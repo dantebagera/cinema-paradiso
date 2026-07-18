@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from './api/client.js';
-import { announceLibraryReconciled, fetchOwnershipChecks } from './api/library.js';
+import { announceLibraryReconciled, fetchOwnershipChecks, observeCatalogGeneration } from './api/library.js';
 import {
   announceCurationChanged,
   fetchUserListsCached
@@ -305,6 +305,7 @@ function ArchiveApp() {
       try {
         const state = await fetchJson('/api/library/reconcile');
         if (cancelled) return;
+        observeCatalogGeneration(state.catalog_generation);
         const status = state.status || 'idle';
         const signature = reconcileSignature(state);
         const isNewCompletedRun = status === 'completed' && signature !== libraryReconcileSignatureRef.current;
@@ -584,7 +585,17 @@ function ArchiveApp() {
     if (!title) return;
     const searchToken = sourceSearchTokenRef.current + 1;
     sourceSearchTokenRef.current = searchToken;
-    setTorrentModal({ title, year, upgrade, loading: true, error: '', variants: [], sourceSearch: null });
+    setTorrentModal({
+      title,
+      year,
+      tmdb_id: movie?.tmdb_id || '',
+      imdb_id: movie?.imdb_id || '',
+      upgrade,
+      loading: true,
+      error: '',
+      variants: [],
+      sourceSearch: null,
+    });
     try {
       const payload = { title, year };
       if (movie?.imdb_id) payload.imdb_id = movie.imdb_id;
@@ -599,6 +610,8 @@ function ArchiveApp() {
         setTorrentModal({
           title,
           year,
+          tmdb_id: movie?.tmdb_id || '',
+          imdb_id: movie?.imdb_id || '',
           upgrade,
           loading: running,
           error: data.status === 'error' ? (data.error || 'Source search failed') : '',
@@ -1007,6 +1020,15 @@ function TorrentModal({ state, onClose, notify }) {
   const [loading, setLoading] = useState(state.loading);
   const [error, setError] = useState(state.error || '');
   const [sourceSearch, setSourceSearch] = useState(state.sourceSearch || null);
+  const [identity, setIdentity] = useState(() => ({
+    tmdb_id: state.tmdb_id || '',
+    imdb_id: state.imdb_id || '',
+    title: state.title || '',
+    year: state.year || '',
+  }));
+  const [identityCandidates, setIdentityCandidates] = useState([]);
+  const [identityLoading, setIdentityLoading] = useState(false);
+  const [identityError, setIdentityError] = useState('');
 
   useEffect(() => {
     setManualQuery(`${state.title || ''} ${state.year || ''}`.trim());
@@ -1014,11 +1036,41 @@ function TorrentModal({ state, onClose, notify }) {
     setLoading(state.loading);
     setError(state.error || '');
     setSourceSearch(state.sourceSearch || null);
+    setIdentity({
+      tmdb_id: state.tmdb_id || '',
+      imdb_id: state.imdb_id || '',
+      title: state.title || '',
+      year: state.year || '',
+    });
+    setIdentityCandidates([]);
+    setIdentityError('');
     setTitleFilter('');
     setResolutionFilter('all');
     setIndexerFilter('all');
     setSortMode('size-desc');
   }, [state]);
+
+  async function resolveIdentity(query = manualQuery) {
+    const q = String(query || '').trim();
+    if (!q) return;
+    setIdentityLoading(true);
+    setIdentityError('');
+    try {
+      const params = new URLSearchParams({ q, page: '1', include_adult: 'false' });
+      if (state.year) params.set('year', state.year);
+      const data = await fetchJson(`/api/tmdb/search?${params.toString()}`);
+      setIdentityCandidates((data.results || []).slice(0, 6));
+    } catch (matchError) {
+      setIdentityCandidates([]);
+      setIdentityError(matchError.message);
+    } finally {
+      setIdentityLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    if (!state.tmdb_id && !state.imdb_id) resolveIdentity(initialQuery);
+  }, [state.tmdb_id, state.imdb_id, state.title, state.year]);
 
   const indexers = useMemo(() => getUniqueOptions(variants, (variant) => variant.indexer), [variants]);
   const resolutions = useMemo(() => {
@@ -1061,6 +1113,8 @@ function TorrentModal({ state, onClose, notify }) {
     setLoading(true);
     setError('');
     setSourceSearch(null);
+    setIdentity({ tmdb_id: '', imdb_id: '', title: '', year: '' });
+    void resolveIdentity(q);
     try {
       const data = await fetchJson(`/api/prowlarr/search?q=${encodeURIComponent(q)}`);
       setVariants(data.results || []);
@@ -1099,6 +1153,35 @@ function TorrentModal({ state, onClose, notify }) {
             {loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search
           </button>
         </form>
+
+        {!identity.tmdb_id && !identity.imdb_id ? (
+          <div className="source-search-progress source-search-progress-muted">
+            <AlertTriangle size={15} />
+            <span>
+              <strong>{identityLoading ? 'Matching movie...' : 'Select a TMDB movie before embedded download.'}</strong>
+              {identityError ? <small>{identityError}</small> : null}
+            </span>
+            {identityCandidates.length ? (
+              <div className="torrent-action-group">
+                {identityCandidates.map((candidate) => (
+                  <button
+                    key={candidate.tmdb_id}
+                    type="button"
+                    className="mini-action"
+                    onClick={() => setIdentity({
+                      tmdb_id: String(candidate.tmdb_id || ''),
+                      imdb_id: String(candidate.imdb_id || ''),
+                      title: candidate.title || '',
+                      year: candidate.year || '',
+                    })}
+                  >
+                    <Film size={14} /> {candidate.title || 'Untitled'}{candidate.year ? ` (${candidate.year})` : ''}
+                  </button>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
 
         <div className="torrent-filter-row">
           <label className="library-search">
@@ -1173,8 +1256,11 @@ function TorrentModal({ state, onClose, notify }) {
                   </div>
                   <TorrentActions
                     variant={variant}
-                    movieTitle={state.title}
-                    movieYear={state.year}
+                    movieTitle={identity.title || state.title}
+                    movieYear={identity.year || state.year}
+                    tmdbId={identity.tmdb_id}
+                    imdbId={identity.imdb_id}
+                    upgrade={state.upgrade}
                     notify={notify}
                   />
                 </article>

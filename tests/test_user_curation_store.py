@@ -235,7 +235,9 @@ class UserCurationStoreTest(unittest.TestCase):
         movie = {"tmdb_id": "680", "title": "Pulp Fiction", "year": "1994"}
 
         try:
-            with patch("app._effective_download_trusted_indexer_ids", return_value=["7"]), patch(
+            with patch("app._curated_movie_is_owned", return_value=False), patch(
+                "app._effective_download_trusted_indexer_ids", return_value=["7"]
+            ), patch(
                 "app._ai_control_source_search",
                 return_value=[
                     {"title": "Pulp Fiction 1994 4K", "resolution": "4K", "indexer": "Trusted", "indexer_id": "7", "seeders": 50},
@@ -275,7 +277,9 @@ class UserCurationStoreTest(unittest.TestCase):
             "variant": {"title": "Heat 1080p", "magnet_url": "magnet:?xt=urn:btih:def"},
         }
 
-        with patch("app._ai_control_submit_download", return_value={"hash": "abc", "name": "Pulp Fiction"}) as submit:
+        with patch("app._curated_movie_is_owned", return_value=False), patch(
+            "app._ai_control_submit_download", return_value={"hash": "abc", "name": "Pulp Fiction"}
+        ) as submit:
             response = app.app.test_client().post(
                 "/api/sources/review/submit",
                 json={"rows": [ready, skipped]},
