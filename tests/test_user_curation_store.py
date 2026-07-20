@@ -63,6 +63,27 @@ class UserCurationStoreTest(unittest.TestCase):
             with self.assertRaises(ValueError):
                 store.delete_list("watchlist")
 
+    def test_repeated_list_reads_do_not_mutate_generation_for_sql_ordering(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = app.UserCurationStore(Path(tmp))
+            store.catalog.replace_document('user_lists.json', {'lists': [{
+                'id': 'created-first',
+                'name': 'Created First',
+                'movies': [],
+                'created_at': 1,
+                'updated_at': 1,
+            }]})
+
+            first = store.list_all()
+            generation = store.catalog.generation('curation')
+            second = store.list_all()
+            third = store.list_all()
+
+            self.assertEqual([item['id'] for item in first], ['watched', 'watchlist', 'created-first'])
+            self.assertEqual(second, first)
+            self.assertEqual(third, first)
+            self.assertEqual(store.catalog.generation('curation'), generation)
+
     def test_system_list_toggle_is_idempotent_and_states_are_independent(self):
         with tempfile.TemporaryDirectory() as tmp:
             store = app.UserCurationStore(Path(tmp))
@@ -356,6 +377,50 @@ class UserCurationStoreTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         movie = response.get_json()["movies"][0]
         self.assertEqual(movie["release_date"], "2026-07-15")
+
+    def test_curation_routes_expose_the_generation_that_their_mutations_advance(self):
+        original_user_data_dir = app._user_data_dir
+        with tempfile.TemporaryDirectory() as tmp:
+            app._user_data_dir = tmp
+            try:
+                client = app.app.test_client()
+                initial = client.get('/api/user/lists').get_json()
+                created = client.post('/api/user/lists', json={'name': 'Generation Test'}).get_json()
+                followed = client.post('/api/user/followed-releases', json={
+                    'movie': {'tmdb_id': '42', 'title': 'Generation Movie', 'year': '2026'}
+                }).get_json()
+                collection = client.post('/api/user/collection', json={
+                    'collection_id': '7001',
+                    'original': {'id': '7001', 'name': 'Generation Collection'},
+                    'parts': [],
+                }).get_json()
+            finally:
+                app._user_data_dir = original_user_data_dir
+
+        self.assertGreater(created['curation_generation'], initial['curation_generation'])
+        self.assertGreater(followed['curation_generation'], created['curation_generation'])
+        self.assertGreater(collection['curation_generation'], followed['curation_generation'])
+
+    def test_repeated_user_list_gets_are_read_only(self):
+        original_user_data_dir = app._user_data_dir
+        original_cache = dict(app._curation_store_cache)
+        with tempfile.TemporaryDirectory() as tmp:
+            app._user_data_dir = tmp
+            app._curation_store_cache = {}
+            try:
+                client = app.app.test_client()
+                first = client.get('/api/user/lists').get_json()
+                second = client.get('/api/user/lists').get_json()
+                third = client.get('/api/user/lists').get_json()
+            finally:
+                app._user_data_dir = original_user_data_dir
+                app._curation_store_cache = original_cache
+
+        self.assertEqual([item['id'] for item in first['lists'][:2]], ['watched', 'watchlist'])
+        self.assertEqual(second['lists'], first['lists'])
+        self.assertEqual(third['lists'], first['lists'])
+        self.assertEqual(second['curation_generation'], first['curation_generation'])
+        self.assertEqual(third['curation_generation'], first['curation_generation'])
 
     def test_followed_release_quality_gate_rejects_camera_rips(self):
         self.assertIsNone(app._proper_release_from_title("New Movie 2026 1080p HDCAM"))

@@ -24,6 +24,8 @@ QBT_TAG = "cinema-paradiso"
 DEFAULT_WEBUI_PORT = 8686
 BUNDLED_QBT_VERSION = "5.2.2"
 PAYLOAD_COLLISION_RULE_VERSION = 2
+MISSING_TORRENT_GRACE_SECONDS = 10
+MISSING_TORRENT_MIN_CHECKS = 3
 HOP_BY_HOP_HEADERS = {
     "connection", "keep-alive", "proxy-authenticate", "proxy-authorization",
     "te", "trailers", "transfer-encoding", "upgrade",
@@ -505,6 +507,7 @@ class QBittorrentManager:
         self.client = QBittorrentClient(f"http://127.0.0.1:{self.port}")
         self._process = None
         self._completion_lock = threading.Lock()
+        self._update_lock = threading.Lock()
 
     @property
     def destination(self):
@@ -621,56 +624,116 @@ class QBittorrentManager:
             subprocess.run(["hdiutil", "detach", str(mount)], check=False, capture_output=True)
             shutil.rmtree(mount, ignore_errors=True)
 
-    def install_latest(self):
-        release = self.latest_release()
-        version = release["version"]
-        destination = self.versions_dir / version
-        staging = self.versions_dir / f".{version}.{uuid.uuid4().hex}.staging"
-        executable = None
-        staging.mkdir(parents=True, exist_ok=False)
-        package = self.root / "downloads" / release["asset"]["name"]
-        self._download_verified(release["asset"], package)
-        system = normalize_system()
-        if system == "windows":
-            executable = self._windows_extract(package, staging)
-        elif system == "darwin":
-            executable = self._mac_extract(package, staging)
-        elif system == "linux":
-            executable = staging / release["asset"]["name"]
-            shutil.copy2(package, executable)
-            executable.chmod(executable.stat().st_mode | 0o111)
-        else:
-            raise QBittorrentError("Unsupported operating system")
-        relative_executable = executable.relative_to(staging)
-        previous = self._runtime_state()
+    def _stop_running(self):
         try:
             self.client.shutdown()
-            for _ in range(40):
-                time.sleep(0.25)
-                try:
-                    self.client.version()
-                except Exception:
-                    break
         except Exception:
-            pass
-        if destination.exists():
-            shutil.rmtree(destination)
-        staging.replace(destination)
-        executable = destination / relative_executable
-        self._save_runtime_state({
-            "version": version,
-            "executable": str(executable),
-            "previous": previous,
-            "installed_at": time.time(),
-        })
+            return
+        for _ in range(40):
+            time.sleep(0.25)
+            try:
+                self.client.version()
+            except Exception:
+                return
+        raise QBittorrentError("Embedded qBittorrent did not stop for the update")
+
+    def _restore_runtime_state(self, state):
+        if state:
+            self._save_runtime_state(state)
+        else:
+            self.state_file.unlink(missing_ok=True)
+
+    def update_latest(self):
+        if not self._update_lock.acquire(blocking=False):
+            raise QBittorrentError("A qBittorrent update is already running")
+        staging = None
+        package = None
         try:
-            self.ensure_running()
-        except Exception:
-            if previous.get("executable"):
-                self._save_runtime_state(previous)
-                self.ensure_running()
+            release = self.latest_release()
+            version = str(release.get("version") or "").strip()
+            if not version:
+                raise QBittorrentError("The latest qBittorrent release has no version")
+            current_status = self.status()
+            current_version = str(current_status.get("version") or "").strip()
+            if current_version == version:
+                return {
+                    **current_status,
+                    "latest_version": version,
+                    "update_available": False,
+                    "update_result": "current",
+                }
+
+            destination = self.versions_dir / version
+            staging = self.versions_dir / f".{version}.{uuid.uuid4().hex}.staging"
+            staging.mkdir(parents=True, exist_ok=False)
+            package = self.root / "downloads" / release["asset"]["name"]
+            self._download_verified(release["asset"], package)
+            system = normalize_system()
+            if system == "windows":
+                staged_executable = self._windows_extract(package, staging)
+            elif system == "darwin":
+                staged_executable = self._mac_extract(package, staging)
+            elif system == "linux":
+                staged_executable = staging / release["asset"]["name"]
+                shutil.copy2(package, staged_executable)
+                staged_executable.chmod(staged_executable.stat().st_mode | 0o111)
+            else:
+                raise QBittorrentError("Unsupported operating system")
+            relative_executable = staged_executable.relative_to(staging)
+            previous_state = self._runtime_state()
+
+            with self._completion_lock:
+                self._stop_running()
+                if destination.exists():
+                    shutil.rmtree(destination)
+                staging.replace(destination)
+                staging = None
+                executable = destination / relative_executable
+                self._save_runtime_state({
+                    "version": version,
+                    "executable": str(executable),
+                    "previous": previous_state,
+                    "updated_at": time.time(),
+                })
+                try:
+                    if not self.ensure_running():
+                        raise QBittorrentError("Updated qBittorrent did not start")
+                    running_version = self.client.version().lstrip("v")
+                    if running_version != version:
+                        raise QBittorrentError(
+                            f"Updated qBittorrent reported version {running_version or 'unknown'} instead of {version}"
+                        )
+                except Exception as error:
+                    try:
+                        self._stop_running()
+                    except Exception:
+                        pass
+                    self._restore_runtime_state(previous_state)
+                    try:
+                        self.ensure_running()
+                    except Exception as rollback_error:
+                        raise QBittorrentError(
+                            f"qBittorrent update failed and the previous runtime could not restart: {rollback_error}"
+                        ) from error
+                    raise QBittorrentError(f"qBittorrent update failed; the previous runtime was restored: {error}") from error
+
+            return {
+                **self.status(),
+                "latest_version": version,
+                "update_available": False,
+                "update_result": "updated",
+                "previous_version": current_version,
+            }
+        except QBittorrentError:
             raise
-        return self.status()
+        except Exception as error:
+            raise QBittorrentError(f"qBittorrent update failed: {error}") from error
+        finally:
+            if staging and staging.exists():
+                shutil.rmtree(staging, ignore_errors=True)
+            if package:
+                package.unlink(missing_ok=True)
+            self._update_lock.release()
 
     def _write_profile(self):
         config_dir = self.profile_dir / "qBittorrent" / "config"
@@ -738,8 +801,30 @@ class QBittorrentManager:
             "version": version,
             "latest_version": latest,
             "update_available": update_available,
-            "update_policy": "bundled",
+            "update_policy": "manual_github",
             "supported": supported,
+        }
+
+    def _submission_patch(self, metadata, source_type, submitted_at, *, resubmitted=False):
+        return {
+            **(metadata or {}),
+            "state": "downloading",
+            "destination": str(self.destination),
+            "submitted_at": submitted_at,
+            "resubmitted_at": submitted_at if resubmitted else None,
+            "source_type": source_type,
+            "payload_paths": [],
+            "imported_paths": [],
+            "deduplicated_paths": [],
+            "transfer_plan": [],
+            "collision": [],
+            "library_scan_pending": False,
+            "missing_since": None,
+            "missing_checks": 0,
+            "cancelled_at": None,
+            "abandoned_at": None,
+            "terminal_reason": "",
+            "last_error": "",
         }
 
     def submit_magnet(self, magnet, metadata):
@@ -776,21 +861,10 @@ class QBittorrentManager:
             candidates = [item for item in self.client.torrents() if QBT_TAG in str(item.get("tags", ""))]
             torrent_hash = str(candidates[-1].get("hash", "")) if candidates else ""
         submitted_at = time.time()
-        return self.jobs.upsert(torrent_hash, {
-            **(metadata or {}),
-            "state": "downloading",
-            "destination": str(self.destination),
-            "submitted_at": submitted_at,
-            "resubmitted_at": submitted_at if existing else None,
-            "source_type": "magnet",
-            "payload_paths": [],
-            "imported_paths": [],
-            "deduplicated_paths": [],
-            "transfer_plan": [],
-            "collision": [],
-            "library_scan_pending": False,
-            "last_error": "",
-        })
+        return self.jobs.upsert(
+            torrent_hash,
+            self._submission_patch(metadata, "magnet", submitted_at, resubmitted=bool(existing)),
+        )
 
     def submit_torrent(self, content, filename, metadata):
         if not content or not str(filename or "").lower().endswith(".torrent"):
@@ -809,13 +883,16 @@ class QBittorrentManager:
                 break
         if not torrent_hash:
             raise QBittorrentError("qBittorrent accepted the torrent but its hash could not be identified")
-        return self.jobs.upsert(torrent_hash, {
-            **(metadata or {}),
-            "state": "downloading",
-            "destination": str(self.destination),
-            "submitted_at": time.time(),
-            "source_type": "torrent",
-        })
+        submitted_at = time.time()
+        return self.jobs.upsert(
+            torrent_hash,
+            self._submission_patch(
+                metadata,
+                "torrent",
+                submitted_at,
+                resubmitted=bool(self.jobs.get(torrent_hash)),
+            ),
+        )
 
     def _payload_paths(self, torrent, files):
         save_path = Path(torrent.get("save_path") or self.staging_dir)
@@ -850,6 +927,75 @@ class QBittorrentManager:
                 })
         return self.jobs.upsert(torrent_hash, {"state": "imported", "last_error": ""})
 
+    @staticmethod
+    def _recoverable_job_paths(job):
+        paths = [
+            *(job.get("payload_paths") or []),
+            *(job.get("imported_paths") or []),
+        ]
+        for transfer in job.get("transfer_plan") or []:
+            paths.extend((transfer.get("source"), transfer.get("target")))
+        for collision in job.get("collision") or []:
+            paths.extend((collision.get("source"), collision.get("target")))
+        return [Path(path) for path in paths if path]
+
+    @classmethod
+    def _has_recoverable_job_path(cls, job):
+        return any(path.exists() for path in cls._recoverable_job_paths(job))
+
+    def _mark_missing_job(self, torrent_hash, job, now):
+        state = str(job.get("state") or "")
+        if state not in {"downloading", "finalizing", "moving", "move_failed", "destination_conflict"}:
+            return None
+        if self._has_recoverable_job_path(job):
+            return None
+
+        missing_since = float(job.get("missing_since") or 0)
+        missing_checks = int(job.get("missing_checks") or 0) + 1
+        if not missing_since:
+            self.jobs.upsert(torrent_hash, {
+                "missing_since": now,
+                "missing_checks": 1,
+            })
+            return None
+        if missing_checks < MISSING_TORRENT_MIN_CHECKS or now - missing_since < MISSING_TORRENT_GRACE_SECONDS:
+            self.jobs.upsert(torrent_hash, {"missing_checks": missing_checks})
+            return None
+
+        if state == "downloading":
+            return self.jobs.upsert(torrent_hash, {
+                "state": "cancelled",
+                "cancelled_at": now,
+                "terminal_reason": "Removed from qBittorrent before completion",
+                "identity_handoff": {
+                    "state": "not_required",
+                    "reason": "Download was cancelled before import",
+                    "paths": [],
+                },
+                "last_error": "",
+            })
+        return self.jobs.upsert(torrent_hash, {
+            "state": "abandoned",
+            "abandoned_at": now,
+            "terminal_reason": "qBittorrent and the completed payload are no longer available",
+            "last_error": "",
+        })
+
+    def _reactivate_terminal_job(self, torrent_hash, job):
+        handoff = dict(job.get("identity_handoff") or {})
+        if job.get("tmdb_id") or job.get("imdb_id"):
+            handoff = {"state": "pending"}
+        return self.jobs.upsert(torrent_hash, {
+            "state": "downloading",
+            "missing_since": None,
+            "missing_checks": 0,
+            "cancelled_at": None,
+            "abandoned_at": None,
+            "terminal_reason": "",
+            "identity_handoff": handoff,
+            "last_error": "",
+        })
+
     def process_completed(self):
         with self._completion_lock:
             return self._process_completed_locked()
@@ -861,19 +1007,28 @@ class QBittorrentManager:
         torrents = {str(item.get("hash", "")).lower(): item for item in self.client.torrents()}
         results = []
         for torrent_hash, job in jobs.items():
+            torrent = torrents.get(torrent_hash)
+            if job.get("state") in {"cancelled", "abandoned"}:
+                if not torrent:
+                    continue
+                job = self._reactivate_terminal_job(torrent_hash, job)
             if job.get("state") == "imported":
                 handoff_state = str((job.get("identity_handoff") or {}).get("state") or "")
                 if job.get("library_scan_pending") or not handoff_state:
                     results.append(job)
                 continue
-            torrent = torrents.get(torrent_hash)
+            if torrent and (job.get("missing_since") or job.get("missing_checks")):
+                job = self.jobs.upsert(torrent_hash, {
+                    "missing_since": None,
+                    "missing_checks": 0,
+                })
             if job.get("state") in {"payload_imported", "cleanup_failed"}:
                 results.append(self._finish_completed_import(torrent_hash, bool(torrent)))
                 continue
             if job.get("state") == "destination_conflict" and self._collision_is_unchanged(job):
                 results.append(job)
                 continue
-            if not torrent and job.get("payload_paths") and job.get("state") in {
+            if not torrent and job.get("payload_paths") and self._has_recoverable_job_path(job) and job.get("state") in {
                 "finalizing", "moving", "move_failed", "destination_conflict",
             }:
                 try:
@@ -884,7 +1039,12 @@ class QBittorrentManager:
                 except Exception as error:
                     results.append(self.jobs.upsert(torrent_hash, {"state": "move_failed", "last_error": str(error)}))
                 continue
-            if not torrent or float(torrent.get("progress", 0)) < 1:
+            if not torrent:
+                missing_result = self._mark_missing_job(torrent_hash, job, time.time())
+                if missing_result:
+                    results.append(missing_result)
+                continue
+            if float(torrent.get("progress", 0)) < 1:
                 continue
             try:
                 files = self.client.files(torrent_hash)

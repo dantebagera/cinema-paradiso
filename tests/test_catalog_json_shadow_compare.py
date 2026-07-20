@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 import tempfile
@@ -6,10 +7,23 @@ import unittest
 from pathlib import Path
 
 import app
-from tools.catalog_json_shadow_compare import compare_json_shadow
+from tools.catalog_json_shadow_compare import _canonical_projection, compare_json_shadow
+from tools.catalog_migration_backup import create_backup
 
 
 class CatalogJsonShadowCompareTest(unittest.TestCase):
+    def test_shadow_projection_normalizes_empty_collections_and_people_whitespace(self):
+        left = _canonical_projection({
+            'collection': None,
+            'cast': [{'id': '1', 'name': 'Actor ', 'character': ' Lead ', 'profile_url': ''}],
+        })
+        right = _canonical_projection({
+            'collection': {},
+            'cast': [{'id': 1, 'name': 'Actor', 'character': 'Lead', 'profile_url': ''}],
+        })
+
+        self.assertEqual(left, right)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.original_user_data_dir = app._user_data_dir
@@ -50,6 +64,18 @@ class CatalogJsonShadowCompareTest(unittest.TestCase):
         for filename, (document, fallback) in documents.items():
             payload = self.store.catalog.read_document(document, fallback)
             (base / filename).write_text(json.dumps(payload), encoding='utf-8')
+
+    def _create_cutover_backup(self):
+        project_root = Path(self.tmp.name) / 'project'
+        project_root.mkdir(exist_ok=True)
+        (project_root / 'config.json').write_text(
+            json.dumps({'user_data_dir': self.tmp.name}), encoding='utf-8'
+        )
+        (project_root / 'package.json').write_text(
+            json.dumps({'version': 'test'}), encoding='utf-8'
+        )
+        archive, _ = create_backup(project_root, output_dir=Path(self.tmp.name) / 'cutover-backups')
+        return archive
 
     def test_literal_json_and_sql_canonical_records_match_without_provider_calls(self):
         report = compare_json_shadow(self.tmp.name)
@@ -107,6 +133,41 @@ class CatalogJsonShadowCompareTest(unittest.TestCase):
         self.assertFalse(report['passed'])
         self.assertEqual(len(report['violations']['sql_only']), 1)
         self.assertEqual(len(report['violations']['document_sql_only']), 3)
+
+    def test_verified_cutover_proves_a_later_file_deletion_is_not_a_migration_failure(self):
+        archive = self._create_cutover_backup()
+        Path(self.tmp.name, 'catalog-migration-cutover.json').write_text(json.dumps({
+            'archive': archive.relative_to(self.tmp.name).as_posix(),
+            'sha256': hashlib.sha256(archive.read_bytes()).hexdigest(),
+        }), encoding='utf-8')
+        self.store.catalog.delete_records('app_metadata/files.json', [app._norm(self.path)])
+
+        report = compare_json_shadow(self.tmp.name)
+
+        self.assertTrue(report['passed'])
+        self.assertEqual(len(report['post_cutover_deletions']), 1)
+        self.assertEqual(report['violations']['legacy_only'], [])
+        self.assertEqual(report['record_counts']['differences'], {})
+
+    def test_verified_cutover_proves_a_later_tmdb_refresh_changed_canonical_behavior(self):
+        archive = self._create_cutover_backup()
+        time.sleep(0.01)
+        self.store.save_tmdb_metadata({
+            'tmdb_id': '42',
+            'imdb_id': 'tt0000042',
+            'title': 'Legacy Shadow',
+            'year': '2024',
+            'plot': 'Refreshed after cutover.',
+            'genres': ['Drama', 'Mystery'],
+        })
+
+        report = compare_json_shadow(self.tmp.name, cutover_archive=archive)
+
+        self.assertTrue(report['passed'])
+        self.assertEqual(len(report['post_cutover_canonical_changes']), 1)
+        evidence = report['post_cutover_canonical_changes'][0]['evidence']
+        self.assertEqual(evidence[0]['record_type'], 'tmdb_movies')
+        self.assertEqual(report['violations']['canonical'], [])
 
 
 if __name__ == '__main__':

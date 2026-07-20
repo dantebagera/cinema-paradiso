@@ -219,8 +219,20 @@ class SqlMigrationParityTest(unittest.TestCase):
 
         sql_item = app._catalog_library_item(candidate, self.store, self.store.snapshot())
         json_item = self._json_derived_canonical(self.paths["corrected"])
-        for field in ("title", "year", "tmdb_id", "imdb_id", "plot", "summary", "genres", "cast", "directors", "rating"):
+        for field in ("title", "year", "tmdb_id", "imdb_id", "plot", "summary", "genres", "rating"):
             self.assertEqual(sql_item["canonical_metadata"].get(field), json_item.get(field), field)
+        for field in ("cast", "directors"):
+            normalize = lambda people: [(
+                str(person.get("id", "") or ""),
+                str(person.get("name", "") or "").strip(),
+                str(person.get("character", "") or "").strip(),
+                str(person.get("profile_url", "") or "").strip(),
+            ) for person in (people or [])]
+            self.assertEqual(
+                normalize(sql_item["canonical_metadata"].get(field)),
+                normalize(json_item.get(field)),
+                field,
+            )
         self.assertEqual(sql_item["canonical_metadata"]["plot"], "TMDB plot wins the canonical summary.")
         self.assertEqual(sql_item["canonical_metadata"]["detail_provider"], "tmdb_snapshot")
         self.assertEqual(sql_item["plex_summary"], "Plex summary must remain available without replacing the TMDB plot.")
@@ -232,7 +244,7 @@ class SqlMigrationParityTest(unittest.TestCase):
         self.assertTrue(poster["canonical_metadata"]["poster_override"])
         self.assertNotEqual(poster["canonical_metadata"]["poster_url"], "https://poster.example/original.jpg")
 
-    def test_api_projections_defer_details_without_provider_calls_and_keep_owned_cards_consistent(self):
+    def test_api_projections_include_canonical_card_metadata_without_provider_calls(self):
         client = app.app.test_client()
         with patch("app.urllib.request.urlopen", side_effect=AssertionError("SQL detail reads must not call a provider")):
             full = client.get("/api/library")
@@ -256,14 +268,16 @@ class SqlMigrationParityTest(unittest.TestCase):
         movie_list_card = next(item for item in movie_list_cards.get_json()["items"] if item["path"] == str(self.paths["corrected"]))
         people_item = next(item for item in people.get_json()["items"] if item["path"] == str(self.paths["corrected"]))
         owned_item = ownership.get_json()["results"][0]["library_item"]
+        owned_card = ownership.get_json()["results"][0]["canonical_card"]
         self.assertTrue(ownership.get_json()["results"][0]["found"])
-        for field in ("tmdb_id", "imdb_id", "title", "year"):
+        for field in ("tmdb_id", "imdb_id", "title", "year", "plot", "summary", "detail_provider"):
             self.assertEqual(card_item["canonical_metadata"][field], full_item["canonical_metadata"][field], f"Library card {field}")
             self.assertEqual(movie_list_card["canonical_metadata"][field], full_item["canonical_metadata"][field], f"Movie List card {field}")
             self.assertEqual(owned_item["canonical_metadata"][field], full_item["canonical_metadata"][field], f"Discover ownership {field}")
-        self.assertNotIn("plot", card_item["canonical_metadata"])
-        self.assertNotIn("plot", movie_list_card["canonical_metadata"])
-        self.assertNotIn("plot", owned_item["canonical_metadata"])
+            self.assertEqual(owned_card["canonical_metadata"][field], full_item["canonical_metadata"][field], f"Owned card {field}")
+        self.assertEqual(card_item["canonical_metadata"]["plot"], "TMDB plot wins the canonical summary.")
+        self.assertEqual(movie_list_card["canonical_metadata"]["plot"], "TMDB plot wins the canonical summary.")
+        self.assertEqual(owned_item["canonical_metadata"]["plot"], "TMDB plot wins the canonical summary.")
         self.assertEqual(details.get_json()["item"]["canonical_metadata"]["plot"], "TMDB plot wins the canonical summary.")
         self.assertEqual(details.get_json()["item"]["plex_summary"], "Plex summary must remain available without replacing the TMDB plot.")
         self.assertEqual(people_item["canonical_metadata"]["cast"][0]["name"], "Lead Actor")
@@ -278,6 +292,60 @@ class SqlMigrationParityTest(unittest.TestCase):
         self.assertIsNotNone(owned)
         self.assertEqual(owned["path"], result["path"])
         self.assertEqual(owned["resolution"], result["resolution"])
+
+    def test_plex_source_sync_persists_changed_snapshot_once_without_generation_churn(self):
+        path = str(self.paths["corrected"])
+        path_key = app._norm(path)
+        plex_record = {
+            "rating_key": "plex-100",
+            "plex_title": "Correct Movie",
+            "plex_year": "2020",
+            "plex_summary": "Fresh Plex source summary.",
+            "plex_genres": ["Drama"],
+            "plex_cast": [{"name": "Plex Actor"}],
+            "plex_directors": [{"name": "Plex Director"}],
+            "tmdb_id": "100",
+            "imdb_id": "tt0000100",
+            "plex_guid": "plex://movie-100",
+        }
+        original = (
+            app._plex_url,
+            app._plex_token,
+            app._plex_cache_time,
+            dict(app._plex_cache),
+            dict(app._plex_unmatched),
+            dict(app._plex_matched_by_fname),
+            dict(app._plex_unmatched_by_fname),
+            list(app._plex_section_ids),
+        )
+        app._plex_url = "http://plex.test"
+        app._plex_token = "token"
+        app._plex_cache_time = 0
+        before = self.store.catalog.generation("media")
+        try:
+            with patch("app._fetch_plex_library", return_value=(
+                {path_key: plex_record}, {}, {Path(path).name.lower(): plex_record}, {}, ["1"],
+            )):
+                app._auto_sync_plex(force=True)
+                after_change = self.store.catalog.generation("media")
+                app._auto_sync_plex(force=True)
+                after_repeat = self.store.catalog.generation("media")
+        finally:
+            (
+                app._plex_url,
+                app._plex_token,
+                app._plex_cache_time,
+                app._plex_cache,
+                app._plex_unmatched,
+                app._plex_matched_by_fname,
+                app._plex_unmatched_by_fname,
+                app._plex_section_ids,
+            ) = original
+
+        candidate = self._candidate_for_path(path)
+        self.assertEqual(after_change, before + 1)
+        self.assertEqual(after_repeat, after_change)
+        self.assertEqual(candidate["plex_json"]["plex_summary"], "Fresh Plex source summary.")
 
     def test_home_stats_and_maintenance_share_the_catalog_generation_and_refresh_after_mutation(self):
         client = app.app.test_client()
@@ -321,6 +389,29 @@ class SqlMigrationParityTest(unittest.TestCase):
         file_view = app.app.test_client().get("/api/library?view=files").get_json()["items"]
         self.assertTrue(any(item["path"] == str(new_path) for item in file_view))
         self.assertTrue(any(item["path"] == str(self.paths["unmatched"]) for item in file_view))
+
+    def test_library_cards_expose_the_authoritative_maintenance_upgrade_decision(self):
+        cards = app.app.test_client().get("/api/library?view=cards").get_json()["items"]
+        by_path = {item["path"]: item for item in cards}
+
+        self.assertTrue(by_path[str(self.paths["upgrade"])]["maintenance_upgrade_candidate"])
+        self.assertFalse(by_path[str(self.paths["corrected"])]["maintenance_upgrade_candidate"])
+
+    def test_owned_collection_resolves_from_sql_when_tmdb_and_collection_cache_are_unavailable(self):
+        original_cache = app._tmdb_collection_cache
+        app._tmdb_collection_cache = {}
+        try:
+            with patch("app.urllib.request.urlopen", side_effect=AssertionError("owned collection reads must remain SQL-only")), \
+                    patch("app._fresh_library_cache_items", side_effect=AssertionError("catalog reads must not stat legacy library roots")):
+                response = app.app.test_client().get("/api/library/collection/44")
+        finally:
+            app._tmdb_collection_cache = original_cache
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.get_json()
+        self.assertEqual(payload["source"], "library_sql")
+        self.assertEqual(payload["owned_count"], 1)
+        self.assertEqual(payload["parts"][0]["tmdb_id"], "400")
 
     def test_manual_identity_and_overrides_refresh_library_ownership_stats_and_maintenance(self):
         client = app.app.test_client()
@@ -426,6 +517,27 @@ class SqlMigrationParityTest(unittest.TestCase):
             },
         })
 
+    def test_cancelled_download_does_not_touch_catalog_reconciliation_or_identity_handoff(self):
+        manager = unittest.mock.Mock()
+        app._library_cache = {"sentinel": True}
+        cancellation = [{
+            "hash": "fixture-cancelled",
+            "state": "cancelled",
+            "identity_handoff": {"state": "not_required"},
+            "imported_paths": [],
+        }]
+
+        with patch("app._metadata_store") as metadata_store, patch(
+            "app._start_library_reconcile"
+        ) as start_reconcile:
+            handled = app._handle_completed_qbittorrent_imports(manager, cancellation)
+
+        self.assertFalse(handled)
+        self.assertEqual(app._library_cache, {"sentinel": True})
+        metadata_store.assert_not_called()
+        start_reconcile.assert_not_called()
+        manager.jobs.upsert.assert_not_called()
+
     def test_failed_identity_handoff_remains_pending_for_restart_recovery(self):
         manager = unittest.mock.Mock()
         completion = [{
@@ -477,67 +589,6 @@ class SqlMigrationParityTest(unittest.TestCase):
                 "state": "deferred",
                 "reason": "Imported payload is outside the configured movie libraries",
                 "paths": [str(external)],
-            },
-        })
-
-    def test_legacy_import_audit_verifies_only_exact_accepted_sql_paths(self):
-        missing = self.data_dir / "missing-import.mkv"
-        missing.write_bytes(b"movie")
-        manager = unittest.mock.Mock()
-        manager.jobs.all.return_value = {
-            "verified-job": {
-                "hash": "verified-job",
-                "state": "imported",
-                "identity_handoff": {
-                    "state": "deferred",
-                    "reason": "The download job has no stable identity",
-                },
-                "imported_paths": [str(self.paths["corrected"])],
-            },
-            "review-job": {
-                "hash": "review-job",
-                "state": "imported",
-                "identity_handoff": {
-                    "state": "deferred",
-                    "reason": "The download job has no stable identity",
-                },
-                "imported_paths": [str(missing)],
-            },
-        }
-        client = app.app.test_client()
-        with patch("app._get_qbittorrent_manager", return_value=manager), patch(
-            "app.urllib.request.urlopen",
-            side_effect=AssertionError("legacy import audit must read SQL only"),
-        ):
-            audit = client.get("/api/qbittorrent/import-audit")
-            verified = client.post("/api/qbittorrent/import-audit/verify", json={"hashes": ["verified-job", "review-job"]})
-
-        self.assertEqual(audit.status_code, 200)
-        data = audit.get_json()
-        self.assertEqual(data["summary"]["deferred_jobs"], 2)
-        self.assertEqual(data["summary"]["verified_candidates"], 1)
-        self.assertEqual(data["summary"]["review_required"], 1)
-        verified_row = next(row for row in data["items"] if row["hash"] == "verified-job")
-        review_row = next(row for row in data["items"] if row["hash"] == "review-job")
-        self.assertEqual(verified_row["classification"], "verified_candidate")
-        self.assertEqual(verified_row["identity"]["tmdb_id"], "100")
-        self.assertEqual(review_row["classification"], "review_required")
-        self.assertEqual(review_row["reason"], "No exact SQL library record exists for the imported video")
-        self.assertEqual(verified.status_code, 200)
-        self.assertEqual(verified.get_json()["verified_count"], 1)
-        manager.jobs.upsert.assert_called_once_with("verified-job", {
-            "library_scan_pending": False,
-            "identity_handoff": {
-                "state": "verified_legacy",
-                "reason": "Exact SQL library identity verified after legacy import",
-                "paths": [str(self.paths["corrected"])],
-                "identity": {
-                    "tmdb_id": "100",
-                    "imdb_id": "tt0000100",
-                    "plex_guid": "",
-                    "title": "Correct Movie",
-                    "year": "2020",
-                },
             },
         })
 

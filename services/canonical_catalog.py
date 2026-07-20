@@ -1,0 +1,873 @@
+import hashlib
+import json
+import re
+
+from services.movie_identity import normalize_movie_title, ownership_keys
+
+
+CANONICAL_CONTRACT_VERSION = 2
+
+
+def _text(value):
+    return str(value or "").strip()
+
+
+def _number(value, default=0):
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _json(value):
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+
+
+def _identity_key(record):
+    record = record or {}
+    if _text(record.get("tmdb_id")):
+        return f"tmdb:{_text(record.get('tmdb_id'))}"
+    if _text(record.get("imdb_id")):
+        return f"imdb:{_text(record.get('imdb_id')).lower()}"
+    if _text(record.get("plex_guid")):
+        return f"plex:{_text(record.get('plex_guid')).lower()}"
+    title = normalize_movie_title(
+        record.get("identity_title")
+        or record.get("accepted_title")
+        or record.get("title")
+    )
+    year = _text(
+        record.get("identity_year")
+        or record.get("accepted_year")
+        or record.get("year")
+    )
+    return f"title:{title}|{year}" if title and year else ""
+
+
+def _provider_person_key(provider, snapshot_key, credit_type, position, person):
+    person_id = _text((person or {}).get("id"))
+    if provider == "tmdb" and person_id:
+        return f"tmdb:{person_id}"
+    if provider == "plex" and person_id:
+        return f"plex:{person_id}"
+    seed = f"{snapshot_key}|{credit_type}|{position}|{_text((person or {}).get('name')).lower()}"
+    return f"{provider}-credit:{hashlib.sha256(seed.encode('utf-8')).hexdigest()}"
+
+
+def _provider_details_state(provider, record):
+    record = record or {}
+    title = record.get("title") if provider == "tmdb" else record.get("plex_title")
+    if not _text(title):
+        return "missing"
+    detail_fields = (
+        ("plot", "poster_url", "genres", "tmdb_rating", "release_date", "backdrop_url")
+        if provider == "tmdb"
+        else ("plex_summary", "plex_poster", "plex_genres", "plex_rating")
+    )
+    return "complete" if any(record.get(field) for field in detail_fields) else "partial"
+
+
+def _provider_people_state(provider, record):
+    record = record or {}
+    cast_key = "cast" if provider == "tmdb" else "plex_cast"
+    director_key = "directors" if provider == "tmdb" else "plex_directors"
+    if cast_key not in record or director_key not in record:
+        return "missing"
+    people = [
+        person
+        for person in [*(record.get(cast_key) or []), *(record.get(director_key) or [])]
+        if isinstance(person, dict) and _text(person.get("name"))
+    ]
+    if not people:
+        return "empty"
+    if provider == "tmdb" and all(_text(person.get("id")) for person in people):
+        return "complete"
+    if provider == "plex" and all(
+        _text(person.get("id")) and _text(person.get("profile_url"))
+        for person in people
+    ):
+        return "complete"
+    return "partial"
+
+
+class CanonicalCatalog:
+    """Relational movie-domain projection built from persisted catalog sources."""
+
+    def initialize(self, connection):
+        connection.executescript("""
+            CREATE TABLE IF NOT EXISTS canonical_movies (
+                movie_key TEXT PRIMARY KEY,
+                title TEXT NOT NULL DEFAULT '',
+                year TEXT NOT NULL DEFAULT '',
+                tmdb_id TEXT NOT NULL DEFAULT '',
+                imdb_id TEXT NOT NULL DEFAULT '',
+                plex_guid TEXT NOT NULL DEFAULT '',
+                identity_status TEXT NOT NULL DEFAULT '',
+                identity_source TEXT NOT NULL DEFAULT '',
+                selected_provider TEXT NOT NULL DEFAULT '',
+                requested_enrichment_status TEXT NOT NULL DEFAULT '',
+                identity_revision INTEGER NOT NULL DEFAULT 0,
+                manual_lock INTEGER NOT NULL DEFAULT 0,
+                updated_at REAL NOT NULL DEFAULT 0
+            );
+
+            CREATE TABLE IF NOT EXISTS canonical_movie_files (
+                path_key TEXT PRIMARY KEY,
+                movie_key TEXT NOT NULL,
+                FOREIGN KEY (path_key) REFERENCES media_files(path_key) ON DELETE CASCADE,
+                FOREIGN KEY (movie_key) REFERENCES canonical_movies(movie_key) ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS provider_movie_snapshots (
+                snapshot_key TEXT PRIMARY KEY,
+                movie_key TEXT NOT NULL,
+                provider TEXT NOT NULL CHECK(provider IN ('tmdb', 'plex')),
+                provider_id TEXT NOT NULL DEFAULT '',
+                path_key TEXT NOT NULL DEFAULT '',
+                title TEXT NOT NULL DEFAULT '',
+                year TEXT NOT NULL DEFAULT '',
+                imdb_id TEXT NOT NULL DEFAULT '',
+                poster_url TEXT NOT NULL DEFAULT '',
+                backdrop_url TEXT NOT NULL DEFAULT '',
+                plot TEXT NOT NULL DEFAULT '',
+                rating TEXT NOT NULL DEFAULT '',
+                vote_count INTEGER NOT NULL DEFAULT 0,
+                language TEXT NOT NULL DEFAULT '',
+                country TEXT NOT NULL DEFAULT '',
+                country_flag TEXT NOT NULL DEFAULT '',
+                release_date TEXT NOT NULL DEFAULT '',
+                runtime INTEGER,
+                tagline TEXT NOT NULL DEFAULT '',
+                trailer_url TEXT NOT NULL DEFAULT '',
+                details_state TEXT NOT NULL DEFAULT 'missing',
+                people_state TEXT NOT NULL DEFAULT 'missing',
+                updated_at REAL NOT NULL DEFAULT 0,
+                source_json TEXT NOT NULL,
+                FOREIGN KEY (movie_key) REFERENCES canonical_movies(movie_key) ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS people (
+                person_key TEXT PRIMARY KEY,
+                tmdb_id TEXT NOT NULL DEFAULT '',
+                provider TEXT NOT NULL DEFAULT '',
+                provider_id TEXT NOT NULL DEFAULT '',
+                name TEXT NOT NULL,
+                profile_url TEXT NOT NULL DEFAULT '',
+                updated_at REAL NOT NULL DEFAULT 0
+            );
+
+            CREATE TABLE IF NOT EXISTS movie_credits (
+                snapshot_key TEXT NOT NULL,
+                credit_type TEXT NOT NULL CHECK(credit_type IN ('cast', 'director')),
+                position INTEGER NOT NULL,
+                person_key TEXT NOT NULL,
+                credited_name TEXT NOT NULL DEFAULT '',
+                character TEXT NOT NULL DEFAULT '',
+                profile_url TEXT NOT NULL DEFAULT '',
+                PRIMARY KEY (snapshot_key, credit_type, position),
+                FOREIGN KEY (snapshot_key) REFERENCES provider_movie_snapshots(snapshot_key) ON DELETE CASCADE,
+                FOREIGN KEY (person_key) REFERENCES people(person_key) ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS genres (
+                genre_key TEXT PRIMARY KEY,
+                name TEXT NOT NULL UNIQUE
+            );
+
+            CREATE TABLE IF NOT EXISTS movie_genres (
+                snapshot_key TEXT NOT NULL,
+                position INTEGER NOT NULL,
+                genre_key TEXT NOT NULL,
+                PRIMARY KEY (snapshot_key, position),
+                FOREIGN KEY (snapshot_key) REFERENCES provider_movie_snapshots(snapshot_key) ON DELETE CASCADE,
+                FOREIGN KEY (genre_key) REFERENCES genres(genre_key) ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS collections (
+                collection_key TEXT PRIMARY KEY,
+                provider TEXT NOT NULL,
+                provider_id TEXT NOT NULL DEFAULT '',
+                name TEXT NOT NULL DEFAULT '',
+                poster_url TEXT NOT NULL DEFAULT '',
+                backdrop_url TEXT NOT NULL DEFAULT '',
+                updated_at REAL NOT NULL DEFAULT 0
+            );
+
+            CREATE TABLE IF NOT EXISTS movie_collections (
+                snapshot_key TEXT PRIMARY KEY,
+                collection_key TEXT NOT NULL,
+                name TEXT NOT NULL DEFAULT '',
+                poster_url TEXT NOT NULL DEFAULT '',
+                backdrop_url TEXT NOT NULL DEFAULT '',
+                FOREIGN KEY (snapshot_key) REFERENCES provider_movie_snapshots(snapshot_key) ON DELETE CASCADE,
+                FOREIGN KEY (collection_key) REFERENCES collections(collection_key) ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS movie_overrides (
+                override_id TEXT PRIMARY KEY,
+                override_type TEXT NOT NULL CHECK(override_type IN ('metadata', 'poster')),
+                title TEXT NOT NULL DEFAULT '',
+                year TEXT NOT NULL DEFAULT '',
+                poster_url TEXT NOT NULL DEFAULT '',
+                source TEXT NOT NULL DEFAULT '',
+                locked INTEGER NOT NULL DEFAULT 1,
+                updated_at REAL NOT NULL DEFAULT 0,
+                raw_json TEXT NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS movie_override_identity_keys (
+                override_id TEXT NOT NULL,
+                identity_key TEXT NOT NULL,
+                PRIMARY KEY (override_id, identity_key),
+                FOREIGN KEY (override_id) REFERENCES movie_overrides(override_id) ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS identity_decisions (
+                path_key TEXT PRIMARY KEY,
+                movie_key TEXT,
+                status TEXT NOT NULL DEFAULT '',
+                source TEXT NOT NULL DEFAULT '',
+                provider TEXT NOT NULL DEFAULT '',
+                provider_id TEXT NOT NULL DEFAULT '',
+                revision INTEGER NOT NULL DEFAULT 0,
+                manual_lock INTEGER NOT NULL DEFAULT 0,
+                updated_at REAL NOT NULL DEFAULT 0,
+                raw_json TEXT NOT NULL,
+                FOREIGN KEY (path_key) REFERENCES media_files(path_key) ON DELETE CASCADE,
+                FOREIGN KEY (movie_key) REFERENCES canonical_movies(movie_key) ON DELETE SET NULL
+            );
+
+            CREATE INDEX IF NOT EXISTS idx_canonical_movies_tmdb ON canonical_movies(tmdb_id);
+            CREATE INDEX IF NOT EXISTS idx_canonical_movies_imdb ON canonical_movies(imdb_id);
+            CREATE INDEX IF NOT EXISTS idx_canonical_movies_plex ON canonical_movies(plex_guid);
+            CREATE INDEX IF NOT EXISTS idx_canonical_movie_files_movie ON canonical_movie_files(movie_key);
+            CREATE INDEX IF NOT EXISTS idx_provider_snapshots_movie ON provider_movie_snapshots(movie_key, provider);
+            CREATE INDEX IF NOT EXISTS idx_provider_snapshots_path ON provider_movie_snapshots(path_key);
+            CREATE INDEX IF NOT EXISTS idx_people_tmdb ON people(tmdb_id);
+            CREATE INDEX IF NOT EXISTS idx_people_name ON people(name COLLATE NOCASE);
+            CREATE INDEX IF NOT EXISTS idx_movie_credits_person ON movie_credits(person_key);
+            CREATE INDEX IF NOT EXISTS idx_override_identity ON movie_override_identity_keys(identity_key);
+        """)
+        additive_columns = {
+            "movie_credits": (
+                ("credited_name", "TEXT NOT NULL DEFAULT ''"),
+                ("profile_url", "TEXT NOT NULL DEFAULT ''"),
+            ),
+            "movie_collections": (
+                ("name", "TEXT NOT NULL DEFAULT ''"),
+                ("poster_url", "TEXT NOT NULL DEFAULT ''"),
+                ("backdrop_url", "TEXT NOT NULL DEFAULT ''"),
+            ),
+        }
+        for table, columns in additive_columns.items():
+            existing = {
+                row[1] for row in connection.execute(f"PRAGMA table_info({table})").fetchall()
+            }
+            for column, definition in columns:
+                if column not in existing:
+                    connection.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
+
+    def rebuild(self, connection):
+        for table in (
+            "identity_decisions",
+            "movie_override_identity_keys",
+            "movie_overrides",
+            "movie_collections",
+            "collections",
+            "movie_genres",
+            "genres",
+            "movie_credits",
+            "people",
+            "provider_movie_snapshots",
+            "canonical_movie_files",
+            "canonical_movies",
+        ):
+            connection.execute(f"DELETE FROM {table}")
+
+        rows = connection.execute("""
+            SELECT mf.*, pf.raw_json AS plex_json, mm.raw_json AS manual_json,
+                   tm.raw_json AS tmdb_json
+            FROM media_files mf
+            LEFT JOIN plex_files pf ON pf.path_key = mf.path_key
+            LEFT JOIN manual_matches mm ON mm.path_key = mf.path_key
+            LEFT JOIN tmdb_movies tm ON tm.tmdb_id = mf.tmdb_id
+            ORDER BY mf.path_key
+        """).fetchall()
+        for row in rows:
+            self._sync_row(connection, row)
+        self._sync_overrides(connection)
+
+    def sync_changes(self, connection, document_name, keys=()):
+        """Refresh relational projections inside the caller's catalog transaction."""
+        document_name = str(document_name or "").replace("\\", "/")
+        keys = [str(key) for key in keys]
+        if document_name in {
+            "app_metadata/files.json",
+            "app_metadata/plex_metadata.json",
+            "app_metadata/manual_matches.json",
+        }:
+            for path_key in keys:
+                self._sync_path(connection, path_key)
+            self._remove_orphans(connection)
+            return
+        if document_name == "app_metadata/tmdb_metadata.json":
+            for tmdb_id in keys:
+                snapshot_key = f"tmdb:{tmdb_id}"
+                connection.execute(
+                    "DELETE FROM provider_movie_snapshots WHERE snapshot_key = ?",
+                    (snapshot_key,),
+                )
+                metadata_row = connection.execute(
+                    "SELECT raw_json FROM tmdb_movies WHERE tmdb_id = ?", (tmdb_id,)
+                ).fetchone()
+                if not metadata_row:
+                    continue
+                record = json.loads(metadata_row[0])
+                movies = connection.execute(
+                    "SELECT movie_key FROM canonical_movies WHERE tmdb_id = ?", (tmdb_id,)
+                ).fetchall()
+                for movie in movies:
+                    path_row = connection.execute(
+                        "SELECT path_key FROM canonical_movie_files WHERE movie_key = ? ORDER BY path_key LIMIT 1",
+                        (movie[0],),
+                    ).fetchone()
+                    self._sync_provider_snapshot(
+                        connection,
+                        movie[0],
+                        "tmdb",
+                        path_row[0] if path_row else "",
+                        record,
+                    )
+            self._remove_orphans(connection)
+            return
+        if document_name in {
+            "app_metadata/metadata_overrides.json",
+            "app_metadata/poster_overrides.json",
+        }:
+            self._sync_overrides(connection)
+
+    def _sync_path(self, connection, path_key):
+        old = connection.execute(
+            "SELECT movie_key FROM canonical_movie_files WHERE path_key = ?", (path_key,)
+        ).fetchone()
+        old_movie_key = old[0] if old else ""
+        connection.execute("DELETE FROM identity_decisions WHERE path_key = ?", (path_key,))
+        connection.execute("DELETE FROM canonical_movie_files WHERE path_key = ?", (path_key,))
+        connection.execute(
+            "DELETE FROM provider_movie_snapshots WHERE provider = 'plex' AND path_key = ?",
+            (path_key,),
+        )
+        row = connection.execute("""
+            SELECT mf.*, pf.raw_json AS plex_json, mm.raw_json AS manual_json,
+                   tm.raw_json AS tmdb_json
+            FROM media_files mf
+            LEFT JOIN plex_files pf ON pf.path_key = mf.path_key
+            LEFT JOIN manual_matches mm ON mm.path_key = mf.path_key
+            LEFT JOIN tmdb_movies tm ON tm.tmdb_id = mf.tmdb_id
+            WHERE mf.path_key = ?
+        """, (path_key,)).fetchone()
+        if row:
+            self._sync_row(connection, row)
+        if old_movie_key:
+            connection.execute("""
+                DELETE FROM canonical_movies
+                WHERE movie_key = ?
+                  AND NOT EXISTS(
+                      SELECT 1 FROM canonical_movie_files cmf
+                      WHERE cmf.movie_key = canonical_movies.movie_key
+                  )
+            """, (old_movie_key,))
+
+    @staticmethod
+    def _remove_orphans(connection):
+        connection.execute("""
+            DELETE FROM canonical_movies
+            WHERE NOT EXISTS(
+                SELECT 1 FROM canonical_movie_files cmf
+                WHERE cmf.movie_key = canonical_movies.movie_key
+            )
+        """)
+        connection.execute("""
+            DELETE FROM people
+            WHERE NOT EXISTS(
+                SELECT 1 FROM movie_credits mc WHERE mc.person_key = people.person_key
+            )
+        """)
+        connection.execute("""
+            DELETE FROM genres
+            WHERE NOT EXISTS(
+                SELECT 1 FROM movie_genres mg WHERE mg.genre_key = genres.genre_key
+            )
+        """)
+        connection.execute("""
+            DELETE FROM collections
+            WHERE NOT EXISTS(
+                SELECT 1 FROM movie_collections mc WHERE mc.collection_key = collections.collection_key
+            )
+        """)
+
+    def _sync_row(self, connection, row):
+        row = dict(row)
+        file_record = json.loads(row.get("raw_json") or "{}")
+        plex_record = json.loads(row.get("plex_json") or "{}")
+        manual_record = json.loads(row.get("manual_json") or "{}")
+        tmdb_record = json.loads(row.get("tmdb_json") or "{}")
+        authoritative = {**file_record, **{
+            key: row.get(key)
+            for key in (
+                "path_key", "path", "identity_status", "identity_title", "identity_year",
+                "identity_source", "identity_revision", "tmdb_id", "imdb_id", "plex_guid",
+                "display_provider", "enrichment_status", "manual_lock", "manual_locked",
+                "metadata_status", "metadata_accepted",
+            )
+        }}
+        movie_key = _identity_key(authoritative)
+        accepted = bool(row.get("metadata_accepted") or row.get("identity_status") == "accepted")
+        if not movie_key or not accepted:
+            self._sync_identity_decision(connection, row, "", file_record, manual_record)
+            return
+
+        selected_provider = _text(row.get("display_provider"))
+        if selected_provider not in {"tmdb", "plex"}:
+            selected_provider = "tmdb" if _text(row.get("tmdb_id")) else "plex"
+        title = _text(row.get("identity_title") or file_record.get("accepted_title") or file_record.get("title"))
+        year = _text(
+            row.get("identity_year")
+            or file_record.get("accepted_year")
+            or file_record.get("year")
+            or row.get("parsed_year")
+        )
+        connection.execute("""
+            INSERT INTO canonical_movies(
+                movie_key, title, year, tmdb_id, imdb_id, plex_guid, identity_status,
+                identity_source, selected_provider, requested_enrichment_status,
+                identity_revision, manual_lock, updated_at
+            ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)
+            ON CONFLICT(movie_key) DO UPDATE SET
+                title=CASE WHEN excluded.title<>'' THEN excluded.title ELSE canonical_movies.title END,
+                year=CASE WHEN excluded.year<>'' THEN excluded.year ELSE canonical_movies.year END,
+                tmdb_id=CASE WHEN excluded.tmdb_id<>'' THEN excluded.tmdb_id ELSE canonical_movies.tmdb_id END,
+                imdb_id=CASE WHEN excluded.imdb_id<>'' THEN excluded.imdb_id ELSE canonical_movies.imdb_id END,
+                plex_guid=CASE WHEN excluded.plex_guid<>'' THEN excluded.plex_guid ELSE canonical_movies.plex_guid END,
+                identity_status=excluded.identity_status,
+                identity_source=CASE WHEN excluded.identity_source<>'' THEN excluded.identity_source ELSE canonical_movies.identity_source END,
+                selected_provider=excluded.selected_provider,
+                requested_enrichment_status=excluded.requested_enrichment_status,
+                identity_revision=MAX(canonical_movies.identity_revision, excluded.identity_revision),
+                manual_lock=MAX(canonical_movies.manual_lock, excluded.manual_lock),
+                updated_at=MAX(canonical_movies.updated_at, excluded.updated_at)
+        """, (
+            movie_key, title, year, _text(row.get("tmdb_id")), _text(row.get("imdb_id")),
+            _text(row.get("plex_guid")), "accepted", _text(row.get("identity_source")),
+            selected_provider, _text(row.get("enrichment_status")),
+            int(row.get("identity_revision") or 0),
+            1 if row.get("manual_lock") or row.get("manual_locked") else 0,
+            _number(file_record.get("updated_at")),
+        ))
+        connection.execute(
+            "INSERT OR REPLACE INTO canonical_movie_files(path_key, movie_key) VALUES(?, ?)",
+            (row["path_key"], movie_key),
+        )
+        if tmdb_record:
+            self._sync_provider_snapshot(connection, movie_key, "tmdb", row["path_key"], tmdb_record)
+        if plex_record:
+            self._sync_provider_snapshot(connection, movie_key, "plex", row["path_key"], plex_record)
+        self._sync_identity_decision(connection, row, movie_key, file_record, manual_record)
+
+    def _sync_provider_snapshot(self, connection, movie_key, provider, path_key, record):
+        if provider == "tmdb":
+            provider_id = _text(record.get("tmdb_id") or record.get("id"))
+            if not provider_id:
+                return
+            snapshot_key = f"tmdb:{provider_id}"
+            title = _text(record.get("title") or record.get("name"))
+            year = _text(record.get("year") or _text(record.get("release_date"))[:4])
+            values = {
+                "imdb_id": record.get("imdb_id"), "poster_url": record.get("poster_url"),
+                "backdrop_url": record.get("backdrop_url"), "plot": record.get("plot") or record.get("overview"),
+                "rating": record.get("tmdb_rating") or record.get("vote_average"),
+                "vote_count": record.get("tmdb_vote_count") or record.get("vote_count"),
+                "language": record.get("language") or record.get("original_language"),
+                "country": record.get("country"), "country_flag": record.get("country_flag"),
+                "release_date": record.get("release_date"), "runtime": record.get("runtime"),
+                "tagline": record.get("tagline"), "trailer_url": record.get("trailer_url"),
+            }
+            cast = record.get("cast") or []
+            directors = record.get("directors") or []
+            genres = record.get("genres") or []
+            collection = record.get("collection") or {}
+            snapshot_path = ""
+        else:
+            provider_id = _text(record.get("rating_key") or record.get("plex_guid") or path_key)
+            snapshot_key = f"plex-file:{path_key}"
+            title = _text(record.get("plex_title"))
+            year = _text(record.get("plex_year"))
+            values = {
+                "imdb_id": record.get("imdb_id"), "poster_url": record.get("plex_poster"),
+                "backdrop_url": "", "plot": record.get("plex_summary"),
+                "rating": record.get("plex_rating"), "vote_count": 0,
+                "language": record.get("plex_language"), "country": record.get("plex_country"),
+                "country_flag": record.get("plex_country_flag"), "release_date": "", "runtime": None,
+                "tagline": "", "trailer_url": "",
+            }
+            cast = record.get("plex_cast") or []
+            directors = record.get("plex_directors") or []
+            genres = record.get("plex_genres") or []
+            collection = {}
+            snapshot_path = path_key
+
+        connection.execute("""
+            INSERT OR REPLACE INTO provider_movie_snapshots(
+                snapshot_key, movie_key, provider, provider_id, path_key, title, year,
+                imdb_id, poster_url, backdrop_url, plot, rating, vote_count, language,
+                country, country_flag, release_date, runtime, tagline, trailer_url,
+                details_state, people_state, updated_at, source_json
+            ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        """, (
+            snapshot_key, movie_key, provider, provider_id, snapshot_path, title, year,
+            _text(values["imdb_id"]), _text(values["poster_url"]), _text(values["backdrop_url"]),
+            _text(values["plot"]), _text(values["rating"]), int(_number(values["vote_count"])),
+            _text(values["language"]), _text(values["country"]), _text(values["country_flag"]),
+            _text(values["release_date"]), int(_number(values["runtime"])) if values["runtime"] not in (None, "") else None,
+            _text(values["tagline"]), _text(values["trailer_url"]),
+            _provider_details_state(provider, record), _provider_people_state(provider, record),
+            _number(record.get("updated_at")), _json(record),
+        ))
+        connection.execute("DELETE FROM movie_credits WHERE snapshot_key = ?", (snapshot_key,))
+        for credit_type, people in (("director", directors), ("cast", cast)):
+            for position, person in enumerate(people if isinstance(people, list) else []):
+                if not isinstance(person, dict) or not _text(person.get("name")):
+                    continue
+                person_key = _provider_person_key(provider, snapshot_key, credit_type, position, person)
+                person_id = _text(person.get("id"))
+                connection.execute("""
+                    INSERT INTO people(person_key, tmdb_id, provider, provider_id, name, profile_url, updated_at)
+                    VALUES(?,?,?,?,?,?,?)
+                    ON CONFLICT(person_key) DO UPDATE SET
+                        name=excluded.name,
+                        profile_url=CASE
+                            WHEN excluded.profile_url<>'' AND excluded.updated_at>=people.updated_at
+                            THEN excluded.profile_url
+                            ELSE people.profile_url
+                        END,
+                        updated_at=MAX(people.updated_at, excluded.updated_at)
+                """, (
+                    person_key, person_id if provider == "tmdb" else "", provider, person_id,
+                    _text(person.get("name")), _text(person.get("profile_url")),
+                    _number(record.get("updated_at")),
+                ))
+                connection.execute(
+                    "INSERT INTO movie_credits(snapshot_key, credit_type, position, person_key, credited_name, character, profile_url) VALUES(?,?,?,?,?,?,?)",
+                    (
+                        snapshot_key, credit_type, position, person_key,
+                        _text(person.get("name")), _text(person.get("character")),
+                        _text(person.get("profile_url")),
+                    ),
+                )
+
+        connection.execute("DELETE FROM movie_genres WHERE snapshot_key = ?", (snapshot_key,))
+        for position, genre in enumerate(genres if isinstance(genres, list) else []):
+            name = _text(genre.get("name") if isinstance(genre, dict) else genre)
+            if not name:
+                continue
+            genre_key = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or hashlib.sha256(name.encode()).hexdigest()
+            connection.execute("INSERT OR IGNORE INTO genres(genre_key, name) VALUES(?, ?)", (genre_key, name))
+            connection.execute(
+                "INSERT INTO movie_genres(snapshot_key, position, genre_key) VALUES(?,?,?)",
+                (snapshot_key, position, genre_key),
+            )
+
+        connection.execute("DELETE FROM movie_collections WHERE snapshot_key = ?", (snapshot_key,))
+        if isinstance(collection, dict) and _text(collection.get("id")):
+            collection_id = _text(collection.get("id"))
+            collection_key = f"{provider}:{collection_id}"
+            connection.execute("""
+                INSERT INTO collections(
+                    collection_key, provider, provider_id, name, poster_url, backdrop_url, updated_at
+                ) VALUES(?,?,?,?,?,?,?)
+                ON CONFLICT(collection_key) DO UPDATE SET
+                    name=CASE WHEN excluded.name<>'' AND excluded.updated_at>=collections.updated_at THEN excluded.name ELSE collections.name END,
+                    poster_url=CASE WHEN excluded.poster_url<>'' AND excluded.updated_at>=collections.updated_at THEN excluded.poster_url ELSE collections.poster_url END,
+                    backdrop_url=CASE WHEN excluded.backdrop_url<>'' AND excluded.updated_at>=collections.updated_at THEN excluded.backdrop_url ELSE collections.backdrop_url END,
+                    updated_at=MAX(collections.updated_at, excluded.updated_at)
+            """, (
+                collection_key, provider, collection_id, _text(collection.get("name")),
+                _text(collection.get("poster_url")), _text(collection.get("backdrop_url")),
+                _number(record.get("updated_at")),
+            ))
+            connection.execute("""
+                INSERT INTO movie_collections(
+                    snapshot_key, collection_key, name, poster_url, backdrop_url
+                ) VALUES(?,?,?,?,?)
+            """, (
+                snapshot_key, collection_key, _text(collection.get("name")),
+                _text(collection.get("poster_url")), _text(collection.get("backdrop_url")),
+            ))
+
+    def _sync_identity_decision(self, connection, row, movie_key, file_record, manual_record):
+        provider = _text(manual_record.get("provider") or row.get("display_provider"))
+        provider_id = _text(
+            manual_record.get("tmdb_id") or manual_record.get("plex_guid")
+            or row.get("tmdb_id") or row.get("plex_guid")
+        )
+        connection.execute("""
+            INSERT OR REPLACE INTO identity_decisions(
+                path_key, movie_key, status, source, provider, provider_id, revision,
+                manual_lock, updated_at, raw_json
+            ) VALUES(?,?,?,?,?,?,?,?,?,?)
+        """, (
+            row["path_key"], movie_key or None,
+            _text(row.get("identity_status") or row.get("metadata_status")),
+            _text(row.get("identity_source") or row.get("metadata_source")),
+            provider, provider_id, int(row.get("identity_revision") or 0),
+            1 if row.get("manual_lock") or row.get("manual_locked") else 0,
+            max(_number(file_record.get("updated_at")), _number(manual_record.get("updated_at"))),
+            _json({"file": file_record, "manual_match": manual_record}),
+        ))
+
+    def _sync_overrides(self, connection):
+        connection.execute("DELETE FROM movie_override_identity_keys")
+        connection.execute("DELETE FROM movie_overrides")
+        specs = (
+            ("app_metadata/metadata_overrides.json", "metadata"),
+            ("app_metadata/poster_overrides.json", "poster"),
+        )
+        for document_name, override_type in specs:
+            row = connection.execute(
+                "SELECT payload_json FROM source_documents WHERE name = ?", (document_name,)
+            ).fetchone()
+            if not row:
+                continue
+            try:
+                overrides = json.loads(row[0]).get("overrides", [])
+            except (TypeError, ValueError):
+                overrides = []
+            for position, override in enumerate(overrides if isinstance(overrides, list) else []):
+                if not isinstance(override, dict):
+                    continue
+                override_id = _text(override.get("id")) or f"{override_type}:{position}"
+                connection.execute("""
+                    INSERT OR REPLACE INTO movie_overrides(
+                        override_id, override_type, title, year, poster_url, source,
+                        locked, updated_at, raw_json
+                    ) VALUES(?,?,?,?,?,?,?,?,?)
+                """, (
+                    override_id, override_type, _text(override.get("title")),
+                    _text(override.get("year")), _text(override.get("poster_url")),
+                    _text(override.get("source")), 1 if override.get("locked", True) else 0,
+                    _number(override.get("updated_at")), _json(override),
+                ))
+                keys = override.get("identity_keys") or ownership_keys(override.get("identity") or {})
+                for identity_key in dict.fromkeys(_text(key) for key in keys if _text(key)):
+                    connection.execute(
+                        "INSERT OR IGNORE INTO movie_override_identity_keys(override_id, identity_key) VALUES(?, ?)",
+                        (override_id, identity_key),
+                    )
+
+    def project_path(self, connection, path_key, include_overrides=True):
+        movie = connection.execute("""
+            SELECT cm.* FROM canonical_movie_files cmf
+            JOIN canonical_movies cm ON cm.movie_key = cmf.movie_key
+            WHERE cmf.path_key = ?
+        """, (path_key,)).fetchone()
+        if not movie:
+            return {}
+        movie = dict(movie)
+        selected_provider = movie["selected_provider"]
+        snapshot = self._selected_snapshot(connection, movie, path_key, selected_provider)
+        selected_snapshot_present = bool(snapshot)
+        fallback_active = False
+        if not snapshot:
+            snapshot = self._fallback_snapshot(connection, movie["movie_key"], path_key, selected_provider)
+            fallback_active = bool(snapshot)
+        snapshot = dict(snapshot) if snapshot else {}
+        snapshot_key = snapshot.get("snapshot_key", "")
+        cast = self._credits(connection, snapshot_key, "cast")
+        directors = self._credits(connection, snapshot_key, "director")
+        genres = [
+            row[0]
+            for row in connection.execute("""
+                SELECT g.name FROM movie_genres mg
+                JOIN genres g ON g.genre_key = mg.genre_key
+                WHERE mg.snapshot_key = ? ORDER BY mg.position
+            """, (snapshot_key,)).fetchall()
+        ] if snapshot_key else []
+        collection = {}
+        if snapshot_key:
+            row = connection.execute("""
+                SELECT c.provider_id, mc.name, mc.poster_url, mc.backdrop_url
+                FROM movie_collections mc
+                JOIN collections c ON c.collection_key = mc.collection_key
+                WHERE mc.snapshot_key = ?
+            """, (snapshot_key,)).fetchone()
+            if row:
+                collection = {
+                    "id": _text(row[0]), "name": _text(row[1]),
+                    "poster_url": _text(row[2]), "backdrop_url": _text(row[3]),
+                }
+
+        requested = _text(movie.get("requested_enrichment_status")).lower()
+        selected_complete = bool(
+            selected_snapshot_present
+            and snapshot.get("details_state") == "complete"
+            and snapshot.get("people_state") in {"complete", "empty"}
+        )
+        enrichment_status = requested if requested in {"stale", "unavailable"} else (
+            "complete" if selected_complete else "incomplete"
+        )
+        canonical = {
+            "accepted": True,
+            "status": "accepted",
+            "identity_status": "accepted",
+            "enrichment_status": enrichment_status,
+            "metadata_contract_version": CANONICAL_CONTRACT_VERSION,
+            "source": movie.get("identity_source", ""),
+            "detail_provider": f"{snapshot.get('provider')}_snapshot" if snapshot else "",
+            "selected_provider": selected_provider,
+            "selected_provider_snapshot": selected_snapshot_present,
+            "fallback_active": fallback_active,
+            "people_status": snapshot.get("people_state", "missing"),
+            "title": movie.get("title") or snapshot.get("title", ""),
+            "year": movie.get("year") or snapshot.get("year", ""),
+            "tmdb_id": movie.get("tmdb_id", ""),
+            "imdb_id": movie.get("imdb_id") or snapshot.get("imdb_id", ""),
+            "plex_guid": movie.get("plex_guid", ""),
+            "identity_revision": int(movie.get("identity_revision") or 0),
+            "poster_url": snapshot.get("poster_url", ""),
+            "backdrop_url": snapshot.get("backdrop_url", ""),
+            "genres": genres,
+            "plot": snapshot.get("plot", ""),
+            "summary": snapshot.get("plot", ""),
+            "rating": snapshot.get("rating", ""),
+            "tmdb_rating": snapshot.get("rating", "") if snapshot.get("provider") == "tmdb" else "",
+            "plex_rating": snapshot.get("rating", "") if snapshot.get("provider") == "plex" else "",
+            "tmdb_vote_count": int(snapshot.get("vote_count") or 0),
+            "language": snapshot.get("language", ""),
+            "country": snapshot.get("country", ""),
+            "country_flag": snapshot.get("country_flag", ""),
+            "release_date": snapshot.get("release_date", ""),
+            "runtime": snapshot.get("runtime"),
+            "tagline": snapshot.get("tagline", ""),
+            "trailer_url": snapshot.get("trailer_url", ""),
+            "collection": collection,
+            "cast": cast,
+            "directors": directors,
+            "director": directors[0] if directors else {},
+        }
+        if include_overrides:
+            self._apply_overrides(connection, path_key, movie, canonical)
+        return canonical
+
+    @staticmethod
+    def _selected_snapshot(connection, movie, path_key, provider):
+        if provider == "tmdb" and _text(movie.get("tmdb_id")):
+            return connection.execute(
+                "SELECT * FROM provider_movie_snapshots WHERE snapshot_key = ?",
+                (f"tmdb:{movie['tmdb_id']}",),
+            ).fetchone()
+        if provider == "plex":
+            return connection.execute("""
+                SELECT * FROM provider_movie_snapshots
+                WHERE movie_key = ? AND provider = 'plex'
+                ORDER BY CASE WHEN path_key = ? THEN 0 ELSE 1 END, updated_at DESC
+                LIMIT 1
+            """, (movie["movie_key"], path_key)).fetchone()
+        return None
+
+    @staticmethod
+    def _fallback_snapshot(connection, movie_key, path_key, selected_provider):
+        order = "CASE provider WHEN 'tmdb' THEN 0 ELSE 1 END" if selected_provider != "tmdb" else "CASE provider WHEN 'plex' THEN 0 ELSE 1 END"
+        return connection.execute(f"""
+            SELECT * FROM provider_movie_snapshots
+            WHERE movie_key = ? AND provider <> ?
+            ORDER BY {order}, CASE WHEN path_key = ? THEN 0 ELSE 1 END, updated_at DESC
+            LIMIT 1
+        """, (movie_key, selected_provider, path_key)).fetchone()
+
+    @staticmethod
+    def _credits(connection, snapshot_key, credit_type):
+        if not snapshot_key:
+            return []
+        result = []
+        for row in connection.execute("""
+                SELECT CASE WHEN p.tmdb_id<>'' THEN p.tmdb_id ELSE p.provider_id END,
+                       CASE WHEN mc.credited_name<>'' THEN mc.credited_name ELSE p.name END,
+                       mc.profile_url, mc.character
+                FROM movie_credits mc
+                JOIN people p ON p.person_key = mc.person_key
+                WHERE mc.snapshot_key = ? AND mc.credit_type = ?
+                ORDER BY mc.position
+            """, (snapshot_key, credit_type)).fetchall():
+            person = {
+                "id": _text(row[0]), "name": _text(row[1]),
+                "profile_url": _text(row[2]),
+            }
+            if credit_type == "cast":
+                person["character"] = _text(row[3])
+            result.append(person)
+        return result
+
+    @staticmethod
+    def _apply_overrides(connection, path_key, movie, canonical):
+        identity_keys = {movie["movie_key"]}
+        identity_keys.update(
+            row[0]
+            for row in connection.execute(
+                "SELECT identity_key FROM media_identity_keys WHERE path_key = ?", (path_key,)
+            ).fetchall()
+        )
+        if not identity_keys:
+            return
+        placeholders = ",".join("?" for _ in identity_keys)
+        rows = connection.execute(f"""
+            SELECT DISTINCT mo.* FROM movie_overrides mo
+            JOIN movie_override_identity_keys mk ON mk.override_id = mo.override_id
+            WHERE mk.identity_key IN ({placeholders})
+            ORDER BY mo.updated_at
+        """, sorted(identity_keys)).fetchall()
+        for row in rows:
+            override = dict(row)
+            if override["override_type"] == "metadata":
+                if override.get("title"):
+                    canonical["title"] = override["title"]
+                if override.get("year"):
+                    canonical["year"] = override["year"]
+                canonical["metadata_override"] = True
+            elif override["override_type"] == "poster" and override.get("poster_url"):
+                canonical["poster_url"] = override["poster_url"]
+                canonical["poster_override"] = True
+
+    def strict_report(self, connection, max_errors=100):
+        violations = []
+        rows = connection.execute("""
+            SELECT cmf.path_key, cm.movie_key, cm.selected_provider, cm.tmdb_id
+            FROM canonical_movie_files cmf
+            JOIN canonical_movies cm ON cm.movie_key = cmf.movie_key
+            ORDER BY cmf.path_key
+        """).fetchall()
+        provider_counts = {}
+        incomplete = 0
+        for row in rows:
+            projection = self.project_path(connection, row["path_key"])
+            provider = projection.get("detail_provider", "")
+            provider_counts[provider] = provider_counts.get(provider, 0) + 1
+            if projection.get("enrichment_status") != "complete":
+                incomplete += 1
+            if row["selected_provider"] == "tmdb" and row["tmdb_id"] and not projection.get("selected_provider_snapshot"):
+                if len(violations) < max_errors:
+                    violations.append({
+                        "path_key": row["path_key"],
+                        "movie_key": row["movie_key"],
+                        "message": "TMDB-selected identity has no relational TMDB snapshot",
+                    })
+        return {
+            "contract_version": CANONICAL_CONTRACT_VERSION,
+            "checked_files": len(rows),
+            "canonical_movies": int(connection.execute("SELECT COUNT(*) FROM canonical_movies").fetchone()[0]),
+            "people": int(connection.execute("SELECT COUNT(*) FROM people").fetchone()[0]),
+            "credits": int(connection.execute("SELECT COUNT(*) FROM movie_credits").fetchone()[0]),
+            "incomplete_files": incomplete,
+            "detail_providers": dict(sorted(provider_counts.items())),
+            "violations": violations,
+            "passed": not violations,
+        }

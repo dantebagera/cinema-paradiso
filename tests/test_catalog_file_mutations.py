@@ -7,6 +7,40 @@ import app
 
 
 class CatalogFileMutationTest(unittest.TestCase):
+    def test_fix_path_refuses_to_move_a_correctly_nested_movie_folder_outside_library(self):
+        original_dirs = app._movies_dirs
+        original_dir = app._movies_dir
+        original_plex_cache = dict(app._plex_cache)
+        original_plex_by_filename = dict(app._plex_matched_by_fname)
+        with tempfile.TemporaryDirectory() as parent_tmp:
+            library_root = Path(parent_tmp) / "Library"
+            movie_folder = library_root / "Example Movie (2020)"
+            movie_folder.mkdir(parents=True)
+            movie_path = movie_folder / "Example.Movie.2020.mkv"
+            movie_path.write_bytes(b"movie")
+            escaped_folder = Path(parent_tmp) / movie_folder.name
+            try:
+                app._movies_dirs = [str(library_root)]
+                app._movies_dir = str(library_root)
+                app._plex_cache = {}
+                app._plex_matched_by_fname = {}
+                with patch("app._migrate_library_path") as migrate, patch("app._plex_rescan") as plex_rescan:
+                    response = app.app.test_client().post("/api/fix-path", json={"path": str(movie_path)})
+                movie_still_exists = movie_path.exists()
+                escaped_exists = escaped_folder.exists()
+            finally:
+                app._movies_dirs = original_dirs
+                app._movies_dir = original_dir
+                app._plex_cache = original_plex_cache
+                app._plex_matched_by_fname = original_plex_by_filename
+
+        self.assertEqual(response.status_code, 409)
+        self.assertIn("already at the correct depth", response.get_json()["error"])
+        self.assertTrue(movie_still_exists)
+        self.assertFalse(escaped_exists)
+        migrate.assert_not_called()
+        plex_rescan.assert_not_called()
+
     def test_rename_and_delete_refresh_catalog_without_rescan(self):
         original_dirs = app._movies_dirs
         original_dir = app._movies_dir
@@ -102,6 +136,9 @@ class CatalogFileMutationTest(unittest.TestCase):
                 "title": "Alien",
                 "year": "1979",
                 "poster_url": "alien.jpg",
+                "plot": "Stored detail.",
+                "cast": [],
+                "directors": [],
             })
             store.update_file_record(str(movie_path), {
                 "identity_status": "accepted",

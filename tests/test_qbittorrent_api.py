@@ -28,11 +28,17 @@ class FakeManager:
         }
 
     def status(self):
-        return {**self.configuration(), "installed": self.installed, "running": self.installed, "supported": True}
+        return {
+            **self.configuration(),
+            "installed": self.installed,
+            "running": self.installed,
+            "supported": True,
+            "version": "5.2.2",
+        }
 
-    def install_latest(self):
+    def update_latest(self):
         self.installed = True
-        return self.status()
+        return {**self.status(), "version": "5.2.3", "update_result": "updated"}
 
     def submit_magnet(self, magnet, metadata):
         self.submitted.append(("magnet", magnet, metadata))
@@ -104,6 +110,10 @@ class QBittorrentApiTests(unittest.TestCase):
         app._prowlarr_url = self.original["prowlarr_url"]
         app._prowlarr_key = self.original["prowlarr_key"]
         self.temp.cleanup()
+
+    def test_migration_only_import_audit_routes_are_removed(self):
+        self.assertEqual(self.client.get("/api/qbittorrent/import-audit").status_code, 404)
+        self.assertEqual(self.client.post("/api/qbittorrent/import-audit/verify", json={}).status_code, 404)
 
     def test_config_defaults_to_embedded_and_primary_library(self):
         response = self.client.get("/api/qbittorrent/config")
@@ -235,13 +245,22 @@ class QBittorrentApiTests(unittest.TestCase):
         self.assertEqual(response.get_json()["state"], "imported")
         self.assertTrue(response.get_json()["already_exists"])
 
-    def test_install_and_update_routes_are_disabled_for_bundled_runtime(self):
+    def test_update_route_updates_the_embedded_portable_runtime(self):
         installed = self.client.post("/api/qbittorrent/install")
         updated = self.client.post("/api/qbittorrent/update")
 
-        self.assertEqual(installed.status_code, 410)
-        self.assertEqual(updated.status_code, 410)
-        self.assertIn("disabled", installed.get_json()["error"])
+        self.assertEqual(installed.status_code, 404)
+        self.assertEqual(updated.status_code, 200)
+        self.assertEqual(updated.get_json()["version"], "5.2.3")
+        self.assertEqual(updated.get_json()["update_result"], "updated")
+
+    def test_update_route_requires_embedded_mode(self):
+        app._qbt_mode = "system"
+
+        response = self.client.post("/api/qbittorrent/update")
+
+        self.assertEqual(response.status_code, 409)
+        self.assertIn("embedded qBittorrent", response.get_json()["error"])
 
     def test_finalize_route_remains_available(self):
         finalized = self.client.post("/api/qbittorrent/finalize")

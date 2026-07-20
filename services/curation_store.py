@@ -101,7 +101,7 @@ class UserCurationStore:
         data = self._read_json(self.lists_file, {'lists': []})
         data.setdefault('lists', [])
         existing = {item.get('id'): item for item in data['lists']}
-        changed = False
+        persisted_changed = False
         system_lists = []
         for definition in self.SYSTEM_LISTS:
             current = existing.get(definition['id'])
@@ -112,23 +112,22 @@ class UserCurationStore:
                     'created_at': time.time(),
                     'updated_at': time.time(),
                 }
-                changed = True
+                data['lists'].append(current)
+                persisted_changed = True
             else:
                 for key, value in definition.items():
                     if current.get(key) != value:
                         current[key] = value
-                        changed = True
-                current.setdefault('movies', [])
+                        persisted_changed = True
+                if 'movies' not in current:
+                    current['movies'] = []
+                    persisted_changed = True
             system_lists.append(current)
         system_ids = {definition['id'] for definition in self.SYSTEM_LISTS}
         custom_lists = [item for item in data['lists'] if item.get('id') not in system_ids]
-        normalized = [*system_lists, *custom_lists]
-        if normalized != data['lists']:
-            data['lists'] = normalized
-            changed = True
-        if changed:
+        if persisted_changed:
             self._save_lists(data)
-        return data
+        return {**data, 'lists': [*system_lists, *custom_lists]}
 
     def _save_lists(self, data):
         self._write_json(self.lists_file, data)

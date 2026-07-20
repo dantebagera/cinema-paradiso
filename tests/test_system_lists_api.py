@@ -32,7 +32,11 @@ class SystemListsApiTest(unittest.TestCase):
 
         self.assertEqual(watched.status_code, 200)
         self.assertEqual(watchlisted.status_code, 200)
-        self.assertEqual(states.get_json(), {"watched": True, "watchlist": True})
+        payload = states.get_json()
+        self.assertEqual({"watched": payload["watched"], "watchlist": payload["watchlist"]}, {"watched": True, "watchlist": True})
+        self.assertGreater(watched.get_json()["curation_generation"], 0)
+        self.assertGreater(watchlisted.get_json()["curation_generation"], watched.get_json()["curation_generation"])
+        self.assertEqual(payload["curation_generation"], watchlisted.get_json()["curation_generation"])
 
     def test_unowned_movie_cannot_be_marked_watched_but_can_be_watchlisted(self):
         with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as movies_tmp:

@@ -20,7 +20,8 @@ class QBittorrentUiTests(unittest.TestCase):
     def test_sidebar_has_help_navigation(self):
         self.assertIn("id: 'help'", self.source)
         self.assertIn("label: 'Help'", self.source)
-        self.assertIn("activeSection === 'help'", self.source)
+        self.assertIn("mountedSections.has('help')", self.source)
+        self.assertIn("hidden={activeSection !== 'help'}", self.source)
 
     def test_help_workspace_documents_optional_integrations(self):
         self.assertIn("function HelpWorkspace()", self.help_source)
@@ -49,17 +50,14 @@ class QBittorrentUiTests(unittest.TestCase):
         self.assertIn('src="/qbittorrent/"', self.source)
         self.assertIn("@app.route('/qbittorrent/')", self.backend_source)
 
-    def test_downloads_workspace_exposes_the_sql_only_legacy_import_audit(self):
+    def test_downloads_workspace_has_no_migration_only_import_audit(self):
         root = Path(__file__).resolve().parents[1]
         downloads_source = (root / "src" / "features" / "downloads" / "DownloadsWorkspace.jsx").read_text(encoding="utf-8")
 
-        self.assertIn("/api/qbittorrent/import-audit", downloads_source)
-        self.assertIn("/api/qbittorrent/import-audit/verify", downloads_source)
-        self.assertIn("Verify exact matches", downloads_source)
-        self.assertIn("Legacy import audit", downloads_source)
-        self.assertIn("verified_candidate", downloads_source)
-        self.assertIn("@app.route('/api/qbittorrent/import-audit')", self.backend_source)
-        self.assertIn("@app.route('/api/qbittorrent/import-audit/verify', methods=['POST'])", self.backend_source)
+        self.assertNotIn("/api/qbittorrent/import-audit", downloads_source)
+        self.assertNotIn("Legacy import audit", downloads_source)
+        self.assertNotIn("@app.route('/api/qbittorrent/import-audit')", self.backend_source)
+        self.assertNotIn("verify_legacy_qbittorrent_imports", self.backend_source)
 
     def test_downloads_header_credits_qbittorrent_with_official_icon(self):
         self.assertIn('src="/qbittorrent/images/qbittorrent32.png"', self.source)
@@ -92,14 +90,14 @@ class QBittorrentUiTests(unittest.TestCase):
         self.assertIn("Movie download folder", self.source)
         self.assertIn("Incomplete downloads folder", self.source)
 
-    def test_settings_no_longer_show_qbittorrent_install_or_update_buttons(self):
+    def test_settings_updates_the_embedded_portable_qbittorrent_runtime(self):
         self.assertNotIn('label="Install qBittorrent"', self.source)
-        self.assertNotIn('label="Update qBittorrent"', self.source)
-        self.assertNotIn("runQbittorrentAction('install')", self.source)
-        self.assertNotIn("runQbittorrentAction('update')", self.source)
+        self.assertIn('label="Update qBittorrent"', self.source)
+        self.assertIn("fetchJson('/api/qbittorrent/update'", self.source)
+        self.assertIn("forms.qbittorrent.mode === 'embedded'", self.source)
 
-    def test_settings_show_bundled_qbittorrent_runtime_text(self):
-        self.assertIn("Bundled qBittorrent", self.source)
+    def test_settings_show_portable_qbittorrent_runtime_text(self):
+        self.assertIn("Portable qBittorrent", self.source)
         self.assertIn("Open Downloads", self.source)
 
     def test_settings_exposes_configurable_streaming_link(self):

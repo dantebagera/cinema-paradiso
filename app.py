@@ -27,6 +27,8 @@ from services.catalog_repository import CatalogRepository
 from services.curation_store import UserCurationStore, normalize_curated_movie as _normalize_curated_movie
 from services.curation_routes import register_curation_routes
 from services.frontend_routes import register_frontend_routes
+from services.iptv_routes import register_iptv_routes
+from services.iptv_service import IPTVService
 from services.metadata_migration import MetadataMigrationCoordinator
 from services.identity_audit import IdentityAuditCoordinator
 from services.identity_decision import (
@@ -230,6 +232,8 @@ _qbt_mode       = _cfg.get('qbt_mode', 'embedded')
 _qbt_download_dir = _cfg.get('qbt_download_dir', '')
 _qbt_incomplete_dir = _cfg.get('qbt_incomplete_dir', '')
 _qbt_webui_port = int(_cfg.get('qbt_webui_port', DEFAULT_WEBUI_PORT) or DEFAULT_WEBUI_PORT)
+_iptv_service = IPTVService(_user_data_dir)
+register_iptv_routes(app, lambda: _iptv_service)
 _plex_cache     = {}   # _norm(file_path) -> {plex_title, plex_year, plex_genres}
 _plex_unmatched = {}   # _norm(path) -> {rating_key, plex_title}  (Plex has file but no metadata)
 _plex_matched_by_fname   = {}  # filename.lower() -> matched entry   (path-mismatch fallback)
@@ -2375,7 +2379,7 @@ def _trim_people_for_card(people, limit=8):
     return result
 
 
-def _movie_list_library_item(item, include_people=False):
+def _movie_list_library_item(item, include_people=False, upgrade_paths=None):
     source_canonical = item.get('canonical_metadata') or {}
     canonical = {
         key: source_canonical.get(key)
@@ -2391,13 +2395,19 @@ def _movie_list_library_item(item, include_people=False):
             'plex_guid',
             'poster_url',
             'genres',
+            'plot',
+            'summary',
             'rating',
             'tmdb_vote_count',
             'language',
             'country',
             'country_flag',
             'release_date',
+            'runtime',
+            'tagline',
+            'trailer_url',
             'collection',
+            'detail_provider',
         )
         if source_canonical.get(key) not in (None, '', [], {})
     }
@@ -2408,7 +2418,7 @@ def _movie_list_library_item(item, include_people=False):
             source_canonical.get('directors'),
             limit=4,
         )
-    return {
+    projected = {
         'title': item.get('title', ''),
         'filename': item.get('filename', ''),
         'path': item.get('path', ''),
@@ -2439,16 +2449,20 @@ def _movie_list_library_item(item, include_people=False):
         'metadata_source': item.get('metadata_source', ''),
         'metadata_accepted': bool(item.get('metadata_accepted')),
     }
+    if upgrade_paths is not None:
+        projected['maintenance_upgrade_candidate'] = _norm(item.get('path', '')) in upgrade_paths
+    return projected
 
 
-def _library_card_item(item):
-    full = _movie_list_library_item(item)
+def _library_card_item(item, upgrade_paths=None):
+    full = _movie_list_library_item(item, upgrade_paths=upgrade_paths)
     compact = {
         key: full.get(key)
         for key in (
             'title', 'filename', 'path', 'library_root', 'resolution', 'rip_source',
             'size', 'size_human', 'added_time', 'modified_time', 'canonical_metadata',
             'metadata_status', 'metadata_source', 'metadata_accepted',
+            'maintenance_upgrade_candidate',
         )
     }
     canonical = compact.get('canonical_metadata') or {}
@@ -3300,6 +3314,24 @@ def _auto_sync_plex(force=False):
         _plex_cache, _plex_unmatched, _plex_matched_by_fname, _plex_unmatched_by_fname, \
             _plex_section_ids = _fetch_plex_library()
         _plex_cache_time = time.time()
+        store = _metadata_store()
+        snapshot = store.snapshot()
+        changed = {}
+        for path_key, plex_record in _plex_cache.items():
+            file_record = (snapshot.get('files') or {}).get(path_key) or {}
+            path = str(file_record.get('path') or '')
+            if not path:
+                continue
+            current = (snapshot.get('plex_files') or {}).get(path_key) or {}
+            candidate = {**plex_record, 'path': path}
+            comparable_current = {
+                key: value for key, value in current.items()
+                if key != 'updated_at'
+            }
+            if comparable_current != candidate:
+                changed[path_key] = {**candidate, 'updated_at': time.time()}
+        if changed:
+            store.catalog.upsert_records('app_metadata/plex_metadata.json', changed)
         _library_cache = {}  # Plex data refreshed — bust library cache so titles update
     except Exception:
         pass  # don't break scan if Plex is unreachable
@@ -3635,7 +3667,7 @@ def system_folders():
 @app.route('/api/app-data/config', methods=['GET', 'POST'])
 def app_data_config():
     global _user_data_dir, _tmdb_cache_dir, _TMDB_CACHE_DIR, _TMDB_LIBRARY_CACHE_FILE, \
-           _TMDB_COLLECTION_CACHE_FILE, _tmdb_library_cache, _tmdb_collection_cache
+           _TMDB_COLLECTION_CACHE_FILE, _tmdb_library_cache, _tmdb_collection_cache, _iptv_service
     if request.method == 'GET':
         return jsonify({'user_data_dir': _user_data_dir, 'tmdb_cache_dir': _tmdb_cache_dir})
     data = request.get_json(force=True, silent=True) or {}
@@ -3646,8 +3678,10 @@ def app_data_config():
     try:
         os.makedirs(user_dir, exist_ok=True)
         os.makedirs(cache_dir, exist_ok=True)
+        next_iptv_service = IPTVService(user_dir)
     except Exception as e:
         return jsonify({'error': f'Cannot create folder: {e}'}), 400
+    previous_iptv_service = _iptv_service
     _user_data_dir = user_dir
     _tmdb_cache_dir = cache_dir
     _TMDB_CACHE_DIR = _tmdb_cache_dir
@@ -3655,6 +3689,8 @@ def app_data_config():
     _TMDB_COLLECTION_CACHE_FILE = os.path.join(_TMDB_CACHE_DIR, 'tmdb_collection_cache.json')
     _tmdb_library_cache = _load_tmdb_library_cache()
     _tmdb_collection_cache = _load_tmdb_collection_cache()
+    _iptv_service = next_iptv_service
+    previous_iptv_service.close()
     _save_config(_all_config())
     return jsonify({'success': True, 'user_data_dir': _user_data_dir, 'tmdb_cache_dir': _tmdb_cache_dir})
 
@@ -4224,12 +4260,14 @@ def qbittorrent_status():
         return jsonify({'error': str(error)}), 502
 
 
-@app.route('/api/qbittorrent/install', methods=['POST'])
 @app.route('/api/qbittorrent/update', methods=['POST'])
-def qbittorrent_install():
-    return jsonify({
-        'error': 'qBittorrent install and update are disabled in Cinema Paradiso 2.8.0 because the tested portable runtime is bundled with the release.'
-    }), 410
+def qbittorrent_update():
+    if _qbt_mode != 'embedded':
+        return jsonify({'error': 'Switch torrent handling to embedded qBittorrent before updating it'}), 409
+    try:
+        return jsonify(_get_qbittorrent_manager().update_latest())
+    except QBittorrentError as error:
+        return jsonify({'error': str(error)}), 502
 
 
 def _qbittorrent_submission_metadata(data):
@@ -4318,118 +4356,6 @@ def qbittorrent_submit():
 @app.route('/api/qbittorrent/jobs')
 def qbittorrent_jobs():
     return jsonify({'jobs': list(_get_qbittorrent_manager().jobs.all().values())})
-
-
-_LEGACY_IMPORT_DEFERRED_REASON = 'The download job has no stable identity'
-
-
-def _legacy_import_audit(manager=None):
-    manager = manager or _get_qbittorrent_manager()
-    store = _metadata_store()
-    snapshot = store.snapshot()
-    candidates_by_path = {
-        _norm(candidate.get('path') or ''): candidate
-        for candidate in store.catalog.store.library_candidates()
-        if candidate.get('path')
-    }
-    items = []
-    for torrent_hash, job in manager.jobs.all().items():
-        job = dict(job or {})
-        handoff = dict(job.get('identity_handoff') or {})
-        if job.get('state') != 'imported' or handoff.get('state') != 'deferred':
-            continue
-        if handoff.get('reason') != _LEGACY_IMPORT_DEFERRED_REASON:
-            continue
-        paths = _completed_download_video_paths(job.get('imported_paths') or [])
-        row = {
-            'hash': str(job.get('hash') or torrent_hash),
-            'title': str(job.get('title') or ''),
-            'release_title': str(job.get('release_title') or ''),
-            'imported_paths': list(job.get('imported_paths') or []),
-            'paths': paths,
-            'classification': 'review_required',
-            'reason': '',
-            'identity': {},
-        }
-        if not paths:
-            row['reason'] = 'Imported video is no longer available at the recorded path'
-        elif len(paths) != 1:
-            row['reason'] = 'Multiple imported video files require review'
-        else:
-            candidate = candidates_by_path.get(_norm(paths[0]))
-            if not candidate:
-                row['reason'] = 'No exact SQL library record exists for the imported video'
-            else:
-                item = _catalog_library_item(candidate, store, snapshot)
-                canonical = item.get('canonical_metadata') or {}
-                identity = {
-                    'tmdb_id': str(item.get('tmdb_id') or ''),
-                    'imdb_id': str(item.get('imdb_id') or ''),
-                    'plex_guid': str(item.get('plex_guid') or ''),
-                    'title': str(canonical.get('title') or ''),
-                    'year': str(canonical.get('year') or ''),
-                }
-                if not item.get('metadata_accepted'):
-                    row['reason'] = 'Exact SQL library record has no accepted identity'
-                elif not any(identity.get(key) for key in ('tmdb_id', 'imdb_id', 'plex_guid')):
-                    row['reason'] = 'Exact SQL library identity has no stable provider key'
-                else:
-                    row.update({
-                        'classification': 'verified_candidate',
-                        'reason': 'Exact accepted SQL library identity',
-                        'identity': identity,
-                    })
-        items.append(row)
-    items.sort(key=lambda item: (item.get('classification') != 'verified_candidate', item.get('title', ''), item.get('hash', '')))
-    return {
-        'source': 'catalog',
-        'catalog_generation': store.catalog.generation('media'),
-        'summary': {
-            'deferred_jobs': len(items),
-            'verified_candidates': sum(item.get('classification') == 'verified_candidate' for item in items),
-            'review_required': sum(item.get('classification') == 'review_required' for item in items),
-        },
-        'items': items,
-    }
-
-
-@app.route('/api/qbittorrent/import-audit')
-def qbittorrent_import_audit():
-    try:
-        return jsonify(_legacy_import_audit())
-    except Exception as error:
-        return jsonify({'error': str(error)}), 500
-
-
-@app.route('/api/qbittorrent/import-audit/verify', methods=['POST'])
-def verify_legacy_qbittorrent_imports():
-    body = request.get_json(force=True, silent=True) or {}
-    hashes = {str(value or '').strip().lower() for value in (body.get('hashes') or []) if str(value or '').strip()}
-    if not hashes:
-        return jsonify({'error': 'At least one legacy import job is required'}), 400
-    manager = _get_qbittorrent_manager()
-    audit = _legacy_import_audit(manager)
-    candidates = {
-        str(item.get('hash') or '').lower(): item
-        for item in audit.get('items') or []
-        if item.get('classification') == 'verified_candidate'
-    }
-    verified = []
-    for torrent_hash in hashes:
-        item = candidates.get(torrent_hash)
-        if not item:
-            continue
-        manager.jobs.upsert(torrent_hash, {
-            'library_scan_pending': False,
-            'identity_handoff': {
-                'state': 'verified_legacy',
-                'reason': 'Exact SQL library identity verified after legacy import',
-                'paths': list(item.get('paths') or []),
-                'identity': dict(item.get('identity') or {}),
-            },
-        })
-        verified.append(torrent_hash)
-    return jsonify({'verified_count': len(verified), 'verified_hashes': verified})
 
 
 @app.route('/api/qbittorrent/finalize', methods=['POST'])
@@ -4571,22 +4497,37 @@ def _catalog_file_record(candidate):
     return file_record
 
 
+def _relational_canonical_for_path(path, store=None, include_overrides=True):
+    store = store or _metadata_store()
+    connection = store.catalog.store.connect()
+    try:
+        return store.catalog.store.canonical.project_path(
+            connection,
+            store._key(path),
+            include_overrides=include_overrides,
+        )
+    finally:
+        connection.close()
+
+
 def _catalog_library_item(candidate, store, metadata_snapshot):
     file_record = _catalog_file_record(candidate)
     path = candidate.get('path', '')
     plex_data = candidate.get('plex_json') or {}
     tmdb_data = candidate.get('tmdb_json') or {}
-    canonical = _build_canonical_metadata(
-        file_record,
-        plex_data=plex_data,
-        tmdb_data=tmdb_data,
-        manual_match=candidate.get('manual_json') or {},
-        display_provider=file_record.get('display_provider', ''),
-        file_record=file_record,
-    )
-    identity = _poster_identity_for_movie(file_record, canonical, plex_data)
-    canonical = _apply_metadata_override(canonical, identity, store=store, snapshot=metadata_snapshot)
-    canonical = _apply_poster_override(canonical, identity, store=store, snapshot=metadata_snapshot)
+    canonical = dict(candidate.get('relational_canonical') or {})
+    if not canonical:
+        canonical = _build_canonical_metadata(
+            file_record,
+            plex_data=plex_data,
+            tmdb_data=tmdb_data,
+            manual_match=candidate.get('manual_json') or {},
+            display_provider=file_record.get('display_provider', ''),
+            file_record=file_record,
+        )
+        identity = _poster_identity_for_movie(file_record, canonical, plex_data)
+        canonical = _apply_metadata_override(canonical, identity, store=store, snapshot=metadata_snapshot)
+        canonical = _apply_poster_override(canonical, identity, store=store, snapshot=metadata_snapshot)
     parsed_title = file_record.get('parsed_title', '')
     parsed_year = str(file_record.get('parsed_year', '') or '')
     fallback_title = str(parsed_title or Path(path).stem).title()
@@ -4764,6 +4705,14 @@ def _library_people_item(item):
     }
 
 
+def _maintenance_upgrade_path_keys():
+    return {
+        _norm(item.get('path', ''))
+        for item in ((_maintenance_audit_from_catalog().get('upgrades') or {}).get('items') or [])
+        if item.get('path')
+    }
+
+
 @app.route('/api/library')
 def library():
     global _library_cache, _library_status
@@ -4778,9 +4727,11 @@ def library():
             if item.get('path')
         }
         reconcile_result = _reconcile_library_files(force_unresolved=True) if force_scan else {}
-        if not force_plex and not force_scan and not refresh_metadata:
+        if force_plex or refresh_metadata:
+            _auto_sync_plex(force=force_plex)
+        if not refresh_metadata:
             store = _metadata_store()
-            items = _fresh_catalog_library_items(store)
+            items = None if (force_scan or force_plex) else _fresh_catalog_library_items(store)
             if items is None:
                 metadata_snapshot = store.snapshot()
                 catalog = _current_catalog_store(store)
@@ -4796,8 +4747,10 @@ def library():
                     cache_key=(_library_roots_revision(), ('catalog',), _metadata_cache_revision(store)),
                 )
                 _library_cache['source'] = 'catalog'
+            new_files = sum(1 for item in items if _norm(item['path']) not in previous_paths)
             if view in {'movie-list', 'cards'}:
-                response_items = [_library_card_item(item) for item in items]
+                upgrade_paths = _maintenance_upgrade_path_keys()
+                response_items = [_library_card_item(item, upgrade_paths=upgrade_paths) for item in items]
             elif view == 'files':
                 response_items = [_movie_list_library_item(item) for item in items]
             elif view == 'people':
@@ -4809,33 +4762,17 @@ def library():
                 'count': len(response_items),
                 'plex_enabled': bool(_plex_token),
                 'plex_cached': any(item.get('plex_matched') for item in items),
-                'cached': True,
+                'cached': not (force_scan or force_plex),
                 'source': 'catalog',
+                'new_files': new_files if (force_scan or force_plex) else 0,
+                'metadata_matched': int(reconcile_result.get('matched', 0) or 0),
+                'metadata_pending': int(reconcile_result.get('pending', 0) or 0),
+                'metadata_review': int(reconcile_result.get('review', 0) or 0),
                 'catalog_generation': store.catalog.generation('media'),
             })
-        _auto_sync_plex(force=force_plex)
-        # Serve from cache if still fresh and directory hasn't changed
-        if (not force_plex
-                and not force_scan
-                and not refresh_metadata):
-            cached_items = _fresh_library_cache_items()
-            if cached_items is not None:
-                c = _library_cache
-                if view in {'movie-list', 'cards'}:
-                    response_items = [_library_card_item(item) for item in cached_items]
-                elif view == 'files':
-                    response_items = [_movie_list_library_item(item) for item in cached_items]
-                elif view == 'people':
-                    response_items = [_library_people_item(item) for item in cached_items]
-                else:
-                    response_items = cached_items
-                return jsonify({'items': response_items, 'count': len(response_items),
-                                'plex_enabled': c['plex_enabled'], 'plex_cached': c['plex_cached'],
-                                'cached': True})
         _library_status = 'Scanning directory\u2026'
         total = sum(1 for _ in _iter_video_files())
         _library_status = f'Reading metadata for {total} files\u2026'
-        items = []
         n = 0
         store = _metadata_store()
         metadata_snapshot = store.snapshot()
@@ -4844,98 +4781,37 @@ def library():
             if n % 50 == 0:
                 _library_status = f'Reading metadata\u2026 {n}\u00a0/\u00a0{total}'
             file_facts = _video_file_facts(movies_dir, file, full_path, include_timestamps=True)
-            size = file_facts['size']
-            added_time = file_facts['added_time']
-            modified_time = file_facts['modified_time']
-            res = file_facts['resolution']
-            rip = file_facts['rip_source']
-            parsed_title = file_facts['parsed_title']
-            parsed_year = file_facts['parsed_year']
-            fallback_title = parsed_title.title() if parsed_title else os.path.splitext(file)[0]
-            display_title = fallback_title + (f' ({parsed_year})' if parsed_year else '')
             norm_path = _norm(full_path)
             plex_data = dict(_plex_cache.get(norm_path, {}) or _plex_matched_by_fname.get(file.lower(), {}) or {})
-            plex_thumb = plex_data.get('plex_thumb', '')
-            plex_poster = (
-                f"{_plex_url}{plex_thumb}?X-Plex-Token={_plex_token}"
-                if _plex_url and _plex_token and plex_thumb else ''
-            )
-            if plex_poster:
-                plex_data['plex_poster'] = plex_poster
-            manual_match = store.get_manual_match_from_snapshot(full_path, metadata_snapshot)
             file_record = metadata_snapshot.get('files', {}).get(store._key(full_path), {})
-            file_facts['ingest_status'] = file_record.get('ingest_status', '')
-            file_facts['stored_metadata_status'] = file_record.get('metadata_status', '')
             display_provider = file_record.get('display_provider', '')
             if display_provider == 'plex':
                 plex_data = {
                     **plex_data,
                     **dict(metadata_snapshot.get('plex_files', {}).get(store._key(full_path), {}) or {}),
                 }
-            tmdb_data = _tmdb_metadata_for_file(file_facts, plex_data=plex_data, store=store,
-                                                refresh=refresh_metadata, snapshot=metadata_snapshot)
-            canonical = _build_canonical_metadata(
+            _tmdb_metadata_for_file(
                 file_facts,
                 plex_data=plex_data,
-                tmdb_data=tmdb_data,
-                manual_match=manual_match,
-                display_provider=display_provider,
-                file_record=file_record,
-            )
-            identity = _poster_identity_for_movie(file_facts, canonical, plex_data)
-            canonical = _apply_metadata_override(
-                canonical,
-                identity,
                 store=store,
+                refresh=True,
                 snapshot=metadata_snapshot,
             )
-            canonical = _apply_poster_override(
-                canonical,
-                identity,
-                store=store,
-                snapshot=metadata_snapshot,
-            )
-            items.append({
-                'title': display_title,
-                'filename': file,
-                'path': full_path,
-                'library_root': movies_dir,
-                'resolution': res,
-                'resolution_rank': get_resolution_rank_str(res),
-                'rip_source': rip,
-                'rip_rank': get_rip_rank(rip),
-                'size': size,
-                'size_human': format_size(size),
-                'added_time': added_time,
-                'modified_time': modified_time,
-                'plex_title': plex_data.get('plex_title', ''),
-                'plex_year': plex_data.get('plex_year', ''),
-                'plex_genres': plex_data.get('plex_genres', []),
-                'plex_summary': plex_data.get('plex_summary', ''),
-                'plex_rating': plex_data.get('plex_rating', ''),
-                'plex_language': plex_data.get('plex_language', ''),
-                'plex_country_flag': plex_data.get('plex_country_flag', ''),
-                'plex_country': plex_data.get('plex_country', ''),
-                'plex_directors': plex_data.get('plex_directors', []),
-                'plex_cast': plex_data.get('plex_cast', []),
-                'tmdb_id': canonical.get('tmdb_id') or plex_data.get('tmdb_id', ''),
-                'imdb_id': canonical.get('imdb_id') or plex_data.get('imdb_id', ''),
-                'plex_guid': canonical.get('plex_guid') or plex_data.get('plex_guid', ''),
-                'plex_poster': plex_poster,
-                'plex_matched': bool(plex_data),
-                'canonical_metadata': canonical,
-                'metadata_status': canonical.get('status', 'unmatched'),
-                'metadata_source': canonical.get('source', ''),
-                'metadata_accepted': bool(canonical.get('accepted')),
-            })
-        _library_status = 'Sorting results\u2026'
-        items.sort(key=lambda x: (-float(x.get('added_time') or 0), x['title']))
         _library_status = ''
+        metadata_snapshot = store.snapshot()
+        items = [
+            _catalog_library_item(candidate, store, metadata_snapshot)
+            for candidate in _current_catalog_store(store).library_candidates()
+            if candidate.get('path') and os.path.isfile(candidate['path'])
+        ]
+        items.sort(key=lambda item: (-float(item.get('added_time') or 0), item['title']))
         _save_res_cache()
         _store_library_cache(items, bool(_plex_token), len(_plex_cache) > 0)
+        _library_cache['source'] = 'catalog'
         new_files = sum(1 for item in items if _norm(item['path']) not in previous_paths)
         if view in {'movie-list', 'cards'}:
-            response_items = [_library_card_item(item) for item in items]
+            upgrade_paths = _maintenance_upgrade_path_keys()
+            response_items = [_library_card_item(item, upgrade_paths=upgrade_paths) for item in items]
         elif view == 'files':
             response_items = [_movie_list_library_item(item) for item in items]
         elif view == 'people':
@@ -4968,10 +4844,12 @@ def _library_check_v26():
     else:
         entries = []
     results = []
+    upgrade_paths = _maintenance_upgrade_path_keys() if entries else set()
     for q in queries:
         match = _catalog_owned_movie(q, entries=entries)
         if match:
             item = match['item']
+            canonical_card = _movie_list_library_item(item, upgrade_paths=upgrade_paths)
             results.append({
                 'title': q.get('title', ''),
                 'year': q.get('year', ''),
@@ -4981,8 +4859,10 @@ def _library_check_v26():
                 'path': item['path'],
                 'resolution': item.get('resolution', 'Unknown'),
                 'size_human': item.get('size_human', ''),
+                'maintenance_upgrade_candidate': canonical_card.get('maintenance_upgrade_candidate', False),
                 'poster_url': item.get('canonical_metadata', {}).get('poster_url', ''),
-                **({'library_item': _movie_list_library_item(item, include_people=True)} if include_items else {}),
+                'canonical_card': canonical_card,
+                **({'library_item': _movie_list_library_item(item, include_people=True, upgrade_paths=upgrade_paths)} if include_items else {}),
             })
         else:
             results.append({
@@ -5432,6 +5312,13 @@ def fix_path():
     parent      = os.path.dirname(abs_path)
     grandparent = os.path.dirname(parent)
 
+    try:
+        relative_parts = Path(os.path.relpath(abs_path, abs_dir)).parts
+    except ValueError:
+        return jsonify({'error': 'Cannot move file - path is outside library'}), 400
+    if len(relative_parts) <= 2:
+        return jsonify({'error': 'File is already at the correct depth - no move needed'}), 409
+
     # Grandparent must still be inside (or equal to) the movies root
     if not (os.path.normpath(grandparent) == os.path.normpath(abs_dir) or
             os.path.normpath(grandparent).startswith(os.path.normpath(abs_dir) + os.sep)):
@@ -5463,6 +5350,8 @@ def fix_path():
             # folder name (e.g. "Batman (2010)") as a metadata hint.
             great_grandparent = os.path.dirname(grandparent)
             dest_folder = os.path.join(great_grandparent, parent_name)
+            if not is_path_within(dest_folder, abs_dir):
+                return jsonify({'error': 'Cannot move file - destination would be outside library'}), 400
             if os.path.normpath(dest_folder) == os.path.normpath(parent):
                 return jsonify({'error': 'File is already at the correct depth — no move needed'}), 409
             if os.path.exists(dest_folder):
@@ -5474,6 +5363,8 @@ def fix_path():
         else:
             # ── File-only move (multiple videos, or generic folder name) ──────
             new_path = os.path.join(grandparent, os.path.basename(abs_path))
+            if not is_path_within(new_path, abs_dir):
+                return jsonify({'error': 'Cannot move file - destination would be outside library'}), 400
             if os.path.normpath(new_path) == os.path.normpath(abs_path):
                 return jsonify({'error': 'File is already at the correct depth — no move needed'}), 409
             if os.path.exists(new_path):
@@ -6396,18 +6287,15 @@ def tmdb_match_apply():
             metadata = _normalize_tmdb_metadata({**movie, 'tmdb_id': tmdb_id, 'match_source': 'manual_tmdb'})
         facts = _metadata_file_facts(abs_path)
         match = store.apply_tmdb_match(abs_path, metadata, facts=facts)
-        current_record = store.snapshot().get('files', {}).get(store._key(abs_path), {})
-        canonical = _build_canonical_metadata(
-            facts,
-            plex_data=dict(_plex_cache.get(_norm(abs_path), {}) or {}),
-            tmdb_data=store.get_tmdb_metadata(tmdb_id),
-            manual_match=match,
-            display_provider='tmdb',
-            file_record=current_record,
-        )
+        canonical = _relational_canonical_for_path(abs_path, store=store)
         _resolve_identity_audit_path(abs_path)
         _library_cache.pop('items', None)
-        return jsonify({'success': True, 'match': match, 'canonical_metadata': canonical})
+        return jsonify({
+            'success': True,
+            'match': match,
+            'canonical_metadata': canonical,
+            'catalog_generation': store.catalog.generation('media'),
+        })
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
     except Exception as e:
@@ -6434,25 +6322,16 @@ def refresh_file_metadata():
         file_facts = {'path': abs_path, 'filename': os.path.basename(abs_path), 'parsed_title': parsed_title, 'parsed_year': parsed_year}
         tmdb_data = _tmdb_metadata_for_file(file_facts, plex_data=plex_data, store=store, refresh=True)
         file_record = store._read_json(store.files_file, {'files': {}}).get('files', {}).get(store._key(abs_path), {})
-        canonical = _build_canonical_metadata(
-            file_facts,
-            plex_data=plex_data,
-            tmdb_data=tmdb_data,
-            manual_match=store.get_manual_match(abs_path),
-            display_provider=file_record.get('display_provider', ''),
-            file_record=file_record,
-        )
-        identity = _poster_identity_for_movie(file_facts, canonical, plex_data)
-        canonical = _apply_metadata_override(
-            canonical,
-            identity,
-            store=store,
-        )
-        canonical = _apply_poster_override(
-            canonical,
-            identity,
-            store=store,
-        )
+        canonical = _relational_canonical_for_path(abs_path, store=store)
+        if not canonical:
+            canonical = _build_canonical_metadata(
+                file_facts,
+                plex_data=plex_data,
+                tmdb_data=tmdb_data,
+                manual_match=store.get_manual_match(abs_path),
+                display_provider=file_record.get('display_provider', ''),
+                file_record=file_record,
+            )
         store.update_file_record(abs_path, {
             **file_facts,
             'metadata_status': canonical.get('status', 'unmatched'),
@@ -6462,9 +6341,15 @@ def refresh_file_metadata():
             'tmdb_id': canonical.get('tmdb_id', ''),
             'imdb_id': canonical.get('imdb_id', ''),
         })
+        canonical = _relational_canonical_for_path(abs_path, store=store)
         _resolve_identity_audit_path(abs_path)
         _library_cache.pop('items', None)
-        return jsonify({'success': True, 'canonical_metadata': canonical, 'tmdb_candidate': tmdb_data})
+        return jsonify({
+            'success': True,
+            'canonical_metadata': canonical,
+            'tmdb_candidate': tmdb_data,
+            'catalog_generation': store.catalog.generation('media'),
+        })
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -6487,31 +6372,12 @@ def _metadata_override_context_for_path(path):
         or _plex_matched_by_fname.get(facts['filename'].lower(), {})
         or {}
     )
-    record = snapshot.get('files', {}).get(key, {})
-    tmdb_data = _tmdb_metadata_for_file(
-        facts,
-        plex_data=plex_data,
-        store=store,
-        snapshot=snapshot,
-    )
-    provider = _build_canonical_metadata(
-        facts,
-        plex_data=plex_data,
-        tmdb_data=tmdb_data,
-        manual_match=store.get_manual_match_from_snapshot(abs_path, snapshot),
-        display_provider=record.get('display_provider', ''),
-        file_record=record,
-    )
+    provider = _relational_canonical_for_path(abs_path, store=store, include_overrides=False)
     if not provider.get('accepted'):
         raise RuntimeError('Metadata correction requires an accepted Library movie')
     identity = _poster_identity_for_movie(facts, provider, plex_data)
     override = store.get_metadata_override(identity, snapshot=snapshot)
-    effective = _apply_metadata_override(
-        provider,
-        identity,
-        store=store,
-        snapshot=snapshot,
-    )
+    effective = _relational_canonical_for_path(abs_path, store=store, include_overrides=True)
     return {
         'path': abs_path,
         'store': store,
@@ -6632,20 +6498,12 @@ def _poster_context_for_path(path):
     plex_thumb = plex_data.get('plex_thumb', '')
     if plex_thumb and _plex_url and _plex_token and not plex_data.get('plex_poster'):
         plex_data['plex_poster'] = f"{_plex_url}{plex_thumb}?X-Plex-Token={_plex_token}"
-    tmdb_data = _tmdb_metadata_for_file(facts, plex_data=plex_data, store=store, snapshot=snapshot)
-    base_canonical = _build_canonical_metadata(
-        facts,
-        plex_data=plex_data,
-        tmdb_data=tmdb_data,
-        manual_match=store.get_manual_match_from_snapshot(abs_path, snapshot),
-        display_provider=display_provider,
-        file_record=file_record,
-    )
+    tmdb_data = store.get_tmdb_metadata_from_snapshot(file_record.get('tmdb_id'), snapshot)
+    base_canonical = _relational_canonical_for_path(abs_path, store=store, include_overrides=False)
     if not base_canonical.get('accepted'):
         raise RuntimeError('Poster editing requires an accepted Library movie')
     identity = _poster_identity_for_movie(facts, base_canonical, plex_data)
-    canonical = _apply_metadata_override(base_canonical, identity, store=store, snapshot=snapshot)
-    canonical = _apply_poster_override(canonical, identity, store=store, snapshot=snapshot)
+    canonical = _relational_canonical_for_path(abs_path, store=store, include_overrides=True)
     return {
         'path': abs_path,
         'store': store,
@@ -6945,7 +6803,7 @@ def _fetch_tmdb_metadata_by_id(tmdb_id, store=None, refresh=False, match_source=
         return {}
     store = store or _metadata_store()
     cached = store.get_tmdb_metadata(tmdb_id)
-    if cached and not refresh and (cached.get('release_date') or not _tmdb_key):
+    if cached and not refresh and (_tmdb_metadata_contract_complete(cached) or not _tmdb_key):
         return {**cached, **({'match_source': match_source} if match_source else {})}
     if not _tmdb_key:
         return cached or {}
@@ -7010,15 +6868,22 @@ def _tmdb_card_projection_is_complete(metadata):
     )
 
 
+def _tmdb_metadata_contract_complete(metadata):
+    metadata = metadata or {}
+    return bool(
+        _tmdb_card_projection_is_complete(metadata)
+        and 'cast' in metadata
+        and 'directors' in metadata
+    )
+
+
 def _tmdb_card_projection_by_id(tmdb_id, store=None):
     tmdb_id = str(tmdb_id or '').strip()
     if not tmdb_id:
         return {}
     store = store or _metadata_store()
     cached = store.get_tmdb_metadata(tmdb_id) or {}
-    if _tmdb_card_projection_is_complete(cached):
-        return cached
-    return _fetch_tmdb_metadata_by_id(tmdb_id, store=store, refresh=bool(cached)) or cached
+    return cached if _tmdb_card_projection_is_complete(cached) else {}
 
 
 def _plex_thumb_from_poster_url(poster_url):
@@ -7342,11 +7207,14 @@ def _record_needs_metadata_enrichment(record, path_key, snapshot):
     record = record or {}
     if not (record.get('metadata_accepted') or record.get('metadata_status') == 'accepted'):
         return False
-    provider_metadata = _canonical_provider_metadata(
-        record.get('display_provider', ''),
-        (snapshot or {}).get('tmdb_movies', {}).get(str(record.get('tmdb_id') or ''), {}),
-        (snapshot or {}).get('plex_files', {}).get(path_key, {}),
-    )
+    selected_provider = str(record.get('display_provider') or '').strip()
+    tmdb_metadata = (snapshot or {}).get('tmdb_movies', {}).get(str(record.get('tmdb_id') or ''), {})
+    plex_metadata = (snapshot or {}).get('plex_files', {}).get(path_key, {})
+    if selected_provider == 'tmdb':
+        return not _tmdb_metadata_contract_complete(tmdb_metadata)
+    if selected_provider == 'plex':
+        return not bool(plex_metadata.get('plex_title'))
+    provider_metadata = _canonical_provider_metadata(selected_provider, tmdb_metadata, plex_metadata)
     resolved = resolve_authoritative_identity(record, provider_metadata=provider_metadata)
     return resolved.get('enrichment_state') != 'complete'
 
@@ -9732,6 +9600,7 @@ def tmdb_card_projections():
         'items': items,
         'requested': len(movies),
         'resolved': len(items),
+        'catalog_generation': store.catalog.generation('media'),
     })
 
 
@@ -9799,12 +9668,20 @@ def _effective_tmdb_collection(collection_id, refresh=False):
     return result
 
 
+def _curation_payload(payload, store=None):
+    store = store or _curation_store()
+    return {
+        **dict(payload or {}),
+        'curation_generation': store.catalog.generation('curation'),
+    }
+
+
 @app.route('/api/tmdb/collection')
 def tmdb_collection():
     collection_id = request.args.get('collection_id', '').strip()
     refresh = request.args.get('refresh') == '1'
     try:
-        return jsonify(_effective_tmdb_collection(collection_id, refresh=refresh))
+        return jsonify(_curation_payload(_effective_tmdb_collection(collection_id, refresh=refresh)))
     except urllib.error.HTTPError as e:
         return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
     except ValueError as e:
@@ -9814,52 +9691,75 @@ def tmdb_collection():
 
 
 def _library_identity_records():
-    cached_items = _fresh_library_cache_items()
+    store = _metadata_store()
+    cached_items = _fresh_catalog_library_items(store)
     if cached_items is not None:
         return list(cached_items)
-    store = _metadata_store()
     snapshot = store.snapshot()
-    records = []
-    for _, _, file, path in _iter_video_files():
-        facts = _metadata_file_facts(path)
-        key = store._key(path)
-        plex_data = dict(
-            snapshot.get('plex_files', {}).get(key, {})
-            or _plex_cache.get(_norm(path), {})
-            or _plex_matched_by_fname.get(file.lower(), {})
-            or {}
-        )
-        tmdb_data = _tmdb_metadata_for_file(facts, plex_data=plex_data, store=store, snapshot=snapshot)
-        canonical = _build_canonical_metadata(
-            facts,
-            plex_data=plex_data,
-            tmdb_data=tmdb_data,
-            manual_match=store.get_manual_match_from_snapshot(path, snapshot),
-            display_provider=snapshot.get('files', {}).get(key, {}).get('display_provider', ''),
-            file_record=snapshot.get('files', {}).get(key, {}),
-        )
-        if canonical.get('accepted'):
-            records.append({
-                'path': path,
-                'tmdb_id': canonical.get('tmdb_id', ''),
-                'imdb_id': canonical.get('imdb_id', ''),
-                'plex_title': plex_data.get('plex_title', ''),
-                'plex_year': plex_data.get('plex_year', ''),
-                'canonical_metadata': canonical,
-            })
-    return records
+    return [
+        _catalog_library_item(candidate, store, snapshot)
+        for candidate in store.catalog.store.library_candidates()
+        if candidate.get('path') and os.path.isfile(candidate['path'])
+    ]
+
+
+def _library_collection_from_catalog(collection_id, records=None):
+    collection_id = str(collection_id or '').strip()
+    if not collection_id:
+        return None
+    parts = []
+    collection_metadata = {}
+    seen = set()
+    for record in records if records is not None else _library_identity_records():
+        canonical = dict((record or {}).get('canonical_metadata') or {})
+        collection = dict(canonical.get('collection') or {})
+        if str(collection.get('id') or '') != collection_id:
+            continue
+        collection_metadata = collection_metadata or collection
+        identity_key = str(canonical.get('tmdb_id') or record.get('path') or '').strip()
+        if not identity_key or identity_key in seen:
+            continue
+        seen.add(identity_key)
+        parts.append({
+            'path': record.get('path', ''),
+            'tmdb_id': str(canonical.get('tmdb_id') or ''),
+            'imdb_id': str(canonical.get('imdb_id') or ''),
+            'title': canonical.get('title', ''),
+            'year': str(canonical.get('year') or ''),
+            'release_date': canonical.get('release_date', ''),
+            'poster_url': canonical.get('poster_url', ''),
+        })
+    if not parts:
+        return None
+    parts.sort(key=lambda part: (part.get('release_date') or f"{part.get('year', '')}-00-00", part.get('title', '')))
+    effective = _curation_store().effective_collection({
+        'id': collection_id,
+        'name': collection_metadata.get('name', '') or f'Collection {collection_id}',
+        'poster_url': collection_metadata.get('poster_url', ''),
+        'backdrop_url': collection_metadata.get('backdrop_url', ''),
+        'parts': parts,
+    })
+    if not effective.get('is_edited'):
+        effective['source'] = 'library_sql'
+    effective['detail_source'] = 'library_sql'
+    return effective
 
 
 @app.route('/api/library/collection/<collection_id>')
 def library_collection(collection_id):
     try:
-        collection = _effective_tmdb_collection(collection_id, refresh=request.args.get('refresh') == '1')
-        resolution = resolve_collection_membership(collection, _library_identity_records())
+        records = _library_identity_records()
+        collection = _library_collection_from_catalog(collection_id, records=records)
+        if collection is None:
+            collection = _effective_tmdb_collection(collection_id, refresh=request.args.get('refresh') == '1')
+        resolution = resolve_collection_membership(collection, records)
         return jsonify({
             **collection,
             **resolution,
             'owned_count': len(resolution['owned_paths']),
             'unresolved_count': len(resolution['unresolved_parts']),
+            'catalog_generation': _catalog_repository().generation('media'),
+            'curation_generation': _catalog_repository().generation('curation'),
         })
     except urllib.error.HTTPError as e:
         return jsonify({'error': f'TMDB returned HTTP {e.code}'}), 502
@@ -9878,7 +9778,8 @@ def save_user_collection():
     if not collection_id or not original.get('name'):
         return jsonify({'error': 'collection_id and original collection are required'}), 400
     try:
-        return jsonify(_curation_store().save_collection_override(collection_id, original, parts))
+        store = _curation_store()
+        return jsonify(_curation_payload(store.save_collection_override(collection_id, original, parts), store))
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -9886,8 +9787,9 @@ def save_user_collection():
 @app.route('/api/user/collection/<collection_id>/reset', methods=['POST'])
 def reset_user_collection(collection_id):
     try:
-        reset = _curation_store().reset_collection(collection_id)
-        return jsonify({'success': True, 'reset': reset})
+        store = _curation_store()
+        reset = store.reset_collection(collection_id)
+        return jsonify(_curation_payload({'success': True, 'reset': reset}, store))
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -9897,17 +9799,17 @@ def user_followed_releases():
     store = _curation_store()
     if request.method == 'GET':
         if request.args.get('check') == '1':
-            return jsonify(_check_followed_releases())
+            return jsonify(_curation_payload(_check_followed_releases(), store))
         movies = _backfill_followed_release_dates(store, store.followed_all())
-        return jsonify({'movies': _sort_followed_releases(movies)})
+        return jsonify(_curation_payload({'movies': _sort_followed_releases(movies)}, store))
     body = request.get_json(force=True, silent=True) or {}
     movie = body.get('movie') or body
     try:
         if request.method == 'POST':
             followed = store.follow_movie(movie)
-            return jsonify({'movie': followed, 'movies': _sort_followed_releases(store.followed_all())})
+            return jsonify(_curation_payload({'movie': followed, 'movies': _sort_followed_releases(store.followed_all())}, store))
         removed = store.unfollow_movie(movie)
-        return jsonify({'success': True, 'removed': removed, 'movies': _sort_followed_releases(store.followed_all())})
+        return jsonify(_curation_payload({'success': True, 'removed': removed, 'movies': _sort_followed_releases(store.followed_all())}, store))
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -9915,7 +9817,7 @@ def user_followed_releases():
 @app.route('/api/user/followed-releases/check', methods=['POST'])
 def check_user_followed_releases():
     try:
-        return jsonify(_check_followed_releases())
+        return jsonify(_curation_payload(_check_followed_releases()))
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

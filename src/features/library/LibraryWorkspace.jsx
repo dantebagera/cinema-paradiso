@@ -1,16 +1,18 @@
 import {
-  AlertTriangle, CirclePlus, Clapperboard, Copy, Database, Film, Folder, Info, Library,
+  AlertTriangle, CirclePlus, Clapperboard, Copy, Database, Folder, Info, Library,
   Link as LinkIcon, Loader2, Play, RefreshCcw, Search, Trash2, Wand2, X
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
-import { announceLibraryChanged, observeCatalogGeneration } from '../../api/library.js';
-import { addMoviePayloadsToList, announceCurationChanged, fetchUserListsCached } from '../../api/curation.js';
+import { announceLibraryChanged, CATALOG_GENERATION_CHANGED_EVENT, observeCatalogGeneration } from '../../api/library.js';
+import { fetchCanonicalMovieDetails, movieCollectionUrl } from '../../api/movieDetails.js';
+import { addMoviePayloadsToList, announceCurationChanged, CURATION_GENERATION_CHANGED_EVENT, fetchCurationJson, fetchUserListsCached } from '../../api/curation.js';
 import { previewSourceReview } from '../../api/sourceReview.js';
 import ExportCopyDialog from '../../components/ExportCopyDialog.jsx';
 import ListEditorModal from '../../components/ListEditorModal.jsx';
 import MetadataCorrectionModal from '../../components/MetadataCorrectionModal.jsx';
 import PosterEditorModal from '../../components/PosterEditorModal.jsx';
+import PersonSearchCard from '../../components/PersonSearchCard.jsx';
 import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
 import SourceReviewDialog from '../../components/SourceReviewDialog.jsx';
 import { LibraryMovieCard } from '../../components/SharedMovieCards.jsx';
@@ -33,26 +35,14 @@ function LibraryPeopleSearchResults({ people, query, onOpenFilmography }) {
   return (
     <div className="discover-grid person-search-grid library-person-search-grid">
       {people.map((person) => (
-        <article className="person-search-card" key={person.id ? `id:${person.id}` : `name:${person.name}`}>
-          <div className="person-search-avatar"><Film size={24} /></div>
-          <div className="person-search-copy">
-            <h3>{person.name}</h3>
-            <span>{formatCount(person.movieCount)} owned movie{person.movieCount === 1 ? '' : 's'}{person.localIdentity ? ' · Stored metadata' : ''}</span>
-            {person.knownFor.length > 0 && <p>{person.knownFor.join(' · ')}</p>}
-          </div>
-          <div className="person-search-actions">
-            {person.roles.includes('actor') && (
-              <button type="button" className="btn btn-secondary" onClick={() => onOpenFilmography(person, 'actor')}>
-                <Film size={15} /> Acting credits
-              </button>
-            )}
-            {person.roles.includes('director') && (
-              <button type="button" className="btn btn-secondary" onClick={() => onOpenFilmography(person, 'director')}>
-                <Clapperboard size={15} /> Directed films
-              </button>
-            )}
-          </div>
-        </article>
+        <PersonSearchCard
+          key={person.id ? `id:${person.id}` : `name:${person.name}`}
+          person={person}
+          meta={`${formatCount(person.movieCount)} owned movie${person.movieCount === 1 ? '' : 's'}${person.localIdentity ? ' · Stored metadata' : ''}`}
+          knownFor={person.knownFor}
+          roles={person.roles}
+          onOpenFilmography={onOpenFilmography}
+        />
       ))}
     </div>
   );
@@ -62,7 +52,7 @@ function librarySelectionKey(item) {
   return item.path || movieIdentityKey(moviePayload(item));
 }
 
-export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query, setQuery, onReviewUnmatched, onOpenDiscoverPerson, filterRequest }) {
+export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query, setQuery, onReviewUnmatched, onOpenDiscoverPerson, filterRequest, onFilterRequestConsumed }) {
   const pageSize = 40;
   const [items, setItems] = useState([]);
   const [fileItems, setFileItems] = useState([]);
@@ -110,14 +100,32 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [peopleLoaded, setPeopleLoaded] = useState(false);
   const libraryRequestSeq = useRef(0);
+  const peopleLoadPromiseRef = useRef(null);
+
+  useEffect(() => {
+    const clearDetailCaches = () => {
+      setTmdbCache({});
+      setCollectionCache({});
+    };
+    window.addEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCaches);
+    return () => window.removeEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCaches);
+  }, []);
+
+  useEffect(() => {
+    const clearCurationCaches = () => {
+      setCollectionCache({});
+    };
+    window.addEventListener(CURATION_GENERATION_CHANGED_EVENT, clearCurationCaches);
+    return () => window.removeEventListener(CURATION_GENERATION_CHANGED_EVENT, clearCurationCaches);
+  }, []);
 
   useEffect(() => {
     if (!filterRequest?.id) return;
+    resetAllLibraryFilters();
     setMode('movie');
     setQualityFilter(filterRequest.quality || 'all');
-    setCurrentPage(1);
-    setExpandedPath('');
-  }, [filterRequest]);
+    onFilterRequestConsumed?.(filterRequest.id);
+  }, [filterRequest, onFilterRequestConsumed]);
 
   const loadLibrary = useCallback(async (forceScan = false, options = {}) => {
     const requestSeq = libraryRequestSeq.current + 1;
@@ -131,10 +139,14 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
         forceScan ? '/api/library?force_scan=1&view=cards' : '/api/library?view=cards'
       );
       if (requestSeq !== libraryRequestSeq.current) return;
-      observeCatalogGeneration(data.catalog_generation);
+      if (observeCatalogGeneration(data.catalog_generation)) {
+        setTmdbCache({});
+        setCollectionCache({});
+      }
       setItems(data.items || []);
       setFileItemsLoaded(false);
       setPeopleLoaded(false);
+      peopleLoadPromiseRef.current = null;
       if (!quiet) setCurrentPage(1);
       if (forceScan) {
         const discovered = Number(data.new_files || 0);
@@ -190,12 +202,11 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     };
   }, [fileItemsLoaded, mode]);
 
-  useEffect(() => {
-    if (mode !== 'movie' || librarySearchKind !== 'people' || peopleLoaded) return;
-    let cancelled = false;
-    fetchJson('/api/library?view=people')
+  const loadPeopleProjection = useCallback(async () => {
+    if (peopleLoaded) return;
+    if (peopleLoadPromiseRef.current) return peopleLoadPromiseRef.current;
+    const request = fetchJson('/api/library?view=people')
       .then((data) => {
-        if (cancelled) return;
         observeCatalogGeneration(data.catalog_generation);
         const peopleByPath = new Map((data.items || []).map((item) => [item.path, item]));
         setItems((current) => current.map((item) => {
@@ -213,11 +224,18 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
         }));
         setPeopleLoaded(true);
       })
-      .catch((peopleError) => notify(`People index unavailable: ${peopleError.message}`, 'error'));
-    return () => {
-      cancelled = true;
-    };
-  }, [librarySearchKind, mode, notify, peopleLoaded]);
+      .catch((error) => {
+        peopleLoadPromiseRef.current = null;
+        throw error;
+      });
+    peopleLoadPromiseRef.current = request;
+    return request;
+  }, [peopleLoaded]);
+
+  useEffect(() => {
+    if (mode !== 'movie' || librarySearchKind !== 'people' || peopleLoaded) return;
+    loadPeopleProjection().catch((peopleError) => notify(`People index unavailable: ${peopleError.message}`, 'error'));
+  }, [librarySearchKind, loadPeopleProjection, mode, notify, peopleLoaded]);
 
   useEffect(() => {
     function handleLibraryChanged(event) {
@@ -438,62 +456,24 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     setExpandedPath('');
   }
 
-  async function loadTmdbDetails(item, openTrailer = false) {
-    const identity = getMovieIdentity(item);
-    const cacheKey = getTmdbCacheKey(item);
-    let details = tmdbCache[cacheKey];
-    if (!details || (openTrailer && !details.loading && !details.trailer_url)) {
-      const persistedDetails = details && !details.loading ? details : {};
-      setTmdbCache((cache) => ({
-        ...cache,
-        [cacheKey]: { ...persistedDetails, loading: true, cast: persistedDetails.cast || [], trailer_url: persistedDetails.trailer_url || '' }
-      }));
-      try {
-        let tmdbId = item.tmdb_id;
-        if (!tmdbId) {
-          const search = await fetchJson(`/api/tmdb/search?q=${encodeURIComponent(identity.title)}&page=1`);
-          const result = (search.results || []).find((movie) => String(movie.year || '') === String(identity.year || '')) || (search.results || [])[0];
-          if (!result?.tmdb_id) throw new Error('No TMDB match found');
-          tmdbId = result.tmdb_id;
-        }
-        details = { ...persistedDetails, ...await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(tmdbId)}`) };
-        setTmdbCache((cache) => ({ ...cache, [cacheKey]: details }));
-        if (details.collection?.id && !collectionCache[details.collection.id]) {
-          fetchJson(`/api/library/collection/${encodeURIComponent(details.collection.id)}`)
-            .then((collectionData) => setCollectionCache((cache) => ({ ...cache, [details.collection.id]: collectionData })))
-            .catch(() => {});
-        }
-      } catch (detailsError) {
-        details = { ...persistedDetails, cast: persistedDetails.cast || [], trailer_url: persistedDetails.trailer_url || '', error: detailsError.message };
-        setTmdbCache((cache) => ({ ...cache, [cacheKey]: details }));
-      }
-    }
-    if (openTrailer) {
-      onOpenTrailer({ title: identity.title, year: identity.year }, details.trailer_url || '');
-    }
-    return details;
-  }
-
   async function loadLibraryDetails(item) {
     const cacheKey = getTmdbCacheKey(item);
     let details = tmdbCache[cacheKey];
     if (details && !details.loading && !details.error) return details;
     setTmdbCache((cache) => ({ ...cache, [cacheKey]: { loading: true, cast: [], trailer_url: '' } }));
     try {
-      const response = await fetchJson(`/api/library/details?path=${encodeURIComponent(item.path)}`);
-      observeCatalogGeneration(response.catalog_generation);
-      const fullItem = response.item || {};
-      const canonical = fullItem.canonical_metadata || {};
-      details = {
-        ...canonical,
-        summary: canonical.summary || canonical.plot || fullItem.plex_summary || '',
-        plot: canonical.plot || canonical.summary || fullItem.plex_summary || '',
-        cast: canonical.cast || [],
-        directors: canonical.directors || [],
-        collection: canonical.collection || {},
-        trailer_url: ''
-      };
+      details = await fetchCanonicalMovieDetails(item, item);
+      if (details.catalog_generation_changed) {
+        setTmdbCache({});
+        setCollectionCache({});
+      }
       setTmdbCache((cache) => ({ ...cache, [cacheKey]: details }));
+      const collectionUrl = movieCollectionUrl(details);
+      if (collectionUrl && !collectionCache[details.collection.id]) {
+        fetchCurationJson(collectionUrl)
+          .then((collectionData) => setCollectionCache((cache) => ({ ...cache, [details.collection.id]: collectionData })))
+          .catch(() => {});
+      }
     } catch (detailsError) {
       details = { cast: [], trailer_url: '', error: detailsError.message };
       setTmdbCache((cache) => ({ ...cache, [cacheKey]: details }));
@@ -501,7 +481,19 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     return details;
   }
 
-  function applyRoleFilter(role, person, options = {}) {
+  async function openLibraryTrailer(item) {
+    const identity = getMovieIdentity(item);
+    const details = await loadLibraryDetails(item);
+    onOpenTrailer({ title: identity.title, year: identity.year }, details?.trailer_url || '');
+  }
+
+  async function applyRoleFilter(role, person, options = {}) {
+    try {
+      await loadPeopleProjection();
+    } catch (peopleError) {
+      notify(`People index unavailable: ${peopleError.message}`, 'error');
+      return;
+    }
     setRoleFilter({
       role,
       id: person.id || '',
@@ -528,7 +520,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     setMetadataStatus(`Loading ${collection.name} collection...`);
     setCollectionFilter({ ...collection, parts: [] });
     try {
-      const data = await fetchJson(`/api/library/collection/${encodeURIComponent(collection.id)}`);
+      const data = await fetchCurationJson(`/api/library/collection/${encodeURIComponent(collection.id)}`);
       setCollectionCache((cache) => ({ ...cache, [data.id || collection.id]: data }));
       setCollectionFilter({
         id: data.id || collection.id,
@@ -565,7 +557,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   }
 
   async function saveCollectionOverride(collection, parts) {
-    await fetchJson('/api/user/collection', {
+    await fetchCurationJson('/api/user/collection', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -574,7 +566,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
         parts
       })
     });
-    const data = await fetchJson(`/api/library/collection/${encodeURIComponent(collection.id)}`);
+    const data = await fetchCurationJson(`/api/library/collection/${encodeURIComponent(collection.id)}`);
     setCollectionCache((cache) => ({ ...cache, [collection.id]: data }));
     setCollectionFilter((filter) => (filter?.id === collection.id ? { ...data } : filter));
     setCollectionEditor(null);
@@ -582,15 +574,15 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   }
 
   async function resetCollection(collection) {
-    await fetchJson(`/api/user/collection/${encodeURIComponent(collection.id)}/reset`, { method: 'POST' });
-    const data = await fetchJson(`/api/library/collection/${encodeURIComponent(collection.id)}?refresh=1`);
+    await fetchCurationJson(`/api/user/collection/${encodeURIComponent(collection.id)}/reset`, { method: 'POST' });
+    const data = await fetchCurationJson(`/api/library/collection/${encodeURIComponent(collection.id)}?refresh=1`);
     setCollectionCache((cache) => ({ ...cache, [collection.id]: data }));
     setCollectionFilter((filter) => (filter?.id === collection.id ? { ...data } : filter));
     notify('Collection reset to TMDB');
   }
 
   async function createList(name) {
-    const created = await fetchJson('/api/user/lists', {
+    const created = await fetchCurationJson('/api/user/lists', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name })
@@ -602,7 +594,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   }
 
   async function addMovieToList(listId, item) {
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie: moviePayload(item) })
@@ -622,7 +614,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   }
 
   async function renameList(listId, name) {
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}`, {
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name })
@@ -633,7 +625,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   }
 
   async function deleteList(listId) {
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}`, { method: 'DELETE' });
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}`, { method: 'DELETE' });
     if (listFilter?.id === listId) setListFilter(null);
     await loadUserLists({ force: true });
     announceCurationChanged();
@@ -641,7 +633,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   }
 
   async function removeMovieFromList(listId, item) {
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie: moviePayload(item) })
@@ -653,7 +645,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
 
   async function toggleSystemList(systemType, item) {
     const active = movieHasSystemState(item, userLists, systemType);
-    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+    await fetchCurationJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie: moviePayload(item), active: !active })
@@ -1001,7 +993,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
                     }}
                     onPlay={onPlay}
                     onFindTorrent={onFindTorrent}
-                    onTrailer={() => loadTmdbDetails(item, true)}
+                    onTrailer={() => openLibraryTrailer(item)}
                     onPersonFilter={applyRoleFilter}
                     onPersonDiscover={onOpenDiscoverPerson}
                     onCollectionFilter={applyCollectionFilter}

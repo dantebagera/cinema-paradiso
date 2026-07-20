@@ -14,13 +14,16 @@ import {
   Search,
   Settings,
   ShieldCheck,
+  Tv,
   X
 } from 'lucide-react';
-import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from './api/client.js';
-import { announceLibraryReconciled, fetchOwnershipChecks, observeCatalogGeneration } from './api/library.js';
+import { announceLibraryReconciled, CATALOG_GENERATION_CHANGED_EVENT, fetchOwnershipChecks, observeCatalogGeneration } from './api/library.js';
+import { fetchCanonicalMovieDetails, movieDetailsCacheKey } from './api/movieDetails.js';
 import {
   announceCurationChanged,
+  fetchCurationJson,
   fetchUserListsCached
 } from './api/curation.js';
 import logoUrl from './assets/logo.svg';
@@ -54,6 +57,7 @@ const LibraryWorkspace = lazy(() => import('./features/library/LibraryWorkspace.
 const MovieListsWorkspace = lazy(() => import('./features/movie-lists/MovieListsWorkspace.jsx'));
 const DiscoverWorkspace = lazy(() => import('./features/discover/DiscoverWorkspace.jsx'));
 const AIControlWorkspace = lazy(() => import('./features/ai-control/AIControlWorkspace.jsx'));
+const IPTVWorkspace = lazy(() => import('./features/iptv/IPTVWorkspace.jsx'));
 const HomeWorkspace = lazy(() => import('./features/home/HomeWorkspace.jsx'));
 const DownloadsWorkspace = lazy(() => import('./features/downloads/DownloadsWorkspace.jsx'));
 const CleanupWorkspace = lazy(() => import('./features/cleanup/CleanupWorkspace.jsx'));
@@ -98,6 +102,12 @@ const navItems = [
     icon: Bot,
     accent: 'violet',
     experimental: true
+  },
+  {
+    id: 'iptv',
+    label: 'IPTV',
+    icon: Tv,
+    accent: 'gold'
   },
   {
     id: 'downloads',
@@ -219,6 +229,7 @@ function ArchiveApp() {
   const [activeSection, setActiveSection] = useState(() => (
     typeof window === 'undefined' ? 'home' : sectionFromPath(window.location.pathname, navItems)
   ));
+  const [mountedSections, setMountedSections] = useState(() => new Set([activeSection]));
   const [stats, setStats] = useState(null);
   const [movies, setMovies] = useState([]);
   const [ownership, setOwnership] = useState({});
@@ -246,8 +257,37 @@ function ArchiveApp() {
   const [cleanupInitialTab, setCleanupInitialTab] = useState('storage');
   const [libraryFilterRequest, setLibraryFilterRequest] = useState(null);
   const [homeLists, setHomeLists] = useState([]);
+  const workspaceRef = useRef(null);
+  const activeSectionRef = useRef(activeSection);
+  const sectionScrollPositionsRef = useRef({});
   const sourceSearchTokenRef = useRef(0);
   const libraryReconcileSignatureRef = useRef('');
+
+  useEffect(() => {
+    setMountedSections((sections) => (
+      sections.has(activeSection) ? sections : new Set([...sections, activeSection])
+    ));
+  }, [activeSection]);
+
+  useLayoutEffect(() => {
+    activeSectionRef.current = activeSection;
+    const workspace = workspaceRef.current;
+    if (workspace && mountedSections.has(activeSection)) {
+      workspace.scrollTop = sectionScrollPositionsRef.current[activeSection] || 0;
+    }
+  }, [activeSection, mountedSections]);
+
+  useEffect(() => {
+    const clearDetailCache = () => setDetails({});
+    window.addEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCache);
+    return () => window.removeEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCache);
+  }, []);
+
+  const consumeLibraryFilterRequest = useCallback((requestId) => {
+    setLibraryFilterRequest((current) => (
+      current?.id === requestId ? null : current
+    ));
+  }, []);
 
   const notify = useCallback((message, tone = 'success') => {
     setToast({ message, tone });
@@ -288,7 +328,7 @@ function ArchiveApp() {
     const active = listsForDiscoverMovie(movie, homeLists, owned).some((list) => (
       list.system_type === systemType || list.id === systemType
     ));
-    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+    await fetchCurationJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie: payload, active: !active })
@@ -388,7 +428,7 @@ function ArchiveApp() {
     async function loadFollowedReleases() {
       setFollowedChecking(true);
       try {
-        const initial = await fetchJson('/api/user/followed-releases');
+        const initial = await fetchCurationJson('/api/user/followed-releases');
         let serverMovies = initial.movies || [];
         let legacy = [];
         try {
@@ -398,7 +438,7 @@ function ArchiveApp() {
         }
         if (legacy.length && !serverMovies.length) {
           for (const movie of legacy) {
-            await fetchJson('/api/user/followed-releases', {
+            await fetchCurationJson('/api/user/followed-releases', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ movie })
@@ -406,7 +446,7 @@ function ArchiveApp() {
           }
           localStorage.removeItem('cp.followedMovies');
         }
-        const checked = await fetchJson('/api/user/followed-releases/check', { method: 'POST' });
+        const checked = await fetchCurationJson('/api/user/followed-releases/check', { method: 'POST' });
         if (cancelled) return;
         serverMovies = sortFollowedReleases(checked.movies || []);
         setFollowed(serverMovies);
@@ -427,26 +467,36 @@ function ArchiveApp() {
     return () => { cancelled = true; };
   }, [notify]);
 
+  const selectedOwnership = selectedMovie ? ownedMovieFor(selectedMovie, ownership) : null;
+  const selectedDetailsKey = movieDetailsCacheKey(selectedMovie, selectedOwnership);
+  const selectedDetails = selectedDetailsKey ? details[selectedDetailsKey] : null;
+  const selectedMovieWithDetails = selectedMovie ? {
+    ...selectedMovie,
+    plot: selectedDetails?.plot || selectedDetails?.summary || selectedMovie.plot || '',
+    genres: selectedDetails?.genres?.length ? selectedDetails.genres : selectedMovie.genres,
+    release_date: selectedMovie.release_date || selectedDetails?.release_date || '',
+    tmdb_rating: selectedDetails?.rating || selectedMovie.tmdb_rating,
+    tmdb_vote_count: selectedDetails?.tmdb_vote_count ?? selectedMovie.tmdb_vote_count
+  } : null;
+
   useEffect(() => {
-    if (!selectedMovie?.tmdb_id || details[selectedMovie.tmdb_id]) return;
+    if (loading.movies || !selectedDetailsKey || details[selectedDetailsKey]) return;
     let cancelled = false;
     async function loadDetails() {
       try {
-        const data = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(selectedMovie.tmdb_id)}`);
-        if (!cancelled) setDetails((state) => ({ ...state, [selectedMovie.tmdb_id]: data }));
-      } catch {
-        if (!cancelled) setDetails((state) => ({ ...state, [selectedMovie.tmdb_id]: { cast: [], trailer_url: '' } }));
+        const data = await fetchCanonicalMovieDetails(selectedMovie, selectedOwnership);
+        if (!cancelled) {
+          setDetails((state) => data?.catalog_generation_changed ? { [selectedDetailsKey]: data } : { ...state, [selectedDetailsKey]: data });
+        }
+      } catch (error) {
+        if (!cancelled) setDetails((state) => ({ ...state, [selectedDetailsKey]: { error: error.message, cast: [], directors: [], trailer_url: '' } }));
       }
     }
     loadDetails();
     return () => {
       cancelled = true;
     };
-  }, [selectedMovie, details]);
-
-  const selectedDetails = selectedMovie?.tmdb_id ? details[selectedMovie.tmdb_id] : null;
-  const selectedMovieWithDetails = selectedMovie ? { ...selectedMovie, release_date: selectedMovie.release_date || selectedDetails?.release_date || '' } : null;
-  const selectedOwnership = selectedMovieWithDetails ? ownedMovieFor(selectedMovieWithDetails, ownership) : null;
+  }, [details, loading.movies, selectedDetailsKey, selectedMovie, selectedOwnership]);
   const streamingAvailable = Boolean(streamingConfig.enabled && String(streamingConfig.url_template || '').trim());
   const streamingLabel = String(streamingConfig.label || '').trim() || 'Stream';
 
@@ -464,7 +514,7 @@ function ArchiveApp() {
 
   useEffect(() => {
     function handlePopState() {
-      setActiveSection(sectionFromPath(window.location.pathname, navItems));
+      activateSection(sectionFromPath(window.location.pathname, navItems));
     }
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
@@ -472,7 +522,7 @@ function ArchiveApp() {
 
   function selectSection(id) {
     if (typeof window === 'undefined') return;
-    setActiveSection(id);
+    activateSection(id);
     const path = id === 'home' ? '/' : `/${id}`;
     if (window.location.pathname !== path) {
       window.history.pushState({}, '', path);
@@ -492,6 +542,17 @@ function ArchiveApp() {
     }
     setCleanupInitialTab(tab);
     selectSection('cleanup');
+  }
+
+  function activateSection(id) {
+    const currentSection = activeSectionRef.current;
+    const workspace = workspaceRef.current;
+    if (workspace && currentSection) {
+      sectionScrollPositionsRef.current[currentSection] = workspace.scrollTop;
+    }
+    activeSectionRef.current = id;
+    setMountedSections((sections) => sections.has(id) ? sections : new Set([...sections, id]));
+    setActiveSection(id);
   }
 
   function openPersonInDiscover(movie, role, person) {
@@ -518,7 +579,7 @@ function ArchiveApp() {
     const existing = followed.find((item) => movieKey(item) === key);
     const payload = { title: movie.title, year: movie.year, tmdb_id: movie.tmdb_id, poster_url: movie.poster_url, release_date: movie.release_date || '' };
     try {
-      const data = await fetchJson('/api/user/followed-releases', {
+      const data = await fetchCurationJson('/api/user/followed-releases', {
         method: existing ? 'DELETE' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ movie: existing || payload })
@@ -661,8 +722,8 @@ function ArchiveApp() {
         activeSection={activeSection}
         onSelect={selectSection}
       />
-      <main className={cx('workspace', activeSection === 'home' && 'workspace-home', activeSection === 'downloads' && 'workspace-downloads')}>
-        {activeSection !== 'home' && activeSection !== 'library' && activeSection !== 'movie-lists' && activeSection !== 'cleanup' && activeSection !== 'discover' && activeSection !== 'ai-control' && activeSection !== 'help' && activeSection !== 'settings' && (
+      <main ref={workspaceRef} className={cx('workspace', activeSection === 'home' && 'workspace-home', activeSection === 'downloads' && 'workspace-downloads')}>
+        {activeSection !== 'home' && activeSection !== 'library' && activeSection !== 'movie-lists' && activeSection !== 'cleanup' && activeSection !== 'discover' && activeSection !== 'ai-control' && activeSection !== 'iptv' && activeSection !== 'help' && activeSection !== 'settings' && (
           <TopBar
             activeSection={activeSection}
             stats={stats}
@@ -674,13 +735,13 @@ function ArchiveApp() {
             onBrowseQueryChange={setBrowseQuery}
             discoverActiveTab={discoverActiveTab}
             onDiscoverSearch={() => {
-              setActiveSection('discover');
+              selectSection('discover');
               setDiscoverSearchRequest((value) => value + 1);
             }}
           />
         )}
-        {activeSection === 'home' && (
-          <div className="workspace-panel">
+        {mountedSections.has('home') && (
+          <div className="workspace-panel" hidden={activeSection !== 'home'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <HomeWorkspace
               stats={stats}
@@ -709,8 +770,8 @@ function ArchiveApp() {
             </Suspense>
           </div>
         )}
-        {activeSection === 'library' && (
-          <div className="workspace-panel">
+        {mountedSections.has('library') && (
+          <div className="workspace-panel" hidden={activeSection !== 'library'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <LibraryWorkspace
                 onPlay={playLocal}
@@ -722,12 +783,13 @@ function ArchiveApp() {
                 onReviewUnmatched={reviewUnmatchedMetadata}
                 onOpenDiscoverPerson={openPersonInDiscover}
                 filterRequest={libraryFilterRequest}
+                onFilterRequestConsumed={consumeLibraryFilterRequest}
               />
             </Suspense>
           </div>
         )}
-        {activeSection === 'movie-lists' && (
-          <div className="workspace-panel">
+        {mountedSections.has('movie-lists') && (
+          <div className="workspace-panel" hidden={activeSection !== 'movie-lists'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <MovieListsWorkspace
                 notify={notify}
@@ -740,12 +802,13 @@ function ArchiveApp() {
                 followed={followed}
                 onFollow={toggleFollow}
                 onEditPoster={(owned, movie) => setPosterEditor({ path: owned.path, title: movie.title })}
+                onOpenDiscoverPerson={openPersonInDiscover}
               />
             </Suspense>
           </div>
         )}
-        {activeSection === 'discover' && (
-          <div className="workspace-panel">
+        {mountedSections.has('discover') && (
+          <div className="workspace-panel" hidden={activeSection !== 'discover'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <DiscoverWorkspace
                 followed={followed}
@@ -770,15 +833,15 @@ function ArchiveApp() {
             </Suspense>
           </div>
         )}
-        {activeSection === 'downloads' && (
-          <div className="workspace-panel">
+        {mountedSections.has('downloads') && (
+          <div className="workspace-panel" hidden={activeSection !== 'downloads'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <DownloadsWorkspace />
             </Suspense>
           </div>
         )}
-        {activeSection === 'ai-control' && (
-          <div className="workspace-panel">
+        {mountedSections.has('ai-control') && (
+          <div className="workspace-panel" hidden={activeSection !== 'ai-control'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <AIControlWorkspace
                 followed={followed}
@@ -795,15 +858,22 @@ function ArchiveApp() {
             </Suspense>
           </div>
         )}
-        {activeSection === 'help' && (
-          <div className="workspace-panel">
+        {mountedSections.has('iptv') && (
+          <div className="workspace-panel" hidden={activeSection !== 'iptv'}>
+            <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
+              <IPTVWorkspace notify={notify} />
+            </Suspense>
+          </div>
+        )}
+        {mountedSections.has('help') && (
+          <div className="workspace-panel" hidden={activeSection !== 'help'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <HelpWorkspace />
             </Suspense>
           </div>
         )}
-        {activeSection === 'cleanup' && (
-          <div className="workspace-panel">
+        {mountedSections.has('cleanup') && (
+          <div className="workspace-panel" hidden={activeSection !== 'cleanup'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <CleanupWorkspace
                 notify={notify}
@@ -816,8 +886,8 @@ function ArchiveApp() {
             </Suspense>
           </div>
         )}
-        {activeSection === 'settings' && (
-          <div className="workspace-panel">
+        {mountedSections.has('settings') && (
+          <div className="workspace-panel" hidden={activeSection !== 'settings'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <SettingsWorkspace
                 notify={notify}

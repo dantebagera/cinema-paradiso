@@ -45,3 +45,31 @@ test('catalog generation changes invalidate cached ownership checks', async () =
     clearOwnershipCheckCache();
   }
 });
+
+test('catalog generation changes broadcast detail-cache invalidation', () => {
+  const originalWindow = globalThis.window;
+  const originalCustomEvent = globalThis.CustomEvent;
+  const events = [];
+  globalThis.window = { dispatchEvent: (event) => events.push(event) };
+  globalThis.CustomEvent = class CustomEvent {
+    constructor(type, options = {}) {
+      this.type = type;
+      this.detail = options.detail;
+    }
+  };
+
+  try {
+    observeCatalogGeneration(100);
+    observeCatalogGeneration(101);
+    assert.equal(events.at(-1).type, 'cp-catalog-generation-changed');
+    assert.deepEqual(events.at(-1).detail, { previousGeneration: 100, generation: 101 });
+    const eventCount = events.length;
+    assert.equal(observeCatalogGeneration(100), false);
+    assert.equal(events.length, eventCount);
+  } finally {
+    if (originalWindow === undefined) delete globalThis.window;
+    else globalThis.window = originalWindow;
+    if (originalCustomEvent === undefined) delete globalThis.CustomEvent;
+    else globalThis.CustomEvent = originalCustomEvent;
+  }
+});

@@ -1,4 +1,5 @@
 import { ChevronDown, Film, Play, Star } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 function cx(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -17,10 +18,14 @@ export function UnifiedMoviePoster({
   showPlayOverlay,
   onPlay
 }) {
+  const [imageFailed, setImageFailed] = useState(false);
+
+  useEffect(() => setImageFailed(false), [posterUrl]);
+
   return (
     <div className={cx('unified-movie-poster', large && 'unified-movie-poster-large', className)}>
-      {posterUrl ? (
-        <img src={posterUrl} alt={`${title} poster`} loading="lazy" />
+      {posterUrl && !imageFailed ? (
+        <img src={posterUrl} alt={`${title} poster`} loading="lazy" onError={() => setImageFailed(true)} />
       ) : (
         <Film size={large ? 42 : 30} />
       )}

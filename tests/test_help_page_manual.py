@@ -13,6 +13,9 @@ class HelpPageManualTests(unittest.TestCase):
         for text in [
             "Movie Lists workspace",
             "AI Control workspace",
+            "IPTV workspace",
+            "iptv.sqlite",
+            "without Ollama",
             "bulk selection",
             "Watched",
             "Watchlist",
@@ -35,6 +38,8 @@ class HelpPageManualTests(unittest.TestCase):
             "{imdb_id}",
             "Ollama-curated lists",
             "AI Control trusted indexers",
+            "IPTV Provider",
+            "Sync catalog",
         ]:
             self.assertIn(text, HELP_SOURCE)
 

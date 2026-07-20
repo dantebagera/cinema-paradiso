@@ -20,6 +20,7 @@ env/
 # App data (user-specific, not committed)
 config.json
 res_cache.json
+cp-server.*.log
 cache/
 data/
 
@@ -48,6 +49,7 @@ winapp/
 
 # Portable release artifacts
 runtime/qbittorrent/
+runtime/ffmpeg/
 release/
 *.zip
 

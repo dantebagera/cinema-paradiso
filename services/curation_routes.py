@@ -2,6 +2,13 @@ from flask import jsonify, request
 
 
 def register_curation_routes(app, store_provider, owned_checker):
+    def curation_payload(payload, store=None):
+        store = store or store_provider()
+        return {
+            **dict(payload or {}),
+            'curation_generation': store.catalog.generation('curation'),
+        }
+
     def user_lists():
         store = store_provider()
         if request.method == 'GET':
@@ -14,10 +21,10 @@ def register_curation_routes(app, store_provider, owned_checker):
             result = {'lists': store.list_all()}
             if any(movie.values()):
                 result['movie_lists'] = store.lists_for_movie(movie)
-            return jsonify(result)
+            return jsonify(curation_payload(result, store))
         body = request.get_json(force=True, silent=True) or {}
         try:
-            return jsonify(store.create_list(body.get('name', '')))
+            return jsonify(curation_payload(store.create_list(body.get('name', '')), store))
         except ValueError as error:
             return jsonify({'error': str(error)}), 400
         except Exception as error:
@@ -27,9 +34,10 @@ def register_curation_routes(app, store_provider, owned_checker):
         store = store_provider()
         try:
             if request.method == 'DELETE':
-                return jsonify({'success': True, 'deleted': store.delete_list(list_id)})
+                deleted = store.delete_list(list_id)
+                return jsonify(curation_payload({'success': True, 'deleted': deleted}, store))
             body = request.get_json(force=True, silent=True) or {}
-            return jsonify(store.rename_list(list_id, body.get('name', '')))
+            return jsonify(curation_payload(store.rename_list(list_id, body.get('name', '')), store))
         except ValueError as error:
             return jsonify({'error': str(error)}), 400
         except KeyError:
@@ -38,20 +46,22 @@ def register_curation_routes(app, store_provider, owned_checker):
             return jsonify({'error': str(error)}), 500
 
     def user_list_movies(list_id):
+        store = store_provider()
         body = request.get_json(force=True, silent=True) or {}
         movie = body.get('movie') or body
         try:
             if request.method == 'POST':
                 if list_id == 'watched' and not owned_checker(movie):
                     return jsonify({'error': 'Watched is available only for owned Library movies'}), 400
-                return jsonify(store_provider().add_movie_to_list(list_id, movie))
-            return jsonify(store_provider().remove_movie_from_list(list_id, movie))
+                return jsonify(curation_payload(store.add_movie_to_list(list_id, movie), store))
+            return jsonify(curation_payload(store.remove_movie_from_list(list_id, movie), store))
         except KeyError:
             return jsonify({'error': 'List not found'}), 404
         except Exception as error:
             return jsonify({'error': str(error)}), 500
 
     def user_list_movies_bulk(list_id):
+        store = store_provider()
         body = request.get_json(force=True, silent=True) or {}
         movies = body.get('movies') or []
         if not isinstance(movies, list) or not movies:
@@ -61,13 +71,14 @@ def register_curation_routes(app, store_provider, owned_checker):
                 unowned = [movie for movie in movies if not owned_checker(movie)]
                 if unowned:
                     return jsonify({'error': 'Watched is available only for owned Library movies'}), 400
-            return jsonify(store_provider().add_movies_to_list(list_id, movies))
+            return jsonify(curation_payload(store.add_movies_to_list(list_id, movies), store))
         except KeyError:
             return jsonify({'error': 'List not found'}), 404
         except Exception as error:
             return jsonify({'error': str(error)}), 500
 
     def user_system_list_state():
+        store = store_provider()
         movie = {
             'tmdb_id': request.args.get('tmdb_id', ''),
             'imdb_id': request.args.get('imdb_id', ''),
@@ -75,7 +86,7 @@ def register_curation_routes(app, store_provider, owned_checker):
             'year': request.args.get('year', ''),
             'path': request.args.get('path', ''),
         }
-        return jsonify(store_provider().system_states_for_movie(movie))
+        return jsonify(curation_payload(store.system_states_for_movie(movie), store))
 
     def user_system_list_toggle(system_type):
         if system_type not in {'watched', 'watchlist'}:
@@ -87,7 +98,9 @@ def register_curation_routes(app, store_provider, owned_checker):
         if system_type == 'watched' and bool(body.get('active')) and not owned_checker(movie):
             return jsonify({'error': 'Watched is available only for owned Library movies'}), 400
         try:
-            return jsonify(store_provider().set_system_list_state(system_type, movie, bool(body.get('active'))))
+            store = store_provider()
+            result = store.set_system_list_state(system_type, movie, bool(body.get('active')))
+            return jsonify(curation_payload(result, store))
         except KeyError:
             return jsonify({'error': 'System list not found'}), 404
         except Exception as error:

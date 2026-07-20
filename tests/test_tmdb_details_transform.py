@@ -294,7 +294,7 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         finally:
             app._tmdb_key = original_key
 
-    def test_card_projection_refetches_incomplete_cached_metadata(self):
+    def test_card_projection_is_read_only_for_incomplete_cached_metadata(self):
         cached = {"tmdb_id": "1368337", "title": "The Odyssey", "release_date": "2026-07-15"}
         expected = {
             **cached,
@@ -313,8 +313,8 @@ class TmdbDetailsTransformTest(unittest.TestCase):
             result = app._tmdb_card_projection_by_id("1368337", store=store)
 
         self.assertEqual(store.requested_id, "1368337")
-        self.assertEqual(result["genres"], ["Adventure"])
-        fetch.assert_called_once_with("1368337", store=store, refresh=True)
+        self.assertEqual(result, {})
+        fetch.assert_not_called()
 
     def test_card_projections_endpoint_batches_unique_valid_tmdb_ids(self):
         projection = {
@@ -323,7 +323,8 @@ class TmdbDetailsTransformTest(unittest.TestCase):
             "genres": ["Adventure"],
             "tmdb_rating": "8.0",
         }
-        store = object()
+        store = Mock()
+        store.catalog.generation.return_value = 73
 
         def card_projection(movie, projection_store):
             self.assertIs(projection_store, store)
@@ -345,6 +346,7 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         payload = response.get_json()
         self.assertEqual(payload["requested"], 2)
         self.assertEqual(payload["resolved"], 2)
+        self.assertEqual(payload["catalog_generation"], 73)
         self.assertEqual(set(payload["items"]), {"tmdb:1368337", "tmdb:42"})
         self.assertEqual(resolve.call_count, 2)
 

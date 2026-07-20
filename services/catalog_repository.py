@@ -84,6 +84,9 @@ class CatalogRepository:
                         "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES(?, '1')",
                         (f'{domain}_generation',),
                     )
+                connection.execute(
+                    "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('canonical_media_generation', '1')"
+                )
             self._cache.clear()
             return True
 
@@ -128,12 +131,19 @@ class CatalogRepository:
             INSERT INTO catalog_meta(key, value) VALUES('generation', '1')
             ON CONFLICT(key) DO UPDATE SET value = CAST(value AS INTEGER) + 1
         """)
-        for domain in sorted({_document_domain(name) for name in document_names}):
+        domains = sorted({_document_domain(name) for name in document_names})
+        for domain in domains:
             key = f'{domain}_generation'
             connection.execute("""
                 INSERT INTO catalog_meta(key, value) VALUES(?, '1')
                 ON CONFLICT(key) DO UPDATE SET value = CAST(value AS INTEGER) + 1
             """, (key,))
+        if 'media' in domains:
+            connection.execute("""
+                INSERT OR REPLACE INTO catalog_meta(key, value)
+                SELECT 'canonical_media_generation', value
+                FROM catalog_meta WHERE key = 'media_generation'
+            """)
         connection.execute(
             "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('export_dirty', '1')"
         )
@@ -209,12 +219,74 @@ class CatalogRepository:
             rows = connection.execute(f"SELECT {key_column}, raw_json FROM {table}").fetchall()
             document[root_key] = {str(row[0]): json.loads(row[1]) for row in rows}
         elif name == "user_lists.json":
-            rows = connection.execute("SELECT raw_json FROM user_lists ORDER BY created_at, list_id").fetchall()
-            document["lists"] = [json.loads(row[0]) for row in rows]
+            rows = connection.execute(
+                "SELECT list_id, name, system_type, created_at, updated_at, raw_json "
+                "FROM user_lists ORDER BY created_at, list_id"
+            ).fetchall()
+            lists = []
+            for row in rows:
+                list_row = cls._json_object(cls._row_value(row, 5, "raw_json"))
+                list_row.update({
+                    "id": str(cls._row_value(row, 0, "list_id")),
+                    "name": str(cls._row_value(row, 1, "name") or ""),
+                    "system_type": str(cls._row_value(row, 2, "system_type") or ""),
+                    "created_at": float(cls._row_value(row, 3, "created_at") or 0),
+                    "updated_at": float(cls._row_value(row, 4, "updated_at") or 0),
+                })
+                item_rows = connection.execute(
+                    "SELECT position, tmdb_id, imdb_id, path, title, year, poster_url, raw_json "
+                    "FROM list_items WHERE list_id = ? ORDER BY position",
+                    (cls._row_value(row, 0, "list_id"),),
+                ).fetchall()
+                movies = []
+                for item_row in item_rows:
+                    movie = cls._json_object(cls._row_value(item_row, 7, "raw_json"))
+                    movie.update({
+                        "tmdb_id": str(cls._row_value(item_row, 1, "tmdb_id") or ""),
+                        "imdb_id": str(cls._row_value(item_row, 2, "imdb_id") or ""),
+                        "path": str(cls._row_value(item_row, 3, "path") or ""),
+                        "title": str(cls._row_value(item_row, 4, "title") or ""),
+                        "year": str(cls._row_value(item_row, 5, "year") or ""),
+                        "poster_url": str(cls._row_value(item_row, 6, "poster_url") or ""),
+                    })
+                    movies.append(movie)
+                list_row["movies"] = movies
+                lists.append(list_row)
+            document["lists"] = lists
         elif name == "followed_releases.json":
-            rows = connection.execute("SELECT raw_json FROM followed_releases ORDER BY position").fetchall()
-            document["movies"] = [json.loads(row[0]) for row in rows]
+            rows = connection.execute(
+                "SELECT tmdb_id, imdb_id, title, year, status, updated_at, raw_json "
+                "FROM followed_releases ORDER BY position"
+            ).fetchall()
+            movies = []
+            for row in rows:
+                movie = cls._json_object(cls._row_value(row, 6, "raw_json"))
+                movie.update({
+                    "tmdb_id": str(cls._row_value(row, 0, "tmdb_id") or ""),
+                    "imdb_id": str(cls._row_value(row, 1, "imdb_id") or ""),
+                    "title": str(cls._row_value(row, 2, "title") or ""),
+                    "year": str(cls._row_value(row, 3, "year") or ""),
+                    "status": str(cls._row_value(row, 4, "status") or ""),
+                    "updated_at": float(cls._row_value(row, 5, "updated_at") or 0),
+                })
+                movies.append(movie)
+            document["movies"] = movies
         return document
+
+    @staticmethod
+    def _json_object(value):
+        try:
+            decoded = json.loads(value)
+        except (TypeError, ValueError):
+            return {}
+        return decoded if isinstance(decoded, dict) else {}
+
+    @staticmethod
+    def _row_value(row, index, name):
+        try:
+            return row[name]
+        except (IndexError, KeyError, TypeError):
+            return row[index]
 
     def replace_document(self, name, document):
         name = str(name).replace("\\", "/")
@@ -225,6 +297,15 @@ class CatalogRepository:
                 (name, _json_text(document)),
             )
             self._replace_normalized_document(connection, name, document)
+            if name in {
+                "app_metadata/files.json",
+                "app_metadata/tmdb_metadata.json",
+                "app_metadata/plex_metadata.json",
+                "app_metadata/manual_matches.json",
+            }:
+                self.store.canonical.rebuild(connection)
+            else:
+                self.store.canonical.sync_changes(connection, name)
             self._bump_generation(connection, (name,))
             self._cache.pop(name, None)
         self.schedule_export(name)
@@ -298,6 +379,7 @@ class CatalogRepository:
         with self._lock, self.store.transaction() as connection:
             for key, record in records.items():
                 self._upsert_record(connection, name, key, record)
+            self.store.canonical.sync_changes(connection, name, records.keys())
             self._bump_generation(connection, (name,))
             self._cache.pop(name, None)
         self.schedule_export(name)
@@ -380,6 +462,7 @@ class CatalogRepository:
                 for key in keys:
                     connection.execute("DELETE FROM media_identity_keys WHERE path_key = ?", (key,))
                     self.store._import_media_identity_keys(connection, key)
+            self.store.canonical.sync_changes(connection, name, keys)
             self._bump_generation(connection, (name,))
             self._cache.pop(name, None)
             changed = cursor.rowcount
@@ -430,6 +513,7 @@ class CatalogRepository:
                     (name, _json_text(document)),
                 )
                 changed_documents.add(name)
+            self.store.canonical.rebuild(connection)
             self._bump_generation(connection, changed_documents)
             for name in changed_documents:
                 self._cache.pop(name, None)
@@ -475,6 +559,7 @@ class CatalogRepository:
                         (name, _json_text(document)),
                     )
                     changed_documents.add(name)
+            self.store.canonical.rebuild(connection)
             self._bump_generation(connection, changed_documents)
             for name in changed_documents:
                 self._cache.pop(name, None)

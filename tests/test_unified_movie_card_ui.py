@@ -56,7 +56,7 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
     def test_unreleased_gate_applies_to_discover_and_home_but_not_indexer(self):
         self.assertIn("function isUnreleasedMovie(movie)", APP)
         self.assertIn("function formatReleaseDateLabel(value)", APP)
-        self.assertIn("const unreleased = !owned && isUnreleasedMovie(movie);", APP)
+        self.assertIn("const unreleased = !owned && isUnreleasedMovie(displayMovie);", APP)
         self.assertIn("statusLabel={owned ? (lowQuality ? 'Upgrade candidate' : '') : (unreleased ? 'Unreleased' : (followed ? 'Following' : 'Not in library'))}", APP)
         self.assertIn("{!unreleased && streamingAvailable && (", APP)
         self.assertIn("{!unreleased && (", APP)
@@ -65,18 +65,20 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
             SHARED_CARDS_SOURCE.index("function DiscoverMovieCard({"):
             SHARED_CARDS_SOURCE.index("function MovieExpandedDetails", SHARED_CARDS_SOURCE.index("function DiscoverMovieCard({"))
         ]
-        self.assertIn("const unreleased = !owned && isUnreleasedMovie(movie);", discover_card)
+        self.assertIn("const unreleased = !owned && isUnreleasedMovie(displayMovie);", discover_card)
         self.assertIn("!unreleased", discover_card)
 
         smart_card = APP[APP.index("function SmartMovieCard(props)"):APP.index("function MovieInspector", APP.index("function SmartMovieCard(props)"))]
-        self.assertIn("const unreleased = !owned && isUnreleasedMovie(movie);", smart_card)
+        self.assertIn("const unreleased = !owned && isUnreleasedMovie(displayMovie);", smart_card)
 
         inspector = APP[APP.index("function MovieInspector({"):APP.index("function PosterEditButton", APP.index("function MovieInspector({"))]
-        self.assertIn("const unreleased = !owned && isUnreleasedMovie(movie);", inspector)
-        self.assertIn("const releaseDateLabel = unreleased ? formatReleaseDateLabel(movie.release_date) : '';", inspector)
+        self.assertIn("const unreleased = !owned && isUnreleasedMovie(displayMovie);", inspector)
+        self.assertIn("const releaseDateLabel = unreleased ? formatReleaseDateLabel(displayMovie.release_date) : '';", inspector)
         self.assertIn("{releaseDateLabel && <span>Releases {releaseDateLabel}</span>}", inspector)
         self.assertIn("{!unreleased && streamingAvailable && (", inspector)
-        self.assertIn("const selectedMovieWithDetails = selectedMovie ? { ...selectedMovie, release_date: selectedMovie.release_date || selectedDetails?.release_date || '' } : null;", APP)
+        self.assertIn("const selectedMovieWithDetails = selectedMovie ? {", APP)
+        self.assertIn("release_date: selectedMovie.release_date || selectedDetails?.release_date || ''", APP)
+        self.assertIn("plot: selectedDetails?.plot || selectedDetails?.summary || selectedMovie.plot || ''", APP)
         self.assertIn("selectedMovie={selectedMovieWithDetails}", APP)
 
         indexer_card = APP[APP.index("function IndexerMovieCard({"):APP.index("function Rating", APP.index("function IndexerMovieCard({"))]
@@ -168,10 +170,7 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         library_card_source = SHARED_CARDS_SOURCE[
             SHARED_CARDS_SOURCE.index("function LibraryMovieCard"):
         ]
-        movie_lists_source = APP[
-            APP.index("function MovieListsWorkspace"):
-            APP.index("function LibraryWorkspace")
-        ]
+        movie_lists_source = MOVIE_LISTS_SOURCE
 
         self.assertIn("const [discoverPersonRequest, setDiscoverPersonRequest] = useState(null);", APP)
         self.assertIn("function openPersonInDiscover(movie, role, person)", APP)
@@ -185,7 +184,8 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertIn("onPersonDiscover={onOpenDiscoverPerson}", library_source)
         self.assertIn("onPersonDiscover ? (role, person) => onPersonDiscover({ title: identity.title, year: identity.year }, role, person) : undefined", library_card_source)
         self.assertIn("onDiscover={onPersonDiscover}", APP)
-        self.assertNotIn("onPersonDiscover=", movie_lists_source)
+        self.assertIn("onOpenDiscoverPerson", movie_lists_source)
+        self.assertIn("onPersonBrowse={(role, person) => onOpenDiscoverPerson", movie_lists_source)
 
     def test_discover_relationship_contexts_preserve_filters_and_block_initial_feed_race(self):
         discover_source = APP[
@@ -207,7 +207,7 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         result_grid_source = (ROOT / "src" / "components" / "DiscoverResultGrid.jsx").read_text(encoding="utf-8")
 
         self.assertIn("if (!hasAdvancedDiscoverCriteria()) return [...(results || [])];", discover_source)
-        self.assertIn("const collectionData = await fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(collection.id)}`);", discover_source)
+        self.assertIn("const collectionData = await fetchCurationJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(collection.id)}`);", discover_source)
         self.assertIn("emptyHint={discoverContext?.type === 'collection'", discover_source)
         self.assertIn("emptyHint || 'Check Settings if this depends on TMDB, Prowlarr, or Ollama.'", result_grid_source)
 

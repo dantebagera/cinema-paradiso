@@ -72,6 +72,23 @@ class PortableReleasePackagingTests(unittest.TestCase):
         self.assertFalse(any("/data/" in name for name in names))
         self.assertFalse(any(name.endswith("runtime/old.exe") for name in names))
 
+    def test_copy_ffmpeg_runtime_builds_expected_layout_and_manifest(self):
+        from tools.build_portable_release import copy_ffmpeg_runtime
+
+        with tempfile.TemporaryDirectory() as root:
+            source = Path(root) / "ffmpeg-source" / "bin"
+            destination = Path(root) / "release" / "runtime" / "ffmpeg"
+            source.mkdir(parents=True)
+            (source / "ffmpeg.exe").write_bytes(b"ffmpeg")
+            (source / "ffprobe.exe").write_bytes(b"ffprobe")
+
+            manifest = copy_ffmpeg_runtime(source.parent, destination, version="8.1.1")
+
+            self.assertTrue((destination / "bin" / "ffmpeg.exe").is_file())
+            self.assertTrue((destination / "bin" / "ffprobe.exe").is_file())
+            self.assertEqual(manifest["license"], "GPLv3")
+            self.assertEqual(manifest["bundled_for"], "Cinema Paradiso 2.8.0")
+
 
 if __name__ == "__main__":
     unittest.main()

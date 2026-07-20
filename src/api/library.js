@@ -2,6 +2,7 @@ import { ownershipKeys } from '../discoverUtils.js';
 import { fetchJson } from './client.js';
 
 const OWNERSHIP_CHECK_CACHE_TTL = 30000;
+export const CATALOG_GENERATION_CHANGED_EVENT = 'cp-catalog-generation-changed';
 let ownershipCheckCache = new Map();
 let ownershipCatalogGeneration = null;
 
@@ -11,11 +12,19 @@ export function clearOwnershipCheckCache() {
 
 export function observeCatalogGeneration(generation) {
   const nextGeneration = Number(generation);
-  if (!Number.isFinite(nextGeneration)) return;
-  if (ownershipCatalogGeneration !== null && ownershipCatalogGeneration !== nextGeneration) {
+  if (!Number.isFinite(nextGeneration)) return false;
+  if (ownershipCatalogGeneration !== null && nextGeneration < ownershipCatalogGeneration) return false;
+  const changed = ownershipCatalogGeneration !== null && ownershipCatalogGeneration !== nextGeneration;
+  if (changed) {
     clearOwnershipCheckCache();
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent(CATALOG_GENERATION_CHANGED_EVENT, {
+        detail: { previousGeneration: ownershipCatalogGeneration, generation: nextGeneration }
+      }));
+    }
   }
   ownershipCatalogGeneration = nextGeneration;
+  return changed;
 }
 
 function ownershipCheckQuery(movie) {

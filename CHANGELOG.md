@@ -2,14 +2,22 @@
 
 ## v2.8.0 - In Development
 
-Cinema Paradiso v2.8.0 begins with the SQL catalog migration and performance checkpoint. The public release will also include the separated IPTV workspace; IPTV is not present in this checkpoint commit.
+Cinema Paradiso v2.8.0 begins with the SQL catalog migration and adds a separated, provider-agnostic IPTV workspace.
 
 ### Added
 
 - SQL migration parity matrix and catalog audit tooling.
 - Historical JSON shadow comparison for cutover verification.
 - Browser ownership-cache regression coverage across shared movie-card workflows.
-- Recovery auditing for completed downloads that still need catalog import.
+- Restart-safe recovery for completed downloads that still need catalog import.
+- User-triggered updates for the isolated portable qBittorrent runtime through the official GitHub release.
+- Xtream IPTV Settings card with redacted saved credentials, connection testing, and full catalog sync.
+- Separate IPTV Home, Live TV, Movies, Series, Favorites, and My Lists views with provider category order preserved.
+- Provider-scoped IPTV custom lists with mixed media, manual ordering, rename/delete controls, and retained snapshots for unavailable provider items.
+- Dedicated `iptv.sqlite` storage for provider categories, media, favorites, custom lists, detail caches, and watch history.
+- Lazy provider movie/series details, Unicode and Arabic search, episode browsing, and short EPG support.
+- Tokenized loopback playback relay with FFmpeg HLS remuxing so credential-bearing stream URLs never reach React or FFmpeg process arguments.
+- Portable-release support for an independently bundled FFmpeg runtime and third-party manifest.
 
 ### Changed
 
@@ -17,12 +25,21 @@ Cinema Paradiso v2.8.0 begins with the SQL catalog migration and performance che
 - Library expanded cards load persisted canonical SQL details.
 - Download submissions preserve TMDB and IMDb identity through completion and reconciliation.
 - The sidebar version is rebuilt from the package version and now identifies v2.8.0.
+- IPTV remains separate from Cinema Paradiso ownership, local catalog identity, Movie Lists, and torrent workflows; its Favorites and custom lists stay provider-scoped inside the IPTV workspace.
 
 ### Fixed
 
 - Stale ownership state after catalog generation changes.
 - Cross-workspace movie identity consistency.
 - Interrupted completed-download import recovery.
+- User-cancelled unfinished torrents now close as normal terminal jobs instead of remaining false migration-review records.
+- Windows SQLite handles are closed after every IPTV transaction so catalog files can be replaced and test data can be cleaned reliably.
+- Per-provider invalid-certificate handling is explicit and disabled by default instead of weakening TLS globally.
+- IPTV playback directories remain owned by their active FFmpeg session instead of being deleted when another service instance starts.
+- Live IPTV remuxing is paced in real time and keeps a bounded rolling HLS window instead of rapidly accumulating provider segments.
+- Slow FFmpeg shutdowns defer directory removal until the muxer exits, preventing missing-segment races and orphaned playback data.
+- Live IPTV relaying emits provider data promptly, retains a larger rolling safety window, and recovers bounded browser network or media failures before giving up.
+- Live IPTV remuxing can consume provider recovery bursts faster than real time and splits irregular provider GOPs into shorter browser segments, allowing playback to rebuild its buffer after delivery stalls.
 
 ## v2.7.0 - July 2026
 

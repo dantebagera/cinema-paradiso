@@ -1,17 +1,19 @@
 import {
-  AlertTriangle, Bot, CheckCircle2, CirclePlus, Clapperboard, Compass, Film, Loader2,
+  AlertTriangle, Bot, CheckCircle2, CirclePlus, Compass, Film, Loader2,
   MonitorPlay, Play, Radio, RefreshCcw, Search, Star, Wand2, X
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
-import { fetchOwnershipChecks } from '../../api/library.js';
-import { addMoviePayloadsToList, announceCurationChanged, fetchUserListsCached } from '../../api/curation.js';
+import { CATALOG_GENERATION_CHANGED_EVENT, fetchOwnershipChecks } from '../../api/library.js';
+import { fetchCanonicalMovieDetails, movieCollectionUrl, movieDetailsCacheKey } from '../../api/movieDetails.js';
+import { addMoviePayloadsToList, announceCurationChanged, CURATION_GENERATION_CHANGED_EVENT, fetchCurationJson, fetchUserListsCached } from '../../api/curation.js';
 import { previewSourceReview } from '../../api/sourceReview.js';
 import ListEditorModal from '../../components/ListEditorModal.jsx';
 import DiscoverResultGrid from '../../components/DiscoverResultGrid.jsx';
 import Pagination from '../../components/Pagination.jsx';
 import Rating from '../../components/Rating.jsx';
 import PosterEditorModal from '../../components/PosterEditorModal.jsx';
+import PersonSearchCard from '../../components/PersonSearchCard.jsx';
 import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
 import SourceReviewDialog from '../../components/SourceReviewDialog.jsx';
 import {
@@ -130,6 +132,23 @@ export default function DiscoverWorkspace({
   const [isNavigatingDiscoverContext, setIsNavigatingDiscoverContext] = useState(() => Boolean(personRequest?.requestId));
   const discoverRequestSeq = useRef(0);
   const handledPersonRequestRef = useRef(0);
+
+  useEffect(() => {
+    const clearDetailCaches = () => {
+      setDetailsCache({});
+      setCollectionCache({});
+    };
+    window.addEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCaches);
+    return () => window.removeEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCaches);
+  }, []);
+
+  useEffect(() => {
+    const clearCurationCaches = () => {
+      setCollectionCache({});
+    };
+    window.addEventListener(CURATION_GENERATION_CHANGED_EVENT, clearCurationCaches);
+    return () => window.removeEventListener(CURATION_GENERATION_CHANGED_EVENT, clearCurationCaches);
+  }, []);
 
   function updateOwnedPoster(path, posterUrl) {
     setOwnership((state) => Object.fromEntries(
@@ -570,7 +589,7 @@ export default function DiscoverWorkspace({
       setDiscoverError('');
     }
     try {
-      const collectionData = await fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(collection.id)}`);
+      const collectionData = await fetchCurationJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(collection.id)}`);
       setCollectionCache((state) => ({ ...state, [collection.id]: collectionData }));
       const results = collectionData.parts || [];
       const context = {
@@ -653,53 +672,52 @@ export default function DiscoverWorkspace({
   }
 
   async function openTrailer(movie) {
-    if (!movie?.tmdb_id) {
+    const owned = ownedMovieFor(movie, ownership);
+    if (!movieDetailsCacheKey(movie, owned)) {
       onOpenTrailer(movie, '');
       return;
     }
     try {
-      let details = detailsCache[movie.tmdb_id];
-      if (!details) {
-        details = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(movie.tmdb_id)}`);
-        setDetailsCache((state) => ({ ...state, [movie.tmdb_id]: details }));
-      }
+      const details = await loadDiscoverDetails(movie, owned);
       onOpenTrailer(movie, details.trailer_url || '');
     } catch {
       onOpenTrailer(movie, '');
     }
   }
 
-  async function loadDiscoverDetails(movie) {
-    if (!movie?.tmdb_id) return null;
-    const id = String(movie.tmdb_id);
-    let details = detailsCache[id];
+  async function loadDiscoverDetails(movie, owned = null) {
+    const cacheKey = movieDetailsCacheKey(movie, owned);
+    if (!cacheKey) return null;
+    let details = detailsCache[cacheKey];
     if (!details) {
-      setDetailsCache((state) => ({ ...state, [id]: { loading: true, cast: [], directors: [], collection: {}, trailer_url: '' } }));
+      setDetailsCache((state) => ({ ...state, [cacheKey]: { loading: true, cast: [], directors: [], collection: {}, trailer_url: '' } }));
       try {
-        details = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(id)}`);
-        setDetailsCache((state) => ({ ...state, [id]: details }));
+        details = await fetchCanonicalMovieDetails(movie, owned);
+        if (details?.catalog_generation_changed) setCollectionCache({});
+        setDetailsCache((state) => details?.catalog_generation_changed ? { [cacheKey]: details } : { ...state, [cacheKey]: details });
       } catch (error) {
         details = { error: error.message, cast: [], directors: [], collection: {}, trailer_url: '' };
-        setDetailsCache((state) => ({ ...state, [id]: details }));
+        setDetailsCache((state) => ({ ...state, [cacheKey]: details }));
       }
     }
-    if (details?.collection?.id && !collectionCache[details.collection.id]) {
-      fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(details.collection.id)}`)
+    const collectionUrl = movieCollectionUrl(details);
+    if (collectionUrl && !collectionCache[details.collection.id]) {
+      fetchCurationJson(collectionUrl)
         .then((collectionData) => setCollectionCache((state) => ({ ...state, [details.collection.id]: collectionData })))
         .catch(() => {});
     }
     return details;
   }
 
-  function toggleMovieDetails(movie) {
+  function toggleMovieDetails(movie, owned = null) {
     const key = movieKey(movie);
     const nextKey = expandedMovieKey === key ? '' : key;
     setExpandedMovieKey(nextKey);
-    if (nextKey) loadDiscoverDetails(movie);
+    if (nextKey) loadDiscoverDetails(movie, owned);
   }
 
   async function createDiscoverList(name) {
-    const created = await fetchJson('/api/user/lists', {
+    const created = await fetchCurationJson('/api/user/lists', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name })
@@ -711,7 +729,7 @@ export default function DiscoverWorkspace({
   }
 
   async function addDiscoverMovieToList(listId, movie) {
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie })
@@ -731,7 +749,7 @@ export default function DiscoverWorkspace({
   }
 
   async function removeDiscoverMovieFromList(listId, movie) {
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie })
@@ -745,7 +763,7 @@ export default function DiscoverWorkspace({
     const payload = discoverMoviePayload(movie, owned);
     const currentLists = listsForDiscoverMovie(movie, userLists, owned);
     const active = currentLists.some((list) => list.system_type === systemType || list.id === systemType);
-    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+    await fetchCurationJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie: payload, active: !active })
@@ -1212,6 +1230,8 @@ export default function DiscoverWorkspace({
           >
             {filteredDiscoverResults.map((movie, index) => {
               const owned = ownedMovieFor(movie, ownership);
+              const details = detailsCache[movieDetailsCacheKey(movie, owned)] || null;
+              const collection = details?.collection?.id ? collectionCache[details.collection.id] || details.collection : {};
               return (
                 <DiscoverMovieCard
                   key={`${movie.tmdb_id || movie.title}-${movie.year}-${index}`}
@@ -1219,8 +1239,8 @@ export default function DiscoverWorkspace({
                   owned={owned}
                   followed={followed.some((item) => movieKey(item) === movieKey(movie))}
                   expanded={expandedMovieKey === movieKey(movie)}
-                  details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
-                  collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
+                  details={details}
+                  collection={collection}
                   itemLists={listsForDiscoverMovie(movie, userLists, owned)}
                   watched={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watched')}
                   watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
@@ -1235,7 +1255,7 @@ export default function DiscoverWorkspace({
                   onFindTorrent={onFindTorrent}
                   onFollow={onFollow}
                   onTrailer={openTrailer}
-                  onToggleDetails={() => toggleMovieDetails(movie)}
+                  onToggleDetails={() => toggleMovieDetails(movie, owned)}
                   onPersonBrowse={(role, person) => browsePerson('explore', movie, role, person)}
                   onCollectionBrowse={(collectionItem) => browseCollection('explore', movie, collectionItem)}
                   onListBrowse={(list) => browseList('explore', movie, list)}
@@ -1340,6 +1360,8 @@ export default function DiscoverWorkspace({
               {filteredBrowseRows.map((movie) => {
                 const selectedIndex = selectedVariants[movie.parsed_title] || 0;
                 const owned = ownedMovieFor(movie, ownership);
+                const details = detailsCache[movieDetailsCacheKey(movie, owned)] || null;
+                const collection = details?.collection?.id ? collectionCache[details.collection.id] || details.collection : {};
                 return (
                   <IndexerMovieCard
                     key={`${movie.parsed_title}-${movie.parsed_year}`}
@@ -1347,8 +1369,8 @@ export default function DiscoverWorkspace({
                     selectedIndex={selectedIndex}
                     owned={owned}
                     expanded={expandedMovieKey === movieKey(movie)}
-                    details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
-                    collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
+                    details={details}
+                    collection={collection}
                     itemLists={listsForDiscoverMovie(movie, userLists, owned)}
                     watched={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watched')}
                     watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
@@ -1364,7 +1386,7 @@ export default function DiscoverWorkspace({
                     streamingLabel={streamingLabel}
                     onFindTorrent={onFindTorrent}
                     onTrailer={openTrailer}
-                    onToggleDetails={() => toggleMovieDetails(movie)}
+                    onToggleDetails={() => toggleMovieDetails(movie, owned)}
                     onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}
                     onRemoveFromList={(listId) => removeDiscoverMovieFromList(listId, discoverMoviePayload(movie, owned))}
                     onEditPoster={owned ? () => setPosterEditor({ path: owned.path, title: movie.title }) : undefined}
@@ -1435,6 +1457,8 @@ export default function DiscoverWorkspace({
           >
             {pickResults.map((movie) => {
               const owned = ownedMovieFor(movie, ownership);
+              const details = detailsCache[movieDetailsCacheKey(movie, owned)] || null;
+              const collection = details?.collection?.id ? collectionCache[details.collection.id] || details.collection : {};
               return (
                 <DiscoverMovieCard
                   key={`${movie.title}-${movie.year}`}
@@ -1443,8 +1467,8 @@ export default function DiscoverWorkspace({
                   owned={owned}
                   followed={followed.some((item) => movieKey(item) === movieKey(movie))}
                   expanded={expandedMovieKey === movieKey(movie)}
-                  details={movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null}
-                  collection={movie.tmdb_id && detailsCache[String(movie.tmdb_id)]?.collection?.id ? collectionCache[detailsCache[String(movie.tmdb_id)].collection.id] || detailsCache[String(movie.tmdb_id)].collection : {}}
+                  details={details}
+                  collection={collection}
                   itemLists={listsForDiscoverMovie(movie, userLists, owned)}
                   watched={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watched')}
                   watchlisted={listsForDiscoverMovie(movie, userLists, owned).some((list) => list.system_type === 'watchlist')}
@@ -1459,7 +1483,7 @@ export default function DiscoverWorkspace({
                   onFindTorrent={onFindTorrent}
                   onFollow={onFollow}
                   onTrailer={openTrailer}
-                  onToggleDetails={() => toggleMovieDetails(movie)}
+                  onToggleDetails={() => toggleMovieDetails(movie, owned)}
                   onPersonBrowse={(role, person) => browsePerson('pick', movie, role, person)}
                   onCollectionBrowse={(collectionItem) => browseCollection('pick', movie, collectionItem)}
                   onListBrowse={(list) => browseList('pick', movie, list)}
@@ -1523,22 +1547,14 @@ function PeopleSearchResults({ people, loading, error, onOpenFilmography }) {
   return (
     <div className="discover-grid person-search-grid">
       {people.map((person) => (
-        <article className="person-search-card" key={person.tmdb_id}>
-          {person.profile_url ? <img src={person.profile_url} alt={`${person.name} profile`} /> : <div className="person-search-avatar"><Film size={24} /></div>}
-          <div className="person-search-copy">
-            <h3>{person.name}</h3>
-            <span>{person.known_for_department || 'TMDB person'}</span>
-            {person.known_for?.length > 0 && <p>{person.known_for.join(' · ')}</p>}
-          </div>
-          <div className="person-search-actions">
-            <button type="button" className="btn btn-secondary" onClick={() => onOpenFilmography(person, 'actor')}>
-              <Film size={15} /> Acting credits
-            </button>
-            <button type="button" className="btn btn-secondary" onClick={() => onOpenFilmography(person, 'director')}>
-              <Clapperboard size={15} /> Directed films
-            </button>
-          </div>
-        </article>
+        <PersonSearchCard
+          key={person.tmdb_id}
+          person={person}
+          meta={person.known_for_department || 'TMDB person'}
+          knownFor={person.known_for}
+          roles={['actor', 'director']}
+          onOpenFilmography={onOpenFilmography}
+        />
       ))}
     </div>
   );

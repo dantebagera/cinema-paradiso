@@ -88,6 +88,9 @@ class LibraryReconcileTest(unittest.TestCase):
                 "title": "Alien",
                 "year": "1979",
                 "poster_url": "alien.jpg",
+                "plot": "Stored detail.",
+                "cast": [],
+                "directors": [],
             })
             store.update_file_record(str(movie), {
                 "identity_status": "accepted",
@@ -480,6 +483,9 @@ class LibraryReconcileTest(unittest.TestCase):
                 "tmdb_id": "348",
                 "title": "Alien",
                 "year": "1979",
+                "plot": "Stored detail.",
+                "cast": [],
+                "directors": [],
             }, facts=app._metadata_file_facts(str(movie)))
             store.update_file_record(str(movie), {"identity_evidence_changed": True})
 

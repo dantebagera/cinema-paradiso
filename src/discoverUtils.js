@@ -76,6 +76,35 @@ export function ownedMovieFor(movie, ownership = {}) {
   return null;
 }
 
+export function canonicalOwnedMovie(movie = {}, owned = null) {
+  const ownedItem = owned?.canonical_card || owned?.library_item || {};
+  const canonical = ownedItem.canonical_metadata || {};
+  if (!canonical.accepted) return movie;
+  return {
+    ...movie,
+    title: canonical.title || movie.title,
+    year: canonical.year || movie.year,
+    tmdb_id: canonical.tmdb_id || movie.tmdb_id,
+    imdb_id: canonical.imdb_id || movie.imdb_id,
+    poster_url: canonical.poster_url || movie.poster_url,
+    genres: canonical.genres || movie.genres,
+    plot: canonical.summary || canonical.plot || movie.plot || '',
+    summary: canonical.summary || canonical.plot || movie.summary || '',
+    tmdb_rating: canonical.rating || movie.tmdb_rating,
+    tmdb_vote_count: canonical.tmdb_vote_count ?? movie.tmdb_vote_count,
+    language: canonical.language || movie.language,
+    country: canonical.country || movie.country,
+    country_flag: canonical.country_flag || movie.country_flag,
+    release_date: canonical.release_date || movie.release_date,
+    runtime: canonical.runtime || movie.runtime,
+    tagline: canonical.tagline || movie.tagline,
+    collection: canonical.collection || movie.collection,
+    cast: canonical.cast || movie.cast,
+    directors: canonical.directors || movie.directors,
+    detail_provider: canonical.detail_provider || movie.detail_provider,
+  };
+}
+
 export function resolutionRank(resolution) {
   const value = String(resolution || '').toLowerCase();
   if (value.includes('2160') || value.includes('4k')) return 4;

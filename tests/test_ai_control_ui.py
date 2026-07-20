@@ -92,8 +92,8 @@ class AiControlUiTest(unittest.TestCase):
             SHARED_CARDS_SOURCE.index("function DiscoverMovieCard"):
             SHARED_CARDS_SOURCE.index("function MovieExpandedDetails")
         ]
-        self.assertIn("directors={movie.directors}", discover_card_source)
-        self.assertIn("cast={movie.cast}", discover_card_source)
+        self.assertIn("directors={displayMovie.directors}", discover_card_source)
+        self.assertIn("cast={displayMovie.cast}", discover_card_source)
 
     def test_ai_control_results_render_pagination_and_total_count(self):
         for text in [

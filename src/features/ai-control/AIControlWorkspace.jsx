@@ -1,8 +1,9 @@
 import { AlertTriangle, Bot, Check, CirclePlus, Film, Loader2, RefreshCcw, Sparkles, X } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
-import { fetchOwnershipChecks } from '../../api/library.js';
-import { addMoviePayloadsToList, announceCurationChanged, clearUserListsCache, fetchUserListsCached } from '../../api/curation.js';
+import { CATALOG_GENERATION_CHANGED_EVENT, fetchOwnershipChecks } from '../../api/library.js';
+import { fetchCanonicalMovieDetails, movieCollectionUrl, movieDetailsCacheKey } from '../../api/movieDetails.js';
+import { addMoviePayloadsToList, announceCurationChanged, clearUserListsCache, CURATION_GENERATION_CHANGED_EVENT, fetchCurationJson, fetchUserListsCached } from '../../api/curation.js';
 import DiscoverResultGrid from '../../components/DiscoverResultGrid.jsx';
 import ExperimentalBadge from '../../components/ExperimentalBadge.jsx';
 import ListEditorModal from '../../components/ListEditorModal.jsx';
@@ -407,6 +408,23 @@ function AIControlCardResults({
     `${plan?.plan_id || ''}:${movies.map((movie) => movieIdentityKey(movie)).join('|')}`
   ), [plan?.plan_id, movies]);
 
+  useEffect(() => {
+    const clearDetailCaches = () => {
+      setDetailsCache({});
+      setCollectionCache({});
+    };
+    window.addEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCaches);
+    return () => window.removeEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCaches);
+  }, []);
+
+  useEffect(() => {
+    const clearCurationCaches = () => {
+      setCollectionCache({});
+    };
+    window.addEventListener(CURATION_GENERATION_CHANGED_EVENT, clearCurationCaches);
+    return () => window.removeEventListener(CURATION_GENERATION_CHANGED_EVENT, clearCurationCaches);
+  }, []);
+
   const loadUserLists = useCallback(async (options = {}) => {
     try {
       const data = await fetchUserListsCached({ force: Boolean(options?.force) });
@@ -446,46 +464,49 @@ function AIControlCardResults({
     }
   }
 
-  async function loadAiControlDetails(movie) {
-    if (!movie?.tmdb_id) return null;
-    const id = String(movie.tmdb_id);
-    let details = detailsCache[id];
+  async function loadAiControlDetails(movie, owned = null) {
+    const cacheKey = movieDetailsCacheKey(movie, owned);
+    if (!cacheKey) return null;
+    let details = detailsCache[cacheKey];
     if (!details) {
-      setDetailsCache((state) => ({ ...state, [id]: { loading: true, cast: [], directors: [], collection: {}, trailer_url: '' } }));
+      setDetailsCache((state) => ({ ...state, [cacheKey]: { loading: true, cast: [], directors: [], collection: {}, trailer_url: '' } }));
       try {
-        details = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(id)}`);
-        setDetailsCache((state) => ({ ...state, [id]: details }));
+        details = await fetchCanonicalMovieDetails(movie, owned);
+        if (details?.catalog_generation_changed) setCollectionCache({});
+        setDetailsCache((state) => details?.catalog_generation_changed ? { [cacheKey]: details } : { ...state, [cacheKey]: details });
       } catch (error) {
         details = { error: error.message, cast: [], directors: [], collection: {}, trailer_url: '' };
-        setDetailsCache((state) => ({ ...state, [id]: details }));
+        setDetailsCache((state) => ({ ...state, [cacheKey]: details }));
       }
     }
-    if (details?.collection?.id && !collectionCache[details.collection.id]) {
-      fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(details.collection.id)}`)
+    const collectionUrl = movieCollectionUrl(details);
+    if (collectionUrl && !collectionCache[details.collection.id]) {
+      fetchCurationJson(collectionUrl)
         .then((collectionData) => setCollectionCache((state) => ({ ...state, [details.collection.id]: collectionData })))
         .catch(() => {});
     }
     return details;
   }
 
-  function toggleAiControlDetails(movie) {
+  function toggleAiControlDetails(movie, owned = null) {
     const key = movieKey(movie);
     const nextKey = expandedMovieKey === key ? '' : key;
     setExpandedMovieKey(nextKey);
-    if (nextKey) loadAiControlDetails(movie);
+    if (nextKey) loadAiControlDetails(movie, owned);
   }
 
   async function openAiControlTrailer(movie) {
-    if (!movie?.tmdb_id) {
+    const owned = ownedMovieFor(movie, ownership) || (movie.path ? movie : null);
+    if (!movieDetailsCacheKey(movie, owned)) {
       onOpenTrailer(movie, '');
       return;
     }
-    const details = await loadAiControlDetails(movie);
+    const details = await loadAiControlDetails(movie, owned);
     onOpenTrailer(movie, details?.trailer_url || '');
   }
 
   async function createAiControlList(name) {
-    const created = await fetchJson('/api/user/lists', {
+    const created = await fetchCurationJson('/api/user/lists', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name })
@@ -497,7 +518,7 @@ function AIControlCardResults({
   }
 
   async function addAiControlMovieToList(listId, movie) {
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie: moviePayload(movie) })
@@ -516,7 +537,7 @@ function AIControlCardResults({
   }
 
   async function removeAiControlMovieFromList(listId, movie) {
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie: moviePayload(movie) })
@@ -530,7 +551,7 @@ function AIControlCardResults({
     const payload = discoverMoviePayload(movie, owned);
     const currentLists = listsForDiscoverMovie(movie, userLists, owned);
     const active = currentLists.some((list) => list.system_type === systemType || list.id === systemType);
-    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+    await fetchCurationJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie: payload, active: !active })
@@ -588,8 +609,8 @@ function AIControlCardResults({
         {movies.map((movie, index) => {
           const owned = ownedMovieFor(movie, ownership) || (movie.path ? movie : null);
           const key = movieIdentityKey(discoverMoviePayload(movie, owned));
-          const details = movie.tmdb_id ? detailsCache[String(movie.tmdb_id)] : null;
-          const collection = movie.tmdb_id && details?.collection?.id ? collectionCache[details.collection.id] || details.collection : {};
+          const details = detailsCache[movieDetailsCacheKey(movie, owned)] || null;
+          const collection = details?.collection?.id ? collectionCache[details.collection.id] || details.collection : {};
           const movieWithDetails = details ? { ...movie, plot: movie.plot || details.plot || '', release_date: movie.release_date || details.release_date || '' } : movie;
           return (
             <DiscoverMovieCard
@@ -614,7 +635,7 @@ function AIControlCardResults({
               onFindTorrent={onFindTorrent}
               onFollow={onFollow}
               onTrailer={openAiControlTrailer}
-              onToggleDetails={() => toggleAiControlDetails(movie)}
+              onToggleDetails={() => toggleAiControlDetails(movie, owned)}
               onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}
               onRemoveFromList={(listId) => removeAiControlMovieFromList(listId, discoverMoviePayload(movie, owned))}
               onEditPoster={owned?.path ? () => onEditPoster?.(owned, movie) : undefined}

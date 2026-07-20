@@ -12,6 +12,31 @@ import app
 from tools.catalog_migration_backup import resolve_backup_sources
 
 
+SHADOW_FIELDS = (
+    "title", "year", "tmdb_id", "imdb_id", "plex_guid", "poster_url", "backdrop_url",
+    "genres", "plot", "summary", "rating", "tmdb_rating", "tmdb_vote_count",
+    "language", "country", "country_flag", "release_date", "runtime", "tagline",
+    "trailer_url", "collection", "cast", "directors",
+)
+
+
+def _normalized_shadow_value(field, value):
+    if value in (None, "", [], {}):
+        return None
+    if field in {"cast", "directors"}:
+        return [
+            {
+                "id": str(person.get("id", "") or "").strip(),
+                "name": str(person.get("name", "") or "").strip(),
+                "profile_url": str(person.get("profile_url", "") or "").strip(),
+                **({"character": str(person.get("character", "") or "").strip()} if field == "cast" else {}),
+            }
+            for person in (value or [])
+            if isinstance(person, dict)
+        ]
+    return value
+
+
 def _violation(bucket, candidate, message, limit):
     if len(bucket) >= limit:
         return
@@ -20,6 +45,23 @@ def _violation(bucket, candidate, message, limit):
         "path_key": str(candidate.get("path_key") or ""),
         "message": message,
     })
+
+
+def _legacy_canonical(candidate, store, snapshot):
+    """Rebuild the pre-relational JSON contract for one shadow comparison."""
+    record = app._catalog_file_record(candidate)
+    plex = candidate.get("plex_json") or {}
+    canonical = app._build_canonical_metadata(
+        record,
+        plex_data=plex,
+        tmdb_data=candidate.get("tmdb_json") or {},
+        manual_match=candidate.get("manual_json") or {},
+        display_provider=record.get("display_provider", ""),
+        file_record=record,
+    )
+    identity = app._poster_identity_for_movie(record, canonical, plex)
+    canonical = app._apply_metadata_override(canonical, identity, store=store, snapshot=snapshot)
+    return app._apply_poster_override(canonical, identity, store=store, snapshot=snapshot)
 
 
 def audit_catalog(user_data_dir, max_errors=100):
@@ -32,6 +74,7 @@ def audit_catalog(user_data_dir, max_errors=100):
         "canonical": [],
         "deferred_details": [],
         "projections": [],
+        "relational_shadow": [],
     }
     accepted = 0
     active_detail_providers = {}
@@ -47,6 +90,8 @@ def audit_catalog(user_data_dir, max_errors=100):
 
             item = app._catalog_library_item(candidate, store, snapshot)
             canonical = item.get("canonical_metadata") or {}
+            legacy_canonical = _legacy_canonical(candidate, store, snapshot)
+            relational_canonical = candidate.get("relational_canonical") or {}
             card = app._library_card_item(item)
             list_item = app._movie_list_library_item(item)
             people = app._library_people_item(item)
@@ -64,8 +109,12 @@ def audit_catalog(user_data_dir, max_errors=100):
             if detail_provider:
                 active_detail_providers[detail_provider] = active_detail_providers.get(detail_provider, 0) + 1
             if record.get("display_provider") == "tmdb" and record.get("tmdb_id") and not tmdb:
-                if detail_provider != "plex_snapshot" or not plex:
-                    _violation(violations["deferred_details"], candidate, "TMDB display identity has no persisted SQL detail snapshot", max_errors)
+                _violation(
+                    violations["deferred_details"],
+                    candidate,
+                    "TMDB-selected identity has no persisted SQL TMDB snapshot; fallback data is not completion",
+                    max_errors,
+                )
             if detail_provider == "tmdb_snapshot" and not tmdb:
                 _violation(violations["deferred_details"], candidate, "Canonical TMDB detail provider has no SQL snapshot", max_errors)
             if detail_provider == "plex_snapshot" and not plex:
@@ -78,15 +127,36 @@ def audit_catalog(user_data_dir, max_errors=100):
 
             for projection in (card, list_item):
                 projected = projection.get("canonical_metadata") or {}
-                for field in ("tmdb_id", "imdb_id", "plex_guid", "title", "year"):
+                for field in (
+                    "tmdb_id", "imdb_id", "plex_guid", "title", "year",
+                    "poster_url", "genres", "plot", "summary", "rating",
+                    "language", "country", "country_flag", "release_date",
+                    "runtime", "tagline", "trailer_url", "collection", "detail_provider",
+                ):
                     if projected.get(field) and projected.get(field) != canonical.get(field):
                         _violation(violations["projections"], candidate, f"Projection disagrees on canonical {field}", max_errors)
-            if any(canonical.get(field) for field in ("plot", "cast", "directors")):
-                if any((card.get("canonical_metadata") or {}).get(field) for field in ("plot", "cast", "directors")):
-                    _violation(violations["projections"], candidate, "Card projection includes deferred detail fields", max_errors)
+                for field in ("plot", "summary", "detail_provider"):
+                    if canonical.get(field) and projected.get(field) != canonical.get(field):
+                        _violation(violations["projections"], candidate, f"Projection lost canonical {field}", max_errors)
+            if any(canonical.get(field) for field in ("cast", "directors")):
+                if any((card.get("canonical_metadata") or {}).get(field) for field in ("cast", "directors")):
+                    _violation(violations["projections"], candidate, "Card projection includes deferred people fields", max_errors)
             if canonical.get("cast") and not (people.get("canonical_metadata") or {}).get("cast"):
                 _violation(violations["projections"], candidate, "People projection lost canonical cast", max_errors)
+            if relational_canonical:
+                for field in SHADOW_FIELDS:
+                    legacy_value = _normalized_shadow_value(field, legacy_canonical.get(field))
+                    relational_value = _normalized_shadow_value(field, relational_canonical.get(field))
+                    if legacy_value != relational_value:
+                        _violation(
+                            violations["relational_shadow"],
+                            candidate,
+                            f"Relational canonical projection disagrees on {field}",
+                            max_errors,
+                        )
+                        break
 
+    relational = store.catalog.store.canonical_report(max_errors=max_errors)
     error_count = sum(len(rows) for rows in violations.values())
     return {
         "source": "catalog",
@@ -96,7 +166,8 @@ def audit_catalog(user_data_dir, max_errors=100):
         "accepted_records": accepted,
         "provider_calls": 0,
         "active_detail_providers": dict(sorted(active_detail_providers.items())),
-        "passed": error_count == 0,
+        "relational": relational,
+        "passed": error_count == 0 and relational["passed"],
         "violations": violations,
     }
 

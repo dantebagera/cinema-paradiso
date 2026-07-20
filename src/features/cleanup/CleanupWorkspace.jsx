@@ -989,12 +989,12 @@ function PlexMatchModal({ state, onClose, onChange, onSearch, onScanRetry, onApp
                 <strong>{match.title || match.name}</strong>
                 <span>
                   {match.year || 'Unknown year'}
-                  {match.exact_external_id ? ' Â· Exact external ID' : ''}
-                  {match.rank ? ` Â· Plex rank ${match.rank}` : ''}
+                  {match.exact_external_id ? ' | Exact external ID' : ''}
+                  {match.rank ? ` | Plex rank ${match.rank}` : ''}
                 </span>
                 <small>{match.summary || 'No plot summary available.'}</small>
                 {match.match_reasons?.length > 0 && (
-                  <small className="plex-match-reasons">{match.match_reasons.join(' Â· ')}</small>
+                  <small className="plex-match-reasons">{match.match_reasons.join(' | ')}</small>
                 )}
               </div>
               <button type="button" className="btn btn-secondary" onClick={() => onApply(match)} disabled={Boolean(state.applying)}>

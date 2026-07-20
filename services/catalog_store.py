@@ -4,11 +4,12 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
+from services.canonical_catalog import CANONICAL_CONTRACT_VERSION, CanonicalCatalog
 from services.movie_identity import normalize_movie_title, ownership_keys
 from services.smart_match import parse_release_filename
 
 
-CATALOG_SCHEMA_VERSION = 5
+CATALOG_SCHEMA_VERSION = 6
 
 
 class CatalogError(RuntimeError):
@@ -52,6 +53,7 @@ def _identity_key(movie):
 class CatalogStore:
     def __init__(self, database_path):
         self.database_path = Path(database_path).resolve()
+        self.canonical = CanonicalCatalog()
 
     def connect(self):
         self.database_path.parent.mkdir(parents=True, exist_ok=True)
@@ -251,6 +253,44 @@ class CatalogStore:
                         )
                     except ValueError:
                         pass
+            previous_schema = connection.execute(
+                "SELECT value FROM catalog_meta WHERE key='schema_version'"
+            ).fetchone()
+            self.canonical.initialize(connection)
+            media_generation = connection.execute(
+                "SELECT value FROM catalog_meta WHERE key='media_generation'"
+            ).fetchone()
+            canonical_generation = connection.execute(
+                "SELECT value FROM catalog_meta WHERE key='canonical_media_generation'"
+            ).fetchone()
+            canonical_contract = connection.execute(
+                "SELECT value FROM catalog_meta WHERE key='canonical_contract_version'"
+            ).fetchone()
+            canonical_rows = int(connection.execute(
+                "SELECT COUNT(*) FROM canonical_movie_files"
+            ).fetchone()[0])
+            accepted_rows = int(connection.execute(
+                "SELECT COUNT(*) FROM media_files WHERE identity_status='accepted' OR metadata_accepted=1"
+            ).fetchone()[0])
+            projection_current = (
+                previous_schema
+                and str(previous_schema[0]) == str(CATALOG_SCHEMA_VERSION)
+                and canonical_contract
+                and str(canonical_contract[0]) == str(CANONICAL_CONTRACT_VERSION)
+                and str(canonical_generation[0] if canonical_generation else '0')
+                    == str(media_generation[0] if media_generation else '0')
+                and canonical_rows == accepted_rows
+            )
+            if not projection_current:
+                self.canonical.rebuild(connection)
+                connection.execute(
+                    "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('canonical_media_generation', ?)",
+                    (str(media_generation[0] if media_generation else '0'),),
+                )
+                connection.execute(
+                    "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('canonical_contract_version', ?)",
+                    (str(CANONICAL_CONTRACT_VERSION),),
+                )
             connection.execute(
                 "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('schema_version', ?)",
                 (str(CATALOG_SCHEMA_VERSION),),
@@ -286,6 +326,18 @@ class CatalogStore:
             self._import_collections(connection, documents.get("user_collections.json", {}))
             self._import_followed(connection, documents.get("followed_releases.json", {}))
             self._import_media_identity_keys(connection)
+            self.canonical.rebuild(connection)
+            media_generation = connection.execute(
+                "SELECT value FROM catalog_meta WHERE key='media_generation'"
+            ).fetchone()
+            connection.execute(
+                "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('canonical_media_generation', ?)",
+                (str(media_generation[0] if media_generation else '0'),),
+            )
+            connection.execute(
+                "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('canonical_contract_version', ?)",
+                (str(CANONICAL_CONTRACT_VERSION),),
+            )
 
             connection.execute(
                 "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES('backup_manifest', ?)",
@@ -507,8 +559,7 @@ class CatalogStore:
         finally:
             connection.close()
 
-    @staticmethod
-    def _decode_media_rows(connection, rows, include_identity_keys):
+    def _decode_media_rows(self, connection, rows, include_identity_keys):
         result = []
         for row in rows:
             item = dict(row)
@@ -522,8 +573,16 @@ class CatalogStore:
                         (item["path_key"],),
                     ).fetchall()
                 ]
+            item["relational_canonical"] = self.canonical.project_path(connection, item["path_key"])
             result.append(item)
         return result
+
+    def canonical_report(self, max_errors=100):
+        connection = self.connect()
+        try:
+            return self.canonical.strict_report(connection, max_errors=max_errors)
+        finally:
+            connection.close()
 
     def parity_report(self, expected_counts):
         table_map = {

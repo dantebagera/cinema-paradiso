@@ -3,7 +3,9 @@ import {
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
-import { addMoviePayloadsToList, announceCurationChanged, fetchUserListsCached } from '../../api/curation.js';
+import { CATALOG_GENERATION_CHANGED_EVENT, observeCatalogGeneration } from '../../api/library.js';
+import { fetchCanonicalMovieDetails, movieCollectionUrl, movieDetailsCacheKey } from '../../api/movieDetails.js';
+import { addMoviePayloadsToList, announceCurationChanged, CURATION_GENERATION_CHANGED_EVENT, fetchCurationJson, fetchUserListsCached } from '../../api/curation.js';
 import { previewSourceReview } from '../../api/sourceReview.js';
 import ExportCopyDialog from '../../components/ExportCopyDialog.jsx';
 import ListEditorModal from '../../components/ListEditorModal.jsx';
@@ -25,7 +27,8 @@ export default function MovieListsWorkspace({
   streamingLabel,
   followed = [],
   onFollow,
-  onEditPoster
+  onEditPoster,
+  onOpenDiscoverPerson = () => {}
 }) {
   const [libraryItems, setLibraryItems] = useState([]);
   const [lists, setLists] = useState([]);
@@ -51,6 +54,23 @@ export default function MovieListsWorkspace({
   const ownershipRequestSeq = useRef(0);
   const cardProjectionInFlightKeys = useRef(new Set());
   const cardProjectionMounted = useRef(false);
+
+  useEffect(() => {
+    const clearDetailCaches = () => {
+      setDetailsCache({});
+      setCollectionCache({});
+    };
+    window.addEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCaches);
+    return () => window.removeEventListener(CATALOG_GENERATION_CHANGED_EVENT, clearDetailCaches);
+  }, []);
+
+  useEffect(() => {
+    const clearCurationCaches = () => {
+      setCollectionCache({});
+    };
+    window.addEventListener(CURATION_GENERATION_CHANGED_EVENT, clearCurationCaches);
+    return () => window.removeEventListener(CURATION_GENERATION_CHANGED_EVENT, clearCurationCaches);
+  }, []);
 
   const selectedList = lists.find((list) => list.id === selectedListId) || lists[0] || null;
   const model = useMemo(() => buildMovieListViewModel({
@@ -98,7 +118,12 @@ export default function MovieListsWorkspace({
   useEffect(() => {
     loadMovieLists();
     window.addEventListener('cp-curation-changed', loadMovieLists);
-    const refreshOwnership = () => setOwnershipRefreshKey((value) => value + 1);
+    const refreshOwnership = () => {
+      setDetailsCache({});
+      setCardProjections({});
+      cardProjectionInFlightKeys.current.clear();
+      setOwnershipRefreshKey((value) => value + 1);
+    };
     window.addEventListener('cp-library-changed', refreshOwnership);
     window.addEventListener('cp-library-reconciled', refreshOwnership);
     return () => {
@@ -130,6 +155,11 @@ export default function MovieListsWorkspace({
       body: JSON.stringify({ movies, include_items: true })
     }).then((data) => {
       if (cancelled || requestSeq !== ownershipRequestSeq.current) return;
+      if (observeCatalogGeneration(data.catalog_generation)) {
+        setDetailsCache({});
+        setCardProjections({});
+        cardProjectionInFlightKeys.current.clear();
+      }
       setLibraryItems((data.results || []).map((result) => result.library_item).filter(Boolean));
       setError('');
     }).catch((ownershipError) => {
@@ -172,6 +202,9 @@ export default function MovieListsWorkspace({
       body: JSON.stringify({ movies })
     }).then((data) => {
       if (!cardProjectionMounted.current) return;
+      if (observeCatalogGeneration(data.catalog_generation)) {
+        setDetailsCache({});
+      }
       const items = data.items || {};
       if (Object.keys(items).length) {
         setCardProjections((current) => ({ ...current, ...items }));
@@ -212,21 +245,24 @@ export default function MovieListsWorkspace({
 
   async function loadMovieListDetails(row) {
     const movie = movieListRowMovie(row);
-    const id = String(movie.tmdb_id || row.ownedPayload?.tmdb_id || '');
-    if (!id) return null;
-    let details = detailsCache[id];
+    const owned = row.ownedItem || null;
+    const cacheKey = movieDetailsCacheKey(movie, owned);
+    if (!cacheKey) return null;
+    let details = detailsCache[cacheKey];
     if (!details) {
-      setDetailsCache((state) => ({ ...state, [id]: { loading: true, cast: [], directors: [], collection: {}, trailer_url: '' } }));
+      setDetailsCache((state) => ({ ...state, [cacheKey]: { loading: true, cast: [], directors: [], collection: {}, trailer_url: '' } }));
       try {
-        details = await fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(id)}`);
-        setDetailsCache((state) => ({ ...state, [id]: details }));
+        details = await fetchCanonicalMovieDetails(movie, owned);
+        if (details?.catalog_generation_changed) setCollectionCache({});
+        setDetailsCache((state) => details?.catalog_generation_changed ? { [cacheKey]: details } : { ...state, [cacheKey]: details });
       } catch (detailsError) {
         details = { error: detailsError.message, cast: [], directors: [], collection: {}, trailer_url: '' };
-        setDetailsCache((state) => ({ ...state, [id]: details }));
+        setDetailsCache((state) => ({ ...state, [cacheKey]: details }));
       }
     }
-    if (details?.collection?.id && !collectionCache[details.collection.id]) {
-      fetchJson(`/api/tmdb/collection?collection_id=${encodeURIComponent(details.collection.id)}`)
+    const collectionUrl = movieCollectionUrl(details);
+    if (collectionUrl && !collectionCache[details.collection.id]) {
+      fetchCurationJson(collectionUrl)
         .then((collectionData) => setCollectionCache((state) => ({ ...state, [details.collection.id]: collectionData })))
         .catch(() => {});
     }
@@ -251,7 +287,7 @@ export default function MovieListsWorkspace({
   }
 
   async function createList(name) {
-    const created = await fetchJson('/api/user/lists', {
+    const created = await fetchCurationJson('/api/user/lists', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name })
@@ -274,7 +310,7 @@ export default function MovieListsWorkspace({
   async function renameSelectedList(event) {
     event.preventDefault();
     if (!selectedList || selectedListIsSystem || !renameValue.trim()) return;
-    const renamed = await fetchJson(`/api/user/lists/${encodeURIComponent(selectedList.id)}`, {
+    const renamed = await fetchCurationJson(`/api/user/lists/${encodeURIComponent(selectedList.id)}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: renameValue.trim() })
@@ -287,7 +323,7 @@ export default function MovieListsWorkspace({
   async function deleteSelectedList() {
     if (!selectedList || selectedListIsSystem) return;
     if (!window.confirm(`Delete list "${selectedList.name}"? Movies will not be deleted from Library.`)) return;
-    await fetchJson(`/api/user/lists/${encodeURIComponent(selectedList.id)}`, { method: 'DELETE' });
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(selectedList.id)}`, { method: 'DELETE' });
     setSelectedListId('');
     await loadMovieLists({ forceLists: true });
     announceCurationChanged();
@@ -296,7 +332,7 @@ export default function MovieListsWorkspace({
 
   async function addMovieToList(listId, item) {
     const movie = item?.ownedItem ? moviePayload(item.ownedItem) : moviePayload(item);
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie })
@@ -314,7 +350,7 @@ export default function MovieListsWorkspace({
   }
 
   async function removeMovieFromList(listId, movie) {
-    await fetchJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
+    await fetchCurationJson(`/api/user/lists/${encodeURIComponent(listId)}/movies`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie })
@@ -344,7 +380,7 @@ export default function MovieListsWorkspace({
     const movie = movieListRowMovie(row);
     const currentLists = row.ownedItem ? listsForItem(row.ownedItem, lists) : listsForDiscoverMovie(movie, lists, owned);
     const active = currentLists.some((list) => list.system_type === systemType || list.id === systemType);
-    await fetchJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
+    await fetchCurationJson(`/api/user/system-lists/${encodeURIComponent(systemType)}/toggle`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movie: discoverMoviePayload(movie, owned), active: !active })
@@ -496,18 +532,17 @@ export default function MovieListsWorkspace({
               <div className="library-results library-movie-results movie-lists-card-grid">
                 {model.rows.map((row) => {
                   const movie = movieListRowMovie(row);
-                  const tmdbId = String(movie.tmdb_id || row.ownedPayload?.tmdb_id || '');
                   const projection = !row.ownedItem ? cardProjections[movieIdentityKey(movie)] : null;
                   const cardMovie = projection ? {
                     ...movie,
                     ...projection,
                     poster_url: projection.poster_url || movie.poster_url || '',
                   } : movie;
-                  const details = tmdbId ? detailsCache[tmdbId] : null;
+                  const details = detailsCache[movieDetailsCacheKey(movie, row.ownedItem)] || null;
                   const cardDetails = projection
                     ? { ...projection, ...(!details?.loading && !details?.error ? details : {}) }
                     : details;
-                  const collection = tmdbId && cardDetails?.collection?.id
+                  const collection = cardDetails?.collection?.id
                     ? collectionCache[cardDetails.collection.id] || cardDetails.collection
                     : {};
                   const rowLists = row.ownedItem ? listsForItem(row.ownedItem, lists) : listsForDiscoverMovie(movie, lists, null);
@@ -526,6 +561,7 @@ export default function MovieListsWorkspace({
                         onPlay={onPlay}
                         onFindTorrent={onFindTorrent}
                         onTrailer={() => openMovieListTrailer(row)}
+                        onPersonFilter={(role, person) => onOpenDiscoverPerson(moviePayload(row.ownedItem), role, person)}
                         onListFilter={selectListFromCard}
                         onEditLists={() => setListEditorTarget({ item: row.ownedItem })}
                         onRemoveFromList={(listId) => removeMovieFromList(listId, moviePayload(row.ownedItem))}
@@ -563,6 +599,7 @@ export default function MovieListsWorkspace({
                       onFollow={onFollow}
                       onTrailer={() => openMovieListTrailer(row)}
                       onToggleDetails={() => toggleMovieListDetails(row)}
+                      onPersonBrowse={(role, person) => onOpenDiscoverPerson(cardMovie, role, person)}
                       onListBrowse={selectListFromCard}
                       onEditLists={() => setListEditorTarget(movie)}
                       onRemoveFromList={(listId) => removeMovieFromList(listId, movie)}

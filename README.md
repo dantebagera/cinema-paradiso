@@ -1,18 +1,16 @@
 # Cinema Paradiso
 
-> **Local-first movie archive command console** for Plex collectors, large Windows libraries, TMDB discovery, Prowlarr source search, and local Ollama recommendations.
+> **Local-first movie archive command console** for Plex collectors, large Windows libraries, TMDB discovery, Prowlarr source search, and Ollama-backed recommendations.
 
 Cinema Paradiso is a self-hosted movie library manager for people with hundreds or thousands of local movie files. It helps you browse what you own, clean duplicates and low-quality copies, fix unmatched metadata, discover movies online, search torrent indexers, stream titles, and ask a local AI curator what to watch.
 
-Everything runs on your machine. No cloud account. No subscription. No remote database.
+Your library catalog, settings, and operational state stay on your machine. Optional services such as Plex, TMDB, Prowlarr, streaming providers, and Ollama cloud models are contacted only when configured for their corresponding features.
 
 **Development version: v2.8.0** - July 2026
 
 ---
 
 ## Screenshots
-
-Historical README and DOCS snapshots from earlier versions are preserved in [docs/history](docs/history/README.md).
 
 ### Home Command Center
 
@@ -155,11 +153,26 @@ Downloads uses the original qBittorrent WebUI inside Cinema Paradiso. The embedd
 
 - The current public v2.7.0 portable release ZIP includes a tested bundled qBittorrent runtime.
 - Cinema Paradiso submissions are tagged `cinema-paradiso` and download to an incomplete staging folder.
+- Removing an unfinished CP submission in qBittorrent is treated as a normal cancellation; CP does not move its data or update the catalog.
 - At 100%, Cinema Paradiso pauses and removes the torrent without deleting its data, then moves the unchanged payload into the selected movie destination.
 - A blank movie destination uses the first configured library folder.
 - The incomplete folder must remain outside every movie library so Plex and Cinema Paradiso cannot index partial files.
 - Settings can switch torrent handling back to the operating system's default client.
-- qBittorrent install and update are not exposed in the public v2.7.0 release; runtime upgrades come through future Cinema Paradiso releases.
+- Cinema Paradiso 2.8 Settings can update the isolated portable qBittorrent runtime from the latest official GitHub release without installing or changing the system torrent client.
+
+### IPTV
+
+IPTV is a provider-agnostic Xtream workspace introduced for v2.8 development. It is deliberately separate from the owned Cinema Paradiso catalog.
+
+- Supports one active Xtream provider with Live TV, Movies, Series, Favorites, provider-scoped custom lists, watch history, and provider categories in provider order.
+- Stores the provider catalog in a separate `data/iptv/iptv.sqlite` database. IPTV titles never become owned library records.
+- Keeps IPTV Favorites and custom lists separate from Cinema Paradiso Movie Lists, with mixed channels, movies, and series plus manual ordering.
+- Retains a saved item's title and artwork when it disappears from the current provider catalog, while marking it unavailable instead of silently deleting it.
+- Keeps saved credentials on the Flask backend and returns only redacted configuration state to React.
+- Loads movie and series details lazily from the provider, including Arabic text without requiring Ollama or another AI service.
+- Uses tokenized local playback sessions. FFmpeg receives a loopback URL rather than the credential-bearing Xtream URL.
+- Remuxes provider streams to local HLS without transcoding by default. Unsupported source codecs can still fail in the browser.
+- Cinema Paradiso does not provide IPTV subscriptions or content. Users connect their own authorized provider account in Settings.
 
 ### Help
 
@@ -177,6 +190,7 @@ Settings manages:
 - Embedded or system torrent handling
 - Completed movie destination and incomplete download folder
 - TMDB API key
+- Xtream IPTV server and credentials
 - Ollama URL/model
 
 User lists, Watched and Watchlist states, edited collections, followed releases, manual metadata matches, metadata corrections, identity audit state, and poster overrides are persistent user data. TMDB detail caches are rebuildable cache.
@@ -192,6 +206,8 @@ User lists, Watched and Watchlist states, edited collections, followed releases,
 - Optional: Prowlarr
 - Optional: TMDB API key
 - Optional: Ollama
+- Optional: Xtream IPTV subscription
+- FFmpeg for integrated IPTV playback (bundled when supplied to the v2.8 portable release builder)
 
 ---
 
@@ -253,7 +269,7 @@ Example:
 
 Only a movie library folder is required. Integrations are optional.
 
-The public v2.7.0 portable release uses bundled qBittorrent. Settings lets you choose embedded qBittorrent or the system default torrent client, plus completed and incomplete folders. qBittorrent install/update controls are intentionally not part of v2.7.0.
+The public v2.7.0 portable release uses bundled qBittorrent. Cinema Paradiso 2.8 keeps the embedded runtime portable and adds a user-triggered update control in Settings. Torrent mode and completed/incomplete folders remain configurable.
 
 ---
 
@@ -261,8 +277,8 @@ The public v2.7.0 portable release uses bundled qBittorrent. Settings lets you c
 
 The app separates persistent user data from rebuildable cache:
 
-- `data/` stores user lists, viewing states, edited collections, followed releases, poster overrides, metadata corrections, identity audit state, app metadata records, and the isolated qBittorrent profile/jobs when the default user data folder is used.
-- `runtime/` in the portable release stores bundled third-party runtimes such as qBittorrent.
+- `data/` stores user lists, viewing states, edited collections, followed releases, poster overrides, metadata corrections, identity audit state, app metadata records, the isolated IPTV database/provider configuration, and the isolated qBittorrent profile/jobs when the default user data folder is used.
+- `runtime/` in the portable release stores bundled third-party runtimes such as qBittorrent and FFmpeg.
 - `cache/` stores rebuildable TMDB detail/collection cache.
 - `res_cache.json` stores local resolution probe cache.
 - `config.json` stores local settings and secrets.
@@ -278,6 +294,8 @@ These files are user-specific and should not be committed.
 - File operations are restricted to configured movie library roots.
 - Cleanup workflows show paths and affected files before action.
 - Torrent-file retrieval is restricted to the configured Prowlarr origin; arbitrary browser-supplied download URLs are rejected.
+- IPTV images can only be fetched through URLs already stored in the provider catalog; the browser cannot supply an arbitrary proxy URL.
+- IPTV stream credentials remain behind a tokenized loopback relay and are not placed in browser or FFmpeg command-line URLs.
 - Completed downloads are never renamed automatically.
 
 ---

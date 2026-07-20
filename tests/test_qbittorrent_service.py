@@ -7,6 +7,7 @@ from unittest.mock import MagicMock, patch
 
 from services.qbittorrent import (
     BUNDLED_QBT_VERSION,
+    QBittorrentError,
     QBittorrentJobStore,
     QBittorrentManager,
     bundled_runtime_root,
@@ -55,11 +56,12 @@ class QBittorrentPlatformTests(unittest.TestCase):
             bundled.parent.mkdir(parents=True)
             bundled.touch()
             manager = QBittorrentManager(root_path / "data", {}, [], app_root=root_path)
+            manager.client.version = MagicMock(side_effect=OSError("offline test runtime"))
 
             self.assertEqual(manager.active_executable(), bundled)
             self.assertEqual(manager.status()["version"], BUNDLED_QBT_VERSION)
 
-    def test_status_does_not_query_github_for_updates_in_frozen_runtime_mode(self):
+    def test_status_does_not_query_github_until_the_user_requests_an_update(self):
         with tempfile.TemporaryDirectory() as root:
             manager = QBittorrentManager(root, {}, [])
             manager._github_release = lambda _url: (_ for _ in ()).throw(AssertionError("network update check should not run"))
@@ -67,7 +69,98 @@ class QBittorrentPlatformTests(unittest.TestCase):
             status = manager.status()
 
             self.assertFalse(status["update_available"])
-            self.assertEqual(status["update_policy"], "bundled")
+            self.assertEqual(status["update_policy"], "manual_github")
+
+    def test_update_latest_returns_without_replacing_an_already_current_runtime(self):
+        with tempfile.TemporaryDirectory() as root:
+            manager = QBittorrentManager(root, {}, [])
+            executable = Path(root) / "qbittorrent.exe"
+            executable.touch()
+            manager._save_runtime_state({"version": "5.2.3", "executable": str(executable)})
+            manager.client.version = MagicMock(return_value="v5.2.3")
+            manager.latest_release = MagicMock(return_value={
+                "version": "5.2.3",
+                "asset": {"name": "qbittorrent_5.2.3_x64_setup.exe"},
+            })
+            manager._download_verified = MagicMock()
+
+            result = manager.update_latest()
+
+            self.assertEqual(result["update_result"], "current")
+            self.assertEqual(result["version"], "5.2.3")
+            manager._download_verified.assert_not_called()
+
+    @unittest.skipUnless(os.name == "nt", "Windows portable runtime update")
+    def test_update_latest_switches_to_the_extracted_portable_runtime(self):
+        with tempfile.TemporaryDirectory() as root:
+            manager = QBittorrentManager(root, {}, [])
+            previous = Path(root) / "previous" / "qbittorrent.exe"
+            previous.parent.mkdir()
+            previous.touch()
+            manager._save_runtime_state({"version": "5.2.2", "executable": str(previous)})
+            manager.latest_release = MagicMock(return_value={
+                "version": "5.2.3",
+                "asset": {"name": "qbittorrent_5.2.3_x64_setup.exe"},
+            })
+
+            def download(_asset, destination):
+                Path(destination).parent.mkdir(parents=True, exist_ok=True)
+                Path(destination).write_bytes(b"package")
+
+            def extract(_package, destination):
+                executable = Path(destination) / "qbittorrent.exe"
+                executable.write_bytes(b"updated")
+                return executable
+
+            manager._download_verified = MagicMock(side_effect=download)
+            manager._windows_extract = MagicMock(side_effect=extract)
+            manager._stop_running = MagicMock()
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.version = MagicMock(side_effect=["v5.2.2", "v5.2.3", "v5.2.3"])
+
+            result = manager.update_latest()
+
+            state = manager._runtime_state()
+            self.assertEqual(result["update_result"], "updated")
+            self.assertEqual(result["version"], "5.2.3")
+            self.assertEqual(state["version"], "5.2.3")
+            self.assertTrue(Path(state["executable"]).is_file())
+            self.assertEqual(state["previous"]["version"], "5.2.2")
+
+    @unittest.skipUnless(os.name == "nt", "Windows portable runtime update")
+    def test_update_latest_restores_the_previous_runtime_when_restart_fails(self):
+        with tempfile.TemporaryDirectory() as root:
+            manager = QBittorrentManager(root, {}, [])
+            previous = Path(root) / "previous" / "qbittorrent.exe"
+            previous.parent.mkdir()
+            previous.touch()
+            previous_state = {"version": "5.2.2", "executable": str(previous)}
+            manager._save_runtime_state(previous_state)
+            manager.latest_release = MagicMock(return_value={
+                "version": "5.2.3",
+                "asset": {"name": "qbittorrent_5.2.3_x64_setup.exe"},
+            })
+
+            def download(_asset, destination):
+                Path(destination).parent.mkdir(parents=True, exist_ok=True)
+                Path(destination).write_bytes(b"package")
+
+            def extract(_package, destination):
+                executable = Path(destination) / "qbittorrent.exe"
+                executable.write_bytes(b"updated")
+                return executable
+
+            manager._download_verified = MagicMock(side_effect=download)
+            manager._windows_extract = MagicMock(side_effect=extract)
+            manager._stop_running = MagicMock()
+            manager.ensure_running = MagicMock(side_effect=[False, True])
+            manager.client.version = MagicMock(return_value="v5.2.2")
+
+            with self.assertRaisesRegex(QBittorrentError, "previous runtime was restored"):
+                manager.update_latest()
+
+            self.assertEqual(manager._runtime_state(), previous_state)
+            self.assertEqual(manager.ensure_running.call_count, 2)
 
     @unittest.skipUnless(os.name == "nt", "Windows-specific process startup behavior")
     def test_windows_launch_hides_native_qbittorrent_window(self):
@@ -290,6 +383,87 @@ class QBittorrentJobStoreTests(unittest.TestCase):
 
             self.assertEqual(results[0]["state"], "imported")
             self.assertTrue((destination / payload.name / "movie.mkv").exists())
+
+    def test_manager_marks_confirmed_missing_download_as_cancelled_without_error(self):
+        with tempfile.TemporaryDirectory() as root:
+            manager = QBittorrentManager(root, {}, [])
+            manager.jobs.upsert("abc", {
+                "state": "downloading",
+                "tmdb_id": "100",
+                "identity_handoff": {"state": "pending"},
+            })
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.torrents = MagicMock(return_value=[])
+            manager.jobs.move_completed_payload = MagicMock()
+
+            with patch("services.qbittorrent.time.time", return_value=100):
+                self.assertEqual(manager.process_completed(), [])
+            with patch("services.qbittorrent.time.time", return_value=105):
+                self.assertEqual(manager.process_completed(), [])
+            with patch("services.qbittorrent.time.time", return_value=111):
+                results = manager.process_completed()
+
+            job = manager.jobs.get("abc")
+            self.assertEqual(results[0]["state"], "cancelled")
+            self.assertEqual(job["state"], "cancelled")
+            self.assertEqual(job["last_error"], "")
+            self.assertEqual(job["identity_handoff"]["state"], "not_required")
+            manager.jobs.move_completed_payload.assert_not_called()
+
+    def test_manager_clears_missing_marker_when_torrent_reappears_during_grace_period(self):
+        with tempfile.TemporaryDirectory() as root:
+            manager = QBittorrentManager(root, {}, [])
+            manager.jobs.upsert("abc", {"state": "downloading"})
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.torrents = MagicMock(return_value=[])
+
+            with patch("services.qbittorrent.time.time", return_value=100):
+                manager.process_completed()
+            manager.client.torrents.return_value = [{"hash": "abc", "progress": 0.5}]
+            manager.process_completed()
+
+            job = manager.jobs.get("abc")
+            self.assertEqual(job["state"], "downloading")
+            self.assertIsNone(job["missing_since"])
+            self.assertEqual(job["missing_checks"], 0)
+
+    def test_manager_reactivates_cancelled_job_when_torrent_reappears(self):
+        with tempfile.TemporaryDirectory() as root:
+            manager = QBittorrentManager(root, {}, [])
+            manager.jobs.upsert("abc", {
+                "state": "cancelled",
+                "tmdb_id": "100",
+                "identity_handoff": {"state": "not_required"},
+                "cancelled_at": 100,
+            })
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.torrents = MagicMock(return_value=[{"hash": "abc", "progress": 0.5}])
+
+            self.assertEqual(manager.process_completed(), [])
+
+            job = manager.jobs.get("abc")
+            self.assertEqual(job["state"], "downloading")
+            self.assertEqual(job["identity_handoff"]["state"], "pending")
+            self.assertIsNone(job["cancelled_at"])
+
+    def test_manager_abandons_missing_failed_job_only_after_grace_period(self):
+        with tempfile.TemporaryDirectory() as root:
+            manager = QBittorrentManager(root, {}, [])
+            manager.jobs.upsert("abc", {"state": "move_failed", "last_error": "old failure"})
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.torrents = MagicMock(return_value=[])
+
+            with patch("services.qbittorrent.time.time", return_value=100):
+                manager.process_completed()
+            with patch("services.qbittorrent.time.time", return_value=105):
+                manager.process_completed()
+            with patch("services.qbittorrent.time.time", return_value=111):
+                results = manager.process_completed()
+
+            job = manager.jobs.get("abc")
+            self.assertEqual(results[0]["state"], "abandoned")
+            self.assertEqual(job["state"], "abandoned")
+            self.assertEqual(job["last_error"], "")
 
     def test_manager_removes_torrent_only_after_payload_import_succeeds(self):
         with tempfile.TemporaryDirectory() as root:
@@ -527,6 +701,36 @@ class QBittorrentJobStoreTests(unittest.TestCase):
             self.assertTrue(result["resubmitted_at"])
             self.assertEqual(result["last_error"], "")
             manager.client.add_magnet.assert_called_once_with(magnet, str(staging))
+
+    def test_manager_resubmission_resets_cancelled_terminal_state(self):
+        with tempfile.TemporaryDirectory() as root:
+            staging = Path(root) / "incomplete"
+            manager = QBittorrentManager(root, {"incomplete_dir": str(staging)}, [])
+            magnet = "magnet:?xt=urn:btih:48373C3569751AA5C51072E826DD43FFB350BA84&dn=Movie"
+            torrent_hash = "48373c3569751aa5c51072e826dd43ffb350ba84"
+            manager.jobs.upsert(torrent_hash, {
+                "state": "cancelled",
+                "cancelled_at": 100,
+                "missing_since": 90,
+                "missing_checks": 3,
+                "terminal_reason": "Removed from qBittorrent before completion",
+            })
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.torrents = MagicMock(return_value=[])
+            manager.client.add_magnet = MagicMock()
+
+            result = manager.submit_magnet(magnet, {
+                "title": "Movie",
+                "tmdb_id": "100",
+                "identity_handoff": {"state": "pending"},
+            })
+
+            self.assertEqual(result["state"], "downloading")
+            self.assertIsNone(result["cancelled_at"])
+            self.assertIsNone(result["missing_since"])
+            self.assertEqual(result["missing_checks"], 0)
+            self.assertEqual(result["terminal_reason"], "")
+            self.assertEqual(result["identity_handoff"]["state"], "pending")
 
     def test_manager_keeps_active_job_when_qbittorrent_confirms_hash(self):
         with tempfile.TemporaryDirectory() as root:

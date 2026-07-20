@@ -10,6 +10,7 @@ REACT_SECTION_PATHS = (
     "/cleanup",
     "/discover",
     "/ai-control",
+    "/iptv",
     "/downloads",
     "/help",
     "/settings",

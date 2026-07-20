@@ -9,8 +9,7 @@ import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
 import { PosterEditButton, PosterStateControls } from '../../components/SharedMovieCards.jsx';
 import { UnifiedMovieCard } from '../../components/movie-card/MovieCard.jsx';
 import { cx, formatCount, movieKey, sortFollowedReleases } from '../../utils/appUtils.js';
-import { listsForDiscoverMovie, ownedMovieFor } from '../../discoverUtils.js';
-import { isLowQuality } from '../../utils/libraryUtils.js';
+import { canonicalOwnedMovie, listsForDiscoverMovie, ownedMovieFor } from '../../discoverUtils.js';
 import { formatReleaseDateLabel, formatVoteCount, isUnreleasedMovie } from '../../utils/moviePresentation.js';
 
 export default function HomeWorkspace(props) {
@@ -358,21 +357,21 @@ function SmartMovieCard(props) {
     onSelect, onPlay, onStream, streamingAvailable, streamingLabel, onFindTorrent, onFollow,
     onTrailer, onToggleWatched, onToggleWatchlist, onEditPoster
   } = props;
-  const lowQuality = owned && isLowQuality(owned.resolution);
-  const unreleased = !owned && isUnreleasedMovie(movie);
-  const genres = (movie.genres || []).slice(0, 2);
-  const posterMovie = owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie;
+  const displayMovie = canonicalOwnedMovie(movie, owned);
+  const lowQuality = Boolean(owned?.maintenance_upgrade_candidate);
+  const unreleased = !owned && isUnreleasedMovie(displayMovie);
+  const genres = (displayMovie.genres || []).slice(0, 2);
 
   return (
     <UnifiedMovieCard
       className="home-smart-movie-card"
-      title={movie.title}
-      year={movie.year}
-      posterUrl={posterMovie.poster_url}
-      rating={movie.tmdb_rating}
-      voteCount={formatVoteCount(movie.tmdb_vote_count)}
+      title={displayMovie.title}
+      year={displayMovie.year}
+      posterUrl={displayMovie.poster_url}
+      rating={displayMovie.tmdb_rating}
+      voteCount={formatVoteCount(displayMovie.tmdb_vote_count)}
       chips={genres}
-      mutedChips={[movie.language, movie.country_flag || movie.country, owned?.resolution, owned?.size_human]}
+      mutedChips={[displayMovie.language, displayMovie.country_flag || displayMovie.country, owned?.resolution, owned?.size_human]}
       statusLabel={owned ? (lowQuality ? 'Upgrade candidate' : '') : (unreleased ? 'Unreleased' : (followed ? 'Following' : 'Not in library'))}
       statusTone={owned ? (lowQuality ? 'warning' : 'neutral') : (unreleased ? 'warning' : 'missing')}
       ownedBadge={Boolean(owned)}
@@ -383,13 +382,13 @@ function SmartMovieCard(props) {
       cornerControls={(
         <>
           <PosterStateControls
-            title={movie.title}
+            title={displayMovie.title}
             watched={watched}
             watchlisted={watchlisted}
             onToggleWatched={owned ? onToggleWatched : undefined}
             onToggleWatchlist={onToggleWatchlist}
           />
-          <PosterEditButton title={movie.title} onEdit={owned ? onEditPoster : undefined} />
+          <PosterEditButton title={displayMovie.title} onEdit={owned ? onEditPoster : undefined} />
         </>
       )}
     />
@@ -411,11 +410,21 @@ function MovieInspector({
     );
   }
 
-  const lowQuality = owned && isLowQuality(owned.resolution);
-  const unreleased = !owned && isUnreleasedMovie(movie);
-  const releaseDateLabel = unreleased ? formatReleaseDateLabel(movie.release_date) : '';
-  const cast = details?.cast || [];
-  const trailerUrl = details?.trailer_url || '';
+  const displayMovie = canonicalOwnedMovie(movie, owned);
+  const ownedItem = owned?.canonical_card || owned?.library_item || {};
+  const ownedCanonical = ownedItem.canonical_metadata || {};
+  const displayDetails = ownedCanonical.accepted ? {
+    ...(details || {}),
+    ...ownedCanonical,
+    loading: details?.loading,
+    error: details?.error,
+    trailer_url: details?.trailer_url || ownedCanonical.trailer_url || ''
+  } : details;
+  const lowQuality = Boolean(owned?.maintenance_upgrade_candidate);
+  const unreleased = !owned && isUnreleasedMovie(displayMovie);
+  const releaseDateLabel = unreleased ? formatReleaseDateLabel(displayMovie.release_date) : '';
+  const cast = displayDetails?.cast || displayMovie.cast || [];
+  const trailerUrl = displayDetails?.trailer_url || '';
 
   return (
     <aside className="inspector">
@@ -424,7 +433,7 @@ function MovieInspector({
       </button>
       <div className="inspector-hero">
         <Poster
-          movie={owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie}
+          movie={displayMovie}
           large
           onEditPoster={owned ? onEditPoster : undefined}
           watched={watched}
@@ -434,24 +443,24 @@ function MovieInspector({
         />
         <div>
           <p className="screen-kicker">Selected movie</p>
-          <h3>{movie.title}</h3>
+          <h3>{displayMovie.title}</h3>
           <div className="inspector-meta">
-            <span>{movie.year || 'Unknown year'}</span>
-            <Rating value={movie.tmdb_rating} votes={movie.tmdb_vote_count} />
+            <span>{displayMovie.year || 'Unknown year'}</span>
+            <Rating value={displayMovie.tmdb_rating} votes={displayMovie.tmdb_vote_count} />
             {unreleased && <span>Unreleased</span>}
             {releaseDateLabel && <span>Releases {releaseDateLabel}</span>}
-            {movie.language && <span>{movie.language}</span>}
-            {(movie.country_flag || movie.country) && <span>{movie.country_flag || movie.country}</span>}
+            {displayMovie.language && <span>{displayMovie.language}</span>}
+            {(displayMovie.country_flag || displayMovie.country) && <span>{displayMovie.country_flag || displayMovie.country}</span>}
           </div>
         </div>
       </div>
-      <p className="plot-text">{movie.plot || 'No plot summary is available yet.'}</p>
+      <p className="plot-text">{displayMovie.summary || displayMovie.plot || 'No plot summary is available yet.'}</p>
       <div className="chip-row">
-        {(movie.genres || []).slice(0, 5).map((genre) => <span className="chip" key={genre}>{genre}</span>)}
+        {(displayMovie.genres || []).slice(0, 5).map((genre) => <span className="chip" key={genre}>{genre}</span>)}
       </div>
       <div className="cast-strip">
         <span className="mini-label">Top cast</span>
-        {details ? (
+        {displayDetails ? (
           cast.length ? cast.slice(0, 5).map((person) => (
             <span key={person.name} className="cast-chip">{person.name}</span>
           )) : <small>No cast data found.</small>
@@ -466,7 +475,7 @@ function MovieInspector({
               <Play size={15} /> Play from HDD
             </button>
             {lowQuality && (
-              <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie, true)}>
+              <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(displayMovie, true)}>
                 <Wand2 size={15} /> Find upgrade
               </button>
             )}
@@ -474,22 +483,22 @@ function MovieInspector({
         ) : (
           <>
             {!unreleased && (
-              <button type="button" className="btn btn-primary" onClick={() => onFindTorrent(movie)}>
+              <button type="button" className="btn btn-primary" onClick={() => onFindTorrent(displayMovie)}>
                 <Search size={15} /> Find torrent
               </button>
             )}
-            <button type="button" className="btn btn-secondary" onClick={() => onFollow(movie)}>
+            <button type="button" className="btn btn-secondary" onClick={() => onFollow(displayMovie)}>
               <Bell size={15} /> {followed ? 'Following' : 'Follow release'}
             </button>
           </>
         )}
         {!unreleased && streamingAvailable && (
-          <button type="button" className="btn btn-secondary" onClick={() => onStream(movie)}>
+          <button type="button" className="btn btn-secondary" onClick={() => onStream(displayMovie)}>
             <MonitorPlay size={15} /> {streamingLabel}
           </button>
         )}
-        {details && (
-          <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie, trailerUrl)}>
+        {displayDetails && (
+          <button type="button" className="btn btn-secondary" onClick={() => onTrailer(displayMovie, trailerUrl)}>
             <Film size={15} /> Play trailer
           </button>
         )}

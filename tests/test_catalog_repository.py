@@ -2,6 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from services.catalog_repository import CatalogRepository, catalog_database_path
 from services.catalog_store import CatalogError
@@ -60,6 +61,38 @@ class CatalogRepositoryTest(unittest.TestCase):
             document = restarted.read_document("app_metadata/files.json", {"files": {}})
 
         self.assertIn("e:/movies/alien.mkv", document["files"])
+
+    def test_restart_skips_canonical_rebuild_when_generation_and_contract_match(self):
+        with tempfile.TemporaryDirectory() as root:
+            user_data = self._user_data(root)
+            database = Path(root) / "catalog.sqlite"
+            repository = self._repository(user_data, database, export_delay=60)
+            repository.activate_from_json()
+
+            with patch("services.catalog_store.CanonicalCatalog.rebuild", autospec=True) as rebuild:
+                self._repository(user_data, database, export_delay=60)
+
+        rebuild.assert_not_called()
+
+    def test_restart_rebuilds_canonical_projection_when_generation_marker_is_stale(self):
+        with tempfile.TemporaryDirectory() as root:
+            user_data = self._user_data(root)
+            database = Path(root) / "catalog.sqlite"
+            repository = self._repository(user_data, database, export_delay=60)
+            repository.activate_from_json()
+            connection = repository.store.connect()
+            try:
+                connection.execute(
+                    "UPDATE catalog_meta SET value = '-1' WHERE key = 'canonical_media_generation'"
+                )
+                connection.commit()
+            finally:
+                connection.close()
+
+            with patch("services.catalog_store.CanonicalCatalog.rebuild", autospec=True) as rebuild:
+                self._repository(user_data, database, export_delay=60)
+
+        rebuild.assert_called_once()
 
     def test_file_upsert_is_row_level_and_export_is_deferred(self):
         with tempfile.TemporaryDirectory() as root:
@@ -126,6 +159,46 @@ class CatalogRepositoryTest(unittest.TestCase):
 
         self.assertEqual(counts, (1, 1))
 
+    def test_curation_reads_take_authoritative_fields_from_normalized_rows(self):
+        with tempfile.TemporaryDirectory() as root:
+            user_data = self._user_data(root)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository.activate_from_json()
+            repository.replace_document("user_lists.json", {"lists": [{
+                "id": "watchlist",
+                "name": "Old blob name",
+                "system_type": "watchlist",
+                "created_at": 1,
+                "updated_at": 2,
+                "movies": [{
+                    "tmdb_id": "348",
+                    "title": "Old blob title",
+                    "year": "1979",
+                    "plot": "Snapshot-only plot",
+                }],
+            }]})
+            connection = repository.store.connect()
+            try:
+                connection.execute(
+                    "UPDATE user_lists SET name = 'SQL list name', updated_at = 3 WHERE list_id = 'watchlist'"
+                )
+                connection.execute(
+                    "UPDATE list_items SET title = 'SQL movie title', year = '1980' "
+                    "WHERE list_id = 'watchlist' AND position = 0"
+                )
+                connection.commit()
+            finally:
+                connection.close()
+            repository._cache.pop("user_lists.json", None)
+
+            result = repository.read_document("user_lists.json", {"lists": []})["lists"][0]
+
+        self.assertEqual(result["name"], "SQL list name")
+        self.assertEqual(result["updated_at"], 3)
+        self.assertEqual(result["movies"][0]["title"], "SQL movie title")
+        self.assertEqual(result["movies"][0]["year"], "1980")
+        self.assertEqual(result["movies"][0]["plot"], "Snapshot-only plot")
+
     def test_curation_changes_do_not_invalidate_media_revision(self):
         with tempfile.TemporaryDirectory() as root:
             user_data = self._user_data(root)
@@ -154,6 +227,40 @@ class CatalogRepositoryTest(unittest.TestCase):
 
             self.assertEqual(repository.generation('media'), media_before + 1)
             self.assertEqual(repository.generation('curation'), curation_before)
+
+    def test_provider_write_updates_relational_projection_before_generation_advances(self):
+        with tempfile.TemporaryDirectory() as root:
+            user_data = self._user_data(root)
+            repository = self._repository(user_data, Path(root) / "catalog.sqlite", export_delay=60)
+            repository.activate_from_json()
+            before = repository.generation("media")
+
+            repository.upsert_record("app_metadata/tmdb_metadata.json", "348", {
+                "tmdb_id": "348",
+                "imdb_id": "tt0078748",
+                "title": "Alien SQL",
+                "year": "1979",
+                "plot": "Relational detail.",
+                "cast": [{"id": "1", "name": "Sigourney Weaver"}],
+                "directors": [{"id": "2", "name": "Ridley Scott"}],
+            })
+
+            after = repository.generation("media")
+            candidate = repository.store.library_candidates()[0]
+            connection = repository.store.connect()
+            try:
+                canonical_generation = int(connection.execute(
+                    "SELECT value FROM catalog_meta WHERE key='canonical_media_generation'"
+                ).fetchone()[0])
+            finally:
+                connection.close()
+
+        self.assertEqual(after, before + 1)
+        self.assertEqual(canonical_generation, after)
+        self.assertEqual(candidate["relational_canonical"]["title"], "Alien")
+        self.assertEqual(candidate["relational_canonical"]["plot"], "Relational detail.")
+        self.assertEqual(candidate["relational_canonical"]["cast"][0]["name"], "Sigourney Weaver")
+        self.assertEqual(candidate["relational_canonical"]["directors"][0]["name"], "Ridley Scott")
 
     def test_catalog_paths_are_isolated_by_user_data_directory(self):
         with tempfile.TemporaryDirectory() as root:

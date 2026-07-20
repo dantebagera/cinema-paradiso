@@ -34,11 +34,13 @@ class CollectionResolutionApiTest(unittest.TestCase):
                     {"tmdb_id": "181808", "title": "Star Wars: The Last Jedi", "year": "2017"},
                 ],
             }
+            cache_key = app._library_cache_key()
             app._library_cache = {"items": [{
                 "path": str(owned),
                 "tmdb_id": "11",
                 "canonical_metadata": {"accepted": True, "tmdb_id": "11", "title": "Star Wars", "year": "1977"},
-            }], "dir": app._library_cache_key(), "time": app.time.time()}
+            }], "dir": cache_key, "roots": cache_key[0], "metadata_revision": cache_key[2],
+                "source": "catalog", "time": app.time.time()}
             with patch("app._effective_tmdb_collection", return_value=collection):
                 response = app.app.test_client().get("/api/library/collection/10")
 

@@ -154,11 +154,19 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("if (status === 'running')", self.source)
         self.assertNotIn("fetchJson('/api/library/reconcile', { method: 'POST' })", self.source)
 
-    def test_only_the_active_workspace_remains_mounted(self):
-        self.assertNotIn("mountedSections", self.source)
-        self.assertNotIn("hidden={activeSection !== 'library'}", self.source)
-        self.assertIn("activeSection === 'discover'", self.source)
-        self.assertIn("activeSection === 'ai-control'", self.source)
+    def test_visited_workspaces_remain_mounted_and_preserve_page_state(self):
+        self.assertIn("const [mountedSections, setMountedSections]", self.source)
+        self.assertIn("setMountedSections((sections)", self.source)
+        self.assertIn("sectionScrollPositionsRef", self.source)
+        self.assertIn("workspace.scrollTop = sectionScrollPositionsRef.current[activeSection] || 0", self.source)
+        for section in ('home', 'library', 'movie-lists', 'discover', 'downloads', 'ai-control', 'iptv', 'help', 'cleanup', 'settings'):
+            self.assertIn(f"mountedSections.has('{section}')", self.source)
+            self.assertIn(f"hidden={{activeSection !== '{section}'}}", self.source)
+
+    def test_settings_hydration_preserves_fields_edited_while_requests_are_in_flight(self):
+        self.assertIn("const editedFieldsRef = useRef(new Set())", self.source)
+        self.assertIn("editedFieldsRef.current.add(`${section}.${field}`)", self.source)
+        self.assertIn("merged[section] = { ...merged[section], [field]: current[section][field] }", self.source)
 
     def test_library_refreshes_quietly_for_background_changes(self):
         self.assertIn("function LibraryWorkspace({", self.source)
@@ -239,7 +247,7 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("let userListsCache = { data: null, time: 0, promise: null }", self.curation_api_source)
         self.assertIn("let userListsCacheVersion = 0", self.curation_api_source)
         self.assertIn("async function fetchUserListsCached", self.curation_api_source)
-        self.assertEqual(self.curation_api_source.count("fetchJson('/api/user/lists')"), 1)
+        self.assertEqual(self.curation_api_source.count("fetchCurationJson('/api/user/lists')"), 1)
         self.assertIn("fetchUserListsCached({ force: Boolean(options?.force) })", self.source)
         self.assertIn("fetchUserListsCached({ force: forceLists })", self.movie_lists_source)
         self.assertIn("await loadUserLists({ force: true })", self.source)
@@ -346,7 +354,7 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("const isDownloads = activeSection === 'downloads';", topbar_source)
         self.assertIn("!isDownloads && (", topbar_source)
         self.assertIn("downloads-title-credit", topbar_source)
-        self.assertNotIn("activeSection !== 'downloads'", self.source[:self.source.index("function TopBar")])
+        self.assertIn("hidden={activeSection !== 'downloads'}", self.source[:self.source.index("function TopBar")])
 
     def test_discover_moves_search_below_tabs_without_shared_topbar(self):
         discover_source = self.source[

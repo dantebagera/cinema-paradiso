@@ -221,6 +221,39 @@ const manualSections = [
     ]
   },
   {
+    key: 'iptv-workspace',
+    title: 'IPTV workspace',
+    summary: 'IPTV presents one user-supplied Xtream provider as separate Live TV, Movies, Series, Favorites, My Lists, and watch-history views without changing CP ownership.',
+    details: [
+      {
+        title: 'What CP does',
+        items: [
+          'Preserves provider category names and order while replacing the provider player UI with Cinema Paradiso presentation.',
+          'Keeps IPTV categories, titles, detail caches, favorites, custom lists, and history in a separate iptv.sqlite database.',
+          'Lets users organize mixed channels, movies, and series into provider-scoped lists with manual ordering.',
+          'Remuxes live channels, movies, and episodes through a tokenized local FFmpeg session for browser playback.'
+        ]
+      },
+      {
+        title: 'What CP will not do',
+        items: [
+          'It will not merge provider movies or series into the owned Cinema Paradiso library.',
+          'Arabic titles, plots, genres, categories, and search work without Ollama or Gemma.',
+          'It will not supply a subscription, decide what the provider lists, or repair a dead provider channel.'
+        ]
+      },
+      {
+        title: 'Common mistakes',
+        items: [
+          'Expecting every playlist row to work; providers often leave dead channels and broken artwork in active lists.',
+          'Expecting IPTV My Lists to appear in Cinema Paradiso Movie Lists; the two catalogs deliberately remain separate.',
+          'Enabling invalid TLS certificates for a provider that already has a valid certificate.',
+          'Closing CP while a stream is playing and expecting the local playback session to continue.'
+        ]
+      }
+    ]
+  },
+  {
     key: 'downloads-workspace',
     title: 'Downloads workspace',
     summary: 'Downloads embeds the original qBittorrent WebUI while CP orchestrates CP-created submissions, folder policy, completion refresh, and safe handoff.',
@@ -230,6 +263,7 @@ const manualSections = [
         items: [
           'Sends CP magnet links and approved torrent files to the embedded qBittorrent runtime.',
           'Uses the configured completed download folder, or the first library root when no folder is selected.',
+          'Treats an unfinished torrent removed in qBittorrent as cancelled without touching its files or the movie catalog.',
           'After 100%, removes the torrent from qBittorrent without deleting data, then moves the completed payload into the library.'
         ]
       },
@@ -238,6 +272,7 @@ const manualSections = [
         items: [
           'It will not rename torrent folders during download.',
           'It will not move incomplete payloads into the movie library.',
+          'It will not report a user-cancelled unfinished torrent as an import or metadata error.',
           'It will not interfere with torrents you open manually in your separate default qBittorrent client.'
         ]
       },
@@ -246,7 +281,7 @@ const manualSections = [
         items: [
           'Expecting the embedded client and your system default client to share the same profile.',
           'Changing files underneath qBittorrent before CP completion handling runs.',
-          'Forgetting that qBittorrentâ€™s visible UI is intentionally the original qBittorrent interface.'
+          "Forgetting that qBittorrent's visible UI is intentionally the original qBittorrent interface."
         ]
       }
     ]
@@ -254,7 +289,7 @@ const manualSections = [
   {
     key: 'settings-workspace',
     title: 'Settings workspace',
-    summary: 'Settings is where CP stores library roots, user data location, integration URLs, API keys, qBittorrent mode, download folder policy, Streaming Link, and AI Control policy.',
+    summary: 'Settings is where CP stores library roots, user data location, integration URLs, API keys, IPTV provider access, qBittorrent mode, download folder policy, Streaming Link, and AI Control policy.',
     details: [
       {
         title: 'What CP does',
@@ -262,15 +297,15 @@ const manualSections = [
           'Saves configuration in CP config storage and shows Ready states for supported integrations.',
           'Provides Test saved buttons for services where a live connection test matters.',
           'Controls whether CP uses embedded qBittorrent or the classic system torrent-client behavior.',
-          'Manages trusted release indexers, list download defaults, Streaming Link templates, Ollama candidate limits, and AI Control trusted indexers.'
+          'Manages trusted release indexers, list download defaults, Streaming Link templates, IPTV sync, Ollama candidate limits, and AI Control trusted indexers.'
         ]
       },
       {
         title: 'What CP will not do',
         items: [
           'It will not guess secret API keys or Plex tokens.',
-          'It will not automatically install optional services like Plex, Prowlarr, TMDB accounts, or Ollama.',
-          'It will not auto-update bundled qBittorrent in version 2.8.0.'
+          'It will not automatically install optional services or supply IPTV provider accounts.',
+          'It will not update portable qBittorrent unless you press Update qBittorrent in Settings.'
         ]
       },
       {
@@ -388,6 +423,24 @@ const helpSections = [
     settingsHash: 'streaming'
   },
   {
+    key: 'iptv',
+    title: 'IPTV Provider',
+    status: 'Optional account; FFmpeg required for playback',
+    summary: 'Use IPTV when you have your own authorized Xtream server URL, username, and password and want its catalog presented separately inside CP.',
+    links: [
+      ['FFmpeg Official Website', 'https://ffmpeg.org/'],
+      ['FFmpeg Download Options', 'https://ffmpeg.org/download.html']
+    ],
+    steps: [
+      'Open CP Settings and find IPTV Provider.',
+      'Enter the Xtream server URL, username, and password, then save the provider.',
+      'Enable invalid TLS certificates only when the provider uses a self-signed or expired HTTPS certificate.',
+      'Use Test saved, then Sync catalog. The previous IPTV catalog remains available until all provider sections finish.',
+      'Open IPTV from the sidebar. Arabic and other Unicode provider text works without Ollama.'
+    ],
+    settingsHash: 'iptv'
+  },
+  {
     key: 'ollama',
     title: 'Ollama',
     status: 'Optional',
@@ -426,8 +479,8 @@ const helpSections = [
   {
     key: 'qbittorrent',
     title: 'qBittorrent',
-    status: 'Bundled in CP 2.8.0',
-    summary: 'CP Downloads is powered by the original qBittorrent WebUI using a tested portable runtime bundled with the 2.8.0 release.',
+    status: 'Portable runtime',
+    summary: 'CP Downloads is powered by the original qBittorrent WebUI using an isolated portable runtime that Settings can update from the official GitHub release.',
     links: [
       ['qBittorrent Official Website', 'https://www.qbittorrent.org/'],
       ['qBittorrent Downloads', 'https://www.qbittorrent.org/download']
@@ -436,6 +489,7 @@ const helpSections = [
       'Use CP Settings to choose embedded qBittorrent or your system default client.',
       'Set the completed movie folder or leave it empty to use the first CP library folder.',
       'Keep incomplete downloads outside movie library folders.',
+      'Use Update qBittorrent in Settings to replace only the embedded portable runtime.',
       'Open Downloads from the sidebar to see the original qBittorrent WebUI inside CP.'
     ],
     settingsHash: 'qbittorrent'

@@ -39,6 +39,7 @@ test('movie list view model keeps owned and missing movies together with upgrade
       resolution: '720p',
       rip_source: 'WEB-DL',
       path: 'E:/Movies/Heat.mkv',
+      maintenance_upgrade_candidate: true,
       canonical_metadata: { accepted: true, title: 'Heat', year: '1995', tmdb_id: '949', poster_url: 'heat-owned.jpg' }
     },
     {
@@ -302,7 +303,7 @@ test('library people index stays local to accepted movies and can enforce a loca
       accepted: true,
       title: 'What Women Want',
       year: '2000',
-      cast: [{ name: 'Mel Gibson' }]
+      cast: [{ name: 'Mel Gibson', profile_url: 'https://image.tmdb.org/mel.jpg' }]
     }
   };
   const index = buildLibraryPeopleIndex([accepted, unaccepted, nameOnly], 'melgibson');
@@ -310,6 +311,7 @@ test('library people index stays local to accepted movies and can enforce a loca
   assert.deepEqual(index, [{
     id: '2461',
     name: 'Mel Gibson',
+    profile_url: 'https://image.tmdb.org/mel.jpg',
     roles: ['actor', 'director'],
     movieCount: 2,
     knownFor: ['Braveheart (1995)', 'What Women Want (2000)'],
@@ -520,6 +522,7 @@ test('buildLibraryViewModel preserves Library filtering sorting pagination and s
       added_time: 20,
       canonical_metadata: { accepted: true, title: 'Beta', year: '2001', genres: ['Action'], rating: 7.1, language: 'French', country: 'France' },
       metadata_status: 'accepted',
+      maintenance_upgrade_candidate: true,
       plex_matched: true
     },
     {
@@ -579,4 +582,13 @@ test('buildLibraryViewModel preserves Library filtering sorting pagination and s
   });
 
   assert.deepEqual(listView.filteredItems.map((item) => getMovieIdentity(item).title), ['Beta']);
+
+  const upgradeView = buildLibraryViewModel({
+    items,
+    mode: 'movie',
+    qualityFilter: 'upgrade',
+    pageSize: 40,
+    currentPage: 1
+  });
+  assert.deepEqual(upgradeView.filteredItems.map((item) => getMovieIdentity(item).title), ['Beta']);
 });

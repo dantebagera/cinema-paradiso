@@ -1,6 +1,9 @@
 import argparse
+import hashlib
 import json
 import sys
+import zipfile
+from datetime import datetime
 from pathlib import Path
 from unittest.mock import patch
 
@@ -9,6 +12,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 import app
+from tools.catalog_migration_backup import verify_backup
 
 
 CANONICAL_FIELDS = (
@@ -50,6 +54,57 @@ def _legacy_snapshot(user_data_dir):
     }
 
 
+def _archive_json(archive, name, fallback):
+    try:
+        data = json.loads(archive.read(name).decode('utf-8'))
+    except (KeyError, UnicodeDecodeError, ValueError):
+        return fallback
+    return data if isinstance(data, type(fallback)) else fallback
+
+
+def _cutover_snapshot(archive_path):
+    archive_path = Path(archive_path).resolve()
+    manifest = verify_backup(archive_path)
+    with zipfile.ZipFile(archive_path, 'r') as archive:
+        poster_overrides = _archive_json(
+            archive, 'user-data/app_metadata/poster_overrides.json', {'overrides': []}
+        ).get('overrides', [])
+        metadata_overrides = _archive_json(
+            archive, 'user-data/app_metadata/metadata_overrides.json', {'overrides': []}
+        ).get('overrides', [])
+        snapshot = {
+            'files': _archive_json(archive, 'user-data/app_metadata/files.json', {'files': {}}).get('files', {}),
+            'tmdb_movies': _archive_json(archive, 'user-data/app_metadata/tmdb_metadata.json', {'movies': {}}).get('movies', {}),
+            'plex_files': _archive_json(archive, 'user-data/app_metadata/plex_metadata.json', {'files': {}}).get('files', {}),
+            'manual_matches': _archive_json(archive, 'user-data/app_metadata/manual_matches.json', {'matches': {}}).get('matches', {}),
+            'poster_overrides': poster_overrides,
+            'metadata_overrides': metadata_overrides,
+            '_poster_override_index': app.AppMetadataStore._index_overrides(poster_overrides),
+            '_metadata_override_index': app.AppMetadataStore._index_overrides(metadata_overrides),
+        }
+    created_at = datetime.fromisoformat(str(manifest['created_at']).replace('Z', '+00:00')).timestamp()
+    return snapshot, manifest, created_at
+
+
+def _configured_cutover_archive(user_data_dir):
+    user_data_dir = Path(user_data_dir).resolve()
+    receipt_path = user_data_dir / 'catalog-migration-cutover.json'
+    if not receipt_path.is_file() and user_data_dir == (PROJECT_ROOT / 'data').resolve():
+        receipt_path = PROJECT_ROOT / 'docs' / 'sql-migration-cutover.json'
+    receipt = _read_json(receipt_path, {})
+    archive_name = str(receipt.get('archive') or '').strip()
+    if not archive_name:
+        return None
+    archive_path = (user_data_dir / archive_name).resolve()
+    if user_data_dir not in archive_path.parents:
+        raise ValueError('Configured cutover archive escapes the user-data directory')
+    expected_hash = str(receipt.get('sha256') or '').strip().lower()
+    actual_hash = hashlib.sha256(archive_path.read_bytes()).hexdigest()
+    if not expected_hash or actual_hash != expected_hash:
+        raise ValueError('Configured cutover archive does not match its immutable receipt')
+    return archive_path
+
+
 def _legacy_canonical(record, key, snapshot, store):
     plex_data = snapshot['plex_files'].get(key, {})
     tmdb_data = snapshot['tmdb_movies'].get(str(record.get('tmdb_id') or ''), {})
@@ -70,8 +125,25 @@ def _normal(value):
     return json.loads(json.dumps(value, sort_keys=True, default=str))
 
 
+def _canonical_value(field, value):
+    if value in (None, '', [], {}):
+        return None
+    if field in {'cast', 'directors'}:
+        return [
+            {
+                'id': str(person.get('id', '') or '').strip(),
+                'name': str(person.get('name', '') or '').strip(),
+                'profile_url': str(person.get('profile_url', '') or '').strip(),
+                **({'character': str(person.get('character', '') or '').strip()} if field == 'cast' else {}),
+            }
+            for person in (value or [])
+            if isinstance(person, dict)
+        ]
+    return _normal(value)
+
+
 def _canonical_projection(canonical):
-    return {field: _normal(canonical.get(field)) for field in CANONICAL_FIELDS}
+    return {field: _canonical_value(field, canonical.get(field)) for field in CANONICAL_FIELDS}
 
 
 def _add(violations, name, row, limit):
@@ -99,11 +171,43 @@ def _updated_at(record):
         return 0
 
 
-def compare_json_shadow(user_data_dir, max_errors=100):
+def _changed_source_records(key, record, cutover, current_documents, cutover_at):
+    tmdb_id = str(record.get('tmdb_id') or cutover['files'].get(key, {}).get('tmdb_id') or '')
+    candidates = [
+        ('files', key),
+        ('plex_files', key),
+        ('manual_matches', key),
+    ]
+    if tmdb_id:
+        candidates.append(('tmdb_movies', tmdb_id))
+    evidence = []
+    for name, source_key in candidates:
+        before = cutover[name].get(source_key)
+        after = current_documents[name].get(source_key)
+        if after is None or _normal(before) == _normal(after):
+            continue
+        updated_at = _updated_at(after)
+        if updated_at > cutover_at:
+            evidence.append({
+                'record_type': name,
+                'key': source_key,
+                'updated_at': updated_at,
+                'change': 'created' if before is None else 'updated',
+            })
+    return evidence
+
+
+def compare_json_shadow(user_data_dir, max_errors=100, cutover_archive=None):
     """Compare literal legacy JSON canonical behavior with the active SQL catalog."""
     user_data_dir = Path(user_data_dir)
     store = app.AppMetadataStore(user_data_dir)
     legacy = _legacy_snapshot(user_data_dir)
+    cutover_archive = Path(cutover_archive).resolve() if cutover_archive else _configured_cutover_archive(user_data_dir)
+    cutover = None
+    cutover_manifest = None
+    cutover_at = 0
+    if cutover_archive:
+        cutover, cutover_manifest, cutover_at = _cutover_snapshot(cutover_archive)
     sql_snapshot = store.snapshot()
     sql_by_key = {
         str(candidate.get('path_key') or ''): candidate
@@ -112,6 +216,11 @@ def compare_json_shadow(user_data_dir, max_errors=100):
     legacy_by_key = {
         app._norm(str(record.get('path') or key)): dict(record or {})
         for key, record in legacy['files'].items()
+        if isinstance(record, dict)
+    }
+    cutover_by_key = {
+        app._norm(str(record.get('path') or key)): dict(record or {})
+        for key, record in (cutover or {}).get('files', {}).items()
         if isinstance(record, dict)
     }
     files_json = user_data_dir / 'app_metadata' / 'files.json'
@@ -130,6 +239,8 @@ def compare_json_shadow(user_data_dir, max_errors=100):
     }
     post_snapshot_sql_only = []
     post_snapshot_document_changes = []
+    post_cutover_deletions = []
+    post_cutover_canonical_changes = []
     post_snapshot_record_counts = {name: 0 for name in DOCUMENTS}
 
     with patch('app.urllib.request.urlopen', side_effect=AssertionError('JSON shadow comparison must not call providers')):
@@ -137,6 +248,15 @@ def compare_json_shadow(user_data_dir, max_errors=100):
             candidate = sql_by_key.get(key)
             path = str(record.get('path') or key)
             if not candidate:
+                cutover_record = cutover_by_key.get(key)
+                if cutover_record and not Path(path).exists():
+                    row = {
+                        'path': path,
+                        'message': 'Record existed in the verified SQL cutover and the file was deleted afterward',
+                    }
+                    if len(post_cutover_deletions) < max_errors:
+                        post_cutover_deletions.append(row)
+                    continue
                 _add(violations, 'legacy_only', {'path': path, 'message': 'Legacy JSON file record is missing from SQL'}, max_errors)
                 continue
             legacy_canonical = _legacy_canonical(record, key, legacy, store)
@@ -149,7 +269,32 @@ def compare_json_shadow(user_data_dir, max_errors=100):
                 if left[field] != right[field]
             }
             if differences:
-                _add(violations, 'canonical', {'path': path, 'differences': differences}, max_errors)
+                cutover_record = cutover_by_key.get(key)
+                cutover_projection = None
+                cutover_differences = None
+                change_evidence = []
+                if cutover_record:
+                    cutover_projection = _canonical_projection(_legacy_canonical(cutover_record, key, cutover, store))
+                    cutover_differences = {
+                        field: {'legacy_json': left[field], 'cutover_sql': cutover_projection[field]}
+                        for field in CANONICAL_FIELDS
+                        if left[field] != cutover_projection[field]
+                    }
+                    change_evidence = _changed_source_records(key, candidate.get('raw_json') or record, cutover, sql_documents, cutover_at)
+                if cutover_record and not cutover_differences and change_evidence:
+                    row = {
+                        'path': path,
+                        'message': 'Canonical behavior matched at the verified SQL cutover and changed with persisted source data afterward',
+                        'differences': differences,
+                        'evidence': change_evidence,
+                    }
+                    if len(post_cutover_canonical_changes) < max_errors:
+                        post_cutover_canonical_changes.append(row)
+                else:
+                    row = {'path': path, 'differences': differences}
+                    if cutover_differences:
+                        row['cutover_differences'] = cutover_differences
+                    _add(violations, 'canonical', row, max_errors)
 
         for key, candidate in sql_by_key.items():
             if key not in legacy_by_key:
@@ -170,9 +315,20 @@ def compare_json_shadow(user_data_dir, max_errors=100):
         for name, (_, _, key_name) in DOCUMENTS.items():
             legacy_records = legacy[name]
             sql_records = sql_documents[name]
+            cutover_records = (cutover or {}).get(name, {})
             for key, legacy_record in legacy_records.items():
                 sql_record = sql_records.get(key)
                 if sql_record is None:
+                    if key in cutover_records:
+                        row = {
+                            'record_type': name,
+                            'key': key,
+                            'message': 'Record existed in the verified SQL cutover and was deleted afterward',
+                        }
+                        post_snapshot_record_counts[name] -= 1
+                        if len(post_snapshot_document_changes) < max_errors:
+                            post_snapshot_document_changes.append(row)
+                        continue
                     _add(violations, 'document_legacy_only', {
                         'record_type': name,
                         'key': key,
@@ -182,7 +338,25 @@ def compare_json_shadow(user_data_dir, max_errors=100):
                 if _normal(legacy_record) == _normal(sql_record):
                     continue
                 row = {'record_type': name, 'key': key, 'message': 'Legacy JSON record differs from SQL'}
-                if _updated_at(sql_record) > legacy_snapshot_at:
+                cutover_record = cutover_records.get(key)
+                changed_after_cutover = (
+                    cutover_record is not None
+                    and _normal(cutover_record) != _normal(sql_record)
+                    and _updated_at(sql_record) > cutover_at
+                )
+                if changed_after_cutover:
+                    row['message'] = 'SQL record matched at cutover and changed afterward'
+                    if len(post_snapshot_document_changes) < max_errors:
+                        post_snapshot_document_changes.append(row)
+                elif (
+                    cutover_record is not None
+                    and _normal(cutover_record) == _normal(sql_record)
+                    and _updated_at(cutover_record) > legacy_snapshot_at
+                ):
+                    row['message'] = 'SQL record changed after the legacy JSON snapshot and before the verified cutover'
+                    if len(post_snapshot_document_changes) < max_errors:
+                        post_snapshot_document_changes.append(row)
+                elif _updated_at(sql_record) > legacy_snapshot_at and not cutover:
                     row['message'] = 'SQL record changed after the legacy JSON snapshot'
                     if len(post_snapshot_document_changes) < max_errors:
                         post_snapshot_document_changes.append(row)
@@ -221,6 +395,8 @@ def compare_json_shadow(user_data_dir, max_errors=100):
         'source': 'literal_legacy_json',
         'current_source': 'catalog',
         'database': str(store.catalog.database_path),
+        'cutover_archive': str(cutover_archive) if cutover_archive else '',
+        'cutover_created_at': cutover_manifest.get('created_at') if cutover_manifest else '',
         'catalog_generation': store.catalog.generation('media'),
         'legacy_snapshot_modified_at': legacy_snapshot_at,
         'checked_records': len(legacy_by_key),
@@ -233,6 +409,8 @@ def compare_json_shadow(user_data_dir, max_errors=100):
         },
         'post_snapshot_sql_only': post_snapshot_sql_only,
         'post_snapshot_document_changes': post_snapshot_document_changes,
+        'post_cutover_deletions': post_cutover_deletions,
+        'post_cutover_canonical_changes': post_cutover_canonical_changes,
         'passed': not count_differences and violation_count == 0,
         'violations': violations,
     }
@@ -242,8 +420,13 @@ def main():
     parser = argparse.ArgumentParser(description='Compare literal legacy JSON behavior with the active SQL catalog.')
     parser.add_argument('--user-data-dir', default=PROJECT_ROOT / 'data')
     parser.add_argument('--max-errors', type=int, default=100)
+    parser.add_argument('--cutover-archive')
     args = parser.parse_args()
-    report = compare_json_shadow(args.user_data_dir, max_errors=max(1, args.max_errors))
+    report = compare_json_shadow(
+        args.user_data_dir,
+        max_errors=max(1, args.max_errors),
+        cutover_archive=args.cutover_archive,
+    )
     print(json.dumps(report, indent=2))
     return 0 if report['passed'] else 1
 

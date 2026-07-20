@@ -133,10 +133,14 @@ export function buildLibraryPeopleIndex(items = [], query = '') {
         const entry = people.get(key) || {
           id,
           name,
+          profile_url: String(person.profile_url || '').trim(),
           roles: new Set(),
           movies: new Map(),
           localIdentity: !id
         };
+        if (!entry.profile_url && person.profile_url) {
+          entry.profile_url = String(person.profile_url).trim();
+        }
         entry.roles.add(role);
         entry.movies.set(movieKey, { title: identity.title || 'Untitled', year: identity.year || '' });
         people.set(key, entry);
@@ -157,6 +161,7 @@ export function buildLibraryPeopleIndex(items = [], query = '') {
     const matches = identifiedByName.get(normalizePersonSearchText(person.name)) || [];
     if (matches.length !== 1) continue;
     const identified = matches[0];
+    if (!identified.profile_url && person.profile_url) identified.profile_url = person.profile_url;
     person.roles.forEach((role) => identified.roles.add(role));
     person.movies.forEach((movie, movieKey) => identified.movies.set(movieKey, movie));
     people.delete(key);
@@ -167,6 +172,7 @@ export function buildLibraryPeopleIndex(items = [], query = '') {
     .map((person) => ({
       id: person.id,
       name: person.name,
+      profile_url: person.profile_url,
       roles: [...person.roles].sort(),
       movieCount: person.movies.size,
       knownFor: [...person.movies.values()]
@@ -322,7 +328,7 @@ export function buildMovieListViewModel({
   const rows = (list?.movies || []).map((movie) => {
     const ownedItem = movieIdentityKeys(movie).map((key) => ownership.get(key)).find(Boolean) || null;
     const ownedPayload = ownedItem ? moviePayload(ownedItem) : null;
-    const upgrade = Boolean(ownedItem && isLowQuality(ownedItem.resolution));
+    const upgrade = Boolean(ownedItem?.maintenance_upgrade_candidate);
     const title = ownedPayload?.title || movie.title || 'Untitled';
     const year = ownedPayload?.year || String(movie.year || '').trim();
     const poster = ownedItem ? (ownedPayload?.poster_url || '') : (movie.poster_url || '');
@@ -420,7 +426,7 @@ export function buildLibraryViewModel({
       ].filter(Boolean).join(' ').toLowerCase();
       if (!haystack.includes(normalizedQuery)) return false;
     }
-    if (qualityFilter === 'upgrade' && !isLowQuality(item.resolution)) return false;
+    if (qualityFilter === 'upgrade' && item.maintenance_upgrade_candidate !== true) return false;
     if (qualityFilter === 'good' && resolutionRank(item.resolution) < 3) return false;
     if (qualityFilter === '4k' && resolutionRank(item.resolution) !== 4) return false;
     if (!matchesLibraryResolutionFilter(item.resolution, resolutionFilter)) return false;

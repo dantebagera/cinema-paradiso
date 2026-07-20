@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   AlertTriangle,
   Bot,
@@ -62,6 +62,16 @@ const emptySettingsState = {
     label: 'Stream',
     url_template: 'https://streamimdb.ru/embed/movie/{tmdb_id}'
   },
+  iptv: {
+    server_url: '',
+    username: '',
+    password: '',
+    usernameHint: '',
+    configured: false,
+    allowInsecureTls: false,
+    counts: { live: 0, movie: 0, series: 0 },
+    ffmpegAvailable: false
+  },
   ollama: { url: '', model: '', candidateLimit: 15 },
   aiControl: {
     enabled: true,
@@ -82,6 +92,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
   const [revealed, setRevealed] = useState({});
   const [trustedIndexerDialogOpen, setTrustedIndexerDialogOpen] = useState(false);
   const [aiControlIndexerDialogOpen, setAiControlIndexerDialogOpen] = useState(false);
+  const editedFieldsRef = useRef(new Set());
 
   useEffect(() => {
     let cancelled = false;
@@ -95,12 +106,13 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
         fetchJson('/api/qbittorrent/config'),
         fetchJson('/api/tmdb/config'),
         fetchJson('/api/streaming/config'),
+        fetchJson('/api/iptv/status'),
         fetchJson('/api/ollama/config'),
         fetchJson('/api/ai-control/config')
       ]);
       if (cancelled) return;
-      const [library, appData, plex, prowlarr, qbittorrent, tmdb, streaming, ollama, aiControl] = requests;
-      setForms({
+      const [library, appData, plex, prowlarr, qbittorrent, tmdb, streaming, iptv, ollama, aiControl] = requests;
+      const loadedForms = {
         library: library.status === 'fulfilled' ? {
           directory: library.value.directory || '',
           directories: (library.value.directories && library.value.directories.length ? library.value.directories : [library.value.directory || '']).filter((path) => path !== ''),
@@ -126,6 +138,16 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           label: streaming.value.label || 'Stream',
           url_template: streaming.value.url_template || ''
         } : emptySettingsState.streaming,
+        iptv: iptv.status === 'fulfilled' ? {
+          server_url: iptv.value.server_url || '',
+          username: '',
+          password: '',
+          usernameHint: iptv.value.username_hint || '',
+          configured: Boolean(iptv.value.configured),
+          allowInsecureTls: Boolean(iptv.value.allow_insecure_tls),
+          counts: iptv.value.counts || emptySettingsState.iptv.counts,
+          ffmpegAvailable: Boolean(iptv.value.playback?.ffmpeg_available)
+        } : emptySettingsState.iptv,
         ollama: ollama.status === 'fulfilled' ? {
           url: ollama.value.url || '',
           model: ollama.value.model || '',
@@ -140,6 +162,15 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           ollama_curated_lists: Boolean(aiControl.value.ollama_curated_lists),
           indexers: aiControl.value.indexers || []
         } : emptySettingsState.aiControl
+      };
+      setForms((current) => {
+        const merged = { ...loadedForms };
+        editedFieldsRef.current.forEach((key) => {
+          const [section, field] = key.split('.');
+          if (!current[section] || !merged[section]) return;
+          merged[section] = { ...merged[section], [field]: current[section][field] };
+        });
+        return merged;
       });
       const failed = requests.filter((request) => request.status === 'rejected');
       if (failed.length) {
@@ -155,6 +186,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
   }, []);
 
   function updateField(section, field, value) {
+    editedFieldsRef.current.add(`${section}.${field}`);
     setForms((state) => ({
       ...state,
       [section]: { ...state[section], [field]: value }
@@ -162,6 +194,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
   }
 
   function updateTrustedReleaseIndexer(indexerId, checked) {
+    editedFieldsRef.current.add('prowlarr.trusted_release_indexers');
     setForms((state) => {
       const current = new Set(state.prowlarr.trusted_release_indexers || []);
       if (checked) {
@@ -180,6 +213,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
   }
 
   function updateAiControlTrustedIndexer(indexerId, checked) {
+    editedFieldsRef.current.add('aiControl.trusted_indexers');
     setForms((state) => {
       const current = new Set(state.aiControl.trusted_indexers || []);
       if (checked) {
@@ -198,6 +232,8 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
   }
 
   function updateLibraryDirectory(index, value) {
+    editedFieldsRef.current.add('library.directory');
+    editedFieldsRef.current.add('library.directories');
     setForms((state) => {
       const directories = [...(state.library.directories || [''])];
       directories[index] = value;
@@ -213,6 +249,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
   }
 
   function addLibraryDirectory() {
+    editedFieldsRef.current.add('library.directories');
     setForms((state) => ({
       ...state,
       library: {
@@ -223,6 +260,8 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
   }
 
   function removeLibraryDirectory(index) {
+    editedFieldsRef.current.add('library.directory');
+    editedFieldsRef.current.add('library.directories');
     setForms((state) => {
       const current = state.library.directories || [''];
       const directories = current.filter((_, itemIndex) => itemIndex !== index);
@@ -391,6 +430,88 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
     }
   }
 
+  async function updateQbittorrent() {
+    setActionState('qbittorrent-update', true);
+    setCardStatus('qbittorrent', 'neutral', 'Updating portable qBittorrent.', 'Checking the latest official GitHub release.');
+    try {
+      const result = await fetchJson('/api/qbittorrent/update', { method: 'POST' });
+      setTorrentHandlingConfig(result);
+      setForms((state) => ({ ...state, qbittorrent: { ...state.qbittorrent, ...result } }));
+      if (result.update_result === 'current') {
+        setCardStatus('qbittorrent', 'success', 'qBittorrent is already current.', `Portable runtime ${result.version}.`);
+        notify(`qBittorrent ${result.version} is already current`);
+      } else {
+        setCardStatus('qbittorrent', 'success', `qBittorrent updated to ${result.version}.`, 'The embedded WebUI restarted with the existing profile and downloads.');
+        notify(`qBittorrent updated to ${result.version}`);
+      }
+    } catch (error) {
+      setCardStatus('qbittorrent', 'error', 'qBittorrent update failed.', error.message);
+      notify(`qBittorrent update failed: ${error.message}`, 'error');
+    } finally {
+      setActionState('qbittorrent-update', false);
+    }
+  }
+
+  async function saveIPTV() {
+    setActionState('iptv-save', true);
+    try {
+      const saved = await fetchJson('/api/iptv/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          server_url: forms.iptv.server_url,
+          username: forms.iptv.username,
+          password: forms.iptv.password,
+          allow_insecure_tls: Boolean(forms.iptv.allowInsecureTls)
+        })
+      });
+      setForms((state) => ({
+        ...state,
+        iptv: {
+          ...state.iptv,
+          server_url: saved.server_url || state.iptv.server_url,
+          username: '',
+          password: '',
+          usernameHint: saved.username_hint || state.iptv.usernameHint,
+          configured: Boolean(saved.configured)
+        }
+      }));
+      setCardStatus('iptv', 'success', 'IPTV provider saved.', 'Saved credentials remain on the Flask backend.');
+      notify('IPTV provider saved');
+      return true;
+    } catch (error) {
+      setCardStatus('iptv', 'error', 'IPTV provider not saved.', error.message);
+      return false;
+    } finally {
+      setActionState('iptv-save', false);
+    }
+  }
+
+  async function testIPTV() {
+    setActionState('iptv-test', true);
+    try {
+      const data = await fetchJson('/api/iptv/test', { method: 'POST' });
+      setCardStatus('iptv', 'success', 'IPTV provider connected.', data.status ? `Account status: ${data.status}.` : 'Xtream authentication succeeded.');
+    } catch (error) {
+      setCardStatus('iptv', 'error', 'IPTV connection failed.', error.message);
+    } finally {
+      setActionState('iptv-test', false);
+    }
+  }
+
+  async function syncIPTV() {
+    setActionState('iptv-sync', true);
+    try {
+      await fetchJson('/api/iptv/sync', { method: 'POST' });
+      setCardStatus('iptv', 'success', 'IPTV catalog sync started.', 'Live TV, movies, and series will replace the previous catalog together.');
+      notify('IPTV catalog sync started');
+    } catch (error) {
+      setCardStatus('iptv', 'error', 'IPTV sync did not start.', error.message);
+    } finally {
+      setActionState('iptv-sync', false);
+    }
+  }
+
   async function saveAiControl(options = {}) {
     const includeTrusted = Boolean(options.includeTrusted);
     setActionState('ai-control-save', true);
@@ -503,6 +624,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
     { key: 'qbittorrent', label: 'qBittorrent', ready: forms.qbittorrent.mode === 'system' || Boolean(forms.qbittorrent.installed), tone: 'gold' },
     { key: 'tmdb', label: 'TMDB', ready: Boolean(forms.tmdb.key), tone: 'green' },
     { key: 'streaming', label: 'Streaming', ready: Boolean(forms.streaming.enabled && forms.streaming.url_template), tone: 'green' },
+    { key: 'iptv', label: 'IPTV', ready: Boolean(forms.iptv.configured), tone: 'gold' },
     { key: 'ollama', label: 'Ollama', ready: Boolean(forms.ollama.url && forms.ollama.model), tone: 'violet' },
     { key: 'ai-control', label: 'AI Control', ready: Boolean(forms.aiControl.enabled), tone: 'violet' }
   ];
@@ -813,16 +935,19 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
               ) : null}
               <p className="settings-runtime-detail">
                 {forms.qbittorrent.installed
-                  ? `Bundled qBittorrent ${forms.qbittorrent.version || 'runtime'} · ${forms.qbittorrent.running ? 'Running' : 'Stopped'}`
+                  ? `Portable qBittorrent ${forms.qbittorrent.version || 'runtime'} · ${forms.qbittorrent.running ? 'Running' : 'Stopped'}`
                   : forms.qbittorrent.supported === false
-                    ? 'Bundled qBittorrent is unavailable in this build.'
-                    : 'Bundled qBittorrent runtime will be used when included in the portable release.'}
+                    ? 'Portable qBittorrent is unavailable in this build.'
+                    : 'The embedded portable qBittorrent runtime is missing.'}
               </p>
             </>
           )}
           actions={(
             <>
               <ActionButton loading={saving['qbittorrent-save']} icon={Save} label="Save qBittorrent" onClick={saveQbittorrent} primary />
+              {forms.qbittorrent.installed && forms.qbittorrent.mode === 'embedded' ? (
+                <ActionButton loading={saving['qbittorrent-update']} icon={RefreshCcw} label="Update qBittorrent" onClick={updateQbittorrent} />
+              ) : null}
               {forms.qbittorrent.installed ? (
                 <ActionButton loading={false} icon={ExternalLink} label="Open Downloads" onClick={() => window.location.assign('/downloads')} />
               ) : null}
@@ -899,6 +1024,60 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           )}
           actions={(
             <ActionButton loading={saving['streaming-save']} icon={Save} label="Save Streaming" onClick={() => saveIntegration('streaming')} primary />
+          )}
+        />
+
+        <IntegrationCard
+          id="settings-iptv"
+          icon={Radio}
+          title="IPTV Provider"
+          accent="gold"
+          status={statuses.iptv}
+          fields={(
+            <>
+              <label className="dialog-field">
+                <span>Xtream server URL</span>
+                <input value={forms.iptv.server_url || ''} onChange={(event) => updateField('iptv', 'server_url', event.target.value)} placeholder="https://provider.example:2096" />
+              </label>
+              <label className="dialog-field">
+                <span>Username</span>
+                <input value={forms.iptv.username || ''} onChange={(event) => updateField('iptv', 'username', event.target.value)} placeholder={forms.iptv.usernameHint || 'Xtream username'} autoComplete="off" />
+                {forms.iptv.usernameHint ? <small>Saved account: {forms.iptv.usernameHint}. Leave blank to keep it.</small> : null}
+              </label>
+              <SecretField
+                label="Password"
+                value={forms.iptv.password || ''}
+                revealed={revealed.iptv}
+                onReveal={() => setRevealed((state) => ({ ...state, iptv: !state.iptv }))}
+                onChange={(value) => updateField('iptv', 'password', value)}
+              />
+              <label className="settings-checkbox-field">
+                <input
+                  type="checkbox"
+                  checked={Boolean(forms.iptv.allowInsecureTls)}
+                  onChange={(event) => updateField('iptv', 'allowInsecureTls', event.target.checked)}
+                />
+                <span>
+                  <strong>Allow invalid provider TLS certificate</strong>
+                  <small>Required only when the IPTV server uses a self-signed or expired HTTPS certificate.</small>
+                </span>
+              </label>
+              <p className="settings-runtime-detail">
+                {forms.iptv.configured
+                  ? `${formatCount(forms.iptv.counts.live)} channels · ${formatCount(forms.iptv.counts.movie)} movies · ${formatCount(forms.iptv.counts.series)} series`
+                  : 'One active Xtream provider is supported in Cinema Paradiso 2.8.'}
+              </p>
+              <p className="settings-runtime-detail">
+                Integrated playback: {forms.iptv.ffmpegAvailable ? 'FFmpeg ready' : 'FFmpeg not found on this machine'}
+              </p>
+            </>
+          )}
+          actions={(
+            <>
+              <ActionButton loading={saving['iptv-save']} icon={Save} label="Save provider" onClick={saveIPTV} primary />
+              <ActionButton loading={saving['iptv-test']} icon={PlugZap} label="Test saved" onClick={testIPTV} />
+              <ActionButton loading={saving['iptv-sync']} icon={RefreshCcw} label="Sync catalog" onClick={syncIPTV} />
+            </>
           )}
         />
 
@@ -1129,6 +1308,7 @@ function integrationText(title) {
     qBittorrent: 'Portable downloads powered by the original qBittorrent WebUI.',
     TMDB: 'Posters, plots, cast, discovery lists, and trailers.',
     'Streaming Link': 'Configurable embedded movie stream URL template.',
+    'IPTV Provider': 'Separate Xtream catalog and integrated local playback.',
     Ollama: 'Local AI recommendations through your own model.'
   }[title] || '';
 }
@@ -1147,9 +1327,9 @@ function SecretField({ label, value, revealed, onReveal, onChange }) {
   );
 }
 
-function ActionButton({ loading, icon: Icon, label, onClick, primary }) {
+function ActionButton({ loading, icon: Icon, label, onClick, primary, disabled = false }) {
   return (
-    <button type="button" className={cx('btn', primary ? 'btn-primary' : 'btn-secondary')} onClick={onClick} disabled={loading}>
+    <button type="button" className={cx('btn', primary ? 'btn-primary' : 'btn-secondary')} onClick={onClick} disabled={loading || disabled}>
       {loading ? <Loader2 size={15} className="spin" /> : <Icon size={15} />} {label}
     </button>
   );

@@ -3,6 +3,7 @@ import test from 'node:test';
 
 import {
   buildOwnershipMap,
+  canonicalOwnedMovie,
   discoverMoviePayload,
   discoverMovieKey,
   filterEnrichedIndexerResults,
@@ -11,6 +12,48 @@ import {
   ownershipKeys,
   sortTorrentVariants
 } from '../src/discoverUtils.js';
+
+test('canonicalOwnedMovie makes the owned SQL card authoritative on every surface', () => {
+  const online = {
+    tmdb_id: '42', title: 'Online Title', year: '2025', poster_url: 'online.jpg',
+    genres: ['Online'], plot: 'Online plot', tmdb_rating: '7.0', tmdb_vote_count: 1600,
+    language: 'French', country: 'FR'
+  };
+  const owned = {
+    canonical_card: {
+      canonical_metadata: {
+        accepted: true,
+        tmdb_id: '42',
+        imdb_id: 'tt0000042',
+        title: 'Canonical Title',
+        year: '2024',
+        poster_url: 'canonical.jpg',
+        genres: ['Drama'],
+        plot: 'Canonical plot',
+        summary: 'Canonical plot',
+        rating: '8.4',
+        tmdb_vote_count: 120,
+        language: 'English',
+        country: 'US',
+        cast: [{ id: '1', name: 'SQL Actor' }],
+        directors: [{ id: '2', name: 'SQL Director' }]
+      }
+    }
+  };
+
+  const displayed = canonicalOwnedMovie(online, owned);
+  assert.equal(displayed.title, 'Canonical Title');
+  assert.equal(displayed.year, '2024');
+  assert.equal(displayed.poster_url, 'canonical.jpg');
+  assert.deepEqual(displayed.genres, ['Drama']);
+  assert.equal(displayed.plot, 'Canonical plot');
+  assert.equal(displayed.tmdb_rating, '8.4');
+  assert.equal(displayed.tmdb_vote_count, 120);
+  assert.equal(displayed.language, 'English');
+  assert.equal(displayed.country, 'US');
+  assert.deepEqual(displayed.cast, [{ id: '1', name: 'SQL Actor' }]);
+  assert.deepEqual(displayed.directors, [{ id: '2', name: 'SQL Director' }]);
+});
 
 test('buildOwnershipMap keeps only found movies with local paths', () => {
   const map = buildOwnershipMap([

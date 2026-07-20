@@ -21,7 +21,7 @@ class CatalogParityAuditTest(unittest.TestCase):
         app._user_data_dir = self.original_user_data_dir
         self.tmp.cleanup()
 
-    def test_audit_accepts_sql_canonical_details_and_deferred_projections(self):
+    def test_audit_accepts_sql_canonical_card_metadata_and_deferred_people(self):
         path = "E:/Movies/Parity Movie.2024.1080p.mkv"
         self.store.apply_tmdb_match(path, {
             "tmdb_id": "42",
@@ -41,7 +41,7 @@ class CatalogParityAuditTest(unittest.TestCase):
         self.assertEqual(report["accepted_records"], 1)
         self.assertEqual(report["provider_calls"], 0)
 
-    def test_audit_accepts_plex_as_the_active_persisted_detail_provider(self):
+    def test_audit_rejects_plex_fallback_as_completion_for_tmdb_selected_identity(self):
         path = "E:/Movies/Plex Fallback.2024.1080p.mkv"
         self.store.update_file_record(path, {
             "filename": "Plex Fallback.2024.1080p.mkv",
@@ -62,8 +62,10 @@ class CatalogParityAuditTest(unittest.TestCase):
 
         report = audit_catalog(self.tmp.name)
 
-        self.assertTrue(report["passed"])
+        self.assertFalse(report["passed"])
         self.assertEqual(report["active_detail_providers"], {"plex_snapshot": 1})
+        self.assertEqual(len(report["violations"]["deferred_details"]), 1)
+        self.assertEqual(len(report["relational"]["violations"]), 1)
 
     def test_audit_rejects_tmdb_display_rows_without_a_sql_snapshot(self):
         path = "E:/Movies/Missing Snapshot.2024.mkv"
@@ -83,6 +85,32 @@ class CatalogParityAuditTest(unittest.TestCase):
 
         self.assertFalse(report["passed"])
         self.assertEqual(len(report["violations"]["deferred_details"]), 1)
+
+    def test_audit_compares_relational_projection_to_legacy_json_contract(self):
+        path = "E:/Movies/Shadow Movie.2024.mkv"
+        self.store.apply_tmdb_match(path, {
+            "tmdb_id": "77",
+            "imdb_id": "tt0000077",
+            "title": "Shadow Movie",
+            "year": "2024",
+            "plot": "Stored detail.",
+            "cast": [{"id": "7", "name": "Actor"}],
+            "directors": [{"id": "8", "name": "Director"}],
+        })
+        self.store.update_file_record(path, {"filename": "Shadow Movie.2024.mkv"})
+        connection = self.store.catalog.store.connect()
+        try:
+            connection.execute(
+                "UPDATE canonical_movies SET title = 'Relational projection changed' WHERE tmdb_id = '77'"
+            )
+            connection.commit()
+        finally:
+            connection.close()
+
+        report = audit_catalog(self.tmp.name)
+
+        self.assertFalse(report["passed"])
+        self.assertEqual(len(report["violations"]["relational_shadow"]), 1)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,6 @@
+{
+  "archive": "catalog-migration-backups/cp-catalog-migration-20260716T132416Z.zip",
+  "sha256": "b91a2bb5cb5dce13fe4d9f5dd6fa60bcaeaf8bb72fdde15086d36bdf2387271b",
+  "created_at": "2026-07-16T13:24:16.123041+00:00",
+  "purpose": "Immutable JSON-to-SQL cutover parity baseline"
+}

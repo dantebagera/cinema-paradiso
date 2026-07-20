@@ -9,11 +9,12 @@ import SelectionCheckbox from './SelectionCheckbox.jsx';
 import { UnifiedMovieCard } from './movie-card/MovieCard.jsx';
 import { cx, formatCount } from '../utils/appUtils.js';
 import {
-  getLocaleTag, getMovieIdentity, getQualityLabel, getRolePeople, isLowQuality
+  getLocaleTag, getMovieIdentity, getQualityLabel, getRolePeople
 } from '../utils/libraryUtils.js';
 import {
   formatReleaseDateLabel, formatVoteCount, isUnreleasedMovie
 } from '../utils/moviePresentation.js';
+import { canonicalOwnedMovie } from '../discoverUtils.js';
 
 export function PosterEditButton({ title, onEdit }) {
   if (!onEdit) return null;
@@ -106,21 +107,30 @@ export function DiscoverMovieCard({
   selected,
   onSelect
 }) {
-  const lowQuality = owned && isLowQuality(owned.resolution);
-  const unreleased = !owned && isUnreleasedMovie(movie);
-  const posterMovie = owned?.poster_url ? { ...movie, poster_url: owned.poster_url } : movie;
+  const ownedItem = owned?.canonical_card || owned?.library_item || {};
+  const ownedCanonical = ownedItem.canonical_metadata || {};
+  const displayMovie = canonicalOwnedMovie(movie, owned);
+  const displayDetails = ownedCanonical.accepted ? {
+    ...(details || {}),
+    ...ownedCanonical,
+    loading: details?.loading,
+    error: details?.error,
+    trailer_url: details?.trailer_url || ownedCanonical.trailer_url || ''
+  } : details;
+  const lowQuality = Boolean(owned?.maintenance_upgrade_candidate);
+  const unreleased = !owned && isUnreleasedMovie(displayMovie);
   return (
     <UnifiedMovieCard
       className={cx('discover-movie-card', expanded && 'discover-card-expanded')}
-      title={movie.title}
-      year={movie.year}
-      posterUrl={posterMovie.poster_url}
-      rating={movie.tmdb_rating}
-      voteCount={formatVoteCount(movie.tmdb_vote_count)}
-      chips={(movie.genres || []).slice(0, 2)}
+      title={displayMovie.title}
+      year={displayMovie.year}
+      posterUrl={displayMovie.poster_url}
+      rating={displayMovie.tmdb_rating}
+      voteCount={formatVoteCount(displayMovie.tmdb_vote_count)}
+      chips={(displayMovie.genres || []).slice(0, 2)}
       mutedChips={[
-        movie.language,
-        movie.country_flag || movie.country,
+        displayMovie.language,
+        displayMovie.country_flag || displayMovie.country,
         owned?.resolution,
         owned?.size_human
       ]}
@@ -134,18 +144,18 @@ export function DiscoverMovieCard({
       cornerControls={(
         <>
           <PosterStateControls
-            title={movie.title}
+            title={displayMovie.title}
             watched={watched}
             watchlisted={watchlisted}
             onToggleWatched={owned ? onToggleWatched : undefined}
             onToggleWatchlist={onToggleWatchlist}
           />
-          <PosterEditButton title={movie.title} onEdit={owned ? onEditPoster : undefined} />
+          <PosterEditButton title={displayMovie.title} onEdit={owned ? onEditPoster : undefined} />
           <SelectionCheckbox
             className="discover-selection-checkbox"
             checked={Boolean(selected)}
             onChange={onSelect}
-            label={`Select ${movie.title}`}
+            label={`Select ${displayMovie.title}`}
           />
         </>
       )}
@@ -153,7 +163,7 @@ export function DiscoverMovieCard({
       {expanded && (
         <>
           {reason && <p className="ai-reason"><Sparkles size={14} /> {reason}</p>}
-          <p className="movie-card-plot discover-plot-visible">{movie.plot || 'No plot summary is available yet.'}</p>
+          <p className="movie-card-plot discover-plot-visible">{displayMovie.summary || displayMovie.plot || 'No plot summary is available yet.'}</p>
           <div className="card-actions">
             {owned ? (
               <>
@@ -161,7 +171,7 @@ export function DiscoverMovieCard({
                   <Play size={15} /> Play
                 </button>
                 {lowQuality && (
-                  <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie, true)}>
+                  <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(displayMovie, true)}>
                     <Wand2 size={15} /> Find upgrade
                   </button>
                 )}
@@ -180,7 +190,7 @@ export function DiscoverMovieCard({
                 )}
               </>
             )}
-            <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie)}>
+            <button type="button" className="btn btn-secondary" onClick={() => onTrailer(displayMovie)}>
               <Film size={15} /> Trailer
             </button>
             {!owned && (
@@ -190,12 +200,12 @@ export function DiscoverMovieCard({
             )}
           </div>
           <MovieExpandedDetails
-            movie={movie}
-            details={details}
-            collection={collection}
+            movie={displayMovie}
+            details={displayDetails}
+            collection={collection?.id ? collection : displayMovie.collection || {}}
             itemLists={itemLists}
-            directors={movie.directors}
-            cast={movie.cast}
+            directors={displayMovie.directors}
+            cast={displayMovie.cast}
             onPersonBrowse={onPersonBrowse}
             onCollectionBrowse={onCollectionBrowse}
             onListBrowse={onListBrowse}
@@ -542,7 +552,7 @@ export function LibraryMovieCard({
 }) {
   const identity = getMovieIdentity(item);
   const canonical = item.canonical_metadata || {};
-  const lowQuality = isLowQuality(item.resolution);
+  const lowQuality = item.maintenance_upgrade_candidate === true;
   const genres = (canonical.genres?.length ? canonical.genres : item.plex_genres || []).slice(0, expanded ? 10 : 3);
   const directors = getRolePeople(item, details, 'director');
   const cast = getRolePeople(item, details, 'actor').slice(0, 6);
@@ -554,6 +564,13 @@ export function LibraryMovieCard({
     tmdb_id: canonical.tmdb_id || item.tmdb_id || ''
   };
   const posterUrl = canonical.poster_url || item.plex_poster || '';
+  const canonicalDetails = details ? {
+    ...details,
+    ...canonical,
+    loading: details.loading,
+    error: details.error,
+    trailer_url: details.trailer_url || canonical.trailer_url || ''
+  } : canonical;
 
   return (
     <UnifiedMovieCard
@@ -595,7 +612,7 @@ export function LibraryMovieCard({
       {expanded && (
         <>
           <p className="library-summary movie-summary-expanded">
-            {details?.summary || details?.plot || canonical.summary || canonical.plot || item.plex_summary || 'No plot summary is available yet.'}
+            {canonical.summary || canonical.plot || details?.summary || details?.plot || item.plex_summary || 'No plot summary is available yet.'}
           </p>
           <div className="library-card-actions">
             <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(item.path)}>
@@ -615,8 +632,8 @@ export function LibraryMovieCard({
           </div>
           <MovieExpandedDetails
             movie={{ title: identity.title, year: identity.year }}
-            details={details}
-            collection={collection}
+            details={canonicalDetails}
+            collection={collection?.id ? collection : canonical.collection || {}}
             itemLists={itemLists}
             directors={directors}
             cast={cast}
