@@ -211,7 +211,7 @@ def compare_json_shadow(user_data_dir, max_errors=100, cutover_archive=None):
     sql_snapshot = store.snapshot()
     sql_by_key = {
         str(candidate.get('path_key') or ''): candidate
-        for candidate in store.catalog.store.library_candidates()
+        for candidate in store.catalog.store.audit_library_candidates()
     }
     legacy_by_key = {
         app._norm(str(record.get('path') or key)): dict(record or {})

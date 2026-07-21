@@ -19,7 +19,7 @@ from services.catalog_repository import CatalogRepository, catalog_database_path
 
 
 BACKUP_FORMAT = "cinema-paradiso-catalog-migration-backup"
-BACKUP_VERSION = 2
+BACKUP_VERSION = 3
 QBITTORRENT_STATE_FILES = {"jobs.json", "runtime.json"}
 CATALOG_ROLLBACK_DOCUMENTS = {
     "app_metadata/files.json": {"files": {}},
@@ -62,6 +62,7 @@ def resolve_backup_sources(project_root):
         "config_path": config_path,
         "user_data_dir": user_data_dir.resolve(),
         "catalog_path": catalog_database_path(user_data_dir),
+        "metadata_dir": (Path(os.environ.get("LOCALAPPDATA") or project_root) / "Cinema Paradiso" / "Metadata").resolve(),
     }
 
 
@@ -70,11 +71,40 @@ def _include_user_data_file(relative_path):
     parts = [part.lower() for part in relative_path.parts]
     if not parts:
         return False
-    if parts[0] in {"backups", "catalog-migration-backups"}:
+    if parts[0] in {"backups", "catalog-migration-backups"} or parts[0].startswith("catalog-performance-"):
         return False
     if parts[0] != "qbittorrent":
         return True
     return len(parts) == 2 and parts[1] in QBITTORRENT_STATE_FILES
+
+
+def _registered_metadata_files(catalog_path, metadata_dir):
+    catalog_path = Path(catalog_path)
+    metadata_dir = Path(metadata_dir).resolve()
+    if not catalog_path.is_file() or not metadata_dir.is_dir():
+        return []
+    connection = None
+    try:
+        connection = sqlite3.connect(f"file:{catalog_path.as_posix()}?mode=ro", uri=True)
+        if not connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='media_assets'"
+        ).fetchone():
+            return []
+        paths = []
+        for row in connection.execute(
+            "SELECT DISTINCT local_path FROM media_assets WHERE status='ready' AND local_path<>''"
+        ):
+            path = Path(row[0]).resolve()
+            try:
+                path.relative_to(metadata_dir)
+            except ValueError:
+                continue
+            if path.is_file():
+                paths.append(path)
+        return sorted(set(paths), key=lambda item: str(item).lower())
+    finally:
+        if connection is not None:
+            connection.close()
 
 
 def _backup_entries(project_root):
@@ -91,6 +121,11 @@ def _backup_entries(project_root):
             relative = path.relative_to(user_data_dir)
             if _include_user_data_file(relative):
                 entries.append((path, PurePosixPath("user-data") / relative.as_posix(), "user_data"))
+    metadata_dir = sources["metadata_dir"]
+    if metadata_dir.is_dir():
+        for path in _registered_metadata_files(sources["catalog_path"], metadata_dir):
+            relative = path.relative_to(metadata_dir)
+            entries.append((path, PurePosixPath("metadata") / relative.as_posix(), "metadata_asset"))
     return sources, entries
 
 
@@ -138,6 +173,8 @@ def _semantic_counts(payloads):
         "collection_overrides": _count_mapping(collections, "overrides"),
         "followed_releases": _count_list(followed, "movies"),
         "qbittorrent_jobs": _count_mapping(qbt_jobs, "jobs"),
+        "metadata_asset_files": sum(1 for name in payloads if name.startswith("metadata/assets/")),
+        "metadata_asset_bytes": sum(len(payload) for name, payload in payloads.items() if name.startswith("metadata/assets/")),
     }
     catalog_payload = payloads.get("catalog/catalog.sqlite")
     if catalog_payload:
@@ -289,6 +326,7 @@ def create_backup(project_root, output_dir=None, now=None):
         "source": {
             "project_root": str(sources["project_root"]),
             "user_data_dir": str(sources["user_data_dir"]),
+            "metadata_dir": str(sources["metadata_dir"]),
         },
         "files": file_manifest,
         "totals": {
@@ -327,7 +365,7 @@ def verify_backup(archive_path):
                 manifest = json.loads(archive.read("manifest.json").decode("utf-8"))
             except (KeyError, UnicodeDecodeError, ValueError) as error:
                 raise BackupError("Backup manifest is missing or invalid") from error
-            if manifest.get("format") != BACKUP_FORMAT or manifest.get("version") not in {1, BACKUP_VERSION}:
+            if manifest.get("format") != BACKUP_FORMAT or manifest.get("version") not in {1, 2, BACKUP_VERSION}:
                 raise BackupError("Unsupported backup format or version")
             payloads = {}
             for item in manifest.get("files", []):

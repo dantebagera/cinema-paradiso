@@ -28,7 +28,11 @@ def _normalized_shadow_value(field, value):
             {
                 "id": str(person.get("id", "") or "").strip(),
                 "name": str(person.get("name", "") or "").strip(),
-                "profile_url": str(person.get("profile_url", "") or "").strip(),
+                "profile_url": str(
+                    person.get("remote_profile_url")
+                    if str(person.get("profile_url", "") or "").startswith("/api/assets/")
+                    else person.get("profile_url", "")
+                ).strip(),
                 **({"character": str(person.get("character", "") or "").strip()} if field == "cast" else {}),
             }
             for person in (value or [])
@@ -68,7 +72,18 @@ def audit_catalog(user_data_dir, max_errors=100):
     """Read the active SQL catalog through the same canonical projections as the app."""
     store = app.AppMetadataStore(Path(user_data_dir))
     snapshot = store.snapshot()
-    candidates = store.catalog.store.library_candidates()
+    candidates = store.catalog.store.audit_library_candidates()
+    connection = store.catalog.store.connect()
+    try:
+        relational_by_path = store.catalog.store.canonical.project_paths(
+            connection,
+            [candidate["path_key"] for candidate in candidates],
+            include_details=True,
+        )
+    finally:
+        connection.close()
+    for candidate in candidates:
+        candidate["relational_canonical"] = relational_by_path.get(candidate["path_key"], {})
     violations = {
         "sql_rows": [],
         "canonical": [],
@@ -146,7 +161,10 @@ def audit_catalog(user_data_dir, max_errors=100):
             if relational_canonical:
                 for field in SHADOW_FIELDS:
                     legacy_value = _normalized_shadow_value(field, legacy_canonical.get(field))
-                    relational_value = _normalized_shadow_value(field, relational_canonical.get(field))
+                    relational_source = relational_canonical.get(field)
+                    if field == "poster_url" and str(relational_source or "").startswith("/api/assets/"):
+                        relational_source = relational_canonical.get("remote_poster_url")
+                    relational_value = _normalized_shadow_value(field, relational_source)
                     if legacy_value != relational_value:
                         _violation(
                             violations["relational_shadow"],

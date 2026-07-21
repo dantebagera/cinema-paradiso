@@ -12,6 +12,24 @@ export function movieDetailsCacheKey(movie, owned = null) {
   return tmdbId ? `tmdb:${tmdbId}` : '';
 }
 
+export function mergeCanonicalMovieDetails(summary = {}, details = {}) {
+  const merged = { ...(summary || {}), ...(details || {}) };
+  const textFields = [
+    'title', 'year', 'tmdb_id', 'imdb_id', 'plex_guid', 'poster_url',
+    'plot', 'summary', 'rating', 'language', 'country', 'country_flag', 'release_date'
+  ];
+  textFields.forEach((field) => {
+    if ((merged[field] === '' || merged[field] == null) && summary?.[field] != null) {
+      merged[field] = summary[field];
+    }
+  });
+  if (!merged.genres?.length && summary?.genres?.length) merged.genres = summary.genres;
+  if (!merged.cast?.length && summary?.cast?.length) merged.cast = summary.cast;
+  if (!merged.directors?.length && summary?.directors?.length) merged.directors = summary.directors;
+  if (!merged.collection?.id && summary?.collection?.id) merged.collection = summary.collection;
+  return merged;
+}
+
 export function normalizeLibraryMovieDetails(response) {
   const item = response?.item || {};
   const canonical = item.canonical_metadata || {};

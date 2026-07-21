@@ -6,6 +6,100 @@ from services.movie_identity import normalize_movie_title, ownership_keys
 
 
 CANONICAL_CONTRACT_VERSION = 2
+CANONICAL_CARD_CONTRACT = "canonical_movie_card"
+CANONICAL_DETAILS_CONTRACT = "canonical_movie_details"
+CANONICAL_CARD_FIELDS = (
+    "accepted", "adult", "status", "identity_status", "enrichment_status",
+    "metadata_contract_version", "source", "detail_provider", "selected_provider",
+    "selected_provider_snapshot", "fallback_active", "people_status", "movie_key",
+    "title", "year", "tmdb_id", "imdb_id", "plex_guid", "identity_revision",
+    "poster_url", "genres", "plot", "summary", "rating", "tmdb_rating",
+    "plex_rating", "tmdb_vote_count", "language", "country", "country_flag",
+    "release_date",
+)
+CANONICAL_DEFERRED_DETAIL_FIELDS = (
+    "backdrop_url", "runtime", "tagline", "trailer_url", "collection",
+    "cast", "directors", "director",
+)
+
+
+_CANONICAL_DEFAULTS = {
+    "accepted": False,
+    "adult": False,
+    "status": "",
+    "identity_status": "",
+    "enrichment_status": "incomplete",
+    "metadata_contract_version": CANONICAL_CONTRACT_VERSION,
+    "source": "",
+    "detail_provider": "",
+    "selected_provider": "",
+    "selected_provider_snapshot": False,
+    "fallback_active": False,
+    "people_status": "missing",
+    "movie_key": "",
+    "title": "",
+    "year": "",
+    "tmdb_id": "",
+    "imdb_id": "",
+    "plex_guid": "",
+    "identity_revision": 0,
+    "poster_url": "",
+    "genres": [],
+    "plot": "",
+    "summary": "",
+    "rating": "",
+    "tmdb_rating": "",
+    "plex_rating": "",
+    "tmdb_vote_count": 0,
+    "language": "",
+    "country": "",
+    "country_flag": "",
+    "release_date": "",
+    "backdrop_url": "",
+    "runtime": None,
+    "tagline": "",
+    "trailer_url": "",
+    "collection": {},
+    "cast": [],
+    "directors": [],
+    "director": {},
+}
+
+
+def _projection_value(metadata, field):
+    if field in metadata:
+        return metadata[field]
+    default = _CANONICAL_DEFAULTS[field]
+    if isinstance(default, (list, dict)):
+        return default.copy()
+    return default
+
+
+def canonical_card_projection(metadata):
+    metadata = dict(metadata or {})
+    projected = {
+        field: _projection_value(metadata, field)
+        for field in CANONICAL_CARD_FIELDS
+    }
+    for field in (
+        "metadata_override", "poster_override", "poster_override_source",
+        "poster_override_locked", "local_poster_url", "remote_poster_url", "asset_generation",
+    ):
+        if field in metadata:
+            projected[field] = metadata[field]
+    projected["projection_contract"] = CANONICAL_CARD_CONTRACT
+    projected["deferred_fields"] = list(CANONICAL_DEFERRED_DETAIL_FIELDS)
+    return projected
+
+
+def canonical_details_projection(metadata):
+    metadata = dict(metadata or {})
+    projected = dict(metadata)
+    for field in (*CANONICAL_CARD_FIELDS, *CANONICAL_DEFERRED_DETAIL_FIELDS):
+        projected[field] = _projection_value(metadata, field)
+    projected["projection_contract"] = CANONICAL_DETAILS_CONTRACT
+    projected["deferred_fields"] = []
+    return projected
 
 
 def _text(value):
@@ -665,98 +759,223 @@ class CanonicalCatalog:
                     )
 
     def project_path(self, connection, path_key, include_overrides=True):
-        movie = connection.execute("""
-            SELECT cm.* FROM canonical_movie_files cmf
-            JOIN canonical_movies cm ON cm.movie_key = cmf.movie_key
-            WHERE cmf.path_key = ?
-        """, (path_key,)).fetchone()
-        if not movie:
+        return self.project_paths(
+            connection, [path_key], include_details=True, include_overrides=include_overrides
+        ).get(path_key, {})
+
+    def project_paths(self, connection, path_keys, *, include_details=False, include_overrides=True):
+        """Project a bounded path set with a constant number of relational queries."""
+        path_keys = list(dict.fromkeys(_text(key) for key in path_keys if _text(key)))
+        if not path_keys:
             return {}
-        movie = dict(movie)
-        selected_provider = movie["selected_provider"]
-        snapshot = self._selected_snapshot(connection, movie, path_key, selected_provider)
-        selected_snapshot_present = bool(snapshot)
-        fallback_active = False
-        if not snapshot:
-            snapshot = self._fallback_snapshot(connection, movie["movie_key"], path_key, selected_provider)
-            fallback_active = bool(snapshot)
-        snapshot = dict(snapshot) if snapshot else {}
-        snapshot_key = snapshot.get("snapshot_key", "")
-        cast = self._credits(connection, snapshot_key, "cast")
-        directors = self._credits(connection, snapshot_key, "director")
-        genres = [
-            row[0]
+        encoded_paths = _json(path_keys)
+        movie_rows = [dict(row) for row in connection.execute("""
+            SELECT cmf.path_key, cm.*
+            FROM canonical_movie_files cmf
+            JOIN canonical_movies cm ON cm.movie_key = cmf.movie_key
+            WHERE cmf.path_key IN (SELECT value FROM json_each(?))
+        """, (encoded_paths,)).fetchall()]
+        if not movie_rows:
+            return {}
+        movie_keys = list(dict.fromkeys(row["movie_key"] for row in movie_rows))
+        asset_generation_row = connection.execute(
+            "SELECT value FROM catalog_meta WHERE key='asset_generation'"
+        ).fetchone()
+        asset_generation = int(asset_generation_row[0]) if asset_generation_row else 0
+        movie_assets = {
+            row[0]: {"url": f"/api/assets/{row[1]}", "retention_class": row[2]}
             for row in connection.execute("""
-                SELECT g.name FROM movie_genres mg
+                SELECT ma.movie_key, a.checksum, a.retention_class
+                FROM movie_assets ma JOIN media_assets a ON a.asset_key=ma.asset_key
+                WHERE ma.selected=1 AND ma.asset_type='poster' AND a.status='ready' AND a.checksum<>''
+                  AND ma.movie_key IN (SELECT value FROM json_each(?))
+            """, (_json(movie_keys),)).fetchall()
+        }
+        snapshots = [dict(row) for row in connection.execute("""
+            SELECT * FROM provider_movie_snapshots
+            WHERE movie_key IN (SELECT value FROM json_each(?))
+        """, (_json(movie_keys),)).fetchall()]
+        snapshots_by_movie = {}
+        for snapshot in snapshots:
+            snapshots_by_movie.setdefault(snapshot["movie_key"], []).append(snapshot)
+
+        chosen = {}
+        selected_present = {}
+        for movie in movie_rows:
+            candidates = snapshots_by_movie.get(movie["movie_key"], [])
+            selected = [row for row in candidates if row["provider"] == movie["selected_provider"]]
+            if movie["selected_provider"] == "tmdb" and movie.get("tmdb_id"):
+                selected = [row for row in selected if row["snapshot_key"] == f"tmdb:{movie['tmdb_id']}"]
+            selected.sort(key=lambda row: (
+                0 if row.get("path_key") == movie["path_key"] else 1,
+                -_number(row.get("updated_at")), row["snapshot_key"],
+            ))
+            selected_present[movie["path_key"]] = bool(selected)
+            if selected:
+                chosen[movie["path_key"]] = selected[0]
+                continue
+            fallback = [row for row in candidates if row["provider"] != movie["selected_provider"]]
+            fallback.sort(key=lambda row: (
+                0 if row["provider"] == ("plex" if movie["selected_provider"] == "tmdb" else "tmdb") else 1,
+                0 if row.get("path_key") == movie["path_key"] else 1,
+                -_number(row.get("updated_at")), row["snapshot_key"],
+            ))
+            chosen[movie["path_key"]] = fallback[0] if fallback else {}
+
+        relation_snapshots = snapshots if include_details else list(chosen.values())
+        snapshot_keys = list(dict.fromkeys(
+            snapshot.get("snapshot_key", "") for snapshot in relation_snapshots if snapshot.get("snapshot_key")
+        ))
+        genres = {key: [] for key in snapshot_keys}
+        if snapshot_keys:
+            for row in connection.execute("""
+                SELECT mg.snapshot_key, g.name FROM movie_genres mg
                 JOIN genres g ON g.genre_key = mg.genre_key
-                WHERE mg.snapshot_key = ? ORDER BY mg.position
-            """, (snapshot_key,)).fetchall()
-        ] if snapshot_key else []
-        collection = {}
-        if snapshot_key:
-            row = connection.execute("""
-                SELECT c.provider_id, mc.name, mc.poster_url, mc.backdrop_url
-                FROM movie_collections mc
-                JOIN collections c ON c.collection_key = mc.collection_key
-                WHERE mc.snapshot_key = ?
-            """, (snapshot_key,)).fetchone()
-            if row:
-                collection = {
-                    "id": _text(row[0]), "name": _text(row[1]),
-                    "poster_url": _text(row[2]), "backdrop_url": _text(row[3]),
+                WHERE mg.snapshot_key IN (SELECT value FROM json_each(?))
+                ORDER BY mg.snapshot_key, mg.position
+            """, (_json(snapshot_keys),)).fetchall():
+                genres[row[0]].append(row[1])
+
+        credits = {(key, credit_type): [] for key in snapshot_keys for credit_type in ("cast", "director")}
+        collections = {}
+        if include_details and snapshot_keys:
+            for row in connection.execute("""
+                SELECT mc.snapshot_key, mc.credit_type,
+                       CASE WHEN p.tmdb_id<>'' THEN p.tmdb_id ELSE p.provider_id END AS person_id,
+                       CASE WHEN mc.credited_name<>'' THEN mc.credited_name ELSE p.name END AS name,
+                       CASE WHEN a.status='ready' AND a.checksum<>''
+                            THEN '/api/assets/' || a.checksum ELSE mc.profile_url END AS profile_url,
+                       mc.character, mc.profile_url AS remote_profile_url
+                FROM movie_credits mc JOIN people p ON p.person_key=mc.person_key
+                LEFT JOIN person_assets pa ON pa.person_key=p.person_key
+                    AND pa.asset_type='portrait' AND pa.selected=1
+                LEFT JOIN media_assets a ON a.asset_key=pa.asset_key
+                WHERE mc.snapshot_key IN (SELECT value FROM json_each(?))
+                ORDER BY mc.snapshot_key, mc.credit_type, mc.position
+            """, (_json(snapshot_keys),)).fetchall():
+                person = {"id": _text(row[2]), "name": _text(row[3]), "profile_url": _text(row[4])}
+                if _text(row[6]) and _text(row[6]) != person["profile_url"]:
+                    person["remote_profile_url"] = _text(row[6])
+                if row[1] == "cast":
+                    person["character"] = _text(row[5])
+                credits[(row[0], row[1])].append(person)
+            for row in connection.execute("""
+                SELECT mc.snapshot_key, c.provider_id, mc.name, mc.poster_url, mc.backdrop_url
+                FROM movie_collections mc JOIN collections c ON c.collection_key=mc.collection_key
+                WHERE mc.snapshot_key IN (SELECT value FROM json_each(?))
+            """, (_json(snapshot_keys),)).fetchall():
+                collections[row[0]] = {
+                    "id": _text(row[1]), "name": _text(row[2]),
+                    "poster_url": _text(row[3]), "backdrop_url": _text(row[4]),
                 }
 
-        requested = _text(movie.get("requested_enrichment_status")).lower()
-        selected_complete = bool(
-            selected_snapshot_present
-            and snapshot.get("details_state") == "complete"
-            and snapshot.get("people_state") in {"complete", "empty"}
-        )
-        enrichment_status = requested if requested in {"stale", "unavailable"} else (
-            "complete" if selected_complete else "incomplete"
-        )
-        canonical = {
-            "accepted": True,
-            "status": "accepted",
-            "identity_status": "accepted",
-            "enrichment_status": enrichment_status,
-            "metadata_contract_version": CANONICAL_CONTRACT_VERSION,
-            "source": movie.get("identity_source", ""),
-            "detail_provider": f"{snapshot.get('provider')}_snapshot" if snapshot else "",
-            "selected_provider": selected_provider,
-            "selected_provider_snapshot": selected_snapshot_present,
-            "fallback_active": fallback_active,
-            "people_status": snapshot.get("people_state", "missing"),
-            "title": movie.get("title") or snapshot.get("title", ""),
-            "year": movie.get("year") or snapshot.get("year", ""),
-            "tmdb_id": movie.get("tmdb_id", ""),
-            "imdb_id": movie.get("imdb_id") or snapshot.get("imdb_id", ""),
-            "plex_guid": movie.get("plex_guid", ""),
-            "identity_revision": int(movie.get("identity_revision") or 0),
-            "poster_url": snapshot.get("poster_url", ""),
-            "backdrop_url": snapshot.get("backdrop_url", ""),
-            "genres": genres,
-            "plot": snapshot.get("plot", ""),
-            "summary": snapshot.get("plot", ""),
-            "rating": snapshot.get("rating", ""),
-            "tmdb_rating": snapshot.get("rating", "") if snapshot.get("provider") == "tmdb" else "",
-            "plex_rating": snapshot.get("rating", "") if snapshot.get("provider") == "plex" else "",
-            "tmdb_vote_count": int(snapshot.get("vote_count") or 0),
-            "language": snapshot.get("language", ""),
-            "country": snapshot.get("country", ""),
-            "country_flag": snapshot.get("country_flag", ""),
-            "release_date": snapshot.get("release_date", ""),
-            "runtime": snapshot.get("runtime"),
-            "tagline": snapshot.get("tagline", ""),
-            "trailer_url": snapshot.get("trailer_url", ""),
-            "collection": collection,
-            "cast": cast,
-            "directors": directors,
-            "director": directors[0] if directors else {},
-        }
+        identity_keys = {row["path_key"]: {row["movie_key"]} for row in movie_rows}
         if include_overrides:
-            self._apply_overrides(connection, path_key, movie, canonical)
-        return canonical
+            for row in connection.execute("""
+                SELECT path_key, identity_key FROM media_identity_keys
+                WHERE path_key IN (SELECT value FROM json_each(?))
+            """, (encoded_paths,)).fetchall():
+                identity_keys.setdefault(row[0], set()).add(row[1])
+        all_identity_keys = sorted({key for keys in identity_keys.values() for key in keys})
+        overrides = []
+        if include_overrides and all_identity_keys:
+            overrides = [dict(row) for row in connection.execute("""
+                SELECT mo.*, mk.identity_key FROM movie_overrides mo
+                JOIN movie_override_identity_keys mk ON mk.override_id=mo.override_id
+                WHERE mk.identity_key IN (SELECT value FROM json_each(?))
+                ORDER BY mo.updated_at, mo.override_id
+            """, (_json(all_identity_keys),)).fetchall()]
+
+        result = {}
+        for movie in movie_rows:
+            path_key = movie["path_key"]
+            snapshot = chosen.get(path_key, {})
+            snapshot_key = snapshot.get("snapshot_key", "")
+            selected_snapshot_present = selected_present.get(path_key, False)
+            requested = _text(movie.get("requested_enrichment_status")).lower()
+            selected_complete = bool(
+                selected_snapshot_present and snapshot.get("details_state") == "complete"
+                and snapshot.get("people_state") in {"complete", "empty"}
+            )
+            canonical = {
+                "accepted": True, "status": "accepted", "identity_status": "accepted",
+                "enrichment_status": requested if requested in {"stale", "unavailable"} else (
+                    "complete" if selected_complete else "incomplete"
+                ),
+                "metadata_contract_version": CANONICAL_CONTRACT_VERSION,
+                "source": movie.get("identity_source", ""),
+                "detail_provider": f"{snapshot.get('provider')}_snapshot" if snapshot else "",
+                "selected_provider": movie.get("selected_provider", ""),
+                "selected_provider_snapshot": selected_snapshot_present,
+                "fallback_active": bool(snapshot) and not selected_snapshot_present,
+                "people_status": snapshot.get("people_state", "missing"),
+                "movie_key": movie.get("movie_key", ""),
+                "title": movie.get("title") or snapshot.get("title", ""),
+                "year": movie.get("year") or snapshot.get("year", ""),
+                "tmdb_id": movie.get("tmdb_id", ""),
+                "imdb_id": movie.get("imdb_id") or snapshot.get("imdb_id", ""),
+                "plex_guid": movie.get("plex_guid", ""),
+                "identity_revision": int(movie.get("identity_revision") or 0),
+                "poster_url": snapshot.get("poster_url", ""),
+                "backdrop_url": snapshot.get("backdrop_url", ""),
+                "genres": genres.get(snapshot_key, []),
+                "plot": snapshot.get("plot", ""), "summary": snapshot.get("plot", ""),
+                "rating": snapshot.get("rating", ""),
+                "tmdb_rating": snapshot.get("rating", "") if snapshot.get("provider") == "tmdb" else "",
+                "plex_rating": snapshot.get("rating", "") if snapshot.get("provider") == "plex" else "",
+                "tmdb_vote_count": int(snapshot.get("vote_count") or 0),
+                "language": snapshot.get("language", ""), "country": snapshot.get("country", ""),
+                "country_flag": snapshot.get("country_flag", ""),
+                "release_date": snapshot.get("release_date", ""),
+                "runtime": snapshot.get("runtime"), "tagline": snapshot.get("tagline", ""),
+                "trailer_url": snapshot.get("trailer_url", ""),
+                "collection": collections.get(snapshot_key, {}),
+                "cast": credits.get((snapshot_key, "cast"), []),
+                "directors": credits.get((snapshot_key, "director"), []),
+            }
+            if include_details:
+                plex_candidates = [
+                    row for row in snapshots_by_movie.get(movie["movie_key"], []) if row["provider"] == "plex"
+                ]
+                plex_candidates.sort(key=lambda row: (
+                    0 if row.get("path_key") == path_key else 1,
+                    -_number(row.get("updated_at")), row["snapshot_key"],
+                ))
+                plex = plex_candidates[0] if plex_candidates else {}
+                plex_key = plex.get("snapshot_key", "")
+                canonical.update({
+                    "plex_title": plex.get("title", ""), "plex_year": plex.get("year", ""),
+                    "plex_summary": plex.get("plot", ""), "plex_rating": plex.get("rating", ""),
+                    "plex_language": plex.get("language", ""), "plex_country": plex.get("country", ""),
+                    "plex_country_flag": plex.get("country_flag", ""),
+                    "plex_poster": plex.get("poster_url", ""),
+                    "plex_genres": genres.get(plex_key, []),
+                    "plex_cast": credits.get((plex_key, "cast"), []),
+                    "plex_directors": credits.get((plex_key, "director"), []),
+                })
+            canonical["director"] = canonical["directors"][0] if canonical["directors"] else {}
+            for override in overrides:
+                if override["identity_key"] not in identity_keys.get(path_key, set()):
+                    continue
+                if override["override_type"] == "metadata":
+                    if override.get("title"): canonical["title"] = override["title"]
+                    if override.get("year"): canonical["year"] = override["year"]
+                    canonical["metadata_override"] = True
+                elif override["override_type"] == "poster" and override.get("poster_url"):
+                    canonical["poster_url"] = override["poster_url"]
+                    canonical["poster_override"] = True
+                    canonical["poster_override_source"] = override.get("source", "")
+                    canonical["poster_override_locked"] = bool(override.get("locked"))
+            local_asset = movie_assets.get(movie["movie_key"])
+            if local_asset and (local_asset["retention_class"] == "custom" or not canonical.get("poster_override")):
+                canonical["remote_poster_url"] = canonical.get("poster_url", "")
+                canonical["poster_url"] = local_asset["url"]
+                canonical["local_poster_url"] = local_asset["url"]
+            canonical["asset_generation"] = asset_generation
+            result[path_key] = (
+                canonical_details_projection(canonical) if include_details else canonical_card_projection(canonical)
+            )
+        return result
 
     @staticmethod
     def _selected_snapshot(connection, movie, path_key, provider):

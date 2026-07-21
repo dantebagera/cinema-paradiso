@@ -44,6 +44,9 @@ class CatalogMigrationBackupTest(unittest.TestCase):
         (qbt / "runtime.json").write_text(json.dumps({"version": "5.2.2"}), encoding="utf-8")
         (qbt / "versions").mkdir()
         (qbt / "versions" / "qbittorrent.exe").write_bytes(b"large runtime")
+        performance_backup = user_data / "catalog-performance-final" / "backups"
+        performance_backup.mkdir(parents=True)
+        (performance_backup / "recursive.zip").write_bytes(b"do not recursively archive backups")
         return project, user_data
 
     def test_backup_uses_configured_user_data_and_records_counts(self):
@@ -62,6 +65,7 @@ class CatalogMigrationBackupTest(unittest.TestCase):
         self.assertIn("user-data/app_metadata/files.json", names)
         self.assertIn("user-data/qbittorrent/jobs.json", names)
         self.assertNotIn("user-data/qbittorrent/versions/qbittorrent.exe", names)
+        self.assertNotIn("user-data/catalog-performance-final/backups/recursive.zip", names)
         self.assertEqual(manifest["semantic_counts"]["file_records"], 2)
         self.assertEqual(manifest["semantic_counts"]["manual_matches"], 1)
         self.assertEqual(manifest["semantic_counts"]["list_movies"], 1)
@@ -80,9 +84,20 @@ class CatalogMigrationBackupTest(unittest.TestCase):
     def test_backup_includes_consistent_sqlite_catalog_snapshot(self):
         with tempfile.TemporaryDirectory() as root, patch.dict("os.environ", {"LOCALAPPDATA": str(Path(root) / "local")}):
             project, user_data = self._project(root)
+            asset = Path(root) / "local" / "Cinema Paradiso" / "Metadata" / "assets" / "aa" / ("a" * 64)
+            asset.parent.mkdir(parents=True)
+            asset.write_bytes(b"local artwork")
             repository = CatalogRepository(user_data)
             try:
                 repository.activate_from_json()
+                with repository.store.transaction() as connection:
+                    connection.execute("""
+                        INSERT INTO media_assets(
+                            asset_key,asset_type,provider,source_url,local_path,checksum,
+                            status,retention_class,created_at,updated_at
+                        ) VALUES(?,?,?,?,?,?,?,?,?,?)
+                    """, ("asset", "poster", "custom", "https://local.invalid/asset", str(asset),
+                          "a" * 64, "ready", "custom", 1, 1))
                 archive, manifest = create_backup(project, Path(root) / "backups")
             finally:
                 repository.close(flush=False)
@@ -90,6 +105,9 @@ class CatalogMigrationBackupTest(unittest.TestCase):
             verified = verify_backup(archive)
 
         self.assertIn("catalog/catalog.sqlite", names)
+        self.assertIn(f"metadata/assets/aa/{'a' * 64}", names)
+        self.assertEqual(verified["semantic_counts"]["metadata_asset_files"], 1)
+        self.assertEqual(verified["semantic_counts"]["metadata_asset_bytes"], len(b"local artwork"))
         self.assertEqual(verified["semantic_counts"]["file_records"], 2)
         self.assertEqual(verified["semantic_counts"]["user_lists"], 1)
 

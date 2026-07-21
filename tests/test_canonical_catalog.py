@@ -3,6 +3,13 @@ import unittest
 from pathlib import Path
 
 from services.catalog_store import CATALOG_SCHEMA_VERSION, CatalogStore
+from services.canonical_catalog import (
+    CANONICAL_CARD_CONTRACT,
+    CANONICAL_CARD_FIELDS,
+    CANONICAL_DEFERRED_DETAIL_FIELDS,
+    CANONICAL_DETAILS_CONTRACT,
+    canonical_card_projection,
+)
 
 
 def _file(path, tmdb_id, title, year):
@@ -163,6 +170,24 @@ class CanonicalCatalogTest(unittest.TestCase):
         self.assertEqual(projection["cast"][0]["id"], "300")
         self.assertEqual(projection["enrichment_status"], "complete")
         self.assertTrue(report["passed"])
+
+    def test_named_card_and_details_contracts_make_deferred_fields_explicit(self):
+        _, duplicate_a, _ = self._import()
+        connection = self.store.connect()
+        try:
+            details = self.store.canonical.project_path(connection, duplicate_a)
+        finally:
+            connection.close()
+        card = canonical_card_projection(details)
+
+        self.assertEqual(card["projection_contract"], CANONICAL_CARD_CONTRACT)
+        self.assertEqual(details["projection_contract"], CANONICAL_DETAILS_CONTRACT)
+        self.assertEqual(card["deferred_fields"], list(CANONICAL_DEFERRED_DETAIL_FIELDS))
+        self.assertEqual(details["deferred_fields"], [])
+        self.assertTrue(set(CANONICAL_CARD_FIELDS).issubset(card))
+        self.assertFalse(set(CANONICAL_DEFERRED_DETAIL_FIELDS).intersection(card))
+        for field in CANONICAL_CARD_FIELDS:
+            self.assertEqual(card[field], details[field], field)
 
 
 if __name__ == "__main__":

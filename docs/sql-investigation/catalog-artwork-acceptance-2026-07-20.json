@@ -1,0 +1,65 @@
+{
+  "started_at": 1784580643.983876,
+  "duration_seconds": 20.695,
+  "initial": {
+    "status": "idle",
+    "queued": 0,
+    "completed": 0,
+    "failed": 0,
+    "started_at": 0,
+    "updated_at": 0,
+    "counts": {
+      "queued": 104,
+      "ready": 19069
+    },
+    "asset_generation": 19110,
+    "ready_assets": 19069,
+    "unique_checksums": 19069,
+    "logical_bytes": 375987886,
+    "custom_assets": 13,
+    "logical_references": 19321,
+    "referenced_assets": 19173,
+    "relationship_deduplications": 148,
+    "checksum_deduplications": 0,
+    "physical_bytes": 375987886
+  },
+  "batches": [
+    {
+      "batch": 1,
+      "seconds": 7.318,
+      "attempted": 104,
+      "completed": 104,
+      "failed": 0,
+      "counts": {
+        "ready": 19173
+      },
+      "physical_bytes": 417436287
+    }
+  ],
+  "final": {
+    "status": "completed",
+    "queued": 104,
+    "completed": 104,
+    "failed": 0,
+    "started_at": 1784580650.5936868,
+    "updated_at": 1784580654.5001187,
+    "counts": {
+      "ready": 19173
+    },
+    "asset_generation": 19110,
+    "ready_assets": 19173,
+    "unique_checksums": 19169,
+    "logical_bytes": 422048227,
+    "custom_assets": 13,
+    "logical_references": 19321,
+    "referenced_assets": 19173,
+    "relationship_deduplications": 148,
+    "checksum_deduplications": 4,
+    "physical_bytes": 417436287
+  },
+  "catalog_generation_before": 306,
+  "catalog_generation_after": 306,
+  "queued_relationships": 15631,
+  "deduplicated_files": 4,
+  "deduplicated_relationships": 148
+}

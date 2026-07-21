@@ -125,6 +125,32 @@ class CatalogRepository:
         finally:
             connection.close()
 
+    def catalog_meta(self, key, default=""):
+        connection = self.store.connect()
+        try:
+            row = connection.execute("SELECT value FROM catalog_meta WHERE key=?", (str(key),)).fetchone()
+            return str(row[0]) if row else str(default)
+        finally:
+            connection.close()
+
+    def set_operational_meta(self, key, value):
+        """Persist operational state without changing catalog generations."""
+        with self._lock, self.store.transaction() as connection:
+            connection.execute(
+                "INSERT OR REPLACE INTO catalog_meta(key, value) VALUES(?, ?)",
+                (str(key), str(value)),
+            )
+
+    def has_document(self, name):
+        connection = self.store.connect()
+        try:
+            return connection.execute(
+                "SELECT 1 FROM source_documents WHERE name=? LIMIT 1",
+                (str(name).replace("\\", "/"),),
+            ).fetchone() is not None
+        finally:
+            connection.close()
+
     @staticmethod
     def _bump_generation(connection, document_names=()):
         connection.execute("""
@@ -187,6 +213,39 @@ class CatalogRepository:
             if thumb:
                 records[thumb] = record
         return records
+
+    def owned_movie(self, *, path="", movie_key=""):
+        path_key = os.path.normcase(os.path.normpath(str(path or ""))) if path else ""
+        return self.store.owned_movie_candidate(path_key=path_key, movie_key=movie_key)
+
+    @staticmethod
+    def _normalize_filter_paths(filters):
+        filters = dict(filters or {})
+        for field in ("upgrade_path_keys", "collection_path_keys"):
+            filters[field] = [
+                os.path.normcase(os.path.normpath(str(path or "")))
+                for path in filters.get(field, [])
+                if str(path or "").strip()
+            ]
+        return filters
+
+    def library_page(self, filters=None, *, page=1, page_size=40):
+        return self.store.library_page(
+            self._normalize_filter_paths(filters),
+            page=page,
+            page_size=page_size,
+        )
+
+    def library_selection_paths(self, filters=None):
+        return self.store.library_selection_paths(self._normalize_filter_paths(filters))
+
+    def library_candidates_for_paths(self, paths):
+        path_keys = [
+            os.path.normcase(os.path.normpath(str(path or "")))
+            for path in paths or []
+            if str(path or "").strip()
+        ]
+        return self.store.candidates_for_paths(path_keys)
 
     @staticmethod
     def _source_document(connection, name, fallback):

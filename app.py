@@ -24,6 +24,7 @@ from services.movie_identity import (
     same_public_identity as _same_public_identity,
 )
 from services.catalog_repository import CatalogRepository
+from services.canonical_catalog import canonical_card_projection, canonical_details_projection
 from services.curation_store import UserCurationStore, normalize_curated_movie as _normalize_curated_movie
 from services.curation_routes import register_curation_routes
 from services.frontend_routes import register_frontend_routes
@@ -68,12 +69,26 @@ from services.qbittorrent import (
     is_path_within,
     magnet_hash,
 )
-from flask import Flask, jsonify, request, make_response, send_from_directory
+from flask import Flask, jsonify, request, make_response, send_file, send_from_directory
 from services.library_mutations import LibraryMutationError, LibraryMutationService
 from services.source_search import ProwlarrClient
 from services.download_monitor import DownloadImportMonitor
+from services.media_assets import MediaAssetError, MediaAssetService
 
 app = Flask(__name__)
+_process_started_at = time.perf_counter()
+_startup_metrics = {
+    'process_started_at': time.time(),
+    'database_open_ms': 0.0,
+    'migration_check_ms': 0.0,
+    'generation_check_ms': 0.0,
+    'reconcile_decision_ms': 0.0,
+    'reconcile_decision': 'not_checked',
+    'reconcile_reason': '',
+    'background_queue_started': False,
+    'api_ready_ms': 0.0,
+    'first_library_query_ms': 0.0,
+}
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 _SLOW_ROUTE_MS = int(os.environ.get('CP_SLOW_ROUTE_MS', '250') or '250')
 register_frontend_routes(app, _BASE_DIR)
@@ -107,6 +122,8 @@ def _finish_route_timer(response):
                 response.headers['Content-Encoding'] = 'gzip'
                 response.headers['Vary'] = 'Accept-Encoding'
     duration_ms = (time.perf_counter() - started_at) * 1000
+    if request.endpoint == 'library' and request.args.get('view') == 'cards' and not _startup_metrics['first_library_query_ms']:
+        _startup_metrics['first_library_query_ms'] = round(duration_ms, 3)
     response.headers['Server-Timing'] = f'app;dur={duration_ms:.1f}'
     response.headers['X-CP-Route-MS'] = f'{duration_ms:.1f}'
     if request.path.startswith('/api/') and duration_ms >= _SLOW_ROUTE_MS:
@@ -240,6 +257,7 @@ _plex_matched_by_fname   = {}  # filename.lower() -> matched entry   (path-misma
 _plex_unmatched_by_fname = {}  # filename.lower() -> unmatched entry (path-mismatch fallback)
 
 _catalog_repository_cache = {}
+_media_asset_service_cache = {}
 
 
 def _catalog_repository_for(base_dir):
@@ -247,6 +265,7 @@ def _catalog_repository_for(base_dir):
     cache_key = str(base_dir)
     repository = _catalog_repository_cache.get(cache_key)
     if repository is None:
+        repository_started = time.perf_counter()
         configured = Path(_user_data_dir).resolve()
         temporary_root = Path(tempfile.gettempdir()).resolve()
         is_temporary = base_dir == temporary_root or temporary_root in base_dir.parents
@@ -260,13 +279,27 @@ def _catalog_repository_for(base_dir):
             database_path=database_path,
             export_delay=0 if is_temporary else 0.5,
         )
+        _startup_metrics['database_open_ms'] = round((time.perf_counter() - repository_started) * 1000, 3)
+        migration_started = time.perf_counter()
         repository.activate_from_json()
+        _startup_metrics['migration_check_ms'] = round((time.perf_counter() - migration_started) * 1000, 3)
         _catalog_repository_cache[cache_key] = repository
     return repository
 
 
 def _catalog_repository():
     return _catalog_repository_for(_user_data_dir)
+
+
+def _media_asset_service():
+    repository = _catalog_repository()
+    cache_key = str(repository.database_path)
+    service = _media_asset_service_cache.get(cache_key)
+    if service is None:
+        metadata_root = Path(os.environ.get('LOCALAPPDATA') or Path(_user_data_dir).resolve()) / 'Cinema Paradiso' / 'Metadata'
+        service = MediaAssetService(repository, metadata_root)
+        _media_asset_service_cache[cache_key] = service
+    return service
 
 def _norm(path):
     """Normalise a file path for use as a cache key.
@@ -2233,7 +2266,7 @@ def _handle_completed_qbittorrent_imports(manager, results):
                     'paths': [],
                 }
         if any(handoff.get('state') != 'failed' for handoff in handoffs.values()):
-            _start_library_reconcile()
+            _start_library_reconcile(force=True)
         for item in pending:
             if not item.get('hash'):
                 continue
@@ -2381,36 +2414,11 @@ def _trim_people_for_card(people, limit=8):
 
 def _movie_list_library_item(item, include_people=False, upgrade_paths=None):
     source_canonical = item.get('canonical_metadata') or {}
-    canonical = {
-        key: source_canonical.get(key)
-        for key in (
-            'accepted',
-            'adult',
-            'status',
-            'source',
-            'title',
-            'year',
-            'tmdb_id',
-            'imdb_id',
-            'plex_guid',
-            'poster_url',
-            'genres',
-            'plot',
-            'summary',
-            'rating',
-            'tmdb_vote_count',
-            'language',
-            'country',
-            'country_flag',
-            'release_date',
-            'runtime',
-            'tagline',
-            'trailer_url',
-            'collection',
-            'detail_provider',
-        )
-        if source_canonical.get(key) not in (None, '', [], {})
-    }
+    canonical = (
+        canonical_details_projection(source_canonical)
+        if include_people
+        else canonical_card_projection(source_canonical)
+    )
     accepted = bool(source_canonical.get('accepted'))
     if include_people:
         canonical['cast'] = _trim_people_for_card(source_canonical.get('cast'))
@@ -4477,12 +4485,13 @@ def library_status():
 def library_reconcile():
     if request.method == 'GET':
         return jsonify(_library_reconcile_status())
-    return jsonify(_start_library_reconcile())
+    return jsonify(_start_library_reconcile(force=True))
 
 
 def _catalog_file_record(candidate):
-    """Expose the SQL-backed file contract, retaining raw JSON only for extended facts."""
-    file_record = dict(candidate.get('raw_json') or {})
+    """Expose the normalized SQL-backed file contract."""
+    raw_record = candidate.get('raw_json')
+    file_record = dict(raw_record) if isinstance(raw_record, dict) else {}
     for field in (
         'path', 'filename', 'library_root', 'size', 'added_time', 'modified_time',
         'resolution', 'rip_source', 'parsed_title', 'parsed_year', 'identity_status',
@@ -4545,21 +4554,21 @@ def _catalog_library_item(candidate, store, metadata_snapshot):
         'size_human': format_size(candidate.get('size') or 0),
         'added_time': candidate.get('added_time') or 0,
         'modified_time': candidate.get('modified_time') or 0,
-        'plex_title': plex_data.get('plex_title', ''),
-        'plex_year': str(plex_data.get('plex_year', '') or ''),
-        'plex_genres': plex_data.get('plex_genres', []),
-        'plex_summary': plex_data.get('plex_summary', ''),
-        'plex_rating': plex_data.get('plex_rating', ''),
-        'plex_language': plex_data.get('plex_language', ''),
-        'plex_country_flag': plex_data.get('plex_country_flag', ''),
-        'plex_country': plex_data.get('plex_country', ''),
-        'plex_directors': plex_data.get('plex_directors', []),
-        'plex_cast': plex_data.get('plex_cast', []),
+        'plex_title': plex_data.get('plex_title', '') or canonical.get('plex_title', ''),
+        'plex_year': str(plex_data.get('plex_year', '') or canonical.get('plex_year', '') or ''),
+        'plex_genres': plex_data.get('plex_genres', []) or canonical.get('plex_genres', []),
+        'plex_summary': plex_data.get('plex_summary', '') or canonical.get('plex_summary', ''),
+        'plex_rating': plex_data.get('plex_rating', '') or canonical.get('plex_rating', ''),
+        'plex_language': plex_data.get('plex_language', '') or canonical.get('plex_language', ''),
+        'plex_country_flag': plex_data.get('plex_country_flag', '') or canonical.get('plex_country_flag', ''),
+        'plex_country': plex_data.get('plex_country', '') or canonical.get('plex_country', ''),
+        'plex_directors': plex_data.get('plex_directors', []) or canonical.get('plex_directors', []),
+        'plex_cast': plex_data.get('plex_cast', []) or canonical.get('plex_cast', []),
         'tmdb_id': canonical.get('tmdb_id') or plex_data.get('tmdb_id', ''),
         'imdb_id': canonical.get('imdb_id') or plex_data.get('imdb_id', ''),
         'plex_guid': canonical.get('plex_guid') or plex_data.get('plex_guid', ''),
-        'plex_poster': plex_data.get('plex_poster', ''),
-        'plex_matched': bool(plex_data),
+        'plex_poster': plex_data.get('plex_poster', '') or canonical.get('plex_poster', ''),
+        'plex_matched': bool(plex_data) or bool(canonical.get('plex_title')) or canonical.get('detail_provider') == 'plex_snapshot',
         'canonical_metadata': canonical,
         'metadata_status': canonical.get('status', 'unmatched'),
         'metadata_source': canonical.get('source', ''),
@@ -4573,17 +4582,11 @@ def library_details():
     if not path:
         return jsonify({'error': 'Library path is required'}), 400
     store = _metadata_store()
-    candidate = next(
-        (
-            value for value in store.catalog.store.library_candidates()
-            if _norm(value.get('path') or '') == _norm(path)
-        ),
-        None,
-    )
+    candidate = store.catalog.owned_movie(path=path)
     if not candidate:
         return jsonify({'error': 'Library item was not found'}), 404
     return jsonify({
-        'item': _catalog_library_item(candidate, store, store.snapshot()),
+        'item': _catalog_library_item(candidate, store, None),
         'catalog_generation': store.catalog.generation('media'),
     })
 
@@ -4608,7 +4611,7 @@ def _maintenance_audit_from_catalog():
 def _catalog_identity_candidates(repository=None):
     repository = repository or _catalog_repository()
     fingerprints = _metadata_store().get_identity_audit_fingerprints()
-    candidates = repository.store.library_candidates()
+    candidates = repository.store.audit_library_candidates()
     for candidate in candidates:
         path = str(candidate.get('path') or (candidate.get('raw_json') or {}).get('path') or '')
         candidate['audit_fingerprint_json'] = dict(fingerprints.get(_norm(path), {}) or {})
@@ -4705,12 +4708,96 @@ def _library_people_item(item):
     }
 
 
+_maintenance_upgrade_key_cache = {'generation': None, 'paths': set()}
+
+
 def _maintenance_upgrade_path_keys():
-    return {
-        _norm(item.get('path', ''))
-        for item in ((_maintenance_audit_from_catalog().get('upgrades') or {}).get('items') or [])
-        if item.get('path')
+    repository = _catalog_repository()
+    generation = repository.generation('media')
+    if _maintenance_upgrade_key_cache['generation'] == generation:
+        return set(_maintenance_upgrade_key_cache['paths'])
+    fingerprints = _metadata_store().get_identity_audit_fingerprints()
+    candidates = repository.store.maintenance_upgrade_candidates()
+    for candidate in candidates:
+        candidate['audit_fingerprint_json'] = dict(
+            fingerprints.get(_norm(candidate.get('path', '')), {}) or {}
+        )
+    paths = {
+        _norm(candidate.get('path', ''))
+        for candidate in candidates
+        if candidate.get('path') and verify_catalog_identity(candidate).get('classification') == 'verified'
     }
+    _maintenance_upgrade_key_cache.update({'generation': generation, 'paths': paths})
+    return set(paths)
+
+
+def _library_query_filters(values=None):
+    values = values or request.args
+
+    def value(name, default=''):
+        candidate = values.get(name, default)
+        return str(candidate if candidate is not None else default).strip()
+
+    collection_paths = values.get('collection_paths', [])
+    if isinstance(collection_paths, str):
+        try:
+            collection_paths = _json.loads(collection_paths) if collection_paths else []
+        except ValueError:
+            collection_paths = []
+    if not isinstance(collection_paths, list):
+        collection_paths = []
+    return {
+        'query': value('q', value('query')),
+        'quality': value('quality', 'all'),
+        'resolution': value('resolution', 'all'),
+        'source': value('source', 'all'),
+        'genre': value('genre', 'all'),
+        'language': value('language', 'all'),
+        'country': value('country', 'all'),
+        'year_from': value('year_from'),
+        'year_to': value('year_to'),
+        'min_rating': value('min_rating', 'all'),
+        'sort': value('sort', 'added'),
+        'role': value('role'),
+        'person_id': value('person_id'),
+        'person_name': value('person_name'),
+        'collection_id': value('collection_id'),
+        'collection_path_keys': collection_paths,
+        'list_id': value('list_id'),
+        'viewing_state': value('viewing_state', 'all'),
+    }
+
+
+def _paged_library_cards(store, *, reconcile_result=None, force_scan=False, force_plex=False):
+    filters = _library_query_filters()
+    upgrade_paths = _maintenance_upgrade_path_keys()
+    filters['upgrade_path_keys'] = list(upgrade_paths)
+    page = request.args.get('page', 1, type=int)
+    page_size = request.args.get('page_size', 40, type=int)
+    result = store.catalog.library_page(filters, page=page, page_size=page_size)
+    items = [
+        _library_card_item(
+            _catalog_library_item(candidate, store, None),
+            upgrade_paths=upgrade_paths,
+        )
+        for candidate in result.pop('candidates')
+    ]
+    reconcile_result = reconcile_result or {}
+    return jsonify({
+        **result,
+        'items': items,
+        'count': result['total'],
+        'page_count': len(items),
+        'plex_enabled': bool(_plex_token),
+        'plex_cached': any(bool(item.get('plex_matched')) for item in items),
+        'cached': not (force_scan or force_plex),
+        'source': 'catalog',
+        'new_files': int(reconcile_result.get('checked', 0) or 0) if force_scan else 0,
+        'metadata_matched': int(reconcile_result.get('matched', 0) or 0),
+        'metadata_pending': int(reconcile_result.get('pending', 0) or 0),
+        'metadata_review': int(reconcile_result.get('review', 0) or 0),
+        'catalog_generation': store.catalog.generation('media'),
+    })
 
 
 @app.route('/api/library')
@@ -4731,13 +4818,20 @@ def library():
             _auto_sync_plex(force=force_plex)
         if not refresh_metadata:
             store = _metadata_store()
-            items = None if (force_scan or force_plex) else _fresh_catalog_library_items(store)
+            if view == 'cards':
+                return _paged_library_cards(
+                    store,
+                    reconcile_result=reconcile_result,
+                    force_scan=force_scan,
+                    force_plex=force_plex,
+                )
+            needs_details = view in {'people', ''}
+            items = None if (force_scan or force_plex or needs_details) else _fresh_catalog_library_items(store)
             if items is None:
-                metadata_snapshot = store.snapshot()
                 catalog = _current_catalog_store(store)
                 items = [
-                    _catalog_library_item(candidate, store, metadata_snapshot)
-                    for candidate in catalog.library_candidates()
+                    _catalog_library_item(candidate, store, None)
+                    for candidate in catalog.library_projection(include_details=needs_details)
                     if candidate.get('path') and os.path.isfile(candidate['path'])
                 ]
                 _store_library_cache(
@@ -4798,10 +4892,9 @@ def library():
                 snapshot=metadata_snapshot,
             )
         _library_status = ''
-        metadata_snapshot = store.snapshot()
         items = [
-            _catalog_library_item(candidate, store, metadata_snapshot)
-            for candidate in _current_catalog_store(store).library_candidates()
+            _catalog_library_item(candidate, store, None)
+            for candidate in _current_catalog_store(store).library_projection(include_details=view == 'people')
             if candidate.get('path') and os.path.isfile(candidate['path'])
         ]
         items.sort(key=lambda item: (-float(item.get('added_time') or 0), item['title']))
@@ -4809,6 +4902,13 @@ def library():
         _store_library_cache(items, bool(_plex_token), len(_plex_cache) > 0)
         _library_cache['source'] = 'catalog'
         new_files = sum(1 for item in items if _norm(item['path']) not in previous_paths)
+        if view == 'cards':
+            return _paged_library_cards(
+                store,
+                reconcile_result=reconcile_result,
+                force_scan=force_scan,
+                force_plex=force_plex,
+            )
         if view in {'movie-list', 'cards'}:
             upgrade_paths = _maintenance_upgrade_path_keys()
             response_items = [_library_card_item(item, upgrade_paths=upgrade_paths) for item in items]
@@ -4884,6 +4984,41 @@ def _library_check_v26():
 @app.route('/api/library/check', methods=['POST'])
 def library_check():
     return _library_check_v26()
+
+
+@app.route('/api/library/selection', methods=['POST'])
+def library_selection():
+    body = request.get_json(silent=True) or {}
+    filters = _library_query_filters(body.get('filters') or body)
+    filters['upgrade_path_keys'] = list(_maintenance_upgrade_path_keys())
+    paths = _catalog_repository().library_selection_paths(filters)
+    return jsonify({
+        'paths': paths,
+        'count': len(paths),
+        'catalog_generation': _catalog_repository().generation('media'),
+    })
+
+
+@app.route('/api/library/selection/items', methods=['POST'])
+def library_selection_items():
+    body = request.get_json(silent=True) or {}
+    paths = [str(path or '').strip() for path in body.get('paths', []) if str(path or '').strip()]
+    if len(paths) > 10000:
+        return jsonify({'error': 'Library selection is too large'}), 400
+    store = _metadata_store()
+    upgrade_paths = _maintenance_upgrade_path_keys()
+    items = [
+        _library_card_item(
+            _catalog_library_item(candidate, store, None),
+            upgrade_paths=upgrade_paths,
+        )
+        for candidate in store.catalog.library_candidates_for_paths(paths)
+    ]
+    return jsonify({
+        'items': items,
+        'count': len(items),
+        'catalog_generation': store.catalog.generation('media'),
+    })
 
 
 def _maintenance_page(items, page=1, page_size=50):
@@ -5057,68 +5192,34 @@ def library_stats():
         by_decade = {}
         RES_RANK = {'4K': 4, '1080p': 3, '720p': 2, '480p': 1, 'Unknown': 0}
 
-        cached_library_items = _fresh_catalog_library_items()
-        if cached_library_items is not None:
-            file_rows = []
-            for item in cached_library_items:
-                full_path = item.get('path', '')
-                if not full_path or not os.path.isfile(full_path):
-                    continue
-                filename = item.get('filename') or os.path.basename(full_path)
-                parsed_title, parsed_year = parse_movie_title(filename)
-                size = NumberSafe(item.get('size'))
-                file_rows.append({
-                    'title': item.get('title') or (parsed_title.title() + (f' ({parsed_year})' if parsed_year else '')),
-                    'filename': filename,
-                    'path': full_path,
-                    'library_root': item.get('library_root', ''),
-                    'size': size,
-                    'size_human': item.get('size_human') or format_size(size),
-                    'resolution': item.get('resolution') or 'Unknown',
-                    'rip_source': item.get('rip_source') or 'Unknown',
-                    'year': parsed_year,
-                    'tmdb_id': item.get('tmdb_id', ''),
-                    'imdb_id': item.get('imdb_id', ''),
-                    'title_identity': (item.get('canonical_metadata') or {}).get('title', ''),
-                    'year_identity': (item.get('canonical_metadata') or {}).get('year', ''),
-                    'plex_title': item.get('plex_title', ''),
-                    'plex_year': item.get('plex_year', ''),
-                    'metadata_status': item.get('metadata_status', ''),
-                    'metadata_accepted': bool(item.get('metadata_accepted')),
-                })
-        else:
-            store = _metadata_store()
-            metadata_snapshot = store.snapshot()
-            catalog = _current_catalog_store(store)
-            file_rows = []
-            for candidate in catalog.library_candidates():
-                record = candidate.get('raw_json') or {}
-                full_path = candidate.get('path', '')
-                if not full_path or not os.path.isfile(full_path):
-                    continue
-                file = record.get('filename') or os.path.basename(full_path)
-                parsed_title = record.get('parsed_title', '')
-                parsed_year = str(record.get('parsed_year', '') or '')
-                plex_data = candidate.get('plex_json') or {}
-                file_rows.append({
-                    'title': parsed_title.title() + (f' ({parsed_year})' if parsed_year else ''),
-                    'filename': file,
-                    'path': full_path,
-                    'library_root': record.get('library_root', ''),
-                    'size': int(candidate.get('size') or 0),
-                    'size_human': format_size(candidate.get('size') or 0),
-                    'resolution': candidate.get('resolution') or 'Unknown',
-                    'rip_source': candidate.get('rip_source') or 'Unknown',
-                    'year': parsed_year,
-                    'tmdb_id': candidate.get('tmdb_id', ''),
-                    'imdb_id': candidate.get('imdb_id', ''),
-                    'title_identity': candidate.get('identity_title', ''),
-                    'year_identity': candidate.get('identity_year', ''),
-                    'plex_title': plex_data.get('plex_title', ''),
-                    'plex_year': plex_data.get('plex_year', ''),
-                    'metadata_status': candidate.get('metadata_status', ''),
-                    'metadata_accepted': bool(candidate.get('metadata_accepted')),
-                })
+        file_rows = []
+        for candidate in _current_catalog_store(_metadata_store()).file_inventory():
+            full_path = candidate.get('path', '')
+            if not full_path or not os.path.isfile(full_path):
+                continue
+            file = candidate.get('filename') or os.path.basename(full_path)
+            parsed_title = candidate.get('parsed_title', '')
+            parsed_year = str(candidate.get('parsed_year', '') or '')
+            size = int(candidate.get('size') or 0)
+            file_rows.append({
+                'title': parsed_title.title() + (f' ({parsed_year})' if parsed_year else ''),
+                'filename': file,
+                'path': full_path,
+                'library_root': candidate.get('library_root', ''),
+                'size': size,
+                'size_human': format_size(size),
+                'resolution': candidate.get('resolution') or 'Unknown',
+                'rip_source': candidate.get('rip_source') or 'Unknown',
+                'year': parsed_year,
+                'tmdb_id': candidate.get('tmdb_id', ''),
+                'imdb_id': candidate.get('imdb_id', ''),
+                'title_identity': candidate.get('identity_title', ''),
+                'year_identity': candidate.get('identity_year', ''),
+                'plex_title': candidate.get('plex_title', ''),
+                'plex_year': candidate.get('plex_year', ''),
+                'metadata_status': candidate.get('metadata_status', ''),
+                'metadata_accepted': bool(candidate.get('metadata_accepted')),
+            })
 
         for file_info in file_rows:
             size = file_info['size']
@@ -5143,8 +5244,8 @@ def library_stats():
                 decade = 'Unknown'
             by_decade[decade] = by_decade.get(decade, 0) + 1
 
-        maintenance = _maintenance_audit_from_catalog()
-        maintenance_summary = maintenance['summary']
+        maintenance_summary = _current_catalog_store(_metadata_store()).maintenance_storage_statistics()
+        maintenance_summary['upgrade_candidates'] = len(_maintenance_upgrade_path_keys())
 
         total_size = sum(f['size'] for f in all_files)
         avg_size = total_size // len(all_files) if all_files else 0
@@ -5190,7 +5291,7 @@ def library_stats():
             'duplicate_groups': maintenance_summary['duplicate_groups'],
             'extra_copies': maintenance_summary['extra_copies'],
             'wasted_bytes': maintenance_summary['reclaimable_bytes'],
-            'wasted_human': maintenance_summary['reclaimable_human'],
+            'wasted_human': format_size(maintenance_summary['reclaimable_bytes']),
             'low_quality_count': maintenance_summary['upgrade_candidates'],
             'by_resolution': by_resolution,
             'by_source': by_source,
@@ -6627,6 +6728,22 @@ def _poster_api_error(error):
     return jsonify({'error': str(error)}), 400
 
 
+def _ingest_saved_custom_poster(path, override):
+    try:
+        candidate = _catalog_repository().owned_movie(path=path)
+        movie_key = (candidate.get('relational_canonical') or {}).get('movie_key', '') if candidate else ''
+        filename = Path(urllib.parse.unquote(urllib.parse.urlsplit(override.get('poster_url', '')).path)).name
+        source_path = (_metadata_store().posters_dir / filename).resolve()
+        if movie_key and source_path.is_file():
+            _media_asset_service().ingest_custom_file(
+                movie_key, source_path, source_name=override.get('id') or filename
+            )
+    except (OSError, ValueError, MediaAssetError):
+        # The legacy custom route remains a safe fallback until the resumable migration retries it.
+        return None
+    return True
+
+
 @app.route('/api/library/posters')
 def library_poster_options():
     try:
@@ -6653,6 +6770,7 @@ def library_poster_select():
             raise ValueError('Poster option is not available for this Library movie')
         image_bytes, extension = _download_poster_image(url)
         override = _metadata_store().save_poster_override(identity, source, image_bytes, extension)
+        _ingest_saved_custom_poster(body.get('path', ''), override)
         _library_cache = {}
         return jsonify({'success': True, 'override': override})
     except Exception as error:
@@ -6674,6 +6792,7 @@ def library_poster_upload():
         if not extension:
             raise ValueError('Poster must be a JPEG, PNG, or WebP image')
         override = context['store'].save_poster_override(context['identity'], 'local', image_bytes, extension)
+        _ingest_saved_custom_poster(request.form.get('path', ''), override)
         _library_cache = {}
         return jsonify({'success': True, 'override': override})
     except Exception as error:
@@ -6686,7 +6805,10 @@ def library_poster_reset():
     body = request.get_json(silent=True) or {}
     try:
         context = _poster_context_for_path(body.get('path', ''))
+        movie_key = (context.get('base_canonical') or {}).get('movie_key', '')
         context['store'].reset_poster_override(context['identity'])
+        if movie_key:
+            _media_asset_service().reset_custom_poster(movie_key)
         _library_cache = {}
         return jsonify({
             'success': True,
@@ -6702,6 +6824,76 @@ def library_poster_image(filename):
     if Path(filename).name != filename:
         return jsonify({'error': 'Invalid poster filename'}), 400
     return send_from_directory(_metadata_store().posters_dir, filename)
+
+
+@app.route('/api/assets/<checksum>')
+def local_media_asset(checksum):
+    checksum = str(checksum or '').lower()
+    if not re.fullmatch(r'[a-f0-9]{64}', checksum):
+        return jsonify({'error': 'Invalid asset checksum'}), 400
+    service = _media_asset_service()
+    asset = service.lookup(checksum=checksum)
+    if not asset:
+        return jsonify({'error': 'Artwork asset was not found'}), 404
+    path = Path(asset['local_path']).resolve()
+    try:
+        path.relative_to(service.assets_root)
+    except ValueError:
+        return jsonify({'error': 'Artwork path is outside managed storage'}), 409
+    if not path.is_file():
+        return jsonify({'error': 'Artwork file is unavailable'}), 404
+    response = send_file(path, mimetype=asset['mime_type'], conditional=True, max_age=31536000)
+    response.set_etag(checksum)
+    response.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
+    return response
+
+
+@app.route('/api/artwork/backfill', methods=['GET', 'POST'])
+def artwork_backfill():
+    service = _media_asset_service()
+    if request.method == 'GET':
+        return jsonify(service.status())
+    body = request.get_json(silent=True) or {}
+    if body.get('queue', True):
+        service.migrate_custom_posters(_metadata_store().posters_dir)
+        service.queue_owned_artwork()
+    if body.get('background', True):
+        threading.Thread(
+            target=service.run_backfill,
+            kwargs={
+                'limit': min(max(int(body.get('limit', 200) or 200), 1), 2000),
+                'workers': min(max(int(body.get('workers', 4) or 4), 1), 8),
+            },
+            name='cinema-artwork-backfill', daemon=True,
+        ).start()
+        return jsonify({**service.status(), 'started': True}), 202
+    return jsonify(service.run_backfill(
+        limit=min(max(int(body.get('limit', 200) or 200), 1), 2000),
+        workers=min(max(int(body.get('workers', 4) or 4), 1), 8),
+    ))
+
+
+@app.route('/api/artwork/cleanup', methods=['POST'])
+def artwork_cleanup():
+    body = request.get_json(silent=True) or {}
+    return jsonify(_media_asset_service().cleanup_temporary(
+        grace_seconds=max(int(body.get('grace_seconds', 7 * 86400) or 0), 0)
+    ))
+
+
+def _run_startup_artwork_backfill():
+    service = _media_asset_service()
+    service.migrate_custom_posters(_metadata_store().posters_dir)
+    service.queue_owned_artwork()
+    while True:
+        state = service.run_backfill(limit=200, workers=4)
+        remaining = int(state.get('counts', {}).get('queued', 0))
+        retryable = int(state.get('counts', {}).get('failed', 0))
+        if not remaining and not retryable:
+            return
+        if not remaining and retryable and state.get('failed', 0) == 0:
+            return
+        time.sleep(2)
 
 
 def _normalize_tmdb_person(person, include_character=False):
@@ -7462,18 +7654,89 @@ def _run_library_reconcile_loop():
                 'updated_at': time.time(),
             }
         if not result.get('pending'):
+            _mark_library_reconcile_complete()
             return
         time.sleep(_FILE_STABILITY_SECONDS)
 
 
-def _start_library_reconcile():
+def _library_root_signature():
+    roots = []
+    for configured in get_movies_dirs():
+        path = os.path.abspath(str(configured or ''))
+        try:
+            stat_result = os.stat(path)
+            roots.append({
+                'path': os.path.normcase(os.path.normpath(path)),
+                'exists': True,
+                'modified_ns': int(stat_result.st_mtime_ns),
+            })
+        except OSError:
+            roots.append({
+                'path': os.path.normcase(os.path.normpath(path)),
+                'exists': False,
+                'modified_ns': 0,
+            })
+    payload = _json.dumps(roots, sort_keys=True, separators=(',', ':'))
+    return hashlib.sha256(payload.encode('utf-8')).hexdigest()
+
+
+def _startup_reconcile_decision():
+    started = time.perf_counter()
+    repository = _catalog_repository()
+    generation_started = time.perf_counter()
+    media_generation = repository.generation('media')
+    _startup_metrics['generation_check_ms'] = round((time.perf_counter() - generation_started) * 1000, 3)
+    store = _metadata_store()
+    current_signature = _library_root_signature()
+    previous_signature = repository.catalog_meta('last_library_root_signature')
+    previous_generation = repository.catalog_meta('last_library_reconcile_generation')
+    inventory_exists = store.library_inventory_file.exists() or repository.has_document(
+        store._document_name(store.library_inventory_file)
+    )
+    if not inventory_exists:
+        decision, reason = 'run', 'missing_inventory'
+    elif previous_signature and previous_signature != current_signature:
+        decision, reason = 'run', 'library_root_changed'
+    elif previous_generation and int(previous_generation or 0) > media_generation:
+        decision, reason = 'run', 'invalid_reconcile_generation'
+    else:
+        decision = 'skip'
+        reason = 'current_inventory' if previous_signature else 'bootstrapped_existing_inventory'
+        if not previous_signature:
+            repository.set_operational_meta('last_library_root_signature', current_signature)
+            repository.set_operational_meta('last_library_reconcile_generation', media_generation)
+    _startup_metrics['reconcile_decision_ms'] = round((time.perf_counter() - started) * 1000, 3)
+    _startup_metrics['reconcile_decision'] = decision
+    _startup_metrics['reconcile_reason'] = reason
+    return {'run': decision == 'run', 'reason': reason}
+
+
+def _mark_library_reconcile_complete():
+    repository = _catalog_repository()
+    repository.set_operational_meta('last_library_root_signature', _library_root_signature())
+    repository.set_operational_meta('last_library_reconcile_generation', repository.generation('media'))
+
+
+def _start_library_reconcile(force=False):
     global _library_reconcile_thread, _library_reconcile_state
     with _library_reconcile_lock:
         if _library_reconcile_thread and _library_reconcile_thread.is_alive():
             return dict(_library_reconcile_state)
+        decision = {'run': True, 'reason': 'explicit'} if force else _startup_reconcile_decision()
+        if not decision['run']:
+            _library_reconcile_state = {
+                **_library_reconcile_state,
+                'status': 'completed',
+                'skipped': True,
+                'reason': decision['reason'],
+                'updated_at': time.time(),
+            }
+            return dict(_library_reconcile_state)
         _library_reconcile_state = {
             **_library_reconcile_state,
             'status': 'running',
+            'skipped': False,
+            'reason': decision['reason'],
             'updated_at': time.time(),
         }
         _library_reconcile_thread = threading.Thread(
@@ -7483,6 +7746,15 @@ def _start_library_reconcile():
         )
         _library_reconcile_thread.start()
         return dict(_library_reconcile_state)
+
+
+@app.route('/api/startup/status')
+def startup_status():
+    return jsonify({
+        **_startup_metrics,
+        'api_ready_ms': _startup_metrics['api_ready_ms'] or round((time.perf_counter() - _process_started_at) * 1000, 3),
+        'reconcile': _library_reconcile_status(),
+    })
 
 
 def _identity_resolution(outcome, metadata=None, decision=None, *, manual_locked=False, source=''):
@@ -9695,10 +9967,9 @@ def _library_identity_records():
     cached_items = _fresh_catalog_library_items(store)
     if cached_items is not None:
         return list(cached_items)
-    snapshot = store.snapshot()
     return [
-        _catalog_library_item(candidate, store, snapshot)
-        for candidate in store.catalog.store.library_candidates()
+        _catalog_library_item(candidate, store, None)
+        for candidate in store.catalog.store.library_projection(include_details=True)
         if candidate.get('path') and os.path.isfile(candidate['path'])
     ]
 
@@ -10473,4 +10744,9 @@ if __name__ == '__main__':
         args=(lambda: _qbt_mode == 'embedded',),
         daemon=True,
     ).start()
+    _startup_metrics['background_queue_started'] = True
+    _startup_metrics['api_ready_ms'] = round((time.perf_counter() - _process_started_at) * 1000, 3)
+    artwork_timer = threading.Timer(1.0, _run_startup_artwork_backfill)
+    artwork_timer.daemon = True
+    artwork_timer.start()
     app.run(debug=False, port=5000, use_reloader=False)

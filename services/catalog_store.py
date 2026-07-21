@@ -1,5 +1,7 @@
 import json
+import re
 import sqlite3
+import unicodedata
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
@@ -9,7 +11,7 @@ from services.movie_identity import normalize_movie_title, ownership_keys
 from services.smart_match import parse_release_filename
 
 
-CATALOG_SCHEMA_VERSION = 6
+CATALOG_SCHEMA_VERSION = 7
 
 
 class CatalogError(RuntimeError):
@@ -35,6 +37,32 @@ def _number(value, default=0):
         return default
 
 
+def _catalog_sort_key(value):
+    """Mirror the browser's localeCompare ordering used by Library title sorts."""
+    decomposed = unicodedata.normalize("NFKD", _text(value)).casefold()
+    without_marks = "".join(char for char in decomposed if not unicodedata.combining(char))
+    punctuation = {
+        "_": 2, "-": 3, ",": 4, ";": 5, ":": 6, "!": 7, "¡": 8,
+        "?": 9, ".": 10, "'": 11, '"': 12, "(": 13, "[": 14,
+        "@": 15, "*": 16, "/": 17, "&": 18, "#": 19, "+": 20,
+    }
+    key = []
+    for char in without_marks:
+        if char.isspace():
+            key.append(chr(1))
+        elif char in punctuation:
+            key.append(chr(punctuation[char]))
+        elif char.isdigit():
+            key.append(chr(30 + int(char)))
+        elif "a" <= char <= "z":
+            key.append(chr(100 + ord(char) - ord("a")))
+        elif char.isalnum():
+            key.append(chr(200) + char)
+        else:
+            key.append(chr(20) + char)
+    return "".join(key)
+
+
 def _identity_key(movie):
     movie = movie or {}
     if _text(movie.get("tmdb_id")):
@@ -54,11 +82,13 @@ class CatalogStore:
     def __init__(self, database_path):
         self.database_path = Path(database_path).resolve()
         self.canonical = CanonicalCatalog()
+        self._library_summary_cache = None
 
     def connect(self):
         self.database_path.parent.mkdir(parents=True, exist_ok=True)
         connection = sqlite3.connect(self.database_path, timeout=30)
         connection.row_factory = sqlite3.Row
+        connection.create_function("cp_sort_key", 1, _catalog_sort_key, deterministic=True)
         connection.execute("PRAGMA foreign_keys = ON")
         connection.execute("PRAGMA journal_mode = WAL")
         connection.execute("PRAGMA synchronous = FULL")
@@ -257,6 +287,7 @@ class CatalogStore:
                 "SELECT value FROM catalog_meta WHERE key='schema_version'"
             ).fetchone()
             self.canonical.initialize(connection)
+            self._initialize_asset_schema(connection)
             media_generation = connection.execute(
                 "SELECT value FROM catalog_meta WHERE key='media_generation'"
             ).fetchone()
@@ -274,7 +305,7 @@ class CatalogStore:
             ).fetchone()[0])
             projection_current = (
                 previous_schema
-                and str(previous_schema[0]) == str(CATALOG_SCHEMA_VERSION)
+                and int(previous_schema[0]) >= 6
                 and canonical_contract
                 and str(canonical_contract[0]) == str(CANONICAL_CONTRACT_VERSION)
                 and str(canonical_generation[0] if canonical_generation else '0')
@@ -296,7 +327,72 @@ class CatalogStore:
                 (str(CATALOG_SCHEMA_VERSION),),
             )
 
+    @staticmethod
+    def _initialize_asset_schema(connection):
+        connection.executescript("""
+            CREATE TABLE IF NOT EXISTS media_assets (
+                asset_key TEXT PRIMARY KEY,
+                asset_type TEXT NOT NULL CHECK(asset_type IN ('poster','portrait','discover_poster')),
+                provider TEXT NOT NULL DEFAULT '',
+                source_url TEXT NOT NULL DEFAULT '',
+                local_path TEXT NOT NULL DEFAULT '',
+                checksum TEXT NOT NULL DEFAULT '',
+                mime_type TEXT NOT NULL DEFAULT '',
+                byte_size INTEGER NOT NULL DEFAULT 0,
+                width INTEGER NOT NULL DEFAULT 0,
+                height INTEGER NOT NULL DEFAULT 0,
+                status TEXT NOT NULL DEFAULT 'queued',
+                attempt_count INTEGER NOT NULL DEFAULT 0,
+                last_error TEXT NOT NULL DEFAULT '',
+                downloaded_at REAL NOT NULL DEFAULT 0,
+                last_verified_at REAL NOT NULL DEFAULT 0,
+                last_accessed_at REAL NOT NULL DEFAULT 0,
+                retention_class TEXT NOT NULL DEFAULT 'temporary',
+                created_at REAL NOT NULL DEFAULT 0,
+                updated_at REAL NOT NULL DEFAULT 0,
+                UNIQUE(asset_type, provider, source_url)
+            );
+
+            CREATE TABLE IF NOT EXISTS movie_assets (
+                movie_key TEXT NOT NULL,
+                asset_type TEXT NOT NULL,
+                asset_key TEXT NOT NULL,
+                selected INTEGER NOT NULL DEFAULT 0,
+                PRIMARY KEY(movie_key, asset_type, asset_key),
+                FOREIGN KEY(movie_key) REFERENCES canonical_movies(movie_key) ON DELETE CASCADE,
+                FOREIGN KEY(asset_key) REFERENCES media_assets(asset_key) ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS person_assets (
+                person_key TEXT NOT NULL,
+                asset_type TEXT NOT NULL,
+                asset_key TEXT NOT NULL,
+                selected INTEGER NOT NULL DEFAULT 0,
+                PRIMARY KEY(person_key, asset_type, asset_key),
+                FOREIGN KEY(person_key) REFERENCES people(person_key) ON DELETE CASCADE,
+                FOREIGN KEY(asset_key) REFERENCES media_assets(asset_key) ON DELETE CASCADE
+            );
+
+            CREATE TABLE IF NOT EXISTS curated_asset_refs (
+                curated_identity_key TEXT NOT NULL,
+                asset_type TEXT NOT NULL,
+                asset_key TEXT NOT NULL,
+                PRIMARY KEY(curated_identity_key, asset_type, asset_key),
+                FOREIGN KEY(asset_key) REFERENCES media_assets(asset_key) ON DELETE CASCADE
+            );
+
+            CREATE UNIQUE INDEX IF NOT EXISTS idx_movie_assets_selected
+                ON movie_assets(movie_key, asset_type) WHERE selected=1;
+            CREATE UNIQUE INDEX IF NOT EXISTS idx_person_assets_selected
+                ON person_assets(person_key, asset_type) WHERE selected=1;
+            CREATE INDEX IF NOT EXISTS idx_media_assets_checksum ON media_assets(checksum);
+            CREATE INDEX IF NOT EXISTS idx_media_assets_status ON media_assets(status, attempt_count, updated_at);
+            CREATE INDEX IF NOT EXISTS idx_curated_asset_key ON curated_asset_refs(asset_key);
+            INSERT OR IGNORE INTO catalog_meta(key, value) VALUES('asset_generation', '0');
+        """)
+
     def import_documents(self, documents, backup_manifest):
+        self._library_summary_cache = None
         self.initialize()
         documents = dict(documents or {})
         with self.transaction() as connection:
@@ -543,7 +639,557 @@ class CatalogStore:
         finally:
             connection.close()
 
-    def library_candidates(self):
+    def owned_movie_candidate(self, *, path_key="", movie_key=""):
+        """Return one owned file/movie graph for production detail projection.
+
+        This is intentionally bounded by one normalized path or canonical movie key.
+        Full-catalog provider-document decoding is confined to the explicitly named
+        ``audit_library_candidates`` reader and is not available to production routes.
+        """
+        path_key = _text(path_key)
+        movie_key = _text(movie_key)
+        if not path_key and not movie_key:
+            return None
+        connection = self.connect()
+        try:
+            if path_key:
+                row = connection.execute("""
+                    SELECT mf.* FROM media_files mf
+                    WHERE mf.path_key = ?
+                    LIMIT 1
+                """, (path_key,)).fetchone()
+            else:
+                row = connection.execute("""
+                    SELECT mf.*
+                    FROM canonical_movie_files cmf
+                    JOIN media_files mf ON mf.path_key = cmf.path_key
+                    WHERE cmf.movie_key = ?
+                    ORDER BY mf.added_time DESC, mf.path_key
+                    LIMIT 1
+                """, (movie_key,)).fetchone()
+            if not row:
+                return None
+            item = dict(row)
+            item["relational_canonical"] = self.canonical.project_paths(
+                connection, [item["path_key"]], include_details=True
+            ).get(item["path_key"], {})
+            return item
+        finally:
+            connection.close()
+
+    @staticmethod
+    def _library_effective_cte():
+        return """
+            WITH resolved AS (
+                SELECT
+                    mf.path_key, mf.path, mf.filename, mf.library_root, mf.size,
+                    mf.added_time, mf.modified_time, mf.resolution, mf.rip_source,
+                    mf.parsed_title, mf.parsed_year, mf.metadata_status,
+                    mf.metadata_accepted, mf.identity_status,
+                    cm.movie_key, cm.title AS canonical_title, cm.year AS canonical_year,
+                    cm.tmdb_id, cm.imdb_id, cm.plex_guid, cm.selected_provider,
+                    COALESCE(
+                        (
+                            SELECT selected.snapshot_key
+                            FROM provider_movie_snapshots selected
+                            WHERE selected.movie_key = cm.movie_key
+                              AND selected.provider = cm.selected_provider
+                              AND selected.path_key = mf.path_key
+                            ORDER BY selected.updated_at DESC, selected.snapshot_key
+                            LIMIT 1
+                        ),
+                        (
+                            SELECT selected.snapshot_key
+                            FROM provider_movie_snapshots selected
+                            WHERE selected.movie_key = cm.movie_key
+                              AND selected.provider = cm.selected_provider
+                            ORDER BY selected.updated_at DESC, selected.snapshot_key
+                            LIMIT 1
+                        ),
+                        (
+                            SELECT fallback.snapshot_key
+                            FROM provider_movie_snapshots fallback
+                            WHERE fallback.movie_key = cm.movie_key
+                              AND fallback.provider <> cm.selected_provider
+                              AND fallback.path_key = mf.path_key
+                            ORDER BY CASE fallback.provider WHEN 'tmdb' THEN 0 ELSE 1 END,
+                                fallback.updated_at DESC,
+                                fallback.snapshot_key
+                            LIMIT 1
+                        ),
+                        (
+                            SELECT fallback.snapshot_key
+                            FROM provider_movie_snapshots fallback
+                            WHERE fallback.movie_key = cm.movie_key
+                              AND fallback.provider <> cm.selected_provider
+                            ORDER BY CASE fallback.provider WHEN 'tmdb' THEN 0 ELSE 1 END,
+                                fallback.updated_at DESC,
+                                fallback.snapshot_key
+                            LIMIT 1
+                        )
+                    ) AS snapshot_key,
+                    COALESCE((
+                        SELECT mo.title
+                        FROM movie_overrides mo
+                        JOIN movie_override_identity_keys mk ON mk.override_id = mo.override_id
+                        WHERE mo.override_type = 'metadata'
+                          AND (
+                            mk.identity_key = cm.movie_key
+                            OR (cm.tmdb_id <> '' AND mk.identity_key = 'tmdb:' || cm.tmdb_id)
+                            OR (cm.imdb_id <> '' AND mk.identity_key = 'imdb:' || LOWER(cm.imdb_id))
+                            OR (cm.plex_guid <> '' AND mk.identity_key = 'plex:' || LOWER(cm.plex_guid))
+                            OR mk.identity_key = 'path:' || LOWER(mf.path)
+                          )
+                        ORDER BY mo.updated_at DESC, mo.override_id DESC
+                        LIMIT 1
+                    ), '') AS override_title,
+                    COALESCE((
+                        SELECT mo.year
+                        FROM movie_overrides mo
+                        JOIN movie_override_identity_keys mk ON mk.override_id = mo.override_id
+                        WHERE mo.override_type = 'metadata'
+                          AND (
+                            mk.identity_key = cm.movie_key
+                            OR (cm.tmdb_id <> '' AND mk.identity_key = 'tmdb:' || cm.tmdb_id)
+                            OR (cm.imdb_id <> '' AND mk.identity_key = 'imdb:' || LOWER(cm.imdb_id))
+                            OR (cm.plex_guid <> '' AND mk.identity_key = 'plex:' || LOWER(cm.plex_guid))
+                            OR mk.identity_key = 'path:' || LOWER(mf.path)
+                          )
+                        ORDER BY mo.updated_at DESC, mo.override_id DESC
+                        LIMIT 1
+                    ), '') AS override_year
+                FROM media_files mf
+                JOIN canonical_movie_files cmf ON cmf.path_key = mf.path_key
+                JOIN canonical_movies cm ON cm.movie_key = cmf.movie_key
+                WHERE mf.identity_status = 'accepted' OR mf.metadata_accepted = 1
+            ),
+            effective AS (
+                SELECT
+                    resolved.*,
+                    pms.poster_url,
+                    pms.plot,
+                    pms.rating,
+                    pms.language,
+                    pms.country,
+                    pms.country_flag,
+                    pms.release_date,
+                    COALESCE(NULLIF(resolved.override_title, ''), NULLIF(resolved.canonical_title, ''),
+                             NULLIF(pms.title, ''), NULLIF(resolved.parsed_title, ''), resolved.filename) AS display_title,
+                    COALESCE(NULLIF(resolved.override_year, ''), NULLIF(resolved.canonical_year, ''),
+                             NULLIF(pms.year, ''), resolved.parsed_year) AS display_year,
+                    CASE
+                        WHEN LOWER(resolved.resolution) LIKE '%2160%' OR LOWER(resolved.resolution) LIKE '%4k%' THEN 4
+                        WHEN LOWER(resolved.resolution) LIKE '%1080%' THEN 3
+                        WHEN LOWER(resolved.resolution) LIKE '%720%' THEN 2
+                        WHEN LOWER(resolved.resolution) LIKE '%480%' THEN 1
+                        ELSE 0
+                    END AS resolution_rank
+                FROM resolved
+                LEFT JOIN provider_movie_snapshots pms ON pms.snapshot_key = resolved.snapshot_key
+            )
+        """
+
+    @staticmethod
+    def _library_filter_sql(filters):
+        filters = dict(filters or {})
+        clauses = []
+        parameters = []
+        query = _text(filters.get("query")).lower()
+        if query:
+            clauses.append("""
+                LOWER(
+                    COALESCE(e.display_title, '') || ' ' || COALESCE(e.display_year, '') || ' ' ||
+                    COALESCE(e.filename, '') || ' ' || COALESCE(e.path, '') || ' ' ||
+                    COALESCE(e.plot, '') || ' ' || COALESCE((
+                        SELECT GROUP_CONCAT(g.name, ' ')
+                        FROM movie_genres mg JOIN genres g ON g.genre_key = mg.genre_key
+                        WHERE mg.snapshot_key = e.snapshot_key
+                    ), '')
+                ) LIKE ?
+            """)
+            parameters.append(f"%{query}%")
+        quality = _text(filters.get("quality")) or "all"
+        if quality == "upgrade":
+            clauses.append("e.path_key IN (SELECT value FROM json_each(?))")
+            parameters.append(_json_text(list(filters.get("upgrade_path_keys") or [])))
+        elif quality == "good":
+            clauses.append("e.resolution_rank >= 3")
+        elif quality == "4k":
+            clauses.append("e.resolution_rank = 4")
+        resolution = _text(filters.get("resolution")) or "all"
+        if resolution == "4k":
+            clauses.append("e.resolution_rank = 4")
+        elif resolution == "1080p":
+            clauses.append("e.resolution_rank = 3")
+        elif resolution == "720p":
+            clauses.append("e.resolution_rank = 2")
+        elif resolution == "below-720p":
+            clauses.append("e.resolution_rank < 2")
+        source = _text(filters.get("source")) or "all"
+        if source != "all":
+            clauses.append("e.rip_source = ?")
+            parameters.append(source)
+        genre = _text(filters.get("genre")) or "all"
+        if genre != "all":
+            clauses.append("""
+                EXISTS(
+                    SELECT 1 FROM movie_genres mg JOIN genres g ON g.genre_key = mg.genre_key
+                    WHERE mg.snapshot_key = e.snapshot_key AND g.name = ?
+                )
+            """)
+            parameters.append(genre)
+        language = _text(filters.get("language")) or "all"
+        if language != "all":
+            clauses.append("e.language = ?")
+            parameters.append(language)
+        country = _text(filters.get("country")) or "all"
+        if country != "all":
+            clauses.append("COALESCE(NULLIF(e.country_flag, ''), e.country) = ?")
+            parameters.append(country)
+        year_from = _text(filters.get("year_from"))
+        if year_from:
+            clauses.append("CAST(COALESCE(NULLIF(e.display_year, ''), '0') AS INTEGER) >= ?")
+            parameters.append(int(year_from))
+        year_to = _text(filters.get("year_to"))
+        if year_to:
+            clauses.append("CAST(COALESCE(NULLIF(e.display_year, ''), '0') AS INTEGER) <= ?")
+            parameters.append(int(year_to))
+        min_rating = _text(filters.get("min_rating")) or "all"
+        if min_rating != "all":
+            clauses.append("CAST(COALESCE(NULLIF(e.rating, ''), '0') AS REAL) >= ?")
+            parameters.append(float(min_rating))
+        role = _text(filters.get("role"))
+        person_id = _text(filters.get("person_id"))
+        person_name = _text(filters.get("person_name")).lower()
+        if role and (person_id or person_name):
+            credit_type = "director" if role == "director" else "cast"
+            person_clause = "COALESCE(NULLIF(p.tmdb_id, ''), p.provider_id) = ?" if person_id else "LOWER(p.name) = ?"
+            clauses.append(f"""
+                EXISTS(
+                    SELECT 1 FROM movie_credits mc JOIN people p ON p.person_key = mc.person_key
+                    WHERE mc.snapshot_key = e.snapshot_key AND mc.credit_type = ? AND {person_clause}
+                )
+            """)
+            parameters.extend((credit_type, person_id or person_name))
+        collection_paths = list(filters.get("collection_path_keys") or [])
+        collection_id = _text(filters.get("collection_id"))
+        if collection_paths:
+            clauses.append("e.path_key IN (SELECT value FROM json_each(?))")
+            parameters.append(_json_text(collection_paths))
+        elif collection_id:
+            clauses.append("""
+                EXISTS(
+                    SELECT 1 FROM movie_collections mc
+                    JOIN collections c ON c.collection_key = mc.collection_key
+                    WHERE mc.snapshot_key = e.snapshot_key AND c.provider_id = ?
+                )
+            """)
+            parameters.append(collection_id)
+
+        def list_membership_clause(system_type=False):
+            list_constraint = "ul.system_type = ?" if system_type else "li.list_id = ?"
+            return f"""
+                EXISTS(
+                    SELECT 1 FROM list_items li
+                    JOIN user_lists ul ON ul.list_id = li.list_id
+                    WHERE {list_constraint}
+                      AND (
+                        (li.tmdb_id <> '' AND li.tmdb_id = e.tmdb_id)
+                        OR (li.imdb_id <> '' AND LOWER(li.imdb_id) = LOWER(e.imdb_id))
+                        OR (li.path <> '' AND LOWER(li.path) = LOWER(e.path))
+                        OR li.identity_key IN (
+                            SELECT identity_key FROM media_identity_keys WHERE path_key = e.path_key
+                        )
+                      )
+                )
+            """
+
+        list_id = _text(filters.get("list_id"))
+        if list_id:
+            clauses.append(list_membership_clause())
+            parameters.append(list_id)
+        viewing_state = _text(filters.get("viewing_state")) or "all"
+        if viewing_state in {"watched", "watchlist"}:
+            clauses.append(list_membership_clause(system_type=True))
+            parameters.append(viewing_state)
+        elif viewing_state == "unwatched":
+            clauses.append("NOT " + list_membership_clause(system_type=True))
+            parameters.append("watched")
+        return (" WHERE " + " AND ".join(f"({clause})" for clause in clauses)) if clauses else "", parameters
+
+    @staticmethod
+    def _library_sort_sql(sort_mode):
+        title = (
+            "cp_sort_key(e.display_title), e.display_title COLLATE NOCASE, "
+            "e.added_time DESC, e.parsed_title COLLATE NOCASE, e.path_key"
+        )
+        return {
+            "rating": title,
+            "added": f"COALESCE(NULLIF(e.added_time, 0), e.modified_time, 0) DESC, {title}",
+            "year-desc": f"CAST(COALESCE(NULLIF(e.display_year, ''), '0') AS INTEGER) DESC, {title}",
+            "year-asc": f"CAST(COALESCE(NULLIF(e.display_year, ''), '0') AS INTEGER), {title}",
+            "quality": f"e.resolution_rank DESC, {title}",
+            "size": "e.size DESC, e.filename COLLATE NOCASE, e.path_key",
+            "identity": "e.metadata_accepted DESC, e.filename COLLATE NOCASE, e.path_key",
+            "plex": "e.metadata_accepted DESC, e.filename COLLATE NOCASE, e.path_key",
+            "source": "e.rip_source COLLATE NOCASE, e.filename COLLATE NOCASE, e.path_key",
+            "filename": "e.filename COLLATE NOCASE, e.path_key",
+            "title": title,
+        }.get(_text(sort_mode), title)
+
+    def _candidates_for_path_keys(self, connection, path_keys):
+        path_keys = list(dict.fromkeys(_text(key) for key in path_keys if _text(key)))
+        if not path_keys:
+            return []
+        rows = connection.execute("""
+            SELECT mf.* FROM media_files mf
+            WHERE mf.path_key IN (SELECT value FROM json_each(?))
+        """, (_json_text(path_keys),)).fetchall()
+        canonical = self.canonical.project_paths(connection, path_keys, include_details=False)
+        decoded = []
+        for row in rows:
+            item = dict(row)
+            item["relational_canonical"] = canonical.get(item["path_key"], {})
+            decoded.append(item)
+        by_path = {row["path_key"]: row for row in decoded}
+        return [by_path[key] for key in path_keys if key in by_path]
+
+    def library_page(self, filters=None, *, page=1, page_size=40):
+        filters = dict(filters or {})
+        page_size = min(max(int(page_size or 40), 1), 200)
+        page = max(int(page or 1), 1)
+        cte = self._library_effective_cte()
+        where, parameters = self._library_filter_sql(filters)
+        connection = self.connect()
+        try:
+            total = int(connection.execute(
+                f"{cte} SELECT COUNT(*) FROM effective e{where}", parameters
+            ).fetchone()[0])
+            total_pages = max(1, (total + page_size - 1) // page_size)
+            page = min(page, total_pages)
+            offset = (page - 1) * page_size
+            path_keys = [
+                row[0]
+                for row in connection.execute(
+                    f"{cte} SELECT e.path_key FROM effective e{where} "
+                    f"ORDER BY {self._library_sort_sql(filters.get('sort'))} LIMIT ? OFFSET ?",
+                    [*parameters, page_size, offset],
+                ).fetchall()
+            ]
+            candidates = self._candidates_for_path_keys(connection, path_keys)
+            generation_row = connection.execute(
+                "SELECT value FROM catalog_meta WHERE key='media_generation'"
+            ).fetchone()
+            generation = int(generation_row[0]) if generation_row else 0
+            summary = self._library_summary_cache
+            if not summary or summary["generation"] != generation:
+                facets = {
+                    "genres": [row[0] for row in connection.execute(
+                        f"{cte} SELECT DISTINCT g.name FROM effective e "
+                        "JOIN movie_genres mg ON mg.snapshot_key=e.snapshot_key "
+                        "JOIN genres g ON g.genre_key=mg.genre_key ORDER BY g.name COLLATE NOCASE"
+                    ).fetchall() if row[0]],
+                    "sources": [row[0] for row in connection.execute(
+                        "SELECT DISTINCT rip_source FROM media_files WHERE rip_source<>'' ORDER BY rip_source COLLATE NOCASE"
+                    ).fetchall() if row[0]],
+                    "languages": [row[0] for row in connection.execute(
+                        f"{cte} SELECT DISTINCT e.language FROM effective e WHERE e.language<>'' ORDER BY e.language COLLATE NOCASE"
+                    ).fetchall() if row[0]],
+                    "countries": [row[0] for row in connection.execute(
+                        f"{cte} SELECT DISTINCT COALESCE(NULLIF(e.country_flag,''),e.country) value "
+                        "FROM effective e WHERE COALESCE(NULLIF(e.country_flag,''),e.country)<>'' "
+                        "ORDER BY value COLLATE NOCASE"
+                    ).fetchall() if row[0]],
+                }
+                stats_row = connection.execute("""
+                    SELECT COUNT(*) AS total,
+                        SUM(CASE WHEN LOWER(resolution) NOT LIKE '%1080%'
+                                       AND LOWER(resolution) NOT LIKE '%2160%'
+                                       AND LOWER(resolution) NOT LIKE '%4k%' THEN 1 ELSE 0 END) AS low,
+                        SUM(CASE WHEN identity_status='accepted' OR metadata_accepted=1 THEN 1 ELSE 0 END) AS matched,
+                        SUM(CASE WHEN metadata_status='pending' THEN 1 ELSE 0 END) AS pending,
+                        SUM(CASE WHEN NOT(identity_status='accepted' OR metadata_accepted=1)
+                                       AND metadata_status<>'pending' THEN 1 ELSE 0 END) AS unmatched
+                    FROM media_files
+                """).fetchone()
+                summary = {
+                    "generation": generation,
+                    "facets": facets,
+                    "stats": {key: int(stats_row[key] or 0) for key in ("total", "low", "matched", "pending", "unmatched")},
+                }
+                self._library_summary_cache = summary
+            return {
+                "candidates": candidates,
+                "total": total,
+                "page": page,
+                "page_size": page_size,
+                "total_pages": total_pages,
+                "page_start": offset if total else 0,
+                "page_end": min(offset + len(candidates), total),
+                "facets": summary["facets"],
+                "stats": summary["stats"],
+            }
+        finally:
+            connection.close()
+
+    def library_selection_paths(self, filters=None):
+        filters = dict(filters or {})
+        cte = self._library_effective_cte()
+        where, parameters = self._library_filter_sql(filters)
+        connection = self.connect()
+        try:
+            return [
+                row[0]
+                for row in connection.execute(
+                    f"{cte} SELECT e.path FROM effective e{where} "
+                    f"ORDER BY {self._library_sort_sql(filters.get('sort'))}",
+                    parameters,
+                ).fetchall()
+            ]
+        finally:
+            connection.close()
+
+    def maintenance_upgrade_candidates(self):
+        """Return only low-quality accepted rows that can still be upgrade candidates."""
+        connection = self.connect()
+        try:
+            rows = connection.execute("""
+                SELECT mf.*, pf.raw_json AS plex_json,
+                       mm.raw_json AS manual_json, tm.raw_json AS tmdb_json
+                FROM media_files mf
+                JOIN canonical_movie_files cmf ON cmf.path_key=mf.path_key
+                LEFT JOIN plex_files pf ON pf.path_key=mf.path_key
+                LEFT JOIN manual_matches mm ON mm.path_key=mf.path_key
+                LEFT JOIN tmdb_movies tm ON tm.tmdb_id=mf.tmdb_id
+                WHERE (mf.identity_status='accepted' OR mf.metadata_accepted=1)
+                  AND NOT(LOWER(mf.resolution) LIKE '%1080%'
+                          OR LOWER(mf.resolution) LIKE '%2160%'
+                          OR LOWER(mf.resolution) LIKE '%4k%')
+                  AND NOT EXISTS(
+                      SELECT 1 FROM canonical_movie_files other
+                      JOIN media_files om ON om.path_key=other.path_key
+                      WHERE other.movie_key=cmf.movie_key
+                        AND (LOWER(om.resolution) LIKE '%1080%'
+                             OR LOWER(om.resolution) LIKE '%2160%'
+                             OR LOWER(om.resolution) LIKE '%4k%')
+                  )
+            """).fetchall()
+            result = []
+            for row in rows:
+                item = dict(row)
+                for column in ("raw_json", "plex_json", "manual_json", "tmdb_json"):
+                    item[column] = json.loads(item[column]) if item.get(column) else {}
+                result.append(item)
+            return result
+        finally:
+            connection.close()
+
+    def maintenance_storage_statistics(self):
+        """Project duplicate counts and reclaimable bytes from normalized catalog rows."""
+        connection = self.connect()
+        try:
+            rows = [dict(row) for row in connection.execute("""
+                SELECT cmf.movie_key, mf.path_key, mf.parsed_title, mf.parsed_year,
+                       mf.resolution, mf.rip_source, mf.size,
+                       CASE WHEN pf.path_key IS NULL THEN 0 ELSE 1 END AS plex_matched
+                FROM canonical_movie_files cmf
+                JOIN media_files mf ON mf.path_key=cmf.path_key
+                LEFT JOIN plex_files pf ON pf.path_key=mf.path_key
+                ORDER BY cmf.movie_key, mf.path_key
+            """).fetchall()]
+        finally:
+            connection.close()
+        groups = {}
+        for row in rows:
+            groups.setdefault(row["movie_key"], []).append(row)
+        resolution_rank = {"4K": 4, "1080p": 3, "720p": 2, "480p": 1, "Unknown": 0}
+        rip_rank = {
+            "BD Remux": 9, "Remux": 8, "Blu-ray": 7, "BDRip": 6,
+            "WEB-DL": 5, "WEBRip": 4, "HDRip": 3, "HDTV": 2,
+            "DVDRip": 1, "DVDScr": 0, "CAMRip": -1, "HDCAM": -2, "Unknown": -3,
+        }
+        duplicate_groups = []
+        for files in groups.values():
+            buckets = [files]
+            if len(files) > 4 and any(row["plex_matched"] for row in files):
+                by_parsed = {}
+                for row in files:
+                    title = _text(row["parsed_title"]).lower()
+                    if title:
+                        by_parsed.setdefault((title, _text(row["parsed_year"])), []).append(row)
+                buckets = list(by_parsed.values())
+            for bucket in buckets:
+                if len(bucket) < 2:
+                    continue
+                ranked = sorted(bucket, key=lambda row: (
+                    resolution_rank.get(_text(row["resolution"]) or "Unknown", 0),
+                    rip_rank.get(_text(row["rip_source"]) or "Unknown", -3),
+                    int(row["size"] or 0),
+                ), reverse=True)
+                duplicate_groups.append(ranked)
+        return {
+            "duplicate_groups": len(duplicate_groups),
+            "extra_copies": sum(len(group) - 1 for group in duplicate_groups),
+            "reclaimable_bytes": sum(
+                sum(int(row["size"] or 0) for row in group[1:]) for group in duplicate_groups
+            ),
+        }
+
+    def candidates_for_paths(self, path_keys):
+        connection = self.connect()
+        try:
+            return self._candidates_for_path_keys(connection, path_keys)
+        finally:
+            connection.close()
+
+    def library_projection(self, *, include_details=False):
+        """Return the complete normalized library without decoding source documents."""
+        connection = self.connect()
+        try:
+            rows = [dict(row) for row in connection.execute("""
+                SELECT mf.path_key, mf.path, mf.filename, mf.library_root,
+                       mf.size, mf.added_time, mf.modified_time, mf.resolution,
+                       mf.rip_source, mf.parsed_title, mf.parsed_year,
+                       mf.identity_status, mf.identity_title, mf.identity_year,
+                       mf.identity_source, mf.identity_revision,
+                       mf.identity_decision_version, mf.identity_evidence_fingerprint,
+                       mf.tmdb_id, mf.imdb_id, mf.plex_guid, mf.plex_rating_key,
+                       mf.display_provider, mf.metadata_status, mf.metadata_source,
+                       mf.metadata_accepted, mf.enrichment_status, mf.ingest_status,
+                       mf.manual_lock, mf.manual_locked
+                FROM media_files mf
+                ORDER BY mf.added_time DESC, cp_sort_key(mf.identity_title), mf.path_key
+            """).fetchall()]
+            projections = self.canonical.project_paths(
+                connection,
+                [row["path_key"] for row in rows],
+                include_details=include_details,
+            )
+            for row in rows:
+                row["relational_canonical"] = projections.get(row["path_key"], {})
+            return rows
+        finally:
+            connection.close()
+
+    def file_inventory(self):
+        """Return the normalized file/statistics contract in one SQL statement."""
+        connection = self.connect()
+        try:
+            return [dict(row) for row in connection.execute("""
+                SELECT mf.path, mf.filename, mf.library_root, mf.size,
+                       mf.resolution, mf.rip_source, mf.parsed_title, mf.parsed_year,
+                       mf.tmdb_id, mf.imdb_id, mf.identity_title, mf.identity_year,
+                       mf.metadata_status, mf.metadata_accepted,
+                       pf.plex_title, pf.plex_year
+                FROM media_files mf
+                LEFT JOIN plex_files pf ON pf.path_key=mf.path_key
+                ORDER BY mf.path_key
+            """).fetchall()]
+        finally:
+            connection.close()
+
+    def audit_library_candidates(self):
+        """Decode source evidence only for explicit parity, identity, and rollback audits."""
         connection = self.connect()
         try:
             rows = connection.execute("""
@@ -573,7 +1219,6 @@ class CatalogStore:
                         (item["path_key"],),
                     ).fetchall()
                 ]
-            item["relational_canonical"] = self.canonical.project_path(connection, item["path_key"])
             result.append(item)
         return result
 

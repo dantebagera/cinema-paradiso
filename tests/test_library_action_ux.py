@@ -46,7 +46,7 @@ class LibraryActionUxTest(unittest.TestCase):
     def test_library_daily_actions_are_file_scan_and_unmatched_review(self):
         self.assertIn("Rescan Files", self.source)
         self.assertIn("Review Unmatched", self.source)
-        self.assertIn("/api/library?force_scan=1", self.source)
+        self.assertIn("params.set('force_scan', '1')", self.source)
         self.assertIn("/api/library/reconcile", self.source)
         self.assertIn("cp-library-reconciled", self.source)
         self.assertNotIn("Fetch Metadata", self.source)
@@ -98,18 +98,18 @@ class LibraryActionUxTest(unittest.TestCase):
     def test_library_people_search_uses_only_owned_stored_people_data(self):
         self.assertIn("const [librarySearchKind, setLibrarySearchKind] = useState('movies')", self.source)
         self.assertIn("<option value=\"people\">People</option>", self.source)
-        self.assertIn("buildLibraryPeopleIndex(items, query)", self.source)
+        self.assertIn("buildLibraryPeopleIndex(peopleItems, query)", self.source)
         self.assertIn("applyRoleFilter(role, person, { localOnly: true })", self.source)
         self.assertIn("function buildLibraryPeopleIndex", self.library_utils_source)
         self.assertIn("if (!item?.canonical_metadata?.accepted) continue;", self.library_utils_source)
         self.assertIn("filter.localOnly ? getStoredRolePeople", self.library_utils_source)
 
     def test_library_view_model_safe_page_is_bound_for_pagination(self):
-        self.assertRegex(
-            self.source,
-            r"const \{\s*filteredItems,\s*totalPages,\s*safePage,\s*pageStart,\s*pageEnd,\s*visibleItems,\s*stats\s*\} = useMemo\(\(\) => buildLibraryViewModel",
-        )
+        self.assertIn("totalPages: libraryResult.total_pages", self.source)
+        self.assertIn("visibleItems: items", self.source)
+        self.assertIn("return buildLibraryViewModel({", self.source)
         self.assertIn("page={safePage}", self.source)
+        self.assertIn("total={mode === 'movie' ? libraryResult.total : filteredItems.length}", self.source)
 
     def test_discover_search_forces_adult_titles_off(self):
         self.assertIn("include_adult=false", self.source)
@@ -172,7 +172,8 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("function LibraryWorkspace({", self.source)
         self.assertIn("window.addEventListener('cp-library-changed', handleLibraryChanged)", self.source)
         self.assertIn("loadLibrary(false, { quiet: true })", self.source)
-        self.assertIn("if (!quiet) setCurrentPage(1)", self.source)
+        self.assertIn("const requestedPage = forceScan ? 1 : currentPage", self.source)
+        self.assertNotIn("if (!quiet) setCurrentPage(1)", self.source)
         self.assertNotIn("Library changed. Refresh view", self.source)
 
     def test_movie_view_exposes_local_metadata_correction(self):

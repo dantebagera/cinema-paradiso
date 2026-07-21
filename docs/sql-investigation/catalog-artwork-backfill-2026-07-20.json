@@ -1,0 +1,284 @@
+{
+  "started_at": 1784579247.9865317,
+  "duration_seconds": 1195.509,
+  "initial": {
+    "status": "idle",
+    "queued": 0,
+    "completed": 0,
+    "failed": 0,
+    "started_at": 0,
+    "updated_at": 0,
+    "counts": {
+      "queued": 18956,
+      "ready": 113
+    },
+    "asset_generation": 152,
+    "ready_assets": 113,
+    "unique_checksums": 113,
+    "logical_bytes": 5577712,
+    "custom_assets": 13,
+    "physical_bytes": 5577712
+  },
+  "batches": [
+    {
+      "batch": 1,
+      "seconds": 69.816,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "queued": 17956,
+        "ready": 1113
+      },
+      "physical_bytes": 50396474
+    },
+    {
+      "batch": 2,
+      "seconds": 80.765,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "queued": 16956,
+        "ready": 2113
+      },
+      "physical_bytes": 94232183
+    },
+    {
+      "batch": 3,
+      "seconds": 71.999,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "queued": 15956,
+        "ready": 3113
+      },
+      "physical_bytes": 138164359
+    },
+    {
+      "batch": 4,
+      "seconds": 68.667,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "queued": 14956,
+        "ready": 4113
+      },
+      "physical_bytes": 168708338
+    },
+    {
+      "batch": 5,
+      "seconds": 64.246,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "queued": 13956,
+        "ready": 5113
+      },
+      "physical_bytes": 181841257
+    },
+    {
+      "batch": 6,
+      "seconds": 61.872,
+      "attempted": 1000,
+      "completed": 999,
+      "failed": 1,
+      "counts": {
+        "failed": 1,
+        "queued": 12956,
+        "ready": 6112
+      },
+      "physical_bytes": 199804465
+    },
+    {
+      "batch": 7,
+      "seconds": 54.934,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 11956,
+        "ready": 7112
+      },
+      "physical_bytes": 212820201
+    },
+    {
+      "batch": 8,
+      "seconds": 51.736,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 10956,
+        "ready": 8112
+      },
+      "physical_bytes": 226009295
+    },
+    {
+      "batch": 9,
+      "seconds": 61.497,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 9956,
+        "ready": 9112
+      },
+      "physical_bytes": 238983219
+    },
+    {
+      "batch": 10,
+      "seconds": 58.866,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 8956,
+        "ready": 10112
+      },
+      "physical_bytes": 252072617
+    },
+    {
+      "batch": 11,
+      "seconds": 65.484,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 7956,
+        "ready": 11112
+      },
+      "physical_bytes": 265191068
+    },
+    {
+      "batch": 12,
+      "seconds": 63.942,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 6956,
+        "ready": 12112
+      },
+      "physical_bytes": 278009278
+    },
+    {
+      "batch": 13,
+      "seconds": 67.677,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 5956,
+        "ready": 13112
+      },
+      "physical_bytes": 290703103
+    },
+    {
+      "batch": 14,
+      "seconds": 44.35,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 4956,
+        "ready": 14112
+      },
+      "physical_bytes": 309468743
+    },
+    {
+      "batch": 15,
+      "seconds": 57.469,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 3956,
+        "ready": 15112
+      },
+      "physical_bytes": 323781465
+    },
+    {
+      "batch": 16,
+      "seconds": 46.958,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 2956,
+        "ready": 16112
+      },
+      "physical_bytes": 337015038
+    },
+    {
+      "batch": 17,
+      "seconds": 50.775,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 1956,
+        "ready": 17112
+      },
+      "physical_bytes": 350233639
+    },
+    {
+      "batch": 18,
+      "seconds": 51.708,
+      "attempted": 1000,
+      "completed": 1000,
+      "failed": 0,
+      "counts": {
+        "failed": 1,
+        "queued": 956,
+        "ready": 18112
+      },
+      "physical_bytes": 363378951
+    },
+    {
+      "batch": 19,
+      "seconds": 65.482,
+      "attempted": 957,
+      "completed": 957,
+      "failed": 0,
+      "counts": {
+        "ready": 19069
+      },
+      "physical_bytes": 375987886
+    }
+  ],
+  "final": {
+    "status": "completed",
+    "queued": 957,
+    "completed": 957,
+    "failed": 0,
+    "started_at": 1784580372.764099,
+    "updated_at": 1784580435.6989155,
+    "counts": {
+      "ready": 19069
+    },
+    "asset_generation": 19108,
+    "ready_assets": 19069,
+    "unique_checksums": 19069,
+    "logical_bytes": 375987886,
+    "custom_assets": 13,
+    "physical_bytes": 375987886
+  },
+  "catalog_generation_before": 306,
+  "catalog_generation_after": 306,
+  "deduplicated_files": 0
+}

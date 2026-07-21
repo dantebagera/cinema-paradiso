@@ -1,0 +1,193 @@
+{
+  "captured_at": 1784578167.087168,
+  "project_root": "C:\\Users\\dante\\Desktop\\cinema paradiso",
+  "catalog": {
+    "database_path": "C:\\Users\\dante\\AppData\\Local\\Cinema Paradiso\\Catalog\\catalog-read-cb30c1d963c88463.sqlite",
+    "database_bytes": 117063680,
+    "integrity": "ok",
+    "foreign_key_violations": 0,
+    "meta": {
+      "backup_manifest": "{}",
+      "canonical_contract_version": "2",
+      "canonical_media_generation": "306",
+      "curation_generation": "16585",
+      "export_dirty": "1",
+      "generation": "23014",
+      "imported_at": "2026-07-13T00:52:14.838740+00:00",
+      "media_generation": "306",
+      "schema_version": "6",
+      "source_revision": "[\"C:\\\\Users\\\\dante\\\\Desktop\\\\cinema paradiso\\\\data\",[[\"files.json\",1783903299380018900,4912893],[\"tmdb_metadata.json\",1783901311145553800,2190886],[\"plex_metadata.json\",1783903019068547100,6185657],[\"manual_matches.json\",1783903019088725300,277926],[\"conflicts.json\",0,0],[\"metadata_authority.json\",1781786963605476800,231]]]",
+      "write_authority": "sqlite"
+    },
+    "row_counts": {
+      "canonical_movie_files": 3707,
+      "canonical_movies": 3707,
+      "catalog_meta": 11,
+      "collection_overrides": 1,
+      "collections": 579,
+      "followed_releases": 13,
+      "genres": 25,
+      "identity_audit_fingerprints": 3494,
+      "identity_decisions": 3708,
+      "list_items": 260,
+      "manual_matches": 486,
+      "media_files": 3708,
+      "media_identity_keys": 15178,
+      "movie_collections": 1108,
+      "movie_credits": 43833,
+      "movie_genres": 16714,
+      "movie_override_identity_keys": 48,
+      "movie_overrides": 13,
+      "people": 31206,
+      "plex_files": 3572,
+      "provider_movie_snapshots": 7199,
+      "source_documents": 17,
+      "tmdb_movies": 4749,
+      "user_lists": 10
+    },
+    "representative_paths": [
+      "E:\\Movies\\Blade Runner 2049 (2017) [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\Blade.Runner.2049.2017.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+      "E:\\Movies\\Avatar Fire And Ash (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]\\Avatar.Fire.And.Ash.2025.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.BZ].mkv",
+      "E:\\Movies\\Avatar The Way Of Water (2022) [2160p] [4K] [WEB] [5.1] [YTS.MX]\\Avatar.The.Way.Of.Water.2022.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv",
+      "E:\\Movies\\Avatar (2009) [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\Avatar.2009.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+      "E:\\Movies\\Resident Evil\\11 Resident Evil Death Island (2023) [2160p] [4K] [ANI]\\Resident.Evil.Death.Island.2023.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+      "E:\\Movies\\Wicked For Good (2025) [2160p] [4K] [WEB] [5.1] [YTS.LT]\\Wicked.For.Good.2025.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.LT].mkv",
+      "E:\\Movies\\Home Alone (1990) [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\Home.Alone.1990.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+      "E:\\Movies\\Crouching Tiger Hidden Dragon (2000) [CHINESE] [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\Crouching.Tiger.Hidden.Dragon.2000.CHINESE.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+      "E:\\Movies\\The Shining (1980) [US DC] [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\The.Shining.1980.US.DC.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+      "E:\\Movies\\F1 The Movie (2025) [2160p] [4K] [WEB] [5.1] [YTS.MX]\\F1.The.Movie.2025.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv"
+    ]
+  },
+  "in_process": {
+    "details": [
+      {
+        "path": "E:\\Movies\\Blade Runner 2049 (2017) [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\Blade.Runner.2049.2017.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+        "status": 200,
+        "elapsed_ms": 6.772,
+        "route_ms": 4.6,
+        "query_count": 9,
+        "title": "Blade Runner 2049",
+        "cast_count": 7,
+        "director_count": 1
+      },
+      {
+        "path": "E:\\Movies\\Avatar Fire And Ash (2025) [2160p] [4K] [WEB] [5.1] [YTS.BZ]\\Avatar.Fire.And.Ash.2025.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.BZ].mkv",
+        "status": 200,
+        "elapsed_ms": 4.553,
+        "route_ms": 4.3,
+        "query_count": 9,
+        "title": "Avatar: Fire and Ash",
+        "cast_count": 7,
+        "director_count": 1
+      },
+      {
+        "path": "E:\\Movies\\Avatar The Way Of Water (2022) [2160p] [4K] [WEB] [5.1] [YTS.MX]\\Avatar.The.Way.Of.Water.2022.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv",
+        "status": 200,
+        "elapsed_ms": 4.402,
+        "route_ms": 4.2,
+        "query_count": 9,
+        "title": "Avatar: The Way of Water",
+        "cast_count": 7,
+        "director_count": 1
+      },
+      {
+        "path": "E:\\Movies\\Avatar (2009) [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\Avatar.2009.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+        "status": 200,
+        "elapsed_ms": 4.46,
+        "route_ms": 4.2,
+        "query_count": 9,
+        "title": "Avatar",
+        "cast_count": 7,
+        "director_count": 1
+      },
+      {
+        "path": "E:\\Movies\\Resident Evil\\11 Resident Evil Death Island (2023) [2160p] [4K] [ANI]\\Resident.Evil.Death.Island.2023.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+        "status": 200,
+        "elapsed_ms": 4.516,
+        "route_ms": 4.3,
+        "query_count": 9,
+        "title": "Resident Evil: Death Island",
+        "cast_count": 7,
+        "director_count": 1
+      },
+      {
+        "path": "E:\\Movies\\Wicked For Good (2025) [2160p] [4K] [WEB] [5.1] [YTS.LT]\\Wicked.For.Good.2025.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.LT].mkv",
+        "status": 200,
+        "elapsed_ms": 4.496,
+        "route_ms": 4.3,
+        "query_count": 9,
+        "title": "Wicked: For Good",
+        "cast_count": 7,
+        "director_count": 1
+      },
+      {
+        "path": "E:\\Movies\\Home Alone (1990) [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\Home.Alone.1990.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+        "status": 200,
+        "elapsed_ms": 4.407,
+        "route_ms": 4.2,
+        "query_count": 9,
+        "title": "Home Alone",
+        "cast_count": 7,
+        "director_count": 1
+      },
+      {
+        "path": "E:\\Movies\\Crouching Tiger Hidden Dragon (2000) [CHINESE] [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\Crouching.Tiger.Hidden.Dragon.2000.CHINESE.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+        "status": 200,
+        "elapsed_ms": 4.758,
+        "route_ms": 4.5,
+        "query_count": 9,
+        "title": "Crouching Tiger, Hidden Dragon",
+        "cast_count": 7,
+        "director_count": 1
+      },
+      {
+        "path": "E:\\Movies\\The Shining (1980) [US DC] [2160p] [4K] [BluRay] [5.1] [YTS.MX]\\The.Shining.1980.US.DC.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+        "status": 200,
+        "elapsed_ms": 4.654,
+        "route_ms": 4.4,
+        "query_count": 9,
+        "title": "The Shining",
+        "cast_count": 7,
+        "director_count": 1
+      },
+      {
+        "path": "E:\\Movies\\F1 The Movie (2025) [2160p] [4K] [WEB] [5.1] [YTS.MX]\\F1.The.Movie.2025.2160p.4K.WEB.x265.10bit.AAC5.1-[YTS.MX].mkv",
+        "status": 200,
+        "elapsed_ms": 4.53,
+        "route_ms": 4.3,
+        "query_count": 9,
+        "title": "F1: The Movie",
+        "cast_count": 7,
+        "director_count": 1
+      }
+    ],
+    "details_timing": {
+      "samples": 10,
+      "min_ms": 4.402,
+      "median_ms": 4.523,
+      "p95_ms": 6.772,
+      "max_ms": 6.772
+    },
+    "details_query_count": {
+      "min": 9,
+      "max": 9
+    },
+    "provider_calls": [],
+    "library": {
+      "cold": {
+        "status": 200,
+        "elapsed_ms": 509.042,
+        "route_ms": 508.8,
+        "query_count": 17,
+        "returned": 40
+      },
+      "warm": {
+        "status": 200,
+        "elapsed_ms": 151.104,
+        "route_ms": 150.8,
+        "query_count": 11,
+        "returned": 40
+      }
+    }
+  }
+}

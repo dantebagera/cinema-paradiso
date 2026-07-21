@@ -22,6 +22,8 @@ const parityLibraryItem = {
   metadata_status: 'accepted',
   metadata_accepted: true,
   canonical_metadata: {
+    projection_contract: 'canonical_movie_card',
+    deferred_fields: ['backdrop_url', 'runtime', 'tagline', 'trailer_url', 'collection', 'cast', 'directors', 'director'],
     accepted: true,
     title: parityMovie.title,
     year: parityMovie.year,
@@ -41,6 +43,8 @@ const parityDeferredDetails = {
   ...parityLibraryItem,
   canonical_metadata: {
     ...parityLibraryItem.canonical_metadata,
+    projection_contract: 'canonical_movie_details',
+    deferred_fields: [],
     cast: [{ id: '1001', name: 'SQL Cast Member', character: 'Archivist' }],
     directors: [{ id: '1002', name: 'SQL Director' }],
     collection: { id: '7001', name: 'SQL Collection' },
@@ -49,7 +53,7 @@ const parityDeferredDetails = {
 };
 
 async function mockCardParityApis(page) {
-  await page.route('**/api/library?view=cards', async (route) => {
+  await page.route('**/api/library?view=cards*', async (route) => {
     await route.fulfill({ json: { items: [parityLibraryItem], count: 1, catalog_generation: 1 } });
   });
   await page.route('**/api/library/check', async (route) => {
@@ -137,7 +141,7 @@ test('Library people search renders portraits stored in canonical metadata', asy
     plex_cast: [],
     plex_directors: []
   };
-  await page.route('**/api/library?view=cards', async (route) => {
+  await page.route('**/api/library?view=cards*', async (route) => {
     await route.fulfill({ json: {
       items: [{
         path: peopleItem.path,
@@ -147,7 +151,7 @@ test('Library people search renders portraits stored in canonical metadata', asy
       catalog_generation: 1
     } });
   });
-  await page.route('**/api/library?view=people', async (route) => {
+  await page.route('**/api/library?view=people*', async (route) => {
     await route.fulfill({ json: { items: [peopleItem], count: 1, catalog_generation: 1 } });
   });
 
@@ -177,8 +181,8 @@ test('Library credit clicks load the people projection before filtering owned wo
     }
   ];
   const person = { id: '380', name: 'Robert De Niro', character: 'Lead' };
-  await page.route('**/api/library?view=cards', (route) => route.fulfill({ json: { items: cards, count: 2, catalog_generation: 1 } }));
-  await page.route('**/api/library?view=people', (route) => route.fulfill({ json: {
+  await page.route('**/api/library?view=cards*', (route) => route.fulfill({ json: { items: cards, count: 2, total: 2, page: 1, total_pages: 1, catalog_generation: 1 } }));
+  await page.route('**/api/library?view=people*', (route) => route.fulfill({ json: {
     items: cards.map((item) => ({
       path: item.path,
       canonical_metadata: { cast: [person], directors: [] },
@@ -196,7 +200,10 @@ test('Library credit clicks load the people projection before filtering owned wo
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
   const awakenings = page.locator('.library-movie-card').filter({ hasText: 'Awakenings' });
   await awakenings.click();
-  await awakenings.getByText('Robert De Niro', { exact: true }).click();
+  await expect(awakenings).toHaveClass(/library-movie-card-expanded/);
+  await expect(page.getByText('Robert De Niro', { exact: true }).first()).toBeVisible();
+  await page.waitForTimeout(250);
+  await page.getByText('Robert De Niro', { exact: true }).first().click({ force: true });
 
   await expect(page.locator('.library-movie-card')).toHaveCount(2);
   await expect(page.getByText('Actor: Robert De Niro', { exact: true })).toBeVisible();
@@ -208,6 +215,78 @@ test('Library credit clicks load the people projection before filtering owned wo
   await expect(page.getByText('Actor: Robert De Niro', { exact: true })).toHaveCount(0);
   await page.getByRole('button', { name: 'Open Filters' }).click();
   await expect(page.getByLabel('Library quality filter')).toHaveValue('upgrade');
+});
+
+test('Library server paging, filtered selection, and navigation preserve exact result state', async ({ page }) => {
+  const makeItem = (label, index) => ({
+    path: `E:/Movies/${label}.${index}.mkv`,
+    title: `${label} (${2020 + index})`,
+    resolution: '1080p',
+    canonical_metadata: { accepted: true, title: label, year: String(2020 + index), plot: `${label} plot.` }
+  });
+  const requests = [];
+  await page.route('**/api/library?view=cards*', (route) => {
+    const url = new URL(route.request().url());
+    const pageNumber = Number(url.searchParams.get('page') || 1);
+    const query = url.searchParams.get('q') || '';
+    requests.push({ page: pageNumber, query });
+    const filtered = query === 'Needle';
+    const items = [makeItem(filtered ? 'Needle Result' : `Server Page ${pageNumber}`, pageNumber)];
+    return route.fulfill({ json: {
+      items, count: filtered ? 1 : 81, total: filtered ? 1 : 81,
+      page: filtered ? 1 : pageNumber, total_pages: filtered ? 1 : 3,
+      page_start: filtered ? 0 : (pageNumber - 1) * 40,
+      page_end: filtered ? 1 : Math.min(pageNumber * 40, 81),
+      facets: { genres: [], sources: [], languages: [], countries: [] },
+      stats: { total: 81, low: 0, matched: 81, pending: 0, unmatched: 0 },
+      catalog_generation: 1
+    } });
+  });
+  await page.route('**/api/library/selection', async (route) => {
+    const body = route.request().postDataJSON();
+    expect(body.filters.query).toBe('');
+    await route.fulfill({ json: { paths: Array.from({ length: 81 }, (_, index) => `path-${index}`), count: 81 } });
+  });
+
+  await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByText('Page 1 of 3', { exact: true }).first()).toBeVisible();
+  await page.getByRole('button', { name: 'Select all filtered', exact: true }).click();
+  await expect(page.getByText('81 selected', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Next', exact: true }).first().click();
+  await expect(page.getByText('Server Page 2', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Discover', exact: true }).click();
+  await page.getByRole('button', { name: 'Library', exact: true }).click();
+  await expect(page.getByText('Page 2 of 3', { exact: true }).first()).toBeVisible();
+  await expect(page.getByText('Server Page 2', { exact: true })).toBeVisible();
+
+  await page.getByPlaceholder('Search your offline library...').fill('Needle');
+  await expect(page.getByText('Needle Result', { exact: true })).toBeVisible();
+  await expect(page.locator('.library-movie-card')).toHaveCount(1);
+  expect(requests.some((entry) => entry.page === 2 && entry.query === '')).toBeTruthy();
+  expect(requests.some((entry) => entry.page === 1 && entry.query === 'Needle')).toBeTruthy();
+});
+
+test('owned Library posters render from immutable local assets without detail providers', async ({ page }) => {
+  let providerDetailCalls = 0;
+  await page.route('**/api/tmdb/details**', (route) => {
+    providerDetailCalls += 1;
+    return route.abort();
+  });
+  await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  const poster = page.locator('.library-movie-card img[src^="/api/assets/"]').first();
+  await expect(poster).toBeVisible();
+  await expect.poll(() => poster.evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
+  const source = await poster.getAttribute('src');
+  const response = await page.request.get(source);
+  expect(response.ok()).toBeTruthy();
+  expect(response.headers()['cache-control']).toContain('immutable');
+  await page.waitForTimeout(750);
+  providerDetailCalls = 0;
+  const card = poster.locator('xpath=ancestor::article[contains(@class,"library-movie-card")]');
+  await card.click();
+  await expect(card).toHaveClass(/library-movie-card-expanded/);
+  await page.waitForTimeout(500);
+  expect(providerDetailCalls).toBe(0);
 });
 
 test('Maintenance tabs remain interactive after the audit loads', async ({ page }) => {
@@ -334,6 +413,13 @@ test('Library, Discover-owned, and Movie List cards render one canonical movie c
   await expect(libraryCard).toContainText('SQL Collection');
   await expect(libraryCard.getByRole('button', { name: 'Play', exact: true })).toBeVisible();
   await expect(libraryCard.getByRole('button', { name: 'Follow', exact: true })).toHaveCount(0);
+  expect(tmdbDetailsRequests).toBe(libraryRequestsBeforeExpand);
+  await libraryCard.getByRole('heading', { name: parityMovie.title }).click();
+  await expect(libraryCard).not.toHaveClass(/library-movie-card-expanded/);
+  await libraryCard.getByRole('heading', { name: parityMovie.title }).click();
+  await expect(libraryCard).toHaveClass(/library-movie-card-expanded/);
+  await expect(libraryCard).toContainText(parityMovie.plot);
+  await expect(libraryCard).toContainText('SQL Cast Member');
   expect(tmdbDetailsRequests).toBe(libraryRequestsBeforeExpand);
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });

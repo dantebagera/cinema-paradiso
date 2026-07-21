@@ -281,7 +281,7 @@ class QBittorrentApiTests(unittest.TestCase):
             response = self.client.post("/api/qbittorrent/finalize")
 
         self.assertEqual(response.status_code, 200)
-        reconcile.assert_called_once_with()
+        reconcile.assert_called_once_with(force=True)
         job = self.manager.existing_jobs["abc"]
         self.assertFalse(job["library_scan_pending"])
         self.assertEqual(job["identity_handoff"]["state"], "deferred")

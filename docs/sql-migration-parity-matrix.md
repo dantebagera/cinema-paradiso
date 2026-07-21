@@ -63,4 +63,23 @@ The immutable cutover archive `data/catalog-migration-backups/cp-catalog-migrati
 
 Desktop browser parity is proven by the Playwright test `Library, Discover-owned, and Movie List cards render one canonical movie contract`. Its compact fixture intentionally omits people, supplies them only through SQL deferred details, forces TMDB details to fail, and verifies Library, owned Discover, owned Movie List, Home, and AI Control render the persisted plot and people without a provider request. The browser ownership-cache test also proves a catalog-generation change invalidates cached ownership results.
 
-Final verification passed: 54 JavaScript tests, 19 desktop Playwright workflow tests, the production frontend build, and all 676 Python tests. Normal operational monitoring remains separate from this cutover evidence.
+The earlier cutover verification passed: 54 JavaScript tests, 19 desktop Playwright workflow tests, the production frontend build, and all 676 Python tests. Normal operational monitoring remains separate from this cutover evidence.
+
+## Catalog-read and local-artwork acceptance addendum
+
+The staged performance/artwork implementation completed on 2026-07-21 without changing the workflow invariants above:
+
+| Acceptance area | Final evidence | Result |
+| --- | --- | --- |
+| Home and Maintenance statistics | Both projections report 0 duplicate groups, 0 extra files, 0 reclaimable bytes, and 732 upgrade candidates from the same normalized SQL facts. | Passed |
+| Library, Discover-owned, and List cards | One canonical card contract is used on all three surfaces; owned expansion uses the canonical details contract. | Passed |
+| Plots, posters, cast, directors, genres, ratings, collections, and overrides | Relational audit checked 3,708 files, 3,707 accepted movies, 31,206 people, and 43,833 ordered credits with 0 violations and 0 provider calls. Local artwork relationships are included without changing metadata precedence. | Passed |
+| Identity matching, correction, conflicts, and audit | Existing correction/conflict suites plus the live relational and literal rollback shadows passed; manual/custom state remains authoritative. | Passed |
+| Duplicates and upgrade candidates | Normalized maintenance projection and Home statistics agree; file fingerprints remain in the authoritative projection. | Passed |
+| Source search, ownership, downloads, import, and reconciliation | Existing source/qBittorrent suites passed; owned reads remain provider-free and identity handoffs remain idempotent. | Passed |
+| File View, rename, deletion, and persistence | File View uses SQL `file_inventory`; mutation/generation and persistence suites passed without a raw-document fallback. | Passed |
+| Startup and background jobs | Fresh SQL readiness was 258.838 ms; first bounded Library response was 476.793 ms; no provider call or ordinary root scan occurred. Artwork scheduling is bounded and resumable. | Passed |
+| Navigation and page-state preservation | Desktop Playwright asserts Library paging/filter/selection state after navigation in addition to the existing all-workspace preservation coverage. | Passed |
+| Rollback and single authority | JSON remains export/shadow only. Backup v3 restored schema 7, all SQL/user state, and 19,169 unique registered asset files with 0 missing or unexpected checksums. | Passed |
+
+The schema-7 acceptance measurements are recorded in `docs/sql-investigation/catalog-read-performance-final-2026-07-20.json`, `docs/sql-investigation/catalog-artwork-backfill-2026-07-20.json`, and `docs/sql-investigation/catalog-artwork-acceptance-2026-07-20.json`. The stage-by-stage gate record is `docs/sql-investigation/catalog-read-performance-stage-report.md`.

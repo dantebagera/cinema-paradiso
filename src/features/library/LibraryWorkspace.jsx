@@ -52,6 +52,34 @@ function librarySelectionKey(item) {
   return item.path || movieIdentityKey(moviePayload(item));
 }
 
+function libraryFilterQuery(filters, page, pageSize, forceScan = false) {
+  const params = new URLSearchParams({
+    view: 'cards',
+    page: String(page),
+    page_size: String(pageSize),
+    q: filters.query,
+    quality: filters.quality,
+    resolution: filters.resolution,
+    source: filters.source,
+    genre: filters.genre,
+    language: filters.language,
+    country: filters.country,
+    year_from: filters.year_from,
+    year_to: filters.year_to,
+    min_rating: filters.min_rating,
+    sort: filters.sort,
+    viewing_state: filters.viewing_state,
+    role: filters.role,
+    person_id: filters.person_id,
+    person_name: filters.person_name,
+    collection_id: filters.collection_id,
+    collection_paths: JSON.stringify(filters.collection_paths || []),
+    list_id: filters.list_id
+  });
+  if (forceScan) params.set('force_scan', '1');
+  return `/api/library?${params.toString()}`;
+}
+
 export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer, notify, query, setQuery, onReviewUnmatched, onOpenDiscoverPerson, filterRequest, onFilterRequestConsumed }) {
   const pageSize = 40;
   const [items, setItems] = useState([]);
@@ -99,6 +127,13 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   const [selectedLibraryKeys, setSelectedLibraryKeys] = useState(() => new Set());
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [peopleLoaded, setPeopleLoaded] = useState(false);
+  const [peopleItems, setPeopleItems] = useState([]);
+  const [listCoverageItems, setListCoverageItems] = useState([]);
+  const [libraryResult, setLibraryResult] = useState({
+    total: 0, page: 1, total_pages: 1, page_start: 0, page_end: 0,
+    facets: { genres: [], sources: [], languages: [], countries: [] },
+    stats: { total: 0, low: 0, matched: 0, pending: 0, unmatched: 0 }
+  });
   const libraryRequestSeq = useRef(0);
   const peopleLoadPromiseRef = useRef(null);
 
@@ -127,6 +162,27 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     onFilterRequestConsumed?.(filterRequest.id);
   }, [filterRequest, onFilterRequestConsumed]);
 
+  const serverFilters = useMemo(() => ({
+    query,
+    quality: qualityFilter,
+    resolution: resolutionFilter,
+    source: sourceFilter,
+    genre: genreFilter,
+    language: languageFilter,
+    country: countryFilter,
+    year_from: yearFrom,
+    year_to: yearTo,
+    min_rating: minRating,
+    sort: sortMode,
+    viewing_state: viewingStateFilter,
+    role: roleFilter?.role || '',
+    person_id: roleFilter?.id || '',
+    person_name: roleFilter?.name || '',
+    collection_id: collectionFilter?.id || '',
+    collection_paths: collectionFilter?.owned_paths || [],
+    list_id: listFilter?.id || ''
+  }), [query, qualityFilter, resolutionFilter, sourceFilter, genreFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sortMode, viewingStateFilter, roleFilter, collectionFilter, listFilter]);
+
   const loadLibrary = useCallback(async (forceScan = false, options = {}) => {
     const requestSeq = libraryRequestSeq.current + 1;
     libraryRequestSeq.current = requestSeq;
@@ -135,19 +191,25 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     setError('');
     setStatus(forceScan ? 'Rescanning library folders...' : 'Loading library...');
     try {
-      const data = await fetchJson(
-        forceScan ? '/api/library?force_scan=1&view=cards' : '/api/library?view=cards'
-      );
+      const requestedPage = forceScan ? 1 : currentPage;
+      const data = await fetchJson(libraryFilterQuery(serverFilters, requestedPage, pageSize, forceScan));
       if (requestSeq !== libraryRequestSeq.current) return;
       if (observeCatalogGeneration(data.catalog_generation)) {
         setTmdbCache({});
         setCollectionCache({});
       }
       setItems(data.items || []);
+      setLibraryResult({
+        total: Number(data.total || 0),
+        page: Number(data.page || 1),
+        total_pages: Number(data.total_pages || 1),
+        page_start: Number(data.page_start || 0),
+        page_end: Number(data.page_end || 0),
+        facets: data.facets || { genres: [], sources: [], languages: [], countries: [] },
+        stats: data.stats || { total: 0, low: 0, matched: 0, pending: 0, unmatched: 0 }
+      });
       setFileItemsLoaded(false);
-      setPeopleLoaded(false);
-      peopleLoadPromiseRef.current = null;
-      if (!quiet) setCurrentPage(1);
+      if (forceScan) setCurrentPage(1);
       if (forceScan) {
         const discovered = Number(data.new_files || 0);
         const identified = Number(data.metadata_matched || 0);
@@ -162,7 +224,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
         announceLibraryChanged({ source: 'manual-rescan', library: data });
       } else {
         setStatus('');
-        if (!quiet) notify(`${formatCount(data.count)} library files loaded`, 'success');
+        if (!quiet && !options.silentSuccess) notify(`${formatCount(data.count)} library files loaded`, 'success');
       }
     } catch (loadError) {
       if (requestSeq !== libraryRequestSeq.current) return;
@@ -171,11 +233,11 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     } finally {
       if (requestSeq === libraryRequestSeq.current) setLoading(false);
     }
-  }, [notify]);
+  }, [currentPage, notify, serverFilters]);
 
   useEffect(() => {
-    loadLibrary(false);
-  }, [loadLibrary]);
+    if (mode === 'movie' && librarySearchKind === 'movies') loadLibrary(false, { quiet: true, silentSuccess: true });
+  }, [librarySearchKind, loadLibrary, mode]);
 
   useEffect(() => {
     if (mode !== 'file' || fileItemsLoaded) return;
@@ -208,20 +270,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     const request = fetchJson('/api/library?view=people')
       .then((data) => {
         observeCatalogGeneration(data.catalog_generation);
-        const peopleByPath = new Map((data.items || []).map((item) => [item.path, item]));
-        setItems((current) => current.map((item) => {
-          const people = peopleByPath.get(item.path);
-          if (!people) return item;
-          return {
-            ...item,
-            canonical_metadata: {
-              ...(item.canonical_metadata || {}),
-              ...(people.canonical_metadata || {})
-            },
-            plex_cast: people.plex_cast || [],
-            plex_directors: people.plex_directors || []
-          };
-        }));
+        setPeopleItems(data.items || []);
         setPeopleLoaded(true);
       })
       .catch((error) => {
@@ -298,11 +347,11 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   const activeItems = mode === 'file' ? fileItems : items;
   const activeLoading = loading || (mode === 'file' && fileLoading);
   const optionSets = useMemo(() => ({
-    genres: getUniqueOptions(activeItems, (item) => item.canonical_metadata?.genres?.length ? item.canonical_metadata.genres : item.plex_genres || []),
-    sources: getUniqueOptions(activeItems, (item) => item.rip_source),
-    languages: getUniqueOptions(activeItems, (item) => item.canonical_metadata?.language || item.plex_language),
-    countries: getUniqueOptions(activeItems, (item) => item.canonical_metadata?.country_flag || item.canonical_metadata?.country || item.plex_country_flag || item.plex_country)
-  }), [activeItems]);
+    genres: mode === 'movie' ? libraryResult.facets.genres || [] : getUniqueOptions(activeItems, (item) => item.canonical_metadata?.genres?.length ? item.canonical_metadata.genres : item.plex_genres || []),
+    sources: mode === 'movie' ? libraryResult.facets.sources || [] : getUniqueOptions(activeItems, (item) => item.rip_source),
+    languages: mode === 'movie' ? libraryResult.facets.languages || [] : getUniqueOptions(activeItems, (item) => item.canonical_metadata?.language || item.plex_language),
+    countries: mode === 'movie' ? libraryResult.facets.countries || [] : getUniqueOptions(activeItems, (item) => item.canonical_metadata?.country_flag || item.canonical_metadata?.country || item.plex_country_flag || item.plex_country)
+  }), [activeItems, libraryResult.facets, mode]);
 
   const {
     filteredItems,
@@ -312,7 +361,19 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     pageEnd,
     visibleItems,
     stats
-  } = useMemo(() => buildLibraryViewModel({
+  } = useMemo(() => {
+    if (mode === 'movie') {
+      return {
+        filteredItems: items,
+        totalPages: libraryResult.total_pages,
+        safePage: libraryResult.page,
+        pageStart: libraryResult.page_start,
+        pageEnd: libraryResult.page_end,
+        visibleItems: items,
+        stats: libraryResult.stats
+      };
+    }
+    return buildLibraryViewModel({
     items: activeItems,
     pageSize,
     currentPage,
@@ -337,18 +398,19 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     viewingStateFilter,
     tmdbCache,
     showAdultMovies
-  }), [activeItems, query, qualityFilter, identityFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sizeFilter, mode, roleFilter, collectionFilter, listFilter, userLists, viewingStateFilter, tmdbCache, showAdultMovies, currentPage]);
+    });
+  }, [activeItems, items, libraryResult, query, qualityFilter, identityFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, yearFrom, yearTo, minRating, sizeFilter, mode, roleFilter, collectionFilter, listFilter, userLists, viewingStateFilter, tmdbCache, showAdultMovies, currentPage]);
 
-  const selectedLibraryItems = useMemo(() => (
+  const selectedPageItems = useMemo(() => (
     items.filter((item) => selectedLibraryKeys.has(librarySelectionKey(item)))
   ), [items, selectedLibraryKeys]);
   const listMissingCoverage = useMemo(() => (
-    listFilter ? listLibraryCoverage(items, listFilter) : null
-  ), [items, listFilter]);
+    listFilter ? listLibraryCoverage(listCoverageItems, listFilter) : null
+  ), [listCoverageItems, listFilter]);
   const libraryPeopleResults = useMemo(() => (
-    buildLibraryPeopleIndex(items, query)
-  ), [items, query]);
-  const allFilteredLibrarySelected = filteredItems.length > 0 && filteredItems.every((item) => selectedLibraryKeys.has(librarySelectionKey(item)));
+    buildLibraryPeopleIndex(peopleItems, query)
+  ), [peopleItems, query]);
+  const allFilteredLibrarySelected = libraryResult.total > 0 && selectedLibraryKeys.size === libraryResult.total;
 
   function toggleLibrarySelection(item, checked) {
     const key = librarySelectionKey(item);
@@ -360,21 +422,41 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
     });
   }
 
-  function selectAllFilteredLibrary() {
-    setSelectedLibraryKeys(new Set(filteredItems.map(librarySelectionKey)));
+  async function selectAllFilteredLibrary() {
+    try {
+      const data = await fetchJson('/api/library/selection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filters: serverFilters })
+      });
+      setSelectedLibraryKeys(new Set(data.paths || []));
+    } catch (selectionError) {
+      notify(`Library selection failed: ${selectionError.message}`, 'error');
+    }
   }
 
   function clearLibrarySelection() {
     setSelectedLibraryKeys(new Set());
   }
 
+  async function resolveSelectedLibraryItems() {
+    if (!selectedLibraryKeys.size) return [];
+    const data = await fetchJson('/api/library/selection/items', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ paths: [...selectedLibraryKeys] })
+    });
+    return data.items || [];
+  }
+
   async function openSelectedSourceReview() {
-    if (!selectedLibraryItems.length) {
+    if (!selectedLibraryKeys.size) {
       notify('Select movies before finding sources.', 'neutral');
       return;
     }
     setSourceReview({ loading: true, rows: [], error: '', title: 'Find sources' });
     try {
+      const selectedLibraryItems = await resolveSelectedLibraryItems();
       const data = await previewSourceReview(selectedLibraryItems.map((item) => {
         const movie = moviePayload(item);
         return {
@@ -400,9 +482,42 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
   }
 
   function requestBulkDelete() {
-    if (!selectedLibraryItems.length) return;
-    setDeleteTarget({ items: selectedLibraryItems });
+    if (!selectedLibraryKeys.size) return;
+    const byPath = new Map(selectedPageItems.map((item) => [item.path, item]));
+    setDeleteTarget({
+      items: [...selectedLibraryKeys].map((path) => byPath.get(path) || ({ path, filename: path.split(/[\\/]/).pop() || path }))
+    });
   }
+
+  async function openSelectedListEditor() {
+    if (!selectedLibraryKeys.size) return;
+    try {
+      setListEditor({ items: await resolveSelectedLibraryItems() });
+    } catch (selectionError) {
+      notify(`Selected movies unavailable: ${selectionError.message}`, 'error');
+    }
+  }
+
+  useEffect(() => {
+    if (!listFilter?.id) {
+      setListCoverageItems([]);
+      return undefined;
+    }
+    let cancelled = false;
+    fetchJson('/api/library/selection', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ filters: { list_id: listFilter.id, sort: 'title' } })
+    })
+      .then((selection) => fetchJson('/api/library/selection/items', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ paths: selection.paths || [] })
+      }))
+      .then((data) => { if (!cancelled) setListCoverageItems(data.items || []); })
+      .catch((coverageError) => { if (!cancelled) notify(`List coverage unavailable: ${coverageError.message}`, 'error'); });
+    return () => { cancelled = true; };
+  }, [listFilter?.id, notify]);
 
   useEffect(() => {
     if (currentPage > totalPages) {
@@ -938,7 +1053,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
           />
         ) : (
         <>
-          {mode === 'movie' && filteredItems.length > 0 && (
+          {mode === 'movie' && libraryResult.total > 0 && (
             <div className="bulk-selection-bar library-bulk-selection">
               <SelectionCheckbox
                 className="library-selection-master"
@@ -946,26 +1061,26 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
                 onChange={(checked) => { if (checked) selectAllFilteredLibrary(); else clearLibrarySelection(); }}
                 label="Select all filtered library movies"
               />
-              <span>{selectedLibraryItems.length ? `${formatCount(selectedLibraryItems.length)} selected` : 'Select movies'}</span>
+              <span>{selectedLibraryKeys.size ? `${formatCount(selectedLibraryKeys.size)} selected` : 'Select movies'}</span>
               <button type="button" className="mini-action" onClick={selectAllFilteredLibrary}>
                 Select all filtered
               </button>
-              <button type="button" className="mini-action" onClick={clearLibrarySelection} disabled={!selectedLibraryItems.length}>
+              <button type="button" className="mini-action" onClick={clearLibrarySelection} disabled={!selectedLibraryKeys.size}>
                 Clear
               </button>
-              <button type="button" className="mini-action" onClick={() => setListEditor({ items: selectedLibraryItems })} disabled={!selectedLibraryItems.length}>
+              <button type="button" className="mini-action" onClick={openSelectedListEditor} disabled={!selectedLibraryKeys.size}>
                 <CirclePlus size={13} /> Add to list
               </button>
-              <button type="button" className="mini-action mini-action-source" onClick={openSelectedSourceReview} disabled={!selectedLibraryItems.length}>
+              <button type="button" className="mini-action mini-action-source" onClick={openSelectedSourceReview} disabled={!selectedLibraryKeys.size}>
                 <Search size={13} /> Find sources
               </button>
-              <button type="button" className="mini-action mini-action-danger" onClick={requestBulkDelete} disabled={!selectedLibraryItems.length}>
+              <button type="button" className="mini-action mini-action-danger" onClick={requestBulkDelete} disabled={!selectedLibraryKeys.size}>
                 <Trash2 size={13} /> Delete selected
               </button>
             </div>
           )}
         <Pagination
-            total={filteredItems.length}
+            total={mode === 'movie' ? libraryResult.total : filteredItems.length}
             page={safePage}
             totalPages={totalPages}
             pageStart={pageStart}
@@ -1032,7 +1147,7 @@ export default function LibraryWorkspace({ onPlay, onFindTorrent, onOpenTrailer,
             </div>
           )}
           <Pagination
-            total={filteredItems.length}
+            total={mode === 'movie' ? libraryResult.total : filteredItems.length}
             page={safePage}
             totalPages={totalPages}
             pageStart={pageStart}

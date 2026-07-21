@@ -6,7 +6,7 @@ Cinema Paradiso is a self-hosted movie library manager for people with hundreds 
 
 Your library catalog, settings, and operational state stay on your machine. Optional services such as Plex, TMDB, Prowlarr, streaming providers, and Ollama cloud models are contacted only when configured for their corresponding features.
 
-**Development version: v2.8.0** - July 2026
+**Current release: v2.8.0** - July 2026
 
 ---
 
@@ -70,9 +70,9 @@ Your library catalog, settings, and operational state stay on your machine. Opti
 
 ---
 
-## In Development for v2.8.0
+## What Changed in v2.8.0
 
-Cinema Paradiso v2.8.0 starts from the SQL catalog parity checkpoint and will add the new, separated IPTV workspace before the public release.
+Cinema Paradiso v2.8.0 completes the SQL catalog cutover, adds bounded catalog reads and durable local artwork, and introduces a separated, provider-agnostic IPTV workspace.
 
 - **SQL catalog parity:** active workflows now use the SQL catalog authority with generation-aware invalidation and legacy JSON retained only for rollback and shadow comparison.
 - **Consistent ownership:** Library, Discover, and Movie Lists refresh shared ownership state when the catalog generation changes.
@@ -80,6 +80,9 @@ Cinema Paradiso v2.8.0 starts from the SQL catalog parity checkpoint and will ad
 - **Download identity handoff:** torrent submissions preserve TMDB and IMDb identity through completion and catalog reconciliation.
 - **Recoverable imports:** completed qBittorrent jobs can be replayed and audited when an earlier import did not finish cleanly.
 - **Parity evidence:** migration matrices, catalog audit tools, shadow comparisons, and focused regression tests document the SQL cutover.
+- **Bounded catalog reads:** Library paging, filtering, sorting, facets, selection, and owned details now execute through bounded SQL projections instead of full-library route reads.
+- **Durable local artwork:** selected owned posters and people portraits are stored in the local metadata directory with checksum deduplication, resumable backfill, and custom-poster protection.
+- **Separated IPTV workspace:** Xtream live TV, movies, series, Favorites, and provider-scoped lists remain independent from the local movie catalog and torrent workflows.
 - **Version display:** the sidebar footer is rebuilt from the `2.8.0` package version so the app UI matches the release tag.
 
 ---

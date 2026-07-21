@@ -5,6 +5,7 @@ import {
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { fetchJson } from '../api/client.js';
+import { mergeCanonicalMovieDetails } from '../api/movieDetails.js';
 import SelectionCheckbox from './SelectionCheckbox.jsx';
 import { UnifiedMovieCard } from './movie-card/MovieCard.jsx';
 import { cx, formatCount } from '../utils/appUtils.js';
@@ -111,8 +112,7 @@ export function DiscoverMovieCard({
   const ownedCanonical = ownedItem.canonical_metadata || {};
   const displayMovie = canonicalOwnedMovie(movie, owned);
   const displayDetails = ownedCanonical.accepted ? {
-    ...(details || {}),
-    ...ownedCanonical,
+    ...mergeCanonicalMovieDetails(ownedCanonical, details || {}),
     loading: details?.loading,
     error: details?.error,
     trailer_url: details?.trailer_url || ownedCanonical.trailer_url || ''

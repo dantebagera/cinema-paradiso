@@ -1,0 +1,61 @@
+{
+  "corrected": {
+    "tmdb_id": "100",
+    "imdb_id": "tt0000100",
+    "title": "Correct Movie",
+    "year": "2020",
+    "plot": "TMDB plot wins the canonical summary.",
+    "detail_provider": "tmdb_snapshot",
+    "cast_names": [
+      "Lead Actor 1",
+      "Lead Actor 2",
+      "Lead Actor 3",
+      "Lead Actor 4",
+      "Lead Actor 5",
+      "Lead Actor 6"
+    ],
+    "director_names": ["Lead Director", "Second Director"]
+  },
+  "wrong_provider_review": {
+    "identity_status": "review",
+    "metadata_status": "needs_review",
+    "metadata_accepted": false,
+    "candidate_tmdb_id": "999"
+  },
+  "duplicate_group": {
+    "tmdb_id": "200",
+    "copies": 2,
+    "preferred_resolution": "4K"
+  },
+  "owned_discover": {
+    "tmdb_id": "100",
+    "found": true
+  },
+  "new_import": {
+    "tmdb_id": "300",
+    "ingest_status": "imported"
+  },
+  "unmatched": {
+    "identity_status": "review",
+    "metadata_accepted": false
+  },
+  "upgrade": {
+    "tmdb_id": "600",
+    "resolution": "720p"
+  },
+  "collection": {
+    "tmdb_id": "400",
+    "collection_id": "44",
+    "collection_name": "Parity Collection",
+    "overridden_title": "Collection Movie (Director Cut)"
+  },
+  "custom_poster": {
+    "tmdb_id": "500",
+    "poster_override": true,
+    "retention": "custom"
+  },
+  "list": {
+    "id": "parity-list",
+    "movie_tmdb_id": "100"
+  }
+}

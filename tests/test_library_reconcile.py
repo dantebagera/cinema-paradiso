@@ -230,6 +230,50 @@ class LibraryReconcileTest(unittest.TestCase):
         self.assertEqual(result["checked"], 1)
         reconcile_path.assert_called_once()
 
+    def test_ordinary_startup_skips_full_scan_when_inventory_is_current(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_library_inventory({})
+            before_generation = store.catalog.generation('media')
+
+            with patch("app._iter_video_files") as iter_files:
+                first = app._startup_reconcile_decision()
+                second = app._startup_reconcile_decision()
+            after_generation = store.catalog.generation('media')
+
+        self.assertFalse(first["run"])
+        self.assertEqual(first["reason"], "bootstrapped_existing_inventory")
+        self.assertFalse(second["run"])
+        self.assertEqual(second["reason"], "current_inventory")
+        self.assertEqual(after_generation, before_generation)
+        iter_files.assert_not_called()
+
+    def test_startup_requests_scan_when_library_root_revision_changes(self):
+        with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
+            self.configure(movies_tmp, data_tmp)
+            store = app.AppMetadataStore(Path(data_tmp))
+            store.save_library_inventory({})
+            self.assertFalse(app._startup_reconcile_decision()["run"])
+            (Path(movies_tmp) / "New.Movie.2026.mkv").write_bytes(b"movie")
+
+            decision = app._startup_reconcile_decision()
+
+        self.assertTrue(decision["run"])
+        self.assertEqual(decision["reason"], "library_root_changed")
+
+    def test_explicit_reconcile_bypasses_startup_skip_decision(self):
+        with patch("app._startup_reconcile_decision") as decision, \
+                patch("app.threading.Thread") as thread:
+            app._library_reconcile_thread = None
+            state = app._start_library_reconcile(force=True)
+            app._library_reconcile_thread = None
+
+        decision.assert_not_called()
+        thread.assert_called_once()
+        self.assertEqual(state["reason"], "explicit")
+        self.assertFalse(state["skipped"])
+
     def test_stale_review_record_is_retried_after_decision_rule_upgrade(self):
         with tempfile.TemporaryDirectory() as movies_tmp, tempfile.TemporaryDirectory() as data_tmp:
             movie = Path(movies_tmp) / "Cujo.1983.1080p.BluRay.x264.mkv"

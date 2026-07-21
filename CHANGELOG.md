@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.8.0 - In Development
+## v2.8.0 - July 2026
 
 Cinema Paradiso v2.8.0 begins with the SQL catalog migration and adds a separated, provider-agnostic IPTV workspace.
 
@@ -18,6 +18,7 @@ Cinema Paradiso v2.8.0 begins with the SQL catalog migration and adds a separate
 - Lazy provider movie/series details, Unicode and Arabic search, episode browsing, and short EPG support.
 - Tokenized loopback playback relay with FFmpeg HLS remuxing so credential-bearing stream URLs never reach React or FFmpeg process arguments.
 - Portable-release support for an independently bundled FFmpeg runtime and third-party manifest.
+- Checksum-addressed local storage for selected owned posters and people portraits, with resumable bounded backfill and custom-poster protection.
 
 ### Changed
 
@@ -26,6 +27,8 @@ Cinema Paradiso v2.8.0 begins with the SQL catalog migration and adds a separate
 - Download submissions preserve TMDB and IMDb identity through completion and reconciliation.
 - The sidebar version is rebuilt from the package version and now identifies v2.8.0.
 - IPTV remains separate from Cinema Paradiso ownership, local catalog identity, Movie Lists, and torrent workflows; its Favorites and custom lists stay provider-scoped inside the IPTV workspace.
+- Library paging, filters, sorting, facets, filtered selection, card projections, and owned details now use bounded SQL reads.
+- Artwork invalidation uses a separate asset generation so artwork maintenance does not invalidate the catalog.
 
 ### Fixed
 

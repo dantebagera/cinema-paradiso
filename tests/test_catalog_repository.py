@@ -246,7 +246,7 @@ class CatalogRepositoryTest(unittest.TestCase):
             })
 
             after = repository.generation("media")
-            candidate = repository.store.library_candidates()[0]
+            candidate = repository.store.library_projection(include_details=True)[0]
             connection = repository.store.connect()
             try:
                 canonical_generation = int(connection.execute(
