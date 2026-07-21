@@ -120,7 +120,7 @@ def build_release_zip(project_root, qbt_source=None, ffmpeg_source=None, output_
         "res_cache.json",
     }
     for item in project_root.iterdir():
-        if item.name in ignored_roots:
+        if item.name in ignored_roots or item.suffix.lower() == ".log":
             continue
         target = staging / item.name
         if item.is_dir():

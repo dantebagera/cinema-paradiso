@@ -55,6 +55,8 @@ class PortableReleasePackagingTests(unittest.TestCase):
             (project / "README.md").write_text("Cinema Paradiso", encoding="utf-8")
             (project / "config.json").write_text("secret", encoding="utf-8")
             (project / "res_cache.json").write_text("cache", encoding="utf-8")
+            (project / "cp-server.stdout.log").write_text("local log", encoding="utf-8")
+            (project / "cp-server.stderr.log").write_text("local error log", encoding="utf-8")
             (project / "data").mkdir()
             (project / "data" / "state.json").write_text("user", encoding="utf-8")
             (project / "runtime").mkdir()
@@ -69,6 +71,7 @@ class PortableReleasePackagingTests(unittest.TestCase):
         self.assertTrue(any(name.endswith("README.md") for name in names))
         self.assertFalse(any(name.endswith("config.json") for name in names))
         self.assertFalse(any(name.endswith("res_cache.json") for name in names))
+        self.assertFalse(any(name.endswith(".log") for name in names))
         self.assertFalse(any("/data/" in name for name in names))
         self.assertFalse(any(name.endswith("runtime/old.exe") for name in names))
 
