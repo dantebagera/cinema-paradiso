@@ -1,6 +1,6 @@
 import { defineConfig } from '@playwright/test';
 
-const port = 5117;
+const port = Number(process.env.CP_E2E_PORT || 5117);
 const captureIngestionEvidence = process.env.CP_CAPTURE_INGESTION_EVIDENCE === '1';
 
 export default defineConfig({

@@ -251,6 +251,22 @@ class CatalogRepository:
         path_key = os.path.normcase(os.path.normpath(str(path or ""))) if path else ""
         return self.store.owned_movie_candidate(path_key=path_key, movie_key=movie_key)
 
+    def pending_final_card_paths(self):
+        """Return stable accepted files still waiting for Movie View publication."""
+        connection = self.store.connect()
+        try:
+            rows = connection.execute(
+                "SELECT path FROM media_files "
+                "WHERE ingest_status='stable' "
+                "AND identity_status='accepted' "
+                "AND metadata_accepted=1 "
+                "AND json_extract(raw_json, '$.movie_view_publication')='pending' "
+                "ORDER BY path_key"
+            ).fetchall()
+            return [str(row[0]) for row in rows if str(row[0] or "").strip()]
+        finally:
+            connection.close()
+
     def final_card_publication(self, paths):
         """Atomically publish paths satisfying the authoritative final-card predicate.
 

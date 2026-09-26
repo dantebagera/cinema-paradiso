@@ -1,0 +1,207 @@
+{
+  "verified_at_utc": "2026-09-18T16:09:26.626443+00:00",
+  "method": "Production frontend route owner via Flask test client; no normal application or network server launched.",
+  "routes": [
+    "/library",
+    "/discover",
+    "/tv/series/1"
+  ],
+  "index_sha256": "0af1ab6d334b96deee35321d0af8e93bca00ff9f5d8bf863aab915f97f51fc7a",
+  "assets": [
+    {
+      "url": "/assets/AcquisitionDecisionDetails-DYEd9TpX.js",
+      "sha256": "073d3690e0672fce55b3836fdb63c7294087016970d0f434f876b0693334cb57",
+      "bytes": 1239
+    },
+    {
+      "url": "/assets/AdvancedSearchBuilder-BqFbuHpV.js",
+      "sha256": "cd6a3e11dab674041e42a7ebe39308c565fa7bd22dafcdca1e761ab2b71244a8",
+      "bytes": 26920
+    },
+    {
+      "url": "/assets/AIControlWorkspace-B4OcSWp6.js",
+      "sha256": "8969ea60f9eb833a2105c99939d66c2febe890361e2d7da13c0bbd52d1b590e6",
+      "bytes": 16549
+    },
+    {
+      "url": "/assets/CardLab-BG18FSvC.js",
+      "sha256": "6d3391cebfaaab6053d34d85a361ac27def9f263be82ec72122bf0477187b4cc",
+      "bytes": 11483
+    },
+    {
+      "url": "/assets/CleanupWorkspace-D8MST0Xj.js",
+      "sha256": "0587b25440475f681fbf5570b3035924d09a23b83d468855967257d24c90a825",
+      "bytes": 57665
+    },
+    {
+      "url": "/assets/DiscoverResultGrid-C5nCUrI3.js",
+      "sha256": "66ec7898f4f1f100a06f04cbfc538c14081530b0a9d7e9dde1f21b122c28805e",
+      "bytes": 881
+    },
+    {
+      "url": "/assets/DiscoverWorkspace-DIAB_h2H.js",
+      "sha256": "18e7449eda50055591a4ac75054730de12b85a79dfb4df0938019a7da5168a65",
+      "bytes": 60308
+    },
+    {
+      "url": "/assets/DownloadsWorkspace-Jf0oj80Q.js",
+      "sha256": "c7c042d3a325cbabfd5e11aa18a182425e514065148d8c4c38e4e1366fd88ccc",
+      "bytes": 3383
+    },
+    {
+      "url": "/assets/header-CbieqaTQ.js",
+      "sha256": "2990e46277b33e8f1378ff76b3ef58d9ef4681117065634933c98ba25da6d9f9",
+      "bytes": 54
+    },
+    {
+      "url": "/assets/header-Cr7VYxUL.png",
+      "sha256": "41584f11eb6ca51eeacc6dedb0262d12faffbe926dbce0f424a0147ce072e506",
+      "bytes": 402602
+    },
+    {
+      "url": "/assets/HelpWorkspace-Bj_85zIU.js",
+      "sha256": "baf5d69c09893978282a606916adbf26c927c821190d43cb8cba51976b88c0a7",
+      "bytes": 21520
+    },
+    {
+      "url": "/assets/HomeWorkspace-CXFfnvAB.js",
+      "sha256": "f7dd79f5aabc32a889a85aa0efa5d726605cb77d82f604d7d9c6cd2e8be9570a",
+      "bytes": 22068
+    },
+    {
+      "url": "/assets/index-B32_NWjk.js",
+      "sha256": "b61de35ab4a3cb4e089ec85a6716e3900c5fc8946ab5156746ea7d6ff6a33cb0",
+      "bytes": 106378
+    },
+    {
+      "url": "/assets/index-BmPUSezg.css",
+      "sha256": "4d69465c1a9b7103c2b802a08362170d19af898a680bc0744e38a898166c41de",
+      "bytes": 203413
+    },
+    {
+      "url": "/assets/iptv-CYrezWvN.js",
+      "sha256": "ae15f079487ed7a9d7f6e9a7fdbda2e78ebc96f7d66e155d7b140f25f5fd7890",
+      "bytes": 6503
+    },
+    {
+      "url": "/assets/IPTVWorkspace-Cx_ZMdzz.css",
+      "sha256": "fa1858f48c6eb0dbff02fb2d456946b3858883271fee6cb851921e02c81a6091",
+      "bytes": 39785
+    },
+    {
+      "url": "/assets/IPTVWorkspace-CzG1so3o.js",
+      "sha256": "ad6831807d39935781594386d0efb8c4b5a8fd2b8fc95bac336f2240b1ed1f3c",
+      "bytes": 96147
+    },
+    {
+      "url": "/assets/LibraryControls-6YIhGFLO.js",
+      "sha256": "192535ef5d29c6586975034d6ffe4cdaa046d9146f716ba6fd144e37dfee4ddc",
+      "bytes": 2831
+    },
+    {
+      "url": "/assets/LibraryWorkspace-CuQMOFPH.js",
+      "sha256": "42818b13c9249df26f791d57230d57a3b884009f6982bddcdd1bc976f3f9646c",
+      "bytes": 47367
+    },
+    {
+      "url": "/assets/logo-Dk1rN4XL.svg",
+      "sha256": "33cbd83ff6e88c7ac88a6ee8596fa017c2493761b5c8bfb76d53ee6ed4ef61f7",
+      "bytes": 1253
+    },
+    {
+      "url": "/assets/manifest-CoGn2ic7.webmanifest",
+      "sha256": "183535125a867535e629c1a7310ce4a0de0c09767e54c85078e54debc7b95a10",
+      "bytes": 551
+    },
+    {
+      "url": "/assets/MetadataCorrectionModal-BTKJtoW1.js",
+      "sha256": "fda3087c4bc048cf84824e0c03537b084588250d674ee558734c5ff511f1c69b",
+      "bytes": 9969
+    },
+    {
+      "url": "/assets/MovieCard-BmXoy9PW.js",
+      "sha256": "f942973a326bdddb9cc42483616b838a904623a6bec0bc4cff6fa877929299e5",
+      "bytes": 7486
+    },
+    {
+      "url": "/assets/MovieListsWorkspace-BWCDpSiH.js",
+      "sha256": "18b215e326119b897c87269f96529adceafce11c652d1bd965c3ed4a8b318d96",
+      "bytes": 25486
+    },
+    {
+      "url": "/assets/moviePresentation-Di650b9v.js",
+      "sha256": "ae4eb47b0c81ca877c932fdf921d1555cfc5a500f3e427db132efbbc3ddf2390",
+      "bytes": 703
+    },
+    {
+      "url": "/assets/Pagination-C2rsnm_r.js",
+      "sha256": "6982dca2cfef82dfbc24335692d1d60fb90d2dca945e5f17ddfe1eb64209a573",
+      "bytes": 878
+    },
+    {
+      "url": "/assets/SettingsWorkspace-bBnhWy5z.js",
+      "sha256": "2a29da44e81c6e70b9ae5666d94ad37ce0c4288211ed4c23d70ddb741a89930b",
+      "bytes": 84796
+    },
+    {
+      "url": "/assets/StyleGuide-BWc8iTEx.js",
+      "sha256": "2f2d4129b50ab3bb113928d3e05352a4e675c37f47b0fe955bac702e3ae752bf",
+      "bytes": 10431
+    },
+    {
+      "url": "/assets/styleguide-motif-crop-B3fTh5_H.png",
+      "sha256": "b81c2444e32bc2b7f1f2e9d03696db817720c656fe21f73ad45bc28bdcc0430d",
+      "bytes": 119864
+    },
+    {
+      "url": "/assets/TVWorkspace-DNQa-UYW.css",
+      "sha256": "bd1be1d4e67ddedd2e617eed35b6dac3f7f8596bceecb0a38e08a31ed9d69df1",
+      "bytes": 3553
+    },
+    {
+      "url": "/assets/TVWorkspace-JpNVK7Du.js",
+      "sha256": "d9f9bed31cd144b728681b23143f71e685f0138d6781a18bc7dcca075d749894",
+      "bytes": 25206
+    },
+    {
+      "url": "/assets/useCardGridMetrics-CTjliqqp.js",
+      "sha256": "792b09d735c098c4bf3f09aa591d4bcd09f4aecc58a75932c34e98e1cdecf351",
+      "bytes": 26260
+    },
+    {
+      "url": "/assets/useMovieCollectionCache-DjGF9msE.js",
+      "sha256": "b1f1fcfdc86cc1f602097ad3058c4216054f56425b5d912a1f6624a45a7faf9a",
+      "bytes": 10993
+    },
+    {
+      "url": "/assets/vendor-Bb8JjhAW.js",
+      "sha256": "63f6b447b655f5fdeee94114448a3e09bc92e8058ddf2ed3b44c16d3967943b3",
+      "bytes": 3851
+    },
+    {
+      "url": "/assets/vendor-icons-DF2XoNRu.js",
+      "sha256": "4acbd11f191b16e1c82eff8fce366d8bd213e9e3fa86d18c17b3db1d723c3d86",
+      "bytes": 32691
+    },
+    {
+      "url": "/assets/vendor-player-Dv34CeeU.js",
+      "sha256": "84f81a550a2b07e93d1bde4085cb65278a453c352523aabb64571293a4eae8c8",
+      "bytes": 353866
+    },
+    {
+      "url": "/assets/vendor-react-CJZMWplS.js",
+      "sha256": "e697fc45388c3fe8087a2b6812932d72416c70d8872652eb5ffe5b34fa0b1cb9",
+      "bytes": 189824
+    },
+    {
+      "url": "/assets/WorkspacePathBar-JkcWpw5r.js",
+      "sha256": "07da7d976cd4c6500cb1099ec0583e9233959157bfe2e85e9944d5f42aff10c0",
+      "bytes": 2495
+    }
+  ],
+  "original_desktop_changed_files_preserved": 43,
+  "git_diff_check": "passed",
+  "python_tests": 1326,
+  "node_tests": 101,
+  "distinct_browser_tests_passed_across_runs": 94
+}

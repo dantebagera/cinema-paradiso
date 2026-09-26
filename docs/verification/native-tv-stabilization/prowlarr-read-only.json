@@ -1,0 +1,100 @@
+{
+  "target": "tmdb:tv:108978:season:1",
+  "category": 5000,
+  "elapsed_seconds": 20.0,
+  "result_count": 166,
+  "with_provider_identity": 0,
+  "partial": true,
+  "sources": [
+    {
+      "id": "41",
+      "name": "1337x",
+      "state": "complete",
+      "count": 46
+    },
+    {
+      "id": "30",
+      "name": "ACG.RIP",
+      "state": "complete",
+      "count": 0
+    },
+    {
+      "id": "34",
+      "name": "Bangumi Moe",
+      "state": "complete",
+      "count": 0
+    },
+    {
+      "id": "35",
+      "name": "BigFANGroup",
+      "state": "complete",
+      "count": 7
+    },
+    {
+      "id": "8",
+      "name": "dmhy",
+      "state": "timeout",
+      "count": 0
+    },
+    {
+      "id": "11",
+      "name": "LimeTorrents",
+      "state": "complete",
+      "count": 40
+    },
+    {
+      "id": "24",
+      "name": "Mikan",
+      "state": "complete",
+      "count": 0
+    },
+    {
+      "id": "25",
+      "name": "NoNaMe Club",
+      "state": "complete",
+      "count": 23
+    },
+    {
+      "id": "27",
+      "name": "Nyaa.si",
+      "state": "complete",
+      "count": 0
+    },
+    {
+      "id": "36",
+      "name": "RuTor",
+      "state": "complete",
+      "count": 0
+    },
+    {
+      "id": "37",
+      "name": "SubsPlease",
+      "state": "complete",
+      "count": 0
+    },
+    {
+      "id": "6",
+      "name": "The Pirate Bay",
+      "state": "complete",
+      "count": 33
+    },
+    {
+      "id": "38",
+      "name": "Torrent9",
+      "state": "complete",
+      "count": 0
+    },
+    {
+      "id": "40",
+      "name": "World-torrent",
+      "state": "complete",
+      "count": 17
+    },
+    {
+      "id": "39",
+      "name": "Zamunda RIP",
+      "state": "failed",
+      "count": 0
+    }
+  ]
+}

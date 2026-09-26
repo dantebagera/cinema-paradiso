@@ -1,0 +1,18 @@
+{
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-real-client-bqme19ha",
+  "client_version": "v5.2.3",
+  "transport": "torrent from loopback-only synthetic seeder",
+  "states": [
+    "downloading",
+    "imported"
+  ],
+  "file_priorities": [
+    1,
+    0
+  ],
+  "published_episode_numbers": [
+    1
+  ],
+  "source_retained": true,
+  "measured_quality": "1080p"
+}

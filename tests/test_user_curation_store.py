@@ -479,6 +479,7 @@ class UserCurationStoreTest(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.get_json()["movie"]["imdb_id"], "tt33764258")
+        self.assertEqual(response.get_json()["movie"]["profile_id"], "cp-compatibility")
 
     def test_followed_scan_only_searches_released_due_watching_movies(self):
         original_user_data_dir = app._user_data_dir

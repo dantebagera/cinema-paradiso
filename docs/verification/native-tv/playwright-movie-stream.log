@@ -1,0 +1,8 @@
+
+Running 1 test using 1 worker
+
+(node:36928) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\app-smoke.spec.js:207:1 › release watcher keeps a three-row preview while View all and Following expose the complete set (2.9s)
+
+  1 passed (4.6s)

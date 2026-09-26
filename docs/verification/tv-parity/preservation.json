@@ -1,0 +1,18 @@
+{
+  "workspace": "C:\\Users\\dante\\.codex\\worktrees\\0870\\cinema paradiso",
+  "checked_at": "2026-09-18T18:52:54.200876+00:00",
+  "preserved": {
+    "config.json": {
+      "sha256": "44e53e9879627df78171ed8f4132e241b02aeab2b9a3849bce85957e3e648dcf",
+      "matches_baseline": true
+    },
+    "runtime/player/current.json": {
+      "sha256": "04e9f5cf059c3e8448d6658c0696a146d40010381ff3a07c40e9d6db99adc033",
+      "matches_baseline": true
+    }
+  },
+  "batch_path": "C:\\Users\\dante\\.codex\\worktrees\\0870\\cinema paradiso\\run.bat",
+  "batch_exists": true,
+  "desktop_changed_file_states_checked": 43,
+  "desktop_mismatches": []
+}

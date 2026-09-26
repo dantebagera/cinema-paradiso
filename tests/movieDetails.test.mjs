@@ -4,6 +4,7 @@ import test from 'node:test';
 import {
   markMovieDetailsCacheStale,
   mergeCanonicalMovieDetails,
+  mergeLibraryProviderDetails,
   mergeTransientMovieLanguage,
   movieCollectionCacheKey,
   movieCollectionView
@@ -61,6 +62,31 @@ test('owned detail merges preserve valid card summaries when deferred fields are
   assert.deepEqual(merged.genres, ['Drama']);
   assert.equal(merged.cast[0].name, 'Lead Actor');
   assert.equal(merged.projection_contract, 'canonical_movie_details');
+});
+
+test('owned details replace shallow stored credits with richer TMDB people', () => {
+  const local = {
+    title: 'Canonical title',
+    cast: ['Chris', 'Zoe', 'Dave'].map((name) => ({ name })),
+    directors: [{ name: 'James Gunn' }],
+    detail_source: 'library_sql'
+  };
+  const provider = {
+    title: 'Provider title',
+    cast: Array.from({ length: 9 }, (_, index) => ({
+      id: String(index + 1), name: `Actor ${index + 1}`,
+      profile_url: `https://image.test/${index + 1}.jpg`, character: `Role ${index + 1}`
+    })),
+    directors: [{ id: '99', name: 'James Gunn', profile_url: 'https://image.test/director.jpg' }]
+  };
+
+  const merged = mergeLibraryProviderDetails(local, provider);
+
+  assert.equal(merged.title, 'Canonical title');
+  assert.equal(merged.cast.length, 9);
+  assert.equal(merged.cast[8].name, 'Actor 9');
+  assert.equal(merged.directors[0].id, '99');
+  assert.equal(merged.detail_source, 'library_sql+tmdb_live');
 });
 
 test('transient language overlay replaces display fields without mutating canonical data', () => {

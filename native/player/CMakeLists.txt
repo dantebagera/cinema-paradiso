@@ -69,7 +69,7 @@ qt_add_resources(cp-player "cp_player_branding"
 )
 
 set(CP_PLAYER_CONTROL_ICONS
-    resources/icons/audio-tracks.svg
+    resources/icons/audio-language-tracks.svg
     resources/icons/enter-fullscreen.svg
     resources/icons/exit-fullscreen.svg
     resources/icons/forward-10.svg
@@ -83,9 +83,7 @@ set(CP_PLAYER_CONTROL_ICONS
     resources/icons/volume-high.svg
     resources/icons/volume-muted.svg
     resources/icons/window-close.svg
-    resources/icons/window-maximize.svg
     resources/icons/window-minimize.svg
-    resources/icons/window-restore.svg
 )
 foreach(CP_PLAYER_CONTROL_ICON IN LISTS CP_PLAYER_CONTROL_ICONS)
     get_filename_component(CP_PLAYER_CONTROL_ICON_NAME

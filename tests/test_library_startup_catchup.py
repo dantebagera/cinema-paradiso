@@ -17,6 +17,7 @@ class LibraryStartupCatchupTests(unittest.TestCase):
         self.root = Path(self.workspace.name)
         self.repository = Mock()
         self.repository.catalog_meta.return_value = ""
+        self.repository.pending_final_card_paths.return_value = []
         self.coordinator = Mock()
         self.coordinator.reconcile_all_now.return_value = {"checked": 0}
         self.coordinator.reconcile_directories_now.return_value = {"checked": 1}
@@ -57,6 +58,47 @@ class LibraryStartupCatchupTests(unittest.TestCase):
         self.assertTrue(result["result"]["skipped"])
         self.coordinator.reconcile_all_now.assert_not_called()
         self.coordinator.reconcile_directories_now.assert_not_called()
+
+    def test_unchanged_snapshot_finalizes_stable_pending_publications(self):
+        catchup = self._catchup(); catchup.run_once()
+        saved = self.repository.set_operational_meta.call_args.args[1]
+        self.repository.catalog_meta.return_value = saved
+        self.repository.pending_final_card_paths.return_value = [
+            "C:/Movies/Superman (1978).mkv"
+        ]
+        self.coordinator.reset_mock()
+        self.coordinator.finalize_matched_paths.return_value = {
+            "publications": [{"movie_key": "tmdb:1924"}],
+            "failures": {},
+        }
+
+        result = self._catchup().run_once()
+
+        self.assertTrue(result["result"]["skipped"])
+        self.coordinator.finalize_matched_paths.assert_called_once_with(
+            ["C:/Movies/Superman (1978).mkv"],
+            reason="startup",
+            correlation_id="startup-catchup",
+        )
+
+    def test_startup_asset_failure_is_queued_without_blocking_snapshot(self):
+        self.repository.pending_final_card_paths.return_value = ["C:/Movies/Poster.mkv"]
+        self.coordinator.finalize_matched_paths.return_value = {
+            "publications": [],
+            "failures": {"C:/Movies/Poster.mkv": "poster failed"},
+        }
+
+        result = self._catchup().run_once()
+
+        self.coordinator.reconcile_paths.assert_called_once_with(
+            ["C:/Movies/Poster.mkv"],
+            reason="startup:asset-retry",
+            correlation_id="startup-catchup",
+        )
+        self.repository.set_operational_meta.assert_called_once()
+        self.assertEqual(result["finalization"]["failures"], {
+            "C:/Movies/Poster.mkv": "poster failed"
+        })
 
     def test_offline_root_preserves_previous_revision_and_never_prunes(self):
         normalized = os.path.normcase(os.path.normpath(str(self.root)))

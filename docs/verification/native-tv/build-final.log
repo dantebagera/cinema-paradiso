@@ -1,0 +1,48 @@
+
+> cinema-paradiso-frontend@2.8.5 build
+> vite build
+
+vite v6.4.3 building for production...
+transforming...
+✓ 1668 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/assets/manifest-CoGn2ic7.webmanifest             0.55 kB
+dist/assets/logo-Dk1rN4XL.svg                         1.25 kB │ gzip:   0.55 kB
+dist/index.html                                       1.92 kB │ gzip:   0.88 kB
+dist/assets/styleguide-motif-crop-B3fTh5_H.png      119.86 kB
+dist/assets/header-Cr7VYxUL.png                     402.60 kB
+dist/assets/TVWorkspace-rMcmLzpY.css                  3.55 kB │ gzip:   1.18 kB
+dist/assets/IPTVWorkspace-Cx_ZMdzz.css               39.79 kB │ gzip:   6.54 kB
+dist/assets/index-CSVcTlat.css                      196.60 kB │ gzip:  33.51 kB
+dist/assets/header-CbieqaTQ.js                        0.05 kB │ gzip:   0.07 kB
+dist/assets/moviePresentation-Di650b9v.js             0.70 kB │ gzip:   0.44 kB
+dist/assets/Pagination-qCh1KzWz.js                    0.88 kB │ gzip:   0.49 kB
+dist/assets/DiscoverResultGrid-Ib-bUAQm.js            0.88 kB │ gzip:   0.41 kB
+dist/assets/AcquisitionDecisionDetails-DYEd9TpX.js    1.24 kB │ gzip:   0.57 kB
+dist/assets/DownloadsWorkspace-Bm2bE3nU.js            2.82 kB │ gzip:   1.22 kB
+dist/assets/LibraryControls-D-lZBVoA.js               2.83 kB │ gzip:   0.91 kB
+dist/assets/vendor-Bb8JjhAW.js                        3.85 kB │ gzip:   1.72 kB
+dist/assets/MovieCard-CyeunC0x.js                     5.97 kB │ gzip:   2.19 kB
+dist/assets/iptv-D7j1XBa1.js                          6.50 kB │ gzip:   1.38 kB
+dist/assets/MetadataCorrectionModal-DAQ3Des2.js       9.97 kB │ gzip:   3.28 kB
+dist/assets/StyleGuide-D2JVRazi.js                   10.43 kB │ gzip:   3.01 kB
+dist/assets/useMovieCollectionCache-BKLoxNuC.js      10.99 kB │ gzip:   3.81 kB
+dist/assets/CardLab-D9U-wrOW.js                      11.48 kB │ gzip:   4.12 kB
+dist/assets/AIControlWorkspace-DFh1FvrC.js           16.55 kB │ gzip:   5.74 kB
+dist/assets/TVWorkspace-C-blqqot.js                  18.69 kB │ gzip:   5.88 kB
+dist/assets/HelpWorkspace-DZoP6kOt.js                21.52 kB │ gzip:   6.95 kB
+dist/assets/useCardGridMetrics-BnXnVmhK.js           21.94 kB │ gzip:   6.96 kB
+dist/assets/HomeWorkspace-Bf_0Q9-E.js                22.07 kB │ gzip:   6.56 kB
+dist/assets/MovieListsWorkspace-Db6L3W-n.js          25.49 kB │ gzip:   7.53 kB
+dist/assets/WorkspacePathBar-YKGzt1Jt.js             28.73 kB │ gzip:   8.79 kB
+dist/assets/vendor-icons-CWKsbMXO.js                 32.69 kB │ gzip:   6.61 kB
+dist/assets/LibraryWorkspace-C3F5ZIgs.js             47.04 kB │ gzip:  13.86 kB
+dist/assets/DiscoverWorkspace-BeSN475J.js            56.42 kB │ gzip:  16.53 kB
+dist/assets/CleanupWorkspace-CqexGeoO.js             57.67 kB │ gzip:  14.97 kB
+dist/assets/SettingsWorkspace-DYwlApge.js            81.73 kB │ gzip:  19.79 kB
+dist/assets/IPTVWorkspace-DKBwChdV.js                96.15 kB │ gzip:  25.53 kB
+dist/assets/index-Dg9r_4b7.js                       102.91 kB │ gzip:  31.05 kB
+dist/assets/vendor-react-CJZMWplS.js                189.82 kB │ gzip:  59.19 kB
+dist/assets/vendor-player-Dv34CeeU.js               353.87 kB │ gzip: 110.81 kB
+✓ built in 2.22s

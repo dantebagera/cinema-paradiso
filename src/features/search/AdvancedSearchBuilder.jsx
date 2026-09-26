@@ -33,7 +33,7 @@ function valueLabel(type, value) {
   return value.label || value.id;
 }
 
-function IdentityPicker({ scope, type, searchIdentities, onPick }) {
+export function IdentityPicker({ scope, type, searchIdentities, onPick }) {
   const [text, setText] = useState('');
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -154,8 +154,10 @@ function RuntimeEditor({ value, onChange }) {
 }
 
 export default function AdvancedSearchBuilder({
-  scope, query, onChange, onRun, onReset, options = {}, searchIdentities, loading = false, error = ''
+  scope, query, onChange, onRun, onReset, options = {}, searchIdentities, loading = false, error = '', mediaType = 'movie'
 }) {
+  const tv = mediaType === 'tv';
+  const labelFor = (definition) => tv ? ({year: 'First-air year', runtime: 'Episode runtime', language: 'Original language', country: 'Origin country', library_source: 'Episode file source'}[definition?.type] || definition?.label) : definition?.label;
   const normalized = useMemo(() => normalizeAdvancedQuery(query, scope), [query, scope]);
   const [addType, setAddType] = useState('');
   const [pendingText, setPendingText] = useState('');
@@ -169,9 +171,9 @@ export default function AdvancedSearchBuilder({
   const hasTitle = used.has('title');
   const hasTitleUnsupported = used.has('keyword') || used.has('runtime');
   const available = criteriaForScope(scope).filter((definition) => {
-    if (definition.type === 'sort') return false;
+    if (definition.type === 'sort' || (tv && definition.type === 'movie_list')) return false;
     if (used.has(definition.type) && !definition.repeatable) return false;
-    if (scope === 'discover' && ((hasTitle && ['keyword', 'runtime'].includes(definition.type)) || (definition.type === 'title' && hasTitleUnsupported))) return false;
+    if (!tv && scope === 'discover' && ((hasTitle && ['keyword', 'runtime'].includes(definition.type)) || (definition.type === 'title' && hasTitleUnsupported))) return false;
     return true;
   });
   const selectedDefinition = criterionFor(scope, addType);
@@ -227,7 +229,7 @@ export default function AdvancedSearchBuilder({
         >
           <Plus size={17} />
         </button>
-        {!groups.length && <span className="advanced-mode-warning">This field is not a normal text search</span>}
+        {!groups.length && <span className="advanced-mode-guidance">Click + to choose a filter</span>}
         <div className="advanced-builder-canvas" data-expanded={expanded || undefined}>
           {shownGroups.map((group, groupIndex) => {
           const definition = criterionFor(scope, group.type);
@@ -238,7 +240,7 @@ export default function AdvancedSearchBuilder({
             {groupIndex > 0 && <span className="advanced-type-join">AND</span>}
             <div className="advanced-criterion-block">
             <div className="advanced-block-header">
-              <strong>{definition.label}</strong>
+              <strong>{labelFor(definition)}</strong>
             </div>
             {editableNumeric ? <div className="advanced-single-editor"><NumericEditor type={group.type} value={singletonValue} onChange={(value) => updateGroup(group.type, [value])} /><button type="button" onClick={() => removeValue(group.type)} aria-label={`Remove ${definition.label.toLowerCase()}`}><X size={13} /></button></div>
               : group.type === 'title' ? <div className="advanced-single-editor"><input value={singletonValue.text} maxLength={ADVANCED_SEARCH_LIMITS.titleCharacters} onChange={(event) => updateGroup(group.type, [{ text: event.target.value }])} aria-label="Edit title" /><button type="button" onClick={() => removeValue(group.type)} aria-label="Remove title"><X size={13} /></button></div>
@@ -259,11 +261,11 @@ export default function AdvancedSearchBuilder({
                     onClick={() => onChange(definition.supportsNot
                       ? withGenreValueRelation(normalized, index, nextRelation)
                       : withGroupJoin(normalized, group.type, nextRelation))}
-                    aria-label={`${relation === 'not' ? `Exclude ${valueLabel(group.type, value)}` : `Combine ${definition.label} values with ${relation.toUpperCase()}`}; click to use ${nextRelation.toUpperCase()}`}
+                    aria-label={`${relation === 'not' ? `Exclude ${valueLabel(group.type, value)}` : `Combine ${labelFor(definition)} values with ${relation.toUpperCase()}`}; click to use ${nextRelation.toUpperCase()}`}
                   >{relation.toUpperCase()}</button>
                   : <span className="advanced-join-fixed">{relation.toUpperCase()}</span>)}
                 <span className="advanced-value-chip">
-                  {group.type === 'person' ? <><span>{value.label}</span><select value={value.role} onChange={(event) => updateGroup(group.type, group.values.map((item, valueIndex) => valueIndex === index ? { ...item, role: event.target.value } : item))} aria-label={`Role for ${value.label}`}><option value="actor">Actor</option><option value="director">Director</option><option value="writer">Writer</option></select></> : valueLabel(group.type, value)}
+                  {group.type === 'person' ? <><span>{value.label}</span><select value={value.role} onChange={(event) => updateGroup(group.type, group.values.map((item, valueIndex) => valueIndex === index ? { ...item, role: event.target.value } : item))} aria-label={`Role for ${value.label}`}><option value="actor">Actor</option><option value="director">Director</option><option value="writer">Writer</option>{tv && <option value="creator">Creator</option>}</select></> : valueLabel(group.type, value)}
                   <button type="button" onClick={() => removeValue(group.type, index)} aria-label={`Remove ${definition.label.toLowerCase()} ${valueLabel(group.type, value)}`}><X size={13} /></button>
                 </span>
               </span>;
@@ -289,11 +291,11 @@ export default function AdvancedSearchBuilder({
         <div className="advanced-add-row">
           <select value={addType} onChange={(event) => { setAddType(event.target.value); setPendingIdentity(null); setPendingText(''); }} aria-label="Criterion to add">
             <option value="">Choose criterion…</option>
-            {available.map((definition) => <option key={definition.type} value={definition.type}>{definition.label}</option>)}
+            {available.map((definition) => <option key={definition.type} value={definition.type}>{labelFor(definition)}</option>)}
           </select>
-          {addType === 'title' && <input value={pendingText} maxLength={ADVANCED_SEARCH_LIMITS.titleCharacters} onChange={(event) => setPendingText(event.target.value)} placeholder="Movie title" aria-label="Title value" />}
+          {addType === 'title' && <input value={pendingText} maxLength={ADVANCED_SEARCH_LIMITS.titleCharacters} onChange={(event) => setPendingText(event.target.value)} placeholder={tv ? "Series title" : "Movie title"} aria-label="Title value" />}
           {['person', 'keyword'].includes(addType) && <>
-            {addType === 'person' && <select value={personRole} onChange={(event) => setPersonRole(event.target.value)} aria-label="Person role"><option value="actor">Actor</option><option value="director">Director</option><option value="writer">Writer</option></select>}
+            {addType === 'person' && <select value={personRole} onChange={(event) => setPersonRole(event.target.value)} aria-label="Person role"><option value="actor">Actor</option><option value="director">Director</option><option value="writer">Writer</option>{tv && <option value="creator">Creator</option>}</select>}
             <IdentityPicker scope={scope} type={addType} searchIdentities={searchIdentities} onPick={setPendingIdentity} />
             {pendingIdentity && <span className="advanced-pending-identity">{pendingIdentity.label}</span>}
           </>}
@@ -313,10 +315,10 @@ export default function AdvancedSearchBuilder({
             ]).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
           </select></label>
           {scope === 'discover' && <label>Feed <select value={normalized.feed} onChange={(event) => onChange(normalizeAdvancedQuery({ ...normalized, feed: event.target.value }, scope))}>
-            {[['trending_week', 'Trending Week'], ['catalog', 'TMDB Catalog'], ['trending_today', 'Trending Today'], ['now_playing', 'Now Playing'], ['upcoming', 'Upcoming'], ['popular', 'Popular'], ['top_rated', 'Top Rated'], ['best_all_time', 'Best All Time']].map(([id, label]) => <option key={id} value={id}>{label}</option>)}
+            {[['trending_week', 'Trending Week'], ['catalog', 'TMDB Catalog'], ['trending_today', 'Trending Today'], ['now_playing', tv ? 'On the air' : 'Now Playing'], ['upcoming', tv ? 'Airing today' : 'Upcoming'], ['popular', 'Popular'], ['top_rated', 'Top Rated'], ['best_all_time', 'Best All Time']].map(([id, label]) => <option key={id} value={id}>{label}</option>)}
           </select></label>}
         </div>
-        {scope === 'discover' && hasTitle && <p className="advanced-capability-note">Title results use a bounded TMDB scan. Keyword and Runtime are unavailable with Title.</p>}
+        {!tv && scope === 'discover' && hasTitle && <p className="advanced-capability-note">Title results use a bounded TMDB scan. Keyword and Runtime are unavailable with Title.</p>}
       </div>}
       {error && <div className="advanced-builder-error" role="alert">{error} <button type="button" onClick={onRun}>Retry</button></div>}
     </section>

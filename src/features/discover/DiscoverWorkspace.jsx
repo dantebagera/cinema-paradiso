@@ -1,8 +1,10 @@
+import SearchField from '../search/SearchField.jsx';
 import {
   AlertTriangle, Bot, CheckCircle2, CirclePlus, Compass, Film, Loader2,
   MonitorPlay, Play, Radio, RefreshCcw, Search, Star, Wand2, X
 } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { restoreWorkspaceScroll } from '../../components/movie-card/expandedCardViewport.js';
 import { fetchJson } from '../../api/client.js';
 import { CATALOG_GENERATION_CHANGED_EVENT, fetchOwnershipChecks } from '../../api/library.js';
 import { fetchCanonicalMovieDetails, markMovieDetailsCacheStale, movieDetailsCacheKey } from '../../api/movieDetails.js';
@@ -24,7 +26,7 @@ import {
   compileDiscoverSimpleQuery, createEmptyQuery, normalizeAdvancedQuery, querySignature, yearRangeDraft
 } from '../search/advancedSearchModel.js';
 import {
-  DiscoverMovieCard, MovieExpandedCuration, MovieExpandedDetails, MovieExpandedFacts, OwnedFileDetailsButton, PosterEditButton, PosterStateControls
+  DiscoverMovieCard, MovieExpandedCuration, MovieExpandedDetails, MovieExpandedFacts, MoviePlotDetailsButton, OwnedFileDetailsButton, PosterEditButton, PosterStateControls
 } from '../../components/SharedMovieCards.jsx';
 import TorrentActions from '../../components/TorrentActions.jsx';
 import { UnifiedMovieCard } from '../../components/movie-card/MovieCard.jsx';
@@ -158,11 +160,13 @@ export default function DiscoverWorkspace({
   setBrowseQuery,
   searchRequest,
   relationshipRequest,
+  onReturnToSection,
   listRequest,
   movieRequest,
   activeTab,
   setActiveTab,
-  onOpenFileDetails
+  onOpenFileDetails,
+  mediaNavigation
 }) {
   const [discoverList, setDiscoverList] = useState('trending_week');
   const [discoverGenre, setDiscoverGenre] = useState('');
@@ -244,6 +248,9 @@ export default function DiscoverWorkspace({
     relationshipRequest?.requestId || movieRequest?.requestId
   ));
   const discoverRequestSeq = useRef(0);
+  const restoringSnapshotRef = useRef(false);
+  const browserSnapshotsRef = useRef(new Map());
+  const browserSequenceRef = useRef(0);
   const pickRequestSeq = useRef(0);
   const discoverAbortRef = useRef(null);
   const pickAbortRef = useRef(null);
@@ -486,11 +493,15 @@ export default function DiscoverWorkspace({
 
   function currentDiscoverSnapshot() {
     return {
+      activeTab,
       label: discoverContext?.label || discoverBaseLabel(),
       context: discoverContext,
       results: discoverResults,
       contextSourceResults: discoverContextSourceResults,
       page: discoverPage,
+      localPage: discoverLocalPage,
+      expandedMovieKey,
+      scrollTop: document.querySelector('.workspace')?.scrollTop || 0,
       totalPages: discoverTotalPages,
       totalResults: discoverTotalResults,
       hasPrevious: discoverHasPrevious,
@@ -535,6 +546,15 @@ export default function DiscoverWorkspace({
   }
 
   function restoreDiscoverSnapshot(snapshot, nextHistory) {
+    if (snapshot.externalSection) {
+      setDiscoverHistory(nextHistory || []);
+      onReturnToSection?.(snapshot.externalSection);
+      return;
+    }
+    restoringSnapshotRef.current = true;
+    setIsNavigatingDiscoverContext(false);
+    setActiveTab(snapshot.activeTab || 'explore');
+    restoreWorkspaceScroll(snapshot.scrollTop);
     discoverAbortRef.current?.abort();
     discoverRequestSeq.current += 1;
     setDiscoverLoading(false);
@@ -542,6 +562,7 @@ export default function DiscoverWorkspace({
     setDiscoverKeywordLoading(false);
     setDiscoverResults(snapshot.results || []);
     setDiscoverPage(snapshot.page || 1);
+    setDiscoverLocalPage(snapshot.localPage || 1);
     setDiscoverTotalPages(snapshot.totalPages ?? 1);
     setDiscoverTotalResults(snapshot.totalResults ?? 0);
     setDiscoverHasPrevious(Boolean(snapshot.hasPrevious));
@@ -577,8 +598,82 @@ export default function DiscoverWorkspace({
     setDiscoverLocalCriteria(snapshot.localCriteria || []);
     setDiscoverError('');
     setDiscoverHistory(nextHistory || []);
-    setExpandedMovieKey('');
+    setExpandedMovieKey(snapshot.expandedMovieKey || '');
     checkOwnership(snapshot.results || []);
+    if (snapshot.context?.type === 'related' && !(snapshot.results || []).length) {
+      loadContextPage('explore', snapshot.context, { page: snapshot.page || 1 });
+    }
+  }
+
+  function pushDiscoverBrowserEntry(snapshot = currentDiscoverSnapshot()) {
+    const key = window.history.state?.cpDiscover;
+    if (key) browserSnapshotsRef.current.set(key, { snapshot, history: discoverHistory });
+    window.history.pushState({ ...window.history.state, cpDiscover: `related-${Date.now()}-${++browserSequenceRef.current}` }, '', '/discover');
+  }
+
+  useLayoutEffect(() => {
+    if (window.location.pathname !== '/discover') return;
+    let key = window.history.state?.cpDiscover;
+    if (!key) {
+      key = `discover-${Date.now()}-${++browserSequenceRef.current}`;
+      window.history.replaceState({ ...window.history.state, cpDiscover: key }, '', window.location.href);
+    }
+    browserSnapshotsRef.current.set(key, { snapshot: currentDiscoverSnapshot(), history: discoverHistory });
+  });
+  useEffect(() => {
+    const onPop = (event) => {
+      const saved = browserSnapshotsRef.current.get(event.state?.cpDiscover);
+      if (saved) restoreDiscoverSnapshot(saved.snapshot, saved.history);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  });
+  useEffect(() => {
+    const workspace = document.querySelector('.workspace');
+    const saveScroll = () => {
+      if (window.location.pathname !== '/discover') return;
+      const saved = browserSnapshotsRef.current.get(window.history.state?.cpDiscover);
+      if (saved) saved.snapshot.scrollTop = workspace.scrollTop;
+    };
+    workspace?.addEventListener('scroll', saveScroll, { passive: true });
+    return () => workspace?.removeEventListener('scroll', saveScroll);
+  }, []);
+
+  async function loadRelatedContext(context, { expandedMovie = null } = {}) {
+    const source = context.relationshipSource || 'all';
+    const nextContext = {
+      ...context,
+      relationshipSource: source,
+      baseUrl: `/api/tmdb/related?tmdb_id=${encodeURIComponent(context.movie.tmdb_id)}&source=${source}`
+    };
+    try {
+      await loadContextPage('explore', nextContext, { page: 1, expandedMovie });
+    } finally {
+      setIsNavigatingDiscoverContext(false);
+    }
+  }
+
+  function selectRelationshipSource(source) {
+    setExpandedMovieKey('');
+    loadRelatedContext({ ...discoverContext, relationshipSource: source });
+  }
+
+  function openRequestedMovie(movie, label) {
+    setDiscoverLoading(false);
+    setDiscoverError('');
+    setDiscoverSearchKind('movies');
+    setDiscoverResults([movie]);
+    setDiscoverContextSourceResults([movie]);
+    setDiscoverPage(1);
+    setDiscoverLocalPage(1);
+    setDiscoverTotalPages(1);
+    setDiscoverTotalResults(1);
+    setDiscoverMode('context');
+    setDiscoverOwnershipFilter('all');
+    setDiscoverContext({ type: 'movie', label: label || movie.title, criteriaKey: discoverCriteriaKey() });
+    setExpandedMovieKey(movieKey(movie));
+    checkOwnership([movie]);
+    loadDiscoverDetails(movie).finally(() => setIsNavigatingDiscoverContext(false));
   }
 
   function restorePickSnapshot(snapshot, nextHistory) {
@@ -595,10 +690,11 @@ export default function DiscoverWorkspace({
   }
 
   function resetDiscoverPath() {
-    if (discoverHistory.length) {
+    if (discoverHistory.length && !discoverHistory[0].externalSection) {
       restoreDiscoverSnapshot(discoverHistory[0], []);
       return;
     }
+    setDiscoverHistory([]);
     setDiscoverContext(null);
     setExpandedMovieKey('');
     loadDiscover({ append: false, search: discoverMode === 'search' ? tmdbQuery : '' });
@@ -799,7 +895,7 @@ export default function DiscoverWorkspace({
     }
   }
 
-  async function loadContextPage(target, context, { page = 1 } = {}) {
+  async function loadContextPage(target, context, { page = 1, expandedMovie = null } = {}) {
     if (!context?.baseUrl && !context?.query) return;
     const isPick = target === 'pick';
     const { controller, requestSeq } = isPick ? beginPickRequest() : beginDiscoverRequest();
@@ -841,7 +937,7 @@ export default function DiscoverWorkspace({
       const totalPages = data.total_pages == null ? null : Math.max(1, Number(data.total_pages || 1));
       const responsePage = Math.max(1, Number(data.page || requestedPage));
       if (totalPages != null && requestedPage > totalPages && responsePage !== totalPages) {
-        await loadContextPage(target, context, { page: totalPages });
+        await loadContextPage(target, context, { page: totalPages, expandedMovie });
         return;
       }
       const nextContext = {
@@ -872,6 +968,10 @@ export default function DiscoverWorkspace({
         discoverResultIdentityRef.current = `context|${context.owner || 'provider'}|${context.baseUrl || ''}|${responsePage}|${discoverMoviePageSize}|${context.query ? querySignature(context.query) : ''}`;
       }
       checkOwnership(nextResults);
+      if (!isPick && expandedMovie && nextResults.some((movie) => movieKey(movie) === movieKey(expandedMovie))) {
+        setExpandedMovieKey(movieKey(expandedMovie));
+        loadDiscoverDetails(expandedMovie);
+      }
     } catch (error) {
       if (isPick ? requestSeq !== pickRequestSeq.current : requestSeq !== discoverRequestSeq.current) return;
       if (isAbortedRequest(error)) return;
@@ -1056,6 +1156,28 @@ export default function DiscoverWorkspace({
     setIsNavigatingDiscoverContext(true);
     setActiveTab('explore');
 
+    if (relationshipRequest.type === 'related') {
+      discoverAbortRef.current?.abort();
+      discoverRequestSeq.current += 1;
+      const context = {
+        type: 'related', label: `Related to ${relationshipRequest.movie.title}`,
+        movie: relationshipRequest.movie,
+        relationshipSource: relationshipRequest.relationshipSource || 'all',
+        emptyText: 'No related movies found from TMDB.'
+      };
+      context.baseUrl = `/api/tmdb/related?tmdb_id=${encodeURIComponent(context.movie.tmdb_id)}&source=${context.relationshipSource}`;
+      const previous = relationshipRequest.origin
+        ? { label: relationshipRequest.origin.label, externalSection: relationshipRequest.origin.section }
+        : { ...currentDiscoverSnapshot(), activeTab: relationshipRequest.originTab || 'explore',
+          label: relationshipRequest.originTab === 'pick' ? 'Pick My Movie' : relationshipRequest.originTab === 'browse' ? 'Browse Indexers' : (discoverContext?.label || 'Discover') };
+      if (!relationshipRequest.origin) pushDiscoverBrowserEntry(previous);
+      const history = relationshipRequest.origin ? [previous] : [...discoverHistory, previous];
+      setDiscoverSearchKind('movies');
+      setDiscoverOwnershipFilter('all');
+      setDiscoverHistory(history);
+      loadRelatedContext(context, { expandedMovie: relationshipRequest.selectedMovie || null });
+      return;
+    }
     if (relationshipRequest.type === 'collection') {
       browseCollection('explore', relationshipRequest.movie, relationshipRequest.collection)
         .finally(() => setIsNavigatingDiscoverContext(false));
@@ -1105,33 +1227,7 @@ export default function DiscoverWorkspace({
     } else {
       setDiscoverHistory([]);
     }
-    setDiscoverSearchKind('movies');
-    setDiscoverPeopleResults([]);
-    setDiscoverKeywordResults([]);
-    setTmdbQuery('');
-    setDiscoverList('catalog');
-    setDiscoverGenre('');
-    setDiscoverMinVotes('0');
-    setDiscoverYearFrom('');
-    setDiscoverYearTo('');
-    setDiscoverMinRating('0');
-    setDiscoverSort('auto');
-    setDiscoverOwnershipFilter('all');
-    setDiscoverResults([movie]);
-    setDiscoverContextSourceResults([movie]);
-    setDiscoverPage(1);
-    setDiscoverTotalPages(1);
-    setDiscoverTotalResults(1);
-    setDiscoverMode('context');
-    setDiscoverContext({
-      type: 'movie',
-      label: `${movieRequest.source || 'Movie'}: ${movie.title || 'TMDB movie'}`,
-      emptyText: 'That TMDB movie is no longer available.',
-      criteriaKey: '|0|||0|auto'
-    });
-    setExpandedMovieKey(movieKey(movie));
-    checkOwnership([movie]);
-    loadDiscoverDetails(movie).finally(() => setIsNavigatingDiscoverContext(false));
+    openRequestedMovie(movie, `${movieRequest.source || 'Movie'}: ${movie.title || 'TMDB movie'}`);
   }, [movieRequest]);
 
   async function browsePerson(target, movie, role, person) {
@@ -1516,6 +1612,7 @@ export default function DiscoverWorkspace({
 
   useEffect(() => {
     if (!discoverContext) return;
+    if (['related', 'movie'].includes(discoverContext.type)) return;
     const criteriaKey = discoverCriteriaKey();
     if (discoverContext.criteriaKey === criteriaKey) return;
     if (['person', 'keyword'].includes(discoverContext.type) && discoverContext.baseUrl && discoverContext.relationshipValue) {
@@ -1594,9 +1691,15 @@ export default function DiscoverWorkspace({
   }, [browseRows, browseResolution, browseIndexer, browseSort, selectedBrowseIndexerName]);
 
   const filteredDiscoverResults = useMemo(() => {
+    if (discoverContext?.type === 'related' && discoverOwnershipFilter !== 'all') {
+      return discoverResults.filter((movie) => discoverOwnershipFilter === 'owned' ? Boolean(ownedMovieFor(movie, ownership)) : !ownedMovieFor(movie, ownership));
+    }
     return discoverResults;
-  }, [discoverResults]);
+  }, [discoverResults, discoverContext?.type, discoverOwnershipFilter, ownership]);
   const localDiscoverContext = Boolean(discoverContext && !discoverContext.baseUrl);
+  const relationshipPageSize = discoverContext?.type === 'related'
+    ? Number(discoverContext.pageSize || 20)
+    : discoverMoviePageSize;
   const discoverLocalTotalPages = Math.max(1, Math.ceil(filteredDiscoverResults.length / discoverMoviePageSize));
   const safeDiscoverLocalPage = Math.min(discoverLocalPage, discoverLocalTotalPages);
   const discoverLocalPageStart = (safeDiscoverLocalPage - 1) * discoverMoviePageSize;
@@ -1643,8 +1746,8 @@ export default function DiscoverWorkspace({
             total: discoverTotalResults,
             hasPrevious: discoverHasPrevious,
             hasNext: discoverHasNext,
-            pageStart: (discoverPage - 1) * discoverMoviePageSize,
-            pageEnd: (discoverPage - 1) * discoverMoviePageSize + discoverResults.length,
+            pageStart: (discoverPage - 1) * relationshipPageSize,
+            pageEnd: (discoverPage - 1) * relationshipPageSize + discoverResults.length,
             summary: discoverOwnershipFilter !== 'all'
               ? `${formatCount(filteredDiscoverResults.length)} ${discoverOwnershipFilter} result${filteredDiscoverResults.length === 1 ? '' : 's'} on this TMDB page`
               : '',
@@ -1674,8 +1777,10 @@ export default function DiscoverWorkspace({
       : null;
 
   useEffect(() => {
+    if (restoringSnapshotRef.current) { restoringSnapshotRef.current = false; return; }
     setDiscoverLocalPage(1);
   }, [discoverContext?.type, discoverContext?.label, discoverMoviePageSize, discoverOwnershipFilter]);
+  useEffect(() => { restoringSnapshotRef.current = false; });
 
   useEffect(() => {
     setPickLocalPage(1);
@@ -1950,7 +2055,7 @@ export default function DiscoverWorkspace({
         </div>
       </header>
 
-      <div className="discover-tabs" role="tablist" aria-label="Discover tools">
+      {mediaNavigation || <div className="discover-tabs" role="tablist" aria-label="Discover tools">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           return (
@@ -1964,7 +2069,7 @@ export default function DiscoverWorkspace({
             </button>
           );
         })}
-      </div>
+      </div>}
 
       {activeTab !== 'pick' && (
         <form className="discover-search-panel" onSubmit={runDiscoverSearch}>
@@ -1986,7 +2091,7 @@ export default function DiscoverWorkspace({
               country: discoverCountryOptions.filter((item) => item.value).map((item) => ({ id: item.value, label: item.label })),
               movie_list: userLists.filter((list) => !list.system_type).map((list) => ({ id: String(list.id), label: list.name }))
             }}
-          /> : <label className="library-search discover-main-search">
+          /> : <SearchField className="discover-main-search">
             <Search size={17} />
             <input
               value={activeTab === 'browse' ? browseQuery : tmdbQuery}
@@ -2006,7 +2111,7 @@ export default function DiscoverWorkspace({
                     ? 'Search TMDB keywords'
                     : 'Search TMDB movies'}
             />
-          </label>}
+          </SearchField>}
           {activeTab === 'explore' && (
             <select
               value={discoverSearchKind}
@@ -2041,7 +2146,16 @@ export default function DiscoverWorkspace({
             onReset={resetDiscoverPath}
             onCrumb={jumpDiscoverPath}
           />
-          {discoverSearchKind === 'movies' && <div className="discover-toolbar">
+          {discoverContext?.type === 'related' && <div className="discover-related-toolbar">
+            <div className="related-source-selector" aria-label="Related movie sources">
+              {[['all', 'All'], ['recommendations', 'Recommended'], ['similar', 'Similar']].map(([source, label]) => <button type="button" key={source} aria-pressed={discoverContext.relationshipSource === source} onClick={() => selectRelationshipSource(source)}>{label}</button>)}
+            </div>
+            <select aria-label="Library ownership" value={discoverOwnershipFilter} onChange={(event) => setDiscoverOwnershipFilter(event.target.value)}>
+              <option value="all">All movies</option><option value="owned">Owned</option><option value="unowned">Not owned</option>
+            </select>
+            {discoverError && <button type="button" className="mini-action" onClick={() => loadRelatedContext(discoverContext)}>Retry</button>}
+          </div>}
+          {discoverSearchKind === 'movies' && !['related', 'movie'].includes(discoverContext?.type) && <div className="discover-toolbar">
             <select aria-label="Discover feed" value={discoverList} onChange={(event) => selectDiscoverList(event.target.value)}>
               {discoverLists.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
             </select>
@@ -2631,6 +2745,7 @@ function IndexerMovieCard({
       ) : null}
       expandedFooter={expanded ? (
         <MovieExpandedDetails
+          movie={displayMovie}
           details={displayDetails}
           onPersonBrowse={onPersonBrowse}
         />
@@ -2697,6 +2812,7 @@ function IndexerMovieCard({
             <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie)}>
               <Film size={15} /> Trailer
             </button>
+            <MoviePlotDetailsButton movie={displayMovie} />
           </div>
           <MovieExpandedFacts movie={displayMovie} details={displayDetails} />
         </>

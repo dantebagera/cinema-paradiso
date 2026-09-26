@@ -1,9 +1,9 @@
 import { Languages, Loader2 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { fetchTransientMovieLanguage, mergeTransientMovieLanguage } from '../api/movieDetails.js';
+import { fetchTransientTVLanguage, mergeTransientTVLanguage } from '../api/tvLanguage.js';
 
-export function useTransientMovieLanguage({ movie, details, expanded }) {
-  const tmdbId = String(movie?.tmdb_id || details?.tmdb_id || '').trim();
+function useTransientLanguage(tmdbId, expanded, fetchLanguage) {
   const [localized, setLocalized] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -31,7 +31,7 @@ export function useTransientMovieLanguage({ movie, details, expanded }) {
     setLoading(true);
     setError('');
     try {
-      const data = await fetchTransientMovieLanguage(tmdbId);
+      const data = await fetchLanguage(tmdbId);
       if (requestId.current === activeRequest) setLocalized(data);
     } catch (caught) {
       if (requestId.current === activeRequest) setError(caught.message);
@@ -41,11 +41,8 @@ export function useTransientMovieLanguage({ movie, details, expanded }) {
   }
 
   const activeLocalized = expanded ? localized : null;
-  const { displayMovie, displayDetails } = mergeTransientMovieLanguage(movie, details, activeLocalized);
-
   return {
-    displayMovie,
-    displayDetails,
+    localized: activeLocalized,
     isArabic: Boolean(activeLocalized),
     toggleProps: {
       available: Boolean(tmdbId),
@@ -55,6 +52,18 @@ export function useTransientMovieLanguage({ movie, details, expanded }) {
       onToggle: toggleLanguage
     }
   };
+}
+
+export function useTransientMovieLanguage({ movie, details, expanded }) {
+  const tmdbId = String(movie?.tmdb_id || details?.tmdb_id || '').trim();
+  const state = useTransientLanguage(tmdbId, expanded, fetchTransientMovieLanguage);
+  return { ...state, ...mergeTransientMovieLanguage(movie, details, state.localized) };
+}
+
+export function useTransientTVLanguage(series) {
+  const tmdbId = String(series?.tmdb_id || '').trim();
+  const state = useTransientLanguage(tmdbId, true, fetchTransientTVLanguage);
+  return { ...state, displaySeries: mergeTransientTVLanguage(series, state.localized) };
 }
 
 export function MovieLanguageToggle({ available, isArabic, loading, error, onToggle }) {

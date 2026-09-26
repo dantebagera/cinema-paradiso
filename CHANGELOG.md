@@ -1,5 +1,16 @@
 # Changelog
 
+## v3.0.0-beta.1 - September 2026
+
+Local beta integrating the TV and acquisition work into the main checkout.
+
+- Added a separate native TV catalog, series and episode pages, TV search, playback, file review, and opt-in monitoring.
+- Added TV acquisition review and download workflows with verified transfer ownership and recovery.
+- Brought TV Discover and Library card grids, pagination, and navigation in line with the movie pages, including complete rows on full desktop pages.
+- Extended shared movie cards, people, relationships, and search owners for TV while keeping movie and TV catalog state separate.
+
+Beta limitations: the EGySat IPTV Movies schema migration remains deferred, so that provider's Movies view is still blocked on an older database. The native-player runtime metadata continues to describe the existing 2.8.5 player build.
+
 ## v2.8.5 - August 2026
 
 Cinema Paradiso v2.8.5 adds one shared advanced-search language across the local Library and TMDB Discover, expands IPTV movie review and classification, and tightens native playback and catalogue behavior.

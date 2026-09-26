@@ -40,7 +40,7 @@ class TmdbDetailsTransformTest(unittest.TestCase):
                 ],
                 "cast": [
                     {"id": idx, "name": f"Actor {idx}", "character": f"Role {idx}", "profile_path": f"/actor-{idx}.jpg"}
-                    for idx in range(1, 9)
+                    for idx in range(1, 11)
                 ],
             },
             "videos": {
@@ -70,7 +70,8 @@ class TmdbDetailsTransformTest(unittest.TestCase):
 
         self.assertEqual(result["director"]["name"], "Ridley Scott")
         self.assertEqual(result["director"]["profile_url"], "https://image.tmdb.org/t/p/w185/ridley.jpg")
-        self.assertEqual(len(result["cast"]), 8)
+        self.assertEqual(len(result["cast"]), 9)
+        self.assertEqual(result["credits_projection_version"], 2)
         self.assertEqual(result["cast"][0]["character"], "Role 1")
         self.assertEqual(result["collection"]["name"], "Alien Collection")
         self.assertEqual(result["collection"]["poster_url"], "https://image.tmdb.org/t/p/w185/alien-poster.jpg")

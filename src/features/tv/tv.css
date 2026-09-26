@@ -1,0 +1,122 @@
+.tv-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tv-season-label select{background:#141519;color:#eee;border:1px solid #393b42;border-radius:8px;padding:12px}
+.tv-series-grid{display:grid;gap:16px;margin-bottom:24px}
+.tv-series-grid.library-grid-metrics-probe{margin-bottom:0}
+.tv-series-card p{font-size:12px;color:#bfc1c8;margin:8px 0}
+.tv-series-card .unified-movie-title-block>span{display:flex;width:calc(100% + 46px);align-items:baseline;gap:5px;color:var(--text-soft);font-size:.82rem;font-weight:750;white-space:nowrap}
+.tv-series-card .unified-movie-title-block>span>strong{font-weight:850}
+.tv-series-card .tv-actions button{font-size:12px;padding:7px 9px}
+.tv-series-header{display:flex;gap:28px;padding:28px;background-size:cover;background-position:center;border:1px solid #37383c;border-radius:12px;margin:18px 0}
+.tv-series-header>img{border-radius:9px}
+.tv-series-header h1{font-size:34px;margin:8px 0}
+.tv-series-header p{line-height:1.6;color:#c7c8d0}
+.tv-season-label{display:flex;gap:14px;align-items:center;margin:24px 0}
+.tv-episode{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px;border:1px solid #34353a;border-radius:10px;margin:12px 0;background:#121317}
+.tv-episode p{font-size:13px;color:#b9bbc4;margin:7px 0}
+.tv-episode progress{width:260px;accent-color:#e5bf4d}
+.tv-cast{display:flex;gap:28px;flex-wrap:wrap}
+.tv-version-dialog{background:#16171b;color:#eee;max-width:800px;border:1px solid #555;border-radius:12px;padding:24px}
+.tv-version-dialog::backdrop{background:#000a}
+.tv-version{display:grid;gap:12px;border-bottom:1px solid #444;padding:18px 0;margin-bottom:18px}
+.tv-version code{overflow-wrap:anywhere}
+
+
+:where(.tv-workspace) button,.tv-series-page>.secondary-button,.tv-series-page .tv-actions button:not(.btn),.tv-series-page .tv-season-label button,.tv-series-page .tv-more-cast,.tv-version-dialog button,.tv-episode button{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#24262d;border:1px solid #454751;border-radius:7px;color:#eee;padding:9px 13px;font:inherit;font-size:13px;cursor:pointer}
+
+.tv-workspace .primary-button,.tv-series-page .primary-button,.tv-version-dialog .primary-button{background:#dfbd49;border-color:#dfbd49;color:#141414;font-weight:650}
+
+.tv-workspace button:disabled,.tv-series-page button:not(.btn):disabled,.tv-version-dialog button:disabled{opacity:.4;cursor:not-allowed}
+
+.tv-workspace button:focus-visible,.tv-series-page button:focus-visible,.tv-version-dialog button:focus-visible{outline:2px solid #e6c763;outline-offset:3px}
+
+.tv-monitoring{padding:20px;border:1px solid #34353a;border-radius:10px;background:#15161a}
+.tv-monitoring h2{font-size:18px;margin:0 0 10px}
+.tv-monitoring p{color:#b9bbc4;font-size:13px}
+
+.tv-monitoring select,.tv-ingestion input,.tv-ingestion select{background:#202128;border:1px solid #41434c;border-radius:7px;color:#eee;padding:10px}
+
+.tv-version-dialog{width:1000px;max-width:calc(100vw - 100px);max-height:85vh;overflow:auto}
+.tv-version-dialog table{width:100%;border-collapse:collapse;table-layout:fixed}
+.tv-version-dialog th,.tv-version-dialog td{text-align:left;vertical-align:top;padding:14px 10px;border-bottom:1px solid #373941;font-size:13px;overflow-wrap:anywhere}
+.tv-version-dialog th:first-child{width:30%}
+.tv-version-dialog th:last-child{width:25%}
+.tv-version-dialog summary{cursor:pointer;padding:10px 0}
+.tv-ingestion{padding:18px 0}
+.tv-ingestion label{display:block;margin:12px 0}
+
+
+
+.tv-release-dialog select{color:var(--text,#eee);background:var(--panel,#17191e);border:1px solid #373a41;border-radius:8px;padding:10px}
+.tv-series-header{align-items:flex-start}
+.tv-series-header>img{width:clamp(180px,15vw,260px);height:auto;object-fit:contain;flex-shrink:0;align-self:flex-start}
+.tv-series-header>div{flex:1;min-width:0;max-width:none}
+.tv-series-header p{overflow-wrap:anywhere}
+.tv-series-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.tv-series-heading>div:first-child{min-width:0}
+.tv-series-heading .unified-movie-header-meta{flex:0 0 auto;align-items:flex-start}
+.tv-series-heading .screen-kicker{margin-top:0}
+.tv-series-heading .movie-imdb-link{min-height:26px}
+.tv-series-page .movie-language-toggle{min-height:36px;padding:0 14px;font-size:.82rem;font-weight:900}
+.tv-main-cast{margin:24px 0;max-width:100%}
+.tv-main-cast .tv-cast{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:18px;padding-bottom:12px}
+.tv-cast article{flex:0 0 130px}
+.tv-cast-portrait{height:170px;background:#20232a;border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tv-cast-portrait img{width:100%;height:100%;object-fit:cover}
+.tv-cast article strong{display:block;margin-top:8px}
+.tv-cast article p{color:#adb1bc;font-size:13px;line-height:1.4}
+.tv-episode-check{display:flex;gap:12px;align-items:center}
+.tv-episode-selection{margin:18px 0}
+.tv-episode-selection label,.tv-release-summary label{display:flex;align-items:center;gap:8px}
+.tv-season-label{flex-wrap:wrap}
+.tv-release-dialog{padding:22px;width:1100px}
+.tv-release-heading{display:flex;justify-content:space-between;align-items:start;gap:20px}
+.tv-release-heading h2{margin:0}
+.tv-release-summary{position:sticky;top:-22px;z-index:2;background:#202229;border:1px solid #444851;border-radius:10px;padding:15px;margin:18px 0;display:grid;gap:10px}
+.tv-release-summary p{font-size:13px;color:#bbc0cb;margin:0}
+.tv-release-row{padding:16px 0;border-bottom:1px solid #373a41}
+.tv-release-row>label{display:flex;align-items:start;gap:12px}
+.tv-release-row>p{font-size:13px;color:#bdc2cd}
+.tv-release-row input,.tv-episode input{accent-color:#dfbd49}
+.tv-release-dialog button{white-space:normal}
+.tv-release-row strong{overflow-wrap:anywhere}
+
+/* The full TV page keeps the movie card's visual vocabulary without its height cap. */
+.tv-series-badges{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0}
+.tv-series-page .tv-series-badges .unified-chip{min-height:30px}
+.tv-series-page .tv-main-cast .tv-cast{gap:10px;align-items:stretch;scrollbar-color:#8b8d92 #282a2d}
+.tv-series-page .tv-cast .person-card{flex:0 0 142px;grid-template-columns:minmax(0,1fr);grid-template-rows:132px auto auto;min-height:203px;padding:8px;gap:6px;cursor:pointer}
+.tv-series-page .tv-cast .person-avatar{justify-self:center;width:106px;height:132px;border-radius:10px}
+.tv-series-page .tv-cast .person-card strong,.tv-series-page .tv-cast .person-card small{width:100%;margin:0;text-align:center;font-size:.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tv-series-page .tv-cast .person-card small{font-size:.74rem;color:var(--text-muted)}
+.tv-series-page .person-card .person-bio-button,.tv-series-page .person-card .person-discover-button{display:grid;place-items:center;width:28px;height:28px;padding:0;border-radius:50%;background:#07080ae6;border-color:#d4af3760;color:var(--projector-gold)}
+.tv-more-cast{margin-top:10px}
+.tv-series-page .related-movie-rail{height:auto;margin:22px 0 28px}
+.tv-series-page .related-movie-tiles{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(90px,1fr);grid-template-columns:none;overflow-x:auto;height:auto;padding-bottom:10px}
+.tv-series-page .related-tile{display:grid;grid-template-rows:auto 18px 18px;padding:0;text-align:left;min-height:194px}
+.tv-series-page .related-poster{display:grid}
+.tv-context-listing .related-source-selector{display:flex;gap:6px;margin:0 0 18px}
+.tv-context-listing .related-source-selector button[aria-pressed=true]{color:var(--projector-gold);border-color:#d4af3770;background:#d4af3710}
+
+/* Use the Movie page shells; TV only adds its extra Library filter column. */
+.tv-workspace>header.library-header{min-height:160px}
+.tv-workspace>header>div:first-child{align-self:flex-start}
+.tv-discover-workspace .discover-header .settings-summary{flex:none}
+.tv-search-controls{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;min-width:0}
+.tv-discover-workspace .tv-search-controls{gap:18px}
+.tv-search-controls .library-search-panel,.tv-search-controls .discover-search-panel,.tv-search-controls .library-filter-toolbar,.tv-search-controls .tv-discover-toolbar{min-width:0;width:100%;box-sizing:border-box}
+.tv-search-controls .library-filter-toolbar,.tv-search-controls .tv-discover-toolbar{margin:0}
+.tv-discover-toolbar{overflow-x:auto;scrollbar-width:thin}
+.tv-discover-toolbar>select,.tv-discover-toolbar>.library-mini-input{min-width:110px}
+.tv-discover-toolbar>select[aria-label="TV Discover feed"]{min-width:140px}
+.tv-discover-toolbar>select[aria-label="TV Original language"]{min-width:150px}
+.tv-discover-toolbar>select[aria-label="TV Viewing states"]{min-width:130px}
+.tv-discover-workspace .tv-series-grid{gap:var(--space-3)}
+.tv-library-workspace .library-filter-toolbar-tv{grid-template-columns:repeat(4,minmax(145px,1fr)) minmax(175px,1.13fr) minmax(145px,1fr) 38px}
+.tv-library-workspace .library-filter-toolbar-tv>select,.tv-library-workspace .library-filter-toolbar-tv>.library-mini-input{width:100%;min-width:0;box-sizing:border-box}
+.tv-library-workspace .library-filter-toolbar-tv>select[aria-label="Sort TV shows"]{grid-column:span 2}
+.tv-file-view{display:grid;gap:14px}
+.tv-file-view .library-file-results{display:grid;gap:10px}
+.tv-file-view .file-row-actions button{white-space:nowrap}
+.tv-file-view .file-row-main{min-width:0}
+.tv-file-view .file-row-copy{min-width:0}
+.tv-file-view .file-row-path{overflow-wrap:anywhere}

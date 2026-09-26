@@ -67,6 +67,24 @@ class LibraryMutationServiceTest(unittest.TestCase):
         self.assertEqual(preview['actions'][0]['target'], str(selected.resolve()))
         trash_file.assert_called_once_with(str(selected.resolve()))
 
+    def test_selected_sample_only_never_trashes_the_full_movie_folder(self):
+        with tempfile.TemporaryDirectory() as root:
+            folder = Path(root) / 'The Egyptian (1954)'
+            folder.mkdir()
+            sample = folder / 'Sample.mkv'
+            sample.write_bytes(b'sample')
+            movie = folder / 'The.Egyptian.1954.mkv'
+            movie.write_bytes(b'full movie')
+            trash_file = Mock()
+            service = LibraryMutationService([root], Mock(), {'.mkv'}, trash_file=trash_file)
+
+            preview = service.plan_deletions([sample], whole_movie_folders=True)
+
+        self.assertEqual(preview['folder_count'], 0)
+        self.assertEqual(preview['file_count'], 1)
+        self.assertEqual(preview['actions'][0]['target'], str(sample.resolve()))
+        trash_file.assert_not_called()
+
     def test_cleanup_trashes_folder_when_every_video_in_it_is_selected(self):
         with tempfile.TemporaryDirectory() as root:
             folder = Path(root) / 'Alien Two Disc'

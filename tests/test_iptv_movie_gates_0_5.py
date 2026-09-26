@@ -1,7 +1,9 @@
 import json
+import sqlite3
 import tempfile
 import time
 import unittest
+from contextlib import closing
 from pathlib import Path
 from unittest.mock import patch
 
@@ -21,7 +23,7 @@ from services.iptv_tmdb import (
     parse_provider_title,
     provider_id_matches,
 )
-from tests.iptv_movie_fixtures import FakeTMDBClient, create_raw_service, tmdb_payload
+from tests.iptv_movie_fixtures import FakeTMDBClient, create_raw_service, provider_catalog, tmdb_payload
 
 
 PROVIDER_A = "a" * 32
@@ -42,6 +44,68 @@ def snapshot(tmdb_id, title, year, *, genre_id=18, person_id=10, keyword_id=20, 
         "belongs_to_collection": {"id": collection_id, "name": "Shared collection"},
     })
     return normalize_tmdb_movie(payload)
+
+
+class SchemaV3MigrationTests(unittest.TestCase):
+    def test_existing_v3_provider_requires_explicit_v4_migration_then_catches_up(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            first_rows = [
+                {"stream_id": "1", "category_id": "movies-a", "name": "First (2024)"},
+                {"stream_id": "2", "category_id": "movies-a", "name": "Second (2025)"},
+            ]
+            raw = create_raw_service(temporary, PROVIDER_A, movie_rows=first_rows)
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            self.assertEqual(service.start_projection(wait=True)["state"], "complete")
+            service.store.apply_match(f"source:{source_key('1')}", snapshot(101, "First", 2024), manual=True)
+
+            raw.store.replace_catalog(provider_catalog(movie_rows=[
+                *first_rows,
+                {"stream_id": "3", "category_id": "movies-a", "name": "Third (2026)"},
+            ]))
+            database = raw.root / "movies.sqlite"
+            with closing(sqlite3.connect(database)) as connection:
+                with connection:
+                    connection.execute("DROP INDEX idx_status_sibling_identity")
+                    connection.execute("DROP TABLE accepted_tmdb_refcounts")
+                    connection.execute("DROP TABLE movie_status_summary")
+                    connection.execute("ALTER TABLE movie_sources DROP COLUMN work_year")
+                    connection.execute("ALTER TABLE movie_sources DROP COLUMN work_title")
+                    connection.execute("UPDATE movie_meta SET value='3' WHERE key='schema_version'")
+                connection.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+
+            blocked = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            self.assertEqual(blocked.list_movies()["projection"]["state"], "migration-required")
+            with self.assertRaisesRegex(RuntimeError, "approved schema migration"):
+                blocked.start_projection(wait=True)
+            self.assertEqual(IPTVMovieStore.inspect_schema_version(database), 3)
+
+            migrated = IPTVMovieStore.migrate_explicit(raw.root, PROVIDER_A, expected_version=3)
+            backup = Path(migrated.migration_report()["backup"])
+            self.assertTrue(backup.is_file())
+            self.assertEqual(IPTVMovieStore.inspect_schema_version(backup), 3)
+            with closing(sqlite3.connect(backup)) as connection:
+                self.assertEqual(connection.execute("PRAGMA integrity_check").fetchone()[0], "ok")
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM movie_sources").fetchone()[0], 2)
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM source_matches WHERE manual_lock=1").fetchone()[0], 1)
+            with migrated.connection() as connection:
+                self.assertEqual(connection.execute("PRAGMA integrity_check").fetchone()[0], "ok")
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM movie_sources").fetchone()[0], 2)
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM source_matches WHERE manual_lock=1").fetchone()[0], 1)
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM tmdb_movies").fetchone()[0], 1)
+
+            ready = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            self.assertEqual(ready.start_projection(wait=True)["state"], "complete")
+            self.assertEqual(ready.list_movies()["total"], 3)
+            with ready.store.connection() as connection:
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM source_matches WHERE manual_lock=1").fetchone()[0], 1)
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM tmdb_movies").fetchone()[0], 1)
+
+            migrated.rollback_migration()
+            self.assertEqual(IPTVMovieStore.inspect_schema_version(database), 3)
+            with closing(sqlite3.connect(database)) as connection:
+                self.assertEqual(connection.execute("PRAGMA integrity_check").fetchone()[0], "ok")
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM movie_sources").fetchone()[0], 2)
+                self.assertEqual(connection.execute("SELECT COUNT(*) FROM source_matches WHERE manual_lock=1").fetchone()[0], 1)
 
 
 class SchemaV2MigrationTests(unittest.TestCase):

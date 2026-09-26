@@ -45,6 +45,14 @@ if not exist "node_modules" (
     )
 )
 
+echo Building React frontend...
+call npm.cmd run build
+if errorlevel 1 (
+    echo Failed to build React frontend.
+    pause
+    exit /b 1
+)
+
 echo.
 echo Stopping any old Cinema Paradiso backend from this folder...
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\stop_stale_backend.ps1" -ProjectRoot "%PROJECT_ROOT%" -Port 5000
@@ -52,17 +60,6 @@ if errorlevel 1 (
     echo Failed to stop the old backend on port 5000.
     pause
     exit /b 1
-)
-
-echo.
-if not exist "dist\index.html" (
-    echo Building React frontend...
-    call npm.cmd run build
-    if errorlevel 1 (
-        echo Failed to build React frontend.
-        pause
-        exit /b 1
-    )
 )
 
 echo.

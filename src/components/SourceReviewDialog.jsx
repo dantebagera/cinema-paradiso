@@ -1,3 +1,4 @@
+import AcquisitionDecisionDetails from './AcquisitionDecisionDetails.jsx';
 import { AlertTriangle, Download, Loader2, X } from 'lucide-react';
 import { submitSourceReview } from '../api/sourceReview.js';
 import { formatCount } from '../utils/appUtils.js';
@@ -99,7 +100,7 @@ export default function SourceReviewDialog({ state, setState, onClose, notify, o
                     label={`Select ${row.title}`}
                   />
                   <span><strong>{row.title}</strong><small>{row.year || 'Unknown year'}</small></span>
-                  <span title={row.variant?.title || row.reason || ''}>{row.variant?.title || row.reason || 'No release'}</span>
+                  <span title={row.variant?.title || row.reason || ''}>{row.variant?.title || row.reason || 'No release'}<AcquisitionDecisionDetails review={row.acquisition_review} /></span>
                   <span>{row.variant?.indexer || '-'}</span>
                   <select
                     value={row.quality || state.defaults?.quality || '1080p'}

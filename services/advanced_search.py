@@ -77,7 +77,7 @@ def _integer(value, label, minimum, maximum):
     return int(number)
 
 
-def _identity_value(value, criterion_type):
+def _identity_value(value, criterion_type, media_type="movie"):
     if not isinstance(value, dict):
         _fail(f"{criterion_type} value must be an object")
     allowed = {"id", "label", "role"} if criterion_type == "person" else {"id", "label"}
@@ -98,7 +98,7 @@ def _identity_value(value, criterion_type):
             normalized["exclude"] = True
     if criterion_type == "person":
         role = _text(value.get("role"), "person role", 20).lower()
-        if role not in PERSON_ROLES:
+        if role not in (PERSON_ROLES | ({"creator"} if media_type == "tv" else set())):
             _fail("Person role must be actor, director, or writer")
         normalized["role"] = role
     return normalized
@@ -149,7 +149,7 @@ def _runtime_value(value):
     return {"preset": preset, "from": lower, "to": upper}
 
 
-def _normalize_value(criterion_type, value):
+def _normalize_value(criterion_type, value, media_type="movie"):
     if criterion_type == "title":
         if not isinstance(value, dict) or set(value) != {"text"}:
             _fail("Title value must contain only text")
@@ -158,7 +158,7 @@ def _normalize_value(criterion_type, value):
             _fail("Title cannot be empty")
         return {"text": title}
     if criterion_type in {"genre", "person", "keyword", "language", "country", "movie_list"}:
-        return _identity_value(value, criterion_type)
+        return _identity_value(value, criterion_type, media_type)
     if criterion_type in {"year", "rating"}:
         return _numeric_value(value, criterion_type)
     if criterion_type == "minimum_votes":
@@ -168,9 +168,9 @@ def _normalize_value(criterion_type, value):
     if criterion_type == "runtime":
         return _runtime_value(value)
     if criterion_type in {"viewing_status", "resolution", "library_source", "availability"}:
-        normalized = _identity_value(value, criterion_type)
+        normalized = _identity_value(value, criterion_type, media_type)
         allowed = {
-            "viewing_status": {"watched", "unwatched", "watchlist"},
+            "viewing_status": {"watched", "unwatched", "watchlist"} | ({"in_progress"} if media_type == "tv" else set()),
             "resolution": {"upgrade", "4k", "1080p", "720p", "below-720p"},
             "availability": {"owned", "unowned"},
         }.get(criterion_type)
@@ -190,7 +190,7 @@ def _value_key(criterion_type, value):
     return json.dumps(value, sort_keys=True, separators=(",", ":"))
 
 
-def normalize_query(query, expected_scope=None):
+def normalize_query(query, expected_scope=None, *, media_type="movie"):
     if not isinstance(query, dict):
         _fail("Search query must be an object")
     allowed_top = {"version", "scope", "mode", "groups", "sort", "feed"}
@@ -231,7 +231,7 @@ def normalize_query(query, expected_scope=None):
         values = []
         seen_values = {}
         for raw_value in raw_values:
-            value = _normalize_value(criterion_type, raw_value)
+            value = _normalize_value(criterion_type, raw_value, media_type)
             key = _value_key(criterion_type, value)
             if key in seen_values:
                 if criterion_type == "genre" and bool(seen_values[key].get("exclude")) != bool(value.get("exclude")):

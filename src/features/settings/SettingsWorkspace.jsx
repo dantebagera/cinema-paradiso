@@ -1,3 +1,5 @@
+import AcquisitionProfiles from './AcquisitionProfiles.jsx';
+import TVSettings from './TVSettings.jsx';
 import { useEffect, useRef, useState } from 'react'
 import {
   AlertTriangle,
@@ -298,7 +300,8 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
         streaming: streaming.status === 'fulfilled' ? {
           enabled: streaming.value.enabled !== false,
           label: streaming.value.label || 'Stream',
-          url_template: streaming.value.url_template || ''
+          url_template: streaming.value.url_template || '',
+          tv_url_template: streaming.value.tv_url_template || ''
         } : emptySettingsState.streaming,
         iptv: loadedIPTVProvider ? {
           provider_id: loadedIPTVProvider.provider_id,
@@ -618,7 +621,8 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
       streaming: {
         enabled: Boolean(forms.streaming.enabled),
         label: forms.streaming.label,
-        url_template: forms.streaming.url_template
+        url_template: forms.streaming.url_template,
+        tv_url_template: forms.streaming.tv_url_template || ''
       },
       ollama: { url: forms.ollama.url, model: forms.ollama.model, candidate_limit: Number(forms.ollama.candidateLimit || 15) }
     };
@@ -635,7 +639,8 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           streaming: {
             enabled: saved.enabled !== false,
             label: saved.label || 'Stream',
-            url_template: saved.url_template || ''
+            url_template: saved.url_template || '',
+            tv_url_template: saved.tv_url_template || ''
           }
         }));
         onStreamingConfigChanged?.(saved);
@@ -1844,12 +1849,19 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
                 <small>Use {'{tmdb_id}'} or {'{imdb_id}'} where the provider expects the movie ID. Example: https://streamimdb.ru/embed/movie/{'{tmdb_id}'}.</small>
                 <small>If you use {'{imdb_id}'}, CP resolves it from TMDB first.</small>
               </label>
+            <label className="dialog-field">TV episode URL template
+              <input value={forms.streaming.tv_url_template || ''} onChange={(event) => updateField('streaming', 'tv_url_template', event.target.value)} placeholder="https://example.com/tv/{tmdb_id}/{season_number}/{episode_number}" />
+              <small>Uses the TV TMDB ID and exact season and episode. Opening a link does not mark watched.</small>
+            </label>
             </>
           )}
           actions={(
             <ActionButton loading={saving['streaming-save']} icon={Save} label="Save Streaming" onClick={() => saveIntegration('streaming')} primary />
           )}
         />
+
+        <TVSettings notify={notify} />
+        <AcquisitionProfiles notify={notify} />
 
         <section id="settings-iptv" className="settings-panel integration-card integration-gold settings-iptv-providers">
           <div className="settings-iptv-heading">

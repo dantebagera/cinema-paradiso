@@ -1,0 +1,18 @@
+{
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-real-client-kt707n8a",
+  "client_version": "v5.2.3",
+  "transport": "magnet from loopback-only synthetic seeder",
+  "states": [
+    "downloading",
+    "imported"
+  ],
+  "file_priorities": [
+    1,
+    0
+  ],
+  "published_episode_numbers": [
+    1
+  ],
+  "source_retained": true,
+  "measured_quality": "1080p"
+}

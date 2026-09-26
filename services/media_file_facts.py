@@ -242,6 +242,17 @@ def _normalize_audio_language(value: Any) -> str:
     return _AUDIO_LANGUAGE_ALIASES.get(language, language)
 
 
+def audio_languages(facts: dict) -> list[str]:
+    """Read normalized languages from measured tracks, including older records."""
+    try:
+        tracks = json.loads(facts.get('audio_tracks_json') or '[]')
+    except (ValueError, TypeError):
+        tracks = []
+    values = [track.get('language') for track in tracks if isinstance(track, dict)] if isinstance(tracks, list) else []
+    values.append(facts.get('audio_language'))
+    return sorted({language for value in values if (language := _normalize_audio_language(value))})
+
+
 def _primary_video(tracks: Iterable[Any]) -> Any | None:
     videos = [
         (index, track)

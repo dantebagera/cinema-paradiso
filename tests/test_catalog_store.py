@@ -589,7 +589,7 @@ class CatalogStoreTest(unittest.TestCase):
         self.assertEqual(first["candidates"][0]["relational_canonical"]["poster_url"],
                          "/api/library/posters/image/custom-1000.jpg")
 
-    def test_existing_movies_query_searches_title_year_filename_path_plot_and_genre(self):
+    def test_existing_movies_query_searches_title_year_filename_path_plot_keyword_and_genre(self):
         documents = self._paging_documents(1)
         file_record = next(iter(documents["app_metadata/files.json"]["files"].values()))
         file_record["path"] = "E:/PathBeacon/Feature/Feature.FilenameBeacon.mkv"
@@ -608,7 +608,10 @@ class CatalogStoreTest(unittest.TestCase):
             store.import_documents(documents, {})
             results = {
                 query: store.library_page({"query": query, "sort": "title"}, page=1, page_size=10)["total"]
-                for query in ("TitleBeacon", "1980", "FilenameBeacon", "PathBeacon", "PlotBeacon", "GenreBeacon")
+                for query in (
+                    "TitleBeacon", "1980", "FilenameBeacon", "PathBeacon",
+                    "PlotBeacon", "shared keyword", "GenreBeacon",
+                )
             }
 
         self.assertEqual(results, {
@@ -617,10 +620,11 @@ class CatalogStoreTest(unittest.TestCase):
             "FilenameBeacon": 1,
             "PathBeacon": 1,
             "PlotBeacon": 1,
+            "shared keyword": 1,
             "GenreBeacon": 1,
         })
 
-    def test_library_writer_and_keyword_filters_use_relational_search_without_changing_movies_query(self):
+    def test_library_writer_and_keyword_filters_use_relational_search(self):
         with tempfile.TemporaryDirectory() as root:
             store = CatalogStore(Path(root) / "catalog.sqlite")
             store.import_documents(self._paging_documents(12), {})
@@ -667,9 +671,57 @@ class CatalogStoreTest(unittest.TestCase):
         self.assertEqual(len(keyword_paths), 12)
         self.assertEqual(exact_keyword_paths, writer_paths)
         self.assertEqual(movies_writer_query["total"], 0)
-        self.assertEqual(movies_keyword_query["total"], 0)
+        self.assertEqual(movies_keyword_query["total"], 12)
         self.assertEqual(writer_after_json_removal, writer_paths)
         self.assertEqual(keyword_after_json_removal, exact_keyword_paths)
+
+    def test_movie_search_ranks_exact_and_spaced_title_matches_before_plot_matches(self):
+        documents = self._paging_documents(3)
+        files = list(documents["app_metadata/files.json"]["files"].values())
+        movies = documents["app_metadata/tmdb_metadata.json"]["movies"]
+        files[0]["identity_title"] = "Man of Steel"
+        movies["1000"].update({"title": "Man of Steel", "plot": "A hero discovers his origin."})
+        files[1]["identity_title"] = "Batman: The Dark Knight Returns, Part 2"
+        movies["1001"].update({
+            "title": "Batman: The Dark Knight Returns, Part 2",
+            "plot": "Batman faces the Man of Steel.",
+        })
+        files[2]["identity_title"] = "Superman"
+        movies["1002"].update({"title": "Superman", "plot": "A reporter hides a secret identity."})
+
+        with tempfile.TemporaryDirectory() as root:
+            store = CatalogStore(Path(root) / "catalog.sqlite")
+            store.import_documents(documents, {})
+            steel = store.library_page(
+                {"query": "man of steel", "sort": "rating"}, page=1, page_size=10,
+            )
+            spaced = store.library_page(
+                {"query": "super man", "sort": "rating"}, page=1, page_size=10,
+            )
+            workspace_query = store.library_page(
+                query={
+                    "version": 1,
+                    "scope": "library",
+                    "mode": "simple",
+                    "groups": [{
+                        "type": "title",
+                        "values": [{"text": "man of steel"}],
+                    }],
+                    "sort": {"key": "rating", "direction": "desc"},
+                },
+                page=1,
+                page_size=10,
+            )
+
+        self.assertEqual(
+            [row["relational_canonical"]["title"] for row in steel["candidates"]],
+            ["Man of Steel", "Batman: The Dark Knight Returns, Part 2"],
+        )
+        self.assertEqual(spaced["candidates"][0]["relational_canonical"]["title"], "Superman")
+        self.assertEqual(
+            [row["relational_canonical"]["title"] for row in workspace_query["candidates"]],
+            ["Man of Steel", "Batman: The Dark Knight Returns, Part 2"],
+        )
 
     def test_library_keyword_entities_are_normalized_deduplicated_owned_and_bounded(self):
         documents = self._paging_documents(12)

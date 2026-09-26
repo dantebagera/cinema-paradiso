@@ -1,5 +1,6 @@
-import { CalendarDays, ChevronDown, Film, Loader2, MoreHorizontal, Play, RotateCcw, Star, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { CalendarDays, ChevronDown, ChevronRight, Film, Loader2, MoreHorizontal, Play, RotateCcw, Star, X } from 'lucide-react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { centeredWorkspaceScroll } from './expandedCardViewport.js';
 
 function cx(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -7,6 +8,16 @@ function cx(...classes) {
 
 function stopCardToggle(event) {
   event.stopPropagation();
+}
+
+export function ExpandedRating({ rating, voteCount }) {
+  if (!rating) return null;
+  return (
+    <div className="unified-expanded-rating" aria-label={`Rating ${rating}${voteCount ? `, ${voteCount}` : ''}`}>
+      <span><Star size={18} fill="currentColor" /><strong>{rating}</strong></span>
+      {voteCount ? <small>{voteCount}</small> : null}
+    </div>
+  );
 }
 
 export function UnifiedMoviePoster({
@@ -37,7 +48,7 @@ export function UnifiedMoviePoster({
           className={cx('movie-card-play-overlay', playPending && 'movie-card-play-overlay-pending')}
           aria-label={playPending ? `Opening ${title} in Cinema Paradiso Player` : `Play ${title}`}
           aria-busy={playPending || undefined}
-          title={playPending ? 'Opening player…' : 'Play'}
+          title={playPending ? 'Opening playerâ€¦' : 'Play'}
           disabled={playPending}
           onClick={(event) => {
             event.stopPropagation();
@@ -77,18 +88,81 @@ export function UnifiedMovieCard({
   onPlay,
   playPending = false,
   onToggle,
+  navigation = false,
+  metadataLabel = 'Movie metadata',
   children,
   expandedBody,
   expandedFooter,
   aside
 }) {
   const interactive = Boolean(onToggle);
+  const cardRef = useRef(null);
+  useLayoutEffect(() => {
+    if (!expanded) return;
+    if (cardRef.current?.closest('.workspace')?.dataset.restoringCard) return;
+    let firstFrame;
+    let secondFrame;
+    let observedCuration;
+    const syncPosterHeight = () => {
+      const card = cardRef.current;
+      const body = card?.querySelector('.unified-movie-body');
+      const curation = body?.querySelector('.movie-expanded-curation');
+      if (!card || !body) return;
+      if (curation && curation !== observedCuration) {
+        if (observedCuration) observer.unobserve(observedCuration);
+        observer.observe(curation);
+        observedCuration = curation;
+      }
+      if (!curation || window.innerWidth <= 720 || window.innerHeight <= 950) {
+        card.style.removeProperty('--expanded-movie-card-content-height');
+        return;
+      }
+      const height = Math.ceil(curation.getBoundingClientRect().bottom - body.getBoundingClientRect().top);
+      const nextHeight = `${height}px`;
+      if (card.style.getPropertyValue('--expanded-movie-card-content-height') !== nextHeight) {
+        card.style.setProperty('--expanded-movie-card-content-height', nextHeight);
+      }
+    };
+    const centerCard = () => {
+      const card = cardRef.current;
+      const workspace = card?.closest('.workspace');
+      if (!workspace || workspace.dataset.restoringCard || !card.getClientRects().length || window.innerWidth <= 720) return;
+      const bounds = workspace.getBoundingClientRect();
+      workspace.scrollTo({
+        top: centeredWorkspaceScroll(card.getBoundingClientRect(), { ...bounds.toJSON(), scrollTop: workspace.scrollTop }),
+        behavior: 'instant'
+      });
+    };
+    const scheduleCenter = () => {
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(secondFrame);
+      firstFrame = requestAnimationFrame(() => {
+        syncPosterHeight();
+        secondFrame = requestAnimationFrame(() => {
+          syncPosterHeight();
+          centerCard();
+        });
+      });
+    };
+    const observer = new ResizeObserver(scheduleCenter);
+    observer.observe(cardRef.current);
+    const body = cardRef.current.querySelector('.unified-movie-body');
+    if (body) observer.observe(body);
+    scheduleCenter();
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(secondFrame);
+      cardRef.current?.style.removeProperty('--expanded-movie-card-content-height');
+    };
+  }, [expanded]);
   const displayTitle = title || 'Untitled';
   const titleLength = displayTitle.length;
   const longTitle = titleLength > 28;
   const veryLongTitle = titleLength > 46;
 
   function handleKeyDown(event) {
+    if (event.target !== event.currentTarget) return;
     if (!interactive) return;
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
@@ -98,6 +172,7 @@ export function UnifiedMovieCard({
 
   return (
     <article
+      ref={cardRef}
       className={cx(
         'unified-movie-card',
         expanded && 'unified-movie-card-expanded',
@@ -105,10 +180,12 @@ export function UnifiedMovieCard({
         interactive && 'unified-movie-card-interactive',
         className
       )}
-      onClick={onToggle}
+      onClick={navigation ? (event) => { if (!event.target.closest('button, a, input, select, summary')) onToggle(); } : onToggle}
       onKeyDown={handleKeyDown}
       tabIndex={interactive ? 0 : undefined}
-      aria-expanded={interactive ? Boolean(expanded || selected) : undefined}
+      aria-expanded={interactive && !navigation ? Boolean(expanded || selected) : undefined}
+      role={navigation ? 'link' : undefined}
+      aria-label={navigation ? `Open ${displayTitle}` : undefined}
     >
       <UnifiedMoviePoster
         title={displayTitle}
@@ -131,15 +208,7 @@ export function UnifiedMovieCard({
             <span>{year || 'Unknown year'}</span>
           </div>
           <div className="unified-movie-header-meta">
-            {rating && expanded ? (
-              <div className="unified-expanded-rating" aria-label={`Rating ${rating}${voteCount ? `, ${voteCount}` : ''}`}>
-                <span>
-                  <Star size={18} fill="currentColor" />
-                  <strong>{rating}</strong>
-                </span>
-                {voteCount ? <small>{voteCount}</small> : null}
-              </div>
-            ) : null}
+            {rating && expanded ? <ExpandedRating rating={rating} voteCount={voteCount} /> : null}
             {headerActions ? (
               <span className="unified-header-actions" onClick={stopCardToggle}>
                 {headerActions}
@@ -147,13 +216,13 @@ export function UnifiedMovieCard({
             ) : null}
             {interactive ? (
               <span className="unified-expand-affordance" aria-hidden="true">
-                <ChevronDown size={18} />
+                {navigation ? <ChevronRight size={18} /> : <ChevronDown size={18} />}
               </span>
             ) : null}
           </div>
         </header>
 
-        <div className="unified-chip-row" aria-label="Movie metadata">
+        <div className="unified-chip-row" aria-label={metadataLabel}>
           {chips.filter(Boolean).map((chip) => (
             <span className="unified-chip" dir="auto" key={chip}>{chip}</span>
           ))}
@@ -183,7 +252,7 @@ export function UnifiedMovieCard({
           ) : null}
         </div>
 
-        <div className="unified-movie-extra" onClick={stopCardToggle}>
+        <div className="unified-movie-extra" onClick={navigation ? undefined : stopCardToggle}>
           {children}
         </div>
 

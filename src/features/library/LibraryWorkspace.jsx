@@ -1,3 +1,4 @@
+import SearchField from '../search/SearchField.jsx';
 import {
   AlertTriangle, ChevronDown, ChevronUp, CirclePlus, Clapperboard, Filter, Folder,
   Loader2, Play, RefreshCcw, RefreshCw, Search, Trash2, Wand2, X
@@ -75,7 +76,7 @@ function LibraryPeopleSearchResults({ people, query, onOpenFilmography }) {
   );
 }
 
-function LibraryKeywordSearchResults({ result, query, loading, error, onOpenKeyword, onPageChange }) {
+function LibraryKeywordSearchResults({ result, query, loading, error, onOpenKeyword, onPageChange, onSearchMovies }) {
   const keywords = result.items || [];
   if (loading) {
     return <div className="discover-grid keyword-search-grid"><div className="keyword-search-card skeleton-card" /></div>;
@@ -87,7 +88,13 @@ function LibraryKeywordSearchResults({ result, query, loading, error, onOpenKeyw
     return <div className="empty-state library-empty"><strong>Search keywords in your library.</strong><span>Only normalized keywords already attached to owned SQL movies are used.</span></div>;
   }
   if (!keywords.length) {
-    return <div className="empty-state library-empty"><strong>No owned keywords match that search.</strong><span>Try a shorter spelling or search movie titles instead.</span></div>;
+    return (
+      <div className="empty-state library-empty">
+        <strong>No owned keyword is named “{query.trim()}”.</strong>
+        <span>Keyword mode searches stored metadata terms, not movie titles.</span>
+        <button type="button" className="btn btn-secondary" onClick={onSearchMovies}>Search movies for “{query.trim()}”</button>
+      </div>
+    );
   }
   return (
     <>
@@ -172,7 +179,8 @@ export default function LibraryWorkspace({
   onFilterRequestConsumed,
   fileDetailsRequest,
   onFileDetailsRequestConsumed,
-  onInitialReady
+  onInitialReady,
+  mediaNavigation
 }) {
   const {
     gridRef: libraryMovieGridRef,
@@ -431,6 +439,8 @@ export default function LibraryWorkspace({
     if (mode !== 'movie' || !['movies', 'advanced'].includes(librarySearchKind) || !libraryGridMeasured) return undefined;
     let cancelled = false;
     const previous = libraryLoadSignatureRef.current;
+    // Editor mode does not change query identity or require another request.
+    if (initialLibraryLoadRef.current.complete && previous?.query === libraryQuerySignature && previous.pageSize === pageSize) return undefined;
     const pageSizeOnlyChange = Boolean(
       initialLibraryLoadRef.current.complete
       && previous
@@ -459,7 +469,7 @@ export default function LibraryWorkspace({
 
     refresh();
     return () => { cancelled = true; };
-  }, [libraryGridMeasured, libraryQuerySignature, loadLibrary, mode, pageSize, refreshLibraryInBackground]);
+  }, [libraryGridMeasured, libraryQuerySignature, librarySearchKind, loadLibrary, mode, pageSize, refreshLibraryInBackground]);
 
   useEffect(() => {
     if (
@@ -1336,9 +1346,9 @@ export default function LibraryWorkspace({
         </div>
         <div className="library-header-actions">
           <div className="library-view-row">
-            <div className="segmented-control library-view-switch" aria-label="Library mode">
+            <div className="segmented-control library-view-switch" role="group" aria-label="Library mode">
               <button type="button" className={cx(mode === 'movie' && 'segment-active')} onClick={openRememberedMovieView}>
-                <Clapperboard size={18} /> Movie View
+                <Clapperboard size={18} /> Media View
               </button>
               <button type="button" className={cx(mode === 'file' && 'segment-active')} onClick={() => openFileInventory()}>
                 <Folder size={18} /> File View
@@ -1357,6 +1367,8 @@ export default function LibraryWorkspace({
           </div>
         </div>
       </div>
+
+      {mediaNavigation}
 
       <form
         className="library-search-panel"
@@ -1396,7 +1408,7 @@ export default function LibraryWorkspace({
             library_source: optionSets.sources.map((value) => ({ id: value, label: value })),
             movie_list: userLists.map((list) => ({ id: String(list.id), label: list.name }))
           }}
-        /> : <label className="library-search library-main-search">
+        /> : <SearchField className="library-main-search">
           <Search size={17} />
           <input
             value={query}
@@ -1416,7 +1428,7 @@ export default function LibraryWorkspace({
                   ? 'Search keywords in your library'
                   : 'Search your offline library'}
           />
-        </label>}
+        </SearchField>}
         {mode === 'movie' && (
           <select
             value={librarySearchKind}
@@ -1607,6 +1619,7 @@ export default function LibraryWorkspace({
             error={libraryKeywordError}
             onOpenKeyword={applyLibraryKeywordFilter}
             onPageChange={(nextPage) => loadKeywordProjection(query, nextPage)}
+            onSearchMovies={() => enterLibrarySearchMode('movies')}
           />
         ) : (
         <>

@@ -131,6 +131,13 @@ class FinalCardPublicationTests(unittest.TestCase):
             "display_provider": "tmdb",
             "metadata_status": "accepted",
             "metadata_accepted": True,
+            "ingest_status": "stable",
+            "probe_status": "ok",
+            "probe_size": 100,
+            "probe_modified_time": 20,
+            "probe_error": "",
+            "file_facts_version": FILE_FACTS_VERSION,
+            "classifier_version": QUALITY_CLASSIFIER_VERSION,
             "movie_view_publication": "pending",
         }
         documents = {
@@ -170,6 +177,7 @@ class FinalCardPublicationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as root:
             repository, path, candidate = self._transaction_repository(root)
             self.assertEqual(repository.library_page()["total"], 0)
+            self.assertEqual(repository.pending_final_card_paths(), [path])
             before = repository.generation("media")
             ready_candidate = _candidate(
                 path_key=candidate["path_key"],

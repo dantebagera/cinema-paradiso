@@ -1,0 +1,23 @@
+{
+  "series": {"tmdb_id": 900001, "title": "Harbor Signals", "first_air_date": "2020-01-01", "last_air_date": "2021-01-03", "status": "Ended", "genres": ["Drama", "Mystery"], "rating": 8.2, "votes": 1200},
+  "episodes": [
+    {"season_number": 0, "episode_number": 1, "title": "Before the Harbor", "air_date": "2019-12-25", "runtime": 25},
+    {"season_number": 1, "episode_number": 1, "title": "Arrival", "air_date": "2020-01-01", "runtime": 45},
+    {"season_number": 1, "episode_number": 2, "title": "The Signal", "air_date": "2020-01-02", "runtime": 45},
+    {"season_number": 1, "episode_number": 3, "title": "Return", "air_date": "2020-01-03", "runtime": 48},
+    {"season_number": 2, "episode_number": 1, "title": "New Tide", "air_date": "2021-01-03", "runtime": 52},
+    {"season_number": 2, "episode_number": 2, "title": "Future", "air_date": "2099-01-01", "runtime": 50}
+  ],
+  "names": [
+    {"name": "Harbor.Signals.S01E01.1080p.WEB-DL.mkv", "episodes": [1]},
+    {"name": "Harbor.Signals.S01E01-E02.1080p.WEB-DL.mkv", "episodes": [1, 2]},
+    {"name": "Harbor.Signals.S00E01.720p.BluRay.mkv", "episodes": [1]},
+    {"name": "Harbor.Signals.S01.1080p.WEB-DL", "scope": "season"},
+    {"name": "Harbor.Signals.2020.01.02.1080p.HDTV.mkv", "air_date": "2020-01-02"},
+    {"name": "Harbor.Signals.003.1080p.WEB-DL.mkv", "review": true},
+    {"name": "Harbor.Signals.S01E02.sample.mkv", "ignore": true}
+  ],
+  "false_label": {"listing": "Harbor.Signals.S01E01.1080p.BluRay", "manifest": "Harbor.Signals.S01E01.1080p.HDCAM.mkv"},
+  "dangerous_paths": ["../escape.mkv", "C:/escape.mkv", "/escape.mkv", "video.mkv:payload.exe"],
+  "streaming_template": "https://example.invalid/tv/{tmdb_id}/{season_number}/{episode_number}"
+}

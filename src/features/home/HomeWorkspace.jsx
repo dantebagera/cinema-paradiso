@@ -440,7 +440,7 @@ function ContinueWatchingRail({ items, onResume, onRestart, onRemove }) {
         onWheel={handleWheel}
         tabIndex="0"
         role="region"
-        aria-label="Continue Watching movies"
+        aria-label={items.some((item) => item.media_type === 'tv') ? "Continue Watching movies and TV shows" : "Continue Watching movies"}
       >
         {items.map((item) => (
           <ContinueMovieCard
@@ -448,7 +448,7 @@ function ContinueWatchingRail({ items, onResume, onRestart, onRemove }) {
             title={item.title}
             posterUrl={item.poster_url}
             progress={item.progress}
-            remainingLabel={remainingLabel(item.remaining_seconds)}
+            remainingLabel={item.media_type === 'tv' ? `${item.primary_action.label} · ${item.primary_action.target.code} · ${item.primary_action.target.title}${item.primary_action.playable ? '' : ' · Missing locally'}` : remainingLabel(item.remaining_seconds)}
             onResume={() => onResume(item)}
             onRestart={() => onRestart(item)}
             onRemove={() => onRemove(item)}

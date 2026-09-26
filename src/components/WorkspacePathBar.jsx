@@ -17,7 +17,7 @@ export default function WorkspacePathBar({
       </button>
       <div className="workspace-path-crumbs">
         {history.map((item, index) => (
-          <button type="button" key={`${item.label}-${index}`} onClick={() => onCrumb(index)}>
+          <button type="button" aria-label={item.label} key={`${item.label}-${index}`} onClick={() => onCrumb(index)}>
             {item.label}
           </button>
         ))}

@@ -1,0 +1,45 @@
+{
+  "test_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-wbfe4p22",
+  "requests": [
+    {
+      "ok": false,
+      "type": "CatalogWriterLeaseError",
+      "error": "Catalog writer already owned or unavailable: C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-wbfe4p22\\user-data\\.catalog-test.sqlite (Windows error 32)"
+    },
+    {
+      "ok": false,
+      "type": "CatalogWriterLeaseError",
+      "error": "Catalog writer already owned or unavailable: C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-wbfe4p22\\user-data\\.catalog-test.sqlite (Windows error 32)"
+    },
+    {
+      "ok": false,
+      "type": "CatalogWriterLeaseError",
+      "error": "Catalog writer already owned or unavailable: C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-wbfe4p22\\user-data\\.catalog-test.sqlite (Windows error 32)"
+    },
+    {
+      "ok": true,
+      "database": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-wbfe4p22\\user-data\\.catalog-test.sqlite"
+    },
+    {
+      "ok": false,
+      "type": "CatalogWriterLeaseError",
+      "error": "Catalog writer already owned or unavailable: C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-wbfe4p22\\user-data\\.catalog-test.sqlite (Windows error 32)"
+    },
+    {
+      "ok": false,
+      "type": "CatalogWriterLeaseError",
+      "error": "Catalog writer already owned or unavailable: C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-wbfe4p22\\user-data\\.catalog-test.sqlite (Windows error 32)"
+    },
+    {
+      "ok": false,
+      "type": "CatalogWriterLeaseError",
+      "error": "Catalog writer already owned or unavailable: C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-wbfe4p22\\user-data\\.catalog-test.sqlite (Windows error 32)"
+    },
+    {
+      "ok": false,
+      "type": "CatalogWriterLeaseError",
+      "error": "Catalog writer already owned or unavailable: C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-wbfe4p22\\user-data\\.catalog-test.sqlite (Windows error 32)"
+    }
+  ],
+  "successes": 1
+}

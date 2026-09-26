@@ -134,6 +134,13 @@ def _catalog_sort_key(value):
     return "".join(key)
 
 
+def _catalog_search_key(value):
+    """Normalize user-facing catalogue text for spacing-insensitive search."""
+    decomposed = unicodedata.normalize("NFKD", _text(value)).casefold()
+    without_marks = "".join(char for char in decomposed if not unicodedata.combining(char))
+    return "".join(char for char in without_marks if char.isalnum())
+
+
 def _identity_key(movie):
     movie = movie or {}
     if _text(movie.get("tmdb_id")):
@@ -168,6 +175,7 @@ class CatalogStore:
         connection = sqlite3.connect(self.database_path, timeout=30)
         connection.row_factory = sqlite3.Row
         connection.create_function("cp_sort_key", 1, _catalog_sort_key, deterministic=True)
+        connection.create_function("cp_search_key", 1, _catalog_search_key, deterministic=True)
         connection.execute("PRAGMA foreign_keys = ON")
         connection.execute("PRAGMA journal_mode = WAL")
         connection.execute("PRAGMA synchronous = FULL")
@@ -1588,24 +1596,97 @@ class CatalogStore:
         """
 
     @staticmethod
-    def _library_filter_sql(filters):
-        filters = dict(filters or {})
-        clauses = []
-        parameters = []
-        query = _text(filters.get("query")).lower()
-        if query:
-            clauses.append("""
+    def _library_text_search_sql(query):
+        search_key = _catalog_search_key(query)
+        if not search_key:
+            literal = f"%{_text(query).casefold()}%"
+            return """
                 LOWER(
                     COALESCE(e.display_title, '') || ' ' || COALESCE(e.display_year, '') || ' ' ||
                     COALESCE(e.filename, '') || ' ' || COALESCE(e.path, '') || ' ' ||
                     COALESCE(e.plot, '') || ' ' || COALESCE((
+                        SELECT GROUP_CONCAT(k.name, ' ')
+                        FROM movie_keywords mk
+                        JOIN keywords k ON k.keyword_key = mk.keyword_key
+                        WHERE mk.snapshot_key = e.snapshot_key
+                    ), '') || ' ' || COALESCE((
                         SELECT GROUP_CONCAT(g.name, ' ')
-                        FROM movie_genres mg JOIN genres g ON g.genre_key = mg.genre_key
+                        FROM movie_genres mg
+                        JOIN genres g ON g.genre_key = mg.genre_key
                         WHERE mg.snapshot_key = e.snapshot_key
                     ), '')
                 ) LIKE ?
-            """)
-            parameters.append(f"%{query}%")
+            """, [literal]
+        contains = f"%{search_key}%"
+        return """
+            (
+                cp_search_key(COALESCE(e.display_title, '')) LIKE ?
+                OR cp_search_key(COALESCE(e.display_year, '')) LIKE ?
+                OR cp_search_key(COALESCE(e.filename, '')) LIKE ?
+                OR cp_search_key(COALESCE(e.path, '')) LIKE ?
+                OR cp_search_key(COALESCE(e.plot, '')) LIKE ?
+                OR EXISTS(
+                    SELECT 1
+                    FROM movie_keywords mk
+                    JOIN keywords k ON k.keyword_key = mk.keyword_key
+                    WHERE mk.snapshot_key = e.snapshot_key
+                      AND cp_search_key(k.name) LIKE ?
+                )
+                OR EXISTS(
+                    SELECT 1
+                    FROM movie_genres mg
+                    JOIN genres g ON g.genre_key = mg.genre_key
+                    WHERE mg.snapshot_key = e.snapshot_key
+                      AND cp_search_key(g.name) LIKE ?
+                )
+            )
+        """, [contains] * 7
+
+    @staticmethod
+    def _library_search_rank_sql(query):
+        search_key = _catalog_search_key(query)
+        if not search_key:
+            return "", []
+        prefix = f"{search_key}%"
+        contains = f"%{search_key}%"
+        return """
+            CASE
+                WHEN cp_search_key(COALESCE(e.display_title, '')) = ? THEN 0
+                WHEN cp_search_key(COALESCE(e.display_title, '')) LIKE ? THEN 1
+                WHEN cp_search_key(COALESCE(e.display_title, '')) LIKE ? THEN 2
+                WHEN cp_search_key(COALESCE(e.filename, '')) LIKE ?
+                     OR cp_search_key(COALESCE(e.path, '')) LIKE ? THEN 3
+                WHEN cp_search_key(COALESCE(e.plot, '')) LIKE ? THEN 4
+                WHEN EXISTS(
+                    SELECT 1
+                    FROM movie_keywords mk
+                    JOIN keywords k ON k.keyword_key = mk.keyword_key
+                    WHERE mk.snapshot_key = e.snapshot_key
+                      AND cp_search_key(k.name) LIKE ?
+                ) THEN 5
+                WHEN EXISTS(
+                    SELECT 1
+                    FROM movie_genres mg
+                    JOIN genres g ON g.genre_key = mg.genre_key
+                    WHERE mg.snapshot_key = e.snapshot_key
+                      AND cp_search_key(g.name) LIKE ?
+                ) THEN 6
+                WHEN cp_search_key(COALESCE(e.display_year, '')) LIKE ? THEN 7
+                ELSE 8
+            END
+        """, [search_key, prefix, contains, contains, contains, contains, contains, contains, contains]
+
+    @staticmethod
+    def _library_filter_sql(filters):
+        filters = dict(filters or {})
+        clauses = []
+        parameters = []
+        query = _text(filters.get("query"))
+        if query:
+            clause, query_parameters = CatalogStore._library_text_search_sql(query)
+            if clause:
+                clauses.append(clause)
+                parameters.extend(query_parameters)
         resolution = _text(filters.get("resolution")) or "all"
         if resolution == "upgrade":
             clauses.append("e.path_key IN (SELECT value FROM json_each(?))")
@@ -1782,17 +1863,10 @@ class CatalogStore:
 
         title = groups.get("title")
         if title:
-            add("""
-                LOWER(
-                    COALESCE(e.display_title, '') || ' ' || COALESCE(e.display_year, '') || ' ' ||
-                    COALESCE(e.filename, '') || ' ' || COALESCE(e.path, '') || ' ' ||
-                    COALESCE(e.plot, '') || ' ' || COALESCE((
-                        SELECT GROUP_CONCAT(g.name, ' ')
-                        FROM movie_genres mg JOIN genres g ON g.genre_key = mg.genre_key
-                        WHERE mg.snapshot_key = e.snapshot_key
-                    ), '')
-                ) LIKE ?
-            """, f"%{title['values'][0]['text'].lower()}%")
+            clause, title_parameters = CatalogStore._library_text_search_sql(
+                title["values"][0]["text"]
+            )
+            add(clause, *title_parameters)
 
         genre = groups.get("genre")
         if genre:
@@ -1997,9 +2071,16 @@ class CatalogStore:
                 upgrade_path_keys=upgrade_path_keys,
             )
             sort_mode = normalized_query["sort"]["key"]
+            title_group = next(
+                (group for group in normalized_query["groups"] if group["type"] == "title"),
+                None,
+            )
+            title_query = title_group["values"][0]["text"] if title_group else ""
+            search_rank_sql, search_rank_parameters = self._library_search_rank_sql(title_query)
         else:
             where, parameters = self._library_filter_sql(filters)
             sort_mode = filters.get("sort")
+            search_rank_sql, search_rank_parameters = self._library_search_rank_sql(filters.get("query"))
         connection = self.connect()
         try:
             total = int(connection.execute(
@@ -2012,8 +2093,9 @@ class CatalogStore:
                 row[0]
                 for row in connection.execute(
                     f"{cte} SELECT e.path_key FROM effective e{where} "
-                    f"ORDER BY {self._library_sort_sql(sort_mode)} LIMIT ? OFFSET ?",
-                    [*parameters, page_size, offset],
+                    f"ORDER BY {search_rank_sql + ',' if search_rank_sql else ''} "
+                    f"{self._library_sort_sql(sort_mode)} LIMIT ? OFFSET ?",
+                    [*parameters, *search_rank_parameters, page_size, offset],
                 ).fetchall()
             ]
             candidates = self._candidates_for_path_keys(connection, path_keys)
@@ -2081,17 +2163,25 @@ class CatalogStore:
                 upgrade_path_keys=upgrade_path_keys,
             )
             sort_mode = normalized_query["sort"]["key"]
+            title_group = next(
+                (group for group in normalized_query["groups"] if group["type"] == "title"),
+                None,
+            )
+            title_query = title_group["values"][0]["text"] if title_group else ""
+            search_rank_sql, search_rank_parameters = self._library_search_rank_sql(title_query)
         else:
             where, parameters = self._library_filter_sql(filters)
             sort_mode = filters.get("sort")
+            search_rank_sql, search_rank_parameters = self._library_search_rank_sql(filters.get("query"))
         connection = self.connect()
         try:
             return [
                 row[0]
                 for row in connection.execute(
                     f"{cte} SELECT e.path FROM effective e{where} "
-                    f"ORDER BY {self._library_sort_sql(sort_mode)}",
-                    parameters,
+                    f"ORDER BY {search_rank_sql + ',' if search_rank_sql else ''} "
+                    f"{self._library_sort_sql(sort_mode)}",
+                    [*parameters, *search_rank_parameters],
                 ).fetchall()
             ]
         finally:

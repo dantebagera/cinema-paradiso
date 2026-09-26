@@ -60,11 +60,85 @@ export function normalizeLibraryMovieDetails(response) {
   };
 }
 
+function creditQuality(people = []) {
+  return people.reduce((score, person) => (
+    score + 100
+    + (person?.id ? 20 : 0)
+    + (person?.profile_url ? 20 : 0)
+    + (person?.character ? 5 : 0)
+  ), 0);
+}
+
+function richerCredits(localCredits = [], providerCredits = []) {
+  return creditQuality(providerCredits) > creditQuality(localCredits)
+    ? providerCredits
+    : localCredits;
+}
+
+export function mergeLibraryProviderDetails(localDetails = {}, providerDetails = {}) {
+  const merged = mergeCanonicalMovieDetails(providerDetails, localDetails);
+  merged.cast = richerCredits(localDetails.cast, providerDetails.cast);
+  merged.directors = richerCredits(localDetails.directors, providerDetails.directors);
+  merged.writers = richerCredits(localDetails.writers, providerDetails.writers);
+  merged.director = merged.directors[0] || localDetails.director || providerDetails.director || null;
+  if (!merged.keywords?.length && providerDetails.keywords?.length) merged.keywords = providerDetails.keywords;
+  if (!merged.collection?.id && providerDetails.collection?.id) merged.collection = providerDetails.collection;
+  ['certification', 'runtime', 'tagline', 'trailer_url'].forEach((field) => {
+    if ((merged[field] === '' || merged[field] == null) && providerDetails[field] != null) {
+      merged[field] = providerDetails[field];
+    }
+  });
+  merged.detail_source = 'library_sql+tmdb_live';
+  return merged;
+}
+
+function ownedTmdbId(movie, owned) {
+  return String(
+    movie?.tmdb_id
+    || owned?.tmdb_id
+    || owned?.canonical_metadata?.tmdb_id
+    || owned?.library_item?.canonical_metadata?.tmdb_id
+    || owned?.canonical_card?.canonical_metadata?.tmdb_id
+    || ''
+  ).trim();
+}
+
+function comparableTitle(value) {
+  return String(value || '').normalize('NFKC').trim().toLocaleLowerCase();
+}
+
+async function resolveProviderDetails(movie, localDetails, tmdbId = '') {
+  if (tmdbId) return fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(tmdbId)}`);
+  const title = String(localDetails?.title || movie?.title || '').trim();
+  const year = String(localDetails?.year || movie?.year || '').trim();
+  if (!title) return null;
+  const query = [title, year].filter(Boolean).join(' ');
+  const search = await fetchJson(`/api/tmdb/search?q=${encodeURIComponent(query)}&page=1&include_adult=false`);
+  const match = (search.results || []).find((candidate) => (
+    comparableTitle(candidate?.title) === comparableTitle(title)
+    && (!year || String(candidate?.year || '') === year)
+  ));
+  const resolvedId = String(match?.tmdb_id || '').trim();
+  if (!resolvedId) return null;
+  return fetchJson(`/api/tmdb/details?tmdb_id=${encodeURIComponent(resolvedId)}`);
+}
+
 export async function fetchCanonicalMovieDetails(movie, owned = null) {
   const path = ownedPath(movie, owned);
   if (path) {
+    const hintedTmdbId = ownedTmdbId(movie, owned);
     const response = await fetchJson(`/api/library/details?path=${encodeURIComponent(path)}`);
-    return normalizeLibraryMovieDetails(response);
+    const localDetails = normalizeLibraryMovieDetails(response);
+    if (localDetails.projection_contract === 'canonical_movie_details' && Array.isArray(localDetails.deferred_fields) && !localDetails.deferred_fields.length) return localDetails;
+    const tmdbId = hintedTmdbId || String(localDetails.tmdb_id || '').trim();
+    try {
+      const providerDetails = await resolveProviderDetails(movie, localDetails, tmdbId);
+      return providerDetails
+        ? mergeLibraryProviderDetails(localDetails, providerDetails)
+        : localDetails;
+    } catch {
+      return localDetails;
+    }
   }
   const tmdbId = String(movie?.tmdb_id || '').trim();
   if (!tmdbId) return null;

@@ -29,6 +29,7 @@ from services.movie_identity import (
     same_public_identity as _same_public_identity,
 )
 from services.catalog_repository import CatalogRepository, catalog_database_path
+from services.movie_relationships import MovieRelationships
 from services.catalog_writer_lease import CatalogWriterLease, CatalogWriterLeaseError
 from services.canonical_catalog import (
     CANONICAL_CONTRACT_VERSION,
@@ -387,6 +388,9 @@ _ai_control_config = ai_control.coerce_config({
     'ollama_curated_lists': _cfg.get('ai_control_ollama_curated_lists', False),
 })
 _ai_control_trusted_indexers_configured = 'ai_control_trusted_indexers' in _cfg
+_tv_enabled = _coerce_bool(_cfg.get('tv_enabled'), False) or (_TEST_MODE and os.environ.get('CP_TEST_TV_ENABLED') == '1')
+_tv_roots = [str(_TEST_ROOT / 'tv')] if _TEST_MODE else list(_cfg.get('tv_roots') or [])
+_streaming_tv_url_template = str(_cfg.get('streaming_tv_url_template') or '')
 _streaming_enabled = _coerce_bool(_cfg.get('streaming_enabled'), True)
 _streaming_label = str(_cfg.get('streaming_label', 'Stream') or 'Stream').strip() or 'Stream'
 _streaming_url_template = str(
@@ -427,51 +431,54 @@ _plex_unmatched = {}   # _norm(path) -> {rating_key, plex_title}  (Plex has file
 _plex_matched_by_fname   = {}  # filename.lower() -> matched entry   (path-mismatch fallback)
 _plex_unmatched_by_fname = {}  # filename.lower() -> unmatched entry (path-mismatch fallback)
 
+_catalog_repository_lock = threading.RLock()
 _catalog_repository_cache = {}
 _catalog_writer_lease_cache = {}
 _media_asset_service_cache = {}
 
 
 def _catalog_repository_for(base_dir):
-    base_dir = Path(base_dir).resolve()
-    cache_key = str(base_dir)
-    repository = _catalog_repository_cache.get(cache_key)
-    if repository is None:
-        repository_started = time.perf_counter()
-        configured = Path(_user_data_dir).resolve()
-        temporary_root = Path(tempfile.gettempdir()).resolve()
-        is_temporary = base_dir == temporary_root or temporary_root in base_dir.parents
-        database_path = (
-            base_dir / '.catalog-test.sqlite'
-            if is_temporary or base_dir != configured
-            else catalog_database_path(base_dir)
-        )
-        lease = CatalogWriterLease(
-            database_path,
-            lease_root=(_TEST_ROOT / 'catalog-leases') if _TEST_MODE else None,
-        ).acquire()
-        try:
-            repository = CatalogRepository(
-                base_dir,
-                database_path=database_path,
-                export_delay=0 if is_temporary else 0.5,
+    # Publish one initialized repository per path before another request can enter.
+    with _catalog_repository_lock:
+        base_dir = Path(base_dir).resolve()
+        cache_key = str(base_dir)
+        repository = _catalog_repository_cache.get(cache_key)
+        if repository is None:
+            repository_started = time.perf_counter()
+            configured = Path(_user_data_dir).resolve()
+            temporary_root = Path(tempfile.gettempdir()).resolve()
+            is_temporary = base_dir == temporary_root or temporary_root in base_dir.parents
+            database_path = (
+                base_dir / '.catalog-test.sqlite'
+                if is_temporary or base_dir != configured
+                else catalog_database_path(base_dir)
             )
-            _startup_metrics['database_open_ms'] = round(
-                (time.perf_counter() - repository_started) * 1000,
-                3,
-            )
-            migration_started = time.perf_counter()
-            repository.activate_from_json()
-            _startup_metrics['migration_check_ms'] = round(
-                (time.perf_counter() - migration_started) * 1000,
-                3,
-            )
-        except Exception:
-            lease.close()
-            raise
-        _catalog_writer_lease_cache[cache_key] = lease
-        _catalog_repository_cache[cache_key] = repository
-    return repository
+            lease = CatalogWriterLease(
+                database_path,
+                lease_root=(_TEST_ROOT / 'catalog-leases') if _TEST_MODE else None,
+            ).acquire()
+            try:
+                repository = CatalogRepository(
+                    base_dir,
+                    database_path=database_path,
+                    export_delay=0 if is_temporary else 0.5,
+                )
+                _startup_metrics['database_open_ms'] = round(
+                    (time.perf_counter() - repository_started) * 1000,
+                    3,
+                )
+                migration_started = time.perf_counter()
+                repository.activate_from_json()
+                _startup_metrics['migration_check_ms'] = round(
+                    (time.perf_counter() - migration_started) * 1000,
+                    3,
+                )
+            except Exception:
+                lease.close()
+                raise
+            _catalog_writer_lease_cache[cache_key] = lease
+            _catalog_repository_cache[cache_key] = repository
+        return repository
 
 
 def _catalog_repository():
@@ -984,60 +991,6 @@ def _remaining_timeout(deadline_at, timeout):
     return max(1, min(timeout, remaining))
 
 
-def _prowlarr_search_movie(
-    indexer_ids,
-    movie,
-    limit=100,
-    categories='2000',
-    timeout=30,
-    deadline_seconds=None,
-    *,
-    enriched=False,
-    accept_result=None,
-    stop_after_first=False,
-):
-    movie = dict(movie or {}) if enriched else _movie_with_source_title_aliases(movie)
-    deadline_at = None
-    if deadline_seconds:
-        deadline_at = time.monotonic() + max(1, int(deadline_seconds))
-    merged = []
-    seen = set()
-    for query_item in _movie_release_query_plan(movie):
-        query = query_item['query']
-        if merged and query_item['kind'] == 'alias':
-            break
-        query_timeout = _remaining_timeout(deadline_at, timeout)
-        if query_timeout <= 0:
-            break
-        try:
-            results = _prowlarr_search(
-                indexer_ids=indexer_ids,
-                query=query,
-                limit=limit,
-                categories=categories,
-                timeout=query_timeout,
-            )
-        except Exception as error:
-            if _is_timeout_error(error):
-                continue
-            raise
-        for result in results:
-            if not _prowlarr_result_matches_movie(result, movie):
-                continue
-            if not _yts_result_matches_movie_identity(result, movie):
-                continue
-            if accept_result is not None and not accept_result(result):
-                continue
-            key = _prowlarr_result_key(result)
-            if key in seen:
-                continue
-            seen.add(key)
-            merged.append(result)
-            if stop_after_first:
-                return merged
-            if len(merged) >= limit:
-                return merged
-    return merged
 
 
 def _prowlarr_result_links(result):
@@ -2559,6 +2512,9 @@ def _all_config():
         'ollama_candidate_limit': _ollama_candidate_limit,
         'ai_control_enabled': _ai_control_config['enabled'],
         'ai_control_ollama_curated_lists': _ai_control_config['ollama_curated_lists'],
+        'tv_enabled': _tv_enabled,
+        'tv_roots': _tv_roots,
+        'streaming_tv_url_template': _streaming_tv_url_template,
         'streaming_enabled': _streaming_enabled,
         'streaming_label': _streaming_label,
         'streaming_url_template': _streaming_url_template,
@@ -2606,6 +2562,8 @@ def _get_qbittorrent_manager():
     if _qbittorrent_manager is None or _qbittorrent_manager_key != key:
         _qbittorrent_manager = QBittorrentManager(_user_data_dir, settings, get_movies_dirs())
         _qbittorrent_manager_key = key
+    if _tv_enabled:
+        _qbittorrent_manager.domain_handlers['tv'] = _tv_acquisition()
     return _qbittorrent_manager
 
 
@@ -2622,6 +2580,7 @@ def _stop_cp_background_runtime(*, close_qbittorrent=False):
             raise RuntimeError('Cinema Paradiso cannot close a system-managed qBittorrent client')
         if _qbittorrent_manager is not None:
             _qbittorrent_manager.shutdown()
+    _tv_monitor_stop.set()
     _qbittorrent_import_monitor.shutdown()
     _shutdown_library_background_services()
 
@@ -2774,7 +2733,7 @@ def _handle_completed_qbittorrent_imports(manager, results):
     global _library_cache
     completed = [
         item for item in (results or [])
-        if item.get('state') in {'imported', 'cleanup_failed'}
+        if item.get('media_type', 'movie') == 'movie' and item.get('state') in {'imported', 'cleanup_failed'}
         and (
             item.get('library_scan_pending', item.get('state') == 'imported')
             or not str((item.get('identity_handoff') or {}).get('state') or '')
@@ -3252,43 +3211,11 @@ def get_resolution(filename):
     return filename_quality_claim(filename)
 
 
+from services.quality_catalog import SOURCE_RANK, legacy_source_label as get_rip_source
+
+
 def get_rip_rank(rip_source):
-    order = {
-        'BD Remux': 9, 'Remux': 8, 'Blu-ray': 7, 'BDRip': 6,
-        'WEB-DL': 5, 'WEBRip': 4, 'HDRip': 3, 'HDTV': 2,
-        'DVDRip': 1, 'DVDScr': 0, 'CAMRip': -1, 'HDCAM': -2, 'Unknown': -3,
-    }
-    return order.get(rip_source, -3)
-
-
-def get_rip_source(filename):
-    name = filename.lower()
-    # Order matters — check more specific terms first
-    if 'bdremux' in name or 'bd remux' in name:
-        return 'BD Remux'
-    elif 'bluray' in name or 'blu-ray' in name or 'bluray' in name:
-        return 'Blu-ray'
-    elif 'brrip' in name or 'br-rip' in name or 'bdrip' in name or 'bd-rip' in name:
-        return 'BDRip'
-    elif 'web-dl' in name or 'webdl' in name:
-        return 'WEB-DL'
-    elif 'webrip' in name or 'web-rip' in name:
-        return 'WEBRip'
-    elif 'hdrip' in name:
-        return 'HDRip'
-    elif 'hdtv' in name:
-        return 'HDTV'
-    elif 'dvdrip' in name or 'dvd-rip' in name:
-        return 'DVDRip'
-    elif 'dvdscr' in name or 'dvd-scr' in name:
-        return 'DVDScr'
-    elif 'hdcam' in name:
-        return 'HDCAM'
-    elif 'camrip' in name or 'cam-rip' in name or name.endswith('.cam'):
-        return 'CAMRip'
-    elif 'remux' in name:
-        return 'Remux'
-    return 'Unknown'
+    return SOURCE_RANK.get(rip_source, -3)
 
 
 def format_size(size):
@@ -3299,52 +3226,8 @@ def format_size(size):
     return f"{size:.1f} PB"
 
 
-def _torrent_variants_from_prowlarr_results(results):
-    variants = []
-    for r in results or []:
-        t = r.get('title', '')
-        if _TV_RE.search(t):
-            continue
-        tl = t.lower()
-        res = 'Unknown'
-        if '2160p' in tl or '4k' in tl or 'uhd' in tl:
-            res = '4K'
-        elif '1080p' in tl or re.search(r'[.\-_ \[(]1080[.\-_ \])]', tl):
-            res = '1080p'
-        elif '720p' in tl or re.search(r'[.\-_ \[(]720[.\-_ \])]', tl):
-            res = '720p'
-        elif '480p' in tl or re.search(r'[.\-_ \[(]480[.\-_ \])]', tl):
-            res = '480p'
-        size = r.get('size', 0)
-        seeders = r.get('seeders', 0)
-        links = _prowlarr_result_links(r)
-        entry = {
-            'resolution': res,
-            'seeders': seeders,
-            'magnet_url': links['magnet_url'],
-            'download_url': links['download_url'],
-            'info_hash': links['info_hash'],
-            'info_url': r.get('infoUrl', ''),
-            'indexer': r.get('indexer', ''),
-            'size_human': format_size(size) if size else '?',
-            'size_bytes': size,
-            'title': t,
-        }
-        variants.append(entry)
-    return _sort_source_variants(variants)
 
 
-def _sort_source_variants(variants):
-    rows = list(variants or [])
-    has_hd = any((row.get('resolution') in ('4K', '1080p')) for row in rows)
-    if has_hd:
-        rows.sort(key=lambda row: (
-            0 if row.get('resolution') == '4K' else 1 if row.get('resolution') == '1080p' else 2,
-            -int(row.get('seeders') or 0),
-        ))
-    else:
-        rows.sort(key=lambda row: -int(row.get('seeders') or 0))
-    return rows
 
 
 def _source_variant_key(variant):
@@ -3628,21 +3511,14 @@ def _create_source_search_job(movie):
     return _source_search_job_response(search_id)
 
 
-_GOOD_RELEASE_SOURCES = {'WEBRip', 'Blu-ray', 'BDRip'}
+from services.quality_catalog import SOURCES, FOLLOW_COMPATIBILITY_SOURCES
+_GOOD_RELEASE_SOURCES = {SOURCES[key]['label'] for key in FOLLOW_COMPATIBILITY_SOURCES}
 _BAD_RELEASE_RE = re.compile(
     r'(^|[.\-_\s\[\(])(cam|camrip|hdcam|ts|hdts|tele[.\-_\s]*sync|tc|telecine|scr|screener|dvdscr)',
     re.IGNORECASE
 )
 
 
-def _proper_release_from_title(title):
-    if not title or _BAD_RELEASE_RE.search(title):
-        return None
-    source = get_rip_source(title)
-    resolution = get_resolution(title)
-    if source not in _GOOD_RELEASE_SOURCES or get_resolution_rank_str(resolution) < 3:
-        return None
-    return {'source': source, 'resolution': resolution}
 
 
 def _catalog_owned_entries(candidates, store, metadata_snapshot):
@@ -4105,126 +3981,6 @@ def _followed_release_priority(movie):
     )
 
 
-def _check_followed_releases():
-    scan_started = time.perf_counter()
-    store = _curation_store()
-    current = _backfill_followed_release_dates(store, store.followed_all())
-    removed_owned = []
-    newly_available = []
-    now = time.time()
-    owned_matches = _find_owned_movies(current)
-    rss_candidates = []
-    scan_updates = []
-    skipped = {'available': 0, 'unreleased': 0, 'not_due': 0, 'unverified_identity': 0}
-    for item, owned in zip(current, owned_matches):
-        if owned:
-            removed_owned.append({**item, 'status': 'owned', 'owned': owned, 'updated_at': now, 'last_checked': now})
-            continue
-        try:
-            enriched = _movie_with_source_title_aliases(item, allow_alias_fetch=False)
-        except Exception:
-            enriched = dict(item)
-        if enriched.get('imdb_id') and enriched.get('imdb_id') != item.get('imdb_id'):
-            scan_updates.append(_followed_scan_update(item, {'imdb_id': enriched['imdb_id']}))
-        if not _movie_imdb_id(enriched):
-            skipped['unverified_identity'] += 1
-            continue
-        if str(item.get('status') or 'watching') == 'available':
-            if not _followed_release_has_mismatched_yts_identity(enriched):
-                skipped['available'] += 1
-                continue
-            # A past generic-title result has since proved to be another movie.
-            # Re-enter this one scan as watching so it can be replaced or retried.
-            enriched = {**enriched, 'status': 'watching', 'best_release': {}, 'next_check_at': 0}
-        rss_candidates.append(enriched)
-
-    store.apply_followed_scan(removals=removed_owned)
-
-    rss_candidates.sort(key=_followed_release_priority)
-    context = _followed_release_search_context() if rss_candidates else {'ready': False, 'indexers': []}
-    pending = list(rss_candidates)
-    rss_matches = 0
-    prowlarr_searches = 0
-    failed_searches = 0
-    trusted_yts = any(_is_yts_indexer_name(indexer.get('name')) for indexer in context.get('indexers', []))
-    if pending and trusted_yts:
-        rss_rows = _fetch_yts_rss_latest(limit=100, timeout=FOLLOWED_RELEASE_RSS_TIMEOUT_SECONDS)
-        unmatched = []
-        for item in pending:
-            release = _followed_rss_release(item, rss_rows)
-            if not release:
-                unmatched.append(item)
-                continue
-            patch = _followed_release_available_patch(release, now)
-            scan_updates.append(_followed_scan_update(item, patch))
-            newly_available.append({**item, **patch})
-            rss_matches += 1
-        pending = unmatched
-
-    # The one cheap RSS pass deliberately precedes calendar and retry gates.
-    # A legitimate early YTS release can therefore become available without
-    # opening an individual Prowlarr search for any future-dated movie.
-    pending = _backfill_followed_release_dates(store, pending)
-    eligible = []
-    for item in pending:
-        eligibility = _followed_release_eligibility(item, now)
-        if eligibility['eligible']:
-            eligible.append(item)
-            continue
-        skipped[eligibility['reason']] += 1
-        if eligibility['patch']:
-            scan_updates.append(_followed_scan_update(item, eligibility['patch']))
-
-    eligible.sort(key=_followed_release_priority)
-    if eligible and context.get('ready'):
-        worker_count = max(1, min(FOLLOWED_RELEASE_WORKERS, len(eligible)))
-        with concurrent.futures.ThreadPoolExecutor(max_workers=worker_count) as executor:
-            futures = {
-                executor.submit(_probe_followed_release, item, context): item
-                for item in eligible
-            }
-            for future in concurrent.futures.as_completed(futures):
-                item = futures[future]
-                prowlarr_searches += 1
-                try:
-                    result = future.result()
-                except Exception:
-                    result = {'searched': False, 'release': None}
-                if not result.get('searched'):
-                    scan_updates.append(_followed_scan_update(item, _followed_release_failure_patch(now)))
-                    failed_searches += 1
-                    continue
-                release = result.get('release')
-                if release:
-                    patch = _followed_release_available_patch(release, now)
-                    newly_available.append({**item, **patch})
-                else:
-                    patch = _followed_release_miss_patch(item, now)
-                scan_updates.append(_followed_scan_update(item, patch))
-    elif eligible:
-        failed_searches = len(eligible)
-        scan_updates.extend(
-            _followed_scan_update(item, _followed_release_failure_patch(now))
-            for item in eligible
-        )
-
-    merged = _sort_followed_releases(store.apply_followed_scan(updates=scan_updates))
-    return {
-        'movies': merged,
-        'removed_owned': removed_owned,
-        'newly_available': newly_available,
-        'checked_at': now,
-        'scan_stats': {
-            'total': len(current),
-            'rss_candidates': len(rss_candidates),
-            'eligible': len(eligible),
-            'rss_matches': rss_matches,
-            'prowlarr_searches': prowlarr_searches,
-            'failed_searches': failed_searches,
-            'skipped': skipped,
-            'duration_ms': round((time.perf_counter() - scan_started) * 1000, 1),
-        },
-    }
 
 
 def _reconcile_followed_release_ownership():
@@ -5169,18 +4925,26 @@ def ai_control_execute():
 
 @app.route('/api/streaming/config', methods=['GET', 'POST'])
 def streaming_config():
-    global _streaming_enabled, _streaming_label, _streaming_url_template
+    from services.streaming_templates import validate_tv_template, effective_tv_template
+    global _streaming_enabled, _streaming_label, _streaming_url_template, _streaming_tv_url_template
     if request.method == 'GET':
         return jsonify({
             'enabled': _streaming_enabled,
             'label': _streaming_label,
             'url_template': _streaming_url_template,
+            **({'tv_url_template': effective_tv_template(_streaming_url_template, _streaming_tv_url_template)} if _tv_enabled or _streaming_tv_url_template else {}),
         })
     data = request.get_json(silent=True) or {}
     label = str(data.get('label', _streaming_label) or '').strip() or 'Stream'
     url_template = str(data.get('url_template', _streaming_url_template) or '').strip()
     if url_template and not re.match(r'^https?://', url_template, flags=re.IGNORECASE):
         return jsonify({'error': 'Streaming URL template must start with http:// or https://'}), 400
+    from services.streaming_templates import validate_tv_template, effective_tv_template
+    try:
+        tv_template = validate_tv_template(data.get('tv_url_template', _streaming_tv_url_template))
+    except ValueError as error:
+        return jsonify({'error': str(error)}), 400
+    _streaming_tv_url_template = tv_template
     _streaming_enabled = _coerce_bool(data.get('enabled'), _streaming_enabled)
     _streaming_label = label
     _streaming_url_template = url_template
@@ -5190,6 +4954,7 @@ def streaming_config():
         'enabled': _streaming_enabled,
         'label': _streaming_label,
         'url_template': _streaming_url_template,
+            **({'tv_url_template': effective_tv_template(_streaming_url_template, _streaming_tv_url_template)} if _tv_enabled or _streaming_tv_url_template else {}),
     })
 
 
@@ -5317,6 +5082,15 @@ def _resolve_prowlarr_download(download_url, default_filename='prowlarr-result.t
     if not filename.lower().endswith('.torrent'):
         filename += '.torrent'
     return {'kind': 'torrent', 'content': torrent_bytes, 'filename': os.path.basename(filename)}
+
+
+def _resolve_tv_candidate(candidate):
+    from services.qbittorrent import torrent_content_hash, TorrentValidationError
+    transport = _resolve_prowlarr_download(candidate['download_url'])
+    identity = magnet_hash(transport['magnet']) if transport['kind'] == 'magnet' else torrent_content_hash(transport['content'])
+    if not identity:
+        raise TorrentValidationError('Resolved torrent has no usable identity')
+    return {'info_hash': identity, 'transport_verified': True}
 
 
 def _submit_qbittorrent_candidate(manager, candidate, metadata):
@@ -8998,7 +8772,7 @@ def _normalize_tmdb_details_payload(data):
         writers.append(normalized)
 
     cast = []
-    for person in (data.get('credits', {}).get('cast', []) or [])[:8]:
+    for person in (data.get('credits', {}).get('cast', []) or [])[:9]:
         normalized = _normalize_tmdb_person(person, include_character=True)
         if normalized:
             cast.append(normalized)
@@ -9074,6 +8848,7 @@ def _normalize_tmdb_details_payload(data):
         'release_date': data.get('release_date', '') or '',
         'release_years': _tmdb_release_year_values(data),
         'release_years_checked_at': time.time() if 'release_dates' in data else 0,
+        'credits_projection_version': 2,
     }
 
 
@@ -12059,6 +11834,37 @@ def tmdb_card_projections():
     })
 
 
+_movie_relationships = MovieRelationships()
+
+
+def _fetch_movie_relationship_page(movie_id, source, page):
+    query = urllib.parse.urlencode({'api_key': _tmdb_key, 'language': 'en-US', 'page': page})
+    url = f'https://api.themoviedb.org/3/movie/{int(movie_id)}/{source}?{query}'
+    req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+    with urllib.request.urlopen(req, timeout=10) as response:
+        return _json.loads(response.read().decode())
+
+
+@app.route('/api/tmdb/related')
+def tmdb_related():
+    if not _tmdb_key:
+        return jsonify({'error': 'TMDB key required'}), 400
+    try:
+        source = request.args.get('source', 'recommendations')
+        page = int(request.args.get('page', '1'))
+        page_size = int(request.args.get('page_size', '20'))
+        return jsonify(_movie_relationships.listing(
+            request.args.get('tmdb_id', '').strip(),
+            source, page,
+            _fetch_movie_relationship_page, _normalize_tmdb_movie_summary,
+            page_size=page_size,
+        ))
+    except ValueError as error:
+        return jsonify({'error': str(error)}), 400
+    except Exception:
+        return jsonify({'error': 'TMDB relationships are temporarily unavailable. Please retry.'}), 502
+
+
 @app.route('/api/tmdb/details')
 def tmdb_details():
     global _tmdb_library_cache
@@ -12078,6 +11884,7 @@ def tmdb_details():
             and not refresh
             and cached_data.get('release_date')
             and _tmdb_metadata_contract_complete(cached_data)
+            and cached_data.get('credits_projection_version') == 2
         ):
             data = cached_data
             data['cached'] = True
@@ -12278,7 +12085,9 @@ def user_followed_releases():
     movie = body.get('movie') or body
     try:
         if request.method == 'POST':
-            followed = store.follow_movie(_movie_with_followed_imdb_identity(movie))
+            profile_id = str(movie.get('profile_id') or _acquisition_repository().profile()['id'])
+            _acquisition_repository().profile(profile_id)
+            followed = store.follow_movie({**_movie_with_followed_imdb_identity(movie), 'profile_id': profile_id})
             return jsonify(_curation_payload({'movie': followed, 'movies': _sort_followed_releases(store.followed_all())}, store))
         removed = store.unfollow_movie(movie)
         return jsonify(_curation_payload({'success': True, 'removed': removed, 'movies': _sort_followed_releases(store.followed_all())}, store))
@@ -12338,65 +12147,10 @@ def _effective_download_trusted_indexer_ids(indexers=None):
     return _effective_trusted_release_indexer_ids(available)
 
 
-def _best_download_variant(variants, quality, trusted_ids):
-    wanted = _normalize_download_quality(quality)
-    trusted = {str(value) for value in trusted_ids or []}
-    candidates = []
-    for variant in variants or []:
-        indexer_id = str(variant.get('indexer_id') or variant.get('indexer') or '')
-        if trusted and indexer_id not in trusted:
-            continue
-        if _download_variant_quality(variant.get('resolution')) != wanted:
-            continue
-        candidates.append(variant)
-    candidates.sort(key=lambda item: (
-        int(item.get('seeders') or 0),
-        int(item.get('size') or item.get('size_bytes') or 0),
-    ), reverse=True)
-    return candidates[0] if candidates else None
 
 
-def _source_review_variants_by_quality(variants, trusted_ids):
-    return {
-        quality: _best_download_variant(variants, quality, trusted_ids)
-        for quality in ('1080p', '4K')
-    }
 
 
-def _source_review_movie_row(movie, quality, trusted_ids):
-    payload = _normalize_curated_movie(movie)
-    selection_key = str((movie or {}).get('selection_key') or '').strip()
-    if selection_key:
-        payload['selection_key'] = selection_key
-    if not _download_job_has_stable_identity(payload):
-        return {
-            **payload,
-            'quality': quality,
-            'upgrade': False,
-            'selected': False,
-            'status': 'identity_required',
-            'variant': None,
-            'variants_by_quality': {'1080p': None, '4K': None},
-            'reason': 'A TMDB or IMDb identity is required before download',
-        }
-    upgrade = _curated_movie_is_owned(payload)
-    try:
-        variants = _ai_control_source_search(payload, {'trusted_indexers': trusted_ids})
-    except Exception as error:
-        variants = []
-        payload['source_error'] = str(error)
-    variants_by_quality = _source_review_variants_by_quality(variants, trusted_ids)
-    variant = variants_by_quality.get(quality)
-    return {
-        **payload,
-        'quality': quality,
-        'upgrade': upgrade,
-        'selected': bool(variant),
-        'status': 'ready' if variant else 'blocked',
-        'variant': variant,
-        'variants_by_quality': variants_by_quality,
-        'reason': '' if variant else payload.get('source_error') or f'No trusted {quality} source found',
-    }
 
 
 def _ai_control_download_preparer():
@@ -13274,6 +13028,163 @@ def ollama_recommend():
     return jsonify({'results': results, 'model': _ollama_model})
 
 
+
+
+from types import SimpleNamespace
+from services.movie_acquisition import MovieAcquisition
+_movie_acquisition = MovieAcquisition(SimpleNamespace(
+    acquisition_profile=lambda profile_id=None: _acquisition_repository().profile(profile_id),
+    FOLLOWED_RELEASE_RSS_TIMEOUT_SECONDS=FOLLOWED_RELEASE_RSS_TIMEOUT_SECONDS,
+    FOLLOWED_RELEASE_WORKERS=FOLLOWED_RELEASE_WORKERS,
+    _BAD_RELEASE_RE=_BAD_RELEASE_RE,
+    _GOOD_RELEASE_SOURCES=_GOOD_RELEASE_SOURCES,
+    _TV_RE=_TV_RE,
+    _ai_control_source_search=lambda *args, **kwargs: _ai_control_source_search(*args, **kwargs),
+    _backfill_followed_release_dates=lambda *args, **kwargs: _backfill_followed_release_dates(*args, **kwargs),
+    _best_download_variant=lambda *args, **kwargs: _best_download_variant(*args, **kwargs),
+    _curated_movie_is_owned=lambda *args, **kwargs: _curated_movie_is_owned(*args, **kwargs),
+    _curation_store=lambda *args, **kwargs: _curation_store(*args, **kwargs),
+    _download_job_has_stable_identity=lambda *args, **kwargs: _download_job_has_stable_identity(*args, **kwargs),
+    _download_variant_quality=lambda *args, **kwargs: _download_variant_quality(*args, **kwargs),
+    _fetch_yts_rss_latest=lambda *args, **kwargs: _fetch_yts_rss_latest(*args, **kwargs),
+    _find_owned_movies=lambda *args, **kwargs: _find_owned_movies(*args, **kwargs),
+    _followed_release_available_patch=lambda *args, **kwargs: _followed_release_available_patch(*args, **kwargs),
+    _followed_release_eligibility=lambda *args, **kwargs: _followed_release_eligibility(*args, **kwargs),
+    _followed_release_failure_patch=lambda *args, **kwargs: _followed_release_failure_patch(*args, **kwargs),
+    _followed_release_has_mismatched_yts_identity=lambda *args, **kwargs: _followed_release_has_mismatched_yts_identity(*args, **kwargs),
+    _followed_release_miss_patch=lambda *args, **kwargs: _followed_release_miss_patch(*args, **kwargs),
+    _followed_release_priority=lambda *args, **kwargs: _followed_release_priority(*args, **kwargs),
+    _followed_release_search_context=lambda *args, **kwargs: _followed_release_search_context(*args, **kwargs),
+    _followed_rss_release=lambda *args, **kwargs: _followed_rss_release(*args, **kwargs),
+    _followed_scan_update=lambda *args, **kwargs: _followed_scan_update(*args, **kwargs),
+    _is_timeout_error=lambda *args, **kwargs: _is_timeout_error(*args, **kwargs),
+    _is_yts_indexer_name=lambda *args, **kwargs: _is_yts_indexer_name(*args, **kwargs),
+    _movie_imdb_id=lambda *args, **kwargs: _movie_imdb_id(*args, **kwargs),
+    _movie_release_query_plan=lambda *args, **kwargs: _movie_release_query_plan(*args, **kwargs),
+    _movie_with_source_title_aliases=lambda *args, **kwargs: _movie_with_source_title_aliases(*args, **kwargs),
+    _normalize_curated_movie=_normalize_curated_movie,
+    _normalize_download_quality=lambda *args, **kwargs: _normalize_download_quality(*args, **kwargs),
+    _probe_followed_release=lambda *args, **kwargs: _probe_followed_release(*args, **kwargs),
+    _prowlarr_result_key=lambda *args, **kwargs: _prowlarr_result_key(*args, **kwargs),
+    _prowlarr_result_links=lambda *args, **kwargs: _prowlarr_result_links(*args, **kwargs),
+    _prowlarr_result_matches_movie=lambda *args, **kwargs: _prowlarr_result_matches_movie(*args, **kwargs),
+    _prowlarr_search=lambda *args, **kwargs: _prowlarr_search(*args, **kwargs),
+    _remaining_timeout=lambda *args, **kwargs: _remaining_timeout(*args, **kwargs),
+    _sort_followed_releases=lambda *args, **kwargs: _sort_followed_releases(*args, **kwargs),
+    _sort_source_variants=lambda *args, **kwargs: _sort_source_variants(*args, **kwargs),
+    _source_review_variants_by_quality=lambda *args, **kwargs: _source_review_variants_by_quality(*args, **kwargs),
+    _yts_result_matches_movie_identity=lambda *args, **kwargs: _yts_result_matches_movie_identity(*args, **kwargs),
+    format_size=lambda *args, **kwargs: format_size(*args, **kwargs),
+    get_resolution=lambda *args, **kwargs: get_resolution(*args, **kwargs),
+    get_resolution_rank_str=lambda *args, **kwargs: get_resolution_rank_str(*args, **kwargs),
+    get_rip_source=lambda *args, **kwargs: get_rip_source(*args, **kwargs),
+))
+_prowlarr_search_movie = _movie_acquisition.search_movie
+_torrent_variants_from_prowlarr_results = _movie_acquisition.variants
+_check_followed_releases = _movie_acquisition.check_followed
+_source_review_movie_row = _movie_acquisition.review
+_source_review_variants_by_quality = _movie_acquisition.variants_by_quality
+_best_download_variant = _movie_acquisition.best_variant
+_sort_source_variants = _movie_acquisition.sort_variants
+_proper_release_from_title = _movie_acquisition.proper_release
+
+from services.acquisition_store import AcquisitionRepository
+from services.acquisition_routes import register_acquisition_routes
+_acquisition_cache = {}
+_acquisition_lock = threading.RLock()
+
+
+def _acquisition_repository():
+    path = Path(_user_data_dir).resolve() / 'acquisition.sqlite'
+    with _acquisition_lock:
+        if path not in _acquisition_cache:
+            _acquisition_cache[path] = AcquisitionRepository(path)
+        return _acquisition_cache[path]
+
+
+register_acquisition_routes(app, _acquisition_repository)
+
+# Native TV stays lazy and off by default; movie/IPTV stores remain independent.
+from services.tv_services import TVServices
+from services.tv_routes import register_tv_routes
+from services.tv_playback import TypedPlaybackHistory
+_tv_services = TVServices(lambda: _user_data_dir, lambda: _tv_roots, lambda: _tmdb_key, _player_config,
+                          lambda: _plex_url, lambda: _plex_token)
+_movie_media_resolver = _player_manager.media_resolver
+
+
+def _resolve_typed_player_media(path_key):
+    if str(path_key).startswith('tv:'):
+        if not _tv_enabled:
+            from services.player_catalog import PlayerMediaError
+            raise PlayerMediaError('Native TV is not enabled')
+        return _tv_services()['playback'].resolve(path_key)
+    return _movie_media_resolver(path_key)
+
+
+_player_manager.media_resolver = _resolve_typed_player_media
+_player_manager.playback_history = TypedPlaybackHistory(_playback_history, lambda: _tv_services()['history'])
+from services.tv_acquisition import TVAcquisition
+from services.tv_monitoring import TVMonitoring
+_tv_monitor_stop = threading.Event()
+
+
+def _tv_acquisition():
+    services = _tv_services()
+    with _acquisition_lock:
+        if 'acquisition' not in services:
+            services['acquisition'] = TVAcquisition(services['repository'], _acquisition_repository(), _prowlarr_client,
+                _get_qbittorrent_manager, lambda: _tv_roots, trusted_indexers=lambda: _download_trusted_indexers,
+            search_indexers=lambda: _download_trusted_indexers if _download_indexer_mode == 'custom' else None,
+                submit_candidate=_submit_qbittorrent_candidate, metadata=services['metadata'], resolve_candidate=_resolve_tv_candidate)
+        return services['acquisition']
+
+
+def _tv_monitoring():
+    services = _tv_services()
+    with _acquisition_lock:
+        if 'monitoring' not in services:
+            services['monitoring'] = TVMonitoring(services['repository'], _acquisition_repository(), _tv_acquisition())
+        return services['monitoring']
+
+
+def _run_tv_monitor():
+    while not _tv_monitor_stop.is_set():
+        if _tv_enabled and _qbt_mode == 'embedded':
+            try:
+                _tv_monitoring().run_once(limit=5, submit=True)
+            except Exception as error:
+                print(f'[tv-monitor] {error}', flush=True)
+        _tv_monitor_stop.wait(60)
+
+
+def _tv_config(data=None):
+    global _tv_enabled, _tv_roots
+    if data is None:
+        return {'enabled': _tv_enabled, 'roots': list(_tv_roots)}
+    roots = data.get('roots', _tv_roots)
+    if not isinstance(roots, list) or len(roots) > 16:
+        raise ValueError('TV roots must be a list of at most 16 folders')
+    normalized = []
+    for value in roots:
+        path = Path(str(value or '')).expanduser().resolve()
+        if not path.is_dir():
+            raise ValueError(f'TV root does not exist: {path}')
+        if str(path) not in normalized:
+            normalized.append(str(path))
+    enabled = data.get('enabled', _tv_enabled)
+    if not isinstance(enabled, bool):
+        raise ValueError('TV enabled must be true or false')
+    if enabled and not normalized:
+        raise ValueError('At least one existing TV root is required before enabling TV')
+    _tv_roots, _tv_enabled = normalized, enabled
+    _save_config(_all_config())
+    return {'enabled': _tv_enabled, 'roots': list(_tv_roots)}
+
+
+register_tv_routes(app, _tv_services, lambda: _tv_enabled, _player_manager, _tv_acquisition, _tv_monitoring, _tv_config)
+
+
 def _start_background_services():
     """Start normal runtime owners; global artwork backfill stays explicit-only."""
     _start_library_reconcile()
@@ -13292,6 +13203,8 @@ def _start_background_services():
         args=(lambda: _qbt_mode == 'embedded',),
         daemon=True,
     ).start()
+    if _tv_enabled:
+        threading.Thread(target=_run_tv_monitor, name='cp-tv-monitor', daemon=True).start()
     _startup_metrics['background_queue_started'] = True
 
 

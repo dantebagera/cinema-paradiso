@@ -1,12 +1,14 @@
 # Cinema Paradiso
 
-> **Local-first movie archive command console** for Plex collectors, large Windows libraries, TMDB discovery, Prowlarr source search, and Ollama-backed recommendations.
+> **Local-first movie and TV archive command console** for Plex collectors, large Windows libraries, TMDB discovery, Prowlarr source search, and Ollama-backed recommendations.
 
-Cinema Paradiso is a self-hosted movie library manager for people with hundreds or thousands of local movie files. It helps you browse what you own, clean duplicates and low-quality copies, fix unmatched metadata, discover movies online, search torrent indexers, stream titles, and ask a local AI curator what to watch.
+Cinema Paradiso is a self-hosted movie and TV library manager for people with large local media collections. It helps you browse what you own, clean duplicates and low-quality copies, fix unmatched metadata, discover movies and series online, search torrent indexers, stream titles, and ask a local AI curator what to watch.
 
 Your library catalog, settings, and operational state stay on your machine. Optional services such as Plex, TMDB, Prowlarr, streaming providers, and Ollama cloud models are contacted only when configured for their corresponding features.
 
-**Current release: v2.8.5** - August 2026
+**Current local development version: v3.0.0-beta.1** - September 2026
+
+**Latest public release: v2.8.5** - August 2026
 
 ---
 
@@ -286,7 +288,7 @@ For normal use, download the `Cinema-Paradiso-2.8.5-Portable.zip` artifact from 
 
 The GitHub Source ZIP remains developer-oriented. If you download the source ZIP or clone the repository, double-click `run.bat`. It runs in a normal console window so you can see progress and any errors.
 
-The launcher creates `.venv`, installs Python dependencies, installs frontend dependencies, builds the React app when `dist/` is missing, starts Flask, and opens [http://localhost:5000](http://localhost:5000).
+The launcher creates `.venv`, installs Python dependencies, installs frontend dependencies, rebuilds the React app, starts Flask, and opens [http://localhost:5000](http://localhost:5000).
 
 ### Manual Setup
 

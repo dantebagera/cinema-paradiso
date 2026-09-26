@@ -1,0 +1,18 @@
+Cinema Paradiso native TV final isolated qualification
+Date: 2026-09-18
+Checkout: C:\Users\dante\.codex\worktrees\0870\cinema paradiso
+
+PASS  Full Python regression: 1299 tests in 234.009 seconds
+PASS  Focused TV/acquisition/curation regression: 66 tests
+PASS  Cold-start/safety/decision/qBittorrent UI regression: 29 tests
+PASS  Final qBittorrent UI regression after visual fix: 18 tests
+PASS  Frontend Node utility regression: 95 tests
+PASS  Vite production build: 1669 modules transformed
+PASS  Native TV Playwright flow: 5 tests in 6.8 seconds
+PASS  Final TV Downloads browser assertion: qBittorrent iframe absent from TV tab
+PASS  git diff --check (line-ending conversion warnings only)
+PASS  No listeners left on isolated ports 5117 or 5127
+
+The full Python run emitted two non-failing ResourceWarning messages from test
+file handles. No production checkout, live provider, live qBittorrent profile,
+movie database, TV media library, commit, push, package, or release was used.

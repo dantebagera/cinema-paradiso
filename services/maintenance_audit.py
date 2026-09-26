@@ -15,11 +15,7 @@ from services.movie_identity import group_identity_records
 
 
 RESOLUTION_RANK = {"4K": 4, "1080p": 3, "720p": 2, "480p": 1, "Unknown": 0}
-RIP_RANK = {
-    "BD Remux": 9, "Remux": 8, "Blu-ray": 7, "BDRip": 6,
-    "WEB-DL": 5, "WEBRip": 4, "HDRip": 3, "HDTV": 2,
-    "DVDRip": 1, "DVDScr": 0, "CAMRip": -1, "HDCAM": -2, "Unknown": -3,
-}
+from services.quality_catalog import SOURCE_RANK as RIP_RANK
 _BULK_PLEX_GROUP_LIMIT = 4
 _DURATION_TOLERANCE_RATIO = 0.005
 _ASPECT_RATIO_TOLERANCE = 0.03
@@ -27,6 +23,7 @@ _FRAME_COUNT_TOLERANCE_RATIO = 0.005
 _STRONG_PIXEL_ADVANTAGE = 1.5
 _DECISIVE_PIXEL_ADVANTAGE = 4.0
 _TIED_PIXEL_RATIO = 1.05
+_SAMPLE_CLIP_NAME = re.compile(r"(?i)(?:^|[. _-])sample(?:$|[. _-])")
 _LOSSLESS_AUDIO_CODECS = {
     "alac",
     "flac",
@@ -831,8 +828,16 @@ def _tradeoff_reason(left, right, pair):
     right_encode = f"{_text(right.get('video_codec'))} {int(right.get('video_bit_depth') or 0)}-bit"
     return (
         f"Encoding trade-off — {dimensions}; {left_encode} versus {right_encode}; "
-        f"{pair['storage']['reason']}; cross-codec quality cannot be proven."
+        f"{pair['storage']['reason']}; {_encoding_uncertainty_reason(left, right)}."
     )
+
+
+def _encoding_uncertainty_reason(left, right):
+    left_codec = _text(left.get("video_codec")).lower()
+    right_codec = _text(right.get("video_codec")).lower()
+    if left_codec and right_codec and left_codec != right_codec:
+        return "cross-codec quality cannot be proven"
+    return "matching resolution and codec do not prove equal encoding quality"
 
 
 def _duplicate_identity_safe(files):
@@ -845,6 +850,27 @@ def _duplicate_identity_safe(files):
         if all(identities) and len(set(identities)) == 1:
             return True
     return False
+
+
+def _sample_clip_keeper(candidate, files):
+    """Recognize an explicitly named short sample beside its full movie."""
+    stem = os.path.splitext(candidate["filename"])[0]
+    if not _SAMPLE_CLIP_NAME.search(stem):
+        return None
+    sample_duration = int(candidate.get("duration_ms") or 0)
+    sample_size = int(candidate.get("size") or 0)
+    if not (0 < sample_duration <= 10 * 60_000 and sample_size > 0):
+        return None
+    directory = os.path.normcase(os.path.normpath(os.path.dirname(candidate["path"])))
+    keepers = [
+        file for file in files
+        if file["path"] != candidate["path"]
+        and not _SAMPLE_CLIP_NAME.search(os.path.splitext(file["filename"])[0])
+        and os.path.normcase(os.path.normpath(os.path.dirname(file["path"]))) == directory
+        and int(file.get("duration_ms") or 0) >= max(30 * 60_000, 10 * sample_duration)
+        and int(file.get("size") or 0) >= 10 * sample_size
+    ]
+    return max(keepers, key=lambda file: (int(file["duration_ms"]), int(file["size"]))) if keepers else None
 
 
 def _duplicate_groups(items):
@@ -864,6 +890,11 @@ def _duplicate_groups(items):
         ), reverse=True)
         identity_safe = _duplicate_identity_safe(ranked)
         identity_passed = _shared_identity_evidence(ranked) if identity_safe else []
+        sample_keepers = {
+            file["path"]: keeper
+            for file in ranked
+            if identity_safe and (keeper := _sample_clip_keeper(file, ranked)) is not None
+        }
         pair_results = {}
         for left_index, left in enumerate(ranked):
             for right_index in range(left_index + 1, len(ranked)):
@@ -902,13 +933,45 @@ def _duplicate_groups(items):
         output_files = []
         for index, file in enumerate(ranked):
             row = dict(file)
+            sample_keeper = sample_keepers.get(file["path"])
+            if sample_keeper is not None:
+                sample_seconds = int(file["duration_ms"]) / 1000
+                keeper_minutes = int(sample_keeper["duration_ms"]) / 60_000
+                audio_language_losses = _audio_language_losses(sample_keeper, file)
+                row.update({
+                    "role": "candidate",
+                    "recommendation": "recommended",
+                    "verdict": "recommended_removal",
+                    "verdict_label": "Recommended removal · sample",
+                    "verdict_tone": "danger",
+                    "reason": (
+                        f"Sample clip — {file['filename']} is {sample_seconds:.0f}s and "
+                        f"{file['size_human']}; {sample_keeper['filename']} is "
+                        f"{keeper_minutes:.0f} min and {sample_keeper['size_human']}."
+                    ),
+                    "comparison_peer": sample_keeper["filename"],
+                    "audio_language_losses": audio_language_losses,
+                    "audio_language_loss_keeper": sample_keeper["filename"] if audio_language_losses else "",
+                    **_decision_fields(
+                        warnings=[
+                            "Deletion loses audio language track(s): " + ", ".join(audio_language_losses)
+                        ] if audio_language_losses else [],
+                        passed=[
+                            *identity_passed,
+                            "Filename explicitly identifies a sample clip",
+                            "The full-length movie is in the same folder and is at least 10 times longer and larger",
+                        ],
+                    ),
+                })
+                output_files.append(row)
+                continue
             safe_dominators = []
             uncertain_dominators = []
             safe_dominated = []
             uncertain_dominated = []
             tradeoffs = []
             for other_index, other in enumerate(ranked):
-                if other_index == index:
+                if other_index == index or other["path"] in sample_keepers:
                     continue
                 pair, current_side, other_side = oriented_pair(index, other_index)
                 winner = pair["visual"].get("winner")
@@ -923,7 +986,23 @@ def _duplicate_groups(items):
                     target = safe_dominated if content_safe and feature_safe else uncertain_dominated
                     target.append((other, pair))
 
-            if not identity_safe:
+            if identity_safe and not any(
+                other["path"] not in sample_keepers and other["path"] != file["path"]
+                for other in ranked
+            ) and any(keeper["path"] == file["path"] for keeper in sample_keepers.values()):
+                row.update({
+                    "role": "keep",
+                    "recommendation": "keep",
+                    "verdict": "recommended_keep",
+                    "verdict_label": "Recommended keep",
+                    "verdict_tone": "success",
+                    "reason": "Full-length movie — keep this copy; the separately listed sample clip is the removal candidate.",
+                    **_decision_fields(passed=[
+                        *identity_passed,
+                        "This is the full-length movie beside an explicitly named sample clip",
+                    ]),
+                })
+            elif not identity_safe:
                 row.update({
                     "role": "candidate",
                     "recommendation": "review",
@@ -1066,7 +1145,8 @@ def _duplicate_groups(items):
                     **pair_decision(
                         pair,
                         blockers=[
-                            "Neither copy has a decisive resolution advantage; cross-codec encoding quality cannot be proven",
+                            "Neither copy has a decisive resolution advantage; "
+                            + _encoding_uncertainty_reason(file, peer),
                         ],
                     ),
                 })

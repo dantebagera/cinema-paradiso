@@ -105,7 +105,8 @@ class NativePlayerSourceTests(unittest.TestCase):
         self.assertIn("fillMode: Image.PreserveAspectFit", qml)
         self.assertIn("root.requestActivate()", qml)
         self.assertIn("mpv.forceActiveFocus()", qml)
-        self.assertIn("visible: root.visibility !== Window.FullScreen", qml)
+        self.assertIn("id: windowControls", qml)
+        self.assertIn("visible: opacity > 0", qml)
         for shortcut in (
             'shortcuts.play_pause || "Space"',
             'shortcuts.seek_backward || "Left"',
@@ -173,7 +174,7 @@ class NativePlayerSourceTests(unittest.TestCase):
         cmake = (PLAYER_ROOT / "CMakeLists.txt").read_text(encoding="utf-8")
         icons_root = PLAYER_ROOT / "resources" / "icons"
         icon_names = {
-            "audio-tracks.svg",
+            "audio-language-tracks.svg",
             "download.svg",
             "enter-fullscreen.svg",
             "exit-fullscreen.svg",
@@ -187,9 +188,7 @@ class NativePlayerSourceTests(unittest.TestCase):
             "volume-high.svg",
             "volume-muted.svg",
             "window-close.svg",
-            "window-maximize.svg",
             "window-minimize.svg",
-            "window-restore.svg",
         }
 
         self.assertIn("component CpIconButton: AbstractButton", qml)
@@ -207,8 +206,23 @@ class NativePlayerSourceTests(unittest.TestCase):
         self.assertIn('label: mpv.paused ? "Play" : "Pause"', qml)
         self.assertIn("acceptedButtons: Qt.LeftButton", qml)
         self.assertIn("TapHandler {", qml)
-        self.assertIn("const hitsTopControls", qml)
-        self.assertIn("const hitsBottomControls", qml)
+        self.assertIn("onSingleTapped:", qml)
+        self.assertIn("onDoubleTapped: eventPoint =>", qml)
+        self.assertIn("root.isVideoArea(eventPoint.position)", qml)
+        self.assertIn("WheelHandler {", qml)
+        self.assertIn("root.adjustVolumeFromWheel(event.angleDelta.y)", qml)
+        self.assertIn('toastText = "Volume "', qml)
+        self.assertIn("function isVideoArea(point)", qml)
+        self.assertIn("Layout.preferredHeight: 42", qml)
+        self.assertIn("y: 20", qml)
+        self.assertIn("font.pixelSize: 10", qml)
+        self.assertIn("component CpAudioTracksButton: AbstractButton", qml)
+        self.assertIn('source: "qrc:/icons/audio-language-tracks.svg"', qml)
+        self.assertIn("visible: mpv.audioTracks.length > 1", qml)
+        self.assertIn('text: audioTracksButton.trackCount > 9 ? "9+"', qml)
+        self.assertIn('color: "#0B0A08"', qml)
+        self.assertIn("x: 22", qml)
+        self.assertNotIn("qrc:/icons/audio-tracks.svg", qml)
         self.assertIn(
             "root.visibility === Window.FullScreen && !root.controlsVisible",
             qml,
@@ -233,9 +247,13 @@ class NativePlayerSourceTests(unittest.TestCase):
             svg = (icons_root / icon_name).read_text(encoding="utf-8")
             root = ElementTree.fromstring(svg)
             self.assertEqual(root.attrib.get("viewBox"), "0 0 32 32")
-            self.assertIn("#F7D57A", svg)
-            self.assertIn("#D4AF37", svg)
-            self.assertIn("#8C6418", svg)
+            if icon_name == "audio-language-tracks.svg":
+                self.assertIn("#BD982D", svg)
+                self.assertIn("#0B0A08", svg)
+            else:
+                self.assertIn("#F7D57A", svg)
+                self.assertIn("#D4AF37", svg)
+                self.assertIn("#8C6418", svg)
 
     def test_frameless_window_chrome_preserves_native_windows_semantics(self):
         qml = (PLAYER_ROOT / "qml" / "Main.qml").read_text(encoding="utf-8")
@@ -250,9 +268,10 @@ class NativePlayerSourceTests(unittest.TestCase):
         self.assertIn("flags: Qt.Window | Qt.FramelessWindowHint", qml)
         self.assertIn("id: windowControls", qml)
         self.assertIn("windowChrome.minimize()", qml)
-        self.assertIn("windowChrome.toggleMaximized()", qml)
         self.assertIn("windowChrome.closeWindow()", qml)
-        self.assertIn("root.visibility !== Window.FullScreen", qml)
+        self.assertIn("visible: opacity > 0", qml)
+        self.assertNotIn("windowChrome.toggleMaximized()", qml)
+        self.assertNotIn("root.visibility !== Window.FullScreen", qml)
         self.assertNotIn("nativeCaptionColor", qml)
         self.assertNotIn("applyWindowsCaptionTheme", main)
         self.assertIn("QAbstractNativeEventFilter", header)

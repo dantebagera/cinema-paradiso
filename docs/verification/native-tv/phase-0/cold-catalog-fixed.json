@@ -1,0 +1,38 @@
+{
+  "test_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-gji3pwih",
+  "requests": [
+    {
+      "ok": true,
+      "database": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-gji3pwih\\user-data\\.catalog-test.sqlite"
+    },
+    {
+      "ok": true,
+      "database": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-gji3pwih\\user-data\\.catalog-test.sqlite"
+    },
+    {
+      "ok": true,
+      "database": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-gji3pwih\\user-data\\.catalog-test.sqlite"
+    },
+    {
+      "ok": true,
+      "database": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-gji3pwih\\user-data\\.catalog-test.sqlite"
+    },
+    {
+      "ok": true,
+      "database": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-gji3pwih\\user-data\\.catalog-test.sqlite"
+    },
+    {
+      "ok": true,
+      "database": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-gji3pwih\\user-data\\.catalog-test.sqlite"
+    },
+    {
+      "ok": true,
+      "database": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-gji3pwih\\user-data\\.catalog-test.sqlite"
+    },
+    {
+      "ok": true,
+      "database": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-cold-catalog-gji3pwih\\user-data\\.catalog-test.sqlite"
+    }
+  ],
+  "successes": 8
+}

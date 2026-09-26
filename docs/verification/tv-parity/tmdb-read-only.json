@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Dark Matter",
+    "tmdb_id": 196322,
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Drama"
+    ],
+    "language": "en",
+    "country": [
+      "US"
+    ],
+    "cast_count": 124,
+    "first_cast": [
+      "Joel Edgerton",
+      "Jennifer Connelly",
+      "Alice Braga",
+      "Jimmi Simpson"
+    ],
+    "poster_present": true,
+    "seasons": 2
+  },
+  {
+    "title": "Daredevil: Born Again",
+    "tmdb_id": 202555,
+    "genres": [
+      "Drama",
+      "Action & Adventure",
+      "Crime"
+    ],
+    "language": "en",
+    "country": [
+      "US"
+    ],
+    "cast_count": 259,
+    "first_cast": [
+      "Charlie Cox",
+      "Vincent D'Onofrio",
+      "Margarita Levieva",
+      "Michael Gandolfini"
+    ],
+    "poster_present": true,
+    "seasons": 2
+  },
+  {
+    "title": "The Simpsons",
+    "tmdb_id": 456,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "language": "en",
+    "country": [
+      "US"
+    ],
+    "cast_count": 1210,
+    "first_cast": [
+      "Dan Castellaneta",
+      "Julie Kavner",
+      "Nancy Cartwright",
+      "Yeardley Smith"
+    ],
+    "poster_present": true,
+    "seasons": 38
+  }
+]

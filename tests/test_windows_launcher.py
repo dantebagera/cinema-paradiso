@@ -12,9 +12,10 @@ class WindowsLauncherTest(unittest.TestCase):
         self.window_helper = (self.root / "tools" / "cp_window.ps1").read_text(encoding="utf-8").lower()
 
     def test_launcher_bootstraps_source_zip_before_starting_flask(self):
-        self.assertIn("dist\\index.html", self.script)
+        self.assertNotIn('if not exist "dist\\index.html"', self.script)
         self.assertIn("npm.cmd install", self.script)
         self.assertIn("npm.cmd run build", self.script)
+        self.assertLess(self.script.index("npm.cmd run build"), self.script.index("stop_stale_backend.ps1"))
         self.assertIn("python -m venv .venv", self.script)
         self.assertIn("pip install -r requirements.txt", self.script)
 

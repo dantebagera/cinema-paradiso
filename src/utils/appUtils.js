@@ -41,8 +41,26 @@ export function torrentPrimaryAction(item) {
 }
 
 export function sectionFromPath(pathname, navItems) {
+  if (/^\/tv\/series\/\d+/.test(String(pathname))) return 'library';
   const section = String(pathname || '').replace(/^\/+/, '').split('/')[0];
   return navItems.some((item) => item.id === section) ? section : 'home';
+}
+
+export function buildTvStreamTemplateUrl(template, target) {
+  if (!target?.released || target.reconciliation_required) return '';
+  const tokens = ['tmdb_id', 'season_number', 'episode_number'];
+  let url = String(template || '').trim();
+  if (tokens.some((token) => !url.includes(`{${token}}`))) return '';
+  for (const token of tokens) {
+    const value = Number(target[token]);
+    if (!Number.isInteger(value) || value < (token === 'season_number' ? 0 : 1)) return '';
+    url = url.replaceAll(`{${token}}`, String(value));
+  }
+  if (/[{}]/.test(url)) return '';
+  try {
+    const parsed = new URL(url);
+    return ['http:', 'https:'].includes(parsed.protocol) && !parsed.username && !parsed.password ? url : '';
+  } catch { return ''; }
 }
 
 export function topBarSearchEnabled(activeSection, discoverActiveTab) {

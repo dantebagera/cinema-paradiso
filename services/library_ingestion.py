@@ -603,6 +603,19 @@ class LibraryIngestionCoordinator:
             return
         while True:
             result = self.reconcile_all_now()
+            state = self.dependencies.read_state()
+            matched_paths = result.get("_matched_paths") or []
+            finalization = self.finalize_matched_paths(
+                matched_paths,
+                reason=str(state.get("reason") or "startup"),
+                correlation_id=str(state.get("correlation_id") or f"startup:{uuid.uuid4()}"),
+            )
+            if finalization["failures"] and self._accepting:
+                self.reconcile_paths(
+                    finalization["failures"],
+                    reason="startup:asset-retry",
+                    correlation_id=str(state.get("correlation_id") or ""),
+                )
             self.dependencies.write_state({
                 **result,
                 "detail_backfill": detail_backfill,
@@ -623,6 +636,25 @@ class LibraryIngestionCoordinator:
                 self.dependencies.mark_complete()
                 return
             self.dependencies.sleep(self.dependencies.stability_seconds)
+
+    def finalize_matched_paths(self, paths, *, reason, correlation_id):
+        """Prepare and publish each completed card without cross-path blocking."""
+        publications = []
+        failures = {}
+        for path in dict.fromkeys(str(path or "") for path in paths or () if str(path or "")):
+            try:
+                self.dependencies.prepare_final_card_assets([path])
+                publications.extend(self.dependencies.final_card_publication([path]))
+            except Exception as error:
+                failures[path] = f"{type(error).__name__}: {error}"
+        if publications:
+            self.dependencies.publish_catalog_event(
+                reason=str(reason or "manual").split(":", 1)[0],
+                movie_keys=[publication["movie_key"] for publication in publications],
+                changed_count=len(publications),
+                correlation_id=str(correlation_id or ""),
+            )
+        return {"publications": publications, "failures": failures}
 
     def _submit(self, work_type, values, reason, correlation_id):
         correlation_id = str(correlation_id or uuid.uuid4())
@@ -758,28 +790,18 @@ class LibraryIngestionCoordinator:
                     "correlation_id": item["correlation_id"],
                 }
                 self._last_error = ""
-                asset_retry = False
                 matched_paths = result.get("_matched_paths") or (
                     [item["value"]] if item.get("asset_retry") and item.get("value") else []
                 )
-                if matched_paths:
-                    try:
-                        self.dependencies.prepare_final_card_assets(matched_paths)
-                    except Exception as error:
-                        asset_retry = True
-                        self._last_error = f"{type(error).__name__}: {error}"
-                publications = (
-                    []
-                    if asset_retry
-                    else self.dependencies.final_card_publication(matched_paths)
+                finalization = self.finalize_matched_paths(
+                    matched_paths,
+                    reason=item["reason"],
+                    correlation_id=item["correlation_id"],
                 )
-                if publications:
-                    self.dependencies.publish_catalog_event(
-                        reason=item["reason"].split(":", 1)[0],
-                        movie_keys=[publication["movie_key"] for publication in publications],
-                        changed_count=len(publications),
-                        correlation_id=item["correlation_id"],
-                    )
+                asset_failures = finalization["failures"]
+                asset_retry = bool(asset_failures)
+                if asset_retry:
+                    self._last_error = list(asset_failures.values())[-1]
                 if (
                     (int(result.get("pending") or 0) > 0 or asset_retry)
                     and item["type"] in {"path", "directory"}
@@ -790,10 +812,10 @@ class LibraryIngestionCoordinator:
                         retry_count = int(item.get("retry_count") or 0)
                         retry_delays = self.ASSET_RETRY_DELAYS if asset_retry else self.RETRY_DELAYS
                         if asset_retry and retry_count >= len(retry_delays):
-                            for matched_path in matched_paths:
-                                self.dependencies.store().update_file_record(matched_path, {
+                            for failed_path, failure in asset_failures.items():
+                                self.dependencies.store().update_file_record(failed_path, {
                                     "ingest_status": "failed",
-                                    "poster_error": self._last_error,
+                                    "poster_error": failure,
                                 })
                             continue
                         retry_delay = retry_delays[min(retry_count, len(retry_delays) - 1)]

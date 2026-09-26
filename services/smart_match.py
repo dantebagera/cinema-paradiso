@@ -23,15 +23,8 @@ _RESOLUTIONS = (
     (r"\b720p?\b", "720p"),
     (r"\b480p?\b", "480p"),
 )
-_SOURCES = (
-    (r"\b(?:web[ ._-]*dl|webdl)\b", "WEB-DL"),
-    (r"\b(?:web[ ._-]*rip|webrip)\b", "WEBRip"),
-    (r"\b(?:blu[ ._-]*ray|bluray)\b", "Blu-ray"),
-    (r"\b(?:bd[ ._-]*remux|bdremux)\b", "BD Remux"),
-    (r"\bbdrip\b", "BDRip"),
-    (r"\bhdtv\b", "HDTV"),
-    (r"\bdvdrip\b", "DVDRip"),
-)
+from services.quality_catalog import SOURCE_CATALOG
+_SOURCES = tuple((row['pattern'], row['label']) for row in SOURCE_CATALOG if row['id'] != 'unknown')
 _NOISE = re.compile(
     r"\b(?:h264|h265|x264|x265|hevc|avc|10bit|8bit|aac|ac3|eac3|dts|"
     r"mp4|mkv|avi|eng|english|subs?|subtitles?|dual[ ._-]*audio|multi|"

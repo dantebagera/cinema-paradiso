@@ -1,0 +1,12 @@
+
+Running 5 tests using 1 worker
+
+(node:1964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\native-tv.spec.js:9:1 › TV library uses CP cards, preserves movie state and opens a dedicated series route (2.5s)
+  ok 2 tests\e2e\native-tv.spec.js:31:1 › episode streaming targets exact released episode without marking watched (425ms)
+  ok 3 tests\e2e\native-tv.spec.js:44:1 › episode completion derives Play next without skipping missing episodes (527ms)
+  ok 4 tests\e2e\native-tv.spec.js:56:1 › TV Home progress stays typed and opening a missing next episode navigates to its series (1.3s)
+  ok 5 tests\e2e\native-tv.spec.js:66:1 › TV release review explains rejected capture and submits only the accepted fixture (1.1s)
+
+  5 passed (6.5s)

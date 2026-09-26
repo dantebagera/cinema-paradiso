@@ -382,11 +382,14 @@ class PlaybackHistoryService:
             and result["row"].get("completed_at") is not None
             and config["auto_mark_completed_watched"]
         ):
-            curation = self.curation_store_provider()
-            movie = self._curation_movie(context["media"])
-            if not curation.system_states_for_movie(movie)["watched"]:
-                curation.set_system_list_state("watched", movie, True)
+            self._mark_completed(context["media"])
         return result
+
+    def _mark_completed(self, media):
+        curation = self.curation_store_provider()
+        movie = self._curation_movie(media)
+        if not curation.system_states_for_movie(movie)["watched"]:
+            curation.set_system_list_state("watched", movie, True)
 
     @staticmethod
     def _curation_movie(media):

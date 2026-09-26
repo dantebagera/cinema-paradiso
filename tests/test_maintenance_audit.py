@@ -75,6 +75,98 @@ def candidate(path, **record):
 
 
 class MaintenanceAuditTest(unittest.TestCase):
+    def test_named_sample_beside_full_movie_is_selected_without_selecting_movie(self):
+        folder = "E:/Movies/The.Egyptian.1954.1080p"
+        movie = candidate(
+            f"{folder}/The.Egyptian.1954.1080p.mkv",
+            identity_title="The Egyptian", identity_year="1954", tmdb_id="24973",
+            imdb_id="tt0046949", size=1_500_000_000, duration_ms=8_381_089,
+        )
+        sample = candidate(
+            f"{folder}/Sample.mkv",
+            identity_title="The Egyptian", identity_year="1954", tmdb_id="24973",
+            imdb_id="tt0046949", size=6_800_000, duration_ms=27_611,
+        )
+
+        audit = build_maintenance_audit([sample, movie])
+
+        group = audit["storage"]["groups"][0]
+        rows = {row["filename"]: row for row in group["files"]}
+        self.assertEqual(group["recommended_count"], 1)
+        self.assertEqual(audit["summary"]["recommended_removals"], 1)
+        self.assertEqual(rows["Sample.mkv"]["recommendation"], "recommended")
+        self.assertEqual(rows["Sample.mkv"]["verdict_label"], "Recommended removal · sample")
+        self.assertEqual(rows["The.Egyptian.1954.1080p.mkv"]["recommendation"], "keep")
+        self.assertIn("28s", rows["Sample.mkv"]["reason"])
+
+    def test_sample_name_alone_never_justifies_automatic_removal(self):
+        folder = "E:/Movies/Feature.2000"
+        movie = candidate(f"{folder}/Feature.2000.mkv", size=1_500_000_000, duration_ms=8_000_000)
+        scenarios = (
+            (f"{folder}/Sample.mkv", {"size": 600_000_000, "duration_ms": 4_000_000}),
+            (f"{folder}/Sample.mkv", {"size": 6_000_000, "duration_ms": 0}),
+            ("E:/Movies/Other/Sample.mkv", {"size": 6_000_000, "duration_ms": 30_000}),
+            (f"{folder}/Feature.2000.extra.mkv", {"size": 6_000_000, "duration_ms": 30_000}),
+        )
+        for path, facts in scenarios:
+            with self.subTest(path=path, facts=facts):
+                sample = candidate(path, **facts)
+                group = build_maintenance_audit([movie, sample])["storage"]["groups"][0]
+                row = next(row for row in group["files"] if row["path"] == path)
+                self.assertNotEqual(row["verdict_label"], "Recommended removal · sample")
+
+        unverified = candidate(
+            f"{folder}/Sample.mkv", size=6_000_000, duration_ms=30_000,
+            metadata_accepted=False, identity_status="review", metadata_status="review",
+        )
+        group = build_maintenance_audit([movie, unverified])["storage"]["groups"][0]
+        self.assertEqual(group["recommended_count"], 0)
+
+    def test_sample_recommendation_preserves_audio_language_confirmation(self):
+        folder = "E:/Movies/Alien.1979"
+        movie = candidate(
+            f"{folder}/Alien.1979.mkv", size=1_500_000_000, duration_ms=7_000_000,
+            audio_tracks_json=json.dumps([{"language": "eng"}]),
+        )
+        sample = candidate(
+            f"{folder}/Alien.1979.sample.mkv", size=7_000_000, duration_ms=30_000,
+            audio_tracks_json=json.dumps([{"language": "fra"}]),
+        )
+
+        group = build_maintenance_audit([movie, sample])["storage"]["groups"][0]
+        sample_row = next(row for row in group["files"] if row["filename"].endswith("sample.mkv"))
+
+        self.assertEqual(sample_row["recommendation"], "recommended")
+        self.assertEqual(sample_row["audio_language_losses"], ["French"])
+        self.assertEqual(sample_row["audio_language_loss_keeper"], "Alien.1979.mkv")
+        self.assertTrue(any("French" in warning for warning in sample_row["decision_warnings"]))
+
+    def test_sample_does_not_change_comparison_of_two_full_copies(self):
+        folder = "E:/Movies/Alien.1979"
+        first = candidate(f"{folder}/Alien.1979.first.mkv", size=1_500_000_000, duration_ms=7_000_000)
+        second = candidate(f"{folder}/Alien.1979.second.mkv", size=1_200_000_000, duration_ms=7_000_000)
+        sample = candidate(f"{folder}/Sample.mkv", size=7_000_000, duration_ms=30_000)
+
+        group = build_maintenance_audit([first, second, sample])["storage"]["groups"][0]
+        rows = {row["filename"]: row for row in group["files"]}
+
+        self.assertEqual(rows["Sample.mkv"]["recommendation"], "recommended")
+        self.assertEqual(rows["Alien.1979.first.mkv"]["recommendation"], "review")
+        self.assertEqual(rows["Alien.1979.second.mkv"]["recommendation"], "review")
+
+    def test_same_codec_tradeoff_does_not_claim_cross_codec_difference(self):
+        first = candidate("E:/Movies/Alien.1979.first.mkv", size=1_500_000_000)
+        second = candidate("E:/Movies/Alien.1979.second.mkv", size=1_000_000_000)
+
+        group = build_maintenance_audit([first, second])["storage"]["groups"][0]
+
+        self.assertEqual(group["recommended_count"], 0)
+        self.assertTrue(all(
+            "matching resolution and codec do not prove equal encoding quality" in row["reason"]
+            for row in group["files"]
+        ))
+        self.assertTrue(all("cross-codec" not in row["reason"] for row in group["files"]))
+
     def test_projects_storage_upgrades_and_identity_from_one_catalog_snapshot(self):
         audit = build_maintenance_audit([
             candidate("E:/Movies/Alien.1979.4K.Remux.mkv", resolution="4K", rip_source="Remux", size=400),

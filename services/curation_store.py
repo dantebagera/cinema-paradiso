@@ -338,6 +338,9 @@ class UserCurationStore:
         with self._followed_lock:
             data = self._followed()
             normalized = normalize_curated_movie(movie)
+            profile_id = str((movie or {}).get('profile_id') or '').strip()
+            if profile_id:
+                normalized['profile_id'] = profile_id
             key = _movie_identity_key(normalized)
             now = time.time()
             existing = next((item for item in data['movies'] if _movie_identity_key(item) == key), None)

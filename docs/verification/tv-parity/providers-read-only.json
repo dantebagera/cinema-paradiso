@@ -1,0 +1,523 @@
+{
+  "read_only_provider_calls": true,
+  "real_torrent_submissions": 0,
+  "tracked_series_after_search": 0,
+  "results": [
+    {
+      "tmdb_id": 196322,
+      "states": {
+        "eligible": 0,
+        "resolve": 1,
+        "identity_review": 1,
+        "blocked": 112
+      },
+      "partial": true,
+      "sources": [
+        {
+          "id": "41",
+          "name": "1337x",
+          "state": "timeout",
+          "count": 0
+        },
+        {
+          "id": "30",
+          "name": "ACG.RIP",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "34",
+          "name": "Bangumi Moe",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "35",
+          "name": "BigFANGroup",
+          "state": "complete",
+          "count": 8
+        },
+        {
+          "id": "8",
+          "name": "dmhy",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "11",
+          "name": "LimeTorrents",
+          "state": "complete",
+          "count": 39
+        },
+        {
+          "id": "24",
+          "name": "Mikan",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "25",
+          "name": "NoNaMe Club",
+          "state": "complete",
+          "count": 36
+        },
+        {
+          "id": "27",
+          "name": "Nyaa.si",
+          "state": "complete",
+          "count": 2
+        },
+        {
+          "id": "36",
+          "name": "RuTor",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "37",
+          "name": "SubsPlease",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "6",
+          "name": "The Pirate Bay",
+          "state": "complete",
+          "count": 23
+        },
+        {
+          "id": "38",
+          "name": "Torrent9",
+          "state": "timeout",
+          "count": 0
+        },
+        {
+          "id": "40",
+          "name": "World-torrent",
+          "state": "complete",
+          "count": 6
+        },
+        {
+          "id": "39",
+          "name": "Zamunda RIP",
+          "state": "failed",
+          "count": 0
+        }
+      ],
+      "recommended_count": 1,
+      "examples": [
+        {
+          "title": "Dark Matter 2024 S02E04 1080p ATVP WEB DL DDP5 1 ENG ITA Atmos H265 TBK",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        },
+        {
+          "title": "Dark Matter 2024 S02E03 1080p ATVP WEB DL DDP5 1 ENG ITA Atmos H265 TBK",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        },
+        {
+          "title": "Dark Matter 2024 S02E04 Stelle nascondete la vostra luce ITA ENG 1080p ATVP WEB DL DDP5 1 Atmos H 264 MeM GP",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        },
+        {
+          "title": "Dark Matter 2024 S02E04 Stars Hide Your Fires 1080p ATVP WEB DL DDP5 1 H 264 NTb",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        },
+        {
+          "title": "Dark Matter 2024 S02E03 Ogni cosa e bellezza ogni cosa e spaventosa ITA ENG 1080p ATVP WEB DL DDP5 1 Atmos H 264 MeM GP",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        },
+        {
+          "title": "\u0422\u0451\u043c\u043d\u0430\u044f \u043c\u0430\u0442\u0435\u0440\u0438\u044f / Dark Matter, S1E1-9 of 9 (2024) WEB-DL 1080p | HDrezka Studio\u00a0\u2026",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "identity_unverified",
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        }
+      ],
+      "selected_transport_check": {
+        "accepted": true,
+        "hash_length": 40,
+        "reasons": []
+      },
+      "seconds": 32.97
+    },
+    {
+      "tmdb_id": 202555,
+      "states": {
+        "eligible": 0,
+        "resolve": 2,
+        "identity_review": 15,
+        "blocked": 86
+      },
+      "partial": true,
+      "sources": [
+        {
+          "id": "41",
+          "name": "1337x",
+          "state": "complete",
+          "count": 20
+        },
+        {
+          "id": "30",
+          "name": "ACG.RIP",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "34",
+          "name": "Bangumi Moe",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "35",
+          "name": "BigFANGroup",
+          "state": "complete",
+          "count": 3
+        },
+        {
+          "id": "8",
+          "name": "dmhy",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "11",
+          "name": "LimeTorrents",
+          "state": "complete",
+          "count": 40
+        },
+        {
+          "id": "24",
+          "name": "Mikan",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "25",
+          "name": "NoNaMe Club",
+          "state": "complete",
+          "count": 17
+        },
+        {
+          "id": "27",
+          "name": "Nyaa.si",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "36",
+          "name": "RuTor",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "37",
+          "name": "SubsPlease",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "6",
+          "name": "The Pirate Bay",
+          "state": "complete",
+          "count": 20
+        },
+        {
+          "id": "38",
+          "name": "Torrent9",
+          "state": "timeout",
+          "count": 0
+        },
+        {
+          "id": "40",
+          "name": "World-torrent",
+          "state": "complete",
+          "count": 3
+        },
+        {
+          "id": "39",
+          "name": "Zamunda RIP",
+          "state": "failed",
+          "count": 0
+        }
+      ],
+      "recommended_count": 1,
+      "examples": [
+        {
+          "title": "Daredevil: Born Again (2025) S01 (1080p DSNP WEB-DL x265 10bit EAC3 5.1 Silence) REPACK [QxR]",
+          "state": "resolve",
+          "episodes": [
+            1,
+            2,
+            3
+          ],
+          "reasons": [
+            "hash_invalid"
+          ]
+        },
+        {
+          "title": "Daredevil - Born Again (2025) S01 (1080p DSNP WEB-DL x265 10bit EAC3 5.1 Silence",
+          "state": "blocked",
+          "episodes": [
+            1,
+            2,
+            3
+          ],
+          "reasons": [
+            "transport_untrusted"
+          ]
+        },
+        {
+          "title": "Daredevil.Born.Again.S01.COMPLETE.1080p.DSNP.WEB-DL.H264-NTB-[S01.Full]",
+          "state": "blocked",
+          "episodes": [
+            1,
+            2,
+            3
+          ],
+          "reasons": [
+            "identity_unverified",
+            "transport_untrusted"
+          ]
+        },
+        {
+          "title": "Daredevil.Born.Again.S01.Complete.1080p.WEB-DL.AAC5.1.x265-PSYPHER",
+          "state": "identity_review",
+          "episodes": [
+            1,
+            2,
+            3
+          ],
+          "reasons": [
+            "identity_unverified",
+            "hash_invalid"
+          ]
+        },
+        {
+          "title": "Daredevil Born Again S01E05 With Interest 1080p WEBRip 10Bit DDP5 1 Atmos HEVC d3g",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "identity_unverified",
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        },
+        {
+          "title": "Daredevil Born Again S01E06 Excessive Force 1080p WEBRip 10Bit DDP5 1 Atmos HEVC d3g",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "identity_unverified",
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        }
+      ],
+      "selected_transport_check": {
+        "accepted": true,
+        "hash_length": 40,
+        "reasons": []
+      },
+      "seconds": 24.03
+    },
+    {
+      "tmdb_id": 456,
+      "states": {
+        "eligible": 0,
+        "resolve": 21,
+        "identity_review": 0,
+        "blocked": 79
+      },
+      "partial": true,
+      "sources": [
+        {
+          "id": "41",
+          "name": "1337x",
+          "state": "complete",
+          "count": 54
+        },
+        {
+          "id": "30",
+          "name": "ACG.RIP",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "34",
+          "name": "Bangumi Moe",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "35",
+          "name": "BigFANGroup",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "8",
+          "name": "dmhy",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "11",
+          "name": "LimeTorrents",
+          "state": "complete",
+          "count": 37
+        },
+        {
+          "id": "24",
+          "name": "Mikan",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "25",
+          "name": "NoNaMe Club",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "27",
+          "name": "Nyaa.si",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "36",
+          "name": "RuTor",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "37",
+          "name": "SubsPlease",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "6",
+          "name": "The Pirate Bay",
+          "state": "complete",
+          "count": 9
+        },
+        {
+          "id": "38",
+          "name": "Torrent9",
+          "state": "timeout",
+          "count": 0
+        },
+        {
+          "id": "40",
+          "name": "World-torrent",
+          "state": "complete",
+          "count": 0
+        },
+        {
+          "id": "39",
+          "name": "Zamunda RIP",
+          "state": "failed",
+          "count": 0
+        }
+      ],
+      "recommended_count": 1,
+      "examples": [
+        {
+          "title": "The.Simpsons.S01.REPACK.1080p.WEBRip.x265-KONTRAST",
+          "state": "resolve",
+          "episodes": [
+            1,
+            2,
+            3
+          ],
+          "reasons": [
+            "hash_invalid"
+          ]
+        },
+        {
+          "title": "The Simpsons S01E01 Simpsons Roasting On An Open Fire 1080p WEB-DL x265 DDP5.1",
+          "state": "resolve",
+          "episodes": [
+            1
+          ],
+          "reasons": [
+            "hash_invalid"
+          ]
+        },
+        {
+          "title": "The Simpsons S33E20 Marge the Meanie 1080p DSNP WEB DL DD 5 1 H 264 NTb",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        },
+        {
+          "title": "The Simpsons S19E13 The Debarted 1080p AMZN WEB DL DD 5 1 H 264 CtrlHD",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        },
+        {
+          "title": "The Simpsons S18E11 Revenge Is a Dish Best Served Three Times 1080p AMZN WEB DL DD 5 1 H 264 CtrlHD",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        },
+        {
+          "title": "The Simpsons S19E09 Eternal Moonshine of the Simpson Mind 1080p AMZN WEB DL DD 5 1 H 264 CtrlHD",
+          "state": "blocked",
+          "episodes": [],
+          "reasons": [
+            "hash_invalid",
+            "coverage_missing"
+          ]
+        }
+      ],
+      "selected_transport_check": {
+        "accepted": true,
+        "hash_length": 40,
+        "reasons": []
+      },
+      "seconds": 26.99
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+[
+  {
+    "Asset": "AIControlWorkspace-SaUVTFMJ.js",
+    "SHA256": "5DC91BE01ECF505C3A6C6A784695E4CDAE6809AFEFF7BCEC8BBC3146267675CF",
+    "Matches": true
+  },
+  {
+    "Asset": "CardLab-B_JwfSRF.js",
+    "SHA256": "FA8300D85B99A35BB5A1724B7AE18B44B754A06981614E893655C271F45E63EC",
+    "Matches": true
+  },
+  {
+    "Asset": "CleanupWorkspace-Bi_zCrvt.js",
+    "SHA256": "92BE242B7B8EF5519A1FB2CE62970D25C8AF7B443572E24F3E71AE9A10E10927",
+    "Matches": true
+  },
+  {
+    "Asset": "DiscoverResultGrid-BUJwuOZC.js",
+    "SHA256": "76D3969F6BA198AA61538788025143E90C91DFC25A287FAF4A84F7C7B1D9BA20",
+    "Matches": true
+  },
+  {
+    "Asset": "DiscoverWorkspace-BOltCflb.js",
+    "SHA256": "B1AAE688FD308870D585053C4322409D86B925EB2AFD4A1FCDF4D3F2F3E23860",
+    "Matches": true
+  },
+  {
+    "Asset": "DownloadsWorkspace-F4UCbt_v.js",
+    "SHA256": "C89313C9F017BC2FAE10D1A02175F8C39C8AE896111A2F70068A262A250980D8",
+    "Matches": true
+  },
+  {
+    "Asset": "header-CbieqaTQ.js",
+    "SHA256": "2990E46277B33E8F1378FF76B3EF58D9EF4681117065634933C98BA25DA6D9F9",
+    "Matches": true
+  },
+  {
+    "Asset": "header-Cr7VYxUL.png",
+    "SHA256": "41584F11EB6CA51EEACC6DEDB0262D12FAFFBE926DBCE0F424A0147CE072E506",
+    "Matches": true
+  },
+  {
+    "Asset": "HelpWorkspace-Cs2yD3th.js",
+    "SHA256": "0CA0CA8B0DB6F84F0B15E144A2A997F0B0B594C42C67A040D6F75330EF355CCF",
+    "Matches": true
+  },
+  {
+    "Asset": "HomeWorkspace-DhRgxaF1.js",
+    "SHA256": "00FA39495A7338024275FEF5E1DE8A08C34ED412A33FC332C12A3C514E4B2E80",
+    "Matches": true
+  },
+  {
+    "Asset": "index-CSVcTlat.css",
+    "SHA256": "9DB643821605601594D5115F65A46ECD5D21DBC75C554064B35FF3CF370B1A30",
+    "Matches": true
+  },
+  {
+    "Asset": "index-DXj8IYxR.js",
+    "SHA256": "6FF18CAF5F1F23CFFAF41A60A2EC68C26657841F9EA02BA3C40AD8F175269FF4",
+    "Matches": true
+  },
+  {
+    "Asset": "iptv-C8EpXFPS.js",
+    "SHA256": "A2BC174D3EA2096DCEC9707FD2039205483CFE3F1A62CD495E247F1BBC3A7FA1",
+    "Matches": true
+  },
+  {
+    "Asset": "IPTVWorkspace-Cx_ZMdzz.css",
+    "SHA256": "FA1858F48C6EB0DBFF02FB2D456946B3858883271FEE6CB851921E02C81A6091",
+    "Matches": true
+  },
+  {
+    "Asset": "IPTVWorkspace-wmaeVu9N.js",
+    "SHA256": "C0804914EBAC762788E064C46C1D19234EA47951F058B46BED59FDB3B4810A41",
+    "Matches": true
+  },
+  {
+    "Asset": "LibraryControls-CvtfzI2M.js",
+    "SHA256": "D20552BA1A81020BB205E29B3F29B5F962A95D63828C0C820CD0B00FD102F1EC",
+    "Matches": true
+  },
+  {
+    "Asset": "LibraryWorkspace-SNI1CC8l.js",
+    "SHA256": "087471ACAA36DD1DF788A4453C53E47143AB49415E7B1A9ABD125DF13BF3A3D1",
+    "Matches": true
+  },
+  {
+    "Asset": "logo-Dk1rN4XL.svg",
+    "SHA256": "33CBD83FF6E88C7AC88A6EE8596FA017C2493761B5C8BFB76D53EE6ED4EF61F7",
+    "Matches": true
+  },
+  {
+    "Asset": "manifest-CoGn2ic7.webmanifest",
+    "SHA256": "183535125A867535E629C1A7310CE4A0DE0C09767E54C85078E54DEBC7B95A10",
+    "Matches": true
+  },
+  {
+    "Asset": "MetadataCorrectionModal-BUaJt21f.js",
+    "SHA256": "74CE2EB72705C0E9280182C21FF2DCB88C405F8F97A224F3AF0C5DA08575673C",
+    "Matches": true
+  },
+  {
+    "Asset": "MovieListsWorkspace-DoA0X7mS.js",
+    "SHA256": "54B471B4A9B414A42EBA90806A1BDAEAA330EC2403DA78692416DC02CC48EC40",
+    "Matches": true
+  },
+  {
+    "Asset": "moviePresentation-Di650b9v.js",
+    "SHA256": "AE4EB47B0C81CA877C932FDF921D1555CFC5A500F3E427DB132EFBBC3DDF2390",
+    "Matches": true
+  },
+  {
+    "Asset": "Pagination-Be37h9O0.js",
+    "SHA256": "72B1BDDB0EBE9C350B15E9647105BA1F2BFFA6A51771085CB294614F8AFE0047",
+    "Matches": true
+  },
+  {
+    "Asset": "SettingsWorkspace-CE4N12rd.js",
+    "SHA256": "421B169D39D92319D5B6A1EDE6A0CFD315EFB4A31799BDA29FCE38CAC45100E2",
+    "Matches": true
+  },
+  {
+    "Asset": "StyleGuide-mOepZVQA.js",
+    "SHA256": "E681619E7C2B892A5F761B0D247FACD44723EE74CD1008CE3EA64153836DC1F1",
+    "Matches": true
+  },
+  {
+    "Asset": "styleguide-motif-crop-B3fTh5_H.png",
+    "SHA256": "B81C2444E32BC2B7F1F2E9D03696DB817720C656FE21F73AD45BC28BDCC0430D",
+    "Matches": true
+  },
+  {
+    "Asset": "useCardGridMetrics-3UBTkn9U.js",
+    "SHA256": "00DF8BADBD739EA264185A23DA94A8263885369FB28EF6E3F181CBC50E3523B5",
+    "Matches": true
+  },
+  {
+    "Asset": "useMovieCollectionCache-qxd8tSuo.js",
+    "SHA256": "AD624F0CE3C9A789469119F3BAB76D852E4AA75650280A3271EC910C3DE67A5E",
+    "Matches": true
+  },
+  {
+    "Asset": "vendor-Bb8JjhAW.js",
+    "SHA256": "63F6B447B655F5FDEEE94114448A3E09BC92E8058DDF2ED3B44C16D3967943B3",
+    "Matches": true
+  },
+  {
+    "Asset": "vendor-icons-D6sRCj1Q.js",
+    "SHA256": "7BF79D2D7A909DADD64BC75CA8BF856F5E082087AC7DBA35A00D3CD0829BCFE4",
+    "Matches": true
+  },
+  {
+    "Asset": "vendor-player-Dv34CeeU.js",
+    "SHA256": "84F81A550A2B07E93D1BDE4085CB65278A453C352523AABB64571293A4EAE8C8",
+    "Matches": true
+  },
+  {
+    "Asset": "vendor-react-CJZMWplS.js",
+    "SHA256": "E697FC45388C3FE8087A2B6812932D72416C70D8872652EB5FFE5B34FA0B1CB9",
+    "Matches": true
+  },
+  {
+    "Asset": "WorkspacePathBar-DHH3zIkq.js",
+    "SHA256": "2E3CF477E340D547F413ADD6F3F3FA0FDEBCE2EB28F6C5B85C764ABC5DCA3462",
+    "Matches": true
+  }
+]

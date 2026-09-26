@@ -57,6 +57,49 @@ class TorrentIdentityMismatch(TorrentValidationError):
     pass
 
 
+def torrent_content_hash(content):
+    """Hash the exact bencoded info bytes without starting a torrent client."""
+    import hashlib
+    if not isinstance(content, bytes) or len(content) > 10 * 1024 * 1024:
+        raise TorrentValidationError('Invalid torrent metadata size')
+    spans = []
+    def read(pos, depth=0):
+        if depth > 64 or pos >= len(content):
+            raise TorrentValidationError('Invalid torrent metadata')
+        token = content[pos:pos+1]
+        if token == b'i':
+            end = content.index(b'e', pos)
+            return int(content[pos+1:end]), end+1
+        if token in (b'd', b'l'):
+            result = {} if token == b'd' else []
+            pos += 1
+            while content[pos:pos+1] != b'e':
+                key, pos = read(pos, depth+1)
+                if token == b'd':
+                    if not isinstance(key, bytes) or key in result:
+                        raise TorrentValidationError('Invalid torrent dictionary')
+                    start = pos
+                    value, pos = read(pos, depth+1)
+                    result[key] = value
+                    if depth == 0 and key == b'info': spans.append((start, pos))
+                else: result.append(key)
+            return result, pos+1
+        end = content.index(b':', pos)
+        size = int(content[pos:end])
+        if size < 0 or end+1+size > len(content):
+            raise TorrentValidationError('Invalid torrent string')
+        return content[end+1:end+1+size], end+1+size
+    try:
+        value, end = read(0)
+        if end != len(content) or not isinstance(value, dict) or len(spans) != 1 or not isinstance(value.get(b'info'), dict):
+            raise ValueError()
+        start, stop = spans[0]
+        algorithm = hashlib.sha256 if value[b'info'].get(b'meta version') == 2 and b'pieces' not in value[b'info'] else hashlib.sha1
+        return algorithm(content[start:stop]).hexdigest()
+    except (ValueError, IndexError, TypeError) as error:
+        raise TorrentValidationError('Invalid torrent metadata') from error
+
+
 def normalize_architecture(value=None):
     raw = str(value or platform.machine() or "").strip().lower()
     if raw in {"amd64", "x86_64", "x64"}:
@@ -396,6 +439,8 @@ def validate_torrent_manifest(manifest, expected_size=0, expected_hash=""):
             not path_text
             or path.is_absolute()
             or path.drive
+            or path.anchor
+            or ':' in path_text
             or any(ord(character) < 32 for character in path_text)
             or any(part in {"", ".", ".."} for part in path.parts)
         ):
@@ -648,10 +693,10 @@ class QBittorrentClient:
         except (UnicodeDecodeError, ValueError) as error:
             raise QBittorrentError("qBittorrent returned an invalid torrent manifest") from error
 
-    def add_torrent(self, content, filename, save_path):
+    def add_torrent(self, content, filename, save_path, *, stopped=False):
         self.request(
             "/api/v2/torrents/add",
-            fields={"savepath": save_path, "tags": QBT_TAG, "paused": "false", "root_folder": "true"},
+            fields={"savepath": save_path, "tags": QBT_TAG, "paused": str(stopped).lower(), "stopped": str(stopped).lower(), "root_folder": "true"},
             files={"torrents": (filename, content, "application/x-bittorrent")},
         )
 
@@ -665,6 +710,10 @@ class QBittorrentClient:
 
     def pause(self, torrent_hash):
         self.request("/api/v2/torrents/stop", {"hashes": torrent_hash})
+
+    def file_priority(self, torrent_hash, indices, priority):
+        if indices:
+            self.request('/api/v2/torrents/filePrio', {'hash': torrent_hash, 'id': '|'.join(str(int(i)) for i in indices), 'priority': int(priority)})
 
     def resume(self, torrent_hash):
         self.request("/api/v2/torrents/start", {"hashes": torrent_hash})
@@ -696,6 +745,7 @@ class QBittorrentManager:
         self._process = None
         self._completion_lock = threading.Lock()
         self._update_lock = threading.Lock()
+        self.domain_handlers = {}
 
     @property
     def destination(self):
@@ -1003,7 +1053,7 @@ class QBittorrentManager:
         return {
             **(metadata or {}),
             "state": "downloading",
-            "destination": str(self.destination),
+            "destination": str(metadata.get('destination') if (metadata or {}).get('media_type') == 'tv' else self.destination),
             "submitted_at": submitted_at,
             "resubmitted_at": submitted_at if resubmitted else None,
             "source_type": source_type,
@@ -1025,6 +1075,18 @@ class QBittorrentManager:
     @staticmethod
     def _expected_info_hash(metadata, magnet=""):
         return normalize_torrent_info_hash((metadata or {}).get("expected_info_hash")) or magnet_hash(magnet)
+
+    def _validate_domain_manifest(self, metadata, files):
+        media_type = (metadata or {}).get('media_type', 'movie')
+        if media_type == 'movie':
+            return None
+        handler = self.domain_handlers.get(media_type)
+        if not handler:
+            raise TorrentValidationError('No validator is available for this media type')
+        try:
+            return handler.validate_manifest(metadata, files)
+        except (ValueError, LookupError) as error:
+            raise TorrentValidationError(str(error)) from error
 
     def _queue_magnet_validation(self, magnet, metadata, *, existing=None):
         torrent_hash = self._expected_info_hash(metadata, magnet)
@@ -1075,10 +1137,25 @@ class QBittorrentManager:
                     "files": [{"path": item.get("name"), "length": item.get("size")} for item in files],
                 },
             }, job.get("expected_size"), torrent_hash)
+            domain = self._validate_domain_manifest(job, files)
+            if domain is not None:
+                manifest['domain'] = domain
+                wanted_names = {r['name'] for r in domain.get('mappings', [])}
+                if wanted_names and len(wanted_names) < len(files):
+                    wanted = [f.get('index', i) for i, f in enumerate(files) if f.get('name') in wanted_names]
+                    skipped = [f.get('index', i) for i, f in enumerate(files) if f.get('name') not in wanted_names]
+                    self.client.file_priority(torrent_hash, skipped, 0)
+                    self.client.file_priority(torrent_hash, wanted, 1)
+                    checked = self.client.files(torrent_hash)
+                    if len(checked) != len(files) or any((int(f.get('priority', -1)) > 0) != (f.get('name') in wanted_names) or int(f.get('priority', -1)) < 0 for f in checked):
+                        raise TorrentValidationError('qBittorrent did not confirm the selected episode files')
         except TorrentValidationError as error:
             cleanup_error = ""
             try:
-                self.client.remove_without_files(torrent_hash)
+                if job.get('media_type') == 'tv':
+                    self.client.pause(torrent_hash)
+                else:
+                    self.client.remove_without_files(torrent_hash)
             except (QBittorrentError, OSError) as cleanup:
                 cleanup_error = f" qBittorrent cleanup failed: {cleanup}"
             return self.jobs.upsert(torrent_hash, {
@@ -1155,33 +1232,47 @@ class QBittorrentManager:
             raise QBittorrentError("Invalid torrent file")
         if not self.ensure_running():
             raise QBittorrentError("Embedded qBittorrent is not installed")
+        raw_manifest = self.client.parse_torrent_metadata(content, filename)
         manifest = validate_torrent_manifest(
-            self.client.parse_torrent_metadata(content, filename),
+            raw_manifest,
             (metadata or {}).get("expected_size"),
             (metadata or {}).get("expected_info_hash"),
         )
+        domain = self._validate_domain_manifest(metadata, _normalized_torrent_manifest(raw_manifest)[2])
+        if domain is not None:
+            manifest['domain'] = domain
         before = {item.get("hash") for item in self.client.torrents()}
-        self.client.add_torrent(content, filename, str(self.staging_dir))
+        expected = (metadata or {}).get('expected_info_hash') if (metadata or {}).get('media_type') == 'tv' else None
         torrent_hash = ""
+        if expected and expected in before:
+            if not (metadata or {}).get('submission_retry'):
+                raise TorrentValidationError('Torrent already exists in the client outside this acquisition')
+            # The durable intent predates this retry. Recover an acknowledged-
+            # late add without another transfer or payload resume.
+            self.client.pause(expected)
+            torrent_hash = expected
+        elif (metadata or {}).get('media_type') == 'tv':
+            self.client.add_torrent(content, filename, str(self.staging_dir), stopped=True)
+        else:
+            self.client.add_torrent(content, filename, str(self.staging_dir))
         for _ in range(20):
+            if torrent_hash:
+                break
             time.sleep(0.2)
             after = self.client.torrents()
-            added = [item for item in after if item.get("hash") not in before]
+            added = [item for item in after if item.get("hash") not in before and (not expected or str(item.get('hash')).lower() == expected)]
             if added:
                 torrent_hash = str(added[0].get("hash", ""))
                 break
         if not torrent_hash:
             raise QBittorrentError("qBittorrent accepted the torrent but its hash could not be identified")
         submitted_at = time.time()
-        return self.jobs.upsert(
-            torrent_hash,
-            self._submission_patch(
+        patch = self._submission_patch(
                 {**(metadata or {}), "validated_manifest": {**manifest, "checked_at": submitted_at}},
-                "torrent",
-                submitted_at,
-                resubmitted=bool(self.jobs.get(torrent_hash)),
-            ),
-        )
+                "torrent", submitted_at, resubmitted=bool(self.jobs.get(torrent_hash)))
+        if (metadata or {}).get('media_type') == 'tv':
+            patch.update(state='validating', validation_started_at=submitted_at, validation_mode='stopped_file_selection')
+        return self.jobs.upsert(torrent_hash, patch)
 
     def _payload_paths(self, torrent, files):
         save_path = Path(torrent.get("save_path") or self.staging_dir)
@@ -1299,6 +1390,29 @@ class QBittorrentManager:
             torrent = torrents.get(torrent_hash)
             if job.get("state") == "validating":
                 results.append(self._process_pending_magnet_validation(torrent_hash, job, torrent))
+                continue
+            if job.get('media_type') == 'tv':
+                handler = self.domain_handlers.get('tv')
+                if handler:
+                    results.append(handler.process_completed(self, torrent_hash, job, torrent))
+                else:
+                    results.append(self.jobs.upsert(torrent_hash, {'state': 'needs_review', 'last_error': 'Native TV import is not enabled'}))
+                continue
+            if job.get('import_mode') in {'hardlink_copy', 'copy'}:
+                if job.get('state') == 'imported':
+                    if job.get('library_scan_pending'):
+                        results.append(job)
+                    continue
+                if torrent and float(torrent.get('progress') or 0) >= 1:
+                    try:
+                        from services.verified_import import import_verified_files
+                        files = self.client.files(torrent_hash)
+                        validate_torrent_manifest({'hash': torrent_hash, 'info': {'files': [{'path': item['name'], 'length': item['size']} for item in files]}}, job.get('expected_size'), torrent_hash)
+                        sources = [Path(torrent.get('save_path') or self.staging_dir) / item['name'] for item in files if Path(item['name']).suffix.lower() in MOVIE_VIDEO_EXTENSIONS]
+                        import_verified_files(self.jobs, torrent_hash, sources, self.staging_dir, job['destination'], mode=job['import_mode'])
+                        results.append(self.jobs.upsert(torrent_hash, {'state': 'imported', 'library_scan_pending': True, 'identity_handoff': {'state': 'pending'}}))
+                    except Exception as error:
+                        results.append(self.jobs.upsert(torrent_hash, {'state': 'import_failed', 'last_error': str(error)}))
                 continue
             if job.get("state") in {"cancelled", "abandoned"}:
                 if not torrent:

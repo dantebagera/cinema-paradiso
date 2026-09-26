@@ -1,0 +1,35 @@
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................C:\Program Files\Python312\Lib\json\encoder.py:414: ResourceWarning: unclosed file <_io.FileIO name='C:\\Users\\dante\\AppData\\Local\\Temp\\tmpab0qp3h3' mode='rb+' closefd=True>
+  def _iterencode(o, _current_indent_level):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...........F.F...........................................................................................................FC:\Program Files\Python312\Lib\unittest\case.py:589: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\dante\\.codex\\worktrees\\0870\\cinema paradiso\\dist/index.html'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+......................................................................................................................................................................................................................................................
+======================================================================
+FAIL: test_status_and_after_download_action (test_power_api.PowerApiTests.test_status_and_after_download_action)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\0870\cinema paradiso\tests\test_power_api.py", line 24, in test_status_and_after_download_action
+    self.assertTrue(status.get_json()["torrent_client"]["can_close"])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_turn_off_forwards_the_embedded_qbittorrent_choice (test_power_api.PowerApiTests.test_turn_off_forwards_the_embedded_qbittorrent_choice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\0870\cinema paradiso\tests\test_power_api.py", line 38, in test_turn_off_forwards_the_embedded_qbittorrent_choice
+    self.assertEqual(response.status_code, 200)
+AssertionError: 409 != 200
+
+======================================================================
+FAIL: test_qbittorrent_webui_has_a_separate_proxy_route (test_react_routes.ReactRouteTest.test_qbittorrent_webui_has_a_separate_proxy_route)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\0870\cinema paradiso\tests\test_react_routes.py", line 35, in test_qbittorrent_webui_has_a_separate_proxy_route
+    self.assertEqual(response.status_code, 200)
+AssertionError: 409 != 200
+
+----------------------------------------------------------------------
+Ran 1252 tests in 210.564s
+
+FAILED (failures=3)

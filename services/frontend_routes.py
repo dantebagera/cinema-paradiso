@@ -46,6 +46,8 @@ def register_frontend_routes(app, base_dir):
     for position, path in enumerate(REACT_SECTION_PATHS):
         app.add_url_rule(path, f"frontend_section_{position}", frontend_index)
 
+    app.add_url_rule("/tv/series/<int:series_id>", "frontend_tv_series", lambda series_id: frontend_index())
+
     def frontend_asset(filename):
         return send_from_directory(os.path.join(dist_dir, "assets"), filename)
 

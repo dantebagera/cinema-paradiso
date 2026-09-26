@@ -1,7 +1,7 @@
 {
   "schema": "cinema-paradiso-player-build-v1",
-  "bundle_version": "0.1.26-qt6.10.3-mpv20260610-lgpl-cp2.8.5",
-  "player_version": "0.1.26",
+  "bundle_version": "0.1.34-qt6.10.3-mpv20260610-lgpl-cp2.8.5",
+  "player_version": "0.1.34",
   "ipc_protocol_version": 1,
   "mpv_version": "git-48e6c35c0e05",
   "mpv_commit": "48e6c35c0e056d9e4ff04b98e012416697736d8a",

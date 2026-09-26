@@ -45,7 +45,7 @@ class QBittorrentUiTests(unittest.TestCase):
             self.assertIn(text, self.help_source)
 
     def test_downloads_workspace_keeps_cp_shell_and_frames_qbittorrent(self):
-        self.assertIn("function DownloadsWorkspace()", self.source)
+        self.assertIn("function DownloadsWorkspace({ tvEnabled = false })", self.source)
         self.assertIn('title="qBittorrent Downloads"', self.source)
         self.assertIn('src="/qbittorrent/"', self.source)
         self.assertIn("@app.route('/qbittorrent/')", self.backend_source)
@@ -124,7 +124,8 @@ class QBittorrentUiTests(unittest.TestCase):
         package = json.loads((root / "package.json").read_text(encoding="utf-8"))
         release_version = package["version"]
 
-        self.assertIn(f"**Current release: v{release_version}**", readme)
+        version_label = "Current local development version" if "-" in release_version else "Current release"
+        self.assertIn(f"**{version_label}: v{release_version}**", readme)
         self.assertIn("Help", readme)
         self.assertIn("bundled qbittorrent", readme.lower())
         self.assertIn(f"## v{release_version}", changelog)

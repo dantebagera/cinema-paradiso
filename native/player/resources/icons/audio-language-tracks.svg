@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- The count is drawn by QML; this preserves the requested speaker-tile layout. -->
+  <rect x="2" y="5" width="28" height="22" rx="5" fill="#BD982D"/>
+  <!-- The block and horn share the same vertical centreline. -->
+  <rect x="5" y="13" width="3" height="6" rx="1.2" fill="#0B0A08"/>
+  <path d="M9 12.5 15.1 8.1q1.5-1 1.5.9v14q0 1.9-1.5.9L9 19.5Z" fill="#0B0A08"/>
+</svg>

@@ -117,9 +117,76 @@ ApplicationWindow {
         ToolTip.text: iconControl.label
     }
 
+    component CpAudioTracksButton: AbstractButton {
+        id: audioTracksButton
+        required property int trackCount
+        property bool selected: false
+        implicitWidth: 42
+        implicitHeight: 42
+        hoverEnabled: true
+        focusPolicy: Qt.StrongFocus
+        scale: down ? 0.92 : 1
+
+        Behavior on scale {
+            NumberAnimation { duration: 90; easing.type: Easing.OutCubic }
+        }
+
+        contentItem: Item {
+            Image {
+                anchors.centerIn: parent
+                width: 28
+                height: 28
+                source: "qrc:/icons/audio-language-tracks.svg"
+                fillMode: Image.PreserveAspectFit
+                sourceSize.width: 56
+                sourceSize.height: 56
+                opacity: audioTracksButton.hovered || audioTracksButton.activeFocus
+                         || audioTracksButton.selected
+                         ? PlayerTheme.playerGoldActiveOpacity
+                         : PlayerTheme.playerGoldRestOpacity
+            }
+            Text {
+                x: 22
+                y: 15
+                width: 12
+                height: 12
+                text: audioTracksButton.trackCount > 9 ? "9+" : String(audioTracksButton.trackCount)
+                color: "#0B0A08"
+                font.pixelSize: audioTracksButton.trackCount > 9 ? 7 : 10
+                font.weight: Font.DemiBold
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
+        }
+
+        background: Rectangle {
+            color: "transparent"
+            border.width: 0
+        }
+
+        ToolTip.visible: audioTracksButton.hovered
+        ToolTip.delay: 450
+        ToolTip.text: audioTracksButton.trackCount + " audio tracks"
+    }
+
     function showControls() {
         controlsVisible = true
         hideControls.restart()
+    }
+
+    function adjustVolumeFromWheel(delta) {
+        if (!delta)
+            return
+        const volume = Math.max(0, Math.min(100, mpv.volume + (delta > 0 ? 5 : -5)))
+        mpv.setVolume(volume)
+        toastText = "Volume " + Math.round(volume) + "%"
+        toastTimer.restart()
+        showControls()
+    }
+
+    function isVideoArea(point) {
+        return !(topBar.visible && point.y < topBar.height)
+                && !(bottomBar.visible && point.y >= bottomBar.y)
     }
 
     function colorWithOpacity(color, opacity) {
@@ -407,15 +474,28 @@ ApplicationWindow {
                      && !statisticsOpen
                      && !speedPanel.opened
             acceptedButtons: Qt.LeftButton
-            onTapped: eventPoint => {
+            onSingleTapped: eventPoint => {
                 const point = eventPoint.position
-                const hitsTopControls = topBar.visible && point.y < topBar.height
-                const hitsBottomControls = bottomBar.visible && point.y >= bottomBar.y
-                if (!hitsTopControls && !hitsBottomControls) {
+                if (root.isVideoArea(point)) {
                     mpv.togglePause()
                     root.showControls()
                 }
             }
+            onDoubleTapped: eventPoint => {
+                if (root.isVideoArea(eventPoint.position))
+                    root.toggleFullscreen()
+            }
+        }
+
+        WheelHandler {
+            enabled: !playerBridge.resumeDecisionPending
+                     && !audioPanelOpen
+                     && !subtitlePanelOpen
+                     && !chapterPanelOpen
+                     && !subtitleSearchOpen
+                     && !statisticsOpen
+                     && !speedPanel.opened
+            onWheel: event => root.adjustVolumeFromWheel(event.angleDelta.y)
         }
     }
 
@@ -502,7 +582,7 @@ ApplicationWindow {
         anchors.rightMargin: 8
         height: windowChrome.dragHeight
         spacing: 4
-        visible: root.visibility !== Window.FullScreen && opacity > 0
+        visible: opacity > 0
         opacity: root.controlsVisible ? 1 : 0
         Behavior on opacity { NumberAnimation { duration: 160 } }
 
@@ -510,13 +590,6 @@ ApplicationWindow {
             iconSource: "qrc:/icons/window-minimize.svg"
             label: "Minimize"
             onClicked: windowChrome.minimize()
-        }
-        CpIconButton {
-            iconSource: root.visibility === Window.Maximized
-                        ? "qrc:/icons/window-restore.svg"
-                        : "qrc:/icons/window-maximize.svg"
-            label: root.visibility === Window.Maximized ? "Restore" : "Maximize"
-            onClicked: windowChrome.toggleMaximized()
         }
         CpIconButton {
             iconSource: "qrc:/icons/window-close.svg"
@@ -763,7 +836,7 @@ ApplicationWindow {
                 Item { Layout.fillWidth: true }
                 AbstractButton {
                     id: speedButton
-                    Layout.preferredWidth: 82
+                    Layout.preferredWidth: 42
                     Layout.preferredHeight: 42
                     hoverEnabled: true
                     focusPolicy: Qt.StrongFocus
@@ -781,11 +854,12 @@ ApplicationWindow {
                         }
                         root.showControls()
                     }
-                    contentItem: RowLayout {
-                        spacing: 5
+                    contentItem: Item {
                         Image {
-                            Layout.preferredWidth: 23
-                            Layout.preferredHeight: 23
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            y: 3
+                            width: 21
+                            height: 21
                             source: "qrc:/icons/speed.svg"
                             fillMode: Image.PreserveAspectFit
                             sourceSize.width: 46
@@ -797,22 +871,24 @@ ApplicationWindow {
                             Behavior on opacity { NumberAnimation { duration: 120 } }
                         }
                         Text {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            y: 20
                             text: mpv.speed.toFixed(2) + "×"
                             color: PlayerTheme.projectorGoldBright
                             opacity: speedButton.hovered || speedButton.activeFocus
                                      || speedPanel.opened
                                      ? PlayerTheme.playerGoldActiveOpacity
                                      : PlayerTheme.playerGoldRestOpacity
-                            font.pixelSize: 12
+                            font.pixelSize: 10
                         }
                     }
                     ToolTip.visible: speedButton.hovered
                     ToolTip.delay: 450
                     ToolTip.text: "Playback speed"
                 }
-                CpIconButton {
-                    iconSource: "qrc:/icons/audio-tracks.svg"
-                    label: "Audio tracks"
+                CpAudioTracksButton {
+                    visible: mpv.audioTracks.length > 1
+                    trackCount: mpv.audioTracks.length
                     selected: audioPanelOpen
                     onClicked: {
                         audioPanelOpen = !audioPanelOpen

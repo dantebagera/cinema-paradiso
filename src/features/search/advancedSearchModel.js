@@ -39,7 +39,7 @@ function integer(value, label, minimum, maximum) {
   return number;
 }
 
-function identityValue(value, type) {
+function identityValue(value, type, mediaType) {
   const id = text(value?.id, 120);
   const label = text(value?.label, 160);
   if (!id || !label) fail(`${type} requires a controlled identity`);
@@ -50,7 +50,7 @@ function identityValue(value, type) {
   }
   if (type === 'person') {
     const role = text(value?.role, 20).toLowerCase();
-    if (!roles.has(role)) fail('Person role must be actor, director, or writer');
+    if (!roles.has(role) && !(mediaType === 'tv' && role === 'creator')) fail('Person role must be actor, director, or writer');
     normalized.role = role;
   }
   return normalized;
@@ -86,14 +86,14 @@ function runtimeValue(value) {
   return { preset, from, to };
 }
 
-function normalizeValue(type, value) {
+function normalizeValue(type, value, mediaType) {
   if (type === 'title') {
     const title = text(value?.text, ADVANCED_SEARCH_LIMITS.titleCharacters);
     if (!title) fail('Title cannot be empty');
     return { text: title };
   }
   if (['genre', 'person', 'keyword', 'language', 'country', 'movie_list'].includes(type)) {
-    return identityValue(value, type);
+    return identityValue(value, type, mediaType);
   }
   if (['year', 'rating'].includes(type)) return numericValue(value, type);
   if (type === 'minimum_votes') return { value: integer(value?.value, 'Minimum votes', 0, 10000000) };
@@ -114,7 +114,7 @@ function valueKey(type, value) {
   return JSON.stringify(value);
 }
 
-function normalizeGroup(scope, group) {
+function normalizeGroup(scope, group, mediaType) {
   const type = text(group?.type, 40).toLowerCase();
   const definition = criterionFor(scope, type);
   if (!definition || type === 'sort') fail(`Criterion ${type || '(missing)'} is not supported in ${scope}`);
@@ -124,7 +124,7 @@ function normalizeGroup(scope, group) {
   const values = [];
   const seen = new Map();
   for (const candidate of incoming) {
-    const value = normalizeValue(type, candidate);
+    const value = normalizeValue(type, candidate, mediaType);
     const key = valueKey(type, value);
     if (seen.has(key)) {
       if (type === 'genre' && Boolean(seen.get(key).exclude) !== Boolean(value.exclude)) {
@@ -165,7 +165,7 @@ export function normalizeAdvancedQuery(input, expectedScope) {
   const groups = [];
   const seenTypes = new Set();
   for (const candidate of input.groups) {
-    const group = normalizeGroup(scope, candidate);
+    const group = normalizeGroup(scope, candidate, input.media_type);
     if (seenTypes.has(group.type)) fail(`Duplicate ${group.type} group`);
     seenTypes.add(group.type);
     groups.push(group);
@@ -180,7 +180,7 @@ export function normalizeAdvancedQuery(input, expectedScope) {
   if (!sortKeys[scope].has(sortKey)) fail(`Sort ${sortKey} is not supported in ${scope}`);
   const direction = text(sort.direction || 'desc', 10).toLowerCase();
   if (!['asc', 'desc'].includes(direction)) fail('Sort direction must be asc or desc');
-  const normalized = { version: 1, scope, mode, groups, sort: { key: sortKey, direction } };
+  const normalized = { ...(input.media_type === 'tv' ? { media_type: 'tv' } : {}), version: 1, scope, mode, groups, sort: { key: sortKey, direction } };
   if (scope === 'discover') {
     const feed = text(input.feed || 'trending_week', 40);
     if (!feeds.has(feed)) fail('Discover feed is invalid');
@@ -192,6 +192,7 @@ export function normalizeAdvancedQuery(input, expectedScope) {
 export function querySignature(query) {
   const normalized = normalizeAdvancedQuery(query, query?.scope);
   return JSON.stringify({
+    ...(normalized.media_type === 'tv' ? { media_type: 'tv' } : {}),
     version: normalized.version,
     scope: normalized.scope,
     groups: normalized.groups.map((group) => ({

@@ -266,6 +266,13 @@ test('release watcher keeps a three-row preview while View all and Following exp
   await expect(inspector.getByRole('heading', { name: 'Followed Movie 1' })).toBeVisible();
   await expect(inspector.getByRole('button', { name: 'Find torrent' })).toBeVisible();
   await expect(inspector.getByRole('button', { name: 'Stream' })).toBeVisible();
+  await page.route('**/api/tmdb/imdb_id?**', (route) => route.fulfill({ json: { imdb_id: 'tt0091000' } }));
+  await page.route('https://stream.example.test/**', (route) => route.fulfill({ contentType: 'text/html', body: '<p>Movie streaming fixture</p>' }));
+  await inspector.getByRole('button', { name: 'Stream' }).click();
+  await expect(page.locator('.stream-dialog iframe')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.stream-dialog')).not.toBeVisible();
+  await expect(inspector.getByRole('button', { name: 'Stream' })).toBeFocused();
 
   await releasePanel.locator('.release-item').filter({ hasText: 'Followed Movie 3' }).click();
   await expect(inspector.getByRole('heading', { name: 'Followed Movie 3' })).toBeVisible();
@@ -821,7 +828,7 @@ test('Advanced Search shares normalized Library and Discover execution without l
   const libraryRequestsBeforeEquivalentModeSwitch = libraryQueries.length;
   await page.getByLabel('Library search type').selectOption('advanced');
   await expect(page.getByLabel('library advanced search')).toBeVisible();
-  await expect(page.getByText('This field is not a normal text search')).toHaveCount(0);
+  await expect(page.getByText('Click + to choose a filter')).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Search', exact: true })).toBeVisible();
   await expect(page.locator('.library-filter-toolbar')).toHaveCount(0);
   await expect(page.getByRole('heading', { name: parityMovie.title, exact: true })).toBeVisible();
@@ -865,7 +872,7 @@ test('Advanced Search shares normalized Library and Discover execution without l
   const discoverRequestsBeforeEquivalentModeSwitch = discoverQueries.length;
   await page.getByLabel('TMDB search type').selectOption('advanced');
   await expect(page.getByLabel('discover advanced search')).toBeVisible();
-  await expect(page.getByText('This field is not a normal text search')).toBeVisible();
+  await expect(page.getByText('Click + to choose a filter')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Search', exact: true })).toBeVisible();
   await page.waitForTimeout(450);
   expect(discoverQueries).toHaveLength(discoverRequestsBeforeEquivalentModeSwitch);
@@ -1300,6 +1307,58 @@ test('Library Keywords resolves a stored identity and filters owned SQL movies',
   await expect(page.getByText('Space Archive', { exact: true })).toBeVisible();
   await expect(page.getByLabel('Library path')).toContainText('Keyword: space opera');
   expect(selectedKeyword.id).toBe('501');
+});
+
+test('Library Keywords offers the same query in Movies when no stored keyword exists', async ({ page }) => {
+  const movieSearches = [];
+  const movie = {
+    ...parityLibraryItem,
+    path: 'E:/Movies/Man.of.Steel.2013.mkv',
+    canonical_metadata: {
+      ...parityLibraryItem.canonical_metadata,
+      title: 'Man of Steel',
+      year: '2013',
+      tmdb_id: '49521'
+    }
+  };
+  await page.route('**/api/library?view=keywords*', (route) => route.fulfill({ json: {
+    items: [], page: 1, page_size: 50, total_pages: 1, total_results: 0,
+    count: 0, source: 'catalog', catalog_generation: 1
+  } }));
+  await page.route(libraryCardsRoute, (route) => {
+    const title = requestGroup(route, 'title')?.values?.[0]?.text || '';
+    movieSearches.push(title);
+    return route.fulfill({ json: {
+      items: title === 'man of steel' ? [movie] : [],
+      count: title === 'man of steel' ? 1 : 0,
+      total: title === 'man of steel' ? 1 : 0,
+      page: 1, total_pages: 1, page_start: 0,
+      page_end: title === 'man of steel' ? 1 : 0,
+      catalog_generation: 1
+    } });
+  });
+
+  await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await page.getByLabel('Library search type').selectOption('keywords');
+  await page.getByLabel('Search keywords in your library').fill('man of steel');
+
+  await expect(page.getByText('No owned keyword is named “man of steel”.')).toBeVisible();
+  await page.getByRole('button', { name: 'Search movies for “man of steel”' }).click();
+
+  await expect(page.getByLabel('Library search type')).toHaveValue('movies');
+  await expect.poll(() => movieSearches).toContain('man of steel');
+  await expect(page.getByText('Man of Steel', { exact: true })).toBeVisible();
+});
+
+test('static CP surfaces hide the browser caret while text controls keep it', async ({ page }) => {
+  await page.goto('/library', { waitUntil: 'domcontentloaded' });
+
+  await expect.poll(() => page.locator('body').evaluate(
+    (element) => getComputedStyle(element).caretColor
+  )).toBe('rgba(0, 0, 0, 0)');
+  await expect.poll(() => page.getByLabel('Search your offline library').evaluate(
+    (element) => getComputedStyle(element).caretColor
+  )).not.toBe('rgba(0, 0, 0, 0)');
 });
 
 test('Library keyword pagination replaces bounded pages and reaches every identity', async ({ page }) => {
@@ -2082,8 +2141,13 @@ test('Pick relationship browsing uses shared Previous and Next replacement pages
   const filmographyButton = pickActorCard.getByRole('button', { name: 'Open filmography for Pick Actor' });
   await expect(biographyButton).toHaveAttribute('title', 'Biography');
   await expect(filmographyButton).toHaveAttribute('title', 'Filmography');
-  const biographyBox = await biographyButton.boundingBox();
-  const filmographyBox = await filmographyButton.boundingBox();
+  const [biographyBox, filmographyBox] = await pickActorCard.evaluate((card) => {
+    const box = (title) => {
+      const bounds = card.querySelector(`button[title="${title}"]`).getBoundingClientRect();
+      return { y: bounds.y, height: bounds.height };
+    };
+    return [box('Biography'), box('Filmography')];
+  });
   expect(filmographyBox.y).toBeGreaterThan(biographyBox.y);
   expect(Math.abs(filmographyBox.y - (biographyBox.y + biographyBox.height) - 6)).toBeLessThanOrEqual(1);
   await filmographyButton.click();
@@ -4017,7 +4081,9 @@ test('committed catalog event quietly adds a final Library card without unmounti
   const firstCard = page.locator('.library-movie-card').filter({ hasText: parityMovie.title });
   await expect(firstCard).toBeVisible();
   await firstCard.getByRole('heading', { name: parityMovie.title }).click();
-  await firstCard.getByRole('checkbox').check({ force: true });
+  // Click the visible custom label; its decorative span covers the native input.
+  await firstCard.locator('.library-selection-checkbox').click();
+  await expect(firstCard.getByRole('checkbox')).toBeChecked();
   const search = page.getByLabel('Search your offline library');
   await search.focus();
   const grid = page.locator('.library-results');

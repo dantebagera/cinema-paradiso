@@ -58,8 +58,30 @@ class LibraryStartupCatchup:
             )
         else:
             result = {"checked": 0, "skipped": True}
+
+        publication_paths = list(result.get("_matched_paths") or ())
+        publication_paths.extend(self.repository.pending_final_card_paths())
+        publication_paths = list(dict.fromkeys(
+            str(path or "") for path in publication_paths if str(path or "").strip()
+        ))
+        finalization = self.coordinator.finalize_matched_paths(
+            publication_paths,
+            reason="startup",
+            correlation_id="startup-catchup",
+        ) if publication_paths else {"publications": [], "failures": {}}
+        if finalization["failures"]:
+            self.coordinator.reconcile_paths(
+                list(finalization["failures"]),
+                reason="startup:asset-retry",
+                correlation_id="startup-catchup",
+            )
         self.repository.set_operational_meta(
             self.META_KEY,
             json.dumps(current, sort_keys=True, separators=(",", ":")),
         )
-        return {"changed_directories": len(changed), "offline_roots": len(offline), "result": result}
+        return {
+            "changed_directories": len(changed),
+            "offline_roots": len(offline),
+            "result": result,
+            "finalization": finalization,
+        }

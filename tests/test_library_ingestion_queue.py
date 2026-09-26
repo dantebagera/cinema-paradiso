@@ -219,6 +219,60 @@ class LibraryIngestionQueueTest(unittest.TestCase):
         self.assertEqual(timeline[2][1]["movie_keys"], ["tmdb:2026"])
         self.assertTrue(coordinator.shutdown())
 
+    def test_startup_reconcile_finalizes_matched_paths_before_marking_complete(self):
+        timeline = []
+        path = self.root / "Cross.Tree.Movie.2026.mkv"
+        dependencies = replace(
+            _dependencies(self.root),
+            prepare_final_card_assets=lambda paths: timeline.append(("assets", tuple(paths))),
+            final_card_publication=lambda paths: (
+                timeline.append(("commit", tuple(paths)))
+                or [{"path": str(path), "movie_key": "tmdb:2026"}]
+            ),
+            publish_catalog_event=lambda **kwargs: timeline.append(("event", kwargs)) or True,
+            mark_complete=lambda: timeline.append(("complete", None)),
+        )
+        coordinator = LibraryIngestionCoordinator(dependencies)
+        coordinator.reconcile_all_now = Mock(return_value={
+            "checked": 1,
+            "pending": 0,
+            "_matched_paths": [str(path)],
+        })
+
+        coordinator.run_reconcile_loop()
+
+        self.assertEqual([entry[0] for entry in timeline], ["assets", "commit", "event", "complete"])
+        self.assertEqual(timeline[2][1]["reason"], "startup")
+        self.assertEqual(timeline[2][1]["movie_keys"], ["tmdb:2026"])
+
+    def test_one_asset_failure_does_not_block_other_final_card_publications(self):
+        good = self.root / "Good.Movie.2026.mkv"
+        bad = self.root / "Bad.Movie.2026.mkv"
+        timeline = []
+
+        def prepare(paths):
+            path = paths[0]
+            timeline.append(("assets", path))
+            if path == str(bad):
+                raise RuntimeError("poster unavailable")
+
+        dependencies = replace(
+            _dependencies(self.root),
+            prepare_final_card_assets=prepare,
+            final_card_publication=lambda paths: [{"path": paths[0], "movie_key": "tmdb:good"}],
+            publish_catalog_event=lambda **kwargs: timeline.append(("event", kwargs)) or True,
+        )
+        coordinator = LibraryIngestionCoordinator(dependencies)
+
+        result = coordinator.finalize_matched_paths(
+            [str(good), str(bad)], reason="startup", correlation_id="fixture",
+        )
+
+        self.assertEqual([row["path"] for row in result["publications"]], [str(good)])
+        self.assertEqual(list(result["failures"]), [str(bad)])
+        self.assertEqual(timeline[-1][0], "event")
+        self.assertEqual(timeline[-1][1]["movie_keys"], ["tmdb:good"])
+
     def test_poster_failure_retries_boundedly_and_never_commits_or_notifies(self):
         prepare = Mock(side_effect=RuntimeError("poster unavailable"))
         publish = Mock()

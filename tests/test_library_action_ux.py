@@ -120,8 +120,9 @@ class LibraryActionUxTest(unittest.TestCase):
     def test_advanced_search_reuses_the_search_strip_without_a_second_panel(self):
         advanced_source = (APP_JSX.parents[0] / "features" / "search" / "AdvancedSearchBuilder.jsx").read_text(encoding="utf-8")
         self.assertIn('className="advanced-add-trigger"', advanced_source)
-        self.assertIn('This field is not a normal text search', advanced_source)
-        self.assertIn("{!groups.length && <span className=\"advanced-mode-warning\"", advanced_source)
+        self.assertIn('Click + to choose a filter', advanced_source)
+        self.assertIn("{!groups.length && <span className=\"advanced-mode-guidance\"", advanced_source)
+        self.assertNotIn('This field is not a normal text search', advanced_source)
         self.assertIn('className="advanced-join-toggle"', advanced_source)
         self.assertIn("withGenreValueRelation", advanced_source)
         self.assertIn("data-relation={relation}", advanced_source)
@@ -278,7 +279,7 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("const [mountedSections, setMountedSections]", self.source)
         self.assertIn("setMountedSections((sections)", self.source)
         self.assertIn("sectionScrollPositionsRef", self.source)
-        self.assertIn("workspace.scrollTop = sectionScrollPositionsRef.current[activeSection] || 0", self.source)
+        self.assertIn("restoreWorkspaceScroll(sectionScrollPositionsRef.current[activeSection] || 0)", self.source)
         for section in ('home', 'library', 'movie-lists', 'discover', 'downloads', 'ai-control', 'iptv', 'help', 'cleanup', 'settings'):
             self.assertIn(f"mountedSections.has('{section}')", self.source)
             self.assertIn(f"hidden={{activeSection !== '{section}'}}", self.source)

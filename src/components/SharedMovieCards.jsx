@@ -4,7 +4,6 @@ import {
 } from 'lucide-react';
 import { useCallback, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { fetchJson } from '../api/client.js';
 import { mergeCanonicalMovieDetails } from '../api/movieDetails.js';
 import SelectionCheckbox from './SelectionCheckbox.jsx';
 import { MovieLanguageToggle, useTransientMovieLanguage } from './MovieLanguageToggle.jsx';
@@ -17,6 +16,8 @@ import {
   formatReleaseDateLabel, formatVoteCount, isUnreleasedMovie
 } from '../utils/moviePresentation.js';
 import { canonicalOwnedMovie } from '../discoverUtils.js';
+import RelatedMovieRail from './RelatedMovieRail.jsx';
+import { PersonBioModal, PersonCreditCard, usePersonBiography } from './PersonCreditCard.jsx';
 
 function usePendingPlay(onPlay, path) {
   const [pending, setPending] = useState(false);
@@ -50,6 +51,21 @@ function MoviePlayButton({ pending, onPlay }) {
       {pending ? 'Opening player…' : 'Play'}
     </button>
   );
+}
+
+export function MoviePlotDetailsButton({ movie }) {
+  const [open, setOpen] = useState(false);
+  const plot = movie?.summary || movie?.plot || '';
+  if (plot.length <= 200) return null;
+  return <>
+    <button type="button" className="btn btn-secondary movie-plot-action" onClick={() => setOpen(true)}><BookOpen size={15} /> Read full plot</button>
+    {open && createPortal(<div className="modal-backdrop" onClick={() => setOpen(false)}>
+      <section className="movie-plot-dialog" role="dialog" aria-modal="true" aria-label={`Plot of ${movie.title}`} onClick={(event) => event.stopPropagation()} onKeyDown={(event) => { if (event.key === 'Escape') setOpen(false); }}>
+        <header><h3>{movie.title}</h3><button type="button" className="mini-action" autoFocus onClick={() => setOpen(false)}>Close</button></header>
+        <p dir="auto">{plot}</p>
+      </section>
+    </div>, document.body)}
+  </>;
 }
 
 export function PosterEditButton({ title, onEdit }) {
@@ -251,6 +267,7 @@ export function DiscoverMovieCard({
       ) : null}
       expandedFooter={expanded ? (
         <MovieExpandedDetails
+          movie={baseDisplayMovie}
           details={displayDetails}
           directors={displayMovie.directors}
           cast={displayMovie.cast}
@@ -293,6 +310,7 @@ export function DiscoverMovieCard({
             <button type="button" className="btn btn-secondary" onClick={() => onTrailer(displayMovie)}>
               <Film size={15} /> Trailer
             </button>
+            <MoviePlotDetailsButton movie={displayMovie} />
             {!owned && (
               <button type="button" className="btn btn-secondary" onClick={() => onFollow(movie)}>
                 <Bell size={15} /> {followed ? 'Following' : 'Follow'}
@@ -397,6 +415,8 @@ export function MovieExpandedCuration({
   const activeCollection = collection?.id ? collection : details?.collection || {};
   const canBrowseCollection = Boolean(onCollectionBrowse);
   const canBrowseLists = Boolean(onListBrowse);
+  const visibleItemLists = itemLists.slice(0, 5);
+  const hiddenListCount = Math.max(0, itemLists.length - visibleItemLists.length);
   const collectionTotal = Array.isArray(activeCollection.parts) ? activeCollection.parts.length : null;
   const collectionOwned = Number.isFinite(activeCollection.owned_count) ? activeCollection.owned_count : null;
   const collectionDetail = ['idle', 'loading'].includes(collectionStatus)
@@ -412,7 +432,10 @@ export function MovieExpandedCuration({
             : 'Collection members unavailable';
 
   return (
-    <aside className="movie-expanded-curation" aria-label="Collection and lists">
+    <aside
+      className={cx('movie-expanded-curation', activeCollection?.id && 'movie-expanded-curation-has-collection')}
+      aria-label="Collection and lists"
+    >
       {activeCollection?.id && (
         <div className="collection-panel">
           {canBrowseCollection ? (
@@ -460,7 +483,7 @@ export function MovieExpandedCuration({
         </div>
         {itemLists.length ? (
           <div className="list-chip-row">
-            {itemLists.map((list) => (
+            {visibleItemLists.map((list) => (
               <span className="list-chip" key={list.id}>
                 <button type="button" onClick={canBrowseLists ? () => onListBrowse(list) : undefined}>{list.name}</button>
                 {onRemoveFromList ? (
@@ -470,6 +493,7 @@ export function MovieExpandedCuration({
                 ) : null}
               </span>
             ))}
+            {hiddenListCount ? <span className="list-chip-overflow">+{hiddenListCount} more</span> : null}
           </div>
         ) : (
           <small>{emptyListText}</small>
@@ -480,35 +504,24 @@ export function MovieExpandedCuration({
 }
 
 export function MovieExpandedDetails({
+  movie,
   details,
   directors,
   cast,
   onPersonBrowse,
   onPersonDiscover
 }) {
-  const [personBio, setPersonBio] = useState(null);
+  const { personBio, openPersonBio, closePersonBio } = usePersonBiography();
   const loading = details?.loading;
-  const expandedDirectors = directors?.length ? directors : details?.directors?.length ? details.directors : details?.director?.name ? [details.director] : [];
-  const expandedCast = (cast?.length ? cast : details?.cast || []).slice(0, 8);
+  const allDirectors = details?.directors?.length ? details.directors : directors?.length ? directors : details?.director?.name ? [details.director] : [];
+  const expandedDirectors = allDirectors.slice(0, 10);
+  const expandedCast = (details?.cast?.length ? details.cast : cast || []).slice(0, Math.max(0, 10 - expandedDirectors.length));
   const canBrowsePeople = Boolean(onPersonBrowse);
   const personFilmographyAction = onPersonDiscover || onPersonBrowse;
 
-  async function openPersonBio(role, person) {
-    if (!person?.id) {
-      setPersonBio({ loading: false, error: 'No TMDB person ID is available for this credit.', person, role });
-      return;
-    }
-    setPersonBio({ loading: true, error: '', person, role });
-    try {
-      const data = await fetchJson(`/api/tmdb/person?person_id=${encodeURIComponent(person.id)}`);
-      setPersonBio({ loading: false, error: '', person, role, data });
-    } catch (error) {
-      setPersonBio({ loading: false, error: error.message, person, role });
-    }
-  }
-
   return (
     <div className="movie-expanded-details">
+      <div className="movie-expanded-credits-slot">
       {loading ? (
         <div className="people-loading"><Loader2 size={15} className="spin" /> Loading TMDB details...</div>
       ) : details?.error ? (
@@ -518,7 +531,7 @@ export function MovieExpandedDetails({
           <span className="mini-label">Director &amp; top cast</span>
           <div className="movie-expanded-people-grid">
             {expandedDirectors.length ? (
-              expandedDirectors.slice(0, 2).map((person) => (
+              expandedDirectors.map((person) => (
                 <PersonCreditCard
                   key={`director-${person.id || person.name}`}
                   person={person}
@@ -550,145 +563,18 @@ export function MovieExpandedDetails({
           </div>
         </section>
       )}
+      </div>
+      <RelatedMovieRail
+        key={movie?.tmdb_id || details?.tmdb_id || 'unmatched'}
+        movie={{ ...(movie || {}), tmdb_id: movie?.tmdb_id || details?.tmdb_id || '' }}
+      />
       {personBio && (
         <PersonBioModal
           state={personBio}
-          onClose={() => setPersonBio(null)}
+          onClose={closePersonBio}
         />
       )}
     </div>
-  );
-}
-
-function PersonCreditCard({ person, role, canBrowse, onBrowse, onDiscover, onBio }) {
-  const isDirector = role === 'director';
-  const className = cx('person-card', isDirector && 'director-person', !canBrowse && 'discover-person-static', canBrowse && 'person-credit-browse');
-  const browseLabel = isDirector ? 'Director' : (person.character || 'Cast');
-  const canDiscover = Boolean(onDiscover && person?.id);
-
-  function browse() {
-    if (canBrowse) onBrowse(role, person);
-  }
-
-  function handleKeyDown(event) {
-    if (event.target !== event.currentTarget) return;
-    if (!canBrowse || (event.key !== 'Enter' && event.key !== ' ')) return;
-    event.preventDefault();
-    browse();
-  }
-
-  function handleBioClick(event) {
-    event.stopPropagation();
-    onBio(role, person);
-  }
-
-  function handleDiscoverClick(event) {
-    event.stopPropagation();
-    onDiscover(role, person);
-  }
-
-  return (
-    <div
-      className={className}
-      role={canBrowse ? 'button' : undefined}
-      tabIndex={canBrowse ? 0 : undefined}
-      onClick={canBrowse ? browse : undefined}
-      onKeyDown={handleKeyDown}
-    >
-      <button
-        type="button"
-        className="person-bio-button"
-        onClick={handleBioClick}
-        aria-label={`Open biography for ${person.name}`}
-        title="Biography"
-      >
-        <BookOpen size={14} />
-      </button>
-      {canDiscover ? (
-        <button
-          type="button"
-          className="person-discover-button"
-          onClick={handleDiscoverClick}
-          aria-label={`Open filmography for ${person.name}`}
-          title="Filmography"
-        >
-          <Film size={14} />
-        </button>
-      ) : null}
-      <PersonAvatar person={person} />
-      <strong dir="auto">{person.name}</strong>
-      <small>{browseLabel}</small>
-    </div>
-  );
-}
-
-function PersonBioModal({ state, onClose }) {
-  const data = state.data || {};
-  const fallback = state.person || {};
-  const name = data.name || fallback.name || 'TMDB person';
-  const profileUrl = data.profile_url || fallback.profile_url || '';
-  const roleLabel = state.role === 'director' ? 'Director' : 'Actor';
-  const biography = String(data.biography || '').trim();
-  const facts = [
-    data.known_for_department || roleLabel,
-    data.birthday ? `Born ${data.birthday}` : '',
-    data.deathday ? `Died ${data.deathday}` : '',
-    data.place_of_birth || ''
-  ].filter(Boolean);
-  const initial = String(name).trim().slice(0, 1).toUpperCase() || '?';
-
-  const modal = (
-    <div className="modal-backdrop person-bio-backdrop" role="presentation" onClick={onClose}>
-      <section className="person-bio-dialog" role="dialog" aria-modal="true" aria-label={`Biography for ${name}`} onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header person-bio-header">
-          <div>
-            <p className="screen-kicker">{roleLabel} profile</p>
-            <h2>{name}</h2>
-          </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close biography">
-            <X size={18} />
-          </button>
-        </div>
-        <div className="person-bio-content">
-          <div className="person-bio-photo">
-            {profileUrl ? <img src={profileUrl} alt={`${name} portrait`} /> : <span>{initial}</span>}
-          </div>
-          <div className="person-bio-copy">
-            {state.loading ? (
-              <div className="dialog-loading person-bio-loading">
-                <Loader2 size={18} className="spin" />
-                <span className="dialog-loading-copy">
-                  <strong>Loading TMDB profile...</strong>
-                  <small>Fetching biography and portrait.</small>
-                </span>
-              </div>
-            ) : state.error ? (
-              <p className="dialog-error person-bio-error"><AlertTriangle size={15} /> {state.error}</p>
-            ) : (
-              <>
-                {facts.length ? (
-                  <div className="person-bio-facts">
-                    {facts.map((fact) => <span key={fact}>{fact}</span>)}
-                  </div>
-                ) : null}
-                <p>{biography || 'No biography available from TMDB.'}</p>
-              </>
-            )}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-
-  return typeof document === 'undefined' ? modal : createPortal(modal, document.body);
-}
-
-function PersonAvatar({ person }) {
-  const initial = String(person?.name || '?').trim().slice(0, 1).toUpperCase() || '?';
-  return (
-    <span className="person-avatar" aria-hidden="true">
-      {person?.profile_url ? <img src={person.profile_url} alt="" loading="lazy" /> : initial}
-    </span>
   );
 }
 
@@ -730,7 +616,7 @@ export function LibraryMovieCard({
   const lowQuality = item.maintenance_upgrade_candidate === true;
   const genres = (canonical.genres?.length ? canonical.genres : item.plex_genres || []).slice(0, expanded ? 10 : 3);
   const directors = getRolePeople(item, details, 'director');
-  const cast = getRolePeople(item, details, 'actor').slice(0, 8);
+  const cast = getRolePeople(item, details, 'actor').slice(0, 9);
   const locale = getLocaleTag(item);
   const movieForSearch = {
     title: identity.title,
@@ -740,8 +626,7 @@ export function LibraryMovieCard({
   };
   const posterUrl = canonical.poster_url || item.plex_poster || '';
   const canonicalDetails = details ? {
-    ...details,
-    ...canonical,
+    ...mergeCanonicalMovieDetails(canonical, details),
     loading: details.loading,
     error: details.error,
     trailer_url: details.trailer_url || canonical.trailer_url || ''
@@ -842,6 +727,7 @@ export function LibraryMovieCard({
       ) : null}
       expandedFooter={expanded ? (
         <MovieExpandedDetails
+          movie={baseDisplayMovie}
           details={displayDetails}
           directors={languageView.isArabic ? displayDetails?.directors : directors}
           cast={languageView.isArabic ? displayDetails?.cast : cast}
@@ -861,6 +747,7 @@ export function LibraryMovieCard({
             <button type="button" className="btn btn-secondary" onClick={onTrailer}>
               <Film size={15} /> Trailer
             </button>
+            <MoviePlotDetailsButton movie={displayMovie} />
             <button type="button" className="btn btn-secondary" onClick={onCorrectMetadata}>
               <Pencil size={15} /> Correct metadata
             </button>

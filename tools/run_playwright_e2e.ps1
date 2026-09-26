@@ -35,7 +35,7 @@ try {
     }
     $server = Start-Process `
         -FilePath $python `
-        -ArgumentList 'app.py' `
+        -ArgumentList $(if ($env:CP_TV_E2E -eq '1') { '-m tests.native_tv_server' } else { 'app.py' }) `
         -WorkingDirectory $projectRoot `
         -WindowStyle Hidden `
         -RedirectStandardOutput $stdoutPath `

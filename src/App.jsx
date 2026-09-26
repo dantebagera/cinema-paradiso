@@ -1,3 +1,5 @@
+import MediaWorkspace from './features/tv/MediaWorkspace.jsx';
+import { buildTvStreamTemplateUrl } from './utils/appUtils.js';
 import {
   AlertTriangle,
   Bell,
@@ -41,6 +43,8 @@ import {
   fetchUserListsCached
 } from './api/curation.js';
 import logoUrl from './assets/logo.svg';
+import { MovieRelationshipNavigation } from './components/MovieRelationshipNavigation.jsx';
+import { restoreWorkspaceScroll } from './components/movie-card/expandedCardViewport.js';
 import ExperimentalBadge from './components/ExperimentalBadge.jsx';
 import PosterEditorModal from './components/PosterEditorModal.jsx';
 import TorrentActions from './components/TorrentActions.jsx';
@@ -345,6 +349,8 @@ function ArchiveApp() {
   const [libraryFileRequest, setLibraryFileRequest] = useState(null);
   const [homeLists, setHomeLists] = useState([]);
   const [continueWatching, setContinueWatching] = useState([]);
+  const [tvEnabled, setTvEnabled] = useState(false);
+  useEffect(() => { let alive = true; const changed = (event) => setTvEnabled(Boolean(event.detail)); window.addEventListener('cp-tv-capability-changed', changed); fetchJson('/api/tv/capabilities').then((data) => { if (alive) { setTvEnabled(Boolean(data.enabled)); if (data.enabled && window.location.pathname.startsWith('/tv/series/')) setStartupWorkAllowed(true); } }).catch(() => {}); return () => { alive = false; window.removeEventListener('cp-tv-capability-changed', changed); }; }, []);
   const workspaceRef = useRef(null);
   const activeSectionRef = useRef(activeSection);
   const sectionScrollPositionsRef = useRef({});
@@ -376,7 +382,7 @@ function ArchiveApp() {
     activeSectionRef.current = activeSection;
     const workspace = workspaceRef.current;
     if (workspace && mountedSections.has(activeSection)) {
-      workspace.scrollTop = sectionScrollPositionsRef.current[activeSection] || 0;
+      restoreWorkspaceScroll(sectionScrollPositionsRef.current[activeSection] || 0);
     }
   }, [activeSection, mountedSections]);
 
@@ -449,11 +455,12 @@ function ArchiveApp() {
   const loadContinueWatching = useCallback(async () => {
     try {
       const data = await fetchJson('/api/player/continue-watching?limit=50');
-      setContinueWatching(data.items || []);
+      const tv = tvEnabled ? await fetchJson('/api/tv/continue-watching').catch(() => ({ items: [] })) : { items: [] };
+      setContinueWatching([...(data.items || []), ...tv.items]);
     } catch {
       // Playback history is optional while the OS player remains selected.
     }
-  }, []);
+  }, [tvEnabled]);
 
   const refreshPowerStatus = useCallback(async () => {
     try {
@@ -937,6 +944,20 @@ function ArchiveApp() {
     selectSection('discover');
   }
 
+  function openRelatedInDiscover(movie, selectedMovie, relationship = {}) {
+    if (!movie?.tmdb_id) return;
+    const origin = activeSectionRef.current;
+    setDiscoverActiveTab('explore');
+    setDiscoverRelationshipRequest((current) => ({
+      requestId: Number(current?.requestId || 0) + 1,
+      type: 'related', movie, selectedMovie,
+      relationshipSource: relationship.source || 'all',
+      originTab: discoverActiveTab,
+      origin: origin !== 'discover' ? { section: origin, label: navItems.find((item) => item.id === origin)?.label || origin } : null
+    }));
+    selectSection('discover');
+  }
+
   async function toggleFollow(movie) {
     const key = movieKey(movie);
     const existing = followed.find((item) => movieKey(item) === key);
@@ -977,9 +998,22 @@ function ArchiveApp() {
     }
   }
 
+  async function playWatching(item, restart = false) {
+    if (item.media_type !== 'tv') return playLocal(item.path_key, { restart });
+    if (!item.primary_action.playable) {
+      window.history.pushState({}, '', `/tv/series/${item.id}`);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+      return;
+    }
+    try {
+      await fetchJson(`/api/tv/episodes/${item.primary_action.target.episode_id}/play`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ restart }) });
+      await loadContinueWatching();
+    } catch (error) { notify(error.message, 'error'); }
+  }
+
   async function removeContinueWatching(item) {
     try {
-      await fetchJson('/api/player/progress/clear', {
+      await fetchJson(item.media_type === 'tv' ? `/api/tv/series/${item.id}/hide-progress` : '/api/player/progress/clear', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ path_key: item.path_key })
@@ -989,6 +1023,11 @@ function ArchiveApp() {
     } catch (error) {
       notify(`Could not remove progress: ${error.message}`, 'error');
     }
+  }
+
+  function streamEpisode(series, target) {
+    const embedUrl = streamingConfig.enabled && buildTvStreamTemplateUrl(streamingConfig.tv_url_template, target);
+    if (embedUrl) setStreamModal({ title: `${series.title} · ${target.code || ''} ${target.title || ''}`, year: '', embedUrl });
   }
 
   async function streamMovie(movie) {
@@ -1140,6 +1179,7 @@ function ArchiveApp() {
   }
 
   return (
+    <MovieRelationshipNavigation.Provider value={openRelatedInDiscover}>
     <div className={cx('app-shell', sidebarCollapsed && 'app-shell-sidebar-collapsed')}>
       <Sidebar
         activeSection={activeSection}
@@ -1207,8 +1247,8 @@ function ArchiveApp() {
                 onEditPoster={(owned, movie) => setPosterEditor({ path: owned.path, title: movie.title })}
                 onOpenFileDetails={openOwnedFileDetails}
                 continueWatching={continueWatching}
-                onResumeWatching={(item) => playLocal(item.path_key)}
-                onRestartWatching={(item) => playLocal(item.path_key, { restart: true })}
+                onResumeWatching={(item) => playWatching(item)}
+                onRestartWatching={(item) => playWatching(item, true)}
                 onRemoveWatching={removeContinueWatching}
               />
             </Suspense>
@@ -1217,6 +1257,7 @@ function ArchiveApp() {
         {mountedSections.has('library') && (
           <div className="workspace-panel" hidden={activeSection !== 'library'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
+              <MediaWorkspace enabled={tvEnabled} context="library" streaming={streamingConfig} onStream={streamEpisode} onTrailer={(series, url) => openYouTubeVideo({ title: series.title, year: series.first_air_date?.slice(0, 4) || '', sourceUrl: url, kicker: 'TV Trailer' })} notify={notify}>
               <LibraryWorkspace
                 onPlay={playLocal}
                 onFindTorrent={findTorrent}
@@ -1233,6 +1274,7 @@ function ArchiveApp() {
                 onFileDetailsRequestConsumed={consumeLibraryFileRequest}
                 onInitialReady={allowStartupWork}
               />
+              </MediaWorkspace>
             </Suspense>
           </div>
         )}
@@ -1260,6 +1302,7 @@ function ArchiveApp() {
         {mountedSections.has('discover') && (
           <div className="workspace-panel" hidden={activeSection !== 'discover'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
+              <MediaWorkspace enabled={tvEnabled} context="discover" discoverTab={discoverActiveTab} onDiscoverTabChange={setDiscoverActiveTab} streaming={streamingConfig} onStream={streamEpisode} onTrailer={(series, url) => openYouTubeVideo({ title: series.title, year: series.first_air_date?.slice(0, 4) || '', sourceUrl: url, kicker: 'TV Trailer' })} notify={notify}>
               <DiscoverWorkspace
                 followed={followed}
                 notify={notify}
@@ -1277,19 +1320,21 @@ function ArchiveApp() {
                 setBrowseQuery={setBrowseQuery}
                 searchRequest={discoverSearchRequest}
                 relationshipRequest={discoverRelationshipRequest}
+                onReturnToSection={selectSection}
                 listRequest={discoverListRequest}
                 movieRequest={discoverMovieRequest}
                 activeTab={discoverActiveTab}
                 setActiveTab={setDiscoverActiveTab}
                 onOpenFileDetails={openOwnedFileDetails}
               />
+              </MediaWorkspace>
             </Suspense>
           </div>
         )}
         {mountedSections.has('downloads') && (
           <div className="workspace-panel" hidden={activeSection !== 'downloads'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
-              <DownloadsWorkspace />
+              <DownloadsWorkspace tvEnabled={tvEnabled} />
             </Suspense>
           </div>
         )}
@@ -1394,6 +1439,7 @@ function ArchiveApp() {
         />
       )}
     </div>
+    </MovieRelationshipNavigation.Provider>
   );
 }
 
@@ -1597,7 +1643,27 @@ function Sidebar({
 
 
 
+function usePlayerDialog(onClose) {
+  const dialogRef = useRef(null);
+  useEffect(() => {
+    const previous = document.activeElement;
+    dialogRef.current?.querySelector('button')?.focus();
+    const handleKey = (event) => {
+      if (event.key === 'Escape') { event.preventDefault(); onClose(); return; }
+      if (event.key !== 'Tab') return;
+      const controls = [...(dialogRef.current?.querySelectorAll('button, iframe, a[href], [tabindex="0"]') || [])];
+      if (!controls.length) return;
+      if (event.shiftKey && document.activeElement === controls[0]) { event.preventDefault(); controls.at(-1).focus(); }
+      else if (!event.shiftKey && document.activeElement === controls.at(-1)) { event.preventDefault(); controls[0].focus(); }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => { document.removeEventListener('keydown', handleKey); previous?.focus(); };
+  }, []);
+  return dialogRef;
+}
+
 function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }) {
+  const dialogRef = usePlayerDialog(onClose);
   const {
     title,
     year,
@@ -1877,6 +1943,7 @@ function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }
   return (
     <div className="modal-backdrop trailer-backdrop" role="presentation" onClick={onClose}>
       <section
+        ref={dialogRef}
         className={cx('trailer-dialog', isHomeTrailerSession && 'trailer-dialog-home')}
         role="dialog"
         aria-modal="true"
@@ -2054,6 +2121,7 @@ function TrailerRecommendationGrid({ className, title, videos, onSelect }) {
 }
 
 function StreamPlayerModal({ state, onClose }) {
+  const dialogRef = usePlayerDialog(onClose);
   const { title, year, embedUrl } = state;
   const titleLabel = [title, year].filter(Boolean).join(' ');
   const [streamStatusVisible, setStreamStatusVisible] = useState(true);
@@ -2079,7 +2147,7 @@ function StreamPlayerModal({ state, onClose }) {
 
   return (
     <div className="modal-backdrop trailer-backdrop" role="presentation" onClick={onClose}>
-      <section className="trailer-dialog stream-dialog" role="dialog" aria-modal="true" aria-label={`Stream ${titleLabel}`} onClick={(event) => event.stopPropagation()}>
+      <section ref={dialogRef} className="trailer-dialog stream-dialog" role="dialog" aria-modal="true" aria-label={`Stream ${titleLabel}`} onClick={(event) => event.stopPropagation()}>
         <div className="dialog-header trailer-dialog-header">
           <div>
             <p className="screen-kicker">Streaming</p>
