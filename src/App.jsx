@@ -1025,6 +1025,14 @@ function ArchiveApp() {
     }
   }
 
+  function viewContinueWatchingCard(item) {
+    if (!item.tmdb_id) {
+      notify(`Cannot open ${item.title}: no saved TMDB identity. Match the movie in Library first.`, 'neutral');
+      return;
+    }
+    openMovieInDiscover({ ...item, path: item.path_key }, 'Continue Watching');
+  }
+
   function streamEpisode(series, target) {
     const embedUrl = streamingConfig.enabled && buildTvStreamTemplateUrl(streamingConfig.tv_url_template, target);
     if (embedUrl) setStreamModal({ title: `${series.title} · ${target.code || ''} ${target.title || ''}`, year: '', embedUrl });
@@ -1250,6 +1258,7 @@ function ArchiveApp() {
                 onResumeWatching={(item) => playWatching(item)}
                 onRestartWatching={(item) => playWatching(item, true)}
                 onRemoveWatching={removeContinueWatching}
+                onViewWatchingCard={viewContinueWatchingCard}
               />
             </Suspense>
           </div>
@@ -1302,7 +1311,7 @@ function ArchiveApp() {
         {mountedSections.has('discover') && (
           <div className="workspace-panel" hidden={activeSection !== 'discover'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
-              <MediaWorkspace enabled={tvEnabled} context="discover" discoverTab={discoverActiveTab} onDiscoverTabChange={setDiscoverActiveTab} streaming={streamingConfig} onStream={streamEpisode} onTrailer={(series, url) => openYouTubeVideo({ title: series.title, year: series.first_air_date?.slice(0, 4) || '', sourceUrl: url, kicker: 'TV Trailer' })} notify={notify}>
+              <MediaWorkspace enabled={tvEnabled} context="discover" discoverTab={discoverActiveTab} onDiscoverTabChange={setDiscoverActiveTab} movieRequestId={discoverMovieRequest?.requestId} streaming={streamingConfig} onStream={streamEpisode} onTrailer={(series, url) => openYouTubeVideo({ title: series.title, year: series.first_air_date?.slice(0, 4) || '', sourceUrl: url, kicker: 'TV Trailer' })} notify={notify}>
               <DiscoverWorkspace
                 followed={followed}
                 notify={notify}

@@ -265,6 +265,8 @@ class PlaybackHistoryTests(unittest.TestCase):
         items = self.service.continue_watching()
         self.assertEqual(len(items), 1)
         self.assertEqual(items[0]["movie_key"], "tmdb:348")
+        self.assertEqual(items[0].get("tmdb_id"), "348")
+        self.assertEqual(items[0].get("imdb_id"), "")
         self.assertEqual(items[0]["title"], "Alien")
         self.assertEqual(items[0]["poster_url"], "https://image.tmdb.org/alien.jpg")
         self.assertEqual(items[0]["path_key"], self.path_key)

@@ -290,9 +290,11 @@ export function ContinueMovieCard({
   posterUrl,
   progress = 0,
   remainingLabel,
+  menuGroup,
   onResume,
   onRestart,
-  onRemove
+  onRemove,
+  onViewCard
 }) {
   const displayTitle = title || 'Untitled';
   const boundedProgress = Math.max(0, Math.min(1, Number(progress) || 0));
@@ -306,7 +308,7 @@ export function ContinueMovieCard({
         showPlayOverlay
         onPlay={onResume}
       >
-        <details className="continue-movie-menu" onClick={stopCardToggle}>
+        <details className="continue-movie-menu" name={menuGroup} onClick={stopCardToggle}>
           <summary role="button" aria-label={`More options for ${displayTitle}`} title="More options">
             <MoreHorizontal size={17} />
           </summary>
@@ -329,6 +331,17 @@ export function ContinueMovieCard({
             >
               <X size={14} /> Remove
             </button>
+            {onViewCard && (
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.currentTarget.closest('details')?.removeAttribute('open');
+                  onViewCard();
+                }}
+              >
+                <Film size={14} /> View card
+              </button>
+            )}
           </div>
         </details>
       </UnifiedMoviePoster>

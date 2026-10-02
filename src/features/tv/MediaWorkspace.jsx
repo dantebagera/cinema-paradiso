@@ -2,11 +2,16 @@ import { cloneElement, lazy, Suspense, useEffect, useRef, useState } from 'react
 import { Bot, Clapperboard, Compass, Radio, Tv } from 'lucide-react';
 const TVWorkspace = lazy(() => import('./TVWorkspace.jsx'));
 
-export default function MediaWorkspace({ enabled, context, children, discoverTab = 'explore', onDiscoverTabChange, ...props }) {
+export default function MediaWorkspace({ enabled, context, children, discoverTab = 'explore', onDiscoverTabChange, movieRequestId, ...props }) {
   const [media, setMedia] = useState(() => window.location.pathname.startsWith('/tv/series/') ? 'tv' : sessionStorage.getItem(`cp-${context}-media`) || 'movie');
   const [mounted, setMounted] = useState(media === 'tv');
   const scrollPositions = useRef({ movie: 0, tv: 0 });
   useEffect(() => { const pop = () => { if (window.location.pathname.startsWith('/tv/series/')) { setMedia('tv'); setMounted(true); } }; window.addEventListener('popstate', pop); return () => window.removeEventListener('popstate', pop); }, []);
+  useEffect(() => {
+    if (context !== 'discover' || !movieRequestId) return;
+    setMedia('movie');
+    sessionStorage.setItem('cp-discover-media', 'movie');
+  }, [context, movieRequestId]);
   if (!enabled) return children;
   function selectMedia(value) {
     const workspace = document.querySelector('main.workspace');

@@ -458,6 +458,8 @@ class PlaybackHistoryService:
             grouped[identity] = {
                 "path_key": row["path_key"],
                 "movie_key": movie_key,
+                "tmdb_id": movie["tmdb_id"],
+                "imdb_id": movie["imdb_id"],
                 "title": movie["title"][:512],
                 "year": movie["year"][:16],
                 "poster_url": movie["poster_url"],

@@ -2,7 +2,7 @@ import {
   AlertTriangle, Bell, ChevronLeft, ChevronRight, ExternalLink, Film, HardDrive, Link as LinkIcon, Loader2, MonitorPlay,
   Play, RefreshCw, ScanSearch, Search, Sparkles, Trash2, Wand2, X, Youtube
 } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import headerCropUrl from '../../assets/header.png';
 import Rating from '../../components/Rating.jsx';
 import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
@@ -51,7 +51,8 @@ export default function HomeWorkspace(props) {
     continueWatching = [],
     onResumeWatching,
     onRestartWatching,
-    onRemoveWatching
+    onRemoveWatching,
+    onViewWatchingCard
   } = props;
   const [releaseDrawerOpen, setReleaseDrawerOpen] = useState(false);
   const selectedFollowedMovie = followed.find(
@@ -104,6 +105,7 @@ export default function HomeWorkspace(props) {
             onResume={onResumeWatching}
             onRestart={onRestartWatching}
             onRemove={onRemoveWatching}
+            onViewCard={onViewWatchingCard}
           />
         )}
         <section className="movie-rail">
@@ -405,8 +407,9 @@ function remainingLabel(seconds) {
   return remainder ? `${hours} hr ${remainder} min remaining` : `${hours} hr remaining`;
 }
 
-function ContinueWatchingRail({ items, onResume, onRestart, onRemove }) {
+function ContinueWatchingRail({ items, onResume, onRestart, onRemove, onViewCard }) {
   const viewportRef = useRef(null);
+  const menuGroup = useId();
 
   function scrollBy(direction) {
     viewportRef.current?.scrollBy({ left: direction * 680, behavior: 'smooth' });
@@ -446,12 +449,14 @@ function ContinueWatchingRail({ items, onResume, onRestart, onRemove }) {
           <ContinueMovieCard
             key={item.path_key}
             title={item.title}
+            menuGroup={menuGroup}
             posterUrl={item.poster_url}
             progress={item.progress}
             remainingLabel={item.media_type === 'tv' ? `${item.primary_action.label} · ${item.primary_action.target.code} · ${item.primary_action.target.title}${item.primary_action.playable ? '' : ' · Missing locally'}` : remainingLabel(item.remaining_seconds)}
             onResume={() => onResume(item)}
             onRestart={() => onRestart(item)}
             onRemove={() => onRemove(item)}
+            onViewCard={item.media_type !== 'tv' ? () => onViewCard(item) : undefined}
           />
         ))}
       </div>
