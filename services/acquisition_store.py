@@ -15,7 +15,7 @@ class AcquisitionRepository:
         self.path, self.clock = guarded_path(path), clock
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with self.connection() as db:
-            if db.execute('PRAGMA user_version').fetchone()[0] > 2:
+            if db.execute('PRAGMA user_version').fetchone()[0] > 3:
                 raise ValueError('Acquisition schema is newer than this application')
             db.executescript('''
                 CREATE TABLE IF NOT EXISTS profiles(id TEXT PRIMARY KEY,name TEXT NOT NULL,payload TEXT NOT NULL,version INTEGER NOT NULL);
@@ -29,13 +29,49 @@ class AcquisitionRepository:
                 CREATE TABLE IF NOT EXISTS leases(work_key TEXT PRIMARY KEY,owner TEXT NOT NULL,expires_at REAL NOT NULL,reserved_bytes INTEGER NOT NULL DEFAULT 0);
                 CREATE UNIQUE INDEX IF NOT EXISTS active_target ON intents(target) WHERE state IN ('selected','submitted','import_pending');
                 CREATE TABLE IF NOT EXISTS batches(request_key TEXT PRIMARY KEY,tokens TEXT NOT NULL,payload TEXT NOT NULL,created_at REAL NOT NULL);
-                PRAGMA user_version=2;
+                CREATE TABLE IF NOT EXISTS tv_tasks(
+                  id TEXT PRIMARY KEY, series_id INTEGER NOT NULL, tmdb_id INTEGER NOT NULL,
+                  kind TEXT NOT NULL CHECK(kind IN ('follow','bulk')), scope TEXT NOT NULL,
+                  action TEXT NOT NULL, season INTEGER, selected_episodes TEXT NOT NULL DEFAULT '[]',
+                  profile_id TEXT NOT NULL REFERENCES profiles(id), state TEXT NOT NULL,
+                  target_episode_ids TEXT NOT NULL DEFAULT '[]', created_at REAL NOT NULL,
+                  started_at REAL, updated_at REAL NOT NULL, next_due REAL NOT NULL DEFAULT 0,
+                  last_refresh REAL, last_search REAL, error TEXT NOT NULL DEFAULT '');
+                CREATE TABLE IF NOT EXISTS tv_task_episodes(
+                  task_id TEXT NOT NULL REFERENCES tv_tasks(id) ON DELETE CASCADE,
+                  episode_id INTEGER NOT NULL, state TEXT NOT NULL, next_retry REAL NOT NULL DEFAULT 0,
+                  last_search REAL, intent_id TEXT, error TEXT NOT NULL DEFAULT '',
+                  PRIMARY KEY(task_id,episode_id));
+                CREATE TABLE IF NOT EXISTS tv_task_exclusions(
+                  task_id TEXT NOT NULL REFERENCES tv_tasks(id) ON DELETE CASCADE,
+                  season INTEGER NOT NULL, PRIMARY KEY(task_id,season));
+                CREATE TABLE IF NOT EXISTS tv_task_cancellations(
+                  task_id TEXT PRIMARY KEY REFERENCES tv_tasks(id), mode TEXT NOT NULL,
+                  preview TEXT NOT NULL, outcome TEXT NOT NULL, created_at REAL NOT NULL);
+                CREATE TABLE IF NOT EXISTS notification_events(
+                  id INTEGER PRIMARY KEY, media_type TEXT NOT NULL, source TEXT NOT NULL,
+                  task_id TEXT, episode_key TEXT, event_key TEXT NOT NULL UNIQUE,
+                  severity TEXT NOT NULL, title TEXT NOT NULL, body TEXT NOT NULL,
+                  link TEXT NOT NULL, created_at REAL NOT NULL, read_at REAL);
+                PRAGMA user_version=3;
             ''')
             profile = default_profile(compatibility=True, quality=quality)
             db.execute('INSERT OR IGNORE INTO profiles VALUES(?,?,?,?)', (profile['id'], profile['name'], json.dumps(profile), 1))
             profile = default_profile()
             db.execute('INSERT OR IGNORE INTO profiles VALUES(?,?,?,?)', (profile['id'], profile['name'], json.dumps(profile), 1))
             db.execute("INSERT OR IGNORE INTO settings VALUES('movie_default','cp-compatibility')")
+            for row in db.execute("SELECT target,mode,profile_id,next_due FROM monitors WHERE mode NOT IN ('none','inherit')").fetchall():
+                parts = row['target'].split(':')
+                if len(parts) < 4 or parts[1:3] != ['tmdb', 'tv'] or not parts[3].isdigit():
+                    continue
+                identity = 'legacy:' + row['target']
+                scope = 'series' if parts[0] == 'series' else 'season' if parts[0] == 'season' else 'episodes'
+                action = {'all': 'missing', 'cutoff': 'upgrade'}.get(row['mode'], row['mode'])
+                db.execute('INSERT OR IGNORE INTO tv_tasks(id,series_id,tmdb_id,kind,scope,action,season,selected_episodes,profile_id,state,created_at,updated_at,next_due,error) '
+                           'VALUES(?,0,?,"follow",?,?,?,"[]",?,"draft",?,?,0,?)',
+                           (identity, int(parts[3]), scope, action, int(parts[4]) if scope == 'season' and len(parts)>4 and parts[4].isdigit() else None,
+                            row['profile_id'] or 'safe-hd', row['next_due'], self.clock(), 'Migrated rule: review and Start explicitly'))
+                db.execute("UPDATE monitors SET mode='none' WHERE target=?", (row['target'],))
             db.commit()
 
     @contextmanager
@@ -142,10 +178,53 @@ class AcquisitionRepository:
     def event(self, intent_id, event, payload=None, *, state=None):
         with self.transaction() as db:
             db.execute('INSERT INTO events(intent_id,event,payload,created_at) VALUES(?,?,?,?)', (intent_id, event, json.dumps(payload or {}), self.clock()))
+            if event in {'submitted', 'imported', 'partial_import', 'import_needs_review', 'import_failed_terminal',
+                         'import_retry_scheduled', 'rolled_back', 'cancel', 'block'}:
+                intent = db.execute('SELECT target FROM intents WHERE id=?', (intent_id,)).fetchone()
+                media = 'tv' if intent and ':tmdb:tv:' in intent['target'] else 'movie'
+                severity = 'error' if event in {'import_failed_terminal', 'import_needs_review'} else 'warning' if event in {'partial_import', 'import_retry_scheduled'} else 'info'
+                db.execute('INSERT OR IGNORE INTO notification_events(media_type,source,task_id,episode_key,event_key,severity,title,body,link,created_at) '
+                           'VALUES(?,?,?,?,?,?,?,?,?,?)',
+                           (media, 'acquisition', intent_id, intent['target'] if intent else None,
+                            f'intent:{intent_id}:{event}:{state or ""}', severity, event.replace('_', ' ').title(),
+                            json.dumps(payload or {}), '/downloads', self.clock()))
             if state:
                 db.execute('UPDATE intents SET state=? WHERE id=?', (state, intent_id))
                 if state in {'ready', 'cancelled', 'failed_terminal'}:
                     db.execute('DELETE FROM intent_claims WHERE intent_id=?', (intent_id,))
+
+    def notify(self, *, media_type, source, task_id, event_key, severity, title, body, link, episode_key=None):
+        if media_type not in {'tv', 'movie'} or severity not in {'info', 'warning', 'error'}:
+            raise ValueError('Typed notification media and severity are required')
+        with self.transaction() as db:
+            result = db.execute('INSERT OR IGNORE INTO notification_events(media_type,source,task_id,episode_key,event_key,severity,title,body,link,created_at) '
+                                'VALUES(?,?,?,?,?,?,?,?,?,?)',
+                                (media_type, source, task_id, episode_key, event_key, severity, title, body, link, self.clock()))
+        return {'created': bool(result.rowcount)}
+
+    def notifications(self, *, query='', page=1, page_size=50):
+        page = max(1, int(page))
+        page_size = min(100, max(1, int(page_size)))
+        needle = f'%{str(query or "").strip().casefold()}%'
+        with self.connection() as db:
+            args = (needle, needle, needle, needle)
+            where = 'lower(title) LIKE ? OR lower(body) LIKE ? OR lower(COALESCE(task_id,"")) LIKE ? OR lower(COALESCE(episode_key,"")) LIKE ?'
+            total = db.execute(f'SELECT COUNT(*) FROM notification_events WHERE {where}', args).fetchone()[0]
+            unread = db.execute('SELECT COUNT(*) FROM notification_events WHERE read_at IS NULL').fetchone()[0]
+            rows = [dict(row) for row in db.execute(f'SELECT * FROM notification_events WHERE {where} '
+                                                'ORDER BY created_at DESC,id DESC LIMIT ? OFFSET ?',
+                                                (*args, page_size, (page-1)*page_size))]
+        return {'items': rows, 'total': total, 'unread': unread, 'page': page,
+                'page_size': page_size, 'total_pages': max(1, (total+page_size-1)//page_size)}
+
+    def mark_notifications_read(self, ids):
+        ids = sorted(set(int(value) for value in ids))
+        if not ids or len(ids) > 100:
+            raise ValueError('Select 1 to 100 notifications')
+        with self.transaction() as db:
+            result = db.execute(f'UPDATE notification_events SET read_at=COALESCE(read_at,?) WHERE id IN ({",".join("?" for _ in ids)})',
+                                (self.clock(), *ids))
+        return {'read': result.rowcount}
 
     def block(self, target, info_hash, reason, ttl=86400):
         with self.transaction() as db:

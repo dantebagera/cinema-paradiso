@@ -2043,7 +2043,7 @@ class CatalogStore:
             "title": title,
         }.get(_text(sort_mode), title)
 
-    def _candidates_for_path_keys(self, connection, path_keys):
+    def _candidates_for_path_keys(self, connection, path_keys, *, include_details=False):
         path_keys = list(dict.fromkeys(_text(key) for key in path_keys if _text(key)))
         if not path_keys:
             return []
@@ -2051,7 +2051,7 @@ class CatalogStore:
             SELECT mf.* FROM media_files mf
             WHERE mf.path_key IN (SELECT value FROM json_each(?))
         """, (_json_text(path_keys),)).fetchall()
-        canonical = self.canonical.project_paths(connection, path_keys, include_details=False)
+        canonical = self.canonical.project_paths(connection, path_keys, include_details=include_details)
         decoded = []
         for row in rows:
             item = dict(row)
@@ -2059,6 +2059,42 @@ class CatalogStore:
             decoded.append(item)
         by_path = {row["path_key"]: row for row in decoded}
         return [by_path[key] for key in path_keys if key in by_path]
+
+    def collection_lookup(self, collection_id):
+        """Return detailed local members and cheap identities for one collection."""
+        collection_id = _text(collection_id)
+        if not collection_id:
+            return [], [], []
+        cte = self._library_effective_cte()
+        connection = self.connect()
+        try:
+            member_keys = [row[0] for row in connection.execute(
+                f"{cte} SELECT e.path_key FROM effective e WHERE EXISTS ("
+                "SELECT 1 FROM movie_collections mc "
+                "JOIN collections c ON c.collection_key = mc.collection_key "
+                "WHERE mc.snapshot_key = e.snapshot_key AND c.provider_id = ?"
+                ") ORDER BY e.added_time DESC, e.path_key",
+                (collection_id,),
+            ).fetchall()]
+            identities = [dict(row) for row in connection.execute(
+                f"{cte} SELECT e.path_key, e.path, e.tmdb_id, e.imdb_id, "
+                "e.display_title AS title, e.display_year AS year "
+                "FROM effective e ORDER BY e.added_time DESC, e.path_key"
+            ).fetchall()]
+            represented = {row["path_key"] for row in identities}
+            # Preserve the old route's legacy/unaccepted file behavior without
+            # projecting details for every accepted movie in the library.
+            other_keys = [row[0] for row in connection.execute(
+                "SELECT path_key FROM media_files "
+                "WHERE path_key NOT IN (SELECT value FROM json_each(?)) "
+                "ORDER BY added_time DESC, path_key",
+                (_json_text(list(represented)),),
+            ).fetchall()]
+            members = self._candidates_for_path_keys(connection, member_keys, include_details=True)
+            other_candidates = self._candidates_for_path_keys(connection, other_keys, include_details=True)
+            return members, identities, other_candidates
+        finally:
+            connection.close()
 
     def library_page(self, filters=None, *, query=None, page=1, page_size=40, upgrade_path_keys=()):
         filters = dict(filters or {})

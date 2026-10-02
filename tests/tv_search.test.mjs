@@ -12,6 +12,16 @@ test('TV creator criteria survive edits while movie validation stays unchanged',
   assert.notEqual(querySignature(movie), querySignature({ ...movie, media_type: 'tv' }));
 });
 
+test('TMDB series status is available only to TV Discover queries', () => {
+  const status = { id: '3', label: 'Ended' };
+  const tvDiscover = { ...createEmptyQuery('discover'), media_type: 'tv' };
+  const filtered = withCriterion(tvDiscover, 'tv_status', status);
+  assert.deepEqual(normalizeAdvancedQuery(filtered).groups[0].values[0], status);
+  assert.throws(() => withCriterion(createEmptyQuery('discover'), 'tv_status', status));
+  assert.throws(() => withCriterion({ ...createEmptyQuery('library'), media_type: 'tv' }, 'tv_status', status));
+  assert.throws(() => withCriterion(tvDiscover, 'tv_status', { id: '6', label: 'Other' }));
+});
+
 test('TV stream targets the series and episode, refuses unaired or incomplete targets', () => {
   const template = 'https://streamimdb.ru/embed/tv/{tmdb_id}/{season_number}/{episode_number}';
   const episode = { tmdb_id: 108978, episode_id: 9999, season_number: 1, episode_number: 2, released: true };

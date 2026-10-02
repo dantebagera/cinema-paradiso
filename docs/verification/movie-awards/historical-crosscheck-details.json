@@ -1,0 +1,4391 @@
+[
+  {
+    "organization": "golden_globe",
+    "ceremony": 1,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337044382",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337044382",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=1st_Golden_Globes&oldid=1337044382"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 2,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337044391",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337044391",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=2nd_Golden_Globes&oldid=1337044391"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 3,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337044402",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337044402",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=3rd_Golden_Globes&oldid=1337044402"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 4,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337044409",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337044409",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=4th_Golden_Globes&oldid=1337044409",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Special Achievement Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1947/"
+          },
+          "replaced_instances": [
+            "Special Achievement Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 5,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337045149",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337045149",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=5th_Golden_Globes&oldid=1337045149",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Special Achievement Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1948/"
+          },
+          "replaced_instances": [
+            "Special Achievement Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 6,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [
+        "Best Motion Picture - Drama"
+      ],
+      "revision": [
+        "1337042439",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337042439",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=6th_Golden_Globes&oldid=1337042439",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Foreign Film - English Language"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1949/"
+          },
+          "replaced_instances": [
+            "Foreign Film - English Language"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 7,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337042427",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337042427",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=7th_Golden_Globes&oldid=1337042427",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Cinematography",
+              "Outstanding Use Of Color"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1950/"
+          },
+          "replaced_instances": [
+            "Cinematography",
+            "Cinematography - Black And White",
+            "Cinematography - Color",
+            "Outstanding Use Of Color"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 8,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337042413",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337042413",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=8th_Golden_Globes&oldid=1337042413",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "New Star Of The Year"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1951/"
+          },
+          "replaced_instances": [
+            "New Star Of The Year"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 9,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337042404",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337042404",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=9th_Golden_Globes&oldid=1337042404",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1952/"
+          },
+          "replaced_instances": [
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 10,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337042386",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337042386",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=10th_Golden_Globes&oldid=1337042386"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 11,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337042368",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "New Star Of The Year - Actor",
+        "New Star Of The Year - Actress"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1337042368",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=11th_Golden_Globes&oldid=1337042368",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "New Star Of The Year - Actress",
+              "Special Achievement Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1954/"
+          },
+          "replaced_instances": [
+            "New Star Of The Year - Actress",
+            "Special Achievement Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 12,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1374922189",
+      "ties": [
+        "Best Motion Picture - Foreign Language",
+        "New Star Of The Year - Actor",
+        "New Star Of The Year - Actress"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1374922189",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=12th_Golden_Globes&oldid=1374922189"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 13,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337042210",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "Best Motion Picture - Foreign Language",
+        "New Star Of The Year - Actor",
+        "New Star Of The Year - Actress"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1337042210",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=13th_Golden_Globes&oldid=1337042210",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Outdoor Drama",
+              "Special Achievement Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1956/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Outdoor Drama",
+            "Special Achievement Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 14,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337042196",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "Best Motion Picture - Foreign Language",
+        "New Star Of The Year - Actress",
+        "New Star Of The Year - Actor"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1337042196",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=14th_Golden_Globes&oldid=1337042196",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "Foreign Film - English Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1957/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "Foreign Film - English Language",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 15,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1365065288",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "Best Motion Picture - Foreign Language",
+        "New Star Of The Year - Actress",
+        "New Star Of The Year - Actor"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1365065288",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=15th_Golden_Globes&oldid=1365065288",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "Foreign Film - English Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1958/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "Foreign Film - English Language",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 16,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1364522870",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "New Star Of The Year - Actor",
+        "New Star Of The Year - Actress",
+        "Best Motion Picture - Foreign Language"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1364522870",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=16th_Golden_Globes&oldid=1364522870",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "Juvenile Performance",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress",
+              "Samuel Goldwyn International Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1959/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "Juvenile Performance",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress",
+            "Samuel Goldwyn International Award",
+            "Special Achievement Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 17,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1357106105",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "New Star Of The Year - Actor",
+        "Best Motion Picture - Foreign Language",
+        "New Star Of The Year - Actress"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1357106105",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=17th_Golden_Globes&oldid=1357106105",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress",
+              "Special Achievement Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1960/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress",
+            "Special Achievement Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 18,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1357591070",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "New Star Of The Year - Actor",
+        "New Star Of The Year - Actress",
+        "Best Motion Picture - Foreign Language"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1357591070",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=18th_Golden_Globes&oldid=1357591070",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "Foreign Film - English Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress",
+              "Samuel Goldwyn International Award",
+              "Special Achievement Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1961/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "Foreign Film - English Language",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress",
+            "Samuel Goldwyn International Award",
+            "Special Achievement Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 19,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1357587504",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "New Star Of The Year - Actor",
+        "New Star Of The Year - Actress"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1357587504",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=19th_Golden_Globes&oldid=1357587504",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress",
+              "Picture - Comedy",
+              "Samuel Goldwyn International Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1962/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "Best Motion Picture - Musical or Comedy",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress",
+            "Picture - Comedy",
+            "Samuel Goldwyn International Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 20,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1357588489",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "New Star Of The Year - Actress",
+        "New Star Of The Year - Actor"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1357588489",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=20th_Golden_Globes&oldid=1357588489",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress",
+              "Samuel Goldwyn International Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1963/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress",
+            "Samuel Goldwyn International Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 21,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1341063475",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "New Star Of The Year - Actor",
+        "New Star Of The Year - Actress"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1341063475",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=21st_Golden_Globes&oldid=1341063475",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress",
+              "Promoting International Understanding",
+              "Samuel Goldwyn International Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1964/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress",
+            "Promoting International Understanding",
+            "Samuel Goldwyn International Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 22,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337041937",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": [
+        "New Star Of The Year - Actress",
+        "Best Motion Picture - Foreign Language",
+        "New Star Of The Year - Actor"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1337041937",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=22nd_Golden_Globes&oldid=1337041937",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "Foreign Film - English Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress",
+              "Samuel Goldwyn International Award"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1965/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "Foreign Film - English Language",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress",
+            "Samuel Goldwyn International Award"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 23,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1337976140",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337976140",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=23rd_Golden_Globes&oldid=1337976140",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "Foreign Film - English Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1966/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "Foreign Film - English Language",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 24,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": [
+        "1370958208",
+        "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779"
+      ],
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1370958208",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=24th_Golden_Globes&oldid=1370958208",
+      "supplements": [
+        {
+          "program_evidence": {
+            "expected_instances": [
+              "Best Motion Picture - Foreign Language",
+              "Foreign Film - English Language",
+              "New Star Of The Year - Actor",
+              "New Star Of The Year - Actress"
+            ],
+            "reason": "Complete review of the replaced historical categories and their independently captured positive film records; career-only awards excluded. Annual ceremony retains every other category.",
+            "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+            "source_url": "https://goldenglobes.com/nominations/1967/"
+          },
+          "replaced_instances": [
+            "Best Motion Picture - Foreign Language",
+            "Foreign Film - English Language",
+            "New Star Of The Year - Actor",
+            "New Star Of The Year - Actress"
+          ],
+          "revision": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "sha256": "148f55ac04c9fe504a7246c3e0b4d495ec5abe068201911ae54ceed3c7155779",
+          "source_id": "historical_globe"
+        }
+      ]
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 25,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337045159",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337045159",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=25th_Golden_Globes&oldid=1337045159"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 26,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1353882499",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1353882499",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=26th_Golden_Globes&oldid=1353882499"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 27,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337041905",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337041905",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=27th_Golden_Globes&oldid=1337041905"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 28,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1350402326",
+      "ties": [
+        "Best Performance by an Actress in a Supporting Role in Any Motion Picture"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1350402326",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=28th_Golden_Globes&oldid=1350402326"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 29,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1369587951",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1369587951",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=29th_Golden_Globes&oldid=1369587951"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 30,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1362707195",
+      "ties": [
+        "Best Motion Picture - Foreign Language",
+        "Documentary"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1362707195",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=30th_Golden_Globes&oldid=1362707195"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 31,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1360007705",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1360007705",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=31st_Golden_Globes&oldid=1360007705"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 32,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337169748",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337169748",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=32nd_Golden_Globes&oldid=1337169748"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 33,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337041579",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337041579",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=33rd_Golden_Globes&oldid=1337041579"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 34,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1366600096",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1366600096",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=34th_Golden_Globes&oldid=1366600096"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 35,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337041559",
+      "ties": [
+        "Best Performance by an Actress in a Motion Picture - Musical or Comedy"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1337041559",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=35th_Golden_Globes&oldid=1337041559"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 36,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1363716255",
+      "ties": [
+        "Best Performance by an Actress in a Motion Picture - Musical or Comedy"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1363716255",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=36th_Golden_Globes&oldid=1363716255"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 37,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1355736517",
+      "ties": [
+        "Best Performance by an Actor in a Supporting Role in Any Motion Picture"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1355736517",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=37th_Golden_Globes&oldid=1355736517"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 38,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1363716263",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1363716263",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=38th_Golden_Globes&oldid=1363716263"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 39,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1354172970",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1354172970",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=39th_Golden_Globes&oldid=1354172970"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 40,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1364639187",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1364639187",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=40th_Golden_Globes&oldid=1364639187"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 41,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337042645",
+      "ties": [
+        "Best Performance by an Actor in a Motion Picture - Drama"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1337042645",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=41st_Golden_Globes&oldid=1337042645"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 42,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1367052732",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1367052732",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=42nd_Golden_Globes&oldid=1367052732"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 43,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1345871661",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1345871661",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=43rd_Golden_Globes&oldid=1345871661"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 44,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1358290428",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1358290428",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=44th_Golden_Globes&oldid=1358290428"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 45,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375994380",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375994380",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=45th_Golden_Globes&oldid=1375994380"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 46,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337041088",
+      "ties": [
+        "Best Performance by an Actress in a Motion Picture - Drama",
+        "Best Original Song - Motion Picture"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1337041088",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=46th_Golden_Globes&oldid=1337041088"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 47,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337044370",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337044370",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=47th_Golden_Globes&oldid=1337044370"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 48,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1341115005",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1341115005",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=48th_Golden_Globes&oldid=1341115005"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 49,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1338560524",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1338560524",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=49th_Golden_Globes&oldid=1338560524"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 50,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1359896517",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1359896517",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=50th_Golden_Globes&oldid=1359896517"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 51,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337044337",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337044337",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=51st_Golden_Globes&oldid=1337044337"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 52,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368990151",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368990151",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=52nd_Golden_Globes&oldid=1368990151"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 53,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1341933607",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1341933607",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=53rd_Golden_Globes&oldid=1341933607"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 54,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337040509",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337040509",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=54th_Golden_Globes&oldid=1337040509"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 55,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1337040464",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1337040464",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=55th_Golden_Globes&oldid=1337040464"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 56,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1341933613",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1341933613",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=56th_Golden_Globes&oldid=1341933613"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 57,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1344075060",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1344075060",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=57th_Golden_Globes&oldid=1344075060"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 58,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662453",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662453",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=58th_Golden_Globes&oldid=1373662453"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 59,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662466",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662466",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=59th_Golden_Globes&oldid=1373662466"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 60,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662491",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662491",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=60th_Golden_Globes&oldid=1373662491"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 61,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662650",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662650",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=61st_Golden_Globes&oldid=1373662650"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 62,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375558088",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375558088",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=62nd_Golden_Globes&oldid=1375558088"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 63,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375558096",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375558096",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=63rd_Golden_Globes&oldid=1375558096"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 64,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375560383",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375560383",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=64th_Golden_Globes&oldid=1375560383"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 65,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662561",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662561",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=65th_Golden_Globes&oldid=1373662561"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 66,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368477804",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368477804",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=66th_Golden_Globes&oldid=1368477804"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 67,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662597",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662597",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=67th_Golden_Globes&oldid=1373662597"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 68,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1352162200",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1352162200",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=68th_Golden_Globes&oldid=1352162200"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 69,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662059",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662059",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=69th_Golden_Globes&oldid=1373662059"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 70,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662066",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662066",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=70th_Golden_Globes&oldid=1373662066"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 71,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662137",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662137",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=71st_Golden_Globes&oldid=1373662137"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 72,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662172",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662172",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=72nd_Golden_Globes&oldid=1373662172"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 73,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662171",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662171",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=73rd_Golden_Globes&oldid=1373662171"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 74,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662376",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662376",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=74th_Golden_Globes&oldid=1373662376"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 75,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373662877",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373662877",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=75th_Golden_Globes&oldid=1373662877"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 76,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1338511675",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1338511675",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=76th_Golden_Globes&oldid=1338511675"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 77,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1371858944",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1371858944",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=77th_Golden_Globes&oldid=1371858944"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 78,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373661789",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373661789",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=78th_Golden_Globes&oldid=1373661789"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 79,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373661837",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373661837",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=79th_Golden_Globes&oldid=1373661837"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 80,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1374952419",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1374952419",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=80th_Golden_Globes&oldid=1374952419"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 81,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373661726",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373661726",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=81st_Golden_Globes&oldid=1373661726"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 82,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373661762",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373661762",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=82nd_Golden_Globes&oldid=1373661762"
+    }
+  },
+  {
+    "organization": "golden_globe",
+    "ceremony": 83,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373661746",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373661746",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=83rd_Golden_Globes&oldid=1373661746"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 1,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [
+        "ACTOR IN A LEADING ROLE",
+        "ACTRESS IN A LEADING ROLE"
+      ],
+      "revision": "1370223271",
+      "ties": [
+        "ART DIRECTION",
+        "SPECIAL AWARD"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1370223271",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=1st_Academy_Awards&oldid=1370223271"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 2,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1357098720",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1357098720",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=2nd_Academy_Awards&oldid=1357098720"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 3,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1361465285",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1361465285",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=3rd_Academy_Awards&oldid=1361465285"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 4,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1366881477",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1366881477",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=4th_Academy_Awards&oldid=1366881477"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 5,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1349249985",
+      "ties": [
+        "ACTOR IN A LEADING ROLE"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1349249985",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=5th_Academy_Awards&oldid=1349249985"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 6,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1360087382",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1360087382",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=6th_Academy_Awards&oldid=1360087382"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 7,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373348976",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373348976",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=7th_Academy_Awards&oldid=1373348976"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 8,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [
+        "DANCE DIRECTION"
+      ],
+      "revision": "1369677515",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1369677515",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=8th_Academy_Awards&oldid=1369677515"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 9,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1376554498",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1376554498",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=9th_Academy_Awards&oldid=1376554498"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 10,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1376328736",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1376328736",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=10th_Academy_Awards&oldid=1376328736"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 11,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1376328739",
+      "ties": [
+        "SPECIAL AWARD"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1376328739",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=11th_Academy_Awards&oldid=1376328739"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 12,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1357587468",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1357587468",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=12th_Academy_Awards&oldid=1357587468"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 13,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1357587469",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1357587469",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=13th_Academy_Awards&oldid=1357587469"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 14,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375181229",
+      "ties": [
+        "SPECIAL AWARD"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1375181229",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=14th_Academy_Awards&oldid=1375181229"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 15,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1357588331",
+      "ties": [
+        "DOCUMENTARY (Feature)"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1357588331",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=15th_Academy_Awards&oldid=1357588331"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 16,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1365081299",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1365081299",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=16th_Academy_Awards&oldid=1365081299"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 17,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1357588335",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1357588335",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=17th_Academy_Awards&oldid=1357588335"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 18,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1367285773",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1367285773",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=18th_Academy_Awards&oldid=1367285773"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 19,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1357591061",
+      "ties": [
+        "SPECIAL AWARD"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1357591061",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=19th_Academy_Awards&oldid=1357591061"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 20,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1357588344",
+      "ties": [
+        "SPECIAL AWARD"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1357588344",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=20th_Academy_Awards&oldid=1357588344"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 21,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1365512714",
+      "ties": [
+        "SPECIAL AWARD"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1365512714",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=21st_Academy_Awards&oldid=1365512714"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 22,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1357588341",
+      "ties": [
+        "DOCUMENTARY (Short Subject)"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1357588341",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=22nd_Academy_Awards&oldid=1357588341"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 23,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1349255534",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1349255534",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=23rd_Academy_Awards&oldid=1349255534"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 24,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1356564358",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1356564358",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=24th_Academy_Awards&oldid=1356564358"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 25,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368413011",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368413011",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=25th_Academy_Awards&oldid=1368413011"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 26,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1364361507",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1364361507",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=26th_Academy_Awards&oldid=1364361507"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 27,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1374922047",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1374922047",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=27th_Academy_Awards&oldid=1374922047"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 28,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1359504853",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1359504853",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=28th_Academy_Awards&oldid=1359504853"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 29,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375870025",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375870025",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=29th_Academy_Awards&oldid=1375870025"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 30,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1365065246",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1365065246",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=30th_Academy_Awards&oldid=1365065246"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 31,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1345137808",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1345137808",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=31st_Academy_Awards&oldid=1345137808"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 32,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1338807716",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1338807716",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=32nd_Academy_Awards&oldid=1338807716"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 33,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373038276",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373038276",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=33rd_Academy_Awards&oldid=1373038276"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 34,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373038321",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373038321",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=34th_Academy_Awards&oldid=1373038321"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 35,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1340932632",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1340932632",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=35th_Academy_Awards&oldid=1340932632"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 36,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373876473",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373876473",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=36th_Academy_Awards&oldid=1373876473"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 37,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375249883",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375249883",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=37th_Academy_Awards&oldid=1375249883"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 38,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375257955",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375257955",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=38th_Academy_Awards&oldid=1375257955"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 39,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375262108",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375262108",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=39th_Academy_Awards&oldid=1375262108"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 40,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1376070774",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1376070774",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=40th_Academy_Awards&oldid=1376070774"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 41,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375379983",
+      "ties": [
+        "ACTRESS IN A LEADING ROLE",
+        "HONORARY AWARD"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1375379983",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=41st_Academy_Awards&oldid=1375379983"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 42,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375384397",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375384397",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=42nd_Academy_Awards&oldid=1375384397"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 43,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1377683382",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1377683382",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=43rd_Academy_Awards&oldid=1377683382"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 44,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1376389580",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1376389580",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=44th_Academy_Awards&oldid=1376389580"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 45,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1364587864",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1364587864",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=45th_Academy_Awards&oldid=1364587864"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 46,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1377060897",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1377060897",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=46th_Academy_Awards&oldid=1377060897"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 47,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1369116569",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1369116569",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=47th_Academy_Awards&oldid=1369116569"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 48,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1376013942",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1376013942",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=48th_Academy_Awards&oldid=1376013942"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 49,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1347912404",
+      "ties": [
+        "SPECIAL ACHIEVEMENT AWARD (Visual Effects)"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1347912404",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=49th_Academy_Awards&oldid=1347912404"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 50,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375645143",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375645143",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=50th_Academy_Awards&oldid=1375645143"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 51,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1347230036",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1347230036",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=51st_Academy_Awards&oldid=1347230036"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 52,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1363214480",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1363214480",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=52nd_Academy_Awards&oldid=1363214480"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 53,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1361860525",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1361860525",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=53rd_Academy_Awards&oldid=1361860525"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 54,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1369399228",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1369399228",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=54th_Academy_Awards&oldid=1369399228"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 55,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1348244522",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1348244522",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=55th_Academy_Awards&oldid=1348244522"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 56,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1348399002",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1348399002",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=56th_Academy_Awards&oldid=1348399002"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 57,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1366483994",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1366483994",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=57th_Academy_Awards&oldid=1366483994"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 58,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1358571171",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1358571171",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=58th_Academy_Awards&oldid=1358571171"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 59,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373743265",
+      "ties": [
+        "DOCUMENTARY (Feature)"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1373743265",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=59th_Academy_Awards&oldid=1373743265"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 60,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1374505733",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1374505733",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=60th_Academy_Awards&oldid=1374505733"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 61,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1374617925",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1374617925",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=61st_Academy_Awards&oldid=1374617925"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 62,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1369988468",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1369988468",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=62nd_Academy_Awards&oldid=1369988468"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 63,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1351436333",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1351436333",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=63rd_Academy_Awards&oldid=1351436333"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 64,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1354372086",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1354372086",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=64th_Academy_Awards&oldid=1354372086"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 65,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375134990",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375134990",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=65th_Academy_Awards&oldid=1375134990"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 66,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1361010350",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1361010350",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=66th_Academy_Awards&oldid=1361010350"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 67,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1376539530",
+      "ties": [
+        "SHORT FILM (Live Action)"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1376539530",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=67th_Academy_Awards&oldid=1376539530"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 68,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1376092455",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1376092455",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=68th_Academy_Awards&oldid=1376092455"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 69,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368364922",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368364922",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=69th_Academy_Awards&oldid=1368364922"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 70,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1374603193",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1374603193",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=70th_Academy_Awards&oldid=1374603193"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 71,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368365050",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368365050",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=71st_Academy_Awards&oldid=1368365050"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 72,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1370031215",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1370031215",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=72nd_Academy_Awards&oldid=1370031215"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 73,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1370125086",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1370125086",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=73rd_Academy_Awards&oldid=1370125086"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 74,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1369073501",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1369073501",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=74th_Academy_Awards&oldid=1369073501"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 75,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1370333944",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1370333944",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=75th_Academy_Awards&oldid=1370333944"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 76,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373724435",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373724435",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=76th_Academy_Awards&oldid=1373724435"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 77,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368365371",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368365371",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=77th_Academy_Awards&oldid=1368365371"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 78,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368364632",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368364632",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=78th_Academy_Awards&oldid=1368364632"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 79,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368365470",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368365470",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=79th_Academy_Awards&oldid=1368365470"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 80,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1373350947",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1373350947",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=80th_Academy_Awards&oldid=1373350947"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 81,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1372747539",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1372747539",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=81st_Academy_Awards&oldid=1372747539"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 82,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368364329",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368364329",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=82nd_Academy_Awards&oldid=1368364329"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 83,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1374540663",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1374540663",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=83rd_Academy_Awards&oldid=1374540663"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 84,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368364493",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368364493",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=84th_Academy_Awards&oldid=1368364493"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 85,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1374054756",
+      "ties": [
+        "SOUND EDITING"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1374054756",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=85th_Academy_Awards&oldid=1374054756"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 86,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1372747512",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1372747512",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=86th_Academy_Awards&oldid=1372747512"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 87,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1372747494",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1372747494",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=87th_Academy_Awards&oldid=1372747494"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 88,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1367515577",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1367515577",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=88th_Academy_Awards&oldid=1367515577"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 89,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1368363565",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1368363565",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=89th_Academy_Awards&oldid=1368363565"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 90,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375623923",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375623923",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=90th_Academy_Awards&oldid=1375623923"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 91,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1369571922",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1369571922",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=91st_Academy_Awards&oldid=1369571922"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 92,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1370031848",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1370031848",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=92nd_Academy_Awards&oldid=1370031848"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 93,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1374195140",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1374195140",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=93rd_Academy_Awards&oldid=1374195140"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 94,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375898115",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1375898115",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=94th_Academy_Awards&oldid=1375898115"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 95,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1370549721",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1370549721",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=95th_Academy_Awards&oldid=1370549721"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 96,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1370729225",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1370729225",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=96th_Academy_Awards&oldid=1370729225"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 97,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1370937205",
+      "ties": []
+    },
+    "program_evidence": {
+      "revision": "1370937205",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=97th_Academy_Awards&oldid=1370937205"
+    }
+  },
+  {
+    "organization": "oscar",
+    "ceremony": 98,
+    "complete": true,
+    "evidence": {
+      "crosscheck_agrees": true,
+      "extra_film_winners": [],
+      "extra_person_winners": [],
+      "identity_diagnostics": [],
+      "missing_film_winners": [],
+      "missing_person_winners": [],
+      "multi_film_awards": [],
+      "revision": "1375628081",
+      "ties": [
+        "SHORT FILM (Live Action)"
+      ]
+    },
+    "program_evidence": {
+      "revision": "1375628081",
+      "source": "annual_wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=98th_Academy_Awards&oldid=1375628081"
+    }
+  }
+]

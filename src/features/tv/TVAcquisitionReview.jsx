@@ -44,16 +44,60 @@ export default function TVAcquisitionReview({ target, onClose, notify }) {
   </dialog>;
 }
 
-export function TVMonitoringControls({ seriesId, season, onSearch, notify }) {
-  const [scope, setScope] = useState('series'), [episode, setEpisode] = useState(1);
-  const [mode, setMode] = useState('none'), [profile, setProfile] = useState('safe-hd'), [profiles, setProfiles] = useState([]);
-  useEffect(() => { let alive = true; Promise.all([fetchJson('/api/acquisition/profiles'), fetchJson(`/api/tv/series/${seriesId}/monitor`)]).then(([catalog, state]) => { if (!alive) return; setProfiles(catalog.profiles); const rule = state.rules.find((row) => row.target.startsWith('series:')); setMode(rule?.mode || 'none'); setProfile(rule?.profile_id || 'safe-hd'); }).catch((e) => notify(e.message,'error')); return () => { alive = false; }; }, [seriesId]);
-  async function save() { try { await fetchJson(`/api/tv/series/${seriesId}/monitor`, { method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode,profile_id:profile,...(scope !== 'series' ? {season}: {}),...(scope === 'episode' ? {episode}: {})}) }); notify('Monitoring rule saved','success'); } catch(e) { notify(e.message,'error'); } }
-  return <section className="tv-monitoring" aria-label="TV monitoring"><h2>Monitoring and acquisition</h2><p>Adding a series never enables monitoring automatically. Existing copies are retained.</p><div className="tv-actions">
-    <select aria-label="Monitoring scope" value={scope} onChange={(e)=>setScope(e.target.value)}><option value="series">Whole series</option><option value="season">Selected season</option><option value="episode">Episode in selected season</option></select>
-    {scope === 'episode' && <input type="number" min="1" aria-label="Monitored episode number" value={episode} onChange={(e)=>setEpisode(Number(e.target.value))}/>}
-    <select aria-label="Series monitoring" value={mode} onChange={(e)=>setMode(e.target.value)}>{['none','future','missing','all','cutoff',...(scope !== 'series' ? ['inherit'] : [])].map((value)=><option key={value} value={value}>{value === 'none' ? 'Not monitored' : value}</option>)}</select>
-    <select aria-label="Series quality profile" value={profile} onChange={(e)=>setProfile(e.target.value)}>{profiles.map((row)=><option key={row.id} value={row.id}>{row.name}</option>)}</select>
-    <button className="secondary-button" onClick={save}>Save monitoring</button>
-  </div></section>;
+export function TVMonitoringControls({ seriesId, series, season, notify }) {
+  const [scope, setScope] = useState('series');
+  const [action, setAction] = useState('missing');
+  const [profile, setProfile] = useState('safe-hd');
+  const [profiles, setProfiles] = useState([]);
+  const [selected, setSelected] = useState([]);
+  const [episodeChoices, setEpisodeChoices] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [history, setHistory] = useState([]);
+  const [preview, setPreview] = useState(null);
+  const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [revision, setRevision] = useState(0);
+  const [cancelTask, setCancelTask] = useState(null);
+  const [cancelPreview, setCancelPreview] = useState(null);
+  const [cancelMode, setCancelMode] = useState('keep');
+  useEffect(() => { let alive = true; Promise.all([
+    fetchJson('/api/acquisition/profiles'),
+    fetchJson(`/api/tv/tasks?series_id=${seriesId}`),
+    fetchJson(`/api/tv/tasks?series_id=${seriesId}&history=true`),
+  ]).then(([catalog, active, past]) => { if (alive) { setProfiles(catalog.profiles); setTasks(active.items); setHistory(past.items); } }).catch((cause) => alive && setError(cause.message)); return () => { alive = false; }; }, [seriesId, revision]);
+  useEffect(() => { if (scope !== 'episodes') return undefined; const controller = new AbortController(); fetchJson(`/api/tv/series/${seriesId}/selection`, {signal:controller.signal}).then((data) => setEpisodeChoices(data.items)).catch((cause) => { if (cause.name !== 'AbortError') setError(cause.message); }); return () => controller.abort(); }, [scope, seriesId]);
+  useEffect(() => { setPreview(null); }, [scope, action, profile, season, selected]);
+  const effectiveAction = scope === 'episodes' ? 'selected' : action;
+  const payload = {scope, action:effectiveAction, profile_id:profile, ...(scope === 'season' ? {season} : {}), ...(scope === 'episodes' ? {selected_episodes:selected} : {})};
+  async function getPreview() { setBusy(true); setError(''); try { setPreview(await post(`/api/tv/series/${seriesId}/tasks/preview`, payload)); } catch (cause) { setError(cause.message); } finally { setBusy(false); } }
+  async function save() { setBusy(true); setError(''); try { await post(`/api/tv/series/${seriesId}/tasks`, payload); setRevision(value => value + 1); setPreview(null); notify('TV task saved as a draft. Start it when ready.', 'success'); } catch (cause) { setError(cause.message); } finally { setBusy(false); } }
+  async function start(task) { setBusy(true); setError(''); try { await post(`/api/tv/tasks/${encodeURIComponent(task.id)}/start`, {}); setRevision(value => value + 1); notify('TV task started', 'success'); } catch (cause) { setError(cause.message); } finally { setBusy(false); } }
+  async function finishSeason(task) { setBusy(true); setError(''); try { await post(`/api/tv/tasks/${encodeURIComponent(task.id)}/finish-season`, {}); setRevision(value => value + 1); notify('Season follow task finished', 'success'); } catch (cause) { setError(cause.message); } finally { setBusy(false); } }
+  async function openCancel(task) { setCancelTask(task); setCancelPreview(null); setCancelMode('keep'); setBusy(true); setError(''); try { setCancelPreview(await fetchJson(`/api/tv/tasks/${encodeURIComponent(task.id)}/cancel/preview`)); } catch (cause) { setError(cause.message); } finally { setBusy(false); } }
+  async function confirmCancel() { setBusy(true); setError(''); try { const result = await post(`/api/tv/tasks/${encodeURIComponent(cancelTask.id)}/cancel`, {mode:cancelMode, token:cancelPreview.token}); setCancelTask(null); setCancelPreview(null); setRevision(value => value + 1); notify(result.task.state === 'cancelled' ? 'TV task cancelled' : 'TV task cancellation needs review', result.task.state === 'cancelled' ? 'success' : 'error'); } catch (cause) { setError(cause.message); } finally { setBusy(false); } }
+  const chosenProfile = profiles.find(item => item.id === profile);
+  return <section className="tv-monitoring" aria-label="Follow and download"><h2>Follow and download</h2><p>This is separate from identifying files already on disk. Saving creates a draft; only Start begins searching or downloading.</p>
+    <div className="tv-actions">
+      <label>Scope <select aria-label="Follow scope" value={scope} onChange={event => setScope(event.target.value)}><option value="series">Whole series</option><option value="season">Selected season</option><option value="episodes">Selected episodes</option></select></label>
+      {scope === 'season' && <span>Season {season}</span>}
+      <label>Action <select aria-label="Follow action" value={effectiveAction} disabled={scope === 'episodes'} onChange={event => setAction(event.target.value)}>{scope === 'episodes' ? <option value="selected">Download selected</option> : <><option value="missing">Missing</option>{series.status !== 'Ended' && <option value="future">Future</option>}<option value="upgrade">Upgrade</option></>}</select></label>
+      <label>Quality profile <select aria-label="Follow quality profile" value={profile} onChange={event => setProfile(event.target.value)}>{profiles.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label>
+    </div>
+    {chosenProfile && <p>Preferred resolution: {chosenProfile.cutoff}. Eligible sources follow this profile’s allowed, manual-only, and blocked rules. Strict Upgrade requires a trusted, provably better source. TV imports keep the transfer source and use {chosenProfile.import_mode === 'copy' ? 'a verified copy' : 'a verified hardlink or copy'}; seeding: {chosenProfile.seeding_mode === 'none' ? 'stops after import' : chosenProfile.seeding_mode}. An owned copy stays until its replacement is verified.</p>}
+    {scope === 'episodes' && <div className="tv-follow-episode-choices" aria-label="Select episodes across seasons">{episodeChoices.map(item => <label key={item.id}><input type="checkbox" checked={selected.includes(item.id)} onChange={event => setSelected(current => event.target.checked ? [...current, item.id] : current.filter(id => id !== item.id))}/>{item.code} {item.title}</label>)}</div>}
+    <div className="tv-actions"><button type="button" disabled={busy || (scope === 'episodes' && !selected.length)} onClick={getPreview}>Preview targets</button><button type="button" className="secondary-button" disabled={busy || !preview || (scope === 'episodes' && !selected.length)} onClick={save}>Save draft</button></div>
+    {preview && <p role="status">{preview.counts.released_missing} released missing · {preview.counts.future} future · {preview.counts.owned} owned · {preview.counts.queued} queued · {preview.counts.review} needs file review · {preview.counts.unknown_date} unknown date. {preview.target_episode_ids.length} target episodes. {preview.metadata_complete ? 'Metadata complete.' : 'Metadata incomplete; Start will require a refresh.'}</p>}
+    {error && <p role="alert">{error}</p>}
+    <h3>Tasks</h3>{tasks.length ? tasks.map(task => <article className="tv-follow-task" key={task.id}><strong>{task.scope === 'series' ? 'Whole series' : task.scope === 'season' ? `Season ${task.season}` : `${task.selected_episodes.length} selected episodes`} · {task.action} · {task.state}</strong><p>{task.profile_id} · {task.episodes.filter(row => row.state === 'acquired').length} / {task.episodes.length} acquired{task.error ? ` · ${task.error}` : ''}</p>{task.state === 'draft' && <button type="button" disabled={busy} onClick={() => start(task)}>Start</button>}{task.state === 'waiting_season_end' && <button type="button" disabled={busy} onClick={() => finishSeason(task)}>Finish this season</button>}<button type="button" aria-label={`Cancel ${task.action} task`} disabled={busy} onClick={() => openCancel(task)}>X</button></article>) : <p>No active tasks.</p>}
+    <details><summary>Task history ({history.length})</summary>{history.map(task => <p key={task.id}>{task.scope} · {task.action} · {task.state} · {task.episodes.length} targets</p>)}</details>
+    {cancelTask && <div className="modal-backdrop"><section className="tv-bulk-dialog" role="dialog" aria-modal="true" aria-label="Cancel TV task"><h2>Cancel {cancelTask.action} task?</h2>
+      {busy && !cancelPreview && <p>Checking task transfers and files…</p>}{error && <p role="alert">{error}</p>}
+      {cancelPreview && <><p>{cancelPreview.transfers.length} transfers · {cancelPreview.completed_files.length} files acquired by this task · {cancelPreview.protected.length} protected paths</p>
+        {cancelPreview.transfers.map(item => <p key={item.hash}>Transfer {item.hash} ({item.state}){item.paths.length ? `: ${item.paths.join(', ')}` : ''}</p>)}
+        {cancelPreview.completed_files.map(item => <p key={item.path}>Completed: {item.path}</p>)}
+        {cancelPreview.protected.map((item, index) => <p key={`${item.path}-${index}`}>Protected: {item.path || 'transfer'} — {item.reason}</p>)}
+        <fieldset><legend>Cancellation outcome</legend><label><input type="radio" name="tv-cancel-mode" checked={cancelMode === 'keep'} onChange={() => setCancelMode('keep')}/>Stop searching and queued work; keep files</label><label><input type="radio" name="tv-cancel-mode" checked={cancelMode === 'incomplete'} onChange={() => setCancelMode('incomplete')}/>Also cancel in-progress transfers and delete verified incomplete files</label><label><input type="radio" name="tv-cancel-mode" checked={cancelMode === 'all'} onChange={() => setCancelMode('all')}/>Also move exclusively owned completed files to Recycle Bin</label></fieldset></>}
+      <div className="tv-actions"><button type="button" onClick={() => { setCancelTask(null); setCancelPreview(null); setError(''); }}>Keep task</button><button type="button" className="primary-button" disabled={busy || !cancelPreview} onClick={confirmCancel}>Confirm cancellation</button></div>
+    </section></div>}
+  </section>;
 }

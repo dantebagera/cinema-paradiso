@@ -1,0 +1,167 @@
+{{Short description|Film award ceremony in 1965}}
+{{Use mdy dates|date=February 2025}}
+{{Infobox film awards
+| number = 22
+| award = Golden Globe Awards
+| image = 
+| caption = 
+| date = February 8, 1965
+| best_film_drama = '' Becket ''
+| best_film_musical_or_comedy = '' My Fair Lady ''
+| last = 21st
+| next = 23rd
+}}
+The '''22nd [[Golden Globe Award]]s''', honoring the best in film and television for 1964, were held on February 8, 1965.
+
+==Winners and nominees==
+[[File:Peter O'Toole - 1968.jpg|thumb|right|150px|[[Peter O'Toole]] won for ''[[Becket (1964 film)|Becket]]'']]
+[[File:Anne Bancroft 1952.jpg|thumb|right|150px|[[Anne Bancroft]] won for ''[[The Pumpkin Eater]]'']]
+[[File:Rex Harrison 7 Allan Warren.jpg|thumb|right|150px|[[Rex Harrison]] won for ''[[My Fair Lady (film)|My Fair Lady]]'']]
+[[File:Julie Andrews 1965 crop.jpg|thumb|right|150px|[[Dame Julie Andrews]] won for ''[[Mary Poppins (film)|Mary Poppins]]'']]
+[[File:Studio publicity Agnes Moorehead.jpg|thumb|right|150px|[[Agnes Moorehead]] won for ''[[Hush...Hush, Sweet Charlotte]]'']]
+
+===Film===
+{| class="wikitable" style="width=100%"
+! colspan="2" |Best Motion Picture
+|-
+! style="width=50%" |[[Golden Globe Award for Best Motion Picture – Drama|Drama]]
+! style="width=50%" |[[Golden Globe Award for Best Motion Picture – Musical or Comedy|Comedy or Musical]]
+|-
+| valign="top" |
+*''' ''[[Becket (1964 film)|Becket]]'''''
+** ''[[The Chalk Garden (film)|The Chalk Garden]]''
+** ''[[Dear Heart]]''
+** ''[[The Night of the Iguana (film)|The Night of the Iguana]]''
+** ''[[Zorba the Greek (film)|Zorba the Greek]]''
+| valign="top" |
+*''' ''[[My Fair Lady (film)|My Fair Lady]]'''''
+** ''[[Father Goose (film)|Father Goose]]''
+** ''[[Mary Poppins (film)|Mary Poppins]]''
+** ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]''
+** ''[[The World of Henry Orient]]''
+|-
+! colspan="2" |Best Performance in a Motion Picture – Drama
+|-
+![[Golden Globe Award for Best Actor – Motion Picture Drama|Actor]]
+![[Golden Globe Award for Best Actress in a Motion Picture – Drama|Actress]]
+|-
+| valign="top" |
+*''' [[Peter O'Toole]] &ndash; ''[[Becket (1964 film)|Becket]]'''''
+** [[Richard Burton]] &ndash; ''[[Becket (1964 film)|Becket]]''
+** [[Anthony Franciosa]] &ndash; ''[[Rio Conchos (film)|Rio Conchos]]''
+** [[Fredric March]] &ndash; ''[[Seven Days in May]]''
+** [[Anthony Quinn]] &ndash; ''[[Zorba the Greek (film)|Zorba the Greek]]''
+| valign="top" |
+*''' [[Anne Bancroft]] &ndash; ''[[The Pumpkin Eater]]'''''
+** [[Ava Gardner]] &ndash; ''[[The Night of the Iguana (film)|The Night of the Iguana]]''
+** [[Rita Hayworth]] &ndash; ''[[Circus World (film)|Circus World]]''
+** [[Geraldine Page]] &ndash; ''[[Dear Heart]]''
+** [[Jean Seberg]] &ndash; ''[[Lilith (film)|Lilith]]''
+|-
+! colspan="2" |Best Performance in a Motion Picture – Comedy or Musical
+|-
+![[Golden Globe Award for Best Actor – Motion Picture Musical or Comedy|Actor]]
+![[Golden Globe Award for Best Actress – Motion Picture Comedy or Musical|Actress]]
+|-
+| valign="top" |
+*''' [[Rex Harrison]] &ndash; ''[[My Fair Lady (film)|My Fair Lady]]'''''
+** [[Marcello Mastroianni]] &ndash; ''[[Marriage Italian Style]]''
+** [[Peter Sellers]] &ndash; ''[[The Pink Panther (1963 film)|The Pink Panther]]''
+** [[Peter Ustinov]] &ndash; ''[[Topkapi (film)|Topkapi]]''
+** [[Dick Van Dyke]] &ndash; ''[[Mary Poppins (film)|Mary Poppins]]''
+| valign="top" |
+*''' [[Julie Andrews]] &ndash; ''[[Mary Poppins (film)|Mary Poppins]]'''''
+** [[Audrey Hepburn]] &ndash; ''[[My Fair Lady (film)|My Fair Lady]]''
+** [[Sophia Loren]] &ndash; ''[[Marriage Italian Style]]''
+** [[Melina Mercouri]] &ndash; ''[[Topkapi (film)|Topkapi]]''
+** [[Debbie Reynolds]] &ndash; ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]''
+|-
+! colspan="2" |Best Supporting Performance in a Motion Picture – Drama, Comedy or Musical
+|-
+![[Golden Globe Award for Best Supporting Actor – Motion Picture|Supporting Actor]]
+![[Golden Globe Award for Best Supporting Actress – Motion Picture|Supporting Actress]]
+|-
+| valign="top" |
+*''' [[Edmond O'Brien]] &ndash; ''[[Seven Days in May]]'''''
+** [[Cyril Delevanti]] &ndash; ''[[The Night of the Iguana (film)|The Night of the Iguana]]''
+** [[Stanley Holloway]] &ndash; ''[[My Fair Lady]]''
+** [[Gilbert Roland]] &ndash; ''[[Cheyenne Autumn]]''
+** [[Lee Tracy]] &ndash; ''[[The Best Man (1964 film)|The Best Man]]''
+| valign="top" |
+*''' [[Agnes Moorehead]] &ndash; ''[[Hush...Hush, Sweet Charlotte]]'''''
+** [[Elizabeth Ashley]] &ndash; ''[[The Carpetbaggers (film)|The Carpetbaggers]]''
+** [[Grayson Hall]] &ndash; ''[[The Night of the Iguana (film)|The Night of the Iguana]]''
+** [[Lila Kedrova]] &ndash; ''[[Zorba the Greek (film)|Zorba the Greek]]''
+** [[Ann Sothern]] &ndash; ''[[The Best Man (1964 film)|The Best Man]]''
+|-
+! colspan=2 | Other
+|-
+![[Golden Globe Award for Best Director|Best Director]]
+|-
+| valign="top" |
+*''' [[George Cukor]] &ndash; ''[[My Fair Lady (film)|My Fair Lady]]'''''
+** [[Michael Cacoyannis]] &ndash; ''[[Zorba the Greek (film)|Zorba the Greek]]''
+** [[John Frankenheimer]] &ndash; ''[[Seven Days in May]]''
+** [[Peter Glenville]] &ndash; ''[[Becket (1964 film)|Becket]]''
+** [[John Huston]] &ndash; ''[[The Night of the Iguana (film)|The Night of the Iguana]]''
+|-
+![[Golden Globe Award for Best Original Score|Best Original Score]]
+!{{anchor|Best Original Song}}[[Golden Globe Award for Best Original Song|Best Original Song]]
+|-
+| valign="top" |
+*''' "[[The Fall of the Roman Empire (film)|The Fall of the Roman Empire]]" &ndash; [[Dimitri Tiomkin]]'''
+** "[[Becket (1964 film)|Becket]]" &ndash; [[Laurence Rosenthal]]
+** "[[Mary Poppins (film)|Mary Poppins]]" &ndash; [[Richard M. Sherman|Richard M.]] and [[Robert B. Sherman]]
+** "[[Seven Days in May]]" &ndash; [[Jerry Goldsmith]]
+** "[[Zorba the Greek (film)|Zorba the Greek]]" &ndash; [[Mikis Theodorakis]]
+| valign="top" |
+*''' "Circus World" &ndash; ''[[Circus World (film)|Circus World]]'''''
+** "[[Dear Heart (song)|Dear Heart]]" &ndash; ''[[Dear Heart]]''
+** "[[From Russia with Love (soundtrack)|From Russia with Love]]" &ndash; ''[[From Russia with Love (film)|From Russia with Love]]''
+** "Sunday in New York" &ndash; ''[[Sunday in New York]]''
+** "Where Love Has Gone" &ndash; ''[[Where Love Has Gone (film)|Where Love Has Gone]]''
+|}
+
+===Television===
+{| class="wikitable" style="width=100%"
+! colspan="2" |Best Television Series
+|-
+!style="width=50%" | [[Golden Globe Award for Best Television Series – Drama|Best TV Show]]
+|-
+| valign="top" |
+*''''' [[The Rogues (TV series)|The Rogues]]'''''
+** ''[[12 O'Clock High (TV series)|12 O'Clock High]]''
+** ''[[The Munsters]]''
+** ''[[The Red Skelton Show]]''
+** ''[[Wendy and Me]]''
+|-
+! colspan="2" |Best Performance in a Television Series
+|-
+! [[Golden Globe Award for Best Actor – Television Series Drama|Best TV Star - Male]]
+! [[Golden Globe Award for Best Actress – Television Series Drama|Best TV Star - Female]]
+|-
+| valign="top" |
+*''' [[Gene Barry]] &ndash; ''[[Burke's Law (1963 TV series)|Burke's Law]]'''''
+** [[Richard Crenna]] &ndash; ''[[Slattery's People]]''
+** [[James Franciscus]] &ndash; ''[[Mr. Novak]]''
+** [[David Janssen]] &ndash; ''[[The Fugitive (1963 TV series)|The Fugitive]]''
+** [[Robert Vaughn]] &ndash; ''[[The Man from U.N.C.L.E.]]''
+| valign="top" |
+*''' [[Mary Tyler Moore]] &ndash; ''[[The Dick Van Dyke Show]]'''''
+** [[Dorothy Malone]] &ndash; ''[[Peyton Place (TV series)|Peyton Place]]''
+** [[Yvette Mimieux]] &ndash; ''[[Dr. Kildare (TV series)|Dr. Kildare]]''
+** [[Elizabeth Montgomery]] &ndash; ''[[Bewitched]]''
+** [[Julie Newmar]] &ndash; ''[[My Living Doll]]''
+|}
+
+==References==
+*[https://www.imdb.com/event/ev0000292/1965 IMdb 1965 Golden Globe Awards]
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards 22}}
+[[Category:Golden Globe Awards ceremonies|*22]]
+[[Category:1964 film awards]]
+[[Category:1964 television awards]]
+[[Category:1964 awards in the United States]]
+[[Category:February 1965 in the United States]]

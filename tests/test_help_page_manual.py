@@ -11,7 +11,7 @@ HELP_SOURCE = HELP_WORKSPACE_SOURCE.split("const helpSections = [", 1)[1].split(
 class HelpPageManualTests(unittest.TestCase):
     def test_manual_documents_current_top_level_and_daily_workflows(self):
         for text in [
-            "Movie Lists workspace",
+            "Lists workspace",
             "AI Control workspace",
             "IPTV workspace",
             "iptv.sqlite",

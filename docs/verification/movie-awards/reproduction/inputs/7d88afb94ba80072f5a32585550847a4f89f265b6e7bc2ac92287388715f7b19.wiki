@@ -1,0 +1,1488 @@
+{{Short description|Hollywood Foreign Press Association award}}
+{{Infobox award
+| name = Golden Globe Award for Best Original Song
+| alt = Golden Globe award mostly given for the popular song
+| caption = Golden Globe
+| image = Golden_Globe.jpg
+| awarded_for = The songwriter of the best movie's song
+| presenter = [[Dick Clark Productions]]
+| location = [[United States]]
+| holder = [[Ejae]], [[Mark Sonnenblick]], Ido, [[Jeong Hoon Seo|24]] and [[Teddy Park|Teddy]] for "[[Golden (Huntrix song)|Golden]]" from ''[[KPop Demon Hunters]]'' 2025
+| website = {{URL|goldenglobes.com}}
+}}
+
+The '''Golden Globe Award for Best Original Song''' is a [[Golden Globe Awards|Golden Globe Award]] that was awarded for the first time in 1962 and has been awarded annually from 1965 to 2023 by the [[Hollywood Foreign Press Association]]. The award is presented to the songwriters of a song written specifically for a motion picture.<ref name=":0">{{Cite web |url=http://www.goldenglobes.com/winners-nominees/best-original-song-motion-picture |title=Winners & Nominees Best Original Song – Motion Picture at the Golden Globe Awards website |access-date=2017-08-07 |archive-date=2017-01-06 |archive-url=https://web.archive.org/web/20170106035845/http://www.goldenglobes.com/winners-nominees/best-original-song-motion-picture |url-status=live }}</ref> The performers of the song are not credited, unless they also have a writing or co-writing credit.
+
+==Winners and nominees==
+===1960s===
+{| class="wikitable" style="width:100%"
+|- bgcolor="#bebebe"
+! width="5%" | Year
+! width="25%" | Film
+! width="25%" | Song
+! width="45%" | Nominees
+|-
+! rowspan="1" style="text-align:center" | 1961  <small> ([[19th Golden Globe Awards|19th]])</small>
+| style="background:#FAEB86" |  '''''[[Town Without Pity]]''''' 
+|style="background:#FAEB86" |  '''"[[Town Without Pity (song)|Town Without Pity]]" ''' 
+|style="background:#FAEB86" | '''[[Dimitri Tiomkin]] & [[Ned Washington]]'''
+|-
+! rowspan="5" style="text-align:center" | 1964 <small>([[22nd Golden Globe Awards|22nd]])</small>
+| style="background:#FAEB86" | '''''[[Circus World (film)|Circus World]]'''''
+|style="background:#FAEB86" | '''"Circus World"'''
+|style="background:#FAEB86" | '''[[Dimitri Tiomkin]] & [[Ned Washington]]''' 
+|-
+| ''[[Dear Heart]]''
+| "[[Dear Heart (song)|Dear Heart]]"
+| [[Henry Mancini]], [[Jay Livingston]] & [[Ray Evans]]
+|-
+| ''[[From Russia with Love (film)|From Russia with Love]]''
+| "[[From Russia with Love (soundtrack)|From Russia with Love]]"
+| [[John Barry (composer)|John Barry]] & [[Lionel Bart]]
+|-
+| ''[[Sunday in New York]]''
+| "Sunday in New York" 
+| [[Peter Nero]] & [[Carroll Coates]]
+|-
+| ''[[Where Love Has Gone (film)|Where Love Has Gone]]''
+| "Where Love Has Gone"
+| [[Jimmy Van Heusen]] & [[Sammy Cahn]] 
+|-
+! rowspan="5" style="text-align:center" | 1965 <small>([[23rd Golden Globe Awards|23rd]])</small>
+| style="background:#FAEB86" | ''' ''[[The Yellow Rolls-Royce]]'' '''
+|style="background:#FAEB86" | '''"[[Forget Domani]]"'''
+|style="background:#FAEB86" | '''[[Riz Ortolani]] & [[Norman Newell]]'''
+|-
+| ''[[Cat Ballou]]''
+| "Ballad of Cat Ballou" 
+| [[Jerry Livingston]] & [[Mack David]] 
+|-
+| ''[[The Great Race]]''
+| "[[The Sweetheart Tree]]" 
+| [[Henry Mancini]] & [[Johnny Mercer]] 
+|-
+| ''[[The Sandpiper]]''
+| "[[The Shadow of Your Smile]]" 
+| [[Johnny Mandel]] & [[Paul Francis Webster]] 
+|-
+| ''[[That Funny Feeling]]''
+| "That Funny Feeling" 
+| [[Bobby Darin]]
+|-
+! rowspan="5" style="text-align:center" | 1966 <small>([[24th Golden Globe Awards|24th]])</small>
+| style="background:#FAEB86" | '''''[[A Man Could Get Killed]]'''''
+|style="background:#FAEB86" | '''"[[Strangers in the Night]]" '''
+|style="background:#FAEB86" | '''[[Bert Kaempfert]], [[Charles Singleton (songwriter)|Charles Singleton]] & [[Eddie Snyder]]'''  
+|-
+|''[[Alfie (1966 film)|Alfie]]''
+| "[[Alfie (Burt Bacharach song)|Alfie]]" 
+| [[Burt Bacharach]] & [[Hal David]] 
+|-
+|''[[Born Free]]''
+| "[[Born Free (song)|Born Free]]" 
+| [[John Barry (composer)|John Barry]] & [[Don Black (lyricist)|Don Black]]
+|-
+| ''[[Georgy Girl]]''
+| "[[Georgy Girl (song)|Georgy Girl]]" 
+| [[Tom Springfield]] & [[Jim Dale]] 
+|-
+|''[[A Man and a Woman|A Man and a Woman (Un homme et une femme)]]''
+| "A Man and a Woman" 
+| [[Francis Lai]] & [[Pierre Barouh]] 
+|-
+! rowspan="5" style="text-align:center" | 1967 <small>([[25th Golden Globe Awards|25th]])</small>
+| style="background:#FAEB86" | ''' ''[[Camelot (film)|Camelot]]'' '''
+|style="background:#FAEB86" | ''' "[[If Ever I Would Leave You]]" '''
+|style="background:#FAEB86" | '''[[Richard Harris]], [[Frederick Loewe]] & [[Alan Jay Lerner]]'''
+|-
+| ''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''
+| "[[Talk to the Animals]]" 
+| [[Leslie Bricusse]] 
+|-
+|''[[Live for Life|Live for Life (Vivre pour vivre)]]''
+| "Circles in the Water (Des ronds dans l'eau)"
+| [[Francis Lai]] & [[Norman Gimbel]] 
+|-
+| ''[[Ski Fever]]''
+| "Please Don't Gamble with Love" 
+| [[Jerry Styner]] & Guy Hemric 
+|-
+| ''[[Thoroughly Modern Millie]]''
+| "[[Thoroughly Modern Millie (song)|Thoroughly Modern Millie]]" 
+| [[Jimmy Van Heusen]] & [[Sammy Cahn]]
+|-
+! rowspan="5" style="text-align:center" | 1968 <small>([[26th Golden Globe Awards|26th]])</small>
+| style="background:#FAEB86" | ''' ''[[The Thomas Crown Affair (1968 film)|The Thomas Crown Affair]]'' '''
+| style="background:#FAEB86" | ''' "[[The Windmills of Your Mind]]" '''
+| style="background:#FAEB86" | '''[[Noel Harrison]], [[Michel Legrand]], [[Alan and Marilyn Bergman]]'''
+|-
+| ''[[Buona Sera, Mrs. Campbell]]''
+| "Buona Sera, Mrs. Campbell" 
+| [[Riz Ortolani]] & [[Melvin Frank]] 
+|-
+| ''[[Chitty Chitty Bang Bang (film)|Chitty Chitty Bang Bang]]''
+| "[[Chitty Chitty Bang Bang (song)|Chitty Chitty Bang Bang]]" 
+| [[Richard M. Sherman]] & [[Robert B. Sherman]] 
+|-
+| ''[[Funny Girl (film)|Funny Girl]]''
+| "[[Funny Girl (Barbra Streisand song)|Funny Girl]]" 
+| [[Jule Styne]] & [[Bob Merrill]] 
+|- 
+| ''[[Star! (film)|Star!]]''
+| "Star" 
+| [[Jimmy Van Heusen]] & [[Sammy Cahn]]
+|-
+! rowspan="7," style="text-align:center" | 1969 <small>([[27th Golden Globe Awards|27th]])</small>
+| style="background:#FAEB86" |''' ''[[The Prime of Miss Jean Brodie (film)|The Prime of Miss Jean Brodie]]'' '''
+| style="background:#FAEB86" | ''' "[[Jean (song)|Jean]]" '''
+| style="background:#FAEB86" | '''[[Rod McKuen]]''' 
+|-
+| ''[[Butch Cassidy and the Sundance Kid]]''
+| "[[Raindrops Keep Falling on My Head]]" 
+| colspan="2" | [[Burt Bacharach]] & [[Hal David]]
+|-
+| ''[[Cactus Flower (film)|Cactus Flower]]''
+| "The Time for Love Is Anytime" 
+| colspan="2" | [[Quincy Jones]] & [[Cynthia Weil]] 
+|-
+| ''[[Goodbye, Columbus]]''
+| "Goodbye, Columbus" 
+| colspan="2" | [[Jim Yester]] 
+|-
+| ''[[The Happy Ending]]''
+| "[[What Are You Doing the Rest of Your Life?]]" 
+| colspan="2" | [[Michel Legrand]], [[Alan and Marilyn Bergman]] 
+|-
+| ''[[The Secret of Santa Vittoria]]''
+| "Stay" 
+| colspan="2" | [[Ernest Gold (composer)|Ernest Goldner]] & [[Norman Gimbel]] 
+|-
+| ''[[True Grit (1969 film)|True Grit]]''
+| "[[True Grit (song)|True Grit]]" 
+| colspan="2" | [[Elmer Bernstein]] & [[Don Black (lyricist)|Don Black]] 
+|}
+
+=== 1970s ===
+{| class="wikitable" style="width:100%"
+|- bgcolor="#bebebe"
+! width="5%" | Year
+! width="25%" | Film
+! width="25%" | Song
+! width="45%" | Nominees
+|-
+! rowspan="5," style="text-align:center" | 1970 <small>([[28th Golden Globe Awards|28th]])</small>
+| style="background:#FAEB86" | '''''[[Darling Lili]]'''''
+| style="background:#FAEB86" | '''"[[Whistling Away the Dark]]"'''
+| style="background:#FAEB86" | '''[[Henry Mancini]] & [[Johnny Mercer]]''' 
+|-
+| ''[[Little Fauss and Big Halsy]]''
+| "Ballad of Little Fauss and Big Halsey" 
+| [[Carl Perkins]] 
+|-
+| ''[[Madron (film)|Madron]]''
+| "Till Love Touches Your Life" 
+| [[Riz Ortolani]] & [[Arthur Hamilton]] 
+|-
+| ''[[Pieces of Dreams (film)|Pieces of Dreams]]''
+| "Pieces of Dreams" 
+| [[Marvin Hamlisch]], [[Alan and Marilyn Bergman]] 
+|-
+| ''[[Scrooge (1970 film)|Scrooge]]''
+| "Thank You Very Much" 
+| [[Leslie Bricusse]] 
+|-
+! rowspan="5," style="text-align:center" | 1971 <small>([[29th Golden Globe Awards|29th]])</small>
+| style="background:#FAEB86" | '''''[[Kotch]]'''''
+| style="background:#FAEB86" | '''"Life Is What You Make It"''' 
+| style="background:#FAEB86" | '''[[Marvin Hamlisch]] & [[Johnny Mercer]]''' 
+|-
+| ''The African Elephant''
+| "Rain Falls Anywhere It Wants To" 
+| [[Laurence Rosenthal]], [[Alan and Marilyn Bergman]] 
+|-
+| ''[[Honky (film)|Honky]]''
+| "Something More" 
+| [[Quincy Jones]] & Bradford Craig 
+|-
+|''[[The Raging Moon]]''
+| "[[Long Ago Tomorrow]]" 
+| [[Burt Bacharach]] & [[Hal David]]
+|-
+|''[[Shaft (1971 film)|Shaft]]''
+| "[[Theme from Shaft|Theme from ''Shaft'']]" 
+| [[Isaac Hayes]] 
+|-
+! rowspan="8," style="text-align:center" | 1972 <small>([[30th Golden Globe Awards|30th]])</small>
+| style="background:#FAEB86" | '''''[[Ben (1972 film)|Ben]]'''''
+| style="background:#FAEB86" | '''"[[Ben (song)|Ben]]" '''
+| style="background:#FAEB86" | '''[[Walter Scharf]] & [[Don Black (lyricist)|Don Black]]''' 
+|-
+| ''[[Butterflies Are Free]]''
+| "Carry Me" 
+| [[Bob Alcivar]] & Randy McNeill 
+|-
+| ''[[Cabaret (1972 film)|Cabaret]]''
+| "Mein Herr" 
+| [[John Kander]] & [[Fred Ebb]] 
+|-
+| ''Cabaret''
+| "[[Cabaret (1972 film)|Money, Money]]" 
+| Kander & Ebb 
+|-
+| ''[[Deliverance]]''
+| "[[Dueling Banjos]]" 
+| [[Arthur "Guitar Boogie" Smith]]
+|-
+| ''[[The Life and Times of Judge Roy Bean]]''
+| "Marmalade, Molasses and Honey" 
+| [[Maurice Jarre]], [[Alan and Marilyn Bergman]] 
+|-
+| ''[[Molly and Lawless John]]''
+| "Take Me Home" 
+| [[Johnny Mandel]], Alan and Marilyn Bergman 
+|-
+| ''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''
+| "[[The Morning After (Maureen McGovern song)|The Morning After]]" 
+| [[Al Kasha]] & [[Joel Hirschhorn]]
+|-
+! rowspan="6," style="text-align:center" | 1973 <small>([[31st Golden Globe Awards|31st]])</small>
+| style="background:#FAEB86" |'''''[[The Way We Were]]'''''
+| style="background:#FAEB86" | '''"[[The Way We Were (song)|The Way We Were]]"'''
+| style="background:#FAEB86" | '''[[Marvin Hamlisch]], [[Alan and Marilyn Bergman]]'''
+|-
+| ''[[Breezy]]''
+| "Breezy's Song" 
+| [[Michel Legrand]], [[Alan and Marilyn Bergman]]
+|-
+| ''[[Jonathan Livingston Seagull (film)|Jonathan Livingston Seagull]]''
+| "[[Jonathan Livingston Seagull (soundtrack)|Lonely Looking Sky]]" 
+| [[Neil Diamond]] 
+|-
+| ''[[Kazablan]]''
+| "Rosa Rosa" 
+| [[Dov Seltzer]] & [[Haim Hefer]]
+|- 
+| ''[[Oklahoma Crude (film)|Oklahoma Crude]]''
+| "[[Send a Little Love My Way]]" 
+| [[Henry Mancini]] & [[Hal David]]
+|-
+| ''[[A Touch of Class (film)|A Touch of Class]]''
+| "All That Love Went to Waste" 
+| [[George Barrie]] & [[Sammy Cahn]] 
+|-
+! rowspan="5," style="text-align:center" | 1974 <small>([[32nd Golden Globe Awards|32nd]])</small>
+| style="background:#FAEB86" | '''''[[Benji (1974 film)|Benji]]'''''
+| style="background:#FAEB86" | '''"I Feel Love"'''
+| style="background:#FAEB86" | '''[[Euel Box]] & [[Betty Box]]'''
+|-
+| ''[[Claudine (film)|Claudine]]''
+| "[[On and On (Gladys Knight & the Pips song)|On and On]]" 
+| [[Curtis Mayfield]] 
+|-
+| ''[[The Dove (1974 film)|The Dove]]''
+| "Sail the Summer Winds" 
+| [[John Barry (composer)|John Barry]] & [[Don Black (lyricist)|Don Blackstone]] 
+|-
+| ''[[The Little Prince (1974 film)|The Little Prince]]''
+| "I Never Met a Rose" 
+| [[Frederick Loewe]] & [[Alan Jay Lerner]] 
+|-
+| ''[[The Towering Inferno]]''
+| "[[We May Never Love Like This Again]]" 
+| [[Al Kasha]] & [[Joel Hirschhorn]] 
+|-
+! rowspan="5," style="text-align:center" | 1975 <small>([[33rd Golden Globe Awards|33rd]])</small>
+| style="background:#FAEB86" | '''''[[Nashville (film)|Nashville]]''''' 
+| style="background:#FAEB86" | '''"[[I'm Easy (Keith Carradine song)|I'm Easy]]"''' 
+| style="background:#FAEB86" | '''[[Keith Carradine]]''' 
+|- 
+| ''[[Funny Lady]]''
+| "[[How Lucky Can You Get]]" 
+| [[John Kander]] & [[Fred Ebb]] 
+|-
+| ''[[Paper Tiger (1975 film)|Paper Tiger]]''
+| "My Little Friend" 
+| [[Roy Budd]] & [[Sammy Cahn]]
+|- 
+| ''[[Whiffs]]''
+| "Now That We're in Love" 
+| [[George Barrie]] & Cahn  
+|-
+| ''[[The Other Side of the Mountain]]''
+| "Richard's Window" 
+| [[Charles Fox (composer)|Charles Fox]] & [[Norman Gimbel]] 
+|-
+! rowspan="6," style="text-align:center" | 1976 <small>([[34th Golden Globe Awards|34th]])</small>
+| style="background:#FAEB86" | '''''[[A Star Is Born (1976 film)|A Star Is Born]]''''' 
+| style="background:#FAEB86" | '''"[[Evergreen (Love Theme from A Star Is Born)|Evergreen]]"''' 
+| style="background:#FAEB86" | '''[[Barbra Streisand]] & [[Paul Williams (songwriter)|Paul Williams]]'''
+|-
+|''[[Bugsy Malone]]''
+| "[[Bugsy Malone]]" 
+| Williams 
+|-
+| ''[[Car Wash (film)|Car Wash]]''
+| "[[Car Wash (song)|Car Wash]]" 
+| [[Norman Whitfield]]
+|-
+| ''[[Freaky Friday (1976 film)|Freaky Friday]]''
+| "I'd Like to Be You for a Day" 
+| [[Al Kasha]] & [[Joel Hirschhorn]] 
+|-
+| ''[[From Noon Till Three]]''
+| "[[Hello and Goodbye (From Noon Till Three song)|Hello and Goodbye]]" 
+| [[Elmer Bernstein]], [[Alan and Marilyn Bergman]] 
+|-
+| ''[[Pipe Dreams (1976 film)|Pipe Dreams]]''
+| "So Sad the Song" 
+| [[Michael Masser]] & [[Gerry Goffin]]
+|-
+! rowspan="5," style="text-align:center" | 1977 <small>([[35th Golden Globe Awards|35th]])</small>
+| style="background:#FAEB86" | '''''[[You Light Up My Life (song)|You Light Up My Life]]''''' 
+| style="background:#FAEB86" | ''' "[[You Light Up My Life (song)|You Light Up My Life]]"'''
+| style="background:#FAEB86" | '''[[Joseph Brooks (songwriter)|Joseph Brooks]]''' 
+|-
+| ''[[The Deep (1977 film)|The Deep]]''
+| "[[Down Deep Inside (song)|Down Deep Inside]]" 
+| [[John Barry (composer)|John Barry]] & [[Donna Summer]]  
+|-
+| ''[[New York, New York (1977 film)|New York, New York]]''
+| "[[Theme from New York, New York|New York, New York]]" 
+| [[Kander and Ebb]]
+|-
+| ''[[Saturday Night Fever]]''
+| "[[How Deep Is Your Love (Bee Gees song)|How Deep Is Your Love]]" 
+| [[The Bee Gees]] 
+|-
+| ''[[The Spy Who Loved Me (soundtrack)|The Spy Who Loved Me]]''
+| "[[Nobody Does It Better]]" 
+| [[Marvin Hamlisch]] & [[Carole Bayer Sager]] 
+|-
+! rowspan="5," style="text-align:center" | 1978 <small>([[36th Golden Globe Awards|36th]])</small>
+| style="background:#FAEB86" | '''''[[Thank God It's Friday (film)|Thank God It's Friday]]''''' 
+| style="background:#FAEB86" | '''"[[Last Dance (Donna Summer song)|Last Dance]]"''' 
+| style="background:#FAEB86" | '''[[Paul Jabara]]''' 
+|-
+|''[[Foul Play (1978 film)|Foul Play]]''
+| "[[Ready to Take a Chance Again]]" 
+| [[Charles Fox (composer)|Charles Fox]] & [[Norman Gimbel]] 
+|-
+| ''[[Grease (film)|Grease]]''
+| "[[Grease (song)|Grease]]" 
+| [[Barry Gibb]] 
+|-
+| ''Grease''
+| "[[You're the One That I Want]]" 
+| [[John Farrar]] 
+|-
+| ''[[Same Time, Next Year (film)|Same Time, Next Year]]''
+| "The Last Time I Felt Like This" 
+| [[Marvin Hamlisch]], [[Alan and Marilyn Bergman]]
+|-
+! rowspan="5," style="text-align:center" | 1979 <small>([[37th Golden Globe Awards|37th]])</small>
+| style="background:#FAEB86" | '''''[[The Rose (film)|The Rose]]'''''
+| style="background:#FAEB86" | '''"[[The Rose (song)|The Rose]]"''' 
+| style="background:#FAEB86" | '''[[Amanda McBroom]]'''  
+|-
+| ''[[Ice Castles]]''
+| "[[Through the Eyes of Love]]" 
+| [[Marvin Hamlisch]] & [[Carole Bayer Sager]]
+|-
+| ''[[The Main Event (1979 film)|The Main Event]]''
+| "[[The Main Event (Barbra Streisand song)|The Main Event]]" 
+| [[Paul Jabara]] & [[Bruce Roberts (singer)|Bruce Roberts]]
+|-
+| ''[[The Muppet Movie]]''
+| "[[Rainbow Connection]]" 
+| [[Paul Williams (songwriter)|Paul Williams]] & [[Kenny Ascher]] 
+|-
+|''[[Starting Over (1979 film)|Starting Over]]''
+| "Better Than Ever" 
+| Marvin Hamlisch & Carole Bayer Sager 
+|}
+
+=== 1980s ===
+{| class="wikitable" style="width:100%"
+|- bgcolor="#bebebe"
+! width="5%" | Year
+! width="25%" | Film
+! width="25%" | Song
+! width="45%" | Nominees
+|-
+! rowspan="5," style="text-align:center" | 1980 <small>([[38th Golden Globe Awards|38th]])</small>
+| style="background:#FAEB86" | '''''[[Fame (1980 film)|Fame]]''''' 
+| style="background:#FAEB86" | '''"[[Fame (Irene Cara song)|Fame]]"''' 
+| style="background:#FAEB86" | '''[[Michael Gore]] & [[Dean Pitchford]]''' 
+|-
+| ''[[American Gigolo]]''
+| "[[Call Me (Blondie song)|Call Me]]" 
+| [[Giorgio Moroder]] & [[Debbie Harry]] 
+|-
+| ''[[Falling in Love Again (1980 film)|Falling in Love Again]]''
+| "Yesterday's Dreams" 
+| [[Michel Legrand]] & [[Carol Connors (singer)|Carol Connors]] 
+|-
+| ''[[The Jazz Singer (1980 film)|The Jazz Singer]]''
+| "[[Love on the Rocks (Neil Diamond song)|Love on the Rocks]]" 
+| [[Neil Diamond]]
+|-
+| ''[[9 to 5 (film)|9 to 5]]''
+| "[[9 to 5 (Dolly Parton song)|9 to 5]]" 
+| [[Dolly Parton]] 
+|-
+! rowspan="5," style="text-align:center" | 1981 <small>([[39th Golden Globe Awards|39th]])</small>
+| style="background:#FAEB86" | '''''[[Arthur (1981 film)|Arthur]]''''' 
+| style="background:#FAEB86" | '''"[[Arthur's Theme (Best That You Can Do)]]"'''
+| style="background:#FAEB86" | '''[[Peter Allen (musician)|Peter Allen]], [[Burt Bacharach]], [[Christopher Cross]] & [[Carole Bayer Sager]]''' 
+|- 
+| ''[[Butterfly (1982 film)|Butterfly]]'' 
+| "It's Wrong for Me to Love You" 
+| [[Henry Mancini]] & [[Carol Connors (singer)|Carol Connors]]
+|-
+| ''[[Endless Love (1981 film)|Endless Love]]''
+| "[[Endless Love (song)|Endless Love]]" 
+| [[Lionel Richie]] 
+|-
+| ''[[For Your Eyes Only (film)|For Your Eyes Only]]''
+| "[[For Your Eyes Only (Sheena Easton song)|For Your Eyes Only]]" 
+| [[Bill Conti]] & [[Mick Leeson]] 
+|-
+| ''[[Ragtime (film)|Ragtime]]''
+| "One More Hour" 
+| [[Randy Newman]] 
+|- 
+! rowspan="5," style="text-align:center" | 1982 <small>([[40th Golden Globe Awards|40th]])</small>
+| style="background:#FAEB86" | '''''[[An Officer and a Gentleman]]''''' 
+| style="background:#FAEB86" | '''"[[Up Where We Belong]]"''' 
+| style="background:#FAEB86" | '''[[Jack Nitzsche]], [[Buffy Sainte-Marie]] & [[Will Jennings]]''' 
+|-
+| ''[[Cat People (1982 film)|Cat People]]''
+| "[[Cat People (Putting Out Fire)]]" 
+| [[David Bowie]] & [[Giorgio Moroder]] 
+|-
+| ''[[Making Love]]''
+| "[[Making Love (song)|Making Love]]" 
+| [[Burt Bacharach]], [[Bruce Roberts (singer)|Bruce Roberts]] & [[Carole Bayer Sager]]
+|-
+| ''[[Rocky III]]''
+| "[[Eye of the Tiger]]" 
+| [[Jim Peterik]] & [[Frankie Sullivan]]
+|-
+| ''[[Yes, Giorgio]]''
+| "If We Were in Love" 
+| [[John Williams]], [[Alan and Marilyn Bergman]]
+|-
+! rowspan="5," style="text-align:center" | 1983 <small>([[41st Golden Globe Awards|41st]])</small>
+| style="background:#FAEB86" | '''''[[Flashdance]]''''' 
+| style="background:#FAEB86" | '''"[[Flashdance... What a Feeling]]"''' 
+| style="background:#FAEB86" | '''[[Giorgio Moroder]], [[Irene Cara]] & [[Keith Forsey]]'''
+|-
+| ''Flashdance''
+| "[[Maniac (Michael Sembello song)|Maniac]]" 
+| [[Michael Sembello]] 
+|-
+| ''[[Staying Alive (1983 film)|Staying Alive]]''
+| "[[Far from Over (Frank Stallone song)|Far from Over]]" 
+| [[Frank Stallone]] & [[Vince DiCola]]
+|-
+| ''[[Tender Mercies]]''
+| "Over You" 
+| [[Austin Roberts (singer)|Austin Roberts]] & [[Boyce and Hart|Bobby Hart]]
+|-
+| ''[[Yentl (film)|Yentl]]''
+| "[[The Way He Makes Me Feel]]" 
+| [[Michel Legrand]], [[Alan and Marilyn Bergman]] 
+|-
+! rowspan="6," style="text-align:center" | 1984 <small>([[42nd Golden Globe Awards|42nd]])</small>
+| style="background:#FAEB86" | '''''[[The Woman in Red (1984 film)|The Woman in Red]]''''' 
+| style="background:#FAEB86" | '''"[[I Just Called to Say I Love You]]"''' 
+| style="background:#FAEB86" | '''[[Stevie Wonder]]''' 
+|-
+| ''[[Against All Odds (1984 film)|Against All Odds]]''
+| "[[Against All Odds (Take a Look at Me Now)]]" 
+| [[Phil Collins]] 
+|-
+| ''[[Footloose]]''
+| "[[Footloose (song)|Footloose]]" 
+| [[Kenny Loggins]] & [[Dean Pitchford]]
+|-
+| ''[[Ghostbusters]]''
+| "[[Ghostbusters (song)|Ghostbusters]]"
+| [[Ray Parker Jr.]] 
+|-
+| ''[[Give My Regards to Broad Street]]''
+| "[[No More Lonely Nights]]" 
+| [[Paul McCartney]] 
+|-
+| ''[[Purple Rain (film)|Purple Rain]]''
+| "[[When Doves Cry]]" 
+| [[Prince (musician)|Prince]] 
+|-
+! rowspan="5," style="text-align:center" | 1985 <small>([[43rd Golden Globe Awards|43rd]])</small>
+| style="background:#FAEB86" | '''''[[White Nights (1985 film)|White Nights]]''''' 
+| style="background:#FAEB86" | '''"[[Say You, Say Me]]"''' 
+| style="background:#FAEB86" | '''[[Lionel Richie]]''' 
+|-
+| ''[[Back to the Future]]''
+| "[[The Power of Love (Huey Lewis and the News song)|The Power of Love]]" 
+| [[Huey Lewis and the News]] 
+|- 
+| ''[[The Last Dragon]]''
+| "[[Rhythm of the Night (song)|Rhythm of the Night]]" 
+| [[Diane Warren]] 
+|-
+| ''[[Mad Max Beyond Thunderdome]]''
+| "[[We Don't Need Another Hero]]" 
+| [[Terry Britten]] & [[Graham Lyle]] 
+|-
+| ''[[A View to a Kill]]''
+| "[[A View to a Kill (song)|A View to a Kill]]" 
+| [[Duran Duran]] 
+|-
+! rowspan="6," style="text-align:center" | 1986 <small>([[44th Golden Globe Awards|44th]])</small>
+| style="background:#FAEB86" | '''''[[Top Gun]]''''' 
+| style="background:#FAEB86" | '''"[[Take My Breath Away]]"''' 
+| style="background:#FAEB86" | '''[[Giorgio Moroder]] & [[Tom Whitlock]]'''
+|-
+| ''[[An American Tail]]''
+| "[[Somewhere Out There (James Horner song)|Somewhere Out There]]" 
+| [[James Horner]], [[Barry Mann]] & [[Cynthia Weil]] 
+|-
+| ''[[The Karate Kid Part II]]''
+| "[[Glory of Love (Peter Cetera song)|Glory of Love]]" 
+| [[David Foster]], [[Peter Cetera]] & Diane Nini 
+|-
+| ''[[Running Scared (1986 film)|Running Scared]]''
+| "[[Sweet Freedom (song)|Sweet Freedom]]" 
+| [[Rod Temperton]]
+|-
+| ''[[That's Life! (film)|That's Life!]]''
+| "Life in a Looking Glass" 
+| [[Henry Mancini]] & [[Leslie Bricusse]]
+|-
+| ''[[Tough Guys]]''
+| "[[They Don't Make Them Like They Used To]]" 
+| [[Burt Bacharach]] & [[Carole Bayer Sager]] 
+|-
+! rowspan="5," style="text-align:center" | 1987 <small>([[45th Golden Globe Awards|45th]])</small>
+| style="background:#FAEB86" | '''''[[Dirty Dancing]]''''' 
+| style="background:#FAEB86" | '''"[[(I've Had) The Time of My Life]]"''' 
+| style="background:#FAEB86" | '''[[John DeNicola]], Donald Markowitz & [[Franke Previte]]'''
+|- 
+| ''[[Beverly Hills Cop II]]''
+| "[[Shakedown (Bob Seger song)|Shakedown]]" 
+| [[Harold Faltermeyer]], [[Keith Forsey]] & [[Bob Seger]]  
+|-
+| ''[[Mannequin (1987 film)|Mannequin]]''
+| "[[Nothing's Gonna Stop Us Now]]" 
+| [[Diane Warren]] & [[Albert Hammond]] 
+|-
+| ''[[The Secret of My Success (1987 film)|The Secret of My Succe$s]]''
+| "[[The Secret of My Success (song)|The Secret of My Success]]" 
+| [[David Foster]], [[Michael Landau]], [[Jack Blades]] & Tom Keane 
+|-
+| ''[[Who's That Girl (1987 film)|Who's That Girl]]''
+| "[[Who's That Girl (Madonna song)|Who's That Girl]]" 
+| [[Madonna (entertainer)|Madonna]] & [[Patrick Leonard]]
+|-
+! rowspan="6," style="text-align:center" | 1988 <small>([[46th Golden Globe Awards|46th]])</small>
+| style="background:#FAEB86" | '''''[[Working Girl]]'''''
+| style="background:#FAEB86" | '''"[[Let the River Run]]"''' 
+| style="background:#FAEB86" | '''[[Carly Simon]]''' 
+|-
+| style="background:#FAEB86" | '''''[[Buster (film)|Buster]]''''' 
+| style="background:#FAEB86" | '''"[[Two Hearts (Phil Collins song)|Two Hearts]]"''' 
+| style="background:#FAEB86" | '''[[Phil Collins]] & [[Lamont Dozier]]'''  
+|-
+| ''[[Bull Durham]]''
+| "A Woman Loves a Man" 
+| [[Charlie Midnight|Charlie Kaufman]] & [[Dan Hartman]]
+|-
+| ''[[Cocktail (1988 film)|Cocktail]]''
+| "[[Kokomo (song)|Kokomo]]" 
+| [[The Beach Boys]] 
+|-
+| ''[[Oliver & Company]]''
+| "[[Why Should I Worry?]]" 
+| Charlie Kaufman & Dan Hartman
+|-
+| ''[[Twins (1988 film)|Twins]]''
+| "Twins" 
+| [[Mark Isham]] 
+|-
+! rowspan="5," style="text-align:center" | 1989 <small>([[47th Golden Globe Awards|47th]])</small>
+| style="background:#FAEB86" | '''''[[The Little Mermaid (1989 film)|The Little Mermaid]]''''' 
+| style="background:#FAEB86" | '''"[[Under the Sea]]"''' 
+| style="background:#FAEB86" | '''[[Alan Menken]] & [[Howard Ashman]]''' 
+|-
+| ''[[Chances Are (film)|Chances Are]]''
+| "[[After All (Cher song)|After All]]" 
+| [[Tom Snow]] & [[Dean Pitchford]] 
+|-
+|''[[The Little Mermaid (1989 film)|The Little Mermaid]]''
+| "[[Kiss the Girl]]" 
+| Alan Menken & Howard Ashman 
+|-
+| ''[[Parenthood (1989 film)|Parenthood]]''
+| "I Love to See You Smile" 
+| [[Randy Newman]] 
+|-
+| ''[[Shirley Valentine]]''
+| "[[The Girl Who Used to Be Me]]" 
+| [[Marvin Hamlisch]], [[Alan and Marilyn Bergman]] 
+|}
+
+===1990s===
+{| class="wikitable" style="width:100%"
+|- bgcolor="#bebebe"
+! width="5%" | Year
+! width="25%" | Film
+! width="25%" | Song
+! width="45%" | Nominees
+|-
+! rowspan="5," style="text-align:center" |1990 <small>([[48th Golden Globe Awards|48th]])</small>
+| style="background:#FAEB86" |'''''[[Young Guns II]] ''''' 
+| style="background:#FAEB86" | '''"[[Blaze of Glory (Jon Bon Jovi song)|Blaze of Glory]]"''' 
+| style="background:#FAEB86" | '''[[Jon Bon Jovi]]''' 
+|-
+| rowspan=2|''[[Dick Tracy (1990 film)|Dick Tracy]]''
+| "[[Sooner or Later (Madonna song)|Sooner or Later]]" 
+| [[Stephen Sondheim]] 
+|-
+| "What Can You Lose?" 
+| [[Stephen Sondheim]]
+|- 
+| ''[[The Godfather Part III]]''
+| "[[Promise Me You'll Remember]]" 
+| [[Carmine Coppola]] & [[John Bettis]] 
+|-
+| ''[[Postcards from the Edge (film)|Postcards from the Edge]]''
+| "I'm Checkin' Out" 
+| [[Shel Silverstein]] 
+|-
+! rowspan="5," style="text-align:center" |1991 <small>([[49th Golden Globe Awards|49th]])</small>
+| style="background:#FAEB86" |'''''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]'''''
+| style="background:#FAEB86" | '''"[[Beauty and the Beast (Disney song)|Beauty and the Beast]]"''' 
+| style="background:#FAEB86" | '''[[Alan Menken]] & [[Howard Ashman]]''' 
+|-
+| ''[[An American Tail: Fievel Goes West]]''
+| "[[Dreams to Dream]]" 
+| [[James Horner]] & [[Will Jennings]]
+|-
+| ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''
+| "[[Be Our Guest]]" 
+| Alan Menken & Howard Ashman 
+|-
+| ''[[Robin Hood: Prince of Thieves]]''
+| "[[(Everything I Do) I Do It for You]]" 
+| [[Michael Kamen]], [[Bryan Adams]] & [[Robert John "Mutt" Lange]]
+|-
+| ''[[Rush (1991 soundtrack)|Rush]]''
+| "[[Tears in Heaven]]" 
+| [[Eric Clapton]] & Will Jennings
+|-
+! rowspan="5," style="text-align:center" |1992 <small>([[50th Golden Globe Awards|50th]])</small>
+| style="background:#FAEB86" |'''''[[Aladdin (1992 Disney film)|Aladdin]]''''' 
+| style="background:#FAEB86" | '''"[[A Whole New World]]"''' 
+| style="background:#FAEB86" | '''[[Alan Menken]] & [[Tim Rice]]'''
+|- 
+| rowspan=2|''[[Aladdin (1992 Disney film)|Aladdin]]''
+| "[[Friend Like Me]]" 
+| Alan Menken & [[Howard Ashman]]
+|-
+| "[[Prince Ali (song)|Prince Ali]]" 
+| Alan Menken, Howard Ashman & Tim Rice
+|-
+| ''[[A League of Their Own]]''
+| "[[This Used to Be My Playground]]" 
+| [[Madonna (entertainer)|Madonna]] & [[Shep Pettibone]]
+|-
+| ''[[The Mambo Kings]]''
+| "[[Beautiful Maria of My Soul]]" 
+| [[Robert Kraft]] & [[Arne Glimcher]] 
+|-
+! rowspan="5," style="text-align:center" |1993 <small>([[51st Golden Globe Awards|51st]])</small>
+| style="background:#FAEB86" | '''''[[Philadelphia (film)|Philadelphia]]''''' 
+| style="background:#FAEB86" | '''"[[Streets of Philadelphia]]"'''
+| style="background:#FAEB86" | '''[[Bruce Springsteen]]''' 
+|-
+| ''[[Beethoven's 2nd (film)|Beethoven's 2nd]]''
+| "The Day I Fall in Love" 
+| [[James Ingram]], [[Clif Magness]] & [[Carole Bayer Sager]]
+|-
+| ''[[Faraway, So Close]]''
+| "[[Stay (Faraway, So Close!)]]" 
+| [[U2]] 
+|-
+| ''[[In the Name of the Father]]''
+| "You Made Me the Thief of Your Heart"
+| [[Bono]], [[Gavin Friday]] & [[Maurice Seezer]] 
+|-
+| ''[[Poetic Justice (1993 film)|Poetic Justice]]''
+| "[[Again (Janet Jackson song)|Again]]" 
+| [[Janet Jackson]], [[Jimmy Jam and Terry Lewis]]
+|-
+! rowspan="6," style="text-align:center" |1994 <small>([[52nd Golden Globe Awards|52nd]])</small>
+| style="background:#FAEB86" |'''''[[The Lion King]]'''''
+| style="background:#FAEB86" |'''"[[Can You Feel the Love Tonight]]"''' 
+| style="background:#FAEB86" | '''[[Elton John]] & [[Tim Rice]]'''
+|-
+| ''[[Color of Night]]'' 
+| "The Color of the Night" 
+| [[Lauren Christy]], Jud J. Friedman & [[Dominic Frontiere]] 
+|-
+| ''[[Junior (1994 film)|Junior]]''
+| "[[Look What Love Has Done]]" 
+| [[Patty Smyth]], [[James Ingram]], & [[Carole Bayer Sager]]
+|-
+| ''[[The Lion King]]''
+| "[[Circle of Life]]" 
+| [[Elton John]] & [[Tim Rice]] 
+|-
+| ''[[The Swan Princess]]''
+| "[[Far Longer than Forever]]"
+| [[Lex de Azevedo]] & [[David Zippel]] 
+|-
+| ''[[With Honors (film)|With Honors]]''
+| "[[I'll Remember]]" 
+| [[Madonna (entertainer)|Madonna]], [[Patrick Leonard]] & [[Richard Page (musician)|Richard Page]] 
+|-
+! rowspan="5," style="text-align:center" |1995 <small>([[53rd Golden Globe Awards|53rd]])</small>
+| style="background:#FAEB86" |'''''[[Pocahontas (1995 film)|Pocahontas]]''''' 
+| style="background:#FAEB86" | '''"[[Colors of the Wind]]"'''
+| style="background:#FAEB86" | '''[[Alan Menken]] & [[Stephen Schwartz]]'''
+|-
+| ''[[Batman Forever]]''
+| "[[Hold Me, Thrill Me, Kiss Me, Kill Me]]" 
+| [[U2]] 
+|-
+| ''[[Don Juan DeMarco]]''
+| "[[Have You Ever Really Loved a Woman?]]" 
+| [[Bryan Adams]], [[Michael Kamen]], & [[Robert John "Mutt" Lange]]
+|-
+| ''[[Sabrina (1995 film)|Sabrina]]''
+| "Moonlight" 
+| [[John Williams]], [[Alan and Marilyn Bergman]]
+|-
+| ''[[Toy Story]]''
+| "[[You've Got a Friend in Me]]" 
+| [[Randy Newman]] 
+|-
+! rowspan="5," style="text-align:center" |1996 <small>([[54th Golden Globe Awards|54th]])</small>
+| style="background:#FAEB86" | '''''[[Evita (1996 film)|Evita]]''''' 
+| style="background:#FAEB86" | '''"[[You Must Love Me]]"''' 
+| style="background:#FAEB86" | '''[[Andrew Lloyd Webber]] & [[Tim Rice]]'''
+|- 
+| ''[[The Mirror Has Two Faces]]''
+| "[[I Finally Found Someone]]" 
+| [[Marvin Hamlisch]], [[Barbra Streisand]], [[Bryan Adams]] & [[Robert John "Mutt" Lange]]
+|-
+| ''[[One Fine Day (1996 film)|One Fine Day]]''
+| "[[For the First Time (Kenny Loggins song)|For the First Time]]" 
+| [[James Newton Howard]], Jud J. Friedman & Allan Rich
+|-
+| ''[[That Thing You Do!]]'' 
+| "[[That Thing You Do (song)|That Thing You Do]]" 
+| [[Adam Schlesinger]]
+|-
+| ''[[Up Close and Personal (film)|Up Close and Personal]]''
+| "[[Because You Loved Me]]" 
+| [[Diane Warren]]
+|-
+! rowspan="5," style="text-align:center" |1997 <small>([[55th Golden Globe Awards|55th]])</small>
+| style="background:#FAEB86" | '''''[[Titanic (1997 film)|Titanic]]''''' 
+| style="background:#FAEB86" | '''"[[My Heart Will Go On]]"''' 
+| style="background:#FAEB86" | '''[[James Horner]] & [[Will Jennings]]'''
+|-
+| rowspan=2|''[[Anastasia (1997 film)|Anastasia]]''
+| "[[Journey to the Past]]"
+| [[Stephen Flaherty]] & [[Lynn Ahrens]]
+|-
+| "[[Once Upon a December]]" 
+| Stephen Flaherty & Lynn Ahrens
+|-
+| ''[[Hercules (1997 film)|Hercules]]''
+| "[[Go the Distance]]" 
+| [[Alan Menken]] & [[David Zippel]]
+|-
+|''[[Tomorrow Never Dies]]''
+| "[[Tomorrow Never Dies (song)|Tomorrow Never Dies]]" 
+| [[Sheryl Crow]] & [[Mitchell Froom]]
+|-
+! rowspan="6," style="text-align:center" |1998 <small>([[56th Golden Globe Awards|56th]])</small>
+| style="background:#FAEB86" | '''''[[Quest for Camelot]]''''' 
+| style="background:#FAEB86" | '''"[[The Prayer (Celine Dion and Andrea Bocelli song)|The Prayer]]"'''
+| style="background:#FAEB86" | '''[[David Foster]], [[Carole Bayer Sager]], [[Tony Renis]] & [[Alberto Testa (lyricist)|Alberto Testa]]'''
+|-
+| ''[[City of Angels (film)|City of Angels]]''
+| "[[Uninvited (song)|Uninvited]]" 
+| [[Alanis Morissette]] 
+|-
+| ''[[The Mighty]]''
+| "[[The Mighty]]"
+| [[Sting (musician)|Sting]] 
+|-
+| ''[[Mulan (1998 film)|Mulan]]''
+| "[[Reflection (Mulan song)|Reflection]]" 
+| [[Matthew Wilder]] & [[David Zippel]]
+|-
+| ''[[The Prince of Egypt]]''
+| "[[When You Believe]]" 
+| [[Stephen Schwartz]] & [[Babyface (musician)|Kenneth Edmonds]] 
+|-
+| ''[[Still Crazy]]''
+| "The Flame Still Burns"
+| [[Chris Difford]], [[Marti Frederiksen]] and [[Mick Jones (Foreigner)|Mick Jones]] 
+|-
+! rowspan="6," style="text-align:center" |1999 <small>([[57th Golden Globe Awards|57th]])</small>
+| style="background:#FAEB86" | '''''[[Tarzan (1999 film)|Tarzan]]''''' 
+| style="background:#FAEB86" | '''"[[You'll Be in My Heart]]"''' 
+| style="background:#FAEB86" | '''[[Phil Collins]]''' 
+|-
+| ''[[Austin Powers: The Spy Who Shagged Me]]''
+| "[[Beautiful Stranger]]" 
+| [[Madonna (entertainer)|Madonna]] & [[William Orbit|William Wainwright]]
+|-
+| ''[[Anna and the King]]''
+| "[[How Can I Not Love You]]" 
+| [[Joy Enriquez]] 
+|-
+| ''[[Magnolia (film)|Magnolia]]''
+| "[[Save Me (Aimee Mann song)|Save Me]]" 
+| [[Aimee Mann]] 
+|-
+|''[[Toy Story 2]]''
+| "[[When She Loved Me]]" 
+| [[Randy Newman]]
+|}
+
+===2000s===
+{| class="wikitable" style="width:100%"
+|- bgcolor="#bebebe"
+! width="5%" | Year
+! width="25%" | Film
+! width="25%" | Song
+! width="45%" | Nominees
+|-
+! rowspan="5," style="text-align:center" |2000 <small>([[58th Golden Globe Awards|58th]])</small>
+| style="background:#FAEB86" | '''''[[Wonder Boys (film)|Wonder Boys]]''''' 
+| style="background:#FAEB86" | '''"[[Things Have Changed]]"'''
+| style="background:#FAEB86" | '''[[Bob Dylan]]'''
+|-
+| ''[[Dancer in the Dark]]''
+| "[[I've Seen It All]]" 
+| [[Björk]], [[Lars von Trier]] & [[Sjón|Sigurjón Sigurðsson]]
+|-
+| ''[[The Emperor's New Groove]]''
+| "[[My Funny Friend and Me]]"
+| [[Sting (musician)|Sting]] 
+|-
+| ''[[Frequency (2000 film)|Frequency]]''
+| "[[When You Come Back to Me Again]]"
+| [[Garth Brooks]] & Jenny Yates
+|-
+|''[[Miss Congeniality (film)|Miss Congeniality]]''
+| "[[One in a Million (Bosson song)|One in a Million]]"
+| [[Bosson]] 
+|-
+! rowspan="5," style="text-align:center" |2001 <small>([[59th Golden Globe Awards|59th]])</small>
+| style="background:#FAEB86" |'''''[[Kate & Leopold]]''''' 
+| style="background:#FAEB86" | '''"[[Until...]]"'''
+| style="background:#FAEB86" | '''[[Sting (musician)|Sting]]'''
+|- 
+| ''[[Moulin Rouge!]]''
+| "[[Come What May (2001 song)|Come What May]]"
+| [[David Baerwald]]
+|-
+| ''[[Pearl Harbor (film)|Pearl Harbor]]''
+| "[[There You'll Be]]"
+| [[Diane Warren]]
+|-
+| ''[[The Lord of the Rings: The Fellowship of the Ring]]''
+| "[[May It Be]]"
+| [[Enya]] & [[Roma Ryan]] 
+|-
+| ''[[Vanilla Sky]]''
+| "[[Vanilla Sky (song)|Vanilla Sky]]"
+| [[Paul McCartney]] 
+|-
+! rowspan="5," style="text-align:center" |2002 <small>([[60th Golden Globe Awards|60th]])</small>
+| style="background:#FAEB86" | '''''[[Gangs of New York]]''''' 
+| style="background:#FAEB86" | '''"[[The Hands That Built America]]"'''
+| style="background:#FAEB86" | '''[[Bono]], [[Adam Clayton]], [[The Edge]] & [[Larry Mullen, Jr.]]'''
+|-
+| ''[[8 Mile (film)|8 Mile]]''
+| "[[Lose Yourself]]"
+| [[Eminem]], [[Jeff Bass]] & [[Luis Resto (musician)|Luis Resto]]
+|-
+| ''[[Die Another Day]]''
+| "[[Die Another Day (song)|Die Another Day]]"
+| [[Madonna (entertainer)|Madonna]] & [[Mirwais Ahmadzaï]]
+|-
+| ''[[Spirit: Stallion of the Cimarron]]''
+| "[[Here I Am (Bryan Adams song)|Here I Am]]"
+| [[Bryan Adams]], [[Hans Zimmer]], & [[Gretchen Peters]]
+|-
+|''[[The Wild Thornberrys Movie]]''
+| "[[Father and Daughter]]"
+| [[Paul Simon]] 
+|- 
+! rowspan="5," style="text-align:center" |2003 <small>([[61st Golden Globe Awards|61st]])</small>
+| style="background:#FAEB86" | '''''[[The Lord of the Rings: The Return of the King]]''''' 
+| style="background:#FAEB86" | '''"[[Into the West (song)|Into the West]]"'''
+| style="background:#FAEB86" | '''[[Annie Lennox]], [[Howard Shore]] & [[Fran Walsh]]''' 
+|-
+| ''[[Big Fish]]''
+| "[[Man of the Hour]]"
+| [[Eddie Vedder]] 
+|-
+| ''[[Cold Mountain (film)|Cold Mountain]]''
+| "[[You Will Be My Ain True Love]]"
+| [[Alison Krauss]] & [[Sting (musician)|Sting]]
+|-
+| ''[[In America (film)|In America]]''
+| "Time Enough for Tears"
+| [[Gavin Friday]] & [[Maurice Seezer]]
+|-
+| ''[[Mona Lisa Smile]]''
+| "The Heart of Every Girl"
+| [[Elton John]] & [[Bernie Taupin]]
+|-
+! rowspan="5," style="text-align:center" |2004 <small>([[62nd Golden Globe Awards|62nd]])</small>
+| style="background:#FAEB86" |'''''[[Alfie (2004 film)|Alfie]]''''' 
+| style="background:#FAEB86" |'''"[[Old Habits Die Hard]]"'''
+| style="background:#FAEB86" | '''[[Mick Jagger]] & [[David A. Stewart]]''' 
+|-
+| ''[[Hotel Rwanda]]''
+| "Million Voices"
+| [[Wyclef Jean]], [[Jerry Duplessis]] & [[Andrea Guerra (composer)|Andrea Guerra]]
+|-
+| ''[[The Phantom of the Opera (2004 film)|The Phantom of the Opera]]''
+| "[[Learn to Be Lonely]]" 
+| [[Andrew Lloyd Webber]] & [[Charles Hart (lyricist)|Charles Hart]]
+|-
+| ''[[The Polar Express (film)|The Polar Express]]''
+| "[[Believe (The Polar Express song)|Believe]]" 
+| [[Alan Silvestri]] & [[Glen Ballard]]
+|-
+|''[[Shrek 2]]''
+| "[[Accidentally in Love (song)|Accidentally in Love]]"
+| [[Counting Crows]] 
+|-
+! rowspan="5," style="text-align:center" |2005 <small>([[63rd Golden Globe Awards|63rd]])</small>
+| style="background:#FAEB86" |'''''[[Brokeback Mountain]]''''' 
+| style="background:#FAEB86" |'''"[[A Love That Will Never Grow Old]]"'''
+| style="background:#FAEB86" | '''[[Gustavo Santaolalla]] & [[Bernie Taupin]]'''
+|-
+| ''[[Christmas in Love]]''
+| "Christmas in Love" 
+| [[Tony Renis|Elio Cesari]]
+|-
+| ''[[The Chronicles of Narnia: The Lion, the Witch and the Wardrobe]]''
+| "[[Wunderkind (song)|Wunderkind]]"
+| [[Alanis Morissette]] 
+|-
+| ''[[The Producers (2005 film)|The Producers]]''
+| "There's Nothing Like a Show on Broadway"
+| [[Mel Brooks]]
+|-
+|''[[Transamerica (film)|Transamerica]]''
+| "[[Travelin' Thru]]"
+| [[Dolly Parton]] 
+|-
+! rowspan="5," style="text-align:center" |2006 <small>([[64th Golden Globe Awards|64th]])</small>
+| style="background:#FAEB86" | '''''[[Happy Feet]]''''' 
+| style="background:#FAEB86" | '''"[[Song of the Heart (song)|Song of the Heart]]"'''
+| style="background:#FAEB86" | '''[[Prince (musician)|Prince]]'''
+|-
+| ''[[Bobby (2006 film)|Bobby]]''
+| "[[Never Gonna Break My Faith]]"
+| [[Bryan Adams]], [[Eliot Kennedy]] & Andrea Ramada
+|-
+| ''[[Dreamgirls (film)|Dreamgirls]]''
+| "[[Listen (Beyoncé song)|Listen]]"
+| [[Beyoncé]], [[Henry Krieger]], [[Scott Cutler]], [[Anne Preven]]
+|-
+|''[[Home of the Brave (2006 film)|Home of the Brave]]''
+| "Try Not to Remember" 
+| [[Sheryl Crow]]
+|-
+|''[[The Pursuit of Happyness]]''
+| "A Father's Way"
+| [[Seal (musician)|Seal]] & [[Christopher Bruce]]
+|-
+! rowspan="5," style="text-align:center" |2007 <small>([[65th Golden Globe Awards|65th]])</small>
+| style="background:#FAEB86" | '''''[[Into the Wild (film)|Into the Wild]]''''' 
+| style="background:#FAEB86" |'''"[[Guaranteed (Eddie Vedder song)|Guaranteed]]"'''
+| style="background:#FAEB86" | '''[[Eddie Vedder]]''' 
+|-
+|''[[Enchanted (2007 film)|Enchanted]]''
+| "[[That's How You Know (musical number)|That's How You Know]]"
+| [[Alan Menken]] & [[Stephen Schwartz]]
+|- 
+| ''[[Grace Is Gone (film)|Grace Is Gone]]''
+| "[[Grace Is Gone (song)|Grace Is Gone]]"
+| [[Clint Eastwood]] & [[Carole Bayer Sager]]
+|- 
+| ''[[Love in the Time of Cholera (film)|Love in the Time of Cholera]]''
+| "[[Despedida (Shakira song)|Despedida]]" 
+| [[Shakira]] & [[Antonio Pinto (composer)|Antonio Pinto]] 
+|-
+| ''[[Walk Hard: The Dewey Cox Story]]''
+| "Walk Hard"
+| [[Marshall Crenshaw]], [[Judd Apatow]], [[Jake Kasdan]] & [[John C. Reilly]]
+|-
+! rowspan="5," style="text-align:center" |2008 <small>([[66th Golden Globe Awards|66th]])</small>
+| style="background:#FAEB86" | '''''[[The Wrestler (2008 film)|The Wrestler]]''''' 
+| style="background:#FAEB86" | '''"[[The Wrestler (song)|The Wrestler]]"'''
+| style="background:#FAEB86" | '''[[Bruce Springsteen]]''' 
+|-
+| ''[[Bolt (2008 film)|Bolt]]''
+| "[[I Thought I Lost You]]"
+| [[Miley Cyrus]] & [[Jeffrey Steele]]
+|-
+| ''[[Cadillac Records]]''
+| "Once in a Lifetime"
+| [[Henry Krieger]], [[Scott Cutler]], [[Anne Preven]] & Beyoncé Knowles
+|-
+| ''[[Gran Torino (film)|Gran Torino]]''
+| "Gran Torino"
+| [[Jamie Cullum]], [[Clint Eastwood]], [[Kyle Eastwood]], & [[Michael Stevens (composer)|Michael Stevens]]
+|-
+|''[[WALL-E]]''
+| "[[Down to Earth (Peter Gabriel song)|Down to Earth]]"
+| [[Peter Gabriel]] & [[Thomas Newman]]
+|- 
+! rowspan="5," style="text-align:center" |2009 <small>([[67th Golden Globe Awards|67th]])</small>
+| style="background:#FAEB86" | '''''[[Crazy Heart]]'''''
+| style="background:#FAEB86" |'''"[[The Weary Kind]]"'''
+| style="background:#FAEB86" |'''[[Ryan Bingham]] & [[T Bone Burnett]]''' 
+|-
+| ''[[Avatar (2009 film)|Avatar]]''
+| "[[I See You (Theme from Avatar)|I See You]]" 
+| [[Leona Lewis]], [[James Horner]] & [[Kuk Harrell|Thaddis Harrell]]
+|-
+| ''[[Brothers (2009 film)|Brothers]]''
+| "[[Winter (U2 song)|Winter]]"
+| [[U2]]
+|-
+| ''[[Everybody's Fine (2009 film)|Everybody's Fine]]'' 
+| "[[(I Want To) Come Home]]"
+| [[Paul McCartney]]
+|-
+| ''[[Nine (2009 live-action film)|Nine]]''
+| "[[Cinema Italiano]]"
+| [[Maury Yeston]] 
+|}
+
+===2010s===
+{| class="wikitable" style="width:100%"
+|- bgcolor="#bebebe"
+! width="5%" | Year
+! width="25%" | Film
+! width="25%" | Song
+! width="45%" | Nominees
+|-
+! rowspan="5," style="text-align:center" |2010 <small>([[68th Golden Globe Awards|68th]])</small>
+| style="background:#FAEB86" | '''''[[Burlesque (2010 musical film)|Burlesque]]'''''
+| style="background:#FAEB86" |'''"[[You Haven't Seen the Last of Me]]" '''
+| style="background:#FAEB86" | '''[[Cher]] and [[Diane Warren]]''' 
+|-
+| ''[[Burlesque (2010 musical film)|Burlesque]]''
+| "[[Bound to You]]"
+| [[Christina Aguilera]], [[Sia]] & [[Samuel Dixon]]
+|-
+| ''[[The Chronicles of Narnia: The Voyage of the Dawn Treader]]''
+| "[[There's a Place for Us (song)|There's a Place for Us]]"
+| [[Carrie Underwood]], [[David Hodges]] and [[Hillary Lindsey]]
+|-
+| ''[[Country Strong]]''
+| "Coming Home"
+| [[Tom Douglas (songwriter)|Tom Douglas]], [[Troy Verges]] & Lindsey 
+|-
+| ''[[Tangled (2010 film)|Tangled]]''
+| "[[I See the Light]]"
+| [[Alan Menken]] & [[Glenn Slater]] 
+|-
+! rowspan="5," style="text-align:center" |2011 <small>([[69th Golden Globe Awards|69th]])</small>
+| style="background:#FAEB86" | '''''[[W.E. (film)|W.E.]]'''''
+| style="background:#FAEB86" |'''"[[Masterpiece (Madonna song)|Masterpiece]]"'''
+| style="background:#FAEB86" | '''[[Madonna (entertainer)|Madonna]], [[Julie Frost]] & [[Jimmy Harry]]''' 
+|-
+| ''[[Albert Nobbs]]''
+| "Lay Your Head Down"
+| [[Glenn Close]] and [[Brian Byrne]]
+|-
+|''[[Gnomeo and Juliet]]''
+| "Hello, Hello"
+| [[Elton John]] & [[Bernie Taupin]] 
+|-
+| ''[[The Help (film)|The Help]]''
+| "[[The Living Proof]]"
+| [[Mary J. Blige]], [[Thomas Newman]], [[Harvey Mason, Jr.]] & [[The Underdogs (record producers)|Damon Thomas]] 
+|-
+|''[[Machine Gun Preacher]]''
+| "The Keeper"
+| [[Chris Cornell]]
+|-
+! rowspan="5," style="text-align:center" |2012 <small>([[70th Golden Globe Awards|70th]])</small>
+| style="background:#FAEB86" | '''''[[Skyfall]]'''''
+| style="background:#FAEB86" | '''"[[Skyfall (Adele song)|Skyfall]]" '''
+| style="background:#FAEB86" | '''[[Adele]] & [[Paul Epworth]]''' 
+|-
+| ''[[Act of Valor]]''
+| "[[For You (Keith Urban song)|For You]]"
+|[[Keith Urban]] & [[Monty Powell]]
+|-
+| ''[[The Hunger Games (film)|The Hunger Games]]''
+| "[[Safe & Sound (Taylor Swift song)|Safe & Sound]]"
+| [[Taylor Swift]], [[The Civil Wars]] & [[T-Bone Burnett]] 
+|-
+| ''[[Les Misérables (2012 film)|Les Misérables]]''
+| "[[Suddenly (Les Misérables song)|Suddenly]]"
+| [[Claude-Michel Schönberg]], [[Alain Boublil]] & [[Herbert Kretzmer]] 
+|-
+|''[[Stand Up Guys]]''
+| "Not Running Anymore"
+| [[Jon Bon Jovi]] 
+|-
+! rowspan="5," style="text-align:center" |2013 <small>([[71st Golden Globe Awards|71st]])</small>
+| style="background:#FAEB86" |  '''''[[Mandela: Long Walk to Freedom]]'' '''
+| style="background:#FAEB86" |'''"[[Ordinary Love (U2 song)|Ordinary Love]]" '''
+| style="background:#FAEB86" | '''[[U2]], [[Bono|Paul Hewson]] & [[Danger Mouse (musician)|Brian Burton]]'''
+|-
+| ''[[Frozen (2013 film)|Frozen]]''
+| "[[Let It Go (Disney song)|Let It Go]]" 
+| [[Kristen Anderson-Lopez]] & [[Robert Lopez]]
+|-
+| ''[[The Hunger Games: Catching Fire]]''
+| "[[Atlas (Coldplay song)|Atlas]]"
+| [[Coldplay]]
+|-
+| ''[[Inside Llewyn Davis]]''
+| "Please Mr. Kennedy"
+| [[Justin Timberlake]], [[George Cromarty]], [[T Bone Burnett|Justin Burnett]], [[Coen brothers|Joel & Ethan Coen]] 
+|-
+| ''[[One Chance (film)|One Chance]]''
+| "[[Sweeter than Fiction]]"
+| [[Taylor Swift]] & [[Jack Antonoff]]
+|-
+! rowspan="5," style="text-align:center" |2014 <small>([[72nd Golden Globe Awards|72nd]])</small>
+| style="background:#FAEB86" | '''''[[Selma (film)|Selma]]'''''
+| style="background:#FAEB86" | '''"[[Glory (Common and John Legend song)|Glory]]" '''
+| style="background:#FAEB86" | '''[[Common (rapper)|Common]] feat. [[John Legend]]''' 
+|-
+| ''[[Annie (2014 film)|Annie]]''
+| "Opportunity" 
+| [[Greg Kurstin]], [[Sia]] & [[Will Gluck]]
+|-
+|''[[Big Eyes]]''
+| "[[Big Eyes (Lana Del Rey song)|Big Eyes]]"
+| [[Lana Del Rey]] & Dan Heath 
+|-
+| ''[[The Hunger Games: Mockingjay – Part 1]]''
+| "[[Yellow Flicker Beat]]" 
+| [[Lorde]] & [[Joel Little]]
+|-
+| ''[[Noah (2014 film)|Noah]]''
+| "Mercy Is" 
+| [[Patti Smith]] & [[Lenny Kaye]] 
+|-
+! rowspan="5," style="text-align:center" |2015 <small>([[73rd Golden Globe Awards|73rd]])</small>
+| style="background:#FAEB86" | '''''[[Spectre (2015 film)|Spectre]]'''''
+| style="background:#FAEB86" |'''"[[Writing's on the Wall (Sam Smith song)|Writing's on the Wall]]" '''
+| style="background:#FAEB86" | '''[[Sam Smith (singer)|Sam Smith]] & [[Jimmy Napes]]''' 
+|-
+| ''[[Fifty Shades of Grey (film)|Fifty Shades of Grey]]''
+| "[[Love Me like You Do]]"
+| [[Max Martin]], [[Savan Kotecha]], [[Ali Payami]], [[Tove Lo]] & [[Ilya Salmanzadeh]] 
+|-
+|''[[Furious 7]]''
+| "[[See You Again (Wiz Khalifa song)|See You Again]]"
+| [[Wiz Khalifa]], [[Charlie Puth]], [[DJ Frank E|Justin Franks]] and Andrew Cedar 
+|-
+| ''[[Love & Mercy (film)|Love & Mercy]]''
+| "[[One Kind of Love]]"
+| [[Brian Wilson]] & [[Scott Bennett (musician)|Scott Bennett]] 
+|-
+| ''[[Youth (2015 film)|Youth]]''
+| "[[Simple Song Number 3|Simple Song #3]]"
+| [[Sumi Jo]] and [[David Lang (composer)|David Lang]]
+|-
+! rowspan="5," style="text-align:center" |2016 <small>([[74th Golden Globe Awards|74th]])</small><br /><ref name=":1">{{Cite web |url=https://www.complex.com/pop-culture/2017/01/golden-globe-awards-2017-winners |title=74th Golden Globe Winners{{!}}Complex |access-date=2020-09-16 |archive-date=2023-05-11 |archive-url=https://web.archive.org/web/20230511180220/https://www.complex.com/pop-culture/2017/01/golden-globe-awards-2017-winners |url-status=live }}</ref>
+| style="background:#FAEB86" |'''''[[La La Land]]'' '''
+| style="background:#FAEB86" | '''"[[City of Stars]]" '''
+| style="background:#FAEB86" | '''[[Justin Hurwitz]], [[Pasek and Paul|Benj Pasek & Justin Paul]]''' 
+|-
+| ''[[Gold (2016 film)|Gold]]''
+| "Gold"
+| [[Iggy Pop]] by [[Daniel Pemberton]], [[Danger Mouse (musician)|Brian Burton]] and [[Stephen Gaghan]] 
+|-
+| ''[[Moana (2016 film)|Moana]]''
+| "[[How Far I'll Go]]"
+| [[Lin-Manuel Miranda]] 
+|-
+| ''[[Sing (2016 American film)|Sing]]''
+| "[[Faith (Stevie Wonder song)|Faith]]"
+| [[Stevie Wonder]], [[Ryan Tedder]] & [[Francis Farewell Starlite]] 
+|-
+|''[[Trolls (film)|Trolls]]''
+| "[[Can't Stop the Feeling!]]"
+| [[Justin Timberlake]], [[Max Martin]] and [[Shellback (record producer)|Shellback]] 
+|-
+! rowspan="5," style="text-align:center" |2017 <small>([[75th Golden Globe Awards|75th]])</small><br /><ref name=":2">{{Cite web |url=https://www.avclub.com/here-are-the-winners-from-the-75th-annual-golden-globes-1821861586 |title=Here are the winners from the 75th annual Golden Globes{{!}}AV Club |access-date=2020-09-16 |archive-date=2026-04-20 |archive-url=https://web.archive.org/web/20260420023934/https://www.avclub.com/here-are-the-winners-from-the-75th-annual-golden-globes-1821861586 |url-status=live }}</ref>
+| style="background:#FAEB86" | '''''[[The Greatest Showman]]'''''
+| style="background:#FAEB86" |'''"[[This Is Me (Keala Settle song)|This Is Me]]"'''
+| style="background:#FAEB86" | '''[[Pasek and Paul|Benj Pasek & Justin Paul]]''' 
+|-
+|''[[Coco (2017 film)|Coco]]''
+| "[[Remember Me (Pixar song)|Remember Me]]"
+| [[Kristen Anderson-Lopez]] & [[Robert Lopez]] 
+|-
+|''[[Ferdinand (film)|Ferdinand]]''
+| "[[Home (Nick Jonas song)|Home]]" 
+| [[Nick Jonas]], [[Nick Monson]] & [[Justin Tranter]]
+|-
+|''[[Mudbound (film)|Mudbound]]''
+| "Mighty River"
+| [[Mary J. Blige]], [[Raphael Saadiq|Charles Wiggins]] & [[Taura Stinson]] 
+|-
+|''[[The Star (2017 film)|The Star]]''
+| "[[The Star (Mariah Carey song)|The Star]]"
+| [[Mariah Carey]] and [[Marc Shaiman]] 
+|-
+! rowspan="5," style="text-align:center" |2018 <small>([[76th Golden Globe Awards|76th]])</small><br /><ref name=":3">{{Cite web |url=https://www.chicagotribune.com/entertainment/movies/ct-ent-golden-globes-winners-list-20190106-story.html |title=Complete list of winners at 76th Golden Globe Awards - Chicago Tribune |access-date=2020-09-16 |archive-date=2023-05-11 |archive-url=https://web.archive.org/web/20230511180233/https://www.chicagotribune.com/entertainment/movies/ct-ent-golden-globes-winners-list-20190106-story.html |url-status=live }}</ref>
+| style="background:#FAEB86" |'''''[[A Star Is Born (2018 film)|A Star Is Born]]'''''
+| style="background:#FAEB86" |'''"[[Shallow (Lady Gaga and Bradley Cooper song)|Shallow]]"'''
+| style="background:#FAEB86" |'''[[Lady Gaga]], [[Mark Ronson]], [[Anthony Rossomando]] & [[Andrew Wyatt]]'''
+|-
+| ''[[Black Panther (film)|Black Panther]]''
+| "[[All the Stars]]"
+| [[Kendrick Lamar]], [[SZA]], [[Anthony Tiffith]], [[Al Shux]] and [[Mark Spears]] 
+|- 
+| ''[[Boy Erased]]''
+| "[[Revelation (Troye Sivan and Jónsi song)|Revelation]]"
+| [[Troye Sivan]], [[Jónsi]] & [[Leland (musician)|Brett McLaughlin]]
+|-
+|''[[Dumplin' (film)|Dumplin'<nowiki/>]]''
+| "[[Girl in the Movies]]"
+| [[Dolly Parton]] & [[Linda Perry]] 
+|-
+|''[[A Private War]]''
+| "Requiem for a Private War"
+| [[Annie Lennox]] 
+|-
+! rowspan="5," style="text-align:center" |2019 <small>([[77th Golden Globe Awards|77th]])</small><Br /><ref name=":4">{{Cite web |url=https://www.cbsnews.com/live-updates/golden-globes-awards-show-2020-01-05-nominees-winners-highlights-performances-today-live-updates/ |title=Golden Globes 2020: Complete list of winners, highlights, nominees, snubs, performances - CBS News |access-date=2020-09-16 |archive-date=2025-11-30 |archive-url=https://web.archive.org/web/20251130233026/https://www.cbsnews.com/live-updates/golden-globes-awards-show-2020-01-05-nominees-winners-highlights-performances-today-live-updates/ |url-status=live }}</ref>
+| style="background:#FAEB86" |'''''[[Rocketman (film)|Rocketman]]'''''
+| style="background:#FAEB86" |'''"[[(I'm Gonna) Love Me Again]]"'''
+| style="background:#FAEB86" |'''[[Elton John]], [[Taron Egerton]] & [[Bernie Taupin]]'''
+|-
+| ''[[Cats (2019 film)|Cats]]''
+| "[[Beautiful Ghosts]]"
+| [[Taylor Swift]] and [[Andrew Lloyd Webber]]
+|-
+| ''[[Frozen 2]]''
+| "[[Into the Unknown (song)|Into the Unknown]]"
+|  [[Kristen Anderson-Lopez]] & [[Robert Lopez]] 
+|-
+| ''[[Harriet (film)|Harriet]]''
+| "[[Stand Up (Cynthia Erivo song)|Stand Up]]"
+| [[Cynthia Erivo]] and Joshuah Brian Campbell 
+|-
+| ''[[The Lion King (2019 film)|The Lion King]]''
+| "[[Spirit (Beyoncé song)|Spirit]]"
+| [[Beyoncé]], [[Ilya Salmanzadeh]] & [[Labrinth|Timothy McKenzie]] 
+|}
+
+===2020s===
+{| class="wikitable" style="width:100%"
+|- bgcolor="#bebebe"
+! width="5%" | Year
+! width="25%" | Film
+! width="25%" | Song
+! width="45%" | Nominees
+|-
+! rowspan="5," style="text-align:center" |2020 <small>([[78th Golden Globe Awards|78th]])</small>
+| style="background:#FAEB86" |'''''[[The Life Ahead]]'''''
+| style="background:#FAEB86" |'''"[[Io sì (Seen)]]" '''
+| style="background:#FAEB86" | '''[[Laura Pausini]], Niccolò Agliardi, Pausini & [[Diane Warren]]''' 
+|-
+| ''[[Judas and the Black Messiah]]''
+| "[[Fight for You (H.E.R. song)|Fight for You]]" 
+| [[H.E.R.]], [[D'Mile|Dernst Emile II]]. & [[Tiara Thomas]] 
+|-
+|''[[One Night in Miami...]]''
+| "Speak Now"
+| [[Leslie Odom Jr.]] and [[Sam Ashworth (songwriter)|Sam Ashworth]] 
+|-
+| ''[[The Trial of the Chicago 7]]''
+| "Hear My Voice"
+| [[Celeste (singer)|Celeste]] and [[Daniel Pemberton]] 
+|-
+| ''[[The United States vs. Billie Holiday]]''
+| "Tigress & Tweed"
+| [[Andra Day]], [[Raphael Saadiq]] 
+|-
+! rowspan="5," style="text-align:center" |2021 <small>([[79th Golden Globe Awards|79th]])</small>
+| style="background:#FAEB86" |'''''[[No Time to Die]]'''''
+| style="background:#FAEB86" |'''"[[No Time to Die (song)|No Time to Die]]"'''
+| style="background:#FAEB86" |'''[[Billie Eilish]] & [[Finneas O'Connell]]''' 
+|-
+| ''[[Belfast (film)|Belfast]]''
+| "Down to Joy"
+| [[Van Morrison]] 
+|-
+|''[[Encanto]]''
+| "[[Dos Oruguitas]]" 
+|[[Lin-Manuel Miranda]] 
+|-
+| ''[[King Richard (film)|King Richard]]''
+| "[[Be Alive]]"
+| [[Beyoncé]] & [[Darius Scott]]
+|-
+|''[[Respect (2021 American film)|Respect]]''
+| "Here I Am (Singing My Way Home)"
+| [[Jennifer Hudson]], [[Jamie Hartman]] & [[Carole King]]
+|-
+! rowspan="5," style="text-align:center" |2022 <small>([[80th Golden Globe Awards|80th]])</small>
+| style="background:#FAEB86" |'''''[[RRR (film)|RRR]]'''''
+| style="background:#FAEB86" |'''"[[Naatu Naatu]]" ''' 
+| style="background:#FAEB86" |'''[[M. M. Keeravani]] & [[Chandrabose (lyricist)|Chandrabose]]'''
+|-
+| ''[[Black Panther: Wakanda Forever]]''
+| "[[Lift Me Up (Rihanna song)|Lift Me Up]]"
+| [[Rihanna]], [[Ludwig Göransson]], [[Ryan Coogler]] & [[Tems]] 
+|-
+| ''[[Guillermo del Toro's Pinocchio]]''
+| "Ciao Papa"
+| Alexandre Desplat, Roeban Katz & [[Guillermo del Toro]] 
+|-
+| ''[[Top Gun: Maverick]]''
+| "[[Hold My Hand (Lady Gaga song)|Hold My Hand]]"
+| [[Lady Gaga]] & [[Bloodpop|Michael Tucker]] 
+|-
+| ''[[Where the Crawdads Sing (film)|Where the Crawdads Sing]]''
+| "[[Carolina (Taylor Swift song)|Carolina]]"
+| [[Taylor Swift]]
+|-
+! rowspan="7," style="text-align:center" |2023 <small>([[81st Golden Globe Awards|81st]])</small>
+|-
+| style="background:#FAEB86" |'''''[[Barbie (film)|Barbie]]'''''
+| style="background:#FAEB86" |'''"[[What Was I Made For?]]" '''
+| style="background:#FAEB86" |'''[[Billie Eilish]] & [[Finneas O'Connell]]'''
+|-
+| rowspan="2" |''[[Barbie (film)|Barbie]]''
+| "[[Dance the Night]]"
+| [[Mark Ronson]], [[Andrew Wyatt]], [[Dua Lipa]], and [[Caroline Ailin]] 
+|-
+| "[[I'm Just Ken]]"
+| Mark Ronson and Andrew Wyatt 
+|-
+| ''[[Rustin (film)|Rustin]]''
+| "Road to Freedom"
+| [[Lenny Kravitz]] 
+|-
+| ''[[She Came to Me]]''
+| "Addicted to Romance"
+| [[Bruce Springsteen]]
+|-
+| ''[[The Super Mario Bros. Movie]]''
+| "[[Peaches (Jack Black song)|Peaches]]"
+| [[Jack Black]], [[Aaron Horvath]], [[Michael Jelenic]], Eric Osmond, and [[Tenacious D|John Spiker]] 
+|-
+! rowspan="7," style="text-align:center" |2024 <small>([[82nd Golden Globe Awards|82nd]])</small>
+|-
+| style="background:#FAEB86" |'''''[[Emilia Pérez]]'''''
+| style="background:#FAEB86" |'''"[[El Mal]]"'''
+| style="background:#FAEB86" |'''[[Camille (French singer)|Camille]], [[Clément Ducol]] & [[Jacques Audiard]]'''
+|-
+| ''[[Better Man (film)|Better Man]]''
+| "Forbidden Road"
+| [[Robbie Williams]], [[Freddy Wexler]], and [[Sacha Skarbek]]
+|-
+| ''[[Challengers (film)|Challengers]]''
+| "[[Challengers (soundtrack)#Track listing|Compress / Repress]]"
+| [[Trent Reznor]], [[Atticus Ross]], and [[Luca Guadagnino]]
+|-
+| ''[[Emilia Pérez]]''
+| "[[Mi camino]]" 
+|Clément Ducol and Camille
+|-
+| ''[[The Last Showgirl]]''
+| "Beautiful That Way"
+| [[Andrew Wyatt]], [[Miley Cyrus]], and [[Lykke Li]]
+|-
+| ''[[The Wild Robot]]''
+| "[[The Wild Robot (soundtrack)#Track listing|Kiss the Sky]]"
+| [[Delacey]], [[The Monsters & Strangerz|Jordan K. Johnson, Stefan Johnson]], [[Maren Morris]], [[Michael Pollack (songwriter)|Michael Pollack]], and [[Ali Tamposi]]
+|-
+! rowspan="6" |2025 <small>([[83rd Golden Globe Awards|83rd]])</small>
+| style="background:#FAEB86" |'''[[KPop Demon Hunters|''KPop Demon Hunters'']]'''
+| style="background:#FAEB86" |'''"[[Golden (Huntrix song)|Golden]]"'''
+| style="background:#FAEB86" |'''[[Ejae]], [[Mark Sonnenblick]], Ido, [[Jeong Hoon Seo|24]], and [[Teddy Park|Teddy]]'''
+|-
+|''[[Avatar: Fire and Ash]]''
+|"[[Dream as One]]"
+|[[Miley Cyrus]], [[Andrew Wyatt]], [[Mark Ronson]], and [[Simon Franglen]]
+|-
+|[[Sinners (2025 film)|''Sinners'']]
+|"I Lied to You"
+|[[Raphael Saadiq]] and [[Ludwig Göransson]]
+|-
+|[[Train Dreams (film)|''Train Dreams'']]
+|"Train Dreams"
+|[[Nick Cave]] and [[Bryce Dessner]]
+|-
+| rowspan="2" |''[[Wicked: For Good]]''
+|"[[The Girl in the Bubble]]"
+| rowspan="2" |[[Stephen Schwartz]]
+|-
+|"[[No Place Like Home (Cynthia Erivo song)|No Place Like Home]]"
+|}
+
+== Multiple wins ==
+
+'''4 wins:'''
+
+* [[Alan Menken]]
+
+'''3 wins:'''
+
+* [[Tim Rice]]
+
+'''2 wins:'''
+
+* [[Howard Ashman]]
+* [[Carole Bayer Sager]]
+* [[Alan and Marilyn Bergman]]
+* [[Phil Collins]]
+* [[Billie Eilish]]
+* [[Marvin Hamlisch]]
+* [[Will Jennings]]
+* [[Elton John]]
+* [[Johnny Mercer]]
+* [[Giorgio Moroder]]
+* [[Finneas O'Connell]]
+* [[Benj Pasek]]
+* [[Justin Paul]]
+* [[Bruce Springsteen]]
+* [[Bernie Taupin]]
+* [[Dimitri Tiomkin]]
+* [[U2]]
+* [[Diane Warren]]
+* [[Ned Washington]]
+
+==See also==
+*[[Academy Award for Best Original Song]]
+
+==References==
+{{reflist}}
+
+{{Golden Globe Awards Chron}}
+{{Golden Globe Award for Best Original Song}}
+
+[[Category:Golden Globe Awards|Song Original]]
+[[Category:Best Original Song Golden Globe–winning songs| ]]
+[[Category:Awards established in 1961]]
+[[Category:Film awards for best song]]
+[[Category:Songwriting awards]]

@@ -1,0 +1,59 @@
+{{Short description|Film award ceremony in 1944}}
+{{Infobox film awards
+| number = 1
+| award = Golden Globe Awards
+| image = 
+| caption = 
+| date = {{Start date|1944|01|20}}
+| site = [[20th Century Fox]] studios
+| best_picture = ''[[The Song of Bernadette (film)|The Song of Bernadette]]''
+| most_awards = ''[[The Song of Bernadette (film)|The Song of Bernadette]]'' (3)
+| next = 2nd
+}}
+The '''1st [[Golden Globe Awards]]''', honoring the best achievements in [[1943 in film|1943 filmmaking]], were held late on January 20, 1944, at the [[20th Century Fox]] studios in [[Los Angeles]], [[California]].<ref>[https://www.goldenglobes.com/history-golden-globes History of the Golden Globes at HFPA GOLDEN GLOBES AWARDS website]</ref>
+
+==Winners==
+===[[Golden Globe Award for Best Motion Picture – Drama|Best Picture]]=== 
+*''[[The Song of Bernadette (film)|The Song of Bernadette]]''
+
+===[[Golden Globe Award for Best Actor – Motion Picture Drama|Best Actor in a Leading Role]]=== 
+*[[Paul Lukas]] –  ''[[Watch on the Rhine]]'' as Kurt Muller
+
+===[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Leading Role]]=== 
+*[[Jennifer Jones]] –  ''[[The Song of Bernadette (film)|The Song of Bernadette]]'' as Bernadette
+
+===[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Performance by an Actor in a Supporting Role in a Motion Picture]]=== 
+*[[Akim Tamiroff]] –  ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]'' as Pablo
+
+===[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Performance by an Actress in a Supporting Role in a Motion Picture]]=== 
+*[[Katina Paxinou]] –  ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]'' as Pilar
+
+===[[Golden Globe Award for Best Director|Best Director-Motion Picture]]=== 
+*[[Henry King (director)|Henry King]] –  ''[[The Song of Bernadette (film)|The Song of Bernadette]]''
+
+{{Gallery
+|title=Golden Globe winners
+|File:Paul Lukas - 1950.jpg|[[Paul Lukas]], Best Actor in a Leading Role winner.
+|File:Jennifer Jones - Publicity.JPG|[[Jennifer Jones]], Best Actress in a Leading Role winner.
+|File:Akim Tamiroff 1964.jpg|[[Akim Tamiroff]], Best Performance by an Actor in a Supporting Role winner.
+|<!-- [[WP:NFCC]] violation: File:Katinapaxinos.jpg -->|[[Katina Paxinou]], Best Performance by an Actress in a Supporting Role winner.
+|File:Henry King (director) 001.jpg|[[Henry King (director)|Henry King]], Best Director winner
+}}
+
+==Comparison with the Academy Awards==
+The [[16th Academy Awards]], presented six weeks later, on March 2, 1944, featured among its nominations the same six, three of which were also winners — Best Actor: [[Paul Lukas]], Best Actress: [[Jennifer Jones]] and Best Supporting Actress: [[Katina Paxinou]].
+
+==See also==
+* [[Hollywood Foreign Press Association]]
+* [[16th Academy Awards]]
+* [[1943 in film]]
+
+==References==
+{{Reflist}}
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards 001}}
+[[Category:Golden Globe Awards ceremonies|*001]]
+[[Category:1943 film awards]]
+[[Category:January 1944 in the United States]]

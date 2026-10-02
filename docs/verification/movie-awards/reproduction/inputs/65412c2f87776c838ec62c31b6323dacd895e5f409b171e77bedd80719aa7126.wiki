@@ -1,0 +1,56 @@
+{{Short description|Film award ceremony in 1947}}
+{{Infobox film awards
+| number = 4
+| award = Golden Globe Awards
+| image = Golden_Globe_Awards_signs.jpg
+| caption = 
+| date = {{Start date|1947|02|26}}
+| site = [[Hollywood Roosevelt Hotel]]
+| best_picture = ''[[The Best Years of Our Lives]]''
+| most_wins = ''[[The Best Years of Our Lives]]''<br/>''[[The Razor's Edge (1946 film)|The Razor's Edge]]'' (2)
+| last = 3rd
+| next = 5th
+}}
+The '''4th [[Golden Globe Award]]s''', honoring the best achievements in [[1946 in film|1946 filmmaking]], were held on February 26, 1947 at the [[Hollywood Roosevelt Hotel]] in [[Los Angeles]], [[California]].
+
+==Winners==
+===[[Golden Globe Award for Best Motion Picture – Drama|Best Picture]]=== 
+*''[[The Best Years of Our Lives]]'' directed by [[William Wyler]]<ref>"Best Picture" {{cite web|url=http://www.goldenglobes.org/browse/year/1946 |title=Golden Globes  |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174049/http://www.goldenglobes.org/browse/year/1946 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Motion Picture – Drama|Best Actor in a Leading Role]]=== 
+*[[Gregory Peck]] – ''[[The Yearling (1946 film)|The Yearling]]''<ref>"Best Actor in a Leading Role" {{cite web|url=http://www.goldenglobes.org/browse/year/1946 |title=Golden Globes |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174049/http://www.goldenglobes.org/browse/year/1946 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Leading Role]]=== 
+*[[Rosalind Russell]] – ''[[Sister Kenny]]''<ref>"Best Actress in a Leading Role" {{cite web|url=http://www.goldenglobes.org/browse/year/1946 |title=Golden Globes  |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174049/http://www.goldenglobes.org/browse/year/1946 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Performance by an Actor in a Supporting Role in a Motion Picture]]=== 
+*[[Clifton Webb]] – ''[[The Razor's Edge (1946 film)|The Razor's Edge]]''<ref>"Best Performance by an Actor in a Supporting Role in a Motion Picture" {{cite web|url=http://www.goldenglobes.org/browse/year/1946 |title=Golden Globes  |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174049/http://www.goldenglobes.org/browse/year/1946 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Performance by an Actress in a Supporting Role in a Motion Picture]]=== 
+*[[Anne Baxter]] – ''[[The Razor's Edge (1946 film)|The Razor's Edge]]''<ref>"Best Performance by an Actress in a Supporting Role in a Motion Picture" {{cite web|url=http://www.goldenglobes.org/browse/year/1946 |title=Golden Globes  |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174049/http://www.goldenglobes.org/browse/year/1946 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Director|Best Director-Motion Picture]]=== 
+*[[Frank Capra]] – ''[[It's a Wonderful Life]]''<ref>"Best Director-Motion Picture" {{cite web|url=http://www.goldenglobes.org/browse/year/1946 |title=Golden Globes  |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174049/http://www.goldenglobes.org/browse/year/1946 |archive-date=2010-11-24 }}</ref>
+
+===Best Film Promoting International Understanding===
+*''[[The Last Chance (1945 film)|The Last Chance]]'' directed by [[Leopold Lindtberg]]<ref>"Best Film Promoting International Understanding"{{cite web|url=http://www.goldenglobes.org/browse/year/1946 |title=Golden Globes |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174049/http://www.goldenglobes.org/browse/year/1946 |archive-date=2010-11-24 }}</ref>
+
+===Special Achievement Award===
+*[[Harold Russell]] – ''[[The Best Years of Our Lives]]''<ref>"Special Achievement Award(Special Award)"{{cite web|url=http://www.goldenglobes.org/browse/year/1946 |title=Golden Globes |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174049/http://www.goldenglobes.org/browse/year/1946 |archive-date=2010-11-24 }}</ref>
+
+==See also==
+* [[Hollywood Foreign Press Association]]
+* [[1946 Cannes Film Festival|1st Cannes Film Festival]]
+* [[19th Academy Awards]]
+* [[1946 in film]]
+
+==References==
+{{reflist}}
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards 004}}
+[[Category:Golden Globe Awards ceremonies|*004]]
+[[Category:1946 film awards]]
+[[Category:1946 television awards]]
+[[Category:February 1947 in the United States]]

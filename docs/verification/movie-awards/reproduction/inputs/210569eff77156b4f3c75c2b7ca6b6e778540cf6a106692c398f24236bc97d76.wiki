@@ -1,0 +1,526 @@
+{{pp-move}}
+{{oscars short description|films-year=2008}}
+{{featured list}}
+{{Use mdy dates|date=June 2013}}
+{{Infobox film awards
+| number           = 81
+| award            = Academy Awards
+| image            = 81st Academy Awards poster.jpg
+| alt              = Official promoting the 81st Academy Awards in 2009.
+| caption          = Official poster
+| date             = {{Start date|2009|02|22}}
+| site             = [[Dolby Theatre|Kodak Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], [[California]], United States
+| preshow = {{Plainlist|
+* Jess Cagle
+* [[Tim Gunn]]
+* [[Robin Roberts (newscaster)|Robin Roberts]]<ref>{{cite web|last=Eng |first=Joyce |title=Tim Gunn, Robin Roberts to Host ABC Oscar Pre-Show |url=https://variety.com/2009/film/news/tim-gunn-to-host-oscar-red-carpet-1118000052/ |work=[[Variety (magazine)|Variety]] |publisher=[[Penske Media Corporation]] |access-date=June 5, 2013 |date=February 11, 2009 |url-status=live |archive-url=https://web.archive.org/web/20150402212908/http://variety.com/2009/film/news/tim-gunn-to-host-oscar-red-carpet-1118000052/ |archive-date=April 2, 2015 }}</ref>
+}}
+| host             = [[Hugh Jackman]]<ref>{{cite news|url=https://www.orlandosentinel.com/2008/12/13/hugh-jackman-is-tapped-to-host-oscars-telecast/ |title=Hugh Jackman is tapped to host Oscars telecast |last=Moore |first=Roger |author2=Hal Boedeker |author3=Dewyane Bevil |date=December 13, 2008 |work=[[Orlando Sentinel]] |publisher=[[Tribune Publishing]] |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131030132758/http://articles.orlandosentinel.com/2008-12-13/news/van13backstage_1_hugh-jackman-nigel-lythgoe-abdul |archive-date=October 30, 2013 }}</ref>
+| producer         = [[Bill Condon]]<br />[[Laurence Mark]]<ref>{{cite news|url=http://usatoday30.usatoday.com/life/television/2008-09-24-3397363266_x.htm |title=Oscars tap Mark, Condon to oversee telecast |last=Cohen |first=Sandy |date=September 24, 2008 |work=[[USA Today]] |publisher=[[Gannett Company]] |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131101062428/http://usatoday30.usatoday.com/life/television/2008-09-24-3397363266_x.htm |archive-date=November 1, 2013 }}</ref>
+| director         = [[Roger Goodman (director)|Roger Goodman]]<ref name="Oscar Producers">{{cite news|url=http://www.oscars.org/press/pressreleases/2008/08.10.24.html |title=Roger Goodman Named Director for 81st Academy Awards |work=[[Academy of Motion Picture Arts and Sciences]] |publisher=AMPAS |date=October 24, 2008 |access-date=January 2, 2009 |archive-url=https://web.archive.org/web/20100309203058/http://www.oscars.org/press/pressreleases/2008/08.10.24.html |archive-date=March 9, 2010 |url-status=dead |df=mdy}}</ref>
+| best_picture     = ''[[Slumdog Millionaire]]''
+| most_wins        = ''Slumdog Millionaire'' (8)
+| most_nominations = ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' (13)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 30&nbsp;minutes<ref>{{cite news|url=https://variety.com/2009/tv/reviews/the-81st-annual-academy-awards-from-the-couch-1200473511/ |title=Review: "The 81st annual Academy Awards – From the Couch" |last=Lowry |first=Brian |date=February 22, 2009 |work=Variety |publisher=Penske Media Corporation |access-date=May 28, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130724120711/http://variety.com/2009/tv/reviews/the-81st-annual-academy-awards-from-the-couch-1200473511/ |archive-date=July 24, 2013 }}</ref>
+| ratings          = 36.94 million<br />20.88% ([[Nielsen ratings]])<ref>{{cite news |first=Robert |last=Seidman |title=Academy Awards American Idol and The Mentalist lead broadcast viewing |url=http://tvbythenumbers.com/2009/02/24/academy-awards-american-idol-and-the-mentalist-lead-broadcast-viewing/13416 |work=TVbytheNumbers |publisher=[[Tribune Media]] |date=February 24, 2009 |access-date=February 27, 2009 |archive-url=https://web.archive.org/web/20090226200309/http://tvbythenumbers.com/2009/02/24/academy-awards-american-idol-and-the-mentalist-lead-broadcast-viewing/13416 |archive-date=February 26, 2009 |url-status=dead |df=mdy }}</ref>
+| last             = 80th
+| next             = 82nd
+}}
+
+The '''81st Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2008 in film|films of 2008]] and took place on February 22, 2009, at the [[Kodak Theatre]] in [[Hollywood, Los Angeles]], beginning at 5:30&nbsp;p.m. [[Pacific Time Zone|PST]] / 8:30&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, the Academy of Motion Picture Arts and Sciences presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony was televised in the United States by [[American Broadcasting Company|ABC]], and was produced by [[Bill Condon]] and [[Laurence Mark]] and directed by [[Roger Goodman (director)|Roger Goodman]]. [[Hugh Jackman]] hosted the show for the first time.<ref>{{cite news|last=Vena |first=Joyce |title=Hugh Jackman Will Host The 2009 Oscars, Academy Confirms |url=http://www.mtv.com/news/articles/1601239/hugh-jackman-will-host-2009-oscars-academy-confirms.jhtml |work=[[MTV]] |publisher=[[Viacom Media Networks]] |date=December 12, 2008 |access-date=June 5, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20131020094212/http://www.mtv.com/news/articles/1601239/hugh-jackman-will-host-2009-oscars-academy-confirms.jhtml |archive-date=October 20, 2013 }}</ref> Two weeks earlier in a ceremony at the [[Beverly Wilshire Hotel]] in [[Beverly Hills, California]] held on February 7, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Jessica Biel]].<ref>{{cite news|url=http://goldderby.latimes.com/awards_goldderby/2009/02/jessica-biel-em.html |last=O'Neil |first=Tom |title=Jessica Biel emcees sci-tech Oscars |date=February 3, 2009 |work=[[Los Angeles Times]] |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130308074209/http://goldderby.latimes.com/awards_goldderby/2009/02/jessica-biel-em.html |archive-date=March 8, 2013 }}</ref>
+
+''[[Slumdog Millionaire]]'' won eight awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|title='Slumdog' makes history, sweeps Oscars |work=[[CNN]] |publisher=[[Time Warner]] |date=February 22, 2009 |url=http://www.cnn.com/2009/SHOWBIZ/Movies/02/23/oscar.night/ |access-date=June 6, 2013 |last=Leopold |first=Todd |url-status=live |archive-url=https://web.archive.org/web/20131015063253/http://www.cnn.com/2009/SHOWBIZ/Movies/02/23/oscar.night/ |archive-date=October 15, 2013 }}</ref><ref>{{cite news|url=https://www.latimes.com/archives/la-xpm-2009-feb-23-et-oscar23-story.html |last=Horn |first=John |title='Slumdog' strikes it rich with 8 Oscar wins |date=February 23, 2009 |work=Los Angeles Times |access-date=June 6, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131022133308/http://articles.latimes.com/2009/feb/23/entertainment/et-oscar23 |archive-date=October 22, 2013 }}</ref><ref>{{cite web|last=Vancheri |first=Barbara |title=Top Dog: Passage to India proves golden for Mumbai fairy tale |url=http://www.post-gazette.com/stories/life/seen/top-dog-passage-to-india-proves-golden-for-mumbai-fairy-tale-331143/ |work=[[Pittsburgh Post-Gazette]] |publisher=[[Block Communications]] |access-date=June 6, 2013 |date=February 23, 2009 |url-status=dead |archive-url=https://web.archive.org/web/20131014163048/http://www.post-gazette.com/stories/life/seen/top-dog-passage-to-india-proves-golden-for-mumbai-fairy-tale-331143/ |archive-date=October 14, 2013 }}</ref> Other winners included ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' with three awards, ''[[The Dark Knight]]'' and ''[[Milk (2008 American film)|Milk]]'' with two, and ''[[Departures (2008 film)|Departures]]'', ''[[The Duchess (film)|The Duchess]]'', ''[[La Maison en Petits Cubes]]'', ''[[Man on Wire]]'', ''[[The Reader (2008 film)|The Reader]]'', ''[[Smile Pinki]]'', ''[[Toyland (film)|Toyland]]'', ''[[Vicky Cristina Barcelona]]'', and ''[[WALL-E]]'' with one. The telecast garnered almost 37 million viewers in the United States.
+
+==Winners and nominees==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+[[File:Cast "Slumdog Millionaire".JPG|thumb|left|300px|The ''[[Slumdog Millionaire]]'' team at the 81st Academy Awards]]
+
+The nominees for the 81st Academy Awards were announced on January 22, 2009, at 5:38&nbsp;p.m. [[Pacific Time Zone|PST]] (13:38 [[Universal Time Coordinated|UTC]]) at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]], by [[Sid Ganis]], president of the Academy, and the actor [[Forest Whitaker]].<ref name="ForestWhitaker2009">{{cite web|url=http://www.oscars.org/press/pressreleases/2009/20090120.html |title=Forest Whitaker to Join Academy President Sid Ganis for Oscar Nominations |date=January 20, 2009 |work=Academy of Motion Picture Arts and Sciences |access-date=January 21, 2009 |archive-url=https://web.archive.org/web/20090123235205/http://www.oscars.org/press/pressreleases/2009/20090120.html |archive-date=January 23, 2009 |url-status=dead |df=mdy}}</ref> ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' received the most nominations with thirteen (the ninth film to garner that many nominations); ''[[Slumdog Millionaire]]'' came in second with ten.<ref name="ForestWhitaker2009" /><ref name="Oscar facts and figures">{{cite news|url=http://goldderby.latimes.com/awards_goldderby/2009/01/oscar-nominat-1.html |title=Oscar nominations: Fascinating facts, figures and milestones |last=O'Neil |first=Tom |date=January 22, 2009 |work=Los Angeles Times |access-date=June 5, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20131004233055/http://goldderby.latimes.com/awards_goldderby/2009/01/oscar-nominat-1.html |archive-date=October 4, 2013 }}</ref> This would be the fifth year that all five Best Picture nominees were also nominated for [[Academy Award for Best Director|Best Director]];<ref name="Oscar facts and figures"/> it would also be the last [[82nd Academy Awards|due to the Academy extending the number of Best Picture nominees from five to ten for the following ceremonies]].
+
+The winners were announced during the awards ceremony on February 22, 2009.<ref>{{cite news|title=Academy Award winners and nominees |publisher=Time Warner |work=CNN |date=February 22, 2009 |url=http://www.cnn.com/2009/SHOWBIZ/Movies/02/22/oscar.nominees.full.list/index.html |access-date=February 22, 2009 |archive-url=https://web.archive.org/web/20090224130935/http://www.cnn.com/2009/SHOWBIZ/Movies/02/22/oscar.nominees.full.list/index.html |archive-date=February 24, 2009 |url-status=live |df=mdy}}</ref> ''Slumdog Millionaire'' was the eleventh film to win Best Picture without any acting nominations.<ref>{{cite web|url=https://www.tvguide.com/news/2009-oscar-predictions-1003134.aspx |title=Oscars: Who Will Win and Who Will Surprise? |first=Joyce |last=Eng |date=February 20, 2009 |work=TV Guide |access-date=May 24, 2009 |url-status=dead |archive-url=https://web.archive.org/web/20090525055216/http://www.tvguide.com/News/2009-Oscar-Predictions-1003134.aspx |archive-date=May 25, 2009 }}</ref> [[Sean Penn]] became the ninth person to win Best Lead Actor twice.<ref>{{cite news|url=http://goldderby.latimes.com/awards_goldderby/2009/02/oscar-news-411.html |title=Sean Penn is the ninth actor to win two lead Oscars |last=O'Neil |first=Tom |date=February 23, 2009 |work=Los Angeles Times |access-date=June 6, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130308055511/http://goldderby.latimes.com/awards_goldderby/2009/02/oscar-news-411.html |archive-date=March 8, 2013 }}</ref> Best Supporting Actor winner [[Heath Ledger]] became the [[List of posthumous Academy Award winners and nominees|second performer to win a posthumous acting Oscar]]. The first actor to receive this distinction was [[Peter Finch]], who posthumously won Best Actor for ''[[Network (1976 film)|Network]]'' two months after his death in January 1977.<ref name="Heath Ledger Oscar">{{cite news|last=Johnson|first=Reed|date=February 23, 2009|title=For Heath Ledger, a bittersweet salute|work=Los Angeles Times|url=https://www.latimes.com/archives/la-xpm-2009-feb-23-et-oscarledger23-story.html|url-status=live|access-date=February 3, 2022|archive-url=https://web.archive.org/web/20130607051737/http://theenvelope.latimes.com/awards/oscars/la-et-oscarledger23-2009feb23%2C0%2C5458027.story|archive-date=June 7, 2013}}</ref> Coincidentally, both actors were the [[List of Australian Academy Award winners and nominees|first native Australians to win Oscars in their respective categories]]. With its six nominations, ''[[WALL-E|WALL•E]]'' tied with 1991's ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]'' as the most nominated animated film in Oscar history.<ref name="Oscar facts and figures"/>
+
+{{clear|left}}
+
+===Awards===
+[[File:Danny Boyle Red Carpet T2 Trainspotting Berlinale 2017 02.jpg|thumb|right|150px|[[Danny Boyle]], Best Director winner|alt=Photo of Danny Boyle at the 2017 Berlin International Film Festival.]]
+[[File:Superpower (2023)-60523 (cropped).jpg|thumb|right|150px|[[Sean Penn]], Best Actor winner|alt=Photo of Sean Penn at the 2023 Berlin International Film Festival.]]
+[[File:KateWinslet (cropped).jpg|thumb|right|150px|[[Kate Winslet]], Best Actress winner|alt=Photo of Kate Winslet in 2025.]]
+[[File:Heath Ledger (Berlin Film Festival 2006) revised.jpg|thumb|right|150px|[[Heath Ledger]], Best Supporting Actor winner|alt=Photo of Heath Ledger at the 2006 Berlin International Film Festival.]]
+[[File:Premios Goya 2018 - Penélope Cruz.jpg|thumb|right|150px|[[Penélope Cruz]], Best Supporting Actress winner|alt=Photo of Penélope Cruz in the 32nd Goya Awards.]]
+[[File:Dustin Lance Black at the 81st Academy Awards.jpg|thumb|right|150px| [[Dustin Lance Black]], Best Original Screenplay winner|alt=Photo of Dustin Lance Black in 2009.]]
+[[File:Andrew Stanton cropped 2009.jpg|thumb|right|150px|[[Andrew Stanton]], Best Animated Feature winner|alt=Photo of Andrew Stanton in 2009.]]
+[[File:A. R. Rahman.jpg|thumb|right|155px|[[A. R. Rahman]], Best Original Score winner and Best Original Song co-winner|alt=photo of A.R. Rahman in 2015]]
+
+Winners are listed first, highlighted in '''boldface''' and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars2009">{{cite news|url=http://www.oscars.org/oscars/ceremonies/2009 |title=The 81st Academy Awards (2009) Nominees and Winners |access-date=November 20, 2011 |work=[[Academy of Motion Picture Arts and Sciences]] |publisher=AMPAS |url-status=live |archive-url=https://web.archive.org/web/20141110111206/http://www.oscars.org/oscars/ceremonies/2009 |archive-date=November 10, 2014 }}</ref>
+
+{| class=wikitable
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Slumdog Millionaire]]''&nbsp;– [[Christian Colson]], producer'''{{double-dagger}}
+** ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]''&nbsp;– [[Kathleen Kennedy (producer)|Kathleen Kennedy]], [[Frank Marshall (producer)|Frank Marshall]] and [[Ceán Chaffin]], producers
+** ''[[Frost/Nixon (film)|Frost/Nixon]]''&nbsp;– [[Brian Grazer]], [[Ron Howard]] and [[Eric Fellner]], producers
+** ''[[Milk (2008 American film)|Milk]]''&nbsp;– [[Dan Jinks]] and [[Bruce Cohen]], producers
+** ''[[The Reader (2008 film)|The Reader]]''&nbsp;– [[Anthony Minghella]], [[Sydney Pollack]], [[Donna Gigliotti]] and [[Redmond Morris, 4th Baron Killanin|Redmond Morris]], producers
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Danny Boyle]]&nbsp;– ''[[Slumdog Millionaire]]'''''{{double-dagger}}
+** [[David Fincher]]&nbsp;– ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]''
+** [[Ron Howard]]&nbsp;– ''[[Frost/Nixon (film)|Frost/Nixon]]''
+** [[Gus Van Sant]]&nbsp;– ''[[Milk (2008 American film)|Milk]]''
+** [[Stephen Daldry]]&nbsp;– ''[[The Reader (2008 film)|The Reader]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Sean Penn]]&nbsp;– ''[[Milk (2008 American film)|Milk]]'' as [[Harvey Milk]]'''{{double-dagger}}
+** [[Richard Jenkins]]&nbsp;– ''[[The Visitor (2007 feature film)|The Visitor]]'' as Walter Vale
+** [[Frank Langella]]&nbsp;– ''[[Frost/Nixon (film)|Frost/Nixon]]'' as [[Richard Nixon]]
+** [[Brad Pitt]]&nbsp;– ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' as Benjamin Button
+** [[Mickey Rourke]]&nbsp;– ''[[The Wrestler (2008 film)|The Wrestler]]'' as Randy "The Ram" Robinson
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Kate Winslet]]&nbsp;– ''[[The Reader (2008 film)|The Reader]]'' as Hanna Schmitz'''{{double-dagger}}
+** [[Anne Hathaway]]&nbsp;– ''[[Rachel Getting Married]]'' as Kym Buchman
+** [[Angelina Jolie]]&nbsp;– ''[[Changeling (film)|Changeling]]'' as [[Christine Collins]]
+** [[Melissa Leo]]&nbsp;– ''[[Frozen River]]'' as Ray Eddy
+** [[Meryl Streep]]&nbsp;– ''[[Doubt (2008 film)|Doubt]]'' as Sister Aloysius Beauvier
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Heath Ledger]]†&nbsp;– ''[[The Dark Knight]]'' as [[Joker (The Dark Knight)|The Joker]]'''{{double-dagger}} <small>([[List of posthumous Academy Award winners and nominees|posthumous award]]{{efn|Following talks with his family in Australia, the Academy determined that Ledger's daughter, Matilda Rose Ledger, would own the award. However, due to Matilda's age, she did not gain full ownership of the statuette until her eighteenth birthday in 2023.<ref>{{cite web|last=Pond |first=Steve |title=If Ledger Wins, Oscar Goes To Daughter |url=https://www.cbsnews.com/news/if-ledger-wins-oscar-goes-to-daughter/ |work=CBS News |publisher=CBS Corporation |access-date=June 7, 2013 |date=February 18, 2009 |url-status=live |archive-url=https://web.archive.org/web/20150201171400/http://www.cbsnews.com/news/if-ledger-wins-oscar-goes-to-daughter/ |archive-date=February 1, 2015 }}</ref> Until that time, her mother, actress [[Michelle Williams (actress)|Michelle Williams]], owned the statuette in trust for Matilda;<ref>{{cite news|url=http://www.eonline.com/news/100747/why-can-t-li-l-matilda-have-heath-s-potential-oscar |title=Why Can't Li'l Matilda Have Heath's (Potential) Oscar? |date=February 19, 2009 |first=Leslie |last=Gornstein |work=E! |publisher=NBCUniversal |access-date=June 7, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131103124010/http://www.eonline.com/news/100747/why-can-t-li-l-matilda-have-heath-s-potential-oscar |archive-date=November 3, 2013 }}</ref> it was held at the [[Western Australian Museum]].<ref>{{cite web |url=https://www.hollywoodreporter.com/news/general-news/heath-ledgers-dad-reveals-he-867605/ |title=Heath Ledger's Dad Reveals Where He Keeps the 'Dark Knight' Oscar |last=Bulbeck |first=Pip |work=[[The Hollywood Reporter]] |date=February 24, 2016 |accessdate=July 31, 2024 |archiveurl=https://web.archive.org/web/20210724090143/https://www.hollywoodreporter.com/news/general-news/heath-ledgers-dad-reveals-he-867605/ |archivedate=July 24, 2021 |url-status=live }}</ref> Ledger's family attended the ceremony and his parents and sister accepted the award on stage on his behalf.<ref name="Heath Ledger Oscar" />}})</small>
+** [[Josh Brolin]]&nbsp;– ''[[Milk (2008 American film)|Milk]]'' as [[Dan White]]
+** [[Robert Downey Jr.]]&nbsp;– ''[[Tropic Thunder]]'' as Kirk Lazarus
+** [[Philip Seymour Hoffman]]&nbsp;– ''[[Doubt (2008 film)|Doubt]]'' as Father Brendan Flynn
+** [[Michael Shannon]]&nbsp;– ''[[Revolutionary Road (film)|Revolutionary Road]]'' as John Givings Jr.
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Penélope Cruz]]&nbsp;– ''[[Vicky Cristina Barcelona]]'' as María Elena'''{{double-dagger}}
+** [[Amy Adams]]&nbsp;– ''[[Doubt (2008 film)|Doubt]]'' as Sister James
+** [[Viola Davis]]&nbsp;– ''[[Doubt (2008 film)|Doubt]]'' as Mrs. Miller
+** [[Taraji P. Henson]]&nbsp;– ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' as Queenie
+** [[Marisa Tomei]]&nbsp;– ''[[The Wrestler (2008 film)|The Wrestler]]'' as Cassidy/Pam
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Milk (2008 American film)|Milk]]'' – [[Dustin Lance Black]]'''{{double-dagger}}
+** ''[[Frozen River]]'' – [[Courtney Hunt]]
+** ''[[Happy-Go-Lucky (2008 film)|Happy-Go-Lucky]]'' – [[Mike Leigh]]
+** ''[[In Bruges]]'' – [[Martin McDonagh]]
+** ''[[WALL-E]]'' – Screenplay by [[Andrew Stanton]] and [[Jim Reardon]]; Original story by Andrew Stanton and [[Pete Docter]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[Slumdog Millionaire]]'' – [[Simon Beaufoy]]; {{small|based on the novel ''[[Q & A (novel)|Q & A]]'' by [[Vikas Swarup]]}}'''{{double-dagger}}
+** ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' – Screenplay by [[Eric Roth]]; Screen story by Eric Roth and [[Robin Swicord]]; {{small|based on the [[The Curious Case of Benjamin Button (short story)|short story]] by [[F. Scott Fitzgerald]]}}
+** ''[[Doubt (2008 film)|Doubt]]'' – [[John Patrick Shanley]]; {{small|based on [[Doubt: A Parable|his play]]}}
+** ''[[Frost/Nixon (film)|Frost/Nixon]]'' – [[Peter Morgan]]; {{small|based on [[Frost/Nixon (play)|his stage play]]}}
+** ''[[The Reader (2008 film)|The Reader]]'' – [[David Hare (playwright)|David Hare]]; {{small|based on the novel ''[[The Reader|Der Vorleser]]'' by [[Bernhard Schlink]]}}
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[WALL-E]]'' – [[Andrew Stanton]]'''{{double-dagger}}
+** ''[[Bolt (2008 film)|Bolt]]'' – [[Chris Williams (director)|Chris Williams]] and [[Byron Howard]]
+** ''[[Kung Fu Panda (film)|Kung Fu Panda]]'' – [[John Stevenson (director)|John Stevenson]] and [[Mark Osborne (filmmaker)|Mark Osborne]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[Departures (2008 film)|Departures]]'' ([[List of Japanese submissions for the Academy Award for Best Foreign Language Film|Japan]]) in Japanese – [[Yōjirō Takita]]'''{{double-dagger}}
+** ''[[The Baader Meinhof Complex]]'' ([[List of German submissions for the Academy Award for Best Foreign Language Film|Germany]]) in German – [[Uli Edel]]
+** ''[[The Class (2008 film)|The Class]]'' ([[List of French submissions for the Academy Award for Best Foreign Language Film|France]]) in French – [[Laurent Cantet]]
+** ''[[Revanche (film)|Revanche]]'' ([[List of Austrian submissions for the Academy Award for Best Foreign Language Film|Austria]]) in German – [[Götz Spielmann]]
+** ''[[Waltz with Bashir]]'' ([[List of Israeli submissions for the Academy Award for Best Foreign Language Film|Israel]]) in [[Hebrew language|Hebrew]] – [[Ari Folman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Man on Wire]]'' – [[James Marsh (director)|James Marsh]] and [[Simon Chinn]]'''{{double-dagger}}
+** ''[[The Betrayal – Nerakhoon]]'' – [[Ellen Kuras]] and [[Thavisouk Phrasavath]]
+** ''[[Encounters at the End of the World]]'' – [[Werner Herzog]] and [[Henry Kaiser (musician)|Henry Kaiser]]
+** ''[[The Garden (2008 film)|The Garden]]'' – [[Scott Hamilton Kennedy]]
+** ''[[Trouble the Water]]'' – [[Tia Lessin]] and [[Carl Deal]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Smile Pinki]]'' – [[Megan Mylan]]'''{{double-dagger}}
+** ''[[The Conscience of Nhem En]]'' – [[Steven Okazaki]]
+** ''[[The Final Inch]]'' – [[Irene Taylor (filmmaker)|Irene Taylor Brodsky]] and Tom Grant
+** ''[[The Witness: From the Balcony of Room 306]]'' – Adam Pertovsky and Margaret Hyde
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Toyland (film)|Toyland]]'' (''Spielzeugland'') – [[Jochen Alexander Freydank]]'''{{double-dagger}}
+** ''Manon on the Asphalt'' – Elizabeth Marre and Olivier Pont
+** ''[[New Boy (film)|New Boy]]'' – [[Steph Green]] and Tamara Anghie
+** ''[[On the Line (2007 film)|On the Line]]'' (''Auf der Strecke'') – Reto Caffi
+** ''The Pig'' (''Grisen'') – Tivi Magnusson and Dorte Høgh
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[La Maison en Petits Cubes]]'' – [[Kunio Katō]]'''{{double-dagger}}
+** ''[[Lavatory – Lovestory]]'' – [[Konstantin Bronzit]]
+** ''[[Oktapodi]]'' – [[Emud Mokhberi]] and Thierry Marchand
+** ''[[Presto (film)|Presto]]'' – [[Doug Sweetland]]
+** ''[[This Way Up (film)|This Way Up]]'' – Alan Smith and Adam Foulkes
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Slumdog Millionaire]]'' – [[A. R. Rahman]]'''{{double-dagger}}
+** ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' – [[Alexandre Desplat]]
+** ''[[Defiance (2008 film)|Defiance]]'' – [[James Newton Howard]]
+** ''[[Milk (2008 American film)|Milk]]'' – [[Danny Elfman]]
+** ''[[WALL-E]]'' – [[Thomas Newman]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Jai Ho (song)|Jai Ho]]" from ''[[Slumdog Millionaire]]'' – Music by [[A. R. Rahman]]; lyrics by [[Gulzar]]'''{{double-dagger}}
+** "[[Down to Earth (Peter Gabriel song)|Down to Earth]]" from ''[[WALL-E]]'' – Music by [[Peter Gabriel]] and [[Thomas Newman]]; lyrics by Peter Gabriel
+** "[[O... Saya|O Saya]]" from ''[[Slumdog Millionaire]]'' – Music and lyrics by [[A. R. Rahman]] and [[M.I.A. (rapper)|Maya Arulpragasam]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[The Dark Knight]]'' – [[Richard King (sound designer)|Richard King]]'''{{double-dagger}}
+** ''[[Iron Man (2008 film)|Iron Man]]'' – [[Frank E. Eulner|Frank Eulner]] and [[Christopher Boyes]]
+** ''[[Slumdog Millionaire]]'' – [[Glenn Freemantle]] and [[Tom Sayers (sound editor)|Tom Sayers]]
+** ''[[WALL-E]]'' – [[Ben Burtt]] and [[Matthew Wood (sound editor)|Matthew Wood]]
+** ''[[Wanted (2008 film)|Wanted]]'' – [[Wylie Stateman]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Mixing]]}}
+* '''''[[Slumdog Millionaire]]'' – [[Ian Tapp]], [[Richard Pryke]] and [[Resul Pookutty]]'''{{double-dagger}}
+** ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' – [[David Parker (sound engineer)|David Parker]], [[Michael Semanick]], [[Ren Klyce]] and [[Mark Weingarten]]
+** ''[[The Dark Knight]]'' – [[Lora Hirschberg]], [[Gary Rizzo]] and [[Ed Novick]]
+** ''[[WALL-E]]'' – [[Tom Myers (sound engineer)|Tom Myers]], [[Michael Semanick]] and [[Ben Burtt]]
+** ''[[Wanted (2008 film)|Wanted]]'' – [[Chris Jenkins (sound engineer)|Chris Jenkins]], [[Frank A. Montaño]] and [[Petr Forejt]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]''&nbsp;– Art Direction: [[Donald Graham Burt]]; Set Decoration: [[Victor J. Zolfo]]'''{{double-dagger}}
+** ''[[Changeling (film)|Changeling]]''&nbsp;– Art Direction: [[James J. Murakami]]; Set Decoration: [[Gary Fettis]]
+** ''[[The Dark Knight]]''&nbsp;– Art Direction: [[Nathan Crowley]]; Set Decoration: [[Peter Lando]]
+** ''[[The Duchess (film)|The Duchess]]''&nbsp;– Art Direction: [[Michael Carlin (art director)|Michael Carlin]]; Set Decoration: [[Rebecca Alleway]]
+** ''[[Revolutionary Road (film)|Revolutionary Road]]''&nbsp;– Art Direction: [[Kristi Zea]]; Set Decoration: [[Debra Schutt]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Slumdog Millionaire]]'' – [[Anthony Dod Mantle]]'''{{double-dagger}}
+** ''[[Changeling (film)|Changeling]]'' – [[Tom Stern (cinematographer)|Tom Stern]]
+** ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' – [[Claudio Miranda]]
+** ''[[The Dark Knight]]'' – [[Wally Pfister]]
+** ''[[The Reader (2008 film)|The Reader]]'' – [[Chris Menges]] and [[Roger Deakins]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' – [[Greg Cannom]]'''{{double-dagger}}
+** ''[[The Dark Knight]]'' – [[John Caglione Jr.]] and [[Conor O'Sullivan (make-up artist)|Conor O'Sullivan]]
+** ''[[Hellboy II: The Golden Army]]'' – [[Mike Elizalde]] and [[Thomas Floutz]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[The Duchess (film)|The Duchess]]'' – [[Michael O'Connor (costume designer)|Michael O'Connor]]'''{{double-dagger}}
+** ''[[Australia (2008 film)|Australia]]'' – [[Catherine Martin (designer)|Catherine Martin]]
+** ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' – [[Jacqueline West]]
+** ''[[Milk (2008 American film)|Milk]]'' – [[Danny Glicker]]
+** ''[[Revolutionary Road (film)|Revolutionary Road]]'' – [[Albert Wolsky]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Slumdog Millionaire]]'' – [[Chris Dickens]]'''{{double-dagger}}
+** ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' – [[Kirk Baxter]] and [[Angus Wall]]
+** ''[[The Dark Knight]]'' – [[Lee Smith (film editor)|Lee Smith]]
+** ''[[Frost/Nixon (film)|Frost/Nixon]]'' – [[Mike Hill (film editor)|Mike Hill]] and [[Daniel P. Hanley|Dan Hanley]]
+** ''[[Milk (2008 American film)|Milk]]'' – [[Elliot Graham]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' – [[Eric Barba]], [[Steve Preeg]], [[Burt Dalton]] and [[Craig Barron]]'''{{double-dagger}}
+** ''[[The Dark Knight]]'' – [[Nick Davis (visual effects supervisor)|Nick Davis]], [[Chris Corbould]], [[Tim Webber]] and [[Paul Franklin (visual effects supervisor)|Paul Franklin]]
+** ''[[Iron Man (2008 film)|Iron Man]]'' – [[John Nelson (visual effects artist)|John Nelson]], [[Ben Snow]], [[Dan Sudick]] and [[Shane Mahan]]
+|}
+
+===Jean Hersholt Humanitarian Award===
+* [[Jerry Lewis]]<ref>{{cite news|last=Braxton |first=Greg |title=The Jean Hersholt Humanitarian Award: Jerry Lewis |url=https://www.latimes.com/archives/la-xpm-2009-feb-23-et-oscarjerry23-story.html |access-date=June 16, 2013 |work=Los Angeles Times |date=February 23, 2009 |url-status=live |archive-url=https://web.archive.org/web/20131105074525/http://articles.latimes.com/2009/feb/23/entertainment/et-oscarjerry23 |archive-date=November 5, 2013 }}</ref>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}{{col-1-of-2}}
+The following 15 films received multiple nominations:
+
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| style="text-align: center;" | 13
+| ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]''
+|-
+| style="text-align: center;" | 10
+| ''[[Slumdog Millionaire]]''
+|-
+| rowspan=2 style="text-align:center" | 8
+| ''[[The Dark Knight]]''
+|-
+| ''[[Milk (2008 American film)|Milk]]''
+|-
+| style="text-align: center;" | 6
+| ''[[WALL-E|WALL•E]]''
+|-
+| rowspan=3 style="text-align:center" | 5
+| ''[[Doubt (2008 film)|Doubt]]''
+|-
+| ''[[Frost/Nixon (film)|Frost/Nixon]]''
+|-
+| ''[[The Reader (2008 film)|The Reader]]''
+|-
+|rowspan=2 style="text-align:center" | 3
+| ''[[Changeling (film)|Changeling]]''
+|-
+| ''[[Revolutionary Road (film)|Revolutionary Road]]''
+|-
+|rowspan=5 style="text-align:center" | 2
+| ''[[The Wrestler (2008 film)|The Wrestler]]''
+|-
+| ''[[The Duchess (film)|The Duchess]]''
+|-
+| ''[[Frozen River]]''
+|-
+| ''[[Iron Man (2008 film)|Iron Man]]''
+|-
+| ''[[Wanted (2008 film)|Wanted]]''
+|}
+
+{{col-2}}
+
+The following four films received multiple awards:
+
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+| style="text-align: center;" | 8
+| ''[[Slumdog Millionaire]]''
+|-
+| style="text-align: center;" | 3
+| ''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]''
+|-
+| rowspan=2 style="text-align:center" | 2
+| ''[[The Dark Knight]]''
+|-
+| ''[[Milk (2008 American film)|Milk]]''
+|}
+
+{{col-end}}
+
+== Presenters and performers ==
+The following individuals presented awards or performed musical numbers.<ref>{{cite web|last=Finke |first=Nikki |title=Live-Snarking 2009 Academy Awards: Oscars Slumming, Show Stumbling |url=https://deadline.com/2009/02/live-snarking-the-2009-academy-awards-8559/ |website=[[Deadline Hollywood]] |publisher=Penske Media Corporation |access-date=June 5, 2013 |date=February 22, 2009 |url-status=live |archive-url=https://web.archive.org/web/20131002043735/http://www.deadline.com/2009/02/live-snarking-the-2009-academy-awards/ |archive-date=October 2, 2013 }}</ref><ref>
+{{cite news
+ |url=http://news.bbc.co.uk/1/hi/entertainment/oscars/7903204.stm
+ |title=Surprises expected at Oscar gala
+ |first=Neil
+ |last=Smith
+ |work=[[BBC News]]
+ |publisher=[[BBC]]
+ |date=February 21, 2009
+ |access-date=February 22, 2009
+ |archive-url=https://web.archive.org/web/20090224090047/http://news.bbc.co.uk/1/hi/entertainment/oscars/7903204.stm
+ |archive-date=February 24, 2009
+ |url-status=live
+ |df=mdy
+}}</ref><ref name=LAT022609>{{cite web|last=Rose |first=Adam |title=Trojan's cementing reputation as Hollywood's band |url=http://latimesblogs.latimes.com/sports_blog/2009/02/usc-hollywood.html |work=Los Angeles Times |access-date=March 4, 2009 |date=February 26, 2009 |url-status=live |archive-url=https://web.archive.org/web/20090304000028/http://latimesblogs.latimes.com/sports_blog/2009/02/usc-hollywood.html |archive-date=March 4, 2009 }}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+|{{sortname|Gina|Tuttle}} || Announcer for the 81st annual Academy Awards
+|-
+|{{sortname|Whoopi|Goldberg}}<br />[[Goldie Hawn]]<br />[[Anjelica Huston]]<br />[[Eva Marie Saint]]<br />[[Tilda Swinton]] || Presenters of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+|{{sortname|Tina|Fey}}<br />[[Steve Martin]] || Presenters of the awards for [[Academy Award for Best Original Screenplay|Best Original Screenplay]] and [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+|{{sortname|Jennifer|Aniston}}<br />[[Jack Black]] || Introducers of the Animation 2008 montage and presenters of the awards for [[Academy Award for Best Animated Feature|Best Animated Feature Film]] and [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+|{{sortname|Daniel|Craig}}<br />[[Sarah Jessica Parker]] || Presenters of the awards for [[Academy Award for Best Production Design|Best Art Direction]], [[Academy Award for Best Costume Design|Best Costume Design]] and [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+|{{sortname|Robert|Pattinson}}<br />[[Amanda Seyfried]] || Introducers of the Romance 2008 montage
+|-
+|{{sortname|Natalie|Portman}}<br />[[Ben Stiller]] || Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+|{{sortname|Jessica|Biel}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+|{{sortname|James|Franco}}<br />[[Seth Rogen]]<br />[[Janusz Kamiński]] || Presenters of the award for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+|{{sortname|Alan|Arkin}}<br />[[Cuba Gooding Jr.]]<br />[[Joel Grey]]<br />[[Kevin Kline]]<br />[[Christopher Walken]] || Presenters of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+|{{sortname|Bill|Maher}} || Presenter of the awards for [[Academy Award for Best Documentary Feature|Best Documentary Feature]] and [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]]
+|-
+|{{sortname|Will|Smith}} || Presenter of the awards for [[Academy Award for Best Visual Effects|Best Visual Effects]], [[Academy Award for Best Sound Mixing|Best Sound Mixing]], [[Academy Award for Best Sound Editing|Best Sound Editing]] and [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+|{{sortname|Eddie|Murphy}} || Presenter of the [[Jean Hersholt Humanitarian Award]]
+|-
+|{{sortname|Zac|Efron}}<br />[[Alicia Keys]] || Presenters of the awards for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Original Song|Best Original Song]] and introducers of the special song and dance number performing the Best Original Song nominees
+|-
+|{{sortname|Liam|Neeson}}<br />[[Freida Pinto]] || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+|{{sortname|Queen|Latifah}} || Presenter of the "[[In memoriam segment|In Memoriam]]" tribute
+|-
+|{{sortname|Reese|Witherspoon}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+|{{sortname|Halle|Berry}}<br />[[Marion Cotillard]]<br />[[Nicole Kidman]]<br />[[Sophia Loren]]<br />[[Shirley MacLaine]] || Presenters of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+|{{sortname|Adrien|Brody}}<br />[[Michael Douglas]]<br />[[Robert De Niro]]<br />[[Anthony Hopkins]]<br />[[Ben Kingsley]] || Presenters of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+|{{sortname|Steven|Spielberg}} || Presenter of the Best Picture segment and the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+|{{sortname|Michael|Giacchino}} || Musical Arranger || Orchestral
+|-
+|{{sortname|Hugh|Jackman}}<br />[[Anne Hathaway]] || Performers || Opening Number
+|-
+|{{sortname|Hugh|Jackman|nolink=1}}<br />[[Beyoncé]]<br />[[Zac Efron]]<br />[[Vanessa Hudgens]]<br />[[Amanda Seyfried]]<br />[[Dominic Cooper]]<br />[[Spirit of Troy]]|| Performers ||
+"[[Top Hat, White Tie and Tails]]" from ''[[Top Hat]]''<br />
+"[[Singin' in the Rain (song)|Singin' in the Rain]]" from ''[[Singin' in the Rain]]''<br />
+"[[Big Spender]]" from ''[[Sweet Charity (film)|Sweet Charity]]''<br />
+"[[Maria (West Side Story song)|Maria]]" from ''[[West Side Story (1961 film)|West Side Story]]''<br />
+"[[You're the One That I Want]]" from ''[[Grease (film)|Grease]]''<br />
+"[[Maria (Rodgers and Hammerstein song)|Maria]]" from ''[[The Sound of Music (film)|The Sound of Music]]''<br />
+"[[All That Jazz (song)|All That Jazz]]" from ''[[Chicago (2002 film)|Chicago]]''<br />
+"[[Lady Marmalade]]" from ''[[Moulin Rouge!]]''<br />
+"[[One Night Only (song)|One Night Only]]" from ''[[Dreamgirls (film)|Dreamgirls]]''<br />
+"[[You Can't Stop the Beat]]" from ''[[Hairspray (2007 film)|Hairspray]]''<br />
+"[[I Don't Know How to Love Him]]" from ''[[Jesus Christ Superstar (film)|Jesus Christ Superstar]]''<br />
+"[[At Last]]" from ''[[Orchestra Wives]]''<br />
+"[[High School Musical 3: Senior Year (soundtrack)|Last Chance]]" from ''[[High School Musical 3: Senior Year]]''<br />
+"[[Mamma Mia (ABBA song)|Mamma Mia]]" from ''[[Mamma Mia! (2008 film)|Mamma Mia!]]''<br />
+"[[Don't Cry for Me Argentina]]" from ''[[Evita (1996 film)|Evita]]''<br />
+"[[Over the Rainbow]]" from ''[[The Wizard of Oz (1939 film)|The Wizard of Oz]]''<br />
+"[[Somewhere (song)|Somewhere]]" from ''[[West Side Story (1961 film)|West Side Story]]''
+|-
+|[[A. R. Rahman|A.R. Rahman]] || Performer || "[[O Saya]]" from ''[[Slumdog Millionaire]]''
+|-
+|{{sortname|John|Legend}}<br />[[Soweto Gospel Choir]] || Performers || "[[Down to Earth (Peter Gabriel song)|Down to Earth]]" from ''[[WALL-E]]''
+|-
+|[[A. R. Rahman|A.R. Rahman]]<br />[[Mahalakshmi Iyer]]<br />[[Tanvi Shah]] || Performers || "[[Jai Ho (song)|Jai Ho]]" from ''[[Slumdog Millionaire]]''
+|-
+|{{sortname|Queen|Latifah}} || Performer || "[[I'll Be Seeing You (song)|I'll Be Seeing You]]" during the annual "[[In memoriam segment|In Memoriam]]" tribute
+|}
+
+==Ceremony information==
+[[File:HughJackmanApr09b.jpg|thumb|right|alt=Photo of Hugh Jackman at the X-Men Origins: Wolverine premiere in 2009|[[Hugh Jackman]] hosted the 81st Academy Awards.]]
+
+Due to the declining viewership of the recent Academy Awards ceremonies, AMPAS had contracted an entirely new production team in an attempt to revive interest surrounding both the awards and festivities. In September 2008, the Academy selected producers [[Bill Condon]] and [[Laurence Mark]] to co-produce the telecast.<ref>{{cite news|url=http://theenvelope.latimes.com/awards/oscars/env-et-oscarproducer25-2008sep25,0,6564123.story |title=Laurence Mark, Bill Condon to produce Oscars |date=September 24, 2008 |first=Susan |last=King |work=Los Angeles Times |access-date=June 5, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20131106042527/http://theenvelope.latimes.com/awards/oscars/env-et-oscarproducer25-2008sep25%2C0%2C6564123.story |archive-date=November 6, 2013 }}</ref> Nearly three months later, actor [[Hugh Jackman]], who had previously emceed three consecutive [[Tony Awards]] ceremonies between [[57th Tony Awards|2003]] and [[59th Tony Awards|2005]], was chosen as host of the 2009 gala.<ref>{{cite news|url=https://www.cbsnews.com/news/hugh-jackman-to-host-oscars/ |title=Hugh Jackman To Host Oscars |date=December 12, 2008 |work=[[CBS News]] |publisher=[[CBS Corporation]] |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20150402201321/http://www.cbsnews.com/news/hugh-jackman-to-host-oscars/ |archive-date=April 2, 2015 }}</ref> Jackman expressed his anticipation of the awards in the few days preceding, and had commented that he was thrilled with preparations for the ceremony.<ref>{{cite news|url=https://abcnews.go.com/Entertainment/Oscars/hugh-jackman-hosting-oscars-night-celebration/story?id=6895832 |title=Hugh Jackman on Hosting Oscars: 'A Night of Celebration' |last=Escherich |first=Katie |work=[[ABC News (United States)|ABC News]] |publisher=[[The Walt Disney Company]] |date=February 20, 2009 |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131031141311/http://abcnews.go.com/Entertainment/Oscars/hugh-jackman-hosting-oscars-night-celebration/story?id=6895832 |archive-date=October 31, 2013 }}</ref><ref>{{cite magazine|url=https://ew.com/article/2009/01/28/hugh-jackman-oscars-sexiest-host/ |title=Hugh Jackman: Oscars' Sexiest Host? |date=January 28, 2009 |first=Miisy |last=Schwartz |magazine=[[Entertainment Weekly]] |publisher=Time Warner |access-date=June 6, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20131102051357/http://www.ew.com/ew/article/0%2C%2C20254914%2C00.html |archive-date=November 2, 2013 }}</ref>
+
+Notable changes were introduced in the production of the telecast. In an attempt to build suspense and curiosity leading up to the awards, Condon and Mark announced that they would not reveal any of the presenters or performers who would participate in the Oscarcast.<ref>{{cite news|url=https://www.usatoday.com/life/movies/movieawards/oscars/2009-02-19-the-oscar-11_N.htm |title=The Oscar 11: Team aims to revive awards' telecast |first=Anthony |last=Breznican |work=USA Today |publisher=Gannett Company |date=February 19, 2009 |access-date=February 20, 2009 |url-status=dead |archive-url=https://web.archive.org/web/20090222071707/http://www.usatoday.com/life/movies/movieawards/oscars/2009-02-19-the-oscar-11_N.htm |archive-date=February 22, 2009 }}</ref> Another unique feature of the ceremony was that the orchestra performed onstage instead of being relegated to a [[Orchestra pit|pit]].<ref>{{cite web|title=I'm with the band! Oscars stage design revealed |url=http://www.today.com/id/29299773/ns/today-today_entertainment/t/im-band-oscars-stage-design-revealed/ |work=NBC News |publisher=NBCUniversal |access-date=June 5, 2013 |date=February 20, 2009 |url-status=live |archive-url=https://web.archive.org/web/20131031142219/http://www.today.com/id/29299773/ns/today-today_entertainment/t/im-band-oscars-stage-design-revealed/ |archive-date=October 31, 2013 }}</ref> In a break from previous presentations, five previous Oscar-winning performers presented each of the acting categories as opposed to only one or two.<ref>{{cite news|url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2009-02-23-oscar-telecast-comparison_N.htm |title=Oscar showtime: This year vs. others |work=USA Today |publisher=Gannett Company |date=February 23, 2009 |last=Clark |first=Mike |access-date=June 6, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20180822221745/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2009-02-23-oscar-telecast-comparison_N.htm |archive-date=August 22, 2018 }}</ref> In addition, the Academy announced that for the first time since Oscar began broadcasting on television, film studios would be able to televise advertisements promoting their upcoming films.<ref>{{cite news |url=https://variety.com/2008/film/awards/film-ads-to-run-during-oscar-telecast-1117993650/ |title=Film ads to run during Oscar telecast |first=Timothy M. |last=Gray |first2=Cynthia |last2=Littleton |date=October 8, 2008 |work=Variety |publisher=Penske Media Corporation |access-date=February 22, 2009 |url-status=live |archive-url=https://web.archive.org/web/20081210204023/http://www.variety.com/article/VR1117993650.html?categoryId=13&cs=1&nid=2854 |archive-date=December 10, 2008 }}</ref> Furthermore, a montage of upcoming 2009 films was shown over the ceremony's closing credits.<ref>{{cite news |url=http://news.moviefone.com/2009/02/23/2009-academy-awards-best-and-worst-recap/ |title=2009 Academy Awards Best and Worst Recap |date=February 23, 2009 |first=Erik |last=Davis |work=[[Moviefone]] |publisher=[[AOL]] |access-date=June 7, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20131031143132/http://news.moviefone.com/2009/02/23/2009-academy-awards-best-and-worst-recap/ |archive-date=October 31, 2013 |df=mdy-all }}</ref>
+
+Several other people participated in the production of the ceremony. [[Chris Harrison]] hosted "Road to the Oscars", a weekly behind-the-scenes video blog on the Oscar ceremony website.<ref>{{cite news|url=http://www.tvweek.com/in-depth/2009/02/oscarcom-announces-web-shows/|title=Oscar.com Announces Web Shows|first=Vlada|last=Gelman|work=[[TelevisionWeek]]|publisher=[[Crain Communications]]|date=February 18, 2009|access-date=February 22, 2009|archive-url=https://web.archive.org/web/20180212010657/http://www.tvweek.com/in-depth/2009/02/oscarcom-announces-web-shows/|archive-date=February 12, 2018|url-status=live}}</ref> [[David Rockwell]] designed a new set and stage design for the ceremony.<ref>{{cite web|last=Brown |first=Patricia Leigh |title=The Little Gold Man in a New Blue World |url=https://www.nytimes.com/2009/02/15/movies/awardsseason/15brow.html |work=[[The New York Times]] |access-date=June 5, 2013 |date=February 12, 2009 |url-status=live |archive-url=https://web.archive.org/web/20160717122826/http://www.nytimes.com/2009/02/15/movies/awardsseason/15brow.html |archive-date=July 17, 2016 }}</ref> Film historian and author [[Robert Osborne]] greeted guests entering the festivities at the [[Hollywood and Highland Center]].<ref>{{cite news|title=Robert Osborne to Greet Celebrities on Oscar's Red Carpet |url=http://www.oscars.org/press/pressreleases/2009/20090217.html |work=Academy of Motion Picture Arts and Sciences |publisher=AMPAS |access-date=June 5, 2013 |date=February 17, 2009 |url-status=dead |archive-url=https://web.archive.org/web/20130601022601/http://www.oscars.org/press/pressreleases/2009/20090217.html |archive-date=June 1, 2013 }}</ref> Film director [[Judd Apatow]] filmed a comedy montage which featured [[Seth Rogen]] and [[James Franco]] reprising their roles from ''[[Pineapple Express (film)|Pineapple Express]]''.<ref>{{cite web|url=https://www.tvguide.com/News/2009-Oscar-Moments-1003234.aspx |title=Top Oscar Moments: Tears for a Joker, Million-Dollar Babies and More |first=Joyce |last=Eng |date=February 23, 2009 |work=TV Guide |access-date=June 5, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20131102041941/http://www.tvguide.com/News/2009-Oscar-Moments-1003234.aspx |archive-date=November 2, 2013 }}</ref> Director [[Baz Luhrmann]] produced a song and dance number saluting movie musicals.<ref>{{cite news|url=http://news.bbc.co.uk/2/hi/entertainment/7905056.stm |last=Sutherland |first=Ben |title=Jackman on song at his first Oscars |access-date=June 5, 2013 |work=BBC News |date=February 23, 2009 |publisher=BBC |url-status=live |archive-url=https://web.archive.org/web/20130930232650/http://news.bbc.co.uk/2/hi/entertainment/7905056.stm |archive-date=September 30, 2013 }}</ref>
+
+[[Peter Gabriel]], who was originally scheduled to perform his [[Academy Award for Best Original Song|nominated song]] "[[Down to Earth (Peter Gabriel song)|Down to Earth]]" from ''WALL-E'' during the live broadcast, declined to perform after learning that he would be allowed to sing only 65&nbsp;seconds of the song during the ceremony's Best Original Song nominee performances.<ref>{{cite news|url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2009-02-12-gabriel-oscars_N.htm |title=Peter Gabriel won't perform at Oscars |work=USA Today |publisher=Gannett Company |date=February 13, 2009 |last=Breznican |first=Anthony |access-date=June 5, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20190305134758/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2009-02-12-gabriel-oscars_N.htm |archive-date=March 5, 2019 }}</ref> Gabriel still attended the ceremony but singer [[John Legend]], backed by the [[Soweto Gospel Choir]], performed the song in place of Gabriel.<ref>{{cite magazine|last=Donahue |first=Ann |title='Slumdog Millionaire' Sweeps Music Oscars |url=https://www.billboard.com/articles/news/269365/slumdog-millionaire-sweeps-music-oscars |magazine=[[Billboard (magazine)|Billboard]] |publisher=[[Prometheus Global Media]] |access-date=June 5, 2013 |date=February 23, 2009 |url-status=live |archive-url=https://web.archive.org/web/20130630040500/http://www.billboard.com/articles/news/269365/slumdog-millionaire-sweeps-music-oscars |archive-date=June 30, 2013 }}</ref> Similarly, [[M.I.A. (rapper)|M.I.A.]] declined to perform her nominated song "[[O... Saya]]" once she learned the performance would last for only one minute.<ref>{{cite magazine |last=Hirschberg |first=Lynn |author-link=Lynn Hirschberg |title=M.I.A.’s Agitprop Pop |url=https://www.nytimes.com/2010/05/30/magazine/30mia-t.html |magazine=[[The New York Times]] |access-date=June 27, 2026 |date=May 25, 2010 |url-status=live |archive-url=https://web.archive.org/web/20200205203101/https://www.nytimes.com/2010/05/30/magazine/30mia-t.html |archive-date=February 5, 2020 }}</ref>
+
+===Box office performance of nominated films===
+Continuing a trend in recent years, the field of major nominees favored independent, low-budget films over blockbusters.<ref>{{cite magazine|url=https://variety.com/2009/tv/reviews/the-81st-annual-academy-awards-from-the-couch-1200473511/ |title=How the Oscars Became the Emmys |last=Corliss |first=Richard |date=February 12, 2009 |magazine=[[Time (magazine)|Time]] |publisher=Time Warner |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130724120711/http://variety.com/2009/tv/reviews/the-81st-annual-academy-awards-from-the-couch-1200473511/ |archive-date=July 24, 2013 }}</ref><ref>{{cite web|last=Cieply |first=Michael |title=Academy Expands Best-Picture Pool to 10 |url=https://www.nytimes.com/2009/06/25/movies/25oscars.html |work=The New York Times |access-date=June 5, 2013 |date=June 24, 2009 |url-status=live |archive-url=https://web.archive.org/web/20130717165526/http://www.nytimes.com/2009/06/25/movies/25oscars.html |archive-date=July 17, 2013 }}</ref> However, one of the nominees for Best Picture had grossed over $100&nbsp;million before the nominations were announced (compared with none from the previous year).<ref name="Benjamin Button Oscar">{{cite web|last=Eller |first=Claudia |title='Benjamin Button's' Oscar nominations may not pay off for Paramount |url=https://www.latimes.com/archives/la-xpm-2009-jan-23-fi-button23-story.html |work=Los Angeles Times |access-date=June 5, 2013 |date=February 23, 2009 |url-status=live |archive-url=https://web.archive.org/web/20131022225726/http://articles.latimes.com/2009/jan/23/business/fi-button23 |archive-date=October 22, 2013 }}</ref> The combined gross of the five Best Picture nominees when the Oscars were announced was $188&nbsp;million with an average gross of $37.7&nbsp;million per film.<ref name="boxofficeoscars81">{{cite web|url=https://boxofficemojo.com/oscar/chart/?yr=2008&view=fulldetail&p=.htm |title=2008 Academy Award Nominations and Winner for Best Picture |work=[[Box Office Mojo]] |access-date=May 15, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130510052939/http://boxofficemojo.com/oscar/chart/?yr=2008&view=fulldetail&p=.htm |archive-date=May 10, 2013 }}</ref>
+
+''The Curious Case of Benjamin Button'' was the highest earner among the Best Picture nominees with $104.4&nbsp;million in domestic box office receipts.<ref name="Benjamin Button Oscar" /> The film was followed by ''Slumdog Millionaire'' ($44.7&nbsp;million), ''Milk'' ($20.7&nbsp;million), ''Frost/Nixon'' ($8.8&nbsp;million), and finally ''The Reader'' ($8.3&nbsp;million).<ref name="boxofficeoscars81" /> Among the rest of the top 50 releases of 2008 in U.S. box office before the nominations, 33 nominations went to nine films on the list. Only ''The Dark Knight'' (1st), ''WALL-E'' (5th), ''Kung Fu Panda'' (6th), ''Bolt'' (19th), ''Tropic Thunder'' (20th), and ''The Curious Case of Benjamin Button'' (21st) were nominated for directing, acting, screenwriting, Best Picture or Animated Feature.<ref name="boxofficemojooscars">{{cite web|url=https://boxofficemojo.com/oscar/chart/?view=allmovies&yr=2008&sort=rank&order=ASC&p=.htm |title=2008 Oscar nominations and wins by movie |work=Box Office Mojo |access-date=June 5, 2013 |archive-url=https://web.archive.org/web/20090125130243/http://boxofficemojo.com/oscar/chart/?view=allmovies&yr=2008&p=.htm |archive-date=January 25, 2009 |url-status=live |df=mdy}}</ref> The other top-50 box office hits that earned nominations were ''Iron Man'' (2nd), ''Wanted'' (16th), and ''Hellboy II: The Golden Army'' (41st).<ref name="boxofficemojooscars" />
+
+===Faked winners leak===
+Shortly after the voting polls were closed for the awards, a purported list of winners was posted online. The list, which bore a purported signature from Academy president [[Sid Ganis]], stated that [[Mickey Rourke]] won for Best Actor, [[Kate Winslet]] won for Best Actress, [[Amy Adams]] won for Best Supporting Actress, [[Heath Ledger]] won for Best Supporting Actor, and ''[[Slumdog Millionaire]]'' won for Best Picture.<ref>{{cite news|url=http://www.businessinsider.com/leaked-list-of-oscar-winners-2009-2/ |title=Leaked List Of Oscar Winners Is Fake |last=Carlson |first=Nicholas |work=Business Insiser |date=February 21, 2009 |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130424031705/http://www.businessinsider.com/leaked-list-of-oscar-winners-2009-2 |archive-date=April 24, 2013 }}</ref> AMPAS spokeswoman Leslie Unger later revealed that the list was "a complete fraud", and that [[PricewaterhouseCoopers]] had just begun to count the ballots.<ref>{{cite news|url=http://www.eonline.com/uberblog/b100779_leaked_oscar-winner_list_complete_fraud.html |title=Leaked Oscar-Winner List Is a "Complete Fraud" |work=[[E!]] |publisher=NBCUniversal |first=Natalie |last=Finn |date=February 19, 2009 |access-date=February 19, 2009 |archive-url=https://web.archive.org/web/20090223125415/http://www.eonline.com/uberblog/b100779_leaked_oscar-winner_list_complete_fraud.html |archive-date=February 23, 2009 |url-status=live |df=mdy}}</ref>
+
+===Critical reviews===
+The show received a mixed reception from media publications. Some media outlets received the broadcast more positively. Television critic Robert Bianco of ''[[USA Today]]'' gave Jackman an average review but extolled producers Condon and Mark saying that the broadcast felt "faster and more intimate without sacrificing Hollywood glamour."<ref>{{cite web|url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2009-02-23-oscar-telecast_n.htm |title=For this Oscar show, intimacy, glamour share the stage |work=USA Today |publisher=Gannett Company |last=Bianco |first=Robert |date=February 23, 2009 |access-date=June 6, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20131102032409/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2009-02-23-oscar-telecast_n.htm |archive-date=November 2, 2013 }}</ref> ''[[Vanity Fair (magazine)|Vanity Fair]]'' columnist Julian Sancton gave high marks for Jackman's hosting performance stating "After several years of glamour-deflating wisecracks from blasé hosts like [[Jon Stewart]], [[Ellen DeGeneres]], and [[Steve Martin]], the new producers hired an M.C. who was willing to break a sweat."<ref>{{cite web|url=https://www.vanityfair.com/online/oscars/2009/02/book-hugh-jackman-for-the-next-ten-years-oscars |title=Book Hugh Jackman For the Next Ten Years, Oscars |first=Julian |last=Sancton |work=[[Vanity Fair (magazine)|Vanity Fair]] |publisher=[[Condé Nast Publications]] |date=February 23, 2009 |access-date=June 6, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130715072225/http://www.vanityfair.com/online/oscars/2009/02/book-hugh-jackman-for-the-next-ten-years-oscars |archive-date=July 15, 2013 }}</ref> Film critic [[Roger Ebert]] lauded Jackman's performance noting that he "would be a charmer as host, and he was." Of the show itself, Ebert added, "It was the best Oscar show I've ever seen, and I've seen plenty."<ref>{{cite news|url=http://blogs.suntimes.com/ebert/2009/02/the_oscars_are_outsourced.html |title=The Oscars are Outsourced |work=[[Chicago Sun-Times]] |publisher=[[Sun Times Media Group]] |date=February 23, 2009 |first=Roger |last=Ebert |author-link=Roger Ebert |access-date=February 24, 2009 |url-status=dead |archive-url=https://web.archive.org/web/20090225061202/http://blogs.suntimes.com/ebert/2009/02/the_oscars_are_outsourced.html |archive-date=February 25, 2009 }}</ref>
+
+Other media outlets were more critical of the show. ''[[Los Angeles Times]]'' columnist Mary McNamara thought Jackman's performance "obliterated all memory" of [[David Letterman]]'s hosting the ceremony in 1995, which was widely panned.<ref>{{cite news|url=https://www.latimes.com/archives/la-xpm-2009-feb-23-et-oscarreview23-story.html |title=The Oscars show itself was puttin' on the fritz |work=Los Angeles Times |date=February 23, 2009 |first=Mary |last=McNamara |url-status=live |archive-url=https://web.archive.org/web/20160121171209/http://articles.latimes.com/2009/feb/23/entertainment/et-oscarreview23 |archive-date=January 21, 2016 }}</ref> ''[[Time (magazine)|Time]]'' television critic [[James Poniewozik]] wrote that Jackman was "charming and game and I bet he absolutely killed in the room. But he didn't really project beyond the room, nor did he much seem to be trying to." He also noted that while there were some entertaining moments, "the broadcast overall had problems of pacing."<ref>{{cite magazine|url=https://entertainment.time.com/2009/02/23/the-morning-after-oscars-old-song-and-dance/ |title=The Morning After: Oscar's Old Song and Dance |magazine=Time |publisher=Time Warner |date=February 23, 2009 |first=James |last=Poniewozik |url-status=dead |archive-url=https://web.archive.org/web/20131104224725/http://entertainment.time.com/2009/02/23/the-morning-after-oscars-old-song-and-dance/ |archive-date=November 4, 2013 }}</ref> Maureen Ryan of the ''[[Chicago Tribune]]'' remarked, "The whole thing was driven by a manic desire to bring some old-school glamor to the proceedings." She added that the long introductions praising the acting nominees slowed down the proceedings.<ref>{{cite news|url=https://www.chicagotribune.com/2009/02/23/new-format-host-are-unable-to-rescue-a-plodding-telecast/ |title=New format, host are unable to rescue a plodding telecast |work=[[Chicago Tribune]] |publisher=Tribune Publishing |date=February 23, 2009 |first=Maureen |last=Ryan |url-status=live |archive-url=https://web.archive.org/web/20131102193652/http://articles.chicagotribune.com/2009-02-23/entertainment/0902220466_1_montage-oscar-producers-oscar-broadcast |archive-date=November 2, 2013 }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 36.94 million people over its length, which was a 13% increase from the record lows of the [[80th Academy Awards|previous year's ceremony]].<ref name=zaprabcatings>{{cite news |first=Robert |last=Seidman |title=Top ABC Primetime Shows week of February 16–22, 2009 |url=http://tvbythenumbers.zap2it.com/2009/02/24/top-abc-primetime-shows-week-of-february-16-22-2009/13418/ |work=TVbytheNumbers |publisher=Zap2it |date=February 24, 2009 |access-date=November 28, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20121025100528/http://tvbythenumbers.zap2it.com/2009/02/24/top-abc-primetime-shows-week-of-february-16-22-2009/13418/ |archive-date=October 25, 2012 }}</ref><ref name=tvlineoscar>{{cite news|first=Josef |last=Adelian |title=Oscar TV Ratings: Beter, But Not Good |url=http://www.tvweek.com/in-depth/2009/02/oscar-tv-ratings-better-but-no/ |work=[[TVLine]] |publisher=Penske Media Corporation |date=February 24, 2009 |access-date=November 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150402203053/http://www.tvweek.com/in-depth/2009/02/oscar-tv-ratings-better-but-no/ |archive-date=April 2, 2015 }}</ref> An estimated, 68.48 million total viewers watched all or part of the awards. The show also drew higher [[Nielsen ratings]] compared to the previous ceremony, with 20.88% of households watching over a 32.44 share.<ref name=zapratings>{{cite web |url=http://tvbythenumbers.zap2it.com/2009/02/23/81st-academy-awards-averages-363-million-up-42-million-from-last-year/13316/ |title=81st Academy Awards averages 36.3 million up 4.2 million from last year |publisher=Zap2it |date=February 23, 2009 |access-date=November 28, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20131103131755/http://tvbythenumbers.zap2it.com/2009/02/23/81st-academy-awards-averages-363-million-up-42-million-from-last-year/13316/ |archive-date=November 3, 2013 }}</ref> In addition, the program scored a 12.43 rating over a 30.61 share among the 18–49 demographic, which was a 13 percent increase.<ref name=zapratings />
+
+In July 2009, the ceremony presentation received ten nominations at the [[61st Primetime Emmy Awards|61st Primetime Emmys]].<ref>{{cite web|title=Primetime Emmy Award Database |url=http://www.emmys.com/shows/81st-annual-academy-awards |work=[[Academy of Television Arts and Sciences]] |publisher=ATAS |access-date=June 6, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130606212711/http://www.emmys.com/shows/81st-annual-academy-awards |archive-date=June 6, 2013 }}</ref> Two months later, the ceremony won four awards including Outstanding Choreography ([[Rob Ashford]]), [[Primetime Emmy Award for Outstanding Original Music and Lyrics|Outstanding Original Music and Lyrics]] (Hugh Jackman Opening Number: [[William Ross (composer)|William Ross]], John Kimbrough, [[Dan Harmon]], [[Rob Schrab]], [[Ben Schwartz]]), Outstanding Short Form Picture Editing, (Best Motion Picture Montage: [[Kyle Cooper]], Hal Honigsberg), and Outstanding Sound Mixing for a Variety Or Music Series Or Special.<ref>{{cite news|url=http://www.eonline.com/news/145090/complete-list-of-winners-from-the-2009-emmy-awards |title=Complete List of Winners From the 2009 Emmy Awards |date=September 13, 2009 |work=[[E!]] |publisher=NBCUniversal |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131103113637/http://www.eonline.com/news/145090/complete-list-of-winners-from-the-2009-emmy-awards |archive-date=November 3, 2013 }}</ref><ref>{{cite news|url=http://goldderby.latimes.com/awards_goldderby/2009/09/emmy-awards-tv-news-justin-timberlake-oscars-hugh-jackman-story.html |last=O'Neil |first=Tom |title=Who's really surprised? Oscars upstage Justin Timberlake at the Emmys |date=September 21, 2009 |work=Los Angeles Times |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131106042853/http://goldderby.latimes.com/awards_goldderby/2009/09/emmy-awards-tv-news-justin-timberlake-oscars-hugh-jackman-story.html |archive-date=November 6, 2013 }}</ref>
+
+=="In Memoriam"==
+{{Main|List of 81st Academy Awards In Memoriam tribute honorees}}
+The annual "[[In memoriam segment|In Memoriam]]" tribute was presented by actress [[Queen Latifah]]. She performed the song "[[I'll Be Seeing You (song)|I'll Be Seeing You]]" during the segment.<ref>{{cite news|url=http://www.eonline.com/news/99171/the-queen-will-reign-on-oscar-night |title=The Queen Will Reign on Oscar Night |date=February 9, 2009 |first=Marc |last=Malkin |work=E! |publisher=NBCUniversal |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131102193517/http://www.eonline.com/news/99171/the-queen-will-reign-on-oscar-night |archive-date=November 2, 2013 }}</ref><ref>{{cite news|url=http://www.philstar.com/entertainment/442566/and-oscar-goes |title=And the Oscar goes to... |date=February 24, 2009 |first=Ricky |last=Lo |work=The Philippine Star |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131103203601/http://www.philstar.com/entertainment/442566/and-oscar-goes |archive-date=November 3, 2013 }}</ref>
+
+{{div col}}
+* [[Cyd Charisse]] – Actress
+* [[Bernie Mac]] – Actor, comedian
+* Bud Stone – Executive
+* [[Ollie Johnston]] – Animator
+* [[Van Johnson]] – Actor
+* [[J. Paul Huntsman]] – Sound actor
+* [[Michael Crichton]] – Writer, director
+* [[Nina Foch]] – Actress
+* [[Pat Hingle]] – Actor
+* [[Harold Pinter]] – Writer
+* [[Charles H. Joffe]] – Producer
+* [[Kon Ichikawa]] – Director
+* [[Charles H. Schneer]] – Producer
+* [[Abby Mann]] – Screenwriter
+* [[Roy Scheider]] – Actor
+* [[David Watkin (cinematographer)|David Watkin]] – Director of photography
+* [[Robert Mulligan]] – Director
+* [[Evelyn Keyes]] – Actress
+* [[Richard Widmark]] – Actor
+* [[Claude Berri]] – Director
+* [[Maila Nurmi]] – Actress
+* [[Isaac Hayes]] – Musician, actor
+* [[Leonard Rosenman]] – Composer
+* [[Ricardo Montalbán]] – Actor
+* [[Manny Farber]] – Film critic
+* [[Robert DoQui]] – Actor
+* [[Jules Dassin]] – Director
+* [[Paul Scofield]] – Actor
+* [[John Michael Hayes]] – Screenwriter
+* [[Warren Cowan]] – Publicist
+* Joseph M. Caracciolo – Producer
+* [[Stan Winston]] – Special effects
+* [[Ned Tanen]] – Executive producer
+* [[James Whitmore]] – Actor
+* [[Charlton Heston]] – Actor
+* [[Anthony Minghella]] – Director, producer
+* [[Sydney Pollack]] – Director, producer
+* [[Paul Newman]] – Actor
+{{div col end}}
+
+==See also==
+
+* [[15th Screen Actors Guild Awards]]
+* [[29th Golden Raspberry Awards]]
+* [[51st Grammy Awards]]
+* [[61st Primetime Emmy Awards]]
+* [[62nd British Academy Film Awards]]
+* [[63rd Tony Awards]]
+* [[66th Golden Globe Awards]]
+* [[List of submissions to the 81st Academy Awards for Best Foreign Language Film]]
+
+== Notes ==
+{{notelist}}
+
+==References==
+{{reflist|30em}}
+
+==External links==
+{{Commons category}}
+;Official websites
+* [http://www.oscar.com/ Academy Awards official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 }}
+* [http://www.oscar.com/ Academy of Motion Picture Arts and Sciences official website]
+* {{webarchive |url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 |title=Official Site}}
+* {{YouTube|user=oscars|The Oscars}} (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+;News resources
+* [http://news.bbc.co.uk/2/hi/in_depth/entertainment/2009/oscars_2009/ The Oscars, 2009] {{Webarchive|url=https://web.archive.org/web/20131101162817/http://news.bbc.co.uk/2/hi/in_depth/entertainment/2009/oscars_2009/ |date=November 1, 2013 }} [[BBC News]]
+* [http://www.cnn.com/SPECIALS/2009/academy.awards/index.html CNN Awards Spotlight: Academy Awards] {{Webarchive|url=https://web.archive.org/web/20131101123511/http://www.cnn.com/SPECIALS/2009/academy.awards/index.html |date=November 1, 2013 }}
+* [http://theenvelope.latimes.com/ The Envelope.com] {{Webarchive|url=https://web.archive.org/web/20110430225109/http://www.theenvelope.latimes.com/ |date=April 30, 2011 }} with contributions by Paul Sheehan
+* [http://wsws.org/articles/2009/jan2009/acad-j23.shtml Behind the times: the nominees for the 81st Annual Academy Awards] {{Webarchive|url=https://web.archive.org/web/20090129072658/http://wsws.org/articles/2009/jan2009/acad-j23.shtml |date=January 29, 2009 }} [[World Socialist Web Site]] Arts Review
+
+;Analysis
+* [http://www.filmsite.org/aa08.html 2008 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20130818230849/http://www.filmsite.org/aa08.html |date=August 18, 2013 }} Filmsite
+* [https://www.imdb.com/Sections/Awards/Academy_Awards_USA/2009 Academy Awards, USA: 2009] {{Webarchive|url=https://web.archive.org/web/20090125103644/http://www.imdb.com/Sections/Awards/Academy_Awards_USA/2009 |date=January 25, 2009 }} [[Internet Movie Database]]
+
+;Other resources
+* {{IMDb title|1219288|The 81st Annual Academy Awards}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 81}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2008 film awards]]
+[[Category:2009 in Los Angeles]]
+[[Category:2009 in American cinema]]
+[[Category:2009 awards in the United States]]
+[[Category:February 2009 in the United States]]

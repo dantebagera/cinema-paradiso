@@ -1,0 +1,275 @@
+{{short description|1955 film by and with Laurence Olivier}}
+{{pp-move}}
+{{EngvarB|date=September 2013}}
+{{Use dmy dates|date=June 2024}}
+{{Infobox film
+| name           = Richard III
+| image          = Richardiii poster original.jpg
+ 
+| caption        = Theatrical re-release poster
+| director       = [[Laurence Olivier]]
+| producer       = Laurence Olivier<br />[[Alexander Korda]] (''uncredited'')
+| writer         = Laurence Olivier (''uncredited'')
+| based_on       = {{based on|''[[Richard III (play)|Richard III]]''|[[William Shakespeare]] <br />and stage adaptations by [[Colley Cibber]] and [[David Garrick]]}}
+| starring       = Laurence Olivier<br />[[Ralph Richardson]]<br />[[Claire Bloom]]<br />[[Cedric Hardwicke]]<br />[[John Gielgud]]<br />[[Laurence Naismith]]<br />[[Norman Wooland]]
+| music          = [[William Walton]]
+| cinematography = [[Otto Heller]]
+| editing        = [[Helga Cranston]]
+| distributor    = [[London Films]]
+| released       = {{Film date|df=y|1955|12|13|United Kingdom}}
+| runtime        = 161 minutes
+| country        = United Kingdom
+| language       = English
+| budget         = [[pound sterling|£]]6 million or $2 million<ref name="var">{{cite magazine|url=https://archive.org/details/variety199-1955-08/page/n217/mode/1up?q=%22pic+cost%22|magazine=Variety|accessdate=18 March 2023|title=Lopert Hints Theatre Roadshowing of 'Richard III' to Follow TV Airing|page=18|date=24 August 1955}}</ref> or £452,057<ref name="money">Chapman, J. (2022). The Money Behind the Screen: A History of British Film Finance, 1945-1985. Edinburgh University Press p 359</ref>
+| gross          = [[United States dollar|US$]]2.6 million (US)<br />£400,000 (GB)
+}}
+'''''Richard III''''' is a 1955 British [[Technicolor]] [[Shakespeare on screen#Richard III|film adaptation]] of [[William Shakespeare]]'s [[Shakespearean history|historical]] [[Richard III (play)|play of the same name]], also incorporating elements from his ''[[Henry VI, Part 3]]''. It was directed and produced by [[Laurence Olivier]], who also played [[Richard III of England|the lead role]]. Featuring many noted Shakespearean actors, including a quartet of knights, the film depicts Richard plotting and conspiring to grasp the throne from his brother King [[Edward IV]], played by Sir [[Cedric Hardwicke]]. In the process, many are killed and betrayed, with Richard's evil leading to his own downfall. The prologue of the film states that history without its legends would be "a dry matter indeed", implicitly admitting to the [[artistic licence]] that Shakespeare applied to the events of the time.
+
+Of the three Shakespearean films directed by Olivier, ''Richard III'' received the least critical praise at the time, although it was still acclaimed. It was the only one not to be nominated for [[Academy Award for Best Picture|Best Picture]] at the [[Academy Awards]], though [[Academy Award for Best Actor|Olivier's performance]] was nominated. The [[British Film Institute]] has pointed out that, given the enormous TV audience it received when shown in the United States on [[NBC]] in 1956, the film "may have done more to popularise Shakespeare than any other single work".<ref name="BFI">{{cite web
+|url=http://www.screenonline.org.uk/film/id/467017/index.html
+|publisher=[[British Film Institute]]
+|author=Michael Brooke
+|title=Richard III (1955)
+|access-date=12 July 2006}}</ref> The film gained further popularity in the US through a 1966 re-release, which broke box office records in many US cities.<ref name="eder1">{{cite web
+|url=http://www.criterion.com/current/posts/316-richard-iii
+|publisher=Criterion
+|author=Bruce Eder
+|title=Richard III
+|access-date=8 July 2006}}</ref> Many critics now consider Olivier's ''Richard III'' his best Shakespearean screen adaptation. 
+
+==Plot==
+King [[Edward IV]] of England (Sir [[Cedric Hardwicke]]) has been placed on the throne with the help of his brother, [[Richard III of England|Richard, Duke of Gloucester]] (Sir [[Laurence Olivier]]). After Edward's [[coronation]] in the Great Hall, with his brothers George and Richard watching, he leaves with his wife and sons. Richard contemplates the throne, before advancing towards the audience and then addressing them, delivering a speech that outlines his physical deformities, including a [[hunchback|hunched back]] and a withered arm. He goes on to describe his jealousy over his brother's rise to power in contrast to his lowly position.
+
+Richard dedicates himself to task and plans to frame his other brother, [[George, Duke of Clarence]] (Sir [[John Gielgud]]), for conspiring to kill the King, and to have George sent to the [[Tower of London]], by claiming George will murder Edward's heirs. He then tells George he will help him get out. Having confused and deceived the King, Richard proceeds with his plans after getting a warrant, and enlists two ruffians ([[Michael Gough]] and [[Michael Ripper]]) to carry out his dirty work: George is murdered, drowned in a butt of wine. Though Edward had sent a [[pardon]] to Richard, Richard stopped it passing. Richard goes on to woo and seduce the [[Anne Neville|Lady Anne]] ([[Claire Bloom]]), and though she hates him for killing [[Edward of Westminster|her husband]] and [[Richard Neville, 16th Earl of Warwick|father]], she cannot resist Richard's charms and ends up marrying him.
+
+Richard then orchestrates disorder at court, fueling rivalries and stirring antipathy toward the Queen consort, [[Elizabeth Woodville|Elizabeth]] ([[Mary Kerridge]]). The King, weakened by exhaustion, appoints Richard as [[Lord Protector]] and dies soon after hearing of the death of George. His son, soon to become [[Edward V]] ([[Paul Huson]]), is met by Richard whilst en route to [[London]]. Richard has the Lord Chamberlain, Lord Hastings ([[Alec Clunes]]) arrested and executed, and forces the young King, along with his younger brother the [[Richard of Shrewsbury, 1st Duke of York|Duke of York]] (Andy Shine), to have a protracted stay at the Tower of London. 
+
+[[File:Richard III, Laurence Olivier, trailer sceenshot, 2.jpg|thumb|left|[[Ralph Richardson]] and [[Laurence Olivier]].]]
+With all obstacles now removed, Richard enlists the help of his cousin [[Henry Stafford, 2nd Duke of Buckingham|the Duke of Buckingham]] (Sir [[Ralph Richardson]]) to alter his public image, and to become popular with the people. In doing so, Richard becomes the people's first choice to become the new King. Buckingham had aided Richard on terms of being given the title of [[Earl of Hereford]] and its income, but balks at the idea of [[Princes in the Tower|murdering the two princes]]. Richard then asks an ambitious knight, Sir [[James Tyrrel]] ([[Patrick Troughton]]), to kill the princes. Buckingham, having requested his earldom at Richard's coronation, fears for his life when Richard (angry at Buckingham's refusal) shouts, "I am not in the giving vein today!" Buckingham then joins the opposition against Richard's rule.
+
+Richard, now fearful because of his dwindling popularity, raises an army to defend his throne and the [[House of York]] against the [[House of Lancaster]], led by Henry Tudor ([[Stanley Baker]]), the [[Earl of Richmond]] and later [[Henry VII of England]], at [[Battle of Bosworth Field|Bosworth Field]]. Before the battle, however, Buckingham is captured and executed. On the eve of the battle, Richard is haunted by the ghosts of all those he has killed in his bloody ascent to the throne, and he wakes up screaming. He composes himself, striding out to plan the battle for his generals, and gives a motivational speech to his troops.
+
+The two forces engage in battle, with the Lancastrians having the upper hand. [[Thomas Stanley, 1st Earl of Derby|Lord Stanley]] ([[Laurence Naismith]]) betrays Richard and allies himself with Henry. Richard sees this and charges into the thick of battle, side by side with his loyal companion Sir William Catesby ([[Norman Wooland]]) to kill Richmond and end the battle quickly. Eventually, Richard spots Richmond and they briefly engage in a duel before being interrupted by Stanley's men. Richard and Catesby are able to escape the oncoming forces but, in doing so, Richard is knocked off his horse, loses his cherished crown, and becomes separated from Catesby, who is off seeking rescue. Searching desperately for Richmond, whom he has lost sight of, Richard cries out: "A horse! A horse! My kingdom for a horse!" 
+
+Catesby finds Richard and offers him withdrawal, but the King refuses to flee. Catesby is then killed by Richmond's men without Richard noticing. Richard then spots Stanley and engages him in single combat. Before a victor can emerge, the Lancastrian troops charge Richard and fatally wound him. The wounded murderous King convulses in spasms, offering his sword to the sky, and eventually dies of his wounds. Stanley orders Richard's body to be taken away and then finds his crown in a thorn bush. He then proceeds to offer it to Henry, leaving the throne of England in safe hands once again.
+
+==Cast==
+Olivier cast only British actors. Since the film was financed by [[Alexander Korda]] and produced by his [[London Films]], obtaining the required actors was not difficult, as many actors were contractually obliged to London Films. As with most films with [[ensemble cast]]s, all the players were billed on the same tier. However, Olivier played the title character and occupies the majority of screen time.
+
+When casting the supporting roles, Olivier chose to fortify the already impressive cast with seasoned veterans, such as [[Laurence Naismith]], and with promising newcomers, such as [[Claire Bloom]] and [[Stanley Baker]].<ref name="bake">{{cite web|url=https://www.filmink.com.au/forgotten-british-moguls-stanley-baker/|first=Stephen|last=Vagg|date=28 December 2025|access-date=28 December 2025|magazine=Filmink|title=Forgotten British Moguls: Stanley Baker}}</ref> For the murderers, Olivier originally wanted [[John Mills]] and [[Richard Attenborough]]. However, Mills thought the idea might be regarded as "stunt casting", and Attenborough had to turn down the part due to a scheduling conflict.<ref name="olivierbook">{{cite book | last = Coleman | first = Terry | year = 2005 | title = Olivier | publisher = Henry Hilt and Co | isbn = 0-8050-7536-4 |pages=265–268}}</ref> The film's marketers in the US picked up on the fact that the cast included four knights (Olivier, Richardson, [[John Gielgud|Gielgud]] and [[Cedric Hardwicke|Hardwicke]]) and used this as a selling point.<ref name="olivierbook" /> The four members of the cast who had already achieved British knighthood were all listed as "Sir...." in the film credits.
+
+===The House of York===
+* Lord [[Laurence Olivier]] as Richard, Duke of Gloucester (later King [[Richard III of England|Richard III]]), the malformed brother of the King, who is jealous of his brother's new power, and plans to take it for himself. Olivier had created his interpretation of the [[Kyphosis|Crookback]] King in 1944, and this film transferred that portrayal to the screen.<ref name="olivierbook" /> This portrayal earned Olivier his fifth Oscar nomination, and is generally considered to be one of his greatest performances; some consider it his best performance in a Shakespeare play.
+* Sir [[Cedric Hardwicke]] as King [[Edward IV]] of England, the newly crowned King of England, who, with the aid of his brother, Richard, has secured his position by wresting it from [[Henry VI of England|Henry VI]] of the House of Lancaster. This marked his only appearance in a film version of a Shakespeare play. He was 62 at the time of the film, whereas Edward died at the age of 40.
+* Sir [[John Gielgud]] as [[George, Duke of Clarence]], brother of Richard and of the new King. Gielgud's casting in this film can be seen as part of Olivier's quest for an all-star cast.<ref name="olivierbook" />
+* Sir [[Ralph Richardson]] as the [[Henry Stafford, 2nd Duke of Buckingham|Duke of Buckingham]], a corrupt magnate of the realm and a cousin of Edward IV and Richard of Gloucester, who sees potential for advancement in Richard's plans and eventually turns against him when Richard ignores his wishes. Richardson was a lifelong friend of Olivier's. Olivier later regretted this choice, and wrote that [[Orson Welles]] would have been better in the part.<ref>{{Cite book |last=Olivier |first=Laurence |url=https://archive.org/details/onacting0000laur/page/185 |url-access=registration |title=On Acting |date=1986 |publisher=Sceptre |isbn=0-340-41238-0 |page=185}}</ref>
+* [[Paul Huson]] as Edward, Prince of Wales (later, for a brief while, King [[Edward V]]), the eldest son of the King, who holds many strong beliefs, and wishes one day to become a warrior king.
+* Andy Shine as the [[Richard of Shrewsbury, 1st Duke of York|Duke of York]], the younger son of Prince Edward.
+* [[Helen Haye]] as the [[Cecily Neville|Duchess of York]], the mother of the King. Haye worked regularly for [[Alexander Korda]]. Her character's role is severely cut in the film from the play.
+* [[Pamela Brown (actress)|Pamela Brown]] as [[Jane Shore|Mistress Shore]], the King's mistress. Her character is only mentioned in Shakespeare's play, never seen.
+* [[Alec Clunes]] as [[William Hastings, 1st Baron Hastings|The Lord Hastings]] (Lord Chamberlain), a companion and friend of Richard who is accused of conspiracy by Richard and is abruptly executed.
+* [[Laurence Naismith]] as [[Thomas Stanley, 1st Earl of Derby|The Lord Stanley]]. Stanley has a certain dislike for Richard and is not totally willing in his co-operation with him. Stanley eventually betrays Richard at Bosworth and engages him in a one-on-one duel.
+* [[Norman Wooland]] as Sir [[William Catesby]], [[Esmond Knight]] as Sir [[Richard Ratcliffe]], [[John Laurie]] as [[Francis Lovell, 1st Viscount Lovell|Lord Francis Lovell]], [[Patrick Troughton]] as Sir [[James Tyrrell]], and [[John Phillips (actor)|John Phillips]] as [[John Howard, 1st Duke of Norfolk|John, Duke of Norfolk]], many of them loyal companions of Richard.
+
+===The House of Lancaster===
+* [[Mary Kerridge]] as [[Elizabeth Woodville|Queen Elizabeth]], Queen Consort of Edward. Kerridge did not make many screen appearances, though she did sometimes work for [[Alexander Korda]]. Her role has also been reduced from Shakespeare's original.
+* [[Clive Morton]] as [[Anthony Woodville, 2nd Earl Rivers|The Lord Rivers]], brother of the Queen Consort. Morton was a British actor who mainly played supporting roles on screen.
+* [[Dan Cunningham]] as [[Richard Grey|The Lord Grey]], youngest son of the Queen Consort and stepson of the King. Cunningham's role in Richard III was one of his few screen appearances.
+* [[Douglas Wilmer]] as the [[Thomas Grey, 1st Marquess of Dorset|Marquess of Dorset]], eldest son of the Queen Consort and stepson of the King.
+* [[Claire Bloom]] as [[Anne Neville|The Lady Anne]], a widow and an orphan thanks to the acts of Richard, though she cannot resist his charms and eventually becomes his wife.
+* [[Stanley Baker]], appropriately cast as the young Welshman, Henry, Earl of Richmond (later [[Henry VII of England|Henry VII]], first of the House of Tudor). Henry, who is Richard's enemy, and Lord Stanley's stepson, claims his right to the throne, and briefly duels Richard at Bosworth.
+
+==Production==
+
+===Background===
+Of Olivier's three Shakespeare films, ''Richard III'' had the longest gestation period: Olivier had created and been developing his vision of the character Richard since his portrayal for [[The Old Vic]] in 1944. After he had made Shakespeare films popular with ''[[Henry V (1944 film)|Henry V]]'' and ''[[Hamlet (1948 film)|Hamlet]]'', the choice of ''Richard III'' for his next adaptation was simple, as his Richard had been widely praised on stage. For the stage production, Olivier had modelled some of the crookback king's look on a well-known theatrical producer at the time, [[Jed Harris]], whom Olivier called "the most loathsome man I'd ever met".<ref name="r3.org">{{cite web | author=Margaret Gurowitz | title=Me, drunk? Ha! You should see Buckingham! | publisher=Richard III Society, American Branch | url=http://www.r3.org/onstage/drunk.html | access-date=8 July 2006 | url-status=dead | archive-url=https://web.archive.org/web/20060722145234/http://www.r3.org/onstage/drunk.html | archive-date=22 July 2006 }}</ref> [[Walt Disney]] is also said to have used Harris as his basis for the [[Big Bad Wolf]] in the film ''[[Three Little Pigs (film)|The Three Little Pigs]]''.<ref>{{harvnb|Coleman|2005|page=57}}</ref> [[Alexander Korda]], who had given Olivier his initial roles on film, provided financial support for the film.<ref name="olivierbook" /> He was supported by the Woolf Brothers.<ref>{{cite magazine|title=Korda to distribute pix via Romulus|magazine=Variety|url=https://archive.org/details/sim_variety_1954-07-21_195_7/page/11/mode/1up?|date=21 July 1954|page=11}}</ref><ref name="ink">{{cite magazine|magazine=Filmink|first=Stephen|last=Vagg|url=https://www.filmink.com.au/forgotten-british-film-moguls-john-and-james-woolf/|date=17 January 2026|access-date=17 January 2026|title=Forgotten British Film Moguls: John and James Woolf}}</ref>
+
+===Screenplay===
+Most of the dialogue is taken straight from the play, but Olivier also drew on the 18th century adaptations by [[Colley Cibber]] and [[David Garrick]], including Cibber's line, "Off with his head. So much for Buckingham!". Like Cibber and Garrick, Olivier's film opens with material from the last scenes of ''[[Henry VI, Part 3]]'', to introduce more clearly the situation at the beginning of the story.
+
+A key change in the story involved the seduction of Anne. It is split into two scenes instead of one, and an element of perversity is added—whereas in the original play she is following a coffin with the corpse of her father-in-law, in this film the coffin contains the corpse of her husband. John Cottrell has been quoted as saying this makes "the young widow's seduction even more daring and revolting than it is in the original, and [gives] Anne's capitulation" in the second part after a passionate kiss "a new and neurotic twist".<ref>See DVD audio commentary 2004 Criterion edition</ref><ref name=Bale>{{cite web|url=http://www.r3.org/onstage/olivier/bale.html |title=Olivier films Richard III |author=Paul Trevor Bale |publisher=Richard III Society American Branch |access-date=28 December 2010 |url-status=dead |archive-url=https://web.archive.org/web/20110514090810/http://www.r3.org/onstage/olivier/bale.html |archive-date=14 May 2011 }}</ref> This is accomplished by cutting lines, changing lines, and changing the sequence of some lines.
+
+Olivier makes other small and subtle additions in the stage direction. When Richard's nephew makes a joke about his uncle's hunchback ("you should bear me on your shoulder"), Richard spins round and gives the boy a malevolent glare making the boy stagger back.<ref name=Bale/> This bit of stage direction is original to Olivier. Olivier also silently mimes some actions spoken of in his soliloquies such as when he whispers insinuations about Clarence into the ear of King Edward.
+
+In general the lengthy play is heavily cut. In an interview with Roger Manvell, Olivier discussed how unwieldy and complex the play is:
+{{blockquote|If you are going to cut a Shakespeare play, there is only one thing to do, lift out scenes. If you cut the lines down merely to keep all the characters in, you end up with a mass of short ends. This is one of the problems with ''Richard III''. To start with it's a very long play. It's not until the little princes come on that the story forms that nice river sweep, going swiftly to its conclusion from about halfway through the play. The first part up until that moment is an absolute delta of plot and presupposed foreknowledge of events. After all, ''Richard III'' forms the last part of a cycle of four plays.<ref name = Bale/><ref>Quote also found in ''Shakespeare and the Movies'' by Margaret Farrand Thorp Shakespeare Quarterly Vol. 9, No. 3, Summer, 1958</ref>}}
+The character of [[Margaret of Anjou|Queen Margaret]] is cut entirely, the role of the Duchess of York ([[Helen Haye]]) is significantly reduced, the role of Edward IV's wife Elizabeth is also reduced, and the execution of Clarence and other scenes are abridged.<ref name="DVDmoviecentral">{{cite web | author=Ed Nguyen | title=Richard III DVD Review | url=http://www.dvdmoviecentral.com/ReviewsText/richard_iii.htm | publisher=DVD Movie Central Review | archive-url=https://web.archive.org/web/20060529000301/http://www.dvdmoviecentral.com/ReviewsText/richard_iii.htm |archive-date=29 May 2006}}</ref> These cuts were made to maintain the pace of the film and to cut down the running time, as a full performance of the play can run upwards of four hours. Richard is made more directly responsible for the death of Edward IV than in the play, as Edward has his fatal attack only moments after Richard informs the assembled nobles that Clarence is dead.
+
+===Filming===
+[[Gerry O'Hara]] was Olivier's assistant director, on hand to help since Olivier was acting in most of the scenes.
+
+Olivier was very precise in getting many of the visual details of the period correct. Actor Douglas Wilmer (Dorset) recounts that when he casually told Olivier that one piece of [[heraldry]] on the set was incorrect, Olivier started pumping as much information out of him as possible as if he was "drilling for oil".<ref name = Bale/>
+
+Olivier made the unusual decision to deliver his soliloquies by [[Fourth wall|directly addressing the film audience]], something not often done before in film. Near the beginning of the film Richard's herald drops his coronet, a mistake that Olivier decided to keep in, as part of the motif of accidental loss of the crown continued in the final battle.
+
+Most of the film was shot at [[Shepperton Studios]], but the climactic [[Battle of Bosworth Field]] abruptly opens up the setting, as it was shot outdoors, in the Spanish countryside. During one sequence therein, Olivier suffered an arrow wound to the shin when his horse jerked forwards causing the expert archer to miss.<ref>{{Cite book |last=Wise |first=Arthur |url=https://www.worldcat.org/oclc/ |title=Stunting in the Cinema |publisher=Constable
+|year=1973 |isbn=0-09-459090-7 |location=London |pages=195}}</ref> Fortunately, it was on the leg Richard was supposed to limp on, allowing the scene to continue.<ref name="eder1"/>
+
+Wilmer also notes: {{blockquote|What really amazed me was his energy. His work programme was exhausting; yet he could just sit down in a chair and close his eyes for a short time, then walk straight onto the set and act a long scene perfectly despite the enormous burden he carried of being producer, director, and leading man.<ref name = Bale/>}}
+
+During filming, Olivier's portrait was painted by [[Salvador Dalí]]. The painting remained one of Olivier's favourites until he had to sell it to pay for his children's school fees.<ref>{{harvnb|Coleman|2005|page=389}}</ref>
+
+===Cinematography===
+The [[cinematography]] for the film was by [[Otto Heller]], who had worked on many European films before coming to the UK in the early 1940s. The film uses the [[Technicolor]] process, which Olivier had earlier rejected for his ''Hamlet'' after a row with the company.<ref>{{harvnb|Coleman|2005|page=193}}</ref> The use of [[Technicolor]] resulted in bright, vibrant colours. Korda had suggested that Olivier also use the new extreme [[widescreen]] format, [[CinemaScope]], but Olivier thought it was nothing more than a gimmick, and chose the less extreme [[VistaVision]] format instead.<ref name="olivierbook" />
+
+===Music===
+The score was composed by Sir [[William Walton]], who worked on all of the films Olivier directed except ''[[The Prince and the Showgirl]]''. The music was conducted by [[Muir Mathieson]], who collaborated on all of the films Olivier directed, except for ''Three Sisters''. The film's music was also used for a set of readings of speeches from the play on [[audiobook|audio CD]] featuring [[John Gielgud]]. The Chandos catalogue notes that Walton used the main theme throughout the film, especially towards the closing scenes.
+
+==Release and reception==
+{{blockquote|In all of the theatre's repertoire, it's hard to find a more malodorous fellow than Richard III. The character is so convincing that most of us who think of that king at all instantly see the slit-eyed, snaky, deformed embodiment of evil probably best depicted by Laurence Olivier. |author=Richard Harrison<ref>{{cite web |last=Harrison |first=Richard A. |date=14 November 1997 |title=''Sic Transit Gloria'': The Passing of Historical Reputations |url=http://www.lawrence.edu/news/pubs/revisionism.html |archive-url=https://web.archive.org/web/20111224072458/http://lawrence.edu/news/pubs/revisionism.html |archive-date=24 December 2011 |publisher=Lawrence University}}</ref>}}
+''Richard III'' opened at the [[Odeon West End|Leicester Square Theatre]] on 13 December 1955, with Queen [[Elizabeth II]] and Prince Philip attending the premiere.<ref>{{cite news |title=Queen enjoys new Shakespeare film |work=The Bradford Observer |date=14 December 1955 |page=5 |url=https://www.britishnewspaperarchive.co.uk/viewer/bl/0003150/19551214/110/0005 |url-access=subscription}}</ref> Alexander Korda had sold the rights to the film to [[NBC]] in the US for $500,000 (about ${{Formatprice|{{Inflation|US-GDP|500000|1955}}}} in today's dollars) and the film was shown on Sunday, 11 March 1956.<ref name="var"/><ref>{{cite news|newspaper=[[The New York Times]]|date=11 March 1956|page=X11|title=TV-Radio: 'Richard III'|last=Adams|first=Val}}</ref> While many sources refer to the "simultaneous release" in the US of ''Richard III'' on television and at the cinema, it was in fact shown first on television.<ref>{{Cite book |last=Freedman |first=Barbara |chapter=Critical junctures in Shakespeare screen history: the case of Richard III |editor-last=Jackson |editor-first=Russell |chapter-url=https://books.google.com/books?id=wVy0VeHWM0sC&pg=PA59 |title=The Cambridge Companion to Shakespeare on Film |date=2000 |publisher=Cambridge University Press |isbn=0-521-63975-1 |page=59}}</ref> It was not shown during prime time, but rather at 2:30{{spaces}}p.m. in the afternoon, so prime time ratings for that day were not affected by any pre-emptions for a special programme. It was the first 3-hour telecast of a film ever in the US and the first time that a film in the US had premiered on two media on the same day.<ref>{{cite news|newspaper=[[The New York Times]]|date=12 March 1956|page=1|title='Richard III' Has U.S. Premiere On Television and at Bijou here|last=Crowther|first=Bosley|author-link=Bosley Crowther|url=https://www.nytimes.com/1956/03/12/archives/richard-iii-has-us-premiere-on-television-and-at-bijou-here-richard.html}}</ref> It had its US theatrical premiere at 8:30{{spaces}}p.m. at the [[Bijou Theatre (Manhattan, 1917)|Bijou Theatre]] in Manhattan.<ref>{{cite news|newspaper=[[The New York Times]]|date=11 March 1956|page=1|title=Premiere Tonight At 8:30 (advertisement)}}</ref>
+
+The film, although slightly cut for television, was generally well received by critics, with Olivier's performance earning particular notice, but as a result of its simultaneous release through television and cinemas in the US, it was a box office failure, and many critics felt at the time that it was not as well-made as Olivier's previous films. However, the airing on US television received excellent ratings, with an audience estimated at between 25 and 40 million.<ref name="screenonline">{{cite news |url= http://www.screenonline.org.uk/film/id/467017/index.html|publisher=British Film Institute | work=Screenonline|title=Richard III Review|access-date=8 July 2006}}</ref> The film's failure at the US box office effectively ended Olivier's career as a director of Shakespearean films. His [[Macbeth (unfinished film)|proposed film]] of ''[[Macbeth]]'', which had been intended to go into production during 1957,<ref>Terry Coleman [https://books.google.com/books?id=D5b14Eg9XzIC&pg=PA277&lpg=PA277 ''Olivier: The Authorised Biography''], London: Bloomsbury, 2005, p. 277</ref> in the end finally failed to gain financing.<ref name="Daniels 1980">{{cite book|last=Daniels|first=Robert L.|title=Laurence Olivier, Theater and Cinema|year=1980|publisher=A.S Barnes|page=26 |isbn=978-0-498-02287-6 |url=https://archive.org/details/laurenceoliviert00dani/page/26 |url-access=registration}}</ref>
+
+When the film was reissued in 1966, it broke box office records in many US cities.<ref name="eder1"/> Its critical reputation has since grown considerably, and many critics now consider it Olivier's best and most influential screen adaptation of Shakespeare.
+===Accolades=== 
+In contrast to his previous work, Olivier was only nominated for the [[Academy Award for Best Actor]] (his fifth nomination in the category). The award went to [[Yul Brynner]] for his performance in ''[[The King and I (1956 film)|The King and I]]''.
+
+{| class="wikitable plainrowheaders"
+|-
+! Award
+! scope="col" style="width:35%;"| Category
+! Nominee
+! Result
+! Ref.
+|-
+| [[29th Academy Awards|Academy Awards]]
+| [[Academy Award for Best Actor|Best Actor]]
+| rowspan="2"| [[Laurence Olivier]]
+| {{nom}}
+| align="center"| <ref>{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1957 |title=The 29th Academy Awards (1957) Nominees and Winners |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=August 21, 2011 |archive-url=https://web.archive.org/web/20110706094056/http://www.oscars.org/awards/academyawards/legacy/ceremony/29th-winners.html |archive-date=July 6, 2011 |url-status=live}}</ref>
+|-
+| [[6th Berlin International Film Festival|Berlin International Film Festival]]
+| International Silver Bear
+| {{won}}
+| align="center"| <ref name="Berlinale 1956">{{cite web |url=http://www.berlinale.de/en/archiv/jahresarchive/1956/03_preistr_ger_1956/03_Preistraeger_1956.html |title=6th Berlin International Film Festival: Prize Winners |access-date=27 December 2009 |work=berlinale.de |archive-date=15 October 2013 |archive-url=https://web.archive.org/web/20131015120526/http://www.berlinale.de/en/archiv/jahresarchive/1956/03_preistr_ger_1956/03_Preistraeger_1956.html |url-status=dead}}</ref> 
+|-
+| rowspan="3"| [[9th British Academy Film Awards|British Academy Film Awards]]
+| colspan="2"| [[BAFTA Award for Best Film|Best Film from any Source]]
+| {{won}}
+| align="center" rowspan="3"| <ref>{{cite web |url=http://awards.bafta.org/award/1956/film |title=BAFTA Awards: Film in 1956 |publisher=[[British Academy Film Awards]] |access-date=November 23, 2013}}</ref>
+|-
+| colspan="2"| [[BAFTA Award for Outstanding British Film|Best British Film]]
+| {{won}}
+|-
+| [[BAFTA Award for Best Actor in a Leading Role|Best British Actor]]
+| rowspan="3"| Laurence Olivier
+| {{won}}
+|-
+| rowspan="2"| [[David di Donatello|David di Donatello Awards]]
+| [[David di Donatello for Best Foreign Film|Best Foreign Production]]
+| {{won}}{{efn|Tied with ''[[Giant (1956 film)|Giant]]''.}}
+| align="center" rowspan="2"| <ref>{{cite web |url=https://mubi.com/awards-and-festivals/davids?year=1957 |title=David di Donatello Awards 1957 |publisher=[[Mubi (streaming service)|Mubi]] |access-date=June 3, 2021}}</ref>
+|-
+| [[David di Donatello for Best Foreign Actor|Best Foreign Actor]]
+| {{won}}
+|-
+| [[14th Golden Globe Awards|Golden Globe Awards]]
+| colspan="2"| [[Golden Globe Award for Best English-Language Foreign Film|Best English-Language Foreign Film]]
+| {{won}}
+| align="center"| <ref>{{cite web |url=https://www.goldenglobes.com/film/richard-iii-1955/ |title=Richard III |publisher=[[Golden Globe Awards]] |access-date=July 5, 2021}}</ref>
+|-
+| [[Jussi Awards]]
+| Best Foreign Actor
+| rowspan="2"| Laurence Olivier
+| {{won}}
+| align="center"| <ref>{{cite web |url=https://www.jussit.fi/jussivoittajat |title=Jussi Winners |publisher=[[Jussi Awards]] |access-date=3 June 2021 |archive-date=December 25, 2021 |archive-url=https://web.archive.org/web/20211225075027/https://www.jussit.fi/jussivoittajat/ |url-status=dead}}</ref>
+|-
+| [[Nastro d'Argento]]
+| Best Foreign Film
+| {{nom}}
+| align="center"|
+|-
+| [[National Board of Review Awards 1956|National Board of Review Awards]]
+| colspan="2"| [[National Board of Review: Top Five Foreign Language Films|Top Foreign Films]]
+| {{draw|3rd Place}}
+| align="center"| <ref>{{cite web |url=https://nationalboardofreview.org/award-years/1956/ |title=1956 Award Winners |publisher=[[National Board of Review]] |access-date=July 5, 2021}}</ref>
+|-
+| [[1956 New York Film Critics Circle Awards|New York Film Critics Circle Awards]]
+| [[New York Film Critics Circle Award for Best Actor|Best Actor]]
+| Laurence Olivier
+| {{nom}}
+| align="center"| <ref>{{cite web |url=https://www.nyfcc.com/awards/?awardyear=1956 |title=1956 New York Film Critics Circle Awards |publisher=[[New York Film Critics Circle]] |access-date=June 3, 2021}}</ref>
+|}
+
+* Olivier's performance as Richard III was ranked 39th in [[Premiere (magazine)|''Premiere'' magazine's]] "100 Greatest Performances of All Time"<ref name="100 greatest">{{cite web |url=http://www.listology.com/content_show.cfm/content_id.23334/Movies |title=Premiere Magazine's 100 Greatest Performances of All Time |publisher=Listology |date=14 March 2006 |access-date=22 December 2010 |archive-date=7 March 2016 |archive-url=https://web.archive.org/web/20160307193139/http://listology.com/list/premiere-magazines-100-greatest-performances-all-time |url-status=dead }}</ref>
+
+==Reputation==
+On [[review aggregator]] [[Rotten Tomatoes]] the film holds an 81% rating based on 21 reviews.<ref name="rt">{{Cite web|title=Richard III (1955)|url=https://www.rottentomatoes.com/m/richard_iii_1956|publisher=Rotten Tomatoes |access-date=21 October 2023}}</ref> However, Olivier's direction has been criticised for being far more restricted in its style in comparison to the bold filming of ''Henry V'', or the moody photography of ''Hamlet'',{{citation needed|date=October 2023}} and the reviewer for the ''AllMovie'' website complained that Olivier too far outshone the supporting cast.<ref name="allmovieportal">{{cite news
+ |url=http://www.allmovieportal.com/m/1955_Richard_III77.html
+ |publisher=UGO
+ |author=Jeffrey M. Anderson
+ |title=Richard III Review
+ |url-status=dead
+ |archive-url=https://web.archive.org/web/20070927204814/http://www.allmovieportal.com/m/1955_Richard_III77.html
+ |archive-date=27 September 2007
+}}</ref> There were some complaints about geographical inaccuracies in the film. For example, the Battle of Bosworth Field was filmed in a region of Spain that does not resemble any locations in England.{{citation needed|date=October 2023}} In ''[[The New York Times]]'', Olivier observed that the film makes [[Westminster Abbey]] and the [[Tower of London]] "practically adjacent", but adds that "if they weren't like that, they should have been".<ref name="filmfacts">{{cite book | last = Robertson | first = Patrick | year = 2001 | title = Film Facts | publisher = Billboard Books | isbn = 0-8230-7943-0 |pages=161–162}}</ref>
+
+The [[British Film Institute]] suggests Olivier's ''Richard III'' may have done more to popularise Shakespeare than any other piece of work.<ref name="screenonline"/> According to them, the 25–40 million viewers during its airing on US television, "would have outnumbered the sum of the play's theatrical audiences over the 358 years since its first performance."<ref name="screenonline"/>
+
+==Home media==
+A three-disc vinyl box set of the soundtrack was issued shortly after the film was released.
+
+The film has since been released on VHS numerous times, but these releases are made from cropped low quality sources. Carlton Entertainment released the first DVD in 2000 presented in a widescreen ratio. This release was presented in 1.78:1 but is non-anamorphic and zoomed in the most compared to the later releases. In 2002, Wienerworld released a special edition DVD with a new 1.66:1 widescreen transfer, a trailer, and star bios. In 2004, [[The Criterion Collection|Criterion]] digitally [[film preservation|restored]] the film in its original 1.66:1 [[widescreen]] format and re-constructed it to match the release script. Unlike the previous releases before it that were made from different and inferior source elements, Criterion performed their own restoration and digital transfer. It was released in a 2-disc special edition, including an essay by film and music historian Bruce Eder, an interview with Olivier, and other numerous special features.<ref name="criterion">{{cite web | url=http://criterion.com/asp/release.asp?id=213 | publisher=Criterion | title=Richard III DVD | access-date=8 July 2006 | archive-date=22 March 2007 | archive-url=https://web.archive.org/web/20070322074218/http://www.criterion.com/asp/release.asp?id=213 | url-status=dead }}</ref> The DVD is subtitled in English, with a Dolby Digital 2.0 Mono audio track. The DVD also contains a commentary by Russell Lees and John Wilders. The second disc of the DVD features a 1966 BBC interview with Olivier by [[Kenneth Tynan]] entitled ''Great Acting: Laurence Olivier''. It also contains a gallery of [[film poster|posters]], production stills and two [[trailer (film)|trailers]].<ref name="criterion"/>
+The film was given a Blu-ray release in the UK by Network, and later in 2012 by The Criterion Collection for DVD and Blu-ray in the United States. Both releases featured a restoration from the original film elements by the Film Foundation in conjunction with ITV Global, owners of the London Films/Rank library.
+
+==See also==
+* [[Shakespeare on screen#Richard III|Shakespeare on screen: Other performances and adaptations of Richard III]]
+* [[Chronology of stage, film and television performances given by Laurence Olivier]]
+
+==Notes==
+{{Notelist}}
+
+==References==
+{{Reflist}}
+
+==External links==
+{{Wikisource|The Tragedy of Richard the Third}}
+{{wikiquote|Richard III (play)}}
+* {{IMDb title|0049674}}
+* {{TCMDb title|88184}}
+* {{rotten-tomatoes|1017538-richard_iii}}
+* [https://www.criterion.com/current/posts/316-richard-iii ''Richard III''] an essay by Bruce Eder at [[The Criterion Collection]]
+* [http://www.dvdmoviecentral.com/ReviewsText/richard_iii.htm DVD Movie Central Review]
+* [http://movies.msn.com/movies/movie.aspx?m=67765 MSN Movies Page] {{Webarchive|url=https://web.archive.org/web/20070311113839/http://movies.msn.com/movies/movie.aspx?m=67765 |date=11 March 2007 }}
+* {{ screenonline title | 467017 }}
+
+{{Laurence Olivier}}
+{{Richard III}}
+{{Shakespeare tetralogy}}
+{{Alexander Korda}}
+{{Navboxes
+|title= Awards for ''Richard III''
+|list=
+{{BAFTA Best Film}}
+{{BAFTA Best British Film}}
+{{Golden Globe Award for Best English-Language Foreign Film}}
+}}
+
+{{Portal bar|Film}}
+{{Authority control}}
+
+[[Category:1955 films]]
+[[Category:1955 historical drama films]]
+[[Category:British historical drama films]]
+[[Category:British epic films]]
+[[Category:London Films films]]
+[[Category:Films directed by Laurence Olivier]]
+[[Category:Films based on Richard III (play)]]
+[[Category:Films scored by William Walton]]
+[[Category:Best Film BAFTA Award winners]]
+[[Category:Best British Film BAFTA Award winners]]
+[[Category:Films produced by Alexander Korda]]
+[[Category:Films set in the 1480s]]
+[[Category:1955 English-language films]]
+[[Category:1955 British films]]
+[[Category:Cultural depictions of Henry VII of England]]
+[[Category:Cultural depictions of Edward IV]]
+[[Category:Cultural depictions of Edward V]]
+[[Category:English-language historical drama films]]
+[[Category:Films about disability in the United Kingdom]]
+[[Category:Cultural depictions of Richard of Shrewsbury, Duke of York]]
+[[Category:Cultural depictions of Anne Neville]]
+[[Category:Cultural depictions of Elizabeth Woodville]]
+[[Category:Cultural depictions of George Plantagenet, Duke of Clarence]]
+[[Category:VistaVision films]]

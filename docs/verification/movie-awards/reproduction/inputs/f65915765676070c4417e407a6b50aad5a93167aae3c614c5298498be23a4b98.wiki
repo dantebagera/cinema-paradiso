@@ -1,0 +1,392 @@
+{{oscars short description|films-year=1959}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 32
+| award            = Academy Awards
+| image            = 32nd Academy Awards.jpg
+| caption          = Official poster
+| date             = April 4, 1960
+| site             = [[RKO Pantages Theatre]], (Hollywood, California)
+| host             = [[Bob Hope]]
+| producer         = [[Arthur Freed]]
+| director         = [[Alan Handley]]
+| best_picture     = ''[[Ben-Hur (1959 film)|Ben-Hur]]''
+| most_wins        = ''Ben-Hur'' (11)
+| most_nominations = ''Ben-Hur'' (12)
+| network          = [[NBC]]
+| duration         = 
+| last             = 31st
+| next             = 33rd
+}}
+
+The '''32nd Academy Awards''' ceremony was held on April 4, 1960, at the [[RKO Pantages Theatre]], to honor the [[1959 in film|films of 1959]].
+
+[[William Wyler]]'s Bible epic ''[[Ben-Hur (1959 film)|Ben-Hur]]'' won 11 Oscars, breaking the record of nine set the [[31st Academy Awards|previous year]] by ''[[Gigi (1958 film)|Gigi]]''. This total was later tied by ''[[Titanic (1997 film)|Titanic]]'' in [[70th Academy Awards|1997]] and ''[[The Lord of the Rings: The Return of the King]]'' in [[76th Academy Awards|2003]]. Wyler became the third (and most recent) person to win more than two Best Director awards (following [[Frank Capra]] and [[John Ford]]), as well as the only person to date to direct three Best Picture winners (following ''[[Mrs. Miniver]]'' in [[15th Academy Awards|1942]] and ''[[The Best Years of Our Lives]]'' in [[19th Academy Awards|1946]]).
+
+Most of the stars were absent as a result of an incident involving [[Jerry Lewis]]' staging of the closing number at the previous year's Oscars<ref name="Oscars '59 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/840/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=841 |isbn=0-385-04060-1}}</ref> and of [[List of Hollywood strikes|a four-week actors' strike]].<ref name="Oscars '59 Notes"/> The studios had their final pullout of support for the Academy during the year, in a sentiment echoed by [[Paramount Pictures]], which remarked, "why should Paramount sponsor a show that sponsors only [[MGM]]'s ''Ben-Hur''?"<ref name="Oscars '59 Notes"/>
+
+A highlight of the ceremony came during the presentation of the award for [[Academy Award for Best Original Screenplay|Best Story and Screenplay Written Directly for the Screen]]: absent winner [[Stanley Shapiro]] (for ''[[Pillow Talk (film)|Pillow Talk]]'') had his co-winner, [[Maurice Richlin]], ask presenter [[Tony Curtis]] to read his acceptance speech, which read, "I'm trapped downstairs in the gentleman's lounge. It seems I rented a faulty tuxedo. I'd like to thank you upstairs for this great honor." The audience roared in laughter.<ref>{{cite web | url=https://www.youtube.com/watch?v=9IlRmHS2994 | title=Room at the Top and Pillow Talk Win Writing Awards: 1960 Oscars | website=[[YouTube]] | date=February 18, 2014 }}</ref>
+
+==Awards==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = William Wyler portrait.jpg
+| caption1          = [[William Wyler]], Best Director winner
+| image2            = Charlton Heston Civil Rights March 1963.jpg
+| caption2          = [[Charlton Heston]], Best Actor winner
+| image3            = Simone Signoret (Harcourt).jpg
+| caption3          = [[Simone Signoret]], Best Actress winner
+| image4            = Hugh griffith publicity photo.jpg
+| caption4          = [[Hugh Griffith]], Best Supporting Actor winner
+| image5            = Studio publicity Shelley Winters.jpg
+| caption5          = [[Shelley Winters]], Best Supporting Actress winner
+| image6            = Mom and Uncle Stanley.jpg
+| caption6          = [[Stanley Shapiro]], Best Story and Screenplay Written Directly for the Screen co-winner
+| image7            = Mauricerichlin.jpg
+| caption7          = [[Maurice Richlin]], Best Story and Screenplay Written Directly for the Screen co-winner
+| image8            = Cousteau1972 (cropped).jpg
+| caption8          = [[Jacques Cousteau]], Best Live Action Short Film winner
+| image9            = Miklós Rózsa & Ginger Rogers Oscars 1946 (cropped).jpg
+| caption9          = [[Miklós Rózsa]], Best Scoring of a Dramatic or Comedy Picture winner
+| image10           = André Previn.jpg
+| caption10         = [[André Previn]], Best Scoring of a Musical Picture co-winner
+| image11           = Ken Darby.jpg
+| caption11         = [[Ken Darby]], Best Scoring of a Musical Picture co-winner
+| image12           = Jimmy Van Heusen (2).jpg
+| caption12         = [[Jimmy Van Heusen]], Best Song co-winner
+| image13           = Sammy Cahn 1950s.JPG
+| caption13         = [[Sammy Cahn]], Best Song co-winner
+| image14           = Edward Carfagno (cropped).jpg
+| caption14         = [[Edward Carfagno]], Best Art Direction, Color co-winner
+| image15           = 
+| caption15         = [[Robert Surtees (cinematographer)|Robert Surtees]], Best Cinematography, Color winner
+| image16           = Ralph E. Winters-Susan Hayward (Ada set).jpg
+| caption16         = [[Ralph E. Winters]], Best Film Editing co-winner
+}}
+
+Nominations announced on February 22, 1960. Winners are listed first and highlighted in boldface.<ref name="Oscars1960">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1960 |title=The 32nd Academy Awards (1960) Nominees and Winners |access-date=2011-08-21 |work=oscars.org |archive-url=https://web.archive.org/web/20110706094204/http://www.oscars.org/awards/academyawards/legacy/ceremony/32nd-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[Ben-Hur (1959 film)|Ben-Hur]]'' – [[Sam Zimbalist]], producer <small>([[List of posthumous Academy Award winners and nominees|posthumous award]])</small>'''
+**''[[Anatomy of a Murder]]'' – [[Otto Preminger]], producer
+**''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]'' – [[George Stevens]], producer
+**''[[The Nun's Story (film)|The Nun's Story]]'' – [[Henry Blanke]], producer
+**''[[Room at the Top (1959 film)|Room at the Top]]'' – [[John and James Woolf|John Woolf]] and [[John and James Woolf|James Woolf]], producers
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*''' [[William Wyler]]&nbsp;– ''[[Ben-Hur (1959 film)|Ben-Hur]]'''''
+**[[George Stevens]]&nbsp;– ''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]''
+**[[Fred Zinnemann]]&nbsp;– ''[[The Nun's Story (film)|The Nun's Story]]''
+**[[Jack Clayton]]&nbsp;– ''[[Room at the Top (1959 film)|Room at the Top]]''
+**[[Billy Wilder]]&nbsp;– ''[[Some Like It Hot]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*''' [[Charlton Heston]]&nbsp;– ''[[Ben-Hur (1959 film)|Ben-Hur]]''  as [[Judah Ben-Hur]]'''
+**[[Laurence Harvey]]&nbsp;– ''[[Room at the Top (1959 film)|Room at the Top]]'' as Joe Lampton
+**[[Jack Lemmon]]&nbsp;– ''[[Some Like It Hot]]'' as Jerry/"Daphne"
+**[[Paul Muni]]&nbsp;– ''[[The Last Angry Man]]'' as Dr. Sam Abelman
+**[[James Stewart]]&nbsp;– ''[[Anatomy of a Murder]]'' as Paul Biegler
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*''' [[Simone Signoret]]&nbsp;– ''[[Room at the Top (1959 film)|Room at the Top]]'' as Alice Aisgill'''
+**[[Doris Day]]&nbsp;– ''[[Pillow Talk (film)|Pillow Talk]]'' as Jan Morrow
+**[[Audrey Hepburn]]&nbsp;– ''[[The Nun's Story (film)|The Nun's Story]]'' as Sister Luke
+**[[Katharine Hepburn]]&nbsp;– ''[[Suddenly, Last Summer (film)|Suddenly, Last Summer]]'' as Violet Venable
+**[[Elizabeth Taylor]]&nbsp;– ''[[Suddenly, Last Summer (film)|Suddenly, Last Summer]]'' as Catherine Holly
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*''' [[Hugh Griffith]]&nbsp;– ''[[Ben-Hur (1959 film)|Ben-Hur]]'' as [[Sheik Ilderim]]'''
+**[[Arthur O'Connell]]&nbsp;– ''[[Anatomy of a Murder]]'' as Parnell McCarthy
+**[[George C. Scott]]&nbsp;– ''[[Anatomy of a Murder]]'' as Claude Dancer
+**[[Robert Vaughn]]&nbsp;– ''[[The Young Philadelphians]]'' as Chester A. "Chet" Gwynn
+**[[Ed Wynn]]&nbsp;– ''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]'' as [[Fritz Pfeffer|Albert Dussell]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*''' [[Shelley Winters]]&nbsp;– ''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]'' as [[Auguste van pels|Petronella van Daan]]'''
+**[[Hermione Baddeley]]&nbsp;– ''[[Room at the Top (1959 film)|Room at the Top]]'' as Elspeth
+**[[Susan Kohner]]&nbsp;– ''[[Imitation of Life (1959 film)|Imitation of Life]]'' as Sarah Jane
+**[[Juanita Moore]]&nbsp;– ''[[Imitation of Life (1959 film)|Imitation of Life]]'' as Annie Johnson
+**[[Thelma Ritter]]&nbsp;– ''[[Pillow Talk (film)|Pillow Talk]]'' as Alma
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+*''' ''[[Pillow Talk (film)|Pillow Talk]]''&nbsp;– Story by [[Russell Rouse]] and [[Clarence Greene]]; Screenplay by [[Stanley Shapiro]] and [[Maurice Richlin]]'''
+**''[[The 400 Blows]]''&nbsp;– [[François Truffaut]] and [[Marcel Moussy]]
+**''[[North by Northwest]]''&nbsp;– [[Ernest Lehman]]
+**''[[Operation Petticoat]]''&nbsp;– Story by [[Paul King (screenwriter)|Paul King]], Joseph J. Stone; Screenplay by [[Stanley Shapiro]] and [[Maurice Richlin]]
+**''[[Wild Strawberries (film)|Wild Strawberries]]''&nbsp;– [[Ingmar Bergman]] (Refused Nomination)
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*''' ''[[Room at the Top (1959 film)|Room at the Top]]''&nbsp;– [[Neil Paterson (writer)|Neil Paterson]] based on [[Room at the Top (novel)|the novel]] by [[John Braine]]'''
+**''[[Anatomy of a Murder]]''&nbsp;– [[Wendell Mayes]] based on [[Anatomy of a Murder (novel)|the novel]] by [[Robert Traver]]
+**''[[Ben-Hur (1959 film)|Ben-Hur]]''&nbsp;– [[Karl Tunberg]] based on [[Ben-Hur: A Tale of the Christ|the novel]] by [[Lew Wallace]]
+**''[[The Nun's Story (film)|The Nun's Story]]''&nbsp;– [[Robert Anderson (playwright)|Robert Anderson]] based on [[The Nun's Story|the novel]] by [[Kathryn Hulme]]
+**''[[Some Like It Hot]]''&nbsp;– [[Billy Wilder]] and [[I. A. L. Diamond]] based on a story by [[Robert Thoeren]] and M. Logan
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 32nd Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*''' ''[[Black Orpheus]]'' (France)'''
+**''[[Die Brücke (film)|The Bridge]]'' (West Germany)
+**''[[The Great War (1959 film)|The Great War]]'' (Italy)
+**''[[Paw (film)|Paw]]'' (Denmark)
+**''[[The Village on the River]]'' (Netherlands)
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*''' ''[[Serengeti Shall Not Die]]''&nbsp;– [[Bernhard Grzimek]]'''
+**''[[The Race for Space (film)|The Race for Space]] ''&nbsp;– [[David L. Wolper]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*''' ''[[Glass (1958 film)|Glass]]''&nbsp;– [[Bert Haanstra]]'''
+**''[[Donald in Mathmagic Land]]''&nbsp;– [[Walt Disney]]
+**''[[From Generation to Generation]]''&nbsp;– Edward F. Cullen
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*''' ''[[The Golden Fish (film)|The Golden Fish]]'' – [[Jacques Cousteau]]'''
+**''Between the Tides'' – Ian Ferguson
+**''Mysteries of the Deep'' – [[Walt Disney]]
+**''[[The Running Jumping & Standing Still Film]]'' – [[Peter Sellers]]
+**''[[Skyscraper (1959 film)|Skyscraper]]'' – [[Shirley Clarke]] and [[Willard Van Dyke]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*''' ''[[Moonbird]]''&nbsp;– [[John Hubley]]'''
+**''[[Mexicali Shmoes]]''&nbsp;– [[John W. Burton (film producer)|John W. Burton]]
+**''Noah's Ark''&nbsp;– [[Walt Disney]]
+**''The Violinist''&nbsp;– [[Ernest Pintoff]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*''' ''[[Ben-Hur (1959 film)|Ben-Hur]]''&nbsp;– [[Miklós Rózsa]]'''
+**''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+**''[[The Nun's Story (film)|The Nun's Story]]''&nbsp;– [[Franz Waxman]]
+**''[[On the Beach (1959 film)|On the Beach]]''&nbsp;– [[Ernest Gold (composer)|Ernest Gold]]
+**''[[Pillow Talk (film)|Pillow Talk]]''&nbsp;– [[Frank De Vol]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*''' ''[[Porgy and Bess (film)|Porgy and Bess]]''&nbsp;– [[André Previn]] and [[Ken Darby]]'''
+**''[[The Five Pennies]]''&nbsp;– [[Leith Stevens]]
+**''[[Li'l Abner (1959 film)|Li'l Abner]]''&nbsp;– [[Nelson Riddle]] and [[Joseph J. Lilley]]
+**''[[Say One for Me]]''&nbsp;– [[Lionel Newman]]
+**''[[Sleeping Beauty (1959 film)|Sleeping Beauty]]''&nbsp;– [[George Bruns]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[High Hopes (1959 song)|High Hopes]]" from ''[[A Hole in the Head]]''&nbsp;– Music by [[Jimmy Van Heusen]]; Lyrics by [[Sammy Cahn]]'''
+**"[[The Best of Everything (song)|The Best of Everything]]" from ''[[The Best of Everything (film)|The Best of Everything]]''&nbsp;– Music by [[Alfred Newman (composer)|Alfred Newman]]; Lyrics by [[Sammy Cahn]]
+**"The Five Pennies" from ''[[The Five Pennies]]''&nbsp;– Music and Lyrics by [[Sylvia Fine]]
+**"[[The Hanging Tree (Marty Robbins song)|The Hanging Tree]]" from ''[[The Hanging Tree (film)|The Hanging Tree]]''&nbsp;– Music by [[Jerry Livingston]]; Lyrics by [[Mack David]]
+**"Strange Are The Ways of Love" from ''[[The Young Land]]''&nbsp;– Music by [[Dimitri Tiomkin]]; Lyrics by [[Ned Washington]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+*''' ''[[Ben-Hur (1959 film)|Ben-Hur]]''&nbsp;– [[Franklin Milton]]'''
+**''[[Journey to the Center of the Earth (1959 film)|Journey to the Center of the Earth]]''&nbsp;– [[Carlton W. Faulkner]]
+**''[[Libel (film)|Libel]]''&nbsp;– [[A. W. Watkins]]
+**''[[The Nun's Story (film)|The Nun's Story]]''&nbsp;– [[George Groves (sound engineer)|George Groves]]
+**''[[Porgy and Bess (film)|Porgy and Bess]]''&nbsp;– [[Gordon E. Sawyer]] and [[Fred Hynes]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*''' ''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[George Davis (art director)|George W. Davis]]; Set Decoration: [[Walter M. Scott]] and [[Stuart A. Reiss]]'''
+**''[[Career (1959 film)|Career]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Walter H. Tyler|Walter Tyler]]; Set Decoration: [[Samuel M. Comer]] and [[Arthur Krams]]
+**''[[The Last Angry Man]]''&nbsp;– Art Direction: [[Carl Anderson (art director)|Carl Anderson]]; Set Decoration: [[William Kiernan]]
+**''[[Some Like It Hot]]''&nbsp;– Art Direction: [[Ted Haworth]]; Set Decoration: [[Edward G. Boyle]]
+**''[[Suddenly, Last Summer (film)|Suddenly, Last Summer]]''&nbsp;– Art Direction: [[Oliver Messel]] and [[William Kellner]]; Set Decoration: [[Scott Slimon]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*''' ''[[Ben-Hur (1959 film)|Ben-Hur]]''&nbsp;– Art Direction: [[William A. Horning]] <small>([[List of posthumous Academy Award winners and nominees|posthumous award]])</small> and [[Edward Carfagno]]; Set Decoration: [[Hugh Hunt]]'''
+**''[[The Big Fisherman]]''&nbsp;– Art Direction: [[John DeCuir]]; Set Decoration: [[Julia Heron]]
+**''[[Journey to the Center of the Earth (1959 film)|Journey to the Center of the Earth]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]], [[Franz Bachelin]] and [[Herman A. Blumenthal]]; Set Decoration: [[Walter M. Scott]] and [[Joseph Kish]]
+**''[[North by Northwest]]''&nbsp;– Art Direction: [[William A. Horning]] <small>([[List of posthumous Academy Award winners and nominees|posthumous nomination]])</small>, [[Robert F. Boyle]], and [[Merrill Pye]]; Set Decoration: [[Henry Grace]] and [[Frank R. McKelvy]]
+**''[[Pillow Talk (film)|Pillow Talk]]''&nbsp;– Art Direction: [[Richard H. Riedel]] <small>([[List of posthumous Academy Award winners and nominees|posthumous nomination]])</small>; Set Decoration: [[Russell A. Gausman]] and [[Ruby R. Levitt]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*''' ''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]''&nbsp;– [[William C. Mellor]]'''
+**''[[Anatomy of a Murder]]''&nbsp;– [[Sam Leavitt (cinematographer)|Sam Leavitt]]
+**''[[Career (1959 film)|Career]]''&nbsp;– [[Joseph LaShelle]]
+**''[[Some Like It Hot]]''&nbsp;– [[Charles Lang]]
+**''[[The Young Philadelphians]]''&nbsp;– [[Harry Stradling|Harry Stradling, Sr.]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*''' ''[[Ben-Hur (1959 film)|Ben-Hur]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert Surtees]]'''
+**''[[The Big Fisherman]]''&nbsp;– [[Lee Garmes]]
+**''[[The Five Pennies]]''&nbsp;– [[Daniel L. Fapp]]
+**''[[The Nun's Story (film)|The Nun's Story]]''&nbsp;– [[Franz Planer]]
+**''[[Porgy and Bess (film)|Porgy and Bess]]''&nbsp;– [[Leon Shamroy]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+*''' ''[[Some Like It Hot]]''&nbsp;– [[Orry-Kelly]]'''
+**''[[Career (1959 film)|Career]]''&nbsp;– [[Edith Head]]
+**''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]''&nbsp;– [[Charles LeMaire]] and [[Mary Wills (costume designer)|Mary Wills]]
+**''[[The Gazebo]]''&nbsp;– [[Helen Rose]]
+**''[[The Young Philadelphians]]''&nbsp;– [[Howard Shoup]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+*''' ''[[Ben-Hur (1959 film)|Ben-Hur]]''&nbsp;– [[Elizabeth Haffenden]]'''
+**''[[The Best of Everything (film)|The Best of Everything]]''&nbsp;– [[Adele Palmer]]
+**''[[The Big Fisherman]]''&nbsp;– [[Renié]]
+**''[[The Five Pennies]]''&nbsp;– [[Edith Head]]
+**''[[Porgy and Bess (film)|Porgy and Bess]]''&nbsp;– [[Irene Sharaff]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*''' ''[[Ben-Hur (1959 film)|Ben-Hur]]''&nbsp;– [[Ralph E. Winters]] and [[John Dunning (film editor)|John D. Dunning]]'''
+**''[[Anatomy of a Murder]]''&nbsp;– [[Louis R. Loeffler]]
+**''[[North by Northwest]]''&nbsp;– [[George Tomasini]]
+**''[[The Nun's Story (film)|The Nun's Story]]''&nbsp;– [[Walter A. Thompson|Walter Thompson]]
+**''[[On the Beach (1959 film)|On the Beach]]''&nbsp;– [[Frederic Knudtson]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*''' ''[[Ben-Hur (1959 film)|Ben-Hur]]''&nbsp;– Visual Effects by [[A. Arnold Gillespie]] and [[Robert MacDonald (special effects artist)|Robert MacDonald]]; Audible Effects by [[Milo B. Lory]]'''
+**''[[Journey to the Center of the Earth (1959 film)|Journey to the Center of the Earth]]''&nbsp;– Visual Effects by [[L. B. Abbott]] and James B. Gordon; Audible Effects by Carl Faulkner
+|}
+
+===Honorary Awards===
+*To [[Lee De Forest]] for his pioneering inventions which brought sound to the motion picture. (Statuette)
+*To [[Buster Keaton]] for his unique talents which brought immortal comedies to the screen. (Statuette)
+
+===Jean Hersholt Humanitarian Award===
+*[[Bob Hope]]
+
+==Presenters and performers==
+{{More citations needed section|date=September 2015}}
+
+===Presenters===
+*[[Richard Conte]] and [[Angie Dickinson]] (Presenters: Art Direction Awards)
+*[[Gary Cooper]] (Presenter: Best Motion Picture)
+*[[Tony Curtis]] and [[Janet Leigh]] (Presenters: Writing Awards)
+*[[Edward Curtiss]] (Presenter: Cinematography Awards)
+*[[Arlene Dahl]] and [[Fernando Lamas]] (Presenters: Costume Design Awards)
+*[[Doris Day]] (Presenter: Best Original Song)
+*[[Olivia de Havilland]] (Presenters: Best Supporting Actor)
+*[[Edmond O'Brien]] (Presenters: Best Supporting Actress)
+*[[Mitzi Gaynor]] (Presenter: Documentary Awards)
+*[[Haya Harareet]] (Presenter: Best Special Effects)
+*[[Susan Hayward]] (Presenter: Best Actor)
+*[[Rock Hudson]] (Presenter: Best Actress)
+*[[Eric Johnston]] (Presenter: Best Foreign Language Film)
+*[[B. B. Kahane]] (Presenter: Jean Hersholt Humanitarian Award)
+*[[Gene Kelly]] (Presenter: Music Awards)
+*[[Hope Lange]] and [[Carl Reiner]] (Presenters: Short Subjects Awards)
+*[[Barbara Rush]] (Presenter: Best Film Editing)
+*[[Robert Wagner]] and [[Natalie Wood]] (Presenters: Best Sound Recording)
+*[[John Wayne]] (Presenter: Best Director)
+
+===Performers===
+*[[André Previn]], conductor the Academy Awards orchestra
+*[[Sammy Davis Jr.]] ("[[High Hopes (1959 song)|High Hopes]]" from ''[[A Hole in the Head]]'')
+*[[Gogi Grant]] ("Strange Are the Ways of Love" from ''[[The Young Land]]'')
+*[[Joni James]] ("The Five Pennies" from ''[[The Five Pennies]]'')
+*[[Frankie Laine]] ("[[The Hanging Tree (Marty Robbins song)|The Hanging Tree]]" from ''[[The Hanging Tree (film)|The Hanging Tree]]'')
+*[[Frankie Vaughan]] ("[[The Best of Everything (song)|The Best of Everything]]" from ''[[The Best of Everything (1959 film)|The Best of Everything]]'')
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 12 
+| ''[[Ben-Hur (1959 film)|Ben-Hur]]''
+|-
+| rowspan="2" style="text-align:center" | 8
+| ''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]''
+|-
+| ''[[The Nun's Story (film)|The Nun's Story]]''
+|-
+| rowspan="1" style="text-align:center" | 7
+| ''[[Anatomy of a Murder]]''
+|-
+| rowspan="2" style="text-align:center" | 6
+| ''[[Room at the Top (1959 film)|Room at the Top]]''
+|-
+| ''[[Some Like It Hot]]''
+|-
+| rowspan="1" style="text-align:center" | 5
+| ''[[Pillow Talk (film)|Pillow Talk]]''
+|-
+| rowspan="2" style="text-align:center" |4
+| ''[[The Five Pennies]]''
+|-
+| ''[[Porgy and Bess (film)|Porgy and Bess]]''
+|-
+| rowspan="6" style="text-align:center" |3
+| ''[[The Big Fisherman]]''
+|-
+| ''[[Career (1959 film)|Career]]''
+|-
+| ''[[Journey to the Center of the Earth (1959 film)|Journey to the Center of the Earth]]''
+|-
+| ''[[North by Northwest]]''
+|-
+| ''[[Suddenly, Last Summer (film)|Suddenly, Last Summer]]''
+|-
+| ''[[The Young Philadelphians]]''
+|-
+| rowspan="5" style="text-align:center" | 2
+| ''[[The Best of Everything (film)|The Best of Everything]]''
+|-
+| ''[[Imitation of Life (1959 film)|Imitation of Life]]''
+|-
+| ''[[The Last Angry Man]]''
+|-
+| ''[[On the Beach (1959 film)|On the Beach]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 11
+| ''[[Ben-Hur (1959 film)|Ben-Hur]]''
+|-
+| rowspan=1, style="text-align:center" | 3
+| ''[[The Diary of Anne Frank (1959 film)|The Diary of Anne Frank]]''
+|-
+| rowspan=1, style="text-align:center" | 2
+| ''[[Room at the Top (1959 film)|Room at the Top]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+*[[17th Golden Globe Awards]]
+*[[1959 in film]]
+* [[2nd Grammy Awards]]
+* [[11th Primetime Emmy Awards]]
+* [[12th Primetime Emmy Awards]]
+* [[13th British Academy Film Awards]]
+* [[14th Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 32}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1959 film awards]]
+[[Category:1959 awards in the United States]]
+[[Category:1960 in Los Angeles]]
+[[Category:1960 in American cinema]]
+[[Category:April 1960 in the United States]]
+[[Category:Television shows directed by Alan Handley]]

@@ -18,6 +18,7 @@ import {
 import { canonicalOwnedMovie } from '../discoverUtils.js';
 import RelatedMovieRail from './RelatedMovieRail.jsx';
 import { PersonBioModal, PersonCreditCard, usePersonBiography } from './PersonCreditCard.jsx';
+import { useMovieAwardCounts, usePersonAwardCounts } from './MovieAwardsContext.jsx';
 
 function usePendingPlay(onPlay, path) {
   const [pending, setPending] = useState(false);
@@ -102,17 +103,19 @@ export function PosterStateControls({
   watchlisted,
   onToggleWatched,
   onToggleWatchlist,
+  watchedDisabledReason,
   notify
 }) {
-  if (!onToggleWatched && !onToggleWatchlist) return null;
+  if (!onToggleWatched && !onToggleWatchlist && !watchedDisabledReason) return null;
   return (
     <>
-      {onToggleWatched && (
+      {(onToggleWatched || watchedDisabledReason) && (
         <button
           type="button"
           className={cx('poster-state-control', 'poster-state-watched', watched && 'poster-state-control-active')}
-          aria-label={watched ? `Mark ${title} as unwatched` : `Mark ${title} as watched`}
-          title={watched ? 'Mark as unwatched' : 'Mark as watched'}
+          aria-label={watchedDisabledReason || (watched ? `Mark ${title} as unwatched` : `Mark ${title} as watched`)}
+          title={watchedDisabledReason || (watched ? 'Mark as unwatched' : 'Mark as watched')}
+          disabled={Boolean(watchedDisabledReason)}
           onClick={(event) => {
             event.stopPropagation();
             onToggleWatched();
@@ -159,6 +162,8 @@ export function DiscoverMovieCard({
   onTrailer,
   onToggleDetails,
   onPersonBrowse,
+  onPersonDiscover,
+  onPersonAwardDiscover,
   onCollectionBrowse,
   onCollectionRetry,
   onListBrowse,
@@ -188,6 +193,7 @@ export function DiscoverMovieCard({
     expanded
   });
   const displayMovie = languageView.displayMovie;
+  const awardCounts = useMovieAwardCounts(baseDisplayMovie, { enabled: true });
   const displayDetails = languageView.displayDetails;
   const displayCollection = languageView.isArabic && displayDetails?.collection?.id
     ? { ...(collection || {}), ...displayDetails.collection }
@@ -198,7 +204,8 @@ export function DiscoverMovieCard({
   const playAction = usePendingPlay(onPlay, ownedPath);
   return (
     <UnifiedMovieCard
-      className={cx('discover-movie-card', expanded && 'discover-card-expanded')}
+      className={cx('discover-movie-card', 'movie-awards-consumer', expanded && 'discover-card-expanded')}
+      awardCounts={awardCounts}
       title={displayMovie.title}
       year={displayMovie.year}
       posterUrl={displayMovie.poster_url}
@@ -272,6 +279,8 @@ export function DiscoverMovieCard({
           directors={displayMovie.directors}
           cast={displayMovie.cast}
           onPersonBrowse={onPersonBrowse}
+          onPersonDiscover={onPersonDiscover}
+          onPersonAwardDiscover={onPersonAwardDiscover}
         />
       ) : null}
     >
@@ -509,7 +518,8 @@ export function MovieExpandedDetails({
   directors,
   cast,
   onPersonBrowse,
-  onPersonDiscover
+  onPersonDiscover,
+  onPersonAwardDiscover
 }) {
   const { personBio, openPersonBio, closePersonBio } = usePersonBiography();
   const loading = details?.loading;
@@ -532,13 +542,14 @@ export function MovieExpandedDetails({
           <div className="movie-expanded-people-grid">
             {expandedDirectors.length ? (
               expandedDirectors.map((person) => (
-                <PersonCreditCard
+                <AwardPersonCreditCard
                   key={`director-${person.id || person.name}`}
                   person={person}
                   role="director"
                   canBrowse={canBrowsePeople}
                   onBrowse={onPersonBrowse}
                   onDiscover={personFilmographyAction}
+                  onAwardDiscover={onPersonAwardDiscover}
                   onBio={openPersonBio}
                 />
               ))
@@ -547,13 +558,14 @@ export function MovieExpandedDetails({
             )}
             {expandedCast.length ? (
               expandedCast.map((person) => (
-                <PersonCreditCard
+                <AwardPersonCreditCard
                   key={`${person.id || person.name}-${person.character || ''}`}
                   person={person}
                   role="actor"
                   canBrowse={canBrowsePeople}
                   onBrowse={onPersonBrowse}
                   onDiscover={personFilmographyAction}
+                  onAwardDiscover={onPersonAwardDiscover}
                   onBio={openPersonBio}
                 />
               ))
@@ -578,6 +590,11 @@ export function MovieExpandedDetails({
   );
 }
 
+function AwardPersonCreditCard(props) {
+  const counts = usePersonAwardCounts(props.person?.id, props.role, { enabled: true });
+  return <PersonCreditCard {...props} awardCounts={counts} />;
+}
+
 export function LibraryMovieCard({
   item,
   followed = false,
@@ -593,6 +610,7 @@ export function LibraryMovieCard({
   onTrailer,
   onPersonFilter,
   onPersonDiscover,
+  onPersonAwardDiscover,
   onCollectionBrowse,
   onCollectionRetry,
   onEditCollection,
@@ -624,6 +642,7 @@ export function LibraryMovieCard({
     imdb_id: canonical.imdb_id || item.imdb_id || '',
     tmdb_id: canonical.tmdb_id || item.tmdb_id || ''
   };
+  const awardCounts = useMovieAwardCounts(movieForSearch, { enabled: true });
   const posterUrl = canonical.poster_url || item.plex_poster || '';
   const canonicalDetails = details ? {
     ...mergeCanonicalMovieDetails(canonical, details),
@@ -655,7 +674,8 @@ export function LibraryMovieCard({
 
   return (
     <UnifiedMovieCard
-      className={cx('library-movie-card', expanded && 'library-movie-card-expanded')}
+      className={cx('library-movie-card', 'movie-awards-consumer', expanded && 'library-movie-card-expanded')}
+      awardCounts={awardCounts}
       title={displayMovie.title}
       year={displayMovie.year}
       posterUrl={displayMovie.poster_url}
@@ -733,6 +753,7 @@ export function LibraryMovieCard({
           cast={languageView.isArabic ? displayDetails?.cast : cast}
           onPersonBrowse={onPersonFilter}
           onPersonDiscover={onPersonDiscover ? (role, person) => onPersonDiscover({ title: identity.title, year: identity.year }, role, person) : undefined}
+          onPersonAwardDiscover={onPersonAwardDiscover ? (role, person, award) => onPersonAwardDiscover(movieForSearch, role, person, award) : undefined}
         />
       ) : null}
     >

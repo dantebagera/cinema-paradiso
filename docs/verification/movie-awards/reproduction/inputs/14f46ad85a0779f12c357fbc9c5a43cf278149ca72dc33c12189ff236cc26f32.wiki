@@ -1,0 +1,617 @@
+{{oscars short description|films-year=2020|films-year2=2021}}
+{{Featured list}}
+{{Use American English|date=October 2020}}
+{{Use mdy dates|date=October 2020}}
+{{Infobox film awards
+| number                  = 93
+| award                   = Academy Awards
+| image                   = 93 Oscars KA Poster Vert 1080x1350-Navy.jpg
+| alt                     = Official poster promoting the 93rd Academy Awards in 2021.
+| caption                 = Official poster
+| date                    = April 25, 2021
+| site                    = [[Union Station (Los Angeles)|Union Station]]<br />[[Los Angeles]], California, U.S.{{efn|name=Oscar|The presentation of the [[Jean Hersholt Humanitarian Award]] to the [[Motion Picture & Television Fund]] was held at the [[Dolby Theatre]] in [[Hollywood, Los Angeles|Hollywood]], California, and the winner of the [[Academy Award for Best Director|Best Director]] was announced from the Dolby Cinema in [[Seoul]], South Korea.<ref>{{cite news |last1=Garvey |first1=Marianne |title=Bryan Cranston applauds 70 vaccinated frontline workers at the Dolby Theatre |url=https://www.cnn.com/entertainment/live-news/oscars-2021/h_d7d1ba094a67244474ac73612770d68f |access-date=May 16, 2021 |agency=[[CNN]] |date=April 25, 2021 |archive-date=June 24, 2021 |archive-url=https://web.archive.org/web/20210624201848/https://www.cnn.com/entertainment/live-news/oscars-2021/h_d7d1ba094a67244474ac73612770d68f |url-status=live}}</ref><ref>{{cite news |last1=Carras |first1=Christi |title='Parasite' director Bong Joon Ho returns to Oscars with interpreter Sharon Choi |url=https://www.latimes.com/entertainment-arts/movies/story/2021-04-25/oscars-2021-bong-joon-ho-sharon-choi |access-date=May 13, 2021 |work=[[Los Angeles Times]] |date=April 25, 2021 |url-access=limited |archive-date=April 30, 2021 |archive-url=https://web.archive.org/web/20210430204931/https://www.latimes.com/entertainment-arts/movies/story/2021-04-25/oscars-2021-bong-joon-ho-sharon-choi |url-status=live}}</ref> Furthermore, four of the Best Original Song nominees were performed at the Dolby Family Terrace of the [[Academy Museum of Motion Pictures]], and one was performed on location in [[Húsavík]], Iceland.<ref name="Husavik">{{cite news |last1=Perez |first1=Lexy |title=Oscars: H.E.R. Wins Best Original Song for "Fight For You", Promises "I'm Always Going to Fight for My People" |url=https://www.hollywoodreporter.com/movies/movie-news/h-e-r-_-wins-oscars-best-original-song-judas-and-the-black-messiah-4170673/ |access-date=June 2, 2021 |work=[[The Hollywood Reporter]] |date=April 25, 2021 |archive-date=June 24, 2021 |archive-url=https://web.archive.org/web/20210624200820/https://www.hollywoodreporter.com/movies/movie-news/h-e-r-_-wins-oscars-best-original-song-judas-and-the-black-messiah-4170673/ |url-status=live}}</ref>}}
+| preshow                 = {{plainlist|
+* [[Ariana DeBose]]
+* [[Lil Rel Howery]]<ref>{{cite news |last1=Willman |first1=Chris |title=Oscars Reveal Original Song Performers and Aftershow Plans |url=https://variety.com/2021/film/news/oscars-song-performers-pre-telecast-show-1234953641/ |access-date=May 2, 2021 |work=[[Variety (magazine)|Variety]] |date=April 16, 2021 |archive-date=May 5, 2021 |archive-url=https://web.archive.org/web/20210505093818/https://variety.com/2021/film/news/oscars-song-performers-pre-telecast-show-1234953641/ |url-status=live}}</ref>
+}}
+| producer                = {{plainlist|
+* Jesse Collins
+* [[Stacey Sher]]
+* [[Steven Soderbergh]]
+}}
+| director                = [[Glenn Weiss]]
+| best_picture            = ''[[Nomadland]]''
+| most_wins               = ''Nomadland'' (3)
+| most_nominations        = ''[[Mank]]'' (10)
+| network                 = [[American Broadcasting Company|ABC]]
+| duration                = 3 hours, 19 minutes<ref>{{cite news |last1=Barnes |first1=Brooks |last2=Koblin |first2=John |title=Oscars Ratings Plummet, With Fewer Than 10 Million Tuning In |url=https://www.nytimes.com/2021/04/26/business/media/oscars-ratings.html |access-date=May 1, 2021 |work=[[The New York Times]] |date=April 26, 2021 |url-access=limited |archive-date=May 1, 2021 |archive-url=https://web.archive.org/web/20210501145622/https://www.nytimes.com/2021/04/26/business/media/oscars-ratings.html |url-status=live}}</ref>
+| ratings                 = {{plainlist|
+* 10.4 million<ref name=DeadlineViews>{{cite news |last1=Patten |first1=Dominic |title=Oscar Viewership Rises To 10.4M In Final Numbers; Remains Least Watched & Lowest Rated Academy Awards Ever – Update |url=https://deadline.com/2021/04/2021-0scars-tv-ratings-academy-awards-low-abc-disney-1234744135/ |access-date=April 27, 2021 |work=[[Deadline Hollywood]] |date=April 27, 2021 |archive-date=April 27, 2021 |archive-url=https://web.archive.org/web/20210427000428/https://deadline.com/2021/04/2021-0scars-tv-ratings-academy-awards-low-abc-disney-1234744135/ |url-status=live}}</ref>
+* 5.9% ([[Nielsen ratings]])<ref name="TVB">{{cite news |title=Academy Awards ratings |publisher=[[Television Bureau of Advertising]] |url=https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |access-date=June 19, 2021 |archive-date=August 8, 2016 |archive-url=https://web.archive.org/web/20160808235818/https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |url-status=dead}}</ref>
+}}
+| last                    = 92nd
+| next                    = 94th
+}}
+
+The '''93rd Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored films released from January 1, 2020, to February 28, 2021, at [[Union Station (Los Angeles)|Union Station]] in [[Los Angeles]].{{efn|name=Oscar}} The ceremony was held on April 25, 2021, rather than its usual late-February date due to the [[COVID-19 pandemic]].<ref>{{cite news |title=Academy Delays 2021 Oscars Ceremony Because of Coronavirus |url=https://www.tampabay.com/news/nation-world/2020/06/15/academy-delays-2021-oscars-ceremony-because-of-coronavirus/ |access-date=August 12, 2020 |work=[[Tampa Bay Times]] |date=June 15, 2020 |archive-date=June 17, 2020 |archive-url=https://web.archive.org/web/20200617160434/https://www.tampabay.com/news/nation-world/2020/06/15/academy-delays-2021-oscars-ceremony-because-of-coronavirus/ |url-status=live}}</ref> During the ceremony, the AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 23 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by Jesse Collins, [[Stacey Sher]], and [[Steven Soderbergh]], and was directed by [[Glenn Weiss]].<ref name="Producers"/><ref>{{cite news |last1=Hipes |first1=Patrick |title=Oscars Production Team a Mix Of Veterans And Newcomers Including Questlove, Richard LaGravenese, Dream Hampton |url=https://deadline.com/2021/03/oscars-production-team-2021-questlove-richard-lagravenese-dream-walker-1234721037/ |access-date=March 25, 2021 |work=[[Deadline Hollywood]] |date=March 24, 2021 |archive-date=March 24, 2021 |archive-url=https://web.archive.org/web/20210324190347/https://deadline.com/2021/03/oscars-production-team-2021-questlove-richard-lagravenese-dream-walker-1234721037/ |url-status=live}}</ref> For the third consecutive year, the ceremony had no official host.<ref>{{cite news |last1=Freiman |first1=Jordan |title=Oscars 2021: Full list of winners and nominees |url=https://www.cbsnews.com/news/oscars-2021-winners-list-nominees/ |access-date=June 19, 2021 |agency=[[CBS News]] |date=April 26, 2021 |archive-date=June 1, 2021 |archive-url=https://web.archive.org/web/20210601192221/https://www.cbsnews.com/news/oscars-2021-winners-list-nominees/ |url-status=live}}</ref> In related events, the [[Academy Scientific and Technical Award]]s were presented by host [[Nia DaCosta]] on February 13, 2021, in a virtual ceremony.<ref>{{cite news |last1=Welk |first1=Brian |title=Oscars Present 17 Awards for Technical and Scientific Achievement |url=https://www.thewrap.com/oscars-present-17-awards-for-technical-and-scientific-achievement/ |access-date=May 12, 2021 |work=[[TheWrap]] |date=February 2, 2021 |archive-date=June 24, 2021 |archive-url=https://web.archive.org/web/20210624203132/https://www.thewrap.com/oscars-present-17-awards-for-technical-and-scientific-achievement/ |url-status=live}}</ref>
+
+''[[Nomadland]]'' won three awards at the main ceremony, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news |last1=Lowry |first1=Brian |title=Academy Awards 2021: 'Nomadland' wins Best Picture At an Oscars That Spreads the Wealth |url=https://www.cnn.com/2021/04/25/entertainment/academy-awards-2021/index.html |access-date=April 27, 2021 |agency=[[CNN]] |date=April 26, 2021 |archive-date=April 27, 2021 |archive-url=https://web.archive.org/web/20210427024819/https://www.cnn.com/2021/04/25/entertainment/academy-awards-2021/index.html |url-status=live}}</ref> Other winners included ''[[The Father (2020 film)|The Father]]'', ''[[Judas and the Black Messiah]]'', ''[[Ma Rainey's Black Bottom (film)|Ma Rainey's Black Bottom]]'', ''[[Mank]]'', ''[[Soul (2020 film)|Soul]]'' and ''[[Sound of Metal]]'' with two awards each, and ''[[Another Round]]'', ''[[Colette (2020 film)|Colette]]'', ''[[If Anything Happens I Love You]]'', ''[[Minari]]'', ''[[My Octopus Teacher]]'', ''[[Promising Young Woman]]'', ''[[Tenet]]'', and ''[[Two Distant Strangers]]'' with one. The telecast received mostly negative reviews, and it garnered 10.4 million viewers, making it the least-watched Oscar broadcast since viewership records began [[46th Academy Awards|for the 46th ceremony in 1974]].<ref name=DeadlineViews/><ref name="Makeover">{{cite news |last1=Lang |first1=Brett |last2=Setodeh |first2=Ramin |last3=Riley |first3=Jenelle |last4=Gleiberman |first4=Owen |last5=Debruge |first5=Peter |title=After Oscars Ratings Tank, Do the Academy Awards Need Another Makeover? |url=https://variety.com/2021/awards/news/oscars-2021-academy-awards-reviews-ratings-1234962181/ |access-date=June 19, 2021 |work=[[Variety (magazine)|Variety]] |date=April 28, 2021 |archive-date=May 3, 2021 |archive-url=https://web.archive.org/web/20210503143925/https://variety.com/2021/awards/news/oscars-2021-academy-awards-reviews-ratings-1234962181/ |url-status=live}}</ref><ref name="BBC Review">{{cite news |title=Oscars 2021: Audiences Turn Away As a Sluggish Ceremony Leaves Critics Cold |url=https://www.bbc.com/news/entertainment-arts-56885646 |access-date=July 13, 2021 |agency=[[BBC News]] |date=April 26, 2021 |archive-date=August 4, 2021 |archive-url=https://web.archive.org/web/20210804113257/https://www.bbc.com/news/entertainment-arts-56885646 |url-status=live}}</ref>
+
+== Winners and nominees ==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 93rd Academy Awards were announced on March 15, 2021, by actress [[Priyanka Chopra]] and singer [[Nick Jonas]] during a [[Streaming media|live global stream]] originating from [[London]].<ref>{{cite news |last1=Siegel |first1=Tatiana |last2=Lewis |first2=Hilary |last3=Konerman |first3=Jennifer |last4=Nordyke |first4=Kimberly |title=Oscars: 'Mank' Leads Nominees With 10 |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-list-of-nominees-updating-live-4150022/ |access-date=March 19, 2021 |work=[[The Hollywood Reporter]] |date=March 15, 2021 |archive-date=May 5, 2021 |archive-url=https://web.archive.org/web/20210505231429/https://www.hollywoodreporter.com/movies/movie-news/oscars-list-of-nominees-updating-live-4150022/ |url-status=live}}</ref> ''[[Mank]]'' led all nominees with ten nominations. The winners were announced during the awards ceremony on April 25.<ref>{{cite news |title='Nomadland' Wins Best Picture, and Other Highlights from the 2021 Academy Awards |url=https://www.tampabay.com/life-culture/arts/movies/2021/04/25/oscars-updates-highlights-from-the-2021-academy-awards/ |access-date=April 30, 2021 |work=[[Tampa Bay Times]] |date=April 25, 2021 |archive-date=April 29, 2021 |archive-url=https://web.archive.org/web/20210429095706/https://www.tampabay.com/life-culture/arts/movies/2021/04/25/oscars-updates-highlights-from-the-2021-academy-awards/ |url-status=live}}</ref> Chinese filmmaker [[Chloé Zhao]] became the first [[woman of color]] to win Best Director and the second woman overall after [[Kathryn Bigelow]], who won at the [[82nd Academy Awards|2010 ceremony]] for directing ''[[The Hurt Locker]]''.<ref name="NYT">{{cite news |first1=Brooks |last1=Barnes |first2=Nicole |last2=Sperling |title='Nomadland' Makes History, and Anthony Hopkins, in Upset, Wins Best Actor |date=April 25, 2021 |work=[[The New York Times]] |url=https://www.nytimes.com/2021/04/25/movies/academy-awards-oscars.html |access-date=April 26, 2021 |url-access=limited |archive-date=April 27, 2021 |archive-url=https://web.archive.org/web/20210427205345/https://www.nytimes.com/2021/04/25/movies/academy-awards-oscars.html |url-status=live}}</ref> In addition, the nomination for [[Emerald Fennell]] in the same category meant that this also marked the first time two women directors had been nominated for the Oscar for Best Director in the same year.<ref>{{cite web |last1=Aurthur |first1=Kate |title=Oscars Make History by Nominating Two Women Directors |url=https://variety.com/2021/film/news/chloe-zhao-emerald-fennell-best-director-oscar-nominations-1234930889/ |work=[[Variety (magazine)|Variety]] |date=March 15, 2021 |access-date=July 1, 2025 |archive-date=April 21, 2021 |archive-url=https://web.archive.org/web/20210421043804/https://variety.com/2021/film/news/chloe-zhao-emerald-fennell-best-director-oscar-nominations-1234930889/ |url-status=live}}</ref> Zhao became the first woman to receive four nominations in a single year.<ref>{{cite web |last1=Galuppo |first1=Mia |title=Oscars: Female Directors Break Record for Most Nominations in One Year |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-female-directors-break-record-for-most-nominations-in-one-year-4148628/ |work=[[The Hollywood Reporter]] |date=March 15, 2021 |access-date=August 18, 2026 |archive-date=June 27, 2021 |archive-url=https://web.archive.org/web/20210627195847/https://www.hollywoodreporter.com/movies/movie-news/oscars-female-directors-break-record-for-most-nominations-in-one-year-4148628/ |url-status=live}}</ref> For the first time all films nominated for [[Academy Award for Best Original Screenplay|Best Original Screenplay]] were also nominated for [[Academy Award for Best Picture|Best Picture]].<ref name="BBCfacts">{{cite web |last1=McIntosh |first1=Steven |title=Oscars 2021: 19 geeky facts from Borat to Boseman |url=https://www.bbc.com/news/entertainment-arts-55325109 |publisher=[[BBC]] |date=March 15, 2021 |access-date=August 17, 2026 |archive-date=April 21, 2021 |archive-url=https://web.archive.org/web/20210421000528/https://www.bbc.com/news/entertainment-arts-55325109 |url-status=live}}</ref>
+
+At age 83, [[Anthony Hopkins]] became [[List of oldest and youngest Academy Award winners and nominees#Oldest nominees 2|the oldest Best Actor nominee ever]]<ref>{{cite web |last1=Nolfi |first1=Joey |title=Anthony Hopkins is the oldest Best Actor Oscar nominee ever |url=https://ew.com/awards/oscars/anthony-hopkins-oldest-best-actor-oscars-nominee/ |work=[[Entertainment Weekly]] |date=March 15, 2021 |access-date=August 17, 2026 |archive-date=April 21, 2021 |archive-url=https://web.archive.org/web/20210421191931/https://ew.com/awards/oscars/anthony-hopkins-oldest-best-actor-oscars-nominee/ |url-status=live}}</ref> and the oldest performer to win a competitive acting Oscar.<ref>{{cite news |last=Stevens |first=Matt |date=April 26, 2021 |title=Anthony Hopkins shocks by winning best actor over Chadwick Boseman. |language=en-US |work=[[The New York Times]] |url=https://www.nytimes.com/2021/04/25/movies/anthony-hopkins-chadwick-boseman.html |access-date=April 26, 2021 |issn=0362-4331 |url-access=limited |archive-date=April 26, 2021 |archive-url=https://web.archive.org/web/20210426041854/https://www.nytimes.com/2021/04/25/movies/anthony-hopkins-chadwick-boseman.html |url-status=live}}</ref> Best Actress winner [[Frances McDormand]] became the seventh person to [[List of actors with two or more Academy Awards in acting categories|win a third acting Oscar]], the third to win three leading performance Oscars, and the second to win Best Actress three times.<ref>{{cite news |date=April 25, 2021 |title=Frances McDormand Wins Best Actress: Third Career Oscar, Only Katharine Hepburn Won More in Category |url=https://www.indiewire.com/2021/04/frances-mcdormand-wins-oscar-best-actress-nomadland-1234632159/ |last=Lindahl |first=Chris |access-date=April 26, 2021 |work=[[IndieWire]] |language=en |archive-date=April 26, 2021 |archive-url=https://web.archive.org/web/20210426031412/https://www.indiewire.com/2021/04/frances-mcdormand-wins-oscar-best-actress-nomadland-1234632159/ |url-status=live}}</ref> As a producer of ''[[Nomadland]]'', she also was the first woman in history to be nominated for both acting and producing the same film,<ref name="BBCfacts"/> as well as the first person to win for both.<ref>{{cite news |url=https://www.billboard.com/music/awards/her-jon-batiste-record-setters-2021-oscars-9562789/ |title=H.E.R., Jon Batiste and All the Record-Setters From the 2021 Oscars |last=Grein |first=Paul |date=April 26, 2021 |work=[[Billboard (magazine)|Billboard]] |access-date=August 17, 2026 |archive-date=December 9, 2021 |archive-url=https://web.archive.org/web/20211209191825/https://www.billboard.com/music/awards/her-jon-batiste-record-setters-2021-oscars-9562789/ |url-status=live}}</ref>
+
+Best Supporting Actress winner [[Yuh-jung Youn]] became the first Korean performer and second Asian woman to win an acting Oscar after [[Miyoshi Umeki]], who won the same category for her role in 1957's ''[[Sayonara (1957 film)|Sayonara]]''.<ref name="NYT"/> With his nominations in Best Supporting Actor and Best Original Song for ''[[One Night in Miami...]]'', [[Leslie Odom Jr.]] was the fourth consecutive person to earn acting and songwriting nominations for the same film.{{efn|The three previous individuals to have earned this distinction are [[Mary J. Blige]] for ''[[Mudbound (film)|Mudbound]]'', [[Lady Gaga]] for ''[[A Star Is Born (2018 film)|A Star Is Born]]'', and [[Cynthia Erivo]] for ''[[Harriet (film)|Harriet]]''.<ref>{{cite magazine |last1=Grain |first1=Paul |title=Six Oscar Nominees Who Set New Records for Song and Score |url=https://www.billboard.com/articles/news/oscars/9549775/oscar-nominees-new-records-song-score |access-date=April 12, 2021 |magazine=[[Billboard (magazine)|Billboard]] |date=April 6, 2021 |archive-date=April 2, 2021 |archive-url=https://web.archive.org/web/20210402182305/https://www.billboard.com/articles/news/oscars/9549775/oscar-nominees-new-records-song-score/ |url-status=live}}</ref>}}
+
+=== Awards ===
+<!-- Don't add too many pictures or the tables below will start to leave a white space -->
+[[File:Chloezhao.jpg|thumb|right|upright=0.68|alt=Chloé Zhao in 2015.|[[Chloé Zhao]], Best Picture co-winner and Best Director winner]]
+[[File:Frances McDormand 2015 (cropped).jpg|thumb|right|upright=0.68|alt=Frances McDormand in 2015.|[[Frances McDormand]], Best Picture co-winner and Best Actress winner]]
+[[File:Anthony Hopkins Red Sea Festival 2025 Portrait (cropped).jpg|thumb|right|upright=0.68|alt=Anthony Hopkins in 2025.|[[Anthony Hopkins]], Best Actor winner]]
+[[File:Daniel Kaluuya (2017).jpg|thumb|right|upright=0.68|alt=Daniel Kaluuya in 2017.|[[Daniel Kaluuya]], Best Supporting Actor winner]]
+[[File:Youn Yuh-jung in December 2016.jpg|thumb|right|upright=0.68|alt=Youn Yuh-jung in 2016.|[[Yuh-jung Youn]], Best Supporting Actress winner]]
+[[File:Emerald Fennell, 2023 (1).jpg|thumb|right|upright=0.68|alt=Emerald Fennell in 2013.|[[Emerald Fennell]], Best Original Screenplay winner]]
+[[File:2025.03.28. Christopher Hampton Photo Mariusz Kubik 01.JPG|thumb|right|upright=0.68|alt=Christopher Hampton in 2025.|[[Christopher Hampton]], Best Adapted Screenplay co-winner]]
+[[File:OscarsCoulisses2021.jpg|thumb|right|upright=0.68|alt=Florian Zeller in 2021.|[[Florian Zeller]], Best Adapted Screenplay co-winner, holding his award]]
+[[File:Pete Docter cropped 2009.jpg|thumb|right|upright=0.68|alt=Pete Docter in 2009.|[[Pete Docter]], Best Animated Feature Film co-winner]]
+[[File:Jon Batiste 2018 (cropped).jpg|thumb|right|upright=0.68|alt=Jon Batiste in 2018.|[[Jon Batiste]], Best Original Score co-winner]]
+[[File:Trent Reznor-FEB2008 (cropped, but higher quality) (2).jpg|thumb|right|upright=0.68|alt=Jon Batiste in 2018.|[[Trent Reznor]], Best Original Score co-winner]]
+[[File:Erik Messerschmidt (53254290192) (cropped).jpg|thumb|right|upright=0.68|alt=Erik Messerschmidt in 2023.|[[Erik Messerschmidt]], Best Cinematography winner]]
+[[File:Michelle Couttolenc (cropped).jpg|thumb|right|upright=0.68|alt=Michelle Couttolenc in 2021.|[[Michelle Couttolenc]], Best Sound co-winner, holding her award during the ceremony]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger (‡).<ref>{{cite news |title=The 93rd Academy Awards {{!}} 2021 |url=https://www.oscars.org/oscars/ceremonies/2021 |access-date=April 7, 2021 |publisher=[[Academy of Motion Picture Arts and Sciences]] |language=en |archive-date=March 15, 2021 |archive-url=https://web.archive.org/web/20210315124455/https://oscars.org/oscars/ceremonies/2021 |url-status=live}}</ref>
+
+{| role="presentation" class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Nomadland]]''&nbsp;– [[Frances McDormand]], [[Peter Spears]], [[Mollye Asher]], Dan Janvey and [[Chloé Zhao]], producers'''{{double dagger}}
+** ''[[The Father (2020 film)|The Father]]''&nbsp;– [[David Parfitt]], [[Jean-Louis Livi]] and [[Philippe Carcassonne]], producers
+** ''[[Judas and the Black Messiah]]''&nbsp;– [[Shaka King]], [[Charles D. King]] and [[Ryan Coogler]], producers
+** ''[[Mank]]''&nbsp;– [[Ceán Chaffin]], [[Eric Roth]] and [[Douglas Urbanski]], producers
+** ''[[Minari]]''&nbsp;– [[Christina Oh]], producer
+** ''[[Promising Young Woman]]''&nbsp;– Ben Browning, Ashley Fox, [[Emerald Fennell]] and Josey McNamara, producers
+** ''[[Sound of Metal]]''&nbsp;– Bert Hamelinck and Sacha Ben Harroche, producers
+** ''[[The Trial of the Chicago 7]]''&nbsp;– [[Stuart Besser]] and [[Marc Platt (producer)|Marc Platt]], producers
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Chloé Zhao]]&nbsp;– ''[[Nomadland]]'''''{{double dagger}}
+** [[Thomas Vinterberg]]&nbsp;– ''[[Another Round]]''
+** [[David Fincher]]&nbsp;– ''[[Mank]]''
+** [[Lee Isaac Chung]]&nbsp;– ''[[Minari]]''
+** [[Emerald Fennell]]&nbsp;– ''[[Promising Young Woman]]''
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+* '''[[Anthony Hopkins]]&nbsp;– ''[[The Father (2020 film)|The Father]]'' as Anthony'''{{double dagger}}
+** [[Riz Ahmed]]&nbsp;– ''[[Sound of Metal]]'' as Ruben Stone
+** [[Chadwick Boseman]]&nbsp;– ''[[Ma Rainey's Black Bottom (film)|Ma Rainey's Black Bottom]]'' as Levee Green {{small|([[List of posthumous Academy Award winners and nominees|posthumous nomination]])}}
+** [[Gary Oldman]]&nbsp;– ''[[Mank]]'' as [[Herman J. Mankiewicz]]
+** [[Steven Yeun]]&nbsp;– ''[[Minari]]'' as Jacob Yi
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+* '''[[Frances McDormand]]&nbsp;– ''[[Nomadland]]'' as Fern'''{{double dagger}}
+** [[Viola Davis]]&nbsp;– ''[[Ma Rainey's Black Bottom (film)|Ma Rainey's Black Bottom]]'' as [[Ma Rainey]]
+** [[Andra Day]]&nbsp;– ''[[The United States vs. Billie Holiday]]'' as [[Billie Holiday]]
+** [[Vanessa Kirby]]&nbsp;– ''[[Pieces of a Woman]]'' as Martha Weiss
+** [[Carey Mulligan]]&nbsp;– ''[[Promising Young Woman]]'' as Cassandra "Cassie" Thomas
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Daniel Kaluuya]]&nbsp;– ''[[Judas and the Black Messiah]]'' as [[Fred Hampton]]'''{{double dagger}}
+** [[Sacha Baron Cohen]]&nbsp;– ''[[The Trial of the Chicago 7]]'' as [[Abbie Hoffman]]
+** [[Leslie Odom Jr.]]&nbsp;– ''[[One Night in Miami...]]'' as [[Sam Cooke]]
+** [[Paul Raci]]&nbsp;– ''[[Sound of Metal]]'' as Joe
+** [[LaKeith Stanfield]]&nbsp;– ''[[Judas and the Black Messiah]]'' as [[William O'Neal (informant)|William "Bill" O'Neal]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Yuh-jung Youn]]&nbsp;– ''[[Minari]]'' as Soon-ja'''{{double dagger}}
+** [[Maria Bakalova]]&nbsp;– ''[[Borat Subsequent Moviefilm]]'' as Tutar Sagdiyev
+** [[Glenn Close]]&nbsp;– ''[[Hillbilly Elegy (film)|Hillbilly Elegy]]'' as Bonnie "Mamaw" Vance
+** [[Olivia Colman]]&nbsp;– ''[[The Father (2020 film)|The Father]]'' as Anne
+** [[Amanda Seyfried]]&nbsp;– ''[[Mank]]'' as [[Marion Davies]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Promising Young Woman]]''&nbsp;– [[Emerald Fennell]]'''{{double dagger}}
+** ''[[Judas and the Black Messiah]]''&nbsp;– Screenplay by [[Will Berson]] and [[Shaka King]]; story by Will Berson, Shaka King, [[Kenny and Keith Lucas|Kenny Lucas]] and [[Kenny and Keith Lucas|Keith Lucas]]
+** ''[[Minari]]''&nbsp;– [[Lee Isaac Chung]]
+** ''[[Sound of Metal]]''&nbsp;– Screenplay by [[Darius Marder]] and Abraham Marder; story by Darius Marder and [[Derek Cianfrance]]
+** ''[[The Trial of the Chicago 7]]''&nbsp;– [[Aaron Sorkin]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[The Father (2020 film)|The Father]]''&nbsp;– [[Christopher Hampton]] and [[Florian Zeller]]; {{small|based on [[Le Père|the play]] by Zeller}}'''{{double dagger}}
+** ''[[Borat Subsequent Moviefilm]]''&nbsp;– Screenplay by [[Sacha Baron Cohen]], Anthony Hines, [[Dan Swimer]], [[Peter Baynham]], [[Erica Rivinoja]], [[Dan Mazer]], [[Jena Friedman]] and Lee Kern; story by Sacha Baron Cohen, Anthony Hines, Dan Swimer and Nina Pedrad; {{small|based on [[Borat Sagdiyev|the character]] by Baron Cohen}}
+** ''[[Nomadland]]''&nbsp;– [[Chloé Zhao]]; {{small|based on the [[Nomadland: Surviving America in the Twenty-First Century|book]] by [[Jessica Bruder]]}}
+** ''[[One Night in Miami...]]''&nbsp;– [[Kemp Powers]]; {{small|based on his [[One Night in Miami (play)|play]]}}
+** ''[[The White Tiger (2021 film)|The White Tiger]]''&nbsp;– [[Ramin Bahrani]]; {{small|based on the [[The White Tiger (Adiga novel)|novel]] by [[Aravind Adiga]]}}
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Soul (2020 film)|Soul]]''&nbsp;– [[Pete Docter]] and [[Dana Murray]]'''{{double dagger}}
+** ''[[Onward (film)|Onward]]''&nbsp;– [[Dan Scanlon]] and [[Kori Rae]]
+** ''[[Over the Moon (2020 film)|Over the Moon]]''&nbsp;– [[Glen Keane]], [[Gennie Rim]] and Peilin Chou
+** ''[[A Shaun the Sheep Movie: Farmageddon]]''&nbsp;– Richard Phelan, [[Will Becher]] and Paul Kewley
+** ''[[Wolfwalkers]]''&nbsp;– [[Tomm Moore]], Ross Stewart, [[Paul Young (producer)|Paul Young]] and Stéphan Roelants
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best International Feature Film]]}}
+* '''''[[Another Round]]'' ([[List of Danish submissions for the Academy Award for Best International Feature Film|Denmark]]) in [[Danish language|Danish]]&nbsp;– directed by [[Thomas Vinterberg]]'''{{double dagger}}
+** ''[[Better Days (2019 film)|Better Days]]'' ([[List of Hong Kong submissions for the Academy Award for Best International Feature Film|Hong Kong]]) in [[Mandarin Chinese|Mandarin]]&nbsp;– directed by [[Derek Tsang]]
+** ''[[Collective (2019 film)|Collective]]'' ([[List of Romanian submissions for the Academy Award for Best International Feature Film|Romania]]) in [[Romanian language|Romanian]]&nbsp;– directed by [[Alexander Nanau]]
+** ''[[The Man Who Sold His Skin]]'' ([[List of Tunisian submissions for the Academy Award for Best International Feature Film|Tunisia]]) in [[Arabic]]&nbsp;– directed by [[Kaouther Ben Hania]]
+** ''[[Quo Vadis, Aida?]]'' ([[List of Bosnian submissions for the Academy Award for Best International Feature Film|Bosnia and Herzegovina]]) in [[Bosnian language|Bosnian]]&nbsp;– directed by [[Jasmila Žbanić]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[My Octopus Teacher]]''&nbsp;– [[Pippa Ehrlich]], [[James Reed (filmmaker)|James Reed]] and [[Craig Foster (filmmaker)|Craig Foster]]''' {{double dagger}}
+** ''[[Collective (2019 film)|Collective]]''&nbsp;– [[Alexander Nanau]] and Bianca Oană
+** ''[[Crip Camp]]''&nbsp;– [[Nicole Newnham]], [[James LeBrecht|Jim LeBrecht]] and Sara Bolder
+** ''[[The Mole Agent]]''&nbsp;– [[Maite Alberdi]] and Marcela Santibáñez
+** ''[[Time (2020 film)|Time]]''&nbsp;– [[Garrett Bradley (filmmaker)|Garrett Bradley]], Lauren Domino and Kellen Quinn
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Colette (2020 film)|Colette]]''&nbsp;– [[Anthony Giacchino]] and [[Alice Doyard]]'''{{double dagger}}
+** ''[[A Concerto Is a Conversation]]''&nbsp;– [[Ben Proudfoot]] and [[Kris Bowers]]
+** ''[[Do Not Split]]''&nbsp;– [[Anders Sømme Hammer|Anders Hammer]] and Charlotte Cook
+** ''[[Hunger Ward]]''&nbsp;– Skye Fitzgerald and Michael Scheuerman
+** ''[[A Love Song for Latasha]]''&nbsp;– [[Sophia Nahli Allison]] and Janice Duncan
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Two Distant Strangers]]''&nbsp;– [[Travon Free]] and [[Martin Desmond Roe]]'''{{double dagger}}
+** ''[[Feeling Through]]'' – Doug Roland and Susan Ruzenski
+** ''[[The Letter Room]]''&nbsp;– [[Elvira Lind]] and [[Sofia Sondervan]]
+** ''[[The Present (2020 film)|The Present]]''&nbsp;– [[Farah Nabulsi]] and Ossama Bawardi
+** ''[[White Eye]]''&nbsp;– Tomer Shushan and Shira Hochman
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[If Anything Happens I Love You]]''&nbsp;– [[Will McCormack]] and [[Michael Govier]]'''{{double dagger}}
+** ''[[Burrow (film)|Burrow]]''&nbsp;– [[Madeline Sharafian]] and Michael Capbarat
+** ''[[Genius Loci (film)|Genius Loci]]''&nbsp;– Adrien Mérigeau and Amaury Ovise
+** ''[[Opera (2020 film)|Opera]]''&nbsp;– Erick Oh
+** ''[[Yes-People]]''&nbsp;– Gísli Darri Halldórsson and Arnar Gunnarsson
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Soul (2020 film)|Soul]]''&nbsp;– [[Trent Reznor]], [[Atticus Ross]] and [[Jon Batiste]]'''{{double dagger}}
+** ''[[Da 5 Bloods]]''&nbsp;– [[Terence Blanchard]]
+** ''[[Mank]]''&nbsp;– [[Trent Reznor]] and [[Atticus Ross]]
+** ''[[Minari]]''&nbsp;– [[Emile Mosseri]]
+** ''[[News of the World (film)|News of the World]]''&nbsp;– [[James Newton Howard]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Fight for You (H.E.R. song)|Fight for You]]" from ''[[Judas and the Black Messiah]]''&nbsp;– Music by [[H.E.R.]] and [[Dernst Emile II]]; lyrics by H.E.R. and [[Tiara Thomas]]'''{{double dagger}}
+** "Hear My Voice" from ''[[The Trial of the Chicago 7]]''&nbsp;– Music by [[Daniel Pemberton]]; lyrics by Daniel Pemberton and [[Celeste Waite]]
+** "[[Husavik (song)|Husavik]]" from ''[[Eurovision Song Contest: The Story of Fire Saga]]''&nbsp;– Music and Lyrics by [[Savan Kotecha]], Fat Max Gsus and [[Rickard Göransson]]
+** "[[Io sì (Seen)]]" from ''[[The Life Ahead]]''&nbsp;– Music by [[Diane Warren]]; lyrics by Diane Warren and [[Laura Pausini]]
+** "Speak Now" from ''[[One Night in Miami...]]''&nbsp;– Music and Lyrics by [[Leslie Odom Jr.]] and [[Sam Ashworth (songwriter)|Sam Ashworth]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound]]}}
+* '''''[[Sound of Metal]]''&nbsp;– [[Nicolas Becker (sound engineer)|Nicolas Becker]], [[Jaime Baksht]], [[Michelle Couttolenc]], [[Carlos Cortés Navarrete|Carlos Cortés]] and [[Phillip Bladh]]'''{{double dagger}}
+** ''[[Greyhound (film)|Greyhound]]''&nbsp;– [[Warren Shaw (sound editor)|Warren Shaw]], [[Michael Minkler]], [[Beau Borders]] and [[David Wyman (sound engineer)|David Wyman]]
+** ''[[Mank]]''&nbsp;– [[Ren Klyce]], [[Jeremy Molod]], [[David Parker (sound engineer)|David Parker]], [[Nathan Nance]] and [[Drew Kunin]]
+** ''[[News of the World (film)|News of the World]]''&nbsp;– [[Oliver Tarney]], [[Mike Prestwood Smith]], [[William Miller (sound engineer)|William Miller]] and [[John Pritchett (sound engineer)|John Pritchett]]
+** ''[[Soul (2020 film)|Soul]]''&nbsp;– [[Ren Klyce]], [[Coya Elliott]] and [[David Parker (sound engineer)|David Parker]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+* '''''[[Mank]]''&nbsp;– Production design: [[Donald Graham Burt]]; set decoration: [[Jan Pascale]]'''{{double dagger}}
+** ''[[The Father (2020 film)|The Father]]''&nbsp;– Production design: [[Peter Francis (art director)|Peter Francis]]; set decoration: [[Cathy Featherstone]]
+** ''[[Ma Rainey's Black Bottom (film)|Ma Rainey's Black Bottom]]''&nbsp;– Production design: [[Mark Ricker]]; set decoration: [[Karen O'Hara]] and [[Diana Stoughton]]
+** ''[[News of the World (film)|News of the World]]''&nbsp;– Production design: [[David Crank]]; set decoration: [[Elizabeth Keenan]]
+** ''[[Tenet]]''&nbsp;– Production design: [[Nathan Crowley]]; set decoration: [[Kathy Lucas]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Mank]]''&nbsp;– [[Erik Messerschmidt]]'''{{double dagger}}
+** ''[[Judas and the Black Messiah]]''&nbsp;– [[Sean Bobbitt]]
+** ''[[News of the World (film)|News of the World]]''&nbsp;– [[Dariusz Wolski]]
+** ''[[Nomadland]]''&nbsp;– [[Joshua James Richards]]
+** ''[[The Trial of the Chicago 7]]''&nbsp;– [[Phedon Papamichael]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* '''''[[Ma Rainey's Black Bottom (film)|Ma Rainey's Black Bottom]]''&nbsp;– [[Sergio López-Rivera]], [[Mia Neal]] and [[Jamika Wilson]]'''{{double dagger}}
+** ''[[Emma (2020 film)|Emma]]''&nbsp;– [[Marese Langan]], [[Laura Allen (make-up artist)|Laura Allen]] and [[Claudia Stolze]]
+** ''[[Hillbilly Elegy (film)|Hillbilly Elegy]]''&nbsp;– [[Eryn Krueger Mekash]], [[Matthew W. Mungle|Matthew Mungle]] and [[Patricia Dehaney]]
+** ''[[Mank]]''&nbsp;– [[Gigi Williams]], [[Kimberley Spiteri]] and [[Colleen LaBaff]]
+** ''[[Pinocchio (2019 film)|Pinocchio]]''&nbsp;– [[Mark Coulier]], [[Dalia Colli]] and [[Francesco Pegoretti]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Ma Rainey's Black Bottom (film)|Ma Rainey's Black Bottom]]''&nbsp;– [[Ann Roth]]'''{{double dagger}}
+** ''[[Emma (2020 film)|Emma]]''&nbsp;– [[Alexandra Byrne]]
+** ''[[Mank]]'' – [[Trish Summerville]]
+** ''[[Mulan (2020 film)|Mulan]]''&nbsp;– [[Bina Daigeler]]
+** ''[[Pinocchio (2019 film)|Pinocchio]]''&nbsp;– [[Massimo Cantini Parrini]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Sound of Metal]]''&nbsp;– [[Mikkel E. G. Nielsen]]'''{{double dagger}}
+** ''[[The Father (2020 film)|The Father]]''&nbsp;– [[Yorgos Lamprinos]]
+** ''[[Nomadland]]''&nbsp;– [[Chloé Zhao]]
+** ''[[Promising Young Woman]]''&nbsp;– [[Frédéric Thoraval]]
+** ''[[The Trial of the Chicago 7]]''&nbsp;– [[Alan Baumgarten]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Tenet]]''&nbsp;– [[Andrew Jackson (visual effects)|Andrew Jackson]], [[David Lee (visual effects artist)|David Lee]], [[Andrew Lockley]] and [[Scott R. Fisher|Scott Fisher]]'''{{double dagger}}
+** ''[[Love and Monsters (film)|Love and Monsters]]''&nbsp;– [[Matt Sloan (visual effects)|Matt Sloan]], [[Genevieve Camilleri]], [[Matt Everitt (animator)|Matt Everitt]] and [[Brian Cox (special effects artist)|Brian Cox]]
+** ''[[The Midnight Sky]]''&nbsp;– [[Matt Kasmir|Matthew Kasmir]], [[Chris Lawrence (visual effects)|Christopher Lawrence]], [[Max Solomon]] and [[David Watkins (special effects artist)|David Watkins]]
+** ''[[Mulan (2020 film)|Mulan]]''&nbsp;– [[Sean Andrew Faden|Sean Faden]], [[Anders Langlands]], [[Seth Maury]] and [[Steve Ingram]]
+** ''[[The One and Only Ivan (film)|The One and Only Ivan]]''&nbsp;– [[Nick Davis (visual effects supervisor)|Nick Davis]], Greg Fisher, Ben Jones and [[Santiago Colomo Martínez]]
+|}
+
+=== Jean Hersholt Humanitarian Awards ===
+* [[Motion Picture & Television Fund]] – for the emotional and financial relief services it offers to members of the entertainment industry.<ref name="Humanitarian" />
+
+* [[Tyler Perry]] – for his active engagement with philanthropy and charitable endeavors in recent years, including efforts to address homelessness and economic difficulties faced by members of the African-American community.<ref name="Humanitarian">{{cite news |url=https://variety.com/2021/awards/features/oscars-tyler-perry-motion-picture-television-fund-jean-hersholt-humanitarian-award-1234957330/ |title=Oscars Big Week: Tyler Perry and Motion Picture & Television Fund To Receive Jean Hersholt Humanitarian Award |last=Jackson |first=Angelique |date=April 21, 2021 |work=[[Variety (magazine)|Variety]] |access-date=April 25, 2021 |archive-date=April 26, 2021 |archive-url=https://web.archive.org/web/20210426005754/https://variety.com/2021/awards/features/oscars-tyler-perry-motion-picture-television-fund-jean-hersholt-humanitarian-award-1234957330/ |url-status=live}}</ref>
+
+=== Film awards and nominations ===
+{{col-begin|width=80%}}
+{{col-1-of-2}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 10
+| ''[[Mank]]''
+|-
+| rowspan="6" scope="row" style="text-align:center"| 6
+| ''[[The Father (2020 film)|The Father]]''
+|-
+| ''[[Judas and the Black Messiah]]''
+|-
+| ''[[Minari]]''
+|-
+| ''[[Nomadland]]''
+|-
+| ''[[Sound of Metal]]''
+|-
+| ''[[The Trial of the Chicago 7]]''
+|-
+| scope="row" rowspan="2" style="text-align:center;"| 5
+| ''[[Ma Rainey's Black Bottom (film)|Ma Rainey's Black Bottom]]''
+|-
+| ''[[Promising Young Woman]]''
+|-
+| scope="row" style="text-align:center;"| 4
+| ''[[News of the World (film)|News of the World]]''
+|-
+| scope="row" rowspan="2" style="text-align:center;"| 3
+| ''[[One Night in Miami...]]''
+|-
+| ''[[Soul (2020 film)|Soul]]''
+|-
+| scope="row" rowspan="8" style="text-align:center;"| 2
+| ''[[Another Round]]''
+|-
+| ''[[Borat Subsequent Moviefilm]]''
+|-
+| ''[[Collective (2019 film)|Collective]]''
+|-
+| ''[[Emma (2020 film)|Emma]]''
+|-
+| ''[[Hillbilly Elegy (film)|Hillbilly Elegy]]''
+|-
+| ''[[Mulan (2020 film)|Mulan]]''
+|-
+| ''[[Pinocchio (2019 film)|Pinocchio]]''
+|-
+| ''[[Tenet]]''
+|}
+{{col-break}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" | Film
+|-
+| scope="row" | 3
+| ''[[Nomadland]]''
+|-
+| rowspan="6" scope="row"| 2
+| ''[[The Father (2020 film)|The Father]]''
+|-
+| ''[[Judas and the Black Messiah]]''
+|-
+| ''[[Ma Rainey's Black Bottom (film)|Ma Rainey's Black Bottom]]''
+|-
+| ''[[Mank]]''
+|-
+| ''[[Soul (2020 film)|Soul]]''
+|-
+| ''[[Sound of Metal]]''
+|}
+{{col-end}}
+
+== Presenters and performers ==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>{{cite news |last1=Wloszczyna |first1=Susan |title=Oscars 2021: Nomadland is the Big Winner at an Unusual Academy Awards |url=https://www.rogerebert.com/festivals/oscars-2021-nomadland-is-the-big-winner-at-an-unusual-academy-awards |access-date=June 3, 2021 |website=[[RogerEbert.com]] |date=April 26, 2021 |archive-date=June 24, 2021 |archive-url=https://web.archive.org/web/20210624200408/https://www.rogerebert.com/festivals/oscars-2021-nomadland-is-the-big-winner-at-an-unusual-academy-awards |url-status=live}}</ref><ref>{{cite news |last1=Kemp |first1=Ella |title=Oscars 2021 Live Blog |url=https://www.empireonline.com/movies/features/oscars-2021-live-blog/ |access-date=May 23, 2021 |work=[[Empire (magazine)|Empire]] |date=April 26, 2021 |archive-date=May 17, 2021 |archive-url=https://web.archive.org/web/20210517035853/https://www.empireonline.com/movies/features/oscars-2021-live-blog/ |url-status=live}}</ref><ref>{{cite news |title=See Performances of Best Original Song Nominees at Oscars 2021 |url=https://www.rollingstone.com/tv-movies/tv-movie-news/oscars-2021-best-original-song-nominee-performances-1161022/ |access-date=August 17, 2026 |work=[[Rolling Stone]] |date=April 25, 2021 |archive-date=November 27, 2022 |archive-url=https://web.archive.org/web/20221127193358/https://www.rollingstone.com/tv-movies/tv-movie-news/oscars-2021-best-original-song-nominee-performances-1161022/ |url-status=live}}</ref>
+
+=== Presenters ===
+{| class="wikitable plainrowheaders sortable"
+|+ Presenters
+|-
+! scope="col" | Name(s)
+! scope="col" | Role
+|-
+| scope="row" | {{sortname|Regina|King}}
+| Presented the awards for [[Best Original Screenplay]] and [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| scope="row" | {{sortname|Laura|Dern}}
+| Presented the awards for [[Best International Feature Film]] and [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| scope="row" | {{sortname|Don|Cheadle}}
+| Presented the awards for [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]] and [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Bryan|Cranston}}
+| Presented the [[Jean Hersholt Humanitarian Award]] to the [[Motion Picture & Television Fund]]
+|-
+| scope="row" | {{plainlist|
+* {{sort|Bong|[[Bong Joon-ho]]}}
+* [[Sharon Choi]]
+}}
+| Presented the award for [[Academy Award for Best Director|Best Director]]
+|-
+| scope="row" | {{sortname|Riz|Ahmed}}
+| Presented the awards for [[Academy Award for Best Sound|Best Sound]] and [[Best Live Action Short Film]]
+|-
+| scope="row" | {{sortname|Reese|Witherspoon}}
+| Presented the awards for [[Best Animated Short Film]] and [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+| scope="row" | {{plainlist|
+* [[Marlee Matlin]]
+* {{sortname|Jack|Jason|nolink=1}} (interpreter)
+}}
+| Presented the awards for [[Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| scope="row" | {{sortname|Steven|Yeun}}
+| Presented the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| scope="row" | {{sortname|Brad|Pitt}}
+| Presented the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| scope="row" | {{sortname|Halle|Berry}}
+| Presented the awards for [[Academy Award for Best Production Design|Best Production Design]] and [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| scope="row" | {{sortname|Harrison|Ford}}
+| Presented the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| scope="row" | {{sortname|Viola|Davis}}
+| Presented the Jean Hersholt Humanitarian Award to [[Tyler Perry]]
+|-
+| scope="row" | [[Zendaya]]
+| Presented the awards for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| scope="row" | {{sortname|Angela|Bassett}}
+| Presented the "In Memoriam" tribute
+|-
+| scope="row" | {{sortname|Rita|Moreno}}
+| Presented the award for [[Academy Award for Best Picture|Best Picture]]
+|-
+| scope="row" | {{sortname|Renée|Zellweger}}
+| Presented the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| scope="row" | {{sortname|Joaquin|Phoenix}}
+| Presented the award for [[Academy Award for Best Actor|Best Actor]]
+|}
+
+=== Performers ===
+{| class="wikitable plainrowheaders sortable"
+|+ Performers
+|-
+! scope="col" | Name
+! scope="col" | Role
+! scope="col" | Work
+|-
+| scope="row" | {{sortname|Molly|Sandén}}
+| Performer
+| "[[Husavik (song)|Husavik]]" from ''[[Eurovision Song Contest: The Story of Fire Saga]]''
+|-
+| scope="row" | {{sortname|Laura|Pausini}} and [[Diane Warren]]
+| Performers
+| "[[Io sì (Seen)]]" from ''[[The Life Ahead]]''
+|-
+| scope="row" | [[Celeste (singer)|Celeste]]
+| Performer
+| "Hear My Voice" from ''[[The Trial of the Chicago 7]]''
+|-
+| scope="row" data-sort-value="Odom, Leslie Jr." | [[Leslie Odom Jr.]]
+| Performer
+| "Speak Now" from ''[[One Night in Miami...]]''
+|-
+| scope="row" | [[H.E.R.]]
+| Performer
+| "[[Fight for You (H.E.R. song)|Fight for You]]" from ''[[Judas and the Black Messiah]]''
+|}
+
+== Ceremony ==
+[[File:Los Angeles Union Station Ticket Lobby.jpg|thumb|The original ticket lobby of [[Union Station (Los Angeles)|Los Angeles Union Station]], where the ceremony was held]]
+
+In April 2017, the Academy scheduled the 93rd ceremony for February 28, 2021.<ref>{{cite news |last1=Hipes |first1=Patrick |title=Oscars Dates Set For 2018 And Beyond |url=https://deadline.com/2017/04/oscars-2018-airdate-abc-academy-awards-dates-1202061171/ |access-date=June 22, 2020 |work=[[Deadline Hollywood]] |date=April 4, 2017 |archive-date=April 5, 2017 |archive-url=https://web.archive.org/web/20170405053317/http://deadline.com/2017/04/oscars-2018-airdate-abc-academy-awards-dates-1202061171/ |url-status=live}}</ref> But due to the effects of the [[COVID-19 pandemic]] on both [[Impact of the COVID-19 pandemic on cinema|cinema]] and [[Impact of the COVID-19 pandemic on television in the United States|television]], the AMPAS Board of Governors changed the date to April 25.<ref name="Varietypostpone">{{cite news |last1=Malkin |first1=Marc |title=Oscars 2021 Pushed Back by Two Months |url=https://variety.com/2020/film/news/oscars-2021-postponed-coronavirus-1234635457/ |access-date=September 19, 2020 |work=[[Variety (magazine)|Variety]] |date=June 15, 2020 |archive-date=June 16, 2020 |archive-url=https://web.archive.org/web/20200616010655/https://variety.com/2020/film/news/oscars-2021-postponed-coronavirus-1234635457/ |url-status=live}}</ref> The annual Academy Governors Awards and corresponding nominees luncheon were canceled due to COVID-19 safety concerns.<ref>{{cite news |last1=Pond |first1=Steve |title=Academy Limits Oscars to Nominees and Their Guests, Cancels Governors Ball and Nominees Lunch |url=https://www.thewrap.com/academy-limits-oscars-to-nominees-and-their-guests-cancels-governors-ball-and-nominees-lunch/ |access-date=May 30, 2021 |work=[[TheWrap]] |date=March 15, 2021 |archive-date=June 3, 2021 |archive-url=https://web.archive.org/web/20210603065351/https://www.thewrap.com/academy-limits-oscars-to-nominees-and-their-guests-cancels-governors-ball-and-nominees-lunch/ |url-status=live}}</ref> This marked the first time since the [[60th Academy Awards|60th ceremony]] held in 1988 that the awards were held in April.<ref>{{cite news |last1=Finn |first1=Natalie |title=The 7 Biggest Jaw-Droppers at the 2021 Oscars |url=https://www.eonline.com/news/1262414/the-7-biggest-jaw-droppers-at-the-2021-oscars |access-date=June 17, 2021 |agency=[[E!]] |date=April 26, 2021 |archive-date=June 24, 2021 |archive-url=https://web.archive.org/web/20210624201824/https://www.eonline.com/news/1262414/the-7-biggest-jaw-droppers-at-the-2021-oscars |url-status=live}}</ref> It was the fourth time in history that the ceremony was postponed from its original date (following the [[10th Academy Awards|10th ceremony]] in 1938, the [[40th Academy Awards|40th ceremony]] in 1968, and the [[53rd Academy Awards|53rd ceremony]] in 1981).<ref name="Varietypostpone"/>
+
+In December 2020, the Academy hired television producer Jesse Collins, film producer [[Stacey Sher]], and Oscar-winning director [[Steven Soderbergh]] to oversee production of the telecast. "The upcoming Oscars is the perfect occasion for innovation and for re-envisioning the possibilities for the awards show. This is a dream team who will respond directly to these times. The Academy is excited to work with them to deliver an event that reflects the worldwide love of movies and how they connect us and entertain us when we need them the most", said Academy president David Rubin and CEO [[Dawn Hudson]].<ref name="Producers">{{cite news |last1=Hammond |first1=Pete |title=Oscars: Steven Soderbergh, Stacey Sher & Jesse Collins To Produce 93rd Academy Awards |url=https://deadline.com/2020/12/oscars-steven-soderbergh-stacey-sher-jesse-collins-producers-academ-awardsto-produce-93rd-academy-awards-1234652331/ |access-date=December 30, 2020 |work=[[Deadline Hollywood]] |date=December 8, 2020 |archive-date=December 28, 2020 |archive-url=https://web.archive.org/web/20201228033747/https://deadline.com/2020/12/oscars-steven-soderbergh-stacey-sher-jesse-collins-producers-academ-awardsto-produce-93rd-academy-awards-1234652331/ |url-status=live}}</ref>
+
+The tagline for the ceremony, "Bring Your Movie Love", was intended to reflect "our global appreciation for the power of film to foster connection, to educate, and to inspire us to tell our own stories". In tandem with the theme, the Academy hired seven artists to create custom posters for the event inspired by the question "What do movies mean to you?"<ref name="Posters">{{cite news |last1=Hipes |first1=Patrick |title=Oscars Poster Revealed With This Year's Tagline "Bring Your Movie Love"; No Clues Offered About Ceremony |url=https://deadline.com/2021/03/oscars-2021-poster-key-art-revealed-1234712398/ |access-date=June 19, 2021 |work=[[Deadline Hollywood]] |date=March 11, 2021 |archive-date=June 24, 2021 |archive-url=https://web.archive.org/web/20210624200758/https://deadline.com/2021/03/oscars-2021-poster-key-art-revealed-1234712398/ |url-status=live}}</ref> Another aspect of the telecast's production was to produce the ceremony as if it were a film, including promoting the presenters as a "cast",<ref>{{cite news |last=Hammond |first=Pete |date=April 12, 2021 |title=Oscars: Academy Sets Ensemble Cast Of 15 Stars To Serve As Presenters |url=https://deadline.com/2021/04/academy-announces-ensemble-cast-of-15-stars-to-serve-as-presenters-on-oscar-show-1234732531/ |url-status=live |access-date=April 12, 2021 |work=[[Deadline Hollywood]] |language=en-US |archive-date=April 17, 2021 |archive-url=https://web.archive.org/web/20210417231425/https://deadline.com/2021/04/academy-announces-ensemble-cast-of-15-stars-to-serve-as-presenters-on-oscar-show-1234732531/}}</ref><ref name=":4">{{cite news |last1=Hammond |first1=Pete |title=Oscar Show Takes Shape With Letter To Nominees: No Zooms, No Casual Dress, Covid Protocols In Force & "Stories Matter" |url=https://deadline.com/2021/03/oscar-show-takes-shape-no-zooms-producers-strtess-covid-safety-1234717664/ |access-date=March 22, 2021 |work=[[Deadline Hollywood]] |date=March 18, 2021 |archive-date=March 23, 2021 |archive-url=https://web.archive.org/web/20210323002728/https://deadline.com/2021/03/oscar-show-takes-shape-no-zooms-producers-strtess-covid-safety-1234717664/ |url-status=live}}</ref> being filmed at the traditional cinematic [[frame rate]] of [[24p|24 frames per-second]] as opposed to 30, and using a cinematic [[aspect ratio]] rather than the standard [[16:9 aspect ratio]] used by most television programming.<ref>{{cite news |last=Van Syckle |first=Katie |date=April 22, 2021 |title=Preparing for a Surreal Oscar Night |work=[[The New York Times]] |url=https://www.nytimes.com/2021/04/22/insider/Oscars-Covid-pandemic.html |access-date=April 26, 2021 |url-access=limited |archive-date=April 25, 2021 |archive-url=https://web.archive.org/web/20210425165122/https://www.nytimes.com/2021/04/22/insider/Oscars-Covid-pandemic.html |url-status=live}}</ref><ref>{{cite news |last=Framke |first=Caroline |date=April 25, 2021 |title=Oscar Telecast's Best Creative Decisions Got Lost in Forced Format Changes: TV Review |work=[[Variety (magazine)|Variety]] |url=https://variety.com/2021/tv/news/oscars-review-academy-awards-2021-1234960324/ |access-date=August 18, 2026 |archive-date=April 26, 2021 |archive-url=https://web.archive.org/web/20210426035740/https://variety.com/2021/tv/news/oscars-review-academy-awards-2021-1234960324/ |url-status=live}}</ref>
+
+Because of the pandemic, AMPAS announced that the main ceremony would be held for the first time at [[Union Station (Los Angeles)|Union Station]] in [[Downtown Los Angeles]], with parts of the festivities at the [[Dolby Theatre]] in Hollywood, the ceremony's usual venue.<ref>{{cite news |last1=Maddus |first1=Gene |title=Oscars to Broadcast From L.A.'s Union Station and Dolby Theatre |url=https://variety.com/2021/film/awards/oscars-to-broadcast-from-l-a-s-union-station-and-dolby-theatre-1234929614/ |access-date=March 25, 2021 |work=[[Variety (magazine)|Variety]] |date=March 15, 2021 |archive-date=March 24, 2021 |archive-url=https://web.archive.org/web/20210324133246/https://variety.com/2021/film/awards/oscars-to-broadcast-from-l-a-s-union-station-and-dolby-theatre-1234929614/ |url-status=live}}</ref> To satisfy health and safety protocols, the Academy limited the number of people attending the gala to primarily nominees and presenters.<ref name=":4"/><ref>{{cite news |last1=Feinberg |first1=Scott |title=Oscars: Only Presenters, Nominees and Guests Will Attend In-Person |url=https://www.hollywoodreporter.com/news/general-news/oscars-only-presenters-nominees-and-guests-will-attend-in-person-4150656/ |access-date=April 12, 2021 |work=[[The Hollywood Reporter]] |date=March 15, 2021 |archive-date=June 24, 2021 |archive-url=https://web.archive.org/web/20210624201709/https://www.hollywoodreporter.com/news/general-news/oscars-only-presenters-nominees-and-guests-will-attend-in-person-4150656/ |url-status=live}}</ref> Attendees were asked to submit travel plans to Oscar organizers before arriving in Los Angeles, take multiple [[COVID-19 testing in the United States|COVID-19 tests]], and isolate for ten days before the event.<ref>{{cite news |last1=Rottenberg |first1=Josh |title=Masks at the Oscars? Here's How the Academy Awards are Happening in Person |url=https://www.latimes.com/entertainment-arts/movies/story/2021-04-25/oscars-2021-in-person-masks-red-carpet-covid-rules |access-date=May 16, 2021 |work=[[Los Angeles Times]] |date=April 25, 2021 |url-access=limited |archive-date=May 16, 2021 |archive-url=https://web.archive.org/web/20210516055003/https://www.latimes.com/entertainment-arts/movies/story/2021-04-25/oscars-2021-in-person-masks-red-carpet-covid-rules |url-status=live}}</ref> Guests were also asked to wear masks when the broadcast paused for commercial breaks.<ref>{{cite news |last1=Malkin |first1=Marc |title=Oscar Attendees Will Not Wear Face Masks During Telecast (Exclusive) |url=https://variety.com/2021/tv/awards/oscars-attendees-masks-covid-1234954802/ |access-date=May 20, 2021 |work=[[Variety (magazine)|Variety]] |date=April 19, 2021 |archive-date=April 22, 2021 |archive-url=https://web.archive.org/web/20210422214542/https://variety.com/2021/tv/awards/oscars-attendees-masks-covid-1234954802/ |url-status=live}}</ref> In consideration of overseas nominees unable to attend the ceremony, producers set up satellite "hubs", such as at [[BFI Southbank]] in London, where they could participate in the gala.<ref>{{cite news |last1=Hammond |first1=Pete |title=Oscars: Academy To Create European Hub(s) For Nominees Unable To Travel To U.S.; Producers Reveal New Details On Show |url=https://deadline.com/2021/03/oscars-update-academy-to-create-european-hubs-for-nominees-unable-to-travel-to-u-s-1234724601/ |access-date=April 12, 2021 |work=[[Deadline Hollywood]] |date=March 30, 2021 |archive-date=April 10, 2021 |archive-url=https://web.archive.org/web/20210410233312/https://deadline.com/2021/03/oscars-update-academy-to-create-european-hubs-for-nominees-unable-to-travel-to-u-s-1234724601/ |url-status=live}}</ref><ref>{{cite news |last1=Ravindran |first1=Manori |title=Oscars in London: BFI Southbank Confirmed as U.K. Hub For Ceremony (Exclusive) |url=https://variety.com/2021/film/global/oscars-2021-london-event-bfi-southbank-1234950221/ |access-date=May 7, 2021 |work=[[Variety (magazine)|Variety]] |date=April 14, 2021 |archive-date=April 23, 2021 |archive-url=https://web.archive.org/web/20210423233808/https://variety.com/2021/film/global/oscars-2021-london-event-bfi-southbank-1234950221/ |url-status=live}}</ref> Additionally, the five Best Original Song nominees were performed in previously recorded segments shown during the red carpet pre-show. Four of the songs were performed atop the Dolby Family Terrace of the [[Academy Museum of Motion Pictures]]; "[[Husavik (song)|Husavik]]" from ''[[Eurovision Song Contest: The Story of Fire Saga]]'' was performed on location in the song's [[Húsavík|namesake town in Iceland]].<ref name="Husavik"/>
+
+[[The Roots]] musician and ''[[The Tonight Show Starring Jimmy Fallon|The Tonight Show]]'' bandleader [[Questlove]] served as musical director for the ceremony.<ref>{{cite news |url=https://variety.com/2021/music/news/questlove-music-2021-oscars-1234956085/ |date=April 21, 2021 |work=[[Variety (magazine)|Variety]] |title=How Questlove and Oscars Producer Jesse Collins Are Changing Music at the 2021 Academy Awards |last=Aswad |first=Jem |access-date=April 25, 2021 |archive-date=April 25, 2021 |archive-url=https://web.archive.org/web/20210425225840/https://variety.com/2021/music/news/questlove-music-2021-oscars-1234956085/ |url-status=live}}</ref> He, Oscars red carpet pre-show host [[Ariana DeBose]], and actor [[Lin-Manuel Miranda]] presented trailers for the upcoming films ''[[Summer of Soul (...Or, When the Revolution Could Not Be Televised)]]'', ''[[West Side Story (2021 film)|West Side Story]]'', and ''[[In the Heights (film)|In the Heights]]'', respectively, during the ceremony.<ref name="trailer">{{cite news |date=April 22, 2021 |first=Brian |last=Welk |title='West Side Story,' 'In the Heights,' 'Summer of Soul' Trailers to Debut During Oscars |url=https://www.thewrap.com/west-side-story-in-the-heights-summer-of-soul-trailers-to-debut-during-oscars/ |access-date=April 22, 2021 |work=[[TheWrap]] |url-status=live |archive-date=April 23, 2021 |archive-url=https://web.archive.org/web/20210423081330/https://www.thewrap.com/west-side-story-in-the-heights-summer-of-soul-trailers-to-debut-during-oscars/}}</ref><ref>{{cite news |date=April 22, 2021 |first=Anthony |last=D'Alessandro |title=Disney To Celebrate Moviegoing During Oscars With Talent & Exclusive Trailers From 'West Side Story', 'Summer Of Soul' & More |url=https://deadline.com/2021/04/disney-oscars-moviegoing-celebration-west-side-story-summer-of-soul-trailers-1234742010/ |access-date=April 22, 2021 |work=[[Deadline Hollywood]] |url-status=live |archive-date=April 23, 2021 |archive-url=https://web.archive.org/web/20210423112802/https://deadline.com/2021/04/disney-oscars-moviegoing-celebration-west-side-story-summer-of-soul-trailers-1234742010/}}</ref> Architect [[David Rockwell]] served as production designer for the show.<ref name="Rockwell">{{cite news |last1=Tangcay |first1=Jazz |title=Oscars 2021: How Designer David Rockwell Will Transform Union Station |url=https://variety.com/2021/artisans/awards/oscars-production-design-union-station-1234957462/ |access-date=May 13, 2021 |work=[[Variety (magazine)|Variety]] |date=April 21, 2020 |archive-date=April 28, 2021 |archive-url=https://web.archive.org/web/20210428024850/https://variety.com/2021/artisans/awards/oscars-production-design-union-station-1234957462/ |url-status=live}}</ref> In a press conference between the production team and reporters, Rockwell said Union Station's main lobby would be repurposed as the main setting for the awards presentation while adjacent outdoor areas would serve as patios for attendees before and after the ceremony.<ref>{{cite news |date=April 21, 2021 |title=Oscars Set Revealed: Here's How L.A.'s Union Station Will Get Gussied Up – Photo Gallery |url=https://deadline.com/2021/04/oscars-union-station-venue-production-photo-gallery-1234741303/ |url-status=live |access-date=April 23, 2021 |work=[[Deadline Hollywood]] |language=en-US |archive-date=April 22, 2021 |archive-url=https://web.archive.org/web/20210422185013/https://deadline.com/2021/04/oscars-union-station-venue-production-photo-gallery-1234741303/}}</ref> He also cited the [[Millennium Biltmore Hotel]] and [[The Hollywood Roosevelt Hotel]], the latter of which was the venue of the [[1st Academy Awards|inaugural Oscars ceremony]], as inspirations for the design and staging of the festivities.<ref name="Rockwell"/> Actors [[Colman Domingo]] and [[Andrew Rannells]] hosted ''Oscars: After Dark'', a program airing immediately after the ceremony interviewing winners and nominees.<ref>{{cite news |last=Welk |first=Brian |title=Oscars Song Contenders to Perform for Pre-Show, 'After Dark' Special Set for Post-Awards |url=https://www.thewrap.com/oscars-song-contenders-perform-pre-show-after-dark-special/ |work=[[TheWrap]] |date=April 16, 2021 |access-date=April 26, 2021 |archive-date=April 26, 2021 |archive-url=https://web.archive.org/web/20210426040158/https://www.thewrap.com/oscars-song-contenders-perform-pre-show-after-dark-special/ |url-status=live}}</ref>
+
+The ceremony offered accommodations for those who are deaf or visually impaired; it was the first Academy Awards to be broadcast with [[audio description]] for the visually impaired (carried via [[second audio program]] on the ABC telecast), which (along with its closed captioning) was sponsored by [[Google]]. A [[sign language interpreter]] was available in the media room. Deaf actress [[Marlee Matlin]] served as one of the award presenters, with her longtime partner Jack Jason interpreting her [[American Sign Language]] to spoken English.<ref>{{Cite web |last=White |first=Abbey |date=2022-03-25 |title=Oscars Telecast Will Feature Free Live ASL Interpretation on The Academy's YouTube Channel |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-2022-show-asl-interpretation-live-stream-accessibility-disability-1235118372/ |access-date=2022-03-29 |website=The Hollywood Reporter |language=en-US |archive-date=March 27, 2022 |archive-url=https://web.archive.org/web/20220327194529/https://www.hollywoodreporter.com/movies/movie-news/oscars-2022-show-asl-interpretation-live-stream-accessibility-disability-1235118372/ |url-status=live}}</ref><ref>{{Cite web |last=Sun |first=Rebecca |date=2021-04-26 |title=Oscars Diversity: Historic Firsts for Non-Acting Categories and Ceremony Accessibility |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-diversity-historic-firsts-for-non-acting-categories-and-ceremony-accessibility-4173310/ |access-date=2022-03-29 |website=The Hollywood Reporter |language=en-US |archive-date=March 29, 2022 |archive-url=https://web.archive.org/web/20220329003956/https://www.hollywoodreporter.com/movies/movie-news/oscars-diversity-historic-firsts-for-non-acting-categories-and-ceremony-accessibility-4173310/ |url-status=live}}</ref><ref>{{Cite web |date=2022-01-04 |title=Marlee Matlin on 'CODA' & Fighting for Deaf Stories |url=https://www.backstage.com/magazine/article/marlee-matlin-coda-73648/ |access-date=2022-03-28 |website=Backstage |archive-date=December 4, 2021 |archive-url=https://web.archive.org/web/20211204121834/https://www.backstage.com/magazine/article/marlee-matlin-coda-73648/ |url-status=live}}</ref>
+
+===Eligibility and other rule changes===
+Due to the date change, the Academy changed the eligibility deadline for feature films from December 31, 2020, to February 28, 2021. AMPAS president Rubin and CEO Hudson explained the decision to extend the eligibility period, saying: "For over a century, movies have played an important role in comforting, inspiring, and entertaining us during the darkest of times. They certainly have this year. Our hope, in extending the eligibility period and our Awards date, is to provide the flexibility filmmakers need to finish and release their films without being penalized for something beyond anyone's control."<ref>{{cite news |last1=Barnes |first1=Brooks |title=The 2021 Oscars Will Be Delayed |url=https://www.nytimes.com/2020/06/15/business/media/2021-oscars-delayed-coronavirus.html |access-date=August 13, 2020 |work=[[The New York Times]] |date=June 15, 2020 |url-access=limited |archive-date=August 21, 2020 |archive-url=https://web.archive.org/web/20200821192505/https://www.nytimes.com/2020/06/15/business/media/2021-oscars-delayed-coronavirus.html |url-status=live}}</ref>
+
+The Academy also revised its release and distribution requirements by making films released via [[video on demand]] or [[streaming]] eligible for the awards as long as they were originally scheduled to have a theatrical release and were uploaded to AMPAS's online screening service within 60 days of their public release. AMPAS also amended its theatrical exhibition qualifying rules to allow films debuting in theaters in New York City, Chicago, the San Francisco Bay Area, Atlanta, and Miami to qualify for the awards in addition to venues in Los Angeles.<ref>{{cite news |last1=Feinberg |first1=Scott |title=Oscars During Coronavirus: Academy Rules Streamed Films Eligible, Merges Sound Categories |url=https://www.hollywoodreporter.com/news/general-news/oscars-coronavirus-academy-rules-streamed-films-eligible-merges-sound-categories-1292043/ |access-date=June 19, 2020 |work=[[The Hollywood Reporter]] |date=April 28, 2020 |archive-date=June 24, 2021 |archive-url=https://web.archive.org/web/20210624201256/https://www.hollywoodreporter.com/news/general-news/oscars-coronavirus-academy-rules-streamed-films-eligible-merges-sound-categories-1292043/ |url-status=live}}</ref> A week of nightly screenings at a [[drive-in theater]] in the aforementioned cities also made films eligible for consideration.<ref>{{cite news |last1=Mandell |first1=Andrea |last2=Alexander |first2=Bryan |title=Academy Makes Major Change: Drive-in Movies Can Now Qualify for 2021 Oscars |url=https://www.usatoday.com/story/entertainment/movies/2020/10/07/oscars-academy-says-drive-movies-qualify-2021-ceremony/5917312002/ |access-date=November 17, 2020 |work=[[USA Today]] |date=October 7, 2020 |archive-date=November 6, 2020 |archive-url=https://web.archive.org/web/20201106132251/https://www.usatoday.com/story/entertainment/movies/2020/10/07/oscars-academy-says-drive-movies-qualify-2021-ceremony/5917312002/ |url-status=live}}</ref>
+
+Furthermore, the Academy made changes to specific award categories. The [[Best Sound Mixing]] and [[Academy Award for Best Sound Editing|Best Sound Editing]] categories were combined into a single Best Sound category (which had existed from the [[3rd Academy Awards|3rd Awards]] in 1930 through the [[75th Academy Awards|75th Awards]] in 2003) due to concerns from the Sound branch that the two categories had developed too much overlap in scope.<ref>{{cite news |last1=Ordoña |first1=Michael |title=Just One Oscar Category for Sound? The Pros Are Happy to Share the Acclaim |url=https://www.latimes.com/entertainment-arts/movies/story/2020-04-28/just-one-sound-category-the-pros-are-delighted-since-the-two-jobs-lines-have-blurred |access-date=August 12, 2020 |work=[[Los Angeles Times]] |date=April 28, 2020 |url-access=limited |archive-date=June 21, 2020 |archive-url=https://web.archive.org/web/20200621012009/https://www.latimes.com/entertainment-arts/movies/story/2020-04-28/just-one-sound-category-the-pros-are-delighted-since-the-two-jobs-lines-have-blurred |url-status=live}}</ref> The rules for [[Academy Award for Best Original Score|Best Original Score]] were changed to require that a film's score include a minimum of 60% original music, with franchise films and sequels required to have a minimum of 80% new music.<ref>{{cite magazine |last1=Grein |first1=Paul |title=Oscars Extend Eligibility to Streamed Films Amid Coronavirus Pandemic |url=https://www.billboard.com/articles/news/awards/9367595/oscars-rules-change-streamed-films-coronavirus |access-date=June 29, 2020 |magazine=[[Billboard (magazine)|Billboard]] |date=April 28, 2020 |archive-date=June 4, 2020 |archive-url=https://web.archive.org/web/20200604111537/https://www.billboard.com/articles/news/awards/9367595/oscars-rules-change-streamed-films-coronavirus |url-status=live}}</ref> Finally, preliminary voting for [[Best International Feature Film]] was opened to all voting members of the Academy for the first time.<ref>{{cite news |last=Hammond |first=Pete |date=April 28, 2020 |title=Oscars Keeping Show Date But Make Big News As Academy Lightens Eligibility Rules, Combines Sound Categories, Ends DVD Screeners and More |url=https://deadline.com/2020/04/oscars-major-changes-academy-awards-coronavirus-1202919950/ |access-date=May 6, 2020 |work=[[Deadline Hollywood]] |language=en |archive-date=May 23, 2020 |archive-url=https://web.archive.org/web/20200523043653/https://deadline.com/2020/04/oscars-major-changes-academy-awards-coronavirus-1202919950/ |url-status=live}}</ref>
+
+=== Best Actor announcement ending ===
+[[File:Chadwick Boseman by Gage Skidmore July 2017 (cropped).jpg|thumb|right|alt=Chadwick Boseman in 2017.|Many viewers and television critics believed [[Chadwick Boseman]]'s impending win for Best Actor was a reason that producers saved the category as the last to be presented at the ceremony.]]
+
+In a break with tradition, the lead acting categories were presented last after the awarding of Best Picture, with Best Actor coming last.<ref>{{cite news |last1=Vary |first1=Adam B. |title=Oscars End Abruptly with Anthony Hopkins Best Actor Upset |url=https://variety.com/2021/awards/news/anthony-hopkins-best-actor-oscar-upset-1234959766/ |access-date=April 30, 2021 |work=[[Variety (magazine)|Variety]] |date=April 25, 2021 |archive-date=April 26, 2021 |archive-url=https://web.archive.org/web/20210426162709/https://variety.com/2021/awards/news/anthony-hopkins-best-actor-oscar-upset-1234959766/ |url-status=live}}</ref> This led many viewers to believe that the ceremony's producers were anticipating Chadwick Boseman posthumously winning Best Actor, which could have been accompanied by a tribute to the actor; Boseman had been considered a strong frontrunner for the award.<ref name="Hopkins Reacts">{{cite news |last1=Jackson |first1=Angelique |title=Anthony Hopkins Pays Tribute to Chadwick Boseman After Surprise Second Oscar Win |url=https://variety.com/2021/awards/news/anthony-hopkins-oscar-win-reaction-1234960502/ |access-date=July 2, 2021 |work=[[Variety (magazine)|Variety]] |date=April 26, 2021 |archive-date=July 10, 2021 |archive-url=https://web.archive.org/web/20210710075831/https://variety.com/2021/awards/news/anthony-hopkins-oscar-win-reaction-1234960502/ |url-status=live}}</ref><ref name="Abrupt ending">{{cite news |last1=Buchanan |first1=Kyle |title=Inside Anthony Hopkins's Unexpected Win at the Oscars |url=https://www.nytimes.com/2021/04/26/movies/the-father-anthony-hopkins-oscars.html |access-date=May 23, 2021 |work=[[The New York Times]] |date=April 26, 2021 |url-access=limited |archive-date=May 15, 2021 |archive-url=https://web.archive.org/web/20210515101153/https://www.nytimes.com/2021/04/26/movies/the-father-anthony-hopkins-oscars.html |url-status=live}}</ref> When presenter [[Joaquin Phoenix]] announced that Anthony Hopkins was the winner, Phoenix said that the Academy accepted the award on behalf of Hopkins, who was not present, and the ceremony came to an abrupt end.<ref name="Abrupt ending" /> It was later reported that Hopkins, who did not want to travel from his home in Wales, offered to appear via [[Zoom (software)|Zoom]], but the producers declined his request.<ref name="Abrupt ending"/>
+
+The day after the ceremony, Hopkins released an acceptance speech on Instagram, in which he thanked the Academy, said that he "really did not expect" to win, and paid tribute to Boseman.<ref name="Hopkins Reacts" /> The selection of Hopkins over Boseman was controversial,<ref>{{Cite web |last1=Drury |first1=Sharareh |date=2021-04-26 |title=Oscars Face Backlash Over Chadwick Boseman Snub |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-criticized-chadwick-boseman-snub-4173199/ |access-date=2022-04-02 |website=The Hollywood Reporter |language=en-US |archive-date=April 2, 2022 |archive-url=https://web.archive.org/web/20220402085207/https://www.hollywoodreporter.com/movies/movie-news/oscars-criticized-chadwick-boseman-snub-4173199/ |url-status=live}}</ref><ref>{{Cite web |last=Romero |first=Ariana |title=Chadwick Boseman Loses Best Actor In Shocking Oscars Finale |url=https://www.refinery29.com/en-us/2021/04/10443095/chadwick-boseman-oscar-best-actor-loss-twitter-reactions |access-date=2022-04-02 |website=www.refinery29.com |language=en |archive-date=April 2, 2022 |archive-url=https://web.archive.org/web/20220402085055/https://www.refinery29.com/en-us/2021/04/10443095/chadwick-boseman-oscar-best-actor-loss-twitter-reactions |url-status=live}}</ref> but Boseman's brother reported the family had no hard feelings toward the Academy.<ref>{{Cite web |last1=Sharf |first1=Zack |date=2021-04-27 |title=Chadwick Boseman's Family Speaks Out on Oscars Loss: This Was Not a Snub |url=https://www.indiewire.com/2021/04/chadwick-boseman-family-oscars-snub-1234633534/ |access-date=2022-04-02 |website=IndieWire |language=en |archive-date=April 2, 2022 |archive-url=https://web.archive.org/web/20220402085055/https://www.indiewire.com/2021/04/chadwick-boseman-family-oscars-snub-1234633534/ |url-status=live}}</ref>
+
+In an interview, Soderbergh said that switching the traditional order of awards was planned before the nominations were announced, saying, "actors' speeches tend to be more dramatic than producers' speeches". He said that Boseman's widow accepting the award "would have been such a shattering moment" and "there would be nowhere to go after that". Soderbergh also defended the decision to not allow acceptance speeches via Zoom.<ref>{{cite news |date=May 4, 2021 |title=That off-key Oscars ending? Had to be done, says producer Steven Soderbergh |url=https://www.latimes.com/entertainment-arts/movies/story/2021-05-04/steven-soderbergh-oscars-ending-chadwick-boseman-anthony-hopkins |access-date=May 13, 2021 |work=[[Los Angeles Times]] |language=en-US |url-access=limited |archive-date=May 13, 2021 |archive-url=https://web.archive.org/web/20210513012655/https://www.latimes.com/entertainment-arts/movies/story/2021-05-04/steven-soderbergh-oscars-ending-chadwick-boseman-anthony-hopkins |url-status=live}}</ref>
+
+===Critical reviews===
+Many media outlets received the broadcast negatively.<ref name="Makeover"/><ref name="BBC Review"/> {{Rotten Tomatoes prose|24|3=34|4=The 93rd Oscars definitely delivered something different, but after a strong opening moment with Regina King, the changes to this year's ceremony cemented the importance of certain structural traditions -- and how damaging hedging your bets on the Academy's votes can be.|ref=y|access-date=March 15, 2024}}<ref>{{Cite web |title=The Academy Awards: 93rd Oscars |url=https://www.rottentomatoes.com/tv/the_academy_awards/s93 |access-date=2024-03-15 |website=[[Rotten Tomatoes]] |publisher=[[Fandango Media]] |language=en |archive-date=April 26, 2021 |archive-url=https://web.archive.org/web/20210426061053/https://www.rottentomatoes.com/tv/the_academy_awards/s93 |url-status=live }}</ref> Television critic Mike Hale of ''[[The New York Times]]'' wrote, "Sunday's broadcast on ABC was more like a cross between the [[Golden Globes]] and the closing-night banquet of a long, exhausting convention." He also commented, "The trade-off — whether because of the smaller crowd, the social distancing, or the sound quality in the cavernous space — was what felt like a dead room, both acoustically and emotionally. There were powerful and moving speeches, but they didn't seem to be generating much excitement, and when the people in the room aren't excited, it's hard to get excited at home."<ref>{{cite news |last1=Hale |first1=Mike |title=The Covid-19 Oscars: Not Masked but Still Muffled |url=https://www.nytimes.com/2021/04/25/arts/television/covid-19-oscars-2021.html |access-date=May 9, 2021 |work=[[The New York Times]] |date=April 25, 2021 |url-access=limited |archive-date=May 9, 2021 |archive-url=https://web.archive.org/web/20210509134351/https://www.nytimes.com/2021/04/25/arts/television/covid-19-oscars-2021.html |url-status=live}}</ref> ''[[Rolling Stone]]'' columnist [[Rob Sheffield]] noted, "The most flamboyantly unplanned and half-assed Oscar Night in recent history was a grind from beginning to end." He also criticized the production of the "In Memoriam" segment saying that the montage was edited at an inappropriately fast pace.<ref>{{cite magazine |last1=Sheffield |first1=Rob |author-link=Rob Sheffield |title=Oscars 2021: Wolf Howls, Da Butt and the Chadwick Boseman Tribute That Wasn't |url=https://www.rollingstone.com/movies/movie-features/oscars-2021-da-butt-rob-sheffield-1161148/ |access-date=May 17, 2021 |magazine=[[Rolling Stone]] |date=April 25, 2021 |url-access=limited |archive-date=May 4, 2021 |archive-url=https://web.archive.org/web/20210504200824/https://www.rollingstone.com/movies/movie-features/oscars-2021-da-butt-rob-sheffield-1161148/ |url-status=live}}</ref> Kelly Lawler of ''[[USA Today]]'' commented, "While it was certainly challenging to stage the show safely, [[63rd Annual Grammy Awards|last month's Grammys]] proved that it is possible to make something entertaining and engaging amid the pandemic. Unfortunately, the Oscars producers seemingly missed that show. The Oscars were a train wreck at the train station, an excruciatingly long, boring telecast that lacked the verve of so many movies we love."<ref>{{cite news |last1=Lawler |first1=Kelly |title=How the First (and Hopefully Last) Pandemic Oscars Went So Terribly Wrong |url=https://www.usatoday.com/in-depth/entertainment/tv/2021/04/26/oscars-2021-review-how-pandemic-ceremony-went-so-terribly-wrong/7292897002/ |access-date=May 23, 2021 |work=[[USA Today]] |date=April 26, 2021 |url-access=limited |archive-date=May 31, 2021 |archive-url=https://web.archive.org/web/20210531090925/https://www.usatoday.com/in-depth/entertainment/tv/2021/04/26/oscars-2021-review-how-pandemic-ceremony-went-so-terribly-wrong/7292897002/ |url-status=dead}}</ref>
+
+Others gave a more favorable review of the show. ''[[Time (magazine)|Time]]'' columnist Judy Berman wrote that the ceremony "was more entertaining than the average pre-COVID Oscars. It started out especially strong." She added, "Every part of this year's ceremony felt more intimate and less stuffy than just about any awards show I can remember. For once, the art and community of film seemed to take precedence over the business of film."<ref>{{cite magazine |last1=Berman |first1=Judy |title=The Pandemic Oscars Were Surprisingly Decent. But Will the Academy Learn Anything From Its Break With Tradition? |url=https://time.com/5958414/oscars-review-2021/ |access-date=May 31, 2021 |magazine=[[Time (magazine)|Time]] |date=April 26, 2021 |archive-date=April 29, 2021 |archive-url=https://web.archive.org/web/20210429165333/https://time.com/5958414/oscars-review-2021/ |url-status=live}}</ref> [[Associated Press]] reporter Lindsey Bahr commented, "The 93rd Academy Awards wasn't exactly a movie, but it was a show made for people who love learning about movies. And it stubbornly, defiantly wasn't trying to be anything else."<ref>{{cite news |last1=Bahr |first1=Lindsey |title=Review: Not Quite a Movie, but the Oscars Were a Love Letter |url=https://apnews.com/article/oscars-2021-review-c02d5d74c3615c74b81aa82af3df570f |access-date=May 31, 2021 |work=[[Associated Press]] |date=April 25, 2021 |archive-date=June 2, 2021 |archive-url=https://web.archive.org/web/20210602214146/https://apnews.com/article/oscars-2021-review-c02d5d74c3615c74b81aa82af3df570f |url-status=live}}</ref> Darren Franich of ''[[Entertainment Weekly]]'' gave an average review of the telecast, but singled out the winners and presenters for providing memorable moments throughout the show.<ref>{{cite magazine |last1=Franich |first1=Darren |title=What a Weird Oscars: Review |url=https://ew.com/awards/oscars/oscars-2021-review/ |access-date=May 25, 2021 |magazine=[[Entertainment Weekly]] |date=April 25, 2021 |archive-date=May 21, 2021 |archive-url=https://web.archive.org/web/20210521092711/https://ew.com/awards/oscars/oscars-2021-review/ |url-status=live}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 10.4 million people over its length, which was a 56% decrease from the [[92nd Academy Awards|previous year's ceremony]].<ref>{{cite news |last1=Richwine |first1=Lisa |last2=Grebler |first2=Dan |title=Final TV ratings for Oscars inch up to 10.4 million viewers |url=https://www.reuters.com/article/us-awards-oscars-ratings-idCAKBN2CE2D6 |access-date=June 19, 2021 |work=[[Reuters]] |date=April 27, 2021 |archive-date=June 24, 2021 |archive-url=https://web.archive.org/web/20210624202839/https://www.reuters.com/article/us-awards-oscars-ratings-idCAKBN2CE2D6 |url-status=live}}</ref> The show also earned lower [[Nielsen ratings]] compared to the previous ceremony with 5.9% of households watching the ceremony.<ref name="TVB" /> In addition, it garnered a lower rating among viewers between ages 18–49 with a 2.1 rating among viewers in that demographic.<ref>{{cite news |last1=Whitten |first1=Sarah |title=Audiences for Award Shows are in Steep Decline; This Chart Shows How Far Viewership Has Fallen |url=https://www.cnbc.com/2021/05/02/oscars-2021-nielsen-data-shows-viewers-have-lost-interest-in-award-shows.html |access-date=May 19, 2021 |agency=[[CNBC]] |date=May 2, 2021 |archive-date=May 19, 2021 |archive-url=https://web.archive.org/web/20210519013517/https://www.cnbc.com/2021/05/02/oscars-2021-nielsen-data-shows-viewers-have-lost-interest-in-award-shows.html |url-status=live}}</ref> It earned the lowest viewership for an Academy Award telecast since figures were compiled beginning with the [[46th Academy Awards|46th ceremony]] in 1974.<ref>{{cite news |last1=Smith |first1=Gerry |title=Oscars Audience Collapses in Latest Setback for Awards Shows |url=https://www.bloomberg.com/news/articles/2021-04-26/oscars-audience-falls-by-over-half-in-latest-setback-for-awards |access-date=June 19, 2021 |work=[[Bloomberg Businessweek]] |date=April 26, 2021 |archive-date=April 29, 2021 |archive-url=https://web.archive.org/web/20210429232051/https://www.bloomberg.com/news/articles/2021-04-26/oscars-audience-falls-by-over-half-in-latest-setback-for-awards |url-status=live}}</ref> Moreover, the show did not make the list of the 100 most watched telecasts in the United States in 2021, while previous ceremonies usually ranked in the top ten.<ref>{{cite news |last1=Schneider |first1=Michael |last2=Zorrilla |first2=Mónica Marie |title=Top 100 Telecasts of 2021: 'NCIS,' 'Yellowstone,' NFL Dominate, as Oscars Fail to Make the Cut |url=https://variety.com/2021/tv/news/top-rated-shows-2021-ncis-yellowstone-squid-game-1235143671/ |access-date=August 17, 2026 |work=[[Variety (magazine)|Variety]] |date=December 29, 2021 |archive-date=December 29, 2021 |archive-url=https://web.archive.org/web/20211229183322/https://variety.com/2021/tv/news/top-rated-shows-2021-ncis-yellowstone-squid-game-1235143671/ |url-status=live}}</ref> However, it was the most watched [[awards show]] of the season.<ref name="DeadlineViews"/>
+
+In July 2021, the ceremony presentation received four nominations for the [[73rd Primetime Emmy Awards]].<ref>{{cite news |last1=Goldberg |first1=Leslie |title=Emmys: Disney Leads All Combined Nominations as HBO (Thanks to HBO Max) Tops Netflix |url=https://www.hollywoodreporter.com/tv/tv-news/emmy-nominations-by-series-network-2021-1234981275/ |access-date=September 19, 2021 |work=[[The Hollywood Reporter]] |date=July 13, 2021 |archive-date=October 11, 2021 |archive-url=https://web.archive.org/web/20211011030431/https://www.hollywoodreporter.com/tv/tv-news/emmy-nominations-by-series-network-2021-1234981275/ |url-status=live}}</ref> Two months later, the ceremony won for [[Primetime Emmy Award for Outstanding Production Design for a Variety Special|Outstanding Production Design for a Variety Special]] (Alana Billingsley, Joe Celli, Jason Howard, and [[David Rockwell]]).<ref>{{cite news |last1=Pedersen |first1=Erik |title=Creative Arts Emmys: Complete Winners List For All Three Ceremonies |url=https://deadline.com/2021/09/creative-arts-emmy-awards-2021-winners-list-1234831219/ |access-date=November 11, 2021 |work=[[Deadline Hollywood]] |date=September 12, 2021 |archive-date=September 12, 2021 |archive-url=https://web.archive.org/web/20210912000458/https://deadline.com/2021/09/creative-arts-emmy-awards-2021-winners-list-1234831219/ |url-status=live}}</ref>
+
+=== Censorship in China and Hong Kong===
+The ceremony was subject to various forms of censorship in China and its territories. Due to scrutiny over ''Nomadland'' director [[Chloé Zhao]]—a Chinese-American citizen who reportedly made comments critical of China in a 2013 interview with ''[[Filmmaker (magazine)|Filmmaker]]'' magazine—the ceremony telecast was pulled by its local rightsholders in the mainland, and all discussions of the ceremony were [[Censorship in China|censored from Chinese social media and news outlets]].<ref>{{cite news |date=2021-04-26 |title=Chloé Zhao's historic win at this year's Oscars censored in China |url=https://www.scmp.com/lifestyle/entertainment/article/3131131/nomadland-director-chloe-zhaos-historic-oscars-win-censored |access-date=2021-04-27 |work=[[South China Morning Post]] |language=en |archive-date=October 7, 2021 |archive-url=https://web.archive.org/web/20211007070954/https://www.scmp.com/lifestyle/entertainment/article/3131131/nomadland-director-chloe-zhaos-historic-oscars-win-censored |url-status=live}}</ref><ref>{{cite news |last=Lin |first=Liza |date=2021-04-26 |title=China Censors 'Nomadland' Director Chloé Zhao's Oscar Win |language=en-US |work=[[The Wall Street Journal]] |url=https://www.wsj.com/articles/china-censors-nomadland-director-chloe-zhaos-oscar-win-11619440550 |access-date=2021-04-26 |issn=0099-9660 |archive-date=April 29, 2021 |archive-url=https://web.archive.org/web/20210429222410/https://www.wsj.com/articles/china-censors-nomadland-director-chloe-zhaos-oscar-win-11619440550 |url-status=live}}</ref>
+
+In addition, Hong Kong broadcaster [[TVB]] announced that the ceremony would not be shown live in the region for the first time since 1969. A TVB spokesperson told [[Agence France-Presse|AFP]] that this was a "commercial decision". It was speculated that the decision was in retaliation for the nomination of ''[[Do Not Split]]'', a documentary on [[2019–2020 Hong Kong protests|Hong Kong's pro-democracy protests in 2019]], for Best Documentary Short Subject.<ref>{{cite news |date=April 25, 2021 |title=Oscars won't show in Hong Kong for first time since 1969 as state media rails against protest film nomination |url=https://hongkongfp.com/2021/03/29/oscars-wont-show-in-hong-kong-for-first-time-since-1969-as-state-media-rails-against-protest-film-nomination/ |work=[[Hong Kong Free Press]] |access-date=April 26, 2021 |archive-date=March 22, 2023 |archive-url=https://web.archive.org/web/20230322081755/https://hongkongfp.com/2021/03/29/oscars-wont-show-in-hong-kong-for-first-time-since-1969-as-state-media-rails-against-protest-film-nomination/ |url-status=live}}</ref>
+
+== "In Memoriam" ==
+The annual "In Memoriam" segment was presented by [[Angela Bassett]].<ref>{{cite news |last1=D'Zurilla |first1=Christine |title=Another Oscars, Another Round of In Memoriam Snubs: Where Was Adam Schlesinger? |url=https://www.latimes.com/entertainment-arts/movies/story/2021-04-26/oscars-2021-in-memoriam-snubs-adam-schlesinger |access-date=June 12, 2021 |work=[[Los Angeles Times]] |date=April 26, 2021 |url-access=limited |archive-date=June 11, 2021 |archive-url=https://web.archive.org/web/20210611150620/https://www.latimes.com/entertainment-arts/movies/story/2021-04-26/oscars-2021-in-memoriam-snubs-adam-schlesinger |url-status=live}}</ref><ref>{{cite news |last=Gittins |first=William |date=April 24, 2021 |title=In Memoriam Oscars 2021: directors, actors and writers who died in 2020 |url=https://en.as.com/en/2021/04/25/latest_news/1619317219_989708.html |url-status=live |archive-url=https://web.archive.org/web/20210425142051/https://en.as.com/en/2021/04/25/latest_news/1619317219_989708.html |archive-date=April 25, 2021 |access-date=April 27, 2021 |work=[[Diario AS]]}}</ref> The montage featured the song "[[As (song)|As]]" by singer [[Stevie Wonder]].<ref>{{cite magazine |last1=Klnane |first1=Ruth |title=Chadwick Boseman, Christopher Plummer, Sean Connery Featured in Oscars in Memoriam Tribute |url=https://ew.com/awards/oscars/oscars-in-memoriam-2021/ |access-date=June 12, 2021 |magazine=[[Entertainment Weekly]] |date=April 25, 2021 |archive-date=June 13, 2021 |archive-url=https://web.archive.org/web/20210613082919/https://ew.com/awards/oscars/oscars-in-memoriam-2021/ |url-status=live}}</ref>
+
+{{div col}}
+
+* [[Cicely Tyson]] – actress
+* [[Ian Holm]] – actor
+* [[Max von Sydow]] – actor
+* [[Cloris Leachman]] – actress
+* [[Yaphet Kotto]] – actor
+* [[Joel Schumacher]] – director
+* [[Bertrand Tavernier]] – director
+* [[Jean-Claude Carrière]] – writer, director
+* [[Olivia de Havilland]] – actress
+* [[Irrfan Khan]] – actor
+* [[Michael Apted]] – director, producer
+* [[Paula Kelly (actress)|Paula Kelly]] – actress
+* [[Christopher Plummer]] – actor
+* [[Allen Daviau]] – cinematographer
+* [[George Segal]] – actor
+* [[Wilford Brimley]] – actor
+* [[Thomas Jefferson Byrd]] – actor
+* [[Marge Champion]] – actress, dancer, choreographer
+* [[Ron Cobb]] – production designer, concept artist
+* [[Shirley Knight]] – actress
+* José Luis Diaz – sound editor
+* [[Kelly Preston]] – actress
+* [[Rhonda Fleming]] – actress
+* [[Kelly Asbury]] – director, writer, animator
+* [[Fred Willard]] – actor
+* [[Hal Holbrook]] – actor
+* [[Kurt Luedtke]] – writer
+* [[Linda Manz]] – actress
+* [[Michael Chapman (cinematographer)|Michael Chapman]] – cinematographer, director
+* Martin Cohen – producer
+* [[Kim Ki-duk]] – director, writer
+* [[Helen McCrory]] – actress
+* [[Ennio Morricone]] – composer
+* [[Tom Pollock|Thomas Pollock]] – executive
+* [[Carl Reiner]] – actor, writer, director, producer
+* [[Larry McMurtry]] – writer
+* [[Lynn Shelton]] – director
+* [[Earl Cameron]] – actor
+* [[Alan Parker]] – director, writer
+* Mike Fenton – casting director
+* [[Edward S. Feldman]] – producer
+* [[Lynn Stalmaster]] – casting director
+* Nanci Ryder – publicist
+* [[Sumner Redstone]] – executive
+* [[Rémy Julienne]] – stunt performer
+* [[Stuart Cornfeld]] – producer
+* [[Ronald L. Schwary]] – producer
+* [[Jonathan Oppenheim (film editor)|Jonathan Oppenheim]] – film editor
+* [[Al Kasha]] – composer
+* [[Charles Gordon (producer)|Charles Gordon]] – producer
+* [[Brian Dennehy]] – actor
+* Charles Gregory Ross – hairstylist
+* [[Alberto Grimaldi]] – producer
+* [[Johnny Mandel]] – composer
+* [[Brenda Banks (animator)|Brenda Banks]] – animator
+* [[George Gibbs (special effects artist)|George Gibbs]] – special effects
+* Haim Shtrum – studio musician
+* [[Lennie Niehaus]] – composer
+* [[Leslie Pope]] – set decorator
+* [[Joan Micklin Silver]] – director, writer
+* [[Roberta Hodes]] – script supervisor, writer
+* [[Ken Muggleston]] – set decorator
+* [[Diana Rigg]] – actress
+* [[Leon Gast]] – documentarian
+* [[Anthony Powell (designer)|Anthony Powell]] – costume designer
+* [[Chuck Bail]] – stunt performer
+* [[Bhanu Athaiya]] – costume designer
+* [[Colleen Callaghan]] – hairstylist
+* [[Peter Lamont]] – production designer
+* [[David Giler]] – writer, producer
+* Norman Newberry – art director
+* Zhang Zhao – executive, producer
+* [[Conchata Ferrell]] – actress
+* [[Alan Robert Murray]] – sound editor
+* [[Andrew Jack (dialect coach)|Andrew Jack]] – dialect coach
+* [[Jonas Gwangwa]] – composer
+* [[Marvin Westmore]] – makeup artist
+* [[Pembroke Herring]] – film editor
+* Lynda Gurasich – hairstylist
+* [[Michel Piccoli]] – actor
+* [[William Bernstein (film executive)|William Bernstein]] – executive
+* [[Cis Corman]] – casting director, producer
+* Michael Wolf Snyder – production sound mixer
+* [[Ja'Net DuBois]] – actress
+* [[Les Fresholtz]] – re-recording mixer
+* [[Jerry Stiller]] – actor
+* [[Earl "DMX" Simmons]] – songwriter, actor, producer
+* [[Giuseppe Rotunno]] – cinematographer
+* [[Else Blangsted]] – music editor
+* [[Ronald Harwood]] – writer
+* Masato Hara – producer
+* [[Robert C. Jones]] – film editor, writer
+* [[Walter Bernstein]] – writer, producer
+* [[Sean Connery]] – actor
+* [[Chadwick Boseman]] – actor
+
+{{div col end}}
+
+==See also==
+* [[List of television shows notable for negative reception]]
+* [[List of submissions to the 93rd Academy Awards for Best International Feature Film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+==External links==
+'''Official websites'''
+* {{Official website|http://oscar.go.com/|Academy Awards official website}}
+* {{Official website|http://www.oscars.org/|The Academy of Motion Picture Arts and Sciences official website}}
+* [https://www.youtube.com/user/Oscars Oscars channel] {{Webarchive|url=https://web.archive.org/web/20190226082028/https://www.youtube.com/user/Oscars |date=February 26, 2019 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+'''News resources'''
+* [https://www.bbc.com/news/topics/ceq40e9pmywt/the-oscars Oscars 2021] {{Webarchive|url=https://web.archive.org/web/20190215051851/https://www.bbc.com/news/topics/ceq40e9pmywt/the-oscars |date=February 15, 2019 }} at [[BBC News]]
+* [https://www.theguardian.com/film/oscars-2021 Oscars 2021] at ''[[The Guardian]]''
+
+'''Other resources'''
+* {{IMDb title|10471902|The Oscars (2021)}}
+
+{{Academy Awards}}
+{{Academy Awards lists}}
+{{COVID-19 pandemic in the United States}}
+
+{{DEFAULTSORT:Academy Awards, 93}}
+[[Category:2020 film awards]]
+[[Category:2021 awards in the United States]]
+[[Category:2021 film awards]]
+[[Category:2021 in Los Angeles]]
+[[Category:2021 television specials]]
+[[Category:Academy Awards ceremonies]]
+[[Category:April 2021 in the United States]]
+[[Category:Events postponed due to the COVID-19 pandemic]]
+[[Category:Impact of the COVID-19 pandemic on cinema|A]]
+[[Category:Impact of the COVID-19 pandemic on television]]
+[[Category:Television shows directed by Glenn Weiss]]

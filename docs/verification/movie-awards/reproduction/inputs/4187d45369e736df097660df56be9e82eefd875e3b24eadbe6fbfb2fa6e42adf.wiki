@@ -1,0 +1,626 @@
+{{Short description|Film award ceremony in 2024}}
+{{Use American English|date=January 2024}}
+{{Use mdy dates|date=January 2024}}
+{{pp-sock|small=yes}}
+{{Infobox film awards
+| number                        = 81
+| image                         = 81stGoldenGlobeAwards.jpg
+| caption                       = Official poster
+| award                         = Golden Globe Awards
+| date                          = January 7, 2024<ref name="Otterson"/>
+| site                          = [[The Beverly Hilton]],<br>[[Beverly Hills, California]], U.S.
+| host                          = [[Jo Koy]]<ref name="Host"/>
+| director                      = [[Glenn Weiss]]<ref name="Otterson"/>
+| best_film_drama               = ''[[Oppenheimer (film)|Oppenheimer]]''
+| best_film_musical_or_comedy   = ''[[Poor Things (film)|Poor Things]]''
+| best_drama_series             = ''[[Succession (TV series)|Succession]]''
+| best_musical_or_comedy_series = ''[[The Bear (TV series)|The Bear]]''
+| best_miniseries_or_tv_movie   = ''[[Beef (TV series)|Beef]]''
+| most_wins                     = Film: ''[[Oppenheimer (film)|Oppenheimer]]'' (5)<br>TV: ''[[Succession (TV series)|Succession]]'' (4)
+| most_nominations              = Film: ''[[Barbie (film)|Barbie]]'' (9)<br>TV: ''[[Succession (TV series)|Succession]]'' (9)
+| network                       = [[CBS]]<br>[[Paramount+]] (streaming)<ref name="Otterson"/>
+| ratings                       = {{nowrap|10&nbsp;million ([[Nielsen Media Research#Nielsen TV ratings|Nielsen ratings]])<ref>{{cite web |url=https://deadline.com/2024/01/golden-globes-ratings-2024-cbs-1235699268/ |title=Golden Globes Audience Up 50% in Most-Watched Ceremony Since 2020, CBS Viewership Rises to 10M |first=Katie |last=Campione |work=[[Deadline Hollywood]] |date=January 18, 2024 |access-date=January 22, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108222258/https://deadline.com/2024/01/golden-globes-ratings-2024-cbs-1235699268/ |url-status=live }}</ref>}}
+| last                          = [[80th Golden Globe Awards|80th]]
+| next                          = [[82nd Golden Globe Awards|82nd]]
+}}
+
+The '''81st Golden Globe Awards''' was an awards ceremony for [[2023 in film|film]] and [[2023 in American television|American television productions of 2023]]. It was broadcast live on January 7, 2024, from [[the Beverly Hilton]] in [[Beverly Hills, California]], beginning at 5:00 p.m. [[Pacific Time Zone|PST]] / 8:00 p.m. [[Eastern Time Zone|EST]], on [[CBS]] and streamed on [[Paramount+]] in the United States. It was produced by [[Dick Clark Productions]], [[Ricky Kirshner]], and [[Glenn Weiss]]; the latter also served as director.<ref name="Otterson">{{cite web |url=https://variety.com/2023/awards/news/golden-globe-awards-cbs-2024-1235795855/ |title=Golden Globe Awards to Air on CBS in 2024 |first=Joe |last=Otterson |work=[[Variety (magazine)|Variety]] |date=November 17, 2023 |access-date=November 22, 2023 |archive-date=November 21, 2023 |archive-url=https://web.archive.org/web/20231121131725/https://variety.com/2023/awards/news/golden-globe-awards-cbs-2024-1235795855/ |url-status=live }}</ref><ref name="Donnelly">{{cite web |url=https://variety.com/2023/film/news/golden-globes-2024-air-date-network-streaming-1235529724/ |title=Golden Globes Return to Sunday in 2024 as Telecast Takes Bids for New Broadcast Partner (Exclusive) |first=Matt |last=Donnelly |work=[[Variety (magazine)|Variety]] |date=February 22, 2023 |access-date=November 25, 2023 |archive-date=April 16, 2023 |archive-url=https://web.archive.org/web/20230416175005/https://variety.com/2023/film/news/golden-globes-2024-air-date-network-streaming-1235529724/ |url-status=live }}</ref><ref name="Schneider">{{cite web |url=https://variety.com/2023/tv/news/golden-globes-producers-2024-glenn-weiss-ricky-kirshner-1235726430/ |title=Golden Globes Nabs Oscar Producers Glenn Weiss and Ricky Kirshner to Helm 2024 Ceremony |first=Michael |last=Schneider |work=[[Variety (magazine)|Variety]] |date=September 18, 2023 |access-date=November 25, 2023 |archive-date=November 25, 2023 |archive-url=https://web.archive.org/web/20231125000006/https://variety.com/2023/tv/news/golden-globes-producers-2024-glenn-weiss-ricky-kirshner-1235726430/ |url-status=live }}</ref><ref name="Winners">{{cite web |url=https://deadline.com/2024/01/2024-golden-globes-winners-1235697375/ |title='Oppenheimer' & 'Poor Things' Win Top Movie Prizes at Golden Globes – Complete Winners List |first=Erik |last=Pedersen |work=[[Deadline Hollywood]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 7, 2024 |archive-url=https://web.archive.org/web/20240107232737/https://deadline.com/2024/01/2024-golden-globes-winners-1235697375/ |url-status=live }}</ref><ref name="Winners List">{{cite web |url=https://www.hollywoodreporter.com/movies/movie-news/golden-globes-2024-winners-list-1235781166/ |title=Golden Globes: Winners List |first=Kimberly |last=Nordyke |work=[[The Hollywood Reporter]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108013852/https://www.hollywoodreporter.com/movies/movie-news/golden-globes-2024-winners-list-1235781166/ |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/2024/film/awards/golden-globes-2024-winners-list-1235859774/ |title=Golden Globes: 'Oppenheimer' Leads with Five Wins, 'Succession' Tops TV with Four (Complete Winners List) |first1=Brent |last1=Lang |first2=Jordan |last2=Moreau |work=[[Variety (magazine)|Variety]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108010940/https://variety.com/2024/film/awards/golden-globes-2024-winners-list-1235859774/ |url-status=live }}</ref> This was the first ceremony after Dick Clark Productions and [[Eldridge Industries]] took full control of the Golden Globes from the [[Hollywood Foreign Press Association]].<ref name="Otterson"/> The ceremony was also the first to air live on CBS in the United States since [[39th Golden Globe Awards|1982]].<ref name="Otterson"/> Comedian [[Jo Koy]] hosted the ceremony.<ref name="Host"/>
+
+The nominees were announced on December 11, 2023. ''[[Barbie (film)|Barbie]]'' and ''[[Succession (TV series)|Succession]]'' both tied for the most nominations with nine each, followed by ''[[Oppenheimer (film)|Oppenheimer]]''{{'}}s eight.<ref name="Nominees">{{cite web |url=https://deadline.com/2023/12/golden-globe-nominations-2024-1235660995/ |title=Golden Globe Nominations: 'Barbie', 'Oppenheimer' Top Movie List; 'Succession' Leads Way in TV |first1=Patrick |last1=Hipes |first2=Nellie |last2=Andreeva |work=[[Deadline Hollywood]] |date=December 11, 2023 |access-date=December 11, 2023 |archive-date=December 24, 2023 |archive-url=https://web.archive.org/web/20231224173714/https://deadline.com/2023/12/golden-globe-nominations-2024-1235660995/ |url-status=live }}</ref><ref name="Barbenheimer">{{cite web |url=https://deadline.com/2023/12/barbenheimer-golden-globes-nominations-barbie-oppenheimer-1235661405/ |title='Barbenheimer' Golden Globes Noms: America's Favorite Doll Edges Out Nuclear Physicist |first=Anthony |last=D'Alessandro |work=[[Deadline Hollywood]] |date=December 11, 2023 |access-date=December 11, 2023 |archive-date=December 11, 2023 |archive-url=https://web.archive.org/web/20231211150906/https://deadline.com/2023/12/barbenheimer-golden-globes-nominations-barbie-oppenheimer-1235661405/ |url-status=live }}</ref><ref>{{cite web |url=https://deadline.com/2023/12/succession-golden-globes-tv-record-nominations-final-season-1235661410/ |title='Succession' Breaks Golden Globes TV Record with 9 Nominations for Final Season |first=Nellie |last=Andreeva |work=[[Deadline Hollywood]] |date=December 11, 2023 |access-date=December 11, 2023 |archive-date=December 11, 2023 |archive-url=https://web.archive.org/web/20231211150905/https://deadline.com/2023/12/succession-golden-globes-tv-record-nominations-final-season-1235661410/ |url-status=live }}</ref>
+
+The ceremony also featured the debut of two new categories: "[[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]]" and "[[Golden Globe Award for Best Performance in Stand-Up Comedy on Television|Best Performance in Stand-Up Comedy on Television]]"<ref name="New Categories">{{cite web |url=https://variety.com/2023/film/news/golden-globes-adds-new-categories-box-office-hits-stand-up-comedy-1235735117/ |title=Golden Globes Adds Two New Categories: Blockbuster Movies and Stand-Up Comics Enter the Race (Exclusive) |first=Matt |last=Donnelly |work=[[Variety (magazine)|Variety]] |date=September 26, 2023 |access-date=November 25, 2023 |archive-date=December 18, 2023 |archive-url=https://web.archive.org/web/20231218010438/https://variety.com/2023/film/news/golden-globes-adds-new-categories-box-office-hits-stand-up-comedy-1235735117/ |url-status=live }}</ref>
+
+Additionally, the cultural phenomenon of "[[Barbenheimer]]" received seventeen nominations, winning seven.<ref name="Winners"/><ref name="Barbenheimer"/><ref>{{cite web |url=https://www.salon.com/2023/12/11/barbenheimer-dominates-the-golden-globes-with-17-total-nominations/ |title='Barbenheimer' dominates the Golden Globes with seventeen total nominations |first=Joy |last=Saha |work=[[Salon.com|Salon]] |date=December 11, 2023 |access-date=January 5, 2024 |archive-date=January 2, 2024 |archive-url=https://web.archive.org/web/20240102005032/https://www.salon.com/2023/12/11/barbenheimer-dominates-the-golden-globes-with-17-total-nominations/ |url-status=live }}</ref><ref>{{cite web |url=https://www.theguardian.com/film/2023/dec/11/golden-globes-barbie-2024-nominations-scorsese-oppenheimer-yorgos-yanthimos |title=It's 'Barbenheimer' mark two at the Golden Globes as Blockbusters face off once again |first=Peter |last=Bradshaw |author-link=Peter Bradshaw |work=[[The Guardian]] |date=December 11, 2023 |access-date=January 5, 2024 |archive-date=January 9, 2024 |archive-url=https://web.archive.org/web/20240109152557/https://www.theguardian.com/film/2023/dec/11/golden-globes-barbie-2024-nominations-scorsese-oppenheimer-yorgos-yanthimos |url-status=live }}</ref><ref>{{cite web |url=https://www.barrons.com/news/new-look-golden-globes-prepares-to-toast-barbenheimer-f0044428 |title=New-look Golden Globes Prepares to Toast 'Barbenheimer' |first=Andrew |last=Marszal |work=[[Barron's]] |date=January 5, 2024 |access-date=January 5, 2024 |archive-date=January 5, 2024 |archive-url=https://web.archive.org/web/20240105050502/https://www.barrons.com/news/new-look-golden-globes-prepares-to-toast-barbenheimer-f0044428 |url-status=live }}</ref>
+
+==Ceremony information==
+This was the first Golden Globe Awards ceremony after the [[Hollywood Foreign Press Association]] (HFPA) disbanded in 2023. On June 12, 2023, the HFPA announced that all of its rights and properties related to the Golden Globes were acquired by [[Dick Clark Productions]] and [[Eldridge Industries]].<ref>{{cite web |url=https://goldenglobes.com/articles/dick-clark-productions-and-eldridge-acquire-golden-globes/ |title=Dick Clark Productions and Eldridge Acquire Golden Globes |publisher=[[Golden Globe Awards|Golden Globes]] |date=June 12, 2023 |access-date=December 3, 2023 |archive-date=December 1, 2023 |archive-url=https://web.archive.org/web/20231201231335/https://goldenglobes.com/articles/dick-clark-productions-and-eldridge-acquire-golden-globes/ |url-status=live }}</ref>
+
+On February 21, 2023, the date of the ceremony was announced. It came back on a Sunday night slot after being moved to Tuesday for the previous year.<ref name="Donnelly"/> On September 18, 2023, [[Glenn Weiss]] and [[Ricky Kirshner]] were announced as its executive producers and showrunners.<ref name="Schneider"/> On November 17, 2023, it was announced that [[CBS]] had acquired the broadcast rights to the ceremony, replacing the Golden Globes' long-time U.S. broadcast partner [[NBC]].<ref name="Otterson"/>
+
+The nominations were announced on December 11, 2023, during an event co-hosted by [[Cedric the Entertainer]] and [[Wilmer Valderrama]]. Most of the categories were revealed during a live-streaming presentation, while ten of the categories were revealed during another segment on ''[[CBS Mornings]]''.<ref name="Nominees"/><ref>{{cite web |url=https://deadline.com/2023/08/golden-globes-2024-timeline-awards-1235532702/ |title=Golden Globes Set 2024 Nominations Date and Timeline, Tim Gray as Part of New Membership Board in Continuing Revamp |first=Patrick |last=Hipes |work=[[Deadline Hollywood]] |date=August 31, 2023 |access-date=November 25, 2023 |archive-date=November 25, 2023 |archive-url=https://web.archive.org/web/20231125000003/https://deadline.com/2023/08/golden-globes-2024-timeline-awards-1235532702/ |url-status=live }}</ref><ref>{{cite web |url=https://deadline.com/2023/12/how-to-watch-golden-globe-nominations-1235658099/ |title=Watch the Golden Globe Nominations Livestream |first=Erik |last=Pedersen |work=[[Deadline Hollywood]] |date=December 11, 2023 |access-date=December 11, 2023 |archive-date=December 11, 2023 |archive-url=https://web.archive.org/web/20231211080803/https://deadline.com/2023/12/how-to-watch-golden-globe-nominations-1235658099/ |url-status=live }}</ref>
+
+On December 21, comedian and actor [[Jo Koy]] was announced as the host.<ref name="Host">{{cite web |url=https://deadline.com/2023/12/jo-koy-golden-globes-host-1235679737/ |title=Jo Koy to Host 81st Golden Globes |first=Matt |last=Grobar |work=[[Deadline Hollywood]] |date=December 21, 2023 |access-date=December 22, 2023 |archive-date=December 21, 2023 |archive-url=https://web.archive.org/web/20231221223338/https://deadline.com/2023/12/jo-koy-golden-globes-host-1235679737/ |url-status=live }}</ref><ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-features/golden-globes-host-jo-koy-chris-rock-advice-interview-1235778500/ |title=Host Jo Koy's Been Charged with a 'Celebratory' Golden Globes — That Doesn't Mean He Can't Roast |first=Lacey |last=Rose |work=[[The Hollywood Reporter]] |date=January 3, 2024 |access-date=January 3, 2024 |archive-date=January 3, 2024 |archive-url=https://web.archive.org/web/20240103211204/https://www.hollywoodreporter.com/tv/tv-features/golden-globes-host-jo-koy-chris-rock-advice-interview-1235778500/ |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/2024/awards/news/jo-koy-golden-globes-hosting-job-2024-1235860858/ |title=Jo Koy on His Last-Minute Golden Globes Gig: 'It's Been a Crash Course in Hosting' |first=Michael |last=Schneider |work=[[Variety (magazine)|Variety]] |date=January 3, 2024 |access-date=January 3, 2024 |archive-date=January 3, 2024 |archive-url=https://web.archive.org/web/20240103225557/https://variety.com/2024/awards/news/jo-koy-golden-globes-hosting-job-2024-1235860858/ |url-status=live }}</ref><ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/jo-koy-golden-globes-monologue-1235781124/ |title=Golden Globes Host Jo Koy Defensive as Monologue Struggles: 'I Got the Gig 10 Days Ago!' |first=James |last=Hibberd |work=[[The Hollywood Reporter]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108023522/https://www.hollywoodreporter.com/tv/tv-news/jo-koy-golden-globes-monologue-1235781124/ |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/2024/awards/news/jo-koy-golden-globes-2024-monologue-1235860557/ |title=Golden Globes Host Jo Koy Opens Show with Barry Keoghan Penis and Ozempic Jokes to Mixed Response |first=Jennifer |last=Maas |work=[[Variety (magazine)|Variety]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108023429/https://variety.com/2024/awards/news/jo-koy-golden-globes-2024-monologue-1235860557/ |url-status=live }}</ref> Before this announcement, it was reported that a source with knowledge of the conversations told [[CNN]] that at least five A-list comedic actors, including [[Chris Rock]] and [[Ali Wong]], declined offers to host; the hosts of the podcast ''[[SmartLess]]'' (actors [[Will Arnett]], [[Jason Bateman]], and [[Sean Hayes]]) also reportedly declined the offer.<ref>{{cite web |url=https://www.cnn.com/2023/12/10/entertainment/chris-rock-and-more-comedic-actors-decline-offers-to-host-the-golden-globes/index.html |title=Chris Rock and other top comedic talent decline offers to host the Golden Globes |first=Elizabeth |last=Wagmeister |author-link=Elizabeth Wagmeister |publisher=[[CNN]] |date=December 11, 2023 |access-date=December 22, 2023 |archive-date=December 23, 2023 |archive-url=https://web.archive.org/web/20231223043601/https://www.cnn.com/2023/12/10/entertainment/chris-rock-and-more-comedic-actors-decline-offers-to-host-the-golden-globes/index.html |url-status=live }}</ref> That same month, ''[[TheWrap]]'' reported that 64 voters threatened to withhold their final-round votes in protest, after being told that they would not be given tickets to the ceremony.<ref>{{cite web |url=https://www.thewrap.com/golden-globes-voters-threaten-boycott-cant-attend-ceremony-exclusive/ |title=Golden Globes Voters Threaten Vote Boycott After Being Excluded from Ceremony {{!}} Exclusive |first=Steve |last=Pond |work=[[TheWrap]] |date=December 18, 2023 |access-date=December 25, 2023 |archive-date=March 3, 2025 |archive-url=https://web.archive.org/web/20250303113311/https://www.thewrap.com/golden-globes-voters-threaten-boycott-cant-attend-ceremony-exclusive/ |url-status=live }}</ref>
+
+With the awards no longer being overseen by the HFPA, a new, racially and ethnically diverse group of voters consisting of 300 journalists representing 76 countries selected the 2023 nominees and winners.<ref name="Winners List"/>
+
+For her portrayal of [[Mollie Kyle|Mollie Burkhart]] in ''[[Killers of the Flower Moon]]'', [[Lily Gladstone]] became the first [[Native Americans in the United States|Indigenous]] actor to win a Golden Globe Award, winning for [[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Motion Picture – Drama]].<ref>{{cite web |url=https://www.hollywoodreporter.com/movies/movie-news/lily-gladstone-first-indigenous-winner-2024-golden-globes-1235781229/ |title=Lily Gladstone Becomes First Indigenous Actor to Win a Golden Globe: 'This is for Every Little Res Kid' |first=Rebecca |last=Sun |work=[[The Hollywood Reporter]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108043403/https://www.hollywoodreporter.com/movies/movie-news/lily-gladstone-first-indigenous-winner-2024-golden-globes-1235781229/ |url-status=live }}</ref>
+
+===Expansion===
+On September 26, 2023, it was announced that two new categories would be added for the upcoming ceremony: "[[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]]" (a category for films that grossed at least $100 million domestically and $150 million worldwide) and "[[Golden Globe Award for Best Performance in Stand-Up Comedy on Television|Best Performance in Stand-Up Comedy on Television]]" (also known as "Best Stand-Up Comedian on Television").<ref name="New Categories"/><ref>{{cite web |url=https://deadline.com/2023/12/golden-globes-new-box-office-category-1235661563/ |title=Golden Globes New Box Office Tentpole Category Delivers First-Time Noms to 'Mission: Impossible', 'Guardians of the Galaxy' & 'John Wick' Franchises |first=Anthony |last=D'Alessandro |work=[[Deadline Hollywood]] |date=December 11, 2023 |access-date=December 11, 2023 |archive-date=December 12, 2023 |archive-url=https://web.archive.org/web/20231212012851/https://deadline.com/2023/12/golden-globes-new-box-office-category-1235661563/ |url-status=live }}</ref><ref>{{cite web |url=https://deadline.com/2023/12/golden-globes-stand-up-nominees-chris-rock-wanda-sykes-trevor-noah-1235661011/ |title=Golden Globes Stand-Up Category: Chris Rock, Wanda Sykes & Trevor Noah Among First Comics Recognized on Netflix-Dominated List |first=Matt |last=Grobar |work=[[Deadline Hollywood]] |date=December 11, 2023 |access-date=December 11, 2023 |archive-date=December 11, 2023 |archive-url=https://web.archive.org/web/20231211135146/https://deadline.com/2023/12/golden-globes-stand-up-nominees-chris-rock-wanda-sykes-trevor-noah-1235661011/ |url-status=live }}</ref><ref>{{cite web |url=https://deadline.com/2024/01/ricky-gervais-armageddon-golden-globe-stand-up-comedy-1235698049/ |title=Former Golden Globes Host Ricky Gervais Wins Ceremonys First Stand-Up Award |first=Peter |last=White |work=[[Deadline Hollywood]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108030604/https://deadline.com/2024/01/ricky-gervais-armageddon-golden-globe-stand-up-comedy-1235698049/ |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/2024/awards/awards/barbie-wins-golden-globe-box-office-category-1235863120/ |title='Barbie' Wins Inaugural Cinematic and Box Office Achievement Award at Golden Globes |first=J. Kim |last=Murphy |work=[[Variety (magazine)|Variety]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108052903/https://variety.com/2024/awards/awards/barbie-wins-golden-globe-box-office-category-1235863120/ |url-status=live }}</ref> Some critics felt that the new categories were an attempt to improve the ceremony's viewership and relevance, with comparisons drawn to the [[Academy Awards]]' [[91st Academy Awards#Proposed "Popular Film" category|attempt]] to introduce a [[Academy Award for Outstanding Achievement in Popular Film|category for "Popular Film"]] in [[91st Academy Awards|2018]].<ref>{{cite web |url=https://themessenger.com/entertainment/golden-globes-new-categories |title=Golden Globes Adds Two New Categories Which Are Already Receiving Backlash |first=Daniel |last=Trainor |work=[[The Messenger (website)|The Messenger]] |date=September 26, 2023 |access-date=November 25, 2023 |archive-url=https://web.archive.org/web/20230928040006/https://themessenger.com/entertainment/golden-globes-new-categories |archive-date=September 28, 2023 |url-status=dead}}</ref><ref>{{cite web |url=https://www.avclub.com/golden-globes-new-categories-stand-up-blockbuster-1850874261 |title=The Golden Globes make a play for relevance with new categories |first=Mary Kate |last=Carr |work=[[The A.V. Club]] |date=September 26, 2023 |access-date=November 25, 2023 |archive-date=December 12, 2023 |archive-url=https://web.archive.org/web/20231212010154/https://www.avclub.com/golden-globes-new-categories-stand-up-blockbuster-1850874261 |url-status=live }}</ref><ref>{{cite web |url=https://www.themarysue.com/new-categories-and-lack-of-real-change-highlight-golden-globes-waning-relevance/ |title=New Categories and Lack of Real Change Highlight Golden Globes' Waning Relevance |first=Mariana |last=Delgado |work=[[Dan Abrams#The Mary Sue|The Mary Sue]] |date=September 27, 2023 |access-date=December 15, 2023 |archive-date=December 15, 2023 |archive-url=https://web.archive.org/web/20231215055353/https://www.themarysue.com/new-categories-and-lack-of-real-change-highlight-golden-globes-waning-relevance/ |url-status=live }}</ref><ref>{{cite web |url=https://www.salon.com/2023/12/12/golden-globes-award-meaningless-2024/ |title='Barbie', 'Oppie', and . . . 'Mario'?: Why the Golden Globes mean even less than before |first=Melanie |last=McFarland |work=[[Salon.com|Salon]] |date=December 12, 2023 |access-date=December 15, 2023 |archive-date=December 14, 2023 |archive-url=https://web.archive.org/web/20231214230417/https://www.salon.com/2023/12/12/golden-globes-award-meaningless-2024/ |url-status=live }}</ref>
+
+===Reduction===
+The two Lifetime Achievement Awards (the [[Golden Globe Cecil B. DeMille Award|Cecil B. DeMille Award]] and the [[Golden Globe Carol Burnett Award|Carol Burnett Award]]) were not presented this year, but expected to return in the future. Executive Vice President Tim Gray explained that with the change in ownership and status, and 25 of the competitive categories expanding from 5 nominees to 6, the increase will also include a reduction with no presentation of the two aforementioned awards for this year. "This is not a permanent change, with future awards slated to be given," Gray wrote in a post on the Globes' official website.<ref>{{cite web |url=https://deadline.com/2024/01/golden-globes-2024-cecil-b-demille-carol-burnett-award-1235695269/ |title=Golden Globes: No Cecil B. DeMille & Carol Burnett Awards in 2024 Amid Change |first=Nellie |last=Andreeva |work=[[Deadline Hollywood]] |date=January 4, 2024 |access-date=January 5, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108050949/https://deadline.com/2024/01/golden-globes-2024-cecil-b-demille-carol-burnett-award-1235695269/ |url-status=live }}</ref>
+
+==Winners and nominees==
+[[File:Cillian Murphy-2014.jpg|right|thumb|150px|[[Cillian Murphy]], Best Actor in a Motion Picture – Drama winner]]
+[[File:Lily Gladstone at the 2024 Cannes Film Festival (cropped).jpg|right|thumb|150px|[[Lily Gladstone]], Best Actress in a Motion Picture – Drama winner]]
+[[File:Paul Giamatti MFF 2024.jpg|right|thumb|150px|[[Paul Giamatti]], Best Actor in a Motion Picture – Musical or Comedy winner]]
+[[File:Emma Stone at the 2024 New York Film Festival 1 (cropped).jpg|right|thumb|150px|[[Emma Stone]], Best Actress in a Motion Picture – Musical or Comedy winner]]
+[[File:Robert Downey Jr 2014 Comic Con (cropped).jpg|right|thumb|150px|[[Robert Downey Jr.]], Best Supporting Actor winner]]
+[[File:Da'Vine Joy Randolph The Holdovers Q&A BFI Southbank, January 2024.jpg|right|thumb|150px|[[Da'Vine Joy Randolph]], Best Supporting Actress winner]]
+[[File:Kieran Culkin at the 2024 New York Film Festival 2 (cropped II).jpg|right|thumb|150px|[[Kieran Culkin]], Best Actor in a Television Series – Drama winner]]
+[[File:Sarah Snook Saphires (cropped).jpg|right|thumb|150px|[[Sarah Snook]], Best Actress in a Television Series – Drama winner]]
+[[File:Jeremy Allen White Springsteen-33 (cropped).jpg|right|thumb|150px|[[Jeremy Allen White]], Best Actor in a Television Series – Musical or Comedy winner]]
+[[File:Ayo Edebiri After The Hunt-43 (cropped).jpg|right|thumb|150px|[[Ayo Edebiri]], Best Actress in a Television Series – Musical or Comedy winner]]
+[[File:SDCC 2015 - Steven Yeun (19674345441) (cropped).jpg|right|thumb|150px|[[Steven Yeun]], Best Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Ali Wong 2012.jpg|right|thumb|150px|[[Ali Wong]], Best Actress in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Matthew Macfadyen 2019.jpg|right|thumb|150px|[[Matthew Macfadyen]], Best Supporting Actor in a Series, Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Elizabeth Debicki 3, 2013.jpg|right|thumb|150px|[[Elizabeth Debicki]], Best Supporting Actress in a Series, Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Ricky Gervais 2010.jpg|right|thumb|150px|[[Ricky Gervais]], Best Stand-Up Comedian on Television winner]]
+
+===Film===
+{| class="wikitable" style="width=100%"
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Drama|Best Motion Picture – Drama]]}}
+* '''''[[Oppenheimer (film)|Oppenheimer]]'''''
+** ''[[Anatomy of a Fall]]''
+** ''[[Killers of the Flower Moon]]''
+** ''[[Maestro (2023 film)|Maestro]]''
+** ''[[Past Lives (film)|Past Lives]]''
+** ''[[The Zone of Interest (film)|The Zone of Interest]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]]}}
+* '''''[[Poor Things (film)|Poor Things]]'''''
+** ''[[Air (2023 American film)|Air]]''
+** ''[[American Fiction (film)|American Fiction]]''
+** ''[[Barbie (film)|Barbie]]''
+** ''[[The Holdovers]]''
+** ''[[May December]]''
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Animated Feature Film|Best Motion Picture – Animated]]}}
+* '''''[[The Boy and the Heron]]'''''
+** ''[[Elemental (2023 film)|Elemental]]''
+** ''[[Spider-Man: Across the Spider-Verse]]''
+** ''[[The Super Mario Bros. Movie]]''
+** ''[[Suzume]]''
+** ''[[Wish (film)|Wish]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Non-English Language|Best Motion Picture – Non-English Language]]}}
+* '''''[[Anatomy of a Fall]]'' (France)'''
+** ''[[Fallen Leaves (film)|Fallen Leaves]]'' (Finland)
+** ''[[Io capitano]]'' (Italy)
+** ''[[Past Lives (film)|Past Lives]]'' (United States)
+** ''[[Society of the Snow]]'' (Spain)
+** ''[[The Zone of Interest (film)|The Zone of Interest]]'' (United Kingdom / Poland / United States)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor in a Motion Picture – Drama|Best Actor in a Motion Picture – Drama]]}}
+* '''[[Cillian Murphy]] – ''[[Oppenheimer (film)|Oppenheimer]]'' as [[J. Robert Oppenheimer]]'''
+** [[Bradley Cooper]] – ''[[Maestro (2023 film)|Maestro]]'' as [[Leonard Bernstein]]
+** [[Leonardo DiCaprio]] – ''[[Killers of the Flower Moon]]'' as [[Ernest Burkhart]]
+** [[Colman Domingo]] – ''[[Rustin (film)|Rustin]]'' as [[Bayard Rustin]]
+** [[Barry Keoghan]] – ''[[Saltburn (film)|Saltburn]]'' as Oliver Quick
+** [[Andrew Scott (actor)|Andrew Scott]] – ''[[All of Us Strangers]]'' as Adam
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Motion Picture – Drama]]}}
+* '''[[Lily Gladstone]] – ''[[Killers of the Flower Moon]]'' as [[Mollie Kyle|Mollie Burkhart]]'''
+** [[Annette Bening]] – ''[[Nyad (film)|Nyad]]'' as [[Diana Nyad]]
+** [[Sandra Hüller]] – ''[[Anatomy of a Fall]]'' as Sandra Voyter
+** [[Greta Lee]] – ''[[Past Lives (film)|Past Lives]]'' as Nora Moon
+** [[Carey Mulligan]] – ''[[Maestro (2023 film)|Maestro]]'' as [[Felicia Montealegre Bernstein|Felicia Montealegre]]
+** [[Cailee Spaeny]] – ''[[Priscilla (film)|Priscilla]]'' as [[Priscilla Presley]]
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor in a Motion Picture – Musical or Comedy|Best Actor in a Motion Picture – Musical or Comedy]]}}
+* '''[[Paul Giamatti]] – ''[[The Holdovers]]'' as Paul Hunham'''
+** [[Nicolas Cage]] – ''[[Dream Scenario]]'' as Dr. Paul Matthews
+** [[Timothée Chalamet]] – ''[[Wonka (film)|Wonka]]'' as [[Willy Wonka#Wonka (2023)|Willy Wonka]]
+** [[Matt Damon]] – ''[[Air (2023 American film)|Air]]'' as [[Sonny Vaccaro]]
+** [[Joaquin Phoenix]] – ''[[Beau Is Afraid]]'' as Beau Wassermann
+** [[Jeffrey Wright]] – ''[[American Fiction (film)|American Fiction]]'' as Thelonious "Monk" Ellis
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy|Best Actress in a Motion Picture – Musical or Comedy]]}}
+* '''[[Emma Stone]] – ''[[Poor Things (film)|Poor Things]]'' as Bella Baxter'''
+** [[Fantasia (singer)|Fantasia Barrino]] – ''[[The Color Purple (2023 film)|The Color Purple]]'' as Celie Harris-Johnson
+** [[Jennifer Lawrence]] – ''[[No Hard Feelings (2023 film)|No Hard Feelings]]'' as Maddie Barker
+** [[Natalie Portman]] – ''[[May December]]'' as Elizabeth Berry
+** [[Alma Pöysti]] – ''[[Fallen Leaves (film)|Fallen Leaves]]'' as Ansa
+** [[Margot Robbie]] – ''[[Barbie (film)|Barbie]]'' as [[Barbie]]
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Supporting Actor in a Motion Picture]]}}
+* '''[[Robert Downey Jr.]] – ''[[Oppenheimer (film)|Oppenheimer]]'' as [[Lewis Strauss]]'''
+** [[Willem Dafoe]] – ''[[Poor Things (film)|Poor Things]]'' as Dr. Godwin Baxter
+** [[Robert De Niro]] – ''[[Killers of the Flower Moon]]'' as [[William King Hale]]
+** [[Ryan Gosling]] – ''[[Barbie (film)|Barbie]]'' as [[Ken (doll)|Ken]]
+** [[Charles Melton]] – ''[[May December]]'' as Joe Yoo
+** [[Mark Ruffalo]] – ''[[Poor Things (film)|Poor Things]]'' as Duncan Wedderburn
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Supporting Actress in a Motion Picture]]}}
+* '''[[Da'Vine Joy Randolph]] – ''[[The Holdovers]]'' as Mary Lamb'''
+** [[Emily Blunt]] – ''[[Oppenheimer (film)|Oppenheimer]]'' as [[Kitty Oppenheimer]]
+** [[Danielle Brooks]] – ''[[The Color Purple (2023 film)|The Color Purple]]'' as Sofia
+** [[Jodie Foster]] – ''[[Nyad (film)|Nyad]]'' as [[Bonnie Stoll]]
+** [[Julianne Moore]] – ''[[May December]]'' as Gracie Atherton-Yoo
+** [[Rosamund Pike]] – ''[[Saltburn (film)|Saltburn]]'' as Lady Elspeth Catton
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Director|Best Director]]}}
+* '''[[Christopher Nolan]] – ''[[Oppenheimer (film)|Oppenheimer]]'''''
+** [[Bradley Cooper]] – ''[[Maestro (2023 film)|Maestro]]''
+** [[Greta Gerwig]] – ''[[Barbie (film)|Barbie]]''
+** [[Yorgos Lanthimos]] – ''[[Poor Things (film)|Poor Things]]''
+** [[Martin Scorsese]] – ''[[Killers of the Flower Moon]]''
+** [[Celine Song]] – ''[[Past Lives (film)|Past Lives]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Screenplay|Best Screenplay]]}}
+* '''[[Justine Triet]] and [[Arthur Harari]] – ''[[Anatomy of a Fall]]'''''
+** [[Greta Gerwig]] and [[Noah Baumbach]] – ''[[Barbie (film)|Barbie]]''
+** [[Tony McNamara (writer)|Tony McNamara]] – ''[[Poor Things (film)|Poor Things]]''
+** [[Christopher Nolan]] – ''[[Oppenheimer (film)|Oppenheimer]]''
+** [[Eric Roth]] and [[Martin Scorsese]] – ''[[Killers of the Flower Moon]]''
+** [[Celine Song]] – ''[[Past Lives (film)|Past Lives]]''
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Original Score|Best Original Score]]}}
+* '''[[Ludwig Göransson]] – ''[[Oppenheimer (film)|Oppenheimer]]'''''
+** [[Jerskin Fendrix]] – ''[[Poor Things (film)|Poor Things]]''
+** [[Joe Hisaishi]] – ''[[The Boy and the Heron]]''
+** [[Mica Levi]] – ''[[The Zone of Interest (film)|The Zone of Interest]]''
+** [[Daniel Pemberton]] – ''[[Spider-Man: Across the Spider-Verse]]''
+** [[Robbie Robertson]] – ''[[Killers of the Flower Moon]]'' <small>(posthumous)</small>
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]]}}
+* '''''[[Barbie (film)|Barbie]]'''''
+** ''[[Guardians of the Galaxy Vol. 3]]''
+** ''[[John Wick: Chapter 4]]''
+** ''[[Mission: Impossible – Dead Reckoning Part One]]''
+** ''[[Oppenheimer (film)|Oppenheimer]]''
+** ''[[Spider-Man: Across the Spider-Verse]]''
+** ''[[The Super Mario Bros. Movie]]''
+** ''[[Taylor Swift: The Eras Tour]]''
+|-
+| colspan="2" valign="top"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Original Song|Best Original Song]]}}
+* '''"[[What Was I Made For?]]" ([[Billie Eilish]] and [[Finneas O'Connell]]) – ''[[Barbie (film)|Barbie]]'''''
+** "Addicted to Romance" ([[Bruce Springsteen]]) – ''[[She Came to Me]]''
+** "[[Dance the Night]]" ([[Mark Ronson]], [[Andrew Wyatt]], [[Dua Lipa]], and [[Caroline Ailin]]) – ''Barbie''
+** "[[I'm Just Ken]]" (Mark Ronson and Andrew Wyatt) – ''Barbie''
+** "[[Peaches (Jack Black song)|Peaches]]" ([[Jack Black]], [[Aaron Horvath]], [[Michael Jelenic]], Eric Osmond, and John Spiker) – ''[[The Super Mario Bros. Movie]]''
+** "Road to Freedom" ([[Lenny Kravitz]]) – ''[[Rustin (film)|Rustin]]''
+|}
+
+====Films with multiple nominations====
+The following films received multiple nominations:
+
+{| class="wikitable"
+|-
+! Nominations
+! Films
+! Category
+! Distributor(s)
+|-
+| style="text-align:center"| 9
+| ''[[Barbie (film)|Barbie]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Warner Bros. Pictures]]
+|-
+| style="text-align:center"| 8
+| ''[[Oppenheimer (film)|Oppenheimer]]''
+| style="text-align:center" rowspan="2"| Drama
+| style="text-align:center"| [[Universal Pictures]]
+|-
+| style="text-align:center" rowspan="2"| 7
+| ''[[Killers of the Flower Moon]]''
+| style="text-align:center"| [[Paramount Pictures]]<br>[[Apple Studios|Apple Original Films]]
+|-
+| ''[[Poor Things (film)|Poor Things]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Searchlight Pictures]]
+|-
+| style="text-align:center"| 5
+| ''[[Past Lives (film)|Past Lives]]''
+| style="text-align:center" rowspan="3"| Drama
+| style="text-align:center"| [[A24]]
+|-
+| style="text-align:center" rowspan="3"| 4
+| ''[[Anatomy of a Fall]]''
+| style="text-align:center"| [[Neon (company)|Neon]]
+|-
+| ''[[Maestro (2023 film)|Maestro]]''
+| style="text-align:center" rowspan="2"| [[Netflix]]
+|-
+| ''[[May December]]''
+| style="text-align:center" rowspan="2"| {{Abbr|M/C|Musical or Comedy}}
+|-
+| style="text-align:center" rowspan="4"| 3
+| ''[[The Holdovers]]''
+| style="text-align:center"| [[Focus Features]]
+|-
+| ''[[Spider-Man: Across the Spider-Verse]]''
+| style="text-align:center" rowspan="2"| Animated
+| style="text-align:center"| [[Sony Pictures Motion Picture Group#Sony Pictures Releasing|Sony Pictures Releasing]]
+|-
+| ''[[The Super Mario Bros. Movie]]''
+| style="text-align:center"| Universal Pictures
+|-
+| ''[[The Zone of Interest (film)|The Zone of Interest]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| A24
+|-
+| style="text-align:center" rowspan="8"| 2
+| ''[[Air (2023 American film)|Air]]''
+| style="text-align:center" rowspan="2"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center" rowspan="2"| [[Amazon MGM Studios]]
+|-
+| ''[[American Fiction (film)|American Fiction]]''
+|-
+| ''[[The Boy and the Heron]]''
+| style="text-align:center"| Animated
+| style="text-align:center"| [[GKIDS]]
+|-
+| ''[[The Color Purple (2023 film)|The Color Purple]]''
+| style="text-align:center" rowspan="2"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| Warner Bros. Pictures
+|-
+| ''[[Fallen Leaves (film)|Fallen Leaves]]''
+| style="text-align:center"| [[Mubi (streaming service)|MUBI]]
+|-
+| ''[[Nyad (film)|Nyad]]''
+| style="text-align:center" rowspan="3"| Drama
+| style="text-align:center" rowspan="2"| Netflix
+|-
+| ''[[Rustin (film)|Rustin]]''
+|-
+| ''[[Saltburn (film)|Saltburn]]''
+| style="text-align:center"| Amazon MGM Studios
+|}
+
+====Films with multiple wins====
+The following films received multiple wins:
+
+{| class="wikitable"
+|-
+! Wins
+! Films
+! Category
+! Distributor
+|-
+| style="text-align:center"| 5
+| ''[[Oppenheimer (film)|Oppenheimer]]''
+| style="text-align:center" rowspan="2"| Drama
+| style="text-align:center"| [[Universal Pictures]]
+|-
+| rowspan="4" style="text-align:center"| 2
+| ''[[Anatomy of a Fall]]''
+| style="text-align:center"| [[Neon (company)|Neon]]
+|-
+| ''[[Barbie (film)|Barbie]]''
+| style="text-align:center" rowspan="3"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Warner Bros. Pictures]]
+|-
+| ''[[The Holdovers]]''
+| style="text-align:center"| [[Focus Features]]
+|-
+| ''[[Poor Things (film)|Poor Things]]''
+| style="text-align:center"| [[Searchlight Pictures]]
+|}
+
+===Television===
+{| class="wikitable" style="width=100%"
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Television Series – Drama|Best Television Series – Drama]]}}
+* '''''[[Succession (TV series)|Succession]]'' ([[HBO]])'''
+** ''[[1923 (TV series)|1923]]'' ([[Paramount+]])
+** ''[[The Crown (TV series)|The Crown]]'' ([[Netflix]])
+** ''[[The Diplomat (American TV series)|The Diplomat]]'' (Netflix)
+** ''[[The Last of Us (TV series)|The Last of Us]]'' (HBO)
+** ''[[The Morning Show (American TV series)|The Morning Show]]'' ([[Apple TV (streaming service)|Apple TV+]])
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Television Series – Musical or Comedy|Best Television Series – Musical or Comedy]]}}
+* '''''[[The Bear (TV series)|The Bear]]'' ([[FX (TV channel)|FX]] / [[Hulu]])'''
+** ''[[Abbott Elementary]]'' ([[American Broadcasting Company|ABC]])
+** ''[[Barry (TV series)|Barry]]'' (HBO)
+** ''[[Jury Duty (2023 TV series)|Jury Duty]]'' ([[Amazon Freevee]])
+** ''[[Only Murders in the Building]]'' (Hulu)
+** ''[[Ted Lasso]]'' (Apple TV+)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Limited or Anthology Series or Television Film|Best Limited Series, Anthology Series, or Motion Picture Made for Television]]}}
+* '''''[[Beef (TV series)|Beef]]'' (Netflix)'''
+** ''[[All the Light We Cannot See (miniseries)|All the Light We Cannot See]]'' (Netflix)
+** ''[[Daisy Jones & the Six]]'' ([[Amazon Prime Video|Prime Video]])
+** ''[[Fargo (TV series)|Fargo]]'' (FX)
+** ''[[Fellow Travelers (miniseries)|Fellow Travelers]]'' ([[Showtime (TV network)|Showtime]])
+** ''[[Lessons in Chemistry (miniseries)|Lessons in Chemistry]]'' (Apple TV+)
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Performance in Stand-Up Comedy on Television|Best Performance in Stand-Up Comedy on Television]]}}
+* '''[[Ricky Gervais]] – ''Ricky Gervais: Armageddon'' (Netflix)'''
+** [[Trevor Noah]] – ''Trevor Noah: Where Was I'' (Netflix)
+** [[Chris Rock]] – ''Chris Rock: Selective Outrage'' (Netflix)
+** [[Amy Schumer]] – ''Amy Schumer: Emergency Contact'' (Netflix)
+** [[Sarah Silverman]] – ''Sarah Silverman: Someone You Love'' (HBO)
+** [[Wanda Sykes]] – ''Wanda Sykes: I'm an Entertainer'' (Netflix)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor – Television Series Drama|Best Actor in a Television Series – Drama]]}}
+* '''[[Kieran Culkin]] – ''[[Succession (TV series)|Succession]]'' (HBO) as Roman Roy'''
+** [[Brian Cox (actor)|Brian Cox]] – ''Succession'' (HBO) as [[Logan Roy]]
+** [[Gary Oldman]] – ''[[Slow Horses]]'' (Apple TV+) as Jackson Lamb
+** [[Pedro Pascal]] – ''[[The Last of Us (TV series)|The Last of Us]]'' (HBO) as [[Joel (The Last of Us)|Joel Miller]]
+** [[Jeremy Strong]] – ''Succession'' (HBO) as [[Kendall Roy]]
+** [[Dominic West]] – ''[[The Crown (TV series)|The Crown]]'' (Netflix) as [[Charles III|Charles, Prince of Wales]]
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress – Television Series Drama|Best Actress in a Television Series – Drama]]}}
+* '''[[Sarah Snook]] – ''[[Succession (TV series)|Succession]]'' (HBO) as [[Shiv Roy|Siobhan "Shiv" Roy]]'''
+** [[Helen Mirren]] – ''[[1923 (TV series)|1923]]'' (Paramount+) as Cara Dutton
+** [[Bella Ramsey]] – ''[[The Last of Us (TV series)|The Last of Us]]'' (HBO) as [[Ellie (The Last of Us)|Ellie]]
+** [[Keri Russell]] – ''[[The Diplomat (American TV series)|The Diplomat]]'' (Netflix) as Katherine "Kate" Wyler
+** [[Imelda Staunton]] – ''[[The Crown (TV series)|The Crown]]'' (Netflix) as [[Elizabeth II|Queen Elizabeth II]]
+** [[Emma Stone]] – ''[[The Curse (American TV series)|The Curse]]'' (Showtime) as Whitney Siegel
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor – Television Series Musical or Comedy|Best Actor in a Television Series – Musical or Comedy]]}}
+* '''[[Jeremy Allen White]] – ''[[The Bear (TV series)|The Bear]]'' (FX / Hulu) as [[Carmy Berzatto|Carmen "Carmy" Berzatto]]'''
+** [[Bill Hader]] – ''[[Barry (TV series)|Barry]]'' (HBO) as Barry Berkman
+** [[Steve Martin]] – ''[[Only Murders in the Building]]'' (Hulu) as Charles-Haden Savage
+** [[Jason Segel]] – ''[[Shrinking (TV series)|Shrinking]]'' (Apple TV+) as Jimmy Laird
+** [[Martin Short]] – ''Only Murders in the Building'' (Hulu) as Oliver Putnam
+** [[Jason Sudeikis]] – ''[[Ted Lasso]]'' (Apple TV+) as Ted Lasso
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress – Television Series Musical or Comedy|Best Actress in a Television Series – Musical or Comedy]]}}
+* '''[[Ayo Edebiri]] – ''[[The Bear (TV series)|The Bear]]'' (FX / Hulu) as [[Sydney Adamu]]'''
+** [[Rachel Brosnahan]] – ''[[The Marvelous Mrs. Maisel]]'' (Prime Video) as Miriam "Midge" Maisel
+** [[Quinta Brunson]] – ''[[Abbott Elementary]]'' (ABC) as Janine Teagues
+** [[Elle Fanning]] – ''[[The Great (TV series)|The Great]]'' (Hulu) as [[Catherine the Great]]
+** [[Selena Gomez]] – ''[[Only Murders in the Building]]'' (Hulu) as Mabel Mora
+** [[Natasha Lyonne]] – ''[[Poker Face (TV series)|Poker Face]]'' ([[Peacock (streaming service)|Peacock]]) as Charlie Cale
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor – Miniseries or Television Film|Best Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television]]}}
+* '''[[Steven Yeun]] – ''[[Beef (TV series)|Beef]]'' (Netflix) as Danny Cho'''
+** [[Matt Bomer]] – ''[[Fellow Travelers (miniseries)|Fellow Travelers]]'' (Showtime) as Hawkins "Hawk" Fuller
+** [[Sam Claflin]] – ''[[Daisy Jones & the Six]]'' (Prime Video) as Billy Dunne
+** [[Jon Hamm]] – ''[[Fargo (TV series)|Fargo]]'' (FX) as Sheriff Roy Tillman
+** [[Woody Harrelson]] – ''[[White House Plumbers (miniseries)|White House Plumbers]]'' (HBO) as [[E. Howard Hunt]]
+** [[David Oyelowo]] – ''[[Lawmen: Bass Reeves]]'' (Paramount+) as [[Bass Reeves]]
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress – Miniseries or Television Film|Best Actress in a Limited Series, Anthology Series, or Motion Picture Made for Television]]}}
+* '''[[Ali Wong]] – ''[[Beef (TV series)|Beef]]'' (Netflix) as Amy Lau'''
+** [[Riley Keough]] – ''[[Daisy Jones & the Six]]'' (Prime Video) as Daisy Jones
+** [[Brie Larson]] – ''[[Lessons in Chemistry (miniseries)|Lessons in Chemistry]]'' (Apple TV+) as Elizabeth Zott
+** [[Elizabeth Olsen]] – ''[[Love & Death (miniseries)|Love & Death]]'' ([[HBO Max|Max]]) as [[Candy Montgomery]]
+** [[Juno Temple]] – ''[[Fargo (TV series)|Fargo]]'' (FX) as Dorothy "Dot" Lyon
+** [[Rachel Weisz]] – ''[[Dead Ringers (miniseries)|Dead Ringers]]'' (Prime Video) as Beverly Mantle / Elliot Mantle
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Best Supporting Actor on Television]]}}
+* '''[[Matthew Macfadyen]] – ''[[Succession (TV series)|Succession]]'' (HBO) as Tom Wambsgans'''
+** [[Billy Crudup]] – ''[[The Morning Show (American TV series)|The Morning Show]]'' (Apple TV+) as Cory Ellison
+** [[James Marsden]] – ''[[Jury Duty (2023 TV series)|Jury Duty]]'' (Amazon Freevee) as Himself
+** [[Ebon Moss-Bachrach]] – ''[[The Bear (TV series)|The Bear]]'' (FX / Hulu) as [[Richie Jerimovich|Richard "Richie" Jerimovich]]
+** [[Alan Ruck]] – ''Succession'' (HBO) as Connor Roy
+** [[Alexander Skarsgård]] – ''Succession'' (HBO) as Lukas Matsson
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Best Supporting Actress on Television]]}}
+* '''[[Elizabeth Debicki]] – ''[[The Crown (TV series)|The Crown]]'' (Netflix) as [[Diana, Princess of Wales]]'''
+** [[Abby Elliott]] – ''[[The Bear (TV series)|The Bear]]'' (FX / Hulu) as [[Natalie Berzatto]]
+** [[Christina Ricci]] – ''[[Yellowjackets (TV series)|Yellowjackets]]'' (Showtime) as Misty Quigley
+** [[J. Smith-Cameron]] – ''[[Succession (TV series)|Succession]]'' (HBO) as Gerri Kellman
+** [[Meryl Streep]] – ''[[Only Murders in the Building]]'' (Hulu) as Loretta Durkin
+** [[Hannah Waddingham]] – ''[[Ted Lasso]]'' (Apple TV+) as Rebecca Welton
+|}
+
+====Series with multiple nominations====
+The following television series received multiple nominations:
+
+{| class="wikitable"
+|-
+! Nominations
+! Series
+! Category
+! Distributor(s)
+|-
+| style="text-align:center"| 9
+| ''[[Succession (TV series)|Succession]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[HBO]]
+|-
+| style="text-align:center" rowspan="2"| 5
+| ''[[The Bear (TV series)|The Bear]]''
+| style="text-align:center" rowspan="2"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[FX (TV channel)|FX]] / [[Hulu]]
+|-
+| ''[[Only Murders in the Building]]''
+| style="text-align:center"| Hulu
+|-
+| style="text-align:center"| 4
+| ''[[The Crown (TV series)|The Crown]]''
+| style="text-align:center"| Drama
+| style="text-align:center" rowspan="2"| [[Netflix]]
+|-
+| style="text-align:center" rowspan="5"| 3
+| ''[[Beef (TV series)|Beef]]''
+| style="text-align:center" rowspan="3"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+|-
+| ''[[Daisy Jones & the Six]]''
+| style="text-align:center"| [[Amazon Prime Video|Prime Video]]
+|-
+| ''[[Fargo (TV series)|Fargo]]''
+| style="text-align:center"| FX
+|-
+| ''[[The Last of Us (TV series)|The Last of Us]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| HBO
+|-
+| ''[[Ted Lasso]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Apple TV (streaming service)|Apple TV+]]
+|-
+| style="text-align:center" rowspan="8"| 2
+| ''[[1923 (TV series)|1923]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[Paramount+]]
+|-
+| ''[[Abbott Elementary]]''
+| style="text-align:center" rowspan="2"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[American Broadcasting Company|ABC]]
+|-
+| ''[[Barry (TV series)|Barry]]''
+| style="text-align:center"| HBO
+|-
+| ''[[The Diplomat (American TV series)|The Diplomat]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| Netflix
+|-
+| ''[[Fellow Travelers (miniseries)|Fellow Travelers]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| [[Showtime (TV network)|Showtime]]
+|-
+| ''[[Jury Duty (2023 TV series)|Jury Duty]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Amazon Freevee]]
+|-
+| ''[[Lessons in Chemistry (miniseries)|Lessons in Chemistry]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center" rowspan="2"| Apple TV+
+|-
+| ''[[The Morning Show (American TV series)|The Morning Show]]''
+| style="text-align:center"| Drama
+|}
+
+====Series with multiple wins====
+The following series received multiple wins:
+
+{| class="wikitable"
+|-
+! Wins
+! Series
+! Category
+! Distributor(s)
+|-
+| style="text-align:center"| 4
+| ''[[Succession (TV series)|Succession]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[HBO]]
+|-
+| rowspan="2" style="text-align:center"| 3
+| ''[[The Bear (TV series)|The Bear]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[FX (TV channel)|FX]] / [[Hulu]]
+|-
+| ''[[Beef (TV series)|Beef]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| [[Netflix]]
+|}
+
+==Presenters==
+{| class="wikitable"
+! Name(s)
+! Role
+|-
+| [[Jared Leto]]<br>[[Angela Bassett]]
+| Presented the awards for [[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Supporting Actress – Motion Picture]] and [[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Supporting Actor – Motion Picture]]
+|-
+| [[Orlando Bloom]]<br>[[Amanda Seyfried]]
+| Presented the award for [[Golden Globe Award for Best Actress – Miniseries or Television Film|Best Actress – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Hunter Schafer]]<br>[[Justin Hartley]]
+| Presented the award for [[Golden Globe Award for Best Actor – Miniseries or Television Film|Best Actor – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Jonathan Bailey]]<br>[[Julia Garner]]
+| Presented the award for [[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Best Supporting Actress – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Keri Russell]]<br>[[Ray Romano]]
+| Presented the award for [[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Best Supporting Actor – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Shameik Moore]]<br>[[Hailee Steinfeld]]<br>[[Daniel Kaluuya]]
+| Presented the award for [[Golden Globe Award for Best Screenplay|Best Screenplay]]
+|-
+| [[George Lopez]]<br>[[Gabriel Iglesias]]
+| Presented the award for [[Golden Globe Award for Best Actor – Television Series Musical or Comedy|Best Actor in a Television Series – Musical or Comedy]]
+|-
+| [[Jim Gaffigan]]
+| Presented the award for [[Golden Globe Award for Best Performance in Stand-Up Comedy on Television|Best Performance in Stand-Up Comedy on Television]]
+|-
+| [[Rose McIver]]<br>[[Utkarsh Ambudkar]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Non-English Language|Best Motion Picture – Non-English Language]]
+|-
+| [[Kevin Costner]]<br>[[America Ferrera]]
+| Presented the awards for [[Golden Globe Award for Best Actress – Television Series Musical or Comedy|Best Actress in a Television Series – Musical or Comedy]] and [[Golden Globe Award for Best Actor – Television Series Drama|Best Actor in a Television Series – Drama]]
+|-
+| [[Natalie Portman]]<br>[[Florence Pugh]]
+| Presented the award for [[Golden Globe Award for Best Animated Feature Film|Best Motion Picture – Animated]]
+|-
+| [[Ben Affleck]]<br>[[Matt Damon]]
+| Presented the award for [[Golden Globe Award for Best Director|Best Director]]
+|-
+| [[Michelle Yeoh]]<br>[[Naomi Watts]]
+| Presented the awards for [[Golden Globe Award for Best Actress – Motion Picture Comedy or Musical|Best Actress in a Motion Picture – Musical or Comedy]] and [[Golden Globe Award for Best Actor – Motion Picture Drama|Best Actor in a Motion Picture – Drama]]
+|-
+| [[Jon Batiste]]<br>[[Andra Day]]
+| Presented the awards for [[Golden Globe Award for Best Original Score|Best Original Score]] and [[Golden Globe Award for Best Original Song|Best Original Song]]
+|-
+| [[Mark Hamill]]
+| Presented the award for [[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]]
+|-
+| [[Simu Liu]]<br>[[Issa Rae]]
+| Presented the awards for [[Golden Globe Award for Best Limited or Anthology Series or Television Film|Best Limited Series, Anthology Series, or Motion Picture Made for Television]] and [[Golden Globe Award for Best Television Series – Musical or Comedy|Best Television Series – Musical or Comedy]]
+|-
+| [[Dua Lipa]]<br>[[Elizabeth Banks]]
+| Presented the award for [[Golden Globe Award for Best Actress – Television Series Drama|Best Actress – Television Series Drama]]
+|-
+| [[Gabriel Macht]]<br>[[Patrick J. Adams]]<br>[[Sarah Rafferty]]<br>[[Gina Torres]]
+| Presented the award for [[Golden Globe Award for Best Television Series – Drama|Best Television Series – Drama]]
+|-
+| [[Will Ferrell]]<br>[[Kristen Wiig]]
+| Presented the award for [[Golden Globe Award for Best Actor – Motion Picture Musical or Comedy|Best Actor in a Motion Picture – Musical or Comedy]]
+|-
+| [[Annette Bening]]<br>[[Jodie Foster]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]]
+|-
+| [[Don Cheadle]]<br>[[Kate Beckinsale]]
+| Presented the award for [[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Motion Picture – Drama]]
+|-
+| [[Oprah Winfrey]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Drama|Best Motion Picture – Drama]]
+|}
+
+==Reception==
+
+===Criticism of Jo Koy's opening monologue===
+{{External video|video1=[https://www.youtube.com/watch?v=KvSHHnucouo Jo Koy Opening Monologue {{!}} 81st Annual Golden Globes]|float=right}}
+[[File:Jo Koy by Gage Skidmore.jpg|thumb|upright|[[Jo Koy]], host of the 81st Golden Globe Awards]]
+
+Host [[Jo Koy]]'s opening [[monologue]] was met with criticism from viewers and critics with many describing his jokes as "cringeworthy", "painful", and "unfunny". Chelsey Sanchez of ''[[Harper's Bazaar]]'' described the monologue as "awkward" and "distasteful".<ref>{{cite web |url=https://www.yahoo.com/lifestyle/twitter-had-lot-jo-koys-040500610.html |title=Twitter Had a Lot to Say About Jo Koy's Painfully Awkward Golden Globes Monologue |first=Chelsey |last=Sanchez |publisher=[[Yahoo]]! |website=[[Harper's Bazaar]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108054037/https://www.yahoo.com/lifestyle/twitter-had-lot-jo-koys-040500610.html |url-status=live }}</ref> Koy was also criticized for putting blame on his writers during the monologue, coming after the lengthy [[2023 Writers Guild of America strike]]. Justin Curto of ''[[Vulture (website)|Vulture]]'' noted that when some of his jokes fell flat, Koy "immediately threw his writers under the bus... He yelled. 'Yo, shut up. You're kidding me, right. Slow down. I wrote some of these and they're the ones you're laughing at{{'"}}.<ref>{{cite web |url=https://www.vulture.com/2024/01/golden-globes-2024-jo-koy-monologue-writers.html |title=Jo Koy's Golden Globes Monologue Might Send the Writers Back on Strike |first=Justin |last=Curto |work=[[Vulture (website)|Vulture]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108040727/https://www.vulture.com/2024/01/golden-globes-2024-jo-koy-monologue-writers.html |url-status=live }}</ref> Marlow Stern of ''[[Rolling Stone]]'' noted that many of Koy's jokes drew "groans" and "boos" from the audience.<ref>{{cite magazine |url=https://www.rollingstone.com/tv-movies/tv-movie-news/golden-globes-host-jo-koy-booed-during-monologue-blames-writers-1234941800/ |title=Golden Globes Host Jo Koy Booed During Monologue, Blames His Writers |first=Marlow |last=Stern |magazine=[[Rolling Stone]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108013406/https://www.rollingstone.com/tv-movies/tv-movie-news/golden-globes-host-jo-koy-booed-during-monologue-blames-writers-1234941800/ |url-status=live }}</ref>
+
+Among jokes that drew the most ire were those about the film ''[[Barbie (film)|Barbie]]'', and attending nominees [[Robert De Niro]], [[Meryl Streep]] and [[Taylor Swift]]; the latter's reaction went viral.<ref>{{cite web |url=https://www.usatoday.com/story/entertainment/movies/2024/01/07/jo-koy-golden-globes-opening-monologue-2024/72145197007/ |title=Jo Koy's Golden Globes opening monologue met with blank stares: 'I got the gig 10 days ago!' |first=Naledi |last=Ushe |work=[[USA Today]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108054110/https://www.usatoday.com/story/entertainment/movies/2024/01/07/jo-koy-golden-globes-opening-monologue-2024/72145197007/ |url-status=live }}</ref><ref>{{cite web |url=https://deadline.com/2024/01/jo-koy-joke-taylor-swift-golden-globes-video-1235697869/ |title=Jo Koy Takes Shot at Taylor Swift at the Golden Globes & Her Reaction Goes Viral |first=Amanda |last=Tinoco |work=[[Deadline Hollywood]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108032030/https://deadline.com/2024/01/jo-koy-joke-taylor-swift-golden-globes-video-1235697869/ |url-status=live }}</ref><ref>{{cite web |url=https://www.huffpost.com/entry/taylor-swift-reaction-jo-koy-joke-golden-globes_n_659b6356e4b075f4cfd2d99a |title=Taylor Swift Seems None Too Pleased with Jo Koy's Joke About Her at Golden Globes |first=Daniel |last=Welsh |work=[[HuffPost]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108033615/https://www.huffpost.com/entry/taylor-swift-reaction-jo-koy-joke-golden-globes_n_659b6356e4b075f4cfd2d99a |url-status=live }}</ref> Shirley Li of ''[[The Atlantic]]'' wrote: "Practically every joke failed to land, mostly because the punchlines were dated or obvious."<ref>{{cite web |url=https://www.theatlantic.com/culture/archive/2024/01/golden-globes-jo-koy-host/677054/ |title=Jo Koy's Biggest Mistake at the Golden Globes |first=Shirley |last=Li |work=[[The Atlantic]] |date=January 7, 2024 |access-date=January 8, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108060200/https://www.theatlantic.com/culture/archive/2024/01/golden-globes-jo-koy-host/677054/ |url-status=live }}</ref> Nicole Sperling of ''[[The New York Times]]'', who was in the audience that night, wrote that she had "never seen an audience rebel against an emcee so quickly" and cited a prominent film director describing the monologue as a "disaster".<ref>{{cite web |url=https://www.newsweek.com/jo-koy-golden-globes-host-canceled-worst-jokes-memes-1858494 |title=Golden Globes Host Jo Koy Sparks Fierce Backlash: 'Disaster' |first=Shannon |last=Power |work=[[Newsweek]] |date=January 8, 2024 |access-date=January 10, 2024 |archive-date=January 9, 2024 |archive-url=https://web.archive.org/web/20240109233506/https://www.newsweek.com/jo-koy-golden-globes-host-canceled-worst-jokes-memes-1858494 |url-status=live }}</ref>
+
+Conversely, four-time [[Academy Awards]] host and comedian [[Whoopi Goldberg]] defended Koy on ''[[The View]]'', saying: "These hosting gigs are brutal. They're just brutal. If you don't know the room, if you've not been in these rooms before and you're sort of thrust out there, it's hit or miss. Now, I love Jo Koy, he makes me crazy because he's funny. I don't know whether it was the room, I don't know whether it was the jokes, I didn't get to see it. But I do know, that he is as good as it gets when it comes to stand-ups and it is not an easy gig."<ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/joy-koy-golden-globes-hosting-defended-whoopi-goldberg-steven-martin-1235783420/ |title=Jo Koy Defended by Whoopi Goldberg and Steve Martin After Golden Globes Backlash: 'Hosting Gigs Are Just Brutal' |first=Abbey |last=White |work=[[The Hollywood Reporter]] |date=January 9, 2024 |access-date=January 10, 2024 |archive-date=January 9, 2024 |archive-url=https://web.archive.org/web/20240109231138/https://www.hollywoodreporter.com/tv/tv-news/joy-koy-golden-globes-hosting-defended-whoopi-goldberg-steven-martin-1235783420/ |url-status=live }}</ref> Actor and comedian [[Steve Martin]] also threw his support behind Koy on [[Threads (social network)|Threads]], writing: "I tip my hat to anyone who steps out on stage to host a live awards show. It's a very difficult job and not for the squeamish. I know because I'm still throwing up from the last time I did it in 2010. So, Congratulations to Jo Koy, who took on the toughest gig in show business, hit, missed, was light on his feet, and now has twenty minutes of new material for his stand up!"<ref>{{cite web |url=https://variety.com/2024/tv/news/steve-martin-defends-jo-koy-golden-globes-host-bad-reviews-1235867919/ |title=Steve Martin Supports Golden Globes Host Jo Koy Amid Bad Reviews: He 'Hit, Missed, Was Light on His Feet and Now Has 20 Minutes' of New Stand-Up Material |first=Zac |last=Sharf |work=[[Variety (magazine)|Variety]] |date=January 10, 2024 |access-date=January 11, 2024 |archive-date=January 10, 2024 |archive-url=https://web.archive.org/web/20240110233917/https://variety.com/2024/tv/news/steve-martin-defends-jo-koy-golden-globes-host-bad-reviews-1235867919/ |url-status=live }}</ref>
+
+Additionally, comedian [[Michael Che]] supported Koy by writing that "comedians should boycott hosting award shows" on [[Instagram]].<ref>{{cite web |url=https://themessenger.com/entertainment/michael-che-says-comedians-should-boycott-hosting-awards-shows |title=Michael Che Says 'Comedians Should Boycott Hosting Award Shows' |first=Glenn |last=Garner |work=[[The Messenger (website)|The Messenger]] |date=January 10, 2024 |access-date=January 11, 2024 |archive-url=https://web.archive.org/web/20240109233214/https://themessenger.com/entertainment/michael-che-says-comedians-should-boycott-hosting-awards-shows |archive-date=January 9, 2024 |url-status=dead}}</ref> When questioned about Koy's jokes aimed toward her film ''Barbie'', director [[Greta Gerwig]] replied that she was not offended.<ref>{{cite web |url=https://variety.com/2024/film/news/greta-gerwig-jo-koy-barbie-golden-globes-joke-boobs-1235867987/ |title=Greta Gerwig Responds to Jo Koy's Golden Globes Joke About Barbie's 'Big Boobies' After It Was Slammed as Sexist: 'Well, He's Not Wrong' |first=Zac |last=Sharf |work=[[Variety (magazine)|Variety]] |date=January 10, 2024 |access-date=January 11, 2024 |archive-date=January 11, 2024 |archive-url=https://web.archive.org/web/20240111000501/https://variety.com/2024/film/news/greta-gerwig-jo-koy-barbie-golden-globes-joke-boobs-1235867987/ |url-status=live }}</ref> On ''[[Watch What Happens Live with Andy Cohen]]'', actor and comedian [[Kevin Hart]] said he has "no reaction" to the backlash and went on to praise Koy for being a "phenomenal comedian".<ref>{{cite web |url=https://www.bravotv.com/watch-what-happens-live-with-andy-cohen/videos/kevin-hart-weighs-in-on-jo-koy-hosting-the-golden |title=Kevin Hart Weighs in on Jo Koy Hosting the Golden Globes |publisher=[[Bravo (American TV network)|Bravo TV]] |date=January 12, 2024 |access-date=January 13, 2024 |archive-date=January 13, 2024 |archive-url=https://web.archive.org/web/20240113130003/https://www.bravotv.com/watch-what-happens-live-with-andy-cohen/videos/kevin-hart-weighs-in-on-jo-koy-hosting-the-golden |url-status=live }}</ref> In a [[Facebook]] post by Filipino actor and comedian [[Michael V.]], he posted: "I think Jo Koy's Golden Globes jokes are funny, direct, and pretty much self-explanatory. The last thing Jo Koy should be doing is trying to explain it to people who purposely choose NOT to understand and appreciate them."<ref>{{cite web |url=https://www.philstar.com/entertainment/2024/01/12/2325360/michael-v-jo-koys-golden-globes-hosting-funny-pretty-much-self-explanatory |title=Michael V on Jo Koy's Golden Globes hosting: 'Funny, pretty much self-explanatory' |first=Kathleen A. |last=Llemit |work=[[The Philippine Star]] |date=January 12, 2024 |access-date=January 13, 2024 |archive-date=January 13, 2024 |archive-url=https://web.archive.org/web/20240113185202/https://www.philstar.com/entertainment/2024/01/12/2325360/michael-v-jo-koys-golden-globes-hosting-funny-pretty-much-self-explanatory |url-status=live }}</ref>
+
+Koy responded to the criticism in an interview with ''[[Good Morning America]]'', admitting: "I'd be lying if [I said] it doesn't hurt," but also admitted, "I had fun. You know, it was a moment that I'll always remember. Hosting is just a tough gig. Yes, I'm a stand-up comic, but that hosting position it's a different style. I kind of went in and did the writer's thing. We had ten days to write this monologue. It was a crash course. I feel bad, but I got to still say I loved what I did."<ref>{{cite web |url=https://variety.com/2024/tv/news/jo-koy-addresses-golden-globes-monologue-taylor-swift-joke-1235864904/ |title=Golden Globes Host Jo Koy Confronts Bad Reviews, Admits Taylor Swift Joke Was 'Weird' and 'Flat': 'I'd Be Lying' If I Said Backlash 'Doesn't Hurt' |first=Zac |last=Sharf |work=[[Variety (magazine)|Variety]] |date=January 8, 2024 |access-date=January 10, 2024 |archive-date=January 10, 2024 |archive-url=https://web.archive.org/web/20240110013815/https://variety.com/2024/tv/news/jo-koy-addresses-golden-globes-monologue-taylor-swift-joke-1235864904/ |url-status=live }}</ref> In his first stand-up set afterward, Koy mocked the Hollywood celebrities, alluding: "Lot a marshmallows, man. They're delicious, but goddamn, they're soft. I just come from a different time. I see the changes that are happening. I get it, but goddamn, can we fucking laugh at ourselves?"<ref>{{cite web |url=https://variety.com/2024/awards/news/jo-koy-slams-golden-globes-stand-up-jokes-1235870905/ |title=Jo Koy Performs First Stand-Up Set Since Bombing at the Golden Globes, Mocks 'Soft' Celeb Crowd: 'Can We F**king Laugh at Ourselves?' |first=Anne |last=McCarthy |work=[[Variety (magazine)|Variety]] |date=January 13, 2024 |access-date=January 15, 2024 |archive-date=January 15, 2024 |archive-url=https://web.archive.org/web/20240115002120/https://variety.com/2024/awards/news/jo-koy-slams-golden-globes-stand-up-jokes-1235870905/ |url-status=live }}</ref>
+
+==See also==
+{{div col|colwidth=20em}}
+
+* [[51st Annie Awards]]
+* [[96th Academy Awards]]
+* [[77th British Academy Film Awards]]
+* [[29th Critics' Choice Awards]]
+* [[44th Golden Raspberry Awards]]
+* [[39th Independent Spirit Awards]]
+* [[28th Satellite Awards]]
+* [[51st Saturn Awards]]
+* [[30th Screen Actors Guild Awards]]
+
+{{div col end}}
+
+==References==
+{{Reflist}}
+
+==External links==
+* {{Official|https://goldenglobes.com|Golden Globes official website}}
+* {{IMDb title|30036660}}
+* [https://goldenglobes.com/articles/golden-globes-changes-add-up-to-success/ Golden Globes Changes Add Up to Success] at [[Golden Globe Awards|Golden Globes]]
+* [https://goldenglobes.com/articles/jo-koy-to-host-81st-annual-golden-globe-awards/ Jo Koy to Host 81st Annual Golden Globe Awards] at [[Golden Globe Awards|Golden Globes]]
+* [https://goldenglobes.com/articles/the-81st-golden-globe-awards-to-air-live-on-cbs/ The 81st Golden Globe Awards to Air Live on CBS] at [[Golden Globe Awards|Golden Globes]]
+* [https://goldenglobes.com/articles/presenters-announced-for-the-81st-annual-golden-globe-awards/ Presenters Announced for the 81st Annual Golden Globe Awards] at [[Golden Globe Awards|Golden Globes]]
+* [https://goldenglobes.com/articles/the-81st-golden-globe-awards-for-the-year-ended-december-31-2023-press-release/ The 81st Golden Globe Awards for the Year Ended December 31, 2023 Press Release] at [[Golden Globe Awards|Golden Globes]]
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards, 81}}
+[[Category:2023 film awards|Golden Globe]]
+[[Category:January 2024 in the United States]]
+[[Category:2023 television awards|Golden Globe]]
+[[Category:Golden Globe Awards ceremonies|*081]]
+[[Category:2024 in Los Angeles County, California]]
+[[Category:2024 awards in the United States|Golden Globe]]

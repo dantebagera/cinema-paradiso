@@ -34,7 +34,7 @@ async function fixtures(page, { delay = 0, detailsDelay = 0, fail = false, lists
     const start = pageNumber === 1 ? 2 : 22;
     const results = Array.from({ length: 20 }, (_, i) => movie(start + i + (source === 'similar' ? 10 : 0)));
     if (source === 'recommendations' && pageNumber === 1) results[0] = selected;
-    await route.fulfill({ json: { results: results.filter((item) => item.tmdb_id !== params.get('tmdb_id')).map((item) => ({ ...item, relationship_source: source })), source, page: pageNumber, page_size: 20, total_pages: 2, total_results: 40, has_previous: pageNumber > 1, has_next: pageNumber < 2 } });
+    await route.fulfill({ json: { results: results.filter((item) => item.tmdb_id !== params.get('tmdb_id')).map((item) => ({ ...item, relationship_source: source })), source, page: pageNumber, page_size: 20, source_limit: 100, total_pages: 2, total_results: 40, has_previous: pageNumber > 1, has_next: pageNumber < 2 } });
     recorded.completed = true;
   });
   return requests;
@@ -203,6 +203,89 @@ test('View all keeps source, page, ownership and card position through inline ex
     const workspace = element.closest('.workspace')?.getBoundingClientRect();
     return Boolean(card && workspace && card.top >= workspace.top && card.bottom <= workspace.bottom);
   })).toBe(true);
+});
+
+test('bounded View all shows an exact total and stops at the final page for each source', async ({ page }) => {
+  await fixtures(page);
+  const recommended = Array.from({ length: 100 }, (_, index) => ({ ...movie(1000 + index), relationship_source: 'recommendations' }));
+  const similar = Array.from({ length: 100 }, (_, index) => ({ ...movie(2000 + index), relationship_source: 'similar' }));
+  let releaseSummary;
+  const summaryGate = new Promise((resolve) => { releaseSummary = resolve; });
+  await page.route('**/api/tmdb/related**', async (route) => {
+    const params = new URL(route.request().url()).searchParams;
+    const source = params.get('source') || 'all';
+    const results = source === 'all' ? [...recommended, ...similar] : source === 'similar' ? similar : recommended;
+    const pageSize = Number(params.get('page_size') || 20);
+    if (params.get('summary') === '1') {
+      if (source === 'all') await summaryGate;
+      return route.fulfill({ json: {
+        source, page_size: pageSize, source_limit: 100, total_results: results.length,
+        total_pages: Math.ceil(results.length / pageSize),
+        source_counts: { recommendations: source === 'similar' ? 0 : 100, similar: source === 'recommendations' ? 0 : 100 }
+      } });
+    }
+    const pageNumber = Number(params.get('page') || 1);
+    const start = (pageNumber - 1) * pageSize;
+    return route.fulfill({ json: {
+      source, page: pageNumber, page_size: pageSize, source_limit: 100,
+      results: results.slice(start, start + pageSize), total_results: null, total_pages: null,
+      has_previous: pageNumber > 1, has_next: start + pageSize < results.length
+    } });
+  });
+  try {
+    await expandSeed(page);
+    await expanded(page).getByRole('button', { name: 'View all', exact: true }).click();
+    const pager = page.getByRole('navigation', { name: 'TMDB relationship pagination', exact: true }).first();
+    await expect(page.getByRole('heading', { name: 'Related Movie 1000', exact: true })).toBeVisible();
+    await expect(page.getByText('Counting total…', { exact: false })).toBeVisible();
+    releaseSummary();
+    await expect(pager).toContainText('of 200');
+    await expect(page.getByText('Browse limit: up to 100 per source.', { exact: false })).toBeVisible();
+    const pageSize = await page.locator('.discover-grid > .unified-movie-card').count();
+    const lastPage = Math.ceil(200 / pageSize);
+    for (let current = 1; current < lastPage; current += 1) {
+      await pager.getByRole('button', { name: 'Next', exact: true }).click();
+      await expect(pager).toContainText(`Page ${current + 1} of ${lastPage}`);
+    }
+    await expect(page.locator('.discover-grid > .unified-movie-card')).toHaveCount(200 - (lastPage - 1) * pageSize);
+    await expect(pager.getByRole('button', { name: 'Next', exact: true })).toBeDisabled();
+    await page.getByLabel('Related movie sources').getByRole('button', { name: 'Similar', exact: true }).click();
+    await expect(pager).toContainText('of 100');
+    await expect(page.getByRole('heading', { name: 'Related Movie 2000', exact: true })).toBeVisible();
+  } finally {
+    releaseSummary();
+  }
+});
+
+test('a failed relationship count preserves loaded cards and can be retried', async ({ page }) => {
+  await fixtures(page);
+  let failSummary = true;
+  await page.route('**/api/tmdb/related**', async (route) => {
+    const params = new URL(route.request().url()).searchParams;
+    if (params.get('summary') === '1') {
+      if (failSummary) return route.fulfill({ status: 502, json: { error: 'Relationship provider unavailable' } });
+      return route.fulfill({ json: { source: 'all', page_size: 20, source_limit: 100, total_results: 40, total_pages: 2 } });
+    }
+    const pageNumber = Number(params.get('page') || 1);
+    const results = pageNumber === 1
+      ? [selected, ...Array.from({ length: 19 }, (_, index) => movie(index + 3))]
+      : Array.from({ length: 20 }, (_, index) => movie(index + 22));
+    return route.fulfill({ json: {
+      source: 'all', page: pageNumber, page_size: 20, source_limit: 100, results,
+      total_results: null, total_pages: null, has_previous: pageNumber > 1, has_next: pageNumber === 1
+    } });
+  });
+  await expandSeed(page);
+  await expanded(page).getByRole('button', { name: 'View all', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Ready or Not', exact: true })).toBeVisible();
+  await expect(page.getByText('Exact count unavailable.', { exact: false })).toBeVisible();
+  const pager = page.getByRole('navigation', { name: 'TMDB relationship pagination', exact: true }).first();
+  await pager.getByRole('button', { name: 'Next', exact: true }).click();
+  await expect(pager).toContainText('Page 2');
+  failSummary = false;
+  await page.getByRole('button', { name: 'Retry count', exact: true }).click();
+  await expect(pager).toContainText('of 40');
+  await expect(page.getByText('Exact count unavailable.', { exact: false })).toHaveCount(0);
 });
 
 test('provider failure remains local and short desktop keeps all corners visible', async ({ page }) => {

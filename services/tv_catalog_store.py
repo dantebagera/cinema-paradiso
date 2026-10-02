@@ -7,7 +7,7 @@ import tempfile
 import threading
 
 
-TV_SCHEMA_VERSION = 2
+TV_SCHEMA_VERSION = 4
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS tv_meta(key TEXT PRIMARY KEY, value TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS series(
@@ -15,6 +15,27 @@ CREATE TABLE IF NOT EXISTS series(
  title TEXT NOT NULL, metadata TEXT NOT NULL DEFAULT '{}', updated_at REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS series_curation(
  series_id INTEGER PRIMARY KEY REFERENCES series(id), watchlisted INTEGER NOT NULL DEFAULT 0 CHECK(watchlisted IN (0,1)));
+CREATE TABLE IF NOT EXISTS series_hydration(
+ series_id INTEGER PRIMARY KEY REFERENCES series(id), status TEXT NOT NULL,
+ season_count INTEGER NOT NULL DEFAULT 0, episode_count INTEGER NOT NULL DEFAULT 0,
+ updated_at REAL NOT NULL, error TEXT NOT NULL DEFAULT '');
+CREATE TABLE IF NOT EXISTS series_viewing_cursor(
+ series_id INTEGER PRIMARY KEY REFERENCES series(id), episode_id INTEGER NOT NULL REFERENCES episodes(id),
+ played_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS series_watched_actions(
+ series_id INTEGER PRIMARY KEY REFERENCES series(id), action_id TEXT NOT NULL, created_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS series_watched_action_marks(
+ series_id INTEGER NOT NULL REFERENCES series(id), episode_id INTEGER NOT NULL REFERENCES episodes(id),
+ revision INTEGER NOT NULL, PRIMARY KEY(series_id,episode_id));
+CREATE TABLE IF NOT EXISTS series_poster_overrides(
+ series_id INTEGER PRIMARY KEY REFERENCES series(id), image BLOB NOT NULL,
+ mime TEXT NOT NULL, updated_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS tv_custom_lists(
+ id TEXT PRIMARY KEY, name TEXT NOT NULL, created_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS tv_custom_list_members(
+ list_id TEXT NOT NULL REFERENCES tv_custom_lists(id) ON DELETE CASCADE,
+ series_id INTEGER NOT NULL REFERENCES series(id), added_at REAL NOT NULL,
+ PRIMARY KEY(list_id,series_id));
 CREATE TABLE IF NOT EXISTS series_external_ids(
  series_id INTEGER NOT NULL REFERENCES series(id), provider TEXT NOT NULL,
  value TEXT NOT NULL, UNIQUE(provider,value), PRIMARY KEY(series_id,provider));
@@ -45,6 +66,18 @@ CREATE TABLE IF NOT EXISTS playback_progress(
 CREATE TABLE IF NOT EXISTS watch_events(id INTEGER PRIMARY KEY, episode_id INTEGER REFERENCES episodes(id), event TEXT NOT NULL, created_at REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS ingestion_candidates(
  id INTEGER PRIMARY KEY, fingerprint TEXT NOT NULL UNIQUE, payload TEXT NOT NULL, state TEXT NOT NULL, reason TEXT NOT NULL, created_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS tv_path_assignments(
+ path TEXT PRIMARY KEY, kind TEXT NOT NULL CHECK(kind IN ('folder','file')),
+ series_id INTEGER NOT NULL REFERENCES series(id), approved_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS tv_discovery_units(
+ path TEXT PRIMARY KEY, state TEXT NOT NULL, payload TEXT NOT NULL,
+ updated_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS tv_exclusions(
+ path TEXT PRIMARY KEY, kind TEXT NOT NULL CHECK(kind IN ('folder','file')),
+ reason TEXT NOT NULL, created_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS tv_bulk_actions(
+ id INTEGER PRIMARY KEY, action TEXT NOT NULL, series_ids TEXT NOT NULL,
+ paths TEXT NOT NULL, outcome TEXT NOT NULL, created_at REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS metadata_events(id INTEGER PRIMARY KEY, series_id INTEGER REFERENCES series(id), event TEXT NOT NULL, payload TEXT NOT NULL, created_at REAL NOT NULL);
 CREATE INDEX IF NOT EXISTS tv_episode_series ON episodes(series_id,season_number,episode_number);
 CREATE INDEX IF NOT EXISTS tv_binding_file ON episode_file_bindings(file_id);
@@ -126,7 +159,7 @@ class TVCatalogStore:
         with self._lock, closing(sqlite3.connect(f'{source.as_uri()}?mode=ro', uri=True)) as backup:
             if backup.execute('PRAGMA integrity_check').fetchone()[0] != 'ok':
                 raise ValueError('Backup integrity failed')
-            if backup.execute('PRAGMA user_version').fetchone()[0] not in {1, TV_SCHEMA_VERSION}:
+            if backup.execute('PRAGMA user_version').fetchone()[0] not in {1, 2, 3, TV_SCHEMA_VERSION}:
                 raise ValueError('Backup schema mismatch')
             if backup.execute('PRAGMA foreign_key_check').fetchall():
                 raise ValueError('Backup relationships are invalid')

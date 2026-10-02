@@ -1,0 +1,21 @@
+.movie-awards { display: inline-flex; align-items: center; gap: 12px; flex: 0 0 auto; color: var(--projector-gold); }
+.movie-award-pair { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; border: 0; border-radius: 0; padding: 0; background: transparent; color: inherit; line-height: 1; white-space: nowrap; }
+.movie-award-pair strong { font-size: 16px; font-weight: 900; }
+.movie-award-pair img { width: auto; height: 24px; object-fit: contain; }
+.movie-award-pair:focus-visible { outline: 2px solid var(--projector-gold); outline-offset: 3px; }
+.unified-rating-row:has(.movie-awards) { flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.unified-rating-row > .movie-awards { margin-left: auto; }
+.unified-movie-header-meta > .movie-awards { margin-right: 4px; align-self: flex-start; }
+.movie-awards-person { position: absolute; inset: 0; display: block; pointer-events: none; }
+.movie-awards-person > .movie-award-pair { position: absolute; right: 6px; width: 28px; height: var(--person-award-row-height, 28px); justify-content: center; gap: 2px; pointer-events: auto; }
+.movie-awards-person > button { cursor: pointer; }
+.movie-awards-person > .movie-award-oscar { top: 76px; }
+.movie-awards-person > .movie-award-golden_globe { top: calc(82px + var(--person-award-row-height, 28px)); }
+.movie-awards-person .movie-award-pair strong { flex: 0 0 auto; width: auto; max-width: none; overflow: visible; text-overflow: clip; font-size: 11px; font-weight: 900; }
+.movie-awards-person .movie-award-pair img { min-width: 0; height: min(20px, calc(var(--person-award-row-height, 28px) - 2px)); }
+@media (min-width: 721px) {
+  .unified-movie-card-expanded .movie-expanded-people-grid .person-card-awards { container-type: inline-size; }
+  /* Fit the selected control area; portrait and grid sizing remain owned by movieRelationships.css. */
+  .unified-movie-card-expanded .movie-awards-person { --person-award-row-height: clamp(12px, calc((min(106px, 100cqw) * 132 / 106 - 74px) / 2), 28px); }
+  .unified-movie-card-expanded .unified-movie-header-meta { flex-wrap: wrap; max-width: 270px; }
+}

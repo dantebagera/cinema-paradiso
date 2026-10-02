@@ -1,0 +1,19 @@
+{
+  "globe_les_girls.csv": {
+    "fixture_sha256": "2887542167de71ab367829d5f8cb5ecc5a0edce411887f49d13ead47906a9f3a",
+    "license": "CC0-1.0",
+    "original_dataset": "https://www.kaggle.com/datasets/unanimad/golden-globe-awards",
+    "selection": "win=True; film or nominee equals Les Girls",
+    "source_revision": "8415fd4eedd124d739d75430853796e13ded1009",
+    "source_sha256": "ae99a5029bdfb8089fccd6da65177d2eae2757b947f850c045b357db8679bfee",
+    "source_url": "https://raw.githubusercontent.com/prasertcbs/basic-dataset/8415fd4eedd124d739d75430853796e13ded1009/golden_globe_awards.csv"
+  },
+  "oscar_historical.tsv": {
+    "fixture_sha256": "732da48193d0f96fa0409ecfa950c3f439720a45dc2568efb28d21c3c39fed88",
+    "license": "BSD-2-Clause",
+    "selection": "Winner=True; Hindenburg film rows plus ceremony 1 ACTOR winning row",
+    "source_revision": "c5e9716b7e020e70205d6b95f5a5678526c1b45f",
+    "source_sha256": "3b1d39eedad7303468b83323f51bd1069289a2710ff9873efc4b4298ae1bba78",
+    "source_url": "https://raw.githubusercontent.com/DLu/oscar_data/c5e9716b7e020e70205d6b95f5a5678526c1b45f/oscars.csv"
+  }
+}

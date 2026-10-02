@@ -1,0 +1,619 @@
+{{Oscars short description|films-year=2017}}
+{{Use American English|date=February 2020}}
+{{Use mdy dates|date=January 2018}}
+{{Infobox film awards
+ | number           = 90
+ | award            = Academy Awards
+ | image            = 2018 Oscars Official Poster.png
+ | alt              = Poster for the 2018 Oscars
+ | caption          = Official poster
+ | date             = March 4, 2018
+ | site             = [[Dolby Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], California, U.S.
+ | preshow          = {{plain list|
+* [[Sara Haines]]
+* [[Dave Karger]]
+* [[Wendi McLendon-Covey]]
+* [[Michael Strahan]]
+* Krista Smith<ref>{{cite news |last1=Saad |first1=Nardine |title=What time do the Oscars start? |url=https://www.mcall.com/la-et-oscars-2018-90th-academy-awards-what-time-do-the-oscars-start-1520028436-htmlstory.html |access-date=May 10, 2020 |work=[[The Morning Call]] |date=March 4, 2018 |archive-date=September 26, 2021 |archive-url=https://web.archive.org/web/20210926185407/https://www.mcall.com/la-et-oscars-2018-90th-academy-awards-what-time-do-the-oscars-start-1520028436-htmlstory.html |url-status=dead }}</ref>
+}}
+ | producer         = [[Michael De Luca]]<br />[[Jennifer Todd]]<ref name="Kimmel"/>
+ | director         = [[Glenn Weiss]]<ref>{{cite news |last1=Rottenberg |first1=Josh |title=Oscars production team looks back at last year's snafu and ahead to this year's show |url=https://www.sandiegouniontribune.com/entertainment/la-et-mn-oscars-production-team-20180226-story.html?00000168-c155-df9b-adfc-cb55faa70000-p=32 |access-date=May 11, 2020 |work=[[The San Diego Union-Tribune]] |date=February 26, 2018 |archive-date=October 18, 2022 |archive-url=https://web.archive.org/web/20221018121151/https://www.sandiegouniontribune.com/entertainment/la-et-mn-oscars-production-team-20180226-story.html?00000168-c155-df9b-adfc-cb55faa70000-p=32 |url-status=dead }}</ref>
+ | host             = [[Jimmy Kimmel]]<ref name="Kimmel"/>
+ | best_picture     = ''[[The Shape of Water]]''
+|most_wins        = ''The Shape of Water'' (4)
+ | network          = [[American Broadcasting Company|ABC]]
+ | most_nominations = ''The Shape of Water'' (13)
+ | duration         = 3 hours, 53 minutes<ref>{{cite news |last1=Holloway |first1=Daniel |title=How ABC Pushed Film Academy to Overhaul Oscars |url=https://variety.com/2018/tv/news/abc-oscar-changes-ratings-popular-film-1202899515/ |access-date=May 10, 2020 |work=[[Variety (magazine)|Variety]] |date=August 8, 2018 |archive-date=June 7, 2022 |archive-url=https://web.archive.org/web/20220607192509/https://variety.com/2018/tv/news/abc-oscar-changes-ratings-popular-film-1202899515/ |url-status=live }}</ref>
+ | ratings          = 26.54 million<ref name="Ratings2018"/><br />18.9% ([[Nielsen ratings]])<ref name="Ratings"/>
+ | last             = 89th
+ | next             = 91st
+}}
+The '''90th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2017 in film|films of 2017]], and took place at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]], California. The ceremony was held on March 4, 2018, rather than its usual late-February date to avoid conflicting with the [[2018 Winter Olympics]].<ref>{{cite news|last=Rottenberg|first=Josh|url=https://www.latimes.com/entertainment/la-et-entertainment-news-updates-april-motion-picture-academy-announces-date-1491331430-htmlstory.html|title=Academy Awards dates set through 2021; Winter Olympics bump 2018 Oscars to March|work=[[Los Angeles Times]]|date=April 4, 2017|access-date=August 28, 2018|language=en-US|url-status=dead| archive-url=https://web.archive.org/web/20180309001440/http://www.latimes.com/entertainment/la-et-entertainment-news-updates-april-motion-picture-academy-announces-date-1491331430-htmlstory.html |archive-date=March 9, 2018}}</ref> During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony, which was televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Michael De Luca]] and [[Jennifer Todd]] and directed by [[Glenn Weiss]].<ref>{{cite news |last1=Hammond |first1=Pete |title=Notes On The Season: 'Three Billboard's Martin McDonagh On Directing "Snub"; Senior Moments; Oscar Vets Return To Battle |url=https://deadline.com/2018/02/three-billboards-martin-mcdonagh-oscar-vets-1202283578/ |access-date=May 4, 2020 |work=[[Deadline Hollywood]] |date=February 9, 2018 |archive-date=August 21, 2020 |archive-url=https://web.archive.org/web/20200821222340/https://deadline.com/2018/02/three-billboards-martin-mcdonagh-oscar-vets-1202283578/ |url-status=live }}</ref> Comedian [[Jimmy Kimmel]] hosted for the second consecutive year.<ref>{{cite news |last1=Barnes |first1=Brooks |title=Jimmy Kimmel to return as Oscars host |url=https://www.sfgate.com/entertainment/article/Jimmy-Kimmel-to-return-as-Oscars-host-11150510.php |access-date=May 4, 2020 |work=[[San Francisco Chronicle]] |date=May 16, 2017 |archive-date=March 8, 2021 |archive-url=https://web.archive.org/web/20210308142946/https://www.sfgate.com/entertainment/article/Jimmy-Kimmel-to-return-as-Oscars-host-11150510.php |url-status=live }}</ref>
+
+In related events, the Academy held its 9th Annual&nbsp;[[Governors Awards]]&nbsp;ceremony at the Grand Ballroom of the&nbsp;[[Hollywood and Highland Center]]&nbsp;on November 11, 2017.<ref>{{cite news |last1=Tapley |first1=Kristopher |title=Hot-Button Topics Mostly Avoided as Academy Toasts Honorary Oscar Recipients |url=https://variety.com/2017/film/awards/hot-button-topics-mostly-avoided-as-academy-toasts-honorary-oscar-recipients-1202612828/ |access-date=May 4, 2020 |work=Variety |date=November 12, 2017 |archive-date=August 12, 2020 |archive-url=https://web.archive.org/web/20200812130246/https://variety.com/2017/film/awards/hot-button-topics-mostly-avoided-as-academy-toasts-honorary-oscar-recipients-1202612828/ |url-status=live }}</ref> On February 10, 2018, in a ceremony at the [[Beverly Wilshire Hotel]] in [[Beverly Hills, California]], the [[Academy Scientific and Technical Award]]s were presented by host [[Patrick Stewart]].<ref>{{cite news|last=Will|first=Thorne|title=Sir Patrick Stewart Can't Answer Your 'Star Trek' Technology Questions|url=https://variety.com/2018/film/awards/patrick-stewart-academy-scientific-technical-awards-1202694702/|date=February 11, 2018|work=Variety|access-date=August 28, 2018|language=en-US|url-status=live|archive-url=https://web.archive.org/web/20180615005726/https://variety.com/2018/film/awards/patrick-stewart-academy-scientific-technical-awards-1202694702/|archive-date=June 15, 2018}}</ref>
+
+''[[The Shape of Water]]'' won four awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news |last1=Thompson |first1=Gary |title=Oscar winners 2018: 'The Shape of Water' wins best picture, Kobe wins an Academy Award, Jordan Peele makes history |url=https://www.inquirer.com/philly/entertainment/movies/oscar-winners-2018-best-picture-get-out-three-billboards-20180304.html |access-date=May 4, 2020 |work=[[The Philadelphia Inquirer]] |date=March 4, 2018 |archive-date=August 23, 2021 |archive-url=https://web.archive.org/web/20210823093556/https://www.inquirer.com/philly/entertainment/movies/oscar-winners-2018-best-picture-get-out-three-billboards-20180304.html |url-status=live }}</ref> Other winners included ''[[Dunkirk (2017 film)|Dunkirk]]'' with three awards, ''[[Blade Runner 2049]]'', ''[[Coco (2017 film)|Coco]]'', ''[[Darkest Hour (film)|Darkest Hour]]'', and ''[[Three Billboards Outside Ebbing, Missouri]]'' with two awards, and ''[[Call Me by Your Name (film)|Call Me by Your Name]]'', ''[[Dear Basketball]]'', ''[[A Fantastic Woman]]'', ''[[Get Out]]'', ''[[Heaven Is a Traffic Jam on the 405]]'', ''[[I, Tonya]]'', ''[[Icarus (2017 film)|Icarus]]'', ''[[Phantom Thread]]'', and ''[[The Silent Child]]'' with one.<ref>{{cite news |last1=Covert |first1=Colin |title=New Blood |work=Star Tribune |date=March 5, 2018 |page=C1, C3}}</ref> The telecast garnered 26.54{{nbsp}}million viewers in the United States.
+
+==Winners and nominees==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 90th Academy Awards were announced on January 23, 2018, at 5:22&nbsp;a.m. PST (13:22 [[UTC]]), at the [[Samuel Goldwyn Theater]] in Beverly Hills, California, by actors [[Tiffany Haddish]] and [[Andy Serkis]].<ref>{{cite magazine|first=Ernest|last=Macias|title=Tiffany Haddish, Andy Serkis to announce Oscar nominations|url=https://ew.com/awards/2018/01/22/oscar-nominations-announcement-tiffany-haddish-andy-serkis|magazine=[[Entertainment Weekly]]|date=January 22, 2018|access-date=January 22, 2018|url-status=live|archive-url=https://web.archive.org/web/20180122235758/http://ew.com/awards/2018/01/22/oscar-nominations-announcement-tiffany-haddish-andy-serkis/|archive-date=January 22, 2018}}</ref> ''[[The Shape of Water]]'' led all nominees with thirteen nominations; ''[[Dunkirk (2017 film)|Dunkirk]]'' came in second with eight.<ref>{{cite news|last1=Barnes|first1=Brooks|url=https://www.nytimes.com/2018/01/23/movies/oscar-nominations.html|title=2018 Oscar Nominations: 'The Shape of Water' Leads With 13 Nominations|date=January 23, 2018|work=[[The New York Times]]|access-date=January 23, 2018|archive-date=February 2, 2018|archive-url=https://web.archive.org/web/20180202205746/https://www.nytimes.com/2018/01/23/movies/oscar-nominations.html|url-status=live}}</ref><ref>{{cite news |last1=Coyle |first1=Jake |title=In Oscar nominations, fresh voices lead the way |url=https://www.startribune.com/del-toro-s-shape-of-water-poised-to-lead-oscar-nominations/470627933/ |access-date=May 4, 2020 |work=[[Star Tribune]] |date=January 23, 2018 |archive-date=November 9, 2020 |archive-url=https://web.archive.org/web/20201109032225/https://www.startribune.com/del-toro-s-shape-of-water-poised-to-lead-oscar-nominations/470627933/ |url-status=live }}</ref>
+
+The winners were announced during the awards ceremony on March 4, 2018.<ref>{{cite news |last1=Zak |first1=Dan |title='The Shape of Water' wins best picture at an Oscars laced with political and social statements |url=https://www.washingtonpost.com/lifestyle/style/oscars-2018-the-shape-of-water-wins-best-picture-at-awards-show-laced-with-social-and-political-statements/2018/03/05/414a0edc-1ff8-11e8-badd-7c9f29a55815_story.html |access-date=May 4, 2020 |newspaper=[[The Washington Post]] |date=March 4, 2018 |archive-date=November 5, 2020 |archive-url=https://web.archive.org/web/20201105234830/https://www.washingtonpost.com/lifestyle/style/oscars-2018-the-shape-of-water-wins-best-picture-at-awards-show-laced-with-social-and-political-statements/2018/03/05/414a0edc-1ff8-11e8-badd-7c9f29a55815_story.html |url-status=live }}</ref> [[Greta Gerwig]] became the fifth woman to be nominated for Best Director.<ref>{{cite news |last1=Tapley |first1=Kristopher |title=Oscars: 'Lady Bird's' Greta Gerwig Becomes Fifth Woman Nominated for Best Director |url=https://variety.com/2018/film/awards/oscars-2018-lady-bird-greta-gerwig-fifth-female-director-nominee-1202673370/ |work=Variety |access-date=May 5, 2020 |date=January 23, 2018 |archive-date=June 18, 2020 |archive-url=https://web.archive.org/web/20200618022331/https://variety.com/2018/film/awards/oscars-2018-lady-bird-greta-gerwig-fifth-female-director-nominee-1202673370/ |url-status=live }}</ref> At age 22, Best Actor nominee [[Timothée Chalamet]] was the [[List of oldest and youngest Academy Award winners and nominees#Best Actor in a Leading Role|third-youngest]] person nominated in that category and the youngest since 19-year-old [[Mickey Rooney]] for his role in ''[[Babes in Arms (film)|Babes in Arms]]'' in [[12th Academy Awards|1939]].<ref>{{cite news |last1=Feinberg |first1=Scott |title='Awards Chatter' Podcast — Timothee Chalamet ('Call Me by Your Name') |url=https://www.hollywoodreporter.com/race/awards-chatter-podcast-timothee-chalamet-call-me-by-your-name-1082776 |access-date=May 5, 2020 |work=The Hollywood Reporter |date=February 19, 2018 |archive-date=September 19, 2018 |archive-url=https://web.archive.org/web/20180919104013/https://www.hollywoodreporter.com/race/awards-chatter-podcast-timothee-chalamet-call-me-by-your-name-1082776 |url-status=live }}</ref> At age 88, Best Supporting Actor nominee [[Christopher Plummer]] became the oldest ever performer nominated for a competitive Oscar.<ref>{{cite news |last1=McNary |first1=Dave |title=Christopher Plummer Becomes Oldest Actor to Be Nominated for an Oscar |work=Variety |url=https://variety.com/2018/film/news/oscars-christopher-plummer-nomination-all-the-money-in-world-1202673672/ |access-date=May 4, 2020 |date=January 23, 2018 |archive-date=February 26, 2020 |archive-url=https://web.archive.org/web/20200226182141/https://variety.com/2018/film/news/oscars-christopher-plummer-nomination-all-the-money-in-world-1202673672/ |url-status=live }}</ref> By virtue of her nominations for Best Supporting Actress and Best Original Song for ''[[Mudbound (film)|Mudbound]]'', [[Mary J. Blige]] was the first person to be nominated for both acting and songwriting in the same year.<ref>{{cite news |last1=Daniels |first1=Karu F. |title='Mudbound' takes Mary J. Blige's career to Hollywood history |url=https://www.nbcnews.com/news/nbcblk/mudbound-takes-mary-j-blige-s-career-hollywood-history-n852696 |agency=NBC News |access-date=May 4, 2020 |date=February 23, 2018 |archive-date=January 17, 2020 |archive-url=https://web.archive.org/web/20200117004139/https://www.nbcnews.com/news/nbcblk/mudbound-takes-mary-j-blige-s-career-hollywood-history-n852696 |url-status=live }}</ref> At age 89, Best Adapted Screenplay winner [[James Ivory]] became the oldest winner of a competitive Oscar.<ref>{{cite news |last1=McNary |first1=Dave |title='Call Me by Your Name' Screenwriter James Ivory Becomes Oldest Oscar Winner |url=https://variety.com/2018/film/news/call-me-by-your-name-wins-oscar-best-adapted-screenplay-james-ivory-1202715367/ |access-date=May 4, 2018 |work=Variety |date=March 4, 2018 |archive-date=June 22, 2018 |archive-url=https://web.archive.org/web/20180622192751/https://variety.com/2018/film/news/call-me-by-your-name-wins-oscar-best-adapted-screenplay-james-ivory-1202715367/ |url-status=live }}</ref> [[Jordan Peele]] was the first African American winner for Best Original Screenplay.<ref>{{cite news |last1=King |first1=Maya |title=Jordan Peele (and the Internet) react to 'Get Out's big win |url=https://www.usatoday.com/story/life/people/2018/03/05/jordan-peele/394146002/ |access-date=May 4, 2018 |work=USA Today |date=March 5, 2018 |archive-date=March 30, 2018 |archive-url=https://web.archive.org/web/20180330074558/https://www.usatoday.com/story/life/people/2018/03/05/jordan-peele/394146002/ |url-status=live }}</ref> [[Rachel Morrison]] became the first woman nominated for [[Academy Award for Best Cinematography|Best Cinematography]].<ref>{{cite magazine |last1=Cooney |first1=Samantha |title=Rachel Morrison Just Became the First Woman Nominated for a Best Cinematography Oscar |url=https://time.com/5114187/rachel-morrison-best-cinematography-oscar/ |access-date=May 11, 2020 |magazine=[[Time (magazine)|Time]] |date=January 23, 2018 |archive-date=August 9, 2020 |archive-url=https://web.archive.org/web/20200809113236/https://time.com/5114187/rachel-morrison-best-cinematography-oscar/ |url-status=live }}</ref>
+===Awards===
+[[File:Guillermo del Toro 2023 (cropped).jpg|right|thumb|upright=0.68|[[Guillermo del Toro]], Best Picture co-winner and Best Director winner|alt=Photo of Guillermo del Toro in 2023.]]
+[[File:Gary Oldman (13948780853) (cropped).jpg|right|thumb|upright=0.68|[[Gary Oldman]], Best Actor winner|alt=Photo of Gary Oldman in 2014.]]
+[[File:Frances McDormand 2015 (cropped).jpg|right|thumb|upright=0.68|[[Frances McDormand]], Best Actress winner|alt=Photo of Frances McDormand in 2015.]]
+[[File:Sam Rockwell (8279227257).jpg|right|thumb|upright=0.68|[[Sam Rockwell]], Best Supporting Actor winner|alt=Photo of Sam Rockwell in 2012.]]
+[[File:Allison Janney (40568877620).jpg|right|thumb|upright=0.68|[[Allison Janney]], Best Supporting Actress winner|alt=Photo of Allison Janney in 2011.]]
+[[File:Jordan Peele Peabody 2014 (cropped).jpg|right|thumb|upright=0.68|[[Jordan Peele]], Best Original Screenplay winner|alt=Photo of Jordan Peele in 2014.]]
+[[File:James Ivory (1991.09).jpg|right|thumb|upright=0.68|[[James Ivory]], Best Adapted Screenplay winner|alt=Photo of James Ivory in 1991.]]
+[[File:Sebastián Lelio A Fantastic Woman Berlinale 2017.jpg|right|thumb|upright=0.68|[[Sebastián Lelio]], Best Foreign Language Film winner|alt=Photo of Sebastián Lelio in 2017.]]
+[[File:GlenKeaneHeadshotColor.jpg|right|thumb|upright=0.68|[[Glen Keane]], Best Animated Short Film co-winner|alt=Photo of Glen Keane in 2017.]]
+[[File:AlexandreDesplat-gros-plan.jpg|right|thumb|upright=0.68|[[Alexandre Desplat]], Best Original Score winner|alt=Photo of Alexandre Desplat in 2015.]]
+[[File:RogDeakinsBFI120921 (16 of 17) (51473086144) (cropped).jpg|right|thumb|upright=0.68|[[Roger Deakins]], Best Cinematography winner|alt=Photo of Roger Deakins in 2021.]]
+[[File:Richard King 1 (cropped1).jpg|right|thumb|upright=0.68|[[Richard King (sound designer)|Richard King]], Best Sound Editing co-winner|alt=Photo of Richard King in 2015.]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars2018">{{cite news |url=http://www.oscars.org/oscars/ceremonies/2018 |title=The 90th Academy Awards (2018) Nominees and Winners |access-date=May 5, 2020 |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |archive-date=March 4, 2018 |archive-url=https://web.archive.org/web/20180304012916/http://www.oscars.org/oscars/ceremonies/2018 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[The Shape of Water]]''&nbsp;– [[Guillermo del Toro]] and [[J. Miles Dale]]'''{{double dagger}}
+**''[[Call Me by Your Name (film)|Call Me by Your Name]]''&nbsp;– [[Peter Spears]], [[Luca Guadagnino]], [[Émilie Georges]] and [[Marco Morabito]]
+**''[[Darkest Hour (film)|Darkest Hour]]''&nbsp;– [[Tim Bevan]], [[Eric Fellner]], [[Lisa Bruce]], [[Anthony McCarten]] and [[Douglas Urbanski]]
+**''[[Dunkirk (2017 film)|Dunkirk]]''&nbsp;– [[Emma Thomas]] and [[Christopher Nolan]]
+**''[[Get Out]]''&nbsp;– [[Sean McKittrick]], [[Jason Blum]], [[Edward H. Hamm Jr.]] and [[Jordan Peele]]
+**''[[Lady Bird (film)|Lady Bird]]''&nbsp;– [[Scott Rudin]], [[Eli Bush]] and [[Evelyn O'Neill]]
+**''[[Phantom Thread]]''&nbsp;– [[JoAnne Sellar]], [[Paul Thomas Anderson]], [[Megan Ellison]] and [[Daniel Lupi]]
+**''[[The Post (film)|The Post]]''&nbsp;– [[Amy Pascal]], [[Steven Spielberg]] and [[Kristie Macosko Krieger]]
+**''[[Three Billboards Outside Ebbing, Missouri]]''&nbsp;– [[Graham Broadbent]], [[Pete Czernin]] and [[Martin McDonagh]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Director|Best Directing]]}}
+*'''[[Guillermo del Toro]]&nbsp;– ''[[The Shape of Water]]'''''{{double dagger}}
+**[[Christopher Nolan]]&nbsp;– ''[[Dunkirk (2017 film)|Dunkirk]]''
+**[[Jordan Peele]]&nbsp;– ''[[Get Out]]''
+**[[Greta Gerwig]]&nbsp;– ''[[Lady Bird (film)|Lady Bird]]''
+**[[Paul Thomas Anderson]]&nbsp;– ''[[Phantom Thread]]''
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+*'''[[Gary Oldman]]&nbsp;– ''[[Darkest Hour (film)|Darkest Hour]]'' as [[Winston Churchill]]'''{{double dagger}}
+**[[Timothée Chalamet]]&nbsp;– ''[[Call Me by Your Name (film)|Call Me by Your Name]]'' as Elio Perlman
+**[[Daniel Day-Lewis]]&nbsp;– ''[[Phantom Thread]]'' as Reynolds Woodcock
+**[[Daniel Kaluuya]]&nbsp;– ''[[Get Out]]'' as Chris Washington
+**[[Denzel Washington]]&nbsp;– ''[[Roman J. Israel, Esq.]]'' as Roman J. Israel
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+*'''[[Frances McDormand]]&nbsp;– ''[[Three Billboards Outside Ebbing, Missouri]]'' as Mildred Hayes'''{{double dagger}}
+**[[Sally Hawkins]]&nbsp;– ''[[The Shape of Water]]'' as Elisa Esposito
+**[[Margot Robbie]]&nbsp;– ''[[I, Tonya]]'' as [[Tonya Harding]]
+**[[Saoirse Ronan]]&nbsp;– ''[[Lady Bird (film)|Lady Bird]]'' as Christine "Lady Bird" McPherson
+**[[Meryl Streep]]&nbsp;– ''[[The Post (film)|The Post]]'' as [[Katharine Graham]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Sam Rockwell]]&nbsp;– ''[[Three Billboards Outside Ebbing, Missouri]]'' as Officer Jason Dixon'''{{double dagger}}
+**[[Willem Dafoe]]&nbsp;– ''[[The Florida Project]]'' as Bobby Hicks
+**[[Woody Harrelson]]&nbsp;– ''[[Three Billboards Outside Ebbing, Missouri]]'' as Chief William "Bill" Willoughby
+**[[Richard Jenkins]]&nbsp;– ''[[The Shape of Water]]'' as Giles
+**[[Christopher Plummer]]&nbsp;– ''[[All the Money in the World]]'' as [[J. Paul Getty]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Allison Janney]]&nbsp;– ''[[I, Tonya]]'' as LaVona Golden'''{{double dagger}}
+**[[Mary J. Blige]]&nbsp;– ''[[Mudbound (film)|Mudbound]]'' as Florence Jackson
+**[[Lesley Manville]]&nbsp;– ''[[Phantom Thread]]'' as Cyril Woodcock
+**[[Laurie Metcalf]]&nbsp;– ''[[Lady Bird (film)|Lady Bird]]'' as Marion McPherson
+**[[Octavia Spencer]]&nbsp;– ''[[The Shape of Water]]'' as Zelda Delilah Fuller
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[Get Out]]''&nbsp;– [[Jordan Peele]]'''{{double dagger}}
+**''[[The Big Sick]]''&nbsp;– [[Emily V. Gordon]] and [[Kumail Nanjiani]]
+**''[[Lady Bird (film)|Lady Bird]]''&nbsp;– [[Greta Gerwig]]
+**''[[The Shape of Water]]''&nbsp;– [[Guillermo del Toro]] and [[Vanessa Taylor]]; Story by Guillermo del Toro
+**''[[Three Billboards Outside Ebbing, Missouri]]''&nbsp;– [[Martin McDonagh]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+*'''''[[Call Me by Your Name (film)|Call Me by Your Name]]''&nbsp;– [[James Ivory]]; based on the [[Call Me by Your Name (novel)|novel]] by [[André Aciman]]'''{{double dagger}}
+**''[[The Disaster Artist (film)|The Disaster Artist]]''&nbsp;– [[Scott Neustadter]] and [[Michael H. Weber]]; based on the book ''[[The Disaster Artist: My Life Inside The Room, the Greatest Bad Movie Ever Made]]'' by [[Greg Sestero]] and [[Tom Bissell]]
+**''[[Logan (film)|Logan]]''&nbsp;– [[Scott Frank]], [[James Mangold]] and [[Michael Green (writer)|Michael Green]]; Story by James Mangold; based on the character [[Wolverine (character)|Wolverine]] created by [[Len Wein]] and [[John Romita Sr.]]
+**''[[Molly's Game]]''&nbsp;– [[Aaron Sorkin]]; based on the book by [[Molly Bloom (author)|Molly Bloom]]
+**''[[Mudbound (film)|Mudbound]]''&nbsp;– [[Virgil Williams]] and [[Dee Rees]]; based on the [[Mudbound|novel]] by [[Hillary Jordan]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+*'''''[[Coco (2017 film)|Coco]]''&nbsp;– [[Lee Unkrich]] and [[Darla K. Anderson]]'''{{double dagger}}
+**''[[The Boss Baby]]''&nbsp;– [[Tom McGrath (animator)|Tom McGrath]] and [[Ramsey Ann Naito|Ramsey Naito]]
+**''[[The Breadwinner (2017 film)|The Breadwinner]]''&nbsp;– [[Nora Twomey]] and [[Anthony Leo]]
+**''[[Ferdinand (film)|Ferdinand]]''&nbsp;– [[Carlos Saldanha]] and Lori Forte
+**''[[Loving Vincent]]''&nbsp;– [[Dorota Kobiela]], [[Hugh Welchman]] and [[Ivan Mactaggart]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[A Fantastic Woman]]'' ([[List of Chilean submissions for the Academy Award for Best Foreign Language Film|Chile]]) in [[Spanish language|Spanish]]&nbsp;– Directed by [[Sebastián Lelio]]'''{{double dagger}}
+**''[[The Insult (film)|The Insult]]'' ([[List of Lebanese submissions for the Academy Award for Best Foreign Language Film|Lebanon]]) in [[Arabic]]&nbsp;– Directed by [[Ziad Doueiri]]
+**''[[Loveless (film)|Loveless]]'' ([[List of Russian submissions for the Academy Award for Best Foreign Language Film|Russia]]) in [[Russian language|Russian]]&nbsp;– Directed by [[Andrey Zvyagintsev]]
+**''[[On Body and Soul]]'' ([[List of Hungarian submissions for the Academy Award for Best Foreign Language Film|Hungary]]) in [[Hungarian language|Hungarian]]&nbsp;– Directed by [[Ildikó Enyedi]]
+**''[[The Square (2017 film)|The Square]]'' ([[List of Swedish submissions for the Academy Award for Best Foreign Language Film|Sweden]]) in [[Swedish language|Swedish]]&nbsp;– Directed by [[Ruben Östlund]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Icarus (2017 film)|Icarus]]''&nbsp;– [[Bryan Fogel]] and [[Dan Cogan]]'''{{double dagger}}
+**''[[Abacus: Small Enough to Jail]]''&nbsp;– [[Steve James (producer)|Steve James]], [[Mark Mitten]] and [[Julie Goldman (producer)|Julie Goldman]]
+**''[[Faces Places (film)|Faces Places]]''&nbsp;– [[Agnès Varda]], [[JR (artist)|JR]] and [[Rosalie Varda]]
+**''[[Last Men in Aleppo]]''&nbsp;– [[Feras Fayyad]], [[Kareem Abeed]] and [[Søren Steen Jespersen]]
+**''[[Strong Island (film)|Strong Island]]''&nbsp;– [[Yance Ford]] and [[Joslyn Barnes]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Heaven Is a Traffic Jam on the 405]]''&nbsp;– [[Frank Stiefel]]'''{{double dagger}}
+**''[[Edith+Eddie]]''&nbsp;– [[Laura Checkoway]] and [[Thomas Lee Wright]]
+**''[[Heroin(e)]]''&nbsp;– [[Elaine McMillion Sheldon]] and [[Kerrin Sheldon]]
+**''[[Knife Skills]]''&nbsp;– [[Thomas Lennon (filmmaker)|Thomas Lennon]]
+**''[[Traffic Stop]]''&nbsp;– [[Kate Davis (director)|Kate Davis]] and [[David Heilbroner]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+*'''''[[The Silent Child]]''&nbsp;– [[Chris Overton]] and [[Rachel Shenton]]'''{{double dagger}}
+**''[[DeKalb Elementary]]''&nbsp;– [[Reed Van Dyk]]
+**''[[The Eleven O'Clock]]''&nbsp;– [[Derin Seale]] and [[Josh Lawson]]
+**''[[My Nephew Emmett]]''&nbsp;– [[Kevin Wilson Jr.]]
+**''[[Watu Wote/All of Us]]''&nbsp;– [[Katja Benrath]] and [[Tobias Rosen]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[Dear Basketball]]'' – [[Glen Keane]] and [[Kobe Bryant]]'''{{double dagger}}
+**''[[Garden Party (2017 film)|Garden Party]]''&nbsp;– [[Victor Caire]] and [[Gabriel Grapperon]]
+**''[[Lou (2017 film)|Lou]]''&nbsp;– [[Dave Mullins (animator)|Dave Mullins]] and [[Dana Murray]]
+**''[[Negative Space (film)|Negative Space]]''&nbsp;– [[Max Porter (animator)|Max Porter]] and [[Ru Kuwahata]]
+**''[[Revolting Rhymes (film)|Revolting Rhymes]]''&nbsp;– [[Jakob Schuh]] and [[Jan Lachauer]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[The Shape of Water]]''&nbsp;– [[Alexandre Desplat]]'''{{double dagger}}
+**''[[Dunkirk (2017 film)|Dunkirk]]''&nbsp;– [[Hans Zimmer]]
+**''[[Phantom Thread]]''&nbsp;– [[Jonny Greenwood]]
+**''[[Star Wars: The Last Jedi]]''&nbsp;– [[John Williams]]
+**''[[Three Billboards Outside Ebbing, Missouri]]''&nbsp;– [[Carter Burwell]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+*'''"[[Remember Me (Coco song)|Remember Me]]" from ''[[Coco (2017 film)|Coco]]''&nbsp;– Music and Lyrics by [[Kristen Anderson-Lopez]] and [[Robert Lopez]]'''{{double dagger}}
+**"[[Mighty River (song)|Mighty River]]" from ''[[Mudbound (film)|Mudbound]]''&nbsp;– Music and Lyrics by [[Mary J. Blige]], [[Raphael Saadiq]] and [[Taura Stinson]]
+**"[[Mystery of Love]]" from ''[[Call Me by Your Name (film)|Call Me by Your Name]]''&nbsp;– Music and Lyrics by [[Sufjan Stevens]]
+**"[[Stand Up for Something]]" from ''[[Marshall (film)|Marshall]]''&nbsp;– Music by [[Diane Warren]]; Lyrics by [[Common (rapper)|Common]] and Diane Warren
+**"[[This Is Me (The Greatest Showman song)|This Is Me]]" from ''[[The Greatest Showman]]''&nbsp;– Music and Lyrics by [[Benj Pasek]] and [[Justin Paul]]<!--DO NOT CHANGE TO "PASEK & PAUL", AS THAT IS NOT HOW THEIR NAMES APPEARED IN THE OFFICIAL NOMINATION-->
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+*'''''[[Dunkirk (2017 film)|Dunkirk]]''&nbsp;– [[Richard King (sound designer)|Richard King]] and [[Alex Gibson (sound editor)|Alex Gibson]]'''{{double dagger}}
+**''[[Baby Driver]]''&nbsp;– [[Julian Slater]]
+**''[[Blade Runner 2049]]''&nbsp;– [[Mark Mangini]] and [[Theo Green]]
+**''[[The Shape of Water]]''&nbsp;– [[Nathan Robitaille]] and [[Nelson Ferreira (sound editor)|Nelson Ferreira]]
+**''[[Star Wars: The Last Jedi]]''&nbsp;– [[Matthew Wood (sound editor)|Matthew Wood]] and [[Ren Klyce]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Sound Mixing]]}}
+*'''''[[Dunkirk (2017 film)|Dunkirk]]''&nbsp;– [[Gregg Landaker]], [[Gary A. Rizzo]] and [[Mark Weingarten]]'''{{double dagger}}
+**''[[Baby Driver]]''&nbsp;– [[Julian Slater]], [[Tim Cavagin]] and [[Mary H. Ellis]]
+**''[[Blade Runner 2049]]''&nbsp;– [[Ron Bartlett]], [[Doug Hemphill]] and [[Mac Ruth]]
+**''[[The Shape of Water]]''&nbsp;– [[Christian Cooke (sound engineer)|Christian Cooke]], [[Brad Zoern]] and [[Glen Gauthier]]
+**''[[Star Wars: The Last Jedi]]''&nbsp;– [[David Parker (sound engineer)|David Parker]], [[Michael Semanick]], [[Ren Klyce]] and [[Stuart Wilson (sound engineer)|Stuart Wilson]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+*'''''[[The Shape of Water]]''&nbsp;– Production Design: [[Paul Denham Austerberry]]; Set Decoration: [[Shane Vieau]] and [[Jeff Melvin|Jeffrey A. Melvin]]'''{{double dagger}}
+**''[[Beauty and the Beast (2017 film)|Beauty and the Beast]]''&nbsp;– Production Design: [[Sarah Greenwood]]; Set Decoration: [[Katie Spencer]]
+**''[[Blade Runner 2049]]''&nbsp;– Production Design: [[Dennis Gassner]]; Set Decoration: [[Alessandra Querzola]]
+**''[[Darkest Hour (film)|Darkest Hour]]''&nbsp;– Production Design: [[Sarah Greenwood]]; Set Decoration: [[Katie Spencer]]
+**''[[Dunkirk (2017 film)|Dunkirk]]''&nbsp;– Production Design: [[Nathan Crowley]]; Set Decoration: [[Gary Fettis]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Blade Runner 2049]]''&nbsp;– [[Roger Deakins|Roger A. Deakins]]'''{{double dagger}}
+**''[[Darkest Hour (film)|Darkest Hour]]''&nbsp;– [[Bruno Delbonnel]]
+**''[[Dunkirk (2017 film)|Dunkirk]]''&nbsp;– [[Hoyte van Hoytema]]
+**''[[Mudbound (film)|Mudbound]]''&nbsp;– [[Rachel Morrison]]
+**''[[The Shape of Water]]''&nbsp;– [[Dan Laustsen]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+*'''''[[Darkest Hour (film)|Darkest Hour]]''&nbsp;– [[Kazuhiro Tsuji]], [[David Malinowski]] and [[Lucy Sibbick]]'''{{double dagger}}
+**''[[Victoria & Abdul]]''&nbsp;– [[Daniel Phillips (make-up artist)|Daniel Phillips]] and [[Lou Sheppard]]
+**''[[Wonder (film)|Wonder]]''&nbsp;– [[Arjen Tuiten]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Phantom Thread]]''&nbsp;– [[Mark Bridges (costume designer)|Mark Bridges]]'''{{double dagger}}
+**''[[Beauty and the Beast (2017 film)|Beauty and the Beast]]''&nbsp;– [[Jacqueline Durran]]
+**''[[Darkest Hour (film)|Darkest Hour]]''&nbsp;– [[Jacqueline Durran]]
+**''[[The Shape of Water]]''&nbsp;– [[Luis Sequeira]]
+**''[[Victoria & Abdul]]''&nbsp;– [[Consolata Boyle]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Dunkirk (2017 film)|Dunkirk]]''&nbsp;– [[Lee Smith (film editor)|Lee Smith]]'''{{double dagger}}
+**''[[Baby Driver]]''&nbsp;– [[Paul Machliss]] and [[Jonathan Amos]]
+**''[[I, Tonya]]''&nbsp;– [[Tatiana S. Riegel]]
+**''[[The Shape of Water]]''&nbsp;– [[Sidney Wolinsky]]
+**''[[Three Billboards Outside Ebbing, Missouri]]''&nbsp;– [[Jon Gregory (film editor)|Jon Gregory]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+*'''''[[Blade Runner 2049]]''&nbsp;– [[John Nelson (visual effects artist)|John Nelson]], [[Gerd Nefzer]], [[Paul Lambert (special effects artist)|Paul Lambert]] and [[Richard R. Hoover]]'''{{double dagger}}
+**''[[Guardians of the Galaxy Vol. 2]]''&nbsp;– [[Christopher Townsend]], [[Guy Williams (visual effects)|Guy Williams]], [[Jonathan Fawkner]] and [[Dan Sudick]]
+**''[[Kong: Skull Island]]''&nbsp;– [[Stephen Rosenbaum]], [[Jeff White (visual effects)|Jeff White]], [[Scott Benza]] and [[Mike Meinardus]]
+**''[[Star Wars: The Last Jedi]]''&nbsp;– [[Ben Morris (special effects artist)|Ben Morris]], [[Mike Mulholland]], [[Neal Scanlan]] and [[Chris Corbould]]
+**''[[War for the Planet of the Apes]]''&nbsp;– [[Joe Letteri]], [[Daniel Barrett (visual effects supervisor)|Daniel Barrett]], [[Dan Lemmon]] and [[Joel Whist]]
+|}
+
+===Governors Awards===
+The Academy held its 9th annual [[Governors Awards]] ceremony on November 11, 2017, during which the following awards were presented:<ref>{{cite news|url=https://variety.com/2017/film/awards/2017-governors-awards-recipients-1202548414|title=Oscars: Charles Burnett, Owen Roizman, Donald Sutherland, Agnès Varda Set for Academy's Governors Awards|last=Tapley|first=Kristopher|date=September 6, 2017|work=Variety|access-date=December 26, 2017|archive-date=December 31, 2017|archive-url=https://web.archive.org/web/20171231212636/http://variety.com/2017/film/awards/2017-governors-awards-recipients-1202548414/|url-status=live}}</ref>
+
+====Special Award====
+* To [[Alejandro G. Iñárritu]]'s ''[[Carne y Arena]]'' virtual reality installation, in recognition of a visionary and powerful experience in storytelling<ref name="HonoraryandSpecial"/>
+
+====Honorary Awards====
+* To [[Charles Burnett (director)|Charles Burnett]], a resolutely independent and influential film pioneer who has chronicled the lives of black Americans with eloquence and insight<ref name="HonoraryandSpecial"/>
+* To [[Owen Roizman]], whose expansive visual style and technical innovation have advanced the art of cinematography<ref name="HonoraryandSpecial"/>
+* To [[Donald Sutherland]] for a lifetime of indelible characters, rendered with unwavering truthfulness<ref name="HonoraryandSpecial"/>
+* To [[Agnès Varda]], whose compassion and curiosity inform a uniquely personal cinema<ref name="HonoraryandSpecial">{{cite web |title=Academy Awards Acceptance Speech Database |url=http://aaspeechesdb.oscars.org/results.aspx?QY=find%20(year%20term%20ct%202017)&AC=QBE_QUERY&RF=WebReportList&DF=WebReportOscars&MR=0&BU=/index.aspx |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |access-date=May 7, 2020 |archive-date=February 24, 2021 |archive-url=https://web.archive.org/web/20210224231902/http://aaspeechesdb.oscars.org/results.aspx?QY=find%20(year%20term%20ct%202017)&AC=QBE_QUERY&RF=WebReportList&DF=WebReportOscars&MR=0&BU=/index.aspx |url-status=live }}</ref>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}{{col-1-of-2}}
+{| class="wikitable plainrowheaders" style="text-align: center; display:inline-table;"
+|+ Films that received multiple nominations
+|-
+! scope="col" | Nominations
+! scope="col" | Film
+|-
+| scope=row style="text-align:center" | 13
+| ''[[The Shape of Water]]''
+|-
+| scope=row style="text-align:center" | 8
+| ''[[Dunkirk (2017 film)|Dunkirk]]''
+|-
+| scope=row style="text-align:center" | 7
+| ''[[Three Billboards Outside Ebbing, Missouri]]''
+|-
+| scope=row rowspan=2 style="text-align:center;" | 6
+| ''[[Darkest Hour (film)|Darkest Hour]]''
+|-
+| ''[[Phantom Thread]]''
+|-
+| scope=row rowspan=2 style="text-align:center;" | 5
+| ''[[Blade Runner 2049]]''
+|-
+| ''[[Lady Bird (film)|Lady Bird]]''
+|-
+| scope=row rowspan=4 style="text-align:center;" | 4
+| ''[[Call Me by Your Name (film)|Call Me by Your Name]]''
+|-
+| ''[[Get Out]]''
+|-
+| ''[[Mudbound (film)|Mudbound]]''
+|-
+| ''[[Star Wars: The Last Jedi]]''
+|-
+| scope=row rowspan=2 style="text-align:center;" | 3
+| ''[[Baby Driver]]''
+|-
+| ''[[I, Tonya]]''
+|-
+| scope=row rowspan=4 style="text-align:center;" | 2
+| ''[[Beauty and the Beast (2017 film)|Beauty and the Beast]]''
+|-
+| ''[[Coco (2017 film)|Coco]]''
+|-
+| ''[[The Post (film)|The Post]]''
+|-
+| ''[[Victoria & Abdul]]''
+|}
+{{col-2}}
+{| class="wikitable plainrowheaders" style="text-align: center; display:inline-table;"
+|+ Films that received multiple awards
+|-
+! scope="col" | Awards
+! scope="col" | Film
+|-
+| scope=row style="text-align:center" | 4
+| ''{{nowrap|[[The Shape of Water]]}}''
+|-
+| scope=row style="text-align:center" | 3
+| ''[[Dunkirk (2017 film)|Dunkirk]]''
+|-
+| scope=row rowspan=4 style="text-align:center;" | 2
+| ''[[Blade Runner 2049]]''
+|-
+| ''[[Coco (2017 film)|Coco]]''
+|-
+| ''[[Darkest Hour (film)|Darkest Hour]]''
+|-
+| ''[[Three Billboards Outside Ebbing, Missouri]]''
+|}
+{{col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>{{cite news |last1=Park |first1=Andrea |title=Oscars 2018: "The Shape of Water" wins big at 90th Academy Awards |url=https://www.cbsnews.com/live-news/oscars-2018-winners-highlights-and-best-moments-from-the-90th-academy-awards/ |agency=[[CBS News]] |access-date=May 9, 2020 |date=March 4, 2018 |archive-date=February 2, 2020 |archive-url=https://web.archive.org/web/20200202161449/https://www.cbsnews.com/live-news/oscars-2018-winners-highlights-and-best-moments-from-the-90th-academy-awards/ |url-status=dead }}</ref><ref>{{cite news |title=Oscars: Winners list |url=https://www.sandiegouniontribune.com/entertainment/ct-oscars-2018-winners-list-20180304-story.html?00000168-c155-df9b-adfc-cb55faa70000-p=86 |access-date=May 10, 2020 |work=The San Diego Union-Tribune |date=March 4, 2018 |archive-date=March 8, 2021 |archive-url=https://web.archive.org/web/20210308162804/https://www.sandiegouniontribune.com/entertainment/ct-oscars-2018-winners-list-20180304-story.html?00000168-c155-df9b-adfc-cb55faa70000-p=86 |url-status=dead }}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Randy|Thomas|nolink=1}}<ref>{{cite news |last1=Rottenberg |first1=Josh |title=You won't see Oscars live announcer Randy Thomas on camera, but you'll recognize that voice |url=https://www.latimes.com/entertainment/movies/la-ca-mn-oscars-announcer-randy-thomas-20180301-htmlstory.html |access-date=May 9, 2020 |work=Los Angeles Times |date=March 1, 2018 |archive-date=December 30, 2019 |archive-url=https://web.archive.org/web/20191230135846/https://www.latimes.com/entertainment/movies/la-ca-mn-oscars-announcer-randy-thomas-20180301-htmlstory.html |url-status=live }}</ref> || Served as announcer for the 90th annual Academy Awards
+|-
+| {{sortname|Viola|Davis}} || Presented the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Gal|Gadot}}<br/>{{sortname|Armie|Hammer}} || Presented the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]
+|-
+| {{sortname|Eva Marie|Saint}} || Presented the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Laura|Dern}}<br/>{{sortname|Greta|Gerwig}} || Presented the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Taraji P.|Henson}} || Introduced the performance of Best Original Song nominee "[[Mighty River (song)|Mighty River]]"
+|-
+| {{sortname|Ansel|Elgort}}<br/>{{sortname|Eiza|González}} || Presented the awards for [[Academy Award for Best Sound Editing|Best Sound Editing]] and [[Best Sound Mixing]]
+|-
+| {{sortname|Kumail|Nanjiani}}<br/>{{sortname|Lupita|Nyong'o}} || Presented the award for [[Academy Award for Best Production Design|Best Production Design]]
+|-
+| {{sortname|Eugenio|Derbez}} || Introduced the performance of Best Original Song nominee "[[Remember Me (Coco song)|Remember Me]]"
+|-
+| {{sortname|Rita|Moreno}} || Presented the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Mahershala|Ali}} || Presented the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| [[BB-8]]<br/>{{sortname|Mark|Hamill}}<br/>{{sortname|Oscar|Isaac}}<br/>{{sortname|Kelly Marie|Tran}} || Presented the awards for [[Best Animated Short Film]] and [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+| {{sortname|Daniela|Vega}} || Introduced the performance of Best Original Song nominee "[[Mystery of Love]]"
+|-
+| {{sortname|Tom|Holland}}<br/>{{sortname|Gina|Rodriguez}} || Presented the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Matthew|McConaughey}} || Presented the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Tiffany|Haddish}}<br/>{{sortname|Maya|Rudolph}} || Presented the awards for [[Best Documentary Short Subject]] and [[Best Live Action Short Film]]
+|-
+| {{sortname|Dave|Chappelle}} || Introduced the performance of Best Original Song nominee "[[Stand Up for Something]]"
+|-
+| {{sortname|Ashley|Judd}}<br/>{{sortname|Salma|Hayek Pinault}}<!--That's how she was introduced (by her married name)--><br/>{{sortname|Annabella|Sciorra}} || Presenters of a special presentation highlighting the [[Time's Up (organization)|Time's Up]] movement and diversity in film
+|-
+| {{sortname|Chadwick|Boseman}}<br/>{{sortname|Margot|Robbie}} || Presented the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| {{sortname|Nicole|Kidman}} || Presented the award for [[Best Original Screenplay]]
+|-
+| {{sortname|Wes|Studi}} || Presenter of a special presentation highlighting depictions of the [[U.S. military]] in film
+|-
+| {{sortname|Sandra|Bullock}} || Presented the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| [[Zendaya]] || Introduced the performance of Best Original Song nominee "[[This Is Me (The Greatest Showman song)|This Is Me]]"
+|-
+| {{sortname|Christopher|Walken}} || Presented the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| {{sortname|Emily|Blunt}}<br/>{{sortname|Lin-Manuel|Miranda}} || Presented the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Jennifer|Garner}} || Presented the "[[In memoriam segment|In Memoriam]]" tribute
+|-
+| {{sortname|Emma|Stone}} || Presented the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Jane|Fonda}}<br/>{{sortname|Helen|Mirren}} || Presented the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Jodie|Foster}}<br/>{{sortname|Jennifer|Lawrence}} || Presented the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Warren|Beatty}}<br/>{{sortname|Faye|Dunaway}} || Presented the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+| {{sortname|Harold|Wheeler|Harold Wheeler (musician)}} || Musical arranger<br>Conductor || Orchestral
+|-
+| {{sortname|Mary J.|Blige}} || Performer || "[[Mighty River (song)|Mighty River]]" from ''[[Mudbound (film)|Mudbound]]''
+|-
+| {{sortname|Gael|García Bernal}}<br/>{{sortname|Miguel||Miguel (singer)}}<br/>{{sortname|Natalia|Lafourcade}} || Performers || "[[Remember Me (Coco song)|Remember Me]]" from ''[[Coco (2017 film)|Coco]]''
+|-
+| {{sortname|Sufjan|Stevens}}<br/>{{sortname||St. Vincent|St. Vincent (musician)}}<br/>{{sortname|Moses|Sumney}}<br/>{{sortname|Chris|Thile}}<ref>{{cite magazine |last1=Havens |first1=Lindsey |title=Sufjan Stevens, St. Vincent & Moses Sumney Deliver Angelic Harmonies During 'Mystery Of Love' Oscars Performance |url=https://www.billboard.com/articles/news/oscars/8231203/sufjan-stevens-st-vincent-mystery-of-love-performance-oscars-2018 |access-date=May 9, 2020 |magazine=[[Billboard (magazine)|Billboard]] |date=March 4, 2018 |archive-date=March 8, 2021 |archive-url=https://web.archive.org/web/20210308145818/https://www.billboard.com/articles/news/oscars/8231203/sufjan-stevens-st-vincent-mystery-of-love-performance-oscars-2018 |url-status=live }}</ref> || Performers || "[[Mystery of Love]]" from ''[[Call Me by Your Name (film)|Call Me by Your Name]]''
+|-
+| {{sortname|Andra|Day}}<br/>{{sortname|Common||Common (rapper)}} || Performers || "[[Stand Up for Something]]" from ''[[Marshall (film)|Marshall]]''
+|-
+| {{sortname|Keala|Settle}} || Performer || "[[This Is Me (The Greatest Showman song)|This Is Me]]" from ''[[The Greatest Showman]]''
+|-
+| {{sortname|Eddie|Vedder}} || Performer || "[[Room at the Top (Tom Petty and the Heartbreakers song)|Room at the Top]]" during the annual "In Memoriam" tribute
+|}
+
+==Ceremony information==
+[[File:Jimmy Kimmel 01.jpg|thumb|upright|[[Jimmy Kimmel]] hosted the 90th Academy Awards|alt=Photo of Jimmy Kimmel in 2007]]
+
+Despite the mixed reception received by the [[89th Academy Awards|preceding year's ceremony]], the Academy rehired [[Michael De Luca]] and [[Jennifer Todd]] as producers for the second consecutive year.<ref>{{cite news|last1=Fleming |first1=Mike Jr. |title=Academy Setting Producers Mike De Luca & Jennifer Todd For 90th Oscars Encore |url=https://deadline.com/2017/03/oscar-producers-mike-de-luca-jennifer-todd-returning-90th-academy-awards-1202056062/|access-date=March 30, 2017 |work=Deadline Hollywood |date=March 30, 2017 |url-status=live |archive-url=https://web.archive.org/web/20161103125108/https://deadline.com/2017/03/oscar-producers-mike-de-luca-jennifer-todd-returning-90th-academy-awards-1202056062/ |archive-date=November 3, 2016}}</ref> In May 2017, it was announced that [[Jimmy Kimmel]] would return as host for a second consecutive year.<ref name="Kimmel">{{cite news|last1=Otterson |first1=Joe |title=Jimmy Kimmel Set to Host 2018 Oscars|url=https://variety.com/2017/tv/awards/jimmy-kimmel-2018-oscars-1202428589/|access-date=May 16, 2017|work=Variety |date=May 16, 2017|url-status=live |archive-url=https://web.archive.org/web/20161105032558/https://variety.com/2017/tv/awards/jimmy-kimmel-2018-oscars-1202428589/|archive-date=November 5, 2016}}</ref> “Mike and Jennifer produced a beautiful show that was visually stunning. And Jimmy proved, from his opening monologue all the way through a finale we could never have imagined, that he is one our finest hosts in Oscar history,” said AMPAS president [[Cheryl Boone Isaacs]] in a press release announcing the return of the show's producers and hosts.<ref>{{cite news |last1=Rottenberg |first1=Josh |title=Jimmy Kimmel set to return as host for next year's Oscars |url=https://www.post-gazette.com/ae/movies/2017/05/17/Jimmy-Kimmel-set-to-return-as-host-for-next-year-s-Oscars/stories/201705170071 |work=[[Pittsburgh Post-Gazette]] |date=May 17, 2017 |access-date=May 11, 2020 |archive-date=March 8, 2021 |archive-url=https://web.archive.org/web/20210308211411/https://www.post-gazette.com/ae/movies/2017/05/17/Jimmy-Kimmel-set-to-return-as-host-for-next-year-s-Oscars/stories/201705170071 |url-status=live }}</ref> Kimmel expressed that he was thrilled to be selected to emcee the gala again, commenting, "Hosting the Oscars was a highlight of my career and I am grateful to Cheryl [Boone Isaacs], [[Dawn Hudson|Dawn]] [Hudson], and the Academy for asking me to return to work with two of my favorite people, Mike De Luca and Jennifer Todd. If you think we screwed up the ending this year, wait until you see what we have planned for the 90th anniversary show!"<ref>{{cite web|title=Jimmy Kimmel Returns As Oscars 2018 Host|url=http://oscar.go.com/news/oscar-news/jimmy-kimmel-to-return-as-oscars-2018-host |publisher=Academy of Motion Picture Arts and Sciences |date=September 6, 2017|access-date=December 6, 2017 |url-status=live |archive-url=https://web.archive.org/web/20161220095209/http://oscar.go.com/news/oscar-news/jimmy-kimmel-to-return-as-oscars-2018-host|archive-date=December 20, 2016}}</ref> Kimmel became the first person to host consecutive ceremonies since [[Billy Crystal]] hosted the [[69th Academy Awards|69th]] and [[70th Academy Awards|70th]] ceremonies held in 1997 and 1998 respectively.<ref>{{cite news |last1=Feinberg |first1=Scott |title=Oscars: Why Kimmel and Co. Are All Returning |url=https://www.hollywoodreporter.com/race/oscars-why-kimmel-are-all-returning-analysis-1004371 |access-date=May 10, 2020 |work=Variety |date=May 17, 2017 |archive-date=October 21, 2020 |archive-url=https://web.archive.org/web/20201021084706/https://www.hollywoodreporter.com/race/oscars-why-kimmel-are-all-returning-analysis-1004371 |url-status=live }}</ref> In an allusion to the previous year's Best Picture [[89th Academy Awards#Best Picture announcement error|announcement error]], the official poster for the event featured the tagline "What could possibly go wrong?"<ref>{{Cite web |last=Perez |first=Lexy |date=2018-01-08 |title=Oscars: Jimmy Kimmel Poster Evokes Best Picture Flub |url=https://www.hollywoodreporter.com/movies/movie-news/jimmy-kimmel-oscars-2018-poster-evokes-best-picture-flub-1072856/ |access-date=2023-03-11 |website=The Hollywood Reporter |language=en-US |archive-date=March 11, 2023 |archive-url=https://web.archive.org/web/20230311210323/https://www.hollywoodreporter.com/movies/movie-news/jimmy-kimmel-oscars-2018-poster-evokes-best-picture-flub-1072856/ |url-status=live }}</ref>
+
+Several others participated in the production of the ceremony and related events. [[Harold Wheeler (musician)|Harold Wheeler]] served as musical director for the ceremony.<ref>{{cite news |last1=Parisi |first1=Paula |title=Awards Ceremonies Are the 'Super Bowl' for Orchestras |url=https://variety.com/2018/music/awards/awards-ceremonies-super-bowl-for-orchestras-1202700804/ |access-date=May 9, 2020 |work=Variety |date=February 15, 2020 |archive-date=October 27, 2020 |archive-url=https://web.archive.org/web/20201027044244/https://variety.com/2018/music/awards/awards-ceremonies-super-bowl-for-orchestras-1202700804/ |url-status=live }}</ref> Production designer [[Derek McLane]] designed a new stage for the ceremony which prominently featured a curtain made of forty-five million [[Swarovski]] crystals.<ref>{{cite news|url=https://www.architecturaldigest.in/content/oscars-2018-take-a-look-at-the-stunning-90th-academy-awards-stage-studded-with-45-million-swarovski-crystals/|title=Oscars 2018: Take a look at the stunning stage studded with 45 million Swarovski crystals|work=[[Architectural Digest]]|language=en-US|access-date=2018-03-08|date=March 5, 2018|archive-date=March 9, 2018|archive-url=https://web.archive.org/web/20180309054401/https://www.architecturaldigest.in/content/oscars-2018-take-a-look-at-the-stunning-90th-academy-awards-stage-studded-with-45-million-swarovski-crystals/|url-status=live}}</ref> During the nominations announcement, several vignettes featuring [[Priyanka Chopra]], [[Rosario Dawson]], [[Gal Gadot]], [[Salma Hayek]], [[Michelle Rodriguez]], [[Zoe Saldaña]], [[Molly Shannon]], [[Rebel Wilson]] and [[Michelle Yeoh]] were shown before several categories highlighting the importance of below-the-line crafts in the film production.<ref>{{cite news |title=Oscars: 'Shape of Water' Leads With 13 Noms |url=https://www.hollywoodreporter.com/lists/oscar-nominations-2018-complete-list-nominees-1067893/item/best-picture-1068025 |access-date=May 9, 2020 |work=The Hollywood Reporter |date=January 23, 2018 |archive-date=April 21, 2020 |archive-url=https://web.archive.org/web/20200421020727/https://www.hollywoodreporter.com/lists/oscar-nominations-2018-complete-list-nominees-1067893/item/best-picture-1068025 |url-status=live }}</ref> Four days prior to the ceremony, the Academy in conjunction with the [[Los Angeles Philharmonic]] hosted a special concert at the [[Walt Disney Concert Hall]] highlighting the Best Original Score nominees and the involvement of music in the film making process.<ref>{{cite news |last1=Chuba |first1=Kristen |title=Academy Teams Up With L.A. Philharmonic For Oscar Concert |url=https://variety.com/2018/film/news/oscars-la-philharmonic-concert-1202684395/ |access-date=May 9, 2020 |work=Variety |date=February 1, 2018 |archive-date=August 5, 2020 |archive-url=https://web.archive.org/web/20200805172546/https://variety.com/2018/film/news/oscars-la-philharmonic-concert-1202684395/ |url-status=live }}</ref> During the performance of Best Original Song nominee "[[Stand Up for Something]]", ten individuals such as activist [[Dolores Huerta]], [[Me Too movement]] founder [[Tarana Burke]], chef and humanitarian [[José Andrés]], and author [[Janet Mock]] appeared onstage to represent people who epitomized the message of the song.<ref>{{cite news |last1=Halperin |first1=Shirley |title=Here Are the 10 Activists Who Shared the Oscars Stage With Common and Andra Day |url=https://variety.com/2018/film/news/oscars-activists-common-andra-day-stand-up-for-something-performance-1202716939/ |access-date=May 11, 2020 |work=Variety |date=March 4, 2018 |archive-date=August 13, 2018 |archive-url=https://web.archive.org/web/20180813075448/https://variety.com/2018/film/news/oscars-activists-common-andra-day-stand-up-for-something-performance-1202716939/ |url-status=live }}</ref><ref>{{cite news |last1=Crist |first1=Allison |title=Oscars: 10 Activists Joined Common and Andra Day for "Stand Up for Something" Performance |url=https://www.hollywoodreporter.com/news/oscars-10-activists-joined-common-andra-day-stand-up-something-performance-1091486 |access-date=May 12, 2020 |work=The Hollywood Reporter |date=March 4, 2018 |archive-date=September 19, 2020 |archive-url=https://web.archive.org/web/20200919231446/https://www.hollywoodreporter.com/news/oscars-10-activists-joined-common-andra-day-stand-up-something-performance-1091486 |url-status=live }}</ref> In view of the previous year's Best Picture announcement error, actors Warren Beatty and Faye Dunaway returned to present the award again.<ref>{{cite news|url=https://variety.com/2018/film/awards/oscars-faye-dunaway-warren-beatty-return-best-picture-1202715285/|title=Oscars: Faye Dunaway, Warren Beatty Expected to Return to Present Best Picture After Flub|last=Saperstein|first=Pat|date=March 2, 2018|work=Variety|access-date=March 3, 2018|language=en-US|archive-date=March 3, 2018|archive-url=https://web.archive.org/web/20180303024329/http://variety.com/2018/film/awards/oscars-faye-dunaway-warren-beatty-return-best-picture-1202715285/|url-status=live}}</ref>
+
+Traditionally, the previous year's Best Actor winner usually presented the Best Actress award. However, Best Actor winner [[Casey Affleck]] reportedly decided not to attend the ceremony due to his [[Casey Affleck#Sexual harassment allegations|sexual harassment accusations]].<ref>{{cite news|url=https://www.nbcnews.com/storyline/sexual-misconduct/casey-affleck-skip-oscars-won-t-present-best-actress-award-n841251|title=Casey Affleck won't present best actress Oscar amid #MeToo spotlight|agency=NBC News|access-date=January 26, 2018|language=en|archive-date=January 26, 2018|archive-url=https://web.archive.org/web/20180126100920/https://www.nbcnews.com/storyline/sexual-misconduct/casey-affleck-skip-oscars-won-t-present-best-actress-award-n841251|url-status=dead}}</ref><ref>{{cite news|url=https://deadline.com/2018/01/casey-affleck-academy-awards-withdrawal-best-actress-me-too-movement-controversy-1202269196/|title=Casey Affleck Withdraws From Oscars: Won't Present Best Actress Award|last=Fleming|first=Mike Jr.|date=2018-01-25|work=Deadline Hollywood|access-date=2018-01-26|language=en-US|archive-date=May 5, 2020|archive-url=https://web.archive.org/web/20200505212537/https://deadline.com/2018/01/casey-affleck-academy-awards-withdrawal-best-actress-me-too-movement-controversy-1202269196/|url-status=live}}</ref> [[Jodie Foster]] and [[Jennifer Lawrence]] presented the award together in his place. The Best Actor award was presented by actresses [[Jane Fonda]] and [[Helen Mirren]].<ref>{{cite news|url=https://variety.com/2018/film/in-contention/jennifer-lawrence-jodie-foster-oscars-casey-affleck-best-actress-1202715914/|title=Jennifer Lawrence and Jodie Foster to Present Best Actress Oscar, Replacing Casey Affleck (Exclusive)|last=Tapley|first=Kristopher|date=March 2, 2018|work=Variety|access-date=March 3, 2018|archive-date=March 3, 2018|archive-url=https://web.archive.org/web/20180303022829/http://variety.com/2018/film/in-contention/jennifer-lawrence-jodie-foster-oscars-casey-affleck-best-actress-1202715914/|url-status=live}}</ref><ref>{{cite magazine|last1=Lawrence|first1=Derek|url=https://ew.com/awards/2018/03/02/jennnifer-lawrence-jodie-foster-presenters-oscars/|title=Jennifer Lawrence, Jodie Foster reportedly presenting Best Actress at Oscars|date=March 2, 2018|magazine=Entertainment Weekly|access-date=March 3, 2018|language=en|archive-date=March 3, 2018|archive-url=https://web.archive.org/web/20180303195022/http://ew.com/awards/2018/03/02/jennnifer-lawrence-jodie-foster-presenters-oscars/|url-status=live}}</ref>
+
+===Box office performance of Best Picture nominated films===
+{| class="wikitable sortable" style="width:350px; font-size:85%; float:right; clear:right; margin-left:10px"
+|+North American box office gross for Best Picture nominees<ref name="BOM">{{cite news|title=2017 Academy Award Nominations and Winner for Best Picture |url=https://www.boxofficemojo.com/oscar/chart/?yr=2017&view=fulldetail&p=.htm|publisher=[[Box Office Mojo]] |access-date=April 12, 2018|url-status=dead|archive-url=https://web.archive.org/web/20190619171640/http://www.boxofficemojo.com/oscar/chart/?yr=2017&view=fulldetail&p=.htm|archive-date=June 19, 2019}}</ref>
+|-
+! scope="col" data-sort-type="text"     | Film
+! scope="col" data-sort-type="currency" | Pre-nomination<br />(before Jan. 23)
+! scope="col" data-sort-type="currency" | Post-nomination<br />(Jan. 23&nbsp;– Mar. 4)
+! scope="col" data-sort-type="currency" | Post-awards<br />(after Mar. 5)
+! scope="col" data-sort-type="currency" | Total
+|-
+| ''Dunkirk''
+| $188 million
+! –
+! –
+| $188 million
+|-
+| ''Get Out''
+| $175.7 million
+| $353,795
+! –
+| $176 million
+|-
+| ''The Post''
+| $45.8 million
+| $34.8 million
+| $1.4 million
+| $81.9 million
+|-
+| ''The Shape of Water''
+| $30.4 million
+| $27.2 million
+| $6.3 million
+| $63.9 million
+|-
+| ''Darkest Hour''
+| $41.1 million
+| $14.5 million
+| $918,003
+| $56.5 million
+|-
+| ''Three Billboards Outside Ebbing, Missouri''
+| $32.3 million
+| $19.9 million
+| $2.3 million
+| $54.5 million
+|-
+| ''Lady Bird''
+| $39.2 million
+| $9.2 million
+| $636,405
+| $49 million
+|-
+| ''Phantom Thread''
+| $6.4 million
+| $13.9 million
+| $911,496
+| $21.2 million
+|-
+| ''Call Me by Your Name''
+| $9.4 million
+| $7.5 million
+| $1.2 million
+| $18.1 million
+|-
+! Total
+! $568.2 million
+! $127.3 million
+! $13.6 million
+! $708.5 million
+|-
+! Average
+! $63.1 million
+! $14.1 million
+! $1.5 million
+! $78.8 million
+|}
+
+At the time of the nominations announcement on January 23, 2018, the combined gross of the nine Best Picture nominees at the North American box offices was $568.2 million, with an average of $63.1 million per film.<ref name="BOM"/> When the nominations were announced, ''Dunkirk'' was the highest-grossing film among the Best Picture nominees with $188 million in domestic box office receipts. ''Get Out'' was the second-highest-grossing film with $175.6 million, followed by ''The Post'' ($45.7 million), ''Darkest Hour'' ($41 million), ''Lady Bird'' ($39.1 million), ''Three Billboards Outside Ebbing, Missouri'' ($32.2 million), ''The Shape of Water'' ($30.4 million), ''Call Me by Your Name'' ($9.1 million), and ''Phantom Thread'' ($6.3 million).<ref>{{cite news |title=Box office totals for best picture Academy Awards nominees |url=https://www.dailyherald.com/article/20180123/entlife/301239921 |access-date=May 10, 2020 |work=[[Daily Herald (United Kingdom)|Daily Herald]] |date=January 23, 2018 |archive-date=March 8, 2021 |archive-url=https://web.archive.org/web/20210308204603/https://www.dailyherald.com/article/20180123/entlife/301239921 |url-status=live }}</ref>
+
+===Critical reviews===
+The show received a mixed reception from media publications. Some media outlets received the broadcast positively. [[Hank Stuever]] of ''[[The Washington Post]]'' remarked, "In his second year, Kimmel has shown that the telecast needn't be anything but sharp and sure, with a funny host whose bits are manageable, shareable and – best of all – forgotten. We're not making showbiz history here; we're just trying to get through another Oscar night."<ref>{{cite news|url=https://www.washingtonpost.com/entertainment/tv/a-boring-oscars-show-might-have-helped-soothe-hollywoods-year-of-being-fed-up/2018/03/05/898d2786-1fff-11e8-94da-ebf9d112159c_story.html|title=Review: That boring Oscars show might have helped soothe Hollywood's year of being fed up|last=Stuever|first=Hank|date=2018-03-05|newspaper=The Washington Post|access-date=March 5, 2018|archive-date=March 5, 2018|archive-url=https://web.archive.org/web/20180305084805/https://www.washingtonpost.com/entertainment/tv/a-boring-oscars-show-might-have-helped-soothe-hollywoods-year-of-being-fed-up/2018/03/05/898d2786-1fff-11e8-94da-ebf9d112159c_story.html|url-status=live}}</ref> [[CNN]]'s Brian Lowry quipped, "The Oscars are a big, unwieldy beast, which invariably try to serve too many masters. Yet if the intent was ultimately to maintain a celebratory tone without ignoring either the outside world or the elephant in the room throughout this year's awards, host Jimmy Kimmel and the show itself largely succeeded."<ref>{{cite news|url=https://edition.cnn.com/2018/03/04/entertainment/oscars-review/index.html|title='The Shape of Water' wins, as Oscars tackle the serious without losing the fun|first=Brian|last=Lowry|agency=CNN|access-date=2018-03-05|archive-date=March 5, 2018|archive-url=https://web.archive.org/web/20180305082243/https://edition.cnn.com/2018/03/04/entertainment/oscars-review/index.html|url-status=live}}</ref> Television critic Daniel Fienberg of ''[[The Hollywood Reporter]]'' wrote, "How did Kimmel do overall? With the exception of the theater stunt and two unnecessary toss-off [[Matt Damon]] jokes — Kimmel really can't resist — I thought he was good, probably even better than last year."<ref>{{cite news |last1=Fienberg |first1=Daniel |title=90th Academy Awards: TV Review |url=https://www.hollywoodreporter.com/review/oscars-2018-review-1091628 |access-date=May 9, 2020 |work=The Hollywood Reporter |date=March 4, 2018 |archive-date=February 9, 2021 |archive-url=https://web.archive.org/web/20210209234602/https://www.hollywoodreporter.com/review/oscars-2018-review-1091628 |url-status=live }}</ref>
+
+Others were more critical of the show. Television critic [[Maureen Ryan]] of ''[[Variety (magazine)|Variety]]'' said, "All things considered, the show had a more or less low-key vibe. Normally it takes about two hours for the numbing effect to set in, but despite host Jimmy Kimmel's best efforts, Sunday's telecast started to feel a bit languid and low-energy far earlier." She also added, "The ceremony probably felt so ambiguous and conflicted in part because everyone in that room — and many at home — know how much more work needs to be done before true inclusion is the norm and all the offenders are driven from the industry."<ref>{{cite news|url=https://variety.com/2018/tv/columns/oscars-2018-review-academy-awards-jimmy-kimmel-abc-1202717830/|title=TV Review: The 90th Academy Awards Ceremony on ABC|last=Ryan|first=Maureen|date=2018-03-05|work=Variety|access-date=2018-03-05|language=en-US|archive-date=March 23, 2018|archive-url=https://web.archive.org/web/20180323223729/http://variety.com/2018/tv/columns/oscars-2018-review-academy-awards-jimmy-kimmel-abc-1202717830/|url-status=live}}</ref> ''[[Time (magazine)|Time]]'' television columnist Daniel D'Addario commented, "Kimmel, a talk show host who has been inspiring and catalyzing in the past year while discussing issues personally connected to him, seemed flat and uninspired in his monologue when dealing with topics that demanded laceration."<ref>{{cite magazine |last1=D'Addario |first1=Daniel |title=Inclusivity Reigned at the Oscars. Except When It Didn't |url=https://time.com/5185473/oscars-2018-jimmy-kimmel-review-recap/ |access-date=May 11, 2020 |magazine=Time |date=March 5, 2018 |archive-date=December 2, 2020 |archive-url=https://web.archive.org/web/20201202034618/https://time.com/5185473/oscars-2018-jimmy-kimmel-review-recap/ |url-status=live }}</ref> [[David Wiegand]] of the ''[[San Francisco Chronicle]]'' wrote, "Even the hope that the noise of clapping might keep the audience at home and in the theater awake, there was little of that for anything except the entrance of actors of advance age."<ref>{{cite news |first=David |last=Wiegand |url=https://www.sfchronicle.com/tv/article/A-lot-of-political-punches-pulled-in-wearying-12727613.php |url-access=subscription |title=A lot of political punches pulled in wearying Oscars |work=San Francisco Chronicle |date=March 6, 2018 |access-date=April 26, 2021 |archive-date=March 5, 2018 |archive-url=https://web.archive.org/web/20180305092521/https://www.sfchronicle.com/tv/article/A-lot-of-political-punches-pulled-in-wearying-12727613.php |url-status=live }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 26.54 million people over its length, which was a 19% decrease from the previous year's ceremony.<ref name="Ratings">{{cite news |last1=Littleton |first1=Cynthia |last2=Otterson |first2=Joe |title=TV Ratings: Oscars Hit New Viewership Low With 26.5 Million |url=https://variety.com/2018/tv/news/oscars-early-ratings-shape-of-water-down-1202718015/ |access-date=May 27, 2020 |work=Variety |date=March 5, 2018 |archive-date=May 21, 2020 |archive-url=https://web.archive.org/web/20200521142901/https://variety.com/2018/tv/news/oscars-early-ratings-shape-of-water-down-1202718015/ |url-status=live }}</ref><ref name="Ratings2018">{{cite magazine|last1=Porter|first1=Rick|url=https://www.hollywoodreporter.com/tv/tv-news/top-100-primetime-telecasts-2018-1170761/|title=The Top 100 Primetime Telecasts of 2018|magazine=[[The Hollywood Reporter]]|date=December 31, 2018|access-date=August 10, 2026|archive-date=May 18, 2021|archive-url=https://web.archive.org/web/20210518215555/https://www.hollywoodreporter.com/tv/tv-news/top-100-primetime-telecasts-2018-1170761/|url-status=live}}</ref> The show also earned lower [[Nielsen ratings]] compared to the previous ceremony with 18.9% of households watching the ceremony over a 32 share.<ref name="Ratings"/> In addition, it garnered a lower 18–49 demo rating with a 6.8 rating among viewers in that demographic.<ref>{{cite news |last1=Patten |first1=Dominic |last2=Hayes |first2=Dade |title=Oscars Ratings Drop Sees ABC Offering Advertisers Guarantees For First Time; Network Denies |url=https://deadline.com/2019/02/oscars-ads-abc-ratings-concerns-threshold-guarantees-1202562868/ |access-date=May 10, 2020 |work=Deadline Hollywood |date=February 22, 2019 |archive-date=June 16, 2020 |archive-url=https://web.archive.org/web/20200616231602/https://deadline.com/2019/02/oscars-ads-abc-ratings-concerns-threshold-guarantees-1202562868/ |url-status=live }}</ref> At the time, it earned the lowest viewership for an Academy Award telecast since figures were compiled beginning with the [[46th Academy Awards|46th ceremony]] in 1974.<ref>{{cite magazine |last1=Gajanan |first1=Mahita |title=Last Night's Oscars Ratings Were the Lowest in 44 Years – by Far |url=https://time.com/5186280/oscars-2018-ratings-low/ |access-date=May 10, 2020 |magazine=Time |date=March 5, 2018 |archive-date=April 5, 2020 |archive-url=https://web.archive.org/web/20200405052055/https://time.com/5186280/oscars-2018-ratings-low/ |url-status=live }}</ref> It was the seventh most watched television broadcast in the United States in 2018 among all viewers and the eleventh most watched among the 18–49 demo; in both groups it ranked behind only sport events and the "[[Super Bowl Sunday (This Is Us)|Super Bowl Sunday]]" episode of ''[[This Is Us]]''.<ref name="Ratings2018"/>
+
+In July 2018, the ceremony presentation received eight nominations for the [[70th Primetime Emmy Awards]].<ref>{{cite news|url=https://deadline.com/2018/07/2018-emmy-nominations-list-all-nominees-1202425072/|title=Emmy Nominations: 'Game Of Thrones' Tops Noms, With Netflix & HBO Leading Way – Full List|last=Hipes|first=Patrick|date=July 12, 2018|work=Deadline Hollywood|access-date=July 13, 2018|language=en-US|archive-date=October 26, 2021|archive-url=https://ghostarchive.org/archive/20211026/https://deadline.com/2018/07/2018-emmy-nominations-list-all-nominees-1202425072/|url-status=live}}</ref> Two months later, the ceremony won one of those nominations for [[Glenn Weiss]]'s [[Primetime Emmy Award for Outstanding Directing for a Variety Special|direction of the telecast]].<ref>{{cite news |last1=Bitran |first1=Tara |title=Emmy Winner Proposes to His Girlfriend During Live Broadcast |url=https://variety.com/2018/tv/news/emmys-proposal-glenn-weiss-1202946237/ |access-date=May 10, 2020 |work=Variety |date=September 17, 2018 |archive-date=August 11, 2020 |archive-url=https://web.archive.org/web/20200811015604/https://variety.com/2018/tv/news/emmys-proposal-glenn-weiss-1202946237/ |url-status=live }}</ref>
+
+=="In Memoriam"==
+The annual "[[In memoriam segment|In Memoriam]]" segment was introduced by [[Jennifer Garner]]. Singer [[Eddie Vedder]] performed the [[Tom Petty]] song "[[Room at the Top (Tom Petty song)|Room at the Top]]" during the tribute.<ref>{{cite news|last1=Saperstein|first1=Pat|title=Eddie Vedder sings Tom Petty song during Oscars In Memoriam segment|url=https://www.chicagotribune.com/entertainment/envelope/ct-eddie-vedder-sings-tom-petty-song-during-oscars-in-memoriam-segment-20180304-story.html|access-date=March 5, 2018|work=[[Chicago Tribune]]|date=March 4, 2018|archive-date=March 5, 2018|archive-url=https://web.archive.org/web/20180305202635/http://www.chicagotribune.com/entertainment/envelope/ct-eddie-vedder-sings-tom-petty-song-during-oscars-in-memoriam-segment-20180304-story.html|url-status=live}}</ref><ref>{{cite magazine |url=https://ew.com/oscars/2018/03/04/oscars-2018-in-memoriam/ |title=Oscars 2018 In Memoriam honors Sam Shepard, Jerry Lewis, and more |last=Li |first=Shirley |date=March 4, 2018 |access-date=May 9, 2020 |magazine=Entertainment Weekly |archive-date=November 28, 2020 |archive-url=https://web.archive.org/web/20201128142119/https://ew.com/oscars/2018/03/04/oscars-2018-in-memoriam/ |url-status=live }}</ref>
+{{div col}}
+
+<!--All artists are in order of appearance-->
+* [[John G. Avildsen]] – Director
+* Toni Ann Walker – Hairstylist
+* [[June Foray]] – Actress, animator
+* [[Walter Lassally]] – Cinematographer
+* [[Chuck Berry]] – Singer-songwriter
+* [[Robert Osborne]] – Columnist, television host, writer
+* [[Jill Messick]] – Producer
+* [[Harry Dean Stanton]] – Actor
+* [[Terence Marsh]] – Production designer
+* [[Rita Riggs]] – Costume designer
+* Mary Goldberg – Casting director
+* [[Anthony Harvey]] – Director, film editor
+* [[Thérèse DePrez]] – Production designer
+* [[Debra Chasnoff]] – Documentarian
+* [[Jóhann Jóhannsson]] – Composer
+* [[Jonathan Demme]] – Director
+* [[Michael Ballhaus]] – Cinematographer
+* [[Les Lazarowitz]] – Sound mixer
+* [[Idrissa Ouédraogo]] – Director, writer
+* Joe Hyams – Public Relations
+* [[John Heard (actor)|John Heard]] – Actor
+* [[Martin Landau]] – Actor
+* [[Glenne Headly]] – Actress
+* [[Eric Zumbrunnen]] – Film editor
+* [[Roger Moore]] – Actor
+* [[Sam Shepard]] – Actor, writer
+* [[Allison Shearmur]] – Executive, producer
+* [[John Mollo]] – Costume designer
+* [[Jeanne Moreau]] – Actress, director
+* [[Loren Janes]] – Stuntman
+* [[George A. Romero]] – Director, producer
+* [[Rance Howard]] – Actor
+* [[Sridevi]] – Actress
+* [[Haruo Nakajima]] – Actor
+* [[Martin Ransohoff]] – Producer
+* [[Hiep Thi Le]] – Actress
+* Ron Berkeley – Makeup artist
+* [[Joseph Bologna]] – Actor, writer
+* [[Fred J. Koenekamp]] – Cinematographer
+* [[Murray Lerner]] – Documentarian
+* [[Don Rickles]] – Actor, comedian
+* [[Seijun Suzuki]] – Director
+* [[Bernie Casey]] – Actor
+* [[Shashi Kapoor]] – Actor, producer
+* [[Thomas E. Sanders|Tom Sanders]] – Production designer
+* [[Danielle Darrieux]] – Actress
+* [[Gerald B. Greenberg|Jerry Greenberg]] – Film editor
+* [[Brad Grey]] – Executive producer, manager
+* [[Míriam Colón]] – Actress
+* [[Luis Bacalov]] – Composer
+* [[Jerry Lewis]] – Actor, comedian, director, writer
+
+{{div col end}}
+
+==See also==
+* [[75th Golden Globe Awards]]
+* [[24th Screen Actors Guild Awards]]
+* [[71st British Academy Film Awards]]
+* [[38th Brit Awards]]
+* [[60th Annual Grammy Awards]]
+* [[2018 Laurence Olivier Awards|42nd Laurence Olivier Awards]]
+* [[72nd Tony Awards]]
+* [[List of oldest and youngest Academy Award winners and nominees#Youngest nominees 2|List of oldest and youngest Academy Award winners and nominees – Youngest nominees for Best Actor in a Leading Role]]
+* [[List of submissions to the 90th Academy Awards for Best Foreign Language Film]]
+
+==References==
+{{reflist|30em}}
+
+==External links==
+<!-- Per [[WP:ELMINOFFICIAL]], choose one official website only -->
+
+'''Official websites'''
+* {{Official website|http://oscar.go.com/|Academy Awards official website}}
+* {{Official website|http://www.oscars.org/|The Academy of Motion Picture Arts and Sciences official website}}
+
+'''News resources'''
+* [https://www.theguardian.com/film/oscars-2018 Oscars 2018] {{Webarchive|url=https://web.archive.org/web/20180222120017/https://www.theguardian.com/film/oscars-2018 |date=February 22, 2018 }} at ''[[The Guardian]]''
+
+'''Analysis'''
+* [https://www.imdb.com/awards-central/oscars Academy Awards, USA: 2018] {{Webarchive|url=https://web.archive.org/web/20161224173042/http://www.imdb.com/awards-central/oscars |date=December 24, 2016 }} [[IMDb]]
+* [http://www.filmsite.org/aa2017.html 2017 Academy Awards winners and History] {{Webarchive|url=https://web.archive.org/web/20180307022543/http://www.filmsite.org/aa2017.html |date=March 7, 2018 }} at the [[Filmsite.org]]
+
+'''Other resources'''
+* {{IMDb title|7235270|The Oscars (2018)}}
+
+{{Academy Awards}}
+
+{{featured list}}
+
+{{DEFAULTSORT:Academy Awards, 90}}
+[[Category:2018 awards in the United States]]
+[[Category:2017 film awards]]
+[[Category:2018 in American cinema]]
+[[Category:2018 in Los Angeles]]
+[[Category:Academy Awards ceremonies]]
+[[Category:March 2018 in the United States]]
+[[Category:Television shows directed by Glenn Weiss]]
+[[Category:2018 television specials]]

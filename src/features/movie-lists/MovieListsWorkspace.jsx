@@ -492,7 +492,7 @@ export default function MovieListsWorkspace({
       <header className="library-header movie-lists-header">
         <div>
           <p className="screen-kicker">Mixed owned and wanted lists</p>
-          <h2>Movie Lists</h2>
+          <h2>Lists</h2>
           <p>Review full lists here. Library stays offline-only; this page shows owned, missing, and upgrade candidates together.</p>
         </div>
         <div className="movie-list-summary-strip" aria-label="Selected list summary">
@@ -640,6 +640,8 @@ export default function MovieListsWorkspace({
                         onFindTorrent={onFindTorrent}
                         onTrailer={() => openMovieListTrailer(row)}
                         onPersonFilter={(role, person) => onOpenDiscoverPerson(moviePayload(row.ownedItem), role, person)}
+                        onPersonDiscover={(movie, role, person) => onOpenDiscoverPerson(movie, role, person, { fullFilmography: true })}
+                        onPersonAwardDiscover={(movie, role, person, award) => onOpenDiscoverPerson(movie, role, person, { award })}
                         onCollectionBrowse={(collection) => onOpenDiscoverCollection(moviePayload(row.ownedItem), collection)}
                         onCollectionRetry={() => loadMovieCollection(cardDetails, { force: true })}
                         onListFilter={selectListFromCard}
@@ -683,6 +685,8 @@ export default function MovieListsWorkspace({
                       onTrailer={() => openMovieListTrailer(row)}
                       onToggleDetails={() => toggleMovieListDetails(row)}
                       onPersonBrowse={(role, person) => onOpenDiscoverPerson(cardMovie, role, person)}
+                      onPersonDiscover={(role, person) => onOpenDiscoverPerson(cardMovie, role, person, { fullFilmography: true })}
+                      onPersonAwardDiscover={(role, person, award) => onOpenDiscoverPerson(cardMovie, role, person, { award })}
                       onCollectionBrowse={(collection) => onOpenDiscoverCollection(cardMovie, collection)}
                       onCollectionRetry={() => loadMovieCollection(cardDetails, { force: true })}
                       onListBrowse={selectListFromCard}

@@ -1,0 +1,998 @@
+{{Short description|Award}}
+{{Infobox award
+| name = [[Golden Globe Award]] for Best Motion Picture – Musical or Comedy
+| awarded_for = Best Musical or Comedy Picture
+| presenter = [[Dick Clark Productions]]
+| location = United States
+| holder = ''[[One Battle After Another]]'' (2025)
+| website = {{URL|goldenglobes.com}}
+}}
+
+The '''Golden Globe Award for Best Motion Picture – Musical or Comedy''' is a [[Golden Globe Awards|Golden Globe Award]] that has been awarded annually since 1952 by the [[Hollywood Foreign Press Association]] (HFPA).
+
+==Eligibility==
+Eligible films must be at least 70 minutes in length, be commercially released for at least seven days in the "greater [[Los Angeles]] area", and screened for the HFPA membership.<ref name="MP rules">{{cite web|url=http://cdn.goldenglobes.org/resources/FF-rules_69.pdf |archive-url=https://web.archive.org/web/20111021164208/http://cdn.goldenglobes.org/resources/FF-rules_69.pdf |url-status=dead |archive-date=2011-10-21 |title=Golden Globe Award Consideration: Motion Picture – Submission |author=Hollywood Foreign Press Association |format=PDF |access-date=2012-04-01 }}</ref> The commercial release must begin during the calendar year prior to the awards ceremony, and the screening can occur no later than one week after commercial release.<ref name="MP rules"/> For purposes of the award, a "musical" is "a comedy or a drama in which songs are used in addition to spoken dialogue to further the plot."<ref name="MP rules"/>
+
+Under the 2007 revised rules of the HFPA, animated films were no longer eligible in this or the category of [[Golden Globe Award for Best Motion Picture – Drama]], instead competing exclusively in the new category of [[Golden Globe Award for Best Animated Feature Film|Best Animated Feature Film]]; until 2023 prior of the now-defunct [[Hollywood Foreign Press Association]], the rule is amended by [[Dick Clark Productions]] following controversies of splitting votes between the main categories, which animated films are still allowed to be eligible in this category or Drama as well as Animated at the same time in similar vein to [[Golden Globe Award for Best Foreign Language Film]] and newly established [[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]].<ref name="HFPA rules">{{cite web |author=Hollywood Foreign Press Association |title=Golden Globe Award Consideration: Best Foreign Language Film Submission |url=http://cdn.goldenglobes.org/resources/FF-rules_69.pdf |url-status=dead |archive-url=https://web.archive.org/web/20111021164208/http://cdn.goldenglobes.org/resources/FF-rules_69.pdf |archive-date=October 21, 2011 |access-date=February 29, 2012}}</ref>
+
+==Winners and nominations==
+===1951–1957===
+{| class="wikitable sortable" style="width:100%; text-align:left"
+! style="width:6%;"| Year
+! style="width:38%;"| Film
+! style="width:30%;"| Director
+! style="width:30%;"| Producer
+|-
+! style="text-align:center;" | [[9th Golden Globe Awards|1951]]<ref name="nonoms51">{{cite web |url=http://www.hfpa.org/browse/year/1951 |title=The 9th Annual Golden Globe Awards (1952) |access-date=2007-06-26 |publisher=Hollywood Foreign Press Association |url-status=dead |archive-url=https://web.archive.org/web/20070412050258/http://www1.hfpa.org/browse/year/1951 |archive-date=2007-04-12}}The nominees' names are not listed for this year.</ref><ref name="lanonoms51">{{cite news|url=http://theenvelope.latimes.com/extras/lostmind/year/1951/1951gg.htm |title=1951 9th Golden Globe Awards |work=Los Angeles Times The Envelope Awards Site |access-date=2007-06-29 |quote=nominee list no longer exists |archive-url=https://web.archive.org/web/20070521062458/http://theenvelope.latimes.com/extras/lostmind/year/1951/1951gg.htm |archive-date=2007-05-21 |url-status=dead}}</ref>
+| style="background:#b0c4de; text-align:left;" | '''''[[An American in Paris (film)|An American in Paris]]'''''  || style="background:#B0C4DE;" | '''[[Vincente Minnelli]]''' || style="background:#B0C4DE;" | '''[[Arthur Freed]]'''
+|-
+! rowspan="5" style="text-align:center;" | [[10th Golden Globe Awards|1952]]
+| style="background:#b0c4de; text-align:left;" | '''''[[With a Song in My Heart (film)|With a Song in My Heart]]''''' || style="background:#B0C4DE;" | '''[[Walter Lang]]''' || style="background:#B0C4DE;" | '''[[Lamar Trotti]]'''
+|-
+| style="text-align:left;"|''[[Hans Christian Andersen (film)|Hans Christian Andersen]]'' || [[Charles Vidor]] || [[Samuel Goldwyn]]
+|-
+| style="text-align:left;"|''[[I'll See You in My Dreams (1951 film)|I'll See You in My Dreams]]'' || [[Michael Curtiz]] || [[Louis F. Edelman]]
+|-
+| style="text-align:left;"|''[[Singin' in the Rain]]'' || [[Stanley Donen]] and [[Gene Kelly]] || Arthur Freed
+|-
+| style="text-align:left;"|''[[Stars and Stripes Forever (film)|Stars and Stripes Forever]]'' || [[Henry Koster]] || [[Lamar Trotti]]
+|-
+! style="text-align:center;" | [[11th Golden Globe Awards|1953]]
+
+! colspan="3" style="text-align:center;" | No Award given.
+|-
+! style="text-align:center;" | [[12th Golden Globe Awards|1954]]<ref name="nonoms54">{{cite web |url=http://www.hfpa.org/browse/year/1954 |title=The 12th Annual Golden Globe Awards (1955) |access-date=2007-06-26 |publisher=Hollywood Foreign Press Association |url-status=dead |archive-url=https://web.archive.org/web/20070411181559/http://www1.hfpa.org/browse/year/1954 |archive-date=2007-04-11}} The nominees' names are not listed for this year.</ref><ref name="lanonoms54">{{cite news|url=http://theenvelope.latimes.com/extras/lostmind/year/1954/1954gg.htm |title=1954 12th Golden Globe Awards |work=Los Angeles Times The Envelope Awards Site |access-date=2007-06-29 |quote=nominee list no longer exists |archive-url=https://web.archive.org/web/20070517233028/http://theenvelope.latimes.com/extras/lostmind/year/1954/1954gg.htm |archive-date=2007-05-17 |url-status=dead}}</ref>
+| style="background:#b0c4de; text-align:left;" | '''''[[Carmen Jones (film)|Carmen Jones]]''''' || style="background:#B0C4DE;" | '''[[Otto Preminger]]''' || style="background:#B0C4DE;" | '''Otto Preminger'''
+|-
+! style="text-align:center;" | [[13th Golden Globe Awards|1955]]<ref name="nonoms55">{{cite web |url=http://www.hfpa.org/browse/year/1955 |title=The 13th Annual Golden Globe Awards (1956) |access-date=2007-06-26 |publisher=Hollywood Foreign Press Association |url-status=dead |archive-url=https://web.archive.org/web/20070607225609/http://www1.hfpa.org/browse/year/1955 |archive-date=2007-06-07}} The nominees' names are not listed for this year.</ref><ref name="lanonoms55">{{cite news|url=http://theenvelope.latimes.com/extras/lostmind/year/1955/1955gg.htm |title=1955 13th Golden Globe Awards |work=Los Angeles Times The Envelope Awards Site |access-date=2007-06-29 |quote=nominee list no longer exists |archive-url=https://web.archive.org/web/20070517233230/http://theenvelope.latimes.com/extras/lostmind/year/1955/1955gg.htm |archive-date=2007-05-17 |url-status=dead}}</ref>
+| style="background:#b0c4de; text-align:left;" | '''''[[Guys and Dolls (film)|Guys and Dolls]]''''' || style="background:#B0C4DE;" | '''[[Joseph L. Mankiewicz]]''' || style="background:#B0C4DE;" | '''Samuel Goldwyn'''
+|-
+! rowspan="5" style="text-align:center;" | [[14th Golden Globe Awards|1956]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The King and I (1956 film)|The King and I]]'''''  || style="background:#B0C4DE;" | '''[[Walter Lang]]''' || style="background:#B0C4DE;" | '''[[Charles Brackett]] & [[Darryl F. Zanuck]]'''
+|-
+| style="text-align:left;"|''[[Bus Stop (1956 film)|Bus Stop]]'' || [[Joshua Logan]] || [[Buddy Adler]]
+|-
+| style="text-align:left;"|''[[The Opposite Sex]]'' || [[David Miller (director)|David Miller]] || [[Joe Pasternak]]
+|-
+| style="text-align:left;"|''[[The Solid Gold Cadillac]]'' || [[Richard Quine]] || [[Fred Kohlmar]]
+|-
+| style="text-align:left;"|''[[The Teahouse of the August Moon (film)|The Teahouse of the August Moon]]'' || Daniel Mann || [[Jack Cummings (director)|Jack Cummings]]
+|-
+! rowspan="5" style="text-align:center;" | [[15th Golden Globe Awards|1957]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Les Girls]]''''' || style="background:#B0C4DE;" | '''[[George Cukor]]''' || style="background:#B0C4DE;" | '''[[Saul Chaplin]] & [[Sol C. Siegel]]'''
+|-
+| style="text-align:left;"|''[[Don't Go Near the Water (film)|Don't Go Near the Water]]'' || [[Charles Walters]] || [[Lawrence Weingarten]]
+|-
+| style="text-align:left;"|''[[Love in the Afternoon (1957 film)|Love in the Afternoon]]'' || colspan="2" | [[Billy Wilder]] 
+|-
+| style="text-align:left;"|''[[Pal Joey (film)|Pal Joey]]'' || [[George Sidney]] || Fred Kohlmar
+|-
+| style="text-align:left;"|''[[Silk Stockings (1957 film)|Silk Stockings]]'' || [[Rouben Mamoulian]] || Arthur Freed
+|}
+
+===1958–1962===
+{| class="wikitable" style="width:100%; text-align:left"
+|-
+! style="width:4%;"| Year
+! style="width:16%;"| Comedy
+! style="width:16%;"| Director
+! style="width:16%;"| Producer
+! style="width:16%;"| Musical
+! style="width:16%;"| Director
+! style="width:16%;"| Producer
+|-
+! rowspan="5" style="text-align:center;" | [[16th Golden Globe Awards|1958]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Auntie Mame (film)|Auntie Mame]]'''''  || style="background:#B0C4DE;" | '''[[Morton DaCosta]]''' || style="background:#B0C4DE;" | '''Morton DaCosta''' || style="background:#90ee90; text-align:left;"| '''''[[Gigi (1958 film)|Gigi]]'''''  || style="background:#90EE90;" | '''[[Vincente Minnelli]]''' || style="background:#90EE90;" | '''Arthur Freed'''
+|-
+| style="text-align:left;"|''[[Bell, Book and Candle (film)|Bell, Book and Candle]]'' || Richard Quine || [[Julian Blaustein]] || ''[[Damn Yankees (film)|Damn Yankees]]'' || [[George Abbott]] & Stanley Donen || George Abbott, Stanley Donen, [[Robert E. Griffith]], & [[Harold Prince]]
+|-
+| style="text-align:left;"|''[[Indiscreet (1958 film)|Indiscreet]]'' || Stanley Donen || [[Norman Krasna]] || ''[[South Pacific (1958 film)|South Pacific]]'' || Joshua Logan || Buddy Adler
+|-
+| style="text-align:left;"|''[[Me and the Colonel]]'' || [[Peter Glenville]] || [[William Goetz]] || rowspan=2|''[[Tom Thumb (film)|tom thumb]]'' || rowspan=2|[[George Pal]] || rowspan=2|George Pal
+|-
+| style="text-align:left;"|''[[The Perfect Furlough]]'' || [[Blake Edwards]] || [[Robert Arthur (film producer)|Robert Arthur]] 
+|-
+! rowspan="5" style="text-align:center;" | [[17th Golden Globe Awards|1959]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Some Like It Hot]]''''' || colspan="2" style="background:#B0C4DE;" | '''[[Billy Wilder]]''' || style="background:#90ee90; text-align:left;" | '''''[[Porgy and Bess (film)|Porgy and Bess]]''''' || style="background:#90EE90;" | '''[[Otto Preminger]]''' || style="background:#90EE90;" | '''Samuel Goldwyn'''
+|-
+| style="text-align:left;"|''[[But Not for Me (film)|But Not for Me]]'' || Walter Lang || [[William Perlberg]] & [[George Seaton]] || ''[[The Five Pennies]]'' || [[Melville Shavelson]] || [[Jack Rose (screenwriter)|Jack Rose]]
+|-
+| style="text-align:left;"|''[[Operation Petticoat]]'' || Blake Edwards || Robert Arthur || ''[[Li'l Abner (1959 film)|Li'l Abner]]'' || [[Melvin Frank]] || [[Norman Panama]]
+|-
+| style="text-align:left;"|''[[Pillow Talk (film)|Pillow Talk]]'' || [[Michael Gordon (film director)|Michael Gordon]] || [[Ross Hunter]] & [[Martin Melcher]] || ''[[A Private's Affair]]'' || [[Raoul Walsh]] || [[David Weisbart]]
+|-
+| style="text-align:left;"|''[[Who Was That Lady?]]'' || George Sidney || Norman Krasna || ''[[Say One for Me]]'' || [[Frank Tashlin]] || Frank Tashlin
+|-
+! rowspan="5" style="text-align:center;" | [[18th Golden Globe Awards|1960]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Apartment]]'''''  || colspan="2" style="background:#B0C4DE;" | '''[[Billy Wilder]]''' || style="background:#90ee90; text-align:left;" | '''''[[Song Without End]]''''' || style="background:#90EE90;" | '''[[George Cukor]] & [[Charles Vidor]]''' || style="background:#90EE90;" | '''William Goetz'''
+|-
+| style="text-align:left;"|''[[The Facts of Life (film)|The Facts of Life]]'' || Melvin Frank & Norman Panama || Melvin Frank & Norman Panama || ''[[Bells Are Ringing (film)|Bells Are Ringing]]'' || Vincente Minnelli || Arthur Freed
+|-
+| style="text-align:left;"|''[[The Grass Is Greener]]'' || Stanley Donen || Stanley Donen & James H. Ware || ''[[Can-Can (film)|Can-Can]]'' || Walter Lang || Saul Chaplin & Jack Cummings
+|-
+| style="text-align:left;"|''[[It Started in Naples]]'' || Melville Shavelson || Jack Rose || ''[[Let's Make Love]]'' || George Cukor || [[Jerry Wald]]
+|-
+| style="text-align:left;"|''[[Our Man in Havana (film)|Our Man in Havana]]'' || [[Carol Reed]] || Carol Reed || ''[[Pepe (1960 film)|Pepe]]'' || colspan="2" | George Sidney 
+|-
+! rowspan="5" style="text-align:center;" | [[19th Golden Globe Awards|1961]]
+| style="background:#b0c4de; text-align:left;" | '''''[[A Majority of One (film)|A Majority of One]]''''' || style="background:#B0C4DE;" | '''[[Mervyn LeRoy]]''' || style="background:#B0C4DE;" | '''Mervyn LeRoy''' || style="background:#90ee90; text-align:left;"| '''''[[West Side Story (1961 film)|West Side Story]]'''''  || style="background:#90EE90;" | '''[[Jerome Robbins]] & [[Robert Wise]]''' || style="background:#90EE90;" | '''Robert Wise'''
+|-
+| style="text-align:left;"|''[[Breakfast at Tiffany's (film)|Breakfast at Tiffany's]]'' || Blake Edwards || [[Martin Jurow]] & [[Richard Shepherd (producer)|Richard Shepherd]] || rowspan=2|''[[Babes in Toyland (1961 film)|Babes in Toyland]]'' || rowspan=2|[[Jack Donohue (director)|Jack Donohue]] || rowspan=2|[[Walt Disney]]
+|-
+| style="text-align:left;"|''[[One, Two, Three]]'' || colspan="2" | Billy Wilder 
+|-
+| style="text-align:left;"|''[[The Parent Trap (1961 film)|The Parent Trap]]'' || [[David Swift (director)|David Swift]] || Walt Disney & George Golitzen || rowspan=2|''[[Flower Drum Song (film)|Flower Drum Song]]'' || rowspan=2|Henry Koster || rowspan=2|Ross Hunter
+|-
+| style="text-align:left;"|''[[Pocketful of Miracles]]'' || colspan="2" | [[Frank Capra]] 
+|-
+! rowspan="5" style="text-align:center;" | [[20th Golden Globe Awards|1962]]
+| style="background:#b0c4de; text-align:left;" | '''''[[That Touch of Mink]]''''' || style="background:#B0C4DE;" | '''[[Delbert Mann]]''' || style="background:#B0C4DE;" | '''Robert Arthur, Martin Melcher, [[Edward Muhl]], & [[Stanley Shapiro]]''' || style="background:#90ee90; text-align:left;"| '''''[[The Music Man (1962 film)|The Music Man]]'''''  || colspan="2" style="background:#90EE90;" | '''[[Morton DaCosta]]''' 
+|-
+| style="text-align:left;"|''[[The Best of Enemies (1961 film)|The Best of Enemies]]'' || [[Guy Hamilton]]|| [[Dino De Laurentiis]]|| ''[[Billy Rose's Jumbo]]'' || Charles Walters || Martin Melcher & Joe Pasternak
+|-
+| style="text-align:left;"|''[[Boys' Night Out (film)|Boys' Night Out]]'' || Michael Gordon || [[Martin Ransohoff]] || ''[[Girls! Girls! Girls!]]'' || [[Norman Taurog]] || [[Hal B. Wallis]]
+|-
+| style="text-align:left;"|''[[If a Man Answers]]'' || [[Henry Levin (film director)|Henry Levin]] || Ross Hunter || ''[[Gypsy (1962 film)|Gypsy]]'' || colspan="2" | Mervyn LeRoy 
+|-
+| style="text-align:left;"|''[[Period of Adjustment (film)|Period of Adjustment]]'' || [[George Roy Hill]] || Lawrence Weingarten || ''[[The Wonderful World of the Brothers Grimm]]'' || Henry Levin & George Pal || George Pal
+|}
+
+===1963–1969===
+{| class="wikitable sortable" style="width:100%; text-align:left"
+|-
+! style="width:6%;"| Year
+! style="width:38%;"| Film
+! style="width:30%;"| Director
+! style="width:30%;"| Producer
+|-
+! rowspan="6" style="text-align:center;" | [[21st Golden Globe Awards|1963]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Tom Jones (1963 film)|Tom Jones]]'''''  || style="background:#B0C4DE;" | '''[[Tony Richardson]]''' || style="background:#B0C4DE;" | '''[[Michael Balcon]], Michael Holden, [[Oscar Lewenstein]], & Tony Richardson'''
+|-
+| style="text-align:left;"|''[[Bye Bye Birdie (1963 film)|Bye Bye Birdie]]'' || George Sidney || [[Irving Brecher]] & [[Michael Stewart (playwright)|Michael Stewart]]
+|-
+| style="text-align:left;"|''[[Irma la Douce]]'' || Billy Wilder || [[Edward L. Alperson]], [[I.A.L. Diamond]], [[Doane Harrison]], [[Alexandre Trauner]], & Billy Wilder
+|-
+| style="text-align:left;"|''[[It's a Mad, Mad, Mad, Mad World]]'' || colspan="2" | [[Stanley Kramer]] 
+|-
+| style="text-align:left;"|''[[A Ticklish Affair]]'' || George Sidney || Joe Pasternak
+|-
+| style="text-align:left;"|''[[Under the Yum Yum Tree]]'' || colspan="2" | David Swift 
+|-
+! rowspan="5" style="text-align:center;" | [[22nd Golden Globe Awards|1964]]
+| style="background:#b0c4de; text-align:left;" | '''''[[My Fair Lady (film)|My Fair Lady]]'''''  || style="background:#B0C4DE;" | '''[[George Cukor]]''' || style="background:#B0C4DE;" | '''[[Jack L. Warner]]'''
+|-
+| style="text-align:left;"|''[[Father Goose (film)|Father Goose]]'' || [[Ralph Nelson]] || [[Robert Arthur (film producer)|Robert Arthur]]
+|-
+| style="text-align:left;"|''[[Mary Poppins (film)|Mary Poppins]]''  || [[Robert Stevenson (director)|Robert Stevenson]] || Walt Disney & [[Bill Walsh (producer)|Bill Walsh]]
+|-
+| style="text-align:left;"|''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]'' || Charles Walters || Lawrence Weingarten
+|-
+| style="text-align:left;"|''[[The World of Henry Orient]]'' || George Roy Hill || [[Jerome Hellman]]
+|-
+! rowspan="5" style="text-align:center;" | [[23rd Golden Globe Awards|1965]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Sound of Music (film)|The Sound of Music]]'''''  || colspan="2" style="background:#B0C4DE;" | '''[[Robert Wise]]''' 
+|-
+| style="text-align:left;"|''[[Cat Ballou]]'' || [[Elliot Silverstein]] || [[Walter Newman (screenwriter)|Walter Newman]]
+|-
+| style="text-align:left;"|''[[The Great Race]]'' || Blake Edwards || Martin Jurow
+|-
+| style="text-align:left;"|''[[Those Magnificent Men in their Flying Machines]]'' || [[Ken Annakin]] || Stan Margulies
+|-
+| style="text-align:left;"|''[[A Thousand Clowns]]''  || colspan="2" | [[Fred Coe]] 
+|-
+! rowspan="5" style="text-align:center;" | [[24th Golden Globe Awards|1966]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Russians Are Coming, the Russians Are Coming]]'''''  || colspan="2" style="background:#B0C4DE;" | '''[[Norman Jewison]]''' 
+|-
+| style="text-align:left;"|''[[A Funny Thing Happened on the Way to the Forum (film)|A Funny Thing Happened on the Way to the Forum]]'' || [[Richard Lester]] || Melvin Frank
+|-
+| style="text-align:left;"|''[[Gambit (1966 film)|Gambit]]'' || [[Ronald Neame]] || Leo L. Fuchs
+|-
+| style="text-align:left;"|''[[Not with My Wife, You Don't!]]'' || colspan="2" | Norman Panama 
+|-
+| style="text-align:left;"|''[[You're a Big Boy Now]]'' || [[Francis Ford Coppola]] || Phil Feldman
+|-
+! rowspan="5" style="text-align:center;" | [[25th Golden Globe Awards|1967]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Graduate]]'''''  || style="background:#B0C4DE;" | '''[[Mike Nichols]]''' || style="background:#B0C4DE;" | '''[[Joseph E. Levine]] & [[Lawrence Turman]]'''
+|-
+| style="text-align:left;"|''[[Camelot (film)|Camelot]]'' || [[Joshua Logan]] || Jack Warner
+|-
+| style="text-align:left;"|''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''  || [[Richard Fleischer]] || [[Arthur P. Jacobs]]
+|-
+| style="text-align:left;"|''[[The Taming of the Shrew (1967 film)|The Taming of the Shrew]]'' || [[Franco Zeffirelli]] || Richard McWhorter & [[Elizabeth Taylor]]
+|-
+| style="text-align:left;"|''[[Thoroughly Modern Millie]]'' || George Roy Hill || Ross Hunter
+|-
+! rowspan="5" style="text-align:center;" | [[26th Golden Globe Awards|1968]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Oliver! (film)|Oliver!]]'''''  || style="background:#B0C4DE;" | '''[[Carol Reed]]''' || style="background:#B0C4DE;" | '''[[John and James Woolf|John Woolf]]'''
+|-
+| style="text-align:left;"|''[[Finian's Rainbow (1968 film)|Finian's Rainbow]]'' || Francis Ford Coppola || Joseph Landon
+|-
+| style="text-align:left;"|''[[Funny Girl (film)|Funny Girl]]''  || [[William Wyler]] || [[Ray Stark]]
+|-
+| style="text-align:left;"|''[[The Odd Couple (film)|The Odd Couple]]'' || [[Gene Saks]] || [[Howard W. Koch]]
+|-
+| style="text-align:left;"|''[[Yours, Mine and Ours (1968 film)|Yours, Mine and Ours]]'' || Melville Shavelson || [[Robert F. Blumofe]]
+|-
+! rowspan="5" style="text-align:center;" | [[27th Golden Globe Awards|1969]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Secret of Santa Vittoria]]''''' || style="background:#B0C4DE;" | '''[[Stanley Kramer]]''' || style="background:#B0C4DE;" | '''[[George Glass]] & Stanley Kramer'''
+|-
+| style="text-align:left;"|''[[Cactus Flower (film)|Cactus Flower]]'' || Gene Saks || [[M.J. Frankovich]]
+|-
+| style="text-align:left;"|''[[Goodbye, Columbus (film)|Goodbye, Columbus]]'' || [[Larry Peerce]] || [[Stanley R. Jaffe]]
+|-
+| style="text-align:left;"|''[[Hello, Dolly! (film)|Hello, Dolly!]]''  || Gene Kelly || [[Ernest Lehman]]
+|-
+| style="text-align:left;"|''[[Paint Your Wagon (film)|Paint Your Wagon]]'' || Joshua Logan || [[Alan Jay Lerner]]
+|}
+
+===1970s===
+{| class="wikitable sortable" style="width:100%; text-align:left"
+|-
+! style="width:6%;"| Year
+! style="width:38%;"| Film
+! style="width:30%;"| Director
+! style="width:30%;"| Producer
+|-
+! rowspan="5" style="text-align:center;" | [[28th Golden Globe Awards|1970]]
+| style="background:#b0c4de; text-align:left;" | '''''[[MASH (film)|MASH]]'''''  || style="background:#B0C4DE;" | '''[[Robert Altman]]''' || style="background:#B0C4DE;" | '''[[Ingo Preminger]]'''
+|-
+| style="text-align:left;"|''[[Darling Lili]]'' || colspan="2" | Blake Edwards 
+|-
+| style="text-align:left;"|''[[Diary of a Mad Housewife]]'' || [[Frank Perry]] || Frank Perry
+|-
+| style="text-align:left;"|''[[Lovers and Other Strangers]]'' || [[Cy Howard]] || [[David Susskind]]
+|-
+| style="text-align:left;"|''[[Scrooge (1970 film)|Scrooge]]'' || Ronald Neame || [[Robert H. Solo]]
+|-
+! rowspan="5" style="text-align:center;" | [[29th Golden Globe Awards|1971]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Fiddler on the Roof (film)|Fiddler on the Roof]]'''''  || colspan="2" style="background:#B0C4DE;" | '''[[Norman Jewison]]''' 
+|-
+| style="text-align:left;"|''[[The Boy Friend (1971 film)|The Boy Friend]]'' || [[Ken Russell]] || Harry Benn & Ken Russell
+|-
+| style="text-align:left;"|''[[Kotch]]'' || [[Jack Lemmon]] || Richard Carter
+|-
+| style="text-align:left;"|''[[A New Leaf (film)|A New Leaf]]'' || [[Elaine May]] || [[Hillard Elkins]]
+|-
+| style="text-align:left;"|''[[Plaza Suite (film)|Plaza Suite]]'' || [[Arthur Hiller]] || Howard W. Koch
+|-
+! rowspan="5" style="text-align:center;" | [[30th Golden Globe Awards|1972]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Cabaret (1972 film)|Cabaret]]'''''  || style="background:#B0C4DE;" | '''[[Bob Fosse]]''' || style="background:#B0C4DE;" | '''[[Cy Feuer]]'''
+|-
+| style="text-align:left;"|''[[Avanti!]]'' || colspan="2" | Billy Wilder 
+|-
+| style="text-align:left;"|''[[Butterflies Are Free]]'' || [[Milton Katselas]] || M.J. Frankovich
+|-
+| style="text-align:left;"|''[[1776 (film)|1776]]'' || [[Peter H. Hunt]] || Jack Warner
+|-
+| style="text-align:left;"|''[[Travels with My Aunt (film)|Travels with My Aunt]]'' || George Cukor || James Cresson & [[Robert Fryer]]
+|-
+! rowspan="5" style="text-align:center;" | [[31st Golden Globe Awards|1973]]
+| style="background:#b0c4de; text-align:left;" | '''''[[American Graffiti]]'''''  || style="background:#B0C4DE;" | '''[[George Lucas]]''' || style="background:#B0C4DE;" | '''Francis Ford Coppola & [[Gary Kurtz]]'''
+|-
+| style="text-align:left;"|''[[Jesus Christ Superstar (film)|Jesus Christ Superstar]]'' || Norman Jewison || Norman Jewison, Patrick Palmer, & [[Robert Stigwood]]
+|-
+| style="text-align:left;"|''[[Paper Moon (film)|Paper Moon]]'' || [[Peter Bogdanovich]] || Peter Bogdanovich & [[Frank Marshall (filmmaker)|Frank Marshall]]
+|-
+| style="text-align:left;"|''[[Tom Sawyer (1973 film)|Tom Sawyer]]'' || [[Don Taylor (American filmmaker)|Don Taylor]] || [[Frank Capra Jr.]] & Arthur P. Jacobs
+|-
+| style="text-align:left;"|''[[A Touch of Class (film)|A Touch of Class]]''  || colspan="2" | Melvin Frank 
+|-
+! rowspan="5" style="text-align:center;" | [[32nd Golden Globe Awards|1974]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Longest Yard (1974 film)|The Longest Yard]]''''' || style="background:#B0C4DE;" | '''[[Robert Aldrich]]''' || style="background:#B0C4DE;" | [[Albert S. Ruddy]]
+|-
+| style="text-align:left;"|''[[The Front Page (1974 film)|The Front Page]]'' || Billy Wilder || [[Paul Monash]]
+|-
+| style="text-align:left;"|''[[Harry and Tonto]]'' || colspan="2" | [[Paul Mazursky]] 
+|-
+| style="text-align:left;"|''[[The Little Prince (1974 film)|The Little Prince]]'' || colspan="2" | Stanley Donen 
+|-
+| style="text-align:left;"|''[[The Three Musketeers (1973 live-action film)|The Three Musketeers]]'' || Richard Lester || [[Alexander Salkind]], [[Ilya Salkind]], & [[Pierre Spengler]]
+|-
+! rowspan="5" style="text-align:center;" | [[33rd Golden Globe Awards|1975]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Sunshine Boys (1975 film)|The Sunshine Boys]]''''' || style="background:#B0C4DE;" | '''[[Herbert Ross]]''' || style="background:#B0C4DE;" | '''Ray Stark'''
+|-
+| style="text-align:left;"|''[[Funny Lady]]'' || Herbert Ross || Ray Stark
+|-
+| style="text-align:left;"|''[[The Return of the Pink Panther]]'' || colspan="2" | Blake Edwards 
+|-
+| style="text-align:left;"|''[[Shampoo (film)|Shampoo]]'' || [[Hal Ashby]] || [[Warren Beatty]]
+|-
+| style="text-align:left;"|''[[Tommy (1975 film)|Tommy]]'' || Ken Russell || Ken Russell & Robert Stigwood
+|-
+! rowspan="5" style="text-align:center;" | [[34th Golden Globe Awards|1976]]
+| style="background:#b0c4de; text-align:left;" | '''''[[A Star Is Born (1976 film)|A Star Is Born]]''''' || style="background:#B0C4DE;" | '''[[Frank Pierson]]''' || style="background:#B0C4DE;" | '''[[Jon Peters]]'''
+|-
+| style="text-align:left;"|''[[Bugsy Malone]]'' || [[Alan Parker]] || [[Alan Marshall (producer)|Alan Marshall]]
+|-
+| style="text-align:left;"|''[[The Pink Panther Strikes Again]]'' || colspan="2" | Blake Edwards 
+|-
+| style="text-align:left;"|''[[The Ritz (film)|The Ritz]]'' || Richard Lester || [[Denis O'Dell]]
+|-
+| style="text-align:left;"|''[[Silent Movie]]'' || [[Mel Brooks]] || [[Michael Hertzberg]]
+|-
+! rowspan="5" style="text-align:center;" | [[35th Golden Globe Awards|1977]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Goodbye Girl]]'''''  || style="background:#B0C4DE;" | '''[[Herbert Ross]]''' || style="background:#B0C4DE;" | '''Ray Stark'''
+|-
+| style="text-align:left;"|''[[Annie Hall]]''  || [[Woody Allen]] || [[Charles H. Joffe]]
+|-
+| style="text-align:left;"|''[[High Anxiety]]'' || colspan="2" | Mel Brooks 
+|-
+| style="text-align:left;"|''[[New York, New York (1977 film)|New York, New York]]'' || [[Martin Scorsese]] || [[Robert Chartoff]] & [[Irwin Winkler]]
+|-
+| style="text-align:left;"|''[[Saturday Night Fever]]'' || [[John Badham]] || Robert Stigwood
+|-
+! rowspan="5" style="text-align:center;" | [[36th Golden Globe Awards|1978]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]'''''  || style="background:#B0C4DE;" | '''[[Warren Beatty]] & [[Buck Henry]]''' || style="background:#B0C4DE;" | '''Warren Beatty'''
+|-
+| style="text-align:left;"|''[[California Suite (film)|California Suite]]'' || Herbert Ross || Ray Stark
+|-
+| style="text-align:left;"|''[[Foul Play (1978 film)|Foul Play]]'' || [[Colin Higgins]] || Edward K. Milkins & [[Thomas L. Miller]]
+|-
+| style="text-align:left;"|''[[Grease (film)|Grease]]'' || [[Randal Kleiser]] || [[Allan Carr]] & Robert Stigwood
+|-
+| style="text-align:left;"|''[[Movie Movie]]'' || colspan="2" | Stanley Donen 
+|-
+! rowspan="5" style="text-align:center;" | [[37th Golden Globe Awards|1979]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Breaking Away]]'''''  || style="background:#B0C4DE;" | '''[[Peter Yates]]''' || style="background:#B0C4DE;" | '''[[Steve Tesich]]'''
+|-
+| style="text-align:left;"|''[[Being There]]'' || Hal Ashby || Andrew Braunsberg
+|-
+| style="text-align:left;"|''[[Hair (film)|Hair]]'' || [[Miloš Forman]] || [[Michael Butler (producer)|Michael Butler]] & [[Lester Persky]]
+|-
+| style="text-align:left;"|''[[The Rose (film)|The Rose]]'' || [[Mark Rydell]] || [[Anthony Ray (producer)|Anthony Ray]], [[Aaron Russo]], & [[Marvin Worth]]
+|-
+| style="text-align:left;"|''[[10 (1979 film)|10]]'' || Blake Edwards || [[Tony Adams (producer)|Tony Adams]] & Blake Edwards
+|}
+
+===1980s===
+{| class="wikitable sortable" style="width:100%; text-align:left"
+|-
+! style="width:6%;" | Year
+! style="width:38%;" | Film
+! style="width:30%;" | Director
+! style="width:30%;" | Producer
+|-
+! rowspan="5" style="text-align:center;" | [[38th Golden Globe Awards|1980]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]'''''  || style="background:#B0C4DE;" | '''[[Michael Apted]]''' || style="background:#B0C4DE;" | '''[[Bernard Schwartz (producer)|Bernard Schwartz]]'''
+|-
+| style="text-align:left;" |''[[Airplane!]]'' || [[Jim Abrahams]], [[David Zucker (filmmaker)|David Zucker]] & [[Jerry Zucker]] || [[Jon Davison (film producer)|Jon Davison]] & [[Howard W. Koch]]
+|-
+| style="text-align:left;" |''[[Fame (1980 film)|Fame]]'' || Alan Parker || [[David De Silva]] & Alan Marshall
+|-
+| style="text-align:left;" |''[[The Idolmaker]]'' || [[Taylor Hackford]] || Gene Kirkwood & [[Hawk Koch|Howard W. Koch Jr.]]
+|-
+| style="text-align:left;" |''[[Melvin and Howard]]'' || [[Jonathan Demme]] || [[Art Linson]] & [[Don Phillips (casting director)|Don Phillips]]
+|-
+! rowspan="5" style="text-align:center;" | [[39th Golden Globe Awards|1981]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Arthur (1981 film)|Arthur]]''''' || style="background:#B0C4DE;" | '''[[Steve Gordon (director)|Steve Gordon]]''' || style="background:#B0C4DE;" | '''Steve Gordon'''
+|-
+| style="text-align:left;" |''[[The Four Seasons (1981 film)|The Four Seasons]]'' || [[Alan Alda]] || [[Martin Bregman]]
+|-
+| style="text-align:left;" |''[[Pennies from Heaven (1981 film)|Pennies from Heaven]]'' || Herbert Ross || [[Nora Kaye]], [[Rick McCallum]], & Herbert Ross
+|-
+| style="text-align:left;" |''[[S.O.B. (film)|S.O.B.]]'' || Blake Edwards || Tony Adams & Blake Edwards
+|-
+| style="text-align:left;" |''[[Zoot Suit (film)|Zoot Suit]]'' || [[Luis Valdez]] || Peter Burrell
+|-
+! rowspan="5" style="text-align:center;" | [[40th Golden Globe Awards|1982]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Tootsie]]'''''  || style="background:#B0C4DE;" | '''[[Sydney Pollack]]''' || style="background:#B0C4DE;" | '''Sydney Pollack & [[Dick Richards]]'''
+|-
+| style="text-align:left;" |''[[The Best Little Whorehouse in Texas (film)|The Best Little Whorehouse in Texas]]'' || Colin Higgins || [[Robert L. Boyett]] & Colin Higgins
+|-
+| style="text-align:left;" |''[[Diner (1982 film)|Diner]]'' || [[Barry Levinson]] || [[Jerry Weintraub]]
+|-
+| style="text-align:left;" |''[[My Favorite Year]]'' || [[Richard Benjamin]] || [[Michael Gruskoff]]
+|-
+| style="text-align:left;" |''[[Victor Victoria]]'' || Blake Edwards || Tony Adams & Blake Edwards
+|-
+! rowspan="5" style="text-align:center;" | [[41st Golden Globe Awards|1983]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Yentl (film)|Yentl]]''''' || style="background:#B0C4DE;" | '''[[Barbra Streisand]]''' || style="background:#B0C4DE;" | '''Larry DeWaay, [[Rusty Lemorande]], & Barbra Streisand'''
+|-
+| style="text-align:left;" |''[[The Big Chill (film)|The Big Chill]]''  || [[Lawrence Kasdan]] || [[Michael Shamberg]]
+|-
+| style="text-align:left;" |''[[Flashdance]]'' || [[Adrian Lyne]] || [[Jerry Bruckheimer]] & [[Don Simpson]]
+|-
+| style="text-align:left;" |''[[Trading Places]]'' || [[John Landis]] || [[George Folsey Jr.]], Aaron Russo, Irwin Russo, & Sam Williams
+|-
+| style="text-align:left;" |''[[Zelig]]'' || Woody Allen || [[Robert Greenhut]]
+|-
+! rowspan="5" style="text-align:center;" | [[42nd Golden Globe Awards|1984]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Romancing the Stone]]''''' || style="background:#B0C4DE;" | '''[[Robert Zemeckis]]''' || style="background:#B0C4DE;" | '''[[Michael Douglas]]'''
+|-
+| style="text-align:left;" |''[[Beverly Hills Cop]]'' || [[Martin Brest]] || Jerry Bruckheimer & Don Simpson
+|-
+| style="text-align:left;" |''[[Ghostbusters]]'' || [[Ivan Reitman]] || [[Bernie Brillstein]] & Ivan Reitman
+|-
+| style="text-align:left;" |''[[Micki & Maude]]'' || Blake Edwards || Tony Adams, [[Lou Antonio]], Trish Caroselli, & [[Jonathan D. Krane]]
+|-
+| style="text-align:left;" |''[[Splash (film)|Splash]]'' || [[Ron Howard]] || [[Brian Grazer]]
+|-
+! rowspan="5" style="text-align:center;" | [[43rd Golden Globe Awards|1985]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Prizzi's Honor]]'''''  || style="background:#B0C4DE;" | '''[[John Huston]]''' || style="background:#B0C4DE;" | '''[[John Foreman (producer)|John Foreman]]'''
+|-
+| style="text-align:left;" |''[[Back to the Future]]'' || Robert Zemeckis || [[Neil Canton]] & [[Bob Gale]]
+|-
+| style="text-align:left;" |''[[A Chorus Line (film)|A Chorus Line]]'' || [[Richard Attenborough]] || Cy Feuer
+|-
+| style="text-align:left;" |''[[Cocoon (film)|Cocoon]]'' || Ron Howard || [[David Brown (producer)|David Brown]] & [[Richard D. Zanuck]]
+|-
+| style="text-align:left;" |''[[The Purple Rose of Cairo]]'' || Woody Allen || Robert Greenhut
+|-
+! rowspan="6" style="text-align:center;" | [[44th Golden Globe Awards|1986]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Hannah and Her Sisters]]'''''  || style="background:#B0C4DE;" | '''[[Woody Allen]]''' || style="background:#B0C4DE;" | '''Robert Greenhut'''
+|-
+| style="text-align:left;" |''[[Crimes of the Heart (film)|Crimes of the Heart]]'' || [[Bruce Beresford]] || [[Freddie Fields]]
+|-
+| style="text-align:left;" |''[[Crocodile Dundee]]'' || [[Peter Faiman]] || [[John Cornell]]
+|-
+| style="text-align:left;" |''[[Down and Out in Beverly Hills]]'' || Paul Mazursky || [[Pato Guzman]] & Paul Mazursky
+|-
+| style="text-align:left;" |''[[Little Shop of Horrors (film)|Little Shop of Horrors]]'' || [[Frank Oz]] || [[David Geffen]]
+|-
+| style="text-align:left;" |''[[Peggy Sue Got Married]]'' || Francis Ford Coppola || Paul R. Gurian
+|-
+! rowspan="5" style="text-align:center;" | [[45th Golden Globe Awards|1987]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Hope and Glory (film)|Hope and Glory]]'''''  || style="background:#B0C4DE;" | '''[[John Boorman]]''' || style="background:#B0C4DE;" | '''John Boorman & [[Michael Dryhurst]]'''
+|-
+| style="text-align:left;" |''[[Baby Boom (film)|Baby Boom]]'' || [[Charles Shyer]] || [[Bruce A. Block]] & [[Nancy Meyers]]
+|-
+| style="text-align:left;" |''[[Broadcast News (film)|Broadcast News]]''  || [[James L. Brooks]] || James L. Brooks
+|-
+| style="text-align:left;" |''[[Dirty Dancing]]'' || [[Emile Ardolino]] || [[Linda Gottlieb]]
+|-
+| style="text-align:left;" |''[[Moonstruck]]''  || colspan="2" | Norman Jewison 
+|-
+! rowspan="5" style="text-align:center;" | [[46th Golden Globe Awards|1988]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Working Girl]]'''''  || style="background:#B0C4DE;" | '''[[Mike Nichols]]''' || style="background:#B0C4DE;" | '''[[Douglas Wick]]'''
+|-
+| style="text-align:left;" |''[[Big (film)|Big]]'' || [[Penny Marshall]] || James L. Brooks & Robert Greenhut
+|-
+| style="text-align:left;" |''[[A Fish Called Wanda]]'' || [[Charles Crichton]] || Michael Shamberg
+|-
+| style="text-align:left;" |''[[Midnight Run]]'' || colspan="2" | Martin Brest 
+|-
+| style="text-align:left;" |''[[Who Framed Roger Rabbit]]'' || Robert Zemeckis || [[Frank Marshall (filmmaker)|Frank Marshall]] & [[Robert Watts]]
+|-
+! rowspan="5" style="text-align:center;" | [[47th Golden Globe Awards|1989]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Driving Miss Daisy]]'''''  || style="background:#B0C4DE;" | '''[[Bruce Beresford]]''' || style="background:#B0C4DE;" | '''Lili Fini Zanuck & Richard D. Zanuck'''
+|-
+| style="text-align:left;" |''[[The Little Mermaid (1989 film)|The Little Mermaid]]'' || [[Ron Clements]] & [[John Musker]] || [[Howard Ashman]] & John Musker
+|-
+| style="text-align:left;" |''[[Shirley Valentine (film)|Shirley Valentine]]'' || colspan="2" | [[Lewis Gilbert]] 
+|-
+| style="text-align:left;" |''[[The War of the Roses (film)|The War of the Roses]]'' || [[Danny DeVito]] || James L. Brooks & [[Arnon Milchan]]
+|-
+| style="text-align:left;" |''[[When Harry Met Sally...]]'' || [[Rob Reiner]] || Rob Reiner & [[Andrew Scheinman]]
+|}
+
+===1990s===
+{| class="wikitable sortable" style="width:100%; text-align:left"
+|-
+! style="width:6%;" | Year
+! style="width:38%;" | Film
+! style="width:30%;" | Director
+! style="width:30%;" | Producer
+|-
+! rowspan="5" style="text-align:center;" | [[48th Golden Globe Awards|1990]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Green Card (film)|Green Card]]''''' || colspan="2" style="background:#B0C4DE;" | '''[[Peter Weir]]''' 
+|-
+| style="text-align:left;" |''[[Dick Tracy (1990 film)|Dick Tracy]]'' || colspan="2" | Warren Beatty 
+|-
+| style="text-align:left;" |''[[Ghost (1990 film)|Ghost]]''  || Jerry Zucker || [[Steven-Charles Jaffe]], Lauren Ray, & [[Bruce Joel Rubin]]
+|-
+| style="text-align:left;" |''[[Home Alone (film)|Home Alone]]'' || [[Chris Columbus (filmmaker)|Chris Columbus]] || [[John Hughes (filmmaker)|John Hughes]]
+|-
+| style="text-align:left;" |''[[Pretty Woman]]'' || [[Garry Marshall]] || [[Laura Ziskin]]
+|-
+! rowspan="5" style="text-align:center;" | [[49th Golden Globe Awards|1991]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]'''''  || style="background:#B0C4DE;" | '''[[Gary Trousdale]] & [[Kirk Wise]]''' || style="background:#B0C4DE;" | '''[[Don Hahn]]'''
+|-
+| style="text-align:left;" |''[[City Slickers]]'' || [[Ron Underwood]] || [[Billy Crystal]] & Irby Smith
+|-
+| style="text-align:left;" |''[[The Commitments (film)|The Commitments]]'' || Alan Parker || [[Lynda Myles (British producer)|Lynda Myles]] & Roger Randall-Cutler
+|-
+| style="text-align:left;" |''[[The Fisher King (film)|The Fisher King]]'' || [[Terry Gilliam]] || [[Debra Hill]], [[Tony Mark (producer)|Tony Mark]], & [[Lynda Obst]]
+|-
+| style="text-align:left;" |''[[Fried Green Tomatoes (film)|Fried Green Tomatoes]]'' || [[Jon Avnet]] || Jon Avnet & [[Norman Lear]]
+|-
+! rowspan="5" style="text-align:center;" | [[50th Golden Globe Awards|1992]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Player (1992 film)|The Player]]''''' || style="background:#B0C4DE;" | '''[[Robert Altman]]''' || style="background:#B0C4DE;" | '''David Brown, [[Michael Tolkin]], & [[Nick Wechsler (producer)|Nick Wechsler]]'''
+|-
+| style="text-align:left;" |''[[Aladdin (1992 Disney film)|Aladdin]]'' || Ron Clements & John Musker || Ron Clements & John Musker
+|-
+| style="text-align:left;" |''[[Enchanted April (1992 film)|Enchanted April]]'' || [[Mike Newell (director)|Mike Newell]] || Matthew Hamilton, [[Simon Relph]], Ann Scott, & {{nowrap|[[Mark Shivas]]}}
+|-
+| style="text-align:left;" |''[[Honeymoon in Vegas]]'' || [[Andrew Bergman]] || Mike Lobell
+|-
+| style="text-align:left;" |''[[Sister Act]]'' || Emile Ardolino || [[Scott Rudin]] & Teri Schwartz
+|-
+! rowspan="5" style="text-align:center;" | [[51st Golden Globe Awards|1993]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Mrs. Doubtfire]]''''' || style="background:#B0C4DE;" | '''[[Chris Columbus (filmmaker)|Chris Columbus]]''' || style="background:#B0C4DE;" |'''[[Marsha Garces]], [[Robin Williams]] & Mark Radcliffe'''
+|-
+| style="text-align:left;" |''[[Dave (film)|Dave]]'' || Ivan Reitman || Ivan Reitman & [[Lauren Shuler Donner]]
+|-
+| style="text-align:left;" |''[[Much Ado About Nothing (1993 film)|Much Ado About Nothing]]'' || [[Kenneth Branagh]] || Kenneth Branagh, Stephen Evans, & [[David Parfitt]]
+|-
+| style="text-align:left;" |''[[Sleepless in Seattle]]'' || [[Nora Ephron]] || Gary Foster
+|-
+| style="text-align:left;" |''[[Strictly Ballroom]]'' || [[Baz Luhrmann]] || Antoinette Albert & {{nowrap|Tristram Miall}}
+|-
+! rowspan="5" style="text-align:center;" | [[52nd Golden Globe Awards|1994]]
+| style="background:#b0c4de; text-align:left;" | '''''[[The Lion King]]''''' || style="background:#B0C4DE;" | '''[[Roger Allers]] & [[Rob Minkoff]]''' || style="background:#B0C4DE;" | '''[[Don Hahn]]'''
+|-
+| style="text-align:left;" |''[[The Adventures of Priscilla, Queen of the Desert]]'' || [[Stephan Elliott]] || [[Al Clark (producer)|Al Clark]] & Michael Hamlyn
+|-
+| style="text-align:left;" |''[[Ed Wood (film)|Ed Wood]]'' || [[Tim Burton]] || Tim Burton & [[Denise Di Novi]]
+|-
+| style="text-align:left;" |''[[Four Weddings and a Funeral]]''  || Mike Newell || [[Duncan Kenworthy]]
+|-
+| style="text-align:left;" |''[[Prêt-à-Porter (film)|Prêt-à-Porter]]'' || Robert Altman || Robert Altman & Scott Bushnell
+|-
+! rowspan="5" style="text-align:center;" | [[53rd Golden Globe Awards|1995]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Babe (film)|Babe]]'''''  || style="background:#B0C4DE;" | '''[[Chris Noonan]]''' || style="background:#B0C4DE;" | '''Catherine Barber, [[Philip Hearnshaw]], [[Bill Miller (film producer)|Bill Miller]], [[George Miller (filmmaker)|George Miller]], [[Doug Mitchell (film producer)|Doug Mitchell]], & Daphne Paris'''
+|-
+| style="text-align:left;" |''[[The American President]]'' || Rob Reiner || Barbara Maltby, [[Charles Newirth]], Rob Reiner, & Jeffrey Stott
+|-
+| style="text-align:left;" |''[[Get Shorty (film)|Get Shorty]]'' || [[Barry Sonnenfeld]] || Danny DeVito, Michael Shamberg, & [[Stacey Sher]]
+|-
+| style="text-align:left;" |''[[Sabrina (1995 film)|Sabrina]]'' || Sydney Pollack || Sydney Pollack & Scott Rudin
+|-
+| style="text-align:left;" |''[[Toy Story]]'' || [[John Lasseter]] || [[Bonnie Arnold]] & [[Ralph Guggenheim]]
+|-
+! rowspan="5" style="text-align:center;" | [[54th Golden Globe Awards|1996]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Evita (1996 film)|Evita]]''''' || style="background:#B0C4DE;" | '''[[Alan Parker]]''' || style="background:#B0C4DE;" | '''Alan Parker & Robert Stigwood'''
+|-
+| style="text-align:left;" |''[[The Birdcage]]'' || Mike Nichols || Marcello Danon, Michele Imperato, Neal Machlis, & Mike Nichols
+|-
+| style="text-align:left;" |''[[Everyone Says I Love You]]'' || Woody Allen || Robert Greenhut
+|-
+| style="text-align:left;" |''[[Fargo (1996 film)|Fargo]]''  || [[Coen brothers|Joel Coen]] || [[Coen brothers|Ethan Coen]]
+|-
+| style="text-align:left;" |''[[Jerry Maguire]]''  || [[Cameron Crowe]] || James L. Brooks, Cameron Crowe, [[Laurence Mark]], & [[Richard Sakai]]
+|-
+! rowspan="5" style="text-align:center;" | [[55th Golden Globe Awards|1997]]
+| style="background:#b0c4de; text-align:left;" | '''''[[As Good as It Gets]]'''''  || style="background:#B0C4DE;" | '''[[James L. Brooks]]''' || style="background:#B0C4DE;" | '''[[James L. Brooks]], Bridget Johnson, & [[Kristi Zea]]'''
+|-
+| style="text-align:left;" |''[[The Full Monty]]''  || [[Peter Cattaneo]] || [[Uberto Pasolini]]
+|-
+| style="text-align:left;" |''[[Men in Black (1997 film)|Men in Black]]'' || Barry Sonnenfeld || [[Laurie MacDonald]], [[Walter F. Parkes]], & [[Steven Spielberg]]
+|-
+| style="text-align:left;" |''[[My Best Friend's Wedding]]'' || [[P. J. Hogan]] || Jerry Zucker, [[Ronald Bass]], Gil Netter, & Patricia Whitcher
+|-
+| style="text-align:left;" |''[[Wag the Dog]]'' || [[Barry Levinson]] || Barry Levinson & [[Robert De Niro]]
+|-
+! rowspan="6" style="text-align:center;" | [[56th Golden Globe Awards|1998]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Shakespeare in Love]]'''''  || style="background:#B0C4DE;" | '''[[John Madden (director)|John Madden]]''' || style="background:#B0C4DE;" | '''[[Donna Gigliotti]], [[Marc Norman]], [[David Parfitt]], [[Harvey Weinstein]], & [[Edward Zwick]]'''
+|-
+| style="text-align:left;" |''[[Bulworth]]'' || Warren Beatty || Warren Beatty & [[Pieter Jan Brugge]]
+|-
+| style="text-align:left;" |''[[The Mask of Zorro]]'' || [[Martin Campbell]] || Doug Claybourne & [[David Foster (film producer)|David Foster]]
+|-
+| style="text-align:left;" |''[[Patch Adams (film)|Patch Adams]]'' || [[Tom Shadyac]] || [[Mike Farrell]], [[Barry Kemp (TV producer)|Barry Kemp]], [[Marvin Minoff]], & Charles Newirth
+|-
+| style="text-align:left;" |''[[Still Crazy]]'' || [[Brian Gibson (director)|Brian Gibson]] || Amanda Marmot
+|-
+| style="text-align:left;" |''[[There's Something About Mary]]'' || [[Bobby Farrelly]] & [[Peter Farrelly]] || [[Frank Beddor]], [[Michael Steinberg (filmmaker)|Michael Steinberg]], Bradley Thomas & [[Charles B. Wessler]]
+|-
+! rowspan="5" style="text-align:center;" | [[57th Golden Globe Awards|1999]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Toy Story 2]]''''' || style="background:#B0C4DE;" | '''[[John Lasseter]]''' || style="background:#B0C4DE;" | '''Karen Robert Jackson & Helene Plotkin'''
+|-
+| style="text-align:left;" |''[[Analyze This]]'' || [[Harold Ramis]] || [[Jane Rosenthal]] & [[Paula Weinstein]]
+|-
+| style="text-align:left;" |''[[Being John Malkovich]]'' || [[Spike Jonze]] || [[Steve Golin]], [[Vincent Landay]], [[Sandy Stern]], & [[Michael Stipe]]
+|-
+| style="text-align:left;" |''[[Man on the Moon (film)|Man on the Moon]]'' || Miloš Forman || Danny DeVito
+|-
+| style="text-align:left;" |''[[Notting Hill (film)|Notting Hill]]'' || [[Roger Michell]] || Duncan Kenworthy
+|}
+
+===2000s===
+{| class="wikitable sortable" style="width:100%; text-align:left"
+|-
+! style="width:6%;"| Year
+! style="width:38%;"| Film
+! style="width:30%;"| Director
+! style="width:30%;"| Producer
+|-
+! rowspan="5" style="text-align:center;" | [[58th Golden Globe Awards|2000]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Almost Famous]]''''' || style="background:#B0C4DE;" | '''[[Cameron Crowe]]''' || style="background:#B0C4DE;" | '''[[Ian Bryce]] & Cameron Crowe'''
+|-
+| style="text-align:left;"|''[[Best in Show (film)|Best in Show]]'' || [[Christopher Guest]] || [[Gordon Mark]] & [[Karen Murphy (producer)|Karen Murphy]]
+|-
+| style="text-align:left;"|''[[Chicken Run]]'' || [[Peter Lord]] & [[Nick Park]] || Peter Lord, Nick Park, & [[David Sproxton]]
+|-
+| style="text-align:left;"|''[[Chocolat (2000 film)|Chocolat]]''  || [[Lasse Hallström]] || [[Harvey Weinstein]]
+|-
+| style="text-align:left;"|''[[O Brother, Where Art Thou?]]'' || [[Coen brothers|Joel Coen]] || [[Tim Bevan]], [[Coen brothers|Ethan Coen]], & [[Eric Fellner]]
+|-
+! rowspan="5" style="text-align:center;" | [[59th Golden Globe Awards|2001]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Moulin Rouge!]]'''''  || style="background:#B0C4DE;" | '''[[Baz Luhrmann]]''' || style="background:#B0C4DE;" | '''[[Fred Baron (producer)|Fred Baron]], Martin Brown, & Baz Luhrmann'''
+|-
+| style="text-align:left;"|''[[Bridget Jones's Diary (film)|Bridget Jones's Diary]]'' || [[Sharon Maguire]] || Tim Bevan, [[Jonathan Cavendish (producer)|Jonathan Cavendish]], & Eric Fellner
+|-
+| style="text-align:left;"|''[[Gosford Park]]''  || [[Robert Altman]] || Robert Altman, [[Bob Balaban]], & David Levy
+|-
+| style="text-align:left;"|''[[Legally Blonde]]'' || [[Robert Luketic]] || Ric Kidney & [[Marc E. Platt]]
+|-
+| style="text-align:left;"|''[[Shrek]]'' || [[Andrew Adamson]] & [[Vicky Jenson]] || [[Jeffrey Katzenberg]], [[Aron Warner]], & [[John H. Williams (film producer)|John H. Williams]]
+|-
+! rowspan="5" style="text-align:center;" | [[60th Golden Globe Awards|2002]] 
+| style="background:#b0c4de; text-align:left;" | '''''[[Chicago (2002 film)|Chicago]]'''''  || style="background:#B0C4DE;" | '''[[Rob Marshall]]''' || style="background:#B0C4DE;" | '''[[Meryl Poster]], [[Martin Richards (producer)|Martin Richards]], [[Bob Weinstein]], [[Harvey Weinstein]], & [[Craig Zadan]]'''
+|-
+| style="text-align:left;"|''[[About a Boy (film)|About a Boy]]'' || [[Chris Weitz]] & [[Paul Weitz (filmmaker)|Paul Weitz]] || Tim Bevan, Robert De Niro, Brad Epstein, Eric Fellner, & Jane Rosenthal
+|-
+| style="text-align:left;"|''[[Adaptation (film)|Adaptation.]]'' || [[Spike Jonze]] || [[Jonathan Demme]], Vincent Landay, & [[Edward Saxon]]
+|-
+| style="text-align:left;"|''[[My Big Fat Greek Wedding]]'' || [[Joel Zwick]] || [[Gary Goetzman]], [[Tom Hanks]], & [[Rita Wilson]]
+|-
+| style="text-align:left;"|''[[Nicholas Nickleby (2002 film)|Nicholas Nickleby]]'' || [[Douglas McGrath]] || [[Simon Channing-Williams]], [[John Hart (producer)|John Hart]], & [[Jeffrey Sharp]]
+|-
+! rowspan="5" style="text-align:center;" | [[61st Golden Globe Awards|2003]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Lost in Translation (film)|Lost in Translation]]'''''  || style="background:#B0C4DE;" | '''[[Sofia Coppola]]''' || style="background:#B0C4DE;" | '''Sofia Coppola & [[Ross Katz]]'''
+|-
+| style="text-align:left;"|''[[Bend It Like Beckham]]'' || [[Gurinder Chadha]] || Gurinder Chadha & Deepak Nayar
+|-
+| style="text-align:left;"|''[[Big Fish]]'' || [[Tim Burton]] || [[Bruce Cohen]], [[Dan Jinks]], & Richard D. Zanuck
+|-
+| style="text-align:left;"|''[[Finding Nemo]]'' || [[Andrew Stanton]] || Graham Walters
+|-
+| style="text-align:left;"|''[[Love Actually]]'' || [[Richard Curtis]] || Tim Bevan, Eric Fellner, & Duncan Kenworthy
+|-
+! rowspan="5" style="text-align:center;" | [[62nd Golden Globe Awards|2004]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Sideways]]'''''  || style="background:#B0C4DE;" | '''[[Alexander Payne]]''' || style="background:#B0C4DE;" | '''[[Michael London]]'''
+|-
+| style="text-align:left;"|''[[Eternal Sunshine of the Spotless Mind]]'' || [[Michel Gondry]] || Anthony Bregman & [[Steve Golin]]
+|-
+| style="text-align:left;"|''[[The Incredibles]]'' || [[Brad Bird]] || [[John Walker (movie producer)|John Walker]]
+|-
+| style="text-align:left;"|''[[The Phantom of the Opera (2004 film)|The Phantom of the Opera]]'' || [[Joel Schumacher]] || [[Andrew Lloyd Webber]]
+|-
+| style="text-align:left;"|''[[Ray (film)|Ray]]''  || [[Taylor Hackford]] || [[Howard Baldwin]], [[Karen Baldwin (producer)|Karen Baldwin]], [[Stuart Benjamin]], & Taylor Hackford
+|-
+! rowspan="5" style="text-align:center;" | [[63rd Golden Globe Awards|2005]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Walk the Line]]''''' || style="background:#B0C4DE;" | '''[[James Mangold]]''' || style="background:#B0C4DE;" | '''[[James Keach]] & [[Cathy Konrad]]'''
+|-
+| style="text-align:left;"|''[[Mrs Henderson Presents]]'' || [[Stephen Frears]] || [[Norma Heyman]]
+|-
+| style="text-align:left;"|''[[Pride & Prejudice (2005 film)|Pride & Prejudice]]'' || [[Joe Wright]] || Tim Bevan, Eric Fellner, & [[Paul Webster (producer)|Paul Webster]]
+|-
+| style="text-align:left;"|''[[The Producers (2005 film)|The Producers]]'' || [[Susan Stroman]] || Mel Brooks
+|-
+| style="text-align:left;"|''[[The Squid and the Whale]]'' || [[Noah Baumbach]] || [[Wes Anderson]]
+|-
+! rowspan="5" style="text-align:center;" | [[64th Golden Globe Awards|2006]]
+| style="background:#b0c4de; text-align:left;" | '''''[[Dreamgirls (film)|Dreamgirls]]''''' || style="background:#B0C4DE;" | '''[[Bill Condon]]''' || style="background:#B0C4DE;" | '''Laurence Mark'''
+|-
+| style="text-align:left;"|''[[Borat|Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan]]'' || [[Larry Charles]] || [[Sacha Baron Cohen]] & [[Jay Roach]]
+|-
+| style="text-align:left;"|''[[The Devil Wears Prada (film)|The Devil Wears Prada]]'' || [[David Frankel]] || [[Wendy Finerman]] & [[Karen Rosenfelt]]
+|-
+| style="text-align:left;"|''[[Little Miss Sunshine]]''  || [[Jonathan Dayton and Valerie Faris]] || [[Albert Berger]], [[David T. Friendly]], [[Peter Saraf]], [[Marc Turtletaub]], & Ron Yerxa
+|-
+| style="text-align:left;"|''[[Thank You for Smoking (film)|Thank You for Smoking]]'' || [[Jason Reitman]] || [[Edward R. Pressman]] & [[David O. Sacks]]
+|-
+! rowspan="5" style="text-align:center;" | [[65th Golden Globe Awards|2007]]
+| style="background:#b0c4de; text-align:left;" |'''''[[Sweeney Todd: The Demon Barber of Fleet Street (2007 film)|Sweeney Todd: The Demon Barber of Fleet Street]]''''' || style="background:#B0C4DE;" |'''[[Tim Burton]]''' || style="background:#B0C4DE;" | '''[[John Logan (writer)|John Logan]], Laurie MacDonald, Walter F. Parkes, & Richard D. Zanuck'''
+|-
+| style="text-align:left;"|''[[Across the Universe (film)|Across the Universe]]'' || [[Julie Taymor]] || Charles Newirth, [[Jennifer Todd]], & [[Suzanne Todd]]
+|-
+| style="text-align:left;"|''[[Charlie Wilson's War (film)|Charlie Wilson's War]]'' || [[Mike Nichols]] || Tom Hanks
+|-
+| style="text-align:left;"|''[[Hairspray (2007 film)|Hairspray]]'' || [[Adam Shankman]] || [[Toby Emmerich]], [[Neil Meron]], [[Marc Shaiman]], Adam Shankman, [[Bob Shaye]], [[Scott Wittman]], & {{nowrap|[[Craig Zadan]]}}
+|-
+| style="text-align:left;"|''[[Juno (film)|Juno]]''  || [[Jason Reitman]] || [[Lianne Halfon]], [[John Malkovich]], [[Mason Novick]], & [[Russell Smith (producer)|Russell Smith]]
+|-
+! rowspan="5" style="text-align:center;" | [[66th Golden Globe Awards|2008]]
+| style="background:#b0c4de; text-align:left;" |'''''[[Vicky Cristina Barcelona]]''''' || style="background:#B0C4DE;" | '''[[Woody Allen]]''' || style="background:#B0C4DE;" | '''[[Letty Aronson]], [[Jaume Roures]], [[Stephen Tenenbaum]], & [[Gareth Wiley]]'''
+|-
+| style="text-align:left;"|''[[Burn After Reading]]'' || [[Coen brothers|Joel Coen and Ethan Coen]] || Joel Coen and Ethan Coen
+|-
+| style="text-align:left;"|''[[Happy-Go-Lucky (2008 film)|Happy-Go-Lucky]]'' || [[Mike Leigh]] || Simon Channing-Williams
+|-
+| style="text-align:left;"|''[[In Bruges]]'' || [[Martin McDonagh]] || [[Graham Broadbent]] & [[Peter Czernin]]
+|-
+| style="text-align:left;"|''[[Mamma Mia! (film)|Mamma Mia!]]'' || [[Phyllida Lloyd]] || [[Benny Andersson]], [[Judy Craymer]], Tom Hanks, Phyllida Lloyd, [[Björn Ulvaeus]], & Rita Wilson
+|-
+! rowspan="5" style="text-align:center;" | [[67th Golden Globe Awards|2009]]
+| style="background:#b0c4de; text-align:left;" |'''''[[The Hangover]]'''''|| style="background:#B0C4DE;" | '''[[Todd Phillips]]''' || style="background:#B0C4DE;" | '''[[Daniel Goldberg (producer)|Daniel Goldberg]] & Todd Phillips'''
+|-
+| style="text-align:left;"|''[[500 Days of Summer|(500) Days of Summer]]'' || [[Marc Webb]] || Mason Novick, Jessica Tuchinsky, [[Mark Waters (director)|Mark Waters]], & [[Steven J. Wolfe]]
+|-
+| style="text-align:left;"|''[[It's Complicated (film)|It's Complicated]]'' || [[Nancy Meyers]] || Nancy Meyers & Scott Rudin
+|-
+| style="text-align:left;"|''[[Julie & Julia]]'' || [[Nora Ephron]] || Nora Ephron, Laurence Mark, [[Amy Robinson]], & [[Eric Steel]]
+|-
+| style="text-align:left;"|''[[Nine (2009 live-action film)|Nine]]'' || [[Rob Marshall]] || [[John DeLuca (producer)|John DeLuca]], Rob Marshall, [[Marc E. Platt|Marc Platt]], [[Harvey Weinstein]], & [[Maury Yeston]]
+|}
+
+===2010s===
+{| class="wikitable sortable" style="width:100%; text-align:left"
+|-
+! style="width:6%;"| Year
+! style="width:38%;"| Film
+! style="width:30%;"| Director
+! style="width:30%;"| Producer
+|-
+! rowspan="5" style="text-align:center;" | [[68th Golden Globe Awards|2010]]
+| style="background:#b0c4de; text-align:left;" |'''''[[The Kids Are All Right (film)|The Kids Are All Right]]'''''  || style="background:#B0C4DE;"| '''[[Lisa Cholodenko]]''' || style="background:#B0C4DE;" | '''[[Gary Gilbert]], [[Jeff Levy-Hinte]], [[Celine Rattray]]'''
+|-
+| style="text-align:left;"| ''[[Alice in Wonderland (2010 film)|Alice in Wonderland]]'' || [[Tim Burton]] || [[Richard D. Zanuck]], [[Joe Roth]], [[Suzanne Todd]], and [[Jennifer Todd]]
+|-
+| style="text-align:left;"|''[[Burlesque (2010 musical film)|Burlesque]]'' || [[Steven Antin]] || [[Donald De Line]]
+|-
+| style="text-align:left;"|''[[Red (2010 film)|Red]]'' || [[Robert Schwentke]] || [[Lorenzo di Bonaventura]] and Mark Vahradian
+|-
+| style="text-align:left;"|''[[The Tourist (2010 film)|The Tourist]]'' || [[Florian Henckel von Donnersmarck]] || [[Graham King]], [[Timothy Headington]], [[Roger Birnbaum]], [[Gary Barber]], and [[Jonathan Glickman]]
+|-
+! rowspan="5" style="text-align:center;" | [[69th Golden Globe Awards|2011]] 
+| style="background:#b0c4de; text-align:left;" | '''''[[The Artist (film)|The Artist]]'''''  || style="background:#B0C4DE;"| '''[[Michel Hazanavicius]]''' || style="background:#B0C4DE;"| '''[[Thomas Langmann]]'''
+|-
+| style="text-align:left;"| ''[[50/50 (2011 film)|50/50]]'' || [[Jonathan Levine]] || [[Evan Goldberg]], [[Ben Karlin]], and [[Seth Rogen]]
+|-
+| style="text-align:left;"| ''[[Bridesmaids (2011 film)|Bridesmaids]]'' || [[Paul Feig]] || [[Judd Apatow]], [[Barry Mendel]], and [[Clayton Townsend]]
+|-
+| style="text-align:left;"| ''[[Midnight in Paris]]''  || [[Woody Allen]] || [[Letty Aronson]] and [[Stephen Tenenbaum]]
+|-
+| style="text-align:left;"| ''[[My Week with Marilyn]]'' || [[Simon Curtis (filmmaker)|Simon Curtis]] || [[David Parfitt]] and [[Harvey Weinstein]]
+|-
+! rowspan="5" style="text-align:center;" | [[70th Golden Globe Awards|2012]]<ref name="nbcnews">{{cite web|url=http://entertainment.nbcnews.com/_news/2012/12/13/15883577-lincoln-django-unchained-argo-among-golden-globe-nominees|title='Lincoln,' 'Django Unchained,' 'Argo' among Golden Globe nominees – Entertainment|publisher=entertainment.nbcnews.com|access-date=2015-04-15|archive-date=2013-03-14|archive-url=https://web.archive.org/web/20130314083000/http://entertainment.nbcnews.com/_news/2012/12/13/15883577-lincoln-django-unchained-argo-among-golden-globe-nominees|url-status=live}}</ref> 
+| style="background:#b0c4de; text-align:left;" | '''''[[Les Misérables (2012 film)|Les Misérables]]'''''  || style="background:#B0C4DE;"| '''[[Tom Hooper]]''' || style="background:#B0C4DE;"| '''[[Tim Bevan]], [[Eric Fellner]], [[Debra Hayward]], and [[Cameron Mackintosh]]'''
+|-
+| style="text-align:left;"| ''[[The Best Exotic Marigold Hotel]]'' || [[John Madden (director)|John Madden]] || [[Graham Broadbent]] and Peter Czernin
+|-
+| style="text-align:left;"| ''[[Moonrise Kingdom]]'' || [[Wes Anderson]] || [[Jeremy Dawson (producer)|Jeremy Dawson]], [[Scott Rudin]], Wes Anderson, and [[Steven Rales]]
+|-
+| style="text-align:left;"| ''[[Salmon Fishing in the Yemen]]'' || [[Lasse Hallström]] || [[Paul Webster (producer)|Paul Webster]]
+|-
+| style="text-align:left;"| ''[[Silver Linings Playbook]]''  || [[David O. Russell]] || [[Bruce Cohen]], [[Donna Gigliotti]], Jonathan Gordon
+|-
+! rowspan="5" style="text-align:center;" | [[71st Golden Globe Awards|2013]]<ref name="goldenglobes">{{cite web |url=http://www.goldenglobes.com/2014/best-motion-picture-drama |title=Best Motion Picture, Drama &#124; Golden Globes Awards |publisher=goldenglobes.com |access-date=2015-04-15 |url-status=dead |archive-url=https://web.archive.org/web/20150112053931/http://www.goldenglobes.com/2014/best-motion-picture-drama |archive-date=2015-01-12}}</ref> 
+| style="background:#b0c4de; text-align:left;" | '''''[[American Hustle]]'''''  || style="background:#B0C4DE;"| '''[[David O. Russell]]''' || style="background:#B0C4DE;" | '''[[Charles Roven]], [[Megan Ellison]], [[Richard Suckle]], and [[Jonathan Gordon]]'''
+|-
+| style="text-align:left;"| ''[[Her (2013 film)|Her]]''  || [[Spike Jonze]] || [[Megan Ellison]], Spike Jonze, and [[Vincent Landay]]
+|-
+| style="text-align:left;"| ''[[Inside Llewyn Davis]]'' || [[Coen brothers|Joel Coen and Ethan Coen]] || [[Scott Rudin]], Joel Coen, and Ethan Coen
+|-
+| style="text-align:left;"| ''[[Nebraska (film)|Nebraska]]''  || [[Alexander Payne]] || [[Albert Berger]] and [[Ron Yerxa]]
+|-
+| style="text-align:left;"| ''[[The Wolf of Wall Street (2013 film)|The Wolf of Wall Street]]''  || [[Martin Scorsese]] || Martin Scorsese, [[Leonardo DiCaprio]], [[Emma Tillinger Koskoff]], and [[Joey McFarland]]
+|-
+! rowspan="5" style="text-align:center;" | [[72nd Golden Globe Awards|2014]]<ref name="goldenglobes2">{{cite web|url=http://www.goldenglobes.com/2015_72nd_Golden_Globes_Nominees |title=Golden Globes Awards &#124; The Hollywood Foreign Press Association® |publisher=goldenglobes.com |access-date=2015-04-15 |url-status=dead |archive-url=https://web.archive.org/web/20141212145440/http://www.goldenglobes.com/2015_72nd_Golden_Globes_Nominees |archive-date=2014-12-12}}</ref>
+| style="background:#b0c4de; text-align:left;" |'''''[[The Grand Budapest Hotel]]'''''  ||style="background:#B0C4DE;"| '''[[Wes Anderson]]''' || style="background:#B0C4DE;" | '''Wes Anderson, [[Jeremy Dawson (producer)|Jeremy Dawson]], [[Steven Rales]], and [[Scott Rudin]]'''
+|-
+| style="text-align:left;"| ''[[Birdman (film)|Birdman]]''  || [[Alejandro González Iñárritu|Alejandro G. Iñárritu]] || Alejandro G. Iñárritu, [[John Lesher (producer)|John Lesher]] and [[James W. Skotchdopole]]
+|-
+| style="text-align:left;"| ''[[Into the Woods (film)|Into the Woods]]'' || [[Rob Marshall]] || Rob Marshall, John DeLuca, [[Marc E. Platt|Marc Platt]], and Callum McDougall
+|-
+| style="text-align:left;"| ''[[Pride (2014 film)|Pride]]'' || [[Matthew Warchus]] || David Livingstone
+|-
+| style="text-align:left;"| ''[[St. Vincent (film)|St. Vincent]]'' || [[Theodore Melfi]] || [[Fred Roos]], [[Jenno Topping]], [[Peter Chernin]], and Theodore Melfi
+|-
+! rowspan="5" style="text-align:center;" | [[73rd Golden Globe Awards|2015]]<ref name="goldenglobes3">{{cite web|url=http://www.goldenglobes.com/sites/default/files/2016_golden_globe_nominations_press_release.pdf|title=Golden Globes Awards &#124; The Hollywood Foreign Press Association®|publisher=goldenglobes.com|access-date=2015-12-10|archive-date=2015-12-11|archive-url=https://web.archive.org/web/20151211065615/http://www.goldenglobes.com/sites/default/files/2016_golden_globe_nominations_press_release.pdf|url-status=dead}}</ref>
+| style="background:#b0c4de; text-align:left;" | '''''[[The Martian (film)|The Martian]]'''''  || style="background:#B0C4DE;"| '''[[Ridley Scott]]''' || style="background:#B0C4DE;"| '''[[Simon Kinberg]], Ridley Scott, [[Michael Schaefer (producer)|Michael Schaefer]] and [[Mark Huffam]]'''
+|-
+| style="text-align:left;"|''[[The Big Short (film)|The Big Short]]'' || [[Adam McKay]] || [[Brad Pitt]], [[Dede Gardner]], and [[Jeremy Kleiner]]
+|-
+| style="text-align:left;"| ''[[Joy (2015 film)|Joy]]'' || [[David O. Russell]] || [[John Davis (producer)|John Davis]], [[Megan Ellison]], Jonathan Gordon, [[Ken Mok]], and David O. Russell
+|-
+| style="text-align:left;"| ''[[Spy (2015 film)|Spy]]'' || [[Paul Feig]] || [[Peter Chernin]], [[Jenno Topping]], Paul Feig, and Jessie Henderson
+|-
+| style="text-align:left;"| ''[[Trainwreck (film)|Trainwreck]]'' || [[Judd Apatow]] || Judd Apatow and [[Barry Mendel]]
+|-
+! rowspan="5" style="text-align:center;" | [[74th Golden Globe Awards|2016]] 
+| style="background:#b0c4de; text-align:left;" | '''''[[La La Land]]'''''  || style="background:#B0C4DE;"| '''[[Damien Chazelle]]''' || style="background:#B0C4DE;"| '''[[Fred Berger (producer)|Fred Berger]], [[Jordan Horowitz]], and [[Marc Platt (producer)|Marc Platt]]'''
+|-
+| style="text-align:left;"| ''[[20th Century Women]]'' || [[Mike Mills (director)|Mike Mills]] || [[Anne Carey]], [[Megan Ellison]], and Youree Henley
+|-
+| style="text-align:left;"| ''[[Deadpool (film)|Deadpool]]'' || [[Tim Miller (director)|Tim Miller]] || [[Simon Kinberg]], [[Ryan Reynolds]], and [[Lauren Shuler Donner]]
+|-
+| style="text-align:left;"| ''[[Florence Foster Jenkins (film)|Florence Foster Jenkins]]'' || [[Stephen Frears]] || [[Michael Kuhn]] and [[Tracey Seaward]]
+|-
+| style="text-align:left;"|''[[Sing Street]]'' || [[John Carney (director)|John Carney]] || Anthony Bregman, John Carney, Kevin Scott Frakes, Christian Grass, Martina Niland, Raj Brinder Singh, and [[Paul Trijbits]]
+|-
+! rowspan="5" style="text-align:center;" | [[75th Golden Globe Awards|2017]] 
+| style="background:#b0c4de; text-align:left;" | '''''[[Lady Bird (film)|Lady Bird]]'''''  || style="background:#B0C4DE;"| '''[[Greta Gerwig]]''' || style="background:#B0C4DE;"| '''[[Scott Rudin]], [[Evelyn O'Neill|Evelyn O'Neil]], and [[Eli Bush]]'''
+|-
+| style= text-align:left;"| ''[[The Disaster Artist (film)|The Disaster Artist]]'' || style="text-align:left;"| [[James Franco]] || style="text-align:left;"| James Franco, Vince Jolivette, [[Seth Rogen]], [[Evan Goldberg]], and James Weaver
+|-
+| style="text-align:left;"| ''[[Get Out]]''  || [[Jordan Peele]] || Jordan Peele, [[Jason Blum]], Sean McKittrick, and Edward H. Hamm Jr.
+|-
+| style="text-align:left;"| ''[[The Greatest Showman]]'' || [[Michael Gracey]] || [[Laurence Mark]], [[Peter Chernin]], and [[Jenno Topping]]
+|-
+| style="text-align:left;"| ''[[I, Tonya]]'' || [[Craig Gillespie]] || [[Margot Robbie]], Tom Ackerley, [[Steven Rogers (screenwriter)|Steven Rogers]], and Bryan Unkeless
+|-
+! rowspan="5" style="text-align:center;" | [[76th Golden Globe Awards|2018]] 
+| style="background:#b0c4de; text-align:left;" | '''''[[Green Book (film)|Green Book]]'''''  || style="background:#B0C4DE;"| '''[[Peter Farrelly]]''' || style="background:#B0C4DE;"| '''[[Jim Burke (film producer)|Jim Burke]], [[Charles B. Wessler]], Brian Hayes Currie, Peter Farrelly, and [[Nick Vallelonga]]'''
+|-
+| style="text-align:left;"| ''[[Crazy Rich Asians (film)|Crazy Rich Asians]]'' || [[Jon M. Chu]] || [[Nina Jacobson]], Brad Simpson, and [[John Penotti]]
+|-
+| style= text-align:left;"| ''[[The Favourite (2018 film)|The Favourite]]''  || style="text-align:left;"| [[Yorgos Lanthimos]] || style="text-align:left;"| Ceci Dempsey, [[Ed Guiney]], Lee Magiday, and Yorgos Lanthimos
+|-
+| style="text-align:left;"| ''[[Mary Poppins Returns]]'' || [[Rob Marshall]] || Rob Marshall, John DeLuca, and [[Marc Platt (producer)|Marc Platt]]
+|-
+| style="text-align:left;"| ''[[Vice (2018 film)|Vice]]''  || [[Adam McKay]] || [[Dede Gardner]], [[Jeremy Kleiner]], Adam McKay, [[Kevin Messick]]
+|-
+! rowspan="5" style="text-align:center;" | [[77th Golden Globe Awards|2019]] 
+| style="background:#b0c4de; text-align:left;" | '''''[[Once Upon a Time in Hollywood]]'''''  || style="background:#B0C4DE;"|'''[[Quentin Tarantino]]''' || style="background:#B0C4DE;"|'''[[David Heyman]], [[Shannon McIntosh (filmmaker)|Shannon McIntosh]] and Quentin Tarantino'''
+|-
+| style="text-align:left;"| ''[[Dolemite Is My Name]]'' || [[Craig Brewer]] || [[Eddie Murphy]], [[John Davis (producer)|John Davis]] and John Fox
+|-
+| style="text-align:left;"| ''[[Jojo Rabbit]]''  || [[Taika Waititi]] || [[Carthew Neal]], Taika Waititi
+|-
+| style= text-align:left;"| ''[[Knives Out]]'' || style="text-align:left;"| [[Rian Johnson]] || style="text-align:left;"| [[Ram Bergman]] and Rian Johnson
+|-
+| style="text-align:left;"| ''[[Rocketman (film)|Rocketman]]'' || [[Dexter Fletcher]] || Adam Bohling, [[David Furnish]], David Reid and [[Matthew Vaughn]]
+|}
+
+===2020s===
+{| class="wikitable sortable" style="width:100%; text-align:left"
+|-
+! style="width:6%;"| Year
+! style="width:38%;"| Film
+! style="width:30%;"| Director
+! style="width:30%;"| Producer
+|-
+! rowspan="5" style="text-align:center;" | [[78th Golden Globe Awards|2020]] 
+| style="background:#b0c4de; text-align:left;" | '''''[[Borat Subsequent Moviefilm|Borat Subsequent Moviefilm: Delivery of Prodigious Bribe to American Regime for Make Benefit Once Glorious Nation of Kazakhstan]]''''' || style="background:#b0c4de;| '''[[Jason Woliner]]''' || style="background:#b0c4de;| '''[[Sacha Baron Cohen]], Monica Levinson, Anthony Hines'''
+|-
+|''[[Hamilton (2020 film)|Hamilton]]''
+|[[Thomas Kail]]
+|Thomas Kail, [[Lin-Manuel Miranda]], [[Jeffrey Seller]]
+|-
+|''[[Music (2021 film)|Music]]''
+|[[Sia]]
+|Sia, [[Vincent Landay]]
+|-
+|''[[Palm Springs (2020 film)|Palm Springs]]''
+|Max Barbakow
+|Chris Parker, [[Andy Samberg]], [[Akiva Schaffer]], Dylan Sellers, Becky Sloviter, [[Jorma Taccone]]
+|-
+|''[[The Prom (film)|The Prom]]''
+|[[Ryan Murphy (writer)|Ryan Murphy]]
+|Ryan Murphy, [[Alexis Martin Woodall]], [[Adam Anders]], Dori Berenstein, [[Bill Damaschke]]
+|-
+! rowspan="5" style="text-align:center;" | [[79th Golden Globe Awards|2021]] 
+| style="background:#b0c4de; text-align:left;" | '''''[[West Side Story (2021 film)|West Side Story]]''''' || style="background:#b0c4de;| '''[[Steven Spielberg]]''' || style="background:#b0c4de;| '''Steven Spielberg, [[Kristie Macosko Krieger]]'''
+|-
+|''[[Cyrano (film)|Cyrano]]''
+|[[Joe Wright]]
+|[[Tim Bevan]], [[Eric Fellner]], Guy Heeley
+|-
+|''[[Don't Look Up]]''
+|[[Adam McKay]]
+|Adam McKay, Kevin Messick
+|-
+|''[[Licorice Pizza]]''
+|[[Paul Thomas Anderson]]
+|[[Sara Murphy (film producer)|Sara Murphy]], [[Adam Somner]], Paul Thomas Anderson
+|-
+|''[[Tick, Tick... Boom! (film)|tick, tick... BOOM!]]''
+|[[Lin-Manuel Miranda]]
+|Julie Oh, Lin-Manuel Miranda
+|-
+! rowspan="5" style="text-align:center;" | [[80th Golden Globe Awards|2022]] 
+| style="background:#b0c4de; text-align:left;" |'''''[[The Banshees of Inisherin]]''''' || style="background:#b0c4de;| '''[[Martin McDonagh]]''' || style="background:#b0c4de;| '''[[Graham Broadbent]], [[Peter Czernin]], Martin McDonagh'''
+|-
+|''[[Babylon (2022 film)|Babylon]]''
+|[[Damien Chazelle]]
+|[[Marc Platt (producer)|Marc Platt]], Matthew Plouffe, Olivia Hamilton
+|-
+|''[[Everything Everywhere All at Once]]''
+|[[Daniels (directors)|Daniel Kwan and Daniel Scheinert]]
+|Daniel Kwan, Daniel Scheinert, [[Jonathan Wang]]
+|-
+|''[[Glass Onion: A Knives Out Mystery]]''
+|[[Rian Johnson]]
+|[[Ram Bergman]], Rian Johnson
+|-
+|''[[Triangle of Sadness]]''
+|[[Ruben Östlund]]
+|Erik Hemmendorff, Philippe Bober
+|-
+! rowspan="6" style="text-align:center;" |[[81st Golden Globe Awards|2023]]
+| style="background:#b0c4de; text-align:left;" |'''''[[Poor Things (film)|Poor Things]]''''' || style="background:#b0c4de;| '''[[Yorgos Lanthimos]]''' || style="background:#b0c4de;| '''[[Emma Stone]], [[Ed Guiney]], Yorgos Lanthimos, Andrew Lowe'''
+|-
+|''[[Air (2023 American film)|Air]]''
+|[[Ben Affleck]]
+|[[David Ellison]], Jesse Sisgold, [[Jon Weinbach]], Ben Affleck, [[Matt Damon]], Madison Ainley, Jeff Robinov, Peter Guber, [[Jason Michael Berman]]
+|-
+|''[[American Fiction (film)|American Fiction]]''
+|[[Cord Jefferson]]
+|Ben LeClair, Nikos Karamigios, Cord Jefferson, Jermaine Johnson
+|-
+|''[[Barbie (film)|Barbie]]''
+|[[Greta Gerwig]]
+|[[Margot Robbie]], [[Robbie Brenner]], [[Tom Ackerley]], [[David Heyman]]
+|-
+|''[[The Holdovers]]''
+|[[Alexander Payne]]
+|[[Mark Johnson (producer)|Mark Johnson]]
+|-
+|''[[May December]]''
+|[[Todd Haynes]]
+|[[Natalie Portman]], Sophie Mas, [[Christine Vachon]], [[Pamela Koffler]], [[Grant S. Johnson]], Tyler W. Konney, [[Jessica Elbaum]], [[Will Ferrell]]
+|-
+! rowspan="6" style="text-align:center;" |[[82nd Golden Globe Awards|2024]]<ref>{{Cite web |url=https://www.cnn.com/2025/01/05/entertainment/award-winners-list-golden-globes/index.html |title=Award winners-list: See which Golden Globes nominees won{{!}}CNN |access-date=2025-01-06 |archive-date=2025-01-06 |archive-url=https://web.archive.org/web/20250106021923/https://www.cnn.com/2025/01/05/entertainment/award-winners-list-golden-globes/index.html |url-status=live }}</ref><ref>{{Cite web |url=https://www.rollingstone.com/tv-movies/tv-movie-news/golden-globes-2025-complete-winners-list-1235226073/ |title=Golden Globes 2025: See the Complete Winners List - Rolling Stone |access-date=2025-01-06 |archive-date=2026-03-02 |archive-url=https://web.archive.org/web/20260302133301/https://www.rollingstone.com/tv-movies/tv-movie-news/golden-globes-2025-complete-winners-list-1235226073/ |url-status=live }}</ref>
+| style="background:#b0c4de; text-align:left;" | '''''[[Emilia Pérez]]'''''  || style="background:#B0C4DE;"| '''[[Jacques Audiard]]''' || style="background:#B0C4DE;"| '''Jacques Audiard, Pascal Caucheteux'''
+|-
+| text-align:left;" |''[[A Real Pain]]''||| [[Jesse Eisenberg]]
+|Jesse Eisenberg, Ali Herting
+|-
+|''[[Anora]]''
+|[[Sean Baker (filmmaker)|Sean Baker]]
+|Alex Coco, [[Samantha Quan]] & Sean Baker
+|-
+|''[[Challengers (film)|Challengers]]''
+|[[Luca Guadagnino]]
+|[[Amy Pascal]], Luca Guadagnino, [[Zendaya]] & Rachel O’Connor
+|-
+|''[[The Substance]]''
+|[[Coralie Fargeat]]
+|Coralie Fargeat, [[Tim Bevan]] & [[Eric Fellner]]
+|-
+|''[[Wicked (2024 film)|Wicked]]''
+|[[Jon M. Chu]]
+|[[Marc Platt (producer)|Marc Platt]]
+|-
+! rowspan="6" |[[83rd Golden Globe Awards|2025]]<ref>{{cite news |last1=Moreau |first1=Jordan |last2=Lang |first2=Brent |title=Golden Globes 2026 Nominations: 'One Battle After Another' Tops Films With Nine Nods, 'White Lotus' Leads TV With Six |url=https://variety.com/2025/film/awards/golden-globes-2026-nominations-one-battle-after-another-1236601172/ |access-date=8 December 2025 |work=[[Variety (magazine)|Variety]] |date=8 December 2025 |archive-date=10 December 2025 |archive-url=https://web.archive.org/web/20251210213516/https://variety.com/2025/film/awards/golden-globes-2026-nominations-one-battle-after-another-1236601172/ |url-status=live }}</ref><ref>{{Cite web |last=Atkinson |first=Katie |date=2026-01-12 |title=Here Are the 2026 Golden Globes Winners: Full List |url=https://www.billboard.com/lists/2026-golden-globes-winners-list/ |access-date=2026-01-12 |website=Billboard |language=en-US |archive-date=2026-01-12 |archive-url=https://web.archive.org/web/20260112032011/https://www.billboard.com/lists/2026-golden-globes-winners-list/ |url-status=live }}</ref>
+|style="background:#B0C4DE;"|''[[One Battle After Another|'''One Battle After Another''']]''
+|style="background:#B0C4DE;"|'''[[Paul Thomas Anderson]]'''
+|style="background:#B0C4DE;"|'''[[Adam Somner]], [[Sara Murphy (film producer)|Sara Murphy]] & Paul Thomas Anderson'''
+|-
+|''[[Blue Moon (2025 film)|Blue Moon]]''
+|[[Richard Linklater]]
+|Mike Blizzard, [[John Sloss]] & Richard Linklater
+|-
+|''[[Bugonia (film)|Bugonia]]''
+|[[Yorgos Lanthimos]]
+|[[Ed Guiney]], [[Andrew Lowe (producer)|Andrew Lowe]], Yorgos Lanthimos, [[Emma Stone]], [[Lars Knudsen (producer)|Lars Knudsen]]
+|-
+|''[[Marty Supreme]]''
+|[[Josh Safdie]]
+|Josh Safdie, [[Ronald Bronstein]], [[Eli Bush]], [[Anthony Katagas]] & [[Timothée Chalamet]]
+|-
+|''[[No Other Choice]]''
+|[[Park Chan-wook]]
+|Park Chan-wook, Back Jisun, [[Michèle Ray-Gavras]] & [[Alexandre Gavras]]
+|- 
+|''[[Nouvelle Vague (2025 film)|Nouvelle Vague]]''
+|Richard Linklater
+|Michèle Pétin & Laurent Pétin
+|}
+
+==Notes and trivia==
+* Between 1989 and 2004, ten animated feature films were nominated for this award and three won:
+# 1989 - ''[[The Little Mermaid (1989 film)|The Little Mermaid]]'' (lost to ''[[Driving Miss Daisy]]'')
+# 1991 - ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]'' '''(won)'''
+# 1992 - ''[[Aladdin (1992 Disney film)|Aladdin]]'' (lost to ''[[The Player (1992 film)|The Player]]'')
+# 1994 - ''[[The Lion King]]'' '''(won)'''
+# 1995 - ''[[Toy Story]]'' (lost to ''[[Babe (film)|Babe]]'')
+# 1999 - ''[[Toy Story 2]]'' '''(won)'''
+# 2000 - ''[[Chicken Run]]'' (lost to ''[[Almost Famous]]'')
+# 2001 - ''[[Shrek]]'' (lost to ''[[Moulin Rouge!]]'')
+# 2003 - ''[[Finding Nemo]]'' (lost to ''[[Lost in Translation (film)|Lost in Translation]]'')
+# 2004 - ''[[The Incredibles]]'' (lost to ''[[Sideways]]'')
+* ''[[Toy Story 2]]'' and ''[[Borat Subsequent Moviefilm]]'' are the only sequels to have won this award without their respective nominated predecessors also winning.
+* The [[West Side Story (1961 film)|1961]] and [[West Side Story (2021 film)|2021]] versions of ''West Side Story'' are the only films adapted from the [[West Side Story|same source material]] to win this award.
+* Since 2023, ''[[Emilia Pérez]]'' is the first non-English-language film to win in that category.
+
+==See also==
+* [[Academy Award for Best Picture]]
+* [[BAFTA Award for Best Film]]
+* [[Critics' Choice Movie Award for Best Picture]]
+* [[Critics' Choice Movie Award for Best Comedy]]
+* [[Golden Globe Award for Best Motion Picture – Drama]]
+* [[Producers Guild of America Award for Best Theatrical Motion Picture]]
+* [[Screen Actors Guild Award for Outstanding Performance by a Cast in a Motion Picture]]
+
+==References==
+{{Reflist}}
+
+{{Golden Globe Awards Chron}}
+{{Golden Globe Award Best Motion Picture Musical or Comedy}}
+
+{{DEFAULTSORT:Golden Globe Award for Best Motion Picture - Musical or Comedy}}
+[[Category:Golden Globe Awards]]
+[[Category:Best Musical or Comedy Picture Golden Globe winners|*]]
+[[Category:Awards for best film]]
+[[Category:Lists of films by award]]

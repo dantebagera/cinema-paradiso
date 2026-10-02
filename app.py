@@ -30,6 +30,9 @@ from services.movie_identity import (
 )
 from services.catalog_repository import CatalogRepository, catalog_database_path
 from services.movie_relationships import MovieRelationships
+from services.movie_awards_store import MovieAwardsStore
+from services.movie_awards_routes import register_movie_awards_routes
+from services.movie_awards_refresh import MovieAwardsRefresh, BoundedSourceTransport, RuntimeAwardsSources, bundled_seed_loader
 from services.catalog_writer_lease import CatalogWriterLease, CatalogWriterLeaseError
 from services.canonical_catalog import (
     CANONICAL_CONTRACT_VERSION,
@@ -4404,6 +4407,7 @@ def app_data_config():
     except Exception as e:
         return jsonify({'error': f'Cannot create folder: {e}'}), 400
     previous_iptv_provider_manager = _iptv_provider_manager
+    _stop_movie_awards_refresh()
     _user_data_dir = user_dir
     _tmdb_cache_dir = cache_dir
     _TMDB_CACHE_DIR = _tmdb_cache_dir
@@ -4415,6 +4419,7 @@ def app_data_config():
     if previous_iptv_provider_manager is not None:
         previous_iptv_provider_manager.close()
     _save_config(_all_config())
+    _start_movie_awards_refresh()
     return jsonify({'success': True, 'user_data_dir': _user_data_dir, 'tmdb_cache_dir': _tmdb_cache_dir})
 
 
@@ -9287,6 +9292,7 @@ def _library_observer():
 
 
 def _shutdown_library_background_services():
+    _stop_movie_awards_refresh()
     _catalog_event_broker.shutdown()
     if _library_observer_instance is not None:
         _library_observer_instance.shutdown()
@@ -11853,6 +11859,12 @@ def tmdb_related():
         source = request.args.get('source', 'recommendations')
         page = int(request.args.get('page', '1'))
         page_size = int(request.args.get('page_size', '20'))
+        if request.args.get('summary') == '1':
+            return jsonify(_movie_relationships.summary(
+                request.args.get('tmdb_id', '').strip(), source,
+                _fetch_movie_relationship_page, _normalize_tmdb_movie_summary,
+                page_size=page_size,
+            ))
         return jsonify(_movie_relationships.listing(
             request.args.get('tmdb_id', '').strip(),
             source, page,
@@ -11970,26 +11982,14 @@ def tmdb_collection():
         return jsonify({'error': str(e)}), 500
 
 
-def _library_identity_records():
-    store = _metadata_store()
-    cached_items = _fresh_catalog_library_items(store)
-    if cached_items is not None:
-        return list(cached_items)
-    return [
-        _catalog_library_item(candidate, store, None)
-        for candidate in store.catalog.store.library_projection(include_details=True)
-        if candidate.get('path') and os.path.isfile(candidate['path'])
-    ]
-
-
-def _library_collection_from_catalog(collection_id, records=None):
+def _library_collection_from_catalog(collection_id, records):
     collection_id = str(collection_id or '').strip()
     if not collection_id:
         return None
     parts = []
     collection_metadata = {}
     seen = set()
-    for record in records if records is not None else _library_identity_records():
+    for record in records:
         canonical = dict((record or {}).get('canonical_metadata') or {})
         collection = dict(canonical.get('collection') or {})
         if str(collection.get('id') or '') != collection_id:
@@ -12027,11 +12027,19 @@ def _library_collection_from_catalog(collection_id, records=None):
 @app.route('/api/library/collection/<collection_id>')
 def library_collection(collection_id):
     try:
-        records = _library_identity_records()
-        collection = _library_collection_from_catalog(collection_id, records=records)
+        store = _metadata_store()
+        member_candidates, identities, other_candidates = store.catalog.store.collection_lookup(collection_id)
+        local_members = [
+            _catalog_library_item(candidate, store, None)
+            for candidate in [*member_candidates, *other_candidates]
+            if candidate.get('path') and os.path.isfile(candidate['path'])
+        ]
+        collection = _library_collection_from_catalog(collection_id, records=local_members)
         if collection is None:
             collection = _effective_tmdb_collection(collection_id, refresh=request.args.get('refresh') == '1')
-        resolution = resolve_collection_membership(collection, records)
+        resolution = resolve_collection_membership(
+            collection, [*identities, *local_members], path_exists=os.path.isfile,
+        )
         return jsonify({
             **collection,
             **resolution,
@@ -13144,7 +13152,8 @@ def _tv_monitoring():
     services = _tv_services()
     with _acquisition_lock:
         if 'monitoring' not in services:
-            services['monitoring'] = TVMonitoring(services['repository'], _acquisition_repository(), _tv_acquisition())
+            services['monitoring'] = TVMonitoring(services['repository'], _acquisition_repository(), _tv_acquisition(),
+                                                  active_media_path=_player_manager.active_media_path)
         return services['monitoring']
 
 
@@ -13156,6 +13165,23 @@ def _run_tv_monitor():
             except Exception as error:
                 print(f'[tv-monitor] {error}', flush=True)
         _tv_monitor_stop.wait(60)
+
+
+def _run_tv_library_scan():
+    last_discovery = 0
+    while not _tv_monitor_stop.is_set():
+        if _tv_enabled:
+            try:
+                owners = _tv_services()
+                if time.monotonic() - last_discovery >= 3600:
+                    owners['discovery'].run()
+                    last_discovery = time.monotonic()
+                if owners['repository'].path_assignments():
+                    owners['ingestion'].scan_approved()
+                owners['metadata'].hydrate_catalog(limit=1)
+            except Exception as error:
+                print(f'[tv-library-scan] {error}', flush=True)
+        _tv_monitor_stop.wait(120)
 
 
 def _tv_config(data=None):
@@ -13185,9 +13211,62 @@ def _tv_config(data=None):
 register_tv_routes(app, _tv_services, lambda: _tv_enabled, _player_manager, _tv_acquisition, _tv_monitoring, _tv_config)
 
 
+def _get_movie_awards_store(*, create=False):
+    path = Path(_user_data_dir) / 'awards' / 'awards.sqlite'
+    return MovieAwardsStore(path) if create or path.is_file() else None
+
+
+def _project_awards_movie(facts):
+    # Awards GETs may reuse an already initialized cache, but do not initialize
+    # or migrate the catalog merely to show an uncached winning film.
+    with _catalog_repository_lock:
+        cached_owner = _catalog_repository_cache.get(str(Path(_user_data_dir).resolve()))
+    cached = (_movie_card_projection({'tmdb_id': str(facts['id'])}, store=_metadata_store())
+              if cached_owner is not None else {})
+    return cached or _normalize_tmdb_movie_summary(facts)
+
+
+register_movie_awards_routes(app, _get_movie_awards_store, _project_awards_movie,
+    lambda: _movie_awards_refresh_instance.diagnostic if _movie_awards_refresh_instance else '')
+
+_movie_awards_refresh_instance = None
+_movie_awards_refresh_lock = threading.RLock()
+
+
+def _stop_movie_awards_refresh():
+    global _movie_awards_refresh_instance
+    with _movie_awards_refresh_lock:
+        owner = _movie_awards_refresh_instance
+        _movie_awards_refresh_instance = None
+    if owner is not None:
+        owner.stop()
+
+
+def _start_movie_awards_refresh():
+    global _movie_awards_refresh_instance
+    if _TEST_MODE:
+        return
+    with _movie_awards_refresh_lock:
+        if _movie_awards_refresh_instance is not None:
+            return
+        store = _get_movie_awards_store(create=True)
+        transport = BoundedSourceTransport()
+        stop_event = threading.Event()
+        # This closure is evaluated only by the separately owned worker.
+        sources = RuntimeAwardsSources(transport, get_key=lambda: _tmdb_key,
+            cancelled=stop_event.is_set)
+        owner = MovieAwardsRefresh(store, sources.fetch, sources.resolve,
+            seed_loader=bundled_seed_loader(Path(_BASE_DIR) / 'static' / 'movie-awards'))
+        owner.stop_event = stop_event
+        transport.cancelled = owner.stop_event.is_set
+        _movie_awards_refresh_instance = owner
+        owner.start()
+
+
 def _start_background_services():
     """Start normal runtime owners; global artwork backfill stays explicit-only."""
     _start_library_reconcile()
+    _start_movie_awards_refresh()
     _library_observer().start()
     threading.Thread(
         target=LibraryStartupCatchup(
@@ -13203,6 +13282,7 @@ def _start_background_services():
         args=(lambda: _qbt_mode == 'embedded',),
         daemon=True,
     ).start()
+    threading.Thread(target=_run_tv_library_scan, name='cp-tv-library-scan', daemon=True).start()
     if _tv_enabled:
         threading.Thread(target=_run_tv_monitor, name='cp-tv-monitor', daemon=True).start()
     _startup_metrics['background_queue_started'] = True

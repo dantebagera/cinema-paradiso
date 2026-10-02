@@ -20,6 +20,12 @@ def series_identity(release, series, *, ambiguous=False):
     year = suffix[1] if suffix and title_key(prefix) not in alias_keys else ''
     title = prefix[:suffix.start()].strip(' ._-()[]') if year else prefix
     title_match = title_key(title) in {title_key(x) for x in aliases if x}
+    if not title_match and len(title_key(title)) >= 6 and release.get('folder_title'):
+        folder = str(release['folder_title'])
+        folder_words = set(re.findall(r'\w+', folder.casefold()))
+        title_match = title_key(title) in title_key(folder) and any(
+            len(title_key(alias)) >= 6 and set(re.findall(r'\w+', str(alias).casefold())) <= folder_words
+            for alias in aliases if alias)
     expected_year = str(series.get('first_air_date') or '')[:4]
     evidence = {'title': title, 'year': year, 'title_match': title_match, 'method': 'title_year'}
     ids = [(release.get('tmdbId'), series.get('tmdb_id')), (release.get('tvdbId'), series.get('external_ids', {}).get('tvdb_id'))]
@@ -39,10 +45,16 @@ VIDEO_EXTENSIONS = {'.mkv', '.mp4', '.avi', '.m4v', '.mov', '.ts', '.webm'}
 
 def parse_episode_name(name):
     text = Path(str(name)).name
-    ignored = bool(re.search(r'(?i)(?:^|[. _-])(sample|trailer|extras?|featurette)(?:[. _-]|$)', text))
-    result = {'name': text, 'ignored': ignored, 'season_number': None, 'episode_numbers': [], 'air_date': None, 'scope': 'unknown'}
+    stem = Path(text).stem
+    marker = r'(?:sample|trailer|extras?|featurette)'
+    ignored = bool(re.search(rf'(?i)(?:^|[._-]){marker}(?:[._-]|$)', stem))
+    result = {'name': text, 'ignored': ignored, 'series_title': '', 'season_number': None, 'episode_numbers': [], 'absolute_number': None, 'air_date': None, 'scope': 'unknown'}
     match = re.search(r'(?i)(?<![a-z0-9])S(\d{1,3})E(\d{1,4})((?:(?:-?E|-)(\d{1,4}))*)', text)
     if match:
+        result['series_title'] = stem[:match.start()].strip(' ._-()[]')
+        tail = stem[match.end():].strip(' ._-()[]')
+        result['ignored'] = bool(re.search(rf'(?i)(?:^|[._-]){marker}(?:[._-]|$)', result['series_title'])) or bool(
+            re.match(r'(?i)^(?:sample|featurette|extras?)(?:[. _-]|$)|^trailer(?:[. _-]|$)', tail))
         numbers = [int(match[2])]
         suffix = match[3]
         if suffix:
@@ -55,14 +67,37 @@ def parse_episode_name(name):
         return result
     match = re.search(r'(?i)(?<!\d)(\d{1,3})x(\d{1,4})(?!\d)', text)
     if match:
+        result['series_title'] = stem[:match.start()].strip(' ._-()[]')
+        tail = stem[match.end():].strip(' ._-()[]')
+        result['ignored'] = bool(re.search(rf'(?i)(?:^|[._-]){marker}(?:[._-]|$)', result['series_title'])) or bool(
+            re.match(r'(?i)^(?:sample|featurette|extras?|trailer)(?:[. _-]|$)', tail))
         result.update(season_number=int(match[1]), episode_numbers=[int(match[2])], scope='episode')
         return result
     match = re.search(r'(?<!\d)(20\d{2})[. -](\d{2})[. -](\d{2})(?!\d)', text)
     if match:
         try:
+            result['series_title'] = stem[:match.start()].strip(' ._-()[]')
             result.update(air_date=date(*map(int, match.groups())).isoformat(), scope='daily')
         except ValueError:
             pass
+        return result
+    clean_stem = re.sub(r'^\[[^\]]+\][ ._-]*', '', stem)
+    clean_stem = re.sub(r'(?i)^(?:BBC|PBS|ITV)[ ._-]+', '', clean_stem)
+    match = re.match(r'(?i)^(?P<title>.+?)[ ._-]+season[ ._-]*(?P<season>\d{1,3})[ ._-]+episode[ ._-]*(?P<episode>\d{1,4})(?=[ ._-]|$)', clean_stem)
+    if match:
+        result.update(series_title=match['title'].strip(' ._-()[]'), season_number=int(match['season']), episode_numbers=[int(match['episode'])], scope='episode')
+        return result
+    match = re.search(r'(?i)(?<!\d)(?P<number>\d{1,3})of(?P<total>\d{1,3})(?!\d)', clean_stem)
+    if match:
+        result.update(series_title=clean_stem[:match.start()].strip(' ._-()[]'), absolute_number=int(match['number']), absolute_total=int(match['total']), scope='absolute')
+        return result
+    match = re.match(r'^(?P<number>\d{1,3})[ ._-]+(?=[^\d\s])', clean_stem)
+    if match:
+        result.update(absolute_number=int(match['number']), scope='absolute')
+        return result
+    match = re.match(r'(?i)^(?P<title>.+?)[ ._-]+(?P<number>\d{1,3})(?=[ ._-]|$)', clean_stem)
+    if match:
+        result.update(series_title=match['title'].strip(' ._-()[]'), absolute_number=int(match['number']), scope='absolute')
         return result
     match = re.search(r'(?i)(?:^|[. _-])S(\d{1,3})(?![0-9e])', text)
     if match:
@@ -70,7 +105,7 @@ def parse_episode_name(name):
     return result
 
 
-def resolve_episode_claim(claim, episodes, *, provider_episode_id=None):
+def resolve_episode_claim(claim, episodes, *, provider_episode_id=None, season_hint=None):
     if claim['ignored']:
         return {'state': 'ignored', 'episode_ids': [], 'reason': 'Sample or extra'}
     if provider_episode_id:
@@ -84,6 +119,14 @@ def resolve_episode_claim(claim, episodes, *, provider_episode_id=None):
             matches = []
     elif claim['scope'] == 'daily':
         matches = [row for row in episodes if row['air_date'] == claim['air_date']]
+        if len(matches) != 1:
+            matches = []
+    elif claim['scope'] == 'absolute':
+        regular_seasons = {row['season_number'] for row in episodes if row['season_number'] > 0}
+        target_season = season_hint if season_hint in regular_seasons else (next(iter(regular_seasons)) if len(regular_seasons) == 1 else None)
+        matches = [row for row in episodes if row['season_number'] == target_season and row['episode_number'] == claim['absolute_number']] if target_season is not None else []
+        if claim.get('absolute_total') is not None and (target_season is None or sum(row['season_number'] == target_season for row in episodes) != claim['absolute_total']):
+            matches = []
         if len(matches) != 1:
             matches = []
     else:

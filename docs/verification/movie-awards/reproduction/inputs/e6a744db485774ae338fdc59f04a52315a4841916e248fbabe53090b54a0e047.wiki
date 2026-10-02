@@ -1,0 +1,598 @@
+{{Short description|Film award ceremony in 2025}}
+{{Use American English|date=January 2025}}
+{{Use mdy dates|date=May 2026}}
+{{Infobox film awards
+| number = 82
+| award = Golden Globe Awards
+| image = 82nd Golden Globe Awards.png
+| caption = Official poster
+| date = January 5, 2025
+| site = [[The Beverly Hilton]],<br/>[[Beverly Hills, California]], U.S.
+| host = [[Nikki Glaser]]
+| director = [[Glenn Weiss]]
+| best_film_drama = ''[[The Brutalist]]''
+| best_film_musical_or_comedy = ''[[Emilia Pérez]]''
+| best_drama_series = ''[[Shōgun (2024 TV series)|Shōgun]]''
+| best_musical_or_comedy_series = ''[[Hacks (TV series)|Hacks]]''
+| best_miniseries_or_tv_movie = ''[[Baby Reindeer]]''
+| most_wins = Film: ''[[Emilia Pérez]]'' (4)<br/>TV: ''[[Shōgun (2024 TV series)|Shōgun]]'' (4)
+| most_nominations = {{nowrap|Film: ''[[Emilia Pérez]]'' (10)}}<br/>TV: ''[[The Bear (TV series)|The Bear]]'' (5)
+| network = [[CBS]]<br/>[[Paramount+]] (streaming)
+| ratings = {{nowrap|10.1&nbsp;million ([[VideoAmp]])<br/>9.3&nbsp;million ([[Nielsen Media Research#Nielsen TV ratings|Nielsen ratings]])<ref>{{cite magazine |url=https://variety.com/2025/tv/news/golden-globes-2025-ratings-1236267097/ |title=Golden Globes 2025 Ratings: 9.3 Million Viewers, Down 2% from Last Year |last=Hailu |first=Selome |magazine=[[Variety (magazine)|Variety]] |date=January 6, 2025 |access-date=January 22, 2025 |quote=Though [[Paramount Global|Paramount]] initially reported that 10.1&nbsp;million average viewers tuned into the Golden Globes using data from VideoAmp — which would have marked a 7% increase from last year's 9.4&nbsp;million — industry standard measurement company [[Nielsen Media Research|Nielsen]] counted a 2% decrease to 9.3&nbsp;million viewers. |archive-date=January 7, 2025 |archive-url=https://web.archive.org/web/20250107024455/https://variety.com/2025/tv/news/golden-globes-2025-ratings-1236267097/ |url-status=live }}</ref>}}
+| last = [[81st Golden Globe Awards|81st]]
+| next = [[83rd Golden Globe Awards|83rd]]
+}}
+
+The '''82nd Golden Globe Awards''' was an awards ceremony that honored [[2024 in film|excellence in film]] and [[2024 in American television|American television productions of 2024]]. The winners were revealed during the live telecast, airing on [[CBS]] and streaming on [[Paramount+]] on January 5, 2025.<ref>{{cite web |last=Lowry |first=Brian |date=January 5, 2025 |title='The Brutalist' and 'Emilia Pérez' emerge with top Golden Globes prizes |url=https://goldenglobes.com/articles/the-brutalist-and-emilia-perez-emerge-with-top-golden-globes-prizes/ |access-date=January 5, 2025 |publisher=[[Golden Globe Awards|Golden Globes]] |quote=''[[The Brutalist]]'' and ''[[Emilia Pérez]]'' took the top movie prizes at the 82nd annual Golden Globe Awards, emerging as the only two films to garner multiple wins on a night that saw a mix of newcomers and familiar faces walk away with hardware at the venerable ceremony. |archive-date=January 7, 2025 |archive-url=https://web.archive.org/web/20250107080758/https://goldenglobes.com/articles/the-brutalist-and-emilia-perez-emerge-with-top-golden-globes-prizes/ |url-status=live }}</ref> The event was hosted by comedian [[Nikki Glaser]], making her the first solo female host in Golden Globes history.<ref name="Glaser">{{cite magazine |date=August 28, 2024 |title=Nikki Glaser Named 2025 Golden Globe Host—First Host Since Jo Koy's Criticized Performance |magazine=[[Forbes]] |last=Murray |first=Conor |url=https://www.forbes.com/sites/conormurray/2024/08/28/nikki-glaser-named-2025-golden-globe-host-first-host-since-jo-koys-criticized-performance/ |access-date=December 10, 2024 |editor-last=Lane |editor-first=Randall |editor-link=Randall Lane (journalist) |url-access=limited |issn=0015-6914 |oclc=6465733 |quote=[[Nikki Glaser|Glaser]], a comedian known for her celebrity roasts and stand-up specials, said hosting the Golden Globes is a 'dream job'... |archive-date=December 12, 2024 |archive-url=https://web.archive.org/web/20241212121720/https://www.forbes.com/sites/conormurray/2024/08/28/nikki-glaser-named-2025-golden-globe-host-first-host-since-jo-koys-criticized-performance/ |url-status=live }}</ref>
+
+The nominations were announced live on December 9, 2024, at a [[press conference]] at [[the Beverly Hilton]] by actors [[Morris Chestnut]] and [[Mindy Kaling]], following an introduction from Golden Globes president, Helen Hoenhe.<ref name="Globes">{{cite web |title=Nominations Announced for 82nd Annual Golden Globes |url=https://goldenglobes.com/articles/nominations-announced-for-82nd-annual-golden-globes/ |date=December 9, 2024 |access-date=December 10, 2024 |publisher=[[Golden Globe Awards|Golden Globes]] |quote=[[Morris Chestnut]] and [[Mindy Kaling]] flank Golden Globes president Helen Hoenhe at the Dec. 9, 2024, nominations announcement. |archive-date=December 9, 2024 |archive-url=https://web.archive.org/web/20241209150741/https://goldenglobes.com/articles/nominations-announced-for-82nd-annual-golden-globes/ |url-status=live }}</ref> ''[[Emilia Pérez]]'', with 10 nominations, became the most nominated comedy/musical film in [[Golden Globe Awards#Superlatives|Golden Globes history]], just 1 shy of the overall record of 11, set by [[Robert Altman]]'s [[country music]] [[satire (film and television)|satire]] ''[[Nashville (film)|Nashville]]'' in the drama category in [[33rd Golden Globe Awards|1976]].<ref>{{cite magazine |date=December 9, 2024 |title=''Emilia Pérez'' Sets Golden Globes Record with 10 Nominations |magazine=[[The Hollywood Reporter]] |last=Couch |first=Aaron |url=https://www.hollywoodreporter.com/movies/movie-news/2025-golden-globes-emilia-perez-nominations-1236081326/ |access-date=December 10, 2024 |editor-last=Moody |editor-first=Nekesa Mumbi |editor-link=Nekesa Mumbi Moody |issn=0018-3660 |oclc=44653726 |quote=''[[Emilia Pérez]]'' had a record-breaking morning, with the [[Netflix]] film landing ten Golden Globe nominations, making it the most nominated comedy or musical film in the awards show's history. |archive-date=December 9, 2024 |archive-url=https://web.archive.org/web/20241209205012/https://www.hollywoodreporter.com/movies/movie-news/2025-golden-globes-emilia-perez-nominations-1236081326/ |url-status=live }}</ref> ''[[The Brutalist]]'' received the second-most in film with 7 nominations, followed by ''[[Conclave (film)|Conclave]]'' with 6.<ref>{{cite magazine |date=December 9, 2024 |title=''Emilia Pérez'' Picks Up Record-Breaking 10 Golden Globe Nominations |magazine=[[Rolling Stone]] |last=Richardson |first=Kalia |url=https://www.rollingstone.com/tv-movies/tv-movie-news/emilia-perez-record-10-golden-globe-nominations-1235197324/ |access-date=December 9, 2024 |editor-last=Woods |editor-first=Sean |url-access=limited |issn=0035-791X |oclc=969027590 |quote=In the drama category, [[Brady Corbet]]'s historical drama ''[[The Brutalist]]'' scooped up seven nominations... |archive-date=December 12, 2024 |archive-url=https://web.archive.org/web/20241212054410/https://www.rollingstone.com/tv-movies/tv-movie-news/emilia-perez-record-10-golden-globe-nominations-1235197324/ |url-status=live }}</ref> Additionally, ''[[The Bear (TV series)|The Bear]]'' led the television nominations with 5, followed by ''[[Only Murders in the Building]]'' and ''[[Shōgun (2024 TV series)|Shōgun]]'' with 4 each.<ref name="Variety">{{cite magazine |date=December 9, 2024 |title=Golden Globes 2025 Nominations: ''Emilia Pérez'' Dominates Films with 10 Nods; ''The Bear'' Leads TV with Five |magazine=[[Variety (magazine)|Variety]] |last1=Donnelly |first1=Matt |url=https://variety.com/2024/film/awards/golden-globes-nominations-2025-full-list-1236236911/ |access-date=December 9, 2024 |last2=Moreau |first2=Jordan |issn=0042-2738 |oclc=60626328 |quote=On the TV side, [[FX (TV channel)|FX]]/[[Hulu]]'s ''[[The Bear (TV series)|The Bear]]'' continues its trophy domination with the most nominations for any series; that's five for the restaurant-set [[Comedy drama|dramedy]]... |archive-date=December 9, 2024 |archive-url=https://web.archive.org/web/20241209134338/https://variety.com/2024/film/awards/golden-globes-nominations-2025-full-list-1236236911/ |url-status=live }}</ref>
+
+==Ceremony information==
+On August 28, 2024, comedian [[Nikki Glaser]] was announced as the host for this year's ceremony, following last year's widely criticized host, comedian [[Jo Koy]].<ref name="Glaser"/> She is the first woman to host the Golden Globes solo.<ref>{{cite web |date=December 18, 2024 |title=Nikki Glaser on making history as 1st woman to host Golden Globes solo |url=https://www.yahoo.com/news/nikki-glaser-making-history-1st-125857679.html |access-date=January 5, 2025 |publisher=[[Yahoo News]] |archive-date=January 4, 2025 |archive-url=https://web.archive.org/web/20250104143025/https://www.yahoo.com/news/nikki-glaser-making-history-1st-125857679.html |url-status=live }}</ref> Glaser herself was nominated for [[Golden Globe Award for Best Performance in Stand-Up Comedy on Television|Best Performance in Stand-Up Comedy on Television]] for her [[HBO]] comedy special, ''Nikki Glaser: Someday You'll Die'',<ref name="Governors">{{cite web |title=Golden Globes 2025: ''Emilia Pérez'' scores 10 nominations as Kate Winslet, Selena Gomez and Sebastian Stan each take two |url=https://www.theguardian.com/film/2024/dec/09/golden-globes-2025-emilia-perez-scores-10-nominations-as-kate-winslet-and-sebastian-stan-each-take-two |last=Shoard |first=Catherine |date=December 9, 2024 |access-date=December 11, 2024 |website=[[The Guardian]] |editor-last=Viner |editor-first=Katharine |editor-link=Katharine Viner |issn=0261-3077 |oclc=60623878 |eissn=1756-3224 |quote=They will also host a standalone ceremony for the recipients of their lifetime achievement awards, with video highlights of [[Viola Davis]] and [[Ted Danson]] picking up their [[Golden Globe Cecil B. DeMille Award|Cecil B. DeMille Award]] and [[Golden Globe Carol Burnett Award|Carol Burnett Award]] honours then played during the main ceremony.}}</ref> but lost to [[Netflix]]'s ''Ali Wong: Single Lady''.<ref>{{cite web |last=Tinoco |first=Armando |date=January 5, 2025 |title=Nikki Glaser Roasts Herself as 'First-Time Golden Globe Loser' After Ali Wong Award Win |url=https://deadline.com/2025/01/nikki-glaser-roasts-herself-golden-globes-1236247623/ |access-date=January 6, 2025 |website=[[Deadline Hollywood]] |quote=[[Nikki Glaser|Glaser]] lost to [[Ali Wong]] and her [[Netflix]] special ''Single Lady''. |archive-date=January 6, 2025 |archive-url=https://web.archive.org/web/20250106053147/https://deadline.com/2025/01/nikki-glaser-roasts-herself-golden-globes-1236247623/ |url-status=live }}</ref>
+
+The ceremony was held at 5:00 p.m. [[Pacific Time Zone|PST]] / 8:00 p.m. [[Eastern Time Zone|EST]] on January 5, 2025. It was broadcast live on [[CBS]] and streamed on [[Paramount+]].<ref name="Globes"/> [[Glenn Weiss]] and [[Ricky Kirshner]] of White Cherry Entertainment returned from last year to executive produce the ceremony, along with [[Dick Clark Productions]].<ref name="Globes"/>
+
+On December 3, 2024, it was announced that the two Lifetime Achievement Awards, which were not presented last year, would return this year; however, they were presented during an untelevised gala dinner on January 3, 2025, prior to the telecast, similar to the [[Academy Awards]]' [[Governors Awards]].<ref name="Governors"/> The recipient of the [[Golden Globe Cecil B. DeMille Award|Cecil B. DeMille Award]] was [[Viola Davis]], while the [[Golden Globe Carol Burnett Award|Carol Burnett Award]] was awarded to [[Ted Danson]].<ref>{{cite web |title=Viola Davis and Ted Danson to Receive Top Honors at the 2025 Golden Globes |url=https://www.indiewire.com/awards/results/viola-davis-ted-danson-golden-globes-2025-1235067713/ |last=Jones |first=Marcus |date=December 2, 2024 |access-date=December 10, 2024 |website=[[IndieWire]] |editor-last=Harris-Bridson |editor-first=Dana |quote=The pair, who have 20 Golden Globes nominations and four wins between them, will be feted at a gala dinner on January 3 before receiving their awards on the January 5 telecast. |archive-date=December 2, 2024 |archive-url=https://web.archive.org/web/20241202194143/https://www.indiewire.com/awards/results/viola-davis-ted-danson-golden-globes-2025-1235067713/ |url-status=live }}</ref>
+
+==Winners and nominees==
+[[File:Adrien Brody-61584.jpg|right|thumb|150px|[[Adrien Brody]], Best Actor in a Motion Picture – Drama winner]]
+[[File:Fernanda Torres-68482.jpg|right|thumb|150px|[[Fernanda Torres]], Best Actress in a Motion Picture – Drama winner]]
+[[File:Sebastian Stan in 2024.jpg|right|thumb|150px|[[Sebastian Stan]], Best Actor in a Motion Picture – Musical or Comedy winner]]
+[[File:Demi Moore at the 2024 Toronto International Film Festival 3 (cropped) (cropped).jpg|right|thumb|150px|[[Demi Moore]], Best Actress in a Motion Picture – Musical or Comedy winner]]
+[[File:Kieran Culkin at the 2024 New York Film Festival 2 (cropped II).jpg|right|thumb|150px|[[Kieran Culkin]], Best Supporting Actor winner]]
+[[File:Zoe Saldaña at the 2024 Toronto International Film Festival (cropped).jpg|right|thumb|150px|[[Zoe Saldaña]], Best Supporting Actress winner]]
+[[File:Hiroyuki Sanada 20240220.jpg|right|thumb|150px|[[Hiroyuki Sanada]], Best Actor in a Television Series – Drama winner]]
+[[File:Anna Sawai from Sidewalks Entertainment 2024 (cropped).jpg|right|thumb|150px|[[Anna Sawai]], Best Actress in a Television Series – Drama winner]]
+[[File:Jeremy Allen White Springsteen-33 (cropped).jpg|right|thumb|150px|[[Jeremy Allen White]], Best Actor in a Television Series – Musical or Comedy winner]]
+[[File:Jean Smart by Gage Skidmore.jpg|right|thumb|150px|[[Jean Smart]], Best Actress in a Television Series – Musical or Comedy winner]]
+[[File:BansheesBFI131022 (21 of 22) (52447275762) (cropped).jpg|right|thumb|150px|[[Colin Farrell]], Best Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Jodie Foster-8667.jpg|right|thumb|150px|[[Jodie Foster]], Best Actress in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Asano Tadanobu from "Ravens" at Red Carpet of the Tokyo International Film Festival 2024 (54577962659).jpg|right|thumb|150px|[[Tadanobu Asano]], Best Supporting Actor in a Series, Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Jessica Gunning at the 2025 Toronto International Film Festival (cropped).jpg|right|thumb|150px|[[Jessica Gunning]], Best Supporting Actress in a Series, Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+
+''[[Emilia Pérez]]'' star [[Karla Sofía Gascón]] was the first [[Transgender|trans]] nominee for a Golden Globe motion picture acting category, for the [[Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy|Best Actress in a Musical or Comedy]] category.<ref>{{cite magazine |last=Cooper |first=Alex |date=December 9, 2024 |editor-last=Guerrero |editor-first=Desiree |editor2-last=Broverman |editor2-first=Neal |title=Karla Sofía Gascón makes trans history with Golden Globe nomination |url=https://www.advocate.com/arts-entertainment/karla-sofia-gascon-golden-globes |access-date=December 9, 2024 |magazine=[[The Advocate (magazine)|The Advocate]] |issn=0001-8996 |quote=[[Karla Sofía Gascón]]'s performance in ''[[Emilia Pérez]]'' has made her a global sensation. Now, she's made history as the first out [[Transgender|trans]] woman to be nominated for a lead actress in a film at the Golden Globes. |archive-date=December 9, 2024 |archive-url=https://web.archive.org/web/20241209155349/https://www.advocate.com/arts-entertainment/karla-sofia-gascon-golden-globes |url-status=live }}</ref> [[Jacques Audiard]], the director and writer of the film, was one of the most nominated individuals, with a total of three nominations: [[Golden Globe Award for Best Director|Best Director]], [[Golden Globe Award for Best Screenplay|Best Screenplay]], and co-lyricist of [[Golden Globe Award for Best Original Song|Best Original Song]] nominee "[[El Mal]]".<ref name="Variety"/> The composers and co-lyricists of the song, [[Camille (French singer)|Camille]] and [[Clément Ducol]], tied Audiard for most nominated individuals. Aside from "El Mal", they were also jointly nominated for composing ''Emilia Pérez''{{'}}s [[Golden Globe Award for Best Original Score|Best Original Score]] and an additional Best Original Song nominee: "[[Mi camino]]".<ref name="Variety"/>
+
+This year's nominations were tabulated by [[KPMG]], the U.S. audit, tax, and advisory firm, taking over [[Ernst & Young]] after fifty plus years.<ref name="Globes"/><ref>{{cite web |last=Gray |first=Tim |date=December 11, 2023 |title=Golden Globe Nominations Led by Barbenheimer |url=https://goldenglobes.com/articles/golden-globe-nominations-led-by-barbenheimer/ |access-date=January 30, 2026 |publisher=[[Golden Globe Awards|Golden Globes]] |archive-date=February 9, 2026 |archive-url=https://web.archive.org/web/20260209031855/https://goldenglobes.com/articles/golden-globe-nominations-led-by-barbenheimer/ |url-status=live }}</ref><ref>{{cite web |last=Nepales |first=Ruben V. |date=January 2, 2022 |title='And the Golden Globe Goes To...' – A Conversation with E&Y's Andy Sale |url=https://goldenglobes.com/articles/and-the-golden-globe-goes-to-a-conversation-with-eys-andy-sale/ |access-date=January 30, 2026 |publisher=[[Golden Globe Awards|Golden Globes]] |archive-date=February 16, 2026 |archive-url=https://web.archive.org/web/20260216025830/https://goldenglobes.com/articles/and-the-golden-globe-goes-to-a-conversation-with-eys-andy-sale/ |url-status=live }}</ref><ref>{{cite web |author=HFPA |date=September 28, 2022 |title=The HFPA Announces Awards Timetable for the 80th Annual Golden Globe Awards |url=https://goldenglobes.com/articles/the-hfpa-announces-awards-timetable-for-the-80th-annual-golden-globe-awards/ |access-date=January 30, 2026 |publisher=[[Golden Globe Awards|Golden Globes]] |archive-date=March 15, 2026 |archive-url=https://web.archive.org/web/20260315084941/https://goldenglobes.com/articles/the-hfpa-announces-awards-timetable-for-the-80th-annual-golden-globe-awards/ |url-status=live }}</ref> [[Netflix]] received a total of 36 nominations between film and television, the most of any distributor.<ref>{{cite web |last=Goldbart |first=Max |date=December 9, 2024 |title=Netflix Leads the Way on Golden Globes Noms Day |url=https://deadline.com/2024/12/netflix-leads-a24-hbo-golden-globes-nominations-1236198173/ |access-date=December 10, 2024 |website=[[Deadline Hollywood]] |quote=[[Netflix]] leads the pack in the Golden Globes noms for 2024 on both the TV and film side, while [[A24]] and [[HBO]] (& [[HBO Max|Max]]) are well represented. Overall, Netflix picked up 23 TV nominations and 13 film, totaling 36. |archive-date=December 9, 2024 |archive-url=https://web.archive.org/web/20241209152519/https://deadline.com/2024/12/netflix-leads-a24-hbo-golden-globes-nominations-1236198173/ |url-status=live }}</ref>
+
+''Emilia Pérez'' is the first non-English-language film (with some parts of English in the film) to win [[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]]. ''[[Flow (2024 film)|Flow]]'' is the first [[Latvian language|Latvian]] film to win [[Golden Globe Award for Best Animated Feature Film|Best Animated Feature Film]].<ref>{{cite web |title=''Flow'' by Latvian Gints Zilbalodis gets Golden Globe |url=https://eng.lsm.lv/article/culture/culture/06.01.2025-flow-by-latvian-gints-zilbalodis-gets-golden-globe.a582455/ |access-date=January 8, 2025 |publisher=[[Public Broadcasting of Latvia|eng.lsm.lv]] |archive-date=January 6, 2025 |archive-url=https://web.archive.org/web/20250106113956/https://eng.lsm.lv/article/culture/culture/06.01.2025-flow-by-latvian-gints-zilbalodis-gets-golden-globe.a582455/ |url-status=live }}</ref> [[Fernanda Torres]] became the first [[Brazilian Portuguese|Brazilian]] actress to win a Golden Globe in an acting category,<ref name="Torres">{{cite magazine |last=Rubin |first=Rebecca |date=January 6, 2025 |title=''I'm Still Here'' Star Fernanda Torres Wins Golden Globe 26 Years After Her Mom Was Nominated in Same Category |url=https://variety.com/2025/film/news/fernanda-torres-golden-globes-best-actress-drama-film-1236262309/ |access-date=January 6, 2025 |magazine=[[Variety (magazine)|Variety]] |archive-date=January 6, 2025 |archive-url=https://web.archive.org/web/20250106111411/https://variety.com/2025/film/news/fernanda-torres-golden-globes-best-actress-drama-film-1236262309/ |url-status=live }}</ref> as well as the first Brazilian, first [[South America]]n and first [[Portuguese language|Portuguese-speaking]] actor to win the [[Golden Globe Award for Best Actress in a Motion Picture – Drama]].<ref name="Torres"/> She acknowledged her mother [[Fernanda Montenegro]]'s nomination, for ''[[Central Station (film)|Central Station]]'' (1998), in the same category at the [[56th Golden Globe Awards]].<ref name="Torres"/>
+
+''Emilia Pérez'' and ''[[Shōgun (2024 TV series)|Shōgun]]'' were the biggest winners of the night, for film and television, respectively, with four wins each.<ref name="Winners">{{cite magazine |date=January 5, 2025 |title=Golden Globes 2025 Winners: ''Emilia Pérez'' Leads with 4 Wins; ''Shōgun'' Tops TV with 4 |magazine=[[Variety (magazine)|Variety]] |last1=Lang |first1=Brent |last2=Moreau |first2=Jordan |url=https://variety.com/2025/film/news/golden-globes-2025-winners-emilia-perez-shogun-1236262416/ |access-date=February 28, 2025 |issn=0042-2738 |oclc=60626328 |quote=...while ''[[The Brutalist]]'', which received the prize for [[Golden Globe Award for Best Motion Picture – Drama|Best Drama]], was close behind with three victories. |archive-date=January 6, 2025 |archive-url=https://web.archive.org/web/20250106094659/https://variety.com/2025/film/news/golden-globes-2025-winners-emilia-perez-shogun-1236262416/ |url-status=live }}</ref> ''[[The Brutalist]]'' was the next biggest film recipient, with three wins; for television, ''[[Baby Reindeer]]'' and ''[[Hacks (TV series)|Hacks]]'' each won two.<ref name="Winners"/>
+
+===Film===
+{| class="wikitable" style="width=100%"
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Drama|Best Motion Picture – Drama]]}}
+* '''''[[The Brutalist]]'''''
+** ''[[A Complete Unknown]]''
+** ''[[Conclave (film)|Conclave]]''
+** ''[[Dune: Part Two]]''
+** ''[[Nickel Boys]]''
+** ''[[September 5 (film)|September 5]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]]}}
+* '''''[[Emilia Pérez]]'''''
+** ''[[Anora]]''
+** ''[[Challengers (film)|Challengers]]''
+** ''[[A Real Pain]]''
+** ''[[The Substance]]''
+** ''[[Wicked (2024 film)|Wicked]]''
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Animated Feature Film|Best Motion Picture – Animated]]}}
+* '''''[[Flow (2024 film)|Flow]]'''''
+** ''[[Inside Out 2]]''
+** ''[[Memoir of a Snail]]''
+** ''[[Moana 2]]''
+** ''[[Wallace & Gromit: Vengeance Most Fowl]]''
+** ''[[The Wild Robot]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Non-English Language|Best Motion Picture – Non-English Language]]}}
+* '''''[[Emilia Pérez]]'' (France)'''
+** ''[[All We Imagine as Light]]'' (India)
+** ''[[The Girl with the Needle]]'' (Denmark)
+** ''[[I'm Still Here (2024 film)|I'm Still Here]]'' (Brazil)
+** ''[[The Seed of the Sacred Fig]]'' (Germany)
+** ''[[Vermiglio (film)|Vermiglio]]'' (Italy)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor in a Motion Picture – Drama|Best Actor in a Motion Picture – Drama]]}}
+* '''[[Adrien Brody]] – ''[[The Brutalist]]'' as László Tóth'''<!-- Do NOT wikilink to real-life individual! They are NOT the same character. -->
+** [[Timothée Chalamet]] – ''[[A Complete Unknown]]'' as [[Bob Dylan]]
+** [[Daniel Craig]] – ''[[Queer (film)|Queer]]'' as [[William S. Burroughs|William Lee]]
+** [[Colman Domingo]] – ''[[Sing Sing (2023 film)|Sing Sing]]'' as John "Divine G" Whitfield
+** [[Ralph Fiennes]] – ''[[Conclave (film)|Conclave]]'' as Cardinal Thomas Lawrence
+** [[Sebastian Stan]] – ''[[The Apprentice (2024 film)|The Apprentice]]'' as [[Donald Trump]]
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Motion Picture – Drama]]}}
+* '''[[Fernanda Torres]] – ''[[I'm Still Here (2024 film)|I'm Still Here]]'' as [[Eunice Paiva]]'''
+** [[Pamela Anderson]] – ''[[The Last Showgirl]]'' as Shelly
+** [[Angelina Jolie]] – ''[[Maria (2024 film)|Maria]]'' as [[Maria Callas]]
+** [[Nicole Kidman]] – ''[[Babygirl]]'' as Romy Mathis
+** [[Tilda Swinton]] – ''[[The Room Next Door]]'' as Martha Hunt
+** [[Kate Winslet]] – ''[[Lee (2023 film)|Lee]]'' as [[Lee Miller]]
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor in a Motion Picture – Musical or Comedy|Best Actor in a Motion Picture – Musical or Comedy]]}}
+* '''[[Sebastian Stan]] – ''[[A Different Man]]'' as Edward Lemuel / Guy Moratz'''
+** [[Jesse Eisenberg]] – ''[[A Real Pain]]'' as David Kaplan
+** [[Hugh Grant]] – ''[[Heretic (film)|Heretic]]'' as Mr. Reed
+** [[Gabriel LaBelle]] – ''[[Saturday Night (2024 film)|Saturday Night]]'' as [[Lorne Michaels]]
+** [[Jesse Plemons]] – ''[[Kinds of Kindness]]'' as Robert, Daniel, and Andrew{{Efn|In this [[triptych]] fable [[anthology film]], Plemons portrays a separate, distinct character in each segment.<ref>{{cite web |url=https://screenrant.com/kinds-of-kindness-cast-character-guide/ |title=''Kinds of Kindness'' Cast & Character Guide |last=Sherlock |first=Ben |website=[[Screen Rant]] |date=June 18, 2024 |access-date=March 1, 2025 |archive-date=November 20, 2024 |archive-url=https://web.archive.org/web/20241120042236/https://screenrant.com/kinds-of-kindness-cast-character-guide/ |url-status=live }}</ref>}}
+** [[Glen Powell]] – ''[[Hit Man (2023 film)|Hit Man]]'' as Gary Johnson
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy|Best Actress in a Motion Picture – Musical or Comedy]]}}
+* '''[[Demi Moore]] – ''[[The Substance]]'' as Elisabeth Sparkle'''
+** [[Amy Adams]] – ''[[Nightbitch (film)|Nightbitch]]'' as Mother
+** [[Cynthia Erivo]] – ''[[Wicked (2024 film)|Wicked]]'' as [[Elphaba|Elphaba Thropp]]
+** [[Karla Sofía Gascón]] – ''[[Emilia Pérez]]'' as Emilia Pérez / Juan "Manitas" Del Monte
+** [[Mikey Madison]] – ''[[Anora]]'' as Anora "Ani" Mikheeva
+** [[Zendaya]] – ''[[Challengers (film)|Challengers]]'' as Tashi Duncan
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Supporting Actor in a Motion Picture]]}}
+* '''[[Kieran Culkin]] – ''[[A Real Pain]]'' as Benji Kaplan'''
+** [[Yura Borisov]] – ''[[Anora]]'' as Igor
+** [[Edward Norton]] – ''[[A Complete Unknown]]'' as [[Pete Seeger]]
+** [[Guy Pearce]] – ''[[The Brutalist]]'' as Harrison Lee Van Buren Sr.
+** [[Jeremy Strong]] – ''[[The Apprentice (2024 film)|The Apprentice]]'' as [[Roy Cohn]]
+** [[Denzel Washington]] – ''[[Gladiator II]]'' as [[Macrinus#In popular culture|Macrinus]]
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Supporting Actress in a Motion Picture]]}}
+* '''[[Zoe Saldaña]] – ''[[Emilia Pérez]]'' as Rita Mora Castro'''
+** [[Selena Gomez]] – ''Emilia Pérez'' as Jessi Del Monte
+** [[Ariana Grande]] – ''[[Wicked (2024 film)|Wicked]]'' as [[Glinda|Galinda Upland]]
+** [[Felicity Jones]] – ''[[The Brutalist]]'' as Erzsébet Tóth
+** [[Margaret Qualley]] – ''[[The Substance]]'' as Sue
+** [[Isabella Rossellini]] – ''[[Conclave (film)|Conclave]]'' as Sister Agnes
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Director|Best Director]]}}
+* '''[[Brady Corbet]] – ''[[The Brutalist]]'''''
+** [[Jacques Audiard]] – ''[[Emilia Pérez]]''
+** [[Sean Baker]] – ''[[Anora]]''
+** [[Edward Berger]] – ''[[Conclave (film)|Conclave]]''
+** [[Coralie Fargeat]] – ''[[The Substance]]''
+** [[Payal Kapadia (filmmaker)|Payal Kapadia]] – ''[[All We Imagine as Light]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Screenplay|Best Screenplay]]}}
+* '''[[Peter Straughan]] – ''[[Conclave (film)|Conclave]]'''''
+** [[Jacques Audiard]] – ''[[Emilia Pérez]]''
+** [[Sean Baker]] – ''[[Anora]]''
+** [[Brady Corbet]] and [[Mona Fastvold]] – ''[[The Brutalist]]''
+** [[Jesse Eisenberg]] – ''[[A Real Pain]]''
+** [[Coralie Fargeat]] – ''[[The Substance]]''
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Original Score|Best Original Score]]}}
+* '''[[Trent Reznor]] and [[Atticus Ross]] – ''[[Challengers (film)|Challengers]]'''''
+** [[Volker Bertelmann]] – ''[[Conclave (film)|Conclave]]''
+** [[Daniel Blumberg]] – ''[[The Brutalist]]''
+** [[Kris Bowers]] – ''[[The Wild Robot]]''
+** [[Clément Ducol]] and [[Camille (French singer)|Camille]] – ''[[Emilia Pérez]]''
+** [[Hans Zimmer]] – ''[[Dune: Part Two]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]]}}
+* '''''[[Wicked (2024 film)|Wicked]]'''''
+** ''[[Alien: Romulus]]''
+** ''[[Beetlejuice Beetlejuice]]''
+** ''[[Deadpool & Wolverine]]''
+** ''[[Gladiator II]]''
+** ''[[Inside Out 2]]''
+** ''[[Twisters (film)|Twisters]]''
+** ''[[The Wild Robot]]''
+|-
+| colspan="2" valign="top"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Original Song|Best Original Song]]}}
+* '''"[[El Mal]]" ([[Clément Ducol]], [[Camille (French singer)|Camille]], and [[Jacques Audiard]]) – ''[[Emilia Pérez]]'''''
+** "Beautiful That Way" ([[Andrew Wyatt]], [[Miley Cyrus]], and [[Lykke Li]]) – ''[[The Last Showgirl]]''
+** "Compress / Repress" ([[Trent Reznor]], [[Atticus Ross]], and [[Luca Guadagnino]]) – ''[[Challengers (film)|Challengers]]''
+** "[[Forbidden Road]]" ([[Robbie Williams]], [[Freddy Wexler]], and [[Sacha Skarbek]]) – ''[[Better Man (film)|Better Man]]''
+** "[[Kiss the Sky (Maren Morris song)|Kiss the Sky]]" ([[Delacey]], [[The Monsters & Strangerz|Jordan K. Johnson, Stefan Johnson]], [[Maren Morris]], [[Michael Pollack (songwriter)|Michael Pollack]], and [[Ali Tamposi]]) – ''[[The Wild Robot]]''
+** "[[Mi camino]]" (Clément Ducol and Camille) – ''Emilia Pérez''
+|}
+
+====Honorary award recipient====
+* [[Golden Globe Cecil B. DeMille Award|Cecil B. DeMille Award]]: [[Viola Davis]]
+
+====Films with multiple nominations====
+The following films received multiple nominations:
+
+{| class="wikitable"
+|-
+! Nominations
+! Films
+! Category
+! Distributor
+|-
+| style="text-align:center"| 10
+| ''[[Emilia Pérez]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Netflix]]
+|-
+| style="text-align:center"| 7
+| ''[[The Brutalist]]''
+| style="text-align:center" rowspan="2"| Drama
+| style="text-align:center"| [[A24]]
+|-
+| style="text-align:center"| 6
+| ''[[Conclave (film)|Conclave]]''
+| style="text-align:center"| [[Focus Features]]
+|-
+| style="text-align:center" rowspan="2"| 5
+| ''[[Anora]]''
+| style="text-align:center" rowspan="5"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Neon (company)|Neon]]
+|-
+| ''[[The Substance]]''
+| style="text-align:center"| [[Mubi (streaming service)|MUBI]]
+|-
+| style="text-align:center" rowspan="4"| 4
+| ''[[Challengers (film)|Challengers]]''
+| style="text-align:center"| [[Amazon MGM Studios]]
+|-
+| ''[[A Real Pain]]''
+| style="text-align:center"| [[Searchlight Pictures]]
+|-
+| ''[[Wicked (2024 film)|Wicked]]''
+| style="text-align:center" rowspan="2"| [[Universal Pictures]]
+|-
+| ''[[The Wild Robot]]''
+| style="text-align:center"| Animated
+|-
+| style="text-align:center"| 3
+| ''[[A Complete Unknown]]''
+| style="text-align:center" rowspan="6"| Drama
+| style="text-align:center"| Searchlight Pictures
+|-
+| style="text-align:center" rowspan="7"| 2
+| ''[[All We Imagine as Light]]''
+| style="text-align:center"| [[Janus Films]]
+|-
+| ''[[The Apprentice (2024 film)|The Apprentice]]''
+| style="text-align:center"| [[Briarcliff Entertainment]]
+|-
+| ''[[Dune: Part Two]]''
+| style="text-align:center"| [[Warner Bros. Pictures]]
+|-
+| ''[[Gladiator II]]''
+| style="text-align:center"| [[Paramount Pictures]]
+|-
+| ''[[I'm Still Here (2024 film)|I'm Still Here]]''
+| style="text-align:center"| [[Sony Pictures Classics]]
+|-
+| ''[[Inside Out 2]]''
+| style="text-align:center"| Animated
+| style="text-align:center"| [[Walt Disney Studios Motion Pictures]]
+|-
+| ''[[The Last Showgirl]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[Roadside Attractions]]
+|}
+
+====Films with multiple wins====
+The following films received multiple wins:
+
+{| class="wikitable"
+|-
+! Wins
+! Films
+! Category
+! Distributor
+|-
+| style="text-align:center"| 4
+| ''[[Emilia Pérez]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Netflix]]
+|-
+| style="text-align:center"| 3
+| ''[[The Brutalist]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[A24]]
+|}
+
+===Television===
+{| class="wikitable" style="width=100%"
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Television Series – Drama|Best Television Series – Drama]]}}
+* '''''[[Shōgun (2024 TV series)|Shōgun]]'' ([[FX (TV channel)|FX]] / [[Hulu]])'''
+** ''[[The Day of the Jackal (TV series)|The Day of the Jackal]]'' ([[Peacock (streaming service)|Peacock]] / [[Sky Atlantic]])
+** ''[[The Diplomat (American TV series)|The Diplomat]]'' ([[Netflix]])
+** ''[[Mr. & Mrs. Smith (2024 TV series)|Mr. & Mrs. Smith]]'' ([[Amazon Prime Video|Prime Video]])
+** ''[[Slow Horses]]'' ([[Apple TV (streaming service)|Apple TV+]])
+** ''[[Squid Game]]'' (Netflix)
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Television Series – Musical or Comedy|Best Television Series – Musical or Comedy]]}}
+* '''''[[Hacks (TV series)|Hacks]]'' ([[HBO Max|Max]])'''
+** ''[[Abbott Elementary]]'' ([[American Broadcasting Company|ABC]])
+** ''[[The Bear (TV series)|The Bear]]'' (FX / Hulu)
+** ''[[The Gentlemen (2024 TV series)|The Gentlemen]]'' (Netflix)
+** ''[[Nobody Wants This]]'' (Netflix)
+** ''[[Only Murders in the Building]]'' (Hulu)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Limited or Anthology Series or Television Film|Best Limited Series, Anthology Series, or Motion Picture Made for Television]]}}
+* '''''[[Baby Reindeer]]'' (Netflix)'''
+** ''[[Disclaimer (TV series)|Disclaimer]]'' (Apple TV+)
+** ''[[Monsters: The Lyle and Erik Menendez Story]]'' (Netflix)
+** ''[[The Penguin (TV series)|The Penguin]]'' ([[HBO]] / Max)
+** ''[[Ripley (TV series)|Ripley]]'' (Netflix)
+** ''[[True Detective season 4|True Detective: Night Country]]'' (HBO / Max)
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Performance in Stand-Up Comedy on Television|Best Performance in Stand-Up Comedy on Television]]}}
+* '''[[Ali Wong]] – ''Ali Wong: Single Lady'' (Netflix)'''
+** [[Jamie Foxx]] – ''Jamie Foxx: What Had Happened Was...'' (Netflix)
+** [[Nikki Glaser]] – ''Nikki Glaser: Someday You'll Die'' (HBO / Max)
+** [[Seth Meyers]] – ''Seth Meyers: Dad Man Walking'' (HBO / Max)
+** [[Adam Sandler]] – ''Adam Sandler: Love You'' (Netflix)
+** [[Ramy Youssef]] – ''Ramy Youssef: More Feelings'' (HBO / Max)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor – Television Series Drama|Best Actor in a Television Series – Drama]]}}
+* '''[[Hiroyuki Sanada]] – ''[[Shōgun (2024 TV series)|Shōgun]]'' (FX / Hulu) as [[Tokugawa Ieyasu|Lord Yoshii Toranaga]]'''
+** [[Donald Glover]] – ''[[Mr. & Mrs. Smith (2024 TV series)|Mr. & Mrs. Smith]]'' (Prime Video) as John Smith / Michael
+** [[Jake Gyllenhaal]] – ''[[Presumed Innocent (TV series)|Presumed Innocent]]'' (Apple TV+) as Rusty Sabich
+** [[Gary Oldman]] – ''[[Slow Horses]]'' (Apple TV+) as Jackson Lamb
+** [[Eddie Redmayne]] – ''[[The Day of the Jackal (TV series)|The Day of the Jackal]]'' (Peacock / Sky Atlantic) as [[Jackal (The Day of the Jackal)|The Jackal]]
+** [[Billy Bob Thornton]] – ''[[Landman (TV series)|Landman]]'' ([[Paramount+]]) as Tommy Norris
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress – Television Series Drama|Best Actress in a Television Series – Drama]]}}
+* '''[[Anna Sawai]] – ''[[Shōgun (2024 TV series)|Shōgun]]'' (FX / Hulu) as [[Hosokawa Gracia|Toda Mariko]]'''
+** [[Kathy Bates]] – ''[[Matlock (2024 TV series)|Matlock]]'' ([[CBS]]) as Madeline "Matty" Matlock / Madeline Kingston
+** [[Emma D'Arcy]] – ''[[House of the Dragon]]'' (HBO / Max) as Queen [[Rhaenyra Targaryen]]
+** [[Maya Erskine]] – ''[[Mr. & Mrs. Smith (2024 TV series)|Mr. & Mrs. Smith]]'' (Prime Video) as Jane Smith / Alana
+** [[Keira Knightley]] – ''[[Black Doves]]'' (Netflix) as Helen Webb
+** [[Keri Russell]] – ''[[The Diplomat (American TV series)|The Diplomat]]'' (Netflix) as Katherine "Kate" Wyler
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor – Television Series Musical or Comedy|Best Actor in a Television Series – Musical or Comedy]]}}
+* '''[[Jeremy Allen White]] – ''[[The Bear (TV series)|The Bear]]'' (FX / Hulu) as [[Carmy Berzatto|Carmen "Carmy" Berzatto]]'''
+** [[Adam Brody]] – ''[[Nobody Wants This]]'' (Netflix) as Noah Roklov
+** [[Ted Danson]] – ''[[A Man on the Inside]]'' (Netflix) as Charles
+** [[Steve Martin]] – ''[[Only Murders in the Building]]'' (Hulu) as Charles-Haden Savage
+** [[Jason Segel]] – ''[[Shrinking (TV series)|Shrinking]]'' (Apple TV+) as Jimmy Laird
+** [[Martin Short]] – ''Only Murders in the Building'' (Hulu) as Oliver Putnam
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress – Television Series Musical or Comedy|Best Actress in a Television Series – Musical or Comedy]]}}
+* '''[[Jean Smart]] – ''[[Hacks (TV series)|Hacks]]'' (Max) as Deborah Vance'''
+** [[Kristen Bell]] – ''[[Nobody Wants This]]'' (Netflix) as Joanne
+** [[Quinta Brunson]] – ''[[Abbott Elementary]]'' (ABC) as Janine Teagues
+** [[Ayo Edebiri]] – ''[[The Bear (TV series)|The Bear]]'' (FX / Hulu) as [[Sydney Adamu]]
+** [[Selena Gomez]] – ''[[Only Murders in the Building]]'' (Hulu) as Mabel Mora
+** [[Kathryn Hahn]] – ''[[Agatha All Along]]'' ([[Disney+]]) as [[Agatha Harkness (Marvel Cinematic Universe)|Agatha Harkness]]
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor – Miniseries or Television Film|Best Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television]]}}
+* '''[[Colin Farrell]] – ''[[The Penguin (TV series)|The Penguin]]'' (HBO / Max) as [[Penguin in other media#Live-action 2|Oswald "Oz" Cobb / The Penguin]]'''
+** [[Richard Gadd]] – ''[[Baby Reindeer]]'' (Netflix) as Donny Dunn
+** [[Kevin Kline]] – ''[[Disclaimer (TV series)|Disclaimer]]'' (Apple TV+) as Stephen Brigstocke
+** [[Cooper Koch]] – ''[[Monsters: The Lyle and Erik Menendez Story]]'' (Netflix) as [[Lyle and Erik Menendez|Erik Menendez]]
+** [[Ewan McGregor]] – ''[[A Gentleman in Moscow (TV series)|A Gentleman in Moscow]]'' (Paramount+) as Count Alexander Ilyich Rostov
+** [[Andrew Scott (actor)|Andrew Scott]] – ''[[Ripley (TV series)|Ripley]]'' (Netflix) as [[Tom Ripley]]
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress – Miniseries or Television Film|Best Actress in a Limited Series, Anthology Series, or Motion Picture Made for Television]]}}
+* '''[[Jodie Foster]] – ''[[True Detective season 4|True Detective: Night Country]]'' (HBO / Max) as Chief Liz Danvers'''
+** [[Cate Blanchett]] – ''[[Disclaimer (TV series)|Disclaimer]]'' (Apple TV+) as Catherine Ravenscroft
+** [[Cristin Milioti]] – ''[[The Penguin (TV series)|The Penguin]]'' (HBO / Max) as [[Sofia Falcone]]
+** [[Sofía Vergara]] – ''[[Griselda (miniseries)|Griselda]]'' (Netflix) as [[Griselda Blanco]]
+** [[Naomi Watts]] – ''[[Feud: Capote vs. The Swans]]'' (FX / Hulu) as [[Babe Paley]]
+** [[Kate Winslet]] – ''[[The Regime (miniseries)|The Regime]]'' (HBO / Max) as Chancellor Elena Vernham
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Best Supporting Actor on Television]]}}
+* '''[[Tadanobu Asano]] – ''[[Shōgun (2024 TV series)|Shōgun]]'' (FX / Hulu) as [[Honda Masanobu|Kashigi Yabushige]]'''
+** [[Javier Bardem]] – ''[[Monsters: The Lyle and Erik Menendez Story]]'' (Netflix) as José Menendez
+** [[Harrison Ford]] – ''[[Shrinking (TV series)|Shrinking]]'' (Apple TV+) as Dr. Paul Rhoades
+** [[Jack Lowden]] – ''[[Slow Horses]]'' (Apple TV+) as River Cartwright
+** [[Diego Luna]] – ''La Máquina'' (Disney+) as Andy Pérez
+** [[Ebon Moss-Bachrach]] – ''[[The Bear (TV series)|The Bear]]'' (FX / Hulu) as [[Richie Jerimovich|Richard "Richie" Jerimovich]]
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Best Supporting Actress on Television]]}}
+* '''[[Jessica Gunning]] – ''[[Baby Reindeer]]'' (Netflix) as Martha Scott'''
+** [[Liza Colón-Zayas]] – ''[[The Bear (TV series)|The Bear]]'' (FX / Hulu) as [[Tina Marrero]]
+** [[Hannah Einbinder]] – ''[[Hacks (TV series)|Hacks]]'' (Max) as Ava Daniels
+** [[Dakota Fanning]] – ''[[Ripley (TV series)|Ripley]]'' (Netflix) as Marge Sherwood
+** [[Allison Janney]] – ''[[The Diplomat (American TV series)|The Diplomat]]'' (Netflix) as Vice President Grace Penn
+** [[Kali Reis]] – ''[[True Detective season 4|True Detective: Night Country]]'' (HBO / Max) as Trooper Evangeline Navarro
+|}
+
+====Honorary award recipient====
+* [[Golden Globe Carol Burnett Award|Carol Burnett Award]]: [[Ted Danson]]
+
+====Series with multiple nominations====
+The following television series received multiple nominations:
+
+{| class="wikitable"
+|-
+! Nominations
+! Series
+! Category
+! Distributor(s)
+|-
+| style="text-align:center"| 5
+| ''[[The Bear (TV series)|The Bear]]''
+| style="text-align:center" rowspan="2"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[FX (TV channel)|FX]] / [[Hulu]]
+|-
+| style="text-align:center" rowspan="2"| 4
+| ''[[Only Murders in the Building]]''
+| style="text-align:center"| Hulu
+|-
+| ''[[Shōgun (2024 TV series)|Shōgun]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| FX / Hulu
+|-
+| style="text-align:center" rowspan="11"| 3
+| ''[[Baby Reindeer]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center" rowspan="2"| [[Netflix]]
+|-
+| ''[[The Diplomat (American TV series)|The Diplomat]]''
+| style="text-align:center"| Drama
+|-
+| ''[[Disclaimer (TV series)|Disclaimer]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| [[Apple TV (streaming service)|Apple TV+]]
+|-
+| ''[[Hacks (TV series)|Hacks]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[HBO Max|Max]]
+|-
+| ''[[Monsters: The Lyle and Erik Menendez Story]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| Netflix
+|-
+| ''[[Mr. & Mrs. Smith (2024 TV series)|Mr. & Mrs. Smith]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[Amazon Prime Video|Prime Video]]
+|-
+| ''[[Nobody Wants This]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| Netflix
+|-
+| ''[[The Penguin (TV series)|The Penguin]]''
+| style="text-align:center" rowspan="2"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| [[HBO]] / Max
+|-
+| ''[[Ripley (TV series)|Ripley]]''
+| style="text-align:center"| Netflix
+|-
+| ''[[Slow Horses]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| Apple TV+
+|-
+| ''[[True Detective season 4|True Detective: Night Country]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| HBO / Max
+|-
+| style="text-align:center" rowspan="3"| 2
+| ''[[Abbott Elementary]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[American Broadcasting Company|ABC]]
+|-
+| ''[[The Day of the Jackal (TV series)|The Day of the Jackal]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[Peacock (streaming service)|Peacock]] / [[Sky Atlantic]]
+|-
+| ''[[Shrinking (TV series)|Shrinking]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| Apple TV+
+|}
+
+====Series with multiple wins====
+The following series received multiple wins:
+
+{| class="wikitable"
+|-
+! Wins
+! Series
+! Category
+! Distributor(s)
+|-
+| style="text-align:center"| 4
+| ''[[Shōgun (2024 TV series)|Shōgun]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[FX (TV channel)|FX]] / [[Hulu]]
+|-
+| style="text-align:center" rowspan="2"| 2
+| ''[[Baby Reindeer]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| [[Netflix]]
+|-
+| ''[[Hacks (TV series)|Hacks]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[HBO Max|Max]]
+|}
+
+==Presenters==
+The following performers presented awards at the ceremony. Furthermore, [[Aubrey Plaza]] and [[Rob McElhenney]] were originally announced as presenters on January 2, 2025,<ref>{{cite web |date=January 2, 2025 |title=Presenters Announced for the 82nd Annual Golden Globes |url=https://goldenglobes.com/articles/presenters-announced-for-the-82nd-annual-golden-globes/ |access-date=January 5, 2025 |publisher=[[Golden Globe Awards|Golden Globes]] |archive-date=January 4, 2025 |archive-url=https://web.archive.org/web/20250104230649/https://goldenglobes.com/articles/presenters-announced-for-the-82nd-annual-golden-globes/ |url-status=live }}</ref> but were not included in the final running order on the day of the ceremony.<ref>{{cite web |last=Molnar |first=James A. |date=January 5, 2025 |title=Golden Globes 2025: Order of awards presented – updated |url=https://www.thegoldknight.com/2025/01/golden-globes-2025-order-of-awards.html |access-date=January 6, 2025 |website=The Gold Knight |archive-date=January 6, 2025 |archive-url=https://web.archive.org/web/20250106050720/https://www.thegoldknight.com/2025/01/golden-globes-2025-order-of-awards.html |url-status=live }}</ref>
+
+{| class="wikitable"
+! Name(s)
+! Role
+|-
+| [[Auliʻi Cravalho]]<br/>[[Dwayne Johnson]]
+| Presented the award for [[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Supporting Actress – Motion Picture]]
+|-
+| [[Kate Hudson]]<br/>[[Mindy Kaling]]
+| Presented the award for [[Golden Globe Award for Best Actress – Television Series Musical or Comedy|Best Actress in a Television Series – Musical or Comedy]]
+|-
+| [[Ariana DeBose]]<br/>[[Ke Huy Quan]]
+| Presented the award for [[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Supporting Actor – Motion Picture]]
+|-
+| [[Margaret Qualley]]<br/>[[Demi Moore]]
+| Presented the award for [[Golden Globe Award for Best Actor – Television Series Drama|Best Actor in a Television Series – Drama]]
+|-
+| [[Kathy Bates]]<br/>[[Anthony Ramos]]
+| Presented the awards for [[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Best Supporting Actress – Limited Series, Anthology Series, or Motion Picture Made for Television]]<br/>and [[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Best Supporting Actor – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Jennifer Coolidge]]
+| Presented the award for [[Golden Globe Award for Best Actor – Television Series Musical or Comedy|Best Actor in a Television Series – Musical or Comedy]]
+|-
+| [[Morris Chestnut]]<br/>[[Kaley Cuoco]]
+| Presented the award for [[Golden Globe Award for Best Screenplay|Best Screenplay]]
+|-
+| [[Nate Bargatze]]
+| Presented the award for [[Golden Globe Award for Best Performance in Stand-Up Comedy on Television|Best Performance in Stand-Up Comedy on Television]]
+|-
+| [[Sharon Stone]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Non-English Language|Best Motion Picture – Non-English Language]]
+|-
+| [[Anya Taylor-Joy]]<br/>[[Miles Teller]]
+| Presented the award for [[Golden Globe Award for Best Actor – Miniseries or Television Film|Best Actor – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Catherine O'Hara]]<br/>[[Seth Rogen]]
+| Presented the award for [[Golden Globe Award for Best Actress – Miniseries or Television Film|Best Actress – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Kerry Washington]]<br/>[[Andrew Garfield]]
+| Presented the awards for [[Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy|Best Actress in a Motion Picture – Musical or Comedy]]<br/>and [[Golden Globe Award for Best Actor in a Motion Picture – Musical or Comedy|Best Actor in a Motion Picture – Musical or Comedy]]
+|-
+| [[Anthony Mackie]]<br/>[[Harrison Ford]]
+| Presented the award for [[Golden Globe Award for Best Animated Feature Film|Best Motion Picture – Animated]]
+|-
+| [[Michael Keaton]]
+| Presented the award for [[Golden Globe Award for Best Director|Best Director]]
+|-
+| [[Elton John]]<br/>[[Brandi Carlile]]
+| Presented the award for [[Golden Globe Award for Best Original Score|Best Original Score]]
+|-
+| [[Michelle Yeoh]]<br/>[[Jeff Goldblum]]
+| Presented the award for [[Golden Globe Award for Best Original Song|Best Original Song]]
+|-
+| [[Vin Diesel]]
+| Presented the award for [[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]]
+|-
+| [[Rachel Brosnahan]]<br/>[[Sarah Paulson]]
+| Presented the award for [[Golden Globe Award for Best Limited or Anthology Series or Television Film|Best Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Awkwafina]]<br/>[[Melissa McCarthy]]
+| Presented the award for [[Golden Globe Award for Best Television Series – Musical or Comedy|Best Television Series – Musical or Comedy]]
+|-
+| [[Colman Domingo]]<br/>[[Salma Hayek|Salma Hayek Pinault]]
+| Presented the award for [[Golden Globe Award for Best Actress – Television Series Drama|Best Actress – Television Series Drama]]
+|-
+| [[Zoë Kravitz]]<br/>[[Colin Farrell]]
+| Presented the award for [[Golden Globe Award for Best Television Series – Drama|Best Television Series – Drama]]
+|-
+| [[Viola Davis]]
+| Presented the award for [[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Motion Picture – Drama]]
+|-
+| [[Édgar Ramírez]]<br/>[[Gal Gadot]]
+| Presented the award for [[Golden Globe Award for Best Actor in a Motion Picture – Drama|Best Actor in a Motion Picture – Drama]]
+|-
+| [[Glenn Close]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Drama|Best Motion Picture – Drama]]
+|-
+| [[Nicolas Cage]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]]
+|}
+
+==Notes==
+{{notelist}}
+
+==See also==
+{{div col|colwidth=20em}}
+
+* [[52nd Annie Awards]]
+* [[97th Academy Awards]]
+* [[78th British Academy Film Awards]]
+* [[30th Critics' Choice Awards]]
+* [[45th Golden Raspberry Awards]]
+* [[40th Independent Spirit Awards]]
+* [[29th Satellite Awards]]
+* [[52nd Saturn Awards]]
+* [[31st Screen Actors Guild Awards]]
+
+{{div col end}}
+
+==References==
+{{reflist}}
+
+==External links==
+* {{Official|https://goldenglobes.com|Golden Globes official website}}
+* {{IMDb title|33058355}}
+* [https://goldenglobes.com/articles/the-82nd-golden-globe-awards-winners/ The 82nd Golden Globe Awards – Winners] at [[Golden Globe Awards|Golden Globes]]
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards, 82}}
+[[Category:2024 film awards]]
+[[Category:2024 television awards]]
+[[Category:2025 awards in the United States]]
+[[Category:January 2025 in the United States]]
+[[Category:Golden Globe Awards ceremonies|*082]]
+[[Category:2025 in Los Angeles County, California]]

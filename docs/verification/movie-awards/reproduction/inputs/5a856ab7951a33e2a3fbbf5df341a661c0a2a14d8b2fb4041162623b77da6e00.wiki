@@ -1,0 +1,553 @@
+{{oscars short description|films-year=1992}}
+{{featured list}}
+{{Use mdy dates|date=September 2026}}
+{{Infobox film awards
+| number           = 65
+| award            = Academy Awards
+| image            = 65th Academy Awards.jpg
+| alt              = Official poster promoting the 65th Academy Awards in 1993.
+| caption          = Official poster by [[Saul Bass]]<ref>{{cite news |last=Hindes |first=Andrew |title=Acad bows poster for 69th Oscars |url=https://variety.com/1996/scene/vpage/acad-bows-poster-for-69th-oscars-1117466260/ |access-date=January 19, 2026 |work=Variety |date=December 11, 1996 |quote=In designing the poster, Schwartzman takes over from his friend and mentor, the late Saul Bass, who created the last five posters [the 63rd, 65th, 66th, 67th, and 68th Academy Awards].}}</ref>
+| date             = March 29, 1993
+| site             = [[Dorothy Chandler Pavilion]]<br />Los Angeles, California, U.S.
+| host             = [[Billy Crystal]]
+| producer         = [[Gilbert Cates|Gil Cates]]
+| director         = [[Jeff Margolis]]
+| best_picture     = ''[[Unforgiven]]''
+| most_wins        = ''Unforgiven'' (4)
+| most_nominations = ''[[Howards End (film)|Howards End]]'' and ''Unforgiven'' (9)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 33 minutes<ref>{{harvnb|Wiley|Bona|1996|p=889}}</ref>
+| ratings          = 45.7 million<br />31.2% ([[Nielsen ratings]])
+| last             = 64th
+| next             = 66th
+}}
+
+The '''65th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored [[1992 in film|films released in 1992]] in the United States and took place on March 29, 1993, at the [[Dorothy Chandler Pavilion]] in Los Angeles beginning at 6:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 9:00&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, AMPAS presented Academy Awards (commonly referred to as Oscars) in 23 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Gilbert Cates|Gil Cates]] and directed by [[Jeff Margolis]].<ref>{{cite news|last=Marx |first=Andy |title=4th Oscarcast for Cates |url=https://variety.com/1992/film/awards/4th-oscarcast-for-cates-100501/ |access-date=February 19, 2014 |work=Variety |date=November 11, 1992 |url-status=live |archive-url=https://web.archive.org/web/20140306132553/http://variety.com/1992/film/awards/4th-oscarcast-for-cates-100501/ |archive-date=March 6, 2014 }}</ref><ref>{{harvnb|Osborne|2013|p=418}}</ref> Actor [[Billy Crystal]] hosted the show for the fourth consecutive year.<ref>{{cite news|last=MacMinn |first=Aleene |title=Morning Report: Movies |url=https://www.latimes.com/archives/la-xpm-1993-02-10-ca-1151-story.html |access-date=February 19, 2014 |work=Los Angeles Times  |date=February 10, 1993 |url-status=live |archive-url=https://web.archive.org/web/20140912123121/http://articles.latimes.com/1993-02-10/entertainment/ca-1151_1_major-movie |archive-date=September 12, 2014 }}</ref> In related events, during a ceremony held at the [[Century Plaza Hotel]] in Los Angeles on March 6, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Sharon Stone]].<ref>{{cite news|title=Past Scientific & Technical Awards Ceremonies|url=http://www.oscars.org/awards/scitech/pastawards.html|access-date=July 31, 2013|publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS)|archive-url=https://web.archive.org/web/20140213185729/http://www.oscars.org/awards/scitech/pastawards.html|archive-date=February 13, 2014}}</ref>
+
+''[[Unforgiven]]'' won four Oscars, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last=Fox |first=David J. |title='Unforgiven' Top Film; Pacino, Thompson Win : Academy Awards: Eastwood named best director. Oscars for supporting roles go to Hackman and Tomei. |url=https://www.latimes.com/archives/la-xpm-1993-03-30-mn-16785-story.html |access-date=February 25, 2014 |work=Los Angeles Times |date=March 31, 1993 |url-status=live |archive-url=https://web.archive.org/web/20140307234002/http://articles.latimes.com/1993-03-30/news/mn-16785_1_film-academy |archive-date=March 7, 2014 }}</ref> Other winners included ''[[Bram Stoker's Dracula (1992 film)|Bram Stoker's Dracula]]'' and ''[[Howards End (film)|Howards End]]'' with three awards, ''[[Aladdin (1992 Disney film)|Aladdin]]'' with two, and ''[[The Crying Game]]'', ''[[Death Becomes Her]]'', ''[[Educating Peter]]'', ''[[Indochine (film)|Indochine]]'', ''[[The Last of the Mohicans (1992 film)|The Last of the Mohicans]]'', ''[[Mona Lisa Descending a Staircase]]'', ''[[My Cousin Vinny]]'', ''[[Omnibus (film)|Omnibus]]'', ''[[The Panama Deception]]'', ''[[A River Runs Through It (film)|A River Runs Through It]]'', and ''[[Scent of a Woman (1992 film)|Scent of a Woman]]'' with one. The telecast garnered 45.7 million viewers in the United States.<ref name="Glamour Bowl">{{cite news|last=Johnson |first=Greg |title=Call It the Glamour Bowl |url=https://articles.latimes.com/1999/mar/18/business/fi-18458/2 |access-date=August 26, 2013 |work=Los Angeles Times |date=March 18, 1999 |url-status=dead |archive-url=https://web.archive.org/web/20130928053918/http://articles.latimes.com/1999/mar/18/business/fi-18458/2 |archive-date=September 28, 2013 }}</ref>
+
+==Winners and nominees==
+The nominees for the 65th Academy Awards were announced on February 17, 1993, at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]], by [[Robert Rehme]], president of the academy, and actress [[Mercedes Ruehl]].<ref>{{cite news|last=Weinraub |first=Bernard |title=3 Films Dominate Nominees in Oscar Contest |url=https://www.nytimes.com/1993/02/18/movies/3-films-dominate-nominees-in-oscar-contest.html |access-date=February 19, 2014 |work=The New York Times  |date=February 18, 1993 |url-status=live |archive-url=https://web.archive.org/web/20140312082840/http://www.nytimes.com/1993/02/18/movies/3-films-dominate-nominees-in-oscar-contest.html |archive-date=March 12, 2014 }}</ref> ''[[Howards End (film)|Howards End]]'' and ''[[Unforgiven]]'' led all nominees with nine nominations each.<ref>{{cite news|last=Fox |first=David J. |title=The 65th Academy Award Nominations: The Declaration of Independents : The nominations: 'Howards End' and 'Unforgiven' get nine apiece, 'The Crying Game' six. Non-studio and maverick filmmakers have a field day. |url=https://www.latimes.com/archives/la-xpm-1993-02-18-ca-463-story.html |access-date=February 18, 2014 |work=Los Angeles Times |date=February 18, 1993 |url-status=live |archive-url=https://web.archive.org/web/20121105224502/http://articles.latimes.com/1993-02-18/entertainment/ca-463_1_howards-end |archive-date=November 5, 2012 }}</ref>
+
+The winners were announced during the awards ceremony on March 29, 1993. Best Director winner [[Clint Eastwood]] became the seventh person nominated for lead acting and directing for the same film.<ref>{{cite news|last1=Ebert|first1=Roger|title=Oscars Honor Period Pieces But 'Player,' 'Malcolm X' Passed Over|work=[[Chicago Sun-Times]]|publisher=Tim Knight|date=February 18, 1993|page=37}}</ref> Best Actor winner [[Al Pacino]] was the sixth performer to receive [[List of actors nominated for multiple Academy Awards in the same year|nominations in the lead and supporting categories in the same year]].<ref>{{cite news|last=Rea |first=Steven |title=In Line For Oscars "Howards End" And Clint Eastwood's "Unforgiven" Got Nine Academy Award Nominations Each. And Makers Of "The Crying Game" May Get The Last Laugh, With Six Shots at the Statuette. |url=http://articles.philly.com/1993-02-18/entertainment/25955125_1_academy-award-nominations-unforgiven-mary-mcdonnell |access-date=February 25, 2014 |work=[[The Philadelphia Inquirer]] |publisher=H.F. Gerry Lenfest |date=February 18, 1993 |url-status=dead |archive-url=https://web.archive.org/web/20140306045014/http://articles.philly.com/1993-02-18/entertainment/25955125_1_academy-award-nominations-unforgiven-mary-mcdonnell |archive-date=March 6, 2014 }}</ref> He also became the first person to win in the lead acting category after achieving the aforementioned feat.<ref>{{harvnb|Wiley|Bona|1996|p=1173}}</ref> By virtue of his second straight win in both music categories, [[Alan Menken]] became the third person to win two Oscars in two consecutive years.<ref>{{harvnb|Osborne|2013|p=424}}</ref>
+
+===Awards===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Clint Eastwood at 2010 New York Film Festival.jpg
+| caption1          = [[Clint Eastwood]], Best Picture and Best Director winner
+| image2            = Al Pacino (1999).jpg
+| caption2          = [[Al Pacino]], Best Actor winner
+| image3            = Emma Thompson 2022.jpg
+| caption3          = [[Emma Thompson]], Best Actress winner
+| image4            = Gene Hackman 1987.jpg
+| caption4          = [[Gene Hackman]], Best Supporting Actor winner
+| image5            = Marisa Tomei at Berlinale 2023.jpg
+| caption5          = [[Marisa Tomei]], Best Supporting Actress winner
+| image6            = Neil Jordan by David Shankbone.jpg
+| caption6          = [[Neil Jordan]], Best Screenplay Written Directly for the Screen winner
+| image7            = Ruth Prawer Jhabvala 1987.jpg
+| caption7          = [[Ruth Prawer Jhabvala]], Best Screenplay Based on Material Previously Produced or Published winner
+| image8            = Régis Wargnier 2012.jpg
+| caption8          = [[Régis Wargnier]], Best Foreign Language Film winner
+| image9            = Alan Menken 2013 (cropped).jpg
+| caption9          = [[Alan Menken]], Best Original Score winner and Best Original Song co-winner
+| image10           = Tim Rice, 1 December 2020.jpg
+| caption10         = [[Tim Rice]], Best Original Song co-winner
+| image11           = 
+| caption11         = [[Ian Whittaker]], Best Art Direction co-winner
+| image12           = 
+| caption12         = [[Eiko Ishioka]], Best Costume Design winner
+| image13           = Tom Woodruff Jr.jpg
+| caption13         = [[Tom Woodruff Jr.]], Best Visual Effects co-winner
+}}
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars1993">{{Cite news|url=http://www.oscars.org/oscars/ceremonies/1993 |title=The 65th Academy Awards (1993) Nominees and Winners |access-date=October 22, 2011 |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20141109220926/http://www.oscars.org/oscars/ceremonies/1993 |archive-date=November 9, 2014 }}</ref>
+
+{| class=wikitable
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Unforgiven]]'' – [[Clint Eastwood]], producer'''{{double-dagger}}
+** ''[[The Crying Game]]'' – [[Stephen Woolley]], producer
+** ''[[A Few Good Men]]'' – [[David Brown (producer)|David Brown]], [[Rob Reiner]] and [[Andrew Scheinman]], producers
+** ''[[Howards End (film)|Howards End]]'' – [[Ismail Merchant]], producer
+** ''[[Scent of a Woman (1992 film)|Scent of a Woman]]'' – [[Martin Brest]], producer
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Clint Eastwood]]&nbsp;– ''[[Unforgiven]]'''''{{double-dagger}}
+** [[Neil Jordan]]&nbsp;– ''[[The Crying Game]]''
+** [[James Ivory]]&nbsp;– ''[[Howards End (film)|Howards End]]''
+** [[Robert Altman]]&nbsp;– ''[[The Player (1992 film)|The Player]]''
+** [[Martin Brest]]&nbsp;– ''[[Scent of a Woman (1992 film)|Scent of a Woman]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+*'''[[Al Pacino]]&nbsp;– ''[[Scent of a Woman (1992 film)|Scent of a Woman]]'' as Lieutenant Colonel Frank Slade'''{{double-dagger}}
+** [[Robert Downey Jr.]]&nbsp;– ''[[Chaplin (film)|Chaplin]]'' as [[Charlie Chaplin]]
+** [[Clint Eastwood]]&nbsp;– ''[[Unforgiven]]'' as William "Will" Munny
+** [[Stephen Rea]]&nbsp;– ''[[The Crying Game]]'' as Fergus
+** [[Denzel Washington]]&nbsp;– ''[[Malcolm X (1992 film)|Malcolm X]]'' as [[Malcolm X]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+*'''[[Emma Thompson]]&nbsp;– ''[[Howards End (film)|Howards End]]'' as Margaret Schlegel'''{{double-dagger}}
+** [[Catherine Deneuve]]&nbsp;– ''[[Indochine (film)|Indochine]]'' as Éliane Devries
+** [[Mary McDonnell]]&nbsp;– ''[[Passion Fish]]'' as May-Alice Culhane
+** [[Michelle Pfeiffer]]&nbsp;– ''[[Love Field (film)|Love Field]]'' as Lurene Hallett
+** [[Susan Sarandon]]&nbsp;– ''[[Lorenzo's Oil]]'' as [[Michaela Odone]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Gene Hackman]]&nbsp;– ''[[Unforgiven]]'' as Little Bill Daggett'''{{double-dagger}}
+** [[Jaye Davidson]]&nbsp;– ''[[The Crying Game]]'' as Dil
+** [[Jack Nicholson]]&nbsp;– ''[[A Few Good Men]]'' as Colonel Nathan R. Jessup
+** [[Al Pacino]]&nbsp;– ''[[Glengarry Glen Ross (film)|Glengarry Glen Ross]]'' as Ricky Roma
+** [[David Paymer]]&nbsp;– ''[[Mr. Saturday Night]]'' as Stan Young
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Marisa Tomei]]&nbsp;– ''[[My Cousin Vinny]]'' as Mona Lisa Vito'''{{double-dagger}}
+** [[Judy Davis]]&nbsp;– ''[[Husbands and Wives]]'' as Sally Wainwright
+** [[Joan Plowright]]&nbsp;– ''[[Enchanted April (1991 film)|Enchanted April]]'' as Mrs. Fisher
+** [[Vanessa Redgrave]]&nbsp;– ''[[Howards End (film)|Howards End]]'' as Ruth Wilcox
+** [[Miranda Richardson]]&nbsp;– ''[[Damage (1992 film)|Damage]]'' as Ingrid Fleming
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+*'''''[[The Crying Game]]''&nbsp;– [[Neil Jordan]]'''{{double-dagger}}
+** ''[[Husbands and Wives]]''&nbsp;– [[Woody Allen]]
+** ''[[Lorenzo's Oil]]''&nbsp;– [[George Miller (filmmaker)|George Miller]] and [[Nick Enright]]
+** ''[[Passion Fish]]''&nbsp;– [[John Sayles]]
+** ''[[Unforgiven]]''&nbsp;– [[David Peoples|David Webb Peoples]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material Previously Produced or Published)]]}}
+*'''''[[Howards End (film)|Howards End]]''&nbsp;– [[Ruth Prawer Jhabvala]] based on [[Howards End|the novel]] by [[E. M. Forster]]'''{{double-dagger}}
+** ''[[Enchanted April (1991 film)|Enchanted April]]''&nbsp;– [[Peter Barnes (playwright)|Peter Barnes]] based on the novel by [[Elizabeth von Arnim]]
+** ''[[The Player (1992 film)|The Player]]''&nbsp;– [[Michael Tolkin]] based on his novel
+** ''[[A River Runs Through It (film)|A River Runs Through It]]''&nbsp;– [[Richard Friedenberg]] based upon the story by [[Norman Maclean]]
+** ''[[Scent of a Woman (1992 film)|Scent of a Woman]]''&nbsp;– [[Bo Goldman]] based on the previous film ''[[Scent of a Woman (1974 film)|Profumo di donna]]'' by [[Ruggero Maccari]] and [[Dino Risi]] and the novel ''Il Buio E Il Miele'' by [[Giovanni Arpino]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[Indochine (film)|Indochine]]'' ([[List of French submissions for the Academy Award for Best Foreign Language Film|France]]) in French&nbsp;– [[Régis Wargnier]], director'''{{double-dagger}}
+** ''[[Close to Eden]]'' ([[List of Russian submissions for the Academy Award for Best Foreign Language Film|Russia]]) in Russian&nbsp;– [[Nikita Mikhalkov]], director
+** ''[[Daens (film)|Daens]]'' ([[List of Belgian submissions for the Academy Award for Best Foreign Language Film|Belgium]]) in Dutch&nbsp;– [[Stijn Coninx]], director
+** ''[[Schtonk!]]'' ([[List of German submissions for the Academy Award for Best Foreign Language Film|Germany]]) in German&nbsp;– [[Helmut Dietl]], director
+** <s>''[[A Place in the World (film)|A Place in the World]]'' ([[List of Uruguayan submissions for the Academy Award for Best International Feature Film|Uruguay]]) in Spanish – [[Adolfo Aristarain]], director</s> (nomination revoked){{ref label|Uruguay|A}}
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[The Panama Deception]]''&nbsp;– Barbara Trent and David Kasper'''{{double-dagger}}
+** ''[[Changing Our Minds: The Story of Dr. Evelyn Hooker]]''&nbsp;– David Haugland
+** ''[[Fires of Kuwait]]''&nbsp;– Sally Dundas
+** ''[[The Liberators: Fighting on Two Fronts in World War II]]''&nbsp;– [[Bill Miles]] and [[Nina Rosenblum]]
+** ''[[Music for the Movies: Bernard Herrmann]]''&nbsp;– Margaret Smilow and [[Roma Baran]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Educating Peter]]''&nbsp;– Thomas C. Goodwin (posthumous award) and Gerardine Wurzburg'''{{double-dagger}}
+** ''[[At the Edge of Conquest: The Journey of Chief Wai-Wai]]''&nbsp;– Geoffrey O'Connor
+** ''[[Beyond Imagining: Margaret Anderson and the 'Little Review']]''&nbsp;– Wendy L. Weinberg
+** ''[[The Colours of My Father: A Portrait of Sam Borenstein]]''&nbsp;– Richard Elson and Sally Bochner
+** ''[[When Abortion Was Illegal: Untold Stories]]''&nbsp;– [[Dorothy Fadiman]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+*'''''[[Omnibus (film)|Omnibus]]''&nbsp;– Sam Karmann'''{{double-dagger}}
+**''[[Contact (1992 film)|Contact]]''&nbsp;– Jonathan Darby and [[Jana Sue Memel]]
+** ''Cruise Control''&nbsp;– Matt Palmieri
+** ''[[The Lady in Waiting]]''&nbsp;– [[Christian Taylor (filmmaker)|Christian M. Taylor]]
+** ''[[Swan Song (1992 film)|Swan Song]]''&nbsp;– [[Kenneth Branagh]] and [[David Parfitt]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[Mona Lisa Descending a Staircase]]''&nbsp;– [[Joan C. Gratz]]'''{{double-dagger}}
+** ''[[Adam (1992 film)|Adam]]''&nbsp;– [[Peter Lord]]
+** ''Reci, reci, reci''&nbsp;– [[Michaela Pavlátová]]
+** ''[[The Sandman (1991 film)|The Sandman]]''&nbsp;– [[Paul Berry (animator)|Paul Berry]]
+** ''Screen Play''&nbsp;– [[Barry Purves]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[Aladdin (1992 Disney film)|Aladdin]]''&nbsp;– [[Alan Menken]]'''{{double-dagger}}
+** ''[[Basic Instinct]]''&nbsp;– [[Jerry Goldsmith]]
+** ''[[Chaplin (film)|Chaplin]]''&nbsp;– [[John Barry (composer)|John Barry]]
+** ''[[Howards End (film)|Howards End]]''&nbsp;– [[Richard Robbins (composer)|Richard Robbins]]
+** ''[[A River Runs Through It (film)|A River Runs Through It]]''&nbsp;– [[Mark Isham]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+*'''"[[A Whole New World]]" from ''[[Aladdin (1992 Disney film)|Aladdin]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Tim Rice]]'''{{double-dagger}}
+** "[[Beautiful Maria of My Soul]]" from ''[[The Mambo Kings]]''&nbsp;– Music by [[Robert Kraft (composer)|Robert Kraft]]; Lyrics by [[Arne Glimcher]]
+** "[[Friend Like Me]]" from ''[[Aladdin (1992 Disney film)|Aladdin]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Howard Ashman]] (posthumous nomination)
+** "[[I Have Nothing]]" from ''[[The Bodyguard (1992 film)|The Bodyguard]]''&nbsp;– Music by [[David Foster]]; Lyrics by [[Linda Thompson]]
+** "[[Run to You (Whitney Houston song)|Run to You]]" from ''[[The Bodyguard (1992 film)|The Bodyguard]]''&nbsp;– Music by Jud Friedman; Lyrics by Allan Rich
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[The Last of the Mohicans (1992 film)|The Last of the Mohicans]]''&nbsp;– [[Chris Jenkins (sound engineer)|Chris Jenkins]], [[Doug Hemphill]], [[Mark Smith (sound engineer)|Mark Smith]] and [[Simon Kaye]]'''{{double-dagger}}
+** ''[[Aladdin (1992 Disney film)|Aladdin]]''&nbsp;– [[Terry Porter (sound engineer)|Terry Porter]], [[Mel Metcalfe]], [[David J. Hudson]] and [[Doc Kane]]
+** ''[[A Few Good Men]]''&nbsp;– [[Kevin O'Connell (sound mixer)|Kevin O'Connell]], [[Rick Kline]] and [[Robert Eber]]
+** ''[[Under Siege]]''&nbsp;– [[Donald O. Mitchell]], [[Frank A. Montaño]], [[Rick Hart (sound engineer)|Rick Hart]] and [[Scott D. Smith]]
+** ''[[Unforgiven]]''&nbsp;– [[Les Fresholtz]], [[Vern Poore]], [[Dick Alexander]] and [[Rob Young (sound engineer)|Rob Young]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Effects Editing]]}}
+*'''''[[Bram Stoker's Dracula (1992 film)|Bram Stoker's Dracula]]''&nbsp;– [[David E. Stone]] and [[Tom McCarthy (sound editor)|Tom McCarthy]]'''{{double-dagger}}
+** ''[[Aladdin (1992 Disney film)|Aladdin]]''&nbsp;– [[Mark Mangini]]
+** ''[[Under Siege]]''&nbsp;– [[John Leveque]] and [[Bruce Stambler]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Howards End (film)|Howards End]]''&nbsp;– Art Direction: [[Luciana Arrighi]]; Set Decoration: [[Ian Whittaker]]'''{{double-dagger}}
+** ''[[Bram Stoker's Dracula (1992 film)|Bram Stoker's Dracula]]''&nbsp;– Art Direction: [[Thomas E. Sanders]]; Set Decoration: [[Garrett Lewis]]
+** ''[[Chaplin (film)|Chaplin]]''&nbsp;– Art Direction: [[Stuart Craig]]; Set Decoration: [[Chris A. Butler]]
+** ''[[Toys (film)|Toys]]''&nbsp;– Art Direction: [[Ferdinando Scarfiotti]]; Set Decoration: [[Linda DeScenna]]
+** ''[[Unforgiven]]''&nbsp;– Art Direction: [[Henry Bumstead]]; Set Decoration: [[Janice Blackie-Goodine]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[A River Runs Through It (film)|A River Runs Through It]]''&nbsp;– [[Philippe Rousselot]]'''{{double-dagger}}
+** ''[[Hoffa (film)|Hoffa]]''&nbsp;– [[Stephen H. Burum]]
+** ''[[Howards End (film)|Howards End]]''&nbsp;– [[Tony Pierce-Roberts]]
+** ''[[The Lover (1992 film)|The Lover]]''&nbsp;– [[Robert Fraisse (cinematographer)|Robert Fraisse]]
+** ''[[Unforgiven]]''&nbsp;– [[Jack N. Green]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+*'''''[[Bram Stoker's Dracula (1992 film)|Bram Stoker's Dracula]]''&nbsp;– [[Greg Cannom]], [[Michèle Burke]] and [[Matthew W. Mungle]]'''{{double-dagger}}
+** ''[[Batman Returns]]''&nbsp;– [[Ve Neill]], [[Ronnie Specter]] and [[Stan Winston]]
+** ''[[Hoffa (film)|Hoffa]]''&nbsp;– [[Ve Neill]], [[Greg Cannom]] and [[John Blake (make-up artist)|John Blake]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Bram Stoker's Dracula (1992 film)|Bram Stoker's Dracula]]''&nbsp;– [[Eiko Ishioka]]'''{{double-dagger}}
+** ''[[Enchanted April (1991 film)|Enchanted April]]''&nbsp;– [[Sheena Napier]]
+** ''[[Howards End (film)|Howards End]]''&nbsp;– [[Jenny Beavan]] and [[John Bright (costume designer)|John Bright]]
+** ''[[Malcolm X (1992 film)|Malcolm X]]''&nbsp;– [[Ruth E. Carter]]
+** ''[[Toys (film)|Toys]]''&nbsp;– [[Albert Wolsky]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Unforgiven]]''&nbsp;– [[Joel Cox]]'''{{double-dagger}}
+** ''[[Basic Instinct]]''&nbsp;– [[Frank J. Urioste]]
+** ''[[The Crying Game]]''&nbsp;– [[Kant Pan]]
+** ''[[A Few Good Men]]''&nbsp;– [[Robert Leighton (film editor)|Robert Leighton]]
+** ''[[The Player (1992 film)|The Player]]''&nbsp;– [[Geraldine Peroni]]
+|-
+| valign="top" colspan="2"|
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+*'''''[[Death Becomes Her]]''&nbsp;– [[Ken Ralston]], [[Doug Chiang]], [[Douglas Smythe]] and [[Tom Woodruff Jr.]]'''{{double-dagger}}
+** ''[[Alien 3]]''&nbsp;– [[Richard Edlund]], Alec Gillis, [[Tom Woodruff Jr.]] and [[George Gibbs (special effects artist)|George Gibbs]]
+** ''[[Batman Returns]]''&nbsp;– [[Michael L. Fink]], [[Craig Barron]], [[John Bruno (special effects)|John Bruno]] and [[Dennis Skotak]]
+|}
+
+===Honorary Award===
+*To [[Federico Fellini]] in recognition of his place as one of the screen's master storytellers.<ref>{{cite news|last=Marx |first=Andy |title=Acad Award in picture for Fellini |url=https://variety.com/1993/film/news/acad-award-in-picture-for-fellini-103081/ |access-date=February 25, 2014 |work=Variety  |date=January 18, 1993 |url-status=live |archive-url=https://web.archive.org/web/20140307175306/http://variety.com/1993/film/news/acad-award-in-picture-for-fellini-103081/ |archive-date=March 7, 2014 }}</ref>
+
+===Jean Hersholt Humanitarian Awards===
+The award recognizes individuals whose humanitarian efforts have brought credit to the motion picture industry.<ref name="Hersholt">{{cite news|last=MacMinn |first=Aleene |title=Morning Report: Movies |url=https://www.latimes.com/archives/la-xpm-1993-01-14-ca-1327-story.html |access-date=February 25, 2014 |work=Los Angeles Times |date=January 14, 1993 |url-status=live |archive-url=https://web.archive.org/web/20140307233304/http://articles.latimes.com/1993-01-14/entertainment/ca-1327_1_hersholt-award |archive-date=March 7, 2014 }}</ref>
+
+*[[Audrey Hepburn]]<ref name="Hersholt" /> ([[List of posthumous Academy Award winners and nominees#Honorary awards|posthumous award]]){{ref label|Hepburn|B}}
+*[[Elizabeth Taylor]]<ref>{{cite news|last=Marx |first=Andy |title=Hepburn, Taylor get Hersholt |url=https://variety.com/1993/film/news/hepburn-taylor-get-hersholt-102976/ |access-date=February 25, 2014 |work=Variety  |date=January 13, 1993 |url-status=live |archive-url=https://web.archive.org/web/20140307175338/http://variety.com/1993/film/news/hepburn-taylor-get-hersholt-102976/ |archive-date=March 7, 2014 }}</ref>
+
+===Films with multiple nominations and awards===
+{{Col-float}}
+{| class="wikitable" style="text-align: center;"
+|+ Films that received multiple nominations
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| rowspan=2 style="text-align:center" | 9
+| ''[[Howards End (film)|Howards End]]''
+|-
+| ''[[Unforgiven]]''
+|-
+| style="text-align: center;" | 6
+| ''[[The Crying Game]]''
+|-
+| style="text-align: center;" | 5
+| ''[[Aladdin (1992 Disney film)|Aladdin]]''
+|-
+| rowspan=3 style="text-align:center" | 4
+| ''[[Bram Stoker's Dracula (1992 film)|Bram Stoker's Dracula]]''
+|-
+| ''[[A Few Good Men]]''
+|-
+| ''[[Scent of a Woman (1992 film)|Scent of a Woman]]''
+|-
+| rowspan=4 style="text-align:center" | 3
+| ''[[Chaplin (film)|Chaplin]]''
+|-
+| ''[[Enchanted April (1991 film)|Enchanted April]]''
+|-
+| ''[[A River Runs Through It (film)|A River Runs Through It]]''
+|-
+| ''[[The Player (1992 film)|The Player]]''
+|-
+| rowspan=11 style="text-align:center" | 2
+| ''[[Basic Instinct]]''
+|-
+| ''[[Batman Returns]]''
+|-
+| ''[[The Bodyguard (1992 film)|The Bodyguard]]''
+|-
+| ''[[Hoffa (film)|Hoffa]]''
+|-
+| ''[[Husbands and Wives]]''
+|-
+| ''[[Indochine (film)|Indochine]]''
+|-
+| ''[[Lorenzo's Oil]]''
+|-
+| ''[[Malcolm X (1992 film)|Malcolm X]]''
+|-
+| ''[[Passion Fish]]''
+|-
+| ''[[Toys (film)|Toys]]''
+|-
+| ''[[Under Siege]]''
+|}
+
+{{Col-float-break}}
+
+{| class="wikitable" style="text-align: center;"
+|+ Films that received multiple awards
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 4
+| ''[[Unforgiven]]''
+|-
+| rowspan=3 style="text-align:center" | 3
+|-
+| ''[[Bram Stoker's Dracula (1992 film)|Bram Stoker's Dracula]]''
+|-
+| ''[[Howards End (film)|Howards End]]''
+|-
+| rowspan=1 style="text-align:center" | 2
+| ''[[Aladdin (1992 Disney film)|Aladdin]]''
+|}
+{{Col-float-end}}
+
+==Presenters and performers==
+The following individuals (in order of appearance) presented awards or performed musical numbers:<ref name="MFEO">{{harvnb|Wiley|Bona|1996|p=877}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Randy|Thomas|nolink=1}} || Announcer for the 65th annual Academy Awards
+|-
+| {{sortname|Robert|Rehme}} (AMPAS president) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Geena|Davis}} || Presenter of the "Women in the Movies" Montage
+|-
+| {{sortname|Jack|Palance}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Anjelica|Huston}} || Presenter of the film ''[[Unforgiven]]'' during the Best Picture segment
+|-
+| {{sortname|Tim|Robbins}}<br />[[Susan Sarandon]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Mercedes|Ruehl}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Joe|Pesci}}<br />[[Marisa Tomei]] || Presenters of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Gregory|Peck}} || Presenter of the [[Jean Hersholt Humanitarian Award]] to [[Audrey Hepburn]]
+|-
+| {{sortname|Sarah Jessica|Parker}}<br />[[David Paymer]] || Presenters of the award for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+| {{sortname||Snow White|Snow White (Disney character)|Snow White}} || Presenter of the award for [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Kathy|Bates}} || Presenter of the film ''[[A Few Good Men]]'' on the Best Picture segment
+|-
+| {{sortname|Jack|Valenti}} || Introducer of presenter Glenn Close
+|-
+| {{sortname|Glenn|Close}} || Presenter of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Sharon|Stone}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Richard|Gere}} || Presenter of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Whoopi|Goldberg}} || Presenter of the film ''[[Howards End (film)|Howards End]]'' on the Best Picture segment
+|-
+| {{sortname|Andie|MacDowell}} || Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Jon|Lovitz}} || Presenter of the award for [[Academy Award for Best Sound Editing|Best Sound Effects Editing]]
+|-
+| {{sortname|Tom|Hanks}}<br />[[Denzel Washington]] || Presenters of the awards for [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Sophia|Loren}}<br />[[Marcello Mastroianni]] || Presenters of the [[Academy Honorary Award]] to [[Federico Fellini]]
+|-
+| {{sortname|Raúl|Juliá}} || Presenter of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| {{sortname|Anne|Bancroft}}<br />[[Dustin Hoffman]] || Presenters of the awards for [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen]] and [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material Previously Produced or Published]]
+|-
+| {{sortname|Diane|Keaton}} || Presenter of the film ''[[The Crying Game]]'' on the Best Picture segment
+|-
+| {{sortname|Robert|Downey Jr.}}<br />[[Alfre Woodard]] || Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|Lena|Horne}}<br />[[Quincy Jones]] || Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Anthony|Hopkins}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Morgan|Freeman}}<br />[[Gene Hackman]] || Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Catherine|Deneuve}} || Presenter of the award [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Angela|Lansbury}} || Presenter of the [[Jean Hersholt Humanitarian Award]] to [[Elizabeth Taylor]]
+|-
+| {{sortname|Jodie|Foster}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Jane|Fonda}} || Presenter of the film ''[[Scent of a Woman (1992 film)|Scent of a Woman]]'' on the Best Picture segment
+|-
+| {{sortname|Barbra|Streisand}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Jack|Nicholson}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+| {{sortname|Bill|Conti}} || Musical arranger || Orchestral
+|-
+| {{sortname|Billy|Crystal}} || Performer || Opening number: <br />''Scent of a Woman'' (to the tune of "[[I'm a Woman (song)|I'm a Woman]]" by [[Peggy Lee]]), <br />''Howards End'' (to the tune of "[[Hooray for Hollywood]]" from ''[[Hollywood Hotel (film)|Hollywood Hotel]]''), <br />''A Few Good Men'' (to the tune of "[[Military cadence#The Duckworth Chant|Sound Off!]]"), <br />''The Crying Game'' (to the tune of "[[(Love Is) The Tender Trap]]" from ''[[The Tender Trap (film)|The Tender Trap]]'') and <br />''Unforgiven'' (to the tune of "[[Unforgettable (Nat King Cole song)|Unforgettable]]" by [[Nat King Cole]])<ref>{{harvnb|Wiley|Bona|1996|p=881}}</ref>
+|-
+| {{sortname|Brad|Kane}}<br />[[Lea Salonga]] || Performers || "[[A Whole New World]]" from ''[[Aladdin (1992 Disney film)|Aladdin]]''
+|-
+| {{sortname|Plácido|Domingo}}<br />[[Sheila E.]] || Performers || "[[Beautiful Maria of My Soul]]" from ''[[The Mambo Kings]]''
+|-
+| {{sortname|Natalie|Cole}} || Performer || "[[I Have Nothing]]" and <br />"[[Run to You (Whitney Houston song)|Run to You]]" from ''The Bodyguard''
+|-
+| {{sortname|Liza|Minnelli}} || Performer || "Ladies' Day" during the musical tribute to women in the film
+|-
+| {{sortname|Nell|Carter}} || Performer || "[[Friend Like Me]]" from ''[[Aladdin (1992 Disney film)|Aladdin]]''
+|}
+
+==Ceremony information==
+[[File:Billy Crystal VF 2012 Shankbone.JPG|thumb|right|[[Billy Crystal]] hosted the 65th Academy Awards.|alt=Photo of Billy Crystal at the 2012 Tribeca Film Festival.]]
+
+After the success of the [[64th Academy Awards|previous year's ceremony]] which won several [[Emmy]]s and critical acclaim, the academy rehired producer [[Gil Cates]] for the fourth consecutive year.<ref>{{cite news|title=Cates to Repeat As Oscars Producer|work=San Francisco Chronicle|date=November 13, 1992|page=C2}}</ref> In February 1993, actor and comedian [[Billy Crystal]] was chosen by Cates as host also for the fourth straight time.<ref>{{cite news|last1=Williams|first1=Jeannie|title=Bily Crystal, back as Mr. Oscar night|work=USA Today|date=February 5, 1993|page=2D}}</ref> Cates justified the decision to hire him saying, "He is a major movie star with a talent for moving the evening's entertainment along."<ref>{{cite news|title='Perfect host' appointed|work=[[The Globe and Mail]]|publisher=Phillip Crawley|date=February 6, 1993|page=C6}}</ref> According to an article by [[Army Archerd]] published in ''[[Variety (magazine)|Variety]]'', Crystal initially declined to host again citing his busy film schedule that included ''[[Mr. Saturday Night]]'' and ''[[City Slickers II: The Legend of Curly's Gold]]''.<ref>{{cite news|last1=Williams|first1=Jeannie|title=Roping Crystal into Oscar duty|work=USA Today|date=February 18, 1993|page=2D}}</ref> However, after Cates sent him a funeral wreath with a poem declaring "The show and I are dead without you" followed by a head of a fake dead horse similar to one featured in the film ''[[The Godfather]]'', Crystal accepted the role as emcee.<ref>{{cite news|last1=Archerd |first1=Army |title=Cates 'convinces' Crystal to m.c. Oscars again |url=https://variety.com/1993/voices/columns/cates-convinces-crystal-to-m-c-oscars-again-1117862127/ |access-date=June 20, 2014 |work=Variety  |date=February 16, 1993 |url-status=live |archive-url=https://web.archive.org/web/20150112143742/http://variety.com/1993/voices/columns/cates-convinces-crystal-to-m-c-oscars-again-1117862127/ |archive-date=January 12, 2015 }}</ref>
+
+As with previous ceremonies he produced, Cates centered the show around a theme. Inspired by the [[Year of the Woman]] in which a record four women were elected to the [[United States Senate]], Cates christened the 1993 show with the theme "Oscar Celebrates Women and the Movies".<ref>{{harvnb|Wiley|Bona|1996|p=872}}</ref> In tandem with the theme, AMPAS gathered 67 female Oscar winners of every category for a photo that was later shown at the start of the telecast.<ref>{{harvnb|Wiley|Bona|1996|p=875}}</ref> Actress and singer [[Liza Minnelli]] performed "Ladies' Day", a song written by [[Fred Ebb]] and [[John Kander]] specifically for the broadcast.<ref>{{harvnb|Wiley|Bona|1996|p=886}}</ref> Oscar-winning documentarian [[Lynne Littman]] assembled a montage highlighting women in film.<ref>{{harvnb|Wiley|Bona|1996|p=880}}</ref>
+
+Several other people participated in the production of the ceremony. [[Bill Conti]] served as conductor and musical supervisor for the ceremony.<ref>{{cite news|title=Oscar watch |url=https://variety.com/1993/film/news/oscar-watch-7-102639/ |access-date=June 20, 2014 |work=Variety  |date=January 5, 1993 |url-status=live |archive-url=https://web.archive.org/web/20151119034216/http://variety.com/1993/film/news/oscar-watch-7-102639/ |archive-date=November 19, 2015 }}</ref> Choreographer [[Debbie Allen]] supervised the Best Song nominee performances and the "Ladies' Night" musical number.<ref>{{cite news|title=Oscar Dance Tryouts Sunday |url=https://variety.com/1993/film/news/oscar-dance-tryouts-sunday-104202/ |access-date=June 20, 2014 |work=Variety  |date=February 22, 1993 |url-status=live |archive-url=https://web.archive.org/web/20151119024729/http://variety.com/1993/film/news/oscar-dance-tryouts-sunday-104202/ |archive-date=November 19, 2015 }}</ref> Voice actress Randy Thomas served as announcer of the telecast becoming the first woman to do so.<ref>{{harvnb|Wiley|Bona|1996|p=879}}</ref>
+
+[[Richard Gere]] became the source of some controversy when, before presenting Best Art Direction, began an impromptu speech criticizing the [[Human rights in China|status of human rights in China]] and directly addressed then-leader of China [[Deng Xiaoping]], calling on him to grant independence to [[Tibet]].<ref>{{Cite web |last=Louison |first=Cole |date=2007-04-12 |title=Richard Gere: The Lost Transcript |url=https://www.gq.com/story/richard-gere-oscar-academy-awards-transcript-dalai-llama |access-date=2026-09-16 |website=GQ |language=en-US}}</ref> Gere’s speech was met with applause from the audience but producer [[Gilbert Cates|Gil Cates]] banned the actor from presenting at the ceremony for 20 years.<ref>{{Cite news |title=Was Richard Gere really banned from the Oscars for 20 years? It's complicated |url=https://ew.com/was-richard-gere-really-banned-from-the-oscars-for-20-years-11865631 |archive-url=http://web.archive.org/web/20251210003347/https://ew.com/was-richard-gere-really-banned-from-the-oscars-for-20-years-11865631 |archive-date=2025-12-10 |access-date=2026-09-16 |work=EW.com |language=en}}</ref> The Chinese government banned Gere from entering China for life.<ref>{{Cite web |date=1997-11-10 |title=Can You Go Home Again? |url=https://www.newsweek.com/can-you-go-home-again-171048 |access-date=2026-09-16 |website=Newsweek |language=en}}</ref>
+
+===Box office performance of nominees===
+{| class="wikitable sortable" style="width:250px; font-size:90%; float:right; margin-left:10px"
+|+North American box office gross for Best Picture nominees<ref name="BoxOfficeMojoOscars">{{cite news|title=1992 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=1992&p=.htm |access-date=February 25, 2014 |publisher=Box Office Mojo |url-status=live |archive-url=https://web.archive.org/web/20140221150429/http://boxofficemojo.com/oscar/chart/?yr=1992&p=.htm |archive-date=February 21, 2014 }}</ref>
+
+|-
+! Film
+! Pre-nomination<br />(Before Feb. 17)
+! Post-nomination<br />(Feb. 17-Mar. 29)
+! Post-awards<br />(After Mar. 29)
+! Total
+|-
+| ''A Few Good Men''
+| $120 million
+| $14.3 million
+| $7.0 million
+| $141.3 million
+|-
+| ''The Crying Game''
+| $26.6 million
+| $11.2 million
+| $4.6 million
+| $62.3 million
+|-
+| ''Howards End''
+| $24.4 million
+| $942,668
+| $36,767
+| $25.3 million
+|-
+| ''Scent of a Woman''
+| $34.1 million
+| $18.5 million
+| $10.5 million
+| $63.1 million
+|-
+| ''Unforgiven''
+| $75.3 million
+| $7.6 million
+| $18.3 million
+| $102 million
+|}
+
+At the time of the nominations announcement on February 17, the combined gross of the five Best Picture nominees at the US box office was $252 million, with an average of $50.4 million per film.<ref name="BoxOfficeMojoOscars" /> ''A Few Good Men'' was the highest earner among the Best Picture nominees with $120 million in domestic box office receipts. The film was followed by ''Unforgiven'' ($75.2 million), ''Scent of a Woman'' ($34.1 million), ''The Crying Game'' ($14 million), and finally ''Howards End'' ($8.7 million).<ref name="BoxOfficeMojoOscars" />
+
+Of the top 50 grossing movies of the year, 38 nominations went to 13 films on the list. Only ''A Few Good Men'' (6th), ''Unforgiven'' (17th), ''Malcolm X'' (30th) and ''Scent of a Woman'' (38th) were nominated for directing, acting, screenwriting, or Best Picture.<ref name="boxofficemojooscars">{{cite web|url=https://boxofficemojo.com/yearly/chart/?asof=1993-0216&view=releasedate&view2=domestic&yr=1992&sort=gross&order=DESC&p=.htm |title=1992 Domestic Grosses |publisher=Box Office Mojo |access-date=February 25, 2014 |url-status=live |archive-url=https://web.archive.org/web/20151119042438/http://www.boxofficemojo.com/yearly/chart/?asof=1993-0216&view=releasedate&view2=domestic&yr=1992&sort=gross&order=DESC&p=.htm |archive-date=November 19, 2015 }}</ref> The other top 50 box office hits that earned nominations were ''Aladdin'' (1st), ''Batman Returns'' (3rd), ''Basic Instinct'' (8th), ''The Bodyguard'' (9th), ''Under Siege'' (12th), ''Bram Stoker's Dracula'' (14th), ''The Last of the Mohicans'' (16th), ''Death Becomes Her'' (22nd), and ''Alien<sup>3</sup>'' (26th).<ref name="boxofficemojooscars" />
+
+===Critical reviews and ratings===
+The show received a negative reception from most media publications. Associated Press television critic [[Frazier Moore]] lamented that Crystal "seemed incredibly listless". He also questioned the purpose of the "Year of the Woman" theme writing, "The Oscar show itself seemed at odds with its own feminist theme."<ref>{{cite news|last=Moore|first=Frazier|title=Billy Crystal's Performance Lame|url=https://news.google.com/newspapers?nid=1957&dat=19930330&id=Bg0xAAAAIBAJ&sjid=IOEFAAAAIBAJ&pg=3345,7229336|access-date=February 26, 2014|work=[[The Daily Gazette]]|date=March 30, 1993|archive-date=February 5, 2021|archive-url=https://web.archive.org/web/20210205083758/https://news.google.com/newspapers?nid=1957&dat=19930330&id=Bg0xAAAAIBAJ&sjid=IOEFAAAAIBAJ&pg=3345,7229336|url-status=live}}</ref> Robert Bianco from the ''[[Pittsburgh Post-Gazette]]'' derided Allen's musical production numbers, comparing them to the disastrous opening number at the [[61st Academy Awards|61st ceremony]] held in 1989.<ref>{{cite news|last=Bianco|first=Robert|title=Crystal Can't Save Disastrous Oscars Show|url=https://news.google.com/newspapers?nid=1129&dat=19930330&id=xNdRAAAAIBAJ&sjid=Sm4DAAAAIBAJ&pg=6977,6838257|access-date=February 26, 2014|work=[[Pittsburgh Post-Gazette]]|date=March 30, 1993|archive-date=February 5, 2021|archive-url=https://web.archive.org/web/20210205083653/https://news.google.com/newspapers?nid=1129&dat=19930330&id=xNdRAAAAIBAJ&sjid=Sm4DAAAAIBAJ&pg=6977,6838257|url-status=live}}</ref> Columnist Matt Roush of ''[[USA Today]]'' complained, "Crystal, in a by-now-familiar performance, has, in four years, taken a plum assignment and, by repetition, reduced it to shtick." He also wrote that, "The song medley is getting old hat," and the "smug references to his flop ''[[Mr. Saturday Night]]'' were out of an improv amateur night."<ref>{{harvnb|Wiley|Bona|1996|p=892}}</ref>
+
+The telecast also received unfavorable reaction from various public feminist figures. In an interview with ''[[Los Angeles Daily News]]'', author and activist [[Betty Friedan]] condemned the "Year of the Woman" theme, commenting, "It had no basis in reality. On behalf of women directors, cinematographer, and producers, I resent the travesty of calling that a tribute."<ref name="feminine">{{harvnb|Wiley|Bona|1996|p=893}}</ref> Likewise, President of the [[National Organization for Women]]'s Los Angeles chapter [[Tammy Bruce]] chastised ceremony's feminist tribute as "one of the most hypocritical, patronizing things I saw in my whole life."<ref>{{cite news|last1=Karlak|first1=Pat|last2=Swertlow|first2=Frank|title=Hollywood's Hollow Salute Oscars' 'Year of Woman' Patronizing, Many Say|work=[[The Plain Dealer]]|page=3C}}</ref> In response, Gil Cates responded towards the criticism of the theme stating, "The theme developed and raised consciousness in a way that I think is positive, not only for the individual in general but for individual women specifically."<ref name="feminine" /> He also quoted an ancient Chinese proverb later made famous by former [[First Lady of the United States|U.S. First Lady]] [[Eleanor Roosevelt]] saying, "[[Better to light a candle than curse the darkness|It is better to light one candle than to curse the darkness]]."<ref>{{harvnb|Osborne|2013|p=313}}</ref>
+
+Despite the adverse reception, the ABC broadcast drew in an average of 45.7 million people over its length, which was a 3% increase from the [[64th Academy Awards|previous year's ceremony]].<ref name="Glamour Bowl"/> The show also drew higher [[Nielsen ratings]] compared to the previous ceremony with 31.2% of households watching over a 51 share.<ref>{{cite news|last1=Schwed |first1=Mark |url=https://variety.com/1993/tv/news/kudocast-s-nielsen-ratings-highest-in-10-years-105508/ |access-date=August 8, 2015 |work=Variety  |title=Kudocast's Nielsen ratings highest in 10 years |date=March 30, 1993 |url-status=live |archive-url=https://web.archive.org/web/20151119050617/http://variety.com/1993/tv/news/kudocast-s-nielsen-ratings-highest-in-10-years-105508/ |archive-date=November 19, 2015 }}</ref><ref>{{cite news|last1=Carter |first1=Bill |title=TV Notes;Oscar Numbers Slip |url=https://www.nytimes.com/1996/03/27/movies/tv-notes-oscar-numbers-slip.html |access-date=October 15, 2015 |work=The New York Times  |date=March 27, 1996 |url-status=live |archive-url=https://web.archive.org/web/20151119074457/http://www.nytimes.com/1996/03/27/movies/tv-notes-oscar-numbers-slip.html |archive-date=November 19, 2015 }}</ref> It also drew a higher 18–49 demo rating with a 20.1 rating among viewers in that demographic.<ref name="TVB Oscars">{{cite news|title=Academy Awards ratings |publisher=[[Television Bureau of Advertising]] |url=http://www.tvb.org/media/file/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130515152338/http://www.tvb.org/media/file/Academy_Awards.pdf |archive-date=May 15, 2013 }}</ref>
+
+==See also==
+
+* [[13th Golden Raspberry Awards]]
+* [[35th Grammy Awards]]
+* [[45th Primetime Emmy Awards]]
+* [[46th British Academy Film Awards]]
+* [[47th Tony Awards]]
+* [[50th Golden Globe Awards]]
+* [[List of submissions to the 65th Academy Awards for Best Foreign Language Film]]
+
+== Notes ==
+:'''A'''{{note|Uruguay}}: The Academy revoked the Best Foreign Language Film nomination of [[List of Uruguayan submissions for the Academy Award for Best Foreign Language Film|Uruguay]]'s ''[[A Place in the World (film)|A Place in the World]]'' after an investigation that determined the film as an [[Cinema of Argentina|Argentine production]] and therefore violated the Academy's rules which require that there be "substantial filmmaking input from the country that submits the film".<ref>{{harvnb|Wiley|Bona|1996|p=873}}</ref>
+
+:'''B'''{{note|Hepburn}}: Hepburn's son [[Sean Hepburn Ferrer]] accepted the award at the ceremony on her behalf.<ref>{{cite news|last1=Rickey |first1=Carrie |title=In Like Clint Oscar's Tribute Was Fitting, Given That Women Garnered A Surprising Share of Awards. (for Al Pacino, The Magic Even Trickled Down to the Title "Scent of a Woman".) |url=http://articles.philly.com/1993-03-30/entertainment/25952012_1_ian-whittaker-actor-statuette-oscars |access-date=June 20, 2014 |work=The Philadelphia Inquirer |publisher=H.F. Gerry Lenfest |date=March 30, 1993 |url-status=dead |archive-url=https://web.archive.org/web/20150914085601/http://articles.philly.com/1993-03-30/entertainment/25952012_1_ian-whittaker-actor-statuette-oscars |archive-date=September 14, 2015 }}</ref>
+
+==References==
+{{reflist|30em}}
+
+==Bibliography==
+{{Refbegin}}
+*{{Cite book
+ |last=Osborne
+ |first=Robert
+ |title=85 Years of the Oscar: The Complete History of the Academy Awards
+ |year=2013
+ |isbn=978-0-7892-1142-2
+ |location=New York, United States
+ |publisher=[[Abbeville Publishing Group]]
+ }}
+*{{Cite book
+ |last1=Wiley 
+ |first1=Mason
+ |last2=Bona
+ |first2=Damien
+ |title=Inside Oscar: The Unofficial History of the Academy Awards
+ |year=1996 
+ |isbn=0-345-40053-4 |location=New York, United States 
+ |edition=5
+ |oclc=779680732 
+ |publisher=[[Ballantine Books]]
+}}
+{{refend}}
+
+==External links==
+;Official websites
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=October 2, 2018 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+;Analysis
+* [http://www.filmsite.org/aa92.html 1992 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20151117015705/http://www.filmsite.org/aa92.html |date=November 17, 2015 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/1993 Academy Awards, USA: 1993] {{Webarchive|url=https://web.archive.org/web/20171119080850/http://www.imdb.com/event/ev0000003/1993? |date=November 19, 2017 }} [[Internet Movie Database]]
+
+;Other resources
+* {{IMDb title|0266220|The 65th Annual Academy Awards}}
+
+{{Academy Awards Chron|state=autocollapse}}
+
+{{DEFAULTSORT:Academy Awards, 65th}}
+[[Category:1992 film awards]]
+[[Category:1993 in American cinema]]
+[[Category:Academy Awards ceremonies]]
+[[Category:1993 in Los Angeles]]
+[[Category:March 1993 in the United States]]
+[[Category:1993 awards in the United States|Academy]]
+[[Category:Television shows directed by Jeff Margolis]]

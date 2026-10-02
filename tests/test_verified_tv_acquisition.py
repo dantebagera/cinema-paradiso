@@ -85,6 +85,84 @@ class TVAcquisitionTests(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
+    def test_follow_draft_start_cancel_and_durable_notifications(self):
+        monitor = TVMonitoring(self.tv, self.store, self.service)
+        draft = monitor.save_task(self.series, scope='series', action='missing')
+        self.assertEqual(draft['state'], 'draft')
+        self.assertEqual(monitor.monitored_tmdb_ids(), set())
+        started = monitor.start_task(draft['id'])
+        self.assertEqual(started['state'], 'running')
+        self.assertTrue(started['target_episode_ids'])
+        preview = monitor.cancel_preview(draft['id'])
+        self.assertEqual(preview['transfers'], [])
+        result = monitor.cancel_task(draft['id'], 'keep', preview['token'])
+        self.assertEqual(result['task']['state'], 'cancelled')
+        self.assertEqual(monitor.list_tasks(self.series, history=True)['total'], 1)
+        notifications = self.store.notifications()
+        self.assertEqual(notifications['unread'], 2)
+        first = notifications['items'][0]['id']
+        self.assertEqual(self.store.mark_notifications_read([first])['read'], 1)
+        self.assertEqual(self.store.notifications()['unread'], 1)
+
+    def test_one_shot_bulk_reports_no_source_and_does_not_follow_future(self):
+        self.provider.search_tv.return_value = []
+        monitor = TVMonitoring(self.tv, self.store, self.service)
+        draft = monitor.save_task(self.series, kind='bulk')
+        started = monitor.start_task(draft['id'])
+        self.assertEqual(started['kind'], 'bulk')
+        self.assertTrue(started['target_episode_ids'])
+        results = monitor.run_once(limit=25, submit=False)
+        self.assertTrue(results)
+        self.assertTrue(all(item['error'] == 'No source found' for item in results))
+        completed = monitor.task(draft['id'])
+        self.assertEqual(completed['state'], 'completed')
+        self.assertTrue(all(item['error'] == 'No source found' for item in completed['episodes']))
+        self.assertEqual(monitor.monitored_tmdb_ids(), set())
+
+    def test_legacy_episode_monitor_migrates_once_and_keeps_its_scope(self):
+        target = 'episode:tmdb:tv:900001:1:1'
+        with self.store.transaction() as db:
+            db.execute('INSERT INTO monitors(target,mode,profile_id,next_due) VALUES(?,?,?,?)',
+                       (target, 'all', 'safe-hd', 0))
+        migrated = AcquisitionRepository(self.store.path)
+        migrated = AcquisitionRepository(migrated.path)
+        with migrated.connection() as db:
+            tasks = [dict(row) for row in db.execute('SELECT * FROM tv_tasks WHERE id=?', ('legacy:' + target,))]
+            self.assertEqual(db.execute('SELECT mode FROM monitors WHERE target=?', (target,)).fetchone()[0], 'none')
+        self.assertEqual(len(tasks), 1)
+        self.assertEqual((tasks[0]['scope'], tasks[0]['action'], tasks[0]['state']), ('episodes', 'missing', 'draft'))
+        monitor = TVMonitoring(self.tv, migrated, self.service)
+        self.assertEqual(monitor.run_once(limit=1), [])
+        self.provider.search_tv.assert_not_called()
+        self.assertEqual(monitor.list_tasks(self.series)['total'], 1)
+        monitor.start_task('legacy:' + target)
+        task = monitor.task('legacy:' + target)
+        self.assertEqual(len(task['target_episode_ids']), 1)
+        self.assertEqual(self.tv.episode(task['target_episode_ids'][0])['episode_number'], 1)
+
+    def test_task_cancellation_protects_an_imported_file_that_is_playing(self):
+        monitor = TVMonitoring(self.tv, self.store, self.service)
+        task = monitor.start_task(monitor.save_task(self.series, action='missing')['id'])
+        submitted = self.submit()
+        episode_id = self.tv.episodes(self.series, 1)[0]['id']
+        imported = self.library / self.filename
+        imported.write_bytes(b'completed fixture')
+        self.tv.bind_files([{'path': imported, 'episode_ids': [episode_id], 'facts': {}}], [self.library])
+        with self.store.transaction() as db:
+            db.execute('UPDATE tv_task_episodes SET state="queued",intent_id=? WHERE task_id=? AND episode_id=?',
+                       (submitted['intent']['id'], task['id'], episode_id))
+        self.manager.jobs.upsert(self.hash, {'state': 'imported', 'acquisition_id': submitted['intent']['id'],
+            'preserving_import_plan': [{'target': str(imported), 'state': 'published'}]})
+        trash = Mock()
+        monitor = TVMonitoring(self.tv, self.store, self.service, active_media_path=lambda: str(imported), trash_file=trash)
+        preview = monitor.cancel_preview(task['id'])
+        self.assertFalse(preview['completed_files'])
+        self.assertTrue(any(item['reason'] == 'Currently playing' for item in preview['protected']))
+        outcome = monitor.cancel_task(task['id'], 'all', preview['token'])['outcome']
+        self.assertTrue(imported.exists())
+        self.assertTrue(outcome['protected'])
+        trash.assert_not_called()
+
     def submit(self):
         decision=self.service.search(self.series,1,1)['decisions'][0]
         self.assertTrue(decision['accepted'],decision['reasons'])

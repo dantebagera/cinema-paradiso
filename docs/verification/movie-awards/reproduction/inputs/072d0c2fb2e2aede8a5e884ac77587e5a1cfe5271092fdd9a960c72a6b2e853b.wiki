@@ -1,0 +1,389 @@
+{{oscars short description|films-year=1966}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number = 39
+| award = Academy Awards
+| date = April 10, 1967
+| image = 39th Academy Awards.jpg
+| site = [[Santa Monica Civic Auditorium]], [[Santa Monica, California]]
+| host = [[Bob Hope]]
+| producer = [[Joe Pasternak]]
+| director = Richard Dunlap
+| best_picture = ''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]''
+| most_wins = ''A Man for All Seasons'' (6)
+| most_nominations = ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]'' (13)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 2 hours, 31 minutes
+| last = 38th
+| next = 40th
+}}
+
+The '''39th Academy Awards''', honoring the [[1966 in film|best in film for 1966]], were held on April 10, 1967, hosted by [[Bob Hope]] at the [[Santa Monica Civic Auditorium]] in [[Santa Monica, California]].
+
+The Academy Awards broadcast faced the threat of cancellation due to a strike involving the [[American Federation of Television and Radio Artists]]. Fortunately, the dispute was resolved just three hours before the ceremony was set to begin. Bob Hope, during his opening monologue, alluded to this uncertainty, noting that even as late as 30 minutes before the event, it was still unclear whether the telecast would proceed.
+
+In a rare occurrence during the period with five [[Academy Award for Best Picture|Best Picture]] nominees, only two were nominated for [[Academy Award for Best Director|Best Director]] this year: [[Fred Zinnemann]] for ''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]'' (the winner) and [[Mike Nichols]] for ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''. The latter was the second film in Oscars history to be nominated in every eligible category (after ''[[Cimarron (1931 film)|Cimarron]]'' ([[4th Academy Awards|1931]])), as well as the first of three to date to receive acting nominations for the entire credited cast.
+
+For the second time in Oscars history, two siblings were nominated in the same category: [[Vanessa Redgrave|Vanessa]] and [[Lynn Redgrave]], both nominated for [[Academy Award for Best Actress|Best Actress]] for their performances in ''[[Morgan!]]'' and ''[[Georgy Girl]]'', respectively. This had previously occurred in [[14th Academy Awards|1941]], when sisters [[Joan Fontaine]] and [[Olivia de Havilland]] were each nominated for Best Actress.
+
+[[Elizabeth Taylor]] was informed of her having won the Best Actress award in [[London]], but was so frustrated by [[Richard Burton]]'s loss of the Best Actor award that she refused to hold a press conference for two weeks.<ref name="Oscars '66 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/844/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=844 |isbn=0-385-04060-1}}</ref> 
+
+Six films won multiple Oscars this year—''A Man for All Seasons'', ''Who's Afraid of Virginia Woolf?'', ''[[Grand Prix (1966 film)|Grand Prix]]'', ''[[Fantastic Voyage]]'', ''[[A Man and a Woman]]'', and ''[[Born Free]]''—a record that was later tied in [[83rd Academy Awards|2010]], [[85th Academy Awards|2012]], and [[90th Academy Awards|2017]], and surpassed in [[93rd Academy Awards|2020/21]], when seven films won at least two Oscars. Every [[Best Picture Academy Award|Best Picture]] nominee was nominated for [[Best Actor Academy Award|Best Actor]] as well, the only time in the era of five Best Picture nominees that each nominated film received a nomination in a single acting category.
+
+Uniquely, this year marked the only instance in the history of the Academy Awards where all nominees for Best Actress were born outside the United States. Among the audience was [[Patricia Neal]], who had not made a Hollywood appearance since she suffered a near-fatal stroke two years prior, and she received a standing ovation from the crowd. [[Governor of California|California's governor]] at the time, [[Ronald Reagan]], also attended the ceremony, having been a longtime member and supporter of the Academy.
+
+Additionally, this event marked the final year in which separate awards were presented for black-and-white and color films in categories such as Cinematography, Art Direction-Set Decoration, and Costume Design. One standout moment in the broadcast was [[Mitzi Gaynor]]'s performance of the song "[[Georgy Girl]]," which is frequently hailed as one of the most celebrated performances in Oscar history.
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Fred Zinnemann 1940s.jpg
+| caption1          = [[Fred Zinnemann]], Best Director and Best Picture winner
+| image2            = Paul Scofield 2 Allan Warren.jpg
+| caption2          = [[Paul Scofield]], Best Actor winner
+| image3            = Elizabeth Taylor, late 1950s.jpg
+| caption3          = [[Elizabeth Taylor]], Best Actress winner
+| image4            = Walter Matthau - 1952.jpg
+| caption4          = [[Walter Matthau]], Best Supporting Actor winner
+| image5           = Sandy Dennis 1967 (frontside) (cropped).jpg
+| caption5          = [[Sandy Dennis]], Best Supporting Actress winner
+| image6            = Claude Lelouch César 2016.jpg
+| caption6          = [[Claude Lelouch]], Best Original Screenplay co-winner
+| image7            = John-barry-2006.jpg
+| caption7          = [[John Barry (composer)|John Barry]], Best Original Score winner and Best Original Song co-winner
+| image8            = Donblacknightingale.JPG
+| caption8          = [[Don Black (lyricist)|Don Black]], Best Original Song co-winner
+| image9            = Repetities Unicef Gala Ken Thorne, Bestanddeelnr 927-1109 (cropped).jpg
+| caption9          = [[Ken Thorne]], Best Adapted Score winner
+| image10           = Haskell Wexler 1999.jpg
+| caption10         = [[Haskell Wexler]], Best Cinematography (Black & White) winner
+}}
+Nominees were announced on February 20, 1967. Winners are listed first and highlighted in boldface.<ref name="Oscars1967">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1967 |title=The 39th Academy Awards (1967) Nominees and Winners |access-date=2011-09-04 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20141110020832/http://www.oscars.org/oscars/ceremonies/1967 |archive-date=2014-11-10 }}</ref><ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1966" in the "Award Year(s)" drop-down menu and press "Search".</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]'' – [[Fred Zinnemann]], producer'''
+** ''[[Alfie (1966 film)|Alfie]]'' – [[Lewis Gilbert]], producer
+** ''[[The Russians Are Coming, the Russians Are Coming]]'' – [[Norman Jewison]], producer
+** ''[[The Sand Pebbles (film)|The Sand Pebbles]]'' – [[Robert Wise]], producer
+** ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]'' – [[Ernest Lehman]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*''' [[Fred Zinnemann]]&nbsp;– ''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]'''''
+** [[Michelangelo Antonioni]]&nbsp;– ''[[Blowup]]''
+** [[Claude Lelouch]]&nbsp;– ''[[A Man and a Woman]]''
+** [[Richard Brooks]]&nbsp;– ''[[The Professionals (1966 film)|The Professionals]]''
+** [[Mike Nichols]]&nbsp;– ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Paul Scofield]]&nbsp;– ''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]'' as [[Sir Thomas More]]'''
+** [[Alan Arkin]]&nbsp;– ''[[The Russians Are Coming, the Russians Are Coming]]'' as Lt. Yuri Rozanov
+** [[Richard Burton]]&nbsp;– ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]'' as George
+** [[Michael Caine]]&nbsp;– ''[[Alfie (1966 film)|Alfie]]'' as Alfie Elkins
+** [[Steve McQueen]]&nbsp;– ''[[The Sand Pebbles (film)|The Sand Pebbles]]'' as Jake Holman
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Elizabeth Taylor]]&nbsp;– ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]'' as Martha'''
+** [[Anouk Aimée]]&nbsp;– ''[[A Man and a Woman]]'' as Anne Gauthier
+** [[Ida Kamińska]]&nbsp;– ''[[The Shop on Main Street]]'' as Rozália Lautmannová
+** [[Lynn Redgrave]]&nbsp;– ''[[Georgy Girl]]'' as Georgina "Georgy" Parkin
+** [[Vanessa Redgrave]]&nbsp;– ''[[Morgan – A Suitable Case for Treatment|Morgan!]]'' as Leonie Delt
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Walter Matthau]]&nbsp;– ''[[The Fortune Cookie]]'' as "Whiplash Willie" Gingrich'''
+** [[Mako (actor)|Mako]]&nbsp;– ''[[The Sand Pebbles (film)|The Sand Pebbles]]'' as Po-han
+** [[James Mason]]&nbsp;– ''[[Georgy Girl]]'' as James Leamington
+** [[George Segal]]&nbsp;– ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]'' as Nick
+** [[Robert Shaw]]&nbsp;– ''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]'' as [[King Henry VIII]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Sandy Dennis]]&nbsp;– ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]'' as Honey'''
+** [[Wendy Hiller]]&nbsp;– ''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]'' as Alice More
+** [[Jocelyne LaGarde]]&nbsp;– ''[[Hawaii (1966 film)|Hawaii]]'' as Queen Malama Kanakoa
+** [[Vivien Merchant]]&nbsp;– ''[[Alfie (1966 film)|Alfie]]'' as Lily
+** [[Geraldine Page]]&nbsp;– ''[[You're a Big Boy Now]]'' as Margery Chanticleer
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+* '''''[[A Man and a Woman]]''&nbsp;– Screenplay by [[Claude Lelouch]] and [[Pierre Uytterhoeven]]; Story by [[Claude Lelouch]]'''
+** ''[[Blowup]]''&nbsp;– Screenplay by [[Michelangelo Antonioni]], [[Edward Bond]] and [[Tonino Guerra]]; Story by [[Michelangelo Antonioni]]
+** ''[[The Fortune Cookie]]''&nbsp;– [[Billy Wilder]] and [[I. A. L. Diamond]]
+** ''[[Khartoum (1966 film)|Khartoum]]''&nbsp;– [[Robert Ardrey]]
+** ''[[The Naked Prey]]''&nbsp;– Clint Johnston and Don Peters
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*''' ''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]''&nbsp;– [[Robert Bolt]] based on his play'''
+** ''[[Alfie (1966 film)|Alfie]]''&nbsp;– [[Bill Naughton]] based on his play
+** ''[[The Professionals (1966 film)|The Professionals]]''&nbsp;– [[Richard Brooks]] based on the novel ''[[A Mule for the Marquesa]]'' by [[Frank O'Rourke (writer)|Frank O'Rourke]]
+** ''[[The Russians Are Coming, the Russians Are Coming]]''&nbsp;– [[William Rose (screenwriter)|William Rose]] based on the novel ''Off-Islanders'' by [[Nathaniel Benchley]]
+**''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''&nbsp;– [[Ernest Lehman]] based on [[Who's Afraid of Virginia Woolf?|the play]]  by [[Edward Albee]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[A Man and a Woman]]'' (France)'''
+** ''[[The Battle of Algiers]]'' ([[Italy]])
+** ''[[Loves of a Blonde]]'' ([[Czechoslovakia]])
+** ''[[Pharaoh (film)|Pharaoh]]'' ([[Poland]])
+** ''[[Three (1965 film)|Three]]'' ([[Yugoslavia]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[The War Game]]''&nbsp;– [[Peter Watkins]]'''
+** ''[[The Face of a Genius]]''&nbsp;– [[Alfred R. Kelman]]
+** ''[[Helicopter Canada]]''&nbsp;– Peter Jones and [[Tom Daly (filmmaker)|Tom Daly]]
+** ''[[The Really Big Family]]''&nbsp;– [[Alex Grasshoff]]
+** ''[[Le Volcan interdit]]''&nbsp;– [[Haroun Tazieff]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[A Year Toward Tomorrow]]''&nbsp;– Edmond A. Levy'''
+**''[[Adolescence (film)|Adolescence]]''&nbsp;– [[Marin Karmitz]] and Vladimir Forgency
+**''[[Cowboy (1966 film)|Cowboy]]''&nbsp;– Michael Ahnemann and [[Gary Schlosser]]
+**''[[The Odds Against]]''&nbsp;– [[Lee R. Bobker]] and Helen Kristt Radin
+**''[[Saint Matthew Passion (film)|Részletek J.S. Bach Máté passiójából]]''&nbsp;– [[Mafilm|Mafilm Studio]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+* '''''[[Wild Wings]]''&nbsp;– [[Edgar Anstey]]'''
+**''Turkey the Bridge''&nbsp;– [[Derek Williams (filmmaker)|Derek Williams]]
+**''The Winning Strain''&nbsp;– Leslie Winik
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[A Herb Alpert and the Tijuana Brass Double Feature]]''&nbsp;– [[John Hubley]] and [[Faith Hubley]]'''
+**''[[The Drag (film)|The Drag]]''&nbsp;– [[Wolf Koenig]] and [[Robert Verrall]]
+**''[[The Pink Blueprint]]''&nbsp;– [[David H. DePatie]] and [[Friz Freleng]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Music Score)]]}}
+*'''''[[Born Free]]''&nbsp;– [[John Barry (composer)|John Barry]]'''
+** ''[[The Bible: In the Beginning...]]''&nbsp;– [[Toshiro Mayuzumi]]
+** ''[[Hawaii (1966 film)|Hawaii]]''&nbsp;– [[Elmer Bernstein]]
+** ''[[The Sand Pebbles (film)|The Sand Pebbles]]''&nbsp;– [[Jerry Goldsmith]]
+** ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''&nbsp;– [[Alex North]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of Music -- Adaptation or Treatment)]]}}
+* '''''[[A Funny Thing Happened on the Way to the Forum (film)|A Funny Thing Happened on the Way to the Forum]]''&nbsp;– [[Ken Thorne]]'''
+** ''[[The Gospel According to St. Matthew (film)|The Gospel According to St. Matthew]]''&nbsp;– [[Luis Bacalov]]
+** ''[[Return of the Seven]]''&nbsp;– [[Elmer Bernstein]]
+** ''[[The Singing Nun (film)|The Singing Nun]]''&nbsp;– [[Harry Sukman]]
+** ''[[Stop the World – I Want to Get Off#Film adaptation|Stop the World – I Want to Get Off]]''&nbsp;– [[Al Ham]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[Born Free (song)|Born Free]]" from ''[[Born Free]]''&nbsp;– Music by [[John Barry (composer)|John Barry]]; Lyrics by [[Don Black (lyricist)|Don Black]]'''
+** "[[Alfie (Burt Bacharach song)|Alfie]]" from ''[[Alfie (1966 film)|Alfie]]''&nbsp;– Music by [[Burt Bacharach]]; Lyrics by [[Hal David]]
+** "[[Georgy Girl (song)|Georgy Girl]]" from ''[[Georgy Girl]]''&nbsp;– Music by [[Tom Springfield]]; Lyrics by [[Jim Dale]]
+** "My Wishing Doll" from ''[[Hawaii (1966 film)|Hawaii]]''&nbsp;– Music by [[Elmer Bernstein]]; Lyrics by [[Mack David]]
+** "A Time for Love" from ''[[An American Dream (film)|An American Dream]]''&nbsp;– Music by [[Johnny Mandel]]; Lyrics by [[Paul Francis Webster]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+* '''''[[Grand Prix (1966 film)|Grand Prix]]''''' – '''[[Franklin Milton]]'''
+** ''[[Gambit (1966 film)|Gambit]]'' – [[Waldon O. Watson]]
+** ''[[Hawaii (1966 film)|Hawaii]]'' – [[Gordon E. Sawyer]]
+** ''[[The Sand Pebbles (film)|The Sand Pebbles]]'' – [[James Corcoran (sound engineer)|James Corcoran]]
+** ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]'' – [[George Groves (sound engineer)|George Groves]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Editing|Best Sound Effects]]}}
+* '''''[[Grand Prix (1966 film)|Grand Prix]]''&nbsp;– [[Gordon Daniel]]'''
+** ''[[Fantastic Voyage]]''&nbsp;– [[Walter Rossi (sound editor)|Walter Rossi]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''&nbsp;– Art Direction: [[Richard Sylbert]]; Set Decoration: [[George James Hopkins]]'''
+** ''[[The Fortune Cookie]]''&nbsp;– Art Direction: [[Robert Luthardt]]; Set Decoration: [[Edward G. Boyle]]
+** ''[[The Gospel According to St. Matthew (film)|The Gospel According to St. Matthew]]''&nbsp;– Art Direction and Set Decoration: [[Luigi Scaccianoce]]
+** ''[[Is Paris Burning? (film)|Is Paris Burning?]]''&nbsp;– Art Direction: [[Willy Holt]]; Set Decoration: [[Marc Frédérix]] and [[Pierre Guffroy]]
+** ''[[Mister Buddwing]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]] and [[Paul Groesse]]; Set Decoration: [[Henry Grace]] and [[Hugh Hunt]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[Fantastic Voyage]]''&nbsp;– Art Direction: [[Jack Martin Smith]] and [[Dale Hennesy]]; Set Decoration: [[Walter M. Scott]] and [[Stuart A. Reiss]]'''
+** ''[[Gambit (1966 film)|Gambit]]''&nbsp;– Art Direction: [[Alexander Golitzen]] and [[George C. Webb]]; Set Decoration: [[John P. Austin]] and [[John McCarthy Jr.]]
+** ''[[Juliet of the Spirits]]''&nbsp;– Art Direction and Set Decoration: [[Piero Gherardi]]
+** ''[[The Oscar (film)|The Oscar]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Arthur Lonergan]]; Set Decoration: [[Robert R. Benton]] and [[James W. Payne]]
+** ''[[The Sand Pebbles (film)|The Sand Pebbles]]''&nbsp;– Art Direction: [[Boris Leven]]; Set Decoration: [[Walter M. Scott]], [[John Sturtevant]] and [[William Kiernan]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''&nbsp;– [[Haskell Wexler]]'''
+** ''[[The Fortune Cookie]]''&nbsp;– [[Joseph LaShelle]]
+** ''[[Georgy Girl]]''&nbsp;– [[Kenneth Higgins]]
+** ''[[Is Paris Burning? (film)|Is Paris Burning?]]''&nbsp;– [[Marcel Grignon]]
+** ''[[Seconds (1966 film)|Seconds]]''&nbsp;– [[James Wong Howe]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]''&nbsp;– [[Ted Moore]]'''
+** ''[[Fantastic Voyage]]''&nbsp;– [[Ernest Laszlo]]
+** ''[[Hawaii (1966 film)|Hawaii]]''&nbsp;– [[Russell Harlan]]
+** ''[[The Professionals (1966 film)|The Professionals]]''&nbsp;– [[Conrad Hall]]
+** ''[[The Sand Pebbles (film)|The Sand Pebbles]]''&nbsp;– [[Joseph MacDonald (cinematographer)|Joseph MacDonald]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+* '''''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''&nbsp;– [[Irene Sharaff]]'''
+** ''[[The Gospel According to St. Matthew (film)|The Gospel According to St. Matthew]]''&nbsp;– [[Danilo Donati]]
+** ''[[The Mandrake (1965 film)|Mandragola]]''&nbsp;– [[Danilo Donati]]
+** ''[[Mister Buddwing]]''&nbsp;– [[Helen Rose]]
+** ''[[Morgan – A Suitable Case for Treatment|Morgan!]]''&nbsp;– [[Jocelyn Rickards]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+* '''''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]''&nbsp;– [[Joan Bridge]] and [[Elizabeth Haffenden]]'''
+** ''[[Gambit (1966 film)|Gambit]]''&nbsp;– [[Jean Louis]]
+** ''[[Hawaii (1966 film)|Hawaii]]''&nbsp;– [[Dorothy Jeakins]]
+** ''[[Juliet of the Spirits]]''&nbsp;– [[Piero Gherardi]]
+** ''[[The Oscar (film)|The Oscar]]''&nbsp;– [[Edith Head]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Grand Prix (1966 film)|Grand Prix]]''&nbsp;– [[Fredric Steinkamp]], [[Henry Berman]], [[Stu Linder|Stewart Linder]] and [[Frank Santillo]]'''
+** ''[[Fantastic Voyage]]''&nbsp;– [[William B. Murphy]]
+** ''[[The Russians Are Coming, the Russians Are Coming]]''&nbsp;– [[Hal Ashby]] and [[J. Terry Williams]]
+** ''[[The Sand Pebbles (film)|The Sand Pebbles]]''&nbsp;– [[William Reynolds (film editor)|William H. Reynolds]]
+** ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''&nbsp;– [[Sam O'Steen]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Visual Effects]]}}
+* '''''[[Fantastic Voyage]]''&nbsp;– [[Art Cruickshank]]'''
+** ''[[Hawaii (1966 film)|Hawaii]]''&nbsp;– [[Linwood G. Dunn]]
+|}
+
+===Honorary Awards===
+* To [[Y. Frank Freeman]] for unusual and outstanding service to the Academy during his thirty years in Hollywood.
+* To [[Yakima Canutt]] for achievements as a stunt man and for developing safety devices to protect stunt men everywhere.
+
+===Jean Hersholt Humanitarian Award===
+* George Bagnall
+
+===Irving G. Thalberg Memorial Award===
+* [[Robert Wise]]
+
+===Multiple nominations and awards===
+{{Col-begin}}
+{{Col-1-of-2}}
+These films had multiple nominations:
+* 13 nominations: ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''
+* 8 nominations: ''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]'' and ''[[The Sand Pebbles (film)|The Sand Pebbles]]''
+* 7 nominations: ''[[Hawaii (1966 film)|Hawaii]]''
+* 5 nominations: ''[[Alfie (1966 film)|Alfie]]'' and ''[[Fantastic Voyage]]''
+* 4 nominations: ''[[The Fortune Cookie]]'', ''[[Georgy Girl]]'', ''[[A Man and a Woman]]'' and ''[[The Russians Are Coming, the Russians Are Coming]]''
+* 3 nominations: ''[[Gambit (1966 film)|Gambit]]'', ''[[The Gospel According to St. Matthew (film)|The Gospel According to St. Matthew]]'', ''[[Grand Prix (1966 film)|Grand Prix]]'' and ''[[The Professionals (1966 film)|The Professionals]]''
+* 2 nominations: ''[[Blowup]]'', ''[[Born Free]]'', ''[[Is Paris Burning? (film)|Is Paris Burning?]]'', ''[[Juliet of the Spirits]]'', ''[[Mister Buddwing]]'', ''[[Morgan – A Suitable Case for Treatment|Morgan!]]'' and ''[[The Oscar (film)|The Oscar]]''
+
+{{Col-2-of-2}}
+The following films received multiple awards:
+* 6 wins: ''[[A Man for All Seasons (1966 film)|A Man for All Seasons]]''
+* 5 wins: ''[[Who's Afraid of Virginia Woolf? (film)|Who's Afraid of Virginia Woolf?]]''
+* 3 wins: ''[[Grand Prix (1966 film)|Grand Prix]]''
+* 2 wins: ''[[Born Free]]'', ''[[Fantastic Voyage]]'' and ''[[A Man and a Woman]]''
+{{Col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>{{cite book |last1=Wiley |first1=Mason |last2=Bona |first2=Damien |last3=MacColl |first3=Gail |title=Inside Oscar: the unofficial history of the Academy Awards |date=1986 |publisher=Ballantine Books |location=New York |isbn=0345314239 |page=397 |edition=1st}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name !! Role
+|-
+| {{sortname|Hank|Simms|nolink=0}} || Announcer of the 39th Academy Awards
+|-
+| {{sortname|Arthur|Freed}} (AMPAS President) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Dean|Jones|Dean Jones (actor)}}<br />[[Raquel Welch]] || Presenters of the award for Best Sound
+|-
+| {{sortname|Shelley|Winters}} || Presenter of the award for Best Supporting Actor
+|-
+| {{sortname||Ann-Margret}}<br />[[Omar Sharif]] || Presenters of the awards for Best Cinematography
+|-
+| {{sortname|Irene|Dunne}} || Presenter of the Jean Hersholt Humanitarian Award
+|-
+| {{sortname|Olivia|de Havilland}} || Presenter of the Short Subjects Awards
+|-
+| {{sortname|Diahann|Carroll}} || Presenter of the award for Best Sound Effects
+|-
+| {{sortname|Richard|Harris}}<br />[[Barbara Rush]] || Presenters of the Documentary Awards
+|-
+| {{sortname|Fred|MacMurray}} || Presenter of the award for Best Special Visual Effects
+|-
+| {{sortname|Candice|Bergen}}<br />[[Robert Mitchum]] || Presenters of the awards for Best Costume Design
+|-
+| {{sortname|Sidney|Poitier}} || Presenter of the award for Best Supporting Actress
+|-
+| {{sortname|Jack|Valenti}} || Presenter of the Honorary Award to [[Y. Frank Freeman]]
+|-
+| {{sortname|Lee|Remick}}<br />[[James Stewart]] || Presenters of the award for Best Film Editing
+|-
+| {{sortname|Charlton|Heston}} || Presenter of the Honorary Award to [[Yakima Canutt]]
+|-
+| {{sortname|Patricia|Neal}} || Presenter of the award for Best Foreign Language Film
+|-
+| {{sortname|Rock|Hudson}}<br />[[Vanessa Redgrave]] || Presenters of the awards for Best Art Direction
+|-
+| {{sortname|Fred|Astaire}}<br />[[Ginger Rogers]] || Presenters of the Writing Awards
+|-
+| {{sortname|Arthur|Freed}} || Presenter of the Irving G. Thalberg Memorial Award to [[Robert Wise]]
+|-
+| {{sortname|Mary Tyler|Moore}}<br />[[Dick Van Dyke]] || Presenters of the Music Awards
+|-
+| {{sortname|Dean|Martin}} || Presenter of the award for Best Song
+|-
+| {{sortname|Lee|Marvin}} || Presenter of the award for Best Actress
+|-
+| {{sortname|Rosalind|Russell}} || Presenter of the award for Best Director
+|-
+| {{sortname|Julie|Christie}} || Presenter of the award for Best Actor
+|-
+| {{sortname|Audrey|Hepburn}} || Presenter of the award for Best Picture
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name !! Role !! Performed
+|-
+| {{sortname|Johnny|Green}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Dionne|Warwick}} || Performer || "[[Alfie (Burt Bacharach song)|Alfie]]" from ''[[Alfie (1966 film)|Alfie]]''
+|-
+| {{sortname|Roger|Williams|Roger Williams (pianist)}}<br />[[The Young Americans]] || Performers || "[[Born Free (song)|Born Free]]" from ''[[Born Free]]''
+|-
+| {{sortname|Mitzi|Gaynor}} || Performer || "[[Georgy Girl (song)|Georgy Girl]]" from ''[[Georgy Girl]]''
+|-
+| {{sortname|John|Davidson|John Davidson (entertainer)}} || Performer || "A Time for Love" from ''[[An American Dream (film)|An American Dream]]''
+|-
+| {{sortname|Jackie|DeShannon}} || Performer || "My Wishing Doll" from ''[[Hawaii (1966 film)|Hawaii]]''
+|}
+
+== See also ==
+* [[24th Golden Globe Awards]]
+* [[1966 in film]]
+* [[9th Grammy Awards]]
+* [[18th Primetime Emmy Awards]]
+* [[19th Primetime Emmy Awards]]
+* [[20th British Academy Film Awards]]
+* [[21st Tony Awards]]
+* [[List of submissions to the 39th Academy Awards for Best Foreign Language Film]]
+
+==References==
+{{reflist}}
+
+==External links==
+* [https://www.imdb.com/title/tt0353124/ The 39th Annual Academy Awards] at [[IMDb]]
+* [http://www.infoplease.com/ipa/A0149051.html List of winners] at Infoplease
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 39}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1966 film awards]]
+[[Category:1966 awards in the United States]]
+[[Category:1967 in California]]
+[[Category:1967 in American cinema]]
+[[Category:April 1967 in the United States]]
+[[Category:Organized events in Santa Monica, California]]
+[[Category:20th century in Santa Monica, California]]

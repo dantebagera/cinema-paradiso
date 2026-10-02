@@ -1,0 +1,368 @@
+{{oscars short description|films-year=1958}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number           = 31
+| image            = 31st Academy Awards.jpg
+| caption          = Official poster
+| award            = Academy Awards
+| date             = April 6, 1959
+| site             = [[Pantages Theatre (Hollywood)|Pantages Theatre]], [[Hollywood, Los Angeles|Hollywood]], [[California, USA]]
+| host             = [[Jerry Lewis]], [[Mort Sahl]], [[Tony Randall]], [[Bob Hope]], [[David Niven]], and [[Laurence Olivier]]
+| producer         = [[Jerry Wald]]
+| director         = [[Alan Handley]]
+| best_picture     = ''[[Gigi (1958 film)|Gigi]]''
+| most_wins        = ''Gigi'' (9)
+| most_nominations = ''[[The Defiant Ones]]'' and ''Gigi'' (9)
+| network          = [[NBC]]
+| duration         = 
+| last             = 30th
+| next             = 32nd
+}}
+
+The '''31st Academy Awards''' ceremony was held on April 6, 1959, to honor the best films of [[1958 in film|1958]]. The night was dominated by ''[[Gigi (1958 film)|Gigi]]'', which won nine Oscars, breaking the previous record of eight, first set by ''[[Gone with the Wind (film)|Gone with the Wind]]'' in 1939.{{efn |Later tied by ''[[From Here to Eternity]]'' (1953) and ''[[On the Waterfront]]'' (1954).}}
+
+''Gigi'' set a new record for biggest Oscars sweep, winning all nine of its nominations, which would be broken in [[33rd Academy Awards|1960]], when [[Ben-Hur (1959 film)|Ben-Hur]] won eleven of its twelve nominations. Finally, ''Gigi'' was the last film until ''The Last Emperor'' to win Best Picture without any acting nominations.<ref>{{cite web |last1=Shaw |first1=Gabbi |title='Parasite' is the 12th movie in history to win Best Picture with no acting nominations — here are the other 11 |url=https://www.insider.com/movies-that-won-best-picture-oscars-with-no-acting-nominations |website=Insider |publisher=Insider Inc. |access-date=27 March 2023}}</ref>
+
+The ceremony was hosted by an ensemble of actors: [[Jerry Lewis]], [[Mort Sahl]], [[Tony Randall]], [[Bob Hope]], [[David Niven]], and [[Laurence Olivier]].
+
+The show's producer, [[Jerry Wald]], started cutting numbers from the show to make sure it ran on time, but cut too much material, and the ceremony ended 20 minutes early, leaving Jerry Lewis to attempt to fill in the time, which he did with a performance of "[[There's No Business Like Show Business]]" from all 90 of the participating stars;<ref name="Oscars '58 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/840/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=841 |isbn=0-385-04060-1}}</ref> Lewis did impromptu conducting of the number, but some of the stars began to talk among themselves, while others left or bumped into each other in confusion. Eventually, [[NBC]] cut to a re-run of a sports show.<ref name="Oscars '58 Notes"/>
+
+__TOC__
+{{Clear right}}
+
+==Awards==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Vincent Minelli - 1950s.jpg
+| caption1          = [[Vincente Minnelli]]; Best Director winner
+| image2            = David Niven in 1959.jpg
+| caption2          = [[David Niven]]; Best Actor winner
+| image3            = Susan Hayward - 1940s.jpg
+| caption3          = [[Susan Hayward]]; Best Actress winner
+| image4            = Burl Ives (Cat on a Hot Tin Roof) 1958.jpg
+| caption4          = [[Burl Ives]]; Best Supporting Actor winner
+| image5            = Wendy Hiller in Sailor of the King.jpg
+| caption5          = [[Wendy Hiller]]; Best Supporting Actress winner
+| image6            = Walt Disney 1946.JPG
+| caption6          = [[Walt Disney]]; Best Live Action Short Film winner
+| image7            = André Previn.jpg
+| caption7          = [[André Previn]]; Best Scoring of a Musical Picture winner
+| image8            = Cecil Beaton Photographs- General; Beaton, Cecil IB4287C cropped.jpg
+| caption8          = [[Cecil Beaton]]; Best Costume Design winner
+}}
+
+Nominations announced on February 23, 1959. Winners are listed first and highlighted in boldface.<ref name="Oscars1959">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1959 |title=The 31st Academy Awards (1959) Nominees and Winners |access-date=2011-08-21 |work=oscars.org |archive-url=https://web.archive.org/web/20110706094137/http://www.oscars.org/awards/academyawards/legacy/ceremony/31st-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*''' ''[[Gigi (1958 film)|Gigi]]''&nbsp;– [[Arthur Freed]], producer'''
+**''[[Auntie Mame (film)|Auntie Mame]]''&nbsp;– [[Jack L. Warner]], producer
+**''[[Cat on a Hot Tin Roof (1958 film)|Cat on a Hot Tin Roof]]''&nbsp;– [[Lawrence Weingarten]], producer
+**''[[The Defiant Ones]]''&nbsp;– [[Stanley Kramer]], producer
+**''[[Separate Tables (film)|Separate Tables]]''&nbsp;– [[Harold Hecht]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*''' [[Vincente Minnelli]]&nbsp;– ''[[Gigi (1958 film)|Gigi]]'''''
+**[[Richard Brooks]]&nbsp;– ''[[Cat on a Hot Tin Roof (1958 film)|Cat on a Hot Tin Roof]]''
+**[[Stanley Kramer]]&nbsp;– ''[[The Defiant Ones]]''
+**[[Robert Wise]]&nbsp;– ''[[I Want to Live!]]''
+**[[Mark Robson (film director)|Mark Robson]]&nbsp;– ''[[The Inn of the Sixth Happiness]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*''' [[David Niven]]&nbsp;– ''[[Separate Tables (film)|Separate Tables]]'' as Major David Angus Pollock'''
+**[[Tony Curtis]]&nbsp;– ''[[The Defiant Ones]]'' as John "Joker" Jackson
+**[[Paul Newman]]&nbsp;– ''[[Cat on a Hot Tin Roof (1958 film)|Cat on a Hot Tin Roof]]'' as Brick Pollitt
+**[[Sidney Poitier]]&nbsp;– ''[[The Defiant Ones]]'' as Noah Cullen
+**[[Spencer Tracy]]&nbsp;– ''[[The Old Man and the Sea (1958 film)|The Old Man and the Sea]]'' as The Old Man
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*''' [[Susan Hayward]]&nbsp;– ''[[I Want to Live!]]''  as [[Barbara Graham]]'''
+**[[Deborah Kerr]]&nbsp;– ''[[Separate Tables (film)|Separate Tables]]'' as Sibyl Railton-Bell
+**[[Shirley MacLaine]]&nbsp;– ''[[Some Came Running (film)|Some Came Running]]'' as Ginny Moorehead
+**[[Rosalind Russell]]&nbsp;– ''[[Auntie Mame (film)|Auntie Mame]]'' as Mame Dennis
+**[[Elizabeth Taylor]]&nbsp;– ''[[Cat on a Hot Tin Roof (1958 film)|Cat on a Hot Tin Roof]]'' as Margaret "Maggie the Cat" Pollitt
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*''' [[Burl Ives]]&nbsp;– ''[[The Big Country]]''  as Rufus Hannassey'''
+**[[Theodore Bikel]]&nbsp;– ''[[The Defiant Ones]]'' as Sheriff Max Muller
+**[[Lee J. Cobb]]&nbsp;– ''[[The Brothers Karamazov (1958 film)|The Brothers Karamazov]]'' as [[Fyodor Karamazov]]
+**[[Arthur Kennedy]]&nbsp;– ''[[Some Came Running (film)|Some Came Running]]'' as Frank Hirsh
+**[[Gig Young]]&nbsp;– ''[[Teacher's Pet (1958 film)|Teacher's Pet]]'' as Dr. Hugo Pine
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*''' [[Wendy Hiller]]&nbsp;– ''[[Separate Tables (film)|Separate Tables]]''  as Pat Cooper'''
+**[[Peggy Cass]]&nbsp;– ''[[Auntie Mame (film)|Auntie Mame]]'' as Agnes Gooch
+**[[Martha Hyer]]&nbsp;– ''[[Some Came Running (film)|Some Came Running]]'' as Gwen French
+**[[Maureen Stapleton]]&nbsp;– ''[[Lonelyhearts]]'' as Fay Doyle
+**[[Cara Williams]]&nbsp;– ''[[The Defiant Ones]]'' as Billy's mother
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+*''' ''[[The Defiant Ones]]''&nbsp;– [[Nedrick Young]] and [[Harold Jacob Smith]]'''
+**''[[The Goddess (1958 film)|The Goddess]]''&nbsp;– [[Paddy Chayefsky]]
+**''[[Houseboat (film)|Houseboat]]''&nbsp;– [[Melville Shavelson]] and [[Jack Rose (screenwriter)|Jack Rose]]
+**''[[The Sheepman]]''&nbsp;– [[William Bowers]] and [[James Edward Grant]]
+**''[[Teacher's Pet (1958 film)|Teacher's Pet]]''&nbsp;– [[Fay Kanin]] and [[Michael Kanin]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*''' ''[[Gigi (1958 film)|Gigi]]''&nbsp;– [[Alan Jay Lerner]] from [[Gigi (novella)|the novella]] by [[Colette]]'''
+**''[[Cat on a Hot Tin Roof (1958 film)|Cat on a Hot Tin Roof]]''&nbsp;– [[Richard Brooks]] and [[James Poe]] from ''[[Cat on a Hot Tin Roof]]'' by [[Tennessee Williams]]
+**''[[The Horse's Mouth (film)|The Horse's Mouth]]''&nbsp;– [[Alec Guinness]] from ''[[The Horse's Mouth]]'' by [[Joyce Cary]]
+**''[[I Want to Live!]]''&nbsp;– [[Don Mankiewicz]] and [[Nelson Gidding]] from writings by [[Edward S. Montgomery|Ed Montgomery]] and [[Barbara Graham]]
+**''[[Separate Tables (film)|Separate Tables]]''&nbsp;– [[John Gay (screenwriter)|John Gay]] and [[Terence Rattigan]] from ''[[Separate Tables]]'' by Terence Rattigan
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+*''' ''[[Mon Oncle|My Uncle]]'' ([[France]])'''
+**''[[Arms and the Man (1958 film)|Arms and the Man]]'' ([[West Germany]])
+**''[[Big Deal on Madonna Street]]'' ([[Italy]])
+**''[[The Road a Year Long]]'' ([[Yugoslavia]])
+**''[[Vengeance (1958 film)|La venganza]]'' ([[Spain]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[White Wilderness (film)|White Wilderness]]''&nbsp;– [[Ben Sharpsteen]]'''
+**''[[Antarctic Crossing]]''&nbsp;– James Carr
+**''[[The Hidden World]]''&nbsp;– [[Robert Snyder (filmmaker)|Robert Snyder]]
+**''[[Psychiatric Nursing]]''&nbsp;– Nathan Zucker
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Ama Girls]]''&nbsp;– [[Ben Sharpsteen]]'''
+**''[[Employees Only]]''&nbsp;– Kenneth G. Brown
+**''[[Journey into Spring]]''&nbsp;– Ian Ferguson
+**''[[The Living Stone]]''&nbsp;– [[Tom Daly (filmmaker)|Tom Daly]]
+**''[[Overture (1958 film)|Overture]]''&nbsp;– [[Thorold Dickinson]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[Grand Canyon (1958 film)|Grand Canyon]]''&nbsp;– [[Walt Disney]]'''
+**''[[Journey into Spring]]''&nbsp;– Ian Ferguson
+**''[[The Kiss (1958 film)|The Kiss]]''&nbsp;– [[John Hayes (director)|John Hayes]]
+**''[[Snows of Aorangi]]''&nbsp;– [[National Film Unit|New Zealand Screen Board]]
+**''T Is for Tumbleweed''&nbsp;– [[James A. Lebenthal]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Knighty Knight Bugs]]''&nbsp;– [[John W. Burton (film producer)|John W. Burton]]'''
+**''[[Paul Bunyan (film)|Paul Bunyan]]''&nbsp;– [[Walt Disney]]
+**''Sidney's Family Tree''&nbsp;– William M. Weiss
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*''' ''[[The Old Man and the Sea (1958 film)|The Old Man and the Sea]]''&nbsp;– [[Dimitri Tiomkin]]'''
+**''[[The Big Country]]''&nbsp;– [[Jerome Moross]]
+**''[[Separate Tables (film)|Separate Tables]]''&nbsp;– [[David Raksin]]
+**''[[White Wilderness (film)|White Wilderness]]''&nbsp;– [[Oliver Wallace]]
+**''[[The Young Lions (film)|The Young Lions]]''&nbsp;– [[Hugo Friedhofer]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*''' ''[[Gigi (1958 film)|Gigi]]''&nbsp;– [[André Previn]]'''
+**''[[The Bolshoi Ballet (film)|The Bolshoi Ballet]]''&nbsp;– [[Yuri Fayer|Yuri Faier]] and [[Gennady Rozhdestvensky|G. Rozhdestvensky]]
+**''[[Damn Yankees (film)|Damn Yankees!]]''&nbsp;– [[Ray Heindorf]]
+**''[[Mardi Gras (1958 film)|Mardi Gras]]''&nbsp;– [[Lionel Newman]]
+**''[[South Pacific (1958 film)|South Pacific]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]] and [[Ken Darby]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*''' "[[Gigi (song)|Gigi]]" from ''[[Gigi (1958 film)|Gigi]]''&nbsp;– Music by [[Frederick Loewe]]; Lyrics by [[Alan Jay Lerner]]'''
+**"Almost In Your Arms (Love Song from Houseboat)" from ''[[Houseboat (film)|Houseboat]]''&nbsp;– Music and Lyrics by [[Jay Livingston]] and [[Ray Evans]]
+**"[[A Certain Smile (song)|A Certain Smile]]" from ''[[A Certain Smile (film)|A Certain Smile]]''&nbsp;– Music by [[Sammy Fain]]; Lyrics by [[Paul Francis Webster]]
+**"To Love and Be Loved" from ''[[Some Came Running (film)|Some Came Running]]''&nbsp;– Music by [[Jimmy Van Heusen]]; Lyrics by [[Sammy Cahn]]
+**"[[A Very Precious Love]]" from ''[[Marjorie Morningstar (film)|Marjorie Morningstar]]''&nbsp;– Music by [[Sammy Fain]]; Lyrics by [[Paul Francis Webster]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+*''' ''[[South Pacific (1958 film)|South Pacific]]''&nbsp;– [[Fred Hynes]]'''
+**''[[I Want to Live!]]''&nbsp;– [[Gordon E. Sawyer]]
+**''[[A Time to Love and a Time to Die]]''&nbsp;– [[Leslie I. Carey]]
+**''[[Vertigo (film)|Vertigo]]''&nbsp;– [[George Dutton]]
+**''[[The Young Lions (film)|The Young Lions]]''&nbsp;– [[Carlton W. Faulkner]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*''' ''[[Gigi (1958 film)|Gigi]]''&nbsp;– Art Direction: [[William A. Horning]] <small>([[List of posthumous Academy Award winners and nominees|posthumous award]])</small> and [[E. Preston Ames]]; Set Decoration: [[Henry Grace]] and [[F. Keogh Gleason]]'''
+**''[[Auntie Mame (film)|Auntie Mame]]''&nbsp;– Art Direction: [[Malcolm Bert]]; Set Decoration: [[George James Hopkins]]
+**''[[Bell, Book and Candle]]''&nbsp;– Art Direction: [[Cary Odell]]; Set Decoration: [[Louis Diage]]
+**''[[A Certain Smile (film)|A Certain Smile]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[John DeCuir]]; Set Decoration: [[Walter M. Scott]] and [[Paul S. Fox]]
+**''[[Vertigo (film)|Vertigo]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Henry Bumstead]]; Set Decoration: [[Samuel M. Comer]] and [[Frank R. McKelvy]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*''' ''[[The Defiant Ones]]''&nbsp;– [[Sam Leavitt (cinematographer)|Sam Leavitt]]'''
+**''[[Desire Under the Elms (film)|Desire Under the Elms]]''&nbsp;– [[Daniel L. Fapp]]
+**''[[I Want to Live!]]''&nbsp;– [[Lionel Lindon]]
+**''[[Separate Tables (film)|Separate Tables]]''&nbsp;– [[Charles Lang]]
+**''[[The Young Lions (film)|The Young Lions]]''&nbsp;– [[Joseph MacDonald (cinematographer)|Joseph MacDonald]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*''' ''[[Gigi (1958 film)|Gigi]]''&nbsp;– [[Joseph Ruttenberg]]'''
+**''[[Auntie Mame (film)|Auntie Mame]]''&nbsp;– [[Harry Stradling]] Sr.
+**''[[Cat on a Hot Tin Roof (1958 film)|Cat on a Hot Tin Roof]]''&nbsp;– [[William Daniels (cinematographer)|William Daniels]]
+**''[[The Old Man and the Sea (1958 film)|The Old Man and the Sea]]''&nbsp;– [[James Wong Howe]]
+**''[[South Pacific (1958 film)|South Pacific]]''&nbsp;– [[Leon Shamroy]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*''' ''[[Gigi (1958 film)|Gigi]]''&nbsp;– [[Cecil Beaton]]'''
+**''[[Bell, Book and Candle]]''&nbsp;– [[Jean Louis]]
+**''[[The Buccaneer (1958 film)|The Buccaneer]]''&nbsp;– [[Ralph Jester]], [[Edith Head]] and [[John Jensen (costume designer)|John Jensen]]
+**''[[A Certain Smile (film)|A Certain Smile]]''&nbsp;– [[Charles LeMaire]] and [[Mary Wills (costume designer)|Mary Wills]]
+**''[[Some Came Running (film)|Some Came Running]]''&nbsp;– [[Walter Plunkett]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*''' ''[[Gigi (1958 film)|Gigi]]''&nbsp;– [[Adrienne Fazan]]'''
+**''[[Auntie Mame (film)|Auntie Mame]]''&nbsp;– [[William H. Ziegler|William Ziegler]]
+**''[[Cowboy (1958 film)|Cowboy]]''&nbsp;– [[William Lyon (film editor)|William Lyon]] and [[Al Clark (film editor)|Al Clark]]
+**''[[The Defiant Ones]]''&nbsp;– [[Frederic Knudtson]]
+**''[[I Want to Live!]]''&nbsp;– [[William Hornbeck]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*''' ''[[Tom Thumb (film)|Tom Thumb]]''&nbsp;– [[Tom Howard (special effects)|Tom Howard]]'''
+**''[[Torpedo Run]]''&nbsp;– Visual Effects: [[A. Arnold Gillespie]]; Audible Effects: [[Harold Humbrock]]
+|}
+
+===Honorary Award===
+*To [[Maurice Chevalier]] for his contributions to the world of entertainment for more than half a century.
+
+===Irving G. Thalberg Memorial Award===
+*[[Jack L. Warner]]
+
+==Presenters and performers==
+[[File:31st Acad Awards.jpg|thumb|People lining the street under the marquee of the Pantages Theater at the 31st Academy Awards.]]
+{{More citations needed section|date=September 2015}}
+
+===Presenters===
+*[[Buddy Adler]] (Presenter: Irving G. Thalberg Memorial Award)
+*[[Eddie Albert]] and [[Vincent Price]] (Presenters: Art Direction Award)
+*[[June Allyson]] and [[Dick Powell]] (Presenters: Musical Scoring Awards)
+*[[Ingrid Bergman]] (Presenters: Best Motion Picture)
+*[[Dirk Bogarde]], [[Van Heflin]], and [[Elizabeth Taylor]] (Presenters: Writing Awards)
+*[[Red Buttons]] and [[Shelley Winters]] (Presenters: Best Supporting Actress)
+*[[James Cagney]] and [[Kim Novak]] (Presenters: Best Actress)
+*[[Cyd Charisse]] and [[Robert Stack]] (Presenters: Best Foreign Language Film)
+*[[Gary Cooper]] and [[Millie Perkins]] (Presenters: Best Director)
+*[[Wendell Corey]] and [[Ernie Kovacs]] (Presenters: Costume Design Award)
+*[[Tony Curtis]] and [[Janet Leigh]] (Presenters: Short Subjects Awards)
+*[[Bette Davis]] and [[Anthony Quinn]] (Presenters: Best Supporting Actor)
+*[[Doris Day]] and [[Rock Hudson]] (Presenters: Cinematography Awards)
+*[[Irene Dunne]] and [[John Wayne]] (Presenters: Best Actor)
+*[[Louis Jourdan]]<ref>[https://www.youtube.com/results?search_query=gigi+wins+film+editing Search. gigi wins film editing] YouTube</ref> and [[Jean Simmons]] (Presenters: Best Film Editing)
+*[[Anthony Franciosa]] and [[Eva Marie Saint]] (Presenters: Music Awards)
+*[[Charlton Heston]] and [[Jane Wyman]] (Presenters: Best Sound Recording)
+*[[Sophia Loren]] and [[Dean Martin]] (Presenters: Best Original Song)
+*[[Shirley MacLaine]] and [[Peter Ustinov]] (Presenters: Best Visual Effects)
+*[[Rosalind Russell]] (Presenter: Honorary Award to Maurice Chevalier)
+*[[Robert Wagner]] and [[Natalie Wood]] (Presenters: Documentary Awards)
+
+===Performers===
+*[[Lionel Newman]] – Conductor the Academy Awards orchestra
+*[[Nick Adams (actor, born 1931)|Nick Adams]], [[Anna Maria Alberghetti]], [[James Darren]], [[Dean Jones (actor)|Dean Jones]], [[Connie Stevens]], and [[Tuesday Weld]] ("Almost In Your Arms" from ''[[Houseboat (film)|Houseboat]]'')
+*[[Joan Collins]], [[Angela Lansbury]] and [[Dana Wynter]] ("It's Great Not to Be Nominated")
+*[[Kirk Douglas]] and [[Burt Lancaster]] ("It's Alright With Us")
+*[[Eddie Fisher (singer)|Eddie Fisher]] ("To Love and Be Loved" from ''[[Some Came Running (film)|Some Came Running]]'')
+*[[Rhonda Fleming]] and [[Howard Keel]] ("[[A Very Precious Love]]" from ''[[Marjorie Morningstar (film)|Marjorie Morningstar]]'')
+*[[Tony Martin (American singer)|Tony Martin]] ("[[Gigi (song)|Gigi]]" from ''[[Gigi (1958 film)|Gigi]]'')
+*[[John Raitt]] ("[[A Certain Smile (song)|A Certain Smile]]" from ''[[A Certain Smile (film)|A Certain Smile]]'')
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="2" style="text-align:center" | 9
+| ''[[The Defiant Ones]]''
+|-
+| ''[[Gigi (1958 film)|Gigi]]''
+|-
+| rowspan="1" style="text-align:center" | 7
+| ''[[Separate Tables (film)|Separate Tables]]''
+|-
+| rowspan="3" style="text-align:center" | 6
+| ''[[Auntie Mame (film)|Auntie Mame]]''
+|-
+| ''[[Cat on a Hot Tin Roof (1958 film)|Cat on a Hot Tin Roof]]''
+|-
+| ''[[I Want to Live!]]''
+|-
+| rowspan="1" style="text-align:center" | 5
+| ''[[Some Came Running (film)|Some Came Running]]''
+|-
+| rowspan="4" style="text-align:center" |3
+| ''[[A Certain Smile (film)|A Certain Smile]]''
+|-
+| ''[[The Old Man and the Sea (1958 film)|The Old Man and the Sea]]''
+|- 
+| ''[[South Pacific (1958 film)|South Pacific]]''
+|-
+| ''[[The Young Lions (film)|The Young Lions]]''
+|-
+| rowspan="7" style="text-align:center" |2
+| ''[[Bell, Book and Candle]]''
+|-
+| ''[[The Big Country]]''
+|- 
+| ''[[Houseboat (film)|Houseboat]]''
+|- 
+| ''[[Journey into Spring]]''
+|- 
+| ''[[Teacher's Pet (1958 film)|Teacher's Pet]]''
+|-
+| ''[[Vertigo (film)|Vertigo]]''
+|-
+|''[[White Wilderness (film)|White Wilderness]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 9
+| ''[[Gigi (1958 film)|Gigi]]''
+|-
+| rowspan=2, style="text-align:center" | 2
+| ''[[The Defiant Ones]]''
+|-
+|''[[Separate Tables (film)|Separate Tables]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+*[[1958 in film]]
+* [[1st Grammy Awards]]
+* [[10th Primetime Emmy Awards]]
+* [[11th Primetime Emmy Awards]]
+* [[12th British Academy Film Awards]]
+* [[13th Tony Awards]]
+* [[16th Golden Globe Awards]]
+
+==Notes==
+{{Notelist}}
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 31}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1958 film awards]]
+[[Category:1958 awards in the United States]]
+[[Category:1959 in Los Angeles]]
+[[Category:1959 in American cinema]]
+[[Category:April 1959 in the United States]]
+[[Category:Television shows directed by Alan Handley]]

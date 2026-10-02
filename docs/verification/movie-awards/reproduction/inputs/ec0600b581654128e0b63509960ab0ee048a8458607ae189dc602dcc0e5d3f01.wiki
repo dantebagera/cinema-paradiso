@@ -1,0 +1,358 @@
+{{oscars short description|films-year=1967}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number = 40
+| award = Academy Awards
+| image = 40th Academy Awards.jpg
+| caption = Official poster with original date
+| date = April 10, 1968
+| site = [[Santa Monica Civic Auditorium]], [[Santa Monica, California]]
+| host = [[Bob Hope]]
+| producer = [[Arthur Freed]]
+| director = Richard Dunlap
+| best_picture = ''[[In the Heat of the Night (film)|In the Heat of the Night]]''
+| most_wins = ''In the Heat of the Night'' (5)
+| most_nominations = ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]'' and ''[[Guess Who's Coming to Dinner]]'' (10)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 
+| last = 39th
+| next = 41st
+}}
+
+The '''40th Academy Awards''' were held on April 10, 1968, to honor [[1967 in film|film achievements of 1967]]. Originally scheduled for April 8, the awards were postponed to two days later due to the [[Assassination of Martin Luther King Jr.|assassination]] of civil rights leader [[Martin Luther King Jr.]]<ref name="Oscars '67 Notes"/> [[Bob Hope]] was once again the host of the ceremony.
+
+This year, due to the waning popularity of black-and-white films, [[Academy Award for Best Cinematography|Best Cinematography]], [[Academy Award for Best Production Design|Art Direction]], and [[Academy Award for Best Costume Design|Costume Design]], previously divided into separate awards for color and [[monochrome]] films, were merged into single categories. This was the first Oscars since [[20th Academy Awards|1948]] to feature clips from the Best Picture nominees.
+
+This year marked the first of two times that three different films were nominated for the ''[[List_of_Big_Five_Academy_Award_winners_and_nominees|"Big Five"]]'' Oscars (Picture, Director, Actor, Actress and Screenplay): ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]'', ''[[The Graduate]]'' and ''[[Guess Who's Coming to Dinner]]''. While all three won major Oscars, Best Picture was awarded to [[Norman Jewison]]'s thriller/mystery film, ''[[In the Heat of the Night (film)|In the Heat of the Night]]''. The same thing happened again at the ceremony for films from [[54th Academy Awards|1981]] where the Best Picture winner was not one of the three films with "Big Five" nominations.
+
+''[[The Graduate]]'' became the seventh film to win [[Academy Award for Best Director|Best Director]] and nothing else, and the last until [[Jane Campion]] won the award for ''[[The Power of the Dog (film)|The Power of the Dog]]'' at the [[94th Academy Awards]]. For the first time since the introduction of the [[Academy Award for Best Costume Design]] in [[21st Academy Awards|1948]], [[Edith Head]] did not receive a nomination, after tallying 30 nominations and 7 wins over the previous 18 years.
+
+Due to an all-out push by Academy President [[Gregory Peck]], 18 of the 20 acting nominees were present at the ceremony.<ref name="Oscars '67 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/846/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=844 |isbn=0-385-04060-1}}</ref> Only [[Katharine Hepburn]] and [[Spencer Tracy]], who died several months before the ceremony and was nominated posthumously, were missing. [[Edith Evans]] was the last performer born in the 1880s to receive an acting nomination ([[Academy Award for Best Actress|Best Actress]], for her role in ''[[The Whisperers]]'').
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            =Mike Nichols.jpg
+| caption1          = [[Mike Nichols]], Best Director winner
+| image2            = Rod Steiger 1964 (cropped).jpg
+| caption2          = [[Rod Steiger]], Best Actor winner
+| image3            = Katharine Hepburn publicity photograph.jpg
+| caption3          = [[Katharine Hepburn]], Best Actress winner
+| image4            = George Kennedy 1975.JPG
+| caption4          = [[George Kennedy]], Best Supporting Actor winner
+| image5            = Estelle Parsons Love American Style 1973.JPG
+| caption5          = [[Estelle Parsons]], Best Supporting Actress winner
+| image6            = Elmer Bernstein 1981 (cropped).jpg
+| caption6          = [[Elmer Bernstein]], Best Original Score winner
+}}
+
+Nominations were announced on February 19, 1968. Winners are listed first and highlighted in boldface.<ref name="Oscars1968">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1968 |title=The 40th Academy Awards (1968) Nominees and Winners |access-date=2011-11-10 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20141103005223/http://www.oscars.org/oscars/ceremonies/1968 |archive-date=2014-11-03 }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[In the Heat of the Night (film)|In the Heat of the Night]]''&nbsp;— [[Walter Mirisch]], producer'''
+**''[[Bonnie and Clyde (film)|Bonnie and Clyde]]''&nbsp;— [[Warren Beatty]], producer
+**''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''&nbsp;— [[Arthur P. Jacobs]], producer
+**''[[The Graduate]]''&nbsp;— [[Lawrence Turman]], producer
+**''[[Guess Who's Coming to Dinner]]''&nbsp;— [[Stanley Kramer]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Mike Nichols]]&nbsp;– ''[[The Graduate]]'''''
+**[[Arthur Penn]]&nbsp;– ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]''
+**[[Stanley Kramer]]&nbsp;– ''[[Guess Who's Coming to Dinner]]''
+**[[Richard Brooks]]&nbsp;– ''[[In Cold Blood (film)|In Cold Blood]]''
+**[[Norman Jewison]]&nbsp;– ''[[In the Heat of the Night (film)|In the Heat of the Night]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Rod Steiger]]&nbsp;– ''[[In the Heat of the Night (film)|In the Heat of the Night]]'' as Police Chief Bill Gillespie'''
+**[[Warren Beatty]]&nbsp;– ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]'' as [[Clyde Barrow]]
+**[[Dustin Hoffman]]&nbsp;– ''[[The Graduate]]'' as Benjamin Braddock
+**[[Paul Newman]]&nbsp;– ''[[Cool Hand Luke]]'' as Lucas "Cool Hand Luke" Jackson
+**[[Spencer Tracy]] (posthumous nomination)&nbsp;– ''[[Guess Who's Coming to Dinner]]'' as Matt Drayton
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Katharine Hepburn]]&nbsp;– ''[[Guess Who's Coming to Dinner]]'' as Christina Drayton'''
+**[[Anne Bancroft]]&nbsp;– ''[[The Graduate]]'' as Mrs. Robinson
+**[[Faye Dunaway]]&nbsp;– ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]'' as [[Bonnie Parker]]
+**[[Edith Evans]]&nbsp;– ''[[The Whisperers]]'' as Mrs. Ross
+**[[Audrey Hepburn]]&nbsp;– ''[[Wait Until Dark (film)|Wait Until Dark]]'' as Susy Hendrix
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[George Kennedy]]&nbsp;– ''[[Cool Hand Luke]]'' as Dragline'''
+**[[John Cassavetes]]&nbsp;– ''[[The Dirty Dozen]]'' as Victor Franko
+**[[Gene Hackman]]&nbsp;– ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]'' as [[Buck Barrow]]
+**[[Cecil Kellaway]]&nbsp;– ''[[Guess Who's Coming to Dinner]]'' as Monsignor Ryan
+**[[Michael J. Pollard]]&nbsp;– ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]'' as C.W. Moss
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Estelle Parsons]]&nbsp;– ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]'' as [[Blanche Barrow]]'''
+**[[Carol Channing]]&nbsp;– ''[[Thoroughly Modern Millie]]'' as Muzzy Van Hossmere
+**[[Mildred Natwick]]&nbsp;– ''[[Barefoot in the Park (film)|Barefoot in the Park]]'' as Ethel Banks
+**[[Beah Richards]]&nbsp;– ''[[Guess Who's Coming to Dinner]]'' as Mrs. Mary Prentice
+**[[Katharine Ross]]&nbsp;– ''[[The Graduate]]'' as Elaine Robinson
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+*'''''[[Guess Who's Coming to Dinner]]''&nbsp;– [[William Rose (screenwriter)|William Rose]]'''
+**''[[Bonnie and Clyde (film)|Bonnie and Clyde]]''&nbsp;– [[David Newman (screenwriter)|David Newman]] and [[Robert Benton]]
+**''[[Divorce American Style]]''&nbsp;– Screenplay by [[Norman Lear]]; Story by [[Robert Kaufman]]
+**''[[Two for the Road (film)|Two for the Road]]''&nbsp;– [[Frederic Raphael]]
+**''[[The War Is Over (1966 film)|The War Is Over]]''&nbsp;– [[Jorge Semprún]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*'''''[[In the Heat of the Night (film)|In the Heat of the Night]]''&nbsp;– [[Stirling Silliphant]] based on [[In the Heat of the Night (novel)|the novel]] by [[John Ball (novelist)|John Ball]]'''
+**''[[Cool Hand Luke]]''&nbsp;– [[Donn Pearce]] and [[Frank Pierson]] based on [[Cool Hand Luke (novel)|the novel]] by [[Donn Pearce]]
+**''[[The Graduate]]''&nbsp;– [[Buck Henry]] and [[Calder Willingham]] based on [[The Graduate (novel)|the novel]] by [[Charles Webb (author)|Charles Webb]]
+**''[[In Cold Blood (film)|In Cold Blood]]''&nbsp;– [[Richard Brooks]] based on [[In Cold Blood|the novel]] by [[Truman Capote]]
+**''[[Ulysses (1967 film)|Ulysses]]''&nbsp;– [[Joseph Strick]] and [[Fred Haines]] based on [[Ulysses (novel)|the novel]] by [[James Joyce]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 40th Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[Closely Watched Trains]]'' ([[Czechoslovakia]])'''
+**''[[Bewitched Love|El amor brujo]]'' (Spain)
+**''[[I Even Met Happy Gypsies]]'' ([[Yugoslavia]])
+**''[[Live for Life]]'' (France)
+**''[[Portrait of Chieko]]'' (Japan)
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[The Anderson Platoon]]''&nbsp;– [[Pierre Schoendoerffer]]'''
+** ''[[Festival (1967 film)|Festival]]''&nbsp;– [[Murray Lerner]]
+** ''[[Harvest (1967 film)|Harvest]]''&nbsp;– [[Carroll Ballard]]
+** ''[[A King's Story]]''&nbsp;– [[Jack Levin (producer)|Jack Le Vien]]
+** ''[[A Time for Burning]]''&nbsp;– William C. Jersey
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[The Redwoods]]''&nbsp;– [[Mark Jonathan Harris|Mark Harris]] and Trevor Greenwood'''
+**''[[Monument to the Dream]]''&nbsp;– [[Charles Guggenheim|Charles E. Guggenheim]]
+**''[[A Place to Stand (film)|A Place to Stand]]''&nbsp;– [[Christopher Chapman]]
+**''[[See You at the Pillar]]''&nbsp;– Robert Fitchett
+**''[[While I Run This Race]]''&nbsp;– Carl V. Ragsdale
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[A Place to Stand (film)|A Place to Stand]]''&nbsp;– [[Christopher Chapman]]'''
+**''[[Paddle to the Sea]]''&nbsp;– [[Julian Biggs]]
+**''Sky over Holland''&nbsp;– John Ferno
+**''[[Stop Look and Listen (film)|Stop Look and Listen]]''&nbsp;– [[Len Janson]] and [[Chuck Menville]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[The Box (1967 film)|The Box]]''&nbsp;– [[Fred Wolf (animator)|Fred Wolf]]'''
+**''Hypothese Beta''&nbsp;– Jean-Charles Meunier
+**''[[What on Earth! (film)|What on Earth!]]''&nbsp;– [[Robert Verrall]] and [[Wolf Koenig]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Music Score)]]}}
+*'''''[[Thoroughly Modern Millie]]''&nbsp;– [[Elmer Bernstein]]'''
+**''[[Cool Hand Luke]]''&nbsp;– [[Lalo Schifrin]]
+**''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''&nbsp;– [[Leslie Bricusse]]
+**''[[Far from the Madding Crowd (1967 film)|Far from the Madding Crowd]]''&nbsp;– [[Richard Rodney Bennett]]
+**''[[In Cold Blood (film)|In Cold Blood]]''&nbsp;– [[Quincy Jones]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of Music -- Adaptation or Treatment)]]}}
+*'''''[[Camelot (film)|Camelot]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]] and [[Ken Darby]]'''
+**''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''&nbsp;– [[Lionel Newman]] and [[Alexander Courage]]
+**''[[Guess Who's Coming to Dinner]]''&nbsp;– [[Frank De Vol]]
+**''[[Thoroughly Modern Millie]]''&nbsp;– [[André Previn]] and Joseph Gershenson
+**''[[Valley of the Dolls (film)|Valley of the Dolls]]''&nbsp;– [[John Williams]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[Talk to the Animals]]" from ''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''&nbsp;— Music and Lyrics by [[Leslie Bricusse]]'''
+**"[[The Bare Necessities]]" from ''[[The Jungle Book (1967 film)|The Jungle Book]]''&nbsp;— Music and Lyrics by [[Terry Gilkyson]]
+**"The Eyes of Love" from ''[[Banning (film)|Banning]]''&nbsp;— Music by [[Quincy Jones]]; Lyrics by [[Bob Russell (songwriter)|Bob Russell]]
+**"[[The Look of Love (1967 song)|The Look of Love]]" from ''[[Casino Royale (1967 film)|Casino Royale]]''&nbsp;— Music by [[Burt Bacharach]]; Lyrics by [[Hal David]]
+**"[[Thoroughly Modern Millie (song)|Thoroughly Modern Millie]]" from ''[[Thoroughly Modern Millie]]''&nbsp;— Music by [[Jimmy Van Heusen]]; Lyrics by [[Sammy Cahn]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+* '''''[[In the Heat of the Night (film)|In the Heat of the Night]]''&nbsp;– [[Samuel Goldwyn Studio]] Sound Department'''
+** ''[[Camelot (film)|Camelot]]''&nbsp;– [[Warner Bros.-Seven Arts]] Studio Sound Department
+** ''[[The Dirty Dozen]]''&nbsp;– [[Metro-Goldwyn-Mayer]] Studio Sound Department
+** ''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''&nbsp;– [[20th Century-Fox]] Studio Sound Department
+** ''[[Thoroughly Modern Millie]]''&nbsp;– [[Universal Studios Lot|Universal City]] Studio Sound Department
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Editing|Best Sound Effects]]}}
+* '''''[[The Dirty Dozen]]''&nbsp;– [[John Poyner]]'''
+** ''[[In the Heat of the Night (film)|In the Heat of the Night]]''&nbsp;– [[James Richard]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Camelot (film)|Camelot]]''&nbsp;– Art Direction: [[John Truscott]] and [[Edward Carrere]]; Set Decoration: [[John W. Brown (set decorator)|John W. Brown]]'''
+**''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''&nbsp;– Art Direction: [[Mario Chiari]], [[Jack Martin Smith]] and [[Ed Graves]]; Set Decoration: [[Walter M. Scott]] and [[Stuart A. Reiss]]
+**''[[Guess Who's Coming to Dinner]]''&nbsp;– Art Direction: [[Robert Clatworthy (art director)|Robert Clatworthy]]; Set Decoration: [[Frank Tuttle (set decorator)|Frank Tuttle]]
+**''[[The Taming of the Shrew (1967 film)|The Taming of the Shrew]]''&nbsp;– Art Direction: [[Lorenzo Mongiardino|Renzo Mongiardino]], [[John DeCuir]], [[Elven Webb]] and [[Giuseppe Mariani (art director)|Giuseppe Mariani]]; Set Decoration: [[Dario Simoni]] and [[Luigi Gervasi]]
+**''[[Thoroughly Modern Millie]]''&nbsp;– Art Direction: [[Alexander Golitzen]] and [[George C. Webb]]; Set Decoration: [[Howard Bristol]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Bonnie and Clyde (film)|Bonnie and Clyde]]''&nbsp;–  [[Burnett Guffey]]'''
+**''[[Camelot (film)|Camelot]]''&nbsp;– [[Richard H. Kline]]
+**''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert L. Surtees]]
+**''[[The Graduate]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert L. Surtees]]
+**''[[In Cold Blood (film)|In Cold Blood]]''&nbsp;– [[Conrad Hall|Conrad L. Hall]] 
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Camelot (film)|Camelot]]''&nbsp;– [[John Truscott]]'''
+**''[[Bonnie and Clyde (film)|Bonnie and Clyde]]''&nbsp;– [[Theadora Van Runkle]]
+**''[[The Happiest Millionaire]]''&nbsp;– [[Bill Thomas (costume designer)|Bill Thomas]]
+**''[[The Taming of the Shrew (1967 film)|The Taming of the Shrew]]''&nbsp;– [[Danilo Donati]] and [[Irene Sharaff]]
+**''[[Thoroughly Modern Millie]]''&nbsp;– [[Jean Louis]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[In the Heat of the Night (film)|In the Heat of the Night]]''&nbsp;– [[Hal Ashby]]'''
+** ''[[Beach Red]]''&nbsp;– [[Frank P. Keller]]
+** ''[[The Dirty Dozen]]''&nbsp;– [[Michael Luciano]]
+** ''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''&nbsp;– [[Samuel E. Beetley]] and [[Marjorie Fowler]]
+** ''[[Guess Who's Coming to Dinner]]''&nbsp;– [[Robert C. Jones]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Visual Effects]]}}
+*'''''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''&nbsp;– [[L. B. Abbott]]'''
+**''[[Tobruk (1967 film)|Tobruk]]''&nbsp;– [[Howard A. Anderson Jr.]] and [[Albert Whitlock]]
+|}
+
+===Honorary Award===
+* To [[Arthur Freed]] for distinguished service to the Academy and the production of six top-rated Awards telecasts.
+
+===Jean Hersholt Humanitarian Award===
+*[[Gregory Peck]]
+
+===Irving G. Thalberg Memorial Award===
+*[[Alfred Hitchcock]]
+
+==Multiple nominations and awards==
+{{Col-begin}}
+{{Col-1-of-2}}
+These films had multiple nominations:
+
+*''10 nominations'': ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]'' and ''[[Guess Who's Coming to Dinner]]''
+*''9 nominations'': ''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''
+*''7 nominations'': ''[[The Graduate]]'', ''[[In the Heat of the Night (film)|In the Heat of the Night]]'' and ''[[Thoroughly Modern Millie]]''
+*''5 nominations'': ''[[Camelot (film)|Camelot]]''
+*''4 nominations'': ''[[Cool Hand Luke]]'', ''[[The Dirty Dozen]]'' and ''[[In Cold Blood (film)|In Cold Blood]]''
+*''2 nominations'': ''[[A Place to Stand (film)|A Place to Stand]]'' and ''[[The Taming of the Shrew (1967 film)|The Taming of the Shrew]]''
+
+{{Col-2-of-2}}
+The following films received multiple awards.
+
+*''5 wins'': ''[[In the Heat of the Night (film)|In the Heat of the Night]]''
+*''3 wins'': ''[[Camelot (film)|Camelot]]''
+*''2 wins'': ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]'', ''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]'' and ''[[Guess Who's Coming to Dinner]]''
+{{Col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name !! Role
+|-
+| {{sortname|Hank|Simms|nolink=1}} || Announcer for the 40th Academy Awards
+|-
+| {{sortname|Gregory|Peck}} (AMPAS President) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Bill|Miller|nolink=1}} || Explained the eligibility and voting rules to the public
+|-
+| {{sortname|Carol|Channing}} || Presenter of the award for Best Sound
+|-
+| {{sortname|Patty|Duke}} || Presenter of the award for Best Supporting Actor
+|-
+| {{sortname|Dustin|Hoffman}}<br />[[Katharine Ross]] || Presenters of the award for Best Cinematography
+|-
+| {{sortname|Macdonald|Carey}}<br />[[Diahann Carroll]] || Presenters of the Short Subjects Awards
+|-
+| {{sortname|Robert|Morse}}<br />[[Barbara Rush]] || Presenters of the Documentary Awards
+|-
+| {{sortname|Eva Marie|Saint}} || Presenter of the award for Best Costume Design
+|-
+| {{sortname|Bob|Hope}} (host) || Presenter of the Honorary Award to Arthur Freed
+|-
+| {{sortname|Natalie|Wood}} || Presenter of the award for Best Special Visual Effects
+|-
+| {{sortname|Richard|Crenna}}<br />[[Elke Sommer]] || Presenters of the award for Best Sound Effects
+|-
+| {{sortname|Walter|Matthau}} || Presenter of the award for Best Supporting Actress
+|-
+| {{sortname|Edith|Evans}} || Presenter of the award for Best Film Editing
+|-
+| {{sortname|Rosalind|Russell}} || Presenter of the Jean Hersholt Humanitarian Award to Gregory Peck
+|-
+| {{sortname|Danny|Kaye}} || Presenter of the award for Best Foreign Language Film
+|-
+| {{sortname|Rock|Hudson}}<br />[[Shirley Jones]] || Presenters of the award for Best Art Direction
+|-
+| {{sortname|Bob|Hope|nolink=1}} || Presenter of the Academy Awards' history montage
+|-
+| {{sortname|Angie|Dickinson}}<br />[[Gene Kelly]] || Presenters of the Music Awards
+|-
+| {{sortname|Barbra|Streisand}} || Presenter of the award for Best Song
+|-
+| {{sortname|Sammy|Davis Jr.}} || Accepted [[Leslie Bricusse]]'s award on his behalf
+|-
+| {{sortname|Robert|Wise}} || Presenter of the Irving G. Thalberg Memorial Award
+|-
+| {{sortname|Leslie|Caron}} || Presenter of the award for Best Director
+|-
+| {{sortname|Claire|Bloom}}<br />[[Rod Steiger]] || Presenters of the Writing Awards
+|-
+| {{sortname|Audrey|Hepburn}} || Presenter of the award for Best Actor
+|-
+| {{sortname|Sidney|Poitier}} || Presenter of the award for Best Actress
+|-
+| {{sortname|Julie|Andrews}} || Presenter of the award for Best Picture
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name !! Role !! Performed
+|-
+| {{sortname|Elmer|Bernstein}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Louis|Armstrong}} || Performer || "[[The Bare Necessities]]" from ''[[The Jungle Book (1967 film)|The Jungle Book]]''
+|-
+| {{sortname|Lainie|Kazan}} || Performer || "The Eyes of Love" from ''[[Banning (film)|Banning]]''
+|-
+| {{sortname|Sérgio|Mendes}}<br />Brasil '66 || Performer || "[[The Look of Love (1967 song)|The Look of Love]]" from ''[[Casino Royale (1967 film)|Casino Royale]]''
+|-
+| {{sortname|Sammy|Davis Jr.}} || Performer || "Talk to the Animals" from ''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]''
+|-
+| {{sortname|Angela|Lansbury}} || Performer || "Thoroughly Modern Millie" from ''[[Thoroughly Modern Millie]]''<ref>{{YouTube|G6Y67ZpUIEI|Angela Lansbury performing ''"Thoroughly Modern Millie"'' on show}}</ref>
+|-
+| {{sortname||Academy Awards Orchestra|nolink=1}} || Performers || "[[Hooray for Hollywood]]/[[There's No Business like Show Business]]" (orchestral) during the closing credits
+|}
+==See also==
+*[[1967 in film]]
+* [[10th Grammy Awards]]
+* [[19th Primetime Emmy Awards]]
+* [[20th Primetime Emmy Awards]]
+* [[21st British Academy Film Awards]]
+* [[22nd Tony Awards]]
+* [[25th Golden Globe Awards]]
+
+==References==
+{{reflist}}
+
+==External links==
+* {{IMDb title|0353126}}
+* ''[https://www.youtube.com/watch?v=o0F10Sc3Vcw A Place to Stand]'', 1967, Archives of Ontario YouTube Channel (winner of Best Live Action Short Subject)
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 40}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1967 film awards]]
+[[Category:1967 awards in the United States]]
+[[Category:1968 in California]]
+[[Category:1968 in American cinema]]
+[[Category:April 1968 in the United States]]
+[[Category:Organized events in Santa Monica, California]]
+[[Category:20th century in Santa Monica, California]]

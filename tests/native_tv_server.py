@@ -33,7 +33,9 @@ for number, quality in ((1, '1080p'), (3, '720p')):
 raw_series = {'id': 900001, 'name': 'Harbor Signals', 'original_name': 'Harbor Signals', 'first_air_date': '2020-01-01', 'last_air_date': '2021-01-03',
               'status': 'Ended', 'vote_average': 8.2, 'vote_count': 1200, 'genres': [{'id': 18, 'name': 'Drama'}, {'id': 9648, 'name': 'Mystery'}],
               'original_language': 'en', 'origin_country': ['GB'], 'episode_run_time': [45], 'number_of_episodes': 6, 'number_of_seasons': 2,
-              'seasons': [{'season_number': 1, 'air_date': '2020-01-01', 'episode_count': 3}],
+              'seasons': [{'season_number': 0, 'air_date': '2019-12-25', 'episode_count': 1},
+                          {'season_number': 1, 'air_date': '2020-01-01', 'episode_count': 3},
+                          {'season_number': 2, 'air_date': '2021-01-03', 'episode_count': 2}],
               'created_by': [{'id': 123, 'name': 'Mira Stone'}], 'keywords': {'results': [{'id': 55, 'name': 'Radio'}]},
               'videos': {'results': [{'site': 'YouTube', 'key': 'abc12345678', 'type': 'Trailer', 'official': True}]},
               'external_ids': {'imdb_id': 'tt1234567'}}
@@ -61,6 +63,10 @@ def tmdb_fixture(path, **params):
         return {**raw_series, 'id': int(path.rsplit('/', 1)[1]), 'name': 'Open Water' if path.endswith('900002') else 'Harbor Signals'}
     if path in {'/discover/tv', '/search/tv', '/trending/tv/week', '/tv/popular', '/tv/on_the_air', '/tv/airing_today', '/tv/top_rated'}:
         results = [raw_series, {**raw_series, 'id': 900002, 'name': 'Open Water', 'original_name': 'Open Water'}]
+        if path == '/discover/tv' and params.get('with_status') is not None:
+            status_name = {'0': 'Returning Series', '1': 'Planned', '2': 'In Production',
+                           '3': 'Ended', '4': 'Canceled', '5': 'Pilot'}[str(params['with_status'])]
+            results = [row for row in results if row['status'] == status_name]
         if params.get('query'): results = [r for r in [*results, *[v['detail'] for v in provider_examples.values()]] if str(params['query']).lower() in r['name'].lower()]
         return {'results': results, 'page': params.get('page', 1), 'total_pages': 1, 'total_results': len(results)}
     raise ValueError('Unconfigured fixture endpoint')

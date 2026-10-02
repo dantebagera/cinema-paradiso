@@ -1,0 +1,398 @@
+{{oscars short description|films-year=1973}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number = 46
+| award = Academy Awards
+| image = 46th Academy Awards.jpg
+| date = April 2, 1974
+| site = [[Dorothy Chandler Pavilion]]<br>[[Los Angeles]], [[California]]
+| host = [[Burt Reynolds]], <br />[[Diana Ross]],<br /> [[John Huston]]<br /> and [[David Niven]]
+| producer = [[Jack Haley Jr.]]
+| director = [[Marty Pasetta]]
+| best_picture = ''[[The Sting]]''
+| most_wins = ''The Sting'' (7)
+| most_nominations = ''[[The Exorcist]]'' and ''The Sting'' (10)
+| network = [[NBC]]
+| duration = 3 hours, 23 minutes
+| ratings = 44.7 million<ref>[https://web.archive.org/web/20161008211435/http://tvbythenumbers.zap2it.com/reference/academy-awards-show-ratings/ Academy Awards TV Ratings Data, 1953-2008], Nielsen Ratings Data: ©2009 Nielsen Media Research, Inc</ref>
+| last = 45th
+| next = 47th
+}}
+
+The '''46th Academy Awards''' were presented on Tuesday, April 2, 1974, at the [[Dorothy Chandler Pavilion]] in [[Los Angeles]], [[California]]. The ceremonies were presided over by [[Burt Reynolds]], [[Diana Ross]], [[John Huston]], and [[David Niven]].
+
+''[[The Sting]]'' won seven awards, including [[Academy Award for Best Picture|Best Picture]] and [[Academy Award for Best Director|Best Director]] for [[George Roy Hill]]. ''[[The Exorcist]]'' and ''[[The Way We Were]]'' were the only other films to win multiple awards. [[Marvin Hamlisch]] won three awards, making him the [[List of people who have won multiple Academy Awards in a single year|third person to achieve this feat]] and, to date, the only person who has won three Oscars in one year without winning Best Picture. {{As of|2025}}, it is the most recent ceremony in which the three highest-grossing films of the year were nominated for Best Picture (''The Exorcist'', ''The Sting'' and ''American Graffiti'').
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = George Roy Hill (cropped).jpg
+| caption1          = [[George Roy Hill]], Best Director winner
+| image2            = Jack Lemmon - 1968.jpg
+| caption2          = [[Jack Lemmon]], Best Actor winner
+| image3            = Glenda Jackson.JPG
+| caption3          = [[Glenda Jackson]], Best Actress winner
+| image4            = John Houseman - 1980.jpg
+| caption4          = [[John Houseman]], Best Supporting Actor winner
+| image5            = Tatum O'Neal - November 2014 (cropped).jpg
+| caption5          = [[Tatum O'Neal]], Best Supporting Actress winner
+| image6            = David_S_Ward.jpg
+| caption6          = [[David S. Ward]], Best Original Screenplay Winner
+| image7            = William-Peter-Blatty-2009.jpg
+| caption7          = [[William Peter Blatty]], Best Adapted Screenplay Winner
+| image8            = Marvin Hamlisch - 1970s.jpg
+| caption8          = [[Marvin Hamlisch]], Best Original Score winner, Adapted Score winner & Best Original Song co-winner
+}}
+Nominations announced on February 19, 1974. Winners are listed first and highlighted in boldface.<ref name="Oscars1974">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1974 |title=The 46th Academy Awards (1974) Nominees and Winners |access-date=December 31, 2011 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20150315090403/http://www.oscars.org/oscars/ceremonies/1974 |archive-date=March 15, 2015}}</ref>
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*''' ''[[The Sting]]'' – [[Tony Bill]], [[Julia Phillips]] and [[Michael Phillips (producer)|Michael Phillips]], producers'''
+**''[[American Graffiti]]'' – [[Francis Ford Coppola]], producer; [[Gary Kurtz]], co-producer
+**''[[Cries and Whispers]]'' – [[Ingmar Bergman]], producer
+**''[[The Exorcist]]'' – [[William Peter Blatty]], producer
+**''[[A Touch of Class (film)|A Touch of Class]]'' – [[Melvin Frank]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[George Roy Hill]] – ''[[The Sting]]'''''
+**[[George Lucas]] – ''[[American Graffiti]]''
+**[[Ingmar Bergman]] – ''[[Cries and Whispers]]''
+**[[William Friedkin]] – ''[[The Exorcist]]''
+**[[Bernardo Bertolucci]] – ''[[Last Tango in Paris]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Jack Lemmon]] – ''[[Save the Tiger]]'' as Harry Stoner'''
+**[[Marlon Brando]] – ''[[Last Tango in Paris]]'' as Paul
+**[[Jack Nicholson]] – ''[[The Last Detail]]'' as Billy "Badass" Buddusky
+**[[Al Pacino]] – ''[[Serpico]]'' as [[Frank Serpico]]
+**[[Robert Redford]] – ''[[The Sting]]'' as Johnny Hooker
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Glenda Jackson]] – ''[[A Touch of Class (film)|A Touch of Class]]'' as Vicki Allessio'''
+**[[Ellen Burstyn]] – ''[[The Exorcist]]'' as Chris MacNeil
+**[[Marsha Mason]] – ''[[Cinderella Liberty]]'' as Maggie Paul
+**[[Barbra Streisand]] – ''[[The Way We Were]]'' as Katie Morosky
+**[[Joanne Woodward]] – ''[[Summer Wishes, Winter Dreams]]'' as Rita Pritchett-Walden
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[John Houseman]] – ''[[The Paper Chase (film)|The Paper Chase]]'' as Professor Charles W. Kingsfield Jr.'''
+**[[Vincent Gardenia]] – ''[[Bang the Drum Slowly (film)|Bang the Drum Slowly]]'' as Dutch
+**[[Jack Gilford]] – ''[[Save the Tiger]]'' as Phil
+**[[Jason Miller (playwright)|Jason Miller]] – ''[[The Exorcist]]'' as [[Damien Karras]]
+**[[Randy Quaid]] – ''[[The Last Detail]]'' as Larry Meadows
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Tatum O'Neal]] – ''[[Paper Moon (film)|Paper Moon]]'' as Addie Loggins'''
+**[[Linda Blair]] – ''[[The Exorcist]]'' as [[Regan MacNeil]]
+**[[Candy Clark]] – ''[[American Graffiti]]'' as Debbie Dunham
+**[[Madeline Kahn]] – ''[[Paper Moon (film)|Paper Moon]]'' as Trixie Delight
+**[[Sylvia Sidney]] – ''[[Summer Wishes, Winter Dreams]]'' as Mrs. Pritchett
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Based on Factual Material or Material Not Previously Published or Produced)]]}}
+*'''''[[The Sting]]'' – [[David S. Ward]]'''
+**''[[American Graffiti]]'' – [[George Lucas]], [[Gloria Katz]] and [[Willard Huyck]]
+**''[[Cries and Whispers]]'' – [[Ingmar Bergman]]
+**''[[Save the Tiger]]'' – [[Steve Shagan]]
+**''[[A Touch of Class (film)|A Touch of Class]]'' – [[Melvin Frank]] and [[Jack Rose (screenwriter)|Jack Rose]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*'''''[[The Exorcist]]'' – [[William Peter Blatty]] based on [[The Exorcist (novel)|his novel]]'''
+**''[[The Last Detail]]'' – [[Robert Towne]] based on the novel by [[Darryl Ponicsan]]
+**''[[The Paper Chase (film)|The Paper Chase]]'' – [[James Bridges]] based on [[the Paper Chase (Osborn novel)|the novel]] by [[John Jay Osborn Jr.]]
+**''[[Paper Moon (film)|Paper Moon]]'' – [[Alvin Sargent]] based on the novel ''[[Addie Pray]]'' by [[Joe David Brown]]
+**''[[Serpico]]'' – [[Waldo Salt]] and [[Norman Wexler]] based on the book by [[Peter Maas]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 46th Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[Day for Night]]'' – [[Cinema of France|France]]'''
+**''[[The House on Chelouche Street]]'' – [[Cinema of Israel|Israel]]
+**''[[The Invitation (1973 film)|L'Invitation]]'' – [[Cinema of Switzerland|Switzerland]]
+**''[[The Pedestrian (film)|The Pedestrian]]'' – [[Cinema of Germany|Germany (West)]]
+**''[[Turkish Delight (1973 film)|Turkish Delight]]'' – [[Cinema of the Netherlands|Netherlands]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*''' ''[[The Great American Cowboy]]'' – [[Kieth Merrill]]'''
+**''[[Always a New Beginning]]'' – John D. Goodell
+**''[[Battle of Berlin (film)|Battle of Berlin (Schlacht um Berlin)]]'' – Bengt von zur Mühlen
+**''[[Journey to the Outer Limits]]'' – [[Alexander Grasshoff]]
+**''[[Walls of Fire]]'' – Herbert Kline and [[Edmund Penney]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*''' ''[[Princeton: A Search for Answers]]'' – [[Julian Krainin]] and DeWitt L. Sage Jr.'''
+**''[[Background (1973 film)|Background]]'' – [[Carmen D'Avino]]
+**''[[Christo's Valley Curtain]]'' – [[Albert and David Maysles|Albert Maysles]] and [[Albert and David Maysles|David Maysles]]
+**''[[Four Stones for Kanemitsu]]'' – [[Terry Sanders]] and [[June Wayne]]
+**''[[Children at Work|Paisti ag obair]]'' – [[Louis Marcus (filmmaker)|Louis Marcus]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*''' ''[[The Bolero]]'' – Allan Miller and William Fertik'''
+**''Clockmaker'' – Richard Gayer
+**''[[Life Times Nine]]'' – [[Pen Densham]] and [[John Watson (film producer)|John Watson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Animated)]]}}
+*'''''[[Frank Film]]'' – [[Frank Mouris]]'''
+**''The Legend of John Henry'' – Nick Bosustow and David Adams
+**''Pulcinella'' – [[Emanuele Luzzati]] and Guilo Gianini
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Dramatic Score)]]}}
+*'''''[[The Way We Were]]'' – [[Marvin Hamlisch]]'''
+** ''[[Cinderella Liberty]]'' – [[John Williams]]
+** ''[[The Day of the Dolphin]]'' – [[Georges Delerue]]
+** ''[[Papillon (1973 film)|Papillon]]'' – [[Jerry Goldsmith]]
+** ''[[A Touch of Class (film)|A Touch of Class]]'' – [[John Cameron (musician)|John Cameron]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring: Original Song Score and Adaptation -or- Scoring: Adaptation)]]}}
+*'''''[[The Sting]]'' – Adapted by [[Marvin Hamlisch]]'''
+** ''[[Jesus Christ Superstar (film)|Jesus Christ Superstar]]'' – Adapted by [[André Previn]], [[Herbert W. Spencer]] and [[Andrew Lloyd Webber]]
+** ''[[Tom Sawyer (1973 film)|Tom Sawyer]]'' – Song Score by [[Richard M. Sherman]] and [[Robert B. Sherman]]; Adapted by [[John Williams]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[The Way We Were (song)|The Way We Were]]" — ''[[The Way We Were]]'' • Music by [[Marvin Hamlisch]] • Lyrics by [[Alan and Marilyn Bergman]]'''
+** "All That Love Went to Waste" — ''[[A Touch of Class (film)|A Touch of Class]]'' • Music by [[George Barrie]] • Lyrics by [[Sammy Cahn]]
+** "[[Live and Let Die (song)|Live and Let Die]]" — ''[[Live and Let Die (film)|Live and Let Die]]'' • Music and Lyrics by [[Paul McCartney]] and [[Linda McCartney]]
+** "[[Love (Disney song)|Love]]" — ''[[Robin Hood (1973 film)|Robin Hood]]'' • Music by [[George Bruns]] • Lyrics by [[Floyd Huddleston]]
+** "(You're So) [[Nice to Be Around (Maureen McGovern song)|Nice to Be Around]]" — ''[[Cinderella Liberty]]'' • Music by [[John Williams]] • Lyrics by [[Paul Williams (songwriter)|Paul Williams]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[The Exorcist]]'' – [[Robert Knudson]] and [[Chris Newman (sound engineer)|Chris Newman]]'''
+**''[[The Day of the Dolphin]]'' – [[Richard Portman]] and [[Larry Jost]]
+**''[[The Paper Chase (film)|The Paper Chase]]'' – [[Donald O. Mitchell]] and [[Larry Jost]]
+**''[[Paper Moon (film)|Paper Moon]]'' – [[Richard Portman]] and [[Les Fresholtz]]
+**''[[The Sting]]'' – [[Ronald Pierce (sound engineer)|Ronald Pierce]] and [[Robert R. Bertrand]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*''' ''[[The Sting]]'' – Art Direction: [[Henry Bumstead]]; Set Decoration: [[James W. Payne]]'''
+**''[[Brother Sun, Sister Moon]]'' – Art Direction: [[Lorenzo Mongiardino]] and [[Gianni Quaranta]]; Set Decoration: [[Carmelo Patrono]]
+**''[[The Exorcist]]'' – Art Direction: [[Bill Malley]]; Set Decoration: [[Jerry Wunderlich]]
+**''[[Tom Sawyer (1973 film)|Tom Sawyer]]'' – Art Direction: [[Philip Jefferies]]; Set Decoration: [[Robert De Vestel]]
+**''[[The Way We Were]]'' – Art Direction: [[Stephen B. Grimes]]; Set Decoration: [[William Kiernan]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]])
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*''' ''[[Cries and Whispers]]'' – [[Sven Nykvist]]'''
+**''[[The Exorcist]]'' – [[Owen Roizman]]
+**''[[Jonathan Livingston Seagull (film)|Jonathan Livingston Seagull]]'' – [[Jack Couffer]]
+**''[[The Sting]]'' – [[Robert Surtees (cinematographer)|Robert Surtees]]
+**''[[The Way We Were]]'' – [[Harry Stradling Jr.]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[The Sting]]'' – [[Edith Head]]'''
+**''[[Cries and Whispers]]'' – [[Marik Vos-Lundh|Marik Vos]]
+**''[[Ludwig (film)|Ludwig]]'' – [[Piero Tosi]]
+**''[[Tom Sawyer (1973 film)|Tom Sawyer]]'' – [[Donfeld]]
+**''[[The Way We Were]]'' – [[Dorothy Jeakins]] and [[Moss Mabry]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[The Sting]]'' — [[William Reynolds (film editor)|William H. Reynolds]]'''
+** ''[[American Graffiti]]'' — [[Verna Fields]] and [[Marcia Lucas]]
+** ''[[The Day of the Jackal (film)|The Day of the Jackal]]'' — [[Ralph Kemplen]]
+** ''[[The Exorcist]]'' – [[Jordan Leondopoulos]], [[Bud S. Smith]], [[Evan A. Lottman]] and Norman Gay
+** ''[[Jonathan Livingston Seagull (film)|Jonathan Livingston Seagull]]'' — [[Frank P. Keller]] and [[James Galloway (film editor)|James Galloway]]
+|}
+
+===Honorary Awards===
+* To [[Henri Langlois]] for his devotion to the art of film, his massive contributions in preserving its past and his unswerving faith in its future.
+* To [[Groucho Marx]] in recognition of his brilliant creativity and for the unequalled achievements of the ''[[Marx Brothers]]'' in the art of motion picture comedy.
+
+===Jean Hersholt Humanitarian Award===
+* [[Lew Wasserman]]
+
+===Irving G. Thalberg Memorial Award===
+* [[Lawrence Weingarten]]
+
+==Streaking incident==
+[[File:Robertopelpic2.jpg|thumb|Opel streaking during the Academy Awards ceremony in 1974, with host [[David Niven]]]]
+During the awards ceremony a [[streaking|streaker]] named [[Robert Opel]] ran across the stage naked while flashing a [[peace sign]] with his hand. In response, host [[David Niven]] jokingly quipped, "Isn't it fascinating to think that probably the only laugh that man will ever get in his life is by stripping off and showing his shortcomings?"<ref name=The1970s>{{cite book | last =Boyer Sagert | first =Kelly | title =The 1970s| url =https://archive.org/details/s00sage | url-access =limited | publisher =[[Greenwood Publishing Group]] | year =2007 | pages =[https://archive.org/details/s00sage/page/n149 129]| isbn =978-0-313-33919-6}}</ref><ref name=AndTheStars>{{cite book | last =Frawley | first =Frawley | title =And the stars spoke back| publisher =[[Scarecrow Press]] | year =2004 | pages =224| isbn =0-8108-5157-1}}</ref><ref name="Oscars '73 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/846/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=847 |isbn=0-385-04060-1}}</ref> Terrence O'Flaherty, a columnist from [[San Francisco]], responded by saying that "there's only one trouble with streaking—the wrong people usually do it. The ones who should have removed their clothes were [[Cher Bono]], [[Twiggy]] and [[Elizabeth Taylor]]".<ref name="Oscars '73 Notes"/>
+
+The incident would be referenced 50 years later during the [[96th Academy Awards]] in 2024; host [[Jimmy Kimmel]] brought up the streaker and asked the audience, "can you imagine a naked man at the Oscars today?" Eventually, a "nude" [[John Cena]], holding the award envelope for [[Academy Award for Best Costume Design|Best Costume Design]] over his [[crotch]], emerged from backstage.<ref>{{cite news |last1=Fienberg |first1=Daniel |date=11 March 2024 |title=Critic's Notebook: Busy and Eclectic Oscars 2024 Telecast Delivers Many Highlights (and a Few Lowlights) |url=https://www.hollywoodreporter.com/tv/tv-reviews/2024-oscars-review-jimmy-kimmel-ryan-gosling-emma-stone-1235848832/ |url-status=live |archive-url=https://web.archive.org/web/20240311114431/https://www.hollywoodreporter.com/tv/tv-reviews/2024-oscars-review-jimmy-kimmel-ryan-gosling-emma-stone-1235848832/ |archive-date=March 11, 2024 |access-date=11 March 2024 |work=The Hollywood Reporter}}</ref><ref>{{Cite web |title=Naked John Cena pays tribute to 50th anniversary of Oscars streaker |url=https://ew.com/naked-john-cena-pays-tribute-to-50th-anniversary-of-oscars-streaker-8607065 |access-date=2024-03-11 |website=EW.com |language=en}}</ref>
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films that received multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="2" style="text-align:center" |10
+| ''[[The Exorcist]]''
+|-
+| ''[[The Sting]]''
+|-
+|rowspan="1" style="text-align:center" |6
+| ''[[The Way We Were]]''
+|-
+|rowspan="3" style="text-align:center" |5
+| ''[[American Graffiti]]''
+|-
+| ''[[Cries and Whispers]]''
+|-
+| ''[[A Touch of Class (film)|A Touch of Class]]''
+|-
+| rowspan="1" style="text-align:center" |4
+| ''[[Paper Moon (film)|Paper Moon]]''
+|-
+|rowspan="5" style="text-align:center" |3
+| ''[[Cinderella Liberty]]''
+|-
+| ''[[The Last Detail]]''
+|- 
+| ''[[The Paper Chase (film)|The Paper Chase]]''
+|-
+| ''[[Save the Tiger]]''
+|-
+| ''[[Tom Sawyer (1973 film)|Tom Sawyer]]''
+|-
+| rowspan="5" style="text-align:center" |2
+| ''[[The Day of the Dolphin]]''
+|-
+| ''[[Jonathan Livingston Seagull (film)|Jonathan Livingston Seagull]]''
+|-
+| ''[[Last Tango in Paris]]''
+|-
+| ''[[Serpico]]''
+|-
+| ''[[Summer Wishes, Winter Dreams]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films that received multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 7
+| ''[[The Sting]]''
+|-
+| rowspan=2, style="text-align:center" | 2
+| ''[[The Exorcist]]''
+|-
+| ''[[The Way We Were]]''
+|-
+|}
+
+{{col-float-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers:
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name !! Role
+|-
+| {{sortname|Hank|Simms|nolink=0}} || Announcer for the 46th Academy Awards
+|-
+| {{sortname|Walter|Mirisch}} (AMPAS President) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Linda|Blair}}<br />[[Billy Dee Williams]] || Presenters of the Short Subjects Awards
+|-
+| {{sortname|James|Caan}}<br />[[Raquel Welch]] || Presenters of the Documentary Awards
+|-
+| {{sortname|Jack|Valenti}} || Presenter of the Honorary Award to [[Henri Langlois]] (with [[Gene Kelly]] serving as his English-language interpreter)
+|-
+| {{sortname|Candice|Bergen}}<br />[[Marcel Marceau]] || Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|Richard|Benjamin}}<br />[[Paula Prentiss]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Alfred|Hitchcock}} || Presenter of the Jean Hersholt Humanitarian Award to [[Lew Wasserman]]
+|-
+| {{sortname|Sylvia|Sidney}}<br />[[Paul Winfield]] || Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Peter|Falk}}<br />[[Twiggy]] || Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Peter|Lawford}}<br />[[Cicely Tyson]] || Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Yul|Brynner}} || Presenter of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Donald|O'Connor}}<br />[[Debbie Reynolds]] || Presenters of the award for [[Academy Award for Best Original Score|Best Original Song and/or Adaptation Score]]
+|-
+| {{sort|Cher}}<br />[[Henry Mancini]] || Presenters of the award for [[Academy Award for Best Original Score|Best Original Dramatic Score]]
+|-
+| {{sortname|Marsha|Mason}}<br />[[Neil Simon]] || Presenters of the award for [[Academy Award for Best Original Screenplay|Best Story and Screenplay Based on Factual Material or Material Not Previously Produced or Published]]
+|-
+| {{sortname|Angie|Dickinson}}<br />[[Jason Miller (playwright)|Jason Miller]] || Presenters of the award for [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material from Another Medium]]
+|-
+| {{sort|Ann-Margret}}<br />[[Burt Bacharach]] || Presenters of the award for [[Academy Award for Best Original Song|Best Song]]
+|-
+| {{sortname|Ernest|Borgnine}}<br />[[Cybill Shepherd]] || Presenters of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Charles|Bronson}}<br />[[Jill Ireland]] || Presenters of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Shirley|MacLaine}}<br />[[Walter Matthau]] || Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Katharine|Hepburn}} || Presenter of the Irving G. Thalberg Memorial Award
+|-
+| {{sortname|Jack|Lemmon}} || Presenter of the Honorary Award to [[Groucho Marx]]
+|-
+| {{sortname|Susan|Hayward}}<br />[[Charlton Heston]] || Presenters of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Liza|Minnelli}}<br />[[Gregory Peck]] || Presenters of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Elizabeth|Taylor}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name !! Role !! Performed
+|-
+| {{sortname|Henry|Mancini}} || Musical arranger and Conductor || Orchestral
+|-
+| {{sortname|Liza|Minnelli}} || Performer || "Oscar"
+|-
+| {{sortname||Academy Awards Chorus|nolink=0}} || Performers || "Thank You Very Much" from ''[[Scrooge (1970 film)|Scrooge]]'' during the Academy Awards' 45th Anniversary montage
+|-
+| {{sortname|Dyan|Cannon}} || Performer || "All the Love That Went to Waste" from ''[[A Touch of Class (film)|A Touch of Class]]''
+|-
+| {{sortname|Connie|Stevens}} || Performer || "[[Live and Let Die (song)|Live and Let Die]]" from ''[[Live and Let Die (film)|Live and Let Die]]''
+|-
+| {{sortname|Jodie|Foster}} and <br />[[Johnny Whitaker]] || Performers || "Love" from ''[[Robin Hood (1973 film)|Robin Hood]]''
+|-
+| {{sortname|Peggy|Lee}} || Performer || "[[The Way We Were (song)|The Way We Were]]" from ''[[The Way We Were]]''
+|-
+| {{sortname|Telly|Savalas}} || Performer || "You're So Nice to Be Around" from ''[[Cinderella Liberty]]''
+|-
+| {{sortname||Academy Awards Orchestra|nolink=1}} || Performers || “[[Hooray for Hollywood]]” (orchestral) during the closing credits
+|}
+
+==See also==
+* [[31st Golden Globe Awards]]
+* [[1973 in film]]
+* [[16th Grammy Awards]]
+* [[25th Primetime Emmy Awards]]
+* [[26th Primetime Emmy Awards]]
+* [[27th British Academy Film Awards]]
+* [[28th Tony Awards]]
+
+==References==
+{{reflist}}
+
+==External links==
+* [http://blog.wfmu.org/freeform/2007/06/yes_they_called.html The Life of Oscar Streaker, Robert Opel @WFMU]
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 46}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1973 film awards]]
+[[Category:1974 in Los Angeles]]
+[[Category:1974 in American cinema]]
+[[Category:April 1974 in the United States]]
+[[Category:Television shows directed by Marty Pasetta]]

@@ -1,0 +1,433 @@
+{{oscars short description|films-year=1941}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 14
+| award            = Academy Awards
+| date             = February 26, 1942
+| site             = Biltmore Bowl, [[Millennium Biltmore Hotel|Biltmore Hotel]], [[Los Angeles]], [[California, USA]]
+| host             = [[Bob Hope]]
+| best_picture     = ''[[How Green Was My Valley (film)|How Green Was My Valley]]''
+| most_wins        = ''How Green Was My Valley'' (5)
+| most_nominations = ''[[Sergeant York (film)|Sergeant York]]'' (11)
+| last             = 13th
+| next             = 15th
+}}
+
+The '''14th Academy Awards''' honored film achievements in 1941 and were held at the [[Millennium Biltmore Hotel|Biltmore Hotel]] in [[Los Angeles]], [[California]]. The ceremony was briefly cancelled due to the [[Pearl Harbor attack]] on December 7, 1941.<ref name="Oscars '41 Notes"/>
+
+The ceremony is now considered notable as the year in which ''[[Citizen Kane]]'' failed to win Best Picture, losing to [[John Ford]]'s ''[[How Green Was My Valley (film)|How Green Was My Valley]]''. Later regarded as the [[List of films voted the best|greatest film ever made]], ''Citizen Kane'' was nominated for nine awards but won only one, for [[Academy Award for Best Original Screenplay|Best Original Screenplay]].
+
+John Ford won his third [[Academy Award for Best Director|Best Director]] award for ''How Green Was My Valley'', becoming the second to do so (after Frank Capra), and the first to win the award in consecutive years (following ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]'' in [[13th Academy Awards|1940]]).
+
+Much public attention was focused on the Best Actress race between sibling rivals [[Joan Fontaine]], for [[Alfred Hitchcock]]’s ''[[Suspicion (1941 film)|Suspicion]]'', and [[Olivia de Havilland]], for ''[[Hold Back the Dawn]]''. Fontaine won, becoming the only acting winner from a film directed by Hitchcock.
+
+''[[The Little Foxes (film)|The Little Foxes]]'' set a record by receiving nine nominations without winning a single Oscar; this mark was matched by ''[[Peyton Place (film)|Peyton Place]]'' in 1957, and exceeded by ''[[The Turning Point (1977 film)|The Turning Point]]'' and ''[[The Color Purple (1985 film)|The Color Purple]]'', both of which received 11 nominations without a win.
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Darryl F. Zanuck 1964.jpg
+| caption1          = [[Darryl F. Zanuck]]; Best Picture winner
+| image2            = John Ford 1946.jpg
+| caption2          = [[John Ford]]; Best Director winner
+| image3            = Gary Cooper (1952).jpg
+| caption3          = [[Gary Cooper]]; Best Actor winner
+| image4            = Joan Fontaine in 1943.jpg
+| caption4          = [[Joan Fontaine]]; Best Actress winner
+| image5            = Donald Crisp in Shining Victory trailer.jpg
+| caption5          = [[Donald Crisp]]; Best Supporting Actor winner
+| image6            = Mary Astor-1930s.JPG
+| caption6          = [[Mary Astor]]; Best Supporting Actress winner
+| image7            = Herman-Mankiewicz.jpg
+| caption7          = [[Herman J. Mankiewicz]]; Best Original Screenplay co-winner
+| image8            = Orson Welles 1937.jpg
+| caption8          = [[Orson Welles]]; Best Original Screenplay co-winner
+| image9            = Bernard-Herrmann.jpg
+| caption9          = [[Bernard Herrmann]]; Best Original Score winner
+| image10           = Jerome-Kern-1934.jpg
+| caption10         = [[Jerome Kern]]; Best Original Song co-winner
+| image11           = Oscar Hammerstein - portrait.jpg
+| caption11         = [[Oscar Hammerstein II]]; Best Original Song co-winner
+| image12           = Cedric-Gibbons-1936.jpg
+| caption12         = [[Cedric Gibbons]]; Best Art Direction, Color co-winner
+| image13           = Ernest S Palmer c1921.jpg
+| caption13         = [[Ernest Palmer (American cinematographer)|Ernest Palmer]]; Best Cinematography, Color co-winner
+| image14           = Leopold Stokowski LOC 26447u.jpg
+| caption14         = [[Leopold Stokowski]]; Honorary Academy Award recipient
+| image15           = Walt Disney 1946.JPG
+| caption15         = [[Walt Disney]]; Honorary Academy Award and Irving G. Thalberg Memorial Award recipient
+}}
+
+=== Awards ===
+Nominations were announced on February 6, 1942. Winners are listed first and highlighted in boldface.<ref name="Oscars1942">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1942 |title=The 14th Academy Awards (1942) Nominees and Winners |access-date=2011-08-13 |work=oscars.org |archive-url=https://web.archive.org/web/20110706093733/http://www.oscars.org/awards/academyawards/legacy/ceremony/14th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Motion Picture]]}}
+*'''''[[How Green Was My Valley (film)|How Green Was My Valley]]''''' '''– [[Darryl F. Zanuck]] for [[20th Century Fox]]'''
+** ''[[Blossoms in the Dust]]'' – [[Irving Asher]] for [[Metro-Goldwyn-Mayer]]
+** ''[[Citizen Kane]]'' – [[Orson Welles]] for [[RKO Pictures|RKO Radio]]
+** ''[[Here Comes Mr. Jordan]]'' – [[Everett Riskin]] for [[Columbia Pictures|Columbia]]
+** ''[[Hold Back the Dawn]]'' – [[Arthur Hornblow Jr.]] for [[Paramount Pictures|Paramount]]
+** ''[[The Little Foxes (film)|The Little Foxes]]'' – [[Samuel Goldwyn]] for [[RKO Pictures|RKO Radio]]
+** ''[[The Maltese Falcon (1941 film)|The Maltese Falcon]]'' – [[Hal B. Wallis]] for [[Warner Bros.]]
+** ''[[One Foot in Heaven]]'' – [[Hal B. Wallis]] for Warner Bros.
+** ''[[Sergeant York (film)|Sergeant York]]'' – [[Hal B. Wallis]] and [[Jesse L. Lasky]] for Warner Bros.
+** ''[[Suspicion (1941 film)|Suspicion]]'' – [[Alfred Hitchcock]] for RKO Radio
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[John Ford]]&nbsp;– ''[[How Green Was My Valley (film)|How Green Was My Valley]]'''''
+** [[Orson Welles]]&nbsp;– ''[[Citizen Kane]]''
+** [[Alexander Hall (director)|Alexander Hall]]&nbsp;– ''[[Here Comes Mr. Jordan]]''
+** [[William Wyler]]&nbsp;– ''[[The Little Foxes (film)|The Little Foxes]]''
+** [[Howard Hawks]]&nbsp;– ''[[Sergeant York (film)|Sergeant York]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Gary Cooper]]&nbsp;– ''[[Sergeant York (film)|Sergeant York]]'' as [[Alvin C. York]]'''
+** [[Cary Grant]]&nbsp;– ''[[Penny Serenade]]'' as Roger Adams
+** [[Walter Huston]]&nbsp;– ''[[The Devil and Daniel Webster (film)|All That Money Can Buy]]'' as [[Old Scratch|Mr Scratch]]
+** [[Robert Montgomery (actor)|Robert Montgomery]]&nbsp;– ''[[Here Comes Mr. Jordan]]'' as Joe Pendleton
+** [[Orson Welles]]&nbsp;– ''[[Citizen Kane]]'' as [[Charles Foster Kane]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Joan Fontaine]]&nbsp;– ''[[Suspicion (1941 film)|Suspicion]]'' as Lina McLaidlaw Aysgarth'''
+** [[Bette Davis]]&nbsp;– ''[[The Little Foxes (film)|The Little Foxes]]'' as Regina Hubbard Giddens
+** [[Olivia de Havilland]]&nbsp;– ''[[Hold Back the Dawn]]'' as Emmy Brown
+** [[Greer Garson]]&nbsp;– ''[[Blossoms in the Dust]]'' as [[Edna Gladney|Edna Kahly Gladney]]
+** [[Barbara Stanwyck]]&nbsp;– ''[[Ball of Fire]]'' as Katherine "Sugarpuss" O'Shea
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Donald Crisp]]&nbsp;– ''[[How Green Was My Valley (film)|How Green Was My Valley]]'' as Gwilym Morgan'''
+** [[Walter Brennan]]&nbsp;– ''[[Sergeant York (film)|Sergeant York]]'' as Pastor Rosier Pile
+** [[Charles Coburn]]&nbsp;– ''[[The Devil and Miss Jones]]'' as John P. Merrick
+** [[James Gleason]]&nbsp;– ''[[Here Comes Mr. Jordan]]'' as Max "Pop" Corkle
+** [[Sydney Greenstreet]]&nbsp;– ''[[The Maltese Falcon (1941 film)|The Maltese Falcon]]'' as Kasper Gutman
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Mary Astor]]&nbsp;– ''[[The Great Lie]]'' as Sandra Kovak'''
+** [[Sara Allgood]]&nbsp;– ''[[How Green Was My Valley (film)|How Green Was My Valley]]'' as Mrs Beth Morgan
+** [[Patricia Collinge]]&nbsp;– ''[[The Little Foxes (film)|The Little Foxes]]'' as Birdie Hubbard
+** [[Teresa Wright]]&nbsp;– ''The Little Foxes'' as Alexandra Giddens
+** [[Margaret Wycherly]]&nbsp;– ''[[Sergeant York (film)|Sergeant York]]'' as Mary Brooks York
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+*'''''[[Here Comes Mr. Jordan]]''&nbsp;– [[Harry Segall]]'''
+** ''[[Ball of Fire]]''&nbsp;– [[Billy Wilder]] and [[Thomas Monroe (writer)|Thomas Monroe]]
+** ''[[The Lady Eve]]''&nbsp;– [[Monckton Hoffe]]
+** ''[[Meet John Doe]]''&nbsp;– [[Richard Connell]] and Robert Presnell Sr.
+** ''[[Night Train to Munich]]''&nbsp;– [[Gordon Wellesley]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[Citizen Kane]]''&nbsp;– [[Herman J. Mankiewicz]] and [[Orson Welles]]'''
+** ''[[The Devil and Miss Jones]]''&nbsp;– [[Norman Krasna]]
+** ''[[Sergeant York (film)|Sergeant York]]''&nbsp;– [[John Huston]], [[Howard Koch (screenwriter)|Howard Koch]], Abem Finkel, and [[Harry Chandlee]]
+** ''[[Tall, Dark and Handsome (film)|Tall, Dark and Handsome]]''&nbsp;– [[Karl Tunberg]] and [[Darrell Ware]]
+** ''[[Tom, Dick and Harry (1941 film)|Tom, Dick and Harry]]''&nbsp;– [[Paul Jarrico]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[Here Comes Mr. Jordan]]''&nbsp;– [[Sidney Buchman]] and [[Seton I. Miller]], based on the play ''Heaven Can Wait'' by [[Harry Segall]]'''
+** ''[[Hold Back the Dawn]]''&nbsp;– [[Charles Brackett]] and [[Billy Wilder]], based on "Memo to a Movie Producer" by [[Ketti Frings]]
+** ''[[How Green Was My Valley (film)|How Green Was My Valley]]''&nbsp;– [[Philip Dunne (writer)|Philip Dunne]], based on [[How Green Was My Valley (novel)|the novel]] by [[Richard Llewellyn]]
+** ''[[The Little Foxes (film)|The Little Foxes]]''&nbsp;– [[Lillian Hellman]], based on [[The Little Foxes|the play]] by Lillian Hellman
+** ''[[The Maltese Falcon (1941 film)|The Maltese Falcon]]''&nbsp;– [[John Huston]], based on [[The Maltese Falcon (novel)|the novel]] by [[Dashiell Hammett]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Churchill's Island]]''&nbsp;– [[National Film Board of Canada]] and [[United Artists]]'''
+** ''[[Adventure in the Bronx]]''&nbsp;– Film Associates
+** ''[[Bomber: A Defense Report on Film]]''&nbsp;– U.S. Office for Emergency Management Film Unit and Motion Picture Committee Cooperating for National Defense
+** ''[[Christmas Under Fire]]''&nbsp;– British Ministry of Information and [[Warner Bros.]]
+** ''[[A Letter from Home (film)|A Letter from Home]]''&nbsp;– British Ministry of Information and [[United Artists]]
+** ''[[Life of a Thoroughbred]]''&nbsp;– Truman Talley and [[20th Century Fox]]
+** ''[[Norway in Revolt]]''&nbsp;– ''[[The March of Time]]'' and [[RKO Radio]]
+** ''[[A Place to Live (1941 film)|A Place to Live]]''&nbsp;– [[Philadelphia Housing Authority]] and Philadelphia Housing Association
+** ''[[Russian Soil]]''&nbsp;– [[Amkino]]
+** ''[[Soldiers of the Sky]]''&nbsp;– Truman Talley and [[20th Century Fox]]
+** ''[[Warclouds in the Pacific|War Clouds in the Pacific]]''&nbsp;– [[National Film Board of Canada]] and [[MGM]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[Of Pups and Puzzles]]''&nbsp;– [[MGM]]'''
+** ''[[Army Champions]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]] and [[MGM]]
+** ''[[Beauty and the Beach (film)|Beauty and the Beach]]''&nbsp;– [[Paramount Pictures|Paramount]]
+** ''[[Down on the Farm (1941 film)|Down on the Farm]]''&nbsp;– [[Paramount Pictures|Paramount]]
+** ''[[Forty Boys and a Song]]''&nbsp;– [[Warner Bros.]]
+** ''[[Kings of the Turf]]''&nbsp;– [[Warner Bros.]]
+** ''[[Sagebrush and Silver]]''&nbsp;– [[20th Century Fox]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[Main Street on the March!]]''&nbsp;– [[Metro-Goldwyn-Mayer]]'''
+** ''[[Alive in the Deep]]''&nbsp;– Woodard Productions, Inc.
+** ''[[Forbidden Passage]]''&nbsp;– Metro-Goldwyn-Mayer
+** ''[[The Gay Parisian]]''&nbsp;– [[Warner Bros.]]
+** ''[[The Tanks Are Coming (1941 film)|The Tanks Are Coming]]''&nbsp;– [[U.S. Army]] and Warner Bros.
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Lend a Paw]]''&nbsp;– [[Walt Disney Productions]] and [[RKO Radio]]'''
+** ''Boogie Woogie Bugle Boy of Company B''&nbsp;– [[Walter Lantz Productions]] and [[Universal Pictures|Universal]]
+** ''[[Hiawatha's Rabbit Hunt]]''&nbsp;– [[Leon Schlesinger]] and [[Warner Bros.]]
+** ''How War Came''&nbsp;– [[Columbia Pictures|Columbia]]
+** ''[[The Night Before Christmas (1941 film)|The Night Before Christmas]]''&nbsp;– [[MGM]]
+** ''[[Rhapsody in Rivets]]''&nbsp;– [[Leon Schlesinger]] and Warner Bros.
+** ''Rhythm in the Ranks''&nbsp;– George Pal Productions and [[Paramount Pictures|Paramount]]
+** ''[[The Rookie Bear]]''&nbsp;– MGM
+** ''[[Superman (1941 film)|Superman]]''&nbsp;– [[Fleischer Studios]] and Paramount
+** ''[[Truant Officer Donald]]''&nbsp;– Walt Disney Productions and RKO Radio
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic Picture)]]}}
+*'''''[[The Devil and Daniel Webster (film)|All That Money Can Buy]]''&nbsp;– [[Bernard Herrmann]]'''
+** ''[[Back Street (1941 film)|Back Street]]''&nbsp;– [[Frank Skinner (composer)|Frank Skinner]]
+** ''[[Ball of Fire]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[Cheers for Miss Bishop]]''&nbsp;– [[Edward Ward (composer)|Edward Ward]]
+** ''[[Citizen Kane]]''&nbsp;– Bernard Herrmann
+** ''[[Dr. Jekyll and Mr. Hyde (1941 film)|Dr. Jekyll and Mr. Hyde]]''&nbsp;– [[Franz Waxman]]
+** ''[[Hold Back the Dawn]]''&nbsp;– [[Victor Young]]
+** ''[[How Green Was My Valley (film)|How Green Was My Valley]]''&nbsp;– Alfred Newman
+** ''[[King of the Zombies]]''&nbsp;– [[Edward J. Kay]]
+** ''[[Ladies in Retirement]]''&nbsp;– [[Morris Stoloff]] and [[Ernst Toch]]
+** ''[[The Little Foxes (film)|The Little Foxes]]''&nbsp;– [[Meredith Willson]]
+** ''[[Lydia (film)|Lydia]]''&nbsp;– [[Miklós Rózsa]]
+** ''[[Mercy Island]]''&nbsp;– [[Cy Feuer]] and [[Walter Scharf]]
+** ''[[Sergeant York (film)|Sergeant York]]''&nbsp;– [[Max Steiner]]
+** ''[[So Ends Our Night]]''&nbsp;– [[Louis Gruenberg]]
+** ''[[Sundown (1941 film)|Sundown]]''&nbsp;– Miklós Rózsa
+** ''[[Suspicion (1941 film)|Suspicion]]''&nbsp;– Franz Waxman
+** ''[[Tanks a Million]]''&nbsp;– [[Edward Ward (composer)|Edward Ward]]
+** ''[[That Uncertain Feeling (film)|That Uncertain Feeling]]''&nbsp;– [[Werner R. Heymann]]
+** ''[[This Woman is Mine]]''&nbsp;– [[Richard Hageman]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*'''''[[Dumbo]]''&nbsp;– [[Frank Churchill]] and [[Oliver Wallace]]'''
+** ''[[All-American Co-ed|All-American Co-Ed]]''&nbsp;– [[Edward Ward (composer)|Edward Ward]]
+** ''[[Birth of the Blues]]''&nbsp;– [[Robert E. Dolan|Robert Emmett Dolan]]
+** ''[[Buck Privates]]''&nbsp;– [[Charles Previn]]
+** ''[[The Chocolate Soldier (film)|The Chocolate Soldier]]''&nbsp;– [[Herbert Stothart]] and [[Bronisław Kaper]]
+** ''[[Ice-Capades]]''&nbsp;– [[Cy Feuer]]
+** ''[[The Strawberry Blonde]]''&nbsp;– [[Heinz Roemheld]]
+** ''[[Sun Valley Serenade]]''&nbsp;– [[Emil Newman]]
+** ''[[Sunny (1941 film)|Sunny]]''&nbsp;– [[Anthony Collins (composer)|Anthony Collins]]
+** ''[[You'll Never Get Rich]]''&nbsp;– [[Morris Stoloff]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[The Last Time I Saw Paris (song)|The Last Time I Saw Paris]]" from ''[[Lady Be Good (1941 film)|Lady Be Good]]''&nbsp;–  Music by [[Jerome Kern]]; Lyrics by [[Oscar Hammerstein II]]'''
+** "[[Baby Mine (song)|Baby Mine]]" from ''[[Dumbo]]''&nbsp;– Music by [[Frank Churchill]]; Lyrics by [[Ned Washington]]
+** "Be Honest With Me" from ''[[Ridin' on a Rainbow]]''&nbsp;– Music and Lyrics by [[Gene Autry]] and [[Fred Rose (songwriter)|Fred Rose]]
+** "[[Blues in the Night]]" from ''[[Blues in the Night (film)|Blues in the Night]]''&nbsp;– Music by [[Harold Arlen]]; Lyrics by [[Johnny Mercer]]
+** "[[Boogie Woogie Bugle Boy|Boogie Woogie Bugle Boy of Company B]]" from ''[[Buck Privates]]''&nbsp;– Music by [[Hughie Prince|Hugh Prince]]; Lyrics by [[Don Raye]]
+** "[[Chattanooga Choo Choo]]" from ''[[Sun Valley Serenade]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Mack Gordon]]
+** "[[Dolores (song)|Dolores]]" from ''[[Las Vegas Nights]]''&nbsp;– Music by [[Louis Alter]]; Lyrics by [[Frank Loesser]]
+** "Out of the Silence" from ''[[All-American Co-ed]]''&nbsp;– Music and Lyrics by Lloyd B. Norlin
+** "Since I Kissed My Baby Goodbye" from ''[[You'll Never Get Rich]]''&nbsp;– Music and Lyrics by [[Cole Porter]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[That Hamilton Woman]]''&nbsp;– [[Jack Whitney]]'''
+** ''[[Appointment for Love]]''&nbsp;– [[Bernard B. Brown]]
+** ''[[Ball of Fire]]''&nbsp;– [[Thomas T. Moulton]]
+** ''[[The Chocolate Soldier (film)|The Chocolate Soldier]]''&nbsp;– [[Douglas Shearer]]
+** ''[[Citizen Kane]]''&nbsp;– [[John O. Aalberg]]
+** ''[[The Devil Pays Off]]''&nbsp;– [[Charles L. Lootens]]
+** ''[[How Green Was My Valley (film)|How Green Was My Valley]]''&nbsp;– [[Edmund H. Hansen|E. H. Hansen]]
+** ''[[The Men in Her Life]]''&nbsp;– [[John P. Livadary]]
+** ''[[Sergeant York (film)|Sergeant York]]''&nbsp;– [[Nathan Levinson]]
+** ''[[Skylark (1941 film)|Skylark]]''&nbsp;– [[Loren L. Ryder]]
+** ''[[Topper Returns]]''&nbsp;– [[Elmer Raguse]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[How Green Was My Valley (film)|How Green Was My Valley]]''&nbsp;– Art Direction: [[Richard Day (art director)|Richard Day]] and [[Nathan Juran|Nathan H. Juran]]; Interior Decoration: [[Thomas Little]]'''
+** ''[[Citizen Kane]]''&nbsp;– Art Direction: [[Perry Ferguson]] and [[Van Nest Polglase]]; Interior Decoration: [[A. Roland Fields|Al Fields]] and [[Darrell Silvera]]
+** ''[[The Flame of New Orleans]]''&nbsp;– Art Direction: [[Martin Obzina]] and [[Jack Otterson]]; Interior Decoration: [[Russell A. Gausman]]
+** ''[[Hold Back the Dawn]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Robert Usher]]; Interior Decoration: [[Samuel M. Comer]]
+** ''[[Ladies in Retirement]]''&nbsp;– Art Direction: [[Lionel Banks]]; Interior Decoration: [[George Montgomery (set decorator)|George Montgomery]]
+** ''[[The Little Foxes (film)|The Little Foxes]]''&nbsp;– Art Direction: [[Stephen Goosson]]; Interior Decoration: [[Howard Bristol]]
+** ''[[Sergeant York (film)|Sergeant York]]''&nbsp;– Art Direction: [[John Hughes (art director)|John Hughes]]; Interior Decoration: [[Fred M. MacLean]]
+** ''[[The Son of Monte Cristo]]''&nbsp;– Art Direction: [[John DuCasse Schulze]]; Interior Decoration: [[Edward G. Boyle]]
+** ''[[Sundown (1941 film)|Sundown]]''&nbsp;– Art Direction: [[Alexander Golitzen]]; Interior Decoration: [[Richard Irvine]]
+** ''[[That Hamilton Woman]]''&nbsp;– Art Direction: [[Vincent Korda]]; Interior Decoration: [[Julia Heron]]
+** ''[[When Ladies Meet (1941 film)|When Ladies Meet]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Randall Duell]]; Interior Decoration: [[Edwin B. Willis]]
+** <s>''[[Sis Hopkins (1941 film)|Sis Hopkins]]'' &nbsp;– N/A</s> (nomination withdrawn by production company)
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[Blossoms in the Dust]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Urie McCleary]]; Interior Decoration: [[Edwin B. Willis]]'''
+** ''[[Blood and Sand (1941 film)|Blood and Sand]]''&nbsp;– Art Direction: [[Richard Day (art director)|Richard Day]] and [[Joseph C. Wright]]; Interior Decoration: [[Thomas Little]]
+** ''[[Louisiana Purchase (film)|Louisiana Purchase]]''&nbsp;– Art Direction: [[Raoul Pene Du Bois]]; Interior Decoration: [[Stephen Seymour]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[How Green Was My Valley (film)|How Green Was My Valley]]''&nbsp;– [[Arthur Miller (cinematographer)|Arthur Miller]]'''
+** ''[[The Chocolate Soldier (film)|The Chocolate Soldier]]''&nbsp;– [[Karl Freund]]
+** ''[[Citizen Kane]]''&nbsp;– [[Gregg Toland]]
+** ''[[Dr. Jekyll and Mr. Hyde (1941 film)|Dr. Jekyll and Mr. Hyde]]''&nbsp;– [[Joseph Ruttenberg]]
+** ''[[Here Comes Mr. Jordan]]''&nbsp;– [[Joseph Walker (cinematographer)|Joseph Walker]]
+** ''[[Hold Back the Dawn]]''&nbsp;– [[Leo Tover]]
+** ''[[Sergeant York (film)|Sergeant York]]''&nbsp;– [[Sol Polito]]
+** ''[[Sun Valley Serenade]]''&nbsp;– [[Edward Cronjager]]
+** ''[[Sundown (1941 film)|Sundown]]''&nbsp;– [[Charles Lang]]
+** ''[[That Hamilton Woman]]''&nbsp;– [[Rudolph Maté]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[Blood and Sand (1941 film)|Blood and Sand]]''&nbsp;– [[Ernest Palmer (American cinematographer)|Ernest Palmer]] and [[Ray Rennahan]]'''
+** ''[[Aloma of the South Seas (1941 film)|Aloma of the South Seas]]''&nbsp;– [[Wilfred M. Cline]], [[Karl Struss]], and William Snyder
+** ''[[Billy the Kid (1941 film)|Billy the Kid]]''&nbsp;– [[William V. Skall]] and [[Leonard Smith (cinematographer)|Leonard Smith]]
+** ''[[Blossoms in the Dust]]''&nbsp;– [[Karl Freund]] and [[W. Howard Greene]]
+** ''[[Dive Bomber (film)|Dive Bomber]]''&nbsp;– [[Bert Glennon]]
+** ''[[Louisiana Purchase (film)|Louisiana Purchase]]''&nbsp;– [[Harry Hallenberger]] and [[Ray Rennahan]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Sergeant York (film)|Sergeant York]]''&nbsp;– [[William Holmes (film editor)|William Holmes]]'''
+** ''[[Citizen Kane]]''&nbsp;– [[Robert Wise]]
+** ''[[Dr. Jekyll and Mr. Hyde (1941 film)|Dr. Jekyll and Mr. Hyde]]''&nbsp;– [[Harold F. Kress]]
+** ''[[How Green Was My Valley (film)|How Green Was My Valley]]''&nbsp;– [[James B. Clark (director)|James B. Clark]]
+** ''[[The Little Foxes (film)|The Little Foxes]]''&nbsp;– [[Daniel Mandell]]
+|-
+| colspan="2" valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*'''''[[I Wanted Wings]]''&nbsp;– Photographic Effects [[Farciot Edouart]] and [[Gordon Jennings]]; Sound Effects: [[Louis Mesenkop]]'''
+** ''[[Aloma of the South Seas (1941 film)|Aloma of the South Seas]]''&nbsp;– Photographic Effects: Farciot Edouart and Gordon Jennings; Sound Effects: Louis Mesenkop
+** ''[[Flight Command]]''&nbsp;– Photographic Effects: [[A. Arnold Gillespie]]; Sound Effects: [[Douglas Shearer]]
+** ''[[The Invisible Woman (1940 film)|The Invisible Woman]]''&nbsp;– Photographic Effects: [[John P. Fulton]]; Sound Effects: [[John Hall (sound editor)|John Hall]]
+** ''[[The Sea Wolf (1941 film)|The Sea Wolf]]''&nbsp;– Photographic Effects: [[Byron Haskin]]; Sound Effects: [[Nathan Levinson]]
+** ''[[That Hamilton Woman]]''&nbsp;– Photographic Effects: [[Lawrence W. Butler]]; Sound Effects: [[William H. Wilmarth]]
+** ''[[Topper Returns]]''&nbsp;– Photographic Effects: [[Roy Seawright]]; Sound Effects: [[Elmer Raguse]]
+** ''[[A Yank in the R.A.F.]]''&nbsp;– Photographic Effects: [[Fred Sersen]]; Sound Effects: [[Edmund H. Hansen]]
+** <s>''[[Dive Bomber (film)|Dive Bomber]]''&nbsp;– Photographic Effects: Byron Haskin; Sound Effects: Nathan Levinson</s> (replaced)<ref>{{cite web|title=Academy Awards database: Dive Bomber search results |website=Academy of Motion Picture Arts and Sciences |url=https://awardsdatabase.oscars.org/search/getresults?query=%7B%22FilmTitle%22%3A%22Dive%20Bomber%22%2C%22Sort%22%3A%222-Film%20Title-Alpha%22%2C%22AwardShowNumberFrom%22%3A0%2C%22AwardShowNumberTo%22%3A0%2C%22Search%22%3A30%7D}}</ref>
+|-
+|}
+
+===Special awards===
+* To [[Rey Scott]] for his extraordinary achievement in producing ''[[Kukan]]'', the film record of China's struggle, including its photography with a 16mm camera under the most difficult and dangerous conditions.
+* To The [[Ministry of Information (United Kingdom)|British Ministry of Information]] for its vivid and dramatic presentation of the heroism of the RAF in the documentary film, ''[[Target for Tonight]]''.
+* To [[Leopold Stokowski]] and his associates for their unique achievement in the creation of a new form of visualized music in Walt Disney's production, ''[[Fantasia (1940 film)|Fantasia]]'', thereby widening the scope of the motion picture as entertainment and as an art form.
+* To [[Walt Disney]], [[William Garity]], John N. A. Hawkins and the RCA Manufacturing Company for their outstanding contribution to the advancement of the use of sound in motion pictures through the production of ''[[Fantasia (1940 film)|Fantasia]]''.
+
+===Irving G. Thalberg Memorial Award===
+*[[Walt Disney]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 11 
+| ''[[Sergeant York (film)|Sergeant York]]''
+|- 
+| rowspan="1" style="text-align:center" | 10 
+| ''[[How Green Was My Valley (film)|How Green Was My Valley]]''
+|-
+| rowspan="2" style="text-align:center" | 9
+| ''[[Citizen Kane]]''
+|-
+| ''[[The Little Foxes (film)|The Little Foxes]]''
+|-
+| rowspan="1" style="text-align:center" | 7 
+| ''[[Here Comes Mr. Jordan]]''
+|-
+| rowspan="1" style="text-align:center" | 6
+| ''[[Hold Back the Dawn]]''
+|-
+| rowspan="3" style="text-align:center" | 4
+| ''[[Ball of Fire]]''
+|-
+| ''[[Blossoms in the Dust]]''
+|-
+| ''[[That Hamilton Woman]]''
+|-
+| rowspan="6" style="text-align:center" | 3
+| ''[[The Chocolate Soldier (film)|The Chocolate Soldier]]''
+|-
+| ''[[Dr. Jekyll and Mr. Hyde (1941 film)|Dr. Jekyll and Mr. Hyde]]''
+|-
+| ''[[The Maltese Falcon (1941 film)|The Maltese Falcon]]''
+|-
+| ''[[Sun Valley Serenade]]''
+|-
+| ''[[Sundown (1941 film)|Sundown]]''
+|-
+| ''[[Suspicion (1941 film)|Suspicion]]''
+|-
+| rowspan="11" style="text-align:center" | 2
+| ''[[All-American Co-Ed]]''
+|-
+| ''[[The Devil and Daniel Webster (film)|All That Money Can Buy]]''
+|-
+| ''[[Aloma of the South Seas (1941 film)|Aloma of the South Seas]]''
+|-
+| ''[[Blood and Sand (1941 film)|Blood and Sand]]''
+|-
+| ''[[Buck Privates]]''
+|-
+| ''[[The Devil and Miss Jones]]''
+|-
+| ''[[Dumbo]]''
+|-
+| ''[[Ladies in Retirement]]''
+|-
+| ''[[Louisiana Purchase (film)|Louisiana Purchase]]''
+|-
+| ''[[Topper Returns]]''
+|-
+|''[[You'll Never Get Rich]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards{{efn|Not counting the two non-competitive Special Awards for ''Fantasia''.}}
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" |5
+|''[[How Green Was My Valley (film)|How Green Was My Valley]]''
+|-
+| rowspan=2, style="text-align:center" | 2
+| ''[[Here Comes Mr. Jordan]]''
+|-
+| ''[[Sergeant York (film)|Sergeant York]]''
+|-
+|}
+
+{{col-float-end}}
+
+== Ceremony information ==
+This year marked the debut of the [[Academy Award for Best Documentary Feature]] as Special Awards. From the next ceremony it will be awarded competitively each year, with the exception of 1946.
+
+[[Judy Garland]] sang the unofficial national anthem of the United States at the time, "[[My Country, 'Tis of Thee|My Country 'Tis of Thee]]".
+
+[[Bette Davis]] had sought to open the ceremony to the public for the benefit of the [[American Red Cross]], but was turned down and she ended up resigning from her post as President of AMPAS over this.<ref name="Oscars '41 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/834/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=835 |isbn=0-385-04060-1}}</ref>
+
+A portion of the ceremony was broadcast by [[CBS Radio]].<ref name="Dunning">{{cite book |url=https://books.google.com/books?id=Fi5wPDBiGfMC&dq=%22The+Academy+Awards+Show%22&pg=PA4 |last=Dunning| first=John| author-link=John Dunning (detective fiction author) | title=On the Air: The Encyclopedia of Old-Time Radio| date=1998| publisher=Oxford University Press| location=New York, NY| isbn=978-0-19-507678-3| pages=4–5 | edition=Revised| access-date=2019-09-10}}</ref>
+
+==See also==
+*[[1941 in film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 14}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1941 film awards]]
+[[Category:1942 in American cinema]]
+[[Category:CBS Radio programs]]
+[[Category:1942 in Los Angeles]]
+[[Category:February 1942 in the United States]]

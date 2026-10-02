@@ -1,14 +1,19 @@
 """Native-TV HTTP composition; domain decisions stay in TV services."""
 import json
-from flask import jsonify, request
+from flask import Response, jsonify, request
 
 from services.player_catalog import PlayerMediaError
 from services.qbittorrent import QBittorrentError
 from services.movie_relationships import MovieRelationships
+from services.tv_bulk_actions import TVBulkActions
 
 
 def register_tv_routes(app, services, enabled, player_manager, acquisition=None, monitoring=None, config=None):
     tv_relationships = MovieRelationships()
+    def bulk_actions():
+        owners = services()
+        return TVBulkActions(owners['repository'], owners['ingestion'].roots,
+            lambda: acquisition().manager().jobs.all(), player_manager.active_media_path)
     @app.get('/api/tv/capabilities')
     def tv_capabilities():
         return jsonify({'enabled': bool(enabled())})
@@ -149,6 +154,64 @@ def register_tv_routes(app, services, enabled, player_manager, acquisition=None,
             return {'watchlisted': watched}
         return action(update)
 
+    @app.get('/api/tv/lists')
+    def tv_lists():
+        return action(lambda: services()['read'].tv_lists(list_id=request.args.get('list_id'),
+            query=request.args.get('query', ''), page=request.args.get('page', 1), page_size=request.args.get('page_size', 40),
+            status=request.args.get('status', 'all')))
+
+    @app.post('/api/tv/lists')
+    def tv_create_list():
+        return action(lambda: services()['repository'].create_tv_list((request.get_json(silent=True) or {})['name']))
+
+    @app.patch('/api/tv/lists/<list_id>')
+    def tv_rename_list(list_id):
+        return action(lambda: services()['repository'].rename_tv_list(list_id, (request.get_json(silent=True) or {})['name']))
+
+    @app.delete('/api/tv/lists/<list_id>')
+    def tv_delete_list(list_id):
+        return action(lambda: services()['repository'].delete_tv_list(list_id))
+
+    @app.post('/api/tv/lists/<list_id>/series')
+    def tv_add_list_series(list_id):
+        return action(lambda: services()['repository'].set_tv_list_members(list_id,
+            (request.get_json(silent=True) or {})['series_ids'], True))
+
+    @app.delete('/api/tv/lists/<list_id>/series')
+    def tv_remove_list_series(list_id):
+        return action(lambda: services()['repository'].set_tv_list_members(list_id,
+            (request.get_json(silent=True) or {})['series_ids'], False))
+
+    @app.post('/api/tv/series/<int:series_id>/watched')
+    def tv_series_watched(series_id):
+        def update():
+            watched = (request.get_json(silent=True) or {}).get('watched')
+            if not isinstance(watched, bool):
+                raise ValueError('Watched must be true or false')
+            return services()['repository'].set_series_watched(series_id, watched)
+        return action(update)
+
+    @app.get('/api/tv/series/<int:series_id>/poster')
+    def tv_series_poster(series_id):
+        poster = services()['repository'].poster_override(series_id)
+        if not poster:
+            return jsonify({'error': 'TV poster override not found'}), 404
+        return Response(poster['image'], mimetype=poster['mime'], headers={'Cache-Control': 'private, max-age=3600'})
+
+    @app.post('/api/tv/series/<int:series_id>/poster')
+    def tv_set_series_poster(series_id):
+        def update():
+            uploaded = request.files.get('image')
+            if not uploaded:
+                raise ValueError('Choose a TV poster image')
+            image = uploaded.stream.read(5_000_001)
+            return services()['repository'].save_poster_override(series_id, image, uploaded.mimetype)
+        return action(update)
+
+    @app.delete('/api/tv/series/<int:series_id>/poster')
+    def tv_reset_series_poster(series_id):
+        return action(lambda: services()['repository'].reset_poster_override(series_id))
+
     @app.get('/api/tv/series/<int:series_id>')
     def tv_series_detail(series_id):
         def read():
@@ -169,7 +232,8 @@ def register_tv_routes(app, services, enabled, player_manager, acquisition=None,
 
     @app.get('/api/tv/series/<int:series_id>/selection')
     def tv_selection(series_id):
-        return action(lambda: {'items': season_rows(series_id, int(request.args['season']))})
+        return action(lambda: {'items': season_rows(series_id, int(request.args['season']))
+            if 'season' in request.args else services()['repository'].episodes(series_id)})
 
     def season_rows(series_id, season):
         owners = services()
@@ -213,6 +277,44 @@ def register_tv_routes(app, services, enabled, player_manager, acquisition=None,
     def tv_scan(series_id):
         data = request.get_json(silent=True) or {}
         return action(lambda: {'items': services()['ingestion'].scan(series_id, data['folder'])})
+
+    @app.get('/api/tv/library/inventory')
+    def tv_library_inventory():
+        return action(lambda: services()['ingestion'].inventory())
+
+    @app.get('/api/tv/library/discovery')
+    def tv_library_discovery():
+        return action(lambda: services()['discovery'].snapshot())
+
+    @app.post('/api/tv/library/discovery')
+    def tv_library_discover_now():
+        return action(lambda: services()['discovery'].run())
+
+    @app.get('/api/tv/maintenance')
+    def tv_maintenance():
+        return action(lambda: services()['read'].maintenance(query=request.args.get('query', ''),
+            page=request.args.get('page', 1), page_size=request.args.get('page_size', 50)))
+
+    @app.post('/api/tv/maintenance/exclusions')
+    def tv_exclude():
+        data = request.get_json(silent=True) or {}
+        return action(lambda: services()['repository'].exclude_path(data['path'], data['kind'], data['reason']))
+
+    @app.delete('/api/tv/maintenance/exclusions')
+    def tv_unexclude():
+        data = request.get_json(silent=True) or {}
+        return action(lambda: services()['repository'].remove_exclusion(data['path']))
+
+    @app.post('/api/tv/library/assignments')
+    def tv_library_approve():
+        def approve():
+            data = request.get_json(silent=True) or {}
+            return services()['ingestion'].approve(data['path'], data['kind'], data['series_id'])
+        return action(approve)
+
+    @app.post('/api/tv/library/scan')
+    def tv_library_scan():
+        return action(lambda: services()['ingestion'].scan_approved())
 
     @app.post('/api/tv/series/<int:series_id>/plex-scan')
     def tv_plex_scan(series_id):
@@ -306,6 +408,91 @@ def register_tv_routes(app, services, enabled, player_manager, acquisition=None,
     def tv_monitor_once():
         data = request.get_json(silent=True) or {}
         return action(lambda: {'items': monitoring().run_once(limit=data.get('limit', 10), submit=data.get('submit') is True)})
+
+    @app.get('/api/tv/tasks')
+    def tv_tasks():
+        return action(lambda: monitoring().list_tasks(request.args.get('series_id'),
+            history=request.args.get('history') == 'true', page=request.args.get('page', 1)))
+
+    @app.post('/api/tv/series/<int:series_id>/tasks/preview')
+    def tv_task_preview(series_id):
+        data = request.get_json(silent=True) or {}
+        return action(lambda: monitoring().preview(series_id, **{key: data[key] for key in
+            ('scope','action','season','selected_episodes','profile_id') if key in data}))
+
+    @app.post('/api/tv/series/<int:series_id>/tasks')
+    def tv_task_save(series_id):
+        data = request.get_json(silent=True) or {}
+        return action(lambda: monitoring().save_task(series_id, **{key: data[key] for key in
+            ('scope','action','season','selected_episodes','profile_id','kind') if key in data}))
+
+    @app.post('/api/tv/tasks/<task_id>/start')
+    def tv_task_start(task_id):
+        return action(lambda: monitoring().start_task(task_id))
+
+    @app.post('/api/tv/tasks/<task_id>/finish-season')
+    def tv_task_finish_season(task_id):
+        return action(lambda: monitoring().finish_season(task_id))
+
+    @app.get('/api/tv/tasks/<task_id>/cancel/preview')
+    def tv_task_cancel_preview(task_id):
+        return action(lambda: monitoring().cancel_preview(task_id))
+
+    @app.post('/api/tv/tasks/<task_id>/cancel')
+    def tv_task_cancel(task_id):
+        data = request.get_json(silent=True) or {}
+        return action(lambda: monitoring().cancel_task(task_id, data['mode'], data['token']))
+
+    @app.post('/api/tv/bulk/delete/preview')
+    def tv_bulk_delete_preview():
+        data = request.get_json(silent=True) or {}
+        return action(lambda: bulk_actions().preview_delete(data['series_ids']))
+
+    @app.post('/api/tv/bulk/delete')
+    def tv_bulk_delete():
+        data = request.get_json(silent=True) or {}
+        return action(lambda: bulk_actions().delete(data['series_ids'], data['token']))
+
+    @app.get('/api/tv/bulk/history')
+    def tv_bulk_history():
+        return action(lambda: bulk_actions().history(request.args.get('page', 1)))
+
+    @app.post('/api/tv/bulk/download/preview')
+    def tv_bulk_download_preview():
+        data = request.get_json(silent=True) or {}
+        def preview():
+            ids = sorted(set(int(value) for value in data['series_ids']))
+            if not ids or len(ids) > 100:
+                raise ValueError('Select 1 to 100 TV shows')
+            return {'items': [monitoring().preview(identity, scope='series', action='missing',
+                profile_id=data.get('profile_id', 'safe-hd')) for identity in ids]}
+        return action(preview)
+
+    @app.post('/api/tv/bulk/download')
+    def tv_bulk_download():
+        data = request.get_json(silent=True) or {}
+        def start():
+            ids = sorted(set(int(value) for value in data['series_ids']))
+            if not ids or len(ids) > 100:
+                raise ValueError('Select 1 to 100 TV shows')
+            previews = [monitoring().preview(identity, scope='series', action='missing',
+                profile_id=data.get('profile_id', 'safe-hd')) for identity in ids]
+            if any(not row['metadata_complete'] or row['counts']['review'] for row in previews):
+                raise ValueError('Complete metadata and local file review are required before bulk Download')
+            tasks = [monitoring().save_task(identity, kind='bulk', profile_id=data.get('profile_id', 'safe-hd'))
+                     for identity in ids if any(row['series_id'] == identity and row['target_episode_ids'] for row in previews)]
+            return {'tasks': [monitoring().start_task(task['id']) for task in tasks], 'previews': previews}
+        return action(start)
+
+    @app.get('/api/notifications')
+    def notification_history():
+        return action(lambda: acquisition().acquisition.notifications(query=request.args.get('query', ''),
+            page=request.args.get('page', 1)))
+
+    @app.post('/api/notifications/read')
+    def notification_read():
+        data = request.get_json(silent=True) or {}
+        return action(lambda: acquisition().acquisition.mark_notifications_read(data.get('ids', [])))
 
     @app.post('/api/tv/episodes/<int:episode_id>/hide-progress')
     def tv_hide_progress(episode_id):

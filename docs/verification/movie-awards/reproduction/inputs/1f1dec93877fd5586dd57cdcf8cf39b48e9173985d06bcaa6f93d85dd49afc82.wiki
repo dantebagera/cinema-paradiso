@@ -1,0 +1,416 @@
+{{oscars short description|films-year=1972}}
+{{Use American English|date=March 2020}}
+{{Use mdy dates|date=March 2020}}
+{{Infobox film awards
+| number = 45
+| award = Academy Awards
+| image = 45th Academy Awards.jpg
+| date = March 27, 1973
+| site = [[Dorothy Chandler Pavilion]]<br>[[Los Angeles]], [[California]]
+| host = [[Carol Burnett]],<br /> [[Michael Caine]],<br /> [[Charlton Heston]]<br /> and [[Rock Hudson]]
+| producer = [[Howard W. Koch]]
+| director = [[Marty Pasetta]]
+| best_picture = ''[[The Godfather]]''
+| most_wins = ''[[Cabaret (1972 film)|Cabaret]]'' (8)
+| most_nominations = ''Cabaret'' and ''The Godfather'' (10)
+| network = [[NBC]]
+| duration = 2 hours, 38 minutes
+| last = 44th
+| next = 46th
+}}
+The '''45th Academy Awards''' were presented Tuesday, March 27, 1973, at the [[Dorothy Chandler Pavilion]] in [[Los Angeles]], [[California]], honoring the best films of 1972. The ceremonies were presided over by [[Carol Burnett]], [[Michael Caine]], [[Charlton Heston]], and [[Rock Hudson]].
+
+The ceremony was marked by [[Marlon Brando]]'s boycott of the Oscars, and his sending of [[Sacheen Littlefeather]] to explain why he could not show up to collect his Best Actor award for ''[[The Godfather]]''; and by [[Charlie Chaplin]]'s only competitive Oscar win, for [[Academy Award for Best Original Score|Best Original Dramatic Score]] for his 20-year-old film ''[[Limelight (1952 film)|Limelight]]'', which was eligible because it did not screen in Los Angeles until 1972.<ref>{{cite news |author=Bruce Russell |agency=[[Reuters]] |title=Cabaret shades Godfather |url=https://news.google.com/newspapers?id=k_dUAAAAIBAJ&sjid=xjwNAAAAIBAJ&pg=3744,6146718 |newspaper=[[Leader-Post]]|location=[[Regina, Saskatchewan|Regina, Sask.]]|date=March 28, 1973 |access-date=June 9, 2013 |quote=The film, withdrawn from U.S. movie theatres in the bitter controversy over Chaplin's political views and private life, qualified by being released for the first time in Los Angeles last year.|via=[[Google News Archive]]}}</ref><ref>{{cite web|author=Bret Wood |publisher=TCM |url=https://www.tcm.com/this-month/article/29953 |title=Limelight |access-date=June 9, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130420051140/http://www.tcm.com/this-month/article.html?isPreview=&id=443505%7C29953&name=Limelight |archive-date=April 20, 2013 }}</ref> Prior to this ceremony, Chaplin had received 2 [[Academy Honorary Award|Academy Honorary Awards]]: in 1972 for his lifetime of work; and in 1929 (after having revoked his nominations for Best Director, Actor, and Writing (Original), thereby presenting him with [[1st Academy Awards#Honorary_Awards|a special award celebrating his multifaceted achievements]]).
+
+With eight wins for ''[[Cabaret (1972 film)|Cabaret]]'', adapted from the [[Broadway theatre|Broadway]] stage musical by [[Bob Fosse]], the film set a record for most Oscar prizes without winning [[Academy Award for Best Picture|Best Picture]]. Best Picture winner ''[[The Godfather]]'' received three Academy Awards.
+
+This year was the first time that two [[Black women|African American women]] received nominations for [[Academy Award for Best Actress|Best Actress]]: [[Cicely Tyson]] and [[Diana Ross]].<ref>{{cite news |newspaper=[[Toledo Blade]] |date=February 13, 1973 |access-date=June 16, 2013 |title='Godfather' Gets 11 Oscar Nominations |url=https://news.google.com/newspapers?id=Vc9OAAAAIBAJ&sjid=-AEEAAAAIBAJ&pg=7352,3061459 |author=Bruce Russell |agency=Reuter}}</ref> Minnelli accepted her Oscar despite a slight scrape she had incurred while riding a motorcycle. Ross was criticized for running a promotional ad campaign demanding that she win the Best Actress Oscar.<ref name="Oscars '72 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/846/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=846 |isbn=0-385-04060-1|author-link=David Wallechinsky|author-link2=Irving Wallace}}</ref> Meanwhile, [[Edward G. Robinson]], who died two months before the ceremony, became the second actor to receive his honorary Oscar [[Posthumous award|posthumously]], after [[Douglas Fairbanks]] (d. 1939) in 1940.
+
+This was also the first year when all Oscar winners were brought on stage at the end of the ceremony.<ref>{{YouTube|id=_8PPRhEws-0|title=John Wayne and the Academy Award Winners: 1973 Oscars|link=no}}</ref> The show drew a television audience of {{nowrap|85 million}} viewers.<ref>{{cite news |last1=Robinson |first1=Melia |title=The unbelievable story of Why Marlon Brando rejected his 1973 Oscar for 'The Godfather' |url=https://www.businessinsider.com/marlon-brando-rejected-godfather-oscar-2014-2 |access-date=1 June 2020 |work=[[Business Insider]] |date=February 27, 2014}}</ref><ref>{{cite AV media |people=[[Marlon Brando]], [[Dick Cavett]] |date=12 June 1973 |title=Marlon Brando on Rejecting His Oscar for 'The Godfather' |medium=television |url=https://www.youtube.com/watch?v=rcCKczj4aK4  |archive-url=https://ghostarchive.org/varchive/youtube/20211222/rcCKczj4aK4 |archive-date=2021-12-22 |url-status=live|access-date=30 May 2020 |format=video |time=0:49 |work=[[The Dick Cavett Show]] |location=United States}}{{cbignore}}</ref>
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Bob Fosse 1963 (cropped).jpg
+| caption1          = [[Bob Fosse]], Best Director winner
+| image2            = Marlon-Brando-in-Finland-1967 (cropped).jpg
+| caption2          = [[Marlon Brando]], Best Actor winner
+| image3            = Liza Minnelli Publicity 1973.jpg
+| caption3          = [[Liza Minnelli]], Best Actress winner
+| image4            = Joel Grey (1993) (cropped).jpg
+| caption4          = [[Joel Grey]], Best Supporting Actor winner
+| image5            = EHeckhart (crop and brighter).jpg
+| caption5          = [[Eileen Heckart]], Best Supporting Actress winner
+| image6            = Francis Ford Coppola -1976.jpg
+| caption6          = [[Francis Ford Coppola]], Best Screenplay Based on Material from Another Medium co-winner
+| image7            = Richard Williams animator.jpg
+| caption7          = [[Richard Williams (animator)|Richard Williams]], Best Animated Short Film winner
+| image8            = Charlie Chaplin (1965).jpg
+| caption8          = [[Charlie Chaplin]], Best Original Score (Dramatic) co-winner
+| image9            = Ralph Burns crop (William P. Gottlieb 00911).jpg
+| caption9          = [[Ralph Burns]], Best Score (Adaptation and Original Song) winner
+}}
+
+=== Awards ===
+Nominees were announced on February 12, 1973. Winners are listed first in '''boldface'''.<ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/|access-date=December 9, 2011|archive-url=https://web.archive.org/web/20120225213027/http://awardsdatabase.oscars.org/ampas_awards/index.jsp|archive-date=February 25, 2012|url-status=live}} Select "1972" in the "Award Year(s)" drop-down menu and press "Search".</ref><ref name="Oscars1973">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1973 |title=The 45th Academy Awards (1973) Nominees and Winners |access-date=August 28, 2011 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20140717051744/http://www.oscars.org/awards/academyawards/legacy/ceremony/45th-winners.html |archive-date=July 17, 2014 }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[The Godfather]]''&nbsp;– [[Albert S. Ruddy]], producer'''
+**''[[Cabaret (1972 film)|Cabaret]]''&nbsp;– [[Cy Feuer]], producer
+**''[[Deliverance]]''&nbsp;– [[John Boorman]], producer
+**''[[The Emigrants (1971 film)|The Emigrants]]''&nbsp;– [[Bengt Forslund]], producer
+**''[[Sounder (film)|Sounder]]''&nbsp;– [[Robert B. Radnitz]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Bob Fosse]]&nbsp;– ''[[Cabaret (1972 film)|Cabaret]]'''''
+**[[John Boorman]]&nbsp;– ''[[Deliverance]]''
+**[[Jan Troell]]&nbsp;– ''[[The Emigrants (1971 film)|The Emigrants]]''
+**[[Francis Ford Coppola]]&nbsp;– ''[[The Godfather]]''
+**[[Joseph L. Mankiewicz]]&nbsp;– ''[[Sleuth (1972 film)|Sleuth]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Marlon Brando]]&nbsp;– ''[[The Godfather]]'' as [[Vito Corleone]] ([[#Sacheen Littlefeather's appearance|declined]])'''
+**[[Michael Caine]]&nbsp;– ''[[Sleuth (1972 film)|Sleuth]]'' as Milo Tindle
+**[[Laurence Olivier]]&nbsp;– ''[[Sleuth (1972 film)|Sleuth]]'' as Andrew Wyke
+**[[Peter O'Toole]]&nbsp;– ''[[The Ruling Class (film)|The Ruling Class]]'' as Jack Gurney
+**[[Paul Winfield]]&nbsp;– ''[[Sounder (film)|Sounder]]'' as Nathan Lee Morgan
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Liza Minnelli]]&nbsp;– ''[[Cabaret (1972 film)|Cabaret]]'' as [[Sally Bowles]]'''
+**[[Diana Ross]]&nbsp;– ''[[Lady Sings the Blues (film)|Lady Sings the Blues]]'' as [[Billie Holiday]]
+**[[Maggie Smith]]&nbsp;– ''[[Travels with My Aunt (film)|Travels with My Aunt]]'' as Augusta Bertram
+**[[Cicely Tyson]]&nbsp;– ''[[Sounder (film)|Sounder]]'' as Rebecca Morgan
+**[[Liv Ullmann]]&nbsp;– ''[[The Emigrants (1971 film)|The Emigrants]]'' as Kristina Nilsson
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Joel Grey]]&nbsp;– ''[[Cabaret (1972 film)|Cabaret]]'' as the [[M.C.]]'''
+**[[Eddie Albert]]&nbsp;– ''[[The Heartbreak Kid (1972 film)|The Heartbreak Kid]]'' as Mr. Corcoran
+**[[James Caan]]&nbsp;– ''[[The Godfather]]'' as [[Sonny Corleone|Santino "Sonny" Corleone]]
+**[[Robert Duvall]]&nbsp;– ''[[The Godfather]]'' as [[Tom Hagen]]
+**[[Al Pacino]]&nbsp;– ''[[The Godfather]]'' as [[Michael Corleone]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Eileen Heckart]]&nbsp;– ''[[Butterflies Are Free]]'' as Mrs. Baker'''
+**[[Jeannie Berlin]]&nbsp;– ''[[The Heartbreak Kid (1972 film)|The Heartbreak Kid]]'' as Lila Kolodny
+**[[Geraldine Page]]&nbsp;– ''[[Pete 'n' Tillie]]'' as Gertrude Wilson 
+**[[Susan Tyrrell]]&nbsp;– ''[[Fat City (film)|Fat City]]'' as Oma
+**[[Shelley Winters]]&nbsp;– ''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]'' as Belle Rosen
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Based on Factual Material or Material Not Previously Published or Produced)]]}}
+*'''''[[The Candidate (1972 film)|The Candidate]]''&nbsp;– [[Jeremy Larner]]'''
+**''[[The Discreet Charm of the Bourgeoisie]]''&nbsp;– [[Luis Buñuel]] and [[Jean-Claude Carrière]]
+**''[[Lady Sings the Blues (film)|Lady Sings the Blues]]''&nbsp;– [[Chris Clark (singer)|Chris Clark]], [[Suzanne de Passe]] and Terence McCloy
+**''[[Murmur of the Heart]]''&nbsp;– [[Louis Malle]]
+**''[[Young Winston]]''&nbsp;– [[Carl Foreman]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*'''''[[The Godfather]]''&nbsp;– [[Francis Ford Coppola]] and [[Mario Puzo]] based on [[The Godfather (novel)|the novel]] by Puzo'''
+**''[[Cabaret (1972 film)|Cabaret]]''&nbsp;– [[Jay Presson Allen]] based on [[Cabaret (musical)|the musical]] by [[Fred Ebb]] and [[John Kander]] and the book by [[Joe Masteroff]]
+**''[[The Emigrants (1971 film)|The Emigrants]]''&nbsp;– [[Bengt Forslund]] and [[Jan Troell]] based on the novels ''[[The Emigrants (Swedish novel)|The Emigrants]]'' and ''[[Unto a Good Land]]'' by [[Vilhelm Moberg]]
+**''[[Pete 'n' Tillie]]''&nbsp;– [[Julius J. Epstein]] based on the story ''Witch's Milk'' by [[Peter De Vries]]
+**''[[Sounder (film)|Sounder]]''&nbsp;– [[Lonne Elder III]] based on [[Sounder (novel)|the novel]] by [[William H. Armstrong (author)|William H. Armstrong]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 45th Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[The Discreet Charm of the Bourgeoisie]]'' ([[List of French submissions for the Academy Award for Best Foreign Language Film|France]]) in [[French language|French]]&nbsp;– [[Luis Buñuel]]'''
+** ''[[The Dawns Here Are Quiet (1972 film)|The Dawns Here Are Quiet]]'' ([[List of Russian submissions for the Academy Award for Best Foreign Language Film|USSR]]) in [[Russian language|Russian]]&nbsp;– [[Stanislav Rostotsky]]
+** ''[[I Love You Rosa]]'' ([[List of Israeli submissions for the Academy Award for Best Foreign Language Film|Israel]]) in [[Hebrew language|Hebrew]]&nbsp;– [[Moshé Mizrahi]]
+** ''[[My Dearest Senorita]]'' ([[List of Spanish submissions for the Academy Award for Best Foreign Language Film|Spain]]) in [[Spanish language|Spanish]]&nbsp;– [[Jaime de Armiñán]]
+** ''[[The New Land (1972 film)|The New Land]]'' ([[List of Swedish submissions for the Academy Award for Best Foreign Language Film|Sweden]]) in [[Swedish language|Swedish]]&nbsp;– [[Jan Troell]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Marjoe]]''&nbsp;– [[Sarah Kernochan]] and [[Howard Smith (director)|Howard Smith]]'''
+**''[[Ape and Super-Ape]]''&nbsp;– [[Bert Haanstra]]
+**''[[Malcolm X (1972 film)|Malcolm X]]''&nbsp;– [[Arnold Perl]] ([[List of posthumous Academy Award winners and nominees|posthumously]]) and [[Marvin Worth]]
+**''[[Manson (film)|Manson]]''&nbsp;– [[Robert Hendrickson (director)|Robert Hendrickson]] and [[Laurence Merrick]]
+**''[[The Silent Revolution (1972 film)|The Silent Revolution]]''&nbsp;– Eckehard Munck
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[This Tiny World]]''&nbsp;– Charles Huguenot van der Linden and Martina Huguenot van der Linden'''
+**''[[Hundertwasser's Rainy Day]]''&nbsp;– [[Peter Schamoni]]
+**''[[K-Z]]''&nbsp;– Giorgio Treves
+**''[[Selling Out (film)|Selling Out]]''&nbsp;– Tadeusz Jaworski
+**''[[The Tide of Traffic]]''&nbsp;– Humphrey Swingler
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[Norman Rockwell's World... An American Dream]]''&nbsp;– Richard Barclay'''
+**''Frog Story''&nbsp;– Ray Gideon and Ron Satlof
+**''Solo''&nbsp;– David Adams
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Animated)]]}}
+*'''''[[A Christmas Carol (TV special)|A Christmas Carol]]''&nbsp;– [[Richard Williams (animator)|Richard Williams]]'''
+**''Kama Sutra Rides Again''&nbsp;– [[Bob Godfrey]]
+**''[[Tup Tup]]''&nbsp;– [[Nedeljko Dragić]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Dramatic Score)]]}}
+*'''''[[Limelight (1952 film)|Limelight]]''&nbsp;– [[Charlie Chaplin]], [[Raymond Rasch]] ([[List of posthumous Academy Award winners and nominees|posthumously]]) and [[Larry Russell]] ([[List of posthumous Academy Award winners and nominees|posthumously]])'''
+**''[[Images (film)|Images]]''&nbsp;– [[John Williams]]
+**''[[Napoleon and Samantha]]''&nbsp;– [[Buddy Baker (composer)|Buddy Baker]]
+**''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''&nbsp;– [[John Williams]]
+**''[[Sleuth (1972 film)|Sleuth]]''&nbsp;– [[John Addison]]
+**<s>''[[The Godfather]]'' – [[Nino Rota]]</s> (nomination revoked)<ref name=Godfather />
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring: Adaptation and Original Song Score)]]}}
+*'''''[[Cabaret (1972 film)|Cabaret]]''&nbsp;– Adaptated by [[Ralph Burns]]'''
+**''[[Lady Sings the Blues (film)|Lady Sings the Blues]]''&nbsp;– Adapted by [[Gil Askey]]
+**''[[Man of La Mancha (film)|Man of La Mancha]]''&nbsp;– Adapted by [[Laurence Rosenthal]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song -- Original for the Picture)]]}}
+* '''"[[The Morning After (Maureen McGovern song)|The Morning After]]" from ''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''&nbsp;– Music and Lyrics by [[Joel Hirschhorn]] and [[Al Kasha]]'''
+** "[[Ben (song)|Ben]]" from ''[[Ben (1972 film)|Ben]]''&nbsp;– Music by [[Walter Scharf]]; Lyrics by [[Don Black (lyricist)|Don Black]]
+** "Come Follow, Follow Me" from ''[[The Little Ark]]''&nbsp;– Music by [[Fred Karlin]]; Lyrics by Marsha Karlin
+** "Marmalade, Molasses & Honey" from ''[[The Life and Times of Judge Roy Bean]]''&nbsp;– Music by [[Maurice Jarre]]; Lyrics by [[Alan and Marilyn Bergman]]
+** "Strange Are the Ways of Love" from ''[[The Stepmother (1972 film)|The Stepmother]]''&nbsp;– Music by [[Sammy Fain]]; Lyrics by [[Paul Francis Webster]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[Cabaret (1972 film)|Cabaret]]''&nbsp;– [[David Hildyard (sound engineer)|David Hildyard]] and [[Robert Knudson]]'''
+** ''[[Butterflies Are Free]]''&nbsp;– [[Charles T. Knight]] and [[Arthur Piantadosi]]
+** ''[[The Candidate (1972 film)|The Candidate]]''&nbsp;– [[Gene Cantamessa]] and [[Richard Portman]]
+** ''[[The Godfather]]''&nbsp;– [[Charles Grenzbach|Bud Grenzbach]], [[Chris Newman (sound engineer)|Christopher Newman]] and [[Richard Portman]]
+** ''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''&nbsp;– [[Herman Lewis]] and [[Theodore Soderberg (1923–2012)|Theodore Soderberg]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Cabaret (1972 film)|Cabaret]]''&nbsp;– Art Direction: [[Hans Jürgen Kiebach]] and [[Rolf Zehetbauer]]; Set Decoration: [[Herbert Strabel]]'''
+**''[[Lady Sings the Blues (film)|Lady Sings the Blues]]''&nbsp;– Art Direction: [[Carl Anderson (art director)|Carl Anderson]]; Set Decoration: [[Reg Allen (set decorator)|Reg Allen]]
+**''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''&nbsp;– Art Direction: [[William J. Creber|William Creber]]; Set Decoration: [[Raphaël Bretton]]
+**''[[Travels with My Aunt (film)|Travels with My Aunt]]''&nbsp;– Art Direction and Set Decoration: [[John Box]], [[Robert W. Laing]] and [[Gil Parrondo]]
+**''[[Young Winston]]''&nbsp;– Art Direction: [[Donald M. Ashton]], [[Geoffrey Drake]], [[John Graysmark]] and [[William Hutchinson (art director)|William Hutchinson]]; Set Decoration: [[Peter James (set decorator)|Peter James]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Cabaret (1972 film)|Cabaret]]''&nbsp;– [[Geoffrey Unsworth]]'''
+**''[[1776 (film)|1776]]''&nbsp;– [[Harry Stradling Jr.]]
+**''[[Butterflies Are Free]]''&nbsp;– [[Charles Lang]]
+**''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''&nbsp;– [[Harold E. Stine]]
+**''[[Travels with My Aunt (film)|Travels with My Aunt]]''&nbsp;– [[Douglas Slocombe]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Travels with My Aunt (film)|Travels with My Aunt]]''&nbsp;– [[Anthony Powell (designer)|Anthony Powell]]'''
+**''[[The Godfather]]''&nbsp;– [[Anna Hill Johnstone]]
+**''[[Lady Sings the Blues (film)|Lady Sings the Blues]]''&nbsp;– [[Ray Aghayan]], [[Norma Koch]] and [[Bob Mackie]]
+**''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''&nbsp;– [[Paul Zastupnevich]]
+**''[[Young Winston]]''&nbsp;– [[Anthony Mendleson]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Cabaret (1972 film)|Cabaret]]''&nbsp;– [[David Bretherton]]'''
+** ''[[Deliverance]]''&nbsp;– [[Tom Priestley]]
+** ''[[The Godfather]]''&nbsp;– [[William Reynolds (film editor)|William H. Reynolds]] and [[Peter Zinner]]
+** ''[[The Hot Rock (film)|The Hot Rock]]''&nbsp;– [[Fred W. Berger]] and [[Frank P. Keller]]
+** ''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''&nbsp;– [[Harold F. Kress]]
+|}
+
+=== Special Achievement Award (Visual Effects)===
+* ''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]'' – [[L. B. Abbott]] and [[A. D. Flowers]].
+
+=== Honorary Awards ===
+* To Charles S. Boren, leader for 38 years of the industry's enlightened labor relations and architect of its policy of non-discrimination. With the respect and affection of all who work in films. 
+* To [[Edward G. Robinson]] (†) who achieved greatness as a player, a patron of the arts and a dedicated citizen... in sum, a Renaissance man. From his friends in the industry he loves. (Accepted on his behalf by his wife)
+
+=== Jean Hersholt Humanitarian Award ===
+* [[Rosalind Russell]]
+
+== Films with multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films that received multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="2" style="text-align:center" |10
+|''[[Cabaret (1972 film)|Cabaret]]''
+|-
+| ''[[The Godfather]]''
+|-
+| style="text-align:center" |8
+| ''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''{{efn|name=Poseidon|Not including the Special Achievement Award for ''The Poseidon Adventure''.}}
+|-
+| style="text-align:center" |5 
+| ''[[Lady Sings the Blues (film)|Lady Sings the Blues]]''
+|-
+| rowspan=4, style="text-align:center" |4
+| ''[[The Emigrants (1971 film)|The Emigrants]]''{{ref|Emigrants|[§]}}
+|-
+| ''[[Sleuth (1972 film)|Sleuth]]''
+|-
+| ''[[Sounder (film)|Sounder]]''
+|-
+| ''[[Travels with My Aunt (film)|Travels with My Aunt]]''
+|-
+| rowspan=3, style="text-align:center" |3
+| ''[[Butterflies Are Free]]''
+|-
+| ''[[Deliverance]]''
+|-
+| ''[[Young Winston]]''
+|-
+| rowspan=4, style="text-align:center" |2
+| ''[[The Candidate (1972 film)|The Candidate]]''
+|-
+| ''[[The Discreet Charm of the Bourgeoisie]]''
+|-
+| ''[[The Heartbreak Kid (1972 film)|The Heartbreak Kid]]''
+|-
+| ''[[Pete 'n' Tillie]]''
+|-
+|}
+{{note|Emigrants}}'''§''' Was also nominated in the [[44th Academy Awards|previous year]] for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]].
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films that received multiple awards{{efn|name=Poseidon}}
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| style="text-align:center" |8 
+| ''[[Cabaret (1972 film)|Cabaret]]''
+|-
+| style="text-align:center" |3 
+| ''[[The Godfather]]''
+|}
+
+{{col-float-end}}
+
+== Eligibility controversies ==
+It was initially announced, on February 12, 1973, that ''The Godfather'' received 11 nominations, more than any other film that year.<ref>{{cite news |newspaper=Toledo Blade |date=February 13, 1973 |access-date=September 2, 2014 |title='Godfather' Gets 11 Oscar Nominations |url=https://news.google.com/newspapers?id=Vc9OAAAAIBAJ&sjid=-AEEAAAAIBAJ&pg=7352,3061459 |author=Bruce Russell |agency=Reuter}}</ref><ref>{{cite news |newspaper=The Milwaukee Journal |date=February 13, 1973 |url=https://news.google.com/newspapers?id=NEkoAAAAIBAJ&sjid=uigEAAAAIBAJ&pg=7519,2024505 |archive-url=https://archive.today/20130620052919/http://news.google.com/newspapers?id=NEkoAAAAIBAJ&sjid=uigEAAAAIBAJ&pg=7519,2024505 |url-status=dead |archive-date=June 20, 2013 |access-date=June 16, 2013 |title=Oscar Nominations Offer Few Oddities }}</ref> This was reduced to 10 nominations (tied with ''Cabaret'' for the most) after a new vote by the academy's music branch, following a controversy over whether [[Nino Rota]]'s score for ''The Godfather'' was eligible for the nomination it received.<ref name=Godfather>{{cite news |newspaper=The Star-Phoenix |agency=AP |url=https://news.google.com/newspapers?id=4gpgAAAAIBAJ&sjid=828NAAAAIBAJ&pg=985,824836 |date=March 3, 1973 |access-date=June 16, 2013 |title=The Godfather loses one count}}</ref><ref>{{cite web|url=http://www.afi.com/members/catalog/DetailView.aspx?s=&Movie=54023 |access-date=June 16, 2013 |work=AFI Catalog of Feature Films |title=The Godfather |url-status=live |archive-url=https://web.archive.org/web/20140717165334/http://www.afi.com/members/catalog/DetailView.aspx?s=&Movie=54023 |archive-date=July 17, 2014 }}</ref> For the re-balloting, members of the music branch chose from six films: ''The Godfather'' and the five films that had been on the shortlist for best original dramatic score but did not get nominated. [[John Addison]]'s score for ''Sleuth'' won this new vote, and thus replaced Rota's score on the official list of nominees.<ref>{{cite web|url=http://www.paramount.com/paramount-academy-awards/tags/143/the-1970s |quote=The Godfather score, composed by Nino Rota, was originally announced as one of the five official nominees. It was later pointed out that portions of the score and the main theme were composed by Rota for his score to the 1958 Italian film, Fortunella. The Music Branch was given this information and re-balloted to determine the fifth nomination. The list of six films they were to choose from were the remaining five of the top ten preliminary listings, plus The Godfather score. The results of the re-balloting was that the fifth nomination became Sleuth, composed by John Addison. |access-date=June 16, 2013 |title=100 Years of Paramount: Academy Awards |publisher=Paramount Pictures |url-status=live |archive-url=https://web.archive.org/web/20130604233242/http://www.paramount.com/paramount-academy-awards/tags/143/the-1970s |archive-date=June 4, 2013 }}</ref> The controversy arose, according to Academy President Daniel Taradash, because the love theme in ''The Godfather'' had previously been used by Rota in ''[[Fortunella (film)|Fortunella]]'', an Italian movie from 1958.<ref>{{cite news |publisher=The Montreal Gazette |agency=AP |title=Godfather, Superfly music out of Oscars |url=https://news.google.com/newspapers?id=uscuAAAAIBAJ&sjid=f6EFAAAAIBAJ&pg=871,1907982 |date=March 7, 1973 |access-date=June 16, 2013 |archive-url=https://web.archive.org/web/20181121195947/https://news.google.com/newspapers?id=uscuAAAAIBAJ&sjid=f6EFAAAAIBAJ&pg=871,1907982 |archive-date=November 21, 2018 |url-status=live }}</ref> Pacino also did not attend the ceremony; he was allegedly insulted at being nominated for the Academy Award for Best Supporting Actor, when he had more screen time than his co-star and Best Actor-winner Brando, and thus should have received the nomination for Best Actor.<ref name="Grobel; p. xxi">Grobel; p. xxi</ref> Pacino denies this, saying in his memoir, ''Sonny Boy,'' that he was "scared" of his sudden fame and never heard the rumor until much later in his life.<ref>{{Cite web |last=Reporter |first=Lottie McGrath Freelance News |date=2024-10-26 |title=Al Pacino sets record straight on why he "didn't show up" to Oscars |url=https://www.newsweek.com/al-pacino-oscars-rumor-set-straight-oscars-snub-1975017 |access-date=2024-11-21 |website=Newsweek |language=en}}</ref>
+
+The nominations in the category of Best Original Song were not announced in February with the rest of the nominations, reportedly because of "a mixup in balloting".<ref>{{cite news |access-date=June 16, 2013 |date=February 13, 1973 |url=https://news.google.com/newspapers?id=NEkoAAAAIBAJ&sjid=uigEAAAAIBAJ&pg=7519,2024505 |archive-url=https://archive.today/20130620052919/http://news.google.com/newspapers?id=NEkoAAAAIBAJ&sjid=uigEAAAAIBAJ&pg=7519,2024505 |url-status=dead |archive-date=June 20, 2013 |quote=Because of a mixup in balloting, the nominations for best song won't be announced until March 5. |title=Oscar Nominations Offer Few Oddities |newspaper=The Milwaukee Journal }}</ref> It was later reported that the academy had been considering whether [[Curtis Mayfield]]'s song "[[Freddie's Dead]]" from the film ''[[Super Fly (1972 film)|Super Fly]]'' should be eligible. The song was ruled ineligible for a nomination because its lyrics were not sung in the film. (The song was released as a single with lyrics, but the version in the film was an instrumental.) Academy governor John Green was quoted as saying: "Times have changed. In the old days, Hollywood made 30 or 40 musicals a year, and there were plenty of songs to choose from. Now there are hardly any, and most of the eligible songs are themes. Both the lyric and the music must be heard on the sound track to be eligible."<ref>{{cite news |title='Godfather', 'Super Fly' Music Not Nominated For Oscar |newspaper=The Toledo Blade |url=https://news.google.com/newspapers?id=Ks9OAAAAIBAJ&sjid=-QEEAAAAIBAJ&pg=4356,4776086 |agency=AP |access-date=June 16, 2013 |date=March 7, 1973}}</ref>
+
+== Sacheen Littlefeather's appearance ==
+{{see also|Sacheen Littlefeather#1973 Academy Awards speech}}
+[[File:Sacheen Littlefeather Oscar 45 (cropped1).jpg|thumb|[[Sacheen Littlefeather]] holding [[Marlon Brando]]'s statement at the 45th Academy Awards]]
+[[Sacheen Littlefeather]] was an American actress, model, and activist of [[Native Americans in the United States|Native American]] civil rights who [[Marlon Brando]] chose to represent him at the ceremony.<ref>{{Cite web |title=Marlon Brando |url=http://www.imdb.com/name/nm0000008/awards |access-date=2023-03-12 |website=[[IMDb]]}}</ref> Littlefeather took the stage and spoke on Brando's behalf as a form of protest, representing Native Americans.<ref>{{Cite web |date=November 13, 2009 |title=Marlon Brando declines Best Actor Oscar |url=https://www.history.com/this-day-in-history/marlon-brando-declines-best-actor-oscar |access-date=March 12, 2023 |website=HISTORY}}</ref>
+
+The audience in the Dorothy Chandler Pavilion was divided between applause and jeers.<ref name="Rottenberg">{{Cite magazine |last=Rottenberg |first=Josh |date=January 19, 2013 |title=Catching up with Sacheen Littlefeather, 40 years after her controversial brush with Oscar history |url=http://ew.com/article/2013/01/19/sacheen-littlefeather/ |url-status=live |magazine=[[Entertainment Weekly]] |archive-url= https://web.archive.org/web/20220421065228/https://ew.com/article/2013/01/19/sacheen-littlefeather/ |archive-date=April 21, 2022 |access-date=April 7, 2018}}</ref> "I was distressed that people should have booed and whistled and stomped, even though perhaps it was directed at myself," Brando later told [[Dick Cavett]]. "They should have at least had the courtesy to listen to her."<ref name="Rottenberg" /> Her appearance prompted the [[Academy of Motion Picture Arts and Sciences]] to rule out future proxy acceptance of Academy Awards. (Oscars for winners unable, or unwilling, to accept in person are now accepted in their behalf by the presenters.)<ref>{{cite news| title= Oscar Watch; Oscar takes a bow for legacy of controversy| first= Stephen |last= Schaefer| work= Boston Herald| date= March 16, 2003}}</ref>
+
+Both Sacheen Littlefeather and [[Marty Pasetta]], who directed the Academy Awards telecast, claimed that [[John Wayne]] had to be restrained by six security guards to prevent him from assaulting Littlefeather.<ref>{{cite web |last1=Ibrahim |first1=Nur |title=Did John Wayne Try To Pull Sacheen Littlefeather Offstage at 1973 Oscars? |url=https://www.snopes.com/news/2022/03/31/john-wayne-sacheen-littlefeather/ |website=Snopes |date=March 31, 2022 |access-date=5 April 2025}}</ref> The story was later refuted as having "never happened" by film historian Farran Nehme. She characterised Pasetta's account as "getting more exciting each time it was told".<ref>[https://www.latimes.com/business/story/2022-08-23/column-did-john-wayne-try-to-assault-sacheen-littlefeather-at-the-1973-oscars-debunking-a-hollywood-myth Did John Wayne try to assault Sacheen Littlefeather at the 1973 Oscars? Debunking a Hollywood myth]</ref>
+
+== Presenters and performers ==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers. 
+
+Notably, Charlton Heston was late for his role presenting the voting rules, reportedly due to a flat tire. Clint Eastwood, who was slated to present for Best Picture, was asked to fill in. Heston's written dialogue leaned heavily on his role in the movie ''[[The Ten Commandments (1956 film)|The Ten Commandments]]'', leading Eastwood to quip, "Come on, flip the card, man. This isn't my bag." Eastwood also famously said on filling in at the last minute, "...They pick the guy who hasn't said but three lines in 12 movies to substitute for him [Heston]". Heston arrived part of the way through the bit, allowing Eastwood to escape.<ref>{{Cite magazine|title=The Most Memorable Moments in Oscar Hosting History|url=https://time.com/5534588/oscar-hosts-memorable-moments/|magazine=Time|date=February 21, 2019 |language=en|access-date=2020-05-13}}</ref>
+
+=== Presenters ===
+{| class="wikitable sortable"
+|-
+! Name !! Role
+|-
+| {{sortname|Hank|Simms}} || Announcer for the 45th Academy Awards
+|-
+| {{sortname|Daniel|Taradash}} (AMPAS President) || Giver of opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Clint|Eastwood}}<br />[[Charlton Heston]] || Explainers of the voting rules to the public
+|-
+| {{sortname|Eddie|Albert}}<br />[[Edward Albert]] || Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|Merle|Oberon}} ||  Presenter of the Special Achievement Award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Bea|Arthur}}<br />[[Peter Boyle]]|| Presenters of the Short Subjects Awards
+|-
+| {{sortname|Robert|Duvall}}<br />[[Cloris Leachman]] || Presenters of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Elke|Sommer}}<br />[[Jack Valenti]] || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|John|Gavin}}<br />[[Katharine Ross]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|James|Coburn}}<br />[[Diana Ross]] || Presenters of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| Richard Walsh || Presenter of the Honorary Award to Charles S. Boren
+|-
+| {{sortname|Robert|Wagner}}<br />[[Natalie Wood]] || Presenters of the Documentary Awards
+|-
+| {{sortname|Marisa|Berenson}}<br />[[Michael Caine]] || Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Greer|Garson}}<br />[[Laurence Harvey]] || Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Dyan|Cannon}}<br />[[Burt Reynolds]] || Presenters of the Music Awards
+|-
+| {{sortname|Candice|Bergen}}<br />[[Billy Dee Williams]] || Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname||Sonny & Cher}} || Presenters of the award for [[Academy Award for Best Original Song|Best Song Original for the Picture]]
+|-
+| {{sortname|Charlton|Heston}} || Presenter of the Honorary Award to [[Edward G. Robinson]]
+|-
+| {{sortname|Frank|Sinatra}} || Presenter of the Jean Hersholt Humanitarian Award
+|-
+| {{sortname|Jack|Lemmon}} || Presenter of the Writing Awards
+|-
+| {{sortname|Julie|Andrews}}<br />[[George Stevens]] || Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Roger|Moore}}<br />[[Liv Ullmann]] || Presenters of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Sacheen|Littlefeather}} || Declined [[Marlon Brando]]'s Academy Award on his behalf
+|-
+| {{sortname|Gene|Hackman}}<br />[[Raquel Welch]] || Presenters of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Clint|Eastwood}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|-
+| {{sortname|John|Wayne}} || Introducer of the performance of "You Oughta Be in Pictures"
+|}
+
+=== Performers ===
+{| class="wikitable sortable"
+|-
+! Name !! Role !! Performed
+|-
+| {{sortname|John|Williams}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Angela|Lansbury}} || Performer || "Make a Little Magic"
+|-
+| {{sortname||Disney characters|nolink=1}} || Performers || A musical salute to [[The Walt Disney Company|Walt Disney Productions]]' 50th anniversary
+|-
+| {{sortname|Michael|Jackson}} || Performer || "[[Ben (song)|Ben]]" from ''[[Ben (1972 film)|Ben]]''
+|-
+| {{sortname||Springfield Revival}} || Performer || "Come Follow, Follow Me" from ''The Little Ark''
+|-
+| {{sortname|Glen|Campbell}}<br />[[The Mike Curb Congregation]] || Performer || "Marmalade, Molasses & Honey" from ''[[The Life and Times of Judge Roy Bean]]''
+|-
+| {{sortname|Connie|Stevens}} || Performer || "[[The Morning After (Maureen McGovern song)|The Morning After]]" from ''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]''
+|-
+| {{sortname|Diahann|Carroll}} || Performer || "Strange Are the Ways of Love" from ''The Stepmother''
+|-
+| {{sortname||Academy Awards Chorus|nolink=0}} || Performers || "[[You Oughta Be in Pictures]]"
+|}
+
+== See also ==
+* [[Sacheen Littlefeather]]
+* [[30th Golden Globe Awards]]
+* [[1972 in film]]
+* [[15th Grammy Awards]]
+* [[24th Primetime Emmy Awards]]
+* [[25th Primetime Emmy Awards]]
+* [[26th British Academy Film Awards]]
+* [[27th Tony Awards]]
+
+== Notes ==
+{{notelist}}
+
+== References ==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 45}}
+[[Category:1972 film awards]]
+[[Category:1973 in Los Angeles]]
+[[Category:1973 in American cinema]]
+[[Category:1973 controversies in the United States]]
+[[Category:March 1973 in the United States]]
+[[Category:Television shows directed by Marty Pasetta]]
+[[Category:Academy Awards ceremonies]]

@@ -1,0 +1,375 @@
+{{oscars short description|films-year=1950}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 23
+| award            = Academy Awards
+| date             = March 29, 1951
+| site             = [[RKO Pantages Theatre]], [[Hollywood, Los Angeles, California|Hollywood, California]]
+| host             = [[Fred Astaire]]
+| best_picture     = ''[[All About Eve]]''
+| most_wins        = ''All About Eve'' (6)
+| most_nominations = ''All About Eve'' (14)
+| last             = 22nd
+| next             = 24th
+}}
+
+The '''23rd Academy Awards''' were held on March 29, 1951, honoring the [[1950 in film|films of 1950]]. ''[[All About Eve]]'' received a record 14 nominations, surpassing the previous record of 13 set by ''[[Gone with the Wind (film)|Gone with the Wind]]'' in [[12th Academy Awards|1939]]. It won six Oscars, including [[Academy Award for Best Picture|Best Picture]], and earned writer/director [[Joseph L. Mankiewicz]] his second consecutive [[Academy Award for Best Director|Best Director]] and [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]] awards, the only time such a feat has been accomplished.
+
+''All About Eve'' was the second film, after ''[[Mrs. Miniver]]'' ([[15th Academy Awards|1942]]), to receive five acting nominations. It was the first to receive multiple nominations in two acting categories, and the (to date) only film to receive four female acting nominations—two each for [[Academy Award for Best Actress|Best Actress]] and [[Academy Award for Best Supporting Actress|Best Supporting Actress]]. None was successful, losing to Judy Holliday in ''[[Born Yesterday (1950 film)|Born Yesterday]]'' and Josephine Hull in ''[[Harvey (1950 film)|Harvey]]'', respectively.
+
+[[José Ferrer]], then under investigation from the [[House Un-American Activities Committee]] over suspected Communist ties, won the Best Actor award despite being given very little chances to win.<ref name="Oscars '50 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/838/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=838 |isbn=0-385-04060-1}}</ref> [[Marlene Dietrich]] nearly stole the show by wearing an apparently-painted-on dress that displayed her legs and figure.<ref name="Oscars '50 Notes"/>
+
+''[[Sunset Boulevard (film)|Sunset Boulevard]]'' was the fifth film with [[List of films with all four Academy Award acting nominations|nominations in every acting category]], and the second not to win any of them (after ''[[My Man Godfrey]]'' in [[9th Academy Awards|1936]]).
+
+==Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Darryl F. Zanuck 1964.jpg
+| caption1          = [[Darryl F. Zanuck]]; Best Picture winner
+| image2            = Joseph L. Mankiewicz (1950).jpg
+| caption2          = [[Joseph L. Mankiewicz]]; Best Director and Best Screenplay winner
+| image3            = Jose Ferrer - 1952.jpg
+| caption3          = [[José Ferrer]]; Best Actor winner
+| image4            = JUDYHolliday.jpg
+| caption4          = [[Judy Holliday]]; Best Actress winner
+| image5            = George Sanders Allan Warren.jpg
+| caption5          = [[George Sanders]]; Best Supporting Actor winner
+| image6            = 1952 Stage & Film Actress Josephine Hull Press Photo.jpg
+| caption6          = [[Josephine Hull]]; Best Supporting Actress winner
+| image7            = Charles Brackett.jpg
+| caption7          = [[Charles Brackett]]; Best Story and Screenplay co-winner
+| image8            = Billy Wilder.jpg
+| caption8          = [[Billy Wilder]]; Best Story and Screenplay co-winner
+| image9            = 
+| caption9          = [[Franz Waxman]]; Best Scoring of a Dramatic or Comedy Picture winner
+| image10           = 
+| caption10         = [[Ray Evans]]; Best Original Song co-winner
+| image11           = 
+| caption11         = [[Jay Livingston]]; Best Original Song co-winner
+| image12           = 
+| caption12         = [[Robert Surtees (cinematographer)|Robert Surtees]]; Best Cinematography, Color winner
+| image13           = Edith Head, 1976.jpg
+| caption13         = [[Edith Head]]; Best Costume Design, Black-and-White and Best Costume Design, Color co-winner
+| image14           = Charles LeMaire.jpg
+| caption14         = [[Charles LeMaire]]; Best Costume Design, Black-and-White co-winner
+| image15           = Dorothy Jeakins.jpg
+| caption15         = [[Dorothy Jeakins]]; Best Costume Design, Color co-winner
+| image16           = Ralph E. Winters-Susan Hayward (Ada set).jpg
+| caption16         = [[Ralph E. Winters]] (left); Best Film Editing co-winner
+| image17            = Conrad A. Nervig ACE Headsot.png
+| caption17          = [[Conrad A. Nervig]]; Best Film Editing co-winner
+}}
+
+=== Awards ===
+Nominations announced on February 12, 1951. Winners are listed first and highlighted in boldface.<ref name="Oscars1951">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1951 |title=The 23rd Academy Awards (1951) Nominees and Winners |access-date=2011-08-19 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093818/http://www.oscars.org/awards/academyawards/legacy/ceremony/23rd-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Picture|Best Motion Picture]]}}
+* '''''[[All About Eve]]'' – [[Darryl F. Zanuck]] for [[20th Century Fox]]'''
+** ''[[Born Yesterday (1950 film)|Born Yesterday]]'' – [[S. Sylvan Simon]] for [[Columbia Pictures]]
+** ''[[Father of the Bride (1950 film)|Father of the Bride]]'' – [[Pandro S. Berman]] for [[Metro-Goldwyn-Mayer]]
+** ''[[King Solomon's Mines (1950 film)|King Solomon's Mines]]'' – [[Sam Zimbalist]] for [[Metro-Goldwyn-Mayer]]
+** ''[[Sunset Boulevard (film)|Sunset Boulevard]]'' – [[Charles Brackett]] for [[Paramount Pictures]] 
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Director|Best Directing]]}}
+* '''[[Joseph L. Mankiewicz]]&nbsp;– ''[[All About Eve]]'''''
+** [[John Huston]]&nbsp;– ''[[The Asphalt Jungle]]''
+** [[George Cukor]]&nbsp;– ''[[Born Yesterday (1950 film)|Born Yesterday]]''
+** [[Billy Wilder]]&nbsp;– ''[[Sunset Boulevard (film)|Sunset Boulevard]]''
+** [[Carol Reed]]&nbsp;– ''[[The Third Man]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actor|Best Actor]]}}
+* '''[[José Ferrer]]&nbsp;– ''[[Cyrano de Bergerac (1950 film)|Cyrano de Bergerac]]'' as [[Cyrano de Bergerac]]'''
+** [[Louis Calhern]]&nbsp;– ''[[The Magnificent Yankee (1950 film)|The Magnificent Yankee]]'' as [[Oliver Wendell Holmes Jr.]]
+** [[William Holden]]&nbsp;– ''[[Sunset Boulevard (film)|Sunset Boulevard]]'' as Joe Gillis
+** [[James Stewart]]&nbsp;– ''[[Harvey (1950 film)|Harvey]]'' as Elwood P. Dowd
+** [[Spencer Tracy]]&nbsp;– ''[[Father of the Bride (1950 film)|Father of the Bride]]'' as Stanley T. Banks
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Judy Holliday]]&nbsp;– ''[[Born Yesterday (1950 film)|Born Yesterday]]'' as Emma "Billie" Dawn'''
+** [[Anne Baxter]]&nbsp;– ''[[All About Eve]]'' as Eve Harrington
+** [[Bette Davis]]&nbsp;– ''[[All About Eve]]'' as Margo Channing
+** [[Eleanor Parker]]&nbsp;– ''[[Caged (1950 film)|Caged]]'' as Marie Allen
+** [[Gloria Swanson]]&nbsp;– ''[[Sunset Boulevard (film)|Sunset Boulevard]]'' as Norma Desmond
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[George Sanders]]&nbsp;– ''[[All About Eve]]'' as Addison DeWitt'''
+** [[Jeff Chandler]]&nbsp;– ''[[Broken Arrow (1950 film)|Broken Arrow]]'' as [[Cochise]]
+** [[Edmund Gwenn]]&nbsp;– ''[[Mister 880]]'' as "Skipper" Miller
+** [[Sam Jaffe]]&nbsp;– ''[[The Asphalt Jungle]]'' as "Doc" Erwin Riedenschneider
+** [[Erich von Stroheim]]&nbsp;– ''[[Sunset Boulevard (film)|Sunset Boulevard]]'' as Max von Mayerling
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Josephine Hull]]&nbsp;– ''[[Harvey (1950 film)|Harvey]]'' as Veta Louise Simmons'''
+** [[Hope Emerson]]&nbsp;– ''[[Caged (1950 film)|Caged]]'' as Evelyn Harper
+** [[Celeste Holm]]&nbsp;– ''[[All About Eve]]'' as Karen Richards
+** [[Nancy Olson]]&nbsp;– ''[[Sunset Boulevard (film)|Sunset Boulevard]]'' as Betty Schaefer
+** [[Thelma Ritter]]&nbsp;– ''[[All About Eve]]'' as Birdie
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+* '''''[[Panic in the Streets (film)|Panic in the Streets]]''&nbsp;– [[Edna Anhalt]] and [[Edward Anhalt]]'''
+** ''[[Bitter Rice]]''&nbsp;– [[Giuseppe De Santis]] and [[Carlo Lizzani]]
+** ''[[The Gunfighter]]''&nbsp;– [[William Bowers]] and [[André de Toth]]
+** ''[[Mystery Street]]''&nbsp;– [[Leonard Spigelgass]]
+** ''[[When Willie Comes Marching Home]]''&nbsp;– [[Sy Gomberg]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay)]]}}
+* '''''[[Sunset Boulevard (film)|Sunset Boulevard]]''&nbsp;– [[Charles Brackett]], [[Billy Wilder]], and [[D. M. Marshman Jr.]]'''
+** ''[[Adam's Rib]]''&nbsp;– [[Ruth Gordon]] and [[Garson Kanin]]
+** ''[[Caged (1950 film)|Caged]]''&nbsp;– [[Virginia Kellogg]] and [[Bernard C. Schoenfeld]]
+** ''[[The Men (1950 film)|The Men]]''&nbsp;– [[Carl Foreman]]
+** ''[[No Way Out (1950 film)|No Way Out]]''&nbsp;– [[Joseph L. Mankiewicz]] and [[Lesser Samuels]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* '''''[[All About Eve]]''&nbsp;– [[Joseph L. Mankiewicz]] from "The Wisdom of Eve" by [[Mary Orr]]'''
+** ''[[The Asphalt Jungle]]''&nbsp;– [[Ben Maddow]] and [[John Huston]] from ''The Asphalt Jungle''  by [[W. R. Burnett]]
+** ''[[Born Yesterday (1950 film)|Born Yesterday]]''&nbsp;– [[Albert Mannheimer]] from ''[[Born Yesterday (play)|Born Yesterday]]'' by [[Garson Kanin]]
+** ''[[Broken Arrow (1950 film)|Broken Arrow]]''&nbsp;– [[Albert Maltz]] from ''Blood Brother'' by [[Elliott Arnold]]
+** ''[[Father of the Bride (1950 film)|Father of the Bride]]''&nbsp;– [[Frances Goodrich]] and [[Albert Hackett]] from ''[[Father of the Bride (novel)|Father of the Bride]]'' by [[Edward Streeter]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[The Titan: Story of Michelangelo]]''&nbsp;– [[Robert Snyder (filmmaker)|Robert Snyder]]'''
+** ''[[With These Hands (film)|With These Hands]]''&nbsp;– [[Jack Arnold (director)|Jack Arnold]] and Lee Goodman
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Why Korea?]]''&nbsp;– [[Edmund Reek]]'''
+** ''[[The Fight: Science Against Cancer]]''&nbsp;– [[Guy Glover]]
+** ''[[The Stairs (1950 film)|The Stairs]]''&nbsp;– Film Documents, Inc.
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[Grandad of Races]]''&nbsp;– [[Gordon Hollingshead]]'''
+** ''[[Blaze Busters]]''&nbsp;– [[Robert Youngson]]
+** ''Wrong Way Butch''&nbsp;– [[Pete Smith (film producer)|Pete Smith]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[In Beaver Valley]]''&nbsp;– [[Walt Disney]]'''
+** ''Grandma Moses''&nbsp;– Falcon Films, Inc.
+** ''My Country 'Tis of Thee''&nbsp;– [[Gordon Hollingshead]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[Gerald McBoing-Boing]]''&nbsp;– [[Stephen Bosustow]]'''
+** ''[[Jerry's Cousin]]''&nbsp;– [[Fred Quimby]]
+** ''Trouble Indemnity''&nbsp;– [[Stephen Bosustow]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+* '''''[[Sunset Boulevard (film)|Sunset Boulevard]]''&nbsp;– [[Franz Waxman]]'''
+** ''[[All About Eve]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[The Flame and the Arrow]]&nbsp;– ''[[Max Steiner]]
+** ''[[No Sad Songs for Me]]''&nbsp;– [[George Duning]]
+** ''[[Samson and Delilah (1949 film)|Samson and Delilah]]''&nbsp;– [[Victor Young]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+* '''''[[Annie Get Your Gun (film)|Annie Get Your Gun]]''&nbsp;– [[Adolph Deutsch]] and [[Roger Edens]]'''
+** ''[[Cinderella (1950 film)|Cinderella]]''&nbsp;– [[Oliver Wallace]] and [[Paul Smith (composer)|Paul J. Smith]]
+** ''[[I'll Get By (film)|I'll Get By]]''&nbsp;– [[Lionel Newman]]
+** ''[[Three Little Words (film)|Three Little Words]]''&nbsp;– [[André Previn]]
+** ''[[The West Point Story (film)|The West Point Story]]''&nbsp;– [[Ray Heindorf]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[Mona Lisa (Nat King Cole song)|Mona Lisa]]" from ''[[Captain Carey, U.S.A.]]''&nbsp;– Music and Lyrics by [[Ray Evans]] and [[Jay Livingston]]'''
+** "[[Be My Love]]" from ''[[The Toast of New Orleans]]''&nbsp;– Music by [[Nicholas Brodszky]]; Lyrics by [[Sammy Cahn]]
+** "[[Bibbidi-Bobbidi-Boo]]" from ''[[Cinderella (1950 film)|Cinderella]]''&nbsp;– Music and Lyrics by [[Mack David]], [[Al Hoffman]], and [[Jerry Livingston]]
+** "[[Mule Train]]" from ''[[Singing Guns]]''&nbsp;– Music and Lyrics by Fred Glickman, [[Hy Heath]], and [[Johnny Lange]]
+** "Wilhelmina" from ''[[Wabash Avenue (film)|Wabash Avenue]]''&nbsp;– Music by [[Josef Myrow]]; Lyrics by [[Mack Gordon]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+* '''''[[All About Eve]]''&nbsp;– [[Thomas T. Moulton]]'''
+** ''[[Cinderella (1950 film)|Cinderella]]''&nbsp;– [[Sam Slyfield|C. O. Slyfield]]
+** ''[[Louisa (film)|Louisa]]''&nbsp;– [[Leslie I. Carey]]
+** ''[[Our Very Own (1950 film)|Our Very Own]]''&nbsp;– [[Gordon E. Sawyer]]
+** ''[[Trio (1950 film)|Trio]]''&nbsp;– [[Cyril Crowhurst]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[Sunset Boulevard (film)|Sunset Boulevard]]'' – Art Direction: [[Hans Dreier]] and [[John Meehan (art director)|John Meehan]]; Set Decoration: [[Samuel M. Comer]] and [[Ray Moyer]]'''
+** ''[[All About Eve]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[George Davis (art director)|George Davis]]; Set Decoration: [[Thomas Little]] and [[Walter M. Scott]]
+** ''[[The Red Danube]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Hans Peters (art director)|Hans Peters]]; Set Decoration: [[Edwin B. Willis]] and [[Hugh Hunt]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[Samson and Delilah (1949 film)|Samson and Delilah]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Walter H. Tyler|Walter Tyler]]; Set Decoration: [[Samuel M. Comer]] and [[Ray Moyer]]'''
+** ''[[Annie Get Your Gun (film)|Annie Get Your Gun]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Paul Groesse]]; Set Decoration: [[Edwin B. Willis]] and [[Richard A. Pefferle]]
+** ''[[Destination Moon (film)|Destination Moon]]''&nbsp;– Art Direction: [[Ernst Fegté]]; Set Decoration: [[George Sawley]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[The Third Man]]''&nbsp;– [[Robert Krasker]]'''
+** ''[[All About Eve]]''&nbsp;– [[Milton Krasner]]
+** ''[[The Asphalt Jungle]]''&nbsp;– [[Harold Rosson]]
+** ''[[The Furies (1950 film)|The Furies]]''&nbsp;– [[Victor Milner]]
+** ''[[Sunset Boulevard (film)|Sunset Boulevard]]''&nbsp;– [[John F. Seitz]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[King Solomon's Mines (1950 film)|King Solomon's Mines]]&nbsp;– ''[[Robert Surtees (cinematographer)|Robert Surtees]]'''
+** ''[[Annie Get Your Gun (film)|Annie Get Your Gun]]''&nbsp;– [[Charles Rosher]]
+** ''[[Broken Arrow (1950 film)|Broken Arrow]]''&nbsp;– [[Ernest Palmer (American cinematographer)|Ernest Palmer]]
+** ''[[The Flame and the Arrow]]''&nbsp;– [[Ernest Haller]]
+** ''[[Samson and Delilah (1949 film)|Samson and Delilah]]''&nbsp;– [[George Barnes (cinematographer)|George Barnes]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+* '''''[[All About Eve]]''&nbsp;– [[Edith Head]] and [[Charles LeMaire]]'''
+** ''[[Born Yesterday (1950 film)|Born Yesterday]]''&nbsp;– [[Jean Louis]]
+** ''[[The Magnificent Yankee (1950 film)|The Magnificent Yankee]]''&nbsp;– [[Walter Plunkett]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+* '''''[[Samson and Delilah (1949 film)|Samson and Delilah]]''&nbsp;– [[Edith Head]], [[Dorothy Jeakins]], [[Elois Jenssen]], [[Gile Steele]], and [[Gwen Wakeling]]'''
+** ''[[The Black Rose]]''&nbsp;– [[Michael Whittaker (costume designer)|Michael Whittaker]]
+** ''[[That Forsyte Woman]]''&nbsp;– [[Walter Plunkett]] and [[Arlington Valles|Valles]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[King Solomon's Mines (1950 film)|King Solomon's Mines]]''&nbsp;– [[Ralph E. Winters]] and [[Conrad A. Nervig]]'''
+** ''[[All About Eve]]''&nbsp;– [[Barbara McLean]]
+** ''[[Annie Get Your Gun (film)|Annie Get Your Gun]]''&nbsp;– [[James E. Newcom]]
+** ''[[Sunset Boulevard (film)|Sunset Boulevard]]''&nbsp;– [[Arthur P. Schmidt]] and [[Doane Harrison]]
+** ''[[The Third Man]]''&nbsp;– [[Oswald Hafenrichter]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Effects]]}}
+* '''''[[Destination Moon (film)|Destination Moon]]''&nbsp;– George Pal Productions and Eagle Lion Classics'''
+** ''[[Samson and Delilah (1949 film)|Samson and Delilah]]''&nbsp;– Cecil B. DeMille Productions and [[Paramount Pictures|Paramount]]
+|}
+
+===Honorary Foreign Language Film Award===
+* To ''[[The Walls of Malapaga]]'' (France/Italy) - voted by the Board of Governors as the most outstanding foreign language film released in the United States in 1950.
+
+===Honorary Awards===
+* To [[George Murphy]] for his services in interpreting the film industry to the country at large.
+* To [[Louis B. Mayer]] for distinguished service to the motion picture industry.
+
+===Irving G. Thalberg Memorial Award===
+* [[Darryl F. Zanuck]]
+
+== Presenters and performers ==
+=== Presenters ===
+* [[Lex Barker]] and [[Arlene Dahl]] (Presenters: Best Art Direction)
+* [[Charles Brackett]] (Presenter: Honorary Awards)
+* [[Ralph Bunche]] (Presenter: Best Motion Picture)
+* [[Ruth Chatterton]] (Presenter: Writing Awards)
+* [[Broderick Crawford]] (Presenter: Best Actress)
+* [[Marlene Dietrich]] (Presenter: Best Foreign Language Film)
+* [[Coleen Gray]] (Presenter: Documentary Awards)
+* [[Jane Greer]] (Presenter: Best Special Effects)
+* [[Helen Hayes]] (Presenter: Best Actor)
+* [[Dean Jagger]] (Presenter: Best Supporting Actress)
+* [[Gene Kelly]] (Presenter: Music Awards)
+* [[Phyllis Kirk]] (Presenter: Short Subject Awards)
+* [[Mercedes McCambridge]] (Presenter: Best Supporting Actor)
+* [[Leo McCarey]] (Presenter: Best Director)
+* [[Marilyn Monroe]] (Presenter: Best Sound Recording)
+* [[Debra Paget]] (Presenter: Best Film Editing)
+* [[Debbie Reynolds]] (Presenter: Best Cinematography)
+* [[Jan Sterling]] (Presenter: Best Costume Design)
+* [[David Wayne]] (Presenter: Scientific & Technical Awards)
+
+=== Performers ===
+* [[Gloria DeHaven]] and [[Alan Young]]
+* [[Frankie Laine]] ("[[Mule Train]]" from ''Singing Guns'')
+* [[Martin and Lewis]] ("[[Bibbidi-Bobbidi-Boo]]" from ''[[Cinderella (1950 film)|Cinderella]]'')
+* [[Lucille Norman]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" |14
+| ''[[All About Eve]]''
+|-
+| rowspan="1" style="text-align:center" |11
+| ''[[Sunset Boulevard (film)|Sunset Boulevard]]''
+|-
+| rowspan="2" style="text-align:center" | 5
+| ''[[Born Yesterday (1950 film)|Born Yesterday]]''
+|-
+| ''[[Samson and Delilah (1949 film)|Samson and Delilah]]''
+|-
+| rowspan="2" style="text-align:center" | 4
+| ''[[Annie Get Your Gun (film)|Annie Get Your Gun]]''
+|-
+| ''[[The Asphalt Jungle]]''
+|-
+| rowspan="6" style="text-align:center" | 3
+| ''[[Broken Arrow (1950 film)|Broken Arrow]]''
+|-
+| ''[[Caged (1950 film)|Caged]]''
+|-
+| ''[[Cinderella (1950 film)|Cinderella]]''
+|-
+| ''[[Father of the Bride (1950 film)|Father of the Bride]]''
+|-
+| ''[[King Solomon's Mines (1950 film)|King Solomon's Mines]]''
+|-
+| ''[[The Third Man]]''
+|-
+| rowspan="4" style="text-align:center" | 2
+| ''[[Destination Moon (film)|Destination Moon]]''
+|-
+| ''[[The Flame and the Arrow]]''
+|-
+| ''[[Harvey (1950 film)|Harvey]]''
+|-
+| ''[[The Magnificent Yankee (1950 film)|The Magnificent Yankee]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 6
+| ''[[All About Eve]]''
+|-
+| rowspan=1, style="text-align:center" | 3
+| ''[[Sunset Boulevard (film)|Sunset Boulevard]]''
+|-
+| rowspan=2, style="text-align:center" | 2
+| ''[[King Solomon's Mines (1950 film)|King Solomon's Mines]]''
+|-
+| ''[[Samson and Delilah (1949 film)|Samson and Delilah]]''
+|-
+|}
+
+{{Col-float-end}}
+
+==See also==
+{{Portal|1950s}}
+* [[8th Golden Globe Awards]]
+* [[1950 in film]]
+* [[2nd Primetime Emmy Awards]]
+* [[3rd Primetime Emmy Awards]]
+* [[4th British Academy Film Awards]]
+* [[5th Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 23}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1950 film awards]]
+[[Category:1951 in American cinema]]
+[[Category:1951 in Los Angeles|Academy Awards]]
+[[Category:March 1951 in the United States]]

@@ -17,6 +17,11 @@ from services.media_file_facts import audio_languages
 from services.quality_catalog import source_claim, SOURCES
 
 TMDB_PAGE_SIZE = 20
+TV_STATUS_CHOICES = (
+    ('0', 'Returning Series'), ('1', 'Planned'), ('2', 'In Production'),
+    ('3', 'Ended'), ('4', 'Canceled'), ('5', 'Pilot'),
+)
+TV_STATUS_NAMES = dict(TV_STATUS_CHOICES)
 
 
 def text_key(value):
@@ -76,9 +81,11 @@ def matches(row, query):
                 match = identity == row.get('original_language')
             elif kind == 'country':
                 match = identity in row.get('origin_country', [])
+            elif kind == 'tv_status':
+                match = row.get('status', '').casefold() == TV_STATUS_NAMES[identity].casefold()
             elif kind == 'viewing_status':
                 count = row.get('released_count', row.get('episode_count')) or 0
-                watched = count > 0 and row.get('completed_count', 0) >= count
+                watched = bool(row['series_watched']) if 'series_watched' in row else count > 0 and row.get('completed_count', 0) >= count
                 if identity == 'watchlist':
                     match = bool(row.get('watchlisted'))
                 elif identity == 'watched':
@@ -121,7 +128,7 @@ def sort_rows(rows, key, direction='desc'):
     if key == 'quality':
         getter = lambda r: max((quality_rank(f.get('quality_class')) for f in r.get('file_facts', [])), default=0)
     elif key == 'progress':
-        getter = lambda r: r.get('completed_count', 0) / max(1, r.get('episode_count', 0))
+        getter = lambda r: r.get('watched_percent') if r.get('watched_percent') is not None else -1
     elif key == 'missing':
         getter = lambda r: r.get('episode_count', 0) - r.get('available_count', 0)
     else:
@@ -185,6 +192,8 @@ class TVSearch:
                     available.add((r['series_id'], r['episode_id']))
             for series_id, _ in available:
                 rows[series_id]['available_count'] += 1
+        for item in rows.values():
+            item.update(self.read.coverage(item, self.repository.episodes(item['id'])))
         if self.profile:
             from services.acquisition_decision import below_profile_cutoff
             profile = self.profile()
@@ -196,7 +205,10 @@ class TVSearch:
         query = self.normalize(query, 'library')
         page, page_size = max(1, int(page)), min(100, max(1, int(page_size)))
         extras = extras or {}
-        rows = [r for r in self.local_rows() if matches(r, query)]
+        with self.repository.store.connection() as db:
+            assigned_ids = {row[0] for row in db.execute('SELECT DISTINCT series_id FROM tv_path_assignments')}
+        rows = [r for r in self.local_rows() if (r['available_count'] > 0 or r['pending_review_count'] > 0 or r['id'] in assigned_ids)
+                and matches(r, query)]
         monitored = set(extras.get('monitored_ids', []))
         if extras.get('progress') not in {None, '', 'watched', 'unwatched', 'in_progress'}:
             raise ValueError('Unsupported TV progress filter')
@@ -208,7 +220,7 @@ class TVSearch:
                 not extras.get('minimum_rating') or float(r.get('rating') or 0) >= float(extras['minimum_rating'])) and (
                 not extras.get('quality') or any(quality_rank(f.get('quality_class')) == quality_rank(extras['quality']) for f in r['file_facts'])) and (not extras.get('status') or status == extras['status']) and (
                 not extras.get('monitoring') or (r['tmdb_id'] in monitored) == (extras['monitoring'] == 'monitored')) and (
-                not extras.get('progress') or {'watched': r['episode_count'] > 0 and r['completed_count'] >= r['episode_count'],
+                not extras.get('progress') or {'watched': r['series_watched'],
                 'unwatched': not r['completed_count'], 'in_progress': r['last_played'] > 0 and r['completed_count'] < r['episode_count']}[extras['progress']]) and (
                 not extras.get('availability') or (r['available_count'] > 0 if extras['availability'] == 'available' else r['available_count'] < r['episode_count'])) and (
                 not extras.get('language') or any(set(audio_languages({'audio_language': extras['language']})) & set(audio_languages(f)) for f in r['file_facts']))
@@ -239,7 +251,8 @@ class TVSearch:
                     'language': choices((r['original_language'], r.get('original_language_name') or r['original_language']) for r in rows if r.get('original_language')),
                     'country': choices((c, c) for r in rows for c in r.get('origin_country', [])),
                     'library_source': choices((s, SOURCES[s]['label']) for r in rows for s in r['sources'])}
-        return {'genre': choices((str(g['id']), g['name']) for g in self.metadata.request('/genre/tv/list')['genres']),
+        return {'tv_status': [{'id': key, 'label': label} for key, label in TV_STATUS_CHOICES],
+                'genre': choices((str(g['id']), g['name']) for g in self.metadata.request('/genre/tv/list')['genres']),
                 'language': choices((r['iso_639_1'], r.get('english_name') or r['iso_639_1']) for r in self.metadata.request('/configuration/languages')),
                 'country': choices((r['iso_3166_1'], r.get('english_name') or r['iso_3166_1']) for r in self.metadata.request('/configuration/countries'))}
 
@@ -276,6 +289,8 @@ class TVSearch:
                 params[param] = (',' if g.get('join') == 'and' else '|').join(v['id'] for v in g['values'] if not v.get('exclude'))
                 if kind == 'genre':
                     params['without_genres'] = ','.join(v['id'] for v in g['values'] if v.get('exclude'))
+        if 'tv_status' in groups:
+            params['with_status'] = groups['tv_status']['values'][0]['id']
         for kind, param in [('year', 'first_air_date'), ('rating', 'vote_average'), ('runtime', 'with_runtime'), ('minimum_votes', 'vote_count')]:
             if kind in groups:
                 value = groups[kind]['values'][0]
@@ -313,16 +328,25 @@ class TVSearch:
                 path = {'trending_week': '/trending/tv/week', 'trending_today': '/trending/tv/day', 'popular': '/tv/popular',
                         'top_rated': '/tv/top_rated', 'best_all_time': '/tv/top_rated', 'now_playing': '/tv/on_the_air', 'upcoming': '/tv/airing_today'}.get(feed, path)
         post_filter = bool('title' in groups or 'person' in groups or set(groups) & {'availability', 'viewing_status'})
-        needs_detail = bool(set(groups) & {'keyword', 'runtime'} and ('title' in groups or 'person' in groups))
+        needs_detail = bool(('tv_status' in groups and post_filter) or
+                            (set(groups) & {'keyword', 'runtime'} and ('title' in groups or 'person' in groups)))
         def enrich(row):
             if needs_detail:
                 try:
                     row = {**row, **self.metadata.preview(row['tmdb_id'], fast=True, deadline=deadline)}
                 except (OSError, ValueError, KeyError):
                     row = {**row, 'metadata_notice': 'Some metadata is unavailable; retry to include missing matches.'}
+            elif 'tv_status' in groups and path == '/discover/tv' and not row.get('status'):
+                # TMDB discover summaries omit status even when with_status selected it.
+                row = {**row, 'status': TV_STATUS_NAMES[groups['tv_status']['values'][0]['id']]}
             own = local.get(row['tmdb_id'], {})
             row = {**row, **{k: own.get(k, default) for k, default in [('id', None), ('watchlisted', False), ('available_count', 0), ('completed_count', 0), ('last_played', 0)]}, 'media_type': 'tv'}
             if own:
+                detail = self.read.detail(own['id'])
+                row.update({key: detail.get(key) for key in ('poster_url', 'provider_poster_url', 'poster_override',
+                    'primary_action', 'episode_count', 'available_count', 'completed_count', 'offline_percent',
+                    'watched_percent', 'coverage_complete', 'pending_review_count', 'series_watched',
+                    'watchlisted', 'season_count', 'status_label', 'year_range', 'quality_label')})
                 row['released_count'] = own.get('episode_count', 0)
             return self.metadata.display(row, deadline=deadline) if hasattr(self.metadata, 'display') else row
         if post_filter:

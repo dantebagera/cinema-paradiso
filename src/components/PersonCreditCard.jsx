@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { fetchJson } from '../api/client.js';
 import { cx } from '../utils/appUtils.js';
+import { MovieAwards } from './MovieAwards.jsx';
+import { positiveAwards } from '../api/movieAwards.js';
 
 export function usePersonBiography() {
   const [personBio, setPersonBio] = useState(null);
@@ -34,9 +36,9 @@ export function usePersonBiography() {
   return { personBio, openPersonBio, closePersonBio };
 }
 
-export function PersonCreditCard({ person, role, canBrowse, onBrowse, onDiscover, onBio }) {
+export function PersonCreditCard({ person, role, canBrowse, onBrowse, onDiscover, onBio, awardCounts = null, onAwardDiscover = undefined }) {
   const isDirector = role === 'director' || role === 'creator';
-  const className = cx('person-card', isDirector && 'director-person', !canBrowse && 'discover-person-static', canBrowse && 'person-credit-browse');
+  const className = cx('person-card', isDirector && 'director-person', !canBrowse && 'discover-person-static', canBrowse && 'person-credit-browse', positiveAwards(awardCounts).length && 'person-card-awards');
   const browseLabel = person.character || person.role || (isDirector ? 'Director' : 'Cast');
   const canDiscover = Boolean(onDiscover && person?.id);
 
@@ -59,6 +61,7 @@ export function PersonCreditCard({ person, role, canBrowse, onBrowse, onDiscover
       {canDiscover && <button type="button" className="person-discover-button" onClick={(event) => { event.stopPropagation(); onDiscover(role, person); }}
         aria-label={`Open filmography for ${person.name}`} title="Filmography"><Film size={14} /></button>}
       <PersonAvatar person={person} />
+      <MovieAwards counts={awardCounts} person onAwardDiscover={onAwardDiscover && person?.id ? award => onAwardDiscover(role, person, award) : undefined} />
       <strong dir="auto">{person.name}</strong>
       <small>{browseLabel}</small>
     </div>

@@ -1,0 +1,387 @@
+{{oscars short description|films-year=1947}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number = 20
+| image = 20th Academy Awards.jpg
+| caption = Official pamphlet cover
+| award = Academy Awards
+| date = March 20, 1948
+| site = [[Shrine Auditorium]], [[Los Angeles]], United States
+| host = No host
+| best_picture = ''[[Gentleman's Agreement]]''
+| most_wins = ''Gentleman's Agreement'' and ''[[Miracle on 34th Street]]'' (3)
+| most_nominations = ''Gentleman's Agreement'' (8)
+| last = 19th
+| next = 21st
+}}
+The '''20th Academy Awards''' were held on March 20, 1948, to honor the films released in [[1947 in film|1947]]. There was no host for this ceremony.<ref>{{Cite web |last=Sciences |first=Academy of Motion Picture Arts and |title=Every Oscar Host in History: See the Full List From Douglas Fairbanks to Jimmy Kimmel |url=https://newsletter.oscars.org/news/post/every-oscar-host-in-history-see-the-full-list |access-date=2026-01-11 |website=Academy |language=en}}</ref>
+
+[[Rosalind Russell]] was highly favored—particularly in a poll from the ''[[Daily Variety]]''<ref name="Oscars '47 Notes"/>—to win Best Actress for her performance in ''[[Mourning Becomes Electra (film)|Mourning Becomes Electra]]'',<ref name=dirks>{{cite web|url=http://www.filmsite.org/aa47.html |title=1947 Academy Awards Winners and History|publisher=FilmSite.org ([[American Movie Classics]]) |first=Tim |last=Dirks |access-date=September 2, 2015 | archive-date = April 19, 2015 | archive-url = https://web.archive.org/web/20150419072204/http://www.filmsite.org/aa47.html | url-status=live}}</ref> but [[Loretta Young]] won instead for ''[[The Farmer's Daughter (1947 film)|The Farmer's Daughter]]''.<ref name="Oscars '47 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/836/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=837 |isbn=0-385-04060-1}}</ref>
+
+[[James Baskett]] received an [[Academy Honorary Award]] for his portrayal of Uncle Remus in ''[[Song of the South]]'', which made him the first [[African-American]] man, and the first actor in a Disney film, to win an Academy Award for acting.<ref name=dirks />
+
+Winning [[Academy Award for Best Supporting Actor|Best Supporting Actor]] at age 71, [[Edmund Gwenn]] became the oldest Oscar winner, taking the record from [[Charles Coburn]], who was 66 at the time of his win in [[16th Academy Awards|1943]] for ''[[The More the Merrier]]''.
+
+[[Darryl F. Zanuck]], bitter over the failure of the 1944 biopic ''[[Wilson (1944 film)|Wilson]]'' to win Best Picture, accepted the prize for ''Gentleman's Agreement'' by saying, "this award will make up for previous disappointments."<ref name="Oscars '44 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/836/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=836 |isbn=0-385-04060-1}}</ref>
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Darryl F. Zanuck 1964.jpg
+| caption1          = [[Darryl F. Zanuck]]; Best Picture winner
+| image2            = Elia Kazan.JPG
+| caption2          = [[Elia Kazan]]; Best Director winner
+| image3            = Ronald Colman - publicity.jpg
+| caption3          = [[Ronald Colman]]; Best Actor winner
+| image4            = LORETTAYoung.jpg
+| caption4          = [[Loretta Young]]; Best Actress winner
+| image5             = Edmund Gwenn 1953.jpg
+| caption5          = [[Edmund Gwenn]], Best Supporting Actor winner
+| image6            = Celeste Holm-1955.jpg
+| caption6          = [[Celeste Holm]]; Best Supporting Actress winner
+| image7            = 
+| caption7          = [[George Seaton]], Best Writing (Screenplay) winner
+| image8            = Miklós Rózsa & Ginger Rogers Oscars 1946 (cropped).jpg
+| caption8          = [[Miklós Rózsa|Miklos Rozsa]], Best Music (Music Score of a Dramatic or Comedy Picture) winner
+}}
+
+=== Awards ===
+Nominees were announced on February 13, 1948. Winners are listed first and highlighted in boldface.<ref name="Oscars1948">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1948 |title=The 20th Academy Awards (1948) Nominees and Winners |access-date=2011-08-18 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093801/http://www.oscars.org/awards/academyawards/legacy/ceremony/20th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+* '''''[[Gentleman's Agreement]] – ''[[Darryl F. Zanuck]] for [[20th Century Fox]]'''
+** ''[[The Bishop's Wife]]'' – [[Samuel Goldwyn]] for [[RKO Radio Pictures]]
+** ''[[Crossfire (film)|Crossfire]]'' – [[Adrian Scott]] for [[RKO Radio Pictures]]
+** ''[[Great Expectations (1946 film)|Great Expectations]]'' – [[Ronald Neame]] for [[Universal Pictures|Universal Studios]] and [[Rank Organisation|General Film Distributors, Ltd.]]
+** ''[[Miracle on 34th Street]]'' – [[William Perlberg]] for [[20th Century Fox]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Elia Kazan]] – ''[[Gentleman's Agreement]]'''''
+** [[Henry Koster]] – ''[[The Bishop's Wife]]''
+** [[Edward Dmytryk]] – ''[[Crossfire (film)|Crossfire]]''
+** [[George Cukor]] – ''[[A Double Life (1947 film)|A Double Life]]''
+** [[David Lean]] – ''[[Great Expectations (1946 film)|Great Expectations]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Ronald Colman]] – ''[[A Double Life (1947 film)|A Double Life]]'' as Anthony John'''
+** [[John Garfield]] – ''[[Body and Soul (1947 film)|Body and Soul]]'' as Charlie Davis
+** [[Gregory Peck]] – ''[[Gentleman's Agreement]]'' as Philip Schuyler Green
+** [[William Powell]] – ''[[Life with Father (film)|Life with Father]]'' as Clarence Day Sr.
+** [[Michael Redgrave]] – ''[[Mourning Becomes Electra (film)|Mourning Becomes Electra]]'' as Orin Mannon
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Loretta Young]] – ''[[The Farmer's Daughter (1947 film)|The Farmer's Daughter]]'' as Katie Holstrom'''
+** [[Joan Crawford]] – ''[[Possessed (1947 film)|Possessed]]'' as Louise Howell
+** [[Susan Hayward]] – ''[[Smash-Up, the Story of a Woman]]'' as Angie Evans
+** [[Dorothy McGuire]] – ''[[Gentleman's Agreement]]'' as Kathy Lacey
+** [[Rosalind Russell]] – ''[[Mourning Becomes Electra (film)|Mourning Becomes Electra]]'' as Lavinia Mannon
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Edmund Gwenn]] – ''[[Miracle on 34th Street]]'' as [[Santa Claus|Kris Kringle]]'''
+** [[Charles Bickford]] – ''[[The Farmer's Daughter (1947 film)|The Farmer's Daughter]]'' as Joseph Clancy
+** [[Thomas Gomez]] – ''[[Ride the Pink Horse]]'' as Pancho
+** [[Robert Ryan]] – ''[[Crossfire (film)|Crossfire]]'' as Montgomery
+** [[Richard Widmark]] – ''[[Kiss of Death (1947 film)|Kiss of Death]]'' as Tommy Udo
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Celeste Holm]] – ''[[Gentleman's Agreement]]'' as Anne Dettrey'''
+** [[Ethel Barrymore]] – ''[[The Paradine Case]]'' as Lady Sophie Horfield
+** [[Gloria Grahame]] – ''[[Crossfire (film)|Crossfire]]'' as Ginny Tremaine
+** [[Marjorie Main]] – ''[[The Egg and I (film)|The Egg and I]]'' as Ma Kettle
+** [[Anne Revere]] – ''Gentleman's Agreement'' as Mrs Green
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+* '''''[[Miracle on 34th Street]]'' – [[Valentine Davies]]'''
+** ''[[A Cage of Nightingales]]'' – [[Georges Chaperot]] and [[René Wheeler]]
+** ''[[It Happened on 5th Avenue]]'' – [[Herbert Clyde Lewis]] and [[Frederick Stephani]]
+** ''[[Kiss of Death (1947 film)|Kiss of Death]]'' – [[Eleazar Lipsky]]
+** ''[[Smash-Up, the Story of a Woman]]'' – [[Dorothy Parker]] and [[Frank Cavett]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[The Bachelor and the Bobby-Soxer]]'' – [[Sidney Sheldon]]'''
+** ''[[Body and Soul (1947 film)|Body and Soul]]'' – [[Abraham Polonsky]]
+** ''[[A Double Life (1947 film)|A Double Life]]'' – [[Ruth Gordon]] and [[Garson Kanin]]
+** ''[[Monsieur Verdoux]]'' – [[Charlie Chaplin]]
+** ''[[Shoeshine (film)|Shoeshine]]'' – [[Sergio Amidei]], [[Adolfo Franci]], [[Cesare Giulio Viola]] and [[Cesare Zavattini]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* '''''[[Miracle on 34th Street]]'' – [[George Seaton]] from a story by [[Valentine Davies]]'''
+** ''[[Boomerang (1947 film)|Boomerang!]]'' – [[Richard Murphy (screenwriter)|Richard Murphy]] from a [[Reader's Digest]] article by [[Anthony Abbot]]
+** ''[[Crossfire (film)|Crossfire]]'' – [[John Paxton]] from ''The Brick Foxhole'' by [[Richard Brooks]]
+** ''[[Gentleman's Agreement]]'' – [[Moss Hart]] from ''[[Gentleman's Agreement (novel)|Gentleman's Agreement]]''  by [[Laura Z. Hobson]]
+** ''[[Great Expectations (1946 film)|Great Expectations]]'' – [[David Lean]], [[Ronald Neame]] and [[Anthony Havelock-Allan]] from ''[[Great Expectations]]'' by [[Charles Dickens]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Design for Death]]'' – [[Sid Rogell]], Theron Warth, and [[Richard Fleischer]]'''
+** ''[[Journey into Medicine]]'' – [[United States Department of State]] Office of Information and Educational Exchange
+** ''[[The World Is Rich]]'' – [[Paul Rotha]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[First Steps (1947 film)|First Steps]]'' – [[United Nations]] Division of Films and Visual Information'''
+** ''[[Passport to Nowhere]]'' – Frederic Ullman, Jr.
+** ''[[School in the Mailbox]]'' – [[Australian Information Service|Australian News & Information Bureau]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[Goodbye, Miss Turlock]]'' – [[Herbert Moulton]]'''
+** ''Brooklyn, U.S.A.'' – Thomas Mead
+** ''Moon Rockets'' – [[Jerry Fairbanks]]
+** ''Now You See It'' – [[Pete Smith (film producer)|Pete Smith]]
+** ''[[So You Want to Be in Pictures]]'' – [[Gordon Hollingshead]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[Climbing the Matterhorn]]'' – [[Irving Allen]]'''
+** ''Champagne for Two'' – Harry Grey
+** ''Fight of the Wild Stallions'' – Thomas Mead
+** ''Give Us the Earth'' – Herbert Morgan
+** ''A Voice Is Born: The Story of Miklos Gafni'' – Ben Blake
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[Tweetie Pie]]'' – [[Edward Selzer]]'''
+** ''[[Chip an' Dale]]'' – [[Walt Disney]]
+** ''Dr. Jekyll and Mr. Mouse'' – [[Fred Quimby]]
+** ''[[Pluto's Blue Note]]'' – [[Walt Disney]]
+** ''[[Tubby the Tuba (1947 film)|Tubby the Tuba]]'' – [[George Pal]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+* '''''[[A Double Life (1947 film)|A Double Life]]'' – [[Miklós Rózsa]]'''
+** ''[[The Bishop's Wife]]'' – [[Hugo Friedhofer]]
+** ''[[Captain from Castile]]'' – [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[Forever Amber (film)|Forever Amber]]'' – [[David Raksin]]
+** ''[[Life with Father (film)|Life with Father]]'' – [[Max Steiner]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+* '''''[[Mother Wore Tights]]'' – [[Alfred Newman (composer)|Alfred Newman]]'''
+** ''[[Fiesta (1947 film)|Fiesta]]'' – [[Johnny Green]]
+** ''[[My Wild Irish Rose]]'' – [[Ray Heindorf]] and [[Max Steiner]]
+** ''[[Road to Rio]]'' – [[Robert E. Dolan|Robert Emmett Dolan]]
+** ''[[Song of the South]]'' – [[Daniele Amfitheatrof]], [[Paul Smith (composer)|Paul J. Smith]] and [[Charles Wolcott]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[Zip-a-Dee-Doo-Dah]]" from ''[[Song of the South]]'' – Music by [[Allie Wrubel]]; Lyrics by [[Ray Gilbert]]'''
+** "[[A Gal in Calico]]" from ''[[The Time, the Place and the Girl (1946 film)|The Time, the Place and the Girl]]'' – Music by [[Arthur Schwartz]]; Lyrics by [[Leo Robin]]
+** "[[I Wish I Didn't Love You So]]" from ''[[The Perils of Pauline (1947 film)|The Perils of Pauline]]'' – Music and Lyrics by [[Frank Loesser]]
+** "Pass That Peace Pipe" from ''[[Good News (1947 film)|Good News]]'' – Music and Lyrics by [[Ralph Blane]], [[Hugh Martin]] and [[Roger Edens]]
+** "You Do" from ''[[Mother Wore Tights]]'' – Music by [[Josef Myrow]]; Lyrics by [[Mack Gordon]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+* '''''[[The Bishop's Wife]]'' – [[Gordon E. Sawyer]]'''
+** ''[[Green Dolphin Street (film)|Green Dolphin Street]]'' – [[Douglas Shearer]]
+** ''[[T-Men]]'' – [[Jack Whitney]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[Great Expectations (1946 film)|Great Expectations]]'' – Art Direction: [[John Bryan (art director)|John Bryan]]; Set Decoration: [[Wilfred Shingleton]]'''
+** ''[[The Foxes of Harrow]]'' – Art Direction: [[Lyle R. Wheeler]] and [[Maurice Ransford]]; Set Decoration: [[Thomas Little]] and [[Paul S. Fox]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[Black Narcissus]]'' – Art Direction and Set Decoration: [[Alfred Junge]]'''
+** ''[[Life with Father (film)|Life with Father]]'' – Art Direction: [[Robert M. Haas]]; Set Decoration: [[George James Hopkins]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[Great Expectations (1946 film)|Great Expectations]]'' – [[Guy Green (filmmaker)|Guy Green]]'''
+** ''[[The Ghost and Mrs. Muir]]'' – [[Charles Lang]]
+** ''[[Green Dolphin Street (film)|Green Dolphin Street]]'' – [[George Folsey (cinematographer)|George J. Folsey]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[Black Narcissus]]'' – [[Jack Cardiff]]'''
+** ''[[Life with Father (film)|Life with Father]]'' – [[Peverell Marley]] and [[William V. Skall]]
+** ''[[Mother Wore Tights]]'' – [[Harry Jackson (cinematographer)|Harry Jackson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Body and Soul (1947 film)|Body and Soul]]'' – [[Francis D. Lyon]] and [[Robert Parrish]]'''
+** ''[[The Bishop's Wife]]'' – [[Monica Collingwood]]
+** ''[[Gentleman's Agreement]]'' – [[Harmon Jones]]
+** ''[[Green Dolphin Street (film)|Green Dolphin Street]]'' – [[George White (film editor)|George White]]
+** ''[[Odd Man Out]]'' – [[Fergus McDonell]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+* '''''[[Green Dolphin Street (film)|Green Dolphin Street]]'' – Special Visual Effects: [[A. Arnold Gillespie]] and [[Warren Newcombe]]; Special Audible Effects: [[Douglas Shearer]] and [[Michael Steinore]]'''
+** ''[[Unconquered (1947 film)|Unconquered]]'' – Special Visual Effects: [[Farciot Edouart]], [[Dev Jennings (cinematographer)|Devereux Jennings]], [[Gordon Jennings]], [[W. Wallace Kelley|Wallace Kelley]] and [[Paul Lerpae]]; Special Audible Effects: [[George Dutton]]
+|}
+
+===Special awards===
+* To [[James Baskett]] for his able and heart-warming characterization of [[Uncle Remus]], friend and storyteller to the children of the world in [[Walt Disney]]'s ''[[Song of the South]]''.
+* To ''[[Bill and Coo]]'', in which artistry and patience blended in a novel and entertaining use of the medium of motion pictures.
+* To ''[[Shoeshine (film)|Shoeshine]]'' ([[Italy]])—The high quality of this motion picture, brought to eloquent life in a country scarred by war, is proof to the world that the creative spirit can triumph over adversity.
+* To Colonel [[William N. Selig]], [[Albert E. Smith (producer)|Albert E. Smith]], [[Thomas Armat]], and [[George Kirke Spoor|George K. Spoor]], (one of) the small group of pioneers whose belief in a new medium and whose contributions to its development blazed the trail along which the motion picture has progressed, in their lifetime, from obscurity to worldwide acclaim.
+
+== Presenters and performers ==
+
+===Presenters===
+{| class="wikitable"
+|+List of presenters, in order of appearance<ref name=":0" />
+!Name
+!Role
+|-
+|[[George Murphy]]
+|presented the awards for Motion Picture Story and Original Screenplay
+|-
+|[[Robert Montgomery (actor)|Robert Montgomery]]
+|presented the Scientific and Technical Awards
+|-
+|[[Shirley Temple]]
+|presented the Documentary and Short Subject Awards
+|-
+|[[Larry Parks]]
+|presented the awards for Best Special Effects, Best Musical Score and Best Sound Recording
+|-
+|[[Donald Crisp]]
+|presented the awards for Best Supporting Actress and Best Director
+|-
+|[[Olivia de Havilland]]
+|presented the award for Best Actor
+|-
+|[[Dinah Shore]]
+|presented the award for Best Original Song
+|-
+|[[Dick Powell]]
+|presented the award for Best Art Direction
+|-
+|[[Jean Simmons]]
+|accepted the Best Art Direction award on behalf of [[J. Arthur Rank]]
+|-
+|[[Jean Hersholt]]
+|presented the Honorary Awards
+|-
+|[[Ingrid Bergman]]
+|presented the Honorary Award to James Baskett
+|-
+|[[Agnes Moorehead]]
+|presented the awards for Best Cinematography
+|-
+|[[Anne Baxter]]
+|presented the awards for Best Cinematography, Best Supporting Actor, Best Screenplay and Best Film Editing
+|-
+|[[Fredric March]]
+|presented the awards for Best Actress and Best Picture
+|}
+
+===Performers===
+{| class="wikitable"
+|+List of musical performances, in order of appearance<ref name=":0">{{Cite book |last=Wiley |first=Mason |title=Inside Oscar |publisher=Ballantine Books |year=1986 |isbn=9780345314239 |location=New York |pages=176}}</ref>
+!Artist
+!Song
+|-
+|[[Gordon MacRae]]
+|"A Girl in Calico"
+|-
+|[[Dennis Day]]
+|"[[I Wish I Didn't Love You So]]"
+|-
+|[[Dinah Shore]]
+|"Pass That Peace Pipe"
+|-
+|[[Frances Langford]]
+|"You Do"
+|-
+|[[Johnny Mercer]] and [[the Pied Pipers]]
+|"Zip-a-Dee-Doo-Dah"
+|}
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 8
+| ''[[Gentleman's Agreement]]''
+|-
+| rowspan="3" style="text-align:center" | 5
+| ''[[The Bishop's Wife]]''
+|-
+| ''[[Crossfire (film)|Crossfire]]''
+|-
+| ''[[Great Expectations (1946 film)|Great Expectations]]''
+|-
+| rowspan="4" style="text-align:center" | 4
+| ''[[A Double Life (1947 film)|A Double Life]]''
+|-
+| ''[[Green Dolphin Street (film)|Green Dolphin Street]]''
+|-
+| ''[[Life with Father (film)|Life with Father]]''
+|-
+| ''[[Miracle on 34th Street]]''
+|-
+| rowspan="2" style="text-align:center" | 3
+| ''[[Body and Soul (1947 film)|Body and Soul]]''
+|-
+| ''[[Mother Wore Tights]]''
+|-
+| rowspan="6" style="text-align:center" | 2
+| ''[[Black Narcissus]]''
+|-
+| ''[[The Farmer's Daughter (1947 film)|The Farmer's Daughter]]''
+|-
+| ''[[Kiss of Death (1947 film)|Kiss of Death]]''
+|-
+| ''[[Mourning Becomes Electra (film)|Mourning Becomes Electra]]''
+|-
+| ''[[Smash-Up, the Story of a Woman]]''
+|-
+| ''[[Song of the South]]''{{efn|name=SongSouth|Not including the Special Award for ''Song of the South''.}}
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards{{efn|name=SongSouth}}
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=2, style="text-align:center" | 3
+| ''[[Gentleman's Agreement]]''
+|-
+| ''[[Miracle on 34th Street]]''
+|-
+| rowspan=3, style="text-align:center" | 2
+| ''[[Black Narcissus]]''
+|-
+| ''[[A Double Life (1947 film)|A Double Life]]''
+|-
+| ''[[Great Expectations (1946 film)|Great Expectations]]''
+|}
+
+{{col-float-end}}
+
+==See also==
+* [[5th Golden Globe Awards]]
+* [[1947 in film]]
+* [[1st British Academy Film Awards]]
+* [[2nd Tony Awards]]
+
+==Notes==
+{{notelist}}
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 20}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1947 film awards]]
+[[Category:1948 in Los Angeles]]
+[[Category:1948 in American cinema]]
+[[Category:March 1948 in the United States]]

@@ -1,0 +1,168 @@
+{{Short description|Film award}}
+{{Infobox award
+| name = [[Golden Globe Award]] for Cinematic and Box Office Achievement
+| awarded_for = 
+| presenter = [[Golden Globe Foundation]]
+| location = United States
+| holder = ''[[Sinners (2025 film)|Sinners]]'' (2025)
+| website = [https://www.goldenglobes.com/ Golden Globes]
+}}
+
+The '''Golden Globe Award for Cinematic and Box Office Achievement''' is a [[Golden Globe Awards|Golden Globe Award]] that was first awarded in 2024 by [[Golden Globe Foundation]].<ref name="InsideTheCategory"/> 
+
+== Criteria ==
+According to [[Dick Clark Productions]], the new organizing body of the Golden Globes, the award recognizes “the year’s most acclaimed, highest-earning and/or most viewed films that have garnered extensive global audience support and attained cinematic excellence.”<ref name=":0">{{Cite web |last=Hazelton |first=John |date=September 26, 2023 |title=Golden Globes adds “cinematic and box office achievement” category |url=https://www.screendaily.com/news/golden-globes-adds-cinematic-and-box-office-achievement-category/5186290.article |access-date=January 25, 2024 |website=Screen |language=en |archive-date=December 27, 2024 |archive-url=https://web.archive.org/web/20241227174350/https://www.screendaily.com/news/golden-globes-adds-cinematic-and-box-office-achievement-category/5186290.article |url-status=live }}</ref> 
+
+To be eligible for nomination, a film must have grossed $150 million with at least $100 million grossed in the U.S., or have garnered “commensurate digital streaming viewership recognized by trusted industry sources.” Films released between November 22 and the end of the year may qualify based on projected box office performance or streaming views.<ref name=":0" /> From the eligible films, nominees and winners are voted for based on excellence.
+
+The award is given to the individual producers accredited by the Producers Guild of America for the film.<ref>{{Cite web |title=Wayback Machine |url=https://goldenglobes.com/wp-content/uploads/2025/06/83rd-Golden-Globes-Eligibility-and-Consideration-Rules-Updated-18Jun2025-1.pdf |archive-url=https://web.archive.org/web/20251003053804/https://goldenglobes.com/wp-content/uploads/2025/06/83rd-Golden-Globes-Eligibility-and-Consideration-Rules-Updated-18Jun2025-1.pdf |archive-date=2025-10-03 |access-date=2025-12-13 |website=goldenglobes.com}}</ref>
+
+== Winners and nominees ==
+=== 2020s ===
+{| class="wikitable sortable"
+|-
+! style="width:6%;" | Year
+! style="width:38%;" | Film
+! style="width:30%;" | Producer(s)
+! style="width:30%;" | Distributor
+! scope="col" class="unsortable"|{{Abbr|Ref.|Reference}}
+|-
+! rowspan="8" | [[2023 in film|2023]] <br> <small>([[81st Golden Globe Awards|81st]])</small>
+| style="background:#B0C4DE" | '''''[[Barbie (film)|Barbie]]'''''
+| style="background:#B0C4DE" |'''[[David Heyman]], [[Margot Robbie]], [[Tom Ackerley]], [[Robbie Brenner]]'''
+| style="background:#B0C4DE" | '''[[Warner Bros. Pictures]]'''
+| rowspan="8" align="center"| <ref name="GG81"/>
+|-
+| ''[[Guardians of the Galaxy Vol. 3]]''
+|[[Kevin Feige]]
+| [[Walt Disney Studios Motion Pictures|Walt Disney Studios]]
+|-
+| ''[[John Wick: Chapter 4]]''
+|[[Basil Iwanyk]], Erica Lee, [[Chad Stahelski]]
+| [[Lionsgate Films]]
+|-
+| ''[[Mission: Impossible – Dead Reckoning Part One]]''
+|[[Tom Cruise]], [[Christopher McQuarrie]]
+| [[Paramount Pictures]]
+|-
+| ''[[Oppenheimer (film)|Oppenheimer]]''
+|[[Emma Thomas]], [[Charles Roven]], [[Christopher Nolan]]
+| [[Universal Pictures]]
+|-
+| ''[[Spider-Man: Across the Spider-Verse]]''
+|[[Avi Arad]], [[Phil Lord and Christopher Miller|Phil Lord, Christopher Miller]], [[Amy Pascal]], Christina Steinberg
+| [[Sony Pictures Releasing]]
+|-
+| ''[[The Super Mario Bros. Movie]]''
+|[[Chris Meledandri|Christopher Meledandri]]
+| [[Universal Pictures]]
+|-
+| ''[[Taylor Swift: The Eras Tour]]''
+|[[Taylor Swift]]
+| [[AMC Theatres]]
+|-
+! rowspan="8" | [[2024 in film|2024]] <br> <small>([[82nd Golden Globe Awards|82nd]])</small>
+| style="background:#B0C4DE" | '''''[[Wicked (2024 film)|Wicked]]'''''
+| style="background:#B0C4DE" |[[Marc Platt (producer)|'''Marc Platt''']]
+| style="background:#B0C4DE" | '''[[Universal Pictures]]'''
+| rowspan="8" align="center"| <ref name="GG82"/>
+|-
+| ''[[Alien: Romulus]]''
+|[[Ridley Scott]], [[Michael Pruss]], [[Walter Hill]]
+| [[20th Century Studios]]
+|-
+| ''[[Beetlejuice Beetlejuice]]''
+|[[Tim Burton]], Tommy Harper
+| [[Warner Bros. Pictures]]
+|-
+| ''[[Deadpool & Wolverine]]''
+|[[Kevin Feige]], [[Shawn Levy]], [[Ryan Reynolds]]
+| [[Walt Disney Studios Motion Pictures|Walt Disney Studios]]
+|-
+| ''[[Gladiator II]]''
+|[[Lucy Fisher]], [[Michael Pruss]], [[Ridley Scott]], [[Douglas Wick|Douglas WIck]]
+| [[Paramount Pictures]]
+|-
+| ''[[Inside Out 2]]''
+|Mark Nielsen
+| [[Walt Disney Studios Motion Pictures|Walt Disney Studios]]
+|-
+| ''[[Twisters (film)|Twisters]]''
+|[[Frank Marshall (filmmaker)|Frank Marshall]]
+| [[Universal Pictures]]
+|-
+| ''[[The Wild Robot]]''
+|[[Jeff Hermann]]
+| [[Universal Pictures]]
+|-
+! rowspan="8" | [[2025 in film|2025]] <br> <small>([[83rd Golden Globe Awards|83rd]])</small>
+| style="background:#B0C4DE" | '''''[[Sinners (2025 film)|Sinners]]'''''
+| style="background:#B0C4DE" |'''Zinzi Coogler, [[Ryan Coogler]], [[Sev Ohanian]]'''
+| style="background:#B0C4DE" | '''[[Warner Bros. Pictures]]'''
+| rowspan="8" align="center"| <ref name="GG82"/>
+|-
+| ''[[Avatar: Fire and Ash]]''
+|[[James Cameron]], [[Jon Landau (film producer)|Jon Landau]]
+| [[Walt Disney Studios Motion Pictures|Walt Disney Studios]]
+|-
+| ''[[F1 (film)|F1]]''
+|[[Joseph Kosinski]], [[Jerry Bruckheimer]], [[Brad Pitt]], [[Dede Gardner]], [[Jeremy Kleiner]], Chad Oman
+| [[List of Apple TV original films|Apple Original Films]]
+|-
+| ''[[KPop Demon Hunters]]''
+|Michelle Wong
+| [[Netflix]]
+|-
+| ''[[Mission: Impossible – The Final Reckoning]]''
+|[[Tom Cruise]], [[Christopher McQuarrie]]
+| [[Paramount Pictures]]
+|-
+| ''[[Weapons (2025 film)|Weapons]]''
+|[[Zach Cregger]], Miri Yoon
+| [[Warner Bros. Pictures]]
+|-
+| ''[[Wicked: For Good]]''
+|[[Marc Platt (producer)|Marc Platt]]
+| [[Universal Pictures]]
+|-
+| ''[[Zootopia 2]]''
+|[[Yvett Merino]]
+| [[Walt Disney Studios Motion Pictures|Walt Disney Studios]]
+|}
+
+==Franchises with multiple nominations==
+*''[[Wicked (2024 film)|Wicked]]'' - 2 (one win)
+*''[[Mission: Impossible (film series)|Mission: Impossible]]'' - 2
+*[[Marvel Cinematic Universe]] - 2
+
+==Producers with multiple nominations==
+*[[Marc Platt (producer)|Marc Platt]] - 2 (one win)
+*[[Tom Cruise]] - 2
+*[[Kevin Feige]] - 2
+*[[Christopher McQuarrie]] - 2
+*[[Ridley Scott]] - 2
+
+== See also ==
+*[[Academy Award for Outstanding Achievement in Popular Film]], a proposed award that was scrapped following backlash
+*[[Golden Globe Award for Best Performance in Stand-Up Comedy on Television]], a cousin category introduced simultaneously, albeit for television
+
+== References ==
+{{Reflist|refs=
+
+<ref name="InsideTheCategory">{{Cite web |last=Ford |first=Rebecca |date=December 14, 2023 |title=Inside the Golden Globes’ New “Box Office Achievement” Category |url=https://www.vanityfair.com/hollywood/golden-globes-box-office-category-interview-awards-insider |website=[[Vanity Fair (magazine)|Vanity Fair]] |access-date=January 25, 2024 |archive-date=December 15, 2023 |archive-url=https://web.archive.org/web/20231215161759/https://www.vanityfair.com/hollywood/golden-globes-box-office-category-interview-awards-insider |url-status=live }}</ref>
+
+<!-- WINNERS AND NOMINEES -->
+
+<ref name="GG81">{{cite news |last1=Nordyke |first1=Kimberly |title=Golden Globes: Winners List |url=https://www.hollywoodreporter.com/movies/movie-news/golden-globes-2024-winners-list-1235781166/ |access-date=May 13, 2024 |work=[[The Hollywood Reporter]] |date=January 7, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108013852/https://www.hollywoodreporter.com/movies/movie-news/golden-globes-2024-winners-list-1235781166/ |url-status=live }}</ref>
+
+<ref name="GG82">{{cite news |last1=Nordyke |first1=Kimberly |title=Golden Globes: Full List of Winners |url=https://www.hollywoodreporter.com/lists/golden-globes-2025-winners-list/best-motion-picture-animated/ |access-date=March 28, 2025 |work=[[The Hollywood Reporter]] |date=January 5, 2025 |archive-url=https://web.archive.org/web/20250227095215/https://www.hollywoodreporter.com/lists/golden-globes-2025-winners-list/best-motion-picture-drama-14/ |archive-date=February 27, 2025 |url-status=live}}</ref>
+}}
+
+== External links ==
+* [https://goldenglobes.com/winners-nominees/ Golden Globe Awards winners and nominees]
+
+{{Golden Globe Awards Chron}}
+{{Golden Globe Award for Cinematic and Box Office Achievement}}
+[[Category:Golden Globe Awards|Cinematic and Box Office Achievement]]
+[[Category:Awards established in 2024]]
+[[Category:2024 establishments in California]]

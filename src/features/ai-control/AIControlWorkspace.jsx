@@ -750,6 +750,8 @@ function AIControlCardResults({
               onTrailer={openAiControlTrailer}
               onToggleDetails={() => toggleAiControlDetails(movie, owned)}
               onPersonBrowse={(role, person) => onOpenDiscoverPerson(movieWithDetails, role, person)}
+              onPersonDiscover={(role, person) => onOpenDiscoverPerson(movieWithDetails, role, person, { fullFilmography: true })}
+              onPersonAwardDiscover={(role, person, award) => onOpenDiscoverPerson(movieWithDetails, role, person, { award })}
               onCollectionBrowse={(collection) => onOpenDiscoverCollection(movieWithDetails, collection)}
               onCollectionRetry={() => loadMovieCollection(details, { force: true })}
               onEditLists={() => setListEditorTarget(discoverMoviePayload(movie, owned))}

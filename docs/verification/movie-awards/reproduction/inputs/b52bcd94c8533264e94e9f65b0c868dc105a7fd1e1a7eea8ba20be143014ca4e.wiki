@@ -1,0 +1,415 @@
+{{oscars short description|films-year=1939}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 12
+| award            = Academy Awards
+| date             = February 29, 1940
+| site             = [[Cocoanut Grove (Ambassador Hotel)|Coconut Grove]], [[Ambassador Hotel (Los Angeles)|The Ambassador Hotel]], Los Angeles
+| host             = [[Bob Hope]]
+| best_picture     = ''[[Gone with the Wind (film)|Gone with the Wind]]''
+| most_wins        = ''Gone with the Wind'' (8)
+| most_nominations = ''Gone with the Wind'' (13)
+| last             = 11th
+| next             = 13th
+}}
+
+The '''12th Academy Awards''' ceremony, held on February 29, 1940, by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the [[1939 in film|best in film for 1939]] at a banquet in the [[Cocoanut Grove (Ambassador Hotel)|Coconut Grove]] at [[Ambassador Hotel (Los Angeles)|The Ambassador Hotel]] in [[Los Angeles]].<ref name="Oscars1940">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1940 |title=The 12th Academy Awards (1940) Nominees and Winners |access-date=2011-08-10 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093722/http://www.oscars.org/awards/academyawards/legacy/ceremony/12th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref> It was hosted by [[Bob Hope]], in his first of nineteen turns as host. 
+
+[[David O. Selznick]]'s ''[[Gone with the Wind (film)|Gone with the Wind]]'' received the most nominations of the year with thirteen, winning eight Oscars (both records at the time). It became the first film in color that won Best Picture. This year was the first in which multiple films received ten or more nominations (''[[Mr. Smith Goes to Washington]]'' received eleven).
+
+This was the first year in which [[Academy Award for Best Visual Effects|Best Visual Effects]] was a competitive category; previously, "special achievement" awards for effects had occasionally been conferred. This year, [[Academy Award for Best Cinematography|Best Cinematography]] was split into Color and Black & White categories.
+
+[[Hattie McDaniel]] became the first African-American to receive an [[Academy Awards|Academy Award]], winning Best Supporting Actress for ''Gone with the Wind''. [[Mickey Rooney]] became the [[List of oldest and youngest Academy Award winners and nominees#Best Actor in a Leading Role|second-youngest]] nominee for [[Academy Award for Best Actor|Best Actor]] at 19, and the first teenager to be nominated for an Academy Award, for his performance in ''[[Babes in Arms (film)|Babes in Arms]]''.
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = DavidSelznick.jpg
+| caption1          = [[David O. Selznick]]; Best Picture winner and Irving G. Thalberg Memorial Award recipient
+| image2            = Victor Fleming (1927 headshot).jpg
+| caption2          = [[Victor Fleming]]; Best Director winner
+| image3            = Robert Donat Ghost Goes West 1935 Publicity 01 (cropped).png
+| caption3          = [[Robert Donat]]; Best Actor winner
+| image4            = Vivien Leigh Scarlet.jpg
+| caption4          = [[Vivien Leigh]]; Best Actress winner
+| image5            = Thomas Mitchell 1953.JPG
+| caption5          = [[Thomas Mitchell (actor)|Thomas Mitchell]]; Best Supporting Actor winner
+| image6            = Studio publicity Hattie McDaniel.jpg
+| caption6          = [[Hattie McDaniel]]; Best Supporting Actress winner
+| image7            = Sidney Coe Howard 1909 (cropped).jpg
+| caption7          = [[Sidney Howard]]; Best Screenplay winner
+| image8            = Richard Hageman.jpg
+| caption8          = [[Richard Hageman]]; Best Scoring co-winner
+| image9            = Portrait of Harold Arlen (cropped).jpg
+| caption9          = [[Harold Arlen]]; Best Song co-winner
+| image10           = Gregg Toland.jpg
+| caption10         = [[Gregg Toland]]; Best Cinematography, Black-and-White winner
+| image11           = Judy Garland The Harvey Girls MGM Publicity still.jpeg
+| caption11         = [[Judy Garland]]; Juvenile Academy Award recipient
+| image12           = Douglas Fairbanks cropped.jpg
+| caption12         = [[Douglas Fairbanks]]; Honorary Academy Award recipient
+| image13           = Jean Hersholt 1929.jpg
+| caption13         = [[Jean Hersholt]]; Honorary Academy Award recipient
+| image14           = Ralph Morgan, 1920s.jpg
+| caption14         = [[Ralph Morgan]]; Honorary Academy Award recipient
+| image15           = Ralph Block - Dec 1920 EH.jpg
+| caption15         = [[Ralph Block]]; Honorary Academy Award recipient
+| image16           = Conrad Nagel - Apr 1922 Photoplay.jpg
+| caption16         = [[Conrad Nagel]]; Honorary Academy Award recipient
+
+}}
+
+=== Awards ===
+Nominees were announced on February 11, 1940. AMPAS presented Academy Awards of Merit in 20 categories. Nominees for each award are listed below; award winners are listed first and highlighted in boldface.
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+*'''''[[Gone with the Wind (film)|Gone With the Wind]]''''' '''– [[David O. Selznick]] for [[Selznick International Pictures|Selznick International]] and [[Metro-Goldwyn-Mayer]]'''
+** ''[[Dark Victory]]'' – [[David Lewis (producer)|David Lewis]] for [[Warner Bros.]]
+** ''[[Goodbye, Mr. Chips (1939 film)|Goodbye, Mr. Chips]]'' – [[Victor Saville]] for Metro-Goldwyn-Mayer
+** ''[[Love Affair (1939 film)|Love Affair]]'' – [[Leo McCarey]] for [[RKO Pictures|RKO Radio]]
+** ''[[Mr. Smith Goes to Washington]]'' – [[Frank Capra]] for [[Columbia Pictures|Columbia]]
+** ''[[Ninotchka]]'' – [[Sidney Franklin (director)|Sidney Franklin]] for Metro-Goldwyn-Mayer
+** ''[[Of Mice and Men (1939 film)|Of Mice and Men]]'' – [[Lewis Milestone]] for [[Hal Roach|Hal Roach Prod.]] and [[United Artists]]
+** ''[[Stagecoach (1939 film)|Stagecoach]]'' – [[Walter Wanger]] for United Artists
+** ''[[The Wizard of Oz]]'' – [[Mervyn LeRoy]] for Metro-Goldwyn-Mayer
+** ''[[Wuthering Heights (1939 film)|Wuthering Heights]]'' – [[Samuel Goldwyn]] for [[Samuel Goldwyn Productions|Samuel Goldwyn Prod.]] and United Artists
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Victor Fleming]]&nbsp;– ''[[Gone with the Wind (film)|Gone With the Wind]]'''''
+** [[Sam Wood]]&nbsp;– ''[[Goodbye, Mr. Chips (1939 film)|Goodbye, Mr. Chips]]''
+** [[Frank Capra]]&nbsp;– ''[[Mr. Smith Goes to Washington]]''
+** [[John Ford]]&nbsp;– ''[[Stagecoach (1939 film)|Stagecoach]]''
+** [[William Wyler]]&nbsp;– ''[[Wuthering Heights (1939 film)|Wuthering Heights]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Robert Donat]]&nbsp;– ''[[Goodbye, Mr. Chips (1939 film)|Goodbye, Mr. Chips]]'' as [[Mr Chips]]'''
+** [[Clark Gable]]&nbsp;– ''[[Gone with the Wind (film)|Gone With the Wind]]'' as [[Rhett Butler]]
+** [[Laurence Olivier]]&nbsp;– ''[[Wuthering Heights (1939 film)|Wuthering Heights]]'' as [[Heathcliff (Wuthering Heights)|Heathcliff]]
+** [[Mickey Rooney]]&nbsp;– [[Babes in Arms (film)|''Babes in Arms'']] as Mickey Moran
+** [[James Stewart]]&nbsp;– ''[[Mr. Smith Goes to Washington]]'' as Jefferson "Jeff" Smith
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Vivien Leigh]]&nbsp;– ''[[Gone with the Wind (film)|Gone With the Wind]]'' as [[Scarlett O'Hara]]'''
+** [[Bette Davis]]&nbsp;– ''[[Dark Victory]]'' as Judith Traherne
+** [[Irene Dunne]]&nbsp;– ''[[Love Affair (1939 film)|Love Affair]]'' as Terry McKay
+** [[Greta Garbo]]&nbsp;– ''[[Ninotchka]]'' as Nina Ivanovna 'Ninotchka' Yakushova
+** [[Greer Garson]]&nbsp;– ''[[Goodbye, Mr. Chips (1939 film)|Goodbye, Mr. Chips]]'' as Katherine
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Thomas Mitchell (actor)|Thomas Mitchell]]&nbsp;– ''[[Stagecoach (1939 film)|Stagecoach]]'' as Doc Boone'''
+** [[Brian Aherne]]&nbsp;– ''[[Juarez (film)|Juarez]]'' as [[Maximilian I of Mexico]]
+** [[Harry Carey (actor)|Harry Carey]]&nbsp;– ''[[Mr. Smith Goes to Washington]]'' as [[President of the Senate of the United States|President of the Senate]]
+** [[Brian Donlevy]]&nbsp;– ''[[Beau Geste (1939 film)|Beau Geste]]'' as [[Sergeant]] Markoff
+** [[Claude Rains]]&nbsp;– ''[[Mr. Smith Goes to Washington]]'' as [[US senator|Senator]] Joseph Harrison "Joe" Paine
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Hattie McDaniel]]&nbsp;– ''[[Gone with the Wind (film)|Gone With the Wind]]'' as Mammy'''
+** [[Olivia de Havilland]]&nbsp;– ''[[Gone with the Wind (film)|Gone with the Wind]]'' as [[Melanie Hamilton]]
+** [[Geraldine Fitzgerald]]&nbsp;– ''[[Wuthering Heights (1939 film)|Wuthering Heights]]'' as Isabella Linton
+** [[Edna May Oliver]]&nbsp;– ''[[Drums Along the Mohawk]]'' as Mrs. McKlennar
+** [[Maria Ouspenskaya]]&nbsp;– ''[[Love Affair (1939 film)|Love Affair]]'' as Grandmother Janou
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+*'''''[[Mr. Smith Goes to Washington]]''&nbsp;– [[Lewis R. Foster]]'''
+** ''[[Bachelor Mother]]''&nbsp;– [[Felix Jackson]]
+** ''[[Love Affair (1939 film)|Love Affair]]''&nbsp;– [[Mildred Cram]] and [[Leo McCarey]]
+** ''[[Ninotchka]]''&nbsp;– [[Melchior Lengyel]]
+** ''[[Young Mr. Lincoln]]''&nbsp;– [[Lamar Trotti]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[Gone with the Wind (film)|Gone With the Wind]]''&nbsp;– [[Sidney Howard]] (posthumous award), based on [[Gone with the Wind (novel)|the novel]] by [[Margaret Mitchell]]'''
+** ''[[Goodbye, Mr. Chips (1939 film)|Goodbye, Mr. Chips]]''&nbsp;– [[Eric Maschwitz]], [[R. C. Sherriff]] and [[Claudine West]], based on [[Goodbye, Mr. Chips|the novel]] by [[James Hilton (novelist)|James Hilton]]
+** ''[[Mr. Smith Goes to Washington]]''&nbsp;– [[Sidney Buchman]], based on a story by [[Lewis R. Foster]]
+** ''[[Ninotchka]]''&nbsp;– [[Charles Brackett]], [[Walter Reisch]], and [[Billy Wilder]], based on a story by [[Melchior Lengyel]]
+** ''[[Wuthering Heights (1939 film)|Wuthering Heights]]''&nbsp;– [[Ben Hecht]] and [[Charles MacArthur]], based on [[Wuthering Heights|the novel]] by [[Emily Brontë]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[Busy Little Bears]]''&nbsp;– [[Paramount Pictures]]'''
+** ''[[Information Please]]''&nbsp;– [[RKO Radio]]
+** ''[[Prophet Without Honor]]''&nbsp;– [[MGM]]
+** ''[[Sword Fishing]]''&nbsp;– [[Warner Bros.]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[Sons of Liberty (film)|Sons of Liberty]]''&nbsp;– [[Warner Bros.]]'''
+** ''[[Drunk Driving (film)|Drunk Driving]]''&nbsp;– [[MGM]]
+** ''[[Five Times Five]]''&nbsp;– [[RKO Radio]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[The Ugly Duckling (1939 film)|The Ugly Duckling]]''&nbsp;– [[Walt Disney Productions]] and [[RKO Radio]]'''
+** ''[[Detouring America]]''&nbsp;– [[Warner Bros.]]
+** ''[[Peace on Earth (film)|Peace on Earth]]''&nbsp;– [[MGM]]
+** ''[[The Pointer]]''&nbsp;– Walt Disney Productions and RKO Radio
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[The Wizard of Oz]]''&nbsp;– [[Herbert Stothart]]'''
+** ''[[Dark Victory]]''&nbsp;– [[Max Steiner]]
+** ''[[Eternally Yours (film)|Eternally Yours]]''&nbsp;– [[Werner Janssen]]
+** ''[[Golden Boy (1939 film)|Golden Boy]]''&nbsp;– [[Victor Young]]
+** ''[[Gone with the Wind (film)|Gone With the Wind]]''&nbsp;– Max Steiner
+** ''[[Gulliver's Travels (1939 film)|Gulliver's Travels]]''&nbsp;– Victor Young
+** ''[[The Man in the Iron Mask (1939 film)|The Man in the Iron Mask]]''&nbsp;– [[Lud Gluskin]] and [[Lucien Moraweck]]
+** ''[[Man of Conquest]]''&nbsp;– Victor Young
+** ''[[Nurse Edith Cavell]]''&nbsp;– [[Anthony Collins (composer)|Anthony Collins]]
+** ''[[Of Mice and Men (1939 film)|Of Mice and Men]]''&nbsp;– [[Aaron Copland]]
+** ''[[The Rains Came]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[Wuthering Heights (1939 film)|Wuthering Heights]]''&nbsp;– Alfred Newman
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring)]]}}
+*'''''[[Stagecoach (1939 film)|Stagecoach]]''&nbsp;– [[Richard Hageman]], [[W. Franke Harling]], [[John Leipold]] and [[Leo Shuken]]'''
+** ''[[Babes in Arms (film)|Babes in Arms]]''&nbsp;– [[Roger Edens]] and [[Georgie Stoll]]
+** ''[[First Love (1939 film)|First Love]]''&nbsp;– [[Charles Previn]]
+** ''[[The Great Victor Herbert]]''&nbsp;– [[Phil Boutelje]] and [[Arthur Lange]]
+** ''[[The Hunchback of Notre Dame (1939 film)|The Hunchback of Notre Dame]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[Intermezzo (1939 film)|Intermezzo]]''&nbsp;– [[Lou Forbes]]
+** ''[[Mr. Smith Goes to Washington]]''&nbsp;– [[Dimitri Tiomkin]]
+** ''[[Of Mice and Men (1939 film)|Of Mice and Men]]''&nbsp;– [[Aaron Copland]]
+** ''[[The Private Lives of Elizabeth and Essex]]''&nbsp;– [[Erich Wolfgang Korngold]]
+** ''[[She Married a Cop]]''&nbsp;– [[Cy Feuer]]
+** ''[[Swanee River (1939 film)|Swanee River]]''&nbsp;– [[Louis Silvers]]
+** ''[[They Shall Have Music]]''&nbsp;– Alfred Newman
+** ''[[Way Down South (film)|Way Down South]]''&nbsp;– [[Victor Young]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[Over the Rainbow]]" from ''[[The Wizard of Oz]]''&nbsp;– Music by [[Harold Arlen]]; Lyrics by [[Yip Harburg]]'''
+** "Faithful Forever" from ''[[Gulliver's Travels (1939 film)|Gulliver's Travels]]''&nbsp;– Music by [[Ralph Rainger]]; Lyrics by [[Leo Robin]]
+** "I Poured My Heart Into a Song" from ''[[Second Fiddle (1939 film)|Second Fiddle]]''&nbsp;– Music and Lyrics by [[Irving Berlin]]
+** "Wishing" from ''[[Love Affair (1939 film)|Love Affair]]''&nbsp;– Music and Lyrics by [[Buddy DeSylva]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[When Tomorrow Comes (film)|When Tomorrow Comes]]''&nbsp;– [[Bernard B. Brown]]'''
+** ''[[Balalaika (film)|Balalaika]]''&nbsp;– [[Douglas Shearer]]
+** ''[[Gone with the Wind (film)|Gone With the Wind]]''&nbsp;– [[Thomas T. Moulton]]
+** ''[[Goodbye, Mr. Chips (1939 film)|Goodbye, Mr. Chips]]''&nbsp;– [[A. W. Watkins]]
+** ''[[The Great Victor Herbert]]''&nbsp;– [[Loren L. Ryder]]
+** ''[[The Hunchback of Notre Dame (1939 film)|The Hunchback of Notre Dame]]''&nbsp;– [[John O. Aalberg]]
+** ''[[Man of Conquest]]''&nbsp;– [[Charles L. Lootens]]
+** ''[[Mr. Smith Goes to Washington]]''&nbsp;– [[John P. Livadary]]
+** ''[[Of Mice and Men (1939 film)|Of Mice and Men]]''&nbsp;– [[Elmer Raguse]]
+** ''[[The Private Lives of Elizabeth and Essex]]''&nbsp;– [[Nathan Levinson]]
+** ''[[The Rains Came]]''&nbsp;– [[Edmund H. Hansen]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Gone with the Wind (film)|Gone With the Wind]]''&nbsp;– [[Lyle R. Wheeler]]'''
+** ''[[Beau Geste (1939 film)|Beau Geste]]''&nbsp;– [[Hans Dreier]] and [[Robert Odell]]
+** ''[[Captain Fury]]''&nbsp;– [[Charles D. Hall]]
+** ''[[First Love (1939 film)|First Love]]''&nbsp;– [[Jack Otterson]] and [[Martin Obzina]]
+** ''[[Love Affair (1939 film)|Love Affair]]''&nbsp;– [[Van Nest Polglase]] and [[Alfred Herman]]
+** ''[[Man of Conquest]]''&nbsp;– [[John Victor Mackay]]
+** ''[[Mr. Smith Goes to Washington]]''&nbsp;– [[Lionel Banks]]
+** ''[[The Private Lives of Elizabeth and Essex]]''&nbsp;– [[Anton Grot]]
+** ''[[The Rains Came]]''&nbsp;– [[William S. Darling]] and [[George Dudley (art director)|George Dudley]]
+** ''[[Stagecoach (1939 film)|Stagecoach]]''&nbsp;– [[Alexander Toluboff]]
+** ''[[The Wizard of Oz]]''&nbsp;– [[Cedric Gibbons]] and [[William A. Horning]]
+** ''[[Wuthering Heights (1939 film)|Wuthering Heights]]''&nbsp;– [[James Basevi]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[Wuthering Heights (1939 film)|Wuthering Heights]]''&nbsp;– [[Gregg Toland]]'''
+** ''[[Stagecoach (1939 film)|Stagecoach]]''&nbsp;– [[Bert Glennon]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[Gone with the Wind (film)|Gone With the Wind]]''&nbsp;– [[Ernest Haller]] and [[Ray Rennahan]]'''
+** ''[[The Private Lives of Elizabeth and Essex]]''&nbsp;– [[Sol Polito]] and [[W. Howard Greene]]
+|- Drums Along the Mohawk
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Gone with the Wind (film)|Gone With the Wind]]''&nbsp;– [[Hal C. Kern]] and [[James E. Newcom]]'''
+** ''[[Goodbye, Mr. Chips (1939 film)|Goodbye, Mr. Chips]]''&nbsp;– [[Charles Frend]]
+** ''[[Mr. Smith Goes to Washington]]''&nbsp;– [[Gene Havlick]] and [[Al Clark (film editor)|Al Clark]]
+** ''[[The Rains Came]]''&nbsp;– [[Barbara McLean]]
+** ''[[Stagecoach (1939 film)|Stagecoach]]''&nbsp;– [[Otho Lovering]] and [[Dorothy Spencer]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*'''''[[The Rains Came]]''&nbsp;– [[Edmund H. Hansen|E. H. Hansen]] and [[Fred Sersen]]'''
+** ''[[Gone with the Wind (film)|Gone With the Wind]]''&nbsp;– [[Jack Cosgrove (special effects artist)|John R. Cosgrove]], [[Fred Albin]] and [[Arthur Johns (sound engineer)|Arthur Johns]]
+** ''[[Only Angels Have Wings]]''&nbsp;– [[Roy Davidson (special effects artist)|Roy Davidson]] and [[Edwin C. Hahn]]
+** ''[[The Private Lives of Elizabeth and Essex]]''&nbsp;– [[Byron Haskin]] and [[Nathan Levinson]]
+** ''[[Topper Takes a Trip]]''&nbsp;– [[Roy Seawright]]
+** ''[[Union Pacific (film)|Union Pacific]]''&nbsp;– [[Farciot Edouart]], [[Gordon Jennings]] and [[Loren L. Ryder]]
+** ''[[The Wizard of Oz]]''&nbsp;– [[A. Arnold Gillespie]] and [[Douglas Shearer]]
+|}
+
+=== Special awards ===
+
+* To [[Douglas Fairbanks]], recognizing the unique and outstanding contribution of Douglas Fairbanks, first President of the Academy, to the international development of the motion picture.
+* To [[Motion Picture & Television Fund|The Motion Picture Relief Fund]], acknowledging the outstanding services to the industry during the past year of the Motion Picture Relief Fund and its progressive leadership. Presented to [[Jean Hersholt]], President; [[Ralph Morgan]], Chairman of the Executive Committee; [[Ralph Block]], First Vice-President; and [[Conrad Nagel]].
+* To [[Judy Garland]] for her outstanding performance as a screen juvenile during the past year.
+* To [[William Cameron Menzies]]  for outstanding achievement in the use of color for the enhancement of dramatic mood in the production of ''[[Gone with the Wind (film)|Gone with the Wind]]''.
+* To the Technicolor Company for its contributions in successfully bringing three-color feature production to the screen.
+
+=== Irving G. Thalberg Memorial Award ===
+* [[David O. Selznick]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 13 
+| ''[[Gone with the Wind (film)|Gone with the Wind]]''
+|-
+| rowspan="1" style="text-align:center" | 11 
+| ''[[Mr. Smith Goes to Washington]]''
+|-
+| rowspan="1" style="text-align:center" | 8 
+| ''[[Wuthering Heights (1939 film)|Wuthering Heights]]''
+|-
+| rowspan="2" style="text-align:center" | 7
+| ''[[Goodbye, Mr. Chips (1939 film)|Goodbye, Mr. Chips]]''
+|-
+| ''[[Stagecoach (1939 film)|Stagecoach]]''
+|-
+| rowspan="2" style="text-align:center" | 6
+| ''[[Love Affair (1939 film)|Love Affair]]''
+|-
+| ''[[The Wizard of Oz]]''
+|-
+| rowspan="2" style="text-align:center" | 5
+| ''[[The Private Lives of Elizabeth and Essex]]''
+|-
+| ''[[The Rains Came]]''
+|-
+| rowspan="2" style="text-align:center" | 4
+| ''[[Ninotchka]]''
+|-
+| ''[[Of Mice and Men (1939 film)|Of Mice and Men]]''
+|-
+| rowspan="2" style="text-align:center" | 3
+| ''[[Dark Victory]]''
+|-
+| ''[[Man of Conquest]]''
+|-
+| rowspan="6" style="text-align:center" | 2
+| ''[[Babes in Arms (film)|Babes in Arms]]''
+|-
+| ''[[Beau Geste (1939 film)|Beau Geste]]''
+|-
+| ''[[First Love (1939 film)|First Love]]''
+|-
+| ''[[The Great Victor Herbert]]''
+|-
+| ''[[Gulliver's Travels (1939 film)|Gulliver's Travels]]''
+|-
+| ''[[The Hunchback of Notre Dame (1939 film)|The Hunchback of Notre Dame]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 8
+| ''[[Gone with the Wind (film)|Gone with the Wind]]''
+|-
+| rowspan=2, style="text-align:center" | 2
+| ''[[Stagecoach (1939 film)|Stagecoach]]''
+|-
+| ''[[The Wizard of Oz]]''
+|-
+|}
+
+{{col-float-end}}
+
+== Presenters and performers ==
+
+The ceremony presenters are listed below in the sequence of awards presented.<ref>{{Cite book |last=Wiley |first=Mason |title=Inside Oscar: the unofficial history of the Academy Awards |last2=Bona |first2=Damien |date=1996 |publisher=Ballantine Books |isbn=978-0-345-40053-6 |edition=10. anniversary rev. ed., with new chapters on the winners, heartbreaks, and behind-the-scenes surprises |location=New York, NY |pages=98}}</ref>
+
+{| class="wikitable"
+|-
+! Presenter !! Award(s)
+|-
+| [[Darryl F. Zanuck]] ||Scientific and Technical Awards, Film Editing, Sound Recording, Cinematography, Art Direction, and Special Effects
+|-
+| [[Gene Buck]]  || Music awards
+|-
+| [[Bob Hope]]  || Short-subject awards
+|-
+| [[Mickey Rooney]] || Special Juvenile Academy Award to [[Judy Garland]]
+|-
+| [[Mervyn LeRoy]] || Best Director
+|-
+| [[Sinclair Lewis]] || Writing awards
+|-
+| [[Y. Frank Freeman]] || Best Picture
+|-
+| [[Basil O'Connor]] || Special awards to [[Jean Hersholt]], [[Ralph Morgan]], [[Ralph Block]], and [[Conrad Nagel]]
+|-
+| [[Ernest Martin Hopkins|Dr. Ernest Martin Hopkins]] || [[Irving Thalberg|Irving Thalberg Award]]
+|-
+| [[Walter Wanger]] || Commemorative award to [[Douglas Fairbanks]]
+|-
+| [[Fay Bainter]] || Supporting Actor and Actress
+|-
+| [[Spencer Tracy]] || Best Actor and Actress
+|}
+
+== Ceremony information ==
+=== The lead-up to the awards ===
+
+Prior to the announcement of nominations, ''Mr. Smith Goes to Washington'' and ''Gone with the Wind'' were the two films most widely tipped to receive a significant number of nominations. ''Mr. Smith Goes to Washington'' premiered in Washington with a premier party hosted by the [[National Press Club (USA)|National Press Club]] who found themselves portrayed unfavourably in the film; the film's theme of political corruption was condemned and the film was denounced in the U.S. Senate. [[Joseph P. Kennedy]], the U.S. Ambassador to [[United Kingdom|Britain]] urged President [[Franklin D. Roosevelt]] and the studio head [[Harry Cohn]] to cease showing the film overseas because "it will cause our allies to view us in an unfavourable light". Among those who campaigned in favour of the film were [[Hedda Hopper]] who declared it "as great as [[Abraham Lincoln|Lincoln's]] [[Gettysburg Address|Gettysburg speech]]", while [[Sheilah Graham]] called it the "best talking picture ever made". ''Screen Book'' magazine stated that it "should win every Academy Award". [[Frank Capra]], the director, and [[James Stewart]], the film's star were considered front runners to win awards.
+
+''Gone with the Wind'' premiered in December 1939 with a [[Gallup poll]] taken shortly before its release concluding that 56.5 million people intended to see the film. The [[New York Film Critics Award]] was given to ''Wuthering Heights'' after thirteen rounds of balloting had left the voters deadlocked between ''Mr. Smith Goes to Washington'' and ''Gone with the Wind''. The press were divided in their support for the nominated actors. ''[[Time (magazine)|Time]]'' magazine favoured [[Vivien Leigh]] and used her portrait for their Christmas 1939 edition, and ''The Hollywood Reporter'' predicted a possible win by Leigh and [[Laurence Olivier]] with the comment that they "are, for the moment, just about the most sacred of all Hollywood's sacred cows". West Coast newspapers, particularly in Los Angeles, predicted [[Bette Davis]] would win for ''Dark Victory''. Observing that Davis had achieved four box office successes during the year, one paper wrote, "Hollywood will stick by its favourite home-town girl, Bette Davis".
+
+=== Ceremony ===
+
+Capra was the incumbent President of the Academy, and in a first for Academy Awards ceremonies, sold the rights for the event to be filmed. [[Warner Bros.]] obtained the rights, for $30,000 to film the banquet and the presentation of the awards, to use as a short, and it was shot by the [[cinematography|cinematographer]] [[Charles Rosher]]. ''[[Variety (magazine)|Variety]]'' noted the stars in attendance were conscious of being filmed at the event for the first time and the event was marked by glamour with fashion-conscious actresses wearing the best of gowns, furs and jewellery.
+
+The ''[[Los Angeles Times]]'' printed a substantially accurate list of winners, despite a promise to withhold the results of the voting, so many of the nominees learned before arriving at the ceremony who had won. Among these were [[Clark Gable]] and [[Bette Davis]].
+
+Following the banquet, Capra opened proceedings at 11pm with a short speech before introducing [[Bob Hope]] who made his first appearance as host of the awards. Looking at a table laden with awards awaiting presentation, he quipped, "I feel like I'm in Bette Davis' living room". [[Mickey Rooney]] presented an [[Academy Juvenile Award]] to [[Judy Garland]], who then performed "[[Over the Rainbow]]", a "Best Song" nominee from ''The Wizard of Oz''.
+
+As the evening progressed, ''Gone with the Wind'' won the majority of awards, and Bob Hope remarked to David O. Selznick, "David, you should have brought roller skates". Making a speech, Selznick paused to extend praise and gratitude to [[Olivia de Havilland]], a "Best Supporting Actress" nominee, and made it clear in his speech he knew she had not won. [[Fay Bainter]] presented the awards for Best Supporting Actor and Actress, prefacing her presentation of the latter award with the knowing comment, "It is a tribute to a country where people are free to honor noteworthy achievements regardless of creed, race or color". [[Hattie McDaniel]] became the first black performer to win an Academy Award and in expressing her gratitude promised to be "a credit to my race" before bursting into tears. De Havilland was among those to make their way to McDaniel's table to offer congratulations, though it was reported de Havilland then fled to the kitchen, where she burst into tears. The press reported an irritated [[David O. Selznick]] followed her, and shook her before she composed herself and returned to her table.<ref name="Independent"/> Incidentally, movie historian (and future [[Turner Classic Movies]] host) [[Robert Osborne]] once reported that "not once did anyone mention the name of [[Margaret Mitchell]], the small woman who had simply written the book on which the victorious movie was based."<ref name="Oscars '39 Notes"/>
+
+[[Robert Donat]], the winner for "Best Actor", was one of three nominated actors not present (the others were [[Irene Dunne]] and [[Greta Garbo]]). Accepting the award for Donat, [[Spencer Tracy]] said he was sure Donat's win was welcomed by "the entire motion-picture industry" before presenting the "Best Actress" award to [[Vivien Leigh]]. The press noted [[Bette Davis]] was among those waiting to congratulate Leigh as she returned to her table.
+
+=== Post-awards discussion ===
+
+Further controversy erupted following the ceremony, with the ''Los Angeles Times'' reporting that Leigh had won over Davis by the smallest of margins and that Donat had likewise won over [[James Stewart]] by a small number of votes. This led Academy officials to examine ways that the voting process, and more importantly, the results, would remain secret in future years.<ref>{{cite web|url=https://www.bbc.co.uk/news/entertainment-arts-12246425 |title=Academy Awards A to Z |date=24 January 2011 |work=BBC News |access-date=27 February 2011 |archive-url=https://web.archive.org/web/20110224053825/http://www.bbc.co.uk/news/entertainment-arts-12246425 |archive-date=24 February 2011 |url-status=live }}</ref> They considered the ''Los Angeles Times'' publication of such details as a breach of faith.<ref name="Oscars '39 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/834/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=835 |isbn=0-385-04060-1}}</ref>
+
+Hattie McDaniel received considerable attention from the press with ''Daily Variety'' writing, "Not only was she the first of her race to receive an Award, but she was also the first Negro ever to sit at an Academy banquet".<ref>{{cite news |title=Black actors still face Oscar challenges |url=https://edition.cnn.com/2009/SHOWBIZ/Movies/02/19/black.actors.oscar/index.html |access-date=November 17, 2023 |publisher=CNN}}</ref>
+
+[[Carole Lombard]] was quoted as comforting Gable after his loss, with the comment "Don't worry, Pappy. We'll bring one home next year". Gable replied that he felt this had been his last chance to which Lombard was said to have replied, "Not you, you self-centered bastard. I meant me."<ref name="Independent">{{cite news |title=Oscars Babylon: Tales from the Academy awards |url=https://www.independent.co.uk/arts-entertainment/films/news/oscars-babylon-tales-from-the-academy-awards-1917584.html |access-date=November 17, 2023 |work=The Independent}}</ref>
+
+== See also ==
+
+* [[1939 in film]]
+*[[List of oldest and youngest Academy Award winners and nominees]]
+
+== References ==
+
+{{Reflist}}
+
+{{Academy Awards Chron}}
+{{Academy Awards lists}}
+
+{{DEFAULTSORT:Academy Awards, 12}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1939 film awards]]
+[[Category:1940 in Los Angeles]]
+[[Category:1940 in American cinema]]
+[[Category:February 1940 in the United States]]
+[[Category:African-American history in Los Angeles]]
+[[Category:African-American history between emancipation and the civil rights movement]]
+[[Category:African-American cultural history]]
+[[Category:Gone with the Wind]]

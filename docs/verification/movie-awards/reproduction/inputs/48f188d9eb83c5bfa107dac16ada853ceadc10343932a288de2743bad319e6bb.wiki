@@ -1,0 +1,535 @@
+{{Featured list}}
+{{pp-sock|small=yes}}
+{{Oscars short description|films-year=2023}}
+{{Use American English|date=March 2023}}
+{{Use mdy dates|date=March 2023}}
+{{Infobox film awards
+| number           = 96
+| award            = Academy Awards
+| image            = 96th Academy Awards Poster.jpeg
+| caption          = Official poster
+| alt              = Official poster for the 96th Academy Awards
+| date             = March 10, 2024
+| site             = [[Dolby Theatre]]<br>[[Hollywood, Los Angeles|Hollywood]], Los Angeles, California, U.S.
+| host             = [[Jimmy Kimmel]]
+| preshow          = {{plainlist|
+* [[Julianne Hough]]
+* [[Vanessa Hudgens]]<ref>{{cite web |last=Coates |first=Tyler |title=Vanessa Hudgens and Julianne Hough to Host Oscars Red Carpet Pre-Show |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-2024-vanessa-hudgens-julianne-hough-pre-show-1235844663/ |access-date=March 29, 2024 |work=[[The Hollywood Reporter]] |date=March 6, 2024 |archive-date=March 6, 2024 |archive-url=https://web.archive.org/web/20240306200503/https://www.hollywoodreporter.com/movies/movie-news/oscars-2024-vanessa-hudgens-julianne-hough-pre-show-1235844663/ |url-status=live}}</ref>
+}}
+| producer         = {{plainlist|
+* Raj Kapoor
+* Katy Mullan<ref name="Producers">{{cite web |last=Hammond |first=Pete |title=Oscar Producers Talk Early Start Time, 20 Previous Winners Presenting Acting Prizes & That Massive 'I'm Just Ken' Number with 65 Male Dancers Backing Ryan Gosling: 'We're Going Big!' |url=https://deadline.com/2024/03/oscar-producers-talk-plans-96th-academy-awards-1235846390/ |access-date=March 29, 2024 |work=[[Deadline Hollywood]] |date=March 6, 2024 |archive-date=March 29, 2024 |archive-url=https://web.archive.org/web/20240329143857/https://deadline.com/2024/03/oscar-producers-talk-plans-96th-academy-awards-1235846390/ |url-status=live}}</ref>
+}}
+| director         = [[Hamish Hamilton (director)|Hamish Hamilton]]
+| best_picture     = ''[[Oppenheimer (film)|Oppenheimer]]''
+| most_wins        = ''Oppenheimer'' (7)
+| network          = [[American Broadcasting Company|ABC]]
+| most_nominations = ''Oppenheimer'' (13)
+| duration         = 3 hours, 23 minutes<ref>{{cite web |last=Grieson |first=Tim |title=A Great Movie Year Deserved a Better Oscars |url=https://www.rogerebert.com/festivals/a-great-movie-year-deserved-a-better-oscars |access-date=May 13, 2024 |work=[[RogerEbert.com]] |date=March 11, 2024 |archive-url=https://web.archive.org/web/20240626172531/https://www.rogerebert.com/festivals/a-great-movie-year-deserved-a-better-oscars |archive-date=June 26, 2024 |url-status=live}}</ref>
+| ratings          = {{plainlist|
+* 19.49&nbsp;million<ref name="Vievership2025">{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/oscars-tv-ratings-sunday-march-2-2025-1236153253/ |title=TV Ratings: Updated Oscars Numbers Show Five-Year Highs |last=Porter |first=Rick |work=[[The Hollywood Reporter]] |date=March 4, 2025 |access-date=March 4, 2025 |archive-date=March 4, 2025 |archive-url=https://web.archive.org/web/20250304232043/https://www.hollywoodreporter.com/tv/tv-news/oscars-tv-ratings-sunday-march-2-2025-1236153253/ |url-status=live}}</ref>
+* 9.9% ([[Nielsen ratings]])}}
+| last             = 95th
+| next             = 97th
+}}
+
+The '''96th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), took place on March 10, 2024, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles|Hollywood]], Los Angeles. During the gala, the AMPAS presented Academy Awards (commonly referred to as Oscars) in 23 categories honoring [[2023 in film|films released in 2023]]. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by Raj Kapoor and Katy Mullan, and was directed by [[Hamish Hamilton (director)|Hamish Hamilton]].<ref name="Producers"/><ref>{{cite web |last=Bahr |first=Lindsey |title=Academy Shakes Up Oscars Show Team for 96th Edition in March |url=https://apnews.com/article/oscars-producers-2024-7465ce79cba3f85d38e072bdf7e426d1 |access-date=January 27, 2024 |publisher=[[Associated Press]] |date=October 17, 2023 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626172333/https://apnews.com/article/oscars-producers-2024-7465ce79cba3f85d38e072bdf7e426d1 |url-status=live}}</ref> Comedian [[Jimmy Kimmel]] hosted the show for the fourth time. He first presided over the [[89th Academy Awards|89th ceremony]] held in 2017, and had most recently hosted the [[95th Academy Awards|previous year's ceremony]].<ref>{{cite news |last=Rottenberg |first=Josh |title=Jimmy Kimmel Returns as 2024 Oscars Host |url=https://www.latimes.com/entertainment-arts/movies/story/2023-11-15/jimmy-kimmel-2024-oscars-host |url-access=subscription |access-date=June 15, 2024 |newspaper=[[Los Angeles Times]] |date=November 15, 2023 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626172339/https://www.latimes.com/entertainment-arts/movies/story/2023-11-15/jimmy-kimmel-2024-oscars-host |url-status=live}}</ref>
+
+In related events, the Academy held its 14th [[Governors Awards]] ceremony at the Ray Dolby Ballroom of the [[Ovation Hollywood]] complex in Hollywood, on January 9, 2024.<ref>{{cite web |last=Hammond |first=Pete |title=First Oscars of the Season Handed Out at 14th Governors Awards: Mel Brooks, Angela Bassett, Carol Littleton, Michelle Satter |url=https://deadline.com/2024/01/first-oscars-of-the-season-handed-out-at-14th-governors-awards-mel-brooks-angela-bassett-carol-littleton-michelle-satter-1235705669/ |access-date=March 24, 2024 |work=[[Deadline Hollywood]] |date=January 10, 2024 |archive-date=January 11, 2024 |archive-url=https://web.archive.org/web/20240111020715/https://deadline.com/2024/01/first-oscars-of-the-season-handed-out-at-14th-governors-awards-mel-brooks-angela-bassett-carol-littleton-michelle-satter-1235705669/ |url-status=live}}</ref> The [[Academy Scientific and Technical Award]]s were presented by host [[Natasha Lyonne]] on February 23, 2024, in a ceremony at the [[Academy Museum of Motion Pictures]] in Los Angeles.<ref>{{cite web |last=Giardina |first=Carolyn |title=SciTech Awards: Academy Celebrates Theatrical Exhibition Advancements |url=https://variety.com/2024/artisans/news/scitech-awards-academy-oscars-2024-1235921083/ |access-date=February 29, 2024 |work=[[Variety (magazine)|Variety]] |date=February 23, 2024 |archive-date=February 28, 2024 |archive-url=https://web.archive.org/web/20240228212436/https://variety.com/2024/artisans/news/scitech-awards-academy-oscars-2024-1235921083/ |url-status=live}}</ref>
+
+''[[Oppenheimer (film)|Oppenheimer]]'' won seven awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news |last=Coyle |first=Jake |title=Christopher Nolan's Blockbuster Biopic ''Oppenheimer'' Wins Best Picture at the Academy Awards |url=https://buffalonews.com/life-entertainment/nation-world/movies-tv/christopher-nolan-s-blockbuster-biopic-oppenheimer-wins-best-picture-at-the-academy-awards/article_41ca6d25-9a78-5de7-918b-7f06a597beb3.html |url-access=subscription |access-date=May 21, 2024 |newspaper=[[The Buffalo News]] |date=March 10, 2024 |archive-date=May 23, 2024 |archive-url=https://web.archive.org/web/20240523063523/https://buffalonews.com/life-entertainment/nation-world/movies-tv/christopher-nolan-s-blockbuster-biopic-oppenheimer-wins-best-picture-at-the-academy-awards/article_41ca6d25-9a78-5de7-918b-7f06a597beb3.html |url-status=live}}</ref> Other winners included ''[[Poor Things (film)|Poor Things]]'' with four awards, ''[[The Zone of Interest (film)|The Zone of Interest]]'' with two, and ''[[20 Days in Mariupol]]'', ''[[American Fiction (film)|American Fiction]]'', ''[[Anatomy of a Fall]]'', ''[[Barbie (film)|Barbie]]'', ''[[The Boy and the Heron]]'', ''[[Godzilla Minus One]]'', ''[[The Holdovers]]'', ''[[The Last Repair Shop]]'', ''[[War Is Over!]]'', and ''[[The Wonderful Story of Henry Sugar (film)|The Wonderful Story of Henry Sugar]]'' with one.<ref>{{cite web |last1=Pedersen |first1=Erik |last2=Hipes |first2=Patrick |title=Oscar Scorecards: Wins by Film & Distributor |url=https://deadline.com/2024/03/2024-oscar-wins-by-film-studios-1235853821/ |access-date=June 15, 2024 |work=[[Deadline Hollywood]] |date=March 10, 2024 |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311035929/https://deadline.com/2024/03/2024-oscar-wins-by-film-studios-1235853821/ |url-status=live}}</ref> The telecast drew 19.49&nbsp;million viewers in the United States.<ref name="Vievership2025"/>
+
+==Winners and nominees==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+[[File:Christopher Nolan Cannes 2018.jpg|thumb|right|upright=0.68|alt=Photo of Christopher Nolan in 2018.|[[Christopher Nolan]], Best Picture co-winner and Best Director winner]]
+[[File:Cillian Murphy-2014.jpg|thumb|right|upright=0.68|alt=Photo of Cillian Murphy in 2014.|[[Cillian Murphy]], Best Actor winner]]
+[[File:Emma Stone at the 2024 New York Film Festival 1 (cropped).jpg|thumb|right|upright=0.68|alt=Photo of Emma Stone in 2024.|[[Emma Stone]], Best Actress winner]]
+[[File:RobertDowneyJr-byPhilipRomano7 (cropped).jpg|thumb|right|upright=0.68|alt=Photo of Robert Downey Jr. in 2014.|[[Robert Downey Jr.]], Best Supporting Actor winner]]
+[[File:Da'Vine Joy Randolph The Holdovers Q&A BFI Southbank, January 2024.jpg|thumb|right|upright=0.68|alt=Photo of Da'Vine Joy Randolph in 2024.|[[Da'Vine Joy Randolph]], Best Supporting Actress winner]]
+[[File:AnatomyOfFallPicCent011123 (1 of 8) (53327939769) (cropped).jpg|thumb|right|upright=0.68|alt=Photo of Justine Triet in 2023.|[[Justine Triet]], Best Original Screenplay co-winner]]
+[[File:Cord Jefferson at TIFF.jpg|thumb|right|upright=0.68|alt=Photo of Cord Jefferson in 2023.|[[Cord Jefferson]], Best Adapted Screenplay winner]]
+[[File:HayaoMiyazakiCCJuly09.jpg|thumb|right|upright=0.68|alt=Photo of Hayao Miyazaki in 2009.|[[Hayao Miyazaki]], Best Animated Feature Film co-winner]]
+[[File:ZoneIntrestBFILFF121023 (7 of 31) (53255110321) (cropped) 2.jpg|thumb|right|upright=0.68|alt=Photo of Jonathan Glazer in 2023.|[[Jonathan Glazer]], Best International Feature Film winner]]
+[[File:MJK 08478 Wes Anderson (Opening Gala Berlinale 2018).jpg|thumb|right|upright=0.68|alt=Photo of Wes Anderson in 2018.|[[Wes Anderson]], Best Live Action Short co-winner]]
+[[File:Ludwig Göransson 2018 Interview (cropped).jpg|thumb|right|upright=0.68|alt=Photo of Ludwig Göransson in 2018.|[[Ludwig Göransson]], Best Original Score winner]]
+
+The nominees for the 96th Academy Awards were announced on January 23, 2024, at the [[Samuel Goldwyn Theater]] in Beverly Hills, by actress [[Zazie Beetz]] and actor [[Jack Quaid]].<ref>{{cite news |last=Ordoña |first=Michael |title=The 2024 Oscar Nominations: Full List |url=https://www.latimes.com/entertainment-arts/movies/story/2024-01-23/oscars-nominations-2024-full-list |url-access=subscription |access-date=February 29, 2024 |newspaper=[[Los Angeles Times]] |date=January 23, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626172343/https://www.latimes.com/entertainment-arts/movies/story/2024-01-23/oscars-nominations-2024-full-list |url-status=live}}</ref> ''[[Oppenheimer (film)|Oppenheimer]]'' led all nominees with thirteen nominations; ''[[Poor Things (film)|Poor Things]]'' came in second with eleven.<ref>{{cite web |last=Coyle |first=Jake |title=''Oppenheimer'' Dominates Oscar Nominations |url=https://www.reviewjournal.com/entertainment/movies/oppenheimer-dominates-oscar-nominations-2986533/ |access-date=February 7, 2024 |work=[[Las Vegas Review-Journal]] |date=January 23, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626173415/https://www.reviewjournal.com/entertainment/movies/oppenheimer-dominates-oscar-nominations-2986533/ |url-status=live}}</ref> The winners were announced during the awards ceremony on March 10.<ref>{{cite web |last=Borredon |first=Laurent |title=Oscars 2024: ''Oppenheimer'' Triumphs, While ''Anatomy of a Fall'' Wins Best Screenplay |url=https://www.lemonde.fr/en/culture/article/2024/03/11/oscars-2024-oppenheimer-triumphs-while-anatomy-of-a-fall-takes-best-original-screenplay_6606906_30.html |url-access=subscription |access-date=July 29, 2024 |work=[[Le Monde]] |date=March 11, 2024 |archive-date=July 6, 2024 |archive-url=https://web.archive.org/web/20240706143022/https://www.lemonde.fr/en/culture/article/2024/03/11/oscars-2024-oppenheimer-triumphs-while-anatomy-of-a-fall-takes-best-original-screenplay_6606906_30.html |url-status=live}}</ref>
+
+''Oppenheimer'' is the first Best Picture winner to also win both male acting awards since ''[[Ben-Hur (1959 film)|Ben-Hur]]'' (1959).<ref>{{cite news |last=Lee |first=Benjamin |title=''Oppenheimer'' Wins Best Picture Oscar as Emma Stone Pulls Surprise Win |url=https://www.theguardian.com/film/2024/mar/10/oscars-best-picture-oppenheimer |access-date=July 22, 2024 |newspaper=[[The Guardian]] |date=March 10, 2024 |archive-date=July 23, 2024 |archive-url=https://web.archive.org/web/20240723031545/https://www.theguardian.com/film/2024/mar/10/oscars-best-picture-oppenheimer |url-status=live}}</ref> For the first time in Oscar history, three Best Picture nominees were directed by women.<ref>{{cite web |last=D'Alessandro |first=Anthony |title=Female Filmmakers Set Oscar Nomination Record in Best Picture Category |url=https://deadline.com/2024/01/oscar-nominations-2024-female-filmmakers-record-best-picture-1235801740/ |access-date=May 13, 2024 |work=[[Deadline Hollywood]] |date=January 23, 2024 |archive-date=January 23, 2024 |archive-url=https://web.archive.org/web/20240123155529/https://deadline.com/2024/01/oscar-nominations-2024-female-filmmakers-record-best-picture-1235801740/ |url-status=live}}</ref> At age 81, [[Martin Scorsese]] became the oldest Best Director nominee in Oscar history.<ref>{{cite web |last=Andreeva |first=Nellie |title=John Williams & Martin Scorsese Make Oscar History as Oldest Nominees, Set Records for Most Noms |url=https://deadline.com/2024/01/john-williams-martin-scorsese-oscar-history-oldest-nominees-1235801856/ |access-date=May 13, 2024 |work=[[Deadline Hollywood]] |date=January 23, 2024 |archive-date=January 23, 2024 |archive-url=https://web.archive.org/web/20240123172228/https://deadline.com/2024/01/john-williams-martin-scorsese-oscar-history-oldest-nominees-1235801856/ |url-status=live}}</ref> Best Actress nominee [[Lily Gladstone]] became the first US-born Native American person nominated in that category.<ref>{{cite news |title=Oscars 2024: Best Picture Nominees – Reviews, Awards and Where to Watch |url=https://www.theguardian.com/film/2024/feb/25/oscars-best-picture-guide |access-date=March 7, 2024 |newspaper=[[The Guardian]] |date=May 21, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626173343/https://www.theguardian.com/film/2024/feb/25/oscars-best-picture-guide |url-status=live}}</ref> The 49-year gap between [[Robert De Niro]]'s first nomination for ''[[The Godfather Part II]]'' and his latest for ''[[Killers of the Flower Moon]]'' set the record for longest gap between first and most recent career Oscar nominations.<ref>{{cite magazine |last=Coggan |first=Devan |title=Robert De Niro Sets Oscar Record for Time Between First and Most Recent Nominations |url=https://ew.com/oscars-2024-robert-de-niro-record-killers-of-the-flower-moon-godfather-2-8548164 |access-date=February 29, 2024 |magazine=[[Entertainment Weekly]] |date=January 23, 2024 |archive-date=February 27, 2024 |archive-url=https://web.archive.org/web/20240227154204/https://ew.com/oscars-2024-robert-de-niro-record-killers-of-the-flower-moon-godfather-2-8548164 |url-status=live}}</ref> Having previously won for composing the [[No Time to Die (song)|titular song]] for ''[[No Time to Die]]'' (2021), Best Original Song co-winner [[Billie Eilish]] became the youngest person to win two Oscars.<ref>{{cite magazine |last=LeGaspi |first=Althea |title=Billie Eilish is the Youngest Person to Win Two Oscars After 'What Was I Made For?' Win |url=https://www.rollingstone.com/music/music-news/billie-eilish-youngest-person-win-two-oscars-what-was-i-made-for-1234985212/ |access-date=May 13, 2024 |magazine=[[Rolling Stone]] |date=March 10, 2024 |archive-date=May 8, 2024 |archive-url=https://web.archive.org/web/20240508224400/https://www.rollingstone.com/music/music-news/billie-eilish-youngest-person-win-two-oscars-what-was-i-made-for-1234985212/ |url-status=live}}</ref> Best Sound winner ''[[The Zone of Interest (film)|The Zone of Interest]]'' and Best Visual Effects winner ''[[Godzilla Minus One]]'' were the first non-English language films to win their respective categories.<ref>{{cite web |last=Goodfellow |first=Melanie |title=Record Number of Non-English-Language Movies Take Home Oscar Statuettes |url=https://deadline.com/2024/03/godzilla-minus-one-makes-vfx-oscar-record-number-of-non-english-language-movies-oscar-winners-1235854658/ |access-date=March 23, 2024 |work=[[Deadline Hollywood]] |date=March 11, 2024 |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311183300/https://deadline.com/2024/03/godzilla-minus-one-makes-vfx-oscar-record-number-of-non-english-language-movies-oscar-winners-1235854658/ |url-status=live}}</ref>
+
+===Awards===
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger (‡).<ref>{{cite web |url=https://www.oscars.org/oscars/ceremonies/2024 |title=The 96th Academy Awards (2024) {{!}} Nominees and Winners |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=March 11, 2024 |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311154359/https://www.oscars.org/oscars/ceremonies/2024 |url-status=live}}</ref>
+
+{| class="wikitable" role="presentation"
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Oppenheimer (film)|Oppenheimer]]'' – [[Emma Thomas]], [[Charles Roven]], and [[Christopher Nolan]], producers ‡'''
+** ''[[American Fiction (film)|American Fiction]]'' – Ben LeClair, Nikos Karamigios, [[Cord Jefferson]], and Jermaine Johnson, producers
+** ''[[Anatomy of a Fall]]'' – [[Marie-Ange Luciani]] and [[David Thion]], producers
+** ''[[Barbie (film)|Barbie]]'' – [[David Heyman]], [[Margot Robbie]], [[Tom Ackerley]], and [[Robbie Brenner]], producers
+** ''[[The Holdovers]]'' – [[Mark Johnson (producer)|Mark Johnson]], producer
+** ''[[Killers of the Flower Moon]]'' – [[Dan Friedkin]], [[Bradley Thomas (producer)|Bradley Thomas]], [[Martin Scorsese]], and [[Daniel Lupi]], producers
+** ''[[Maestro (2023 film)|Maestro]]'' – [[Bradley Cooper]], [[Steven Spielberg]], [[Fred Berner]], Amy Durning, and [[Kristie Macosko Krieger]], producers
+** ''[[Past Lives (film)|Past Lives]]'' – [[David Hinojosa]], [[Christine Vachon]], and [[Pamela Koffler]], producers
+** ''[[Poor Things (film)|Poor Things]]'' – [[Ed Guiney]], [[Andrew Lowe (producer)|Andrew Lowe]], [[Yorgos Lanthimos]], and [[Emma Stone]], producers
+** ''[[The Zone of Interest (film)|The Zone of Interest]]'' – [[James Wilson (producer)|James Wilson]], producer
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Christopher Nolan]] – ''[[Oppenheimer (film)|Oppenheimer]]'' ‡'''
+** [[Justine Triet]] – ''[[Anatomy of a Fall]]''
+** [[Martin Scorsese]] – ''[[Killers of the Flower Moon]]''
+** [[Yorgos Lanthimos]] – ''[[Poor Things (film)|Poor Things]]''
+** [[Jonathan Glazer]] – ''[[The Zone of Interest (film)|The Zone of Interest]]''
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+* '''[[Cillian Murphy]] – ''[[Oppenheimer (film)|Oppenheimer]]'' as [[J. Robert Oppenheimer]] ‡'''
+** [[Bradley Cooper]] – ''[[Maestro (2023 film)|Maestro]]'' as [[Leonard Bernstein]]
+** [[Colman Domingo]] – ''[[Rustin (film)|Rustin]]'' as [[Bayard Rustin]]
+** [[Paul Giamatti]] – ''[[The Holdovers]]'' as Paul Hunham
+** [[Jeffrey Wright]] – ''[[American Fiction (film)|American Fiction]]'' as Thelonious "Monk" Ellison
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+* '''[[Emma Stone]] – ''[[Poor Things (film)|Poor Things]]'' as Bella Baxter ‡'''
+** [[Annette Bening]] – ''[[Nyad (film)|Nyad]]'' as [[Diana Nyad]]
+** [[Lily Gladstone]] – ''[[Killers of the Flower Moon]]'' as [[Mollie Burkhart]]
+** [[Sandra Hüller]] – ''[[Anatomy of a Fall]]'' as Sandra Voyter
+** [[Carey Mulligan]] – ''[[Maestro (2023 film)|Maestro]]'' as [[Felicia Montealegre]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Robert Downey Jr.]] – ''[[Oppenheimer (film)|Oppenheimer]]'' as [[Lewis Strauss]] ‡'''
+** [[Sterling K. Brown]] – ''[[American Fiction (film)|American Fiction]]'' as Clifford "Cliff" Ellison
+** [[Robert De Niro]] – ''[[Killers of the Flower Moon]]'' as [[William King Hale]]
+** [[Ryan Gosling]] – ''[[Barbie (film)|Barbie]]'' as [[Ken (doll)|Ken]]
+** [[Mark Ruffalo]] – ''[[Poor Things (film)|Poor Things]]'' as Duncan Wedderburn
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Da'Vine Joy Randolph]] – ''[[The Holdovers]]'' as Mary Lamb ‡'''
+** [[Emily Blunt]] – ''[[Oppenheimer (film)|Oppenheimer]]'' as [[Kitty Oppenheimer]]
+** [[Danielle Brooks]] – ''[[The Color Purple (2023 film)|The Color Purple]]'' as Sofia
+** [[America Ferrera]] – ''[[Barbie (film)|Barbie]]'' as Gloria
+** [[Jodie Foster]] – ''[[Nyad (film)|Nyad]]'' as [[Bonnie Stoll]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Anatomy of a Fall]]'' – [[Justine Triet]] and [[Arthur Harari]] ‡'''
+** ''[[The Holdovers]]'' – [[David Hemingson]]
+** ''[[Maestro (2023 film)|Maestro]]'' – [[Bradley Cooper]] and [[Josh Singer]]
+** ''[[May December]]'' – Screenplay by [[Samy Burch]]; Story by Samy Burch and [[Alex Mechanik]]
+** ''[[Past Lives (film)|Past Lives]]'' – [[Celine Song]]
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]<ref>{{cite web |last=Fitzgerald |first=Toni |title=Oscars 2024: These Books Inspired 5 Best Picture Nominees |url=https://www.forbes.com/sites/tonifitzgerald/2024/03/05/oscars-2024-these-books-inspired-5-best-picture-nominees/ |access-date=May 23, 2024 |work=[[Forbes]] |date=March 5, 2024 |archive-date=May 24, 2024 |archive-url=https://web.archive.org/web/20240524073728/https://www.forbes.com/sites/tonifitzgerald/2024/03/05/oscars-2024-these-books-inspired-5-best-picture-nominees/ |url-status=live}}</ref>}}
+* '''''[[American Fiction (film)|American Fiction]]'' – [[Cord Jefferson]]; based on the novel ''[[Erasure (novel)|Erasure]]'' by [[Percival Everett]] ‡'''
+** ''[[Barbie (film)|Barbie]]'' – [[Greta Gerwig]] and [[Noah Baumbach]]; based on [[Barbie]] by [[Mattel]]
+** ''[[Oppenheimer (film)|Oppenheimer]]'' – [[Christopher Nolan]]; based on the biography ''[[American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer]]'' by [[Kai Bird]] and [[Martin J. Sherwin]]
+** ''[[Poor Things (film)|Poor Things]]'' – [[Tony McNamara (writer)|Tony McNamara]]; based on [[Poor Things|the novel]] by [[Alasdair Gray]]
+** ''[[The Zone of Interest (film)|The Zone of Interest]]'' – [[Jonathan Glazer]]; based on [[The Zone of Interest (novel)|the novel]] by [[Martin Amis]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[The Boy and the Heron]]'' – [[Hayao Miyazaki]] and [[Toshio Suzuki]] ‡'''
+** ''[[Elemental (2023 film)|Elemental]]'' – [[Peter Sohn]] and Denise Ream
+** ''[[Nimona (film)|Nimona]]'' – [[Nick Bruno and Troy Quane|Nick Bruno, Troy Quane]], Karen Ryan, and Julie Zackary
+** ''[[Robot Dreams (film)|Robot Dreams]]'' – [[Pablo Berger]], Ibón Cormenzana, Ignasi Estapé, and Sandra Tapia Díaz
+** ''[[Spider-Man: Across the Spider-Verse]]'' – [[Kemp Powers]], [[Justin K. Thompson]], [[Phil Lord and Christopher Miller|Phil Lord, Christopher Miller]], and [[Amy Pascal]]
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Best International Feature Film]]}}
+* '''''[[The Zone of Interest (film)|The Zone of Interest]]'' ([[List of British submissions for the Academy Award for Best International Feature Film|United Kingdom]]) in [[German language|German]], [[Polish language|Polish]], and [[Yiddish]] – directed by [[Jonathan Glazer]] ‡'''
+** ''[[Io capitano]]'' ([[List of Italian submissions for the Academy Award for Best International Feature Film|Italy]]) in [[Wolof language|Wolof]] and [[French language|French]] – directed by [[Matteo Garrone]]
+** ''[[Perfect Days]]'' ([[List of Japanese submissions for the Academy Award for Best International Feature Film|Japan]]) in [[Japanese language|Japanese]] – directed by [[Wim Wenders]]
+** ''[[Society of the Snow]]'' ([[List of Spanish submissions for the Academy Award for Best International Feature Film|Spain]]) in [[Spanish language|Spanish]] – directed by [[J. A. Bayona]]
+** ''[[The Teachers' Lounge]]'' ([[List of German submissions for the Academy Award for Best International Feature Film|Germany]]) in German, [[Turkish language|Turkish]], Polish, and [[English language|English]] – directed by [[İlker Çatak]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature Film|Best Documentary Feature Film]]}}
+* '''''[[20 Days in Mariupol]]'' – [[Mstyslav Chernov]], [[Michelle Mizner]], and [[Raney Aronson-Rath]] ‡'''
+** ''[[Bobi Wine: The People's President]]'' – Moses Bwayo, Christopher Sharp, and [[John Battsek]]
+** ''[[The Eternal Memory]]'' – [[Maite Alberdi]]
+** ''[[Four Daughters (2023 film)|Four Daughters]]'' – [[Kaouther Ben Hania]] and [[Nadim Cheikhrouha]]
+** ''[[To Kill a Tiger]]'' – [[Nisha Pahuja]], [[Cornelia Principe]], and David Oppenheim
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Documentary Short Film|Best Documentary Short Film]]}}
+* '''''[[The Last Repair Shop]]'' – [[Ben Proudfoot]] and [[Kris Bowers]] ‡'''
+** ''[[The ABCs of Book Banning]]'' – [[Sheila Nevins]] and [[Trish Adlesic]]
+** ''[[The Barber of Little Rock]]'' – John Hoffman and Christine Turner
+** ''[[Island in Between]]'' – [[S. Leo Chiang]] and Jean Tsien
+** ''[[Nǎi Nai & Wài Pó]]'' – [[Sean Wang]] and Sam Davis
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[The Wonderful Story of Henry Sugar (film)|The Wonderful Story of Henry Sugar]]'' – [[Wes Anderson]] and [[Steven Rales]] ‡'''
+** ''[[The After (film)|The After]]'' – [[Misan Harriman]] and Nicky Bentham
+** ''[[Invincible (2022 film)|Invincible]]'' – [[Vincent René-Lortie]] and [[Samuel Caron]]
+** ''[[Knight of Fortune]]'' – Lasse Lyskjær Noer and Christian Norlyk
+** ''[[Red, White and Blue (2023 film)|Red, White and Blue]]'' – [[Nazrin Choudhury]] and Sara McFarlane
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[War Is Over!|War Is Over! Inspired by the Music of John and Yoko]]'' – [[Dave Mullins (animator)|Dave Mullins]] and [[Brad Booker]] ‡'''
+** ''[[Letter to a Pig]]'' – [[Tal Kantor]] and [[Amit Gicelter|Amit R. Gicelter]]
+** ''[[Ninety-Five Senses]]'' – [[Jared and Jerusha Hess]]
+** ''[[Our Uniform]]'' – Yegane Moghaddam
+** ''[[Pachyderme]]'' – Stéphanie Clément and Marc Rius
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Oppenheimer (film)|Oppenheimer]]'' – [[Ludwig Göransson]] ‡'''
+** ''[[American Fiction (film)|American Fiction]]'' – [[Laura Karpman]]
+** ''[[Indiana Jones and the Dial of Destiny]]'' – [[John Williams]]
+** ''[[Killers of the Flower Moon]]'' – [[Robbie Robertson]] {{small|([[List of posthumous Academy Award winners and nominees|p.n.]])}}
+** ''[[Poor Things (film)|Poor Things]]'' – [[Jerskin Fendrix]]
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[What Was I Made For?]]" from ''[[Barbie (film)|Barbie]]'' – Music and lyrics by [[Billie Eilish]] and [[Finneas O'Connell]] ‡'''
+** "The Fire Inside" from ''[[Flamin' Hot]]'' – Music and lyrics by [[Diane Warren]]
+** "[[I'm Just Ken]]" from ''[[Barbie (film)|Barbie]]'' – Music and lyrics by [[Mark Ronson]] and [[Andrew Wyatt]]
+** "[[It Never Went Away]]" from ''[[American Symphony (film)|American Symphony]]'' – Music and lyrics by [[Jon Batiste]] and [[Dan Wilson (musician)|Dan Wilson]]
+** "[[Wahzhazhe (A Song for My People)]]" from ''[[Killers of the Flower Moon]]'' – Music and lyrics by [[Scott George]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound]]}}
+* '''''[[The Zone of Interest (film)|The Zone of Interest]]'' – [[Tarn Willers]] and [[Johnnie Burn]] ‡'''
+** ''[[The Creator (2023 film)|The Creator]]'' – [[Ian Voigt]], [[Erik Aadahl]], [[Ethan Van der Ryn]], [[Tom Ozanich]], and [[Dean Zupancic]]
+** ''[[Maestro (2023 film)|Maestro]]'' – [[Steven A. Morrow]], [[Richard King (sound designer)|Richard King]], [[Jason Ruder]], Tom Ozanich, and Dean Zupancic
+** ''[[Mission: Impossible – Dead Reckoning Part One]]'' – [[Chris Munro]], [[James H. Mather]], [[Chris Burdon]], and [[Mark Taylor (sound engineer)|Mark Taylor]]
+** ''[[Oppenheimer (film)|Oppenheimer]]'' – [[Willie D. Burton|Willie Burton]], [[Richard King (sound designer)|Richard King]], [[Gary A. Rizzo]], and [[Kevin O'Connell (sound mixer)|Kevin O'Connell]]
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+* '''''[[Poor Things (film)|Poor Things]]'' – Production Design: [[James Price (art director)|James Price]] and [[Shona Heath]]; Set Decoration: [[Zsuzsa Mihalek]] ‡'''
+** ''[[Barbie (film)|Barbie]]'' – Production Design: [[Sarah Greenwood]]; Set Decoration: [[Katie Spencer]]
+** ''[[Killers of the Flower Moon]]'' – Production Design: [[Jack Fisk]]; Set Decoration: [[Adam Willis (set decorator)|Adam Willis]]
+** ''[[Napoleon (2023 film)|Napoleon]]'' – Production Design: [[Arthur Max]]; Set Decoration: [[Elli Griff]]
+** ''[[Oppenheimer (film)|Oppenheimer]]'' – Production Design: [[Ruth De Jong]]; Set Decoration: [[Claire Kaufman]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Oppenheimer (film)|Oppenheimer]]'' – [[Hoyte van Hoytema]] ‡'''
+** ''[[El Conde (film)|El Conde]]'' – [[Edward Lachman]]
+** ''[[Killers of the Flower Moon]]'' – [[Rodrigo Prieto]]
+** ''[[Maestro (2023 film)|Maestro]]'' – [[Matthew Libatique]]
+** ''[[Poor Things (film)|Poor Things]]'' – [[Robbie Ryan (cinematographer)|Robbie Ryan]]
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* '''''[[Poor Things (film)|Poor Things]]'' – [[Nadia Stacey]], [[Mark Coulier]], and [[Josh Weston (make-up artist)|Josh Weston]] ‡'''
+** ''[[Golda (film)|Golda]]'' – [[Karen Hartley Thomas]], [[Suzi Battersby]], and [[Ashra Kelly-Blue]]
+** ''[[Maestro (2023 film)|Maestro]]'' – [[Kazu Hiro]], [[Kay Georgiou]], and [[Lori McCoy-Bell]]
+** ''[[Oppenheimer (film)|Oppenheimer]]'' – [[Luisa Abel]]
+** ''[[Society of the Snow]]'' – [[Ana López-Puigcerver]], [[David Martí]], and [[Montse Ribé]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Poor Things (film)|Poor Things]]'' – [[Holly Waddington]] ‡'''
+** ''[[Barbie (film)|Barbie]]'' – [[Jacqueline Durran]]
+** ''[[Killers of the Flower Moon]]'' – [[Jacqueline West]]
+** ''[[Napoleon (2023 film)|Napoleon]]'' – [[Janty Yates]] and [[Dave Crossman]]
+** ''[[Oppenheimer (film)|Oppenheimer]]'' – [[Ellen Mirojnick]]
+| style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Oppenheimer (film)|Oppenheimer]]'' – [[Jennifer Lame]] ‡'''
+** ''[[Anatomy of a Fall]]'' – [[Laurent Sénéchal]]
+** ''[[The Holdovers]]'' – [[Kevin Tent]]
+** ''[[Killers of the Flower Moon]]'' – [[Thelma Schoonmaker]]
+** ''[[Poor Things (film)|Poor Things]]'' – [[Yorgos Mavropsaridis]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Godzilla Minus One]]'' – [[Takashi Yamazaki]], [[Kiyoko Shibuya]], [[Masaki Takahashi]], and [[Tatsuji Nojima]] ‡'''
+** ''[[The Creator (2023 film)|The Creator]]'' – [[Jay Cooper]], [[Ian Comley]], [[Andrew Roberts (visual effects artist)|Andrew Roberts]], and [[Neil Corbould]]
+** ''[[Guardians of the Galaxy Vol. 3]]'' – [[Stéphane Ceretti]], [[Alexis Wajsbrot]], [[Guy Williams (visual effects)|Guy Williams]], and [[Theo Bialek]]
+** ''[[Mission: Impossible – Dead Reckoning Part One]]'' – [[Alex Wuttke]], [[Simone Coco]], [[Jeff Sutherland (visual effects artist)|Jeff Sutherland]], and Neil Corbould
+** ''[[Napoleon (2023 film)|Napoleon]]'' – [[Charley Henley]], [[Luc-Ewen Martin-Fenouillet]], Simone Coco, and Neil Corbould
+|}
+
+===Governors Awards===
+The academy held its 14th annual [[Governors Awards]] ceremony on January 9, 2024, during which the following awards were presented:<ref>{{cite web |last=Feinberg |first=Scott |title=Governors Awards: Angela Bassett Reflects on History of Black Actresses in Hollywood, Michelle Satter Dedicates Honor to Murdered Son as Oscar Hopefuls Turn Out in Droves |url=https://www.hollywoodreporter.com/movies/movie-news/angela-bassett-michelle-satter-governors-awards-2024-1235784177/ |access-date=February 11, 2024 |work=[[The Hollywood Reporter]] |date=January 9, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626173346/https://www.hollywoodreporter.com/movies/movie-news/angela-bassett-michelle-satter-governors-awards-2024-1235784177/ |url-status=live}}</ref>
+
+====Honorary Awards====
+* To [[Angela Bassett]], who has inspired audiences around the world with her powerful and fearless performances.<ref name="Honorary">{{cite web |title=Academy Awards Acceptance Speech Database |url=https://awardsdatabase.oscars.org/Search/GetResults?query=%7B%22AwardCategory%22:%5B%2227%22%5D,%22Sort%22:%223-Award%20Category-Chron%22,%22Search%22:%22Basic%22%7D |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=May 13, 2024 |archive-url=https://web.archive.org/web/20240614101443/https://awardsdatabase.oscars.org/Search/GetResults?query=%7B%22AwardCategory%22:%5B%2227%22%5D,%22Sort%22:%223-Award%20Category-Chron%22,%22Search%22:%22Basic%22%7D |archive-date=June 14, 2024 |url-status=live}}</ref>
+* To [[Mel Brooks]], for his comedic brilliance, producing acumen and expansive body of work.<ref name="Honorary"/>
+* To [[Carol Littleton]], whose commitment to her craft has significantly elevated the art of film editing.<ref name="Honorary"/>
+
+====Jean Hersholt Humanitarian Award====
+* [[Michelle Satter]]{{snd}}"For her unwavering support of filmmakers and commitment to the independent filmmaking community."<ref>{{cite book |title=96th Academy Awards Show Ceremony Program |date=2024 |publisher=[[Academy of Motion Picture Arts and Sciences]] |pages=32–33}}</ref>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=70%}}
+
+{{col-1-of-2}}
+
+{| class="wikitable plainrowheaders" style="text-align: center; float:left; margin-right:1em;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 13
+| ''[[Oppenheimer (film)|Oppenheimer]]''
+|-
+| scope="row" style="text-align:center"| 11
+| ''[[Poor Things (film)|Poor Things]]''
+|-
+| scope="row" style="text-align:center"| 10
+| ''[[Killers of the Flower Moon]]''
+|-
+| scope="row" style="text-align:center"| 8
+| ''[[Barbie (film)|Barbie]]''
+|-
+| scope="row" style="text-align:center"| 7
+| ''[[Maestro (2023 film)|Maestro]]''
+|-
+| scope="row" rowspan="4" style="text-align:center"| 5
+| ''[[American Fiction (film)|American Fiction]]''
+|-
+| ''[[Anatomy of a Fall]]''
+|-
+| ''[[The Holdovers]]''
+|-
+| ''[[The Zone of Interest (film)|The Zone of Interest]]''
+|-
+| scope="row" style="text-align:center"| 3
+| ''[[Napoleon (2023 film)|Napoleon]]''
+|-
+| scope="row" rowspan="5" style="text-align:center"| 2
+| ''[[The Creator (2023 film)|The Creator]]''
+|-
+| {{nowrap|''[[Mission: Impossible – Dead Reckoning Part One]]''}}
+|-
+| ''[[Nyad (film)|Nyad]]''
+|-
+| ''[[Past Lives (film)|Past Lives]]''
+|-
+| ''[[Society of the Snow]]''
+|}
+
+{{col-2-of-2}}
+
+{| class="wikitable plainrowheaders" style="text-align: center; float:left; margin-right:1em;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 7
+| ''[[Oppenheimer (film)|Oppenheimer]]''
+|-
+| scope="row" style="text-align:center"| 4
+| ''[[Poor Things (film)|Poor Things]]''
+|-
+| scope="row" style="text-align:center"| 2
+| ''[[The Zone of Interest (film)|The Zone of Interest]]''
+|}
+
+{{col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers:<ref>Multiple sources:
+* {{cite web |url=https://abcnews.go.com/culture/live-updates/oscars-2024/?id=107931916 |title=Oscars 2024 Recap: Biggest Moments from the 96th Academy Awards |first1=Hayley Fitz |last1=Patrick |first2=Carson |last2=Blackwelder |first3=Angeline Jane |last3=Bernabe |first4=Shafiq |last4=Najib |first5=Mason |last5=Leib |publisher=[[ABC News (United States)|ABC News]] |date=March 10, 2024 |access-date=May 21, 2024 |archive-url=https://web.archive.org/web/20240310201227/https://abcnews.go.com/culture/live-updates/oscars-2024/?id=107931916 |archive-date=March 10, 2024 |url-status=live}}
+* {{cite news |last1=Abrams |first1=Jonathan |last2=Bahr |first2=Sara |last3=Barnes |first3=Brooks |last4=Buchanan |first4=Kyle |last5=Hotlerman |first5=Callie |last6=Jacobs |first6=Julia |last7=Kuo |first7=Christopher |last8=Morino |first8=Douglas |last9=Morris |first9=Wesley |last10=Ryzik |first10=Melina |last11=Sperling |first11=Nicole |last12=Stevens |first12=Matt |last13=Testa |first13=Jessica |last14=Tracy |first14=Marc |last15=Trebay |first15=Guy |last16=Ugwu |first16=Reggie |last17=Wilkinson |first17=Alyssa |last18=Zinoman |first18=Jason |title=Oscars 2024 Highlights: ''Oppenheimer'' Wins Best Picture, and Emma Stone Wins Best Actress for ''Poor Things'' |url=https://www.nytimes.com/live/2024/03/10/movies/oscars-academy-awards |url-access=subscription |access-date=May 21, 2024 |newspaper=[[The New York Times]] |date=March 10, 2024 |archive-date=March 10, 2024 |archive-url=https://web.archive.org/web/20240310213033/https://www.nytimes.com/live/2024/03/10/movies/oscars-academy-awards |url-status=live}}
+* {{cite web |last=Travis |first=Ben |title=Oscars Live Blog 2024: Every Winner and Every Award, As It Happens |url=https://www.empireonline.com/movies/news/oscars-live-blog-2024/ |access-date=May 13, 2024 |work=[[Empire (magazine)|Empire]] |date=March 10, 2024 |archive-date=May 23, 2024 |archive-url=https://web.archive.org/web/20240523083241/https://www.empireonline.com/movies/news/oscars-live-blog-2024/ |url-status=live}}
+* {{cite magazine |last=Brathwaite |first=Lester Fabian |title=The 'Voice of God' on Tonight's Oscars is None Other Than National Treasure David Alan Grier |url=https://ew.com/david-alan-grier-is-the-voice-of-god-at-the-oscars-2024-8607017 |access-date=July 29, 2024 |magazine=[[Entertainment Weekly]] |date=March 10, 2024 |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311000112/https://ew.com/david-alan-grier-is-the-voice-of-god-at-the-oscars-2024-8607017 |url-status=live}}
+* {{cite web |title=The 96th Academy Awards |url=https://www.detroitnews.com/picture-gallery/media/photo/2024/03/10/the-96th-academy-awards/72924755007/ |access-date=March 24, 2024 |work=[[The Detroit News]] |date=March 10, 2024 |archive-date=May 23, 2024 |archive-url=https://web.archive.org/web/20240523084307/https://www.detroitnews.com/picture-gallery/media/photo/2024/03/10/the-96th-academy-awards/72924755007/ |url-status=live}}</ref>
+
+{| class="wikitable plainrowheaders sortable"
+|+ Presenters
+|-
+! scope="col"| Name(s)
+! scope="col"| Role
+|-
+| scope="row"| {{sortname|David Alan|Grier}}
+| Served as announcer for the 96th Academy Awards
+|-
+| scope="row"| {{sortname|Jamie Lee|Curtis}}<br>[[Regina King]]<br>[[Rita Moreno]]<br>[[Lupita Nyong'o]]<br>[[Mary Steenburgen]]
+| Presented the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| scope="row"| {{sortname|Chris|Hemsworth}}<br>[[Anya Taylor-Joy]]
+| Presented the awards for [[Best Animated Short Film]] and [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+| scope="row"| {{sortname|Melissa|McCarthy}}<br>[[Octavia Spencer]]
+| Presented the awards for [[Best Original Screenplay]] and [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| scope="row"| {{sortname|Michael|Keaton}}<br>[[Catherine O'Hara]]
+| Presented the awards for [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]] and [[Academy Award for Best Production Design|Best Production Design]]
+|-
+| scope="row"| {{sortname|John|Cena}}
+| Presented the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| scope="row"| {{sortname|Bad|Bunny}}<br>[[Dwayne Johnson]]
+| Presented the award for [[Best International Feature Film]]
+|-
+| scope="row"| {{sortname|Emily|Blunt}}<br>[[Ryan Gosling]]
+| Presented tribute to all the [[stunt performer]]s in cinema history
+|-
+| scope="row"| {{sortname|Mahershala|Ali}}<br>[[Ke Huy Quan]]<br>[[Tim Robbins]]<br>[[Sam Rockwell]]<br>[[Christoph Waltz]]
+| Presented the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| scope="row"| {{sortname|Danny|DeVito}}<br>[[Arnold Schwarzenegger]]
+| Presented the awards for [[Academy Award for Best Visual Effects|Best Visual Effects]] and [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| scope="row"| {{sortname|America|Ferrera}}<br>[[Kate McKinnon]]
+| Presented the awards for [[Academy Award for Best Documentary Short Film|Best Documentary Short Film]] and [[Academy Award for Best Documentary Feature Film|Best Documentary Feature Film]]
+|-
+| scope="row"| [[Zendaya]]
+| Presented the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| scope="row"| {{sortname|Issa|Rae}}<br>[[Ramy Youssef]]
+| Presented the award for [[Best Live Action Short Film]]
+|-
+| scope="row"| {{sortname|John|Mulaney}}
+| Presented the award for [[Academy Award for Best Sound|Best Sound]]
+|-
+| scope="row"| {{sortname|Cynthia|Erivo}}<br>[[Ariana Grande]]
+| Presented the awards for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| scope="row"| {{sortname|Nicolas|Cage}}<br>{{sortname|Brendan|Fraser}}<br>{{sortname|Ben|Kingsley}}<br>{{sortname|Matthew|McConaughey}}<br>{{sortname|Forest|Whitaker}}
+| Presented the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| scope="row"| {{sortname|Steven|Spielberg}}
+| Presented the award for [[Academy Award for Best Director|Best Director]]
+|-
+| scope="row"| {{sortname|Sally|Field}}<br>{{sortname|Jessica|Lange}}<br>{{sortname|Jennifer|Lawrence}}<br>{{sortname|Charlize|Theron}}<br>{{sortname|Michelle|Yeoh}}
+| Presented the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| scope="row"| {{sortname|Al|Pacino}}
+| Presented the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+{| class="wikitable plainrowheaders sortable"
+|+ Performers
+|-
+! scope="col"| Name(s)
+! scope="col"| Role
+! scope="col"| Work
+|-
+| scope="row"| [[Rickey Minor]]
+| Musical director<br>Conductor
+| Orchestral
+|-
+| scope="row"| [[Billie Eilish]]<br>[[Finneas O'Connell]]
+| Performers
+| "[[What Was I Made For?]]" from ''[[Barbie (film)|Barbie]]''
+|-
+| [[Scott George]]<br>[[Osage Nation|Osage]] singers and dancers
+| Performers
+| "[[Wahzhazhe (A Song for My People)]]" from ''[[Killers of the Flower Moon]]''
+|-
+| scope="row"| [[Jon Batiste]]
+| Performer
+| "[[It Never Went Away]]" from ''[[American Symphony (film)|American Symphony]]''
+|-
+| scope="row"| [[Becky G]]
+| Performer
+| "The Fire Inside" from ''[[Flamin' Hot]]''
+|-
+| scope="row"| [[Ryan Gosling]]<br>[[Mark Ronson]]<br>[[Simu Liu]]<br>[[Scott Evans (actor)|Scott Evans]]<br>[[Ncuti Gatwa]]<br>[[Kingsley Ben-Adir]]<br>[[Slash (musician)|Slash]]<br>[[Wolfgang Van Halen]]
+| Performers
+| "[[I'm Just Ken]]" from ''Barbie''
+|-
+| scope="row"| [[Andrea Bocelli]]<br>[[Matteo Bocelli]]
+| Performers
+| "[[Con te partirò|Time to Say Goodbye]]" during the annual "In Memoriam" tribute
+|}
+
+==Ceremony information==
+[[File:Jimmy Kimmel June 2022.jpg|thumb|upright|[[Jimmy Kimmel]] hosted the 96th Academy Awards.|alt=Photo of Jimmy Kimmel in June 2022.]]
+
+In October 2023, the academy hired television producers Raj Kapoor and Katy Mullan to oversee production of the 2024 ceremony with veteran television director [[Hamish Hamilton (director)|Hamish Hamilton]] selected to direct the telecast.<ref>{{cite magazine |last=Grein |first=Paul |title=Grammy Awards Veteran Raj Kapoor Tapped as Executive Producer & Showrunner of 2024 Oscars |url=https://www.billboard.com/music/awards/2024-oscars-raj-kapoor-executive-producer-showrunner-1235445179/ |access-date=July 29, 2024 |magazine=[[Billboard (magazine)|Billboard]] |date=October 17, 2023 |archive-date=October 24, 2023 |archive-url=https://web.archive.org/web/20231024222002/https://www.billboard.com/music/awards/2024-oscars-raj-kapoor-executive-producer-showrunner-1235445179/ |url-status=live}}</ref> "Raj and Hamish have been incredible Oscars collaborators, and we are delighted to welcome them and Katy to lead the 96th Oscars," said AMPAS CEO [[Bill Kramer (executive)|Bill Kramer]] and AMPAS president [[Janet Yang]] in a press release justifying their selection of the producers. "Their deep love of cinema, fresh vision, and tremendous live television expertise is perfect for our reinvigorated show."<ref>{{cite web |last=Clark |first=Jason |title=Oscars Set Showrunner and Production Team for 96th Ceremony |url=https://www.thewrap.com/oscars-showrunner-production-team-96th-ceremony-abc/ |access-date=January 27, 2024 |work=[[TheWrap]] |date=October 17, 2023 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626173348/https://www.thewrap.com/oscars-showrunner-production-team-96th-ceremony-abc/ |url-status=live}}</ref> In response, Kapoor and Mullan released a statement saying, "As a Canadian boy of South Asian descent and a girl from London who grew up watching the Oscars, dreaming of being part of it, this is a 'pinch me' moment! This has been an exceptional year for the movies, and it's an absolute privilege to be leading the team celebrating the global film industry and the astounding talents that bring these cinematic stories to life. We're dedicated to making it a remarkable celebration for all."<ref>{{cite web |last=Hammond |first=Pete |title=Raj Kapoor & Katy Mullan Named Executive Producers for 96th Oscar Show; Hamish Hamilton Set as Director |url=https://deadline.com/2023/10/raj-kapoor-katy-mullan-named-executive-producers-96th-oscar-show-hamish-hamilton-director-1235575680/ |access-date=May 19, 2024 |work=[[Deadline Hollywood]] |date=October 17, 2024 |archive-date=November 24, 2023 |archive-url=https://web.archive.org/web/20231124140646/https://deadline.com/2023/10/raj-kapoor-katy-mullan-named-executive-producers-96th-oscar-show-hamish-hamilton-director-1235575680/ |url-status=live}}</ref>
+
+The following month, comedian and talk show host [[Jimmy Kimmel]] was announced as host of the gala, and his wife Molly McNearney was hired to join Kapoor and Mullan as a co-producer.<ref>{{cite web |last=Martinez |first=Gina |title=Jimmy Kimmel Returning to Host the Oscars for 4th Time at 96th Academy Awards |url=https://www.cbsnews.com/news/jimmy-kimmel-host-96th-academy-awards-2024/ |access-date=April 21, 2024 |publisher=[[CBS News]] |date=November 15, 2023 |archive-date=November 25, 2023 |archive-url=https://web.archive.org/web/20231125090602/https://www.cbsnews.com/news/jimmy-kimmel-host-96th-academy-awards-2024/ |url-status=live}}</ref> Kapoor and Mullan explained their reason to bring back the veteran comedian and talk show host saying, "Jimmy has cemented himself as one of the all-time great Oscars hosts with his perfect blend of humanity and humor, and Molly is one of the best live TV producers around. We are delighted to be working with them and their teams on the show."<ref>{{cite web |last=Pedersen |first=Erik |title=Jimmy Kimmel to Host Oscars for Fourth Time |url=https://deadline.com/2023/11/oscars-host-jimmy-kimmel-abc-1235613063/ |access-date=January 27, 2024 |work=[[Deadline Hollywood]] |date=November 15, 2023 |archive-date=January 16, 2024 |archive-url=https://web.archive.org/web/20240116224024/https://deadline.com/2023/11/oscars-host-jimmy-kimmel-abc-1235613063/ |url-status=live}}</ref> Kimmel responded to his selection as host in a press release retorting, "I always dreamed of hosting the Oscars exactly four times."<ref>{{cite news |title=Jimmy Kimmel to Host Oscars for Fourth Time |url=https://www.theguardian.com/film/2023/nov/16/jimmy-kimmel-host-oscars-2024-academy-awards |access-date=January 27, 2024 |newspaper=[[The Guardian]] |publisher=[[Associated Press]] |date=November 15, 2023 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626173348/https://www.theguardian.com/film/2023/nov/16/jimmy-kimmel-host-oscars-2024-academy-awards |url-status=live}}</ref>
+
+In an effort to increase ratings and viewership, the Academy and ABC announced that the ceremony's start time would be moved ahead by an hour to 4:00&nbsp;p.m. [[Pacific Time Zone|PT]] (7:00&nbsp;p.m. [[Eastern Time Zone|ET]]).<ref>{{cite web |last=Feinberg |first=Scott |title=Oscars Telecast to Start Earlier Than Ever in 2024, Followed by ''Abbott Elementary'' |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-2024-airs-hour-earlier-abbott-elementary-1235702215/ |access-date=February 29, 2024 |work=[[The Hollywood Reporter]] |date=November 30, 2023 |archive-date=January 3, 2024 |archive-url=https://web.archive.org/web/20240103071507/https://www.hollywoodreporter.com/movies/movie-news/oscars-2024-airs-hour-earlier-abbott-elementary-1235702215/ |url-status=live}}</ref> Producers hoped that the earlier start time would result in winners in major categories being announced earlier in the evening and would therefore mitigate declining viewership on the [[East Coast of the United States|East Coast]].<ref name="Producers"/> As a result of the changes, the red carpet pre-show that precedes the main telecast was shortened to 30 minutes from its usual 90 minute runtime. ABC would also have the ability to air a primetime program as a lead-out for the ceremony at 7:30&nbsp;p.m. PT (10:30&nbsp;p.m. ET), with the network scheduling a new episode of its sitcom ''[[Abbott Elementary]]''.<ref>{{cite web |last1=Hammond |first1=Pete |last2=Hipes |first2=Patrick |title=Oscars 2024 Ceremony Moves Up Start Time by an Hour; ''Abbott Elementary'' to Follow Telecast on ABC |url=https://deadline.com/2023/11/oscars-2024-start-time-moved-abc-1235644551/ |access-date=February 29, 2024 |work=[[Deadline Hollywood]] |date=November 30, 2023 |archive-date=November 30, 2023 |archive-url=https://web.archive.org/web/20231130181158/https://deadline.com/2023/11/oscars-2024-start-time-moved-abc-1235644551/ |url-status=live}}</ref>
+
+Several others participated in the production of the ceremony and related events. Production designers Misty Buckley and Alana Billingsley designed a new stage for the show. According to Buckley and Billingsley, the stage was designed to "create a modern plaza that invites people in."<ref>{{cite web |last=Allen |first=Kelly |title=The 2024 Oscars Stage Boasts a Modern Look with Sweeping Curves |url=https://www.housebeautiful.com/lifestyle/entertainment/a60142202/oscars-2024-stage-design/ |access-date=May 11, 2024 |work=[[House Beautiful]] |date=March 10, 2024 |archive-date=May 25, 2024 |archive-url=https://web.archive.org/web/20240525081646/https://www.housebeautiful.com/lifestyle/entertainment/a60142202/oscars-2024-stage-design/ |url-status=live}}</ref> Furthermore, the set utilized several columns that subtly changed images during several awards presentations such as typewriters for screenwriters for the screenplay categories and sketches of the Best Costume Design nominees for the aforementioned category.<ref>{{cite web |url=https://www.vanityfair.com/hollywood/exclusive-early-look-2024-oscars-set |title=An Exclusive Early Look at the 2024 Oscars Set |last=Warner |first=Kara |work=[[Vanity Fair (magazine)|Vanity Fair]] |date=March 6, 2024 |access-date=March 6, 2024 |archive-date=March 6, 2024 |archive-url=https://web.archive.org/web/20240306151530/https://www.vanityfair.com/hollywood/exclusive-early-look-2024-oscars-set |url-status=live}}</ref> Musician [[Rickey Minor]] was the musical director for the ceremony.<ref>{{cite magazine |last=Grein |first=Paul |title=Rickey Minor Returns as Music Director of 2024 Oscars |url=https://www.billboard.com/music/awards/rickey-minor-music-director-2024-oscars-1235604393/ |access-date=March 10, 2024 |magazine=[[Billboard (magazine)|Billboard]] |date=February 9, 2024 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612070001/https://www.billboard.com/music/awards/rickey-minor-music-director-2024-oscars-1235604393/ |url-status=live}}</ref> Comedian and journalist [[Amelia Dimoldenberg]] served as a social media and red carpet correspondent, interviewing nominees at events including the Oscars nominees lunch and hosting videos showcasing behind the scenes preparations leading up the ceremony.<ref>{{cite web |last=Gardner |first=Chris |title=''Chicken Shop Date'' Host Amelia Dimoldenberg to Hit Oscars Red Carpet as Social Media Ambassador |url=https://www.hollywoodreporter.com/lifestyle/lifestyle-news/chicken-shop-date-amelia-dimoldenberg-oscars-social-media-ambassador-1235809604/ |access-date=May 13, 2024 |work=[[The Hollywood Reporter]] |date=January 29, 2024 |archive-date=May 25, 2024 |archive-url=https://web.archive.org/web/20240525190631/https://www.hollywoodreporter.com/lifestyle/lifestyle-news/chicken-shop-date-amelia-dimoldenberg-oscars-social-media-ambassador-1235809604/ |url-status=live}}</ref> In addition, Dimoldenberg and internet personality Reece Feldman interviewed nominees and guests of the ceremony on platforms such as [[Facebook]] and [[TikTok]].<ref>{{cite web |last=Follett |first=Gillian |title=Creator and Influencer Trends Brand Marketers Need to Know About Right Now |url=https://adage.com/article/digital-marketing-ad-tech-news/creator-and-influencer-trends-marketing-trends-march-12-2024/2545776 |access-date=March 28, 2024 |work=[[Ad Age]] |date=March 12, 2024 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612070012/https://adage.com/article/digital-marketing-ad-tech-news/creator-and-influencer-trends-marketing-trends-march-12-2024/2545776 |url-status=live}}</ref> Choreographer [[Mandy Moore (choreographer)|Mandy Moore]] oversaw production of [[Ryan Gosling]] and [[Mark Ronson]]'s performance of "[[I'm Just Ken]]" which paid homage to the song "[[Diamonds Are a Girl's Best Friend]]" from the film ''[[Gentlemen Prefer Blondes (1953 film)|Gentlemen Prefer Blondes]]'' (1953).<ref>{{cite news |last=Sperling |first=Nicole |title=How 'I'm Just Ken' Won the Oscars Without Winning an Actual Oscar |url=https://www.nytimes.com/2024/03/11/movies/oscars-ryan-gosling-just-ken-mandy-moore.html |url-access=subscription |access-date=June 15, 2024 |newspaper=[[The New York Times]] |date=March 11, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626173532/https://www.nytimes.com/2024/03/11/movies/oscars-ryan-gosling-just-ken-mandy-moore.html |url-status=live}}</ref> The performance utilized 62 different actors portraying [[Ken (doll)|Ken]], and featured cameos from Gosling's ''Barbie'' co-stars [[Kingsley Ben-Adir]], [[Scott Evans (actor)|Scott Evans]], [[Ncuti Gatwa]], and [[Simu Liu]], and musicians [[Wolfgang Van Halen]] and [[Slash (musician)|Slash]].<ref>{{cite web |last=Huston |first=Caitlyn |title=How Choreographer Mandy Moore Harnessed the Kenergy of Ryan Gosling and 62 Kens for 'I'm Just Ken' Oscars Performance |url=https://www.hollywoodreporter.com/tv/tv-news/ryan-gosling-62-kens-im-just-ken-oscar-performance-1235849758/ |access-date=June 15, 2024 |work=[[The Hollywood Reporter]] |date=March 11, 2024 |archive-date=March 12, 2024 |archive-url=https://web.archive.org/web/20240312054057/https://www.hollywoodreporter.com/tv/tv-news/ryan-gosling-62-kens-im-just-ken-oscar-performance-1235849758/ |url-status=live}}</ref>
+
+Initially, the Governors Awards were scheduled to be held on November 18, 2023, but they were postponed by two months to January 9, 2024, due to the [[2023 Hollywood labor disputes]].<ref>{{cite web |last=Hammond |first=Pete |title=Motion Picture Academy Moves Governors Awards to January in Strike-Related Delay |url=https://deadline.com/2023/09/motion-picture-academy-moves-governors-awards-january-strike-related-delay-1235538105/ |access-date=February 7, 2024 |work=[[Deadline Hollywood]] |date=September 6, 2023 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626173854/https://deadline.com/2023/09/motion-picture-academy-moves-governors-awards-january-strike-related-delay-1235538105/ |url-status=live}}</ref> Meanwhile, actress [[Michelle Pfeiffer]] was planned to co-present Best Picture with her ''[[Scarface (1983 film)|Scarface]]'' co-star [[Al Pacino]]. However, prior commitments on the East Coast prevented her from traveling in time for the ceremony, and Pacino presented the award solo.<ref>{{cite magazine |last1=Lenker |first1=Maureen Lee |last2=Coggan |first2=Devan |title=Michelle Pfeiffer Misses Planned ''Scarface'' Reunion at 2024 Oscars |url=https://ew.com/michelle-pfeiffer-misses-2024-oscars-scarface-reunion-8606685 |access-date=May 21, 2024 |magazine=[[Entertainment Weekly]] |date=March 11, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626173915/https://ew.com/michelle-pfeiffer-misses-2024-oscars-scarface-reunion-8606685 |url-status=live}}</ref>
+
+===Best Picture nominee diversity rules===
+In September 2020, the Academy announced that, starting with the 96th awards, all films submitted for Best Picture consideration must satisfy an established set of "representation and inclusion standards".<ref>{{cite web |last=Blackwelder |first=Carson |title=Oscars Unveils New Diversity and Inclusion Rules for Best Picture Nominations |url=https://abcnews.go.com/GMA/Culture/oscars-unveils-representation-inclusion-standards-best-picture-category/story?id=72896854 |access-date=September 11, 2022 |publisher=[[ABC News (United States)|ABC News]] |date=September 9, 2020 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612070001/https://abcnews.go.com/GMA/Culture/oscars-unveils-representation-inclusion-standards-best-picture-category/story?id=72896854 |url-status=live}}</ref> In a press release, then-AMPAS president [[David Rubin (casting director)|David Rubin]] and then-Academy CEO [[Dawn Hudson]] said of the new standards, "The aperture must widen to reflect our diverse global population in both the creation of motion pictures and in the audiences who connect with them. The Academy is committed to playing a vital role in helping make this a reality. We believe these inclusion standards will be a catalyst for long-lasting, essential change in our industry."<ref>{{cite web |last=Hammond |first=Pete |title=Oscar Shakes Up Best Picture Eligibility Standards; Strict New Diversity Requirements Take Full Effect in 2024 |url=https://deadline.com/2020/09/academy-shakes-oscar-best-picture-eligibility-1234573172/ |access-date=February 29, 2024 |work=[[Deadline Hollywood]] |date=September 8, 2020 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612070001/https://deadline.com/2020/09/academy-shakes-oscar-best-picture-eligibility-1234573172/ |url-status=live}}</ref>
+
+According to the rules, each film would be required to satisfy at least two of the four standards by hiring people from an "underrepresented" group namely individuals from a racial/ethnic minority, LGBTQ+ people, or persons with a cognitive or physical disability in order to compete in the category. Standard A involves "On-screen representation, themes, and narratives" which deals with a film's lead performers, cast, or subject matter. Standard B entails "Creative leadership and department heads" which involves creative heads in a film's production or the film's crew as a whole. Standard C encompasses "Industry access and opportunities" which refers to both paid internships and training opportunities. Standard D involves "Audience development" which refers to representation in marketing, publicity, and distribution.<ref>{{cite web |last=Cohen |first=Li |title=The Oscars Announce New Representation and Inclusion Requirements for Best Picture Eligibility |url=https://www.cbsnews.com/news/academy-announces-new-oscar-eligibility-standards-diversity-inclusion-requirements/ |access-date=February 13, 2022 |publisher=[[CBS News]] |date=September 9, 2020 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612070032/https://www.cbsnews.com/news/academy-announces-new-oscar-eligibility-standards-diversity-inclusion-requirements/ |url-status=live}}</ref> Filmmakers would have to submit a confidential Representation and Inclusion Standards Entry form (RAISE) indicating how their films would comply with the standards outlined by the academy.<ref>{{cite magazine |last=Stern |first=Marlow |title=Oscars' New Rules: Best Picture Inclusion Standards and More |url=https://www.rollingstone.com/tv-movies/tv-movie-features/oscars-2024-rules-explained-best-picture-diversity-inclusion-standards-1234962077/ |access-date=June 15, 2024 |magazine=[[Rolling Stone]] |date=February 6, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626174135/https://www.rollingstone.com/tv-movies/tv-movie-features/oscars-2024-rules-explained-best-picture-diversity-inclusion-standards-1234962077/ |url-status=live}}</ref>
+
+Three years after the new rules were announced, AMPAS released a statement affirming that films not submitted for Best Picture consideration could bypass submitting the RAISE forms reporting a film's gender, race, and disability data. In addition, Academy FAQs stated that British films that have complied with the [[British Film Institute]]'s inclusion and diversity standards would also be deemed as satisfying the Academy's diversity requirements.<ref>{{cite web |last=Patten |first=Dominic |title=Academy Will Now Let Films Bypass Inclusion Report by Opting Out of Best Picture Race |url=https://deadline.com/2023/08/academy-let-films-bypass-inclusion-report-opting-out-best-picture-race-1235459857/ |access-date=August 10, 2023 |work=[[Deadline Hollywood]] |date=June 15, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626173900/https://deadline.com/2023/08/academy-let-films-bypass-inclusion-report-opting-out-best-picture-race-1235459857/ |url-status=live}}</ref>
+
+===Box office performance of Best Picture nominees===
+When the nominations were announced, nine of the ten films nominated for Best Picture had earned a combined gross of $1.09&nbsp;billion at the American and Canadian box offices at the time.<ref>{{cite web |last=Whitten |first=Sarah |title=Best-Picture Oscar Nominees ''Barbenheimer'' Account for 88% of the Slate's Box-Office Haul |url=https://www.cnbc.com/2024/01/23/oscars-2024-barbie-oppenheimer-best-picture-box-office.html |access-date=May 13, 2024 |publisher=[[CNBC]] |date=January 23, 2024 |archive-date=February 15, 2024 |archive-url=https://web.archive.org/web/20240215003636/https://www.cnbc.com/2024/01/23/oscars-202 |url-status=live}}</ref> ''Barbie'' was the highest-grossing film among the Best Picture nominees with $636&nbsp;million in domestic box office receipts.<ref>{{cite web |last=D'Alessandro |first=Anthony |title=''American Fiction'', ''Poor Things'' & ''Zone of Interest'' to Reap Oscar Halo Effect at Box Office; Best Pics at $2.7B WW, Down from 2023 |url=https://deadline.com/2024/01/2024-oscar-nominations-box-office-analysis-1235802176/ |access-date=March 11, 2024 |work=[[Deadline Hollywood]] |date=January 23, 2024 |archive-date=March 3, 2024 |archive-url=https://web.archive.org/web/20240303132516/https://deadline.com/2024/01/2024-oscar-nominations-box-office-analysis-1235802176/ |url-status=live}}</ref> ''Oppenheimer'' came in second with $326&nbsp;million; this was followed by ''Killers of the Flower Moon'' ($67&nbsp;million), ''Poor Things'' ($20.4&nbsp;million), ''The Holdovers'' ($18.7&nbsp;million), ''Past Lives'' ($10.9&nbsp;million), ''American Fiction'' ($7.9&nbsp;million), ''Anatomy of a Fall'' ($3.9&nbsp;million), and ''The Zone of Interest'' ($1.6&nbsp;million).<ref>{{cite web |last=Murray |first=Conor |title=These Best Picture Nominees—Including ''The Zone of Interest'' and ''American Fiction''—Are Hoping an Oscar Bump Can Help Their Box Office Numbers |url=https://www.forbes.com/sites/conormurray/2024/01/23/these-best-picture-nominees-including-the-zone-of-interest-and-american-fiction-are-hoping-an-oscar-bump-can-help-their-box-office-numbers/ |access-date=January 27, 2024 |work=[[Forbes]] |date=January 23, 2024 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612070024/https://www.forbes.com/sites/conormurray/2024/01/23/these-best-picture-nominees-including-the-zone-of-interest-and-american-fiction-are-hoping-an-oscar-bump-can-help-their-box-office-numbers/ |url-status=live}}</ref> The official domestic box office figures for ''Maestro'' were unavailable due to their distributor [[Netflix]]'s policy of refusing to release such figures.<ref>{{cite web |last=Scott |first=Ryan |title=The 2024 Best Picture Oscar Nominees: A Box Office Breakdown |url=https://www.slashfilm.com/1499805/2024-best-picture-oscar-nominees-box-office-breakdown/ |access-date=January 27, 2024 |work=[[/Film]] |date=January 23, 2024 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612065940/https://www.slashfilm.com/1499805/2024-best-picture-oscar-nominees-box-office-breakdown/ |url-status=live}}</ref><ref>{{cite web |last=Rubin |first=Rebecca |title=With Box Office Hits Like ''Barbie'' and ''Oppenheimer'', Will Oscar Ratings Get a Boost? |url=https://variety.com/2024/film/news/oscar-box-office-ratings-barbie-oppenheimer-1235890779/ |access-date=February 29, 2024 |work=[[Variety (magazine)|Variety]] |date=February 12, 2024 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612070459/https://variety.com/2024/film/news/oscar-box-office-ratings-barbie-oppenheimer-1235890779/ |url-status=live}}</ref> Furthermore, with its win for Best Picture, ''Oppenheimer'' became the highest-grossing winner in that category since 2003's ''[[The Lord of the Rings: The Return of the King]]''.<ref>{{cite web |last=McClintock |first=Pamela |title=Oscars: ''Oppenheimer'' Lifts 20-Year Curse on Blockbusters Winning Best Picture |url=https://www.hollywoodreporter.com/movies/movie-news/oppenheimer-highest-grossing-best-picture-winner-since-2003-1235848471/ |access-date=April 21, 2024 |work=[[The Hollywood Reporter]] |date=March 10, 2024 |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311055143/https://www.hollywoodreporter.com/movies/movie-news/oppenheimer-highest-grossing-best-picture-winner-since-2003-1235848471/ |url-status=live}}</ref>
+
+===Critical reviews and reactions===
+Television critic Robert Lloyd of the ''[[Los Angeles Times]]'' wrote, "It was a long night, as it always is, but not the slog it often is. The scripted banter was better than usual, and when it failed, personality took up the slack." Regarding Kimmel's performance as host, he commented that he was "a reliable, relatable presence liable to stir no controversy in a venue that has a low tolerance for controversy. At the same time he's sharp enough not to be boring."<ref>{{cite news |last=Lloyd |first=Robert |title=Review: An Upbeat Oscars, on the Edge of Good Taste and Not Entirely Divorced from Reality |url=https://www.latimes.com/entertainment-arts/tv/story/2024-03-10/oscars-2024-tv-review-jimmy-kimmel-ryan-gosling-oppenheimer-poor-things |url-access=subscription |access-date=May 21, 2024 |newspaper=[[Los Angeles Times]] |date=March 10, 2024 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612070447/https://www.latimes.com/entertainment-arts/tv/story/2024-03-10/oscars-2024-tv-review-jimmy-kimmel-ryan-gosling-oppenheimer-poor-things |url-status=live}}</ref> Alison Herman of ''[[Variety (magazine)|Variety]]'' remarked that despite the lack of surprises amongst the winners, "The show delivered entertainment and emotion in spades, if not surprise." She also commended Gosling's performance of "I'm Just Ken" as "a maximalist, infectiously goofy singalong was the ideal way to channel the feel-good energy of an Oscars where none of the bonhomie felt forced, as it often can."<ref>{{cite web |last=Herman |first=Alison |title=The 96th Oscars Were More Than Kenough to Celebrate a Banner Year in Moviemaking: TV Review |url=https://variety.com/2024/awards/tv-reviews/oscars-2024-review-1235937694/ |access-date=March 28, 2024 |work=[[Variety (magazine)|Variety]] |date=March 10, 2024 |archive-date=March 21, 2024 |archive-url=https://web.archive.org/web/20240321065233/https://variety.com/2024/awards/tv-reviews/oscars-2024-review-1235937694/ |url-status=live}}</ref> ''[[The Hollywood Reporter]]'' columnist Daniel Fienberg lauded Kimmel as "A guy you can trust to do a monologue and then he'll hold together the disparate components and fill dead air and generally keep the mood light." He also singled out the decision to have five previous winners presenting the nominees in each acting category as a highlight of the festivities and acclaimed the witty banter between co-presenters.<ref>{{cite web |last=Feinberg |first=Daniel |title=Critic's Notebook: Busy and Eclectic Oscars 2024 Telecast Delivers Many Highlights (and a Few Lowlights) |url=https://www.hollywoodreporter.com/tv/tv-reviews/2024-oscars-review-jimmy-kimmel-ryan-gosling-emma-stone-1235848832/ |access-date=April 21, 2024 |work=[[The Hollywood Reporter]] |date=March 10, 2024 |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311114431/https://www.hollywoodreporter.com/tv/tv-reviews/2024-oscars-review-jimmy-kimmel-ryan-gosling-emma-stone-1235848832/ |url-status=live}}</ref>
+
+Furthermore, ''The Zone of Interest'' director, [[Jonathan Glazer]], received both praise and criticism for his acceptance speech calling for an end to [[Gaza war|Israel's bombardment of Gaza]]. One sentence from Glazer's speech, in which he said that he and fellow producer [[James Wilson (producer)|James Wilson]] "stand here as men who refute their Jewishness and the [[Holocaust]] being hijacked by an occupation which has led to conflict for so many innocent people", was widely misquoted. Some sources truncated his remarks after the words "refute their Jewishness", suggesting that Glazer was disavowing his [[Jewish identity]].<ref>{{cite web |last=Rahman |first=Abid |date=March 11, 2024 |title=Jonathan Glazer's Oscar Speech Becomes Latest Battleground in Israel-Gaza Conflict |url=https://www.hollywoodreporter.com/movies/movie-news/zone-of-interest-jonathan-glazer-2024-oscar-speech-israel-gaza-conflict-1235848917/ |work=[[The Hollywood Reporter]] |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311160043/https://www.hollywoodreporter.com/movies/movie-news/zone-of-interest-jonathan-glazer-2024-oscar-speech-israel-gaza-conflict-1235848917/ |url-status=live |access-date=March 12, 2024}}</ref><ref>{{cite web |last1=Siegel |first1=Tatiana |last2=Ritman |first2=Alex |date=March 13, 2024 |title=Controversy Grows After ''Zone of Interest'' Director Jonathan Glazer Uses Oscar Speech to Condemn the Israel-Hamas War |url=https://variety.com/2024/film/news/zone-of-interest-director-jonathan-glazer-oscar-speech-israel-hamas-war-gaza-controversy-1235940637/ |work=[[Variety (magazine)|Variety]] |access-date=March 15, 2024 |archive-date=March 14, 2024 |archive-url=https://web.archive.org/web/20240314004723/https://variety.com/2024/film/news/zone-of-interest-director-jonathan-glazer-oscar-speech-israel-hamas-war-gaza-controversy-1235940637/ |url-status=live}}</ref> Many pro-[[Israel]] figures disapproved of the statement, and over 1,000 Jewish members of the film industry signed an [[open letter]] denouncing Glazer's speech and defending the actions of the Israeli government.<ref>Multiple sources:
+* {{cite news |last=Rottenberg |first=Josh |title=Jonathan Glazer's Oscar Speech Sparks Fierce Reactions from Supporters of Israel |url=https://www.latimes.com/entertainment-arts/movies/story/2024-03-11/jonathan-glazer-oscar-speech-gaza-conflict-sparks-fierce-reactions-israel |url-access=subscription |access-date=June 15, 2024 |newspaper=[[Los Angeles Times]] |date=March 11, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626174125/https://www.latimes.com/entertainment-arts/movies/story/2024-03-11/jonathan-glazer-oscar-speech-gaza-conflict-sparks-fierce-reactions-israel |url-status=live}}
+* {{cite news |last=Pulver |first=Andrew |title=US Holocaust Survivors' Foundation Calls Jonathan Glazer's Oscars Speech 'Morally Indefensible' |url=https://www.theguardian.com/film/2024/mar/12/us-holocaust-survivors-foundation-calls-jonathan-glazer-oscars-speech-morally-indefensible-the-zone-of-interest |access-date=June 15, 2024 |newspaper=[[The Guardian]] |date=March 12, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626174102/https://www.theguardian.com/film/2024/mar/12/us-holocaust-survivors-foundation-calls-jonathan-glazer-oscars-speech-morally-indefensible-the-zone-of-interest |url-status=live}}
+* {{cite news |last=Lee |first=Benjamin |title='I Had to Do My Bit': A History of Controversial Politics at the Oscars |url=https://www.theguardian.com/film/2024/mar/13/oscars-political-speeches-history |access-date=June 15, 2024 |newspaper=[[The Guardian]] |date=March 13, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626174904/https://www.theguardian.com/film/2024/mar/13/oscars-political-speeches-history |url-status=live}}
+* {{cite web |last=Ryan |first=Patrick |title=Jonathan Glazer's Controversial Oscars Speech and Why People Are Still Talking About It |url=https://www.usatoday.com/story/entertainment/movies/2024/03/20/jonathan-glazer-oscar-speech-2024-backlash/73044114007/ |access-date=June 15, 2024 |work=[[USA Today]] |date=March 20, 2024 |archive-date=June 26, 2024 |archive-url=https://web.archive.org/web/20240626174943/https://www.usatoday.com/story/entertainment/movies/2024/03/20/jonathan-glazer-oscar-speech-2024-backlash/73044114007/ |url-status=live}}
+* {{cite web |last=Siegel |first=Tatiana |title=Over 1,000 Jewish Creatives and Professionals Have Now Denounced Jonathan Glazer's ''Zone of Interest'' Oscars Speech in Open Letter |url=https://variety.com/2024/film/news/jonathan-glazer-oscar-speech-zone-of-interest-open-letter-1235944880/ |access-date=March 21, 2024 |work=[[Variety (magazine)|Variety]] |date=March 18, 2024 |language=en-US |archive-date=March 18, 2024 |archive-url=https://web.archive.org/web/20240318203126/https://variety.com/2024/film/news/jonathan-glazer-oscar-speech-zone-of-interest-open-letter-1235944880/ |url-status=live}}
+* {{cite web |last=Piña |first=Christy |title=Jonathan Glazer Open Letter Gets More Than 500 Additional Signatures Overnight |url=https://www.hollywoodreporter.com/movies/movie-news/jonathan-glazer-open-letter-oscars-speech-additional-signatures-1235855540/ |access-date=March 19, 2024 |work=[[The Hollywood Reporter]] |date=March 19, 2024 |language=en-US |archive-date=March 19, 2024 |archive-url=https://web.archive.org/web/20240319154744/https://www.hollywoodreporter.com/movies/movie-news/jonathan-glazer-open-letter-oscars-speech-additional-signatures-1235855540/ |url-status=live}}</ref> Others, including playwright [[Tony Kushner]] and director of the [[Auschwitz-Birkenau State Museum]], [[Piotr Cywiński]], defended Glazer's comments.<ref>{{cite news |last=Shoard |first=Catherine |title='Unimpeachable, Irrefutable': US Playwright Tony Kushner Praises Jonathan Glazer's Oscars Speech |url=https://www.theguardian.com/film/2024/mar/21/unimpeachable-irrefutable-us-playwright-tony-kushner-praises-jonathan-glazers-oscars-speech |access-date=March 21, 2024 |newspaper=[[The Guardian]] |date=March 21, 2024 |language=en-GB |archive-date=March 21, 2024 |archive-url=https://web.archive.org/web/20240321180209/https://www.theguardian.com/film/2024/mar/21/unimpeachable-irrefutable-us-playwright-tony-kushner-praises-jonathan-glazers-oscars-speech |url-status=live}}</ref><ref>{{cite news |last=Anguiano |first=Dani |title='Honest and Brave': Progressive Jewish Figures Defend Jonathan Glazer Speech |url=https://www.theguardian.com/film/2024/mar/20/jonathan-glazer-speech-jewish-groups-defense |access-date=March 21, 2024 |newspaper=[[The Guardian]] |date=March 20, 2024 |language=en-GB |archive-date=March 21, 2024 |archive-url=https://web.archive.org/web/20240321193654/https://www.theguardian.com/film/2024/mar/20/jonathan-glazer-speech-jewish-groups-defense |url-status=live}}</ref> One month after the ceremony took place, over 450 Jewish members of the international film community, including [[Coen brothers|Joel Coen]], [[Elliott Gould]], [[Todd Haynes]], [[Joaquin Phoenix]], and [[Wallace Shawn]], signed an open letter in support of Glazer's speech.<ref>{{cite web |url=https://deadline.com/2024/04/joaquin-phoenix-joel-coen-todd-haynes-jonathan-glazers-oscar-speech-open-letter-1235876708/ |title=Joaquin Phoenix, Joel Coen & Todd Haynes Among 150 Signatories of Open Letter in Support of Jonathan Glazer's Oscar Speech |last=Ntim |first=Zac |work=[[Deadline Hollywood]] |date=April 5, 2024 |access-date=July 14, 2024 |archive-date=April 7, 2024 |archive-url=https://web.archive.org/web/20240407001706/https://deadline.com/2024/04/joaquin-phoenix-joel-coen-todd-haynes-jonathan-glazers-oscar-speech-open-letter-1235876708/ |url-status=live}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 19.49&nbsp;million people over its length, which was a 4% increase from the previous year's ceremony.<ref>{{cite news |last=Battaglio |first=Stephen |title=Oscars Telecast Draws 19.49&nbsp;Million Viewers, Up 4% from Last Year |url=https://www.latimes.com/entertainment-arts/business/story/2024-03-11/oscars-ratings-19-5-million-viewers-up-1-million-ryan-gosling-oppenheimer-barbie-john-cena |url-access=subscription |access-date=May 13, 2024 |newspaper=[[Los Angeles Times]] |date=March 11, 2024 |archive-date=May 12, 2024 |archive-url=https://web.archive.org/web/20240512063354/https://www.latimes.com/entertainment-arts/business/story/2024-03-11/oscars-ratings-19-5-million-viewers-up-1-million-ryan-gosling-oppenheimer-barbie-john-cena |url-status=live}}</ref><ref name="Vievership2025"/> The show also held steady in [[Nielsen ratings]] compared to the previous ceremony with 9.9% of households watching the ceremony.<ref>{{cite web |last=Powel |first=James |title=Oscar Ratings Grew in 2024, Here's How They've Fared Through the Years |url=https://www.usatoday.com/story/entertainment/movies/2024/03/10/oscars-ratings-through-the-years/72921989007/ |access-date=May 23, 2024 |work=[[USA Today]] |date=March 10, 2024 |archive-date=May 25, 2024 |archive-url=https://web.archive.org/web/20240525214212/https://www.usatoday.com/story/entertainment/movies/2024/03/10/oscars-ratings-through-the-years/72921989007/ |url-status=live}}</ref> However, it garnered a lower 18–49 demo rating with a 3.8 rating among viewers in that demographic.<ref>{{cite web |last=Otterson |first=Joe |title=2024 Oscar Ratings: Academy Awards Audience Rises to 21 Million Viewers with Delayed Viewing |url=https://variety.com/2024/tv/news/2024-oscar-ratings-academy-awards-1235933476/ |access-date=May 13, 2024 |work=[[Variety (magazine)|Variety]] |date=March 11, 2024 |archive-date=March 12, 2024 |archive-url=https://web.archive.org/web/20240312092215/https://variety.com/2024/tv/news/2024-oscar-ratings-academy-awards-1235933476/ |url-status=live}}</ref> Its Live+7 rating was 20.215&nbsp;million people, which made it the 13th highest rated primetime telecast in the United States in 2024, behind only sport events and the [[2024 United States presidential debates#September 10: Second presidential debate (ABC, Philadelphia)|second presidential debate]].<ref>{{cite web |last=Schneider |first=Michael |title=The 100 Most-Watched Telecasts of 2024: NFL, Paris Olympics, Presidential Debate, Lots of ‘Tracker’ and the ‘Young Sheldon’ Finale |url=https://variety.com/2024/tv/news/most-watched-shows-2024-tracker-young-sheldon-super-bowl-olympics-oscars-1236260223/ |access-date=August 22, 2026 |work=[[Variety (magazine)|Variety]] |date=December 27, 2024 |archive-date=December 27, 2024 |archive-url=https://web.archive.org/web/20241227201757/https://variety.com/2024/tv/news/most-watched-shows-2024-tracker-young-sheldon-super-bowl-olympics-oscars-1236260223/ |url-status=live}}</ref>
+
+In July 2024, the broadcast was nominated for seven awards at the [[76th Primetime Emmy Awards|76th Primetime Emmys]] and its corresponding [[76th Primetime Creative Arts Emmy Awards|Creative Arts Emmy Awards]].<ref>{{cite web |last1=Rice |first1=Lynette |last2=Hipes |first2=Patrick |title=Emmy Nominations 2024: The Complete List |url=https://deadline.com/2024/07/emmy-nominations-2024-1236012073/ |access-date=July 22, 2024 |work=[[Deadline Hollywood]] |date=July 17, 2024 |archive-date=July 19, 2024 |archive-url=https://web.archive.org/web/20240719070515/https://deadline.com/2024/07/emmy-nominations-2024-1236012073/ |url-status=live}}</ref> Two months later, the broadcast won four of those nominations for [[Primetime Emmy Award for Outstanding Variety Special (Live)|Outstanding Variety Special (Live)]] (Executive Producers: Raj Kapoor, Katy Mullan, and Molly McNearney; Co-Executive Producer: Rob Paine; Producers: Taryn Hurd and Sarah Levine Hall; Host: Jimmy Kimmel), [[Primetime Emmy Award for Outstanding Directing for a Variety Special|Outstanding Directing for a Variety Special]] (Hamish Hamilton), [[Primetime Emmy Award for Outstanding Music Direction|Outstanding Music Direction]] (Rickey Minor), and [[Primetime Emmy Award for Outstanding Production Design for a Variety Special|Outstanding Production Design for a Variety Special]] (Production Designers: Alana Billinglsey and Misty Buckley; Art Directors: John Zuiker and Margaux LaPresle).<ref>{{cite web |last=Rice |first=Lynette |title=Creative Arts Emmys Winners List: Big Wins for ''Shōgun'', Jamie Lee Curtis & ''Quiz Lady'' on Night 2; FX Tops Distributor List |url=https://deadline.com/2024/09/emmys-2024-winners-list-1236081140/ |access-date=September 8, 2024 |work=[[Deadline Hollywood]] |date=September 8, 2024 |archive-date=September 8, 2024 |archive-url=https://web.archive.org/web/20240908000531/https://deadline.com/2024/09/emmys-2024-winners-list-1236081140/ |url-status=live}}</ref> It marked the first time since the [[63rd Academy Awards|63rd ceremony]] in 1991, that an Academy Awards ceremony was awarded a top [[Primetime Emmy Award]] for variety programming.<ref>{{cite magazine |last=Grein |first=Paul |title=The Oscars, ''SNL'' and Billy Joel's Madison Square Garden Special Win at Creative Arts Emmys |url=https://www.billboard.com/music/awards/creative-arts-emmys-2024-oscars-snl-billy-joel-madison-square-garden-special-among-winners-1235769679/ |access-date=September 8, 2024 |magazine=[[Billboard (magazine)|Billboard]] |date=September 8, 2024 |archive-date=September 8, 2024 |archive-url=https://web.archive.org/web/20240908070939/https://www.billboard.com/music/awards/creative-arts-emmys-2024-oscars-snl-billy-joel-madison-square-garden-special-among-winners-1235769679/ |url-status=live}}</ref>
+
+=="In Memoriam"==
+The "In Memoriam" tribute, which featured singer [[Andrea Bocelli]] performing his song "[[Con te partirò|Time to Say Goodbye]]" with his son Matteo, paid tribute to the following individuals:<ref>{{cite news |last1=Pulver |first1=Andrew |last2=Shoard |first2=Catherine |title=Matthew Perry, Richard Lewis, Glenda Jackson and Alexei Navalny Remembered at Oscars |url=https://www.theguardian.com/film/2024/mar/10/oscars-memorian-matthew-perry |access-date=May 13, 2024 |newspaper=[[The Guardian]] |date=March 10, 2024 |archive-date=June 12, 2024 |archive-url=https://web.archive.org/web/20240612070605/https://www.theguardian.com/film/2024/mar/10/oscars-memorian-matthew-perry |url-status=live}}</ref><ref>{{cite web |last=Chasan |first=Aliza |title=Who Did the Oscars 2024 In Memoriam Include? Full List of Those Remembered at the Academy Awards |url=https://www.cbsnews.com/news/oscars-2024-in-memoriam-list/ |access-date=May 21, 2024 |publisher=[[CBS News]] |date=March 11, 2024 |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311033742/https://www.cbsnews.com/news/oscars-2024-in-memoriam-list/ |url-status=live}}</ref><ref>{{cite magazine |last=Travis |first=Emlyn |date=March 10, 2024 |title=Oscars 'In Memoriam' Pays Tribute to Carl Weathers, Chita Rivera, Michael Gambon, and More |url=https://ew.com/oscars-2024-in-memoriam-honors-carl-weathers-chita-rivera-michael-gambon-8607004 |access-date=March 11, 2024 |magazine=[[Entertainment Weekly]] |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311062300/https://ew.com/oscars-2024-in-memoriam-honors-carl-weathers-chita-rivera-michael-gambon-8607004 |url-status=live}}</ref>
+
+{{div col}}
+
+* [[Michael Gambon]] – actor
+* [[Norman Jewison]] – director, producer
+* [[Harry Belafonte]] – actor, singer, producer, activist
+* Diana Giorgiutti – visual effects producer
+* [[Alan Arkin]] – actor, director
+* [[Nitin Chandrakant Desai]] – production designer
+* [[Bo Goldman]] – writer
+* [[Norman Reynolds]] – production designer, art director
+* [[Julian Sands]] – actor
+* [[Mark Gustafson]] – director
+* [[Andre Braugher]] – actor
+* [[Chita Rivera]] – actress, dancer
+* [[Tom Wilkinson]] – actor
+* [[Glynis Johns]] – actress
+* [[Jane Birkin]] – actress, singer
+* [[Paul Reubens]] – actor, comedian, writer
+* [[Piper Laurie]] – actress
+* [[Richard Roundtree]] – actor
+* [[Ryan O'Neal]] – actor
+* [[Cynthia Weil]] – songwriter
+* [[Bill Lee (musician)|Bill Lee]] – composer
+* [[Ryuichi Sakamoto]] – composer, musician, actor
+* [[Robbie Robertson]] – composer, musician, songwriter, actor
+* Dewitt L. Sage – producer, director, documentarian
+* [[Margaret Riley]] – manager, producer
+* Hengameh Panahi – sales agent, producer
+* Michael Latt – marketing consultant, activist
+* [[Nancy Buirski]] – director, writer, producer
+* [[Sue Marx]] – producer
+* [[Peter Berkos]] – sound editor
+* [[Osvaldo Desideri]] – set decorator
+* [[Joanna Merlin]] – actress, casting director
+* Erik Lomis – distribution executive
+* [[Glenn Farr]] – film editor
+* [[Leon Ichaso]] – director, writer
+* [[Robert M. Young (director)|Robert M. Young]] – director, producer
+* Greg Morrison – marketing executive
+* Jake Bloom – entertainment attorney
+* [[Matthew Perry]] – actor
+* [[John Bailey (cinematographer)|John Bailey]] – cinematographer, Academy president 2017–2019
+* [[Richard Lewis (comedian)|Richard Lewis]] – actor, comedian
+* Edward Mark – costume supervisor
+* [[John Refoua]] – film editor
+* [[Lawrence Turman]] – producer
+* [[Lee Sun-kyun]] – actor
+* [[Arthur Schmidt (film editor)|Arthur Schmidt]] – film editor
+* [[Bill Butler (cinematographer)|Bill Butler]] – cinematographer
+* [[Carl Weathers]] – actor
+* [[William Friedkin]] – director, writer, producer
+* [[Glenda Jackson]] – actress, politician
+* [[Tina Turner]] – singer, actress
+
+{{div col end}}
+
+Before the "In Memoriam" segment, the academy paid tribute to Russian activist and dissident [[Alexei Navalny]], who died nearly a month before the ceremony, by airing a clip from the Oscar-winning documentary ''[[Navalny (film)|Navalny]]'' (2022).<ref>{{cite news |last=Jacobs |first=Julia |title=Oscars' In Memoriam Segment Honors Aleksei Navalny, Among Film Greats |url=https://www.nytimes.com/2024/03/10/movies/oscars-in-memoriam-navalny-bocelli.html |url-access=subscription |access-date=July 29, 2024 |newspaper=[[The New York Times]] |date=March 10, 2024 |archive-date=July 29, 2024 |archive-url=https://web.archive.org/web/20240729031952/https://www.nytimes.com/2024/03/10/movies/oscars-in-memoriam-navalny-bocelli.html |url-status=live}}</ref> Furthermore, a collage of additional names paying tribute to individuals such as [[Ron Cephas Jones]], [[Norman Lear]], [[Cormac McCarthy]], [[Sinéad O'Connor]], [[Lance Reddick]], [[Suzanne Somers]], [[Ray Stevenson]], and [[Treat Williams]] appeared onscreen at the conclusion of the segment.<ref>{{cite web |last=Rahman |first=Abid |title=Oscars: Lance Reddick, Treat Williams, Terence Davis Omitted from In Memoriam Segment |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-2024-in-memoriam-segment-1235848815/ |access-date=May 21, 2024 |work=[[The Hollywood Reporter]] |date=March 10, 2024 |archive-date=May 2, 2024 |archive-url=https://web.archive.org/web/20240502230642/https://www.hollywoodreporter.com/movies/movie-news/oscars-2024-in-memoriam-segment-1235848815/ |url-status=live}}</ref><ref>{{cite magazine |last=Russell |first=Shania |title=Lance Reddick, Angus Cloud, Ron Cephas Jones Not Highlighted During Oscars 2024 In Memoriam Tribute |url=https://ew.com/lance-reddick-angus-cloud-ron-cephas-jones-left-off-the-oscars-2024-in-memoriam-8607273 |access-date=July 29, 2024 |magazine=[[Entertainment Weekly]] |date=March 12, 2024 |archive-date=July 26, 2024 |archive-url=https://web.archive.org/web/20240726191314/https://ew.com/lance-reddick-angus-cloud-ron-cephas-jones-left-off-the-oscars-2024-in-memoriam-8607273 |url-status=live}}</ref>
+
+==See also==
+* [[List of submissions for the Academy Award for Best Animated Feature#2023|List of submissions to the 96th Academy Awards for Best Animated Feature]]
+* [[Submissions for the Academy Award for Best Documentary Feature#2023|List of submissions to the 96th Academy Awards for Best Documentary Feature]]
+* [[List of submissions to the 96th Academy Awards for Best International Feature Film]]
+
+==References==
+{{Reflist}}
+
+==External links==
+* {{Official website|https://abc.com/show/0a6328a2-6451-46e7-a55a-fa84ddbb9541|Academy Awards official website}}
+* {{Official website|https://www.oscars.org|The Academy of Motion Picture Arts and Sciences official website}}
+* [https://www.youtube.com/user/Oscars Oscars Channel] at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+'''Other resources'''
+* {{IMDb title|27590028|The Oscars (2024)}}
+
+{{Academy Awards}}
+{{EmmyAward VarietySpecial (Live)}}
+
+{{DEFAULTSORT:Academy Awards, 96}}
+[[Category:2023 film awards]]
+[[Category:2024 in Los Angeles]]
+[[Category:2024 in American cinema]]
+[[Category:Academy Awards ceremonies]]
+[[Category:March 2024 in the United States]]
+[[Category:2024 awards in the United States]]
+[[Category:Television shows directed by Hamish Hamilton (director)]]

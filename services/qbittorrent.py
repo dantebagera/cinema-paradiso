@@ -721,6 +721,9 @@ class QBittorrentClient:
     def remove_without_files(self, torrent_hash):
         self.request("/api/v2/torrents/delete", {"hashes": torrent_hash, "deleteFiles": "false"})
 
+    def remove_with_files(self, torrent_hash):
+        self.request("/api/v2/torrents/delete", {"hashes": torrent_hash, "deleteFiles": "true"})
+
     def shutdown(self):
         self.request("/api/v2/app/shutdown", fields={})
 

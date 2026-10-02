@@ -1,0 +1,348 @@
+{{Short description|none}}
+{{Infobox award
+| name        = Golden Globe for New Star of the Year – Actor
+| awarded_for = Best New Male Star in a Motion Picture
+| presenter   = [[Hollywood Foreign Press Association]]
+| location    = [[United States]]
+| year        = [[6th Golden Globe Awards|1948]]
+| holder      = [[Ben Kingsley]] for ''[[Gandhi (film)|Gandhi]]'' (1982)
+| website     = [https://www.goldenglobes.com/ www.goldenglobes.com]
+}}
+
+The '''Golden Globe for New Star of the Year – Actor''' was an award given by the [[Hollywood Foreign Press Association]] at their annual [[Golden Globe Award|Golden Globe Awards]]. 
+
+==History==
+The award was first introduced at the [[6th Golden Globe Awards]] in 1948, where it was given to actor [[Richard Widmark]] for his performance in the 1947 film ''[[Kiss of Death (1947 film)|Kiss of Death]]''.<ref name="1948 award" /> It was awarded as the '''Golden Globe Award for Most Promising Newcomer – Male''' until 1975. There were no awards in 1949, and between 1954 and 1965 there were multiple winners. From 1976 to 1979, the award was called '''Best Acting Debut in a Motion Picture – Male'''. From 1980 to 1983, the award was called '''New Star of the Year in a Motion Picture – Male'''. A male actor did not receive the Award in 1982. The final recipient of the award was actor [[Ben Kingsley]] for his performance as the [[Mahatma Gandhi|title character]] in the 1982 film ''[[Gandhi (film)|Gandhi]]''.<ref name="1983 award" /> The category was discontinued following the [[41st Golden Globe Awards|1983 ceremony]].
+
+==List of recipients==
+{{Inc-film|date=July 2025}}
+
+{| class="wikitable sortable plainrowheaders" style="text-align:center;"
+|-
+! scope="col" |Year
+! scope="col" class="unsortable" |Image
+! scope="col" |Recipient(s)
+! scope="col" class="unsortable" |Film
+! scope="col" class="unsortable" |{{Abbr|Ref.|Reference}}
+|-
+| [[5th Golden Globe Awards|1947]]
+| [[File:Richard Widmark - 1973.jpg|100px|alt=Richard Widwark in 1973]]
+! scope="row"| {{sort|Widmark|[[Richard Widmark]]}}
+| ''[[Kiss of Death (1947 film)|Kiss of Death]]''
+| <ref name="1948 award">{{cite web|title=Winners & Nominees 1948|url=https://www.goldenglobes.com/winners-nominees/1948|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 2, 2022|archive-url=https://web.archive.org/web/20220402150618/https://www.goldenglobes.com/winners-nominees/1948|url-status=dead}}</ref>
+|-
+| [[6th Golden Globe Awards|1948]]
+! scope="row" colspan="3" style="text-align:center;"| {{sort|ZZZ|No award}}
+| <ref name="award recipients">{{cite web|title=Winners & Nominees New Star of the Year – Actor|url=https://www.goldenglobes.com/winners-nominees/new-star-year-actor|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=June 13, 2023|archive-url=https://web.archive.org/web/20230613155312/https://www.goldenglobes.com/winners-nominees/new-star-year-actor|url-status=dead}}</ref>
+|-
+| [[7th Golden Globe Awards|1949]]
+| [[File:Richard Todd - 1959.jpg|100px|alt=Richard Todd in 1959]]
+! scope="row"| {{sort|Todd|[[Richard Todd]]}}
+| ''[[The Hasty Heart]]''
+| <ref>{{cite web|title=Winners & Nominees 1950|url=https://www.goldenglobes.com/winners-nominees/1950|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=March 31, 2022|archive-url=https://web.archive.org/web/20220331171346/https://www.goldenglobes.com/winners-nominees/1950|url-status=dead}}</ref>
+|-
+| [[8th Golden Globe Awards|1950]]
+! scope="row" colspan="3" style="text-align:center;"| {{sort|ZZZ|No award}}
+| <ref name="award recipients" />
+|-
+| [[9th Golden Globe Awards|1951]]
+| [[File:Kevin McCarthy in Invasion of the Body Snatchers trailer.jpg|100px|alt=Kevin McCarthy in 1956]]
+! scope="row"| {{sort|McCarthy|[[Kevin McCarthy (actor)|Kevin McCarthy]]}}
+| ''[[Death of a Salesman (1951 film)|Death of a Salesman]]''
+| <ref>{{cite web|title=Winners & Nominees 1952|url=https://www.goldenglobes.com/winners-nominees/1952|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=May 16, 2023|archive-url=https://web.archive.org/web/20230516010736/https://www.goldenglobes.com/winners-nominees/1952|url-status=dead}}</ref>
+|-
+| [[10th Golden Globe Awards|1952]]
+| [[File:My Cousin Rachel trailer screenshot 1.png|100px|alt=Richard Burton in ''[[My Cousin Rachel (1952 film)|My Cousin Rachel]]'']]
+! scope="row"| {{sort|Burton|[[Richard Burton]]}}
+| ''[[My Cousin Rachel (1952 film)|My Cousin Rachel]]''
+| <ref>{{cite web|title=Winners & Nominees 1953|url=https://www.goldenglobes.com/winners-nominees/1953|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 10, 2019|archive-url=https://web.archive.org/web/20190410171902/https://www.goldenglobes.com/winners-nominees/1953|url-status=dead}}</ref>
+|-
+| rowspan="3"| [[11th Golden Globe Awards|1953]]
+| [[File:Richard Egan 1949.JPG|100px|alt=Richard Egan in 1949]]
+! scope="row"| {{sort|Egan|[[Richard Egan (actor)|Richard Egan]]}}
+| ''[[The Glory Brigade]]'' and ''[[The Kid from Left Field (1953 film)|The Kid from Left Field]]''
+| rowspan="3"|<ref>{{cite web|title=Winners & Nominees 1954|url=https://www.goldenglobes.com/winners-nominees/1954|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413221635/https://www.goldenglobes.com/winners-nominees/1954|url-status=dead}}</ref>
+|-
+| [[File:Steve Forrest Hondo Harrelson SWAT 1975.JPG|100px|alt=Steve Forrest in 1975]]
+! scope="row"| {{sort|Forrest|[[Steve Forrest (actor)|Steve Forrest]]}}
+| ''[[So Big (1953 film)|So Big]]''
+|-
+| [[File:Hugh O'Brian 1964.JPG|100px|alt=Hugh O'Brian in 1964]]
+! scope="row"| {{sort|O'Brian|[[Hugh O'Brian]]}}
+| ''[[The Man from the Alamo]]''
+|-
+| rowspan="3"| [[12th Golden Globe Awards|1954]]
+| –
+! scope="row"| {{sort|Adams|[[Joe Adams (actor)|Joe Adams]]}}
+| ''[[Carmen Jones (film)|Carmen Jones]]''
+| rowspan="3"|<ref>{{cite web|title=Winners & Nominees 1955|url=https://www.goldenglobes.com/winners-nominees/1955|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=January 19, 2018|archive-url=https://web.archive.org/web/20180119120725/https://www.goldenglobes.com/winners-nominees/1955|url-status=dead}}</ref>
+|-
+| [[File:George Nader 1959-60 NBC.jpg|100px|alt=George Nader circa 1959]]
+! scope="row"| {{sort|Nader|[[George Nader]]}}
+| ''[[Four Guns to the Border]]''
+|-
+| [[File:Jeff Richards in The Opposite Sex trailer.jpg|100px|alt=Jeff Richards in 1956]]
+! scope="row"| {{sort|Richards|[[Jeff Richards (baseball player/actor)|Jeff Richards]]}}
+| ''[[Seven Brides for Seven Brothers]]''
+|-
+| rowspan="2"| [[13th Golden Globe Awards|1955]]
+| [[File:Peyton Place 7.JPG|100px|alt=Russ Tamblyn in Peyton Place]]
+! scope="row"| {{sort|Tamblyn|[[Russ Tamblyn]]}}
+| ''[[Hit the Deck (1955 film)|Hit the Deck]]''
+| rowspan="2"| <ref>{{cite web|title=Winners & Nominees 1956|url=https://www.goldenglobes.com/winners-nominees/1956|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413203135/https://www.goldenglobes.com/winners-nominees/1956|url-status=dead}}</ref>
+|-
+| [[File:Ray-danton-trailer.jpg|100px|alt=Ray Danton in 1961]]
+! scope="row"| {{sort|Danton|[[Ray Danton]]}}
+| ''[[I'll Cry Tomorrow]]''
+|-
+| rowspan="3"| [[14th Golden Globe Awards|1956]]
+| [[File:APerkinsPublicityStill.jpg|100px|alt=Anthony Perkins in 1960]]
+! scope="row"| {{sort|Perkins|[[Anthony Perkins]]}}
+| ''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]''
+| rowspan="3"|<ref>{{cite web|title=Winners & Nominees 1957|url=https://www.goldenglobes.com/winners-nominees/1957|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413221432/https://www.goldenglobes.com/winners-nominees/1957|url-status=dead}}</ref>
+|- 
+| [[File:Paul Newman 1958.jpg|100px|alt=Paul Newman in 1958]]
+! scope="row"| {{sort|Newman|[[Paul Newman]]}}
+| ''[[The Silver Chalice (film)|The Silver Chalice]]''
+|-
+| [[File:John Kerr 1957.jpg|100px|alt=John Kerr in 1957]]
+! scope="row"| {{sort|Kerr|[[John Kerr (actor)|John Kerr]]}}
+| ''[[Tea and Sympathy (film)|Tea and Sympathy]]''
+|-
+| rowspan="3"| [[15th Golden Globe Awards|1957]]
+| [[File:James Garner Bret Maverick.JPG|100px|alt=James Garner as Bret Maverick in 1959]]
+! scope="row"| {{sort|Garner|[[James Garner]]}}
+| ''[[Sayonara (1957 film)|Sayonara]]''
+| rowspan="3"|<ref>{{cite web|title=Winners & Nominees 1958|url=https://www.goldenglobes.com/winners-nominees/1958|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413235234/https://www.goldenglobes.com/winners-nominees/1958|url-status=dead}}</ref>
+|-
+| [[File:Patrick Wayne Mclintock 02.jpg|100px|alt=Patrick Wayne in McLintock! (1963)]]
+! scope="row"| {{sort|Wayne|[[Patrick Wayne]]}}
+| ''[[The Searchers]]''
+|-
+| [[File:John Saxon 1975.jpg|100px|alt=john Saxon in 1975]]
+! scope="row"| {{sort|Saxon|[[John Saxon]]}}
+| ''[[This Happy Feeling]]''
+|-
+| rowspan="3"| [[16th Golden Globe Awards|1958]]
+| [[File:John Gavin Destry 1964.JPG|100px|alt=John Gavin in 1964]]
+! scope="row"| {{sort|Gavin|[[John Gavin]]}}
+| ''[[A Time to Love and a Time to Die]]''
+| rowspan="3"|<ref>{{cite web|title=Winners & Nominees 1959|url=https://www.goldenglobes.com/winners-nominees/1959|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413202939/https://www.goldenglobes.com/winners-nominees/1959|url-status=dead}}</ref>
+|-
+| [[File:Efrem Zimbalist Jr.JPG|100px|alt=Efrem Zimbalist Jr. in 1956]]
+! scope="row"| {{sort|Zimbalist|[[Efrem Zimbalist Jr.]]}}
+| ''[[Too Much, Too Soon]]''
+|-
+| [[File:Bradford Dillman 1966.JPG|100px|alt=Bradford Dillman in 1966]]
+! scope="row"| {{sort|Dillman|[[Bradford Dillman]]}}
+| ''[[In Love and War (1958 film)|In Love and War]]''
+|-
+| rowspan="4"| [[17th Golden Globe Awards|1959]]
+| [[File:George Hamilton 1969.JPG|100px|alt=George Hamilton in 1969]]
+! scope="row"| {{sort|Hamilton|[[George Hamilton (actor)|George Hamilton]]}}
+| ''[[Crime and Punishment U.S.A.]]''
+| rowspan="4"|<ref>{{cite web|title=Winners & Nominees 1960|url=https://www.goldenglobes.com/winners-nominees/1960|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413221859/https://www.goldenglobes.com/winners-nominees/1960|url-status=dead}}</ref>
+|-
+| [[File:Bridge to the Sun (1961) Press Photo of James Shigeta (cropped).jpg|100px|alt=James Shigeta in 1961]]
+! scope="row"| {{sort|Shigeta|[[James Shigeta]]}}
+| ''[[The Crimson Kimono]]''
+|-
+| [[File:Jayne Mansfield Barry Coe 1962.JPG|100px|alt=Barry Coe and Jayne Mansfield]]
+! scope="row"| {{sort|Coe|[[Barry Coe]]}}
+| ''[[A Private's Affair]]''
+|-
+| [[File:Troy Donahue Hawaiian Eye 1959.jpg|100px|alt=Troy Donahue in 1959]]
+! scope="row"| {{sort|Donahue|[[Troy Donahue]]}}
+| ''[[A Summer Place (film)|A Summer Place]]''
+|-
+| rowspan="3"| [[18th Golden Globe Awards|1960]]
+| [[File:Michael Callan in Cat Ballou trailer.jpg|100px|alt=Michael Callan in Cat Ballou trailer (1965)]]
+! scope="row"| {{sort|Callan|[[Michael Callan]]}}
+| ''[[Because They're Young]]''
+| rowspan="3"|<ref>{{cite web|title=Winners & Nominees 1961|url=https://www.goldenglobes.com/winners-nominees/1961|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=January 19, 2018|archive-url=https://web.archive.org/web/20180119120746/https://www.goldenglobes.com/winners-nominees/1961|url-status=dead}}</ref>
+|-
+| [[File:BrettHalseyMar2011.jpg|100px|alt=Brett Halsey in 2011]]
+! scope="row"| {{sort|Halsey|[[Brett Halsey]]}}
+| ''[[Desire in the Dust]]''
+|-
+| [[File:Mark Damon, CEO, Foresight Unlimited.jpg|100px|alt=Mark Damon]]
+! scope="row"| {{sort|Damon|[[Mark Damon]]}}
+| ''[[House of Usher (film)|House of Usher]]''
+|-
+| rowspan="2"| [[19th Golden Globe Awards|1961]]
+| [[File:Bobby Darin 1959.JPG|100px|alt=Bobby Darin in 1959]]
+! scope="row"| {{sort|Darin|[[Bobby Darin]]}}
+| ''[[Come September]]''
+| rowspan="2"|<ref>{{cite web|title=Winners & Nominees 1962|url=https://www.goldenglobes.com/winners-nominees/1962|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=July 25, 2018|archive-url=https://web.archive.org/web/20180725092315/https://www.goldenglobes.com/winners-nominees/1962|url-status=dead}}</ref>
+|-
+| [[File:Warren Beatty.jpg|100px|alt=Warren Beatty in 2001]]
+! scope="row"| {{sort|Beatty|[[Warren Beatty]]}}
+| ''[[Splendor in the Grass]]''
+|-
+| rowspan="4"| [[20th Golden Globe Awards|1962]]
+| [[File:Terence Stamp Allan Warren.jpg|100px|alt=Terence Stamp in 1973]]
+! scope="row"| {{sort|Stamp|[[Terence Stamp]]}}
+| ''[[Billy Budd (film)|Billy Budd]]''
+| rowspan="4"|<ref>{{cite web|title=Winners & Nominees 1963|url=https://www.goldenglobes.com/winners-nominees/1963|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=December 1, 2017|archive-url=https://web.archive.org/web/20171201033220/https://www.goldenglobes.com/winners-nominees/1963|url-status=dead}}</ref>
+|-
+| [[File:Keir Dullea Denver Pyle 1962 (cropped).JPG|100px|alt=Keir Dullea in 1962]]
+! scope="row"| {{sort|Dullea|[[Keir Dullea]]}}
+| ''[[David and Lisa]]''
+|-
+| [[File:Peter O'Toole in Lawrence of Arabia.png|100px|alt=Peter O'Toole as T.E. Lawrence in Lawrence of Arabia (1962)]]
+! scope="row"| {{sort|O'Toole|[[Peter O'Toole]]}}
+| rowspan="2"|''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''
+|-
+| [[File:Omar Sharif 1963.JPG|100px|alt=Omar Sharif in 1963]]
+! scope="row"| {{sort|Sharif|[[Omar Sharif]]}}
+|-
+| rowspan="3"| [[21st Golden Globe Awards|1963]]
+| –
+! scope="row"| {{sort|Giallelis|[[Stathis Giallelis]]}}
+| ''[[America America]]''
+| rowspan="3"|<ref>{{cite web|title=Winners & Nominees 1964|url=https://www.goldenglobes.com/winners-nominees/1964|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413221400/https://www.goldenglobes.com/winners-nominees/1964|url-status=dead}}</ref>
+|-
+| [[File:Robert Walker, Jr. (publicity still - 1963).JPG|100px|alt=Robert Walker Jr. in 1963]]
+! scope="row"| {{sort|Walker|[[Robert Walker (actor, born 1940)|Robert Walker Jr.]]}}
+| ''[[The Ceremony (1963 film)|The Ceremony]]''
+|-
+| [[File:Albert Finney 1966.jpg|100px|alt=Albert Finney in 1966]]
+! scope="row"| {{sort|Finney|[[Albert Finney]]}}
+| ''[[Tom Jones (1963 film)|Tom Jones]]''
+|-
+| rowspan="3"| [[22nd Golden Globe Awards|1964]]
+| [[File:George Segal - 1965.jpg|100px|alt=George Segal in 1965]]
+! scope="row"| {{sort|Segal|[[George Segal]]}}
+| ''[[The New Interns]]''
+| rowspan="3"|<ref>{{cite web|title=Winners & Nominees 1965|url=https://www.goldenglobes.com/winners-nominees/1965|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413203231/https://www.goldenglobes.com/winners-nominees/1965|url-status=dead}}</ref>
+|-
+| [[File:Chaim Topol 1971.jpg|100px|alt=Chaim Topol in 1971]]
+! scope="row"| {{sort|Topol|[[Chaim Topol]]}}
+| ''[[Sallah Shabati]]''
+|-
+| [[File:Harve Presnell, 1964.jpg|100px|alt=Harve Presnell in 1964]]
+! scope="row"| {{sort|Presnell|[[Harve Presnell]]}}
+| ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]''
+|-
+| [[23rd Golden Globe Awards|1965]]
+| [[File:Robert Redford Barefoot in the park.jpg|100px|alt=Robert Redford in 1967]]
+! scope="row"| {{sort|Reford|[[Robert Redford]]}}
+| ''[[Inside Daisy Clover]]''
+| <ref>{{cite web|title=Winners & Nominees 1966|url=https://www.goldenglobes.com/winners-nominees/1966|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413221709/https://www.goldenglobes.com/winners-nominees/1966|url-status=dead}}</ref>
+|-
+| [[24th Golden Globe Awards|1966]]
+| [[File:James Farentino 1972.JPG|100px|alt=James Farentino in 1972]]
+! scope="row"| {{sort|Farentino|[[James Farentino]]}}
+| ''[[The Pad and How to Use It|The Pad (and How to Use It)]]''
+| <ref>{{cite web|title=Winners & Nominees 1967|url=https://www.goldenglobes.com/winners-nominees/1967|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=June 4, 2019|archive-url=https://web.archive.org/web/20190604191106/https://www.goldenglobes.com/winners-nominees/1967|url-status=dead}}</ref>
+|-
+| [[25th Golden Globe Awards|1967]]
+| [[File:Dustin Hoffman - 1968.jpg|100px|alt=Dustin Hoffman in 1968]]
+! scope="row"| {{sort|Hoffman|[[Dustin Hoffman]]}}
+| ''[[The Graduate]]''
+| <ref>{{cite web|title=Winners & Nominees 1968|url=https://www.goldenglobes.com/winners-nominees/1968|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413221717/https://www.goldenglobes.com/winners-nominees/1968|url-status=dead}}</ref>
+|-
+| [[26th Golden Globe Awards|1968]]
+| –
+! scope="row"| {{sort|Whiting|[[Leonard Whiting]]}}
+| ''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]''
+| <ref>{{cite web|title=Winners & Nominees 1969|url=https://www.goldenglobes.com/winners-nominees/1969|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413234603/https://www.goldenglobes.com/winners-nominees/1969|url-status=dead}}</ref>
+|-
+| [[27th Golden Globe Awards|1969]]
+| [[File:Jon Voight 2012.jpg|100px|alt=Jon Voight in 2012]]
+! scope="row"| {{sort|Voight|[[Jon Voight]]}}
+| ''[[Midnight Cowboy]]''
+| <ref>{{cite web|title=Winners & Nominees 1970|url=https://www.goldenglobes.com/winners-nominees/1970|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413234337/https://www.goldenglobes.com/winners-nominees/1970|url-status=dead}}</ref>
+|-
+| [[28th Golden Globe Awards|1970]]
+| [[File:James Earl Jones (8516667383).jpg|100px|alt=James Earl Jones in 2013]]
+! scope="row"| {{sort|Jones|[[James Earl Jones]]}}
+| ''[[The Great White Hope (film)|The Great White Hope]]''
+| <ref>{{cite web|title=Winners & Nominees 1971|url=https://www.goldenglobes.com/winners-nominees/1971|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=January 19, 2018|archive-url=https://web.archive.org/web/20180119120645/https://www.goldenglobes.com/winners-nominees/1971|url-status=dead}}</ref>
+|-
+| [[29th Golden Globe Awards|1971]]
+| [[File:Desi Arnaz Jr 1974.jpg|100px|alt=Desi Arnaz Jr in 1974]]
+! scope="row"| {{sort|Arnaz|[[Desi Arnaz Jr.]]}}
+| ''[[Red Sky at Morning (1971 film)|Red Sky at Morning]]''
+| <ref>{{cite web|title=Winners & Nominees 1972|url=https://www.goldenglobes.com/winners-nominees/1972|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413203425/https://www.goldenglobes.com/winners-nominees/1972|url-status=dead}}</ref>
+|-
+| [[30th Golden Globe Awards|1972]]
+| [[File:Edward Albert 1977.JPG|100px|alt=Edward Albert in 1977]]
+! scope="row"| {{sort|Albert|[[Edward Albert]]}}
+| ''[[Butterflies Are Free]]''
+| <ref>{{cite web|title=Winners & Nominees 1973|url=https://www.goldenglobes.com/winners-nominees/1973|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413202947/https://www.goldenglobes.com/winners-nominees/1973|url-status=dead}}</ref>
+|-
+| [[31st Golden Globe Awards|1973]]
+| –
+! scope="row"| {{sort|Le Mat|[[Paul Le Mat]]}}
+| ''[[American Graffiti]]''
+| <ref>{{cite web|title=Winners & Nominees 1974|url=https://www.goldenglobes.com/winners-nominees/1974|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=January 19, 2018|archive-url=https://web.archive.org/web/20180119120325/https://www.goldenglobes.com/winners-nominees/1974|url-status=dead}}</ref>
+|-
+| [[32nd Golden Globe Awards|1974]]
+| –
+! scope="row"| {{sort|Bottoms|[[Joseph Bottoms]]}}
+| ''[[The Dove (1974 film)|The Dove]]''
+| <ref>{{cite web|title=Winners & Nominees 1975|url=https://www.goldenglobes.com/winners-nominees/1975|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 13, 2019|archive-url=https://web.archive.org/web/20190413221448/https://www.goldenglobes.com/winners-nominees/1975|url-status=dead}}</ref>
+|-
+| [[33rd Golden Globe Awards|1975]]
+| [[File:Brad Dourif 1991.jpg|100px|alt=Brad Dourif in 1991]]
+! scope="row"| {{sort|Dourif|[[Brad Dourif]]}}
+| ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]''
+| <ref>{{cite web|title=Winners & Nominees 1976|url=https://www.goldenglobes.com/winners-nominees/1976|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=January 19, 2018|archive-url=https://web.archive.org/web/20180119120605/https://www.goldenglobes.com/winners-nominees/1976|url-status=dead}}</ref>
+|-
+| [[34th Golden Globe Awards|1976]]
+| [[File:A. Schwarzenegger.jpg|100px|alt=Arnold Schwarzenegger]]
+! scope="row"| {{sort|Schwarzenegger|[[Arnold Schwarzenegger]]}}
+| ''[[Stay Hungry]]''
+| <ref>{{cite web|title=Winners & Nominees 1977|url=https://www.goldenglobes.com/winners-nominees/1977|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=June 2, 2019|archive-url=https://web.archive.org/web/20190602201938/https://www.goldenglobes.com/winners-nominees/1977|url-status=dead}}</ref>
+|-
+| [[35th Golden Globe Awards|1977]]
+! scope="row" colspan="3" style="text-align:center;"| {{sort|ZZZ|No award}}
+| <ref name="award recipients" />
+|-
+| [[36th Golden Globe Awards|1978]]
+| [[File:Brad Davis actor 1980.jpg|100px|alt=Brad Davis in 1980]]
+! scope="row"| {{sort|Davis|[[Brad Davis (actor)|Brad Davis]]}}
+| ''[[Midnight Express (film)|Midnight Express]]''
+| <ref>{{cite web|title=Winners & Nominees 1979|url=https://www.goldenglobes.com/winners-nominees/1979|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=January 19, 2018|archive-url=https://web.archive.org/web/20180119120713/https://www.goldenglobes.com/winners-nominees/1979|url-status=dead}}</ref>
+|-
+| [[37th Golden Globe Awards|1979]]
+| [[File:Rick Schroder.jpg|100px|alt=Ricky Schroder in 2008]]
+! scope="row"| {{sort|Schroder|[[Ricky Schroder]]}}
+| ''[[The Champ (1979 film)|The Champ]]''
+| <ref>{{cite web|title=Winners & Nominees 1980|url=https://www.goldenglobes.com/winners-nominees/1980|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=April 10, 2019|archive-url=https://web.archive.org/web/20190410123122/https://www.goldenglobes.com/winners-nominees/1980|url-status=dead}}</ref>
+|-
+| [[38th Golden Globe Awards|1980]]
+| [[File:TimothyHutton08TIFF.jpg|100px|alt=Timothy Hutton in 2008]]
+! scope="row"| {{sort|Hutton|[[Timothy Hutton]]}}
+| ''[[Ordinary People]]''
+| <ref>{{cite web|title=Winners & Nominees 1981|url=https://www.goldenglobes.com/winners-nominees/1981|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=December 22, 2017|archive-url=https://web.archive.org/web/20171222104951/https://www.goldenglobes.com/winners-nominees/1981|url-status=dead}}</ref>
+|-
+| [[39th Golden Globe Awards|1981]]
+! scope="row" colspan="3" style="text-align:center;"| {{sort|ZZZ|No award}}
+| <ref name="award recipients" />
+|-
+| [[40th Golden Globe Awards|1982]]
+| [[File:Sir Ben Kingsley 2012.jpg|100px|alt=Sir Ben Kingsley in 2012]]
+! scope="row"| {{sort|Kingsley|[[Ben Kingsley]]}}
+| ''[[Gandhi (film)|Gandhi]]''
+| <ref name="1983 award">{{cite web|title=Winners & Nominees 1983|url=https://www.goldenglobes.com/winners-nominees/1983|website=The Golden Globes|publisher=[[Hollywood Foreign Press Association]]|access-date=February 2, 2018|archive-date=December 1, 2017|archive-url=https://web.archive.org/web/20171201033138/https://www.goldenglobes.com/winners-nominees/1983|url-status=dead}}</ref>
+|}
+
+==See also==
+* [[Golden Globe Award for New Star of the Year – Actress]]
+
+==References==
+{{Reflist|30em}}
+
+==External links==
+* [https://www.goldenglobes.com/ Golden Globes Award official website]
+* [https://www.imdb.com/event/ev0000292/maindetails Golden Globes Event History – retro to 1944]
+
+{{Golden Globe Awards Chron}}
+{{Golden Globe Award for New Star of the Year Actor}}
+
+{{DEFAULTSORT:Golden Globe Award for New Star of the Year - Actor}}
+[[Category:Retired Golden Globe Awards]]
+[[Category:New Star of the Year (Actor) Golden Globe winners| ]]
+[[Category:Awards for young actors]]

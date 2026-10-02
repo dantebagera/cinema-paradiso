@@ -1,0 +1,185 @@
+{{Short description|Israeli author and filmmaker (1924–2005)}}
+{{good article}}
+{{Use dmy dates|date=September 2026}}
+{{Infobox person
+| name             = Ephraim Kishon
+| native_name      = אפרים קישון
+| native_name_lang = Hebrew
+| birth_name       = Ferenc Hoffmann
+| image            = 
+{{Easy CSS image crop
+|Image            = PikiWiki Israel 50218 ephraim kishon .jpg
+|align            = center
+|desired_width    = 260
+|crop_left_perc   = 0
+|crop_right_perc  = 12
+|crop_top_perc    = 0
+|crop_bottom_perc = 16
+}}
+| imagesize        = 
+| caption          = Kishon in 2000
+| alt              = 3/4 view of subject on a dark background wearing a dark shirt and sunglasses, 2000
+| birth_date       = {{birth date|1924|08|23|df=y}}
+| birth_place      = [[Budapest]], Hungary
+| death_date       = {{death date and age|2005|01|29|1924|08|23|df=y}}
+| death_place      = [[Appenzell]], Switzerland
+| occupation       = {{hlist|Film director|novelist|playwright|screenwriter|columnist|satirist}}
+| years_active     = 1945–2005
+| spouse           = {{ubl|{{marriage|Eva Klamer|1946|1959|end=divorced}}|{{marriage|[[Sara Kishon]]|1959|2002|end=died}}|{{marriage|Lisa Witasek|2003}}}}
+| children         = 3
+| awards           = [[Israel Prize]] (2002)
+}}
+
+'''Ephraim Kishon''' ({{langx|he|אפרים קישון}}{{lrm}}; 23 August 1924 – 29 January 2005) was a Hungarian-born Israeli author, [[dramatist]], [[screenwriter]], and [[Academy Award|Oscar]]-nominated [[film director]]. A [[Holocaust]] survivor who immigrated to Israel in 1949, he became the young state's leading satirist, writing a daily satirical column, "Chad Gadya", in the newspaper [[Maariv (newspaper)|Maariv]] for about 30 years and publishing dozens of books, many translated into 37 languages.<ref name="NYTimes">{{Cite news |date=30 January 2005 |title=Ephraim Kishon, 80, Holocaust Survivor Who Became Satirist |url=https://www.nytimes.com/2005/01/30/international/middleeast/ephraim-kishon-80-holocaust-survivor-who-became.html |access-date=30 August 2026 |work=[[The New York Times]] |language=en-US |issn=0362-4331 |archive-date=6 August 2019 |archive-url=https://web.archive.org/web/20190806214817/https://www.nytimes.com/2005/01/30/international/middleeast/ephraim-kishon-80-holocaust-survivor-who-became.html |url-status=live}}</ref><ref name="Guardian">{{cite news |last=Joffe |first=Lawrence |title=Ephraim Kishon |url=https://www.theguardian.com/news/2005/feb/01/guardianobituaries.booksobituaries |work=[[The Guardian]] |date=1 February 2005 |access-date=12 September 2026 |archive-url=https://web.archive.org/web/20200903091105/https://www.theguardian.com/news/2005/feb/01/guardianobituaries.booksobituaries |archive-date=3 September 2020}}</ref>
+
+Kishon expanded into filmmaking in the 1960s, writing and directing five feature films; ''[[Sallah Shabati]]'' (1964) and ''[[The Policeman]]'' (1971) were both nominated for the [[Academy Award for Best Foreign Language Film]] and won [[Golden Globe Award for Best Foreign Language Film|Golden Globe Awards]] in the category. His films and characters, along with his writing, are credited with shaping Israeli popular culture and helping give rise to the ''[[Bourekas film]]'' genre. He was also a lifelong [[chess]] enthusiast whose passion for the game inspired a talking chess computer, the ''Kishon Chesster''. His work was especially celebrated in West Germany and Austria, where in 1990 he received the Order of Merit of the Federal Republic of Germany.
+
+Although Kishon was one of the most widely read satirists in Israel, he came to feel that the Israeli literary establishment looked down on his popular style, and his domestic acclaim waned somewhat in the 1970s even as his books topped the bestseller lists in West Germany and Austria, where his reception became the subject of later academic study. He received the [[Israel Prize]] for lifetime achievement in 2002. Kishon died in Switzerland in 2005 at the age of 80.
+
+== Biography ==
+Ephraim Kishon was born on 23 August 1924, in [[Budapest]], Hungary, as '''Ferenc Hoffmann''', the son of a bank manager.<ref name="Guardian" />
+
+His writing talent became evident in his youth: in 1940 he won a novella-writing competition for high school students.<ref name=":0" /> Barred from continuing his university studies under Hungary's antisemitic legislation,<ref name=":0" /><ref name="cb2005">{{cite web |date=4 February 2005 |title=Ephraim Kishon, 1924 – 2005 |url=https://en.chessbase.com/post/ephraim-kishon-1924-2005 |website=Chess News |access-date=13 September 2026 |archive-date=24 August 2026 |archive-url=https://web.archive.org/web/20260824020142/https://en.chessbase.com/post/ephraim-kishon-1924-2005 |url-status=live}}</ref> he became a goldsmith.<ref name="cb2005" />
+
+The [[Nazism|Nazis]] confined Kishon in several [[Nazi concentration camps|concentration camps]] over the course of [[World War II]]. In 1944 he was deported to a labor camp at Jolsva (now [[Jelšava]], Slovakia), where he served as secretary to the district commandant, who sought a chess opponent; as Perry, Jackl and Lochekhina write, Kishon had to "play well enough to stay alive but not so well that the commandant would kill him in a moment of anger".<ref name="j778">{{cite journal |last1=Perry |first1=Rachel |last2=Jackl |first2=Klara |last3=Lochekhina |first3=Galina |date=27 July 2023 |title=Checkmate: Chess Artifacts and Artworks Made and Played in Extremis |url=https://academic.oup.com/hgs/article/37/1/154/7186281 |journal=Holocaust and Genocide Studies |volume=37 |issue=1 |pages=154–175 |doi=10.1093/hgs/dcad013 |issn=8756-6583 |access-date=9 September 2026 |archive-date=24 November 2024 |archive-url=https://web.archive.org/web/20241124054706/https://academic.oup.com/hgs/article/37/1/154/7186281 |url-status=live}}</ref> At another camp, the Germans lined up the prisoners and shot every tenth man, skipping over him.<ref name="q210" /> He later described the episode in his book ''The Scapegoat'', writing that "they made a mistake—they left one satirist alive".<ref name="q210" /> According to Vági, Csősz and Kádár and the Hungarian daily ''Index'', he escaped from the Jolsva camp and made his way to Budapest, where he spent the rest of the war in hiding.<ref>{{cite book |last1=Vági |first1=Zoltán |last2=Csősz |first2=László |last3=Kádár |first3=Gábor |title=The Holocaust in Hungary: Evolution of a Genocide |publisher=AltaMira Press, in association with the United States Holocaust Memorial Museum |year=2013 |page=334 |isbn=978-0-7591-2198-0}}</ref><ref name=":0">{{Cite web |title=Films by Ephraim Kishon |url=https://jfc.org.il/en/official/ephraim-kishon/ |access-date=1 September 2026 |website=םיטרסה ןויכרא |language=en-US |archive-date=30 August 2026 |archive-url=https://web.archive.org/web/20260830190120/https://jfc.org.il/en/official/ephraim-kishon/ |url-status=live}}</ref><ref name="index2005">{{cite news |title=Egyenes kiesés: Meghalt Efrájim Kishon |url=https://index.hu/kultur/klassz/kishon0130 |work=Index |date=30 January 2005 |access-date=13 September 2026 |language=hu |archive-date=22 October 2020 |archive-url=https://web.archive.org/web/20201022001214/https://index.hu/kultur/klassz/kishon0130/ |url-status=live}}</ref> ''The Guardian'' and ''The Independent'' instead describe him escaping while being marched toward the [[Sobibor extermination camp]];<ref name="Guardian" /><ref name="independent">{{cite news |last=Blom |first=Philipp |title=Ephraim Kishon |url=https://www.the-independent.com/news/obituaries/ephraim-kishon-488963.html |work=The Independent |date=30 January 2005 |access-date=14 September 2026}}</ref> ''The Independent'' adds that he fled at the Polish border and spent the rest of the war as a Slovak labourer under the name Stanko Andras.<ref name="independent" /> Only his parents and one sister survived, from an extended family of twenty.<ref name="independent" />
+[[File: Ephraim Kishon, drawing by Chaim Topol.JPG|thumb|Drawing of Kishon by [[Chaim Topol]]]]
+His surname became Kishont after the war,<ref name=":0" /> and by 1948 he had completed a course in art history, publishing humorous articles under the pseudonym Ferenc Kishont.<ref name=":0" />
+
+In 1949 he [[Aliyah|immigrated]] to the newly founded state of Israel, together with his first wife Eva (Chawa) Klamer, to escape the [[Communism|Communist]] regime. When he disembarked in Haifa and gave his name as Ferenc, the clerk told him "that's not a real name" and gave him the name Ephraim Kishon instead, after a river near Haifa on [[Mount Carmel]].<ref>{{cite web |last=Leibovitz |first=Liel |date=29 January 2018 |title=Remembering the Greatest Jewish Writer You May Not Have Even Heard Of |url=https://www.tabletmag.com/scroll/254249/remembering-the-greatest-jewish-writer-you-may-not-have-even-heard-of |access-date=9 September 2026 |website=Tablet Magazine |archive-date=20 June 2021 |archive-url=https://web.archive.org/web/20210620044113/https://www.tabletmag.com/scroll/254249/remembering-the-greatest-jewish-writer-you-may-not-have-even-heard-of |url-status=live}}</ref><ref name=":0" />
+
+His first marriage, to Eva Klamer, ended in divorce in 1959. He then married Sara (''née'' Lipovitz), who died in 2002; his third wife, Lisa Witasek, survived him.<ref name="Guardian" /> Kishon had three children: Raphael ("Rafi"), Amir, and Renana.<ref>{{cite news |last=Steinberg |first=Jessica |title=5 films, short and satirical: Homage to Ephraim Kishon as he would have liked |url=https://www.timesofisrael.com/5-films-short-and-satirical-homage-to-ephraim-kishon-as-he-would-have-liked/ |work=The Times of Israel |date=28 January 2016 |access-date=10 September 2026}}</ref>
+
+In 1981, Kishon established a second home in the rural Swiss canton of [[Appenzell]]; according to ''The New York Times'', he had come to feel unwelcome in Israel as an immigrant.<ref name="NYTimes" />
+[[File:Kishon Rabin Shemi.jpg|thumb|Kishon talking with Prime Minister [[Yitzhak Rabin]], 1992]]
+Kishon died on 29 January 2005 at his home in Appenzell at the age of 80 of a heart attack; his third wife, Lisa, was with him.<ref name="q210" /> His coffin was flown to Israel and, on 1 February, was placed at Beit Sokolov, the Tel Aviv home of the journalists' association, where colleagues, family and readers paid their respects.<ref name="funeral">{{cite news |date=2 February 2005 |title='We're Burying a Bit of Ourselves Today' |url=https://www.haaretz.com/israel-news/culture/2005-02-02/ty-article/were-burying-a-bit-of-ourselves-today/0000017f-df04-db22-a17f-ffb5d72c0000 |access-date=1 September 2026 |work=Haaretz |archive-date=26 May 2026 |archive-url=https://web.archive.org/web/20260526205245/https://www.haaretz.com/israel-news/culture/2005-02-02/ty-article/were-burying-a-bit-of-ourselves-today/0000017f-df04-db22-a17f-ffb5d72c0000 |url-status=live}}</ref> A memorial ceremony led by [[Chaim Topol]], who had played the title role in ''Sallah Shabati'', preceded the procession to the old cemetery on Trumpeldor Street, where Kishon was buried beside the grave of his wife Sara.<ref name="funeral" /> His sons Rafi and Amir recited the mourner's prayer; his daughter Renana read from letters he had sent his children while travelling abroad; and [[Tommy Lapid]] and Education Minister [[Limor Livnat]] were among those who eulogised him.<ref name="funeral" />
+
+== Literary career==
+Kishon initially lived in the "Sha'ar Ha'Aliyah" transit camp near Haifa, and soon afterwards moved to Kibbutz [[Kfar HaHoresh]], where he immersed himself in learning Hebrew during his free time. During this period he wrote several short humorous pieces for the Hungarian newspaper "[[Új Kelet]]".<ref name=":0" /> He then moved to a housing project, where he continued studying Hebrew, and soon became proficient in the language.<ref name=":0" /> His heavy Hungarian accent accompanied him throughout his life.<ref>{{cite news |last=Green |first=Saguy |title=He Captured Hebrew - and Hebrew Captured Him |url=https://www.haaretz.com/israel-news/culture/2005-01-31/ty-article/he-captured-hebrew-and-hebrew-captured-him/0000017f-f13b-df98-a5ff-f3bf5aca0000 |work=Haaretz |date=31 January 2005 |access-date=10 September 2026 |archive-date=25 May 2026 |archive-url=https://web.archive.org/web/20260525081751/https://www.haaretz.com/israel-news/culture/2005-01-31/ty-article/he-captured-hebrew-and-hebrew-captured-him/0000017f-f13b-df98-a5ff-f3bf5aca0000 |url-status=live}}</ref>
+
+By 1951, after two years in the country, Kishon was writing a satirical column for the newspaper ''[[Davar]]'', in which he published a satirical piece, "Legend of a Tel Aviv Canal", which later formed the basis for his film ''[[Blaumilch Canal]]''.<ref name=":0" /> That same year he published his first book in Israel, ''Ha-ole Ha-Yored le-Chayenu'' ("The Pestering Immigrant"), about the life experiences of new immigrants in Israel during the 1950s.<ref name=":0" />
+
+In 1952 Kishon began writing a regular satirical column called "Chad Gadya" ("One Young Goat" in Aramaic, taken from the [[Passover Seder|Passover]] [[Haggadah|Seder]] liturgy) in the daily Hebrew tabloid "[[Ma'ariv]]".<ref name=":0" /> Kishon kept writing the column for about 30 years, while in the first two decades he published a new column almost every day.<ref name=":1">{{cite web |title=Jerusalem Jewish Film Festival 2017: Kishon |url=https://www.midnighteast.com/mag/?p=38136 |access-date=9 September 2026 |website=Midnight East |archive-date=6 December 2017 |archive-url=https://web.archive.org/web/20171206111816/http://www.midnighteast.com/mag/?p=38136 |url-status=live}}</ref> Within a few years after launching his writing career in Israel Kishon became one of the most prominent humorists and satirists in the country.<ref name=":0" />
+
+[[File:Orden wider den tierischen Ernst 1978.jpg|thumb|Kishon at the [[Aachen]] carnival in [[West Germany]], 1978]]
+Kishon's stage writing developed alongside his newspaper work. His comedy ''Ha-Ketuba'' (''The Marriage Contract'', 1961) had one of the longest runs in the history of Israeli theatre, and his sketches and plays were later performed on stage and television in many countries.<ref name="a098" /> Collections of his short satirical pieces appeared in Hebrew from the early 1950s onward, among them ''Shmo Holech Lefanav'' (''His Name Precedes Him'', 1953), ''Ma'arachonim'' (''Short Pieces'', 1965) and ''Shminiot Ba-Avir'' (''Bending Over Backwards'', 1965).<ref name="a098" /> In all he published 42 books for adults and eight for children,<ref name="a098" /> translated into 37 languages.<ref name="Guardian" />
+[[File:Ephraim Kishon 2001 Dortmund.jpg|thumb|Ephraim Kishon (front) at a simultaneous chess exhibition by [[Vladimir Kramnik]], Dortmund 2001; behind him is {{Interlanguage link|Alfred Schlya|de}}, president of the German Chess Federation.]]
+Kishon's books sold particularly well in Germany.<ref name="a098" /> Kishon rejected the notion of collective German guilt for the Holocaust, a stance later examined as part of the broader academic account of his reception in West Germany.<ref name="e700" /> [[Friedrich Torberg]] translated his work into German until Torberg's death in 1979; by then, Kishon had mastered German well enough to write his own translations thereafter.<ref name="cb2005" />
+
+== Chess ==
+[[File:PikiWiki Israel 50017 ephraim kishon.jpg|thumb|Kishon at his home office, with a chess set on the shelf behind him]]
+Kishon was a lifelong chess enthusiast, and took an early interest in [[computer chess|chess-playing computers]]. In 1990, German chess computer manufacturer Hegener & Glaser together with Fidelity produced the ''Kishon Chesster'', a chess computer distinguished by the spoken comments it would make during a game. Kishon wrote the comments to be humorous, but they were also carefully chosen to be relevant to chess and the position in the game.<ref name="cb2005" />
+
+== Reception and legacy ==
+The Israel Film Archive describes Kishon as one of the central figures of modern Israeli satire, whose linguistic style and stage/screen characters became embedded in everyday spoken Hebrew and Israeli popular culture.<ref name=":0" /> His five feature films are credited with shaping Israeli popular cinema and helping pave the way for the ''[[Bourekas film]]'' genre of Israeli comedies.<ref name=":0" />
+
+The [[Posen Library of Jewish Culture and Civilization|Posen Library]] identifies Kishon as Israel's foremost satirist of the early state period, whose work regularly targeted the ruling Labor Zionist party and highlighted discriminatory attitudes of Ashkenazi Israelis toward newly arrived Mizrahi immigrants.<ref>{{cite web |title=Ephraim Kishon |url=https://www.posenlibrary.com/author/ephraim-kishon |access-date=30 August 2026 |website=The Posen Library of Jewish Culture and Civilization |publisher=Yale University Press}}</ref> Despite this, Kishon increasingly felt that his best-selling work was looked down on as "middlebrow" by the Israeli literary establishment, and his domestic popularity waned somewhat during the 1970s even as his acclaim in Germany grew.<ref name="NYTimes" /><ref name="q210">{{cite web |last1=Handelzalts |first1=Michael |last2=Press |first2=Shiri Lev-Ari the Associated |date=30 January 2005 |title=Author and Satirist Ephraim Kishon Dies, Aged 80 |url=https://www.haaretz.com/2005-01-30/ty-article/author-and-satirist-ephraim-kishon-dies-aged-80/0000017f-f089-df98-a5ff-f3ad6f9c0000 |access-date=30 August 2026 |publisher=Haaretz |archive-date=25 May 2026 |archive-url=https://web.archive.org/web/20260525082045/https://www.haaretz.com/2005-01-30/ty-article/author-and-satirist-ephraim-kishon-dies-aged-80/0000017f-f089-df98-a5ff-f3ad6f9c0000 |url-status=live}}</ref> By the 1980s, as his political sympathies shifted further to the right, Kishon described himself as an outsider within Israel's literary and media establishment, and increasingly turned from satire to overtly political opinion writing.<ref name="r304">{{cite web |last=Teicholz |first=Tom |date=25 February 2005 |title=The Writer |url=https://jewishjournal.com/news/55/kishon-the-writer/ |access-date=1 September 2026 |website=Jewish Journal}}</ref>
+
+A 2017 reissue of a book of conversations between Kishon and journalist Yaron London drew renewed critical attention to a tension in his later work: reviewers noted a contrast between the versatile, funny satirist and a more pessimistic, cynical figure whose uncompromising positions on Israel's rectitude were seen as having undermined his ability to produce sharp humor.<ref name="u703">{{cite web |last=רוזנטל |first=רוביק |date=30 November 2017 |title="קישון: שמו הולך לפניו": מלחמת ששת הימים הרגה את הסאטירה של קישון |url=https://www.haaretz.co.il/literature/study/2017-11-30/ty-article-review/.premium/0000017f-dbef-d3ff-a7ff-fbef39e40000 |access-date=1 September 2026 |publisher=הארץ |language=he}}</ref>
+
+Kishon's satire found an unusually large readership in West Germany and Austria from the 1960s onward, and his books topped West German bestseller lists into the 1980s.<ref name="e700">{{cite journal |last=Behre |first=Silja |title=Ephraim Kishon für Deutsche. Der israelische Autor und Satiriker im Literaturbetrieb der Bundesrepublik |url=https://zeitgeschichte-digital.de/doks/frontdoor/index/index/docId/1726 |journal=Zeithistorische Forschungen – Studies in Contemporary History |volume=16 |issue=3 |pages=495–519 |date=30 March 2020 |language=de |publisher=ZZF – Centre for Contemporary History |doi=10.14765/zzf.dok-1726 |access-date=9 September 2026}}</ref> Kishon himself tended to attribute this popularity to a kind of historical irony; a 2020 academic study instead traces it to the specific dynamics of the West German publishing industry and the broader politics of postwar German–Israeli reconciliation.<ref name="e700" /> The same study argues that Kishon's outspoken political commentary in the German press following the 1967 [[Six-Day War]] helped set a lasting pattern in how Israeli authors' work is read and discussed in Germany.<ref name="e700" /> A 2024 biography further examined the complex relationship between Kishon, a Holocaust survivor, and his large West German readership, many of whom were descendants of the perpetrators.<ref name="k872">{{cite web |last=צימרמן |first=משה |date=9 December 2024 |title=פשפש שנשא טלאי צהוב על חזהו וגבו, אוהב את ארץ ישראל אהבה לאומנית לגמרי |url=https://www.haaretz.co.il/literature/tarbut-sifrot/2024-12-09/ty-article/.premium/00000193-ac1d-ddde-addb-fcbf0f660000 |access-date=1 September 2026 |publisher=הארץ |language=he}}</ref>
+
+The Israel Film Archive and the [[National Library of Israel]] credit ''Sallah Shabati'' with having inaugurated the [[Bourekas film]] genre — ethnic comedies and melodramas centered on tensions between Mizrahi immigrants and Israel's Ashkenazi establishment — which dominated Israeli popular cinema through the mid-1970s.<ref>{{cite web |title=From "Bourekas Films" to the Israel Prize: Menahem Golan's Israeli Hollywood Story |url=https://blog.nli.org.il/en/menahem_golan/ |access-date=1 September 2026 |website=The National Library of Israel}}</ref><ref name="jfc-sallah">{{cite web |title=Sallah Shabati |url=https://jfc.org.il/en/movie/25121-2/ |access-date=1 September 2026 |website=Israel Film Archive – Jerusalem Cinematheque}}</ref> Scholar Yaron Peleg argues that Kishon's title character from ''Sallah Shabati'' became an archetype whose traits Kishon himself continued to explore in ''[[The Policeman]]'', while also noting that the genre's broadly comic treatment of ethnic and class tension drew criticism for softening more serious social issues into sentimental comedy.<ref>{{cite journal |last=Peleg |first=Yaron |title=From Black to White: Changing Images of Mizrahim in Israeli Cinema |url=https://api.repository.cam.ac.uk/server/api/core/bitstreams/01d3842d-5d77-4ee9-b1b5-09b5b861aaa2/content |journal=Prooftexts |access-date=12 September 2026}}</ref>
+
+==Books, plays, and films==
+===Books===
+Kishon wrote 42 books for adults and eight for children, most of them collections of satirical pieces.<ref name="a098" /> A selection, with titles and years as catalogued by the Institute for Hebrew Literature:<ref name="a098" />
+{{Div col}}
+* ''Immigrant Upon Us'' (''Ha-Oleh Ha-Yored Le-Hayenu'', 1951)
+* ''His Name Precedes Him'' (''Shmo Holech Lefanav'', 1953)
+* ''Ein-Kmunim'' (1955); republished in 1972 as ''The Fox in the Chicken House'' (''Ha-Shual Be-Lul Ha-Tarnegolot''), the basis for [[The Fox in the Chicken Coop|the 1978 film]]
+* ''It Could Be Worse'' (''Lo Norah'', 1957)
+* ''It All Depends'' (''Hacol Talui'', 1961)
+* ''One of Those Yesterdays'' (''Be-Ehad Ha-Emeshim'', 1962)
+* ''He and She'' (''Hu Ve-Hi'', 1963)
+* ''Short Pieces'' (''Ma'arachonim'', 1965)
+* ''Bending Over Backwards'' (''Shminiot Ba-Avir'', 1965)
+* ''So Sorry We Won'' (''Sliha She-Nitzahnu'', 1967)
+* ''Woe to the Victors'' (''Oy La-Menatzhim'', 1969)
+* ''A Hole in the Curtain'' (''Hor Ba-Masach'', 1973)
+* ''Six Comedies'' (''Shesh Comediot'', 1977)
+* ''Those Were Jonathan's Travels'' (''Ele Masaot Yonatan'', 1981), children's book
+* ''Second Book of Satire'' (''Sefer Ha-Satirot Ha-Sheni'', 1990)
+* ''Third Book of Satire'' (''Sefer Ha-Satirot Ha-Shelishi'', 1992)
+* ''58 Short Pieces'' (''58 Ma'arachonim'', 1995)
+* ''My Family Right or Wrong'' (''Sefer Mishpachti'', 2002)
+* ''Picasso's Sweet Revenge'' (''Nikmato Ha-Metuka Shel Picasso'', 2004)
+{{Div col end}}
+===Plays===
+Kishon's first play, ''His Name Precedes Him'' (''Shemo Holekh Lefanav''), ran at [[Habima Theatre]] in 1953; over the following decades he wrote for Habima, the [[Ohel Theatre]] and the [[Cameri Theatre]].<ref name=":0" /> The years below are those of the published texts, as catalogued by the Institute for Hebrew Literature.<ref name="a098" />
+{{Div col}}
+* ''His Name Precedes Him'' (''Shemo Holekh Lefanav'', 1953), Habima
+* ''Black on White'' (''Shahor Al Gabei Lavan'', 1956), Habima
+* ''The Marriage Contract'' (''Ha-Ketuba'', 1961), Ohel
+* ''Unplug It, the Water is Boiling'' (''Totzi Et Ha-Shteker, Ha-Mayim Rotehim'', 1965) Cameri
+* ''Oh, Oh Juliet'' (''Ho, Ho Julia'', 1974) Habima
+* ''Sallah Shabati'', the musical (1988), Habima<ref name="jfc-sallah" />
+{{Div col end}}
+
+===Films===
+Kishon wrote, directed and produced five feature films between 1964 and 1978, all of them comedic or satirical.
+* ''[[Sallah Shabati]]'' (1964), [[List of Academy Award winners and nominees for Best Foreign Language Film|nominated for Oscar for best foreign language film]]<ref name="Oscars1965">{{cite web |url=http://www.oscars.org/oscars/ceremonies/1965 |title=The 37th Academy Awards (1965) Nominees and Winners |access-date=5 November 2011 |work=oscars.org |archive-date=31 October 2014 |archive-url=https://web.archive.org/web/20141031093059/http://www.oscars.org/oscars/ceremonies/1965 |url-status=live}}</ref> Israeli comedy film about the chaos of Israeli immigration and resettlement which was critical of the treatment immigrants to Israel received depicting immigrants being vilified by Ashkenazi Israelis.<ref name=Guardian /> This social satire placed Kishon among the first Israeli filmmakers to achieve international success.<ref name="jpost-davis">{{cite news |last=Davis |first=Barry |title=The Kishon look: The third annual Israeli Comedy Festival |url=https://www.jpost.com/israel-news/culture/article-813899 |work=The Jerusalem Post |date=12 August 2024 |access-date=12 September 2026 |archive-date=12 September 2026 |archive-url=https://web.archive.org/web/20260912013032/https://www.jpost.com/israel-news/culture/article-813899 |url-status=live}}</ref>
+* ''[[Ervinka]]'' (1967), written and directed by Kishon. The film, starring Topol, is a comical tale of a con man who falls in love with a police officer.<ref name="l782">{{cite web |date=9 December 2025 |title=Ephraim Kishon |url=https://jfc.org.il/en/movie/40898-2 |access-date=9 September 2026 |website=ארכיון הסרטים הישראלי - סינמטק ירושלים}}</ref>
+* ''[[Blaumilch Canal]]'', also known as ''The Big Dig'' (1969, nominated for Golden Globe 1970), an Israeli comedy which depicts the madness of bureaucracy through a municipality's reaction to the actions of a lunatic.<ref name="a167">{{cite web |last=Cashman |first=Greer Fay |date=10 February 2022 |title=Grapevine: Plus ça change... |url=https://www.jpost.com:443/israel-news/article-696135 |access-date=9 September 2026 |publisher=The Jerusalem Post |archive-date=9 September 2026 |archive-url=https://web.archive.org/web/20260909055214/https://www.jpost.com/israel-news/article-696135 |url-status=live}}</ref>
+* ''[[The Policeman]]'', original Hebrew title ''Ha-Shoter Azoulay'' (literally, ''Constable Azoulay'')<ref>{{cite news |last=Hirschfeld |first=Jonathan |title=Just Like That: The Years Have Not Dulled Ephraim Kishon's Sting |url=https://www.haaretz.com/2010-10-29/ty-article/just-like-that/0000017f-e0d0-d38f-a57f-e6d2008a0000 |work=Haaretz |date=29 October 2010 |access-date=10 September 2026 |archive-date=22 May 2026 |archive-url=https://web.archive.org/web/20260522203008/https://www.haaretz.com/2010-10-29/ty-article/just-like-that/0000017f-e0d0-d38f-a57f-e6d2008a0000 |url-status=live}}</ref> (1971, [[List of Academy Award winners and nominees for Best Foreign Language Film|nominated for Oscar for best foreign language film]],<ref name="Oscars1972">{{cite web |url=http://www.oscars.org/oscars/ceremonies/1972 |title=The 44th Academy Awards (1972) Nominees and Winners |access-date=27 November 2011 |work=oscars.org |archive-date=2 April 2015 |archive-url=https://web.archive.org/web/20150402003926/http://www.oscars.org/oscars/ceremonies/1972 |url-status=live}}</ref> awarded [[Golden Globe Award for Best Foreign Language Film#1970s|1972 Golden Globe for best foreign language film]]). Houston Press writer Adam Castaneda described it as a classic of Israeli cinema.<ref>{{cite web |last=Castaneda |first=Adam |title=The Policeman |url=https://www.houstonpress.com/arts/the-policeman-6595390/ |website=Houston Press |date=14 June 2012 |access-date=12 September 2026}}</ref>
+* ''[[The Fox in the Chicken Coop]]'' (1978), based on Kishon's satirical book by the same name (Hebrew: Ha Shu'al B'Lool HaTarnegolot), features many prominent Israeli actors of the time, most notably [[Shaike Ophir]] and [[Seffy Rivlin]]. The film takes a satirical, comic look at the old generation of Israeli politicians.<ref name="y725">{{cite web |date=30 November 2023 |title=The Fox in the Chicken Coop |url=https://jfc.org.il/en/movie/45134-2 |access-date=9 September 2026 |website=ארכיון הסרטים הישראלי - סינמטק ירושלים}}</ref>
+
+==Awards==
+* 1953, [[Nordau Prize]] for Literature<ref name=":1" />
+* 1958, [[Sokolov Award|Sokolov Prize for Journalism]]<ref name=":1" />
+* 1964, [[Kinor David]] (David's Harp) Prize<ref name="g361">{{cite web |date=8 June 2024 |title=Kinor David Award Ceremony |url=https://jfc.org.il/en/news_journal/60083-2/99167-2 |access-date=9 September 2026 |website=ארכיון הסרטים הישראלי - סינמטק ירושלים}}</ref>
+* 1970, [[Herzl Award (Hungarian Jewry)|Herzl Award]] for Hungarian Jewry<ref name="index2005" />
+* 1990, Officer's Cross of the [[Order of Merit of the Federal Republic of Germany]] (Verdienstkreuz 1. Klasse)<ref name="a098">{{cite web |title=Ephraim Kishon |url=https://www.ithl.org.il/writer/ephraim-kishon/ |website=The Israeli Institute for Hebrew Literature |access-date=1 September 2026}}</ref>
+* 1998, co-recipient (jointly with [[Nurit Guvrin]] and [[Aryeh Sivan]]) of the [[Bialik Prize]] for [[Hebrew literature]]<ref name=bialik>{{cite web|title=List of Bialik Prize recipients 1933–2004 (in Hebrew), Tel Aviv Municipality website |url=http://www.tel-aviv.gov.il/Hebrew/_MultimediaServer/Documents/12516738.pdf |url-status=dead |archive-url=https://web.archive.org/web/20071217143811/http://www.tel-aviv.gov.il/Hebrew/_MultimediaServer/Documents/12516738.pdf |archive-date=17 December 2007 }}</ref>
+* 2002, [[Israel Prize]] for lifetime achievement & special contribution to society and the State of Israel<ref>{{cite web |title=Israel Prize Official Site (in Hebrew) – Recipient's C.V. |url=http://cms.education.gov.il/EducationCMS/Units/PrasIsrael/Tashsab/EfraimKishon/KorotHaimEpraimKison.htm |url-status=dead |archive-url=https://web.archive.org/web/20091019124022/http://cms.education.gov.il/EducationCMS/Units/PrasIsrael/Tashsab/EfraimKishon/KorotHaimEpraimKison.htm |archive-date=19 October 2009 }}</ref><ref>{{cite web |title=Israel Prize Official Site (in Hebrew) – Judges' Rationale for Grant to Recipient |url=http://cms.education.gov.il/EducationCMS/Units/PrasIsrael/Tashsab/EfraimKishon/NimukeyHashoftim.htm |url-status=dead |archive-url=https://web.archive.org/web/20091019124027/http://cms.education.gov.il/EducationCMS/Units/PrasIsrael/Tashsab/EfraimKishon/NimukeyHashoftim.htm |archive-date=19 October 2009 }}</ref> Upon receiving the Israel Prize, he remarked: "I've won the Israel Prize, even though I'm pro-Israel. It's almost like a state pardon. They usually give it to one of those liberals who love the [[Palestinians]] and hate [[Israeli settlers|the settlers]]."<ref name="jpost-davis" />
+
+===Film===
+Kishon was nominated twice for an [[Academy Award for Best Foreign Language Film]] and four times for a [[Golden Globe]] Award. He won three Golden Globes: Best Foreign Language Film for ''Sallah Shabati'' (1965) and ''[[The Policeman]]'' (1972), and the Samuel Goldwyn International Award for ''Sallah Shabati'' (1965).<ref>{{cite web |title=Ephraim Kishon |url=https://www.goldenglobes.com/person/ephraim-kishon/ |access-date=9 September 2026 |website=Golden Globes}}</ref>
+
+==References==
+{{reflist}}
+
+== External links ==
+{{commons category}}
+
+*[https://www.ephraimkishon.com/home Ephraim Kishon: Official website] 
+*[https://dramaisrael.org/en/playwright/kishon/ Ephraim Kishon] at Israeli Dramatists Website
+*[http://www.ephraimkishon.de/en/Kishon.htm Ephraim Kishon – Biography, Satires, Obituaries, Photos, Prizes]
+*[https://archive.org/details/funniestmaninwor0000kish_m7z0/mode/2up The funniest man in the world: the wild and crazy humor of Ephraim Kishon] at [[Internet Archive]]. 1989 New York, Shapolsky Publishers; London, Prion  
+*{{Google books|DWvgtVWvMr0C|More of the Funniest Man in the World: the wild and crazy humor of Ephraim Kishon|page=0}}
+*{{IMDb name|id=0457246|name=Ephraim Kishon}}
+
+{{Ephraim Kishon}}
+
+{{Authority control}}
+
+{{DEFAULTSORT:Kishon, Ephraim}}
+[[Category:1924 births]]
+[[Category:2005 deaths]]
+[[Category:Hungarian Jews in Israel]]
+[[Category:Hungarian Holocaust survivors]]
+[[Category:Hungarian emigrants to Israel]]
+[[Category:Israel Prize for lifetime achievement & special contribution to society recipients]]
+[[Category:Israeli male dramatists and playwrights]]
+[[Category:Israeli expatriates in Switzerland]]
+[[Category:Israeli film directors]]
+[[Category:Israeli satirical columnists]]
+[[Category:Israeli male screenwriters]]
+[[Category:Israeli people of Hungarian-Jewish descent]]
+[[Category:Israeli male journalists]]
+[[Category:Satirical film directors]]
+[[Category:Israeli satirical novelists]]
+[[Category:Jewish Israeli dramatists and playwrights]]
+[[Category:Jewish Israeli screenwriters]]
+[[Category:Jewish concentration camp survivors]]
+[[Category:Jewish escapees from Nazi concentration camps]]
+[[Category:Officers Crosses of the Order of Merit of the Federal Republic of Germany]]
+[[Category:Maariv (newspaper) people]]
+[[Category:Burials at Trumpeldor Cemetery]]
+[[Category:Sokolov Award recipients]]
+[[Category:Bialik Prize recipients]]
+[[Category:20th-century Israeli dramatists and playwrights]]
+[[Category:20th-century Israeli screenwriters]]
+[[Category:20th-century Israeli Jews]]
+[[Category:21st-century Israeli Jews]]
+[[Category:20th-century Hungarian Jews]]
+[[Category:21st-century Hungarian Jews]]

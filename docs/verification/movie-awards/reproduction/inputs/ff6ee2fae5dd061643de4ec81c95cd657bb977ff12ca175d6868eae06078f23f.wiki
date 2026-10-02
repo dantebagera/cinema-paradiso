@@ -1,0 +1,88 @@
+{{Short description|1953 documentary film by James Algar}}
+{{For|the zoo with the same name|Living Desert Zoo and Gardens}}
+{{Use American English|date=January 2025}}
+{{Use mdy dates|date=March 2014}}
+{{Infobox film
+| name           = The Living Desert
+| image          = Living Prairie.jpg
+| caption        = Film poster for the double-feature release of ''The Living Desert'' and ''[[The Vanishing Prairie]]''.
+| director       = [[James Algar]]
+| producer       = [[Ben Sharpsteen]]<br />[[Walt Disney]]
+| writer         = James Algar<br />[[Winston Hibler]]<br />[[Jack Moffitt (screenwriter)|Jack Moffitt]]<br />[[Ted Sears]]
+| narrator       = [[Winston Hibler]]
+| starring       = 
+| music          = [[Paul Smith (composer)|Paul J. Smith]]
+| cinematography = Robert H. Crandall<br />[[N. Paul Kenworthy]]
+| editing        = Norman R. Palmer
+| studio         = [[Walt Disney Pictures|Walt Disney Productions]]
+| distributor    = [[Walt Disney Studios Motion Pictures|Buena Vista Distribution]]
+| released       = {{Film date|1953|11|9|ref1=<ref name=prem/>}}
+| runtime        = 69 minutes
+| country        = United States
+| language       = English
+| budget         = $300,000
+| gross          = $2.6 million (US/Canada rentals)<ref>{{cite magazine|url=https://archive.org/details/variety197-1955-01-05/page/n58/mode/1up|title=1954 Box Office Champs|magazine=[[Variety (magazine)|Variety]]|date=January 5, 1955|page=59|via=Internet Archive |access-date=February 24, 2024}}</ref>
+}}
+
+'''''The Living Desert''''' is a 1953 American nature documentary film that shows the everyday lives of the animals of the desert of the [[Southwestern United States]]. The film was written by [[James Algar]], [[Winston Hibler]], [[Jack Moffitt (screenwriter)|Jack Moffitt]] (uncredited), and [[Ted Sears]]. It was directed by Algar, with Hibler as the narrator and was filmed in [[Tucson, Arizona]].<ref name=nytrev/> The film won the 1953 [[Academy Awards|Oscar]] for [[Academy Award for Best Documentary Feature|Best Documentary]].<ref name="Oscars1954">{{cite web|url=https://www.oscars.org/oscars/ceremonies/1954 |title=The 26th Academy Awards (1954) Nominees and Winners |date=October 4, 2014 |access-date=May 30, 2019|publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]])}}</ref>
+
+==Production==
+''The Living Desert'' was the first feature-length film in Disney's ''[[True-Life Adventures]]'' series of documentaries focusing on [[zoological]] studies; the previous films in the series, including the Oscar-winning ''[[Seal Island (film)|Seal Island]]'', were [[short subjects]].<ref name=WD>{{Cite book | url=https://archive.org/details/waltdisneyameric00thom/page/248 | title=Walt Disney: An American Original | author=Bob Thomas | publisher=Pocket Books | pages=[https://archive.org/details/waltdisneyameric00thom/page/248 248–49] | year=1976 | isbn=0-671-66232-5}}</ref>
+
+The documentary was filmed in [[Tucson, Arizona]]. Most of the wildlife shown in the film was donated to what would soon become the [[Arizona-Sonora Desert Museum]].
+
+The film was inspired by 10 minutes of footage shot by [[N. Paul Kenworthy]], a doctoral student at the [[University of California at Los Angeles]]. Kenworthy's footage of a battle between a [[tarantula]] and a [[Tarantula hawk|wasp]] intrigued Disney, who funded a feature-length production following the lives of diverse desert species. Disney was highly supportive of Kenworthy's work and its impact on nonfiction filmmaking: "This is where we can tell a real, sustained story for the first time in these nature pictures".<ref name=WD/>
+
+==Release==
+Prior to the production of ''The Living Desert'', Disney was releasing his films through [[RKO Radio Pictures]], but due to a long-frayed relation with the studio, which had little enthusiasm for the producer's documentary releases, Disney opted to sever his relation with RKO and create his own distribution subsidiary – [[Buena Vista Distribution]], which he named after the street where his office was located.<ref name=WD/> Some pre-existing contracts between RKO and Disney continued until the animated short ''[[In the Bag (film)|In the Bag]]'' (1956).
+
+The film had its world premiere on November 9, 1953 at the Sutton theatre in New York City. It was packaged with two shorts; the animated short ''[[Ben and Me]]'' and the live action short ''Stormy, the Thoroughbred''.<ref name=prem>{{cite news|date=November 6, 1953 |title=The Living Desert (advertisement) |newspaper=[[The New York Times]] |page=23}}</ref><ref>[https://catalog.afi.com/Catalog/moviedetails/50918 AFI|Catalog - The Living Desert (1953)]</ref>
+
+''The Living Desert'' received some criticism for bringing unsubtle humor to its scenes of desert life – [[Bosley Crowther]] of ''[[The New York Times]]'' called Disney to task for adding jokey musical effects to several of the film's scenes, including [[hoedown]] music for a sequence involving a [[scorpion]] mating dance.<ref name=nytrev>{{cite news | author-link =Bosley Crowther |first=Bosley|last=Crowther| title =The Screen: Two Pictures Have Premieres | newspaper =[[The New York Times]] | date =November 10, 1953 | url =https://www.nytimes.com/1953/11/10/archives/two-pictures-have-premieres-the-living-desert-a-disney.html | access-date=October 13, 2009}}</ref> Nonetheless, the film was a commercial success: the $300,000 production earned $4,000,000 at the box office.<ref name=WD/>
+
+The film was very popular in Japan surpassing ''[[Gone With the Wind (film)|Gone With the Wind]]'' as the highest-grossing film of all time with a gross of over $800,000.<ref>{{cite magazine|magazine=[[Variety (magazine)|Variety]]|date=July 20, 1955|page=10|title='Living Desert' Tops 'Gone With Wind' Gross ($800,000) in Japan|url=https://archive.org/details/variety199-1955-07?view=theater#page/n137/mode/1up|access-date=December 12, 2019|via=[[Archive.org]]}}</ref>
+
+==Honors==
+The Academy Award that Disney earned for ''The Living Desert'' helped the producer make history as the individual with the most Oscar wins in a single year. At the [[26th Academy Awards]], in addition to winning the Best Documentary Feature Oscar, Disney also won the [[Academy Award for Best Animated Short Film]] for ''[[Toot, Whistle, Plunk and Boom]]'', the [[Academy Award for Best Documentary (Short Subject)]] for ''[[The Alaskan Eskimo]]'' and the [[Academy Award for Best Live Action Short Film|Academy Award for Best Short Subject (Two-Reel)]] for ''[[Bear Country (1953 film)|Bear Country]]''.<ref>{{cite news | title =1953 Academy Awards Winners and History | publisher =FilmSite.org | url =https://www.filmsite.org/aa53.html | access-date=October 13, 2009}}</ref>
+
+In addition to its Oscar, the film also won the International Prize at the [[1954 Cannes Film Festival]],<ref name="festival-cannes.com">{{cite web |url=https://www.festival-cannes.com/en/archives/ficheFilm/id/3804/year/1954.html |title=Festival de Cannes: The Living Desert |access-date=January 25, 2009|work=festival-cannes.com}}</ref> an award at the [[4th Berlin International Film Festival|Berlin Film Festival]]<ref name="Berlinale 1954">{{cite web |url=https://www.berlinale.de/en/archiv/jahresarchive/1954/03_preistr_ger_1954/03_Preistraeger_1954.html |title=4th Berlin International Film Festival: Prize Winners |access-date=December 24, 2009 |work=berlinale.de}}</ref> and a special achievement award from the [[Golden Globe Awards]].<ref>{{cite news | title =True-Life Adventures: The Living Desert | publisher =British Film Institute | url =http://ftvdb.bfi.org.uk/sift/title/40513?view=event | archive-url =https://web.archive.org/web/20090120161941/http://ftvdb.bfi.org.uk/sift/title/40513?view=event | url-status =dead | archive-date =January 20, 2009 | access-date=October 13, 2009}}</ref><ref>{{cite news | title =The Living Desert | publisher =Hollywood Foreign Press Association | url =https://www.goldenglobes.org/browse/film/25387 | access-date =October 13, 2009 | archive-url =https://web.archive.org/web/20091215212707/http://www.goldenglobes.org/browse/film/25387 | archive-date =December 15, 2009 | url-status =dead | df =mdy-all}}</ref> In 2000, the film was selected for preservation in the United States [[National Film Registry]] by the [[Library of Congress]] as being "culturally, historically, or aesthetically significant".<ref>{{Cite web|title=Complete National Film Registry Listing |url=https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/|website=Library of Congress|access-date=2020-05-04}}</ref><ref>{{Cite web|title=Librarian of Congress Names 25 More Films to National Film Registry|url=https://www.loc.gov/item/prn-00-200/librarian-of-congress-names-25-more-films-to-national-film-registry/2000-12-27/|website=Library of Congress, Washington, D.C. |access-date=2020-05-04}}</ref>
+
+==Home media==
+The film had its first home media release on [[VHS]] and was also featured in the 2006 [[DVD]] ''Walt Disney Legacy Collection Volume 2: Lands of Exploration''.<ref>{{cite web |title=Walt Disney's Legacy Collection: True-Life Adventures, Volume 2 - Lands of Exploration DVD Review|url=https://dvdizzy.com/true-life-adventures-v2.html |website=DVDizzy |access-date=10 May 2025}}</ref> It was also later made available to stream on [[Disney+]].<ref>{{cite web |title=The Living Desert|url=https://www.rottentomatoes.com/m/the-living-desert |website=Rotten Tomatoes |access-date=10 May 2025}}</ref><ref>{{cite web |title=The Living Desert|url=https://www.disneyplus.com/browse/entity-de547cb1-c9d0-4913-ae18-624868ea45cf |website=Disney+ |access-date=10 May 2025}}</ref>
+
+==References==
+{{Reflist}}
+
+==External links==
+* ''The Living Desert'' essay [https://www.loc.gov/static/programs/national-film-preservation-board/documents/living_desert.pdf] by [[N. Paul Kenworthy|N. Paul Kenworthy Jr.]] on the [[National Film Registry]] website
+* {{Official website|https://movies.disney.com/the-living-desert}}
+* {{IMDb title|tt0046008}}
+* {{TCMDb title|id=496083}}
+* {{DisneyAtoZ|living-desert-the-film}}
+* "The Living Desert", essay by Daniel Eagan in [https://books.google.com/books?id=deq3xI8OmCkC ''America's Film Legacy: The Authoritative Guide to the Landmark Movies in the National Film Registry''], A&C Black, 2010 {{ISBN|0826429777}}, pp.&nbsp;478–79
+
+{{True Life Adventures}}
+{{AcademyAwardBestDocumentaryFeature1942-1960}}
+{{Authority control}}
+
+{{DEFAULTSORT:Living Desert, The}}
+[[Category:1953 films]]
+[[Category:1953 children's films]]
+[[Category:1953 English-language films]]
+[[Category:Films directed by James Algar]]
+[[Category:American documentary films]]
+[[Category:Best Documentary Feature Academy Award winners]]
+[[Category:United States National Film Registry films inducted in 2000]]
+[[Category:True-Life Adventures]]
+[[Category:1953 documentary films]]
+[[Category:Films produced by Ben Sharpsteen]]
+[[Category:Films produced by Walt Disney]]
+[[Category:Films set in the Southwestern United States]]
+[[Category:Films set in Arizona]]
+[[Category:Films set in deserts]]
+[[Category:Films shot in Tucson, Arizona]]
+[[Category:Films scored by Paul Smith (composer)]]
+[[Category:Walt Disney Pictures films]]
+[[Category:Films with screenplays by Winston Hibler]]
+[[Category:1953 American films]]
+[[Category:English-language documentary films]]

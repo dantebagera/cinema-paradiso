@@ -1,0 +1,589 @@
+{{oscars short description|films-year=1995}}
+{{Use mdy dates|date=July 2022}}
+{{featured list}}
+{{Infobox film awards
+| number           = 68
+| award            = Academy Awards
+| image            = Oscars1995.jpg
+| caption          = Official poster by [[Saul Bass]]<ref>{{cite news |last=Hindes |first=Andrew |title=Acad bows poster for 69th Oscars |url=https://variety.com/1996/scene/vpage/acad-bows-poster-for-69th-oscars-1117466260/ |access-date=January 19, 2026 |work=Variety |date=December 11, 1996 |quote=In designing the poster, Schwartzman takes over from his friend and mentor, the late Saul Bass, who created the last five posters [the 63rd, 65th, 66th, 67th, and 68th Academy Awards].}}</ref>
+| date             = March 25, 1996
+| site             = [[Dorothy Chandler Pavilion]], [[Los Angeles]], California, U.S.
+| host             = [[Whoopi Goldberg]]
+| producer         = [[David Salzman]]<br>[[Quincy Jones]]
+| director         = [[Jeff Margolis]]
+| best_picture     = ''[[Braveheart]]''
+| most_wins        = ''Braveheart'' (5)
+| most_nominations = ''Braveheart'' (10)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 39 minutes<ref>{{cite news |last=Gray |first=Tim |title=‘Braveheart’ Wins Big at the Academy Awards |url=https://variety.com/1996/film/news/braveheart-wins-big-at-the-academy-awards-1201345091/ |access-date=May 21, 2026 |work=[[Variety (magazine)|Variety]] |date=March 26, 1996 |url-status=live |archive-url=https://web.archive.org/web/20141116085520/http://variety.com/1996/film/news/braveheart-wins-big-at-the-academy-awards-1201345091 |archive-date=November 16, 2014 }}</ref>
+| ratings          = 44.81 million<br />30.48% ([[Nielsen ratings]])
+| last             = 67th
+| next             = 69th
+}}
+
+The '''68th Academy Awards''' ceremony, organized by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[1995 in film|films of 1995]] in the United States and took place on March 25, 1996, at the [[Dorothy Chandler Pavilion]] in Los Angeles beginning at 6:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 9:00&nbsp;p.m. [[Eastern Time Zone|EST]].<ref name=VarietyOscars>{{cite news|last=Lowry |first=Brian |title=Review: "The 68th Annual Academy Awards" |url=https://variety.com/1996/tv/reviews/the-68th-annual-academy-awards-1200445226/ |access-date=August 26, 2013 |work=[[Variety (magazine)|Variety]] |publisher=[[Penske Media Corporation]] |date=March 26, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131023144229/http://variety.com/1996/tv/reviews/the-68th-annual-academy-awards-1200445226/ |archive-date=October 23, 2013 }}</ref> During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories.<ref name=VarietyOscars/> The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[David Salzman]] and [[Quincy Jones]] and directed by [[Jeff Margolis]].<ref name=VarietyOscars/> Actress [[Whoopi Goldberg]] hosted the show for the second time, having previously presided over the [[66th Academy Awards|66th ceremony]] in 1994.<ref>{{cite news|title=Whoopi Goldberg To Be Oscars Host |url=https://www.nytimes.com/1995/11/01/movies/whoopi-goldberg-to-be-oscars-host.html |access-date=October 1, 2013 |work=The New York Times |date=November 1, 1995 |url-status=live |archive-url=https://web.archive.org/web/20131004214534/http://www.nytimes.com/1995/11/01/movies/whoopi-goldberg-to-be-oscars-host.html |archive-date=October 4, 2013 }}</ref> Three weeks earlier, in a ceremony held at the [[Beverly Wilshire Hotel|Regent Beverly Wilshire Hotel]] in [[Beverly Hills, California]], on March 2, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Richard Dreyfuss]].<ref>{{cite news|title=Past Scientific & Technical Awards Ceremonies|url=http://www.oscars.org/awards/scitech/pastawards.html|access-date=July 31, 2013|work=[[Academy of Motion Picture Arts and Sciences]]|publisher=AMPAS|archive-url=https://web.archive.org/web/20140213185729/http://www.oscars.org/awards/scitech/pastawards.html|archive-date=February 13, 2014}}</ref>
+
+''[[Braveheart]]'' won five awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last=Welkos |first=Robert W. |title='Braveheart' Is Top Film; Cage, Sarandon Win |url=https://www.latimes.com/archives/la-xpm-1996-03-26-mn-51422-story.html |access-date=October 2, 2013 |work=Los Angeles Times |date=March 26, 1996 |url-status=live |archive-url=https://web.archive.org/web/20120309193628/http://articles.latimes.com/1996-03-26/news/mn-51422_1_sarandon-win |archive-date=March 9, 2012 }}</ref><ref>{{cite news|last=Hartl |first=John |title=One More Victory For 'Braveheart' – Mel Gibson's Epic About A Battle For Freedom Tops The Oscars |url=https://archive.seattletimes.com/archive/19960326/2321029/one-more-victory-for-braveheart----mel-gibsons-epic-about-a-battle-for-freedom-tops-the-oscars |access-date=October 1, 2013 |work=[[The Seattle Times]] |publisher=[[The Seattle Times Company]] |date=March 25, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004212951/http://community.seattletimes.nwsource.com/archive/?date=19960326&slug=2321029 |archive-date=October 4, 2013 }}</ref> Other winners included ''[[Apollo 13 (film)|Apollo 13]]'', ''[[Pocahontas (1995 film)|Pocahontas]]'', ''[[Restoration (1995 film)|Restoration]]'', and ''[[The Usual Suspects]]'' with two awards and ''[[Anne Frank Remembered]]'', ''[[Antonia's Line]]'', ''[[Babe (film)|Babe]]'', ''[[A Close Shave]]'', ''[[Dead Man Walking (film)|Dead Man Walking]]'', ''[[Leaving Las Vegas]]'', ''[[Lieberman in Love]]'', ''[[Mighty Aphrodite]]'', ''[[One Survivor Remembers]]'', ''[[Il Postino: The Postman]]'', and ''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]'' with one. The telecast garnered almost 45 million viewers in the United States.
+
+==Winners and nominees==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 68th Academy Awards were announced on February 13, 1996, at 5:38&nbsp;a.m. [[Pacific Time Zone|PST]] (13:38 [[Coordinated Universal Time|UTC]]) at the [[Samuel Goldwyn Theater]] by [[Arthur Hiller]], the president of the academy, and the music producer [[Quincy Jones]].<ref>{{cite news|last=Hicks |first=Chris |title='96 Oscar Nominations are Filled with Surprises |url=https://www.deseret.com/1996/2/13/19224737/96-oscar-nominations-are-filled-with-surprises/ |access-date=May 19, 2026 |work=[[Deseret News]] |date=February 13, 1996 |url-status=live |archive-url=https://web.archive.org/web/20260519204912/https://www.deseret.com/1996/2/13/19224737/96-oscar-nominations-are-filled-with-surprises/ |archive-date=May 19, 2026 }}</ref> ''[[Braveheart]]'' led all nominees with ten nominations; ''[[Apollo 13 (film)|Apollo 13]]'' came in second with nine.<ref>{{cite news|last=Welkos |first=Robert W. |title=Gibson's Epic Gets 10, 'Babe' Ties for Third |url=https://www.latimes.com/archives/la-xpm-1996-02-14-ca-40073-story.html |access-date=October 1, 2013 |work=Los Angeles Times |date=February 14, 1996 |author2=Claudia Puig |url-status=live |archive-url=https://web.archive.org/web/20131004215351/http://articles.latimes.com/1996-02-14/entertainment/ca-40073_1_oscar-nomination |archive-date=October 4, 2013 }}</ref><ref>{{cite news|last=Weinraug |first=Bernard |title=Oscar Nominations Are Just One Surprise After Another |url=https://www.nytimes.com/1996/02/14/movies/oscar-nominations-are-just-one-surprise-after-another.html |access-date=October 1, 2013 |work=The New York Times |date=February 14, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004214825/http://www.nytimes.com/1996/02/14/movies/oscar-nominations-are-just-one-surprise-after-another.html |archive-date=October 4, 2013 }}</ref>
+
+The winners were announced during the awards ceremony on March 25, 1996.<ref>{{cite news|title=The 1996 Academy Awards: And the Winners are... |url=https://www.chicagotribune.com/1996/03/26/and-the-winners-are-5/ |access-date=October 1, 2013 |work=Chicago Tribune |publisher=Tribune Publishing |date=March 26, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004213010/http://articles.chicagotribune.com/1996-03-26/news/9603260051_1_sense-and-sensibility-braveheart-gordon-e-sawyer-award |archive-date=October 4, 2013 }}</ref> ''Braveheart'' was the ninth film to win Best Picture with no acting nominations.<ref>{{cite news|last=Dawes|first=Amy|title='Braveheart' Conquers:Gibson's epic wins Best Picture\Sarandon, Cage take acting honors.|url=http://www.thefreelibrary.com/%27BRAVEHEART%27+CONQUERS%5CGibson%27s+epic+wins+Best+Picture%5CSarandon,+Cage...-a083931988|access-date=October 1, 2013|work=[[Los Angeles Daily News]]|publisher=[[MediaNews Group]]|date=March 26, 1996|archive-date=October 4, 2013|archive-url=https://web.archive.org/web/20131004215350/http://www.thefreelibrary.com/%27BRAVEHEART%27+CONQUERS%5CGibson%27s+epic+wins+Best+Picture%5CSarandon,+Cage...-a083931988|url-status=dead}}</ref> With her Best Supporting Actress win for ''[[Mighty Aphrodite]]'', Mira Sorvino became the second consecutive actress to win the aforementioned category for a performance in a film directed by [[Woody Allen]].<ref>{{cite news|last=Boyar |first=Jay |title=Predictions And Personal Favorites Of A Movie Fan |url=https://www.orlandosentinel.com/1996/03/24/predictions-and-personal-favorites-of-a-movie-fan/ |access-date=October 1, 2013 |work=[[Orlando Sentinel]] |publisher=Tribune Publishing |date=March 24, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004213905/http://articles.orlandosentinel.com/1996-03-24/entertainment/9603210948_1_personal-favorites-sense-and-sensibility-favorite-movie/2 |archive-date=October 4, 2013 }}</ref> Best Adapted Screenplay winner [[Emma Thompson]] was the first person to win Oscars for both acting and screenwriting. She had previously won Best Actress for her performance in the 1992 film ''[[Howards End (film)|Howards End]]''.<ref>{{cite news|last=Saner |first=Emine |title=Emma Thompson: Top 100 Women |url=https://www.theguardian.com/culture/2011/mar/08/emma-thompson-100-women |access-date=October 2, 2013 |work=The Guardian |date=March 7, 2011 |url-status=live |archive-url=https://web.archive.org/web/20131004215154/http://www.theguardian.com/culture/2011/mar/08/emma-thompson-100-women |archive-date=October 4, 2013 }}</ref> This was the first year since the [[42nd Academy Awards]]—and last to date—that none of the acting winners appeared in Best Picture nominees.
+
+===Awards===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Mel Gibson in Singapore.jpg
+| caption1          = [[Mel Gibson]], Best Picture co-winner and Best Director winner
+| alt1              = Photo of Mel Gibson at Cannes in 2016.
+| image2            = Nicolas Cage - 66ème Festival de Venise (Mostra).jpg
+| caption2          = [[Nicolas Cage]], Best Actor winner
+| alt2              = Photo of Nicolas Cage.
+| image3            = Susan Sarandon, Festival de Sitges 2017 (cropped).jpg
+| caption3          = [[Susan Sarandon]], Best Actress winner
+| alt3              = Photo of Susan Sarandon at the Festival de Sitges 2017.
+| image4            = Kevin Spacey @ San Diego Comic-Con 2008 - b.jpg
+| caption4          = [[Kevin Spacey]], Best Supporting Actor winner
+| alt4               = Photo of Kevin Spacey at the San Diego Comic-Con in 2008.
+| image5            = MiraSorvino07TIFF.jpg
+| caption5          = [[Mira Sorvino]], Best Supporting Actress winner
+| alt5              = Photo of Mira Sorvino.
+| image6            = Christopher McQuarrie.jpg
+| caption6          = [[Christopher McQuarrie]], Best Original Screenplay winner
+| alt6              = Photo of Christopher McQuarrie.
+| image7            = Emma Thompson 2022.jpg
+| caption7          = [[Emma Thompson]], Best Adapted Screenplay winner
+| alt7              = Photo of Emma Thompson in 2022.
+| image8            = Alan Menken 2013 (cropped).jpg
+| caption8          = [[Alan Menken]], Best Original Musical or Comedy Score co-winner and Best Original Song co-winner
+| alt8              = Photo of Alan Menken in 2013.
+| image9            = Marleen Gorris (1982).jpg
+| caption9          = [[Marleen Gorris]], Best Foreign Language Film winner
+| alt9              = Black-and-white image of Marleen Gorris in 1982.
+| image10           = Christine Lahti MFF 2016, cropped.png
+| caption10         = [[Christine Lahti]], Best Live Action Short Film co-winner
+| alt10             = Photo of Christine Lahti at the Miami Film Festival in 2016.
+| image11           = Nick Park, BBC Radio 2 Folk Awards 2007.jpg
+| caption11         = [[Nick Park]], Best Animated Short Film winner
+| alt11             = Photo of Nick Park at the BBC Radio 2 Folk Awards 2007.
+}}
+
+Winners are listed first and highlighted in boldface.<ref name="Oscars1996">{{cite web|url=http://www.oscars.org/oscars/ceremonies/1996 |title=The 68th Academy Awards (1996) Nominees and Winners |access-date=October 21, 2011 |work=[[Academy of Motion Picture Arts and Sciences]] |publisher=AMPAS |url-status=live |archive-url=https://archive.today/20141109195142/http://www.oscars.org/oscars/ceremonies/1996 |archive-date=November 9, 2014 }}</ref>
+
+{| class=wikitable
+|-
+|  style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Braveheart]]''&nbsp;– [[Mel Gibson]], [[Bruce Davey]] and [[Alan Ladd Jr.]], producers'''
+** ''[[Apollo 13 (film)|Apollo 13]]''&nbsp;– [[Brian Grazer]], producer
+** ''[[Babe (film)|Babe]]''&nbsp;– [[George Miller (filmmaker)|George Miller]], [[Doug Mitchell (film producer)|Doug Mitchell]] and [[Bill Miller (film producer)|Bill Miller]], producers
+** ''[[Il Postino: The Postman]]''&nbsp;– [[Mario Cecchi Gori]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]]), [[Vittorio Cecchi Gori]] and [[Gaetano Daniele]], producers
+** ''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]''&nbsp;– [[Lindsay Doran]], producer
+|  style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Mel Gibson]]&nbsp;– ''[[Braveheart]]'''''
+** [[Chris Noonan]]&nbsp;– ''[[Babe (film)|Babe]]''
+** [[Tim Robbins]]&nbsp;– ''[[Dead Man Walking (film)|Dead Man Walking]]''
+** [[Mike Figgis]]&nbsp;– ''[[Leaving Las Vegas]]''
+** [[Michael Radford]]&nbsp;– ''[[Il Postino: The Postman]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Nicolas Cage]]&nbsp;– ''[[Leaving Las Vegas]]'' as Ben Sanderson'''
+** [[Richard Dreyfuss]]&nbsp;– ''[[Mr. Holland's Opus]]'' as Glenn Holland
+** [[Anthony Hopkins]]&nbsp;– ''[[Nixon (film)|Nixon]]'' as [[Richard Nixon]]
+** [[Sean Penn]]&nbsp;– ''[[Dead Man Walking (film)|Dead Man Walking]]'' as [[Elmo Patrick Sonnier|Matthew Poncelet]]
+** [[Massimo Troisi]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]])&nbsp;– ''[[Il Postino: The Postman]]'' as Mario Ruoppolo
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Susan Sarandon]]&nbsp;– ''[[Dead Man Walking (film)|Dead Man Walking]]'' as [[Helen Prejean]]'''
+** [[Elisabeth Shue]]&nbsp;– ''[[Leaving Las Vegas]]'' as Sera
+** [[Sharon Stone]]&nbsp;– ''[[Casino (1995 film)|Casino]]'' as [[Geri McGee|Ginger McKenna]]
+** [[Meryl Streep]]&nbsp;– ''[[The Bridges of Madison County (film)|The Bridges of Madison County]]'' as Francesca Johnson
+** [[Emma Thompson]]&nbsp;– ''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]'' as [[Elinor Dashwood]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Kevin Spacey]]&nbsp;– ''[[The Usual Suspects]]'' as Roger "Verbal" Kint / [[Keyser Söze]]'''
+** [[James Cromwell]]&nbsp;– ''[[Babe (film)|Babe]]'' as Farmer Arthur Hoggett
+** [[Ed Harris]]&nbsp;– ''[[Apollo 13 (film)|Apollo 13]]'' as [[Gene Kranz]]
+** [[Brad Pitt]]&nbsp;– ''[[12 Monkeys]]'' as Jeffrey Goines
+** [[Tim Roth]]&nbsp;– ''[[Rob Roy (1995 film)|Rob Roy]]'' as Archibald Cunningham
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Mira Sorvino]]&nbsp;– ''[[Mighty Aphrodite]]'' as Linda Ash'''
+** [[Joan Allen]]&nbsp;– ''[[Nixon (film)|Nixon]]'' as [[Pat Nixon]]
+** [[Kathleen Quinlan]]&nbsp;– ''[[Apollo 13 (film)|Apollo 13]]'' as [[Jim Lovell|Marilyn Gerlach Lovell]]
+** [[Mare Winningham]]&nbsp;– ''[[Georgia (1995 film)|Georgia]]'' as Georgia Flood
+** [[Kate Winslet]]&nbsp;– ''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]'' as [[Marianne Dashwood]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+* '''''[[The Usual Suspects]]''&nbsp;– [[Christopher McQuarrie]]'''
+** ''[[Braveheart]]''&nbsp;– [[Randall Wallace]]
+** ''[[Mighty Aphrodite]]''&nbsp;– [[Woody Allen]]
+** ''[[Nixon (film)|Nixon]]''&nbsp;– [[Oliver Stone]], [[Christopher Wilkinson]] and [[Stephen J. Rivele]]
+** ''[[Toy Story]]''&nbsp;– Screenplay by [[Joss Whedon]], [[Andrew Stanton]], [[Joel Cohen (writer)|Joel Cohen]] and [[Alec Sokolow]]; Story by [[John Lasseter]], [[Pete Docter]], Andrew Stanton and [[Joe Ranft]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material Previously Produced or Published)]]}}
+* '''''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]''&nbsp;– [[Emma Thompson]] adapted from [[Sense and Sensibility|the novel]] by [[Jane Austen]]'''
+** ''[[Apollo 13 (film)|Apollo 13]]''&nbsp;– [[Al Reinert]] and [[William Broyles Jr.]] based on the book ''[[Lost Moon]]'' by [[Jim Lovell]] and [[Jeffrey Kluger]]
+** ''[[Babe (film)|Babe]]''&nbsp;– [[George Miller (filmmaker)|George Miller]] and [[Chris Noonan]] based on the book ''[[The Sheep-Pig]]'' by [[Dick King-Smith]]
+** ''[[Leaving Las Vegas]]''&nbsp;– [[Mike Figgis]] based on [[Leaving Las Vegas (novel)|the novel]] by [[John O'Brien (novelist)|John O'Brien]]
+** ''[[Il Postino: The Postman]]''&nbsp;– [[Michael Radford]], [[Anna Pavignano]], [[Furio Scarpelli]], [[Giacomo Scarpelli]] and [[Massimo Troisi]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]]) based on the novel ''[[Ardiente paciencia]]'' by [[Antonio Skármeta]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[Antonia's Line]]'' ([[List of Dutch submissions for the Academy Award for Best Foreign Language Film|The Netherlands]]) in [[Dutch language|Dutch]]&nbsp;– [[Marleen Gorris]], director'''
+** ''[[All Things Fair]]'' ([[List of Swedish submissions for the Academy Award for Best Foreign Language Film|Sweden]]) in [[Swedish language|Swedish]]&nbsp;– [[Bo Widerberg]], director
+** ''[[Dust of Life (1995 film)|Dust of Life]]'' ([[List of Algerian submissions for the Academy Award for Best Foreign Language Film|Algeria]]) in [[French language|French]] &nbsp;– [[Rachid Bouchareb]], director
+** ''[[O Quatrilho]]'' ([[List of Brazilian submissions for the Academy Award for Best Foreign Language Film|Brazil]]) in [[Portuguese language|Portuguese]] and [[Italian language|Italian]]&nbsp;– [[Fábio Barreto]], director
+** ''[[The Star Maker (1995 film)|The Star Maker]]'' ([[List of Italian submissions for the Academy Award for Best Foreign Language Film|Italy]]) in Italian&nbsp;– [[Giuseppe Tornatore]], director
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Anne Frank Remembered]]''&nbsp;– [[Jon Blair]]'''
+** ''[[The Battle Over Citizen Kane]]''&nbsp;– [[Thomas Lennon (filmmaker)|Thomas Lennon]] and Michael Epstein
+** ''[[Small Wonders|Fiddlefest – Roberta Tzavaras and Her East Harlem Violin Program]]''&nbsp;– Allan Miller and Walter Scheuer
+** ''[[Hank Aaron: Chasing the Dream]]''&nbsp;– [[Michael Tollin|Mike Tollin]] and Fredric Golding
+** ''[[Troublesome Creek: A Midwestern]]''&nbsp;– [[Jeanne Jordan]] and [[Steven Ascher]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[One Survivor Remembers]]''&nbsp;– [[Kary Antholis]]'''
+** ''[[Jim Dine: A Self-Portrait on the Walls]]''&nbsp;– [[Nancy Dine]] and Richard Stilwell
+** ''[[The Living Sea]]''&nbsp;– [[Greg MacGillivray]] and [[Alec Lorimore]]
+** ''[[Never Give Up: The 20th Century Odyssey of Herbert Zipper]]''&nbsp;– [[Terry Sanders]] and [[Freida Lee Mock]]
+** ''[[The Shadow of Hate]]''&nbsp;– [[Charles Guggenheim]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Lieberman in Love]]''&nbsp;– [[Christine Lahti]] and [[Jana Sue Memel]]'''
+** ''Brooms''&nbsp;– [[Luke Cresswell]] and [[Steve McNicholas]]
+** ''[[Duke of Groove]]''&nbsp;– [[Griffin Dunne]] and Thom Colwell
+** ''[[Little Surprises]]''&nbsp;– [[Jeff Goldblum]] and Tikki Goldberg
+** ''Tuesday Morning Ride''&nbsp;– [[Dianne Houston]] and Joy Ryan
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[A Close Shave]]''&nbsp;– [[Nick Park]]'''
+** ''[[List of Courage the Cowardly Dog episodes|The Chicken from Outer Space]]''&nbsp;– [[John R. Dilworth]]
+** ''The End''&nbsp;– [[Chris Landreth]] and Robin Bargar
+** ''Gagarin''&nbsp;– Aleksey Kharitidi
+** ''[[Runaway Brain]]''&nbsp;– [[Chris Bailey (animator)|Chris Bailey]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Dramatic Score)]]}}
+* '''''[[Il Postino: The Postman]]''&nbsp;– [[Luis Bacalov]]'''
+** ''[[Apollo 13 (film)|Apollo 13]]''&nbsp;– [[James Horner]]
+** ''[[Braveheart]]''&nbsp;– [[James Horner]]
+** ''[[Nixon (film)|Nixon]]''&nbsp;– [[John Williams]]
+** ''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]''&nbsp;– [[Patrick Doyle]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Musical or Comedy Score)]]}}
+* '''''[[Pocahontas (1995 film)|Pocahontas]]''&nbsp;– Music by [[Alan Menken]]; lyrics by [[Stephen Schwartz]]; orchestral score by [[Alan Menken]]'''
+** ''[[The American President]]''&nbsp;– [[Marc Shaiman]]
+** ''[[Sabrina (1995 film)|Sabrina]]''&nbsp;– [[John Williams]]
+** ''[[Toy Story]]''&nbsp;– [[Randy Newman]]
+** ''[[Unstrung Heroes]]''&nbsp;– [[Thomas Newman]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Colors of the Wind]]" from ''[[Pocahontas (1995 film)|Pocahontas]]''&nbsp;– Music by [[Alan Menken]]; lyrics by [[Stephen Schwartz]]'''
+** "Dead Man Walkin'" from ''[[Dead Man Walking (film)|Dead Man Walking]]''&nbsp;– Music and lyrics by [[Bruce Springsteen]]
+** "[[Have You Ever Really Loved a Woman?]]" from ''[[Don Juan DeMarco]]''&nbsp;– Music and lyrics by [[Michael Kamen]], [[Bryan Adams]] and [[Robert John "Mutt" Lange|Robert John Lange]]
+** "Moonlight" from ''[[Sabrina (1995 film)|Sabrina]]''&nbsp;– Music by [[John Williams]]; lyrics by [[Alan and Marilyn Bergman]]
+** "[[You've Got a Friend in Me]]" from ''[[Toy Story]]''&nbsp;– Music and lyrics by [[Randy Newman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound]]}}
+* '''''[[Apollo 13 (film)|Apollo 13]]''&nbsp;– [[Rick Dior]], [[Steve Pederson (sound engineer)|Steve Pederson]], [[Scott Millan]] and [[David MacMillan (sound engineer)|David MacMillan]]'''
+** ''[[Batman Forever]]''&nbsp;– [[Donald O. Mitchell]], [[Frank A. Montaño]], [[Michael Herbick]] and [[Petur Hliddal]]
+** ''[[Braveheart]]''&nbsp;– [[Andy Nelson (sound engineer)|Andy Nelson]], [[Scott Millan]], [[Anna Behlmer]] and [[Brian Simmons (sound engineer)|Brian Simmons]]
+** ''[[Crimson Tide (film)|Crimson Tide]]''&nbsp;– [[Kevin O'Connell (sound mixer)|Kevin O'Connell]], [[Rick Kline]], [[Gregory H. Watkins]] and [[William B. Kaplan]]
+** ''[[Waterworld]]''&nbsp;– [[Steve Maslow]], [[Gregg Landaker]] and [[Keith A. Wester]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Effects Editing]]}}
+* '''''[[Braveheart]]''&nbsp;– [[Lon Bender]] and [[Per Hallberg]]'''
+** ''[[Batman Forever]]''&nbsp;– [[John Leveque]] and [[Bruce Stambler]]
+** ''[[Crimson Tide (film)|Crimson Tide]]''&nbsp;– [[George Watters II]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Restoration (1995 film)|Restoration]]''&nbsp;– Art Direction and Set Decoration: [[Eugenio Zanetti]]'''
+** ''[[Apollo 13 (film)|Apollo 13]]''&nbsp;– Art Direction: [[Michael Corenblith]]; Set Decoration: [[Merideth Boswell]]
+** ''[[Babe (film)|Babe]]''&nbsp;– Art Direction: [[Roger Ford (production designer)|Roger Ford]]; Set Decoration: [[Kerrie Brown]]
+** ''[[A Little Princess (1995 film)|A Little Princess]]''&nbsp;– Art Direction: [[Bo Welch]]; Set Decoration: [[Cheryl Carasik]]
+** ''[[Richard III (1995 film)|Richard III]]''&nbsp;– Art Direction and Set Decoration: [[Tony Burrough]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Braveheart]]''&nbsp;– [[John Toll]]'''
+** ''[[Batman Forever]]''&nbsp;– [[Stephen Goldblatt]]
+** ''[[A Little Princess (1995 film)|A Little Princess]]''&nbsp;– [[Emmanuel Lubezki]]
+** ''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]''&nbsp;– [[Michael Coulter]]
+** ''[[Shanghai Triad]]''&nbsp;– [[Lü Yue (cinematographer)|Lü Yue]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[Braveheart]]''&nbsp;– [[Peter Frampton (make-up artist)|Peter Frampton]], [[Paul Pattison]] and [[Lois Burwell]]'''
+** ''[[My Family (1995 film)|My Family, Mi Familia]]''&nbsp;– [[Ken Diaz]] and [[Mark Sanchez (make-up artist)|Mark Sanchez]]
+** ''[[Roommates (1995 film)|Roommates]]''&nbsp;– [[Greg Cannom]], [[Bob Laden]] and [[Colleen Callaghan]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Restoration (1995 film)|Restoration]]''&nbsp;– [[James Acheson]]'''
+** ''[[12 Monkeys]]''&nbsp;– [[Julie Weiss]]
+** ''[[Braveheart]]''&nbsp;– [[Charles Knode]]
+** ''[[Richard III (1995 film)|Richard III]]''&nbsp;– [[Shuna Harwood]]
+** ''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]''&nbsp;– [[Jenny Beavan]] and [[John Bright (costume designer)|John Bright]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Apollo 13 (film)|Apollo 13]]''&nbsp;– [[Mike Hill (film editor)|Mike Hill]] and [[Daniel P. Hanley]]'''
+** ''[[Babe (film)|Babe]]''&nbsp;– [[Marcus D'Arcy]] and [[Jay Friedkin]]
+** ''[[Braveheart]]''&nbsp;– [[Steven Rosenblum]]
+** ''[[Crimson Tide (film)|Crimson Tide]]''&nbsp;– [[Chris Lebenzon]]
+** ''[[Seven (1995 film)|Seven]]''&nbsp;– [[Richard Francis-Bruce]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Babe (film)|Babe]]''&nbsp;– [[Scott E. Anderson]], [[Charles Gibson (special effects artist)|Charles Gibson]], [[Neal Scanlan]] and [[John Cox (special effects artist)|John Cox]]'''
+** ''[[Apollo 13 (film)|Apollo 13]]''&nbsp;– [[Robert Legato]], [[Michael Kanfer]], [[Leslie Ekker]] and [[Matt Sweeney (special effects artist)|Matt Sweeney]]
+|}
+
+===Special Achievement Award===
+* To [[John Lasseter]], for his inspired leadership of the Pixar ''[[Toy Story]]'' team, resulting in the first feature-length computer-animated film.<ref>{{cite news|title=Here's Complete List Of Oscar Nominees |url=https://www.chicagotribune.com/1996/02/14/heres-complete-list-of-oscar-nominees/ |access-date=October 1, 2013 |work=Chicago Tribune |publisher=Tribune Publishing |date=February 14, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004213825/http://articles.chicagotribune.com/1996-02-14/news/9602140120_1_sensibility-braveheart-postino |archive-date=October 4, 2013 }}</ref>
+
+===Honorary Awards===
+* To [[Kirk Douglas]], for fifty years as a creative and moral force in the motion picture community.<ref>{{cite news|last=Champlin |first=Charles |title=Countdown to the Oscars : Always a Champion : Despite recent setbacks, Kirk Douglas plans to be there to receive an honorary Oscar for being 'a creative and moral force' in film. |url=https://www.latimes.com/archives/la-xpm-1996-03-22-ca-49981-story.html |access-date=October 1, 2013 |work=Los Angeles Times |date=March 22, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004215944/http://articles.latimes.com/1996-03-22/entertainment/ca-49981_1_kirk-douglas |archive-date=October 4, 2013 }}</ref>
+* To [[Chuck Jones]], for the creation of classic cartoons which have brought worldwide joy for more than half a century.<ref>{{cite news|last=Herman |first=Jan |title=Hollywood Is Playing Chuck Jones' Toon |url=https://www.latimes.com/archives/la-xpm-1996-03-23-mn-50435-story.html |access-date=October 1, 2013 |work=Los Angeles Times |date=March 23, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004222456/http://articles.latimes.com/1996-03-23/news/mn-50435_1_chuck-jones |archive-date=October 4, 2013 }}</ref>
+
+===Multiple nominations and awards===
+{{Col-begin|width=auto}}
+{{Col-1-of-2}}
+
+The following 19 films received multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| style="text-align: center;" | 10
+| ''[[Braveheart]]''
+|-
+| style="text-align: center;" | 9
+| ''[[Apollo 13 (film)|Apollo 13]]''
+|-
+| rowspan=2 style="text-align:center" | 7
+| ''[[Babe (film)|Babe]]''
+|-
+| ''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]''
+|-
+| style="text-align: center;" | 5
+| ''[[Il Postino: The Postman]]''
+|-
+|rowspan=3 style="text-align:center" | 4
+| ''[[Dead Man Walking (film)|Dead Man Walking]]''
+|-
+| ''[[Leaving Las Vegas]]''
+|-
+| ''[[Nixon (film)|Nixon]]''
+|-
+|rowspan=3 style="text-align:center" | 3
+| ''[[Batman Forever]]''
+|-
+| ''[[Crimson Tide (film)|Crimson Tide]]''
+|-
+| ''[[Toy Story]]''{{efn|Not counting the non-competitive Special Achievement Award for ''Toy Story''.}}
+|-
+|rowspan=8 style="text-align:center" | 2
+| ''[[12 Monkeys]]''
+|-
+| ''[[A Little Princess (1995 film)|A Little Princess]]''
+|-
+| ''[[Mighty Aphrodite]]''
+|-
+| ''[[Pocahontas (1995 film)|Pocahontas]]''
+|-
+| ''[[Restoration (1995 film)|Restoration]]''
+|-
+| ''[[Richard III (1995 film)|Richard III]]''
+|-
+| ''[[Sabrina (1995 film)|Sabrina]]''
+|-
+| ''[[The Usual Suspects]]''
+|}
+
+{{Col-break|width=50%|gap=24px}}
+
+The following five films received multiple awards:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+| style="text-align: center;" | 5
+| ''[[Braveheart]]''
+|-
+|rowspan=4 style="text-align:center" | 2
+| ''[[Apollo 13 (film)|Apollo 13]]''
+|-
+| ''[[Pocahontas (1995 film)|Pocahontas]]''
+|-
+| ''[[Restoration (1995 film)|Restoration]]''
+|-
+| ''[[The Usual Suspects]]''
+|}
+{{Col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref name="MFEO">{{harvnb|Bona|2002|p=39}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+!Name(s)
+!Role
+|-
+|{{sortname|Les|Marshak|nolink=1}} || Announcer for the 68th annual Academy Awards
+|-
+| {{sortname|Pierce|Brosnan}}<br />[[Naomi Campbell]]<br />[[Claudia Schiffer]] || Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Dianne|Wiest}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|John|Travolta}} || Presenter of the film ''[[Apollo 13 (film)|Apollo 13]]'' on the Best Picture segment
+|-
+| {{sortname|Alicia|Silverstone}} || Presenter of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Emma|Thompson}} || Presenter of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Chris|O'Donnell}} || Introducer of the performance of Best Original Song nominee "Moonlight"
+|-
+| {{sortname|Robin|Williams}} || Presenter of the [[Academy Honorary Award|Honorary Award]] to [[Chuck Jones]] and the [[Special Achievement Academy Award|Special Achievement Award]] to [[John Lasseter]] who comes onto the stage with a Sheriff Woody doll and a Buzz Lightyear action figure. As they come to life, Tom Hanks and Tim Allen reprise their respective voice roles.
+|-
+| {{sortname|Kareem|Abdul-Jabbar}}<br />[[Jackie Chan]] || Presenters of the awards for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]] and [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Sandra|Bullock}} || Presenter of the award [[Academy Award for Best Sound Editing|Best Sound Effects Editing]]
+|-
+| {{sortname|Steven|Seagal}} || Presenter of the award [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|Jeremy|Irons}} || Presenter of the film ''[[Braveheart]]'' on the Best Picture segment
+|-
+| {{sortname|Martin|Landau}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Jim|Carrey}} || Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Goldie|Hawn}}<br />[[Kurt Russell]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Richard|Dreyfuss}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Winona|Ryder}} || Introducer of the performance of Best Original Song nominee "Dead Man Walking"
+|-
+| {{sortname|Will|Smith}} || Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Anjelica|Huston}} || Presenter of the film ''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]'' on the Best Picture segment
+|-
+| {{sortname|Nicolas|Cage}}<br />[[Elisabeth Shue]] || Presenters of the awards for [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Nathan|Lane}} || Introducer of the performance of Best Original Song nominee "[[Colors of the Wind]]"
+|-
+| {{sortname|Mel|Gibson}} || Presenter of the award [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Steven|Spielberg}} || Presenter of the [[Honorary Academy Award|Honorary Award]] to [[Kirk Douglas]]
+|-
+| {{sortname|Quincy|Jones}}<br />[[Sharon Stone]] || Presenters of the awards for [[Academy Award for Best Original Score|Best Original Musical or Comedy Score]] and [[Academy Award for Best Original Score|Best Original Dramatic Score]]
+|-
+| {{sortname|Liam|Neeson}} || Presenter of the film ''[[Il Postino: The Postman]]'' on the Best Picture segment
+|-
+| {{sortname|Arthur|Hiller}} (AMPAS President) || Presenter of the "[[List of Latin phrases: I#in memoriam|In Memoriam]]" tribute
+|-
+| {{sortname|Jimmy|Smits}} || Introducer of the performance of Best Original Song nominee "[[Have You Ever Really Loved a Woman?]]"
+|-
+| {{sortname|Susan|Sarandon}} || Presenter of the award for [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen]]
+|-
+| {{sortname|Anthony|Hopkins}} || Presenter of the award for [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material Previously Produced or Published]]
+|-
+| {{sortname|Christopher|Reeve}} || Presenter of the montage on films that address social issues
+|-
+| {{sortname|Angela|Bassett}}<br />[[Laurence Fishburne]] || Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Nicole|Kidman}} || Presenter of the film ''[[Babe (film)|Babe]]'' on the Best Picture segment
+|-
+| {{sortname|Robert|Zemeckis}} || Presenter of the award [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Tom|Hanks}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Jessica|Lange}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Sidney|Poitier}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+| {{sortname|Tom|Scott|Tom Scott (saxophonist)|Tom Scott}} || Musical arranger || Orchestral
+|-
+| {{sortname|Gloria|Estefan}} || Performer || "Moonlight" from ''[[Sabrina (1995 film)|Sabrina]]''
+|-
+| {{sortname|Lyle|Lovett}}<br />[[Randy Newman]] || Performers || "[[You've Got a Friend in Me]]" from ''[[Toy Story]]''
+|-
+| {{sortname||Stomp|Stomp (theatrical show)|Stomp}} || Performers || Best Sound Effects Editing montage
+|-
+| {{sortname|Bruce|Springsteen}} || Performer || "[[Dead Man Walking (soundtrack)|Dead Man Walkin']]" from ''[[Dead Man Walking (film)|Dead Man Walking]]''
+|-
+| {{sortname|Savion|Glover}} || Performer || "[[Singin' in the Rain (song)|Singin' in the Rain]]" tap-dance tribute to [[Gene Kelly]]
+|-
+| {{sortname|Vanessa|Williams|Vanessa L. Williams}} || Performer || "[[Colors of the Wind]]" from ''[[Pocahontas (1995 film)|Pocahontas]]''
+|-
+| {{sortname|Bryan|Adams}} || Performer || "[[Have You Ever Really Loved a Woman?]]" from ''[[Don Juan DeMarco]]''
+|-
+| {{sortname||Take 6}} || Performers || Best Original Song medley
+|}
+
+==Ceremony information==
+[[File:Whoopi Goldberg at a NYC No on Proposition 8 Rally.jpg|thumbnail|right|[[Whoopi Goldberg]] hosted the 68th Academy Awards.|alt=Photo of Whoopi Goldberg.]]
+
+As a result of the negative reception of [[David Letterman]]'s stint as host from the [[67th Academy Awards|preceding year's ceremony]], veteran film and television director [[Gil Cates]] declined to helm the upcoming festivities.<ref>{{harvnb|Pond|2005|p=100}}</ref> In November 1995, AMPAS recruited music producer and [[Jean Hersholt Humanitarian Award]] recipient [[Quincy Jones]] as producer of the 1996 ceremony.<ref name="Whoopi">{{cite news|last=Puig |first=Claudia |title=An Oscar Duet for Quincy and Whoopi : Television: The noted composer and arranger will produce the 68th annual Academy Awards show, and the actress-comedian will host for a second time. |url=https://www.latimes.com/archives/la-xpm-1995-11-01-ca-63723-story.html |access-date=October 1, 2013 |work=[[Los Angeles Times]] |date=November 1, 1995 |url-status=live |archive-url=https://web.archive.org/web/20131004213608/http://articles.latimes.com/1995-11-01/entertainment/ca-63723_1_68th-annual-academy-awards |archive-date=October 4, 2013 }}</ref> Jones immediately selected actress and comedian [[Whoopi Goldberg]] to host the ceremony.<ref name="Whoopi"/> In an interview with ''[[Los Angeles Times]]'' writer Susan King, Jones explained the decision to hire Goldberg saying, "She has all the qualifications to move on a dime, to carry the elegance and the dignity of the show and is very funny. She understands the street. She has everything."<ref>{{cite news|last=King |first=Susan |title=Quincy Jones: 'Pushing the Envelope' |url=https://www.latimes.com/archives/la-xpm-1996-03-24-tv-50515-story.html |access-date=October 2, 2013 |work=Los Angeles Times |date=March 24, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131022224343/http://articles.latimes.com/1996-03-24/news/tv-50515_1_quincy-jones |archive-date=October 22, 2013 }}</ref>
+
+One segment that was staged during the ceremony was an elaborate fashion show showcasing the nominees for [[Academy Award for Best Costume Design|Best Costume Design]].<ref name="Fashion show">{{harvnb|Pond|2005|p=114}}</ref> Produced by fashion photographer [[Matthew Rolston]], the production featured models such as [[Cameron Alborzian]], [[Tyson Beckford]], [[Tyra Banks]], [[Marcus Schenkenberg]] and [[Joel West]] sporting various costumes from the five films nominated in the category.<ref>{{harvnb|Pond|2005|p=122}}</ref> Initially, actor [[Jack Nicholson]] was approached to introduce the segment along with models [[Naomi Campbell]] and [[Claudia Schiffer]]. However, actor [[Pierce Brosnan]] accepted the role of presenter of the segment and award after Nicholson declined those respective duties.<ref name="Fashion show" />
+
+Several other people and elements were also involved with the production of the ceremony. Jeff Margolis served as director for the program.<ref>{{harvnb|Pond|2005|p=106}}</ref> Actress and talk show host [[Oprah Winfrey]] interviewed several nominees and other attendees during a seven-minute red carpet arrival segment shown at the beginning of the telecast.<ref>{{harvnb|Pond|2005|p=121}}</ref> Musician and saxophonist [[Tom Scott (saxophonist)|Tom Scott]] served as musical director for the ceremony.<ref name="Babe-Scott">{{harvnb|Pond|2005|p=118}}</ref> Choreographer [[Jamie King]] supervised the performances of the Best Song nominees and two dance numbers.<ref>{{cite news|last=Kleid |first=Beth |title=Movies |url=https://www.latimes.com/archives/la-xpm-1996-02-19-ca-37594-story.html |access-date=October 1, 2013 |work=Los Angeles Times |date=February 19, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004215354/http://articles.latimes.com/1996-02-19/entertainment/ca-37594_1_director-elia-kazan |archive-date=October 4, 2013 }}</ref> Babe, the pig from the [[Babe (film)|eponymous film]], and [[Miss Piggy]] participated in a comedy sketch during the proceedings.<ref name="Babe-Scott"/> Actor [[Christopher Reeve]], who was paralyzed in a horse riding accident nearly a year earlier, made a surprise appearance on the telecast urging filmmakers to make movies that face the world's most important issues head-on.<ref>{{harvnb|Pond|2005|p=127}}</ref>
+
+===Rainbow Coalition protest===
+Several days before the ceremony, activist group [[Rainbow/PUSH|Rainbow Coalition]], led by Reverend [[Jesse Jackson]], planned a protest regarding [[African Americans]] and other [[racial minorities]] in the film industry.<ref name="Protest">{{cite news|last=Braxton |first=Greg |title=Jackson Plans Oscar Protest |url=https://www.latimes.com/archives/la-xpm-1996-03-17-me-48073-story.html |access-date=October 2, 2013 |work=Los Angeles Times |date=March 17, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004220113/http://articles.latimes.com/1996-03-17/local/me-48073_1_jesse-jackson |archive-date=October 4, 2013 }}</ref> The group was voicing its objections to unflattering portrayals of minorities in film and television and the fact that minorities were underemployed in the entertainment industry.<ref name="Protest"/> Jackson further pointed out the disparity in racial minorities in Hollywood by noting that Best Live Action Short Film nominee [[Dianne Houston]] was the only African American nominated that year.<ref>{{cite news|last1=Trescott |first1=Jacqueline |title=You Are Dealing with a Three-Headed Beast |url=https://www.washingtonpost.com/archive/lifestyle/style/1996/03/24/you-are-dealing-with-a-three-headed-beast/0f82687a-2cd9-452d-a010-7bce05cc7876/ |access-date=October 2, 2013 |newspaper=The Washington Post |date=March 24, 1996 |url-status=live |archive-url=https://web.archive.org/web/20161106122929/https://www.washingtonpost.com/archive/lifestyle/style/1996/03/24/you-are-dealing-with-a-three-headed-beast/0f82687a-2cd9-452d-a010-7bce05cc7876/ |archive-date=November 6, 2016 }}</ref> Although the group initially planned to demonstrate outside the [[Dorothy Chandler Pavilion]], an agreement between Jackson and producer Jones caused the protest to be moved adjacent to the broadcast facilities of the local [[American Broadcasting Company|ABC]] affiliate [[KABC-TV]].<ref>{{harvnb|Bona|2002|p=38}}</ref> Nevertheless, Jones remarked that the Academy Awards were not the appropriate venue for such protest declaring "Why should the movie business be different from anything else in America? It's a problem that permeates everything in the country. Every facet of America discriminates."<ref>{{cite news|last=Kleid |first=Beth |title=Oscar Watch |url=https://www.latimes.com/archives/la-xpm-1996-03-25-ca-50951-story.html |access-date=October 2, 2013 |work=Los Angeles Times |date=March 25, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131005004150/http://articles.latimes.com/1996-03-25/entertainment/ca-50951_1_oscar-show |archive-date=October 5, 2013 }}</ref>
+
+===Division of Best Original Score category===
+Beginning with this ceremony, the AMPAS music branch divided the category of [[Academy Award for Best Original Score|Best Original Score]] into two categories: Best Dramatic Score and Best Musical or Comedy Score.<ref>{{harvnb|Levy|2003|p=55}}</ref> This was seen as a response to the dominance of [[Walt Disney Feature Animation]] films in the Original Score and Original Song categories in recent years.<ref>{{harvnb|Pond|2005|p=99}}</ref> Four years later, the two scoring categories were merged back into one category.<ref>{{cite news|last=Burlingame |first=Jon |title=Sweet sounds of success |url=https://variety.com/1999/more/news/sweet-sounds-of-success-1117490434/ |access-date=October 2, 2013 |work=Variety |publisher=Penske Media Corporation |date=January 20, 1999 |url-status=live |archive-url=https://web.archive.org/web/20130511204133/http://variety.com/1999/more/news/sweet-sounds-of-success-1117490434/ |archive-date=May 11, 2013 }}</ref>
+
+===Christopher Reeve appearance===
+At the ceremony, [[Christopher Reeve]] presented a montage of films which tackled social issues. His appearance was a surprise to the majority of those present and occurred less than a year after the horse-riding accident in which he was paralyzed. Reeve's appearance was kept secret in part so that if any physical issue came about, he could drop out quietly. He attended an early morning closed-door rehearsal, during which he vetoed the idea of using [[John Williams (composer)|John William]]s' 1978 [[Music of Superman|Superman Theme]] as entrance music. Reeve, along with Jones, had chosen the film clips used in the montage.<ref>{{cite web |last1=Brew |first1=Simon |title=When Christopher Reeve Surprised The World at The Oscars |url=https://www.denofgeek.com/movies/when-christopher-reeve-surprised-the-world-at-the-oscars/ |website=Den of Geek |date=February 22, 2019 |access-date=20 June 2022 |archive-date=June 20, 2022 |archive-url=https://web.archive.org/web/20220620181057/https://www.denofgeek.com/movies/when-christopher-reeve-surprised-the-world-at-the-oscars/ |url-status=live }}</ref> Reeve received a two-minute standing ovation during his appearance.<ref>{{cite web |title=Christopher Reeve at the Oscars |website=[[YouTube]] |date=July 2009 |url=https://www.youtube.com/watch?v=ffSy3-PJ5QI |access-date=June 20, 2022 |archive-date=March 18, 2016 |archive-url=https://web.archive.org/web/20160318231333/https://www.youtube.com/watch?v=ffSy3-PJ5QI |url-status=live }}</ref>
+
+===Box office performance of nominees===
+At the time of the nominations announcement on February 13, the combined gross of the five Best Picture nominees at the US box office was $333&nbsp;million, with an average of $66.5&nbsp;million per film.<ref name=BoxOfficeOscars>{{cite news|title=1995 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=1995&p=.htm |access-date=October 1, 2013 |work=[[Box Office Mojo]] |url-status=live |archive-url=https://web.archive.org/web/20131004215913/http://boxofficemojo.com/oscar/chart/?yr=1995&p=.htm |archive-date=October 4, 2013 }}</ref> ''Apollo 13'' was the highest earner among the Best Picture nominees with $172&nbsp;million in domestic box office receipts.<ref name=BoxOfficeOscars/> The film was followed by ''Braveheart'' ($67&nbsp;million), ''Babe'' ($58.2&nbsp;million), ''Sense and Sensibility'' ($24.6&nbsp;million) and finally ''Il Postino: The Postman'' ($10.7&nbsp;million).<ref name=BoxOfficeOscars/>
+
+Of the top 50 grossing movies of the year, 47 nominations went to 14 films on the list. Only ''Toy Story'' (2nd), ''Apollo 13'' (3rd), ''Braveheart'' (23rd), ''Babe'' (29th), ''12 Monkeys'' (31st), ''Casino'' (38th) and ''Mr. Holland's Opus'' (39th) were nominated for directing, acting, screenwriting, or Best Picture.<ref name="boxofficemojooscars">{{cite web|url=https://boxofficemojo.com/yearly/chart/?asof=1996-02-13&view=releasedate&view2=domestic&yr=1995&sort=gross&order=DESC&p=.htm |title=1995 Domestic Grosses |work=Box Office Mojo |access-date=February 26, 2014 |url-status=live |archive-url=https://web.archive.org/web/20151226075842/http://www.boxofficemojo.com/yearly/chart/?asof=1996-02-13&view=releasedate&view2=domestic&yr=1995&sort=gross&order=DESC&p=.htm |archive-date=December 26, 2015 }}</ref> The other box office hits that earned nominations were ''Batman Forever'' (1st), ''Pocahontas'' (4th), ''Seven'' (9th), ''Crimson Tide'' (10th), ''Waterworld'' (12th), ''The Bridges of Madison County'' (21st), ''The American President'' (27th) and ''Sabrina'' (34th).<ref name="boxofficemojooscars"/>
+
+===Critical reviews===
+The show received a positive reception from most media publications. ''[[The New York Times]]'' film critic [[Janet Maslin]] raved, "Mr. Jones pointedly turned this year's ceremony into a showcase for Hollywood's new guard." She also praised host Goldberg's opening monologue, remarking that it "established the sharpness of this year's gag writing."<ref>{{cite news|last=Maslin |first=Janet |title=Television Review: Energy, Gallantry, Graphics And Glamour at the Oscars |url=https://www.nytimes.com/1996/03/27/movies/television-review-energy-gallantry-graphics-and-glamour-at-the-oscars.html |access-date=October 1, 2013 |work=The New York Times |date=March 27, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004214717/http://www.nytimes.com/1996/03/27/movies/television-review-energy-gallantry-graphics-and-glamour-at-the-oscars.html |archive-date=October 4, 2013 }}</ref> ''[[People (magazine)|People]]'' columnist Janice Min wrote that "the most egregious crime at the 68th Academy Awards on March 25 was–egad!–the relentless elegance and good taste that deprived viewers of genuine, Grade A snicker fodder.<ref>{{cite news|last=Min |first=Janice |title=An Affair To Remember |url=http://www.people.com/people/archive/article/0,,20103212,00.html |access-date=October 1, 2013 |work=[[People (magazine)|People]] |publisher=[[Time Warner]] |date=April 8, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004215611/http://www.people.com/people/archive/article/0%2C%2C20103212%2C00.html |archive-date=October 4, 2013 }}</ref> Television critic [[Howard Rosenberg]] of the ''[[Los Angeles Times]]'' applauded Goldberg's performance, noting that her "confident performance [...] was symbolic of her whopping improvement as host over her showing on the [[66th Academy Awards|1994 Oscars]]."<ref>{{cite news|last=Rosenberg |first=Howard |title=Real Drama? It Didn't Come From Ribbons |url=https://www.latimes.com/archives/la-xpm-1996-03-26-ca-57051-story.html |access-date=October 1, 2013 |work=Los Angeles Times |date=March 26, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131005010050/http://articles.latimes.com/1996-03-26/entertainment/ca-57051_1_ribbons |archive-date=October 5, 2013 }}</ref>
+
+Some media outlets were more critical of the show. ''[[Chicago Tribune]]'' television critic Steve Johnson lamented that Goldberg "settled into bland script reading that made one long for David Letterman's cranky unpredictability in the role last year." He also stated that the "Best Costume Design fashion show" was the silliest opening Oscar production number since [[Rob Lowe]] and [[Snow White (Disney character)|Snow White]] [[61st Academy Awards#Opening number|sang "Proud Mary" in 1989]].<ref>{{cite news|last=Johnson |first=Steve |title=Whoopi Rises Above The Bland, But Not For Long |url=https://www.chicagotribune.com/1996/03/26/whoopi-rises-above-the-bland-but-not-for-long/ |access-date=October 2, 2013 |work=Chicago Tribune |publisher=Tribune Publishing |date=March 26, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004215600/http://articles.chicagotribune.com/1996-03-26/news/9603260063_1_quincy-jones-moments-christopher-reeve |archive-date=October 4, 2013 }}</ref> [[Ken Tucker]] of ''[[Entertainment Weekly]]'' bemoaned that the dominance of Best Picture winner ''Braveheart'' and the lack of fashion glamour "had the makings of a tiresome evening."<ref>{{cite magazine|url=https://ew.com/article/1996/04/05/oscars-1996-show/ |title=Oscars 1996: The Show |date=April 5, 1996 |first=Ken |last=Tucker |magazine=[[Entertainment Weekly]] |publisher=Time Warner |access-date=October 2, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131004214313/http://www.ew.com/ew/article/0%2C%2C292003%2C00.html |archive-date=October 4, 2013 }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 44.81 million people over its length, which was a 9% decrease from the [[67th Academy Awards|previous year's ceremony]].<ref name="TV By the Numbers">{{cite web |first=Bill |last=Gorman |title=Academy Awards Averages 41.3 Million Viewers; Most Since 2005 |url=http://tvbythenumbers.com/2010/03/08/academy-awards-averages-41-3-million-viewers-most-since-2005/44217 |work=[[TV by the Numbers]] |publisher=[[Tribune Media]] |date=March 8, 2010 |access-date=March 12, 2010 |archive-url=https://web.archive.org/web/20100310080531/http://tvbythenumbers.com/2010/03/08/academy-awards-averages-41-3-million-viewers-most-since-2005/44217 |archive-date=March 10, 2010 |url-status=dead }}</ref><ref>{{cite news|last=Johnson |first=Greg |title=Call It the Glamour Bowl |url=https://articles.latimes.com/1999/mar/18/business/fi-18458/2 |access-date=August 26, 2013 |work=Los Angeles Times |date=March 18, 1999 |url-status=dead |archive-url=https://web.archive.org/web/20130928053918/http://articles.latimes.com/1999/mar/18/business/fi-18458/2 |archive-date=September 28, 2013 }}</ref> The show also garnered lower [[Nielsen ratings]] compared to the previous ceremony, with 30.48% of households watching over a 48.88 share.<ref name="TVB Oscars">{{cite news|title=Academy Awards ratings |work=Television Bureau of Advertising |url=http://www.tvb.org/media/file/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130515152338/http://www.tvb.org/media/file/Academy_Awards.pdf |archive-date=May 15, 2013 }}</ref> It also earned a lower 18–49 demographic rating with an 18.76 rating over a 35.27 share among viewers in that demographic.<ref name="TVB Oscars" />
+
+In July 1996, the ceremony presentation received seven nominations at the [[48th Primetime Emmy Awards|48th Primetime Emmys]].<ref>{{cite news|title=Primetime Emmy Award database |url=http://www.emmys.com/shows/68th-annual-academy-awards |access-date=October 1, 2013 |publisher=[[Academy of Television Arts and Sciences]] |url-status=live |archive-url=https://web.archive.org/web/20131004221456/http://www.emmys.com/shows/68th-annual-academy-awards |archive-date=October 4, 2013 }}</ref> Two months later, the ceremony won one of those nominations for Greg Brunton's lighting design and direction during the telecast.<ref>{{cite news|title=Who Won What: The Winners of Television's Nighttime Emmy Awards |url=https://www.latimes.com/archives/la-xpm-1996-09-09-ca-42203-story.html |access-date=October 1, 2013 |work=Los Angeles Times |date=September 9, 1996 |url-status=live |archive-url=https://web.archive.org/web/20131004214104/http://articles.latimes.com/1996-09-09/entertainment/ca-42203_1_nighttime-emmy-awards/2 |archive-date=October 4, 2013 }}</ref>
+
+=="In Memoriam"==
+The annual "In Memoriam" tribute was presented by Academy President [[Arthur Hiller]]. The montage featured an excerpt of the main title of ''[[The Prince of Tides]]'' composed by [[James Newton Howard]].<ref>{{harvnb|Bona|2002|p=51}}</ref>
+
+{{div col|colwidth=28em}}
+*[[Miklós Rózsa]] – Composer
+*[[Ginger Rogers]]
+*[[The Andrews Sisters|Maxine Andrews]]
+*[[Michael V. Gazzo]]
+*[[Dean Martin]]
+*[[Viveca Lindfors]]
+*[[Martin Balsam]]
+*[[Friz Freleng]] – Animator
+*[[Burl Ives]]
+*[[Butterfly McQueen]]
+*[[Dorothy Jeakins]] – Costume Designer
+*[[Nancy Kelly]]
+*[[Lana Turner]]
+*[[Elisha Cook Jr.]]
+*[[Ida Lupino]]
+*[[Harry Horner]] – Art Director
+*[[Terry Southern]] – Writer
+*[[Haing S. Ngor]]
+*[[Michael Hordern]]
+*[[Don Simpson]] – Producer
+*[[Ross Hunter]] – Producer
+*[[Frank Perry]] – Director
+*[[Alexander Godunov]] 
+*[[Louis Malle]] – Director
+*[[Howard E. Koch|Howard Koch]] – Writer
+*[[George Burns]]
+{{div col end}}
+
+A separate tribute to actor, dancer and veteran Oscar host [[Gene Kelly]] featured tap dancer [[Savion Glover]] dancing to the song "[[Singin' in the Rain (song)|Singin' in the Rain]]" from the 1952 [[Singin' in the Rain|film of the same name]].<ref>{{cite news|last=Marks |first=Peter |title=On Stage, and Off |url=https://www.nytimes.com/1996/03/22/theater/on-stage-and-off.html |access-date=October 1, 2013 |work=The New York Times |date=March 22, 1996 |url-status=live |archive-url=https://web.archive.org/web/20150526170608/http://www.nytimes.com/1996/03/22/theater/on-stage-and-off.html |archive-date=May 26, 2015 }}</ref>
+
+==See also==
+
+* [[2nd Screen Actors Guild Awards]]
+* [[16th Golden Raspberry Awards]]
+* [[38th Grammy Awards]]
+* [[48th Primetime Emmy Awards]]
+* [[49th British Academy Film Awards]]
+* [[50th Tony Awards]]
+* [[53rd Golden Globe Awards]]
+* [[List of submissions to the 68th Academy Awards for Best Foreign Language Film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist|30em}}
+
+==Bibliography==
+{{refbegin}}
+*{{Cite book
+ |last=Bona
+ |first=Damien
+ |title=Inside Oscar 2
+ |year=2002
+ |isbn=0-345-44970-3
+ |location=New York, United States
+ |publisher=[[Ballantine Books]]
+ |url=https://archive.org/details/insideoscar200bona
+ }}
+*{{Cite book
+ |last=Levy
+ |first=Emanuel
+ |title=All About Oscar: The History and Politics of the Academy Awards
+ |year=2003
+ |isbn=0-8264-1452-4
+ |location=New York, United States
+ |publisher=[[Continuum International Publishing Group]]
+}}
+*{{Cite book
+ |last=Pond
+ |first=Steve
+ |title=The Big Show: High Times and Dirty Dealings Backstage at the Academy Awards
+ |year=2005
+ |isbn=0-571-21193-3
+ |location=New York, United States
+ |publisher=[[Faber and Faber]]
+ |url=https://archive.org/details/bigshowhightimes00pond
+ }}
+{{refend}}
+
+==External links==
+;Official websites
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=October 2, 2018 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+* [https://web.archive.org/web/20131014174824/http://www.oscars.org/video/index.html The Academy of Motion Picture Arts and Sciences Video Highlights]
+
+;Analysis
+* [http://www.filmsite.org/aa95.html 1995 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20140331224255/http://www.filmsite.org/aa95.html |date=March 31, 2014 }} [[Filmsite]]
+* [https://www.imdb.com/event/ev0000003/1996 Academy Awards, USA: 1996] {{Webarchive|url=https://web.archive.org/web/20171205010645/http://www.imdb.com/event/ev0000003/1996 |date=December 5, 2017 }} Internet Movie Database
+
+;News resources
+* [http://www.cnn.com/EVENTS/1996/oscar/ Academy Awards coverage] {{Webarchive|url=https://web.archive.org/web/20131004222316/http://www.cnn.com/EVENTS/1996/oscar/ |date=October 4, 2013 }} [[CNN]]
+
+;Other resources
+* {{IMDb title|0283830|The 68th Annual Academy Awards}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 68}}
+[[Category:1995 film awards]]
+[[Category:Academy Awards ceremonies]]
+[[Category:1996 in Los Angeles]]
+[[Category:1996 in American cinema]]
+[[Category:March 1996 in the United States]]
+[[Category:1996 awards in the United States|Academy]]
+[[Category:Television shows directed by Jeff Margolis]]

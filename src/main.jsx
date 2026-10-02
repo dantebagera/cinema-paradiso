@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import AppErrorBoundary from './components/AppErrorBoundary.jsx';
+import { MovieAwardsProvider } from './components/MovieAwardsContext.jsx';
 import './styles/playerTheme.css';
 import './styles.css';
 import './styles/metadataAuthority.css';
@@ -11,11 +12,12 @@ import './styles/posterEditor.css';
 import './styles/smartMatch.css';
 import './components/movie-card/movieCard.css';
 import './styles/movieRelationships.css';
+import './styles/movieAwards.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AppErrorBoundary>
-      <App />
+      <MovieAwardsProvider><App /></MovieAwardsProvider>
     </AppErrorBoundary>
   </StrictMode>
 );

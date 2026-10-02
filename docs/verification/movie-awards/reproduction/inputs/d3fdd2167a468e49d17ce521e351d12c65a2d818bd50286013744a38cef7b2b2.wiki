@@ -1,0 +1,463 @@
+{{oscars short description|films-year=1952}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 25
+| award            = Academy Awards
+| date             = March 19, 1953
+| site             = [[Pantages Theatre (Hollywood)|RKO Pantages Theatre]]<br>[[Hollywood, California]] <br>[[Majestic Theatre (Columbus Circle)|NBC International Theatre]]<br>[[New York City]], [[New York (state)|New York]]
+| host             = [[Bob Hope]] (Hollywood)<br>[[Conrad Nagel]] ([[Master of Ceremonies|emcee]])<br> [[Fredric March]] (New York City)<ref name="ap">{{cite news |first=James |last=Bacon |title=TV Will Carry Film Awards Show Tonight |work=[[The Fresno Bee]] |agency=Associated Press |date=1953-03-19 }}</ref>
+| best_picture     = ''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]]''
+| most_wins        = ''[[The Bad and the Beautiful]]'' (5)
+| most_nominations = ''[[High Noon]]'', ''[[Moulin Rouge (1952 film)|Moulin Rouge]]'', and ''[[The Quiet Man]]'' (7)
+| network          = [[NBC]]
+| duration         = 
+| last             = 24th
+| next             = 26th
+}}
+
+The '''25th Academy Awards''' were held on March 19, 1953, at the RKO Pantages Theatre in [[Hollywood, Los Angeles|Hollywood]], and the [[Majestic Theatre (Columbus Circle)|NBC International Theatre]] in [[New York City]], to honor the films of [[1952 in film|1952]]. It was the first Oscars ceremony to be televised,<ref name="ap"/> the first ceremony to be held in Hollywood and New York simultaneously, and the only year in which the New York ceremonies were held in the [[Majestic Theatre (Columbus Circle)|NBC International Theatre]] on [[Columbus Circle]], which was shortly thereafter demolished and replaced by the [[New York Coliseum]].<ref>[http://cinematreasures.org/theater/2936/ International Theatre] {{webarchive|url=https://web.archive.org/web/20090817185636/http://cinematreasures.org/theater/2936/ |date=2009-08-17 }}, from cinematreasures.org</ref><ref>The convention center was subsequently demolished when the [[Time Warner Center]] was built.</ref>
+
+This ceremony was the first to be broadcast on television; the Academy, long resistant of television, paid NBC $100,000 to televise the event.<ref name="Oscars '52 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/838/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=839 |isbn=0-385-04060-1}}</ref><ref name="nyt"/>
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Demille - c1920.JPG
+| caption1          = [[Cecil B. DeMille]]; Best Picture winner
+| image2            = John Ford 1946.jpg
+| caption2          = [[John Ford]]; Best Director winner
+| image3            = Gary Cooper (1952).jpg
+| caption3          = [[Gary Cooper]]; Best Actor winner
+| image4            = Shirley Booth 1950.JPG
+| caption4          = [[Shirley Booth]]; Best Actress winner
+| image5            = Anthony Quinn signed.JPG
+| caption5          = [[Anthony Quinn]]; Best Supporting Actor winner
+| image6            = GloriaGrahame.jpg
+| caption6          = [[Gloria Grahame]]; Best Supporting Actress winner
+| image7            = Cedric-Gibbons-1936.jpg
+| caption7          = [[Cedric Gibbons]]; Best Art Direction, Black-and-White co-winner
+| image8            = Elmo Williams 2007.jpg
+| caption8          = [[Elmo Williams]]; Best Film Editing co-winner
+}}
+
+===Awards===
+Nominees were announced on February 9, 1953. Winners are listed first and highlighted in boldface.<ref name="Oscars1953">{{cite web|url=http://www.oscars.org/oscars/ceremonies/1953 |title=The 25th Academy Awards (1953) Nominees and Winners |access-date=2011-08-20 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093830/http://www.oscars.org/awards/academyawards/legacy/ceremony/25th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]] – ''[[Cecil B. DeMille]] for [[Paramount Pictures]]&nbsp;'''
+**''[[High Noon]] – ''[[Stanley Kramer]] for [[United Artists]]&nbsp; 
+**''[[Ivanhoe (1952 film)|Ivanhoe]] – ''[[Pandro S. Berman]] for [[Metro-Goldwyn-Mayer]]&nbsp; 
+**''[[Moulin Rouge (1952 film)|Moulin Rouge]] – ''[[John Huston]] for [[United Artists]]&nbsp; 
+**''[[The Quiet Man]] – ''[[John Ford]] and [[Merian C. Cooper]] for [[Republic Pictures]]&nbsp; 
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[John Ford]]&nbsp;– ''[[The Quiet Man]]'''''
+**[[Joseph L. Mankiewicz]]&nbsp;– ''[[5 Fingers|Five Fingers]]''
+**[[Cecil B. DeMille]]&nbsp;– ''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]]''
+**[[Fred Zinnemann]]&nbsp;– ''[[High Noon]]''
+**[[John Huston]]&nbsp;– ''[[Moulin Rouge (1952 film)|Moulin Rouge]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Gary Cooper]]&nbsp;– ''[[High Noon]]'' as Marshall [[Will Kane]]'''
+**[[Marlon Brando]]&nbsp;– ''[[Viva Zapata!]]'' as [[Emiliano Zapata]]
+**[[Kirk Douglas]]&nbsp;– ''[[The Bad and the Beautiful]]'' as Jonathan Shields
+**[[José Ferrer]]&nbsp;– ''[[Moulin Rouge (1952 film)|Moulin Rouge]]'' as [[Henri de Toulouse-Lautrec]]/[[Count Alphonse de Toulouse-Lautrec Montfa|Comte Alphonse de Toulouse-Lautrec]]
+**[[Alec Guinness]]&nbsp;– ''[[The Lavender Hill Mob]]'' as Henry "Dutch" Holland
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Shirley Booth]]&nbsp;– ''[[Come Back, Little Sheba (1952 film)|Come Back, Little Sheba]]'' as Lola Delaney'''
+**[[Joan Crawford]]&nbsp;– ''[[Sudden Fear]]'' as Myra Hudson
+**[[Bette Davis]]&nbsp;– ''[[The Star (1952 film)|The Star]]'' as Margaret "Maggie" Elliot
+**[[Julie Harris (actress)|Julie Harris]]&nbsp;– ''[[The Member of the Wedding (film)|The Member of the Wedding]]'' as Frankie Addams
+**[[Susan Hayward]]&nbsp;– ''[[With a Song in My Heart (film)|With a Song in My Heart]]'' as [[Jane Froman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Anthony Quinn]]&nbsp;– ''[[Viva Zapata!]]'' as [[Eufemio Zapata]]'''
+**[[Richard Burton]]&nbsp;– ''[[My Cousin Rachel (1952 film)|My Cousin Rachel]]'' as Philip Ashley
+**[[Arthur Hunnicutt]]&nbsp;– ''[[The Big Sky (film)|The Big Sky]]'' as Zeb Calloway
+**[[Victor McLaglen]]&nbsp;– ''[[The Quiet Man]]'' as Squire "Red" Will Danaher
+**[[Jack Palance]]&nbsp;– ''[[Sudden Fear]]'' as Lester Blaine
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Gloria Grahame]]&nbsp;– ''[[The Bad and the Beautiful]]'' as Rosemary Bartlow'''
+**[[Jean Hagen]]&nbsp;– ''[[Singin' in the Rain]]'' as Lina Lamont
+**[[Colette Marchand]]&nbsp;– ''[[Moulin Rouge (1952 film)|Moulin Rouge]]'' as Marie Charlet
+**[[Terry Moore (actress)|Terry Moore]]&nbsp;– ''[[Come Back, Little Sheba (1952 film)|Come Back, Little Sheba]]'' as Marie Buckholder
+**[[Thelma Ritter]]&nbsp;– ''[[With a Song in My Heart (film)|With a Song in My Heart]]'' as Clancy
+|-
+| style="vertical-align:top; width:50%;"| 
+{{Award category|#F9EFAA| [[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+*'''''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]]''&nbsp;– [[Fredric M. Frank]], [[Theodore St. John]] and [[Frank Cavett]]'''
+**''[[My Son John]]''&nbsp;– [[Leo McCarey]]
+**''[[The Narrow Margin]]''&nbsp;– [[Martin Goldsmith (screenwriter)|Martin Goldsmith]] and Jack Leonard
+**''[[The Pride of St. Louis]]''&nbsp;– [[Guy Trosper]]
+**''[[The Sniper (1952 film)|The Sniper]]''&nbsp;– [[Edna Anhalt]] and [[Edward Anhalt]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay)]]}}
+*'''''[[The Lavender Hill Mob]]''&nbsp;– [[T. E. B. Clarke]]'''
+**''[[The Atomic City]]''&nbsp;– [[Sydney Boehm]]
+**''[[The Sound Barrier|Breaking the Sound Barrier]]''&nbsp;– [[Terence Rattigan]]
+**''[[Pat and Mike]]''&nbsp;– [[Ruth Gordon]] and [[Garson Kanin]]
+**''[[Viva Zapata!]]''&nbsp;– [[John Steinbeck]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[The Bad and the Beautiful]]''&nbsp;– [[Charles Schnee]]''' from "Tribute to a Badman" by [[George Bradshaw (writer)|George Bradshaw]]
+**''[[5 Fingers|Five Fingers]]''&nbsp;– [[Michael Wilson (writer)|Michael Wilson]] from ''Operation Cicero'' by [[Ludwig Carl Moyzisch]]
+**''[[High Noon]]''&nbsp;– [[Carl Foreman]] from "[[The Tin Star]]" by [[John W. Cunningham]]
+**''[[The Man in the White Suit]]''&nbsp;– [[Roger MacDougall]], [[John Dighton]] and [[Alexander Mackendrick]] from ''The Man in the White Suit'' by Roger MacDougall
+**''[[The Quiet Man]]''&nbsp;– [[Frank Nugent|Frank S. Nugent]] from "Green Rushes" by [[Maurice Walsh]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[The Sea Around Us (film)|The Sea Around Us]]''&nbsp;– [[Irwin Allen]]'''
+**''[[The Hoaxters]]''&nbsp;– [[Dore Schary]]
+**''[[Navajo (film)|Navajo]]''&nbsp;– [[Hall Bartlett]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Neighbours (1952 film)|Neighbours]]''&nbsp;– [[Norman McLaren]]'''
+**''[[Devil Take Us]]''&nbsp;– Herbert Morgan
+**''[[The Garden Spider]]''&nbsp;– Alberto Ancilotto
+**''[[Man Alive! (1952 film)|Man Alive!]]''&nbsp;– [[Stephen Bosustow]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[Light in the Window]]''&nbsp;– [[Boris Vermont]]'''
+**''Athletes of the Saddle''&nbsp;– [[Jack Eaton]]
+**''Desert Killer''&nbsp;– [[Gordon Hollingshead]]
+**''[[Neighbours (1952 film)|Neighbours]]''&nbsp;– [[Norman McLaren]]
+**''Royal Scotland''&nbsp;– [[Crown Film Unit]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[Water Birds]]''&nbsp;– [[Walt Disney]]'''
+**''[[Bridge of Time]]''&nbsp;– [[London Film Productions]]
+**''[[Devil Take Us]]''&nbsp;– Herbert Morgan
+**''Thar She Blows!''&nbsp;– [[Gordon Hollingshead]]
+| style="vertical-align:top; width:50%;"| 
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Johann Mouse]]''&nbsp;– [[Fred Quimby]]'''
+**''[[Little Johnny Jet]]''&nbsp;– [[Fred Quimby]]
+**''[[Madeline]]''&nbsp;– [[Stephen Bosustow]]
+**''Pink and Blue Blues''&nbsp;– [[Stephen Bosustow]]
+**''[[The Romance of Transportation in Canada]]''&nbsp;– [[Tom Daly (filmmaker)|Tom Daly]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*'''''[[High Noon]]''&nbsp;– [[Dimitri Tiomkin]]'''
+**''[[Ivanhoe (1952 film)|Ivanhoe]]''&nbsp;– [[Miklós Rózsa]]
+**''[[The Miracle of Our Lady of Fatima]]''&nbsp;– [[Max Steiner]]
+**''[[The Thief (1952 film)|The Thief]]''&nbsp;– [[Herschel Burke Gilbert]]
+**''[[Viva Zapata!]]''&nbsp;– [[Alex North]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*'''''[[With a Song in My Heart (film)|With a Song in My Heart]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]'''
+**''[[Hans Christian Andersen (film)|Hans Christian Andersen]]''&nbsp;– [[Walter Scharf]]
+**''[[The Jazz Singer (1952 film)|The Jazz Singer]]''&nbsp;– [[Ray Heindorf]] and [[Max Steiner]]
+**''[[The Medium (1951 film)|The Medium]]''&nbsp;– [[Gian Carlo Menotti]]
+**''[[Singin' in the Rain]]''&nbsp;– [[Lennie Hayton]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[The Ballad of High Noon|The Ballad of High Noon ("Do Not Forsake Me, O My Darlin'")]]" from ''[[High Noon]]''&nbsp;– Music by [[Dimitri Tiomkin]]; Lyrics by [[Ned Washington]]'''
+**"Am I in Love?" from ''[[Son of Paleface]]''&nbsp;– Music and Lyrics by [[Jack Brooks (lyricist)|Jack Brooks]]
+**"[[Because You're Mine (song)|Because You're Mine]]" from ''[[Because You're Mine]]''&nbsp;– Music by [[Nicholas Brodszky]]; Lyrics by [[Sammy Cahn]]
+**"[[Thumbelina (Frank Loesser song)|Thumbelina]]" from ''[[Hans Christian Andersen (film)|Hans Christian Andersen]]''&nbsp;– Music and Lyrics by [[Frank Loesser]]
+**"[[Zing a Little Zong]]" from ''[[Just for You (1952 film)|Just for You]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Leo Robin]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[The Sound Barrier|Breaking the Sound Barrier]]''&nbsp;– [[London Films|London Films Sound Department]]'''
+**''[[The Card (1952 film)|The Card]]''&nbsp;– [[Pinewood Studios|Pinewood Studios Sound Department]]
+**''[[Hans Christian Andersen (film)|Hans Christian Andersen]]''&nbsp;– [[Gordon E. Sawyer]]
+**''[[The Quiet Man]]''&nbsp;– [[Daniel J. Bloomberg]]
+**''[[With a Song in My Heart (film)|With a Song in My Heart]]''&nbsp;– [[Thomas T. Moulton]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[The Bad and the Beautiful]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Edward Carfagno]]; Set Decoration: [[Edwin B. Willis]] and [[F. Keogh Gleason]]'''
+**''[[Carrie (1952 film)|Carrie]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Roland Anderson]]; Set Decoration: [[Emile Kuri]]
+**''[[My Cousin Rachel (1952 film)|My Cousin Rachel]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[John DeCuir]]; Set Decoration: [[Walter M. Scott]]
+**''[[Rashomon]]''&nbsp;– Art Direction: [[So Matsuyama]]; Set Decoration: [[H. Matsumoto]]
+**''[[Viva Zapata!]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Leland Fuller]]; Set Decoration: [[Thomas Little]] and [[Claude Carpenter]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[Moulin Rouge (1952 film)|Moulin Rouge]]''&nbsp;– Art Direction: [[Paul Sheriff]]; Set Decoration: [[Marcel Vertès]]'''
+**''[[Hans Christian Andersen (film)|Hans Christian Andersen]]''&nbsp;– Art Direction: [[Richard Day (art director)|Richard Day]] and [[Antoni Clavé]]; Set Decoration: [[Howard Bristol]]
+**''[[The Merry Widow (1952 film)|The Merry Widow]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Paul Groesse]]; Set Decoration: [[Edwin B. Willis]] and [[Arthur Krams]]
+**''[[The Quiet Man]]''&nbsp;– Art Direction: [[Frank Hotaling]]; Set Decoration: [[John McCarthy Jr.]] and [[Charles S. Thompson (set decorator)|Charles Thompson]]
+**''[[The Snows of Kilimanjaro (1952 film)|The Snows of Kilimanjaro]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[John DeCuir]]; Set Decoration: [[Thomas Little]] and [[Paul S. Fox]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[The Bad and the Beautiful]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert Surtees]]'''
+**''[[The Big Sky (film)|The Big Sky]]''&nbsp;– [[Russell Harlan]]
+**''[[My Cousin Rachel (1952 film)|My Cousin Rachel]]''&nbsp;– [[Joseph LaShelle]]
+**''[[Navajo (film)|Navajo]]''&nbsp;– [[Virgil Miller]]
+**''[[Sudden Fear]]''&nbsp;– [[Charles Lang]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[The Quiet Man]]''&nbsp;– [[Winton C. Hoch]] and [[Archie Stout]]'''
+**''[[Hans Christian Andersen (film)|Hans Christian Andersen]]''&nbsp;– [[Harry Stradling]]
+**''[[Ivanhoe (1952 film)|Ivanhoe]]''&nbsp;– [[Freddie Young|F. A. Young]]
+**''[[Million Dollar Mermaid]]''&nbsp;– [[George Folsey (cinematographer)|George Folsey]]
+**''[[The Snows of Kilimanjaro (1952 film)|The Snows of Kilimanjaro]]''&nbsp;– [[Leon Shamroy]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+*'''''[[The Bad and the Beautiful]]''&nbsp;– [[Helen Rose]]'''
+**''[[Affair in Trinidad]]''&nbsp;– [[Jean Louis]]
+**''[[Carrie (1952 film)|Carrie]]''&nbsp;– [[Edith Head]]
+**''[[My Cousin Rachel (1952 film)|My Cousin Rachel]]''&nbsp;– [[Charles LeMaire]] and [[Dorothy Jeakins]]
+**''[[Sudden Fear]]''&nbsp;– [[Sheila O'Brien]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+*'''''[[Moulin Rouge (1952 film)|Moulin Rouge]]''&nbsp;– [[Marcel Vertès]]'''
+**''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]]&nbsp;– ''[[Edith Head]], [[Dorothy Jeakins]] and [[Miles White]]
+**''[[Hans Christian Andersen (film)|Hans Christian Andersen]]''&nbsp;– [[Antoni Clavé]], [[Mary Wills (costume designer)|Mary Wills]] and [[Barbara Karinska]]
+**''[[The Merry Widow (1952 film)|The Merry Widow]]''&nbsp;– [[Helen Rose]] and [[Gile Steele]] {{small|([[List of posthumous Academy Award winners and nominees|posthumous nomination]])}}
+**''[[With a Song in My Heart (film)|With a Song in My Heart]]''&nbsp;– [[Charles LeMaire]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| 
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[High Noon]]''&nbsp;– [[Elmo Williams]] and [[Harry W. Gerstad]]'''
+**''[[Come Back, Little Sheba (1952 film)|Come Back, Little Sheba]]''&nbsp;– [[Warren Low]]
+**''[[Flat Top (film)|Flat Top]]''&nbsp;– [[William Austin (film editor)|William Austin]]
+**''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]]''&nbsp;– [[Anne Bauchens]]
+**''[[Moulin Rouge (1952 film)|Moulin Rouge]]''&nbsp;– [[Ralph Kemplen]]
+|}
+
+===Best Special Effects===
+* ''[[Plymouth Adventure]]'' – [[Metro-Goldwyn-Mayer]].
+
+===Honorary Foreign Language Film Award===
+* To ''[[Forbidden Games]]'' ([[France]]) - Best Foreign Language Film first released in the United States during 1952. 
+
+===Honorary Awards===
+* To George Alfred Mitchell for the design and development of the [[Mitchell Camera|camera which bears his name]] and for his continued and dominant presence in the field of cinematography.
+* To [[Joseph M. Schenck]] for long and distinguished service to the motion picture industry.
+* To [[Merian C. Cooper]] for his many innovations and contributions to the art of motion pictures.
+* To [[Harold Lloyd]], master comedian and good citizen. 
+* To [[Bob Hope]] for his contribution to the laughter of the world, his service to the motion picture industry, and his devotion to the American premise.
+
+===Irving G. Thalberg Memorial Award===
+* [[Cecil B. DeMille]]
+
+==Multiple nominations and awards==
+{{Col-begin|width=60%}}
+{{Col-1-of-2}}
+
+{| class="wikitable"
+|+Films that received multiple nominations
+! Nominations
+! Film
+|-
+| rowspan="3" style="text-align:center"| 7
+| ''[[High Noon]]''
+|-
+| ''[[Moulin Rouge (1952 film)|Moulin Rouge]]''
+|-
+| ''[[The Quiet Man]]''
+|-
+| rowspan="2" style="text-align:center"| 6
+| ''[[The Bad and the Beautiful]]''
+|-
+| ''[[Hans Christian Andersen (film)|Hans Christian Andersen]]''
+|-
+| rowspan="3" style="text-align:center"| 5
+| ''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]]''
+|-
+| ''[[Viva Zapata!]]''
+|-
+| ''[[With a Song in My Heart (film)|With a Song in My Heart]]''
+|-
+| rowspan="2" style="text-align:center"| 4
+| ''[[My Cousin Rachel (1952 film)|My Cousin Rachel]]''
+|-
+| ''[[Sudden Fear]]''
+|-
+| rowspan="2" style="text-align:center"| 3
+| ''[[Come Back, Little Sheba (1952 film)|Come Back, Little Sheba]]''
+|-
+| ''[[Ivanhoe (1952 film)|Ivanhoe]]''
+|-
+| rowspan="11" style="text-align:center"| 2
+| ''[[The Big Sky (film)|The Big Sky]]''
+|-
+| ''[[Breaking the Sound Barrier]]''
+|-
+| ''[[Carrie (1952 film)|Carrie]]''
+|-
+|''[[Devil Take Us]]''
+|-
+| ''[[5 Fingers|Five Fingers]]''
+|-
+| ''[[The Lavender Hill Mob]]''
+|-
+| ''[[The Merry Widow (1952 film)|The Merry Widow]]''
+|-
+| ''[[Navajo (film)|Navajo]]''
+|-
+| ''[[Neighbours (1952 film)|Neighbours]]''
+|-
+| ''[[Singin' in the Rain]]''
+|-
+| ''[[The Snows of Kilimanjaro (1952 film)|The Snows of Kilimanjaro]]''
+|}
+
+{{Col-2-of-2}}
+
+{| class="wikitable"
+|+
+Films that received multiple awards
+! Awards
+! Film
+|-
+| style="text-align:center"| 5
+| ''[[The Bad and the Beautiful]]''
+|-
+| style="text-align:center"| 4
+| ''[[High Noon]]''
+|-
+| rowspan="3" style="text-align:center"| 2
+| ''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]]''
+|-
+| ''[[Moulin Rouge (1952 film)|Moulin Rouge]]''
+|-
+| ''[[The Quiet Man]]''
+|}
+{{Col-end}}
+
+==Presenters and performers==
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name
+! Role
+|-
+| {{sortname|Ronald|Reagan}} || Announcer for the 25th Academy Awards
+|-
+| {{sortname|Charles|Brackett}} (AMPAS president) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Ginger|Rogers}} || Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Jean|Hersholt}} || Presenter of the Documentary Awards
+|-
+| {{sortname|Frank|Capra}} || Presenter of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Joan|Fontaine}}<br />[[James Stewart]] || Presenters of the [[Academy Award for Best Production Design|Art Direction Awards]]
+|-
+| {{sortname|Claire|Trevor}} || Presenter of the award for [[Academy Award for Best Sound Mixing|Best Sound Recording]]
+|-
+| {{sortname|Ray|Milland}}<br />[[Jane Wyman]] || Presenters of the Short Subject Awards
+|-
+| {{sortname|Teresa|Wright}} || Presenter of the awards for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Walt|Disney}} || Presenter of the Music Awards
+|-
+| {{sortname|Charles|Brackett}}<br />[[Olivia de Havilland]] || Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Dore|Schary}} || Presenter of the Writing Awards
+|-
+| {{sortname|Greer|Garson}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Edmund|Gwenn}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Janet|Gaynor}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Fredric|March}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Mary|Pickford}} || Presenter of the award for [[Academy Award for Best Picture|Best Motion Picture]]
+|-
+| {{sortname|Loretta|Young}} || Presenter of the award for [[Academy Award for Best Visual Effects|Best Special Effects]]
+|-
+| {{sortname|Luise|Rainer}} || Presenter of the [[Academy Award for Best Foreign Language Film|Honorary Foreign Language Film Award]] 
+|-
+| Charles Brackett
+| Presenter of the Honorary Awards to [[Joseph M. Schenck]] and [[Harold Lloyd]]
+|-
+| {{sortname|Anne|Baxter}} || Presenter of the Scientific & Technical Awards
+|-
+| Charles Brackett
+| Presenter of the Honorary Award to [[Bob Hope]] and the [[Irving G. Thalberg Memorial Award]] to [[Cecil B. DeMille]] 
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name
+! Role
+! Performed
+|-
+| {{sortname|Adolph|Deutsch}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Bob|Hope}}<br />[[Marilyn Maxwell]] || Performers || “Am I in Love?” from ''[[Son of Paleface]]''
+|-
+| {{sortname|Billy|Daniels}} || Performer || “Because You’re Mine” from ''[[Because You're Mine]]''
+|-
+| {{sortname|Tex|Ritter}} || Performer || “High Noon (Do Not Forsake Me, Oh My Darlin’)” from ''[[High Noon]]''
+|-
+| {{sortname|Celeste|Holm}} || Performer || “Thumbelina” from ''[[Hans Christian Andersen (film)|Hans Christian Andersen]]''
+|-
+| {{sortname|Peggy|Lee}}<br />[[Johnny Mercer]] || Performers || “Zing a Little Zong” from ''[[Just for You (1952 film)|Just for You]]''
+|-
+| Academy Awards Orchestra
+| Performers
+| "[[There's No Business Like Show Business]]" (orchestral) during the closing credits
+|}
+
+==Ceremony information==
+===Broadcast===
+The 25th Academy Awards ceremony was the first to be broadcast on [[television]]:<ref name="ap"/>
+For the first time in history, a television audience estimated at 40,000,000 persons<ref>The actual audience was 34 million, according to {{cite magazine |title=The Oscars |date=March 30, 1953 |magazine=[[Time (magazine)|Time]] |url=http://www.time.com/time/magazine/article/0,9171,818086,00.html |url-status=dead |archive-url=https://web.archive.org/web/20081222105418/http://www.time.com/time/magazine/article/0%2C9171%2C818086%2C00.html |archive-date=2008-12-22}}</ref> will watch the movie industry's biggest show. It will mark the TV debut for scores of the biggest names in moviedom.
+
+The telecast was prompted by the need to finance the bi-coastal ceremony. When three of the film studios refused to provide their customary financial support, the [[RCA Victor]] Division of the [[Radio Corporation of America]] agreed to pay [[Academy of Motion Picture Arts and Sciences|AMPAS]] $100,000 (one source reported $250,000<ref>The sponsorship fee was $250,000, per {{cite magazine |title=The Oscars |date=March 30, 1953 |magazine=[[Time (magazine)|Time]] |url=http://www.time.com/time/magazine/article/0,9171,818086,00.html |url-status=dead |archive-url=https://web.archive.org/web/20081222105418/http://www.time.com/time/magazine/article/0%2C9171%2C818086%2C00.html |archive-date=2008-12-22}}</ref>) as a sponsorship fee. [[NBC]] telecast the [[bicoastal]] ceremony over its 64-station television network and on its 174-station radio system.<ref name="nyt">{{cite news |author=Pryor |first=Thomas M. |date=March 20, 1953 |title=Movie 'Oscar' Won by 'Greatest Show' |volume=102 |pages=25 |newspaper=[[The New York Times]] |issue=34754 |url=https://www.nytimes.com/1953/03/20/archives/movie-oscar-won-by-greatest-show-de-mille-production-of-circus-life.html}}</ref> The [[Armed Forces Radio Service]] recorded the proceedings for later broadcast.<ref name="nyt"/>
+
+The show was broadcast from 10:30&nbsp;p.m. to 12:15 a.m. [[Eastern Time Zone|EST]] (7:30 p.m. to 9:15 p.m. [[Pacific Time Zone|PST]]),<ref>{{Cite news |date=1953-03-19 |title=Of Local Origin |volume=102 |pages=34 |work=[[The New York Times]] |issue=34753}}</ref><ref>{{Cite book |last1=Wiley |first1=Mason |title=Inside Oscar: the unofficial history of the Academy Awards |last2=Bona |first2=Damien |date=1996 |publisher=Ballantine Books |isbn=978-0-345-40053-6 |edition=10. anniversary rev. ed., with new chapters on the winners, heartbreaks, and behind-the-scenes surprises |location=New York, NY |pages=228}}</ref><ref name=":0">{{Cite web |last=Doherty |first=Thomas |date=2022-03-26 |title="TV – That's Where Movies Go When They Die": Rewatching the First Televised Oscars |url=https://www.hollywoodreporter.com/movies/movie-news/first-televised-oscars-academy-awards-full-show-rewatch-1235115714/ |access-date=2023-12-21 |website=The Hollywood Reporter |language=en-US}}</ref> switching back and forth from host Bob Hope on the West Coast to Conrad Nagel on the East Coast. The late start was made to accommodate those nominees who were performing that night on the [[Broadway theatre|Broadway stage]].<ref name=":0" />
+
+The [[Technology of television|technology used for television]] at the time meant that Bob Hope had to wear a blue [[dress shirt]] with his [[black tie|formal dinner jacket]];<ref>{{cite magazine |title=The Oscars |date=March 30, 1953 |magazine=[[Time (magazine)|Time]] |url=http://www.time.com/time/magazine/article/0,9171,818086,00.html |url-status=dead |archive-url=https://web.archive.org/web/20081222105418/http://www.time.com/time/magazine/article/0%2C9171%2C818086%2C00.html |archive-date=2008-12-22}}</ref> the traditional white shirt would have been too bright.
+
+===Notable achievements===
+The year saw a major upset when the heavily favored ''[[High Noon]]'' lost [[Academy Award for Best Picture|Best Picture]] to [[Cecil B. DeMille]]'s ''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]]'', eventually considered among the worst films to have won the award.<ref>{{cite web |url=http://imdb.com/news/wenn/2006-03-01/#celeb9 |title='Chicago' and 'Oliver!' Among "Worst" Oscar Winners |publisher=Imdb.com |access-date=2012-07-28 |url-status=dead |archive-url=https://web.archive.org/web/20130610054049/http://www.imdb.com/news/wenn/2006-03-01/#celeb9 |archive-date=2013-06-10 }}</ref><ref>{{cite web|url=http://in.rediff.com/movies/2005/mar/01worst.htm |title=The worst Oscar winners! |publisher=Rediff.com movies |date=2005-03-01 |access-date=2012-07-28 |url-status=live |archive-url=https://web.archive.org/web/20120214134424/http://in.rediff.com/movies/2005/mar/01worst.htm |archive-date=2012-02-14 }}</ref> Today, it ranks #94 on [[Rotten Tomatoes]]' list of the 95 films to win Best Picture, ahead of only ''[[The Broadway Melody]]''.<ref>{{cite web | url=https://editorial.rottentomatoes.com/guide/oscars-best-and-worst-best-pictures/ | title=All 95 Best Picture Winners, Ranked by Tomatometer }}</ref> 
+
+Although it only received two nominations, ''[[Singin' in the Rain]]'' went on to be named as the [[AFI's Greatest Movie Musicals|greatest American musical film of all time]] and in the 2007 [[American Film Institute]] updated list as [[AFI's 100 Years...100 Movies (10th Anniversary Edition)|the fifth greatest American film of all time]], while ''High Noon'' ranked twenty-seventh on the same list.
+
+''[[The Bad and the Beautiful]]'' won five Oscars, the most wins ever for a film not nominated for Best Picture. It was also the second—and, to date, last—Academy Awards in which a film not nominated for Best Picture received the most awards of the evening, excluding years where there were ties for the most wins.
+
+Until ''[[Spotlight (film)|Spotlight]]'' won only Best Picture and [[Academy Award for Best Original Screenplay|Best Original Screenplay]] at the [[88th Academy Awards]], this was the last year in which the Best Picture winner won just two total Oscars. It was also the second of three years to date in which two films ''not'' nominated for Best Picture received more nominations than the winner (''The Bad and the Beautiful'' and ''[[Hans Christian Andersen (film)|Hans Christian Andersen]]'', both with six). This occurred again at the [[79th Academy Awards]].
+
+[[Shirley Booth]] was the last person born in the 19th century to win an Oscar in a Leading Role, and the first woman in her 50s to win [[Academy Award for Best Actress|Best Actress]], at the age of 54 (the second woman in her 50s to win, [[Julianne Moore]], was also 54 when she won at the [[87th Academy Awards]]).
+
+[[John Ford]]'s fourth win for [[Academy Award for Best Director|Best Director]] set a record for the most wins in this category that remains unmatched to this day. For the first time since the introduction of Supporting Actor and Actress awards in 1936, Best Picture, Best Director, and all four acting Oscars were awarded to six different films. This has happened only three times since, at the [[29th Academy Awards]] for 1956, the [[78th Academy Awards|78th]] for 2005, and the [[85th Academy Awards|85th]] for 2012.
+
+==See also==
+* [[1952 in film]]
+* [[4th Primetime Emmy Awards]]
+* [[5th Primetime Emmy Awards]]
+* [[6th British Academy Film Awards]]
+* [[7th Tony Awards]]
+* [[10th Golden Globe Awards]]
+
+==References and footnotes==
+<references />
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 25}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1952 film awards]]
+[[Category:1952 awards in the United States]]
+[[Category:1953 in American cinema]]
+[[Category:1953 in Los Angeles]]
+[[Category:1953 in New York City]]
+[[Category:Organized events in New York City]]
+[[Category:March 1953 in the United States]]
+[[Category:1950s in Manhattan]]
+[[Category:Columbus Circle]]

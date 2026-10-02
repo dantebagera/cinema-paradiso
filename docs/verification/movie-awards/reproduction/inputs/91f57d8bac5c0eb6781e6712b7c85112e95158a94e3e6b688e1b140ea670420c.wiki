@@ -1,0 +1,231 @@
+{{oscars short description|films-year=1932|films-year2=1933}}
+{{Use mdy dates|date=August 2021}}
+
+{{Infobox film awards
+| number           = 6
+| award            = Academy Awards
+| date             = March 16, 1934
+| site             = [[Ambassador Hotel (Los Angeles)|The Ambassador Hotel]]
+| host             = [[Will Rogers]]
+| best_picture     = ''[[Cavalcade (1933 film)|Cavalcade]]''
+| most_wins        = ''Cavalcade'' (3)
+| most_nominations = ''Cavalcade'', ''[[A Farewell to Arms (1932 film)|A Farewell to Arms]]'' and ''[[Lady for a Day]]'' (4)
+| last             = 5th
+| next             = 7th
+}}
+
+The '''6th Academy Awards''' were held on March 16, 1934, to honor films released between August 1, 1932, and December 31, 1933, at [[Ambassador Hotel (Los Angeles)|The Ambassador Hotel]] in Los Angeles, California.  They were hosted by [[Will Rogers]], who also presented the awards.
+
+When Rogers presented [[Academy Award for Best Director|Best Director]], he opened the envelope and simply announced, "Come up and get it, Frank!" [[Frank Capra]], certain he was the winner, ran to the podium to collect the Oscar, only to discover Rogers had meant [[Frank Lloyd]], who had won for ''Cavalcade''. Rogers then called the third nominee, [[George Cukor]], to join the two Franks on stage.<ref name=McBride>McBride, Joseph, ''Frank Capra: The Catastrophe of Success''. New York: Simon & Schuster 1992. {{ISBN|0-671-73494-6}}, pp. 288–292, 294–296, 298–302, 309–310</ref><ref name="Oscars '33 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/832/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=833 |isbn=0-385-04060-1}}</ref> After this, he summoned two of the Best Actress nominees—[[Diana Wynyard]] and [[May Robson]]—to the stage. Although they both thought they won in a tie, Rogers thanked them for their performances before announcing the actual winner: [[Katharine Hepburn]].<ref name="Oscars '33 Notes"/> 
+
+A change in the eligibility rules resulted in the longest time frame for which films could be nominated: the seventeen months from August 1, 1932, to December 31, 1933. After this, the eligibility period would coincide with the calendar year. This resulted in the only time no ceremony was held in a calendar year (1933).<ref>{{cite magazine|last=Feinberg|first=Scott|date=June 15, 2020|url=https://www.billboard.com/music/awards/oscars-pushed-back-eligibility-window-extended-9402751/|title=Oscars Pushed Back to April 25, Eligibility Window Extended|magazine=[[Billboard (magazine)|Billboard]]|access-date=June 18, 2026}}</ref>
+
+This was the last time that no film had more than four nominations, as well as the only year in Academy history in which no film other than the Best Picture nominees received multiple nominations. ''Cavalcade'' became the fourth film to win Best Picture without a writing nomination, and the last until ''[[Hamlet (1948 film)|Hamlet]]'' (1948) at the [[21st Academy Awards]].
+
+[[Walt Disney]] became the first person to win consecutive Academy Awards, winning Best Short Subject, Cartoon for ''The [[Three Little Pigs (film)|Three Little Pigs]]'' after having won the same award [[5th Academy Awards|the previous year]] for ''[[Flowers and Trees]]''.
+
+This was the first time in the Academy's history that both of the major acting nominees were absent from the big night.<ref name="Oscars '33 Notes"/> 
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Winfield Sheehan 1919.jpg
+| caption1          = [[Winfield Sheehan]], Best Picture winner (producer)
+| image2            = Frank Lloyd, Boxoffice Barometer, 1939.jpg
+| caption2          = [[Frank Lloyd]], Best Director winner
+| image3            = Charles Laughton-publicity2.JPG
+| caption3          = [[Charles Laughton]], Best Actor winner
+| image4            = Katharine Hepburn publicity photograph.jpg
+| caption4          = [[Katharine Hepburn]], Best Actress winner
+| image5            = Victor Heerman - Feb 1920 EH.jpg
+| caption5          = [[Victor Heerman]], Best Adaptation co-winner
+| image6            = Sarah Y Mason - Aug 1920 EH.jpg
+| caption6          = [[Sarah Y. Mason]], Best Adaptation co-winner
+| image7            = One-Eyed Jacks (1961) 1.jpg
+| caption7          = [[Charles Lang]], Best Cinematography winner
+| image8            = Joe Rock & Patsy de Forest - May 1920 EH.jpg
+| caption8          = [[Joe Rock]], Best Live Action Short Subject, Novelty winner
+| image9            = Walt Disney 1946.JPG
+| caption9          = [[Walt Disney]], Best Short Subject, Cartoon winner
+| image10           = 
+| caption10         = [[Charles Barton (director)|Charles Barton]], Best Assistant Director co-winner
+| image11           = Hell's End (1918) - 1.jpg
+| caption11         = [[Charles Dorian]], Best Assistant Director co-winner
+
+}}
+Nominees were announced on February 26, 1934. Winners are listed first and highlighted in boldface.<ref name="Oscars1934">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1934 |title=The 6th Academy Awards (1934) Nominees and Winners |access-date=February 4, 2012 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |url-status=live |archive-url=https://web.archive.org/web/20141111073712/http://www.oscars.org/oscars/ceremonies/1934 |archive-date=November 11, 2014 }}</ref><ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1932/33" in the "Award Year(s)" drop-down menu and press "Search".</ref><ref>{{Citation|first=Mason|last=Wiley|first2=Damien|last2=Bona|author-link2=Damien Bona|title=Inside Oscar: The Unofficial History of the Academy Awards|year=1987|location=New York, United States|publisher=[[Ballantine Books]]}}</ref>
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+*'''''[[Cavalcade (1933 film)|Cavalcade]]''''' '''– [[Winfield Sheehan]] for [[Fox Film|Fox Film Co.]]'''
+** ''[[42nd Street (film)|42nd Street]]'' – [[Darryl F. Zanuck]] for [[Warner Bros.]] 
+** ''[[A Farewell to Arms (1932 film)|A Farewell to Arms]]'' – [[Adolph Zukor]] for [[Paramount Pictures|Paramount Publix]] 
+** ''[[I Am a Fugitive from a Chain Gang]]'' – [[Hal B. Wallis]] for Warner Bros. 
+** ''[[Lady for a Day]]'' – [[Frank Capra]] for [[Columbia Pictures|Columbia]] 
+** ''[[Little Women (1933 film)|Little Women]]'' – [[Merian C. Cooper]] and [[Kenneth Macgowan]] for [[RKO Pictures]] 
+** ''[[The Private Life of Henry VIII]]'' – [[Alexander Korda]] for [[London Films]] 
+** ''[[She Done Him Wrong]]'' – [[William LeBaron]] for Paramount Publix 
+** ''[[Smilin' Through (1932 film)|Smilin' Through]]'' – [[Irving Thalberg]] for [[Metro-Goldwyn-Mayer]] 
+** ''[[State Fair (1933 film)|State Fair]]'' – Winfield Sheehan for Fox Film Co.
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Frank Lloyd]]&nbsp;– ''[[Cavalcade (1933 film)|Cavalcade]]'''''
+** [[Frank Capra]]&nbsp;– ''[[Lady for a Day]]''
+** [[George Cukor]]&nbsp;– ''[[Little Women (1933 film)|Little Women]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Charles Laughton]]&nbsp;– ''[[The Private Life of Henry VIII]]'' as [[Henry VIII of England|Henry VIII]]'''
+** [[Leslie Howard (actor)|Leslie Howard]]&nbsp;– ''[[Berkeley Square (1933 film)|Berkeley Square]]'' as Peter Standish
+** [[Paul Muni]]&nbsp;– ''[[I Am a Fugitive from a Chain Gang]]'' as James Allen
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Katharine Hepburn]]&nbsp;– ''[[Morning Glory (1933 film)|Morning Glory]]'' as Eva Lovelace'''
+** [[May Robson]]&nbsp;– ''[[Lady for a Day]]'' as Apple Annie
+** [[Diana Wynyard]]&nbsp;– ''[[Cavalcade (1933 film)|Cavalcade]]'' as Jane Marryot
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+*'''''[[One Way Passage]]''&nbsp;– [[Robert Lord (screenwriter)|Robert Lord]]'''
+** ''[[The Prizefighter and the Lady]]''&nbsp;– [[Frances Marion]]
+** ''[[Rasputin and the Empress]]''&nbsp;– [[Charles MacArthur]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adaptation)]]}}
+*'''''[[Little Women (1933 film)|Little Women]]''&nbsp;– [[Victor Heerman]] and [[Sarah Y. Mason]], based on [[Little Women|the novel]] by [[Louisa May Alcott]]'''
+** ''[[Lady for a Day]]''&nbsp;– [[Robert Riskin]], based on the story "Madame la Gimp" by [[Damon Runyon]]
+** ''[[State Fair (1933 film)|State Fair]]''&nbsp;– [[Paul Green (playwright)|Paul Green]] and [[Sonya Levien]], based on [[State Fair (novel)|the novel]] by [[Phil Stong|Phil Strong]] 
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Comedy)]]}}
+*'''''[[So This Is Harris]]''&nbsp;– [[Lou Brock (producer)|Louis Brock]] and [[RKO Pictures]]'''
+** ''[[Mister Mugg]]''&nbsp;– Warren Doane and [[Universal Pictures|Universal Studios]]
+** ''[[A Preferred List]]''&nbsp;– Louis Brock and RKO Pictures
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Novelty)]]}}
+*'''''[[Krakatoa (film)|Krakatoa]]''&nbsp;– [[Joe Rock]] and [[Educational Pictures]]'''
+** ''[[Menu (film)|Menu]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]] and [[MGM]]
+** ''[[The Sea (1933 film)|The Sea]]''&nbsp;– Educational Pictures
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Three Little Pigs (film)|The Three Little Pigs]]''&nbsp;– [[Walt Disney]] and [[United Artists]]'''
+**''[[Building a Building]]''&nbsp;– Walt Disney and United Artists
+**''[[The Merry Old Soul]]''&nbsp;– [[Walter Lantz]] and [[Universal Pictures|Universal Studios]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[A Farewell to Arms (1932 film)|A Farewell to Arms]]''&nbsp;– [[Franklin Hansen]]'''
+** ''[[42nd Street (film)|42nd Street]]''&nbsp;– [[Nathan Levinson]]
+** ''[[Gold Diggers of 1933]]''&nbsp;– Nathan Levinson
+** ''[[I Am a Fugitive from a Chain Gang]]''&nbsp;– Nathan Levinson
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Assistant Director|Best Assistant Director]]}}
+*'''[[Charles Barton (director)|Charles Barton]]&nbsp;– [[Paramount Pictures|Paramount]]'''
+*'''[[Scott Beal]]&nbsp;– [[Universal Pictures|Universal]]'''
+*'''[[Charles Dorian]]&nbsp;– [[MGM]]'''
+*'''[[Fred Fox (director)|Fred Fox]]&nbsp;– [[United Artists]]'''
+*'''[[Gordon Hollingshead]]&nbsp;– [[Warner Brothers|Warner Bros.]]'''
+*'''[[Dewey Starkey]]&nbsp;– [[RKO Studios|RKO]]'''
+*'''[[William Tummel]]&nbsp;– [[20th Century Fox]]'''
+** [[Al Alleborn]]&nbsp;– Warner Bros.
+** [[Sid Brod]]&nbsp;– Paramount
+** [[Orville O. Dull]]&nbsp;– MGM
+** [[Percy Ikerd]]&nbsp;– 20th Century Fox
+** [[Arthur Jacobson]]&nbsp;– Paramount
+** [[Edward Killy]]&nbsp;– RKO
+** [[Joseph A. McDonough]]&nbsp;– Universal
+** [[William J. Reiter]]&nbsp;– Universal
+** [[Frank X. Shaw]]&nbsp;– Warner Bros.
+** [[Ben Silvey]]&nbsp;– United Artists
+** [[John S. Waters]]&nbsp;– MGM
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Cavalcade (1933 film)|Cavalcade]]''&nbsp;– [[William S. Darling]]'''
+** ''[[A Farewell to Arms (1932 film)|A Farewell to Arms]]''&nbsp;– [[Hans Dreier]] and [[Roland Anderson]]
+** ''[[When Ladies Meet (1933 film)|When Ladies Meet]]''&nbsp;– [[Cedric Gibbons]]
+|-
+| valign="top" width="50%" colspan=2|
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[A Farewell to Arms (1932 film)|A Farewell to Arms]]''&nbsp;– [[Charles Lang]]'''
+** ''[[Reunion in Vienna]]''&nbsp;– [[George Folsey (cinematographer)|George J. Folsey]]
+** ''[[The Sign of the Cross (1932 film)|Sign of the Cross]]''&nbsp;– [[Karl Struss]]
+|-
+|}
+
+== Multiple nominations and awards ==
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" rowspan="3" style="text-align:center"| 4
+|''[[Cavalcade (1933 film)|Cavalcade]]''
+|-
+|''[[A Farewell to Arms (1932 film)|A Farewell to Arms]]''
+|-
+|''[[Lady for a Day]]''
+|-
+| scope="row" rowspan="2" style="text-align:center"| 3
+|''[[I Am a Fugitive from a Chain Gang]]''
+|-
+|''[[Little Women (1933 film)|Little Women]]''
+|-
+| scope="row" rowspan="3" style="text-align:center"| 2
+|''[[42nd Street (film)|42nd Street]]''
+|-
+|''[[The Private Life of Henry VIII]]''
+|-
+|''[[State Fair (1933 film)|State Fair]]''
+|}
+
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Wins
+! scope="col" style="text-align:center;"| Film
+|-
+| 3
+|''[[Cavalcade (1933 film)|Cavalcade]]''
+|-
+| 2
+|''[[A Farewell to Arms (1932 film)|A Farewell to Arms]]''
+|}
+
+== Scientific or Technical Awards ==
+
+=== Class II Awards ===
+
+* [[Altec Lansing|Electrical Research Products, Inc.]] (ERPI)
+** For work in sound reproduction.
+* [[RCA Victor|RCA Victor Company, Inc.]]
+** For work in sound reproduction.{{efn|name=classii|Class II Scientific or Technical award winners receive a plaque.}}
+
+=== Class III Awards ===
+
+* [[Fox Film Corporation]], Fred Jackman and [[Warner Brothers]] Pictures, and Sidney Sanders and [[RKO Radio Pictures]].
+** For work in the technologies of cinematography and film projection.{{efn|name=classiii|Class III Scientific or Technical award winners receive a citation.}}
+
+== See also ==
+
+* [[1932 in film]]
+* [[1933 in film]]
+
+==Notes==
+{{noteslist}}
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 06}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1932 film awards]]
+[[Category:1933 film awards]]
+[[Category:1934 in American cinema]]
+[[Category:1934 in Los Angeles]]
+[[Category:March 1934 in the United States]]

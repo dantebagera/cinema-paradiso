@@ -1,0 +1,271 @@
+{{short description|1973 television miniseries by Ingmar Bergman}}
+{{for|2021 American adaptation |Scenes from a Marriage (American miniseries)}}
+{{Use dmy dates|date=April 2019}}
+{{Infobox television
+| image                = Scenes_from_a_Marriage_DVD_cover.jpg
+| image_size           = 200
+| image_alt            = 
+| caption              = [[The Criterion Collection]] DVD cover
+| native_name          = {{Infobox name module|sv|Scener ur ett äktenskap}}
+| writer               = [[Ingmar Bergman]]
+| director             = Ingmar Bergman
+| starring             = {{Plainlist|
+* [[Liv Ullmann]]
+* [[Erland Josephson]]
+* [[Bibi Andersson]]
+}}
+| country              = Sweden
+| language             = Swedish
+| producer             = Lars-Owe Carlberg
+| cinematography       = [[Sven Nykvist]]
+| runtime              = {{Plainlist|
+* 281 minutes (TV version)<ref name="SFI">{{Cite web|url=http://www.sfi.se/en-GB/Swedish-film-database/Item/?type=MOVIE&itemid=4934|title=''Scener ur ett äktenskap'' (1973)|access-date=18 July 2011|website=[[Swedish Film Database]]|archive-url=https://web.archive.org/web/20120922064625/http://www.sfi.se/en-GB/Swedish-film-database/Item/?type=MOVIE&itemid=4934|archive-date=22 September 2012|url-status=live}}</ref>
+* 167 minutes (theatrical)<!--Theatrical runtime: 167:14--><ref name="BBFC">{{cite web|title=''Scenes from a Marriage'' (AA)|url=https://www.bbfc.co.uk/releases/scenes-marriage-1970-0|publisher=[[British Board of Film Classification]]|date=4 November 1974|access-date=24 March 2013|archive-url=https://web.archive.org/web/20160305134059/http://www.bbfc.co.uk/releases/scenes-marriage-1970-0|archive-date=5 March 2016|url-status=dead}}</ref>
+}}
+| budget               = US$150,000
+| network              = [[Sveriges Television|SVT]]
+| first_aired          = {{start date|1973|4|11|df=yes}}
+| last_aired           = {{end date|1973|5|16|df=yes}}
+}}
+
+'''''Scenes from a Marriage''''' ({{langx|sv|'''Scener ur ett äktenskap'''}}) is a 1973 Swedish television [[miniseries]] written and directed by [[Ingmar Bergman]]. Over the course of six hour-long episodes, it explores the disintegration of the marriage between Marianne ([[Liv Ullmann]]), a divorce lawyer, and Johan ([[Erland Josephson]]), a reader in psychology. The series spans a period of 10 years. Bergman's teleplay draws on his own experiences, including his relationship with Ullmann. It was shot on a small budget in [[Stockholm]] and [[Fårö]] in 1972.
+
+After initially airing on Swedish TV in six parts, the miniseries was condensed into a theatrical version and received positive reviews in Sweden and internationally. ''Scenes from a Marriage'' was also the subject of controversy for its perceived influence on rising divorce rates in Europe. The film was ineligible for the [[Academy Award for Best Foreign Language Film]], but won the [[Golden Globe Award for Best Foreign Language Film]] and several other honours. The miniseries and film version influenced filmmakers such as [[Woody Allen]] and [[Richard Linklater]]. It was followed by a sequel, ''[[Saraband]]'', in 2003, and stage adaptations. It was also adapted into an [[Scenes from a Marriage (American miniseries)|HBO miniseries]] in 2021.
+
+==Episodes==
+The TV miniseries' six episodes ran between 11 April and 16 May 1973. At about 50 minutes per episode, the miniseries totals 282 minutes.{{sfn|Vermilye|2002|p=142}}
+
+Scenes from each episode appear in the film version, which is 168 minutes long.{{sfn|Vermilye|2002|p=142}} The episode titles appear in the film version as chapter titles.<ref name="Canby">{{Cite web |url=https://www.nytimes.com/movie/review?res=EE05E7DF173BE770BC4E52DFBF66838F669EDE |title=Scenes from a Marriage |last=Canby |first=Vincent |date=16 September 1974 |access-date=2 October 2016 |work=[[The New York Times]] |archive-url=https://web.archive.org/web/20161003194932/http://www.nytimes.com/movie/review?res=EE05E7DF173BE770BC4E52DFBF66838F669EDE |archive-date=3 October 2016 |url-status=live }}</ref>
+
+{{Episode table |background=#000000 |overall= |title= |airdate=|airdateR= {{sfn|Gado|1986|p=530}} |episodes=
+{{Episode list
+ |EpisodeNumber=1
+ |Title=Innocence and Panic (''Oskuld och panik'')
+ |OriginalAirDate={{Start date|1973|4|11|df=y}}
+ |ShortSummary= An affluent couple, Marianne and Johan, are interviewed for a magazine series on love after having renewed their marriage contract after their 10th anniversary. In the interview, they come across as an ideal couple with two daughters. Afterward, they entertain the couple Peter and Katarina, who have a miserable relationship. Marianne reveals to Johan she is pregnant, and she winds up having an [[Abortion in Sweden|abortion]].
+ |LineColor= 000000
+}}
+{{Episode list
+| EpisodeNumber       = 2
+| Title               = The Art of Sweeping Things Under the Rug (''Konsten att sopa under mattan'')
+| OriginalAirDate     = {{Start date|1973|4|18|df=y}}
+| ShortSummary        = Marianne wakes up one morning determined not to visit her parents for dinner, as the family usually does each week, but backs down. At the university where Johan works, he shares poetry that he has not let Marianne see with a female colleague, who tells him it is mediocre. Later, Marianne and Johan debate the lack of joy they take in their sex life.
+| LineColor           = 000000|
+}}
+{{Episode list
+ |EpisodeNumber=3
+ |Title=Paula
+ |OriginalAirDate={{Start date|1973|4|25|df=y}}
+ |ShortSummary= Johan reveals to Marianne that he is having an [[adultery|affair]] with a much younger woman named Paula, an [[unseen character]], and wants a separation. He intends to leave home for many months, and shares his frustrations about their marriage and longtime desire to leave. Upon phoning a friend for help, Marianne learns many of her friends knew about the affair before she did.
+ |LineColor= 000000
+}}
+{{Episode list
+ |EpisodeNumber=4
+ |Title=The Vale of Tears (''Tåredalen'')
+ |OriginalAirDate={{Start date|1973|5|2|df=y}}
+ |ShortSummary= Johan visits Marianne, disclosing he intends to take a position at [[Cleveland State University|Cleveland University]]. Marianne then suggests they should finalize a divorce, hinting she is interested in remarrying. She shares what she has learned about herself in therapy, but Johan doesn't listen. 
+ |LineColor= 000000
+}}
+{{Episode list
+ |EpisodeNumber=5
+ |Title=The Illiterates (''Analfabeterna'')
+ |OriginalAirDate={{Start date|1973|5|9|df=y}}
+ |ShortSummary= Marianne and Johan meet to finalize their divorce, leading to more arguments over the division of their belongings, the upbringing of their daughters and Marianne's new enjoyment of sex with her current partner. After the arguments escalate into physical violence, Johan sadly signs the papers.
+ |LineColor= 000000
+}}
+{{Episode list
+ |EpisodeNumber=6
+ |Title=In the Middle of the Night in a Dark House Somewhere in the World (''Mitt i natten ett mörkt hus någonstans i världen'') |OriginalAirDate={{Start date|1973|5|16|df=y}}
+ |ShortSummary= Despite having both been remarried to other people, Marianne and Johan meet for an affair. Marianne reveals she had an affair in 1955, very shortly after they were married. It has been 20 years since they were married. Going to a friend's country house, Marianne has a nightmare, and wakes up fretting she has never loved or been loved. Johan comforts her that they share an imperfect love.
+ |LineColor= 000000
+}}
+}}
+
+==Cast==
+{{Cast listing|
+* [[Liv Ullmann]] as Marianne
+* [[Erland Josephson]] as Johan
+* [[Bibi Andersson]] as Katarina
+* [[Jan Malmsjö]] as Peter
+* [[Gunnel Lindblom]] as Eva, colleague to Johan
+* [[Anita Wall]] as Fru [Mrs] Palm
+* [[Barbro Hiort af Ornäs]] as Fru Jacobi
+* Rossana Mariano as Eva, 12-year-old daughter to Johan and Marianne
+* [[Lena Bergman]] as Karin, Eva's sister
+* [[Wenche Foss]] as Modern [the Mother]
+* [[Bertil Norström]] as Arne
+}}
+
+==Production==
+[[File:Ullmann-Bergman-1968.jpeg|thumb|Director [[Ingmar Bergman]] drew on personal experiences with actress [[Liv Ullmann]] in writing the teleplay.]]
+
+Bergman wrote the teleplay for ''Scenes From a Marriage'' over three months. He drew on his personal experiences, including his relationship with Ullmann; his unhappy, eventually dissolved marriages to [[Käbi Laretei]] and Gun Hagberg; and the marriage of his parents, Karin and [[Erik Bergman (Lutheran minister)|Erik Bergman]]. As a boy, he had witnessed his parents violently wrestling, with Karin slapping Erik and Erik pushing her against a wall. Ingmar also found his mother could be manipulative.{{sfn|Hart|2008|p=116}}{{sfn|Hart|2008|p=117}}{{sfn|Cardullo|2012|p=221}}
+
+The budget for ''Scenes From a Marriage'' was approximately a third that of Bergman's previous film, ''[[Cries and Whispers]]''. Half was covered by [[Swedish Television]] and half by foreign companies.{{sfn|Gado|1986|p=399}} It was filmed in [[Stockholm]] and [[Fårö]] between July and October 1972.{{sfn|Steene|2005|p=425}} Cinematographer [[Sven Nykvist]] emphasized [[close-up]]s and employed small indoor film sets. Nykvist later regretted not using more [[tracking shot]]s when he learned the miniseries would have a theatrical release.{{sfn|De Vito|Tropea|2010|p=202}} The filming schedule was one week per episode.{{sfn|Gado|1986|p=399}}
+
+Ullmann compared performing in ''Scenes From a Marriage'' to appearing in a documentary, saying she "felt very connected to the role." She said she was becoming more involved in the [[Feminism in Norway|feminist movement]] while making the miniseries.{{sfn|De Vito|Tropea|2010|p=202}} Due to Ullmann and [[Erland Josephson]]'s comfort with their parts, the crew saved time by not having rehearsals.{{sfn|Gado|1986|p=399}}
+
+==Release==
+''Scenes From a Marriage'' was broadcast as a miniseries in Sweden by [[SVT2]] beginning on 11 April 1973.{{sfn|Steene|2005|p=424}} Polls indicated most of the viewers were women.{{sfn|Steene|2005|p=425}} A 169-minute theatrical version was screened in Sweden on 28 October 1974.<ref>{{cite web |url=http://www.svenskfilmdatabas.se/en/item/?type=film&itemid=19808 |title=Scener ur ett äktenskap (1974) |access-date=18 January 2018 |work=The Swedish Film Database |archive-url=https://web.archive.org/web/20180119001228/http://www.svenskfilmdatabas.se/en/item/?type=film&itemid=19808 |archive-date=19 January 2018 |url-status=live }}</ref>
+
+In the United States, a 167-minute version of the miniseries was released in cinemas, with the [[16 mm film]] modified to [[35mm movie film|35 mm]].<ref name="BBFC"/>{{sfn|De Vito|Tropea|2010|p=202}} It opened in New York City on 21 September 1974.{{sfn|Steene|2005|p=425}} The full miniseries was later aired in the U.S. by [[PBS]] in March and April 1977,{{sfn|Steene|2005|p=425}} and numerous times in 1979.{{sfn|Tannen|1994|p=142}} Additionally, a British-dubbed version aired on [[BBC Two]] in 1975.<ref>[https://genome.ch.bbc.co.uk/search/0/20?order=first&q=%40title+Six+Scenes+from+a+Marriage&after=1975-01-01T00%3A00%3A00.000Z&before=1985-12-31T23%3A59%3A59.999Z#top Search results for Six Scenes from a Marriage on the BBC Programme Index]{{dead link|date=September 2025|bot=medic}}{{cbignore|bot=medic}}</ref> [[The Criterion Collection]] released the miniseries and theatrical version on a three-disc [[DVD]] in [[DVD region code#1|Region 1]] in 2004, complete with interviews and an essay by [[Phillip Lopate]].<ref>{{Cite web |url=https://www.dvdtalk.com/reviews/10304/scenes-from-a-marriage-criterion-collection/ |title=Scenes From a Marriage – Criterion Collection |last=Galbraith |first=Stuart IV |date=16 March 2004 |access-date=8 October 2017 |work=[[DVD Talk]] |archive-url=https://web.archive.org/web/20171009042158/http://www.dvdtalk.com/reviews/10304/scenes-from-a-marriage-criterion-collection/ |archive-date=9 October 2017 |url-status=live }}</ref>
+
+==Reception==
+===Critical reception===
+[[File:Maj Wechselmann-1990.jpg|thumb|upright|Swedish director [[Maj Wechselmann]] criticized ''Scenes from a Marriage'' for its approach to marriage roles.]]
+
+In Sweden, ''Scenes from a Marriage'' received positive reviews for its dialogue and realism, with Mauritz Edstrom calling it "one of Bergman's finest human portrayals".{{sfn|Steene|2005|p=425}} Åke Janzon said that while the miniseries was not a masterpiece, it demonstrated psychological tension. Swedish director [[Maj Wechselmann]] criticized it on [[feminism in Sweden|feminist]] grounds, saying it failed to criticize marriage roles.{{sfn|Steene|2005|p=425}} Bergman replied that the miniseries was meant to depict "Marianne's liberation" and female "suppressed aggressions".{{sfn|Steene|2005|p=426}} One controversy revolved around allegations that ''Scenes From a Marriage'' led to higher divorce rates in Sweden and around Europe by teaching couples to communicate their conflicts.{{sfn|Shargel|2007|p=xxv}}<ref>{{Cite web |url=https://www.theguardian.com/film/2008/jul/30/ingmar.bergman |title=Do Swedes still blame Bergman for upping the divorce rate? |last=Fouché |first=Gwladys |date=30 July 2008 |access-date=3 October 2016 |work=[[The Guardian]] |archive-url=https://web.archive.org/web/20161006024750/https://www.theguardian.com/film/2008/jul/30/ingmar.bergman |archive-date=6 October 2016 |url-status=live }}</ref> Swedish divorce rates allegedly doubled one year after the miniseries was broadcast in 1973.<ref>{{Cite web |url=https://www.nytimes.com/2014/09/23/theater/scenes-from-a-marriage-adapted-from-ingmar-bergman.html |title=A Marriage in Trouble, in Triplicate |last=Brantley |first=Ben |date=22 September 2014 |access-date=3 October 2016 |work=[[The New York Times]] |archive-url=https://web.archive.org/web/20170429183454/https://www.nytimes.com/2014/09/23/theater/scenes-from-a-marriage-adapted-from-ingmar-bergman.html |archive-date=29 April 2017 |url-status=live }}</ref><ref>{{Cite web |url=https://www.independent.co.uk/arts-entertainment/theatre-dance/reviews/theatre-review-scenes-from-a-marriage-a-merciless-dissection-on-the-state-of-matrimony-8839217.html |title=Theatre review: Scenes from a Marriage – 'A merciless dissection on the state of matrimony' |last=Taylor |first=Paul |date=25 September 2013 |access-date=3 October 2016 |work=[[The Independent]] |archive-url=https://web.archive.org/web/20161005131038/http://www.independent.co.uk/arts-entertainment/theatre-dance/reviews/theatre-review-scenes-from-a-marriage-a-merciless-dissection-on-the-state-of-matrimony-8839217.html |archive-date=5 October 2016 |url-status=live }}</ref> In 2013 Rachel Halliburton disputed these allegations in ''[[Time Out (magazine)|Time Out]]'' magazine, remarking that [[sexual liberation|sexual]] and [[women's liberation]] were gaining prominence at the time and that the miniseries "as such was as much a symptom of what was happening to modern marriage as a cause".<ref>{{Cite web |url=https://www.timeout.com/london/theatre/scenes-from-a-marriage-1 |title=Scenes from a Marriage |last=Halliburton |first=Rachel |date=25 September 2013 |access-date=3 October 2016 |work=[[Time Out (magazine)|Time Out]] |archive-url=https://web.archive.org/web/20161005164041/http://www.timeout.com/london/theatre/scenes-from-a-marriage-1 |archive-date=5 October 2016 |url-status=live }}</ref>
+
+In the United States, [[Roger Ebert]] gave the theatrical version a full four stars, calling it "one of the truest, most luminous love stories ever made"<ref name="Ebert">{{Cite web |url=https://www.rogerebert.com/reviews/scenes-from-a-marriage-1974 |title=Scenes from a Marriage |last=Ebert |first=Roger |date=15 September 1974 |access-date=2 October 2016 |work=Rogerebert.com |archive-url=https://web.archive.org/web/20161003192213/http://www.rogerebert.com/reviews/scenes-from-a-marriage-1974 |archive-date=3 October 2016 |url-status=live }}</ref> and "the best film of 1974".<ref>{{cite news |url=http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/20041215/COMMENTARY/41215001/1023 |work=Chicago Sun-Times |title=Ebert's 10 Best Lists: 1967–present |url-status=dead |archive-url=https://web.archive.org/web/20060908200137/http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=%2F20041215%2FCOMMENTARY%2F41215001%2F1023 |archive-date=September 8, 2006 |df=mdy-all }}</ref> [[Vincent Canby]], chief critic for ''[[The New York Times]]'', called the theatrical version "a movie of such extraordinary intimacy that it has the effect of breaking into mysterious components many things we ordinarily accept without thought, familiar and banal objects, faces, attitudes, and emotions, especially love. [...] Ullmann again establishes herself as one of the most fascinating actresses of our time." Canby also wrote that "Josephson gives an equally complex performance" but found the character less admirable.<ref name="Canby"/> Don Druker of ''[[Chicago Reader]]'' criticized the editing for the cinema, saying that the film "shows its reassembled status rather badly" and that "moments of searing insight" were provided mainly by Ullmann.<ref>{{Cite web |url=http://www.chicagoreader.com/chicago/scenes-from-a-marriage/Film?oid=1059839 |title=Scenes From a Marriage |last=Druker |first=Don |access-date=2 October 2016 |work=[[Chicago Reader]] |date=26 October 1985 |archive-url=https://web.archive.org/web/20150915015008/http://www.chicagoreader.com/chicago/scenes-from-a-marriage/Film?oid=1059839 |archive-date=15 September 2015 |url-status=live }}</ref>
+
+The film was included in "''The New York Times'' Guide to the Best 1,000 Movies Ever Made" in 2002.<ref>{{cite news|url=https://www.nytimes.com/ref/movies/1000best.html |title=The Best 1,000 Movies Ever Made |newspaper=The New York Times |year=2002| access-date=7 December 2013 | archive-date=11 December 2013 | archive-url= https://web.archive.org/web/20131211043539/http://www.nytimes.com/ref/movies/1000best.html}}</ref> In 2004, essayist [[Phillip Lopate]] wrote that ''Scenes from a Marriage'' showed Bergman moving on from exploration of God's silence to the subject of men, women, love and intimacy. Lopate found the film version "more harrowing and theatrical," while the miniseries "has the tendency to intersect with and form a more quotidian relationship to viewers’ lives; its characters become members of the family, and their resilience over time, regardless of the incessant crises thrown them by the script, induces a more good-humored, forgiving atmosphere."<ref>{{Cite web |url=https://www.criterion.com/current/posts/318-scenes-from-a-marriage |title=Scenes from a Marriage |last=Lopate |first=Phillip |date=15 March 2004 |access-date=2 October 2016 |work=[[The Criterion Collection]] |archive-url=https://web.archive.org/web/20161003191524/https://www.criterion.com/current/posts/318-scenes-from-a-marriage |archive-date=3 October 2016 |url-status=live }}</ref> In 2007, Kristi McKim of ''[[Senses of Cinema]]'' wrote that the film "stunningly exemplified" the "tension" in "the emotional causes and effects of feeling incompatible desires within the modern world."<ref>{{Cite web |url=http://sensesofcinema.com/2007/cteq/scenes-marriage/ |title=Marriage as Cinematic Movement, or Loving the Face in Close-Up: ''Scenes From a Marriage'' |last=McKim |first=Kristi |date=August 2007 |access-date=2 October 2016 |work=[[Senses of Cinema]] Issue 44 |archive-url=https://web.archive.org/web/20161003185914/http://sensesofcinema.com/2007/cteq/scenes-marriage/ |archive-date=3 October 2016 |url-status=live }}</ref> The film has an 88% approval rating on [[Rotten Tomatoes]], based on 24 reviews, and an average rating of 8.6/10.<ref>{{Cite web|url=https://www.rottentomatoes.com/m/scenes_from_a_marriage/|title=Scenes From A Marriage (Scener Ur Ett Äktenskap) (1974)|access-date=20 March 2023|work=[[Rotten Tomatoes]]|archive-url=https://web.archive.org/web/20161011055505/https://www.rottentomatoes.com/m/scenes_from_a_marriage/|archive-date=11 October 2016|url-status=live}}</ref> It was included on [[BBC]]'s 2018 list of the 100 greatest foreign-language films.<ref>{{cite web|title=The 100 Greatest Foreign Language Films|url= https://www.bbc.com/culture/article/20181029-the-100-greatest-foreign-language-films|website=bbc|date=29 October 2018|access-date=10 January 2021}}</ref>
+
+===Accolades===
+The [[National Board of Review]] named ''Scenes from a Marriage'' one of the top foreign-language films of [[National Board of Review Awards 1974|1974]].<ref>{{cite web|title=National Board of Review of Motion Pictures: Awards for 1974|url=http://www.nbrmp.org/awards/past.cfm?year=1974|website=National Board of Review of Motion Pictures| archive-url=https://web.archive.org/web/20070929103120/http://www.nbrmp.org/awards/past.cfm?year=1974 | archive-date=29 September 2007 }}</ref> It sparked controversy when its ineligibility for the [[Academy Award for Best Foreign Language Film]] was questioned. The supposed reason was that it aired on television before it played in cinemas, but at the time that did not necessarily render a film ineligible. In this case, it was because the TV broadcast occurred the year before its theatrical debut in 1974.<ref name="Gates">{{Cite web |url=https://www.nytimes.com/1995/01/15/movies/film-there-are-movies-and-then-there-are-movies.html?pagewanted=all |title=There Are Movies, And Then There Are Movies |last=Gates |first=Anita |date=15 January 1995 |access-date=2 October 2016 |work=[[The New York Times]] |archive-url=https://web.archive.org/web/20161003194016/http://www.nytimes.com/1995/01/15/movies/film-there-are-movies-and-then-there-are-movies.html?pagewanted=all |archive-date=3 October 2016 |url-status=live }}</ref> The film's ineligibility prompted 24 filmmakers, including [[Frank Capra]] and [[Federico Fellini]], to write an open letter demanding the rules for eligibility be revised.<ref name="Gates"/>
+
+{| class="wikitable plainrowheaders sortable"
+|-
+! scope="col"| Award
+! scope="col"| Date of ceremony
+! scope="col"| Category
+! scope="col"| Recipient(s)
+! scope="col"| Result
+! scope="col" class="unsortable"| {{Abbr|Ref(s)|Reference(s)}}
+|-
+!scope="row" | [[British Academy Film Awards|BAFTA Awards]]
+| rowspan="1" | [[29th British Academy Film Awards|1976]]
+| [[BAFTA Award for Best Actress in a Leading Role|Best Actress]]
+| [[Liv Ullmann]]
+| {{nom}}
+| rowspan="1" | {{sfn|Long|2006|p=xvi}} 
+|-
+!scope="row" rowspan=2| [[Golden Globe Award|Golden Globes]]
+| rowspan="2" | [[32nd Golden Globe Awards|25 January 1975]]
+| [[Golden Globe Award for Best Foreign Language Film|Best Foreign Language Film]]
+| ''Scenes from a Marriage''
+| {{won}}
+| rowspan="2" | <ref>{{Cite web|url=http://www.goldenglobes.com/film/scenes-marriage|title=Scenes from a Marriage|access-date=2 October 2016|work=[[Golden Globe Awards]]|archive-url=https://web.archive.org/web/20160324221329/http://www.goldenglobes.com/film/scenes-marriage|archive-date=24 March 2016|url-status=live}}</ref> 
+|-
+| [[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Motion Picture – Drama]]
+| Liv Ullmann
+| {{nom}}
+|-
+!scope="row" rowspan=5| [[National Society of Film Critics]]
+| rowspan="5" | [[1974 National Society of Film Critics Awards|5 January 1975]]
+| [[National Society of Film Critics Award for Best Film|Best Film]] 
+| ''Scenes from a Marriage''
+| {{won}}
+| rowspan="5" | <ref name="Gates"/><ref>{{cite news|title=National Society of Film Critics Hails 'Scenes From a Marriage'|url=https://www.nytimes.com/1975/01/06/archives/national-society-of-film-critics-hails-scenes-from-a-marriage.html|access-date=3 January 2018|work=The New York Times|date=6 January 1975}}</ref>
+|-
+| [[National Society of Film Critics Award for Best Screenplay|Best Screenplay]] 
+|rowspan=2| [[Ingmar Bergman]]
+| {{won}}
+|-
+| [[National Society of Film Critics Award for Best Director|Best Director]]
+| {{draw|Runner-up}}
+|-
+| [[National Society of Film Critics Award for Best Actress|Best Actress]] 
+| Liv Ullmann
+| {{won}}
+|-
+| [[National Society of Film Critics Award for Best Supporting Actress|Best Supporting Actress]] 
+| [[Bibi Andersson]]
+| {{won}}
+|-
+!scope="row" rowspan=5| [[New York Film Critics Circle]]
+| rowspan="5" | [[1974 New York Film Critics Circle Awards|28 January 1975]]
+| [[New York Film Critics Circle Award for Best Film|Best Film]] 
+| ''Scenes from a Marriage''
+| {{draw|Runner-up}}
+| rowspan="5" | <ref>{{Cite web|url=http://www.nyfcc.com/awards/?awardyear=1974|title=1974 Awards|access-date=2 October 2016|work=[[New York Film Critics Circle]]|archive-url=https://web.archive.org/web/20161113214701/http://www.nyfcc.com/awards/?awardyear=1974|archive-date=13 November 2016|url-status=live}}</ref> 
+|-
+| [[New York Film Critics Circle Award for Best Director|Best Director]]
+| rowspan="2" | Ingmar Bergman
+| {{draw|Runner-up}}
+|-
+| [[New York Film Critics Circle Award for Best Screenplay|Best Screenplay]]
+| {{won}}
+|-
+| [[New York Film Critics Circle Award for Best Actress|Best Actress]]
+| Liv Ullmann
+| {{won}}
+|-
+| [[New York Film Critics Circle Award for Best Supporting Actress|Best Supporting Actress]]
+| Bibi Andersson
+| {{draw|Runner-up}}
+|-
+|}
+
+==Legacy==
+Bergman's 1980 television film ''[[From the Life of the Marionettes]]'' centres on a couple named Peter and Katarina, loosely based on the supporting characters of those names in ''Scenes from a Marriage''.{{sfn|Steene|2005|pp=151–152}}{{sfn|Luko|2015|p=209}}{{sfn|Maltin|2017|p=507}} Bergman also wrote the first stage adaptation of ''Scenes from a Marriage'' for the [[Residenztheater (Munich)|Residenztheater in Munich]] in 1981.{{sfn|Gado|1986|p=400}} ''[[Saraband]]'', a quasi-sequel set decades after the original miniseries, aired on Swedish television in 2003.{{sfn|Sundholm|Thorsen|Andersson|Hedling|2012|p=74}} In 2008, a theatrical adaption by [[Joanna Murray-Smith]] was performed at the [[Belgrade Theatre]] in [[Coventry]], directed by [[Trevor Nunn]] and starring [[Imogen Stubbs]] and [[Iain Glen]].
+
+''[[Knots Landing]]'' creator [[David Jacobs (writer)|David Jacobs]] based the series on ''Scenes from a Marriage''.<ref>{{Cite web |url=http://www.today.com/id/23389302/ns/today-entertainment/t/knots-landing-cast-explains-dramas-longevity/#.V_HW6PArLIU |title='Knots Landing' cast explains drama's longevity |last=Celizic |first=Mike |date=28 February 2008 |access-date=2 October 2016 |work=[[Today (American TV program)|Today.com]] |archive-url=https://web.archive.org/web/20160308102329/http://www.today.com/id/23389302/ns/today-entertainment/t/knots-landing-cast-explains-dramas-longevity/#.V_HW6PArLIU |archive-date=8 March 2016 |url-status=live }}</ref> [[Shashi Deshpande]] informally adapted it into the screenplay for [[Govind Nihalani]]'s ''[[Drishti (film)|Drishti]]'' in 1990.<ref>{{cite book |last1=Rajadhyaksha |first1=Ashish |last2=Willemen |first2=Paul |title=Encyclopedia of Indian Cinema |date=1999 |publisher=Routledge |isbn=978-1-135-94325-7 |page=496 |url=https://archive.org/details/encyclopaediaofi0000raja/page/496/mode/2up?q=drishti |language=en}}</ref><ref>{{cite news |last1=Dasgupta |first1=Chidananda |author-link1=Chidananda Dasgupta |title=Rudali (The Mourner) |work=Cinemaya |date=1993 |pages=30–31}}</ref> In 1991, [[Woody Allen]] costarred in [[Paul Mazursky]]'s ''[[Scenes from a Mall]]'', a [[dark comedy]] about a deteriorating marriage.<ref>{{Cite web |url=http://www.tasteofcinema.com/2014/10-strong-cinematic-links-between-ingmar-bergman-and-woody-allen/ |title=10 Strong Cinematic Links Between Ingmar Bergman and Woody Allen |last=Eno |first=Richard |date=30 November 2014 |access-date=2 October 2016 |work=Taste of Cinema |archive-url=https://web.archive.org/web/20161003201758/http://www.tasteofcinema.com/2014/10-strong-cinematic-links-between-ingmar-bergman-and-woody-allen/ |archive-date=3 October 2016 |url-status=live}}</ref><ref>{{cite news|title=Scenes from a Mall|work= [[Variety (magazine)|Variety]]|date=December 31, 1990|url= https://variety.com/1990/film/reviews/scenes-from-a-mall-1200428761/|access-date=2012-06-10}}</ref> Allen's similarly realist 1992 film ''[[Husbands and Wives]]'' is also influenced by ''Scenes from a Marriage''.<ref>{{Cite web |url=https://www.nytimes.com/1992/09/18/movies/review-film-husbands-and-wives-fact-fiction-it-doesn-t-matter.html?pagewanted=all |title=Review/Film Husbands and Wives; Fact? Fiction? It Doesn't Matter |last=Canby |first=Vincent |date=18 September 1992 |access-date=2 October 2016 |work=[[The New York Times]] |archive-url=https://web.archive.org/web/20161003194704/http://www.nytimes.com/1992/09/18/movies/review-film-husbands-and-wives-fact-fiction-it-doesn-t-matter.html?pagewanted=all |archive-date=3 October 2016 |url-status=live}}</ref> Some critics compared Allen's ''[[Annie Hall]]'' (1977) to ''Scenes from a Marriage''.<ref>{{cite web |url=https://movies.nytimes.com/movie/review?res=EE05E7DF173AE562BC4951DFB266838C669EDE |title=Movie Review – Annie Hall |last=Canby |first=Vincent |author-link=Vincent Canby |date=21 April 1977 |work=[[The New York Times]] |access-date=19 July 2012 |archive-url=https://web.archive.org/web/20130721233636/http://movies.nytimes.com/movie/review?res=EE05E7DF173AE562BC4951DFB266838C669EDE |archive-date=21 July 2013 |url-status=live}}</ref><ref>{{cite magazine |last=McBride |first=Joseph |author-link=Joseph McBride (writer) |url=https://variety.com/1977/more/reviews/annie-hall-1200424062/ |title=Variety Reviews – Annie Hall |magazine=[[Variety (magazine)|Variety]] |date=29 March 1979 |access-date=19 July 2012 |archive-url=https://web.archive.org/web/20160304205838/http://variety.com/1977/more/reviews/annie-hall-1200424062/ |archive-date=4 March 2016 |url-status=live}}</ref>
+
+In an April 2011 ''New York Times'' Opinionator article titled "Too Much Relationship Vérité", [[Virginia Heffernan]] compares ''[[An American Family]]'' to ''Scenes from a Marriage'': {{blockquote|It's now the future. And the 12-hour [[Public Broadcasting Service|PBS]] time capsule, which will make a rare reappearance next week at the [[Paley Center]] in Manhattan and on some public-TV affiliates beginning Saturday, looks more like [[performance art]] than social science. Hammy stunts for the camera alternate with Bergman-esque staging. ("Scenes from a Marriage", Bergman’s fictional TV series, also appeared in 1973, in Sweden.)<ref>{{cite news|author=Heffernan, Virginia|title=Too Much Relationship Vérité|date=17 April 2011|work=The New York Times|url=http://opinionator.blogs.nytimes.com/2011/04/17/too-much-relationship-verite/|access-date=18 September 2012|archive-url=https://web.archive.org/web/20120930120500/http://opinionator.blogs.nytimes.com/2011/04/17/too-much-relationship-verite/|archive-date=30 September 2012|url-status=live|df=dmy-all}}</ref>}}
+
+In June 2013, actor [[Ethan Hawke]] and director [[Richard Linklater]] said ''Scenes from a Marriage'' was the standard by which their [[Before Midnight (2013 film)|''Before Midnight'']] must be judged.<ref>{{cite news|author=Film Society of Lincoln Center|title=Summer Talks: "Before Midnight"|date=6 June 2013|url=http://www.youtube.com/watch?v=aLdeVf3rfCk/|access-date=24 June 2013|archive-url=https://web.archive.org/web/20131024215052/http://www.youtube.com/watch?v=aLdeVf3rfCk|archive-date=24 October 2013|url-status=live}}</ref> Russian director [[Andrey Zvyagintsev]] initially conceived ''[[Loveless (film)|Loveless]]'' (2017) as a remake of ''Scenes from a Marriage'',<ref>{{cite web |url=https://www.calvertjournal.com/articles/show/9089/zvyagintsev-returns-russias-foremost-director-new-film-loveless-critics |title=Zvyagintsev returns: Russia's foremost director on his new film Loveless, critics and creativity |last=Goff |first=Samuel |work=[[The Calvert Journal]] |date=11 October 2017 |access-date=10 November 2017 |archive-url=https://web.archive.org/web/20171111021539/https://www.calvertjournal.com/articles/show/9089/zvyagintsev-returns-russias-foremost-director-new-film-loveless-critics |archive-date=11 November 2017 |url-status=live }}</ref> with critics also comparing Zvyagintsev's finished product to Bergman's miniseries.<ref>{{cite web |url=https://www.theguardian.com/film/2017/may/17/loveless-review-leviathan-director-andrei-zvyagintsev-cannes-2017 |title=Loveless review – eerie thriller of hypnotic, mysterious intensity from Leviathan director |last=Bradshaw |first=Peter |work=[[The Guardian]] |date=17 May 2017 |access-date=10 November 2017 |archive-url=https://web.archive.org/web/20170526183048/https://www.theguardian.com/film/2017/may/17/loveless-review-leviathan-director-andrei-zvyagintsev-cannes-2017 |archive-date=26 May 2017 |url-status=live }}</ref><ref>{{cite web |url=https://www.slantmagazine.com/house/article/bfi-london-film-festival-2017-andrey-zvyagintsevs-loveless-review |title=BFI London Film Festival 2017: Andrey Zvyagintsev's Loveless |last=Semerene |first=Diego |work=[[Slant Magazine]] |date=12 October 2017 |access-date=10 November 2017 |archive-url=https://web.archive.org/web/20171111023002/https://www.slantmagazine.com/house/article/bfi-london-film-festival-2017-andrey-zvyagintsevs-loveless-review |archive-date=11 November 2017 |url-status=live }}</ref> [[Noah Baumbach]]'s ''[[Marriage Story]]'' (2019) also contains references to ''Scenes from a Marriage''.<ref>{{cite magazine |url=https://www.newyorker.com/magazine/2019/11/11/end-times-in-terminator-dark-fate-and-marriage-story |title=End Times in 'Terminator: Dark Fate' and 'Marriage Story' |last=Lane |first=Anthony |magazine=[[The New Yorker]] |date=1 November 2019 |access-date=12 April 2020 
+}}</ref><ref>{{cite web |url=https://www.theguardian.com/film/2019/nov/11/microaggressions-and-misery-why-marriage-story-is-a-rare-example-of-a-hollywood-divorce-film |title=Microaggressions and misery: why Marriage Story is a rare example of a Hollywood divorce film |last=Rose |first=Steve |work=[[The Guardian]] |date=11 November 2019 |access-date=12 April 2020 
+}}</ref>
+
+==References==
+{{reflist}}
+
+===Bibliography===
+{{refbegin|30em}}
+* {{cite book |last=Cardullo |first=Bert |chapter=Ingmar Bergman |title=European Directors and Their Films: Essays on Cinema |location=Lanham, Toronto and Plymouth |publisher=The Scarecrow Press |date=2012 |isbn=978-0810885264 }}
+* {{cite book |last1=De Vito |first1=John |last2=Tropea |first2=Frank |title=Epic Television Miniseries: A Critical History |location=Jefferson, North Carolina and London |publisher=McFarland & Company |date=2010 |isbn=978-0786457335 }}
+* {{cite book |last=Gado|first=Frank |title=The Passion of Ingmar Bergman |url=https://archive.org/details/passionofingmarb0000gado|url-access=registration|location=Durham |publisher=Duke University Press |date=1986 |isbn=0822305860 }}
+* {{cite book |last=Hart |first=Kylo-Patrick R. |chapter=The Auteur Filmmaker as Star: Reading the Films of Ingmar Bergman as Autobiographical Acts |title=Film and Television Stardom |publisher=Cambridge Scholars Publishing |date=2008 }}
+* {{cite book |last=Long|first=Robert Emmet|title=Liv Ullmann: Interviews |publisher=University Press of Mississippi|date=2006 |isbn=157806824X }}
+* {{cite book |last=Luko |first=Alexis |title=Sonatas, Screams, and Silence: Music and Sound in the Films of Ingmar Bergman |publisher=Penguin |date=2015 |isbn=978-1135022747 }}
+* {{cite book |last=Maltin |first=Leonard |title=Leonard Maltin's Movie Guide: The Modern Era, Previously Published as Leonard Maltin's 2015 Movie Guide |location=New York |publisher=Routledge |date=2017 |isbn=978-0525536314 }}
+* {{cite book |editor1-last=Shargel |editor1-first=Raphael |title=Ingmar Bergman: Interviews |publisher=University Press of Mississippi |date=2007 |isbn=978-1578062188 }}
+* {{cite book |last=Steene |first=Birgitta|title=Ingmar Bergman: A Reference Guide |location=Amsterdam |publisher=Amsterdam University Press |date=2005 |isbn=9053564063 }}
+* {{cite book |last1=Sundholm |first1=John |last2=Thorsen |first2=Isak |last3=Andersson |first3=Lars Gustaf |last4=Hedling |first4=Olof |last5=Iversen |first5=Gunnar |last6=Møller |first6=Birgir Thor |title=Historical Dictionary of Scandinavian Cinema |location=Lanham, Maryland |publisher=The Scarecrow Press |date=2012 |isbn=978-0810855243 }}
+* {{cite book |last=Tannen |first=Deborah |title=Gender and Discourse |date=1994 |publisher=Oxford University Press |location=New York and Oxford |isbn=0195089758 |url-access=registration |url=https://archive.org/details/genderdiscourse00debo }}
+* {{cite book|last=Vermilye |first=Jerry |title=Ingmar Bergman: His Life and Films|url=https://books.google.com/books?id=hk-t7fseGQIC&pg=PA123 |date=1 January 2002|publisher=McFarland & Company Publishers |isbn=978-0-7864-1160-3 }}
+{{refend}}
+
+==External links==
+* {{IMDb title|0070644}}
+* {{sfdb title|19808}}
+* [https://www.criterion.com/current/posts/318-scenes-from-a-marriage-natural-antagonists ''Scenes from a Marriage: Natural Antagonists''] – an essay by [[Phillip Lopate]] at [[The Criterion Collection]]
+
+{{Ingmar Bergman}}
+{{Navboxes
+|title = Awards for ''Scenes from a Marriage''
+|list =
+{{Golden Globe Award for Best Foreign Language Film 1965–1989}}
+{{National Society of Film Critics Award for Best Film}}
+}}
+
+{{DEFAULTSORT:Scenes From A Marriage}}
+[[Category:1973 films]]
+[[Category:1973 drama films]]
+[[Category:1973 independent films]]
+[[Category:1973 Swedish television series debuts]]
+[[Category:1973 Swedish television series endings]]
+[[Category:1973 Swedish films]]
+[[Category:1970s Swedish-language films]]
+[[Category:1970s television miniseries]]
+[[Category:Films about adultery]]
+[[Category:Television shows about adultery]]
+[[Category:Best Foreign Language Film Golden Globe winners]]
+[[Category:Films about abortion]]
+[[Category:Films about domestic violence]]
+[[Category:Films about divorce]]
+[[Category:Films adapted into plays]]
+[[Category:Films directed by Ingmar Bergman]]
+[[Category:Films set in Sweden]]
+[[Category:Films shot in Stockholm]]
+[[Category:Films with screenplays by Ingmar Bergman]]
+[[Category:National Society of Film Critics Award for Best Film winners]]
+[[Category:Swedish drama films]]
+[[Category:Swedish drama television series]]
+[[Category:Swedish independent films]]
+[[Category:Swedish television miniseries]]
+[[Category:Television controversies in Sweden]]
+[[Category:Television series about divorce]]
+[[Category:Television shows shot in Sweden]]
+[[Category:Television shows set in Stockholm]]
+[[Category:Films about marriage]]

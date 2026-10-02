@@ -5,7 +5,9 @@
 .tv-series-card p{font-size:12px;color:#bfc1c8;margin:8px 0}
 .tv-series-card .unified-movie-title-block>span{display:flex;width:calc(100% + 46px);align-items:baseline;gap:5px;color:var(--text-soft);font-size:.82rem;font-weight:750;white-space:nowrap}
 .tv-series-card .unified-movie-title-block>span>strong{font-weight:850}
-.tv-series-card .tv-actions button{font-size:12px;padding:7px 9px}
+.tv-results-summary{color:var(--text-soft);font-size:13px;margin:6px 0 12px}
+.tv-missing-next{font-size:12px;text-align:left;max-width:100%;white-space:normal}
+.tv-poster-editor{background:#1b1d23;color:#eee;border:1px solid #41434c;border-radius:10px;padding:24px;max-width:520px;margin:12vh auto}
 .tv-series-header{display:flex;gap:28px;padding:28px;background-size:cover;background-position:center;border:1px solid #37383c;border-radius:12px;margin:18px 0}
 .tv-series-header>img{border-radius:9px}
 .tv-series-header h1{font-size:34px;margin:8px 0}
@@ -105,18 +107,30 @@
 .tv-discover-workspace .tv-search-controls{gap:18px}
 .tv-search-controls .library-search-panel,.tv-search-controls .discover-search-panel,.tv-search-controls .library-filter-toolbar,.tv-search-controls .tv-discover-toolbar{min-width:0;width:100%;box-sizing:border-box}
 .tv-search-controls .library-filter-toolbar,.tv-search-controls .tv-discover-toolbar{margin:0}
-.tv-discover-toolbar{overflow-x:auto;scrollbar-width:thin}
-.tv-discover-toolbar>select,.tv-discover-toolbar>.library-mini-input{min-width:110px}
-.tv-discover-toolbar>select[aria-label="TV Discover feed"]{min-width:140px}
-.tv-discover-toolbar>select[aria-label="TV Original language"]{min-width:150px}
-.tv-discover-toolbar>select[aria-label="TV Viewing states"]{min-width:130px}
+@media (min-width:981px){.tv-discover-toolbar>select,.tv-discover-toolbar>.library-mini-input{min-width:145px}}
 .tv-discover-workspace .tv-series-grid{gap:var(--space-3)}
-.tv-library-workspace .library-filter-toolbar-tv{grid-template-columns:repeat(4,minmax(145px,1fr)) minmax(175px,1.13fr) minmax(145px,1fr) 38px}
-.tv-library-workspace .library-filter-toolbar-tv>select,.tv-library-workspace .library-filter-toolbar-tv>.library-mini-input{width:100%;min-width:0;box-sizing:border-box}
-.tv-library-workspace .library-filter-toolbar-tv>select[aria-label="Sort TV shows"]{grid-column:span 2}
+.tv-library-workspace .library-filter-toolbar-tv>select,.tv-library-workspace .library-filter-toolbar-tv>.library-mini-input{box-sizing:border-box}
 .tv-file-view{display:grid;gap:14px}
+.tv-library-import-launch{height:46px;white-space:nowrap}
+dialog.tv-library-import{width:min(1100px,calc(100vw - 160px));max-height:82vh;padding:16px;border:1px solid #41434c;border-radius:9px;background:#1b1d23;color:#eee;overflow-y:auto;box-shadow:0 18px 70px #000b}
+dialog.tv-library-import::backdrop{background:#000b}
+.tv-import-heading{position:sticky;top:-16px;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;background:#1b1d23}
+.tv-import-heading h2{margin:0;font-size:20px}
+.tv-library-import summary{cursor:pointer}
+.tv-library-import input{background:#202128;border:1px solid #41434c;border-radius:7px;color:#eee;padding:9px}
+.tv-import-group{padding:14px;margin:12px 0;border:1px solid #41434c;border-radius:7px}
+.tv-import-group h3{margin:0;overflow-wrap:anywhere;font-size:15px}
+.tv-import-picker{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0}
+.tv-import-picker label{display:flex;align-items:center;gap:8px}
+.tv-import-candidates{display:flex;gap:6px;flex-wrap:wrap;width:100%}
+.tv-import-candidates .selected{border-color:#8ac7ff}
+.tv-import-file{padding:6px 0;border-top:1px solid #34363c}
+.tv-import-child{padding:9px 0;border-top:1px solid #34363c;overflow-wrap:anywhere}
+.tv-import-file p{overflow-wrap:anywhere}
 .tv-file-view .library-file-results{display:grid;gap:10px}
 .tv-file-view .file-row-actions button{white-space:nowrap}
 .tv-file-view .file-row-main{min-width:0}
 .tv-file-view .file-row-copy{min-width:0}
 .tv-file-view .file-row-path{overflow-wrap:anywhere}
+.tv-bulk-dialog{width:min(760px,90vw);max-height:80vh;overflow:auto;padding:20px;border:1px solid #ffffff3d;border-radius:12px;background:#161b24;color:#f3f5fa}
+.tv-bulk-paths{max-height:35vh;overflow:auto;overflow-wrap:anywhere;font-size:12px;padding-left:20px}

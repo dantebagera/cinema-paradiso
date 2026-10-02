@@ -1,0 +1,406 @@
+{{oscars short description|films-year=1955}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 28
+| award            = Academy Awards
+| date             = March 21, 1956
+| site             = [[Pantages Theatre (Hollywood)|RKO Pantages Theatre]], <br>[[Hollywood, California]], <br>[[NBC Century Theatre]]<br>[[New York City]], [[New York (state)|New York]]
+| host             = [[Jerry Lewis]] (Los Angeles), <br />[[Claudette Colbert]] (New York) and <br />[[Joseph L. Mankiewicz]] (New York)
+| producer         = [[Robert E. Dolan|Robert Emmett Dolan]]
+| director         = [[George Seaton]]
+| best_picture     = ''[[Marty (film)|Marty]]''
+| most_wins        = ''Marty'' (4)
+| most_nominations = ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]'', ''Marty'', and ''[[The Rose Tattoo (film)|The Rose Tattoo]]'' (8)
+| network          = [[NBC]]
+| duration         = 
+| last             = 27th
+| next             = 29th
+}}
+
+The '''28th Academy Awards''' were held on March 21, 1956, to honor the films of [[1955 in film|1955]], at the [[RKO Pantages Theatre]] in [[Los Angeles]], [[California]]. In this year, [[Jerry Lewis]] became the host, replacing [[Bob Hope]].<ref name="Oscars '55 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/840/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=840 |isbn=0-385-04060-1}}</ref>
+
+At just 90 minutes, ''[[Marty (film)|Marty]]'' became the shortest film to win Best Picture, as well as the second to have also won the [[Palme d'Or]] at the [[Cannes Film Festival]] (after ''[[The Lost Weekend (film)|The Lost Weekend]]'' in 1945). All of the various winners, with the exception of [[Anna Magnani]], collected their Oscars.<ref name="Oscars '55 Notes"/>
+
+[[Grace Kelly]], soon to be [[Princess of Monaco]], attended the ceremony as a presenter on her way toward retirement from acting.<ref name="Oscars '55 Notes"/> She was chided by [[Louella Parsons]] for failing to acknowledge Lewis' tribute to her from the film business. Parsons wrote, "it seems she might have taken a moment to thank him, give him a little kiss or something before leaving the stage so abruptly."<ref name="Oscars '55 Notes"/>
+
+For the first time in history, all four acting winners were first-time nominees.<ref>{{cite news |last1=Collins |first1=Keith |title=Oscar facts & figures |url=https://variety.com/2006/film/awards/oscar-facts-figures-1117918228/ |access-date=June 15, 2026 |work=Variety |date=February 21, 2006 |url-status=live |archive-url=https://web.archive.org/web/20190605184741/https://variety.com/2006/film/awards/oscar-facts-figures-1117918228/ |archive-date=June 5, 2019 }}</ref>
+
+This was the final year in which the [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]] was a Special/Honorary award. Beginning with the [[29th Academy Awards]], it became a competitive category.
+
+__TOC__
+{{Clear right}}
+
+==Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Jack Metzger – Heidi 1967 ETH-BIB Com L16-0706-0002-0006 crop.jpg
+| caption1          = [[Delbert Mann]], Best Director winner
+| image2            = Ernest Borgnine McHale McHale's Navy 1962.JPG
+| caption2          = [[Ernest Borgnine]]; Best Actor winner
+| image3            = Magnani Campo de' fiori 2.png
+| caption3          = [[Anna Magnani]]; Best Actress winner
+| image4            = Jack Lemmon - 1968.jpg
+| caption4          = [[Jack Lemmon]]; Best Supporting Actor winner
+| image5            = Jo Van Fleet (1950s).jpg
+| caption5          = [[Jo Van Fleet]]; Best Supporting Actress winner
+| image6            = 
+| caption6          = [[Paddy Chayefsky]]; Best Screenplay winner
+| image7            = Sonya Levien - Jul 1925 EH.jpg
+| caption7          = [[Sonya Levien]], Best Story and Screenplay co-winner
+| image8            = Walt Disney 1946.JPG
+| caption8          = [[Walt Disney]]; Best Documentary Short Subject winner
+| image9            = Alfred Newman.jpg
+| caption9          = [[Alfred Newman]], Best Scoring of a Dramatic or Comedy Picture winner
+| image10           = 
+| caption10         = [[Robert Russell Bennett]], Best Scoring of a Musical Picture co-winner
+| image11           = 
+| caption11         = [[Sammy Fain]], Best Song co-winner
+| image12           = James Wong Howe Best Cinematography (cropped).jpg
+| caption12         = [[James Wong Howe]]; Best Cinematography, Black-and-White winner
+| image13           = Levy-Taylor-Rose in Rhapsody.jpg
+| caption13         = [[Helen Rose]], Best Costume Design, Black-and-White winner
+| image14           = Charles LeMaire.jpg
+| caption14         = [[Charles LeMaire]]; Best Costume Design, Color winner
+}}
+
+=== Awards ===
+Nominees were announced on February 18, 1956. Winners are listed first and highlighted in boldface.<ref name="Oscars1956">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1956 |title=The 28th Academy Awards (1956) Nominees and Winners |access-date=2011-08-20 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706094007/http://www.oscars.org/awards/academyawards/legacy/ceremony/28th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Picture|Best Motion Picture]]}}
+* '''''[[Marty (film)|Marty]]'' – [[Harold Hecht]] for [[United Artists]]'''
+** ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]] – ''[[Buddy Adler]] for [[20th Century Fox]]  
+** ''[[Mister Roberts (1955 film)|Mister Roberts]] – ''[[Leland Hayward]] for [[Warner Bros.]] 
+** ''[[Picnic (1955 film)|Picnic]] – ''[[Fred Kohlmar]] for [[Columbia Pictures]]  
+** ''[[The Rose Tattoo (film)|The Rose Tattoo]] – ''[[Hal B. Wallis]] for [[Paramount Pictures]]  
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Director|Best Directing]]}}
+* '''[[Delbert Mann]]&nbsp;– ''[[Marty (film)|Marty]]'''''
+** [[John Sturges]]&nbsp;– ''[[Bad Day at Black Rock]]''
+** [[Elia Kazan]]&nbsp;– ''[[East of Eden (film)|East of Eden]]''
+** [[Joshua Logan]]&nbsp;– ''[[Picnic (1955 film)|Picnic]]''
+** [[David Lean]]&nbsp;– ''[[Summertime (1955 film)|Summertime]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Ernest Borgnine]]&nbsp;– ''[[Marty (film)|Marty]]'' as Marty Piletti'''
+** [[James Cagney]]&nbsp;– ''[[Love Me or Leave Me (film)|Love Me or Leave Me]]'' as Martin Snyder
+** [[James Dean]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]])&nbsp;– ''[[East of Eden (film)|East of Eden]]'' as Caleb Trask
+** [[Frank Sinatra]]&nbsp;– ''[[The Man with the Golden Arm]]'' as Frankie "Dealer" Machine
+** [[Spencer Tracy]]&nbsp;– ''[[Bad Day at Black Rock]]'' as John J. Macreedy
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Anna Magnani]]&nbsp;– ''[[The Rose Tattoo (film)|The Rose Tattoo]]'' as Serafina Delle Rose'''
+** [[Susan Hayward]]&nbsp;– ''[[I'll Cry Tomorrow]]'' as [[Lillian Roth]]
+** [[Katharine Hepburn]]&nbsp;– ''[[Summertime (1955 film)|Summertime]]'' as Jane Hudson
+** [[Jennifer Jones]]&nbsp;– ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]'' as Dr. Han Suyin
+** [[Eleanor Parker]]&nbsp;– ''[[Interrupted Melody]]'' as [[Marjorie Lawrence]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Jack Lemmon]]&nbsp;– ''[[Mister Roberts (1955 film)|Mister Roberts]]'' as Ensign Frank Thurlowe Pulver'''
+** [[Arthur Kennedy]]&nbsp;– ''[[Trial (film)|Trial]]'' as Bernard Castle
+** [[Joe Mantell]]&nbsp;– ''[[Marty (film)|Marty]]'' as Angie
+** [[Sal Mineo]]&nbsp;– ''[[Rebel Without a Cause]]'' as John "Plato" Crawford
+** [[Arthur O'Connell]]&nbsp;– ''[[Picnic (1955 film)|Picnic]]'' as Howard Bevans
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Jo Van Fleet]]&nbsp;– ''[[East of Eden (film)|East of Eden]]'' as [[Cathy Ames]]/Kate Trask'''
+** [[Betsy Blair]]&nbsp;– ''[[Marty (film)|Marty]]'' as Clara
+** [[Peggy Lee]]&nbsp;– ''[[Pete Kelly's Blues (film)|Pete Kelly's Blues]]'' as Rose Hopkins
+** [[Marisa Pavan]]&nbsp;– ''[[The Rose Tattoo (film)|The Rose Tattoo]]'' as Rosa Delle Rose
+** [[Natalie Wood]]&nbsp;– ''[[Rebel Without a Cause]]'' as Judy
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+* '''''[[Love Me or Leave Me (film)|Love Me or Leave Me]]''&nbsp;– [[Daniel Fuchs]]'''
+** ''[[The Private War of Major Benson]]''&nbsp;– [[Joe Connelly (producer)|Joe Connelly]] and [[Bob Mosher]]
+** ''[[Rebel Without a Cause]]''&nbsp;– [[Nicholas Ray]]
+** ''[[The Sheep Has Five Legs]]''&nbsp;– [[Jean Marsan]], [[Henri Troyat]], [[Jacques Perret (writer)|Jacques Perret]], [[Henri Verneuil]], and  [[Raoul Ploquin]]
+** ''[[Strategic Air Command (film)|Strategic Air Command]]''&nbsp;– [[Beirne Lay Jr.]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay)]]}}
+* '''''[[Interrupted Melody]]''&nbsp;– [[William Ludwig (screenwriter)|William Ludwig]] and [[Sonya Levien]]'''
+** ''[[The Court-Martial of Billy Mitchell]]''&nbsp;– [[Milton Sperling]] and [[Emmet Lavery]]
+** ''[[It's Always Fair Weather]]''&nbsp;– [[Betty Comden]] and [[Adolph Green]]
+** ''[[Les Vacances de Monsieur Hulot|Mr. Hulot's Holiday]]''&nbsp;– [[Jacques Tati]] and [[Henri Marquet]]
+** ''[[The Seven Little Foys]]''&nbsp;– [[Melville Shavelson]] and [[Jack Rose (screenwriter)|Jack Rose]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* '''''[[Marty (film)|Marty]]''&nbsp;– [[Paddy Chayefsky]] from ''[[Marty (teleplay)|Marty]]'' by Paddy Chayefsky'''
+** ''[[Bad Day at Black Rock]]''&nbsp;– [[Millard Kaufman]] from "Bad Time at Honda" by [[Howard Breslin]]
+** ''[[Blackboard Jungle]]''&nbsp;– [[Richard Brooks]] from ''[[The Blackboard Jungle (novel)|Blackboard Jungle]]'' by [[Evan Hunter]]
+** ''[[East of Eden (film)|East of Eden]]''&nbsp;– [[Paul Osborn]] from ''[[East of Eden (novel)|East of Eden]]'' by [[John Steinbeck]]
+** ''[[Love Me or Leave Me (film)|Love Me or Leave Me]]''&nbsp;– [[Daniel Fuchs]] and [[Isobel Lennart]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Helen Keller in Her Story]]''&nbsp;– [[Nancy Hamilton]]'''
+** ''[[Crèvecoeur (film)|Heartbreak Ridge]]''&nbsp;– René Risacher
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Men Against the Arctic]]''''' – '''[[Walt Disney]]'''
+** ''[[The Battle of Gettysburg (1955 film)|The Battle of Gettysburg]]''&nbsp;– [[Dore Schary]]
+** ''[[The Face of Lincoln]]''&nbsp;– Wilbur T. Blume
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[Survival City]]''&nbsp;– [[Edmund Reek]]'''
+** ''[[3rd Ave. El (film)|3rd Ave. El]]''&nbsp;– [[Carson Davidson]]
+** ''Gadgets Galore''&nbsp;– [[Robert Youngson]]
+** ''Three Kisses''&nbsp;– [[Justin Herman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[The Face of Lincoln]]''&nbsp;– Wilbur T. Blume'''
+** ''[[24 Hour Alert]]''&nbsp;– Cedric Francis
+** ''[[The Battle of Gettysburg (1955 film)|The Battle of Gettysburg]]''&nbsp;– [[Dore Schary]]
+** ''On the Twelfth Day''&nbsp;– [[George K. Arthur]]
+** ''Switzerland''&nbsp;– [[Walt Disney]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[Speedy Gonzales (film)|Speedy Gonzales]]''&nbsp;– [[Edward Selzer]]'''
+** ''[[Good Will to Men]]''&nbsp;– [[Fred Quimby]], [[William Hanna]], and [[Joseph Barbera]]
+** ''[[The Legend of Rockabye Point]]''&nbsp;– [[Walter Lantz]]
+** ''[[No Hunting]]''&nbsp;– [[Walt Disney]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+* '''''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]''&nbsp;– [[Alfred Newman]]'''
+** ''[[Battle Cry (film)|Battle Cry]]''&nbsp;– [[Max Steiner]]
+** ''[[The Man with the Golden Arm]]''&nbsp;– [[Elmer Bernstein]]
+** ''[[Picnic (1955 film)|Picnic]]''&nbsp;– [[George Duning]]
+** ''[[The Rose Tattoo (film)|The Rose Tattoo]]''&nbsp;– [[Alex North]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+* '''''[[Oklahoma! (film)|Oklahoma!]]''&nbsp;– [[Robert Russell Bennett]], [[Jay Blackton]] and [[Adolph Deutsch]]'''
+** ''[[Daddy Long Legs (1955 film)|Daddy Long Legs]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[Guys and Dolls (film)|Guys and Dolls]]''&nbsp;– [[Jay Blackton]] and [[Cyril J. Mockridge]]
+** ''[[It's Always Fair Weather]]''&nbsp;– [[André Previn]]
+** ''[[Love Me or Leave Me (film)|Love Me or Leave Me]]''&nbsp;– [[Percy Faith]] and [[Georgie Stoll]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[Love Is a Many-Splendored Thing (song)|Love Is a Many-Splendored Thing]]" from ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]''&nbsp;– Music by [[Sammy Fain]]; Lyrics by [[Paul Francis Webster]]'''
+** "[[I'll Never Stop Loving You (1955 song)|I'll Never Stop Loving You]]" from ''[[Love Me or Leave Me (film)|Love Me or Leave Me]]''&nbsp;– Music by [[Nicholas Brodszky]]; Lyrics by [[Sammy Cahn]]
+** "[[Something's Gotta Give (Johnny Mercer song)|Something's Gotta Give]]" from ''[[Daddy Long Legs (1955 film)|Daddy Long Legs]]''&nbsp;– Music and Lyrics by [[Johnny Mercer]]
+** "[[(Love Is) the Tender Trap|The Tender Trap]]" from ''[[The Tender Trap (film)|The Tender Trap]]''&nbsp;– Music by [[Jimmy Van Heusen]]; Lyrics by [[Sammy Cahn]]
+** "[[Unchained Melody]]" from ''[[Unchained (film)|Unchained]]''&nbsp;– Music by [[Alex North]]; Lyrics by [[Hy Zaret]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+* '''''[[Oklahoma! (film)|Oklahoma!]]''&nbsp;– [[Fred Hynes]]'''
+** ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]''&nbsp;– [[Carlton W. Faulkner]]
+** ''[[Love Me or Leave Me (film)|Love Me or Leave Me]]''&nbsp;– [[Wesley C. Miller]]
+** ''[[Mister Roberts (1955 film)|Mister Roberts]]''&nbsp;– [[William A. Mueller]]
+** ''[[Not as a Stranger]]''&nbsp;– [[Watson Jones]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[The Rose Tattoo (film)|The Rose Tattoo]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Tambi Larsen]]; Set Decoration: [[Samuel M. Comer]] and [[Arthur Krams]]'''
+** ''[[Blackboard Jungle]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Randall Duell]]; Set Decoration: [[Edwin B. Willis]] and [[Henry Grace]]
+** ''[[I'll Cry Tomorrow]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Malcolm Brown (art director)|Malcolm Brown]]; Set Decoration: [[Edwin B. Willis]] and [[Hugh Hunt]]
+** ''[[The Man with the Golden Arm]]''&nbsp;– Art Direction: [[Joseph C. Wright]]; Set Decoration: [[Darrell Silvera]]
+** ''[[Marty (film)|Marty]]''&nbsp;– Art Direction: [[Ted Haworth]] and [[Walter M. Simonds]]; Set Decoration: [[Robert Priestley]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[Picnic (1955 film)|Picnic]]''&nbsp;– Art Direction: [[William Flannery]] and [[Jo Mielziner]]; Set Decoration: [[Robert Priestley]]'''
+** ''[[Daddy Long Legs (1955 film)|Daddy Long Legs]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[John DeCuir]]; Set Decoration: [[Walter M. Scott]] and [[Paul S. Fox]]
+** ''[[Guys and Dolls (film)|Guys and Dolls]]''&nbsp;– Art Direction: [[Oliver Smith (designer)|Oliver Smith]] and [[Joseph C. Wright]]; Set Decoration: [[Howard Bristol]]
+** ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[George Davis (art director)|George Davis]]; Set Decoration: [[Walter M. Scott]] and [[Jack Stubbs]]
+** ''[[To Catch a Thief]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Joseph McMillan Johnson]]; Set Decoration: [[Samuel M. Comer]] and [[Arthur Krams]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[The Rose Tattoo (film)|The Rose Tattoo]]''&nbsp;– [[James Wong Howe]]'''
+** ''[[Blackboard Jungle]]''&nbsp;– [[Russell Harlan]]
+** ''[[I'll Cry Tomorrow]]''&nbsp;– [[Arthur Arling]]
+** ''[[Marty (film)|Marty]]''&nbsp;– [[Joseph LaShelle]]
+** ''[[Queen Bee (1955 film)|Queen Bee]]''&nbsp;– [[Charles Lang]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[To Catch a Thief]]''&nbsp;– [[Robert Burks]]'''
+** ''[[Guys and Dolls (film)|Guys and Dolls]]''&nbsp;– [[Harry Stradling]]
+** ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]''&nbsp;– [[Leon Shamroy]]
+** ''[[A Man Called Peter]]''&nbsp;– [[Harold Lipstein]]
+** ''[[Oklahoma! (film)|Oklahoma!]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert Surtees]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+* '''''[[I'll Cry Tomorrow]]''&nbsp;– [[Helen Rose]]'''
+** ''[[The Pickwick Papers (1952 film)|The Pickwick Papers]]''&nbsp;– [[Beatrice Dawson]]
+** ''[[Queen Bee (1955 film)|Queen Bee]]''&nbsp;– [[Jean Louis]]
+** ''[[The Rose Tattoo (film)|The Rose Tattoo]]''&nbsp;– [[Edith Head]]
+** ''[[Ugetsu]]''&nbsp;– [[Tadaoto Kainosho]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+* '''''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]''&nbsp;– [[Charles LeMaire]]'''
+** ''[[Guys and Dolls (film)|Guys and Dolls]]''&nbsp;– [[Irene Sharaff]]
+** ''[[Interrupted Melody]]''&nbsp;– [[Helen Rose]]
+** ''[[To Catch a Thief]]''&nbsp;– [[Edith Head]]
+** ''[[The Virgin Queen (1955 film)|The Virgin Queen]]''&nbsp;– [[Charles LeMaire]] and [[Mary Wills (costume designer)|Mary Wills]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Picnic (1955 film)|Picnic]]''&nbsp;– [[Charles Nelson (film editor)|Charles Nelson]] and [[William Lyon (film editor)|William Lyon]]'''
+** ''[[Blackboard Jungle]]''&nbsp;– [[Ferris Webster]]
+** ''[[The Bridges at Toko-Ri]]''&nbsp;– [[Alma Macrorie]]
+** ''[[Oklahoma! (film)|Oklahoma!]]''&nbsp;– [[Gene Ruggiero]] and [[George Boemler]]
+** ''[[The Rose Tattoo (film)|The Rose Tattoo]]''&nbsp;– [[Warren Low]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Effects]]}}
+* '''''[[The Bridges at Toko-Ri]]''&nbsp;– [[Paramount Pictures|Paramount Studio]]'''
+** ''[[The Dam Busters (film)|The Dam Busters]]''&nbsp;– [[Associated British Picture Corporation|Associated British Picture Corporation, Ltd.]]
+** ''[[The Rains of Ranchipur]]''&nbsp;– [[20th Century Studios|20th Century-Fox Studio]]
+|}
+
+===Honorary Foreign Language Film Award===
+*To ''[[Samurai I: Musashi Miyamoto|Samurai, The Legend of Musashi]]'' ([[Japan]]) - Best Foreign Language Film first released in the United States during 1955. 
+
+==Presenters and performers==
+{{More citations needed section|date=September 2015}}
+
+===Presenters===
+*[[Eva Marie Saint]] (Presenter: Best Supporting Actor)
+*[[Ernest Borgnine]] (Presenter: Best Story & Screenplay)
+
+*[[James Cagney]] (Presenter: Best Special Effects)
+*[[Cantinflas]] (Presenter: Cinematography Awards)
+*[[Maurice Chevalier]] (Presenter: Best Original Song)
+*[[Mel Ferrer]] and [[Claire Trevor]] (Presenter: Scientific and Technical Awards)
+*[[Susan Hayward]] (Presenter: Costume Design Awards)
+*[[Audrey Hepburn]] (Presenter: Best Motion Picture)
+*[[Jennifer Jones]] (Presenter: Best Director)
+*[[Grace Kelly]] (Presenter: Best Actor)
+*[[Peggy Lee]] and [[Jack Lemmon]] (Presenters: Art Direction Awards)
+*[[Marlon Brando]] (Presenter: Best Actress—reading from a film clip shot in Manila<ref>{{YouTube |6snlFNM6fZI |Anna Magnani winning Best Actress for "The Rose Tattoo"}}</ref>)
+*[[Jerry Lewis]] (Presenter: Best Film Editing and Best Actress)
+*[[Anna Magnani]] (Presenter: Best Screenplay)
+*[[Sal Mineo]] (Presenter: Best Sound Recording)
+*[[Edmond O'Brien]] (Presenter: Best Supporting Actress)
+*[[Eleanor Parker]] (Presenter: Documentary Awards)
+*[[Marisa Pavan]], [[Arthur O'Connell]] and [[Jo Van Fleet]] (Presenters: Short Subjects Awards)
+*[[Frank Sinatra]] and Jerry Lewis (Presenters: Best Music Score Awards)
+
+===Performers===
+*[[André Previn]] – Conductor the Academy Awards orchestra
+*[[Harry Belafonte]] ("[[Unchained Melody]]" from ''[[Unchained (film)|Unchained]]'')
+*[[Maurice Chevalier]] ("[[Something's Gotta Give (Johnny Mercer song)|Something's Gotta Give]]" from ''[[Daddy Long Legs (1955 film)|Daddy Long Legs]]'')
+*[[Eddie Fisher (singer)|Eddie Fisher]] ("[[Love Is a Many-Splendored Thing (song)|Love Is a Many-Splendored Thing]]" from ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]'')
+*[[Dean Martin]] ("[[(Love Is) The Tender Trap]]" from ''[[The Tender Trap (film)|The Tender Trap]]'')
+*[[Jane Powell]] ("[[I'll Never Stop Loving You (1955 song)|I'll Never Stop Loving You]]" from ''[[Love Me or Leave Me (film)|Love Me or Leave Me]]'')
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="3" style="text-align:center" | 8
+| ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]''
+|-
+| ''[[Marty (film)|Marty]]''
+|-
+| ''[[The Rose Tattoo (film)|The Rose Tattoo]]''
+|-
+| rowspan="2" style="text-align:center" | 6
+| ''[[Love Me or Leave Me (film)|Love Me or Leave Me]]''
+|-
+| ''[[Picnic (1955 film)|Picnic]]''
+|-
+| rowspan="5" style="text-align:center" | 4
+| ''[[Blackboard Jungle]]''
+|-
+| ''[[East of Eden (film)|East of Eden]]''
+|-
+| ''[[Guys and Dolls (film)|Guys and Dolls]]''
+|-
+| ''[[I'll Cry Tomorrow]]''
+|-
+| ''[[Oklahoma! (film)|Oklahoma!]]''
+|-
+| rowspan="7" style="text-align:center" | 3
+| ''[[Bad Day at Black Rock]]''
+|-
+| ''[[Daddy Long Legs (1955 film)|Daddy Long Legs]]''
+|-
+| ''[[Interrupted Melody]]''
+|-
+| ''[[The Man with the Golden Arm]]''
+|-
+| ''[[Mister Roberts (1955 film)|Mister Roberts]]''
+|-
+| ''[[Rebel Without a Cause]]''
+|-
+| ''[[To Catch a Thief]]''
+|-
+|rowspan="6" style="text-align:center" |2
+| ''[[The Battle of Gettysburg (1955 film)|The Battle of Gettysburg]]''
+|-
+| ''[[The Bridges at Toko-Ri]]''
+|-
+| ''[[The Face of Lincoln]]''
+|-
+| ''[[It's Always Fair Weather]]''
+|-
+| ''[[Queen Bee (1955 film)|Queen Bee]]''
+|-
+| ''[[Summertime (1955 film)|Summertime]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 4
+| ''[[Marty (film)|Marty]]''
+|-
+| rowspan=2, style="text-align:center" | 3
+| ''[[Love Is a Many-Splendored Thing (film)|Love Is a Many-Splendored Thing]]''
+|-
+| ''[[The Rose Tattoo (film)|The Rose Tattoo]]''
+|-
+| rowspan=2, style="text-align:center" | 2 
+| ''[[Oklahoma! (film)|Oklahoma!]]''
+|-
+| ''[[Picnic (1955 film)|Picnic]]''
+|-
+|}
+
+{{Col-float-end}}
+
+==See also==
+*[[13th Golden Globe Awards]]
+*[[1955 in film]]
+* [[7th Primetime Emmy Awards]]
+* [[8th Primetime Emmy Awards]]
+* [[9th British Academy Film Awards]]
+* [[10th Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 28}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1955 film awards]]
+[[Category:1955 awards in the United States]]
+[[Category:1956 in Los Angeles]]
+[[Category:1956 in New York City]]
+[[Category:1956 in American cinema]]
+[[Category:March 1956 in the United States]]
+[[Category:Organized events in New York City]]
+[[Category:1950s in Manhattan]]

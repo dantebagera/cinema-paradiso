@@ -1,0 +1,608 @@
+{{oscars short description|films-year=1996}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number           = 69
+| award            = Academy Awards
+| image            = 69th Academy Awards.jpg
+| caption          = Official poster by [[Arnold Schwartzman]]<ref>{{cite news |last=Hindes |first=Andrew |title=Acad bows poster for 69th Oscars |url=https://variety.com/1996/scene/vpage/acad-bows-poster-for-69th-oscars-1117466260/ |access-date=January 19, 2026 |work=Variety |date=December 11, 1996}}</ref>
+| date             = March 24, 1997
+| site             = [[Shrine Auditorium]], [[Los Angeles]], California, U.S.
+| host             = [[Billy Crystal]]
+| producer         = [[Gilbert Cates|Gil Cates]]
+| director         = [[Louis J. Horvitz]]
+| best_picture     = ''[[The English Patient (film)|The English Patient]]''
+| most_wins        = ''The English Patient'' (9)
+| most_nominations = ''The English Patient'' (12)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 35 minutes<ref>{{cite news |last1=Richmond |first1=Ray |title=The 69th Annual Academy Awards |url=https://variety.com/1997/tv/reviews/the-69th-annual-academy-awards-1200449100/ |access-date=July 30, 2014 |work=[[Variety (magazine)|Variety]] |date=March 24, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140812201735/http://variety.com/1997/tv/reviews/the-69th-annual-academy-awards-1200449100/ |archive-date=August 12, 2014}}</ref>
+| ratings          = 40.08 million<br />27.49% ([[Nielsen ratings]])
+| last             = 68th
+| next             = 70th
+}}
+
+The '''69th Academy Awards''' ceremony, organized by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS) took place on March 24, 1997, at the [[Shrine Auditorium]] in Los Angeles beginning at 6:00&nbsp;p.m. PST / 9:00&nbsp;p.m. EST. During the ceremony, AMPAS presented the [[Academy Awards]] (commonly referred to as Oscars) in 24 categories honoring [[1996 in film|films released in 1996]]. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Gilbert Cates|Gil Cates]], and directed by [[Louis J. Horvitz]].<ref>{{cite news |last1=Williams |first1=Jeannie |title=Crystal takes on role of Oscar host again |work=[[USA Today]] |date=November 19, 1996}}</ref><ref>{{cite news |last1=Hindes |first1=Andrew |title=Horvitz set to direct Oscar telecast |url=https://variety.com/1996/scene/vpage/horvitz-set-to-direct-oscarcast-1117466566/ |access-date=July 24, 2014 |work=[[Variety (magazine)|Variety]] |date=December 19, 1996 |url-status=live |archive-url=https://web.archive.org/web/20140812125344/http://variety.com/1996/scene/vpage/horvitz-set-to-direct-oscarcast-1117466566/ |archive-date=August 12, 2014}}</ref> Actor [[Billy Crystal]] hosted the show for the fifth time. He first presided over the [[62nd Academy Awards|62nd ceremony]] held in 1990 and had last hosted the [[65th Academy Awards|65th ceremony]] held in 1993.<ref>{{cite magazine |last1=Sinclair |first1=Tom |title=Monitor |url=https://www.ew.com/ew/article/0,,295220,00.html |access-date=July 22, 2014 |magazine=[[Entertainment Weekly]] |date=November 29, 1996 |url-status=dead |archive-url=https://web.archive.org/web/20140727000423/http://www.ew.com/ew/article/0%2C%2C295220%2C00.html |archive-date=July 27, 2014}}</ref> Three weeks earlier, in a ceremony held at the Regent Beverly Wilshire Hotel in [[Beverly Hills, California]], on March 1, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Helen Hunt]].<ref>{{cite news |title=Past Scientific & Technical Awards Ceremonies |url=http://www.oscars.org/awards/scitech/pastawards.html |access-date=July 31, 2013 |publisher=[[Academy of Motion Picture Arts and Sciences]] |archive-url=https://web.archive.org/web/20140213185729/http://www.oscars.org/awards/scitech/pastawards.html |archive-date=February 13, 2014}}</ref>
+
+''[[The English Patient (film)|The English Patient]]'' won nine awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news |last1=Bates |first1=James |title=An 'English' Epic |url=https://www.latimes.com/archives/la-xpm-1997-03-25-mn-41851-story.html |access-date=July 21, 2014 |work=[[Los Angeles Times]] |date=March 25, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140812084755/http://articles.latimes.com/1997-03-25/news/mn-41851_1_english-patient |archive-date=August 12, 2014}}</ref><ref>{{cite news |last1=Thomas |first1=Bob |title=Independent Films Take Major Honors |work=[[Green Bay Press-Gazette]] |date=March 25, 1997 |page=A-1}}</ref> Other winners included ''[[Fargo (1996 film)|Fargo]]'' with two awards and ''[[Breathing Lessons: The Life and Work of Mark O'Brien]]'', ''[[Dear Diary (1996 film)|Dear Diary]]'', ''[[Emma (1996 theatrical film)|Emma]]'', ''[[Evita (1996 film)|Evita]]'', ''[[The Ghost and the Darkness]]'', ''[[Independence Day (1996 film)|Independence Day]]'', ''[[Jerry Maguire]]'', ''[[Kolya (film)|Kolya]]'', ''[[The Nutty Professor (1996 film)|The Nutty Professor]]'', ''[[Quest (1996 film)|Quest]]'', ''[[Shine (film)|Shine]]'', ''[[Sling Blade]]'', and ''[[When We Were Kings]]'' with one.
+
+== Winners and nominees ==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 69th Academy Awards were announced on February 11, 1997, at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]], by [[Arthur Hiller]], president of the academy, and actress [[Mira Sorvino]].<ref>{{cite news |title=Oscar watch |url=https://variety.com/1997/scene/vpage/oscar-watch-88-1117435978/ |access-date=November 1, 2013 |work=[[Variety (magazine)|Variety]] |date=February 4, 1997 |url-status=dead |archive-url=https://web.archive.org/web/20160304101903/https://variety.com/1997/scene/vpage/oscar-watch-88-1117435978/ |archive-date=March 4, 2016}}</ref> ''[[The English Patient (film)|The English Patient]]'' received the most nominations with twelve; ''[[Fargo (1996 film)|Fargo]]'' and ''[[Shine (film)|Shine]]'' came in second with seven apiece.<ref>{{cite news |last1=Dudek |first1=Duane |title=Oscar Declares Independent's Day 'English Patient' benefits as academy turns the spotlight on outsiders with artistic integrity |work=[[Milwaukee Journal Sentinel]] |date=February 12, 1997|page=8}}</ref><ref>{{cite news |last1=Bates |first1=James |last2=Puig |first2=Claudia |title=Independents Day for Oscars |url=https://www.latimes.com/archives/la-xpm-1997-02-12-mn-27914-story.html |access-date=July 22, 2014 |work=[[Los Angeles Times]] |date=February 12, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140812084317/http://articles.latimes.com/1997-02-12/news/mn-27914_1_independents-day |archive-date=August 12, 2014}}</ref>
+
+The winners were announced during the awards ceremony on March 24, 1997.<ref name="VarietyWinners">{{cite news |last1=Gray |first1=Tim |title='English' Channels 9 Oscars |url=https://variety.com/1997/scene/vpage/english-channels-9-oscars-1117342227/ |access-date=February 12, 2016 |work=[[Variety (magazine)|Variety]] |date=March 25, 1996 |url-status=live |archive-url=https://web.archive.org/web/20160216045046/http://variety.com/1997/scene/vpage/english-channels-9-oscars-1117342227/ |archive-date=February 16, 2016}}</ref><ref>{{cite news |last1=Van Gelder |first1=Lawrence |title='English Patient' Dominates Oscars With Nine, Including Best Picture |url=https://www.nytimes.com/1997/03/25/movies/english-patient-dominates-oscars-with-nine-including-best-picture.html |access-date=February 11, 2016 |work=[[The New York Times]] |date=March 25, 1997 |url-status=live |archive-url=https://web.archive.org/web/20160306062844/http://www.nytimes.com/1997/03/25/movies/english-patient-dominates-oscars-with-nine-including-best-picture.html |archive-date=March 6, 2016}}</ref> ''The English Patient'' became the first film to win nine Oscars since ''[[The Last Emperor]]'' at the [[60th Academy Awards]] in 1988.<ref name="VarietyWinners"/> [[Saul Zaentz]] became the third person to produce three Best Picture winners, having previously produced ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' and ''[[Amadeus (film)|Amadeus]]''.<ref>{{cite news |last1=Saperstein |first1=Pat |last2=Natale |first2=Richard |title=Oscar-Winning Producer Saul Zaentz Dies at 92 |url=https://variety.com/2014/film/news/oscar-winning-producer-saul-zaentz-dies-at-92-1201025366/ |access-date=July 29, 2014 |work=[[Variety (magazine)|Variety]] |date=January 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140822074151/http://variety.com/2014/film/news/oscar-winning-producer-saul-zaentz-dies-at-92-1201025366/ |archive-date=August 22, 2014}}</ref> He also became the seventh individual to receive an Oscar and the [[Irving G. Thalberg Memorial Award]] in the same year.<ref name="Thalberg">{{cite news |last1=Hindes |first1=Andrew |title=Thalberg honor goes to Zaentz |url=https://variety.com/1997/scene/vpage/thalberg-honor-goes-to-zaentz-1117433573/ |access-date=July 21, 2014 |work=[[Variety (magazine)|Variety]] |date=January 15, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140812120242/http://variety.com/1997/scene/vpage/thalberg-honor-goes-to-zaentz-1117433573/ |archive-date=August 12, 2014}}</ref> Best Actress winner [[Frances McDormand]] was the first person to win for a role in a film directed by their spouse.<ref name="GBWI">{{harvnb|Bona|2002|p=393}}</ref> Best Original Musical or Comedy Score winner [[Rachel Portman]] became the first female winner for composing a musical score.<ref name="GBWI" />
+
+=== Awards ===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Saul Zaentz with Oscar 1976 (cropped).jpg
+| caption1          = [[Saul Zaentz]], Best Picture winner
+| image2            = 
+| caption2          = [[Anthony Minghella]], Best Directing winner
+| image3            = Geoffrey Rush Final Portrait Red Carpet Berlinale 2017 01 (cropped).jpg
+| caption3          = [[Geoffrey Rush]], Best Actor winner
+| image4            = Frances McDormand 2015 (cropped).jpg
+| caption4          = [[Frances McDormand]], Best Actress winner
+| image5            = Cuba Gooding Jr 2022 (cropped).jpg
+| caption5          = [[Cuba Gooding Jr.]], Best Supporting Actor winner
+| image6            = Juliette Binoche at the 2025 Cannes Film Festival 20.jpg
+| caption6          = [[Juliette Binoche]], Best Supporting Actress winner
+| image7            = Coen brothers Cannes 2015 2 (CROPPED).jpg
+| caption7          = [[Coen brothers]], Best Screenplay Written Directly for the Screen winners
+| image8            = Billy Bob Thornton 2017 (cropped).jpg
+| caption8          = [[Billy Bob Thornton]], Best Screenplay Based on Material Previously Produced or Published winner
+| image9            = Jan Sverak.jpg
+| caption9          = [[Jan Svěrák]], Best Foreign Language Film winner
+| image10           = LeonGastJun10.jpg
+| caption10         = [[Leon Gast]], Best Documentary Feature co-winner
+| image11           = David Sonenberg.jpg
+| caption11         = [[David Sonenberg]], Best Documentary Feature co-winner
+| image12           = Jessica Yu, her mom and Julie Soo (DSC 5113) (cropped).jpg
+| caption12         = [[Jessica Yu]], Best Documentary Short Subject winner
+| image13           = David Frankel Masterclass (6350678401) (cropped).jpg
+| caption13         = [[David Frankel]], Best Live Action Short Film co-winner
+| image14           = GYared Cannes 2017.jpg
+| caption14         = [[Gabriel Yared]], Best Original Dramatic Score winner
+| image15           = 2006 Kennedy Center honoree Andrew Lloyd Webber.jpg
+| caption15         = [[Andrew Lloyd Webber]], Best Original Song co-winner
+| image16           = Tim Rice, 1 December 2020.jpg
+| caption16         = [[Tim Rice]], Best Original Song co-winner
+| image17           = Walter Murch.jpg
+| caption17         = [[Walter Murch]], Best Sound co-winner and Best Film Editing winner
+| image18           = Rick Baker at Saturn Awards.jpg
+| caption18         = [[Rick Baker]], Best Makeup co-winner
+}}
+
+Winners are listed first and highlighted in boldface.<ref name="Oscars1997">{{cite news |url=http://www.oscars.org/oscars/ceremonies/1997 |title=The 69th Academy Awards (1997) Nominees and Winners |access-date=October 23, 2011 |publisher=[[Academy of Motion Picture Arts and Sciences]] |url-status=live |archive-url=https://web.archive.org/web/20141109082132/http://www.oscars.org/oscars/ceremonies/1997 |archive-date=November 9, 2014}}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[The English Patient (film)|The English Patient]]''&nbsp;– [[Saul Zaentz]], producer'''
+** ''[[Fargo (1996 film)|Fargo]]''&nbsp;– [[Ethan Coen]], producer
+** ''[[Jerry Maguire]]''&nbsp;– [[James L. Brooks]], [[Cameron Crowe]], [[Laurence Mark]] and [[Richard Sakai]], producers
+** ''[[Secrets & Lies (film)|Secrets & Lies]]''&nbsp;– [[Simon Channing Williams]], producer
+** ''[[Shine (film)|Shine]]''&nbsp;– [[Jane Scott (film producer)|Jane Scott]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Anthony Minghella]]&nbsp;– ''[[The English Patient (film)|The English Patient]]'''''
+** [[Joel Coen]]&nbsp;– ''[[Fargo (1996 film)|Fargo]]''
+** [[Miloš Forman]]&nbsp;– ''[[The People vs. Larry Flynt]]''
+** [[Mike Leigh]]&nbsp;– ''[[Secrets & Lies (film)|Secrets & Lies]]''
+** [[Scott Hicks (director)|Scott Hicks]]&nbsp;– ''[[Shine (film)|Shine]]''
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Geoffrey Rush]]&nbsp;– ''[[Shine (film)|Shine]]'' as [[David Helfgott]]'''
+** [[Tom Cruise]]&nbsp;– ''[[Jerry Maguire]]'' as Jerry Maguire
+** [[Ralph Fiennes]]&nbsp;– ''[[The English Patient (film)|The English Patient]]'' as [[László Almásy]]
+** [[Woody Harrelson]]&nbsp;– ''[[The People vs. Larry Flynt]]'' as [[Larry Flynt]]
+** [[Billy Bob Thornton]]&nbsp;– ''[[Sling Blade]]'' as Karl Childers
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Frances McDormand]]&nbsp;– ''[[Fargo (1996 film)|Fargo]]'' as Marge Gunderson'''
+** [[Brenda Blethyn]]&nbsp;– ''[[Secrets & Lies (film)|Secrets & Lies]]'' as Cynthia Rose Purley
+** [[Diane Keaton]]&nbsp;– ''[[Marvin's Room (film)|Marvin's Room]]'' as Bessie
+** [[Kristin Scott Thomas]]&nbsp;– ''[[The English Patient (film)|The English Patient]]'' as Katharine Clifton
+** [[Emily Watson]]&nbsp;– ''[[Breaking the Waves]]'' as Bess McNeill
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Cuba Gooding Jr.]]&nbsp;– ''[[Jerry Maguire]]'' as Rod Tidwell'''
+** [[William H. Macy]]&nbsp;– ''[[Fargo (1996 film)|Fargo]]'' as Jerry Lundegaard
+** [[Armin Mueller-Stahl]]&nbsp;– ''[[Shine (film)|Shine]]'' as Peter Helfgott
+** [[Edward Norton]]&nbsp;– ''[[Primal Fear (film)|Primal Fear]]'' as Aaron Stampler
+** [[James Woods]]&nbsp;– ''[[Ghosts of Mississippi]]'' as [[Byron De La Beckwith]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Juliette Binoche]]&nbsp;– ''[[The English Patient (film)|The English Patient]]'' as Hana'''
+** [[Joan Allen]]&nbsp;– ''[[The Crucible (1996 film)|The Crucible]]'' as [[Elizabeth Proctor]]
+** [[Lauren Bacall]]&nbsp;– ''[[The Mirror Has Two Faces]]'' as Hannah Morgan
+** [[Barbara Hershey]]&nbsp;– ''[[The Portrait of a Lady (film)|The Portrait of a Lady]]'' as Madame Serena Merle
+** [[Marianne Jean-Baptiste]]&nbsp;– ''[[Secrets & Lies (film)|Secrets & Lies]]'' as Hortense Cumberbatch
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+* '''''[[Fargo (1996 film)|Fargo]]''&nbsp;– [[Coen brothers|Ethan Coen and Joel Coen]]'''
+** ''[[Jerry Maguire]]''&nbsp;– [[Cameron Crowe]]
+** ''[[Lone Star (1996 film)|Lone Star]]''&nbsp;– [[John Sayles]]
+** ''[[Secrets & Lies (film)|Secrets & Lies]]''&nbsp;– [[Mike Leigh]]
+** ''[[Shine (film)|Shine]]''&nbsp;– Screenplay by [[Jan Sardi]]; Story by [[Scott Hicks (director)|Scott Hicks]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material Previously Produced or Published)]]}}
+* '''''[[Sling Blade]]''&nbsp;– [[Billy Bob Thornton]] based on his short film ''[[Some Folks Call It a Sling Blade]]'''''
+** ''[[The Crucible (1996 film)|The Crucible]]''&nbsp;– [[Arthur Miller]] based on [[The Crucible|his play]]
+** ''[[The English Patient (film)|The English Patient]]''&nbsp;– [[Anthony Minghella]] based on [[The English Patient|the novel]] by [[Michael Ondaatje]]
+** ''[[Hamlet (1996 film)|Hamlet]]''&nbsp;– [[Kenneth Branagh]] based on [[Hamlet|the play]] by [[William Shakespeare]]
+** ''[[Trainspotting (film)|Trainspotting]]''&nbsp;– [[John Hodge (screenwriter)|John Hodge]] based on [[Trainspotting (novel)|the novel]] by [[Irvine Welsh]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best International Feature Film|Best Foreign Language Film]]}}
+* '''''[[Kolya (film)|Kolya]]'' ([[List of Czech submissions for the Academy Award for Best International Feature Film|Czech Republic]]) in [[Czech language|Czech]]&nbsp;– [[Jan Svěrák]], director'''
+** ''[[A Chef in Love]]'' ([[List of Georgian submissions for the Academy Award for Best International Feature Film|Georgia]]) in [[French language|French]], [[Georgian language|Georgian]], [[Russian language|Russian]]&nbsp;– [[Nana Jorjadze]], director
+** ''[[The Other Side of Sunday]]'' ([[List of Norwegian submissions for the Academy Award for Best International Feature Film|Norway]]) in [[Norwegian language|Norwegian]]&nbsp;– [[Berit Nesheim]], director
+** ''[[Prisoner of the Mountains]]'' ([[List of Russian submissions for the Academy Award for Best International Feature Film|Russia]]) in Russian&nbsp;– [[Sergei Bodrov]], director
+** ''[[Ridicule (film)|Ridicule]]'' ([[List of French submissions for the Academy Award for Best International Feature Film|France]]) in French&nbsp;– [[Patrice Leconte]], director
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[When We Were Kings]]''&nbsp;– [[Leon Gast]] and [[David Sonenberg]]'''
+** ''[[The Line King: The Al Hirschfeld Story]]''&nbsp;– Susan W. Dryfoos
+** ''[[Mandela (1996 film)|Mandela]]''&nbsp;– Jo Menell and Angus Gibson
+** ''[[Suzanne Farrell: Elusive Muse]]''&nbsp;– [[Anne Belle]] and Deborah Dickson
+** ''[[Tell the Truth and Run: George Seldes and the American Press]]''&nbsp;– Rick Goldsmith
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Breathing Lessons: The Life and Work of Mark O'Brien]]''&nbsp;– [[Jessica Yu]]'''
+** ''[[Cosmic Voyage (1996 film)|Cosmic Voyage]]''&nbsp;– Jeffrey Marvin and Bayley Silleck
+** ''[[An Essay on Matisse]]''&nbsp;– Perry Wolff
+** ''[[Special Effects: Anything Can Happen]]''&nbsp;– Susanne Simpson and [[Ben Burtt]]
+** ''[[The Wild Bunch: An Album in Montage]]''&nbsp;– Paul Seydor and Nick Redman
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Dear Diary (1996 film)|Dear Diary]]''&nbsp;– [[David Frankel]] and Barry Jossen'''
+** ''De tripas, corazón''&nbsp;– Antonio Urrutia
+** ''Ernst & lyset''&nbsp;– [[Kim Magnusson]] and [[Anders Thomas Jensen]]
+** ''Esposados''&nbsp;– [[Juan Carlos Fresnadillo]]
+** ''Senza parole''&nbsp;– Bernadette Carranza and Antonello De Leo
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Quest (1996 film)|Quest]]''&nbsp;– Tyron Montgomery and [[Thomas Stellmach]]'''
+** ''Canhead''&nbsp;– Timothy Hittle and Chris Peterson
+** ''[[La Salla]]''&nbsp;– [[Richard Condie]]
+** ''[[Wat's Pig]]''&nbsp;– [[Peter Lord]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Dramatic Score)]]}}
+* '''''[[The English Patient (film)|The English Patient]]''&nbsp;– [[Gabriel Yared]]'''
+** ''[[Hamlet (1996 film)|Hamlet]]''&nbsp;– [[Patrick Doyle]]
+** ''[[Michael Collins (film)|Michael Collins]]''&nbsp;– [[Elliot Goldenthal]]
+** ''[[Shine (film)|Shine]]''&nbsp;– [[David Hirschfelder]]
+** ''[[Sleepers (film)|Sleepers]]''&nbsp;– [[John Williams]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Musical or Comedy Score)]]}}
+* '''''[[Emma (1996 theatrical film)|Emma]]''&nbsp;– [[Rachel Portman]]'''
+** ''[[The First Wives Club]]''&nbsp;– [[Marc Shaiman]]
+** ''[[The Hunchback of Notre Dame (1996 film)|The Hunchback of Notre Dame]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Stephen Schwartz]]; Orchestral Score by Alan Menken
+** ''[[James and the Giant Peach (film)|James and the Giant Peach]]''&nbsp;– [[Randy Newman]]
+** ''[[The Preacher's Wife]]''&nbsp;– [[Hans Zimmer]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[You Must Love Me]]" from ''[[Evita (1996 film)|Evita]]''&nbsp;– Music by [[Andrew Lloyd Webber]]; Lyrics by [[Tim Rice]]'''
+** "[[Because You Loved Me]]" from ''[[Up Close and Personal (film)|Up Close and Personal]]''&nbsp;– Music and Lyrics by [[Diane Warren]]
+** "[[For the First Time (Kenny Loggins song)|For the First Time]]" from ''[[One Fine Day (1996 film)|One Fine Day]]''&nbsp;– Music and Lyrics by [[James Newton Howard]], Jud J. Friedman and Allan Dennis Rich
+** "[[I Finally Found Someone]]" from ''[[The Mirror Has Two Faces]]''&nbsp;– Music and Lyrics by [[Barbra Streisand]], [[Marvin Hamlisch]], [[Bryan Adams]] and [[Robert John "Mutt" Lange]]
+** "[[That Thing You Do! (song)|That Thing You Do!]]" from ''[[That Thing You Do!]]''&nbsp;– Music and Lyrics by [[Adam Schlesinger]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound]]}}
+* '''''[[The English Patient (film)|The English Patient]]''&nbsp;– [[Walter Murch]], [[Mark Berger (sound engineer)|Mark Berger]], [[David Parker (sound engineer)|David Parker]] and [[Chris Newman (sound engineer)|Chris Newman]]'''
+** ''[[Evita (1996 film)|Evita]]''&nbsp;– [[Andy Nelson (sound engineer)|Andy Nelson]], [[Anna Behlmer]] and [[Ken Weston]]
+** ''[[Independence Day (1996 film)|Independence Day]]''&nbsp;– [[Chris Carpenter (sound engineer)|Chris Carpenter]], [[Bill W. Benton]], [[Bob Beemer]] and [[Jeff Wexler]]
+** ''[[The Rock (film)|The Rock]]''&nbsp;– [[Kevin O'Connell (sound mixer)|Kevin O'Connell]], [[Greg P. Russell]] and [[Keith A. Wester]]
+** ''[[Twister (1996 film)|Twister]]''&nbsp;– [[Steve Maslow]], [[Gregg Landaker]], [[Kevin O'Connell (sound mixer)|Kevin O'Connell]] and [[Geoffrey Patterson]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Effects Editing]]}}
+* '''''[[The Ghost and the Darkness]]''&nbsp;– [[Bruce Stambler]]'''
+** ''[[Daylight (1996 film)|Daylight]]''&nbsp;– [[Richard L. Anderson (sound effects editor)|Richard L. Anderson]] and [[David A. Whittaker]]
+** ''[[Eraser (film)|Eraser]]''&nbsp;– [[Alan Robert Murray]] and [[Bub Asman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[The English Patient (film)|The English Patient]]''&nbsp;– [[Art director|Art Direction]]: [[Stuart Craig]]; [[Set decorator|Set Decoration]]: [[Stephenie McMillan]]'''
+** ''[[The Birdcage]]''&nbsp;– Art Direction: [[Bo Welch]]; Set Decoration: [[Cheryl Carasik]]
+** ''[[Evita (1996 film)|Evita]]''&nbsp;– Art Direction: [[Brian Morris (art director)|Brian Morris]]; Set Decoration: [[Philippe Turlure]]
+** ''[[Hamlet (1996 film)|Hamlet]]''&nbsp;– Art Direction and Set Decoration: [[Tim Harvey (production designer)|Tim Harvey]]
+** ''[[Romeo + Juliet]]''&nbsp;– Art Direction: [[Catherine Martin (designer)|Catherine Martin]]; Set Decoration: [[Brigitte Broch]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[The English Patient (film)|The English Patient]]''&nbsp;– [[John Seale]]'''
+** ''[[Evita (1996 film)|Evita]]''&nbsp;– [[Darius Khondji]]
+** ''[[Fargo (1996 film)|Fargo]]''&nbsp;– [[Roger Deakins]]
+** ''[[Fly Away Home]]''&nbsp;– [[Caleb Deschanel]]
+** ''[[Michael Collins (film)|Michael Collins]]''&nbsp;– [[Chris Menges]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[The Nutty Professor (1996 film)|The Nutty Professor]]''&nbsp;– [[Rick Baker]] and [[David LeRoy Anderson]]'''
+** ''[[Ghosts of Mississippi]]''&nbsp;– [[Matthew W. Mungle]] and [[Deborah La Mia Denaver]]
+** ''[[Star Trek: First Contact]]''&nbsp;– [[Michael Westmore]], [[Scott Wheeler (make-up artist)|Scott Wheeler]] and [[Jake Garber]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[The English Patient (film)|The English Patient]]''&nbsp;– [[Ann Roth]]'''
+** ''[[Angels & Insects]]''&nbsp;– [[Paul Brown (costume designer)|Paul Brown]]
+** ''[[Emma (1996 theatrical film)|Emma]]''&nbsp;– [[Ruth Myers (costume designer)|Ruth Myers]]
+** ''[[Hamlet (1996 film)|Hamlet]]''&nbsp;– [[Alexandra Byrne]]
+** ''[[The Portrait of a Lady (film)|The Portrait of a Lady]]''&nbsp;– [[Janet Patterson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The English Patient (film)|The English Patient]]''&nbsp;– [[Walter Murch]]'''
+** ''[[Evita (1996 film)|Evita]]''&nbsp;– [[Gerry Hambling]]
+** ''[[Fargo (1996 film)|Fargo]]''&nbsp;– [[Coen brothers|Roderick Jaynes]]
+** ''[[Jerry Maguire]]''&nbsp;– [[Joe Hutshing]]
+** ''[[Shine (film)|Shine]]''&nbsp;– [[Pip Karmel]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Independence Day (1996 film)|Independence Day]]''&nbsp;– [[Volker Engel]], [[Douglas Smith (special effects artist)|Douglas Smith]], [[Clay Pinney]] and [[Joe Viskocil]]'''
+** ''[[Dragonheart]]''&nbsp;– [[Scott Squires]], [[Phil Tippett]], [[James Straus]] and [[Kit West]]
+** ''[[Twister (1996 film)|Twister]]''&nbsp;– [[Stefen Fangmeier]], [[John Frazier]], [[Habib Zargarpour]] and [[Henry LaBounta]]
+|}
+
+=== Honorary Award ===
+* To [[Michael Kidd]] in recognition of his services to the art of the dance in the art of the screen.<ref>{{cite news |last1=Hindes |first1=Andrew |title=Academy to honor Kidd |url=https://variety.com/1997/film/news/academy-to-honor-kidd-1117433274/ |access-date=July 21, 2014 |work=[[Variety (magazine)|Variety]] |date=January 16, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140812120245/https://variety.com/1997/film/news/academy-to-honor-kidd-1117433274/ |archive-date=August 12, 2014}}</ref>
+
+=== Irving G. Thalberg Memorial Award ===
+* [[Saul Zaentz]]<ref name="Thalberg" />
+
+=== Films with multiple nominations and awards ===
+{{col-begin|width=80%}}
+{{col-1-of-2}}
+The following seventeen films received multiple nominations:
+
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| 12
+| ''[[The English Patient (film)|The English Patient]]''
+|-
+|rowspan=2| 7
+| ''[[Fargo (1996 film)|Fargo]]''
+|-
+| ''[[Shine (film)|Shine]]''
+|-
+|rowspan=3| 5
+| ''[[Evita (1996 film)|Evita]]''
+|-
+| ''[[Jerry Maguire]]''
+|-
+| ''[[Secrets & Lies (film)|Secrets & Lies]]''
+|-
+| 4
+| ''[[Hamlet (1996 film)|Hamlet]]''
+|-
+|rowspan=10| 2
+| ''[[The Crucible (1996 film)|The Crucible]]''
+|-
+| ''[[Emma (1996 theatrical film)|Emma]]''
+|-
+| ''[[Ghosts of Mississippi]]''
+|-
+| ''[[Independence Day (1996 film)|Independence Day]]''
+|-
+| ''[[Michael Collins (film)|Michael Collins]]''
+|-
+| ''[[The Mirror Has Two Faces]]''
+|-
+| ''[[The People vs. Larry Flynt]]''
+|-
+| ''[[The Portrait of a Lady (film)|The Portrait of a Lady]]''
+|-
+| ''[[Sling Blade]]''
+|-
+| ''[[Twister (1996 film)|Twister]]''
+|}
+
+{{col-2-of-2}}
+The following two films received multiple awards:
+
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| 9
+| ''[[The English Patient (film)|The English Patient]]''
+|-
+| 2
+| ''[[Fargo (1996 film)|Fargo]]''
+|}
+{{col-end}}
+
+== Presenters and performers ==
+The following individuals, in order of appearance, presented awards or performed musical numbers.<ref name="MFEO">{{harvnb|Bona|2002|p=102}}</ref>
+
+=== Presenters ===
+{| class="wikitable plainrowheaders sortable" rowspan=2 style="text-align: left"
+|-
+! scope="col" width="195" | Name(s)
+! scope="col" align="center" | Role
+|-
+| {{sortname|Randy|Thomas|nolink=1}}
+| Announcer for the 69th annual Academy Awards
+|-
+| {{sortname|Arthur|Hiller}} (AMPAS president)
+| Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Mira|Sorvino}}
+| Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Sandra|Bullock}}
+| Presenter of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Steve|Martin}}
+| Presenter of the film ''[[Jerry Maguire]]'' on the Best Picture segment
+|-
+| {{sortname|Juliette|Binoche}}
+| Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| [[Beavis]]<br />[[Butt-Head]] (Voiced by [[Mike Judge]])
+| Presenters of the award [[Academy Award for Best Sound Editing|Best Sound Effects Editing]]
+|-
+| {{sortname|Courtney|Love}}
+| Presenter of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Winona|Ryder}}
+| Presenter of the "Togetherness and the Movies" montage
+|-
+| {{sortname|Kevin|Spacey}}
+| Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Claire|Danes}}
+| Introducer of the performance of Best Original Song nominee "[[That Thing You Do! (song)|That Thing You Do!]]"
+|-
+| {{sortname|Holly|Hunter}}
+| Presenter of the film ''[[Fargo (1996 film)|Fargo]]'' on the Best Picture segment
+|-
+| {{sortname|Chris|Farley}}<br />[[David Spade]]
+| Presenters of the awards for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]] and [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Julie|Andrews}}
+| Presenter of the [[Academy Honorary Award]] to [[Michael Kidd]]
+|-
+| {{sortname|Helen|Hunt}}
+| Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]]
+|-
+| {{sortname|Tommy Lee|Jones}}<br />[[Will Smith]]
+| Presenters of the award [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Jim|Carrey}}
+| Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Chris|O'Donnell}}
+| Presenter of the award for [[Academy Award for Best Sound|Best Sound]]
+|-
+| {{sortname|Nicole|Kidman}}
+| Presenter of the Best Film editing montage and dance number and the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Debbie|Reynolds}}
+| Presenter of the award for [[Academy Award for Best Original Score|Best Original Musical or Comedy Score]]
+|-
+| {{sortname|Gregory|Hines}}
+| Presenter of the award for [[Academy Award for Best Original Score|Best Original Dramatic Score]]
+|-
+| {{sortname|Glenn|Close}}
+| Presenter of the film ''[[Shine (film)|Shine]]'' on the Best Picture segment and introducer of the musical performance by [[David Helfgott]]
+|-
+| {{sortname|Tim|Robbins}}
+| Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Salma|Hayek}}
+| Introducer of the performance of Best Original Song nominee "[[For the First Time (Kenny Loggins song)|For the First Time]]"
+|-
+| {{sortname|Michael|Douglas}}
+| Presenter of the [[Irving G. Thalberg Memorial Award]] to [[Saul Zaentz]]
+|-
+| {{sortname|Kristin Scott|Thomas}}<br />[[Jack Valenti]]
+| Presenter of the award [[Academy Award for Best International Feature Film|Best Foreign Language Film]]
+|-
+| {{sortname|Sigourney|Weaver}}
+| Presenter of the film ''[[The English Patient (film)|The English Patient]]'' on the Best Picture segment
+|-
+| {{sortname|Jennifer|Lopez}}
+| Introducer of the performance of Best Original Song nominee "[[Because You Loved Me]]"
+|-
+| {{sortname|Angela|Bassett}}
+| Presenter of the "[[List of Latin phrases (I)#in memoriam|In Memoriam]]" tribute
+|-
+| {{sortname|Goldie|Hawn}}<br />[[Diane Keaton]]<br />[[Bette Midler]]
+| Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Kenneth|Branagh}}
+| Presenter of the "[[William Shakespeare|Shakespeare]] and the Movies" montage
+|-
+| {{sortname|Jodie|Foster}}
+| Presenter of the award for [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material Previously Produced or Published]] and [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen]]
+|-
+| {{sortname|Andie|MacDowell}}
+| Presenter of the film ''[[Secrets & Lies (film)|Secrets & Lies]]'' on the Best Picture segment
+|-
+| {{sortname|Nicolas|Cage}}
+| Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Susan|Sarandon}}
+| Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Mel|Gibson}}
+| Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Al|Pacino}}
+| Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+=== Performers ===
+{| class="wikitable plainrowheaders sortable" rowspan=2 style="text-align: left"
+|-
+! scope="col" width="195" | Name(s)
+! scope="col" align="center" | Role
+! scope="col" align="center" | Performed
+|-
+| {{sortname|Bill|Conti}}
+| Musical arranger and conductor
+| Orchestral
+|-
+| {{sortname|Billy|Crystal}}
+| Performer
+| Opening number: <br />''[[Secrets & Lies (film)|Secrets & Lies]]'' (to the tune of ''[[The Brady Bunch]]'' theme song), <br />''[[The English Patient (film)|The English Patient]]'' (to the tune of "[[Wouldn't It Be Loverly]]" from ''[[My Fair Lady]]''), <br />''[[Jerry Maguire]]'' (to the tune of "[[Victory March (fight song)|Victory March]]"), <br />''[[Shine (film)|Shine]]'' (to the tune of "[[Flight of the Bumblebee]]"), and <br />''[[Fargo (1996 film)|Fargo]]'' (to the tune of "[[My Kind of Town]]" from ''[[Robin and the 7 Hoods]]'')<ref>{{harvnb|Bona|2002|p=109}}</ref>
+|-
+| {{sortname||Madonna}}
+| Performer
+| "[[You Must Love Me]]" from ''[[Evita (1996 film)|Evita]]''
+|-
+| {{sortname|The|Wonders|nolink=1}}
+| Performers
+| "[[That Thing You Do! (song)|That Thing You Do!]]" from ''[[That Thing You Do!]]''
+|-
+| {{sortname|Celine|Dion}}<br />{{sortname|Arturo|Sandoval}}
+| Performers
+| "[[I Finally Found Someone]]" from ''[[The Mirror Has Two Faces]]''
+|-
+| {{sortname|Michael|Flatley}}<br />Cast of ''[[Lord of the Dance (musical)|Lord of the Dance]]''
+| Performers
+| Best Film Editing montage
+|-
+| {{sortname|David|Helfgott}}
+| Performer
+| "[[Flight of the Bumblebee]]" by [[Nikolai Rimsky-Korsakov]]
+|-
+| {{sortname|Kenny|Loggins}}
+| Performer
+| "[[For the First Time (Kenny Loggins song)|For the First Time]]" from ''[[One Fine Day (1996 film)|One Fine Day]]''
+|-
+| {{sortname|Celine|Dion|nolink=1}}
+| Performer
+| "[[Because You Loved Me]]" from ''[[Up Close & Personal (film)|Up Close & Personal]]''
+|}
+
+== Ceremony information ==
+[[File:Billy Crystal VF 2012 Shankbone.JPG|thumb|upright|[[Billy Crystal]] hosted the 69th Academy Awards.|alt=Photo of Billy Crystal in 2012.]]
+
+After taking a year off, [[Gilbert Cates|Gil Cates]] was selected by AMPAS in November 1996 to oversee production of the ceremony for the seventh time.<ref>{{harvnb|Bona|2002|p=89}}</ref> Immediately, he chose actor and comedian [[Billy Crystal]] to host the 1997 telecast, stating, "Billy is quick and agile and bright, and he plays the unexpected events of the live telecast like a [[Stradivarius]]. He's become the standard against which all other hosting performances are measured."<ref>{{cite news |last1=Marcus |first1=Errico |title=Billy Crystal to Host Oscars...Again |url=http://www.eonline.com/news/33780/billy-crystal-to-host-oscars-again |access-date=July 24, 2014 |publisher=[[E!]] |date=November 18, 1996 |url-status=live |archive-url=https://web.archive.org/web/20140809093733/http://www.eonline.com/news/33780/billy-crystal-to-host-oscars-again |archive-date=August 9, 2014}}</ref> Crystal expressed his excitement on hosting the ceremony for the fifth time joking, "Once [[Barry Scheck]] turned it down, I had a feeling they'd come to me."<ref>{{cite news |title=Billy Crystal Back At Helm Of Oscars |url=https://www.chicagotribune.com/1996/11/19/billy-crystal-back-at-helm-of-oscars/ |access-date=July 30, 2014 |work=[[Chicago Tribune]] |date=November 19, 1996 |url-status=live |archive-url=https://web.archive.org/web/20140808030143/http://articles.chicagotribune.com/1996-11-19/news/9611190187_1_oscars-host-billy-crystal-lawyers |archive-date=August 8, 2014}}</ref> Furthermore, he set up a website with the address www.whyistheshowsolong.com asking the public to send in jokes that would eventually be used during the gala.<ref>{{cite news |last1=Snead |first1=Elisabeth |title=Crystal out to Net jokes for Oscar show |url=http://usatoday30.usatoday.com/life/special/oscars/l97os022.htm |access-date=July 24, 2014 |work=[[USA Today]] |archive-date=March 4, 2016 |archive-url=https://web.archive.org/web/20160304033428/http://usatoday30.usatoday.com/life/special/oscars/l97os022.htm |url-status=live }}</ref>
+
+As with previous ceremonies he produced, Cates centered the show around a theme. This year, he christened the show with the theme "Togetherness of Moviegoing" commenting, "The thing that's kind of wonderful about movies is that you watch them with other people. The only other areas where you do that, when you think about it, are religion and sports." He concluded by noting that the movie theater is "a wonderful place where you come together to laugh, to cry."<ref>{{cite news |last1=Bowles |first1=Jennifer |title=Oscar show to celebrate communion of moviegoing |url=http://www.deseretnews.com/article/550000/Oscar-show-to-celebrate-communion-of-moviegoing.html |access-date=July 24, 2014 |work=[[Deseret News]] |date=March 21, 1997 |url-status=dead |archive-url=https://web.archive.org/web/20140812102013/http://www.deseretnews.com/article/550000/Oscar-show-to-celebrate-communion-of-moviegoing.html |archive-date=August 12, 2014}}</ref> In tandem with the theme, actress [[Winona Ryder]] presented a montage featuring film clips from ''[[Casablanca (film)|Casablanca]]'' (1942), ''[[Matinee (1993 film)|Matinee]]'' (1993), and ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' (1951) depicting audiences inside a movie theater.<ref>{{harvnb|Bona|2002|p=111}}</ref>
+
+Several other people and elements were also involved with the production of the ceremony. Documentary filmmaker [[Arnold Schwartzman]] designed the official ceremony poster featuring the titles of the previous 68 Best Picture winners superimposed in the shape of an Oscar statuette.<ref>{{cite news |last1=Hindes |first1=Andrew |title=Acad bows poster for 69th Oscars |url=https://variety.com/1996/scene/vpage/acad-bows-poster-for-69th-oscars-1117466260/ |access-date=July 29, 2014 |work=[[Variety (magazine)|Variety]] |date=December 10, 1996 |url-status=live |archive-url=https://web.archive.org/web/20140812201719/http://variety.com/1996/scene/vpage/acad-bows-poster-for-69th-oscars-1117466260/ |archive-date=August 12, 2014}}</ref> Film composer and musician [[Bill Conti]] served as musical director of the ceremony.<ref>{{cite news |title=Oscar Watch |url=https://variety.com/1997/scene/vpage/oscar-watch-70-1117433844/ |access-date=July 29, 2014 |work=[[Variety (magazine)|Variety]] |date=January 12, 1997 |url-status=dead |archive-url=https://web.archive.org/web/20160304220637/https://variety.com/1997/scene/vpage/oscar-watch-70-1117433844/ |archive-date=March 4, 2016}}</ref> Choreographer Otis Sallid supervised the "[[That Thing You Do! (song)|That Thing You Do!]]" musical number.<ref>{{harvnb|Pond|2005|p=156}}</ref> [[Michael Flatley]] and the cast of the musical ''[[Lord of the Dance (musical)|Lord of the Dance]]'' performed a dance number during a montage saluting the art of Film Editors.<ref>{{harvnb|Bona|2002|p=113}}</ref> Pianist [[David Helfgott]], whom Best Actor winner [[Geoffrey Rush]] portrayed in the film ''[[Shine (film)|Shine]]'', played a rendition of "[[Flight of the Bumblebee]]" by [[Nikolai Rimsky-Korsakov]] during the telecast.<ref>{{harvnb|Bona|2002|p=114}}</ref>
+
+[[Natalie Cole]] was initially scheduled to sing the nominated song "[[I Finally Found Someone]]" from ''[[The Mirror Has Two Faces]]'' on the show after its songwriter and original performer [[Barbra Streisand]] declined to do so.<ref>{{cite news |last1=Marcano |first1=Tony |title=Chronicle |url=https://www.nytimes.com/1997/03/24/style/chronicle-263419.html |access-date=July 30, 2014 |work=[[The New York Times]] |date=March 24, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140811010538/http://www.nytimes.com/1997/03/24/style/chronicle-263419.html |archive-date=August 11, 2014}}</ref><ref>{{harvnb|Bona|2002|p=96}}</ref> However, after Cole contracted the flu, she withdrew for her performance duties and was eventually replaced by [[Celine Dion]] who also sang "[[Because You Loved Me]]" later in the broadcast.<ref>{{harvnb|Bona|2002|p=112}}</ref><ref>{{harvnb|Pond|2005|p=157}}</ref>
+
+=== Box office performance of nominees ===
+At the time of the nominations announcement on February 11, the combined gross of the five Best Picture nominees at the US box office was $209 million, with an average of $41.9 million per film.<ref name=BoxOfficeOscars>{{cite news |title=1996 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=1996&p=.htm |access-date=October 1, 2013  |publisher=[[Box Office Mojo]] |url-status=live |archive-url=https://web.archive.org/web/20131009033735/http://www.boxofficemojo.com/oscar/chart/?yr=1996&p=.htm |archive-date=October 9, 2013}}</ref> ''Jerry Maguire'' was the highest earner among the Best Picture nominees with $121.5 million in domestic box office receipts. The film was followed by ''The English Patient'' ($42.3 million), ''Shine'' ($16.1 million), ''Fargo'' ($24 million) and finally ''Secrets & Lies'' ($5.9 million).<ref name=BoxOfficeOscars />
+
+Of the top 50 grossing movies of the year, 37 nominations went to 17 films on the list. Only ''Jerry Maguire'' (9th), ''Primal Fear'' (27th) and ''The English Patient'' (35th) were nominated for directing, acting, screenwriting or Best Picture.<ref name="boxofficemojooscars">{{cite news |url=https://boxofficemojo.com/yearly/chart/?asof=1997-02-10&view=releasedate&view2=domestic&yr=1996&sort=gross&order=DESC&p=.htm |title=1996 Domestic Grosses  |publisher=[[Box Office Mojo]] |access-date=July 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140727022220/http://boxofficemojo.com/yearly/chart/?asof=1997-02-10&view=releasedate&view2=domestic&yr=1996&sort=gross&order=DESC&p=.htm |archive-date=July 27, 2014}}</ref> The other top 50 box office hits that earned nominations were ''Independence Day'' (1st), ''Twister'' (2nd), ''The Rock'' (4th), ''The Nutty Professor'' (7th), ''The Birdcage'' (8th), ''Eraser'' (13th), ''The Hunchback of Notre Dame'' (14th), ''Star Trek: First Contact'' (15th), ''Sleepers'' (29th), ''Dragonheart'' (30th), ''The Preacher's Wife'' (32nd), ''Evita'' (36th), ''The Ghost and the Darkness'' (39th), and ''Daylight'' (48th).<ref name="boxofficemojooscars" />
+
+=== Critical response ===
+The show received a mixed reception from media publications. Some media outlets were more critical of the show. Television critic Joanne Ostrow of ''[[The Denver Post]]'' commented "Billy Crystal had a smashing first 10 minutes at the Oscars last night," but she later went on to say that inevitable sweep by ''The English Patient'' created a dull atmosphere that even sucked the energy out of Crystal's performance.<ref>{{cite news |last1=Ostrow |first1=Joanne |title=Even Crystal Runs Out of Steam |work=[[The Denver Post]] |date=March 25, 1997}}</ref> Columnist Brian Lowry wrote in ''[[Los Angeles Times]]'', "This year the mystery far outweighed the magic, in a telecast that proved less compelling--indeed, during stretches more downright dull--than recent predecessors." He also quipped that even though Crystal was mildly entertaining, some of his jokes "felt a bit forced and stale."<ref>{{cite news |last1=Lowry |first1=Brian |title=Fine Crystal Competes With a Lot of Dull Sheen |url=https://www.latimes.com/archives/la-xpm-1997-03-25-ca-41957-story.html |access-date=July 25, 2014 |work=[[Los Angeles Times]] |date=March 25, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140812191222/http://articles.latimes.com/1997-03-25/entertainment/ca-41957_1_billy-crystal |archive-date=August 12, 2014}}</ref> ''[[The Star-Ledger]]''{{'}}s [[Alan Sepinwall]] noted, "Crystal was a bundle of energy, but his jokes had less zing than in the past." He also observed that the Film Editing dance number and "That Thing You Do" musical performance were hideously bloated.<ref>{{cite news |last1=Sepinwall |first1=Alan |title=It was no Crystal ball as host came up flat after 3-year hiatus |work=[[The Star-Ledger]] |date=March 25, 1997|page=6}}</ref>
+
+Other media outlets received the broadcast more positively. Film critic [[Carrie Rickey]] of ''[[The Philadelphia Inquirer]]'' wrote, "Crystal sparkled as the host of the annual awards at the [[Shrine Auditorium]]." She also noted, "The mood of the evening was elegant and gracious."<ref>{{cite news |last1=Riceky |first1=Carey |title=9 Oscars For 'English Patient' It Captured Best Picture And Director. Acting Honors Went To Frances Mcdormand And Geoffrey Rush|page=A1 |work=[[The Philadelphia Inquirer]] |date=March 25, 1997}}</ref> ''[[Chicago Tribune]]'' columnist Steve Johnson commented, "Billy Crystal returned as host of the Academy Awards on Monday night and proved that even if mainline Hollywood is nearly shut out in the trophy dispensing, one of its representatives can at least make a television broadcast entertaining."<ref>{{cite news |last1=Johnson |first1=Steve |title=The Broadcast |url=https://www.chicagotribune.com/1997/03/25/the-broadcast/ |access-date=July 29, 2014 |work=[[Chicago Tribune]] |date=March 25, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140730043847/http://articles.chicagotribune.com/1997-03-25/news/9703250242_1_beavis-and-butt-head-show-producer-gil-cates-los-angeles-shrine-auditorium |archive-date=July 30, 2014}}</ref> Television critic Kinney Littlefield of the ''[[Orange County Register]]'' quipped, "In his fifth stint as host, Crystal served up the sense of inclusive, insider movie community that had been missing during his three-year absence." In addition, she observed, "For most of the evening, Oscar seemed newly energized, upbeat and full of splashy fun."<ref>{{cite news |last1=Littlefield |first1=Kinney |title=Host Billy Crystal makes Oscar classy and sassy again |work=[[Orange County Register]] |date=March 25, 1997|page=F4}}</ref>
+
+=== Ratings and reception ===
+The American telecast on ABC drew in an average of 40.08 million people over its length, which was a 9% decrease from the [[68th Academy Awards|previous year's ceremony]].<ref>{{cite news |last=Johnson |first=Greg |title=Call It the Glamour Bowl |url=https://articles.latimes.com/1999/mar/18/business/fi-18458/2 |access-date=August 26, 2013 |work=[[Los Angeles Times]] |date=March 18, 1999 |url-status=dead |archive-url=https://web.archive.org/web/20130928053918/http://articles.latimes.com/1999/mar/18/business/fi-18458/2 |archive-date=September 28, 2013}}</ref> An estimated 73.83 million total viewers watched all or part of the awards.<ref>{{cite news |last1=Lowry |first1=Brian |title=Bright Oscar Lights Shine in Cities, Not Elsewhere |url=https://www.latimes.com/archives/la-xpm-1997-03-26-ca-42098-story.html |access-date=July 29, 2014 |work=[[Los Angeles Times]] |date=March 26, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140812192157/http://articles.latimes.com/1997-03-26/entertainment/ca-42098_1_oscar-ceremony |archive-date=August 12, 2014}}</ref> The show also drew lower [[Nielsen ratings]] compared to the previous ceremony with 27.49% of households watching over a 46.31 share.<ref name="TVB Oscars">{{cite news |title=Academy Awards ratings |publisher=[[Television Bureau of Advertising]] |url=https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=live |archive-url=https://web.archive.org/web/20160808235818/https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |archive-date=August 8, 2016}}</ref> In addition, it also drew a lower 18–49 demo rating with a 16.55 rating over a 34.32 share among viewers in that demographic.<ref name="TVB Oscars" /> It was the least watched ceremony [[59th Academy Awards|in a decade]] and the lowest rated telecast since the [[58th Academy Awards|58th awards gala]] held in 1986.<ref>{{harvnb|Pond|2005|p=159}}</ref>
+
+In July 1997, the ceremony presentation received seven nominations at the [[49th Primetime Emmy Awards]].<ref>{{cite news |title=Primetime Emmy Award database |url=http://www.emmys.com/shows/69th-annual-academy-awards |access-date=July 29, 2014 |publisher=[[Academy of Television Arts and Sciences]] |url-status=live |archive-url=https://web.archive.org/web/20140729231421/http://www.emmys.com/shows/69th-annual-academy-awards |archive-date=July 29, 2014}}</ref> Two months later, the ceremony won one of those nominations for Outstanding Sound Mixing for a Variety or Music Series or Special (Edward J. Greene, Tom Vicari, Robert Douglass).<ref>{{cite news |last1=Lowry |first1=Brian |title=NBC Takes Home 15 Emmys in Early Award Presentations |url=https://articles.latimes.com/1997/sep/09/entertainment/ca-30178/2 |work=[[Los Angeles Times]] |date=September 9, 1997 |access-date=July 29, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20140812190043/http://articles.latimes.com/1997/sep/09/entertainment/ca-30178/2 |archive-date=August 12, 2014}}</ref>
+
+=="In Memoriam"==
+The annual "[[List of Latin phrases (I)#in memoriam|In Memoriam]]" tribute, presented by actress [[Angela Bassett]], honored the following people to the score of ''[[Dr. Jekyll and Ms. Hyde]]'' (1995):<ref>{{harvnb|Bona|2002|p=115}}</ref>
+
+{{div col|colwidth=22em}}
+* [[Jo Van Fleet]]
+* [[Tupac Shakur]]
+* [[Brigitte Helm]]
+* [[Dorothy Lamour]]
+* [[Stirling Silliphant]] – Writer
+* [[Saul Bass]] – Designer
+* [[Steve Tesich]] – Writer
+* [[Juliet Prowse]]
+* [[Murray Spivack]] – Sound
+* [[Joseph Biroc]] – Cinematographer
+* [[Howard Rollins|Howard E. Rollins Jr.]]
+* [[Jack Weston]]
+* [[Krzysztof Kieślowski]] – Director
+* [[Fred Zinnemann]] – Director
+* [[Ben Johnson (actor)|Ben Johnson]]
+* [[Gene Nelson]]
+* [[Edward Carfagno|Edward C. Carfagno]] – Art Director
+* [[Joanne Dru]]
+* [[John Alton]] – Cinematographer
+* [[Greer Garson]]
+* [[Albert R. Broccoli|Albert R. 'Cubby' Broccoli]] – Producer
+* [[Lew Ayres]]
+* [[Pandro S. Berman]] – Producer
+* [[Sheldon Leonard]]
+* [[Claudette Colbert]]
+* [[Marcello Mastroianni]]
+{{div col end}}
+
+== See also ==
+{{Portal|Film|Los Angeles}}
+
+* [[List of submissions to the 69th Academy Awards for Best Foreign Language Film]]
+
+== References ==
+{{reflist|30em}}
+
+== Bibliography ==
+{{refbegin}}
+
+*{{citation
+|last=Bona
+|first=Damien
+|title=Inside Oscar 2
+|year=2002
+|isbn=0-345-44970-3
+|location=New York, United States
+|publisher=[[Ballantine Books]]
+|url=https://archive.org/details/insideoscar200bona
+}}
+*{{citation
+|last=Pond
+|first=Steve
+|title=The Big Show: High Times and Dirty Dealings Backstage at the Academy Awards
+|year=2005
+|isbn=0-571-21193-3
+|location=New York, United States
+|publisher=[[Faber and Faber]]
+|url=https://archive.org/details/bigshowhightimes00pond
+}}
+
+{{refend}}
+
+== External links ==
+;Official websites
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=October 2, 2018 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+;Analysis
+* [http://www.filmsite.org/aa96.html 1996 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20160303184455/http://www.filmsite.org/aa96.html |date=March 3, 2016 }} [[Filmsite.org|Filmsite]]
+* [https://www.imdb.com/event/ev0000003/1997 Academy Awards, USA: 1997 Awards] {{Webarchive|url=https://web.archive.org/web/20171029023455/http://www.imdb.com/event/ev0000003/1997? |date=October 29, 2017 }} [[IMDb|Internet Movie Database]]
+
+;Other resources
+* {{IMDb title|0297693|The 69th Annual Academy Awards}}
+
+{{Academy Awards Chron|state=autocollapse}}
+
+{{featured list}}
+
+{{DEFAULTSORT:Academy Awards, 69th}}
+[[Category:1996 film awards]]
+[[Category:1997 in American cinema]]
+[[Category:Academy Awards ceremonies]]
+[[Category:1997 in Los Angeles]]
+[[Category:March 1997 in the United States]]
+[[Category:1997 awards in the United States|Academy]]
+[[Category:Television shows directed by Louis J. Horvitz]]

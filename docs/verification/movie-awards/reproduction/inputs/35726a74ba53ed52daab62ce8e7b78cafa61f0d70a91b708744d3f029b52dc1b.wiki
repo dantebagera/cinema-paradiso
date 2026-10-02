@@ -1,0 +1,337 @@
+{{oscars short description|films-year=1937}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 10
+| award            = Academy Awards
+| date             = March 10, 1938
+| site             = [[Millennium Biltmore Hotel|Biltmore Hotel]]
+| host             = [[Bob Burns (humorist)|Bob Burns]]
+| best_picture     = ''[[The Life of Emile Zola]]''
+| most_wins        = ''The Life of Emile Zola'' (3)
+| most_nominations = ''The Life of Emile Zola'' (10)
+| last             = 9th
+| next             = 11th
+}}
+
+The '''10th Academy Awards''' were held on March 10, 1938, to honor films released in 1937, at the [[Millennium Biltmore Hotel|Biltmore Hotel]] in [[Los Angeles, California]] and hosted by [[Bob Burns (humorist)|Bob Burns]]. Originally scheduled for March 3, 1938, the ceremony was postponed due to the [[Los Angeles flood of 1938]].<ref>{{cite web|url=https://www.reuters.com/article/us-oscars-strike/hollywood-writers-strike-clouds-oscars-idUSN1615156820080123|title=Hollywood writers strike clouds Oscars|date=2008-01-23|publisher=[[Reuters]]|access-date=2020-02-07}}</ref><ref>{{cite web|url=https://www.filmsite.org/aa37.html|title=1937 Academy Awards Winners and History |publisher=filmsite.org|access-date=2020-02-07}}</ref><ref name="Oscars1938">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1938 |title=The 10th Academy Awards (1938) Nominees and Winners |access-date=2011-08-09 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093713/http://www.oscars.org/awards/academyawards/legacy/ceremony/10th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+This was the last year for two Oscars categories: [[Academy Award for Best Dance Direction|Best Dance Direction]], which this year saw the only nomination ever received by a [[Marx Brothers]] film (Dave Gould for "All God's Children Got Rhythm" in ''[[A Day at the Races (film)|A Day at the Races]]''), and [[Best Assistant Director]].
+ 
+''[[The Life of Emile Zola]]'' was the first film to receive ten nominations and the second consecutive biographical film to win [[Academy Award for Best Picture|Best Picture]], following the previous year's ''[[The Great Ziegfeld]]''. [[Luise Rainer]] received the [[Academy Award for Best Actress]] for ''[[The Good Earth (film)|The Good Earth]]'', earning her the distinctions of being the first actor to win two Academy Awards and the first to win consecutive acting awards, following her win for ''The Great Ziegfeld''. [[Luise Rainer]], who didn't think anyone could win in two consecutive years, stayed at home with her husband, playwright [[Clifford Odets]], on the night of the ceremony. She was informed of her win by telephone, hastily dressed herself up, and rushed out the door to collect her second Oscar, which was said to have "jinxed her".<ref name="Oscars '37 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/834/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=834 |isbn=0-385-04060-1}}</ref>
+
+''[[A Star Is Born (1937 film)|A Star Is Born]]'' was the first color film to receive a [[Academy Award for Best Picture|Best Picture]] nomination.
+
+[[Walt Disney]]'s ''[[Snow White and the Seven Dwarfs (film)|Snow White and the Seven Dwarfs]]'', the world's first full-length [[Technicolor]] animated feature film with sound and widely seen as [[List of films considered the best|one of the greatest motion pictures of all time]], received only one nomination, for [[Academy Award for Best Original Score|Best Original Score]]. [[11th Academy Awards|The following year]], the Academy presented Disney an [[Honorary Academy Award]] (consisting of one full-size Oscar statuette and seven miniature statuettes on a stepped base) "for creating ''Snow White and the Seven Dwarfs'' [1937], recognized as a significant screen innovation which has charmed millions and pioneered a great new entertainment field for the motion picture cartoon". This is a rare case of a film being recognized in two successive ceremonies.
+
+This was the first year in which every film nominated for Best Picture received multiple nominations.
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Leo McCarey 1930s portrait photo (cropped).jpg
+| caption1          = [[Leo McCarey]], Best Director winner
+| image2            = Spencer tracy state of the union.jpg
+| caption2          = [[Spencer Tracy]]; Best Actor winner
+| image3            = Luise Rainer - 1941.jpg
+| caption3          = [[Luise Rainer]]; Best Actress winner
+| image4            = Joseph Schildkraut 1953.jpg
+| caption4          = [[Joseph Schildkraut]]; Best Supporting Actor winner
+| image5            = Alice Brady by Albert Witzel.jpg
+| caption5          = [[Alice Brady]]; Best Supporting Actress winner
+| image6            = Pete Smith 1918 Publicity Photo.jpg
+| caption6          = [[Pete Smith (film producer)|Pete Smith]]; Best Live Action Short Subject, Color co-winner
+| image7            = Karl-Freund-1932.jpg
+| caption7          = [[Karl Freund]]; Best Cinematography winner
+| image8            = Mack Sennett 1916.jpg
+| caption8          = [[Mack Sennett]]; Honorary Academy Award recipient
+| image9            = Darryl F. Zanuck 1964.jpg
+| caption9          = [[Darryl F. Zanuck]]; Irving G. Thalberg Memorial Award recipient
+
+}}
+
+=== Awards ===
+Nominations announced on February 6, 1938. Winners are listed first and highlighted in boldface.<ref name="Oscars1938" />
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+* '''''[[The Life of Emile Zola]]''''' '''– [[Henry Blanke]] for [[Warner Bros.]]'''
+** ''[[The Awful Truth]]'' – [[Leo McCarey]] and [[Everett Riskin]] for [[Columbia Pictures|Columbia]]
+** ''[[Captains Courageous (1937 film)|Captains Courageous]]'' – [[Louis D. Lighton]] for [[Metro-Goldwyn-Mayer]]
+** ''[[Dead End (1937 film)|Dead End]]'' – [[Samuel Goldwyn]] and Merritt Hulbert for [[Samuel Goldwyn Productions|Samuel Goldwyn Prod.]] and [[United Artists]]
+** ''[[The Good Earth (film)|The Good Earth]]'' – [[Irving Thalberg]] and [[Albert Lewin]] for Metro-Goldwyn-Mayer
+** ''[[In Old Chicago]] –'' [[Darryl F. Zanuck]] and [[Kenneth Macgowan]] for [[20th Century Fox]]
+** ''[[Lost Horizon (1937 film)|Lost Horizon]]'' – [[Frank Capra]] for Columbia
+** ''[[One Hundred Men and a Girl]]'' – [[Charles R. Rogers]] and [[Joe Pasternak]] for [[Universal Pictures|Universal]]
+** ''[[Stage Door]]'' – [[Pandro S. Berman]] for [[RKO General|RKO Radio]]
+** ''[[A Star Is Born (1937 film)|A Star Is Born]]'' – [[David O. Selznick]] for [[Selznick International Pictures|Selznick International]] and United Artists
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Leo McCarey]]&nbsp;– ''[[The Awful Truth]]'''''
+** [[Sidney Franklin (director)|Sidney Franklin]]&nbsp;– ''[[The Good Earth (film)|The Good Earth]]''
+** [[William Dieterle]]&nbsp;– ''[[The Life of Emile Zola]]''
+** [[Gregory La Cava]]&nbsp;– ''[[Stage Door]]''
+** [[William A. Wellman|William Wellman]]&nbsp;– ''[[A Star Is Born (1937 film)|A Star Is Born]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Spencer Tracy]]&nbsp;– ''[[Captains Courageous (1937 film)|Captains Courageous]]'' as Manuel Fidello'''
+** [[Charles Boyer]]&nbsp;– ''[[Conquest (1937 film)|Conquest]]'' as [[Napoleon|Napoleon Bonaparte]]
+** [[Fredric March]]&nbsp;– ''[[A Star Is Born (1937 film)|A Star Is Born]]'' as Norman Maine
+** [[Robert Montgomery (actor)|Robert Montgomery]]&nbsp;– ''[[Night Must Fall (1937 film)|Night Must Fall]]'' as Danny
+** [[Paul Muni]]&nbsp;– ''[[The Life of Emile Zola]]'' as [[Émile Zola]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Luise Rainer]]&nbsp;– ''[[The Good Earth (film)|The Good Earth]]'' as O-Lan'''
+** [[Irene Dunne]]&nbsp;– ''[[The Awful Truth]]'' as Lucy Warriner
+** [[Greta Garbo]]&nbsp;– ''[[Camille (1936 film)|Camille]]'' as Marguerite Gautier
+** [[Janet Gaynor]]&nbsp;– ''[[A Star Is Born (1937 film)|A Star Is Born]]'' as Esther Blodgett/Vicki Lester
+** [[Barbara Stanwyck]]&nbsp;– ''[[Stella Dallas (1937 film)|Stella Dallas]]'' as Stella Dallas
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Joseph Schildkraut]]&nbsp;– ''[[The Life of Emile Zola]]'' as [[Alfred Dreyfus]]'''
+** [[Ralph Bellamy]]&nbsp;– ''[[The Awful Truth]]'' as Dan Leeson
+** [[Thomas Mitchell (actor)|Thomas Mitchell]]&nbsp;– ''[[The Hurricane (1937 film)|The Hurricane]]'' as Dr. Kersaint
+** [[H. B. Warner]]&nbsp;– ''[[Lost Horizon (1937 film)|Lost Horizon]]'' as Chang
+** [[Roland Young]]&nbsp;– ''[[Topper (film)|Topper]]'' as Cosmo Topper
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Alice Brady]]&nbsp;– ''[[In Old Chicago]]'' as [[Catherine O'Leary|Molly O'Leary]]'''
+** [[Andrea Leeds]]&nbsp;– ''[[Stage Door]]'' as Kay Hamilton
+** [[Anne Shirley (actress)|Anne Shirley]]&nbsp;– ''[[Stella Dallas (1937 film)|Stella Dallas]]'' as Laurel Dallas
+** [[Claire Trevor]]&nbsp;– ''[[Dead End (1937 film)|Dead End]]'' as Francey
+** [[May Whitty]]&nbsp;– ''[[Night Must Fall (1937 film)|Night Must Fall]]'' as Mrs Bramson
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+* '''''[[A Star Is Born (1937 film)|A Star Is Born]]''&nbsp;– [[William A. Wellman]] and [[Robert Carson (writer)|Robert Carson]]'''
+** ''[[Black Legion (film)|Black Legion]]''&nbsp;– [[Robert Lord (screenwriter)|Robert Lord]]
+** ''[[In Old Chicago]]''&nbsp;– [[Niven Busch]]
+** ''[[The Life of Emile Zola]]''&nbsp;– Heinz Herald and Geza Herczeg
+** ''[[One Hundred Men and a Girl]]''&nbsp;– [[Hanns Kräly]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* '''''[[The Life of Emile Zola]]'''''&nbsp;– '''Heinz Herald, Geza Herczeg, and [[Norman Reilly Raine]], based on ''Zola and His Time'' by [[Matthew Josephson]]'''
+** ''[[The Awful Truth]]''&nbsp;– [[Viña Delmar]], based on the play by Arthur Richman
+** ''[[Captains Courageous (1937 film)|Captains Courageous]]''&nbsp;– [[John Lee Mahin]], [[Marc Connelly]], and [[Dale Van Every]], based on [[Captains Courageous|the novel]] by [[Rudyard Kipling]]
+** ''[[Stage Door]]''&nbsp;– [[Morrie Ryskind|Morris Ryskind]] and [[Anthony Veiller]], based on the play by [[Edna Ferber]] and [[George S. Kaufman]]
+** ''[[A Star Is Born (1937 film)|A Star Is Born]]''&nbsp;– [[Alan Campbell (screenwriter)|Alan Campbell]], [[Robert Carson (writer)|Robert Carson]], and [[Dorothy Parker]], based on a story by [[William A. Wellman]] and [[Robert Carson (writer)|Robert Carson]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[The Private Life of the Gannets]]''&nbsp;– [[Skibo Productions]] and [[Educational Pictures|Educational]]'''
+** ''[[A Night at the Movies (film)|A Night at the Movies]]''&nbsp;– [[MGM]]
+** ''[[Romance of Radium]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]] and MGM
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[Torture Money]]''&nbsp;– [[MGM]]'''
+** ''[[Deep South (film)|Deep South]]''&nbsp;– [[RKO Radio]]
+** ''[[Should Wives Work?]]''&nbsp;– RKO Radio
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Color)]]}}
+* '''''[[Penny Wisdom]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]] and [[MGM]]'''
+** ''[[The Man Without a Country (1937 film)|The Man Without a Country]]''&nbsp;– [[Warner Bros.]]
+** ''[[Popular Science (film series)|Popular Science J-7-1]]''&nbsp;– [[Paramount Pictures|Paramount]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[The Old Mill]]''&nbsp;– [[Walt Disney Productions]] and [[RKO Radio]]'''
+** ''[[Educated Fish]]''&nbsp;– [[Paramount Pictures|Paramount]]
+** ''[[The Little Match Girl (1937 film)|The Little Match Girl]]''&nbsp;– [[Charles Mintz]] and [[Columbia Pictures|Columbia]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring)]]}}
+* '''''[[One Hundred Men and a Girl]]''&nbsp;– [[Universal Pictures|Universal Studio Music Department]]'''
+** ''[[The Hurricane (1937 film)|The Hurricane]]''&nbsp;– [[Samuel Goldwyn Productions|Goldwyn Studio Music Department]]
+** ''[[In Old Chicago]]''&nbsp;– [[Twentieth Century Fox|20th Century Fox Studio Music Department]]
+** ''[[The Life of Emile Zola]]''&nbsp;– [[Warner Bros.|Warner Bros. Studio Music Department]]
+** ''[[Lost Horizon (1937 film)|Lost Horizon]]''&nbsp;– [[Columbia Studios|Columbia Studio Music Department]]
+** ''[[Make a Wish (1937 film)|Make a Wish]]''&nbsp;– Principal Productions
+** ''[[Maytime (1937 film)|Maytime]]''&nbsp;– [[Metro-Goldwyn-Mayer|MGM Studio Music Department]]
+** ''[[Portia on Trial]]''&nbsp;– [[Republic Studios|Republic Studio Music Department]]
+** ''[[The Prisoner of Zenda (1937 film)|The Prisoner of Zenda]]''&nbsp;– [[Selznick International Pictures|Selznick International Pictures Music Department]]
+** ''[[Quality Street (1937 film)|Quality Street]]''&nbsp;– [[RKO Pictures|RKO Radio Studio Music Department]]
+** ''[[Snow White and the Seven Dwarfs (film)|Snow White and the Seven Dwarfs]]''&nbsp;– [[Walt Disney Company|Walt Disney Studio Music Department]]
+** ''[[Something to Sing About (1937 film)|Something to Sing About]]''&nbsp;– [[Grand National Films Inc.|Grand National Studio Music Department]]
+** ''[[Souls at Sea]]''&nbsp;– [[Paramount Studio|Paramount Studio Music Department]]
+** ''[[Way Out West (1937 film)|Way Out West]]''&nbsp;– [[Hal Roach Studios|Hal Roach Studio Music Department]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[Sweet Leilani]]" from ''[[Waikiki Wedding]]''&nbsp;– Music and Lyrics by [[Harry Owens]]'''
+** "Remember Me" from ''[[Mr. Dodd Takes the Air]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Al Dubin]]
+** "[[That Old Feeling (song)|That Old Feeling]]" from ''[[Walter Wanger's Vogues of 1938]]''&nbsp;– Music by [[Sammy Fain]]; Lyrics by [[Lew Brown]]
+** "[[They Can't Take That Away From Me]]" from ''[[Shall We Dance (1937 film)|Shall We Dance]]''&nbsp;– Music by [[George Gershwin]] (posthumous nomination); Lyrics by [[Ira Gershwin]]
+** "Whispers in the Dark" from ''[[Artists and Models (1937 film)|Artists and Models]]''&nbsp;– Music by [[Friedrich Hollaender|Frederick Hollander]]; Lyrics by [[Leo Robin]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+* '''''[[The Hurricane (1937 film)|The Hurricane]]''&nbsp;– [[Thomas T. Moulton]]'''
+** ''[[The Girl Said No (1937 film)|The Girl Said No]]''&nbsp;– [[A. E. Kaye]]
+** ''[[Hitting a New High]]''&nbsp;– [[John O. Aalberg|John Aalberg]]
+** ''[[In Old Chicago]]''&nbsp;– [[Edmund H. Hansen|E. H. Hansen]]
+** ''[[The Life of Emile Zola]]''&nbsp;– [[Nathan Levinson]]
+** ''[[Lost Horizon (1937 film)|Lost Horizon]]''&nbsp;– [[John P. Livadary]]
+** ''[[Maytime (1937 film)|Maytime]]''&nbsp;– [[Douglas Shearer]]
+** ''[[One Hundred Men and a Girl]]''&nbsp;– [[Homer G. Tasker]]
+** ''[[Topper (film)|Topper]]''&nbsp;– [[Elmer Raguse|Elmer A. Raguse]]
+** ''[[Wells Fargo (film)|Wells Fargo]]''&nbsp;– [[Loren L. Ryder]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Dance Direction|Best Dance Direction]]}}
+* '''''[[A Damsel in Distress (1937 film)|A Damsel in Distress]]''&nbsp;– [[Hermes Pan (choreographer)|Hermes Pan]]'''
+** ''[[Ali Baba Goes to Town]]''&nbsp;– [[Sammy Lee (choreographer)|Sammy Lee]]
+** ''[[A Day at the Races (film)|A Day at the Races]]''&nbsp;– [[Dave Gould]]
+** ''[[Ready, Willing and Able (film)|Ready, Willing and Able]]''&nbsp;– [[Bobby Connolly]]
+** ''[[Thin Ice (1937 film)|Thin Ice]]''&nbsp;– Harry Losee
+** ''[[Varsity Show (film)|Varsity Show]]''&nbsp;– [[Busby Berkeley]]
+** ''[[Waikiki Wedding]]''&nbsp;– [[LeRoy Prinz]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Assistant Director|Best Assistant Director]]}}
+* '''''[[In Old Chicago]]''&nbsp;– [[Robert D. Webb|Robert Webb]]'''
+** ''[[Lost Horizon (1937 film)|Lost Horizon]]''&nbsp;– [[C. C. Coleman Jr.]]
+** ''[[The Life of Emile Zola]]''&nbsp;– [[Russ Saunders]]
+** ''[[Souls at Sea]]''&nbsp;– [[Hal Walker]]
+** ''[[A Star Is Born (1937 film)|A Star Is Born]]''&nbsp;– [[Eric G. Stacey]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Lost Horizon (1937 film)|Lost Horizon]]''&nbsp;– [[Stephen Goosson]]'''
+** ''[[Conquest (1937 film)|Conquest]]''&nbsp;– [[Cedric Gibbons]] and [[William A. Horning]]
+** ''[[A Damsel in Distress (1937 film)|A Damsel in Distress]]''&nbsp;– [[Carroll Clark]]
+** ''[[Dead End (1937 film)|Dead End]]''&nbsp;– [[Richard Day (art director)|Richard Day]]
+** ''[[Every Day's a Holiday (1937 film)|Every Day's a Holiday]]''&nbsp;– [[Wiard Ihnen]]
+** ''[[The Life of Emile Zola]]''&nbsp;– [[Anton Grot]]
+** ''[[Manhattan Merry-Go-Round (film)|Manhattan Merry-Go-Round]]''&nbsp;– [[John Victor Mackay]]
+** ''[[The Prisoner of Zenda (1937 film)|The Prisoner of Zenda]]''&nbsp;– [[Lyle R. Wheeler]]
+** ''[[Souls at Sea]]''&nbsp;– [[Hans Dreier]] and [[Roland Anderson]]
+** ''[[Walter Wanger's Vogues of 1938]]''&nbsp;– [[Alexander Toluboff]]
+** ''[[Wee Willie Winkie (film)|Wee Willie Winkie]]''&nbsp;– [[William S. Darling]] and [[David S. Hall (art director)|David S. Hall]]
+** ''[[You're a Sweetheart]]''&nbsp;– [[Jack Otterson]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[The Good Earth (film)|The Good Earth]]''&nbsp;– [[Karl Freund]]'''
+** ''[[Dead End (1937 film)|Dead End]]''&nbsp;– [[Gregg Toland]]
+** ''[[Wings over Honolulu]]''&nbsp;– [[Joseph Valentine]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Lost Horizon (1937 film)|Lost Horizon]]''&nbsp;– [[Gene Havlick]] and [[Gene Milford]]'''
+** ''[[The Awful Truth]]''&nbsp;– [[Al Clark (film editor)|Al Clark]]
+** ''[[Captains Courageous (1937 film)|Captains Courageous]]''&nbsp;– [[Elmo Veron]]
+** ''[[The Good Earth (film)|The Good Earth]]''&nbsp;– [[Basil Wrangell]]
+** ''[[One Hundred Men and a Girl]]''&nbsp;– [[Bernard W. Burton]]
+|}
+
+=== Special awards ===
+
+* To [[Mack Sennett]], for his lasting contribution to the [[Comedy|comedy technique]] of the screen, the basic principles of which are as important today as when they were first put into practice, the Academy presents a Special Award to that master of fun, discoverer of stars, sympathetic, kindly, understanding comedy genius - Mack Sennett.
+* To [[Edgar Bergen]] for his outstanding comedy creation, ''[[Charlie McCarthy]]''.
+* To [[Museum of Modern Art Department of Film|The Museum of Modern Art Film Library]] for its significant work in collecting films dating from 1895 to the present and for the first time making available to the public the means of studying the historical and aesthetic development of the motion picture as one of the major arts.
+* To [[W. Howard Greene]] for the color photography of ''[[A Star Is Born (1937 film)|A Star Is Born]]''.
+
+=== Irving G. Thalberg Memorial Award ===
+
+* [[Darryl F. Zanuck]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 10 
+| ''[[The Life of Emile Zola]]''
+|-
+| rowspan="2" style="text-align:center" | 7
+| ''[[Lost Horizon (1937 film)|Lost Horizon]]''
+|-
+| ''[[A Star Is Born (1937 film)|A Star Is Born]]''
+|-
+| rowspan="2" style="text-align:center" | 6
+| ''[[The Awful Truth]]''
+|-
+| ''[[In Old Chicago]]''
+|-
+| rowspan="2" style="text-align:center" | 5
+| ''[[The Good Earth (film)|The Good Earth]]''
+|-
+| ''[[One Hundred Men and a Girl]]''
+|-
+| rowspan="3" style="text-align:center" | 4
+| ''[[Captains Courageous (1937 film)|Captains Courageous]]''
+|-
+| ''[[Dead End (1937 film)|Dead End]]''
+|-
+| ''[[Stage Door]]''
+|-
+| rowspan="2" style="text-align:center" | 3
+| ''[[The Hurricane (1937 film)|The Hurricane]]''
+|-
+| ''[[Souls at Sea]]''
+|-
+| rowspan="9" style="text-align:center" | 2
+| ''[[Conquest (1937 film)|Conquest]]''
+|-
+| ''[[A Damsel in Distress (1937 film)|A Damsel in Distress]]''
+|-
+|  ''[[Maytime (1937 film)|Maytime]]''
+|-
+| ''[[Night Must Fall (1937 film)|Night Must Fall]]''
+|-
+| ''[[The Prisoner of Zenda (1937 film)|The Prisoner of Zenda]]''
+|-
+| ''[[Stella Dallas (1937 film)|Stella Dallas]]''
+|-
+| ''[[Waikiki Wedding]]''
+|-
+| ''[[Topper (film)|Topper]]''
+|-
+| ''[[Walter Wanger's Vogues of 1938]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 3
+| ''[[The Life of Emile Zola]]''
+|-
+|  rowspan=3, style="text-align:center" | 2
+| ''[[The Good Earth (film)|The Good Earth]]''
+|-
+| ''[[In Old Chicago]]''
+|-
+| ''[[Lost Horizon (1937 film)|Lost Horizon]]''
+|-
+|}
+
+{{col-float-end}}
+
+== See also ==
+
+* [[1937 in film]]
+
+== References ==
+
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 10}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1937 film awards]]
+[[Category:1938 in Los Angeles]]
+[[Category:1938 in American cinema]]
+[[Category:March 1938 in the United States]]

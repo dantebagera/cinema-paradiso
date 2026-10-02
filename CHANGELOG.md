@@ -1,5 +1,17 @@
 # Changelog
 
+## v3.0.0-beta.2 - October 2026
+
+Local checkpoint of the current project, including the pending work since beta.1.
+
+- Added movie awards data, award displays, and bundled artwork.
+- Extended TV library discovery, import, maintenance, bulk actions, lists, and acquisition handling.
+- Updated movie relationship and filmography navigation, shared cards, and notifications.
+- Made Continue Watching menus exclusive and added View card to open the selected movie alone in Discover.
+- Included regression tests, implementation plans, and desktop verification artifacts.
+
+This checkpoint does not include a new native-player build or a public release.
+
 ## v3.0.0-beta.1 - September 2026
 
 Local beta integrating the TV and acquisition work into the main checkout.

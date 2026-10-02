@@ -1,0 +1,227 @@
+{{oscars short description|films-year=1934}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 7
+| award            = [[Academy Awards]]
+| date             = February 27, 1935
+| site             = [[Millennium Biltmore Hotel|Biltmore Hotel]] in [[Los Angeles]], [[California]]
+| host             = [[Irvin S. Cobb]]
+| best_picture     = ''[[It Happened One Night]]''
+| most_wins        = ''It Happened One Night'' (5)
+| most_nominations = ''[[One Night of Love]]'' (6)
+| last             = [[6th Academy Awards|6th]]
+| next             = [[8th Academy Awards|8th]]
+}}
+
+The '''7th Academy Awards''', honoring the [[1934 in film|best films for 1934]], was held on February 27, 1935,<ref>{{cite web |last1=Feinberg |first1=Scott |title=Oscars: How One Nominee Found Herself at a Train Station on the Night of the 7th Awards |url=https://www.hollywoodreporter.com/news/general-news/oscars-how-one-nominee-found-herself-at-union-station-on-the-night-of-the-7th-awards-4171293/ |website=The Hollywood Reporter |access-date=23 January 2024 |date=23 April 2021}}</ref> at the [[Millennium Biltmore Hotel|Biltmore Hotel]] in [[Los Angeles]], California. They were hosted by [[Irvin S. Cobb]]. Since this ceremony, the [[Academy of Motion Picture Arts and Sciences|Academy]]'s award eligibility period coincided with the calendar year (with temporary exceptions for the [[93rd Academy Awards|93rd]] and [[94th Academy Awards]] due to the [[COVID-19 pandemic]]).
+
+[[Frank Capra]]'s influential [[romantic comedy]] ''[[It Happened One Night]]'' became the first of three films to date to [[List of Big Five Academy Award winners and nominees|"sweep" the top five awards]]: [[Academy Award for Best Picture|Best Picture]], [[Academy Award for Best Director|Best Director]], [[Academy Award for Best Actor|Best Actor]], [[Academy Award for Best Actress|Best Actress]], and [[Academy Award for Best Adapted Screenplay|Best Screenplay]]. This feat would later be matched by ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' in [[48th Academy Awards|1975]] and ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]'' in [[64th Academy Awards|1991]]. It also was the first romantic comedy to win Best Picture, and the first film to win two acting Oscars as well as the first film to win more than 3 awards.
+
+The categories of [[Academy Award for Best Film Editing|Best Film Editing]], [[Academy Award for Best Original Score|Best Original Score]], and [[Academy Award for Best Original Song|Best Original Song]] were introduced this year. This was the first of only two years in which [[write-in candidate]]s were permitted, a response to a controversy surrounding [[Bette Davis]] not being nominated for her role in ''[[Of Human Bondage (1934 film)|Of Human Bondage]]''.<ref name="Oscars '34 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/832/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=833 |isbn=0-385-04060-1}}</ref> The Academy, inundated by calls, letters and editorials decrying this slight, told members they could vote in names on a printed ballot or write in any other name that was desired. [[Claudette Colbert]] declared that this announcement would give Davis the win in a walk.<ref name="Oscars '34 Notes"/> However, in final voting, Davis came in fourth place. Colbert, who viewed herself as having no chance, was informed of her victory upon boarding a train for New York. She hastily rushed into the ceremony to collect her award, then went back to the waiting train.<ref name="Oscars '34 Notes"/>  
+
+This was the last time that all Best Actor nominees were first time acting nominees until the [[95th Academy Awards]], and the last time until the [[43rd Academy Awards]] where either lead acting category was entirely first-time nominees.
+
+Six-year-old [[Shirley Temple]] received the first [[Academy Juvenile Award|Juvenile Award]], making her the [[List of oldest and youngest Academy Award winners and nominees|youngest Oscar recipient]]. [[Clark Gable]] was the first Best Actor winner born in the 20th century (1901).
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Frank Capra.jpg
+| caption1          = [[Frank Capra]]; Best Director winner and Best Picture co-winner
+| image2            = Harry Cohn Oscar 1938 cropped.jpg
+| caption2          = [[Harry Cohn]]; Best Picture co-winner
+| image3            = Clark Gable Publicity Photo, 1945.jpg
+| caption3          = [[Clark Gable]]; Best Actor winner
+| image4            = Claudette Colbert in The Misleading Lady.jpg
+| caption4          = [[Claudette Colbert]]; Best Actress winner
+| image5            = Walt Disney 1946.JPG
+| caption5          = [[Walt Disney]]; Best Short Subject, Cartoon winner
+| image6            = Cedric-Gibbons-1936.jpg
+| caption6          = [[Cedric Gibbons]]; Best Art Direction co-winner
+| image7            = Conrad A. Nervig ACE Headsot.png
+| caption7          = [[Conrad A. Nervig]]; Best Film Editing winner
+| image8            = Shirleytemple.jpg
+| caption8          = [[Shirley Temple]]; Juvenile Academy Award recipient
+
+}}
+=== Awards ===
+Nominees were announced on February 5, 1935. Winners are listed first and highlighted in boldface.<ref name="Oscars1935">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1935 |title=The 7th Academy Awards (1935) Nominees and Winners |access-date=2011-08-07 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093704/http://www.oscars.org/awards/academyawards/legacy/ceremony/7th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref><ref name=database>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1934" in the "Award Year(s)" drop-down menu and press "Search".</ref>
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+* '''''[[It Happened One Night]]''''' '''– [[Frank Capra]] and [[Harry Cohn]] for [[Columbia Pictures|Columbia]]'''
+** ''[[The Barretts of Wimpole Street (1934 film)|The Barretts of Wimpole Street]]'' – [[Irving Thalberg]] for [[Metro-Goldwyn-Mayer]]
+** ''[[Cleopatra (1934 film)|Cleopatra]]'' – [[Cecil B. DeMille]] for [[Paramount Pictures|Paramount]]
+** ''[[Flirtation Walk (film)|Flirtation Walk]]'' – [[Jack L. Warner]], [[Hal B. Wallis]], and [[Robert Lord (screenwriter)|Robert Lord]] for [[First National Pictures|First National]]
+** ''[[The Gay Divorcee]]'' – [[Pandro S. Berman]] for [[RKO Pictures]]
+** ''[[Here Comes the Navy]]'' – [[Louis F. Edelman|Louis Edelman]] for [[Warner Bros.]]
+** ''[[The House of Rothschild]]'' – [[Darryl F. Zanuck]], [[William Goetz]], and [[Raymond Griffith]] for [[Twentieth Century Pictures|20th Century]]
+** ''[[Imitation of Life (1934 film)|Imitation of Life]]'' – [[John M. Stahl]] for [[Universal Pictures|Universal]]
+** ''[[One Night of Love]]'' – Harry Cohn and [[Everett Riskin]] for Columbia
+** ''[[The Thin Man (film)|The Thin Man]]'' – [[Hunt Stromberg]] for Metro-Goldwyn-Mayer
+** ''[[Viva Villa!]]'' – [[David O. Selznick]] for Metro-Goldwyn-Mayer
+** ''[[The White Parade]]'' – [[Jesse L. Lasky]] for [[Fox Film|Fox Film Co.]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Frank Capra]]&nbsp;– ''[[It Happened One Night]]'''''
+** [[Victor Schertzinger]]&nbsp;– ''[[One Night of Love]]''
+** [[W. S. Van Dyke]]&nbsp;– ''[[The Thin Man (film)|The Thin Man]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Clark Gable]]&nbsp;– ''[[It Happened One Night]]'' as Peter Warne'''
+** [[Frank Morgan]]&nbsp;– ''[[The Affairs of Cellini]]'' as [[Alessandro de' Medici, Duke of Florence|Alessandro, Duke of Florence]]
+** [[William Powell]]&nbsp;– ''[[The Thin Man (film)|The Thin Man]]'' as Nick Charles
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Claudette Colbert]]&nbsp;– ''[[It Happened One Night]]'' as Ellen "Ellie" Andrews'''
+** [[Bette Davis]]&nbsp;– ''[[Of Human Bondage (1934 film)|Of Human Bondage]]'' as Mildred Rogers (write-in, not official nomination)<ref name=database/>
+** [[Grace Moore]]&nbsp;– ''[[One Night of Love]]'' as Mary Barrett
+** [[Norma Shearer]]&nbsp;– ''[[The Barretts of Wimpole Street (1934 film)|The Barretts of Wimpole Street]]'' as [[Elizabeth Barrett Browning|Elizabeth Barrett]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+* '''''[[Manhattan Melodrama]]''&nbsp;– [[Arthur Caesar]]'''
+** ''[[Hide-Out]]''&nbsp;– Mauri Grashin
+** ''[[The Richest Girl in the World (1934 film)|The Richest Girl in the World]]''&nbsp;– [[Norman Krasna]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adaptation)]]}}
+* '''''[[It Happened One Night]]''&nbsp;– [[Robert Riskin]], based on the story "Night Bus" by [[Samuel Hopkins Adams]]'''
+** ''[[The Thin Man (film)|The Thin Man]]''&nbsp;– [[Frances Goodrich]] and [[Albert Hackett]], based on [[The Thin Man|the novel]] by [[Dashiell Hammett]]
+** ''[[Viva Villa!]]''&nbsp;– [[Ben Hecht]], based on [[Viva Villa! (book)|the novel]] by Edgecumb Pinchon and O. B. Stade
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Comedy)]]}}
+* '''''[[La Cucaracha (1934 film)|La Cucaracha]]''&nbsp;– [[Kenneth Macgowan]] and [[Pioneer Pictures]]'''
+** ''[[Men in Black (1934 film)|Men in Black]]''&nbsp;– [[Jules White]]
+** ''[[What, No Men!]]''&nbsp;– [[Warner Bros.]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Novelty)]]}}
+* '''''[[City of Wax]]''&nbsp;– [[Horace Woodard]] and [[Stacy Woodard]]'''
+** ''[[Bosom Friends]]''&nbsp;– [[Skibo Productions]]
+** ''[[Strikes and Spares]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[The Tortoise and the Hare (film)|The Tortoise and the Hare]]''&nbsp;– [[Walt Disney]]'''
+** ''[[Holiday Land]]''&nbsp;– [[Screen Gems]] 
+** ''[[Jolly Little Elves]]''&nbsp;– [[Walter Lantz]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring)]]}}
+* '''''[[One Night of Love]]''&nbsp;– [[Columbia Studios|Columbia Studio Music Department]]'''
+** ''[[The Gay Divorcee]]''&nbsp;– [[RKO Radio|RKO Radio Studio Music Department]] 
+** ''[[The Lost Patrol (1934 film)|The Lost Patrol]]''&nbsp;– RKO Radio Studio Music Department 
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[The Continental (song)|The Continental]]" from ''[[The Gay Divorcee]]''&nbsp;– Music by [[Con Conrad]]; Lyrics by [[Herb Magidson]]'''
+** "[[Carioca (1933 song)|Carioca]]" from ''[[Flying Down to Rio]]''&nbsp;– Music by [[Vincent Youmans]]; Lyrics by [[Edward Eliscu]] and [[Gus Kahn]]
+** "[[Love in Bloom (song)|Love in Bloom]]" from ''[[She Loves Me Not (1934 film)|She Loves Me Not]]''&nbsp;– Music by [[Ralph Rainger]]; Lyrics by [[Leo Robin]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+* '''''[[One Night of Love]]''&nbsp;– [[John P. Livadary]]'''
+** ''[[The Affairs of Cellini]]''&nbsp;– [[Thomas T. Moulton]]
+** ''[[Cleopatra (1934 film)|Cleopatra]]''&nbsp;– [[Franklin Hansen]]
+** ''[[Flirtation Walk (film)|Flirtation Walk]]''&nbsp;– [[Nathan Levinson]]
+** ''[[The Gay Divorcee]]''&nbsp;– [[Carl Dreher]]
+** ''[[Imitation of Life (1934 film)|Imitation of Life]]''&nbsp;– [[Theodore Soderberg (1890–1971)|Theodore Soderberg]]
+** ''[[Viva Villa!]]''&nbsp;– [[Douglas Shearer]]
+** ''[[The White Parade]]''&nbsp;– [[Edmund H. Hansen]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Assistant Director|Best Assistant Director]]}}
+* '''''[[Viva Villa!]]''&nbsp;– [[John S. Waters]]'''
+** ''[[Cleopatra (1934 film)|Cleopatra]]''&nbsp;– [[Cullen Tate]]
+** ''[[Imitation of Life (1934 film)|Imitation of Life]]''&nbsp;– [[Scott Beal]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[The Merry Widow (1934 film)|The Merry Widow]]''&nbsp;– [[Cedric Gibbons]] and [[Fredric Hope]]'''
+** ''[[The Affairs of Cellini]]''&nbsp;– [[Richard Day (art director)|Richard Day]]
+** ''[[The Gay Divorcee]]''&nbsp;– [[Van Nest Polglase]] and [[Carroll Clark]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Cleopatra (1934 film)|Cleopatra]]''&nbsp;– [[Victor Milner]]'''
+** ''[[The Affairs of Cellini]]''&nbsp;– [[Charles Rosher]]
+** ''[[Operator 13]]''&nbsp;– [[George Folsey (cinematographer)|George J. Folsey]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Eskimo (1933 film)|Eskimo]]''&nbsp;– [[Conrad A. Nervig]]'''
+** ''[[Cleopatra (1934 film)|Cleopatra]]''&nbsp;– [[Anne Bauchens]]
+** ''[[One Night of Love]]''&nbsp;– [[Gene Milford]]
+|}
+
+=== Special Award ===
+
+* To [[Shirley Temple]], in grateful recognition of her outstanding contribution to screen entertainment during the year 1934.
+
+== Multiple nominations and awards ==
+
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+|6
+|''[[One Night of Love]]''
+|-
+| scope="row" rowspan="3" style="text-align:center"| 5
+|''[[Cleopatra (1934 film)|Cleopatra]]''
+|-
+|''[[The Gay Divorcee]]''
+|-
+|''[[It Happened One Night]]''
+|-
+| scope="row" rowspan="3" style="text-align:center"| 4
+|''[[The Affairs of Cellini]]''
+|-
+|''[[The Thin Man (film)|The Thin Man]]''
+|-
+|''[[Viva Villa!]]''
+|-
+|3
+|''[[Imitation of Life (1934 film)|Imitation of Life]]''
+|-
+| scope="row" rowspan="3" style="text-align:center"| 2
+|''[[The Barretts of Wimpole Street (1934 film)|The Barretts of Wimpole Street]]''
+|-
+|''[[Flirtation Walk (film)|Flirtation Walk]]''
+|-
+|''[[The White Parade]]''
+|}
+
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Wins
+! scope="col" style="text-align:center;"| Film
+|-
+|5
+|''[[It Happened One Night]]''
+|-
+|2
+|''[[One Night of Love]]''
+|}
+
+== See also ==
+
+* [[1934 in film]]
+* [[List of Big Five Academy Award winners and nominees]]
+* [[List of oldest and youngest Academy Award winners and nominees]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 07}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1934 film awards]]
+[[Category:1935 in Los Angeles]]
+[[Category:1935 in American cinema]]
+[[Category:February 1935 in the United States]]

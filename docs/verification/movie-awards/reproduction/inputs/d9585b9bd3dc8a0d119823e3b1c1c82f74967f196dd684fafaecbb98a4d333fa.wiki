@@ -1,0 +1,189 @@
+{{oscars short description|films-year=1931|films-year2=1932}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 5
+| award            = Academy Awards
+|image=Academyawards5.jpg
+|caption = [[Wallace Beery]], with [[Lionel Barrymore]] and Master of Ceremonies [[Conrad Nagel]]
+| date             = November 18, 1932<ref name="OscarsWebsite">{{cite web|url=http://www.oscars.org/awards/academyawards/legacy/ceremony/5th.html |title=The 5th Academy Awards - 1933 |url-status=live |archive-url=https://web.archive.org/web/20120904093854/http://www.oscars.org/awards/academyawards/legacy/ceremony/5th.html |archive-date=2012-09-04 }}</ref>
+| site             = [[Ambassador Hotel (Los Angeles)|Ambassador Hotel]]<ref name="OscarsWebsite" /><br>[[Los Angeles]], [[California]]
+| host             = [[Conrad Nagel]]<ref name="OscarsWebsite" />
+| best_picture     = ''[[Grand Hotel (1932 film)|Grand Hotel]]''
+| most_wins        = ''[[Bad Girl (1931 film)|Bad Girl]]'' and ''[[The Champ (1931 film)|The Champ]]'' (2)
+| most_nominations = ''[[Arrowsmith (film)|Arrowsmith]]'' and ''The Champ'' (4)
+| last             = 4th
+| next             = 6th
+}}
+
+The '''5th Academy Awards''' were held by the [[Academy of Motion Picture Arts and Sciences]] on November 18, 1932,<ref name="OscarsWebsite" /> at the [[Ambassador Hotel (Los Angeles)|Ambassador Hotel]]<ref name="OscarsWebsite" /> in [[Los Angeles]], [[California]], hosted by [[Conrad Nagel]].<ref name="OscarsWebsite" /> Films screened in Los Angeles between August 1, 1931, and July 31, 1932, were eligible to receive awards.<ref name="OscarsWebsite" /> [[Walt Disney]] created a short animated film for the banquet, ''[[Parade of the Award Nominees]]''.<ref>{{cite web |url=http://www.disneyshorts.org/shorts.aspx?shortID=175 |title=Untitled Page |url-status=dead |archive-url=https://web.archive.org/web/20130515082159/http://www.disneyshorts.org/shorts.aspx?shortID=175 |archive-date=2013-05-15 |access-date=2012-07-18 }}</ref>
+
+''[[Grand Hotel (1932 film)|Grand Hotel]]'' became the only Best Picture winner to be nominated for Best Picture and nothing else.<ref>{{cite web|url=https://www.imdb.com/title/tt0022958/trivia |title=Grand Hotel |date=11 September 1932 |via=IMDb |url-status=live |archive-url=https://web.archive.org/web/20121214093842/http://www.imdb.com/title/tt0022958/trivia |archive-date=December 14, 2012 }}</ref> It was the second of six films to date to win Best Picture without a Best Director nomination, preceded by ''[[Wings (1927 film)|Wings]]'' and followed by ''[[Driving Miss Daisy]]'', ''[[Argo (2012 film)|Argo]]'', ''[[Green Book (film)|Green Book]]'', and ''[[CODA (2021 film)|CODA]]''; and the third of seven to win without a screenwriting nomination.<ref>{{cite news|url=https://www.latimes.com/archives/la-xpm-1990-03-27-ca-356-story.html |work=Los Angeles Times |first=Jack |last=Mathews |title=Who Really Won? : Oscars: Academy voters split their ballots, but they fail to do justice. They overlooked the directors of 'Daisy' and 'Glory'--and those films won a combined seven Oscars |date=March 27, 1990 |url-status=live |archive-url=https://web.archive.org/web/20140221160420/http://articles.latimes.com/1990-03-27/entertainment/ca-356_1_miss-daisy |archive-date=February 21, 2014 }}</ref>
+
+This was the first of three Oscars in which ''two'' films not nominated for Best Picture received more nominations than the winner (''[[Dr. Jekyll and Mr. Hyde (1931 film)|Dr. Jekyll and Mr. Hyde]]'' and ''[[The Guardsman]]''). This happened again at the [[25th Academy Awards|25th]] and [[79th Academy Awards]].
+
+This year saw the introduction of short film awards,<ref>{{cite web|url=http://www.cinemateca.org/academy_awards/academy_award_categories.htm |title=Academy Award Winners and Categories |url-status=live |archive-url=https://web.archive.org/web/20120929044105/http://www.cinemateca.org/academy_awards/academy_award_categories.htm |archive-date=2012-09-29 }}</ref> with [[Academy Award for Best Animated Short Film|Best Short Subject, Cartoon]] winner ''[[Flowers and Trees]]'' becoming the first color film to win an Oscar.<ref>{{cite web|url=https://www.imdb.com/title/tt0022899/trivia |title=Flowers and Trees |date=30 July 1932 |via=IMDb |url-status=live |archive-url=https://web.archive.org/web/20140701121825/http://www.imdb.com/title/tt0022899/trivia |archive-date= July 1, 2014 }}</ref>
+
+There was a tie for Best Actor, the first event in Academy history. [[Fredric March]] had led Wallace Beery in the balloting by only one vote, and the rules (later changed) said that the leader and runner-up could both be considered winners if they were only 3 votes apart.<ref name="Oscars '31-32 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/832/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=833 |isbn=0-385-04060-1}}</ref> This left the Academy short one Oscar.<ref name="Oscars '31-32 Notes"/> By winning Best Actor for ''[[The Champ (1931 film)|The Champ]]'', as well as starring in ''Grand Hotel'', Wallace Beery is one of only two performers to date to appear in a Best Picture-winning film and win an acting Oscar for a different Best Picture nominee in the same year.
+
+This was the last ceremony to date in which no film won more than two Oscars. 
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Thalberg-portrait-LATimes.jpg
+| caption1          = [[Irving Thalberg]]; Best Picture winner
+| image2            = Frank Borzage 001.JPG
+| caption2          = [[Frank Borzage]]; Best Director winner
+| image3            = Fredric March face.jpg
+| caption3          = [[Fredric March]]; Best Actor co-winner
+| image4            = Wallace Beery-publicity.JPG
+| caption4          = [[Wallace Beery]]; Best Actor co-winner
+| image5            = Promotional photograph of Helen Hayes.jpg
+| caption5          = [[Helen Hayes]]; Best Actress winner
+| image6            = Frances-Marion.jpg
+| caption6          = [[Frances Marion]]; Best Original Story winner
+| image7            = Walt Disney 1946.JPG
+| caption7          = [[Walt Disney]]; Best Short Subject, Cartoon co-winner and Honorary Academy Award recipient
+| image8            = WP Hal Roach 1920 (cropped).jpg
+| caption8          = [[Hal Roach]]; Best Live Action Short Subject, Comedy winner
+| image9            = Mack Sennett 1916.jpg
+| caption9          = [[Mack Sennett]]; Best Live Action Short Subject, Novelty winner
+
+}}
+=== Awards ===
+Nominees were announced on October 12, 1932. Winners are listed first and highlighted in boldface.<ref name="Oscars1932">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1933 |title=The 5th Academy Awards (1932) Nominees and Winners |access-date=2013-06-24 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |url-status=live |archive-url=https://web.archive.org/web/20160507092803/http://www.oscars.org/oscars/ceremonies/1933 |archive-date=2016-05-07 }}</ref>
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+*'''''[[Grand Hotel (1932 film)|Grand Hotel]]''''' '''– [[Irving Thalberg]] for [[Metro-Goldwyn-Mayer]]'''
+** ''[[Arrowsmith (film)|Arrowsmith]]'' – [[Samuel Goldwyn]] for [[Samuel Goldwyn Productions|Samuel Goldwyn Prod.]]
+** ''[[Bad Girl (1931 film)|Bad Girl]]'' – [[Winfield Sheehan]] for [[Fox Film|Fox Film Corp.]]
+** ''[[The Champ (1931 film)|The Champ]]'' – [[King Vidor]] for Metro-Goldwyn-Mayer
+** ''[[Five Star Final]]'' – [[Hal B. Wallis]] for [[First National Pictures|First National]]
+** ''[[One Hour with You]]'' – [[Ernst Lubitsch]] for [[Paramount Pictures|Paramount Publix]]
+** ''[[Shanghai Express (film)|Shanghai Express]]'' – [[Adolph Zukor]] for Paramount Publix
+** ''[[The Smiling Lieutenant]]'' – Ernst Lubitsch for Paramount Publix
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Director]]}}
+*'''[[Frank Borzage]]&nbsp;– ''[[Bad Girl (1931 film)|Bad Girl]]'''''
+** [[King Vidor]]&nbsp;– ''[[The Champ (1931 film)|The Champ]]''
+** [[Josef von Sternberg]]&nbsp;– ''[[Shanghai Express (film)|Shanghai Express]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Fredric March]]&nbsp;– ''[[Dr. Jekyll and Mr. Hyde (1931 film)|Dr. Jekyll and Mr. Hyde]]'' as [[Dr Jekyll and Mr Hyde (character)|Dr Henry Jekyll/Mr Edward Hyde]]'''
+*'''[[Wallace Beery]]&nbsp;– ''[[The Champ (1931 film)|The Champ]]'' as Champ'''
+** [[Alfred Lunt]]&nbsp;– ''[[The Guardsman]]'' as The Actor
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Helen Hayes]]&nbsp;– ''[[The Sin of Madelon Claudet]]'' as Madelon Claudet'''
+** [[Marie Dressler]]&nbsp;– ''[[Emma (1932 film)|Emma]]'' as Emma Thatcher Smith
+** [[Lynn Fontanne]]&nbsp;– ''[[The Guardsman]]'' as The Actress
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Original Story]]}}
+*'''''[[The Champ (1931 film)|The Champ]]''&nbsp;– [[Frances Marion]]'''
+** ''[[Lady and Gent]]''&nbsp;– [[Grover Jones]] and [[William Slavens McNutt]]
+** ''[[The Star Witness]]''&nbsp;– [[Lucien Hubbard]]
+** ''[[What Price Hollywood?]]''&nbsp;– [[Adela Rogers St. Johns]] and [[Jane Murfin]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Adaptation]]}}
+*'''''[[Bad Girl (1931 film)|Bad Girl]]''&nbsp;– [[Edwin J. Burke]], based on the novel and play by [[Viña Delmar]]'''
+** ''[[Arrowsmith (film)|Arrowsmith]]''&nbsp;– [[Sidney Howard]], based on [[Arrowsmith (novel)|the novel]] by [[Sinclair Lewis]]
+** ''[[Dr. Jekyll and Mr. Hyde (1931 film)|Dr. Jekyll and Mr. Hyde]]''&nbsp;– [[Percy Heath (screenwriter)|Percy Heath]] and [[Samuel Hoffenstein]], based on ''[[Strange Case of Dr Jekyll and Mr Hyde|Strange Case of Dr. Jekyll and Mr. Hyde]]'' by [[Robert Louis Stevenson]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Live Action Short Subject, Comedy]]}}
+*'''''[[The Music Box]]''&nbsp;– [[Hal Roach]]'''
+** ''[[The Loud Mouth]]''&nbsp;– [[Mack Sennett]]
+** ''[[Scratch-As-Catch-Can]]''&nbsp;– [[RKO Pictures|RKO Radio]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Live Action Short Subject, Novelty]]}}
+*'''''[[Wrestling Swordfish]]''&nbsp;– [[Mack Sennett]]'''
+** ''[[Screen Souvenirs]]''&nbsp;– [[Paramount Pictures|Paramount Publix]]
+** ''[[Swing High]]''&nbsp;– [[Metro-Goldwyn-Mayer]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject, Cartoon]]}}
+*'''''[[Flowers and Trees]]'' – [[Walt Disney]], [[Walt Disney Productions]], [[United Artists]]'''
+** ''[[It's Got Me Again!]]'' – [[Leon Schlesinger]], [[Warner Bros.]]
+** ''[[Mickey's Orphans]]''&nbsp;– Walt Disney, Walt Disney Productions, [[Columbia Pictures]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''[[Paramount Publix]] Studio Sound Department'''
+** [[MGM]] Studio Sound Department
+** [[RKO]] Radio Studio Sound Department
+** [[Warner Bros.]] First National Studio Sound Department
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Transatlantic (1931 film)|Transatlantic]]''&nbsp;– [[Gordon Wiles]]'''
+** ''[[À Nous la Liberté]]''&nbsp;– [[Lazare Meerson]]
+** ''[[Arrowsmith (film)|Arrowsmith]]''&nbsp;– [[Richard Day (art director)|Richard Day]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Shanghai Express (film)|Shanghai Express]]''&nbsp;– [[Lee Garmes]]'''
+** ''[[Arrowsmith (film)|Arrowsmith]]''&nbsp;– [[Ray June]]
+** ''[[Dr. Jekyll and Mr. Hyde (1931 film)|Dr. Jekyll and Mr. Hyde]]''&nbsp;– [[Karl Struss]]
+|}
+
+=== Special Award ===
+
+* To [[Walt Disney]] for the creation of [[Mickey Mouse]].<ref name="OscarsWebsite" />
+
+== Multiple nominations and awards ==
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" rowspan="2" style="text-align:center"| 4
+|''[[Arrowsmith (film)|Arrowsmith]]''
+|-
+|''[[The Champ (1931 film)|The Champ]]''
+|-
+| scope="row" rowspan="3" style="text-align:center"| 3
+|''[[Bad Girl (1931 film)|Bad Girl]]''
+|-
+|''[[Shanghai Express (film)|Shanghai Express]]''
+|-
+|''[[Dr. Jekyll and Mr. Hyde (1931 film)|Dr. Jekyll'' and ''Mr. Hyde]]''
+|-
+|2
+|''[[The Guardsman]]''
+|}
+
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Wins
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" rowspan="2" style="text-align:center"| 2
+|''[[Bad Girl (1931 film)|Bad Girl]]''
+|-
+|''[[The Champ (1931 film)|The Champ]]''
+|}
+
+== See also ==
+
+* [[1931 in film]]
+* [[1932 in film]]
+
+==Notes==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 05}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1931 film awards]]
+[[Category:1932 film awards]]
+[[Category:1932 in Los Angeles]]
+[[Category:1932 in American cinema]]
+[[Category:November 1932 in the United States]]

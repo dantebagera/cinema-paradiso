@@ -1,0 +1,552 @@
+{{oscars short description|films-year=2012}}
+{{featured list}}
+{{Use mdy dates|date=March 2013}}
+{{Infobox film awards
+| number           = 85
+| award            = Academy Awards
+| image            = File:85th_Oscars.jpg
+| alt              = Official poster featuring Seth Macfarlane promoting the 85th Academy Awards in 2013.
+| caption          = Official poster
+| date             = February 24, 2013
+| site             = [[Dolby Theatre]]<br />[[Hollywood, Los Angeles]], United States
+| host             = [[Seth MacFarlane]]<ref name="MacFarlane"/>
+| preshow= Jess Cagle<br />[[Kristin Chenoweth]]<br />[[Kelly Rowland]]<br />[[Robin Roberts (newscaster)|Robin Roberts]]<br />[[Lara Spencer]]<ref>{{cite news|last=Yahr |first=Emily |title=Oscars TV: Where to watch the show, the pre-shows, the fashion |url=https://www.washingtonpost.com/blogs/tv-column/post/oscars-tv-where-to-watch-the-show-the-pre-shows-the-fashion/2013/02/22/4c2e468a-7d3a-11e2-9a75-dab0201670da_blog.html |access-date=February 26, 2013 |newspaper=[[The Washington Post]] |date=February 22, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130225200827/http://www.washingtonpost.com/blogs/tv-column/post/oscars-tv-where-to-watch-the-show-the-pre-shows-the-fashion/2013/02/22/4c2e468a-7d3a-11e2-9a75-dab0201670da_blog.html |archive-date=February 25, 2013 }}</ref>
+| producer         = [[Neil Meron]]<br />[[Craig Zadan]]<ref name="MZ"/>
+| director         = [[Don Mischer]]<ref name="Mischer"/>
+| network          = [[American Broadcasting Company|ABC]]
+| best_picture     = ''[[Argo (2012 film)|Argo]]''
+| most_wins        = ''[[Life of Pi (film)|Life of Pi]]'' (4)
+| most_nominations = ''[[Lincoln (film)|Lincoln]]'' (12)
+| duration         = 3 hours, 35 minutes<ref name="Variety Oscar cast and time">{{cite news|url=https://variety.com/2013/tv/reviews/tv-review-oscars-felt-like-the-tonys-had-a-baby-with-a-vegas-revue-818159/ |title=TV Review: 85th Academy Awards |last=Lowry |first=Brian |work=[[Variety (magazine)|Variety]] |date=February 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130412042552/http://variety.com/2013/tv/reviews/tv-review-oscars-felt-like-the-tonys-had-a-baby-with-a-vegas-revue-818159/ |archive-date=April 12, 2013 }}</ref>
+| ratings          = 40.38 million <br />24.47% ([[Nielsen ratings]])<ref name="Oscars 2013: ratings">{{cite news|url=https://www.washingtonpost.com/blogs/tv-column/post/tv-critics-may-have-hated-the-oscars-but-40-million-viewers-tuned-in/2013/02/25/5bf6172a-7fa9-11e2-a350-49866afab584_blog.html |title=TV critics may have hated the Oscars, but 40 million viewers tuned in |last=De Moraes |first=Lisa |date=February 25, 2013 |newspaper=[[The Washington Post]] |access-date=April 30, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130226203923/http://www.washingtonpost.com/blogs/tv-column/post/tv-critics-may-have-hated-the-oscars-but-40-million-viewers-tuned-in/2013/02/25/5bf6172a-7fa9-11e2-a350-49866afab584_blog.html |archive-date=February 26, 2013 }}</ref>
+| last             = 84th
+| next             = 86th
+}}
+The '''85th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[films of 2012]] and took place on February 24, 2013, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]], beginning at 5:30&nbsp;p.m. [[Pacific Time Zone]] (PST) / 8:30&nbsp;p.m. [[Eastern Time Zone]] (EST). The ceremony was the first in the Academy's 85-year history to adopt the phrase "The Oscars" as the ceremony's official name during the broadcast and marketing.<ref name=var1>{{cite news|last=Pond |first=Steve |title=AMPAS Drops '85th Academy Awards' – Now It's Just 'The Oscars' |url=https://www.thewrap.com/awards/column-post/ampas-drops-85th-academy-awards-now-its-just-oscars-78211 |access-date=February 22, 2013 |newspaper=The Wrap |date=February 19, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130222012906/http://www.thewrap.com/awards/column-post/ampas-drops-85th-academy-awards-now-its-just-oscars-78211 |archive-date=February 22, 2013 }}</ref> During the ceremony, the Academy of Motion Picture Arts and Sciences presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony was televised in the United States by [[American Broadcasting Company|ABC]], and produced by [[Craig Zadan]] and [[Neil Meron]] and directed by [[Don Mischer]].<ref name="MZ">{{cite news|last=Kilday |first=Greg |title=Craig Zadan and Neil Meron to Produce Oscars |url=https://www.hollywoodreporter.com/news/craig-zadan-neil-meron-oscars-producers-365041 |access-date=October 7, 2013 |work=[[The Hollywood Reporter]] |date=August 23, 2012 |url-status=live |archive-url=https://web.archive.org/web/20140306143911/http://www.hollywoodreporter.com/news/craig-zadan-neil-meron-oscars-producers-365041 |archive-date=March 6, 2014 }}</ref><ref name="Mischer">{{cite news|last=Sperling |first=Nicole |title=Oscars 2013: Don Mischer to direct next year's telecast |url=https://www.latimes.com/entertainment/movies/la-xpm-2012-sep-13-la-et-mn-oscars-2013-don-mischer-to-direct-next-years-telecast-20120913-story.html |access-date=October 26, 2012 |work=[[Los Angeles Times]] |date=September 13, 2012 |url-status=live |archive-url=https://web.archive.org/web/20121112221410/http://articles.latimes.com/2012/sep/13/entertainment/la-et-mn-oscars-2013-don-mischer-to-direct-next-years-telecast-20120913 |archive-date=November 12, 2012 }}</ref> Actor [[Seth MacFarlane]] hosted the show for the first time.<ref name="MacFarlane"/>
+
+In related events, the Academy held its 4th annual [[Governors Awards]] ceremony at the [[Grand Ballroom]] of the [[Hollywood and Highland Center]] on December 1, 2012.<ref>{{cite news|url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/story/2012-02-08/best-picture-nominees-box-office/53015782/1 |title=Blockbusters left out of the best-picture Oscar race |work=[[USA Today]]|first=Bryan |last=Alexander |date=December 2, 2012 |access-date=May 6, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131005044151/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/story/2012-02-08/best-picture-nominees-box-office/53015782/1 |archive-date=October 5, 2013 }}</ref> On February 9, 2013, in a ceremony at [[The Beverly Hills Hotel]] in [[Beverly Hills, California]], the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by hosts [[Chris Pine]] and [[Zoe Saldaña]].<ref>{{cite news|first=Rebecca |last=Ford |title=Chris Pine and Zoe Saldana to Host AMPAS' Scientific and Technical Awards |url=https://www.hollywoodreporter.com/news/chris-pine-zoe-saldana-host-412991 |work=The Hollywood Reporter |access-date=May 6, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130329022323/http://www.hollywoodreporter.com/news/chris-pine-zoe-saldana-host-412991 |archive-date=March 29, 2013 }}</ref>
+
+''[[Argo (2012 film)|Argo]]'' won three awards, including [[Academy Award for Best Picture|Best Picture]], the first film to win an Academy Award for Best Picture without its director nominated since ''[[Driving Miss Daisy]]''.<ref>{{cite news|last=Horn |first=John |title=Oscars 2013: 'Argo' wins best picture |url=https://www.latimes.com/entertainment/envelope/la-xpm-2013-feb-24-la-et-mn-oscars-2013-argo-wins-best-picture-20130221-story.html |access-date=October 7, 2013 |work=[[Los Angeles Times]] |date=February 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131106131509/http://articles.latimes.com/2013/feb/24/entertainment/la-et-mn-oscars-2013-argo-wins-best-picture-20130221 |archive-date=November 6, 2013 }}</ref> Other winners included ''[[Life of Pi (film)|Life of Pi]]'' with four awards, ''[[Les Misérables (2012 film)|Les Misérables]]'' with three, ''[[Django Unchained]]'', ''[[Lincoln (film)|Lincoln]]'', and ''[[Skyfall]]'' with two, and ''[[Amour (2012 film)|Amour]]'', ''[[Anna Karenina (2012 film)|Anna Karenina]]'', ''[[Brave (2012 film)|Brave]]'', ''[[Curfew (2012 film)|Curfew]]'', ''[[Inocente]]'', ''[[Paperman]]'', ''[[Searching for Sugar Man]]'', ''[[Silver Linings Playbook]]'' and ''[[Zero Dark Thirty]]'' with one. The telecast garnered more than 40 million viewers in the United States.
+
+== Winners and nominees ==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 85th Academy Awards were announced on January 10, 2013, at 5:38&nbsp;a.m. PST (13:38 [[UTC]]) at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]], by [[Seth MacFarlane]], host of the ceremony, and actress [[Emma Stone]].<ref>{{cite news|title=Oscar Host Seth MacFarlane Joins Emma Stone To Announce Oscar Nominations |url=http://www.oscars.org/press/pressreleases/2013/20130107.html |access-date=October 8, 2013 |publisher=Academy of Motion Picture Arts and Sciences |date=January 7, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130925102627/http://www.oscars.org/press/pressreleases/2013/20130107.html |archive-date=September 25, 2013 }}</ref> ''[[Lincoln (film)|Lincoln]]'' received the most nominations with twelve total, and ''[[Life of Pi (film)|Life of Pi]]'' came in second with eleven.<ref>{{cite news|last=Morgan |first=David |title="Lincoln", "Life of Pi" lead Oscar race |url=https://www.cbsnews.com/news/lincoln-life-of-pi-lead-oscar-race/ |access-date=October 7, 2013 |work=[[CBS News]] |date=January 10, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140313184051/http://www.cbsnews.com/news/lincoln-life-of-pi-lead-oscar-race/ |archive-date=March 13, 2014 }}</ref>
+
+The winners were announced during the awards ceremony on February 24, 2013.<ref>{{cite news|title=Nominees for the 85th Academy Awards |url=http://www.oscars.org/awards/academyawards/85/nominees.html |access-date=September 22, 2013 |publisher=[[Academy of Motion Picture Arts and Sciences]] |url-status=live |archive-url=https://web.archive.org/web/20130921053814/http://www.oscars.org/awards/academyawards/85/nominees.html |archive-date=September 21, 2013 }}</ref> ''[[Argo (2012 film)|Argo]]'' was the fourth film to win [[Academy Award for Best Picture|Best Picture]] without a directing nomination, following 1927's ''[[Wings (1927 film)|Wings]]'', 1932's ''[[Grand Hotel (1932 film)|Grand Hotel]]'', and 1989's ''[[Driving Miss Daisy]]''.<ref>{{cite news|last=Patches |first=Matt |title=Ben Affleck's 'Argo' Wins Best Picture Oscar, Michelle Obama Shout-Out |url=http://www.hollywood.com/news/movies/55002214/oscars-argo-best-picture-academy-awards-2013?page=all |access-date=October 8, 2013 |work=[[Hollywood.com]] |date=February 25, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131230235052/http://www.hollywood.com/news/movies/55002214/oscars-argo-best-picture-academy-awards-2013?page=all |archive-date=December 30, 2013 }}</ref> As co-producer of ''Argo'', [[George Clooney]] became the third individual to win Oscars for both acting and producing.<ref>{{cite news|last=Eng |first=Joyce |title=Argo Tops Oscars, Daniel Day-Lewis Makes History |url=https://www.tvguide.com/news/2013-oscar-winners-1061564.aspx |access-date=September 22, 2013 |work=[[TV Guide]] |date=February 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130927112533/http://www.tvguide.com/news/2013-oscar-winners-1061564.aspx |archive-date=September 27, 2013 }}</ref> By virtue of his nomination for [[Academy Award for Best Original Song|Best Original Song]] in ''[[Ted (film)|Ted]]'', host MacFarlane became the sixth person since [[James Franco]], who was a co-host and a Best Actor nominee during the [[83rd Academy Awards|83rd ceremony]] in 2011, to host the ceremony while receiving a nomination in the same year.<ref>{{cite magazine|last=Busis |first=Hillary |title=Seth MacFarlane joins elite list of Oscar hosts-slash-nominees |url=https://www.ew.com/article/2013/01/10/seth-macfarlane-oscar-host-nominee |access-date=October 7, 2013 |magazine=Entertainment Weekly |date=January 10, 2013 |url-status=live |archive-url=https://web.archive.org/web/20161012082534/http://www.ew.com/article/2013/01/10/seth-macfarlane-oscar-host-nominee |archive-date=October 12, 2016 }}</ref><ref>{{cite news|last=Dolak |first=Kevin |title=Seth MacFarlane gets own Oscars nomination |url=https://abcnews.go.com/blogs/entertainment/2013/01/seth-macfarlane-talks-academy-award-nomination/ |access-date=October 7, 2013 |work=ABC News |date=January 10, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130917212347/http://abcnews.go.com/blogs/entertainment/2013/01/seth-macfarlane-talks-academy-award-nomination/ |archive-date=September 17, 2013 }}</ref> ''[[Silver Linings Playbook]]'' was the fourteenth film to earn [[List of films with all four Academy Award acting nominations|nominations in all four acting categories]], and the first since ''[[Reds (film)|Reds]]'' in [[54th Academy Awards|1981]].<ref name="Facts">{{cite news|last=Feinberg |first=Scott |title=Oscar Nominations by the Numbers: Fun Facts, Shocking Stats |url=https://www.hollywoodreporter.com/race/oscar-nominations-by-numbers-fun-408951 |access-date=November 6, 2013 |work=The Hollywood Reporter |date=January 10, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140218130008/http://www.hollywoodreporter.com/race/oscar-nominations-by-numbers-fun-408951 |archive-date=February 18, 2014 }}</ref> At age 22, Best Actress winner [[Jennifer Lawrence]] became the second-youngest winner in that category.<ref>{{cite news|title=2013 Academy Awards: 'Argo,' Jennifer Lawrence, Daniel Day-Lewis win Oscars |url=http://www.oregonlive.com/movies/2013/02/2013_academy_awards_argo_jenni_1.html |access-date=October 7, 2013 |work=[[The Oregonian]] |date=February 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20151119131259/http://www.oregonlive.com/movies/2013/02/2013_academy_awards_argo_jenni_1.html |archive-date=November 19, 2015 }}</ref> With his third win for [[Academy Award for Best Actor|Best Lead Actor]], [[Daniel Day-Lewis]] became the first three-time winner in that category.<ref>{{cite news|last=Pond |first=Steve |title=Daniel Day-Lewis Wins Best Actor Oscar |url=https://www.thewrap.com/awards/article/daniel-day-lewis-wins-best-actor-oscar-78966 |access-date=September 22, 2013 |work=[[The Wrap]] |date=February 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131030153203/http://www.thewrap.com/awards/article/daniel-day-lewis-wins-best-actor-oscar-78966 |archive-date=October 30, 2013 }}</ref> He also was the sixth performer to win at least three acting Oscars.<ref>{{cite news|last=Germain |first=David |title=Argo Takes Top Prize in Closely Fought Race |url=http://www.utsandiego.com/news/2013/feb/25/tp-argo-takes-top-prize-in-closely-fought-race/ |access-date=September 22, 2013 |work=[[U-T San Diego]] |date=February 25, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130927212214/http://www.utsandiego.com/news/2013/feb/25/tp-argo-takes-top-prize-in-closely-fought-race/ |archive-date=September 27, 2013 }}</ref> ''[[Amour (2012 film)|Amour]]'' was the fourth film nominated<ref>{{cite news|last1=Eng |first1=Joyce |title=Oscar Surprises and Snubs: Silver Linings Playbook Is Golden, But Not Ben Affleck |url=https://www.tvguide.com/news/oscar-nominations-surprises-snubs-ben-affleck-kathryn-bigelow-1058692.aspx |access-date=July 18, 2013 |work=TV Guide |date=January 10, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130607013355/http://www.tvguide.com/News/Oscar-Nominations-Surprises-Snubs-Ben-Affleck-Kathryn-Bigelow-1058692.aspx |archive-date=June 7, 2013 }}</ref> simultaneously for Best Picture and [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]] in the same year.<ref>{{cite news|last=Roxborough |first=Scott |title=Haneke's 'Amour' Scores Rare Oscar Best Picture/Foreign Language Double |url=https://www.hollywoodreporter.com/news/haneke-amour-rare-oscar-double-410709 |work=[[The Hollywood Reporter]] |access-date=September 30, 2013 |date=January 10, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140413181948/http://www.hollywoodreporter.com/news/haneke-amour-rare-oscar-double-410709 |archive-date=April 13, 2014 }}</ref> At age nine, [[Quvenzhané Wallis]] became the youngest nominee for [[Academy Award for Best Actress|Best Actress]] and the youngest female acting nominee overall.<ref name="Facts" /> Meanwhile, [[Emmanuelle Riva]] (aged 85) was the oldest nominee for Best Actress.<ref>{{cite news|last=Abramovitch |first=Seth |title=Oscars 2013: Records Broken for Oldest, Youngest Nominees |url=https://www.hollywoodreporter.com/race/oscars-2013-records-broken-oldest-410704 |access-date=October 7, 2013 |work=The Hollywood Reporter |date=January 10, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140306143953/http://www.hollywoodreporter.com/race/oscars-2013-records-broken-oldest-410704 |archive-date=March 6, 2014 }}</ref> This marked the first time in Oscar history that all five nominees in an acting category (Best Supporting Actor) were all previous winners.<ref>{{cite news|last1=Leopold |first1=Todd |title=Unpredictable Oscar race holds promise for exciting night |url=http://www.cnn.com/2013/02/22/showbiz/movies/oscar-advancer-argo-affleck-predictions/ |access-date=July 18, 2013 |publisher=CNN|date=February 22, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131120064652/http://www.cnn.com/2013/02/22/showbiz/movies/oscar-advancer-argo-affleck-predictions |archive-date=November 20, 2013 }}</ref> ''[[Skyfall]]'' and ''[[Zero Dark Thirty]]''{{'}}s joint win in the [[Academy Award for Best Sound Editing|Best Sound Editing]] category was the sixth occurrence of a tie in Oscar history.<ref>{{cite news|last=Scott |first=Mike |title='Skyfall' and 'Zero Dark Thirty' Oscar tie, not unprecedented, but unusual |url=http://www.nola.com/movies/index.ssf/2013/02/skyfall_and_zero_dark_thirty_t.html |access-date=October 8, 2013 |work=[[The Times-Picayune]] |date=February 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131231002711/http://www.nola.com/movies/index.ssf/2013/02/skyfall_and_zero_dark_thirty_t.html |archive-date=December 31, 2013 }}</ref> ''Skyfall'' won the award for [[Academy Award for Best Original Song|Best Original Song]], becoming the first [[James Bond music|Bond song]] to win the award.
+
+=== Awards ===
+[[File:Grant Heslov TIFF09 portrait.jpg|right|thumb|150px|[[Grant Heslov]], Best Picture co-winner]]
+[[File:Ben Affleck by Gage Skidmore 2.jpg|right|thumb|150px|[[Ben Affleck]], Best Picture co-winner]]
+[[File:George Clooney Jay Kelly-19 (cropped).jpg|right|thumb|150px|[[George Clooney]], Best Picture co-winner]]
+[[File:2016 NAB Show's The Future of Cinema Conference, produced in partnership with SMPTE (26717112630) (cropped).jpg|right|thumb|150px|[[Ang Lee]], Best Director winner]]
+[[File:Daniel Day-Lewis Anemone-15 (cropped).jpg|right|thumb|150px|[[Daniel Day-Lewis]], Best Actor winner]]
+[[File:Jennifer Lawrence in 2016.jpg|right|thumb|150px|[[Jennifer Lawrence]], Best Actress winner]]
+[[File:Christoph Waltz Viennale 2017 f (cropped).jpg|right|thumb|150px|[[Christoph Waltz]], Best Supporting Actor winner]]
+[[File:Anne Hathaway-68408 (cropped).jpg|right|thumb|150px|[[Anne Hathaway]], Best Supporting Actress winner]]
+[[File:Quentin Tarantino by Gage Skidmore.jpg|right|thumb|150px|[[Quentin Tarantino]], Best Original Screenplay winner]]
+[[File:Michael Haneke 2009.jpg|thumb|right|150px|[[Michael Haneke]], Best Foreign Language Film winner]]
+[[File:Malik Bendjelloul Deauville 2012.jpg|thumb|right|150px|[[Malik Bendjelloul]], Best Documentary Feature co-winner]]
+[[File:Simon Chinn 2013.jpg|thumb|right|150px|[[Simon Chinn]], Best Documentary Feature co-winner]]
+[[File:Sean Fine Peabody 2014.jpg|thumb|right|150px|[[Sean Fine]], Best Documentary Short Subject co-winner]]
+[[File:H011620-0419(cropped).jpg|thumb|right|150px|[[Mychael Danna]], Best Original Score winner]]
+[[File:Adele 2016.jpg|thumb|right|150px|[[Adele]], Best Original Song co-winner]]
+[[File:Paul Ottosson A House of Dynamite-03 (cropped).jpg|thumb|right|150px|[[Paul N. J. Ottosson]], Best Sound Editing winner]]
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars2013">{{Cite news|url=http://www.oscars.org/oscars/ceremonies/2013 |title=The 85th Academy Awards (2013) Nominees and Winners |access-date=September 22, 2013 |publisher=Academy of Motion Picture Arts and Sciences |url-status=live |archive-url=https://web.archive.org/web/20141014074656/http://www.oscars.org/oscars/ceremonies/2013 |archive-date=October 14, 2014 }}</ref><ref>{{cite web|url= https://www.latimes.com/entertainment/movies/moviesnow/la-et-en-oscars-2013-nomination-list-story.html |title= Oscars winners and nominees 2013: Complete list |work= [[Los Angeles Times]] |date= February 25, 2013  |access-date= January 15, 2024 |archive-date= January 15, 2024 |archive-url= https://web.archive.org/web/20240115133052/https://www.latimes.com/entertainment/movies/moviesnow/la-et-en-oscars-2013-nomination-list-story.html |url-status=live}}</ref>
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Argo (2012 film)|Argo]]'' – [[Grant Heslov]], [[Ben Affleck]] and [[George Clooney]], producers'''{{double-dagger}}
+**''[[Amour (2012 film)|Amour]]'' – [[Margaret Ménégoz]], [[Stefan Arndt]], [[Veit Heiduschka]] and [[Michael Katz (producer)|Michael Katz]], producers
+**''[[Beasts of the Southern Wild]]'' – Dan Janvey, Josh Penn and Michael Gottwald, producers
+**''[[Django Unchained]]'' – [[Stacey Sher]], [[Reginald Hudlin]] and [[Pilar Savone]], producers
+**''[[Les Misérables (2012 film)|Les Misérables]]'' – [[Tim Bevan]], [[Eric Fellner]], [[Debra Hayward]] and [[Cameron Mackintosh]], producers
+**''[[Life of Pi (film)|Life of Pi]]'' – Gil Netter, [[Ang Lee]] and [[David Womark]], producers
+**''[[Lincoln (film)|Lincoln]]'' – [[Steven Spielberg]] and [[Kathleen Kennedy (producer)|Kathleen Kennedy]], producers
+**''[[Silver Linings Playbook]]'' – [[Donna Gigliotti]], [[Bruce Cohen]] and Jonathan Gordon, producers
+**''[[Zero Dark Thirty]]'' – [[Mark Boal]], [[Kathryn Bigelow]] and [[Megan Ellison]], producers
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Ang Lee]] – ''[[Life of Pi (film)|Life of Pi]]'''''{{double-dagger}}
+**[[Michael Haneke]] – ''[[Amour (2012 film)|Amour]]''
+**[[Benh Zeitlin]] – ''[[Beasts of the Southern Wild]]''
+**[[Steven Spielberg]] – ''[[Lincoln (film)|Lincoln]]''
+**[[David O. Russell]] – ''[[Silver Linings Playbook]]''
+
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+*'''[[Daniel Day-Lewis]] – ''[[Lincoln (film)|Lincoln]]'' as [[Abraham Lincoln]]'''{{double-dagger}}
+**[[Bradley Cooper]] – ''[[Silver Linings Playbook]]'' as Patrizio "Pat" Solitano Jr.
+**[[Hugh Jackman]] – ''[[Les Misérables (2012 film)|Les Misérables]]'' as [[Jean Valjean]]
+**[[Joaquin Phoenix]] – ''[[The Master (2012 film)|The Master]]'' as Freddie Quell
+**[[Denzel Washington]] – ''[[Flight (2012 film)|Flight]]'' as William "Whip" Whitaker Sr.
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+*'''[[Jennifer Lawrence]] – ''[[Silver Linings Playbook]]'' as Tiffany Maxwell'''{{double-dagger}}
+**[[Jessica Chastain]] – ''[[Zero Dark Thirty]]'' as Maya Harris
+**[[Emmanuelle Riva]] – ''[[Amour (2012 film)|Amour]]'' as Anne Laurent
+**[[Quvenzhané Wallis]] – ''[[Beasts of the Southern Wild]]'' as Hushpuppy
+**[[Naomi Watts]] – ''[[The Impossible (2012 film)|The Impossible]]'' as [[Maria Bennett]]
+
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Christoph Waltz]] – ''[[Django Unchained]]'' as Dr. King Schultz'''{{double-dagger}}
+**[[Alan Arkin]] – ''[[Argo (2012 film)|Argo]]'' as Lester Siegel
+**[[Robert De Niro]] – ''[[Silver Linings Playbook]]'' as Patrizio "Pat" Solitano Sr.
+**[[Philip Seymour Hoffman]] – ''[[The Master (2012 film)|The Master]]'' as Lancaster Dodd
+**[[Tommy Lee Jones]] – ''[[Lincoln (film)|Lincoln]]'' as [[Thaddeus Stevens]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Anne Hathaway]] – ''[[Les Misérables (2012 film)|Les Misérables]]'' as [[Fantine]]'''{{double-dagger}}
+**[[Amy Adams]] – ''[[The Master (2012 film)|The Master]]'' as Peggy Dodd
+**[[Sally Field]] – ''[[Lincoln (film)|Lincoln]]'' as [[Mary Todd Lincoln]]
+**[[Helen Hunt]] – ''[[The Sessions (2012 film)|The Sessions]]'' as [[Cheryl Cohen-Greene]]
+**[[Jacki Weaver]] – ''[[Silver Linings Playbook]]'' as Dolores Solitano
+
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[Django Unchained]]'' – [[Quentin Tarantino]]'''{{double-dagger}}
+**''[[Amour (2012 film)|Amour]]'' – [[Michael Haneke]]
+**''[[Flight (2012 film)|Flight]]'' – [[John Gatins]]
+**''[[Moonrise Kingdom]]'' – [[Wes Anderson]] and [[Roman Coppola]]
+**''[[Zero Dark Thirty]]'' – [[Mark Boal]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+*'''''[[Argo (2012 film)|Argo]]'' – [[Chris Terrio]]; {{small|based on a selection from ''The Master of Disguise'' by [[Antonio J. Mendez]] and the ''[[Wired (magazine)|Wired]]'' magazine article ''The Great Escape'' by [[Joshuah Bearman]]}}'''{{double-dagger}}
+**''[[Beasts of the Southern Wild]]'' – [[Lucy Alibar]] and [[Benh Zeitlin]]; {{small|based on the play ''Juicy and Delicious'' by Lucy Alibar}}
+**''[[Life of Pi (film)|Life of Pi]]'' – [[David Magee]]; {{small|based on [[Life of Pi|the novel]] by [[Yann Martel]]}}
+**''[[Lincoln (film)|Lincoln]]'' – [[Tony Kushner]]; {{small|based in part on the book ''[[Team of Rivals: The Political Genius of Abraham Lincoln]]'' by [[Doris Kearns Goodwin]]}}
+**''[[Silver Linings Playbook]]'' – [[David O. Russell]]; {{small|based on [[The Silver Linings Playbook|the novel]] by [[Matthew Quick]]}}
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+*'''''[[Brave (2012 film)|Brave]]'' – Directed by [[Mark Andrews (filmmaker)|Mark Andrews]] and [[Brenda Chapman]]'''{{double-dagger}}
+**''[[Frankenweenie (2012 film)|Frankenweenie]]'' – Directed by [[Tim Burton]]
+**''[[ParaNorman]]'' – Directed by [[Sam Fell]] and [[Chris Butler (filmmaker)|Chris Butler]]
+**''[[The Pirates! Band of Misfits]]'' – Directed by [[Peter Lord]]
+**''[[Wreck-It Ralph]]'' – Directed by [[Rich Moore]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best International Feature Film|Best Foreign Language Film]]}}
+*'''''[[Amour (2012 film)|Amour]]'' ([[List of Austrian submissions for the Academy Award for Best Foreign Language Film|Austria]]) in French – Directed by [[Michael Haneke]]'''{{double-dagger}}
+**''[[Kon-Tiki (2012 film)|Kon-Tiki]]'' ([[List of Norwegian submissions for the Academy Award for Best Foreign Language Film|Norway]]) in English and Norwegian – Directed by [[Joachim Rønning]] and [[Espen Sandberg]]
+**''[[No (2012 film)|No]]'' ([[List of Chilean submissions for the Academy Award for Best Foreign Language Film|Chile]]) in Spanish – Directed by [[Pablo Larraín]]
+**''[[A Royal Affair]]'' ([[List of Danish submissions for the Academy Award for Best Foreign Language Film|Denmark]]) in Danish – Directed by [[Nikolaj Arcel]]
+**''[[War Witch]]'' ([[List of Canadian submissions for the Academy Award for Best Foreign Language Film|Canada]]) in French – Directed by [[Kim Nguyen]]
+
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Searching for Sugar Man]]'' – [[Malik Bendjelloul]] and [[Simon Chinn]]'''{{double-dagger}}
+**''[[5 Broken Cameras]]'' – [[Emad Burnat]] and [[Guy Davidi]]
+**''[[The Gatekeepers (film)|The Gatekeepers]]'' – [[Dror Moreh]], Philippa Kowarsky and Estelle Fialon
+**''[[How to Survive a Plague]]'' – [[David France (writer/filmmaker)|David France]] and [[Howard Gertler]]
+**''[[The Invisible War]]'' – [[Kirby Dick]] and [[Amy Ziering]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Inocente]]'' – [[Sean Fine]] and [[Andrea Nix Fine]]'''{{double-dagger}}
+**''[[Kings Point (film)|Kings Point]]'' – Sari Gilman and Jedd Wider
+**''[[Mondays at Racine]]'' – [[Cynthia Wade]] and Robin Honan
+**''[[Open Heart (film)|Open Heart]]'' – [[Kief Davidson]] and Cori Shepherd Stern
+**''[[Redemption (2012 film)|Redemption]]'' – [[Jon Alpert]] and [[Matthew O'Neill (filmmaker)|Matthew O'Neill]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+*'''''[[Curfew (2012 film)|Curfew]]'' – [[Shawn Christensen]]'''{{double-dagger}}
+**''[[Asad (2012 film)|Asad]]'' – [[Bryan Buckley]] and Mino Jarjoura
+**''[[Buzkashi Boys]]'' – Sam French and [[Ariel Nasr]]
+**''[[Death of a Shadow]]'' (''Dood Van Een Schaduw'') – Tom Van Avermaet and Ellen De Waele
+**''[[Henry (2011 film)|Henry]]'' – [[Yan England]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[Paperman]]'' – [[John Kahrs]]'''{{double-dagger}}
+**''[[Adam and Dog]]'' – Minkyu Lee
+**''[[Fresh Guacamole]]'' – [[PES (director)|PES]]
+**''[[Head over Heels (2012 film)|Head over Heels]]'' – [[Timothy Reckart]] and [[Fodhla Cronin O'Reilly]]
+**''[[Maggie Simpson in "The Longest Daycare"]]'' – [[David Silverman (animator)|David Silverman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[Life of Pi (film)|Life of Pi]]'' – [[Mychael Danna]]'''{{double-dagger}}
+**''[[Anna Karenina (2012 film)|Anna Karenina]]'' – [[Dario Marianelli]]
+**''[[Argo (2012 film)|Argo]]'' – [[Alexandre Desplat]]
+**''[[Lincoln (film)|Lincoln]]'' – [[John Williams]]
+**''[[Skyfall]]'' – [[Thomas Newman]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+*'''"[[Skyfall (song)|Skyfall]]" from ''[[Skyfall]]'' – Music and lyrics by [[Adele Adkins]] and [[Paul Epworth]]'''{{double-dagger}}
+**"Before My Time" from ''[[Chasing Ice]]'' – Music and lyrics by [[J. Ralph]]
+**"[[Everybody Needs a Best Friend]]" from ''[[Ted (film)|Ted]]'' – Music by [[Walter Murphy]]; lyrics by [[Seth MacFarlane]]
+**"[[Pi's Lullaby]]" from ''[[Life of Pi (film)|Life of Pi]]'' – Music by [[Mychael Danna]]; lyrics by [[Bombay Jayashri]]
+**"[[Suddenly (Les Misérables song)|Suddenly]]" from ''[[Les Misérables (2012 film)|Les Misérables]]'' – Music by [[Claude-Michel Schönberg]]; lyrics by [[Herbert Kretzmer]] and [[Alain Boublil]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+*'''''[[Skyfall]]'' – [[Per Hallberg]] and [[Karen Baker Landers]]'''{{double-dagger}}
+*'''''[[Zero Dark Thirty]]'' – [[Paul N. J. Ottosson]]'''{{double-dagger}}
+**''[[Argo (2012 film)|Argo]]'' – [[Erik Aadahl]] and [[Ethan Van der Ryn]]
+**''[[Django Unchained]]'' – [[Wylie Stateman]]
+**''[[Life of Pi (film)|Life of Pi]]'' – [[Eugene Gearty]] and [[Philip Stockton]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Mixing]]}}
+*'''''[[Les Misérables (2012 film)|Les Misérables]]'' – [[Andy Nelson (sound engineer)|Andy Nelson]], [[Mark Paterson (sound engineer)|Mark Paterson]] and [[Simon Hayes (sound engineer)|Simon Hayes]]'''{{double-dagger}}
+**''[[Argo (2012 film)|Argo]]'' – [[John T. Reitz|John Reitz]], [[Gregg Rudloff]] and [[José Antonio García (sound mixer)|José Antonio García]]
+**''[[Life of Pi (film)|Life of Pi]]'' – [[Ron Bartlett]], [[Doug Hemphill|D.M. Hemphill]] and [[Drew Kunin]]
+**''[[Lincoln (film)|Lincoln]]'' – [[Andy Nelson (sound engineer)|Andy Nelson]], [[Gary Rydstrom]] and [[Ron Judkins|Ronald Judkins]]
+**''[[Skyfall]]'' – [[Scott Millan]], [[Greg P. Russell]] and [[Stuart Wilson (sound engineer)|Stuart Wilson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+*'''''[[Lincoln (film)|Lincoln]]'' – Production Design: [[Rick Carter]]; Set Decoration: [[Jim Erickson]]'''{{double-dagger}}
+**''[[Anna Karenina (2012 film)|Anna Karenina]]'' – Production Design: [[Sarah Greenwood]]; Set Decoration: [[Katie Spencer]]
+**''[[The Hobbit: An Unexpected Journey]]'' – Production Design: [[Dan Hennah]]; Set Decoration: [[Ra Vincent]] and [[Simon Bright]]
+**''[[Les Misérables (2012 film)|Les Misérables]]'' – Production Design: [[Eve Stewart]]; Set Decoration: [[Anna Lynch-Robinson]]
+**''[[Life of Pi (film)|Life of Pi]]'' – Production Design: [[David Gropman]]; Set Decoration: [[Anna Pinnock]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Life of Pi (film)|Life of Pi]]'' – [[Claudio Miranda]]'''{{double-dagger}}
+**''[[Anna Karenina (2012 film)|Anna Karenina]]'' – [[Seamus McGarvey]]
+**''[[Django Unchained]]'' – [[Robert Richardson (cinematographer)|Robert Richardson]]
+**''[[Lincoln (film)|Lincoln]]'' – [[Janusz Kamiński]]
+**''[[Skyfall]]'' – [[Roger Deakins]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+*'''''[[Les Misérables (2012 film)|Les Misérables]]'' – [[Lisa Westcott]] and [[Julie Dartnell]]'''{{double-dagger}}
+**''[[Hitchcock (film)|Hitchcock]]'' – [[Howard Berger]], [[Peter Montagna]] and [[Martin Samuel (hair stylist)|Martin Samuel]]
+**''[[The Hobbit: An Unexpected Journey]]'' – [[Peter Swords King]], [[Rick Findlater]] and [[Tami Lane]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Anna Karenina (2012 film)|Anna Karenina]]'' – [[Jacqueline Durran]]'''{{double-dagger}}
+**''[[Les Misérables (2012 film)|Les Misérables]]'' – [[Paco Delgado]]
+**''[[Lincoln (film)|Lincoln]]'' – [[Joanna Johnston]]
+**''[[Mirror Mirror (film)|Mirror Mirror]]'' – [[Eiko Ishioka]] (posthumous nomination)
+**''[[Snow White and the Huntsman]]'' – [[Colleen Atwood]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Argo (2012 film)|Argo]]'' – [[William Goldenberg]]'''{{double-dagger}}
+**''[[Life of Pi (film)|Life of Pi]]'' – [[Tim Squyres]]
+**''[[Lincoln (film)|Lincoln]]'' – [[Michael Kahn (film editor)|Michael Kahn]]
+**''[[Silver Linings Playbook]]'' – [[Jay Cassidy]] and [[Crispin Struthers]]
+**''[[Zero Dark Thirty]]'' – [[Dylan Tichenor]] and [[William Goldenberg]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+*'''''[[Life of Pi (film)|Life of Pi]]'' – [[Bill Westenhofer]], [[Guillaume Rocheron]], [[Erik-Jan de Boer]] and [[Donald R. Elliott]]'''{{double-dagger}}
+**''[[The Hobbit: An Unexpected Journey]]'' – [[Joe Letteri]], [[Eric Saindon]], [[David Clayton (visual effects)|David Clayton]] and [[R. Christopher White]]
+**''[[Marvel's The Avengers]]'' – [[Janek Sirrs]], [[Jeff White (visual effects)|Jeff White]], [[Guy Williams (visual effects)|Guy Williams]] and [[Dan Sudick]]
+**''[[Prometheus (2012 film)|Prometheus]]'' – [[Richard Stammers]], [[Trevor Wood (special effects artist)|Trevor Wood]], [[Charley Henley]] and [[Martin Hill (visual effects artist)|Martin Hill]]
+**''[[Snow White and the Huntsman]]'' – [[Cedric Nicolas-Troyan]], Philip Brennan, [[Neil Corbould]] and Michael Dawson
+|}
+
+=== Governors Awards ===
+The Academy held its 4th Annual [[Governors Awards]] ceremony on December 1, 2012, during which the following awards were presented:<ref>{{cite news|url=https://www.hollywoodreporter.com/news/general-news/katzenberg-needham-pennebaker-stevens-honorary-oscars-368278/ |title=Katzenberg, Needham, Pennebaker, Stevens Tapped for Academy Honors |access-date=May 6, 2013 |date=September 5, 2012 |first=Greg |last=Kilday |work=The Hollywood Reporter |url-status=live |archive-url=https://web.archive.org/web/20210621172226/https://www.hollywoodreporter.com/news/general-news/katzenberg-needham-pennebaker-stevens-honorary-oscars-368278/ |archive-date=June 21, 2021 }}</ref><ref name="Academy honor">{{cite news|last=Sperling |first=Nicole |title=Academy to honor Jeffrey Katzenberg, Hal Needham, D.A. Pennebaker and George Stevens Jr. |url=https://www.latimes.com/entertainment/movies/la-xpm-2012-sep-05-la-et-mn-academy-chooses-honorary-oscar-recipients-20120905-story.html |work=Los Angeles Times |date=September 5, 2012 |url-status=live |archive-url=https://web.archive.org/web/20121022102129/http://articles.latimes.com/2012/sep/05/entertainment/la-et-mn-academy-chooses-honorary-oscar-recipients-20120905 |archive-date=October 22, 2012 }}</ref><ref>{{cite news|last=Grossberg|first=Josh|title=Jeffrey Katzenberg, D.A. Pennebaker Tapped for Honorary Oscars|url=http://ca.eonline.com/news/343703/jeffrey-katzenberg-d-a-pennebaker-tapped-for-honorary-oscars|work=[[E!]]|access-date=May 6, 2013|archive-date=April 25, 2023|archive-url=https://web.archive.org/web/20230425002912/https://www.eonline.com/news/343703/jeffrey-katzenberg-d-a-pennebaker-tapped-for-honorary-oscars|url-status=live}}</ref>
+
+====Honorary Awards====
+*To [[Hal Needham]], an innovator, mentor, and master technician who elevated his craft to an art and made the impossible look easy.<ref name="Memorable moments">{{cite news|title=The 85th Academy Awards Memorable Moments |url=http://www.oscars.org/oscars/ceremonies/2013/memorable-moments |access-date=September 22, 2013 |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20141019022553/http://www.oscars.org/oscars/ceremonies/2013/memorable-moments |archive-date=October 19, 2014 }}</ref>
+*To [[D. A. Pennebaker]], who redefined the language of film and taught a generation of filmmakers to look to reality for inspiration.<ref name="Memorable moments"/>
+*To [[George Stevens Jr.]], a tireless champion of the arts in America and especially that most American of arts: the Hollywood film.<ref name="Memorable moments"/>
+
+====Jean Hersholt Humanitarian Award====
+*[[Jeffrey Katzenberg]] {{em-dash}} who has led our community in enlightened philanthropy by his extraordinary example.<ref name="Memorable moments"/>
+
+===Films with multiple nominations and awards===
+{{Col-begin|width=80%}}{{Col-1-of-2}}
+The following 15 films received multiple nominations:
+
+{| class="wikitable" style="text-align:center;"
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 12
+| ''[[Lincoln (film)|Lincoln]]''
+|-
+| style="text-align: center;" | 11
+| ''[[Life of Pi (film)|Life of Pi]]''
+|-
+| rowspan=2 style="text-align:center" | 8
+| ''[[Les Misérables (2012 film)|Les Misérables]]''
+|-
+| ''[[Silver Linings Playbook]]''
+|-
+| style="text-align: center;" | 7
+| ''[[Argo (2012 film)|Argo]]''
+|-
+|rowspan=4 style="text-align:center" | 5
+| ''[[Amour (2012 film)|Amour]]''
+|-
+| ''[[Django Unchained]]''
+|-
+| ''[[Skyfall]]''
+|-
+| ''[[Zero Dark Thirty]]''
+|-
+|rowspan=2 style="text-align:center" | 4
+| ''[[Anna Karenina (2012 film)|Anna Karenina]]''
+|-
+| ''[[Beasts of the Southern Wild]]''
+|-
+|rowspan=2 style="text-align:center" | 3
+| ''[[The Hobbit: An Unexpected Journey]]''
+|-
+| ''[[The Master (2012 film)|The Master]]''
+|-
+|rowspan=2 style="text-align:center" | 2
+| ''[[Flight (2012 film)|Flight]]''
+|-
+| ''[[Snow White and the Huntsman]]''
+|}
+
+{{Col-2-of-2}}
+
+The following six films received multiple awards:
+
+{| class="wikitable" style="text-align:center;"
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 4
+| ''[[Life of Pi (film)|Life of Pi]]''
+|-
+| rowspan=2 style="text-align:center" | 3
+| ''[[Argo (2012 film)|Argo]]''
+|-
+| ''[[Les Misérables (2012 film)|Les Misérables]]''
+|-
+| rowspan=3 style="text-align:center" | 2
+| ''[[Django Unchained]]''
+|-
+| ''[[Lincoln (film)|Lincoln]]''
+|-
+| ''[[Skyfall]]''
+|}
+
+{{Col-end}}
+
+== Presenters and performers ==
+[[File:First Lady Michelle Obama announces the Best Picture Oscar to Argo.jpg|thumb|right|[[First Lady of the United States|First Lady]] [[Michelle Obama]] announces [[Academy Award for Best Picture|Best Picture]], awarded to ''[[Argo (2012 film)|Argo]]'', live from the [[Diplomatic Reception Room (White House)|Diplomatic Room]] of the [[White House]]|alt=Michelle Obama announces the Best Picture Oscar to Argo.]]
+
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref name="Variety Oscar cast and time" /><ref>{{cite news|title=Live Coverage of the 2013 Oscars |url=https://www.nytimes.com/projects/oscars/2013/index.html |access-date=July 26, 2026 |work=The New York Times |date=February 25, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130228020323/http://www.nytimes.com/projects/oscars/2013/index.html |archive-date=February 28, 2013 }}</ref><ref name="SMH">{{cite news|last1=Hardle|first1=Giles|title=Live: 2013 Oscars|url=https://www.smh.com.au/entertainment/oscars/live-2013-oscars-20130225-2f0h4.html|access-date=February 17, 2016|work=[[The Sydney Morning Herald]]|date=February 25, 2013 |url-status=live |archive-url=https://web.archive.org/web/20160927145127/http://www.smh.com.au/entertainment/oscars/live-2013-oscars-20130224-2f0h4 |archive-date=September 27, 2016}}</ref><ref>{{cite news|last1=Brooks|first1=Xan|title=Oscars 2013 awards ceremony - as it happened|url=https://www.theguardian.com/film/2013/feb/25/oscars-2013-live|access-date=July 26, 2026|work=[[The Guardian]]|date=February 25, 2013 |url-status=live |archive-url=https://web.archive.org/web/20161228224921/https://www.theguardian.com/film/2013/feb/25/oscars-2013-live |archive-date=December 28, 2016}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Cedering|Fox|nolink=1}}<ref>{{cite news|last1=Gelt |first1=Jessica |title=Cedering Fox knows the power of speaking the written word |url=https://articles.latimes.com/2013/may/04/entertainment/la-et-cm-word-theatre-20130504 |access-date=September 22, 2013 |work=Los Angeles Times |date=May 4, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20140810210826/http://articles.latimes.com/2013/may/04/entertainment/la-et-cm-word-theatre-20130504 |archive-date=August 10, 2014 }}</ref> || Announcer for the 85th annual Academy Awards
+|-
+| {{sortname|Octavia|Spencer}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Melissa|McCarthy}} <br />[[Paul Rudd]] || Presenters of the awards for [[Best Animated Short Film]] and [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+| {{sortname|Reese|Witherspoon}} || Presenter of the films ''[[Les Misérables (2012 film)|Les Misérables]]'', ''[[Life of Pi (film)|Life of Pi]]'' and ''[[Beasts of the Southern Wild]]'' on the Best Picture segment
+|-
+| {{sortname|Robert|Downey Jr.}} <br />[[Chris Evans (actor)|Chris Evans]] <br />[[Samuel L. Jackson]] <br />[[Jeremy Renner]] <br />[[Mark Ruffalo]] || Presenters of the awards for [[Academy Award for Best Cinematography|Best Cinematography]] and [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Jennifer|Aniston}} <br />[[Channing Tatum]] || Presenters of the awards for [[Academy Award for Best Costume Design|Best Costume Design]] and [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]
+|-
+| {{sortname|Halle|Berry}} || Presenter of the "Fifty Years of [[James Bond|Bond]]" tribute and performance of "[[Goldfinger (Shirley Bassey song)|Goldfinger]]"
+|-
+| {{sortname|Jamie|Foxx}} <br />[[Kerry Washington]] || Presenters of the awards for [[Best Live Action Short Film]] and [[Best Documentary Short Subject]]
+|-
+| {{sortname|Liam|Neeson}} || Presenter of the films ''[[Argo (2012 film)|Argo]]'', ''[[Lincoln (film)|Lincoln]]'' and ''[[Zero Dark Thirty]]'' on the Best Picture segment
+|-
+| {{sortname|Ben|Affleck}} || Presenter of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Jessica|Chastain}} <br />[[Jennifer Garner]] || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|John|Travolta}} || Presenter of "Celebration of Musicals of the Last Decade" musical number
+|-
+| {{sortname|Chris|Pine}} <br />[[Zoe Saldaña]]|| Presenters of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Mark|Wahlberg}} <br />[[Ted (film)|Ted]] ([[Seth MacFarlane]]) || Presenters of the awards for [[Academy Award for Best Sound Mixing|Best Sound Mixing]] and [[Academy Award for Best Sound Editing|Best Sound Editing]]
+|-
+| {{sortname|Christopher|Plummer}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Hawk|Koch}} (AMPAS president) || Special presentation acknowledging the creation of the [[Academy Museum of Motion Pictures]]
+|-
+| {{sortname|Sandra|Bullock}} || Presenter of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Jennifer|Lawrence}} || Introducer of the performance of Best Song nominee "[[Skyfall (Adele song)|Skyfall]]"
+|-
+| {{sortname|Nicole|Kidman}} || Presenter of the films ''[[Silver Linings Playbook]]'', ''[[Django Unchained]]'' and ''[[Amour (2012 film)|Amour]]'' on the Best Picture segment
+|-
+| {{sortname|Daniel|Radcliffe}} <br />[[Kristen Stewart]] || Presenters of the award for [[Academy Award for Best Production Design|Best Production Design]]
+|-
+| {{sortname|Salma|Hayek}} || Presenter of the segment of the [[Honorary Academy Award]]s and the [[Jean Hersholt Humanitarian Award]]
+|-
+| {{sortname|George|Clooney}} || Presenter of "[[In memoriam segment|In Memoriam]]" tribute
+|-
+| {{sortname|Richard|Gere}} <br />[[Queen Latifah]] <br />[[Renée Zellweger]] <br />[[Catherine Zeta-Jones]] || Introducers of the performance of Best Song nominee "[[Everybody Needs a Best Friend]]" and presenters of the awards for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Dustin|Hoffman}} <br />[[Charlize Theron]] || Presenters of the awards for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]] and [[Best Original Screenplay]]
+|-
+| {{sortname|Michael|Douglas}} <br />[[Jane Fonda]] || Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Jean|Dujardin}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Meryl|Streep}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Jack|Nicholson}} <br />[[Michelle Obama]] || Presenters of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role|| Performed
+|-
+| {{sortname|William|Ross|William Ross (composer)}} ||Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Seth|MacFarlane}}<br />[[Gay Men's Chorus of Los Angeles]]<br />[[Channing Tatum]]<br />[[Charlize Theron]]<br />{{sortname|Joseph|Gordon-Levitt}}<br />[[Daniel Radcliffe]] || Performers || "We Saw Your Boobs" during the opening segment <small>(MacFarlane and GMCLA)</small><br /> "[[The Way You Look Tonight]]" from ''[[Swing Time (film)|Swing Time]]'' <small>(MacFarlane, Tatum and Theron)</small><br />"[[High Hopes (Frank Sinatra song)|High Hopes]]" from ''[[A Hole in the Head]]'' <small>(MacFarlane, Gordon-Levitt and Radcliffe)</small><br />"[[Be Our Guest]]" from ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''
+|-
+| {{sortname|Shirley|Bassey}} || Performer || "[[Goldfinger (Shirley Bassey song)|Goldfinger]]" from ''[[Goldfinger (film)|Goldfinger]]'' during the "Fifty Years of [[James Bond|Bond]]" tribute
+|-
+| {{sortname|Catherine|Zeta-Jones}} || Performer || "[[All That Jazz (song)|All That Jazz]]" from ''[[Chicago (2002 film)|Chicago]]''
+|-
+| {{sortname|Jennifer|Hudson}} || Performer || "[[And I Am Telling You I'm Not Going]]" from ''[[Dreamgirls (film)|Dreamgirls]]''
+|-
+| {{sortname|Samantha|Barks}}<br />[[Sacha Baron Cohen]]<br />[[Helena Bonham Carter]]<br />[[Russell Crowe]]<br />[[Anne Hathaway]]<br />[[Hugh Jackman]]<br />[[Eddie Redmayne]]<br />[[Amanda Seyfried]]<br />[[Aaron Tveit]] || Performers || "[[Suddenly (Les Misérables song)|Suddenly]]" and "[[One Day More]]" from ''[[Les Misérables (2012 film)|Les Misérables]]''
+|-
+| [[Adele]] || Performer || "[[Skyfall (Adele song)|Skyfall]]" from ''[[Skyfall]]''
+|-
+| {{sortname|Barbra|Streisand}} || Performer || "[[The Way We Were (song)|The Way We Were]]" during the annual "In Memoriam" tribute
+|-
+| {{sortname|Norah|Jones}} || Performer || "[[Everybody Needs a Best Friend]]" from ''[[Ted (film)|Ted]]''
+|-
+| {{sortname|Seth|MacFarlane|nolink=1}}<br />{{sortname|Kristin|Chenoweth}} || Performers || "[[Here's to the Losers]]" during the closing credits
+|}
+
+== Ceremony information ==
+[[File:Seth MacFarlane 2012 cropped and retouched.jpg|thumb|130px|right|[[Seth MacFarlane]] hosted the 85th Academy Awards|alt=Seth MacFarlane in 2012]]
+In June 2012, the Academy announced that the [[Academy Award for Best Makeup and Hairstyling|Best Makeup]] category would be renamed as Best Makeup and Hairstyling starting from next year.<ref>{{cite news |last=Weisman |first=Jon |title=Oscars institute rules changes |url=https://variety.com/2012/film/awards/oscars-institute-rules-changes-1118056094/ |access-date=July 26, 2026 |work=Variety |date=June 28, 2012 |url-status=live |archive-url=https://web.archive.org/web/20210417174721/https://variety.com/2012/film/awards/oscars-institute-rules-changes-1118056094/ |archive-date=April 17, 2021 }}</ref> Additionally, in August 2012, it renamed the [[Academy Award for Best Production Design|Best Art Direction]] category to Best Production Design.<ref>{{cite news |last=Kilday |first=Gregg |title=Academy Rule Changes Guarantee Five Best Song Nominees |url=https://www.hollywoodreporter.com/news/general-news/academy-rule-changes-best-original-song-five-366961/ |access-date=July 26, 2026 |work=The Hollywood Reporter |date=August 30, 2012 |url-status=live |archive-url=https://web.archive.org/web/20230530125601/https://www.hollywoodreporter.com/news/general-news/academy-rule-changes-best-original-song-five-366961/ |archive-date=May 30, 2023 }}</ref>
+
+Due to declining interest and viewership in recent ceremonies, the Academy hired a new production team in an attempt to improve ratings and revive interest in the ceremony. Reports surfaced that Academy then-president [[Tom Sherak]] approached television producer [[Lorne Michaels]] for producing duties with actor and comedian [[Jimmy Fallon]] as host.<ref>{{cite news|last=Sperling |first=Nicole |title=Jimmy Fallon in talks to host 2013 Oscars, but ABC said to object |url=https://www.latimes.com/entertainment/movies/la-xpm-2012-aug-02-la-et-mn-jimmy-fallon-in-talks-to-host-2013-oscars-lorne-michaels-to-produce-20120802-story.html |access-date=May 6, 2013 |work=Los Angeles Times |date=August 2, 2012 |url-status=live |archive-url=https://web.archive.org/web/20130227211817/http://articles.latimes.com/2012/aug/02/entertainment/la-et-mn-jimmy-fallon-in-talks-to-host-2013-oscars-lorne-michaels-to-produce-20120802 |archive-date=February 27, 2013 }}</ref> However, the telecast's broadcaster [[American Broadcasting Company|ABC]] objected to these selections, and both men declined afterward.<ref>{{cite news|last=Masters|first=Kim |title=Lorne Michaels Will Not Produce the Oscars |url=https://www.hollywoodreporter.com/news/general-news/lorne-michaels-oscars-snl-produce-360978/ |magazine=[[The Hollywood Reporter]] |access-date=July 26, 2026 |date=August 10, 2012 |url-status=live |archive-url=https://web.archive.org/web/20211023033123/https://www.hollywoodreporter.com/news/general-news/lorne-michaels-oscars-snl-produce-360978/ |archive-date=October 23, 2021 }}</ref> With newly elected Academy president [[Hawk Koch]] assuming leadership duties, the Academy hired [[Neil Meron]] and [[Craig Zadan]] in August 2012 to produce the ceremony.<ref name="MZ"/> Two months later, the Academy announced that actor, director, animator, singer, and comedian [[Seth MacFarlane]] would host the telecast. MacFarlane expressed that it was truly an honor and a thrill to be asked to host Academy Awards commenting, "It's truly an overwhelming privilege to be asked to host the Oscars. My thoughts upon hearing the news were, one, I will do my utmost to live up to the high standards set forth by my predecessors; and two, I hope they don't find out I hosted the [[Comedy Central Roast|Charlie Sheen Roast]]."<ref name="MacFarlane">{{cite web|last=Finke |first=Nikki |title=EXCLUSIVE: Seth MacFarlane Oscar Host |url=https://deadline.com/2012/10/exclusive-seth-macfarlane-oscar-host-345899/ |website=[[Deadline Hollywood]] |access-date=May 6, 2013 |date=October 1, 2012 |url-status=live |archive-url=https://web.archive.org/web/20140915163840/http://deadline.com/2012/10/exclusive-seth-macfarlane-oscar-host-345899/ |archive-date=September 15, 2014 }}</ref> In an unusual break from previous years, producers Meron and Zadan announced that the on-air telecast of the ceremony would be simply referred to as "The Oscars" instead of "The 85th Annual Academy Awards".<ref name=var1/>
+
+As evident by the numerous musical numbers featured throughout the telecast, the ceremony was billed as a salute to music and the movies.<ref name="Reuters1">{{cite news|last=Serjeant |first=Jill |title=Oscar show promises music, megastars and James Bond |url=https://www.reuters.com/article/entertainment-us-oscars-idUSBRE91M07X20130223 |access-date=February 25, 2013 |work=Reuters |date=February 23, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130224135602/https://www.reuters.com/article/2013/02/23/entertainment-us-oscars-idUSBRE91M07X20130223 |archive-date=February 24, 2013 }}</ref> In keeping with the theme of the evening, numerous [[film score]]s from various motion pictures were played intermittently throughout the ceremony; most notable was [[John Williams]]' theme music from ''[[Jaws (film)|Jaws]]'', which was used to goad winners off the stage if their acceptance speeches were overly long.<ref>{{cite news|last=Halperin |first=Shirley |title=Oscars 2013: 'Jaws' Theme as Play-Out Music Proves Divisive |url=https://www.hollywoodreporter.com/earshot/oscars-2013-jaws-theme-as-424037 |access-date=February 25, 2013 |work=The Hollywood Reporter |date=February 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130226163038/http://www.hollywoodreporter.com/earshot/oscars-2013-jaws-theme-as-424037 |archive-date=February 26, 2013 }}</ref><ref>{{cite news|last=Harris |first=Scott Jordan |title=Oscars 2013: Argo wins, Streisand sings and MacFarlane is nowhere near the knuckle |url=http://blogs.telegraph.co.uk/culture/scottharris/100068205/the-oscars-argo-wins-streisand-sings-and-macfarlane-is-nowhere-near-the-knuckle/ |work=The Daily Telegraph |access-date=May 6, 2013 |date=February 25, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130512010414/http://blogs.telegraph.co.uk/culture/scottharris/100068205/the-oscars-argo-wins-streisand-sings-and-macfarlane-is-nowhere-near-the-knuckle/ |archive-date=May 12, 2013 }}</ref> In a departure from having the orchestra perform in the same theatre, composer [[William Ross (composer)|Williams Ross]] conducted the orchestra from a studio inside the [[Capitol Records Building]] a mile away.<ref>{{cite news|last=Marr|first=Merissa|title=The Toughest Job in Show Business|url=https://www.wsj.com/articles/SB10001424127887323485704578258270986598306|work=[[The Wall Street Journal]]|access-date=May 17, 2013|date=January 24, 2013|archive-date=August 8, 2022|archive-url=https://web.archive.org/web/20220808100601/https://www.wsj.com/articles/SB10001424127887323485704578258270986598306|url-status=live}}</ref>
+
+Several other people were involved with the telecast and its promotion. [[Tony Award]]-winning art director [[Derek McLane]] designed a new set and stage design for the ceremony.<ref>{{cite news|last=Kilday |first=Greg |title=Derek McLane to Design Oscar Set |url=https://www.hollywoodreporter.com/race/derek-mclane-design-oscar-set-382587 |access-date=October 7, 2013 |work=The Hollywood Reporter |date=October 24, 2012 |url-status=live |archive-url=https://web.archive.org/web/20140608141636/http://www.hollywoodreporter.com/race/derek-mclane-design-oscar-set-382587 |archive-date=June 8, 2014 }}</ref> [[Rob Ashford]] served as choreographer for several musical numbers during the event.<ref>{{cite news|last=Weisman |first=Jon |title=Ashford to choreograph Oscars |url=https://variety.com/2012/scene/news/ashford-to-choreograph-oscars-1118061900/ |access-date=October 7, 2013 |work=Variety |date=November 8, 2012 |url-status=live |archive-url=https://web.archive.org/web/20140322065343/http://variety.com/2012/scene/news/ashford-to-choreograph-oscars-1118061900/ |archive-date=March 22, 2014 }}</ref> Comedians [[Ben Gleib]] and Annie Greenup served as correspondents and hosts of "Oscar Road Trip", a nationwide bus tour promoting the ceremony in eleven major cities across the United States.<ref>{{cite news|title=Oscar hits the Road for Nationwide Tour |url=http://oscar.go.com/blogs/oscar-news/oscar-hits-the-road-for-nationwide-tour |access-date=October 7, 2013 |publisher=Academy of Motion Picture Arts and Sciences |date=February 4, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140304185559/http://oscar.go.com/blogs/oscar-news/oscar-hits-the-road-for-nationwide-tour |archive-date=March 4, 2014 }}</ref> Six young film students from colleges across the country, who were selected from a contest conducted by AMPAS and [[MtvU]], were recruited to appear onstage to deliver Oscar statuettes to the presenters during the gala.<ref>{{cite news|title=The Academy And mtvU Name Winners Of "Oscar® Experience College Search" |url=http://www.oscars.org/press/pressreleases/2013/20130215.html |access-date=October 8, 2013 |publisher=Academy of Motion Picture Arts and Sciences|date=February 15, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130925101907/http://www.oscars.org/press/pressreleases/2013/20130215.html |archive-date=September 25, 2013 }}</ref>
+
+===Introduction of electronic voting system===
+In January 2012, AMPAS announced that it would create electronic voting system starting with the 2013 ceremony as another method for members to select the nominees and winners during the process.<ref>{{cite news|title=Oscars go digital? Electronic voting planned for 2013 Academy Awards |url=https://www.latimes.com/archives/blogs/24-frames/story/2012-01-25/oscars-go-digital-electronic-voting-planned-for-2013-academy-awards |access-date=July 26, 2026 |work=[[Los Angeles Times]] |date=January 25, 2012 |url-status=live |archive-url=https://web.archive.org/web/20231205025008/https://www.latimes.com/archives/blogs/24-frames/story/2012-01-25/oscars-go-digital-electronic-voting-planned-for-2013-academy-awards |archive-date=December 5, 2023 }}</ref> According to AMPAS Chief Operating Officer Ric Robertson, the implementation of the digital ballot was designed to increase participation among members in the voting process and to provide an alternative method of voting in case of emergency.<ref>{{cite news|last=Kilday |first=Greg |title=Academy Explains How Electronic Oscar Voting Will Work |url=https://www.hollywoodreporter.com/race/academy-awards-2013-oscars-nominees-voting-371377 |access-date=October 8, 2013 |work=The Hollywood Reporter |date=September 18, 2012 |url-status=live |archive-url=https://web.archive.org/web/20140608141634/http://www.hollywoodreporter.com/race/academy-awards-2013-oscars-nominees-voting-371377 |archive-date=June 8, 2014 }}</ref> Despite several Academy officials denying such reasons, some industry insiders speculated that the introduction of electronic voting was another move toward moving future awards galas to January.<ref>{{cite news|last=Feinberg |first=Scott |title=The Academy's Decision to Use e-Voting Could Have Far-Reaching Implications (Analysis) |url=https://www.hollywoodreporter.com/race/academy-electronic-voting-oscars-284893 |access-date=October 8, 2013 |work=The Hollywood Reporter |date=January 25, 2012 |url-status=live |archive-url=https://web.archive.org/web/20140608141635/http://www.hollywoodreporter.com/race/academy-electronic-voting-oscars-284893 |archive-date=June 8, 2014 }}</ref> The deadline to submit nomination ballots was originally scheduled for January 3, but technological errors and glitches prompted the Academy to move the deadline one day later.<ref>{{cite news|title=The Academy Extends Oscar® Nominations Voting Period to January 4 |url=http://www.oscars.org/press/pressreleases/2012/20121231.html |access-date=October 9, 2013 |publisher=Academy of Motion Picture Arts and Sciences |date=December 31, 2012 |url-status=live |archive-url=https://web.archive.org/web/20130925102649/http://www.oscars.org/press/pressreleases/2012/20121231.html |archive-date=September 25, 2013 }}</ref>
+
+===Box office performance of nominated films===
+None of the nine Best Picture nominees were among the top ten releases in box office during the nominations. However, four of those films had already earned $100 million in American and Canadian ticket sales.<ref>{{cite news|last=Coker |first=Lesleyann |title=Lincoln Dominates Oscar Nominations and History is Made |url=https://www.forbes.com/sites/lesleyanncoker/2013/01/10/lincoln-dominates-oscar-nominations-and-history-is-made/ |access-date=October 9, 2013 |work=[[Forbes]] |date=January 10, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140413123743/http://www.forbes.com/sites/lesleyanncoker/2013/01/10/lincoln-dominates-oscar-nominations-and-history-is-made/ |archive-date=April 13, 2014 }}</ref> At the time of the announcement of nominations on January 10, ''Lincoln'' was the highest-grossing film among the Best Picture nominees with $144 million in domestic box office receipts. The other three films to earn $100 million prior to nominations were ''Django Unchained'' with $112 million, ''Argo'' with $110 million, and ''Les Misérables'' with $103 million. Among the five remaining Best Picture nominees, ''Life of Pi'' was the next highest-grossing film with $91.8 million followed by ''Silver Linings Playbook'' ($35.7 million), ''Beasts of the Southern Wild'' ($11.2 million), ''Zero Dark Thirty'' ($4.4 million), and finally ''Amour'' ($311,247).{{efn|Both ''Life of Pi'' and ''Silver Linings Playbook'' would eventually earn over $100 million in domestic ticket sales before the ceremony on February 24.<ref name="Los Angeles Times box office">{{cite news|last=Miller |first=Daniel |title=Oscars 2013: A box-office milestone for best picture nominees |url=https://www.latimes.com/entertainment/envelope/moviesnow/la-et-mn-academy-award-best-picture-nominees-record-box-office-20130224,0,2743070.story |access-date=February 26, 2013 |newspaper=Los Angeles Times |date=February 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130225204441/http://www.latimes.com/entertainment/envelope/moviesnow/la-et-mn-academy-award-best-picture-nominees-record-box-office-20130224%2C0%2C2743070.story |archive-date=February 25, 2013 }}</ref> ''Zero Dark Thirty'' was the number one film at the American box office during the weekend of January 11&ndash;13;<ref>{{cite news|last=Orden|first=Erica|title='Zero Dark Thirty' Tops Box Office|url=https://www.wsj.com/articles/SB10001424127887324595704578239810847104592|work=Wall Street Journal|access-date=May 7, 2013|date=January 13, 2013|archive-date=August 8, 2022|archive-url=https://web.archive.org/web/20220808113958/https://www.wsj.com/articles/SB10001424127887324595704578239810847104592|url-status=live}}</ref> the movie eventually grossed $91 million prior to the awards gala.<ref name="Los Angeles Times box office" />}}<ref name="BestPictureBoxOffice">{{cite news|title=2012 Academy Award Nominations and Winner for Best Picture |url=https://www.boxofficemojo.com/oscar/chart/?yr=2012&p=.htm |work=[[Box Office Mojo]] |access-date=May 4, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130508082952/http://www.boxofficemojo.com/oscar/chart/?yr=2012&p=.htm |archive-date=May 8, 2013 }}</ref> The combined gross of the nine Best Picture nominees when the Oscars were announced was $620 million with an average gross of $68.9 million per film.<ref name="BestPictureBoxOffice"/>
+
+Of the top 50 grossing movies of the year, 61 nominations went to 15 films on the list. Only ''Brave'' (8th), ''Wreck-It Ralph'' (13th), ''Lincoln'' (17th), ''Django Unchained'' (23rd), ''Argo'' (26th), ''Les Misérables'' (27th), ''Flight'' (30th), and ''Life of Pi'' (31st) were nominated for Best Picture, Best Animated Feature, or any of the directing, acting, or screenwriting awards.<ref name="boxofficemojooscars">{{cite news|url=https://www.boxofficemojo.com/yearly/chart/?asof=2013-01-10&view=releasedate&view2=domestic&yr=2012&sort=gross&order=DESC&p=.htm |title=2012 Yearly Box Office Results (January 10, 2013) |work=Box Office Mojo |access-date=August 22, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131110030538/http://www.boxofficemojo.com/yearly/chart/?asof=2013-01-10&view=releasedate&view2=domestic&yr=2012&sort=gross&order=DESC&p=.htm |archive-date=November 10, 2013 }}</ref> The other top 50 box office hits that earned nominations were ''Marvel's The Avengers'' (1st), ''Skyfall'' (4th), ''The Hobbit: An Unexpected Journey'' (6th), ''Ted'' (13th), ''Snow White and the Huntsman'' (15th), ''Prometheus'' (20th), and ''Mirror Mirror'' (44th).<ref name="boxofficemojooscars"/>
+
+=== "We Saw Your Boobs" controversy ===
+During the opening monologue, MacFarlane is told by [[James T. Kirk]] ([[William Shatner]]) (Captain Kirk set in the next day) about how he was going to ruin the telecast, Captain Kirk then shows him a music video where MacFarlane sings ''We Saw Your Boobs''. Its lyrics lists out movies that featured scenes of actresses' disrobing.<ref>{{cite news|last=Martens|first=Todd|url=https://www.latimes.com/entertainment/envelope/la-xpm-2013-feb-24-la-et-ms-oscars-2013-celebration-music-starts-we-saw-your-boobs-20130224-story.html|title=Oscars 2013: Celebration of music starts with 'We Saw Your Boobs'|newspaper=[[Los Angeles Times]]|date=February 24, 2013|access-date=July 26, 2026|url-status=live|archive-url=https://web.archive.org/web/20210510202844/https://www.latimes.com/entertainment/envelope/la-xpm-2013-feb-24-la-et-ms-oscars-2013-celebration-music-starts-we-saw-your-boobs-20130224-story.html|archive-date=May 10, 2021}}</ref>
+
+The song has mixed reviews. On the positive side, ''[[The Guardian]]'' reported, "MacFarlane was employed partly to puncture the event's pomposity, which he did by lightheartedly pointing out that some of the world's most [[Egotism|self-important]] people regularly get their kit off for money".<ref>{{cite news|title=Oscars 2013: We Saw Your Boobs - sexist or smart?|newspaper=[[The Guardian]]|date=February 25, 2013|url=https://www.theguardian.com/film/2013/feb/25/oscars-2013-seth-macfarlane|archive-url=https://web.archive.org/web/20131020050234/https://www.theguardian.com/film/2013/feb/25/oscars-2013-seth-macfarlane|archive-date=October 20, 2013}}</ref> [[SheKnows]] wondered if the live reaction of some of the actresses were indeed acting as the "pre-recorded spoof apparently looked real enough for social media to worry about it".<ref>{{cite web|title=Actresses upset over "We Saw Your Boobs"… or were they?|publisher=[[SHE Media|Sheknows.com]]|date=February 24, 2013|first=Jaclyn|last= Brandt|url=https://www.sheknows.com/entertainment/articles/986383/were-actresses-upset-over-we-saw-your-boobs/|archive-url=https://web.archive.org/web/20130226094126/https://www.sheknows.com/entertainment/articles/986383/were-actresses-upset-over-we-saw-your-boobs/|archive-date=February 26, 2013}}</ref> On the negative side, actress [[Jane Fonda]] stated, "if they want to stoop to that, why not list all the [[penis]]es we've seen? Better yet, remember that this is a telecast seen around the world watched by families with their children and to many this is neither appropriate or funny."<ref>{{cite web|last=Clements|first=Erin|url=https://www.huffpost.com/entry/jane-fonda-seth-macfarlane-boobs_n_2783839|title=Jane Fonda On Seth MacFarlane's 'We Saw Your Boobs': 'Why Not List All The Penises We've Seen?'|work=[[HuffPost]]|date=February 28, 2013|access-date=July 26, 2026|url-status=live|archive-url=https://web.archive.org/web/20191029110627/https://www.huffingtonpost.ca/2013/02/28/jane-fonda-seth-macfarlane-boobs_n_2783839.html?ri18n=true|archive-date=October 29, 2019}}</ref> California assemblywoman [[Bonnie Lowenthal]] and state senator [[Hannah-Beth Jackson]] expressed their disappointment at MacFarlane, ABC, and AMPAS in a press release reading, "there was a disturbing theme about violence against women being acceptable and funny. From topical jabs about domestic violence to singing about 'boobs' during a film's rape scene, Seth MacFarlane crossed the line from [[humor]] to [[misogyny]]."<ref>{{cite news |title=Seth MacFarlane's Oscars performance condemned by two California state lawmakers |url=https://www.cbsnews.com/news/seth-macfarlanes-oscars-performance-condemned-by-two-california-state-lawmakers/ |date=February 27, 2013 |access-date=February 28, 2013 |agency=[[CBS News]] |archive-date=April 24, 2014 |archive-url=https://web.archive.org/web/20140424025516/http://www.cbsnews.com/news/seth-macfarlanes-oscars-performance-condemned-by-two-california-state-lawmakers/ |url-status=live }}</ref> [[Amy Davidson Sorkin|Amy Davidson]] of ''[[The New Yorker]]'' interpreted the song as hostile to women.<ref>{{cite magazine|url=https://www.newyorker.com/news/amy-davidson/seth-macfarlane-and-the-oscars-hostile-ugly-sexist-night |title=Seth MacFarlane and the Oscars' Hostile, Ugly, Sexist Night |magazine=[[The New Yorker]] |last=Davidson |first=Amy |author-link=Amy Davidson Sorkin |date=February 23, 2013 |access-date=February 25, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140803130001/http://www.newyorker.com/news/amy-davidson/seth-macfarlane-and-the-oscars-hostile-ugly-sexist-night |archive-date=August 3, 2014 }}</ref>
+
+In a press release statement, the Academy defended MacFarlane for expressing his [[artistic freedom]], "If the Oscars are about anything, they're about creative freedom. We think the show's producers Craig Zadan and Neil Meron, and host Seth MacFarlane did a great job and we hope our worldwide audience found the show entertaining."<ref>{{cite magazine|last1=Lang |first1=Brent |title=Academy Defends Seth MacFarlane Despite Charges of Sexism |url=https://www.thewrap.com/academy-defends-seth-macfarlane-despite-charges-sexism-79641/ |access-date=March 1, 2013 |magazine=TheWrap |date=February 28, 2013 |url-status=live |archive-url=https://web.archive.org/web/20160723211403/https://www.thewrap.com/academy-defends-seth-macfarlane-despite-charges-sexism-79641/ |archive-date=July 23, 2016}}</ref>
+
+=== Critical reviews ===
+The show received a mixed reception from media publications. Some media outlets were more critical of the show. Columnist [[Owen Gleiberman]] of ''[[Entertainment Weekly]]'' commented "By calling constant attention to the naughty factor", MacFarlane created "an echo chamber of outrage, working a little too hard to top himself with faux-scandalous gags about race, Jews in Hollywood, and the killing of Abraham Lincoln."<ref>{{cite magazine|last=Gleiberman |first=Owen |author-link=Owen Gleiberman |title=This year's Academy Awards: a lively, occasionally uneasy mixture of snark and sincerity |url=http://insidemovies.ew.com/2013/02/25/this-years-oscars-snark-meets-sincerity/ |access-date=October 8, 2013 |magazine=[[Entertainment Weekly]] |date=February 25, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130927190014/http://insidemovies.ew.com/2013/02/25/this-years-oscars-snark-meets-sincerity/ |archive-date=September 27, 2013 }}</ref> ''[[The Washington Post]]'' television critic [[Hank Stuever]] bemoaned, "There was nothing notably terrible about the show, and nothing particularly enthralling." Regarding MacFarlane's performance as host, Stuever noted, "What you got was a combination of sicko and retro, an Oscar show hosted by someone who waited until Oscar night to discover that he's only so-so at stand-up comedy."<ref>{{cite news|last=Stuever |first=Hank |author-link=Hank Stuever |title=TV review: At the Oscars, the same old song and dance |url=https://www.washingtonpost.com/entertainment/tv/tv-review-at-the-oscars-the-same-old-song-and-dance/2013/02/24/27de5b76-7ed9-11e2-8074-b26a871b165a_story.html |access-date=October 8, 2013 |newspaper=The Washington Post |date=February 25, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130302015647/http://www.washingtonpost.com/entertainment/tv/tv-review-at-the-oscars-the-same-old-song-and-dance/2013/02/24/27de5b76-7ed9-11e2-8074-b26a871b165a_story.html |archive-date=March 2, 2013 }}</ref> Television editor [[Alan Sepinwall]] of [[HitFix]] lamented that the ceremony made for a "frequently messy, but occasionally surprising and/or entertaining evening." He added that MacFarlane "had some funny moments here and there, but he missed way more than he hit, and Frat Boy Seth quickly assumed dominance as the evening went along."<ref>{{cite news|last=Sepinwall |first=Alan |title=Review: Seth MacFarlane emcees a conflicted, bloated, song-heavy Oscar-cast |url=http://www.hitfix.com/whats-alan-watching/review-seth-macfarlane-emcees-a-conflicted-bloated-song-heavy-oscar-cast |access-date=October 8, 2013 |work=[[HitFix]] |date=February 25, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130515121648/http://www.hitfix.com/whats-alan-watching/review-seth-macfarlane-emcees-a-conflicted-bloated-song-heavy-oscar-cast |archive-date=May 15, 2013 }}</ref>
+
+Other media outlets received the broadcast and more positively. Tim Goodman of ''[[The Hollywood Reporter]]'' praised MacFarlane's performance saying that he did "impressively better than one would have wagered." He also noted that he added "plenty of niceties with a little bit of the [[Ricky Gervais]] bite-the-hand-that-feeds-you thing and worked the juxtaposition rather nicely.<ref>{{cite magazine|last=Goodman |first=Tim |title=TV Review: Seth MacFarlane Wins at Oscar Hosting Against Odds |url=https://www.hollywoodreporter.com/bastard-machine/tv-review-seth-macfarlane-wins-424058 |access-date=March 29, 2013 |magazine=The Hollywood Reporter |date=February 24, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130306005134/http://www.hollywoodreporter.com/bastard-machine/tv-review-seth-macfarlane-wins-424058 |archive-date=March 6, 2013 }}</ref> ''[[Chicago Tribune]]'' television critic Nina Metz lauded MacFarlane for keeping "a solid handle on the proceedings." She also remarked that the host "opened with a series of jokes that were bona fide winners, landing on just the right tone: confident but not cocksure".<ref>{{cite news|last=Metz |first=Nina |title=MacFarlane relaxed, confident as Oscars host |url=https://www.chicagotribune.com/2013/02/25/macfarlane-relaxed-confident-as-oscars-host/ |access-date=February 25, 2013 |newspaper=Chicago Tribune |date=February 25, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130227000209/http://articles.chicagotribune.com/2013-02-25/entertainment/chi-oscars-live-20130224_1_oscars-host-tommy-lee-jones-laugh-85th-academy-awards |archive-date=February 27, 2013 }}</ref> [[Associated Press]] critic [[Frazier Moore]] extolled MacFarlane observing that he "seized the camera Sunday as host of ABC's Oscarcast and proved to its vast audience that he's a ridiculously versatile entertainer, a guy who can be as charming as he is famously irreverent, even polarizing."<ref>{{cite news|last=Moore |first=Frazier |author-link=Frazier Moore |title=Oscars Review: MacFarlane Proves He's An Oscar Guy In Hosting Gig |url=https://www.huffingtonpost.com/2013/02/25/oscars-review_n_2756931.html |access-date=October 8, 2013 |work=HuffPost |date=February 25, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130523175954/http://www.huffingtonpost.com/2013/02/25/oscars-review_n_2756931.html |archive-date=May 23, 2013 }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 40.38 million people over its length, which was a 3% increase from the previous year's ceremony.<ref name="Oscars 2013: ratings"/> An estimated 80.748 million total viewers watched all or part of the awards evening, including the [[Academy Awards pre-show|pre-show]] and the post-show hosted by [[Jimmy Kimmel]].<ref name=zapratings>{{cite news |last=Kondolojy |first=Amanda |title=Oscars Draw More than 40 Million Viewers and is TV's Most Watched Entertainment Telecast in 3 Years |url=http://tvbythenumbers.zap2it.com/2013/02/25/oscars-draw-more-than-40-million-viewers-and-is-tvs-most-watched-entertainment-telecast-in-3-years/170801/ |work=[[TV by the Numbers]] |date=February 25, 2013 |access-date=May 1, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130520195638/http://tvbythenumbers.zap2it.com/2013/02/25/oscars-draw-more-than-40-million-viewers-and-is-tvs-most-watched-entertainment-telecast-in-3-years/170801/ |archive-date=May 20, 2013 }}</ref> The show also drew higher [[Nielsen ratings]] compared to the two previous ceremonies with 24.47% of households watching over a 35.65 share.<ref name="TVB Oscars">{{cite news|title=Academy Awards ratings |work=[[Television Bureau of Advertising]] |url=http://www.tvb.org/media/file/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130515152338/http://www.tvb.org/media/file/Academy_Awards.pdf |archive-date=May 15, 2013 }}</ref> In addition, the program scored its highest key demo ratings in six years with a 13.71 rating over a 33.45 share among viewers in the 18–49 demographic.<ref name="VarietyOscarratings">{{cite news|url=https://variety.com/2013/tv/awards/oscars-top-40-million-surge-in-demos-818811/ |title=Oscars top 40 million, surge in demos: Show draws best score among adults 18–34 since 2005 |work=Variety |date=February 25, 2013 |access-date=February 27, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130301051116/http://www.variety.com/article/VR1118066534/ |archive-date=March 1, 2013 }}</ref>
+
+In July 2013, the ceremony presentation received nine nominations for the [[65th Primetime Emmy Awards|65th Primetime Emmys]].<ref>{{cite news|title=Primetime Emmys: Full List Of Nominees |url=https://deadline.com/2014/07/emmy-nominations-2014-nominees-list-emmys-801678/ |access-date=July 18, 2013 |website=Deadline Hollywood |date=July 18, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140710201048/http://www.deadline.com/2014/07/emmy-nominations-2014-nominees-list-emmys/ |archive-date=July 10, 2014}}</ref> The following month, the ceremony didn't win any of the nominations.<ref>{{cite news|last1=De Andreeva |first1=Nellie |title=HBO, 'Behind The Candelabra' Lead Creative Arts Emmy Awards; Bob Newhart, Dan Bucatinsky, Melissa Leo, Carrie Preston, Heidi Klum & Tim Gunn, 'Undercover Boss', 'South Park' & Tony Awards Among Winners |url=https://deadline.com/2013/09/creative-arts-emmy-awards-2013-winners-live-587432/ |access-date=September 15, 2013 |website=Deadline Hollywood |date=September 15, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140817094136/http://deadline.com/2013/09/creative-arts-emmy-awards-2013-winners-live-587432/ |archive-date=August 17, 2014}}</ref>
+
+== "In Memoriam" ==
+The annual "[[In memoriam segment|In Memoriam]]" segment was presented by actor/producer/director [[George Clooney]].<ref name="InMemoriam"/> The montage featured an excerpt of the main title from ''[[Out of Africa (film)|Out of Africa]]'' by composer [[John Barry (composer)|John Barry]].<ref>{{cite web|last=Burlingame |first=Jon |title=Oscar Scores More Than Pi in the Skyfall |url=http://www.filmmusicsociety.org/news_events/features/2013/022513.html |publisher=[[The Film Music Society]] |access-date=October 8, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130804233140/http://www.filmmusicsociety.org/news_events/features/2013/022513.html |archive-date=August 4, 2013 }}</ref> At the end of the tribute, singer [[Barbra Streisand]] sang "[[The Way We Were (song)|The Way We Were]]" from the [[The Way We Were|film of the same name]] in tribute to composer [[Marvin Hamlisch]].<ref name="InMemoriam">{{cite web|last=Zakarin |first=Jordan |title=Oscars 'In Memoriam' Honors Tony Scott, Richard Zanuck and Other Hollywood Icons |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-memoriam-honors-tony-scott-423891/ |work=[[The Hollywood Reporter]] |access-date=July 26, 2026 |url-status=live |archive-url=https://web.archive.org/web/20211201145208/https://www.hollywoodreporter.com/movies/movie-news/oscars-memoriam-honors-tony-scott-423891/ |archive-date=December 1, 2021 }}</ref>
+
+{{div col|colwidth=22em}}
+* [[Ernest Borgnine]] – Actor
+* [[Eiko Ishioka]] – Costume designer
+* [[Ralph McQuarrie]] – Conceptual designer, illustrator
+* [[Jack Klugman]] – Actor
+* [[Celeste Holm]] – Actress
+* [[Adam Yauch]] – Musician, film executive
+* [[Michael Clarke Duncan]] – Actor
+* [[Charles Durning]] – Actor
+* [[Carlo Rambaldi]] – Special effects artist
+* [[Erland Josephson]] – Actor
+* [[Richard Robbins (composer)|Richard Robbins]] – Composer
+* [[Stephen Frankfurt]] – Advertising executive, title designer
+* [[Harris Savides]] – Cinematographer
+* [[Tonino Guerra]] – Writer
+* [[J. Michael Riva]] – Production designer
+* [[Ulu Grosbard]] – Director
+* [[Herbert Lom]] – Actor
+* [[Bruce Surtees]] – Cinematographer
+* [[Andrew Sarris]] – Film critic
+* [[George Bowers (filmmaker)|George A. Bowers]] – Film editor
+* [[Tony Scott]] – Director
+* [[Theodore Soderberg (1923–2012)|Theodore Soderberg]] – Sound
+* Lois W. Smith – Publicist
+* Geoffrey G. Ammer – Marketing executive
+* [[Neil Travis]] – Film editor
+* [[Mike Hopkins (sound editor)|Michael Hopkins]] – Sound
+* [[John D. Lowry]] – Image restoration pioneer
+* [[Hal David]] – Songwriter
+* [[Nora Ephron]] – Writer, director
+* [[Charles Rosen]] – Production designer
+* [[Jake Eberts]] – Executive
+* [[Michael Kohut]] – Re-recording mixer, executive
+* [[Frank Pierson]] – Writer, director, Academy president 2001–2005
+* [[Chris Marker]] – Director, writer
+* Charles C. Washburn – Assistant director
+* [[Ray Bradbury]] – Writer
+* [[Richard Rodney Bennett]] – Composer
+* [[Robert B. Sherman]] – Composer, songwriter
+* [[Richard D. Zanuck]] – Producer
+* [[Matthew Yuricich]] – Visual effects
+* [[Marvin Hamlisch]] – Composer, songwriter
+{{div col end}}
+
+==See also==
+* [[19th Screen Actors Guild Awards]]
+* [[33rd Golden Raspberry Awards]]
+* [[33rd Brit Awards]]
+* [[55th Grammy Awards]]
+* [[65th Primetime Emmy Awards]]
+* [[66th British Academy Film Awards]]
+* [[2013 Laurence Olivier Awards|37th Laurence Olivier Awards]]
+* [[67th Tony Awards]]
+* [[70th Golden Globe Awards]]
+* [[List of submissions to the 85th Academy Awards for Best Foreign Language Film]]
+
+== Notes ==
+{{notelist}}
+
+== References ==
+{{reflist}}
+
+== External links ==
+<!-- Per [[WP:ELMINOFFICIAL]], choose one official website only -->
+{{Commons category}}
+;Official websites
+* {{Official website|http://www.oscar.com/|Academy Awards official website}}
+* {{Official website|http://www.oscars.org/|The Academy of Motion Picture Arts and Sciences official website}}
+
+'''News resources'''
+* [https://www.boston.com/ae/movies/oscars/2013/ 85th Academy Awards] {{Webarchive|url=https://web.archive.org/web/20160305005048/http://www.boston.com/ae/movies/oscars/2013/ |date=March 5, 2016 }} [[Boston.com]]
+* [https://www.theguardian.com/film/oscars-2013 Oscars 2013] ''[[The Guardian]]''
+* [https://web.archive.org/web/20130113071333/http://www.peoplestylewatch.com/people/stylewatch/package/redcarpet/0,,20658247,00.html Academy Awards 2013] ''[[People (magazine)|People]]''
+
+'''Analysis'''
+* [http://www.filmsite.org/aa2012.html 2012 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20140408214121/http://www.filmsite.org/aa2012.html |date=April 8, 2014 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/2013 Academy Awards, USA: 2013] {{Webarchive|url=https://web.archive.org/web/20171203035802/http://www.imdb.com/event/ev0000003/2013? |date=December 3, 2017 }} Internet Movie Database
+
+'''Other resources'''
+* {{IMDb title|tt2461862|The Oscars (2013)}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 85}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2012 film awards]]
+[[Category:2013 in Los Angeles]]
+[[Category:2013 controversies in the United States]]
+[[Category:Television controversies in the United States]]
+[[Category:2013 in American cinema]]
+[[Category:2013 awards in the United States]]
+[[Category:February 2013 in the United States]]
+[[Category:Television shows directed by Don Mischer]]

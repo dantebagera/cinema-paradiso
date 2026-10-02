@@ -1,0 +1,528 @@
+{{oscars short description|films-year=1978}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 51
+| award            = Academy Awards
+| image            = 51st Academy Awards.jpg
+| alt              = Official poster for the 51st Academy Awards
+| caption          = Official poster
+| date             = April 9, 1979
+| site             = [[Dorothy Chandler Pavilion]]<br>[[Los Angeles]], California, U.S.
+| host             = [[Johnny Carson]]
+| producer         = [[Jack Haley Jr.]]
+| director         = [[Marty Pasetta]]
+| best_picture     = ''[[The Deer Hunter]]''
+| most_wins        = ''The Deer Hunter'' (5)
+| most_nominations = ''The Deer Hunter'' and ''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]'' (9)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 25 minutes<ref>{{harvnb|Osborne|2013|p=252}}</ref>
+| ratings          = 46.3 million<ref name="Viewership">{{cite news|title=Top-10 Most Watched Academy Awards Broadcasts |url=http://www.nielsen.com/us/en/insights/news/2009/top-10-most-watched-academy-awards-broadcasts.html |publisher=[[Nielsen N.V.]] |date=February 18, 2009 |access-date=August 25, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160127130438/http://www.nielsen.com/us/en/insights/news/2009/top-10-most-watched-academy-awards-broadcasts.html |archive-date=January 27, 2016 }}</ref><br>34.6 ([[Nielsen ratings]])<ref name="Boca">{{cite news|via=[[Google News Archive]]|title=New Shows Disappointing|url=https://news.google.com/newspapers?nid=1291&dat=19790420&id=XDUzAAAAIBAJ&pg=4315,4200507|work=[[Boca Raton News]]|date=April 20, 1979|access-date=August 25, 2015|archive-date=June 7, 2022|archive-url=https://web.archive.org/web/20220607094347/https://news.google.com/newspapers?nid=1291&dat=19790420&id=XDUzAAAAIBAJ&pg=4315%2C4200507|url-status=live}}</ref>
+| last             = 50th
+| next             = 52nd
+}}
+
+The '''51st Academy Awards''' ceremony, organized by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored [[1978 in film|films released in 1978]] and took place on April 9, 1979, at the [[Dorothy Chandler Pavilion]] in Los Angeles, beginning at 7:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 10:00&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 21 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Jack Haley Jr.]] and directed by [[Marty Pasetta]].<ref>{{cite news|via=Google News Archive|title=War Film, Comedy Head List|url=https://news.google.com/newspapers?nid=1338&dat=19790406&id=Mv1LAAAAIBAJ&pg=4405,1962767|work=[[The Spokesman-Review|Spokane Daily Chronicle]]|publisher=[[Cowles Publishing Company]]|date=April 6, 1979|page=7|access-date=August 24, 2015|archive-date=June 7, 2022|archive-url=https://web.archive.org/web/20220607094357/https://news.google.com/newspapers?nid=1338&dat=19790406&id=Mv1LAAAAIBAJ&pg=4405%2C1962767|url-status=live}}</ref> Comedian and talk show host [[Johnny Carson]] hosted the show for the first time.<ref>{{cite news |title=Frank Won't Sing Without G Notes |work=Chicago Tribune |date=October 3, 1978 |page=136}}</ref> Three days earlier, in a ceremony held at [[The Beverly Hilton]] in [[Beverly Hills, California]], the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by hosts [[Gregory Peck]] and [[Christopher Reeve]].<ref>{{cite news|title=Past Scientific & Technical Awards Ceremonies|url=http://www.oscars.org/awards/scitech/pastawards.html |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=July 31, 2013 |archive-url=https://web.archive.org/web/20140213185729/http://www.oscars.org/awards/scitech/pastawards.html|archive-date=February 13, 2014}}</ref>
+
+''[[The Deer Hunter]]'' won five awards at the main awards ceremony, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last1=Siskel |first1=Gene |title=Oscars to Fonda, Voight, 'Hunter' |url=http://archives.chicagotribune.com/1979/04/10/page/1/article/oscars-to-fonda-voight-hunter |work=Chicago Tribune |date=April 10, 1979 |access-date=August 24, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160308182052/http://archives.chicagotribune.com/1979/04/10/page/1/article/oscars-to-fonda-voight-hunter/ |archive-date=March 8, 2016 }}</ref> Other winners included ''[[Coming Home (1978 film)|Coming Home]]'' with three awards, ''[[Midnight Express (film)|Midnight Express]]'' with two, and ''[[The Buddy Holly Story]]'', ''[[California Suite (film)|California Suite]]'', ''[[Days of Heaven]]'', ''[[Death on the Nile (1978 film)|Death on the Nile]]'', ''[[The Flight of the Gossamer Condor]]'', ''[[Get Out Your Handkerchiefs]]'', ''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]'', ''[[Scared Straight!]]'', ''[[Special Delivery (1978 film)|Special Delivery]]'', ''[[Superman (1978 film)|Superman]]'', ''[[Teenage Father]]'', and ''[[Thank God It's Friday (film)|Thank God It's Friday]]'' with one. The telecast was watched by 46.3&nbsp;million viewers and earned a 34.6 [[Nielsen ratings|Nielsen rating]] in the United States.<ref name="Viewership"/><ref name="Boca"/>
+
+==Ceremony==
+The ceremony, held at the [[Dorothy Chandler Pavilion]] in [[Downtown Los Angeles]], was hosted by late-night talk host [[Johnny Carson]] for the first time.<ref>{{cite news|via=Google News Archive|last1=Thomas|first1=Bob|title=Oscar Show-A Thankless Chore|url=https://news.google.com/newspapers?nid=110&dat=19790409&id=ItNOAAAAIBAJ&pg=6936,8014761|work=[[Ludington Daily News]]|date=April 9, 1979|access-date=August 25, 2015|archive-date=June 7, 2022|archive-url=https://web.archive.org/web/20220607094357/https://news.google.com/newspapers?nid=110&dat=19790409&id=ItNOAAAAIBAJ&pg=6936%2C8014761|url-status=live}}</ref> [[Jack Elliott (composer)|Jack Elliott]] and [[Allyn Ferguson]] served as musical directors for the telecast.<ref>{{harvnb|Osborne|2013|p=413}}</ref> Singers [[Sammy Davis Jr.]] and [[Steve Lawrence]] performed a medley called "Oscar's Only Human," which was composed of movie songs that were not nominated for Best Original Song.<ref>{{harvnb|Wiley|Bona|1996|p=560}}</ref> Initially, the academy's music branch protested the segment and urged that it be dropped from the ceremony, but it was kept after Haley threatened to leave his position as producer and pull Carson from emcee duties.<ref>{{harvnb|Pond|2005|p=29}}</ref>
+
+It is also remembered for being the final public appearance of Oscar-winning actor [[John Wayne]], where he was given a standing ovation before presenting the award for [[Academy Award for Best Picture|Best Picture]].<ref name="NMO">{{harvnb|Osborne|2013|p=251}}</ref> On June 11, two months after the ceremony, he died from complications from [[stomach cancer]] at age 72.<ref name="NMO"/><ref>{{cite news |last1=Hammond |first1=Pete |title=How Michael Cimino's 'The Deer Hunter' Pioneered The Modern Day Oscar Campaign – And Won |url=https://deadline.com/2016/07/michael-ciminos-deer-hunter-oscar-campaign-win-best-picture-1201782549/ |access-date=February 19, 2021 |work=[[Deadline Hollywood]] |date=July 3, 2016 |archive-date=April 17, 2020 |archive-url=https://web.archive.org/web/20200417162635/https://deadline.com/2016/07/michael-ciminos-deer-hunter-oscar-campaign-win-best-picture-1201782549/ |url-status=live }}</ref>  This was also the final public appearance for [[Jack Haley]], the father of producer [[Jack Haley Jr.]], who presented the [[Academy Award for Best Costume Design|Best Costume Design]] with his ''[[Wizard of Oz (1939 film)|Wizard of Oz]]'' co-star [[Ray Bolger]].<ref>{{cite news |last1=Smith |first1=J.Y. |title=Jack Haley Dies, Was Tin Man in 'The Wizard of Oz' |url=https://www.washingtonpost.com/archive/local/1979/06/07/jack-haley-dies-was-tin-man-in-the-wizard-of-oz/2c6b95f4-2ec3-49a5-bf62-4b09596f6642/ |newspaper=[[The Washington Post]] |date=June 7, 1979 |access-date=October 31, 2020 |url-access=subscription |archive-date=April 1, 2019 |archive-url=https://web.archive.org/web/20190401114319/https://www.washingtonpost.com/archive/local/1979/06/07/jack-haley-dies-was-tin-man-in-the-wizard-of-oz/2c6b95f4-2ec3-49a5-bf62-4b09596f6642/ |url-status=live }}</ref>
+
+==Winners and nominees==
+The nominees for the 51st Academy Awards were announced on February 20, 1979, by Academy president [[Howard W. Koch]] and actress [[Susan Blakely]].<ref>{{cite news |last1=Thomas |first1=Bob |title=1978 Oscar nominees announced |work=[[San Bernardino Sun]] |date=February 21, 1979 |page=C1}}</ref><ref>{{cite news|title=The Deer Hunter, Heaven Can Wait top honors Oscar nominees listed|work=[[The Globe and Mail]]|date=February 21, 1979|page=P11}}</ref> ''[[The Deer Hunter]]'' and ''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]'' tied for the most nominations with nine each.<ref>{{cite news|last1=Grant|first1=Lee|title=Two War Films on Oscar Ballot|work=[[Los Angeles Times]] |date=February 21, 1979|page=D1}}</ref> The winners were announced during the awards ceremony on April 9.<ref>{{cite news |last1=Harmetz |first1=Aljean |title=2 Vietnam Films Cast Aside Ghosts on Way to Oscars |url=https://www.nytimes.com/1979/04/11/archives/2-vietnam-films-cast-aside-ghosts-on-way-to-oscars-new-york.html |access-date=November 12, 2020 |work=[[The New York Times]] |date=April 11, 1979 |url-access=subscription |archive-date=November 12, 2020 |archive-url=https://web.archive.org/web/20201112215758/https://www.nytimes.com/1979/04/11/archives/2-vietnam-films-cast-aside-ghosts-on-way-to-oscars-new-york.html |url-status=live }}</ref> Best Director nominees [[Warren Beatty]] and [[Buck Henry]] became the second pair of directors nominated in that category for the same film; [[Jerome Robbins]] and [[Robert Wise]] had won for co-directing 1961's ''[[West Side Story (1961 film)|West Side Story]]''.<ref>{{harvnb|Kinn|Piazza|2002|p=215}}</ref> Furthermore, Beatty was the first person to earn acting, directing, producing, and screenwriting nominations for the same film. While [[Orson Welles]] had previously achieved the same feat for ''[[Citizen Kane]]'', rules at the time determined that the studio releasing the film, as opposed to the individual producers, were the official nominees for Best Picture.<ref>{{harvnb|Wiley|Bona|1996|p=1129}}</ref><ref>{{cite news |last1=Emerson |first1=Jim |title=Questions for the Academy |url=https://www.rogerebert.com/scanners/questions-for-the-academy |access-date=March 21, 2016 |work=[[Chicago Sun-Times]] |date=February 11, 2007 |archive-date=March 13, 2017 |archive-url=https://web.archive.org/web/20170313185720/http://www.rogerebert.com/scanners/questions-for-the-academy |url-status=live }}</ref> With [[Jon Voight]] and [[Jane Fonda]]'s respective wins in the Best Actor and Best Actress categories, ''[[Coming Home (1978 film)|Coming Home]]'' was the fourth film to win both lead acting awards.<ref name="Osborne 2013 423">{{harvnb|Osborne|2013|p=423}}</ref> Best Supporting Actress winner [[Maggie Smith]] became the only person to win an Oscar for playing an Oscar loser in ''[[California Suite (film)|California Suite]]''.<ref name="Osborne 2013 423"/>
+
+===Awards===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = MichaelCimino2003.jpg
+| alt1              = Photo of Michael Cimino in 2003
+| caption1          = [[Michael Cimino]], Best Picture co-winner and Best Director winner
+| image2            = Jon_Voight_2012.jpg
+| alt2              = Photo of Jon Vought in 2012
+| caption2          = [[Jon Voight]], Best Actor winner
+| image3            = Jane Fonda Cannes 2014.jpg
+| alt3              = Photo of Jane Fonda in 2014
+| caption3          = [[Jane Fonda]], Best Actress winner
+| image4            = Christopher Walken Shankbone 2009 Vanity Fair.jpg
+| alt4              = Photo of Christopher Walken in 2009
+| caption4          = [[Christopher Walken]], Best Supporting Actor winner
+| image5            = Dame Maggie Smith-cropped.jpg
+| alt5              = Photo of Maggie Smith in 2007
+| caption5          = [[Maggie Smith]], Best Supporting Actress winner
+| image6            = Oliver Stone by Gage Skidmore.jpg
+| alt6              = Photo of Oliver Stone in 2016
+| caption6          = [[Oliver Stone]], Best Adapted Screenplay winner
+| image7            = TaylorHackfordHWOFJan2013.jpg
+| alt7              = Photo of Taylor Hackford in 2013
+| caption7          = [[Taylor Hackford]], Best Live Action Short Film winner
+| image8            = Giorgio Moroder (2).jpg
+| alt8              = Photo of Giorgio Moroder in 2007
+| caption8          = [[Giorgio Moroder]], Best Original Score winner
+| image9            = Paul Jabara Allan Warren.jpg
+| alt9              = Photo of Paul Jabara in 1972
+| caption9          = [[Paul Jabara]], Best Original Song winner
+}}
+
+Winners are listed first, highlighted in '''boldface''' and indicated with a double dagger ({{double dagger}}).<ref name="Oscars1979">{{Cite web |url=https://www.oscars.org/oscars/ceremonies/1979 |title=The 51st Academy Awards (1979) Nominees and Winners |publisher=Academy of Motion Picture Arts and Sciences |access-date=October 31, 2011 |archive-date=October 17, 2014 |archive-url=https://web.archive.org/web/20141017075832/http://www.oscars.org/oscars/ceremonies/1979 |url-status=live }}</ref>
+
+{| class=wikitable
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[The Deer Hunter]]''&nbsp;– [[Barry Spikings]], [[Michael Deeley]], [[Michael Cimino]] and [[John Peverall]], producers'''{{double dagger}}
+**''[[Coming Home (1978 film)|Coming Home]]''&nbsp;– [[Jerome Hellman]], producer
+**''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]''&nbsp;– [[Warren Beatty]], producer
+**''[[Midnight Express (film)|Midnight Express]]''&nbsp;– [[Alan Marshall (producer)|Alan Marshall]] and [[David Puttnam]], producers
+**''[[An Unmarried Woman]]''&nbsp;– [[Paul Mazursky]] and [[Anthony Ray (producer)|Anthony Ray]], producers
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Michael Cimino]]&nbsp;– ''[[The Deer Hunter]]'''''{{double dagger}}
+**[[Hal Ashby]]&nbsp;– ''[[Coming Home (1978 film)|Coming Home]]''
+**[[Warren Beatty]] and [[Buck Henry]]&nbsp;– ''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]''
+**[[Woody Allen]]&nbsp;– ''[[Interiors]]''
+**[[Alan Parker]]&nbsp;– ''[[Midnight Express (film)|Midnight Express]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+*'''[[Jon Voight]]&nbsp;– ''[[Coming Home (1978 film)|Coming Home]]'' as Luke Martin'''{{double dagger}}
+**[[Warren Beatty]]&nbsp;– ''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]'' as Joe Pendleton/Leo Farnsworth/Tom Jarrett
+**[[Gary Busey]]&nbsp;– ''[[The Buddy Holly Story]]'' as [[Buddy Holly]]
+**[[Robert De Niro]]&nbsp;– ''[[The Deer Hunter]]'' as Sergeant Michael "Mike" Vronsky
+**[[Laurence Olivier]]&nbsp;– ''[[The Boys from Brazil (film)|The Boys from Brazil]]'' as Ezra Lieberman
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+*'''[[Jane Fonda]]&nbsp;– ''[[Coming Home (1978 film)|Coming Home]]'' as Sally Hyde'''{{double dagger}}
+**[[Ingrid Bergman]]&nbsp;– ''[[Autumn Sonata]]'' as Charlotte Andergast
+**[[Ellen Burstyn]]&nbsp;– ''[[Same Time, Next Year (film)|Same Time, Next Year]]'' as Doris
+**[[Jill Clayburgh]]&nbsp;– ''[[An Unmarried Woman]]'' as Erica Benton
+**[[Geraldine Page]]&nbsp;– ''[[Interiors]]'' as Eve
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Christopher Walken]]&nbsp;– ''[[The Deer Hunter]]'' as Corporal Nikanor "Nick" Chevotarevich'''{{double dagger}}
+**[[Bruce Dern]]&nbsp;– ''[[Coming Home (1978 film)|Coming Home]]'' as Captain Bob Hyde
+**[[Richard Farnsworth]]&nbsp;– ''[[Comes a Horseman]]'' as Dodger
+**[[John Hurt]]&nbsp;– ''[[Midnight Express (film)|Midnight Express]]'' as Max
+**[[Jack Warden]]&nbsp;– ''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]'' as Max Corkle
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Maggie Smith]]&nbsp;– ''[[California Suite (film)|California Suite]]'' as Diana Barrie'''{{double dagger}}
+**[[Dyan Cannon]]&nbsp;– ''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]'' as Julia Farnsworth
+**[[Penelope Milford]]&nbsp;– ''[[Coming Home (1978 film)|Coming Home]]'' as Vi Munson
+**[[Maureen Stapleton]]&nbsp;– ''[[Interiors]]'' as Pearl
+**[[Meryl Streep]]&nbsp;– ''[[The Deer Hunter]]'' as Linda
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+*'''''[[Coming Home (1978 film)|Coming Home]]''&nbsp;– Story by [[Nancy Dowd]]; Screenplay by [[Waldo Salt]] and [[Robert C. Jones]]'''{{double dagger}}
+**''[[Autumn Sonata]]''&nbsp;– [[Ingmar Bergman]]
+**''[[The Deer Hunter]]''&nbsp;– Story by [[Michael Cimino]], [[Deric Washburn]], [[Louis A. Garfinkle]] and [[Quinn Redeker]]; Screenplay by [[Deric Washburn]]
+**''[[Interiors]]''&nbsp;– [[Woody Allen]]
+**''[[An Unmarried Woman]]''&nbsp;– [[Paul Mazursky]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material from Another Medium)]]}}
+*'''''[[Midnight Express (film)|Midnight Express]]''&nbsp;– [[Oliver Stone]] based on [[Midnight Express (book)|the book]] by [[Billy Hayes (writer)|Billy Hayes]] and William Hoffer'''{{double dagger}}
+**''[[Bloodbrothers (1978 film)|Bloodbrothers]]''&nbsp;– [[Walter Newman (screenwriter)|Walter Newman]] based on [[Bloodbrothers (Price novel)|the novel]] by [[Richard Price (writer)|Richard Price]]
+**''[[California Suite (film)|California Suite]]''&nbsp;– [[Neil Simon]] based on his play
+**''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]''&nbsp;– [[Elaine May]] and [[Warren Beatty]] based on the play by [[Harry Segall]]
+**''[[Same Time, Next Year (film)|Same Time, Next Year]]''&nbsp;– [[Bernard Slade]] based on his play
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[List of submissions to the 51st Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[Get Out Your Handkerchiefs]]'' ([[List of French submissions for the Academy Award for Best International Feature Film|France]]) in [[French language|French]]&nbsp;– Directed by [[Bertrand Blier]]'''{{double dagger}}
+**''[[The Glass Cell (film)|The Glass Cell]]'' ([[List of German submissions for the Academy Award for Best International Feature Film|West Germany]]) in [[German language|German]]&nbsp;– Directed by [[Hans W. Geißendörfer]]
+**''[[Hungarians (film)|Hungarians]]'' ([[List of Hungarian submissions for the Academy Award for Best International Feature Film|Hungary]]) in [[Hungarian language|Hungarian]]&nbsp;– Directed by [[Zoltán Fábri]]
+**''[[I nuovi mostri|Viva Italia!]]'' ([[List of Italian submissions for the Academy Award for Best International Feature Film|Italy]]) in [[Italian language|Italian]]&nbsp;– Directed by [[Dino Risi]], [[Ettore Scola]], and [[Mario Monicelli]]
+**''[[White Bim Black Ear]]'' ([[List of Soviet submissions for the Academy Award for Best International Feature Film|Soviet Union]]) in [[Russian language|Russian]]&nbsp;– Directed by [[Stanislav Rostotsky]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Scared Straight!]]''&nbsp;– [[Arnold Shapiro]]'''{{double dagger}}
+**''[[The Lovers' Wind|The Lovers' Wind (Le vent des amoureux)]]''&nbsp;– [[Albert Lamorisse]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]])
+**''[[Mysterious Castles of Clay]]''&nbsp;– [[Alan Root]]
+**''[[Raoni]]''&nbsp;– [[Jean-Pierre Dutilleux]], Barry Hugh Williams and [[Michel Gast]]
+**''[[With Babies and Banners: Story of the Women's Emergency Brigade]]''&nbsp;– Anne Bohlen, Lyn Goldfarb and Lorraine Gray
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[The Flight of the Gossamer Condor]]''&nbsp;– Jacqueline Phillips Shedd and [[Ben Shedd]]'''{{double dagger}}
+**''[[The Divided Trail: A Native American Odyssey]]''&nbsp;– Jerry Aronson
+**''[[An Encounter with Faces]]''&nbsp;– K. K. Kapil
+**''[[Goodnight Miss Ann]]''&nbsp;– August Cinquegrana
+**''[[Squires of San Quentin]]''&nbsp;– J. Gary Mitchell
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+*'''''[[Teenage Father]]''&nbsp;– [[Taylor Hackford]]'''{{double dagger}}
+**''[[A Different Approach]]''&nbsp;– Jim Belcher and Fern Field
+**''Mandy's Grandmother''&nbsp;– [[Andrew Sugerman]]
+**''[[Strange Fruit (novel)#Short film|Strange Fruit]]''&nbsp;– Seth Pinsker
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[Special Delivery (1978 film)|Special Delivery]]''&nbsp;– [[Eunice Macaulay]] and [[John Weldon (animator)|John Weldon]]'''{{double dagger}}
+**''Oh My Darling''&nbsp;– Nico Crama
+**''Rip Van Winkle''&nbsp;– [[Will Vinton]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[Midnight Express (film)|Midnight Express]]''&nbsp;– [[Giorgio Moroder]]'''{{double dagger}}
+**''[[The Boys from Brazil (film)|The Boys from Brazil]]''&nbsp;– [[Jerry Goldsmith]]
+**''[[Days of Heaven]]''&nbsp;– [[Ennio Morricone]]
+**''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]''&nbsp;– [[Dave Grusin]]
+**''[[Superman (1978 film)|Superman]]''&nbsp;– [[John Williams]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Adaptation Score)]]}}
+*'''''[[The Buddy Holly Story]]''&nbsp;– [[Joe Renzetti]]'''{{double dagger}}
+**''[[Pretty Baby (1978 film)|Pretty Baby]]''&nbsp;– [[Jerry Wexler]]
+**''[[The Wiz (film)|The Wiz]]''&nbsp;– [[Quincy Jones]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+*'''"[[Last Dance (Donna Summer song)|Last Dance]]" from ''[[Thank God It's Friday (film)|Thank God It's Friday]]''&nbsp;– Music and lyrics by [[Paul Jabara]]'''{{double dagger}}
+**"[[Hopelessly Devoted to You]]" from ''[[Grease (film)|Grease]]''&nbsp;– Music and lyrics by [[John Farrar]]
+**"The Last Time I Felt Like This" from ''[[Same Time, Next Year (film)|Same Time, Next Year]]''&nbsp;– Music by [[Marvin Hamlisch]]; lyrics by [[Alan and Marilyn Bergman]]
+**"[[Ready to Take a Chance Again]]" from ''[[Foul Play (1978 film)|Foul Play]]''&nbsp;– Music by [[Charles Fox (composer)|Charles Fox]]; lyrics by [[Norman Gimbel]]
+**"When You're Loved" from ''[[The Magic of Lassie]]''&nbsp;– Music and lyrics by [[Richard M. Sherman]] and [[Robert B. Sherman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[The Deer Hunter]]''&nbsp;– [[Richard Portman]], [[William McCaughey]], [[Aaron Rochin]] and [[Darin Knight]]'''{{double dagger}}
+**''[[The Buddy Holly Story]]''&nbsp;– [[Tex Rudloff]], [[Joel Fein]], [[Curly Thirlwell]] and [[Willie D. Burton]]
+**''[[Days of Heaven]]''&nbsp;– [[John Wilkinson (sound engineer)|John Wilkinson]], [[Robert W. Glass Jr.]], [[John T. Reitz]] and [[Barry Thomas (sound engineer)|Barry Thomas]]
+**''[[Hooper (film)|Hooper]]''&nbsp;– [[Robert Knudson]], [[Robert Glass (sound engineer)|Robert Glass]], [[Don MacDougall]] and [[Jack Solomon (sound engineer)|Jack Solomon]]
+**''[[Superman (1978 film)|Superman]]''&nbsp;– [[Gordon McCallum]], [[Graham V. Hartstone]], [[Nicolas Le Messurier]] and [[Roy Charman]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]''&nbsp;– Art Direction: [[Paul Sylbert]] and [[Edwin O'Donovan]]; Set Decoration: [[George Gaines (set decorator)|George Gaines]]'''{{double dagger}}
+**''[[The Brink's Job]]''&nbsp;– Art Direction: [[Dean Tavoularis]] and [[Angelo P. Graham]]; Set Decoration: [[George R. Nelson]] and [[Bruce Kay]]
+**''[[California Suite (film)|California Suite]]''&nbsp;– Art Direction: [[Albert Brenner]]; Set Decoration: [[Marvin March]]
+**''[[Interiors]]''&nbsp;– Art Direction: [[Mel Bourne]]; Set Decoration: [[Daniel Robert (set director)|Daniel Robert]]
+**''[[The Wiz (film)|The Wiz]]''&nbsp;– Art Direction: [[Tony Walton]] and [[Philip Rosenberg]]; Set Decoration: [[Edward Stewart (set decorator)|Edward Stewart]] and [[Robert Drumheller]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Days of Heaven]]''&nbsp;– [[Néstor Almendros]]'''{{double dagger}}
+**''[[The Deer Hunter]]''&nbsp;– [[Vilmos Zsigmond]]
+**''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]''&nbsp;– [[William A. Fraker]]
+**''[[Same Time, Next Year (film)|Same Time, Next Year]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert Surtees]]
+**''[[The Wiz (film)|The Wiz]]''&nbsp;– [[Oswald Morris]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Death on the Nile (1978 film)|Death on the Nile]]''&nbsp;– [[Anthony Powell (designer)|Anthony Powell]]'''{{double dagger}}
+**''[[Caravans (film)|Caravans]]''&nbsp;– [[Renié]]
+**''[[Days of Heaven]]''&nbsp;– [[Patricia Norris]]
+**''[[The Swarm (1978 film)|The Swarm]]''&nbsp;– [[Paul Zastupnevich]]
+**''[[The Wiz (film)|The Wiz]]''&nbsp;– [[Tony Walton]]
+|-
+| colspan="2" valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[The Deer Hunter]]''&nbsp;– [[Peter Zinner]]'''{{double dagger}}
+**''[[The Boys from Brazil (film)|The Boys from Brazil]]''&nbsp;– [[Robert Swink|Robert E. Swink]]
+**''[[Coming Home (1978 film)|Coming Home]]''&nbsp;– [[Don Zimmerman (film editor)|Don Zimmerman]]
+**''[[Midnight Express (film)|Midnight Express]]''&nbsp;– [[Gerry Hambling]]
+**''[[Superman (1978 film)|Superman]]''&nbsp;– [[Stuart Baird]]
+|}
+
+===Special Achievement Award (Visual Effects)===
+* ''[[Superman (1978 film)|Superman]]'' – [[Les Bowie]], [[Colin Chilvers]], [[Denys Coop]], [[Roy Field]], [[Derek Meddings]] and [[Zoran Perisic (visual effects artist)|Zoran Perisic]].<ref>{{harvnb|Franks|2005|p=246}}</ref>
+
+===Honorary Awards===
+* To [[Walter Lantz]] for bringing joy and laughter to every part of the world through his unique animated motion pictures.<ref>{{cite news |title=Animator Walter Lantz, Creator of Woody Woodpecker, Is Dead |url=https://buffalonews.com/news/animator-walter-lantz-creator-of-woody-woodpecker-is-dead/article_fa67a64c-ab42-5f22-9a5c-5d80f6639891.html |access-date=July 16, 2020 |work=[[The Buffalo News]] |date=March 23, 1994 |url-access=limited |archive-date=July 17, 2020 |archive-url=https://web.archive.org/web/20200717150743/https://buffalonews.com/news/animator-walter-lantz-creator-of-woody-woodpecker-is-dead/article_fa67a64c-ab42-5f22-9a5c-5d80f6639891.html |url-status=live }}</ref>
+* To [[Museum of Modern Art Department of Film|The Museum of Modern Art Department of Film]] for the contribution it has made to the public's perception of movies as an art form.<ref>{{harvnb|Kinn|Piazza|2002|p=217}}</ref>
+* To [[Laurence Olivier]] for the full body of his work, for the unique achievements of his entire career and his lifetime of contribution to the art of film.<ref name="HonoraryandSpecial">{{cite web |title=Academy Awards Acceptance Speech Database |url=http://aaspeechesdb.oscars.org/results.aspx?QY=find%20(year%20term%20ct%201978)&AC=QBE_QUERY&RF=WebReportList&DF=WebReportOscars&MR=0&BU=/index.aspx |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |access-date=February 4, 2020 |archive-date=July 16, 2020 |archive-url=https://web.archive.org/web/20200716052025/http://aaspeechesdb.oscars.org/results.aspx?QY=find%20%28year%20term%20ct%201978%29&AC=QBE_QUERY&RF=WebReportList&DF=WebReportOscars&MR=0&BU=%2Findex.aspx |url-status=live }}</ref>
+* To [[King Vidor]] for his incomparable achievements as a cinematic creator and innovator.<ref>{{cite news |last1=Thomas |first1=David |title=The Man Who Would Be King |url=https://www.dga.org/craft/dgaq/all-articles/1004-winter-2010-11/interview-king-vidor.aspx |access-date=July 16, 2020 |work=[[DGA Quarterly]] |date=Winter 2011 |archive-date=May 20, 2020 |archive-url=https://web.archive.org/web/20200520212536/https://www.dga.org/Craft/DGAQ/All-Articles/1004-Winter-2010-11/Interview-King-Vidor.aspx |url-status=live }}</ref>
+
+===Jean Hersholt Humanitarian Award===
+The award recognizes individuals whose humanitarian efforts have brought credit to the motion picture industry.<ref>{{cite web |title=Jean Hersholt Humanitarian Award |url=https://www.oscars.org/governors/hersholt |publisher=Academy of Motion Picture Arts and Sciences |access-date=12 November 2020 |archive-date=16 November 2020 |archive-url=https://web.archive.org/web/20201116224625/https://www.oscars.org/governors/hersholt |url-status=live }}</ref>
+* [[Leo Jaffe]]<ref>{{cite news|last1=Schreger|first1=Charles|title='Close Encounters' - Take Two|work=Los Angeles Times |date=February 10, 1979|page=B5}}</ref>
+
+===Multiple nominations and awards===
+{{Col-begin}}
+{{Col-1-of-2}}
+The following fourteen films had multiple nominations:
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+! rowspan="2" scope="row" style="text-align:center;"| 9
+| ''[[The Deer Hunter]]''
+|-
+| ''[[Heaven Can Wait (1978 film)|Heaven Can Wait]]''
+|-
+! scope="row" style="text-align:center;"| 8
+| ''[[Coming Home (1978 film)|Coming Home]]''
+|-
+! scope="row" style="text-align:center;"| 6
+| ''[[Midnight Express (film)|Midnight Express]]''
+|-
+! scope="row" style="text-align:center;"| 5
+| ''[[Interiors]]''
+|-
+! rowspan="3" scope="row" style="text-align:center;"| 4
+| ''[[Days of Heaven]]''
+|-
+| ''[[Same Time, Next Year (film)|Same Time, Next Year]]''
+|-
+| ''[[The Wiz (film)|The Wiz]]''
+|-
+! rowspan="5" scope="row" style="text-align:center;"| 3
+| ''[[The Boys from Brazil (film)|The Boys from Brazil]]''
+|-
+| ''[[The Buddy Holly Story]]''
+|-
+| ''[[California Suite (film)|California Suite]]''
+|-
+| ''[[Superman (1978 film)|Superman]]''{{efn|Not counting the non-competitive Special Achievement Award for ''Superman''.}}
+|-
+| ''[[An Unmarried Woman]]''
+|-
+! scope="row" style="text-align:center;"| 2
+| ''[[Autumn Sonata]]''
+|}
+
+{{Col-2-of-2}}
+The following three films received multiple awards.
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+! scope="row" style="text-align:center;"| 5
+| ''[[The Deer Hunter]]''
+|-
+! scope="row" style="text-align:center;"| 3
+| ''[[Coming Home (1978 film)|Coming Home]]''
+|-
+! scope="row" style="text-align:center;"| 2
+| ''[[Midnight Express (film)|Midnight Express]]''
+|-
+|}
+{{Col-end}}
+
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers:<ref name="MFEO">{{harvnb|Wiley|Bona|1996|p=562}}</ref>
+
+===Presenters===
+{| class="wikitable plainrowheaders sortable"
+|-
+! scope="col" width="171" | Name(s)
+! scope="col" align="center" | Role
+|-
+! scope="row" | {{sortname|John|Harlan|John Harlan (announcer)|John Harlan}}
+| Announcer for the 51st Academy Awards
+|-
+! scope="row" | {{sortname|Howard W.|Koch}} (AMPAS President)
+| Gave opening remarks welcoming guests to the awards ceremony
+|-
+! scope="row" | {{sortname|Robin|Williams}}<br /> [[Woody Woodpecker]]
+| Presenters of the Honorary Award to [[Walter Lantz]]
+|-
+! scope="row" | {{sortname|Danny|Thomas}}
+| Explained the voting rules to the public
+|-
+! scope="row" | {{sortname|Dyan|Cannon}}<br /> [[Telly Savalas]]
+| Presenters of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+! scope="row" | {{sortname|Maggie|Smith}}<br /> [[Maureen Stapleton]]
+| Presenters of the Scientific and Technical Awards
+|-
+! scope="row" | {{sortname|Robby|Benson}} <br /> [[Carol Lynley]]
+| Presenters of the Short Subject Awards
+|-
+! scope="row" | {{sortname|Mia|Farrow}}<br /> [[David L. Wolper]]
+| Presenters of the Documentary Awards
+|-
+! scope="row" | {{sortname|Shirley|Jones}}<br /> [[Ricky Schroder]]
+| Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+! scope="row" | {{sortname|Ray|Bolger}}<br /> [[Jack Haley]]
+| Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+! scope="row" | {{sortname|Dom|DeLuise}}<br /> [[Valerie Perrine]]
+| Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+! scope="row" | {{sortname|Steve|Martin}}
+| Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+! scope="row" | {{sortname|Margot|Kidder}}<br /> [[Christopher Reeve]]
+| Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+! scope="row" | {{sortname|James|Coburn}}<br /> [[Kim Novak]]
+| Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+! scope="row" | {{sortname|Ruby|Keeler}}<br /> [[Kris Kristofferson]]
+| Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+! scope="row" | {{sortname|Paul|Williams|Paul Williams (songwriter)}}
+| Introducer to Sammy Davis Jr. and Steve Lawrence performance
+|-
+! scope="row" | {{sortname|Dean|Martin}}<br /> [[Raquel Welch]]
+| Presenters of the Music Awards
+|-
+! scope="row" | {{sortname|Gregory|Peck}}
+| Presenter of the Honorary Award to the [[Museum of Modern Art Department of Film]]
+|-
+! scope="row" | {{sortname|Yul|Brynner}}<br /> [[Natalie Wood]]
+| Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+! scope="row" | {{sortname|George|Burns}}<br /> [[Brooke Shields]]
+| Presenters of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+! scope="row" | {{sortname|Lauren|Bacall}}<br /> [[Jon Voight]]
+| Presenters of the Writing Awards
+|-
+! scope="row" | {{sortname|Audrey|Hepburn}}
+| Presenter of the Honorary Award to [[King Vidor]]
+|-
+! scope="row" | {{sortname|Francis Ford|Coppola}}<br /> [[Ali MacGraw]]
+| Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+! scope="row" | {{sortname|Cary|Grant}}
+| Presenter of the Honorary Award to [[Laurence Olivier]]
+|-
+! scope="row" | {{sortname|Richard|Dreyfuss}}<br /> [[Shirley MacLaine]]
+| Presenters of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+! scope="row" | {{sortname|Jack|Valenti}}
+| Presenter of the [[Jean Hersholt Humanitarian Award]]
+|-
+! scope="row" | {{sortname|Ginger|Rogers}}<br /> [[Diana Ross]]
+| Presenters of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+! scope="row" | {{sortname|John|Wayne}}
+| Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable plainrowheaders sortable"
+|-
+! scope="col" | Name
+! scope="col" | Role
+! scope="col" | Performed
+|-
+! scope="row" | {{sortname|Jack|Elliot|Jack Elliott (composer)}}
+| rowspan="2" | Musical arrangers || rowspan="2" | Orchestral
+|-
+! scope="row" | {{sortname|Allyn|Ferguson}}
+|-
+! scope="row" | {{sortname|Olivia|Newton-John}}
+| Performer || "[[Hopelessly Devoted to You]]" from ''[[Grease (film)|Grease]]''
+|-
+! scope="row" | {{sortname|Jane|Olivor}}
+| rowspan="2" | Performers || rowspan="2" | "The Last Time I Felt Like This" from ''[[Same Time, Next Year (film)|Same Time, Next Year]]''
+|-
+! scope="row" | {{sortname|Johnny|Mathis}}
+|-
+! scope="row" | {{sortname|Donna|Summer}}
+| Performer || "[[Last Dance (Donna Summer song)|Last Dance]]" from ''[[Thank God It's Friday (film)|Thank God It's Friday]]''
+|-
+! scope="row" | {{sortname|Debby|Boone}}
+| Performer || "When You're Loved" from ''[[The Magic of Lassie]]''
+|-
+! scope="row" | {{sortname|Barry|Manilow}}
+| Performer || "Ready to Take a Chance Again" from ''[[Foul Play (1978 film)|Foul Play]]''
+|-
+! scope="row" | {{sortname|Sammy|Davis Jr.}}
+| rowspan="2" | Performers || rowspan="2" | "Not Even Nominated (Oscar's Only Human)"
+|-
+! scope="row" | {{sortname|Steve|Lawrence}}
+|-
+! scope="row" | Academy Awards Orchestra
+| Performers || "[[That's Entertainment! (song)|That's Entertainment!]]" (instrumental)
+|}
+
+==See also==
+* [[List of submissions to the 51st Academy Awards for Best Foreign Language Film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{Reflist|30em}}
+
+==Bibliography==
+{{Refbegin}}
+*{{Citation
+ |last=Franks
+ |first=Don
+ |title=Entertainment Awards: A Music, Cinema, Theatre and Broadcasting Guide, 1928 through 2003
+ |year=2005 
+ |isbn=978-1-5791-2396-3
+ |location=Jefferson, North Carolina, United States
+ |edition=3rd
+ |publisher=[[McFarland & Company]]
+}}
+*{{Citation
+ |last1=Kinn
+ |first1=Gail
+ |last2=Piazza
+ |first2=Jim
+ |title=The Academy Awards: The Complete Unofficial History
+ |year=2002 
+ |isbn=978-1-5791-2396-3 |location=New York, New York, United States 
+ |publisher=[[Workman Publishing Company]]
+}}
+*{{Cite book
+ |last=Osborne
+ |first=Robert
+ |title=85 Years of the Oscar: The Complete History of the Academy Awards
+ |year=2013
+ |isbn=978-0-7892-1142-2
+ |location=New York, New York, United States 
+ |publisher=[[Abbeville Publishing Group]]
+  }}
+*{{Citation
+ |last=Pond
+ |first=Steve
+ |title=The Big Show: High Times and Dirty Dealings Backstage at the Academy Awards
+ |year=2005
+ |isbn=978-0-5712-1193-7
+ |location=New York, New York, United States 
+ |publisher=[[Faber and Faber]]
+ |url=https://archive.org/details/bigshowhightimes00pond
+ }}
+*{{Citation
+ |last1=Wiley 
+ |first1=Mason
+ |last2=Bona
+ |first2=Damien
+ |title=Inside Oscar: The Unofficial History of the Academy Awards
+ |year=1996 
+ |isbn=978-0-3454-0053-6
+ |location=New York, New York, United States 
+ |edition=5
+ |oclc=779680732 
+ |publisher=[[Ballantine Books]]
+}}
+
+{{refend}}
+
+==External links==
+;Official websites
+* {{Official website|http://oscar.go.com/|Academy Awards official website}}
+* {{Official website|http://www.oscars.org/|The Academy of Motion Picture Arts and Sciences official website}}
+* [https://www.youtube.com/user/Oscars Oscars channel] {{Webarchive|url=https://web.archive.org/web/20190226082028/https://www.youtube.com/user/Oscars |date=February 26, 2019 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+;Analysis
+* [http://www.filmsite.org/aa78.html 1978 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20210125011847/http://www.filmsite.org/aa78.html |date=January 25, 2021 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/1987 Academy Awards, USA: 1979] {{Webarchive|url=https://web.archive.org/web/20170809112336/https://www.imdb.com/event/ev0000003/1987 |date=August 9, 2017 }} [[Internet Movie Database]]
+
+;Other resources
+* {{IMDb title|0299436|The 51st Annual Academy Awards}}
+
+{{Academy Awards Chron}}
+
+{{featured list}}
+
+{{DEFAULTSORT:Academy Awards, 51}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1978 film awards]]
+[[Category:1979 in Los Angeles]]
+[[Category:1979 in American cinema]]
+[[Category:April 1979 in the United States]]
+[[Category:1978 awards in the United States|Academy]]
+[[Category:Television shows directed by Marty Pasetta]]

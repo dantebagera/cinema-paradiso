@@ -1,0 +1,101 @@
+{{Short description|Film award category}}
+{{refimprove |date=February 2025}}
+{{Infobox award
+| name        = [[Golden Globe Award|Golden Globe]] for Best English-Language Foreign Film
+| image       = Lord Olivier 18 Allan Warren.jpg
+| alt          = 
+| image_upright = 0.7
+| caption       = [[Laurence Olivier]], director and producer of 1948's ''[[Hamlet (1948 film)|Hamlet]]'', the inaugural recipient.
+| awarded_for = Best film in English from outside of the United States
+| presenter   = [[Hollywood Foreign Press Association]]
+| location    = [[United States]]
+| holder      = 
+| website     = {{URL|http://www.goldenglobes.com/|goldenglobes.com}}
+}}
+The '''Golden Globe Award for Best English-Language Foreign Film''' was a [[Golden Globe Awards|Golden Globe Award]] created in [[6th Golden Globe Awards|1948]] and discontinued after [[30th Golden Globe Awards|1973]].
+
+The award was split from [[Golden Globe Award for Best Foreign Language Film|Best Foreign Film]], which was dedicated to films not in the [[English language]]; as the organisation behind the Golden Globes, the [[Hollywood Foreign Press Association]] (Hollywood Foreign Correspondents Association when the award was first created) is based in the United States, the Best English-Language Foreign Film category was dedicated to films in English from any other country, whether they had English as an official language or not. As with other "Best Film" Golden Globe Awards, the film itself is considered the winner, with neither directors nor producers being the recipients.
+
+Originally awarded once to 1948's ''[[Hamlet (1948 film)|Hamlet]]'' at the [[6th Golden Globe Awards]], the award was re-established in 1955 and awarded infrequently until the [[30th Golden Globe Awards]] where it was won by 1972's ''[[Young Winston]]'', after which it was discontinued. All of the winners have been British films, with the exception of 1967's ''[[The Fox (1967 film)|The Fox]]'', which was a Canadian production; the 1968 winner, ''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]'', was a co-production between the United Kingdom and Italy.
+
+The Award is mostly remembered on the jubilee anniversary celebrations of when the awarded films were released.<ref>{{cite web|url=https://robertoalborghetti.com/2018/08/10/a-big-show-in-tuscany-celebrates-the-50th-anniversary-ofromeo-and-juliet-movie-by-zeffirelli/|website=robertoalborghetti.com|title=A BIG SHOW IN TUSCANY CELEBRATES THE 50th ANNIVERSARY OF "ROMEO AND JULIET" MOVIE BY ZEFFIRELLI|quote=This year 2018 marks the 50th Anniversary of the premiere of Franco Zeffirelli’s 1968 film ''Romeo and Juliet'' at London’s Odeon Theatre. With a host of talented actors, rich period costumes and lush cinematography, this gorgeous movie is arguably the best ever adaptation of Shakespeare’s play. ... The movie won a Golden Globe Award for Best English Language Foreign Film.|year=2018|access-date=February 14, 2025|archive-date=December 15, 2024|archive-url=https://web.archive.org/web/20241215163151/https://robertoalborghetti.com/2018/08/10/a-big-show-in-tuscany-celebrates-the-50th-anniversary-ofromeo-and-juliet-movie-by-zeffirelli/|url-status=live}}</ref> It is also invariably mentioned prominently in the obituaries of a producer, a director, or an actor who was associated with the film.<ref>{{cite news|url=https://www.latimes.com/archives/la-xpm-2005-sep-28-me-brabourne28-story.html|title=John Brabourne, 80; British Baron Who Produced Movie 'A Passage to India'|first=Myrna|last=Oliver|work=Los Angeles Times|quote=He was also known for filming classics, including Shakespeare’s “Othello” with Laurence Olivier in 1965 and “Romeo and Juliet” in 1968; the latter earned Brabourne a Golden Globe award for best English-language foreign film.|date=September 28, 2005|access-date=February 14, 2025|archive-date=December 6, 2025|archive-url=https://web.archive.org/web/20251206173317/https://www.latimes.com/archives/la-xpm-2005-sep-28-me-brabourne28-story.html|url-status=live}}</ref>
+
+==Winners==
+* 1948 – ''[[Hamlet (1948 film)|Hamlet]]''
+* 1955 – ''[[Richard III (1955 film)|Richard III]]''
+* 1957 – ''[[Woman in a Dressing Gown]]''
+* 1958 – ''[[A Night to Remember (1958 film)|A Night to Remember]]''
+* 1960 – ''[[The Trials of Oscar Wilde]]''
+* 1964 – ''[[Girl with Green Eyes]]''
+* 1965 – ''[[Darling (1965 film)|Darling]]''
+* 1966 – ''[[Alfie (1966 film)|Alfie]]''
+* 1967 – ''[[The Fox (1967 film)|The Fox]]''
+* 1968 – ''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]''
+* 1969 – ''[[Oh! What a Lovely War]]''
+
+===1970s===
+{| class="wikitable" width="95%"
+|- bgcolor="#CCCCCC"
+! width="100"|Year
+! width="300"|English title
+! width="300"|Original title
+! width="200"|Country
+! width="200"|Director
+|-
+| rowspan="5" style="text-align:center;" | 1970 || colspan="2" style="background:#B0C4DE;" | '''''[[Women in Love (film)|Women in Love]]''''' || style="background:#B0C4DE;" |[[United Kingdom]]|| style="background:#B0C4DE;" |'''[[Ken Russell]]'''
+|-
+|colspan="2" |''[[The Act of the Heart|Act of the Heart]]'' ||[[Canada]]||[[Paul Almond]]
+|-
+| colspan="2" |''[[Bloomfield (film)|Bloomfield]]''||[[United Kingdom]]||[[Richard Harris]] 
+[[Uri Zohar]]
+|-
+| colspan="2" |''[[The Virgin and the Gypsy (film)|The Virgin and the Gypsy]]''||[[United Kingdom]]||[[Christopher Miles]]
+|-
+|''[[The Walking Major]]''||''Aru heishi no kake''||[[Japan]]||[[Keith Larsen]]
+
+[[Koji Senno]]
+
+[[Nobuaki Shirai]] 
+|-
+| rowspan="6" style="text-align:center;" | 1971 || colspan="2" style="background:#B0C4DE;" | '''''[[Sunday Bloody Sunday (film)|Sunday Bloody Sunday]]''''' || style="background:#B0C4DE;" |[[United Kingdom]]|| style="background:#B0C4DE;" |'''[[John Schlesinger]]'''
+|-
+|colspan="2" |''[[The African Elephant]]'' ||[[United Kingdom]]||[[Simon Trevor]]
+|-
+|colspan="2" |''[[Friends (1971 film)|Friends]]'' ||[[United Kingdom]]||[[Lewis Gilbert]]
+|-
+|colspan="2" |''[[The Go-Between (1971 film)|The Go-Between]]'' ||[[United Kingdom]]||[[Joseph Losey]]
+|-
+| colspan="2" |''[[The Raging Moon]]''||[[United Kingdom]]||[[Bryan Forbes]]
+|-
+|''[[The Red Tent (film)|The Red Tent]]''||''La tenda rossa''||[[Italy]]||[[Mikhail Kalatozov]]
+|-
+| rowspan="5" style="text-align:center;" | 1972 || colspan="2" style="background:#B0C4DE;" | '''''[[Young Winston]]''''' || style="background:#B0C4DE;" |[[United Kingdom]]|| style="background:#B0C4DE;" |'''[[Richard Attenborough]]'''
+|-
+|colspan="2" |''[[Images (film)|Images]]''||[[United Kingdom]]
+|[[Robert Altman]]
+|-
+|colspan="2" |''[[Living Free]]''||[[United Kingdom]]
+|[[Jack Couffer]]
+|-
+|colspan="2" |''[[The Ruling Class (film)|The Ruling Class]]''||[[United Kingdom]]
+|[[Peter Medak]]
+|-
+|colspan="2" |''[[Zee and Co.]]''||[[United Kingdom]]
+|[[Brian G. Hutton|Brian Hutton]]
+|-
+|}
+
+==References==
+{{reflist}}
+
+== Bibliography ==
+* {{cite book|url=https://books.google.com/books?id=UyYTDAAAQBAJ&q=%22Golden+Globe+Award+for+Best+English-Language+Foreign+Film%22+-wikipedia|title=British Cinema of the 1950s: The Decline of Deference|first1=Sue |last1=Harper|first2=Vincent |last2=Porter|year=2003|publisher=Oxford University Press |isbn=9780198159346|access-date=February 14, 2025}}
+
+==External links==
+
+
+{{Golden Globe Awards Chron}}
+{{Golden Globe Award for Best English-Language Foreign Film}}
+
+[[Category:Retired Golden Globe Awards|Foreign Film English-Language]]
+[[Category:Awards established in 1957]]

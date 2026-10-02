@@ -1,0 +1,625 @@
+{{Short description|Film and television award ceremony in 2026}}
+{{Use American English|date=January 2026}}
+{{Use mdy dates|date=January 2026}}
+{{Infobox film awards
+| number = 83
+| award = Golden Globes
+| image = 83rd Golden Globe Awards.jpg
+| caption = Official poster
+| date = January 11, 2026
+| site = [[The Beverly Hilton]],<br>[[Beverly Hills, California]], U.S.
+| host = [[Nikki Glaser]]
+| director = [[Glenn Weiss]]
+| best_film_drama = ''[[Hamnet (film)|Hamnet]]''
+| best_film_musical_or_comedy = ''[[One Battle After Another]]''
+| best_drama_series = ''[[The Pitt]]''
+| best_musical_or_comedy_series = ''[[The Studio (TV series)|The Studio]]''
+| best_miniseries_or_tv_movie = ''[[Adolescence (TV series)|Adolescence]]''
+| most_wins = Film: ''[[One Battle After Another]]'' (4)<br>TV: ''[[Adolescence (TV series)|Adolescence]]'' (4)
+| most_nominations = {{nowrap|Film: ''[[One Battle After Another]]'' (9)}}<br>TV: ''[[The White Lotus]]'' (6)
+| network = [[CBS]]<br>[[Paramount+]] (streaming)
+| ratings = 8.66&nbsp;million ([[Nielsen Media Research#Nielsen TV ratings|Nielsen ratings]])<ref>{{cite web |url=https://deadline.com/2026/01/2026-golden-globes-ratings-cbs-1236680917/ |title=Golden Globes 2026 Audience Down 7% to 8.66M Viewers on CBS |last=Campione |first=Katie |work=[[Deadline Hollywood]] |date=January 13, 2026 |access-date=January 13, 2026 |archive-date=March 11, 2026 |archive-url=https://web.archive.org/web/20260311182206/https://deadline.com/2026/01/2026-golden-globes-ratings-cbs-1236680917/ |url-status=live }}</ref><br>18&nbsp;million (Live + Same Day via Nielsen ratings)<ref>{{cite web |url=https://goldenglobes.com/articles/golden-globes-reaches-18-million-total-viewers/ |title=Golden Globes Reaches 18 Million Total Viewers |publisher=[[Golden Globes]] |date=January 15, 2026 |access-date=January 18, 2026 |archive-date=January 25, 2026 |archive-url=https://web.archive.org/web/20260125022959/https://goldenglobes.com/articles/golden-globes-reaches-18-million-total-viewers/ |url-status=live }}</ref>
+| last = [[82nd Golden Globes|82nd]]
+| next = [[84th Golden Globes|84th]]
+}}
+
+The '''83rd Golden Globes''' was an awards ceremony that honored [[2025 in film|excellence in film]] and [[2025 in American television|American television productions of 2025]]. The winners were revealed during the live telecast, airing on [[CBS]] and streaming on [[Paramount+]] on January 11, 2026, at [[the Beverly Hilton]].<ref name="Globes">{{cite web |url=https://goldenglobes.com/articles/the-83rd-annual-golden-globes-to-air-sunday-january-11-2026-on-cbs-hosted-by-nikki-glaser/ |title=The 83rd Annual Golden Globes to Air Sunday, January 11, 2026, on CBS, Hosted by Nikki Glaser |publisher=[[Golden Globes]] |date=April 24, 2025 |access-date=December 8, 2025 |archive-date=November 5, 2025 |archive-url=https://web.archive.org/web/20251105233458/https://goldenglobes.com/articles/the-83rd-annual-golden-globes-to-air-sunday-january-11-2026-on-cbs-hosted-by-nikki-glaser/ |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/lists/golden-globes-2026-winners-one-battle-after-another/ |title=Golden Globes 2026 Winners: 'One Battle After Another' Earns 4 Awards, 'Adolescence' Leads TV |last1=Lang |first1=Brent |last2=Moreau |first2=Jordan |work=[[Variety (magazine)|Variety]] |date=January 11, 2026 |access-date=January 11, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112105317/https://variety.com/lists/golden-globes-2026-winners-one-battle-after-another/ |url-status=live }}</ref><ref>{{cite web |url=https://deadline.com/lists/golden-globes-2026-winners-list/ |title='Hamnet' & 'One Battle After Another' Take Top Film Prizes at Golden Globes – Full Winners List |last=Pedersen |first=Erik |work=[[Deadline Hollywood]] |date=January 11, 2026 |access-date=January 11, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112071712/https://deadline.com/lists/golden-globes-2026-winners-list/ |url-status=live }}</ref> [[Nikki Glaser]] returned to host for the second consecutive year.{{efn|Attributed to multiple references:<ref name="Host">{{cite web |url=https://goldenglobes.com/articles/nikki-glaser-returns-to-host-83rd-golden-globes/ |title=Nikki Glaser Returns to Host 83rd Golden Globes |publisher=[[Golden Globes]] |date=March 13, 2025 |access-date=December 8, 2025 |archive-date=January 11, 2026 |archive-url=https://web.archive.org/web/20260111123424/https://goldenglobes.com/articles/nikki-glaser-returns-to-host-83rd-golden-globes/ |url-status=live }}</ref><ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/nikki-glaser-golden-globes-2026-host-interview-1236465894/ |title=Golden Globes Host Nikki Glaser Admits She's 'Kinda Screwed' (She's Not) |last=O'Connell |first=Mikey |work=[[The Hollywood Reporter]] |date=January 6, 2026 |access-date=January 6, 2026 |archive-date=January 14, 2026 |archive-url=https://web.archive.org/web/20260114105005/https://www.hollywoodreporter.com/tv/tv-news/nikki-glaser-golden-globes-2026-host-interview-1236465894/ |url-status=live }}</ref><ref name="Glaser">{{cite web |url=https://goldenglobes.com/articles/nikki-glaser-ready-for-round-2-of-hosting-her-greatest-and-hardest-job-ever-the-golden-globes/ |title=Nikki Glaser Ready for Round 2 of Hosting Her 'Greatest' and Hardest Job Ever: The Golden Globes |publisher=[[Golden Globes]] |date=January 6, 2026 |access-date=January 6, 2026 |archive-date=January 13, 2026 |archive-url=https://web.archive.org/web/20260113212533/https://goldenglobes.com/articles/nikki-glaser-ready-for-round-2-of-hosting-her-greatest-and-hardest-job-ever-the-golden-globes/ |url-status=live }}</ref><ref>{{cite web |url=https://deadline.com/2026/01/nikki-glaser-golden-globes-monologue-1236679010/ |title=Nikki Glaser Opens Golden Globes with Jabs at Justice Department, the Epstein List and 'See B.S. News', Then Heads for the Stars |last=Evans |first=Greg |work=[[Deadline Hollywood]] |date=January 11, 2026 |access-date=January 11, 2026 |archive-date=January 13, 2026 |archive-url=https://web.archive.org/web/20260113004940/https://deadline.com/2026/01/nikki-glaser-golden-globes-monologue-1236679010/ |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/2026/film/news/rob-reiner-golden-globes-nikki-glaser-1236625145/ |title=Nikki Glaser Honors Rob Reiner at Golden Globes with 'Spinal Tap' Hat: 'This One Went to 11' |last=Sharf |first=Zack |work=[[Variety (magazine)|Variety]] |date=January 11, 2026 |access-date=January 11, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112151656/https://variety.com/2026/film/news/rob-reiner-golden-globes-nikki-glaser-1236625145/ |url-status=live }}</ref>}}
+
+The nominations were announced on December 8, 2025, by actors [[Skye P. Marshall]] and [[Marlon Wayans]].<ref name="Globes"/><ref name="MarlonSkye">{{cite web |url=https://deadline.com/2025/12/marlon-wayans-skye-p-marshall-golden-globe-nominations-1236634219/ |title=Marlon Wayans & Skye P. Marshall to Present Golden Globe Nominations |last=Andreeva |first=Nellie |work=[[Deadline Hollywood]] |date=December 3, 2025 |access-date=December 8, 2025 |archive-date=January 5, 2026 |archive-url=https://web.archive.org/web/20260105052241/https://deadline.com/2025/12/marlon-wayans-skye-p-marshall-golden-globe-nominations-1236634219/ |url-status=live }}</ref><ref name="Nominations">{{cite web |url=https://deadline.com/2025/12/how-to-watch-golden-globes-nominations-1236636485/ |title=How to Watch the Golden Globes Nominations |last=Hipes |first=Patrick |work=[[Deadline Hollywood]] |date=December 8, 2025 |access-date=December 8, 2025 |archive-date=December 7, 2025 |archive-url=https://web.archive.org/web/20251207202148/https://deadline.com/2025/12/how-to-watch-golden-globes-nominations-1236636485/ |url-status=live }}</ref><ref name="Nominees">{{cite web |url=https://variety.com/2025/film/awards/golden-globes-2026-nominations-1236601172/ |title=Golden Globes 2026 Nominations: 'One Battle After Another' Tops Films with Nine Nods, 'White Lotus' Leads TV with Six |last1=Lang |first1=Brent |last2=Moreau |first2=Jordan |work=[[Variety (magazine)|Variety]] |date=December 8, 2025 |access-date=December 8, 2025 |archive-date=December 8, 2025 |archive-url=https://web.archive.org/web/20251208154454/https://variety.com/2025/film/awards/golden-globes-2026-nominations-one-battle-after-another-1236601172/ |url-status=live }}</ref> For the first time, the Globes honored [[podcast]]s in the [[Golden Globe Award for Best Podcast|Best Podcast]] category.<ref name="Podcast">{{cite web |url=https://goldenglobes.com/articles/golden-globes-breaks-ground-with-new-podcast-award/ |title=Golden Globes Breaks Ground with New Podcast Award |publisher=[[Golden Globes]] |date=May 7, 2025 |access-date=December 8, 2025 |archive-date=January 10, 2026 |archive-url=https://web.archive.org/web/20260110165054/https://goldenglobes.com/articles/golden-globes-breaks-ground-with-new-podcast-award/ |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/2025/awards/news/golden-globes-best-podcast-nominations-alex-cooper-amy-poehler-smartless-1236602050/ |title=Alex Cooper, Amy Poehler, 'SmartLess' Among First Golden Globes Best Podcast Nominees |last=Spangler |first=Todd |work=[[Variety (magazine)|Variety]] |date=December 8, 2025 |access-date=December 8, 2025 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112060018/https://variety.com/2025/awards/news/golden-globes-best-podcast-nominations-alex-cooper-amy-poehler-smartless-1236602050/ |url-status=live }}</ref><ref name="Comedy Stars">{{cite web |url=https://deadline.com/2025/12/golden-globes-podcast-nominations-amy-poehler-smartless-1236641676/ |title=Comedy Stars Triumph Over Right-Wing Firebrands in First Golden Globes Podcast Nominations |last=White |first=Peter |work=[[Deadline Hollywood]] |date=December 8, 2025 |access-date=December 8, 2025 |archive-date=January 9, 2026 |archive-url=https://web.archive.org/web/20260109063220/https://deadline.com/2025/12/golden-globes-podcast-nominations-amy-poehler-smartless-1236641676/ |url-status=live }}</ref> With a leading nine nominations, including five for acting, ''[[One Battle After Another]]'' became the sixth film of any genre to receive at least one acting bid across the four acting categories in the event's history.<ref>{{cite web |url=https://www.goldderby.com/film/2025/one-battle-after-another-golden-globes-acting-nominations/ |title='One Battle After Another' becomes only 6th film in Golden Globes history to accomplish this feat |last=Laws |first=Zach |publisher=Gold Derby |date=December 8, 2025 |access-date=December 8, 2025 |archive-date=December 28, 2025 |archive-url=https://web.archive.org/web/20251228114503/https://www.goldderby.com/film/2025/one-battle-after-another-golden-globes-acting-nominations/ |url-status=live }}</ref> ''[[Sentimental Value]]'' received the second-most in film with eight nominations, followed by ''[[Sinners (2025 film)|Sinners]]'' with seven.<ref name="Nominees"/> Additionally, ''[[The White Lotus]]'' led the television nominations with six, followed by ''[[Adolescence (TV series)|Adolescence]]'' with five.<ref name="Nominees"/>
+
+==Ceremony information==
+On March 13, 2025, comedian [[Nikki Glaser]] was announced as the host for the 2026 ceremony, returning after hosting the previous year's ceremony, and following the rave reviews from critics and unanimous praise from audiences worldwide.<ref name="Host"/> This year, Glaser, yet again, received critical acclaim for her monologue and performance overall.{{efn|Attributed to multiple references:<ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-reviews/2026-golden-globes-review-nikki-glaser-one-battle-1236470726/ |title=Critic's Notebook: Nikki Glaser Outshines an Otherwise Tone-Deaf Golden Globes Telecast |last=Fienberg |first=Daniel |work=[[The Hollywood Reporter]] |date=January 11, 2026 |access-date=January 13, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112233406/https://www.hollywoodreporter.com/tv/tv-reviews/2026-golden-globes-review-nikki-glaser-one-battle-1236470726/ |url-status=live }}</ref><ref>{{cite magazine |url=https://www.rollingstone.com/tv-movies/tv-movie-news/nikki-glaser-opening-monologue-golden-globes-2026-1235496298/ |title=Nikki Glaser Delivers a Master Class in Awards Show Monologues at 2026 Golden Globes |last1=Roundtree |first1=Cheyenne |last2=Blistein |first2=Jon |magazine=[[Rolling Stone]] |date=January 11, 2026 |access-date=January 13, 2026 |archive-date=January 13, 2026 |archive-url=https://web.archive.org/web/20260113052347/https://www.rollingstone.com/tv-movies/tv-movie-news/nikki-glaser-opening-monologue-golden-globes-2026-1235496298/ |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/2026/tv/reviews/golden-globes-2026-review-1236629162/ |title=Golden Globes' Strong Winners and Charming Host Were Nearly Derailed by Distracting Stunts: TV Review |last=Herman |first=Alison |work=[[Variety (magazine)|Variety]] |date=January 11, 2026 |access-date=January 13, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112220331/https://variety.com/2026/tv/reviews/golden-globes-2026-review-1236629162/ |url-status=live }}</ref><ref>{{cite news |url=https://www.latimes.com/entertainment-arts/tv/story/2026-01-11/golden-globes-2026-review |title=Golden Globes host Nikki Glaser and stars allude to outside world, but stay focused on awards |last=Lloyd |first=Robert |newspaper=[[Los Angeles Times]] |date=January 11, 2026 |access-date=January 13, 2026 |url-access=limited |archive-date=January 13, 2026 |archive-url=https://web.archive.org/web/20260113021330/https://www.latimes.com/entertainment-arts/tv/story/2026-01-11/golden-globes-2026-review |url-status=live }}</ref><ref>{{cite web |url=https://www.vogue.com/article/nikki-glaser-golden-globes-monologue-host-2026 |title=When the Golden Globes Host is Reliably Good... That's Amore! |last=Specter |first=Emma |work=[[Vogue (magazine)|Vogue]] |date=January 11, 2026 |access-date=January 13, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112182302/https://www.vogue.com/article/nikki-glaser-golden-globes-monologue-host-2026 |url-status=live }}</ref>}}
+
+The nominations for all 28 categories were unveiled on December 8, 2025, starting at 8:15 a.m. [[Eastern Time Zone|ET]]/5:15 a.m. [[Pacific Time Zone|PT]] on CBSNews.com, with 11 categories revealed at 8:30 a.m. ET/5:30 a.m. PT on ''[[CBS Mornings]]''. The announcement also streamed live on the [[CBS News]] [[YouTube]] and [[TikTok]] channels. [[Skye P. Marshall]] and [[Marlon Wayans]] announced the nominees at a [[press conference]] at [[the Beverly Hilton]].<ref name="Globes"/><ref name="MarlonSkye"/><ref name="Nominations"/><ref name="Nominees"/> [[Glenn Weiss]] and [[Ricky Kirshner]] of White Cherry Entertainment returned as executive producing showrunners, while [[Dick Clark Productions]] planned, hosted and produced the show.<ref name="Glaser"/>
+
+The ceremony was held at the Beverly Hilton in California, and was broadcast on [[CBS]] and streamed on [[Paramount+]] on January 11, 2026, from 8 p.m. to 11 p.m. ET.<ref name="Globes"/> The U.S. audit, tax, and advisory firm of [[KPMG]] once again tabulated the votes, having taken over [[Ernst & Young]] since the previous year's ceremony.{{efn|Attributed to multiple references:<ref name="Glaser"/><ref>{{cite web |url=https://kpmg.com/us/en/how-we-work/client-stories/golden-globe-vote-tabulator.html |title=KPMG at the Golden Globes |publisher=[[KPMG]] |access-date=January 18, 2026 |archive-date=January 15, 2026 |archive-url=https://web.archive.org/web/20260115205648/https://kpmg.com/us/en/how-we-work/client-stories/golden-globe-vote-tabulator.html |url-status=live }}</ref><ref>{{cite web |url=https://goldenglobes.com/articles/nominations-announced-for-the-83rd-annual-golden-globes/ |title=Nominations Announced for the 83rd Annual Golden Globes |publisher=[[Golden Globes]] |date=December 8, 2025 |access-date=January 18, 2026 |archive-date=December 8, 2025 |archive-url=https://web.archive.org/web/20251208155348/https://goldenglobes.com/articles/nominations-announced-for-the-83rd-annual-golden-globes/ |url-status=live }}</ref><ref>{{cite web |url=https://goldenglobes.com/articles/nominations-announced-for-82nd-annual-golden-globes/ |title=Nominations Announced for 82nd Annual Golden Globes |publisher=[[Golden Globes]] |date=December 9, 2024 |access-date=January 18, 2026 |archive-date=December 9, 2024 |archive-url=https://web.archive.org/web/20241209150741/https://goldenglobes.com/articles/nominations-announced-for-82nd-annual-golden-globes/ |url-status=live }}</ref><ref>{{cite web |url=https://goldenglobes.com/articles/golden-globe-nominations-led-by-barbenheimer/ |title=Golden Globe Nominations Led by Barbenheimer |last=Gray |first=Tim |publisher=[[Golden Globes]] |date=December 11, 2023 |access-date=January 18, 2026 |archive-date=February 9, 2026 |archive-url=https://web.archive.org/web/20260209031855/https://goldenglobes.com/articles/golden-globe-nominations-led-by-barbenheimer/ |url-status=live }}</ref>}}
+
+==="Golden Eve"===
+After being untelevised in the previous year, the two Lifetime Achievement Awards (the [[Golden Globe Cecil B. DeMille Award|Cecil B. DeMille Award]] and the [[Golden Globe Carol Burnett Award|Carol Burnett Award]]) were presented during an hour-long primetime special, titled "Golden Eve", which aired on January 8, 2026 (though the event took place two days before broadcast), also at the Beverly Hilton, on CBS at 8 p.m. PT/ET and also livestreamed on Paramount+ Premium. Paramount+ Essential subscribers were not able to watch the event live; however, they were able to access it on demand the following day.<ref>{{cite web |url=https://goldenglobes.com/articles/cbs-to-air-globes-golden-eve-awards-as-an-annual-primetime-special/ |title=CBS to Air Globes' Golden Eve Awards as an Annual Primetime Special |publisher=[[Golden Globes]] |date=September 18, 2025 |access-date=December 8, 2025 |archive-date=December 12, 2025 |archive-url=https://web.archive.org/web/20251212232416/https://goldenglobes.com/articles/cbs-to-air-globes-golden-eve-awards-as-an-annual-primetime-special/ |url-status=live }}</ref><ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/watch-golden-eve-2026-online-free-livestream-cbs-special-1236467708/ |title=The Golden Globes' First-Ever 'Golden Eve' to Air on Primetime: How to Stream the Special Online |last=Lassner |first=Erin |work=[[The Hollywood Reporter]] |date=January 8, 2026 |access-date=January 8, 2026 |archive-date=January 8, 2026 |archive-url=https://web.archive.org/web/20260108235450/https://www.hollywoodreporter.com/tv/tv-news/watch-golden-eve-2026-online-free-livestream-cbs-special-1236467708/ |url-status=live }}</ref><ref>{{cite web |url=https://goldenglobes.com/articles/golden-eve-salutes-mirren-parker/ |title=Globes Launches Golden Eve with Tributes to Mirren, Parker |publisher=[[Golden Globes]] |date=January 8, 2026 |access-date=January 8, 2026 |archive-date=March 8, 2026 |archive-url=https://web.archive.org/web/20260308131948/https://goldenglobes.com/articles/golden-eve-salutes-mirren-parker/ |url-status=live }}</ref>
+
+The Cecil B. DeMille Award was presented to [[Helen Mirren]],<ref>{{cite web |url=https://goldenglobes.com/articles/helen-mirren-placeholder/ |title=Helen Mirren to Receive Golden Globes' Cecil B. DeMille Award |publisher=[[Golden Globes]] |date=November 5, 2025 |access-date=November 22, 2025 |archive-date=November 20, 2025 |archive-url=https://web.archive.org/web/20251120140327/https://goldenglobes.com/articles/helen-mirren-placeholder/ |url-status=live }}</ref> with the Carol Burnett Award given to [[Sarah Jessica Parker]].<ref>{{cite web |url=https://goldenglobes.com/articles/sarah-jessica-parker-to-receive-golden-globes-carol-burnett-award/ |title=Sarah Jessica Parker to Receive Golden Globes' Carol Burnett Award |publisher=[[Golden Globes]] |date=November 13, 2025 |access-date=November 22, 2025 |archive-date=November 15, 2025 |archive-url=https://web.archive.org/web/20251115000807/https://goldenglobes.com/articles/sarah-jessica-parker-to-receive-golden-globes-carol-burnett-award/ |url-status=live }}</ref> [[Harrison Ford]] presented Mirren with her Cecil B. DeMille Award, with a guest appearance made by last year's honoree [[Viola Davis]]; Parker was joined by the Carol Burnett Award previous year's winner [[Ted Danson]].<ref>{{cite web |url=https://deadline.com/2026/01/golden-globes-special-helen-mirren-sarah-jessica-parker-1236665016/ |title=Golden Globes Announce New Star-Studded Special Honoring Awardees Helen Mirren & Sarah Jessica Parker |last=Oganesyan |first=Natalie |work=[[Deadline Hollywood]] |date=January 6, 2026 |access-date=January 6, 2026 |archive-date=January 6, 2026 |archive-url=https://web.archive.org/web/20260106133733/https://deadline.com/2026/01/golden-globes-special-helen-mirren-sarah-jessica-parker-1236665016/ |url-status=live }}</ref><ref>{{cite web |url=https://goldenglobes.com/articles/carol-burnett-colman-domingo-harrison-ford-kristin-davis-ted-danson-tessa-thompson-vin-diesel-and-viola-davis-to-appear-on-golden-eve-the-golden-globes-honor-helen-mirren-sarah-jess/ |title=Carol Burnett, Colman Domingo, Harrison Ford, Kristin Davis, Ted Danson, Tessa Thompson, Vin Diesel, and Viola Davis to Appear on 'Golden Eve: The Golden Globes Honor Helen Mirren & Sarah Jessica Parker' |publisher=[[Golden Globes]] |date=January 6, 2026 |access-date=January 6, 2026 |archive-date=January 7, 2026 |archive-url=https://web.archive.org/web/20260107055544/https://goldenglobes.com/articles/carol-burnett-colman-domingo-harrison-ford-kristin-davis-ted-danson-tessa-thompson-vin-diesel-and-viola-davis-to-appear-on-golden-eve-the-golden-globes-honor-helen-mirren-sarah-jess/ |url-status=live }}</ref><ref>{{cite web |url=https://deadline.com/gallery/golden-eve-red-carpet-photos/ |title='Golden Eve' Red Carpet Photos: Helen Mirren, Sarah Jessica Parker, 'Love Island's' Olandria Carthen, 'SNL' Alum Ego Nwodim & More |last=Tinoco |first=Armando |work=[[Deadline Hollywood]] |date=January 6, 2026 |access-date=January 6, 2026 |archive-date=January 7, 2026 |archive-url=https://web.archive.org/web/20260107055544/https://deadline.com/gallery/golden-eve-red-carpet-photos/ |url-status=live }}</ref> According to entertainment news website ''Showbiz411'', the special received a ratings of 2&nbsp;million viewers.<ref>{{cite web |url=https://www.showbiz411.com/2026/01/12/golden-globes-special-golden-eve-a-ratings-bust-with-2-million-viewers-beaten-by-dick-wolf-shows-new-show-on-nbc |title=Golden Globes Special 'Golden Eve' a Ratings Bust with 2 Million Viewers, Beaten by Dick Wolf Shows, New Show on NBC |last=Friedman |first=Roger |author-link=Roger Friedman |work=Showbiz411 |date=January 12, 2026 |access-date=January 13, 2026 |archive-date=January 13, 2026 |archive-url=https://web.archive.org/web/20260113052124/https://www.showbiz411.com/2026/01/12/golden-globes-special-golden-eve-a-ratings-bust-with-2-million-viewers-beaten-by-dick-wolf-shows-new-show-on-nbc |url-status=live }}</ref>
+
+===Expansion===
+On May 7, 2025, it was announced that a new category would be added to the then-upcoming ceremony: [[Golden Globe Award for Best Podcast|Best Podcast]].<ref name="Podcast"/> Nominees were chosen from a list of 25 most-listened-to [[podcast]]s "that have made a significant impact over the past year, celebrating the creativity and influence of creators worldwide," the organization announced. The Top 25 list for eligibility was determined by direct data from top podcast platforms, such as [[Apple Podcasts|Apple]], [[Spotify]] and [[YouTube]], among others; the list of podcasts eligible for submission was revealed on October 2.<ref name="Podcast"/><ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/golden-globes-best-podcast-eligible-submission-revealed-1236392267/ |title=Golden Globes: Podcasts Eligible for New Best Podcast Award Revealed |last=Thomas |first=Carly |work=[[The Hollywood Reporter]] |date=October 2, 2025 |access-date=December 8, 2025 |archive-date=October 20, 2025 |archive-url=https://web.archive.org/web/20251020231916/https://www.hollywoodreporter.com/tv/tv-news/golden-globes-best-podcast-eligible-submission-revealed-1236392267/ |url-status=live }}</ref><ref>{{cite web |url=https://goldenglobes.com/articles/25-podcasts-announced-as-eligible-for-golden-globes/ |title=25 Podcasts Announced as Eligible for Golden Globes |publisher=[[Golden Globes]] |date=October 2, 2025 |access-date=December 8, 2025 |archive-date=December 10, 2025 |archive-url=https://web.archive.org/web/20251210214920/https://goldenglobes.com/articles/25-podcasts-announced-as-eligible-for-golden-globes/ |url-status=live }}</ref> However, the decision for this new category ignited debate and controversy among creators and the industry.<ref>{{cite web |url=https://pagesix.com/2025/10/03/entertainment/golden-globes-new-podcast-category-has-industry-insiders-fuming-its-all-a-racket/ |title=Golden Globes' new podcast category has industry insiders fuming: 'It's all a racket' |last=Mohr |first=Ian |work=[[Page Six]] |date=October 3, 2025 |access-date=December 8, 2025 |archive-date=December 4, 2025 |archive-url=https://web.archive.org/web/20251204173326/https://pagesix.com/2025/10/03/entertainment/golden-globes-new-podcast-category-has-industry-insiders-fuming-its-all-a-racket/ |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/2025/digital/awards/golden-globes-podcast-category-impact-1236392818/ |title=Golden Globes' New Best Podcast Category Draws Applause — and Anxiety — From Creators and Industry |last=Davis |first=Clayton |work=[[Variety (magazine)|Variety]] |date=May 11, 2025 |access-date=December 8, 2025 |archive-date=August 2, 2025 |archive-url=https://web.archive.org/web/20250802222319/https://variety.com/2025/digital/awards/golden-globes-podcast-category-impact-1236392818/ |url-status=live }}</ref><ref>{{cite web |url=https://pagesix.com/2025/10/25/entertainment/golden-globes-podcast-category-ripped-as-money-grab-as-controversy-swirls-out-of-control/ |title=Golden Globes podcast category ripped as 'money grab' as controversy swirls: 'Out of control' |last=Mohr |first=Ian |work=[[Page Six]] |date=October 25, 2025 |access-date=December 8, 2025 |archive-date=December 8, 2025 |archive-url=https://web.archive.org/web/20251208162339/https://pagesix.com/2025/10/25/entertainment/golden-globes-podcast-category-ripped-as-money-grab-as-controversy-swirls-out-of-control/ |url-status=live }}</ref>
+
+After the nominations were announced, controversy diminished once it was known that [[Right-wing politics|right-wing]] [[Conservatism|conservative]] podcasters were shut out completely and mostly comedy stars, such as [[Will Arnett]], [[Jason Bateman]], [[Amy Poehler]] and [[Dax Shepard]], as well as podcaster [[Alex Cooper (podcaster)|Alex Cooper]], were nominated for their respective podcasts.{{efn|Attributed to multiple references:<ref name="Comedy Stars"/><ref>{{cite magazine |url=https://www.vanityfair.com/hollywood/story/conservative-podcasters-got-shut-out-of-controversial-new-golden-globe-category |title=Conservative Podcasters Got Shut Out of Controversial New Golden Globe Category |last=Murphy |first=Chris |magazine=[[Vanity Fair (magazine)|Vanity Fair]] |date=December 8, 2025 |access-date=December 8, 2025 |archive-date=December 9, 2025 |archive-url=https://web.archive.org/web/20251209013524/https://www.vanityfair.com/hollywood/story/conservative-podcasters-got-shut-out-of-controversial-new-golden-globe-category |url-status=live }}</ref><ref>{{cite web |url=https://www.hollywoodreporter.com/business/digital/golden-globes-2026-best-podcast-joe-rogan-political-shut-out-1236444590/ |title=Golden Globes Best Podcast Category Shuts Out Joe Rogan, Political Podcasts |last=Huston |first=Caitlin |work=[[The Hollywood Reporter]] |date=December 8, 2025 |access-date=December 8, 2025 |archive-date=December 8, 2025 |archive-url=https://web.archive.org/web/20251208143840/https://www.hollywoodreporter.com/business/digital/golden-globes-2026-best-podcast-joe-rogan-political-shut-out-1236444590/ |url-status=live }}</ref><ref>{{cite web |url=https://apnews.com/article/golden-globes-podcast-category-a9a56d6302aa99e20b753b76e2df35c1 |title=Golden Globes enter the world of podcasts and tread carefully, avoiding controversy |last=Kennedy |first=Mark |publisher=[[Associated Press]] |date=December 8, 2025 |access-date=December 8, 2025 |archive-date=December 8, 2025 |archive-url=https://web.archive.org/web/20251208170125/https://apnews.com/article/golden-globes-podcast-category-a9a56d6302aa99e20b753b76e2df35c1 |url-status=live }}</ref><ref>{{cite magazine |url=https://ew.com/golden-globes-best-new-podcast-nominees-controversial-figures-11863962 |title=Golden Globes shut out controversial figures Megyn Kelly, Ben Shapiro, Joe Rogan, more from odd new category |last=Nolfi |first=Joe |magazine=[[Entertainment Weekly]] |date=December 8, 2025 |access-date=December 8, 2025 |archive-date=December 8, 2025 |archive-url=https://web.archive.org/web/20251208152620/https://ew.com/golden-globes-best-new-podcast-nominees-controversial-figures-11863962 |url-status=live }}</ref>}} Helen Hoehne, president of the Golden Globes, said that the original list of 25, which was compiled by Luminate, reflects the "depth, diversity, and creativity thriving in the podcasting world today" and the Globes are "proud" to be the "first major entertainment award to recognize this medium".<ref name="Comedy Stars"/> However, there was still some criticism leading up to the ceremony.<ref>{{cite news |url=https://www.nytimes.com/2026/01/11/opinion/culture/golden-globes-best-podcast.html |title=Opinion {{!}} The Golden Globes Podcasting Award Makes No Sense |last=Ruzicka |first=Abbie |newspaper=[[The New York Times]] |date=January 11, 2026 |access-date=January 18, 2026 |url-access=subscription}}</ref> Ultimately, ''[[Good Hang with Amy Poehler]]'' won the award, becoming the inaugural recipient of the category.<ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/2026-golden-globes-podcast-amy-poehler-good-hang-1236470118/ |title=Amy Poehler's 'Good Hang' Wins First Golden Globe for Best Podcast |last=Huston |first=Caitlin |work=[[The Hollywood Reporter]] |date=January 11, 2026 |access-date=January 11, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112031121/https://www.hollywoodreporter.com/tv/tv-news/2026-golden-globes-podcast-amy-poehler-good-hang-1236470118/ |url-status=live }}</ref>
+
+===Reduction===
+On January 9, 2026, ''[[Deadline Hollywood]]'' reported that the presentation of the award for [[Golden Globe Award for Best Original Score|Best Original Score]] would be cut from the telecast as a result of time constraints. The winner was announced during the ceremony, but instead of being seen on CBS' linear broadcast, it was publicly announced online; a clip of the win was captured and shared digitally, including with media and was distributed across all Globes platforms as well as the Golden Globes website. The decision was criticized by social media users and nominee [[Hans Zimmer]], with the latter calling it "ignorant".{{efn|Attributed to multiple references:<ref>{{cite web |url=https://deadline.com/2026/01/golden-globes-original-score-cut-telecast-1236678204/ |title=Golden Globes' Best Original Score Award Cut from CBS Telecast |last=White |first=Peter |work=[[Deadline Hollywood]] |date=January 9, 2026 |access-date=January 10, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112144247/https://deadline.com/2026/01/golden-globes-original-score-cut-telecast-1236678204/ |url-status=live }}</ref><ref>{{cite web |url=https://deadline.com/2026/01/hans-zimmer-on-score-category-cut-golden-globes-1236679353/ |title=Hans Zimmer Says Original Score Category Being Axed from Golden Globes Telecast 'Feels a Little Bit Ignorant' |last1=Blyth |first1=Antonia |last2=D'Alessandro |first2=Anthony |work=[[Deadline Hollywood]] |date=January 11, 2026 |access-date=January 11, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112235945/https://deadline.com/2026/01/hans-zimmer-on-score-category-cut-golden-globes-1236679353/ |url-status=live }}</ref><ref>{{cite web |url=https://www.buzzfeed.com/mychalthompson/golden-globes-2026-best-original-score |title=People Are Saying It's 'So Disrespectful' the Golden Globes Didn't Air the Award for Best Original Score |last=Thompson |first=Mychal |publisher=[[BuzzFeed]] |date=January 11, 2026 |access-date=January 11, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112191001/https://www.buzzfeed.com/mychalthompson/golden-globes-2026-best-original-score |url-status=live }}</ref><ref>{{cite web |url=https://variety.com/2026/awards/news/hans-zimmer-golden-globes-original-score-1236628560/ |title=Hans Zimmer Says It's a 'Shame' the Golden Globes Won't Air Original Score Category: 'Don't Ignore' Composers Because 'You Don't Have a Movie Without Them' |last=Jacob |first=Arushi |work=[[Variety (magazine)|Variety]] |date=January 11, 2026 |access-date=January 11, 2026 |archive-date=January 12, 2026 |archive-url=https://web.archive.org/web/20260112150028/https://variety.com/2026/awards/news/hans-zimmer-golden-globes-original-score-1236628560/ |url-status=live }}</ref><ref>{{cite AV media |url=https://www.youtube.com/watch?v=jMFt2hvDqs0 |title=Charli XCX and Joe Keery Present Best Score Motion Picture {{!}} 83rd Annual Golden Globes |via=[[YouTube]] |publisher=[[Golden Globes]] |date=January 11, 2026 |access-date=January 12, 2026 |archive-date=January 14, 2026 |archive-url=https://web.archive.org/web/20260114224733/https://www.youtube.com/watch?v=jMFt2hvDqs0 |url-status=live }}</ref>}}
+
+==Winners and nominees==
+[[File:Wagner Moura-6546 (3x4).jpg|right|thumb|150px|[[Wagner Moura]], Best Male Actor in a Motion Picture – Drama winner]]
+[[File:Jessie Buckley at the Toronto International Film Festival 01.jpg (Cropped & Centered).jpg|right|thumb|150px|[[Jessie Buckley]], Best Female Actor in a Motion Picture – Drama winner]]
+[[File:Timothée Chalamet 2025 2 (cropped).jpg|right|thumb|150px|[[Timothée Chalamet]], Best Male Actor in a Motion Picture – Musical or Comedy winner]]
+[[File:Rose Byrne Blue Moon-21 (cropped).jpg|right|thumb|150px|[[Rose Byrne]], Best Female Actor in a Motion Picture – Musical or Comedy winner]]
+[[File:Stellan Skarsgård-9707 (cropped).jpg|right|thumb|150px|[[Stellan Skarsgård]], Best Supporting Male Actor winner]]
+[[File:Teyana Taylor (cropped).jpg|right|thumb|150px|[[Teyana Taylor]], Best Supporting Female Actor winner]]
+[[File:Noah Wyle - Walk of Fame-01.jpg|right|thumb|150px|[[Noah Wyle]], Best Male Actor in a Television Series – Drama winner]]
+[[File:Rhea Seehorn at 53rd Saturn Awards 2026-03.jpg|right|thumb|150px|[[Rhea Seehorn]], Best Female Actor in a Television Series – Drama winner]]
+[[File:Seth Rogen - Good Fortune LA Premiere.jpg|right|thumb|150px|[[Seth Rogen]], Best Male Actor in a Television Series – Musical or Comedy winner]]
+[[File:Jean Smart by Gage Skidmore.jpg|right|thumb|150px|[[Jean Smart]], Best Female Actor in a Television Series – Musical or Comedy winner]]
+[[File:Stephen Graham Springsteen-23 (cropped).jpg|right|thumb|150px|[[Stephen Graham]], Best Male Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:MichelleWilliams-byPhilipRomano.jpg|right|thumb|150px|[[Michelle Williams (actress)|Michelle Williams]], Best Female Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Owen Cooper at BAFTA 2026 02 (cropped).jpg|right|thumb|150px|[[Owen Cooper]], Best Supporting Male Actor in a Series, Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Erin Doherty at BAFTAs 2026 03.jpg|right|thumb|150px|[[Erin Doherty]], Best Supporting Female Actor in a Series, Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Ricky Gervais 2010.jpg|right|thumb|150px|[[Ricky Gervais]], Best Stand-Up Comedian on Television winner]]
+[[File:Amy Poehler (53671989427) cropped.jpg|right|thumb|150px|[[Amy Poehler]], Best Podcast winner]]
+
+===Film===
+{| class="wikitable" style="width=100%"
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Drama|Best Motion Picture – Drama]]}}
+* '''''[[Hamnet (film)|Hamnet]]'''''
+** ''[[Frankenstein (2025 film)|Frankenstein]]''
+** ''[[It Was Just an Accident]]''
+** ''[[The Secret Agent (2025 film)|The Secret Agent]]''
+** ''[[Sentimental Value]]''
+** ''[[Sinners (2025 film)|Sinners]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]]}}
+* '''''[[One Battle After Another]]'''''
+** ''[[Blue Moon (2025 film)|Blue Moon]]''
+** ''[[Bugonia (film)|Bugonia]]''
+** ''[[Marty Supreme]]''
+** ''[[No Other Choice]]''
+** ''[[Nouvelle Vague (2025 film)|Nouvelle Vague]]''
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Animated Feature Film|Best Motion Picture – Animated]]}}
+* '''''[[KPop Demon Hunters]]'''''
+** ''[[Arco (film)|Arco]]''
+** ''[[Demon Slayer: Kimetsu no Yaiba – The Movie: Infinity Castle]]''
+** ''[[Elio (film)|Elio]]''
+** ''[[Little Amélie or the Character of Rain]]''
+** ''[[Zootopia 2]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Non-English Language|Best Motion Picture – Non-English Language]]}}
+* '''''[[The Secret Agent (2025 film)|The Secret Agent]]'' (Brazil)'''
+** ''[[It Was Just an Accident]]'' (France)
+** ''[[No Other Choice]]'' (South Korea)
+** ''[[Sentimental Value]]'' (Norway)
+** ''[[Sirāt]]'' (Spain)
+** ''[[The Voice of Hind Rajab]]'' (Tunisia)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor in a Motion Picture – Drama|Best Male Actor in a Motion Picture – Drama]]}}
+* '''[[Wagner Moura]] – ''[[The Secret Agent (2025 film)|The Secret Agent]]'' as Marcelo Alves / Armando Solimões / Fernando Solimões'''
+** [[Joel Edgerton]] – ''[[Train Dreams (film)|Train Dreams]]'' as Robert Grainier
+** [[Oscar Isaac]] – ''[[Frankenstein (2025 film)|Frankenstein]]'' as [[Victor Frankenstein]]
+** [[Dwayne Johnson]] – ''[[The Smashing Machine (2025 film)|The Smashing Machine]]'' as [[Mark Kerr (fighter)|Mark Kerr]]
+** [[Michael B. Jordan]] – ''[[Sinners (2025 film)|Sinners]]'' as Elijah "Smoke" Moore / Elias "Stack" Moore
+** [[Jeremy Allen White]] – ''[[Springsteen: Deliver Me from Nowhere]]'' as [[Bruce Springsteen]]
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Female Actor in a Motion Picture – Drama]]}}
+* '''[[Jessie Buckley]] – ''[[Hamnet (film)|Hamnet]]'' as [[Anne Hathaway (wife of Shakespeare)|Agnes Shakespeare]]'''
+** [[Jennifer Lawrence]] – ''[[Die My Love]]'' as Grace
+** [[Renate Reinsve]] – ''[[Sentimental Value]]'' as Nora Borg
+** [[Julia Roberts]] – ''[[After the Hunt]]'' as Alma Imhoff
+** [[Tessa Thompson]] – ''[[Hedda (2025 film)|Hedda]]'' as Hedda Gabler
+** [[Eva Victor]] – ''[[Sorry, Baby (2025 film)|Sorry, Baby]]'' as Agnes
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor in a Motion Picture – Musical or Comedy|Best Male Actor in a Motion Picture – Musical or Comedy]]}}
+* '''[[Timothée Chalamet]] – ''[[Marty Supreme]]'' as Marty Mauser'''
+** [[George Clooney]] – ''[[Jay Kelly]]'' as Jay Kelly
+** [[Leonardo DiCaprio]] – ''[[One Battle After Another]]'' as Bob Ferguson
+** [[Ethan Hawke]] – ''[[Blue Moon (2025 film)|Blue Moon]]'' as [[Lorenz Hart]]
+** [[Lee Byung-hun]] – ''[[No Other Choice]]'' as Yoo Man-su
+** [[Jesse Plemons]] – ''[[Bugonia (film)|Bugonia]]'' as Teddy Gatz
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy|Best Female Actor in a Motion Picture – Musical or Comedy]]}}
+* '''[[Rose Byrne]] – ''[[If I Had Legs I'd Kick You]]'' as Linda'''
+** [[Cynthia Erivo]] – ''[[Wicked: For Good]]'' as [[Elphaba|Elphaba Thropp]]
+** [[Kate Hudson]] – ''[[Song Sung Blue (2025 film)|Song Sung Blue]]'' as [[Claire Sardina]]
+** [[Chase Infiniti]] – ''[[One Battle After Another]]'' as Willa Ferguson
+** [[Amanda Seyfried]] – ''[[The Testament of Ann Lee]]'' as [[Ann Lee]]
+** [[Emma Stone]] – ''[[Bugonia (film)|Bugonia]]'' as Michelle Fuller
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Supporting Male Actor in a Motion Picture]]}}
+* ''' [[Stellan Skarsgård]] – ''[[Sentimental Value]]'' as Gustav Borg'''
+** [[Benicio del Toro]] – ''[[One Battle After Another]]'' as Sensei Sergio St. Carlos
+** [[Jacob Elordi]] – ''[[Frankenstein (2025 film)|Frankenstein]]'' as [[Frankenstein's monster|The Creature]]
+** [[Paul Mescal]] – ''[[Hamnet (film)|Hamnet]]'' as [[William Shakespeare]]
+** [[Sean Penn]] – ''One Battle After Another'' as Col. Steven J. Lockjaw
+** [[Adam Sandler]] – ''[[Jay Kelly]]'' as Ron Sukenick
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Supporting Female Actor in a Motion Picture]]}}
+* '''[[Teyana Taylor]] – ''[[One Battle After Another]]'' as Perfidia Beverly Hills'''
+** [[Emily Blunt]] – ''[[The Smashing Machine (2025 film)|The Smashing Machine]]'' as [[Mark Kerr (fighter)#Personal life|Dawn Staples]]
+** [[Elle Fanning]] – ''[[Sentimental Value]]'' as Rachel Kemp
+** [[Ariana Grande]] – ''[[Wicked: For Good]]'' as [[Glinda|Galinda "Glinda" Upland]]
+** [[Inga Ibsdotter Lilleaas]] – ''Sentimental Value'' as Agnes Borg Pettersen
+** [[Amy Madigan]] – ''[[Weapons (2025 film)|Weapons]]'' as [[Aunt Gladys|Gladys]]
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Director|Best Director]]}}
+* '''[[Paul Thomas Anderson]] – ''[[One Battle After Another]]'''''
+** [[Ryan Coogler]] – ''[[Sinners (2025 film)|Sinners]]''
+** [[Guillermo del Toro]] – ''[[Frankenstein (2025 film)|Frankenstein]]''
+** [[Jafar Panahi]] – ''[[It Was Just an Accident]]''
+** [[Joachim Trier]] – ''[[Sentimental Value]]''
+** [[Chloé Zhao]] – ''[[Hamnet (film)|Hamnet]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Screenplay|Best Screenplay]]}}
+* '''[[Paul Thomas Anderson]] – ''[[One Battle After Another]]'''''
+** [[Ronald Bronstein]] and [[Josh Safdie]] – ''[[Marty Supreme]]''
+** [[Ryan Coogler]] – ''[[Sinners (2025 film)|Sinners]]''
+** [[Jafar Panahi]] – ''[[It Was Just an Accident]]''
+** [[Eskil Vogt]] and [[Joachim Trier]] – ''[[Sentimental Value]]''
+** [[Chloé Zhao]] and [[Maggie O'Farrell]] – ''[[Hamnet (film)|Hamnet]]''
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Original Score|Best Original Score]]}}
+* '''[[Ludwig Göransson]] – ''[[Sinners (2025 film)|Sinners]]'''''
+** [[Alexandre Desplat]] – ''[[Frankenstein (2025 film)|Frankenstein]]''
+** [[Jonny Greenwood]] – ''[[One Battle After Another]]''
+** [[Kangding Ray]] – ''[[Sirāt]]''
+** [[Max Richter]] – ''[[Hamnet (film)|Hamnet]]''
+** [[Hans Zimmer]] – ''[[F1 (film)|F1]]''
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]]}}
+* '''''[[Sinners (2025 film)|Sinners]]'''''
+** ''[[Avatar: Fire and Ash]]''
+** ''[[F1 (film)|F1]]''
+** ''[[KPop Demon Hunters]]''
+** ''[[Mission: Impossible – The Final Reckoning]]''
+** ''[[Weapons (2025 film)|Weapons]]''
+** ''[[Wicked: For Good]]''
+** ''[[Zootopia 2]]''
+|-
+| colspan="2" valign="top"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Original Song|Best Original Song]]}}
+* '''"[[Golden (Huntrix song)|Golden]]" ([[Ejae]], [[Mark Sonnenblick]], Ido, [[Jeong Hoon Seo|24]], and [[Teddy Park|Teddy]]) – ''[[KPop Demon Hunters]]'''''
+** "[[Dream as One]]" ([[Miley Cyrus]], [[Andrew Wyatt]], [[Mark Ronson]], and [[Simon Franglen]]) – ''[[Avatar: Fire and Ash]]''
+** "[[The Girl in the Bubble]]" ([[Stephen Schwartz]]) – ''[[Wicked: For Good]]''
+** "[[I Lied to You]]" ([[Raphael Saadiq]] and [[Ludwig Göransson]]) – ''[[Sinners (2025 film)|Sinners]]''
+** "[[No Place Like Home (Cynthia Erivo song)|No Place Like Home]]" (Stephen Schwartz) – ''Wicked: For Good''
+** "Train Dreams" ([[Nick Cave]] and [[Bryce Dessner]]) – ''[[Train Dreams (film)|Train Dreams]]''
+|}
+
+====Honorary award recipient====
+* [[Golden Globe Cecil B. DeMille Award|Cecil B. DeMille Award]]: [[Helen Mirren]]
+
+====Films with multiple nominations====
+The following films received multiple nominations:
+
+{| class="wikitable"
+|+
+! Nominations
+! Films
+! Category
+! Distributor(s)
+|-
+| style="text-align:center"| 9
+| ''[[One Battle After Another]]''
+| style="text-align:center"| {{abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Warner Bros. Pictures]]
+|-
+| style="text-align:center"| 8
+| ''[[Sentimental Value]]''
+| style="text-align:center" rowspan="4"| Drama
+| style="text-align:center"| [[Neon (company)|Neon]]
+|-
+| style="text-align:center"| 7
+| ''[[Sinners (2025 film)|Sinners]]''
+| style="text-align:center"| Warner Bros. Pictures
+|-
+| style="text-align:center"| 6
+| ''[[Hamnet (film)|Hamnet]]''
+| style="text-align:center"| [[Focus Features]]
+|-
+| style="text-align:center" rowspan="2"| 5
+| ''[[Frankenstein (2025 film)|Frankenstein]]''
+| style="text-align:center"| [[Netflix]]
+|-
+| ''[[Wicked: For Good]]''
+| style="text-align:center"| {{abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Universal Pictures]]
+|-
+| style="text-align:center"| 4
+| ''[[It Was Just an Accident]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| Neon
+|-
+| style="text-align:center" rowspan="5"| 3
+| ''[[Bugonia (film)|Bugonia]]''
+| style="text-align:center"| {{abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| Focus Features
+|-
+| ''[[KPop Demon Hunters]]''
+| style="text-align:center"| Animated
+| style="text-align:center"| Netflix
+|-
+| ''[[Marty Supreme]]''
+| rowspan="2" style="text-align:center"| {{abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[A24]]
+|-
+| ''[[No Other Choice]]''
+| rowspan="2" style="text-align:center"| Neon
+|-
+| ''[[The Secret Agent (2025 film)|The Secret Agent]]''
+| rowspan="2" style="text-align:center"| Drama
+|-
+| style="text-align:center" rowspan="9"| 2
+| ''[[Avatar: Fire and Ash]]''
+| style="text-align:center"| [[Walt Disney Studios Motion Pictures]]
+|-
+| ''[[Blue Moon (2025 film)|Blue Moon]]''
+| style="text-align:center"| {{abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Sony Pictures Classics]]
+|-
+| ''[[F1 (film)|F1]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[Apple Studios|Apple Original Films]]
+|-
+| ''[[Jay Kelly]]''
+| style="text-align:center"| {{abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| Netflix
+|-
+| ''[[Sirāt]]''
+| rowspan="4" style="text-align:center"| Drama
+| style="text-align:center"| Neon
+|-
+| ''[[The Smashing Machine (2025 film)|The Smashing Machine]]''
+| style="text-align:center"| A24
+|-
+| ''[[Train Dreams (film)|Train Dreams]]''
+| style="text-align:center"| Netflix
+|-
+| ''[[Weapons (2025 film)|Weapons]]''
+| style="text-align:center"| [[New Line Cinema]] / Warner Bros. Pictures
+|-
+| ''[[Zootopia 2]]''
+| style="text-align:center"| Animated
+| style="text-align:center"| Walt Disney Studios Motion Pictures
+|}
+
+====Films with multiple wins====
+The following films received multiple wins:
+
+{| class="wikitable"
+|-
+! Wins
+! Films
+! Category
+! Distributor
+|-
+| style="text-align:center"| 4
+| ''[[One Battle After Another]]''
+| style="text-align:center"| {{abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Warner Bros. Pictures]]
+|-
+| style="text-align:center" rowspan="4"| 2
+| ''[[Hamnet (film)|Hamnet]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[Focus Features]]
+|-
+| ''[[KPop Demon Hunters]]''
+| style="text-align:center"| Animated
+| style="text-align:center"| [[Netflix]]
+|-
+| ''[[The Secret Agent (2025 film)|The Secret Agent]]''
+| style="text-align:center" rowspan="2"| Drama
+| style="text-align:center"| [[Neon (company)|Neon]]
+|-
+| ''[[Sinners (2025 film)|Sinners]]''
+| style="text-align:center"| Warner Bros. Pictures
+|}
+
+===Television===
+{| class="wikitable" style="width=100%"
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Television Series – Drama|Best Television Series – Drama]]}}
+* '''''[[The Pitt]]'' ([[HBO Max]])'''
+** ''[[The Diplomat (American TV series)|The Diplomat]]'' ([[Netflix]])
+** ''[[Pluribus (TV series)|Pluribus]]'' ([[Apple TV (streaming service)|Apple TV]])
+** ''[[Severance (TV series)|Severance]]'' (Apple TV)
+** ''[[Slow Horses]]'' (Apple TV)
+** ''[[The White Lotus]]'' (HBO Max)
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Television Series – Musical or Comedy|Best Television Series – Musical or Comedy]]}}
+* '''''[[The Studio (TV series)|The Studio]]'' (Apple TV)'''
+** ''[[Abbott Elementary]]'' ([[American Broadcasting Company|ABC]])
+** ''[[The Bear (TV series)|The Bear]]'' ([[FX Networks#FX on Hulu|FX on Hulu]])
+** ''[[Hacks]]'' (HBO Max)
+** ''[[Nobody Wants This]]'' (Netflix)
+** ''[[Only Murders in the Building]]'' ([[Hulu]])
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Limited or Anthology Series or Television Film|Best Limited Series, Anthology Series, or Motion Picture Made for Television]]}}
+* '''''[[Adolescence (TV series)|Adolescence]]'' (Netflix)'''
+** ''[[All Her Fault]]'' ([[Peacock (streaming service)|Peacock]])
+** ''[[The Beast in Me (TV series)|The Beast in Me]]'' (Netflix)
+** ''[[Black Mirror]]'' (Netflix)
+** ''[[Dying for Sex]]'' (FX on Hulu)
+** ''[[The Girlfriend (TV series)|The Girlfriend]]'' ([[Amazon Prime Video|Prime Video]])
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Performance in Stand-Up Comedy on Television|Best Performance in Stand-Up Comedy on Television]]}}
+* '''[[Ricky Gervais]] – ''Ricky Gervais: Mortality'' (Netflix)'''
+** [[Brett Goldstein]] – ''Brett Goldstein: The Second Best Night of Your Life'' (HBO Max)
+** [[Kevin Hart]] – ''Kevin Hart: Acting My Age'' (Netflix)
+** [[Bill Maher]] – ''[[Bill Maher: Is Anyone Else Seeing This?]]'' (HBO Max)
+** [[Kumail Nanjiani]] – ''Kumail Nanjiani: Night Thoughts'' (Hulu)
+** [[Sarah Silverman]] – ''Sarah Silverman: PostMortem'' (Netflix)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor – Television Series Drama|Best Male Actor in a Television Series – Drama]]}}
+* '''[[Noah Wyle]] – ''[[The Pitt]]'' as [[Michael Robinavitch|Dr. Michael "Robby" Robinavitch]] (HBO Max)'''
+** [[Sterling K. Brown]] – ''[[Paradise (2025 TV series)|Paradise]]'' as Xavier Collins (Hulu)
+** [[Diego Luna]] – ''[[Andor]]'' as [[Cassian Andor]] ([[Disney+]])
+** [[Gary Oldman]] – ''[[Slow Horses]]'' as Jackson Lamb (Apple TV)
+** [[Mark Ruffalo]] – ''[[Task (TV series)|Task]]'' as Tom Brandis (HBO Max)
+** [[Adam Scott]] – ''[[Severance (TV series)|Severance]]'' as [[Mark Scout|Mark Scout / Mark S.]] (Apple TV)
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress – Television Series Drama|Best Female Actor in a Television Series – Drama]]}}
+* '''[[Rhea Seehorn]] – ''[[Pluribus (TV series)|Pluribus]]'' as [[Carol Sturka]] (Apple TV)'''
+** [[Kathy Bates]] – ''[[Matlock (2024 TV series)|Matlock]]'' as Madeline Kingston / Madeline "Matty" Matlock ([[CBS]])
+** [[Britt Lower]] – ''[[Severance (TV series)|Severance]]'' as [[Helly R.|Helena Eagan / Helly R.]] (Apple TV)
+** [[Helen Mirren]] – ''[[MobLand]]'' as Maeve Harrigan ([[Paramount+]])
+** [[Bella Ramsey]] – ''[[The Last of Us (TV series)|The Last of Us]]'' as [[Ellie (The Last of Us)|Ellie]] (HBO Max)
+** [[Keri Russell]] – ''[[The Diplomat (American TV series)|The Diplomat]]'' as Katherine "Kate" Wyler (Netflix)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor – Television Series Musical or Comedy|Best Male Actor in a Television Series – Musical or Comedy]]}}
+* '''[[Seth Rogen]] – ''[[The Studio (TV series)|The Studio]]'' as Matt Remick (Apple TV)'''
+** [[Adam Brody]] – ''[[Nobody Wants This]]'' as Noah Roklov (Netflix)
+** [[Steve Martin]] – ''[[Only Murders in the Building]]'' as Charles-Haden Savage (Hulu)
+** [[Glen Powell]] – ''[[Chad Powers]]'' as Russ Holliday / Chad Powers (Hulu)
+** [[Martin Short]] – ''Only Murders in the Building'' as Oliver Putnam (Hulu)
+** [[Jeremy Allen White]] – ''[[The Bear (TV series)|The Bear]]'' as [[Carmy Berzatto|Carmen "Carmy" Berzatto]] (FX on Hulu)
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress – Television Series Musical or Comedy|Best Female Actor in a Television Series – Musical or Comedy]]}}
+* '''[[Jean Smart]] – ''[[Hacks]]'' as Deborah Vance (HBO Max)'''
+** [[Kristen Bell]] – ''[[Nobody Wants This]]'' as Joanne Williams (Netflix)
+** [[Ayo Edebiri]] – ''[[The Bear (TV series)|The Bear]]'' as [[Sydney Adamu]] (FX on Hulu)
+** [[Selena Gomez]] – ''[[Only Murders in the Building]]'' as Mabel Mora (Hulu)
+** [[Natasha Lyonne]] – ''[[Poker Face (TV series)|Poker Face]]'' as Charlie Cale (Peacock)
+** [[Jenna Ortega]] – ''[[Wednesday (TV series)|Wednesday]]'' as [[Wednesday Addams (Wednesday)|Wednesday Addams]] (Netflix)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actor – Miniseries or Television Film|Best Male Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television]]}}
+* '''[[Stephen Graham]] – ''[[Adolescence (TV series)|Adolescence]]'' as Eddie Miller (Netflix)'''
+** [[Jacob Elordi]] – ''[[The Narrow Road to the Deep North (miniseries)|The Narrow Road to the Deep North]]'' as Dorrigo Evans (Prime Video)
+** [[Paul Giamatti]] – ''[[Black Mirror]]'' as Phillip Connarty (Netflix)
+** [[Charlie Hunnam]] – ''[[Monster: The Ed Gein Story]]'' as [[Ed Gein]] (Netflix)
+** [[Jude Law]] – ''[[Black Rabbit]]'' as Jake Friedkin (Netflix)
+** [[Matthew Rhys]] – ''[[The Beast in Me (TV series)|The Beast in Me]]'' as Nile Jarvis (Netflix)
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Actress – Miniseries or Television Film|Best Female Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television]]}}
+* '''[[Michelle Williams (actress)|Michelle Williams]] – ''[[Dying for Sex]]'' as [[Molly Kochan]] (FX on Hulu)'''
+** [[Claire Danes]] – ''[[The Beast in Me (TV series)|The Beast in Me]]'' as Agatha "Aggie" Wiggs (Netflix)
+** [[Rashida Jones]] – ''[[Black Mirror]]'' as Amanda Waters (Netflix)
+** [[Amanda Seyfried]] – ''[[Long Bright River (TV series)|Long Bright River]]'' as Mickey Fitzpatrick (Peacock)
+** [[Sarah Snook]] – ''[[All Her Fault]]'' as Marissa Irvine (Peacock)
+** [[Robin Wright]] – ''[[The Girlfriend (TV series)|The Girlfriend]]'' as Laura Sanderson (Prime Video)
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Best Supporting Male Actor on Television]]}}
+* '''[[Owen Cooper]] – ''[[Adolescence (TV series)|Adolescence]]'' as Jamie Miller (Netflix)'''
+** [[Billy Crudup]] – ''[[The Morning Show (American TV series)|The Morning Show]]'' as Cory Ellison (Apple TV)
+** [[Walton Goggins]] – ''[[The White Lotus]]'' as Rick Hatchett (HBO Max)
+** [[Jason Isaacs]] – ''The White Lotus'' as Timothy Ratliff (HBO Max)
+** [[Tramell Tillman]] – ''[[Severance (TV series)|Severance]]'' as [[Seth Milchick]] (Apple TV)
+** [[Ashley Walters]] – ''Adolescence'' as DI Luke Bascombe (Netflix)
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Best Supporting Female Actor on Television]]}}
+* '''[[Erin Doherty]] – ''[[Adolescence (TV series)|Adolescence]]'' as Briony Ariston (Netflix)'''
+** [[Carrie Coon]] – ''[[The White Lotus]]'' as Laurie Duffy (HBO Max)
+** [[Hannah Einbinder]] – ''[[Hacks]]'' as Ava Daniels (HBO Max)
+** [[Catherine O'Hara]] – ''[[The Studio (TV series)|The Studio]]'' as Patty Leigh (Apple TV)
+** [[Parker Posey]] – ''The White Lotus'' as Victoria Ratliff (HBO Max)
+** [[Aimee Lou Wood]] – ''The White Lotus'' as Chelsea (HBO Max)
+|}
+
+====Honorary award recipient====
+* [[Golden Globe Carol Burnett Award|Carol Burnett Award]]: [[Sarah Jessica Parker]]
+
+====Series with multiple nominations====
+The following television series received multiple nominations:
+
+{| class="wikitable"
+|+
+! Nominations
+! Series
+! Category
+! Distributor
+|-
+| style="text-align:center"| 6
+| ''[[The White Lotus]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[HBO Max]]
+|-
+| style="text-align:center"| 5
+| ''[[Adolescence (TV series)|Adolescence]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| [[Netflix]]
+|-
+| style="text-align:center" rowspan="2"| 4
+| ''[[Only Murders in the Building]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Hulu]]
+|-
+| ''[[Severance (TV series)|Severance]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[Apple TV (streaming service)|Apple TV]]
+|-
+| style="text-align:center" rowspan="6"| 3
+| ''[[The Bear (TV series)|The Bear]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[FX Networks#FX on Hulu|FX on Hulu]]
+|-
+| ''[[The Beast in Me (TV series)|The Beast in Me]]''
+| style="text-align:center" rowspan="2"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center" rowspan="2"| Netflix
+|-
+| ''[[Black Mirror]]''
+|-
+| ''[[Hacks]]''
+| style="text-align:center" rowspan="3"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| HBO Max
+|-
+| ''[[Nobody Wants This]]''
+| style="text-align:center"| Netflix
+|-
+| ''[[The Studio (TV series)|The Studio]]''
+| style="text-align:center"| Apple TV
+|-
+| style="text-align:center" rowspan="7"| 2
+| ''[[All Her Fault]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| [[Peacock (streaming service)|Peacock]]
+|-
+| ''[[The Diplomat (American TV series)|The Diplomat]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| Netflix
+|-
+| ''[[Dying for Sex]]''
+| style="text-align:center" rowspan="2"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| FX on Hulu
+|-
+| ''[[The Girlfriend (TV series)|The Girlfriend]]''
+| style="text-align:center"| [[Amazon Prime Video|Prime Video]]
+|-
+| ''[[The Pitt]]''
+| style="text-align:center" rowspan="3"| Drama
+| style="text-align:center"| HBO Max
+|-
+| ''[[Pluribus (TV series)|Pluribus]]''
+| style="text-align:center" rowspan="2"| Apple TV
+|-
+| ''[[Slow Horses]]''
+|}
+
+====Series with multiple wins====
+The following series received multiple wins:
+
+{| class="wikitable"
+|-
+! Wins
+! Series
+! Category
+! Distributor
+|-
+| style="text-align:center"| 4
+| ''[[Adolescence (TV series)|Adolescence]]''
+| style="text-align:center"| {{Abbr|LAMP|Limited Series, Anthology Series, or Motion Picture Made for Television}}
+| style="text-align:center"| [[Netflix]]
+|-
+| style="text-align:center" rowspan="2"| 2
+| ''[[The Pitt]]''
+| style="text-align:center"| Drama
+| style="text-align:center"| [[HBO Max]]
+|-
+| ''[[The Studio (TV series)|The Studio]]''
+| style="text-align:center"| {{Abbr|M/C|Musical or Comedy}}
+| style="text-align:center"| [[Apple TV (streaming service)|Apple TV]]
+|}
+
+===Digital Audio===
+{| class="wikitable" style="width=100%"
+|-
+| valign="top" style="width=50%"| {{Award category|#F9EFAA|[[Golden Globe Award for Best Podcast|Best Podcast]]}}
+* '''''[[Good Hang with Amy Poehler]]'' – [[Amy Poehler]] ([[Spotify]])'''
+** ''[[Armchair Expert|Armchair Expert with Dax Shepard]]'' – [[Dax Shepard]] ([[Wondery]])
+** ''[[Call Her Daddy]]'' – [[Alex Cooper (podcaster)|Alex Cooper]] ([[SiriusXM]])
+** ''The Mel Robbins Podcast'' – [[Mel Robbins]] (SiriusXM)
+** ''[[SmartLess]]'' – [[Jason Bateman]], [[Will Arnett]], and [[Sean Hayes]] (SiriusXM)
+** ''[[Up First]]'' – [[Leila Fadel]], [[Steve Inskeep]], [[Michel Martin]], [[A Martínez]], [[Scott Simon]], and [[Ayesha Rascoe]] ([[NPR]])
+|}
+
+==Presenters==
+{| class="wikitable"
+! Name(s)<ref>{{cite web |url=https://deadline.com/2026/01/golden-globes-full-presenter-list-1236675968/ |title=Julia Roberts, Snoop Dogg & 'Heated Rivalry' Stars Among Golden Globes Presenters |last=Whittock |first=Jesse |work=[[Deadline Hollywood]] |date=January 8, 2026 |access-date=January 8, 2026 |archive-date=January 8, 2026 |archive-url=https://web.archive.org/web/20260108135233/https://deadline.com/2026/01/golden-globes-full-presenter-list-1236675968/ |url-status=live }}</ref>
+! Role
+|-
+| [[Jennifer Garner]]<br>[[Amanda Seyfried]]
+| Presented the award for [[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Supporting Female Actor – Motion Picture]]
+|-
+| [[Kevin Bacon]]<br>[[Kyra Sedgwick]]
+|Presented the award for [[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Supporting Male Actor – Motion Picture]]
+|-
+| [[Lisa (rapper)|Lalisa Manobal]]<br>[[Priyanka Chopra|Priyanka Chopra Jonas]]
+| Presented the award for [[Golden Globe Award for Best Actor – Television Series Drama|Best Male Actor in a Television Series – Drama]]
+|-
+| [[Sean Hayes]]<br>[[Will Arnett]]<br>[[Jason Bateman]]
+| Presented the award for [[Golden Globe Award for Best Actress – Television Series Musical or Comedy|Best Female Actor in a Television Series – Musical or Comedy]]
+|-
+| [[Luke Grimes]]<br>[[Justin Hartley]]
+| Presented the award for [[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Best Supporting Male Actor – Series, Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Zoë Kravitz]]<br>[[Dave Franco]]
+| Presented the award for [[Golden Globe Award for Best Actor – Television Series Musical or Comedy|Best Male Actor in a Television Series – Musical or Comedy]]
+|-
+| [[Snoop Dogg]]
+| Presented the award for [[Golden Globe Award for Best Podcast|Best Podcast]]
+|-
+| [[Joe Keery]]<br>[[Charli XCX]]
+| Presented the award for [[Golden Globe Award for Best Original Song|Best Original Song]] and [[Golden Globe Award for Best Original Score|Best Original Score]]
+|-
+| [[Macaulay Culkin]]
+| Presented the award for [[Golden Globe Award for Best Screenplay|Best Screenplay]]
+|-
+| [[Pamela Anderson]]<br>[[Miley Cyrus]]
+| Presented the award for [[Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy|Best Female Actor in a Motion Picture – Musical or Comedy]]
+|-
+| [[Jennifer Lopez]]
+| Presented the award for [[Golden Globe Award for Best Actor in a Motion Picture – Musical or Comedy|Best Male Actor in a Motion Picture – Musical or Comedy]]
+|-
+| [[Melissa McCarthy]]<br>[[Kathryn Hahn]]
+| Presented the awards for [[Golden Globe Award for Best Actor – Miniseries or Television Film|Best Male Actor – Limited Series, Anthology Series, or Motion Picture Made for Television]] and [[Golden Globe Award for Best Actress – Miniseries or Television Film|Best Female Actor – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Kevin Hart]]
+| Presented the award for [[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]]
+|-
+| [[Judd Apatow]]
+| Presented the award for [[Golden Globe Award for Best Director|Best Director]]
+|-
+| [[Mila Kunis]]<br>[[Keegan-Michael Key]]
+| Presented the award for [[Golden Globe Award for Best Animated Feature Film|Best Motion Picture – Animated]]
+|-
+| [[Orlando Bloom]]<br>[[Minnie Driver]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Non-English Language|Best Motion Picture – Non-English Language]]
+|-
+| [[Connor Storrie]]<br>[[Hudson Williams]]
+| Presented the award for [[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Best Supporting Female Actor – Series, Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Wanda Sykes]]
+| Presented the award for [[Golden Globe Award for Best Performance in Stand-Up Comedy on Television|Best Performance in Stand-Up Comedy on Television]]
+|-
+| [[Dakota Fanning]]<br>[[Queen Latifah]]
+| Presented the awards for [[Golden Globe Award for Best Actress – Television Series Drama|Best Female Actor – Television Series Drama]] and [[Golden Globe Award for Best Television Series – Drama|Best Television Series – Drama]]
+|-
+| [[Ayo Edebiri]]<br>[[Hailee Steinfeld]]
+| Presented the award for [[Golden Globe Award for Best Limited or Anthology Series or Television Film|Best Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Adam Scott]]<br>[[Marlon Wayans]]
+| Presented the award for [[Golden Globe Award for Best Television Series – Musical or Comedy|Best Television Series – Musical or Comedy]]
+|-
+| [[Chris Pine]]<br>[[Ana de Armas]]
+| Presented the award for [[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Female Actor in a Motion Picture – Drama]]
+|-
+| [[Diane Lane]]<br>[[Colman Domingo]]
+| Presented the award for [[Golden Globe Award for Best Actor in a Motion Picture – Drama|Best Male Actor in a Motion Picture – Drama]]
+|-
+| [[Julia Roberts]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]]
+|-
+| [[George Clooney]]<br>[[Don Cheadle]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Drama|Best Motion Picture – Drama]]
+|}
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+==External links==
+* {{IMDb title|36153532}}
+* {{Official|https://goldenglobes.com|Golden Globes official website}}
+
+{{Golden Globe Awards}}
+
+{{DEFAULTSORT:Golden Globe Awards, 83}}
+[[Category:2025 film awards]]
+[[Category:2025 television awards]]
+[[Category:2026 awards in the United States]]
+[[Category:January 2026 in the United States]]
+[[Category:Golden Globe Awards ceremonies|*083]]
+[[Category:2026 in Los Angeles County, California]]

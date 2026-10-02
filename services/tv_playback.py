@@ -59,7 +59,7 @@ class TVHistoryStore:
         episode_id, file_id = parse_tv_key(key)
         old = self._row(episode_id)
         switched = old.get('file_id') is not None and old.get('file_id') != file_id
-        self.repository.save_progress(episode_id, file_id, position_ms=0 if switched else old['position_ms'], duration_ms=0 if switched else old['duration_ms'], completed=old['completed_at'] is not None and not switched, restart=restart or switched)
+        self.repository.save_progress(episode_id, file_id, position_ms=0 if switched else old['position_ms'], duration_ms=0 if switched else old['duration_ms'], completed=old['completed_at'] is not None and not switched, restart=restart or switched, player_activity=True)
         return self._row(episode_id)
 
     def restart_session(self, key, revision):

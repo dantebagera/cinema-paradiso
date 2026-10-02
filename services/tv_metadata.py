@@ -152,6 +152,27 @@ class TVMetadata:
                 episodes.append({**row, 'provider_id': str(row['id']), 'title': row.get('name') or '', 'runtime': row.get('runtime')})
         return self.repository.refresh(self.display(self.normalize(series)), episodes, self.credits(series), season_scope=season_scope)
 
+    def hydrate_catalog(self, *, limit=1, retry_after=3600):
+        """Refresh a bounded number of incomplete local shows outside page requests."""
+        now = self.clock()
+        with self.repository.store.connection() as db:
+            rows = [dict(row) for row in db.execute('SELECT s.id,s.tmdb_id,h.status,h.updated_at FROM series s '
+                                                  'LEFT JOIN series_hydration h ON h.series_id=s.id '
+                                                  'ORDER BY COALESCE(h.updated_at,0),s.id')]
+        results = []
+        for row in rows:
+            if len(results) >= max(1, min(40, int(limit))):
+                break
+            if row['status'] == 'complete' or (row['updated_at'] and now - row['updated_at'] < retry_after):
+                continue
+            try:
+                self.refresh(row['tmdb_id'])
+                results.append({'series_id': row['id'], 'status': self.repository.hydration(row['id'])['status']})
+            except (OSError, ValueError, KeyError, TimeoutError, TypeError) as error:
+                self.repository.record_hydration_failure(row['id'], error)
+                results.append({'series_id': row['id'], 'status': 'retry', 'error': str(error)})
+        return results
+
     @staticmethod
     def trailer(row):
         videos = [v for v in row.get('videos', {}).get('results', []) if v.get('site') == 'YouTube' and v.get('type') in {'Trailer', 'Teaser'} and v.get('key')]

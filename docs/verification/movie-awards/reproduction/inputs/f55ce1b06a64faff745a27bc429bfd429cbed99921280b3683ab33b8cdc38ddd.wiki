@@ -1,0 +1,54 @@
+{{Short description|Film award ceremony in 1945}}
+{{Infobox film awards
+| number = 2
+| award = Golden Globe Awards
+| award_org = [[Hollywood Foreign Correspondents Association]]
+| image = Gaslight_1944_trailer(2).jpg
+| alt = Best Actress in a Leading Role winner Ingrid Bergman from Gaslight (1944).
+| caption = Best Actress in a Leading Role winner Ingrid Bergman from Gaslight (1944).
+| announced_date = {{Start date|1945|02}}
+| presented_date = {{Start date|1945|04|16}}
+| site = [[The Beverly Hills Hotel]]<br/>[[Beverly Hills, California]], U.S.
+| best_picture = ''[[Going My Way]]''
+| most_awards = ''Going My Way'' (3)
+| last = 1st
+| next = 3rd
+}}
+
+The '''2nd [[Golden Globe Award]]s''', honoring the best achievements in [[1944 in film|1944 filmmaking]], were announced in February 1945 and held on April 16, 1945, at [[The Beverly Hills Hotel]] in [[Beverly Hills, California]].<ref name="Ceremony">{{cite magazine |title=Foreign press men vote honors to ''Way'' |date=April 17, 1945 |magazine=[[The Hollywood Reporter]] |volume=83 |issue=10 |page=3 |id={{ProQuest|2320433827}}}}</ref><ref>{{cite magazine |title=Foreign writers honor ''Way'', Knox |date=February 27, 1945 |magazine=[[The Hollywood Reporter]] |volume=82 |issue=25 |page=6 |id={{ProQuest|2320433827}}}}</ref>
+
+==Winners==
+The 2nd Golden Globe Awards were presented on April 16, 1945, during a dinner in the Terrace Room of [[The Beverly Hills Hotel]] in [[Beverly Hills, California]]. [[B.G. DeSylva]] accepted the [[Golden Globe Award for Best Motion Picture – Drama|Best Picture]] award.<ref name="Ceremony"/>
+
+===[[Golden Globe Award for Best Motion Picture – Drama|Best Picture]]===
+* ''[[Going My Way]]'' directed by [[Leo McCarey]]
+
+===[[Golden Globe Award for Best Actor – Motion Picture Drama|Best Actor in a Leading Role]]===
+* [[Alexander Knox]] – ''[[Wilson (1944 film)|Wilson]]''
+
+===[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Leading Role]]===
+* [[Ingrid Bergman]] – ''[[Gaslight (1944 film)|Gaslight]]''
+
+===[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Performance by an Actor in a Supporting Role in a Motion Picture]]===
+* [[Barry Fitzgerald]] – ''Going My Way''
+
+===[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Performance by an Actress in a Supporting Role in a Motion Picture]]===
+* [[Agnes Moorehead]] – ''[[Mrs. Parkington]]''
+
+===[[Golden Globe Award for Best Director|Best Director – Motion Picture]]===
+* [[Leo McCarey]] – ''Going My Way''
+
+==See also==
+* [[Hollywood Foreign Press Association]]
+* [[17th Academy Awards]]
+* [[1944 in film]]
+
+==References==
+{{Reflist}}
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards 002}}
+[[Category:Golden Globe Awards ceremonies|*002]]
+[[Category:1944 film awards]]
+[[Category:January 1945 in the United States]]

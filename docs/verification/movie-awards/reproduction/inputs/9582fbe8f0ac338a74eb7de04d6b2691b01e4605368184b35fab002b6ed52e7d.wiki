@@ -1,0 +1,82 @@
+{{Short description|Film award ceremony in 1950}}
+{{Infobox film awards
+| number = 7
+| award = Golden Globe Awards
+| image = 
+| caption = 
+| date = February 23, 1950
+| best_picture = '' All the King's Men ''
+| last = 6th
+| next = 8th
+}}
+
+The '''7th [[Golden Globe Award]]s''', honoring the best in [[film]] for [[1949 in film|1949]] films, were held on February 23, 1950.
+
+==Winners and Nominees==
+
+===[[Golden Globe Award for Best Motion Picture – Drama|Best Picture]]===
+''' ''[[All the King's Men (1949 film)|All the King's Men]] directed by [[Robert Rossen]]'''''
+*''[[Come to the Stable]] directed by [[Henry Koster]]''
+
+===[[Golden Globe Award for Best Actor – Motion Picture Drama|Best Actor in a Leading Role]]===
+''' [[Broderick Crawford]] - ''[[All the King's Men (1949 film)|All the King's Men]]'''''
+*[[Richard Todd]] - ''[[The Hasty Heart]]''<ref>"Best Actor in a Leading Role(Previous Award Given)" {{cite web|url=http://www.goldenglobes.org/browse/year/1949 |title=HFPA - Awards Search |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174256/http://www.goldenglobes.org/browse/year/1949 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Leading Role]]===
+''' [[Olivia de Havilland]] - ''[[The Heiress (film)|The Heiress]]'''''
+*[[Deborah Kerr]] - ''[[Edward, My Son]]''
+
+===[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Performance by an Actor in a Supporting Role in a Motion Picture]]===
+''' [[James Whitmore]] - ''[[Battleground (film)|Battleground]]'''''
+*[[David Brian]] - ''[[Intruder in the Dust (film)|Intruder in the Dust]]''
+
+===[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Performance by an Actress in a Supporting Role in a Motion Picture]]===
+''' [[Mercedes McCambridge]] - ''[[All the King's Men (1949 film)|All the King's Men]]'''''
+*[[Miriam Hopkins]] - ''[[The Heiress (film)|The Heiress]]''
+
+===[[Golden Globe Award for Best Director|Best Director - Motion Picture]]===
+''' [[Robert Rossen]] - ''[[All the King's Men (1949 film)|All the King's Men]]'''''
+*[[William Wyler]] - ''[[The Heiress (film)|The Heiress]]''
+
+===[[Golden Globe Award for Best Screenplay|Best Screenplay - Motion Picture]]===
+''' ''[[Battleground (film)|Battleground]] - [[Robert Pirosh]]''''' 
+*''[[Rope of Sand]] - [[Walter Doniger]]''
+
+===[[Golden Globe Award for Best Original Score|Best Music, Original Score - Motion Picture]]===
+''' ''[[The Inspector General (1949 film)|The Inspector General]] - [[Johnny Green]]'''''
+*''[[All the King's Men (1949 film)|All the King's Men]] - [[George Duning]]''
+
+===[[Golden Globe Award for Best Foreign Language Film|Best Foreign Language Film]]===
+''' ''[[Bicycle Thieves|Bicycle Thieves (Ladri di biciclette)]], [[Italy]]'''''
+*''[[The Fallen Idol (film)|The Fallen Idol]], [[UK]]''
+
+===Best Cinematography - Black and White===
+''' ''[[Champion (1949 film)|Champion]] photographed by [[Franz F. Planer]]'''''
+*''[[All the King's Men (1949 film)|All the King's Men]] photographed by [[Burnett Guffey]]''
+
+===Best Cinematography - Color===
+''' ''[[The Adventures of Ichabod and Mr. Toad]] by [[Walt Disney]]'''''
+*''[[On the Town (film)|On The Town]] by [[Harold Rosson]]''<ref>"Cinematography for Outstanding use of Color"{{cite web|url=http://www.goldenglobes.org/browse/year/1949 |title=HFPA - Awards Search |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174256/http://www.goldenglobes.org/browse/year/1949 |archive-date=2010-11-24 }} and https://www.imdb.com/event/ev0000292/1950</ref>
+
+===Promoting International Understanding===
+''' ''[[The Hasty Heart]] directed by [[Vincent Sherman]]'''''
+*''[[Monsieur Vincent]] directed by [[Maurice Cloche]]''<ref>"Promoting International Understanding(Previous Award Given)"{{cite web|url=http://www.goldenglobes.org/browse/year/1949 |title=HFPA - Awards Search |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174256/http://www.goldenglobes.org/browse/year/1949 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for New Star of the Year – Actor|New Star of the Year - Actor]]===
+''' ''[[Richard Todd]] in [[The Hasty Heart]]'''''
+*''[[Juano Hernandez]] in [[Intruder in the Dust (film)|Intruder in the Dust]]''<ref>"New Star of the Year - Actor"https://www.imdb.com/event/ev0000292/1950</ref>
+
+===[[Golden Globe Award for New Star of the Year – Actress|New Star of the Year - Actress]]===
+''' ''[[Mercedes McCambridge]] in [[All the King's Men (1949 film)|All the King's Men]]'''''
+*''[[Ruth Roman]] in [[Champion (1949 film)|Champion]]''<ref>"New Star of the Year - Actor"https://www.imdb.com/event/ev0000292/1950</ref>
+
+==References==
+{{reflist}}
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards 007}}
+[[Category:Golden Globe Awards ceremonies|*007]]
+[[Category:1949 film awards]]
+[[Category:1949 television awards]]
+[[Category:February 1950 in the United States]]

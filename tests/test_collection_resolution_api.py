@@ -34,13 +34,17 @@ class CollectionResolutionApiTest(unittest.TestCase):
                     {"tmdb_id": "181808", "title": "Star Wars: The Last Jedi", "year": "2017"},
                 ],
             }
-            cache_key = app._library_cache_key()
-            app._library_cache = {"items": [{
-                "path": str(owned),
-                "tmdb_id": "11",
-                "canonical_metadata": {"accepted": True, "tmdb_id": "11", "title": "Star Wars", "year": "1977"},
-            }], "dir": cache_key, "roots": cache_key[0], "metadata_revision": cache_key[2],
-                "source": "catalog", "time": app.time.time()}
+            store = app.AppMetadataStore(data_tmp)
+            store.apply_tmdb_match(str(owned), {
+                "tmdb_id": "11", "title": "Star Wars", "year": "1977",
+            })
+            store.update_file_record(str(owned), {
+                "filename": owned.name,
+                "library_root": movies_tmp,
+                "parsed_title": "Star Wars",
+                "parsed_year": "1977",
+                "ingest_status": "imported",
+            })
             with patch("app._effective_tmdb_collection", return_value=collection):
                 response = app.app.test_client().get("/api/library/collection/10")
 
@@ -48,6 +52,10 @@ class CollectionResolutionApiTest(unittest.TestCase):
         payload = response.get_json()
         self.assertEqual(payload["owned_paths"], [str(owned)])
         self.assertEqual(payload["unresolved_parts"][0]["tmdb_id"], "181808")
+
+    def test_blank_collection_identity_returns_validation_error(self):
+        response = app.app.test_client().get("/api/library/collection/%20")
+        self.assertEqual(response.status_code, 400)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,509 @@
+{{oscars short description|films-year=1990}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number           = 63
+| award            = Academy Awards
+| image            = 63rd Academy Awards ceremony poster.jpg
+| alt              = Official poster promoting the 63rd Academy Awards in 1991.
+| caption          = Official poster by [[Saul Bass]]
+| date             = March 25, 1991
+| site             = [[Shrine Auditorium]]<br />[[Los Angeles]], California, U.S.
+| host             = [[Billy Crystal]]
+| producer         = [[Gilbert Cates|Gil Cates]]
+| director         = [[Jeff Margolis]]
+| best_picture     = ''[[Dances With Wolves]]''
+| most_wins        = ''Dances With Wolves'' (7)
+| most_nominations = ''Dances With Wolves'' (12)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 30 minutes<ref>{{harvnb|Wiley|Bona|1996|p=809}}</ref>
+| ratings          = 42.7 million<br />28.4% ([[Nielsen ratings]])
+| last             = 62nd
+| next             = 64th
+}}
+
+The '''63rd Academy Awards''' ceremony, organized by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), took place on March 25, 1991, at the [[Shrine Auditorium]] in [[Los Angeles]] beginning at 6:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 9:00&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, [[Academy Awards]] (commonly referred to as the Oscars) were presented in 22 categories. The ceremony, which was televised in the United States on [[American Broadcasting Company|ABC]], was produced by [[Gilbert Cates|Gil Cates]] and directed by [[Jeff Margolis]].<ref>{{cite web |title=Credits |url=http://jeffmargolisproductions.com/credits/ |publisher=Jeff Margolis Productions |access-date=October 4, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20131005000932/http://jeffmargolisproductions.com/credits/ |archive-date=October 5, 2013 }}</ref> Actor [[Billy Crystal]] hosted for the second consecutive year.<ref>{{cite news|last1=Kleid |first1=Beth |title=Awards Update |url=https://www.latimes.com/archives/la-xpm-1991-01-24-ca-810-story.html |access-date=November 29, 2010 |work=Los Angeles Times |date=January 24, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140714125925/http://articles.latimes.com/1991-01-24/entertainment/ca-810_1_academy-awards |archive-date=July 14, 2014 }}</ref> Three weeks earlier, in a ceremony held at [[The Beverly Hilton]] in [[Beverly Hills, California]] on March 2, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Geena Davis]].<ref>{{cite news|title=Past Scientific & Technical Awards Ceremonies|url=http://www.oscars.org/awards/scitech/pastawards.html|access-date=July 31, 2013|publisher=[[Academy of Motion Picture Arts and Sciences]] |archive-url=https://web.archive.org/web/20140213185729/http://www.oscars.org/awards/scitech/pastawards.html|archive-date=February 13, 2014}}</ref>
+
+''[[Dances With Wolves]]'' won seven awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last1=Rother |first1=Larry |title=Kevin Costner and 'Dances With Wolves' Win Top Oscar Prizes |url=https://www.nytimes.com/1991/03/26/movies/kevin-costner-and-dances-with-wolves-win-top-oscar-prizes.html |access-date=July 9, 2014 |work=[[The New York Times]] |date=March 26, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140714133359/http://www.nytimes.com/1991/03/26/movies/kevin-costner-and-dances-with-wolves-win-top-oscar-prizes.html |archive-date=July 14, 2014 }}</ref> Other winners included ''[[Dick Tracy (1990 film)|Dick Tracy]]'' with three awards, ''[[Ghost (1990 film)|Ghost]]'' with two awards, and ''[[American Dream (film)|American Dream]]'', ''[[Creature Comforts]]'', ''[[Cyrano de Bergerac (1990 film)|Cyrano de Bergerac]]'', ''[[Days of Waiting: The Life & Art of Estelle Ishigo|Days of Waiting]]'', ''[[Goodfellas]]'', ''[[The Hunt for Red October (film)|The Hunt for Red October]]'', ''[[Journey of Hope (film)|Journey of Hope]]'', ''[[The Lunch Date]]'', ''[[Misery (film)|Misery]]'', ''[[Reversal of Fortune]]'', and ''[[Total Recall (1990 film)|Total Recall]]'' with one. The telecast garnered nearly 43 million viewers in the United States.
+
+== Winners and nominees ==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 63rd Academy Awards were announced on February 13, 1991, at 5:38&nbsp;a.m. [[Pacific Time Zone|PST]] (13:38 UTC) at the [[Samuel Goldwyn Theater]] in Beverly Hills, California, by [[Karl Malden]], president of the academy, and actor [[Denzel Washington]].<ref>{{harvnb|Wiley|Bona|1996|p=795}}</ref> ''[[Dances With Wolves]]'' led the nominations with twelve total; ''[[Dick Tracy (1990 film)|Dick Tracy]]'' and ''[[The Godfather Part III]]'' tied for second with seven each.<ref>{{cite news|last1=Fox |first1=David J |title=Oscar Dances With 'Wolves' : Costner Film Leads Pack With 12 Nominations |url=https://www.latimes.com/archives/la-xpm-1991-02-14-ca-1669-story.html |access-date=July 9, 2014 |work=Los Angeles Times |date=February 14, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140714210148/http://articles.latimes.com/1991-02-14/entertainment/ca-1669_1_oscar-nominations |archive-date=July 14, 2014 }}</ref><ref>{{cite news|last1=Ryan |first1=Desmond |title=Oscar's Choices In The Academy Award Nominations, Kevin Costner's Epic, "Dances With Wolves," Did What No Movie Had Done Since "Reds" - Get A Dozen Nods. |url=http://articles.philly.com/1991-02-14/news/25772464_1_academy-award-nominations-category-of-best-actor-oscar |access-date=March 25, 2015 |work=[[The Philadelphia Inquirer]] |date=February 14, 1991 |url-status=dead |archive-url=https://web.archive.org/web/20150328090018/http://articles.philly.com/1991-02-14/news/25772464_1_academy-award-nominations-category-of-best-actor-oscar |archive-date=March 28, 2015 }}</ref>
+
+The winners were announced during the awards ceremony on March 25, 1991.<ref>{{cite news|last1=Rickey |first1=Carrie |title=Kevin Costner's Night To Howl "Dances With Wolves" Takes Home Seven Oscars From 12 Nominations, While Kathy Bates And Jeremy Irons Take Top Acting Awards. |url=http://articles.philly.com/1991-03-26/news/25793365_1_oscar-ceremonies-sacheen-littlefeather-marlon-brando-s-oscar |access-date=February 25, 2015 |work=The Philadelphia Inquirer |date=March 26, 1991 |url-status=dead |archive-url=https://web.archive.org/web/20150402182501/http://articles.philly.com/1991-03-26/news/25793365_1_oscar-ceremonies-sacheen-littlefeather-marlon-brando-s-oscar |archive-date=April 2, 2015 }}</ref> [[Kevin Costner]] became the fifth person to earn the Best Director Award for his directorial debut and to earn nominations for Best Actor and Best Director for the same film.<ref>{{cite news|last=Lyttelton |first=Oliver |title=Oscar Trivia: 50 Fun Facts To Prepare You For The 85th Academy Awards |url=http://blogs.indiewire.com/theplaylist/50-pieces-of-oscar-trivia-to-prepare-you-for-the-academy-awards-on-sunday-20130220?page=3 |access-date=July 5, 2013 |newspaper=[[IndieWire]] |publisher=[[Snagfilms]] |date=February 20, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130330181810/http://blogs.indiewire.com/theplaylist/50-pieces-of-oscar-trivia-to-prepare-you-for-the-academy-awards-on-sunday-20130220?page=3 |archive-date=March 30, 2013 }}</ref><ref>{{harvnb|Wiley|Bona|1996|p=1166}}</ref> Best Supporting Actress winner [[Whoopi Goldberg]] was the [[List of black Academy Award winners and nominees#Best Actress in a Supporting Role|second African American woman]] to win an award. [[Hattie McDaniel]] previously won in the same category for ''[[Gone with the Wind (film)|Gone With the Wind]]''.<ref name="PWBV">{{harvnb|Wiley|Bona|1996|p=798}}</ref><ref>{{cite news|last1=Lewis |first1=Claude |title=Whopee for Whoopi Goldberg |url=http://articles.philly.com/1991-03-27/news/25789984_1_blacks-white-athletes-hattie-mcdaniel |access-date=July 9, 2014 |work=The Philadelphia Inquirer |date=March 27, 1991 |url-status=dead |archive-url=https://web.archive.org/web/20140714213656/http://articles.philly.com/1991-03-27/news/25789984_1_blacks-white-athletes-hattie-mcdaniel |archive-date=July 14, 2014 }}</ref>
+
+===Awards===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Kevin Costner Césars 2013.jpg
+| caption1          = [[Kevin Costner]], Best Director winner and Best Picture co-winner
+| image2            = Jeremy Irons (48592037087).jpg
+| caption2          = [[Jeremy Irons]], Best Actor winner
+| image3            = Kathy Bates 2006.jpg
+| caption3          = [[Kathy Bates]], Best Actress winner|alt3=Photo of Kathy Bates in 2006.
+| image4            = JoePesci-2009.jpg
+| caption4          = [[Joe Pesci]], Best Supporting Actor winner|alt4=Photo of Joe Pesci in 2009.
+| image5            = Whoopi Goldberg Springsteen-71 (cropped).jpg
+| caption5          = [[Whoopi Goldberg]], Best Supporting Actress winner|alt5=Photo of Whoopi Goldberg at the 63rd New York Film Festival on September 28, 2025.
+| image6            = Michael Blake (2).jpg
+| caption6          = [[Michael Blake (author)|Michael Blake]], Best Adapted Screenplay winner
+| image7            = Barbara Kopple 2015.jpg
+| caption7          = [[Barbara Kopple]], Best Documentary Feature co-winner|alt7=Photo of Barbara Kopple 2015 Montclair Film Festival.
+| image8            = Nick Park, BBC Radio 2 Folk Awards 2007.jpg
+| caption8          = [[Nick Park]], Best Animated Short Film winner|alt8=Photo of Nick Park at the BBC Radio 2 Folk Awards 2007.
+| image9            = John-barry-2006.jpg
+| caption9          = [[John Barry (composer)|John Barry]], Best Original Score winner
+| image10           = Stephen Sondheim - smoking.JPG
+| caption10         = [[Stephen Sondheim]], Best Original Song Winner
+| image11           = Russell Williams.png
+| caption11         = [[Russell Williams II]], Best Sound co-winner
+| image12           = Doug Drexler.jpg
+| caption12         = [[Doug Drexler]], Best Makeup co-winner|alt12=Photo of Doug Drexler at the 2013 Phoenix Comic-Con.
+}}
+
+Winners<ref name="Oscars1991">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1991 |title=The 63rd Academy Awards (1991) Nominees and Winners |access-date=October 20, 2011 |publisher=Academy of Motion Picture Arts and Sciences |url-status=live |archive-url=https://web.archive.org/web/20141020005240/http://www.oscars.org/oscars/ceremonies/1991 |archive-date=October 20, 2014 }}</ref> are listed first and highlighted in '''boldface'''.
+{| class=wikitable
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Dances With Wolves]]''&nbsp;– [[Jim Wilson (producer)|Jim Wilson]] and [[Kevin Costner]], producers'''
+** ''[[Awakenings]]''&nbsp;– [[Walter Parkes]] and [[Lawrence Lasker]], producers
+** ''[[Ghost (1990 film)|Ghost]]''&nbsp;– Lisa Weinstein, producer
+** ''[[The Godfather Part III]]''&nbsp;– [[Francis Ford Coppola]], producer
+** ''[[Goodfellas]]''&nbsp;– [[Irwin Winkler]], producer
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Kevin Costner]]&nbsp;– ''[[Dances With Wolves]]'''''
+** [[Francis Ford Coppola]]&nbsp;– ''[[The Godfather Part III]]''
+** [[Martin Scorsese]]&nbsp;– ''[[Goodfellas]]''
+** [[Stephen Frears]]&nbsp;– ''[[The Grifters (film)|The Grifters]]''
+** [[Barbet Schroeder]]&nbsp;– ''[[Reversal of Fortune]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Jeremy Irons]]&nbsp;– ''[[Reversal of Fortune]]'' as [[Claus von Bülow]]'''
+** [[Kevin Costner]]&nbsp;– ''[[Dances With Wolves]]'' as Lieutenant John J. Dunbar/Dances With Wolves
+** [[Robert De Niro]]&nbsp;– ''[[Awakenings]]'' as Leonard Lowe
+** [[Gérard Depardieu]]&nbsp;– ''[[Cyrano de Bergerac (1990 film)|Cyrano de Bergerac]]'' as [[Cyrano de Bergerac]]
+** [[Richard Harris]]&nbsp;– ''[[The Field (1990 film)|The Field]]'' as "Bull" McCabe
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Kathy Bates]]&nbsp;– ''[[Misery (film)|Misery]]'' as [[Annie Wilkes]]'''
+** [[Anjelica Huston]]&nbsp;– ''[[The Grifters (film)|The Grifters]]'' as Lilly Dillon
+** [[Julia Roberts]]&nbsp;– ''[[Pretty Woman]]'' as Vivian Ward
+** [[Meryl Streep]]&nbsp;– ''[[Postcards from the Edge (film)|Postcards from the Edge]]'' as Suzanne Vale
+** [[Joanne Woodward]]&nbsp;– ''[[Mr. & Mrs. Bridge]]'' as India Bridge
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Joe Pesci]]&nbsp;– ''[[Goodfellas]]'' as [[Thomas DeSimone|Tommy DeVito]]'''
+** [[Bruce Davison]]&nbsp;– ''[[Longtime Companion]]'' as David
+** [[Andy García]]&nbsp;– ''[[The Godfather Part III]]'' as [[Vincent Corleone]]
+** [[Graham Greene (actor)|Graham Greene]]&nbsp;– ''[[Dances With Wolves]]'' as Kicking Bird
+** [[Al Pacino]]&nbsp;– ''[[Dick Tracy (1990 film)|Dick Tracy]]'' as [[Alphonse "Big Boy" Caprice]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Whoopi Goldberg]]&nbsp;– ''[[Ghost (1990 film)|Ghost]]'' as Oda Mae Brown'''
+** [[Annette Bening]]&nbsp;– ''[[The Grifters (film)|The Grifters]]'' as Myra Langtry
+** [[Lorraine Bracco]]&nbsp;– ''[[Goodfellas]]'' as [[Karen Friedman Hill]]
+** [[Diane Ladd]]&nbsp;– ''[[Wild at Heart (film)|Wild at Heart]]'' as Marietta Fortune
+** [[Mary McDonnell]]&nbsp;– ''[[Dances With Wolves]]'' as Stands with a Fist/Christine Gunther
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+* '''''[[Ghost (1990 film)|Ghost]]''&nbsp;– [[Bruce Joel Rubin]]'''
+** ''[[Alice (1990 film)|Alice]]''&nbsp;– [[Woody Allen]]
+** ''[[Avalon (1990 film)|Avalon]]''&nbsp;– [[Barry Levinson]]
+** ''[[Green Card (film)|Green Card]]''&nbsp;– [[Peter Weir]]
+** ''[[Metropolitan (1990 film)|Metropolitan]]''&nbsp;– [[Whit Stillman]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material from Another Medium)]]}}
+* '''''[[Dances With Wolves]]''&nbsp;– [[Michael Blake (author)|Michael Blake]] based on [[Dances With Wolves (novel)|his novel]]'''
+** ''[[Awakenings]]''&nbsp;– [[Steven Zaillian]] from [[Awakenings (book)|the book]] by [[Oliver Sacks]]
+** ''[[Goodfellas]]''&nbsp;– [[Nicholas Pileggi]] and [[Martin Scorsese]] from ''[[Wiseguy (book)|Wiseguy]]'' by [[Nicholas Pileggi]]
+** ''[[The Grifters (film)|The Grifters]]''&nbsp;– [[Donald E. Westlake]] based on [[The Grifters (novel)|the book]] by [[Jim Thompson (writer)|Jim Thompson]]
+** ''[[Reversal of Fortune]]''&nbsp;– [[Nicholas Kazan]] based on the book by [[Alan M. Dershowitz]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[Journey of Hope (film)|Journey of Hope]]'' ([[List of Swiss submissions for the Academy Award for Best Foreign Language Film|Switzerland]]) in [[German language|German]]&nbsp;– [[Xavier Koller]]'''
+** ''[[Cyrano de Bergerac (1990 film)|Cyrano de Bergerac]]'' ([[List of French submissions for the Academy Award for Best Foreign Language Film|France]]) in [[French language|French]]&nbsp;– [[Jean-Paul Rappeneau]]
+** ''[[Ju Dou]]'' ([[List of Chinese submissions for the Academy Award for Best Foreign Language Film|China]]) in [[Mandarin Chinese]]&nbsp;– [[Zhang Yimou]] and [[Yang Fengliang]]
+** ''[[The Nasty Girl]]'' ([[List of German submissions for the Academy Award for Best Foreign Language Film|Germany]]) in [[German language|German]]&nbsp;– [[Michael Verhoeven]]
+** ''[[Open Doors (film)|Open Doors]]'' ([[List of Italian submissions for the Academy Award for Best Foreign Language Film|Italy]]) in [[Italian language|Italian]]&nbsp;– [[Gianni Amelio]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[American Dream (film)|American Dream]]''&nbsp;– [[Barbara Kopple]] and [[Arthur Cohn]]'''
+** ''[[Berkeley in the Sixties]]''&nbsp;– Mark Kitchell
+** ''[[Building Bombs]]''&nbsp;– [[Mark Mori]] and Susan J. Robinson
+** ''[[Forever Activists|Forever Activists: Stories from the Veterans of the Abraham Lincoln Brigade]]''&nbsp;– Judith Montell
+** ''[[Waldo Salt: A Screenwriter's Journey]]''&nbsp;– Robert Hillmann and Eugene Corr
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Days of Waiting: The Life & Art of Estelle Ishigo|Days of Waiting]]''&nbsp;– [[Steven Okazaki]]'''
+** ''[[Burning Down Tomorrow]]''&nbsp;– [[Kit Thomas]]
+** ''[[Chimps: So Like Us]]''&nbsp;– [[Karen Goodman]] and [[Kirk Simon]]
+** ''[[Journey into Life: The World of the Unborn]]''&nbsp;– Derek Bromhall
+** ''[[Rose Kennedy: A Life to Remember]]''&nbsp;– [[Freida Lee Mock]] and [[Terry Sanders]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[The Lunch Date]]''&nbsp;– [[Adam Davidson (director)|Adam Davidson]]'''
+** ''[[12:01 PM (1990 film)|12:01 PM]]''&nbsp;– Hillary Ripps and Jonathan Heap
+** ''Bronx Cheers''&nbsp;– [[Raymond De Felitta]] and Matthew Gross
+** ''[[Dear Rosie]]''&nbsp;– [[Peter Cattaneo]] and [[Barnaby Thompson]]
+** ''Senzeni Na? (What Have We Done?)''&nbsp;– Bernard Joffa and Anthony E. Nicholas
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Creature Comforts]]''&nbsp;– [[Nick Park]]'''
+** ''[[A Grand Day Out]]''&nbsp;– [[Nick Park]]
+** ''[[Grasshoppers (Cavallette)]]''&nbsp;– [[Bruno Bozzetto]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Dances With Wolves]]''&nbsp;– [[John Barry (composer)|John Barry]]'''
+** ''[[Avalon (1990 film)|Avalon]]''&nbsp;– [[Randy Newman]]
+** ''[[Ghost (1990 film)|Ghost]]''&nbsp;– [[Maurice Jarre]]
+** ''[[Havana (film)|Havana]]''&nbsp;– [[Dave Grusin]]
+** ''[[Home Alone]]''&nbsp;– [[John Williams]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Sooner or Later (Madonna song)|Sooner or Later (I Always Get My Man)]]" from ''[[Dick Tracy (1990 film)|Dick Tracy]]''&nbsp;– Music and Lyrics by [[Stephen Sondheim]]'''
+** "[[Blaze of Glory (Jon Bon Jovi song)|Blaze of Glory]]" from ''[[Young Guns II]]''&nbsp;– Music and Lyrics by [[Jon Bon Jovi]]
+** "I'm Checkin' Out" from ''[[Postcards from the Edge (film)|Postcards from the Edge]]''&nbsp;– Music and Lyrics by [[Shel Silverstein]]
+** "[[Promise Me You'll Remember (Love Theme from The Godfather Part III)|Promise Me You'll Remember]]" from ''[[The Godfather Part III]]''&nbsp;– Music by [[Carmine Coppola]]; Lyrics by [[John Bettis]]
+** "[[Somewhere in My Memory]]" from ''[[Home Alone]]''&nbsp;– Music by [[John Williams]]; Lyrics by [[Leslie Bricusse]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound]]}}
+* '''''[[Dances With Wolves]]''&nbsp;– [[Jeffrey Perkins]], [[Bill W. Benton]], [[Gregory H. Watkins]], and [[Russell Williams II]]'''
+** ''[[Days of Thunder]]''&nbsp;– [[Charles M. Wilborn]], [[Donald O. Mitchell]], [[Rick Kline]], and [[Kevin O'Connell (sound mixer)|Kevin O'Connell]]
+** ''[[Dick Tracy (1990 film)|Dick Tracy]]''&nbsp;– [[Thomas Causey]], [[Chris Jenkins (sound engineer)|Chris Jenkins]], [[David E. Campbell (sound engineer)|David E. Campbell]], and [[Doug Hemphill]]
+** ''[[The Hunt for Red October (film)|The Hunt for Red October]]''&nbsp;– [[Richard Bryce Goodman]], [[Richard Overton (sound engineer)|Richard Overton]], [[Kevin F. Cleary]], and [[Don Bassman]]
+** ''[[Total Recall (1990 film)|Total Recall]]''&nbsp;– [[Nelson Stoll]], [[Michael J. Kohut]], [[Carlos Delarios]], and [[Aaron Rochin]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Effects Editing]]}}
+* '''''[[The Hunt for Red October (film)|The Hunt for Red October]]''&nbsp;– [[Cecelia Hall (sound editor)|Cecelia Hall]] and [[George Watters II]]'''
+** ''[[Flatliners]]''&nbsp;– [[Charles L. Campbell]] and [[Richard C. Franklin]]
+** ''[[Total Recall (1990 film)|Total Recall]]''&nbsp;– [[Stephen Hunter Flick]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Dick Tracy (1990 film)|Dick Tracy]]''&nbsp;– Art Direction: [[Richard Sylbert]]; Set Decoration: [[Rick Simpson]]'''
+** ''[[Cyrano de Bergerac (1990 film)|Cyrano de Bergerac]]''&nbsp;– Art Direction: [[Ezio Frigerio]]; Set Decoration: [[Jacques Rouxel (production designer)|Jacques Rouxel]]
+** ''[[Dances With Wolves]]''&nbsp;– Art Direction: [[Jeffrey Beecroft]]; Set Decoration: [[Lisa Dean]]
+** ''[[The Godfather Part III]]''&nbsp;– Art Direction: [[Dean Tavoularis]]; Set Decoration: [[Gary Fettis]]
+** ''[[Hamlet (1990 film)|Hamlet]]''&nbsp;– Art Direction: [[Dante Ferretti]]; Set Decoration: [[Francesca Lo Schiavo]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Dances With Wolves]]''&nbsp;– [[Dean Semler]]'''
+** ''[[Avalon (1990 film)|Avalon]]''&nbsp;– [[Allen Daviau]]
+** ''[[Dick Tracy (1990 film)|Dick Tracy]]''&nbsp;– [[Vittorio Storaro]]
+** ''[[The Godfather Part III]]''&nbsp;– [[Gordon Willis]]
+** ''[[Henry & June]]''&nbsp;– [[Philippe Rousselot]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[Dick Tracy (1990 film)|Dick Tracy]]''&nbsp;– [[John Caglione Jr.]] and [[Doug Drexler]]'''
+** ''[[Cyrano de Bergerac (1990 film)|Cyrano de Bergerac]]''&nbsp;– [[Michèle Burke]] and [[Jean-Pierre Eychenne]]
+** ''[[Edward Scissorhands]]''&nbsp;– [[Ve Neill]] and [[Stan Winston]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Cyrano de Bergerac (1990 film)|Cyrano de Bergerac]]''&nbsp;– [[Franca Squarciapino]]'''
+** ''[[Avalon (1990 film)|Avalon]]''&nbsp;– [[Gloria Gresham]]
+** ''[[Dances With Wolves]]''&nbsp;– [[Elsa Zamparelli]]
+** ''[[Dick Tracy (1990 film)|Dick Tracy]]''&nbsp;– [[Milena Canonero]]
+** ''[[Hamlet (1990 film)|Hamlet]]''&nbsp;– [[Maurizio Millenotti]]
+|{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Dances With Wolves]]''&nbsp;– [[Neil Travis]]'''
+** ''[[Ghost (1990 film)|Ghost]]''&nbsp;– [[Walter Murch]]
+** ''[[The Godfather Part III]]''&nbsp;– [[Barry Malkin]], [[Lisa Fruchtman]], and [[Walter Murch]]
+** ''[[Goodfellas]]''&nbsp;– [[Thelma Schoonmaker]]
+** ''[[The Hunt for Red October (film)|The Hunt for Red October]]''&nbsp;– [[Dennis Virkler]] and [[John Wright (film editor)|John Wright]]
+|}
+
+===[[Academy Special Achievement Award|Special Achievement Award]] (Visual Effects)===
+* ''[[Total Recall (1990 film)|Total Recall]]'' – [[Eric Brevig]], [[Rob Bottin]], [[Tim McGovern]] and [[Alex Funke]].<ref>{{cite news|last1=Silver |first1=Edward |title=The Highs and Lows of Future Special Effects : Movies: Character-driven stories are dominating due to a recession mentality. But summer releases will pack plenty of visual ingenuity |url=https://www.latimes.com/archives/la-xpm-1991-03-25-ca-739-story.html |access-date=January 16, 2014 |work=Los Angeles Times |date=March 25, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140714192823/http://articles.latimes.com/1991-03-25/entertainment/ca-739_1_effects-movie |archive-date=July 14, 2014 }}</ref>
+
+===[[Academy Honorary Awards|Honorary Awards]]===
+* To [[Sophia Loren]], one of the genuine treasures of world cinema who, in a career rich with memorable performances, has added permanent luster to our art form.<ref name="HonoraryOscars">{{harvnb|Kinn|Piazza|2002|p=269}}</ref>
+* To [[Myrna Loy]], in recognition of her extraordinary qualities both on screen and off, with appreciation for a lifetime's worth of indelible performances.<ref name="HonoraryOscars" />
+
+===[[Irving G. Thalberg Memorial Award]]===
+*[[David Brown (producer)|David Brown]] and [[Richard D. Zanuck]].<ref>{{cite news|last1=Puig |first1=Claudia |title=Movies |url=https://www.latimes.com/archives/la-xpm-1991-01-28-ca-67-story.html |access-date=November 26, 2010 |work=Los Angeles Times |date=January 28, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140714235508/http://articles.latimes.com/1991-01-28/entertainment/ca-67_1_richard-zanuck |archive-date=July 14, 2014 }}</ref>
+
+===Multiple nominations and awards===
+{{Col-begin|width=80%}}
+{{Col-1-of-2}}
+The following 15 films had multiple nominations:
+{| class="wikitable sortable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 12
+| ''[[Dances With Wolves]]''
+|-
+| rowspan=2 style="text-align:center" | 7
+| ''[[Dick Tracy (1990 film)|Dick Tracy]]''
+|-
+| ''[[The Godfather Part III]]''
+|-
+| style="text-align: center;" | 6
+| ''[[Goodfellas]]''
+|-
+| rowspan=2 style="text-align:center" | 5
+| ''[[Cyrano de Bergerac (1990 film)|Cyrano de Bergerac]]''
+|-
+| ''[[Ghost (1990 film)|Ghost]]''
+|-
+| rowspan=2 style="text-align:center" | 4
+| ''[[Avalon (1990 film)|Avalon]]''
+|-
+| ''[[The Grifters (film)|The Grifters]]''
+|-
+| rowspan=3 style="text-align:center" | 3
+| ''[[Awakenings]]''
+|-
+| ''[[The Hunt for Red October (film)|The Hunt for Red October]]''
+|-
+| ''[[Reversal of Fortune]]''
+|-
+| rowspan=4 style="text-align:center" | 2
+| ''[[Hamlet (1990 film)|Hamlet]]''
+|-
+| ''[[Home Alone]]''
+|-
+| ''[[Postcards from the Edge (film)|Postcards from the Edge]]''
+|-
+| ''[[Total Recall (1990 film)|Total Recall]]''{{efn|Not counting the non-competitive Special Achievement Award for ''Total Recall''.}}
+|}
+
+{{Col-2-of-2}}
+The following three films received multiple awards.
+
+{| class="wikitable sortable" style="text-align: center;"
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+| style="text-align: center;" | 7
+| ''[[Dances With Wolves]]''
+|-
+| style="text-align: center;" | 3
+| ''[[Dick Tracy (1990 film)|Dick Tracy]]''
+|-
+| style="text-align: center;" | 2
+| ''[[Ghost (1990 film)|Ghost]]''
+|}
+{{Col-end}}
+
+== Presenters and performers ==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref name="MFEO">{{harvnb|Wiley|Bona|1996|p=800}}</ref><ref>{{cite news|title=Prelude to the Oscars : Awards: The nominees and other party-goers had another race to contend with--going from a publicists' luncheon to a Scorsese tribute to the independent filmmakers awards. |url=https://www.latimes.com/archives/la-xpm-1991-03-25-ca-738-story.html |access-date=July 10, 2014 |work=Los Angeles Times |date=March 25, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140313194222/http://articles.latimes.com/1991-03-25/entertainment/ca-738_1_independent-spirit-awards/2 |archive-date=March 13, 2014 }}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Charlie|O'Donnell}} || Announcer for the 63rd annual Academy Awards
+|-
+| {{sortname|Karl|Malden}} (AMPAS President) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Michael|Caine}} || Presenter of the opening number
+|-
+| {{sortname|Denzel|Washington}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Dianne|Wiest}} || Presenter of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|Jack|Lemmon}} || Presenter of the film ''[[Ghost (1990 film)|Ghost]]'' on the Best Picture segment
+|-
+| {{sortname|Anne|Archer}} || Presenter of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Brenda|Fricker}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Chevy|Chase}}<br />[[Martin Short]] || Presenters of the awards for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+| {{sortname||Woody Woodpecker}} (Dave Spafford) || Presenter of the award for [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Anjelica|Huston}} || Presenter of the [[Honorary Academy Award]] to [[Myrna Loy]]
+|-
+| {{sortname|Joe|Pesci}} || Introducer of the performance of Best Original Song nominee "Somewhere in My Memory"
+|-
+| {{sortname|Annette|Bening}} || Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Geena|Davis}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+|{{sortname|Danny|Aiello}} || Presenter of the film ''[[Goodfellas]]'' on the Best Picture segment
+|-
+| {{sortname|Jack|Valenti}} || Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Michael|Douglas}} || Presenter of the [[Irving G. Thalberg Memorial Award]]s to [[David Brown (producer)|David Brown]] and [[Richard D. Zanuck]]
+|-
+| {{sortname|Alec|Baldwin}}<br />[[Kim Basinger]] || Introducers of the special dance number to the tune of the [[Academy Award for Best Original Score|Best Original Score]] nominees and presenters of the award for Best Original Score
+|-
+| {{sortname|Danny|Glover}}<br />[[Kevin Kline]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+|{{sortname|Richard|Gere}}<br />[[Susan Sarandon]] || Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Bob|Hope}} || Presenter of the "My First Movie" montage
+|-
+| {{sortname|Phoebe|Cates}}<br />[[Ron Silver]] || Presenters of the awards for [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+|{{sortname|Robert|De Niro}} || Presenter of the film ''[[Dances With Wolves]]'' on the Best Picture segment
+|-
+| {{sortname|Andy|García}}<br />[[Whoopi Goldberg]] || Presenters of the awards for [[Academy Award for Best Sound Editing|Best Sound Effects Editing]]
+|-
+| {{sortname|Christian|Slater}} || Introducer of the performance of Best Original Song nominee "Blaze of Glory"
+|-
+| {{sortname|Glenn|Close}} || Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Dustin|Hoffman}} || Presenter of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Jodie|Foster}}<br />[[Anthony Hopkins]] || Presenters of the awards for [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen]] and [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material from Another Medium]]
+|-
+| {{sortname|Debra|Winger}} || Presenter of the film ''[[Awakenings]]'' on the Best Picture segment
+|-
+| {{sortname|Gregory|Peck}} || Presenter of the [[Honorary Academy Award]] to [[Sophia Loren]]
+|-
+| [[Ann-Margret]]<br />[[Gregory Hines]] || Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Daniel|Day-Lewis}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Jessica|Tandy}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Jeff|Bridges}} || Presenter of the film ''[[The Godfather Part III]]'' on the Best Picture segment
+|-
+| {{sortname|Tom|Cruise}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Barbra|Streisand}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable"
+|-
+! Name(s) !! Role !! Performed
+|-
+| {{sortname|Bill|Conti}} || Musical arranger and conductor|| Orchestral
+|-
+| {{sortname|Jasmine|Guy}}<br />Steve LaChance|| Performers || Opening number
+|-
+| {{sortname|Billy|Crystal}} || Performer || Opening number: <br />''Goodfellas'' (to the tune of "[[Goody Goody]]"), <br />''Dances With Wolves'' (to the tune of "[[Dancing in the Dark (Howard Dietz and Arthur Schwartz song)|Dancing in the Dark]]" from ''[[The Band Wagon]]''), <br />''Ghost'' (to the tune of "[[L-O-V-E]]"), <br />''The Godfather Part III'' (to the tune of "[[Speak Softly Love]]" from ''[[The Godfather]]'') and <br /> ''Awakenings'' (to the tune of "[[All the Way (Frank Sinatra song)|All the Way]]")<ref>{{harvnb|Wiley|Bona|1996|p=802}}</ref>
+|-
+| {{sortname||Madonna}} || Performer || "[[Sooner or Later (Madonna song)|Sooner or Later]]" from ''[[Dick Tracy (1990 film)|Dick Tracy]]''
+|-
+| {{sortname||Children's choir|nolink=1}} || Performers || "Somewhere in My Memory" from ''[[Home Alone]]''
+|-
+| {{sortname|Reba|McEntire}} || Performer || "I'm Checkin' Out" from ''[[Postcards from the Edge (film)|Postcards from the Edge]]''
+|-
+| {{sortname||Bon Jovi}} || Performers || "[[Blaze of Glory (Jon Bon Jovi song)|Blaze of Glory]]" from ''[[Young Guns II]]''
+|-
+| {{sortname|Harry|Connick Jr.}} || Performer || "[[Promise Me You'll Remember (Love Theme from The Godfather Part III)]]" from ''[[The Godfather Part III]]''
+|}
+
+==Ceremony information==
+[[File:Billy Crystal by Gage Skidmore.jpg|thumb|130px|right|[[Billy Crystal]] hosted the ceremony.|alt=Photo of Billy Crystal in 2018]]
+
+Riding on the critical praise from [[62nd Academy Awards|last year's ceremony]], the academy rehired former film producer and former [[Directors Guild of America]] president [[Gilbert Cates]] to oversee production of the Oscar ceremony for the second straight time.<ref>{{cite news|title=Short Takes: Dates for '91 Oscars Scheduled |url=https://www.latimes.com/archives/la-xpm-1990-09-21-ca-956-story.html |access-date=February 27, 2011 |work=Los Angeles Times |date=September 21, 1990 |url-status=live |archive-url=https://web.archive.org/web/20140714122947/http://articles.latimes.com/1990-09-21/entertainment/ca-956_1_oscars-scheduled |archive-date=July 14, 2014 }}</ref> Two months before the awards gala, Cates selected actor and comedian [[Billy Crystal]] to host the show for the second consecutive year.<ref name="Orlando">{{cite news|title=Crystal Will Again Be Host Of Academy Awards Show |url=https://www.orlandosentinel.com/1991/01/25/crystal-will-again-be-host-of-academy-awards-show/ |access-date=February 27, 2014 |work=Orlando Sentinel |date=January 25, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140714164020/http://articles.orlandosentinel.com/1991-01-25/news/9101250672_1_academy-awards-show-crystal-shrine-auditorium |archive-date=July 14, 2014 }}</ref> Crystal made light of the honor by saying, "It's a great honor, and I hope to bring the show in under nine hours."<ref name="Orlando" />
+
+As with last year's theme of "Around the World in 3 1/2 Hours," Cates centered the show around a theme. He christened the ceremony with the theme "100 Years of Film" in celebration of the centennial of the development of both the [[kinetoscope]] by [[Thomas Edison]] and celluloid film by [[Eastman Kodak]].<ref>{{cite news|last1=Sloan|first1=Eugene|title=Movies Are the Star of the Show|work=USA Today |date=March 25, 1991|page=5D}}</ref> In tandem with the theme, the show featured an ambitious opening segment. Actor [[Michael Caine]] introduced the segment live via satellite from the [[Salon Indien du Grand Café]] in [[Paris]], where the short film ''[[L'Arrivée d'un train en gare de La Ciotat]]'' made its debut in 1895.<ref>{{cite news|last1=Scott|first1=Jay|title=Oscar awards|work=The Globe and Mail |date=March 26, 1991|page=C1}}</ref> After a brief clip of the film, the show cut back to the Shrine Auditorium stage, where actress [[Jasmine Guy]] and other dancers performed while a montage of film clips was projected in the background.<ref name="Wiley 1996 812">{{harvnb|Wiley|Bona|1996|p=812}}</ref> Filmmaker [[Chuck Workman]] filmed a vignette featuring actors such as [[Sally Field]], [[Andy García]], and [[Anjelica Huston]] discussing the first movie the actors watched.<ref>{{harvnb|Wiley|Bona|1996|p=806}}</ref>
+
+Several other people participated in the production of the ceremony. Film composer and musician [[Bill Conti]] served as musical director for the ceremony.<ref>{{cite web|title=Events |url=http://www.billconti.org/works/events/ |publisher=Bill Conti |access-date=June 22, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20150109153751/http://www.billconti.org/works/events/ |archive-date=January 9, 2015 }}</ref> Dancer [[Debbie Allen]] choreographed a dance number showcasing the Best Original Score nominees.<ref>{{harvnb|Wiley|Bona|1996|p=805}}</ref> Despite losing eight members of her band in a plane crash, a visibly emotional [[Reba McEntire]] performed the Best Original Song nominee "I'm Checkin' Out" from the film ''[[Postcards from the Edge (film)|Postcards from the Edge]]''.<ref>{{cite news|last1=MacCambridge|first1=Michael|title=Wolves' leads the pack with seven awards|work=Austin American-Statesman |date=March 26, 1991|page=D1}}</ref> At the beginning of the ceremony, wrangler Lisa Brown escorted host Crystal, and Beechnut, a horse that was prominently featured in the upcoming film ''[[City Slickers]]''.<ref>{{harvnb|Wilson|2007|p=150}}</ref>
+
+===Box office performance of nominees===
+At the time of the nominations announcement on February 12, the combined gross of the five Best Picture nominees at the US box office was $458.2 million with an average of $41 million per film.<ref name=BoxOfficeOscars>{{cite news|title=1990 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=1990&p=.htm |access-date=July 10, 2014 |work=[[Box Office Mojo]] |url-status=live |archive-url=https://web.archive.org/web/20140709002600/http://boxofficemojo.com/oscar/chart/?yr=1990&p=.htm |archive-date=July 9, 2014 }}</ref> ''Ghost'' was the highest earner among the Best Picture nominees, with $213.5 million in domestic box office receipts. The film was followed by ''Dances With Wolves'' ($104.3 million), ''The Godfather Part III'' ($62.5 million), ''Goodfellas'' ($41 million), and finally ''Awakenings'' ($36.7 million).<ref name=BoxOfficeOscars/>
+
+Of the top 50 highest-grossing films released in 1990, 51 nominations went to 12 films on the list. Only ''Ghost'' (2nd), ''Pretty Woman'' (3rd), ''Dances With Wolves'' (8th), ''Dick Tracy'' (9th), ''The Godfather Part III'' (17th), ''Goodfellas'' (30th), and ''Awakenings'' (34th) were nominated for Best Picture, directing, acting, or screenwriting. The other top 50 box office hits that earned nominations were ''Home Alone'' (1st), ''The Hunt for Red October'' (5th), ''Total Recall'' (6th), ''Days of Thunder'' (12th), and ''Edward Scissorhands'' (22nd).<ref>{{cite news|title=1990 Box Office Grosses (as of February 12, 1991) |url=https://boxofficemojo.com/yearly/chart/?asof=1991-02-12&view=releasedate&view2=domestic&yr=1990&sort=gross&order=DESC&p=.htm |access-date=July 10, 2014 |work=Box Office Mojo |url-status=live |archive-url=https://web.archive.org/web/20140714154754/http://boxofficemojo.com/yearly/chart/?asof=1991-02-12&view=releasedate&view2=domestic&yr=1990&sort=gross&order=DESC&p=.htm |archive-date=July 14, 2014 }}</ref>
+
+===Critical reviews===
+The show received a mixed reception from media publications. Some media outlets were more critical of the show. Rick DuBrow of the ''[[Los Angeles Times]]'' wrote, "It was a long day's journey into night for Oscar, one of the most effective sleeping pills of the year." He also added that while host Crystal started out strong, his jokes fell flat as the night progressed.<ref>{{cite news|last1=DuBrow |first1=Rick |title=Oscar Endures Another Hard Day's Night |url=https://www.latimes.com/archives/la-xpm-1991-03-26-ca-984-story.html |access-date=July 11, 2014 |work=Los Angeles Times |date=March 26, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140715010746/http://articles.latimes.com/1991-03-26/entertainment/ca-984_1_oscar-show |archive-date=July 15, 2014 }}</ref> ''[[The Washington Post]]'' television critic [[Tom Shales]] noted that Crystal, "followed many gags by instantly rating the reaction of the audience, as if it were up to them to please him instead of the other way around." In addition, he commented, "The Oscars seemed more of a fizzle than usual this year."<ref>{{cite news|last1=Shales|first1=Tom|title=The Show Doesn't Make A Spectacle of Itself|newspaper=[[The Washington Post]] |date=March 27, 1991|page=B1}}</ref> Columnist Dan Craft of ''[[The Pantagraph]]'' remarked, "The Oscar show has become innocuously hip and yuppified. Kitsch and nostalgia have given way to efficiency and upward mobility. Everyone is tiresomely well-behaved and, worse, well-dressed." He also commented that host Crystal's insider showbiz jokes fell flat and were confusing to television audiences.<ref>{{cite news|title=New Academy Awards version isn't much fun|work=The Pantagraph|publisher=Lee Enterprises|date=March 29, 1991|page=C2}}</ref>
+
+Other media outlets received the broadcast more positively. Columnist [[Harold Schindler]] of ''[[The Salt Lake Tribune]]'' wrote, "Billy Crystal kept things moving Monday night in such a manner that the extra quarter-hour was scarcely noticeable." He also said of the telecast's theme of film history, "The Academy used its film library to excellent advantage."<ref>{{cite news|last1=Schindler|first1=Harold|title=Academy Gives Its Best Performance As Crystal Sparkles on Oscar Night|work=The Salt Lake Tribune |date=March 27, 1991|page=A5}}</ref> Film critic [[Leonard Maltin]] remarked, "Emotions ran high and they gave us all a chance to feel vicariously what it might be like to win this kind of award...good guys finishing first and the part of Hollywood we like best, a happy ending."<ref name="Wiley 1996 812"/> ''[[Orlando Sentinel]]'' film critic Jay Boyar complimented Crystal for invigorating the gala, noting that his "clever remarks at the academy's 63rd annual awards presentation struck an entertaining balance between inside-Hollywood quips and general-audience jests."<ref>{{cite news|last1=Boyar |first1=Jay |title=Oscar Night's Improvements Are Crystal-clear |url=https://www.orlandosentinel.com/1991/03/29/oscar-nights-improvements-are-crystal-clear/ |access-date=July 14, 2014 |work=Orlando Sentinel |date=March 29, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140714225745/http://articles.orlandosentinel.com/1991-03-29/entertainment/9103280111_1_billy-crystal-sonny-bono-broadcast |archive-date=July 14, 2014 }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 42.7 million people over its length, which was a 6% increase from the [[62nd Academy Awards|previous year's ceremony]].<ref>{{cite news|last=Johnson |first=Greg |title=Call It the Glamour Bowl |url=https://articles.latimes.com/1999/mar/18/business/fi-18458/2 |access-date=August 26, 2013 |work=Los Angeles Times |date=March 18, 1999 |url-status=dead |archive-url=https://web.archive.org/web/20130928053918/http://articles.latimes.com/1999/mar/18/business/fi-18458/2 |archive-date=September 28, 2013 }}</ref> An estimated 76 million total viewers watched all or part of the awards.<ref>{{cite news|last1=Margulies |first1=Lee |title=TV Ratings: The Ratings Award Goes to Oscar |url=https://www.latimes.com/archives/la-xpm-1991-04-03-ca-1885-story.html |access-date=February 27, 2014 |work=Los Angeles Times |date=April 3, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140715044520/http://articles.latimes.com/1991-04-03/entertainment/ca-1885_1_ratings-award |archive-date=July 15, 2014 }}</ref> The show also drew higher [[Nielsen ratings]] compared to the previous ceremony, with 28.4% of households watching over a 48 share.<ref>{{cite news|last1=DuBrow |first1=Rick |title=Ratings Up Slightly for ABC's Oscar Telecast |url=https://www.latimes.com/archives/la-xpm-1991-03-27-ca-1084-story.html |access-date=July 11, 2014 |work=Los Angeles Times |date=March 27, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140715000350/http://articles.latimes.com/1991-03-27/entertainment/ca-1084_1_abc-s-oscar-telecast |archive-date=July 15, 2014 }}</ref> It was the most watched Oscars telecast since the [[56th Academy Awards|56th ceremony]] held in 1984.<ref>{{cite news |last1=Gorman |first1=Bill |title=1-Featured With No 'Avatar' Expect 'Academy Awards' Viewership To Fall; Ratings History + Your Guess For This Year (Poll) |url=http://tvbythenumbers.zap2it.com/2011/02/26/with-no-avatar-expect-academy-awards-viewership-to-fall-ratings-history-your-guess-for-this-year-poll/83754/ |access-date=February 28, 2014 |work=TV by the Numbers |publisher=Tribune Company |date=February 26, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20140714151329/http://tvbythenumbers.zap2it.com/2011/02/26/with-no-avatar-expect-academy-awards-viewership-to-fall-ratings-history-your-guess-for-this-year-poll/83754/ |archive-date=July 14, 2014 }}</ref>
+
+In July 1991, the ceremony presentation received nine nominations at the [[43rd Primetime Emmy Awards|43rd Primetime Emmy]]s.<ref>{{cite news|title=Primetime Emmy Award database |url=http://www.emmys.com/shows/63rd-annual-academy-awards |access-date=July 11, 2014 |publisher=[[Academy of Television Arts and Sciences]] |url-status=live |archive-url=https://web.archive.org/web/20140714204016/http://www.emmys.com/shows/63rd-annual-academy-awards |archive-date=July 14, 2014 }}</ref> The following month, the ceremony won three of those nominations for [[Primetime Emmy Award for Outstanding Variety Series|Outstanding Variety, Music, or Comedy Program]] (Gil Cates), [[Primetime Emmy Award for Outstanding Individual Performance in a Variety or Music Program|Outstanding Individual Performance in a Variety or Music Program]] (Billy Crystal), and [[Primetime Emmy Award for Outstanding Writing for a Variety Series|Outstanding Writing for a Variety or Music Program]] ([[Hal Kanter]], [[Buz Kohan]], Billy Crystal, [[David Steinberg]], [[Bruce Vilanch]], and [[Robert Wuhl]]).<ref>{{cite news|title=Emmy Awards: The Other Winners |url=https://www.latimes.com/archives/la-xpm-1991-08-26-ca-995-story.html |access-date=July 11, 2014 |work=Los Angeles Times |date=August 26, 1991 |url-status=live |archive-url=https://web.archive.org/web/20140714112217/http://articles.latimes.com/1991-08-26/entertainment/ca-995_1_academy-awards |archive-date=July 14, 2014 }}</ref>
+
+==See also==
+
+* [[11th Golden Raspberry Awards]]
+* [[33rd Grammy Awards]]
+* [[43rd Primetime Emmy Awards]]
+* [[44th British Academy Film Awards]]
+* [[45th Tony Awards]]
+* [[48th Golden Globe Awards]]
+* [[List of submissions to the 63rd Academy Awards for Best Foreign Language Film]]
+
+==Notes==
+{{Notelist}}
+
+==References==
+{{reflist|30em}}
+
+==Bibliography==
+{{Refbegin}}
+*{{Citation
+ |last1=Kinn
+ |first1=Gail
+ |last2=Piazza
+ |first2=Jim
+ |title=The Academy Awards: The Complete Unofficial History
+ |year=2002 
+ |isbn=978-1579123963 |location=New York, United States 
+ |publisher=[[Workman Publishing Company]]
+}}
+*{{Citation
+ |last1=Wiley 
+ |first1=Mason
+ |last2=Bona
+ |first2=Damien
+ |title=Inside Oscar: The Unofficial History of the Academy Awards
+ |year=1996 
+ |isbn=0-345-40053-4
+ |location=New York, United States 
+ |edition=5
+ |oclc=779680732 
+ |publisher=[[Ballantine Books]]
+}}
+*{{Citation
+ |last=Wilson 
+ |first=Staci Lynne
+ |title=Animal Movies Guide
+ |year=2007 
+ |isbn=978-0-967518-534
+ |oclc=779680732 
+ |publisher=Running Free Press
+}}
+{{refend}}
+
+==External links==
+'''Official websites'''
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=October 2, 2018 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+'''Analysis'''
+* [http://www.filmsite.org/aa90.html 1990 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20150402130244/http://www.filmsite.org/aa90.html |date=April 2, 2015 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/1991 Academy Awards, USA: 1991] {{Webarchive|url=https://web.archive.org/web/20171115062238/http://www.imdb.com/event/ev0000003/1991 |date=November 15, 2017 }} [[Internet Movie Database]]
+
+'''Other resources'''
+* {{IMDb title|0266218|The 63rd Annual Academy Awards}}
+
+{{Academy Awards Chron}}
+{{EmmyAward VarietyMusicComedy 1976-2000}}
+{{Universal Animation Studios}}
+
+{{featured list}}
+
+{{DEFAULTSORT:Academy Awards, 63rd}}
+[[Category:1990 film awards]]
+[[Category:1991 in Los Angeles]]
+[[Category:Academy Awards ceremonies]]
+[[Category:Primetime Emmy Award for Outstanding Variety Series winners]]
+[[Category:1991 in American cinema]]
+[[Category:March 1991 in the United States]]
+[[Category:1991 awards in the United States|Academy]]
+[[Category:Television shows directed by Jeff Margolis]]

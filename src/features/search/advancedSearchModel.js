@@ -98,10 +98,11 @@ function normalizeValue(type, value, mediaType) {
   if (['year', 'rating'].includes(type)) return numericValue(value, type);
   if (type === 'minimum_votes') return { value: integer(value?.value, 'Minimum votes', 0, 10000000) };
   if (type === 'runtime') return runtimeValue(value);
-  if (['viewing_status', 'resolution', 'library_source', 'availability'].includes(type)) {
+  if (['viewing_status', 'resolution', 'library_source', 'availability', 'tv_status'].includes(type)) {
     const id = text(value?.id, 80);
     const label = text(value?.label, 120);
     if (!id || !label) fail(`${type} requires a controlled value`);
+    if (type === 'tv_status' && !['0', '1', '2', '3', '4', '5'].includes(id)) fail('Unknown series status');
     return { id, label };
   }
   fail(`Unsupported criterion type: ${type}`);
@@ -117,7 +118,7 @@ function valueKey(type, value) {
 function normalizeGroup(scope, group, mediaType) {
   const type = text(group?.type, 40).toLowerCase();
   const definition = criterionFor(scope, type);
-  if (!definition || type === 'sort') fail(`Criterion ${type || '(missing)'} is not supported in ${scope}`);
+  if (!definition || type === 'sort' || (type === 'tv_status' && mediaType !== 'tv')) fail(`Criterion ${type || '(missing)'} is not supported in ${scope}`);
   const incoming = Array.isArray(group?.values) ? group.values : [];
   if (!incoming.length) fail(`${type} requires at least one value`);
   if (incoming.length > ADVANCED_SEARCH_LIMITS.valuesPerGroup) fail(`${type} exceeds the per-group limit`);

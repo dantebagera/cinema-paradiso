@@ -1,0 +1,355 @@
+{{oscars short description|films-year=1949}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 22
+| award            = Academy Awards
+| date             = March 23, 1950
+| site             = [[RKO Pantages Theatre]], [[Hollywood, Los Angeles, California|Hollywood, California]]
+| host             = [[Paul Douglas (actor)|Paul Douglas]]
+| best_picture     = ''[[All the King's Men (1949 film)|All the King's Men]]''
+| most_wins        = ''[[The Heiress (film)|The Heiress]]'' (4)
+| most_nominations = ''The Heiress'' (8)
+| last             = 21st
+| next             = 23rd
+}}
+
+The '''22nd Academy Awards''' were held on March 23, 1950, at the [[Pantages Theatre (Hollywood)|RKO Pantages Theatre]], honoring the [[1949 in film|films in 1949]]. This was the final year in which all five [[Academy Award for Best Picture|Best Picture]] nominees were in Black & White, and the first year in which every film nominated for Best Picture won multiple Oscars.
+
+''[[All the King's Men (1949 film)|All the King's Men]]'' became the first of two films to date to win Best Picture and two acting Oscars, yet lose Best Director (the other being ''[[Shakespeare in Love]]'' (1998)). This year marked the only occasion to date of two films each receiving two acting nominations within the same category: both ''[[Pinky (film)|Pinky]]'' and ''[[Come to the Stable]]'' received two nominations for [[Academy Award for Best Supporting Actress|Best Supporting Actress]] ([[Ethel Barrymore]] and [[Ethel Waters]], and [[Celeste Holm]] and [[Elsa Lanchester]], respectively). ''[[A Chance to Live]]'' and ''[[So Much for So Little]]''<nowiki/>'s joint win in the Best Documentary (Short Subject) category marked the second occurrence of a tie in Oscar history.
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Joseph L. Mankiewicz (1950).jpg
+| caption1          = [[Joseph L. Mankiewicz]]; Best Director and Best Screenplay winner
+| image2            = Broderick Crawford 1970.JPG
+| caption2          = [[Broderick Crawford]]; Best Actor winner
+| image3            = Olivia DeHavilland-2.JPG
+| caption3          = [[Olivia de Havilland]]; Best Actress winner
+| image4            = Dean Jagger in Dangerous Number trailer.jpg
+| caption4          = [[Dean Jagger]]; Best Supporting Actor winner
+| image5            = Mercedes McCambridge - 1950.jpg
+| caption5          = [[Mercedes McCambridge]]; Best Supporting Actress winner
+| image6            = Aaron Copland 1970.JPG
+| caption6          = [[Aaron Copland]]; Best Scoring of a Dramatic or Comedy Picture winner
+| image7            = Lennie Hayton.jpg
+| caption7          = [[Lennie Hayton]]; Best Scoring of a Musical Picture co-winner
+| image8            = Cedric-Gibbons-1936.jpg
+| caption8          = [[Cedric Gibbons]]; Best Art Direction, Color co-winner
+| image9            = Costume designer William Travilla.jpg
+| caption9          = [[William Travilla|Travilla]]; Best Costume Design, Color co-winner
+}}
+
+=== Awards ===
+Nominees were announced on February 12, 1950. Winners are listed first and highlighted in boldface.<ref name="Oscars1950">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1950 |title=The 22nd Academy Awards (1950) Nominees and Winners |access-date=2011-08-18 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093814/http://www.oscars.org/awards/academyawards/legacy/ceremony/22nd-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref><ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1949" in the "Award Year(s)" drop-down menu and press "Search".</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Picture|Best Motion Picture]]}}
+* '''''[[All the King's Men (1949 film)|All the King's Men]]'' – [[Robert Rossen]] for [[Columbia Pictures]]'''
+** ''[[Battleground (film)|Battleground]]'' – [[Dore Schary]] for [[Metro-Goldwyn-Mayer]]
+** ''[[The Heiress (film)|The Heiress]]'' – [[William Wyler]] for [[Paramount Pictures]]
+** ''[[A Letter to Three Wives]]'' – [[Sol C. Siegel]] for [[20th Century Fox]]
+** ''[[Twelve O'Clock High]]'' – [[Darryl F. Zanuck]] for [[20th Century Fox]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Director|Best Directing]]}}
+* '''[[Joseph L. Mankiewicz]]&nbsp;– ''[[A Letter to Three Wives]]'''''
+** [[Robert Rossen]]&nbsp;– ''[[All the King's Men (1949 film)|All the King's Men]]''
+** [[William A. Wellman]]&nbsp;– ''[[Battleground (film)|Battleground]]''
+** [[Carol Reed]]&nbsp;– ''[[The Fallen Idol (film)|The Fallen Idol]]''
+** [[William Wyler]]&nbsp;– ''[[The Heiress (film)|The Heiress]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Broderick Crawford]]&nbsp;– ''[[All the King's Men (1949 film)|All the King's Men]]'' as Willie Stark'''
+** [[Kirk Douglas]]&nbsp;– ''[[Champion (1949 film)|Champion]]'' as Midge Kelly
+** [[Gregory Peck]]&nbsp;– ''[[Twelve O'Clock High]]'' as Brigadier General Frank Savage
+** [[Richard Todd]]&nbsp;– ''[[The Hasty Heart]]'' as Cpl. Lachlan "Lachie" MacLachlan
+** [[John Wayne]]&nbsp;– ''[[Sands of Iwo Jima]]'' as Sgt. John M. Stryker
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Olivia de Havilland]]&nbsp;– ''[[The Heiress (film)|The Heiress]]'' as Catherine Sloper'''
+** [[Jeanne Crain]]&nbsp;– ''[[Pinky (film)|Pinky]]'' as Patricia "Pinky" Johnson
+** [[Susan Hayward]]&nbsp;– ''[[My Foolish Heart (1949 film)|My Foolish Heart]]'' as Eloise Winters
+** [[Deborah Kerr]]&nbsp;– ''[[Edward, My Son]]'' as Evelyn Boult
+** [[Loretta Young]]&nbsp;– ''[[Come to the Stable]]'' as Sister Margaret
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Dean Jagger]]&nbsp;– ''[[Twelve O'Clock High]]'' as Major Harvey Stovall'''
+** [[John Ireland (actor)|John Ireland]]&nbsp;– ''[[All the King's Men (1949 film)|All the King's Men]]'' as Jack Burden
+** [[Arthur Kennedy]]&nbsp;– ''[[Champion (1949 film)|Champion]]'' as Connie
+** [[Ralph Richardson]]&nbsp;– ''[[The Heiress (film)|The Heiress]]'' as Dr. Austin Sloper
+** [[James Whitmore]]&nbsp;– ''[[Battleground (film)|Battleground]]'' as Sgt. Kinnie
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Mercedes McCambridge]]&nbsp;– ''[[All the King's Men (1949 film)|All the King's Men]]'' as Sadie Burke'''
+** [[Ethel Barrymore]]&nbsp;– ''[[Pinky (film)|Pinky]]'' as Miss Em
+** [[Celeste Holm]]&nbsp;– ''[[Come to the Stable]]'' as Sister Scholastica
+** [[Elsa Lanchester]]&nbsp;– ''Come to the Stable'' as Amelia Potts
+** [[Ethel Waters]]&nbsp;– ''Pinky'' as Dicey Johnson
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+* '''''[[The Stratton Story]]''&nbsp;– [[Douglas Morrow]]'''
+** ''[[Come to the Stable]]''&nbsp;– [[Clare Boothe Luce]]
+** ''[[It Happens Every Spring]]''&nbsp;– Shirley W. Smith and [[Valentine Davies]]
+** ''[[Sands of Iwo Jima]]''&nbsp;– [[Harry Brown (writer)|Harry Brown]]
+** ''[[White Heat]]''&nbsp;– [[Virginia Kellogg]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay)]]}}
+* '''''[[Battleground (film)|Battleground]]''&nbsp;– [[Robert Pirosh]]'''
+** ''[[Jolson Sings Again]]''&nbsp;– [[Sidney Buchman]]
+** ''[[Paisan]]''&nbsp;– [[Alfred Hayes (writer)|Alfred Hayes]], [[Federico Fellini]], [[Sergio Amidei]], [[Marcello Pagliero]], and [[Roberto Rossellini]]
+** ''[[Passport to Pimlico]]''&nbsp;– [[T. E. B. Clarke]]
+** ''[[The Quiet One (film)|The Quiet One]]''&nbsp;– [[Helen Levitt]], [[Janice Loeb]], and [[Sidney Meyers]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* ''' ''[[A Letter to Three Wives]]''&nbsp;– [[Joseph L. Mankiewicz]] from ''Letter to Five Wives'' by John Klempner'''
+** ''[[All the King's Men (1949 film)|All the King's Men]]''&nbsp;– [[Robert Rossen]] from ''[[All the King's Men]]'' by [[Robert Penn Warren]]
+** ''[[Bicycle Thieves]]''&nbsp;– [[Cesare Zavattini]] from ''The Bicycle Thief'' by [[Luigi Bartolini]]
+** ''[[Champion (1949 film)|Champion]]''&nbsp;– [[Carl Foreman]] from "Champion" by [[Ring Lardner]]
+** ''[[The Fallen Idol (film)|The Fallen Idol]]''&nbsp;– [[Graham Greene]] from "The Basement Room" by Graham Greene
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Daybreak in Udi]]''&nbsp;– [[Crown Film Unit]]'''
+** ''[[Kenji Comes Home]]''&nbsp;– [[Paul F. Heard]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[A Chance to Live]]''&nbsp;– [[Richard de Rochemont]]'''
+* '''''[[So Much for So Little]]''&nbsp;– [[Edward Selzer]]'''
+** ''[[1848 (film)|1848]]''&nbsp;– French Cinema General Cooperative
+** ''[[The Rising Tide (film)|The Rising Tide]]''&nbsp;– [[St. Francis Xavier University|St. Francis-Xavier University, Antigonish, Nova Scotia]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[Aquatic House Party]]''&nbsp;– [[Jack Eaton]]'''
+** ''[[Roller Derby Girl]]''&nbsp;– [[Justin Herman]]
+** ''[[So You Think You're Not Guilty]]''&nbsp;– [[Gordon Hollingshead]]
+** ''Spills and Chills''&nbsp;– [[Walton C. Ament]]
+** ''Water Trix''&nbsp;– [[Pete Smith (film producer)|Pete Smith]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[Van Gogh (1948 film)|Van Gogh]]''&nbsp;– [[Gaston Diehl]] and Robert Hessens'''
+** ''The Boy and the Eagle''&nbsp;– William Lasky
+** ''Chase of Death''&nbsp;– [[Irving Allen]]
+** ''The Grass Is Always Greener''&nbsp;– [[Gordon Hollingshead]]
+** ''Snow Carnival''&nbsp;– Gordon Hollingshead
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[For Scent-imental Reasons]]''&nbsp;– [[Edward Selzer]]'''
+** ''[[Hatch Up Your Troubles]]''&nbsp;– [[Fred Quimby]]
+** ''The Magic Fluke''&nbsp;– [[Stephen Bosustow]]
+** ''[[Toy Tinkers]]''&nbsp;– [[Walt Disney]]
+** <s>''[[Canary Row]]''&nbsp;– [[Edward Selzer]]</s> (nomination withdrawn by producer)
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+* '''''[[The Heiress (film)|The Heiress]]''&nbsp;– [[Aaron Copland]]'''
+** ''[[Beyond the Forest]]''&nbsp;– [[Max Steiner]]
+** ''[[Champion (1949 film)|Champion]]''&nbsp;– [[Dimitri Tiomkin]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+* '''''[[On the Town (film)|On the Town]]''&nbsp;– [[Roger Edens]] and [[Lennie Hayton]]'''
+** ''[[Jolson Sings Again]]''&nbsp;– [[Morris Stoloff]] and [[George Duning]]
+** ''[[Look for the Silver Lining (film)|Look for the Silver Lining]]''&nbsp;– [[Ray Heindorf]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[Baby, It's Cold Outside]]" from ''[[Neptune's Daughter (1949 film)|Neptune's Daughter]]''&nbsp;– Music and Lyrics by [[Frank Loesser]]'''
+** "[[It's a Great Feeling (song)|It's a Great Feeling]]" from ''[[It's a Great Feeling]]''&nbsp;– Music by [[Jule Styne]]; Lyrics by [[Sammy Cahn]]
+** "[[Lavender's Blue|Lavender Blue]]" from ''[[So Dear to My Heart]]''&nbsp;– Music by [[Eliot Daniel]]; Lyrics by [[Larry Morey]]
+** "[[My Foolish Heart (song)|My Foolish Heart]]" from ''[[My Foolish Heart (1949 film)|My Foolish Heart]]''&nbsp;– Music by [[Victor Young]]; Lyrics by [[Ned Washington]]
+** "Through a Long and Sleepless Night" from ''[[Come to the Stable]]''&nbsp;– Music by [[Alfred Newman (composer)|Alfred Newman]]; Lyrics by [[Mack Gordon]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound|Best Sound Recording]]}}
+* '''''[[Twelve O'Clock High]]''&nbsp;– [[Thomas T. Moulton]]'''
+** ''[[Once More, My Darling]]''&nbsp;– [[Leslie I. Carey]]
+** ''[[Sands of Iwo Jima]]''&nbsp;– [[Daniel J. Bloomberg]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[The Heiress (film)|The Heiress]]''&nbsp;– Art Direction: [[John Meehan (art director)|John Meehan]] and [[Harry Horner]]; Set Decoration: [[Emile Kuri]]'''
+** ''[[Come to the Stable]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Joseph C. Wright]]; Set Decoration: [[Thomas Little]] and [[Paul S. Fox]]
+** ''[[Madame Bovary (1949 film)|Madame Bovary]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Jack Martin Smith]]; Set Decoration: [[Edwin B. Willis]] and [[Richard Pefferle]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[Little Women (1949 film)|Little Women]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Paul Groesse]]; Set Decoration: [[Edwin B. Willis]] and [[Jack D. Moore]]'''
+** ''[[Adventures of Don Juan]]''&nbsp;– Art Direction: [[Edward Carrere]]; Set Decoration: [[Lyle Reifsnider]]
+** ''[[Saraband for Dead Lovers]]''&nbsp;– Art Direction and Set Direction: [[Jim Morahan]], [[William Kellner]] and [[Michael Relph]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[Battleground (film)|Battleground]]''&nbsp;– [[Paul C. Vogel]]'''
+** ''[[Champion (1949 film)|Champion]]''&nbsp;– [[Franz Planer]]
+** ''[[Come to the Stable]]''&nbsp;– [[Joseph LaShelle]]
+** ''[[The Heiress (film)|The Heiress]]''&nbsp;– [[Leo Tover]]
+** ''[[Prince of Foxes (film)|Prince of Foxes]]''&nbsp;– [[Leon Shamroy]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[She Wore a Yellow Ribbon]]''&nbsp;– [[Winton C. Hoch]]'''
+** ''[[The Barkleys of Broadway]]''&nbsp;– [[Harry Stradling]]
+** ''[[Jolson Sings Again]]''&nbsp;– [[William E. Snyder (cinematographer)|William Snyder]]
+** ''[[Little Women (1949 film)|Little Women]]''&nbsp;– [[Robert Planck]] and [[Charles Schoenbaum]]
+** ''[[Sand (1949 film)|Sand]]''&nbsp;– [[Charles G. Clarke]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+* '''''[[The Heiress (film)|The Heiress]]''&nbsp;– [[Edith Head]] and [[Gile Steele]]'''
+** ''[[Prince of Foxes (film)|Prince of Foxes]]''&nbsp;– [[Vittorio Nino Novarese]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+* '''''[[Adventures of Don Juan]]''&nbsp;– [[Leah Rhodes]], [[William Travilla|Travilla]] and [[Marjorie Best]]'''
+** ''[[Mother Is a Freshman]]''&nbsp;– [[Kay Nelson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Champion (1949 film)|Champion]]''&nbsp;– [[Harry W. Gerstad]]'''
+** ''[[All the King's Men (1949 film)|All the King's Men]]''&nbsp;– [[Robert Parrish]] and [[Al Clark (film editor)|Al Clark]]
+** ''[[Battleground (film)|Battleground]]''&nbsp;– [[John Dunning (film editor)|John Dunning]]
+** ''[[Sands of Iwo Jima]]''&nbsp;– [[Richard L. Van Enger]]
+** ''[[The Window (1949 film)|The Window]]''&nbsp;– [[Frederic Knudtson]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Effects]]}}
+* '''''[[Mighty Joe Young (1949 film)|Mighty Joe Young]]''&nbsp;– ARKO Productions'''
+** ''[[Tulsa (film)|Tulsa]]''&nbsp;– [[Walter Wanger|Walter Wanger Pictures]]
+|}
+
+===Special Foreign Language Film Award===
+* To ''[[Bicycle Thieves]]'' ([[Italy]]) - voted by the Academy Board of Governors as the most outstanding foreign language film released in the United States during 1949.
+
+===Special awards===
+*To [[Bobby Driscoll]], as the outstanding juvenile actor of 1949.
+*To [[Fred Astaire]] for his unique artistry and his contributions to the technique of musical pictures.
+*To [[Cecil B. DeMille]], distinguished motion picture pioneer, for 37 years of brilliant showmanship.
+*To [[Jean Hersholt]], for distinguished service to the motion picture industry.
+
+== Presenters and performers ==
+=== Presenters ===
+* [[June Allyson]] and [[Dick Powell]] (Best Cinematography)
+* [[Anne Baxter]] and [[John Hodiak]] (Short Subject Awards)
+* [[Charles Brackett]] (Honorary Award to Cecil B. DeMille)
+* [[James Cagney]] (Best Picture)
+* [[Peggy Dow]] and [[Joanne Dru]] (Best Costume Design)
+* [[José Ferrer]] (Scientific & Technical Awards)
+* [[Barbara Hale]] and [[Ruth Roman]] (Best Art Direction)
+* [[James Hilton (novelist)|James Hilton]] (Writing Awards)
+* [[John Lund (actor)|John Lund]] (Best Sound Recording)
+* [[Ida Lupino]] (Best Director)
+* [[Ray Milland]] (Best Supporting Actress)
+* [[George Murphy]] (Documentary Awards)
+* [[Patricia Neal]] (Best Special Effects)
+* [[Donald O'Connor]] (Juvenile Award to Bobby Driscoll)
+* [[Cole Porter]] (Music Awards)
+* [[Micheline Presle]] (Best Foreign Language Film)
+* [[Ronald Reagan]] (Honorary Award to Jean Hersholt)
+* [[Mark Robson (film director)|Mark Robson]] (Best Film Editing)
+* [[Ginger Rogers]] (Honorary Award to Fred Astaire)
+* [[James Stewart]] (Best Actress)
+* [[Claire Trevor]] (Best Supporting Actor)
+* [[Jane Wyman]] (Best Actor)
+
+=== Performers ===
+*[[Gene Autry]]
+*[[Ann Blyth]]
+*[[Arlene Dahl]], [[Betty Garrett]], [[Ricardo Montalbán]], and [[Red Skelton]] ("[[Baby, It's Cold Outside]]" from ''[[Neptune's Daughter (1949 film)|Neptune's Daughter]]'')
+*[[Dean Martin]]
+*[[Smilin' Jack Smith]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 8
+| ''[[The Heiress (film)|The Heiress]]''
+|- 
+| rowspan="2" style="text-align:center" | 7
+| ''[[All the King's Men (1949 film)|All the King's Men]]''
+|-
+| ''[[Come to the Stable]]''
+|-
+| rowspan="2" style="text-align:center" | 6
+| ''[[Battleground (film)|Battleground]]''
+|-
+| ''[[Champion (1949 film)|Champion]]''
+|-
+| rowspan="2" style="text-align:center" | 4
+| ''[[Sands of Iwo Jima]]''
+|-
+| ''[[Twelve O'Clock High]]''
+|-
+| rowspan="3" style="text-align:center" | 3
+| ''[[Jolson Sings Again]]''
+|-
+| ''[[A Letter to Three Wives]]''
+|-
+| ''[[Pinky (film)|Pinky]]''
+|-
+| rowspan="5" style="text-align:center" | 2
+| ''[[Adventures of Don Juan]]''
+|-
+| ''[[The Fallen Idol (film)|The Fallen Idol]]''
+|-
+| ''[[Little Women (1949 film)|Little Women]]''
+|-
+| ''[[My Foolish Heart (1949 film)|My Foolish Heart]]''
+|-
+| ''[[Prince of Foxes (film)|Prince of Foxes]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 4
+| ''[[The Heiress (film)|The Heiress]]''
+|-
+| rowspan=1, style="text-align:center" | 3
+| ''[[All the King's Men (1949 film)|All the King's Men]]''
+|-
+| rowspan=3, style="text-align:center" | 2
+| ''[[Battleground (film)|Battleground]]''
+|-
+| ''[[A Letter to Three Wives]]''
+|-
+| ''[[Twelve O'Clock High]]''
+|-
+|}
+
+{{Col-float-end}}
+
+==See also==
+*[[7th Golden Globe Awards]]
+*[[1949 in film]]
+* [[1st Primetime Emmy Awards]]
+* [[2nd Primetime Emmy Awards]]
+* [[3rd British Academy Film Awards]]
+* [[4th Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 22}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1949 film awards]]
+[[Category:1950 in Los Angeles]]
+[[Category:1950 in American cinema]]
+[[Category:March 1950 in the United States]]

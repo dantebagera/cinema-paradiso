@@ -1,0 +1,522 @@
+{{Featured list}}
+{{oscars short description|films-year=1980}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 53
+| award            = Academy Awards
+| image            = 53rd Academy Awards.jpg
+| alt              = Official poster for the 53rd Academy Awards in 1981
+| caption          = Official poster with original date
+| date             = March 31, 1981
+| site             = [[Dorothy Chandler Pavilion]]<br>[[Los Angeles]], California, U.S.
+| host             = [[Johnny Carson]]
+| producer         = [[Norman Jewison]]
+| director         = [[Marty Pasetta]]
+| best_picture     = ''[[Ordinary People]]''
+| most_wins        = ''Ordinary People'' (4)
+| most_nominations = ''[[The Elephant Man (1980 film)|The Elephant Man]]'' and ''[[Raging Bull]]'' (8)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 10 minutes<ref>{{cite news |title=''Ordinary People'' Wins Oscar for Best Movie |work=[[St. Louis Post-Dispatch]] |date=April 1, 1981 |page=9A}}</ref>
+| ratings          = 39.9&nbsp;million<br />31% ([[Nielsen ratings]])
+| last             = 52nd
+| next             = 54th
+}}
+
+The '''53rd Academy Awards''' ceremony, organized by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored [[1980 in film|films released in 1980]] and took place on March 31, 1981, at the [[Dorothy Chandler Pavilion]] in Los Angeles, beginning at 7:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 10:00&nbsp;p.m. [[Eastern Time Zone|EST]]. The ceremony was scheduled to take place originally on the previous day but was postponed due to the [[Attempted assassination of Ronald Reagan|attempted assassination]] of [[Ronald Reagan]].<ref>{{harvnb|Wiley|Bona|1996|p=592}}</ref> During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 20 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Norman Jewison]] and directed by [[Marty Pasetta]].<ref>{{harvnb|Osborne|2013|p=413}}</ref> Comedian and talk show host [[Johnny Carson]] hosted the show for the third consecutive time. Two weeks earlier, in a ceremony held at [[The Beverly Hilton]] in [[Beverly Hills, California]], on March 15, the [[Academy Scientific and Technical Awards]] were presented by hosts [[Ed Asner]] and [[Fay Kanin]].<ref>{{cite news|title=Past Scientific & Technical Awards Ceremonies|url=http://www.oscars.org/awards/scitech/pastawards.html|access-date=July 31, 2013 |publisher=[[Academy of Motion Picture Arts and Sciences]] |archive-url=https://web.archive.org/web/20140213185729/http://www.oscars.org/awards/scitech/pastawards.html|archive-date=February 13, 2014}}</ref>
+
+''[[Ordinary People]]'' won four awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news |last1=Harmetz |first1=Aljean |title=''Ordinary People'' Wins the Academy Award for Best Picture |url=https://www.nytimes.com/1981/04/01/movies/ordinary-people-wins-the-academy-award-for-best-picture.html |access-date=January 3, 2021 |work=[[The New York Times]] |url-access=limited |date=April 1, 1981 |archive-date=February 27, 2022 |archive-url=https://web.archive.org/web/20220227172303/https://www.nytimes.com/1981/04/01/movies/ordinary-people-wins-the-academy-award-for-best-picture.html |url-status=live }}</ref> Other winners included ''[[Tess (1979 film)|Tess]]'' with three awards, ''[[The Empire Strikes Back]]'', ''[[Fame (1980 film)|Fame]]'', ''[[Melvin and Howard]]'', and ''[[Raging Bull]]'' with two, and ''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]'', ''[[The Dollar Bottom]]'', ''[[The Fly (1980 film)|The Fly]]'', ''[[From Mao to Mozart: Isaac Stern in China]]'', ''[[Karl Hess: Toward Liberty]]'', and ''[[Moscow Does Not Believe in Tears]]'' with one. The telecast garnered 39.9&nbsp;million viewers in the United States.
+
+==Winners and nominees==
+The nominees for the 53rd Academy Awards were announced on February 17, 1981, by Academy president [[Fay Kanin]] and actor [[William Devane]].<ref>{{cite news |title=''Ordinary People'' Expected to Top Oscar Candidates |work=[[The Modesto Bee]] |date=February 17, 1981 |page=C4}}</ref> ''[[The Elephant Man (1980 film)|The Elephant Man]]'' and ''[[Raging Bull]]'' tied for the most nominations with eight each.<ref>{{cite news |last1=Harmetz |first1=Aljean |title=''Elephant Man'' and ''Bull'' Up for 8 Oscars Each |url=https://www.nytimes.com/1981/02/18/movies/elephant-man-and-bull-up-for-8-oscars-each.html |access-date=February 3, 2021 |work=The New York Times |url-access=limited |date=February 18, 1981 |archive-date=March 8, 2021 |archive-url=https://web.archive.org/web/20210308175543/https://www.nytimes.com/1981/02/18/movies/elephant-man-and-bull-up-for-8-oscars-each.html |url-status=live }}</ref>  The winners were announced at the awards ceremony on March 31. Best Director winner [[Robert Redford]] became the third individual to win this category for his directing debut and the first actor to achieve this feat.<ref>{{harvnb|Holden|1993|p=328}}</ref> At age 20, Best Supporting Actor winner [[Timothy Hutton]] was the youngest male acting winner in Oscar history.<ref>{{harvnb|Kinn|Piazza|2002|p=226}}</ref> ''[[Fame (1980 film)|Fame]]'' became the first film to earn two nominations for Best Original Song.<ref>{{harvnb|Sackett|1995|p=248}}</ref>
+
+===Awards===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Robert_Redford_(cropped).jpg
+| caption1          = [[Robert Redford]], Best Director winner
+| image2            = Robert De Niro Cannes 2016 2.jpg
+| caption2          = [[Robert De Niro]], Best Actor winner
+| image3            = Sissy Spacek by David Shankbone (cropped).jpg
+| caption3          = [[Sissy Spacek]], Best Actress winner
+| image4            = TimothyHutton08TIFF.jpg
+| caption4          = [[Timothy Hutton]], Best Supporting Actor winner
+| image5            = Mary Steenburgen in 2009.jpg
+| caption5          = [[Mary Steenburgen]], Best Supporting Actress winner
+| image6            = Goldman bo (cropped).jpg
+| caption6          = [[Bo Goldman]], Best Screenplay Written Directly for the Screen winner
+| image7            = Alvin Sargent.jpg
+| caption7          = [[Alvin Sargent]], Best Screenplay Based on Material from Another Medium winner
+| image8            = Владимир Меньшов 2018 (cropped).jpg
+| caption8          = [[Vladimir Menshov]], Best Foreign Language Film winner
+| image9            = Rofusz Ferenc.jpg
+| caption9          = [[Ferenc Rofusz]], Best Animated Short Film winner
+| image10           = Thelma Schoonmaker (53274434525) (cropped).jpg
+| caption10         = [[Thelma Schoonmaker]], Best Film Editing winner
+}}
+
+Winners are listed first, highlighted in '''boldface''' and indicated with a double dagger ({{double dagger}}).<ref name="Oscars1981">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1981 |title=The 53rd Academy Awards (1981) Nominees and Winners |access-date=October 7, 2011 |publisher=Academy of Motion Picture Arts and Sciences |url-status=live |archive-url=https://web.archive.org/web/20141110111156/http://www.oscars.org/oscars/ceremonies/1981 |archive-date=November 10, 2014 }}</ref>
+
+{| role="presentation" class=wikitable
+|+{{sronly|Table featuring winners and nominees of the 53rd Academy Awards}}
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Ordinary People]]''&nbsp;– [[Ronald L. Schwary]], producer'''{{double dagger}}
+** ''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]''&nbsp;– [[Bernard Schwartz (producer)|Bernard Schwartz]], producer
+** ''[[The Elephant Man (1980 film)|The Elephant Man]]''&nbsp;– [[Jonathan Sanger]], producer
+** ''[[Raging Bull]]''&nbsp;– [[Robert Chartoff]] and [[Irwin Winkler]], producers
+** ''[[Tess (1979 film)|Tess]]''&nbsp;– [[Claude Berri]], producer; Timothy Burrill, co-producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Robert Redford]]&nbsp;– ''[[Ordinary People]]'''''{{double dagger}}
+**[[David Lynch]]&nbsp;– ''[[The Elephant Man (1980 film)|The Elephant Man]]''
+**[[Martin Scorsese]]&nbsp;– ''[[Raging Bull]]''
+**[[Richard Rush (director)|Richard Rush]]&nbsp;– ''[[The Stunt Man]]''
+**[[Roman Polanski]]&nbsp;– ''[[Tess (1979 film)|Tess]]''
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+*'''[[Robert De Niro]]&nbsp;– ''[[Raging Bull]]'' as [[Jake LaMotta]]'''{{double dagger}}
+** [[Robert Duvall]]&nbsp;– ''[[The Great Santini]]'' as Lt. Col. Wilbur "Bull" Meechum
+** [[John Hurt]]&nbsp;– ''[[The Elephant Man (1980 film)|The Elephant Man]]'' as [[Joseph Merrick]]
+** [[Jack Lemmon]]&nbsp;– ''[[Tribute (1980 film)|Tribute]]'' as Scottie Templeton
+** [[Peter O'Toole]]&nbsp;– ''[[The Stunt Man]]'' as Eli Cross
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+*'''[[Sissy Spacek]]&nbsp;– ''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]'' as [[Loretta Lynn]]'''{{double dagger}}
+** [[Ellen Burstyn]]&nbsp;– ''[[Resurrection (1980 film)|Resurrection]]'' as Edna Mae McCauley
+** [[Goldie Hawn]]&nbsp;– ''[[Private Benjamin (1980 film)|Private Benjamin]]'' as Judy Benjamin
+** [[Mary Tyler Moore]]&nbsp;– ''[[Ordinary People]]'' as Beth Jarrett
+** [[Gena Rowlands]]&nbsp;– ''[[Gloria (1980 film)|Gloria]]'' as Gloria Swenson
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Timothy Hutton]]&nbsp;– ''[[Ordinary People]]'' as Conrad Jarrett'''{{double dagger}}
+**[[Judd Hirsch]]&nbsp;– ''Ordinary People'' as Dr. Tyrone C. Berger
+**[[Michael O'Keefe]]&nbsp;– ''[[The Great Santini]]'' as Ben
+**[[Joe Pesci]]&nbsp;– ''[[Raging Bull]]'' as [[Joey LaMotta]]
+**[[Jason Robards]]&nbsp;– ''[[Melvin and Howard]]'' as [[Howard Hughes]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Mary Steenburgen]]&nbsp;– ''[[Melvin and Howard]]'' as [[Melvin Dummar|Lynda West Dummar]]'''{{double dagger}}
+**[[Eileen Brennan]]&nbsp;– ''[[Private Benjamin (1980 film)|Private Benjamin]]'' as Doreen Lewis
+**[[Eva Le Gallienne]]&nbsp;– ''[[Resurrection (1980 film)|Resurrection]]'' as Pearl
+**[[Cathy Moriarty]]&nbsp;– ''[[Raging Bull]]'' as [[Vikki LaMotta|Vikki Thailer LaMotta]]
+**[[Diana Scarwid]]&nbsp;– ''[[Inside Moves]]'' as Louise
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+*'''''[[Melvin and Howard]]''&nbsp;– [[Bo Goldman]]'''{{double dagger}}
+**''[[Brubaker]]''&nbsp;– Screenplay by [[W. D. Richter]]; Story by [[W. D. Richter]] and [[Arthur A. Ross]]
+**''[[Fame (1980 film)|Fame]]''&nbsp;– [[Christopher Gore (writer)|Christopher Gore]]
+**''[[My American Uncle|Mon Oncle D'Amerique]]''&nbsp;– [[Jean Gruault]]
+**''[[Private Benjamin (1980 film)|Private Benjamin]]''&nbsp;– [[Nancy Meyers]], [[Charles Shyer]] and [[Harvey Miller (screenwriter)|Harvey Miller]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material from Another Medium)]]}}
+*'''''[[Ordinary People]]''&nbsp;– [[Alvin Sargent]] based on [[Ordinary People (Guest novel)|the novel]] by [[Judith Guest]]'''{{double dagger}}
+**''[[Breaker Morant (film)|Breaker Morant]]''&nbsp;– [[Jonathan Hardy]], [[David Stevens (screenwriter)|David Stevens]] and [[Bruce Beresford]] based on [[Breaker Morant (play)|the play]] by [[Kenneth G. Ross]]
+**''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]''&nbsp;– [[Thomas Rickman (writer)|Thomas Rickman]] based on [[Loretta Lynn: Coal Miner's Daughter|the autobiography]] by [[Loretta Lynn]] with [[George Vecsey]]
+**''[[The Elephant Man (1980 film)|The Elephant Man]]''&nbsp;– Christopher De Vore, [[Eric Bergren]] and [[David Lynch]] based on the books ''The Elephant Man and Other Reminiscences'' by [[Sir Frederick Treves, 1st Baronet|Sir Frederick Treves]] and ''The Elephant Man: A Study in Human Dignity'' by [[Ashley Montagu]]
+**''[[The Stunt Man]]''&nbsp;– Screenplay by [[Lawrence B. Marcus]]; Adaptation by [[Richard Rush (director)|Richard Rush]] based on the novel by [[Paul Brodeur]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best International Feature Film|Best Foreign Language Film]]}}
+*'''''[[Moscow Does Not Believe in Tears]]'' ([[List of Soviet submissions for the Academy Award for Best International Feature Film|Soviet Union]]) in [[Russian language|Russian]]&nbsp;– directed by [[Vladimir Menshov]]'''{{double dagger}}
+**''[[Bizalom|Confidence]]'' ([[List of Hungarian submissions for the Academy Award for Best International Feature Film|Hungary]]) in [[Hungarian language|Hungarian]]&nbsp;– directed by [[István Szabó]]
+**''[[Kagemusha]]'' ([[List of Japanese submissions for the Academy Award for Best International Feature Film|Japan]]) in [[Japanese language|Japanese]]&nbsp;– directed by [[Akira Kurosawa]]
+**''[[The Last Metro]]'' ([[List of French submissions for the Academy Award for Best International Feature Film|France]]) in [[French language|French]]&nbsp;– directed by [[François Truffaut]]
+**''[[The Nest (1980 film)|The Nest]]'' ([[List of Spanish submissions for the Academy Award for Best International Feature Film|Spain]]) in [[Spanish language|Spanish]]&nbsp;– directed by [[Jaime de Armiñán]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[From Mao to Mozart: Isaac Stern in China]]''&nbsp;– [[Murray Lerner]]'''{{double dagger}}
+**''[[Agee (film)|Agee]]''&nbsp;– Ross Spears
+**''[[The Day After Trinity]]''&nbsp;– [[Jon H. Else]]
+**''[[Front Line (film)|Front Line]]''&nbsp;– [[David Bradbury (film maker)|David Bradbury]]
+**''[[The Yellow Star: The Persecution of the Jews in Europe 1933–45]]''&nbsp;– Bengt von zur Muehlen and [[Arthur Cohn]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Karl Hess: Toward Liberty]]''&nbsp;– Roland Hallé and [[Peter Ladue]]'''{{double dagger}}
+**''[[Don't Mess with Bill (film)|Don't Mess with Bill]]''&nbsp;– [[John Watson (film producer)|John Watson]] and [[Pen Densham]]
+**''[[The Eruption of Mount St. Helens!]]''&nbsp;– George Casey
+**''[[It's the Same World]]''&nbsp;– [[Dick Young (producer)|Dick Young]]
+**''[[Luther Metke at 94]]''&nbsp;– Richard Hawkins and [[Jorge Preloran]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Dramatic Live Action)]]}}
+*'''''[[The Dollar Bottom]]''&nbsp;– [[Lloyd Phillips]]'''{{double dagger}}
+**''[[Fall Line (film)|Fall Line]]''&nbsp;– Bob Carmichael and [[Greg Lowe]]
+**''[[A Jury of Her Peers]]''&nbsp;– Sally Heckel
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[The Fly (1980 film)|The Fly]]''&nbsp;– [[Ferenc Rofusz]]'''{{double dagger}}
+**''[[All Nothing]]''&nbsp;– [[Frédéric Back]]
+**''[[History of the World in Three Minutes Flat]]''&nbsp;– [[Michael Mills (Canadian producer)|Michael Mills]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[Fame (1980 film)|Fame]]''&nbsp;– [[Michael Gore]]'''{{double dagger}}
+**''[[Altered States]]''&nbsp;– [[John Corigliano]]
+**''[[The Elephant Man (1980 film)|The Elephant Man]]''&nbsp;– [[John Morris (composer)|John Morris]]
+**''[[The Empire Strikes Back]]''&nbsp;– [[John Williams]]
+**''[[Tess (1979 film)|Tess]]''&nbsp;– [[Philippe Sarde]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+*'''"[[Fame (Irene Cara song)|Fame]]" from ''[[Fame (1980 film)|Fame]]''&nbsp;– Music by [[Michael Gore]]; Lyrics by [[Dean Pitchford]]'''{{double dagger}}
+**"[[9 to 5 (Dolly Parton song)|9 to 5]]" from ''[[9 to 5 (film)|9 to 5]]''&nbsp;– Music and Lyrics by [[Dolly Parton]]
+**"[[On the Road Again (Willie Nelson song)|On the Road Again]]" from ''[[Honeysuckle Rose (film)|Honeysuckle Rose]]''&nbsp;– Music and Lyrics by [[Willie Nelson]]
+**"[[Out Here on My Own]]" from ''[[Fame (1980 film)|Fame]]''&nbsp;– Music by [[Michael Gore]]; Lyrics by [[Lesley Gore]]
+**"People Alone" from ''[[The Competition (1980 film)|The Competition]]''&nbsp;– Music by [[Lalo Schifrin]]; Lyrics by [[Will Jennings]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[The Empire Strikes Back]]''&nbsp;– [[Bill Varney]], [[Steve Maslow]], [[Gregg Landaker]] and [[Peter Sutton (sound engineer)|Peter Sutton]]'''{{double dagger}}
+**''[[Altered States]]''&nbsp;– [[Arthur Piantadosi]], [[Les Fresholtz]], [[Michael Minkler]] and [[Willie D. Burton]]
+**''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]''&nbsp;– [[Richard Portman]], [[Roger Heman Jr|Roger Heman]] and [[James R. Alexander|Jim Alexander]]
+**''[[Fame (1980 film)|Fame]]''&nbsp;– [[Michael J. Kohut]], [[Aaron Rochin]], [[Jay M. Harding]] and [[Chris Newman (sound engineer)|Chris Newman]]
+**''[[Raging Bull]]''&nbsp;– [[Donald O. Mitchell]], [[William Nicholson (sound engineer)|Bill Nicholson]], [[David J. Kimball]] and [[Les Lazarowitz]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Tess (1979 film)|Tess]]''&nbsp;– Art Direction and Set Decoration: [[Pierre Guffroy]] and [[Jack Stephens (set decorator)|Jack Stephens]]'''{{double dagger}}
+**''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]''&nbsp;– Art Direction: [[John W. Corso]]; Set Decoration: [[John M. Dwyer]]
+**''[[The Elephant Man (1980 film)|The Elephant Man]]''&nbsp;– Art Direction: [[Stuart Craig]] and [[Robert Cartwright]]; Set Decoration: [[Hugh Scaife]]
+**''[[The Empire Strikes Back]]''&nbsp;– Art Direction: [[Norman Reynolds]], [[Leslie Dilley]], [[Harry Lange]] and [[Alan Tomkins]]; Set Decoration: [[Michael D. Ford|Michael Ford]]
+**''[[Kagemusha]]''&nbsp;– Art Direction and Set Decoration: [[Yoshirō Muraki]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Tess (1979 film)|Tess]]''&nbsp;– [[Geoffrey Unsworth]] and [[Ghislain Cloquet]]'''{{double dagger}}
+**''[[The Blue Lagoon (1980 film)|The Blue Lagoon]]''&nbsp;– [[Néstor Almendros]]
+**''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]''&nbsp;– [[Ralf D. Bode]]
+**''[[The Formula (1980 film)|The Formula]]''&nbsp;– [[James Crabe]]
+**''[[Raging Bull]]''&nbsp;– [[Michael Chapman (cinematographer)|Michael Chapman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Tess (1979 film)|Tess]]''&nbsp;– [[Anthony Powell (designer)|Anthony Powell]]'''{{double dagger}}
+**''[[The Elephant Man (1980 film)|The Elephant Man]]''&nbsp;– [[Patricia Norris]]
+**''[[My Brilliant Career (film)|My Brilliant Career]]''&nbsp;– [[Anna Senior]]
+**''[[Somewhere in Time (film)|Somewhere in Time]]''&nbsp;– [[Jean-Pierre Dorleac]]
+**''[[When Time Ran Out]]''&nbsp;– [[Paul Zastupnevich]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Raging Bull]]''&nbsp;– [[Thelma Schoonmaker]]'''{{double dagger}}
+**''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]''&nbsp;– [[Arthur Schmidt (film editor)|Arthur Schmidt]]
+**''[[The Competition (1980 film)|The Competition]]''&nbsp;– [[David Blewitt]]
+**''[[The Elephant Man (1980 film)|The Elephant Man]]''&nbsp;– [[Anne V. Coates]]
+**''[[Fame (1980 film)|Fame]]''&nbsp;– [[Gerry Hambling]]
+|}
+
+===Special Achievement Award (Visual Effects)===
+* ''[[The Empire Strikes Back]]'' – [[Brian Johnson (special effects artist)|Brian Johnson]], [[Richard Edlund]], [[Dennis Muren]] and [[Bruce Nicholson]].<ref>{{harvnb|Franks|2005|p=248}}</ref>
+
+===Honorary Award===
+* To [[Henry Fonda]], the consummate actor, in recognition of his brilliant accomplishments and enduring contribution to the art of motion pictures.<ref name="HonoraryandSpecial">{{cite web |title=Academy Awards Acceptance Speech Database |url=http://aaspeechesdb.oscars.org/results.aspx?QB5=AND&QF5=transcript+%7c+acceptorlink+%7c+ed+note+%7c+name+%7c+film+title+%7c+song+title+%7c+category+index+%7c+acceptor+statement+%7c+category+exact+%7c+name+authority+%7c+winner+statement+%7c+year+term&QI5=&QB1=AND&QF1=name+%7c+winner+statement+%7c+name+authority&QI1=&QB2=AND&QF2=film+title&QI2=&QB3=AND&QF3=category+index&QI3=&QB0=AND&QF0=year+term&QI0=%3d%221980+53rd%22&QF6=video+link&AC=QBE_QUERY&TN=aatrans&RF=WebReportList&DF=WebReportOscars&MR=0&BU=http%3a%2f%2faaspeechesdb.oscars.org%2findex.aspx& |publisher=Academy of Motion Picture Arts and Sciences |access-date=June 29, 2020 |archive-date=June 15, 2022 |archive-url=https://web.archive.org/web/20220615081356/http://aaspeechesdb.oscars.org/results.aspx?QB5=AND&QF5=transcript+%7C+acceptorlink+%7C+ed+note+%7C+name+%7C+film+title+%7C+song+title+%7C+category+index+%7C+acceptor+statement+%7C+category+exact+%7C+name+authority+%7C+winner+statement+%7C+year+term&QI5=&QB1=AND&QF1=name+%7C+winner+statement+%7C+name+authority&QI1=&QB2=AND&QF2=film+title&QI2=&QB3=AND&QF3=category+index&QI3=&QB0=AND&QF0=year+term&QI0=%3D%221980+53rd%22&QF6=video+link&AC=QBE_QUERY&TN=aatrans&RF=WebReportList&DF=WebReportOscars&MR=0&BU=http%3A%2F%2Faaspeechesdb.oscars.org%2Findex.aspx |url-status=live }}</ref>
+
+
+===Multiple nominations and awards===
+{{col-begin|width=80%}}{{col-1-of-2}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| rowspan="2" scope="row" style="text-align:center"| 8
+| ''[[The Elephant Man (1980 film)|The Elephant Man]]''
+|-
+| ''[[Raging Bull]]''
+|-
+| scope="row" style="text-align:center" | 7
+| ''[[Coal Miner's Daughter (film)|Coal Miner's Daughter]]''
+|-
+| rowspan=3 scope="row" style="text-align:center" | 6
+| ''[[Fame (1980 film)|Fame]]''
+|-
+| ''[[Ordinary People]]''
+|-
+| ''[[Tess (1979 film)|Tess]]''
+|-
+| rowspan=4 scope="row" style="text-align:center" | 3
+| ''[[The Empire Strikes Back]]''{{efn|name=Empire|Not counting the non-competitive Special Achievement Award for ''The Empire Strikes Back''.}}
+|-
+| ''[[Melvin and Howard]]''
+|-
+| ''[[Private Benjamin (1980 film)|Private Benjamin]]''
+|-
+| ''[[The Stunt Man]]''
+|-
+| rowspan=5 scope="row" style="text-align:center" | 2
+| ''[[Altered States]]''
+|-
+| ''[[The Competition (1980 film)|The Competition]]''
+|-
+| ''[[The Great Santini]]''
+|-
+| ''[[Kagemusha]]''
+|-
+| ''[[Resurrection (1980 film)|Resurrection]]''
+|}
+{{col-2}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films with multiple wins{{efn|name=Empire}}
+|-
+! scope="col" style="width:55px;"| Wins
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 4
+| ''[[Ordinary People]]''
+|-
+|  scope="row" style="text-align:center" | 3
+| ''[[Tess (1979 film)|Tess]]''
+|-
+| rowspan="3" scope="row" style="text-align:center"| 2
+| ''[[Fame (1980 film)|Fame]]''
+|-
+| ''[[Melvin and Howard]]''
+|-
+| ''[[Raging Bull]]''
+|}
+{{col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers:<ref name="MFEO">{{harvnb|Wiley|Bona|1996|p=593}}</ref>
+
+===Presenters===
+{| class="wikitable plainrowheaders sortable"
+|+{{sronly|Table featuring presenters for the 53rd Academy Awards}}
+|-
+! scope="col" | Name(s)
+! scope="col" class="unsortable" | Role
+|-
+| scope="row" | {{sortname|Hank|Simms}}<ref>{{harvnb|Terrance|2013|p=14}}</ref>
+| Announcer of the 53rd Academy Awards
+|-
+| scope="row" | {{sortname|Ronald|Reagan}} (pre-recorded)
+| Gave opening remarks welcoming guests to the awards ceremony
+|-
+| scope="row" | {{sortname|Jack|Lemmon}}<br />[[Mary Tyler Moore]]
+| Presenters of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| scope="row" | {{sortname|Alan|Arkin}}<br />[[Margot Kidder]]
+| Presenters of the awards for [[Academy Award for Best Animated Short Film|Best Animated Short Film]] and [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+| scope="row" | {{sortname|Richard|Chamberlain}}<br />[[Lesley-Anne Down]]
+| Presenters of the [[Academy Award for Best Documentary Short Film|Documentary Short Subject]] and [[Academy Award for Best Documentary Feature Film|Best Documentary Feature]]
+|-
+| scope="row" | {{sortname|Peter|O'Toole}}<br />[[Sissy Spacek]]
+| Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| scope="row" | {{sortname|Nastassja|Kinski}}<br />[[Sigourney Weaver]]
+| Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| scope="row" | {{sortname|Jack|Valenti}}
+| Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| scope="row" | {{sortname|Bernadette|Peters}}<br />[[Billy Dee Williams]]
+| Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| scope="row" | {{sortname|Brooke|Shields}}<br />[[Franco Zeffirelli]]
+| Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| scope="row" | {{sortname|Fayard|Nicholas}}<br>[[Harold Nicholas]]
+| Presenters of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| scope="row" | {{sortname|Richard|Pryor}}<br />[[Jane Seymour (actress)|Jane Seymour]]
+| Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| scope="row" | {{sortname|Diana|Ross}}<br />[[Donald Sutherland]]
+| Presenters of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| scope="row" | {{sortname|Angie|Dickinson}}<br />[[Luciano Pavarotti]]
+| Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]] 
+|-
+| scope="row" | {{sortname|Peter|Ustinov}}
+| Presenters of the awards for [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material from Another Medium]] and [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen]]
+|-
+| scope="row" | {{sortname|Robert|Redford}}
+| Presenter of the Honorary Award to [[Henry Fonda]]
+|-
+| scope="row" | {{sortname|Blythe|Danner}}<br />[[Steve Martin]]
+| Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| scope="row" | {{sortname|George|Cukor}}<br /> [[King Vidor]]
+| Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| scope="row" | {{sortname|Sally|Field}}
+| Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| scope="row" | {{sortname|Dustin|Hoffman}}
+| Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| scope="row" | {{sortname|Lillian|Gish}}
+| Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|+{{sronly|Table featuring performers for the 53rd Academy Awards}}
+|-
+! Name !! Role !! Performed
+|-
+| scope="row" | {{sortname|Henry|Mancini}}
+| Musical arranger<br>Conductor
+| Orchestral
+|-
+| scope="row" | {{sortname|Lucie|Arnaz}} 
+| Performer 
+| {{sort|Hooray|"[[Hooray for Hollywood]]"}}
+|-
+| scope="row" | {{sortname|Willie|Nelson}}
+| Performer 
+| {{sort|On|"[[On the Road Again (Willie Nelson song)|On the Road Again]]"}} from ''[[Honeysuckle Rose (film)|Honeysuckle Rose]]''
+|-
+| scope="row" | {{sortname|Irene|Cara}} 
+| Performer 
+| {{sort|Fame|"[[Fame (Irene Cara song)|Fame]]"}} and "[[Out Here on My Own|Out Here On My Own]]" from ''[[Fame (1980 film)|Fame]]''
+|-
+| scope="row" |  {{sortname|Dolly|Parton}}
+| Performer
+| {{sort|Nine|"[[9 to 5 (Dolly Parton song)|9 to 5]]"}} from ''[[9 to 5 (film)|Nine to Five]]''
+|-
+| scope="row" |  {{sortname|Dionne|Warwick}}
+| Performer
+| {{sort|People|"People Alone"}} from ''[[The Competition (1980 film)|The Competition]]''
+|-
+| scope="row" | {{sortname||Academy Awards Orchestra|nolink=1}}
+| Performers
+| {{sort|Hooray|"Hooray for Hollywood }}(reprise)" (orchestral) during the closing credits
+|}
+
+==Ceremony information==
+[[File:Johnny Carson 1970.JPG|thumb|left|alt=Johnny Carson in 1970|[[Johnny Carson]] hosted the 53rd Academy Awards.]]
+In December 1980, the Academy hired film producer [[Norman Jewison]] to produce the telecast for the first time. "I am delighted that the Academy will have the benefit of Norman Jewison's insight and creativity," said AMPAS President [[Fay Kanin]] in a press release announcing the selection. "He has always been able to bring a fresh approach into his work."<ref>{{cite web |title=Norman Jewison to Produce 53rd Oscar Show |url=https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/7394/rec/7 |publisher=Academy of Motion Picture Arts and Sciences |access-date=June 5, 2020 |date=December 1, 1980 |archive-date=June 15, 2022 |archive-url=https://web.archive.org/web/20220615081359/https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/7394/rec/7 |url-status=live }}</ref> That same month, it was announced that comedian and ''[[The Tonight Show Starring Johnny Carson|The Tonight Show]]'' host [[Johnny Carson]] would preside over emceeing duties for the 1981 ceremony. Jewison explained the decision to hire Carson, saying that the host was "an entertainment institution whose spontaneous wit and charm would add a great deal to the quality of the show."<ref>{{cite news |last1=Saltzman |first1=Barbara |url=https://latimes.newspapers.com/newspage/387277486/ |title=Johnny, Norman, Marty, and Oscar |access-date=April 10, 2026 |work=[[Los Angeles Times]] |date=December 27, 1980 |page=43}}{{subscription required}}</ref>
+
+Originally, the gala was scheduled to take place on March 30. However, due to the [[Attempted assassination of Ronald Reagan|attempted assassination]] on US president [[Ronald Reagan]] which occurred earlier that day, Kanin, Jewison, and executives from broadcaster [[American Broadcasting Company|ABC]] announced that the festivities would be postponed to the following day.<ref>{{cite news |last1=Lindsey |first1=Robert |title=Academy Awards Postponed to Tonight |url=https://www.nytimes.com/1981/03/31/arts/academy-awards-postponed-to-tonight.html |access-date=March 25, 2021 |work=The New York Times |url-access=limited |date=March 31, 1981 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212356/https://www.nytimes.com/1981/03/31/arts/academy-awards-postponed-to-tonight.html |url-status=live }}</ref> It marked the first time since the [[40th Academy Awards|40th ceremony]] held in 1968 that the ceremony was postponed from its original date.<ref>{{cite news |last1=Pollock |first1=Dale |title=Backstage at Oscars, Some Hard Decisions |work=Los Angeles Times |date=March 31, 1981 |page=28}}</ref> Furthermore, producers debated whether or not to televise a pre-recorded speech from Reagan, who was a former actor,  saluting the nominees and the Academy. The segment, which was filmed nearly four weeks prior to the show, was eventually broadcast, with host Carson giving a preface explaining the decision to postpone the event.<ref>{{cite news |last1=Thomas |first1=Bob |title=''Ordinary People'' Wins |work=[[The Spokesman-Review]] |date=April 1, 1981 |page=A3}}</ref>
+
+===''The Fly'' acceptance speech===
+During the presentation of the award for Best Animated Short Film to ''[[The Fly (1980 film)|The Fly]]'', presenters [[Alan Arkin]] and [[Margot Kidder]] announced that the film's director, [[Ferenc Rofusz]] was unable to attend the ceremony. Just as they announced the Academy would accept the award on his behalf, an unnamed man later identified as Hungarofilm general manager Istvan Dosai came up on stage and accepted the award in lieu of the absent filmmaker.<ref name="Ferenc">{{cite news |url=https://latimes.newspapers.com/newspage/387158917/ |title='Mystery Man' of Oscars Identified |access-date=April 10, 2026 |work=Los Angeles Times |date=April 1, 1981 |page=7}}{{subscription required}}</ref> Marble Arch Films publicist Regina Gruss, who was in charge of hosting the Hungarian delegation at the Oscars, said that Rofusz contacted Dosai to accept the award on his behalf, but Academy officials asked him not to come up onstage unless his name was announced.<ref>{{cite news |title='Mystery Man' Had Approval |work=[[Sioux City Journal]] |date=April 2, 1981 |page=A22}}</ref> After speaking to reporters and posing for pictures backstage, he never returned to his seat and left the ceremony immediately.<ref name="Ferenc"/> According to Academy security chief Jerry Moon, AMPAS contacted the [[Los Angeles Police Department|LAPD]] to issue a search warrant for Dosai for theft. However, Academy spokesperson Art Sarno denied that the organization had contacted the police and said that Dosai returned the statuette during a post-awards banquet.<ref name="Dosai">{{cite news |title=It Was a Stand-In, Not a Phony, at Oscarcast |work=[[San Francisco Examiner]] |date=April 2, 1981 |page=A19}}</ref>
+
+===Critical reviews===
+Some media outlets received the broadcast critically. Television columnist [[Tom Shales]] of ''[[The Washington Post]]'' commented, "Everything seemed an anticlimax to the Reagan opening, and the tragic events in Washington a day earlier did put a shadow of gloom over an affair that had promised to be grim enough anyway – since all but one of the year's Best Picture nominees were somber, austere films, and nothing to shout about."<ref>{{cite news |last1=Shales |first1=Tom |title=The Oscars |url=https://www.washingtonpost.com/archive/lifestyle/1981/04/01/the-oscars/0cb2adf8-299b-4c48-a481-da1ee3f90a13/ |access-date=September 21, 2020 |newspaper=The Washington Post |date=April 1, 1981 |archive-date=August 27, 2017 |archive-url=https://web.archive.org/web/20170827130149/https://www.washingtonpost.com/archive/lifestyle/1981/04/01/the-oscars/0cb2adf8-299b-4c48-a481-da1ee3f90a13/ |url-status=live }}</ref> ''[[The Salt Lake Tribune]]'' television critic [[Harold Schindler]] wrote, "On the whole, the 53rd annual Academy Awards telecast Tuesday was overly long, expectedly dull and surprisingly lacking in those highlights which make Oscar night conversation."<ref>{{cite news |last1=Schindler |first1=Harold |title=TV Today: Oscar Show Lacked Usual Highlights |work=[[The Salt Lake Tribune]] |date=April 2, 1981 |page=G11}}</ref> Bill Mandel of the ''[[San Francisco Examiner]]'' quipped, "After the real and completely unscripted emotional explosions of Monday, all the manipulated thrills of the movie industry seemed like the efforts of those bullfight clowns who distract the bull when the matador is injured."<ref>{{cite news |last1=Mandel |first1=Bill |title=The Big Broadcast of '81 |work=San Francisco Examiner |date=April 1, 1981 |page=E2}}</ref>
+
+Other media outlets received the broadcast more positively. ''[[St. Petersberg Times|Tampa Bay Times]]'' film critic Robert Alan Ross remarked, "The one-day delay turned out well. President Reagan's taped greeting – combined with emcee Johnny Carson's assurance that the First Couple were comfortably watching – instilled a happier mood than might otherwise have prevailed."<ref>{{cite news |last1=Ross |first1=Robert Alan |title=Academy Award Voters Reacted to Reality |work=[[Tampa Bay Times|St. Petersburg Times]] |date=April 3, 1981 |page= 3D}}</ref> Jerry Buck of the [[Associated Press]] quipped, "Producer Norman Jewison effectively chose to make the night a homage to motion pictures' past, making wide use of many cherished film clips that tugged at the heart and memory."<ref>{{cite news |last1=Buck |first1=Jerry |title=Despite Assaination Attempt, Usual Pomp Accompanies Academy Awards |work=[[Santa Cruz Sentinel]] |date=April 1, 1981 |page=11}}</ref> ''[[The Boston Globe]]'' columnist Bruce McCabe wrote, "Given the trauma of the past few days, the Academy Awards show conducted itself rather well. No one really disgraced himself. There were no political speeches."<ref>{{cite news |last1=McCabe |first1=Bruce |title=The Celluloid Rite of Spring |work=[[The Boston Globe]] |date=April 2, 1981 |page=34}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 39.9&nbsp;million people over the length of the entire ceremony, which was a 19% decrease from the [[52nd Academy Awards|previous year's ceremony]].<ref>{{cite news |last1=Abramowitz |first1=Rachel |title=Oscar's Choice |url=https://www.latimes.com/archives/la-xpm-2006-jan-06-et-stewart6-story.html |access-date=February 3, 2021 |work=[[Los Angeles Times]] |date=January 6, 2006 |archive-date=June 1, 2022 |archive-url=https://web.archive.org/web/20220601110557/https://www.latimes.com/archives/la-xpm-2006-jan-06-et-stewart6-story.html |url-status=live }}</ref> An estimated 75&nbsp;million total viewers watched all or part of the awards.<ref>{{cite news |last1=Harris |first1=Harry |title=Original ''Saturday Night'' Crew to be on Ch. 48 Reruns |work=[[The Philadelphia Inquirer]] |date=April 3, 1981 |page=16-C}}</ref> Moreover, the show drew lower [[Nielsen ratings]] compared to the previous ceremony, with 31% of households watching over a 58% share.<ref>{{cite news |last1=Boyer |first1=Peter |title=Oscar Show's Ratings are the Third Lowest |work=[[The Pantagraph]] |date=April 7, 1981 |page=B5}}</ref> Nevertheless, the ceremony presentation won an award for Outstanding Art Direction for a Variety Program ([[Roy Christopher]]) at the [[33rd Primetime Emmy Awards|33rd Primetime Emmy]]s in September 1981.<ref>{{cite web |title=The 53rd Annual Academy Awards–Emmy Awards, Nominations and Wins |url=https://www.emmys.com/shows/53rd-annual-academy-awards |publisher=Academy of Television Arts and Sciences |access-date=November 14, 2020 |archive-date=October 20, 2020 |archive-url=https://web.archive.org/web/20201020094623/https://www.emmys.com/shows/53rd-annual-academy-awards |url-status=live }}</ref>
+
+==See also==
+* [[List of submissions to the 53rd Academy Awards for Best Foreign Language Film]]
+
+==Notes==
+{{notes}}
+
+==References==
+{{reflist}}
+
+==Bibliography==
+{{Refbegin}}
+*{{Citation
+ |last=Franks
+ |first=Don
+ |title=Entertainment Awards: A Music, Cinema, Theatre and Broadcasting Guide, 1928 through 2003
+ |year=2005 
+ |isbn=978-1-5791-2396-3
+ |location=Jefferson, North Carolina, United States
+ |edition=3rd
+ |publisher=[[McFarland & Company]]
+}}
+*{{Citation
+ |last=Holden
+ |first=Anthony
+ |title=Behind the Oscar: The Secret History of the Academy Awards
+ |year=1993
+ |isbn=978-0-6717-0129-1
+ |location=New York, New York, United States
+ |edition=
+ |oclc=
+ |publisher=[[Simon & Schuster]]
+ |url=https://archive.org/details/behindoscarsecre00hold
+ }}
+*{{Citation
+ |last1=Kinn
+ |first1=Gail
+ |last2=Piazza
+ |first2=Jim
+ |title=The Academy Awards: The Complete Unofficial History
+ |year=2002 
+ |isbn=978-1-5791-2396-3 |location=New York, New York, United States 
+ |publisher=[[Workman Publishing Company]]
+}}
+*{{Cite book
+ |last=Osborne
+ |first=Robert
+ |title=85 Years of the Oscar: The Complete History of the Academy Awards
+ |year=2013
+ |isbn=978-0-7892-1142-2
+ |location=New York, New York, United States
+ |publisher=[[Abbeville Publishing Group]]
+ |oclc=856879222
+  }}
+*{{Citation
+ |last=Sackett
+ |first=Susan
+ |title=Hollywood Sings!: An Inside Look at Sixty Years of Academy Award-Nominated Songs
+ |year=1995
+ |isbn=978-0-8230-7623-9
+ |location=New York, New York, United States
+ |edition=
+ |oclc=
+ |publisher=Billboard Books
+ |url-access=registration
+ |url=https://archive.org/details/hollywoodsingsin0000sack/
+ }}
+* {{Cite book
+ |last=Terrance
+ |first=Vincent
+ |title=Television Specials: 5,336 Entertainment Programs, 1936–2012
+ |year=2013
+ |isbn=978-1-4766-1240-9
+ |location=Jefferson, North Carolina, United States
+ |edition=5
+ |oclc=844373010
+ |publisher=[[Ballantine Books]], [[McFarland & Company]]
+ }}
+*{{Citation
+ |last1=Wiley 
+ |first1=Mason
+ |last2=Bona
+ |first2=Damien
+ |title=Inside Oscar: The Unofficial History of the Academy Awards
+ |year=1996
+ |isbn=978-0-3454-0053-6 |location=New York, New York, United States
+ |edition=5
+ |oclc=779680732 
+ |publisher=[[Ballantine Books]]
+}}
+{{Refend}}
+
+==External links==
+* [http://www.oscar.com/ Academy Awards official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/oscars Oscars' channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=October 2, 2018 }} on [[YouTube]] run by the [[Academy of Motion Picture Arts and Sciences]]
+
+;Analysis
+* [http://www.filmsite.org/aa80.html 1980 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20220601093650/https://www.filmsite.org/aa80.html |date=June 1, 2022 }} Filmsite
+
+;Other resources
+* {{IMDb title|0343339|The 53rd Annual Academy Awards}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 53}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1980 film awards]]
+[[Category:1981 in Los Angeles]]
+[[Category:1981 in American cinema]]
+[[Category:March 1981 in the United States]]
+[[Category:1980 awards in the United States|Academy]]
+[[Category:Television shows directed by Marty Pasetta]]
+[[Category:Attempted assassination of Ronald Reagan]]

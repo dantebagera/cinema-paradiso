@@ -577,14 +577,14 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertNotIn("function buildDiscoverUrl", discover_source)
         self.assertNotIn("function appendDiscoverCriteria", discover_source)
         self.assertIn("{ value: 'catalog', label: 'TMDB Catalog' }", self.source)
-        self.assertIn('aria-label="Original language"', discover_source)
+        self.assertNotIn('aria-label="Original language"', discover_source)
         self.assertIn('aria-label="Production country"', discover_source)
         self.assertIn('aria-label="Refresh Discover results"', discover_source)
         self.assertIn('aria-label="Reset Discover filters"', discover_source)
         self.assertIn('aria-label="Clear Discover search"', discover_source)
         self.assertIn("if (discoverMode === 'search' && tmdbQuery.trim()) return `Search: ${tmdbQuery.trim()}`", discover_source)
 
-    def test_discover_filter_toolbar_stays_on_one_desktop_row_without_a_duplicate_count(self):
+    def test_discover_filter_toolbar_wraps_without_a_duplicate_count(self):
         styles = (APP_JSX.parents[0] / "styles.css").read_text(encoding="utf-8")
         discover_source = self.discover_source
         toolbar_source = discover_source[
@@ -592,7 +592,7 @@ class LibraryActionUxTest(unittest.TestCase):
             discover_source.index("{['movies', 'advanced'].includes(discoverSearchKind) && filteredDiscoverResults.length > 0")
         ]
         self.assertIn("display: flex;", styles[styles.index(".discover-toolbar {"):styles.index(".discover-count {")])
-        self.assertIn("flex-wrap: nowrap;", styles[styles.index(".discover-toolbar {"):styles.index(".discover-count {")])
+        self.assertIn("flex-wrap: wrap;", styles[styles.index(".discover-toolbar {"):styles.index(".discover-count {")])
         self.assertIn("discover-toolbar-icon-button", toolbar_source)
         self.assertNotIn("discover-count", toolbar_source)
 
@@ -608,7 +608,7 @@ class LibraryActionUxTest(unittest.TestCase):
 
     def test_movie_lists_are_a_top_level_mixed_owned_missing_workspace(self):
         self.assertIn("id: 'movie-lists'", self.source)
-        self.assertIn("label: 'Movie Lists'", self.source)
+        self.assertIn("label: 'Lists'", self.source)
         self.assertIn("MovieListsWorkspace", self.source)
         movie_lists_source = self.movie_lists_workspace_source
         self.assertNotIn("fetchJson('/api/library?view=movie-list')", movie_lists_source)

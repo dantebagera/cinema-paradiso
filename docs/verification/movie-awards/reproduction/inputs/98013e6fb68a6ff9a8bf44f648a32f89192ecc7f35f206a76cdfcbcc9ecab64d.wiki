@@ -1,0 +1,648 @@
+{{Oscars short description|films-year=2014}}
+{{Featured list}}
+{{Use American English|date=June 2023}}
+{{Use mdy dates|date=February 2015}}
+{{Infobox film awards
+| number          = 87
+| award           = Academy Awards
+| image           = File:87th Oscars.png
+| alt             = Official poster promoting the 87th Academy Awards in 2015.
+| caption         = Official poster
+| date            = February 22, 2015
+| site            = [[Dolby Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], California, U.S.
+| host            = [[Neil Patrick Harris]]<ref name="Harris"/>
+| preshow         = {{plain list|
+* Jess Cagle
+* [[Robin Roberts (newscaster)|Robin Roberts]]
+* [[Lara Spencer]]
+* [[Michael Strahan]]
+* [[Joe Zee]]<ref>{{cite news|last1=Bridgman |first1=Alison |title=Robin Roberts, Lara Spencer, and Michael Strahan To Host 'Oscars Opening Ceremony: Live from the Red Carpet' |url=https://abcnews.go.com/blogs/headlines/2015/02/robin-roberts-lara-spencer-and-michael-strahan-to-host-oscars-opening-ceremony-live-from-the-red-carpet/ |access-date=March 27, 2015 |publisher=[[ABC News (United States)|ABC News]] ([[The Walt Disney Company]]) |date=February 6, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150326121702/http://abcnews.go.com/blogs/headlines/2015/02/robin-roberts-lara-spencer-and-michael-strahan-to-host-oscars-opening-ceremony-live-from-the-red-carpet/ |archive-date=March 26, 2015}}</ref>
+}}
+|producer         = {{plainlist|
+*[[Neil Meron]]
+*[[Craig Zadan]]<ref name="Perlman-2015"/>}}
+| director         = [[Hamish Hamilton (director)|Hamish Hamilton]]<ref name="crew"/>
+| best_picture     = ''[[Birdman or (The Unexpected Virtue of Ignorance)]]''
+| most_wins        = ''Birdman or (The Unexpected Virtue of Ignorance)'' and ''[[The Grand Budapest Hotel]]'' (4)
+| network          = [[American Broadcasting Company|ABC]]
+| most_nominations = ''Birdman or (The Unexpected Virtue of Ignorance)'' and ''The Grand Budapest Hotel'' (9)
+| duration         = 3 hours, 43 minutes<ref>{{cite news|title=Oscar TV Review |url=https://variety.com/2015/tv/reviews/oscars-tv-review-2015-academy-awards-broadcast-1201439003/ |first=Brian |last=Lowry |work=[[Variety (magazine)|Variety]]  |date=February 23, 2015 |access-date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150223092256/http://variety.com/2015/tv/reviews/oscars-tv-review-2015-academy-awards-broadcast-1201439003/ |archive-date=February 23, 2015}}</ref>
+| ratings          = {{plainlist|
+*37.26 million<ref name="Kissell-2015">{{cite news|last1=Kissell |first1=Rick |title=Weekly Ratings: Oscars, 'TGIT' Dramas Lift ABC to Biggest Victory in 15 Years |url=https://variety.com/2015/tv/news/weekly-ratings-oscars-tgit-dramas-lift-abc-to-biggest-victory-in-15-years-1201440529/ |access-date=March 28, 2015 |work=Variety  |date=February 25, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150331054137/http://variety.com/2015/tv/news/weekly-ratings-oscars-tgit-dramas-lift-abc-to-biggest-victory-in-15-years-1201440529/ |archive-date=March 31, 2015}}</ref>
+*20.6% ([[Nielsen ratings]])<ref name="88th Oscars Fact Sheet"/>}}
+| last             = 86th
+| next             = 88th
+}}
+
+The '''87th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2014 in film|films of 2014]] and took place on February 22, 2015, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]], beginning at 5:30&nbsp;p.m. [[Pacific Time Zone|PST]] / 8:30&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony was televised in the United States by [[American Broadcasting Company|ABC]], produced by [[Neil Meron]] and [[Craig Zadan]] and directed by [[Hamish Hamilton (director)|Hamish Hamilton]].<ref name="Perlman-2015"/><ref name="crew">{{cite news|url=https://deadline.com/2014/11/oscars-greg-berlanti-named-head-writer-2015-awards-telecast-1201284484/ |website=[[Deadline Hollywood]] ([[Penske Media Corporation]]) |title=OSCARS: Greg Berlanti Named Head Writer For 2015 Awards Telecast |access-date=November 26, 2014 |url-status=live |archive-url=https://web.archive.org/web/20141125021547/http://deadline.com/2014/11/oscars-greg-berlanti-named-head-writer-2015-awards-telecast-1201284484/ |archive-date=November 25, 2014}}</ref> Actor [[Neil Patrick Harris]] hosted the ceremony for the first time.<ref name="Harris"/>
+
+In related events, the Academy held its 6th Annual [[Governors Awards]] ceremony at the Grand Ballroom of the [[Hollywood and Highland Center]] on November 8, 2014.<ref name="Variety">{{cite news |last=Gray |first=Tim |url=https://variety.com/2014/film/news/academy-unveils-2014-governor-awards-recipients-1201289156/ |title=Academy Unveils 2014 Governors Awards Recipients |access-date=August 28, 2014 |work=Variety |url-status=live |archive-url=https://web.archive.org/web/20140901091000/http://variety.com/2014/film/news/academy-unveils-2014-governor-awards-recipients-1201289156/ |archive-date=September 1, 2014}}</ref> On February 7, 2015, in a ceremony at the [[Beverly Wilshire Hotel]] in [[Beverly Hills, California]], the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by hosts [[Margot Robbie]] and [[Miles Teller]].<ref>{{cite magazine|first=C. Molly |last=Smith |url=https://www.ew.com/article/2015/02/08/scientific-and-technical-awards-honorees-address-future-filmmaking |title=Scientific and Technical Awards honorees address the future of filmmaking |access-date=January 29, 2015 |magazine=[[Entertainment Weekly]] |date=January 28, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150209002601/http://www.ew.com/article/2015/02/08/scientific-and-technical-awards-honorees-address-future-filmmaking |archive-date=February 9, 2015}}</ref>
+
+''[[Birdman or (The Unexpected Virtue of Ignorance)]]'' won four awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last1=Burr |first1=Ty |title='Birdman' takes flight at Oscars |url=https://www.bostonglobe.com/arts/movies/2015/02/23/oscarawards/CksvdeIoH0pvm71oAUbZ3O/story.html |access-date=March 13, 2015 |work=[[The Boston Globe]]  |date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150328054812/http://www.bostonglobe.com/arts/movies/2015/02/23/oscarawards/CksvdeIoH0pvm71oAUbZ3O/story.html |archive-date=March 28, 2015}}</ref><ref>{{cite news|last1=Coyle|first1=Jake|title='Birdman' soars to major wins|work=Orlando Sentinel|date=February 23, 2015|page=A6}}</ref> Other winners included ''[[The Grand Budapest Hotel]]'' with four awards, ''[[Whiplash (2014 film)|Whiplash]]'' with three, and ''[[American Sniper]]'', ''[[Big Hero 6 (film)|Big Hero 6]]'', ''[[Boyhood (2014 film)|Boyhood]]'', ''[[Citizenfour]]'', ''[[Crisis Hotline: Veterans Press 1]]'', ''[[Feast (2014 film)|Feast]]'', ''[[Ida (film)|Ida]]'', ''[[The Imitation Game]]'', ''[[Interstellar (film)|Interstellar]]'', ''[[The Phone Call]]'', ''[[Selma (film)|Selma]]'', ''[[Still Alice]]'', and ''[[The Theory of Everything (2014 film)|The Theory of Everything]]'' with one. The telecast garnered more than 37 million viewers in the United States.
+
+== Winners and nominees ==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 87th Academy Awards were announced on January 15, 2015, at 5:30&nbsp;a.m. PST (13:30 [[UTC]]), at the [[Samuel Goldwyn Theater]] in Beverly Hills, California, by directors [[J. J. Abrams]] and [[Alfonso Cuarón]], Academy president [[Cheryl Boone Isaacs]] and actor [[Chris Pine]].<ref name="Keegan-2015">{{cite news|title=Oscars 2015: Academy to announce nominations in all 24 categories live |url=https://variety.com/2015/film/news/j-j-abrams-alfonso-cuaron-to-announce-oscar-nominations-live-1201396931/ |access-date=March 29, 2015 |work=Variety |date=January 9, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150224040938/http://variety.com/2015/film/news/j-j-abrams-alfonso-cuaron-to-announce-oscar-nominations-live-1201396931/ |archive-date=February 24, 2015}}</ref> For the first time, nominations for all 24 competitive categories were announced.<ref name="Keegan-2015" /> ''[[Birdman or (The Unexpected Virtue of Ignorance)]]'' and ''[[The Grand Budapest Hotel]]'' tied for the most nominations with nine each.<ref>{{cite news|last1=Boedeker |first1=Hal |title=Oscars: 'Boyhood' soars; big snubs |url=http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-boyhood-soars-big-snubs-20150115-post.html |access-date=March 29, 2015 |work=Orlando Sentinel  |date=January 15, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150328064452/http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-boyhood-soars-big-snubs-20150115-post.html |archive-date=March 28, 2015}}</ref>
+
+The winners were announced during the awards ceremony on February 22, 2015.<ref>{{cite news|title=Partial list of Oscar winners |url=https://www.bostonglobe.com/arts/movies/2015/02/23/partial-list-oscar-winners/snpKfV9vsn2TWBZU6G5jlM/story.html |access-date=March 29, 2015 |work=The Boston Globe |publisher=John W. Henry |date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150402113340/http://www.bostonglobe.com/arts/movies/2015/02/23/partial-list-oscar-winners/snpKfV9vsn2TWBZU6G5jlM/story.html |archive-date=April 2, 2015}}</ref> For the first time since the expansion of the [[Academy Award for Best Picture|Best Picture]] nominee roster at the [[82nd Academy Awards|82nd ceremony]] in 2010, every Best Picture nominee won at least one award.<ref>{{cite news|last1=Brown |first1=Kat |title=Oscars 2015 winners list in full |url=https://www.telegraph.co.uk/culture/film/oscars/11420116/oscars-2015-winners-list.html |access-date=March 29, 2015 |work=[[The Daily Telegraph]]  |date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150326084424/http://www.telegraph.co.uk/culture/film/oscars/11420116/oscars-2015-winners-list.html |archive-date=March 26, 2015}}</ref> ''Birdman'' was the first film to win Best Picture without an editing nomination since ''[[Ordinary People]]'' (1980).<ref>{{cite news|last1=Zeitchik |first1=Steven |title=Success of 'Birdman' signals Inarritu's arrival as film royalty |url=https://www.chicagotribune.com/la-et-mn-oscars-birdman-main-20150223-story.html |work=[[Chicago Tribune]] |date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20161107155703/http://www.chicagotribune.com/la-et-mn-oscars-birdman-main-20150223-story.html |archive-date=November 7, 2016}}</ref> [[Alejandro G. Iñárritu]] became the second consecutive Mexican to win for [[Academy Award for Best Director|Best Director]] after Cuarón who won for helming ''[[Gravity (2013 film)|Gravity]]''.<ref>{{cite news|last1=Hamilton |first1=Matt |title=Iñárritu calls for 'dignity and respect' for immigrants in Oscar speech |url=https://www.latimes.com/local/lanow/la-me-ln-irritu-oscar-speech-20150222-htmlstory.html |access-date=March 28, 2015 |work=Los Angeles Times |date=February 22, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150317051623/http://www.latimes.com/local/lanow/la-me-ln-irritu-oscar-speech-20150222-htmlstory.html |archive-date=March 17, 2015}}</ref> At age 84, [[Robert Duvall]] was the oldest male acting nominee in Oscar history.<ref>{{cite news|last1=Hoffman |first1=Susan |title=Oscar nominations: Predictions, surprises and trivia |url=http://www.kansascity.com/entertainment/movies-news-reviews/article6724659.html |work=[[Kansas City Star]]  |date=January 15, 2015 |access-date=September 20, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150801121948/http://www.kansascity.com/entertainment/movies-news-reviews/article6724659.html |archive-date=August 1, 2015}}</ref>
+Having won for his work on ''Gravity'' the year before, [[Emmanuel Lubezki]] became the fourth person to win two consecutive [[Academy Award for Best Cinematography|Best Cinematography]] awards. [[John Toll]] was the last one who accomplished this feat for his work on 1994's ''[[Legends of the Fall]]'' and 1995's ''[[Braveheart]]''.<ref>{{cite news|last1=Szalai |first1=Greg |title=Oscars 2015: Emmanuel Lubezki Becomes Second Cinematographer to Win Back–to–Back Honors |url=https://www.hollywoodreporter.com/news/oscars-2015-emmanuel-lubezki-second-774793 |access-date=March 28, 2015 |work=[[The Hollywood Reporter]]  |date=February 22, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150403141543/http://www.hollywoodreporter.com/news/oscars-2015-emmanuel-lubezki-second-774793 |archive-date=April 3, 2015}}</ref>
+
+=== Awards ===
+[[File:Alejandro González Iñárritu 2014.jpg|right|thumb|150px|[[Alejandro González Iñárritu]], Best Picture and Best Original Screenplay co-winner, and Best Director winner]]
+[[File:Eddie Redmayne & Aisha Tyler (43718217081) Cropped.jpg|right|thumb|150px|[[Eddie Redmayne]], Best Actor winner]]
+[[File:Julianne Moore (15011443428) (2).jpg|right|thumb|150px|[[Julianne Moore]], Best Actress winner]]
+[[File:JK Simmons 2009.jpg|right|thumb|150px|[[J. K. Simmons]], Best Supporting Actor winner]]
+[[File:PatriciaArquette.jpg|right|thumb|150px|[[Patricia Arquette]], Best Supporting Actress winner]]
+[[File:Graham Moore-0228.jpg|right|thumb|150px|[[Graham Moore (writer)|Graham Moore]], Best Adapted Screenplay winner]]
+[[File:Pawel Pawlikowski (cropped).jpg|right|thumb|150px|[[Paweł Pawlikowski]], Best Foreign Language Film winner]]
+[[File:AlexandreDesplat-gros-plan.jpg|right|thumb|150px|[[Alexandre Desplat]], Best Original Score winner]]
+[[File:John Legend poptech.jpg|right|thumb|150px|[[John Legend]], Best Original Song co-winner]]
+[[File:Common - 2018 (41963868844) (cropped).jpg|right|thumb|150px|[[Common (rapper)|Common]], Best Original Song co-winner]]
+[[File:Milena Canonero Berlinale 2017.jpg|right|thumb|150px|[[Milena Canonero]], Best Costume Design winner]]
+[[File:Ian Hunter by Gage Skidmore.jpg|right|thumb|150px|[[Ian Hunter (visual effects supervisor)|Ian Hunter]], Best Visual Effects co-winner]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref>{{Cite news|url=http://www.oscars.org/oscars/ceremonies/2015 |title=The 87th Academy Awards (2015) Nominees and Winners |access-date=February 23, 2015 |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20150223171100/http://www.oscars.org/oscars/ceremonies/2015 |archive-date=February 23, 2015}}</ref>
+
+{| class=wikitable
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Birdman or (The Unexpected Virtue of Ignorance)]]''&nbsp;– [[Alejandro G. Iñárritu]], [[John Lesher (producer)|John Lesher]], and [[James W. Skotchdopole]], producers'''{{double dagger}}
+** ''[[American Sniper]]''&nbsp;– [[Clint Eastwood]], [[Robert Lorenz]], [[Andrew Lazar]], [[Bradley Cooper]], and [[Peter Morgan (producer)|Peter Morgan]], producers
+** ''[[Boyhood (2014 film)|Boyhood]]''&nbsp;– [[Richard Linklater]] and [[Cathleen Sutherland]], producers
+** ''[[The Grand Budapest Hotel]]''&nbsp;– [[Wes Anderson]], [[Scott Rudin]], [[Steven Rales]] and [[Jeremy Dawson (producer)|Jeremy Dawson]], producers
+** ''[[The Imitation Game]]''&nbsp;– [[Nora Grossman]], [[Ido Ostrowsky]], and [[Teddy Schwarzman]], producers
+** ''[[Selma (film)|Selma]]''&nbsp;– [[Christian Colson]], [[Oprah Winfrey]], [[Dede Gardner]], and [[Jeremy Kleiner]], producers
+** ''[[The Theory of Everything (2014 film)|The Theory of Everything]]''&nbsp;– [[Tim Bevan]], [[Eric Fellner]], [[Lisa Bruce]], and [[Anthony McCarten]], producers
+** ''[[Whiplash (2014 film)|Whiplash]]''&nbsp;– [[Jason Blum]], [[Helen Estabrook]], and [[David Lancaster (filmmaker)|David Lancaster]], producers
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Alejandro G. Iñárritu]]&nbsp;– ''[[Birdman or (The Unexpected Virtue of Ignorance)]]'''''{{double dagger}}
+** [[Richard Linklater]]&nbsp;– ''[[Boyhood (2014 film)|Boyhood]]''
+** [[Bennett Miller]]&nbsp;– ''[[Foxcatcher]]''
+** [[Wes Anderson]]&nbsp;– ''[[The Grand Budapest Hotel]]''
+** [[Morten Tyldum]]&nbsp;– ''[[The Imitation Game]]''
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+* '''[[Eddie Redmayne]]&nbsp;– ''[[The Theory of Everything (2014 film)|The Theory of Everything]]'' as [[Stephen Hawking]]'''{{double dagger}}
+** [[Steve Carell]]&nbsp;– ''[[Foxcatcher]]'' as [[John du Pont]]
+** [[Bradley Cooper]]&nbsp;– ''[[American Sniper]]'' as [[Chris Kyle]]
+** [[Benedict Cumberbatch]]&nbsp;– ''[[The Imitation Game]]'' as [[Alan Turing]]
+** [[Michael Keaton]]&nbsp;– ''[[Birdman or (The Unexpected Virtue of Ignorance)]]'' as Riggan Thomson
+| valign="top"|
+{{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+* '''[[Julianne Moore]]&nbsp;– ''[[Still Alice]]'' as Alice Howland'''{{double dagger}}
+** [[Marion Cotillard]]&nbsp;– ''[[Two Days, One Night]]'' as Sandra Bya
+** [[Felicity Jones]]&nbsp;– ''[[The Theory of Everything (2014 film)|The Theory of Everything]]'' as [[Jane Hawking]]
+** [[Rosamund Pike]]&nbsp;– ''[[Gone Girl (film)|Gone Girl]]'' as [[Amy Dunne|Amy Elliott-Dunne]]
+** [[Reese Witherspoon]]&nbsp;– ''[[Wild (2014 film)|Wild]]'' as [[Cheryl Strayed]]
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[J. K. Simmons]]&nbsp;– ''[[Whiplash (2014 film)|Whiplash]]'' as Terence Fletcher'''{{double dagger}}
+** [[Robert Duvall]]&nbsp;– ''[[The Judge (2014 film)|The Judge]]'' as Judge Joseph Palmer
+** [[Ethan Hawke]]&nbsp;– ''[[Boyhood (2014 film)|Boyhood]]'' as Mason Evans, Sr.
+** [[Edward Norton]]&nbsp;– ''[[Birdman or (The Unexpected Virtue of Ignorance)]]'' as Mike Shiner
+** [[Mark Ruffalo]]&nbsp;– ''[[Foxcatcher]]'' as [[Dave Schultz (amateur wrestler)|Dave Schultz]]
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Patricia Arquette]]&nbsp;– ''[[Boyhood (2014 film)|Boyhood]]'' as Olivia Evans'''{{double dagger}}
+** [[Laura Dern]]&nbsp;– ''[[Wild (2014 film)|Wild]]'' as Bobbi Grey
+** [[Keira Knightley]]&nbsp;– ''[[The Imitation Game]]'' as [[Joan Clarke]]
+** [[Emma Stone]]&nbsp;– ''[[Birdman or (The Unexpected Virtue of Ignorance)]]'' as Sam Thomson
+** [[Meryl Streep]]&nbsp;– ''[[Into the Woods (film)|Into the Woods]]'' as The Witch
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Birdman or (The Unexpected Virtue of Ignorance)]]''&nbsp;– [[Alejandro G. Iñárritu]], [[Nicolás Giacobone]], [[Alexander Dinelaris Jr.]], and [[Armando Bó (screenwriter)|Armando Bo]]'''{{double dagger}}
+** ''[[Boyhood (2014 film)|Boyhood]]''&nbsp;– [[Richard Linklater]]
+** ''[[Foxcatcher]]''&nbsp;– [[E. Max Frye]] and [[Dan Futterman]]
+** ''[[The Grand Budapest Hotel]]''&nbsp;– Screenplay by [[Wes Anderson]]; Story by Wes Anderson and [[Hugo Guinness]]
+** ''[[Nightcrawler (film)|Nightcrawler]]''&nbsp;– [[Dan Gilroy]]
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[The Imitation Game]]''&nbsp;– [[Graham Moore (writer)|Graham Moore]]; {{small|based on the book ''[[Alan Turing: The Enigma]]'' by [[Andrew Hodges]]}}'''{{double dagger}}
+** ''[[American Sniper]]''&nbsp;– [[Jason Hall (screenwriter)|Jason Hall]]; {{small|based on [[American Sniper (book)|the book]] by [[Chris Kyle]] with Scott McEwen and Jim DeFelice}}
+** ''[[Inherent Vice (film)|Inherent Vice]]''&nbsp;– [[Paul Thomas Anderson]]; {{small|based on [[Inherent Vice|the novel]] by [[Thomas Pynchon]]}}
+** ''[[The Theory of Everything (2014 film)|The Theory of Everything]]''&nbsp;– [[Anthony McCarten]]; {{small|based on the book ''Travelling to Infinity: My Life with Stephen'' by [[Jane Wilde Hawking]]}}
+** ''[[Whiplash (2014 film)|Whiplash]]''&nbsp;– [[Damien Chazelle]]; {{small|based on his [[Whiplash (2013 film)|short film]]}}
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Big Hero 6 (film)|Big Hero 6]]'' – [[Don Hall (filmmaker)|Don Hall]], [[Chris Williams (director)|Chris Williams]], and [[Roy Conli]]'''{{double dagger}}
+** ''[[The Boxtrolls]]'' – [[Anthony Stacchi]], [[Graham Annable]], and [[Travis Knight]]
+** ''[[How to Train Your Dragon 2]]'' – [[Dean DeBlois]] and [[Bonnie Arnold]]
+** ''[[Song of the Sea (2014 film)|Song of the Sea]]'' – [[Tomm Moore]] and [[Paul Young (producer)|Paul Young]]
+** ''[[The Tale of the Princess Kaguya (film)|The Tale of the Princess Kaguya]]'' – [[Isao Takahata]] and [[Yoshiaki Nishimura]]
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[Ida (film)|Ida]]'' ([[List of Polish submissions for the Academy Award for Best Foreign Language Film|Poland]]) in [[Polish language|Polish]]&nbsp;– Directed by [[Paweł Pawlikowski]]'''{{double dagger}}
+** ''[[Leviathan (2014 film)|Leviathan]]'' ([[List of Russian submissions for the Academy Award for Best Foreign Language Film|Russia]]) in [[Russian language|Russian]]&nbsp;– Directed by [[Andrey Zvyagintsev]]
+** ''[[Tangerines (film)|Tangerines]]'' ([[List of Estonian submissions for the Academy Award for Best Foreign Language Film|Estonia]]) in [[Estonian language|Estonian]] and [[Russian language|Russian]]&nbsp;– Directed by [[Zaza Urushadze]]
+** ''[[Timbuktu (2014 film)|Timbuktu]]'' ([[List of Mauritanian submissions for the Academy Award for Best Foreign Language Film|Mauritania]]) in [[French language|French]] &nbsp;– Directed by [[Abderrahmane Sissako]]
+** ''[[Wild Tales (film)|Wild Tales]]'' ([[List of Argentine submissions for the Academy Award for Best Foreign Language Film|Argentina]]) in [[Spanish language|Spanish]] &nbsp;– Directed by [[Damián Szifron]]
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Citizenfour]]''&nbsp;– [[Laura Poitras]], [[Mathilde Bonnefoy]], and [[Dirk Wilutzky]]'''{{double dagger}}
+** ''[[Finding Vivian Maier]]''&nbsp;– [[John Maloof]] and Charlie Siskel
+** ''[[Last Days in Vietnam]]''&nbsp;– [[Rory Kennedy]] and Keven McAlester
+** ''[[The Salt of the Earth (2014 film)|The Salt of the Earth]]''&nbsp;– [[Wim Wenders]], [[Juliano Ribeiro Salgado]] and [[David Rosier]]
+** ''[[Virunga (film)|Virunga]]''&nbsp;– [[Orlando von Einsiedel]] and [[Joanna Natasegara]]
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Crisis Hotline: Veterans Press 1]]''&nbsp;– [[Ellen Goosenberg Kent]] and [[Dana Perry]]'''{{double dagger}}
+** ''[[Joanna (2013 film)|Joanna]]''&nbsp;– Aneta Kopacz
+** ''[[Our Curse]]''&nbsp;– Tomasz Śliwiński and [[Maciej Ślesicki]]
+** ''[[The Reaper (2013 film)|The Reaper]]''&nbsp;– Gabriel Serra Arguello
+** ''[[White Earth (film)|White Earth]]''&nbsp;– J. Christian Jensen
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[The Phone Call]]''&nbsp;– [[Mat Kirkby]] and [[James Lucas (screenwriter)|James Lucas]]'''{{double dagger}}
+** ''[[Aya (2012 film)|Aya]]''&nbsp;– Oded Binnun and Mihal Brezis
+** ''[[Boogaloo and Graham]]''&nbsp;– [[Michael Lennox]] and Ronan Blaney
+** ''[[Butter Lamp]]''&nbsp;– [[Hu Wei (director)|Hu Wei]] and Julien Féret
+** ''[[Parvaneh (film)|Parvaneh]]''&nbsp;– [[Talkhon Hamzavi]] and [[Stefan Eichenberger]]
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Feast (2014 film)|Feast]]''&nbsp;– [[Patrick Osborne (animator)|Patrick Osborne]] and [[Kristina Reed]]'''{{double dagger}}
+** ''[[The Bigger Picture (film)|The Bigger Picture]]''&nbsp;– Daisy Jacobs and Christopher Hees
+** ''[[The Dam Keeper]]''&nbsp;– Robert Kondo and [[Dice Tsutsumi]]
+** ''[[Me and My Moulton]]''&nbsp;– [[Torill Kove]]
+** ''[[A Single Life (2014 film)|A Single Life]]''&nbsp;– [[Joris Oprins]]
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[The Grand Budapest Hotel]]''&nbsp;– [[Alexandre Desplat]]'''{{double dagger}}
+** ''[[The Imitation Game]]''&nbsp;– [[Alexandre Desplat]]
+** ''[[Interstellar (film)|Interstellar]]''&nbsp;– [[Hans Zimmer]]
+** ''[[Mr. Turner]]''&nbsp;– [[Gary Yershon]]
+** ''[[The Theory of Everything (2014 film)|The Theory of Everything]]''&nbsp;– [[Jóhann Jóhannsson]]
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Glory (Common and John Legend song)|Glory]]" from ''[[Selma (film)|Selma]]''&nbsp;– Music and Lyrics by [[John Legend|John Stephens]] and [[Common (rapper)|Lonnie Lynn]]'''{{double dagger}}
+** "[[Everything Is Awesome]]" from ''[[The Lego Movie]]''&nbsp;– Music and Lyrics by [[Shawn Patterson (composer)|Shawn Patterson]]
+** "[[Grateful (Rita Ora song)|Grateful]]" from ''[[Beyond the Lights]]''&nbsp;– Music and Lyrics by [[Diane Warren]]
+** "[[I'm Not Gonna Miss You]]" from ''[[Glen Campbell: I'll Be Me]]''&nbsp;– Music and Lyrics by [[Glen Campbell]] and [[Julian Raymond]]
+** "[[Lost Stars]]" from ''[[Begin Again (film)|Begin Again]]''&nbsp;– Music and Lyrics by [[Gregg Alexander]] and [[Danielle Brisebois]]
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[American Sniper]]''&nbsp;– [[Alan Robert Murray]] and [[Bub Asman]]'''{{double dagger}}
+** ''[[Birdman or (The Unexpected Virtue of Ignorance)]]''&nbsp;– [[Martin Hernández]] and [[Aaron Glascock]]
+** ''[[The Hobbit: The Battle of the Five Armies]]''&nbsp;– [[Brent Burge]] and [[Jason Canovas]]
+** ''[[Interstellar (film)|Interstellar]]''&nbsp;– [[Richard King (sound designer)|Richard King]]
+** ''[[Unbroken (film)|Unbroken]]''&nbsp;– [[Becky Sullivan]] and [[Andrew DeCristofaro]]
+| valign="top"|
+{{Award category|#F9EFAA|[[Best Sound Mixing]]}}
+* '''''[[Whiplash (2014 film)|Whiplash]]''&nbsp;– [[Craig Mann]], [[Ben Wilkins]], and [[Thomas Curley (sound engineer)|Thomas Curley]]'''{{double dagger}}
+** ''[[American Sniper]]''&nbsp;– [[John T. Reitz]], [[Gregg Rudloff]], and [[Walt Martin]] (posthumous nomination)
+** ''[[Birdman or (The Unexpected Virtue of Ignorance)]]''&nbsp;– [[Jon Taylor (sound mixer)|Jon Taylor]], [[Frank A. Montaño]], and [[Thomas Varga]]
+** ''[[Interstellar (film)|Interstellar]]''&nbsp;– [[Gary A. Rizzo]], [[Gregg Landaker]], and [[Mark Weingarten]]
+** ''[[Unbroken (film)|Unbroken]]''&nbsp;– [[Jon Taylor (sound mixer)|Jon Taylor]], [[Frank A. Montaño]], and [[David Lee (Australian sound engineer)|David Lee]]
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+* '''''[[The Grand Budapest Hotel]]''&nbsp;– Production Design: [[Adam Stockhausen]]; Set Decoration: [[Anna Pinnock]]'''{{double dagger}}
+** ''[[The Imitation Game]]''&nbsp;– Production Design: [[Maria Djurkovic]]; Set Decoration: Tatiana Macdonald
+** ''[[Interstellar (film)|Interstellar]]''&nbsp;– Production Design: [[Nathan Crowley]]; Set Decoration: [[Gary Fettis]]
+** ''[[Into the Woods (film)|Into the Woods]]''&nbsp;– Production Design: [[Dennis Gassner]]; Set Decoration: [[Anna Pinnock]]
+** ''[[Mr. Turner]]''&nbsp;– Production Design: [[Suzie Davies]]; Set Decoration: Charlotte Watts
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Birdman or (The Unexpected Virtue of Ignorance)]]''&nbsp;– [[Emmanuel Lubezki]]'''{{double dagger}}
+** ''[[The Grand Budapest Hotel]]''&nbsp;– [[Robert Yeoman]]
+** ''[[Ida (film)|Ida]]''&nbsp;– [[Łukasz Żal]] and [[Ryszard Lenczewski]]
+** ''[[Mr. Turner]]''&nbsp;– [[Dick Pope (cinematographer)|Dick Pope]]
+** ''[[Unbroken (film)|Unbroken]]''&nbsp;– [[Roger Deakins]]
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* '''''[[The Grand Budapest Hotel]]''&nbsp;– [[Frances Hannon]] and [[Mark Coulier]]'''{{double dagger}}
+** ''[[Foxcatcher]]''&nbsp;– [[Bill Corso]] and [[Dennis Liddiard]]
+** ''[[Guardians of the Galaxy (film)|Guardians of the Galaxy]]''&nbsp;– [[Elizabeth Yianni-Georgiou]] and [[David White (make-up artist)|David White]]
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[The Grand Budapest Hotel]]''&nbsp;– [[Milena Canonero]]'''{{double dagger}}
+** ''[[Inherent Vice (film)|Inherent Vice]]''&nbsp;– [[Mark Bridges (costume designer)|Mark Bridges]]
+** ''[[Into the Woods (film)|Into the Woods]]''&nbsp;– [[Colleen Atwood]]
+** ''[[Maleficent (film)|Maleficent]]''&nbsp;– [[Anna B. Sheppard]]
+** ''[[Mr. Turner]]''&nbsp;– [[Jacqueline Durran]]
+|-
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Whiplash (2014 film)|Whiplash]]''&nbsp;– [[Tom Cross (film editor)|Tom Cross]]'''{{double dagger}}
+** ''[[American Sniper]]''&nbsp;– [[Joel Cox]] and [[Gary D. Roach]]
+** ''[[Boyhood (2014 film)|Boyhood]]''&nbsp;– [[Sandra Adair]]
+** ''[[The Grand Budapest Hotel]]''&nbsp;– [[Barney Pilling]]
+** ''[[The Imitation Game]]''&nbsp;– [[William Goldenberg]]
+| valign="top"|
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Interstellar (film)|Interstellar]]''&nbsp;– [[Paul Franklin (visual effects supervisor)|Paul Franklin]], [[Andrew Lockley]], [[Ian Hunter (visual effects supervisor)|Ian Hunter]], and [[Scott R. Fisher|Scott Fisher]]'''{{double dagger}}
+** ''[[Captain America: The Winter Soldier]]''&nbsp;– [[Dan DeLeeuw]], [[Russell Earl]], [[Bryan Grill]], and [[Dan Sudick]]
+** ''[[Dawn of the Planet of the Apes]]''&nbsp;– [[Joe Letteri]], [[Dan Lemmon]], [[Daniel Barrett (visual effects supervisor)|Daniel Barrett]], and [[Erik Winquist]]
+** ''[[Guardians of the Galaxy (film)|Guardians of the Galaxy]]''&nbsp;– [[Stéphane Ceretti]], [[Nicolas Aithadi]], [[Jonathan Fawkner]], and [[Paul Corbould]]
+** ''[[X-Men: Days of Future Past]]''&nbsp;– [[Richard Stammers]], [[Lou Pecora]], [[Tim Crosbie]], and [[Cameron Waldbauer]]
+|}
+
+=== Governors Awards ===
+The Academy held its 6th Annual [[Governors Awards]] ceremony on November 8, 2014, during which the following awards were presented:<ref name="Variety"/>
+
+====Honorary Awards====
+* To [[Jean-Claude Carrière]], whose elegantly crafted screenplays elevate the art of screenwriting to the level of literature.<ref name="2015 Memorable Moments">{{cite news|title=2015 Memorable Moments |url=http://www.oscars.org/oscars/ceremonies/2015-memorable-moments |access-date=September 9, 2015 |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20150902002143/http://www.oscars.org/oscars/ceremonies/2015-memorable-moments |archive-date=September 2, 2015}}</ref>
+* To [[Hayao Miyazaki]], a master storyteller whose animated artistry has inspired filmmakers and audiences around the world.<ref name="2015 Memorable Moments" />
+* [[Maureen O'Hara]], one of Hollywood's brightest stars, whose inspiring performances glowed with passion, warmth and strength.<ref name="2015 Memorable Moments" />
+
+====Jean Hersholt Humanitarian Award====
+* [[Harry Belafonte]] {{em-dash}} For a lifetime of demonstrating how art is ennobled by ceaseless courage and conscience.<ref name="2015 Memorable Moments" />
+
+===Films with multiple nominations and awards===
+{{Col-begin|width=80%}}{{Col-1-of-2}}
+The following 17 films received multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|+ Films that received multiple nominations
+|-
+! scope="col" | Nominations
+! scope="col" align="center" | Film
+
+|-
+| rowspan=2 style="text-align:center" | 9
+| ''[[Birdman or (The Unexpected Virtue of Ignorance)]]''
+|-
+| ''[[The Grand Budapest Hotel]]''
+|-
+| style="text-align:center" |8
+| ''[[The Imitation Game]]''
+|-
+|rowspan=2 style="text-align:center" |6
+| ''[[American Sniper]]''
+|-
+|''[[Boyhood (2014 film)|Boyhood]]''
+|-
+|rowspan=4 style="text-align:center" |5
+| ''[[Foxcatcher]]''
+|-
+| ''[[Interstellar (film)|Interstellar]]''
+|-
+| ''[[The Theory of Everything (2014 film)|The Theory of Everything]]''
+|-
+| ''[[Whiplash (2014 film)|Whiplash]]''
+|-
+| style="text-align:center" |4
+| ''[[Mr. Turner]]''
+|-
+|rowspan=2 style="text-align:center" |3
+| ''[[Into the Woods (film)|Into the Woods]]''
+|-
+| ''[[Unbroken (film)|Unbroken]]''
+|-
+|rowspan=5 style="text-align:center" |2
+| ''[[Guardians of the Galaxy (film)|Guardians of the Galaxy]]''
+|-
+| ''[[Ida (film)|Ida]]''
+|-
+| ''[[Inherent Vice (film)|Inherent Vice]]''
+|-
+| ''[[Selma (film)|Selma]]''
+|-
+| ''[[Wild (2014 film)|Wild]]''
+|}
+
+{{Col-2-of-2}}
+
+The following three films received multiple awards:
+
+{| class="wikitable" style="text-align: center;"
+|+ Films that received multiple awards
+|-
+! | Awards
+! align="center" | Film
+|-
+| rowspan=2 style="text-align:center" | 4
+| ''[[Birdman or (The Unexpected Virtue of Ignorance)]]''
+|-
+| ''[[The Grand Budapest Hotel]]''
+|-
+| style="text-align:center" | 3
+| ''[[Whiplash (2014 film)|Whiplash]]''
+|}
+{{Col-end}}
+
+== Presenters and performers ==
+{{multiple image
+| total_width = 400
+| align = right
+| image1 = Chris Pine, actor, and Academy President Cheryl Boone Isaacs at the 87th Oscars Nominations Announcement.jpg
+| image2 = Directors J.J. Abrams and Alfonso Cuarón at the 87th Oscars Nominations Announcement.jpg
+| footer = Actor [[Chris Pine]] and Academy President [[Cheryl Boone Isaacs]] (''left'') and directors [[J. J. Abrams]] and [[Alfonso Cuarón]] (''right'') at the 87th Academy Awards nominations announcement
+}}
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>{{cite news|last1=Fienberg |first1=Daniel |title=Academy Awards 2015 Live Blog |url=http://www.hitfix.com/the-fien-print/academy-awards-2015-live-blog |access-date=February 25, 2015 |work=[[HitFix]] |date=February 22, 2015 |url-status=dead |archive-url=https://web.archive.org/web/20150225223127/http://www.hitfix.com/the-fien-print/academy-awards-2015-live-blog |archive-date=February 25, 2015}}</ref><ref name="Burlingame-2015">{{cite news|last1=Burlingame |first1=Jon |title=Oscar Music Awards Make "Glory"–ous History; Alexander Desplat scores win for Grand Budapest Hotel |url=http://www.filmmusicsociety.org/news_events/features/2015/022315.html |access-date=March 31, 2015 |publisher=[[The Film Music Society]] |date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150402133511/http://www.filmmusicsociety.org/news_events/features/2015/022315.html |archive-date=April 2, 2015}}</ref>
+
+=== Presenters ===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Cedering|Fox|nolink=1}} || Announcer for the 87th annual Academy Awards
+|-
+| {{sortname|Lupita|Nyong'o}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Liam|Neeson}} || Presenter of the films ''[[The Grand Budapest Hotel]]'' and ''[[American Sniper]]'' on the Best Picture segment
+|-
+| {{sortname|Dakota|Johnson}} || Introducer of the performance of Best Original Song nominee "[[Lost Stars]]"
+|-
+| {{sortname|Jennifer|Lopez}}<br />[[Chris Pine]] || Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Reese|Witherspoon}} || Presenter of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]
+|-
+| {{sortname|Channing|Tatum}} || Introducer of the six winners of the Team Oscar contest
+|-
+| {{sortname|Chiwetel|Ejiofor}}<br />[[Nicole Kidman]] || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Shirley|MacLaine}} || Presenter of the films ''[[Boyhood (2014 film)|Boyhood]]'', ''[[The Theory of Everything (2014 film)|The Theory of Everything]]'' and ''[[Birdman or (The Unexpected Virtue of Ignorance)]]'' on the Best Picture segment
+|-
+| {{sortname|Marion|Cotillard}} || Introducer of the performance of Best Original Song nominee "[[Everything Is Awesome]]"
+|-
+| {{sortname|Jason|Bateman}}<br />[[Kerry Washington]] || Presenters of the awards for [[Best Live Action Short Film]] and [[Best Documentary Short Subject]]
+|-
+| {{sortname|Viola|Davis}} || Presenter of the segment of the [[Honorary Academy Awards]] and the [[Jean Hersholt Humanitarian Award]]
+|-
+| {{sortname|Gwyneth|Paltrow}} || Introducer of the performance of Best Original Song nominee "I'm Not Gonna Miss You"
+|-
+| {{sortname|Margot|Robbie}}<br />[[Miles Teller]] || Presenters of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Chris|Evans|Chris Evans (actor)|Chris Evans}}<br />[[Sienna Miller]] || Presenters of the awards for [[Best Sound Mixing]] and [[Academy Award for Best Sound Editing|Best Sound Editing]]
+|-
+| {{sortname|Jared|Leto}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Josh|Hutcherson}} || Introducer of the performance of Best Original Song nominee "[[Grateful (Rita Ora song)|Grateful]]"
+|-
+| {{sortname|Ansel|Elgort}}<br />[[Chloë Grace Moretz]] || Presenters of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Kevin|Hart}}<br />[[Anna Kendrick]] || Presenters of the award for [[Best Animated Short Film]]
+|-
+| {{sortname|Dwayne|Johnson}}<br />[[Zoe Saldaña]] || Presenters of the award for [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+| {{sortname|Cheryl Boone|Isaacs}} (AMPAS president) || Special presentation highlighting the benefits of film and creativity
+|-
+| {{sortname|Felicity|Jones}}<br />[[Chris Pratt]] || Presenters of the award for [[Academy Award for Best Production Design|Best Production Design]]
+|-
+| {{sortname|Jessica|Chastain}}<br />[[Idris Elba]] || Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Meryl|Streep}} || Presenter of the "[[In memoriam segment|In Memoriam]]" tribute
+|-
+| {{sortname|Benedict|Cumberbatch}}<br />[[Naomi Watts]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Terrence|Howard}} || Presenter of the films ''[[Whiplash (2014 film)|Whiplash]]'', ''[[The Imitation Game]]'', and ''[[Selma (film)|Selma]]'' on the Best Picture segment
+|-
+| {{sortname|Jennifer|Aniston}}<br />[[David Oyelowo]] || Presenters of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Octavia|Spencer}} || Introducer of the performance of Best Original Song nominee "[[Glory (Common and John Legend song)|Glory]]"
+|-
+| {{sortname|Idina|Menzel}}<br />[[John Travolta]]{{efn|Introduced as "Glom Gazingo" in this segment.}} || Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Scarlett|Johansson}} || Introducer of ''[[The Sound of Music (film)|The Sound of Music]]'' 50th anniversary tribute and the performance of "[[The Sound of Music (song)|The Sound of Music]]", "[[My Favorite Things (song)|My Favorite Things]]", "[[Edelweiss (song)|Edelweiss]]" and "[[Climb Ev'ry Mountain]]" by [[Lady Gaga]]
+|-
+| {{sortname|Julie|Andrews}} || Presenter of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| {{sortname|Eddie|Murphy}} || Presenter of the award for [[Best Original Screenplay]]
+|-
+| {{sortname|Oprah|Winfrey}} || Presenter of the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| {{sortname|Ben|Affleck}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Cate|Blanchett}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Matthew|McConaughey}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Sean|Penn}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+{{reflist|group=n}}
+
+=== Performers ===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+| {{sortname|Stephen|Oremus}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Neil Patrick|Harris}}<br />{{sortname|Anna|Kendrick}}<br />{{sortname|Jack|Black}} || Performers || "Moving Pictures" during the opening segment
+|-
+| {{sortname||Maroon 5}} || Performers || "[[Lost Stars]]" from ''[[Begin Again (film)|Begin Again]]''
+|-
+| [[Tegan and Sara]]<br />[[The Lonely Island]]<br />{{sortname|Will|Arnett}} (as [[Batman]])<br />[[?uestlove]]<br />[[Mark Mothersbaugh]] || Performers || "[[Everything Is Awesome]]" from ''[[The Lego Movie]]''
+|-
+| {{sortname|Tim|McGraw}} || Performer || "I'm Not Gonna Miss You" from ''[[Glen Campbell: I'll Be Me]]''
+|-
+| {{sortname|Rita|Ora}}|| Performer || "[[Grateful (Rita Ora song)|Grateful]]" from ''[[Beyond the Lights]]''
+|-
+| {{sortname|Jennifer|Hudson}} || Performer || "[[I Can't Let Go (Smash song)|I Can't Let Go]]" during the annual "In Memoriam" tribute
+|-
+|| {{sortname||Common|Common (rapper)|Common}}<br />[[John Legend]] || Performers || "[[Glory (Common and John Legend song)|Glory]]" from ''[[Selma (film)|Selma]]''
+|-
+| {{sortname|Lady|Gaga}} || Performer || "[[The Sound of Music (song)|The Sound of Music]]", "[[My Favorite Things (song)|My Favorite Things]]", "[[Edelweiss (song)|Edelweiss]]", and "[[Climb Ev'ry Mountain]]" from ''[[The Sound of Music (film)|The Sound of Music]]''
+|}
+
+== Ceremony information ==
+[[File:5.3.10NeilPatrickHarrisByDavidShankbone.jpg|thumb|upright|[[Neil Patrick Harris]] hosted the 87th Academy Awards.|alt=Photo of Neil Patrick Harris at the unveiling of his star of the Hollywood Walk of Fame in 2011.]]
+
+Riding on the success of the [[86th Academy Awards|previous year's ceremony]] which garnered its highest viewership figures in over a decade, the Academy rehired producers [[Neil Meron]] and [[Craig Zadan]] for the third consecutive year. "Their showmanship has elevated the show to new heights and we are excited to keep the momentum going with this creative partnership," said AMPAS president [[Cheryl Boone Isaacs]] in a press release announcing the selection.<ref name="Perlman-2015">{{cite magazine|last1=Perlman |first1=Jake |title=Oscars: Craig Zadan and Neil Meron returning to produce 2015 show |url=https://www.ew.com/article/2014/04/21/oscars-zadan-meron-produce |access-date=February 25, 2015 |magazine=[[Entertainment Weekly]] |date=April 21, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150402121858/http://www.ew.com/article/2014/04/21/oscars-zadan-meron-produce |archive-date=April 2, 2015}}</ref> In October 2014, actor [[Neil Patrick Harris]], who previously hosted four Tony Awards ceremonies between [[63rd Tony Awards|2009]] and [[67th Tony Awards|2013]] and two [[Primetime Emmy Award]]s telecasts in [[61st Primetime Emmy Awards|2009]] and [[65th Primetime Emmy Awards|2013]], was chosen as host of the 2015 gala.<ref name="Harris">{{cite news|last1=Derschowitz |first1=Jessica |title=Neil Patrick Harris to host 2015 Oscars |url=https://www.cbsnews.com/news/neil-patrick-harris-to-host-2015-oscars/ |access-date=February 25, 2015 |publisher=[[CBS News]] ([[CBS Corporation]]) |date=October 15, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150221025150/http://www.cbsnews.com/news/neil-patrick-harris-to-host-2015-oscars/ |archive-date=February 21, 2015}}</ref> Meron and Zadan explained their decision to hire the television and theatre star saying, "We are thrilled to have Neil host the Oscars. We have known him his entire adult life, and we have watched him explode as a great performer in feature films, television and stage. To work with him on the Oscars is the perfect storm, all of his resources and talent coming together on a global stage."<ref>{{cite news|last1=Schlosser |first1=Kurt |title=Neil Patrick Harris confirmes in video that he's the next Oscars host |url=http://www.today.com/popculture/neil-patrick-harris-confirms-he-will-host-oscars-2D80219972 |access-date=March 27, 2015 |publisher=[[NBC News]] ([[NBCUniversal]]) |date=October 15, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150419143316/http://www.today.com/popculture/neil-patrick-harris-confirms-he-will-host-oscars-2D80219972 |archive-date=April 19, 2015}}</ref> Harris expressed that it was truly an honor and a thrill to be asked to host Academy Awards commenting, "I grew up watching the Oscars and was always in such awe of some of the greats who hosted the show. To be asked to follow in the footsteps of [[Johnny Carson]], [[Billy Crystal]], [[Ellen DeGeneres]], and everyone else who had the great fortune of hosting is a bucket list dream come true."<ref>{{cite news|title=Neil Patrick Harris to Host the Oscars |url=https://variety.com/2014/film/news/neil-patrick-harris-to-host-the-oscars-exclusive-1201312943/ |work=Variety  |date=October 15, 2014 |access-date=February 27, 2014 |url-status=live |archive-url=https://web.archive.org/web/20141015212811/http://variety.com/2014/film/news/neil-patrick-harris-to-host-the-oscars-exclusive-1201312943/ |archive-date=October 15, 2014}}</ref>
+
+Shortly after his selection, several reports were released indicating that DeGeneres and other comedians such as [[77th Academy Awards|2005 ceremony]] host [[Chris Rock]] and actress [[Julia Louis-Dreyfus]] declined the offer to host the program, and Harris was a last-minute choice as emcee.<ref>{{cite news|last1=Dawn |first1=Randee |title=Neil Patrick Harris reportedly not Oscars' No. 1 choice to host—so who was? |url=http://www.today.com/popculture/neil-patrick-harris-reportedly-not-oscars-no-1-choice-host-1D80237059 |access-date=March 28, 2015 |publisher=[[NBC News]] ([[NBCUniversal]]) |date=October 22, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150910070727/http://www.today.com/popculture/neil-patrick-harris-reportedly-not-oscars-no-1-choice-host-1D80237059 |archive-date=September 10, 2015}}</ref> Nevertheless, both Meron and Zadan denied such allegations and insisted that Harris was their only choice saying, "After every Oscar show there is always a discussion as to who will host the next one. Many names are discussed and sometimes even floated without there being any formal offers. At times, these casual discussions take on a life of their own, and some are eager to break a story without knowing the facts. Neil Patrick Harris received the Academy's formal offer."<ref>{{cite news|title=Oscar Producers Blast Trade Story That Called Neil Patrick Harris An "Also–Ran" And Not First Choice To Host |url=https://deadline.com/2014/10/neil-patrick-harris-oscar-story-blasted-by-show-producers-858505/ |website=Deadline Hollywood  |date=October 23, 2014 |access-date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150402201159/http://deadline.com/2014/10/neil-patrick-harris-oscar-story-blasted-by-show-producers-858505/ |archive-date=April 2, 2015}}</ref>
+
+Several other people were also involved with the production of the ceremony. [[Stephen Oremus]] served as musical director and conductor for the event.<ref name="Burlingame-2015" /> [[Derek McLane]] returned to design a new set and stage design for the show.<ref name="crew"/> During the ceremony, actor [[Channing Tatum]] introduced a group called "Team Oscar", which consisted of six young film students from colleges across the country selected by AMPAS whose role was to deliver Oscar statuettes to the presenters during the gala.<ref>{{cite news|last1=Gajewski |first1=Ryan |title=Oscars: Channing Tatum Announces Contest Winners to Hand Out Awards |url=https://www.hollywoodreporter.com/news/oscars-channing-tatum-announces-contest-767469 |access-date=February 25, 2015 |work=The Hollywood Reporter  |date=January 26, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150130032225/http://www.hollywoodreporter.com/news/oscars-channing-tatum-announces-contest-767469 |archive-date=January 30, 2015}}</ref> Oscar-winning husband-and-wife songwriters [[Robert Lopez]] and [[Kristen Anderson-Lopez]] composed Harris's opening number entitled "Moving Pictures".<ref>{{cite magazine|title=Oscars ceremony enlists 'Frozen' songwriting team for a Neil Patrick Harris number |url=https://www.ew.com/article/2015/01/27/oscars-ceremony-enlists-frozen-songwriting-team-for-a-neil-patrick-harris-number |access-date=January 27, 2015 |magazine=Entertainment Weekly  |date=January 27, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150130030047/http://www.ew.com/article/2015/01/27/oscars-ceremony-enlists-frozen-songwriting-team-for-a-neil-patrick-harris-number |archive-date=January 30, 2015}}</ref> Musicians [[Questlove]] and [[Mark Mothersbaugh]] and actor [[Will Arnett]] made cameos during the performance of Best Original Song nominee "[[Everything Is Awesome]]".<ref>{{cite news|title=Oscars: Tegan & Sara, Mark Mothersbaugh, Questlove and More Perform "Everything Is Awesome" |url=https://blogs.wsj.com/speakeasy/2015/02/22/oscars-tegan-sara-mark-mothersbaugh-questlove-and-more-perform-everything-is-awesome/ |access-date=March 28, 2015 |newspaper=[[The Washington Post]]  |date=February 22, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150401074728/https://blogs.wsj.com/speakeasy/2015/02/22/oscars-tegan-sara-mark-mothersbaugh-questlove-and-more-perform-everything-is-awesome/ |archive-date=April 1, 2015}}</ref>
+
+===Box office performance of nominated films===
+{| class="wikitable sortable" style="width:250px; font-size:90%; float:right; clear:right; margin-left:10px"
+|+North American box office gross for Best Picture nominees<ref name="Box Office Mojo (Amazon.com)">{{cite news|title=2014 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=2014&view=fulldetail&p=.htm |access-date=January 17, 2014 |website=[[Box Office Mojo]] ([[Amazon.com]]) |url-status=live |archive-url=https://web.archive.org/web/20150130225626/http://boxofficemojo.com/oscar/chart/?yr=2014&view=fulldetail&p=.htm |archive-date=January 30, 2015}}</ref>
+
+|-
+! Film
+! Pre-nomination<br />(Before Jan. 16)
+! Post-nomination<br />(Jan. 16-Feb. 22)
+! Post-awards<br />(After Feb. 22)
+! Total
+|-
+| ''American Sniper''
+| $3.4 million
+| $316 million
+| $30.1 million
+| $350 million
+|-
+| ''Birdman or (The Unexpected Virtue of Ignorance)''
+| $26.6 million
+| $11.2 million
+| $4.6 million
+| $42.3 million
+|-
+| ''Boyhood''
+| $24.4 million
+| $942,668
+| $36,767
+| $25.3 million
+|-
+| ''The Grand Budapest Hotel''
+| $59.1 million
+| N/A
+| N/A
+| $59.1 million
+|-
+| ''The Imitation Game''
+| $42.8 million
+| $41.1 million
+| $7.2 million
+| $91.2 million
+|-
+| ''Selma''
+| $16.6 million
+| $33.0 million
+| $2.5 million
+| $52.1 million
+|-
+| ''The Theory of Everything''
+| $26.2 million
+| $7.9 million
+| $1.8 million
+| $35.9 million
+|-
+| ''Whiplash''
+| $6.2 million
+| $5.1 million
+| $1.8 million
+| $13.1 million
+|}
+For the first time since 2007, none of the Best Picture nominees had grossed $100&nbsp;million before the nominations were announced (compared with three from the previous year).<ref>{{cite news|last1=Lang |first1=Brett |title=Oscar Best Picture Nominees Are Box Office Lightweights |url=https://variety.com/2015/film/news/oscar-best-picture-nominees-are-box-office-lightweights-1201405964/ |access-date=March 30, 2015 |work=Variety  |date=January 15, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150402234530/http://variety.com/2015/film/news/oscar-best-picture-nominees-are-box-office-lightweights-1201405964/ |archive-date=April 2, 2015}}</ref><ref>{{cite news|last1=McClintock |first1=Pamela |title=Oscar Box Office: 'American Sniper,' 'Imitation Game,' 'Selma' Poised for Bump |url=https://www.hollywoodreporter.com/news/oscar-box-office-american-sniper-764037 |access-date=March 31, 2015 |work=The Hollywood Reporter  |date=January 15, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150426140151/http://www.hollywoodreporter.com/news/oscar-box-office-american-sniper-764037 |archive-date=April 26, 2015}}</ref> The combined gross of the eight Best Picture nominees at the American and Canadian box offices was $205&nbsp;million, with an average of $25.6&nbsp;million per film.<ref name="Box Office Mojo (Amazon.com)" />
+
+None of the eight Best Picture nominees was among the top 50 releases in box office during nominations. When the nominations were announced on January 15, 2015, ''The Grand Budapest Hotel'' was the highest-grossing film among the Best Picture nominees with $59.1&nbsp;million in domestic box office receipts.<ref name="Box Office Mojo (Amazon.com)" /> ''The Imitation Game'' was the second-highest-grossing film with $42.7&nbsp;million; this was followed by ''Birdman or (The Unexpected Virtue of Ignorance)'' ($26.6&nbsp;million), ''The Theory of Everything'' ($26.2&nbsp;million), ''Boyhood'' ($24.3&nbsp;million), ''Selma'' ($16.5&nbsp;million), ''Whiplash'' ($6.2&nbsp;million), and finally ''American Sniper'' ($3.3&nbsp;million).<ref name="Box Office Mojo (Amazon.com)" />{{efn|''American Sniper'' opened in wide release on January 16, where it became the [[List of 2015 box office number-one films in the United States|number-one film]] at the American box office for three consecutive weekends.<ref>{{cite news|last1=Cunningham |first1=Todd |title='American Sniper' Breaks Miley Cyrus' Super Bowl Record at Box Office |url=https://www.thewrap.com/american-sniper-breaks-miley-cyrus-super-bowl-record-at-box-office/ |access-date=March 28, 2015 |website=TheWrap |date=February 1, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150323214018/http://www.thewrap.com/american-sniper-breaks-miley-cyrus-super-bowl-record-at-box-office/ |archive-date=March 23, 2015}}</ref> The film eventually became the highest grossing film at the American and Canadian box office released in 2014.<ref>{{cite magazine|last1=Bacle |first1=Ariana |title=American Sniper becomes highest grossing 2014 release |url=https://www.ew.com/article/2015/03/08/american-sniper-becomes-highest-grossing-2014-release/article_2133558 |access-date=March 28, 2015 |magazine=Entertainment Weekly  |date=March 8, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150924150708/http://www.ew.com/article/2015/03/08/american-sniper-becomes-highest-grossing-2014-release/article_2133558 |archive-date=September 24, 2015}}</ref>
+}}
+
+Of the top 50 grossing movies of the year, 23 nominations went to 13 films on the list. Only ''Big Hero 6'' (9th), ''How to Train Your Dragon 2'' (16th), and ''Into the Woods'' (25th) were nominated for Best Picture, Best Animated Feature or any of the directing, acting or screenwriting awards. The other top 50 box office hits that earned nominations were ''Guardians of the Galaxy'' (1st), ''Captain America: The Winter Soldier'' (3rd), ''The Lego Movie'' (4th), ''Maleficent'' (6th), ''The Hobbit: The Battle of the Five Armies'' (7th), ''X-Men: Days of Future Past'' (8th), ''Dawn of the Planet of the Apes'' (10th), ''Interstellar'' (15th), and ''Unbroken'' (27th).<ref>{{cite news|title=2014 Domestic Grosses (as of January 15, 2015) |url=https://boxofficemojo.com/yearly/chart/?yr=2014&asof=2015-01-15&view=releasedate&view2=domestic&sort=gross&order=DESC&&p=.htm |access-date=January 17, 2015 |website=Box Office Mojo (Amazon.com) |date=January 17, 2015 |url-status=live |archive-url=https://web.archive.org/web/20140226023919/http://boxofficemojo.com/yearly/chart/?yr=2014&asof=2015-01-15&view=releasedate&view2=domestic&sort=gross&order=DESC&&p=.htm |archive-date=February 26, 2014}}</ref>
+
+This was the first time since the [[73rd Academy Awards]] in 2000 the highest-grossing film of the year worldwide (''[[Mission Impossible 2]]'') had no Oscar nominations. The highest-grossing film of 2014 worldwide was ''[[Transformers: Age of Extinction]]'' but didn't receive any Oscar nominations.
+
+===Criticism regarding lack of diversity among nominees===
+{{Main article|OscarsSoWhite}}
+Shortly after the nominations were announced, many news media outlets highlighted the lack of racial diversity amongst the nominees in major award categories.<ref>{{cite news|last1=Lang |first1=Brett |title=Oscar Nominations Expose Academy's Lack of Diversity |url=https://variety.com/2015/film/news/oscar-nomination-selma-snub-diversity-1201405804/ |access-date=April 1, 2015 |work=Variety  |date=January 15, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150406113026/http://variety.com/2015/film/news/oscar-nomination-selma-snub-diversity-1201405804/ |archive-date=April 6, 2015}}</ref><ref>{{cite news|last1=Zeitchik |first1=Steven |last2=Ali |first2=Lorraine |title=Oscars 2015: Diversity is the biggest nomination snub |url=https://www.latimes.com/entertainment/movies/la-et-mn-oscar-nominations-diversity-20150116-story.html |access-date=March 31, 2015 |work=Los Angeles Times |date=January 16, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150317071617/http://www.latimes.com/entertainment/movies/la-et-mn-oscar-nominations-diversity-20150116-story.html |archive-date=March 17, 2015}}</ref><ref>{{cite news|last1=Vincent |first1=Alice |title=And the Oscar winner is... a white, middle–aged man |url=https://www.telegraph.co.uk/culture/film/oscars/11348193/And-the-Oscars-winner-is...-a-white-middle-aged-man.html |url-access=limited |access-date=April 1, 2015 |work=The Daily Telegraph  |date=January 16, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150213203557/http://www.telegraph.co.uk/culture/film/oscars/11348193/And-the-Oscars-winner-is...-a-white-middle-aged-man.html |archive-date=February 13, 2015}}</ref> According to Tatiana Siegel of ''[[The Hollywood Reporter]]'', it was the second time since 1998 that all 20 acting nominees were of [[Caucasian race|Caucasian]] descent.<ref>{{cite news|last1=Siegel |first1=Tatiana |title=Oscars: Acting Nominees All White |url=https://www.hollywoodreporter.com/news/oscars-acting-nominees-all-white-764018 |access-date=March 31, 2015 |work=The Hollywood Reporter  |date=January 15, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150325112416/http://www.hollywoodreporter.com/news/oscars-acting-nominees-all-white-764018 |archive-date=March 25, 2015}}</ref> ''[[The New York Times]]'' columnist [[David Carr (journalist)|David Carr]] pointed out the omission of [[Ava DuVernay]] and [[David Oyelowo]] in directing and lead acting categories. He also noted that these nominations heavily contrasted last year's nominations that included Best Picture winner ''[[12 Years a Slave (film)|12 Years a Slave]]'' and Best Supporting Actress winner [[Lupita Nyong'o]].<ref>{{cite news|url=https://www.nytimes.com/2015/01/19/business/media/why-the-oscars-omission-of-selma-matters.html |title=Why the Oscars' Omission of 'Selma' Matters |first=David |last=Carr |date=January 18, 2015 |work=[[The New York Times]] |url-status=live |archive-url=https://web.archive.org/web/20170519222852/https://www.nytimes.com/2015/01/19/business/media/why-the-oscars-omission-of-selma-matters.html |archive-date=May 19, 2017}}</ref>
+
+As a result, the Academy was ridiculed by the [[Black Twitter]] community and became the target of hashtag movements such as #[[OscarsSoWhite]] and #WhiteOscars.<ref>{{cite news|last1=Alexander |first1=Bryan |title=White, male field spurs Oscars diversity backlash |url=https://www.usatoday.com/story/life/movies/2015/01/15/oscar-nominations-diversity-backlash/21817111/ |access-date=March 31, 2015 |work=USA Today  |date=January 16, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150226023919/http://www.usatoday.com/story/life/movies/2015/01/15/oscar-nominations-diversity-backlash/21817111/ |archive-date=February 26, 2015}}</ref><ref>{{cite news|last1=Yamato |first1=Jen |title=Did Academy Award Nominations Deserve #WhiteOscars Outrage? |url=https://deadline.com/2015/01/academy-award-nominations-twitter-white-oscars-controversy-selma-1201351105/ |access-date=March 31, 2015 |website=Deadline Hollywood  |date=January 15, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150326133416/http://deadline.com/2015/01/academy-award-nominations-twitter-white-oscars-controversy-selma-1201351105/ |archive-date=March 26, 2015}}</ref> In addition, U.S. Democratic Party Congressman [[Tony Cárdenas]] wrote a letter voicing his concerns regarding AMPAS and diversity, stating: "While the issue of diversity in the entertainment industry is a much deeper problem, without an easy solution, it is unfortunate to see such a revered American institution fail to fully reflect our nation." Cárdenas went on to say that he was willing to work with Academy officials in making the entertainment industry more representative of different ethnicities.<ref>{{cite news|last1=Johnson |first1=Ted |title=Congressman Challenges Film Academy on Lack of Diversity in Oscar Nominees |url=https://variety.com/2015/biz/news/congressman-challenges-film-academy-on-lack-of-diversity-in-oscar-nominees-1201435678/ |access-date=April 1, 2015 |work=Variety  |date=February 17, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150402180109/http://variety.com/2015/biz/news/congressman-challenges-film-academy-on-lack-of-diversity-in-oscar-nominees-1201435678/ |archive-date=April 2, 2015}}</ref>
+
+In response to criticism about lack of diversity, AMPAS President Isaacs told reporter Sandy Cohen from the [[Associated Press]] that the Academy was "committed to seeking out diversity of voice and opinion."<ref name="Cohen">{{cite news|last1=Cohen |first1=Sandy |title=Oscars 2015: Film academy president responds to firestorm over lack of diversity |url=http://www.syracuse.com/entertainment/index.ssf/2015/01/oscars_2015.html |access-date=April 1, 2015 |work=[[The Post-Standard]]  |url-status=live |archive-url=https://web.archive.org/web/20150402115246/http://www.syracuse.com/entertainment/index.ssf/2015/01/oscars_2015.html |archive-date=April 2, 2015}}</ref> She refrained from addressing the lack of diversity of that year's nominees, although stated that she was proud of all the nominees and praised ''Selma'' as a "fantastic motion picture".<ref name="Cohen" />
+
+Several days before the awards gala, the [[National Action Network]] led by civil rights activist [[Al Sharpton]] and several other organizations planned to demonstrate near the ceremony at the [[Dolby Theatre]] before and during the telecast.<ref>{{cite news|last1=Patten |first1=Dominic |title=Oscars: Al Sharpton–Led Activist Group Planning Protest Sunday |url=https://deadline.com/2015/02/oscars-al-sharpton-protest-diversity-controversy-1201377645/ |access-date=April 1, 2015 |website=Deadline Hollywood  |date=February 19, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150328222021/http://deadline.com/2015/02/oscars-al-sharpton-protest-diversity-controversy-1201377645/ |archive-date=March 28, 2015}}</ref> However, the protest was canceled in light of DuVernay pleading with black activists to instead pursue a direct dialogue with Academy leadership.<ref>{{cite news|last1=Gilman |first1=Greg |title=Oscars Diversity Protest Called Off at 'Selma' Director Ava DuVernay's Request |url=https://www.thewrap.com/oscars-diversity-protest-called-off-at-selma-director-ava-duvernays-request/ |access-date=March 31, 2015 |website=TheWrap |date=February 22, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150329032853/http://www.thewrap.com/oscars-diversity-protest-called-off-at-selma-director-ava-duvernays-request/ |archive-date=March 29, 2015}}</ref>
+
+=== Critical reception ===
+The show received a mixed reception from media publications. Some media outlets were more critical of the show. [[HitFix]] television columnist [[Alan Sepinwall]] commented, "It ran on and on and on and on so much that when host Neil Patrick Harris finally got around to paying off a running gag about his Oscar predictions being locked in a box on stage left, he had to stop to explain the bit to us all over again." In addition, he observed, "Either the production consumed Harris, the writing failed him, or he picked a very strange night to go off-brand."<ref>{{cite news|url=http://www.hitfix.com/whats-alan-watching/review-bloated-oscar-telecast-gets-in-way-of-terrific-oscar-ceremony#7mCjR0p5UUIp5zfO.99" |title=Bloated Oscar telecast gets in way of terrific Oscar ceremony—Bad jokes, too many musical numbers, but lots of great speeches |website=HitFix |date=February 23, 2015 |access-date=February 26, 2015 |url-status=dead |archive-url=https://web.archive.org/web/20150225223147/http://www.hitfix.com/whats-alan-watching/review-bloated-oscar-telecast-gets-in-way-of-terrific-oscar-ceremony |archive-date=February 25, 2015}}</ref> Hal Boedeker of the ''[[Orlando Sentinel]]'' wrote, "Harris headlined a blah production number to start the show. His running shtick about Oscar predictions grew tiresome." He concluded his review saying, "The music saved this Oscar telecast, but it was still a long, tedious show. The highlight reel will make it look better than it was."<ref>{{cite news|last1=Boedeker |first1=Hal |title=Oscars: Best, worst moments |url=http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-best-worst-moments-20150223-post.html |work=Orlando Sentinel  |date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150402133414/http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-best-worst-moments-20150223-post.html |archive-date=April 2, 2015}}</ref> Television critic [[Alessandra Stanley]] from ''[[The New York Times]]'' said, "Oscar nights almost always drag on too long, but this one was a slog almost from the very beginning." She also quipped, "The political speeches were somber, but they turned out to be more lively and bracing than any of Harris' skits."<ref>{{cite news|last=Stanley|first=Alessandra|author-link=Alessandra Stanley|title=Oscars 2015: Passionate Speeches, but Few Surprises |url=https://www.nytimes.com/2015/02/23/movies/awardsseason/oscars-2015-passionate-speeches-but-few-surprises.html |url-access=limited |work=The New York Times  |date=February 23, 2015 |access-date=February 26, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150226181956/http://www.nytimes.com/2015/02/23/movies/awardsseason/oscars-2015-passionate-speeches-but-few-surprises.html |archive-date=February 26, 2015}}</ref>
+
+Other media outlets received the broadcast more positively. Television critic Matthew Gilbert of ''[[The Boston Globe]]'' commented, "Neil Patrick Harris was very Neil Patrick Harrisy Sunday night in his first round as Oscars host. He was calm and cheerful and vanilla as usual, always ready with a lightly snarky joke and always eager to jump into a big production number involving old-timey choreography. He's a pro at hosting, after his Tony and Emmy gigs, and it showed during the ABC telecast in his endlessly relaxed and open energy." He also wrote despite several production gaffes and an uneven pace, the show moved along "with a minimum of pain."<ref>{{cite news|last1=Gilbert |first1=Matthew |title=Harris turns on the charm, takes off his pants |url=https://www.bostonglobe.com/arts/television/2015/02/23/harris-turns-charm-takes-off-his-pants/iWFpMMMPbqLrPxtItMsfIK/story.html |url-access=limited |access-date=March 28, 2015 |work=The Boston Globe  |date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150328055253/http://www.bostonglobe.com/arts/television/2015/02/23/harris-turns-charm-takes-off-his-pants/iWFpMMMPbqLrPxtItMsfIK/story.html |archive-date=March 28, 2015}}</ref> ''[[The Times-Picayune]]'' columnist Dave Walker wrote, "Harris played it like he was basically born to do it—light on his feet working the crowd or at center stage without his pants, winkingly self-deprecating, moving-right-along when his prepared material didn't land (which was too often)—and he now may have a job for life if he wants it." Furthermore, praised the cast and several musical numbers from the show.<ref>{{cite news |last1=Walker |first1=Dacve |title=Neil Patrick Harris, handed tough Oscars–hosting task, opened strong |url=http://www.nola.com/tv/index.ssf/2015/02/neil_patrick_harris_handed_tou.html |access-date=March 28, 2015 |work=[[The Times-Picayune]] |publisher=Advance Publications |date=February 23, 2015 |url-status=dead |archive-url=https://web.archive.org/web/20150331050604/http://www.nola.com/tv/index.ssf/2015/02/neil_patrick_harris_handed_tou.html |archive-date=March 31, 2015 }}</ref> David Rooney of ''[[The Hollywood Reporter]]'' quipped, "Harris displayed winning charm and appealing insouciance, sprinkling the gags with moments of self-deprecation." In addition, he remarked that several of the acceptance speeches and musical numbers provided a mix of humor, fun, and sincerity.<ref>{{cite news|last1=Rooney |first1=David |title=The 87th Annual Academy Awards: TV Review |url=https://www.hollywoodreporter.com/review/oscars-2015-tv-review-776923 |access-date=March 28, 2015 |work=The Hollywood Reporter  |date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150328112715/http://www.hollywoodreporter.com/review/oscars-2015-tv-review-776923 |archive-date=March 28, 2015}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average 37.26 million people over its length, which was a 15% decrease from the [[86th Academy Awards|previous year's ceremony]].<ref name="Kissell-2015"/> An estimated 63 million total viewers watched all or part of the awards.<ref>{{cite news|last1=Boedeker |first1=Hal |title=Oscars: 'Birdman' flies ratings don't |url=http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-birdman-flies-ratings-dont-20150223-post.html |access-date=April 1, 2015 |work=Orlando Sentinel  |date=February 24, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150328070007/http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-birdman-flies-ratings-dont-20150223-post.html |archive-date=March 28, 2015}}</ref> The show also earned lower [[Nielsen ratings]] compared to the previous ceremony with 20.6% of households watching over a 33 share.<ref name="88th Oscars Fact Sheet">{{cite news|title=88th Oscars Fact Sheet |url=https://www.oscars.org/sites/oscars/files/88aa_fact_sheet.pdf |access-date=December 1, 2015 |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20160122093944/http://www.oscars.org/sites/oscars/files/88aa_fact_sheet.pdf |archive-date=January 22, 2016}}</ref> In addition, the program scored a lower 18–49 demo rating with an 11.0 ratings over a 26 share.<ref>{{cite news|last1=Patten |first1=Dominic |title=Final Oscar Ratings: Demo Stays Lowest Since 2008, Viewership Worst Since 2009 |url=https://deadline.com/2015/02/oscar-ratings-2015-academy-awards-show-abc-1201379351/ |access-date=March 28, 2015 |website=Deadline Hollywood  |date=February 24, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150330002819/http://deadline.com/2015/02/oscar-ratings-2015-academy-awards-show-abc-1201379351/ |archive-date=March 30, 2015}}</ref> It was the lowest viewership for an Academy Awards telecast since the [[81st Academy Awards|81st ceremony]] held in 2009.<ref>{{cite news|last1=Levin |first1=Gary |title=Shine is off Oscar as ratings drop for big trophy shows |url=https://www.usatoday.com/story/life/tv/2015/02/23/oscar-grammy-golden-globe-ratings-2015/23879989/ |access-date=March 28, 2015 |work=USA Today  |date=February 24, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150226184626/http://www.usatoday.com/story/life/tv/2015/02/23/oscar-grammy-golden-globe-ratings-2015/23879989/ |archive-date=February 26, 2015}}</ref>
+
+In July 2015, the ceremony presentation received eight nominations for the [[67th Primetime Emmy Awards|67th Primetime Emmys]].<ref>{{cite news|last1=Kilday |first1=Gregg |title=The Oscars Broadcast Picks Up Eight Emmy Noms |url=https://www.hollywoodreporter.com/news/oscars-eight-emmy-nominations-809279 |access-date=September 15, 2015 |work=The Hollywood Reporter  |date=July 16, 2015 |url-status=live |archive-url=https://web.archive.org/web/20151024102143/http://www.hollywoodreporter.com/news/oscars-eight-emmy-nominations-809279 |archive-date=October 24, 2015}}</ref> The following month, the ceremony won one of those nominations for [[Primetime Emmy Award for Outstanding Technical Direction, Camerawork, Video Control for a Limited Series, Movie, or Special|Outstanding Technical Direction, Camera Work, and Video Control for a Limited Series, Movie, or Special]] (Technical Directors: Eric Becker, Rick Edwards, John Pritchett, and Rod Wardell; Cameras: Rob Balton, Danny Bonilla, Robert Del Russo, David Eastwood, Suzanne Ebner, Pat Gleason, Ed Horton, Marc Hunter, Jay Kulick, Brian Lataille, Tore Livia, Steve Martyniuk, Lyn Noland, Rob Palmer, David Plakos, Camera, Jofre Romero, Danny Webb, Mark Whitman, and Easter Xua; Video Control: Terrance Ho, Guy Jones, and Keith Winikoff).<ref>{{cite news|title=Creative Arts Emmys 2015: Full Winners List |url=https://variety.com/2015/tv/news/creative-arts-emmys-2015-winners-list-nominees-1201592186/ |access-date=September 15, 2015 |work=Variety  |date=September 13, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150913010512/http://variety.com/2015/tv/news/creative-arts-emmys-2015-winners-list-nominees-1201592186/ |archive-date=September 13, 2015}}</ref>
+
+=="In Memoriam"==
+The annual "[[In memoriam segment|In Memoriam]]" segment was presented by actress [[Meryl Streep]].<ref>{{cite news|last1=Littleton |first1=Cynthia |title=Oscars: Joan Rivers Left Out of In Memoriam Tribute |url=https://variety.com/2015/film/news/oscars-2015-in-memoriam-joan-rivers-snubbed-1201439207/ |access-date=February 25, 2015 |work=Variety  |date=February 22, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150225105455/http://variety.com/2015/film/news/oscars-2015-in-memoriam-joan-rivers-snubbed-1201439207/ |archive-date=February 25, 2015}}</ref> The montage featured an excerpt of the "Love Theme" from ''[[Sophie's Choice (film)|Sophie's Choice]]'' by [[Marvin Hamlisch]].<ref>{{cite news|title=Oscars 2015: In memoriam honors Robin Williams, Lauren Bacall |first=David |last=Morgan |url=https://www.cbsnews.com/news/oscars-2015-in-memoriam-honors-robin-williams-lauren-bacall-skips-joan-rivers/ |publisher=CBS News (CBS Corporation) |date=February 23, 2015 |access-date=February 24, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150223233235/http://www.cbsnews.com/news/oscars-2015-in-memoriam-honors-robin-williams-lauren-bacall-skips-joan-rivers/ |archive-date=February 23, 2015}}</ref> At the conclusion of the tribute, singer [[Jennifer Hudson]] performed the song "[[I Can't Let Go (Smash song)|I Can't Let Go]]" from the television series ''[[Smash (U.S. TV series)|Smash]]''.<ref>{{cite magazine|last=Atkinson |first=Katie |title=Oscars 2015: Watch Jennifer Hudson Sing 'In Memoriam' Song on 'Smash' |url=https://www.billboard.com/articles/events/oscars/6480250/oscars-2015-jennifer-hudson-in-memoriam-smash-cant-let-go |magazine=[[Billboard (magazine)|Billboard]]  |access-date=February 23, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150223222611/http://www.billboard.com/articles/events/oscars/6480250/oscars-2015-jennifer-hudson-in-memoriam-smash-cant-let-go |archive-date=February 23, 2015}}</ref>
+
+{{div col}}
+* [[Mickey Rooney]] – Actor
+* [[Paul Mazursky]] – Director, screenwriter
+* [[Geoffrey Holder]] – Actor
+* Nadia Bronson – Marketing executive
+* [[James Garner]] – Actor
+* [[Elizabeth Peña]] – Actress
+* [[Alan Hirschfield]] – Executive
+* [[Edward Herrmann]] – Actor
+* [[Maya Angelou]] – Poet
+* [[Lorenzo Semple, Jr.]] – Screenwriter
+* [[George L. Little]] – Costume designer
+* [[James Rebhorn]] – Actor
+* [[Menahem Golan]] – Producer, director
+* [[James Shigeta]] – Actor
+* [[Anita Ekberg]] – Actress
+* [[Paul Apted]] – Sound editor
+* [[H. R. Giger]] – Special effects artist
+* [[Sanford E. Reisenbach]] – Marketing executive
+* [[Malik Bendjelloul]] – Documentarian
+* [[Virna Lisi]] – Actress
+* [[Louis Jourdan]] – Actor
+* [[Gordon Willis]] – Cinematographer
+* [[Richard Attenborough]] – Actor, director
+* [[Oswald Morris]] – Cinematographer
+* [[Tom Rolf]] – Film editor
+* [[L. M. Kit Carson]] – Writer, actor
+* [[Ruby Dee]] – Actress
+* [[Samuel Goldwyn, Jr.]] – Producer
+* [[Martha Hyer]] – Actress
+* [[Andrew V. McLaglen]] – Director
+* [[Jimmy T. Murakami]] – Animator, director
+* [[Robin Williams]] – Actor
+* [[William Greaves]] – Documentarian
+* [[Joseph Viskocil]] – Special effects artist
+* [[Rod Taylor]] – Actor
+* [[Stewart Stern]] – Writer
+* [[Luise Rainer]] – Actress
+* [[Dick Smith (make-up artist)|Dick Smith]] – Makeup artist
+* [[Lauren Bacall]] – Actress
+* [[Walt Martin]] – Sound mixer
+* [[Charles Champlin]] – Film critic
+* Pennie Dupont – Casting director
+* [[Herb Jeffries]] – Actor
+* [[Misty Upham]] – Actress
+* [[Eli Wallach]] – Actor
+* [[Gabriel García Márquez]] – Writer
+* [[Frank Yablans]] – Studio executive
+* [[Alain Resnais]] – Director
+* [[Bob Hoskins]] – Actor
+* [[Mike Nichols]] – Director
+{{div col end}}
+
+== See also ==
+
+* [[21st Screen Actors Guild Awards]]
+* [[35th Golden Raspberry Awards]]
+* [[57th Grammy Awards]]
+* [[67th Primetime Emmy Awards]]
+* [[68th British Academy Film Awards]]
+* [[69th Tony Awards]]
+* [[72nd Golden Globe Awards]]
+* [[List of submissions to the 87th Academy Awards for Best Foreign Language Film]]
+
+== Notes ==
+{{Notelist}}
+
+== References ==
+{{Reflist|30em}}
+
+== External links ==
+{{Commons category}}
+
+'''Official websites'''
+* [http://oscar.go.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20140909025935/http://oscar.go.com/ |date=September 9, 2014 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/user/Oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20190226082028/https://www.youtube.com/user/Oscars |date=February 26, 2019 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+'''News resources'''
+* [https://www.bbc.co.uk/news/entertainment-arts-31580656 Oscars 2015] {{Webarchive|url=https://web.archive.org/web/20190522040602/https://www.bbc.co.uk/news/entertainment-arts-31580656 |date=May 22, 2019 }} [[BBC News]]
+* [https://www.theguardian.com/film/oscars-2015 Oscars 2015] ''[[The Guardian]]''
+
+'''Analysis'''
+* [http://www.filmsite.org/aa2014.html 2014 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20151030073454/http://www.filmsite.org/aa2014.html |date=October 30, 2015 }} [[Filmsite]]
+* [https://www.imdb.com/awards-central/oscars Academy Awards, USA: 2015] {{Webarchive|url=https://web.archive.org/web/20161224173042/http://www.imdb.com/awards-central/oscars |date=December 24, 2016 }} [[Internet Movie Database]]
+
+'''Other resources'''
+* {{IMDb title|3674910|The Oscars (2015)}}
+
+{{Academy Awards |state=autocollapse}}
+
+{{DEFAULTSORT:Academy Awards, 87}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2014 film awards]]
+[[Category:2015 in Los Angeles]]
+[[Category:2015 in American cinema]]
+[[Category:2015 awards in the United States]]
+[[Category:February 2015 in the United States]]
+[[Category:Television shows directed by Hamish Hamilton (director)]]

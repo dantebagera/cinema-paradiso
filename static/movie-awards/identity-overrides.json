@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "overrides": [
+    {
+      "namespace": "movie",
+      "imdb_id": "tt0084185",
+      "tmdb_id": 114517,
+      "source_alias": "Just Another Missing Kid",
+      "replaces_source_imdb_id": "tt0169446",
+      "source_context": {
+        "source": "dlu_oscar",
+        "ceremony": 55,
+        "category": "DOCUMENTARY (Feature)"
+      },
+      "evidence": {
+        "source_url": "https://www.oscars.org/oscars/ceremonies/1983",
+        "revision": "c5e9716b7e020e70205d6b95f5a5678526c1b45f",
+        "reason": "Pinned source IMDb ID does not resolve to the winning movie. Correct movie IMDb/TMDb pair verified through TMDb external IDs, with Academy winning-film evidence.",
+        "verification_url": "https://api.themoviedb.org/3/movie/114517/external_ids",
+        "verification_sha256": "735a5e152ef6cfb4db20f6f0898a5269f8224c3ecdd2708dd3107dc754fb0fd2",
+        "verified_on": "2026-10-02",
+        "facts_sha256": "ffdea7bb105c5c8501d38df59c059ea96171969d79d9742cc00f9396894ea752"
+      },
+      "facts": {
+        "title": "Just Another Missing Kid",
+        "release_date": "1981-04-07",
+        "poster_path": "/4XI56k30KRD8kD5J0Ca0u6UdNIY.jpg",
+        "original_language": "en",
+        "vote_average": 7.7,
+        "vote_count": 6,
+        "genre_ids": [
+          99
+        ]
+      }
+    },
+    {
+      "namespace": "movie",
+      "imdb_id": "tt7378922",
+      "tmdb_id": 776527,
+      "source_alias": "Summer of Soul (...Or, When the Revolution Could Not Be Televised)",
+      "replaces_source_imdb_id": "tt11422728",
+      "source_context": {
+        "source": "dlu_oscar",
+        "ceremony": 94,
+        "category": "DOCUMENTARY (Feature)"
+      },
+      "evidence": {
+        "source_url": "https://www.oscars.org/oscars/ceremonies/2022",
+        "revision": "c5e9716b7e020e70205d6b95f5a5678526c1b45f",
+        "reason": "Pinned source IMDb ID does not resolve to the winning movie. Correct movie IMDb/TMDb pair verified through TMDb external IDs, with Academy winning-film evidence.",
+        "verification_url": "https://api.themoviedb.org/3/movie/776527/external_ids",
+        "verification_sha256": "025118e69285d502aa27cf4ec5159e53fc4d3b13a9adfbb4acb1227c8abecaf3",
+        "verified_on": "2026-10-02",
+        "facts_sha256": "f6946eec6b8637181106d71f520a22059eacf03ae531498c033fd5c88c2a6af1"
+      },
+      "facts": {
+        "title": "Summer of Soul (...Or, When the Revolution Could Not Be Televised)",
+        "release_date": "2021-07-02",
+        "poster_path": "/8kNwhqUGvpzWJd60O1Qvb8G6psK.jpg",
+        "original_language": "en",
+        "vote_average": 7.6,
+        "vote_count": 233,
+        "genre_ids": [
+          10402,
+          99,
+          36
+        ]
+      }
+    },
+    {
+      "namespace": "movie",
+      "imdb_id": "tt0044836",
+      "tmdb_id": 242989,
+      "source_alias": "Light in the Window",
+      "source_context": {
+        "source": "annual_wikitext",
+        "ceremony": 25,
+        "category": "Best Short Subject (One-Reel)"
+      },
+      "facts": {
+        "title": "Light in the Window: The Art of Vermeer",
+        "release_date": "1952-09-01",
+        "poster_path": "/ysYPPQ4DRBddcg2pdKRdNoT1stF.jpg",
+        "original_language": "en",
+        "genre_ids": [
+          99
+        ],
+        "vote_average": 6.8,
+        "vote_count": 5,
+        "original_title": "Light in the Window: The Art of Vermeer"
+      },
+      "evidence": {
+        "source_url": "https://en.wikipedia.org/w/index.php?title=25th_Academy_Awards&oldid=1368413011",
+        "revision": "1368413011",
+        "reason": "Pinned independent ceremony title alias identifies the same category winner and credited filmmaker as the Academy record; primary IMDb identity is verified through the existing TMDb find mapping.",
+        "corroboration_url": "https://www.oscars.org/oscars/ceremonies/1953",
+        "identity_evidence": {
+          "source": "tmdb_find",
+          "external_source": "imdb_id",
+          "imdb_id": "tt0044836"
+        },
+        "verified_on": "2026-10-02"
+      }
+    },
+    {
+      "namespace": "movie",
+      "imdb_id": "tt0110877",
+      "tmdb_id": 11010,
+      "source_alias": "Il Postino: The Postman",
+      "source_context": {
+        "source": "annual_wikitext",
+        "ceremony": 68,
+        "category": "Best Music (Original Dramatic Score)"
+      },
+      "facts": {
+        "title": "The Postman",
+        "release_date": "1994-09-22",
+        "poster_path": "/cUaCpjVDefYShKyLmkcDsiPaBHn.jpg",
+        "original_language": "it",
+        "genre_ids": [
+          35,
+          18,
+          10749
+        ],
+        "vote_average": 7.9,
+        "vote_count": 1252,
+        "original_title": "Il postino"
+      },
+      "evidence": {
+        "source_url": "https://en.wikipedia.org/w/index.php?title=68th_Academy_Awards&oldid=1376092455",
+        "revision": "1376092455",
+        "reason": "Pinned independent ceremony title alias identifies the same category winner and credited filmmaker as the Academy record; primary IMDb identity is verified through the existing TMDb find mapping.",
+        "corroboration_url": "https://www.oscars.org/oscars/ceremonies/1996",
+        "identity_evidence": {
+          "source": "tmdb_find",
+          "external_source": "imdb_id",
+          "imdb_id": "tt0110877"
+        },
+        "verified_on": "2026-10-02"
+      }
+    }
+  ]
+}

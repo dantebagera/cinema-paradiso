@@ -1,0 +1,559 @@
+{{featured list}}
+{{Use mdy dates|date=February 2025}}
+{{oscars short description|films-year=1999}}
+{{Infobox film awards
+| number           = 72
+| award            = Academy Awards
+| image            = 72 academy awards poster.jpg
+| caption          = Official poster by [[Arnold Schwartzman]]<ref>{{cite news |title=Poster gives Oscar a new look for 2000 |url=https://variety.com/2000/scene/vpage/poster-gives-oscar-a-new-look-for-2000-1117760660/ |access-date=February 9, 2020 |work=Variety |date=January 9, 2000 |url-status=live |archive-url=https://web.archive.org/web/20260203082348/https://variety.com/2000/scene/vpage/poster-gives-oscar-a-new-look-for-2000-1117760660/ |archive-date=February 3, 2026 }}</ref>
+| date             = March 26, 2000
+| site             = [[Shrine Auditorium]]<br />[[Los Angeles]], California, U.S.
+| preshow          = [[Tyra Banks]]<br />[[Chris Connelly (reporter)|Chris Connelly]]<br />[[Meredith Vieira]]<ref>{{cite news|last=Owen |first=Rob |title=Audience can share Meredith Vieira's view from the red carpet |url=http://old.post-gazette.com/magazine/20000326vieira8.asp |access-date=June 27, 2013 |work=[[Pittsburgh Post-Gazette]] |publisher=[[Block Communications]] |date=March 26, 2000 |url-status=dead |archive-url=https://web.archive.org/web/20121019124101/http://old.post-gazette.com/magazine/20000326vieira8.asp |archive-date=October 19, 2012 }}</ref>
+| host             = [[Billy Crystal]]<ref>{{cite news|last=Chapman |first=Francesca |title=They Wanted Billy, So He'll Play Host To Oscars Again |url=http://articles.philly.com/1999-12-15/news/25481290_1_oscars-sarah-mclachlan-billy-crystal |access-date=July 13, 2013 |work=[[The Philadelphia Inquirer]] |publisher=[[Philadelphia Media Network]] |date=December 15, 1999 |url-status=dead |archive-url=https://web.archive.org/web/20140116084605/http://articles.philly.com/1999-12-15/news/25481290_1_oscars-sarah-mclachlan-billy-crystal |archive-date=January 16, 2014 }}</ref>
+| producer         = [[Richard D. Zanuck]]<br />[[Lili Fini Zanuck]]<ref name="Zanuck Oscars">{{cite news|last=King |first=Susan |title=Making the Oscar Ceremony a Reflection of Today's Films |url=https://www.latimes.com/archives/la-xpm-2000-feb-16-ca-64723-story.html |work=[[Los Angeles Times]] |access-date=June 26, 2013 |date=February 16, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131022224704/http://articles.latimes.com/2000/feb/16/entertainment/ca-64723 |archive-date=October 22, 2013 }}</ref>
+| director         = [[Louis J. Horvitz]]<ref>{{cite news|title=72nd Annual Academy Awards-Full Production Credits|url=http://tv.nytimes.com/show/38933/72nd-Annual-Academy-Awards/credits|access-date=July 6, 2013|work=[[The New York Times]]}}</ref>
+| best_picture     = ''[[American Beauty (1999 film)|American Beauty]]''
+| most_wins        = ''American Beauty'' (5)
+| most_nominations = ''American Beauty'' (8)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 4 hours, 9 minutes<ref name="Variety 2000 Oscars">{{cite news|last=Speier |first=Michael |title=Review: "The 72nd Annual Academy Awards" |url=https://variety.com/2000/tv/reviews/the-72nd-annual-academy-awards-1200460975/ |access-date=July 1, 2013 |work=Variety |publisher=[[Penske Media Corporation]] |date=March 25, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131023145752/http://variety.com/2000/tv/reviews/the-72nd-annual-academy-awards-1200460975/ |archive-date=October 23, 2013 }}</ref>
+| ratings          = 46.52 million<br />29.64% ([[Nielsen ratings]])<ref name="LA Times Oscar Ratings">{{cite news|last=Braxton |first=Greg |title=Some Oscar Questions Linger: Like, Where Was Whitney? |url=https://www.latimes.com/archives/la-xpm-2000-mar-28-ca-13295-story.html |work=Los Angeles Times |access-date=June 27, 2013 |date=March 28, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131022224239/http://articles.latimes.com/2000/mar/28/entertainment/ca-13295 |archive-date=October 22, 2013 }}</ref>
+| last             = 71st
+| next             = 73rd
+}}
+
+The '''72nd Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored [[1999 in film|films released in 1999]] and took place on March 26, 2000, at the [[Shrine Auditorium]] in [[Los Angeles]], beginning at 5:30&nbsp;p.m. [[Pacific Time Zone|PST]] / 8:30&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, the AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 23 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by husband-and-wife producing team [[Richard D. Zanuck|Richard]] and [[Lili Fini Zanuck]] and was directed by Louis J. Horvitz. Actor [[Billy Crystal]] hosted the show for the seventh time. He first presided over the [[62nd Academy Awards|62nd ceremony]] held in 1990 and had last hosted the [[70th Academy Awards|70th ceremony]] held in 1998. Three weeks earlier in a ceremony at the [[Beverly Wilshire Hotel|Regent Beverly Wilshire Hotel]] in [[Beverly Hills, California]] held on March 4, the Academy Awards for Technical Achievement were presented by host [[Salma Hayek]].<ref>{{cite news|title=Oscar Watch: Hayek to present Scientific and Technical Awards |url=https://variety.com/2000/film/news/oscar-watch-154-1117776404/ |access-date=July 6, 2013 |work=Variety |publisher=Penske Media Corporation |date=February 13, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131014155527/http://variety.com/2000/film/news/oscar-watch-154-1117776404/ |archive-date=October 14, 2013 }}</ref>
+
+''[[American Beauty (1999 film)|American Beauty]]'' won five awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last=Lyman |first=Rick |title='American Beauty' Tops the Oscars; Main Acting Awards Go to Kevin Spacey and Hilary Swank |url=https://www.nytimes.com/2000/03/27/movies/american-beauty-tops-oscars-main-acting-awards-go-kevin-spacey-hilary-swank.html |date=March 27, 2000 |access-date=June 27, 2013 |work=The New York Times |url-status=live |archive-url=https://web.archive.org/web/20131016233100/http://www.nytimes.com/2000/03/27/movies/american-beauty-tops-oscars-main-acting-awards-go-kevin-spacey-hilary-swank.html |archive-date=October 16, 2013 }}</ref><ref>{{cite news|last=Brooks |first=Xan |title=Oscar ceremony sticks to the script |url=https://www.theguardian.com/culture/2000/mar/27/awardsandprizes.oscars20001 |access-date=July 6, 2013 |work=[[The Guardian]] |date=March 27, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131014155740/http://www.theguardian.com/culture/2000/mar/27/awardsandprizes.oscars20001 |archive-date=October 14, 2013 }}</ref> Other winners included ''[[The Matrix]]'' with four awards, ''[[The Cider House Rules]]'' and ''[[Topsy-Turvy]]'' with two, and ''[[All About My Mother]]'', ''[[Boys Don't Cry (1999 film)|Boys Don't Cry]]'', ''[[Girl, Interrupted (film)|Girl, Interrupted]]'', ''[[King Gimp]]'', ''[[My Mother Dreams the Satan's Disciples in New York]]'', ''[[The Old Man and the Sea (1999 film)|The Old Man and the Sea]]'', ''[[One Day in September]]'', ''[[The Red Violin]]'', ''[[Sleepy Hollow (film)|Sleepy Hollow]]'', and ''[[Tarzan (1999 film)|Tarzan]]'' with one. The telecast garnered almost 47 million viewers in the United States.
+
+==Winners and nominees==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 72nd Academy Awards were announced on February 15, 2000, at 5:38&nbsp;a.m. [[Pacific Time Zone|PST]] (13:38 [[Universal Time Coordinated|UTC]]) at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]], by [[Robert Rehme]], president of the academy, and the actor [[Dustin Hoffman]].<ref>{{cite magazine|url=https://ew.com/article/2000/02/25/oscar-nominations-2000/ |title=And Then There Were 5 |first=Benjamin |last=Svetkey |access-date=May 6, 2013 |magazine=Entertainment Weekly |publisher=Time Warner |date=February 25, 2000 |url-status=live |archive-url=https://web.archive.org/web/20130603131232/http://www.ew.com/ew/article/0%2C%2C275496%2C00.html |archive-date=June 3, 2013 }}</ref> ''[[American Beauty (1999 film)|American Beauty]]'' received the most nominations with eight total; ''[[The Cider House Rules]]'' and ''[[The Insider (film)|The Insider]]'' tied for second with seven nominations each.<ref>{{cite news|last=Ryan |first=Desmond |title=Eight Oscar Nominations For 'American Beauty' |url=http://articles.philly.com/2000-02-16/entertainment/25575844_1_oscar-nominations-cider-house-rules-supporting-actress-bid |access-date=July 6, 2013 |work=The Philadelphia Inquirer |publisher=Philadelphia Media Network |date=February 16, 2000 |url-status=dead |archive-url=https://web.archive.org/web/20131005013540/http://articles.philly.com/2000-02-16/entertainment/25575844_1_oscar-nominations-cider-house-rules-supporting-actress-bid |archive-date=October 5, 2013 }}</ref>
+
+The winners were announced during the awards ceremony on March 26, 2000.<ref>{{cite news|title=Oscar winners in full |url=https://news.bbc.co.uk/2/hi/in_depth/entertainment/2000/oscars_2000/691746.stm |access-date=July 5, 2013 |work=[[BBC News]] |publisher=[[BBC]] |date=March 27, 2000 |url-status=live |archive-url=https://web.archive.org/web/20140329024535/http://news.bbc.co.uk/2/hi/in_depth/entertainment/2000/oscars_2000/691746.stm |archive-date=March 29, 2014 }}</ref> Due to her 12th nomination, [[Meryl Streep]] tied [[Katharine Hepburn]] as the [[List of actors with more than one Academy Award nomination in the acting categories|performer with most acting nominations]].<ref name="VarietyNom">{{cite news|title=Nominations…by the numbers |url=https://variety.com/2000/film/news/nominations-by-the-numbers-1117778914/ |access-date=June 7, 2026 |first=Keith |last=Collins |work=[[Variety (magazine)|Variety]] |date=February 29, 2000 |url-status=live |archive-url=https://web.archive.org/web/20260607165748/https://variety.com/2000/film/news/nominations-by-the-numbers-1117778914/ |archive-date=June 7, 2026 }}</ref> At the age of 79, [[Richard Farnsworth]] became [[List of oldest and youngest Academy Award winners and nominees|the oldest male acting nominee]] in Oscars history.<ref name="VarietyNom"/> [[Sam Mendes]] was the sixth person to win Best Director for his directorial debut.<ref>{{cite news|last=Lyttelton |first=Oliver |title=Oscar Trivia: 50 Fun Facts To Prepare You For The 85th Academy Awards |url=http://blogs.indiewire.com/theplaylist/50-pieces-of-oscar-trivia-to-prepare-you-for-the-academy-awards-on-sunday-20130220?page=3 |access-date=July 5, 2013 |work=[[IndieWire]] |publisher=[[Snagfilms]] |date=February 20, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130330181810/http://blogs.indiewire.com/theplaylist/50-pieces-of-oscar-trivia-to-prepare-you-for-the-academy-awards-on-sunday-20130220?page=3 |archive-date=March 30, 2013 }}</ref> By virtue of her father [[Jon Voight]]'s Best Lead Actor win for 1978's ''[[Coming Home (1978 film)|Coming Home]]'', Best Supporting Actress winner [[Angelina Jolie]] and Voight became the second father-daughter Oscar acting winners.<ref name="Father-Daughter">{{harvnb|Levy|2003|p=126}}</ref>
+
+===Awards===
+{{multiple image
+ | align             = right
+ | direction         = vertical
+ | total_width       = 150
+ | image1            = Bruce Cohen 2015.jpg
+ | caption1          = [[Bruce Cohen]], Best Picture co-winner
+ | image2            = Sam Mendes in 2022-2.jpg
+ | caption2          = [[Sam Mendes]], Best Director winner
+ | image3            = Kevin Spacey @ San Diego Comic-Con 2008 - b.jpg
+ | caption3          = [[Kevin Spacey]], Best Actor winner
+ | image4            = Life Ball 2013 - magenta carpet Hilary Swank 02.jpg
+ | caption4          = [[Hilary Swank]], Best Actress winner
+ | image5            = Michael Caine - Viennale 2012 a (cropped).jpg
+ | caption5          = [[Michael Caine]], Best Supporting Actor winner
+ | image6            = Angelina Jolie at the U.S. Department of State in Washington, D.C. in 2022.jpg
+ | caption6          = [[Angelina Jolie]], Best Supporting Actress winner
+ | image7            = BALL Allan-24x30-2008b.jpg
+ | caption7          = [[Alan Ball (screenwriter)|Alan Ball]], Best Screenplay Written Directly for the Screen winner
+ | image8            = John Irving at Cologne 2010 (7108).jpg
+ | caption8          = [[John Irving]], Best Screenplay Based on Material Previously Produced or Published winner
+ | image9            = Pedro Almodóvar at Premios Goya 2017 1 (cropped 3).jpg
+ | caption9          = [[Pedro Almodóvar]], Best Foreign Language Film winner
+ | image10           = Kevin Macdonald (cropped).jpg
+ | caption10         = [[Kevin Macdonald (director)|Kevin Macdonald]], Best Documentary Feature co-winner
+ | image11           = GenesisO2260322 (3 of 42) (51963210796) (cropped).jpg
+ | caption11         = [[Phil Collins]], Best Original Song winner
+ | image12           = 
+ | caption12         = [[Conrad Hall]], Best Cinematography winner
+ | image13           = John Gaeta E.jpg
+ | caption13         = [[John Gaeta]], Best Visual Effects co-winner
+}}
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double dagger}}).<ref>{{cite news |title=Nominees & Winners for the 72nd Academy Awards |url=http://www.oscars.org/oscars/ceremonies/2000 |access-date=January 3, 2014 |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20141109141152/http://www.oscars.org/oscars/ceremonies/2000 |archive-date=November 9, 2014}}</ref>
+
+{| class=wikitable role="presentation"
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[American Beauty (1999 film)|American Beauty]]''&nbsp;– [[Bruce Cohen]] and [[Dan Jinks]], producers'''{{double-dagger}}
+** ''[[The Cider House Rules]]''&nbsp;– [[Richard N. Gladstein]], producer
+** ''[[The Green Mile (film)|The Green Mile]]''&nbsp;– [[Frank Darabont]] and [[David Valdes]], producers
+** ''[[The Insider (film)|The Insider]]''&nbsp;– [[Pieter Jan Brugge]] and [[Michael Mann]], producers
+** ''[[The Sixth Sense]]''&nbsp;– [[Frank Marshall (filmmaker)|Frank Marshall]], [[Kathleen Kennedy (producer)|Kathleen Kennedy]], and [[Barry Mendel]], producers
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Sam Mendes]]&nbsp;– ''[[American Beauty (1999 film)|American Beauty]]'''''{{double-dagger}}
+** [[Lasse Hallström]]&nbsp;– ''[[The Cider House Rules]]''
+** [[Spike Jonze]]&nbsp;– ''[[Being John Malkovich]]''
+** [[Michael Mann]]&nbsp;– ''[[The Insider (film)|The Insider]]''
+** [[M. Night Shyamalan]]&nbsp;– ''[[The Sixth Sense]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Kevin Spacey]]&nbsp;– ''[[American Beauty (1999 film)|American Beauty]]'' as Lester Burnham'''{{double-dagger}}
+** [[Russell Crowe]]&nbsp;– ''[[The Insider (film)|The Insider]]'' as [[Jeffrey Wigand]]
+** [[Richard Farnsworth]]&nbsp;– ''[[The Straight Story]]'' as [[Alvin Straight]]
+** [[Sean Penn]]&nbsp;– ''[[Sweet and Lowdown]]'' as Emmet Ray
+** [[Denzel Washington]]&nbsp;– ''[[The Hurricane (1999 film)|The Hurricane]]'' as [[Rubin Carter]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Hilary Swank]]&nbsp;– ''[[Boys Don't Cry (1999 film)|Boys Don't Cry]]'' as [[Brandon Teena]]'''{{double-dagger}}
+** [[Annette Bening]]&nbsp;– ''[[American Beauty (1999 film)|American Beauty]]'' as Carolyn Burnham
+** [[Janet McTeer]]&nbsp;– ''[[Tumbleweeds (1999 film)|Tumbleweeds]]'' as Mary Jo Walker
+** [[Julianne Moore]]&nbsp;– ''[[The End of the Affair (1999 film)|The End of the Affair]]'' as Sarah Miles
+** [[Meryl Streep]]&nbsp;– ''[[Music of the Heart]]'' as [[Roberta Guaspari]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Michael Caine]]&nbsp;– ''[[The Cider House Rules]]'' as Dr. Wilbur Larch'''{{double-dagger}}
+** [[Tom Cruise]]&nbsp;– ''[[Magnolia (film)|Magnolia]]'' as Frank T.J. Mackey
+** [[Michael Clarke Duncan]]&nbsp;– ''[[The Green Mile (film)|The Green Mile]]'' as John Coffey
+** [[Jude Law]]&nbsp;– ''[[The Talented Mr. Ripley (film)|The Talented Mr. Ripley]]'' as Dickie Greenleaf
+** [[Haley Joel Osment]]&nbsp;– ''[[The Sixth Sense]]'' as Cole Sear
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Angelina Jolie]]&nbsp;– ''[[Girl, Interrupted (film)|Girl, Interrupted]]'' as Lisa Rowe'''{{double-dagger}}
+** [[Toni Collette]]&nbsp;– ''[[The Sixth Sense]]'' as Lynn Sear
+** [[Catherine Keener]]&nbsp;– ''[[Being John Malkovich]]'' as Maxine Lund
+** [[Samantha Morton]]&nbsp;– ''[[Sweet and Lowdown]]'' as Hattie
+** [[Chloë Sevigny]]&nbsp;– ''[[Boys Don't Cry (1999 film)|Boys Don't Cry]]'' as Lana Tisdel
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+* '''''[[American Beauty (1999 film)|American Beauty]]''&nbsp;– [[Alan Ball (screenwriter)|Alan Ball]]'''{{double-dagger}}
+** ''[[Being John Malkovich]]''&nbsp;– [[Charlie Kaufman]]
+** ''[[Magnolia (film)|Magnolia]]''&nbsp;– [[Paul Thomas Anderson]]
+** ''[[The Sixth Sense]]''&nbsp;– [[M. Night Shyamalan]]
+** ''[[Topsy-Turvy]]''&nbsp;– [[Mike Leigh]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material Previously Produced or Published)]]}}
+* '''''[[The Cider House Rules]]''&nbsp;– [[John Irving]] based on [[The Cider House Rules (novel)|his novel]]'''{{double-dagger}}
+** ''[[Election (1999 film)|Election]]''&nbsp;– [[Alexander Payne]] and [[Jim Taylor (writer)|Jim Taylor]] from [[Election (novel)|the novel]] by [[Tom Perrotta]]
+** ''[[The Green Mile (film)|The Green Mile]]''&nbsp;– [[Frank Darabont]] adapted from [[The Green Mile (novel)|the novel]] by [[Stephen King]]
+** ''[[The Insider (film)|The Insider]]''&nbsp;– [[Eric Roth]] and [[Michael Mann]] based on the ''[[Vanity Fair (magazine)|Vanity Fair]]'' article "The Man Who Knew Too Much" by [[Marie Brenner]]
+** ''[[The Talented Mr. Ripley (film)|The Talented Mr. Ripley]]''&nbsp;– [[Anthony Minghella]] adapted from [[The Talented Mr. Ripley|the novel]] by [[Patricia Highsmith]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best International Feature Film|Best Foreign Language Film]]}}
+* '''''[[All About My Mother]]'' ([[Spain]]) in [[Spanish language|Spanish]]&nbsp;– [[Pedro Almodóvar]]'''{{double-dagger}}
+** ''[[East/West]]'' ([[France]]) in [[French language|French]]&nbsp;– [[Régis Wargnier]]
+** ''[[Himalaya (film)|Himalaya: Caravan]]'' ([[Nepal]]) in [[Nepali language|Nepalese]]&nbsp;– [[Éric Valli]]
+** ''[[Solomon & Gaenor]]'' ([[United Kingdom]]) in [[Welsh language|Welsh]]&nbsp;– [[Paul Morrison (director)|Paul Morrison]]
+** ''[[Under the Sun (1998 film)|Under the Sun]]'' ([[Sweden]]) in [[Swedish language|Swedish]]&nbsp;– [[Colin Nutley]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature Film|Best Documentary (Feature)]]}}
+* '''''[[One Day in September]]''&nbsp;– [[Arthur Cohn]] and [[Kevin Macdonald (director)|Kevin Macdonald]]'''{{double-dagger}}
+** ''[[Buena Vista Social Club (film)|Buena Vista Social Club]]''&nbsp;– [[Wim Wenders]] and Ulrich Felsberg
+** ''[[Genghis Blues]]''&nbsp;– [[Roko Belic]] and Adrian Belic
+** ''[[On the Ropes (1999 film)|On the Ropes]]''&nbsp;– [[Nanette Burstein]] and [[Brett Morgen]]
+** ''[[Speaking in Strings]]''&nbsp;– Paola di Florio and [[Lilibet Foster]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Short Film|Best Documentary (Short Subject)]]}}
+* '''''[[King Gimp]]''&nbsp;– Susan Hannah Hadary and William A. Whiteford'''{{double-dagger}}
+** ''[[Eyewitness (1999 film)|Eyewitness]]''&nbsp;– [[Bert Van Bork]]
+** ''[[The Wildest Show in the South: The Angola Prison Rodeo]]''&nbsp;– Simeon Soffer and [[Jonathan Stack]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[My Mother Dreams the Satan's Disciples in New York]]''&nbsp;– Barbara Schock and Tammy Tiehel'''{{double-dagger}}
+** ''Bror, Min Bror''&nbsp;– [[Henrik Ruben Genz]] and Michael W. Horsten
+** ''Killing Joe''&nbsp;– [[Mehdi Norowzian]] and Steve Wax
+** ''Kleingeld''&nbsp;– Marc-Andreas Bochert and Gabriele Lins
+** ''Major and Minor Miracles''&nbsp;– Marcus Olsson
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[The Old Man and the Sea (1999 film)|The Old Man and the Sea]]''&nbsp;– [[Aleksandr Petrov (animator)|Alexander Petrov]]'''{{double-dagger}}
+** ''3 Misses''&nbsp;– [[Paul Driessen (animator)|Paul Driessen]]
+** ''[[Humdrum]]''&nbsp;– Peter Peake
+** ''[[My Grandmother Ironed the King's Shirts]]''&nbsp;– [[Torill Kove]]
+** ''[[When the Day Breaks]]''&nbsp;– [[Wendy Tilby and Amanda Forbis]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[The Red Violin]]''&nbsp;– [[John Corigliano]]'''{{double-dagger}}
+** ''[[American Beauty (1999 film)|American Beauty]]''&nbsp;– [[Thomas Newman]]
+** ''[[Angela's Ashes (film)|Angela's Ashes]]''&nbsp;– [[John Williams]]
+** ''[[The Cider House Rules]]''&nbsp;– [[Rachel Portman]]
+** ''[[The Talented Mr. Ripley (film)|The Talented Mr. Ripley]]''&nbsp;– [[Gabriel Yared]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[You'll Be in My Heart]]" from ''[[Tarzan (1999 film)|Tarzan]]''&nbsp;– Music and Lyrics by [[Phil Collins]]'''{{double-dagger}}
+** "[[Blame Canada]]" from ''[[South Park: Bigger, Longer & Uncut]]''&nbsp;– Music and Lyrics by [[Trey Parker]] and [[Marc Shaiman]]
+** "[[Music of My Heart]]" from ''[[Music of the Heart]]''&nbsp;– Music and Lyrics by [[Diane Warren]]
+** "[[Save Me (Aimee Mann song)|Save Me]]" from ''[[Magnolia (film)|Magnolia]]''&nbsp;– Music and Lyrics by [[Aimee Mann]]
+** "[[When She Loved Me]]" from ''[[Toy Story 2]]''&nbsp;– Music and Lyrics by [[Randy Newman]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound]]}}
+* '''''[[The Matrix]]''&nbsp;– [[John T. Reitz]], [[Gregg Rudloff]], [[David E. Campbell (sound engineer)|David E. Campbell]] and [[David Lee (Australian sound engineer)|David Lee]]'''{{double-dagger}}
+** ''[[The Green Mile (film)|The Green Mile]]''&nbsp;– [[Robert J. Litt]], [[Elliot Tyson]], [[Michael Herbick]] and [[Willie D. Burton]]
+** ''[[The Insider (film)|The Insider]]''&nbsp;– [[Andy Nelson (sound engineer)|Andy Nelson]], [[Doug Hemphill]] and [[Lee Orloff]]
+** ''[[The Mummy (1999 film)|The Mummy]]''&nbsp;– [[Leslie Shatz]], [[Chris Carpenter (sound engineer)|Chris Carpenter]], [[Rick Kline]] and [[Chris Munro]]
+** ''[[Star Wars: Episode I – The Phantom Menace]]''&nbsp;– [[Gary Rydstrom]], [[Tom Johnson (sound engineer)|Tom Johnson]], [[Shawn Murphy (sound engineer)|Shawn Murphy]] and [[John Midgley]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Effects Editing]]}}
+* '''''[[The Matrix]]''&nbsp;– [[Dane Davis]]'''{{double-dagger}}
+** ''[[Fight Club]]''&nbsp;– [[Ren Klyce]] and [[Richard Hymns]]
+** ''[[Star Wars: Episode I – The Phantom Menace]]''&nbsp;– [[Ben Burtt]] and [[Tom Bellfort]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Sleepy Hollow (film)|Sleepy Hollow]]''&nbsp;– [[Art director|Art Direction]]: [[Rick Heinrichs]]; [[Set decorator|Set Decoration]]: [[Peter Young (set decorator)|Peter Young]]'''{{double-dagger}}
+** ''[[Anna and the King]]''&nbsp;– Art Direction: [[Luciana Arrighi]]; Set Decoration: [[Ian Whittaker]]
+** ''[[The Cider House Rules]]''&nbsp;– Art Direction: [[David Gropman]]; Set Decoration: [[Beth Rubino]]
+** ''[[The Talented Mr. Ripley (film)|The Talented Mr. Ripley]]''&nbsp;– Art Direction: [[Roy Walker (production designer)|Roy Walker]]; Set Decoration: [[Bruno Cesari]]
+** ''[[Topsy-Turvy]]''&nbsp;– Art Direction: [[Eve Stewart]]; Set Decoration: Eve Stewart and [[John Bush (set decorator)|John Bush]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[American Beauty (1999 film)|American Beauty]]''&nbsp;– [[Conrad Hall]]'''{{double-dagger}}
+** ''[[The End of the Affair (1999 film)|The End of the Affair]]''&nbsp;– [[Roger Pratt (cinematographer)|Roger Pratt]]
+** ''[[The Insider (film)|The Insider]]''&nbsp;– [[Dante Spinotti]]
+** ''[[Sleepy Hollow (film)|Sleepy Hollow]]''&nbsp;– [[Emmanuel Lubezki]]
+** ''[[Snow Falling on Cedars (film)|Snow Falling on Cedars]]''&nbsp;– [[Robert Richardson (cinematographer)|Robert Richardson]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[Topsy-Turvy]]''&nbsp;– [[Christine Blundell]] and [[Trefor Proud]]'''{{double-dagger}}
+** ''[[Austin Powers: The Spy Who Shagged Me]]''&nbsp;– [[Michèle Burke]] and [[Mike Smithson (make-up artist)|Mike Smithson]]
+** ''[[Bicentennial Man (film)|Bicentennial Man]]''&nbsp;– [[Greg Cannom]]
+** ''[[Life (1999 film)|Life]]''&nbsp;– [[Rick Baker]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Topsy-Turvy]]''&nbsp;– [[Lindy Hemming]]'''{{double-dagger}}
+** ''[[Anna and the King]]''&nbsp;– [[Jenny Beavan]]
+** ''[[Sleepy Hollow (film)|Sleepy Hollow]]''&nbsp;– [[Colleen Atwood]]
+** ''[[The Talented Mr. Ripley (film)|The Talented Mr. Ripley]]''&nbsp;– [[Ann Roth]] and [[Gary Jones (costume designer)|Gary Jones]]
+** ''[[Titus (film)|Titus]]''&nbsp;– [[Milena Canonero]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Matrix]]''&nbsp;– [[Zach Staenberg]]'''{{double-dagger}}
+** ''[[American Beauty (1999 film)|American Beauty]]''&nbsp;– [[Tariq Anwar (film editor)|Tariq Anwar]] and [[Christopher Greenbury]]
+** ''[[The Cider House Rules]]''&nbsp;– [[Lisa Zeno Churgin]]
+** ''[[The Insider (film)|The Insider]]''&nbsp;– [[William Goldenberg]], [[Paul Rubell]] and [[David Rosenbloom]]
+** ''[[The Sixth Sense]]''&nbsp;– [[Andrew Mondshein]]
+|-
+| colspan="2" valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[The Matrix]]''&nbsp;– [[John Gaeta]], [[Janek Sirrs]], [[Steve Courtley]] and [[Jon Thum]]'''{{double-dagger}}
+** ''[[Star Wars: Episode I – The Phantom Menace]]''&nbsp;– [[John Knoll]], [[Dennis Muren]], [[Scott Squires]] and [[Rob Coleman]]
+** ''[[Stuart Little (film)|Stuart Little]]''&nbsp;– [[John Dykstra]], [[Jerome Chen (visual effects supervisor)|Jerome Chen]], Henry F. Anderson III and Eric Allard
+|}
+
+===Honorary Award===
+* To [[Andrzej Wajda]] in recognition of five decades of extraordinary film direction.<ref name="BaltimoreSun Oscars">{{cite news|last=Hornaday |first=Ann |title=A 'Beauty' of an Evening |url=https://www.baltimoresun.com/2000/03/27/a-beauty-of-an-evening-awards-but-as-usual-the-oscar-telecast-dragged-on-endlessly-while-american-beauty-was-picking-up-its-five-awards-including-best-picture-best-actor-for-kevin-spacey-and-best-dire/ |access-date=July 8, 2013 |work=[[The Baltimore Sun]] |publisher=Tribune Publishing |date=March 27, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131015120308/http://articles.baltimoresun.com/2000-03-27/features/0003270017_1_kevin-spacey-oscar-swank/2 |archive-date=October 15, 2013 }}</ref>
+
+===Irving G. Thalberg Memorial Award===
+* [[Warren Beatty]]<ref>{{cite news|last=Zacharek |first=Stephanie |title=Warren Beatty |url=http://www.salon.com/2000/03/20/beatty_6/ |access-date=July 22, 2013 |work=[[Salon (website)|Salon]] |publisher=Salon Media Group |date=March 20, 2000 |url-status=live |archive-url=https://web.archive.org/web/20140501142250/http://www.salon.com/2000/03/20/beatty_6/ |archive-date=May 1, 2014 }}</ref>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}{{col-1-of-2}}
+The following 17 films received multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 8
+| ''[[American Beauty (1999 film)|American Beauty]]''
+|-
+| rowspan=2 style="text-align:center" | 7
+| ''[[The Cider House Rules]]''
+|-
+| ''[[The Insider (film)|The Insider]]''
+|-
+| style="text-align: center;" | 6
+| ''[[The Sixth Sense]]''
+|-
+| style="text-align: center;" | 5
+| ''[[The Talented Mr. Ripley (film)|The Talented Mr. Ripley]]''
+|-
+|rowspan=3 style="text-align:center" | 4
+| ''[[The Green Mile (film)|The Green Mile]]''
+|-
+| ''[[The Matrix]]''
+|-
+| ''[[Topsy-Turvy]]''
+|-
+|rowspan=4 style="text-align:center" | 3
+| ''[[Being John Malkovich]]''
+|-
+|''[[Magnolia (film)|Magnolia]]''
+|-
+|''[[Sleepy Hollow (film)|Sleepy Hollow]]''
+|-
+| ''[[Star Wars: Episode I – The Phantom Menace]]''
+|-
+|rowspan=5 style="text-align:center" | 2
+| ''[[Anna and the King]]''
+|-
+| ''[[Boys Don't Cry (1999 film)|Boys Don't Cry]]''
+|-
+| ''[[The End of the Affair (1999 film)|The End of the Affair]]''
+|-
+| ''[[Music of the Heart]]''
+|-
+| ''[[Sweet and Lowdown]]''
+|}
+
+{{col-2-of-2}}
+
+The following four films received multiple awards:
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 5
+| ''[[American Beauty (1999 film)|American Beauty]]''
+|-
+| style="text-align: center;" | 4
+| ''[[The Matrix]]''
+|-
+|rowspan=2 style="text-align:center" | 2
+| ''[[The Cider House Rules]]''
+|-
+| ''[[Topsy-Turvy]]''
+|}
+
+{{col-end}}
+
+==Presenters and performers==
+The following individuals presented awards or performed musical numbers.<ref name="PresentersandPerformers">{{harvnb|Bona|2002|p=295}}</ref>
+
+===Presenters (in order of appearance)===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Peter|Coyote}} || Announcer for the 72nd annual Academy Awards
+|-
+| {{sortname|Robert|Rehme}} (AMPAS president) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Drew|Barrymore}}<br />[[Cameron Diaz]]<br />[[Lucy Liu]]  || Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Haley Joel|Osment}} || Presenter of the child actors tribute montage
+|-
+| {{sortname|Heather|Graham}}<br />[[Mike Myers]]|| Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|Erykah|Badu}}<br />[[Tobey Maguire]]|| Presenters of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Winona|Ryder}} || Presenter of the film ''[[The Cider House Rules]]'' on the Best Picture segment
+|-
+| {{sortname|James|Coburn}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Morgan|Freeman}} || Presenter of the "200 Million Year History" movie segment
+|-
+| {{sortname|Cate|Blanchett}}<br />[[Jude Law]]|| Presenters of the award for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+| {{sortname||Sheriff Woody}}<br />[[Buzz Lightyear]]<br />[[Jessie (Toy Story)|Jessie]]<br />[[Rock 'Em Sock 'Em Robots]] || Presentation of the award for [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Samuel L.|Jackson}} || Presenter of the film ''[[The Green Mile (film)|The Green Mile]]'' on the Best Picture segment
+|-
+| {{sortname||LL Cool J}}<br />[[Vanessa L. Williams|Vanessa Williams]]|| Introducers of the performances of the [[Academy Award for Best Original Song|Best Original Song]] nominees
+|-
+| {{sortname||Cher}} || Presenter of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Wes|Bentley}}<br />[[Thora Birch]]<br />[[Mena Suvari]]|| Presenters of the award [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]]
+|-
+| {{sortname|Ethan|Hawke}}<br />[[Uma Thurman]]|| Presenters of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Judi|Dench}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Jane|Fonda}} || Presenter of the [[Honorary Academy Award]] to [[Andrzej Wajda]]
+|-
+| {{sortname|Chow|Yun-fat}} || Presenter of the award [[Academy Award for Best Sound Editing|Best Sound Effects Editing]]
+|-
+| {{sortname|Salma|Hayek}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Arnold|Schwarzenegger}} || Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Diane|Keaton}} || Presenter of the film ''[[American Beauty (1999 film)|American Beauty]]'' on the Best Picture segment
+|-
+| {{sortname|Angela|Bassett}} || Presenter of the film ''[[The Sixth Sense]]'' on Best Picture segment
+|-
+| {{sortname|Antonio|Banderas}}<br />[[Penélope Cruz]]|| Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Keanu|Reeves}}<br />[[Charlize Theron]]|| Presenters of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| {{sortname|Edward|Norton}} || Presenter of the "[[List of Latin phrases: I#in memoriam|In Memoriam]]" tribute
+|-
+| {{sortname|Russell|Crowe}}<br />[[Julianne Moore]]|| Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Tommy Lee|Jones}}<br />[[Ashley Judd]]|| Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Jack|Nicholson}} || Presenter of the [[Irving G. Thalberg Memorial Award]] to [[Warren Beatty]]
+|-
+| {{sortname|Brad|Pitt}} || Presenter for the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Kevin|Spacey}} || Presenter of the award for [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material Previously Produced or Published]]
+|-
+| {{sortname|Mel|Gibson}} || Presenter of the award for [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen/Original Screenplay]]
+|-
+| {{sortname|Anjelica|Huston}} || Presenter of the film ''[[The Insider (film)|The Insider]]'' on the Best Picture segment
+|-
+| {{sortname|Roberto|Benigni}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Gwyneth|Paltrow}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Steven|Spielberg}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Clint|Eastwood}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers (in order of appearance)===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+| {{sortname|Burt|Bacharach}}<br />[[Rob Shirakbari|Rob Shrock]]<br />[[Don Was]] || Musical Arrangers || Orchestral
+|-
+| {{sortname|Billy|Crystal}} || Performer || Opening number: <br />''The Green Mile'' (to the tune of "''[[Green Acres]]'' theme song"), <br />''The Sixth Sense'' (to the tune of "[[People (Barbra Streisand song)|People]]" from ''[[Funny Girl (film)|Funny Girl]]''), <br />''The Insider'' (to the tune of ''[[Minute Waltz]]'' by [[Frédéric Chopin]]), <br />''The Cider House Rules'' (to the tune of "[[Mame (song)|Mame]]" from ''[[Mame (film)|Mame]]''), and <br />''American Beauty'' (to the tune of "[[The Lady Is a Tramp]]" from ''[[Babes in Arms (film)|Babes in Arms]]'')<ref name="Parodies">{{harvnb|Bona|2002|pp=300–301}}</ref>
+|-
+| {{sortname|Sarah|McLachlan}}<br />[[Randy Newman]] || Performers || "[[When She Loved Me]]" from ''[[Toy Story 2]]''
+|-
+| {{sortname|Aimee|Mann}} || Performer || "[[Save Me (Aimee Mann song)|Save Me]]" from ''[[Magnolia (film)|Magnolia]]''
+|-
+| {{sortname|Phil|Collins}} || Performer || "[[You'll Be in My Heart]]" from ''[[Tarzan (1999 film)|Tarzan]]''
+|-
+| {{sortname|Gloria|Estefan}}<br />[[NSYNC|'N Sync]] || Performers || "[[Music of My Heart]]" from ''[[Music of the Heart]]''
+|-
+| {{sortname|Robin|Williams}} || Performer || "[[Blame Canada]]" from ''[[South Park: Bigger, Longer, and Uncut]]''
+|-
+|{{sortname|Garth|Brooks}}<br />[[Faith Hill]]<br />[[Ray Charles]]<br />[[Queen Latifah]]<br />[[Isaac Hayes]]<br />Burt Bacharach<br />[[Dionne Warwick]]|| Performers || "[[Everybody's Talkin']]" from ''[[Midnight Cowboy]]'', <br />"[[Over the Rainbow]]" from ''[[The Wizard of Oz (1939 film)|The Wizard of Oz]]'', <br />"[[Secret Love (Doris Day song)|Secret Love]]" from ''[[Calamity Jane (1953 film)|Calamity Jane]]'', <br />"[[The Man That Got Away]]" from ''[[A Star Is Born (1954 film)|A Star Is Born]]'', <br />"[[I've Got You Under My Skin]]" from ''[[Born to Dance]]'', <br />"[[All the Way (Frank Sinatra song)|All the Way]]" from ''[[The Joker Is Wild]]'', <br />"[[Raindrops Keep Fallin' on My Head]]" from ''[[Butch Cassidy and the Sundance Kid]]'', <br />"[[Theme from Shaft]]" from ''[[Shaft (1971 film)|Shaft]]'', <br />"[[The Way We Were (song)|The Way We Were]]" from ''[[The Way We Were]]'', <br />"[[When You Wish Upon a Star]]" from ''[[Pinocchio (1940 film)|Pinocchio]]'', and <br />"[[Alfie (Burt Bacharach song)|Alfie]]" from ''[[Alfie (1966 film)|Alfie]]''
+|}
+
+==Ceremony information==
+[[File:Billy Crystal VF 2012 Shankbone.JPG|thumb|130px|right|[[Billy Crystal]] hosted the 72nd Academy Awards.|alt=Billy Crystal in 2012.]]
+In view of the new millennium, the academy sought to both shorten the telecast and give the ceremony a new look.<ref name="Inside Oscar 2">{{harvnb|Bona|2002|p=279}}</ref><ref name="Zanuck">{{harvnb|Pond|2005|p=224}}</ref> Husband{{ndash}}and{{ndash}}wife producers [[Richard D. Zanuck]] and [[Lili Fini Zanuck]] were recruited to oversee the production of the 2000 ceremony.<ref name="Inside Oscar 2" /> AMPAS President Robert Rehme explained the decision to hire the Zanucks saying, "With this new producing team in place, I look forward to a whole new perspective."<ref name="Inside Oscar 2" /> This marked the first occurrence that a woman was tapped for producing duties at the Oscars.<ref>{{cite news|last=Snow |first=Shauna |title=Arts And Entertainment Reports From The Times, News Services And The Nation's Press |url=https://www.latimes.com/archives/la-xpm-1999-dec-11-ca-42694-story.html |access-date=July 6, 2013 |work=Los Angeles Times |date=December 11, 1999 |url-status=live |archive-url=https://web.archive.org/web/20131015153058/http://articles.latimes.com/1999/dec/11/entertainment/ca-42694 |archive-date=October 15, 2013 }}</ref> Despite Richard and Lili's promises to make changes to the ceremony, they hired actor and veteran Oscar host [[Billy Crystal]] to host the ceremony for the seventh time.<ref name="Inside Oscar 2" />
+
+Production of the ceremony was reported to be far more ambitious and extravagant than previous ceremonies.<ref name="High Times">{{harvnb|Pond|2005|p=225}}</ref> Art director Bob Keene designed an ambitiously technological stage design for the telecast that used a floor adorned with flashing lights and several 35 foot columns consisting of [[high-definition video]] monitors stacked atop each other.<ref name="High Times" /> The columns were used to display images of previous Oscar appearances as presenters took the stage, nomination packages, and reaction shots of the acting nominees as the winner was being announced.<ref name="Oscar stage design">{{harvnb|Bona|2002|p=301}}</ref> Because of serious technical challenges concerning movement, lighting, and overheating, Keene and his production design team tested the stage at [[The Prospect Studios|ABC Prospect Studios]] before installing it at the [[Shrine Auditorium]].<ref name="Oscar stage design2">{{harvnb|Pond|2005|p=235}}</ref>
+
+Several other people were involved in the production of the ceremony. Actor [[Peter Coyote]], who served as announcer for the telecast, was often seen before commercial breaks live behind the stage.<ref name="Oscar stage design" /><ref>{{cite news|last=Ryan |first=Joal |title=Taps for Oscar Night Taps |url=http://www.eonline.com/news/39121/taps-for-oscar-night-taps |access-date=July 5, 2013 |work=[[E!]] |publisher=[[NBCUniversal]] |date=December 10, 1999 |url-status=live |archive-url=https://web.archive.org/web/20131015154742/http://www.eonline.com/news/39121/taps-for-oscar-night-taps |archive-date=October 15, 2013 }}</ref> Musical directors [[Burt Bacharach]], [[Don Was]], and [[Rob Shirakbari|Rob Shrock]] composed a techno-pop soundtrack that substituted for a live orchestra during most of the ceremony.<ref name="Inside Oscar 2"/><ref name="Music2">{{harvnb|Pond|2005|pp=238–239}}</ref> In addition, Bacharach rounded up musicians that included [[Garth Brooks]], [[Queen Latifah]], and [[Dionne Warwick]] to perform a medley of songs previously nominated for [[Academy Award for Best Original Song|Best Original Song]].<ref>{{cite news|last=Burlingame |first=Jon |title=The Sound of Change |url=https://www.latimes.com/archives/la-xpm-2000-mar-20-ca-10676-story.html |access-date=July 6, 2013 |work=Los Angeles Times |date=March 20, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131015155435/http://articles.latimes.com/2000/mar/20/entertainment/ca-10676 |archive-date=October 15, 2013 }}</ref> Choreographer [[Kenny Ortega]] supervised the "[[Blame Canada]]" musical number.<ref name="BCSP">{{harvnb|Bona|2002|p=285}}</ref> [[Whitney Houston]] was announced as one of performers, but two days before the ceremony she was fired by Bacharach due to being unprepared and unresponsive to direction; [[Faith Hill]] filled in for her.<ref name="LA Times Oscar Ratings"/>
+
+===Box office performance of nominees===
+At the time of the nominations announcement on February 15, the combined gross of the five Best Picture nominees was $521&nbsp;million with an average of $104&nbsp;million per film.<ref name=BoxOfficeOscars>{{cite news|title=1999 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=1999&p=.htm |access-date=July 8, 2013 |work=[[Box Office Mojo]] |url-status=live |archive-url=https://web.archive.org/web/20130809031613/http://boxofficemojo.com/oscar/chart/?yr=1999&p=.htm |archive-date=August 9, 2013 }}</ref> ''The Sixth Sense'' was the highest earner among the Best Picture nominees with $278.4&nbsp;million in domestic box office receipts.<ref name=BoxOfficeOscars/> The film was followed by ''The Green Mile'' ($120.7&nbsp;million), ''American Beauty'' ($74.7&nbsp;million), ''The Cider House Rules'' ($20.7&nbsp;million), and finally ''The Insider'' ($26.6&nbsp;million).<ref name=BoxOfficeOscars/>
+
+Of the top 50 grossing movies of the year, 37 nominations went to 11 films on the list.<ref name="boxofficemojooscars">{{cite web|url=https://boxofficemojo.com/yearly/chart/?asof=2000-02-07&view=releasedate&view2=domestic&yr=1999&sort=gross&order=DESC&p=.htm |title=1999 Domestic Grosses |work=Box Office Mojo |access-date=March 2, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140310213946/http://boxofficemojo.com/yearly/chart/?asof=2000-02-07&view=releasedate&view2=domestic&yr=1999&sort=gross&order=DESC&p=.htm |archive-date=March 10, 2014 }}</ref> Only ''The Sixth Sense'' (2nd), ''The Green Mile'' (13th), ''The Talented Mr. Ripley'' (26th), and ''American Beauty'' (27th) were nominated for directing, acting, screenwriting, or Best Picture. The other top 50 box office hits that earned the nominations were ''Star Wars Episode I: The Phantom Menace'' (1st), ''Toy Story 2'' (3rd), ''The Matrix'' (5th), ''Tarzan'' (6th), ''The Mummy'' (8th), ''Stuart Little'' (11th), and ''Sleepy Hollow'' (20th).<ref name="boxofficemojooscars"/>
+
+===Missing paper ballots===
+Nearly two weeks before Oscar voting was finished, AMPAS reported that 4,000 of the ballots mailed to Academy members were missing. The bags that carried the ballots were mislabeled as [[Mail#Types|third-class mail]].<ref name="MissingBallots">{{harvnb|Pond|2005|p=231}}</ref> On March 6, 2000, 1,000 of the ballots were discovered at a [[United States Postal Service|US Postal Service]] regional distribution center in [[Bell, California]].<ref>{{cite news|last=Ryfle |first=Steve |title=Oscar Ballots: Lost... And Found! |url=http://www.hollywood.com/news/brief/312040/oscar-ballots-lost-and-found?page=all |access-date=July 8, 2013 |work=[[Hollywood.com]] |date=March 19, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131016012727/http://www.hollywood.com/news/brief/312040/oscar-ballots-lost-and-found?page=all |archive-date=October 16, 2013 }}</ref> In response to affected members, AMPAS sent replacement ballots sealed in yellow envelopes, and extended the voting deadline by two days to March 23.<ref name="MissingBallots2">{{harvnb|Bona|2002|p=289}}</ref>
+
+===Oscar statuettes theft===
+On March 10, 2000, 55 Oscar statuettes were stolen from a [[Roadway Express]] loading dock in [[Bell, California]].<ref name="MissingBallots2" /><ref>{{cite news|url=https://www.theguardian.com/film/2000/mar/17/oscars2000.awardsandprizes |title=Oscars stolen, but the show will go on |access-date=July 8, 2013 |work=[[The Guardian]] |date=March 17, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131015084005/http://www.theguardian.com/film/2000/mar/17/oscars2000.awardsandprizes |archive-date=October 15, 2013 }}</ref> In the event the stolen awards were to be still missing during the festivities, AMPAS announced that [[R.S. Owens & Company]], the manufacturer of the awards would produce a new batch of the golden statuettes.<ref name="StolenOscars">{{cite news|last=Ryan |first=Joal |author2=Steven Ryfle |title=Oscar: Found in Trash! |url=http://www.hollywood.com/news/brief/312091/oscar-found-in-trash?page=all |access-date=July 25, 2013 |work=Hollywood.com |publisher=Hollywood.com, LLC |date=March 19, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131016025924/http://www.hollywood.com/news/brief/312091/oscar-found-in-trash?page=all |archive-date=October 16, 2013 }}</ref> Nine days later, 52 of the stolen statuettes were discovered in a trash bin at a [[Food 4 Less]] supermarket located in the [[Koreatown, Los Angeles|Koreatown]] neighborhood of Los Angeles by a man named Willie Fulgear.<ref name="StolenOscars2">{{harvnb|Pond|2005|p=255}}</ref><ref>{{cite news|last=Lyman |first=Rick |title=Stolen Oscars Discovered in a Trash Bin |url=https://www.nytimes.com/2000/03/21/us/stolen-oscars-discovered-in-a-trash-bin.html |access-date=July 8, 2013 |work=The New York Times |date=March 21, 2000 |url-status=live |archive-url=https://web.archive.org/web/20130603011726/http://www.nytimes.com/2000/03/21/us/stolen-oscars-discovered-in-a-trash-bin.html |archive-date=June 3, 2013 }}</ref> For the safe recovery of the stolen statuettes, Roadway Express rewarded Fulgear with $50,000, and the academy invited him and his son Allen to the ceremony.<ref>{{cite news|title=Man Who Rescued Oscars Receives $50,000 Reward |url=https://www.latimes.com/archives/la-xpm-2000-mar-24-me-12196-story.html |access-date=July 8, 2013 |work=Los Angeles Times |date=March 24, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131023025904/http://articles.latimes.com/2000/mar/24/local/me-12196 |archive-date=October 23, 2013 }}</ref> Two Roadway Express employees, truck driver Lawrence Ledent and dock worker Anthony Hart, were arrested for the theft of the Oscars. Both men pleaded no contest. Ledent served six months in prison and Hart received probation. A third man who was Mr. Fulgear's half-brother was initially charged with the crime, but police dropped those charges after Mr. Fulgear divulged that they were estranged from each other.<ref name="StolenOscars2" /><ref>{{cite news|url=https://www.latimes.com/archives/la-xpm-2000-oct-17-me-37786-story.html |access-date=July 8, 2013 |newspaper=Los Angeles Times |title=3rd Man Charged in Oscar Theft |date=October 17, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131023025908/http://articles.latimes.com/2000/oct/17/local/me-37786 |archive-date=October 23, 2013 }}</ref> Three years later, one of three remaining missing Oscar statuettes was discovered during a drug bust at a mansion in Miami, Florida; the other two have yet to be found.<ref>{{cite news|title=September 10, 2013 |url=https://www.chicagotribune.com/2003/06/14/agents-stumble-upon-missing-oscar-statuette/ |access-date=October 18, 2014 |work=[[Chicago Tribune]] |publisher=Tribune Publishing |date=June 14, 2003 |url-status=live |archive-url=https://web.archive.org/web/20150606115337/http://articles.chicagotribune.com/2003-06-14/news/0306140104_1_fbi-agents-fbi-spokeswoman-loading-dock |archive-date=June 6, 2015 }}</ref>
+
+===Critical reviews===
+The show received a positive reception from most media publications. Television critic Monica Collins of the ''[[Boston Herald]]'' praised producers Richard and Lili Fini Zanuck for overseeing a show that was "clean, snappy, high-gloss and very well produced." She also quipped that host Billy Crystal did not need to save the show this time because "everything seemed to come together."<ref name="72nd Oscar ratings">{{harvnb|Bona|2002|p=314}}</ref> ''[[The San Francisco Examiner]]''{{'s}} Wesley Morris wrote "the show was downright hip, more so than it's been in decades." He also gave high marks for the "techno-chic" production elements from the music and stage design.<ref>{{cite news|last=Morris |first=Wesley |title=An 'American' tale |url=http://www.sfgate.com/style/article/An-American-tale-3067796.php#page-2 |access-date=June 27, 2013 |work=[[The San Francisco Examiner]] |publisher=[[Hearst Corporation]] |date=March 27, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131016055127/http://www.sfgate.com/style/article/An-American-tale-3067796.php |archive-date=October 16, 2013 }}</ref> Columnist Paul Brownfield of the ''[[Los Angeles Times]]'' raved that "the 72nd annual Academy Awards telecast was hipper than in years past, sleeker in look and edgier in tone." He added that Crystal was "the perfect antidote to the entire evening's self-serious posturing."<ref>{{cite news|last=Brownfield |first=Paul |title=Hipper, Sleeker but Longer |url=https://www.latimes.com/archives/la-xpm-2000-mar-27-ca-13067-story.html |access-date=July 2, 2013 |work=Los Angeles Times |date=March 27, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131023032600/http://articles.latimes.com/2000/mar/27/entertainment/ca-13067 |archive-date=October 23, 2013 }}</ref>
+
+Some media outlets were more critical of the show. John Carman of the ''[[San Francisco Chronicle]]'' lamented that despite being solid and tidy, "the show never quite managed the big surprises, sloppy excesses and emotional highs we hope to see."<ref>{{cite news|last=Carman |first=John |title=The Show – Onstage and Off / TV Oscarcast Was Efficient, Lacked Emotion |url=http://www.sfgate.com/entertainment/article/The-Show-Onstage-and-Off-TV-Oscarcast-Was-3240642.php |access-date=July 2, 2013 |work=San Francisco Chronicle |publisher=Hearst Corporation |date=March 27, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131016071339/http://www.sfgate.com/entertainment/article/The-Show-Onstage-and-Off-TV-Oscarcast-Was-3240642.php |archive-date=October 16, 2013 }}</ref> ''[[Pittsburgh Post-Gazette]]'' television critic [[Rob Owen (journalist)|Rob Owen]] criticized the uneven pacing of the ceremony writing that the telecast "started slowly&nbsp;– 20 minutes of Billy Crystal's spoofs and singing that weren't as funny as his past Oscar intros&nbsp;– and never got up to speed."<ref>{{cite news|last=Owen |first=Rob |author-link=Rob Owen (journalist) |title=Crystal just ho-hum in a really slow Oscars show |url=http://old.post-gazette.com/tv/20000327owen.asp |work=Pittsburgh Post-Gazette |publisher=Crain Communications |access-date=July 2, 2013 |date=March 27, 2000 |url-status=dead |archive-url=https://web.archive.org/web/20131016082906/http://old.post-gazette.com/tv/20000327owen.asp |archive-date=October 16, 2013 }}</ref> Caryn James of ''[[The New York Times]]'' remarked that "the four-hour show turned into a zombie." She also stated that the telecast was bloated with too many tributes to Hollywood's past.<ref>{{cite news|last=James |first=Caryn |title=CRITIC'S NOTEBOOK; Growing Pains as the Oscars Play to Jaded Stargazers |url=https://www.nytimes.com/2000/03/28/movies/critic-s-notebook-growing-pains-as-the-oscars-play-to-jaded-stargazers.html |access-date=July 5, 2013 |work=The New York Times |date=March 28, 2000 |url-status=live |archive-url=https://web.archive.org/web/20131016072236/http://www.nytimes.com/2000/03/28/movies/critic-s-notebook-growing-pains-as-the-oscars-play-to-jaded-stargazers.html |archive-date=October 16, 2013 }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 46.52 million viewers over its length, which was a 3% increase from the previous year's ceremony.<ref name="LA Times Oscar Ratings" /> An estimated 79.11 million total viewers watched all or part of the awards.<ref name="LA Times Oscar Ratings" /> The show also drew higher [[Nielsen ratings]] compared to the previous ceremony with 29.64% of households watching over a 48.32 share.<ref name="TVB Oscars">{{cite news|title=Academy Awards ratings |work=Television Bureau of Advertising |url=http://www.tvb.org/media/file/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130515152338/http://www.tvb.org/media/file/Academy_Awards.pdf |archive-date=May 15, 2013 }}</ref> It also drew a higher 18{{ndash}}49 demo rating with a 19.86 rating over a 39.34 share among viewers in that demographic.<ref name="TVB Oscars" />
+
+In July 2000, the show received nine nominations at the [[52nd Primetime Emmy Awards]].<ref name="Emmy">{{cite news|title=Primetime Emmy Award database |url=http://www.emmys.com/shows/72nd-annual-academy-awards |access-date=July 6, 2013 |work=[[Academy of Television Arts and Sciences]] |publisher=ATAS |url-status=live |archive-url=https://web.archive.org/web/20130623165922/http://www.emmys.com/shows/72nd-annual-academy-awards |archive-date=June 23, 2013 }}</ref> Two months later, the ceremony won one of those nominations for Louis J. Horvitz's direction of the telecast.<ref name="Emmy" />
+
+=="In Memoriam"==
+The annual "In Memoriam" tribute, presented by actor [[Edward Norton]], honored the following people.<ref>{{harvnb|Bona|2002|p=307}}</ref>
+{{clarify |date=August 2026|order of presentation?}}
+{{div col|colwidth=22em}}
+*[[Sylvia Sidney]] – actress
+*[[Jim Varney]] – actor
+*[[Ernest Gold]] – composer
+*[[Ruth Roman]] – actress
+*[[Henry Jones (actor)|Henry Jones]] – actor
+*[[Robert Bresson]] – director
+*[[Desmond Llewelyn]] – actor
+*[[Allan Carr]] – producer
+*[[Mario Puzo]] – screenwriter
+*[[Rory Calhoun]] – actor
+*[[Frank Tarloff]] – screenwriter
+*[[Marc Davis (animator)|Marc Davis]] – animator
+*[[Hedy Lamarr]] – actress
+*[[Victor Mature]] – actor
+*[[Garson Kanin]] – screenwriter
+*[[Roger Vadim]] – producer, director
+*[[Mabel King]] – actress
+*[[Oliver Reed]] – actor
+*[[Albert Whitlock]] – special effects
+*[[Ian Bannen]] – actor
+*[[Abraham Polonsky]] – screenwriter
+*[[Dirk Bogarde]] – actor
+*[[Lila Kedrova]] – actress
+*[[Edward Dmytryk]] – director
+*[[Buddy Rogers (actor)|Charles "Buddy" Rogers]] – actor, musician
+*[[Madeline Kahn]] – actress
+*[[George C. Scott]] – actor
+{{div col end}}
+
+==See also==
+
+* [[6th Screen Actors Guild Awards]]
+* [[20th Golden Raspberry Awards]]
+* [[42nd Grammy Awards]]
+* [[52nd Primetime Emmy Awards]]
+* [[53rd British Academy Film Awards]]
+* [[54th Tony Awards]]
+* [[57th Golden Globe Awards]]
+* [[List of submissions to the 72nd Academy Awards for Best Foreign Language Film]]
+
+==References==
+{{reflist|30em}}
+
+==Bibliography==
+{{refbegin}}
+*{{Citation
+ |last=Bona
+ |first=Damien
+ |title=Inside Oscar 2
+ |year=2002
+ |isbn=0-345-44970-3
+ |location=New York, United States
+ |publisher=[[Ballantine Books]]
+ |url-access=registration
+ |url=https://archive.org/details/insideoscar200bona
+ }}
+*{{Citation
+ |last=Levy
+ |first=Emanuel
+ |title=All About Oscar: The History and Politics of the Academy Awards
+ |year=2003
+ |isbn=0-8264-1452-4
+ |location=New York, United States
+ |publisher=[[Continuum International Publishing Group]]
+}}
+*{{Citation
+ |last=Pond
+ |first=Steve
+ |title=The Big Show: High Times and Dirty Dealings Backstage at the Academy Awards
+ |year=2005
+ |isbn=0-571-21193-3
+ |location=New York, United States
+ |publisher=[[Faber and Faber]]
+ |url-access=registration
+ |url=https://archive.org/details/bigshowhightimes00pond
+ }}
+
+{{refend}}
+
+==External links==
+;Official websites
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=2009-03-04 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=2009-01-22 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=2018-10-02 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+;News resources
+* [https://news.bbc.co.uk/1/hi/in_depth/entertainment/2000/oscars_2000/default.stm Oscars 2000]  [[BBC News]]
+* [http://www.cnn.com/SHOWBIZ/specials/2000/oscars/ Academy Awards coverage] {{Webarchive|url=https://web.archive.org/web/20121106061039/http://www.cnn.com/SHOWBIZ/specials/2000/oscars/ |date=2012-11-06 }} [[CNN]]
+
+;Analysis
+* [http://www.filmsite.org/aa99.html 1999 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20130818235212/http://www.filmsite.org/aa99.html |date=2013-08-18 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/2000 Academy Awards, USA: 2000] {{Webarchive|url=https://web.archive.org/web/20171114210718/http://www.imdb.com/event/ev0000003/2000 |date=2017-11-14 }} Internet Movie Database
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 72}}
+[[Category:1999 film awards]]
+[[Category:2000 in American cinema]]
+[[Category:Academy Awards ceremonies]]
+[[Category:2000 in Los Angeles]]
+[[Category:2000 awards in the United States]]
+[[Category:March 2000 in the United States]]
+[[Category:Television shows directed by Louis J. Horvitz]]

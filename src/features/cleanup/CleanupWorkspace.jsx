@@ -36,14 +36,17 @@ import {
 } from '../../utils/cleanupUtils.js'
 import { getQualityFactsLabel, isLowQuality, rootLabel } from '../../utils/libraryUtils.js'
 import { formatVoteCount } from '../../utils/moviePresentation.js'
+import TVMaintenanceTab from './TVMaintenanceTab.jsx'
 
 const maintenanceTabs = [
   { id: 'storage', label: 'Storage', icon: ShieldCheck },
   { id: 'identity', label: 'Identity', icon: ScanSearch },
+  { id: 'tv', label: 'TV Identity', icon: Film },
 ];
 const MAINTENANCE_PAGE_SIZE = 50;
 
 function maintenanceTab(initialTab) {
+  if (initialTab === 'tv') return 'tv';
   if (initialTab === 'unmatched' || initialTab === 'identity') return 'identity';
   return 'storage';
 }
@@ -74,7 +77,7 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
   const [activeTab, setActiveTab] = useState(maintenanceTab(initialTab));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [audit, setAudit] = useState({ summary: {}, storage: { groups: [], pagination: {} }, identity: { items: [], pagination: {} } });
+  const [audit, setAudit] = useState({ summary: {}, storage: { groups: [], pagination: {} }, identity: { items: [], pagination: {} }, tv: { items: [], counts: {} } });
   const [selected, setSelected] = useState({ storage: new Set(), identity: new Set() });
   const [pages, setPages] = useState({ storage: 1, identity: 1 });
   const [filters, setFilters] = useState({ query: '' });
@@ -105,6 +108,13 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
     setLoading(true);
     setError('');
     try {
+      if (section === 'tv') {
+        const params = new URLSearchParams({ page: String(page || 1), page_size: String(MAINTENANCE_PAGE_SIZE) });
+        if (query.trim()) params.set('query', query.trim());
+        const tv = await fetchJson(`/api/tv/maintenance?${params.toString()}`);
+        setAudit((current) => ({ ...current, tv }));
+        return;
+      }
       const params = new URLSearchParams({
         section,
         page: String(page || 1),
@@ -238,7 +248,7 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
 
   function updateFilter(key, value) {
     setFilters((state) => ({ ...state, [key]: value }));
-    setPages({ storage: 1, identity: 1 });
+    setPages({ storage: 1, identity: 1, tv: 1 });
   }
 
   function selectMaintenanceTab(tab) {
@@ -652,14 +662,14 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
         <div>
           <p className="screen-kicker">Catalog-backed maintenance</p>
           <h2>Library Maintenance <span className="offline-badge">Local</span></h2>
-          <p>Archive integrity for duplicate files and movie identity. Upgrade discovery now lives in Library.</p>
+          <p>Review movie storage and identity, plus separate TV show and episode matches.</p>
         </div>
         <div className="library-header-actions">
           <div className="library-action-row">
             <button type="button" className="btn btn-secondary" onClick={() => loadMaintenanceSection(activeTab, pages[activeTab] || 1, filters.query)} disabled={loading}>
               <RefreshCcw size={15} /> Refresh
             </button>
-            {activeTab !== 'storage' && activeSelectedCount > 0 && (
+            {activeTab === 'identity' && activeSelectedCount > 0 && (
               <button type="button" className="btn btn-danger" onClick={() => requestDelete(activeTab, [...selected[activeTab]], `Move ${activeSelectedCount} selected file${activeSelectedCount === 1 ? '' : 's'} to Recycle Bin?`)}>
                 <Trash2 size={15} /> Delete selected ({activeSelectedCount})
               </button>
@@ -772,6 +782,9 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
               notify={notify}
             />
           )}
+          {activeTab === 'tv' && <TVMaintenanceTab data={audit.tv} notify={notify}
+            onRefresh={() => loadMaintenanceSection('tv', pages.tv || 1, filters.query)}
+            onPageChange={(page) => setPages((state) => ({ ...state, tv: page }))} />}
         </>
       )}
 

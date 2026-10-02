@@ -202,7 +202,6 @@ export default function LibraryWorkspace({
   const [genreFilter, setGenreFilter] = useState('all');
   const [resolutionFilter, setResolutionFilter] = useState('all');
   const [sourceFilter, setSourceFilter] = useState('all');
-  const [languageFilter, setLanguageFilter] = useState('all');
   const [countryFilter, setCountryFilter] = useState('all');
   const [yearFrom, setYearFrom] = useState('');
   const [yearTo, setYearTo] = useState('');
@@ -306,7 +305,6 @@ export default function LibraryWorkspace({
     resolution: resolutionFilter,
     source: sourceFilter,
     genre: genreFilter,
-    language: languageFilter,
     country: countryFilter,
     yearFrom: libraryYearDraft.from,
     yearTo: libraryYearDraft.to,
@@ -316,7 +314,7 @@ export default function LibraryWorkspace({
     person: roleFilter,
     keyword: keywordFilter,
     movieList: listFilter
-  }), [query, resolutionFilter, sourceFilter, genreFilter, languageFilter, countryFilter, libraryYearDraft.from, libraryYearDraft.to, minRating, sortMode, viewingStateFilter, roleFilter, keywordFilter, listFilter]);
+  }), [query, resolutionFilter, sourceFilter, genreFilter, countryFilter, libraryYearDraft.from, libraryYearDraft.to, minRating, sortMode, viewingStateFilter, roleFilter, keywordFilter, listFilter]);
 
   useEffect(() => {
     if (librarySearchKind !== 'advanced') return undefined;
@@ -715,7 +713,7 @@ export default function LibraryWorkspace({
     genreFilter,
     resolutionFilter,
     sourceFilter,
-    languageFilter,
+    languageFilter: 'all',
     countryFilter,
     yearFrom: libraryYearDraft.from,
     yearTo: libraryYearDraft.to,
@@ -729,7 +727,7 @@ export default function LibraryWorkspace({
     tmdbCache,
     showAdultMovies
     });
-  }, [activeItems, focusedFilePath, focusedMovieItem, items, libraryResult, query, identityFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, languageFilter, countryFilter, libraryYearDraft.from, libraryYearDraft.to, minRating, sizeFilter, mode, roleFilter, listFilter, userLists, viewingStateFilter, tmdbCache, showAdultMovies, currentPage]);
+  }, [activeItems, focusedFilePath, focusedMovieItem, items, libraryResult, query, identityFilter, sortMode, genreFilter, resolutionFilter, sourceFilter, countryFilter, libraryYearDraft.from, libraryYearDraft.to, minRating, sizeFilter, mode, roleFilter, listFilter, userLists, viewingStateFilter, tmdbCache, showAdultMovies, currentPage]);
 
   const activeSelectedPaths = mode === 'movie' ? selectedLibraryKeys : selectedFilePaths;
   const selectedPageItems = useMemo(() => {
@@ -894,7 +892,6 @@ export default function LibraryWorkspace({
     setGenreFilter('all');
     setResolutionFilter('all');
     setSourceFilter('all');
-    setLanguageFilter('all');
     setCountryFilter('all');
     setYearFrom('');
     setYearTo('');
@@ -921,7 +918,6 @@ export default function LibraryWorkspace({
       genreFilter,
       resolutionFilter,
       sourceFilter,
-      languageFilter,
       countryFilter,
       yearFrom,
       yearTo,
@@ -950,7 +946,6 @@ export default function LibraryWorkspace({
     setGenreFilter(snapshot.genreFilter || 'all');
     setResolutionFilter(snapshot.resolutionFilter || 'all');
     setSourceFilter(snapshot.sourceFilter || 'all');
-    setLanguageFilter(snapshot.languageFilter || 'all');
     setCountryFilter(snapshot.countryFilter || 'all');
     setYearFrom(snapshot.yearFrom || '');
     setYearTo(snapshot.yearTo || '');
@@ -1454,7 +1449,7 @@ export default function LibraryWorkspace({
       {librarySearchKind === 'movies' && <div className={cx('library-toolbar library-filter-toolbar', `library-filter-toolbar-${mode}`, !filtersOpen && 'library-filter-toolbar-collapsed')}>
         {!filtersOpen ? (
           <>
-            <span>Filters collapsed: resolution, source, genre, viewing state, language, country, year, rating, sort</span>
+            <span>Filters collapsed: resolution, source, genre, viewing state, country, year, rating, sort</span>
             <button
               type="button"
               className="btn btn-secondary library-filter-icon-button"
@@ -1490,10 +1485,6 @@ export default function LibraryWorkspace({
               <option value="watched">Watched</option>
               <option value="unwatched">Unwatched</option>
               <option value="watchlist">Watchlist</option>
-            </select>
-            <select value={languageFilter} onChange={(event) => { setLanguageFilter(event.target.value); resetLibraryPage(); }}>
-              <option value="all">All languages</option>
-              {optionSets.languages.map((value) => <option key={value} value={value}>{value}</option>)}
             </select>
             <select value={countryFilter} onChange={(event) => { setCountryFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All countries</option>
@@ -1674,7 +1665,8 @@ export default function LibraryWorkspace({
                       onFindTorrent={onFindTorrent}
                       onTrailer={() => openLibraryTrailer(item)}
                       onPersonFilter={applyRoleFilter}
-                      onPersonDiscover={onOpenDiscoverPerson}
+                      onPersonDiscover={(movie, role, person) => onOpenDiscoverPerson(movie, role, person, { fullFilmography: true })}
+                      onPersonAwardDiscover={(movie, role, person, award) => onOpenDiscoverPerson(movie, role, person, { award })}
                       onCollectionBrowse={(collection) => onOpenDiscoverCollection(identity, collection)}
                       onCollectionRetry={() => loadMovieCollection(details, { force: true })}
                       onEditCollection={(collection) => setCollectionEditor({ collection, item })}

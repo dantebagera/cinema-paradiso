@@ -58,6 +58,8 @@ class TVVerticalSliceTests(unittest.TestCase):
         self.ingest('Harbor.S01E03.mkv')
         first = self.repo.episodes(self.series_id, 1)[0]
         self.repo.save_progress(first['id'], completed=True)
+        self.assertEqual(self.read.detail(self.series_id)['primary_action']['label'], 'Start')
+        self.repo.save_progress(first['id'], completed=True, player_activity=True)
         model = self.read.detail(self.series_id)
         self.assertEqual(model['primary_action']['label'], 'Play next')
         self.assertEqual(model['primary_action']['target']['episode_number'], 2)
@@ -65,7 +67,8 @@ class TVVerticalSliceTests(unittest.TestCase):
         self.assertEqual(model['stream_target']['episode_number'], 2)
         self.assertEqual(model['season_count'], 2)
         self.assertTrue(model['has_specials'])
-        self.assertEqual(model['episode_count'], 5)
+        self.assertEqual(model['episode_count'], 4)
+        self.assertEqual(model['specials_count'], 1)
 
     def test_player_events_complete_only_the_episode_and_rewatch_survives_restart(self):
         self.ingest('Harbor.S01E01.mkv')
@@ -121,8 +124,12 @@ class TVVerticalSliceTests(unittest.TestCase):
                 validate_tv_template(template)
 
     def test_library_filters_and_pagination_hydrate_only_requested_cards(self):
+        harbor_folder = self.root / 'Harbor Signals'; harbor_folder.mkdir()
+        self.repo.approve_path(harbor_folder, 'folder', self.series_id)
         for number in range(10):
-            self.repo.refresh({**self.fixture['series'], 'tmdb_id':910000+number, 'title':f'Other {number}'}, [])
+            identity = self.repo.refresh({**self.fixture['series'], 'tmdb_id':910000+number, 'title':f'Other {number}'}, [])
+            folder = self.root / f'Other {number}'; folder.mkdir()
+            self.repo.approve_path(folder, 'folder', identity)
         with patch.object(self.read, 'detail', wraps=self.read.detail) as detail:
             result = self.read.library(page_size=2)
             self.assertEqual(result['total'], 11)

@@ -1,0 +1,23 @@
+[perf] POST /api/metadata/identity-audit 270.8ms
+..........................................................................................................................................................................................................................................................................................................................................................................................................F...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................C:\Program Files\Python312\Lib\json\encoder.py:414: ResourceWarning: unclosed file <_io.FileIO name='C:\\Users\\dante\\AppData\\Local\\Temp\\tmpsfe_1g9t' mode='rb+' closefd=True>
+  def _iterencode(o, _current_indent_level):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..........................................................................................................................C:\Program Files\Python312\Lib\unittest\case.py:589: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\dante\\Desktop\\cinema paradiso\\dist/index.html'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+[perf] POST /api/metadata/smart-rename/preview 1952.6ms
+[perf] POST /api/user/system-lists/watched/toggle 418.8ms
+[perf] POST /api/user/followed-releases 313.0ms
+..............................................................................................................................................................................................................................................................................................................................................................................
+======================================================================
+FAIL: test_movies_get_is_pure_and_projection_is_nonblocking_progressive (test_iptv_movie_gates_0_5.ProjectionAndWorkerTests.test_movies_get_is_pure_and_projection_is_nonblocking_progressive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_iptv_movie_gates_0_5.py", line 185, in test_movies_get_is_pure_and_projection_is_nonblocking_progressive
+    self.assertLess(time.perf_counter() - started, 1.0)
+AssertionError: 3.3263547999995353 not less than 1.0
+
+----------------------------------------------------------------------
+Ran 1526 tests in 279.187s
+
+FAILED (failures=1)

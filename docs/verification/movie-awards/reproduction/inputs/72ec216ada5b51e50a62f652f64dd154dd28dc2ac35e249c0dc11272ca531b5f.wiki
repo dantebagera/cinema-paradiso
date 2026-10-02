@@ -1,0 +1,390 @@
+{{oscars short description|films-year=1974}}
+{{Use American English|date=March 2020}}
+{{Use mdy dates|date=March 2020}}
+
+{{Infobox film awards
+| number           = 47
+| award            = Academy Awards
+| image            = 47th Academy Awards.jpg
+| date             = April 8, 1975
+| site             = [[Dorothy Chandler Pavilion]], [[Los Angeles]], [[California]]
+| host             = [[Bob Hope]],<br> [[Shirley MacLaine]],<br> [[Sammy Davis Jr.]]<br> and [[Frank Sinatra]]
+| producer         = [[Howard W. Koch]]
+| director         = [[Marty Pasetta]]
+| best_picture     = ''[[The Godfather Part II]]''
+| most_wins        = ''The Godfather Part II'' (6)
+| most_nominations = ''[[Chinatown (1974 film)|Chinatown]]'' and ''The Godfather Part II'' (11)
+| network          = [[NBC]]
+| duration         = 
+| last             = 46th
+| next             = 48th
+}}
+
+The '''47th Academy Awards''' were presented Tuesday, April 8, 1975, at the [[Dorothy Chandler Pavilion]] in [[Los Angeles]], [[California]], honoring the best [[1974 in film|films of 1974]]. The ceremonies were presided over by [[Bob Hope]], [[Shirley MacLaine]], [[Sammy Davis Jr.]], and [[Frank Sinatra]]. This was the final ceremony to air on [[NBC]]; in the following year [[American Broadcasting Company|ABC]] acquired the U.S. broadcasting rights and has hosted the awards show since.
+
+The success of ''[[The Godfather Part II]]'' was notable; it received twice as many Oscars as its predecessor (six) and duplicated its feat of three [[Academy Award for Best Supporting Actor|Best Supporting Actor]] nominations (as of the [[98th Academy Awards]], it is the last film to receive three nominations in a single acting category). Between the two of them, father and son [[Carmine Coppola|Carmine]] and [[Francis Ford Coppola]] won four awards, with Carmine winning for [[Academy Award for Best Original Score|Best Original Dramatic Score]] (with [[Nino Rota]]) and Francis for [[Academy Award for Best Picture|Picture]], [[Academy Award for Best Director|Director]], and [[Academy Award for Best Adapted Screenplay|Best Screenplay Adapted from Other Material]] (with [[Mario Puzo]]).
+
+Prior to the ceremony, Dustin Hoffman, who was nominated for his performance in the film ''[[Lenny (film)|Lenny]]'', described the awards as "ugly" and "grotesque" and likened the ceremony to a beauty pageant, causing host Hope to remark that "if Dustin Hoffman wins tonight, he's going to have a friend pick it up for him—[[George C. Scott]]."<ref name="Oscars '74 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/846/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=847 |isbn=0-385-04060-1}}</ref> Ingrid Bergman felt that she won her Academy Award out of a collective showbusiness guilt over her being ostracized from Hollywood in 1949 due to her affair with director [[Roberto Rossellini]] and that Valentina Cortese was worthy of the Best Supporting Actress Oscar.<ref name="Oscars '74 Notes"/> Upon winning the Best Documentary Feature Oscar for ''[[Hearts and Minds (film)|Hearts and Minds]]'', co-producer [[Bert Schneider]] said, "It's ironic that we're here at a time just before Vietnam is about to be [[Fall of Saigon|liberated]]," and then read a telegram containing "Greetings of Friendship to All American People" from Ambassador Dinh Ba Thi of the [[National Front for the Liberation of South Vietnam|Provisional Revolutionary Government (Viet Cong)]]<ref>Biskind, ''Easy Riders, Raging Bulls'', p. 275.</ref> delegation to the [[Paris Peace Accords]].<ref name="Oscars '74 Notes"/><ref>Robinson, George. [https://query.nytimes.com/gst/fullpage.html?res=9507EEDE1738F937A35750C0A9679C8B63 Sometimes A Thank You Isn't Enough"], ''[[The New York Times]]'', March 4, 2001. Accessed May 29, 2008.</ref> The telegram thanked the anti-war movement "for all they have done on behalf of peace".<ref name="Schulzinger, Robert D. page 155">Schulzinger, Robert D., "A Time for Peace: The Legacy of the Vietnam War", page 155, Oxford University Press, Oxford & New York, 2006</ref> The speech infuriated Hope, who later wrote a telegram that he had Sinatra read to the divided audience. The note said: "The academy is saying, 'We are not responsible for any political references made on the program, and we are sorry they had to take place this evening.'"<ref name="Oscars '74 Notes"/><ref>Efron, Eric. [https://query.nytimes.com/gst/fullpage.html?res=9A0DE7DC1439F933A05750C0A9659C8B63 " The World: Acting Out; At the Oscars, a Cause and Effect"], ''[[The New York Times]]'', March 30, 2003. Accessed May 29, 2008.</ref> This speech infuriated a third co-host, [[Shirley MacLaine]], and actor [[Warren Beatty]], who sarcastically retorted "thank you, Frank, you old [[Republican Party (United States)|Republican]]". MacLaine, for her part, remarked "You said you were speaking for the Academy. Well, I'm a member of the Academy and you didn't ask me!".<ref>{{cite web|url=http://www.thenation.com/blog/173081/politics-and-oscar-night?rel=emailNation#sthash.nk6cdziJ.dpuf |title=Politics and Oscar Night |work=The Nation |date=2013-02-25 |access-date=2013-11-05}}</ref>
+
+This was the only Oscar ceremony in which all five of the nominees in a single category were released by the same studio: all five [[Academy Award for Best Costume Design|Best Costume Design]] nominations were for films released by [[Paramount Pictures]].
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Francis Ford Coppola -1976 (cropped).jpg
+| caption1          = [[Francis Ford Coppola]], Best Director winner, Best Picture co-winner, and Best Adapted Screenplay co-winner
+| image2            = Art Carney - 1959.jpg
+| caption2          = [[Art Carney]], Best Actor winner
+| image3            = Ellen Burstyn at the 2009 Tribeca Film Festival.jpg
+| caption3          = [[Ellen Burstyn]], Best Actress winner
+| image4            = RobertdeNiro26 (cropped).JPG
+| caption4          = [[Robert De Niro]], Best Supporting Actor winner
+| image5            = Ingrid Bergman Holding Oscar (cropped).jpg
+| caption5          = [[Ingrid Bergman]], Best Supporting Actress winner
+
+| image6            = Robert Towne 1 3.jpg
+| caption6          = [[Robert Towne]], Best Original Screenplay winner
+| image7            = Will Vinton 2015.jpg
+| caption7          = [[Will Vinton]], Best Animated Short Film co-winner
+}}
+
+Nominees were announced on February 24, 1975. Winners are listed first and highlighted in boldface.<ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/|access-date=2011-06-27|archive-url=https://web.archive.org/web/20120225213027/http://awardsdatabase.oscars.org/ampas_awards/index.jsp|archive-date=2012-02-25|url-status=live}} Select "1974" in the "Award Year(s)" drop-down menu and press "Search".</ref><ref name="Oscars1975">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1975 |title=The 47th Academy Awards (1975) Nominees and Winners |access-date=2011-10-02 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20150402004005/http://www.oscars.org/oscars/ceremonies/1975 |archive-date=2015-04-02 }}</ref>
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[The Godfather Part II]]'' – [[Francis Ford Coppola]], producer; [[Gray Frederickson]] and [[Fred Roos]], co–producers'''
+**''[[Chinatown (1974 film)|Chinatown]]'' – [[Robert Evans]], producer
+**''[[The Conversation]]'' – [[Francis Ford Coppola]], producer; [[Fred Roos]], co-producer
+**''[[Lenny (film)|Lenny]]'' – [[Marvin Worth]], producer
+**''[[The Towering Inferno]]'' – [[Irwin Allen]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Francis Ford Coppola]] – ''[[The Godfather Part II]]'''''
+**[[Roman Polanski]] – ''[[Chinatown (1974 film)|Chinatown]]''
+**[[François Truffaut]] – ''[[Day for Night]]''
+**[[Bob Fosse]] – ''[[Lenny (film)|Lenny]]''
+**[[John Cassavetes]] – ''[[A Woman Under the Influence]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Art Carney]] – ''[[Harry and Tonto]]'' as Harry Coombes'''
+**[[Albert Finney]] – ''[[Murder on the Orient Express (1974 film)|Murder on the Orient Express]]'' as [[Hercule Poirot]]
+**[[Dustin Hoffman]] – ''[[Lenny (film)|Lenny]]'' as [[Lenny Bruce]]
+**[[Jack Nicholson]] – ''[[Chinatown (1974 film)|Chinatown]]'' as J.J. "Jake" Gittes
+**[[Al Pacino]] – ''[[The Godfather Part II]]'' as [[Michael Corleone]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Ellen Burstyn]] – ''[[Alice Doesn't Live Here Anymore]]'' as [[Alice Hyatt]]'''
+**[[Diahann Carroll]] – ''[[Claudine (film)|Claudine]]'' as Claudine Price
+**[[Faye Dunaway]] – ''[[Chinatown (1974 film)|Chinatown]]'' as Evelyn Cross Mulwray
+**[[Valerie Perrine]] – ''[[Lenny (film)|Lenny]]'' as [[Honey Bruce]]
+**[[Gena Rowlands]] – ''[[A Woman Under the Influence]]'' as Mabel Longhetti
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Robert De Niro]] – ''[[The Godfather Part II]]'' as [[Vito Corleone]]'''
+**[[Fred Astaire]] – ''[[The Towering Inferno]]'' as Harlee Claiborne
+**[[Jeff Bridges]] – ''[[Thunderbolt and Lightfoot]]'' as Lightfoot
+**[[Michael V. Gazzo]] – ''[[The Godfather Part II]]'' as [[Frank Pentangeli]]
+**[[Lee Strasberg]] – ''[[The Godfather Part II]]'' as [[Hyman Roth]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Ingrid Bergman]] – ''[[Murder on the Orient Express (1974 film)|Murder on the Orient Express]]'' as Greta Ohlsson'''
+**[[Valentina Cortese]] – ''[[Day for Night]]'' as Severine
+**[[Madeline Kahn]] – ''[[Blazing Saddles]]'' as Lili von Shtupp
+**[[Diane Ladd]] – ''[[Alice Doesn't Live Here Anymore]]'' as [[Florence Jean Castleberry|Florence "Flo" Castleberry]]
+**[[Talia Shire]] – ''[[The Godfather Part II]]'' as [[Connie Corleone]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[Chinatown (1974 film)|Chinatown]]'' – [[Robert Towne]]'''
+**''[[Alice Doesn't Live Here Anymore]]'' – [[Robert Getchell]]
+**''[[The Conversation]]'' – [[Francis Ford Coppola]]
+**''[[Day for Night]]'' – [[François Truffaut]], [[Suzanne Schiffman]] and [[Jean-Louis Richard]]
+**''[[Harry and Tonto]]'' – [[Paul Mazursky]] and [[Josh Greenfeld]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Adapted from Other Material)]]}}
+*'''''[[The Godfather Part II]]'' – [[Francis Ford Coppola]] and [[Mario Puzo]] based on the novel ''[[The Godfather (novel)|The Godfather]]'' by Mario Puzo'''
+**''[[The Apprenticeship of Duddy Kravitz (film)|The Apprenticeship of Duddy Kravitz]]'' – [[Mordecai Richler]] and [[Lionel Chetwynd]] based on [[The Apprenticeship of Duddy Kravitz (novel)|the novel]] by Mordecai Richler
+**''[[Lenny (film)|Lenny]]'' – [[Julian Barry]] based on his play
+**''[[Murder on the Orient Express (1974 film)|Murder on the Orient Express]]'' – [[Paul Dehn]] based on [[Murder on the Orient Express|the novel]] by [[Agatha Christie]]
+**''[[Young Frankenstein]]'' – [[Gene Wilder]] and [[Mel Brooks]] based on [[Mary Shelley]]'s [[Frankenstein]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[Amarcord]]'' – [[Italy]]'''
+** ''[[Cats' Play]]'' – [[Hungary]]
+** ''[[The Deluge (film)|The Deluge]]'' – [[Poland]]
+** ''[[Lacombe, Lucien]]'' – [[France]]
+** ''[[The Truce (1974 film)|The Truce]]'' – [[Argentina]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Hearts and Minds (film)|Hearts and Minds]]'' – [[Peter Davis (director)|Peter Davis]] and [[Bert Schneider]]'''
+**''[[The 81st Blow]]'' – Jacques Ehrlich, David Bergman and [[Haim Gouri]]
+**''[[Antonia: A Portrait of the Woman]]'' – [[Judy Collins]] and [[Jill Godmilow]]
+**''[[The Challenge... A Tribute to Modern Art]]'' – [[Herbert Kline]]
+**''[[The Wild and the Brave]]'' – Natalie R. Jones and Eugene S. Jones
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Don't (1974 film)|Don't]]'' – [[Robin Lehman]]'''
+**''[[City Out of Wilderness]]'' – [[Francis Thompson (film director)|Francis Thompson]]
+**''[[Exploratorium (film)|Exploratorium]]'' – Jon Boorstin
+**''[[John Muir's High Sierra]]'' – [[Dewitt Jones]] and Lesley Foster
+**''[[Naked Yoga (film)|Naked Yoga]]'' – [[Ron Kass|Ronald S. Kass]] and Mervyn Lloyd
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+*'''''[[One-Eyed Men Are Kings]]'' – [[Paul Claudon]] and [[Edmond Séchan]]'''
+**''Climb '' – [[Dewitt Jones]]
+**''The Concert'' – [[Julian Chagrin]] and Claude Chagrin
+**''Planet Ocean'' – George V. Casey
+**''The Violin'' – Andrew Welsh and George Pastic
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[Closed Mondays]]'' – [[Will Vinton]] and [[Bob Gardiner (animator)|Bob Gardiner]]'''
+**''[[The Family That Dwelt Apart]]'' – Yvon Mallette and [[Robert Verrall]]
+**''[[Hunger (1973 film)|Hunger]]'' – [[Peter Foldes]] and [[René Jodoin]]
+**''Voyage to Next'' – [[John Hubley]] and [[Faith Hubley]]
+**''[[Winnie the Pooh and Tigger Too]]'' – [[Wolfgang Reitherman]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Dramatic Score)]]}}
+* '''''[[The Godfather Part II]]'' – [[Nino Rota]] and [[Carmine Coppola]]'''
+** ''[[Chinatown (1974 film)|Chinatown]]'' – [[Jerry Goldsmith]]
+** ''[[Murder on the Orient Express (1974 film)|Murder on the Orient Express]]'' – [[Richard Rodney Bennett]]
+** ''[[Shanks (film)|Shanks]]'' – [[Alex North]]
+** ''[[The Towering Inferno]]'' – [[John Williams]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring: Original Song Score and Adaptation -or- Scoring: Adaptation)]]}}
+* '''''[[The Great Gatsby (1974 film)|The Great Gatsby]]'' – Adapted by [[Nelson Riddle]]'''
+** ''[[The Little Prince (1974 film)|The Little Prince]]'' – Song Score by [[Alan Jay Lerner]] and [[Frederick Loewe]]; Adapted by [[Angela Morley]] and [[Douglas Gamley]]
+** ''[[Phantom of the Paradise]]'' – Song Score by [[Paul Williams (songwriter)|Paul Williams]]; Adapted by [[Paul Williams (songwriter)|Paul Williams]] and [[George Tipton|George Aliceson Tipton]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[We May Never Love Like This Again]]" — ''[[The Towering Inferno]]'' • Music and Lyrics by [[Al Kasha]] and [[Joel Hirschhorn]]'''
+** "Benji's Theme (I Feel Love)" — ''[[Benji (1974 film)|Benji]]'' • Music by [[Euel Box]] • Lyrics by [[Betty Box]]
+** "Blazing Saddles" — ''[[Blazing Saddles]]'' • Music by [[John Morris (composer)|John Morris]] • Lyrics by [[Mel Brooks]]
+** "Little Prince" — ''[[The Little Prince (1974 film)|The Little Prince]]'' • Music by [[Frederick Loewe]] • Lyrics by [[Alan Jay Lerner]]
+** "Wherever Love Takes Me" — ''[[Gold (1974 film)|Gold]]'' • Music by [[Elmer Bernstein]] • Lyrics by [[Don Black (lyricist)|Don Black]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound|Best Sound]]}}
+* '''''[[Earthquake (1974 film)|Earthquake]]'' – [[Ronald Pierce (sound engineer)|Ronald Pierce]] and [[Melvin Metcalfe Sr.]]'''
+** ''[[Chinatown (1974 film)|Chinatown]]'' – [[Charles Grenzbach|Bud Grenzbach]] and [[Larry Jost]]
+** ''[[The Conversation]]'' – [[Walter Murch]] and [[Art Rochester|Arthur Rochester]]
+** ''[[The Towering Inferno]]'' – [[Theodore Soderberg (1923–2012)|Theodore Soderberg]] and [[Herman Lewis]]
+** ''[[Young Frankenstein]]'' – [[Richard Portman]] and [[Gene Cantamessa]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*''' ''[[The Godfather Part II]]'' – Art Direction: [[Dean Tavoularis]] and [[Angelo P. Graham]]; Set Decoration: [[George R. Nelson]]'''
+**''[[Chinatown (1974 film)|Chinatown]]'' – Art Direction: [[Richard Sylbert]] and [[W. Stewart Campbell]]; Set Decoration: [[Ruby R. Levitt]]
+**''[[Earthquake (1974 film)|Earthquake]]'' – Art Direction: [[Alexander Golitzen]] and [[E. Preston Ames]]; Set Decoration: [[Frank R. McKelvy]]
+**''[[The Island at the Top of the World]]'' – Art Direction: [[Peter Ellenshaw]], [[John B. Mansbridge]], [[Walter H. Tyler]] and [[Al Roelofs]]; Set Decoration: [[Hal Gausman]]
+**''[[The Towering Inferno]]'' – Art Direction: [[William J. Creber]] and [[Ward Preston]]; Set Decoration: [[Raphaël Bretton]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*''' ''[[The Towering Inferno]]'' – [[Joseph Biroc]] and [[Fred J. Koenekamp]]'''
+**''[[Chinatown (1974 film)|Chinatown]]'' – [[John A. Alonzo]]
+**''[[Earthquake (1974 film)|Earthquake]]'' – [[Philip H. Lathrop]]
+**''[[Lenny (film)|Lenny]]'' – [[Bruce Surtees]]
+**''[[Murder on the Orient Express (1974 film)|Murder on the Orient Express]]'' – [[Geoffrey Unsworth]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+* ''' ''[[The Great Gatsby (1974 film)|The Great Gatsby]]'' – [[Theoni V. Aldredge]]'''
+** ''[[Chinatown (1974 film)|Chinatown]]'' – [[Anthea Sylbert]]
+** ''[[Daisy Miller (film)|Daisy Miller]]'' – [[John Furniss (costume designer)|John Furniss]]
+** ''[[The Godfather Part II]]'' – [[Theadora Van Runkle]]
+** ''[[Murder on the Orient Express (1974 film)|Murder on the Orient Express]]'' – [[Tony Walton]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Towering Inferno]]'' – [[Harold F. Kress]] and [[Carl Kress (film editor)|Carl Kress]]'''
+** ''[[Blazing Saddles]]'' – [[John C. Howard]] and [[Danford B. Greene|Danford Greene]]
+** ''[[Chinatown (1974 film)|Chinatown]]'' – [[Sam O'Steen]]
+** ''[[Earthquake (1974 film)|Earthquake]]'' – [[Dorothy Spencer]]
+** ''[[The Longest Yard (1974 film)|The Longest Yard]]'' – [[Michael Luciano]]
+|}
+
+===Special Achievement Award (Visual Effects)===
+* ''[[Earthquake (1974 film)|Earthquake]]'' — [[Frank Brendel]], [[Glen Robinson (visual effects)|Glen Robinson]] and [[Albert Whitlock]].
+
+===Honorary Award===
+* To [[Howard Hawks]] - a master American filmmaker whose creative efforts hold a distinguished place in world cinema.
+* To [[Jean Renoir]] - a genius who, with grace, responsibility and enviable devotion through silent film, sound film, feature, documentary and television, has won the world's admiration.
+
+===Jean Hersholt Humanitarian Award===
+* [[Arthur B. Krim]]
+
+===Multiple nominations and awards===
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="2" style="text-align:center" |11
+| ''[[Chinatown (1974 film)|Chinatown]]''
+|-
+| ''[[The Godfather Part II]]''
+|-
+| rowspan="1" style="text-align:center" |8
+| ''[[The Towering Inferno]]''
+|-
+| rowspan="2" style="text-align:center" |6
+|''[[Lenny (film)|Lenny]]''
+|-
+| ''[[Murder on the Orient Express (1974 film)|Murder on the Orient Express]]''
+|-
+| rowspan="1" style="text-align:center" |4 
+|''[[Earthquake (1974 film)|Earthquake]]''{{efn|name=Earthquake|Not counting the non-competitive Special Achievement Award for ''Earthquake''.}}
+|-
+| rowspan="4" style="text-align:center" | 3 
+|''[[Alice Doesn't Live Here Anymore]]''
+|-
+| ''[[Blazing Saddles]]''
+|-
+| ''[[The Conversation]]''
+|-
+| ''[[Day for Night]]''
+|-
+| rowspan="5" style="text-align:center" |2 
+| ''[[The Great Gatsby (1974 film)|The Great Gatsby]]''
+|-
+| ''[[Harry and Tonto]]''
+|-
+| ''[[The Little Prince (1974 film)|The Little Prince]]''
+|-
+| ''[[A Woman Under the Influence]]''
+|-
+| ''[[Young Frankenstein]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards{{efn|name=Earthquake}}
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 6
+| ''[[The Godfather Part II]]''
+|-
+| rowspan=1, style="text-align:center" | 3
+| ''[[The Towering Inferno]]''
+|-
+| rowspan=1, style="text-align:center" | 2
+| ''[[The Great Gatsby (1974 film)|The Great Gatsby]]''
+|-
+|}
+
+{{col-float-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers:
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name !! Role
+|-
+| {{sortname|Hank|Simms|nolink=0}} || Announcer for the 47th Academy Awards
+|-
+| {{sortname|Walter|Mirisch}} (AMPAS President) || Giver of opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Ryan|O'Neal}}<br />[[Tatum O'Neal]] || Explainers of the voting rules to the public and presenters of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Francis Ford|Coppola}} || Recipient of the award for Best Supporting Actor on behalf of [[Robert De Niro]]
+|-
+| {{sortname|Roddy|McDowall}}<br />[[Brenda Vaccaro]] || Presenters of the Short Films Awards
+|-
+| {{sortname|Lauren|Hutton}}<br />[[Danny Thomas]] || Presenters of the Documentary Awards
+|-
+| {{sortname|Ingrid|Bergman}} || Presenter of the Honorary Award to [[Jean Renoir]]
+|-
+| {{sortname|Bob|Hope}} || Presenter of the Special Achievement Award to Frank Brendel, [[Glen Robinson (visual effects)|Glen Robinson]] and [[Albert Whitlock]] for their work in ''[[Earthquake (1974 film)|Earthquake]]''
+|-
+| {{sortname|Gene|Kelly}} || Presenter of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Joseph|Bottoms}}<br />[[Deborah Raffin]] || Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|John|Wayne}} || Presenter of the Honorary Award to [[Howard Hawks]]
+|-
+| {{sortname|Diahann|Carroll}}<br />[[Johnny Green]] || Presenters of the Music Awards
+|-
+| {{sortname|Lauren|Bacall}} || Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Peter|Falk}}<br />[[Katharine Ross]] || Presenters of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Susan|Blakely}}<br />[[O. J. Simpson]] || Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Jon|Voight}}<br />[[Raquel Welch]] || Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Macdonald|Carey}}<br />[[Jennifer O'Neill]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Susan|George|Susan George (actress)}}<br />[[Jack Valenti]] || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Frank|Sinatra}} || Presenter of the Jean Hersholt Humanitarian Award to Arthur J. Krim
+|-
+| {{sortname|Goldie|Hawn}}<br />[[Robert Wise]] || Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|James|Michener}} || Presenter of the awards for [[Academy Award for Best Adapted Screenplay|Best Screenplay Adapted from Other Material]] and [[Academy Award for Best Original Screenplay|Best Original Screenplay]]
+|-
+| {{sortname|Glenda|Jackson}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Jack|Lemmon}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Warren|Beatty}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name !! Role !! Performed
+|-
+| {{sortname|Johnny|Green}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Frankie|Laine}} || Performer || "Blazing Saddles" from ''[[Blazing Saddles]]''
+|-
+| {{sortname|Jack|Jones|Jack Jones (singer)}} || Performer || “Little Prince” from ''[[The Little Prince (1974 film)|The Little Prince]]''
+|-
+| {{sortname|Aretha|Franklin}} || Performer || "Wherever Love Takes Me" from ''[[Gold (1974 film)|Gold]]''
+|-
+| Frankie Laine<br />Jack Jones<br />Aretha Franklin || Performers || "[[We May Never Love Like This Again]]" from ''[[The Towering Inferno]]'' and "Benji's Theme (I Feel Love)" from ''[[Benji (1974 film)|Benji]]''
+|-
+| {{sortname|Frank|Sinatra}}<br />[[Shirley MacLaine]]<br />[[Sammy Davis Jr.]]<br />[[Bob Hope]]<br />Academy Awards Orchestra || Performers || "[[That's Entertainment! (song)|That's Entertainment!]]"
+|}
+
+==See also==
+* [[32nd Golden Globe Awards]]
+* [[1974 in film]]
+* [[17th Grammy Awards]]
+* [[26th Primetime Emmy Awards]]
+* [[27th Primetime Emmy Awards]]
+* [[28th British Academy Film Awards]]
+* [[29th Tony Awards]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 47}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1974 film awards]]
+[[Category:1975 in Los Angeles]]
+[[Category:1975 in American cinema]]
+[[Category:April 1975 in the United States]]
+[[Category:1974 awards in the United States|Academy]]
+[[Category:Television shows directed by Marty Pasetta]]

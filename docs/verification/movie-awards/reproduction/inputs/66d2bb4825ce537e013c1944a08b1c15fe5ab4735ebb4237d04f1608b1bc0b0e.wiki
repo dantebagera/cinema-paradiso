@@ -1,0 +1,499 @@
+{{Short description|American film award since 2007}}
+{{Infobox award
+| name = [[Golden Globe Award|Golden Globe]] for Best Animated Feature Film
+| awarded_for = Best Animated Motion Picture
+| presenter = [[Dick Clark Productions]]
+| year = ''[[Cars (film)|Cars]]'' ([[64th Golden Globe Awards|2006]])
+| location = [[United States]]
+| holder = ''[[KPop Demon Hunters]]'' ([[83rd Golden Globes|2025]])
+| website = {{url|goldenglobes.com}}
+}}
+
+[[File:Golden_Globe.jpg | thumb | right | alt=Golden Globe Award  | Golden Globe Award ]]
+The '''Golden Globe Award for Best Animated Feature Film''' is a [[Golden Globe Awards|Golden Globe Award]] category that was awarded for the first time at the [[64th Golden Globe Awards]] in 2007.<ref>{{cite news
+ |url          = http://www.animationmagazine.net/article.php?article_id=4980
+ |first        = Ryan
+ |last         = Ball
+ |title        = Golden Globes in Toon for '07
+ |publisher    = Animation Magazine
+ |date         = 2006-01-30
+ |access-date  = 2006-06-13
+ |archive-date = 2014-12-16
+ |archive-url  = https://web.archive.org/web/20141216164922/http://www.animationmagazine.net/events/golden-globes-in-toon-for-07/
+ |url-status   = live
+}}</ref> It was the first time that the Golden Globe Awards had created a separate category for [[Animation|animated films]] since its establishment. The nominations are announced in January and an awards ceremony is held later in the month. Initially, only three films were nominated for best animated film, in contrast to five nominations for the majority of other awards. The [[Pixar]] film ''[[Cars (film)|Cars]]'' was the first recipient of the award.<ref>{{Cite web |url=https://www.hollywoodreporter.com/news/cars-lapped-competition-2006-won-a-golden-globe-1167895 |title='Cars' Lapped the Competition in 2006 and won a Golden Globe - The Hollywood Reporter |access-date=2019-10-26 |archive-date=2020-10-21 |archive-url=https://web.archive.org/web/20201021112718/https://www.hollywoodreporter.com/news/cars-lapped-competition-2006-won-a-golden-globe-1167895 |url-status=live }}</ref>
+
+==Eligibility==
+English-language films may be nominated in only one feature category. Therefore, films nominated in this category are ineligible to be nominated for [[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]], [[Golden Globe Award for Best Motion Picture – Drama|Best Motion Picture – Drama]] if their principal dialogue is in English. However, films nominated for [[Golden Globe Award for Best Foreign Language Film|Best Foreign Language Film]] are eligible for Best Animated Feature; the only Golden Globe film awards for which they are ineligible are the aforementioned two Best Motion Picture awards.<ref>{{cite web|url=http://www.goldenglobes.org/rules-70/FF-Rules-70th.pdf |title=70th Golden Globe Awards Consideration: Best Foreign Language Film – Submission |publisher=Hollywood Foreign Press Association |access-date=February 12, 2013 |quote=Films that qualify for the best foreign language film award also qualify for Golden Globe awards in all other categories except best motion picture drama and best motion picture musical or comedy which are for English-language films exclusively. |url-status=dead |archive-url=https://web.archive.org/web/20130117002144/http://www.goldenglobes.org/rules-70/FF-Rules-70th.pdf |archive-date=January 17, 2013 }}</ref> This has led to much confusion leading many to believe animated films are snubbed in the Best Motion Picture categories, specifically [[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]] where animated films have won and/or were nominated before,<ref>{{Cite web |url=https://ew.com/article/2012/02/22/oscars-1992-beauty-and-the-beast/ |title=Oscars 1992: How 'Beauty and the Beast' changed animation{{!}}EW.com |access-date=2019-10-26 |archive-date=2024-12-30 |archive-url=https://web.archive.org/web/20241230005138/https://ew.com/article/2012/02/22/oscars-1992-beauty-and-the-beast/ |url-status=live }}</ref> but in reality (since 2006) they simply are not eligible to be nominated; until 2023 prior of the now-defunct [[Hollywood Foreign Press Association]], the rule is amended by [[Dick Clark Productions]] following controversies of splitting votes and snub between the main categories, which animated films are still allowed to be eligible in Comedy or Drama as well as Animated at the same time in similar vein to [[Golden Globe Award for Best Foreign Language Film]] and recently-established [[Golden Globe Award for Cinematic and Box Office Achievement|Cinematic and Box Office Achievement]].<ref name="HFPA rules">{{cite web |author=Hollywood Foreign Press Association |title=Golden Globe Award Consideration: Best Foreign Language Film Submission |url=http://cdn.goldenglobes.org/resources/FF-rules_69.pdf |url-status=dead |archive-url=https://web.archive.org/web/20111021164208/http://cdn.goldenglobes.org/resources/FF-rules_69.pdf |archive-date=October 21, 2011 |access-date=February 29, 2012}}</ref>
+
+On November 17, 2009, the Hollywood Foreign Press Association announced that at the 67th Annual Golden Globe Awards, there will be five nominees for Best Animated Feature Film, as its members voted to amend its rules: eligible films must be feature-length (70 minutes or longer) with no more than 25% live action. If fewer than eight animated films qualify, the award will not be given, in which case the films would be eligible for Best Picture. If fewer than twelve animated films qualify, the category will be limited to three nominations per year.
+
+==Winners and nominees==
+=== 2000s ===
+{| class="wikitable sortable"
+|-
+! Year
+! Film
+! Nominee(s)
+! Studio(s)
+|-
+! rowspan="3" style="text-align:center;" | [[64th Golden Globe Awards|2006]]
+| style="background:#B0C4DE;" | '''''[[Cars (film)|Cars]]'''''
+| style="background:#B0C4DE;" | '''[[John Lasseter]]'''
+| style="background:#B0C4DE;" | '''[[Walt Disney Pictures]], [[Pixar|Pixar Animation Studios]]'''
+|-
+|''[[Happy Feet]]''
+| [[George Miller (filmmaker)|George Miller]]
+| [[Village Roadshow Pictures]], [[Animal Logic]], [[Kennedy Miller Mitchell|Kennedy Miller Productions]], [[Warner Animation Group]]
+|-
+|''[[Monster House (film)|Monster House]]''
+| [[Gil Kenan]]
+| [[ImageMovers]], [[Amblin Entertainment]], [[Relativity Media]]
+|-
+! rowspan="3" style="text-align:center;" | [[65th Golden Globe Awards|2007]]
+| style="background:#B0C4DE;" | '''''[[Ratatouille (film)|Ratatouille]]'''''
+| style="background:#B0C4DE;" | '''[[Brad Bird]]'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Pixar Animation Studios'''
+|-
+|''[[Bee Movie]]''
+| [[Simon J. Smith]] and [[Steve Hickner]]
+| [[DreamWorks Animation]]
+|-
+|''[[The Simpsons Movie]]''
+| [[David Silverman (animator)|David Silverman]]
+| [[20th Century Fox Animation]], [[Gracie Films]]
+|-
+! rowspan="3" style="text-align:center;" | [[66th Golden Globe Awards|2008]]
+| style="background:#B0C4DE;" | '''''[[WALL-E]]'''''
+| style="background:#B0C4DE;" | '''[[Andrew Stanton]]'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Pixar Animation Studios'''
+|-
+|''[[Bolt (2008 film)|Bolt]]''
+| [[Chris Williams (director)|Chris Williams]] and [[Byron Howard]]
+| Walt Disney Pictures, [[Walt Disney Animation Studios]]
+|-
+|''[[Kung Fu Panda (film)|Kung Fu Panda]]''
+| [[Mark Osborne (filmmaker)|Mark Osborne]] and [[John Stevenson (director)|John Stevenson]]
+| DreamWorks Animation
+|-
+! rowspan="5" style="text-align:center;" | [[67th Golden Globe Awards|2009]]
+| style="background:#B0C4DE;" | '''''[[Up (2009 film)|Up]]'''''
+| style="background:#B0C4DE;" | '''[[Pete Docter]]'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Pixar Animation Studios'''
+|-
+|''[[Cloudy with a Chance of Meatballs (film)|Cloudy with a Chance of Meatballs]]''
+| [[Phil Lord and Christopher Miller]]
+| [[Sony Pictures Animation]]
+|-
+ |''[[Coraline (film)|Coraline]]''
+| [[Henry Selick]]
+| [[Laika (company)|Laika]], Pandemonium, [[Focus Features]]
+|-
+|''[[Fantastic Mr. Fox (film)|Fantastic Mr. Fox]]''
+| [[Wes Anderson]]
+| 20th Century Fox Animation, American Empirical Pictures, [[Regency Enterprises]], Indian Paintbrush
+|-
+|''[[The Princess and the Frog]]''
+| [[Ron Clements]] and [[John Musker]]
+| Walt Disney Pictures, Walt Disney Animation Studios
+|}
+
+=== 2010s ===
+{| class="wikitable sortable"
+|-
+! Year
+! Film
+! Nominee(s)
+! Studio(s)
+|-
+! rowspan="5" style="text-align:center;" | [[68th Golden Globe Awards|2010]]
+| style="background:#B0C4DE;" | '''''[[Toy Story 3]]'''''
+| style="background:#B0C4DE;" | '''[[Lee Unkrich]]'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Pixar Animation Studios'''
+|-
+|''[[Despicable Me (film)|Despicable Me]]''
+| [[Pierre Coffin]] and [[Chris Renaud (animator)|Chris Renaud]]
+| [[Illumination Entertainment]]
+|-
+|''[[How to Train Your Dragon (2010 film)|How to Train Your Dragon]]''
+| [[Chris Sanders (director)|Chris Sanders]] and [[Dean DeBlois]]
+| DreamWorks Animation
+|-
+|''[[The Illusionist (2010 film)|The Illusionist]]''
+| [[Sylvain Chomet]]
+| [[Pathé]], [[Django Films]]
+|-
+|''[[Tangled]]''
+| [[Nathan Greno]] and Byron Howard
+| Walt Disney Pictures, Walt Disney Animation Studios
+|-
+! rowspan="5" style="text-align:center;" | [[69th Golden Globe Awards|2011]]
+| style="background:#B0C4DE;" | '''''[[The Adventures of Tintin (film)|The Adventures of Tintin]]'''''
+| style="background:#B0C4DE;" | '''[[Steven Spielberg]]'''
+| style="background:#B0C4DE;" | '''[[Nickelodeon Movies]], Amblin Entertainment, [[WingNut Films]], [[The Kennedy/Marshall Company]], [[Weta Digital]], Hemisphere Media'''
+|-
+|''[[Arthur Christmas]]''
+| [[Sarah Smith (director)|Sarah Smith]]
+| [[Aardman Animations]], Sony Pictures Animation
+|-
+|''[[Cars 2]]''
+| John Lasseter
+| Walt Disney Pictures, Pixar Animation Studios
+|-
+|''[[Puss in Boots (2011 film)|Puss in Boots]]''
+| [[Chris Miller (animator)|Chris Miller]]
+| DreamWorks Animation
+|-
+|''[[Rango (2011 film)|Rango]]''
+| [[Gore Verbinski]]
+| Nickelodeon Movies, [[GK Films]], [[Industrial Light & Magic]]
+|-
+! rowspan="5" style="text-align:center;" | [[70th Golden Globe Awards|2012]]
+| style="background:#B0C4DE;" | '''''[[Brave (2012 film)|Brave]]'''''
+| style="background:#B0C4DE;" | '''[[Mark Andrews (filmmaker)|Mark Andrews]] and [[Brenda Chapman]]'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Pixar Animation Studios'''
+|-
+|''[[Frankenweenie (2012 film)|Frankenweenie]]''
+| [[Tim Burton]]
+| Walt Disney Pictures, [[Tim Burton Productions]]
+|-
+|''[[Hotel Transylvania (film)|Hotel Transylvania]]''
+| [[Genndy Tartakovsky]]
+| Sony Pictures Animation
+|-
+|''[[Rise of the Guardians]]''
+| [[Peter Ramsey]]
+| DreamWorks Animation
+|-
+| ''[[Wreck-It Ralph]]''
+| [[Rich Moore]]
+| Walt Disney Pictures, Walt Disney Animation Studios
+|-
+! rowspan="3" style="text-align:center;" | [[71st Golden Globe Awards|2013]]
+| style="background:#B0C4DE;" | '''''[[Frozen (2013 film)|Frozen]]'''''
+| style="background:#B0C4DE;" | '''[[Chris Buck]] and [[Jennifer Lee (filmmaker)|Jennifer Lee]]'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Walt Disney Animation Studios'''
+|-
+| ''[[The Croods]]''
+| [[Kirk DeMicco]] and Chris Sanders
+| DreamWorks Animation
+|-
+|''[[Despicable Me 2]]''
+| Pierre Coffin and Chris Renaud
+| Illumination Entertainment
+|-
+! rowspan="5" style="text-align:center;" | [[72nd Golden Globe Awards|2014]]
+| style="background:#B0C4DE;" | '''''[[How to Train Your Dragon 2]]'''''
+| style="background:#B0C4DE;" | '''Dean DeBlois'''
+| style="background:#B0C4DE;" | '''DreamWorks Animation'''
+|-
+| ''[[Big Hero 6 (film)|Big Hero 6]]''
+| [[Don Hall (filmmaker)|Don Hall]] and Chris Williams
+| Walt Disney Pictures, Walt Disney Animation Studios
+|-
+| ''[[The Book of Life (2014 film)|The Book of Life]]''
+| [[Jorge Gutierrez (animator)|Jorge Gutierrez]]
+| [[Reel FX Creative Studios]], 20th Century Fox Animation
+|-
+| ''[[The Boxtrolls]]''
+| [[Graham Annable]] and [[Anthony Stacchi]]
+| Laika, Focus Features
+|-
+| ''[[The Lego Movie]]''
+| [[Phil Lord and Christopher Miller]]
+| Village Roadshow Pictures, [[The Lego Group|Lego System A/S]], [[Vertigo Entertainment]], [[Dan Lin|Lin Pictures]], Animal Logic, [[Warner Bros. Animation|Warner Animation Group]]
+|-
+! rowspan="5" style="text-align:center;" | [[73rd Golden Globe Awards|2015]]
+| style="background:#B0C4DE;" | '''''[[Inside Out]]'''''
+| style="background:#B0C4DE;" | '''Pete Docter'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Pixar Animation Studios'''
+|-
+| ''[[Anomalisa]]''
+| [[Charlie Kaufman]] and [[Duke Johnson (director)|Duke Johnson]]
+| [[Starburns Industries]], Snoot Films, [[Paramount Animation]]
+|-
+| ''[[The Good Dinosaur]]''
+| [[Peter Sohn]]
+| Walt Disney Pictures, Pixar Animation Studios
+|-
+| ''[[The Peanuts Movie]]''
+| [[Steve Martino]]
+| [[Blue Sky Studios]], 20th Century Fox Animation, Peanuts Worldwide, [[Paul Feig|Feigco Entertainment]]
+|-
+| ''[[Shaun the Sheep Movie]]''
+| [[Richard Starzak]] and [[Mark Burton (writer)|Mark Burton]]
+| Aardman Animations
+|-
+! rowspan="5" style="text-align:center;" | [[74th Golden Globe Awards|2016]]
+| style="background:#B0C4DE;" | '''''[[Zootopia]]'''''
+| style="background:#B0C4DE;" | '''Byron Howard and Rich Moore'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Walt Disney Animation Studios'''
+|-
+| ''[[Kubo and the Two Strings]]''
+| [[Travis Knight (animator)|Travis Knight]]
+| Laika, Focus Features
+|-
+| ''[[Moana (2016 film)|Moana]]''
+| Ron Clements and John Musker
+| Walt Disney Pictures, Walt Disney Animation Studios
+|-
+| ''[[My Life as a Courgette|My Life as a Zucchini]]''
+| [[Claude Barras]]
+| Rhône-Alpes Studios
+|-
+| ''[[Sing (2016 American film)|Sing]]''
+| [[Garth Jennings]]
+| Illumination Entertainment
+|-
+! rowspan="5" style="text-align:center;" | [[75th Golden Globe Awards|2017]]
+| style="background:#B0C4DE;" | '''''[[Coco (2017 film)|Coco]]'''''
+| style="background:#B0C4DE;" | '''Lee Unkrich'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Pixar Animation Studios'''
+|-
+| ''[[The Boss Baby]]''
+| [[Tom McGrath (animator)|Tom McGrath]]
+| DreamWorks Animation
+|-
+| ''[[The Breadwinner (2017 film)|The Breadwinner]]''
+| [[Nora Twomey]]
+| [[Cartoon Saloon]], [[Telefilm Canada]], [[Irish Film Board]], [[Melusine Productions]], [[Angelina Jolie|Jolie Pas]], [[Guru Studio]], Aircraft Pictures
+|-
+| ''[[Ferdinand (film)|Ferdinand]]''
+| [[Carlos Saldanha]]
+| Blue Sky Studios, 20th Century Fox Animation, [[Davis Entertainment]]
+|-
+| ''[[Loving Vincent]]''
+| [[Dorota Kobiela]] and [[Hugh Welchman]]
+| [[BreakThru Films|BreakThru Productions]], Trademark Films
+|-
+! rowspan="5" style="text-align:center;" | [[76th Golden Globe Awards|2018]]
+| style="background:#B0C4DE;" | '''''[[Spider-Man: Into the Spider-Verse]]'''''
+| style="background:#B0C4DE;" | '''[[Bob Persichetti]], [[Peter Ramsey]] and [[Rodney Rothman]]'''
+| style="background:#B0C4DE;" | '''[[Columbia Pictures]], [[Marvel Entertainment]], Sony Pictures Animation'''
+|-
+|''[[Incredibles 2]]''
+| Brad Bird
+| Walt Disney Pictures, Pixar Animation Studios
+|-
+|''[[Isle of Dogs (film)|Isle of Dogs]]''
+| Wes Anderson
+| [[Babelsberg Studio|Studio Babelsberg]], Indian Paintbrush, American Empirical Pictures
+|-
+|''[[Mirai (2018 film)|Mirai]]''
+| [[Mamoru Hosoda]]
+| [[Studio Chizu]]
+|-
+|''[[Ralph Breaks the Internet]]''
+| Rich Moore and [[Phil Johnston (filmmaker)|Phil Johnston]]
+| Walt Disney Pictures, Walt Disney Animation Studios
+|-
+! rowspan="5" style="text-align:center;" | [[77th Golden Globe Awards|2019]]
+| style="background:#B0C4DE;" | '''''[[Missing Link (2019 film)|Missing Link]]'''''
+| style="background:#B0C4DE;" | '''[[Chris Butler (filmmaker)|Chris Butler]]'''
+| style="background:#B0C4DE;" | '''[[Annapurna Pictures]], Laika'''
+|-
+|''[[Frozen 2]]''
+| Chris Buck and Jennifer Lee
+| Walt Disney Pictures, Walt Disney Animation Studios
+|-
+|''[[How to Train Your Dragon: The Hidden World]]''
+| Dean DeBlois
+| DreamWorks Animation
+|-
+|''[[The Lion King (2019 film)|The Lion King]]''
+| [[Jon Favreau]]
+| Walt Disney Pictures, Fairview Entertainment
+|-
+|''[[Toy Story 4]]''
+| [[Josh Cooley]]
+| Walt Disney Pictures, Pixar Animation Studios
+|}
+
+=== 2020s ===
+{| class="wikitable sortable"
+|-
+! Year
+! Film
+! Nominee(s)
+! Studio(s)
+|-
+! rowspan="5" style="text-align:center;" | [[78th Golden Globe Awards|2020]]
+| style="background:#B0C4DE;" | '''''[[Soul (2020 film)|Soul]]'''''
+| style="background:#B0C4DE;" | '''Pete Docter'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Pixar Animation Studios'''
+|-
+|''[[The Croods: A New Age]]''
+| [[Joel Crawford (director)|Joel Crawford]]
+| DreamWorks Animation
+|-
+|''[[Onward (film)|Onward]]''
+| [[Dan Scanlon]]
+| Walt Disney Pictures, Pixar Animation Studios
+|-
+|''[[Over the Moon (2020 film)|Over the Moon]]''
+| [[Glen Keane]]
+|[[Netflix]] ([[Netflix Animation]]), [[Pearl Studio]], [[Sony Pictures Imageworks]], Glen Keane Productions
+|-
+|''[[Wolfwalkers]]''
+| [[Tomm Moore]] and Ross Stewart
+|Cartoon Saloon, Melusine Productions
+|-
+! rowspan="5" style="text-align:center;" | [[79th Golden Globe Awards|2021]]
+| style="background:#B0C4DE;" | '''''[[Encanto]]'''''
+| style="background:#B0C4DE;" | '''[[Jared Bush]] and Byron Howard'''
+| style="background:#B0C4DE;" | '''Walt Disney Pictures, Walt Disney Animation Studios'''
+|-
+|''[[Flee (film)|Flee]]''
+| [[Jonas Poher Rasmussen]]
+| [[Vice Media|Vice Studios]], [[Neon (company)|NEON]]
+|-
+|''[[Luca (2021 film)|Luca]]''
+| [[Enrico Casarosa]]
+| Walt Disney Pictures, Pixar Animation Studios
+|-
+|''[[My Sunny Maad]]''
+| [[Michaela Pavlátová]]
+| Negativ Film, Sacrebleu Productions
+|-
+|''[[Raya and the Last Dragon]]''
+|  Don Hall and [[Carlos López Estrada]]
+| Walt Disney Pictures, Walt Disney Animation Studios
+|-
+! rowspan="5" | {{center|[[80th Golden Globe Awards|2022]]}}
+| style="background:#B0C4DE;" | '''''[[Guillermo del Toro's Pinocchio]]'''''
+| style="background:#B0C4DE;" | '''[[Guillermo del Toro]] and [[Mark Gustafson]]'''
+| style="background:#B0C4DE;" | '''Netflix (Netflix Animation), Double Dare You!, [[ShadowMachine]], [[The Jim Henson Company]], Taller del Chucho'''
+|-
+|''[[Inu-Oh]]''
+| [[Masaaki Yuasa]]
+| [[Science Saru]]
+|-
+|''[[Marcel the Shell with Shoes On (2021 film)|Marcel the Shell with Shoes On]]''
+| [[Dean Fleischer Camp]]
+| [[Cinereach]], You Want I Should LLC., Human Woman Inc., Sunbeam TV & Films, Chiodo Bros. Productions, [[A24]]
+|-
+|''[[Puss in Boots: The Last Wish]]''
+| Joel Crawford
+| DreamWorks Animation
+|-
+|''[[Turning Red]]''
+| [[Domee Shi]]
+| Walt Disney Pictures, Pixar Animation Studios  
+|-
+! rowspan="6" style="text-align:center;" | [[81st Golden Globe Awards|2023]]<ref>{{Cite web |url=https://www.hollywoodreporter.com/movies/movie-news/golden-globes-nominations-2024-nominees-list-1235732736/ |title=Golden Globes: ‘Barbie’ and ‘Succession’ Lead Nominations; See Full List - The Hollywood Reporter |access-date=2023-12-11 |archive-date=2023-12-11 |archive-url=https://web.archive.org/web/20231211123013/https://www.hollywoodreporter.com/movies/movie-news/golden-globes-nominations-2024-nominees-list-1235732736/ |url-status=live }}</ref>
+| style="background:#B0C4DE;" | '''''[[The Boy and the Heron]]'''''
+| style="background:#B0C4DE;" | '''[[Hayao Miyazaki]]'''
+| style="background:#B0C4DE;" | '''[[Studio Ghibli]]''', '''[[GKIDS]]'''
+|-
+|''[[Elemental (2023 film)|Elemental]]''
+| Peter Sohn
+| Walt Disney Pictures, Pixar Animation Studios
+|-
+|''[[Spider-Man: Across the Spider-Verse]]''
+| [[Joaquim Dos Santos]], [[Kemp Powers]] and [[Justin K. Thompson]]
+| Columbia Pictures, Marvel Entertainment, Sony Pictures Animation
+|-
+|''[[The Super Mario Bros. Movie]]''
+| [[Aaron Horvath]] and [[Michael Jelenic]]
+| Universal Pictures, Illumination, [[Nintendo]]
+|-
+|''[[Suzume]]''
+| [[Makoto Shinkai]]
+| [[CoMix Wave Films]], Studio, Inc., [[Toho]]
+|-
+|''[[Wish (film)|Wish]]''
+| Chris Buck and [[Fawn Veerasunthorn]]
+| Walt Disney Pictures, Walt Disney Animation Studios
+|-
+! rowspan="6" style="text-align:center;" | [[82nd Golden Globe Awards|2024]]<ref>{{Cite web |url=https://www.cnn.com/2025/01/05/entertainment/award-winners-list-golden-globes/index.html |title=Award winners-list: See which Golden Globes nominees won{{!}}CNN |access-date=2025-01-06 |archive-date=2025-01-06 |archive-url=https://web.archive.org/web/20250106021923/https://www.cnn.com/2025/01/05/entertainment/award-winners-list-golden-globes/index.html |url-status=live }}</ref>
+| style="background:#B0C4DE;" | '''''[[Flow (2024 film)|Flow]]'''''
+| style="background:#B0C4DE;" | '''[[Gints Zilbalodis]]'''
+| style="background:#B0C4DE;" | '''[[Janus Films]], Sacrebleu Productions'''
+|-
+|''[[Inside Out 2]]''
+| [[Kelsey Mann]]
+| Walt Disney Pictures, Pixar Animation Studios
+|-
+|''[[Memoir of a Snail]]''
+| [[Adam Elliot]]
+| [[IFC Films]], Snails Pace Films
+|-
+|''[[Moana 2]]''
+| [[David Derrick Jr.]], Jason Hand and Dana Ledoux Miller
+| Walt Disney Pictures, Walt Disney Animation Studios
+|-
+|''[[Wallace & Gromit: Vengeance Most Fowl]]''
+| [[Nick Park]] and Merlin Crossingham
+| Aardman Animations, Netflix
+|-
+|''[[The Wild Robot]]'' 
+| Chris Sanders
+| DreamWorks Animation
+|-
+! rowspan="6" style="text-align:center;" | [[83rd Golden Globe Awards|2025]]<ref name="GoldenGlobes">{{Cite news |last=Nordyke |first=Kimberly |title=Golden Globes: Winners List (Updating Live) |url=https://www.hollywoodreporter.com/lists/golden-globes-2026-winners-list/ |work=[[The Hollywood Reporter]] |date=January 11, 2026 |access-date=January 11, 2026 |archive-date=February 6, 2026 |archive-url=https://web.archive.org/web/20260206214058/https://www.hollywoodreporter.com/lists/golden-globes-2026-winners-list/ |url-status=live }}</ref>
+| style="background:#B0C4DE;" | '''''[[KPop Demon Hunters]]'''''
+| style="background:#B0C4DE;" | '''[[Maggie Kang]] and [[Chris Appelhans]]'''
+| style="background:#B0C4DE;" | '''Sony Pictures Animation, Netflix'''
+|-
+|''[[Arco (film)|Arco]]''
+| Ugo Bienvenu
+| Fit Via Vi Film Productions, NEON
+|-
+|''[[Demon Slayer: Kimetsu no Yaiba – The Movie: Infinity Castle]]''
+| [[Haruo Sotozaki]]
+|Toho, [[Crunchyroll]]
+|-
+|''[[Elio (film)|Elio]]''
+| [[Madeline Sharafian]], [[Domee Shi]], and [[Adrian Molina]]
+|Pixar Animation Studios
+|-
+|''[[Little Amélie or the Character of Rain]]''
+|Maïlys Vallade and Liane-Cho Han
+|Ikki Films
+|-
+|''[[Zootopia 2]]''
+|[[Jared Bush]] and [[Byron Howard]]
+|Walt Disney Animation Studios
+|-
+|}
+
+==Breakdown==
+*[[Pixar|Pixar Animation Studios]] - 9 wins, 19 nominations
+*[[Walt Disney Animation Studios]] - 3 wins, 15 nominations
+*[[Sony Pictures Animation]] - 2 wins, 7 nominations
+*[[DreamWorks Animation]] - 1 win, 13 nominations
+*[[Laika (company)|Laika]] - 1 win, 4 nominations
+*[[Nickelodeon Movies]] - 1 win, 2 nominations
+*[[Netflix]] - 1 win, 3 nominations
+*Sacrebleu Productions - 1 win, 2 nominations
+*[[Studio Ghibli]] - 1 win, 1 nomination
+*[[Illumination Entertainment]] - no wins, 4 nominations
+*[[Aardman Animations]] - no wins, 3 nominations
+*[[Blue Sky Studios]] - no wins, 2 nominations
+*[[Warner Bros. Pictures]] - no wins, 2 nominations
+*[[Cartoon Saloon]] - no wins, 2 nominations
+*Indian Paintbrush/American Empirical Pictures - no wins, 2 nominations
+*[[Melusine Productions]] - no wins, 2 nominations
+
+== See also ==
+* [[BAFTA Award for Best Animated Film]]
+* [[Annie Award for Best Animated Feature]]
+* [[Annie Award for Best Animated Feature — Independent]]
+* [[Academy Award for Best Animated Feature]]
+* [[Japan Media Arts Festival]]
+* [[Animation Kobe]]
+* [[Tokyo Anime Award]]
+* [[Saturn Award for Best Animated Film]]
+* [[List of submissions for the Academy Award for Best Animated Feature]]
+
+== References ==
+{{Reflist}}
+
+{{Golden Globe Awards Chron}}
+{{Golden Globe Award for Best Animated Feature Film}}
+
+[[Category:Golden Globe Awards|Animated Feature Film]]
+[[Category:Awards for best animated feature film]]
+[[Category:Awards established in 2007]]
+[[Category:2007 establishments in the United States]]
+[[Category:Best Animated Feature Film Golden Globe winners|*]]

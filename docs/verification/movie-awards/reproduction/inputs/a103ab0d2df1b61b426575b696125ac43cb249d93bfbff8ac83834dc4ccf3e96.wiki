@@ -1,0 +1,544 @@
+{{featured list}}
+{{Use mdy dates|date=February 2025}}
+{{oscars short description|films-year=1997}}
+{{Infobox film awards
+| number           = 70
+| award            = Academy Awards
+| image            = 70th Academy Awards poster.jpg
+| caption          = Official poster by [[Arnold Schwartzman]]<ref>{{cite news |last=Archerd |first=Army |title=Star style should shine at Oscars |url=https://variety.com/1998/voices/columns/star-style-should-shine-at-oscars-1117468288/ |access-date=January 19, 2026 |work=Variety |date=March 3, 1998}}</ref>
+| date             = March 23, 1998
+| site             = [[Shrine Auditorium]]<br />[[Los Angeles]], California, U.S.
+| host             = [[Billy Crystal]]
+| producer         = [[Gilbert Cates|Gil Cates]]
+| director         = [[Louis J. Horvitz]]
+| best_picture     = ''[[Titanic (1997 film)|Titanic]]''
+| most_wins        = ''Titanic'' (11)
+| most_nominations = ''Titanic'' (14)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 47 minutes<ref>{{harvnb|Osborne|2008|p=337}}</ref>
+| ratings          = 57.25 million<br />35.32% ([[Nielsen ratings]])
+| last             = 69th
+| next             = 71st
+}}
+
+The '''70th Academy Awards''' ceremony, organized by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), took place on March 23, 1998, at the [[Shrine Auditorium]] in [[Los Angeles]] beginning at 6:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 9:00&nbsp;p.m. [[Eastern Time Zone|EST]]. During the show, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories honoring [[1997 in film|films released in 1997]]. The ceremony, which was televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Gilbert Cates|Gil Cates]] and directed by Louis J. Horvitz.<ref>{{cite news|last=Snow |first=Shauna |title=Arts and entertainment reports from The Times, national and international news services and the nation's press. |url=https://articles.latimes.com/1997/dec/12/entertainment/ca-63145/2 |access-date=January 26, 2014 |work=[[Los Angeles Times]] |date=December 12, 1997 |url-status=dead |archive-url=https://web.archive.org/web/20140222171218/http://articles.latimes.com/1997/dec/12/entertainment/ca-63145/2 |archive-date=February 22, 2014}}</ref><ref>{{cite news|title=Horvitz to helm Academy broadcast |url=https://variety.com/1998/more/news/jan-8-1998-1117434573/ |access-date=November 1, 2013 |work=Variety |publisher=Penske Media Corporation |date=January 8, 1998 |url-status=dead |archive-url=https://web.archive.org/web/20131107092342/http://variety.com/1998/more/news/jan-8-1998-1117434573/ |archive-date=November 7, 2013}}</ref> Actor [[Billy Crystal]] hosted the show for the sixth time.<ref>{{cite news|title=Crystal set for sixth Oscar stint |url=https://variety.com/1997/more/news/dec-21-1997-111799971/ |access-date=January 22, 2014 |work=[[Variety (magazine)|Variety]] |publisher=[[Penske Media Corporation]] |date=December 21, 1997 |url-status=live |archive-url=https://web.archive.org/web/20140223205737/http://variety.com/1997/more/news/dec-21-1997-111799971/ |archive-date=February 23, 2014}}</ref> He had first hosted the [[62nd Academy Awards|62nd ceremony]] held in 1990, and most recently the [[69th Academy Awards|previous year's awards]].<ref>{{cite news|last=Crowe |first=Jerry |title=Arts and entertainment reports from The Times, national and international news services and the nation's press. |url=https://www.latimes.com/archives/la-xpm-1997-dec-20-ca-382-story.html |access-date=November 1, 2013 |work=Los Angeles Times |date=December 20, 1997 |url-status=live |archive-url=https://web.archive.org/web/20131106065228/http://articles.latimes.com/1997/dec/20/entertainment/ca-382 |archive-date=November 6, 2013}}</ref> Nearly a month earlier in an event held at the [[Beverly Wilshire Hotel|Regent Beverly Wilshire Hotel]] in [[Beverly Hills, California]] on February 28, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Ashley Judd]].<ref>{{cite news|title=Judd named presenter at 70th Oscars |url=https://variety.com/1998/more/news/from-feb-20-1117467952/ |access-date=January 24, 2014 |work=Variety |publisher=Penske Media Corporation |date=February 20, 1998 |url-status=live |archive-url=https://web.archive.org/web/20140226132326/http://variety.com/1998/more/news/from-feb-20-1117467952/ |archive-date=February 26, 2014}}</ref>
+
+''[[Titanic (1997 film)|Titanic]]'' won 11 awards, including [[Academy Award for Best Picture|Best Picture]], a number that is tied with ''[[Ben-Hur (1959 film)|Ben-Hur]]'' and ''[[The Lord of the Rings: The Return of the King]]''.<ref>{{cite news|last=Harden|first=Mark|title=Epic film sails away with Oscar boatload|work=[[The Denver Post]]|publisher=[[MediaNews Group]]|page=A-01|date=March 24, 1998}}</ref><ref>{{cite news|last=Weinraub |first=Bernard |title='Titanic' Ties Record With 11 Oscars, Including Best Picture |url=https://www.nytimes.com/1998/03/24/movies/titanic-ties-record-with-11-oscars-including-best-picture.html |access-date=January 25, 2014 |work=[[The New York Times]] |date=March 24, 1998 |url-status=live |archive-url=https://web.archive.org/web/20131226202302/http://www.nytimes.com/1998/03/24/movies/titanic-ties-record-with-11-oscars-including-best-picture.html |archive-date=December 26, 2013}}</ref> Other winners included ''[[As Good as It Gets]]'', ''[[Good Will Hunting]]'', and ''[[L.A. Confidential (film)|L.A. Confidential]]'' with two awards, and ''[[Character (film)|Character]]'', ''[[The Full Monty]]'', ''[[Geri's Game]]'', ''[[The Long Way Home (1997 film)|The Long Way Home]]'', ''[[Men in Black (1997 film)|Men in Black]]'', ''[[A Story of Healing]]'', and ''[[Visas and Virtue]]'' with one. The telecast garnered more than 57 million viewers in the United States, making it the most-watched Oscars broadcast in history.<ref>{{cite news|last=Scanton |first=Julian |title=Could Avatar Boost Oscar Ratings to Record Heights? |url=https://www.vanityfair.com/online/oscars/2010/01/could-avatar-boost-oscar-ratings-to-record-heights |access-date=March 12, 2014 |work=[[Vanity Fair (magazine)|Vanity Fair]] |publisher=[[Condé Nast]] |date=January 27, 2010 |url-status=dead |archive-url=https://web.archive.org/web/20140312224910/http://www.vanityfair.com/online/oscars/2010/01/could-avatar-boost-oscar-ratings-to-record-heights |archive-date=March 12, 2014}}</ref>
+
+==Winners and nominees==
+<!--Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed.-->
+
+The nominees for the 70th Academy Awards were announced on February 10, 1998, at the Samuel Goldwyn Theater in Beverly Hills, California, by [[Robert Rehme]], president of the academy, and actress [[Geena Davis]].<ref name="cnnnom">{{cite news|title='Titanic' cruises into Oscars lead |url=http://www.cnn.com/SHOWBIZ/9802/10/oscar.nominations/ |access-date=November 1, 2013 |work=[[CNN]] |publisher=[[Time Warner]] |date=February 10, 1998 |url-status=dead |archive-url=https://web.archive.org/web/20131103083024/http://www.cnn.com/SHOWBIZ/9802/10/oscar.nominations/ |archive-date=November 3, 2013}}</ref> ''[[Titanic (1997 film)|Titanic]]'' led all nominees with fourteen nominations, tying with ''[[All About Eve]]'' (1950) for the most Oscar nominations in history.{{efn|Subsequently, ''[[La La Land]]'' (2016) received 14 nominations at the [[89th Academy Awards]]. The tied record was broken by ''[[Sinners (2025 film)|Sinners]]'' (2025), which received 16 nominations at the [[98th Academy Awards]].<ref>{{cite magazine |url=https://www.hollywoodreporter.com/movies/movie-news/sinners-most-nominated-movie-oscars-history-2026-1236480942/ |title='Sinners' Gets Most Oscar Nominations Ever |last=Canfield |first=David |magazine=[[The Hollywood Reporter]] |date=January 22, 2026 |access-date=January 22, 2026 |archive-url=https://web.archive.org/web/20260124013816/https://www.hollywoodreporter.com/movies/movie-news/sinners-most-nominated-movie-oscars-history-2026-1236480942/ |archive-date=January 24, 2026 |url-status=live}}</ref>}} ''[[Good Will Hunting]]'' and ''[[L.A. Confidential (film)|L.A. Confidential]]'' came in second with nine apiece.<ref>Multiple sources:
+*{{cite news|last=Ebert|first=Roger|title=Oscar hopefuls"Titanic' ties a record; DiCaprio misses boat|work=The Denver Post|publisher=MediaNews Group|page=F-01|date=February 10, 1998}}
+*{{cite news|title='Titanic' lands 14 Oscar nominations; ties 1950 record|work=[[San Diego Union-Tribune]]|publisher=Tribune Publishing|page=A-3|date=February 11, 1998}}
+*{{cite news |last1=Waxman |first1=Sharon |title='TITANIC' TOPS OSCARS LIST |url=https://www.washingtonpost.com/archive/lifestyle/1998/02/11/titanic-tops-oscars-list/64513d8a-c1e3-4dc5-b663-c97e4cbc0245/ |access-date=March 4, 2018 |archive-url=https://web.archive.org/web/20170827043502/https://www.washingtonpost.com/archive/lifestyle/1998/02/11/titanic-tops-oscars-list/64513d8a-c1e3-4dc5-b663-c97e4cbc0245/ |archive-date=August 27, 2017| newspaper=[[The Washington Post]] |date=February 10, 1998 |url-status=live }}
+</ref>
+
+The winners were announced during the awards ceremony on March 23, 1998. With eleven awards, ''Titanic'' tied with ''[[Ben-Hur (1959 film)|Ben-Hur]]'' (1959) for the most Academy Awards in Oscar history.<ref>{{cite news|last=Goldsten |first=Patrick |title='Titanic' Snags 11, Ties for Record |url=https://www.latimes.com/archives/la-xpm-1998-mar-24-mn-32150-story.html |access-date=January 25, 2014 |newspaper=Los Angeles Times |date=March 24, 1998 |url-status=live |archive-url=https://web.archive.org/web/20131205031141/http://articles.latimes.com/1998/mar/24/news/mn-32150 |archive-date=December 5, 2013}}</ref>{{efn|name=Tie2|''[[The Lord of the Rings: The Return of the King]]'' (2003) has since equaled this record with eleven wins.<ref>{{cite news|last=Smith |first=Neil |title=Rings joins Oscar's big winners |url=https://news.bbc.co.uk/2/hi/entertainment/3521401.stm |access-date=July 8, 2013 |work=[[BBC News]] |publisher=[[BBC]] |date=March 1, 2004 |url-status=live |archive-url=https://web.archive.org/web/20131105110109/http://news.bbc.co.uk/2/hi/entertainment/3521401.stm |archive-date=November 5, 2013 }}</ref>}} It also became the first film to win Best Picture without a screenwriting nomination since ''[[The Sound of Music (film)|The Sound of Music]]'' (1965).<ref>{{cite news|last=Guthmann |first=Edward |title='Titanic' Rides an Oscar Tidal Wave / But Hunt and Nicholson take the top acting awards |url=http://www.sfgate.com/news/article/Titanic-Rides-an-Oscar-Tidal-Wave-But-Hunt-3011161.php |access-date=November 1, 2013 |work=[[San Francisco Chronicle]] |publisher=[[Hearst Corporation]] |date=March 24, 1998 |url-status=live |archive-url=https://web.archive.org/web/20131103212932/http://www.sfgate.com/news/article/Titanic-Rides-an-Oscar-Tidal-Wave-But-Hunt-3011161.php |archive-date=November 3, 2013}}</ref> Due to ''Titanic'', [[James Cameron]] became the first person to win as a producer, director and editor in one night.<ref name="Variety">{{cite news|last=Gray |first=Tim |title=‘Titanic’ tally ties Oscar record |url=https://variety.com/1998/more/news/titanic-tally-ties-oscar-record-2-1117469068/ |access-date=May 24, 2026 |newspaper=[[Variety (magazine)|Variety]] |date=March 22, 1998 |url-status=live |archive-url=https://web.archive.org/web/20150106061819/http://variety.com/1998/more/news/titanic-tally-ties-oscar-record-2-1117469068/ |archive-date=January 6, 2015}}</ref> [[Jack Nicholson]] received his eleventh acting nomination, becoming the most nominated man in acting categories.<ref name="cnnnom"/> He also became the fourth performer to win at least [[List of actors with two or more Academy Awards in acting categories|three acting Oscars]].<ref name="Variety"/> Both Nicholson and [[Helen Hunt]] won for their roles in ''[[As Good as It Gets]]'', making it the seventh film to win both lead acting awards.<ref name="Variety"/> Nominated for their performances as Rose DeWitt Bukater in ''Titanic'', Best Actress nominee [[Kate Winslet]] and Best Supporting Actress nominee [[Gloria Stuart]] became the first pair of performers nominated for portraying the same character in the same film.<ref name="cnnnom"/> At the age of 87, Stuart became the [[List of oldest and youngest Academy Award winners and nominees|oldest acting nominee]] in Oscars history.<ref>{{cite news |title=Titanic actress Gloria Stuart dies at 100 |url=https://www.bbc.com/news/world-us-canada-11423017 |access-date=June 20, 2026 |work=[[BBC News]] |date=September 27, 2010 |url-status=live |archive-url=https://web.archive.org/web/20170220135451/http://www.bbc.com/news/world-us-canada-11423017 |archive-date=February 20, 2017}}</ref>
+
+===Awards===
+[[File:James Cameron at 53rd Saturn Awards 2026-01 (cropped).jpg|thumb|right|150px|[[James Cameron]], Best Picture and Best Film Editing co-winner, and Best Director winner]]
+[[File:Avatar- The Way of Water Tokyo Press Conference- Jon Landau (cropped).jpg|thumb|right|150px|[[Jon Landau (film producer)|Jon Landau]], Best Picture co-winner]]
+[[File:Jack Nicholson 2001 (cropped).jpg|thumb|right|150px|[[Jack Nicholson]], Best Actor winner]]
+[[File:Helen Hunt Photo Op GalaxyCon Oklahoma City 2025.jpg|thumb|right|150px|[[Helen Hunt]], Best Actress winner]]
+[[File:Robin Williams Happy Feet premiere.jpg|thumb|right|150px|[[Robin Williams]], Best Supporting Actor winner]]
+[[File:Kim Basinger - The Natural.jpg|thumb|right|150px|[[Kim Basinger]], Best Supporting Actress winner]]
+[[File:Matt Damon and Ben Affleck Laughing in Austin During the Air Premiere (cropped).jpg|thumb|right|150px|[[Ben Affleck]] (left) and [[Matt Damon]], Best Screenplay Written Directly for the Screen winners]]
+[[File:Curtis Hanson.JPG|thumb|right|150px|[[Curtis Hanson]], Best Screenplay Based on Material Previously Produced or Published co-winner]]
+[[File:Marvin Hier, 1981.jpg|thumb|right|150px|[[Marvin Hier]], Best Documentary Feature winner]]
+[[File:TashimaDSC00402.jpg|thumb|right|150px|[[Chris Tashima]], Best Live Action Short Film co-winner]]
+[[File:Jan Pinkava 2019.jpg|thumb|right|150px|[[Jan Pinkava]], Best Animated Short Film winner]]
+[[File:James-horner-07.jpg|thumb|right|150px|[[James Horner]], Best Original Dramatic Score winner and Best Original Song co-winner]]
+[[File:Anne Dudley on March 30, 2014.jpg|thumb|right|150px|[[Anne Dudley]], Best Original Musical or Comedy Score winner]]
+[[File:Rick Baker at Saturn Awards.jpg|thumb|right|150px|[[Rick Baker]], Best Makeup co-winner]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars1998">{{cite web|url=http://www.oscars.org/oscars/ceremonies/1998 |title=The 70th Academy Awards (1998) Nominees and Winners |access-date=November 19, 2011 |work=[[Academy of Motion Picture Arts and Sciences]] |publisher=AMPAS |url-status=live |archive-url=https://web.archive.org/web/20141109213426/http://www.oscars.org/oscars/ceremonies/1998 |archive-date=November 9, 2014}}</ref>
+
+{| class=wikitable
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Titanic (1997 film)|Titanic]]''&nbsp;– [[James Cameron]] and [[Jon Landau (film producer)|Jon Landau]], producers'''{{double-dagger}}
+** ''[[As Good as It Gets]]''&nbsp;– [[James L. Brooks]], Bridget Johnson and [[Kristi Zea]], producers
+** ''[[The Full Monty]]''&nbsp;– [[Uberto Pasolini]], producer
+** ''[[Good Will Hunting]]''&nbsp;– [[Lawrence Bender]], producer
+** ''[[L.A. Confidential (film)|L.A. Confidential]]''&nbsp;– [[Arnon Milchan]], [[Curtis Hanson]] and [[Michael Nathanson (film executive)|Michael Nathanson]], producers
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[James Cameron]]&nbsp;– ''[[Titanic (1997 film)|Titanic]]'''''{{double-dagger}}
+** [[Peter Cattaneo]]&nbsp;– ''[[The Full Monty]]''
+** [[Gus Van Sant]]&nbsp;– ''[[Good Will Hunting]]''
+** [[Curtis Hanson]]&nbsp;– ''[[L.A. Confidential (film)|L.A. Confidential]]''
+** [[Atom Egoyan]]&nbsp;– ''[[The Sweet Hereafter (film)|The Sweet Hereafter]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Jack Nicholson]]&nbsp;– ''[[As Good as It Gets]]'' as Melvin Udall'''{{double-dagger}}
+** [[Matt Damon]]&nbsp;– ''[[Good Will Hunting]]'' as Will Hunting
+** [[Robert Duvall]]&nbsp;– ''[[The Apostle]]'' as Euliss "Sonny" Dewey, a.k.a. "The Apostle E.F."
+** [[Peter Fonda]]&nbsp;– ''[[Ulee's Gold]]'' as Ulysses "Ulee" Jackson
+** [[Dustin Hoffman]]&nbsp;– ''[[Wag the Dog]]'' as Stanley Motss
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Helen Hunt]]&nbsp;– ''[[As Good as It Gets]]'' as Carol Connelly'''{{double-dagger}}
+** [[Helena Bonham Carter]]&nbsp;– ''[[The Wings of the Dove (1997 film)|The Wings of the Dove]]'' as Kate Croy
+** [[Julie Christie]]&nbsp;– ''[[Afterglow (1997 film)|Afterglow]]'' as Phyllis Mann
+** [[Judi Dench]]&nbsp;– ''[[Mrs Brown]]'' as [[Queen Victoria]]
+** [[Kate Winslet]]&nbsp;– ''[[Titanic (1997 film)|Titanic]]'' as Rose DeWitt Bukater
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Robin Williams]]&nbsp;– ''[[Good Will Hunting]]'' as Dr. Sean Maguire'''{{double-dagger}}
+** [[Robert Forster]]&nbsp;– ''[[Jackie Brown]]'' as Max Cherry
+** [[Anthony Hopkins]]&nbsp;– ''[[Amistad (film)|Amistad]]'' as [[John Quincy Adams]]
+** [[Greg Kinnear]]&nbsp;– ''[[As Good as It Gets]]'' as Simon Bishop
+** [[Burt Reynolds]]&nbsp;– ''[[Boogie Nights]]'' as Jack Horner
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Kim Basinger]]&nbsp;– ''[[L.A. Confidential (film)|L.A. Confidential]]'' as Lynn Bracken'''{{double-dagger}}
+** [[Joan Cusack]]&nbsp;– ''[[In & Out (film)|In & Out]]'' as Emily Montgomery
+** [[Minnie Driver]]&nbsp;– ''[[Good Will Hunting]]'' as Skylar
+** [[Julianne Moore]]&nbsp;– ''[[Boogie Nights]]'' as Amber Waves/Maggie
+** [[Gloria Stuart]]&nbsp;– ''[[Titanic (1997 film)|Titanic]]'' as Rose Dawson Calvert
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+* '''''[[Good Will Hunting]]''&nbsp;– [[Matt Damon]] and [[Ben Affleck]]'''{{double-dagger}}
+** ''[[As Good as It Gets]]''&nbsp;– Screenplay by [[Mark Andrus]] and [[James L. Brooks]]; Story by Mark Andrus
+** ''[[Boogie Nights]]''&nbsp;– [[Paul Thomas Anderson]]
+** ''[[Deconstructing Harry]]''&nbsp;– [[Woody Allen]]
+** ''[[The Full Monty]]''&nbsp;– [[Simon Beaufoy]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material Previously Produced or Published)]]}}
+* '''''[[L.A. Confidential (film)|L.A. Confidential]]''&nbsp;– [[Brian Helgeland]] and [[Curtis Hanson]]; from [[L.A. Confidential|the novel]] by [[James Ellroy]]'''{{double-dagger}}
+** ''[[Donnie Brasco (film)|Donnie Brasco]]''&nbsp;– [[Paul Attanasio]]; based on the book ''[[Donnie Brasco: My Undercover Life in the Mafia]]'' by [[Joseph D. Pistone]] with Richard Woodley
+** ''[[The Sweet Hereafter (film)|The Sweet Hereafter]]''&nbsp;– [[Atom Egoyan]]; adapted from [[The Sweet Hereafter (novel)|the novel]] by [[Russell Banks]]
+** ''[[Wag the Dog]]''&nbsp;– [[David Mamet]] and [[Hilary Henkin]]; from the novel ''[[Wag the Dog (novel)|American Hero]]'' by [[Larry Beinhart]]
+** ''[[The Wings of the Dove (1997 film)|The Wings of the Dove]]''&nbsp;– [[Hossein Amini]]; adapted from [[The Wings of the Dove|the novel]] by [[Henry James]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[Character (film)|Character]]'' ([[List of Dutch submissions for the Academy Award for Best Foreign Language Film|Netherlands]]) in [[Dutch language|Dutch]]&nbsp;– [[Mike van Diem]]'''{{double-dagger}}
+** ''[[Beyond Silence (1996 film)|Beyond Silence]]'' ([[List of German submissions for the Academy Award for Best Foreign Language Film|Germany]]) in [[German language|German]]&nbsp;– [[Caroline Link]]
+** ''[[Four Days in September]]'' ([[List of Brazilian submissions for the Academy Award for Best Foreign Language Film|Brazil]]) in [[Portuguese language|Portuguese]]&nbsp;– [[Bruno Barreto]]
+** ''[[Secrets of the Heart (film)|Secrets of the Heart]]'' ([[List of Spanish submissions for the Academy Award for Best Foreign Language Film|Spain]]) in [[Spanish language|Spanish]]&nbsp;– [[Montxo Armendáriz]]
+** ''[[The Thief (1997 film)|The Thief]]'' ([[List of Russian submissions for the Academy Award for Best Foreign Language Film|Russia]]) in [[Russian language|Russian]]&nbsp;– [[Pavel Chukhray]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[The Long Way Home (1997 film)|The Long Way Home]]''&nbsp;– Rabbi [[Marvin Hier]] and Richard Trank'''{{double-dagger}}
+** ''[[4 Little Girls]]''&nbsp;– [[Spike Lee]] and [[Sam Pollard (filmmaker)|Sam Pollard]]
+** ''[[Ayn Rand: A Sense of Life]]''&nbsp;– [[Michael Paxton]]
+** ''[[Colors Straight Up]]''&nbsp;– [[Michèle Ohayon]] and Julia Schachter
+** ''[[Waco: The Rules of Engagement]]''&nbsp;– Dan Gifford and [[William Gazecki]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[A Story of Healing]]''&nbsp;– Donna Dewey and Carol Pasternak'''{{double-dagger}}
+** ''[[Alaska: Spirit of the Wild]]''&nbsp;– George Casey and Paul Novros
+** ''[[Amazon (1997 film)|Amazon]]''&nbsp;– [[Kieth Merrill]] and [[Jonathan Stern]]
+** ''[[Family Video Diaries: Daughter of the Bride]]''&nbsp;– Terri Randall
+** ''[[Still Kicking: The Fabulous Palm Springs Follies]]''&nbsp;– [[Mel Damski]] and [[Andrea Blaugrund Nevins]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Visas and Virtue]]''&nbsp;– [[Chris Tashima]] and [[Chris Donahue (producer)|Chris Donahue]]'''{{double-dagger}}
+** ''[[Dance Lexie Dance]]''&nbsp;– Pearse Moore and [[Tim Loane]]
+** ''It's Good to Talk''&nbsp;– Roger Goldby and Barney Reisz
+** ''Sweethearts?''&nbsp;– [[Birger Larsen (director)|Birger Larsen]] and Thomas Lydholm
+** ''Wolfgang''&nbsp;– [[Anders Thomas Jensen]] and [[Kim Magnusson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Geri's Game]]''&nbsp;– [[Jan Pinkava]]'''{{double-dagger}}
+** ''[[Famous Fred]]''&nbsp;– [[Joanna Quinn]]
+** ''[[The Old Lady and the Pigeons]]''&nbsp;– [[Sylvain Chomet]]
+** ''[[Redux Riding Hood]]''&nbsp;– Steve Moore and [[Dan O'Shannon]]
+** ''[[Rusalka (1996 film)|Rusalka]]''&nbsp;– [[Aleksandr Petrov (animator)|Alexander Petrov]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Dramatic Score)]]}}
+* '''''[[Titanic (1997 film)|Titanic]]''&nbsp;– [[James Horner]]'''{{double-dagger}}
+** ''[[Amistad (film)|Amistad]]''&nbsp;– [[John Williams]]
+** ''[[Good Will Hunting]]''&nbsp;– [[Danny Elfman]]
+** ''[[Kundun]]''&nbsp;– [[Philip Glass]]
+** ''[[L.A. Confidential (film)|L.A. Confidential]]''&nbsp;– [[Jerry Goldsmith]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Musical or Comedy Score)]]}}
+* '''''[[The Full Monty]]''&nbsp;– [[Anne Dudley]]'''{{double-dagger}}
+** ''[[Anastasia (1997 film)|Anastasia]]''&nbsp;– Music by [[Stephen Flaherty]]; lyrics by [[Lynn Ahrens]]; orchestral score by [[David Newman (composer)|David Newman]]
+** ''[[As Good as It Gets]]''&nbsp;– [[Hans Zimmer]]
+** ''[[Men in Black (1997 film)|Men in Black]]''&nbsp;– [[Danny Elfman]]
+** ''[[My Best Friend's Wedding]]''&nbsp;– [[James Newton Howard]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[My Heart Will Go On]]" from ''[[Titanic (1997 film)|Titanic]]''&nbsp;– Music by [[James Horner]]; lyrics by [[Will Jennings]]'''{{double-dagger}}
+** "[[Go the Distance]]" from ''[[Hercules (1997 film)|Hercules]]''&nbsp;– Music by [[Alan Menken]]; lyrics by [[David Zippel]]
+** "[[How Do I Live]]" from ''[[Con Air]]''&nbsp;– Music and lyrics by [[Diane Warren]]
+** "[[Journey to the Past]]" from ''[[Anastasia (1997 film)|Anastasia]]''&nbsp;– Music by [[Stephen Flaherty]]; lyrics by [[Lynn Ahrens]]
+** "[[Miss Misery]]" from ''[[Good Will Hunting]]''&nbsp;– Music and lyrics by [[Elliott Smith]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound]]}}
+* '''''[[Titanic (1997 film)|Titanic]]''&nbsp;– [[Gary Rydstrom]], [[Tom Johnson (sound engineer)|Tom Johnson]], [[Gary Summers]] and [[Mark Ulano]]'''{{double-dagger}}
+** ''[[Air Force One (film)|Air Force One]]''&nbsp;– [[Paul Massey (sound engineer)|Paul Massey]], [[Rick Kline]], [[Doug Hemphill]] and [[Keith A. Wester]]
+** ''[[Con Air]]''&nbsp;– [[Kevin O'Connell (sound mixer)|Kevin O'Connell]], [[Greg P. Russell]] and [[Art Rochester]]
+** ''[[Contact (1997 American film)|Contact]]''&nbsp;– [[Randy Thom]], [[Tom Johnson (sound engineer)|Tom Johnson]], [[Dennis S. Sands]] and [[William B. Kaplan]]
+** ''[[L.A. Confidential (film)|L.A. Confidential]]''&nbsp;– [[Andy Nelson (sound engineer)|Andy Nelson]], [[Anna Behlmer]] and [[Kirk Francis (sound engineer)|Kirk Francis]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Effects Editing]]}}
+* '''''[[Titanic (1997 film)|Titanic]]''&nbsp;– [[Christopher Boyes]] and [[Tom Bellfort]]'''{{double-dagger}}
+** ''[[Face/Off]]''&nbsp;– [[Mark Stoeckinger|Mark P. Stoeckinger]] and [[Per Hallberg]]
+** ''[[The Fifth Element]]''&nbsp;– [[Mark Mangini]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Titanic (1997 film)|Titanic]]''&nbsp;– Art Direction: [[Peter Lamont]]; Set Decoration: [[Michael D. Ford]]'''{{double-dagger}}
+** ''[[Gattaca]]''&nbsp;– Art Direction: [[Jan Roelfs]]; Set Decoration: Nancy Nye
+** ''[[Kundun]]''&nbsp;– Art Direction: [[Dante Ferretti]]; Set Decoration: [[Francesca Lo Schiavo]]
+** ''[[L.A. Confidential (film)|L.A. Confidential]]''&nbsp;– Art Direction: [[Jeannine Oppewall]]; Set Decoration: [[Jay Hart (set decorator)|Jay Hart]]
+** ''[[Men in Black (1997 film)|Men in Black]]''&nbsp;– Art Direction: [[Bo Welch]]; Set Decoration: [[Cheryl Carasik]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Titanic (1997 film)|Titanic]]''&nbsp;– [[Russell Carpenter]]'''{{double-dagger}}
+** ''[[Amistad (film)|Amistad]]''&nbsp;– [[Janusz Kamiński]]
+** ''[[Kundun]]''&nbsp;– [[Roger Deakins]]
+** ''[[L.A. Confidential (film)|L.A. Confidential]]''&nbsp;– [[Dante Spinotti]]
+** ''[[The Wings of the Dove (1997 film)|The Wings of the Dove]]''&nbsp;– [[Eduardo Serra]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[Men in Black (1997 film)|Men in Black]]''&nbsp;– [[Rick Baker]] and [[David LeRoy Anderson]]'''{{double-dagger}}
+** ''[[Mrs Brown]]''&nbsp;– [[Lisa Westcott]], [[Veronica Brebner]] and [[Beverley Binda]]
+** ''[[Titanic (1997 film)|Titanic]]''&nbsp;– [[Tina Earnshaw]], [[Greg Cannom]] and [[Simon Thompson (make-up artist)|Simon Thompson]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Titanic (1997 film)|Titanic]]''&nbsp;– [[Deborah Lynn Scott]]'''{{double-dagger}}
+** ''[[Amistad (film)|Amistad]]''&nbsp;– [[Ruth E. Carter]]
+** ''[[Kundun]]''&nbsp;– [[Dante Ferretti]]
+** ''[[Oscar and Lucinda (film)|Oscar and Lucinda]]''&nbsp;– [[Janet Patterson]]
+** ''[[The Wings of the Dove (1997 film)|The Wings of the Dove]]''&nbsp;– [[Sandy Powell (costume designer)|Sandy Powell]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Titanic (1997 film)|Titanic]]''&nbsp;– [[Conrad Buff IV|Conrad Buff]], [[James Cameron]] and [[Richard A. Harris]]'''{{double-dagger}}
+** ''[[Air Force One (film)|Air Force One]]''&nbsp;– [[Richard Francis-Bruce]]
+** ''[[As Good as It Gets]]''&nbsp;– [[Richard Marks]]
+** ''[[Good Will Hunting]]''&nbsp;– [[Pietro Scalia]]
+** ''[[L.A. Confidential (film)|L.A. Confidential]]''&nbsp;– [[Peter Honess]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Titanic (1997 film)|Titanic]]''&nbsp;– [[Robert Legato]], [[Mark Lasoff]], [[Thomas L. Fisher]] and [[Michael Kanfer]]'''{{double-dagger}}
+** ''[[The Lost World: Jurassic Park]]''&nbsp;– [[Dennis Muren]], [[Stan Winston]], [[Randal M. Dutra]] and [[Michael Lantieri]]
+** ''[[Starship Troopers (film)|Starship Troopers]]''&nbsp;– [[Phil Tippett]], [[Scott E. Anderson]], [[Amalgamated Dynamics|Alec Gillis]] and [[John Richardson (special effects designer)|John Richardson]]
+|}
+
+===Honorary Award===
+* To [[Stanley Donen]] in appreciation of a body of work marked by grace, elegance, wit and visual innovation.<ref>{{cite news|last=Anderson |first=John |title=Stanley Donen: Just Dancin' and Singin' of His Reign |url=https://www.latimes.com/archives/la-xpm-1998-mar-25-ca-32385-story.html |access-date=November 1, 2013 |work=Los Angeles Times |date=March 25, 1998 |url-status=live |archive-url=https://web.archive.org/web/20131106065230/http://articles.latimes.com/1998/mar/25/entertainment/ca-32385 |archive-date=November 6, 2013}}</ref>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}{{col-1-of-2}}
+The following 16 films received multiple nominations:
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 14
+| ''[[Titanic (1997 film)|Titanic]]''
+|-
+| rowspan=2 style="text-align:center" | 9
+| ''[[Good Will Hunting]]''
+|-
+| ''[[L.A. Confidential (film)|L.A. Confidential]]''
+|-
+| style="text-align: center;" | 7
+| ''[[As Good as It Gets]]''
+|-
+|rowspan=4 style="text-align:center" | 4
+| ''[[Amistad (film)|Amistad]]''
+|-
+| ''[[The Full Monty]]''
+|-
+| ''[[Kundun]]''
+|-
+| ''[[The Wings of the Dove (1997 film)|The Wings of the Dove]]''
+|-
+|rowspan=2 style="text-align:center" | 3
+| ''[[Boogie Nights]]''
+|-
+| ''[[Men in Black (1997 film)|Men in Black]]''
+|-
+|rowspan=6 style="text-align:center" | 2
+| ''[[Air Force One (film)|Air Force One]]''
+|-
+| ''[[Anastasia (1997 film)|Anastasia]]''
+|-
+| ''[[Con Air]]''
+|-
+| ''[[Mrs Brown]]''
+|-
+| ''[[The Sweet Hereafter (film)|The Sweet Hereafter]]''
+|-
+| ''[[Wag the Dog]]''
+|}
+
+{{col-2-of-2}}
+
+The following four films received multiple awards:
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 11
+| ''[[Titanic (1997 film)|Titanic]]''
+|-
+| rowspan=3 style="text-align:center" | 2
+| ''[[As Good as It Gets]]''
+|-
+| ''[[Good Will Hunting]]''
+|-
+| ''[[L.A. Confidential (film)|L.A. Confidential]]''
+|}
+
+{{col-end}}
+
+==Presenters and performers==
+The following individuals presented awards or performed musical numbers.<ref>{{cite news|title=List of Presenters |url=https://variety.com/1998/more/news/list-of-presenters-1117468873/ |access-date=January 13, 2014 |work=Variety |publisher=Penske Media Corporation |date=March 20, 1998 |url-status=live |archive-url=https://web.archive.org/web/20140116140558/http://variety.com/1998/more/news/list-of-presenters-1117468873/ |archive-date=January 16, 2014}}</ref><ref name="PresentersandPerformers">{{harvnb|Bona|2002|p=163}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Norman|Rose}} || Announcer for the 70th annual Academy Awards
+|-
+| {{sortname|Robert|Rehme}} (AMPAS President) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Cuba|Gooding Jr.}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Elisabeth|Shue}} || Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Dustin|Hoffman}} || Presenter of the 70 years of Best Picture winners montage
+|-
+| {{sortname|Neve|Campbell}} || Presenter of the performances of Best Original Song nominees "[[Journey to the Past]]" and "[[Go the Distance]]"
+|-
+| {{sortname|Arnold|Schwarzenegger}} || Presenter of the film ''[[Titanic (1997 film)|Titanic]]'' on the Best Picture segment
+|-
+| {{sortname|Mira|Sorvino}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Cameron|Diaz}} || Presenter of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|Mike|Myers}} || Presenter of the award for [[Academy Award for Best Sound Editing|Sound Effects Editing]]
+|-
+| {{sortname|Helen|Hunt}} || Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Fay|Wray}} || Introducer of presenters Ben Affleck and Matt Damon
+|-
+| {{sortname|Ben|Affleck}}<br />[[Matt Damon]] || Presenters of the awards for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]] and [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Geoffrey|Rush}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Antonio|Banderas}} || Presenter of the award for [[Academy Award for Best Original Score|Best Original Dramatic Score]]
+|-
+| {{sortname|Jennifer|Lopez}} || Introducer of the special dance number to the tune of the nominees for [[Academy Award for Best Original Score|Best Original Musical or Comedy Score]] and presenter of the award for Best Original Musical or Comedy Score
+|-
+| {{sortname|Drew|Barrymore}} || Presenter of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Alec|Baldwin}} || Presenter of the film ''[[L.A. Confidential (film)|L.A. Confidential]]'' on the Best Picture segment
+|-
+| {{sortname|Samuel L.|Jackson}} || Presenter of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Ashley|Judd}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Martin|Scorsese}} || Presenter of the [[Honorary Academy Award]] to [[Stanley Donen]]
+|-
+| {{sortname|Matt|Dillon}} || Presenter of the film ''[[Good Will Hunting]]'' on the Best Picture segment
+|-
+| {{sortname||Madonna|Madonna}} || Introducer of the performances of Best Original Song nominees "[[How Do I Live]]", "[[Miss Misery]]" and "[[My Heart Will Go On]]" and presenter of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Djimon|Hounsou}} || Presenter of the [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short]]
+|-
+| {{sortname|Robert|De Niro}} || Presenter of the [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Whoopi|Goldberg}} || Presenter of the "[[List of Latin phrases: I#in memoriam|In Memoriam]]" tribute
+|-
+| {{sortname|Meg|Ryan}} || Presenter of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Robin|Williams}} || Presenter of the 70 Years of Oscars montage
+|-
+| {{sortname|Frances|McDormand}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Sharon|Stone}} || Presenter of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Jack|Lemmon}}<br />[[Walter Matthau]] || Presenters of the awards for [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material Previously Produced or Published]] and [[Academy Award for Best Original Screenplay|Best Original Screenplay/Screenplay Written Directly for the Screen]]
+|-
+| {{sortname|Geena|Davis}} || Presenter of the film ''[[The Full Monty]]'' on the Best Picture segment
+|-
+| {{sortname|Denzel|Washington}} || Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Susan|Sarandon}} || Presenter of the Oscar Family Album segment
+|-
+| {{sortname|Sigourney|Weaver}} || Presenter of the film ''[[As Good as It Gets]]'' on the Best Picture segment
+|-
+| {{sortname|Warren|Beatty}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Sean|Connery}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+| [[Jerry Goldsmith]] || Composer || "[[Fanfare for Oscar]]"
+|-
+| [[Bill Conti]] || Musical arranger || Orchestral
+|-
+| [[Billy Crystal]] || Performer || Opening number: <br />''Titanic'' (to the tune of "[[Gilligan's Island#Theme song|The Ballad of Gilligan's Isle]]" from ''[[Gilligan's Island]]''), <br />''As Good as It Gets'' (to the tune of "[[Let's Call the Whole Thing Off]]" from ''[[Shall We Dance (1937 film)|Shall We Dance]]''), <br />''Good Will Hunting'' (to the tune of "[[Night and Day (song)|Night and Day]]" from ''[[The Gay Divorcee]]''), <br />''L.A. Confidential'' (to the tune of "[[Fascinating Rhythm]]" by [[George Gershwin]]) and <br />''The Full Monty'' (to the tune "[[Hello, Dolly! (song)|Hello, Dolly!]]" from ''[[Hello, Dolly! (film)|Hello, Dolly!]]'')<ref>{{harvnb|Bona|2002|p=168}}</ref>
+|-
+| [[Michael Bolton]] || Performer || "[[Go the Distance]]" from ''[[Hercules (1997 film)|Hercules]]''
+|-
+| [[Aaliyah]] || Performer || "[[Journey to the Past]]" from ''[[Anastasia (1997 film)|Anastasia]]''
+|-
+| [[Trisha Yearwood]] || Performer || "[[How Do I Live]]" from ''[[Con Air]]''
+|-
+| [[Elliott Smith]] || Performer || "[[Miss Misery]]" from ''[[Good Will Hunting]]''
+|-
+| [[Celine Dion]] || Performer || "[[My Heart Will Go On]]" from ''[[Titanic (1997 film)|Titanic]]''
+|}
+
+==Ceremony information==
+[[File:Billy Crystal VF 2012 Shankbone.JPG|thumb|upright|[[Billy Crystal]] hosted the 70th Academy Awards.|alt=Photo of Billy Crystal in 2012.]]
+
+In December 1997, the academy hired veteran Oscar telecast producer [[Gil Cates]] to oversee the 1998 ceremony.<ref name="Cates">{{cite news|last=Hindes |first=Andrew |title=And Cates makes eight |url=https://variety.com/1997/more/news/and-cates-makes-eight-1116680279/ |access-date=January 23, 2014 |work=Variety |publisher=Penske Media Corporation |date=December 11, 1997 |url-status=live |archive-url=https://web.archive.org/web/20150404132631/http://variety.com/1997/more/news/and-cates-makes-eight-1116680279/ |archive-date=April 4, 2015}}</ref> "Gil has become the consummate Oscar show producer, consistently garnering top television ratings for the telecast," said AMPAS President Robert Rehme in a press release announcing the selection. "His shows are full of wit, charm and surprise."<ref name="Cates"/> A few days later, actor and comedian Billy Crystal was chosen to emcee the upcoming telecast. Cates explained his reason to bring back the veteran comedian saying, "Billy's performance last year was spectacular. There is nobody like him."<ref>{{cite news|title=News Lite Veteran DJ Will End Storied Career|work=Los Angeles Daily News|publisher=MediaNews Group|date=December 20, 1997|page=N2}}</ref> In an article published in ''[[USA Today]]'' he initially requested to Cates and AMPAS five months after the [[69th Academy Awards|previous year's ceremony]] that he would like to take a break from hosting duties. However, pressure from the academy, Cates, and several friends and family members made him reconsider his decision.<ref>{{harvnb|Bona|2002|p=156}}</ref> His sixth stint would make him second only to [[Bob Hope]] in number of ceremonies hosted.<ref>{{harvnb|Bona|2002|p=157}}</ref> For the first time, the show was procuded by AMPAS, not [[American Broadcasting Company|ABC]], because of the failure in reaching a contract agreement with the [[National Association of Broadcast Employees and Technicians]].<ref>{{cite news|last=Madigan |first=Nick |title=Sunday officially Oscar's |url=https://variety.com/1998/film/news/sunday-officially-oscar-s-1117477950/ |access-date=January 10, 2014 |work=Variety |date=June 26, 1998 |url-status=live |archive-url=https://web.archive.org/web/20140110222613/http://variety.com/1998/film/news/sunday-officially-oscar-s-1117477950/ |archive-date=January 10, 2014}}</ref>
+
+To commemorate the seventieth anniversary of the Academy Awards, 70 actors who have received both competitive and honorary awards appeared seated onstage together during a segment called Oscar's Family Album.<ref>{{harvnb|Pond|2005|pp=185–186}}</ref> Each former winner was acknowledged by announcer [[Norman Rose]] with the films he or she won for. At the end of the segment newly minted winners Kim Basinger, Helen Hunt, and Robin Williams joined them. This marked the largest gathering of former winners since the [[50th Academy Awards|50th ceremony]] held in 1978.<ref>{{harvnb|Bona|2002|p=177}}</ref> The Academy also commissioned musician and composer [[Jerry Goldsmith]] to compose a new [[leitmotif]] for the Oscars telecast entitled "[[Fanfare for Oscar]]".<ref>{{Cite news |last=Karon |first=Paul |date=January 26, 1998 |title=Goldsmith pens official theme for academy awards |url=https://variety.com/1998/more/news/goldsmith-pens-official-theme-for-academy-awards-1117467118/ |access-date=March 10, 2025 |work=Variety |url-status=live |archive-url=https://web.archive.org/web/20251205211617/https://variety.com/1998/more/news/goldsmith-pens-official-theme-for-academy-awards-1117467118/ |archive-date=December 5, 2025}}</ref>
+
+Several others participated in the production of the ceremony. [[Bill Conti]] served as musical director for the telecast.<ref>{{cite news|title=Conti named musical director of 70th Academy Awards |url=https://variety.com/1998/more/news/jan-14-1998-1117436386/ |access-date=January 24, 2014 |work=Variety |publisher=Penske Media Corporation |date=January 14, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20150404204359/https://variety.com/1998/more/news/jan-14-1998-1117436386/ |archive-date=April 4, 2015}}</ref> Dancer [[Daniel Ezralow]] choreographed a dance number showcasing the nominees for Best Original Comedy or Musical Score. [[Bart the Bear]] made a surprise appearance during the presentation of the [[Academy Award for Best Sound Editing|Best Sound Effects Editing]] award with [[Mike Myers]].<ref>{{harvnb|Pond|2005|p=168}}</ref>
+
+===Box office performance of nominees===
+At the time of the nominations announcement on February 10, the combined gross of the five Best Picture nominees was $579&nbsp;million with an average of $116&nbsp;million per film.<ref name=BoxOfficeOscars>{{cite news|title=1997 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=1997&p=.htm |access-date=November 2, 2013 |work=[[Box Office Mojo]]|url-status=live |archive-url=https://web.archive.org/web/20131103203352/http://boxofficemojo.com/oscar/chart/?yr=1997&p=.htm |archive-date=November 3, 2013}}</ref> ''Titanic'' was the highest earner among the Best Picture nominees with $338.7&nbsp;million in domestic box office receipts.<ref name=BoxOfficeOscars/> The film was followed by ''As Good as It Gets'' ($92.6&nbsp;million), ''Good Will Hunting'' ($68.9&nbsp;million), ''L.A. Confidential'' ($39.7&nbsp;million), and finally ''The Full Monty'' ($38.7&nbsp;million).<ref name=BoxOfficeOscars/>
+
+Of the top 50 grossing movies of the year, 40 nominations went to 15 films on the list. Only ''Titanic'' (1st), ''As Good as It Gets'' (16th), ''Good Will Hunting'' (20th), and ''In & Out'' (24th) were nominated for directing, acting, screenwriting, or Best Picture.<ref name="boxofficemojooscars">{{cite web|url=https://boxofficemojo.com/yearly/chart/?asof=1998-02-10&view=releasedate&view2=domestic&yr=1997&sort=gross&order=DESC&p=.htm |title=1997 Domestic Grosses|work=Box Office Mojo |access-date=June 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131103210153/http://boxofficemojo.com/yearly/chart/?asof=1998-02-10&view=releasedate&view2=domestic&yr=1997&sort=gross&order=DESC&p=.htm |archive-date=November 3, 2013}}</ref> The other top 50 box office hits that earned nominations were ''Men in Black'' (2nd), ''The Lost World: Jurassic Park'' (3rd), ''Air Force One'' (5th), ''My Best Friends Wedding'' (7th), ''Face/Off'' (9th), ''Con Air'' (12th), ''Contact'' (13th), ''Hercules'' (14th), ''The Fifth Element'' (25th), ''Anastasia'' (30th), and ''Starship Troopers'' (34th).<ref name="boxofficemojooscars" />
+
+===Critical response===
+The show received a positive reception from most media publications. Television critic [[Howard Rosenberg]] of the ''[[Los Angeles Times]]'' lauded Crystal's performance writing that he "would earn top billing as that unusual comedian as artful at doing musical comedy as jokes."<ref>{{cite news|last=Rosenberg |first=Howard |title=Crystal Persuasion |url=https://www.latimes.com/archives/la-xpm-1998-mar-24-ca-32299-story.html |access-date=January 23, 2014 |work=Los Angeles Times |date=March 24, 1998 |url-status=live |archive-url=https://web.archive.org/web/20140221173400/http://articles.latimes.com/1998/mar/24/entertainment/ca-32299 |archive-date=February 21, 2014}}</ref> ''[[San Francisco Chronicle]]'' columnist John Carman raved,"It was the best Oscar show in two decades." He also gave high marks for the host, commenting, "But last night, Crystal was back in razor form."<ref>{{cite news|last=Carman |first=John |title=Oscar Polishes Up His Image / Crystal clearly a winner for best show in decades |url=http://www.sfgate.com/entertainment/article/Oscar-Polishes-Up-His-Image-Crystal-clearly-a-3011121.php |access-date=January 23, 2014 |work=[[San Francisco Chronicle]] |publisher=[[Hearst Corporation]] |date=March 24, 1998 |url-status=live |archive-url=https://web.archive.org/web/20140202225702/http://www.sfgate.com/entertainment/article/Oscar-Polishes-Up-His-Image-Crystal-clearly-a-3011121.php |archive-date=February 2, 2014}}</ref> ''[[The Seattle Times]]'' television editor Kay McFadden praised Crystal commenting that "he possesses nearly impeccable timing and judgment." In addition, she noted that while the ceremony dragged on, "Last night was one of television's smartest live ceremonies in recent memory."<ref>{{cite news|last=McFadden |first=Kay |title=Ceremony Shapes Up As A Night To Remember |url=https://archive.seattletimes.com/archive/19980324/2741394/ceremony-shapes-up-as-a-night-to-remember |access-date=January 23, 2014 |work=[[The Seattle Times]] |publisher=[[The Seattle Times Company]] |date=March 24, 1998 |url-status=live |archive-url=https://web.archive.org/web/20140201200513/http://community.seattletimes.nwsource.com/archive/?date=19980324&slug=2741394 |archive-date=February 1, 2014}}</ref>
+
+Some media outlets were more critical of the show. Ray Richmond of ''[[Variety (magazine)|Variety]]'' complained that the ceremony proved to be a "Yawner of an Oscarcast." He added that Crystal's "off-the-cuff one-liners sank faster than the great ship herself."<ref>{{cite news|last=Richmond |first=Ray |title=Review: 'The 70th Annual Academy Awards' |url=https://variety.com/1998/tv/reviews/the-70th-annual-academy-awards-1200453061/ |access-date=January 23, 2014 |work=Variety |publisher=Penske Media Corporation |date=March 23, 1998 |url-status=live |archive-url=https://web.archive.org/web/20140225005701/http://variety.com/1998/tv/reviews/the-70th-annual-academy-awards-1200453061/ |archive-date=February 25, 2014}}</ref> ''[[Boston Globe]]'' television critic Matthew Gilbert bemoaned,"There was hardly a spontaneous moment during last night's Oscarcast."<ref>{{cite news|last=Gilbert|first=Matthew|title=Telecast Sinks Under Tired Bits, Little Spark|newspaper=Boston Globe|date=March 24, 1998|page=D1}}</ref> Film critic Carrie Rickey from ''[[The Philadelphia Inquirer]]'' lamented that the inevitable ''Titanic'' sweep "sank a telecast loaded with montages of previous years' Oscar highlights."<ref>{{cite news|last=Rickey|first=Carey|title='Titanic' Ties Record With 11 Oscars; 'Good As It Gets' Takes Acting Honors|page=A1|work=[[The Philadelphia Inquirer]]|publisher=[[Philadelphia Media Network]]|date=March 24, 1998}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 57.25 million people over its length, which was a 29% increase from the [[69th Academy Awards|previous year's ceremony]].<ref>{{cite news|last=Crupi |first=Anthony |title=ABC Strikes Gold With the Oscars |url=http://www.adweek.com/news/television/abc-strikes-gold-oscars-147081 |access-date=November 1, 2013 |work=[[Adweek]] |publisher=[[Prometheus Global Media]] |date=February 6, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131103090449/http://www.adweek.com/news/television/abc-strikes-gold-oscars-147081 |archive-date=November 3, 2013}}</ref> An estimated 87.50 million total viewers watched all or part of the awards.<ref>{{harvnb|Pond|2005|p=187}}</ref> The show also earned higher [[Nielsen ratings]] compared to the previous ceremony with 35.32% of households watching over a 55.77 share.<ref name="TVB Oscars">{{cite news|title=Academy Awards ratings |work=Television Bureau of Advertising |url=https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=live |archive-url=https://web.archive.org/web/20160808235818/https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |archive-date=August 8, 2016}}</ref> In addition, it garnered a higher 18{{ndash}}49 demo rating with a 24.90 rating over a 44.30 share among viewers in that demographic.<ref name="TVB Oscars" /> It was the most watched Oscar ceremony in television history since viewership figures were compiled beginning with the [[46th Academy Awards|46th ceremony]] in 1974.<ref>{{cite web |first=Bill |last=Gorman |title=Academy Awards Averages 41.3 Million Viewers; Most Since 2005 |url=http://tvbythenumbers.com/2010/03/08/academy-awards-averages-41-3-million-viewers-most-since-2005/44217 |work=[[TV by the Numbers]] |publisher=[[Tribune Media]] |date=March 8, 2010 |access-date=March 12, 2010 |archive-url=https://web.archive.org/web/20100310080531/http://tvbythenumbers.com/2010/03/08/academy-awards-averages-41-3-million-viewers-most-since-2005/44217 |archive-date=March 10, 2010 |url-status=dead }}</ref>
+
+In July 1998, the ceremony presentation received eight nominations at the [[50th Primetime Emmy Awards|50th Primetime Emmys]].<ref>{{cite news|title=Primetime Emmy Award database |url=http://www.emmys.com/shows/70th-annual-academy-awards |access-date=November 1, 2013 |work=[[Academy of Television Arts and Sciences]] |publisher=ATAS |url-status=live |archive-url=https://web.archive.org/web/20121001085632/http://www.emmys.com/shows/70th-annual-academy-awards |archive-date=October 1, 2012}}</ref> Two months later, the ceremony won five of those nominations for [[Primetime Emmy Award for Individual Performance in a Variety or Music Program|Outstanding Individual Performance in a Variety or Music Program]] (Billy Crystal), Outstanding Directing for a Variety or Music Program (Louis J Horvitz), Outstanding Lighting Direction (Electronic) for a Drama Series, Variety Series, Miniseries, or Movie (Bob Barnhart, Robert Dickinson, Matt Ford, Andy O'Reilly), Outstanding Music Direction (Bill Conti), and Outstanding Sound Mixing for a Variety Series or Special (Patrick Baltzell, Robert Douglass, Edward J. Greene, Tommy Vicari).<ref>{{cite news|title=The Emmy Winners Announced on Saturday |url=https://www.latimes.com/archives/la-xpm-1998-aug-31-ca-18105-story.html |access-date=November 1, 2013 |work=Los Angeles Times |date=August 31, 1998 |url-status=live |archive-url=https://web.archive.org/web/20131106080823/http://articles.latimes.com/1998/aug/31/entertainment/ca-18105 |archive-date=November 6, 2013}}</ref><ref>{{cite news|title=1998 Emmy Winners |url=https://www.nytimes.com/1998/09/15/arts/the-1998-emmy-winners.html |access-date=November 2, 2013 |work=The New York Times |date=September 15, 1998 |url-status=live |archive-url=https://web.archive.org/web/20131114083821/http://www.nytimes.com/1998/09/15/arts/the-1998-emmy-winners.html |archive-date=November 14, 2013}}</ref>
+
+=="In Memoriam"==
+The annual "In Memoriam" tribute was presented by actress [[Whoopi Goldberg]]. The montage featured an excerpt of "Appassionata" from ''[[The Passage (1979 film)|The Passage]]'' composed by Michael J. Lewis.<ref>{{harvnb|Bona|2002|pp=173–174}}</ref>
+
+{{div col|colwidth=22em}}
+* [[Lloyd Bridges]] - Actor
+* [[Richard Jaeckel]] - Character actor
+* [[Saul Chaplin]] – Composer/Musical Director
+* [[Stanley Cortez]] – Cinematographer
+* [[William Hickey (actor)|William Hickey]] - Actor
+* [[Paul Jarrico]] – Screenwriter
+* [[Dorothy Kingsley]] – Screenwriter
+* [[Sydney Guilaroff]] – Hairstylist
+* [[William Reynolds (film editor)|William H. Reynolds]] – Editor
+* [[Billie Dove]] - Actress
+* [[Jacques Cousteau]] – Filmmaker
+* [[Stubby Kaye]] - Actor, comedian
+* [[Red Skelton]] - Comedy entertainer
+* [[Dawn Steel]] – Executive
+* [[Toshiro Mifune]] - Japanese actor
+* [[Brian Keith]] - Actor
+* [[Chris Farley]] - Actor, comedian
+* [[Leo Jaffe]] – Executive
+* [[Samuel Fuller]] – Director
+* [[Burgess Meredith]] - Actor
+* [[J. T. Walsh]] - Character actor
+* [[Robert Mitchum]] - Actor
+* [[James Stewart]] - Actor
+{{div col end}}
+
+==See also==
+{{Portal|Film|Los Angeles}}
+* [[4th Screen Actors Guild Awards]]
+* [[18th Golden Raspberry Awards]]
+* [[40th Grammy Awards]]
+* [[51st British Academy Film Awards]]
+* [[52nd Tony Awards]]
+* [[55th Golden Globe Awards]]
+* [[List of submissions to the 70th Academy Awards for Best Foreign Language Film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist|30em}}
+
+==Bibliography==
+{{refbegin}}
+
+*{{Citation
+ |last=Bona
+ |first=Damien
+ |title=Inside Oscar 2
+ |year=2002
+ |isbn=0-345-44970-3
+ |location=New York, United States
+ |publisher=[[Ballantine Books]]
+ |url=https://archive.org/details/insideoscar200bona
+ }}
+*{{cite book
+ |last=Osborne
+ |first=Robert
+ |title=80 Years of the Oscar: The Complete History of the Academy Awards
+ |year=2008
+ |isbn=978-0-7892-0992-4
+ |location=New York, United States
+ |publisher=[[Abbeville Publishing Group]]
+ }}
+*{{Citation
+ |last=Pond
+ |first=Steve
+ |title=The Big Show: High Times and Dirty Dealings Backstage at the Academy Awards
+ |year=2005
+ |isbn=0-571-21193-3
+ |location=New York, United States
+ |publisher=[[Faber and Faber]]
+ |url=https://archive.org/details/bigshowhightimes00pond
+ }}
+*{{Citation
+ |last=Symons
+ |first=Mitchell
+ |title=That Book ...of Perfectly Useless Information
+ |year=2004
+ |isbn=978-0-06-073254-7
+ |location=New York, United States 
+ |publisher=[[HarperCollins]]
+}}
+
+{{refend}}
+
+==External links==
+'''Official websites'''
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=2009-03-04 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=2009-01-22 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=2018-10-02 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+'''Analysis'''
+* [http://www.filmsite.org/aa97.html 1997 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20131102180641/http://www.filmsite.org/aa97.html |date=2013-11-02 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/1998 Academy Awards, USA: 1998] {{Webarchive|url=https://web.archive.org/web/20171206062207/http://www.imdb.com/event/ev0000003/1998 |date=2017-12-06 }} [[Internet Movie Database]]
+
+'''Other resources'''
+* {{IMDb title|0284808|The 70th Annual Academy Awards}}
+
+{{Academy Awards Chron|state=autocollapse}}
+
+{{DEFAULTSORT:Academy Awards, 70th}}
+[[Category:1997 film awards]]
+[[Category:1998 in American cinema]]
+[[Category:Academy Awards ceremonies]]
+[[Category:1998 in Los Angeles]]
+[[Category:March 1998 in the United States]]
+[[Category:1998 awards in the United States|Academy]]
+[[Category:Television shows directed by Louis J. Horvitz]]

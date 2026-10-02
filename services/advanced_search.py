@@ -20,7 +20,7 @@ SUPPORTED_CRITERIA = {
     "discover": {
         "title", "genre", "person", "keyword", "year", "rating",
         "minimum_votes", "language", "country", "runtime", "viewing_status",
-        "movie_list", "availability",
+        "movie_list", "availability", "tv_status",
     },
 }
 REPEATABLE_CRITERIA = {"genre", "person", "keyword", "movie_list", "resolution", "library_source"}
@@ -39,7 +39,7 @@ SORT_KEYS = {
 CRITERION_ORDER = [
     "title", "genre", "person", "keyword", "year", "rating", "minimum_votes",
     "language", "country", "runtime", "viewing_status", "movie_list",
-    "resolution", "library_source", "availability",
+    "resolution", "library_source", "availability", "tv_status",
 ]
 
 
@@ -167,12 +167,13 @@ def _normalize_value(criterion_type, value, media_type="movie"):
         return {"value": _integer(value.get("value"), "Minimum votes", 0, 10_000_000)}
     if criterion_type == "runtime":
         return _runtime_value(value)
-    if criterion_type in {"viewing_status", "resolution", "library_source", "availability"}:
+    if criterion_type in {"viewing_status", "resolution", "library_source", "availability", "tv_status"}:
         normalized = _identity_value(value, criterion_type, media_type)
         allowed = {
             "viewing_status": {"watched", "unwatched", "watchlist"} | ({"in_progress"} if media_type == "tv" else set()),
             "resolution": {"upgrade", "4k", "1080p", "720p", "below-720p"},
             "availability": {"owned", "unowned"},
+            "tv_status": {"0", "1", "2", "3", "4", "5"},
         }.get(criterion_type)
         if allowed is not None and normalized["id"] not in allowed:
             _fail(f"Unknown {criterion_type} value")
@@ -220,6 +221,8 @@ def normalize_query(query, expected_scope=None, *, media_type="movie"):
         criterion_type = _text(raw_group.get("type"), "Criterion type", 40).lower()
         if criterion_type not in SUPPORTED_CRITERIA[scope]:
             _fail(f"Criterion {criterion_type or '(missing)'} is not supported in {scope}")
+        if criterion_type == "tv_status" and media_type != "tv":
+            _fail("Series status is only supported for TV Discover")
         if criterion_type in seen_types:
             _fail(f"Duplicate {criterion_type} group")
         seen_types.add(criterion_type)

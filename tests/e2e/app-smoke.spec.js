@@ -180,7 +180,7 @@ async function mockCardParityApis(page, options = {}) {
 const workspaces = [
   ['/', 'heading', 'Home'],
   ['/library', 'heading', 'Movie View'],
-  ['/movie-lists', 'heading', 'Movie Lists'],
+  ['/movie-lists', 'heading', 'Lists'],
   ['/cleanup', 'heading', /^Library Maintenance/],
   ['/discover', 'heading', 'Discover'],
   ['/ai-control', 'heading', /^AI Control/],
@@ -301,7 +301,7 @@ test('release watcher keeps a three-row preview while View all and Following exp
   await releasePanel.getByRole('button', { name: 'Scan followed releases' }).click();
   await expect.poll(() => fullScanRequests).toBe(2);
 
-  await page.getByRole('button', { name: 'Movie Lists' }).click();
+  await page.getByRole('button', { name: 'Lists', exact: true }).click();
   const followingList = page.getByRole('button', { name: 'Following 12 movies' });
   await expect(followingList).toBeVisible();
   await followingList.click();
@@ -1881,6 +1881,46 @@ test('Library collection never shows a false zero and opens the full collection 
   await expect(libraryCard.getByText('0 movies', { exact: false })).toHaveCount(0);
 });
 
+test('Discover collection ignores a prior movie search and distinguishes filtered from empty parts', async ({ page }) => {
+  await mockCardParityApis(page);
+  await page.route('**/api/library/details**', (route) => route.fulfill({
+    json: { item: parityDeferredDetails, catalog_generation: 1 }
+  }));
+
+  await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  const search = page.getByRole('textbox', { name: 'Search TMDB movies' });
+  await search.fill(parityMovie.title);
+  await page.getByRole('button', { name: 'Search', exact: true }).click();
+  const rootCard = page.locator('.discover-movie-card').filter({ hasText: parityMovie.title });
+  await rootCard.getByRole('heading', { name: parityMovie.title }).click();
+  const collectionButton = rootCard.getByRole('button', { name: /SQL Collection/ });
+  await expect(collectionButton).toBeVisible();
+  await collectionButton.click();
+
+  await expect(search).toHaveValue('');
+  for (const movie of parityCollectionParts) {
+    await expect(page.getByRole('heading', { name: movie.title, exact: true })).toBeVisible();
+  }
+  await expect(page.locator('.discover-movie-card')).toHaveCount(3);
+
+  await page.getByRole('combobox', { name: 'Genre' }).selectOption('27');
+  await expect(page.getByText('No collection movies match the active Discover filters for SQL Collection.')).toBeVisible();
+  await expect(page.getByText('TMDB returned no collection members for this collection.')).toHaveCount(0);
+  await page.getByRole('combobox', { name: 'Genre' }).selectOption('');
+  await expect(page.locator('.discover-movie-card')).toHaveCount(3);
+
+  await page.getByRole('button', { name: 'Back', exact: true }).click();
+  await expect(search).toHaveValue(parityMovie.title);
+  await expect(page.locator('.discover-movie-card')).toHaveCount(1);
+
+  await page.route('**/api/tmdb/collection**', (route) => route.fulfill({ json: {
+    id: '7001', name: 'SQL Collection', parts: [], curation_generation: 1
+  } }));
+  await rootCard.getByRole('button', { name: /SQL Collection/ }).click();
+  await expect(page.getByText('No TMDB collection movies found for SQL Collection.')).toBeVisible();
+  await expect(page.getByText('TMDB returned no collection members for this collection.')).toBeVisible();
+});
+
 test('Keyword modes surface their authoritative SQL and TMDB errors', async ({ page }) => {
   await page.route('**/api/library?view=keywords*', (route) => route.fulfill({
     status: 500,
@@ -2164,6 +2204,111 @@ test('Pick relationship browsing uses shared Previous and Next replacement pages
 
   await page.getByRole('button', { name: 'Back', exact: true }).click();
   await expect(page.getByText(pickMovie.title, { exact: true })).toBeVisible();
+});
+
+test('movie credit Filmography opens all credits while the card keeps Discover refinements', async ({ page }) => {
+  const rootMovie = {
+    tmdb_id: '99101', title: 'Filmography Root', year: '2024', poster_url: '',
+    genres: ['Horror'], tmdb_rating: '7.1', tmdb_vote_count: 200,
+    plot: 'A movie with a cast credit.'
+  };
+  const creditMovie = {
+    tmdb_id: '99102', title: 'Complete Actor Credit', year: '2023', poster_url: '',
+    genres: ['Drama'], tmdb_rating: '7.3', tmdb_vote_count: 120,
+    plot: 'An unfiltered credit.'
+  };
+  const personRequests = [];
+  const refinedPersonQueries = [];
+
+  await page.route('**/api/tmdb/discover**', (route) => {
+    if (new URL(route.request().url()).pathname.endsWith('/advanced')) {
+      const query = route.request().postDataJSON()?.query;
+      if (query?.groups?.some((group) => group.type === 'person')) refinedPersonQueries.push(query);
+      return route.fulfill({ json: {
+        results: query?.groups?.some((group) => group.type === 'person') ? [] : [rootMovie],
+        page: 1, page_size: 39, total_pages: 1,
+        total_results: query?.groups?.some((group) => group.type === 'person') ? 0 : 1
+      } });
+    }
+    return route.fulfill({ json: { results: [rootMovie], page: 1, page_size: 39, total_pages: 1, total_results: 1 } });
+  });
+  await page.route('**/api/tmdb/details**', (route) => route.fulfill({ json: {
+    ...rootMovie, cast: [{ id: '99103', name: 'Filmography Actor', character: 'Lead' }],
+    directors: [], writers: [], keywords: []
+  } }));
+  await page.route('**/api/tmdb/person_movies**', (route) => {
+    personRequests.push(new URL(route.request().url()).searchParams);
+    return route.fulfill({ json: {
+      results: [creditMovie], page: 1, page_size: 39, total_pages: 1,
+      total_results: 1, role: 'actor', person_id: '99103'
+    } });
+  });
+  await page.route('**/api/library/check', (route) => route.fulfill({ json: { results: [], catalog_generation: 1 } }));
+
+  await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await page.getByLabel('Genre', { exact: true }).selectOption('27');
+  await page.getByLabel('Production country').selectOption('FR');
+  const rootCard = page.locator('.discover-movie-card').filter({ hasText: rootMovie.title });
+  await expect(rootCard).toBeVisible();
+  await rootCard.getByRole('heading', { name: rootMovie.title }).click();
+  const actorCard = rootCard.locator('.person-card').filter({ hasText: 'Filmography Actor' });
+  await expect(actorCard).toBeVisible();
+  await actorCard.getByRole('button', { name: 'Open filmography for Filmography Actor' }).click();
+
+  await expect(page.getByText(creditMovie.title, { exact: true })).toBeVisible();
+  await expect(page.getByLabel('Genre', { exact: true })).toHaveValue('');
+  await expect(page.getByLabel('Production country')).toHaveValue('');
+  await expect(page.getByLabel('Library ownership')).toHaveValue('all');
+  expect(personRequests).toHaveLength(1);
+  expect(personRequests[0].get('person_id')).toBe('99103');
+  expect(personRequests[0].get('role')).toBe('actor');
+  expect(refinedPersonQueries).toHaveLength(0);
+
+  await page.getByLabel('Genre', { exact: true }).selectOption('27');
+  await expect(page.getByText('No movies match the active Discover filters for Filmography Actor.')).toBeVisible();
+  expect(refinedPersonQueries).toHaveLength(1);
+
+  await page.getByRole('button', { name: 'Back', exact: true }).click();
+  await expect(page.getByLabel('Genre', { exact: true })).toHaveValue('27');
+  await expect(page.getByLabel('Production country')).toHaveValue('FR');
+  const restoredRootCard = page.locator('.discover-movie-card').filter({ hasText: rootMovie.title });
+  await expect(restoredRootCard).toBeVisible();
+  await expect(restoredRootCard).toHaveClass(/unified-movie-card-expanded/);
+  const restoredActorCard = restoredRootCard.locator('.person-card').filter({ hasText: 'Filmography Actor' });
+  await restoredActorCard.click();
+  await expect(page.getByText('No movies match the active Discover filters for Filmography Actor.')).toBeVisible();
+  expect(refinedPersonQueries).toHaveLength(2);
+  expect(refinedPersonQueries[1].groups.find((group) => group.type === 'genre')?.values[0]?.id).toBe('27');
+  expect(refinedPersonQueries[1].groups.find((group) => group.type === 'country')?.values[0]?.id).toBe('FR');
+});
+
+test('Library Filmography opens full credits even when Discover has active filters', async ({ page }) => {
+  await mockCardParityApis(page);
+  await page.route('**/api/library/details**', (route) => route.fulfill({
+    json: { item: parityDeferredDetails, catalog_generation: 1 }
+  }));
+  let creditRequests = 0;
+  await page.route('**/api/tmdb/person_movies**', (route) => {
+    creditRequests += 1;
+    return route.fulfill({ json: {
+      results: [parityCollectionParts[1]], page: 1, page_size: 39,
+      total_pages: 1, total_results: 1, role: 'actor', person_id: '1001'
+    } });
+  });
+
+  await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await page.getByLabel('Genre', { exact: true }).selectOption('27');
+  await page.getByLabel('Production country').selectOption('FR');
+  await page.getByRole('button', { name: 'Library', exact: true }).click();
+  const libraryCard = page.locator('.library-movie-card').filter({ hasText: parityMovie.title });
+  await libraryCard.getByRole('heading', { name: parityMovie.title }).click();
+  await libraryCard.getByRole('button', { name: 'Open filmography for SQL Cast Member', exact: true }).click();
+
+  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByText(parityCollectionParts[1].title, { exact: true })).toBeVisible();
+  await expect(page.getByLabel('Genre', { exact: true })).toHaveValue('');
+  await expect(page.getByLabel('Production country')).toHaveValue('');
+  expect(creditRequests).toBe(1);
 });
 
 test('Library credit clicks load the people projection before filtering owned work', async ({ page }) => {
@@ -2551,7 +2696,7 @@ test('bulk Find sources keeps owned movies as upgrades and switches the actual q
 test('Maintenance tabs remain interactive after the audit loads', async ({ page }) => {
   await page.goto('/cleanup', { waitUntil: 'domcontentloaded' });
   const storage = page.getByRole('tab', { name: 'Storage' });
-  const identity = page.getByRole('tab', { name: 'Identity' });
+  const identity = page.getByRole('tab', { name: 'Identity', exact: true });
 
   await expect(storage).toHaveAttribute('aria-selected', 'true');
   await identity.click();
@@ -2905,13 +3050,18 @@ test('Library unifies resolution filtering and right-aligns its compact filter a
     const hide = toolbar.querySelector('.library-hide-filters').getBoundingClientRect();
     const reset = toolbar.querySelector('.library-reset-filters').getBoundingClientRect();
     return {
-      columnCount: getComputedStyle(toolbar).gridTemplateColumns.split(' ').length,
+      display: getComputedStyle(toolbar).display,
       filterRows: new Set(selects.map((select) => Math.round(select.getBoundingClientRect().top))).size,
-      iconsShareRightEdge: Math.round(hide.right) === Math.round(reset.right),
-      hideAboveReset: hide.top < reset.top,
+      iconsShareRow: Math.round(hide.top) === Math.round(reset.top),
+      noOverflow: toolbar.scrollWidth <= toolbar.clientWidth,
+      languageHidden: ![...toolbar.querySelectorAll('option')].some((option) => option.textContent === 'All languages'),
     };
   });
-  expect(movieLayout).toEqual({ columnCount: 6, filterRows: 2, iconsShareRightEdge: true, hideAboveReset: true });
+  expect(movieLayout.display).toBe('flex');
+  expect(movieLayout.filterRows).toBeLessThanOrEqual(2);
+  expect(movieLayout.iconsShareRow).toBe(true);
+  expect(movieLayout.noOverflow).toBe(true);
+  expect(movieLayout.languageHidden).toBe(true);
 
   await page.getByRole('button', { name: 'File View', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'File View', exact: true })).toBeVisible();
@@ -3014,11 +3164,11 @@ test('every stateful workspace preserves its page state after sidebar navigation
   await openSection('Discover');
   await page.getByLabel('Library ownership').selectOption('owned');
 
-  await openSection('Movie Lists');
+  await openSection('Lists');
   await page.getByPlaceholder('Search the selected list...').fill('parity list state');
 
   await openSection('Maintenance');
-  await page.getByRole('tab', { name: 'Identity' }).click();
+  await page.getByRole('tab', { name: 'Identity', exact: true }).click();
   await page.getByPlaceholder('Search files, paths, or catalog titles...').fill('identity state');
   await page.locator('.workspace-panel:visible').evaluate((panel) => panel.style.minHeight = '1800px');
   const maintenanceScrollTop = await page.locator('main.workspace').evaluate((workspace) => {
@@ -3045,10 +3195,10 @@ test('every stateful workspace preserves its page state after sidebar navigation
   await expect(page.getByLabel('Library resolution filter')).toHaveValue('upgrade');
   await openSection('Discover');
   await expect(page.getByLabel('Library ownership')).toHaveValue('owned');
-  await openSection('Movie Lists');
+  await openSection('Lists');
   await expect(page.getByPlaceholder('Search the selected list...')).toHaveValue('parity list state');
   await openSection('Maintenance');
-  await expect(page.getByRole('tab', { name: 'Identity' })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByRole('tab', { name: 'Identity', exact: true })).toHaveAttribute('aria-selected', 'true');
   await expect(page.getByPlaceholder('Search files, paths, or catalog titles...')).toHaveValue('identity state');
   await expect.poll(() => page.locator('main.workspace').evaluate((workspace) => workspace.scrollTop)).toBe(maintenanceScrollTop);
   await openSection('AI Control');

@@ -1,0 +1,395 @@
+{{oscars short description|films-year=1971}}
+{{use American English|date=May 2020}}
+{{use mdy dates|date=May 2020}}
+{{Infobox film awards
+| number = 44
+| award = Academy Awards
+| image = 44th Academy Awards.jpg
+| date = April 10, 1972
+| site = [[Dorothy Chandler Pavilion]], <br>[[Los Angeles]], [[California]]
+| host = [[Helen Hayes]],<br /> [[Alan King]],<br /> [[Sammy Davis Jr.]]<br /> and [[Jack Lemmon]]
+| producer = [[Howard W. Koch]]
+| director = [[Marty Pasetta]]
+| best_picture = ''[[The French Connection (film)|The French Connection]]''
+| most_wins = ''The French Connection'' (5)
+| most_nominations = ''[[Fiddler on the Roof (film)|Fiddler on the Roof]]'', ''The French Connection'', and ''[[The Last Picture Show]]'' (8)
+| network = [[NBC]]
+| duration = 
+| last = 43rd
+| next = 45th
+}}
+The '''44th Academy Awards''' were presented April 10, 1972, at the [[Dorothy Chandler Pavilion]] in Los Angeles.  The ceremonies were presided over by [[Helen Hayes]], [[Alan King]], [[Sammy Davis Jr.]], and [[Jack Lemmon]]. One of the highlights of the evening was one of the last public appearances of [[Betty Grable]], who died the following year. She appeared alongside one of her leading men from the 1940s, singer [[Dick Haymes]], to present the musical scoring awards. This was the first time in Awards history that the nominees were shown in superimposed pictures while being announced. Around seventy-five million viewers watched the ceremony.<ref name="Oscars '71 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/846/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=846 |isbn=0-385-04060-1}}</ref>
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = William Friedkin (cropped).jpg
+| caption1          = [[William Friedkin]], Best Director winner
+| image2            = Gene Hackman - 1972.jpg
+| caption2          = [[Gene Hackman]], Best Actor winner
+| image3            = Jane Fonda - Sunday - 1963.JPG
+| caption3          = [[Jane Fonda]], Best Actress winner
+| image4            = Ben Johnson The Wild Bunch publicity photo.JPG
+| caption4          = [[Ben Johnson (actor)|Ben Johnson]], Best Supporting Actor winner
+| image5            = Cloris Leachman 1970.JPG
+| caption5          = [[Cloris Leachman]], Best Supporting Actress winner
+| image6            = Paddy Chayefsky 1956 NBC publicity.jpg
+| caption6          = [[Paddy Chayefsky]], Best Story and Screenplay Based on Factual Material or Material Not Previously Produced or Published winner
+| image7            = 
+| caption7          = [[Ernest Tidyman]], Best Screenplay Based on Material from Another Medium winner
+| image8            = Il generale Della Rovere (1959) Vittorio De Sica (cropped).png
+| caption8          = [[Vittorio De Sica]], Best Foreign Language Film winner
+| image9            = Yvonne Blake en los Premios Goya 2017.jpg
+| caption9          = [[Yvonne Blake]], Best Costume Design co-winner
+| image10           = Michel Legrand Cabourg 2015.jpg
+| caption10         = [[Michel Legrand]], Best Original Dramatic Score winner
+| image11           = John Williams with Boston Pops-1.jpg
+| caption11         = [[John Williams]], Best Scoring: Adaptation and Original Song Score winner
+| image12           = Issac Hayes 1998.jpg
+| caption12         = [[Isaac Hayes]], Best Song Original for the Picture winner
+| image13           = 
+| caption13         = [[John Box]], Best Art Direction co-winner
+| image14           = Gil Parrondo in Chipiona, Spain.jpg
+| caption14         = [[Gil Parrondo]], Best Art Direction co-winner
+}}
+
+=== Awards ===
+Nominations announced on February 22, 1972. Winners are listed first and highlighted in boldface.<ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1971" in the "Award Year(s)" drop-down menu and press "Search".</ref><ref name="Oscars1972">{{cite web|url=http://www.oscars.org/oscars/ceremonies/1972 |title=The 44th Academy Awards (1972) Nominees and Winners |access-date=2011-12-06 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20141111072026/http://www.oscars.org/oscars/ceremonies/1972 |archive-date=2014-11-11 }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[The French Connection (film)|The French Connection]]''&nbsp;– [[Philip D'Antoni]], producer'''
+**''[[A Clockwork Orange (film)|A Clockwork Orange]]''&nbsp;– [[Stanley Kubrick]], producer
+**''[[Fiddler on the Roof (film)|Fiddler on the Roof]]''&nbsp;– [[Norman Jewison]], producer
+**''[[The Last Picture Show]]''&nbsp;– [[Stephen J. Friedman (producer)|Stephen J. Friedman]], producer
+**''[[Nicholas and Alexandra]]''&nbsp;– [[Sam Spiegel]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[William Friedkin]]&nbsp;– ''[[The French Connection (film)|The French Connection]]'''''
+**[[Stanley Kubrick]]&nbsp;– ''[[A Clockwork Orange (film)|A Clockwork Orange]]''
+**[[Norman Jewison]]&nbsp;– ''[[Fiddler on the Roof (film)|Fiddler on the Roof]]''
+**[[Peter Bogdanovich]]&nbsp;– ''[[The Last Picture Show]]''
+**[[John Schlesinger]]&nbsp;– ''[[Sunday Bloody Sunday (film)|Sunday Bloody Sunday]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Gene Hackman]]&nbsp;– ''[[The French Connection (film)|The French Connection]]'' as [[Jimmy "Popeye" Doyle|Det. Jimmy "Popeye" Doyle]]'''
+**[[Peter Finch]]&nbsp;– ''[[Sunday Bloody Sunday (film)|Sunday Bloody Sunday]]'' as Dr. Daniel Hirsch
+**[[Walter Matthau]]&nbsp;– ''[[Kotch]]'' as Joseph P. Kotcher
+**[[George C. Scott]]&nbsp;– ''[[The Hospital]]'' as Dr. Herbert "Herb" Bock
+**[[Chaim Topol]]&nbsp;– ''[[Fiddler on the Roof (film)|Fiddler on the Roof]]'' as [[Tevye]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Jane Fonda]]&nbsp;– ''[[Klute]]'' as Bree Daniels'''
+**[[Julie Christie]]&nbsp;– ''[[McCabe & Mrs. Miller]]'' as Constance Miller
+**[[Glenda Jackson]]&nbsp;– ''[[Sunday Bloody Sunday (film)|Sunday Bloody Sunday]]'' as Alex Greville
+**[[Vanessa Redgrave]]&nbsp;– ''[[Mary, Queen of Scots (1971 film)|Mary, Queen of Scots]]'' as [[Mary, Queen of Scots]]
+**[[Janet Suzman]]&nbsp;– ''[[Nicholas and Alexandra]]'' as [[Alexandra Feodorovna (Alix of Hesse)|Empress Alexandra]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Ben Johnson (actor)|Ben Johnson]]&nbsp;– ''[[The Last Picture Show]]'' as Sam the Lion'''
+**[[Jeff Bridges]]&nbsp;– ''[[The Last Picture Show]]'' as Duane Jackson
+**[[Leonard Frey]]&nbsp;– ''[[Fiddler on the Roof (film)|Fiddler on the Roof]]'' as Motel Kamzoil
+**[[Richard Jaeckel]]&nbsp;– ''[[Sometimes a Great Notion (film)|Sometimes a Great Notion]]'' as Joe Ben Stamper
+**[[Roy Scheider]]&nbsp;– ''[[The French Connection (film)|The French Connection]]'' as Det. Buddy 'Cloudy' Russo
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Cloris Leachman]]&nbsp;– ''[[The Last Picture Show]]'' as Ruth Popper'''
+**[[Ann-Margret]]&nbsp;– ''[[Carnal Knowledge (film)|Carnal Knowledge]]'' as Bobbie
+**[[Ellen Burstyn]]&nbsp;– ''[[The Last Picture Show]]'' as Lois Farrow
+**[[Barbara Harris (actress)|Barbara Harris]]&nbsp;– ''[[Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?]]'' as Allison Densmore
+**[[Margaret Leighton]]&nbsp;– ''[[The Go-Between (1971 film)|The Go-Between]]'' as Mrs. Maudsley
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Based on Factual Material or Material Not Previously Published or Produced)]]}}
+*'''''[[The Hospital]]''&nbsp;– [[Paddy Chayefsky]]'''
+**''[[Investigation of a Citizen Above Suspicion]]''&nbsp;– [[Elio Petri]] and [[Ugo Pirro]]
+**''[[Klute]]''&nbsp;– [[Andy Lewis (screenwriter)|Andy Lewis]] and Dave Lewis
+**''[[Summer of '42]]''&nbsp;– [[Herman Raucher]]
+**''[[Sunday Bloody Sunday (film)|Sunday Bloody Sunday]]''&nbsp;– [[Penelope Gilliatt]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*'''''[[The French Connection (film)|The French Connection]]''&nbsp;– [[Ernest Tidyman]] based on [[The French Connection (book)|the book]] by [[Robin Moore]]'''
+**''[[A Clockwork Orange (film)|A Clockwork Orange]]''&nbsp;– [[Stanley Kubrick]] based on [[A Clockwork Orange (novel)|the novel]] by [[Anthony Burgess]]
+**''[[The Conformist (1970 film)|The Conformist]]''&nbsp;– [[Bernardo Bertolucci]] based on the novel ''[[The Conformist (novel)|Il Conformista]]'' by [[Alberto Moravia]]
+**''[[The Garden of the Finzi-Continis (film)|The Garden of the Finzi-Continis]]''&nbsp;– Vittorio Bonicelli and [[Ugo Pirro]] based on [[The Garden of the Finzi-Continis|the novel]] by [[Giorgio Bassani]]
+**''[[The Last Picture Show]]''&nbsp;– [[Peter Bogdanovich]] and [[Larry McMurtry]] based on the novel by Larry McMurtry
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 44th Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[The Garden of the Finzi-Continis (film)|The Garden of the Finzi-Continis]]'' ([[List of Italian submissions for the Academy Award for Best Foreign Language Film|Italy]]) in [[Italian language|Italian]]&nbsp;– [[Vittorio De Sica]]'''
+** ''[[Dodes'ka-den]]'' ([[List of Japanese submissions for the Academy Award for Best Foreign Language Film|Japan]]) in [[Japanese language|Japanese]]&nbsp;– [[Akira Kurosawa]]
+** ''[[The Emigrants (1971 film)|The Emigrants]]'' ([[List of Swedish submissions for the Academy Award for Best Foreign Language Film|Sweden]]) in [[Swedish language|Swedish]]&nbsp;– [[Jan Troell]]
+** ''[[The Policeman]]'' ([[List of Israeli submissions for the Academy Award for Best Foreign Language Film|Israel]]) in [[Hebrew language|Hebrew]]&nbsp;– [[Ephraim Kishon]]
+** ''[[Tchaikovsky (film)|Tchaikovsky]]'' ([[List of Russian submissions for the Academy Award for Best Foreign Language Film|USSR]]) in [[Russian language|Russian]]&nbsp;– [[Igor Talankin]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[The Hellstrom Chronicle]]''&nbsp;– [[Walon Green]]'''
+**''[[Alaska Wilderness Lake]]''&nbsp;– [[Alan Landsburg]]
+**''[[On Any Sunday]]''&nbsp;– [[Bruce Brown (director)|Bruce Brown]]
+**''[[Ra (1972 film)|Ra]]''&nbsp;– Lennart Ehrenborg and [[Thor Heyerdahl]]
+**''[[The Sorrow and the Pity]]''&nbsp;– [[Marcel Ophüls]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Sentinels of Silence]]''&nbsp;– Robert Amram and Manuel Arango'''
+**''[[Adventures in Perception]]''&nbsp;– Han van Gelder
+**''[[Art Is...]]''&nbsp;– [[Julian Krainin]] and DeWitt L. Sage Jr.
+**''[[The Numbers Start with the River]]''&nbsp;– [[Donald Wrye]]
+**''[[Somebody Waiting]]''&nbsp;– Sherwood Omens, [[Hal Riney]] and [[Dick Snider]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[Sentinels of Silence]]''&nbsp;– Robert Amram and Manuel Arango'''
+**''Good Morning''&nbsp;– Denny Evans and Ken Greenwald
+**''The Rehearsal''&nbsp;– [[Stephen Verona|Stephen F. Verona]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Animated)]]}}
+*'''''[[The Crunch Bird]]''&nbsp;– [[Ted Petok]]'''
+**''[[Evolution (1971 film)|Evolution]]''&nbsp;– [[Michael Mills (Canadian producer)|Michael Mills]]
+**''[[The Selfish Giant (1972 film)|The Selfish Giant]]''&nbsp;– Peter Sander and Murray Shostak
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Dramatic Score)]]}}
+*'''''[[Summer of '42]]''&nbsp;– [[Michel Legrand]]'''
+**''[[Mary, Queen of Scots (1971 film)|Mary, Queen of Scots]]''&nbsp;– [[John Barry (composer)|John Barry]]
+**''[[Nicholas and Alexandra]]''&nbsp;– [[Richard Rodney Bennett]]
+**''[[Shaft (1971 film)|Shaft]]''&nbsp;– [[Isaac Hayes]]
+**''[[Straw Dogs (1971 film)|Straw Dogs]]''&nbsp;– [[Jerry Fielding]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring: Adaptation and Original Song Score)]]}}
+*'''''[[Fiddler on the Roof (film)|Fiddler on the Roof]]''&nbsp;– Adapted by [[John Williams]]'''
+**''[[Bedknobs and Broomsticks]]''&nbsp;– Adapted by [[Irwin Kostal]]; Song Score by [[Sherman Brothers|The Sherman Brothers]]: [[Robert B. Sherman|Robert B.]] and [[Richard M. Sherman|Richard M.]]
+**''[[The Boy Friend (1971 film)|The Boy Friend]]''&nbsp;– Adapted by [[Peter Maxwell Davies]] and [[Peter Greenwell]]
+**''[[Tchaikovsky (film)|Tchaikovsky]]''&nbsp;– Adapted by [[Dimitri Tiomkin]]
+**''[[Willy Wonka & the Chocolate Factory]]''&nbsp;– Adapted by [[Walter Scharf]]; Song Score by [[Leslie Bricusse]] and [[Anthony Newley]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song -- Original for the Picture)]]}}
+* '''"[[Theme from Shaft]]" from ''[[Shaft (1971 film)|Shaft]]''&nbsp;– Music and Lyrics by [[Isaac Hayes]]'''
+** "[[The Age of Not Believing]]" from ''[[Bedknobs and Broomsticks]]''&nbsp;– Music and Lyrics by [[Sherman Brothers|Robert Sherman]] and [[Sherman Brothers|Richard Sherman]]
+** "[[All His Children]]" from ''[[Sometimes a Great Notion (film)|Sometimes a Great Notion]]''&nbsp;– Music by [[Henry Mancini]]; Lyrics by [[Alan and Marilyn Bergman]]
+** "[[Bless the Beasts and Children (song)|Bless the Beasts and Children]]" from ''[[Bless the Beasts and Children (film)|Bless the Beasts and Children]]''&nbsp;– Music and Lyrics by [[Perry Botkin Jr.]] and [[Barry De Vorzon]]
+** "Life Is What You Make It" from ''[[Kotch]]''&nbsp;– Music by [[Marvin Hamlisch]]; Lyrics by [[Johnny Mercer]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[Fiddler on the Roof (film)|Fiddler on the Roof]]''&nbsp;– [[David Hildyard (sound engineer)|David Hildyard]] and [[Gordon McCallum|Gordon K. McCallum]]'''
+** ''[[Diamonds Are Forever (film)|Diamonds Are Forever]]''&nbsp;– [[Gordon McCallum|Gordon K. McCallum]], [[John W. Mitchell]] and [[Al Overton|Alfred J. Overton]]
+** ''[[The French Connection (film)|The French Connection]]''&nbsp;– [[Chris Newman (sound engineer)|Christopher Newman]] and [[Theodore Soderberg (1923–2012)|Theodore Soderberg]]
+** ''[[Kotch]]''&nbsp;– [[Richard Portman]] and [[Jack Solomon (sound engineer)|Jack Solomon]]
+** ''[[Mary, Queen of Scots (1971 film)|Mary, Queen of Scots]]''&nbsp;– [[John Aldred (sound engineer)|John Aldred]] and [[Bob Jones (sound engineer)|Bob Jones]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Nicholas and Alexandra]]''&nbsp;– Art Direction: [[Ernest Archer (art director)|Ernest Archer]], [[John Box]], [[Jack Maxsted]] and [[Gil Parrondo]]; Set Decoration: [[Vernon Dixon]]'''
+**''[[The Andromeda Strain (film)|The Andromeda Strain]]''&nbsp;– Art Direction: [[Boris Leven]] and [[William H. Tuntke]]; Set Decoration: [[Ruby R. Levitt]]
+**''[[Bedknobs and Broomsticks]]''&nbsp;– Art Direction: [[Peter Ellenshaw]] and  [[John B. Mansbridge]]; Set Decoration: [[Hal Gausman]] and [[Emile Kuri]]
+**''[[Fiddler on the Roof (film)|Fiddler on the Roof]]''&nbsp;– Art Direction: [[Robert F. Boyle]] and [[Michael Stringer]]; Set Decoration: [[Peter Lamont]]
+**''[[Mary, Queen of Scots (1971 film)|Mary, Queen of Scots]]''&nbsp;– Art Direction: [[Terence Marsh]] and [[Robert Cartwright]]; Set Decoration: [[Peter Howitt (set decorator)|Peter Howitt]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Fiddler on the Roof (film)|Fiddler on the Roof]]''&nbsp;– [[Oswald Morris]]'''
+**''[[The French Connection (film)|The French Connection]]''&nbsp;– [[Owen Roizman]]
+**''[[The Last Picture Show]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert Surtees]]
+**''[[Nicholas and Alexandra]]''&nbsp;– [[Freddie Young]]
+**''[[Summer of '42]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert Surtees]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Nicholas and Alexandra]]''&nbsp;– [[Yvonne Blake]] and [[Antonio Castillo (costume designer)|Antonio Castillo]]'''
+**''[[Bedknobs and Broomsticks]]''&nbsp;– [[Bill Thomas (costume designer)|Bill Thomas]]
+**''[[Death in Venice (film)|Death in Venice]]''&nbsp;– [[Piero Tosi]]
+**''[[Mary, Queen of Scots (1971 film)|Mary, Queen of Scots]]''&nbsp;– [[Margaret Furse]]
+**''[[What's the Matter with Helen?]]''&nbsp;– [[Morton Haack]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[The French Connection (film)|The French Connection]]''&nbsp;– [[Gerald B. Greenberg]]'''
+** ''[[The Andromeda Strain (film)|The Andromeda Strain]]''&nbsp;– [[Stuart Gilmore]] (posthumous nomination) and [[John W. Holmes (film editor)|John W. Holmes]]
+** ''[[A Clockwork Orange (film)|A Clockwork Orange]]''&nbsp;– [[Bill Butler (film editor)|Bill Butler]]
+** ''[[Kotch]]''&nbsp;– [[Ralph E. Winters]]
+** ''[[Summer of '42]]''&nbsp;– [[Folmar Blangsted]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Visual Effects]]}}
+*'''''[[Bedknobs and Broomsticks]]''&nbsp;– [[Danny Lee (special effects artist)|Danny Lee]], [[Eustace Lycett]] and [[Alan Maley]]'''
+**''[[When Dinosaurs Ruled the Earth]]''&nbsp;– [[Jim Danforth]] and [[Roger Dicken]]
+|}
+
+=== Honorary Award ===
+{{stack|[[File:Chaplin oscar.JPG|thumb|right|[[Charlie Chaplin]] (right) receiving his [[Honorary Academy Award]] from [[Jack Lemmon]] (left).]]}}
+* To [[Charlie Chaplin|Charles Chaplin]] for the incalculable effect he has had in making motion pictures the art form of this century.
+Chaplin, who had been living in self-imposed exile in Switzerland for twenty years, went back to the United States to re-market his older films and to receive this award. When introduced to the audience, Chaplin received a twelve-minute [[standing ovation]], the longest in Academy Awards history.
+
+===Films with multiple wins and nominations===
+
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films that received multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="3" style="text-align:center" |8
+| ''[[Fiddler on the Roof (film)|Fiddler on the Roof]]''
+|-
+| ''[[The French Connection (film)|The French Connection]]''
+|-
+| ''[[The Last Picture Show]]''
+|-
+| style="text-align:center" |6
+| ''[[Nicholas and Alexandra]]''
+|-
+| rowspan="2" style="text-align:center" |5
+| ''[[Bedknobs and Broomsticks]]''
+|-
+| ''[[Mary, Queen of Scots (1971 film)|Mary, Queen of Scots]]''
+|-
+| rowspan="4" style="text-align:center" |4
+| ''[[A Clockwork Orange (film)|A Clockwork Orange]]''
+|-
+| ''[[Kotch]]''
+|-
+| ''[[Summer of '42]]''
+|-
+| ''[[Sunday Bloody Sunday (film)|Sunday Bloody Sunday]]''
+|-
+| rowspan="8" style="text-align:center" |2
+| ''[[The Andromeda Strain (film)|The Andromeda Strain]]''
+|-
+| ''[[The Garden of the Finzi-Continis (film)|The Garden of the Finzi-Continis]]''
+|-
+| ''[[The Hospital]]''
+|-
+| ''[[Klute]]''
+|-
+| ''[[Sentinels of Silence]]''
+|-
+| ''[[Shaft (1971 film)|Shaft]]''
+|-
+| ''[[Sometimes a Great Notion (film)|Sometimes a Great Notion]]''
+|-
+| ''[[Tchaikovsky (film)|Tchaikovsky]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films that received multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| style="text-align:center" |5
+| ''[[The French Connection (film)|The French Connection]]''
+|-
+| style="text-align:center" |3
+| ''[[Fiddler on the Roof (film)|Fiddler on the Roof]]''
+|-
+| rowspan="3" style="text-align:center" |2
+| ''[[The Last Picture Show]]''
+|-
+| ''[[Nicholas and Alexandra]]''
+|-
+| ''[[Sentinels of Silence]]''
+|}
+
+{{col-float-end}}
+
+==Presenters and performers==
+===Presenters (in order of appearance)===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+|{{sortname|Hank|Simms||nolink=0}} || Announcer for the 44th Academy Awards
+|-
+|{{sortname|Daniel|Taradash}} (AMPAS President) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+|{{sortname||Ann-Margret}}<br />[[John Gavin]] || Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+|{{sortname|Karen|Black}}<br />[[Richard Chamberlain]] || Presenters of the award for [[Academy Award for Best Visual Effects|Best Special Visual Effects]]
+|-
+|{{sortname|Timothy|Bottoms}}<br />[[Jennifer O'Neill]] || Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+|{{sortname|Red|Buttons}}<br />[[Jill St. John]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+|{{sortname|James|Caan}}<br />[[Joey Heatherton]] || Presenters of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]] and [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]]
+|-
+|{{sortname|Frank|Capra}}<br />[[Natalie Wood]] || Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+|{{sortname|Leslie|Caron}}<br />[[Jack Valenti]] || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+|{{sortname|Sandy|Duncan}}<br />[[Michael York]] || Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+|{{sortname|Betty|Grable}}<br />[[Dick Haymes]] || Presenters of the award for [[Academy Award for Best Original Score|Best Original Score (Dramatic)]] and [[Academy Award for Best Original Score|Best Score (Adaptation and Original Song)]]
+|-
+|{{sortname|Joel|Grey}} || Presenter of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+|{{sortname|Tennessee|Williams}} || Presenter of the awards for [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material from Another Medium]] and [[Academy Award for Best Original Screenplay|Best Screenplay Based on Factual Material or Material Not Previously Produced or Published]]
+|-
+|{{sortname|Gene|Hackman}}<br />[[Raquel Welch]] || Presenters of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+|{{sortname|Richard|Harris}}<br />[[Sally Kellerman]] || Presenters of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+|{{sortname|Cloris|Leachman}}<br />[[Richard Roundtree]] || Presenters of the award for [[Academy Award for Best Animated Short Film|Best Animated Short Subject]] and [[Academy Award for Best Live Action Short Film|Live Action Short Subject]]
+|-
+|{{sortname|Walter|Matthau}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+|{{sortname|Liza|Minnelli}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+|{{sortname|Joe|Namath}}<br />[[Cybill Shepherd]] || Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+|{{sortname|Jack|Nicholson}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|-
+|{{sortname|Daniel|Taradash}} || Presenter of the [[Academy Honorary Award]] to [[Charlie Chaplin]]
+|}
+
+===Performers (in order of appearance)===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+|{{sortname|Henry|Mancini}} || Musical arranger || Orchestral
+|-
+|{{sortname|Joel|Grey}} || Performer || "Lights, Camera, Action!"
+|-
+|{{sortname|The|Carpenters}} || Performer || "[[Bless the Beasts and Children (song)|Bless the Beasts and Children]]"
+|-
+|{{sortname|Isaac|Hayes}} || Performer || "[[Theme from Shaft]]"
+|-
+|{{sortname|Johnny|Mathis}} || Performer || "Life Is What You Make It"
+|-
+|{{sortname|Charley|Pride}} || Performer || "All His Children"
+|-
+|{{sortname|Debbie|Reynolds}} || Performer || "[[The Age of Not Believing]]"
+|-
+|{{sortname||Academy Awards Chorus|nolink=0}} || Performers || "[[Smile (Charlie Chaplin song)|Smile]]"
+|}
+
+==See also==
+* [[29th Golden Globe Awards]]
+* [[1971 in film]]
+* [[14th Grammy Awards]]
+* [[23rd Primetime Emmy Awards]]
+* [[24th Primetime Emmy Awards]]
+* [[25th British Academy Film Awards]]
+* [[26th Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 44}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1971 film awards]]
+[[Category:1972 in Los Angeles]]
+[[Category:1972 in American cinema]]
+[[Category:April 1972 in the United States]]
+[[Category:Television shows directed by Marty Pasetta]]

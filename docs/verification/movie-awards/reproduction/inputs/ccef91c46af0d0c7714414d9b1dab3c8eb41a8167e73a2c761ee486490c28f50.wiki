@@ -1,0 +1,196 @@
+{{Oscars short description|films-year=1928|films-year2=1929}}
+{{Use American English|date=June 2023}}
+{{Use mdy dates|date=September 2019}}
+{{Infobox film awards
+| image            = Mary Pickford Best Actress Coquette April 1930.jpg
+| caption          = Presenter [[William C. deMille]] (holding statuette) with Oscar winners [[Hanns Kräly]], [[Mary Pickford]], and [[Warner Baxter]] (left to right).
+| number           = 2
+| award            = Academy Awards
+| date             = April 3, 1930
+| site             = [[Ambassador Hotel (Los Angeles)|Ambassador Hotel]],<br />Los Angeles, California
+| host             = [[William C. deMille]]
+| best_picture     = ''[[The Broadway Melody]]''
+| most_wins        = Seven films each received one award.{{efn-ua|name=Seven|At the 2nd Academy Awards (1928{{ndash}}1929), no film received more than one award. Seven films each received one Academy Award of Merit. To date, this result has never been repeated in subsequent Academy Awards ceremonies.<ref name=OscarWinners/>}}
+| most_nominations = ''[[In Old Arizona]]'' and ''[[The Patriot (1928 film)|The Patriot]]'' (5)
+| last             = 1st
+| next             = 3rd
+}}
+
+The '''2nd Academy Awards''', presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS) on April 3, 1930, at an awards banquet in the Cocoanut Grove of the [[Ambassador Hotel (Los Angeles)|Ambassador Hotel]] in [[Los Angeles]], honored the best films released between August 1, 1928, and July 31, 1929.<ref name=LATimes>{{cite news |title=Academy Awards Acting Honors to Mary Pickford as 'Coquette' and Warner Baxter in 'Old Arizona' |url=https://www.newspapers.com/article/the-los-angeles-times-2d-aas-winners-193/134425356/ |access-date=January 18, 2026 |work=The Los Angeles Times |date=April 4, 1930 |pages=32}}</ref> This was the first Academy Awards ceremony broadcast on radio, by local station [[KNX (AM)|KNX]], Los Angeles.<ref name="Dunning">{{cite book |url=https://books.google.com/books?id=EwtRbXNca0oC&dq=%22The+Academy+Awards+Show%22&pg=PA4 |last=Dunning| first=John| author-link=John Dunning (detective fiction author) | title=On the Air: The Encyclopedia of Old-Time Radio| date=1998| publisher=Oxford University Press| location=New York, NY| isbn=978-0-19-507678-3| pages=4–5 | edition=Revised| access-date=2019-09-10}} </ref><ref name="Oscars '28-29 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/830/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=831 |isbn=0-385-04060-1}}</ref><ref>{{cite news |title=Academy Making Awards Tonight |url=https://www.newspapers.com/article/los-angeles-evening-citizen-news-academy/169591808/ |access-date=January 15, 2026 |work=Los Angeles Evening Citizen News |via=[[Newspapers.com]] |date=April 3, 1930 |page=2}}</ref> Over 300 attended the event, which included Academy members and guests.<ref name=LATimes/>
+
+The second ceremony included a number of changes from the first: most importantly, it was the first presentation for which the winners were not announced in advance, and the number of award categories was reduced from twelve to seven. It is unique in that there were never any official nominees; instead, AMPAS conducted further research and came up with a list of unofficial or de facto nominees using records of the films that the judges had given their opinions on. [[Chester Morris]] was the first nominee for [[Academy Award for Best Actor|Best Actor]] to be born in the 20th century.
+
+[[Mary Pickford]], a founding member of AMPAS and married to its first president,<ref name="Oscars '28-29 Notes"/> lobbied to be considered for the [[Academy Award for Best Actress|Best Actress]] award, inviting the judges over for tea at her home,<ref>{{cite book |last=Whitfield |first=Eileen |author-link=Eileen Whitfield |title=Pickford: The Woman Who Made Hollywood |year=1997 |publisher=University Press of Kentucky |location=Lexington, Ky. |isbn=978-0-8131-2045-4 |oclc=37465308|page=263|title-link=Pickford: The Woman Who Made Hollywood }}</ref> while other actresses being considered for the same award were not made aware of their status.<ref>{{cite news|title=The Actress and the Four-Letter Cliche|newspaper=[[The Guardian]]|location=London|date=April 28, 1972|page=13|last=White|first=Michael|author-link=Michael White (journalist)|quote=As the elder sister in ''Broadway Melody'' she got an Oscar nomination, which in all honesty she doesn't recall at all. 'So many people have said it that it must be true.'}}</ref>
+
+[[Jeanne Eagels]] became the first and, to date, only actress to be posthumously nominated for Best Actress, for ''[[The Letter (1929 film)|The Letter]]''.<ref>{{cite web |last=O'Connor |first=Clint |title=James Dean, Spencer Tracy among posthumous Oscar nods|publisher=[[The Plain Dealer]]|date=July 13, 2008|url=http://www.cleveland.com/movies/index.ssf/2008/07/james_dean_spencer_tracy_among.html|accessdate=February 23, 2014|url-status=dead|archiveurl=https://web.archive.org/web/20121014023959/http://www.cleveland.com/movies/index.ssf/2008/07/james_dean_spencer_tracy_among.html|archivedate=October 14, 2012}}</ref> ''[[The Divine Lady]]'' became the last film to win Best Director without receiving a Best Picture nomination.
+
+This is the only year in which no film won more than one Oscar. ''[[The Broadway Melody]]'' became the second of seven films to win Best Picture without a writing nomination (preceded by ''[[Wings (1927 film)|Wings]]'', and followed by ''[[Grand Hotel (1932 film)|Grand Hotel]]'', ''[[Cavalcade (1933 film)|Cavalcade]]'', ''[[Hamlet (1948 film)|Hamlet]]'', ''[[The Sound of Music (film)|The Sound of Music]]'', and ''[[Titanic (1997 film)|Titanic]]''), and the first of three to win Best Picture and nothing else (followed by ''Grand Hotel'' and ''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]'').
+
+== Winners and nominees==
+=== Awards ===
+{{Multiple image
+| align       = 
+| direction   = vertical
+| total_width = 150
+| image1      = Thalberg-portrait-LATimes.jpg
+| caption1    = [[Irving Thalberg]], Outstanding Picture co-winner
+| image2      = Frank Lloyd Best Director April 1930.jpg
+| caption2    = [[Frank Lloyd]], Best Director winner
+| image3      = Warner Baxter Best Actor April 1930.jpg
+| caption3    = [[Warner Baxter]], Best Actor winner
+| image4      = Mary Pickford at the Oscars 1930.jpg
+| caption4    = [[Mary Pickford]], Best Actress winner
+| image5      = Hans Kraly Best Screenplay April 1930 (crop).jpg
+| caption5    = [[Hanns Kräly]], Best Writing winner
+| image6      = Cedric Gibbons Best Art Direction April 1930.jpg
+| caption6    = [[Cedric Gibbons]], Best Art Direction winner
+| image7      = Clyde De Vinna.jpg
+| caption7    = [[Clyde De Vinna]], Best Cinematography winner
+}}
+
+Nominees were announced on October 31, 1929. Winners are listed first and highlighted in boldface.<ref name=OscarWinners>{{Cite web |url=https://www.oscars.org/oscars/ceremonies/1930 |title=The 2nd Academy Awards (1930) Nominees and Winners |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=March 11, 2024}}</ref>
+
+{| class=wikitable
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Picture]]}}
+* '''''[[The Broadway Melody]]''&nbsp;– [[Irving Thalberg]] and [[Lawrence Weingarten]] for [[Metro-Goldwyn-Mayer]]'''
+** ''[[Alibi (1929 film)|Alibi]]''&nbsp;– [[Roland West]] for [[United Artists]]
+** ''[[The Hollywood Revue|The Hollywood Revue of 1929]]''&nbsp;– Irving Thalberg and [[Harry Rapf]] for [[Metro-Goldwyn-Mayer]]
+** ''[[In Old Arizona]]''&nbsp;– [[Winfield Sheehan]] for [[Fox Film Corporation]]
+** ''[[The Patriot (1928 film)|The Patriot]]''&nbsp;– [[Ernst Lubitsch]] for [[Paramount Pictures]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Director]]}}
+* '''[[Frank Lloyd]]&nbsp;– ''[[The Divine Lady]]'''''
+** [[Harry Beaumont]]&nbsp;– ''[[The Broadway Melody]]''
+** Frank Lloyd&nbsp;– ''[[Drag (1929 film)|Drag]]''
+** [[Irving Cummings]]&nbsp;– ''[[In Old Arizona]]''
+** [[Lionel Barrymore]]&nbsp;– ''[[Madame X (1929 film)|Madame X]]''
+** [[Ernst Lubitsch]]&nbsp;– ''[[The Patriot (1928 film)|The Patriot]]''
+** Frank Lloyd&nbsp;– ''[[Weary River]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Warner Baxter]]&nbsp;– ''[[In Old Arizona]]'' as The Cisco Kid'''
+** [[George Bancroft (actor)|George Bancroft]]&nbsp;– ''[[Thunderbolt (1929 film)|Thunderbolt]]'' as Thunderbolt Jim Lang
+** [[Chester Morris]]&nbsp;– ''[[Alibi (1929 film)|Alibi]]'' as Chick Williams
+** [[Paul Muni]]&nbsp;– ''[[The Valiant (1929 film)|The Valiant]]'' as James Dyke
+** [[Lewis Stone]]&nbsp;– ''[[The Patriot (1928 film)|The Patriot]]'' as [[Peter Ludwig von der Pahlen|Count Pahlen]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Mary Pickford]]&nbsp;– ''[[Coquette (film)|Coquette]]'' as Norma Besant'''
+** [[Ruth Chatterton]]&nbsp;– ''[[Madame X (1929 film)|Madame X]]'' as Jacqueline Floriot
+** [[Betty Compson]]&nbsp;– ''[[The Barker]]'' as Carrie
+** [[Jeanne Eagels]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]])&nbsp;– ''[[The Letter (1929 film)|The Letter]]'' as Leslie Crosbie
+** [[Corinne Griffith]]&nbsp;– ''[[The Divine Lady]]'' as [[Emma, Lady Hamilton|Emma Hart]]
+** [[Bessie Love]]&nbsp;– ''[[The Broadway Melody]]'' as Harriet "Hank" Mahoney
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing]]}}
+* '''''[[The Patriot (1928 film)|The Patriot]]''&nbsp;– [[Hanns Kräly]], based on [[Ashley Dukes]]' translation of the play ''Der Patriot'' by [[Alfred Neumann (writer)|Alfred Neumann]], and the story "Paul I" by [[Dmitry Merezhkovsky]]'''
+** ''[[The Cop (1928 film)|The Cop]]''&nbsp;– [[Elliott J. Clawson|Elliot Clawson]]
+** ''[[In Old Arizona]]''&nbsp;– [[Tom Barry (screenwriter)|Tom Barry]], based on the story "[[The Cisco Kid#"The Caballero's Way" (short story)|The Caballero's Way]]" by [[O. Henry]]
+** ''[[The Last of Mrs. Cheyney (1929 film)|The Last of Mrs. Cheyney]]''&nbsp;– Hanns Kräly, based on [[The Last of Mrs. Cheyney (play)|the play]] by [[Frederick Lonsdale]]
+** ''[[The Leatherneck]]''&nbsp;– Elliot Clawson
+** ''[[Our Dancing Daughters]]''&nbsp;– [[Josephine Lovett]]
+** ''[[Sal of Singapore]]''&nbsp;– Elliot Clawson, based on the story "The Sentimentalists" by [[Dale Collins]]
+** ''[[Skyscraper (1928 film)|Skyscraper]]''&nbsp;– Elliot Clawson, based on a story by Dudley Murphy
+** ''[[The Valiant (1929 film)|The Valiant]]''&nbsp;– Tom Barry, based on [[The Valiant (play)|the play]] by [[Harold Everett Porter|Halworthy Hall]] and [[Robert Middlemass]]
+** ''[[A Woman of Affairs]]''&nbsp;– [[Bess Meredyth]], based on the novel ''The Green Hat'' by [[Michael Arlen]]
+** ''[[Wonder of Women]]''&nbsp;– Bess Meredyth, based on the novel ''Die Frau des Steffen Thromholt'' by [[Hermann Sudermann]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[The Bridge of San Luis Rey (1929 film)|The Bridge of San Luis Rey]]''&nbsp;– [[Cedric Gibbons]]'''
+** ''[[Alibi (1929 film)|Alibi]]''&nbsp;– [[William Cameron Menzies]]
+** ''[[The Awakening (1928 film)|The Awakening]]''&nbsp;– William Cameron Menzies
+** ''[[Dynamite (1929 film)|Dynamite]]''&nbsp;– [[Mitchell Leisen]]
+** ''[[The Patriot (1928 film)|The Patriot]]''&nbsp;– [[Hans Dreier]]
+** ''[[Street Angel (1928 film)|Street Angel]]''&nbsp;– [[Harry Oliver]]
+|-
+| valign="top" width="50%" colspan=2|
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[White Shadows in the South Seas]]''&nbsp;– [[Clyde De Vinna]]'''
+** ''[[4 Devils|Four Devils]]''&nbsp;– [[Ernest Palmer (American cinematographer)|Ernest Palmer]]
+** ''[[The Divine Lady]]''&nbsp;– [[John F. Seitz]]
+** ''[[In Old Arizona]]''&nbsp;– [[Arthur Edeson]]
+** ''[[Our Dancing Daughters]]''&nbsp;– [[George Barnes (cinematographer)|George Barnes]]
+** ''[[Street Angel (1928 film)|Street Angel]]''&nbsp;– Ernest Palmer
+|}
+
+== Multiple nominations and awards ==
+''[[In Old Arizona]]'' and ''[[The Patriot (1928 film)|The Patriot]]'', with five nominations each, tied the record for the film receiving the most Academy Award nominations. This record was set by ''[[7th Heaven (1927 film)|7th Heaven]]'' at the [[1st Academy Awards]] (1927{{ndash}}1928). One year later, at the [[3rd Academy Awards]] (1929{{ndash}}1930), the record was broken by ''[[The Love Parade]]'', which garnered six nominations. The record for the film receiving the most Academy Award nominations {{ndash}} with sixteen nominations {{ndash}} is held by ''[[Sinners (2025 film)|Sinners]]'' (2025).<ref>{{cite news |url=https://www.latimes.com/entertainment-arts/awards/story/2026-01-22/sinners-record-most-oscar-nominations-2026 |title=‘Sinners’ sweeps Oscar nominations, breaking record with 16 |last=Rottenberg |first=Josh |work=The Los Angeles Times |date=January 22, 2026 |access-date=January 23, 2026}}</ref> The previous record of fourteen nominations was held by ''[[All About Eve]]'' (1950), ''[[Titanic (1997 film)|Titanic]]'' (1997), and ''[[La La Land (film)|La La Land]]'' (2016).<!-- Comment: For the template formula to calculate correctly, the "year of the film" must be INCREASED by ONE. So, for a 1950 film, enter 1951 into the template. -->
+
+The following 9 films received multiple nominations:
+{| class="wikitable" style="text-align: center;"
+|+ Films with multiple nominations
+|-
+! Nominations !! Film
+|-
+| rowspan=2 | 5 
+| ''[[In Old Arizona]]''
+|-
+| ''[[The Patriot (1928 film)|The Patriot]]''
+|-
+| rowspan=3 | 3
+| ''[[Alibi (1929 film)|Alibi]]''
+|-
+| ''[[The Broadway Melody]]''
+|-
+| ''[[The Divine Lady]]'' 
+|-
+| rowspan=4 | 2
+| ''[[Madame X (1929 film)|Madame X]]''
+|-
+| ''[[Our Dancing Daughters]]''
+|-
+| ''[[Street Angel (1928 film)|Street Angel]]''
+|-
+| ''[[The Valiant (1929 film)|The Valiant]]'' 
+|}
+
+== Changes to Academy Awards ==
+
+Beginning with the 2nd Academy Awards (1928{{ndash}}1929), the following changes were made by [[Academy of Motion Picture Arts and Sciences|AMPAS]].
+
+* Award categories were reduced from twelve to seven:
+** The awards for Best Director (Comedy Picture) and Best Director (Dramatic Picture) were merged into a single Best Director award.
+** The awards for Best Writing (Adaptation) and Best Writing (Original Story) were merged into a single Best Writing award (these would be split again for the [[4th Academy Awards|4th Awards]]).
+** The awards for Best Engineering Effects, Best Unique and Artistic Production, and Best Writing (Title Writing) were discontinued.
+
+== Gallery==
+{{Gallery
+|title=Academy Award-winning and nominated films – 2nd Academy Awards
+|width=165
+|height=175
+|Image:Broadway Melody poster.jpg|alt1=The theatrical poster of the Broadway Melody. The poster features a drawing of its three leads - Charles King, Anita Page, and Bessie Love.|''[[The Broadway Melody]]'' is the second film to win the Academy Award for Best Picture, which was at the time known as Outstanding Picture.<ref>{{Cite web |url=https://www.oscars.org/oscars/ceremonies/1930 |title=The 2nd Academy Awards (1930) Nominees and Winners |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=March 11, 2024}}</ref>
+|File:The Broadway Melody (Harry Beaumont, 1929).webm|The full film of ''[[The Broadway Melody]]''
+|File:The Hollywood Revue (1929).webm|The full film of ''[[The Hollywood Revue|The Hollywood Revue of 1929]]''
+|File:In Old Arizona (1928) by Irving Cummings and Raoul Walsh.webm|The full film of ''[[In Old Arizona]]'', which won [[Warner Baxter]] the award for [[Academy Award for Best Actor|Best Actor]]
+|File:White Shadows in the South Seas (1928).webm|The full film of ''[[White Shadows in the South Seas]]'', which won for [[Academy Award for Best Cinematography|Best Cinematography]]
+}}
+
+== See also ==
+* [[1928 in film]]
+* [[1929 in film]]
+
+== References ==
+;Notes
+{{Notelist-ua|75em}}
+
+;Citations
+{{Reflist}}
+
+== External links ==
+* [http://awardsdatabase.oscars.org/ The Official Academy Awards Database]
+* [http://www.filmsite.org/aa28.html FilmSite.org writeup of 1928/29 Academy Awards]
+
+{{Academy Awards Chron}}
+{{Academy Awards lists}}
+
+{{DEFAULTSORT:Academy Awards, 02}}
+[[Category:1928 film awards]]
+[[Category:1929 film awards]]
+[[Category:1930 in American cinema]]
+[[Category:1930 in Los Angeles]]
+[[Category:Academy Awards ceremonies]]
+[[Category:April 1930 in the United States]]
+[[Category:Articles containing video clips]]

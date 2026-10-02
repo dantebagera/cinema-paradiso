@@ -9,7 +9,7 @@ test('standard TV card keeps dates and episode counts together and opens from th
   const card = page.getByRole('link', { name: 'Open Harbor Signals' });
   const facts = card.locator('.unified-movie-title-block > span');
   await expect(facts).toContainText('2020');
-  await expect(facts).toContainText('2 seasons · 6 episodes');
+  await expect(facts).toContainText('2 seasons · 4 episodes');
   for (const width of [1920, 1366]) {
     await page.setViewportSize({ width, height: 1080 });
     const layout = await facts.evaluate(element => ({ height: element.getBoundingClientRect().height,

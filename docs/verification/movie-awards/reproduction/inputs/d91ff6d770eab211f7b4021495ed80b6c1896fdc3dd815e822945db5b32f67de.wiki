@@ -1,0 +1,575 @@
+{{pp-move}}
+{{oscars short description|films-year=2009}}
+{{Use mdy dates|date=June 2013}}
+{{Infobox film awards
+| number           = 82
+| award            = Academy Awards
+| image            = 82nd_Academy_Awards_poster.jpg
+| alt              = Official poster featuring Steve Martin and Alec Baldwin promoting the 82nd Academy Awards in 2010
+| caption          = Official poster
+| date             = March 7, 2010
+| site             = [[Kodak Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], California, U.S.
+| preshow          = Jess Cagle<br />[[Kathy Ireland]]<br />[[Sherri Shepherd]]<ref>{{cite news|url=http://content.usatoday.com/communities/entertainment/post/2010/03/abc-announces-oscar-pre-show-hosts/1 |title=ABC announces Oscar pre-show hosts |date=March 1, 2010 |work=[[USA Today]] |publisher=[[Gannett Company]] |access-date=April 9, 2010 |url-status=dead |archive-url=https://web.archive.org/web/20100311192202/http://content.usatoday.com/communities/entertainment/post/2010/03/abc-announces-oscar-pre-show-hosts/1 |archive-date=March 11, 2010 }}</ref>
+| host             = [[Alec Baldwin]]<br />[[Steve Martin]]<ref>{{cite news|last1=Finn |first1=Natalie |title=Alec Baldwin & Steve Martin Tapped for Oscar Duty |url=http://www.eonline.com/news/152058/alec-baldwin-steve-martin-tapped-for-oscar-duty |access-date=November 5, 2009
+| publisher=[[E!]] ([[NBCUniversal]]) |date=November 3, 2009 |url-status=live |archive-url=https://web.archive.org/web/20121017170640/http://www.eonline.com/news/152058/alec-baldwin-steve-martin-tapped-for-oscar-duty |archive-date=October 17, 2012 }}</ref>
+| producer         = [[Bill Mechanic]]<br />[[Adam Shankman]]<ref>{{cite web|publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |title=Bill Mechanic and Adam Shankman Named Oscar Telecast Producers |url=http://www.oscars.org/press/pressreleases/2009/20091020.html |date=October 20, 2009 |access-date=October 20, 2009 |archive-url=https://web.archive.org/web/20091121203830/http://www.oscars.org/press/pressreleases/2009/20091020.html |archive-date=November 21, 2009 |url-status=live }}</ref>
+| director         = [[Hamish Hamilton (director)|Hamish Hamilton]]<ref>{{cite news|url=http://goldderby.latimes.com/awards_goldderby/2009/11/gold-derby-nuggets--4.html |title=Gold Derby nuggets: A Serious Man' goes for laughs at Globes, Oscarcast gets new director, 'Precious' honored by PGA |date=November 18, 2009 |work=[[Los Angeles Times]] |last=O'Neil |first=Tom |access-date=November 23, 2009 |url-status=dead |archive-url=https://web.archive.org/web/20091120190032/http://goldderby.latimes.com/awards_goldderby/2009/11/gold-derby-nuggets--4.html |archive-date=November 20, 2009 }}</ref>
+| best_picture     = ''[[The Hurt Locker]]''
+| most_wins        = ''The Hurt Locker'' (6)
+| most_nominations = ''[[Avatar (2009 film)|Avatar]]'' and ''The Hurt Locker'' (9)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 37 minutes<ref>{{cite news|url=https://www.variety.com/review/VE1117942363?refCatId=32 |title=The 82nd Annual Academy Awards |last=Lowry |first=Brian |date=March 9, 2010 |work=[[Variety (magazine)|Variety]] |publisher=[[Penske Media Corporation]] |access-date=March 9, 2010 |url-status=live |archive-url=https://web.archive.org/web/20110605194607/http://www.variety.com/review/VE1117942363?refCatId=32 |archive-date=June 5, 2011 }}</ref>
+| ratings          = 41.62 million<br />24.89% ([[Nielsen ratings]])<ref name=var1>{{cite news|url=https://variety.com/2010/tv/markets-festivals/fox-tops-abc-s-big-week-1118016263/|title=FOX tops ABC's big week|last=Kissell|first=Rick|date=March 9, 2010|access-date=March 9, 2010|work=Variety|publisher=Penske Media Corporation|archive-date=November 16, 2018|archive-url=https://web.archive.org/web/20181116094550/https://variety.com/2010/tv/markets-festivals/fox-tops-abc-s-big-week-1118016263/|url-status=live}}</ref>
+| last             = 81st
+|next             = 83rd
+}}
+
+The '''82nd Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2009 in film|films of 2009]] and took place on March 7, 2010, at the [[Kodak Theatre]] in [[Hollywood, Los Angeles]], beginning at 5:30&nbsp;p.m. [[Pacific Time Zone|PST]] / 8:30&nbsp;p.m. [[Eastern Time Zone|EST]]. The ceremony was scheduled after its usual late-February date to avoid conflicting with the [[2010 Winter Olympics]].<ref>{{cite news|url=https://www.telegraph.co.uk/news/worldnews/northamerica/usa/5052370/Oscars-ceremony-moved-to-prevent-clash-with-Winter-Olympics.html |title=Oscars ceremony moved to prevent clash with Winter Olympics |date=March 26, 2009 |last=Hedley |first=Caroline |work=[[The Daily Telegraph]] |access-date=March 13, 2010 |location=London |url-status=live |archive-url=https://web.archive.org/web/20121113185305/http://www.telegraph.co.uk/news/worldnews/northamerica/usa/5052370/Oscars-ceremony-moved-to-prevent-clash-with-Winter-Olympics.html |archive-date=November 13, 2012 }}</ref> During the ceremony, the Academy of Motion Picture Arts and Sciences presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony was televised in the United States by [[American Broadcasting Company|ABC]], and was produced by [[Bill Mechanic]] and [[Adam Shankman]] and directed by [[Hamish Hamilton (director)|Hamish Hamilton]]. Actors [[Alec Baldwin]] and [[Steve Martin]] hosted the show. Martin hosted for the third time; he first presided over the [[73rd Academy Awards|73rd ceremony]] held in 2001 and last hosted the [[75th Academy Awards|75th ceremony]] held in 2003, while this was Baldwin's first Oscars hosting stint. This was also the first telecast to have multiple hosts since the [[59th Academy Awards|59th ceremony]] held in 1987.<ref>{{cite news|title=Oscars try the buddy system for host this year |access-date=February 7, 2010 |date=February 1, 2010 |publisher=[[CTV News]] ([[Bell Media]]) |first=Constance |last=Droganes |url=http://www.ctvnews.ca/oscars-try-the-buddy-system-for-host-this-year-1.478885 |url-status=dead |archive-url=https://web.archive.org/web/20140408221643/http://www.ctvnews.ca/oscars-try-the-buddy-system-for-host-this-year-1.478885 |archive-date=April 8, 2014 }}</ref>
+
+On June 24, 2009, Academy president [[Sid Ganis]] announced at a press conference that, in an attempt to revitalize interest surrounding the awards, the 2010 ceremony would feature ten [[Academy Award for Best Picture|Best Picture]] nominees instead of five,<ref name="Academy PR">{{cite news|url=http://www.oscars.org/press/pressreleases/2009/20090624.html |title=82nd Academy Awards to Feature 10 Best Picture Nominees |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |date=June 24, 2009 |access-date=April 9, 2010 |archive-url=https://web.archive.org/web/20100408200952/http://www.oscars.org/press/pressreleases/2009/20090624.html |archive-date=April 8, 2010 |url-status=live }}</ref> a practice that had been discontinued after the [[16th Academy Awards|16th ceremony]] in 1944. On February 20, 2010, in a ceremony at the [[Beverly Wilshire Hotel]] in [[Beverly Hills, California]], the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Elizabeth Banks]].<ref>{{cite news|url=http://goldderby.latimes.com/awards_goldderby/2010/02/elizabeth-banks-to-emcee-scitech-oscars-.html |title=Elizabeth Banks to emcee sci-tech Oscars |access-date=March 4, 2010 |date=February 12, 2010 |first=Tom |last=O'Neil |work=Los Angeles Times |archive-url=https://web.archive.org/web/20100217030923/http://goldderby.latimes.com/awards_goldderby/2010/02/elizabeth-banks-to-emcee-scitech-oscars-.html |archive-date=February 17, 2010 |url-status=live }}</ref>
+
+''[[The Hurt Locker]]'' won six awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last=Marszalek |first=Keith I. |title=The winners of the 82nd Annual Academy Awards |url=http://www.nola.com/movies/index.ssf/2010/03/and_the_oscar_goes_to_2010_aca.html |access-date=May 21, 2010 |work=[[The Times-Picayune]] |publisher=[[Advance Publications]] |date=March 7, 2010 |url-status=live |archive-url=https://web.archive.org/web/20100413090737/http://www.nola.com/movies/index.ssf/2010/03/and_the_oscar_goes_to_2010_aca.html |archive-date=April 13, 2010 }}</ref><ref name="oscarhistorylatimes">{{cite news|url=http://theenvelope.latimes.com/awards/oscars/env-oscar-show7-2010mar07,0,5076292.story |title='Hurt Locker' wins best picture |work=Los Angeles Times |date=March 8, 2010 |access-date=May 6, 2010 |first=Susan |last=King |archive-url=https://web.archive.org/web/20100430000427/http://theenvelope.latimes.com/awards/oscars/env-oscar-show7-2010mar07%2C0%2C5076292.story |archive-date=April 30, 2010 |url-status=live }}</ref> Other winners were ''[[Avatar (2009 film)|Avatar]]'' with three awards, ''[[Crazy Heart]]'', ''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]'', and ''[[Up (2009 film)|Up]]'' with two, and ''[[The Blind Side (film)|The Blind Side]]'', ''[[The Cove (film)|The Cove]]'', ''[[Inglourious Basterds]]'', ''[[Logorama]]'', ''[[Music by Prudence]]'', ''[[The New Tenants]]'', ''[[The Secret in Their Eyes]]'', ''[[Star Trek (2009 film)|Star Trek]]'', and ''[[The Young Victoria]]'' with one. The telecast garnered nearly 42 million viewers in the United States, making it the most watched Oscar telecast since the [[77th Academy Awards]] in 2005.
+
+== Winners and nominees ==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 82nd Academy Awards were announced on February 2, 2010, at 5:38&nbsp;a.m. [[Pacific Time Zone|PST]] (13:38 [[UTC]]) at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]], by [[Tom Sherak]], president of the Academy, and actress [[Anne Hathaway]].<ref>{{cite news|last1=Kilday |first1=Gregg |title=Anne Hathaway to announce Oscar noms |url=https://www.hollywoodreporter.com/news/anne-hathaway-announce-oscar-noms-19975 |access-date=February 7, 2010 |work=[[The Hollywood Reporter]] |publisher=[[Prometheus Global Media]] |date=January 26, 2010 |url-status=live |archive-url=https://web.archive.org/web/20150412142740/http://www.hollywoodreporter.com/news/anne-hathaway-announce-oscar-noms-19975 |archive-date=April 12, 2015 }}</ref> ''[[Avatar (2009 film)|Avatar]]'' and ''[[The Hurt Locker]]'' led the nominations with nine each.<ref name="Cieply">{{cite news|last=Cieply |first=Michael |author-link=Michael Cieply |title='Avatar' and 'Hurt Locker' Lead the Oscar Field |url=https://archive.nytimes.com/carpetbagger.blogs.nytimes.com/2010/02/02/avatar-and-hurt-locker-lead-the-oscar-field/ |access-date=June 17, 2010 |work=[[The New York Times]] |date=February 2, 2010 |url-status=live |archive-url=https://web.archive.org/web/20230424061728/https://archive.nytimes.com/carpetbagger.blogs.nytimes.com/2010/02/02/avatar-and-hurt-locker-lead-the-oscar-field/ |archive-date=April 24, 2023 }}</ref>
+
+The winners were announced during the awards ceremony on March 7, 2010.<ref>{{cite news|last1=Kennedy |first1=Lisa |title=82nd Academy Awards: Hollywood's big night delivers on the hype |url=http://www.denverpost.com/entertainment/ci_14632478/82nd-academy-awards:-hollywoods-big-night |access-date=August 29, 2010 |work=[[The Denver Post]] |publisher=[[MediaNews Group]] |date=March 7, 2010 |url-status=live |archive-url=https://web.archive.org/web/20150402110322/http://www.denverpost.com/entertainment/ci_14632478/82nd-academy-awards%3A-hollywoods-big-night |archive-date=April 2, 2015 }}</ref><ref>{{cite news|url=http://www.cnn.com/2010/SHOWBIZ/Movies/02/02/academy.award.nominations.list/index.html |title=List of Academy Award nominations |date=February 2, 2010 |work=[[CNN]] |publisher=[[Time Warner]] |access-date=February 3, 2010 |archive-url=https://web.archive.org/web/20100203183717/http://www.cnn.com/2010/SHOWBIZ/Movies/02/02/academy.award.nominations.list/index.html |archive-date=February 3, 2010 |url-status=live }}</ref> [[Kathryn Bigelow]] made history as the first female to win the Academy Award for Best Director.<ref>{{cite news|last=Block |first=Sheri |title=War drama 'The Hurt Locker' wins best picture Oscar |url=http://www.ctvnews.ca/war-drama-the-hurt-locker-wins-best-picture-oscar-1.489922 |access-date=May 21, 2010 |publisher=CTV (Bell Media) |date=March 7, 2010 |url-status=dead |archive-url=https://web.archive.org/web/20140107182405/http://www.ctvnews.ca/war-drama-the-hurt-locker-wins-best-picture-oscar-1.489922 |archive-date=January 7, 2014 }}</ref> ''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]'' became the first film directed by a Black director to be nominated for Best Picture.<ref name="Cieply"/> ''[[Up (2009 film)|Up]]'' became the second animated film to be nominated for Best Picture after 1991's ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''.<ref name="Cieply" /> Best Adapted Screenplay winner [[Geoffrey S. Fletcher|Geoffrey Fletcher]] was the first African-American winner of a screenwriting Oscar.<ref>{{cite news|last=Johnson |first=Reed |title=Kathryn Bigelow, Geoffrey Fletcher make Oscar history |url=https://www.latimes.com/archives/la-xpm-2010-mar-08-la-et-oscars-historic8-2010mar08-story.html |access-date=August 29, 2010 |work=Los Angeles Times |date=March 8, 2010 |url-status=live |archive-url=https://web.archive.org/web/20100313042650/http://articles.latimes.com/2010/mar/08/entertainment/la-et-oscars-historic8-2010mar08 |archive-date=March 13, 2010 }}</ref> [[Meryl Streep]] received her thirtheenth nomination for [[Academy Award for Best Actress|Best Actress in a Leading Role]], beting [[Katharine Hepburn]] as the most nominated actress in this category.<ref>{{cite news|last=Gray |first=Time |title=Oscar oddities and observations |url=https://variety.com/2010/film/awards/oscar-oddities-and-observations-1118014582/ |access-date=July 1, 2026 |work=Variety |date=February 2, 2010 |url-status=live |archive-url=https://web.archive.org/web/20221118195242/https://variety.com/2010/film/awards/oscar-oddities-and-observations-1118014582/ |archive-date=November 18, 2022 }}</ref>
+
+=== Awards ===
+[[File:Kathryn Bigelow A House of Dynamite-13 (cropped).jpg|thumb|right|150px|[[Kathryn Bigelow]], Best Picture co-winner and Best Director winner]]
+[[File:Mark Boal 02 cropped.jpg|thumb|right|150px|[[Mark Boal]], Best Picture co-winner and Best Original Screenplay winner]]
+[[File:Jeff Bridges by Gage Skidmore 2.jpg|thumb|right|150px|[[Jeff Bridges]], Best Actor winner]]
+[[File:Sandra Bullock by Gage Skidmore.jpg|thumb|right|150px|[[Sandra Bullock]], Best Actress winner]]
+[[File:Christoph Waltz Viennale 2017 f (cropped).jpg|thumb|right|150px|[[Christoph Waltz]], Best Supporting Actor winner]]
+[[File:Mo'Nique attending the 82nd Academy Awards 2010.jpg|thumb|right|150px|[[Mo'Nique]], Best Supporting Actress winner]]
+[[File:Pete Docter cropped 2009.jpg|thumb|right|150px|[[Pete Docter]], Best Animated Feature Film winner]]
+[[File:Michael Giacchino Sep 2017.jpg|thumb|right|150px|[[Michael Giacchino]], Best Original Score winner]]
+[[File:T Bone Burnett by Gage Skidmore.jpg|thumb|right|150px|[[T Bone Burnett]], Best Original Song co-winner]]
+[[File:Sandy Powell Viennale 2015 b (cropped).jpg|thumb|right|150px|[[Sandy Powell (costume designer)|Sandy Powell]], Best Costume Design winner]]
+
+Winners are listed first, highlighted in '''boldface''' and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars2010">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/2010 |title=The 82nd Academy Awards (2010) Nominees and Winners |access-date=November 10, 2011 |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20141130021624/http://www.oscars.org/oscars/ceremonies/2010 |archive-date=November 30, 2014 }}</ref>
+
+{| class=wikitable
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[The Hurt Locker]]''&nbsp;– [[Kathryn Bigelow]], [[Mark Boal]], [[Nicolas Chartier]] and [[Greg Shapiro (producer)|Greg Shapiro]], producers'''{{double-dagger}}
+** ''[[Avatar (2009 film)|Avatar]]''&nbsp;– [[James Cameron]] and [[Jon Landau (film producer)|Jon Landau]], producers
+** ''[[The Blind Side (film)|The Blind Side]]''&nbsp;– Gil Netter, [[Andrew A. Kosove]] and [[Broderick Johnson]], producers
+** ''[[District 9]]''&nbsp;– [[Peter Jackson]] and [[Carolynne Cunningham]], producers
+** ''[[An Education]]''&nbsp;– [[Finola Dwyer]] and [[Amanda Posey]], producers
+** ''[[Inglourious Basterds]]''&nbsp;– [[Lawrence Bender]], producer
+** ''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]''&nbsp;– [[Lee Daniels]], Sarah Siegel-Magness and [[Gary Magness]], producers
+** ''[[A Serious Man]]''&nbsp;– [[Coen brothers|Joel Coen and Ethan Coen]], producers
+** ''[[Up (2009 film)|Up]]''&nbsp;– [[Jonas Rivera]], producer
+** ''[[Up in the Air (2009 film)|Up in the Air]]''&nbsp;– [[Daniel Dubiecki]], [[Ivan Reitman]] and [[Jason Reitman]], producers
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Kathryn Bigelow]]&nbsp;– ''[[The Hurt Locker]]'''''{{double-dagger}}
+** [[James Cameron]]&nbsp;– ''[[Avatar (2009 film)|Avatar]]''
+** [[Quentin Tarantino]]&nbsp;– ''[[Inglourious Basterds]]''
+** [[Lee Daniels]]&nbsp;– ''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]''
+** [[Jason Reitman]]&nbsp;– ''[[Up in the Air (2009 film)|Up in the Air]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+* '''[[Jeff Bridges]]&nbsp;– ''[[Crazy Heart]]'' as Otis "Bad" Blake'''{{double-dagger}}
+** [[George Clooney]]&nbsp;– ''[[Up in the Air (2009 film)|Up in the Air]]'' as Ryan Bingham
+** [[Colin Firth]]&nbsp;– ''[[A Single Man]]'' as George Falconer
+** [[Morgan Freeman]]&nbsp;– ''[[Invictus (film)|Invictus]]'' as [[Nelson Mandela]]
+** [[Jeremy Renner]]&nbsp;– ''[[The Hurt Locker]]'' as [[Sergeant First Class]] William James
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+* '''[[Sandra Bullock]]&nbsp;– ''[[The Blind Side (film)|The Blind Side]]'' as [[Leigh Anne Tuohy]]'''{{double-dagger}}
+** [[Helen Mirren]]&nbsp;– ''[[The Last Station]]'' as [[Sophia Tolstaya]]
+** [[Carey Mulligan]]&nbsp;– ''[[An Education]]'' as [[Lynn Barber|Jenny Mellor]]
+** [[Gabourey Sidibe]]&nbsp;– ''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]'' as Claireece "Precious" Jones
+** [[Meryl Streep]]&nbsp;– ''[[Julie & Julia]]'' as [[Julia Child]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Christoph Waltz]]&nbsp;– ''[[Inglourious Basterds]]'' as [[Hans Landa|Col. Hans Landa]]'''{{double-dagger}}
+** [[Matt Damon]]&nbsp;– ''[[Invictus (film)|Invictus]]'' as [[Francois Pienaar]]
+** [[Woody Harrelson]]&nbsp;– ''[[The Messenger (2009 film)|The Messenger]]'' as Cpt. Tony Stone
+** [[Christopher Plummer]]&nbsp;– ''[[The Last Station]]'' as [[Leo Tolstoy]]
+** [[Stanley Tucci]]&nbsp;– ''[[The Lovely Bones (film)|The Lovely Bones]]'' as George Harvey
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Mo'Nique]]&nbsp;– ''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]'' as Mary Lee Johnston'''{{double-dagger}}
+** [[Penélope Cruz]]&nbsp;– ''[[Nine (2009 live-action film)|Nine]]'' as Carla Albanese
+** [[Vera Farmiga]]&nbsp;– ''[[Up in the Air (2009 film)|Up in the Air]]'' as Alex Goran
+** [[Maggie Gyllenhaal]]&nbsp;– ''[[Crazy Heart]]'' as Jean Craddock
+** [[Anna Kendrick]]&nbsp;– ''[[Up in the Air (2009 film)|Up in the Air]]'' as Natalie Keener
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[The Hurt Locker]]''&nbsp;– [[Mark Boal]]'''{{double-dagger}}
+** ''[[Inglourious Basterds]]''&nbsp;– [[Quentin Tarantino]]
+** ''[[The Messenger (2009 film)|The Messenger]]''&nbsp;– [[Alessandro Camon]] and [[Oren Moverman]]
+** ''[[A Serious Man]]''&nbsp;– [[Coen brothers|Joel Coen and Ethan Coen]]
+** ''[[Up (2009 film)|Up]]''&nbsp;– Screenplay by [[Bob Peterson (filmmaker)|Bob Peterson]] and [[Pete Docter]]; Story by Pete Docter, Bob Peterson and [[Tom McCarthy (director)|Tom McCarthy]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]''&nbsp;– [[Geoffrey S. Fletcher|Geoffrey Fletcher]]; {{small|based on the novel ''[[Push (novel)|Push]]'' by [[Sapphire (author)|Sapphire]]}}'''{{double-dagger}}
+** ''[[District 9]]''&nbsp;– [[Neill Blomkamp]] and [[Terri Tatchell]]; {{small|based on the short film ''[[Alive in Joburg]]'' by Neill Blomkamp}}
+** ''[[An Education]]''&nbsp;– [[Nick Hornby]]; {{small|based on [[An Education|the memoir]] by [[Lynn Barber]]}}
+** ''[[In the Loop]]''&nbsp;– [[Jesse Armstrong]], [[Simon Blackwell]], [[Armando Iannucci]] and [[Tony Roche (writer)|Tony Roche]]; {{small|based on the character Malcolm Tucker, who originally appeared in the [[BBC]] TV show ''[[The Thick of It]]''}}
+** ''[[Up in the Air (2009 film)|Up in the Air]]''&nbsp;– [[Jason Reitman]] and [[Sheldon Turner]]; {{small|based on [[Up in the Air (novel)|the novel]] by [[Walter Kirn]]}}
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Up (2009 film)|Up]]''&nbsp;– Directed by [[Pete Docter]]'''{{double-dagger}}
+** ''[[Coraline (film)|Coraline]]''&nbsp;– Directed by [[Henry Selick]]
+** ''[[Fantastic Mr. Fox (film)|Fantastic Mr. Fox]]''&nbsp;– Directed by [[Wes Anderson]]
+** ''[[The Princess and the Frog]]''&nbsp;– Directed by [[John Musker]] and [[Ron Clements]]
+** ''[[The Secret of Kells]]''&nbsp;– Directed by [[Tomm Moore]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[The Secret in Their Eyes]]'' ([[List of Argentine submissions for the Academy Award for Best Foreign Language Film|Argentina]]) in Spanish&nbsp;– Directed by [[Juan José Campanella]]'''{{double-dagger}}
+** ''[[Ajami (film)|Ajami]]'' ([[List of Israeli submissions for the Academy Award for Best Foreign Language Film|Israel]]) in [[Arabic]] and [[Hebrew]]&nbsp;– Directed by [[Scandar Copti]] and [[Yaron Shani]]
+** ''[[The Milk of Sorrow]]'' ([[List of Peruvian submissions for the Academy Award for Best Foreign Language Film|Peru]]) in Spanish and [[Quechua people|Quechua]]&nbsp;– Directed by [[Claudia Llosa]]
+** ''[[A Prophet]]'' ([[List of French submissions for the Academy Award for Best Foreign Language Film|France]]) in French, [[Corsican language|Corsican]] and [[Arabic]]&nbsp;– Directed by [[Jacques Audiard]]
+** ''[[The White Ribbon]]'' ([[List of German submissions for the Academy Award for Best Foreign Language Film|Germany]]) in German&nbsp;– Directed by [[Michael Haneke]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[The Cove (film)|The Cove]]''&nbsp;– [[Louie Psihoyos]] and [[Fisher Stevens]]'''{{double-dagger}}
+** ''[[Burma VJ]]''&nbsp;– Anders Østergaard and Lise Lense-Møller
+** ''[[Food, Inc.]]''&nbsp;– [[Robert Kenner]] and Elise Pearlstein
+** ''[[The Most Dangerous Man in America: Daniel Ellsberg and the Pentagon Papers]]''&nbsp;– [[Judith Ehrlich]] and Rick Goldsmith
+** ''[[Which Way Home]]''&nbsp;– [[Rebecca Cammisa]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Music by Prudence]]''&nbsp;– [[Roger Ross Williams]] and [[Elinor Burkett]]'''{{double-dagger}}
+** ''[[China's Unnatural Disaster: The Tears of Sichuan Province]]''&nbsp;– [[Jon Alpert]] and [[Matthew O'Neill (filmmaker)|Matthew O'Neill]]
+** ''[[The Last Campaign of Governor Booth Gardner]]''&nbsp;– [[Daniel Junge]] and Henry Ansbacher
+** ''[[The Last Truck: Closing of a GM Plant]]''&nbsp;– [[Steven Bognar]] and [[Julia Reichert]]
+** ''[[Rabbit à la Berlin]]''&nbsp;– Bartek Konopka and Anna Wydra
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[The New Tenants]]''&nbsp;– Joachim Back and Tivi Magnusson'''{{double-dagger}}
+** ''The Door''&nbsp;– [[Juanita Wilson]] and [[James Flynn (producer)|James Flynn]]
+** ''[[Instead of Abracadabra]]''&nbsp;– Patrik Eklund and Mathias Fjellström
+** ''[[Kavi (2009 film)|Kavi]]''&nbsp;– [[Gregg Helvey]]
+** ''[[Miracle Fish]]''&nbsp;– [[Luke Doolan]] and Drew Bailey
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Logorama]]''&nbsp;– Nicolas Schmerkin'''{{double-dagger}}
+** ''[[French Roast]]''&nbsp;– [[Fabrice Joubert|Fabrice O. Joubert]]
+** ''[[Granny O'Grimm's Sleeping Beauty]]''&nbsp;– Nicky Phelan and Darragh O'Connell
+** ''[[The Lady and the Reaper]]''&nbsp;– Javier Recio Gracia
+** ''[[A Matter of Loaf and Death]]''&nbsp;– [[Nick Park]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Up (2009 film)|Up]]''&nbsp;– [[Michael Giacchino]]'''{{double-dagger}}
+** ''[[Avatar (2009 film)|Avatar]]''&nbsp;– [[James Horner]]
+** ''[[Fantastic Mr. Fox (film)|Fantastic Mr. Fox]]''&nbsp;– [[Alexandre Desplat]]
+** ''[[The Hurt Locker]]''&nbsp;– [[Marco Beltrami]] and [[Buck Sanders]]
+** ''[[Sherlock Holmes (2009 film)|Sherlock Holmes]]''&nbsp;– [[Hans Zimmer]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[The Weary Kind|The Weary Kind (Theme from ''Crazy Heart'')]]" from ''[[Crazy Heart]]''&nbsp;– Music and Lyrics by [[Ryan Bingham]] and [[T Bone Burnett]]'''{{double-dagger}}
+** "[[Almost There (The Princess and the Frog song)|Almost There]]" from ''[[The Princess and the Frog]]''&nbsp;– Music and Lyrics by [[Randy Newman]]
+** "[[Down in New Orleans (song)|Down in New Orleans]]" from ''[[The Princess and the Frog]]''&nbsp;– Music and Lyrics by [[Randy Newman]]
+** "Loin de Paname" from ''[[Paris 36]]''&nbsp;– Music by Reinhardt Wagner; Lyrics by [[Frank Thomas (lyricist)|Frank Thomas]]
+** "[[Take It All (song)|Take It All]]" from ''[[Nine (2009 live-action film)|Nine]]''&nbsp;– Music and Lyrics by [[Maury Yeston]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[The Hurt Locker]]''&nbsp;– [[Paul N. J. Ottosson]]'''{{double-dagger}}
+** ''[[Avatar (2009 film)|Avatar]]''&nbsp;– [[Christopher Boyes]] and [[Gwendolyn Yates Whittle]]
+** ''[[Inglourious Basterds]]''&nbsp;– [[Wylie Stateman]]
+** ''[[Star Trek (2009 film)|Star Trek]]''&nbsp;– [[Mark Stoeckinger]] and [[Alan Rankin]]
+** ''[[Up (2009 film)|Up]]''&nbsp;– [[Michael Silvers]] and [[Tom Myers (sound engineer)|Tom Myers]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Sound Mixing]]}}
+* '''''[[The Hurt Locker]]''&nbsp;– [[Paul N. J. Ottosson]] and [[Ray Beckett (sound engineer)|Ray Beckett]]'''{{double-dagger}}
+** ''[[Avatar (2009 film)|Avatar]]''&nbsp;– [[Christopher Boyes]], [[Gary Summers]], [[Andy Nelson (sound engineer)|Andy Nelson]] and [[Tony Johnson (sound engineer)|Tony Johnson]]
+** ''[[Inglourious Basterds]]''&nbsp;– [[Michael Minkler]], [[Tony Lamberti]] and [[Mark Ulano]]
+** ''[[Star Trek (2009 film)|Star Trek]]''&nbsp;– [[Anna Behlmer]], [[Andy Nelson (sound engineer)|Andy Nelson]] and [[Peter J. Devlin]]
+** ''[[Transformers: Revenge of the Fallen]]''&nbsp;– [[Greg P. Russell]], [[Gary Summers]] and [[Geoffrey Patterson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Art Direction]]}}
+* '''''[[Avatar (2009 film)|Avatar]]''&nbsp;– Art Direction: [[Rick Carter]] and [[Robert Stromberg]]; Set Decoration: [[Kim Sinclair]]'''{{double-dagger}}
+** ''[[The Imaginarium of Doctor Parnassus]]''&nbsp;– Art Direction: Dave Warren and [[Anastasia Masaro]]; Set Decoration: Caroline Smith
+** ''[[Nine (2009 live-action film)|Nine]]''&nbsp;– Art Direction: [[John Myhre]]; Set Decoration: [[Gordon Sim]]
+** ''[[Sherlock Holmes (2009 film)|Sherlock Holmes]]''&nbsp;– Art Direction: [[Sarah Greenwood]]; Set Decoration: [[Katie Spencer]]
+** ''[[The Young Victoria]]''&nbsp;– Art Direction: [[Patrice Vermette]]; Set Decoration: [[Maggie Gray]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Avatar (2009 film)|Avatar]]''&nbsp;– [[Mauro Fiore]]'''{{double-dagger}}
+** ''[[Harry Potter and the Half-Blood Prince (film)|Harry Potter and the Half-Blood Prince]]''&nbsp;– [[Bruno Delbonnel]]
+** ''[[The Hurt Locker]]''&nbsp;– [[Barry Ackroyd]]
+** ''[[Inglourious Basterds]]''&nbsp;– [[Robert Richardson (cinematographer)|Robert Richardson]]
+** ''[[The White Ribbon]]''&nbsp;– [[Christian Berger]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[Star Trek (2009 film)|Star Trek]]''&nbsp;– [[Barney Burman]], [[Mindy Hall]] and [[Joel Harlow]]'''{{double-dagger}}
+** ''[[Il divo (film)|Il Divo]]''&nbsp;– [[Aldo Signoretti]] and [[Vittorio Sodano]]
+** ''[[The Young Victoria]]''&nbsp;– [[Jon Henry Gordon]] and [[Jenny Shircore]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[The Young Victoria]]''&nbsp;– [[Sandy Powell (costume designer)|Sandy Powell]]'''{{double-dagger}}
+** ''[[Bright Star (film)|Bright Star]]''&nbsp;– [[Janet Patterson]]
+** ''[[Coco Before Chanel]]''&nbsp;– [[Catherine Leterrier]]
+** ''[[The Imaginarium of Doctor Parnassus]]''&nbsp;– Monique Prudhomme
+** ''[[Nine (2009 live-action film)|Nine]]''&nbsp;– [[Colleen Atwood]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Hurt Locker]]''&nbsp;– [[Bob Murawski]] and [[Chris Innis]]'''{{double-dagger}}
+** ''[[Avatar (2009 film)|Avatar]]''&nbsp;– [[Stephen E. Rivkin]], [[John Refoua]] and [[James Cameron]]
+** ''[[District 9]]''&nbsp;– [[Julian Clarke]]
+** ''[[Inglourious Basterds]]''&nbsp;– [[Sally Menke]]
+** ''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]''&nbsp;– [[Joe Klotz]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Avatar (2009 film)|Avatar]]''&nbsp;– [[Joe Letteri]], [[Stephen Rosenbaum]], [[Richard Baneham]] and [[Andrew R. Jones]]'''{{double-dagger}}
+** ''[[District 9]]''&nbsp;– [[Dan Kaufman]], [[Peter Muyzers]], [[Robert Habros]] and [[Matt Aitken (special effects artist)|Matt Aitken]]
+** ''[[Star Trek (2009 film)|Star Trek]]''&nbsp;– [[Roger Guyett]], [[Russell Earl]], [[Paul Kavanagh (visual effects artist)|Paul Kavanagh]] and [[Burt Dalton]]
+|}
+
+=== Governors Awards ===
+The Academy held its 1st Annual [[Governors Awards]] ceremony on November 14, 2009, during which the following awards were presented:<ref>{{cite web|url=http://www.oscars.org/press/pressreleases/2009/20090910a.html |title=Bacall, Calley, Corman, and Willis to Receive Academy's Governors Awards |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |date=September 10, 2009 |access-date=October 8, 2010 |url-status=dead |archive-url=https://web.archive.org/web/20100408200946/http://www.oscars.org/press/pressreleases/2009/20090910a.html |archive-date=April 8, 2010 }}</ref><ref>{{cite web|url=http://www.oscars.org/awards/academyawards/about/awards/honorary.html |title=Honorary Academy Awards - Oscar Statuette & Other Awards |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |access-date=April 6, 2010 |archive-url=https://web.archive.org/web/20100408195739/http://www.oscars.org/awards/academyawards/about/awards/honorary.html |archive-date=April 8, 2010 |url-status=live }}</ref><ref>{{cite web|url=http://www.oscars.org/awards/academyawards/about/awards/thalberg.html |title=Irving G. Thalberg Memorial Award - Oscar Statuette & Other Awards |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |access-date=April 6, 2010 |archive-url=https://web.archive.org/web/20100408195729/http://www.oscars.org/awards/academyawards/about/awards/thalberg.html |archive-date=April 8, 2010 |url-status=live }}</ref>
+
+==== Honorary Awards ====
+* To [[Lauren Bacall]] in recognition of her central place in the golden age of motion pictures.
+* To [[Roger Corman]] for his rich engendering of films and filmmakers. 
+* To [[Gordon Willis]] for unsurpassed mastery of light, shadow, color and motion. 
+
+==== Irving G. Thalberg Memorial Award ====
+* [[John Calley]]
+
+=== Films with multiple nominations and awards ===
+{{Col-begin|width=80%}}{{Col-1-of-2}}
+The following 22 films received multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| rowspan=2 style="text-align:center" | 9
+| ''[[Avatar (2009 film)|Avatar]]''
+|-
+| ''[[The Hurt Locker]]''
+|-
+| style="text-align: center;" | 8
+| ''[[Inglourious Basterds]]''
+|-
+| rowspan=2 style="text-align:center" | 6
+| ''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]''
+|-
+| ''[[Up in the Air (2009 film)|Up in the Air]]''
+|-
+| style="text-align: center;" |  5
+| ''[[Up (2009 film)|Up]]''
+|-
+| rowspan=3 style="text-align:center" | 4
+| ''[[District 9]]''
+|-
+| ''[[Nine (2009 live-action film)|Nine]]''
+|-
+|''[[Star Trek (2009 film)|Star Trek]]''
+|-
+|rowspan=4 style="text-align:center" | 3
+| ''[[An Education]]''
+|-
+| ''[[Crazy Heart]]''
+|-
+| ''[[The Princess and the Frog]]''
+|-
+| ''[[The Young Victoria]]''
+|-
+|rowspan=9 style="text-align:center" | 2
+| ''[[The Blind Side (film)|The Blind Side]]''
+|-
+| ''[[Fantastic Mr. Fox (film)|Fantastic Mr. Fox]]''
+|-
+| ''[[Invictus (film)|Invictus]]''
+|-
+| ''[[The Imaginarium of Doctor Parnassus]]''
+|-
+| ''[[The Last Station]]''
+|-
+| ''[[The Messenger (2009 film)|The Messenger]]''
+|-
+| ''[[A Serious Man]]''
+|-
+| ''[[Sherlock Holmes (2009 film)|Sherlock Holmes]]''
+|-
+| ''[[The White Ribbon]]''
+|}
+{{Col-2-of-2}}
+The following five films received multiple awards:
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 6
+| ''[[The Hurt Locker]]''
+|-
+| style="text-align: center;" | 3
+| ''[[Avatar (2009 film)|Avatar]]''
+|-
+| rowspan=3 style="text-align:center" | 2
+| ''[[Crazy Heart]]''
+|-
+| ''[[Precious (film)|Precious: Based on the Novel 'Push' by Sapphire]]''
+|-
+| ''[[Up (2009 film)|Up]]''
+|}
+{{Col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>Multiple sources:
+*{{cite news |last1=Accomando |first1=Beth |title=The 82nd Academy Awards Rundown |url=https://www.kpbs.org/news/arts-culture/2010/03/08/82nd-academy-awards-rundown |access-date=August 29, 2010 |agency=[[KPBS]] |date=March 8, 2010 |archive-url=https://web.archive.org/web/20251017110552/https://www.kpbs.org/news/arts-culture/2010/03/08/82nd-academy-awards-rundown |archive-date=October 17, 2025 |url-status=live}}
+*{{cite news |first1=Andy |last1=McFarlane |first2=Kev |last2=Geoghegan |url=http://news.bbc.co.uk/2/hi/entertainment/8554795.stm |title=As it happened: The Oscars 2010 |access-date=June 29, 2026 |publisher=[[BBC News]] |date=March 8, 2010 |url-status=live |archive-url=https://web.archive.org/web/20100311211620/http://news.bbc.co.uk/2/hi/entertainment/8554795.stm |archive-date=March 11, 2010 }}
+*{{cite news |last1=Schlenker |first1=Dave |title=Oscar announcer is a hometown girl |url=https://www.ocala.com/story/lifestyle/2010/03/07/oscar-announcer-is-a-hometown-girl/31380679007/ |access-date=August 29, 2010 |work=[[Ocala StarBanner]] |date=March 6, 2010 |archive-url=https://web.archive.org/web/20220929114205/https://www.ocala.com/story/lifestyle/2010/03/07/oscar-announcer-is-a-hometown-girl/31380679007/ |archive-date=September 29, 2022 |language=en-US |url-status=live}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+|{{sortname|Gina|Tuttle}} || Announcer for the 82nd annual Academy Awards
+|-
+|{{sortname|Penélope|Cruz}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+|{{sortname|Ryan|Reynolds}} || Presenter of the film ''[[The Blind Side (film)|The Blind Side]]'' on the Best Picture segment
+|-
+|{{sortname|Steve|Carell}}<br />[[Cameron Diaz]] || Presenters of the award for [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+|{{sortname|Miley|Cyrus}}<br />[[Amanda Seyfried]] || Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+|{{sortname|Chris|Pine}} || Presenter of the film ''[[District 9]]'' on the Best Picture segment
+|-
+|{{sortname|Robert|Downey Jr.}}<br />[[Tina Fey]] || Presenters of the award for [[Best Original Screenplay]]
+|-
+|{{sortname|Matthew|Broderick}}<br />[[Jon Cryer]]<br />[[Macaulay Culkin]]<br />[[Anthony Michael Hall]]<br />[[Judd Nelson]]<br />[[Molly Ringwald]]<br />[[Ally Sheedy]] || Presenters of the tribute to [[John Hughes]]
+|-
+|{{sortname|Samuel L.|Jackson}} || Presenter of the film ''[[Up (2009 film)|Up]]'' on the Best Picture segment
+|-
+|{{sortname|Carey|Mulligan}}<br />[[Zoe Saldaña]] || Presenters of the awards for [[Best Animated Short Film]], [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]] and [[Best Live Action Short Film]]
+|-
+|{{sortname|Ben|Stiller}} || Presenter of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+|{{sortname|Jeff|Bridges}} || Presenter of the film ''[[A Serious Man]]'' on the Best Picture segment
+|-
+|{{sortname|Jake|Gyllenhaal}}<br />[[Rachel McAdams]] || Presenters of the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+|{{sortname||Queen Latifah}} || Presenter of the segment of the [[Honorary Academy Award]]s and the [[Irving G. Thalberg Memorial Award]]
+|-
+|{{sortname|Robin|Williams}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+|{{sortname|Colin|Firth}} || Presenter of the film ''[[An Education]]'' on the Best Picture segment
+|-
+|{{sortname|Sigourney|Weaver}} || Presenter of the award for [[Best Art Direction]]
+|-
+|{{sortname|Tom|Ford}}<br />[[Sarah Jessica Parker]] || Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+|{{sortname|Charlize|Theron}} || Presenter of the film ''[[Precious (film)|Precious]]'' on the Best Picture segment
+|-
+|{{sortname|Taylor|Lautner}}<br />[[Kristen Stewart]] || Presenters of the [[horror film]]s tribute montage
+|-
+|{{sortname|Zac|Efron}}<br />[[Anna Kendrick]] || Presenters of the awards for [[Academy Award for Best Sound Editing|Best Sound Editing]] and [[Best Sound Mixing]]
+|-
+|{{sortname|Elizabeth|Banks}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+|{{sortname|John|Travolta}} || Presenter of the film ''[[Inglourious Basterds]]'' on the Best Picture segment
+|-
+|{{sortname|Sandra|Bullock}} || Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+|{{sortname|Demi|Moore}} || Presenter of "[[List of Latin phrases: I#in memoriam|In Memoriam]]" tribute
+|-
+|{{sortname|Jennifer|Lopez}}<br />[[Sam Worthington]] || Introducers of the special dance number to the tune of the [[Academy Award for Best Original Score|Best Original Score]] nominees and presenters of the award for Best Original Score
+|-
+|{{sortname|Gerard|Butler}}<br />[[Bradley Cooper]] || Presenters of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+|{{sortname|Jason|Bateman}} || Presenter of the film ''[[Up in the Air (2009 film)|Up in the Air]]'' on the Best Picture segment
+|-
+|{{sortname|Matt|Damon}} || Presenter of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+|{{sortname|Tyler|Perry}} || Presenter of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+|{{sortname|Keanu|Reeves}} || Presenter of the film ''[[The Hurt Locker]]'' on the Best Picture segment
+|-
+|{{sortname|Pedro|Almodóvar}}<br />[[Quentin Tarantino]] || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+|{{sortname|Kathy|Bates}} || Presenter of the film ''[[Avatar (2009 film)|Avatar]]'' on the Best Picture segment
+|-
+|{{sortname|Vera|Farmiga}}<br />[[Colin Farrell]]<br />[[Julianne Moore]]<br />[[Michelle Pfeiffer]]<br />[[Tim Robbins]]<br />[[Kate Winslet]] || Presenters of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+|{{sortname|Sean|Penn}}<br />[[Peter Sarsgaard]]<br />[[Michael Sheen]]<br />[[Stanley Tucci]]<br />[[Forest Whitaker]]<br />[[Oprah Winfrey]] || Presenters of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+|{{sortname|Barbra|Streisand}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+|{{sortname|Tom|Hanks}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+|{{sortname|Marc|Shaiman}}<br />{{sortname|Harold|Wheeler|Harold Wheeler (musician)}}|| Musical arrangers || Orchestral
+|-
+|{{sortname|Neil Patrick|Harris}} || Performer || Opening number
+|-
+|{{sortname|James|Taylor}} || Performer || "[[In My Life]]" during the annual "[[In memoriam segment|In Memoriam]]" tribute
+|-
+|{{sortname||Legion of Extraordinary Dancers}} || Performers || Performed dance number synchronized with selections from Best Original Score nominees
+|}
+
+==Ceremony information==
+{{multiple image
+| align = right
+| image1 = Alec Baldwin by Gage Skidmore.jpg
+| width1 = 135
+| alt1 = A man in his late fifties smiles while he is being photographed. He wears a dark tuxedo.
+| caption1 = 
+| image2 = Steve Martin 2011.jpg
+| width2 = 150
+| alt2 = A man in his middle sixties is standing up against a wall. He wears a suit and glasses.
+| caption2 = 
+| footer = [[Alec Baldwin]] (''left'') and [[Steve Martin]] (''right'') co-hosted the 82nd Academy Awards.
+}}
+
+Because of the declining viewership of recent Academy Awards ceremonies, the Academy sought ideas to revamp the show while renewing interest with the nominated films. After the [[81st Academy Awards|previous year's telecast]], which saw a 13% increase in viewership, many within the Motion Picture Academy proposed new ways to give the awards a more populist appeal. AMPAS then-president [[Sid Ganis]] announced that the ceremony would feature ten Best Picture nominees, rather than traditional five. The expansion was a throwback to the Academy's early years in the [[1930s in film|1930s]] and [[1940s in film|1940s]], when eight to twelve films were nominated.<ref>{{cite web|last=Cieply |first=Michael |title=Academy Expands Best-Picture Pool to 10 |url=https://www.nytimes.com/2009/06/25/movies/25oscars.html |work=The New York Times |access-date=June 5, 2013 |date=June 24, 2009 |url-status=live |archive-url=https://web.archive.org/web/20130717165526/http://www.nytimes.com/2009/06/25/movies/25oscars.html |archive-date=July 17, 2013 }}</ref> "Having 10 Best Picture nominees is going to allow Academy voters to recognize and include some of the fantastic movies that often show up in the other Oscar categories, but have been squeezed out of the race for the top prize," Sid Ganis said in a press conference.<ref name="Academy PR" /> "I can't wait to see what that list of ten looks like when the nominees are announced in February."<ref name="Academy PR" /> Ganis also said that became difficult to get a clear winner. A cause of this was required a change in the voting system from [[first-past-the-post]] to [[alternative vote]].<ref>{{cite news|url=https://news.bbc.co.uk/2/hi/entertainment/8539436.stm |title=BBC News: Oscars 2010: Best picture voting changes explained |last=Smith |first=Neil |publisher=[[BBC]] |work=[[BBC News]] |date=March 1, 2010 |access-date=March 9, 2010 |archive-url=https://web.archive.org/web/20100311070948/http://news.bbc.co.uk/2/hi/entertainment/8539436.stm |archive-date=March 11, 2010 |url-status=live }}</ref>
+
+[[Choreographer]] [[Adam Shankman]] and [[Bill Mechanic]] were hired as producers for the ceremony. Shankman revealed in an interview on [[NPR]]'s ''[[Fresh Air]]'' that he and Mechanic had originally chosen [[Sacha Baron Cohen]] as the host, but the Academy rejected this proposal because Baron Cohen was "too much of a wild card."<ref>{{cite web|url=https://www.npr.org/templates/transcript/transcript.php?storyId=123844321 |title=Shankman's Winning Job: Producing The Oscars |date=February 18, 2010 |publisher=[[NPR]] (National Public Radio, Inc.) |access-date=February 20, 2010 |archive-url=https://web.archive.org/web/20100304060450/http://www.npr.org/templates/transcript/transcript.php?storyId=123844321 |archive-date=March 4, 2010 |url-status=live }}</ref>
+
+Many of the previous year's well-received elements returned. Five actors with a personal connection with each of the nominees presented the Best Actor and Best Actress awards. Shankman and Mechanic announced their intention to make the running time of the telecast shorter.<ref>{{cite magazine|title=Looking Forward to The Big Show|first=Nicole |last=Sperling|magazine=[[Entertainment Weekly]]|publisher=[[Time Inc.]]|date=February 12, 2010}}</ref> Most presenters this year introduced each winner with the phrase "And the winner is ..." rather than "And the Oscar goes to..." for the first time since 1988. The Academy gave no reason for the change to a phrase which it had once felt humiliating to the other nominees; but apparently acquiesced in Shankman and Mechanic's decision to return to the older phrase.<ref>{{cite magazine|url=https://time.com/archive/6691051/an-oscar-comeback-and-the-winner-is/ |title=An Oscar Comeback: 'And the Winner Is ...' |magazine=[[Time (magazine)|Time]] |publisher=Time Inc. |last=Alexander |first=Bryan |date=March 8, 2010 |access-date=March 9, 2010 |url-status=live |archive-url=https://web.archive.org/web/20241224174640/https://time.com/archive/6691051/an-oscar-comeback-and-the-winner-is/ |archive-date=December 24, 2024 }}</ref> David Rockwell's proscenium curtain, decorated with 100,000 [[Swarovski]] crystals, was reused as part of the stage design for this year's telecast.<ref>{{cite news|last=Zelevansky |first=Nora |title=David Rockwell opens curtain on 2010 Oscar set design |url=https://www.latimes.com/archives/la-xpm-2010-feb-28-la-ig-oscarsets-20100228-story.html |access-date=May 21, 2010 |work=Los Angeles Times |date=February 28, 2010 |url-status=live |archive-url=https://web.archive.org/web/20100305152819/http://articles.latimes.com/2010/feb/28/image/la-ig-oscarsets-20100228 |archive-date=March 5, 2010 }}</ref> Unlike most Oscar ceremonies, however, Mechanic and Shankman announced that none of the five songs nominated for Best Original Song would be performed live.<!--<ref>{{cite web|url=https://www.rollingstone.com/rockdaily/index.php/2010/02/17/best-original-songs-wont-be-performed-at-academy-awards/ |title=Best Original Songs Won't Be Performed at Academy Awards|work=[[Rolling Stone]] |date= February 17, 2010|access-date= March 8, 2010}}</ref>--><ref>{{cite news|url=https://deadline.com/2010/02/oscar-spoilers-best-original-song-artists-not-performing-25443/ |title=Oscar Spoilers: Best Original Song Artists Not Performing |publisher=Penske Media Corporation |author-link=Nikki Finke |last=Finke |first=Nikki |work=Deadline Hollywood Daily |date=February 17, 2010 |access-date=March 8, 2010 |url-status=live |archive-url=https://web.archive.org/web/20100329134950/http://www.deadline.com/2010/02/oscar-spoilers-best-original-song-artists-not-performing |archive-date=March 29, 2010 }}</ref>
+
+===Box office performance of nominated films===
+For the first time since 2003, the field of major nominees included at least one [[Blockbuster (entertainment)|blockbuster]] at the American and Canadian [[box office]]s. Five of the nominees had grossed over $100&nbsp;million before the nominations were announced.<ref name="laetoscars">{{cite news|last=Horn |first=John |title=Oscar nominations that are for the people |work=Los Angeles Times |date=February 3, 2010 |url=https://www.latimes.com/archives/la-xpm-2010-feb-03-la-et-oscars-main3-2010feb03-story.html |access-date=February 10, 2010 |archive-url=https://web.archive.org/web/20100209120304/http://articles.latimes.com/2010/feb/03/entertainment/la-et-oscars-main3-2010feb03 |archive-date=February 9, 2010 |url-status=live }}</ref> Many critics, reporters, and entertainment industry analysts cite the AMPAS's decision to expand the roster of Best Picture nominees from five to ten films as one of the reasons for this.<ref name="laetoscars" /><ref>{{cite news|last=Gray |first=Brandon |title=2009 Academy Award Nominations |website=[[Box Office Mojo]] |date=February 2, 2010 |url=https://boxofficemojo.com/news/?id=2666&p=.htm |access-date=February 10, 2010 |archive-url=https://web.archive.org/web/20100212013407/http://www.boxofficemojo.com/news/?id=2666&p=.htm |archive-date=February 12, 2010 |url-status=live }}</ref>
+
+Three of the ten Best Picture nominees were among the top ten releases in box office during the nominations. At the time of the announcement on February 2, ''Avatar'' was the highest-grossing film among the Best Picture nominees with $596&nbsp;million in domestic box office receipts.<ref name="laetoscars" /> Other top-ten domestic box office hits nominated were ''Up'' with $293&nbsp;million, and ''The Blind Side'' with $237.9&nbsp;million.<ref name="laetoscars" /> Among the remaining seven nominees, ''Inglourious Basterds'' was the next highest-grossing film with $120.5&nbsp;million followed by ''District 9'' ($115.6&nbsp;million), ''Up in the Air'' ($73&nbsp;million), ''Precious: Based on the Novel 'Push' by Sapphire'' ($45&nbsp;million), ''The Hurt Locker'' ($12&nbsp;million), ''An Education'' ($9.4&nbsp;million) and finally ''A Serious Man'' ($9.2&nbsp;million).<ref name="desertnewsoscars">{{cite news|url=http://www.deseretnews.com/article/700006507/Box-office-numbers-for-Oscar-best-picture-nominees.html |title=Box-office numbers for Oscar best-picture nominees |publisher=[[Deseret Management Corporation]] |work=[[Deseret News]] |access-date=April 26, 2011 |date=February 2, 2010 |url-status=dead |archive-url=https://web.archive.org/web/20120303155621/http://www.deseretnews.com/article/700006507/Box-office-numbers-for-Oscar-best-picture-nominees.html |archive-date=March 3, 2012 }}</ref>
+
+Of the top 50 grossing films of the year, 46 nominations went to 13 films on the list. Only ''Avatar'' (1st), ''Up'' (5th), ''The Blind Side'' (8th), ''Inglourious Basterds'' (25th), ''District 9'' (27th), ''The Princess and the Frog'' (32nd), ''Julie & Julia'' (34th), ''Coraline'' (42nd) and ''Up in the Air'' (43rd) were nominated for directing, acting, screenwriting, Best Picture or Animated Feature.<ref name="boxofficemojooscars">{{cite web|url=https://www.boxofficemojo.com/oscar/chart/?view=allmovies&yr=2009&p=.htm |title=2009 Oscar nominations and wins by movie |website=[[Box Office Mojo]] ([[Amazon.com]]) |access-date=April 9, 2010 |archive-url=https://web.archive.org/web/20100204181707/http://boxofficemojo.com/oscar/chart/?view=allmovies&yr=2009&p=.htm |archive-date=February 4, 2010 |url-status=live }}</ref> The other top-50 box office hits that earned nominations were ''Harry Potter and the Half-Blood Prince'' (2nd), ''Transformers: Revenge of the Fallen'' (3rd), ''Star Trek'' (7th) and ''Sherlock Holmes'' (11th).<ref name="boxofficemojooscars"/>
+
+===Oscar advertising and viewership issues===
+On March 1, 2010, [[WABC-TV]] [[New York, New York|New York]], ABC's flagship station, announced that it would likely end its services with cable television company [[Cablevision]] on March 7, 2010,<ref>{{cite news|url=https://www.nytimes.com/2010/03/03/business/media/03cable.html |url-access=subscription |title=Disney and Cablevision Take ABC Fight Public |work=The New York Times |date=March 8, 2010 |access-date=April 9, 2010 |last1=Stelter |first1=Brian |first2=Brooks |last2=Barnes |archive-url=https://web.archive.org/web/20100312225617/http://www.nytimes.com/2010/03/03/business/media/03cable.html |archive-date=March 12, 2010 |url-status=live }}</ref> the weekend of the 82nd Academy Awards. The station was removed from Cablevision's lineup at 12:01&nbsp;a.m. ET on March 7.<ref>{{cite news|url=https://www.nytimes.com/2010/03/08/business/media/08scramble.html |title=Oscar Night Suspense, Then Poof! Cable's Back |work=The New York Times |access-date=March 8, 2010 |last=Kleinfield |first=N.R. |date=March 7, 2010 |archive-url=https://web.archive.org/web/20100311064852/http://www.nytimes.com//2010//03//08//business//media//08scramble.html |archive-date=March 11, 2010 |url-status=live }}</ref><ref name="NYTImes WABC">{{cite news|url=http://mediadecoder.blogs.nytimes.com/2010/03/07/disney-pulls-abc-from-cablevision-after-deal-fails/?pagemode=print |title=WABC Returns to Cablevision |last1=Stelter |first1=Brian |first2=Brooks |last2=Barnes |work=The New York Times |access-date=March 8, 2010 |date=March 7, 2010 |archive-url=https://web.archive.org/web/20100309033035/http://mediadecoder.blogs.nytimes.com/2010/03/07/disney-pulls-abc-from-cablevision-after-deal-fails/ |archive-date=March 9, 2010 |url-status=live }}</ref><ref>{{cite news|url=https://www.washingtonpost.com/wp-dyn/content/article/2010/03/07/AR2010030701058.html |title=ABC goes dark for New York Cablevision subscribers |newspaper=[[The Washington Post]] |access-date=March 8, 2010 |last=Kang |first=Cecilia |date=March 7, 2010 |url-status=live |archive-url=https://web.archive.org/web/20121110035634/http://www.washingtonpost.com/wp-dyn/content/article/2010/03/07/AR2010030701058.html |archive-date=November 10, 2012 }}</ref> Over 3.1&nbsp;million viewers in the New York City viewing area, the nation's largest media market, would have been unable to watch the Oscars (and other station-related and ABC-related programming), and it was projected to cause a devastating blow to advertisers and viewership for the Oscars.<ref>{{cite web |url=http://www.nbcnewyork.com/news/local-beat/Cablevision-Customers-Might-Lose-ABC-on-Oscar-Night-85982967.html |title=Cablevision Customers May Lose ABC on Oscar Night |website=nbcnewyork.com |publisher=[[WNBC]] (NBC Universal) |date=March 2, 2010 |access-date=March 5, 2010 |last=Smith |first=Mariel}}</ref> At about 8:43&nbsp;p.m. ET, thirteen minutes after the awards ceremony began, Cablevision resumed transmission of the WABC feed.<ref name="NYTImes WABC" /><ref>{{cite news|title=Cablevision reaches deal with Disney; ABC service restored to 3.1m subscribers |url=http://archive.boston.com/ae/tv/articles/2010/03/08/cablevision_customers_see_oscars_after_all/ |access-date=August 29, 2010 |work=[[Boston.com]] |publisher=The New York Times Company |date=March 8, 2010 |url-status=live |archive-url=https://web.archive.org/web/20150206094406/http://www.boston.com/ae/tv/articles/2010/03/08/cablevision_customers_see_oscars_after_all/ |archive-date=February 6, 2015 }}</ref><ref>
+{{cite news
+ |url=https://www.nytimes.com/2010/03/08/business/media/08cable.html 
+ |title=At the Last Minute, a Disney-Cablevision Truce 
+ |work=[[The New York Times]] 
+ |author=Brian Stelter 
+ |author2=Brooks Barnes 
+ |date=March 7, 2010 
+ |access-date=March 7, 2010 
+ |archive-url=https://web.archive.org/web/20100311064951/http://www.nytimes.com//2010//03//08//business//media//08cable.html 
+ |archive-date=March 11, 2010 
+ |url-status=live 
+ }}</ref>
+
+===''Music by Prudence'' acceptance speech===
+Shortly after ''[[Music by Prudence]]'' director [[Roger Ross Williams]] began his speech accepting the Oscar for Best Documentary Short Subject, he was suddenly interrupted by [[Elinor Burkett]], his co-producer. The scene was described as the ceremony's weirdest or most awkward moment, and was compared by Williams and others to [[Kanye West]]'s [[2009 MTV Video Music Awards#Kanye West controversy and debated incidents|interruption]] of [[Taylor Swift]]'s acceptance of the Best Female Video Award at the [[2009 MTV Video Music Awards]] five months earlier.<ref name="NYT Kanye moment">{{cite news|last=Ryzik |first=Mylena |title=A Kanye Moment at the Oscars |url=https://archive.nytimes.com/carpetbagger.blogs.nytimes.com/2010/03/08/a-kanye-moment-at-the-oscars/ |work=[[The New York Times]] |date=March 8, 2010 |access-date=March 8, 2010 |archive-url=https://web.archive.org/web/20100311020307/http://carpetbagger.blogs.nytimes.com/2010/03/08/a-kanye-moment-at-the-oscars/ |archive-date=March 11, 2010 |url-status=live }}</ref>
+
+Burkett, who lives in [[Zimbabwe]] where most of the film was shot, had sued Williams over the finished film, a suit that had been settled by the time of the ceremony. She explained to ''[[Salon.com]]'', to which she was once a contributor, that the film had been her idea. "Roger had never even heard of Zimbabwe before I told him about this." She had been upset that Williams and [[HBO]] chose to focus on one person instead of the entire band, as the members had been led to believe. "I felt my role in this has been denigrated again and again, and it wasn't going to happen this time." She hustled onstage because, she claimed, Williams' mother had blocked her from going down with her cane to prevent her from sharing the stage.<ref name="Salon Kanye moment">{{cite web|last=Lauerman |first=Kerry |title=The story behind Oscar's "Kanye moment" |url=http://www.salon.com/entertainment/movies/2010/03/07/music_by_prudence_burkett |work=[[Salon.com]] |publisher=Salon Media Group |date=March 8, 2010 |access-date=March 8, 2010 |archive-url=https://web.archive.org/web/20100310045004/http://www.salon.com/entertainment/movies/2010/03/07/music_by_prudence_burkett |archive-date=March 10, 2010 }}</ref>
+
+"She just ambushed me", said Williams, "I just expected her to stand there. I had a speech prepared." He said it was made clear by the Academy that only one person can give an acceptance speech. He said his mother had merely gotten up to hug him.<ref name="Salon Kanye moment" />
+
+===Critical reviews===
+The show received a mixed reception from media publications. Some media outlets were more critical of the show. Film critic [[Roger Ebert]] criticized the opening monologue of Baldwin and Martin saying it was "surprisingly unfunny". He later went on to say that there was joy that ''The Hurt Locker'' won, but choice of Baldwin and Martin as host was wrong.<ref>{{cite news|url=http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/20100307/OSCARS/100309965 |title=No pain for "Hurt Locker," Bigelow |author-link=Roger Ebert |last=Ebert |first=Roger |access-date=April 14, 2010 |date=March 7, 2010 |work=[[Chicago Sun-Times]] |publisher=Sun-Times Media Group |archive-url=https://web.archive.org/web/20100413211044/http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=%2F20100307%2FOSCARS%2F100309965 |archive-date=April 13, 2010 |url-status=live }}</ref> ''[[Los Angeles Times]]'' columnist [[Mary McNamara]] quipped that the show had no sense of timing saying, "Despite everyone's best efforts, this year's Oscars seemed to suffer from a crisis of confidence."<ref>{{cite news|url=https://www.latimes.com/archives/la-xpm-2010-mar-08-la-et-oscars-review8-2010mar08-story.html |work=Los Angeles Times |access-date=April 14, 2010 |date=March 8, 2010 |title=Oscars show has no sense of timing |last=McNamara |first=Mary |author-link=Mary McNamara |archive-url=https://web.archive.org/web/20100412142838/http://theenvelope.latimes.com/awards/oscars/la-et-oscars-review8-2010mar08%2C0%2C2236486.story |archive-date=April 12, 2010 |url-status=live }}</ref> ''[[Time (magazine)|Time]]'' television critic [[James Poniewozik]] also criticized "the choppy paced" ceremony stating, it was "a classic Oscar failing". He also noted that having two hosts was a disadvantage.<ref>{{cite magazine|url=https://entertainment.time.com/2010/03/08/the-oscarcast-classic-not-necessarily-in-a-good-way/ |title=The Oscarcast: Classic, Not Necessarily in a Good Way |author-link=James Poniewozik |first=James |last=Poniewozik |date=March 8, 2010 |access-date=April 14, 2010 |magazine=Time |publisher=Time Inc. |archive-url=https://web.archive.org/web/20100412114507/http://tunedin.blogs.time.com/2010/03/08/the-oscarcast-classic-not-necessarily-in-a-good-way/ |archive-date=April 12, 2010 |url-status=live }}</ref>
+
+Other media outlets received the broadcast more positively. ''[[The Boston Globe]]'' television critic Matthew Gilbert lauded the hosts performance saying that "The delivery was expert and warmly conversational, like one of those old-school comedy teams."<ref>{{cite news|last=Gilbert|first=Matthew|title=A silly, somber, and intimate night: The 82nd Academy Awards|work=[[The Boston Globe]]|publisher=The New York Times Company|date=March 8, 2010|page=G14}}</ref> [[Hank Stuever]] of ''[[The Washington Post]]'' remarked that the telecast "moved along with precision and smart decisions." He also praised Baldwin and Martin writing that they "proved to be classy and quippy throughout the night."<ref>{{cite news|last=Stuever |first=Hank |author-link=Hank Stuever |title=Academy Awards: Hosts Alec Baldwin and Steve Martin put on fun Oscars broadcast |url=https://www.washingtonpost.com/wp-dyn/content/article/2010/03/07/AR2010030703918.html |access-date=August 29, 2010 |newspaper=The Washington Post |url-status=live |archive-url=https://web.archive.org/web/20101108004740/http://www.washingtonpost.com/wp-dyn/content/article/2010/03/07/AR2010030703918.html |archive-date=November 8, 2010 }}</ref> Maureen Ryan of the ''[[Chicago Tribune]]'' gave an average critique of the ceremony but acclaimed the cast.<ref>{{cite news|url=https://www.chicagotribune.com/2010/03/08/oscar-hosts-fail-to-bring-special-effect-to-show/ |title=Oscar hosts fail to bring special effect to show |date=March 7, 2010 |access-date=April 14, 2010 |work=[[Chicago Tribune]] |publisher=Tribune Publishing |url-status=live |archive-url=https://web.archive.org/web/20100413041142/http://articles.chicagotribune.com/2010-03-08/news/ct-live-0308-oscar-watcher-20100308_1_short-film-awards-oscar-telecast-original-screenplay-award |archive-date=April 13, 2010 }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 41.62 million people over its length, which was a 13% increase from the previous year's ceremony.<ref name=var1/> An estimated 79.68 million total viewers watched all or part of the awards.<ref>{{cite news |title=ABC Draws Its Biggest Weekly Audience Since September '08 | url=http://www.thefutoncritic.com/news.aspx?id=20100309abc02 | work=The Futon Critic | date=March 10, 2010 | access-date=October 8, 2010}}</ref> The show also drew higher [[Nielsen ratings]] compared to the two previous ceremonies with 24.89% of households watching over a 36.69 share.<ref>{{cite magazine|url=https://ew.com/article/2010/03/09/oscars-wins-weeks-ratings/ |date=March 9, 2010 |access-date=April 13, 2010 |magazine=[[Entertainment Weekly]] |publisher=Time Inc. |last=Stransky |first=Tanner |title=Ratings: Oscar's 41 million viewers win week's top prize |url-status=live |archive-url=https://web.archive.org/web/20151006110723/http://www.ew.com/article/2010/03/09/oscars-wins-weeks-ratings |archive-date=October 6, 2015 }}</ref> In addition, the program scored a higher 18-49 demo rating with a 12.71 rating over a 31.51 share among viewers in that demographic.<ref>{{cite news|last=Kissell |first=Rick |title=Oscars draw 41 million viewers |url=https://variety.com/2010/scene/news/oscars-draw-41-million-viewers-1118016200/ |work=Variety |publisher=Penske Media Corporation |date=March 8, 2010 |access-date=April 29, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131105083139/http://variety.com/2010/scene/news/oscars-draw-41-million-viewers-1118016200/ |archive-date=November 5, 2013 }}</ref> It was the highest viewership for an Academy Award telecast since the [[77th Academy Awards|77th ceremony]] held in 2005.<ref>{{cite news|author-link=Nikki Finke |last=Finke |first=Nikki |title=Oscar Ratings: 'Avatar' Loses But ABC And AMPAS Aren't Blue Despite Greying Viewers |url=https://deadline.com/2010/03/oscar-ratings-add-up-for-abc-27871/ |website=[[Deadline Hollywood]] |publisher=Penske Media Corporation  |date=March 8, 2010 |access-date=May 6, 2010 |archive-url=https://web.archive.org/web/20100421140932/http://www.deadline.com/2010/03/oscar-ratings-add-up-for-abc/ |archive-date=April 21, 2010 |url-status=live }}</ref>
+
+In July 2010, the ceremony presentation received 12 nominations at the [[62nd Primetime Emmy Awards|62nd Primetime Emmys]].<ref>{{cite news|last=O'Neil |first=Tom |title=Emmys love for Oscars continues with 12 nominations |url=http://goldderby.latimes.com/awards_goldderby/2010/07/emmys-love-for-oscars-continues-with-12-nominations.html |work=Los Angeles Times |date=July 12, 2010 |access-date=August 3, 2010 |archive-url=https://web.archive.org/web/20100819172053/http://goldderby.latimes.com/awards_goldderby/2010/07/emmys-love-for-oscars-continues-with-12-nominations.html |archive-date=August 19, 2010 |url-status=live }}</ref> The following month, the ceremony won one of those nominations for [[Primetime Emmy Award for Outstanding Production Design for a Variety Special|Outstanding Art Direction for Variety, Music or Nonfiction Programming]] ([[David Rockwell]] and Joe Celli).<ref>{{cite news|last=Jones |first=Kenneth |title=The 2009 Tony Awards Broadcast Wins Emmy; Neil Patrick Harris Is a "Glee"-ful Winner |url=http://www.playbill.com/news/article/142270-The-2009-Tony-Awards-Broadcast-Wins-Emmy-Neil-Patrick-Harris-Is-a-Glee-ful-Winner |work=[[Playbill]] |date=August 21, 2010 |access-date=September 16, 2010 |archive-url=https://web.archive.org/web/20100925184255/http://www.playbill.com/news/article/142270-The-2009-Tony-Awards-Broadcast-Wins-Emmy-Neil-Patrick-Harris-Is-a-Glee-ful-Winner |archive-date=September 25, 2010 }}</ref>
+
+=="In Memoriam"==
+The annual "[[In memoriam segment|In Memoriam]]" tribute, produced by [[Chuck Workman]],<ref name=usatoday>{{cite news|first=Sandy |last=Cohen |title=Oscar's {{'}}''In Memoriam''{{'}} segment is touching to watch, painful to make |url=https://www.usatoday.com/life/movies/movieawards/oscars/2010-03-03-oscar-memorial-segment_N.htm |work=USA Today |publisher=Gannett Company |date=March 3, 2010 |access-date=March 8, 2010 |url-status=dead |archive-url=https://web.archive.org/web/20100306133003/http://www.usatoday.com/life/movies/movieawards/oscars/2010-03-03-oscar-memorial-segment_N.htm |archive-date=March 6, 2010 }}</ref> was presented by actress [[Demi Moore]]. Singer [[James Taylor]] performed [[The Beatles]]' song "[[In My Life]]" during the tribute.<ref>{{cite news |last1=Burson |first1=Jeff |title=The Black Carpet of the 2010 Academy Awards |url=https://www.al.com/finaltaxi/2010/03/the_black_carpet_of_the_2010_a.html |access-date=August 29, 2010 |work=[[The Birmingham News]] |date=March 7, 2010 |url-access=limited |archive-url=https://web.archive.org/web/20121117055147/http://blog.al.com/finaltaxi/2010/03/the_black_carpet_of_the_2010_a.html |archive-date=November 17, 2012 |url-status=live}}</ref><ref name="guablog">{{cite news|url=https://www.theguardian.com/film/filmblog/2010/mar/07/oscars-2010-liveblog |title=Oscars 2010 liveblog: the 82nd Academy Awards as it happened |last=Brooks |first=Xan |date=March 7, 2010 |work=The Guardian |access-date=March 31, 2010 |location=London |archive-url=https://web.archive.org/web/20100309224442/http://www.guardian.co.uk/film/filmblog/2010/mar/07/oscars-2010-liveblog |archive-date=March 9, 2010 |url-status=live }}</ref>
+
+{{div col}}
+* [[Patrick Swayze]] – Actor
+* [[Maurice Jarre]] – Composer
+* [[Monte Hale]] – Actor
+* [[Jean Simmons]] – Actress
+* [[Tullio Pinelli]] – Writer
+* [[Éric Rohmer]] – Director
+* [[Ken Annakin]] – Director
+* [[David Carradine]] – Actor
+* [[Gareth Wigan]] – Executive
+* [[Daniel Melnick]] – Producer
+* [[Howard Zieff]] – Director
+* [[Dom DeLuise]] – Actor
+* [[Army Archerd]] – Journalist
+* [[Ron Silver]] – Actor
+* [[Brittany Murphy]] – Actress
+* [[Lou Jacobi]] – Actor
+* [[Simon Channing Williams]] – Producer
+* [[Betsy Blair]] – Actress
+* [[Joseph Wiseman]] – Actor
+* [[Jack Cardiff]] – Cinematographer
+* [[Kathryn Grayson]] – Actress
+* Arthur Canton – Public relations
+* [[Nat Boxer]] – Sound
+* [[Millard Kaufman]] – Writer
+* [[Roy E. Disney]] – Executive
+* [[Larry Gelbart]] – Writer
+* [[Horton Foote]] – Writer
+* [[Robert Anderson (playwright)|Robert Woodruff Anderson]] – Writer
+* [[Budd Schulberg]] – Writer
+* [[Michael Jackson]] – Musician
+* [[Natasha Richardson]] – Actress
+* [[Jennifer Jones]] – Actress
+* [[David Brown (producer)|David Brown]] – Producer
+* [[Karl Malden]] – Actor
+{{div col end}}
+
+A separate tribute was held earlier in the evening for filmmaker [[John Hughes]], presented by actors [[Matthew Broderick]], [[Molly Ringwald]], [[Judd Nelson]], [[Ally Sheedy]], [[Anthony Michael Hall]], [[Macaulay Culkin]] and [[Jon Cryer]].<ref name="hughes">{{cite news|url=https://www.latimes.com/entertainment/la-et-oscars-hughes8-2010mar08-story.html |title=John Hughes High School reunion |date=March 8, 2010 |last=Braxton |first=Greg |work=Los Angeles Times |access-date=March 9, 2010 |archive-url=https://web.archive.org/web/20100412143820/http://theenvelope.latimes.com/awards/oscars/la-et-oscars-hughes8-2010mar08%2C0%2C5063722.story |archive-date=April 12, 2010 |url-status=live }}</ref><ref>{{cite news|website=[[CBS News]] |publisher=[[CBS Corporation]] |title=Oscars: What You Didn't See on TV |url=https://www.cbsnews.com/news/oscars-what-you-didnt-see-on-tv/ |access-date=January 4, 2010 |url-status=live |archive-url=https://web.archive.org/web/20141021152252/http://www.cbsnews.com/news/oscars-what-you-didnt-see-on-tv/ |archive-date=October 21, 2014 }}</ref> The [[77th Academy Awards|77th]] telecast had previously featured a special memorial to [[Johnny Carson]] presented by [[Chris Rock]] and [[Whoopi Goldberg]].<ref>{{cite news|last=Sutherland |first=Ben |title=Rock sparkles on Oscar debut |url=https://news.bbc.co.uk/2/hi/entertainment/4303485.stm |access-date=December 26, 2013 |work=[[BBC News]] |publisher=[[BBC]] |date=February 28, 2005 |url-status=live |archive-url=https://web.archive.org/web/20131211051628/http://news.bbc.co.uk/2/hi/entertainment/4303485.stm |archive-date=December 11, 2013 }}</ref>
+
+== See also ==
+* [[67th Golden Globe Awards]]
+* [[16th Screen Actors Guild Awards]]
+* [[30th Golden Raspberry Awards]]
+* [[52nd Grammy Awards]]
+* [[62nd Primetime Emmy Awards]]
+* [[63rd British Academy Film Awards]]
+* [[64th Tony Awards]]
+* [[List of submissions to the 82nd Academy Awards for Best Foreign Language Film]]
+
+==References==
+{{reflist|30em}}
+
+==External links==
+{{Commons category}}
+===Official websites===
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=October 2, 2018 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+===News resources===
+* [https://news.bbc.co.uk/2/hi/in_depth/entertainment/2010/oscars_2010/default.stm Oscars 2010]  [[BBC News]]
+* [http://www.cnn.com/SPECIALS/2010/academy.awards/index.html Academy Awards coverage] {{Webarchive|url=https://web.archive.org/web/20141013033925/http://www.cnn.com/SPECIALS/2010/academy.awards/index.html |date=October 13, 2014 }} [[CNN]]
+* [http://theenvelope.latimes.com/ The Envelope] {{Webarchive|url=https://web.archive.org/web/20110430225109/http://www.theenvelope.latimes.com/ |date=April 30, 2011 }} Awards insider ''[[Los Angeles Times]]''
+* [http://wsws.org/articles/2010/feb2010/acad-f05.shtml Academy Award nominations: Hollywood plods on] {{Webarchive|url=https://web.archive.org/web/20120427075903/http://wsws.org/articles/2010/feb2010/acad-f05.shtml |date=April 27, 2012 }} [[World Socialist Web Site]] February 5, 2010
+
+===Analysis===
+* [http://www.filmsite.org/aa09.html 2009 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20130819014911/http://www.filmsite.org/aa09.html |date=August 19, 2013 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/2010 Academy Awards, USA: 2010] {{Webarchive|url=https://web.archive.org/web/20171105193619/http://www.imdb.com/event/ev0000003/2010 |date=November 5, 2017 }} [[Internet Movie Database]]
+
+===Other resources===
+* {{IMDb title|tt1541775|The 82nd Annual Academy Awards}}
+
+{{Academy Awards|state=autocollapse}}
+
+{{featured list}}
+
+{{DEFAULTSORT:Academy Awards, 82}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2009 film awards]]
+[[Category:2010 in Los Angeles]]
+[[Category:2010 in American cinema]]
+[[Category:2010 awards in the United States]]
+[[Category:March 2010 in the United States]]
+[[Category:Television shows directed by Hamish Hamilton (director)]]

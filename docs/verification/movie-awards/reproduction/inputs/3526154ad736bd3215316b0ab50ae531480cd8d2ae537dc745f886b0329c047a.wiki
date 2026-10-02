@@ -1,0 +1,573 @@
+{{Short description|Film award ceremony in 2023}}
+{{Use American English|date=January 2023}}
+{{Use mdy dates|date=January 2023}}
+{{Infobox film awards
+| number                        = 80
+| image                         = The80thAnnualGoldenGlobeAwards.jpg
+| caption                       = Official poster
+| award                         = Golden Globe Awards
+| date                          = January 10, 2023<ref name="Variety"/>
+| site                          = [[The Beverly Hilton]],<br>[[Beverly Hills, California]], U.S.
+| host                          = [[Jerrod Carmichael]]<ref name="Host"/>
+| best_film_drama               = ''[[The Fabelmans]]''
+| best_film_musical_or_comedy   = ''[[The Banshees of Inisherin]]''
+| best_drama_series             = ''[[House of the Dragon]]''
+| best_musical_or_comedy_series = ''[[Abbott Elementary]]''
+| best_miniseries_or_tv_movie   = ''[[The White Lotus]]''
+| most_wins                     = ''[[Abbott Elementary]]''<br>''[[The Banshees of Inisherin]]'' (3)
+| most_nominations              = {{nowrap|''[[The Banshees of Inisherin]]'' (8)}}
+| network                       = [[NBC]]<br>[[Peacock (streaming service)|Peacock]] (streaming)
+| ratings                       = 6.3&nbsp;million ([[Nielsen Media Research#Nielsen TV ratings|Nielsen ratings]])<ref>{{cite web |url=https://variety.com/2023/tv/news/golden-globes-ratings-2023-nbc-1235482220/ |title=Golden Globes Ratings Down More Than 26% from Last NBC Show in 2021 |first=Jennifer |last=Maas |work=[[Variety (magazine)|Variety]] |date=January 11, 2023 |access-date=January 13, 2023 |archive-date=January 13, 2023 |archive-url=https://web.archive.org/web/20230113052505/https://variety.com/2023/tv/news/golden-globes-ratings-2023-nbc-1235482220/ |url-status=live}}</ref>
+| last                          = [[79th Golden Globes|79th]]
+| next                          = [[81st Golden Globes|81st]]
+}}
+
+The '''80th Golden Globe Awards''' honored the best in [[2022 in film|film]] and [[2022 in American television|American television of 2022]], as chosen by the [[Hollywood Foreign Press Association]] (HFPA). The ceremony was held on January 10, 2023, from [[The Beverly Hilton]] in [[Beverly Hills, California]], produced by [[Dick Clark Productions]], Jesse Collins Entertainment, and the HFPA. It aired live in the United States on [[NBC]] and streamed on [[Peacock (streaming service)|Peacock]].<ref name="Variety">{{cite web |url=https://variety.com/2022/tv/news/golden-globes-2023-nbc-hfpa-dick-clark-productions-1235324403/ |title=Golden Globes Return to TV in 2023, NBC and HFPA Set One-Year Deal |first=Michael |last=Schneider |work=[[Variety (magazine)|Variety]] |date=September 20, 2022 |access-date=September 20, 2022 |archive-date=September 20, 2022 |archive-url=https://web.archive.org/web/20220920161626/https://variety.com/2022/tv/news/golden-globes-2023-nbc-hfpa-dick-clark-productions-1235324403/ |url-status=live}}</ref><ref>{{cite web |url=https://deadline.com/2023/01/2023-golden-globes-streaming-tv-network-how-to-watch-1235214680/ |title=How to Watch the Golden Globes on TV & Streaming |first=Patrick |last=Hipes |work=[[Deadline Hollywood]] |date=January 9, 2023 |access-date=January 10, 2023 |archive-date=January 11, 2023 |archive-url=https://web.archive.org/web/20230111145501/https://deadline.com/2023/01/2023-golden-globes-streaming-tv-network-how-to-watch-1235214680/ |url-status=live}}</ref><ref>{{cite web |url=https://variety.com/2023/awards/news/golden-globes-red-carpet-rain-tent-1235482934/ |title=Golden Globes Red Carpet Will Be Tented for Rain as Show Plans Old Hollywood Theme (Exclusive) |first=Jazz |last=Tangcay |work=[[Variety (magazine)|Variety]] |date=January 9, 2023 |access-date=January 10, 2023 |archive-date=January 11, 2023 |archive-url=https://web.archive.org/web/20230111145418/https://variety.com/2023/awards/news/golden-globes-red-carpet-rain-tent-1235482934/ |url-status=live}}</ref><ref>{{cite web |url=https://www.hollywoodreporter.com/movies/movie-features/golden-globes-2023-preview-1235291082/ |title=The Golden Globes Auditions for Its Future |first=Scott |last=Feinberg |work=[[The Hollywood Reporter]] |date=January 9, 2023 |access-date=January 10, 2023 |archive-date=January 11, 2023 |archive-url=https://web.archive.org/web/20230111145431/https://www.hollywoodreporter.com/movies/movie-features/golden-globes-2023-preview-1235291082/ |url-status=live}}</ref><ref>{{cite web |url=https://variety.com/2023/awards/awards/golden-globes-2023-winners-list-1235480125/ |title='The Fabelmans', 'The Banshees of Inisherin' Win Big at Revamped Golden Globes (Complete Winners List) |first1=Brent |last1=Lang |first2=Jordan |last2=Moreau |work=[[Variety (magazine)|Variety]] |date=January 10, 2023 |access-date=January 13, 2023 |archive-date=January 12, 2023 |archive-url=https://web.archive.org/web/20230112195126/https://variety.com/2023/awards/awards/golden-globes-2023-winners-list-1235480125/ |url-status=live}}</ref> Comedian [[Jerrod Carmichael]] hosted the ceremony.<ref name="Host">{{cite web |url=https://variety.com/2022/tv/news/golden-globes-host-jerrod-carmichael-nbc-2023-1235453788/ |title=Jerrod Carmichael Named Host of the Golden Globe Awards (Exclusive) |first=Michael |last=Schneider |work=[[Variety (magazine)|Variety]] |date=December 8, 2022 |access-date=December 11, 2022 |archive-date=December 11, 2022 |archive-url=https://web.archive.org/web/20221211010535/https://variety.com/2022/tv/news/golden-globes-host-jerrod-carmichael-nbc-2023-1235453788/ |url-status=live}}</ref> This was the final Golden Globes ceremony to air on NBC before the HFPA was rebranded as the [[Golden Globe Foundation]] on June 12, 2023.<ref>{{cite web |url=https://deadline.com/2023/06/golden-globes-acquired-dick-clark-productions-eldridge-hfpa-shut-down-1235414600/ |title=Golden Globes Acquired by Dick Clark Productions & Eldridge; HFPA to Wind Down |first=Nellie |last=Andreeva |work=[[Deadline Hollywood]] |date=June 12, 2023 |access-date=November 22, 2024 |archive-date=June 12, 2023 |archive-url=https://web.archive.org/web/20230612195428/https://deadline.com/2023/06/golden-globes-acquired-dick-clark-productions-eldridge-hfpa-shut-down-1235414600/ |url-status=live }}</ref>
+
+The nominees were announced on December 12, 2022.<ref name="Variety"/><ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/how-to-watch-2023-golden-globe-awards-nominations-1235279534/ |title=Golden Globe Nominations: How to Watch |first=Carly |last=Thomas |work=[[The Hollywood Reporter]] |date=December 11, 2022 |access-date=December 11, 2022 |archive-date=December 12, 2022 |archive-url=https://web.archive.org/web/20221212052125/https://www.hollywoodreporter.com/tv/tv-news/how-to-watch-2023-golden-globe-awards-nominations-1235279534/ |url-status=live}}</ref><ref name="Nominees">{{cite web |url=https://deadline.com/2022/12/2023-golden-globe-nominations-list-movies-tv-1235196396/ |title=Golden Globe Nominations: The Complete List |first1=Patrick |last1=Hipes |first2=Denise |last2=Petski |work=[[Deadline Hollywood]] |date=December 12, 2022 |access-date=December 12, 2022 |archive-date=December 15, 2022 |archive-url=https://web.archive.org/web/20221215182720/https://deadline.com/2022/12/2023-golden-globe-nominations-list-movies-tv-1235196396/ |url-status=live}}</ref> Father-daughter duo [[George Lopez|George]] and Mayan Lopez were scheduled to announce the nominations together, but the former dropped out after testing positive for [[COVID-19]]; he was replaced by [[Selenis Leyva]].<ref>{{cite web |url=https://variety.com/2022/tv/news/george-mayan-lopez-announce-golden-globes-2023-nominations-1235450721/ |title=NBC Sitcom Stars George Lopez and Mayan Lopez Will Announce This Year's Golden Globes Nominations |first=Michael |last=Schneider |work=[[Variety (magazine)|Variety]] |date=December 6, 2022 |access-date=December 11, 2022 |archive-date=December 9, 2022 |archive-url=https://web.archive.org/web/20221209193739/https://variety.com/2022/tv/news/george-mayan-lopez-announce-golden-globes-2023-nominations-1235450721/ |url-status=live}}</ref><ref>{{cite magazine |url=https://people.com/movies/george-lopez-drops-out-of-revealing-golden-globe-2023-nominees-after-he-contracts-covid/ |title=George Lopez Drops Out of Announcing Golden Globe 2023 Nominations After He Tests Positive for COVID |first=Tommy |last=McArdle |magazine=[[People (magazine)|People]] |date=December 12, 2022 |access-date=December 12, 2022 |archive-date=January 11, 2023 |archive-url=https://web.archive.org/web/20230111145420/https://people.com/movies/george-lopez-drops-out-of-revealing-golden-globe-2023-nominees-after-he-contracts-covid/ |url-status=live}}</ref><ref>{{cite magazine |url=https://ew.com/awards/golden-globes/george-lopez-misses-golden-globes-nominations-selenis-leyva/ |title=George Lopez misses Golden Globes nominations after COVID diagnosis, Selenis Leyva fills in |first=Joey |last=Nolfi |magazine=[[Entertainment Weekly]] |date=December 12, 2022 |access-date=December 12, 2022 |archive-date=January 11, 2023 |archive-url=https://web.archive.org/web/20230111145413/https://ew.com/awards/golden-globes/george-lopez-misses-golden-globes-nominations-selenis-leyva/ |url-status=live}}</ref> [[Eddie Murphy]] and [[Ryan Murphy (producer)|Ryan Murphy]] were announced as the recipients of the [[Golden Globe Cecil B. DeMille Award|Cecil B. DeMille Award]] and [[Golden Globe Carol Burnett Award|Carol Burnett Award]], respectively.<ref name="Eddie">{{cite web |url=https://www.hollywoodreporter.com/movies/movie-news/golden-globes-eddie-murphy-cecil-b-demille-award-1235281595/ |title=Golden Globes: Eddie Murphy to Receive Cecil B. DeMille Award (Exclusive) |first=Chris |last=Gardner |work=[[The Hollywood Reporter]] |date=December 14, 2022 |access-date=December 15, 2022 |archive-date=December 14, 2022 |archive-url=https://web.archive.org/web/20221214224903/https://www.hollywoodreporter.com/movies/movie-news/golden-globes-eddie-murphy-cecil-b-demille-award-1235281595/ |url-status=live}}</ref><ref name="Ryan">{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/golden-globes-ryan-murphy-carol-burnett-award-1235282418/ |title=Golden Globes: Ryan Murphy to Receive Carol Burnett Award for TV Career Achievements |first=Chris |last=Gardner |work=[[The Hollywood Reporter]] |date=December 15, 2022 |access-date=December 16, 2022 |archive-date=December 16, 2022 |archive-url=https://web.archive.org/web/20221216031307/https://www.hollywoodreporter.com/tv/tv-news/golden-globes-ryan-murphy-carol-burnett-award-1235282418/ |url-status=live}}</ref>
+
+''[[The Banshees of Inisherin]]'' received a leading 8 nominations, including [[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]] and [[Golden Globe Award for Best Director|Best Director]] ([[Martin McDonagh]]), the most achieved by any film since ''[[Cold Mountain (film)|Cold Mountain]]'' in [[61st Golden Globe Awards|2004]]; it also, alongside [[American Broadcasting Company|ABC]]'s first-year [[mockumentary]] ''[[Abbott Elementary]]'', won the most awards at the ceremony with three wins.<ref name="Nominees"/><ref>{{cite web |url=https://news.yahoo.com/golden-globes-unveil-nominations-censured-012324712.html |title='Banshees of Inisherin' tops nominations as Golden Globes attempt comeback |first=Andrew |last=Marszal |publisher=[[Yahoo! News]] |date=December 11, 2022 |access-date=December 11, 2022 |archive-date=December 29, 2022 |archive-url=https://web.archive.org/web/20221229172730/https://news.yahoo.com/golden-globes-unveil-nominations-censured-012324712.html |url-status=dead}}</ref><ref>{{cite web |url=https://www.forbes.com/sites/marisadellatto/2023/01/10/golden-globes-2023-abbott-elementary-the-banshees-of-inisherin-win-big/ |title=Golden Globes 2023: 'Abbott Elementary', 'The Banshees of Inisherin' Win Big |first=Marisa |last=Dellatto |work=[[Forbes]] |date=January 10, 2023 |access-date=January 13, 2023 |archive-date=February 20, 2023 |archive-url=https://web.archive.org/web/20230220094921/https://www.forbes.com/sites/marisadellatto/2023/01/10/golden-globes-2023-abbott-elementary-the-banshees-of-inisherin-win-big/ |url-status=live}}</ref>
+
+The ceremony also marked [[Lisa Marie Presley]]'s last public appearance before her death two days later on January 12.<ref>{{cite magazine |url=https://ew.com/awards/golden-globes/lisa-marie-presley-last-public-appearance-support-elvis/ |title=Lisa Marie Presley's last public appearance was in support of 'Elvis' |first=Lauren |last=Huff |magazine=[[Entertainment Weekly]] |date=January 12, 2023 |access-date=January 13, 2023 |archive-date=January 13, 2023 |archive-url=https://web.archive.org/web/20230113032217/https://ew.com/awards/golden-globes/lisa-marie-presley-last-public-appearance-support-elvis/ |url-status=live}}</ref>
+
+==Ceremony information==
+On September 20, 2022, the HFPA and Golden Globe Awards producer [[Dick Clark Productions]] announced that the ceremony would be broadcast on [[NBC]] and streamed on [[Peacock (streaming service)|Peacock]] under a one-year contract.<ref name="Variety"/> After being the Golden Globes' regular broadcaster since 1996, NBC declined to air the [[79th Golden Globe Awards|previous year's ceremony]] in support of [[boycott]]s by various media companies, actors, and other creatives over the HFPA's history of financial malfeasance and lack of action to increase the membership [[Diversity (business)|diversity]] of the organization.<ref>{{cite web |url=https://www.hollywoodreporter.com/news/general-news/golden-globes-returning-nbc-2023-1235166872/ |title=NBC to Bring Back the Golden Globes (Exclusive) |first=Scott |last=Fienberg |work=[[The Hollywood Reporter]] |date=August 9, 2022 |access-date=September 20, 2022 |archive-date=September 21, 2022 |archive-url=https://web.archive.org/web/20220921030406/https://www.hollywoodreporter.com/news/general-news/golden-globes-returning-nbc-2023-1235166872/ |url-status=live}}</ref><ref>{{cite web |url=https://deadline.com/2022/09/golden-globes-nbc-return-2023-hfpa-1235122811/ |title=Golden Globes Returning to NBC in 2023 on One-Year Deal |first=Erik |last=Pedersen |work=[[Deadline Hollywood]] |date=September 20, 2022 |access-date=September 20, 2022 |archive-date=September 20, 2022 |archive-url=https://web.archive.org/web/20220920165126/https://deadline.com/2022/09/golden-globes-nbc-return-2023-hfpa-1235122811/ |url-status=live}}</ref><ref>{{cite web |url=https://deadline.com/2022/12/golden-globes-2023-hfpa-distrust-diversity-1235194362/ |title=Golden Globes Return to NBC Still Tainted by Tinseltown's Distrust of HFPA |first1=Lynette |last1=Rice |first2=Dominic |last2=Patten |first3=Matt |last3=Grobar |work=[[Deadline Hollywood]] |date=December 9, 2022 |access-date=December 11, 2022 |archive-date=January 11, 2023 |archive-url=https://web.archive.org/web/20230111145435/https://deadline.com/2022/12/golden-globes-2023-hfpa-distrust-diversity-1235194362/ |url-status=live}}</ref> The HFPA had previously approved a major [[restructuring]] in July 2022, under which HFPA interim CEO [[Todd Boehly]] agreed to establish a [[For-profit corporation|for-profit entity]] via his holding company [[Eldridge Industries]] (owner of DCP and entertainment trade publication ''[[The Hollywood Reporter]]'') that will hold the Golden Globe Awards' [[intellectual property]] and oversee the "professionalization and modernization" of the ceremony, including "[increasing] the size and diversity of the available voters for the annual awards". The HFPA's philanthropic activities would continue separately as a non-profit entity.<ref>{{cite web |url=https://deadline.com/2022/07/hfpa-will-be-both-a-private-company-non-profit-1235080814/ |title=HFPA Will Be Both a Private Company & Non-Profit |first=Anthony |last=D'Alessandro |work=[[Deadline Hollywood]] |date=July 28, 2022 |access-date=August 5, 2022 |archive-date=August 4, 2022 |archive-url=https://web.archive.org/web/20220804125233/https://deadline.com/2022/07/hfpa-will-be-both-a-private-company-non-profit-1235080814/ |url-status=live}}</ref><ref>{{cite web |url=https://variety.com/2022/tv/news/golden-globes-eldridge-hfpa-1235328891/ |title=In Move to Save Golden Globes, HFPA to Become For-Profit Org, Add More Voting Members |first=Michael |last=Schneider |work=[[Variety (magazine)|Variety]] |date=July 28, 2022 |access-date=August 5, 2022 |archive-date=August 4, 2022 |archive-url=https://web.archive.org/web/20220804131412/https://variety.com/2022/tv/news/golden-globes-eldridge-hfpa-1235328891/ |url-status=live}}</ref><ref>{{cite web |url=https://www.hollywoodreporter.com/movies/movie-features/golden-globes-group-head-interview-hfpa-boycott-awards-1235276198/ |title='This is Not the Old HFPA': Golden Globes' Group Head Talks for First Time Since 2021 Boycott |first=Rebecca |last=Keegan |work=[[The Hollywood Reporter]] |date=December 8, 2022 |access-date=December 11, 2022 |archive-date=January 11, 2023 |archive-url=https://web.archive.org/web/20230111145414/https://www.hollywoodreporter.com/movies/movie-features/golden-globes-group-head-interview-hfpa-boycott-awards-1235276198/ |url-status=live}}</ref>
+
+Due to conflicts with NBC's ''[[NBC Sunday Night Football|Sunday Night Football]]'' (the [[National Football League|NFL]] regular season has been extended with an additional game since 2021), and to avoid competing with the [[2023 College Football Playoff National Championship]] on Monday January 9 (a game played at [[Inglewood, California|Inglewood]]'s [[SoFi Stadium]]) and the [[28th Critics' Choice Awards]] the following Sunday (January 15), the Globes ceremony was scheduled for Tuesday, January 10, 2023.<ref name="Variety"/> It was the first Golden Globes ceremony to take place on a Tuesday since [[19th Golden Globe Awards|the 19th edition]] in 1962, as well as the first to be staged on a weeknight since the [[64th Golden Globe Awards|64th Golden Globes]] were presented on Monday, January 15, 2007.<ref>{{cite web |url=https://www.thewrap.com/2023-golden-globes-predictions-nbc-show-broadcast/ |title=TheWrap Predicts the 2023 Golden Globes Winners – and Whether NBC Will Cut Ties After the Show |first=Steve |last=Pond |work=[[TheWrap]] |date=January 9, 2023 |access-date=January 10, 2023 |archive-date=January 11, 2023 |archive-url=https://web.archive.org/web/20230111145425/https://www.thewrap.com/2023-golden-globes-predictions-nbc-show-broadcast/ |url-status=live}}</ref>
+
+Among the changes include modifications to the supporting acting categories for Television: Both categories for [[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Best Supporting Actor]] and [[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Best Supporting Actress in a Series, Miniseries, or Television Film]] have been split into separate categories for "Musical-Comedy or Drama" and "Limited Series, Anthology Series, or Motion Picture Made for Television".<ref>{{cite press release |url=https://goldenglobes.com/articles/the-hfpa-announces-awards-timetable-for-the-80th-annual-golden-globe-awards/ |title=The HFPA Announces Awards Timetable for the 80th Annual Golden Globe Awards |publisher=[[Golden Globe Awards|Golden Globes]] |date=September 28, 2022 |access-date=November 25, 2024 |archive-date=June 22, 2024 |archive-url=https://web.archive.org/web/20240622201617/https://goldenglobes.com/articles/the-hfpa-announces-awards-timetable-for-the-80th-annual-golden-globe-awards/ |url-status=live}}</ref><ref>{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/hfpa-new-tv-acting-categories-2023-golden-globes-1235229175/ |title=HFPA Adds New TV Acting Categories for 2023 Golden Globes |first=Beatrice |last=Verhoeven |work=[[The Hollywood Reporter]] |date=September 28, 2022 |access-date=September 30, 2022 |archive-date=January 11, 2023 |archive-url=https://web.archive.org/web/20230111145416/https://www.hollywoodreporter.com/tv/tv-news/hfpa-new-tv-acting-categories-2023-golden-globes-1235229175/ |url-status=live}}</ref><ref>{{cite web |url=https://variety.com/2022/film/news/golden-globes-supporting-tv-categories-awards-calendar-1235386871/ |title=Golden Globes Announce New TV Categories and Awards Timeline |first=Clayton |last=Davis |work=[[Variety (magazine)|Variety]] |date=September 28, 2022 |access-date=September 30, 2022 |archive-date=October 3, 2022 |archive-url=https://web.archive.org/web/20221003122536/https://variety.com/2022/film/news/golden-globes-supporting-tv-categories-awards-calendar-1235386871/ |url-status=live}}</ref> However, it was announced on September 26, 2023, that both categories have been eliminated in order to make room for two new categories: "Cinematic and Box Office Achievement" and "Best Performance in Stand-Up Comedy on Television" (also known as "Best Stand-Up Comedian on Television"); both eliminated categories will now be remerged into one each, but retitled as "Best Performance by a Male Actor in a Supporting Role on Television" (or "Best Supporting Male Actor – Television") and "Best Performance by a Female Actor in a Supporting Role on Television" (or "Best Supporting Female Actor – Television"), respectively.<ref>{{cite web |url=https://variety.com/2023/film/news/golden-globes-adds-new-categories-box-office-hits-stand-up-comedy-1235735117/ |title=Golden Globes Adds Two New Categories: Blockbuster Movies and Stand-Up Comics Enter the Race (Exclusive) |first=Matt |last=Donnelly |work=[[Variety (magazine)|Variety]] |date=September 26, 2023 |access-date=November 26, 2023 |archive-date=December 18, 2023 |archive-url=https://web.archive.org/web/20231218010438/https://variety.com/2023/film/news/golden-globes-adds-new-categories-box-office-hits-stand-up-comedy-1235735117/ |url-status=live }}</ref><ref>{{cite web |url=https://www.goldderby.com/feature/golden-globes-eliminate-tv-categories-add-box-office-category-1205564400/ |title=Golden Globes eliminate 2 TV categories, add 2 new categories for box office and stand-up performance |first1=Christopher |last1=Tsang |first2=Chris |last2=Beachum |publisher=Gold Derby |date=September 26, 2023 |access-date=November 26, 2023 |archive-date=December 1, 2023 |archive-url=https://web.archive.org/web/20231201005249/https://www.goldderby.com/feature/golden-globes-eliminate-tv-categories-add-box-office-category-1205564400/ |url-status=live }}</ref><ref>{{cite magazine |url=https://ew.com/awards/golden-globes/golden-globes-new-categories-box-office-stand-up-comedian/ |title=Golden Globes adds 2 new awards categories for box office achievements and stand-up comedians |first=Joey |last=Nolfi |magazine=[[Entertainment Weekly]] |date=September 26, 2023 |access-date=November 26, 2023 |archive-date=November 26, 2023 |archive-url=https://web.archive.org/web/20231126024907/https://ew.com/awards/golden-globes/golden-globes-new-categories-box-office-stand-up-comedian/ |url-status=live }}</ref>
+
+==Winners and nominees==
+[[File:Baz Luhrmann, Eva Rinaldi (2), Olivia Dejonge, Austin Butler,Tom Hanks (52123990193) (cropped)2.jpg|right|thumb|150px|[[Austin Butler]], Best Actor in a Motion Picture – Drama winner]]
+[[File:Cate Blanchett Berlinale 2023 (cropped).jpg|right|thumb|150px|[[Cate Blanchett]], Best Actress in a Motion Picture – Drama winner]]
+[[File:BansheesBFI131022 (21 of 22) (52447275762) (cropped).jpg|right|thumb|150px|[[Colin Farrell]], Best Actor in a Motion Picture – Musical or Comedy winner]]
+[[File:Michelle Yeoh 2015.jpg|right|thumb|150px|[[Michelle Yeoh]], Best Actress in a Motion Picture – Musical or Comedy winner]]
+[[File:Ke Huy Quan (43865682592).jpg|right|thumb|150px|[[Ke Huy Quan]], Best Supporting Actor winner]]
+[[File:Angela Bassett by Gage Skidmoe.jpg|right|thumb|150px|[[Angela Bassett]], Best Supporting Actress winner]]
+[[File:Kevin Costner 2016.jpg|right|thumb|150px|[[Kevin Costner]], Best Actor in a Television Series – Drama winner]]
+[[File:Zendaya - 2019 by Glenn Francis.jpg|right|thumb|150px|[[Zendaya]], Best Actress in a Television Series – Drama winner]]
+[[File:Jeremy Allen White Springsteen-33 (cropped).jpg|right|thumb|150px|[[Jeremy Allen White]], Best Actor in a Television Series – Musical or Comedy winner]]
+[[File:Quinta Brunson at Televerse 2026.jpg|thumb|150px|[[Quinta Brunson]], Best Actress in a Television Series – Musical or Comedy winner]]
+[[File:Evan Peters by Gage Skidmore 3.jpg|right|thumb|150px|[[Evan Peters]], Best Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Amanda Seyfried 2019 by Glenn Francis.jpg|right|thumb|150px|[[Amanda Seyfried]], Best Actress in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Tyler James Williams at Televerse 2026.jpg|thumb|187x187px|[[Tyler James Williams]], Best Supporting Actor in a Television Series – Musical-Comedy or Drama winner]]
+[[File:Julia Garner Berlinale 2020 (cropped).jpg|right|thumb|150px|[[Julia Garner]], Best Supporting Actress in a Television Series – Musical-Comedy or Drama winner]]
+[[File:20210526—Paul Walter Hauser, interview for "Cruella", LosCriticologos (05m21s) (cropped) (cropped).jpg|right|thumb|150px|[[Paul Walter Hauser]], Best Supporting Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+[[File:Jennifer Coolidge - Cropped.jpg|right|thumb|150px|[[Jennifer Coolidge]], Best Supporting Actress in a Limited Series, Anthology Series, or Motion Picture Made for Television winner]]
+
+===Film===
+{| class=wikitable style="width=100%"
+|-
+! colspan="2"| Best Motion Picture
+|-
+! style="width=50%"| [[Golden Globe Award for Best Motion Picture – Drama|Drama]]
+! style="width=50%"| [[Golden Globe Award for Best Motion Picture – Musical or Comedy|Musical or Comedy]]
+|-
+| valign="top" |
+* '''''[[The Fabelmans]]'''''
+** ''[[Avatar: The Way of Water]]''
+** ''[[Elvis (2022 film)|Elvis]]''
+** ''[[Tár]]''
+** ''[[Top Gun: Maverick]]''
+| valign="top" |
+* '''''[[The Banshees of Inisherin]]'''''
+** ''[[Babylon (2022 film)|Babylon]]''
+** ''[[Everything Everywhere All at Once]]''
+** ''[[Glass Onion: A Knives Out Mystery]]''
+** ''[[Triangle of Sadness]]''
+|-
+! [[Golden Globe Award for Best Animated Feature Film|Animated]]
+! [[Golden Globe Award for Best Motion Picture – Non-English Language|Non-English Language]]
+|-
+| valign="top" |
+* '''''[[Guillermo del Toro's Pinocchio]]'''''
+** ''[[Inu-Oh]]''
+** ''[[Marcel the Shell with Shoes On (2021 film)|Marcel the Shell with Shoes On]]''
+** ''[[Puss in Boots: The Last Wish]]''
+** ''[[Turning Red]]''
+| valign="top" |
+* '''''[[Argentina, 1985]]'' ([[Argentina]])'''
+** ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' ([[Germany]])
+** ''[[Close (2022 film)|Close]]'' ([[Belgium]])
+** ''[[Decision to Leave]]'' ([[South Korea]])
+** ''[[RRR]]'' ([[India]])
+|-
+! colspan="2"| Best Performance in a Motion Picture – Drama
+|-
+! [[Golden Globe Award for Best Actor in a Motion Picture – Drama|Actor]]
+! [[Golden Globe Award for Best Actress in a Motion Picture – Drama|Actress]]
+|-
+| valign="top" |
+* '''[[Austin Butler]] – ''[[Elvis (2022 film)|Elvis]]'' as [[Elvis Presley]]'''
+** [[Brendan Fraser]] – ''[[The Whale (2022 film)|The Whale]]'' as Charlie
+** [[Hugh Jackman]] – ''[[The Son (2022 film)|The Son]]'' as Peter Miller
+** [[Bill Nighy]] – ''[[Living (2022 film)|Living]]'' as Mr. Rodney Williams
+** [[Jeremy Pope]] – ''[[The Inspection]]'' as Ellis French
+| valign="top" |
+* '''[[Cate Blanchett]] – ''[[Tár]]'' as Lydia Tár'''
+** [[Olivia Colman]] – ''[[Empire of Light]]'' as Hilary Small
+** [[Viola Davis]] – ''[[The Woman King]]'' as General Nanisca
+** [[Ana de Armas]] – ''[[Blonde (2022 film)|Blonde]]'' as [[Marilyn Monroe|Norma Jeane]]
+** [[Michelle Williams (actress)|Michelle Williams]] – ''[[The Fabelmans]]'' as Mitzi Fabelman
+|-
+! colspan="2"| Best Performance in a Motion Picture – Musical or Comedy
+|-
+! [[Golden Globe Award for Best Actor in a Motion Picture – Musical or Comedy|Actor]]
+! [[Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy|Actress]]
+|-
+| valign="top" |
+* '''[[Colin Farrell]] – ''[[The Banshees of Inisherin]]'' as Pádraic Súilleabháin'''
+** [[Diego Calva]] – ''[[Babylon (2022 film)|Babylon]]'' as Manuel "Manny" Torres
+** [[Daniel Craig]] – ''[[Glass Onion: A Knives Out Mystery]]'' as Detective Benoit Blanc
+** [[Adam Driver]] – ''[[White Noise (2022 film)|White Noise]]'' as Jack Gladney
+** [[Ralph Fiennes]] – ''[[The Menu (2022 film)|The Menu]]'' as Chef Slowik
+| valign="top" |
+* '''[[Michelle Yeoh]] – ''[[Everything Everywhere All at Once]]'' as [[Evelyn Quan Wang]]'''
+** [[Lesley Manville]] – ''[[Mrs. Harris Goes to Paris]]'' as Ada Harris
+** [[Margot Robbie]] – ''[[Babylon (2022 film)|Babylon]]'' as Nellie LaRoy
+** [[Anya Taylor-Joy]] – ''[[The Menu (2022 film)|The Menu]]'' as Margot
+** [[Emma Thompson]] – ''[[Good Luck to You, Leo Grande]]'' as Nancy Stokes / Susan Robinson
+|-
+! colspan="2"| Best Supporting Performance in a Motion Picture
+|-
+! [[Golden Globe Award for Best Supporting Actor – Motion Picture|Supporting Actor]]
+! [[Golden Globe Award for Best Supporting Actress – Motion Picture|Supporting Actress]]
+|-
+| valign="top" |
+* '''[[Ke Huy Quan]] – ''[[Everything Everywhere All at Once]]'' as Waymond Wang'''
+** [[Brendan Gleeson]] – ''[[The Banshees of Inisherin]]'' as Colm Doherty
+** [[Barry Keoghan]] – ''[[The Banshees of Inisherin]]'' as Dominic Kearney
+** [[Brad Pitt]] – ''[[Babylon (2022 film)|Babylon]]'' as Jack Conrad
+** [[Eddie Redmayne]] – ''[[The Good Nurse]]'' as [[Charles Cullen|Charlie Cullen]]
+| valign="top" |
+* '''[[Angela Bassett]] – ''[[Black Panther: Wakanda Forever]]'' as Queen Ramonda'''
+** [[Kerry Condon]] – ''[[The Banshees of Inisherin]]'' as Siobhán Súilleabháin
+** [[Jamie Lee Curtis]] – ''[[Everything Everywhere All at Once]]'' as Deirdre Beaubeirdre
+** [[Dolly de Leon]] – ''[[Triangle of Sadness]]'' as Abigail
+** [[Carey Mulligan]] – ''[[She Said (film)|She Said]]'' as [[Megan Twohey]]
+|-
+! colspan="2"| Other
+|-
+! [[Golden Globe Award for Best Director|Best Director]]
+! [[Golden Globe Award for Best Screenplay|Best Screenplay]]
+|-
+| valign="top" |
+* '''[[Steven Spielberg]] – ''[[The Fabelmans]]'''''
+** [[James Cameron]] – ''[[Avatar: The Way of Water]]''
+** [[Daniels (directors)|Daniel Kwan and Daniel Scheinert]] – ''[[Everything Everywhere All at Once]]''
+** [[Baz Luhrmann]] – ''[[Elvis (2022 film)|Elvis]]''
+** [[Martin McDonagh]] – ''[[The Banshees of Inisherin]]''
+| valign="top" |
+* '''[[Martin McDonagh]] – ''[[The Banshees of Inisherin]]'''''
+** [[Todd Field]] – ''[[Tár]]''
+** [[Daniels (directors)|Daniel Kwan and Daniel Scheinert]] – ''[[Everything Everywhere All at Once]]''
+** [[Sarah Polley]] – ''[[Women Talking (film)|Women Talking]]''
+** [[Steven Spielberg]] and [[Tony Kushner]] – ''[[The Fabelmans]]''
+|-
+! [[Golden Globe Award for Best Original Score|Best Original Score]]
+! [[Golden Globe Award for Best Original Song|Best Original Song]]
+|-
+| valign="top" |
+* '''[[Justin Hurwitz]] – ''[[Babylon (2022 film)|Babylon]]'''''
+** [[Carter Burwell]] – ''[[The Banshees of Inisherin]]''
+** [[Alexandre Desplat]] – ''[[Guillermo del Toro's Pinocchio]]''
+** [[Hildur Guðnadóttir]] – ''[[Women Talking (film)|Women Talking]]''
+** [[John Williams]] – ''[[The Fabelmans]]''
+| valign="top" |
+* '''"[[Naatu Naatu]]" ([[M. M. Keeravani]] and [[Chandrabose (lyricist)|Chandrabose]]) – ''[[RRR]]'''''
+** "[[Carolina (Taylor Swift song)|Carolina]]" ([[Taylor Swift]]) – ''[[Where the Crawdads Sing (film)|Where the Crawdads Sing]]''
+** "Ciao Papa" ([[Alexandre Desplat]], Roeban Katz, and [[Guillermo del Toro]]) – ''[[Guillermo del Toro's Pinocchio]]''
+** "[[Hold My Hand (Lady Gaga song)|Hold My Hand]]" ([[Lady Gaga]], [[BloodPop]], and Benjamin Rice) – ''[[Top Gun: Maverick]]''
+** "[[Lift Me Up (Rihanna song)|Lift Me Up]]" ([[Tems]], [[Rihanna]], [[Ryan Coogler]], and [[Ludwig Göransson]]) – ''[[Black Panther: Wakanda Forever]]''
+|}
+
+====Films with multiple nominations====
+The following films received multiple nominations:
+
+{| class="wikitable"
+|+
+! Nominations
+! Films
+! Distributor
+|-
+| style="text-align:center"| 8
+| ''[[The Banshees of Inisherin]]''
+| style="text-align:center"| [[Searchlight Pictures]]
+|-
+| style="text-align:center"| 6
+| ''[[Everything Everywhere All at Once]]''
+| style="text-align:center"| [[A24]]
+|-
+| rowspan="2" style="text-align:center"| 5
+| ''[[Babylon (2022 film)|Babylon]]''
+| style="text-align:center"| [[Paramount Pictures]]
+|-
+| ''[[The Fabelmans]]''
+| style="text-align:center"| [[Universal Pictures]]
+|-
+| rowspan="3" style="text-align:center"| 3
+| ''[[Elvis (2022 film)|Elvis]]''
+| style="text-align:center"| [[Warner Bros. Pictures]]
+|-
+| ''[[Guillermo del Toro's Pinocchio]]''
+| style="text-align:center"| [[Netflix]]
+|-
+| ''[[Tár]]''
+| style="text-align:center"| [[Focus Features]]
+|-
+| rowspan="8" style="text-align:center"| 2
+| ''[[Avatar: The Way of Water]]''
+| rowspan="2" style="text-align:center"| [[Walt Disney Studios Motion Pictures]]
+|-
+| ''[[Black Panther: Wakanda Forever]]''
+|-
+| ''[[The Menu (2022 film)|The Menu]]''
+| style="text-align:center"| Searchlight Pictures
+|-
+| ''[[Glass Onion: A Knives Out Mystery]]''
+| style="text-align:center"| Netflix
+|-
+| ''[[RRR]]''
+| style="text-align:center"| [[Variance Films]]
+|-
+| ''[[Top Gun: Maverick]]''
+| style="text-align:center"| Paramount Pictures
+|-
+| ''[[Triangle of Sadness]]''
+| style="text-align:center"| [[Neon (company)|Neon]]
+|-
+| ''[[Women Talking (film)|Women Talking]]''
+| style="text-align:center"| [[United Artists Releasing]]
+|}
+
+====Films with multiple wins====
+The following films received multiple wins:
+
+{| class="wikitable"
+|+
+! Wins
+! Films
+! Distributor
+|-
+| style="text-align:center"| 3
+| ''[[The Banshees of Inisherin]]''
+| style="text-align:center"| [[Searchlight Pictures]]
+|-
+| rowspan="2" style="text-align:center"| 2
+| ''[[Everything Everywhere All at Once]]''
+| style="text-align:center"| [[A24]]
+|-
+| ''[[The Fabelmans]]''
+| style="text-align:center"| [[Universal Pictures]]
+|}
+
+===Television===
+{| class=wikitable style="width=100%"
+|-
+! colspan="2"| Best Television Series
+|-
+! style="width=50%"| [[Golden Globe Award for Best Television Series – Drama|Drama]]
+! style="width=50%"| [[Golden Globe Award for Best Television Series – Musical or Comedy|Musical or Comedy]]
+|-
+| valign="top" |
+* '''''[[House of the Dragon]]'' ([[HBO]])'''
+** ''[[Better Call Saul]]'' ([[AMC (TV channel)|AMC]])
+** ''[[The Crown (TV series)|The Crown]]'' ([[Netflix]])
+** ''[[Ozark (TV series)|Ozark]]'' (Netflix)
+** ''[[Severance (TV series)|Severance]]'' ([[Apple TV+]])
+| valign="top" |
+* '''''[[Abbott Elementary]]'' ([[American Broadcasting Company|ABC]])'''
+** ''[[The Bear (TV series)|The Bear]]'' ([[FX Networks|FX]])
+** ''[[Hacks (TV series)|Hacks]]'' ([[Max (streaming service)|HBO Max]])
+** ''[[Only Murders in the Building]]'' ([[Hulu]])
+** ''[[Wednesday (TV series)|Wednesday]]'' (Netflix)
+|-
+! colspan="2"| [[Golden Globe Award for Best Limited or Anthology Series or Television Film|Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| colspan=2 style="vertical-align:top;" |
+* '''''[[The White Lotus]]'' (HBO)'''
+** ''[[Black Bird (miniseries)|Black Bird]]'' (Apple TV+)
+** ''[[Dahmer – Monster: The Jeffrey Dahmer Story]]'' (Netflix)
+** ''[[The Dropout]]'' (Hulu)
+** ''[[Pam & Tommy]]'' (Hulu)
+|-
+! colspan="2"| Best Performance in a Television Series – Drama
+|-
+! [[Golden Globe Award for Best Actor – Television Series Drama|Actor]]
+! [[Golden Globe Award for Best Actress – Television Series Drama|Actress]]
+|-
+| valign="top" |
+* '''[[Kevin Costner]] – ''[[Yellowstone (American TV series)|Yellowstone]]'' ([[Paramount Network]]) as John Dutton'''
+** [[Jeff Bridges]] – ''[[The Old Man (TV series)|The Old Man]]'' (FX) as Dan Chase
+** [[Diego Luna]] – ''[[Andor (TV series)|Andor]]'' ([[Disney+]]) as [[Cassian Andor]]
+** [[Bob Odenkirk]] – ''[[Better Call Saul]]'' (AMC) as [[Saul Goodman|Jimmy McGill / Saul Goodman / Gene Takavic]]
+** [[Adam Scott]] – ''[[Severance (TV series)|Severance]]'' (Apple TV+) as Mark Scout
+| valign="top" |
+* '''[[Zendaya]] – ''[[Euphoria (American TV series)|Euphoria]]'' (HBO) as [[Rue Bennett]]'''
+** [[Emma D'Arcy]] – ''[[House of the Dragon]]'' (HBO) as Princess [[Rhaenyra Targaryen]]
+** [[Laura Linney]] – ''[[Ozark (TV series)|Ozark]]'' (Netflix) as Wendy Byrde
+** [[Imelda Staunton]] – ''[[The Crown (TV series)|The Crown]]'' (Netflix) as [[Elizabeth II|Queen Elizabeth II]]
+** [[Hilary Swank]] – ''[[Alaska Daily]]'' (ABC) as Eileen Fitzgerald
+|-
+! colspan="2"| Best Performance in a Television Series – Musical or Comedy
+|-
+! [[Golden Globe Award for Best Actor – Television Series Musical or Comedy|Actor]]
+! [[Golden Globe Award for Best Actress – Television Series Musical or Comedy|Actress]]
+|-
+| valign="top" |
+* '''[[Jeremy Allen White]] – ''[[The Bear (TV series)|The Bear]]'' (FX) as Carmen "Carmy" Berzatto'''
+** [[Donald Glover]] – ''[[Atlanta (TV series)|Atlanta]]'' (FX) as Earnest "Earn" Marks
+** [[Bill Hader]] – ''[[Barry (TV series)|Barry]]'' (HBO) as Barry Berkman / Barry Block
+** [[Steve Martin]] – ''[[Only Murders in the Building]]'' (Hulu) as Charles-Haden Savage
+** [[Martin Short]] – ''Only Murders in the Building'' (Hulu) as Oliver Putnam
+| valign="top" |
+* '''[[Quinta Brunson]] – ''[[Abbott Elementary]]'' (ABC) as Janine Teagues'''
+** [[Kaley Cuoco]] – ''[[The Flight Attendant]]'' (HBO Max) as Cassandra "Cassie" Bowden
+** [[Selena Gomez]] – ''[[Only Murders in the Building]]'' (Hulu) as Mabel Mora
+** [[Jenna Ortega]] – ''[[Wednesday (TV series)|Wednesday]]'' (Netflix) as [[Wednesday Addams]]
+** [[Jean Smart]] – ''[[Hacks (TV series)|Hacks]]'' (HBO Max) as Deborah Vance
+|-
+! colspan="2"| Best Performance in a Limited Series, Anthology Series, or Motion Picture Made for Television
+|-
+! [[Golden Globe Award for Best Actor – Miniseries or Television Film|Actor]]
+! [[Golden Globe Award for Best Actress – Miniseries or Television Film|Actress]]
+|-
+| valign="top" |
+* '''[[Evan Peters]] – ''[[Dahmer – Monster: The Jeffrey Dahmer Story]]'' (Netflix) as [[Jeffrey Dahmer]]'''
+** [[Taron Egerton]] – ''[[Black Bird (miniseries)|Black Bird]]'' (Apple TV+) as [[Jimmy Keene|James "Jimmy" Keene]]
+** [[Colin Firth]] – ''[[The Staircase (American miniseries)|The Staircase]]'' (HBO Max) as [[Michael Peterson trial|Michael Peterson]]
+** [[Andrew Garfield]] – ''[[Under the Banner of Heaven (miniseries)|Under the Banner of Heaven]]'' (FX) as Detective Jeb Pyre
+** [[Sebastian Stan]] – ''[[Pam & Tommy]]'' (Hulu) as [[Tommy Lee]]
+| valign="top" |
+* '''[[Amanda Seyfried]] – ''[[The Dropout]]'' (Hulu) as [[Elizabeth Holmes]]'''
+** [[Jessica Chastain]] – ''[[George & Tammy]]'' ([[Showtime (TV network)|Showtime]]) as [[Tammy Wynette]]
+** [[Julia Garner]] – ''[[Inventing Anna]]'' (Netflix) as [[Anna Sorokin|Anna Sorokin / Anna Delvey]]
+** [[Lily James]] – ''[[Pam & Tommy]]'' (Hulu) as [[Pamela Anderson]]
+** [[Julia Roberts]] – ''[[Gaslit (TV series)|Gaslit]]'' ([[Starz]]) as [[Martha Mitchell]]
+|-
+! colspan="2"| Best Supporting Performance in a Television Series – Musical-Comedy or Drama
+|-
+! Supporting Actor
+! Supporting Actress
+|-
+| valign="top" |
+* '''[[Tyler James Williams]] – ''[[Abbott Elementary]]'' (ABC) as Gregory Eddie'''
+** [[John Lithgow]] – ''[[The Old Man (TV series)|The Old Man]]'' (FX) as Harold Harper
+** [[Jonathan Pryce]] – ''[[The Crown (TV series)|The Crown]]'' (Netflix) as [[Prince Philip, Duke of Edinburgh]]
+** [[John Turturro]] – ''[[Severance (TV series)|Severance]]'' (Apple TV+) as Irving Bailiff
+** [[Henry Winkler]] – ''[[Barry (TV series)|Barry]]'' (HBO) as Gene Cousineau
+| valign="top" |
+* '''[[Julia Garner]] – ''[[Ozark (TV series)|Ozark]]'' (Netflix) as Ruth Langmore'''
+** [[Elizabeth Debicki]] – ''[[The Crown (TV series)|The Crown]]'' (Netflix) as [[Diana, Princess of Wales]]
+** [[Hannah Einbinder]] – ''[[Hacks (TV series)|Hacks]]'' (HBO Max) as Ava Daniels
+** [[Janelle James]] – ''[[Abbott Elementary]]'' (ABC) as Ava Coleman
+** [[Sheryl Lee Ralph]] – ''Abbott Elementary'' (ABC) as Barbara Howard
+|-
+! colspan="2"| Best Supporting Performance in a Limited Series, Anthology Series, or Motion Picture Made for Television
+|-
+! [[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Supporting Actor]]
+! [[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Supporting Actress]]
+|-
+| valign="top" |
+* '''[[Paul Walter Hauser]] – ''[[Black Bird (miniseries)|Black Bird]]'' (Apple TV+) as [[Larry Hall (criminal)|Larry Hall]]'''
+** [[F. Murray Abraham]] – ''[[The White Lotus]]'' (HBO) as Bert Di Grasso
+** [[Domhnall Gleeson]] – ''[[The Patient]]'' (FX) as Sam Fortner
+** [[Richard Jenkins]] – ''[[Dahmer – Monster: The Jeffrey Dahmer Story]]'' (Netflix) as [[Lionel Dahmer]]
+** [[Seth Rogen]] – ''[[Pam & Tommy]]'' (Hulu) as Rand Gauthier
+| valign="top" |
+* '''[[Jennifer Coolidge]] – ''[[The White Lotus]]'' (HBO) as Tanya McQuoid-Hunt'''
+** [[Claire Danes]] – ''[[Fleishman Is in Trouble (miniseries)|Fleishman Is in Trouble]]'' (FX) as Rachel Fleishman
+** [[Daisy Edgar-Jones]] – ''[[Under the Banner of Heaven (miniseries)|Under the Banner of Heaven]]'' (FX) as Brenda Lafferty
+** [[Niecy Nash]] – ''[[Dahmer – Monster: The Jeffrey Dahmer Story]]'' (Netflix) as Glenda Cleveland
+** [[Aubrey Plaza]] – ''The White Lotus'' (HBO) as Harper Spiller
+|}
+
+====Series with multiple nominations====
+The following television series received multiple nominations:
+
+{| class="wikitable"
+|+
+! Nominations
+! Series
+! Distributor
+|-
+| style="text-align:center"| 5
+| ''[[Abbott Elementary]]''
+| style="text-align:center"| [[American Broadcasting Company|ABC]]
+|-
+| rowspan="5" style="text-align:center"| 4
+| ''[[The Crown (TV series)|The Crown]]''
+| rowspan="2" style="text-align:center"| [[Netflix]]
+|-
+| ''[[Dahmer – Monster: The Jeffrey Dahmer Story]]''
+|-
+| ''[[Only Murders in the Building]]''
+| rowspan="2" style="text-align:center"| [[Hulu]]
+|-
+| ''[[Pam & Tommy]]''
+|-
+| ''[[The White Lotus]]''
+| style="text-align:center"| [[HBO]]
+|-
+| rowspan="4" style="text-align:center"| 3
+| ''[[Black Bird (miniseries)|Black Bird]]''
+| style="text-align:center"| [[Apple TV+]]
+|-
+| ''[[Hacks (TV series)|Hacks]]''
+| style="text-align:center"| [[Max (streaming service)|HBO Max]]
+|-
+| ''[[Ozark (TV series)|Ozark]]''
+| style="text-align:center"| Netflix
+|-
+| ''[[Severance (TV series)|Severance]]''
+| style="text-align:center"| Apple TV+
+|-
+| rowspan="8" style="text-align:center"| 2
+| ''[[Barry (TV series)|Barry]]''
+| style="text-align:center"| HBO
+|-
+| ''[[The Bear (TV series)|The Bear]]''
+| style="text-align:center"| [[FX Networks|FX]]
+|-
+| ''[[Better Call Saul]]''
+| style="text-align:center"| [[AMC (TV channel)|AMC]]
+|-
+| ''[[The Dropout]]''
+| style="text-align:center"| Hulu
+|-
+| ''[[House of the Dragon]]''
+| style="text-align:center"| HBO
+|-
+| ''[[The Old Man (TV series)|The Old Man]]''
+| rowspan="2" style="text-align:center"| FX
+|-
+| ''[[Under the Banner of Heaven (miniseries)|Under the Banner of Heaven]]''
+|-
+| ''[[Wednesday (TV series)|Wednesday]]''
+| style="text-align:center"| Netflix
+|}
+
+====Series with multiple wins====
+The following series received multiple wins:
+
+{| class="wikitable"
+|-
+! Wins
+! Series
+! Distributor
+|-
+| style="text-align:center"| 3
+| ''[[Abbott Elementary]]''
+| style="text-align:center"| [[American Broadcasting Company|ABC]]
+|-
+| style="text-align:center"| 2
+| ''[[The White Lotus]]''
+| style="text-align:center"| [[HBO]]
+|}
+
+===Cecil B. DeMille Award===
+The [[Golden Globe Cecil B. DeMille Award|Cecil B. DeMille Award]] is an honorary award for outstanding contributions to the world of entertainment. It is named in honor of its first recipient, director [[Cecil B. DeMille]].
+
+* [[Eddie Murphy]]<ref name="Eddie"/>
+
+===Carol Burnett Award===
+The [[Golden Globe Carol Burnett Award|Carol Burnett Award]] is an honorary award for outstanding and lasting contributions to television on or off the screen. It is named in honor of its first recipient, actress [[Carol Burnett]].
+
+* [[Ryan Murphy (producer)|Ryan Murphy]]<ref name="Ryan"/>
+
+==Presenters==
+{| class="wikitable"
+|+
+! Name(s)
+! Role
+|-
+| [[Jennifer Hudson]]
+| Presented the awards for [[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Supporting Actor – Motion Picture]] and [[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Supporting Actress – Motion Picture]]
+|-
+| [[Jennifer Coolidge]]
+| Presented the award for [[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Best Supporting Actor in a Television Series – Musical-Comedy or Drama]]
+|-
+| [[Jenna Ortega]]
+| Presented the awards for [[Golden Globe Award for Best Original Score|Best Original Score]] and [[Golden Globe Award for Best Original Song|Best Original Song]]
+|-
+| [[Niecy Nash]]
+| Presented the awards for [[Golden Globe Award for Best Actor – Television Series Musical or Comedy|Best Actor – Television Series Musical or Comedy]] and [[Golden Globe Award for Best Actress – Television Series Musical or Comedy|Best Actress – Television Series Musical or Comedy]]
+|-
+| [[Ana de Armas]]
+| Presented the awards for [[Golden Globe Award for Best Actor in a Motion Picture – Musical or Comedy|Best Actor – Motion Picture Musical or Comedy]] and [[Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy|Best Actress – Motion Picture Musical or Comedy]]
+|-
+| [[Claire Danes]]
+| Presented the award for [[Golden Globe Award for Best Animated Feature Film|Best Motion Picture – Animated]]
+|-
+| [[Letitia Wright]]
+| Presented award for [[Golden Globe Award for Best Actor in a Motion Picture – Drama|Best Actor – Motion Picture Drama]]
+|-
+| [[Glen Powell]]<br>[[Jay Ellis]]
+| Presented the awards for [[Golden Globe Award for Best Actress – Television Series Drama|Best Actress – Television Series Drama]] and [[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Best Supporting Actress in a Television Series – Musical-Comedy or Drama]]
+|-
+| [[Billy Porter]]
+| Presented the [[Golden Globe Carol Burnett Award|Carol Burnett Award]] to honoree [[Ryan Murphy (producer)|Ryan Murphy]]
+|-
+| [[Henry Golding]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Non-English Language|Best Motion Picture – Non-English Language]]
+|-
+| [[Sean Penn]]
+| Presented Ukraine President [[Volodymyr Zelenskyy]]'s telecast
+|-
+| [[Hilary Swank]]
+| Presented the award for [[Golden Globe Award for Best Screenplay|Best Screenplay – Motion Picture]]
+|-
+| [[Colman Domingo]]
+| Presented the award for [[Golden Globe Award for Best Director|Best Director – Motion Picture]]
+|-
+| [[Nicole Byer]]<br>[[Ana Gasteyer]]
+| Presented the awards for [[Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film|Best Supporting Actor – Limited Series, Anthology Series, or Motion Picture Made for Television]] and [[Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film|Best Supporting Actress – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Cole Hauser]]<br>[[Moses Brings Plenty]]
+| Presented the awards for [[Golden Globe Award for Best Actress – Miniseries or Television Film|Best Actress – Limited Series, Anthology Series, or Motion Picture Made for Television]] and [[Golden Globe Award for Best Actor – Miniseries or Television Film|Best Actor – Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Michaela Jaé Rodriguez]]
+| Presented the award for [[Golden Globe Award for Best Limited or Anthology Series or Television Film|Best Limited Series, Anthology Series, or Motion Picture Made for Television]]
+|-
+| [[Tracy Morgan]]<br>[[Jamie Lee Curtis]]
+| Presented the [[Golden Globe Cecil B. DeMille Award|Cecil B. DeMille Award]] to honoree [[Eddie Murphy]]
+|-
+| [[Regina Hall]]
+| Presented the awards for [[Golden Globe Award for Best Actor – Television Series Drama|Best Actor – Television Series Drama]] and [[Golden Globe Award for Best Television Series – Musical or Comedy|Best Television Series – Musical or Comedy]]
+|-
+| [[Natasha Lyonne]]
+| Presented the award for [[Golden Globe Award for Best Television Series – Drama|Best Television Series – Drama]]
+|-
+| [[Salma Hayek]]<br>[[Harvey Guillen]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Musical or Comedy|Best Motion Picture – Musical or Comedy]]
+|-
+| [[Quentin Tarantino]]
+| Presented the award for [[Golden Globe Award for Best Motion Picture – Drama|Best Motion Picture – Drama]]
+|}
+
+==See also==
+* [[50th Annie Awards]]
+* [[95th Academy Awards]]
+* [[28th Critics' Choice Awards]]
+* [[38th Independent Spirit Awards]]
+* [[43rd Golden Raspberry Awards]]
+* [[29th Screen Actors Guild Awards]]
+* [[76th British Academy Film Awards]]
+
+==References==
+{{Reflist}}
+
+==External links==
+* {{Official|https://goldenglobes.com|Golden Globes official website}}
+* {{IMDb title|22176310}}
+* [https://goldenglobes.com/articles/golden-globes-2023-the-winners-and-show-recap-live-updates/ Golden Globes 2023: The Winners and Show Recap] at [[Hollywood Foreign Press Association]]
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards, 80}}
+[[Category:2022 film awards|Golden Globe]]
+[[Category:2022 television awards|Golden Globe]]
+[[Category:2023 awards in the United States]]
+[[Category:Golden Globe Awards ceremonies|*080]]
+[[Category:2023 in Los Angeles County, California]]
+[[Category:January 2023 in the United States]]

@@ -5,6 +5,7 @@ from pathlib import Path
 from services.tv_catalog_repository import TVCatalogRepository
 from services.tv_read_model import TVReadModel
 from services.tv_ingestion import TVIngestion
+from services.tv_library_discovery import TVLibraryDiscovery
 from services.tv_metadata import TVMetadata
 from services.tv_search import TVSearch
 from services.tv_playback import TVPlayback, TVPlaybackHistory
@@ -23,8 +24,11 @@ class TVServices:
         with self._lock:
             if path not in self._instances:
                 repository = TVCatalogRepository(path)
+                metadata = TVMetadata(repository, self.tmdb_key)
+                ingestion = TVIngestion(repository, self.roots)
                 self._instances[path] = {'repository': repository, 'read': TVReadModel(repository),
-                    'ingestion': TVIngestion(repository, self.roots), 'metadata': TVMetadata(repository, self.tmdb_key),
+                    'ingestion': ingestion, 'metadata': metadata,
+                    'discovery': TVLibraryDiscovery(ingestion, metadata, repository),
                     'playback': TVPlayback(repository, self.roots), 'history': TVPlaybackHistory(repository, self.player_config),
                     'plex': PlexTVDiscovery(self.plex_url, self.plex_token)}
                 owners = self._instances[path]

@@ -1,0 +1,584 @@
+{{oscars short description|films-year=2006}}
+{{featured list}}
+{{Use mdy dates|date=February 2025}}
+{{Infobox film awards
+| number           = 79
+| award            = Academy Awards
+| image            = 79th Academy Awards poster domestic.jpg
+| caption          = Official poster
+| date             = February 25, 2007
+| site             = [[Kodak Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], California, U.S.
+| preshow          = [[Chris Connelly (journalist)|Chris Connelly]]<br />[[Lisa Ling]]<ref>{{cite magazine|last=Slezak |first=Michael |title=Live-blogging ABC's Oscar pre-show telecast |url=http://popwatch.ew.com/2007/02/26/liveblogging_ab/ |access-date=February 17, 2014 |magazine=[[Entertainment Weekly]] |publisher=[[Time Inc.]] |date=February 25, 2007 |url-status=dead |archive-url=https://web.archive.org/web/20140204035841/http://popwatch.ew.com/2007/02/26/liveblogging_ab/ |archive-date=February 4, 2014 }}</ref> <br />[[André Leon Talley]]<ref>{{cite news|title=André Leon Talley Named Oscar Pre-show Host |url=http://www.oscars.org/press/pressreleases/2007/07.01.30.html |archive-url=https://web.archive.org/web/20070420220205/http://www.oscars.org/press/pressreleases/2007/07.01.30.html |access-date=February 14, 2014 |work=[[Academy of Motion Picture Arts and Sciences]] |publisher=[[AMPAS]] |date=January 30, 2007 |archive-date=April 20, 2007 |url-status=dead }}</ref><br />Allyson Waterman<ref name="Allyson">{{cite news|last=Thompson |first=Toni |title=Allyson Waterman Named Co-host of "Road to the Oscars(R)" and Host of Oscar.com |url=http://oscars.org/press/pressreleases/2007/07.02.05a.html |access-date=February 3, 2014 |work=Academy of Motion Picture Arts and Sciences |publisher=AMPAS |date=February 5, 2007 |archive-url=https://web.archive.org/web/20070420220205/http://oscars.org/press/pressreleases/2007/07.02.05a.html |archive-date=April 20, 2007 |url-status=dead }}</ref>
+| host             = [[Ellen DeGeneres]]<ref name="CBS News">{{cite news|last=Vries |first=Lloyd |title=Ellen DeGeneres to Host the Oscars |url=https://www.cbsnews.com/news/ellen-degeneres-to-host-the-oscars/ |access-date=February 3, 2014 |work=CBS News |publisher=CBS Corporation |date=September 8, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140221065628/http://www.cbsnews.com/news/ellen-degeneres-to-host-the-oscars/ |archive-date=February 21, 2014 }}</ref>
+| producer         = [[Laura Ziskin]]<ref>{{cite news|title=Laura Ziskin returns as Oscars show producer |url=http://usatoday30.usatoday.com/life/movies/news/2006-07-21-ziskin_x.htm |access-date=July 17, 2013 |work=[[USA Today]] |publisher=[[Gannett Company]] |date=July 21, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140220053422/http://usatoday30.usatoday.com/life/movies/news/2006-07-21-ziskin_x.htm |archive-date=February 20, 2014 }}</ref>
+| director         = [[Louis J. Horvitz]]<ref>{{cite news|last=Lindeen |first=Julie |title=Horvitz at Oscar helm again |url=https://variety.com/2006/film/news/horvitz-at-oscar-helm-again-1117956134/ |access-date=February 3, 2014 |work=[[Variety (magazine)|Variety]] |publisher=[[Penske Media Corporation]] |date=December 20, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140303142724/http://variety.com/2006/film/news/horvitz-at-oscar-helm-again-1117956134/ |archive-date=March 3, 2014 }}</ref>
+| best_picture     = ''[[The Departed]]''
+| most_wins        = ''The Departed'' (4)
+| most_nominations = ''[[Dreamgirls (film)|Dreamgirls]]'' (8)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 51 minutes<ref>{{cite news|last=Lowry |first=Brian |title=Review: "The 79th Annual Academy Awards" |url=https://variety.com/2007/film/reviews/the-79th-annual-academy-awards-2-1200510071/ |access-date=July 18, 2013 |work=Variety |date=February 25, 2007 |publisher=Penske Media Corporation |url-status=live |archive-url=https://web.archive.org/web/20140227143102/http://variety.com/2007/film/reviews/the-79th-annual-academy-awards-2-1200510071/ |archive-date=February 27, 2014 }}</ref>
+| ratings          = 39.92 million<br />23.59% ([[Nielsen ratings]])<ref name="Nikki Finke Oscar ratings">{{cite news|last=Finke |first=Nikki |title=UPDATE: 39.9 Million Watch 79th Oscars |url=https://deadline.com/2007/02/overnights-show-2-nielsen-oscar-ratings-1489/ |access-date=February 3, 2014 |work=[[Deadline Hollywood]] |publisher=Penske Media Corporation |url-status=live |archive-url=https://web.archive.org/web/20131213205642/http://www.deadline.com/2007/02/overnights-show-2-nielsen-oscar-ratings/ |archive-date=December 13, 2013 }}</ref>
+| last             = 78th
+| next             = 80th
+}}
+
+The '''79th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2006 in film|films of 2006]] and took place February 25, 2007, at the [[Kodak Theatre]] in [[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]] beginning at 5:30&nbsp;p.m. [[Pacific Time Zone|PST]] / 8:30&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, the Academy of Motion Picture Arts and Sciences presented Academy Awards (commonly referred to as Oscars) in 24 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Laura Ziskin]] and directed by Louis J. Horvitz. Actress [[Ellen DeGeneres]] hosted for the first time.<ref>{{cite news|title=Ellen, meet Oscar |url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2006-09-07-degeneres-host_x.htm |access-date=February 16, 2014 |work=USA Today |publisher=Gannett Company |date=September 7, 2008 |url-status=live |archive-url=https://web.archive.org/web/20140221065805/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2006-09-07-degeneres-host_x.htm |archive-date=February 21, 2014 }}</ref> Two weeks earlier in a ceremony at the [[Beverly Wilshire Hotel]] in [[Beverly Hills, California]] held on February 10, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Maggie Gyllenhaal]].<ref>{{cite magazine|last=Rich |first=Joshua |title=Maggie G. Hosts Sci/Tech Oscars |url=http://popwatch.ew.com/2007/02/07/maggie_g_hosts_/ |access-date=July 18, 2013 |magazine=Entertainment Weekly |publisher=Time Inc. |date=February 7, 2007 |url-status=live |archive-url=https://web.archive.org/web/20131202225234/http://popwatch.ew.com/2007/02/07/maggie_g_hosts_/ |archive-date=December 2, 2013 }}</ref>
+
+''[[The Departed]]'' won four awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last1=Halbfinger |first1=David M. |last2=Waxman |first2=Sharon |title='The Departed' Wins Best Picture, Scorsese Best Director |url=https://www.nytimes.com/2007/02/26/movies/awardsseason/26osca.html |access-date=February 17, 2014 |work=[[The New York Times]] |date=February 26, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140304193333/http://www.nytimes.com/2007/02/26/movies/awardsseason/26osca.html |archive-date=March 4, 2014 }}</ref><ref>{{cite news|title=At Long Last, Scorsese Wins Oscar |url=https://www.cbsnews.com/news/at-long-last-scorsese-wins-oscar/ |access-date=October 22, 2013 |work=[[CBS News]] |publisher=[[CBS Corporation]] |date=February 11, 2009 |url-status=live |archive-url=https://web.archive.org/web/20131022140201/http://www.cbsnews.com/2100-207_162-2511891.html |archive-date=October 22, 2013 }}</ref> Other winners included ''[[Pan's Labyrinth]]'' with three awards, ''[[Dreamgirls (film)|Dreamgirls]]'', ''[[An Inconvenient Truth]]'', and ''[[Little Miss Sunshine]]'' with two, and ''[[Babel (2006 film)|Babel]]'', ''[[The Blood of Yingzhou District]]'', ''[[The Danish Poet]]'', ''[[Happy Feet]]'', ''[[The Last King of Scotland (film)|The Last King of Scotland]]'', ''[[Letters from Iwo Jima]]'', ''[[The Lives of Others]]'', ''[[Marie Antoinette (2006 film)|Marie Antoinette]]'', ''[[Pirates of the Caribbean: Dead Man's Chest]]'', ''[[The Queen (2006 film)|The Queen]]'', and ''[[West Bank Story]]'' with one. The telecast garnered nearly 40 million viewers in the United States.
+
+==Winners and nominees==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 79th Academy Awards were announced on January 23, 2007, at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]], by [[Sid Ganis]], president of the academy, and the actress [[Salma Hayek]].<ref>{{cite news|last=Stein |first=Ruthe |title=Sure, the film business is cutthroat, but it also has heart, says industry leader Sid Ganis, who seems to have a lot of heart himself |url=http://www.sfgate.com/entertainment/article/Sure-the-film-business-is-cutthroat-but-it-also-2655088.php |access-date=July 16, 2013 |work=[[The San Francisco Chronicle]] |publisher=[[Hearst Corporation]] |date=January 22, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140202225255/http://www.sfgate.com/entertainment/article/Sure-the-film-business-is-cutthroat-but-it-also-2655088.php |archive-date=February 2, 2014 }}</ref> ''[[Dreamgirls (film)|Dreamgirls]]'' received the most nominations with eight, and ''[[Babel (2006 film)|Babel]]'' came in second with seven.<ref>{{cite news|last=Kaufman |first=Gil |title='Dreamgirls' Leads Oscar Noms — Without Best Picture Or Beyonce |url=http://www.mtv.com/news/articles/1550536/best-picture-snub-oscar-leader-dreamgirls.jhtml |access-date=February 14, 2014 |work=[[MTV]] |publisher=[[Viacom Media Networks]] |date=January 23, 2007 |url-status=dead |archive-url=https://web.archive.org/web/20140222091258/http://www.mtv.com/news/articles/1550536/best-picture-snub-oscar-leader-dreamgirls.jhtml |archive-date=February 22, 2014 }}</ref> This marked the first and only occurrence that the film with the most nominations was not a Best Picture nominee.<ref>{{cite news|last=Rea |first=Steven |title=Oscar hugs and shrugs The Academy Award nominations show unusual diversity this year and, in the case of "Dreamgirls," an oddity. Oscar is doing his part for diversity |url=http://articles.philly.com/2007-01-24/news/25220650_1_time-in-oscar-history-directors-guild-nominations-fourth-best-picture-nomination |access-date=January 22, 2014 |work=[[The Philadelphia Inquirer]] |publisher=[[Philadelphia Media Network]] |date=January 24, 2007 |url-status=dead |archive-url=https://web.archive.org/web/20140219090403/http://articles.philly.com/2007-01-24/news/25220650_1_time-in-oscar-history-directors-guild-nominations-fourth-best-picture-nomination |archive-date=February 19, 2014 }}</ref>
+
+The winners were announced during the awards ceremony on February 25, 2007.<ref>{{cite news |title='The Departed' Takes Home Best Picture Oscar, Director Award for Martin Scorsese |url=https://www.foxnews.com/story/the-departed-takes-home-best-picture-oscar-director-award-for-martin-scorsese/ |date=February 26, 2007 |access-date=September 16, 2011 |work=[[Fox News]] |publisher=[[21st Century Fox]] |url-status=live |archive-url=https://web.archive.org/web/20131216173554/http://www.foxnews.com/story/2007/02/26/departed-takes-home-best-picture-oscar-director-award-for-martin-scorsese/ |archive-date=2013-12-16 }}</ref> With his latest unsuccessful nomination for Best Actor, [[Peter O'Toole]] became the most nominated performer without a competitive win.<ref>{{cite news |title=Peter O'Toole |url=http://archive.indystar.com/usatoday/article/4031975 |access-date=January 31, 2014 |work=[[The Indianapolis Star]] |publisher=Gannett Company |date=December 15, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20140202222446/http://archive.indystar.com/usatoday/article/4031975 |archive-date=2014-02-02 }}</ref> Best Supporting Actress winner [[Jennifer Hudson]] became the fifteenth person to win for their debut film performance.<ref>{{cite news|last=Montgomery |first=Daniel |title=Will Lupita Nyongo and Barkhad Abdi join 15 Oscar winners for film debuts? |url=http://www.goldderby.com/news/5519/oscars-lupita-nyongo-12-years-a-slave-barkhad-abdi-captain-phillips-news-93526841.html |access-date=January 31, 2014 |work=Gold Derby |date=January 24, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140201195348/http://www.goldderby.com/news/5519/oscars-lupita-nyongo-12-years-a-slave-barkhad-abdi-captain-phillips-news-93526841.html |archive-date=February 1, 2014 }}</ref> "[[I Need to Wake Up]]" from ''[[An Inconvenient Truth]]'' became the first song from a documentary film to win Best Original Song.<ref>{{cite news|title=The 79th Academy Awards (2007) Memorable Moments |url=http://www.oscars.org/oscars/ceremonies/2007/memorable-moments |access-date=February 14, 2014 |work=Academy of Motion Picture Arts and Sciences |publisher=AMPAS |url-status=live |archive-url=https://web.archive.org/web/20141022213452/http://www.oscars.org/oscars/ceremonies/2007/memorable-moments |archive-date=October 22, 2014 }}</ref>
+
+===Awards===
+[[File:Martin Scorsese-68749.jpg|thumb|right|150px|[[Martin Scorsese]], Best Director winner|alt=Photo of Martin Scorsese at the 74th Berlin International Film Festival in 2024.]]
+[[File:Forest Whitaker 2014.jpg|thumb|right|150px|[[Forest Whitaker]], Best Actor winner|alt=Photo of Forest Whitaker in February 2014.]]
+[[File:Helen Mirren, 2023 (cropped).jpg|thumb|right|150px|[[Helen Mirren]], Best Actress winner|alt=Photo of Helen Mirren at the 73rd Berlin International Film Festival in 2023.]]
+[[File:AlanArkinTIFFSept2012 (cropped).jpg|thumb|right|150px|[[Alan Arkin]], Best Supporting Actor winner|alt=Photo of Alan Arkin at the 2012 Toronto International Film Festival.]]
+[[File:Jennifer Hudson at MVAAFF 2025 (cropped).jpg|thumb|right|150px|[[Jennifer Hudson]], Best Supporting Actress winner|alt=Photo of Jennifer Hudson in 2025.]]
+[[File:George Miller by Gage Skidmore.jpg|thumb|right|150px|[[George Miller (filmmaker)|George Miller]], Best Animated Feature winner|alt=Photo of George Miller at the 2014 San Diego Comic-Con.]]
+[[File:Milena Canonero Berlinale 2017.jpg|thumb|right|150px|[[Milena Canonero]], Best Costume Design winner|alt=Photo of Milena Canonero at the 2017 Berlin International Film Festival.]]
+[[File:Thelma Schoonmaker (53274434525) (cropped).jpg|thumb|right|150px|[[Thelma Schoonmaker]], Best Film Editing winner|alt=Photo of Thelma Schoonmaker in October 2023.]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars2007">{{Cite news|url=http://www.oscars.org/oscars/ceremonies/2007 |title=The 79th Academy Awards (2007) Nominees and Winners |access-date=November 18, 2011 |work=[[Academy of Motion Picture Arts and Sciences]] |publisher=AMPAS |url-status=live |archive-url=https://web.archive.org/web/20141014074650/http://www.oscars.org/oscars/ceremonies/2007 |archive-date=October 14, 2014 }}</ref>
+
+{| class=wikitable
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[The Departed]]''&nbsp;– [[Graham King]], producer'''{{double dagger}}
+**''[[Babel (2006 film)|Babel]]''&nbsp;– [[Alejandro González Iñárritu]], [[Jon Kilik]] and [[Steve Golin]], producers
+**''[[Letters from Iwo Jima]]''&nbsp;– [[Clint Eastwood]], [[Steven Spielberg]] and [[Robert Lorenz]], producers
+**''[[Little Miss Sunshine]]''&nbsp;– [[David T. Friendly]], [[Peter Saraf]] and [[Marc Turtletaub]], producers
+**''[[The Queen (2006 film)|The Queen]]''&nbsp;– [[Andy Harries]], [[Christine Langan]] and [[Tracey Seaward]], producers
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Martin Scorsese]]&nbsp;– ''[[The Departed]]'''''{{double dagger}}
+**[[Alejandro González Iñárritu]]&nbsp;– ''[[Babel (2006 film)|Babel]]''
+**[[Clint Eastwood]]&nbsp;– ''[[Letters from Iwo Jima]]''
+**[[Stephen Frears]]&nbsp;– ''[[The Queen (2006 film)|The Queen]]''
+**[[Paul Greengrass]]&nbsp;– ''[[United 93 (film)|United 93]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Forest Whitaker]]&nbsp;– ''[[The Last King of Scotland (film)|The Last King of Scotland]]'' as [[Idi Amin]]'''{{double dagger}}
+**[[Leonardo DiCaprio]]&nbsp;– ''[[Blood Diamond]]'' as Danny Archer
+**[[Ryan Gosling]]&nbsp;– ''[[Half Nelson (film)|Half Nelson]]'' as Dan Dunne
+**[[Peter O'Toole]]&nbsp;– ''[[Venus (2006 film)|Venus]]'' as Maurice
+**[[Will Smith]]&nbsp;– ''[[The Pursuit of Happyness]]'' as [[Chris Gardner]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Helen Mirren]]&nbsp;– ''[[The Queen (2006 film)|The Queen]]'' as [[Elizabeth II|Queen Elizabeth II]]'''{{double dagger}}
+**[[Penélope Cruz]]&nbsp;– ''[[Volver]]'' as Raimunda
+**[[Judi Dench]]&nbsp;– ''[[Notes on a Scandal (film)|Notes on a Scandal]]'' as Barbara Covett
+**[[Meryl Streep]]&nbsp;– ''[[The Devil Wears Prada (film)|The Devil Wears Prada]]'' as [[Miranda Priestly]]
+**[[Kate Winslet]]&nbsp;– ''[[Little Children (film)|Little Children]]'' as Sarah Pierce
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Alan Arkin]]&nbsp;– ''[[Little Miss Sunshine]]'' as Edwin Hoover'''{{double dagger}}
+**[[Jackie Earle Haley]]&nbsp;– ''[[Little Children (film)|Little Children]]'' as Ronald James McGorvey
+**[[Djimon Hounsou]]&nbsp;– ''[[Blood Diamond]]'' as Solomon Vandy
+**[[Eddie Murphy]]&nbsp;– ''[[Dreamgirls (film)|Dreamgirls]]'' as James "Thunder" Early
+**[[Mark Wahlberg]]&nbsp;– ''[[The Departed]]'' as Staff Sergeant Sean Dignam
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Jennifer Hudson]]&nbsp;– ''[[Dreamgirls (film)|Dreamgirls]]'' as [[Florence Ballard|Effie White]]'''{{double dagger}}
+**[[Adriana Barraza]]&nbsp;– ''[[Babel (2006 film)|Babel]]'' as Amelia Hernandez
+**[[Cate Blanchett]]&nbsp;– ''[[Notes on a Scandal (film)|Notes on a Scandal]]'' as Bathsheba "Sheba" Hart
+**[[Abigail Breslin]]&nbsp;– ''[[Little Miss Sunshine]]'' as Olive Hoover
+**[[Rinko Kikuchi]]&nbsp;– ''[[Babel (2006 film)|Babel]]'' as Chieko Wataya
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Little Miss Sunshine]]''&nbsp;– [[Michael Arndt]]'''{{double dagger}}
+**''[[Babel (2006 film)|Babel]]''&nbsp;– [[Guillermo Arriaga]]
+**''[[Letters from Iwo Jima]]''&nbsp;– Screenplay by [[Iris Yamashita]]; Story by Iris Yamashita and [[Paul Haggis]]
+**''[[Pan's Labyrinth]]''&nbsp;– [[Guillermo del Toro]]
+**''[[The Queen (2006 film)|The Queen]]''&nbsp;– [[Peter Morgan]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[The Departed]]''&nbsp;– [[William Monahan]] based on the film ''[[Infernal Affairs]]'''''{{double dagger}}
+**''[[Borat|Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan]]''&nbsp;– Screenplay by [[Sacha Baron Cohen]], Anthony Hines, [[Peter Baynham]] and [[Dan Mazer]]; Story by Sacha Baron Cohen, Peter Baynham, Anthony Hines and [[Todd Phillips]]
+**''[[Children of Men]]''&nbsp;– [[Alfonso Cuarón]], Timothy J. Sexton, [[David Arata]], [[Mark Fergus and Hawk Ostby|Mark Fergus]] and [[Mark Fergus and Hawk Ostby|Hawk Ostby]] based on [[The Children of Men|the book]] by [[P. D. James]]
+**''[[Little Children (film)|Little Children]]''&nbsp;– [[Todd Field]] and [[Tom Perrotta]] based on [[Little Children (novel)|the novel]] by [[Tom Perrotta]]
+**''[[Notes on a Scandal (film)|Notes on a Scandal]]''&nbsp;– [[Patrick Marber]] based on [[Notes on a Scandal|the book]] by [[Zoë Heller]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Happy Feet]]''&nbsp;– [[George Miller (filmmaker)|George Miller]]'''{{double dagger}}
+**''[[Cars (film)|Cars]]''&nbsp;– [[John Lasseter]]
+**''[[Monster House (film)|Monster House]]''&nbsp;– [[Gil Kenan]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[The Lives of Others]]'' ([[List of German submissions for the Academy Award for Best Foreign Language Film|Germany]]) in [[German language|German]]&nbsp;– [[Florian Henckel von Donnersmarck]]'''{{double dagger}}
+**''[[After the Wedding (2006 film)|After the Wedding]]'' ([[List of Danish submissions for the Academy Award for Best Foreign Language Film|Denmark]]) in [[Danish language|Danish]], [[Hindi languages|Hindi]], and [[Swedish language|Swedish]]&nbsp;– [[Susanne Bier]]
+**''[[Days of Glory (2006 film)|Days of Glory (Indigènes)]]'' ([[List of Algerian submissions for the Academy Award for Best Foreign Language Film|Algeria]]) in [[Arabic language|Arabic]]&nbsp;– [[Rachid Bouchareb]]
+**''[[Pan's Labyrinth]]'' ([[List of Mexican submissions for the Academy Award for Best Foreign Language Film|Mexico]]) in [[Spanish language|Spanish]]&nbsp;– [[Guillermo del Toro]]
+**''[[Water (2005 film)|Water]]'' ([[List of Canadian submissions for the Academy Award for Best Foreign Language Film|Canada]]) in [[Hindi languages|Hindi]] and [[English language|English]]&nbsp;– [[Deepa Mehta]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[An Inconvenient Truth]]''&nbsp;– [[Davis Guggenheim]]'''{{double dagger}}
+** ''[[Deliver Us from Evil (2006 film)|Deliver Us from Evil]]'' – [[Amy J. Berg|Amy Berg]] and [[Frank Donner (film producer)|Frank Donner]]
+** ''[[Iraq in Fragments]]''&nbsp;– [[James Longley (filmmaker)|James Longley]] and John Sinno
+** ''[[Jesus Camp]]''&nbsp;– [[Heidi Ewing]] and [[Rachel Grady]]
+** ''[[My Country, My Country]]''&nbsp;– [[Laura Poitras]] and Jocelyn Glatzer
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[The Blood of Yingzhou District]]''&nbsp;– [[Ruby Yang]] and [[Thomas Lennon (filmmaker)|Thomas Lennon]]'''{{double dagger}}
+**''[[Recycled Life]]''&nbsp;– [[Leslie Iwerks]] and Mike Glad
+**''[[Rehearsing a Dream]]''&nbsp;– [[Karen Goodman]] and [[Kirk Simon]]
+**''[[Two Hands: The Leon Fleisher Story|Two Hands]]''&nbsp;– [[Nathaniel Kahn]] and Susan Rose Behr
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[West Bank Story]]''&nbsp;– [[Ari Sandel]]'''{{double dagger}}
+**''[[Binta and the Great Idea]]''&nbsp;– [[Javier Fesser]] and Luis Manso
+**''Éramos pocos (One Too Many)''&nbsp;– [[Borja Cobeaga]]
+**''[[Helmer & Son]]''&nbsp;– [[Søren Pilmark]] and [[Kim Magnusson]]
+**''[[The Saviour (film)|The Saviour]]''&nbsp;– Peter Templeman and Stuart Parkyn
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[The Danish Poet]]''&nbsp;– [[Torill Kove]]'''{{double dagger}}
+**''[[Lifted (2006 film)|Lifted]]''&nbsp;– [[Gary Rydstrom]]
+**''[[The Little Matchgirl (2006 film)|The Little Matchgirl]]''&nbsp;– [[Roger Allers]] and [[Don Hahn]]
+**''[[Maestro (2005 film)|Maestro]]''&nbsp;– [[Géza M. Tóth]]
+**''[[No Time for Nuts]]''&nbsp;– [[Chris Renaud]] and [[Michael Thurmeier]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Babel (2006 film)|Babel]]''&nbsp;– [[Gustavo Santaolalla]]'''{{double dagger}}
+**''[[The Good German]]''&nbsp;– [[Thomas Newman]]
+**''[[Notes on a Scandal (film)|Notes on a Scandal]]''&nbsp;– [[Philip Glass]]
+**''[[Pan's Labyrinth]]''&nbsp;– [[Javier Navarrete]]
+**''[[The Queen (2006 film)|The Queen]]''&nbsp;– [[Alexandre Desplat]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[I Need to Wake Up]]" from ''[[An Inconvenient Truth]]''&nbsp;– Music and Lyrics by [[Melissa Etheridge]]'''{{double dagger}}
+** "[[Listen (Beyoncé song)|Listen]]" from ''[[Dreamgirls (film)|Dreamgirls]]''&nbsp;– Music by [[Henry Krieger]] and [[Scott Cutler]]; Lyrics by [[Anne Preven]]
+** "[[Love You I Do]]" from ''[[Dreamgirls (film)|Dreamgirls]]''&nbsp;– Music by [[Henry Krieger]]; Lyrics by [[Siedah Garrett]]
+** "[[Our Town (James Taylor song)|Our Town]]" from ''[[Cars (film)|Cars]]''&nbsp;– Music and Lyrics by [[Randy Newman]]
+** "[[Patience (Dreamgirls song)|Patience]]" from ''[[Dreamgirls (film)|Dreamgirls]]''&nbsp;– Music by [[Henry Krieger]]; Lyrics by [[Willie Reale]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[Letters from Iwo Jima]]''&nbsp;– [[Alan Robert Murray]] and [[Bub Asman]]'''{{double dagger}}
+** ''[[Apocalypto]]''&nbsp;– [[Sean McCormack (sound editor)|Sean McCormack]] and [[Kami Asgar]]
+** ''[[Blood Diamond]]''&nbsp;– [[Lon Bender]]
+** ''[[Flags of Our Fathers (film)|Flags of Our Fathers]]''&nbsp;– [[Alan Robert Murray]] and [[Bub Asman]]
+** ''[[Pirates of the Caribbean: Dead Man's Chest]]''&nbsp;– [[Christopher Boyes]] and [[George Watters II]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Mixing]]}}
+* '''''[[Dreamgirls (film)|Dreamgirls]]''&nbsp;– [[Michael Minkler]], [[Bob Beemer]] and [[Willie D. Burton]]'''{{double dagger}}
+** ''[[Apocalypto]]''&nbsp;– [[Kevin O'Connell (sound mixer)|Kevin O'Connell]], [[Greg P. Russell]] and [[Fernando Cámara]]
+** ''[[Blood Diamond]]''&nbsp;– [[Andy Nelson (sound engineer)|Andy Nelson]], [[Anna Behlmer]] and [[Ivan Sharrock]]
+** ''[[Flags of Our Fathers (film)|Flags of Our Fathers]]''&nbsp;– [[John T. Reitz]], [[David E. Campbell (sound engineer)|Dave Campbell]], [[Gregg Rudloff]] and [[Walt Martin]]
+** ''[[Pirates of the Caribbean: Dead Man's Chest]]''&nbsp;– [[Christopher Boyes]], [[Paul Massey (sound engineer)|Paul Massey]] and [[Lee Orloff]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Pan's Labyrinth]]''&nbsp;– Art Direction: [[Eugenio Caballero]]; Set Decoration: [[Pilar Revuelta]]'''{{double dagger}}
+**''[[Dreamgirls (film)|Dreamgirls]]''&nbsp;– Art Direction: [[John Myhre]]; Set Decoration: [[Nancy Haigh]]
+**''[[The Good Shepherd (film)|The Good Shepherd]]''&nbsp;– Art Direction: [[Jeannine Oppewall]]; Set Decoration: [[Gretchen Rau]] (posthumous nomination) and [[Leslie E. Rollins]]
+**''[[Pirates of the Caribbean: Dead Man's Chest]]''&nbsp;– Art Direction: [[Rick Heinrichs]]; Set Decoration: [[Cheryl Carasik]]
+**''[[The Prestige]]''&nbsp;– Art Direction: [[Nathan Crowley]]; Set Decoration: [[Julie Ochipinti]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Pan's Labyrinth]]''&nbsp;– [[Guillermo Navarro]]'''{{double dagger}}
+**''[[The Black Dahlia (film)|The Black Dahlia]]''&nbsp;– [[Vilmos Zsigmond]]
+**''[[Children of Men]]'' – [[Emmanuel Lubezki]]
+**''[[The Illusionist (2006 film)|The Illusionist]]''&nbsp;– [[Dick Pope (cinematographer)|Dick Pope]]
+**''[[The Prestige]]''&nbsp;– [[Wally Pfister]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[Pan's Labyrinth]]''&nbsp;– [[David Martí]] and [[Montse Ribé]]'''{{double dagger}}
+**''[[Apocalypto]]''&nbsp;– [[Aldo Signoretti]] and [[Vittorio Sodano]]
+**''[[Click (2006 film)|Click]]''&nbsp;– [[Kazuhiro Tsuji]] and [[Bill Corso]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Marie Antoinette (2006 film)|Marie Antoinette]]'' – [[Milena Canonero]]'''{{double dagger}}
+**''[[Curse of the Golden Flower]]'' – [[Yee Chung-man|Yee Chung Man]]
+**''[[The Devil Wears Prada (film)|The Devil Wears Prada]]'' – [[Patricia Field]]
+**''[[Dreamgirls (film)|Dreamgirls]]'' – [[Sharen Davis]]
+**''[[The Queen (2006 film)|The Queen]]'' – [[Consolata Boyle]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Departed]]''&nbsp;– [[Thelma Schoonmaker]]'''{{double dagger}}
+**''[[Babel (2006 film)|Babel]]''&nbsp;– [[Douglas Crise]] and [[Stephen Mirrione]]
+**''[[Blood Diamond]]''&nbsp;– [[Steven Rosenblum]]
+**''[[Children of Men]]''&nbsp;– [[Alfonso Cuarón]] and [[Álex Rodríguez (film editor)|Álex Rodríguez]]
+**''[[United 93 (film)|United 93]]''&nbsp;– [[Clare Douglas]], [[Richard Pearson (film editor)|Richard Pearson]] and [[Christopher Rouse (film editor)|Christopher Rouse]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Pirates of the Caribbean: Dead Man's Chest]]''&nbsp;– [[John Knoll]], [[Hal Hickel]], [[Charles Gibson (special effects artist)|Charles Gibson]] and [[Allen Hall (special effects artist)|Allen Hall]]'''{{double dagger}}
+**''[[Poseidon (film)|Poseidon]]''&nbsp;– Boyd Shermis, Kim Libreri, Chas Jarrett and [[John Frazier]]
+**''[[Superman Returns]]''&nbsp;– [[Mark Stetson]], [[Neil Corbould]], [[Richard R. Hoover]] and [[Jon Thum]]
+|}
+
+===Honorary Award===
+*To [[Ennio Morricone]] in recognition of his magnificent and multifaceted contributions to the art of film music.<ref>{{cite news |last=Campbell |first=Christopher |title=Ennio Morricone Finally Gets an Oscar |url=http://news.moviefone.com/2006/12/14/ennio-morricone-finally-gets-an-oscar/ |access-date=August 8, 2013 |work=[[Moviefone]] |publisher=AOL |date=December 14, 2006 |url-status=dead |archive-url=https://web.archive.org/web/20140516011409/http://news.moviefone.com/2006/12/14/ennio-morricone-finally-gets-an-oscar/ |archive-date=May 16, 2014 |df=mdy-all }}</ref>
+
+===Jean Hersholt Humanitarian Award===
+*[[Sherry Lansing]]<ref>{{cite news|last=Lindeen |first=Julie |title=Honorary Oscar to Lansing |url=https://variety.com/2006/film/news/honorary-oscar-to-lansing-1117955763/ |access-date=February 1, 2014 |work=Variety |publisher=Penske Media Corporation |date=December 14, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140227142748/http://variety.com/2006/film/news/honorary-oscar-to-lansing-1117955763/ |archive-date=February 27, 2014 }}</ref>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}{{col-1-of-2}}
+The following 19 films received multiple nominations:
+
+{| class="wikitable sortable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 8
+| ''[[Dreamgirls (film)|Dreamgirls]]''
+|-
+| style="text-align: center;" | 7
+| ''[[Babel (2006 film)|Babel]]''
+|-
+| rowspan=2 style="text-align:center" | 6
+| ''[[Pan's Labyrinth]]''
+|-
+| ''[[The Queen (2006 film)|The Queen]]''
+|-
+| rowspan=2 style="text-align:center" | 5
+| ''[[Blood Diamond]]''
+|-
+| ''[[The Departed]]''
+|-
+| rowspan=4 style="text-align:center" | 4
+| ''[[Letters from Iwo Jima]]''
+|-
+| ''[[Little Miss Sunshine]]''
+|-
+| ''[[Notes on a Scandal (film)|Notes on a Scandal]]''
+|-
+| ''[[Pirates of the Caribbean: Dead Man's Chest]]''
+|-
+| rowspan=3 style="text-align:center" | 3
+| ''[[Apocalypto]]''
+|-
+| ''[[Children of Men]]''
+|-
+| ''[[Little Children (film)|Little Children]]''
+|-
+| rowspan=6 style="text-align:center" | 2
+| ''[[An Inconvenient Truth]]''
+|-
+| ''[[Cars (film)|Cars]]''
+|-
+| ''[[Flags of Our Fathers (film)|Flags of Our Fathers]]''
+|-
+| ''[[The Devil Wears Prada (film)|The Devil Wears Prada]]''
+|-
+| ''[[The Prestige]]''
+|-
+| ''[[United 93 (film)|United 93]]''
+|}
+
+{{col-2}}
+
+The following five films received multiple awards:
+
+{| class="wikitable sortable" style="text-align: center;"
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+
+| style="text-align: center;" | 4
+| ''[[The Departed]]''
+|-
+| style="text-align: center;" | 3
+| ''[[Pan's Labyrinth]]''
+|-
+| rowspan=3 style="text-align:center" | 2
+| ''[[An Inconvenient Truth]]''
+|-
+| ''[[Dreamgirls (film)|Dreamgirls]]''
+|-
+| ''[[Little Miss Sunshine]]''
+|-
+|}
+
+{{col-end}}
+
+==Presenters and performers==
+The following individuals presented awards or performed musical numbers.<ref name="Today Oscars live blog">{{cite news|last=White |first=Dave |title=Oscars: Even more bloated than 'Idol' |url=http://www.today.com/id/17333639/ns/today-today_entertainment/t/oscars-even-more-bloated-idol/ |access-date=February 17, 2014 |work=[[NBC News]] |publisher=[[NBCUniversal]] |date=February 26, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140222140453/http://www.today.com/id/17333639/ns/today-today_entertainment/t/oscars-even-more-bloated-idol/ |archive-date=February 22, 2014 }}</ref><ref name="Kirschling">{{cite magazine|last=Kirschling |first=Gregory |title=Live-blogging the Oscars, baby! |url=http://popwatch.ew.com/2007/02/26/liveblogging_th_1/ |access-date=February 1, 2014 |magazine=Entertainment Weekly |publisher=Time Inc. |date=February 26, 2007 |url-status=dead |archive-url=https://web.archive.org/web/20140202100144/http://popwatch.ew.com/2007/02/26/liveblogging_th_1/ |archive-date=February 2, 2014 }}</ref><ref>{{cite news|last1=Burlingame |first1=Jon |title=Music Tributes Fill Oscar Weekend |url=http://www.filmmusicsociety.org/news_events/features/2007/022607.html?isArchive=022607 |access-date=September 16, 2007 |publisher=[[The Film Music Society]] |date=February 26, 2007 |url-status=live |archive-url=https://web.archive.org/web/20070817055711/http://www.filmmusicsociety.org/news_events/features/2007/022607.html?IsArchive=022607 |archive-date=August 17, 2007 }}</ref>
+
+===Presenters (in order of appearance)===
+{| class="wikitable sortable"
+!Name(s)
+!Role
+|-
+|{{sortname|Gina|Tuttle}}<br />[[Don LaFontaine]]
+|Announcers for the 79th annual Academy Awards
+|-
+|{{sortname|Daniel|Craig}}<br />[[Nicole Kidman]]
+|Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+|{{sortname|Maggie|Gyllenhaal}}
+|Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+|{{sortname|Jack|Black}}<br />[[Will Ferrell]]<br />[[John C. Reilly]]
+|Presenters of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+|{{sortname|Abigail|Breslin}}<br />[[Jaden Smith]]
+|Presentations of the awards for [[Academy Award for Best Animated Short Film|Best Animated Short Film]] and [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+|{{sortname|Steve|Carell}}<br />[[Greg Kinnear]]
+|Presenters of the award for [[Academy Award for Best Sound Editing|Best Sound Editing]]
+|-
+|{{sortname|Jessica|Biel}}<br />[[James McAvoy]]
+|Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound Mixing]]
+|-
+|{{sortname|Rachel|Weisz}}
+|Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+|{{sortname|Leonardo|DiCaprio}}<br />[[Al Gore]]
+|Givers of a special announcement regarding the academy's plans to help the environment
+|-
+|{{sortname|Cameron|Diaz}}
+|Presenter of the award for [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+|{{sortname|Ben|Affleck}}
+|Presenter of the "Tribute to Screenwriters" montage by [[Nancy Meyers]]
+|-
+|{{sortname|Tom|Hanks}}<br />[[Helen Mirren]]
+|Presenters of the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+|{{sortname|Emily|Blunt}}<br />[[Anne Hathaway]]
+|Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+|{{sortname|Tom|Cruise}}
+|Presenter of the [[Jean Hersholt Humanitarian Award]] to [[Sherry Lansing]]
+|-
+|{{sortname|Gwyneth|Paltrow}}
+|Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+|{{sortname|Robert|Downey Jr.}}<br />[[Naomi Watts]]
+|Presenters of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+|{{sortname|Catherine|Deneuve}}<br />[[Ken Watanabe]]
+|Presenters of the "50 Years of Best Foreign Language Film Winners" montage by [[Giuseppe Tornatore]]
+|-
+|{{sortname|Cate|Blanchett}}<br />[[Clive Owen]]
+|Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+|{{sortname|George|Clooney}}
+|Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+|{{sortname|Gael García|Bernal}}<br />[[Eva Green]]
+|Presenters of the award for [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]]
+|-
+|{{sortname|Jerry|Seinfeld}}
+|Presenter of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+|{{sortname|Clint|Eastwood}}
+|Presenter of the [[Academy Honorary Award]] to [[Ennio Morricone]]
+|-
+|{{sortname|Penélope|Cruz}}<br />[[Hugh Jackman]]
+|Presenters of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+|{{sortname|Sid|Ganis}} (AMPAS president)
+|Presenter of a montage highlighting the academy's preservation and educational work
+|-
+|{{sortname|Kirsten|Dunst}}<br />[[Tobey Maguire]]
+|Presenters of the award for [[Academy Award for Best Original Screenplay|Best Original Screenplay]]
+|-
+|{{sortname|Jennifer|Lopez}}
+|Introducer of the performances of Best Original Song nominees "[[Love You I Do]]", "[[Listen (Beyoncé song)|Listen]]" and "[[Patience (Dreamgirls song)|Patience]]"
+|-
+|{{sortname|Queen|Latifah}}<br />[[John Travolta]]
+|Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+|{{sortname|Will|Smith}}
+|Introducer of a montage of films dealing with American politics by [[Michael Mann]]
+|-
+|{{sortname|Kate|Winslet}}
+|Presenter of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+|{{sortname|Jodie|Foster}}
+|Presenter of the "[[List of Latin phrases: I#in memoriam|In Memoriam]]" tribute
+|-
+|{{sortname|Philip Seymour|Hoffman}}
+|Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+|{{sortname|Reese|Witherspoon}}
+|Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+|{{sortname|Francis Ford|Coppola}}<br />[[George Lucas]]<br />[[Steven Spielberg]]
+|Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+|{{sortname|Diane|Keaton}}<br />[[Jack Nicholson]]
+|Presenters of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers (in order of appearance)===
+{| class="wikitable sortable"
+!Name(s)
+!Role
+!Performed
+|-
+|{{sortname|William|Ross|William Ross (composer)|William Ross}}
+|Musical arranger
+|Orchestral
+|-
+|{{sortname|Pilobolus||Pilobolus (dance company)|Pilobolus}}
+|Performers
+|Interpretive depictions of films' titles and logos
+|-
+|{{sortname|Jack|Black}}<br />[[Will Ferrell]]<br />[[John C. Reilly]]
+|Performers
+|"Comedian at the Oscars"
+|-
+|{{sortname|Steve|Sidwell|Steve Sidwell (musician)|Steve Sidwell}}<br />[[Sound Effects Choir]]
+|Performers
+|"Elements & Motion" film sound effects performance
+|-
+|{{sortname|Randy|Newman}}<br />[[James Taylor]]
+|Performers
+|"[[Our Town (Randy Newman song)|Our Town]]" from ''[[Cars (2006 film)|Cars]]''
+|-
+|{{sortname|Melissa|Etheridge}}
+|Performer
+|"[[I Need to Wake Up]]" from ''[[An Inconvenient Truth]]''
+|-
+|{{sortname|Celine|Dion}}
+|Performer
+|"I Knew I Loved You" during the [[Ennio Morricone]] tribute
+|-
+|{{sortname|Jennifer|Hudson}}<br />[[Beyoncé]]<br> [[Anika Noni Rose]] <br> [[Keith Robinson (actor)|Keith Robinson]]
+|Performers
+|"[[Love You I Do]]", "[[Listen (Beyoncé song)|Listen]]" and "[[Patience (Dreamgirls song)|Patience]]" from ''[[Dreamgirls (film)|Dreamgirls]]''
+|-
+|}
+
+==Ceremony information==
+[[File:Ellen DeGeneres 2011.jpg|thumbnail|right|[[Ellen DeGeneres]] hosted the 79th Academy Awards|alt=Photo of Ellen DeGeneres in 2011.]]
+
+In July 2006, the academy selected producer [[Laura Ziskin]] to oversee production of the telecast for a second time.<ref>{{cite news|last=Archerd |first=Army |title=Oscar gig for Ziskin |url=https://variety.com/2006/film/news/oscar-gig-for-ziskin-1200339437/ |access-date=February 3, 2014 |work=Variety |publisher=Penske Media Corporation |date=July 20, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140303101044/http://variety.com/2006/film/news/oscar-gig-for-ziskin-1200339437/ |archive-date=March 3, 2014 }}</ref> Nearly three months later, actress and comedian [[Ellen DeGeneres]], who had previously emceed three [[Primetime Emmy Award]] ceremonies between 2001 and 2005, was chosen as host of the 2007 ceremony.<ref name="CBS News"/> In an article published in the ''[[Los Angeles Times]]'', Ziskin explained the decision to hire DeGeneres saying "Certainly, I believe the presence of Ellen will help the ratings absolutely. She's popular with a very wide audience. She is not a niche performer. She touches a lot of demographics."<ref>{{cite news|last=Welkos |first=Robert W. |title=Everybody likes Ellen, especially Oscar |url=https://www.latimes.com/archives/la-xpm-2006-sep-09-et-ellen9-story.html |access-date=February 3, 2014 |work=Los Angeles Times |date=September 9, 2006 |url-status=live |archive-url=https://web.archive.org/web/20131222050812/http://articles.latimes.com/2006/sep/09/entertainment/et-ellen9 |archive-date=December 22, 2013 }}</ref>
+
+AMPAS christened this year's telecast with a theme celebrating movie quotes.<ref name="Quotes">{{cite news|title=Movie Quotes Line the Road to Oscars |url=http://oscars.org/press/pressreleases/2007/07.01.25.html |access-date=February 17, 2014 |work=Academy of Motion Picture Arts and Sciences |publisher=AMPAS |date=January 25, 2007 |archive-url=https://web.archive.org/web/20070420220205/http://oscars.org/press/pressreleases/2007/07.01.25.html |archive-date=April 20, 2007 |url-status=live }}</ref> In tandem with the theme, advertising agency [[TBWA/Chiat/Day|TBWA\Chiat\Day]] designed the official ceremony poster featuring 75 quotes from several Oscar-nominated or winning films.<ref>{{cite news|last=Sneider |first=Jeff |title=Oscar poster lines 'em up |url=https://variety.com/2006/film/news/oscar-poster-lines-em-up-1117956079/ |access-date=February 17, 2014 |work=Variety |publisher=Penske Media Corporation |date=December 19, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140304224554/http://variety.com/2006/film/news/oscar-poster-lines-em-up-1117956079/ |archive-date=March 4, 2014 }}</ref> To stir interest surrounding the awards, filmmaker [[Spike Lee]] released a trailer featuring everyday people around [[New York City]] reciting famous film lines.<ref name="Quotes"/> During the ceremony, a montage produced by director [[Nancy Meyers]] saluted the work of screenwriters and their contributions to film.<ref name="Today Oscars live blog" /><ref>{{cite news|last=Fernandez |first=Jay A. |title=A step toward recognizing where it starts |url=https://www.latimes.com/archives/la-xpm-2007-feb-28-et-scriptland28-story.html |access-date=February 17, 2014 |work=Los Angeles Times |date=February 28, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140304061217/http://articles.latimes.com/2007/feb/28/entertainment/et-scriptland28 |archive-date=March 4, 2014 }}</ref>
+
+During the telecast, ex-[[Vice President of the United States|U.S. Vice President]] and environmental activist [[Al Gore]], and Best Actor nominee [[Leonardo DiCaprio]] announced that AMPAS would incorporate several environmentally and ecologically conscious features into the ceremony.<ref>{{cite news|title=Natural Resources Defense Council "Greens" the Academy Awards |url=http://www.nrdc.org/media/2007/070225.asp |access-date=February 17, 2014 |work=[[Natural Resources Defense Council]] |publisher=NDRC |date=February 25, 2007 |url-status=live |archive-url=https://web.archive.org/web/20131001202450/http://www.nrdc.org/media/2007/070225.asp |archive-date=October 1, 2013 }}</ref> Designed by Frank Webb and Matthew White, the ''[[Architectural Digest]]'' greenroom where presenters and winners mingled backstage featured several environmentally friendly features such as a rug made of recycled plastic bottles and walls painted without any [[volatile organic compounds]].<ref>{{cite news|last=Puente |first=Maria |title=It's stylish, it's lavish, it's&nbsp;... the greenroom? |url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2007-02-14-oscar-greenroom_x.htm |access-date=1 February 2014 |work=USA Today |publisher=Gannett Company |date=February 14, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140221065744/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2007-02-14-oscar-greenroom_x.htm |archive-date=21 February 2014 }}</ref> Other eco-friendly features included the transportation for guests of the awards via [[hybrid electric vehicle]]s, usage of recyclable paper for ballots and invitations, and serving meals at the Governor's Ball on reusable plates and biodegradable dishware.<ref>{{cite news|last=Faber |first=Judy |title=No Statue, But A Win Nonetheless For Gore |url=https://www.cbsnews.com/news/no-statue-but-a-win-nonetheless-for-gore/ |access-date=February 17, 2014 |work=CBS News |publisher=CBS Corporation |date=February 26, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140222212635/http://www.cbsnews.com/news/no-statue-but-a-win-nonetheless-for-gore/ |archive-date=February 22, 2014 }}</ref>
+
+Several other people participated in the production of the ceremony. [[William Ross (composer)|William Ross]] served as musical director for the ceremony.<ref>{{cite news|last=Sneider |first=Jeff |title=Black, Keaton added to Oscars |url=https://variety.com/2007/film/news/black-keaton-added-to-oscars-1117959866/ |access-date=February 1, 2014 |work=Variety |publisher=Penske Media Corporation |date=February 20, 2007 |url-status=dead |archive-url=https://web.archive.org/web/20140228031717/http://variety.com/2007/film/news/black-keaton-added-to-oscars-1117959866/ |archive-date=February 28, 2014 }}</ref> [[J. Michael Riva]] designed a new set and stage design for the ceremony.<ref>{{cite news|last=Repstad |first=Laura |title=Riva tapped as production designer |url=https://variety.com/2006/film/news/riva-tapped-as-production-designer-1117956397/ |access-date=February 1, 2014 |work=Variety |publisher=Penske Media Corporation |date=December 28, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140301051916/http://variety.com/2006/film/news/riva-tapped-as-production-designer-1117956397/ |archive-date=March 1, 2014 }}</ref> Voice actors [[Gina Tuttle]] and [[Don LaFontaine]] severed as the official announcers for the telecast.<ref>{{harvnb|Terrance|2013|p=14}}</ref> Actor [[Greg Vaughan]] and ''[[Lucky (magazine)|Lucky]]'' columnist Allyson Waterman co-hosted "Road to the Oscars", a weekly behind-the-scenes video blog on the Oscar ceremony website.<ref name="Allyson"/> Members of the dance troupe and contortionist group [[Pilobolus (dance company)|Pilobolus]] performed interpretive shadow figures representing scenes and logos from the nominated films.<ref>{{cite news|last=Keck |first=William |title=A star is born in shape- shifting Pilobolus |url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2007-02-22-pilobolus_x.htm |access-date=February 3, 2014 |work=USA Today |publisher=Gannett Company |date=February 22, 2007 |url-status=dead |archive-url=https://web.archive.org/web/20160310003750/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2007-02-22-pilobolus_x.htm |archive-date=March 10, 2016 }}</ref> Actors [[Jack Black]], [[Will Ferrell]], and [[John C. Reilly]] performed a lighthearted musical number written by comedic director [[Judd Apatow]] and music composer [[Marc Shaiman]] satirizing comedy's lack of recognition at the Academy Awards.<ref>{{cite news|last=Apatow |first=Judd |author-link=Judd Apatow |title=Apatow recalls working with Shaiman |url=https://variety.com/2007/film/news/apatow-recalls-working-with-shaiman-1117968231/ |access-date=February 17, 2014 |work=Variety |publisher=Penske Media Corporation |date=July 9, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140304225442/http://variety.com/2007/film/news/apatow-recalls-working-with-shaiman-1117968231/ |archive-date=March 4, 2014 }}</ref> Before [[Ennio Morricone]] was honored with an [[Academy Honorary Award]], [[Celine Dion]] performed a new song "I Knew I Loved You" in a tribute for him.<ref>{{cite news|title=Celine to sing new song in tribute to Morricone |url=https://www.cbc.ca/news/entertainment/celine-to-sing-new-song-in-tribute-to-morricone-1.679907 |access-date=June 18, 2026 |work=[[Canadian Broadcasting Corporation|CBC]] |date=February 7, 2007 |url-status=live |archive-url=https://web.archive.org/web/20200706160318/https://www.cbc.ca/news/entertainment/celine-to-sing-new-song-in-tribute-to-morricone-1.679907 |archive-date=July 6, 2020 }}</ref> Conducted by musician [[Steve Sidwell (musician)|Steve Sidwell]], the [[Sound Effects Choir]] performed voice effects to a montage of classic films.<ref>{{cite web|title=Composer {{!}} Steve Sidwell |url=http://www.unippmglobal.com/#/composers/Composers%20Q-Z/Barnaby%20Taylor.aspx |work=[[Universal Music Publishing Group]] |publisher=NBCUniversal |access-date=February 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140107120522/http://www.unippmglobal.com/ |archive-date=January 7, 2014 }}</ref> Another vignette directed by documentary filmmaker [[Errol Morris]] featuring several Oscar nominees discussing what it means to be an Oscar nominee was shown at the beginning of the show.<ref>{{cite news|last=Thompson |first=Anne |title=Morris cuts it close with his Oscar docu |url=https://www.hollywoodreporter.com/news/morris-cuts-close-his-oscar-130781 |work=[[The Hollywood Reporter]] |publisher=[[Prometheus Global Media]] |date=February 23, 2007 |page=6 |url-status=live |archive-url=https://web.archive.org/web/20140516154006/http://www.hollywoodreporter.com/news/morris-cuts-close-his-oscar-130781 |archive-date=May 16, 2014 }}</ref> Italian director [[Giuseppe Tornatore]] assembled a tribute highlighting previous winners of the [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]].<ref>{{cite magazine|last=Susman |first=Gary |title=Oscars '07: 10 Memorable Moments |url=https://www.ew.com/ew/gallery/0,,20009747_20013925,00.html |access-date=February 14, 2014 |magazine=Entertainment Weekly |publisher=Time Inc. |date=February 27, 2007 |url-status=dead |archive-url=https://web.archive.org/web/20140222132042/http://www.ew.com/ew/gallery/0%2C%2C20009747_20013925%2C00.html |archive-date=February 22, 2014 }}</ref> Filmmaker [[Michael Mann]] produced a montage highlighting American life through the eyes of cinema.<ref>{{cite news|last=Kennedy |first=Lisa |title=An icon gets his due, but not for best work |url=http://www.denverpost.com/colleges/ci_5305931 |access-date=February 14, 2014 |work=[[The Denver Post]] |publisher=[[MediaNews Group]] |date=February 26, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140222132042/http://www.denverpost.com/colleges/ci_5305931 |archive-date=February 22, 2014 }}</ref>
+
+===Box office performance of nominated films===
+At the time of the nominations announcement on January 23, the combined gross of the five Best Picture nominees was $244&nbsp;million with an average of $48.7&nbsp;million per film.<ref name="BoxOfficeMojoOscars">{{cite news|title=2006 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=2006&p=.htm |access-date=January 30, 2014 |work=[[Box Office Mojo]] |url-status=live |archive-url=https://web.archive.org/web/20140131163901/http://boxofficemojo.com/oscar/chart/?yr=2006&p=.htm |archive-date=January 31, 2014 }}</ref> ''The Departed'' was the highest earner among the Best Picture nominees with $121.7 million in domestic box office receipts. The film was followed by ''Little Miss Sunshine'' ($59.6 million), ''The Queen'' ($35.6 million), ''Babel'' ($23.7 million) and finally ''Letters from Iwo Jima'' ($2.4 million).<ref name=BoxOfficeMojoOscars />
+
+Of the top 50 grossing movies of the year, 29 nominations went to nine films on the list. Only ''The Pursuit of Happyness'' (12th), ''Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan'' (15th), ''The Devil Wears Prada'' (16th), ''The Departed'' (17th) and ''Dreamgirls'' (28th) were nominated for Best Picture, Best Animated Feature or any of the directing, acting or screenwriting awards.<ref name="boxofficemojooscars">{{cite news|title=2007 Domestic Grosses (as of January 23, 2007) |url=https://boxofficemojo.com/yearly/chart/?asof=2007-01-23&view=releasedate&view2=domestic&yr=2006&sort=gross&order=DESC&p=.htm |access-date=April 16, 2007 |work=Box Office Mojo |url-status=live |archive-url=https://web.archive.org/web/20140201194935/http://boxofficemojo.com/yearly/chart/?asof=2007-01-23&view=releasedate&view2=domestic&yr=2006&sort=gross&order=DESC&p=.htm |archive-date=February 1, 2014 }}</ref> The other top 50 box office hits that earned nominations were ''Pirates of the Caribbean: Dead Man's Chest'' (1st), ''Cars'' (2nd), ''Superman Returns'' (6th) and ''Happy Feet'' (8th).<ref name="boxofficemojooscars"/>
+
+===Critical reviews===
+The show received a mixed reception from media publications. Some media outlets were more critical of the show. Tim Goodman of the ''[[San Francisco Chronicle]]'' lamented, "It was long. It was flat. And it was bloated. Worst of all, it was boring." He also wrote that "it was difficult for Ellen's subtle rambling to translate because people want pop and humor and declarative sentences in their Academy Awards. Which they didn't exactly get."<ref>{{cite news|last=Goodman |first=Tim |title=Departed evening of bloated, boring Hollywood babble |url=http://www.sfgate.com/entertainment/article/THE-79TH-ACADEMY-AWARDS-Departed-evening-of-2646004.php |access-date=February 6, 2014 |work=[[San Francisco Chronicle]] |publisher=[[Hearst Corporation]] |date=February 25, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140222022246/http://www.sfgate.com/entertainment/article/THE-79TH-ACADEMY-AWARDS-Departed-evening-of-2646004.php |archive-date=February 22, 2014 }}</ref> ''[[The Denver Post]]'' television critic Joanne Ostrow bemoaned, "Pleasant and innocuous but hardly exciting, DeGeneres forgot the primary Academy Award host directive: It's not about the host. Hollywood's biggest night (and television's second-biggest annual gathering, after the [[Super Bowl]]) is a celebration of film."<ref>{{cite news|last=Ostrow |first=Joanne |title=Mediocre Ellen lowers telecast to daytime |url=http://www.denverpost.com/opinion/ci_5305942 |access-date=February 6, 2014 |work=The Denver Post |publisher=MediaNews Group |date=February 26, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140222062701/http://www.denverpost.com/opinion/ci_5305942 |archive-date=February 22, 2014 }}</ref> ''[[The Washington Post]]'' columnist [[Tom Shales]] gave an average review for DeGeneres but criticized the overall slow and choppy pacing of the program noting that it was "punishingly too long."<ref>{{cite news|last=Shales |first=Tom |title=The Broadcast: Long and Longer |url=https://www.washingtonpost.com/wp-dyn/content/article/2007/02/26/AR2007022600027.html |access-date=February 6, 2014 |newspaper=[[The Washington Post]] |date=February 26, 2007 |url-status=live |archive-url=https://web.archive.org/web/20130907082344/http://www.washingtonpost.com/wp-dyn/content/article/2007/02/26/AR2007022600027.html |archive-date=September 7, 2013 }}</ref>
+
+Other media outlets received the broadcast more positively. Columnist [[Alessandra Stanley]] of ''[[The New York Times]]'' lauded DeGeneres's performance writing that she was "cheeky but good-natured, far less barbed and sardonic than [[Jon Stewart]] [[78th Academy Awards|last year]] or [[Chris Rock]] in [[77th Academy Awards|2005]]." She added that her style brought a "casual Friday mood to Fancy Sunday."<ref>{{cite news|last=Stanley |first=Alessandra |title=Bringing a Touch of Daytime to Hollywood's Biggest Night |url=https://www.nytimes.com/2007/02/26/arts/television/26watc.html |access-date=February 3, 2014 |work=The New York Times |date=February 25, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140304193352/http://www.nytimes.com/2007/02/26/arts/television/26watc.html |archive-date=March 4, 2014 }}</ref> ''[[St. Louis Post-Dispatch]]'' television critic Gail Pennington praised host DeGeneres and producer Ziskin for turning "the evening into an upbeat celebration&ndash;–and the most entertaining Oscars in years."<ref>{{cite news|last=Pennington|first=Gail|title=DeGeneres kept the Oscar show upbeat and lively|work=[[St. Louis Post-Dispatch]]|publisher=[[Lee Enterprises]]|date=February 26, 2007|page=D1}}</ref> Television editor Dave Kronke of the ''[[Los Angeles Daily News]]'' gave high marks for DeGeneres commenting, "Her material was amusing but scarcely a laugh riot, yet it was amiable and delineated that the evening was a celebration of all the nominees, not just the winners."<ref>{{cite news|last=Kronke|first=David|title=Yep, She's Funny Gentle Humor wins for DeGeneres|work=[[Los Angeles Daily News]]|publisher=MediaNews Group|date=February 26, 2007|url=http://www.thefreelibrary.com/YEP,+SHE%27S+FUNNY+GENTLE+HUMOR+WINS+FOR+DEGENERES.-a0159975212|access-date=January 6, 2015|archive-date=September 2, 2015|archive-url=https://web.archive.org/web/20150902221116/http://www.thefreelibrary.com/YEP,+SHE%27S+FUNNY+GENTLE+HUMOR+WINS+FOR+DEGENERES.-a0159975212|url-status=live}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 39.92 million people over its length, which was a 2.5% increase from the previous year's ceremony.<ref>{{Cite web |first=Bill |last=Gorman |title=Academy Awards Averages 41.3 Million Viewers; Most Since 2005 |url=http://tvbythenumbers.com/2010/03/08/academy-awards-averages-41-3-million-viewers-most-since-2005/44217 |publisher=TVbytheNumbers |date=March 8, 2010 |access-date=March 12, 2010 |archive-url=https://web.archive.org/web/20100310080531/http://tvbythenumbers.com/2010/03/08/academy-awards-averages-41-3-million-viewers-most-since-2005/44217 |archive-date=10 March 2010 |url-status=dead }}</ref><ref>{{cite magazine|last=Rich |first=Joshua |title=A few lingering Oscar curiosities |url=http://popwatch.ew.com/2007/02/27/a_few_lingering/ |access-date=January 31, 2014 |magazine=Entertainment Weekly |publisher=Time Inc. |date=February 27, 2007 |url-status=dead |archive-url=https://web.archive.org/web/20140202095850/http://popwatch.ew.com/2007/02/27/a_few_lingering/ |archive-date=February 2, 2014 }}</ref> An estimated 76.72 million total viewers watched all or part of the awards.<ref name="Nikki Finke Oscar ratings"/> The show also drew higher [[Nielsen ratings]] compared to the previous ceremony with 23.59% of households watching over a 38.86 share.<ref name="TVB Oscars">{{cite news|title=Academy Awards ratings |work=[[Television Bureau of Advertising]] |url=http://www.tvb.org/media/file/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130515152338/http://www.tvb.org/media/file/Academy_Awards.pdf |archive-date=May 15, 2013 }}</ref> In addition, the program scored a higher 18-49 demo rating with a 14.18 rating over a 33.71 share among viewers in that demographic.<ref>{{cite news|last=Gough |first=Paul J. |url=https://www.hollywoodreporter.com/news/strong-week-abc-but-idol-131032 |title=Strong week for ABC, but 'Idol' lifts Fox |access-date=January 31, 2014 |work=The Hollywood Reporter |publisher=Prometheus Global Media |date=February 28, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140317004719/http://www.hollywoodreporter.com/news/strong-week-abc-but-idol-131032 |archive-date=March 17, 2014 }}</ref>
+
+In July 2007, the ceremony presentation received nine nominations at the [[59th Primetime Emmy Awards|59th Primetime Emmys]].<ref>{{cite news|title=Primetime Emmy Award Database |url=http://www.emmys.com/shows/79th-annual-academy-awards |access-date=July 18, 2013 |work=[[Academy of Television Arts and Sciences]] |publisher=ATAS |url-status=live |archive-url=https://web.archive.org/web/20130623123309/http://www.emmys.com/shows/79th-annual-academy-awards |archive-date=June 23, 2013 }}</ref> Two months later, the ceremony won two of those nominations for Outstanding Art Direction (J. Michael Riva, Geoffrey Richman, and Tamlyn Wright) and Outstanding Music Direction (William Ross).<ref>{{cite news|title=Emmy Winners List |url=https://www.cbsnews.com/news/emmy-winners-list/ |access-date=July 17, 2013 |work=CBS News |publisher=CBS Corporation |date=September 16, 2007 |url-status=live |archive-url=https://web.archive.org/web/20131202235627/http://www.cbsnews.com/news/emmy-winners-list/ |archive-date=December 2, 2013 }}</ref><ref>{{cite news|title=The complete list of winners |url=https://www.latimes.com/archives/la-xpm-2007-sep-17-et-emmywinners17-story.html |access-date=February 1, 2014 |work=Los Angeles Times |date=September 17, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140222212304/http://articles.latimes.com/2007/sep/17/entertainment/et-emmywinners17 |archive-date=February 22, 2014 }}</ref>
+
+=="In Memoriam"==
+The annual "In Memoriam" tribute, presented by actress [[Jodie Foster]], honored the following people:<ref name="Today Oscars live blog" />
+
+{{div col|colwidth=22em}}
+*[[Glenn Ford]] - Actor
+*[[Bruno Kirby]] - Character actor, comedian
+*[[Alida Valli]] - Actress
+*[[Betty Comden]] – Songwriter
+*[[Jane Wyatt]] - Actress
+*[[Don Knotts]] - Actor, comedian
+*[[Red Buttons]] - Actor, comedian
+*[[Gillo Pontecorvo]] – Director
+*[[Darren McGavin]] - Actor
+*[[Richard Fleischer]] – Director
+*[[Sven Nykvist]] – Cinematographer
+*[[Joseph Barbera|Joe Barbera]] – Producer, cartoonist
+*[[Tamara Dobson]] - Actor, model
+*[[Gretchen Rau]] – Set designer
+*[[June Allyson]] - Actress
+*[[Gordon Parks]] – Director
+*[[Philippe Noiret]] - Actor
+*[[Maureen Stapleton]] - Actress
+*[[Jack Wild]] - Actor
+*[[Vincent Sherman]] – Director
+*[[James Doohan]] - Actor
+*[[Shohei Imamura]] – Director
+*[[Carlo Ponti]] – Producer
+*[[Peter Boyle]] - Character actor
+*[[James Glennon]] – Cinematographer
+*[[Sidney Sheldon]] – Screenwriter
+*[[Jack Palance]] - Actor
+*[[Mako Iwamatsu|Mako]] - Actor
+*[[Jack Warden]] - Character actor
+*[[Basil Poledouris]] – Composer
+*[[Henry Bumstead]] – Art director
+*[[Jay Presson Allen]] – Screenwriter
+*[[Robert Altman]] – Director
+{{div col end}}
+
+Before the montage was shown, Foster briefly eulogized casting director and Oscar winner [[Randy Stone]] who died nearly two weeks before the ceremony.<ref>{{cite news|last=Harada |first=Wayne |title=Randy Stone, award-winning producer, 48 |url=http://the.honoluluadvertiser.com/article/2007/Mar/22/ln/FP703220367.html |access-date=February 17, 2014 |work=[[The Honolulu Advertiser]] |publisher=[[Black Press]] |date=March 22, 2007 |url-status=live |archive-url=https://web.archive.org/web/20140222001536/http://the.honoluluadvertiser.com/article/2007/Mar/22/ln/FP703220367.html |archive-date=February 22, 2014 }}</ref>
+
+==See also==
+
+* [[13th Screen Actors Guild Awards]]
+* [[27th Golden Raspberry Awards]]
+* [[49th Grammy Awards]]
+* [[59th Primetime Emmy Awards]]
+* [[60th British Academy Film Awards]]
+* [[61st Tony Awards]]
+* [[64th Golden Globe Awards]]
+* [[List of submissions to the 79th Academy Awards for Best Foreign Language Film]]
+
+==References==
+{{reflist|30em}}
+
+==Bibliography==
+{{refbegin}}
+* {{Cite book
+ |last=Terrance
+ |first=Vincent
+ |title=Television Specials: 5,336 Entertainment Programs, 1936–2012
+ |year=2013
+ |isbn=978-1-4766-1240-9
+ |location=Jefferson, North Carolina, United States
+ |edition=5
+ |oclc=844373010
+ |publisher=[[Ballantine Books]], [[McFarland & Company]]
+ }}
+{{refend}}
+
+==External links==
+{{Wikinews|Billboard holds benefit Oscar party for Children Uniting Nations | Scorsese finally scores Oscar gold with "The Departed"}}
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=2009-03-04 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=2009-01-22 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=2018-10-02 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+;News resources
+* [http://news.bbc.co.uk/2/hi/in_depth/entertainment/2007/oscars/ Oscars 2007] {{Webarchive|url=https://web.archive.org/web/20150301090715/http://news.bbc.co.uk/2/hi/in_depth/entertainment/2007/oscars/ |date=2015-03-01 }} [[BBC News]]
+* [http://www.cnn.com/SPECIALS/2007/academy.awards/ Academy Awards coverage] {{Webarchive|url=https://web.archive.org/web/20140320154128/http://www.cnn.com/SPECIALS/2007/academy.awards/ |date=2014-03-20 }} [[CNN]]
+
+;Analysis
+* [http://www.filmsite.org/aa06.html 2006 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20140331225524/http://www.filmsite.org/aa06.html |date=2014-03-31 }} Filmsite
+* [https://www.imdb.com/Sections/Awards/Academy_Awards_USA/2007 Academy Awards, USA: 2007] {{Webarchive|url=https://web.archive.org/web/20090103214624/http://www.imdb.com/Sections/Awards/Academy_Awards_USA/2007 |date=2009-01-03 }} Internet Movie Database
+
+;Other resources
+*{{IMDb title|0833875|The 79th Annual Academy Awards}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 79}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2006 film awards]]
+[[Category:2007 in Los Angeles]]
+[[Category:2007 in American cinema]]
+[[Category:2007 awards in the United States]]
+[[Category:February 2007 in the United States]]
+[[Category:Television shows directed by Louis J. Horvitz]]

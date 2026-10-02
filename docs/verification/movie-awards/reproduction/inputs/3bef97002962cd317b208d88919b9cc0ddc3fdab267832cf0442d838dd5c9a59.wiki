@@ -1,0 +1,101 @@
+{{Short description|Film award ceremony in 1951}}
+{{Infobox film awards
+| number = 8
+| award = Golden Globe Awards
+| image = 
+| caption = 
+| date = February 28, 1951
+| best_picture = '' Sunset Boulevard ''
+| last = 7th
+| next = 9th
+}}
+The '''8th  [[Golden Globe Award]]s''', honoring the best in [[film]] for [[1950 in film|1950]] films, were held on February 28, 1951, in the [[Ciro's]] nightclub in  [[West Hollywood, California]], at 8433 [[Sunset Boulevard]], on the [[Sunset Strip]].
+
+==Winners and Nominees==
+
+===[[Golden Globe Award for Best Motion Picture – Drama|Best Picture]]===
+'' '''[[Sunset Boulevard (film)|Sunset Boulevard]]'''''<ref>{{cite web | title=Sunset Boulevard | website=Golden Globes | date=2023-10-25 | url=https://goldenglobes.com/film/sunset-boulevard/ | access-date=2025-11-02}}</ref><ref name="news1950"/>
+*''[[All About Eve]]''
+*''[[Born Yesterday (1950 film)|Born Yesterday]]''
+*''[[Cyrano de Bergerac (1950 film)|Cyrano de Bergerac]]''
+*''[[Harvey (1950 film)|Harvey]]''
+
+===[[Golden Globe Award for Best Actor – Motion Picture Drama|Best Performance by an Actor in a Motion Picture  - Drama]]===
+'''  [[José Ferrer]] &ndash; ''[[Cyrano de Bergerac (1950 film)|Cyrano de Bergerac]]'''''<ref>{{cite web | title=José Ferrer | website=Golden Globes | date=2023-10-25 | url=https://goldenglobes.com/person/jose-ferrer/ | access-date=2025-11-02}}</ref><ref name="news1950">{{cite web | title=Gloria Swanson, Ferrer Awarded Golden Globes | website=Newspapers.com | date=1951-03-01 | url=https://www.newspapers.com/article/green-bay-press-gazette-gloria-swanson/51207680/ | access-date=2025-11-02}}</ref>
+*[[Louis Calhern]] &ndash; ''[[The Magnificent Yankee (1950 film)|The Magnificent Yankee]]''
+*[[James Stewart]] &ndash; ''[[Harvey (1950 film)|Harvey]]''
+
+===[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Performance by an Actress in a Motion Picture - Drama]] ===
+''' [[Gloria Swanson]] &ndash; ''[[Sunset Boulevard (film)|Sunset Boulevard]]'''''<ref name="news1950"/>
+*[[Bette Davis]] &ndash; ''[[All About Eve]]''
+*[[Judy Holliday]] &ndash; ''[[Born Yesterday (1950 film)|Born Yesterday]]''
+
+===[[Golden Globe Award for Best Actor – Motion Picture Musical or Comedy|Best Performance by an Actor in a Motion Picture - Comedy or Musical]]===
+''' [[Fred Astaire]] &ndash; ''[[Three Little Words (film)|Three Little Words]]'''''<ref name="news1950"/>
+*[[Dan Dailey]] &ndash; ''[[When Willie Comes Marching Home]]''
+*[[Harold Lloyd]] &ndash; ''[[Mad Wednesday]]''
+
+===[[Golden Globe Award for Best Actress – Motion Picture Comedy or Musical|Best Performance by an Actress in a Motion Picture - Comedy or Musical]]===
+''' [[Judy Holliday]] &ndash; ''[[Born Yesterday (1950 film)|Born Yesterday]]'''''<ref name="news1950"/>
+*[[Spring Byington]] &ndash; ''[[Louisa (film)|Louisa]]''
+*[[Betty Hutton]] &ndash; ''[[Annie Get Your Gun (film)|Annie Get Your Gun]]''
+
+===[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Performance by an Actor in a Supporting Role in a Motion Picture]]===
+''' [[Edmund Gwenn]] &ndash; ''[[Mister 880]]'''''<ref name="news1950"/>
+*[[George Sanders]] &ndash; ''[[All About Eve]]''
+*[[Erich von Stroheim]] &ndash; ''[[Sunset Boulevard (1950 film)|Sunset Boulevard]]''
+
+===[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Performance by an Actress in a Supporting Role in a Motion Picture]]===
+''' [[Josephine Hull]] &ndash; ''[[Harvey (1950 film)|Harvey]]'''''<ref name="news1950"/>
+*[[Judy Holliday]] &ndash; ''[[Adam's Rib]]''
+*[[Thelma Ritter]] &ndash; ''[[All About Eve]]''
+
+===[[Golden Globe Award for Best Director|Best Director - Motion Picture]]===
+''' [[Billy Wilder]] &ndash; ''[[Sunset Boulevard (film)|Sunset Boulevard]]'''''<ref name="news1950"/>
+*[[George Cukor]] &ndash; ''[[Born Yesterday (1950 film)|Born Yesterday]]''
+*[[John Huston]] &ndash; ''[[The Asphalt Jungle]]''
+*[[Joseph L. Mankiewicz]] &ndash; ''[[All About Eve]]''
+
+===[[Golden Globe Award for Best Screenplay|Best Screenplay - Motion Picture]]===
+''' ''[[All About Eve]]'' &ndash; [[Joseph L. Mankiewicz]]'''
+*''[[The Asphalt Jungle]]'' &ndash; [[John Huston]]
+*''[[Sunset Boulevard (1950 film)|Sunset Boulevard]]'' &ndash; [[Charles Brackett]]
+
+===[[Golden Globe Award for Best Original Score|Best Music, Original Score - Motion Picture]]===
+''' ''[[Sunset Boulevard (film)|Sunset Boulevard]]'' &ndash; [[Franz Waxman]]'''
+*''[[A Life of Her Own]]'' &ndash; [[Bronislau Kaper]]
+*''[[Destination Moon (film)|Destination Moon]]'' &ndash; [[Leith Stevens]]
+
+===Cinematography - Black and White===
+''' ''[[Cyrano de Bergerac (1950 film)|Cyrano de Bergerac]]'' &ndash; [[Franz F. Planer]]'''
+*''[[The Asphalt Jungle]]''
+*''[[Sunset Boulevard (1950 film)|Sunset Boulevard]]''
+
+===Cinematography - Color===
+''' ''[[King Solomon's Mines (1950 film)|King Solomon's Mines]]'' &ndash; [[Robert Surtees (cinematographer)|Robert Surtees]]'''
+*''[[Broken Arrow (1950 film)|Broken Arrow]]''
+*''[[Samson and Delilah (1949 film)|Samson and Delilah]]''
+
+===New Star of the Year===
+''' [[Gene Nelson]]'''
+*[[Mala Powers]]
+*[[Debbie Reynolds]]
+
+===Promoting International Understanding===
+''' ''[[Broken Arrow (1950 film)|Broken Arrow]]'' directed by [[Delmer Daves]]'''<ref name="news1950"/>
+*''[[The Big Lift]]'' directed by [[George Seton]]
+*''[[The Next Voice You Hear...]]'' directed by [[William A. Wellman]]
+
+===Henrietta Award (World Film Favorites)===
+''' [[Gregory Peck]] and [[Jane Wyman]]'''
+
+==References==
+{{reflist}}
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards 008}}
+[[Category:Golden Globe Awards ceremonies|*008]]
+[[Category:1950 film awards]]
+[[Category:1950 television awards]]
+[[Category:February 1951 in the United States]]

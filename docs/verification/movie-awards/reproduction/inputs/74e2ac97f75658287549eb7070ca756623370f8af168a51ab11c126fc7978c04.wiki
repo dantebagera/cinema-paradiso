@@ -1,0 +1,531 @@
+{{Oscars short description|films-year=2005}}
+{{Featured list}}
+{{Use American English|date=June 2023}}
+{{Use mdy dates|date=April 2021}}
+{{Infobox film awards
+| number           = 78
+| award            = Academy Awards
+| image            = 78th Academy Awards.jpg
+| alt              = Official poster promoting the 78th Academy Awards in 2006.
+| caption          = One of the two official posters designed by Studio 318<ref>{{cite news |title=Official Oscar posters unveiled |url=http://news.bbc.co.uk/2/hi/entertainment/4491224.stm |access-date=January 18, 2026 |date=December 2, 2005}}</ref>
+| date             = March 5, 2006
+| site             = [[Kodak Theatre]]<br />[[Hollywood, Los Angeles]], California, U.S.
+| preshow          = [[Billy Bush]], <br />[[Chris Connelly (reporter)|Chris Connelly]], <br />Cynthia Garrett, and <br />[[Vanessa Minnillo]]<ref>{{cite news|title=A show this big needs buildups and wrap-ups |url=https://www.latimes.com/archives/la-xpm-2006-mar-05-ca-schedule5-story.html |access-date=April 17, 2014 |work=[[Los Angeles Times]]  |date=March 5, 2006 |url-status=live |archive-url=https://web.archive.org/web/20121022122940/http://articles.latimes.com/2006/mar/05/entertainment/ca-schedule5 |archive-date=October 22, 2012 }}</ref>
+| host             = [[Jon Stewart]]
+| producer         = [[Gilbert Cates|Gil Cates]]
+| director         = [[Louis J. Horvitz]]
+| best_picture     = ''[[Crash (2004 film)|Crash]]''
+| most_wins        = ''[[Brokeback Mountain]]'', ''Crash'', ''[[King Kong (2005 film)|King Kong]]'' and ''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]'' (3)
+| most_nominations = ''Brokeback Mountain'' (8)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 33&nbsp;minutes<ref>{{cite magazine|last=Rich |first=Joshua |title=Facts about the Oscar telecast |url=https://www.ew.com/article/2006/03/10/facts-about-oscar-telecast |access-date=March 27, 2014 |magazine=[[Entertainment Weekly]]  |date=March 10, 2006 |url-status=dead |archive-url=https://web.archive.org/web/20150825113447/http://www.ew.com/article/2006/03/10/facts-about-oscar-telecast |archive-date=August 25, 2015 }}</ref>
+| ratings          = 38.94 million<br />23.0% ([[Nielsen ratings]])
+| last             = 77th
+| next             = 79th
+}}
+
+The '''78th Academy Awards''', presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), took place on March 5, 2006, at the [[Kodak Theatre]] in [[Hollywood, Los Angeles|Hollywood]], Los Angeles beginning at 5:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 8:00&nbsp;p.m. [[Eastern Time Zone|EST]]. The ceremony was scheduled one week later than usual to avoid a clash with the [[2006 Winter Olympics]].<ref>{{cite news|last=Feiwell |first=Jill |title=Olympics delay Oscars |url=https://variety.com/2004/film/news/olympics-delay-oscars-1117915129/ |access-date=April 24, 2014 |work=Variety  |date=December 16, 2004 |url-status=live |archive-url=https://web.archive.org/web/20140424035617/http://variety.com/2004/film/news/olympics-delay-oscars-1117915129/ |archive-date=April 24, 2014 }}</ref> During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories honoring [[2005 in film|films released in 2005]]. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Gilbert Cates|Gil Cates]] and directed by Louis J. Horvitz.<ref name="Archerd">{{cite news|last=Archerd |first=Army |title=Cates taking the Oscar lead |url=https://variety.com/2005/film/news/cates-taking-the-oscar-lead-1117933100/ |access-date=April 29, 2014 |work=Variety  |date=November 16, 2005 |url-status=dead |archive-url=https://web.archive.org/web/20140429203735/https://variety.com/2005/film/news/cates-taking-the-oscar-lead-1117933100/ |archive-date=April 29, 2014 }}</ref><ref>{{cite news|title=Oscar Watch: Horvitz to helm kudocast |url=https://variety.com/2005/film/news/oscar-watch-horvitz-to-helm-kudocast-1117934538/ |access-date=June 24, 2014 |work=Variety  |date=December 13, 2005 |url-status=dead |archive-url=https://web.archive.org/web/20150825114203/http://variety.com/2005/film/news/oscar-watch-horvitz-to-helm-kudocast-1117934538/ |archive-date=August 25, 2015 }}</ref> Comedian [[Jon Stewart]] hosted the show for the first time.<ref>{{cite news|title=Jon Stewart to host 2006 Academy Awards |url=http://www.seattletimes.com/entertainment/jon-stewart-to-host-2006-academy-awards/ |access-date=April 17, 2014 |work=[[The Seattle Times]]  |date=January 5, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150825114637/http://www.seattletimes.com/entertainment/jon-stewart-to-host-2006-academy-awards/ |archive-date=August 25, 2015 }}</ref> Two weeks earlier in a ceremony at [[The Beverly Hilton]] in [[Beverly Hills, California]] held on February 18, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Rachel McAdams]].<ref>{{cite news|title=Pixar draws academy kudos |url=https://variety.com/2006/digital/awards/pixar-draws-academy-kudos-1117938558/ |access-date=July 5, 2015 |work=Variety  |date=February 20, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150825114836/http://variety.com/2006/digital/awards/pixar-draws-academy-kudos-1117938558/ |archive-date=August 25, 2015 }}</ref>
+
+''[[Crash (2004 film)|Crash]]'' won three awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last=Vancheri |first=Barbara |title='Crash' fatal to 'Brokeback' in best picture race |url=https://www.post-gazette.com/oscar-watch/2006/03/06/Crash-fatal-to-Brokeback-in-best-picture-race/stories/200603060156 |access-date=April 14, 2014 |work=[[Pittsburgh Post-Gazette]]  |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140424033823/http://www.post-gazette.com/oscar-watch/2006/03/06/Crash-fatal-to-Brokeback-in-best-picture-race/stories/200603060156 |archive-date=April 24, 2014 }}</ref> Other winners included ''[[Brokeback Mountain]]'', ''[[King Kong (2005 film)|King Kong]]'', and ''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]'' with three awards and ''[[Capote (film)|Capote]]'', ''[[The Chronicles of Narnia: The Lion, the Witch and the Wardrobe]]'', ''[[The Constant Gardener (film)|The Constant Gardener]]'', ''[[Hustle & Flow]]'', ''[[March of the Penguins]]'', ''[[The Moon and the Son: An Imagined Conversation]]'', ''[[A Note of Triumph: The Golden Age of Norman Corwin]]'', ''[[Six Shooter (film)|Six Shooter]]'', ''[[Syriana]]'', ''[[Tsotsi]]'', ''[[Walk the Line]]'', and ''[[Wallace & Gromit: The Curse of the Were-Rabbit]]'' with one. The telecast garnered nearly 39 million viewers in the United States.
+
+==Winners and nominees==
+The nominees for the 78th Academy Awards were announced on January 31, 2006, at the [[Samuel Goldwyn|Samuel Goldwyn Theater]] in the academy's [[Beverly Hills, California|Beverly Hills]] headquarters by [[Sid Ganis]], president of the academy, and actress [[Mira Sorvino]].<ref>{{cite news|last=Marcus |first=Lawrence |title=Oscar Watch: Sorvino to help unveil noms |url=https://variety.com/2006/film/news/oscar-watch-sorvino-to-help-unveil-noms-1117937039/ |access-date=April 25, 2014 |work=Variety  |date=January 29, 2006 |url-status=dead |archive-url=https://web.archive.org/web/20140426202509/https://variety.com/2006/film/news/oscar-watch-sorvino-to-help-unveil-noms-1117937039/ |archive-date=April 26, 2014 }}</ref> ''[[Brokeback Mountain]]'' earned the most nominations with eight total; ''[[Crash (2004 film)|Crash]]'', ''[[Good Night, and Good Luck]]'', and ''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]'' tied for second with six nominations each.<ref>{{cite news|last=Arnold |first=William |title=No surprise here: 'Brokeback' leads Oscar hopefuls |url=http://www.seattlepi.com/ae/movies/article/No-surprise-here-Brokeback-leads-Oscar-hopefuls-1194393.php |access-date=March 27, 2013 |work=[[Seattle Post-Intelligencer]]  |date=January 31, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140424031140/http://www.seattlepi.com/ae/movies/article/No-surprise-here-Brokeback-leads-Oscar-hopefuls-1194393.php |archive-date=April 24, 2014 }}</ref> For the fourth time in Oscar history since the Best Picture nominees roster was limited to five films, all five nominees received corresponding Best Directing nominations.<ref name="Varietyfacts">{{cite news |last1=Collins |first1=Keith |title=Oscar facts & figures |url=https://variety.com/2006/film/awards/oscar-facts-figures-1117918228/ |access-date=June 15, 2026 |work=Variety |date=February 21, 2006 |url-status=live |archive-url=https://web.archive.org/web/20190605184741/https://variety.com/2006/film/awards/oscar-facts-figures-1117918228/ |archive-date=June 5, 2019 }}</ref> Additionally, for the second time all Best Picture nominees received corresponding directing and writing nominations (which previously happened only on the [[37th Academy Awards]] in 1965).<ref name="Varietyfacts"/>
+
+The winners were announced during the awards ceremony on March 5, 2006.<ref>{{cite news|last1=MacDonald |first1=Moira |title="Crash" landing! Drama comes out of nowhere on Oscar night |url=https://archive.seattletimes.com/archive/20060306/oscars06/crash-landing-drama-comes-out-of-nowhere-on-oscar-night |access-date=June 24, 2014 |work=The Seattle Times  |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150825123119/http://community.seattletimes.nwsource.com/archive/?date=20060306&slug=oscars06 |archive-date=August 25, 2015 }}</ref> ''[[Crash (2004 film)|Crash]]'' was the first Best Picture winner since 1976's ''[[Rocky]]'' to win only three Oscars and the first Best Picture winner since 1981's ''[[Chariots of Fire]]'' to not win Best Directing or any for acting.<ref>{{cite magazine|last1=Kargetr |first1=Dace |title=Oscars big night |url=https://www.ew.com/article/2006/03/10/oscars-big-night |access-date=June 26, 2014 |magazine=Entertainment Weekly  |date=March 10, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150825123647/http://www.ew.com/article/2006/03/10/oscars-big-night |archive-date=August 25, 2015 }}</ref><ref>{{cite news |last1=Dawn |first1=Randee |title=Oscars flashback: 20 years ago, ‘Crash’ shocked Jack Nicholson — and the world |url=https://www.latimes.com/entertainment-arts/awards/story/2026-02-24/oscars-2006-crash-brokeback-mountain-best-picture |access-date=June 15, 2026 |work=[[Los Angeles Times]] |date=February 24, 2026 |url-status=live |archive-url=https://web.archive.org/web/20260224111857/https://www.latimes.com/entertainment-arts/awards/story/2026-02-24/oscars-2006-crash-brokeback-mountain-best-picture |archive-date=February 24, 2026 }}</ref> Best Directing winner [[Ang Lee]] became the first non-white winner of that category.<ref>{{cite news |last1=Horn |first1=John |last2=King |first2=Susan |title=‘Crash’ Named Best Picture in Upset Over ‘Brokeback’ |url=https://www.latimes.com/archives/la-xpm-2006-mar-06-et-oscarmain6-story.html |access-date=June 15, 2026 |work=[[Los Angeles Times]] |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20260521221713/https://www.latimes.com/archives/la-xpm-2006-mar-06-et-oscarmain6-story.html |archive-date=May 21, 2026 }}</ref> For the third time since introducing supporting acting categories, all four acting winners were first-time nominees.<ref name="Varietyfacts"/><ref>{{cite news|title='Crash' Upsets 'Brokeback' At Oscars |url=https://www.cbsnews.com/news/crash-upsets-brokeback-at-oscars-05-03-2006/ |access-date=June 24, 2014 |publisher=[[CBS News]] ([[CBS Corporation]]) |date=March 5, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140714204438/http://www.cbsnews.com/news/crash-upsets-brokeback-at-oscars-05-03-2006/ |archive-date=July 14, 2014 }}</ref><ref>{{harvnb|Osborne|2008|p=370}}</ref> At age 20, [[Keira Knightley]] was the [[List of oldest and youngest Academy Award winners and nominees#Best Actress in a Leading Role|second-youngest]] Best Actress nominee for her performance as [[Elizabeth Bennet]] in ''[[Pride & Prejudice (2005 film)|Pride & Prejudice]]''. Best Supporting Actor winner [[George Clooney]] was the fifth person to receive acting, directing, and screenwriting nominations in the same year and the first person to earn acting and directing nominations for two different films.<ref>{{cite news|title=Academy Awards 2006 trivia |url=https://news.bbc.co.uk/1/hi/entertainment/4723752.stm |access-date=April 17, 2014 |publisher=[[BBC News]] ([[BBC]]) |date=March 3, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140424040856/http://news.bbc.co.uk/2/hi/entertainment/4723752.stm |archive-date=April 24, 2014 }}</ref> By virtue of his nominations for both ''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]'' and ''[[Munich (2005 film)|Munich]]'', composer [[John Williams]] earned a total of 45 nominations tying him with [[Alfred Newman]] as the second most nominated individual in Oscar history.{{efn|[[Walt Disney]] has the most Oscar nominations for any individual with 64.<ref name="FMS"/>}}<ref name="FMS">{{cite news|last=Bradford |first=Marlee |title=Williams Ties Record for Oscar Nominations |url=http://www.filmmusicsociety.org/news_events/features/2006/013106.html?isArchive=013106 |access-date=May 24, 2014 |publisher=[[The Film Music Society]] |date=January 31, 2006 |url-status=live |archive-url=https://web.archive.org/web/20060901124223/http://www.filmmusicsociety.org/news_events/features/2006/013106.html?IsArchive=013106 |archive-date=September 1, 2006 }}</ref> "[[It's Hard out Here for a Pimp]]" became the second rap song to win Best Original Song and the first such song to be performed at an Oscars ceremony.<ref>{{cite magazine|last=Robertson |first=Jessica |title=Three 6 Mafia Take Home Oscar |url=https://www.rollingstone.com/music/news/three-6-mafia-take-home-oscar-20060306 |access-date=March 2, 2014 |magazine=[[Rolling Stone]]  |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20131224203528/http://www.rollingstone.com/music/news/three-6-mafia-take-home-oscar-20060306 |archive-date=December 24, 2013 }}</ref>
+
+===Awards===
+[[File:Paul Haggis, Canadian Film Centre, 2013-cropped.jpg|thumb|right|150px|[[Paul Haggis]], Best Picture and Best Original Screenplay co-winner|alt=Paul Haggis in 2013]]
+[[File:2016 NAB Show's The Future of Cinema Conference, produced in partnership with SMPTE (26717112630) (cropped).jpg|right|thumb|150px|[[Ang Lee]], Best Directing winner|alt=Ang Lee in 2016]]
+[[File:Philip Seymour Hoffman 2011.jpg|thumb|right|150px|[[Philip Seymour Hoffman]], Best Actor winner|alt=Philip Seymour Hoffman in 2011]]
+[[File:Reese Witherspoon at TIFF 2014.jpg|thumb|right|150px|[[Reese Witherspoon]], Best Actress winner|alt=Reese Witherspoon at the Toronto International Film Festival in 2014]]
+[[File:George Clooney Jay Kelly-19 (cropped).jpg|thumb|right|150px|[[George Clooney]], Best Supporting Actor winner|alt=George Clooney at the 63rd New York Film Festival on September 29, 2025]]
+[[File:Rachel Weisz Deauville 2012 3.jpg|thumb|right|150px|[[Rachel Weisz]], Best Supporting Actress winner|alt=Rachel Weisz at the Deauville American Film Festival in 2012]]
+[[File:Gavin Hood 2015.jpg|thumb|150px|[[Gavin Hood]], Best Foreign Language Film winner|alt=Gavin Hood in 2015]]
+[[File:Martin McDonagh 2012.jpg|thumb|right|150px|[[Martin McDonagh]], Best Live Action Short Film winner|alt=Martin McDonaugh in 2012]]
+
+Winners are listed first and highlighted in boldface.<ref name="Oscars2006">{{Cite news|url=http://www.oscars.org/oscars/ceremonies/2006 |title=The 78th Academy Awards (2006) Nominees and Winners |access-date=November 20, 2011 |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20141109220946/http://www.oscars.org/oscars/ceremonies/2006 |archive-date=November 9, 2014 }}</ref>
+
+{|class=wikitable
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Crash (2004 film)|Crash]]''&nbsp;– [[Paul Haggis]] and [[Cathy Schulman]], producers'''
+** ''[[Brokeback Mountain]]''&nbsp;– [[Diana Ossana]] and [[James Schamus]], producers
+** ''[[Capote (film)|Capote]]''&nbsp;– [[Caroline Baron]], [[William Vince]] and [[Michael Ohoven]], producers
+** ''[[Good Night, and Good Luck]]''&nbsp;– [[Grant Heslov]], producer
+** ''[[Munich (2005 film)|Munich]]''&nbsp;– [[Kathleen Kennedy (producer)|Kathleen Kennedy]], [[Steven Spielberg]] and [[Barry Mendel]], producers
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Ang Lee]]&nbsp;– ''[[Brokeback Mountain]]'''''
+** [[Bennett Miller]]&nbsp;– ''[[Capote (film)|Capote]]''
+** [[Paul Haggis]]&nbsp;– ''[[Crash (2004 film)|Crash]]''
+** [[George Clooney]]&nbsp;– ''[[Good Night, and Good Luck]]''
+** [[Steven Spielberg]]&nbsp;– ''[[Munich (2005 film)|Munich]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Philip Seymour Hoffman]]&nbsp;– ''[[Capote (film)|Capote]]'' as [[Truman Capote]]'''
+** [[Terrence Howard]]&nbsp;– ''[[Hustle & Flow]]'' as DJay
+** [[Heath Ledger]]&nbsp;– ''[[Brokeback Mountain]]'' as [[Ennis Del Mar]]
+** [[Joaquin Phoenix]]&nbsp;– ''[[Walk the Line]]'' as [[Johnny Cash]]
+** [[David Strathairn]]&nbsp;– ''[[Good Night, and Good Luck]]'' as [[Edward R. Murrow]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Reese Witherspoon]]&nbsp;– ''[[Walk the Line]]'' as [[June Carter Cash]]'''
+** [[Judi Dench]]&nbsp;– ''[[Mrs Henderson Presents]]'' as [[Laura Henderson]]
+** [[Felicity Huffman]]&nbsp;– ''[[Transamerica (film)|Transamerica]]'' as Sabrina "Bree" Osbourne
+** [[Keira Knightley]]&nbsp;– ''[[Pride & Prejudice (2005 film)|Pride & Prejudice]]'' as [[Elizabeth Bennet]]
+** [[Charlize Theron]]&nbsp;– ''[[North Country (film)|North Country]]'' as Josey Aimes
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[George Clooney]]&nbsp;– ''[[Syriana]]'' as Bob Barnes'''
+** [[Matt Dillon]]&nbsp;– ''[[Crash (2004 film)|Crash]]'' as Officer John Ryan
+** [[Paul Giamatti]]&nbsp;– ''[[Cinderella Man]]'' as [[Joe Gould (boxing)|Joe Gould]]
+** [[Jake Gyllenhaal]]&nbsp;– ''[[Brokeback Mountain]]'' as [[Jack Twist]]
+** [[William Hurt]]&nbsp;– ''[[A History of Violence]]'' as Richie Cusack
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Rachel Weisz]]&nbsp;– ''[[The Constant Gardener (film)|The Constant Gardener]]'' as Tessa Quayle'''
+** [[Amy Adams]]&nbsp;– ''[[Junebug (film)|Junebug]]'' as Ashley Johnsten
+** [[Catherine Keener]]&nbsp;– ''[[Capote (film)|Capote]]'' as [[Harper Lee]]
+** [[Frances McDormand]]&nbsp;– ''[[North Country (film)|North Country]]'' as Glory Dodge
+** [[Michelle Williams (actress)|Michelle Williams]]&nbsp;– ''[[Brokeback Mountain]]'' as Alma Beers Del Mar
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Crash (2004 film)|Crash]]''&nbsp;– Screenplay by [[Paul Haggis]] and [[Robert Moresco|Bobby Moresco]]; Story by Paul Haggis'''
+** ''[[Good Night, and Good Luck]]''&nbsp;– [[George Clooney]] and [[Grant Heslov]]
+** ''[[Match Point]]''&nbsp;– [[Woody Allen]]
+** ''[[The Squid and the Whale]]''&nbsp;– [[Noah Baumbach]]
+** ''[[Syriana]]''&nbsp;– [[Stephen Gaghan]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[Brokeback Mountain]]''&nbsp;– [[Larry McMurtry]] and [[Diana Ossana]] based on [[Brokeback Mountain (short story)|the short story]] by [[Annie Proulx]]'''
+** ''[[Capote (film)|Capote]]''&nbsp;– [[Dan Futterman]] based on the book by [[Gerald Clarke (author)|Gerald Clarke]]
+** ''[[The Constant Gardener (film)|The Constant Gardener]]''&nbsp;– [[Jeffrey Caine]] based on [[The Constant Gardener|the novel]] by [[John le Carré]]
+** ''[[A History of Violence]]''&nbsp;– [[Josh Olson]] based on [[A History of Violence (comics)|the graphic novel]] by [[John Wagner]] and [[Vince Locke]]
+** ''[[Munich (2005 film)|Munich]]''&nbsp;– [[Tony Kushner]] and [[Eric Roth]] based on the book ''[[Vengeance (Jonas book)|Vengeance: The True Story of an Israeli Counter-Terrorist Team]]'' by [[George Jonas]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Wallace & Gromit: The Curse of the Were-Rabbit]]''&nbsp;– [[Nick Park]] and [[Steve Box]]'''
+** ''[[Howl's Moving Castle (film)|Howl's Moving Castle]]''&nbsp;– [[Hayao Miyazaki]]
+** ''[[Corpse Bride|Tim Burton's Corpse Bride]]''&nbsp;– [[Mike Johnson (animator)|Mike Johnson]] and [[Tim Burton]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[Tsotsi]]'' ([[List of South African submissions for the Academy Award for Best Foreign Language Film|South Africa]]) in [[Afrikaans]]&nbsp;– [[Gavin Hood]]'''
+**''[[Don't Tell (2005 film)|Don't Tell]]'' ([[List of Italian submissions for the Academy Award for Best Foreign Language Film|Italy]]) in [[Italian language|Italian]]&nbsp;– [[Cristina Comencini]]
+**''[[Joyeux Noël]]'' ([[List of French submissions for the Academy Award for Best Foreign Language Film|France]]) in [[French language|French]]&nbsp;– [[Christian Carion]]
+**''[[Paradise Now]]'' ([[List of Palestinian submissions for the Academy Award for Best Foreign Language Film|Palestine]]{{efn|Best Foreign Language Film nominee ''[[Paradise Now]]'' was initially nominated as a [[List of Palestinian submissions for the Academy Award for Best Foreign Language Film|submission]] from [[Palestine (region)|Palestine]].<ref>{{cite news|last1=Gray |first1=Tim |title=Acad denies 'Now' rumors |url=https://variety.com/2006/film/news/acad-denies-now-rumors-1117938209/ |access-date=June 25, 2014 |work=Variety  |date=February 14, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150826133952/http://variety.com/2006/film/news/acad-denies-now-rumors-1117938209/ |archive-date=August 26, 2015 }}</ref> However, following protests from [[Israel lobby in the United States|pro-Israeli groups in the United States]], the Academy decided to designate it as a submission from the [[Palestinian Authority]], a move that was decried by the film's director [[Hany Abu-Assad]].<ref>{{cite news|last1=Gray |first1=Tim |title=Oscar tune impugned |url=https://variety.com/2006/film/news/oscar-tune-impugned-1117939113/ |access-date=June 26, 2014 |work=Variety  |date=March 1, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150826134327/http://variety.com/2006/film/news/oscar-tune-impugned-1117939113/ |archive-date=August 26, 2015 }}</ref><ref>{{cite news|last1=Agassi |first1=Tirah |title=Middle East tensions hang over Palestinian nominee for an Oscar / 'Paradise Now' traces lives of two men who are suicide bombers |url=http://www.sfgate.com/opinion/article/Middle-East-tensions-hang-over-Palestinian-2540418.php |access-date=June 25, 2014 |work=[[San Francisco Chronicle]]  |date=February 26, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140524024755/http://www.sfgate.com/opinion/article/Middle-East-tensions-hang-over-Palestinian-2540418.php |archive-date=May 24, 2014 }}</ref> During the awards ceremony, the film was eventually announced by presenter [[Will Smith]] as a submission from the [[Palestinian territories]].<ref>{{cite news|last1=Zayid|first1=Maysoon|title=Movie is 'not without its rewards'|page=13|work=[[Manawatu Standard]]|date=September 20, 2012}}</ref>}}<!-- per official Oscars database, Paradise Now is still considered as a submission from "The Palestinian Territories": https://www.oscars.org/oscars/ceremonies/2006 -->) in [[Arabic language|Arabic]]&nbsp;– [[Hany Abu-Assad]]
+**''[[Sophie Scholl – The Final Days]]'' ([[List of German submissions for the Academy Award for Best Foreign Language Film|Germany]]) in [[German language|German]]&nbsp;– [[Marc Rothemund]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[March of the Penguins]]''&nbsp;– [[Luc Jacquet]] and Yves Darondeau'''
+** ''[[Darwin's Nightmare]]''&nbsp;– [[Hubert Sauper]]
+** ''[[Enron: The Smartest Guys in the Room]]''&nbsp;– [[Alex Gibney]] and [[Jason Kliot]]
+** ''[[Murderball (film)|Murderball]]''&nbsp;– [[Henry-Alex Rubin]] and [[Dana Adam Shapiro]]
+** ''[[Street Fight (film)|Street Fight]]''&nbsp;– [[Marshall Curry]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[A Note of Triumph: The Golden Age of Norman Corwin]]''&nbsp;– [[Corinne Marrinan]] and [[Eric Simonson]]'''
+** ''[[The Death of Kevin Carter: Casualty of the Bang Bang Club]]''&nbsp;– [[Dan Krauss]]
+** ''[[God Sleeps in Rwanda]]''&nbsp;– [[Kimberlee Acquaro]] and Stacy Sherman
+** ''[[The Mushroom Club]]''&nbsp;– [[Steven Okazaki]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Six Shooter (film)|Six Shooter]]''&nbsp;– [[Martin McDonagh]]'''
+** ''[[Cashback (film)|Cashback]]''&nbsp;– [[Sean Ellis]] and Lene Bausager
+** ''[[The Last Farm]]''&nbsp;– [[Rúnar Rúnarsson]] and Thor S. Sigurjónsson
+** ''[[Our Time Is Up]]''&nbsp;– [[Rob Pearlstein]] and [[Pia Clemente]]
+** ''[[The Runaway (2004 film)|The Runaway]]'' (''Ausreißer'')&nbsp;– Ulrike Grote
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[The Moon and the Son: An Imagined Conversation]]''&nbsp;– [[John Canemaker]] and Peggy Stern'''
+** ''[[9 (2005 film)|9]]''&nbsp;– [[Shane Acker]]
+** ''[[Badgered]]''&nbsp;– Sharon Colman
+** ''[[The Mysterious Geographic Explorations of Jasper Morello]]''&nbsp;– Anthony Lucas
+** ''[[One Man Band (film)|One Man Band]]''&nbsp;– Andrew Jimenez and [[Mark Andrews (filmmaker)|Mark Andrews]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Brokeback Mountain]]''&nbsp;– [[Gustavo Santaolalla]]'''
+** ''[[The Constant Gardener (film)|The Constant Gardener]]''&nbsp;– [[Alberto Iglesias]]
+** ''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]''&nbsp;– [[John Williams]]
+** ''[[Munich (2005 film)|Munich]]''&nbsp;– [[John Williams]]
+** ''[[Pride & Prejudice (2005 film)|Pride & Prejudice]]''&nbsp;– [[Dario Marianelli]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[It's Hard out Here for a Pimp]]" from ''[[Hustle & Flow]]''&nbsp;– Music and Lyrics by [[Juicy J|Jordan Houston]], [[Frayser Boy|Cedric Coleman]] and [[DJ Paul|Paul Beauregard]]'''
+** "[[In the Deep]]" from ''[[Crash (2004 film)|Crash]]''&nbsp;– Music by [[Kathleen York|Kathleen "Bird" York]] and Michael Becker; Lyrics by Kathleen "Bird" York
+** "[[Transamerica (soundtrack)|Travelin' Thru]]" from ''[[Transamerica (film)|Transamerica]]''&nbsp;– Music and Lyrics by [[Dolly Parton]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[King Kong (2005 film)|King Kong]]''&nbsp;– [[Mike Hopkins (sound editor)|Mike Hopkins]] and [[Ethan Van der Ryn]]'''
+** ''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]''&nbsp;– [[Wylie Stateman]]
+** ''[[War of the Worlds (2005 film)|War of the Worlds]]''&nbsp;– [[Richard King (sound designer)|Richard King]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound Mixing]]}}
+* '''''[[King Kong (2005 film)|King Kong]]''&nbsp;– [[Christopher Boyes]], [[Michael Semanick]], [[Michael Hedges (sound engineer)|Michael Hedges]] and [[Hammond Peek]]'''
+** ''[[The Chronicles of Narnia: The Lion, the Witch and the Wardrobe]]''&nbsp;– [[Terry Porter (sound engineer)|Terry Porter]], [[Dean A. Zupancic]] and [[Tony Johnson (sound engineer)|Tony Johnson]]
+** ''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]''&nbsp;– [[Kevin O'Connell (sound mixer)|Kevin O'Connell]], [[Greg P. Russell]], [[Rick Kline]] and [[John Pritchett (sound engineer)|John Pritchett]]
+** ''[[Walk the Line]]''&nbsp;– [[Paul Massey (sound engineer)|Paul Massey]], [[Doug Hemphill|D.M. Hemphill]] and [[Peter Kurland]]
+** ''[[War of the Worlds (2005 film)|War of the Worlds]]''&nbsp;– [[Andy Nelson (sound engineer)|Andy Nelson]], [[Anna Behlmer]] and [[Ron Judkins]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]''&nbsp;– Art Direction: [[John Myhre]]; Set Decoration: [[Gretchen Rau]]'''
+** ''[[Good Night, and Good Luck]]''&nbsp;– Art Direction: [[James D. Bissell|Jim Bissell]]; Set Decoration: [[Jan Pascale]]
+** ''[[Harry Potter and the Goblet of Fire (film)|Harry Potter and the Goblet of Fire]]''&nbsp;– Art Direction: [[Stuart Craig]]; Set Decoration: [[Stephenie McMillan]]
+** ''[[King Kong (2005 film)|King Kong]]''&nbsp;– Art Direction: [[Grant Major]]; Set Decoration: [[Dan Hennah]] and [[Simon Bright]]
+** ''[[Pride & Prejudice (2005 film)|Pride & Prejudice]]''&nbsp;– Art Direction: [[Sarah Greenwood]]; Set Decoration: [[Katie Spencer]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]''&nbsp;– [[Dion Beebe]]'''
+** ''[[Batman Begins]]''&nbsp;– [[Wally Pfister]]
+** ''[[Brokeback Mountain]]''&nbsp;– [[Rodrigo Prieto]]
+** ''[[Good Night, and Good Luck]]''&nbsp;– [[Robert Elswit]]
+** ''[[The New World (2005 film)|The New World]]''&nbsp;– [[Emmanuel Lubezki]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[The Chronicles of Narnia: The Lion, the Witch and the Wardrobe]]''&nbsp;– [[Howard Berger]] and [[Tami Lane]]'''
+** ''[[Cinderella Man]]''&nbsp;– [[David LeRoy Anderson]] and [[Lance Anderson]]
+** ''[[Star Wars: Episode III – Revenge of the Sith]]''&nbsp;– [[Dave Elsey]] and [[Nikki Gooley]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]''&nbsp;– [[Colleen Atwood]]'''
+** ''[[Charlie and the Chocolate Factory (film)|Charlie and the Chocolate Factory]]''&nbsp;– [[Gabriella Pescucci]]
+** ''[[Mrs Henderson Presents]]''&nbsp;– [[Sandy Powell (costume designer)|Sandy Powell]]
+** ''[[Pride & Prejudice (2005 film)|Pride & Prejudice]]''&nbsp;– [[Jacqueline Durran]]
+** ''[[Walk the Line]]''&nbsp;– [[Arianne Phillips]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Crash (2004 film)|Crash]]''&nbsp;– [[Hughes Winborne]]'''
+** ''[[Cinderella Man]]''&nbsp;– [[Mike Hill (film editor)|Mike Hill]] and [[Daniel P. Hanley|Dan Hanley]]
+** ''[[The Constant Gardener (film)|The Constant Gardener]]''&nbsp;– [[Claire Simpson]]
+** ''[[Munich (2005 film)|Munich]]''&nbsp;– [[Michael Kahn (film editor)|Michael Kahn]]
+** ''[[Walk the Line]]''&nbsp;– [[Michael McCusker]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[King Kong (2005 film)|King Kong]]''&nbsp;– [[Joe Letteri]], [[Brian Van't Hul]], [[Christian Rivers]] and [[Richard Taylor (filmmaker)|Richard Taylor]]'''
+** ''[[The Chronicles of Narnia: The Lion, the Witch and the Wardrobe]]''&nbsp;– [[Dean Wright]], [[Bill Westenhofer]], [[Jim Berney]] and [[Scott Farrar]]
+** ''[[War of the Worlds (2005 film)|War of the Worlds]]''&nbsp;– [[Dennis Muren]], [[Pablo Helman]], [[Randal M. Dutra]] and [[Dan Sudick]]
+|}
+
+===Honorary Award===
+*To [[Robert Altman]]  in recognition of a career that has repeatedly reinvented the art form and inspired filmmakers and audiences alike.<ref>{{cite news|last=Rainer |first=Peter |title=Mr. Altman's unflinching eye |url=https://www.latimes.com/archives/la-xpm-2006-mar-05-ca-altman5-story.html |access-date=April 17, 2014 |work=[[Los Angeles Times]]  |date=March 5, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150706033858/http://articles.latimes.com/2006/mar/05/entertainment/ca-altman5 |archive-date=July 6, 2015 }}</ref>
+
+===Films with multiple nominations and awards===
+
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films that received multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+|8
+| ''[[Brokeback Mountain]]''
+|-
+| rowspan="3" style="text-align:center" |6
+| ''[[Crash (2004 film)|Crash]]''
+|-
+| ''[[Good Night, and Good Luck]]''
+|-
+| ''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]''
+|-
+| rowspan="3" style="text-align:center" |5
+| ''[[Capote (film)|Capote]]''
+|-
+| ''[[Munich (2005 film)|Munich]]''
+|-
+| ''[[Walk the Line]]''
+|-
+| rowspan="3" style="text-align:center" |4
+| ''[[The Constant Gardener (film)|The Constant Gardener]]''
+|-
+| ''[[King Kong (2005 film)|King Kong]]''
+|-
+| ''[[Pride & Prejudice (2005 film)|Pride & Prejudice]]''
+|-
+| rowspan="3" style="text-align:center" |3
+| ''[[Cinderella Man]]''
+|-
+| ''[[The Chronicles of Narnia: The Lion, the Witch and the Wardrobe|The Chronicles of Narnia:<br />The Lion, the Witch and the Wardrobe]]''
+|-
+| ''[[War of the Worlds (2005 film)|War of the Worlds]]''
+|-
+| rowspan="6" style="text-align:center" |2
+| ''[[A History of Violence]]''
+|-
+| ''[[Hustle & Flow]]''
+|-
+| ''[[Mrs Henderson Presents]]''
+|-
+| ''[[North Country (film)|North Country]]''
+|-
+| ''[[Syriana]]''
+|-
+| ''[[Transamerica (film)|Transamerica]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ {{nowrap|Films that received multiple awards}}
+|-
+! scope="col" style="width:55px;" |Wins
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="4" style="text-align:center" |3
+| ''[[Brokeback Mountain]]''
+|-
+| ''[[Crash (2004 film)|Crash]]''
+|-
+| ''[[King Kong (2005 film)|King Kong]]''
+|-
+| ''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]''
+|-
+|}
+
+{{col-float-end}}
+
+==Presenters and performers==
+The following individuals presented awards or performed musical numbers.<ref>{{cite news|last1=White |first1=Dave |title=Live blogging the Oscars |url=http://www.today.com/id/11686950/ns/today-today_entertainment/t/live-blogging-oscars/ |access-date=July 5, 2015 |publisher=NBC News (NBCUniversal) |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150706143005/http://www.today.com/id/11686950/ns/today-today_entertainment/t/live-blogging-oscars/ |archive-date=July 6, 2015 }}</ref><ref>{{cite news|last1=Brooks |first1=Xan |title=The Oscars, minute by minute |url=https://www.theguardian.com/culture/2006/mar/05/awardsandprizes.oscars20062 |access-date=July 5, 2015 |work=[[The Guardian]]  |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150927023752/http://www.theguardian.com/culture/2006/mar/05/awardsandprizes.oscars20062 |archive-date=September 27, 2015 }}</ref><ref>{{cite news|last1=McAuliffe|first1=Kelly|title=Oscars commentary: And the Oscar goes to...|url=http://www.nzherald.co.nz/lifestyle/news/article.cfm?c_id=6&objectid=10371308|access-date=July 5, 2015|work=[[The New Zealand Herald]]|date=March 9, 2006|archive-date=September 24, 2015|archive-url=https://web.archive.org/web/20150924053904/http://www.nzherald.co.nz/lifestyle/news/article.cfm?c_id=6&objectid=10371308|url-status=live}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Tom|Kane}}<ref>{{harvnb|Terrance|2013|p=14}}</ref> || Announcer for the 78th annual Academy Awards
+|-
+| {{sortname|Nicole|Kidman}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Ben|Stiller}} || Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Reese|Witherspoon}} || Presenter of the award for [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+| {{sortname|Naomi|Watts}} || Introducer of the performance of Best Original Song nominee "[[Travelin' Thru]]"
+|-
+| {{sortname|Luke|Wilson}}<br />[[Owen Wilson]] || Presenters of the award for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+| {{sortname||Chicken Little|Chicken_Little_(2005_film)#Cast|Chicken Little}} ([[Zach Braff]])<br />[[Chicken Little (2005 film)#Voice cast|Abby Mallard]] ([[Joan Cusack]]) || Presenters of the award for [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Jennifer|Aniston}} || Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Russell|Crowe}} || Presenter of the [[biographical film]]s montage
+|-
+| {{sortname|Steve|Carell}}<br />[[Will Ferrell]] || Presenters of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Rachel|McAdams}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Morgan|Freeman}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Lauren|Bacall}} || Presenter of the [[film noir]] montage
+|-
+| {{sortname|Terrence|Howard}} || Presenter of the award for [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]]
+|-
+| {{sortname|Charlize|Theron}} || Presenter of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Jennifer|Lopez}} || Introducer of the performance of Best Original Song nominee "In the Deep"
+|-
+| {{sortname|Sandra|Bullock}}<br />[[Keanu Reeves]] || Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Samuel L.|Jackson}} || Presenter of the political films montage
+|-
+| {{sortname|Sid|Ganis}} (AMPAS president) || Presenter of a special presentation regarding activities funded by the Academy of Motion Picture Arts and Sciences
+|-
+| {{sortname|Salma|Hayek}} || Introducer of the special instrumental solo performance to the tune of [[Academy Award for Best Original Score|Best Original Score]] nominees and presenter of the award for Best Original Score
+|-
+| {{sortname|Jake|Gyllenhaal}} || Presenter of the [[epic film]]s montage
+|-
+| {{sortname|Jessica|Alba}}<br />[[Eric Bana]] || Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound Mixing]]
+|-
+| {{sortname|Meryl|Streep}}<br />[[Lily Tomlin]] || Presenters of the [[Academy Honorary Award]] to [[Robert Altman]]
+|-
+| {{sortname||Ludacris}} || Introducer of the performance of Best Original Song nominee "[[It's Hard out Here for a Pimp]]"
+|-
+| {{sortname|Queen|Latifah}} || Presenter of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Jennifer|Garner}} || Presenter of the award for [[Academy Award for Best Sound Editing|Best Sound Editing]]
+|-
+| {{sortname|George|Clooney}} || Presenter of the "[[List of Latin phrases: I#in memoriam|In Memoriam]]" tribute
+|-
+| {{sortname|Will|Smith}} || Presenter of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Ziyi|Zhang|Zhang Ziyi}} || Presenter of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Hilary|Swank}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|John|Travolta}} || Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Jamie|Foxx}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Dustin|Hoffman}} || Presenter of the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| {{sortname|Uma|Thurman}} || Presenter of the award for [[Academy Award for Best Original Screenplay|Best Original Screenplay]]
+|-
+| {{sortname|Tom|Hanks}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Jack|Nicholson}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+=== Performers ===
+{| class="wikitable sortable"
+|-
+!Name(s)
+!Role
+!Performed
+|-
+|{{sortname|Bill|Conti}} || Musical arranger and Conductor || Orchestral
+|-
+| {{sortname|Dolly|Parton}} || Performer || "[[Travelin' Thru]]" from ''[[Transamerica (film)|Transamerica]]''
+|-
+| {{sortname|Kathleen|York}} || Performer || "[[In the Deep]]" from ''[[Crash (2004 film)|Crash]]''
+|-
+| {{sortname|Itzhak|Perlman}} || Performer || Performed musical selections for Best Original Score nominees
+|-
+| {{sortname||Three 6 Mafia}}<br />[[Taraji P. Henson]] || Performers || "[[It's Hard out Here for a Pimp]]" from ''[[Hustle & Flow]]''
+|}
+
+==Ceremony information==
+[[File:Jon Stewart at Cabaret 2008 benefit.jpg|thumb|right|[[Jon Stewart]] hosted the 78th Academy Awards.|alt=Photo of Jon Stewart in 2008.]]
+
+Despite the negative reception from the [[77th Academy Awards|preceding year's ceremony]], the academy rehired [[Gilbert Cates]] to oversee production of the awards gala.<ref name="Archerd"/> However, in an article published in ''[[The New York Times]]'', it was stated that 2005 host [[Chris Rock]] would not return to host the show.<ref name="TV Guide">{{cite news|last=Mitovich |first=Matt Webb |title=2006 Oscars Won't Rock |url=https://www.tvguide.com/news/2006-oscars-wont-51614/ |access-date=April 29, 2014 |work=[[TV Guide]] |date=December 9, 2005 |url-status=live |archive-url=https://web.archive.org/web/20150826065226/http://www.tvguide.com/news/2006-oscars-wont-51614/ |archive-date=August 26, 2015 }}</ref> According to a statement released by his publicist, "He didn't want to do it in perpetuity, He'd like to do it again down the road."<ref name="TV Guide" /> Furthermore, many media outlets speculated that several AMPAS members felt uncomfortable with Rock's disparaging comments about [[Colin Farrell]], [[Jude Law]], and [[Tobey Maguire]].<ref>{{cite news|title=Chris Rock won't host next Academy Awards |url=http://usatoday30.usatoday.com/life/television/news/2005-12-09-rock-oscar_x.htm |access-date=September 18, 2013 |work=[[USA Today]]  |date=December 10, 2005 |url-status=dead |archive-url=https://web.archive.org/web/20140715104413/http://usatoday30.usatoday.com/life/television/news/2005-12-09-rock-oscar_x.htm |archive-date=July 15, 2014 }}</ref><ref>{{cite news|last=Fernandez |first=Maria Elena |title=Rock not asked back as Oscar host |url=https://www.latimes.com/archives/la-xpm-2005-dec-10-et-quick10-story.html |access-date=April 29, 2014 |work=Los Angeles Times  |date=December 10, 2005 |url-status=live |archive-url=https://web.archive.org/web/20140429213157/http://articles.latimes.com/2005/dec/10/entertainment/et-quick10 |archive-date=April 29, 2014 }}</ref> Initially, Cates sought actor and veteran Oscar host [[Billy Crystal]] to host the ceremony again. However, Crystal declined the offer citing his commitment to his one-man comedy show ''[[700 Sundays]]''.<ref>{{cite news|title=Crystal feels badly about Oscar |url=https://variety.com/2005/voices/columns/crystal_feels_b-1200571750/ |access-date=June 26, 2014 |work=Variety  |date=December 21, 2005 |url-status=live |archive-url=https://web.archive.org/web/20140715010558/http://variety.com/2005/voices/columns/crystal_feels_b-1200571750/ |archive-date=July 15, 2014 }}</ref><ref>{{cite news|last1=Steinberg|first1=Jacques|title=A First-Time Oscar Host in Search of That Fine Line|url=https://www.nytimes.com/2006/02/20/movies/MoviesFeatures/20osca.html|access-date=June 25, 2014|work=The New York Times|date=February 20, 2006|archive-date=February 10, 2021|archive-url=https://web.archive.org/web/20210210222436/https://www.nytimes.com/2006/02/20/movies/MoviesFeatures/20osca.html|url-status=live}}</ref>
+
+In January 2006, Cates announced that actor, comedian, and talk show host [[Jon Stewart]], who had previously hosted two consecutive [[Grammy Award]]s ceremonies in [[43rd Annual Grammy Awards|2001]] and [[44th Annual Grammy Awards|2002]], was chosen as host of the 2006 telecast.<ref>{{cite news|last1=Vancheri |first1=Barbara |title=Jon Stewart Will Host 78th Annual Academy Awards |url=https://www.post-gazette.com/ae/oscar-watch/2006/01/06/Jon-Stewart-going-from-fake-news-to-real-pressure-as-Oscars-host-1/stories/200601060210 |access-date=June 24, 2014 |work=Pittsburgh Post-Gazette  |date=January 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150706204704/http://www.post-gazette.com/ae/oscar-watch/2006/01/06/Jon-Stewart-going-from-fake-news-to-real-pressure-as-Oscars-host-1/stories/200601060210 |archive-date=July 6, 2015 }}</ref> Cates explained the decision to hire him saying, "My wife and I watch him every night. Jon is the epitome of a perfect host — smart, engaging, irreverent and funny."<ref>{{cite news|last1=Breznican |first1=Anthony |title=Stewart will host the Oscars |url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2006-01-05-stewart-host_x.htm |access-date=June 25, 2014 |work=USA Today  |date=January 5, 2006 |url-status=dead |archive-url=https://web.archive.org/web/20150826123053/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2006-01-05-stewart-host_x.htm |archive-date=August 26, 2015 }}</ref> In a statement, Stewart expressed that he was honored to be selected to emcee the program, jokingly adding, "Although, as an avid watcher of the Oscars, I can't help but be a little disappointed with the choice. It appears to be another sad attempt to smoke out Billy Crystal."<ref>{{cite news|title=And the Oscar job goes to ... Jon Stewart |url=http://www.today.com/id/10721450/ns/today-today_entertainment/t/oscar-job-goes-jon-stewart/ |access-date=July 6, 2013 |publisher=NBC News (NBCUniversal) |date=January 5, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150428190633/http://www.today.com/id/10721450/ns/today-today_entertainment/t/oscar-job-goes-jon-stewart/ |archive-date=April 28, 2015 }}</ref>
+
+Several other people and companies participated in the production of the ceremony. [[Bill Conti]] served as musical supervisor for the telecast.<ref>{{cite news|title=Bill Conti named musical director for 78th Academy Awards |url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2005-12-21-conti-oscar-music_x.htm |access-date=April 29, 2014 |work=USA Today |date=December 21, 2005 |url-status=dead |archive-url=https://web.archive.org/web/20140429184733/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2005-12-21-conti-oscar-music_x.htm |archive-date=April 29, 2014 }}</ref> Media firm [[The Ant Farm]] produced a thirty-second trailer promoting the broadcast featuring clips highlighting past Oscar winners to the tune of the song "[[Our Lives (song)|Our Lives]]" by [[The Calling (band)|The Calling]].<ref>{{cite news|last=Brown |first=Maressa |title=Oscar Watch: Acad trailer coming to theaters |url=https://variety.com/2006/film/news/oscar-watch-acad-trailer-coming-to-theaters-1117936160/ |access-date=April 29, 2014 |work=Variety  |date=January 15, 2006 |url-status=dead |archive-url=https://web.archive.org/web/20140429214740/http://variety.com/2006/film/news/oscar-watch-acad-trailer-coming-to-theaters-1117936160/ |archive-date=April 29, 2014 }}</ref> Previous Oscar hosts such as [[Whoopi Goldberg]] and [[Steve Martin]], and actors [[Mel Gibson]], [[George Clooney]], [[Halle Berry]] appeared in an opening comedic sketch.<ref>{{cite news|last=Kaufman |first=Gil |title=Oscar Host Jon Stewart Gives Mad Props to Three 6 Mafia, Fears Russell Crowe Beat-Down |url=http://www.mtv.com/news/1525418/oscar-host-jon-stewart-gives-mad-props-to-three-6-mafia-fears-russell-crowe-beat-down/ |access-date=April 29, 2014 |publisher=[[MTV]] ([[Viacom Media Networks]]) |date=March 6, 2006 |url-status=dead |archive-url=https://web.archive.org/web/20140502061344/http://www.mtv.com/news/1525418/oscar-host-jon-stewart-gives-mad-props-to-three-6-mafia-fears-russell-crowe-beat-down/ |archive-date=May 2, 2014 }}</ref> Actor [[Tom Hanks]] participated in a pre-taped comedic sketch lampooning Oscar speeches.<ref>{{cite magazine|last1=Stack |first1=Tim |title=Oscar stop watch |url=https://www.ew.com/article/2006/03/10/oscar-stop-watch |access-date=June 26, 2014 |magazine=Entertainment Weekly  |date=March 10, 2006 |url-status=live |archive-url=https://web.archive.org/web/20150826130615/http://www.ew.com/article/2006/03/10/oscar-stop-watch |archive-date=August 26, 2015 }}</ref> [[Stephen Colbert]] (host of ''[[The Colbert Report]]'', the sister program of Stewart's ''[[The Daily Show]]'') narrated two different mock [[attack ad]]s lampooning both the intense [[For Your Consideration (advertising)|campaigning and lobbying]] during Oscar season put forth by film studios and [[political advertising]] during elections.<ref>{{cite news|last=Goodman |first=Tim |title=The Oscars may be one of our few national rituals. Good or bad, we're on the couch, watching |url=http://www.sfgate.com/entertainment/article/THE-78TH-ANNUAL-ACADEMY-AWARDS-The-Oscars-may-2522083.php |access-date=April 29, 2014 |work=[[The San Francisco Chronicle]]  |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140429191500/http://www.sfgate.com/entertainment/article/THE-78TH-ANNUAL-ACADEMY-AWARDS-The-Oscars-may-2522083.php |archive-date=April 29, 2014 }}</ref> Violinist [[Itzhak Perlman]] performed excerpts from the five nominees for Best Original Score.<ref>{{cite news|last1=McNamara |first1=Mary |title=Backstage, where the stars align |url=https://www.latimes.com/archives/la-xpm-2006-mar-06-et-oscarbackstage6-story.html |access-date=June 23, 2014 |work=Los Angeles Times  |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140714194218/http://articles.latimes.com/2006/mar/06/entertainment/et-oscarbackstage6 |archive-date=July 14, 2014 }}</ref>
+
+===Box office performance of nominated films===
+When the nominations were announced on January 31, the field of major nominees favored independent, low-budget films over blockbusters.<ref>{{cite news|last=Bates |first=Jim |title=Movies at their best, but has anyone seen them? |url=https://www.latimes.com/archives/la-xpm-2006-feb-01-wb-screens1-story.html |access-date=April 25, 2014 |work=Los Angeles Times  |date=February 1, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140426233353/http://articles.latimes.com/2006/feb/01/news/wb-screens1 |archive-date=April 26, 2014 }}</ref><ref>{{cite news|last=Smith |first=Meil |url=https://money.cnn.com/2006/01/31/news/companies/oscars/ |title=Oscar watch: And the cash goes to... |access-date=April 25, 2014 |publisher=[[CNN Money]] (Time Warner) |date=February 7, 2007 |url-status=dead |archive-url=https://web.archive.org/web/20150706142822/https://money.cnn.com/2006/01/31/news/companies/oscars/ |archive-date=July 6, 2015 }}</ref> The combined gross of the five Best Picture nominees when the Oscars were announced was $186 million with an average gross of $37.3 million per film.<ref name="BoxOfficeMojoOscars">{{cite news|title=2006 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=2005&p=.htm |access-date=April 17, 2014 |website=[[Box Office Mojo]] |url-status=live |archive-url=https://web.archive.org/web/20140418193557/http://boxofficemojo.com/oscar/chart/?yr=2005&p=.htm |archive-date=April 18, 2014 }}</ref> ''Crash'' was the highest earner among the Best Picture nominees with $53.4 million in domestic box office receipts. The film was followed by ''Brokeback Mountain'' ($51.7 million), ''Munich'' ($40.8 million), ''Good Night and Good Luck'' ($25.2 million), and finally ''Capote'' ($15.4 million).<ref name="BoxOfficeMojoOscars"/>
+
+Of the top 50 grossing movies of the year, 35 nominations went to 13 films on the list. Only '' Walk the Line'' (19th), ''Cinderella Man'' (41st), ''Wallace and Gromit: The Curse of the Were-Rabbit'' (45th), and ''Crash'' (48th) were nominated for Best Picture, Best Animated Feature, or any of the directing, acting, or screenwriting.<ref name="boxofficemojooscars">{{cite news|title=2005 Domestic Grosses (as of January 30, 2006) |url=https://www.boxofficemojo.com/yearly/chart/?asof=2006-01-30&view=releasedate&view2=domestic&yr=2005&sort=gross&order=DESC&p=.htm |access-date=March 5, 2014 |website=Box Office Mojo |url-status=live |archive-url=https://web.archive.org/web/20140426201134/http://www.boxofficemojo.com/yearly/chart/?asof=2006-01-30&view=releasedate&view2=domestic&yr=2005&sort=gross&order=DESC&p=.htm |archive-date=April 26, 2014 }}</ref> The other top 50 box office hits that earned nominations were ''Star Wars Episode III: Revenge of the Sith'' (1st), ''Harry Potter and the Goblet of Fire'' (2nd), ''The Chronicles of Narnia: The Lion, The Witch, and The Wardrobe'' (3rd), ''War of the Worlds'' (4th), ''King Kong'' (5th), ''Charlie and the Chocolate Factory'' (7th), ''Batman Begins'' (8th), ''March of the Penguins'', (26th), and ''Memoirs of a Geisha'' (47th).<ref name="boxofficemojooscars"/>
+
+===Critical reviews===
+Some media outlets received the broadcast positively. ''[[St. Louis Post-Dispatch]]'' television critic Gail Pennington praised Stewart's performance as host writing that he "did the Oscars proud Sunday night, turning in a four-star hosting performance that unfortunately made the rest of the show seem sluggish by comparison."<ref>{{cite news|title=Oscar host Jon Stewart is worth the wait|work=[[St. Louis Post-Dispatch]]|publisher=Ray Farris|date=March 6, 2006|page=C1}}</ref> Film critic [[Roger Ebert]] said that Stewart was "on target, topical and funny," and added, "He was as relaxed, amusing and at home as [[Johnny Carson]]."<ref>{{cite news|last1=Ebert |first1=Roger |author-link=Roger Ebert |title='Crash'-ing a joyous Oscar party |url=https://www.rogerebert.com/festivals-and-awards/crash-ing-a-joyous-oscar-party |access-date=June 25, 2014 |website=[[RogerEbert.com]] |publisher=Sun-Times Media Group |date=March 5, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140708203649/http://www.rogerebert.com/festivals-and-awards/crash-ing-a-joyous-oscar-party |archive-date=July 8, 2014 }}</ref> Columnist Ray Richmond of ''[[The Hollywood Reporter]]'' commented, "He seemed at times nervous and self-conscious, but on the whole, Stewart delivered with just the right balance of reverence and smugness."<ref>{{cite news|last1=Richmond |first1=Ray |title=78th Academy Awards |url=https://www.hollywoodreporter.com/news/78th-academy-awards-138261 |access-date=June 23, 2014 |work=[[The Hollywood Reporter]]  |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140714124545/http://www.hollywoodreporter.com/news/78th-academy-awards-138261 |archive-date=July 14, 2014 }}</ref>
+
+Others media publications were more critical of the show. Television critic [[Rob Owen (journalist)|Rob Owen]] of the ''[[Pittsburgh Post-Gazette]]'' wrote that Stewart was more "amusing than funny". He added, "Many of his jokes fell flat with the stars in the Kodak Theatre, and his tendency to bow down before celebrities quickly grew tiresome."<ref>{{cite news|last=Owen|first=Rob|title=Tuned In: Oscar opens with class, but ends up a B-movie|url=http://old.post-gazette.com/pg/06065/665912.stm#ixzz30KuRRxfU|access-date=April 30, 2014|work=Pittsburgh-Post Gazette|date=March 6, 2006|archive-date=March 5, 2017|archive-url=https://web.archive.org/web/20170305014246/http://old.post-gazette.com/pg/06065/665912.stm#ixzz30KuRRxfU|url-status=dead}}</ref> [[Tom Shales]] from ''[[The Washington Post]]'' commented, "It's hard to believe that professional entertainers could have put together a show less entertaining than this year's Oscars, hosted with a smug humorlessness by comic Jon Stewart, a sad and pale shadow of great hosts gone by." Moreover, he derided the "piles and piles and miles and miles of clips from films present and past" writing that it "squandered the visual luster" of the ceremony.<ref>{{cite news|last=Shales |first=Tom |title=Memo to Jon Stewart: Keep Your 'Daily' Job |url=https://www.washingtonpost.com/wp-dyn/content/article/2006/03/06/AR2006030600029.html |access-date=April 30, 2014 |newspaper=[[The Washington Post]]  |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140506092421/http://www.washingtonpost.com/wp-dyn/content/article/2006/03/06/AR2006030600029.html |archive-date=May 6, 2014 }}</ref> [[Associated Press]] television critic [[Frazier Moore]] remarked, "Stewart, usually a very funny guy, displayed a lack of beginner's luck as first-time host...His usually impeccable blend of puckishness and self-effacement fell flat in the service of Oscar." He also criticized the decision to play music over the winner's acceptance speeches calling it "distracting and obnoxious."<ref>{{cite news|last1=Moore|first1=Frazier|author-link=Frazier Moore|url=https://www.eastbaytimes.com/2006/03/05/stewart-a-disappointing-host-of-oscars/|title=Stewart a Disappointing Host of Oscars|access-date=June 17, 2026|work=[[East Bay Times]]|date=March 5, 2006|url-status=live|archive-url=https://web.archive.org/web/20240807064959/https://www.eastbaytimes.com/2006/03/05/stewart-a-disappointing-host-of-oscars/|archive-date=August 7, 2024}}</ref>
+
+In retrospective commentary, ''Crash''{{'}}s win for Best Picture over ''Brokeback Mountain'' has become "one of the most notorious [decisions] in modern Academy history"<ref>{{cite magazine |url=https://ew.com/oscars/2018/03/02/crash-brokeback-mountain-best-picture-oscars/ |title=Why ''Crash'' Beat ''Brokeback Mountain'' for Best Picture |last=Sullivan |first=Kevin P. |date=March 2, 2018 |magazine=[[Entertainment Weekly]] |access-date=February 8, 2025}}</ref> and a source of "earnest bafflement from critics".<ref>{{cite web |url=https://www.theguardian.com/film/2015/feb/19/academy-members-reassess-past-oscar-decisions-crash-brokeback-mountain |title=''Crash'' Burned: Academy Members Reassess Past Oscar Decisions |last=Beaumont-Thomas |first=Ben |date=February 19, 2015 |website=[[The Guardian]] |access-date=February 8, 2025}}</ref> Rankings by several publications and critics have called ''Crash'' one of the worst or most controversial Best Picture winners.<ref>{{cite web |url=https://www.vanityfair.com/hollywood/2020/05/crash-movie-anniversary-best-picture-oscar |title=Best-Picture Winner ''Crash'' Just Turned 15. Is Anybody Celebrating? |last=Collins |first=K. Austin |date=May 7, 2020 |website=[[Vanity Fair (magazine)|Vanity Fair]] |access-date=February 8, 2025 |url-access=limited}}</ref><ref>{{cite web |url=https://variety.com/lists/oscars-controversial-winners/ |title=21 Controversial Oscar Winners: Why ''Green Book'', ''Bohemian Rhapsody'' and More Ignited Backlash |last=Sharf |first=Zack |date=March 10, 2023 |website=[[Variety (magazine)|Variety]] |access-date=February 8, 2025}}</ref><ref>{{cite web |url=https://www.indiewire.com/feature/oscar-best-pictures-of-21st-century-ranked-best-worst-1201902864/ |title=The Best Picture Winners of the 21st Century, Ranked from Worst to Best |last=Chapman |first=Wilson |date=March 11, 2024 |website=[[IndieWire]] |access-date=February 8, 2025}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 38.94 million people over its length, which was an 8% decrease from the [[77th Academy Awards|previous year's ceremony]].<ref name="LATratings">{{cite news|url=https://www.latimes.com/archives/la-xpm-2006-mar-08-et-tvratingstext8-story.html |work=Los Angeles Times  |title=NBC finishes out of the money again |date=March 8, 2006 |access-date=March 27, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150707202648/http://articles.latimes.com/2006/mar/08/entertainment/et-tvratingstext8 |archive-date=July 7, 2015 }}</ref> Additionally, the show earned lower [[Nielsen ratings]] compared to the previous ceremony with 23.0% of households watching over a 35 share.<ref name="Variety ratings">{{cite news |last=Kissell |first=Rick |date=March 6, 2006 |url=https://variety.com/2006/film/awards/down-but-not-dire-1117939337/ |work=Variety  |title=Down but not dire |access-date=June 27, 2013 |url-status=live |archive-url=https://web.archive.org/web/20150707180243/http://variety.com/2006/film/awards/down-but-not-dire-1117939337/ |archive-date=July 7, 2015 }}</ref> Furthermore, it garnered a lower 18{{ndash}}49 demo rating with a 13.9 rating among viewers in that demographic.<ref name="Variety ratings" /> It was the week's most-watched program and the season's most-watched entertainment program.<ref name="LATratings"/>
+
+In July 2006, the ceremony presentation received nine nominations at the [[58th Primetime Emmy Awards|58th Primetime Emmys]].<ref>{{cite news|title=78th Annual Academy Awards |url=http://www.emmys.com/shows/78th-annual-academy-awards |access-date=January 14, 2014 |publisher=[[Academy of Television Arts and Sciences]] (ATAS) |url-status=live |archive-url=https://web.archive.org/web/20140424034045/http://www.emmys.com/shows/78th-annual-academy-awards |archive-date=April 24, 2014 }}</ref> The following month, the ceremony won four of those nominations for [[Primetime Emmy Award for Outstanding Production Design for Variety, Nonfiction, Reality, or Reality-Competition Programming|Outstanding Art Direction for a Variety, Music Program, or Special]] (Roy Christopher and Jeff Richman), [[Primetime Emmy Award for Outstanding Directing for a Variety Series|Outstanding Directing for a Variety, Music, or Comedy Program]] (Louis J. Horvitz), [[Primetime Emmy Award for Outstanding Main Title Design|Outstanding Main Title Design]] (Renato Grgic, Alen Petkovic, Kristijan Petrovic, and Jon Teschner), and [[Primetime Emmy Award for Outstanding Sound Mixing for a Variety Series or Special|Outstanding Sound Mixing for a Variety, Music, or Animation Series or Special]] (Patrick Baltzell, Robert Douglass, Edward J. Greene, Jamie Santos, and Tom Vicari).<ref>{{cite news|title=The complete list of winners |url=https://www.latimes.com/archives/la-xpm-2006-aug-28-et-list28-story.html |access-date=April 5, 2014 |work=Los Angeles Times  |date=August 28, 2006 |url-status=live |archive-url=https://web.archive.org/web/20140424035727/http://articles.latimes.com/2006/aug/28/entertainment/et-list28 |archive-date=April 24, 2014 }}</ref>
+
+=="In Memoriam"==
+The annual "In Memoriam": tribute was presented by actor [[George Clooney]]. The montage featured an excerpt of the theme from ''[[Now, Voyager]]'' composed by [[Max Steiner]].<ref>{{cite news|last1=Burlingame |first1=John |title=Santaolalla scores, Three 6 Mafia raps up at Academy Awards |url=http://www.filmmusicsociety.org/news_events/features/2006/030606.html?isArchive=030606 |access-date=May 25, 2014 |publisher=The Film Music Society |date=March 6, 2006 |url-status=live |archive-url=https://web.archive.org/web/20060416080743/http://www.filmmusicsociety.org/news_events/features/2006/030606.html?IsArchive=030606 |archive-date=April 16, 2006 }}</ref>
+{{div col|colwidth=22em}}
+*[[Teresa Wright]] – Actress
+*[[Pat Morita|Noriyuki "Pat" Morita]] – Actor, comedian
+*[[Robert Newmyer|Robert F. Newmyer]] – Producer
+*[[Dan O'Herlihy]] – Actor
+*[[Vincent Schiavelli]] – Character actor
+*[[Joe Ranft]] – Writer, voice actor
+*[[Moira Shearer]] – Ballet dancer, actress
+*[[Fayard Nicholas]] – Choreographer, dancer
+*[[Joel Hirschhorn]] – Composer
+*[[Sandra Dee]] – Actress
+*[[John Fiedler]] – Actor, voice actor
+*[[Anthony Franciosa]] – Actor
+*[[Stu Linder]] – Editor
+*[[Barbara Bel Geddes]] – Actress
+*[[Moustapha Akkad]] – Producer
+*[[Chris Penn]] – Actor
+*[[John Mills]] – Actor
+*[[Robert Knudson|Robert "Buzz" Knudson]] – Re-recording mixer
+*[[Simone Simon]] – Actress
+*[[Debra Hill]] – Producer
+*[[Onna White]] – Choreographer
+*Robert J. Schiffer – Makeup artist
+*[[Guy Green (filmmaker)|Guy Green]] – Cinematographer, director
+*[[Brock Peters]] – Actor
+*[[Ernest Lehman]] – Writer
+*[[Shelley Winters]] – Actress
+*[[Anne Bancroft]] – Actress
+*[[John Box]] – Production designer
+*[[Eddie Albert]] – Actor
+*[[Ismail Merchant]] – Producer
+*[[Robert Wise]] – Director
+*[[Richard Pryor]] – Stand-up comedian, actor
+{{div col end}}
+
+==See also==
+
+* [[12th Screen Actors Guild Awards]]
+* [[26th Golden Raspberry Awards]]
+* [[48th Grammy Awards]]
+* [[58th Primetime Emmy Awards]]
+* [[59th British Academy Film Awards]]
+* [[60th Tony Awards]]
+* [[63rd Golden Globe Awards]]
+* [[List of submissions to the 78th Academy Awards for Best Foreign Language Film]]
+
+== Notes ==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+==Bibliography==
+{{Refbegin}}
+*{{Cite book
+ |last=Osborne
+ |first=Robert
+ |title=80 Years of the Oscar: The Complete History of the Academy Awards
+ |year=2008
+ |isbn=978-0-7892-0992-4
+ |location=New York
+ |publisher=[[Abbeville Publishing Group]]
+ }}
+* {{Cite book
+ |last=Terrance
+ |first=Vincent
+ |title=Television Specials: 5,336 Entertainment Programs, 1936–2012
+ |year=2013
+ |isbn=978-1-4766-1240-9
+ |location=Jefferson, North Carolina
+ |edition=5
+ |oclc=844373010
+ |publisher=[[Ballantine Books]], [[McFarland & Company]]
+ }}
+
+{{refend}}
+
+==External links==
+{{Wikinews|Nominations announced for 78th Academy Awards | Oscar Winners 2006}}
+* [http://oscar.go.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20140909025935/http://oscar.go.com/ |date=September 9, 2014 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/user/Oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20190226082028/https://www.youtube.com/user/Oscars |date=February 26, 2019 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+;News resources
+* [https://news.bbc.co.uk/2/hi/in_depth/entertainment/2006/oscars_2006/default.stm Oscars 2006]  [[BBC News]]
+* [http://www.cnn.com/SPECIALS/2006/academy.awards/ Academy Awards coverage] {{Webarchive|url=https://web.archive.org/web/20150924190430/http://www.cnn.com/SPECIALS/2006/academy.awards/ |date=September 24, 2015 }} [[CNN]]
+* [https://www.nytimes.com/pages/movies/redcarpet/ Oscars 2006 - The Academy Awards] {{Webarchive|url=https://web.archive.org/web/20170616054040/http://www.nytimes.com/pages/movies/redcarpet/ |date=June 16, 2017 }} ''[[The New York Times]]''
+
+;Analysis
+* [http://www.filmsite.org/aa05.html 2005 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20150905112838/http://www.filmsite.org/aa05.html |date=September 5, 2015 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/2006 Academy Awards, USA: 2006] {{Webarchive|url=https://web.archive.org/web/20171028075756/http://www.imdb.com/event/ev0000003/2006 |date=October 28, 2017 }} Internet Movie Database
+
+;Other resources
+* {{IMDb title|0497318|The 78th Annual Academy Awards}}
+
+{{Academy Awards}}
+{{EmmyAward MainTitleDesign}}
+
+{{DEFAULTSORT:Academy Awards, 78}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2005 film awards]]
+[[Category:2006 in Los Angeles]]
+[[Category:2006 in American cinema]]
+[[Category:2006 awards in the United States]]
+[[Category:March 2006 in the United States]]
+[[Category:Television shows directed by Louis J. Horvitz]]

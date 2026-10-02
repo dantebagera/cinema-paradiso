@@ -8,6 +8,22 @@ import app
 
 
 class StartupBackgroundOwnershipTest(unittest.TestCase):
+    def test_awards_test_mode_has_no_automatic_source_reads_or_worker(self):
+        with patch('app.MovieAwardsRefresh') as refresh, patch('app.RuntimeAwardsSources') as sources:
+            app._start_movie_awards_refresh()
+        refresh.assert_not_called();sources.assert_not_called()
+
+    def test_awards_start_once_and_shutdown_stop_only_owned_worker(self):
+        old=app._movie_awards_refresh_instance
+        try:
+            app._movie_awards_refresh_instance=None
+            with patch.object(app,'_TEST_MODE',False),patch('app.MovieAwardsRefresh') as refresh,patch('app.RuntimeAwardsSources'):
+                app._start_movie_awards_refresh();app._start_movie_awards_refresh()
+                refresh.assert_called_once();refresh.return_value.start.assert_called_once()
+                app._stop_movie_awards_refresh();app._stop_movie_awards_refresh()
+                refresh.return_value.stop.assert_called_once()
+        finally:app._movie_awards_refresh_instance=old
+
     def setUp(self):
         if os.environ.get("CP_TEST_MODE") != "1":
             raise RuntimeError("Startup ownership tests require CP_TEST_MODE=1")
@@ -38,7 +54,7 @@ class StartupBackgroundOwnershipTest(unittest.TestCase):
         reconcile.assert_called_once_with()
         observer.return_value.start.assert_called_once_with()
         catchup.assert_called_once()
-        self.assertEqual(thread.call_count, 2)
+        self.assertEqual(thread.call_count, 3)
         timer.assert_not_called()
         asset_service.assert_not_called()
         self.assertEqual(

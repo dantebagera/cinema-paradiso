@@ -1,0 +1,380 @@
+{{oscars short description|films-year=1960}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number = 33
+| award = Academy Awards
+| image = 33rd Academy Awards.jpg
+| caption = Official poster
+| date = April 17, 1961
+| site = [[Santa Monica Civic Auditorium]], [[Santa Monica, California]]
+| host = [[Bob Hope]]
+| producer = [[Arthur Freed]]
+| director = Richard Dunlap
+| best_picture = ''[[The Apartment]]''
+| most_wins = ''The Apartment'' (5)
+| most_nominations = ''The Apartment'' (10)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 
+| last = 32nd
+| next = 34th
+}}
+
+The '''33rd Academy Awards''', honoring the [[1960 in film|best in film for 1960]], were held on April 17, 1961, hosted by [[Bob Hope]] at the [[Santa Monica Civic Auditorium]] in [[Santa Monica, California]]. This was the first ceremony to be aired on [[American Broadcasting Company|ABC television]], which has aired the Academy Awards ever since (except between 1971 and 1975, when they were aired on [[National Broadcasting Company|NBC]] for the first time since [[32nd Academy Awards|the previous year]]).<ref name="Oscars '60 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/842/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=843 |isbn=0-385-04060-1}}</ref>
+
+[[Billy Wilder]]'s ''[[The Apartment]]'' won Best Picture, the last black-and-white film to do so until ''[[Schindler's List]]'' and ''[[The Artist (film)|The Artist]]'' at the [[66th Academy Awards|66th]] and [[84th Academy Awards]], respectively.
+
+[[Elizabeth Taylor]], who had a near-fatal bout with pneumonia a short time before the ceremony, was viewed as having received her Oscar out of sympathy rather than for her performance in ''[[Butterfield 8|BUtterfield 8]]''.<ref name="Oscars '60 Notes"/>
+
+[[Gary Cooper]] was selected by the Academy Board of Governors to receive an [[Academy Honorary Award]] "for his many memorable screen performances and the international recognition he, as an individual, has gained for the motion picture industry". Cooper was too ill to attend the ceremony, though his condition was not publicly disclosed; [[James Stewart]], a close friend of Cooper, accepted the Oscar on his behalf. Stewart's emotional speech hinted that something was seriously wrong, and the following day newspapers ran the headline, "Gary Cooper has cancer". Cooper died less than four weeks later.
+
+Rising star [[Hayley Mills]] was selected by the Academy Board of Governors as the year's recipient of the [[Academy Juvenile Award]] for her breakthrough and acclaimed performance in [[Walt Disney]]'s ''[[Pollyanna (1960 film)|Pollyanna]]''. She was the last recipient of the award; going forward, juvenile actors could officially compete in competitive categories. This was the first year a [[red carpet]] lined the walk into the theater.<ref>{{Cite news |author=Daniel Miller |date=February 24, 2017 |url=https://www.latimes.com/business/hollywood/la-fi-ct-oscars-red-carpet-20170224-htmlstory.html|title=The red carpet isn't actually red, and other secrets underfoot at the Oscars|work=Los Angeles Times|access-date=2018-04-18}}</ref>
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Gloria Swanson & Billy Wilder - ca. 1950.JPG
+| caption1          = [[Billy Wilder]] (right); Best Picture and Best Director winner and Best Story and Screenplay Written Directly for the Screen co-winner
+| image2            = Burt Lancaster - publicity 1947.JPG
+| caption2          = [[Burt Lancaster]]; Best Actor winner
+| image3            = Elizabeth Taylor, late 1950s.jpg
+| caption3          = [[Elizabeth Taylor]]; Best Actress winner
+| image4            = Sir Peter Ustinov portrait Allan Warren.jpg
+| caption4          = [[Peter Ustinov]]; Best Supporting Actor winner
+| image5            = The Partridge Family Shirley Jones 1972.jpg
+| caption5          = [[Shirley Jones]]; Best Supporting Actress winner
+| image6            = RichardBrooks45.JPG
+| caption6          = [[Richard Brooks]]; Best Screenplay Based on Material from Another Medium winner
+| image7            = Bill Thomas (1951).jpg
+| caption7          = [[Bill Thomas (costume designer)|Bill Thomas]]; Best Costume Design, Color co-winner
+| image8            = Hayley Mills (2018).jpg
+| caption8          = [[Hayley Mills]]; Academy Juvenile Award recipient
+}}
+
+Nominees were announced on February 27, 1961. Winners are listed first and highlighted in boldface.<ref name="Oscars1961">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1961 |title=The 33rd Academy Awards (1961) Nominees and Winners |access-date=May 4, 2015 |work=oscars.org |date=October 5, 2014 |url-status=live |archive-url=https://web.archive.org/web/20151015234831/http://www.oscars.org/oscars/ceremonies/1961 |archive-date=October 15, 2015 }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*''' ''[[The Apartment]]'' – [[Billy Wilder]], producer'''
+**''[[The Alamo (1960 film)|The Alamo]]'' – [[John Wayne]], producer
+**''[[Elmer Gantry (film)|Elmer Gantry]]'' – [[Bernard Smith (editor)|Bernard Smith]], producer
+**''[[Sons and Lovers (film)|Sons and Lovers]]'' – [[Jerry Wald]], producer
+**''[[The Sundowners (1960 film)|The Sundowners]]'' – [[Fred Zinnemann]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*''' [[Billy Wilder]]&nbsp;– ''[[The Apartment]]'''''
+**[[Jules Dassin]]&nbsp;– ''[[Never on Sunday]]''
+**[[Alfred Hitchcock]]&nbsp;– ''[[Psycho (1960 film)|Psycho]]''
+**[[Jack Cardiff]]&nbsp;– ''[[Sons and Lovers (film)|Sons and Lovers]]''
+**[[Fred Zinnemann]]&nbsp;– ''[[The Sundowners (1960 film)|The Sundowners]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*''' [[Burt Lancaster]]&nbsp;– ''[[Elmer Gantry (film)|Elmer Gantry]]'' as Elmer Gantry'''
+**[[Trevor Howard]]&nbsp;– ''[[Sons and Lovers (film)|Sons and Lovers]]'' as Walter Morel
+**[[Jack Lemmon]]&nbsp;– ''[[The Apartment]]'' as Calvin Clifford "Bud" Baxter
+**[[Laurence Olivier]]&nbsp;– ''[[The Entertainer (1960 film)|The Entertainer]]'' as Archie Rice
+**[[Spencer Tracy]]&nbsp;– ''[[Inherit the Wind (1960 film)|Inherit the Wind]]'' as Henry Drummond
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*''' [[Elizabeth Taylor]]&nbsp;– ''[[BUtterfield 8]]'' as Gloria Wandrous'''
+**[[Greer Garson]]&nbsp;– ''[[Sunrise at Campobello]]'' as [[Eleanor Roosevelt]]
+**[[Deborah Kerr]]&nbsp;– ''[[The Sundowners (1960 film)|The Sundowners]]'' as Ida Carmody
+**[[Shirley MacLaine]]&nbsp;– ''[[The Apartment]]'' as Fran Kubelik
+**[[Melina Mercouri]]&nbsp;– ''[[Never on Sunday]]'' as Ilya
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*''' [[Peter Ustinov]]&nbsp;– ''[[Spartacus (film)|Spartacus]]'' as [[Lentulus Batiatus|Batiatus]]'''
+**[[Peter Falk]]&nbsp;– ''[[Murder, Inc. (1960 film)|Murder, Inc.]]'' as [[Abe Reles|Abe "Kid Twist" Reles]]
+**[[Jack Kruschen]]&nbsp;– ''[[The Apartment]]'' as Dr. Dreyfuss
+**[[Sal Mineo]]&nbsp;– ''[[Exodus (1960 film)|Exodus]]'' as Dov Landau
+**[[Chill Wills]]&nbsp;– ''[[The Alamo (1960 film)|The Alamo]]'' as Beekeeper
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*''' [[Shirley Jones]]&nbsp;– ''[[Elmer Gantry (film)|Elmer Gantry]]'' as Lulu Bains'''
+**[[Glynis Johns]]&nbsp;– ''[[The Sundowners (1960 film)|The Sundowners]]'' as Mrs. Firth
+**[[Shirley Knight]]&nbsp;– ''[[The Dark at the Top of the Stairs (film)|The Dark at the Top of the Stairs]]'' as Reenie Flood
+**[[Janet Leigh]]&nbsp;– ''[[Psycho (1960 film)|Psycho]]'' as [[Marion Crane]]
+**[[Mary Ure]]&nbsp;– ''[[Sons and Lovers (film)|Sons and Lovers]]'' as Clara Dawes
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+*''' ''[[The Apartment]]''&nbsp;– [[Billy Wilder]] and [[I. A. L. Diamond]]'''
+**''[[The Angry Silence]]''&nbsp;– [[Richard Gregson]], [[Michael Craig (actor)|Michael Craig]] and [[Bryan Forbes]]
+**''[[The Facts of Life (film)|The Facts of Life]]''&nbsp;– [[Melvin Frank]] and [[Norman Panama]]
+**''[[Hiroshima mon amour|Hiroshima, My Love]]''&nbsp;– [[Marguerite Duras]]
+**''[[Never on Sunday]]''&nbsp;– [[Jules Dassin]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*''' ''[[Elmer Gantry (film)|Elmer Gantry]]''&nbsp;– [[Richard Brooks]] based on [[Elmer Gantry|the novel]] by [[Sinclair Lewis]]'''
+**''[[Inherit the Wind (1960 film)|Inherit the Wind]]''&nbsp;– [[Nedrick Young]] and [[Harold Jacob Smith]] based on [[Inherit the Wind (play)|the play]] by [[Jerome Lawrence]] and [[Robert E. Lee (playwright)|Robert E. Lee]]
+**''[[Sons and Lovers (film)|Sons and Lovers]]''&nbsp;– [[Gavin Lambert]] and [[T. E. B. Clarke]] based on [[Sons and Lovers|the novel]] by [[D. H. Lawrence]]
+**''[[The Sundowners (1960 film)|The Sundowners]]''&nbsp;– [[Isobel Lennart]] based on [[The Sundowners (novel)|the novel]] by [[Jon Cleary]]
+**''[[Tunes of Glory]]''&nbsp;– [[James Kennaway]] based on his novel
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 33rd Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[The Virgin Spring]]'' ([[Sweden]])'''
+**''[[Kapo (1960 film)|Kapo]]'' ([[Italy]])
+**''[[Macario (film)|Macario]]'' ([[Mexico]])
+**''[[The Ninth Circle]]'' ([[Yugoslavia]])
+**''[[La Vérité (film)|La Vérité]]'' ([[France]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[The Horse with the Flying Tail]]''&nbsp;– [[Larry Lansburgh]]'''
+**''[[Rebel in Paradise (film)|Rebel in Paradise]]''&nbsp;– Robert D. Fraser
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Giuseppina]]''&nbsp;– [[James Hill (British director)|James Hill]]'''
+**''[[Beyond Silence (1960 film)|Beyond Silence]]''&nbsp;– [[United States Information Agency]]
+**''[[A City Called Copenhagen]]''&nbsp;– [[Danish Film Institute|Statens Filmcentral, The Danish Government Film Office]]
+**''[[George Grosz' Interregnum]]''&nbsp;– Charles Carey and [[Altina Schinasi|Altina Carey]]
+**''[[Universe (1960 film)|Universe]]''&nbsp;– [[Colin Low (filmmaker)|Colin Low]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[Day of the Painter]]''&nbsp;– Ezra R. Baker'''
+**''The Creation of Woman''&nbsp;– Charles F. Schwep and [[Ismail Merchant]]
+**''Islands of the Sea''&nbsp;– [[Walt Disney]]
+**''A Sport Is Born''&nbsp;– Leslie Winik
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Munro (film)|Munro]]''&nbsp;– [[William L. Snyder]]'''
+**''[[Goliath II]]''&nbsp;– [[Walt Disney]]
+**''[[High Note (film)|High Note]]''&nbsp;– [[Warner Bros. Pictures|Warner Bros.]]
+**''[[Mouse and Garden]]''&nbsp;– [[Warner Bros. Pictures|Warner Bros.]]
+**''A Place in the Sun''&nbsp;– František Vystrčil
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*'''''[[Exodus (1960 film)|Exodus]]''&nbsp;– [[Ernest Gold (composer)|Ernest Gold]]'''
+**''[[The Alamo (1960 film)|The Alamo]]''&nbsp;– [[Dimitri Tiomkin]]
+**''[[Elmer Gantry (film)|Elmer Gantry]]''&nbsp;– [[André Previn]]
+**''[[The Magnificent Seven]]''&nbsp;– [[Elmer Bernstein]]
+**''[[Spartacus (film)|Spartacus]]''&nbsp;– [[Alex North]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*''' ''[[Song Without End]]''&nbsp;– [[Morris Stoloff]] and [[Harry Sukman]]'''
+**''[[Bells Are Ringing (film)|Bells Are Ringing]]''&nbsp;– [[André Previn]]
+**''[[Can-Can (film)|Can-Can]]''&nbsp;– [[Nelson Riddle]]
+**''[[Let's Make Love]]''&nbsp;– [[Lionel Newman]] and [[Earle Hagen|Earle H. Hagen]]
+**''[[Pepe (1960 film)|Pepe]]''&nbsp;– [[Johnny Green]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[Never on Sunday (song)|Never on Sunday]]" from ''[[Never on Sunday]]''&nbsp;– Music and Lyrics by [[Manos Hatzidakis]]'''
+**"[[The Second Time Around (1960 song)|The Second Time Around]]" from ''[[High Time (film)|High Time]]''&nbsp;– Music by [[Jimmy Van Heusen]] and Lyrics by [[Sammy Cahn]]
+**"Faraway Part of Town" from ''[[Pepe (1960 film)|Pepe]]''&nbsp;– Music by [[André Previn]]; Lyrics by [[Dory Previn]]
+**"[[The Green Leaves of Summer]]" from ''[[The Alamo (1960 film)|The Alamo]]''&nbsp;– Music by [[Dimitri Tiomkin]]; Lyrics by [[Paul Francis Webster]]
+**"The Facts of Life" from ''[[The Facts of Life (film)|The Facts of Life]]''&nbsp;– Music and Lyrics by [[Johnny Mercer]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[The Alamo (1960 film)|The Alamo]]''&nbsp;– [[Gordon E. Sawyer]] and [[Fred Hynes]]'''
+**''[[The Apartment]]''&nbsp;– [[Gordon E. Sawyer]]
+**''[[Cimarron (1960 film)|Cimarron]]''&nbsp;– [[Franklin Milton]]
+**''[[Pepe (1960 film)|Pepe]]''&nbsp;– [[Charles Rice (sound engineer)|Charles Rice]]
+**''[[Sunrise at Campobello]]''&nbsp;– [[George Groves (sound engineer)|George Groves]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*''' ''[[The Apartment]]''&nbsp;– Art Direction: [[Alexandre Trauner]]; Set Decoration: [[Edward G. Boyle]]'''
+**''[[The Facts of Life (film)|The Facts of Life]]''&nbsp;– Art Direction: [[Joseph McMillan Johnson]] and [[Kenneth A. Reid]]; Set Decoration: [[Ross Dowd]]
+**''[[Psycho (1960 film)|Psycho]]''&nbsp;– Art Direction: [[Joseph Hurley (art director)|Joseph Hurley]] and [[Robert Clatworthy (art director)|Robert Clatworthy]]; Set Decoration: [[George Milo]]
+**''[[Sons and Lovers (film)|Sons and Lovers]]''&nbsp;– Art Direction: [[Thomas N. Morahan]]; Set Decoration: [[Lionel Couch]]
+**''[[Visit to a Small Planet]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Walter H. Tyler|Walter Tyler]]; Set Decoration: [[Samuel M. Comer]] and [[Arthur Krams]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*''' ''[[Spartacus (film)|Spartacus]]''&nbsp;– Art Direction: [[Alexander Golitzen]] and [[Eric Orbom]] ([[List of posthumous Academy Award winners and nominees|posthumous award]]); Set Decoration: [[Russell A. Gausman]] and [[Julia Heron]]'''
+**''[[Cimarron (1960 film)|Cimarron]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]] and [[Addison Hehr]]; Set Decoration: [[Henry Grace]], [[Hugh Hunt]] and [[Otto Siegel]]
+**''[[It Started in Naples]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Roland Anderson]]; Set Decoration: [[Samuel M. Comer]] and [[Arrigo Breschi]]
+**''[[Pepe (1960 film)|Pepe]]''&nbsp;– Art Direction: [[Ted Haworth]]; Set Decoration: [[William Kiernan]]
+**''[[Sunrise at Campobello]]''&nbsp;– Art Direction: [[Edward Carrere]]; Set Decoration: [[George James Hopkins]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[Sons and Lovers (film)|Sons and Lovers]]''&nbsp;– [[Freddie Francis]]'''
+**''[[The Apartment]]''&nbsp;– [[Joseph LaShelle]]
+**''[[The Facts of Life (film)|The Facts of Life]]''&nbsp;– [[Charles Lang]]
+**''[[Inherit the Wind (1960 film)|Inherit the Wind]]''&nbsp;– [[Ernest Laszlo]]
+**''[[Psycho (1960 film)|Psycho]]''&nbsp;– [[John L. Russell (cinematographer)|John L. Russell]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[Spartacus (film)|Spartacus]]''&nbsp;– [[Russell Metty]]'''
+**''[[The Alamo (1960 film)|The Alamo]]''&nbsp;– [[William H. Clothier]]
+**''[[BUtterfield 8]]''&nbsp;– [[Joseph Ruttenberg]] and Charles Harten
+**''[[Exodus (1960 film)|Exodus]]''&nbsp;– [[Sam Leavitt (cinematographer)|Sam Leavitt]]
+**''[[Pepe (1960 film)|Pepe]]''&nbsp;– [[Joseph MacDonald (cinematographer)|Joseph MacDonald]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+*''' ''[[The Facts of Life (film)|The Facts of Life]]''&nbsp;– [[Edith Head]] and [[Edward Stevenson (costume designer)|Edward Stevenson]]'''
+**''[[Never on Sunday]]''&nbsp;– Deni Vachlioti
+**''[[The Rise and Fall of Legs Diamond]]''&nbsp;– [[Howard Shoup]]
+**''[[Seven Thieves]]''&nbsp;– [[Bill Thomas (costume designer)|Bill Thomas]]
+**''[[The Virgin Spring]]''&nbsp;– [[Marik Vos-Lundh|Marik Vos]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+*'''''[[Spartacus (film)|Spartacus]]''&nbsp;– [[Bill Thomas (costume designer)|Bill Thomas]] and [[Arlington Valles|Valles]]'''
+**''[[Can-Can (film)|Can-Can]]''&nbsp;– [[Irene Sharaff]]
+**''[[Midnight Lace]]''&nbsp;– [[Irene (costume designer)|Irene Lentz]]
+**''[[Pepe (1960 film)|Pepe]]''&nbsp;– [[Edith Head]]
+**''[[Sunrise at Campobello]]''&nbsp;– [[Marjorie Best]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[The Apartment]]''&nbsp;– [[Daniel Mandell]]'''
+**''[[The Alamo (1960 film)|The Alamo]]''&nbsp;– [[Stuart Gilmore]]
+**''[[Inherit the Wind (1960 film)|Inherit the Wind]]''&nbsp;– [[Frederic Knudtson]]
+**''[[Pepe (1960 film)|Pepe]]''&nbsp;– [[Viola Lawrence]] and [[Al Clark (film editor)|Al Clark]]
+**''[[Spartacus (film)|Spartacus]]''&nbsp;– [[Robert Lawrence (film editor)|Robert Lawrence]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*'''''[[The Time Machine (1960 film)|The Time Machine]]''&nbsp;– [[Gene Warren]] and [[Tim Baar]]'''
+**''[[The Last Voyage]]''&nbsp;– [[Augie Lohman]]
+|}
+
+===Honorary Awards===
+*To [[Gary Cooper]] for his many memorable screen performances and the international recognition he, as an individual, has gained for the motion picture industry.
+*To [[Stan Laurel]] for his creative pioneering in the field of cinema comedy.
+*To [[Hayley Mills]] for ''[[Pollyanna (1960 film)|Pollyanna]]'', the most outstanding juvenile performance during 1960.
+
+===Jean Hersholt Humanitarian Award===
+*[[Sol Lesser]]
+
+==Presenters and performers==
+{{More citations needed section|date=September 2015}}
+
+===Presenters===
+*[[Steve Allen]] and [[Jayne Meadows]] (Presenters: Best Song)
+*[[Polly Bergen]] and [[Richard Widmark]] (Presenters: Best Special Effects)
+*[[Yul Brynner]] (Presenter: Best Actress)
+*[[Kitty Carlisle]] and [[Moss Hart]] (Presenters: Writing Awards)
+*[[Cyd Charisse]] and [[Tony Martin (American singer)|Tony Martin]] (Presenters: Cinematography Awards)
+*[[Betty Comden]] and [[Adolph Green]] (Presenters: Best Film Editing)
+*[[Wendell Corey]] and [[Susan Strasberg]] (Presenters: Short Subjects Awards)
+*[[Tony Curtis]] and [[Janet Leigh]] (Presenters: Documentary Awards)
+*[[Bobby Darin]] and [[Sandra Dee]] (Presenters: Music Awards)
+*[[Greer Garson]] (Presenter: Best Actor)
+*[[Hugh Griffith]] (Presenter: Best Supporting Actress)
+*[[Audrey Hepburn]] (Presenter: Best Motion Picture)
+*[[Jim Hutton]] and [[Paula Prentiss]] (Presenters: Best Sound)
+*[[Eric Johnston]] (Presenter: Best Foreign Language Film)
+*[[Danny Kaye]] (Presenter: Honorary Award to Stan Laurel)
+*[[Gina Lollobrigida]] (Presenter: Best Director)
+*[[Tina Louise]] and [[Tony Randall]] (Presenters: Art Direction Awards)
+*[[Barbara Rush]] and [[Robert Stack]] (Presenters: Costume Design Awards)
+*[[Eva Marie Saint]] (Presenter: Best Supporting Actor)
+*[[Shirley Temple]] (Presenter: Juvenile Award to Hayley Mills)
+*[[William Wyler]] (Presenter: Honorary Award to Gary Cooper)
+
+===Performers===
+*[[The Brothers Four]] ("The Green Leaves of Summer" from ''[[The Alamo (1960 film)|The Alamo]]'')
+*[[Connie Francis]] ("[[Never on Sunday (song)|Never on Sunday]]" from ''[[Never on Sunday]]'')
+*[[The Hi-Lo's]] ("The Facts of Life" from ''[[The Facts of Life (film)|The Facts of Life]]'')
+*[[Jane Morgan]] ("The Second Time Around" from ''[[High Time (film)|High Time]]'')
+*[[Sarah Vaughan]] ("The Faraway Part of Town" from ''[[Pepe (1960 film)|Pepe]]'')
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 10
+| ''[[The Apartment]]''
+|-
+| rowspan="3" style="text-align:center" | 7
+| ''[[The Alamo (1960 film)|The Alamo]]''
+|-
+| ''[[Pepe (1960 film)|Pepe]]''
+|-
+| ''[[Sons and Lovers (film)|Sons and Lovers]]''
+|-
+| rowspan="1" style="text-align:center" | 6
+| ''[[Spartacus (film)|Spartacus]]''
+|-
+| rowspan="4" style="text-align:center" | 5
+| ''[[Elmer Gantry (film)|Elmer Gantry]]''
+|-
+| ''[[The Facts of Life (film)|The Facts of Life]]''
+|-
+| ''[[Never on Sunday]]''
+|-
+| ''[[The Sundowners (1960 film)|The Sundowners]]''
+|-
+| rowspan="3" style="text-align:center" | 4
+| ''[[Inherit the Wind (1960 film)|Inherit the Wind]]''
+|-
+| ''[[Psycho (1960 film)|Psycho]]''
+|-
+| ''[[Sunrise at Campobello]]''
+|-
+| rowspan="1" style="text-align:center" | 3
+| ''[[Exodus (1960 film)|Exodus]]''
+|-
+| rowspan="4" style="text-align:center" | 2
+| ''[[BUtterfield 8]]''
+|-
+| ''[[Can-Can (film)|Can-Can]]''
+|-
+| ''[[Cimarron (1960 film)|Cimarron]]''
+|-
+| ''[[The Virgin Spring]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 5
+| ''[[The Apartment]]''
+|-
+| rowspan="1" style="text-align:center" | 4
+| ''[[Spartacus (film)|Spartacus]]''
+|-
+| rowspan="1" style="text-align:center" | 3
+| ''[[Elmer Gantry (film)|Elmer Gantry]]''
+|}
+
+{{col-float-end}}
+
+== See also ==
+*[[18th Golden Globe Awards]]
+*[[1960 in film]]
+* [[3rd Grammy Awards]]
+* [[12th Primetime Emmy Awards]]
+* [[13th Primetime Emmy Awards]]
+* [[14th British Academy Film Awards]]
+* [[15th Tony Awards]]
+
+==References==
+{{reflist}}
+
+== External links ==
+*[https://www.imdb.com/title/tt0324953/ The 33rd Annual Academy Awards] at [[IMDb]]
+*[http://www.infoplease.com/ipa/A0148833.html List of winners] at Infoplease
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 33}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1960 film awards]]
+[[Category:1960 awards in the United States]]
+[[Category:1961 in California]]
+[[Category:1961 in American cinema]]
+[[Category:April 1961 in the United States]]
+[[Category:20th century in Santa Monica, California]]
+[[Category:Organized events in Santa Monica, California]]

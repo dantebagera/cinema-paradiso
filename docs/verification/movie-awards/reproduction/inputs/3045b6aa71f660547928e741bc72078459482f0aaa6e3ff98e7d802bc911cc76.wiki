@@ -1,0 +1,402 @@
+{{oscars short description|films-year=1963}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number = 36
+| award = Academy Awards
+| image = 36th Academy Awards.jpg
+| caption = Official pamphlet cover
+| date = April 13, 1964
+| site = [[Santa Monica Civic Auditorium]]<br>[[Santa Monica, California|Santa Monica]], California, U.S.
+| host = [[Jack Lemmon]]
+| producer = Richard Dunlap<br>[[George Sidney]]
+| director = Richard Dunlap
+| best_picture = ''[[Tom Jones (1963 film)|Tom Jones]]''
+| most_wins = ''[[Cleopatra (1963 film)|Cleopatra]]'' and ''Tom Jones'' (4)
+| most_nominations = ''Tom Jones'' (10)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 
+| last = 35th
+| next = 37th
+}}
+
+The '''36th Academy Awards''', honoring the [[1963 in film|best in film for 1963]], were held on April 13, 1964, hosted by [[Jack Lemmon]] at the [[Santa Monica Civic Auditorium]] in [[Santa Monica, California]]. This ceremony introduced the category for [[Academy Award for Best Sound Editing|Best Sound Effects]], with ''[[It's a Mad, Mad, Mad, Mad World]]'' being the first film to win the award.
+
+[[Academy Award for Best Picture|Best Picture]] winner ''[[Tom Jones (1963 film)|Tom Jones]]'' is the only film to date to receive three [[Academy Award for Best Supporting Actress|Best Supporting Actress]] nominations; it also tied the Oscar record of five unsuccessful acting nominations, set by ''[[Peyton Place (film)|Peyton Place]]'' at the [[30th Academy Awards]].
+
+[[Patricia Neal]] won [[Academy Award for Best Actress|Best Actress]] for her role in ''[[Hud (1963 film)|Hud]]'', despite having a relatively small amount of screen time.<ref>According to screentimecentral.com, Neal's screen time was less than 22 minutes and represented less than 20% of the film. {{cite web |last1=Stewart |first1=Matthew A. |title=Shortest Oscar-nominated performances |url=https://www.screentimecentral.com/shortest-oscar-nominated-performances |website=Screen Time Central |access-date=2025-06-06}}</ref>  [[Melvyn Douglas]] won [[Academy Award for Best Supporting Actor|Best Supporting Actor]] for the same film, making it the second and, to date, last film to win two acting awards without being nominated for Best Picture (the other being ''[[The Miracle Worker (1962 film)|The Miracle Worker]]'' the [[35th Academy Awards|previous year]]).
+
+At age 71, [[Margaret Rutherford]] set a then-record as the oldest winner for [[Academy Award for Best Supporting Actress|Best Supporting Actress]], a year after [[Patty Duke]] set a then-record as the youngest winner. Rutherford was also only the second Oscar winner over the age of 70 (the other was [[Edmund Gwenn]]), as well as the last person born in the 19th century to win an acting Oscar. This was the only year in Academy history that all Best Supporting Actress nominees were born outside the United States.
+
+[[Sidney Poitier]] became the first [[African American]] actor to win [[Academy Award for Best Actor|Best Actor]], and was the only winner in an acting category present at the ceremony, as all the other winners were abroad.<ref name="Oscars '63 Notes"/> Upon receiving the wrong envelope, [[Sammy Davis Jr.]] remarked, "wait until the [[NAACP]] hears about this!"<ref name="Oscars '63 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/842/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=843 |isbn=0-385-04060-1}}</ref> 
+
+''[[An Occurrence at Owl Creek Bridge (film)|An Occurrence at Owl Creek Bridge]]'' was the first Oscar-winning film to have aired on network television prior to the ceremony.
+
+==Awards==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Sidney Poitier 1968.jpg
+| caption1          = [[Sidney Poitier]], Best Actor winner
+| image2            = Patricia Neal - 1952.jpg
+| caption2          = [[Patricia Neal]], Best Actress winner
+| image3            = Melvyn Douglas in the 1930s - press photograph (cropped).jpg
+| caption3          = [[Melvyn Douglas]], Best Supporting Actor winner
+| image4            = Dame Margaret Rutherford 1960 publicity photo.jpg
+| caption4          = [[Margaret Rutherford]], Best Supporting Actress winner
+| image5            = 
+| caption5          = [[John Osborne]], Best Screenplay Based on Material from Another Medium winner
+| image6            = 
+| caption6          = [[John Addison]], Best Music Score – Substantially Original winner
+| image7            = André Previn.jpg
+| caption7          = [[André Previn]], Best Scoring of Music — Adaptation or Treatment winner
+| image8            = Jimmy Van Heusen (2).jpg
+| caption8          = [[Jimmy Van Heusen]], Best Song co-winner
+| image9            = Sammy Cahn 1950s.JPG
+| caption9          = [[Sammy Cahn]], Best Song co-winner
+| image10           = James Wong Howe Best Cinematography (cropped).jpg
+| caption10         = [[James Wong Howe]], Best Cinematography, Black-and-White winner
+| image11           = Renié-John H. Auer in Pan-Americana.jpg
+| caption11         = [[Renié]] (left), Best Costume Design, Color co-winner
+}}
+
+Nominations announced on February 24, 1964. Winners are listed first and highlighted in boldface.<ref name="Oscars1964">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1964 |title=The 36th Academy Awards (1964) Nominees and Winners |access-date=May 4, 2015 |work=oscars.org |date=October 5, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150502002917/http://www.oscars.org/oscars/ceremonies/1964 |archive-date=May 2, 2015 }}</ref>
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Tom Jones (1963 film)|Tom Jones]]'' – [[Tony Richardson]], producer'''
+**''[[America America]]'' – [[Elia Kazan]], producer
+**''[[Cleopatra (1963 film)|Cleopatra]]'' – [[Walter Wanger]], producer
+**''[[How the West Was Won (film)|How the West Was Won]]'' – [[Bernard Smith (editor)|Bernard Smith]], producer
+**''[[Lilies of the Field (1963 film)|Lilies of the Field]]'' – [[Ralph Nelson]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Tony Richardson]]&nbsp;– ''[[Tom Jones (1963 film)|Tom Jones]]'''''
+**[[Federico Fellini]]&nbsp;– ''[[8½]]''
+**[[Elia Kazan]]&nbsp;– ''[[America America]]''
+**[[Otto Preminger]]&nbsp;– ''[[The Cardinal]]''
+**[[Martin Ritt]]&nbsp;– ''[[Hud (1963 film)|Hud]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Sidney Poitier]]&nbsp;– ''[[Lilies of the Field (1963 film)|Lilies of the Field]]'' as Homer Smith'''
+**[[Albert Finney]]&nbsp;– ''[[Tom Jones (1963 film)|Tom Jones]]'' as Tom Jones
+**[[Richard Harris]]&nbsp;– ''[[This Sporting Life]]'' as Frank Machin
+**[[Rex Harrison]]&nbsp;– ''[[Cleopatra (1963 film)|Cleopatra]]'' as [[Julius Caesar]]
+**[[Paul Newman]]&nbsp;– ''[[Hud (1963 film)|Hud]]'' as Hud Bannon
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Patricia Neal]]&nbsp;– ''[[Hud (1963 film)|Hud]]'' as Alma Brown'''
+**[[Leslie Caron]]&nbsp;– ''[[The L-Shaped Room]]'' as Jane Fosset
+**[[Shirley MacLaine]]&nbsp;– ''[[Irma la Douce]]'' as Irma la Douce
+**[[Rachel Roberts (actress)|Rachel Roberts]]&nbsp;– ''[[This Sporting Life]]'' as Margaret Hammond
+**[[Natalie Wood]]&nbsp;– ''[[Love with the Proper Stranger]]'' as Angie Rossini
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Melvyn Douglas]]&nbsp;– ''[[Hud (1963 film)|Hud]]'' as Homer Bannon'''
+**[[Nick Adams (actor, born 1931)|Nick Adams]]&nbsp;– ''[[Twilight of Honor]]'' as Ben Brown
+**[[Bobby Darin]]&nbsp;– ''[[Captain Newman, M.D.]]'' as Corporal Jim Tompkins, USAAF
+**[[Hugh Griffith]]&nbsp;– ''[[Tom Jones (1963 film)|Tom Jones]]'' as Squire Western
+**[[John Huston]]&nbsp;– ''[[The Cardinal]]'' as Cardinal Glennon
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Margaret Rutherford]]&nbsp;– ''[[The V.I.P.s (film)|The V.I.P.s]]'' as the Duchess of Brighton'''
+**[[Diane Cilento]]&nbsp;– ''[[Tom Jones (1963 film)|Tom Jones]]'' as Molly Seagrim
+**[[Edith Evans]]&nbsp;– ''[[Tom Jones (1963 film)|Tom Jones]]'' as Miss Western
+**[[Joyce Redman]]&nbsp;– ''[[Tom Jones (1963 film)|Tom Jones]]'' as Mrs. Waters/Jenny Jones
+**[[Lilia Skala]]&nbsp;– ''[[Lilies of the Field (1963 film)|Lilies of the Field]]'' as Mother Maria
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+*'''''[[How the West Was Won (film)|How the West Was Won]]''&nbsp;– [[James R. Webb]]'''
+**''[[8½]]''&nbsp;– [[Federico Fellini]], [[Ennio Flaiano]], [[Tullio Pinelli]], and [[Brunello Rondi]]
+**''[[America America]]''&nbsp;– [[Elia Kazan]]
+**''[[The Four Days of Naples (film)|The Four Days of Naples]]''&nbsp;– Screenplay by [[Carlo Bernari]], [[Pasquale Festa Campanile]], [[Massimo Franciosa]], and [[Nanni Loy]]; Story by [[Pasquale Festa Campanile]], [[Massimo Franciosa]], [[Nanni Loy]], and [[Vasco Pratolini]]
+**''[[Love with the Proper Stranger]]''&nbsp;– [[Arnold Schulman]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*'''''[[Tom Jones (1963 film)|Tom Jones]]''&nbsp;– [[John Osborne]] based on the novel ''[[The History of Tom Jones, a Foundling]]'' by [[Henry Fielding]]'''
+**''[[Captain Newman, M.D.]]''&nbsp;– [[Richard L. Breen]], [[Phoebe Ephron]], and [[Henry Ephron]] based on the novel by [[Leo Rosten]]
+**''[[Hud (1963 film)|Hud]]''&nbsp;– [[Irving Ravetch]] and [[Harriet Frank Jr.]] based on the novel ''[[Horseman, Pass By]]'' by [[Larry McMurtry]]
+**''[[Lilies of the Field (1963 film)|Lilies of the Field]]''&nbsp;– [[James Poe]] based on [[The Lilies of the Field (novel)|the novel]] by [[William E. Barrett (author)|William E. Barrett]]
+**''[[Sundays and Cybele]]''&nbsp;– Antoine Tudal and [[Serge Bourguignon]] based on the novel [[Les Dimanches de Ville d'Avray]] by Bernard Eschassériaux
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[8½]]'' ([[Italy]])'''
+**''[[Knife in the Water]]'' ([[Poland]])
+**''[[The Red Lanterns]]'' ([[Greece]])
+**''[[Los Tarantos]]'' ([[Spain]])
+**''[[Twin Sisters of Kyoto]]'' ([[Japan]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Robert Frost: A Lover's Quarrel with the World]]''&nbsp;– Robert Hughes'''
+**''[[The Link and the Chain|Le Maillon et la Chaine]]''&nbsp;– Paul de Roubaix
+**''[[The Yanks Are Coming (1963 film)|The Yanks Are Coming]]''&nbsp;– [[Marshall Flaum]]
+**<s>''[[Terminus (1961 film)|Terminus]]''&nbsp;– [[Edgar Anstey]]</s> (nomination revoked)
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Chagall (film)|Chagall]]''&nbsp;– Simon Schiffrin'''
+**''[[The Five Cities of June]]''&nbsp;– [[George Stevens Jr.]]
+**''[[The Spirit of America]]''&nbsp;– Algernon G. Walker
+**''[[Thirty Million Letters]]''&nbsp;– [[Edgar Anstey]]
+**''[[To Live Again (film)|To Live Again]]''&nbsp;– Mel London
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[An Occurrence at Owl Creek Bridge (film)|An Occurrence at Owl Creek Bridge]]''&nbsp;– Paul de Roubaix and [[Marcel Ichac]]'''
+**''The Concert''&nbsp;– Ezra Baker
+**''[[The Home-Made Car]]''&nbsp;– [[James Hill (British director)|James Hill]]
+**''[[The Six-Sided Triangle]]''&nbsp;– [[Christopher Miles]]
+**''[[That's Me (film)|That's Me]]''&nbsp;– Walker Stuart
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[The Critic (1963 film)|The Critic]]''&nbsp;– [[Ernest Pintoff]]'''
+**''Automania 2000''&nbsp;– [[John Halas]]
+**''The Game''&nbsp;– [[Dušan Vukotić]]
+**''[[My Financial Career]]''&nbsp;– [[Colin Low (filmmaker)|Colin Low]] and [[Tom Daly (filmmaker)|Tom Daly]]
+**''Pianissimo''&nbsp;– [[Carmen D'Avino]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score -- Substantially Original)]]}}
+*'''''[[Tom Jones (1963 film)|Tom Jones]]''&nbsp;– [[John Addison]]'''
+**''[[55 Days at Peking]]''&nbsp;– [[Dimitri Tiomkin]]
+**''[[Cleopatra (1963 film)|Cleopatra]]''&nbsp;– [[Alex North]]
+**''[[How the West Was Won (film)|How the West Was Won]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]] and [[Ken Darby]]
+**''[[It's a Mad, Mad, Mad, Mad World]]''&nbsp;– [[Ernest Gold (composer)|Ernest Gold]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of Music -- Adaptation or Treatment)]]}}
+*'''''[[Irma la Douce]]''&nbsp;– [[André Previn]]'''
+**''[[Bye Bye Birdie (1963 film)|Bye Bye Birdie]]''&nbsp;– [[Johnny Green]]
+**''[[A New Kind of Love]]''&nbsp;– [[Leith Stevens]]
+**''[[Sundays and Cybele]]''&nbsp;– [[Maurice Jarre]]
+**''[[The Sword in the Stone (1963 film)|The Sword in the Stone]]''&nbsp;– [[George Bruns]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[Call Me Irresponsible]]" from ''[[Papa's Delicate Condition]]''&nbsp;– Music by [[Jimmy Van Heusen]]; Lyrics by [[Sammy Cahn]]'''
+**"[[Charade (1963 song)|Charade]]" from ''[[Charade (1963 film)|Charade]]''&nbsp;– Music by [[Henry Mancini]]; Lyrics by [[Johnny Mercer]]
+**"It's a Mad Mad Mad Mad World" from ''[[It's a Mad, Mad, Mad, Mad World]]''&nbsp;– Music by [[Ernest Gold (composer)|Ernest Gold]]; Lyrics by [[Mack David]]
+**"[[More (Theme from Mondo Cane)|More]]" from ''[[Mondo Cane]]''&nbsp;– Music by [[Riz Ortolani]] and [[Nino Oliviero]]; Lyrics by [[Norman Newell]]
+**"So Little Time" from ''[[55 Days at Peking]]''&nbsp;– Music by [[Dimitri Tiomkin]]; Lyrics by [[Paul Francis Webster]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound|Best Sound]]}}
+*'''''[[How the West Was Won (film)|How the West Was Won]]''&nbsp;– [[Franklin Milton]]'''
+**''[[Bye Bye Birdie (1963 film)|Bye Bye Birdie]]''&nbsp;– [[Charles Rice (sound engineer)|Charles Rice]]
+**''[[Captain Newman, M.D.]]''&nbsp;– [[Waldon O. Watson]]
+**''[[Cleopatra (1963 film)|Cleopatra]]''&nbsp;– [[James Corcoran (sound engineer)|James Corcoran]] and [[Fred Hynes]]
+**''[[It's a Mad, Mad, Mad, Mad World]]''&nbsp;– [[Gordon E. Sawyer]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound|Best Sound Effects]]}}
+*'''''[[It's a Mad, Mad, Mad, Mad World]]''&nbsp;– [[Walter Elliott (sound editor)|Walter Elliott]]'''
+**''[[A Gathering of Eagles]]''&nbsp;– [[Robert Bratton (sound editor)|Robert Bratton]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[America America]]''&nbsp;– Art Direction and Set Decoration: [[Gene Callahan]]'''
+**''[[8½]]''&nbsp;– Art Direction and Set Decoration: [[Piero Gherardi]]
+**''[[Hud (1963 film)|Hud]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Tambi Larsen]]; Set Decoration: [[Samuel M. Comer]] and [[Robert R. Benton]]
+**''[[Love with the Proper Stranger]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Roland Anderson]]; Set Decoration: [[Samuel M. Comer]] and [[Grace Gregory]]
+**''[[Twilight of Honor]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]] and [[Paul Groesse]]; Set Decoration: [[Henry Grace]] and [[Hugh Hunt]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[Cleopatra (1963 film)|Cleopatra]]''&nbsp;– Art Direction: [[John DeCuir]], [[Jack Martin Smith]], [[Hilyard M. Brown]], [[Herman A. Blumenthal]], [[Elven Webb]], [[Maurice Pelling]], and [[Boris Juraga]]; Set Decoration: [[Walter M. Scott]], [[Paul S. Fox]], and [[Ray Moyer]]'''
+**''[[The Cardinal]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]]; Set Decoration: [[Gene Callahan]]
+**''[[Come Blow Your Horn (film)|Come Blow Your Horn]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Roland Anderson]]; Set Decoration: [[Samuel M. Comer]] and [[James W. Payne]]
+**''[[How the West Was Won (film)|How the West Was Won]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]], [[William Ferrari]] (posthumous nomination), and [[Addison Hehr]]; Set Decoration: [[Henry Grace]], [[Don Greenwood Jr.]], and [[Jack Mills (set decorator)|Jack Mills]]
+**''[[Tom Jones (1963 film)|Tom Jones]]''&nbsp;– Art Direction: [[Ralph W. Brinton]], [[Ted Marshall]], and [[Jocelyn Herbert]]; Set Decoration: [[Josie MacAvin]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[Hud (1963 film)|Hud]]''&nbsp;– [[James Wong Howe]]'''
+**''[[The Balcony (film)|The Balcony]]''&nbsp;– [[George Folsey (cinematographer)|George J. Folsey]]
+**''[[The Caretakers (1963 film)|The Caretakers]]''&nbsp;– [[Lucien Ballard]]
+**''[[Lilies of the Field (1963 film)|Lilies of the Field]]''&nbsp;– [[Ernest Haller]]
+**''[[Love with the Proper Stranger]]''&nbsp;– [[Milton Krasner]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[Cleopatra (1963 film)|Cleopatra]]''&nbsp;– [[Leon Shamroy]]'''
+**''[[The Cardinal]]''&nbsp;– [[Leon Shamroy]]
+**''[[How the West Was Won (film)|How the West Was Won]]''&nbsp;– [[William Daniels (cinematographer)|William Daniels]], [[Milton Krasner]], [[Charles Lang]], and [[Joseph LaShelle]]
+**''[[Irma la Douce]]''&nbsp;– [[Joseph LaShelle]]
+**''[[It's a Mad, Mad, Mad, Mad World]]''&nbsp;– [[Ernest Laszlo]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+*'''''[[8½]]''&nbsp;– [[Piero Gherardi]]'''
+**''[[Love with the Proper Stranger]]''&nbsp;– [[Edith Head]]
+**''[[The Stripper (film)|The Stripper]]''&nbsp;– [[William Travilla|Travilla]]
+**''[[Toys in the Attic (1963 film)|Toys in the Attic]]''&nbsp;– [[Bill Thomas (costume designer)|Bill Thomas]]
+**''[[Wives and Lovers (film)|Wives and Lovers]]''&nbsp;– [[Edith Head]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+*'''''[[Cleopatra (1963 film)|Cleopatra]]''&nbsp;– [[Irene Sharaff]], [[Vittorio Nino Novarese]], and [[Renié]]'''
+**''[[The Cardinal]]''&nbsp;– [[Donald Brooks]]
+**''[[How the West Was Won (film)|How the West Was Won]]''&nbsp;– [[Walter Plunkett]]
+**''[[The Leopard (1963 film)|The Leopard]]''&nbsp;– [[Piero Tosi]]
+**''[[A New Kind of Love]]''&nbsp;– [[Edith Head]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[How the West Was Won (film)|How the West Was Won]]''&nbsp;– [[Harold F. Kress]]'''
+**''[[Cleopatra (1963 film)|Cleopatra]]''&nbsp;– [[Dorothy Spencer]]
+**''[[The Cardinal]]''&nbsp;– [[Louis R. Loeffler]]
+**''[[The Great Escape (film)|The Great Escape]]''&nbsp;– [[Ferris Webster]]
+**''[[It's a Mad, Mad, Mad, Mad World]]''&nbsp;– [[Frederic Knudtson]] (posthumous nomination), [[Robert C. Jones]], and [[Gene Fowler Jr.]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*'''''[[Cleopatra (1963 film)|Cleopatra]]''&nbsp;– [[Emil Kosa Jr.]]'''
+**''[[The Birds (film)|The Birds]]''&nbsp;– [[Ub Iwerks]]
+|}
+
+===Irving G. Thalberg Memorial Award===
+*[[Sam Spiegel]]
+
+==Presenters and performers==
+{{More citations needed section|date=September 2015}}
+
+===Presenters===
+*[[Julie Andrews]] (Presenter: Best Foreign Language Film)
+*[[Anne Bancroft]] (Presenter: Best Actor)
+*[[Anne Baxter]] and [[Fred MacMurray]] (Presenter: Art Direction Awards)
+*[[Ed Begley]] (Presenter: Best Supporting Actress)
+*[[Rita Hayworth]] (Presenter: Best Director)
+*[[Sammy Davis Jr.]] (Presenter: Music Awards)
+*[[Angie Dickinson]] (Presenter: Best Special Effects)
+*[[Patty Duke]] (Presenter: Best Supporting Actor)
+*[[Shirley Jones]] (Presenter: Best Song)
+*[[Shirley MacLaine]] (Presenter: Short Subjects Awards)
+*[[Steve McQueen]] (Presenter: Sound Awards)
+*[[Gregory Peck]] (Presenter: Best Actress)
+*[[Sidney Poitier]] (Presenter: Best Film Editing)
+*[[Donna Reed]] (Presenter: Costume Design Awards)
+*[[Debbie Reynolds]] (Presenter: Documentary Awards)
+*[[Edward G. Robinson]] (Presenter: Writing Awards)
+*[[Frank Sinatra]] (Presenter: Best Picture)
+*[[James Stewart]] (Presenter: Cinematography Awards)
+*[[Tuesday Weld]] (Presenter: Best Sound Effects)
+
+===Performers===
+*[[James Darren]] ("It's a Mad, Mad, Mad, Mad World" from ''[[It's a Mad, Mad, Mad, Mad World]]'')
+*[[Harve Presnell]] ("So Little Time" from ''[[55 Days at Peking]]'')
+*[[Katyna Ranieri]] ("[[More (Theme from Mondo Cane)|More]]" from ''[[Mondo Cane]]'')
+*[[Andy Williams]] ("[[Call Me Irresponsible]]" from ''[[Papa's Delicate Condition]]'' and "[[Charade (1963 song)|Charade]]" from ''[[Charade (1963 film)|Charade]]'')
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 10
+| ''[[Tom Jones (1963 film)|Tom Jones]]''
+|-
+| rowspan="1" style="text-align:center" | 9
+| ''[[Cleopatra (1963 film)|Cleopatra]]''
+|-
+| rowspan="1" style="text-align:center" | 8
+| ''[[How the West Was Won (film)|How the West Was Won]]''
+|-
+| rowspan="1" style="text-align:center" | 7
+| ''[[Hud (1963 film)|Hud]]''
+|-
+| rowspan="2" style="text-align:center" | 6
+| ''[[The Cardinal]]''
+|-
+| ''[[It's a Mad, Mad, Mad, Mad World]]''
+|-
+| rowspan="3" style="text-align:center" | 5
+| ''[[8½]]''
+|-
+| ''[[Lilies of the Field (1963 film)|Lilies of the Field]]''
+|-
+| ''[[Love with the Proper Stranger]]''
+|-
+| rowspan="1" style="text-align:center" | 4
+| ''[[America America]]''
+|-
+| rowspan="2" style="text-align:center" | 3
+| ''[[Captain Newman, M.D.]]''
+|-
+| ''[[Irma la Douce]]''
+|-
+| rowspan="6" style="text-align:center" | 2
+| ''[[55 Days at Peking]]''
+|-
+| ''[[Bye Bye Birdie (1963 film)|Bye Bye Birdie]]''
+|-
+| ''[[A New Kind of Love]]''
+|-
+| ''[[Sundays and Cybele]]''
+|-
+| ''[[This Sporting Life]]''
+|-
+| ''[[Twilight of Honor]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="2" style="text-align:center" | 4
+| ''[[Cleopatra (1963 film)|Cleopatra]]''
+|-
+| ''[[Tom Jones (1963 film)|Tom Jones]]''
+|-
+| rowspan="2" style="text-align:center" | 3
+| ''[[How the West Was Won (film)|How the West Was Won]]''
+|-
+| ''[[Hud (1963 film)|Hud]]''
+|-
+| rowspan="1" style="text-align:center" | 2
+| ''[[8½]]''
+|}
+
+{{col-float-end}}
+
+==Sidney Poitier winning Best Actor==
+Sidney Poitier's Best Actor win for ''Lilies of the Field''<ref name="THE WINNERS">{{cite web|title=The Winners |url=http://oscar.go.com/nominees |publisher=The Academy Awards |access-date=May 5, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20130110203809/http://oscar.go.com/nominees |archive-date=January 10, 2013 }}</ref> marked the first time a Black man won a competitive Oscar.<ref>{{cite web|title=The Winner |url=http://oscar.go.com/nominees |publisher=The Academy Awards |access-date=May 5, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20130110203809/http://oscar.go.com/nominees |archive-date=January 10, 2013 }}</ref>  This came five years after his first nomination for Best Actor in 1958's ''[[The Defiant Ones]]''.<ref name="THE WINNERS"/> Poitier had been aware of the significance of [[Hattie McDaniel]] having won an Oscar in the 1940 ceremony at the time that he accepted his Best Actor Oscar, and he was the only winner of an acting award present at the ceremony.<ref name="Oscars '63 Notes"/>
+
+It would take almost forty years for another African-American male to win Best Actor, when [[Denzel Washington]] won in 2001 for ''[[Training Day]]''.<ref name="THE WINNERS"/>
+
+==Sammy Davis Jr. envelope error==
+[[Sammy Davis Jr.]] was accidentally given the wrong winner's envelope when he was supposed to announce the award for Best Music Score for an Adaptation or Treatment, instead announcing the winner for Best Music Score - Substantially Original: John Addison for ''Tom Jones''. After a confused round of applause followed by silence, Davis acknowledged his mistake (joking, "Wait 'til the [[National Association for the Advancement of Colored People|NAACP]] hears about this!"),<ref name="Oscars '63 Notes"/> and, having been given the right envelope, read the actual winner: Andre Previn for ''Irma la Douce''.
+
+Davis Jr. then presented Best Music Score - Substantially Original, sarcastically asking "Guess who the winner is?" after reading all the nominees.
+
+==See also==
+*[[21st Golden Globe Awards]]
+*[[1963 in film]]
+* [[6th Grammy Awards]]
+* [[15th Primetime Emmy Awards]]
+* [[16th Primetime Emmy Awards]]
+* [[17th British Academy Film Awards]]
+* [[17th Tony Awards]]
+* [[List of submissions to the 36th Academy Awards for Best Foreign Language Film]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 36}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1963 film awards]]
+[[Category:1963 awards in the United States]]
+[[Category:1964 in California]]
+[[Category:1964 in American cinema]]
+[[Category:April 1964 in the United States]]
+[[Category:Organized events in Santa Monica, California]]
+[[Category:20th century in Santa Monica, California]]

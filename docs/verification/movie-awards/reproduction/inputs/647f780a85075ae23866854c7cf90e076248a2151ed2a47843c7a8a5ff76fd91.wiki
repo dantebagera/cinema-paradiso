@@ -1,0 +1,577 @@
+{{oscars short description|films-year=2013}}{{Featured list}}
+{{Use mdy dates|date=March 2014}}
+{{Infobox film awards
+| number           = 86
+| award            = Academy Awards
+| image            = 86th Academy Awards poster.jpg
+| alt              = Official poster featuring Ellen DeGeneres promoting the 86th Academy Awards in 2014.
+| caption          = Official poster
+| date             = March 2, 2014
+| site             = [[Dolby Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], California, U.S.
+| host             = [[Ellen DeGeneres]]<ref name="Ellen"/>
+| preshow = Jess Cagle<br />[[Lara Spencer]]<br />[[Robin Roberts (newscaster)|Robin Roberts]]<br />[[Tyson Beckford]]<ref>{{cite news|first=Emily |last=Yahr |title=Oscars 2014 FAQ: Where to watch the show, all the red carpet coverage and the after-shows |url=https://www.washingtonpost.com/blogs/style-blog/wp/2014/03/02/oscars-2014-faq-where-to-watch-the-show-all-the-red-carpet-coverage-and-the-after-shows/ |newspaper=The Washington Post |date=March 2, 2014 |access-date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140302180156/http://www.washingtonpost.com/blogs/style-blog/wp/2014/03/02/oscars-2014-faq-where-to-watch-the-show-all-the-red-carpet-coverage-and-the-after-shows/ |archive-date=March 2, 2014}}</ref>
+| producer         = [[Neil Meron]]<br />[[Craig Zadan]]<ref name="MeronZadan"/>
+| director         = [[Hamish Hamilton (director)|Hamish Hamilton]]<ref name="Hamilton"/>
+| best_picture     = ''[[12 Years a Slave (film)|12 Years a Slave]]''
+| most_wins        = ''[[Gravity (2013 film)|Gravity]]'' (7)
+| network          = [[American Broadcasting Company|ABC]]
+| most_nominations = ''[[American Hustle]]'' and ''[[Gravity (2013 film)|Gravity]]'' (10)
+| duration         = 3 hours, 34 minutes<ref>{{cite news|first=Brian |last=Lowry |title=TV Review: 'The 86th Annual Academy Awards' |url=https://variety.com/2014/tv/reviews/tv-review-the-86th-annual-academy-awards-1201123261/ |work=Variety |publisher=Penske Media Corporation |date=March 2, 2014 |access-date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140306114516/http://variety.com/2014/tv/reviews/tv-review-the-86th-annual-academy-awards-1201123261/ |archive-date=March 6, 2014}}</ref>
+| ratings          = 43.74 million<br />24.7% ([[Nielsen ratings]])<ref>{{cite news|first=Rick |last=Kissell |title=Oscars on ABC Draw Largest Audience in 10 Years |url=https://variety.com/2014/tv/ratings/early-ratings-oscars-look-to-be-up-slightly-from-last-year-1201124513/ |work=Variety |publisher=Penske Media Corporation |date=March 3, 2014 |access-date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140308205925/http://variety.com/2014/tv/ratings/early-ratings-oscars-look-to-be-up-slightly-from-last-year-1201124513/ |archive-date=March 8, 2014}}</ref>
+| last             = 85th
+| next             = 87th
+}}
+
+The '''86th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2013 in film|films of 2013]] and took place on March 2, 2014, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]], beginning at 5:30&nbsp;p.m. [[Pacific Time Zone|PST]] / 8:30&nbsp;p.m. [[Eastern Time Zone|EST]]. The ceremony was scheduled well after its usual late-February date to avoid conflicting with the [[2014 Winter Olympics]].<ref>{{cite news|title=OSCARS: 2014 Academy Awards Set For March 2 |url=https://deadline.com/2013/03/oscars-2014-date-march-2-460884/ |website=[[Deadline Hollywood]] |publisher=Penske Media Corporation |access-date=March 25, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140829041704/http://deadline.com/2013/03/oscars-2014-date-march-2-460884/ |archive-date=August 29, 2014}}</ref> During the ceremony, the Academy of Motion Picture Arts and Sciences presented [[Academy Award]]s (commonly referred to as Oscars) in 24 categories. The ceremony was televised in the United States by [[American Broadcasting Company|ABC]], and produced by [[Neil Meron]] and [[Craig Zadan]] and directed by [[Hamish Hamilton (director)|Hamish Hamilton]].<Ref name="MeronZadan"/><ref name="Hamilton"/> Actress [[Ellen DeGeneres]] hosted the show for the second time, having previously hosted the [[79th Academy Awards|79th ceremony]] held in 2007.<ref name="Ellen"/>
+
+In related events, the academy held its 5th annual [[Governors Awards]] ceremony at the Grand Ballroom of the [[Hollywood and Highland Center]] on November 16, 2013.<ref name="Governor's Awards">{{cite magazine|last=Sperling |first=Nicole |title=Angelina Jolie honored at 2013 Governors Awards |url=http://insidemovies.ew.com/2013/11/16/angelina-jolie-honored-at-2013-governors-awards/ |access-date=January 30, 2014 |magazine=[[Entertainment Weekly]] |publisher=[[Time Inc.]] |date=November 16, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140214204732/http://insidemovies.ew.com/2013/11/16/angelina-jolie-honored-at-2013-governors-awards/ |archive-date=February 14, 2014}}</ref> On February 15, 2014, in a ceremony at [[The Beverly Hills Hotel]] in [[Beverly Hills, California]], the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by hosts [[Kristen Bell]] and [[Michael B. Jordan]].<ref>{{cite news|last=Alexander |first=Bryan |url=https://www.usatoday.com/story/life/movies/2014/01/30/kristen-bell-micheal-b-jordan-science-technology-academy/5056627/ |title=Bell, Jordan to host Oscar's sci-tech awards |access-date=January 30, 2014 |work=[[USA Today]] |publisher=[[Gannett Company]] |date=January 30, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140130192810/http://www.usatoday.com/story/life/movies/2014/01/30/kristen-bell-micheal-b-jordan-science-technology-academy/5056627/ |archive-date=January 30, 2014}}</ref>
+
+''[[12 Years a Slave (film)|12 Years a Slave]]'' won three awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last=Horn |first=John |title=Oscars 2014: '12 Years a Slave' wins best picture Oscar |url=https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-oscar-main-20140303-story.html |access-date=April 16, 2014 |work=Los Angeles Times |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140417213253/http://articles.latimes.com/2014/mar/03/entertainment/la-et-mn-oscar-main-20140303 |archive-date=April 17, 2014}}</ref><ref>{{cite news|last=Kennedy |first=Lisa |title="12 Years a Slave" escapes pull of "Gravity" for win |url=http://www.denverpost.com/movies/ci_25261803/12-years-slave-escapes-pull-gravity-win |access-date=April 1, 2014 |work=The Denver Post |publisher=MediaNews Group |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140309024620/http://www.denverpost.com/movies/ci_25261803/12-years-slave-escapes-pull-gravity-win |archive-date=March 9, 2014}}</ref> Other winners included ''[[Gravity (2013 film)|Gravity]]'' with seven awards, ''[[Dallas Buyers Club]]'' with three, ''[[Frozen (2013 film)|Frozen]]'' and ''[[The Great Gatsby (2013 film)|The Great Gatsby]]'' with two, and ''[[Blue Jasmine]]'', ''[[The Great Beauty]]'', ''[[Helium (film)|Helium]]'', ''[[Her (2013 film)|Her]]'', ''[[The Lady in Number 6: Music Saved My Life]]'', ''[[Mr Hublot]]'', and ''[[20 Feet from Stardom]]'' with one. The telecast garnered nearly 44 million viewers in the United States, making it the most-watched Academy Award ceremony since the [[72nd Academy Awards]] in 2000 and the most-watched non-sport program in American television since 2004.<ref name="HRRatings"/>
+
+==Winners and nominees==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 86th Academy Awards were announced on January 16, 2014, at 5:38&nbsp;a.m. PST (13:38 [[UTC]]), at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]], by [[Cheryl Boone Isaacs]], president of the academy, and actor [[Chris Hemsworth]].<ref>{{cite news|last=Whitty |first=Stephen |title=2014 Oscars: Jersey-set 'American Hustle,' outer-space 'Gravity' lead nominations |url=http://www.nj.com/entertainment/index.ssf/2014/01/2014_oscars_american_hustle_gravity_lead_nominations.html |access-date=January 16, 2014 |work=The Star-Ledger |publisher=Advance Publications |date=January 16, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140119082758/http://www.nj.com/entertainment/index.ssf/2014/01/2014_oscars_american_hustle_gravity_lead_nominations.html |archive-date=January 19, 2014}}</ref> ''[[American Hustle]]'' and ''[[Gravity (2013 film)|Gravity]]'' tied for the most nominations with ten each.<ref>{{cite news|last1=King |first1=Susan |last2=Lynch |first2=Rene |title=2014 Oscar nominations: 'American Hustle' shuffles David O. Russell to front of the pack again |url=https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-oscar-nominations-2014-main-story.html |access-date=July 27, 2026 |work=Los Angeles Times |date=January 16, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150328084918/https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-oscar-nominations-2014-main-story.html |archive-date=March 28, 2015}}</ref>
+
+The winners were announced during the awards ceremony on March 2, 2014. ''American Hustle'' became [[David O. Russell]]'s second consecutive film to earn [[List of films with all four Academy Award acting nominations|nominations in all acting categories]] and the fifteenth film overall in Oscar history to achieve this distinction, but the first such film to not win any since 1936's ''[[My Man Godfrey]]''.<ref>{{cite news|last=MacDonald |first=Moira |date=January 16, 2014 |url=http://blogs.seattletimes.com/popcornandprejudice/2014/01/16/those-american-hustle-acting-nominations/ |access-date=January 30, 2014 |work=[[The Seattle Times]] |publisher=[[The Seattle Times Company]] |title=Those "American Hustle" acting nominations |url-status=dead |archive-url=https://web.archive.org/web/20140417151438/http://blogs.seattletimes.com/popcornandprejudice/2014/01/16/those-american-hustle-acting-nominations/ |archive-date=April 17, 2014}}</ref> It also was the third film after ''[[Gangs of New York]]'' and ''[[True Grit (2010 film)|True Grit]]'' to lose all ten of its nominations.<ref>{{cite magazine|last=Gibson |first=Megan |title=Oscars 2014: American Hustle The Night's Biggest Shutout |url=https://entertainment.time.com/2014/03/03/oscars-shutout-american-hustle-wolf-of-wall-street/ |access-date=March 5, 2014 |magazine=[[Time (magazine)|Time]] |publisher=Time Inc. |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140306020725/http://entertainment.time.com/2014/03/03/oscars-shutout-american-hustle-wolf-of-wall-street/ |archive-date=March 6, 2014}}</ref> ''[[12 Years a Slave (film)|12 Years a Slave]]'', directed by [[Steve McQueen (director)|Steve McQueen]], became the second film by a [[Black people|black]] director to receive a nomination for [[Academy Award for Best Picture|Best Picture]]<ref name="Black">{{cite news|last=Cieply|first=Michael|author-link=Michael Cieply|title=By the Numbers: Oscar's Track Record With Black Filmmakers|url=https://archive.nytimes.com/carpetbagger.blogs.nytimes.com/2014/01/24/by-the-numbers-oscars-track-record-with-black-filmmakers/|access-date=July 27, 2026|work=[[The New York Times]]|date=January 24, 2014|archive-date=November 13, 2023|archive-url=https://web.archive.org/web/20231113164314/https://archive.nytimes.com/carpetbagger.blogs.nytimes.com/2014/01/24/by-the-numbers-oscars-track-record-with-black-filmmakers/|url-status=live}}</ref> and the first to win.<ref>{{cite news|last=Pulver|first=Andrew|title=12 Years a Slave wins best picture Oscar|url=https://www.theguardian.com/film/2014/mar/03/12-years-a-slave-wins-best-picture-oscar|access-date=July 27, 2026|work=[[The Guardian]]|date=March 3, 2014|archive-date=December 16, 2023|archive-url=https://web.archive.org/web/20231216130620/https://www.theguardian.com/film/2014/mar/03/12-years-a-slave-wins-best-picture-oscar|url-status=live}}</ref> McQueen became the third black person to receive a nomination for [[Academy Award for Best Director|Best Directing]]<ref name="Black"/> and the first [[List of black Academy Award winners and nominees#Best Picture|black Best Picture co-winner]].<ref name="Variety">{{cite news|last1=Gray |first1=Tim |title=‘12 Years a Slave’ Takes Top Prize at the Oscars |url=https://variety.com/2014/film/awards/oscars-supporting-actor-winner-announced-1201124073/ |access-date=July 27, 2026 |work=[[Variety (magazine)|Variety]] |date=March 2, 2014 |url-status=live |archive-url=https://web.archive.org/web/20210419123824/https://variety.com/2014/film/awards/oscars-supporting-actor-winner-announced-1201124073/ |archive-date=April 19, 2021}}</ref> [[John Ridley]] became the second black winner for writing.<ref name="Variety"/> [[Alfonso Cuarón]] became the [[List of Latin American Academy Award winners and nominees#Best Director|first person of Latin American descent to win Best Director]].<ref>{{cite news |title=Oscars: Slave and Gravity share Academy spoils|url=https://www.bbc.com/news/entertainment-arts-26383484 |access-date=July 27, 2026 |publisher=[[BBC News]] |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20211102183708/https://www.bbc.com/news/entertainment-arts-26383484 |archive-date=November 2, 2021}}</ref>
+
+With [[Matthew McConaughey]] and [[Jared Leto]]'s respective wins in the [[Academy Award for Best Actor|Best Actor]] and [[Academy Award for Best Supporting Actor|Best Supporting Actor]] categories, ''[[Dallas Buyers Club]]'' was the fifth film to win both male acting awards.<ref name="tvguide1">{{cite news|url=https://www.tvguide.com/News/2014-Oscar-Winners-1078426.aspx |author=Eng, Joyce |date=March 2, 2014 |title=12 Years a Slave, Gravity Top Oscars |work=[[TV Guide]] |access-date=March 5, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20140306012840/http://www.tvguide.com/News/2014-Oscar-Winners-1078426.aspx |archive-date=March 6, 2014}}</ref> [[Megan Ellison]] became the first woman to score two [[Academy Award for Best Picture|Best Picture]] nominations in the same year.<ref name="EW">{{cite news|last1=Busis |first1=Hillary |title=Oscar nominations 2014: 10 bits of tasty trivia |url=https://ew.com/article/2014/01/16/2014-oscar-nominations-trivia/ |access-date=July 27, 2026 |work=[[Entertainment Weekly]] |date=January 16, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150325203256/http://www.ew.com/article/2014/01/16/2014-oscar-nominations-trivia |archive-date=March 25, 2015}}</ref> At 23, [[Jennifer Lawrence]] became the youngest actress to earn her third nomination.<ref name="EW"/> [[Cate Blanchett]] became the sixth actress to have won both female acting awards in her career.<ref name="tvguide1"/> [[Lupita Nyong'o]] was the sixteenth Oscar acting winner to win for a debut film performance and the ninth [[Academy Award for Best Supporting Actress|Best Supporting Actress]] recipient to achieve this feat.<ref name="tvguide1"/> [[Academy Award for Best Original Song|Best Original Song]] co-winner [[Robert Lopez]] became the youngest individual to win all four major American entertainment awatds ([[Academy Awards|Oscar]], [[Emmy]], [[Grammy]], and [[Tony Awards|Tony]]) and the [[EGOT|12th person overall]] to earn these accolades.<ref>{{cite news|last=Brockell |first=Gillian |title=Robert Lopez joins the exclusive EGOT club with 'Let It Go' win |url=https://www.washingtonpost.com/blogs/style-blog/wp/2014/03/02/robert-lopez-joins-the-exclusive-egot-club-with-let-it-go-win/ |access-date=March 5, 2014 |newspaper=[[The Washington Post]] |date=March 2, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140305012904/http://www.washingtonpost.com/blogs/style-blog/wp/2014/03/02/robert-lopez-joins-the-exclusive-egot-club-with-let-it-go-win/ |archive-date=March 5, 2014}}</ref>
+
+===Awards===
+[[File:Brad Pitt 2019 by Glenn Francis.jpg|right|thumb|150px|[[Brad Pitt]], Best Picture co-winner]]
+[[File:Steve McQueen (Director) at DIFF 2024.jpg|right|150px|thumb|[[Steve McQueen (director)|Steve McQueen]], Best Picture co-winner]]
+[[File:DisclaimerBFILFF101024 (88 of 113) (54062275143) (cropped).jpg|right|thumb|150px|[[Alfonso Cuarón]], Best Director winner and Best Film Editing co-winner]]
+[[File:Matthew McConaughey 2019 (48648344772).jpg|right|thumb|150px|[[Matthew McConaughey]], Best Actor winner]]
+[[File:Cate Blanchett at the 2024 Toronto International Film Festival 2 (cropped).jpg|right|thumb|150px|[[Cate Blanchett]], Best Actress winner]]
+[[File:Jared Leto by Gage Skidmore 2.jpg|right|thumb|150px|[[Jared Leto]], Best Supporting Actor winner]]
+[[File:SXSW 2019 4 (47282558132) (cropped).jpg|right|thumb|150px|[[Lupita Nyong'o]], Best Supporting Actress winner]]
+[[File:Spike Jonze Her Premiere NYFF 2013 (cropped).jpg|right|thumb|150px|[[Spike Jonze]], Best Original Screenplay winner]]
+[[File:John Ridley in Nov 2013.jpg|right|thumb|150px|[[John Ridley]], Best Adapted Screenplay winner]]
+[[File:Paolo Sorrentino 2018.jpg|right|thumb|150px|[[Paolo Sorrentino]], Best Foreign Language Film winner]]
+[[File:Catherine Martin (Australian designer).jpg|right|thumb|150px|[[Catherine Martin (designer)|Catherine Martin]], Best Production Design co-winner and Best Costume Design winner]]
+[[File:2023 - Centre Stage SAM 0537 (53333900224) (cropped).jpg|right|thumb|150px|[[Tim Webber]], Best Visual Effects co-winner]]
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars2014">{{Cite news|url=http://www.oscars.org/oscars/ceremonies/2014 |title=The 86th Academy Awards (2014) Nominees and Winners |access-date=April 12, 2014 |work=Academy of Motion Picture Arts and Sciences |publisher=AMPAS |url-status=live |archive-url=https://web.archive.org/web/20141014193700/http://www.oscars.org/oscars/ceremonies/2014 |archive-date=October 14, 2014}}</ref>
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[12 Years a Slave (film)|12 Years a Slave]]''&nbsp;– [[Brad Pitt]], [[Dede Gardner]], [[Jeremy Kleiner]], [[Steve McQueen (director)|Steve McQueen]] and [[Anthony Katagas]], producers'''{{double dagger}}
+**''[[American Hustle]]''&nbsp;– [[Charles Roven]], [[Richard Suckle]], [[Megan Ellison]] and Jonathan Gordon, producers
+**''[[Captain Phillips (film)|Captain Phillips]]''&nbsp;– [[Scott Rudin]], [[Dana Brunetti]] and [[Michael De Luca]], producers
+**''[[Dallas Buyers Club]]''&nbsp;– [[Robbie Brenner]] and [[Rachel Winter]], producers
+**''[[Gravity (2013 film)|Gravity]]''&nbsp;– [[Alfonso Cuarón]] and [[David Heyman]], producers
+**''[[Her (2013 film)|Her]]''&nbsp;– [[Megan Ellison]], [[Spike Jonze]] and [[Vincent Landay]], producers
+**''[[Nebraska (film)|Nebraska]]''&nbsp;– [[Albert Berger]] and [[Ron Yerxa]], producers
+**''[[Philomena (film)|Philomena]]''&nbsp;– [[Gabrielle Tana]], [[Steve Coogan]] and [[Tracey Seaward]], producers
+**''[[The Wolf of Wall Street (2013 film)|The Wolf of Wall Street]]''&nbsp;– [[Martin Scorsese]], [[Leonardo DiCaprio]], [[Joey McFarland]] and [[Emma Tillinger Koskoff]], producers
+| valign="top" width="50%"|
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Alfonso Cuarón]]&nbsp;– ''[[Gravity (2013 film)|Gravity]]'''''{{double dagger}}
+**[[David O. Russell]]&nbsp;– ''[[American Hustle]]''
+**[[Alexander Payne]]&nbsp;– ''[[Nebraska (film)|Nebraska]]''
+**[[Steve McQueen (director)|Steve McQueen]]&nbsp;– ''[[12 Years a Slave (film)|12 Years a Slave]]''
+**[[Martin Scorsese]]&nbsp;– ''[[The Wolf of Wall Street (2013 film)|The Wolf of Wall Street]]''
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Best Actor in a Leading Role]]}}
+*'''[[Matthew McConaughey]]&nbsp;– ''[[Dallas Buyers Club]]'' as [[Ron Woodroof]]'''{{double dagger}}
+**[[Christian Bale]]&nbsp;– ''[[American Hustle]]'' as [[Irving Rosenfeld]]
+**[[Bruce Dern]]&nbsp;– ''[[Nebraska (film)|Nebraska]]'' as Woodrow "Woody" Grant
+**[[Leonardo DiCaprio]]&nbsp;– ''[[The Wolf of Wall Street (2013 film)|The Wolf of Wall Street]]'' as [[Jordan Belfort]]
+**[[Chiwetel Ejiofor]]&nbsp;– ''[[12 Years a Slave (film)|12 Years a Slave]]'' as [[Solomon Northup]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Best Actress in a Leading Role]]}}
+*'''[[Cate Blanchett]]&nbsp;– ''[[Blue Jasmine]]'' as Jeanette "Jasmine" Francis'''{{double dagger}}
+**[[Amy Adams]]&nbsp;– ''[[American Hustle]]'' as [[Evelyn Knight|Edith Greensly / Sydney Prosser]]
+**[[Sandra Bullock]]&nbsp;– ''[[Gravity (2013 film)|Gravity]]'' as Dr. Ryan Stone
+**[[Judi Dench]]&nbsp;– ''[[Philomena (film)|Philomena]]'' as [[Philomena Lee]]
+**[[Meryl Streep]]&nbsp;– ''[[August: Osage County (film)|August: Osage County]]'' as Violet Weston
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Jared Leto]]&nbsp;– ''[[Dallas Buyers Club]]'' as Rayon'''{{double dagger}}
+**[[Barkhad Abdi]]&nbsp;– ''[[Captain Phillips (film)|Captain Phillips]]'' as [[Abduwali Muse]]
+**[[Bradley Cooper]]&nbsp;– ''[[American Hustle]]'' as Richard "Richie" DiMaso
+**[[Michael Fassbender]]&nbsp;– ''[[12 Years a Slave (film)|12 Years a Slave]]'' as [[Edwin Epps]]
+**[[Jonah Hill]]&nbsp;– ''[[The Wolf of Wall Street (2013 film)|The Wolf of Wall Street]]'' as [[Danny Porush|Donnie Azoff]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Lupita Nyong'o]]&nbsp;– ''[[12 Years a Slave (film)|12 Years a Slave]]'' as [[Patsey]]'''{{double dagger}}
+**[[Sally Hawkins]]&nbsp;– ''[[Blue Jasmine]]'' as Ginger
+**[[Jennifer Lawrence]]&nbsp;– ''[[American Hustle]]'' as Rosalyn Rosenfeld
+**[[Julia Roberts]]&nbsp;– ''[[August: Osage County (film)|August: Osage County]]'' as Barbara Weston-Fordham
+**[[June Squibb]]&nbsp;– ''[[Nebraska (film)|Nebraska]]'' as Kate Grant
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[Her (2013 film)|Her]]''&nbsp;– [[Spike Jonze]]'''{{double dagger}}
+**''[[American Hustle]]''&nbsp;– [[Eric Warren Singer]] and [[David O. Russell]]
+**''[[Blue Jasmine]]''&nbsp;– [[Woody Allen]]
+**''[[Dallas Buyers Club]]''&nbsp;– [[Craig Borten]] and [[Melisa Wallack]]
+**''[[Nebraska (film)|Nebraska]]''&nbsp;– [[Bob Nelson (screenwriter)|Bob Nelson]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+*'''''[[12 Years a Slave (film)|12 Years a Slave]]''&nbsp;– [[John Ridley]]; {{small|based on the book ''[[Twelve Years a Slave]]'' by [[Solomon Northup]]}}'''{{double dagger}}
+**''[[Before Midnight]]''&nbsp;– [[Richard Linklater]], [[Julie Delpy]] and [[Ethan Hawke]]; {{small|based on characters created by [[Richard Linklater]] and [[Kim Krizan]]}}
+**''[[Captain Phillips (film)|Captain Phillips]]''&nbsp;– [[Billy Ray (screenwriter)|Billy Ray]]; {{small|based on the book ''[[A Captain's Duty: Somali Pirates, Navy SEALs, and Dangerous Days at Sea]]'' by [[Richard Phillips (merchant mariner)|Richard Phillips]] with Stephan Talty}}
+**''[[Philomena (film)|Philomena]]''&nbsp;– [[Steve Coogan]] and [[Jeff Pope]]; {{small|based on the book ''The Lost Child of Philomena Lee'' by [[Martin Sixsmith]]}}
+**''[[The Wolf of Wall Street (2013 film)|The Wolf of Wall Street]]''&nbsp;– [[Terence Winter]]; {{small|based on [[The Wolf of Wall Street (book)|the book]] by [[Jordan Belfort]]}}
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+*'''''[[Frozen (2013 film)|Frozen]]''&nbsp;– [[Chris Buck]], [[Jennifer Lee (filmmaker)|Jennifer Lee]] and [[Peter Del Vecho]]'''{{double dagger}}
+**''[[The Croods]]''&nbsp;– [[Chris Sanders]], [[Kirk DeMicco]] and [[Kristine Belson]]
+**''[[Despicable Me 2]]''&nbsp;– [[Chris Renaud]], [[Pierre Coffin]] and [[Chris Meledandri]]
+**''[[Ernest & Celestine]]''&nbsp;– [[Benjamin Renner]] and [[Didier Brunner]]
+**''[[The Wind Rises]]''&nbsp;– [[Hayao Miyazaki]] and [[Toshio Suzuki]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[The Great Beauty]]'' ([[List of Italian submissions for the Academy Award for Best Foreign Language Film|Italy]]) in [[Italian language|Italian]]&nbsp;– Directed by [[Paolo Sorrentino]]'''{{double dagger}}
+**''[[The Broken Circle Breakdown]]'' ([[List of Belgian submissions for the Academy Award for Best Foreign Language Film|Belgium]]) in [[Dutch language|Dutch]]&nbsp;– Directed by [[Felix Van Groeningen]]
+**''[[The Hunt (2012 film)|The Hunt]]'' ([[List of Danish submissions for the Academy Award for Best Foreign Language Film|Denmark]]) in [[Danish language|Danish]]&nbsp;– Directed by [[Thomas Vinterberg]]
+**''[[The Missing Picture]]'' ([[List of Cambodian submissions for the Academy Award for Best Foreign Language Film|Cambodia]]) in [[French language|French]]&nbsp;– Directed by [[Rithy Panh]]
+**''[[Omar (2013 film)|Omar]]'' ([[List of Palestinian submissions for the Academy Award for Best Foreign Language Film|Palestine]]) in [[Arabic]]&nbsp;– Directed by [[Hany Abu-Assad]]
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[20 Feet from Stardom]]''&nbsp;– [[Morgan Neville]], [[Caitrin Rogers]] and [[Gil Friesen]]''' <small>([[List of posthumous Academy Award winners and nominees|posthumous award]])</small>{{double dagger}}
+**''[[The Act of Killing]]''&nbsp;– [[Joshua Oppenheimer]] and [[Signe Byrge Sørensen]]
+**''[[Cutie and the Boxer]]''&nbsp;– [[Zachary Heinzerling]] and [[Lydia Dean Pilcher]]
+**''[[Dirty Wars]]''&nbsp;– [[Richard Rowley (film director)|Richard Rowley]] and [[Jeremy Scahill]]
+**''[[The Square (2013 film)|The Square]]''&nbsp;– [[Jehane Noujaim]] and [[Karim Amer]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[The Lady in Number 6: Music Saved My Life]]''&nbsp;– [[Malcolm Clarke (filmmaker)|Malcolm Clarke]] and [[Nicholas Reed]]'''{{double dagger}}
+**''[[CaveDigger]]''&nbsp;– [[Jeffrey Karoff]]
+**''[[Facing Fear]]''&nbsp;– [[Jason Cohen]]
+**''[[Karama Has No Walls]]''&nbsp;– [[Sara Ishaq]]
+**''[[Prison Terminal: The Last Days of Private Jack Hall]]''&nbsp;– [[Edgar Barens]]
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+*'''''[[Helium (film)|Helium]]''&nbsp;– [[Anders Walter]] and [[Kim Magnusson]]'''{{double dagger}}
+**''[[That Wasn't Me (film)|That Wasn't Me]]''&nbsp;– [[Esteban Crespo]]
+**''[[Just Before Losing Everything]]''&nbsp;– [[Xavier Legrand]] and [[Alexandre Gavras]]
+**''[[Do I Have to Take Care of Everything?]]''&nbsp;– [[Selma Vilhunen]] and [[Kirsikka Saari]]
+**''[[The Voorman Problem]]''&nbsp;– [[Mark Gill]] and [[Baldwin Li]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[Mr Hublot]]''&nbsp;– [[Laurent Witz]] and [[Alexandre Espigares]]'''{{double dagger}}
+**''[[Feral (2012 film)|Feral]]''&nbsp;– [[Daniel Sousa (director)|Daniel Sousa]] and [[Dan Golden (filmmaker)|Dan Golden]]
+**''[[Get a Horse!]]''&nbsp;– [[Lauren MacMullan]] and [[Dorothy McKim]]
+**''[[Short Peace|Possessions]]''&nbsp;– [[Shuhei Morita]]
+**''[[Room on the Broom (film)|Room on the Broom]]''&nbsp;– [[Max Lang]] and [[Jan Lachauer]]
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[Gravity (2013 film)|Gravity]]''&nbsp;– [[Steven Price (composer)|Steven Price]]'''{{double dagger}}
+**''[[The Book Thief (film)|The Book Thief]]''&nbsp;– [[John Williams]]
+**''[[Her (2013 film)|Her]]''&nbsp;– [[William Butler (musician)|William Butler]] and [[Owen Pallett]]
+**''[[Philomena (film)|Philomena]]''&nbsp;– [[Alexandre Desplat]]
+**''[[Saving Mr. Banks]]''&nbsp;– [[Thomas Newman]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+*'''"[[Let It Go]]" from ''[[Frozen (2013 film)|Frozen]]''&nbsp;– Music and Lyrics by [[Kristen Anderson-Lopez]] and [[Robert Lopez]]'''{{double dagger}}
+**"[[Happy (Pharrell Williams song)|Happy]]" from ''[[Despicable Me 2]]''&nbsp;– Music and Lyrics by [[Pharrell Williams]]
+**"[[The Moon Song]]" from ''[[Her (2013 film)|Her]]''&nbsp;– Music by [[Karen O]]; Lyrics by Karen O and [[Spike Jonze]]
+**"[[Ordinary Love (U2 song)|Ordinary Love]]" from ''[[Mandela: Long Walk to Freedom]]''&nbsp;– Music by [[Paul Hewson]], [[The Edge|Dave Evans]], [[Adam Clayton]] and [[Larry Mullen]]; Lyrics by Paul Hewson
+**<s>"Alone Yet Not Alone" from ''[[Alone yet Not Alone]]''&nbsp;– Music by [[Bruce Broughton]]; Lyrics by [[Dennis Spiegel]]</s> (nomination revoked){{efn|The Academy revoked the Best Original Song nomination for ''[[Alone yet Not Alone]]''{{'}}s title song after determining that composer [[Bruce Broughton]] violated the Academy's promotional regulations. Broughton, a former Academy governor and member of the music branch's executive committee, had emailed other music branch members to inform them of his submission.<ref>{{cite news|url=https://www.hollywoodreporter.com/race/academy-disqualifies-oscar-nominated-song-675480 |title=Academy Disqualifies Oscar-Nominated Song 'Alone Yet Not Alone' |first=Scott |last=Feinberg |work=The Hollywood Reporter |publisher=Prometheus Global Media |date=January 29, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140130020238/http://www.hollywoodreporter.com/race/academy-disqualifies-oscar-nominated-song-675480 |archive-date=January 30, 2014}}</ref>}}
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[Gravity (2013 film)|Gravity]]''&nbsp;– [[Glenn Freemantle]]'''{{double dagger}}
+** ''[[All Is Lost]]''&nbsp;– [[Steve Boeddeker]] and [[Richard Hymns]]
+** ''[[Captain Phillips (film)|Captain Phillips]]''&nbsp;– [[Oliver Tarney]]
+** ''[[The Hobbit: The Desolation of Smaug]]''&nbsp;– [[Brent Burge]] and [[Chris Ward (sound editor)|Chris Ward]]
+** ''[[Lone Survivor]]''&nbsp;– [[Wylie Stateman]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Best Sound Mixing]]}}
+* '''''[[Gravity (2013 film)|Gravity]]''&nbsp;– [[Skip Lievsay]], [[Niv Adiri]], [[Christopher Benstead]] and [[Chris Munro]]'''{{double dagger}}
+** ''[[Captain Phillips (film)|Captain Phillips]]''&nbsp;– [[Chris Burdon]], [[Mark Taylor (sound engineer)|Mark Taylor]], [[Mike Prestwood Smith]] and [[Chris Munro]]
+** ''[[The Hobbit: The Desolation of Smaug]]''&nbsp;– [[Christopher Boyes]], [[Michael Hedges (sound engineer)|Michael Hedges]], [[Michael Semanick]] and [[Tony Johnson (sound engineer)|Tony Johnson]]
+** ''[[Inside Llewyn Davis]]''&nbsp;– [[Skip Lievsay]], [[Greg Orloff]] and [[Peter F. Kurland]]
+** ''[[Lone Survivor]]''&nbsp;– [[Andy Koyama]], [[Beau Borders]] and [[David Brownlow]]
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+* '''''[[The Great Gatsby (2013 film)|The Great Gatsby]]''&nbsp;– Production Design: [[Catherine Martin (designer)|Catherine Martin]]; Set Decoration: [[Beverley Dunn (set decorator)|Beverley Dunn]]'''{{double dagger}}
+** ''[[American Hustle]]''&nbsp;– Production Design: [[Judy Becker]]; Set Decoration: [[Heather Loeffler]]
+** ''[[Gravity (2013 film)|Gravity]]''&nbsp;– Production Design: [[Andy Nicholson (production designer)|Andy Nicholson]]; Set Decoration: [[Rosie Goodwin]] and [[Joanne Woollard]]
+** ''[[Her (2013 film)|Her]]''&nbsp;– Production Design: [[K. K. Barrett]]; Set Decoration: [[Gene Serdena]]
+** ''[[12 Years a Slave (film)|12 Years a Slave]]''&nbsp;– Production Design: [[Adam Stockhausen]]; Set Decoration: [[Alice Baker (set decorator)|Alice Baker]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Gravity (2013 film)|Gravity]]''&nbsp;– [[Emmanuel Lubezki]]'''{{double dagger}}
+** ''[[The Grandmaster (film)|The Grandmaster]]''&nbsp;– [[Philippe Le Sourd]]
+** ''[[Inside Llewyn Davis]]''&nbsp;– [[Bruno Delbonnel]]
+** ''[[Nebraska (film)|Nebraska]]''&nbsp;– [[Phedon Papamichael]]
+** ''[[Prisoners (2013 film)|Prisoners]]''&nbsp;– [[Roger Deakins]]
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* '''''[[Dallas Buyers Club]]''&nbsp;– [[Adruitha Lee]] and [[Robin Mathews (make-up artist)|Robin Mathews]]'''{{double dagger}}
+** ''[[Jackass Presents: Bad Grandpa]]''&nbsp;– [[Stephen Prouty]]
+** ''[[The Lone Ranger (2013 film)|The Lone Ranger]]''&nbsp;– [[Joel Harlow]] and [[Gloria Pasqua-Casny]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[The Great Gatsby (2013 film)|The Great Gatsby]]''&nbsp;– [[Catherine Martin (designer)|Catherine Martin]]'''{{double dagger}}
+** ''[[American Hustle]]''&nbsp;– [[Michael Wilkinson (costume designer)|Michael Wilkinson]]
+** ''[[The Grandmaster (film)|The Grandmaster]]''&nbsp;– [[William Chang Suk Ping]]
+** ''[[The Invisible Woman (2013 film)|The Invisible Woman]]''&nbsp;– [[Michael O'Connor (costume designer)|Michael O'Connor]]
+** ''[[12 Years a Slave (film)|12 Years a Slave]]''&nbsp;– [[Patricia Norris]]
+|-
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Gravity (2013 film)|Gravity]]''&nbsp;– [[Alfonso Cuarón]] and [[Mark Sanger]]'''{{double dagger}}
+** ''[[American Hustle]]''&nbsp;– [[Jay Cassidy]], [[Crispin Struthers]] and [[Alan Baumgarten]]
+** ''[[Captain Phillips (film)|Captain Phillips]]''&nbsp;– [[Christopher Rouse (film editor)|Christopher Rouse]]
+** ''[[Dallas Buyers Club]]''&nbsp;– [[John Mac McMurphy]]{{efn|"John Mac McMurphy" is a [[pseudonym]] for [[Jean-Marc Vallée]].<ref>{{cite news|title=Oscars 2014: fun and surprising facts about the nominees |last=Wong |first=Jessica |date=January 16, 2014 |work=[[CBC News]] |publisher=[[Canadian Broadcasting Corporation|CBC]] |url=http://www.cbc.ca/newsblogs/arts/the-buzz/2014/01/oscars-2014-fun-weird-and-surprising-facts-about-the-nominees.html |access-date=February 2, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20140202105151/http://www.cbc.ca/newsblogs/arts/the-buzz/2014/01/oscars-2014-fun-weird-and-surprising-facts-about-the-nominees.html |archive-date=February 2, 2014}}</ref>}} and [[Martin Pensa]]
+** ''[[12 Years a Slave (film)|12 Years a Slave]]''&nbsp;– [[Joe Walker (film editor)|Joe Walker]]
+| valign="top" |
+{{AwardCategory|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Gravity (2013 film)|Gravity]]''&nbsp;– [[Tim Webber]], [[Chris Lawrence (visual effects)|Chris Lawrence]], [[Dave Shirk]] and [[Neil Corbould]]'''{{double dagger}}
+** ''[[The Hobbit: The Desolation of Smaug]]''&nbsp;– [[Joe Letteri]], [[Eric Saindon]], [[David Clayton (visual effects)|David Clayton]] and [[Eric Reynolds (visual effects)|Eric Reynolds]]
+** ''[[Iron Man 3]]''&nbsp;– [[Christopher Townsend]], [[Guy Williams (visual effects)|Guy Williams]], [[Erik Nash]] and [[Dan Sudick]]
+** ''[[The Lone Ranger (2013 film)|The Lone Ranger]]''&nbsp;– [[Tim Alexander (visual effects)|Tim Alexander]], [[Gary Brozenich]], [[Edson Williams]] and [[John Frazier]]
+** ''[[Star Trek Into Darkness]]''&nbsp;– [[Roger Guyett]], [[Patrick Tubach]], [[Ben Grossmann]] and [[Burt Dalton]]
+|}
+
+=== Governors Awards ===
+The academy held its 5th Annual [[Governors Awards]] ceremony on November 16, 2013, during which the following awards were presented:<ref>{{cite news|title=Academy Unveils 2013 Governors Awards: Honorees Angelina Jolie, Angela Lansbury, Steve Martin, Piero Tosi |url=https://deadline.com/2013/09/governors-awards-2013-winners-academy-oscars-577193/ |website=Deadline Hollywood |publisher=PMC |access-date=5 September 2013 |url-status=live |archive-url=https://web.archive.org/web/20130907015052/http://www.deadline.com/2013/09/governors-awards-2013-winners-academy-oscars/ |archive-date=September 7, 2013}}</ref><ref>{{cite news|title=Angelina Jolie, Angela Lansbury, Steve Martin and Piero Tosi to Receive the Academy's Governors Awards |url=http://www.oscars.org/news/angelina-jolie-angela-lansbury-steve-martin-and-piero-tosi-receive-academys-governors |access-date=March 5, 2014 |work=Academy of Motion Picture Arts and Sciences |publisher=AMPAS |date=September 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20141015105839/http://www.oscars.org/news/angelina-jolie-angela-lansbury-steve-martin-and-piero-tosi-receive-academys-governors |archive-date=October 15, 2014}}</ref><ref>{{cite news|last=Gray |first=Tim |title=Angelina Jolie, Angela Lansbury, Steve Martin and Piero Tosi to Receive Oscars' Governors Awards |url=https://variety.com/2013/film/news/angelina-jolie-oscars-governors-awards-1200598302/ |access-date=March 5, 2014 |work=Variety |publisher=Penske Media Corporation |date=September 5, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140219204724/http://variety.com/2013/film/news/angelina-jolie-oscars-governors-awards-1200598302/ |archive-date=February 19, 2014}}</ref>
+
+====Honorary Awards====
+* To [[Angela Lansbury]], an entertainment icon who has created some of cinema's most memorable characters, inspiring generations of actors.
+* To [[Steve Martin]] in recognition of his extraordinary talents and the unique inspiration he has brought to the art of motion pictures.
+* To [[Piero Tosi]], a visionary whose incomparable costume designs shaped timeless, living art in motion pictures.
+
+====Jean Hersholt Humanitarian Award====
+* [[Angelina Jolie]]
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}{{col-1-of-2}}
+The following 19 films received multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| rowspan=2 style="text-align:center" | 10
+| ''[[American Hustle]]''
+|-
+| ''[[Gravity (2013 film)|Gravity]]''
+|-
+| style="text-align:center" | 9
+| ''[[12 Years a Slave (film)|12 Years a Slave]]''
+|-
+|rowspan=3 style="text-align:center" | 6
+| ''[[Captain Phillips (film)|Captain Phillips]]''
+|-
+| ''[[Dallas Buyers Club]]''
+|-
+| ''[[Nebraska (film)|Nebraska]]''
+|-
+|rowspan=2 style="text-align:center" | 5
+| ''[[Her (2013 film)|Her]]''
+|-
+| ''[[The Wolf of Wall Street (2013 film)|The Wolf of Wall Street]]''
+|-
+| style="text-align:center" | 4
+| ''[[Philomena (film)|Philomena]]''
+|-
+|rowspan=2 style="text-align:center" | 3
+| ''[[Blue Jasmine]]''
+|-
+| ''[[The Hobbit: The Desolation of Smaug]]''
+|-
+|rowspan=8 style="text-align:center" | 2
+| ''[[August: Osage County (film)|August: Osage County]]''
+|-
+| ''[[Despicable Me 2]]''
+|-
+| ''[[Frozen (2013 film)|Frozen]]''
+|-
+| ''[[The Grandmaster (film)|The Grandmaster]]''
+|-
+| ''[[The Great Gatsby (2013 film)|The Great Gatsby]]''
+|-
+| ''[[Inside Llewyn Davis]]''
+|-
+| ''[[The Lone Ranger (2013 film)|The Lone Ranger]]''
+|-
+| ''[[Lone Survivor]]''
+|}
+
+{{col-2-of-2}}
+
+The following five films received multiple awards:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! width="55" | Awards
+! align="center" | Film
+|-
+| style="text-align:center" | 7
+| ''[[Gravity (2013 film)|Gravity]]''
+|-
+| rowspan=2 style="text-align:center" | 3
+| ''[[Dallas Buyers Club]]''
+|-
+| ''[[12 Years a Slave (film)|12 Years a Slave]]''
+|-
+| rowspan=2 style="text-align:center" | 2
+| ''[[Frozen (2013 film)|Frozen]]''
+|-
+| ''[[The Great Gatsby (2013 film)|The Great Gatsby]]''
+|}
+
+{{col-end}}
+
+==Presenters and performers==
+The following individuals and groups, listed in order of appearance, presented awards or performed musical numbers.<ref>{{cite news |last=Brooks |first=Xan |url=https://www.theguardian.com/film/2014/mar/02/oscars-2014-live-ceremony-red-carpet |title=Oscars 2014 live: the ceremony |work=[[The Guardian]] |access-date=July 27, 2026 |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20141105040717/http://www.theguardian.com/film/2014/mar/02/oscars-2014-live-ceremony-red-carpet |archive-date=November 5, 2014}}</ref><ref>{{cite news |last1=Smith |first1=Patrick |last2=Lachno |first2=James |first3=Charlotte |last3=Runcie |first4=Alice |last4=Vincent |first5=Rupert |last5=Hawksley |url=https://www.telegraph.co.uk/culture/film/oscars/10667839/Oscars-2014-live.html |url-access=limited |title=Oscars 2014: as it happened |work=[[The Daily Telegraph]] |access-date=July 27, 2026 |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20141025120605/http://www.telegraph.co.uk/culture/film/oscars/10667839/Oscars-2014-live.html |archive-date=October 25, 2014}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Cedering|Fox|nolink=1}} || Announcer for the 86th annual Academy Awards
+|-
+| {{sortname|Anne|Hathaway}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Jim|Carrey}} || Presenter of the animated heroes montage
+|-
+| {{sortname|Kerry|Washington}} || Introducer of the performance of Best Original Song nominee "[[Happy (Pharrell Williams song)|Happy]]"
+|-
+| {{sortname|Samuel L.|Jackson}} <br />[[Naomi Watts]] || Presenters of the awards for [[Academy Award for Best Costume Design|Best Costume Design]] and [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]
+|-
+| {{sortname|Harrison|Ford}} || Presenter of the films ''[[American Hustle]]'', ''[[Dallas Buyers Club]]'' and ''[[The Wolf of Wall Street (2013 film)|The Wolf of Wall Street]]'' on the Best Picture segment
+|-
+| {{sortname|Channing|Tatum}} || Introducer of the six winners of the Team Oscar contest
+|-
+| {{sortname|Matthew|McConaughey}} <br />[[Kim Novak]] || Presenters of the awards for [[Best Animated Short Film]] and [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+| {{sortname|Sally|Field}} || Presenter of real life heroes montage
+|-
+| {{sortname|Joseph|Gordon-Levitt}} <br />[[Emma Watson]]|| Presenters of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Zac|Efron}} || Introducer of the performance of Best Original Song nominee "[[The Moon Song]]"
+|-
+| {{sortname|Kate|Hudson}} <br />[[Jason Sudeikis]]|| Presenters of the awards for [[Academy Award for Best Live Action Short Film|Best Live Action Short]] and [[Best Documentary Short Subject]]
+|-
+| {{sortname|Bradley|Cooper}} || Presenter of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Kevin|Spacey}} || Presenter of the segment of the [[Honorary Academy Award]]s and the [[Jean Hersholt Humanitarian Award]]
+|-
+| {{sortname|Viola|Davis}} <br />[[Ewan McGregor]]|| Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Tyler|Perry}} || Presenter of the films ''[[Nebraska (film)|Nebraska]]'', ''[[Her (2013 film)|Her]]'' and ''[[Gravity (2013 film)|Gravity]]'' on the Best Picture segment
+|-
+| {{sortname|Brad|Pitt}} || Introducer of the performance of Best Original Song nominee "[[Ordinary Love (U2 song)|Ordinary Love]]"
+|-
+| {{sortname|Kristen|Bell}} <br />[[Michael B. Jordan]] || Presenters of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Chris|Hemsworth}} <br />[[Charlize Theron]] || Presenters of the awards for [[Best Sound Mixing]] and [[Academy Award for Best Sound Editing|Best Sound Editing]]
+|-
+| {{sortname|Christoph|Waltz}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| [[Cheryl Boone Isaacs]] <br />(AMPAS president) || Special presentation announcing the [[Academy Museum of Motion Pictures]], to open in 2017
+|-
+| {{sortname|Amy|Adams}} <br />[[Bill Murray]] || Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Anna|Kendrick}} <br />[[Gabourey Sidibe]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Whoopi|Goldberg}} || Presenter of ''[[The Wizard of Oz]]'' 75th anniversary tribute and the performance of "[[Over the Rainbow]]"
+|-
+| {{sortname|Benedict|Cumberbatch}} <br />[[Jennifer Garner]] || Presenters of the award for [[Academy Award for Best Production Design|Best Production Design]]
+|-
+| {{sortname|Chris|Evans|Chris Evans (actor)|Chris Evans}} || Presenter of the superheroes montage
+|-
+| {{sortname|Glenn|Close}} || Presenter of the "[[In memoriam segment|In Memoriam]]" tribute
+|-
+| {{sortname|Goldie|Hawn}} || Presenter of the films ''[[Philomena (film)|Philomena]]'', ''[[Captain Phillips (film)|Captain Phillips]]'' and ''[[12 Years a Slave (film)|12 Years a Slave]]'' on the Best Picture segment
+|-
+| {{sortname|John|Travolta}} || Introducer of the performance of Best Original Song nominee "[[Let It Go]]"
+|-
+| {{sortname|Jessica|Biel}} <br />[[Jamie Foxx]]||Presenters of the awards for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Penélope|Cruz}} <br />[[Robert De Niro]] || Presenters of the awards for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]] and [[Best Original Screenplay]]
+|-
+| {{sortname|Angelina|Jolie}} <br /> [[Sidney Poitier]] || Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Daniel|Day-Lewis}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Jennifer|Lawrence}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Will|Smith}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+=== Performers ===
+
+{| class="wikitable sortable"
+|-
+!Name(s)
+!Role
+!Performed
+|-
+|{{sortname|William|Ross|William Ross (composer)|William Ross}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Pharrell|Williams}} || Performer || "[[Happy (Pharrell Williams song)|Happy]]" from ''[[Despicable Me 2]]''
+|-
+| {{sortname|Karen|O}}<br>[[Ezra Koenig]] || Performers || "[[The Moon Song]]" from ''[[Her (2013 film)|Her]]''
+|-
+| [[U2]] || Performers || "[[Ordinary Love (U2 song)|Ordinary Love]]" from ''[[Mandela: Long Walk to Freedom]]''
+|-
+| [[Pink (singer)|Pink]] || Performer || "[[Over the Rainbow]]" as part of ''[[The Wizard of Oz]]'' 75th Anniversary tribute
+|-
+| {{sortname|Bette|Midler}} || Performer || "[[Wind Beneath My Wings]]" during the annual "In Memoriam" tribute
+|-
+| {{sortname|Idina|Menzel}} || Performer || "[[Let It Go]]" from ''[[Frozen (2013 film)|Frozen]]''
+|}
+
+== Ceremony information ==
+[[File:Ellen DeGeneres 2011.jpg|130px|thumbnail|right|[[Ellen DeGeneres]] hosted the 86th Academy Awards|alt=Headshot of a blond haired female in her early fifties wearing a blue jacket over blue and white shirts.]]
+
+Despite the mixed reception received from the [[85th Academy Awards|preceding year's ceremony]], the academy rehired [[Neil Meron]] and [[Craig Zadan]] as producers for the second consecutive year.<ref name="MeronZadan">{{cite news|title=Academy Awards producers Craig Zadan and Neil Meron asked to return for 2014 Oscar show |last=Sperling |first=Nicole |url=https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-academy-hires-craig-zadan-and-neil-meron-to-2014-oscars-20130416-story.html |access-date=April 17, 2013 |work=[[Los Angeles Times]] |date=April 16, 2013 |url-status=live |archive-url=https://web.archive.org/web/20130515223519/http://articles.latimes.com/2013/apr/16/entertainment/la-et-mn-academy-hires-craig-zadan-and-neil-meron-to-2014-oscars-20130416 |archive-date=May 15, 2013}}</ref> However, actor [[Seth MacFarlane]] announced that he would not host the Oscars for a second time. In a statement released through [[Twitter]], he wrote "Traumatized critics exhale: I'm unable to do the Oscars again. Tried to make it work schedule-wise, but I need sleep."<ref>{{cite news|last=Abramovitch |first=Seth |title=Seth MacFarlane Bows Out of Oscars |url=https://www.hollywoodreporter.com/news/seth-macfarlane-bows-oscars-525605 |access-date=April 1, 2014 |work=The Hollywood Reporter |publisher=Prometheus Global Media |date=May 20, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140608235108/http://www.hollywoodreporter.com/news/seth-macfarlane-bows-oscars-525605 |archive-date=June 8, 2014}}</ref> Furthermore, actress and comedian [[Tina Fey]], who co-hosted the [[70th Golden Globe Awards]] more than a month earlier with fellow ''[[Saturday Night Live]]'' alumnus [[Amy Poehler]], told ''[[Huffington Post]]'' columnist Mike Ryan that she would reject any offer to host an Oscar telecast commenting, "I just feel like that gig is so hard. Especially for, like, a woman&nbsp;– the amount of months that would be spent trying on dresses alone&nbsp;– no way."<ref>{{cite news|last=Griffith |first=Janelle |title=Tina Fey says 'no way' to hosting the Oscars |url=http://www.nj.com/entertainment/index.ssf/2013/02/tina_fey_says_no_to_oscars.html |access-date=April 1, 2014 |work=The Star-Ledger |publisher=Advance Publications |date=February 27, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140417120323/http://www.nj.com/entertainment/index.ssf/2013/02/tina_fey_says_no_to_oscars.html |archive-date=April 17, 2014}}</ref>
+
+Shortly after the election of AMPAS president [[Cheryl Boone Isaacs]] in August 2013, Meron and Zadan announced that comedian and talk show host [[Ellen DeGeneres]] would host the 2014 ceremony.<ref name="Ellen">{{cite news|last=Lee |first=Chris |title=Ellen DeGeneres back to host 2014 Oscars |url=https://www.latimes.com/entertainment/envelope/la-xpm-2013-aug-02-la-et-mn-ellen-degeneres-back-as-oscars-host-for-2014-20130802-story.html |access-date=April 1, 2014 |work=Los Angeles Times |date=August 2, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140410121357/http://articles.latimes.com/2013/aug/02/entertainment/la-et-mn-ellen-degeneres-back-as-oscars-host-for-2014-20130802 |archive-date=April 10, 2014}}</ref> They explained their decision to bring back DeGeneres as host saying, "As a longtime friend, we had always hoped to find a project for us to do together and nothing could be more exciting than teaming up to do the Oscars. There are few stars today who have Ellen's gift for comedy, with her great warmth and humanity. She is beloved everywhere and we expect that the audience at the [[Dolby Theatre]] and in homes around the globe will be as excited by this news as we are."<ref>{{cite news|last=Gennis |first=Sadie |title=Ellen DeGeneres to Host the Oscars |url=https://www.tvguide.com/news/ellen-degeneres-host-oscars-2014-1068788.aspx |access-date=April 1, 2014 |work=[[TV Guide]] |date=August 2, 2013 |url-status=live |archive-url=https://web.archive.org/web/20140417110547/http://www.tvguide.com/news/ellen-degeneres-host-oscars-2014-1068788.aspx |archive-date=April 17, 2014}}</ref> DeGeneres expressed that she was thrilled to be selected to emcee the gala again, commenting, "I am so excited to be hosting the Oscars for the second time. You know what they say&nbsp;– the third time's the charm."<ref>{{cite news|last=Carter |first=Bill |title=Ellen DeGeneres to Host Next Year's Oscars |url=https://www.nytimes.com/2013/08/03/business/media/ellen-degeneres-to-host-next-years-oscars.html |access-date=April 1, 2014 |work=The New York Times |date=August 2, 2013 |url-status=live |archive-url=https://web.archive.org/web/20141017234353/http://www.nytimes.com/2013/08/03/business/media/ellen-degeneres-to-host-next-years-oscars.html |archive-date=October 17, 2014}}</ref>
+
+As with last year's theme of music and the movies, Meron and Zadan centered the show around a theme. This year, they christened the show with a theme of saluting movie heroes commenting, "By celebrating the gamut of heroes who have enriched our movie-going experience, we hope to create an evening of fun and joy. And that includes the filmmakers and actors who take risks and stimulate us with provocative subjects and daring characters. They are all heroes in the cinematic landscape."<ref>{{cite news|title=Oscars to Celebrate Movie Heroes |url=http://www.oscars.org/news/oscarsr-celebrate-movie-heroes |access-date=April 2, 2014 |work=Academy of Motion Picture Arts and Sciences |publisher=AMPAS |date=January 14, 2014 |url-status=live |archive-url=https://web.archive.org/web/20141015105225/http://www.oscars.org/news/oscarsr-celebrate-movie-heroes |archive-date=October 15, 2014}}</ref> To coincide with the theme, AMPAS presented an exhibition in the lobby of its Beverly Hills headquarters titled "The Oscars Celebrate Movie Heroes". The exhibit featured posters, photographs, and artifacts from 70 different films featuring literary, comic book, and real life heroes.<ref>{{cite news|last=Gettell |first=Oliver |title=Oscars to celebrate movie heroes at this year's ceremony |url=https://www.latimes.com/entertainment/envelope/moviesnow/la-et-mn-oscars-movie-heroes-celebration-2014-ceremony-20140114,0,6833327.story#ixzz2z5BQp9cv |access-date=April 16, 2014 |work=Los Angeles Times |date=January 14, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140416233845/http://www.latimes.com/entertainment/envelope/moviesnow/la-et-mn-oscars-movie-heroes-celebration-2014-ceremony-20140114%2C0%2C6833327.story |archive-date=April 16, 2014}}</ref> Furthermore, actor [[Andrew Garfield]], who portrayed the [[Spider-Man|titular character]] in ''[[The Amazing Spider-Man (2012 film)|The Amazing Spider-Man]]'', was scheduled to appear onstage with five-year-old cancer survivor [[Batkid|Miles "Batkid" Scott]] with Garfield christening Scott as an "official superhero". The segment was scrapped, however, due to time constraints.<ref>{{cite news|last=Gettell |first=Oliver |title=Oscars: 'Batkid' appearance with Andrew Garfield cut at last minute |url=https://www.latimes.com/entertainment/envelope/moviesnow/la-et-mn-oscars-batkid-appearance-with-andrew-garfield-cut-at-last-minute-20140306,0,1973863.story#axzz2v7nrtsG3 |access-date=March 6, 2014 |work=Los Angeles Times |date=March 6, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140307004242/http://www.latimes.com/entertainment/envelope/moviesnow/la-et-mn-oscars-batkid-appearance-with-andrew-garfield-cut-at-last-minute-20140306%2C0%2C1973863.story |archive-date=March 7, 2014}}</ref>
+
+Several other people were involved with the telecast and its promotion. [[Tony Award]]-winning art director [[Derek McLane]] designed a new set and stage design for the show.<ref name="Hamilton">{{cite news|last=Gray |first=Tim |title=Hamish Hamilton to Direct Oscar Show |url=https://variety.com/2014/film/news/hamish-hamilton-to-direct-oscar-show-1201059501/ |access-date=January 16, 2014 |work=[[Variety (magazine)|Variety]] |publisher=[[Penske Media Corporation]] |date=January 15, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140117031746/http://variety.com/2014/film/news/hamish-hamilton-to-direct-oscar-show-1201059501/ |archive-date=January 17, 2014}}</ref> [[Rob Ashford]] was involved as a choreographer.<ref name="Hamilton"/> Filmmaker [[Paul Feig]] produced and directed a one-minute trailer promoting the event featuring DeGeneres and 250 dancers dancing and lip-synching to the song "The Walker" by rock band [[Fitz and the Tantrums]].<ref>{{cite magazine|last=Hertzfield |first=Laura |title=Ellen DeGeneres and a sea of tuxes strut to Fitz & The Tantrums in new Oscar promo -- VIDEO |url=http://insidemovies.ew.com/2013/12/19/ellen-degeneres-paul-feig-oscar-promos/ |access-date=April 1, 2014 |magazine=[[Entertainment Weekly]] |publisher=Time Inc. |date=December 19, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20140220105319/http://insidemovies.ew.com/2013/12/19/ellen-degeneres-paul-feig-oscar-promos/ |archive-date=February 20, 2014}}</ref> During the ceremony, actor [[Channing Tatum]] introduced a group called "Team Oscar". The team consisted of six young film students from colleges across the country selected by AMPAS whose role was to deliver Oscar statuettes to the presenters during the gala.<ref>{{cite news |last=Lewis |first=Hilary |date=February 6, 2014 |title=Oscar College Contest Winners Announced |url=https://www.hollywoodreporter.com/news/oscar-college-contest-winners-announced-677714 |url-status=live |archive-url=https://web.archive.org/web/20140404204316/http://www.hollywoodreporter.com/news/oscar-college-contest-winners-announced-677714 |archive-date=April 4, 2014 |access-date=April 1, 2014 |work=The Hollywood Reporter |publisher=Prometheus Global Media}}</ref> Television personality and former [[Miss USA]] titleholder [[Rachel Smith]] hosted "Inside the Oscars", a behind-the-scenes video blog on the Oscar ceremony website.<ref>{{cite news |last=Smith |first=Rachel |date=January 15, 2014 |title=Oscar.com Goes Behind The Scenes Of Nominations With First Installment Of Exclusive Inside The Oscars Video Series |url=http://www.oscars.org/news/oscarcom-goes-behind-scenes-nominations-first-installment-exclusive-inside-oscarsr-video-series |url-status=live |archive-url=https://web.archive.org/web/20141015105212/http://www.oscars.org/news/oscarcom-goes-behind-scenes-nominations-first-installment-exclusive-inside-oscarsr-video-series |archive-date=October 15, 2014 |access-date=April 16, 2014 |work=Academy of Motion Picture Arts and Sciences |publisher=AMPAS}}</ref>
+
+In December 2013, AMPAS unveiled a new brand identity for the organization and the Academy Awards by local firm 180LA; the Academy Awards' new logo formalizes the prior year's rebranding of the ceremony as ''The Oscars'', using a wordmark with a stylized letter "A" resembling a [[Spotlight (theatre lighting)|spotlight]] shining on an Oscar statuette (a similar effect is used in the Academy's new logo, but instead using a filled triangle).<ref>{{Cite web |date=2013-12-18 |title=Oscars unveils brand new logo |url=https://www.creativebloq.com/logo-design/oscars-new-logo-121310195 |access-date=2024-07-30 |website=Creative Bloq |language=en}}</ref><ref>{{Cite web |last=Montgomery |first=Angus |date=2013-12-03 |title=The Oscars launches new logo |url=https://www.designweek.co.uk/issues/december-2013/the-oscars-launches-new-logo/ |access-date=2024-07-30 |website=Design Week |language=en-UK}}</ref>
+
+===Box office performance of nominated films===
+At the time of the nominations announcement on January 16, 2014, the combined gross of the nine Best Picture nominees at the American and Canadian box offices was $645&nbsp;million, with an average of $72&nbsp;million per film.<ref name="BoxOffice">{{cite news|title=2013 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?view=&yr=2013&p=.htm |access-date=January 17, 2014 |work=[[Box Office Mojo]] |url-status=live |archive-url=https://web.archive.org/web/20140118031239/http://www.boxofficemojo.com/oscar/chart/?view=&yr=2013&p=.htm |archive-date=January 18, 2014}}</ref> When the nominations were revealed, ''Gravity'' was the highest-grossing film among the Best Picture nominees with $256&nbsp;million in domestic box office receipts.<ref name="boxofficemojooscars">{{cite news|title=2013 Domestic Grosses (as of January 15, 2014) |url=https://boxofficemojo.com/yearly/chart/?asof=2014-01-15&view=releasedate&view2=domestic&yr=2013&sort=gross&order=DESC&p=.htm |access-date=January 17, 2014 |work=Box Office Mojo |date=January 17, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140222183852/http://boxofficemojo.com/yearly/chart/?asof=2014-01-15&view=releasedate&view2=domestic&yr=2013&sort=gross&order=DESC&p=.htm |archive-date=February 22, 2014}}</ref> ''Captain Phillips'' was the second-highest-grossing film with $105.5&nbsp;million; this was followed by ''American Hustle'' ($105.4&nbsp;million), ''The Wolf of Wall Street'' ($80.7&nbsp;million), ''12 Years a Slave'' ($39&nbsp;million), ''Philomena'' ($22.3&nbsp;million), ''Dallas Buyers Club'' ($16.8&nbsp;million), ''Her'' ($9.9&nbsp;million), and finally ''Nebraska'' ($8.5&nbsp;million).<ref name="BoxOffice" />
+
+Of the top 50 grossing movies of the year, 47 nominations went to 14 films on the list. Only ''Frozen'' (1st), ''Despicable Me 2'' (3rd), ''Gravity'' (7th), ''The Croods'' (14th), ''Captain Phillips'' (29th), ''American Hustle'' (30th), and ''The Wolf of Wall Street'' (42nd) were nominated for Best Picture, Best Animated Feature or any of the directing, acting or screenwriting awards.<ref name="boxofficemojooscars"/> The other top 50 box office hits that earned nominations were ''Iron Man 3'' (2nd), ''The Hobbit: The Desolation of Smaug'' (8th), ''Star Trek Into Darkness'' (11th), ''The Great Gatsby'' (17th), ''Jackass Presents: Bad Grandpa'' (31st), ''The Lone Ranger'' (38th), and ''Saving Mr. Banks'' (48th).<ref name="boxofficemojooscars"/>
+
+===DeGeneres' Oscar selfie===
+{{main|Oscars selfie}}
+Prior to the introduction of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] montage, DeGeneres and several ceremony attendees such as [[Bradley Cooper]], [[Jared Leto]], [[Jennifer Lawrence]], [[Julia Roberts]], [[Kevin Spacey]], [[Meryl Streep]], [[Angelina Jolie]], [[Brad Pitt]], [[Channing Tatum]], [[Lupita Nyong'o]], and Peter Nyong'o (Lupita's brother) participated in a group [[selfie]]. The resulting tweet initially [[Fail whale|disabled the site]] and was eventually [[List of most-retweeted tweets|retweeted]] on [[Twitter]] over 3.4 million times.<ref>{{cite news|last=Guyun |first=Jessica |title=Ellen DeGeneres selfie on Twitter is Oscar gold for Samsung |url=https://www.latimes.com/business/technology/la-fi-tn-ellen-degeneres-selfie-twitter-oscars-samsung-20140303-story.html |access-date=April 16, 2014 |work=Los Angeles Times |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140410203238/http://articles.latimes.com/2014/mar/03/business/la-fi-tn-ellen-degeneres-selfie-twitter-oscars-samsung-20140303 |archive-date=April 10, 2014}}</ref> It surpassed the previous record retweet of [[Barack]] and [[Michelle Obama]]'s post-[[United States presidential election, 2012|election]] hug photo, which had been retweeted 778,000 times, in just 35 minutes.<ref>{{cite news|last=Kuperisnky |first=Amy |title=Trending: Ellen's Oscars retweet record, Adele Dazeem and Rachel Canning |url=http://www.nj.com/entertainment/index.ssf/2014/03/ellen_selfie_oscars_retweets_terry_shipman_adele_dazeem_sats_rachel_canning_teresa_giudice.html |access-date=April 16, 2014 |work=The Star-Ledger |publisher=Advance Communications |date=March 8, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140417124752/http://www.nj.com/entertainment/index.ssf/2014/03/ellen_selfie_oscars_retweets_terry_shipman_adele_dazeem_sats_rachel_canning_teresa_giudice.html |archive-date=April 17, 2014}}</ref> The selfie was taken with a [[Samsung Galaxy Note 3]], [[Product placement|provided by the company]] as part of a $20&nbsp;million marketing campaign.<ref>{{cite news |last1=Vranica |first1=Suzanne |title=Behind the Preplanned Oscar Selfie: Samsung's Ad Strategy |url=https://www.wsj.com/articles/SB10001424052702304585004579417533278962674 |access-date=January 3, 2026 |work=[[The Wall Street Journal]] |date=March 3, 2014 |archive-url=https://web.archive.org/web/20141222213016/https://www.wsj.com/articles/SB10001424052702304585004579417533278962674 |archive-date=December 22, 2014 |url-status=live|url-access=subscription}}</ref>
+
+==="Adele Dazeem" incident===
+<!-- "Adele Dazeem" redirects here. -->
+While introducing the performance of "[[Let It Go]]" from ''[[Frozen (2013 film)|Frozen]]'', actor [[John Travolta]] accidentally mispronounced singer [[Idina Menzel]]'s name as "Adele Dazeem".<ref>{{cite news |last=Parkinson |first=Hannah Jane |date=March 3, 2014 |url=https://www.theguardian.com/film/2014/mar/03/oscars-adele-dazeem-john-travolta-idina-menzel |title=Adele Dazeem dazzled in her Oscars glory - yet doesn't actually exist |magazine=[[The Guardian]] |access-date=April 25, 2021 |url-status=live |archive-url=https://web.archive.org/web/20140304013104/https://www.theguardian.com/film/2014/mar/03/oscars-adele-dazeem-john-travolta-idina-menzel |archive-date=March 4, 2014}}</ref> As a result, Travolta became the subject of mockery and ridicule in the media.<ref>{{cite news|last=Bacardi |first=Francesca |title=Oscar Night Flubs Flood Media |url=https://variety.com/2014/film/news/oscar-night-flubs-flood-media-1201124674/ |access-date=April 16, 2014 |work=Variety |publisher=Penske Media Corporation |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140418081519/http://variety.com/2014/film/news/oscar-night-flubs-flood-media-1201124674/ |archive-date=April 18, 2014}}</ref> According to a source for [[E!]], Menzel revealed that she was not upset about the mishap.<ref>{{cite news|last=Malkin |first=Marc |title=Idina Menzel Hugged John Travolta After Her Oscars Performance, "Laughed Off" Adele Dazeem Mishap |url=http://www.eonline.com/news/517428/idina-menzel-hugged-john-travolta-after-her-oscars-performance-laughed-off-adele-dazeem-mishap |access-date=March 6, 2014 |work=[[E!]] |publisher=[[NBC Universal]] |date=March 4, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140305210232/http://www.eonline.com/news/517428/idina-menzel-hugged-john-travolta-after-her-oscars-performance-laughed-off-adele-dazeem-mishap |archive-date=March 5, 2014}}</ref> Afterwards, Menzel reportedly printed up satirical [[Programme (booklet)|playbills]] that promoted her name as Adele Dazeem, noting her past work in ''Nert'' (''[[Rent (musical)|Rent]]''), ''Wicked-ly'' (''[[Wicked (musical)|Wicked]]'') and ''[[Fahrvergnügen|Farfignugen]]'' (''Frozen'').<ref name="newman1">{{cite magazine|last=Newman |first=Jason |title=John Travolta Apologizes to 'Frozen' Star Idina Menzel for Oscar Flub |url=https://www.rollingstone.com/movies/news/john-travolta-apologizes-to-frozen-star-idina-menzel-for-oscar-flub-20140305 |access-date=March 6, 2014 |magazine=[[Rolling Stone]] |publisher=[[Wenner Media]] |date=March 5, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140307093109/http://www.rollingstone.com/movies/news/john-travolta-apologizes-to-frozen-star-idina-menzel-for-oscar-flub-20140305 |archive-date=March 7, 2014}}</ref><ref>{{cite news|last=Eggertsen |first=Chris |title=God Exists: Idina Menzel renamed 'Adele Dazeem' in official Playbill for 'If/Then' |url=http://www.hitfix.com/comedy/god-exists-idina-menzel-renamed-adele-dazeem-in-official-playbill-for-ifthen |access-date=March 6, 2014 |work=[[HitFix]] |date=March 4, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20140306160631/http://www.hitfix.com/comedy/god-exists-idina-menzel-renamed-adele-dazeem-in-official-playbill-for-ifthen |archive-date=March 6, 2014}}</ref> Three days after the ceremony, Travolta publicly apologized to Menzel for mispronouncing her name.<ref name="newman1"/> The [[87th Academy Awards|following year]], Menzel and Travolta appeared onstage together as award presenters, with the former introducing the latter as "Glom Gazingo".<ref>{{cite news|last1=Kuperinsky |first1=Amy |title=Glom Gazingo: John Travolta and Idina Menzel revisit 2014 Oscars flub (Video) |url=http://www.nj.com/entertainment/index.ssf/2015/02/john_travolta_idina_menzel_glom_gazingo_adele_daze.html |access-date=February 25, 2015 |work=The Star Ledger |publisher=Advance Communications |date=February 22, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150225223127/http://www.nj.com/entertainment/index.ssf/2015/02/john_travolta_idina_menzel_glom_gazingo_adele_daze.html |archive-date=February 25, 2015}}</ref>
+
+In a ''[[Vanity Fair (magazine)|Vanity Fair]]'' retrospective of ''Frozen'' in 2023, Menzel said of Travolta's gaffe: "Ultimately, it was one of the best things that’s happened in my career."<ref>{{Cite web |url=https://www.vanityfair.com/hollywood/2023/11/frozen-oral-history |title=Do You Want to Build a Movie? An Oral History of 'Frozen' |website=[[Vanity Fair (magazine)|Vanity Fair]] |date=November 29, 2023 |access-date=April 23, 2024 |archive-date=December 1, 2023 |archive-url=https://web.archive.org/web/20231201122330/https://www.vanityfair.com/hollywood/2023/11/frozen-oral-history |url-status=live }}</ref>
+
+===Critical reviews===
+The show received a mixed reception from media publications. Some media outlets were more critical of the show. ''[[Pittsburgh Post-Gazette]]'' television critic [[Rob Owen (journalist)|Rob Owen]] wrote, "Ms. DeGeneres brought predictable respectability to Sunday's 86th Academy Awards. Too bad this particular brand of predictable respectability was a bore." He also criticized the clip packages saluting movie heroes as "big a waste of time as Oscar montages almost always are."<ref>{{cite news|last=Owen |first=Rob |author-link=Rob Owen (journalist) |title=Tuned In: Oscars dull despite DeGeneres |url=https://www.post-gazette.com/ae/tv-radio/2014/03/03/Oscars-dull-despite-DeGeneres/stories/201403030111 |access-date=April 1, 2014 |work=[[Pittsburgh Post-Gazette]] |publisher=[[Crain Communications]] |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140303165252/http://www.post-gazette.com/ae/tv-radio/2014/03/03/Oscars-dull-despite-DeGeneres/stories/201403030111 |archive-date=March 3, 2014}}</ref> Columnist [[Alan Sepinwall]] of [[HitFix]] commented, "It was a long, disjointed ceremony, and what was fun and likely to endure came entirely from the winners and their speeches." He went on to say that many of DeGeneres's stunts fell flat and that ''[[The Wizard of Oz]]'' 75th anniversary tribute "felt much too random."<ref>{{cite news|last=Sepinwall |first=Alan |author-link=Alan Sepinwall |title=Review: Pizzas, celebrity selfies and pointless montages at the 2014 Academy Awards |url=http://www.hitfix.com/whats-alan-watching/review-pizzas-celebrity-selfies-and-pointless-montages-at-the-2014-academy-awards |access-date=April 1, 2014 |work=[[HitFix]] |date=March 2, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20140409081250/http://www.hitfix.com/whats-alan-watching/review-pizzas-celebrity-selfies-and-pointless-montages-at-the-2014-academy-awards |archive-date=April 9, 2014}}</ref> Tim Goodman of ''[[The Hollywood Reporter]]'' said, "It was a turgid affair, badly directed, poorly produced and featuring an endless string of either tired or wince-inducing moments by DeGeneres, who, by the last 30 or so minutes, seemed to have given up entirely." In addition, he noted that the show was overstuffed with montages and stunts that dragged down the pacing of the telecast.<ref>{{cite news|last=Goodman |first=Tim |title=Oscars TV Review: Ellen Flops in Long, Boring, Self-Involved Show |url=https://www.hollywoodreporter.com/tv/tv-reviews/oscars-tv-review-ellen-flops-685409/ |access-date=July 28, 2026 |work=The Hollywood Reporter |publisher=Prometheus Global Medua |date=March 2, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140323092131/http://www.hollywoodreporter.com/review/oscars-tv-review-ellen-flops-685409 |archive-date=March 23, 2014}}</ref>
+
+Other media outlets received the broadcast more positively. Television critic Matt Roush of ''[[TV Guide]]'' commented that DeGeneres "made the Oscars' inevitable dull patches felt less painful than usual." He also praised the cast and several musical numbers from the show.<ref>{{cite news|last=Roush |first=Matt |title=Review: A Slice of Oscar History |url=https://www.tvguide.com/news/oscar-review-history-ellen-degeneres-selfie-1078738/ |access-date=July 28, 2026 |work=[[TV Guide]] |publisher=[[CBS Corporation]] |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140417111803/http://www.tvguide.com/News/Oscar-Review-History-Ellen-DeGeneres-Selfie-1078738.aspx |archive-date=April 17, 2014}}</ref> [[Frazier Moore]] of the [[Associated Press]] lauded DeGeneres's performance writing that, "She seemed to be committed to an unspoken theme for the evening: Humanize Hollywood's glitterati for the viewers. In return, the stars were on their best behavior." He concluded, "All in all, a sleek show was the Oscarcast. Few bombshells, fewer embarrassments, from fade-in to fade-out."<ref>{{cite news |last=Moore |first=Frazier |author-link=Frazier Moore |title=Oscarcast: A fine scene hosted by Ellen DeGeneres |url=https://apnews.com/general-news-movies-306d5d03576b45f99fcf24ba4e64347a |access-date=July 28, 2026 |publisher=[[Associated Press]] |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20260728171416/https://apnews.com/general-news-movies-306d5d03576b45f99fcf24ba4e64347a |archive-date=July 28, 2026 }}</ref> Entertainment editor Marlow Stern of ''[[The Daily Beast]]'' raved, "DeGeneres followed in the footsteps of the most successful awards show hosts—[[Billy Crystal]], the duo of [[Tina Fey|Fey]] & [[Amy Poehler|Poehler]], etc.—who have taken advantage of the audience, engaging in gleeful interactions with the plethora of A-listers there (when they're not mocking them)."<ref>{{cite news|last=Stern |first=Marlow |title=Surprise! Ellen DeGeneres is the Best Oscars Host in a Decade |url=http://www.thedailybeast.com/articles/2014/03/03/ellen-degeneres-delivers-the-best-oscars-hosting-stint-in-a-decade.html |access-date=April 16, 2014 |work=[[The Daily Beast]] |publisher=[[IAC (company)|IAC]] |date=March 3, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140409020818/http://www.thedailybeast.com/articles/2014/03/03/ellen-degeneres-delivers-the-best-oscars-hosting-stint-in-a-decade.html |archive-date=April 9, 2014}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 43.74 million people over its length, which was a 6% increase from the [[85th Academy Awards|previous year's ceremony]].<ref name="HRRatings">{{cite news|last=O'Connell |first=Michael |title=TV Ratings: Oscars Rise to 43.7 Million Viewers, Most-Watched in Over 10 Years |url=https://www.hollywoodreporter.com/live-feed/tv-ratings-oscars-rise-437-685337 |access-date=March 5, 2014 |work=The Hollywood Reporter |publisher=Prometheus Global Media |date=March 4, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140305053538/http://www.hollywoodreporter.com/live-feed/tv-ratings-oscars-rise-437-685337 |archive-date=March 5, 2014}}</ref> An estimated 72 million total viewers watched all or part of the awards.<ref>{{cite news|last=Collins |first=Scott |title=Oscars 2014: Social media thanked for helping achieve audience gold |url=https://www.latimes.com/entertainment/envelope/tv/la-et-st-oscar-ratings-20140304,0,5914365.story#axzz2uvTMj7cA |access-date=March 5, 2014 |work=Los Angeles Times |date=March 4, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140304205038/http://www.latimes.com/entertainment/envelope/tv/la-et-st-oscar-ratings-20140304%2C0%2C5914365.story |archive-date=March 4, 2014}}</ref> The show also earned higher [[Nielsen ratings]] compared to the previous telecast with 24.7% of households watching over a 38 share.<ref>{{cite news|last=Golum |first=Rob |title=U.S. Broadcast Television Ratings for the Week Ended March 2 |url=https://www.bloomberg.com/news/articles/2014-03-04/u-s-broadcast-television-ratings-for-the-week-ended-march-2 |access-date=March 5, 2014 |work=Bloomberg Businessweek |publisher=Bloomberg L.P. |date=March 4, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150207033552/http://www.bloomberg.com/news/articles/2014-03-04/u-s-broadcast-television-ratings-for-the-week-ended-march-2 |archive-date=February 7, 2015}}</ref> In addition, the program scored a higher 18-49 demo rating with a 13.3 rating over a 33 share among viewers in that demographic.<ref name="VarietyRatings">{{cite news|last=Kissell |first=Rick |title=Most-Watched Oscars in 14 Years, Return of 'Scandal' Power ABC to Weekly Victory |url=https://variety.com/2014/tv/news/most-watched-oscars-in-14-years-return-of-scandal-power-abc-to-weekly-victory-1201125249/ |access-date=March 5, 2014 |work=Variety |publisher=Penske Media Corporation |date=March 5, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140729030617/http://variety.com/2014/tv/news/most-watched-oscars-in-14-years-return-of-scandal-power-abc-to-weekly-victory-1201125249/ |archive-date=July 29, 2014}}</ref> It was the highest-rated Oscars telecast since the [[72nd Academy Awards|72nd ceremony]] held in 2000<ref name="HRRatings" /> and the highest-rated non-sport program in American television since "[[The Last One (Friends)|The Last One]]", the [[series finale]] of ''[[Friends]]'', which aired in May 2004.<ref name="VarietyRatings"/>
+
+In July 2014, the ceremony presentation received eight nominations for the [[66th Primetime Emmy Awards|66th Primetime Emmys]].<ref>{{cite news|title=Primetime Emmys: Full List Of Nominees |url=https://deadline.com/2014/07/emmy-nominations-2014-nominees-list-emmys-801678/ |access-date=July 10, 2014 |website=Deadline Hollywood |publisher=Penske Media Corporation |date=July 10, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140710201048/http://www.deadline.com/2014/07/emmy-nominations-2014-nominees-list-emmys/ |archive-date=July 10, 2014}}</ref> The following month, the ceremony won one of those nominations for Outstanding Art Direction for a Variety, Nonfiction, Reality, or Reality-Competition Program (Derek McLane, Joe Celli, and Gloria Lamb).<ref>{{cite news|last1=De Moraes |first1=Lisa |title=Creative Arts Emmy Awards: HBO Grabs Most Trophies; 'Saturday Night Live' Top Winner Among Shows |url=https://deadline.com/2014/08/creative-arts-emmy-awards-2014-winners-live-819681/ |access-date=August 17, 2014 |website=Deadline Hollywood |publisher=Penske Media Corporation |date=August 16, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140817094136/http://deadline.com/2014/08/creative-arts-emmy-awards-2014-winners-live-819681/ |archive-date=August 17, 2014}}</ref>
+
+=="In Memoriam"==
+The annual "[[In memoriam segment|In Memoriam]]" tribute was presented by actress [[Glenn Close]].<ref>{{cite news|last=Harrison |first=Lily |title=Bette Midler Sings During Oscars In Memoriam Tribute Honoring James Gandolfini, Philip Seymour Hoffman and More |url=http://www.eonline.com/news/516415/bette-midler-sings-during-oscars-in-memoriam-tribute-honoring-james-gandolfini-philip-seymour-hoffman-and-more-late-stars |access-date=March 5, 2014 |work=E! |publisher=NBCUniversal |date=March 2, 2014 | url-status=live |archive-url=https://web.archive.org/web/20140303204548/http://www.eonline.com/news/516415/bette-midler-sings-during-oscars-in-memoriam-tribute-honoring-james-gandolfini-philip-seymour-hoffman-and-more-late-stars |archive-date=March 3, 2014}}</ref> The montage featured an excerpt of the main title from ''[[Somewhere in Time (film)|Somewhere in Time]]'' by composer [[John Barry (composer)|John Barry]].<ref>{{cite news|last=Bobbin |first=Jay |title=Oscars 2014: Bette Midler lends a mighty 'In Memoriam' assist |url=http://blog.zap2it.com/frominsidethebox/2014/03/oscars-2014-bette-midler-lends-a-mighty-in-memoriam-assist.html |access-date=March 5, 2014 |work=[[Zap2it]] |publisher=[[Tribune Media]] |date=March 2, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20140306030111/http://blog.zap2it.com/frominsidethebox/2014/03/oscars-2014-bette-midler-lends-a-mighty-in-memoriam-assist.html |archive-date=March 6, 2014}}</ref> At the conclusion of the tribute, singer [[Bette Midler]] performed her song "[[Wind Beneath My Wings]]" from the film ''[[Beaches (1988 film)|Beaches]]''.<ref name="Yamoto">{{cite news|last=Yamoto |first=Jen |title=Oscars: In Memoriam Tribute Includes 'Midnight Rider's Sarah Jones |url=https://deadline.com/2014/03/oscars-midnight-rider-sarah-jones-in-memoriam-tribute-692470/ |access-date=March 5, 2014 |website=Deadline Hollywood |publisher=Penske Media Corporation |date=March 2, 2014 |url-status=live |archive-url=https://web.archive.org/web/20140305150009/http://www.deadline.com/2014/03/oscars-midnight-rider-sarah-jones-in-memoriam-tribute/ |archive-date=March 5, 2014}}</ref> Before "In Memoriam" and while co-presenting Best Cinematography, Bill Murray paid an additional tribute to [[Harold Ramis]]. After co-presenter Amy Adams presented the nominees, Murray ad-libbed "Oh, we forgot one. Harold Ramis for ''[[Caddyshack]]'', ''[[Ghostbusters]]'' and ''[[Groundhog Day (film)|Groundhog Day]]''."
+
+The annual "In Memoriam" tribute honored the following individuals.<ref name="Yamoto"/>
+{{div col|colwidth=22em}}
+*[[James Gandolfini]] - Actor
+*[[Karen Black]] - Actress
+*[[Tom Laughlin]] - Actor, director, writer
+*[[Ruth Prawer Jhabvala]] - Writer
+*[[Carmen Zapata]] - Actress
+*[[Hal Needham]] - Director, stunt coordinator
+*[[Richard Shepherd (producer)|Richard Shepherd]] - Producer, executive
+*[[Stuart Freeborn]] - Makeup artist
+*[[Gerry Hambling]] - Film editor
+*[[Jim Kelly (martial artist)|Jim Kelly]] - Actor, martial artist
+*[[Stephenie McMillan]] - Set decorator
+*[[Les Blank]] - Documentarian
+*[[Eileen Brennan]] - Actress
+*[[Paul Walker]] - Actor
+*[[Fay Kanin]] - Writer, Academy president 1979–1983
+*[[Charles L. Campbell]] - Sound editor
+*[[Deanna Durbin]] - Actress
+*[[Frédéric Back]] - Animator
+*[[A. C. Lyles]] - Producer
+*[[Elmore Leonard]] - Writer
+*[[Annette Funicello]] - Actress
+*[[Petro Vlahos]] - Visual effects, inventor
+*[[Eduardo Coutinho]] - Documentarian
+*[[Saul Zaentz]] - Producer
+*[[Riz Ortolani]] - Composer
+*[[Peter O'Toole]] - Actor
+*[[Ray Harryhausen]] - Visual effects
+*[[Brian Ackland-Snow]] - Production designer
+*[[Richard Griffiths]] - Actor
+*[[Sid Caesar]] - Actor
+*[[Roger Ebert]] - Critic
+*[[Shirley Temple Black]] - Actress
+*[[Joan Fontaine]] - Actress
+*[[Run Run Shaw]] - Producer, executive
+*[[Juanita Moore]] - Actress
+*[[Mickey Moore]] - 2nd unit director
+*[[Stefan Kudelski]] - Inventor
+*[[Harold Ramis]] - Director, writer, actor
+*[[Eleanor Parker]] - Actress
+*[[Ray Dolby]] - Inventor, engineer
+*[[Julie Harris]] - Actress
+*[[Maximilian Schell]] - Actor
+*[[Richard Matheson]] - Writer
+*[[Gilbert Taylor]] - Cinematographer
+*[[Tom Sherak]] - Executive, Academy president 2009–2012
+*[[Esther Williams]] - Actress
+*[[Philip Seymour Hoffman]] - Actor
+{{div col end}}
+
+Shortly after Midler finished singing, [[camera assistant]] [[Sarah Jones (filmmaker)|Sarah Jones]], who died more than a week prior to the ceremony, was briefly mentioned before the commercial break.<ref name="Yamoto"/>
+
+==See also==
+* [[20th Screen Actors Guild Awards]]
+* [[34th Golden Raspberry Awards]]
+* [[56th Grammy Awards]]
+* [[66th Primetime Emmy Awards]]
+* [[67th British Academy Film Awards]]
+* [[68th Tony Awards]]
+* [[71st Golden Globe Awards]]
+* [[List of submissions to the 86th Academy Awards for Best Foreign Language Film]]
+
+== Notes ==
+{{notelist}}
+
+== References ==
+{{reflist}}
+
+== External links ==
+<!-- Per [[WP:ELMINOFFICIAL]], choose one official website only -->
+
+{{Commons category}}
+
+;Official websites
+* {{Official website|https://www.oscar.com/|Academy Awards official website}}
+* {{Official website|http://www.oscars.org/|The Academy of Motion Picture Arts and Sciences official website}}
+
+;News resources
+
+* [http://www.bbc.com/news/entertainment-arts-25626764 Oscars 2014] {{Webarchive|url=https://web.archive.org/web/20140629202256/http://www.bbc.com/news/entertainment-arts-25626764 |date=June 29, 2014 }} [[BBC News]]
+* [https://www.empireonline.com/oscars2014/ Oscars 2014] {{Webarchive|url=https://web.archive.org/web/20150924131820/http://www.empireonline.com/oscars2014/ |date=September 24, 2015 }} ''[[Empire (film magazine)|Empire]]''
+* [https://www.theguardian.com/film/oscars-2014 Oscars 2014] ''[[The Guardian]]''
+
+;Analysis
+
+* [http://www.filmsite.org/aa2013.html 2013 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20140705141323/http://www.filmsite.org/aa2013.html |date=July 5, 2014 }} [[Filmsite]]
+* [http://www.imdb.com/event/ev0000003/2014 Academy Awards, USA: 2014] {{Webarchive|url=https://web.archive.org/web/20140115183914/http://www.imdb.com/event/ev0000003/2014 |date=January 15, 2014 }} [[Internet Movie Database]]
+
+;Other resources
+
+* {{IMDb title|tt2796782|The Oscars (2014)}}
+
+{{Academy Awards}}
+{{Academy Awards lists}}
+
+{{DEFAULTSORT:Academy Awards, 86}}
+[[Category:2013 film awards]]
+[[Category:2014 in Los Angeles]]
+[[Category:Academy Awards ceremonies]]
+[[Category:2014 in American cinema]]
+[[Category:2014 awards in the United States]]
+[[Category:March 2014 in the United States]]
+[[Category:Television shows directed by Hamish Hamilton (director)]]

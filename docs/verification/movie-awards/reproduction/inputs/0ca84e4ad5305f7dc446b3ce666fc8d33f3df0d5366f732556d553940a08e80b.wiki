@@ -1,0 +1,186 @@
+{{Oscars short description|films-year=1929|films-year2=1930}}
+{{Use American English|date=June 2023}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+|image             = 3rd Oscars.jpg
+| number           = 3
+| award            = Academy Awards
+| date             = November 5, 1930
+| site             = [[Ambassador Hotel (Los Angeles)|The Ambassador Hotel]]<br>[[Los Angeles]], [[California]]
+| host             = [[Conrad Nagel]]
+| best_picture     = ''[[All Quiet on the Western Front (1930 film)|All Quiet on the Western Front]]''
+| most_wins        = ''All Quiet on the Western Front'' and ''[[The Big House (1930 film)|The Big House]]'' (2)
+| most_nominations = ''[[The Love Parade]]'' (6)
+| last             = 2nd
+| next             = 4th
+}}
+[[File:3rd Academy Awards.webm|thumb|left|The 3rd Academy Awards, featuring [[Conrad Nagel]] as the host. Three of the awards were presented in the filmed portion – [[Academy Award for Best Picture|Outstanding Production]], [[Academy Award for Best Actress|Best Actress]], and [[Academy Award for Best Adapted Screenplay|Best Writing]].]]
+The '''3rd Academy Awards''' were held on November 5, 1930, by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), awarding films released between August 1, 1929, and July 31, 1930. AMPAS decided to hold the awards in November to move them closer to the eligibility period; therefore, the ceremony took place only seven months after the [[2nd Academy Awards]], making 1930 the only year in which two Academy Awards ceremonies were held. This was the first ceremony to be voted on by the full membership, rather than by the small clique that voted at the previous two ceremonies.<ref name="Oscars '29-30 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/832/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=833 |isbn=0-385-04060-1}}</ref> The ceremony was held at the [[Ambassador Hotel (Los Angeles)|Ambassador Hotel]], being attended by over 500 members of the Academy.<ref>{{cite news |title=Winners of Motion Academy Awards of Merit |url=https://www.newspapers.com/article/los-angeles-evening-express/43937246/ |access-date=January 15, 2026 |work=Los Angeles Evening Express |via=[[Newspapers.com]] |date=November 6, 1930 |page=10}}</ref>
+
+''[[All Quiet on the Western Front (1930 film)|All Quiet on the Western Front]]'' became the first film to win both Best Picture and Best Director, which would become common in later years. Lewis Milestone became the first person to win two Oscars, having won Best Director – Comedy at the [[1st Academy Awards]]. ''[[The Love Parade]]'' received six nominations, the greatest number of any film to that point, but did not win in any category.
+
+[[Academy Award for Best Sound Mixing|Best Sound Recording]] was introduced this year, making it the first new category since the inception of the Oscars. It was awarded to [[Douglas Shearer]], brother of Best Actress winner [[Norma Shearer]], making them the [[List of Academy Award-winning families|first sibling winners]] in Oscar history. [[Ruth Chatterton]]'s performance in ''[[Sarah and Son]]'', directed by [[Dorothy Arzner]], was the first nominee from a female-directed film.
+
+A portion of the awards were filmed for the first time: [[Universal Pictures]] co-founder and president [[Carl Laemmle]] winning Outstanding Production for ''All Quiet on the Western Front'', given to him by [[Louis B. Mayer]], vice president of [[Metro-Goldwyn-Mayer]]; Norma Shearer winning Best Actress for ''[[The Divorcee]]'', and screenwriter [[Frances Marion]] winning [[Academy Award for Best Adapted Screenplay|Best Writing]] for ''[[The Big House (1930 film)|The Big House]]''.<ref>[https://www.youtube.com/watch?v=Kt0mgFtdQwk The 3rd Academy Awards in 1930 - YouTube]</ref>
+
+== Winners and nominees==
+{{multiple image
+| align = right
+| direction = vertical
+| total_width = 150
+| image1 = Carl Laemmle holding an Oscar trophy, 1930 Retouched.jpg
+| caption1 = [[Carl Laemmle]], Best Picture winner
+| image2 = Milestone1.jpg
+| caption2 = [[Lewis Milestone]], Best Director winner
+| image3 = George Arliss cph.3b31151.jpg
+| caption3 = [[George Arliss]], Best Actor winner
+| image4 = Norma Shearer Best Actress November 1930 CROP.jpg
+| caption4 = [[Norma Shearer]], Best Actress winner
+| image5 = Herman Rosse.JPG
+| caption5 = [[Herman Rosse]], Best Art Direction winner
+| alt1 = 
+}}
+Nominees were announced on September 19, 1930. Winners are listed first and highlighted in '''boldface'''.<ref name="Oscars1930">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1931 |title=The 3rd Academy Awards (1930) Nominees and Winners |access-date=March 22, 2014 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |url-status=live |archive-url=https://web.archive.org/web/20141113041225/http://www.oscars.org/oscars/ceremonies/1931 |archive-date=November 13, 2014 }}</ref><ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Reader must select "1929/30" in the "Award Year(s)" drop-down menu and press "Search".</ref>
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+*'''''[[All Quiet on the Western Front (1930 film)|All Quiet on the Western Front]]'' – [[Carl Laemmle]],{{efn|The film as produced by [[Carl Laemmle Jr.]], but the award was given to his father [[Carl Laemmle]].}} for [[Universal Pictures|Universal Studios]]'''
+** ''[[The Big House (1930 film)|The Big House]]'' – [[Irving Thalberg]] for [[Cosmopolitan Productions|Cosmopolitan]]
+** ''[[Disraeli (1929 film)|Disraeli]]'' – [[Jack L. Warner]] and [[Darryl F. Zanuck]] for [[Warner Bros.]]
+** ''[[The Divorcee]]'' – [[Robert Z. Leonard]] for [[Metro-Goldwyn-Mayer]]
+** ''[[The Love Parade]]'' – [[Ernst Lubitsch]] for [[Paramount Pictures|Paramount Famous Lasky]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Lewis Milestone]]&nbsp;– ''[[All Quiet on the Western Front (1930 film)|All Quiet on the Western Front]]'''''
+** [[Clarence Brown]]&nbsp;– ''[[Anna Christie (1930 English-language film)|Anna Christie]]''
+** [[Robert Z. Leonard|Robert Leonard]]&nbsp;– ''[[The Divorcee]]''
+** [[King Vidor]]&nbsp;– ''[[Hallelujah (1929 film)|Hallelujah]]''
+** [[Ernst Lubitsch]]&nbsp;– ''[[The Love Parade]]''
+** Clarence Brown&nbsp;– ''[[Romance (1930 film)|Romance]]''
+|-
+| valign="top" width="50%" |{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[George Arliss]]&nbsp;– ''[[Disraeli (1929 film)|Disraeli]]'' as [[Benjamin Disraeli]]'''
+** [[George Arliss]]&nbsp;– ''[[The Green Goddess (1930 film)|The Green Goddess]]'' as The Raja
+** [[Wallace Beery]]&nbsp;– ''[[The Big House (1930 film)|The Big House]]'' as Butch
+** [[Maurice Chevalier]]&nbsp;– ''[[The Big Pond]]'' as Pierre Mirande and ''[[The Love Parade]]'' as The Count Alfred Renard
+** [[Ronald Colman]]&nbsp;– ''[[Bulldog Drummond (1929 film)|Bulldog Drummond]]'' as Hugh Drummond and ''[[Condemned (1929 film)|Condemned]]'' as Michel
+** [[Lawrence Tibbett]]&nbsp;– ''[[The Rogue Song]]'' as Yegor
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Norma Shearer]]&nbsp;– ''[[The Divorcee]]'' as Jerry Martin'''
+**[[Nancy Carroll (American actress)|Nancy Carroll]]&nbsp;– ''[[The Devil's Holiday]]'' as Hallie Hobart
+** [[Ruth Chatterton]]&nbsp;– ''[[Sarah and Son]]'' as Sarah Storm
+** [[Greta Garbo]]&nbsp;– ''[[Anna Christie (1930 English-language film)|Anna Christie]]'' as Anna Christie and ''[[Romance (1930 film)|Romance]]'' as Rita Cavallini
+** [[Norma Shearer]]&nbsp;– ''[[Their Own Desire]]'' as Lucia 'Lally' Marlett
+** [[Gloria Swanson]]&nbsp;– ''[[The Trespasser (1929 film)|The Trespasser]]'' as Marion Donnell
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing]]}}
+*'''''[[The Big House (1930 film)|The Big House]]''&nbsp;– [[Frances Marion]]'''
+** ''[[All Quiet on the Western Front (1930 film)|All Quiet on the Western Front]]''&nbsp;– [[George Abbott]], [[Maxwell Anderson]], and [[Del Andrews]], based on [[All Quiet on the Western Front|the novel]] by [[Erich Maria Remarque]]
+** ''[[Disraeli (1929 film)|Disraeli]]''&nbsp;– [[Julien Josephson]], based on [[Disraeli (play)|the play]] by [[Louis N. Parker]]
+** ''[[The Divorcee]]''&nbsp;– [[John Meehan (screenwriter)|John Meehan]], based on the novel ''Ex-Wife'' by [[Ursula Parrott]]
+** ''[[Street of Chance (1930 film)|Street of Chance]]''&nbsp;– [[Howard Estabrook]], based on a story by Oliver H. P. Garrett
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound Recording]]}}
+*'''''[[The Big House (1930 film)|The Big House]]''&nbsp;– [[Douglas Shearer]]'''
+** ''[[The Case of Sergeant Grischa (film)|The Case of Sergeant Grischa]]''&nbsp;– [[John Tribby|John E. Tribby]]
+** ''[[The Love Parade]]''&nbsp;– [[Franklin Hansen]]
+** ''[[Raffles (1930 film)|Raffles]]''&nbsp;– [[Oscar Lagerstrom]]
+** ''[[Song of the Flame (film)|Song of the Flame]]''&nbsp;– [[George Groves (sound engineer)|George Groves]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[King of Jazz]]''&nbsp;– [[Herman Rosse]]'''
+** ''[[Bulldog Drummond (1929 film)|Bulldog Drummond]]''&nbsp;– [[William Cameron Menzies]]
+** ''[[The Love Parade]]''&nbsp;– [[Hans Dreier]]
+** ''[[Sally (1929 film)|Sally]]''&nbsp;– [[Jack Okey]]
+** ''[[The Vagabond King (1930 film)|The Vagabond King]]''&nbsp;– Hans Dreier
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[With Byrd at the South Pole]]''&nbsp;– [[Joseph T. Rucker]] and [[Willard Van der Veer]]'''
+** ''[[All Quiet on the Western Front (1930 film)|All Quiet on the Western Front]]''&nbsp;– [[Arthur Edeson]]
+** ''[[Anna Christie (1930 English-language film)|Anna Christie]]''&nbsp;– [[William Daniels (cinematographer)|William Daniels]]
+** ''[[Hell's Angels (film)|Hell's Angels]]''&nbsp;– [[Tony Gaudio]] and [[Harry Perry (cinematographer)|Harry Perry]]
+** ''[[The Love Parade]]''&nbsp;– [[Victor Milner]]
+|}
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable plainrowheaders" style="text-align: center; float:left; margin-right:1em;"
+|+Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+|6
+|''[[The Love Parade]]''
+|-
+| scope="row" rowspan="3" style="text-align:center"| 4
+|''[[All Quiet on the Western Front (1930 film)|All Quiet on the Western Front]]''
+|-
+|''[[The Big House (1930 film)|The Big House]]''
+|-
+|''[[The Divorcee]]''
+|-
+| scope="row" rowspan="2" style="text-align:center"| 3
+|''[[Anna Christie (1930 English-language film)|Anna Christie]]''
+|-
+|''[[Disraeli (1929 film)|Disraeli]]'' 
+|-
+| scope="row" rowspan="2" style="text-align:center"| 2
+|''[[Bulldog Drummond (1929 film)|Bulldog Drummond]]''
+|-
+|''[[Romance (1930 film)|Romance]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable plainrowheaders" style="text-align: center; float:left; margin-right:1em;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Wins
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" rowspan="2" style="text-align:center"| 2
+|''[[All Quiet on the Western Front (1930 film)|All Quiet on the Western Front]]''
+|-
+|''[[The Big House (1930 film)|The Big House]]''
+|}
+
+{{col-float-end}}
+
+== Gallery==
+{{Gallery
+|title=Academy Award-winning and nominated films – 3rd Academy Awards
+|width=165
+|height=175
+|File:All Quiet on the Western Front (1930, sound version).webm|The full film of ''[[All Quiet on the Western Front (1930 film)|All Quiet on the Western Front]]'', which won for [[Academy Award for Best Picture|Best Picture]] (then known as Outstanding Production) and for [[Academy Award for Best Director|Best Directing]]
+|File:Disraeli (1929).webm|A near-complete version of the film ''[[Disraeli (1929 film)|Disraeli]]'', which won [[George Arliss]] the award for [[Academy Award for Best Actor|Best Actor]]
+|File:The Divorcee (1930).webm|The full film of ''[[The Divorcee]]'', which won [[Norma Shearer]] the award for [[Academy Award for Best Actor|Best Actress]]
+|File:The Big House (1930).webm|The full film of ''[[The Big House (1930 film)|The Big House]]'', which won for [[Academy Award for Best Adapted Screenplay|Best Writing]] and for [[Academy Award for Best Sound|Best Sound Recording]]
+|File:The Love Parade (1929).webm|The full film of ''[[The Love Parade]]'', which was nominated for six awards but did not win any.
+}}
+
+== See also ==
+
+* [[1929 in film]]
+* [[1930 in film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 03}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1929 film awards]]
+[[Category:1930 film awards]]
+[[Category:1930 in American cinema]]
+[[Category:1930 in Los Angeles|Academy Awards]]
+[[Category:November 1930 in the United States]]

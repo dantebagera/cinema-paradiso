@@ -1,0 +1,546 @@
+{{Featured list}}{{oscars short description|films-year=1982}}
+{{Use American English|date=May 2025}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 55
+| award            = Academy Awards
+| date             = April 11, 1983
+| image            = Oscar-1982.jpg
+| image_size       = 200px
+| alt              = Official poster for the 55th Academy Awards in 1983
+| site             = [[Dorothy Chandler Pavilion]]<br>[[Los Angeles]], California, U.S.
+| host             = [[Walter Matthau]]<br>[[Liza Minnelli]]<br>[[Dudley Moore]]<br>[[Richard Pryor]]
+| producer         = [[Howard W. Koch]]
+| director         = [[Marty Pasetta]]
+| best_picture     = ''[[Gandhi (film)|Gandhi]]''
+| most_wins        = ''Gandhi'' (8)
+| most_nominations = ''Gandhi'' (11)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 35 minutes<ref name="Mansfield">{{cite news |last1=Dyson |first1=Ray |title=Yaaawn! Are the Academy Awards Over Yet? |url=https://www.newspapers.com/article/news-journal-ray-dyson-oscar-ceremony-re/172334315/ |access-date=January 15, 2024 |work=[[Mansfield News Journal]] |date=April 14, 1983 |page=5-C |via=[[Ancestry.com|Newspapers.com]] }}</ref>
+| ratings          = 53.2&nbsp;million<br>38.0% ([[Nielsen ratings]])
+| last             = 54th
+| next             = 56th
+}}
+
+The '''55th Academy Awards''' ceremony, organized by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored [[1982 in film|films released in 1982]] and took place on April 11, 1983, at the [[Dorothy Chandler Pavilion]] in Los Angeles beginning at 6:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 9:00&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Howard W. Koch]] and directed by [[Marty Pasetta]].<ref name="Pasetta">{{harvnb|Osborne|2013|p=413}}</ref> Actors [[Walter Matthau]], [[Liza Minnelli]], [[Dudley Moore]], and [[Richard Pryor]] hosted the show. Matthau and Pryor hosted the gala for the second time; the former was a co-host of the [[48th Academy Awards|48th ceremony]] in 1976 while the latter co-hosted the [[49th Academy Awards|49th ceremony]] held in 1977.<ref>{{cite news |last1=Sundby |first1=Alex |title=Who Hosted the 2024 Oscars, and Who Hosted Past Academy Awards Ceremonies? |url=https://www.cbsnews.com/news/oscars-host-2024/ |access-date=October 2, 2024 |agency=[[CBS News]] |date=March 10, 2024 |archive-date=August 31, 2024 |archive-url=https://web.archive.org/web/20240831133808/https://www.cbsnews.com/news/oscars-host-2024/ |url-status=live }}</ref><ref>{{cite news |last1=Conrad |first1=Michael |title=A Gentle Man |url=https://www.newspapers.com/article/florence-morning-news-a-gentle-man/172415608/ |access-date=March 12, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530091258/https://www.newspapers.com/article/florence-morning-news-a-gentle-man/172415608/ |work=[[The Morning News (American newspaper)|The Morning News]] |date=March 26, 1983 |page=41 |via=[[Ancestry.com|Newspapers.com]] |url-status=live }}</ref> Meanwhile, Minnelli and Moore hosted for the first time.<ref>{{cite news |title=Names in the News: 'Welk Doing Devil's Work' |url=https://www.newspapers.com/article/the-vancouver-sun-names-in-the-news/172334097/ |access-date=January 15, 2024 |work=[[Vancouver Sun]] |date=March 2, 1983 |page=D16 |via=[[Ancestry.com|Newspapers.com]] }}</ref> Two weeks earlier, in a ceremony held at [[The Beverly Hilton]] in [[Beverly Hills, California]], on March 27, the [[Academy Scientific and Technical Awards]] were presented by host [[Dyan Cannon]].<ref>{{cite news|title=Past Scientific & Technical Awards Ceremonies|url=http://www.oscars.org/awards/scitech/pastawards.html|access-date=July 31, 2013 |publisher=[[Academy of Motion Picture Arts and Sciences]] |archive-url=https://web.archive.org/web/20140213185729/http://www.oscars.org/awards/scitech/pastawards.html|archive-date=February 13, 2014}}</ref>
+
+''[[Gandhi (film)|Gandhi]]'' won eight awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news |last1=Shales |first1=Tom |author-link=Tom Shales |title=And the Winners Are... ''Gandhi'', Best Picture, Sweeps Oscars |url=https://www.washingtonpost.com/archive/lifestyle/1983/04/12/and-the-winners-are-gandhi-best-picture-sweeps-oscars/3c98414d-8bbb-4a52-b200-b7ec438e0368/ |access-date=March 23, 2023 |work=The Washington Post |date=April 11, 1983 |archive-date=August 28, 2017 |archive-url=https://web.archive.org/web/20170828061229/https://www.washingtonpost.com/archive/lifestyle/1983/04/12/and-the-winners-are-gandhi-best-picture-sweeps-oscars/3c98414d-8bbb-4a52-b200-b7ec438e0368/ |url-status=live }}</ref> Other winners included ''[[E.T. the Extra-Terrestrial]]'' with four awards, ''[[An Officer and a Gentleman]]'' with two, ''[[Begin the Beguine (film)|Begin the Beguine]]'', ''[[If You Love This Planet]]'', ''[[Just Another Missing Kid]]'', ''[[Missing (1982 film)|Missing]]'', ''[[Quest for Fire (film)|Quest for Fire]]'', ''[[A Shocking Accident]]'', ''[[Sophie's Choice (film)|Sophie's Choice]]'', ''[[Tango (1981 film)|Tango]]'', ''[[Tootsie]]'', and ''[[Victor/Victoria]]'' with one. The telecast garnered 53.2&nbsp;million viewers in the United States.
+
+==Winners and nominees== 
+The nominees for the 55th Academy Awards were announced on February 17, 1983, by Academy president [[Fay Kanin]] and actor [[Karl Malden]].<ref>{{cite news |last1=Thomas |first1=Bob |title=''Gandhi'' Scores 11 Oscar Nominations |url=https://www.newspapers.com/article/the-indianapolis-star-oscar-nominations/173452241/ |access-date=January 24, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530091229/https://www.newspapers.com/article/the-indianapolis-star-oscar-nominations/173452241/ |work=[[The Indianapolis Star]] |date=February 18, 1983 |page=35 |via=[[Newspapers.com]] |url-status=live }}</ref> ''Gandhi'' received the most nominations with eleven total; ''[[Tootsie]]'' came in second with ten.<ref>{{cite news |last1=Arnold |first1=Gary |title=''Gandhi'' Tops Oscar Nominations |url=https://www.washingtonpost.com/archive/lifestyle/1983/02/18/gandhi-tops-oscar-nominations/2985e90f-7b7f-4e5c-b274-5ef0e4cbba97/ |access-date=March 12, 2023 |work=[[The Washington Post]] |date=February 18, 1983 |archive-date=August 28, 2017 |archive-url=https://web.archive.org/web/20170828075001/https://www.washingtonpost.com/archive/lifestyle/1983/02/18/gandhi-tops-oscar-nominations/2985e90f-7b7f-4e5c-b274-5ef0e4cbba97/ |url-status=live }}</ref> The winners were announced at the awards ceremony on April 11. Best Supporting Actress winner [[Jessica Lange]] was the second actress to earn both lead and supporting acting nominations in the same year after [[Teresa Wright]] who earned a nomination for Best Actress for 1942's ''[[The Pride of the Yankees]]'' while winning Best Supporting Actress in the same year for ''[[Mrs. Miniver]]''.<ref>{{harvnb|Wiley|Bona|1996|p=1142}}</ref> [[Louis Gossett Jr.]] became the first African-American winner for Best Supporting Actor.<ref>{{harvnb|Kinn|Piazza|2002|p=233}}</ref>
+===Awards===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Richard Attenborough (3x4 cropped).jpg
+| caption1          = [[Richard Attenborough]], Best Picture and Best Director winner
+| image2            = Ben Kingsley 2012.jpg
+| caption2          = [[Ben Kingsley]], Best Actor winner
+| image3            = Meryl Streep by Jack Mitchell.jpg
+| caption3          = [[Meryl Streep]], Best Actress winner
+| image4            = Lou Gossett Jr. 1978.jpg
+| caption4          = [[Louis Gossett Jr.]], Best Supporting Actor winner
+| image5            = Jessica Lange (Cropped).JPG
+| caption5          = [[Jessica Lange]], Best Supporting Actress winner
+| image6            = Costa-Gavras Césars 2017.jpg
+| caption6          = [[Costa-Gavras]], Best Screenplay Based on Material from Another Medium co-winner
+| image7            = John Williams 2024.jpg
+| caption7          = [[John Williams]], Best Original Score winner
+| image8            = Henry Mancini.jpg
+| caption8          = [[Henry Mancini]], Best Original Song Score and Its Adaptation or Adaptation Score co-winner
+| image9            = Jack_Nitzsche_1.jpg
+| caption9          = [[Jack Nitzsche]], Best Original Song co-winner
+| image10           = Buffy Sainte-Marie 1970.JPG
+| caption10         = [[Buffy Sainte-Marie]], Best Original Song co-winner
+| image11           = Ben Burtt Celebration Europe II.jpg
+| caption11         = [[Ben Burtt]], Best Sound Effects Editing co-winner
+| image12           = Bhanu Athaiya (nee Rajopadhye).jpg
+| caption12         = [[Bhanu Athaiya]], Best Costume Design co-winner
+| image13           = Carlo Rambaldi al Giffoni Film Festival 2010 - cropped.jpg
+| caption13         = [[Carlo Rambaldi]], Best Visual Effects co-winner
+| image14           = Dennis Muren.jpg
+| caption14         = [[Dennis Muren]], Best Visual Effects co-winner
+}}
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double dagger}}).<ref name="Oscars1983">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1983 |title=The 55th Academy Awards (1983) Nominees and Winners |access-date=October 9, 2011 |publisher=[[Academy of Motion Picture Arts and Sciences]] |url-status=dead |archive-url=https://archive.today/20120905/http://www.oscars.org/awards/academyawards/legacy/ceremony/55th-winners.html |archive-date=2012-09-05 }}</ref>
+{| role="presentation" class=wikitable
+|+{{sronly|Table featuring winners and nominees of the 54th Academy Awards}}
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA |[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Gandhi (film)|Gandhi]]'' – [[Richard Attenborough]], producer'''{{double dagger}}
+**''[[E.T. the Extra-Terrestrial]]'' – [[Steven Spielberg]] and [[Kathleen Kennedy (producer)|Kathleen Kennedy]], producers
+**''[[Missing (1982 film)|Missing]]'' – [[Edward Lewis (producer)|Edward Lewis]] and Mildred Lewis, producers
+**''[[Tootsie]]'' – [[Sydney Pollack]] and [[Dick Richards]], producers
+**''[[The Verdict]]'' – [[David Brown (producer)|David Brown]] and [[Richard D. Zanuck]], producers
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Richard Attenborough]] – ''[[Gandhi (film)|Gandhi]]'''''{{double dagger}}
+**[[Wolfgang Petersen]] – ''[[Das Boot]]''
+**[[Steven Spielberg]] – ''[[E.T. the Extra-Terrestrial]]''
+**[[Sydney Pollack]] – ''[[Tootsie]]''
+**[[Sidney Lumet]] – ''[[The Verdict]]''
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+*'''[[Ben Kingsley]] – ''[[Gandhi (film)|Gandhi]]'' as [[Mahatma Gandhi]]'''{{double dagger}}
+**[[Dustin Hoffman]] – ''[[Tootsie]]'' as Michael Dorsey/Dorothy Michaels
+**[[Jack Lemmon]] – ''[[Missing (1982 film)|Missing]]'' as [[Edmund Horman]]
+**[[Paul Newman]] – ''[[The Verdict]]'' as Frank Galvin
+**[[Peter O'Toole]] – ''[[My Favorite Year]]'' as Alan Swann
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+*'''[[Meryl Streep]] – ''[[Sophie's Choice (film)|Sophie's Choice]]'' as Zofia "Sophie" Zawistowski'''{{double dagger}}
+**[[Julie Andrews]] – ''[[Victor/Victoria]]'' as Victoria Grant/Count Victor Grazinski
+**[[Jessica Lange]] – ''[[Frances (film)|Frances]]'' as [[Frances Farmer]]
+**[[Sissy Spacek]] – ''[[Missing (1982 film)|Missing]]'' as [[Beth Horman]]
+**[[Debra Winger]] – ''[[An Officer and a Gentleman]]'' as Paula Pokrifki
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Louis Gossett Jr.]] – ''[[An Officer and a Gentleman]]'' as [[Gunnery sergeant|Gunnery Sergeant]] Emil Foley'''{{double dagger}}
+**[[Charles Durning]] – ''[[The Best Little Whorehouse in Texas (film)|The Best Little Whorehouse in Texas]]'' as The Governor
+**[[John Lithgow]] – ''[[The World According to Garp (film)|The World According to Garp]]'' as Roberta Muldoon
+**[[James Mason]] – ''[[The Verdict]]'' as Ed Concannon
+**[[Robert Preston (actor)|Robert Preston]] – ''[[Victor/Victoria]]'' as Carol "Toddy" Todd
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Jessica Lange]] – ''[[Tootsie]]'' as Julie Nichols'''{{double dagger}}
+**[[Glenn Close]] – ''[[The World According to Garp (film)|The World According to Garp]]'' as Jenny Fields
+**[[Teri Garr]] – ''[[Tootsie]]'' as Sandra "Sandy" Lester
+**[[Kim Stanley]] – ''[[Frances (film)|Frances]]'' as [[Frances Farmer|Lillian Van Ornum Farmer]]
+**[[Lesley Ann Warren]] – ''[[Victor/Victoria]]'' as Norma Cassidy
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+*'''''[[Gandhi (film)|Gandhi]]'' – [[John Briley]]'''{{double dagger}}
+**''[[Diner (1982 film)|Diner]]'' – [[Barry Levinson]]
+**''[[E.T. the Extra-Terrestrial]]'' – [[Melissa Mathison]]
+**''[[An Officer and a Gentleman]]'' – [[Douglas Day Stewart]]
+**''[[Tootsie]]'' – Screenplay by [[Larry Gelbart]] and [[Murray Schisgal]]; Story by [[Don McGuire (actor)|Don McGuire]] and Larry Gelbart
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material from Another Medium)]]<ref>Multiple sources:
+*{{cite news |last1=Lewis |first1=Flora |title=New Film by Costa-Gravas Examines the Chilean Coup |url=https://www.nytimes.com/1982/02/07/movies/new-film-by-costa-gravas-examines-the-chilean-coup.html |access-date=September 18, 2023 |work=[[The New York Times]] |date=February 7, 1982 |archive-date=May 24, 2015 |archive-url=https://web.archive.org/web/20150524104645/http://www.nytimes.com/1982/02/07/movies/new-film-by-costa-gravas-examines-the-chilean-coup.html |url-status=live }}
+*{{cite web |title=Photography for ''Das Boot'' |url=https://theasc.com/articles/das-boot |publisher=[[American Society of Cinematographers]]s |access-date=January 15, 2024 |date=December 1982 |archive-date=April 13, 2024 |archive-url=https://web.archive.org/web/20240413094321/https://theasc.com/articles/das-boot |url-status=live }}
+*{{cite news |last1=Maslin |first1=Janet |author1-link=Janet Maslin |title=Styron's ''Sophie's Choice'' |url=https://www.nytimes.com/1982/12/10/movies/styron-s-sophie-s-choice.html |access-date=March 23, 2023 |work=[[The New York Times]] |date=December 10, 1982 |archive-date=February 19, 2020 |archive-url=https://web.archive.org/web/20200219093104/https://www.nytimes.com/1982/12/10/movies/styron-s-sophie-s-choice.html |url-status=live }}
+*{{cite news |last1=Maslin |first1=Janet |author1-link=Janet Maslin |title=Paul Newman Stars in ''The Verdict'' |url=https://www.nytimes.com/1982/12/08/movies/paul-newman-stars-in-the-verdict.html |access-date=March 12, 2025 |work=[[The New York Times]] |date=December 8, 1982 |archive-date=September 24, 2024 |archive-url=https://web.archive.org/web/20240924114528/https://www.nytimes.com/1982/12/08/movies/paul-newman-stars-in-the-verdict.html |url-status=live }}
+*{{cite news |last1=Canby |first1=Vincent |author1-link=Vincent Canby |title=''Victor/Victoria'', a Blake Edwards Farce |url=https://www.nytimes.com/1982/03/19/movies/victor-victoria-a-blake-edwards-farce.html |access-date=March 12, 2023 |work=[[The New York Times]] |date=March 19, 1982 |archive-date=March 25, 2023 |archive-url=https://web.archive.org/web/20230325070208/https://www.nytimes.com/1982/03/19/movies/victor-victoria-a-blake-edwards-farce.html |url-status=live }}</ref>}}
+*'''''[[Missing (1982 film)|Missing]]'' – [[Costa-Gavras]] and [[Donald E. Stewart]] based on the book ''The Execution of Charles Horman: An American Sacrifice'' by [[Thomas Hauser]]'''{{double dagger}}
+**''[[Das Boot]]'' – [[Wolfgang Petersen]] based on the novel by [[Lothar G. Buchheim]]
+**''[[Sophie's Choice (film)|Sophie's Choice]]'' – [[Alan J. Pakula]] based on [[Sophie's Choice (novel)|the novel]] by [[William Styron]]
+**''[[The Verdict]]'' – [[David Mamet]] based on the novel by [[Barry Reed (author)|Barry Reed]]
+**''[[Victor/Victoria]]'' – [[Blake Edwards]] based on the film [[Victor and Victoria|''Viktor und Viktoria'']] by [[Reinhold Schünzel]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best International Feature Film|Best Foreign Language Film]]<ref>{{cite news |title=U.S. Takes Issue with Costa-Garvas Film on Chile |url=https://www.nytimes.com/1982/02/10/movies/us-takes-issue-with-costa-gavras-film-on-chile.html |access-date=March 23, 2024 |work=[[The New York Times]] |date=February 10, 1982 |archive-date=January 23, 2025 |archive-url=https://web.archive.org/web/20250123212924/https://www.nytimes.com/1982/02/10/movies/us-takes-issue-with-costa-gavras-film-on-chile.html |url-status=live }}</ref>}}
+*'''''[[Begin the Beguine (film)|Begin the Beguine]]'' ([[List of Spanish submissions for the Academy Award for Best International Feature Film|Spain]]) in [[Spanish language|Spanish]] and [[English language|English]]&nbsp;– directed by [[José Luis Garci]]'''{{double dagger}}
+**''[[Alsino and the Condor]]'' ([[List of Nicaraguan submissions for the Academy Award for Best International Feature Film|Nicaragua]]) in Spanish&nbsp;– directed by [[Miguel Littin]]
+**''[[Coup de Torchon|Clean Slate]]'' ([[List of French submissions for the Academy Award for Best International Feature Film|France]]) in [[French language|French]]&nbsp;– directed by [[Bertrand Tavernier]]
+**''[[Flight of the Eagle]]'' ([[List of Swedish submissions for the Academy Award for Best International Feature Film|Sweden]]) in [[Swedish language|Swedish]] and French &nbsp;– directed by [[Jan Troell]]
+**''[[Private Life (1982 film)|Private Life]]'' ([[List of Soviet submissions for the Academy Award for Best International Feature Film|Union of Soviet Socialist Republics]]) in [[Russian language|Russian]]&nbsp;– directed by [[Yuli Raizman]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Just Another Missing Kid]]'' – [[John Zaritsky]]'''{{double dagger}}
+**''[[After the Axe]]'' – [[Sturla Gunnarsson]] and Steve Lucas
+**''[[Ben's Mill]]'' – John Karol and Michel Chalufour
+**''[[In Our Water]]'' – Meg Switzgable
+**''[[A Portrait of Giselle]]'' – Joseph Wishy
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Short Subject|Best Documentary (Short Subject)]]}}
+*'''''[[If You Love This Planet]]'' – Edward Le Lorrain and [[Terre Nash]]'''{{double dagger}}
+**''[[Gods of Metal (film)|Gods of Metal]]'' – [[Robert Richter (American film producer)|Robert Richter]]
+**''[[The Klan: A Legacy of Hate in America]]'' – [[Charles Guggenheim]] and Werner Schumann
+**''[[To Live or Let Die]]'' – [[Freida Lee Mock]]
+**''[[Traveling Hopefully]]'' – [[John G. Avildsen]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+*'''''[[A Shocking Accident]]'' – Christine Oestreicher'''{{double dagger}}
+**''[[Ballet Robotique]]'' – [[Bob Rogers (designer)|Bob Rogers]]
+**''The Silence'' – [[Michael Toshiyuki Uno]] and Joseph Benson
+**''Split Cherry Tree'' – Jan Saunders
+**''[[Sredni Vashtar (film)|Sredni Vashtar]]'' – [[Andrew Birkin]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[Tango (1981 film)|Tango]]'' – [[Zbigniew Rybczyński]]'''{{double dagger}}
+**''[[The Great Cognito]]'' – [[Will Vinton]]
+**''[[The Snowman]]'' – [[John Coates (producer)|John Coates]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[E.T. the Extra-Terrestrial]]'' – [[John Williams]]'''{{double dagger}}
+**''[[Gandhi (film)|Gandhi]]'' – [[Ravi Shankar]] and [[George Fenton]]
+**''[[An Officer and a Gentleman]]'' – [[Jack Nitzsche]]
+**''[[Poltergeist (1982 film)|Poltergeist]]'' – [[Jerry Goldsmith]]
+**''[[Sophie's Choice (film)|Sophie's Choice]]'' – [[Marvin Hamlisch]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Song Score and Its Adaptation -or- Adaptation Score)]]}}
+*'''''[[Victor/Victoria]]'' – Song Score by [[Henry Mancini]] and [[Leslie Bricusse]]; Adaptation Score by Henry Mancini'''{{double dagger}}
+**''[[Annie (1982 film)|Annie]]'' – Adaptation Score by [[Ralph Burns]]
+**''[[One from the Heart]]'' – Song Score by [[Tom Waits]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+*'''"[[Up Where We Belong]]" from ''[[An Officer and a Gentleman]]'' – Music by [[Jack Nitzsche]] and [[Buffy Sainte-Marie]]; Lyrics by [[Will Jennings]]'''{{double dagger}}
+**"[[Eye of the Tiger]]" from ''[[Rocky III]]'' – Music and Lyrics by [[Jim Peterik]] and [[Frankie Sullivan]]
+**"[[How Do You Keep the Music Playing?]]" from ''[[Best Friends (1982 film)|Best Friends]]'' – Music by [[Michel Legrand]]; Lyrics by [[Alan and Marilyn Bergman|Alan Bergman]] and [[Alan and Marilyn Bergman|Marilyn Bergman]]
+**"If We Were In Love" from ''[[Yes, Giorgio]]'' – Music by [[John Williams]]; Lyrics by [[Alan and Marilyn Bergman|Alan Bergman]] and [[Alan and Marilyn Bergman|Marilyn Bergman]]
+**"[[It Might Be You]]" from ''[[Tootsie]]'' – Music by [[Dave Grusin]]; Lyrics by [[Alan and Marilyn Bergman|Alan Bergman]] and [[Alan and Marilyn Bergman|Marilyn Bergman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound]]}}
+*'''''[[E.T. the Extra-Terrestrial]]'' – [[Robert Knudson]], [[Robert Glass (sound engineer)|Robert Glass]], [[Don Digirolamo]] and [[Gene Cantamessa]]'''{{double dagger}}
+**''[[Das Boot]]'' – [[Milan Bor]], [[Trevor Pyke]] and [[Mike Le Mare]]
+**''[[Gandhi (film)|Gandhi]]'' – [[Gerry Humphreys]], [[Robin O'Donoghue]], [[Jonathan Bates]] and [[Simon Kaye]]
+**''[[Tootsie]]'' – [[Arthur Piantadosi]], [[Les Fresholtz]], [[Dick Alexander]] and [[Les Lazarowitz]]
+**''[[Tron]]'' – [[Michael Minkler]], [[Bob Minkler]], [[Lee Minkler]] and [[James LaRue (sound engineer)|James LaRue]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound Effects Editing]]}}
+*'''''[[E.T. the Extra-Terrestrial]]'' – [[Charles L. Campbell]] and [[Ben Burtt]]'''{{double dagger}}
+**''[[Das Boot]]'' – [[Mike Le Mare]]
+**''[[Poltergeist (1982 film)|Poltergeist]]'' – [[Stephen Hunter Flick]] and [[Richard L. Anderson (sound effects editor)|Richard Anderson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Gandhi (film)|Gandhi]]'' – Art Direction: [[Stuart Craig]] and [[Robert W. Laing]]; Set Decoration: [[Michael Seirton]]'''{{double dagger}}
+**''[[Annie (1982 film)|Annie]]'' – Art Direction: [[Dale Hennesy]] (posthumous nomination); Set Decoration: [[Marvin March]]
+**''[[Blade Runner]]'' – Art Direction: [[Lawrence G. Paull]] and [[David Snyder]]; Set Decoration: [[Linda DeScenna]]
+**''[[La Traviata (1983 film)|La Traviata]]'' – Art Direction: [[Franco Zeffirelli]]; Set Decoration: [[Gianni Quaranta]]
+**''[[Victor/Victoria]]'' – Art Direction: [[Rodger Maus]], [[Tim Hutchinson (production designer)|Tim Hutchinson]] and [[William Craig Smith]]; Set Decoration: [[Harry Cordwell]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Gandhi (film)|Gandhi]]'' – [[Billy Williams (cinematographer)|Billy Williams]] and [[Ronnie Taylor]]'''{{double dagger}}
+**''[[Das Boot]]'' – [[Jost Vacano]]
+**''[[E.T. the Extra-Terrestrial]]'' – [[Allen Daviau]]
+**''[[Sophie's Choice (film)|Sophie's Choice]]'' – [[Néstor Almendros]]
+**''[[Tootsie]]'' – [[Owen Roizman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+*'''''[[Quest for Fire (film)|Quest for Fire]]'' – [[Sarah Monzani]] and [[Michèle Burke]]'''{{double dagger}}
+**''[[Gandhi (film)|Gandhi]]'' – [[Tom Smith (make-up artist)|Tom Smith]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Gandhi (film)|Gandhi]]'' – [[John Mollo]] and [[Bhanu Athaiya]]'''{{double dagger}}
+**''[[La Traviata (1983 film)|La Traviata]]'' – [[Piero Tosi]]
+**''[[Sophie's Choice (film)|Sophie's Choice]]'' – [[Albert Wolsky]]
+**''[[Tron]]'' – [[Elois Jenssen]] and [[Rosanna Norton]]
+**''[[Victor/Victoria]]'' – [[Patricia Norris]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Gandhi (film)|Gandhi]]'' – [[John Bloom (film editor)|John Bloom]]'''{{double dagger}}
+**''[[Das Boot]]'' – [[Hannes Nikel]]
+**''[[E.T. the Extra-Terrestrial]]'' – [[Carol Littleton]]
+**''[[An Officer and a Gentleman]]'' – [[Peter Zinner]]
+**''[[Tootsie]]'' – [[Fredric Steinkamp]] and [[William Steinkamp]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+*'''''[[E.T. the Extra-Terrestrial]]'' – [[Carlo Rambaldi]], [[Dennis Muren]] and [[Kenneth F. Smith]]'''{{double dagger}}
+**''[[Blade Runner]]'' – [[Douglas Trumbull]], [[Richard Yuricich]] and [[David Dryer]]
+**''[[Poltergeist (1982 film)|Poltergeist]]'' – [[Richard Edlund]], [[Michael Wood (special effects artist)|Michael Wood]] and [[Bruce Nicholson]]
+|}
+
+===Honorary Academy Award===
+* To [[Mickey Rooney]] in recognition of his 60 years of versatility in a variety of memorable film performances.<ref name="Memorable">{{cite web |title=The 55th Academy Awards Memorable Moments |url=https://www.oscars.org/oscars/ceremonies/1983/memorable-moments |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=March 12, 2023 |archive-date=June 6, 2023 |archive-url=https://web.archive.org/web/20230606164022/https://www.oscars.org/oscars/ceremonies/1983 |url-status=live }}</ref>
+
+===Jean Hersholt Humanitarian Award===
+The award recognizes individuals whose humanitarian efforts have brought credit to the motion picture industry.<ref>{{cite web |title=Jean Hersholt Humanitarian Award |url=https://www.oscars.org/governors/hersholt |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=12 November 2020 |archive-date=16 November 2020 |archive-url=https://web.archive.org/web/20201116224625/https://www.oscars.org/governors/hersholt |url-status=live }}</ref>
+
+*[[Walter Mirisch]]<ref name="Memorable" />
+
+=== Films with multiple nominations and awards ===
+{{col-begin|width=80%}}{{col-1-of-2}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 11
+| ''[[Gandhi (film)|Gandhi]]''
+|-
+| scope="row" style="text-align:center"| 10
+| ''[[Tootsie]]''
+|-
+| scope="row" style="text-align:center"| 9
+| ''[[E.T. the Extra-Terrestrial]]''
+|-
+| scope="row" style="text-align:center"| 7
+| ''[[Victor/Victoria]]''
+|-
+| rowspan="2" style="text-align:center"| 6
+| ''[[Das Boot]]''
+|-
+| ''[[An Officer and a Gentleman]]''
+|-
+| rowspan="2" style="text-align:center"| 5
+| ''[[Sophie's Choice (film)|Sophie's Choice]]''
+|-
+| ''[[The Verdict]]''
+|-
+| scope="row" style="text-align:center"| 4
+| ''[[Missing (1982 film)|Missing]]''
+|-
+| scope="row" style="text-align:center"| 3
+| ''[[Poltergeist (1982 film)|Poltergeist]]''
+|-
+| rowspan="6" style="text-align:center"| 2
+| ''[[Annie (1982 film)|Annie]]''
+|-
+| ''[[Blade Runner]]''
+|-
+| ''[[Frances (film)|Frances]]''
+|-
+| ''[[La Traviata (1983 film)|La Traviata]]''
+|-
+| ''[[Tron]]''
+|-
+| ''[[The World According to Garp (film)|The World According to Garp]]'' 
+|}
+{{col-2}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 8
+| ''[[Gandhi (film)|Gandhi]]''
+|-
+| scope="row" style="text-align:center"| 4
+| ''[[E.T. the Extra-Terrestrial]]''
+|-
+| scope="row" style="text-align:center"| 2
+| ''[[An Officer and a Gentleman]]''
+|}
+{{col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref name="MFEO">{{harvnb|Wiley|Bona|1996|p=623}}</ref>
+
+===Presenters===
+{| class="wikitable plainrowheaders sortable"
+|+{{sronly|Table featuring presenters for the 55th Academy Awards}}
+|-
+! scope="col" | Name(s)
+! scope="col" class="unsortable" | Role
+|-
+| scope="row" | {{sortname|Hank|Simms}}<ref>{{harvnb|Terrance|2013|p=14}}</ref>
+| Announcer for the 55th Academy Awards
+|-
+| scope="row" | {{sortname|Fay|Kanin}} (AMPAS President)
+| Gave opening remarks welcoming guests to the awards ceremony
+|-
+| scope="row" | {{sortname|Luise|Rainer}}<br />[[Jack Valenti]]
+| Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| scope="row" |  {{sortname|Christopher|Reeve}}<br />[[Susan Sarandon]]
+| Presenters of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| scope="row" | {{sortname|Jane|Russell}}<br />[[Cornel Wilde]]
+| Presenters of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| scope="row" | {{sortname|Matt|Dillon}}<br />[[Kristy McNichol]]
+| Presenters of the awards for [[Academy Award for Best Animated Short Film|Best Animated Short Film]] and [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+| scope="row" |  {{sortname|Charlton|Heston}}
+| Presenter of the [[Jean Hersholt Humanitarian Award]] to [[Walter Mirisch]]
+|-
+| scope="row" | {{sortname||Cher}}<br />[[Plácido Domingo]]
+| Presenters of the awards for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Original Score|Best Original Song Score and Its Adaptation or Adaptation Score]]
+|-
+| scope="row" |  {{sortname|Steve|Guttenberg}}<br />[[Ann Reinking]]
+| Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| scope="row" | {{sortname|Elizabeth|McGovern}}<br />[[Eddie Murphy]]
+| Presenters of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| scope="row" | {{sortname|Jamie Lee|Curtis}}<br />[[Carl Weathers]]
+| Presenters of the award for [[Academy Award for Best Sound Editing|Best Sound Effects Editing]]
+|-
+| scope="row" | {{sortname|JoBeth|Williams}}<br />[[David L. Wolper]]
+| Presenters of the awards for [[Academy Award for Best Documentary Short Film|Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature Film|Best Documentary Feature]]
+|-
+| scope="row" | {{sortname|Margot|Kidder}}<br />[[William Shatner]]
+| Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| scope="row" |  {{sortname|Michael|Keaton}}<br />[[Nastassja Kinski]]
+| Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| scope="row" | {{sortname|Bob|Hope}}
+| Presenter of the [[Academy Honorary Award]] to [[Mickey Rooney]]
+|-
+| scope="row" | {{sortname|Lisa|Eilbacher}}<br />[[David L. Keith|David Keith]]
+| Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| scope="row" | {{sortname|Tom|Selleck}}<br />[[Raquel Welch]]
+| Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| scope="row" | {{sortname|Olivia|Newton-John}}
+| Presenter of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| scope="row" | {{sortname|Robert|Mitchum}}<br />[[Sigourney Weaver]]
+| Presenters of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| scope="row" | {{sortname|Philip|Dunne|Philip Dunne (writer)}}
+| Presenter of the awards for [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen]] and [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material from Another Medium]]
+|-
+| scope="row" | {{sortname|Billy|Wilder}} 
+| Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| scope="row" |  {{sortname|Sylvester|Stallone}}
+| Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| scope="row" |  {{sortname|John|Travolta}}
+| Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| scope="row" | {{sortname|Carol|Burnett}}
+| Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable plainrowheaders sortable"
+|+{{sronly|Table featuring performers for the 55th Academy Awards}}
+|-
+! scope="col" | Name
+! scope="col" class="unsortable" | Role
+! scope="col" class="unsortable" | Performed
+|-
+| scope="row" | {{sortname|Bill|Conti}}
+| Musical arranger and conductor
+| Orchestral
+|-
+| scope="row" | {{sortname|Walter|Matthau}}<br />[[Liza Minnelli]]<br />[[Dudley Moore]]<br />[[Richard Pryor]]
+| Performers
+| "It All Comes Down to This"
+|-
+| scope="row" | [[The Temptations]]<br />[[Sandahl Bergman]]
+| Performers
+| "[[Eye of the Tiger]]" from ''[[Rocky III]]''
+|-
+| scope="row" | {{sortname|Patti|Austin}}<br />[[James Ingram]]
+| Performers 
+| "[[How Do You Keep the Music Playing?]]" from ''[[Best Friends (1982 film)|Best Friends]]''
+|-
+| scope="row" | {{sortname|Joe|Cocker}}<br />[[Jennifer Warnes]]<br />[[Naval Reserve Officers Training Corps]] from the [[University of Southern California]]
+| Performers
+| "[[Up Where We Belong]]" from ''[[An Officer and a Gentleman]]''
+|-
+| scope="row" | {{sortname|Stephen|Bishop|Stephen Bishop (singer)}}
+| Performer
+| "[[It Might Be You]]" from ''[[Tootsie]]''
+|-
+| scope="row" | {{sortname|Peter|Allen|Peter Allen (musician)}}<br />[[Bernadette Peters]]<br />Academy Awards Chorus
+| Performers
+| Salute to [[Irving Berlin]]
+|-
+| scope="row" | {{sortname|Melissa|Manchester}}
+| Performer
+| "If We Were in Love" from ''[[Yes, Giorgio]]''
+|-
+| scope="row" | {{sortname||Academy Awards Chorus|nolink=0}}
+| Performers
+| "[[That's Entertainment! (song)|That's Entertainment]]"
+|}
+
+==Ceremony information==
+{{multiple image|perrow = 2|total_width=300
+| image1 = Walter Matthau - 1952.jpg
+| alt1   = Walter Matthau in 1952
+| image2 = Liza Minnelli Publicity 1973.jpg
+| alt2  = Liza Minnelli in 1973
+| image3 = Dudley Moore (cropped).jpg
+| alt3   = Dudley Moore in 1999
+| image4 = Richard Pryor (1986) (cropped).jpg
+| alt4   = Richard Pryor in 1986
+| footer = [[Walter Matthau]] (top left), [[Liza Minnelli]] (top right), [[Dudley Moore]] (bottom left), and [[Richard Pryor]] (bottom right) hosted the 55th Academy Awards.
+}}
+
+In October 1982, the Academy hired film producer [[Howard W. Koch]] to produce the ceremony for the eighth time. "I am delighted that the Academy will have the benefit  of Howard Koch's experience  and creativity again this year," said AMPAS President [[Fay Kanin]] in a press release announcing the selection. "We are extremely proud of the Awards programs Howard has produced for us in years past, and look forward to an equally graceful and exciting presentation this year.<ref>{{cite web |title=Howard W. Koch to Produce 55th Academy Awards Show |url=https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/7529/rec/1 |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=March 12, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530095709/https://web.archive.org/screenshot/https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/7529/rec/1 |date=October 18, 1982 |url-status=live }}</ref> Five months later, it was announced that actors [[Walter Matthau]], [[Liza Minnelli]], [[Dudley Moore]], and [[Richard Pryor]] would share hosting duties for the gala.<ref>{{cite news |last1=Beck |first1=Marilyn |author-link=Marilyn Beck |title=Hepburn to Pair Up with Nolte |url=https://www.newspapers.com/article/the-daily-breeze-marilyn-beck-entertainm/172333909/ |access-date=September 18, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530100154/https://web.archive.org/screenshot/https://www.newspapers.com/article/the-daily-breeze-marilyn-beck-entertainm/172333909/ |work=[[Daily Breeze]] |date=March 5, 1983 |page=B3 |via=[[Ancestry.com|Newspapers.com]] |url-status=live }}</ref> According to news reports, AMPAS originally sought late night talk show host [[Johnny Carson]] to emcee the festivities again, but he declined the offer due to Carson having personal issues related to the recent breakup with his wife.<ref>{{cite news |last1=Caulfield |first1=Deborah |title=Psst, Buddy...Wanna See a Pre-Release Script |url=https://www.newspapers.com/article/the-los-angeles-times-psst-buddywann/172415395/ |access-date=July 12, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530091358/https://www.newspapers.com/article/the-los-angeles-times-psst-buddywann/172415395/ |work=[[Los Angeles Times]] |date=March 21, 1983 |page=55 |via=[[Newspapers.com]] |url-status=live }}</ref> 
+
+[[Marty Pasetta]] directed the telecast; [[Bill Conti]] served as conductor and musical director.<ref name="Pasetta" /> Actor [[John Moschitta Jr.]], who was known for his fast talking delivery in commercials, made an appearance at the beginning of the ceremony explaining the voting rules and procedures.<ref>{{harvnb|Wiley|Bona|1996|p=624}}</ref> Several members of the [[Naval Reserve Officers Training Corps]] from the [[University of Southern California]] made an appearance at the beginning of the performance of Best Original Song nominee "[[Up Where We Belong]]" from the film ''[[An Officer and a Gentleman]]''.<ref>{{cite news |last1=Buck |first1=Jerry |title=''Gandhi'' Humbly Steals Slow-Moving Oscars Show |url=https://www.newspapers.com/article/santa-cruz-sentinel-jerry-buck-oscar-rev/172333550/ |access-date=March 23, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530091409/https://www.newspapers.com/article/santa-cruz-sentinel-jerry-buck-oscar-rev/172333550/ |work=[[Santa Cruz Sentinel]] |date=April 12, 1983 |page=A-9 |via=[[Ancestry.com|Newspapers.com]] |url-status=live }}</ref> [[Peter Allen (musician)|Peter Allen]] and [[Bernadette Peters]] performed a medley of songs in tribute to songwriter [[Irving Berlin]].<ref>{{harvnb|Wiley|Bona|1996|p=625}}</ref> [[Ethel Merman]] was initially slated to perform alongside Allen and Peters, but she cancelled her appearance after suffering a [[stroke]].<ref>{{harvnb|Osborne|2013|p=266}}</ref> 
+
+===Box office performance of Best Picture nominees===
+At the time of the nominations announcement on February 16, the combined gross of the five Best Picture nominees at the US box office was $496&nbsp;million.<ref name=BoxOfficeOscars>{{cite web |title=1982 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=1982&p=.htm |access-date=June 17, 2014 |publisher=[[Box Office Mojo]] |url-status=dead |archive-url=https://web.archive.org/web/20140614052209/http://boxofficemojo.com/oscar/chart/?yr=1982&p=.htm |archive-date=June 14, 2014}}</ref> ''E.T. the Extra-Terrestrial'' was the highest earner among the Best Picture nominees, with $329&nbsp;million in domestic box office receipts. The film was followed by ''Tootsie'' ($101&nbsp;million), ''The Verdict'' ($39.7&nbsp;million), ''Missing'' ($14&nbsp;million), and ''Gandhi'' ($11.9&nbsp;million).<ref name=BoxOfficeOscars/>
+
+===Critical reviews===
+Thomas Sabulis wrote in the ''[[Tampa Bay Times|St. Petersburg Times]]'', "The television show itself was one of the poorest academy presentations in recent memory." He also criticized production elements such as the opening number [[Kristy McNichol]] mispronouncing nominees names.<ref>{{cite news |last1=Sabulis |first1=Thomas |title=Dignity of ''Gandhi'' Key to Dominance |url=https://www.newspapers.com/article/tampa-bay-times-55th-oscars-2/75829688/ |access-date=March 12, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530094717/https://www.newspapers.com/article/tampa-bay-times-55th-oscars-2/75829688/ |work=[[Tampa Bay Times|St. Petersburg Times]] |date=April 13, 1983 |page=2-D |via=[[Ancestry.com|Newspapers.com]] |url-status=live }}</ref> Writing for the ''[[Austin American-Statesman]]'', Diane Holoway commented, "In the quarter of a century or so that I've been watching the gala event, this was the sloppiest production ever. And clocking in at well over three hours, it was one of the longest."<ref>{{cite news |last1=Holoway |first1=Diane |title=Academy Ails |url=https://www.newspapers.com/article/austin-american-statesman-55th-oscars/75767886/ |access-date=January 24, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530092035/https://www.newspapers.com/article/austin-american-statesman-55th-oscars/75767886/ |work=[[Austin American-Statesman]] |date=April 13, 1983 |page=B12 |via=[[Ancestry.com|Newspapers.com]] |url-status=live }}</ref> ''[[Mansfield News Journal]]'''s Ray Dyson commented, "The Academy Awards ceremony ran true to form Monday night. Every year when the biggest awards in moviedom are passed out there are two predictions that always come true — it will go too long and it will be boring." He praised the Irving Berlin tribute and actor John Moschitta's humorous and rapid recitation of the Academy voting rules, but found the telecast to be listless and filled with technical glitches.<ref name="Mansfield" />
+
+Television critic [[Howard Rosenberg]] of ''[[Los Angeles Times]]'' wrote, "This telecast continues to be one of the best shows around, perhaps not as tightly produced as the [[Tony Awards|Tonys]], but unequaled for charisma and ogling charisma."<ref>{{cite news |last1=Rosenberg |first1=Howard |author-link=Howard Rosenberg |title=Oscars Show in Winner's Circle |url=https://www.newspapers.com/article/the-los-angeles-times-la-times-oscars-ce/172415425/ |access-date=July 12, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530090812/https://www.newspapers.com/article/the-los-angeles-times-la-times-oscars-ce/172415425/ |work=[[Los Angeles Times]] |date=April 13, 1983 |page=83 |via=[[Ancestry.com|Newspapers.com]] |url-status=live }}</ref> ''[[The New York Times]]'' film critic [[Vincent Canby]] said, The 55th presentation, last Monday night, was everything one could have wished it to be, including dignified." However, he criticized the decision to reward ''Gandhi'' with the Best Picture award saying, "''E.T.'' and ''Tootsie'' are films. ''Gandhi'' is a laboriously illustrated textbook."<ref>{{cite news |last1=Canby |first1=Vincent |author-link=Vincent Canby |title=Film View: Why We Watch the Academy Awards |url=https://www.nytimes.com/1983/04/17/movies/film-view-why-we-watch-the-academy-awards.html |access-date=March 12, 2023 |work=[[The New York Times]] |date=April 13, 1983 |archive-date=February 26, 2023 |archive-url=https://web.archive.org/web/20230226035116/https://www.nytimes.com/1983/04/17/movies/film-view-why-we-watch-the-academy-awards.html |url-status=live }}</ref> ''[[The News & Observer]]'' entertainment editor Bill Morrison noted that the lack of suspense amongst the winners and repetitive "thank yous" in the acceptance speeches bogged down the ceremony, but he reserved praise for co-host Moore calling him "a delightful emcee."<ref>{{cite news |last1=Morrison |first1=Bill |title=Watching the Academy Awards Wasn't a Thankless Task |url=https://www.newspapers.com/article/the-news-and-observer-55th-oscars/75774336/ |access-date=July 12, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530111908/https://web.archive.org/screenshot/https://www.newspapers.com/article/the-news-and-observer-55th-oscars/75774336/ |work=[[The News & Observer]] |date=April 13, 1983 |page=9A |via=[[Ancestry.com|Newspapers.com]] |url-status=live }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 53.2 million people over the length of the entire ceremony.<ref name="Viewership">{{cite news|title=Top-10 Most Watched Academy Awards Broadcasts |url=https://www.nielsen.com/insights/2009/top-10-most-watched-academy-awards-broadcasts/ |publisher=[[Nielsen N.V.]] |date=February 18, 2009 |access-date=August 25, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160127130438/http://www.nielsen.com/us/en/insights/news/2009/top-10-most-watched-academy-awards-broadcasts.html |archive-date=January 27, 2016 }}</ref> Moreover, the show drew higher [[Nielsen Media Research|Nielsen ratings]] compared to the previous ceremony, with 38% of households watching with a 59% share.<ref>{{cite news |last1=Shister |first1=Gail |title=''Saturday Night'' and Murphy Returning Next Season |url=https://www.newspapers.com/article/the-philadelphia-inquirer-saturday-night/172415458/ |access-date=January 24, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530090521/https://www.newspapers.com/article/the-philadelphia-inquirer-saturday-night/172415458/ |work=[[The Philadelphia Inquirer]] |date=April 20, 1983 |page=8-F |via=[[Ancestry.com|Newspapers.com]] |url-status=live }}</ref> In August 1983, the ceremony presentation received five nominations at the [[35th Primetime Emmy Awards|35th Primetime Emmys]].<ref>{{cite news |last1=Margulies |first1=Lee |title=Again, NBC Is No. 1...at Emmy Time |url=https://www.newspapers.com/article/the-los-angeles-times-emmy-award-nominat/172415668/ |access-date=July 12, 2023 |archive-date=May 30, 2025 |archive-url=https://web.archive.org/web/20250530092812/https://www.newspapers.com/article/the-los-angeles-times-emmy-award-nominat/172415668/ |work=[[Los Angeles Times]] |date=August 5, 1983 |page=108 |via=[[Ancestry.com|Newspapers.com]] |url-status=live }}</ref> The following month, it won an award for Michael Corenblith and Ray Klausen's [[Primetime Emmy Award for Outstanding Production Design for a Variety, Reality or Competition Series|art direction]] of the program.<ref>{{cite web |title=55th Annual Academy Awards Presentation |url=https://www.televisionacademy.com/shows/55th-annual-academy-awards-presentation |publisher=[[Academy of Television Arts & Sciences]] |access-date=March 12, 2023 |archive-date=February 9, 2025 |archive-url=https://web.archive.org/web/20250209153833/https://www.televisionacademy.com/shows/55th-annual-academy-awards-presentation |url-status=live }}</ref>
+
+==See also==
+* [[List of submissions to the 55th Academy Awards for Best Foreign Language Film]]
+
+==References==
+{{reflist}}
+
+==Sources==
+*{{Citation
+ |last1=Kinn
+ |first1=Gail
+ |last2=Piazza
+ |first2=Jim
+ |title=The Academy Awards: The Complete Unofficial History
+ |year=2002 
+ |isbn=978-1-5791-2396-3 |location=New York, New York, United States 
+ |publisher=[[Workman Publishing Company]]
+}}
+*{{Cite book
+ |last=Osborne
+ |first=Robert
+ |author-link=Robert Osborne
+ |title=85 Years of the Oscar: The Complete History of the Academy Awards
+ |year=2013
+ |isbn=978-0-7892-1142-2
+ |location=New York, New York, United States
+ |publisher=[[Abbeville Publishing Group]]
+ |oclc=856879222
+ |url-access=registration
+ |url=https://archive.org/details/85yearsofoscar0000osbo
+  }}
+* {{citation
+ |last=Terrance
+ |first=Vincent
+ |title=Television Specials: 5,336 Entertainment Programs, 1936–2012
+ |year=2013
+ |isbn=978-1-4766-1240-9
+ |location=Jefferson, North Carolina, United States
+ |edition=5
+ |oclc=844373010
+ |publisher=[[Ballantine Books]], [[McFarland & Company]]
+ |url-access=registration
+ |url=https://archive.org/details/televisionspecia0000terr_h3f6
+}}
+* {{Citation
+ |last1=Wiley 
+ |first1=Mason
+ |last2=Bona
+ |first2=Damien
+ |author-link1=Mason Wiley
+ |author-link2=Damien Bona
+ |title=Inside Oscar: The Unofficial History of the Academy Awards
+ |year=1996
+ |isbn=978-0-3454-0053-6 |location=New York, New York, United States
+ |edition=5
+ |oclc=779680732 
+ |publisher=[[Ballantine Books]]
+ |url-access=registration
+ |url=https://archive.org/details/insideoscarunoff0000wile
+}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 55}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1982 film awards]]
+[[Category:1983 in Los Angeles]]
+[[Category:1983 in American cinema]]
+[[Category:April 1983 in the United States]]
+[[Category:1982 awards in the United States|Academy]]
+[[Category:Television shows directed by Marty Pasetta]]

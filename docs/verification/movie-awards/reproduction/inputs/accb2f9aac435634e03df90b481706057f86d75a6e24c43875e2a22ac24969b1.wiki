@@ -1,0 +1,412 @@
+{{oscars short description|films-year=1945}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 18
+| award            = Academy Awards
+| date             = March 7, 1946
+| site             = [[Grauman's Chinese Theatre]], [[Hollywood, Los Angeles|Hollywood]], [[California, USA]]
+| host             = [[James Stewart]]<br>[[Bob Hope]]
+| best_picture     = ''[[The Lost Weekend (film)|The Lost Weekend]]''
+| most_wins        = ''The Lost Weekend'' (4)
+| most_nominations = ''[[The Bells of St. Mary's]]'' (8)
+| last             = 17th
+| next             = 19th
+}}
+
+The '''18th Academy Awards''' were held on March 7, 1946, at [[Grauman's Chinese Theatre]] to honor the films of [[1945 in film|1945]]. Being the first Oscars after the end of [[World War II]], the ceremony returned to the glamour of the prewar years; notably, the plaster statuettes that had been used during the war were replaced by bronze statuettes with gold plating and an elevated base.
+
+Despite the optimistic postwar mood, director [[Billy Wilder]]'s grim and socially significant drama ''[[The Lost Weekend (film)|The Lost Weekend]]'' won the major awards of [[Academy Award for Best Picture|Best Picture]] and [[Academy Award for Best Director|Best Director]], as well as two other awards. It was the first film to win both Best Picture and the [[Palme d'Or]] at the [[Cannes Film Festival]]. [[Academy Award for Best Actress|Best Actress]] nominee [[Joan Crawford]] was absent due to illness.<ref>{{cite magazine |url=https://www.vanityfair.com/hollywood/2012/09/joan-crawford-academy-award-auction |title=The Academy Award That Joan Crawford Accepted In Bed Sells; Can You Guess for How Much? |last=Miller |first=Julie |publisher=Condé Nast |date=September 26, 2012 |magazine=Vanity Fair |access-date=May 21, 2019}}</ref><ref name="Oscars '45 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/836/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=837 |isbn=0-385-04060-1}}</ref>
+
+This was the first year in which every film nominated for Best Picture won at least one Oscar, and also the first time a sequel (''[[The Bells of St. Mary's]]'') was nominated for Best Picture.
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Charles Brackett.jpg
+| caption1          = [[Charles Brackett]]; Best Picture winner and Best Screenplay co-winner
+| image2            = Billy Wilder.jpg
+| caption2          = [[Billy Wilder]]; Best Director winner and Best Screenplay co-winner
+| image3            = Ray Milland Markham 1959.JPG
+| caption3          = [[Ray Milland]]; Best Actor winner
+| image4            = Joan Crawford in Humoresque, 1946.jpg
+| caption4          = [[Joan Crawford]]; Best Actress winner
+| image5            = James Dunn.jpg
+| caption5          = [[James Dunn (actor)|James Dunn]]; Best Supporting Actor winner
+| image6            = Studio publicity Anne Revere.jpg
+| caption6          = [[Anne Revere]]; Best Supporting Actress winner
+| image7            = Miklós Rózsa & Ginger Rogers Oscars 1946 (cropped).jpg
+| caption7          = [[Miklós Rózsa]]; Best Scoring of a Dramatic or Comedy Picture
+| image8            = Rodgers.jpg
+| caption8          = [[Richard Rodgers]]; Best Original Song co-winner
+| image9            = Oscar Hammerstein - portrait.jpg
+| caption9          = [[Oscar Hammerstein II]]; Best Original Song co-winner
+| image10            = Jane Eyre-PA Garner-2.jpg
+| caption10          = [[Peggy Ann Garner]]; Juvenile Academy Award recipient
+}}
+
+=== Awards ===
+Nominations announced on January 27, 1946. Winners are listed first and highlighted in boldface.<ref name="Oscars1946">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1946 |title=The 18th Academy Awards (1946) Nominees and Winners |access-date=2011-08-16 |work=oscars.org |archive-url=https://web.archive.org/web/20110706093754/http://www.oscars.org/awards/academyawards/legacy/ceremony/18th-winners.html |archive-date= July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[The Lost Weekend (film)|The Lost Weekend]]'' – [[Charles Brackett]] for [[Paramount Pictures]]'''
+**''[[Anchors Aweigh (film)|Anchors Aweigh]]'' – [[Joe Pasternak]] for [[Metro-Goldwyn-Mayer]]
+**''[[The Bells of St. Mary's]]'' – [[Leo McCarey]] for [[RKO Radio Pictures]]
+**''[[Mildred Pierce (film)|Mildred Pierce]]'' – [[Jerry Wald]] for [[Warner Bros.]]
+**''[[Spellbound (1945 film)|Spellbound]]'' – [[David O. Selznick]] for [[United Artists]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Billy Wilder]]&nbsp;– ''[[The Lost Weekend (film)|The Lost Weekend]]'''''
+**[[Leo McCarey]]&nbsp;– ''[[The Bells of St. Mary's]]''
+**[[Clarence Brown]]&nbsp;– ''[[National Velvet (film)|National Velvet]]''
+**[[Jean Renoir]]&nbsp;– ''[[The Southerner (film)|The Southerner]]''
+**[[Alfred Hitchcock]]&nbsp;– ''[[Spellbound (1945 film)|Spellbound]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Ray Milland]]&nbsp;– ''[[The Lost Weekend (film)|The Lost Weekend]]'' as Don Birnam'''
+**[[Bing Crosby]]&nbsp;– ''[[The Bells of St. Mary's]]'' as Father Chuck O'Malley
+**[[Gene Kelly]]&nbsp;– ''[[Anchors Aweigh (film)|Anchors Aweigh]]'' as Joseph "Joe" Brady
+**[[Gregory Peck]]&nbsp;– ''[[The Keys of the Kingdom (film)|The Keys of the Kingdom]]'' as Father Francis Chisholm
+**[[Cornel Wilde]]&nbsp;– ''[[A Song to Remember]]'' as [[Frédéric Chopin]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Joan Crawford]]&nbsp;– ''[[Mildred Pierce (film)|Mildred Pierce]]'' as Mildred Pierce Beragon'''
+**[[Ingrid Bergman]]&nbsp;– ''[[The Bells of St. Mary's]]'' as Sister Mary Benedict
+**[[Greer Garson]]&nbsp;– ''[[The Valley of Decision]]'' as Mary Rafferty
+**[[Jennifer Jones]]&nbsp;– ''[[Love Letters (1945 film)|Love Letters]]'' as Singleton/Victoria Morland
+**[[Gene Tierney]]&nbsp;– ''[[Leave Her to Heaven]]'' as Ellen Berent Harland
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[James Dunn (actor)|James Dunn]]&nbsp;– ''[[A Tree Grows in Brooklyn (1945 film)|A Tree Grows in Brooklyn]]'' as Johnny Nolan'''
+**[[Michael Chekhov]]&nbsp;– ''[[Spellbound (1945 film)|Spellbound]]'' as Dr Alexander "Alex" Brulov
+**[[John Dall]]&nbsp;– ''[[The Corn Is Green (1945 film)|The Corn Is Green]]'' as Morgan Evans
+**[[Robert Mitchum]]&nbsp;– ''[[The Story of G.I. Joe]]'' as Bill Walker
+**[[J. Carrol Naish]]&nbsp;– ''[[A Medal for Benny]]'' as Charley Martin
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Anne Revere]]&nbsp;– ''[[National Velvet (film)|National Velvet]]'' as Mrs Araminty Brown'''
+**[[Eve Arden]]&nbsp;– ''[[Mildred Pierce (film)|Mildred Pierce]]'' as Ida Corwin
+**[[Ann Blyth]]&nbsp;– ''Mildred Pierce'' as Veda Pierce Forrester
+**[[Angela Lansbury]]&nbsp;– ''[[The Picture of Dorian Gray (1945 film)|The Picture of Dorian Gray]]'' as Sibyl Vane
+**[[Joan Lorring]]&nbsp;– ''[[The Corn Is Green (1945 film)|The Corn Is Green]]'' as Bessie Watty
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Motion Picture Story)]]}}
+*'''''[[The House on 92nd Street]]''&nbsp;– [[Charles G. Booth]]'''
+**''[[The Affairs of Susan]]''&nbsp;– [[László Görög (writer)|László Görög]] and [[Thomas Monroe (writer)|Thomas Monroe]]
+**''[[A Medal for Benny]]''&nbsp;– [[John Steinbeck]] and [[Jack Wagner (screenwriter)|Jack Wagner]]
+**''[[Objective, Burma!]]''&nbsp;– [[Alvah Bessie]]
+**''[[A Song to Remember]]''&nbsp;– [[Ernst Marischka]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[Marie-Louise (film)|Marie-Louise]]''&nbsp;– [[Richard Schweizer]]'''
+**''[[Dillinger (1945 film)|Dillinger]]''&nbsp;– [[Philip Yordan]]
+**''[[Music for Millions]]''&nbsp;– [[Myles Connolly]]
+**''[[Salty O'Rourke]]''&nbsp;– Milton Holmes
+**''[[What Next, Corporal Hargrove?]]''&nbsp;– [[Harry Kurnitz]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[The Lost Weekend (film)|The Lost Weekend]]''&nbsp;– [[Charles Brackett]] and [[Billy Wilder]] from ''[[The Lost Weekend (novel)|The Lost Weekend]]'' by [[Charles R. Jackson]]'''
+**''[[Mildred Pierce (film)|Mildred Pierce]]''&nbsp;– [[Ranald MacDougall]] from ''[[Mildred Pierce]]'' by [[James M. Cain]]
+**''[[Pride of the Marines]]''&nbsp;– [[Albert Maltz]] from ''Al Schmid, Marine'' by Roger Butterfield
+**''[[The Story of G.I. Joe]]''&nbsp;– Leopold Atlas, [[Guy Endore]] and [[Philip Stevenson]] from ''Brave Men'' and ''Here Is Your War'' by [[Ernie Pyle]]
+**''[[A Tree Grows in Brooklyn (1945 film)|A Tree Grows in Brooklyn]]''&nbsp;– Frank Davis and [[Tess Slesinger]] (posthumous nomination) from ''[[A Tree Grows in Brooklyn (novel)|A Tree Grows in Brooklyn]]'' by [[Betty Smith]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[The True Glory]]''&nbsp;– [[Government of the United Kingdom]] and [[Federal government of the United States]]'''
+**''[[The Last Bomb]]''&nbsp;– [[United States Army Air Forces|United States Army Air Force]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Hitler Lives]]''&nbsp;– [[Gordon Hollingshead]]'''
+**''[[Library of Congress (film)|Library of Congress]]''&nbsp;– [[United States Office of War Information|United States Office of War Information Overseas Motion Picture Bureau]]
+**''[[To the Shores of Iwo Jima]]''&nbsp;– [[United States Marine Corps]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[Stairway to Light]]''&nbsp;– [[Herbert Moulton]] and [[Jerry Bresler (film producer)|Jerry Bresler]]'''
+**''Along the Rainbow Trail''&nbsp;– [[Edmund Reek]]
+**''Screen Snapshots' 25th Anniversary''&nbsp;– [[Ralph Staub]]
+**''Story of a Dog''&nbsp;– [[Gordon Hollingshead]]
+**''White Rhapsody''&nbsp;– [[Grantland Rice]]
+**''Your National Gallery''&nbsp;– Joseph O'Brien (posthumous nomination) and Thomas Mead
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[Star in the Night]]''&nbsp;– [[Gordon Hollingshead]]'''
+**''A Gun in His Hand''&nbsp;– [[Chester M. Franklin|Chester Franklin]] and [[Jerry Bresler (film producer)|Jerry Bresler]]
+**''The Jury Goes Round 'N' Round''&nbsp;– [[Jules White]]
+**''The Little Witch''&nbsp;– George Templeton
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Quiet Please!]]''&nbsp;– [[Fred Quimby|Frederick Quimby]]'''
+**''[[Donald's Crime]]''&nbsp;– [[Walt Disney]]
+**''Jasper and the Beanstalk''&nbsp;– [[George Pal]]
+**''[[Life with Feathers]]''&nbsp;– [[Edward Selzer]]
+**''[[Mighty Mouse in Gypsy Life]]''&nbsp;– [[Paul Terry (cartoonist)|Paul Terry]]
+**''The Poet and Peasant''&nbsp;– [[Walter Lantz]]
+**''Rippling Romance''&nbsp;– [[Screen Gems]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*'''''[[Spellbound (1945 film)|Spellbound]]''&nbsp;– [[Miklós Rózsa]]'''
+**''[[The Bells of St. Mary's]]''&nbsp;– [[Robert E. Dolan|Robert Emmett Dolan]]
+**''[[Brewster's Millions (1945 film)|Brewster's Millions]]''&nbsp;– [[Louis Forbes|Lou Forbes]]
+**''[[Captain Kidd (film)|Captain Kidd]]''&nbsp;– [[Werner Janssen]]
+**''[[The Enchanted Cottage (1945 film)|The Enchanted Cottage]]''&nbsp;– [[Roy Webb]]
+**''[[Flame of Barbary Coast]]''&nbsp;– Dale Butts and Morton Scott
+**''[[G. I. Honeymoon]]''&nbsp;– [[Edward J. Kay]]
+**''[[Guest in the House]]''&nbsp;– [[Werner Janssen]]
+**''[[Guest Wife]]''&nbsp;– [[Daniele Amfitheatrof]]
+**''[[The Keys of the Kingdom (film)|The Keys of the Kingdom]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+**''[[The Lost Weekend (film)|The Lost Weekend]]''&nbsp;– [[Miklós Rózsa]]
+**''[[Love Letters (1945 film)|Love Letters]]''&nbsp;– [[Victor Young]]
+**''[[The Man Who Walked Alone]]''&nbsp;– [[Karl Hajos]]
+**''[[Objective, Burma!]]''&nbsp;– [[Franz Waxman]]
+**''[[Paris Underground (film)|Paris Underground]]''&nbsp;– [[Alexandre Tansman]]
+**''[[A Song to Remember]]''&nbsp;– [[Miklós Rózsa]] and [[Morris Stoloff]]
+**''[[The Southerner (film)|The Southerner]]''&nbsp;– [[Werner Janssen]]
+**''[[The Story of G.I. Joe]]''&nbsp;– [[Louis Applebaum]] and [[Ann Ronell]]
+**''[[This Love of Ours]]''&nbsp;– [[Hans J. Salter|H. J. Salter]]
+**''[[The Valley of Decision]]''&nbsp;– [[Herbert Stothart]]
+**''[[The Woman in the Window (1944 film)|The Woman in the Window]]''&nbsp;– [[Hugo Friedhofer]] and [[Arthur Lange]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*'''''[[Anchors Aweigh (film)|Anchors Aweigh]]''&nbsp;– [[Georgie Stoll]]'''
+**''[[Belle of the Yukon]]''&nbsp;– [[Arthur Lange]]
+**''[[Can't Help Singing]]''&nbsp;– [[Jerome Kern]] (posthumous nomination) and [[Hans J. Salter|H. J. Salter]]
+**''[[Hitchhike to Happiness]]''&nbsp;– Morton Scott
+**''[[Incendiary Blonde]]''&nbsp;– [[Robert E. Dolan|Robert Emmett Dolan]]
+**''[[Rhapsody in Blue (film)|Rhapsody in Blue]]''&nbsp;– [[Ray Heindorf]] and [[Max Steiner]]
+**''[[State Fair (1945 film)|State Fair]]''&nbsp;– [[Charles E. Henderson|Charles Henderson]] and [[Alfred Newman (composer)|Alfred Newman]]
+**''[[Sunbonnet Sue]]''&nbsp;– [[Edward J. Kay]]
+**''[[The Three Caballeros]]''&nbsp;– [[Edward H. Plumb]], [[Paul Smith (composer)|Paul J. Smith]] and [[Charles Wolcott]]
+**''[[Tonight and Every Night]]''&nbsp;– [[Marlin Skiles]] and [[Morris Stoloff]]
+**''[[Why Girls Leave Home (1945 film)|Why Girls Leave Home]]''&nbsp;– [[Walter Greene]]
+**''[[Wonder Man (film)|Wonder Man]]''&nbsp;– [[Louis Forbes|Lou Forbes]] and [[Ray Heindorf]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[It Might as Well Be Spring]]" from ''[[State Fair (1945 film)|State Fair]]''&nbsp;– Music by [[Richard Rodgers]]; Lyrics by [[Oscar Hammerstein II]]'''
+**"[[Ac-Cent-Tchu-Ate the Positive|Accentuate the Positive]]" from ''[[Here Come the Waves]]''&nbsp;– Music by [[Harold Arlen]]; Lyrics by [[Johnny Mercer]]
+**"Anywhere" from ''[[Tonight and Every Night]]''&nbsp;– Music by [[Jule Styne]]; Lyrics by [[Sammy Cahn]]
+**"[[Aren't You Glad You're You?]]" from ''[[The Bells of St. Mary's]]''&nbsp;– Music by [[Jimmy Van Heusen|James Van Heusen]]; Lyrics by [[Johnny Burke (lyricist)|Johnny Burke]]
+**"The Cat and the Canary" from ''[[Why Girls Leave Home (1945 film)|Why Girls Leave Home]]''&nbsp;– Music by [[Jay Livingston]]; Lyrics by [[Ray Evans]]
+**"Endlessly" from ''[[Earl Carroll Vanities (film)|Earl Carroll Vanities]]''&nbsp;– Music by [[Walter Kent]]; Lyrics by [[Kim Gannon]]
+**"[[I Fall in Love Too Easily]]" from ''[[Anchors Aweigh (film)|Anchors Aweigh]]''&nbsp;– Music by [[Jule Styne]]; Lyrics by [[Sammy Cahn]]
+**"I'll Buy That Dream" from ''[[Sing Your Way Home]]''&nbsp;– Music by [[Allie Wrubel]]; Lyrics by [[Herb Magidson]]
+**"Linda" from ''[[The Story of G.I. Joe]]''&nbsp;– Music and Lyrics by [[Ann Ronell]]
+**"[[Love Letters (song)|Love Letters]]" from ''[[Love Letters (1945 film)|Love Letters]]''&nbsp;– Music by [[Victor Young]]; Lyrics by [[Edward Heyman]]
+**"More and More" from ''[[Can't Help Singing]]''&nbsp;– Music by [[Jerome Kern]] (posthumous nomination); Lyrics by [[Yip Harburg|E. Y. Harburg]]
+**"Sleighride in July" from ''[[Belle of the Yukon]]''&nbsp;– Music by [[Jimmy Van Heusen|James Van Heusen]]; Lyrics by [[Johnny Burke (lyricist)|Johnny Burke]]
+**"So in Love" from ''[[Wonder Man (film)|Wonder Man]]''&nbsp;– Music by [[David Rose (musician)|David Rose]]; Lyrics by [[Leo Robin]]
+**"[[Some Sunday Morning]]" from ''[[San Antonio (film)|San Antonio]]''&nbsp;– Music by [[Ray Heindorf]] and M. K. Jerome; Lyrics by [[Ted Koehler]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[The Bells of St. Mary's]]''&nbsp;– [[Stephen Dunn (sound engineer)|Stephen Dunn]]'''
+**''[[Flame of Barbary Coast]]''&nbsp;– [[Daniel J. Bloomberg]]
+**''[[Lady on a Train]]''&nbsp;– [[Bernard B. Brown]]
+**''[[Leave Her to Heaven]]''&nbsp;– [[Thomas T. Moulton]]
+**''[[Rhapsody in Blue (film)|Rhapsody in Blue]]''&nbsp;– [[Nathan Levinson]]
+**''[[A Song to Remember]]''&nbsp;– [[John P. Livadary]]
+**''[[The Southerner (film)|The Southerner]]''&nbsp;– [[Jack Whitney]]
+**''[[They Were Expendable]]''&nbsp;– [[Douglas Shearer]]
+**''[[The Three Caballeros]]''&nbsp;– [[Sam Slyfield|C. O. Slyfield]]
+**''[[Three Is a Family]]''&nbsp;– [[W. V. Wolfe]]
+**''[[The Unseen (1945 film)|The Unseen]]''&nbsp;– [[Loren L. Ryder]]
+**''[[Wonder Man (film)|Wonder Man]]''&nbsp;– [[Gordon E. Sawyer]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[Blood on the Sun]]''&nbsp;– Art Direction: [[Wiard Ihnen]]; Interior Decoration: [[A. Roland Fields]]'''
+**''[[Experiment Perilous]]''&nbsp;– Art Direction: [[Albert S. D'Agostino]] and [[Jack Okey]]; Interior Decoration: [[Darrell Silvera]] and [[Claude E. Carpenter]]
+**''[[The Keys of the Kingdom (film)|The Keys of the Kingdom]]''&nbsp;– Art Direction: [[James Basevi]] and [[William S. Darling]]; Interior Decoration: [[Thomas Little]] and [[Frank E. Hughes]]
+**''[[Love Letters (1945 film)|Love Letters]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Roland Anderson]]; Interior Decoration: [[Samuel M. Comer]] and [[Ray Moyer]]
+**''[[The Picture of Dorian Gray (1945 film)|The Picture of Dorian Gray]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Hans Peters (art director)|Hans Peters]]; Interior Decoration: [[Edwin B. Willis]], [[John Bonar (set decorator)|John Bonar]] and [[Hugh Hunt]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[Frenchman's Creek (film)|Frenchman's Creek]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Ernst Fegté]]; Interior Decoration: [[Samuel M. Comer]]'''
+**''[[Leave Her to Heaven]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Maurice Ransford]]; Interior Decoration: [[Thomas Little]]
+**''[[National Velvet (film)|National Velvet]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Urie McCleary]]; Interior Decoration: [[Edwin B. Willis]] and [[Mildred Griffiths]]
+**''[[San Antonio (film)|San Antonio]]''&nbsp;– Art Direction: [[Ted Smith (art director)|Ted Smith]]; Interior Decoration: [[Jack McConaghy]]
+**''[[A Thousand and One Nights (1945 film)|A Thousand and One Nights]]''&nbsp;– Art Direction: [[Stephen Goosson]] and [[Rudolph Sternad]]; Interior Decoration: [[Frank Tuttle (set decorator)|Frank Tuttle]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[The Picture of Dorian Gray (1945 film)|The Picture of Dorian Gray]]''&nbsp;– [[Harry Stradling]]'''
+**''[[The Keys of the Kingdom (film)|The Keys of the Kingdom]]''&nbsp;– [[Arthur Miller (cinematographer)|Arthur C. Miller]]
+**''[[The Lost Weekend (film)|The Lost Weekend]]''&nbsp;– [[John F. Seitz]]
+**''[[Mildred Pierce (film)|Mildred Pierce]]''&nbsp;– [[Ernest Haller]]
+**''[[Spellbound (1945 film)|Spellbound]]''&nbsp;– [[George Barnes (cinematographer)|George Barnes]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[Leave Her to Heaven]]''&nbsp;– [[Leon Shamroy]]'''
+**''[[Anchors Aweigh (film)|Anchors Aweigh]]''&nbsp;– [[Robert Planck]] and [[Charles P. Boyle]]
+**''[[National Velvet (film)|National Velvet]]''&nbsp;– [[Leonard Smith (cinematographer)|Leonard Smith]]
+**''[[A Song to Remember]]''&nbsp;– [[Tony Gaudio]] and [[Allen M. Davey]] (posthumous nomination)
+**''[[The Spanish Main]]''&nbsp;– [[George Barnes (cinematographer)|George Barnes]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[National Velvet (film)|National Velvet]]''&nbsp;– [[Robert J. Kern]]'''
+**''[[The Bells of St. Mary's]]''&nbsp;– [[Harry Marker]]
+**''[[The Lost Weekend (film)|The Lost Weekend]]''&nbsp;– [[Doane Harrison]]
+**''[[Objective, Burma!]]''&nbsp;– [[George Amy]]
+**''[[A Song to Remember]]''&nbsp;– [[Charles Nelson (film editor)|Charles Nelson]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}} <!-- That was the category name 1939-1964 -->
+*'''''[[Wonder Man (film)|Wonder Man]]''&nbsp;– Photographic Effects: [[John P. Fulton]]; Sound Effects: [[Arthur Johns (sound engineer)|Arthur Johns]]'''
+**''[[Captain Eddie]]''&nbsp;– Photographic Effects: [[Fred Sersen]] and [[Sol Halperin]]; Sound Effects: [[Roger Heman Sr.]] and [[Harry M. Leonard]]
+**''[[Spellbound (1945 film)|Spellbound]]''&nbsp;– Photographic Effects: [[Jack Cosgrove (special effects artist)|Jack Cosgrove]]
+**''[[They Were Expendable]]''&nbsp;– Photographic Effects: [[A. Arnold Gillespie]], [[Donald Jahraus]] and [[Robert MacDonald (special effects artist)|R. A. MacDonald]]; Sound Effects: [[Michael Steinore]]
+**''[[A Thousand and One Nights (1945 film)|A Thousand and One Nights]]''&nbsp;– Photographic Effects: [[Lawrence W. Butler]]; Sound Effects: [[Ray Bomba]]
+|}
+
+===Special awards===
+*To [[Walter Wanger]] for his six years service as President of the [[Academy of Motion Picture Arts and Sciences]].
+*To [[Peggy Ann Garner]], outstanding child actress of 1945.
+*To ''[[The House I Live In (1945 film)|The House I Live In]]'', tolerance short subject; produced by [[Frank Ross (producer)|Frank Ross]] and [[Mervyn LeRoy]]; directed by Mervyn LeRoy; screenplay by [[Albert Maltz]]; song "The House I Live In", music by [[Earl Robinson]], lyrics by [[Abel Meeropol|Lewis Allan]]; starring [[Frank Sinatra]]; released by [[RKO Radio Pictures|RKO Radio]].
+*To [[Republic Studios|Republic Studio]], [[Daniel J. Bloomberg]] and the Republic Studio Sound Department for the building of an outstanding musical scoring auditorium which provides optimum recording conditions and combines all elements of acoustic and engineering design.
+
+== Presenters and performers ==
+
+===Presenters===
+*[[Ingrid Bergman]] (Presenter: Best Actor)
+*[[Charles Boyer]] (Presenter: Best Actress)
+*[[Frank Capra]] (Presenter: Best Film Editing, Best Sound Recording and Best Special Effects)
+*[[Bette Davis]] (Presenter: Writing Awards)
+*[[Y. Frank Freeman]] (Presenter: Short Subject Awards)
+*[[D. W. Griffith]] (Presenter: Best Cinematography)
+*[[Van Heflin]] (Presenter: Best Supporting Actress and Best Supporting Actor)
+*[[Eric Johnston]] (Presenter: Best Picture)
+*[[George Murphy]] (Presenter: Honorary Award to Peggy Ann Garner)
+*[[Donald M. Nelson|Donald Nelson]] (Presenter: Honorary Awards)
+*[[Ginger Rogers]] (Presenter: Best Art Direction)
+*[[Cesar Romero]] and [[Peter Viertel]] (Presenters: Show Introduction)
+*[[William Wyler]] (Presenter: Best Director)
+
+===Performers===
+*[[Kathryn Grayson]]
+*[[Dick Haymes]]
+*[[Dinah Shore]]
+*[[Frank Sinatra]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" |8 
+|''[[The Bells of St. Mary's]]''
+|-
+| rowspan="1" style="text-align:center" |7
+|''[[The Lost Weekend (film)|The Lost Weekend]]''
+|-
+| rowspan="3" style="text-align:center" |6
+| ''[[Mildred Pierce (film)|Mildred Pierce]]''
+|-
+| ''[[A Song to Remember]]''
+|-
+| ''[[Spellbound (1945 film)|Spellbound]]''
+|-
+| rowspan="2" style="text-align:center" |5
+| ''[[Anchors Aweigh (film)|Anchors Aweigh]]''
+|-
+| ''[[National Velvet (film)|National Velvet]]''
+|-
+| rowspan="5" style="text-align:center" |4
+|''[[The Keys of the Kingdom (film)|The Keys of the Kingdom]]''
+|-
+| ''[[Leave Her to Heaven]]''
+|-
+| ''[[Love Letters (1945 film)|Love Letters]]''
+|-
+| ''[[The Story of G.I. Joe]]''
+|-
+| ''[[Wonder Man (film)|Wonder Man]]''
+|-
+| rowspan="3" style="text-align:center" |3
+| ''[[Objective, Burma!]]''
+|-
+| ''[[The Picture of Dorian Gray (1945 film)|The Picture of Dorian Gray]]''
+|-
+| ''[[The Southerner (film)|The Southerner]]''
+|-
+| rowspan="15" style="text-align:center" |2
+| ''[[Belle of the Yukon]]''
+|-
+| ''[[Can't Help Singing]]''
+|-
+| ''[[The Corn Is Green (1945 film)|The Corn Is Green]]''
+|-
+| ''[[Flame of Barbary Coast]]''
+|-
+| ''[[A Medal for Benny]]''
+|-
+| ''[[Rhapsody in Blue (film)|Rhapsody in Blue]]''
+|-
+| ''[[San Antonio (film)|San Antonio]]''
+|-
+| ''[[State Fair (1945 film)|State Fair]]''
+|-
+| ''[[They Were Expendable]]''
+|-
+| ''[[A Thousand and One Nights (1945 film)|A Thousand and One Nights]]''
+|-
+| ''[[The Three Caballeros]]''
+|-
+| ''[[Tonight and Every Night]]''
+|-
+| ''[[A Tree Grows in Brooklyn (1945 film)|A Tree Grows in Brooklyn]]''
+|-
+| ''[[The Valley of Decision]]''
+|-
+| ''[[Why Girls Leave Home (1945 film)|Why Girls Leave Home]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" |4
+| ''[[The Lost Weekend (film)|The Lost Weekend]]''
+|-
+| rowspan=1, style="text-align:center" | 2
+| ''[[National Velvet (film)|National Velvet]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+*[[3rd Golden Globe Awards]]
+*[[1945 in film]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 18}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1945 film awards]]
+[[Category:1946 in Los Angeles]]
+[[Category:1946 in American cinema]]
+[[Category:March 1946 in the United States]]

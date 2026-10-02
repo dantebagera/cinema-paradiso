@@ -1,0 +1,71 @@
+{{Short description|Film award ceremony in 1948}}
+{{Infobox film awards
+| number = 5
+| award = Golden Globe Awards
+| image = 
+| caption = 
+| date = {{Start date|1948|3|10}}
+| best_picture = ''[[Gentleman's Agreement]]''
+| most_awards = ''Gentleman's Agreement'' (4)
+| last = 4th
+| next = 6th
+}}
+The '''5th [[Golden Globe Awards]]''', honoring the best achievements in [[1947 in film|1947 filmmaking]], were held on March 10, 1948 at the [[Hollywood Roosevelt Hotel]] in [[Los Angeles]], [[California]].
+
+==Winners==
+===[[Golden Globe Award for Best Motion Picture – Drama|Best Picture]]=== 
+*''[[Gentleman's Agreement]]'' directed by [[Elia Kazan]]<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=Best Picture(Previous Award Given) |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Actor – Motion Picture Drama|Best Actor in a Leading Role]]=== 
+*[[Ronald Colman]] – ''[[A Double Life (1947 film)|A Double Life]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=Best Actor in a Leading Role(Previous Award Given) |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Leading Role]]=== 
+*[[Rosalind Russell]] – ''[[Mourning Becomes Electra (film)|Mourning Becomes Electra]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=Best Actress in a Leading Role(Previous Award Given) |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Performance by an Actor in a Supporting Role in a Motion Picture]]=== 
+*[[Edmund Gwenn]] – ''[[Miracle on 34th Street]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=Best Performance by an Actor in a Supporting Role in a Motion Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Performance by an Actress in a Supporting Role in a Motion Picture]]=== 
+*[[Celeste Holm]] – ''[[Gentleman's Agreement]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=Best Performance by an Actress in a Supporting Role in a Motion Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Director|Best Director-Motion Picture]]=== 
+*[[Elia Kazan]] – ''[[Gentleman's Agreement]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=Best Director-Motion Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Screenplay|Best Screenplay]]===
+*''[[Miracle on 34th Street]]'' written by [[George Seaton]]<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=Best Screenplay |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Original Score|Best Music, Original Score - Motion Picture]]===
+*''[[Life with Father]]'' composed by [[Max Steiner]]<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=Best Original Score in a Motion Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=2010-11-24 }}</ref>
+
+===Cinematography===
+*''[[Black Narcissus]]'' photographed by [[Jack Cardiff]]<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=Cinematography(Previous Award Given) |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=2010-11-24 }}</ref>
+
+===Most Promising Newcomer – Male===
+*[[Richard Widmark]] in ''[[Kiss of Death (1947 film)|Kiss of Death]]''<ref name=":0">{{Cite web |title=Golden Globes, USA (1948) |url=http://www.imdb.com/event/ev0000292/1948/1/ |access-date=2024-05-07 |website=IMDb}}</ref>
+
+===Most Promising Newcomer – Female===
+*[[Lois Maxwell]] in ''[[That Hagen Girl]]''<ref name=":0" />
+
+===Special Award – Best Juvenile Actor===
+*[[Dean Stockwell]] in ''[[Gentleman's Agreement]]''<ref name=":0" />
+
+===Special Achievement Award=== 
+*[[Walt Disney]] for ''[[Bambi]]'' Furthering The Influence Of The Screen<ref name=":0" />
+
+==See also==
+* [[Hollywood Foreign Press Association]]
+* [[1st British Academy Film Awards]]
+* [[1947 Cannes Film Festival|2nd Cannes Film Festival]]
+* [[20th Academy Awards]]
+* [[1947 in film]]
+
+==References==
+{{reflist}}
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards 005}}
+[[Category:Golden Globe Awards ceremonies|*005]]
+[[Category:1947 film awards]]
+[[Category:1947 television awards]]
+[[Category:March 1948 in the United States]]

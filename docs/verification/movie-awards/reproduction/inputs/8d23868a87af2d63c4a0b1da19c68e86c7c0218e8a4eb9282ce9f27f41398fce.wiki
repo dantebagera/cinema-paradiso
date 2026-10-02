@@ -1,0 +1,584 @@
+{{oscars short description|films-year=2007}}
+{{Use mdy dates|date=June 2013}}
+{{Infobox film awards
+| number           = 80
+| award            = Academy Awards
+| image            = 80th Academy Awards ceremony poster.jpg
+| alt              = Poster promoting the 80th Academy Awards in 2008.
+| caption          = Official poster by [[Drew Struzan|Drew]] and Christian Struzan<ref>{{cite news |title=Official 80th Oscars Poster Revealed |url=https://www.comingsoon.net/movies/news/40993-official-80th-oscars-poster-revealed |access-date=January 18, 2026 |work=ComingSoon.net |date=January 16, 2008}}</ref>
+| date             = February 24, 2008
+| site             = {{Plainlist|
+* [[Kodak Theatre]]
+* [[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], California, U.S.
+}}
+| preshow          = {{Plainlist|
+* [[Samantha Harris]]
+* [[Regis Philbin]]
+* [[Shaun Robinson]]<ref>{{Cite news |last=McNulty |first=Timothy |date=February 24, 2008 |title=In election years, Oscar hosts have many candidates for laughs |work=[[Pittsburgh Post-Gazette]] |url=https://www.post-gazette.com/ae/2008/02/24/In-election-years-Oscar-hosts-have-many-candidates-for-laughs/stories/200802240282 |url-status=live |access-date=May 28, 2013 |archive-url=https://web.archive.org/web/20151223144518/http://www.post-gazette.com/ae/2008/02/24/In-election-years-Oscar-hosts-have-many-candidates-for-laughs/stories/200802240282 |archive-date=December 23, 2015}}</ref>
+}}
+| host             = [[Jon Stewart]]
+| producer         = [[Gilbert Cates|Gil Cates]]
+| director         = [[Louis J. Horvitz]]
+| best_picture     = ''[[No Country for Old Men]]''
+| most_wins        = ''No Country for Old Men'' (4)
+| most_nominations = ''No Country for Old Men'' and ''[[There Will Be Blood]]'' (8)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 21 minutes<ref name="Variety Oscar">{{Cite news |last=Lowry |first=Brian |date=February 24, 2008 |title=The 80th Annual Academy Awards — From Your Couch |work=[[Variety (magazine)|Variety]] |publisher=[[Penske Media Corporation]] |url=https://variety.com/2008/film/reviews/the-80th-annual-academy-awards-from-your-couch-1200547810/ |url-status=live |access-date=February 25, 2008 |archive-url=https://web.archive.org/web/20141020022726/http://variety.com/2008/film/reviews/the-80th-annual-academy-awards-from-your-couch-1200547810/ |archive-date=October 20, 2014}}</ref>
+| ratings          = {{Plainlist|
+* 31.7 million
+* 18.7% ([[Nielsen ratings]])<ref name="JoalRyan_2005_02_25">{{Cite news |last=Bowles |first=Scott |date=February 25, 2008 |title=Low Oscar ratings cue soul-searching |work=[[USA Today]] |url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2008-02-26-oscar-ratings_N.htm |url-status=dead |access-date=September 21, 2008 |archive-url=https://web.archive.org/web/20171227212454/https://usatoday30.usatoday.com/life/movies/movieawards/oscars/2008-02-26-oscar-ratings_N.htm |archive-date=December 27, 2017}}</ref>
+}}
+| last             = 79th
+| next             = 81st
+}}
+
+The '''80th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2007 in film|films of 2007]]. The award ceremony took place on February 24, 2008, at the [[Dolby Theatre|Kodak Theatre]] in [[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]]. During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony was televised in the United States by [[American Broadcasting Company|ABC]], and produced by [[Gil Cates]] and directed by Louis J. Horvitz.<ref name="Cates"/><ref>{{Cite news |last=Kivel |first=Matthew |date=December 19, 2007 |title=Oscar director back a 12th time |work=Variety |url=https://variety.com/2007/film/news/oscar-director-back-a-12th-time-1117978000/ |url-status=dead |access-date=June 30, 2014 |archive-url=https://web.archive.org/web/20140714193908/http://variety.com/2007/film/news/oscar-director-back-a-12th-time-1117978000/ |archive-date=July 14, 2014}}</ref> Comedian [[Jon Stewart]] hosted the show for the second time, having previously presided over the [[78th Academy Awards|78th ceremony]] held in 2006.<ref name="Jon Stewart host">{{Cite news |last=Cieply |first=Michael |date=September 12, 2007 |title=Academy to Invite Jon Stewart Back as Oscar Host |work=[[The New York Times]] |url=https://www.nytimes.com/2007/09/12/movies/awardsseason/12stewart.html |url-status=live |access-date=May 28, 2013 |archive-url=https://web.archive.org/web/20150605044741/http://www.nytimes.com/2007/09/12/movies/awardsseason/12stewart.html |archive-date=June 5, 2015}}</ref> On February 9, at the [[Beverly Wilshire Hotel]] in [[Beverly Hills, California|Beverly Hills]], the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Jessica Alba]].<ref>{{Cite news |last=Pearson |first=Ryan |date=February 11, 2008 |title=Alba dazzles nerds at tech Oscars |work=USA Today |url=http://usatoday30.usatoday.com/tech/news/techinnovations/2008-02-11-alba-tech-oscars_N.htm |url-status=live |access-date=February 13, 2008 |archive-url=https://web.archive.org/web/20121024232749/http://usatoday30.usatoday.com/tech/news/techinnovations/2008-02-11-alba-tech-oscars_N.htm |archive-date=October 24, 2012}}</ref>
+
+''[[No Country for Old Men]]'' won four awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{Cite news |last1=Halbfinger |first1=David |last2=Cieply |first2=Michael |date=February 25, 2008 |title='No Country for Old Men' Wins Oscar Tug of War |work=The New York Times |url=https://www.nytimes.com/2008/02/25/movies/awardsseason/25osca.html |url-status=live |access-date=September 21, 2008 |archive-url=https://web.archive.org/web/20090411012858/http://www.nytimes.com/2008/02/25/movies/awardsseason/25osca.html |archive-date=April 11, 2009}}</ref><ref>{{Cite news |last=Burr |first=Ty |date=February 25, 2008 |title=Foreign accents Cotillard, Swinton, Bardem take top awards in a surprising night in Hollywood |work=[[The Boston Globe]]}}</ref> Other winners included ''[[The Bourne Ultimatum (film)|The Bourne Ultimatum]]'' with three awards, ''[[La Vie en rose (film)|La Vie en Rose]]'' and ''[[There Will Be Blood]]'' with two, and ''[[Atonement (2007 film)|Atonement]]'', ''[[The Counterfeiters (2007 film)|The Counterfeiters]]'', ''[[Elizabeth: The Golden Age]]'', ''[[Freeheld (2007 film)|Freeheld]]'', ''[[The Golden Compass (film)|The Golden Compass]]'', ''[[Juno (film)|Juno]]'', ''[[Michael Clayton]]'', ''[[Le Mozart des pickpockets|Le Mozart des Pickpockets]]'', ''[[Once (film)|Once]]'', ''[[Peter & the Wolf (2006 film)|Peter & the Wolf]]'', ''[[Ratatouille (film)|Ratatouille]]'', ''[[Sweeney Todd: The Demon Barber of Fleet Street (2007 film)|Sweeney Todd: The Demon Barber of Fleet Street]]'', and ''[[Taxi to the Dark Side]]'' with one. The telecast garnered 31 million viewers, making it the least watched Oscar broadcast since 1974, when Nielsen began keeping records of viewership.<ref name="Finke">{{Cite news |last=Finke |first=Nikki |date=February 25, 2008 |title=Update: Wow, Worst-Rated Oscars Since Nielsen Started Tracking Them in 1974! |work=Deadline Hollywood (Penske Media Corporation) |url=https://deadline.com/2008/02/update-worst-rated-oscars-since-nielsens-started-tracking-them-in-1974-4977/ |url-status=live |access-date=February 24, 2014 |archive-url=https://web.archive.org/web/20160127162926/http://deadline.com/2008/02/update-worst-rated-oscars-since-nielsens-started-tracking-them-in-1974-4977/ |archive-date=January 27, 2016}}</ref>
+
+==Winners and nominees==
+The nominations were announced on January 22, 2008, at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]] by [[Sid Ganis]], president of the Academy, and actress [[Kathy Bates]].<ref>{{Cite news |last=Gray |first=Tim |date=January 22, 2008 |title=Oscar nominations announced |work=Variety |url=https://variety.com/2008/film/news/oscar-nominations-announced-1117979394/ |url-status=live |access-date=June 26, 2014 |archive-url=https://web.archive.org/web/20151223094924/http://variety.com/2008/film/news/oscar-nominations-announced-1117979394/ |archive-date=December 23, 2015}}</ref> ''[[No Country for Old Men]]'' and ''[[There Will Be Blood]]'' tied for the most nominations with eight each.<ref>{{Cite news |last=Barnes |first=Brooks |date=January 23, 2008 |title='No Country' and 'There Will Be Blood' Lead Oscars |work=The New York Times |url=https://www.nytimes.com/2008/01/23/movies/awardsseason/23oscarscnd.html |url-status=live |access-date=June 26, 2014 |archive-url=https://web.archive.org/web/20160717122608/http://www.nytimes.com/2008/01/23/movies/awardsseason/23oscarscnd.html |archive-date=July 17, 2016}}</ref> [[Cate Blanchett]] became the eleventh performer to receive [[List of actors nominated for two Academy Awards in the same year|two acting nominations in the same year]],<ref name="EW">{{Cite magazine |last=Karger |first=Dave |date=January 25, 2008 |title=The unpredictable 2008 Oscars |magazine=[[Entertainment Weekly]] |url=https://www.ew.com/article/2008/01/25/unpredictable-2008-oscars |url-status=live |access-date=February 3, 2008 |archive-url=https://web.archive.org/web/20151122194115/http://www.ew.com/article/2008/01/25/unpredictable-2008-oscars |archive-date=November 22, 2015}}</ref> as well as being the first actress and fifth performer overall to be nominated for portraying the same character in two different films, by virtue of her nomination for her role as [[Elizabeth I of England]] in ''[[Elizabeth: The Golden Age]]'' (she had previously been nominated for playing Elizabeth I in 1998's ''[[Elizabeth (film)|Elizabeth]]'').<ref>[https://www.hollywoodreporter.com/gallery/oscar-nominations-playing-same-character-867131/1-sylvester-stallone Oscars: 6 Actors Nominated for Playing the Same Character Twice] {{Webarchive|url=https://web.archive.org/web/20180714221900/https://www.hollywoodreporter.com/gallery/oscar-nominations-playing-same-character-867131/1-sylvester-stallone |date=July 14, 2018 }} Other actors nominated for the same character in multiple films were</p><p>[[Paul Newman]] for "Fast Eddie" Felson in [[The Hustler]] and [[The Color of Money]];</p><p>[[Al Pacino]] for [[Michael Corleone]] in [[The Godfather]] and [[The Godfather Part II]];</p><p>[[Peter O'Toole]] for King Henry II in [[Becket (1964 film)|Becket]] and [[The Lion in Winter (1968 film)|The Lion in Winter]];</p><p>[[Bing Crosby]] for Father O'Malley in [[Going My Way]] and [[The Bells of St. Mary's (1959 film)|The Bells of St. Mary's]];</p><p>and later, [[Sylvester Stallone]] for [[Rocky (film)|Rocky]] and [[Creed (film)|Creed]]</p></ref> At age 82, Best Supporting Actor nominee [[Hal Holbrook]] became the oldest male acting nominee in Oscar history at the time.<ref>{{Cite news |date=January 22, 2008 |title=Academy Award Nominee Hal Holbrook |publisher=[[NBC News]] ([[NBCUniversal]]) |url=http://www.today.com/allday/academy-award-nominee-hal-holbrook-1C9385251 |url-status=live |access-date=June 27, 2014 |archive-url=https://web.archive.org/web/20160128101749/http://www.today.com/allday/academy-award-nominee-hal-holbrook-1C9385251 |archive-date=January 28, 2016}}</ref>
+
+[[Academy Award for Best Director|Best Director]] winners [[Coen brothers|Joel and Ethan Coen]] became the second pair of directors to win the award for the same film, after [[Jerome Robbins]] and [[Robert Wise]] for [[34th Academy Awards|1961]]'s ''[[West Side Story (1961 film)|West Side Story]]'').<ref>{{Cite news |last=Coyle |first=Jake |date=February 25, 2008 |title=Oscars Honor Coens As Best Director(s) |work=[[USA Today]] |url=http://usatoday30.usatoday.com/life/movies/2008-02-25-2405067657_x.htm |url-status=dead |access-date=June 27, 2014 |archive-url=https://web.archive.org/web/20121108051430/http://usatoday30.usatoday.com/life/movies/2008-02-25-2405067657_x.htm |archive-date=November 8, 2012}}</ref> This was the second time in Oscar history that none of the four acting winners was American (the first being the [[37th Academy Awards]]).<ref>{{Cite news |last=O'Neil |first=Tom |date=February 24, 2008 |title=Oscar invasion! |work=[[Los Angeles Times]] |url=http://goldderby.latimes.com/awards_goldderby/2008/02/oscar-invasion.html |url-status=dead |access-date=April 11, 2008 |archive-url=https://web.archive.org/web/20151222201754/http://goldderby.latimes.com/awards_goldderby/2008/02/oscar-invasion.html |archive-date=December 22, 2015}}</ref> [[Daniel Day-Lewis]] became the eighth person to win Best Actor twice,<ref>{{Cite news |last=O'Neil |first=Tom |date=February 24, 2008 |title=Day-Lewis is 8th double Oscar lead actor |work=Los Angeles Times |url=http://goldderby.latimes.com/awards_goldderby/2008/02/day-lewis-is-8t.html |url-status=live |access-date=April 11, 2014 |archive-url=https://web.archive.org/web/20141105081913/http://goldderby.latimes.com/awards_goldderby/2008/02/day-lewis-is-8t.html |archive-date=November 5, 2014}}</ref> while Best Actress winner [[Marion Cotillard]] became the fifth person to [[List of actors nominated for Academy Awards for foreign language performances|win for a non-English language performance]], the second Best Actress winner to do so after [[Sophia Loren]] (1961's ''[[Two Women]]''), and the first to win for a French-language performance.<ref>{{Cite news |last=Gallo |first=Phil |date=February 24, 2008 |title='No Country' big winner at Oscars |work=Variety |url=https://variety.com/2008/film/news/no-country-big-winner-at-oscars-1117981391/ |url-status=live |access-date=September 21, 2008 |archive-url=https://web.archive.org/web/20140714160549/http://variety.com/2008/film/news/no-country-big-winner-at-oscars-1117981391/ |archive-date=July 14, 2014}}</ref>  [[Robert F. Boyle]] became the oldest recipient of the Academy Honorary award at the age of 98.<ref>{{Cite news |date=February 26, 2012 |title=45 Fun Facts About the Oscars |work=[[Parade (magazine)|Parade]] |url=http://parade.com/130996/parade/oscar-fun-facts/ |url-status=live |access-date=June 27, 2014 |archive-url=https://web.archive.org/web/20151225171248/http://parade.com/130996/parade/oscar-fun-facts/ |archive-date=December 25, 2015}}</ref>
+
+===Awards===
+[[File:Coen brothers Cannes 2015 2 (CROPPED).jpg|thumb|right|150px|[[Coen brothers]], Best Picture, Best Director and Best Adapted Screenplay winners]]
+[[File:Daniel Day-Lewis Anemone-15 (cropped).jpg|right|thumb|150px|[[Daniel Day-Lewis]], Best Actor winner]]
+[[File:Marion Cotillard Cabourg 2017.jpg|thumb|right|150px|[[Marion Cotillard]], Best Actress winner]]
+[[File:Javier Bardem Cannes 2018.jpg|thumb|right|150px|[[Javier Bardem]], Best Supporting Actor winner]]
+[[File:Tilda Swinton Deauville 2013.jpg|thumb|right|150px|[[Tilda Swinton]], Best Supporting Actress winner]]
+[[File:Diablo Cody in 2024.jpg|thumb|right|150px|[[Diablo Cody]], Best Original Screenplay winner]]
+[[File:Brad Bird 2018.jpg|thumb|right|150px|[[Brad Bird]], Best Animated Feature winner]]
+[[File:Alex Gibney, June 2008 (4) (cropped).jpg|thumb|right|150px|[[Alex Gibney]], Best Documentary Feature co-winner]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref>{{Cite news |title=The 80th (2008) Academy Awards |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |url=http://www.oscars.org/oscars/ceremonies/2008 |url-status=live |access-date=December 22, 2015 |archive-url=https://web.archive.org/web/20150402004725/http://www.oscars.org/oscars/ceremonies/2008 |archive-date=April 2, 2015}}</ref>
+
+{| class=wikitable
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[No Country for Old Men]]''&nbsp;– [[Scott Rudin]], [[Coen brothers|Ethan Coen and Joel Coen]], producers'''{{double-dagger}}
+** ''[[Atonement (2007 film)|Atonement]]''&nbsp;– [[Tim Bevan]], [[Eric Fellner]] and [[Paul Webster (producer)|Paul Webster]], producers
+** ''[[Juno (film)|Juno]]''&nbsp;– [[Lianne Halfon]], [[Mason Novick]] and [[Mr. Mudd|Russell Smith]], producers
+** ''[[Michael Clayton]]''&nbsp;– [[Sydney Pollack]], [[Jennifer Fox (film producer)|Jennifer Fox]] and Kerry Orent, producers
+** ''[[There Will Be Blood]]''&nbsp;– [[JoAnne Sellar]], [[Paul Thomas Anderson]] and [[Daniel Lupi]], producers
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Coen brothers|Joel Coen and Ethan Coen]]&nbsp;– ''[[No Country for Old Men]]'''''{{double-dagger}}
+** [[Julian Schnabel]]&nbsp;– ''[[The Diving Bell and the Butterfly (film)|The Diving Bell and the Butterfly]]''
+** [[Jason Reitman]]&nbsp;– ''[[Juno (film)|Juno]]''
+** [[Tony Gilroy]]&nbsp;– ''[[Michael Clayton]]''
+** [[Paul Thomas Anderson]]&nbsp;– ''[[There Will Be Blood]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Daniel Day-Lewis]]&nbsp;– ''[[There Will Be Blood]]'' as Daniel Plainview'''{{double-dagger}}
+** [[George Clooney]]&nbsp;– ''[[Michael Clayton]]'' as Michael Clayton
+** [[Johnny Depp]] – ''[[Sweeney Todd: The Demon Barber of Fleet Street (2007 film)|Sweeney Todd: The Demon Barber of Fleet Street]]'' as [[Sweeney Todd|Benjamin Barker / Sweeney Todd]]
+** [[Tommy Lee Jones]]&nbsp;– ''[[In the Valley of Elah]]'' as Hank Deerfield
+** [[Viggo Mortensen]]&nbsp;– ''[[Eastern Promises]]'' as Nikolai Luzhin
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Marion Cotillard]]&nbsp;– ''[[La Vie en Rose (film)|La Vie en Rose]]'' as [[Édith Piaf]]'''{{double-dagger}}
+** [[Cate Blanchett]]&nbsp;– ''[[Elizabeth: The Golden Age]]'' as [[Elizabeth I of England|Queen Elizabeth I]]
+** [[Julie Christie]]&nbsp;– ''[[Away from Her]]'' as Fiona Anderson
+** [[Laura Linney]]&nbsp;– ''[[The Savages (film)|The Savages]]'' as Wendy Savage
+** [[Elliot Page]]<!-- Do not remove Elliot or Ellen. Elliot is the primary name, and Ellen should be noted in a parenthetical or a footnote. See [[MOS:GENDERID]] for full guidance. -->{{efn|name=Elliot Page|Nominated as Ellen Page. Page underwent a [[Gender transitioning|gender transition]] and name change in 2020.<ref name="elliotpage">{{Cite web |last=Donnelly |first=Matt |date=December 1, 2020 |title=Oscar-Nominated 'Umbrella Academy' Star Elliot Page Announces He Is Transgender |url=https://variety.com/2020/film/news/elliot-page-transgender-ellen-page-juno-umbrella-academy-1234843023/ |url-status=live |archive-url=https://web.archive.org/web/20201201193503/https://variety.com/2020/film/news/elliot-page-transgender-ellen-page-juno-umbrella-academy-1234843023/ |archive-date=December 1, 2020 |access-date=December 1, 2020 |website=Variety}}</ref>}}&nbsp;– ''[[Juno (film)|Juno]]'' as Juno MacGuff
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Javier Bardem]]&nbsp;– ''[[No Country for Old Men]]'' as [[Anton Chigurh]]'''{{double-dagger}}
+** [[Casey Affleck]]&nbsp;– ''[[The Assassination of Jesse James by the Coward Robert Ford]]'' as [[Robert Ford (outlaw)|Robert Ford]]
+** [[Philip Seymour Hoffman]]&nbsp;– ''[[Charlie Wilson's War (film)|Charlie Wilson's War]]'' as [[Gust Avrakotos]]
+** [[Hal Holbrook]]&nbsp;– ''[[Into the Wild (film)|Into the Wild]]'' as Ron Franz
+** [[Tom Wilkinson]]&nbsp;– ''[[Michael Clayton]]'' as Arthur Edens
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Tilda Swinton]]&nbsp;– ''[[Michael Clayton]]'' as Karen Crowder'''{{double-dagger}}
+** [[Cate Blanchett]]&nbsp;– ''[[I'm Not There]]'' as Jude Quinn
+** [[Ruby Dee]]&nbsp;– ''[[American Gangster (film)|American Gangster]]'' as [[Frank Lucas|Mama Lucas]]
+** [[Saoirse Ronan]]&nbsp;– ''[[Atonement (2007 film)|Atonement]]'' as Briony Tallis
+** [[Amy Ryan]]&nbsp;– ''[[Gone Baby Gone]]'' as Helene McCready
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Juno (film)|Juno]]''&nbsp;– [[Diablo Cody]]'''{{double-dagger}}
+** ''[[Lars and the Real Girl]]''&nbsp;– [[Nancy Oliver]]
+** ''[[Michael Clayton]]''&nbsp;– [[Tony Gilroy]]
+** ''[[Ratatouille (film)|Ratatouille]]''&nbsp;– Screenplay by [[Brad Bird]]; Story by [[Jan Pinkava]], [[Jim Capobianco]] and Brad Bird
+** ''[[The Savages (film)|The Savages]]''&nbsp;– [[Tamara Jenkins]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[No Country for Old Men]]''&nbsp;– [[Coen brothers|Joel Coen and Ethan Coen]] based on [[No Country for Old Men (novel)|the novel]] by [[Cormac McCarthy]]'''{{double-dagger}}
+** ''[[Atonement (2007 film)|Atonement]]''&nbsp;– [[Christopher Hampton]] based on [[Atonement (novel)|the novel]] by [[Ian McEwan]]
+** ''[[Away from Her]]'' – [[Sarah Polley]] based on the short story "The Bear Came Over The Mountain" by [[Alice Munro]]
+** ''[[The Diving Bell and the Butterfly (film)|The Diving Bell and the Butterfly]]''&nbsp;– [[Ronald Harwood]] based on [[The Diving Bell and the Butterfly|the memoir]] by [[Jean-Dominique Bauby]]
+** ''[[There Will Be Blood]]''&nbsp;– [[Paul Thomas Anderson]] based on the novel ''[[Oil!]]'' by [[Upton Sinclair]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Ratatouille (film)|Ratatouille]]''&nbsp;– [[Brad Bird]]'''{{double-dagger}}
+** ''[[Persepolis (film)|Persepolis]]''&nbsp;– [[Marjane Satrapi]] and [[Vincent Paronnaud]]
+** ''[[Surf's Up (film)|Surf's Up]]''&nbsp;– [[Ash Brannon]] and [[Chris Buck]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[The Counterfeiters (2007 film)|The Counterfeiters]]'' ([[List of Austrian submissions for the Academy Award for Best Foreign Language Film|Austria]]) in [[German language|German]]&nbsp;– [[Stefan Ruzowitzky]]'''{{double-dagger}}
+** ''[[12 (2007 film)|12]]'' ([[List of Russian submissions for the Academy Award for Best Foreign Language Film|Russia]]) in [[Russian language|Russian]]&nbsp;– [[Nikita Mikhalkov]]
+** ''[[Beaufort (film)|Beaufort]]'' ([[List of Israeli submissions for the Academy Award for Best Foreign Language Film|Israel]]) in [[Hebrew language|Hebrew]]&nbsp;– [[Joseph Cedar]]
+** ''[[Katyń (film)|Katyń]]'' ([[List of Polish submissions for the Academy Award for Best Foreign Language Film|Poland]]) in [[Polish language|Polish]]&nbsp;– [[Andrzej Wajda]]
+** ''[[Mongol (film)|Mongol]]'' ([[List of Kazakhstani submissions for the Academy Award for Best Foreign Language Film|Kazakhstan]]) in [[Russian language|Russian]]&nbsp;– [[Sergei Bodrov]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Taxi to the Dark Side]]''&nbsp;– [[Alex Gibney]] and [[Eva Orner]]'''{{double-dagger}}
+** ''[[No End in Sight]]''&nbsp;– [[Charles Ferguson (filmmaker)|Charles H. Ferguson]] and [[Audrey Marrs]]
+** ''[[Operation Homecoming: Writing the Wartime Experience]]''&nbsp;– [[Richard E. Robbins]]
+** ''[[Sicko]]''&nbsp;– [[Michael Moore]] and Meghan O'Hara
+** ''[[War/Dance]]''&nbsp;– [[Andrea Nix Fine]] and [[Sean Fine]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Freeheld (2007 film)|Freeheld]]''&nbsp;– [[Cynthia Wade]] and [[Vanessa Roth]]'''{{double-dagger}}
+** ''[[La Corona (film)|La Corona]]''&nbsp;– [[Amanda Micheli]] and Isabel Vega
+** ''[[Salim Baba]]''&nbsp;– Tim Sternberg and Francisco Bello
+** ''[[Sari's Mother]]''&nbsp;– [[James Longley (filmmaker)|James Longley]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Le Mozart des pickpockets|Le Mozart des Pickpockets (The Mozart of Pickpockets)]]''&nbsp;– [[Philippe Pollet-Villard]]'''{{double-dagger}}
+** ''[[At Night (2007 film)|At Night]]''&nbsp;– [[Christian E. Christiansen]] and [[Louise Vesth]]
+** ''(Il Supplente) The Substitute''&nbsp;– Andrea Jublin
+** ''Tanghi Argentini''&nbsp;– Guido Thys and Anja Daelemans
+** ''The Tonto Woman''&nbsp;– [[Daniel Barber (director)|Daniel Barber]] and Matthew Brown
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Peter & the Wolf (2006 film)|Peter & the Wolf]]''&nbsp;– [[Suzie Templeton]] and [[Hugh Welchman]]'''{{double-dagger}}
+** ''[[Even Pigeons Go to Heaven|Even Pigeons Go to Heaven (Même les pigeons vont au paradis)]]''&nbsp;– Samuel Tourneux and Simon Vanesse
+** ''[[I Met the Walrus]]''&nbsp;– Josh Raskin
+** ''[[Madame Tutli-Putli]]''&nbsp;– [[Clyde Henry Productions|Chris Lavis and Maciek Szczerbowski]]
+** ''[[My Love (2006 film)|My Love (Moya Lyubov)]]''&nbsp;– [[Aleksandr Petrov (animator)|Alexander Petrov]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Atonement (2007 film)|Atonement]]''&nbsp;– [[Dario Marianelli]]'''{{double-dagger}}
+** ''[[3:10 to Yuma (2007 film)|3:10 to Yuma]]''&nbsp;– [[Marco Beltrami]]
+** ''[[The Kite Runner (film)|The Kite Runner]]''&nbsp;– [[Alberto Iglesias]]
+** ''[[Michael Clayton]]''&nbsp;– [[James Newton Howard]]
+** ''[[Ratatouille (film)|Ratatouille]]''&nbsp;– [[Michael Giacchino]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Falling Slowly]]" from ''[[Once (film)|Once]]''&nbsp;– Music and Lyrics by [[Glen Hansard]] and [[Markéta Irglová]]'''{{double-dagger}}
+** "[[Happy Working Song]]" from ''[[Enchanted (film)|Enchanted]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Stephen Schwartz]]
+** "[[Raise It Up (August Rush song)|Raise It Up]]" from ''[[August Rush]]''&nbsp;– Music and Lyrics by [[Jamal Joseph]], Charles Mack and [[Tevin Thomas]]
+** "[[So Close (Enchanted song)|So Close]]" from ''[[Enchanted (film)|Enchanted]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Stephen Schwartz]]
+** "[[That's How You Know (Disney song)|That's How You Know]]" from ''[[Enchanted (film)|Enchanted]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Stephen Schwartz]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[The Bourne Ultimatum (film)|The Bourne Ultimatum]]''&nbsp;– [[Karen Baker Landers]] and [[Per Hallberg]]'''{{double-dagger}}
+** ''[[No Country for Old Men]]''&nbsp;– [[Skip Lievsay]]
+** ''[[Ratatouille (film)|Ratatouille]]''&nbsp;– [[Randy Thom]] and [[Michael Silvers]]
+** ''[[There Will Be Blood]]''&nbsp;– [[Christopher Scarabosio]] and [[Matthew Wood (sound editor)|Matthew Wood]]
+** ''[[Transformers (film)|Transformers]]''&nbsp;– [[Ethan Van der Ryn]] and [[Mike Hopkins (sound editor)|Mike Hopkins]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Mixing]]}}
+* '''''[[The Bourne Ultimatum (film)|The Bourne Ultimatum]]''&nbsp;– [[Scott Millan]], [[David Parker (sound engineer)|David Parker]] and [[Kirk Francis (audio engineer)|Kirk Francis]]'''{{double-dagger}}
+** ''[[3:10 to Yuma (2007 film)|3:10 to Yuma]]''&nbsp;– [[Paul Massey (sound engineer)|Paul Massey]], [[David Giammarco (sound engineer)|David Giammarco]] and [[Jim Stuebe]]
+** ''[[No Country for Old Men]]''&nbsp;– [[Skip Lievsay]], [[Craig Berkey]], [[Greg Orloff]] and [[Peter Kurland]]
+** ''[[Ratatouille (film)|Ratatouille]]''&nbsp;– [[Randy Thom]], [[Michael Semanick]] and [[Doc Kane]]
+** ''[[Transformers (film)|Transformers]]''&nbsp;– [[Kevin O'Connell (sound mixer)|Kevin O'Connell]], [[Greg P. Russell]] and [[Peter J. Devlin]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Sweeney Todd: The Demon Barber of Fleet Street (2007 film)|Sweeney Todd: The Demon Barber of Fleet Street]]''&nbsp;– Art Direction: [[Dante Ferretti]]; Set Decoration: [[Francesca Lo Schiavo]]'''{{double-dagger}}
+** ''[[American Gangster (film)|American Gangster]]''&nbsp;– Art Direction: [[Arthur Max]]; Set Decoration: [[Beth Rubino]]
+** ''[[Atonement (2007 film)|Atonement]]''&nbsp;– Art Direction: [[Sarah Greenwood]]; Set Decoration: [[Katie Spencer]]
+** ''[[The Golden Compass (film)|The Golden Compass]]''&nbsp;– Art Direction: [[Dennis Gassner]]; Set Decoration: [[Anna Pinnock]]
+** ''[[There Will Be Blood]]''&nbsp;– Art Direction: [[Jack Fisk]]; Set Decoration: [[Jim Erickson]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[There Will Be Blood]]''&nbsp;– [[Robert Elswit]]'''{{double-dagger}}
+** ''[[The Assassination of Jesse James by the Coward Robert Ford]]''&nbsp;– [[Roger Deakins]]
+** ''[[Atonement (2007 film)|Atonement]]'' – [[Seamus McGarvey]]
+** ''[[The Diving Bell and the Butterfly (film)|The Diving Bell and the Butterfly]]''&nbsp;– [[Janusz Kamiński]]
+** ''[[No Country for Old Men]]''&nbsp;– [[Roger Deakins]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[La Vie en Rose (film)|La Vie en Rose]]''&nbsp;– [[Didier Lavergne]] and [[Jan Archibald]]'''{{double-dagger}}
+** ''[[Norbit]]''&nbsp;– [[Rick Baker]] and [[Kazuhiro Tsuji]]
+** ''[[Pirates of the Caribbean: At World's End]]''&nbsp;– [[Ve Neill]] and [[Martin Samuel (hair stylist)|Martin Samuel]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Elizabeth: The Golden Age]]''&nbsp;– [[Alexandra Byrne]]'''{{double-dagger}}
+** ''[[Across the Universe (film)|Across the Universe]]''&nbsp;– [[Albert Wolsky]]
+** ''[[Atonement (2007 film)|Atonement]]''&nbsp;– [[Jacqueline Durran]]
+** ''[[La Vie en Rose (film)|La Vie en Rose]]''&nbsp;– [[Marit Allen]] (posthumous nomination)
+** ''[[Sweeney Todd: The Demon Barber of Fleet Street (2007 film)|Sweeney Todd: The Demon Barber of Fleet Street]]''&nbsp;– [[Colleen Atwood]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Bourne Ultimatum (film)|The Bourne Ultimatum]]''&nbsp;– [[Christopher Rouse (film editor)|Christopher Rouse]]'''{{double-dagger}}
+** ''[[The Diving Bell and the Butterfly (film)|The Diving Bell and the Butterfly]]''&nbsp;– [[Juliette Welfling]]
+** ''[[Into the Wild (film)|Into the Wild]]''&nbsp;– [[Jay Cassidy]]
+** ''[[No Country for Old Men]]''&nbsp;– [[Coen brothers|Roderick Jaynes]]
+** ''[[There Will Be Blood]]''&nbsp;– [[Dylan Tichenor]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[The Golden Compass (film)|The Golden Compass]]''&nbsp;– [[Michael L. Fink]], [[Bill Westenhofer]], [[Ben Morris (special effects artist)|Ben Morris]] and [[Trevor Wood (special effects artist)|Trevor Wood]]'''{{double-dagger}}
+** ''[[Pirates of the Caribbean: At World's End]]''&nbsp;– [[John Knoll]], [[Hal Hickel]], [[Charles Gibson (special effects artist)|Charles Gibson]] and [[John Frazier]]
+** ''[[Transformers (film)|Transformers]]''&nbsp;– [[Scott Farrar]], [[Scott Benza]], [[Russell Earl]] and [[John Frazier]]
+|}
+
+===Honorary Award===
+* To [[Robert F. Boyle|Robert Boyle]] in recognition of one of cinema's great careers in art direction.<ref>{{Cite news |last=McCarthy |first=Libby |date=December 12, 2007 |title=Boyle to receive honorary Oscar |work=Variety |url=https://variety.com/2007/film/news/boyle-to-receive-honorary-oscar-1117977566/ |url-status=live |access-date=February 3, 2014 |archive-url=https://web.archive.org/web/20151125111629/http://variety.com/2007/film/news/boyle-to-receive-honorary-oscar-1117977566/ |archive-date=November 25, 2015}}</ref>
+
+===Films with multiple nominations and awards===
+{{Col-begin|width=80%}}{{Col-1-of-2}}
+The following 21 films received multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+|rowspan=2 style="text-align: center;" | 8
+| ''[[No Country for Old Men]]''
+|-
+| ''[[There Will Be Blood]]''
+|-
+|rowspan=2 style="text-align: center;" | 7
+| ''[[Atonement (2007 film)|Atonement]]''
+|-
+| ''[[Michael Clayton]]''
+|-
+| style="text-align: center;" | 5
+| ''[[Ratatouille (film)|Ratatouille]]''
+|-
+|rowspan=2 style="text-align: center;" | 4
+| ''[[The Diving Bell and the Butterfly (film)|The Diving Bell and the Butterfly]]''
+|-
+| ''[[Juno (film)|Juno]]''
+|-
+|rowspan=5 style="text-align: center;" | 3
+| ''[[The Bourne Ultimatum (film)|The Bourne Ultimatum]]''
+|-
+| ''[[Enchanted (film)|Enchanted]]''
+|-
+| ''[[La Vie en rose (film)|La Vie en Rose]]''
+|-
+| ''[[Sweeney Todd: The Demon Barber of Fleet Street (2007 film)|Sweeney Todd: The Demon Barber of Fleet Street]]''
+|-
+| ''[[Transformers (film)|Transformers]]''
+|-
+|rowspan=9 style="text-align: center;" | 2
+| ''[[3:10 to Yuma (2007 film)|3:10 to Yuma]]''
+|-
+| ''[[American Gangster (film)|American Gangster]]''
+|-
+| ''[[The Assassination of Jesse James by the Coward Robert Ford]]''
+|-
+| ''[[Away from Her]]''
+|-
+| ''[[Elizabeth: The Golden Age]]''
+|-
+| ''[[The Golden Compass (film)|The Golden Compass]]''
+|-
+| ''[[Into the Wild (film)|Into the Wild]]''
+|-
+| ''[[Pirates of the Caribbean: At World's End]]''
+|-
+| ''[[The Savages (film)|The Savages]]''
+|}
+{{col-2}}
+The following four films received multiple awards:
+
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 4
+| ''[[No Country for Old Men]]''
+|-
+| style="text-align: center;" | 3
+| ''[[The Bourne Ultimatum (film)|The Bourne Ultimatum]]''
+|-
+|rowspan=2 style="text-align: center;" | 2
+| ''[[La Vie en rose (film)|La Vie en Rose]]''
+|-
+| ''[[There Will Be Blood]]''
+|}
+{{col-end}}
+
+==Presenters and performers==
+The following individuals presented awards or performed musical numbers.<ref name="variety-2008">{{Cite news |date=February 24, 2008 |title=Oscars: Always great television |work=Variety |url=https://variety.com/2008/tv/news/oscars-always-g-21109/ |url-status=live |access-date=September 29, 2014 |archive-url=https://web.archive.org/web/20141010140824/http://variety.com/2008/tv/news/oscars-always-g-21109/ |archive-date=October 10, 2014}}</ref><ref name="TVGuide">{{Cite news |date=February 25, 2008 |title=The 80th Annual Academy Awards Live Blog! |work=[[TV Guide]] |publisher=[[CBS Interactive]] |url=https://www.tvguide.com/news/80th-annual-academy-7272/ |url-status=live |access-date=December 3, 2014 |archive-url=https://web.archive.org/web/20151223142611/http://www.tvguide.com/news/80th-annual-academy-7272/ |archive-date=December 23, 2015}}</ref><ref>{{Cite magazine |last=Travers |first=Peter |author-link=Peter Travers |date=February 24, 2008 |title=Oscars 2008: The Live Blog |magazine=[[Rolling Stone]] |url=https://www.rollingstone.com/movies/videos/oscars-2008-the-live-blog-20080224 |url-status=live |access-date=December 22, 2015 |archive-url=https://web.archive.org/web/20171013172947/http://www.rollingstone.com/movies/videos/oscars-2008-the-live-blog-20080224 |archive-date=October 13, 2017}}</ref><ref>{{Cite news |last=Burlingame |first=Jon |date=February 25, 2008 |title=Score, Song Oscars to Marianelli, Hansard and Irglova |publisher=[[The Film Music Society]] |url=http://www.filmmusicsociety.org/news_events/features/2008/022508_1.html?isArchive=022508_1 |url-status=live |access-date=December 22, 2015 |archive-url=https://web.archive.org/web/20151222151920/http://www.filmmusicsociety.org/news_events/features/2008/022508_1.html?isArchive=022508_1 |archive-date=December 22, 2015}}</ref><ref>{{Cite news |last=White |first=Dave |date=February 24, 2008 |title=Let 'er rip: Blogging the Oscars |publisher=NBC News (NBCUniversal) |url=http://www.today.com/id/23324144/ns/today-today_entertainment/t/let-er-rip-blogging-oscars/ |url-status=live |access-date=December 22, 2015 |archive-url=https://web.archive.org/web/20151222180510/http://www.today.com/id/23324144/ns/today-today_entertainment/t/let-er-rip-blogging-oscars/ |archive-date=December 22, 2015}}</ref>
+
+===Presenters===
+{| class="wikitable plainrowheaders sortable" rowspan=2 style="text-align: left"
+! scope="col" width="195" | Name(s)
+! scope="col" align="center" | Role
+|-
+| {{sortname|Tom|Kane}}<br />Randy Thomas<ref>{{harvnb|Terrance|2013|p=14}}</ref>
+| Co-announcers for the 80th annual Academy Awards
+|-
+| {{sortname|Jennifer|Garner}}
+| Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|George|Clooney}}
+| Presenter of the Academy Awards history montage
+|-
+| {{sortname|Steve|Carell}}<br />[[Anne Hathaway]]
+| Presenters of the award for [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+| {{sortname|Katherine|Heigl}}
+| Presenter of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Jon|Stewart}}
+| Introducer of the performance of Best Original Song nominee "[[Happy Working Song]]"
+|-
+| {{sortname|Dwayne|Johnson}}
+| Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Cate|Blanchett}}
+| Presenter of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Jennifer|Hudson}}
+| Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Keri|Russell}}
+| Introducer of the performance of Best Original Song nominee "[[Raise It Up (August Rush song)|Raise It Up]]"
+|-
+| {{sortname|Owen|Wilson}}
+| Presenter of the award for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+| {{sortname||Barry B. Benson|Barry B. Benson}}
+| Presenter of the award for [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Alan|Arkin}}
+| Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Jessica|Alba}}
+| Presenter of the segment of the [[Academy Award, Scientific or Technical|Scientific and Technical Awards]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Josh|Brolin}}<br /> [[James McAvoy]]
+| Presenters of the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| {{sortname|Sid|Ganis}}
+| Presenter of a special segment explaining the [[Academy Awards|Oscar]] selection process
+|-
+| {{sortname|Miley|Cyrus}}
+| Introducer of the performance of Best Original Song nominee "[[That's How You Know (Disney song)|That's How You Know]]"
+|-
+| {{sortname|Jonah|Hill}}<br />[[Seth Rogen]]
+| Presenters of the awards for [[Academy Award for Best Sound Editing|Best Sound Editing]] and [[Academy Award for Best Sound Mixing|Best Sound Mixing]]
+|-
+| {{sortname|Forest|Whitaker}}
+| Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Colin|Farrell}}
+| Introducer of the performance of Best Original Song nominee "[[Falling Slowly]]"
+|-
+| {{sortname|Jack|Nicholson}}
+| Presenter of the [[Academy Award for Best Picture|Best Picture]] winners montage
+|-
+| {{sortname|Renée|Zellweger}}
+| Presenter of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Nicole|Kidman}}
+| Presenter of the [[Academy Honorary Award|Honorary Academy Award]] to [[Robert F. Boyle]]
+|-
+| {{sortname|Penélope|Cruz}}
+| Presenter of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Patrick|Dempsey}}
+| Introducer of the performance Best Original Song nominee of "[[So Close (Jon McLaughlin song)|So Close]]"
+|-
+| {{sortname|John|Travolta}}
+| Presenter of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Cameron|Diaz}}
+| Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Hilary|Swank}}
+| Presenter of the "[[In memoriam segment|In Memoriam]]" segment
+|-
+| {{sortname|Amy|Adams}}
+| Presenter of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| {{sortname|Tom|Hanks}}<br />Spc. Charles Highland<br />Sgt. Andrea Knudsen<br />Officer 3rd Class Joseph Smith<br />Lt. Curtis Williamson<br />Sgt. Kenji Thuloweit<ref>{{cite news |title=Academy Awards Acceptance Speech Database |access-date=February 3, 2022 |url=http://aaspeechesdb.oscars.org/link/080-11/ |publisher=Academy of Motion Picture Arts and Sciences |archive-date=March 13, 2022 |archive-url=https://web.archive.org/web/20220313213121/http://aaspeechesdb.oscars.org/link/080-11/ |url-status=live }}</ref>
+|Presenter of the award for [[Academy Award for Best Documentary Short Subject|Best Documentary Short Subject]]
+|-
+| {{sortname|Tom|Hanks|nolink=1}}
+| Presenter of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Harrison|Ford}}
+| Presenter of the award for [[Academy Award for Best Original Screenplay|Best Original Screenplay]]
+|-
+| {{sortname|Helen|Mirren}}
+| Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Martin|Scorsese}}
+| Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Denzel|Washington}}
+| Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable plainrowheaders sortable" rowspan=2 style="text-align: left"
+! scope="col" width="175"    | Name(s)
+! scope="col" align="center" | Role
+! scope="col" align="center" | Performed
+|-
+| {{sortname|Bill|Conti}}
+| Musical Arranger<br />Conductor
+| Orchestral
+|-
+| {{sortname|Amy|Adams}}
+| Performer
+| "[[Happy Working Song]]" from ''[[Enchanted (film)|Enchanted]]''
+|-
+| [[New Heritage Theatre Group|Impact Repertory Theatre]]<br />[[Jamia Simone Nash]]
+| Performers
+| "[[Raise It Up (August Rush song)|Raise It Up]]" from ''[[August Rush]]''
+|-
+| {{sortname|Kristin|Chenoweth}}<br />[[Marlon Saunders]]
+| Performers
+| "[[That's How You Know (Disney song)|That's How You Know]]" from ''Enchanted''
+|-
+| {{sortname|Glen|Hansard}}<br />[[Markéta Irglová]]
+| Performers
+| "[[Falling Slowly]]" from ''[[Once (film)|Once]]''
+|-
+| {{sortname|Jon|McLaughlin|Jon McLaughlin (musician)}}
+| Performer
+| "[[So Close (Jon McLaughlin song)|So Close]]" from ''Enchanted''
+|}
+
+==Ceremony information==
+[[File:Jon Stewart at Cabaret 2008 benefit.jpg|thumb|right|[[Jon Stewart]] hosted the 80th Academy Awards.|alt=Photo of Jon Stewart in 2008.]]
+
+In September 2007, the Academy hired [[Gilbert Cates|Gil Cates]] to oversee production of the telecast for a record 14th time.<ref name="Cates">{{Cite news |date=September 11, 2007 |title=Cates to produce Academy Awards |work=[[The Hollywood Reporter]] |url=https://www.hollywoodreporter.com/news/cates-produce-academy-awards-149925 |url-status=live |access-date=June 28, 2014 |archive-url=https://web.archive.org/web/20140720044408/http://www.hollywoodreporter.com/news/cates-produce-academy-awards-149925 |archive-date=July 20, 2014}}</ref> Ganis explained his decision to hire Cates as producer stating, "He's so talented...so creative and inventive, and so enormously passionate about the Oscars. All of that will again translate into a night that people can't wait to experience."<ref name="Cates" /> Immediately, Cates selected actor, comedian, and talk-show host [[Jon Stewart]] as host of the 2008 ceremony. "Jon was a terrific host for the [[78th Academy Awards|78th Awards]]," Cates said about Stewart in a press release. "He is smart, quick, funny, loves movies and is a great guy. What else could one ask for?"<ref>{{Cite news |last=Piccalo |first=Gina |date=September 13, 2007 |title=Jon Stewart gets an Oscar sequel |work=Los Angeles Times |url=https://www.latimes.com/archives/la-xpm-2007-sep-13-wk-stewart13-story.html |url-status=live |access-date=June 28, 2014 |archive-url=https://web.archive.org/web/20160307231136/http://articles.latimes.com/2007/sep/13/news/wk-stewart13 |archive-date=March 7, 2016}}</ref>
+
+Furthermore, the [[2007–08 Writers Guild of America strike]] affected the telecast and its surrounding events.<ref>{{Cite news |last=Cohen |first=Sandy |date=November 14, 2007 |title=Awards shows could suffer in WGA strike |work=USA Today |url=http://usatoday30.usatoday.com/life/2007-11-14-award-shows-strike_N.htm |url-status=dead |access-date=May 29, 2013 |archive-url=https://web.archive.org/web/20151223091339/http://usatoday30.usatoday.com/life/2007-11-14-award-shows-strike_N.htm |archive-date=December 23, 2015}}</ref> Over a month after the labor dispute began, the striking [[Writers Guild of America, west|Writers Guild of America]] (WGA) denied a waiver requested by the [[Academy of Motion Picture Arts and Sciences]] in connection with film clips and excerpts from previous award ceremonies to be shown at the 2008 awards.<ref>{{Cite news |last=McNairy |first=Dave |date=December 17, 2007 |title=WGA rejects waiver requests |work=Variety |url=https://variety.com/2007/film/news/wga-rejects-waiver-requests-1117977878/ |url-status=live |access-date=July 1, 2014 |archive-url=https://web.archive.org/web/20141226010915/http://variety.com/2007/film/news/wga-rejects-waiver-requests-1117977878/ |archive-date=December 26, 2014}}</ref> The material could have been used, as the denial only affected the conditions under which the clips are shown.<ref>{{Cite news |last=Finke |first=Nikki |date=December 17, 2007 |title=No WGA Waivers For Globes Or Oscars (And Other News From Tonight's Meeting); AMPTP Nominates WGA For "Worst Union" |work=[[Deadline Hollywood]] (Penske Media Corporation) |url=https://deadline.com/2007/12/no-wga-waivers-for-golden-globes-oscars-4454/ |url-status=live |access-date=June 4, 2013 |archive-url=https://web.archive.org/web/20140814215639/http://deadline.com/2007/12/no-wga-waivers-for-golden-globes-oscars-4454/ |archive-date=August 14, 2014}}</ref> Previously, the [[60th Academy Awards|60th ceremony]] held in 1988 occurred 37 days after [[1988 Writers Guild of America strike|that year's writers strike]] began. At the time, material was already completed in anticipation for the strike, and actors were in full attendance of the ceremony.<ref>{{Cite news |last=Killday |date=February 8, 2008 |title=Oscar has experience with strike-related uncertainty |work=The Hollywood Reporter |url=https://www.hollywoodreporter.com/news/oscar-has-experience-strike-related-104329 |url-status=live |access-date=February 3, 2014 |archive-url=https://web.archive.org/web/20140714123409/http://www.hollywoodreporter.com/news/oscar-has-experience-strike-related-104329 |archive-date=July 14, 2014}}</ref><ref>{{Cite news |last=Cieply |first=Michael |date=April 12, 1988 |title='Last Emperor' Reigns Over Oscar Ceremonies : Best Picture Winner Adds Eight Other Awards; Cher and Douglas Take Top Prizes for Acting |work=Los Angeles Times |url=https://www.latimes.com/archives/la-xpm-1988-04-12-mn-783-story.html |url-status=live |access-date=June 4, 2013 |archive-url=https://web.archive.org/web/20130627083448/http://articles.latimes.com/1988-04-12/news/mn-783_1_picture-winner |archive-date=June 27, 2013}}</ref>
+
+In anticipation that the strike would continue through Oscar night, AMPAS developed a Plan B show that would not have included actors accepting their awards.<ref>{{Cite news |last=Gensler |first=Howard |date=January 31, 2008 |title=Plan B being developed for Oscar night |work=[[The Philadelphia Inquirer]] |url=http://articles.philly.com/2008-01-31/entertainment/25253613_1_oscars-leslie-unger-sid-ganis |url-status=dead |access-date=June 30, 2014 |archive-url=https://web.archive.org/web/20151223142251/http://articles.philly.com/2008-01-31/entertainment/25253613_1_oscars-leslie-unger-sid-ganis |archive-date=December 23, 2015}}</ref> It would have included the musical numbers, but would have relied heavily on historic film clips, emphasizing the 80th anniversary of the awards.<ref>{{Cite magazine |last=Bierly |first=Mandi |date=February 24, 2008 |title=Oscars to go on, possibly with 'packages of film and concepts |magazine=Entertainment Weekly |url=https://www.ew.com/article/2008/01/31/oscars-jon-stew |url-status=live |access-date=June 4, 2013 |archive-url=https://web.archive.org/web/20150927145646/http://www.ew.com/article/2008/01/31/oscars-jon-stew |archive-date=September 27, 2015}}</ref> However, both the WGA and [[Alliance of Motion Picture and Television Producers]] (AMPTP) reached an agreement effectively ending the strike on February 12, 2008, and the ceremony proceeded under its normal format.<ref>{{Cite news |last1=Horn |first1=John |last2=Piccalo |first2=Gina |date=February 12, 2008 |title=Oscars just glad to be scrambling |work=Los Angeles Times |url=https://www.latimes.com/archives/la-xpm-2008-feb-12-et-oscars12-story.html |url-status=live |access-date=June 30, 2014 |archive-url=https://web.archive.org/web/20140714231039/http://articles.latimes.com/2008/feb/12/entertainment/et-oscars12 |archive-date=July 14, 2014}}</ref>
+
+===Box office performance of nominated films===
+Continuing a trend in recent years, the field of major nominees favored independent, low-budget films over blockbusters.<ref>{{Cite news |last=Goldstein |first=Patrick |date=January 23, 2008 |title=Once again, the indies will rule |work=Los Angeles Times |url=https://www.latimes.com/archives/la-xpm-2008-jan-23-et-oscargoldstein23-story.html |url-status=live |access-date=July 1, 2014 |archive-url=https://web.archive.org/web/20151016180437/http://articles.latimes.com/2008/jan/23/entertainment/et-oscargoldstein23 |archive-date=October 16, 2015}}</ref><ref name="NYT Oscars">{{Cite news |last=Carr |first=David |date=March 3, 2008 |title=In Oscars, No Country for Hit Films |work=The New York Times |url=https://www.nytimes.com/2008/03/03/business/media/03carr.html |url-status=live |access-date=July 1, 2014 |archive-url=https://web.archive.org/web/20160717122621/http://www.nytimes.com/2008/03/03/business/media/03carr.html |archive-date=July 17, 2016}}</ref> The combined gross of the five Best Picture nominees when the Oscars were announced was $217 million; the average gross per film was $43.3 million.<ref>{{Cite news |title=2007 Academy Awards Nominations and Winner for Best Picture |work=[[Box Office Mojo]] ([[Amazon.com]]) |url=https://boxofficemojo.com/oscar/chart/?yr=2007&p=.htm |url-status=live |access-date=May 15, 2013 |archive-url=https://web.archive.org/web/20130510003559/http://boxofficemojo.com/oscar/chart/?yr=2007&p=.htm |archive-date=May 10, 2013}}</ref>
+
+None of the five Best Picture nominees was among the top ten releases in box office during the nominations. When the nominations were announced on January 22, ''Juno'' was the highest earner among the Best Picture nominees with $87.1 million in domestic box office receipts.<ref name="EW" /> The film was followed by ''No Country for Old Men'' ($48.9 million), ''Michael Clayton'' ($39.4 million), ''Atonement'' ($32.7 million), and finally ''There Will Be Blood'' ($8.7 million).<ref name="BoxOfficeMojoOscars">{{Cite news |title=2006 Academy Award Nominations and Winner for Best Picture |work=Box Office Mojo (Amazon.com) |url=https://boxofficemojo.com/oscar/chart/?yr=2006&p=.htm |url-status=live |access-date=January 30, 2014 |archive-url=https://web.archive.org/web/20140131163901/http://boxofficemojo.com/oscar/chart/?yr=2006&p=.htm |archive-date=January 31, 2014}}</ref>
+
+Out of the top 50 grossing movies of the year (prior to announcement), 29 nominations went to 12 films on the list. Only ''Ratatouille'' (9th), ''American Gangster'' (18th), ''Juno'' (31st), ''Charlie Wilson's War'' (39th), and ''Surf's Up'' (41st) received nominations for Best Picture, Best Animated Feature, directing, acting, or screenwriting.<ref name="boxofficemojooscars">{{Cite news |title=2007 Yearly Box Office Results (January 21, 2008) |work=Box Office Mojo (Amazon.com) |url=https://www.boxofficemojo.com/yearly/chart/?asof=2008-01-21&view=releasedate&view2=domestic&yr=2007&sort=gross&order=DESC&p=.htm |url-status=live |access-date=August 22, 2013 |archive-url=https://web.archive.org/web/20151223091224/http://www.boxofficemojo.com/yearly/chart/?asof=2008-01-21&view=releasedate&view2=domestic&yr=2007&sort=gross&order=DESC&p=.htm |archive-date=December 23, 2015}}</ref> The other top-50 box office hits that earned nominations were ''Transformers'' (3rd), ''Pirates of the Caribbean: At World's End'' (4th), ''The Bourne Ultimatum'' (7th), ''Enchanted'' (20th), ''Norbit'' (29th), ''The Golden Compass'' (37th), and ''3:10 to Yuma'' (45th).<ref name="boxofficemojooscars" />
+
+===Critical reviews===
+The show received a mixed reception from media publications. Some media outlets were more critical of the show. ''[[The Washington Post]]'' television critic [[Tom Shales]] quipped that the ceremony was "Overstocked with clips from movies -- from this year's nominees and from Oscar winners going back to [[1st Academy Awards|1929]] -- that it was like a TV show with the hiccups."<ref>{{Cite news |last=Shales |first=Tom |date=February 25, 2008 |title=Oscar Viewers Got Clipped, In More Ways Than One |newspaper=[[The Washington Post]] |url=https://www.washingtonpost.com/wp-dyn/content/article/2008/02/25/AR2008022500046.html |url-status=live |access-date=July 1, 2014 |archive-url=https://web.archive.org/web/20140714122723/http://www.washingtonpost.com/wp-dyn/content/article/2008/02/25/AR2008022500046.html |archive-date=July 14, 2014}}</ref> Columnist [[James Poniewozik]] of ''[[Time (magazine)|Time]]'' commented that Stewart was "an Oscar host–sometimes a funny one, but a pretty conventional one, whose routine was loaded up with kiss-up softballs about how hot [[Colin Farrell]] is, what range [[Cate Blanchett]] has and what a tomcat [[Jack Nicholson]] is." Of the show itself, he wrote, "What we got instead was a show that half the time seemed like the show the Academy would have put on if there had been a strike, chockful of montages. The other half of the time, it was an typical-to-dull Oscars."<ref>{{Cite magazine |last=Poniewozik |first=James |date=February 25, 2008 |title=Oscars Defeat Jon Stewart |magazine=[[Time (magazine)|Time]] |publisher=Time Warner |url=https://entertainment.time.com/2008/02/25/oscars_defeat_jon_stewart/ |url-status=live |access-date=July 1, 2014 |archive-url=https://web.archive.org/web/20151222155844/http://entertainment.time.com/2008/02/25/oscars_defeat_jon_stewart/ |archive-date=December 22, 2015}}</ref> Columnist Robert Bianco of ''[[USA Today]]'' said, "Has it ever felt like more of a padded bore than it did Sunday night? If so, blame the writers' strike, which left the producers with only a few weeks to prepare for the [[American Broadcasting Company|ABC]] broadcast and persuaded them to lean less on the host and more on old clips." He also observed that numerous film montages seemed to diminish Stewart's job as host.<ref>{{Cite news |last=Bianco |first=Robert |date=February 25, 2008 |title=The Latest Strike Casualty: This Show |work=USA Today |url=http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2008-02-25-bianco-review_N.htm |url-status=dead |access-date=February 3, 2014 |archive-url=https://web.archive.org/web/20151113015539/http://usatoday30.usatoday.com/life/movies/movieawards/oscars/2008-02-25-bianco-review_N.htm |archive-date=November 13, 2015}}</ref>
+
+The majority of other media outlets received the broadcast more positively. Television critic Matthew Gilbert of the ''[[Boston Globe]]'' gave an average critique of the ceremony but praised Stewart writing that "It was good to see Jon Stewart being Jon Stewart. He is shaping up to be a dependable Oscar host for the post-Billy Crystal years. He's not musical, but he's versatile enough to swing smoothly between jokes about politics, Hollywood, new media, and, most importantly, hair."<ref>{{Cite news |last=Gilbert |first=Matthew |date=February 25, 2008 |title=Looking back doesn't help show look good |work=The Boston Globe |url=http://archive.boston.com/ae/tv/articles/2008/02/25/looking_back_doesnt_help_show_look_good/ |url-status=live |access-date=September 21, 2008 |archive-url=https://web.archive.org/web/20080720041952/http://www.boston.com/ae/movies/oscars/articles/2008/02/25/looking_back_doesnt_help_show_look_good |archive-date=July 20, 2008}}</ref> ''[[Variety (magazine)|Variety]]'' columnist Brian Lowry lauded Stewart's performance noting that he "earned his keep by maintaining a playful, irreverent tone throughout the night, whether it was jesting about Cate Blanchett's versatility or watching ''[[Lawrence of Arabia (film)|Lawrence of Arabia]]'' on an [[iPhone]] screen."<ref name="Variety Oscar" /> [[Frazier Moore]] from the [[Associated Press]] commended Stewart's improvement from his first hosting stint commenting, "He proved equal to the challenge posed by Oscarcast's quick turnaround. His crash-deadline material worked. And even when it didn't, he was genial, relaxed, and seemed utterly at home." In addition, he quipped that although there was a lack of surprise amongst the winners, he marveled "The evening was plenty elegant. The stage setting was handsome. The orchestra sounded full and lush. Everyone behaved."<ref>{{Cite news |last=Moore |first=Frazier |date=February 25, 2008 |title=The writers were back for the Oscarcast, but this show was nothing to write home about |work=[[The Press Democrat]] |url=https://news.google.com/newspapers?nid=1673&dat=20080225&id=nrIjAAAAIBAJ&pg=6788,6000417 |url-status=live |access-date=November 4, 2008 |archive-url=https://web.archive.org/web/20201218085132/https://news.google.com/newspapers?nid=1673&dat=20080225&id=nrIjAAAAIBAJ&sjid=WSQEAAAAIBAJ&pg=6788%2C6000417 |archive-date=December 18, 2020}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 32 million people over its length, which was a 21% decrease from the [[79th Academy Awards|previous year's ceremony]].<ref name="JoalRyan_2005_02_25" /> An estimated 64 million total viewers watched all or part of the awards.<ref>{{Cite news |last=De Moraes |first=Lisa |date=February 26, 2008 |title=Box-Office Blues Make for an Oscar Washout |newspaper=The Washington Post |url=https://www.washingtonpost.com/wp-dyn/content/article/2008/02/25/AR2008022501326.html |url-status=live |access-date=June 30, 2014 |archive-url=https://web.archive.org/web/20140716072412/http://www.washingtonpost.com/wp-dyn/content/article/2008/02/25/AR2008022501326.html |archive-date=July 16, 2014}}</ref> The show also earned lower Nielsen ratings compared to the previous ceremony with 18.7% of households watching over a 29 share.<ref>{{Cite news |last=Bialik |first=Carl |date=February 26, 2008 |title=And the Oscar Goes to... Fewer TV Viewers |work=[[The Wall Street Journal]] |url=https://blogs.wsj.com/numbers/and-the-oscar-goes-to-fewer-tv-viewers-283/ |url-status=live |access-date=June 30, 2014 |archive-url=https://web.archive.org/web/20140718172548/http://blogs.wsj.com/numbers/and-the-oscar-goes-to-fewer-tv-viewers-283/ |archive-date=July 18, 2014}}</ref> In addition, it garnered a lower 18–49 demo rating with a 10.7 rating over a 26 share among viewers in that demographic.<ref>{{Cite news |last=Kissell |first=Rick |date=February 26, 2008 |title='Idol' wins over Oscar in ratings |work=Variety |url=https://variety.com/2008/scene/features/idol-wins-over-oscar-in-ratings-1117981494/ |url-status=live |access-date=June 30, 2014 |archive-url=https://web.archive.org/web/20151223071629/http://variety.com/2008/scene/features/idol-wins-over-oscar-in-ratings-1117981494/ |archive-date=December 23, 2015}}</ref> Many media outlets pointed out that the Writers Guild strike and the niche popularity amongst the field of major nominees contributed to the low ratings.<ref>{{Cite news |last=Collins |first=Scott |date=February 26, 2008 |title=TV ratings hit new low |work=Los Angeles Times |url=https://www.latimes.com/archives/la-xpm-2008-feb-26-et-oscarratings26-story.html |url-status=live |access-date=September 22, 2008 |archive-url=https://web.archive.org/web/20140714141515/http://articles.latimes.com/2008/feb/26/entertainment/et-oscarratings26 |archive-date=July 14, 2014}}</ref><ref>{{Cite news |last=Smith |first=Sean |date=February 29, 2008 |title=Oscar's dropping ratings |work=Entertainment Weekly. |url=https://www.ew.com/article/2008/02/29/oscars-dropping-ratings |url-status=live |access-date=July 1, 2014 |archive-url=https://web.archive.org/web/20151129103303/http://www.ew.com/article/2008/02/29/oscars-dropping-ratings |archive-date=November 29, 2015}}</ref> It earned the lowest viewership for an Academy Award telecast since figures were compiled beginning with the [[46th Academy Awards|46th ceremony]] in 1974.<ref name="Finke" />
+
+In July 2008, the ceremony presentation received nine nominations at the [[60th Primetime Emmy Awards]].<ref>{{Cite news |title=Primetime Emmy Award database |publisher=[[Academy of Television Arts and Sciences]] (ATAS) |url=http://www.emmys.com/shows/80th-annual-academy-awards |url-status=live |access-date=January 14, 2014 |archive-url=https://web.archive.org/web/20151223092732/http://www.emmys.com/shows/80th-annual-academy-awards |archive-date=December 23, 2015}}</ref> Two months later, the ceremony won two of those nominations for Outstanding Art Direction (Roy Christopher and Joe Celli) and Outstanding Directing for a Variety, Music, or Comedy Program (Louis J. Horvitz).<ref>{{Cite news |date=September 21, 2008 |title=2008 Emmy winners |work=USA Today |url=http://usatoday30.usatoday.com/life/television/televisionawards/emmys/2008-09-21-emmy-winner-list_N.htm |url-status=live |access-date=June 30, 2014 |archive-url=https://web.archive.org/web/20151111072256/http://usatoday30.usatoday.com/life/television/televisionawards/emmys/2008-09-21-emmy-winner-list_N.htm |archive-date=November 11, 2015}}</ref><ref>{{Cite news |last=Sepinwall |first=Alan |date=September 21, 2008 |title=Sepinwall on TV: Recapping the Emmys |work=[[The Star-Ledger]] |url=http://www.nj.com/entertainment/tv/index.ssf/2008/09/sepinwall_on_tv_recapping_the.html |url-status=live |access-date=June 30, 2014 |archive-url=https://web.archive.org/web/20151223111211/http://www.nj.com/entertainment/tv/index.ssf/2008/09/sepinwall_on_tv_recapping_the.html |archive-date=December 23, 2015}}</ref>
+
+=="In Memoriam"==
+The annual ''[[In memoriam segment|In Memoriam]]'' tribute, presented by actress [[Hilary Swank]], honored the following people:<ref>{{Cite news |last=O'Neil |first=Tom |date=February 24, 2008 |title=In Memoriam: Oscar winners |work=Los Angeles Times |url=http://goldderby.latimes.com/awards_goldderby/2008/02/in-memoriam-osc.html |url-status=dead |access-date=July 17, 2008 |archive-url=https://web.archive.org/web/20080302075937/http://goldderby.latimes.com/awards_goldderby/2008/02/in-memoriam-osc.html |archive-date=March 2, 2008}}</ref>
+
+{{div col|colwidth=22em}}
+* [[Roscoe Lee Browne]] – Actor
+* [[Barry Nelson (actor)|Barry Nelson]] – Actor
+* [[Kitty Carlisle|Kitty Carlisle Hart]] – Actress, TV personality
+* [[Betty Hutton]] – Actress
+* [[Calvin Lockhart]] – Actor
+* [[Jane Wyman]] – Actress
+* [[Melville Shavelson]] – Writer
+* [[Curtis Harrington]] – Director
+* [[Jack Valenti]] – Executive
+* [[Michael Kidd]] – Dancer
+* [[Michelangelo Antonioni]] – Director
+* [[Delbert Mann]] – Director
+* [[Monty Westmore|Montague "Monty" G. Westmore]] – Makeup artist
+* [[Peter Handford|Peter T. Handford]] – Sound
+* [[Bud Ekins]] – Stuntman
+* [[Bernard Gordon (writer)|Bernard Gordon]] – Writer
+* [[Dabbs Greer]] – Actor
+* [[Jean-Claude Brialy]] – Actor
+* [[Harold Michelson]] – Art director
+* [[Laraine Day]] – Actress
+* [[Jean-Pierre Cassel]] – Actor
+* [[Lois Maxwell]] – Actress
+* [[László Kovács (cinematographer)|László Kovács]] – Cinematographer
+* [[Bob Clark|Robert Clark]] – Director <!--His article gives his real name as Benjamin; did AMPAS get his name wrong?-->
+* [[George C. Jenkins|George Jenkins]] – Art director
+* [[Johnny Grant (radio personality)|Johnny Grant]] – Executive
+* [[Frank Rosenfelt|Frank E. Rosenfelt]] – Executive
+* [[Martin Manulis]] – Producer
+* [[Donfeld]] – Costume designer
+* [[Ousmane Sembène|Sembène Ousmane]] – Director
+* [[Freddie Fields|Freddy Fields]] – Agent
+* Robert Lantz – Agent
+* Ray Kurtzman – Executive
+* [[Miyoshi Umeki]] – Singer, actress
+* [[Suzanne Pleshette]] – Actress
+* [[Deborah Kerr]] – Actress
+* [[Peter Ellenshaw]] – Visual effects
+* [[Peter Zinner]] – Film editor
+* [[Freddie Francis]] – Cinematographer
+* [[Ingmar Bergman]] – Director
+* [[Ray Evans]] – Music
+* [[William J. Tuttle|William Tuttle]] – Makeup
+* [[Heath Ledger]] – Actor
+{{div col end}}
+
+==See also==
+* [[14th Screen Actors Guild Awards]]
+* [[28th Golden Raspberry Awards]]
+* [[50th Grammy Awards]]
+* [[60th Primetime Emmy Awards]]
+* [[61st British Academy Film Awards]]
+* [[62nd Tony Awards]]
+* [[65th Golden Globe Awards]]
+* [[List of submissions to the 80th Academy Awards for Best Foreign Language Film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{Reflist|30em}}
+
+==Bibliography==
+{{refbegin}}
+* {{Cite book |last=Terrance |first=Vincent |title=Television Specials: 5,336 Entertainment Programs, 1936–2012 |publisher=[[Ballantine Books]], [[McFarland & Company]] |year=2013 |isbn=978-1-4766-1240-9 |edition=5 |location=Jefferson, North Carolina, United States |oclc=844373010}}
+{{refend}}
+
+==External links==
+{{Wikinews|Oscar Foreign Film race narrowed to nine films | Europeans sweep top actor honors at 80th Academy Awards}}
+;Official websites
+* [http://oscar.go.com// Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20140623012941/http://oscar.go.com/ |date=June 23, 2014 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/user/Oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20190226082028/https://www.youtube.com/user/Oscars |date=February 26, 2019 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+;Analysis
+* [http://filmsite.org/aa07.html 2007 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20160205061723/http://www.filmsite.org/aa07.html |date=February 5, 2016 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/2008 Academy Awards, USA: 2008] {{Webarchive|url=https://web.archive.org/web/20171211022111/http://www.imdb.com/event/ev0000003/2008? |date=December 11, 2017 }} [[Internet Movie Database]]
+
+;News resources
+* [http://news.bbc.co.uk/2/hi/in_depth/entertainment/2008/oscars_2008/default.stm Oscars 2008] {{Webarchive|url=https://web.archive.org/web/20160120121826/http://news.bbc.co.uk/2/hi/in_depth/entertainment/2008/oscars_2008/default.stm |date=January 20, 2016 }} [[BBC News]]
+* [https://www.boston.com/ae/movies/oscars/2008/ 80th Academy Awards] {{Webarchive|url=https://web.archive.org/web/20150924003649/http://www.boston.com/ae/movies/oscars/2008/ |date=September 24, 2015 }} [[Boston.com]]
+* [http://www.cnn.com/SPECIALS/2008/academy.awards/ Academy Awards coverage] {{Webarchive|url=https://web.archive.org/web/20150924190434/http://www.cnn.com/SPECIALS/2008/academy.awards/ |date=September 24, 2015 }} [[CNN]]
+* [https://www.theguardian.com/film/oscars2008/0,,2229384,00.html Oscars 2008] [[The Guardian]]
+
+;Other resources
+* {{IMDb title|1103965|The 80th Annual Academy Awards}}
+
+{{Academy Awards}}
+
+{{featured list}}
+
+{{DEFAULTSORT:Academy Awards, 80}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2007 film awards]]
+[[Category:2008 awards in the United States]]
+[[Category:2008 in Los Angeles]]
+[[Category:2008 in American cinema]]
+[[Category:February 2008 in the United States]]
+[[Category:Television shows directed by Louis J. Horvitz]]

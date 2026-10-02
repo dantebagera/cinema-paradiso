@@ -212,6 +212,11 @@ class PlayerManager:
                 "last_event": dict(self._last_event),
             }
 
+    def active_media_path(self):
+        with self._lock:
+            session = self._active
+            return str(session.media.get('path') or '') if session and not session.closed.is_set() else ''
+
     def play(self, path_key, *, restart=False):
         media = self.media_resolver(path_key)
         mode = self.player_config.public_payload()["mode"]

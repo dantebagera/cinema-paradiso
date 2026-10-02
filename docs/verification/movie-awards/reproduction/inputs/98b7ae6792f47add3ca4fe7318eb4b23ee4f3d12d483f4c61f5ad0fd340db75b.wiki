@@ -1,0 +1,412 @@
+{{oscars short description|films-year=1975}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number           = 48
+| award            = Academy Awards
+| date             = March 29, 1976
+| image            = 48th Academy Awards.jpg
+| site             = [[Dorothy Chandler Pavilion]], [[Los Angeles]], California, U.S.
+| host             = [[Walter Matthau]], [[Robert Shaw (actor)|Robert Shaw]], [[George Segal]], [[Goldie Hawn]] and [[Gene Kelly]]
+| producer         = [[Howard W. Koch]]
+| director         = [[Marty Pasetta]]
+| best_picture     = ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]''
+| most_wins        = ''One Flew Over the Cuckoo's Nest'' (5)
+| most_nominations = ''One Flew Over the Cuckoo's Nest'' (9)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 12 minutes
+| last             = 47th
+| next             = 49th
+}}
+
+The '''48th Academy Awards''' were presented Monday, March 29, 1976, at the [[Dorothy Chandler Pavilion]] in [[Los Angeles]], California. The ceremonies were presided over by [[Walter Matthau]], [[Robert Shaw (actor)|Robert Shaw]], [[George Segal]], [[Goldie Hawn]], and [[Gene Kelly]].
+
+[[Miloš Forman]]'s ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' made a "[[List of Big Five Academy Award winners and nominees|clean sweep]]" of the five major categories: [[Academy Award for Best Picture|Best Picture]], [[Academy Award for Best Actor|Best Actor]], [[Academy Award for Best Actress|Best Actress]], [[Academy Award for Best Director|Best Director]] and [[Academy Award for Best Adapted Screenplay|Best Screenplay (Adapted)]]. It was the second of three films to date to do so, following ''[[It Happened One Night]]'' in [[7th Academy Awards|1934]] and preceding ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]'' in [[64th Academy Awards|1991]].
+
+20-year-old French actress [[Isabelle Adjani]] received her first nomination for Best Actress this year, becoming the youngest nominee that category, breaking the record set by 22-year-old [[Elizabeth Hartman]] in [[38th Academy Awards|1965]]. Her record would be surpassed by 13-year-old [[Keisha Castle-Hughes]] in 2004, and again in 2013 by nine-year old [[Quvenzhané Wallis]], the current record. Adjani also co-presented the award for [[Academy Award for Best Film Editing|Best Film Editing]].
+
+At 80, [[George Burns]] became the [[List of oldest and youngest Academy Award winners and nominees|oldest]] acting winner, as well as the last person born in the nineteenth century to receive an acting award. His record stood until [[Jessica Tandy]] won Best Actress in [[62nd Academy Awards|1989]]; Burns was later succeeded as the oldest [[Academy Award for Best Supporting Actor|Best Supporting Actor]] winner by [[Christopher Plummer]], who won in 2012 for ''[[Beginners]]'' at the age of 82.
+
+''[[Jaws (film)|Jaws]]'' won all its nominations except Best Picture, the last film to do so until ''[[Traffic (2000 film)|Traffic]]''. As of the [[94th Academy Awards]], ''[[Amarcord]]'', nominated for Best Director, is the last film to be nominated for Academy Awards in separate years (having won the award for [[Academy Award for Best Foreign Film|Best Foreign Language Film]] the [[47th Academy Awards|year before]]).
+
+This ceremony marked the return of Oscar telecasts to [[American Broadcasting Company|ABC]], which carried the event from [[33rd Academy Awards|1961]] until [[NBC]] held the rights for a 5-year period beginning in [[43rd Academy Awards|1971]]. (ABC has maintained Oscar TV rights to this day.) [[NBC Sports|NBC's]] coverage of the [[1976 NCAA Division I basketball championship game|NCAA Division I basketball championship]] aired the same night as the ceremony, and while Adjani unsealed the envelope for Best Film Editing, co-presenter [[Elliott Gould]] jokingly announced the winner as "[[1975–76 Indiana Hoosiers men's basketball team|Indiana]], 86-68" (the title game's outcome in [[Spectrum (arena)|Philadelphia]]).<ref>{{Cite web |last=Hughes |first=James |date=2013-11-19 |title=The Sporting Life of Elliott Gould |url=https://grantland.com/features/the-life-career-actor-elliott-gould/ |access-date=2023-10-11 |website=Grantland |language=en-US}}</ref>
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Michael Douglas - Streets.JPG
+| caption1          = [[Michael Douglas]], Best Picture co-winner
+| image2            = Miloš Forman (Reykjavik, 2009) (cropped).jpg
+| caption2          = [[Miloš Forman]], Best Director winner
+| image3            = Jack Nicholson - 1976 (cropped).jpg
+| caption3          = [[Jack Nicholson]], Best Actor winner
+| image4            = LouiseFletcherOscar (cropped).jpg
+| caption4          = [[Louise Fletcher]], Best Actress winner
+| image5            = George Burns Allan Warren.tif
+| caption5          = [[George Burns]], Best Supporting Actor winner
+| image6            = Lee Grant Fay 1975.jpg
+| caption6          = [[Lee Grant]], Best Supporting Actress winner
+| image7            = Bo Goldman (cropped).jpg
+| caption7          = [[Bo Goldman]], Best Adapted Screenplay co-winner
+| image8            = John Williams tux.jpg
+| caption8          = [[John Williams]], Best Original Score winner
+| image9            = Aspettando Clint Keith Carradine (fcm).jpg
+| caption9          = [[Keith Carradine]], Best Original Song winner
+| image10           = Milena Canonero Berlinale 2017.jpg
+| caption10         = [[Milena Canonero]], Best Costume Design co-winner
+}}
+
+Nominees were announced on February 17, 1976. Winners are listed first and highlighted in boldface.<ref name="Oscars1976">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1976 |title=The 48th Academy Awards (1976) Nominees and Winners |access-date=2011-10-02 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20141109220920/http://www.oscars.org/oscars/ceremonies/1976 |archive-date=2014-11-09 }}</ref>
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' – [[Michael Douglas]] and [[Saul Zaentz]], producers'''
+**''[[Barry Lyndon]]'' – [[Stanley Kubrick]], producer
+**''[[Dog Day Afternoon]]'' – [[Martin Bregman]] and [[Martin Elfand]], producers
+**''[[Jaws (film)|Jaws]]'' – [[Richard D. Zanuck]] and [[David Brown (producer)|David Brown]], producers
+**''[[Nashville (film)|Nashville]]'' – [[Robert Altman]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Miloš Forman]] – ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'''''
+**[[Federico Fellini]] – ''[[Amarcord]]''
+**[[Stanley Kubrick]] – ''[[Barry Lyndon]]''
+**[[Sidney Lumet]] – ''[[Dog Day Afternoon]]''
+**[[Robert Altman]] – ''[[Nashville (film)|Nashville]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Jack Nicholson]] – ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' as [[Randle Patrick McMurphy]]'''
+**[[Walter Matthau]] – ''[[The Sunshine Boys (1975 film)|The Sunshine Boys]]'' as Willy Clark
+**[[Al Pacino]] – ''[[Dog Day Afternoon]]'' as [[John Wojtowicz|Sonny Wortzik]]
+**[[Maximilian Schell]] – ''[[The Man in the Glass Booth]]'' as Arthur Goldman
+**[[James Whitmore]] – ''[[Give 'em Hell, Harry!]]'' as [[Harry S. Truman]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Louise Fletcher]] – ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' as [[Nurse Ratched|Nurse Mildred Ratched]]'''
+**[[Isabelle Adjani]] – ''[[The Story of Adele H.]]'' as [[Adèle Hugo]] / Adèle Lewry
+**[[Ann-Margret]] – ''[[Tommy (1975 film)|Tommy]]'' as Nora Walker
+**[[Glenda Jackson]] – ''[[Hedda (1975 film)|Hedda]]'' as Hedda Gabler
+**[[Carol Kane]] – ''[[Hester Street (film)|Hester Street]]'' as Gitl
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[George Burns]] – ''[[The Sunshine Boys (1975 film)|The Sunshine Boys]]'' as Al Lewis'''
+**[[Brad Dourif]] – ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' as Billy Bibbit
+**[[Burgess Meredith]] – ''[[The Day of the Locust (film)|The Day of the Locust]]'' as Harry Greener
+**[[Chris Sarandon]] – ''[[Dog Day Afternoon]]'' as Leon
+**[[Jack Warden]] – ''[[Shampoo (film)|Shampoo]]'' as Lester Karpf
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Lee Grant]] – ''[[Shampoo (film)|Shampoo]]'' as Felicia Karpf'''
+**[[Ronee Blakley]] – ''[[Nashville (film)|Nashville]]'' as Barbara Jean
+**[[Sylvia Miles]] – ''[[Farewell, My Lovely (1975 film)|Farewell, My Lovely]]'' as Jessie Halstead Florian
+**[[Lily Tomlin]] – ''[[Nashville (film)|Nashville]]'' as Linnea Reese
+**[[Brenda Vaccaro]] – ''[[Once Is Not Enough (film)|Jacqueline Susann's Once Is Not Enough]]'' as Linda Riggs
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[Dog Day Afternoon]]'' – [[Frank Pierson]]'''
+**''[[Amarcord]]'' – [[Federico Fellini]] and [[Tonino Guerra]]
+**''[[And Now My Love]]'' – [[Claude Lelouch]] and [[Pierre Uytterhoeven]]
+**''[[Lies My Father Told Me (1975 film)|Lies My Father Told Me]]'' – [[Ted Allan]]
+**''[[Shampoo (film)|Shampoo]]'' – [[Warren Beatty]] and [[Robert Towne]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Adapted from Other Material)]]}}
+*'''''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' – [[Bo Goldman]] and [[Lawrence Hauben]] based on [[One Flew Over the Cuckoo's Nest (novel)|the novel]] by [[Ken Kesey]]'''
+**''[[Barry Lyndon]]'' – [[Stanley Kubrick]] based on ''[[The Memoirs of Barry Lyndon, Esq.]]'' by [[William Makepeace Thackeray]]
+**''[[The Man Who Would Be King (film)|The Man Who Would Be King]]'' – [[John Huston]] and [[Gladys Hill]] based on [[The Man Who Would Be King|the story]] by [[Rudyard Kipling]]
+**''[[Scent of a Woman (1974 film)|Profumo di donna]]'' – [[Ruggero Maccari]] and [[Dino Risi]] based on the novel ''Il buio e il miele'' by [[Giovanni Arpino]]
+**''[[The Sunshine Boys (1975 film)|The Sunshine Boys]]'' – [[Neil Simon]] based on [[The Sunshine Boys|his play]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 48th Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[Dersu Uzala (1975 film)|Dersu Uzala]]'' ([[Soviet Union]])'''
+**''[[Letters from Marusia]]'' ([[Mexico]])
+**''[[Scent of a Woman (1974 film)|Profumo di donna]]'' ([[Italy]])
+**''[[The Promised Land (1975 film)|The Promised Land]]'' ([[Poland]])
+**''[[Sandakan No. 8]]'' ([[Japan]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[The Man Who Skied Down Everest]]'' – [[F. R. Crawley]], James Hager and Dale Hartleben'''
+**''[[The California Reich]]'' – Keith Critchlow and [[Walter F. Parkes]]
+**''[[Fighting for Our Lives]]'' – Glen Pearcy
+**''[[The Incredible Machine (film)|The Incredible Machine]]'' – [[Irwin Rosten]]
+**''[[The Other Half of the Sky: A China Memoir]]'' – [[Shirley MacLaine]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[The End of the Game (1975 film)|The End of the Game]]'' – [[Claire Wilbur]] and [[Robin Lehman]]'''
+**''[[Arthur and Lillie]]'' – [[Jon H. Else|Jon Else]], Steven Kovacs and [[Kristine Samuelson]]
+**''[[Millions of Years Ahead of Man]]'' – Manfred Baier
+**''[[Probes in Space]]'' – George V. Casey
+**''[[Whistling Smith]]'' – Barrie Howells and [[Michael J. F. Scott|Michael Scott]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+*'''''[[Angel and Big Joe]]'' – [[Bert Salzman]]'''
+**''[[Conquest of Light]]'' – [[Louis Marcus (filmmaker)|Louis Marcus]]
+**''Dawn Flight'' – [[Lawrence M. Lansburgh]] and Brian Lansburgh
+**''A Day in the Life of Bonnie Consolo'' – [[Barry J. Spinello|Barry Spinello]]
+**''Doubletalk'' – Alan Beattie
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[Great (1975 film)|Great]]'' – [[Bob Godfrey]]'''
+**''[[Kick Me (film)|Kick Me]]'' – [[Robert Swarthe]]
+**''[[Monsieur Pointu (film)|Monsieur Pointu]]'' – [[René Jodoin]], [[Bernard Longpré]] and André Leduc
+**''[[Sisyphus (film)|Sisyphus]]'' – [[Marcell Jankovics]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[Jaws (film)|Jaws]]'' – [[John Williams]]'''
+**''[[Birds Do It, Bees Do It]]'' – [[Gerald Fried]]
+**''[[Bite the Bullet (film)|Bite the Bullet]]'' – [[Alex North]]
+**''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' – [[Jack Nitzsche]]
+**''[[The Wind and the Lion]]'' – [[Jerry Goldsmith]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring: Original Song Score and Adaptation -or- Scoring: Adaptation)]]}}
+*'''''[[Barry Lyndon]]'' – [[Leonard Rosenman]]'''
+**''[[Funny Lady]]'' – [[Peter Matz]]
+**''[[Tommy (1975 film)|Tommy]]'' – [[Pete Townshend]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+*'''"[[I'm Easy (Keith Carradine song)|I'm Easy]]" from ''[[Nashville (film)|Nashville]]'' – Music and Lyrics by [[Keith Carradine]]'''
+**"[[How Lucky Can You Get]]" from ''[[Funny Lady]]'' – Music and Lyrics by [[Kander and Ebb]]
+**"Now That We’re In Love" from ''[[Whiffs]]'' – Music by [[George Barrie]]; Lyrics by [[Sammy Cahn]]
+**"Richard’s Window" from ''[[The Other Side of the Mountain]]'' – Music by [[Charles Fox (composer)|Charles Fox]]; Lyrics by [[Norman Gimbel]]
+**"[[Theme from Mahogany (Do You Know Where You're Going To)]]" from ''[[Mahogany (film)|Mahogany]]'' – Music by [[Michael Masser]]; Lyrics by [[Gerry Goffin]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[Jaws (film)|Jaws]]'' – [[Robert Hoyt (sound engineer)|Robert L. Hoyt]], [[Roger Heman Jr|Roger Heman]], [[Earl Madery]] and [[John Carter (sound engineer)|John Carter]]'''
+**''[[Bite the Bullet (film)|Bite the Bullet]]'' – [[Arthur Piantadosi]], [[Les Fresholtz]], [[Richard Tyler (sound engineer)|Richard Tyler]] and [[Al Overton Jr.]]
+**''[[Funny Lady]]'' – [[Richard Portman]], [[Don MacDougall]], [[Curly Thirlwell]] and [[Jack Solomon (sound engineer)|Jack Solomon]]
+**''[[The Hindenburg (film)|The Hindenburg]]'' – [[Leonard Peterson (sound engineer)|Leonard Peterson]], [[John A. Bolger Jr.]], [[John L. Mack|John Mack]] and [[Don Sharpless|Don K. Sharpless]]
+**''[[The Wind and the Lion]]'' – [[Harry W. Tetrick]], [[Aaron Rochin]], [[William McCaughey]] and [[Roy Charman]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Barry Lyndon]]'' – Art Direction: [[Ken Adam]] and [[Roy Walker (production designer)|Roy Walker]]; Set Decoration: [[Vernon Dixon]]'''
+**''[[The Hindenburg (film)|The Hindenburg]]'' – Art Direction: [[Edward Carfagno]]; Set Decoration: [[Frank R. McKelvy]]
+**''[[The Man Who Would Be King (film)|The Man Who Would Be King]]'' – Art Direction: [[Alexandre Trauner]] and [[Tony Inglis]]; Set Decoration: [[Peter James (set decorator)|Peter James]]
+**''[[Shampoo (film)|Shampoo]]'' – Art Direction: [[Richard Sylbert]] and [[W. Stewart Campbell]]; Set Decoration: [[George Gaines (set decorator)|George Gaines]]
+**''[[The Sunshine Boys (1975 film)|The Sunshine Boys]]'' – Art Direction: [[Albert Brenner]]; Set Decoration: [[Marvin March]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Barry Lyndon]]'' – [[John Alcott]]'''
+**''[[The Day of the Locust (film)|The Day of the Locust]]'' – [[Conrad Hall]]
+**''[[Funny Lady]]'' – [[James Wong Howe]]
+**''[[The Hindenburg (film)|The Hindenburg]]'' – [[Robert Surtees (cinematographer)|Robert Surtees]]
+**''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' – [[Bill Butler (cinematographer)|Bill Butler]] and [[Haskell Wexler]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Barry Lyndon]]'' – [[Milena Canonero]] and [[Ulla-Britt Söderlund]]'''
+**''[[The Four Musketeers (1974 film)|The Four Musketeers]]'' – [[Yvonne Blake]] and [[Ron Talsky]]
+**''[[Funny Lady]]'' – [[Ray Aghayan]] and [[Bob Mackie]]
+**''[[The Magic Flute (1975 film)|The Magic Flute]]'' – [[Karin Erskine]] and [[Henny Noremark]]
+**''[[The Man Who Would Be King (film)|The Man Who Would Be King]]'' – [[Edith Head]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Jaws (film)|Jaws]]'' – [[Verna Fields]]'''
+**''[[Dog Day Afternoon]]'' – [[Dede Allen]]
+**''[[The Man Who Would Be King (film)|The Man Who Would Be King]]'' – [[Russell Lloyd (film editor)|Russell Lloyd]]
+**''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]'' – [[Richard Chew]], [[Sheldon Kahn]] and [[Lynzee Klingman]]
+**''[[Three Days of the Condor]]'' – [[Don Guidice]] and [[Fredric Steinkamp]]
+|}
+
+===Special Achievement Award (Sound Effects)===
+*''[[The Hindenburg (film)|The Hindenburg]]'' – [[Peter Berkos]].
+
+===Special Achievement Award (Visual Effects)===
+*''[[The Hindenburg (film)|The Hindenburg]]'' – [[Albert Whitlock]] and [[Glen Robinson (visual effects)|Glen Robinson]].
+
+===Honorary Award===
+* To [[Mary Pickford]] in recognition of her unique contributions to the film industry and the development of film as an artistic medium.
+
+===Jean Hersholt Humanitarian Award===
+* Dr. [[Jules C. Stein]]
+
+===Irving G. Thalberg Memorial Award===
+* [[Mervyn LeRoy]]
+
+===Multiple nominations and awards===
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" |9
+| ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]''
+|-
+| rowspan="1" style="text-align:center" |7 
+| ''[[Barry Lyndon]]''
+|-
+| rowspan="1" style="text-align:center" |6
+| ''[[Dog Day Afternoon]]''
+|-
+| rowspan="2" style="text-align:center" |5
+| ''[[Funny Lady]]''
+|-
+| ''[[Nashville (film)|Nashville]]''
+|-
+| rowspan="4" style="text-align:center" |4
+| ''[[Jaws (film)|Jaws]]''
+|-
+| ''[[The Man Who Would Be King (film)|The Man Who Would Be King]]''
+|-
+| ''[[Shampoo (film)|Shampoo]]''
+|-
+| ''[[The Sunshine Boys (1975 film)|The Sunshine Boys]]''
+|-
+|style="text-align:center" |3
+| ''[[The Hindenburg (film)|The Hindenburg]]''{{efn|name=Hindenburg|Not counting the two non-competitive Special Achievement Awards for ''The Hindenburg''.}}
+|-
+| rowspan="6" style="text-align:center" |2
+| ''[[Amarcord]]''
+|-
+| ''[[Bite the Bullet (film)|Bite the Bullet]]''
+|-
+| ''[[The Day of the Locust (film)|The Day of the Locust]]''
+|-
+| ''[[Scent of a Woman (1974 film)|Profumo di donna]]''
+|-
+| ''[[Tommy (1975 film)|Tommy]]''
+|-
+| ''[[The Wind and the Lion]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards{{efn|name=Hindenburg}}
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 5
+| ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]''
+|-
+| rowspan=1, style="text-align:center" | 4
+| ''[[Barry Lyndon]]''
+|-
+| rowspan=1, style="text-align:center" | 3
+| ''[[Jaws (film)|Jaws]]''
+|-
+|}
+
+{{col-float-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers:
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name !! Role
+|-
+| {{sortname|Hank|Simms|nolink=0}} || Announcer for the 48th Academy Awards
+|-
+| {{sortname|Ray|Bolger}} || Introducer of the President of the Academy of Motion Picture Arts & Sciences Walter Mirisch
+|-
+| {{sortname|Walter|Mirisch}} (AMPAS President) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Joel|Grey}}<br />[[Madeline Kahn]] || Presenters of the award for Best Supporting Actress
+|-
+| {{sortname|Robert|Blake|Robert Blake (actor)}} || Presenter of the Special Achievement Award
+|-
+| {{sortname|Marisa|Berenson}}<br />[[O. J. Simpson]] || Presenters of the Short Subjects Awards
+|-
+| {{sortname|Margaux|Hemingway}}<br />[[Roy Scheider]] || Presenters of the award for Best Sound
+|-
+| {{sortname|Beau|Bridges}}<br />[[Marilyn Hassett]] || Presenters of the Documentary Awards
+|-
+| {{sortname|Charlton|Heston}} || Presenter of the [[Jean Hersholt Humanitarian Award]] to Dr. Jules C. Stein
+|-
+| {{sortname|Anthony|Hopkins}}<br />[[Charlotte Rampling]] || Presenters of the award for Best Art Direction
+|-
+| {{sortname|Jennifer|O'Neill}}<br />[[Telly Savalas]] || Presenters of the award for Best Costume Design
+|-
+| {{sortname|Linda|Blair}}<br />[[Ben Johnson (actor)|Ben Johnson]] || Presenters of the award for Best Supporting Actor
+|-
+| {{sortname|Rod|McKuen}}<br />[[Marlo Thomas]] || Presenters of the Music Awards
+|-
+| {{sortname|Stockard|Channing}}<br />[[Billy Dee Williams]] || Presenters of the award for Best Cinematography
+|-
+| {{sortname|Isabelle|Adjani}}<br />[[Elliott Gould]] || Presenters of the award for Best Film Editing
+|-
+| {{sortname|Jacqueline|Bisset}}<br />[[Jack Valenti]] || Presenters of the award for Best Foreign Language Film
+|-
+| {{sortname|Burt|Bacharach}}<br />[[Angie Dickinson]] || Presenters of the award for Best Original Song
+|-
+| {{sortname|William|Friedkin}} || Presenter of the Irving G. Thalberg Memorial Award to Mervyn LeRoy
+|-
+| {{sortname|Diane|Keaton}}<br />[[William Wyler]] || Presenters of the award for Best Director
+|-
+| {{sortname|Gore|Vidal}} || Presenter of the Writing Awards
+|-
+| {{sortname|Walter|Mirisch}} || Presenter of the Honorary Award to [[Mary Pickford]]
+|-
+| {{sortname|Charles|Bronson}}<br />[[Jill Ireland]] || Presenters of the award for Best Actress
+|-
+| {{sortname|Art|Carney}} || Presenter of the award for Best Actor
+|-
+| {{sortname|Audrey|Hepburn}} || Presenter of the award for Best Picture
+|-
+| {{sortname|Elizabeth|Taylor}} || Introducer of the performance of "America the Beautiful" by the [[Spirit of Troy]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name !! Role !! Performed
+|-
+| {{sortname|John|Williams}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Ray|Bolger}} || Performer || "Hollywood Honors Its Own"
+|-
+| {{sortname|Keith|Carradine}} || Performer || "[[I'm Easy (Keith Carradine song)|I'm Easy]]" from ''[[Nashville (film)|Nashville]]''
+|-
+| {{sortname|Bernadette|Peters}} || Performer || "[[How Lucky Can You Get]]" from ''[[Funny Lady]]''
+|-
+| {{sortname|Steve|Lawrence}} || Performer || "Now That We're in Love" from ''[[Whiffs]]''
+|-
+| {{sortname|Kelly|Garrett|Kelly Garrett (actress)}} || Performer || "Richard's Window" from ''[[The Other Side of the Mountain]]''
+|-
+| {{sortname|Diana|Ross}} || Performer || "[[Theme from Mahogany (Do You Know Where You're Going To)]]" from ''[[Mahogany (film)|Mahogany]]''
+|-
+| {{sortname||Spirit of Troy}} || Performers || "[[America the Beautiful]]/[[That's Entertainment! (song)|That’s Entertainment!]]" (instrumental)
+|}
+
+==See also==
+* [[1975 in film]]
+* [[33rd Golden Globe Awards]]
+* [[29th British Academy Film Awards]]
+* [[18th Grammy Awards]]
+* [[27th Primetime Emmy Awards]]
+* [[28th Primetime Emmy Awards]]
+* [[30th Tony Awards]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+==External links==
+* [https://www.imdb.com/title/tt0331408/ 48th Academy Awards] at IMDb
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 48}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1975 film awards]]
+[[Category:1976 in Los Angeles]]
+[[Category:1976 in American cinema]]
+[[Category:March 1976 in the United States]]
+[[Category:1975 awards in the United States]]
+[[Category:Television shows directed by Marty Pasetta]]

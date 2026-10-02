@@ -1,0 +1,305 @@
+{{oscars short description|films-year=1936}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 9
+| award            = Academy Awards
+| date             = March 4, 1937
+| site             = [[Millennium Biltmore Hotel|Biltmore Hotel]]
+| host             = [[George Jessel (actor)|George Jessel]]
+| best_picture     = ''[[The Great Ziegfeld]]''
+| most_wins        = ''Anthony Adverse'' (4)
+| most_nominations = ''[[Anthony Adverse]]'', ''[[Dodsworth (film)|Dodsworth]]'' and ''The Great Ziegfeld'' (7)
+| last             = 8th
+| next             = 10th
+}}
+
+The '''9th Academy Awards''' were held on March 4, 1937, at the [[Millennium Biltmore Hotel|Biltmore Hotel]] in [[Los Angeles, California]]<ref name="Oscars1937">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1937 |title=The 9th Academy Awards (1937) Nominees and Winners |access-date=2011-08-07 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093710/http://www.oscars.org/awards/academyawards/legacy/ceremony/9th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref> to honor films released in 1936. They were hosted by [[George Jessel (actor)|George Jessel]], with music by the [[Victor Young]] Orchestra, with [[Spike Jones]] on drums. This year marked the introduction of the [[Academy Award for Best Supporting Actor|Best Supporting Actor]] and [[Academy Award for Best Supporting Actress|Best Supporting Actress]] categories, and was the first year that the awards for directing and acting were fixed at five nominees per category.
+
+Jessel assigned the wrong awards to the right winners of the newly-introduced supporting categories. ''The Great Ziegfeld'' was not a popular choice for Best Picture among members of the press, who felt that voters had been brainwashed by its lush gaudiness; they also felt that [[Luise Rainer]]'s win of Best Actress for her performance was unjustified due to the short length of her role in the film.<ref name="Oscars '36 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/834/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=834 |isbn=0-385-04060-1}}</ref> 
+
+''[[My Man Godfrey]]'' became the first [[List of films with all four Academy Award acting nominations|film to receive nominations in all four acting categories]], but did not win in any category. It is the only such film to not receive a nomination for Best Picture, and was the only one to lose all of its acting nominations until ''[[Sunset Boulevard (film)|Sunset Boulevard]]'' at the [[23rd Academy Awards]] and the only one to not win any of its Oscar nominations at all until ''[[American Hustle]]'' at the [[86th Academy Awards|86th]]. It was also the first of four films to receive four acting nominations without one for Best Picture, followed by ''[[I Remember Mama (film)|I Remember Mama]]'' ([[21st Academy Awards|1948]]), ''[[Othello (1965 British film)|Othello]]'' ([[38th Academy Awards|1965]]), and ''[[Doubt (2008 film)|Doubt]]'' ([[81st Academy Awards|2008]]).
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Frank Capra.jpg
+| caption1          = [[Frank Capra]]; Best Director winner
+| image2            = Paul Muni - Zola - 1936.jpg
+| caption2          = [[Paul Muni]]; Best Actor winner
+| image3            = Luise Rainer - 1941.jpg
+| caption3          = [[Luise Rainer]]; Best Actress winner
+| image4            = Walter brennan real mccoys 1958.JPG
+| caption4          = [[Walter Brennan]]; Best Supporting Actor winner
+| image5            = Studio publicity Gale Sondergaard.jpg
+| caption5          = [[Gale Sondergaard]]; Best Supporting Actress winner
+| image6            = Pierre Collings 1926.jpg
+| caption6          = [[Pierre Collings]]; Best Original Story and Best Screenplay co-winner
+| image7            = WP Hal Roach 1920 (cropped).jpg
+| caption7          = [[Hal Roach]]; Best Live Action Short Subject, One-Reel co-winner
+| image8            = Jerome-Kern-1934.jpg
+| caption8          = [[Jerome Kern]]; Best Song co-winner
+
+}}
+
+=== Awards ===
+Nominees were announced on February 7, 1937. Winners are listed first and highlighted in boldface.<ref name="Oscars1937" />
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+* '''''[[The Great Ziegfeld]]''''' '''– [[Hunt Stromberg]] for [[Metro-Goldwyn-Mayer]]'''
+** ''[[Anthony Adverse]]'' – [[Henry Blanke]] for [[Warner Bros.]] 
+** ''[[Dodsworth (film)|Dodsworth]]'' – [[Samuel Goldwyn]] and Merritt Hulburd for [[Samuel Goldwyn Productions|Samuel Goldwyn Prod.]] and [[United Artists]]
+** ''[[Libeled Lady]]'' – [[Lawrence Weingarten]] for Metro-Goldwyn-Mayer 
+** ''[[Mr. Deeds Goes to Town]]'' – [[Frank Capra]] for [[Columbia Pictures|Columbia]] 
+** ''[[Romeo and Juliet (1936 film)|Romeo and Juliet]]'' – [[Irving Thalberg]] for Metro-Goldwyn-Mayer 
+** ''[[San Francisco (1936 film)|San Francisco]]'' – [[John Emerson (filmmaker)|John Emerson]] and [[Bernard H. Hyman]] for Metro-Goldwyn-Mayer 
+** ''[[The Story of Louis Pasteur]]'' – Henry Blanke for Warner Bros. 
+** ''[[A Tale of Two Cities (1935 film)|A Tale of Two Cities]]'' – [[David O. Selznick]] for Metro-Goldwyn-Mayer 
+** ''[[Three Smart Girls]]'' – [[Joe Pasternak]] and [[Charles R. Rogers]] for [[Universal Pictures|Universal]] 
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Frank Capra]]&nbsp;– ''[[Mr. Deeds Goes to Town]]'''''
+** [[William Wyler]]&nbsp;– ''[[Dodsworth (film)|Dodsworth]]''
+** [[Robert Z. Leonard]]&nbsp;– ''[[The Great Ziegfeld]]''
+** [[Gregory La Cava]]&nbsp;– ''[[My Man Godfrey]]''
+** [[W. S. Van Dyke]]&nbsp;– ''[[San Francisco (1936 film)|San Francisco]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Paul Muni]]&nbsp;– ''[[The Story of Louis Pasteur]]'' as [[Louis Pasteur]]'''
+** [[Gary Cooper]]&nbsp;– ''[[Mr. Deeds Goes to Town]]'' as Longfellow Deeds
+** [[Walter Huston]]&nbsp;– ''[[Dodsworth (film)|Dodsworth]]'' as Sam Dodsworth
+** [[William Powell]]&nbsp;– ''[[My Man Godfrey]]'' as Godfrey
+** [[Spencer Tracy]]&nbsp;– ''[[San Francisco (1936 film)|San Francisco]]'' as Father Tim Mullin
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Luise Rainer]]&nbsp;– ''[[The Great Ziegfeld]]'' as [[Anna Held]]'''
+** [[Irene Dunne]]&nbsp;– ''[[Theodora Goes Wild]]'' as Theodora Lynn/"Caroline Adams"
+** [[Gladys George]]&nbsp;– ''[[Valiant Is the Word for Carrie]]'' as Carrie Snyder
+** [[Carole Lombard]]&nbsp;– ''[[My Man Godfrey]]'' as Irene Bullock
+** [[Norma Shearer]]&nbsp;– ''[[Romeo and Juliet (1936 film)|Romeo and Juliet]]'' as [[Juliet]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Walter Brennan]]&nbsp;– ''[[Come and Get It (1936 film)|Come and Get It]]'' as Swan Bostrom'''
+** [[Mischa Auer]]&nbsp;– ''[[My Man Godfrey]]'' as Carlo
+** [[Stuart Erwin]]&nbsp;– ''[[Pigskin Parade]]'' as Amos
+** [[Basil Rathbone]]&nbsp;– ''[[Romeo and Juliet (1936 film)|Romeo and Juliet]]'' as [[Tybalt]]
+** [[Akim Tamiroff]]&nbsp;– ''[[The General Died at Dawn]]'' as General Yang
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Gale Sondergaard]]&nbsp;– ''[[Anthony Adverse]]'' as Faith Paleologus'''
+** [[Beulah Bondi]]&nbsp;– ''[[The Gorgeous Hussy]]'' as [[Rachel Jackson]]
+** [[Alice Brady]]&nbsp;– ''[[My Man Godfrey]]'' as Angelica Bullock
+** [[Bonita Granville]]&nbsp;– ''[[These Three]]'' as Mary Tilford
+** [[Maria Ouspenskaya]]&nbsp;– ''[[Dodsworth (film)|Dodsworth]]'' as Baroness Von Obersdorf
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+* '''''[[The Story of Louis Pasteur]]''&nbsp;– [[Pierre Collings]] and [[Sheridan Gibney]]'''
+** ''[[Fury (1936 film)|Fury]]''&nbsp;– [[Norman Krasna]]
+** ''[[The Great Ziegfeld]]''&nbsp;– [[William Anthony McGuire]]
+** ''[[San Francisco (1936 film)|San Francisco]]''&nbsp;– [[Robert Hopkins (screenwriter)|Robert Hopkins]]
+** ''[[Three Smart Girls]]''&nbsp;– [[Adele Comandini]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* '''''[[The Story of Louis Pasteur]]''&nbsp;– [[Pierre Collings]] and [[Sheridan Gibney]]'''
+** ''[[After the Thin Man]]''&nbsp;– [[Frances Goodrich]] and [[Albert Hackett]], based on a story by [[Dashiell Hammett]]
+** ''[[Dodsworth (film)|Dodsworth]]''&nbsp;– [[Sidney Howard]], based on [[Dodsworth (play)|the play]] by Howard and [[Dodsworth (novel)|the novel]] by [[Sinclair Lewis]]
+** ''[[Mr. Deeds Goes to Town]]''&nbsp;– [[Robert Riskin]], based on the story "Opera Hat" by [[Clarence Budington Kelland]]
+** ''[[My Man Godfrey]]''&nbsp;– [[Eric S. Hatch|Eric Hatch]] and [[Morrie Ryskind|Morris Ryskind]], based on the story "1101 Park Avenue" by Hatch
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[Bored of Education]]''&nbsp;– [[Hal Roach]] and [[MGM]]'''
+** ''[[Moscow Moods]]''&nbsp;– [[Paramount Pictures|Paramount]]
+** ''[[Wanted – A Master]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]] and MGM
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[The Public Pays]]''&nbsp;– [[MGM]]'''
+** ''[[Double or Nothing (1936 film)|Double or Nothing]]''&nbsp;– [[Warner Bros.]]
+** ''[[Dummy Ache]]''&nbsp;– [[RKO Radio]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Color)]]}}
+* '''''[[Give Me Liberty (1936 film)|Give Me Liberty]]''&nbsp;– [[Warner Bros.]]'''
+** ''[[La Fiesta de Santa Barbara]]''&nbsp;– Louis Lewyn and [[MGM]]
+** ''[[Popular Science (film series)|Popular Science J-6-2]]''&nbsp;– [[Paramount Pictures|Paramount]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[The Country Cousin]]''&nbsp;– [[Walt Disney Productions]] and [[United Artists]]'''
+** ''[[The Old Mill Pond]]''&nbsp;– [[Harman-Ising]] and [[MGM]]
+** ''[[Popeye the Sailor Meets Sindbad the Sailor]]''&nbsp;– [[Fleischer Studios]] and [[Paramount Pictures|Paramount]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring)]]}}
+* '''''[[Anthony Adverse]]''&nbsp;– [[Warner Bros.|Warner Bros. Studio Music Department]]'''
+** ''[[The Charge of the Light Brigade (1936 film)|The Charge of the Light Brigade]]''&nbsp;– Warner Bros. Studio Music Department
+** ''[[The Garden of Allah (1936 film)|The Garden of Allah]]''&nbsp;– [[Selznick International Pictures|Selznick International Pictures Music Department]] 
+** ''[[The General Died at Dawn]]''&nbsp;– [[Paramount Studio|Paramount Studio Music Department]]
+** ''[[Winterset (film)|Winterset]]''&nbsp;– [[RKO Pictures|RKO Radio Studio Music Department]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[The Way You Look Tonight]]" from ''[[Swing Time (film)|Swing Time]]''&nbsp;– Music by [[Jerome Kern]]; Lyrics by [[Dorothy Fields]]'''
+** "Did I Remember" from ''[[Suzy (film)|Suzy]]''&nbsp;– Music by [[Walter Donaldson (songwriter)|Walter Donaldson]]; Lyrics by [[Harold Adamson]]
+** "[[I've Got You Under My Skin (song)|I've Got You Under My Skin]]" from ''[[Born to Dance]]''&nbsp;– Music and Lyrics by [[Cole Porter]]
+** "A Melody From the Sky" from ''[[The Trail of the Lonesome Pine (1936 film)|Trail of the Lonesome Pine]]''&nbsp;– Music by [[Louis Alter]]; Lyrics by [[Sidney D. Mitchell|Sidney Mitchell]]
+** "[[Pennies from Heaven (song)|Pennies from Heaven]]" from ''[[Pennies from Heaven (1936 film)|Pennies from Heaven]]''&nbsp;– Music by [[Arthur Johnston (composer)|Arthur Johnston]]; Lyrics by [[Johnny Burke (lyricist)|Johnny Burke]]
+** "When Did You Leave Heaven" from ''[[Sing, Baby, Sing]]''&nbsp;– Music by [[Richard A. Whiting]]; Lyrics by [[Walter Bullock]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+* '''''[[San Francisco (1936 film)|San Francisco]]''&nbsp;– [[Douglas Shearer]]'''
+** ''[[Banjo on My Knee (film)|Banjo on My Knee]]''&nbsp;– [[Edmund H. Hansen]]
+** ''[[The Charge of the Light Brigade (1936 film)|The Charge of the Light Brigade]]''&nbsp;– [[Nathan Levinson]]
+** ''[[Dodsworth (film)|Dodsworth]]''&nbsp;– [[Thomas T. Moulton]]
+** ''[[General Spanky]]''&nbsp;– [[Elmer Raguse|Elmer A. Raguse]]
+** ''[[Mr. Deeds Goes to Town]]''&nbsp;– [[John P. Livadary]] 
+** ''[[The Texas Rangers (1936 film)|The Texas Rangers]]''&nbsp;– [[Franklin Hansen]]
+** ''[[That Girl from Paris]]''&nbsp;– [[John O. Aalberg|John Aalberg]]
+** ''[[Three Smart Girls]]''&nbsp;– [[Homer G. Tasker]] 
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Dance Direction|Best Dance Direction]]}}
+* '''''[[The Great Ziegfeld]]''&nbsp;– [[Seymour Felix]]'''
+** ''[[Born to Dance]]''&nbsp;– [[Dave Gould]]
+** ''[[Cain and Mabel]]''&nbsp;– [[Bobby Connolly]]
+** ''[[Dancing Pirate]]''&nbsp;– [[Russell Lewis (choreographer)|Russell Lewis]]
+** ''[[Gold Diggers of 1937]]''&nbsp;– [[Busby Berkeley]]
+** ''[[One in a Million (1936 film)|One in a Million]]''&nbsp;– Jack Haskell
+** ''[[Swing Time (film)|Swing Time]]''&nbsp;– [[Hermes Pan (choreographer)|Hermes Pan]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Assistant Director|Best Assistant Director]]}}
+* '''''[[The Charge of the Light Brigade (1936 film)|The Charge of the Light Brigade]]''&nbsp;– [[Jack Sullivan (film director)|Jack Sullivan]]'''
+** ''[[Anthony Adverse]]''&nbsp;– [[William Cannon (director)|William Cannon]]
+** ''[[The Garden of Allah (1936 film)|The Garden of Allah]]''&nbsp;– [[Eric G. Stacey]]
+** ''[[The Last of the Mohicans (1936 film)|The Last of the Mohicans]]''&nbsp;– [[Clem Beauchamp]]
+** ''[[San Francisco (1936 film)|San Francisco]]''&nbsp;– [[Joseph M. Newman]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Dodsworth (film)|Dodsworth]]''&nbsp;– [[Richard Day (art director)|Richard Day]]'''
+** ''[[Anthony Adverse]]''&nbsp;– [[Anton Grot]]
+** ''[[The Great Ziegfeld]]''&nbsp;– [[Cedric Gibbons]], [[Eddie Imazu]], and [[Edwin B. Willis]]
+** ''[[Lloyd's of London (film)|Lloyd's of London]]''&nbsp;– [[William S. Darling]]
+** ''[[The Magnificent Brute (1936 film)|The Magnificent Brute]]''&nbsp;– [[Albert S. D'Agostino]] and [[Jack Otterson]]
+** ''[[Romeo and Juliet (1936 film)|Romeo and Juliet]]''&nbsp;– Cedric Gibbons, [[Fredric Hope]], and Edwin B. Willis
+** ''[[Winterset (film)|Winterset]]''&nbsp;– [[Perry Ferguson]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Anthony Adverse]]''&nbsp;– [[Tony Gaudio]]'''
+** ''[[The General Died at Dawn]]''&nbsp;– [[Victor Milner]]
+** ''[[The Gorgeous Hussy]]''&nbsp;– [[George Folsey (cinematographer)|George J. Folsey]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Anthony Adverse]]''&nbsp;– [[Ralph Dawson]]'''
+** ''[[Come and Get It (1936 film)|Come and Get It]]''&nbsp;– [[Edward Curtiss]]
+** ''[[The Great Ziegfeld]]''&nbsp;– [[William S. Gray (film editor)|William S. Gray]]
+** ''[[Lloyd's of London (film)|Lloyd's of London]]''&nbsp;– [[Barbara McLean]]
+** ''[[A Tale of Two Cities (1935 film)|A Tale of Two Cities]]''&nbsp;– [[Conrad A. Nervig]]
+** ''[[Theodora Goes Wild]]''&nbsp;– [[Otto Meyer (film editor)|Otto Meyer]]
+|}
+
+=== Special awards ===
+
+* To ''[[The March of Time]]'' for its significance to motion pictures and for having revolutionized one of the most important branches of the industry - the newsreel.
+* To [[W. Howard Greene]] and [[Harold Rosson]] for the color cinematography of the [[David O. Selznick#Selznick International Pictures|Selznick International Production]], ''[[The Garden of Allah (1936 film)|The Garden of Allah]]''.
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="3" style="text-align:center" | 7
+| ''[[Anthony Adverse]]''
+|-
+| ''[[Dodsworth (film)|Dodsworth]]''
+|-
+| ''[[The Great Ziegfeld]]''
+|-
+| rowspan="2" style="text-align:center" | 6
+| ''[[My Man Godfrey]]''
+|-
+| ''[[San Francisco (1936 film)|San Francisco]]'' 
+|-
+| rowspan="1" style="text-align:center" | 5
+| ''[[Mr. Deeds Goes to Town]]''
+|-
+| rowspan="2" style="text-align:center" | 4
+| ''[[Romeo and Juliet (1936 film)|Romeo and Juliet]]''
+|-
+| ''[[The Story of Louis Pasteur]]''
+|-
+| rowspan="3" style="text-align:center" | 3
+| ''[[The Charge of the Light Brigade (1936 film)|The Charge of the Light Brigade]]''
+|-
+| ''[[The General Died at Dawn]]''
+|-
+| ''[[Three Smart Girls]]''
+|-
+| rowspan="9" style="text-align:center" | 2
+| ''[[Born to Dance]]''
+|-
+| ''[[Come and Get It (1936 film)|Come and Get It]]''
+|-
+| ''[[The Garden of Allah (1936 film)|The Garden of Allah]]''
+|-
+| ''[[The Gorgeous Hussy]]''
+|-
+| ''[[Lloyd's of London (film)|Lloyd's of London]]''
+|-
+| ''[[Swing Time (film)|Swing Time]]''
+|-
+| ''[[A Tale of Two Cities (1935 film)|A Tale of Two Cities]]''
+|-
+| ''[[Theodora Goes Wild]]''
+|-
+| ''[[Winterset (film)|Winterset]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 4 
+| ''[[Anthony Adverse]]''
+|-
+| rowspan=2, style="text-align:center" | 3 
+| ''[[The Great Ziegfeld]]''
+|-
+| ''[[The Story of Louis Pasteur]]''
+|-
+|}
+
+{{col-float-end}}
+
+== See also ==
+
+* [[1936 in film]]
+* [[List of films with all four Academy Award acting nominations]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 09}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1936 film awards]]
+[[Category:1937 in Los Angeles]]
+[[Category:1937 in American cinema]]
+[[Category:March 1937 in the United States]]

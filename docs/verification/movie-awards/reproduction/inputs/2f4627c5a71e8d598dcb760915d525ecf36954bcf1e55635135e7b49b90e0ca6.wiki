@@ -1,0 +1,174 @@
+{{Oscars short description||films-year=1930|films-year2=1931}}
+{{Use American English|date=June 2023}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+|number           = 4
+|award            = Academy Awards
+|date             = November 10, 1931
+|site             = [[Millennium Biltmore Hotel|Biltmore Hotel]]<br>[[Los Angeles]], [[California]]
+|host             = [[Lawrence Grant]]
+|best_picture     = ''[[Cimarron (1931 film)|Cimarron]]''
+|most_wins        = ''Cimarron'' (3)
+|most_nominations = ''Cimarron'' (7)
+|last             = 3rd
+|next             = 5th
+}}
+
+The '''4th Academy Awards''' were held on November 10, 1931, by the [[Academy of Motion Picture Arts and Sciences]], awarding films released between August 1, 1930, and July 31, 1931. ''[[Cimarron (1931 film)|Cimarron]]'' was the first Western to win Best Picture, and would remain the only to do so until ''[[Dances With Wolves]]'' won in 1990. ''Cimarron'' received a then-record seven nominations, one in every category for which it was eligible, and was the first Best Picture winner to win more than two awards; it and ''[[A Free Soul]]'' were the first films to receive multiple acting nominations.
+
+Nine-year-old [[Jackie Cooper]] was the first child actor to receive a nomination and was the youngest nominee until [[Justin Henry]] received a nomination for his performance in 1979's ''[[Kramer vs. Kramer]]'' at age eight. He remains the second-youngest Oscar nominee of all time, and [[List of oldest and youngest Academy Award winners and nominees|the only Best Actor nominee under age 18]]. At the ceremony, he fell asleep<ref name="Oscars '30-31 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/832/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=833 |isbn=0-385-04060-1}}</ref> on the shoulder of Best Actress nominee [[Marie Dressler]]; when Dressler was announced as the winner, Cooper had to be eased onto his mother's lap.
+
+Vice President [[Charles Curtis]] attended the ceremony to address the 1,800 guests, making the ceremony a national event.<ref name="Oscars '30-31 Notes"/>
+
+Best Actor winner [[Lionel Barrymore]] became the first person to have received nominations in multiple categories, having been nominated for Best Director for ''[[Madame X (1929 film)|Madame X]]'' at the [[2nd Academy Awards]], as well as the only Best Actor winner born in the 1870s.
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Portrait of William LeBaron - EH1919.jpg
+| caption1          = [[William LeBaron]]; Best Picture winner
+| image2            = 
+| caption2          = [[Norman Taurog]], Best Director winner
+| image3            = Lionel Barrymore 2.jpg
+| caption3          = [[Lionel Barrymore]]; Best Actor winner
+| image4            = Marie Dressler - 1930.jpg
+| caption4          = [[Marie Dressler]]; Best Actress winner
+| image5            = Howard Estabrook 1916.jpg
+| caption5          = [[Howard Estabrook]]; Best Adaptation winner
+
+}}
+Nominees were announced on October 5, 1931. Winners are listed first and highlighted in '''boldface'''.<ref name="Oscars1931">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1932 |title=The 4th Academy Awards (1931) Nominees and Winners |access-date=March 22, 2014 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |url-status=live |archive-url=https://archive.today/20141010191946/http://www.oscars.org/oscars/ceremonies/1932 |archive-date=October 10, 2014 }}</ref>
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+*'''''[[Cimarron (1931 film)|Cimarron]]'' – [[William LeBaron]] for [[RKO Pictures]]'''
+** ''[[East Lynne (1931 film)|East Lynne]]'' – [[Winfield Sheehan]] for [[Fox Film Corporation]]
+** ''[[The Front Page (1931 film)|The Front Page]]'' – [[Howard Hughes]] for [[United Artists]]
+** ''[[Skippy (film)|Skippy]]'' – [[Adolph Zukor]] for [[Paramount Pictures]]
+** ''[[Trader Horn (1931 film)|Trader Horn]]'' – [[Irving Thalberg]] for [[Metro-Goldwyn-Mayer]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Director]]}}
+*'''[[Norman Taurog]]&nbsp;– ''[[Skippy (film)|Skippy]]'''''
+** [[Wesley Ruggles]]&nbsp;– ''[[Cimarron (1931 film)|Cimarron]]''
+** [[Clarence Brown]]&nbsp;– ''[[A Free Soul]]''
+** [[Lewis Milestone]]&nbsp;– ''[[The Front Page (1931 film)|The Front Page]]''
+** [[Josef von Sternberg]]&nbsp;– ''[[Morocco (film)|Morocco]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Lionel Barrymore]]&nbsp;– ''[[A Free Soul]]'' as Stephen Ashe'''
+** [[Jackie Cooper]]&nbsp;– ''[[Skippy (film)|Skippy]]'' as Skippy Skinner
+** [[Richard Dix]]&nbsp;– ''[[Cimarron (1931 film)|Cimarron]]'' as Yancey Cravat
+** [[Fredric March]]&nbsp;– ''[[The Royal Family of Broadway]]'' as Tony Cavendish
+** [[Adolphe Menjou]]&nbsp;– ''[[The Front Page (1931 film)|The Front Page]]'' as Walter Burns
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Marie Dressler]]&nbsp;– ''[[Min and Bill]]'' as Min Divot'''
+** [[Marlene Dietrich]]&nbsp;– ''[[Morocco (film)|Morocco]]'' as Amy Jolly
+** [[Irene Dunne]]&nbsp;– ''[[Cimarron (1931 film)|Cimarron]]'' as Sabra Cravat
+** [[Ann Harding]]&nbsp;– ''[[Holiday (1930 film)|Holiday]]'' as Linda Seton
+** [[Norma Shearer]]&nbsp;– ''[[A Free Soul]]'' as Jan Ashe
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Original Story]]}}
+* '''''[[The Dawn Patrol (1930 film)|The Dawn Patrol]]''&nbsp;– [[John Monk Saunders]]'''
+** ''[[The Doorway to Hell]]''&nbsp;– [[Rowland Brown]]
+** ''[[Laughter (1930 film)|Laughter]]''&nbsp;– [[Harry d'Abbadie d'Arrast]], [[Douglas Doty]], and [[Donald Ogden Stewart]]
+** ''[[The Public Enemy]]''&nbsp;– [[John Bright (screenwriter)|John Bright]] and [[Kubec Glasmon]]
+** ''[[Smart Money (1931 film)|Smart Money]]''&nbsp;– [[Lucien Hubbard]] and [[Joseph Jackson (screenwriter)|Joseph Jackson]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Adaptation]]}}
+*'''''[[Cimarron (1931 film)|Cimarron]]''&nbsp;– [[Howard Estabrook]], based on [[Cimarron (novel)|the novel]] by [[Edna Ferber]]'''
+** ''[[The Criminal Code]]''&nbsp;– [[Seton I. Miller]] and [[Fred Niblo Jr.]], based on the play by [[Martin Flavin]]
+** ''[[Holiday (1930 film)|Holiday]]''&nbsp;– [[Horace Jackson]], based on [[Holiday (play)|the play]] by [[Philip Barry]]
+** ''[[Little Caesar (film)|Little Caesar]]''&nbsp;– [[Francis Edward Faragoh]] and [[Robert N. Lee]], based on the novel by [[W. R. Burnett|William R. Burnett]]
+** ''[[Skippy (film)|Skippy]]''&nbsp;– [[Joseph L. Mankiewicz]] and [[Sam Mintz]], based on [[Skippy (comic strip)|the comic strip]] by [[Percy Crosby]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound Recording]]}}
+*'''[[Paramount Publix|Paramount Publix Studio Sound Department]]'''
+** [[Metro-Goldwyn-Mayer|MGM Studio Sound Department]]
+** [[RKO Radio|RKO Radio Studio Sound Department]]
+** [[Samuel Goldwyn Productions|Samuel Goldwyn]]-[[United Artists]] Studio Sound Department
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Cimarron (1931 film)|Cimarron]]''&nbsp;– [[Max Rée]]'''
+** ''[[Just Imagine (film)|Just Imagine]]''&nbsp;– [[Stephen Goosson]] and [[Ralph Hammeras]]
+** ''[[Morocco (film)|Morocco]]''&nbsp;– [[Hans Dreier]]
+** ''[[Svengali (1931 film)|Svengali]]''&nbsp;– [[Anton Grot]]
+** ''[[Whoopee! (film)|Whoopee!]]''&nbsp;– [[Richard Day (art director)|Richard Day]]
+|-
+| colspan="2" valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Tabu: A Story of the South Seas|Tabu]]''&nbsp;– [[Floyd Crosby]]'''
+** ''[[Cimarron (1931 film)|Cimarron]]''&nbsp;– [[Edward Cronjager]]
+** ''[[Morocco (film)|Morocco]]''&nbsp;– [[Lee Garmes]]
+** ''[[The Right to Love (1930 American film)|The Right to Love]]''&nbsp;– [[Charles Lang]]
+** ''[[Svengali (1931 film)|Svengali]]''&nbsp;– [[Barney McGill]]
+|}
+
+== Multiple nominations and awards ==
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+|7
+|''[[Cimarron (1931 film)|Cimarron]]''
+|-
+| scope="row" rowspan="2" style="text-align:center"| 4
+|''[[Morocco (film)|Morocco]]''
+|-
+|''[[Skippy (film)|Skippy]]''
+|-
+| scope="row" rowspan="2" style="text-align:center"| 3
+|''[[A Free Soul]]''
+|-
+|''[[The Front Page (1931 film)|The Front Page]]''
+|-
+| scope="row" rowspan="2" style="text-align:center"| 2
+|''[[Holiday (1930 film)|Holiday]]''
+|-
+|''[[Svengali (1931 film)|Svengali]]''
+|}
+
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Wins
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 3
+|''[[Cimarron (1931 film)|Cimarron]]''
+|}
+
+==Gallery==
+{{Gallery
+|title=Academy Award-winning and nominated films – 4th Academy Awards
+|width=165
+|height=175
+|File:Cimarron (1931).webm|The full film of ''[[Cimarron (1931 film)|Cimarron]]'', which won for [[Academy Award for Best Picture|Best Picture]] (then known as Outstanding Production), [[Academy Award for Best Adapted Screenplay|Best Writing (Adaptation)]], and [[Academy Award for Best Production Design|Best Art Direction]]
+|File:Min and Bill.webm|The full film of ''[[Min and Bill]]'', which won [[Marie Dressler]] the award for [[Academy Award for Best Actress|Best Actress]]
+|File:The Dawn Patrol (1930).webm|The full film of ''[[The Dawn Patrol (1930 film)|The Dawn Patrol]]'', which won for [[Academy Award for Best Original Screenplay|Best Original Screenplay]]
+}}
+
+== See also ==
+
+* [[1930 in film]]
+* [[1931 in film]]
+
+==References==
+{{Reflist}}
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 04}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1930 film awards]]
+[[Category:1931 film awards]]
+[[Category:1931 in American cinema]]
+[[Category:1931 in Los Angeles]]
+[[Category:November 1931 in the United States]]

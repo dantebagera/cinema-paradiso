@@ -1,0 +1,404 @@
+{{oscars short description|films-year=1940}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 13
+| award            = Academy Awards
+| image            = 13th Academy Awards poster.jpg
+| caption          = 
+| date             = February 27, 1941
+| site             = Biltmore Bowl, [[Millennium Biltmore Hotel|Biltmore Hotel]]<br />[[Los Angeles]], [[California]]
+| host             = [[Bob Hope]]
+| best_picture     = ''[[Rebecca (1940 film)|Rebecca]]''
+| most_wins        = ''[[The Thief of Bagdad (1940 film)|The Thief of Bagdad]]'' (3)
+| most_nominations = ''Rebecca'' (11)
+| last             = 12th
+| next             = 14th
+}}
+
+The '''13th Academy Awards''' were held on February 27, 1941, to honor films released in [[1940 in film|1940]]. This was the first year that sealed envelopes were used to keep the names of the winners secret.<ref>{{cite web|url=https://oscar.go.com/news/oscar-history/1941-13th-academy-award-winners|title=1941: THE 13TH ACADEMY AWARD WINNERS|date=2014-12-10|publisher=Oscars.org|access-date=2020-02-14}}</ref> The accounting firm of [[Price Waterhouse]] was hired to count the ballots, after voting results in [[12th Academy Awards|1939]] were leaked by the ''[[Los Angeles Times]]''.<ref name="Oscars '40 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/834/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=835 |isbn=0-385-04060-1}}</ref> The gathering was addressed over the radio by President [[Franklin D. Roosevelt]].<ref name="Oscars '40 Notes"/>
+
+[[Walter Brennan]]'s victory for his performance in ''[[The Westerner (1940 film)|The Westerner]]'' made him the first actor to win an Academy Award more than twice.<ref name="Oscars '40 Notes"/>
+
+[[Academy Award for Best Original Screenplay|Best Original Screenplay]] was introduced at this ceremony, alongside [[Academy Award for Best Adapted Screenplay|Best Screenplay]], which would eventually become Best Adapted Screenplay, and Best Original Story.
+
+Independent producer [[David O. Selznick]], who had produced the previous year's Best Picture winner ''[[Gone with the Wind (film)|Gone with the Wind]]'' (1939), produced the film with the most nominations again this year, ''[[Rebecca (1940 film)|Rebecca]]'' (11), and campaigned heavily for its win.<ref>''Inside Oscar'', Mason Wiley and Damien Boa, Ballantine Books (1986) pg. 103-107</ref> The film won Best Picture, making Selznick the first to produce two consecutive winners; its only other win was for Best Cinematography (Black and White), marking the last time to date a film would win Best Picture but not win for either directing, acting, or writing.
+
+The film's distributor, [[United Artists]], was the last of the original film studios (Metro-Goldwyn-Mayer, Columbia, 20th Century-Fox, Warner Bros., RKO Radio, Universal, and Paramount) to win Best Picture. ''Rebecca'' was the first American film directed by [[Alfred Hitchcock]], and the only one of his films to win [[Academy Award for Best Picture|Best Picture]]. Hitchcock had two films nominated for Best Picture, the other being ''[[Foreign Correspondent (film)|Foreign Correspondent]]'', and two other directors also had two films in the running: Sam Wood (''[[Our Town (1940 film)|Our Town]]'' and ''[[Kitty Foyle (film)|Kitty Foyle]]'') and John Ford (''[[The Long Voyage Home]]'' and ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]'', which won Best Director).
+
+''[[Pinocchio (1940 film)|Pinocchio]]'' was the first animated feature film to win competitive Oscars, for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Original Song|Best Original Song]], starting a long tradition of animated films winning in these categories. ''[[The Thief of Bagdad (1940 film)|The Thief of Bagdad]]'' received the most Oscars of the evening (3), the first time a film not nominated for Best Picture won the most awards. This and ''Pinocchio'' were the first films not nominated for Best Picture to receive multiple awards in Oscar history.
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = DavidSelznick.jpg
+| caption1          = [[David O. Selznick]]; Best Picture winner
+| image2            = John Ford 1946.jpg
+| caption2          = [[John Ford]]; Best Director winner
+| image3            = Annex - Stewart, James (Call Northside 777) 01.jpg
+| caption3          = [[James Stewart]]; Best Actor winner
+| image4            = GINGERogers.jpg
+| caption4          = [[Ginger Rogers]]; Best Actress winner
+| image5            = Walter brennan real mccoys 1958.JPG
+| caption5          = [[Walter Brennan]]; Best Supporting Actor winner
+| image6            = Jane Darwell 1945.JPG
+| caption6          = [[Jane Darwell]]; Best Supporting Actress winner
+| image7            = Preston Sturges.jpg
+| caption7          = [[Preston Sturges]]; Best Original Screenplay winner
+| image8            = Pete Smith 1918 Publicity Photo.jpg
+| caption8          = [[Pete Smith (film producer)|Pete Smith]]; Best Live Action Short Subject, One-Reel winner
+| image9            = Cedric-Gibbons-1936.jpg
+| caption9          = [[Cedric Gibbons]]; Best Art Direction, Black-and-White co-winner
+| image10            = Bob Hope, 1978.jpg
+| caption10          = [[Bob Hope]]; Honorary Academy Award recipient
+}}
+=== Awards ===
+<!-- Note: "Northwest" is officially TWO words in "North West Mounted Police", but ONE word in "Northwest Passage". Please do NOT change either title. -->
+Nominees were announced on February 10, 1941. Winners are listed first and highlighted in boldface.<ref name="Oscars1941">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1941 |title=The 13th Academy Awards (1941) Nominees and Winners |access-date=2011-08-12 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093728/http://www.oscars.org/awards/academyawards/legacy/ceremony/13th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+*'''''[[Rebecca (1940 film)|Rebecca]]''''' '''– [[David O. Selznick]] for [[Selznick International Pictures|Selznick International]] and [[United Artists]]'''
+** ''[[All This, and Heaven Too]]'' – [[Jack L. Warner]], [[Hal B. Wallis]], and [[David Lewis (producer)|David Lewis]] for [[Warner Bros.]]
+** ''[[Foreign Correspondent (film)|Foreign Correspondent]]'' – [[Walter Wanger]] for Walter Wanger Productions and United Artists
+** ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]'' – [[Darryl F. Zanuck]] and [[Nunnally Johnson]] for [[20th Century Fox]]
+** ''[[The Great Dictator]]'' – [[Charles Chaplin]] for Charlie Chaplin Productions and United Artists
+** ''[[Kitty Foyle (film)|Kitty Foyle]]'' – David Hempstead for [[RKO Pictures|RKO Radio]]
+** ''[[The Letter (1940 film)|The Letter]]'' – Hal B. Wallis for Warner Bros.
+** ''[[The Long Voyage Home]]'' – [[John Ford]] for [[John Ford#The Argosy years|Argosy Films]], Walter Wanger Productions, and United Artists
+** ''[[Our Town (1940 film)|Our Town]]'' – [[Sol Lesser]] for Sol Lesser Productions and United Artists
+** ''[[The Philadelphia Story (film)|The Philadelphia Story]]'' – [[Joseph L. Mankiewicz]] for [[Metro-Goldwyn-Mayer]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[John Ford]]&nbsp;– ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]'''''
+** [[Sam Wood]]&nbsp;– ''[[Kitty Foyle (film)|Kitty Foyle]]''
+** [[William Wyler]]&nbsp;– ''[[The Letter (1940 film)|The Letter]]''
+** [[George Cukor]]&nbsp;– ''[[The Philadelphia Story (film)|The Philadelphia Story]]''
+** [[Alfred Hitchcock]]&nbsp;– ''[[Rebecca (1940 film)|Rebecca]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[James Stewart]]&nbsp;– ''[[The Philadelphia Story (film)|The Philadelphia Story]]'' as Macaulay "Mike" Connor'''
+** [[Charles Chaplin]]&nbsp;– ''[[The Great Dictator]]'' as The Barber/Adenoid Hynkel
+** [[Henry Fonda]]&nbsp;– ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]'' as [[Tom Joad]]
+** [[Raymond Massey]]&nbsp;– ''[[Abe Lincoln in Illinois (film)|Abe Lincoln in Illinois]]'' as [[Abraham Lincoln]]
+** [[Laurence Olivier]]&nbsp;– ''[[Rebecca (1940 film)|Rebecca]]'' as Maximilian de Winter
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Ginger Rogers]]&nbsp;– ''[[Kitty Foyle (film)|Kitty Foyle]]'' as Kitty Foyle'''
+** [[Bette Davis]]&nbsp;– ''[[The Letter (1940 film)|The Letter]]'' as Leslie Crosbie
+** [[Joan Fontaine]]&nbsp;– ''[[Rebecca (1940 film)|Rebecca]]'' as the second Mrs de Winter
+** [[Katharine Hepburn]]&nbsp;– ''[[The Philadelphia Story (film)|The Philadelphia Story]]'' as Tracy Samantha Lord
+** [[Martha Scott]]&nbsp;– ''[[Our Town (1940 film)|Our Town]]'' as Emily Webb
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Walter Brennan]]&nbsp;– ''[[The Westerner (1940 film)|The Westerner]]'' as [[Judge Roy Bean]]'''
+** [[Albert Bassermann]]&nbsp;– ''[[Foreign Correspondent (film)|Foreign Correspondent]]'' as Van Meer
+** [[William Gargan]]&nbsp;– ''[[They Knew What They Wanted (film)|They Knew What They Wanted]]'' as Joe
+** [[Jack Oakie]]&nbsp;– ''[[The Great Dictator]]'' as Benzino Napaloni
+** [[James Stephenson (actor)|James Stephenson]]&nbsp;– ''[[The Letter (1940 film)|The Letter]]'' as Howard Joyce
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Jane Darwell]]&nbsp;– ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]'' as [[Ma Joad]]'''
+** [[Judith Anderson]]&nbsp;– ''[[Rebecca (1940 film)|Rebecca]]'' as [[Mrs. Danvers]]
+** [[Ruth Hussey]]&nbsp;– ''[[The Philadelphia Story (film)|The Philadelphia Story]]'' as Elizabeth Imbrie
+** [[Barbara O'Neil]]&nbsp;– ''[[All This, and Heaven Too]]'' as [[Françoise, duchesse de Praslin|Francoise "Fanny" Sebastiani de-Praslin]]
+** [[Marjorie Rambeau]]&nbsp;– ''[[Primrose Path (1940 film)|Primrose Path]]'' as Mamie Adams
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+*'''''[[Arise, My Love]]''&nbsp;– [[Benjamin Glazer]] and [[John S. Toldy]]'''
+** ''[[Comrade X]]''&nbsp;– [[Walter Reisch]]
+** ''[[Edison, the Man]]''&nbsp;– [[Hugo Butler]] and [[Dore Schary]]
+** ''[[My Favorite Wife]]''&nbsp;– [[Leo McCarey]], [[Samuel and Bella Spewack|Samuel Spewack]], and [[Samuel and Bella Spewack|Bella Spewack]]
+** ''[[The Westerner (1940 film)|The Westerner]]''&nbsp;– [[Stuart N. Lake]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[The Great McGinty]]''&nbsp;– [[Preston Sturges]]'''
+** ''[[Angels Over Broadway]]''&nbsp;– [[Ben Hecht]]
+** ''[[Dr. Ehrlich's Magic Bullet]]''&nbsp;– Norman Burnstine, Heinz Herald, and [[John Huston]]
+** ''[[Foreign Correspondent (film)|Foreign Correspondent]]''&nbsp;– [[Charles Bennett (screenwriter)|Charles Bennett]] and [[Joan Harrison (screenwriter)|Joan Harrison]]
+** ''[[The Great Dictator]]''&nbsp;– [[Charles Chaplin]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[The Philadelphia Story (film)|The Philadelphia Story]]''&nbsp;– [[Donald Ogden Stewart]], based on [[The Philadelphia Story (play)|the play]] by [[Philip Barry]]'''
+** ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]''&nbsp;– [[Nunnally Johnson]], based on [[The Grapes of Wrath|the novel]] by [[John Steinbeck]]
+** ''[[Kitty Foyle (film)|Kitty Foyle]]''&nbsp;– [[Dalton Trumbo]], based on [[Kitty Foyle (novel)|the novel]] by [[Christopher Morley]]
+** ''[[The Long Voyage Home]]''&nbsp;– [[Dudley Nichols]], based on the plays ''The Moon of the Caribees'', ''[[In the Zone (play)|In the Zone]], Bound East for Cardiff'', and ''The Long Voyage Home'' by [[Eugene O'Neill]]
+** ''[[Rebecca (1940 film)|Rebecca]]''&nbsp;– [[Robert E. Sherwood]] and [[Joan Harrison (screenwriter)|Joan Harrison]], based on [[Rebecca (novel)|the novel]] by [[Daphne du Maurier]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[Quicker'n a Wink]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]] and [[Metro-Goldwyn-Mayer]]'''
+** ''[[London Can Take It!]]''&nbsp;– [[Warner Bros.]]
+** ''[[More About Nostradamus]]''&nbsp;– [[Metro-Goldwyn-Mayer]]
+** ''[[Siege (1940 film)|Siege]]''&nbsp;– [[RKO Radio]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[Teddy, the Rough Rider]]''&nbsp;– [[Warner Bros.]]'''
+** ''[[Eyes of the Navy]]''&nbsp;– [[Metro-Goldwyn-Mayer]]
+** ''[[Service with the Colors]]''&nbsp;– Warner Bros.
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[The Milky Way (1940 film)|The Milky Way]]''&nbsp;– [[Rudolf Ising]], [[Fred Quimby]] and [[Metro-Goldwyn-Mayer]]'''
+** ''[[Puss Gets the Boot]]''&nbsp;– Metro-Goldwyn-Mayer
+** ''[[A Wild Hare]]''&nbsp;– [[Leon Schlesinger]] and [[Warner Bros.]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[Pinocchio (1940 film)|Pinocchio]]''&nbsp;– [[Leigh Harline]], [[Paul Smith (composer)|Paul Smith]] and [[Ned Washington]]'''
+** ''[[Arizona (1940 film)|Arizona]]''&nbsp;– [[Victor Young]]
+** ''[[Dark Command]]''&nbsp;– Victor Young
+** ''[[The Fight for Life]]''&nbsp;– [[Louis Gruenberg]]
+** ''[[The Great Dictator]]''&nbsp;– [[Meredith Willson]]
+** ''[[The House of the Seven Gables (film)|The House of the Seven Gables]]''&nbsp;– [[Frank Skinner (composer)|Frank Skinner]]
+** ''[[The Howards of Virginia]]''&nbsp;– [[Richard Hageman]]
+** ''[[The Letter (1940 film)|The Letter]]''&nbsp;– [[Max Steiner]]
+** ''[[The Long Voyage Home]]''&nbsp;– Richard Hageman
+** ''[[The Mark of Zorro (1940 film)|The Mark of Zorro]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[My Favorite Wife]]''&nbsp;– [[Roy Webb]]
+** ''[[North West Mounted Police (film)|North West Mounted Police]]''&nbsp;– Victor Young
+** ''[[One Million B.C.]]''&nbsp;– [[Werner R. Heymann]]
+** ''[[Our Town (1940 film)|Our Town]]''&nbsp;– [[Aaron Copland]]
+** ''[[Rebecca (1940 film)|Rebecca]]''&nbsp;– [[Franz Waxman]]
+** ''[[The Thief of Bagdad (1940 film)|The Thief of Bagdad]]''&nbsp;– [[Miklós Rózsa]]
+** ''[[Waterloo Bridge (1940 film)|Waterloo Bridge]]''&nbsp;– [[Herbert Stothart]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring)]]}}
+*'''''[[Tin Pan Alley (film)|Tin Pan Alley]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]'''
+** ''[[Arise, My Love]]''&nbsp;– [[Victor Young]]
+** ''[[Hit Parade of 1941]]''&nbsp;– [[Cy Feuer]]
+** ''[[Irene (1940 film)|Irene]]''&nbsp;– [[Anthony Collins (composer)|Anthony Collins]]
+** ''[[Our Town (1940 film)|Our Town]]''&nbsp;– [[Aaron Copland]]
+** ''[[The Sea Hawk (1940 film)|The Sea Hawk]]''&nbsp;– [[Erich Wolfgang Korngold]]
+** ''[[Second Chorus]]''&nbsp;– [[Artie Shaw]]
+** ''[[Spring Parade]]''&nbsp;– [[Charles Previn]]
+** ''[[Strike Up the Band (film)|Strike Up the Band]]''&nbsp;– [[Georgie Stoll]] and [[Roger Edens]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[When You Wish Upon a Star]]" from ''[[Pinocchio (1940 film)|Pinocchio]]''&nbsp;– Music by [[Leigh Harline]]; Lyrics by [[Ned Washington]]'''
+** "Down Argentine Way" from ''[[Down Argentine Way]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Mack Gordon]]
+** "I'd Know You Anywhere" from ''[[You'll Find Out]]''&nbsp;– Music by [[Jimmy McHugh]]; Lyrics by [[Johnny Mercer]]
+** "It's a Blue World" from ''[[Music in My Heart]]''&nbsp;– Music and Lyrics by [[George Forrest (author)|Chet Forrest]] and [[Robert Wright (writer)|Bob Wright]]
+** "Love of My Life" from ''[[Second Chorus]]''&nbsp;– Music by [[Artie Shaw]]; Lyrics by [[Johnny Mercer]]
+** "Only Forever" from ''[[Rhythm on the River]]''&nbsp;– Music by [[James V. Monaco]]; Lyrics by [[Johnny Burke (lyricist)|Johnny Burke]]
+** "Our Love Affair" from ''[[Strike Up the Band (film)|Strike Up the Band]]''&nbsp;– Music and Lyrics by [[Roger Edens]] and [[Arthur Freed]]
+** "Waltzing in the Clouds" from ''[[Spring Parade]]''&nbsp;– Music by [[Robert Stolz]]; Lyrics by [[Gus Kahn]]
+** "Who Am I?" from ''[[Hit Parade of 1941]]''&nbsp;– Music by [[Jule Styne]]; Lyrics by [[Walter Bullock]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[Strike Up the Band (film)|Strike Up the Band]]''&nbsp;– [[Douglas Shearer]]'''
+** ''[[Behind the News (film)|Behind the News]]''&nbsp;– [[Charles L. Lootens]]
+** ''[[Captain Caution]]''&nbsp;– [[Elmer Raguse]]
+** ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]''&nbsp;– [[Edmund H. Hansen|E. H. Hansen]]
+** ''[[The Howards of Virginia]]''&nbsp;– [[Jack Whitney]]
+** ''[[Kitty Foyle (film)|Kitty Foyle]]''&nbsp;– [[John O. Aalberg]]
+** ''[[North West Mounted Police (film)|North West Mounted Police]]''&nbsp;– [[Loren L. Ryder]]
+** ''[[Our Town (1940 film)|Our Town]]''&nbsp;– [[Thomas T. Moulton]]
+** ''[[The Sea Hawk (1940 film)|The Sea Hawk]]''&nbsp;– [[Nathan Levinson]]
+** ''[[Spring Parade]]''&nbsp;– [[Bernard B. Brown]]
+** ''[[Too Many Husbands (1940 film)|Too Many Husbands]]''&nbsp;– [[John P. Livadary]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[Pride and Prejudice (1940 film)|Pride and Prejudice]]''&nbsp;– [[Cedric Gibbons]] and [[Paul Groesse]]'''
+** ''[[Arise, My Love]]''&nbsp;– [[Hans Dreier]] and [[Robert Usher]]
+** ''[[Arizona (1940 film)|Arizona]]''&nbsp;– [[Lionel Banks]] and [[Robert Peterson (art director)|Robert Peterson]]
+** ''[[The Boys from Syracuse (film)|The Boys from Syracuse]]''&nbsp;– [[Jack Otterson|John Otterson]]
+** ''[[Dark Command]]''&nbsp;– [[John Victor Mackay]]
+** ''[[Foreign Correspondent (film)|Foreign Correspondent]]''&nbsp;– [[Alexander Golitzen]]
+** ''[[Lillian Russell (film)|Lillian Russell]]''&nbsp;– [[Richard Day (art director)|Richard Day]] and [[Joseph C. Wright]]
+** ''[[My Favorite Wife]]''&nbsp;– [[Van Nest Polglase]] and [[Mark-Lee Kirk]]
+** ''[[My Son, My Son!]]''&nbsp;– [[John DuCasse Schulze]]
+** ''[[Our Town (1940 film)|Our Town]]''&nbsp;– [[Lewis J. Rachmil]]
+** ''[[Rebecca (1940 film)|Rebecca]]''&nbsp;– [[Lyle R. Wheeler]]
+** ''[[The Sea Hawk (1940 film)|The Sea Hawk]]''&nbsp;– [[Anton Grot]]
+** ''[[The Westerner (1940 film)|The Westerner]]''&nbsp;– [[James Basevi]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[The Thief of Bagdad (1940 film)|The Thief of Bagdad]]''&nbsp;– [[Vincent Korda]]'''
+** ''[[Bitter Sweet (1940 film)|Bitter Sweet]]''&nbsp;– [[Cedric Gibbons]] and [[John S. Detlie]]
+** ''[[Down Argentine Way]]''&nbsp;– [[Richard Day (art director)|Richard Day]] and [[Joseph C. Wright]]
+** ''[[North West Mounted Police (film)|North West Mounted Police]]''&nbsp;– [[Hans Dreier]] and [[Roland Anderson]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[Rebecca (1940 film)|Rebecca]]''&nbsp;– [[George Barnes (cinematographer)|George Barnes]]'''
+** ''[[Abe Lincoln in Illinois (film)|Abe Lincoln in Illinois]]''&nbsp;– [[James Wong Howe]]
+** ''[[All This, and Heaven Too]]''&nbsp;– [[Ernest Haller]]
+** ''[[Arise, My Love]]''&nbsp;– [[Charles Lang]]
+** ''[[Boom Town (film)|Boom Town]]''&nbsp;– [[Harold Rosson]]
+** ''[[Foreign Correspondent (film)|Foreign Correspondent]]''&nbsp;– [[Rudolph Maté]]
+** ''[[The Letter (1940 film)|The Letter]]''&nbsp;– [[Tony Gaudio]]
+** ''[[The Long Voyage Home]]''&nbsp;– [[Gregg Toland]]
+** ''[[Spring Parade]]''&nbsp;– [[Joseph Valentine]]
+** ''[[Waterloo Bridge (1940 film)|Waterloo Bridge]]''&nbsp;– [[Joseph Ruttenberg]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[The Thief of Bagdad (1940 film)|The Thief of Bagdad]]''&nbsp;– [[Georges Périnal]]'''
+** ''[[Bitter Sweet (1940 film)|Bitter Sweet]]''&nbsp;– [[Oliver T. Marsh]] and Allen Davey
+** ''[[The Blue Bird (1940 film)|The Blue Bird]]''&nbsp;– [[Arthur Miller (cinematographer)|Arthur C. Miller]] and [[Ray Rennahan]]
+** ''[[Down Argentine Way]]''&nbsp;– [[Leon Shamroy]] and [[Ray Rennahan]]
+** ''[[North West Mounted Police (film)|North West Mounted Police]]''&nbsp;– [[Victor Milner]] and [[W. Howard Greene]]
+** ''[[Northwest Passage (film)|Northwest Passage]]''&nbsp;– Sidney Wagner and [[William V. Skall]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[North West Mounted Police (film)|North West Mounted Police]]''&nbsp;– [[Anne Bauchens]]'''
+** ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]''&nbsp;– [[Robert L. Simpson (film editor)|Robert L. Simpson]]
+** ''[[The Letter (1940 film)|The Letter]]''&nbsp;– [[Warren Low]]
+** ''[[The Long Voyage Home]]''&nbsp;– Sherman Todd
+** ''[[Rebecca (1940 film)|Rebecca]]''&nbsp;– [[Hal C. Kern]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*'''''[[The Thief of Bagdad (1940 film)|The Thief of Bagdad]]''&nbsp;– Photographic Effects: [[Lawrence W. Butler]]; Sound Effects: [[Jack Whitney]]'''
+** ''[[The Blue Bird (1940 film)|The Blue Bird]]''&nbsp;– Photographic Effects: [[Fred Sersen]]; Sound Effects: [[Edmund H. Hansen]]
+** ''[[Boom Town (film)|Boom Town]]''&nbsp;– Photographic Effects: [[A. Arnold Gillespie]]; Sound Effects: [[Douglas Shearer]]
+** ''[[The Boys from Syracuse (film)|The Boys from Syracuse]]''&nbsp;– Photographic Effects: [[John P. Fulton]]; Sound Effects: [[Bernard B. Brown]] and [[Joe Lapis]]
+** ''[[Dr. Cyclops]]''&nbsp;– Photographic Effects: [[Farciot Edouart]] and [[Gordon Jennings]]
+** ''[[Foreign Correspondent (film)|Foreign Correspondent]]''&nbsp;– Photographic Effects: [[Paul Eagler]]; Sound Effects: [[Thomas T. Moulton]]
+** ''[[The Invisible Man Returns]]''&nbsp;– Photographic Effects: John P. Fulton; Sound Effects: Bernard B. Brown and [[William Hedgcock]]
+** ''[[The Long Voyage Home]]''&nbsp;– Photographic Effects: [[R. T. Layton]] and [[Ray Binger]]; Sound Effects: Thomas T. Moulton
+** ''[[One Million B.C.]]''&nbsp;– Photographic Effects: [[Roy Seawright]]; Sound Effects: [[Elmer A. Raguse]]
+** ''[[Rebecca (1940 film)|Rebecca]]''&nbsp;– Photographic Effects: [[Jack Cosgrove (special effects artist)|Jack Cosgrove]]; Sound Effects: [[Arthur Johns (sound engineer)|Arthur Johns]]
+** ''[[The Sea Hawk (1940 film)|The Sea Hawk]]''&nbsp;– Photographic Effects: [[Byron Haskin]]; Sound Effects: [[Nathan Levinson]]
+** ''[[Swiss Family Robinson (1940 film)|Swiss Family Robinson]]''&nbsp;– Photographic Effects: [[Vernon L. Walker]]; Sound Effects: [[John O. Aalberg]]
+** ''[[Typhoon (1940 film)|Typhoon]]''&nbsp;– Photographic Effects: Farciot Edouart and Gordon Jennings; Sound Effects: Loren L. Ryder
+** ''[[Women in War]]''&nbsp;– Photographic Effects: [[Lydecker brothers|Howard J. Lydecker]], [[William Bradford (cinematographer)|William Bradford]] and [[Bud Thackery|Ellis J. Thackery]]; Sound Effects: [[Herbert Norsch]]
+|}
+
+=== Special awards ===
+
+* To [[Bob Hope]], in recognition of his unselfish services to the Motion Picture Industry.
+* To Colonel [[Nathan Levinson]] for his outstanding service to the industry and the Army during the past nine years, which has made possible the present efficient mobilization of the motion picture industry facilities for the production of Army Training Films.
+
+== Ceremony information ==
+For the first time, names of all winners remained secret until the moment they received their awards, a practice that has continued ever since. [[Franklin D. Roosevelt]] gave a six-minute direct radio address to the attendees from the [[White House]]. It is the first time an American president participated in the event.
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 11
+| ''[[Rebecca (1940 film)|Rebecca]]''
+|-
+| rowspan="2" style="text-align:center" | 7 
+| ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]''
+|-
+| ''[[The Letter (1940 film)|The Letter]]''
+|-
+| rowspan="4" style="text-align:center" | 6
+| ''[[Foreign Correspondent (film)|Foreign Correspondent]]''
+|-
+| ''[[The Long Voyage Home]]''
+|-
+| ''[[Our Town (1940 film)|Our Town]]''
+|-
+| ''[[The Philadelphia Story (film)|The Philadelphia Story]]''
+|-
+| rowspan="3" style="text-align:center" | 5
+| ''[[The Great Dictator]]''
+|-
+| ''[[Kitty Foyle (film)|Kitty Foyle]]''
+|-
+| ''[[North West Mounted Police (film)|North West Mounted Police]]''
+|-
+| rowspan="4" style="text-align:center" | 4
+| ''[[Arise, My Love]]''
+|-
+| ''[[The Sea Hawk (1940 film)|The Sea Hawk]]''
+|-
+| ''[[Spring Parade]]''
+|-
+| ''[[The Thief of Bagdad (1940 film)|The Thief of Bagdad]]''
+|-
+| rowspan="5" style="text-align:center" |3 
+| ''[[All This, and Heaven Too]]''
+|-
+| ''[[Down Argentine Way]]''
+|-
+| ''[[My Favorite Wife]]''
+|-
+| ''[[Strike Up the Band (film)|Strike Up the Band]]''
+|-
+| ''[[The Westerner (1940 film)|The Westerner]]''
+|-
+| rowspan="13" style="text-align:center" | 2
+| ''[[Abe Lincoln in Illinois (film)|Abe Lincoln in Illinois]]''
+|-
+| ''[[Arizona (1940 film)|Arizona]]''
+|-
+| ''[[Bitter Sweet (1940 film)|Bitter Sweet]]''
+|-
+| ''[[The Blue Bird (1940 film)|The Blue Bird]]''
+|-
+| ''[[Boom Town (film)|Boom Town]]''
+|-
+| ''[[The Boys from Syracuse (film)|The Boys from Syracuse]]''
+|-
+| ''[[Dark Command]]''
+|-
+| ''[[Hit Parade of 1941]]''
+|-
+| ''[[The Howards of Virginia]]''
+|-
+| ''[[One Million B.C.]]''
+|-
+| ''[[Pinocchio (1940 film)|Pinocchio]]''
+|-
+| ''[[Second Chorus]]''
+|-
+| ''[[Waterloo Bridge (1940 film)|Waterloo Bridge]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 3
+| ''[[The Thief of Bagdad (1940 film)|The Thief of Bagdad]]''
+|-
+| rowspan=4, style="text-align:center" | 2
+| ''[[The Grapes of Wrath (film)|The Grapes of Wrath]]''
+|-
+| ''[[The Philadelphia Story (film)|The Philadelphia Story]]''
+|-
+| ''[[Pinocchio (1940 film)|Pinocchio]]''
+|-
+| ''[[Rebecca (1940 film)|Rebecca]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+*[[1940 in film]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 13}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1940 film awards]]
+[[Category:1941 in Los Angeles]]
+[[Category:1941 in American cinema]]
+[[Category:February 1941 in the United States]]

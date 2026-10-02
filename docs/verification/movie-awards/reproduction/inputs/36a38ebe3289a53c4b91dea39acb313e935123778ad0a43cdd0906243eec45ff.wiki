@@ -1,0 +1,401 @@
+{{oscars short description|films-year=1954}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 27
+| award            = Academy Awards
+| date             = March 30, 1955
+| site             = [[Pantages Theatre (Hollywood)|RKO Pantages Theatre]]<br>[[Hollywood, California]] and <br>[[NBC Century Theatre]]<br>[[New York City]], [[New York (state)|New York]]
+| host             = [[Bob Hope]] (Hollywood) and <br>[[Thelma Ritter]] (New York City)
+| best_picture     = ''[[On the Waterfront]]''
+| most_wins        = ''On the Waterfront'' (8)
+| most_nominations = ''On the Waterfront'' (12)
+| network          = [[NBC]]
+| duration         = 
+| last             = 26th
+| next             = 28th
+}}
+
+The '''27th Academy Awards''' were held on March 30, 1955, to honor the best films of [[1954 in film|1954]], hosted by [[Bob Hope]] at the [[Pantages Theatre (Hollywood)|RKO Pantages Theatre]] in [[Hollywood, Los Angeles|Hollywood]] with [[Thelma Ritter]] hosting from the [[NBC Century Theatre]] in [[New York City]].
+
+''[[On the Waterfront]]'' led the ceremony with twelve nominations and eight wins, including [[Academy Award for Best Picture|Best Picture]]. Its total wins tied the record of ''[[Gone with the Wind (film)|Gone with the Wind]]'' (1939) and ''[[From Here to Eternity]]'' (1953), though those each had thirteen nominations. It was the third film to receive five acting nominations, and the first to receive three in the Best Supporting Actor category. A "rematch" occurred in the category of [[Academy Award for Best Actor|Best Actor]] between Marlon Brando and [[Humphrey Bogart]] following Bogart's upset victory [[24th Academy Awards|three years earlier]]. In an upset ([[Bing Crosby]] was the favored nominee), Brando won, now seen as one of the greatest Best Actor wins in Oscar history.<ref>{{cite web|url=http://www.premiere.com/List/The-100-Greatest-Performances-of-All-Time/The-100-Greatest-Performances-of-All-Time-24-1 |title=100 Greatest Performances of All Time: 24-1 |author=Premiere |access-date=2008-12-23 |archive-url=https://web.archive.org/web/20090131150843/http://www.premiere.com/List/The-100-Greatest-Performances-of-All-Time/The-100-Greatest-Performances-of-All-Time-24-1 |archive-date=31 January 2009 |url-status=dead }}</ref> This was Brando's fourth consecutive nomination for Best Actor (starting with ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' in [[24th Academy Awards|1951]]), a record that remains unmatched to this day.
+
+In an even bigger upset, [[Grace Kelly]] won [[Academy Award for Best Actress|Best Actress]] for ''[[The Country Girl (1954 film)|The Country Girl]]'' over [[Judy Garland]], who was heavily favored to win for ''[[A Star Is Born (1954 film)|A Star Is Born]]''.<ref name="Oscars '54 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/840/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=840 |isbn=0-385-04060-1}}</ref> Garland could not attend the ceremony, having recently given birth to her third child; cameramen were present in her home so she could give an acceptance speech, only to awkwardly leave when Kelly was announced as the winner. [[Groucho Marx]] later sent her a telegram expressing that her loss was "the biggest robbery since [[Great Brink's Robbery|Brink's]]".<ref>{{cite web |url=http://www.biographicon.com/view/elfu5 |title=Judy Garland&nbsp;– Biography |author=The Biographicon |access-date=2009-09-06 |url-status=dead |archive-url=https://web.archive.org/web/20100114173220/http://www.biographicon.com/view/elfu5 |archive-date=2010-01-14 }}</ref>
+
+[[Dorothy Dandridge]] became the first African American actress to receive a nomination for Best Actress.
+
+==Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Elia Kazan.JPG
+| caption1          = [[Elia Kazan]]; Best Director winner
+| image2            = Marlon Brando in The Men.jpg
+| caption2          = [[Marlon Brando]]; Best Actor winner
+| image3            =Grace Kelly MGM photo.jpg
+| caption3          = [[Grace Kelly]]; Best Actress winner
+| image4            = EdmondOBrien.jpg
+| caption4          = [[Edmond O'Brien]]; Best Supporting Actor winner
+| image5            = Eva_Marie_Saint_Promo_Portrait,_c._1951.jpg
+| caption5          = [[Eva Marie Saint]]; Best Supporting Actress winner
+| image6            = Budd Schulberg - 1967.jpg
+| caption6          = [[Budd Schulberg]]; Best Story and Screenplay winner
+| image7            = Walt Disney 1946.JPG
+| caption7          = [[Walt Disney]]; Best Documentary Feature winner
+| image8            = Sammy Cahn 1950s.JPG
+| caption8          = [[Sammy Cahn]]; Best Original Song co-winner
+| image9            = Greta Garbo by Clarence Sinclair Bull 1931.jpg
+| caption9          = [[Greta Garbo]]; [[Academy Honorary Award]] winner 
+}}
+
+=== Awards ===
+Nominees were announced on February 12, 1955. Winners are listed first and highlighted in boldface.<ref name="Oscars1955">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1955 |title=The 27th Academy Awards (1955) Nominees and Winners |access-date=2011-08-20 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093921/http://www.oscars.org/awards/academyawards/legacy/ceremony/27th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[On the Waterfront]] – ''[[Sam Spiegel]] for [[Columbia Pictures]]&nbsp;'''
+**''[[The Caine Mutiny (1954 film)|The Caine Mutiny]] – ''[[Stanley Kramer]] for [[Columbia Pictures]]
+**''[[The Country Girl (1954 film)|The Country Girl]] – ''[[William Perlberg]] for [[Paramount Pictures]]&nbsp;
+**''[[Seven Brides for Seven Brothers]] – ''[[Jack Cummings (director)|Jack Cummings]] for [[Metro-Goldwyn-Mayer]] 
+**''[[Three Coins in the Fountain (film)|Three Coins in the Fountain]] – ''[[Sol C. Siegel]] for [[20th Century Fox]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Director|Best Directing]]}}
+*'''[[Elia Kazan]]&nbsp;– ''[[On the Waterfront]]'''''
+**[[George Seaton]]&nbsp;– ''[[The Country Girl (1954 film)|The Country Girl]]''
+**[[William A. Wellman]]&nbsp;– ''[[The High and the Mighty (film)|The High and the Mighty]]''
+**[[Alfred Hitchcock]]&nbsp;– ''[[Rear Window]]''
+**[[Billy Wilder]]&nbsp;– ''[[Sabrina (1954 film)|Sabrina]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Marlon Brando]]&nbsp;– ''[[On the Waterfront]]'' as Terry Malloy'''
+**[[Humphrey Bogart]]&nbsp;– ''[[The Caine Mutiny (1954 film)|The Caine Mutiny]]'' as [[Lieutenant commander (United States)|Lieutenant Commander]] Philip Francis Queeg
+**[[Bing Crosby]]&nbsp;– ''[[The Country Girl (1954 film)|The Country Girl]]'' as Frank Elgin
+**[[James Mason]]&nbsp;– ''[[A Star Is Born (1954 film)|A Star Is Born]]'' as Norman Maine
+**[[Dan O'Herlihy]]&nbsp;– ''[[Robinson Crusoe (1954 film)|Robinson Crusoe]]'' as Robinson Crusoe
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Grace Kelly]]&nbsp;– ''[[The Country Girl (1954 film)|The Country Girl]]''  as Georgie Elgin'''
+**[[Dorothy Dandridge]]&nbsp;– ''[[Carmen Jones (film)|Carmen Jones]]'' as Carmen Jones
+**[[Judy Garland]]&nbsp;– ''[[A Star Is Born (1954 film)|A Star Is Born]]'' as Esther Blodgett
+**[[Audrey Hepburn]]&nbsp;– ''[[Sabrina (1954 film)|Sabrina]]'' as Sabrina Fairchild
+**[[Jane Wyman]]&nbsp;– ''[[Magnificent Obsession (1954 film)|Magnificent Obsession]]'' as Helen Phillips
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Edmond O'Brien]]&nbsp;– ''[[The Barefoot Contessa]]''  as Oscar Muldoon'''
+**[[Lee J. Cobb]]&nbsp;– ''[[On the Waterfront]]'' as Michael J. Skelly aka "Johnny Friendly"
+**[[Karl Malden]]&nbsp;– ''[[On the Waterfront]]'' as Father Barry
+**[[Rod Steiger]]&nbsp;– ''[[On the Waterfront]]'' as Charley "the Gent" Malloy
+**[[Tom Tully]]&nbsp;– ''[[The Caine Mutiny (1954 film)|The Caine Mutiny]]'' as Lieutenant Commander William H. De Vriess
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Eva Marie Saint]]&nbsp;– ''[[On the Waterfront]]''  as Edie Doyle'''
+**[[Nina Foch]]&nbsp;– ''[[Executive Suite]]'' as Erica Martin
+**[[Katy Jurado]]&nbsp;– ''[[Broken Lance]]'' as Señora Devereaux
+**[[Jan Sterling]]&nbsp;– ''[[The High and the Mighty (film)|The High and the Mighty]]'' as Sally McKee
+**[[Claire Trevor]]&nbsp;– ''[[The High and the Mighty (film)|The High and the Mighty]]'' as May Holst
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+*''' ''[[Broken Lance]]''&nbsp;– [[Philip Yordan]]'''
+**''[[Bread, Love and Dreams]]''&nbsp;– [[Ettore Maria Margadonna]]
+**''[[Forbidden Games]]''&nbsp;– [[François Boyer]]
+**''[[Night People (1954 film)|Night People]]''&nbsp;– [[Jed Harris]] and [[Tom Reed (screenwriter)|Tom Reed]]
+**''[[There's No Business Like Show Business (film)|There's No Business Like Show Business]]''&nbsp;– [[Lamar Trotti]] (posthumous nomination)
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay)]]}}
+*'''''[[On the Waterfront]]''&nbsp;– [[Budd Schulberg]]'''
+**''[[The Barefoot Contessa]]''&nbsp;– [[Joseph L. Mankiewicz]]
+**''[[Genevieve (film)|Genevieve]]''&nbsp;– [[William Rose (screenwriter)|William Rose]]
+**''[[The Glenn Miller Story]]''&nbsp;– [[Valentine Davies]] and [[Oscar Brodney]]
+**''[[Knock on Wood (film)|Knock on Wood]]''&nbsp;– [[Norman Panama]] and [[Melvin Frank]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[The Country Girl (1954 film)|The Country Girl]]''&nbsp;– [[George Seaton]] based on [[The Country Girl (1950 play)|the play]] by [[Clifford Odets]]'''
+**''[[The Caine Mutiny (1954 film)|The Caine Mutiny]]''&nbsp;– [[Stanley Roberts (screenwriter)|Stanley Roberts]] based on [[The Caine Mutiny|the novel]] by [[Herman Wouk]]
+**''[[Rear Window]]''&nbsp;– [[John Michael Hayes]] based on the story "It Had To Be Murder" by [[Cornell Woolrich]]
+**''[[Sabrina (1954 film)|Sabrina]]''&nbsp;– [[Billy Wilder]], [[Samuel A. Taylor]], and [[Ernest Lehman]] based on [[Sabrina Fair|the play]] by Taylor
+**''[[Seven Brides for Seven Brothers]]''&nbsp;– [[Albert Hackett]], [[Frances Goodrich]], and [[Dorothy Kingsley]] based on the story "[[The Sobbin' Women]]" by [[Stephen Vincent Benét]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[The Vanishing Prairie]]''&nbsp;– [[Walt Disney]]'''
+**''[[The Stratford Adventure]]''&nbsp;– [[Guy Glover]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Thursday's Children]]''&nbsp;– [[World Wide Pictures]] and Morse Films'''
+**''[[Jet Carrier]]''&nbsp;– [[Otto Lang (film producer)|Otto Lang]]
+**''[[Rembrandt: A Self-Portrait]]''&nbsp;– Morrie Roizman
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[This Mechanical Age]]''&nbsp;– [[Robert Youngson]]'''
+**''The First Piano Quartette''&nbsp;– [[Otto Lang (film producer)|Otto Lang]]
+**''The Strauss Fantasy''&nbsp;– [[Johnny Green]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[A Time Out of War]]''&nbsp;– [[Denis Sanders]] and [[Terry Sanders]]'''
+**''[[Beauty and the Bull]]''&nbsp;– Cedric Francis
+**''[[Jet Carrier]]''&nbsp;– [[Otto Lang (film producer)|Otto Lang]]
+**''Siam''&nbsp;– [[Walt Disney]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[When Magoo Flew]]''&nbsp;– [[Stephen Bosustow]]'''
+**''[[Crazy Mixed Up Pup]]''&nbsp;– [[Walter Lantz]]
+**''[[Pigs Is Pigs (1954 film)|Pigs Is Pigs]]''&nbsp;– [[Walt Disney]]
+**''[[Sandy Claws (film)|Sandy Claws]]''&nbsp;– [[Edward Selzer]]
+**''Touché, Pussy Cat!''&nbsp;– [[Fred Quimby]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*'''''[[The High and the Mighty (film)|The High and the Mighty]]''&nbsp;– [[Dimitri Tiomkin]]'''
+**''[[The Caine Mutiny (1954 film)|The Caine Mutiny]]''&nbsp;– [[Max Steiner]]
+**''[[Genevieve (film)|Genevieve]]''&nbsp;– [[Larry Adler]]
+**''[[On the Waterfront]]''&nbsp;– [[Leonard Bernstein]]
+**''[[The Silver Chalice (film)|The Silver Chalice]]''&nbsp;– [[Franz Waxman]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*'''''[[Seven Brides for Seven Brothers]]''&nbsp;– [[Adolph Deutsch]] and [[Saul Chaplin]]'''
+**''[[Carmen Jones (film)|Carmen Jones]]''&nbsp;– [[Herschel Burke Gilbert]]
+**''[[The Glenn Miller Story]]''&nbsp;– Joseph Gershenson and [[Henry Mancini]]
+**''[[A Star Is Born (1954 film)|A Star Is Born]]''&nbsp;– [[Ray Heindorf]]
+**''[[There's No Business Like Show Business (film)|There's No Business Like Show Business]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]] and [[Lionel Newman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[Three Coins in the Fountain (song)|Three Coins in the Fountain]]" from ''[[Three Coins in the Fountain (film)|Three Coins in the Fountain]]''&nbsp;– Music by [[Jule Styne]]; Lyrics by [[Sammy Cahn]]'''
+**"[[Count Your Blessings Instead of Sheep]]" from ''[[White Christmas (film)|White Christmas]]''&nbsp;– Music and Lyrics by [[Irving Berlin]]
+**"[[The High and the Mighty (1954 song)|The High and the Mighty]]" from ''[[The High and the Mighty (film)|The High and the Mighty]]''&nbsp;– Music by [[Dimitri Tiomkin]]; Lyrics by [[Ned Washington]]
+**"[[Hold My Hand (1953 song)|Hold My Hand]]" from ''[[Susan Slept Here]]''&nbsp;– Music and Lyrics by [[Jack Lawrence (songwriter)|Jack Lawrence]] and [[Richard Myers (songwriter)|Richard Myers]]
+**"[[The Man That Got Away]]" from ''[[A Star Is Born (1954 film)|A Star Is Born]]''&nbsp;– Music by [[Harold Arlen]]; Lyrics by [[Ira Gershwin]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[The Glenn Miller Story]]''&nbsp;– [[Leslie I. Carey]]'''
+**''[[Brigadoon (1954 film)|Brigadoon]]''&nbsp;– [[Wesley C. Miller]]
+**''[[The Caine Mutiny (1954 film)|The Caine Mutiny]]''&nbsp;– [[John P. Livadary]]
+**''[[Rear Window]]''&nbsp;– [[Loren L. Ryder]]
+**''[[Susan Slept Here]]''&nbsp;– [[John O. Aalberg]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[On the Waterfront]]''&nbsp;– Art Direction and Set Decoration: [[Richard Day (art director)|Richard Day]]'''
+**''[[The Country Girl (1954 film)|The Country Girl]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Roland Anderson]]; Set Decoration: [[Samuel M. Comer]] and [[Grace Gregory]]
+**''[[Executive Suite]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Edward Carfagno]]; Set Decoration: [[Edwin B. Willis]] and [[Emile Kuri]]
+**''[[Le Plaisir]]''&nbsp;– Art Direction and Set Decoration: [[Max Ophüls]]
+**''[[Sabrina (1954 film)|Sabrina]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Walter H. Tyler|Walter Tyler]]; Set Decoration: [[Samuel M. Comer]] and [[Ray Moyer]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[20,000 Leagues Under the Sea (1954 film)|20,000 Leagues Under the Sea]]''&nbsp;– Art Direction: [[John Meehan (art director)|John Meehan]]; Set Decoration: [[Emile Kuri]]'''
+**''[[Brigadoon (1954 film)|Brigadoon]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[E. Preston Ames]]; Set Decoration: [[Edwin B. Willis]] and [[F. Keogh Gleason|Keogh Gleason]]
+**''[[Désirée (film)|Désirée]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Leland Fuller]]; Set Decoration: [[Walter M. Scott]] and [[Paul S. Fox]]
+**''[[Red Garters (film)|Red Garters]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Roland Anderson]]; Set Decoration: [[Samuel M. Comer]] and [[Ray Moyer]]
+**''[[A Star Is Born (1954 film)|A Star Is Born]]''&nbsp;– Art Direction: [[Malcolm C. Bert|Malcolm Bert]], [[Gene Allen (art director)|Gene Allen]] and [[Irene Sharaff]]; Set Decoration: [[George James Hopkins]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[On the Waterfront]]''&nbsp;– [[Boris Kaufman]]'''
+**''[[The Country Girl (1954 film)|The Country Girl]]''&nbsp;– [[John F. Warren]]
+**''[[Executive Suite]]''&nbsp;– [[George Folsey (cinematographer)|George Folsey]]
+**''[[Rogue Cop]]''&nbsp;– [[John F. Seitz|John Seitz]]
+**''[[Sabrina (1954 film)|Sabrina]]''&nbsp;– [[Charles Lang]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[Three Coins in the Fountain (film)|Three Coins in the Fountain]]''&nbsp;– [[Milton Krasner]]'''
+**''[[The Egyptian (film)|The Egyptian]]''&nbsp;– [[Leon Shamroy]]
+**''[[Rear Window]]''&nbsp;– [[Robert Burks]]
+**''[[Seven Brides for Seven Brothers]]''&nbsp;– [[George Folsey (cinematographer)|George Folsey]]
+**''[[The Silver Chalice (film)|The Silver Chalice]]''&nbsp;– [[William V. Skall]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+*'''''[[Sabrina (1954 film)|Sabrina]]''&nbsp;– [[Edith Head]]'''
+**''[[The Earrings of Madame de...]]''&nbsp;– [[Yury Annenkov|Georges Annenkov]] and [[Rosine Delamare]]
+**''[[Executive Suite]]''&nbsp;– [[Helen Rose]]
+**''[[Terminal Station (film)|Indiscretion of an American Wife]]''&nbsp;– [[Christian Dior]]
+**''[[It Should Happen to You]]''&nbsp;– [[Jean Louis]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+*'''''[[Gate of Hell (film)|Gate of Hell]]''&nbsp;– [[Sanzo Wada]]'''
+**''[[Brigadoon (1954 film)|Brigadoon]]''&nbsp;– [[Irene Sharaff]]
+**''[[Désirée (film)|Désirée]]''&nbsp;– [[Charles LeMaire]] and [[René Hubert (costume designer)|René Hubert]]
+**''[[A Star Is Born (1954 film)|A Star Is Born]]''&nbsp;– [[Jean Louis]], [[Mary Ann Nyberg]] and [[Irene Sharaff]]
+**''[[There's No Business Like Show Business (film)|There's No Business Like Show Business]]''&nbsp;– [[Charles LeMaire]], [[William Travilla|Travilla]] and [[Miles White]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[On the Waterfront]]''&nbsp;– [[Gene Milford]]'''
+**''[[20,000 Leagues Under the Sea (1954 film)|20,000 Leagues Under the Sea]]''&nbsp;– [[Elmo Williams]]
+**''[[The Caine Mutiny (1954 film)|The Caine Mutiny]]''&nbsp;– [[William Lyon (film editor)|William A. Lyon]] and [[Henry Batista]]
+**''[[The High and the Mighty (film)|The High and the Mighty]]''&nbsp;– [[Ralph Dawson]]
+**''[[Seven Brides for Seven Brothers]]''&nbsp;– [[Ralph E. Winters]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*'''''[[20,000 Leagues Under the Sea (1954 film)|20,000 Leagues Under the Sea]]''&nbsp;– [[Walt Disney Pictures|Walt Disney Studios]]'''
+**''[[Hell and High Water (1954 film)|Hell and High Water]]''&nbsp;– [[20th Century Studios|20th Century-Fox Studio]]
+**''[[Them!]]''&nbsp;– [[Warner Bros. Pictures|Warner Bros. Studio]]
+|}
+
+===Honorary Foreign Language Film Award===
+* To ''[[Gate of Hell (film)|Gate of Hell]]'' ([[Japan]]) - Best Foreign Language Film first released in the United States during 1954.
+
+===Honorary Awards===
+*To [[Bausch and Lomb Optical|Bausch & Lomb Optical Company]] for their contributions to the advancement of the motion picture industry.
+*To Kemp R. Niver for the development of the Renovare Process which has made possible the restoration of the Library of Congress Paper Film Collection. 
+*To [[Greta Garbo]] for her unforgettable screen performances.
+*To [[Danny Kaye]]  for his unique talents, his service to the Academy, the motion picture industry, and the American people.
+*To [[Jon Whiteley]] for his outstanding juvenile performance in ''[[The Kidnappers|The Little Kidnappers]]''.
+*To [[Vincent Winter]] for his outstanding juvenile performance in ''[[The Kidnappers|The Little Kidnappers]]''.
+
+==Presenters and performers==
+{{Refimprove|section|date=September 2015}}
+[[File:Grace Kelly and Marlon Brando at the 1955 Academy Awards.jpg|thumb|right|[[Grace Kelly]] with [[Marlon Brando]] at the Academy Awards in 1955]]
+
+===Presenters===
+*[[Grace Kelly]] (Presenter: Documentary Awards)
+*[[Donna Reed]] (Presenter: Best Supporting Actor)
+*[[Lee J. Cobb]] (Presenter: Best Special Effects)
+*[[Dorothy Dandridge]] (Presenter: Best Film Editing)
+*[[Nina Foch]] and [[Jane Wyman]] (Presenters: Costume Design Awards)
+*[[Dan O'Herlihy]] and [[Jan Sterling]] (Presenters: Art Direction Awards)
+*[[Humphrey Bogart]] (Presenter: Best Cinematography, Black-and-White)
+*[[Katy Jurado]] (Presenter: Best Cinematography, Color)
+*Jean Marie Ingels (Presenter: Best Foreign Language Film)
+*[[Charles Brackett]] (Presenter: Honorary Awards)
+*[[Merle Oberon]] (Presenter: Honorary Awards&nbsp;— Juvenile Performances)
+*[[Lauren Bacall]] (Presenter: Scientific and Technical Awards)
+*[[Marlon Brando]] (Presenter: Best Director)
+*[[Audrey Hepburn]], [[Karl Malden]], and [[Claire Trevor]] (Presenters: Writing Awards)
+*[[Bing Crosby]] (Presenter: Music Awards)
+*[[Frank Sinatra]] (Presenter: Best Supporting Actress)
+*[[William Holden]] (Presenter: Best Actress)
+*[[Bette Davis]] (Presenter: Best Actor)
+*[[Edmond O'Brien]], [[Eva Marie Saint]], and [[Rod Steiger]] (Presenters: Short Subjects Awards)
+*[[Tom Tully]] (Presenter: Best Sound Recording)
+*[[Buddy Adler]] (Presenter: Best Picture)
+
+===Performers===
+*[[David Rose (songwriter)|David Rose]] (musical director)
+*[[Rosemary Clooney]] ("[[The Man That Got Away]]" from ''[[A Star Is Born (1954 film)|A Star Is Born]]'')
+*[[Johnny Desmond]] and [[Muzzy Marcellino]] ("[[The High and the Mighty (1954 song)|The High and the Mighty]]" from ''[[The High and the Mighty (film)|The High and the Mighty]]'')
+*[[Peggy King]] ("[[Count Your Blessings (Instead of Sheep)|Count Your Blessings Instead of Sheep]]" from ''[[White Christmas (film)|White Christmas]]'')
+*[[Dean Martin]] ("[[Three Coins in the Fountain (song)|Three Coins in the Fountain]]" from ''[[Three Coins in the Fountain (film)|Three Coins in the Fountain]]'')
+*[[Tony Martin (American singer)|Tony Martin]] ("[[Hold My Hand (1953 song)|Hold My Hand]]" from ''[[Susan Slept Here]]'')
+
+==Multiple nominations and awards==
+{{Col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 12
+| ''[[On the Waterfront]]''
+|-
+| rowspan="2" style="text-align:center" | 7
+| ''[[The Caine Mutiny (1954 film)|The Caine Mutiny]]''
+|-
+| ''[[The Country Girl (1954 film)|The Country Girl]]''
+|-
+| rowspan="3" style="text-align:center" | 6
+| ''[[The High and the Mighty (film)|The High and the Mighty]]''
+|-
+| ''[[Sabrina (1954 film)|Sabrina]]''
+|-
+| ''[[A Star Is Born (1954 film)|A Star Is Born]]''
+|-
+| rowspan="1" style="text-align:center" | 5
+| ''[[Seven Brides for Seven Brothers]]''
+|-
+|rowspan="2" style="text-align:center" |4
+| ''[[Executive Suite]]''
+|-
+| ''[[Rear Window]]''
+|-
+| rowspan=5, style="text-align:center" | 3
+| ''[[20,000 Leagues Under the Sea (1954 film)|20,000 Leagues Under the Sea]]''
+|-
+| ''[[Brigadoon (1954 film)|Brigadoon]]''
+|-
+| ''[[The Glenn Miller Story]]''
+|-
+| ''[[There's No Business Like Show Business (film)|There's No Business Like Show Business]]''
+|-
+| ''[[Three Coins in the Fountain (film)|Three Coins in the Fountain]]''
+|-
+| rowspan=8, style="text-align:center" | 2
+| ''[[The Barefoot Contessa]]''
+|-
+| ''[[Broken Lance]]''
+|-
+| ''[[Carmen Jones (film)|Carmen Jones]]''
+|-
+| ''[[Désirée (film)|Désirée]]''
+|-
+| ''[[Genevieve (film)|Genevieve]]''
+|-
+| ''[[Jet Carrier]]''
+|-
+| ''[[The Silver Chalice (film)|The Silver Chalice]]''
+|- 
+| ''[[Susan Slept Here]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 8
+| ''[[On the Waterfront]]''
+|-
+| rowspan=3, style="text-align:center" | 2
+| ''[[20,000 Leagues Under the Sea (1954 film)|20,000 Leagues Under the Sea]]''
+|-
+| ''[[The Country Girl (1954 film)|The Country Girl]]''
+|-
+| ''[[Three Coins in the Fountain (film)|Three Coins in the Fountain]]''
+|-
+|}
+
+{{Col-float-end}}
+
+==See also==
+{{Portal|Film|United States}}
+*[[12th Golden Globe Awards]]
+*[[1954 in film]]
+* [[6th Primetime Emmy Awards]]
+* [[7th Primetime Emmy Awards]]
+* [[8th British Academy Film Awards]]
+* [[9th Tony Awards]]
+
+==References==
+{{reflist}}
+
+==External links==
+* [http://www.filmsite.org/aa54.html 1954 Academy Awards Winners and History]
+* [https://www.imdb.com/event/ev0000003/1954 1954 Academy Awards] at the [[Internet Movie Database]]
+* {{IMDb title|tt0338682|The 27th Academy Awards}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 27}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1954 film awards]]
+[[Category:1954 awards in the United States]]
+[[Category:1955 in Los Angeles]]
+[[Category:1955 in New York City]]
+[[Category:1955 in American cinema]]
+[[Category:March 1955 in the United States]]
+[[Category:Organized events in New York City]]
+[[Category:1950s in Manhattan]]

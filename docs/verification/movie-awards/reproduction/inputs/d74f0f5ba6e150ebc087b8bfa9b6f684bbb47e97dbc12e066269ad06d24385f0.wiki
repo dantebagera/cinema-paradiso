@@ -1,0 +1,259 @@
+{{Oscars short description|films-year=1927|films-year2=1928}}
+{{Featured list}}
+{{Use American English|date=February 2012}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number = 1
+| award = Academy Awards
+| image = 1stOscars 1929.jpg
+| caption = The first Academy Awards ceremony ''(pictured)'' was held at [[the Hollywood Roosevelt Hotel]].
+| alt = Large, ornate room, filled with people in formal dress sitting at different tables.
+| date = {{Start date|1929|05|16}}
+| site = [[Hollywood Roosevelt Hotel]]<br />[[Hollywood, Los Angeles]], California, U.S.
+| host = [[Douglas Fairbanks]]
+| best_picture = ''[[Wings (1927 film)|Wings]]''<ref name="special">{{Cite web |url=https://www.oscars.org/oscars/ceremonies/1929/memorable-moments|title=The 1st Academy Awards Memorable Moments|publisher=[[Academy of Motion Picture Arts and Sciences]]|access-date=February 25, 2021|url-status=live|archive-date=January 4, 2021|archive-url=https://web.archive.org/web/20210104224149/https://www.oscars.org/oscars/ceremonies/1929/memorable-moments}}</ref>
+| most_wins = ''[[7th Heaven (1927 film)|7th&nbsp;Heaven]]'' and ''[[Sunrise: A Song of Two Humans|Sunrise]]'' (3 each)
+| most_nominations = ''7th&nbsp;Heaven'' (5)
+| next = 2nd
+}}
+
+The '''1st&nbsp;Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS) and hosted by AMPAS president [[Douglas Fairbanks]], honored the best [[1927 in film|films from August{{nbsp}}1, 1927]], to [[1928 in film|July{{nbsp}}31, 1928]], and took place on May&nbsp;16, 1929, at a private dinner held at [[the Hollywood Roosevelt Hotel]] in [[Los&nbsp;Angeles]], California. Tickets cost $5 (${{Inflation|US|5|1929}} in {{Inflation-year|US}}, considering inflation); 270 people attended the event, which lasted 15&nbsp;minutes. It is the only Academy Awards ceremony not broadcast on either radio or television;<ref name="Oscars '27-28 Notes"/> a radio broadcast was introduced for the [[2nd&nbsp;Academy Awards]].<ref>{{Cite web |url=https://www.oscars.org/oscars/ceremonies/1930/memorable-moments|title=The 2nd Academy Awards Memorable Moments|publisher=Academy of Motion Picture Arts and Sciences|access-date=February 25, 2021|url-status=live|archive-date=January 4, 2021|archive-url=https://web.archive.org/web/20210104221602/https://www.oscars.org/oscars/ceremonies/1930/memorable-moments}}</ref>
+
+During the ceremony, AMPAS presented [[Academy Awards]] {{ndash}} later to be colloquially known as "Oscars" {{ndash}} in 12 categories. The winners had been announced three months ahead of the ceremony. Some nominations did not reference a specific film, such as [[Ralph Hammeras]] and [[Nugent Slaughter]], who were nominated for Engineering Effects, a category that was dropped the following year {{ndash}} along with those for Unique and Artistic Production, Best Director (Comedy), and Best Title Writing.<ref name="data"/> Unlike later ceremonies, an actor could be awarded for multiple films: [[Emil Jannings]] won [[Academy Award for Best Actor|Best Actor]] for his work in both ''[[The Way of All Flesh (1927 film)|The Way of All Flesh]]'' and ''[[The Last Command (1928 film)|The Last Command]]'', while [[Academy Award for Best Actress|Best Actress]] winner [[Janet Gaynor]] was honored for three films. [[Charlie Chaplin]] and [[Warner Bros.|Warner Brothers]] each received an honorary award.<ref name="aa"/><ref name="dirk"/> Jannings, a Swiss-born performer who gained fame in Berlin, had been notified in advance of his victory; he subsequently posed for pictures with his statuette before leaving for Germany.<ref name="Oscars '27-28 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/830/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=831 |isbn=0-385-04060-1}}</ref>
+
+Major winners at the ceremony included ''[[7th Heaven (1927 film)|7th&nbsp;Heaven]]'' and ''[[Sunrise: A Song of Two Humans|Sunrise]]'', with three awards apiece (the latter winning for Unique and Artistic Picture), and ''[[Wings (1927 film)|Wings]]'' receiving two awards, including [[Academy Award for Best Picture|Outstanding Picture]]. The academy decided retroactively that ''Wings''{{'s}} award was its highest honor the following year and dropped Unique and Artistic Picture.<ref name="data">{{cite web |title=The Official Academy Awards Database |publisher=Academy of Motion Picture Arts and Sciences |url=http://awardsdatabase.oscars.org/ |access-date=November 11, 2019 |archive-date=December 23, 2017 |archive-url=https://web.archive.org/web/20171223043220/http://awardsdatabase.oscars.org/ |url-status=live }} Reader must select "1927/28" in the "Award Year(s):" drop-down menu and press "Search".</ref>
+
+== Background ==
+[[Louis B. Mayer]], the founder of the Louis B. Mayer Pictures Corporation, which would later merge into [[Metro-Goldwyn-Mayer]] (MGM), established the Academy of Motion Picture Arts and Sciences (AMPAS) in 1927. Mayer's purpose in creating the award was to unite the five branches of the film industry: actors, directors, producers, technicians, and writers.<ref name="MFEO">{{harvnb|Cosgrave|2007|p=1}}</ref> Mayer commented on the creation of the awards: "I found that the best way to handle [filmmakers] was to hang medals all over them&nbsp;... If I got them cups and awards, they'd kill themselves to produce what I wanted. That's why the Academy Award was created."<ref>{{harvnb|Eyman|2005|p=117}}</ref> Mayer asked [[Cedric Gibbons]], [[art director]] of MGM, to design an [[Academy Awards|Academy Award]] trophy.<ref name="MFEO"/><ref>{{harvnb|Eyman|2005|p=209}}</ref> Nominees were notified through [[a telegram]] in February&nbsp;1928.<ref name="MFEO"/> In August&nbsp;1928, Mayer contacted the first Academy Central Board of Judges to decide the winners.<ref name="MFEO"/> However, according to the American director [[King Vidor]], the voting for the Academy Award for Best Picture was in the hands of the AMPAS founders: Mayer, Douglas Fairbanks, [[Sid Grauman]], [[Mary Pickford]], and [[Joseph Schenck]].<ref>{{harvnb|Eyman|2005|p=138}}</ref>
+
+== Ceremony ==
+The ceremony was held on May&nbsp;16, 1929,<ref name="aa"/><ref name="dirk"/><ref name="debra"/> at the Hollywood Roosevelt Hotel, located in Los&nbsp;Angeles.<ref name="aa"/> It consisted of a private dinner with 36 banquet tables,<ref name="MFEO2"/> where 270 people attended, and tickets cost $5 ({{Inflation|US|5|1929|r=0|fmt=eq}}).<ref name="aa">{{cite web|url=https://www.oscars.org/nicholl/history |access-date=May 6, 2010 |publisher=Academy of Motion Picture Arts and Sciences |title=History of the Academy Awards |archive-url=https://web.archive.org/web/20100408194217/http://www.oscars.org/awards/academyawards/about/history.html |archive-date=April 8, 2010 |url-status=live }}</ref> Actors and actresses arrived at the hotel in luxury vehicles, and gathered outside to cheer the attendees.<ref name="MFEO2">{{harvnb|Cosgrave|2007|p=4}}</ref> The ceremony was not broadcast on radio,<ref name="aa"/> and was hosted by AMPAS president Fairbanks<ref name="aa"/><ref name="dirk"/><ref name="peop">{{cite magazine|url=http://www.time.com/time/magazine/article/0,9171,927950,00.html |title=People: May 27, 1929 |magazine=[[Time (magazine)|Time]] |publisher=[[Time Inc.]] |access-date=October 5, 2010 |date=May 27, 1929 |archive-url=https://web.archive.org/web/20101027220628/http://www.time.com/time/magazine/article/0%2C9171%2C927950%2C00.html |archive-date=October 27, 2010 |url-status=dead }}</ref> during a {{nowrap|15-minute}} event.<ref name="debra"/>
+
+=== Overview ===
+[[File:Janet Gaynor with Group 1929.jpg|thumb|Members of the [[Academy of Motion Picture Arts and Sciences]] (AMPAS) in 1929. [[Janet Gaynor]] (center) holds her statuette for [[Academy Award for Best Actress|Best Actress]].|alt=Group photograph showing several men and one woman standing together. They pose closely, facing the camera.]]
+The winners were announced three months before the ceremony.<ref name="aa"/><ref name="dirk"/><ref name="debra"/> The recipients included: Emil Jannings, the inaugural award recipient<ref name="aa"/> for [[Academy Award for Best Actor|Best Actor]] (''The Way of All Flesh'' and ''The Last Command)'';<ref name="dirk">{{cite web|title=1927–28 Academy Awards Winners and History |first=Tim |last=Dirks |website=[[Filmsite]]|publisher=[[Rainbow Media]] |url=https://www.filmsite.org/aa27.html |access-date=May 6, 2010 |url-status=live |archive-url=https://web.archive.org/web/20100724204258/http://www.filmsite.org/aa27.html |archive-date=July 24, 2010 }}</ref><ref name="debra">{{cite web |url-status=usurped |title=The Story of the First Academy Awards |website=The MediaDrome |first=Debra Ann |last=Pawlak |url=https://www.themediadrome.com/content/articles/film_articles/first_academy_awards.shtml |archive-url=https://web.archive.org/web/20050315222027/http://www.themediadrome.com/content/articles/film_articles/first_academy_awards.shtml |archive-date=March 15, 2005}}</ref> [[Janet Gaynor]] for [[Academy Award for Best Actress|Best Actress]] (''7th Heaven'', ''[[Street Angel (1928 film)|Street Angel]]'', and ''Sunrise: A Song of Two Humans''); [[Frank Borzage]] for [[Academy Award for Best Director|Best Director, Drama]] (''7th Heaven''); [[Lewis Milestone]] for Best Director, Comedy (''[[Two Arabian Knights]]''); and ''Wings'' for Best Picture ([[List of most expensive films|which was the most expensive film produced up to that time]]).<ref name="data"/> 
+
+Two [[Academy Awards|Special Award]] were also presented, to Charles Chaplin and Warner Bros. Chaplin, who was nominated multiple times for the 1928 film ''[[The Circus (1928 film)|The Circus]]'' (Best Actor, Best Writer, and Best Director, Comedy), was instead honored for his overall contribution to the industry,<ref name="dirk"/> while Warner Bros. was awarded for pioneering talking pictures with ''[[The Jazz Singer]]'' (1927).<ref name="aa"/>
+
+Three categories were eliminated for subsequent presentations: Best Engineering Effects, Best Title Writing, and Best Unique and Artistic Quality of Production.<ref name="data"/> The major film studios received the majority of awards: [[Fox Film|Fox Film Corporation]], Metro-Goldwyn-Mayer, [[Paramount Pictures]], [[RKO Pictures|Radio-Keith-Orpheum]], and Warner Bros.<ref name="MFEO"/>
+
+== Winners and nominees ==
+=== Awards ===
+At the 1st&nbsp;Academy Awards (1927{{ndash}}1928), the nomination process allowed candidates to be nominated and awarded for a single film, multiple films, or without reference to any specific film.
+
+Nominees were announced on February 2, 1929. Winners are listed first, in boldface.<ref>{{Cite web |url=https://www.oscars.org/oscars/ceremonies/1929|title=The 1st Academy Awards |date=October 8, 2014 |publisher=Academy of Motion Picture Arts and Sciences|access-date=February 25, 2021|url-status=live|archive-date=February 18, 2021|archive-url=https://web.archive.org/web/20210218184947/https://www.oscars.org/oscars/ceremonies/1929}}</ref>
+
+{{multiple image
+| align       = right
+| direction   = vertical
+| total_width = 150
+| image1      = Frank Borzage Best Dramatic Director 1929.jpg
+| caption1    = [[Frank Borzage]], Best Directing (Dramatic Picture) winner
+| alt1        = A picture of Frank Borzage with an Oscar statuette. He wears a suit.
+| image2      = Lewis Milestone Best Comedy Director 1929.jpg
+| caption2    = [[Lewis Milestone]], Best Directing (Comedic Picture) winner
+| alt2        = A picture of Lewis Milestone with an Oscar statuette. He wears a suit
+| image3      = Emil Jannings - no watermark.jpg
+| caption3    = [[Emil Jannings]], Best Actor winner
+| alt3        = A portrait of Emil Jannings. He wears a suit.
+| image4      = Janet Gaynor Argentinean Magazine AD.jpg
+| caption4    = [[Janet Gaynor]], Best Actress winner
+| alt4        = The image of a smiling Janet Gaynor. She is wearing a light-colored blouse.
+| image5      = Benjamin Glazer September 1927.jpg
+| caption5    = [[Benjamin Glazer]], Best Adapted Screenplay winner
+| alt5        = A portrait of Benjamin Glazer in a spotted bowtie.
+}}
+
+{| class=wikitable
+|-
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Picture]]}}
+*  '''''[[Wings (1927 film)|Wings]]'' {{ndash}} [[Paramount Pictures|Paramount Famous Lasky]]'''
+** ''[[The Racket (1928 film)|The Racket]]'' {{ndash}} The Caddo Company
+** ''[[7th Heaven (1927 film)|7th&nbsp;Heaven]]'' {{ndash}} [[Fox Film|Fox]]
+| valign="top"  width="50%" | {{Award category|#F9EFAA|Best Unique and Artistic Picture}}
+*  '''''[[Sunrise: A Song of Two Humans|Sunrise]]'' {{ndash}} [[Fox Film|Fox]]'''
+** ''[[Chang: A Drama of the Wilderness|Chang]]'' {{ndash}} [[Paramount Pictures|Paramount Famous Lasky]]
+** ''[[The Crowd (1928 film)|The Crowd]]'' {{ndash}} [[Metro-Goldwyn-Mayer]]
+|-
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing (Dramatic Picture)]]}}
+*  '''[[Frank Borzage]]''' {{ndash}} '''''[[7th Heaven (1927 film)|7th&nbsp;Heaven]]'''''
+** [[Herbert Brenon]] {{ndash}} ''[[Sorrell and Son (1927 film)|Sorrell and Son]]''
+** [[King Vidor]] {{ndash}} ''[[The Crowd (1928 film)|The Crowd]]''
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing (Comedy Picture)]]}}
+*  '''[[Lewis Milestone]]''' {{ndash}} '''''[[Two Arabian Knights]]'''''
+** [[Charlie Chaplin|Charles Chaplin]] {{ndash}} ''[[The Circus (1928 film)|The Circus]]''{{efn-ua|name=ChaplinNote|''[[The Circus (1928 film)|The Circus]]'' originally received three nominations: Best Director (Comedy Picture), Best Actor, and Best Writing (Original Story) {{ndash}} for [[Charlie Chaplin|Charles Chaplin]].  However, the [[Academy of Motion Picture Arts and Sciences|Academy]] subsequently decided to remove Chaplin's name from the competitive award categories and instead to confer upon him a [[Academy Honorary Award|Special Award]] "for acting, writing, directing and producing ''The Circus''".<ref>{{cite web|url=https://www.telegraph.co.uk/films/2016/05/16/the-first-oscars-what-happened-in-1929/|first=Martin|last=Chilton|newspaper=[[The Daily Telegraph]]|title=The first Oscars: what happened in 1929|access-date=February 25, 2021|url-access=subscription|date=May 16, 2016|url-status=live|archive-date=May 19, 2016|archive-url=https://web.archive.org/web/20160519015239/https://www.telegraph.co.uk/films/2016/05/16/the-first-oscars-what-happened-in-1929/}}</ref>}}
+** [[Ted Wilde]] {{ndash}} ''[[Speedy (film)|Speedy]]''
+|-
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*  '''[[Emil Jannings]]''' {{ndash}} '''''[[The Last Command (1928 film)|The Last Command]]''''' '''as General Dolgorucki (Grand Duke Sergius Alexander)''' and '''''[[The Way of All Flesh (1927 film)|The Way of All Flesh]]''''' '''as August Schilling'''
+** [[Richard Barthelmess]] {{ndash}} ''[[The Noose (film)|The Noose]]'' as Nickie Elkins and ''[[The Patent Leather Kid]]'' as The Patent Leather Kid
+** [[Charlie Chaplin|Charles Chaplin]] {{ndash}} ''[[The Circus (1928 film)|The Circus]]'' as [[The Tramp|A Tramp]]{{efn-ua|name=ChaplinNote}}
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*  '''[[Janet Gaynor]]''' {{ndash}} '''''[[7th Heaven (1927 film)|7th&nbsp;Heaven]]'' as Diane''', '''''[[Street Angel (1928 film)|Street Angel]]'' as Angela''', and '''''[[Sunrise: A Song of Two Humans|Sunrise]]'' as The Wife'''
+** [[Louise Dresser]] {{ndash}} ''[[A Ship Comes In]]'' as Mrs. Pleznik
+** [[Gloria Swanson]] {{ndash}} ''[[Sadie Thompson (film)|Sadie Thompson]]'' as Sadie Thompson
+|-
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+*  '''''[[Underworld (1927 film)|Underworld]]''''' {{ndash}} '''[[Ben Hecht]]'''
+** ''[[The Circus (1928 film)|The Circus]]'' {{ndash}} [[Charlie Chaplin|Charles Chaplin]]{{efn-ua|name=ChaplinNote}}
+** ''[[The Last Command (1928 film)|The Last Command]]'' {{ndash}} [[Lajos Bíró|Lajos Biro]]
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adaptation)]]}}
+*  '''''[[7th Heaven (1927 film)|7th&nbsp;Heaven]]''''' {{ndash}} '''[[Benjamin Glazer]]'''
+** ''[[Glorious Betsy]]'' {{ndash}} [[Anthony Coldeway]]
+** ''[[The Jazz Singer]]'' {{ndash}} [[Alfred A. Cohn|Alfred Cohn]]
+|-
+| valign="top"  width="50%" | {{Award category|#F9EFAA|Best Writing (Title Writing)}}
+*  '''[[Joseph W. Farnham|Joseph Farnham]]''' – no specific film
+** [[Gerald Duffy]]{{efn-ua|[[Gerald Duffy]]'s nomination for Best Writing (Title Writing) was a [[List of posthumous Academy Award winners and nominees|posthumous nomination]].<ref>{{cite web|url=https://www.latimes.com/entertainment/movies/la-ca-mn-oscars-august-wilson-posthumous-nominees-20170213-story.html|title=August Wilson is in good company among posthumous Oscar nominees and winners|newspaper=Los Angeles Times|first=Susan|last=King|date=February 24, 2017|access-date=February 25, 2021 |url-status=live|archive-date=November 12, 2020|archive-url=https://web.archive.org/web/20201112011657/https://www.latimes.com/entertainment/movies/la-ca-mn-oscars-august-wilson-posthumous-nominees-20170213-story.html|url-access=subscription}}</ref>}} ''– [[The Private Life of Helen of Troy]]''
+** [[George Marion Jr.]] – no specific film
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*  '''''[[The Dove (1927 film)|The Dove]]''''' {{ndash}} '''[[William Cameron Menzies]]'''
+*  '''''[[Tempest (1928 film)|Tempest]]''''' {{ndash}} '''[[William Cameron Menzies]]'''
+** ''[[7th Heaven (1927 film)|7th&nbsp;Heaven]]'' {{ndash}} [[Harry Oliver]]
+** ''[[Sunrise: A Song of Two Humans|Sunrise]]'' {{ndash}} [[Rochus Gliese]]
+|-
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*  '''''[[Sunrise: A Song of Two Humans|Sunrise]]''''' {{ndash}} '''[[Charles Rosher]] and [[Karl Struss]]'''
+** ''[[The Devil Dancer]]'' {{ndash}} [[George Barnes (cinematographer)|George Barnes]]
+** ''[[The Magic Flame]]'' {{ndash}} [[George Barnes (cinematographer)|George Barnes]]
+** ''[[Sadie Thompson (film)|Sadie Thompson]]'' {{ndash}} [[George Barnes (cinematographer)|George Barnes]]
+| valign="top"  width="50%" | {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Engineering Effects]]}}
+*  '''''[[Wings (1927 film)|Wings]]''''' {{ndash}} '''[[Roy Pomeroy]]'''
+** No specific film {{ndash}} [[Ralph Hammeras]]
+** No specific film {{ndash}} [[Nugent Slaughter]]
+|}
+; Notes
+{{Notelist-ua|120em}}
+
+=== Special awards ===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Charlie Chaplin in unknown year.jpg
+| caption1          = [[Charlie Chaplin|Charles Chaplin]], Honorary Award
+| alt1              = Portrait of Charles Chaplin in the early 1900s
+| image2            = Warner Bros 1920.jpg
+| caption2          = [[Warner Bros.|Warner Brothers Production]], Honorary Award. First National Studios, Burbank (c. 1928) pictured
+| alt2              = First National Studios, Burbank, circa 1928. It can be appreciate the first company buildings.
+}}
+
+The following [[Academy Honorary Award|Honorary Awards]] {{ndash}} then called Special Awards {{ndash}} were conferred:
+
+* To [[Charlie Chaplin|Charles Chaplin]] for acting, writing, directing and producing ''[[The Circus (1928 film)|The Circus]]''.<ref name="aa"/>
+* To [[Warner Bros.]] for producing ''[[The Jazz Singer]]'', the pioneer outstanding talking picture, which has revolutionized the industry.<ref name="aa"/>
+
+== Multiple nominations and awards ==
+
+{{Col-begin|width=80%}}
+{{Col-1-of-2}}
+The following six films received multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 5
+| ''[[7th Heaven (1927 film)|7th Heaven]]''
+|-
+| style="text-align: center;" | 4
+| ''[[Sunrise: A Song of Two Humans]]''
+|-
+| style="text-align: center;" | 3
+| ''[[The Circus (1928 film)|The Circus]]''<br>(Withdrawn nominations)
+|-
+|rowspan=4 style="text-align:center" | 2
+| ''[[The Crowd (1928 film)|The Crowd]]''
+|-
+| ''[[The Last Command (1928 film)|The Last Command]]''
+|-
+| ''[[Sadie Thompson (film)|Sadie Thompson]]''
+|-
+| ''[[Wings (1927 film)|Wings]]''
+|}
+
+{{Col-2-of-2}}
+The following three films received multiple awards:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+|rowspan=2 style="text-align:center" | 3
+| ''[[7th Heaven (1927 film)|7th Heaven]]''
+|-
+| ''[[Sunrise: A Song of Two Humans]]''
+|-
+| style="text-align: center;" | 2
+| ''[[Wings (1927 film)|Wings]]''
+|}
+{{Col-end}}
+
+== Changes to Academy Awards ==
+After the 1st&nbsp;Academy Awards (1927{{ndash}}1928), the following changes were made by the AMPAS:
+
+* Award categories were reduced from twelve to seven:<ref name=vulture/>
+** The awards for Best Directing (Comedy Picture) and Best Directing (Dramatic Picture) were merged into a single Best Directing award.<ref name=vulture>{{cite web|url=https://vulture.com/2019/02/what-happened-to-oscars-dedicated-to-comedy.html|title=What Happened to Oscars Dedicated to Comedy (and Should They Be Brought Back)?|first=Ramsey|last=Ess|publisher=[[Vulture.com]]|date=February 22, 2019|url-status=live|archive-date=January 25, 2021|archive-url=https://web.archive.org/web/20210125075421/https://www.vulture.com/2019/02/what-happened-to-oscars-dedicated-to-comedy.html|access-date=February 25, 2021}}</ref>
+** The award for Best Engineering Effects was discontinued.<ref name=yahoo>{{cite web|url=https://www.yahoo.com/now/10-oscars-categories-were-discontinued-slideshow-wp-105424704/photo-p-given-once-once-only-photo-105424769.html|title=10 weird Oscars categories that were discontinued|first=Hanna|last=Flint|publisher=[[Yahoo!]]|date=February 20, 2019|access-date=February 25, 2021|url-status=dead|archive-date=February 26, 2021|archive-url=https://web.archive.org/web/20210226021227/https://www.yahoo.com/now/10-oscars-categories-were-discontinued-slideshow-wp-105424704/photo-p-given-once-once-only-photo-105424769.html}}</ref>
+** The award for Best Unique and Artistic Picture was discontinued.<ref name=yahoo/>
+** The awards for Best Writing (Adaptation) and Best Writing (Original Story) were merged into a single Best Writing award.<ref>{{Cite web |url=https://www.oscars.org/oscars/ceremonies/1930|title=The 2nd Academy Awards|publisher=Academy of Motion Picture Arts and Sciences|access-date=January 2, 2021|url-status=live|archive-date=January 2, 2021|archive-url=https://web.archive.org/web/20210102231842/https://www.oscars.org/oscars/ceremonies/1930}}</ref>  These categories would be separated again for the [[4th Academy Awards]].
+** The award for Best Writing (Title Writing) was discontinued.<ref name=yahoo/>
+
+== Gallery ==
+{{Gallery
+|title=Academy Award-winning and nominated films – 1st Academy Awards
+|width=165
+|height=175
+|File:Wings (1927).webm|The full film of ''[[Wings (1927 film)|Wings]]''. It is the first film to win the Academy Award for Best Picture, which was at the time known as Outstanding Picture. Also won an award for the Best Engineering Effects.
+|File:Sunrise - A Song of Two Humans (1927).webm|The full film of ''[[Sunrise: A Song of Two Humans]]''. It won the Academy Award for Best Unique and Artistic Picture, the only year that such a prize was awarded. The prize was intended to honor prestige [[art film]]s separately from "commercial fare".<ref>{{cite book|url=https://books.google.com/books?id=zYspVgLeX0UC&q=%22Best+Unique+and+Artistic+Picture%22&pg=PA69|title=Hollywood and the Culture Elite: How the Movies Became American|page=69|first=Peter|last=Decherney|date=August 14, 2012|publisher=Columbia University Press|via=Google Books|isbn=9780231508513|access-date=April 10, 2021|archive-date=November 21, 2023|archive-url=https://web.archive.org/web/20231121131522/https://books.google.com/books?id=zYspVgLeX0UC&q=%22Best+Unique+and+Artistic+Picture%22&pg=PA69#v=snippet&q=%22Best%20Unique%20and%20Artistic%20Picture%22&f=false|url-status=live}}</ref>
+|File:7th Heaven (1927).webm|The full film of ''[[7th Heaven (1927 film)|7th Heaven]]''
+|File:The Crowd (1928).webm|The full film of ''[[The Crowd (1928 film)|The Crowd]]''
+}}
+
+== See also ==
+{{portal|Film}}
+* [[1927 in film]]
+* [[1928 in film]]
+
+== References ==
+{{Reflist}}
+
+== Bibliography ==
+{{Refbegin}}
+* {{Cite book|last=Cosgrave
+ |first=Bronwyn
+ |title=Made for Each Other: Fashion and the Academy Awards
+ |year=2007
+ |isbn=978-0-7475-7630-3
+ |oclc=74523691
+ |edition=I
+ |location=New York, United States
+ |publisher=[[Bloomsbury Publishing|Bloomsbury Publishing USA]]
+ }}
+* {{Cite book
+ |last=Eyman
+ |first=Scott
+ |title=Lion of Hollywood: the life and legend of Louis B. Mayer
+ |year=2005
+ |isbn=0-7432-0481-6
+ |location=New York, United States
+ |oclc=57506846
+ |edition=I
+ |publisher=[[Simon & Schuster]]
+ |url-access=registration
+ |url=https://archive.org/details/lionofhollywoodl00eyma
+ }}
+{{Refend}}
+
+{{Academy Awards}}
+{{Authority control}}
+
+{{DEFAULTSORT:Academy Awards, 01}}
+[[Category:1928 film awards]]
+[[Category:1929 in Los Angeles]]
+[[Category:1929 in American cinema]]
+[[Category:Academy Awards ceremonies]]
+[[Category:May 1929 in the United States]]
+[[Category:Articles containing video clips]]

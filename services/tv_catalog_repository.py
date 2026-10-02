@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import time
+import uuid
 
 from services.tv_catalog_store import TVCatalogStore, guarded_path
 
@@ -24,6 +25,70 @@ class TVCatalogRepository:
     def __init__(self, path, clock=time.time):
         self.store = TVCatalogStore(path)
         self.clock = clock
+
+    def path_assignments(self):
+        with self.store.connection() as db:
+            return [dict(row) for row in db.execute(
+                'SELECT a.path,a.kind,a.series_id,s.tmdb_id,s.title FROM tv_path_assignments a '
+                'JOIN series s ON s.id=a.series_id ORDER BY a.path')]
+
+    def exclusions(self):
+        with self.store.connection() as db:
+            return [dict(row) for row in db.execute('SELECT * FROM tv_exclusions ORDER BY path')]
+
+    def exclude_path(self, path, kind, reason):
+        path = guarded_path(path)
+        if kind not in {'folder', 'file'} or not (path.is_dir() if kind == 'folder' else path.is_file()):
+            raise ValueError('Exclude an existing TV folder or video file')
+        if not str(reason or '').strip():
+            raise ValueError('An exclusion reason is required')
+        with self.store.transaction() as db:
+            db.execute('INSERT INTO tv_exclusions VALUES(?,?,?,?) ON CONFLICT(path) DO UPDATE SET kind=excluded.kind,reason=excluded.reason',
+                       (str(path), kind, str(reason).strip(), self.clock()))
+            db.execute("UPDATE tv_discovery_units SET state='excluded' WHERE path=?", (str(path),))
+        return {'path': str(path), 'kind': kind, 'state': 'excluded'}
+
+    def remove_exclusion(self, path):
+        with self.store.transaction() as db:
+            result = db.execute('DELETE FROM tv_exclusions WHERE path=?', (str(path),))
+        return {'removed': bool(result.rowcount)}
+
+    def save_discovery(self, item):
+        with self.store.transaction() as db:
+            db.execute('INSERT INTO tv_discovery_units VALUES(?,?,?,?) '
+                       'ON CONFLICT(path) DO UPDATE SET state=excluded.state,payload=excluded.payload,updated_at=excluded.updated_at',
+                       (item['path'], item['state'], encode(item), self.clock()))
+
+    def discovery_items(self):
+        with self.store.connection() as db:
+            return [json.loads(row['payload']) for row in db.execute('SELECT payload FROM tv_discovery_units ORDER BY path')]
+
+    def retire_discovery(self, paths):
+        paths = set(paths)
+        with self.store.transaction() as db:
+            for row in db.execute('SELECT path FROM tv_discovery_units WHERE state NOT IN ("resolved","excluded")'):
+                if row['path'] not in paths:
+                    db.execute("UPDATE tv_discovery_units SET state='resolved',updated_at=? WHERE path=?", (self.clock(), row['path']))
+
+    def file_binding(self, path):
+        with self.store.connection() as db:
+            row = db.execute('SELECT id,size,modified_ns FROM media_files WHERE path=?', (str(path),)).fetchone()
+            if not row:
+                return None
+            return {**dict(row), 'series_ids': {item[0] for item in db.execute(
+                'SELECT DISTINCT e.series_id FROM episode_file_bindings b '
+                'JOIN episodes e ON e.id=b.episode_id WHERE b.file_id=?', (row['id'],))}}
+
+    def approve_path(self, path, kind, series_id):
+        path = guarded_path(path)
+        if kind not in {'folder', 'file'} or not (path.is_dir() if kind == 'folder' else path.is_file()):
+            raise ValueError('Approve an existing TV folder or video file')
+        self.series(series_id)
+        with self.store.transaction() as db:
+            db.execute('INSERT INTO tv_path_assignments(path,kind,series_id,approved_at) VALUES(?,?,?,?) '
+                       'ON CONFLICT(path) DO UPDATE SET kind=excluded.kind,series_id=excluded.series_id,approved_at=excluded.approved_at',
+                       (str(path), kind, int(series_id), self.clock()))
+        return {'path': str(path), 'kind': kind, 'series_id': int(series_id)}
 
     def refresh(self, metadata, episodes, credits=(), *, season_scope=None):
         tmdb_id = int(metadata['tmdb_id'])
@@ -85,7 +150,160 @@ class TVCatalogRepository:
                 person_id = db.execute('SELECT id FROM people WHERE tmdb_id=?', (int(person['tmdb_id']),)).fetchone()[0]
                 db.execute('INSERT OR IGNORE INTO series_credits VALUES(?,?,?)', (series_id, person_id, person.get('role', 'Cast')))
             db.execute('INSERT INTO metadata_events(series_id,event,payload,created_at) VALUES(?,?,?,?)', (series_id, 'refresh', encode({'episodes': len(observed)}), self.clock()))
+            if season_scope is None:
+                regular_seasons = [s for s in metadata.get('seasons', []) if int(s['season_number']) > 0]
+                complete = bool(regular_seasons) and all(
+                    len([e for e in episodes if int(e['season_number']) == int(season['season_number'])])
+                    == int(season.get('episode_count') or 0)
+                    for season in regular_seasons
+                ) and {int(e['season_number']) for e in episodes if int(e['season_number']) > 0}.issubset(
+                    {int(s['season_number']) for s in regular_seasons}
+                ) and not db.execute('SELECT 1 FROM episodes WHERE series_id=? AND reconciliation_required=1 LIMIT 1', (series_id,)).fetchone()
+                db.execute('INSERT INTO series_hydration(series_id,status,season_count,episode_count,updated_at,error) VALUES(?,?,?,?,?,?) '
+                           'ON CONFLICT(series_id) DO UPDATE SET status=excluded.status,season_count=excluded.season_count,episode_count=excluded.episode_count,updated_at=excluded.updated_at,error=excluded.error',
+                           (series_id, 'complete' if complete else 'incomplete', len(regular_seasons),
+                            sum(int(e['season_number']) > 0 for e in episodes), self.clock(),
+                            '' if complete else 'Season counts or episode identities require reconciliation'))
         return series_id
+
+    def hydration(self, series_id):
+        with self.store.connection() as db:
+            row = db.execute('SELECT * FROM series_hydration WHERE series_id=?', (series_id,)).fetchone()
+        return dict(row) if row else {'series_id': series_id, 'status': 'unknown', 'error': 'Complete season metadata has not been loaded'}
+
+    def poster_override(self, series_id):
+        with self.store.connection() as db:
+            row = db.execute('SELECT image,mime,updated_at FROM series_poster_overrides WHERE series_id=?', (series_id,)).fetchone()
+        return dict(row) if row else None
+
+    def save_poster_override(self, series_id, image, mime):
+        self.series(series_id)
+        if mime not in {'image/jpeg', 'image/png', 'image/webp'} or not image or len(image) > 5_000_000:
+            raise ValueError('Choose a JPEG, PNG or WebP image under 5 MB')
+        from io import BytesIO
+        from PIL import Image
+        try:
+            with Image.open(BytesIO(image)) as poster:
+                poster.verify()
+        except (OSError, ValueError) as error:
+            raise ValueError('The poster image could not be verified') from error
+        with self.store.transaction() as db:
+            db.execute('INSERT INTO series_poster_overrides VALUES(?,?,?,?) '
+                       'ON CONFLICT(series_id) DO UPDATE SET image=excluded.image,mime=excluded.mime,updated_at=excluded.updated_at',
+                       (series_id, image, mime, self.clock()))
+        return {'poster_url': f'/api/tv/series/{series_id}/poster?v={int(self.clock())}'}
+
+    def reset_poster_override(self, series_id):
+        with self.store.transaction() as db:
+            result = db.execute('DELETE FROM series_poster_overrides WHERE series_id=?', (series_id,))
+        return {'reset': bool(result.rowcount)}
+
+    def tv_lists(self):
+        with self.store.connection() as db:
+            return [{**dict(row), 'series_ids': [member[0] for member in db.execute(
+                'SELECT series_id FROM tv_custom_list_members WHERE list_id=? ORDER BY added_at', (row['id'],))]}
+                for row in db.execute('SELECT * FROM tv_custom_lists ORDER BY lower(name),id')]
+
+    def create_tv_list(self, name):
+        name = str(name or '').strip()
+        if not name or len(name) > 80:
+            raise ValueError('TV list name must have 1 to 80 characters')
+        identity = uuid.uuid4().hex
+        with self.store.transaction() as db:
+            db.execute('INSERT INTO tv_custom_lists VALUES(?,?,?)', (identity, name, self.clock()))
+        return {'id': identity, 'name': name, 'series_ids': []}
+
+    def rename_tv_list(self, list_id, name):
+        name = str(name or '').strip()
+        if not name or len(name) > 80:
+            raise ValueError('TV list name must have 1 to 80 characters')
+        with self.store.transaction() as db:
+            result = db.execute('UPDATE tv_custom_lists SET name=? WHERE id=?', (name, list_id))
+            if not result.rowcount:
+                raise LookupError('TV list not found')
+        return {'id': list_id, 'name': name}
+
+    def delete_tv_list(self, list_id):
+        with self.store.transaction() as db:
+            result = db.execute('DELETE FROM tv_custom_lists WHERE id=?', (list_id,))
+            if not result.rowcount:
+                raise LookupError('TV list not found')
+        return {'deleted': True}
+
+    def set_tv_list_members(self, list_id, series_ids, present):
+        ids = sorted(set(int(value) for value in series_ids))
+        if not ids or len(ids) > 100:
+            raise ValueError('Select 1 to 100 TV shows')
+        with self.store.transaction() as db:
+            if not db.execute('SELECT 1 FROM tv_custom_lists WHERE id=?', (list_id,)).fetchone():
+                raise LookupError('TV list not found')
+            for series_id in ids:
+                if not db.execute('SELECT 1 FROM series WHERE id=?', (series_id,)).fetchone():
+                    raise LookupError('TV show not found')
+            for series_id in ids:
+                if present:
+                    db.execute('INSERT OR IGNORE INTO tv_custom_list_members VALUES(?,?,?)', (list_id, series_id, self.clock()))
+                else:
+                    db.execute('DELETE FROM tv_custom_list_members WHERE list_id=? AND series_id=?', (list_id, series_id))
+        return {'list_id': list_id, 'series_ids': ids, 'present': bool(present)}
+
+    def record_hydration_failure(self, series_id, error):
+        with self.store.transaction() as db:
+            db.execute('INSERT INTO series_hydration(series_id,status,updated_at,error) VALUES(?,?,?,?) '
+                       'ON CONFLICT(series_id) DO UPDATE SET status=CASE WHEN series_hydration.status="complete" THEN "complete" ELSE "retry" END,updated_at=excluded.updated_at,error=excluded.error',
+                       (series_id, 'retry', self.clock(), str(error)[:500]))
+
+    def viewing_cursor(self, series_id):
+        with self.store.connection() as db:
+            row = db.execute('SELECT episode_id,played_at FROM series_viewing_cursor WHERE series_id=?', (series_id,)).fetchone()
+            if row:
+                return dict(row)
+            # Older player sessions stored a file ID; manual watched edits did not.
+            legacy = db.execute('SELECT p.episode_id,p.last_played AS played_at FROM playback_progress p '
+                                'JOIN episodes e ON e.id=p.episode_id WHERE e.series_id=? AND p.file_id IS NOT NULL '
+                                'ORDER BY p.last_played DESC LIMIT 1', (series_id,)).fetchone()
+            return dict(legacy) if legacy else None
+
+    def set_series_watched(self, series_id, watched):
+        series = self.series(series_id)
+        if str(series.get('status') or '').casefold() != 'ended' or self.hydration(series_id)['status'] != 'complete':
+            raise ValueError('A confirmed ended show with complete episode metadata is required')
+        with self.store.transaction() as db:
+            rows = db.execute('SELECT e.id,p.completed,p.revision FROM episodes e LEFT JOIN playback_progress p ON p.episode_id=e.id '
+                              'WHERE e.series_id=? AND e.season_number>0 AND e.reconciliation_required=0', (series_id,)).fetchall()
+            if not rows:
+                raise ValueError('No regular episodes are known')
+            active = db.execute('SELECT action_id FROM series_watched_actions WHERE series_id=?', (series_id,)).fetchone()
+            if watched:
+                if active:
+                    return {'watched': True, 'changed': 0}
+                action_id = uuid.uuid4().hex
+                db.execute('INSERT INTO series_watched_actions VALUES(?,?,?)', (series_id, action_id, self.clock()))
+                changed = 0
+                for row in rows:
+                    if row['completed']:
+                        continue
+                    revision = (row['revision'] or 0) + 1
+                    db.execute('INSERT INTO playback_progress(episode_id,position_ms,duration_ms,completed,revision,last_played) VALUES(?,?,?,?,?,?) '
+                               'ON CONFLICT(episode_id) DO UPDATE SET completed=1,revision=excluded.revision,hidden=0',
+                               (row['id'], 0, 0, 1, revision, self.clock()))
+                    db.execute('INSERT INTO series_watched_action_marks VALUES(?,?,?)', (series_id, row['id'], revision))
+                    db.execute('INSERT INTO watch_events(episode_id,event,created_at) VALUES(?,?,?)', (row['id'], 'completed_by_series_action', self.clock()))
+                    changed += 1
+            else:
+                if not active:
+                    return {'watched': False, 'changed': 0}
+                marks = db.execute('SELECT episode_id,revision FROM series_watched_action_marks WHERE series_id=?', (series_id,)).fetchall()
+                changed = 0
+                for mark in marks:
+                    result = db.execute('UPDATE playback_progress SET completed=0,revision=revision+1 '
+                                        'WHERE episode_id=? AND completed=1 AND revision=?', (mark['episode_id'], mark['revision']))
+                    if result.rowcount:
+                        db.execute('INSERT INTO watch_events(episode_id,event,created_at) VALUES(?,?,?)', (mark['episode_id'], 'undone_series_action', self.clock()))
+                        changed += 1
+                db.execute('DELETE FROM series_watched_action_marks WHERE series_id=?', (series_id,))
+                db.execute('DELETE FROM series_watched_actions WHERE series_id=?', (series_id,))
+        return {'watched': bool(watched), 'changed': changed}
 
     def series(self, series_id):
         with self.store.connection() as db:
@@ -93,6 +311,11 @@ class TVCatalogRepository:
             if not row:
                 raise LookupError('Series not found')
             result = {**json.loads(row['metadata']), 'id': row['id'], 'tmdb_id': row['tmdb_id'], 'title': row['title']}
+            poster = db.execute('SELECT updated_at FROM series_poster_overrides WHERE series_id=?', (series_id,)).fetchone()
+            if poster:
+                result['provider_poster_url'] = result.get('poster_url', '')
+                result['poster_url'] = f'/api/tv/series/{series_id}/poster?v={int(poster[0])}'
+                result['poster_override'] = True
             curated = db.execute('SELECT watchlisted FROM series_curation WHERE series_id=?', (series_id,)).fetchone()
             result['watchlisted'] = bool(curated and curated[0])
             result['cast'] = result.get('credits') if 'credits' in result else [dict(p) for p in db.execute('SELECT p.tmdb_id,p.name,c.role FROM people p JOIN series_credits c ON c.person_id=p.id WHERE c.series_id=? ORDER BY p.id LIMIT 30', (series_id,))]
@@ -163,12 +386,13 @@ class TVCatalogRepository:
         with self.store.transaction() as db:
             return [self.bind_file(row['path'], row['episode_ids'], row['facts'], roots, _connection=db) for row in entries]
 
-    def save_progress(self, episode_id, file_id=None, *, position_ms=0, duration_ms=0, completed=False, restart=False, expected_revision=None):
+    def save_progress(self, episode_id, file_id=None, *, position_ms=0, duration_ms=0, completed=False, restart=False, expected_revision=None, player_activity=False):
         position, duration = int(position_ms), int(duration_ms)
         if position < 0 or duration < 0 or (duration and position > duration):
             raise ValueError('Invalid episode progress')
         with self.store.transaction() as db:
-            if not db.execute('SELECT 1 FROM episodes WHERE id=?', (episode_id,)).fetchone():
+            episode = db.execute('SELECT series_id FROM episodes WHERE id=?', (episode_id,)).fetchone()
+            if not episode:
                 raise LookupError('Episode not found')
             if file_id is not None and not db.execute('SELECT 1 FROM episode_file_bindings WHERE episode_id=? AND file_id=?', (episode_id, file_id)).fetchone():
                 raise ValueError('Version does not belong to this episode')
@@ -185,10 +409,27 @@ class TVCatalogRepository:
                        (episode_id, file_id, position, duration, bool(completed), revision, self.clock()))
             if bool(old['completed'] if old else False) != bool(completed):
                 db.execute('INSERT INTO watch_events(episode_id,event,created_at) VALUES(?,?,?)', (episode_id, 'completed' if completed else 'uncompleted', self.clock()))
+            if player_activity:
+                db.execute('INSERT INTO series_viewing_cursor VALUES(?,?,?) '
+                           'ON CONFLICT(series_id) DO UPDATE SET episode_id=excluded.episode_id,played_at=excluded.played_at',
+                           (episode['series_id'], episode_id, self.clock()))
             return {'accepted': True, 'revision': revision}
 
     def review(self, payload, reason):
         fingerprint = hashlib.sha256(encode(payload).encode()).hexdigest()
         with self.store.transaction() as db:
-            db.execute('INSERT OR IGNORE INTO ingestion_candidates(fingerprint,payload,state,reason,created_at) VALUES(?,?,?,?,?)', (fingerprint, encode(payload), 'needs_review', reason, self.clock()))
+            existing = db.execute("SELECT id FROM ingestion_candidates WHERE state='needs_review' AND json_extract(payload,'$.series_id')=? AND json_extract(payload,'$.path')=? ORDER BY id", (payload['series_id'], payload['path'])).fetchall()
+            if existing:
+                db.execute('UPDATE ingestion_candidates SET payload=?,reason=? WHERE id=?', (encode(payload), reason, existing[0]['id']))
+                db.executemany("UPDATE ingestion_candidates SET state='superseded' WHERE id=?", [(row['id'],) for row in existing[1:]])
+                return existing[0]['id']
+            db.execute("INSERT INTO ingestion_candidates(fingerprint,payload,state,reason,created_at) VALUES(?,?,?,?,?) ON CONFLICT(fingerprint) DO UPDATE SET state='needs_review',reason=excluded.reason", (fingerprint, encode(payload), 'needs_review', reason, self.clock()))
             return db.execute('SELECT id FROM ingestion_candidates WHERE fingerprint=?', (fingerprint,)).fetchone()[0]
+
+    def close_reviews(self, series_id, path, *, state):
+        if state not in {'applied', 'ignored'}:
+            raise ValueError('Invalid review state')
+        with self.store.transaction() as db:
+            rows = db.execute("SELECT id,payload FROM ingestion_candidates WHERE state='needs_review'").fetchall()
+            ids = [row['id'] for row in rows if (payload := json.loads(row['payload'])).get('series_id') == series_id and payload.get('path') == str(path)]
+            db.executemany('UPDATE ingestion_candidates SET state=? WHERE id=?', [(state, review_id) for review_id in ids])

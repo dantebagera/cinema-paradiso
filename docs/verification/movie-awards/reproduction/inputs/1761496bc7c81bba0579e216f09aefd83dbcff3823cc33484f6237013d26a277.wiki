@@ -1,0 +1,386 @@
+{{oscars short description|films-year=1961}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number = 34
+| award = Academy Awards
+| image = 34th Academy Awards.jpg
+| caption = Official poster
+| date = April 9, 1962
+| site = [[Santa Monica Civic Auditorium]], [[Santa Monica, California]]
+| host = [[Bob Hope]]
+| producer = [[Arthur Freed]]
+| director = Richard Dunlap
+| best_picture = ''[[West Side Story (1961 film)|West Side Story]]''
+| most_wins = ''West Side Story'' (10)
+| most_nominations = ''[[Judgment at Nuremberg]]'' and ''West Side Story'' (11)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 2 hours, 10 minutes
+| last = 33rd
+| next = 35th
+}}
+
+The '''34th Academy Awards''', honoring the best in [[1961 in film|film for 1961]], were held on April 9, 1962, hosted by [[Bob Hope]] at the [[Santa Monica Civic Auditorium]] in [[Santa Monica, California]].
+
+[[Robert Wise]] and [[Jerome Robbins]] became the first [[Academy Award for Best Director|Best Director]] co-winners for ''[[West Side Story (1961 film)|West Side Story]]''. The film won 10 of its 11 nominations, including [[Academy Award for Best Picture|Best Picture]] and both supporting acting Oscars, becoming the most successful musical in Oscars history. For the second time in history, all four acting winners were first-time nominees.<ref>{{cite news |last1=Collins |first1=Keith |title=Oscar facts & figures |url=https://variety.com/2006/film/awards/oscar-facts-figures-1117918228/ |access-date=June 15, 2026 |work=Variety |date=February 21, 2006 |url-status=live |archive-url=https://web.archive.org/web/20190605184741/https://variety.com/2006/film/awards/oscar-facts-figures-1117918228/ |archive-date=June 5, 2019 }}</ref>
+
+Legendary filmmaker [[Federico Fellini]] received his first [[Academy Award for Best Director|Best Director]] nomination for ''[[La Dolce Vita]]'', while [[Sophia Loren]] became the [[List of Italian Academy Award winners and nominees#Best Actress in a Leading Role|first Italian actress to win for Best Actress in an Italian-language film]] as well as the [[List of actors nominated for Academy Awards for non-English performances|first individual to win for a foreign-language performance]].<ref name="Rules">{{cite web |title=Special Rules for the Best Foreign Language Film Award |url=http://www.oscars.org/79academyawards/rules/rule14.html |url-status=dead |archive-url=https://web.archive.org/web/20080314002549/http://www.oscars.org/79academyawards/rules/rule14.html |archive-date=2008-03-14 |access-date=2008-07-25 |publisher=[[Academy of Motion Picture Arts and Sciences]]}}</ref> Directors [[Robert Wise]] and [[Jerome Robbins]] became the first pair to share an Oscar for the same film.<ref name="Oscars '61 Notes">
+{{cite book |last1=Wallechinsky |first1=David |url=https://archive.org/details/peoplesalmanac00wall/page/842/mode/2up |title=The People's Almanac |last2=Wallace |first2=Irving |date=1975 |publisher=Doubleday & Company, Inc. |isbn=0-385-04060-1 |location=Garden City, New York |page=842|author-link=David Wallechinsky|author-link2=Irving Wallace}}</ref> [[George C. Scott]] became the first actor to refuse an award in advance, insisting that the [[Academy Award for Best Supporting Actor|Best Supporting Actor]] nomination for his performance in ''[[The Hustler]]'' be revoked. It was not, and he lost.<ref name="Oscars '61 Notes"/>
+
+The most memorable event of the night came when Stan Berman, a New York City cabdriver famous for crashing celebrity parties, evaded security and made his way onstage to award Hope a homemade Oscar.<ref>{{cite web | url=https://www.vanityfair.com/hollywood/2022/03/awards-insider-oscars-gatecrasher-1962 | title=How "the World's Greatest Gate-Crasher" Made It to the Oscar Stage 60 Years Ago | website=[[Vanity Fair (magazine)|Vanity Fair]] | date=March 23, 2022 }}</ref>
+
+==Awards==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Robert wise 1990.jpg
+| caption1          = [[Robert Wise]], Best Picture winner and Best Director co-winner
+| image2            =Jerome Robbins ca. 1968 cropped.jpg
+| caption2          = [[Jerome Robbins]], Best Director co-winner
+| image3            = Maximilian Schell - 1970-1.jpg
+| caption3          = [[Maximilian Schell]], Best Actor winner
+| image4            = Sophia Loren 1962.jpg
+| caption4          = [[Sophia Loren]], Best Actress winner
+| image5            = George Chakiris Medical Center 1970.JPG
+| caption5          = [[George Chakiris]], Best Supporting Actor winner
+| image6            = Rita Moreno 2014.jpg
+| caption6          = [[Rita Moreno]], Best Supporting Actress winner
+| image7            = LOCInge.jpg
+| caption7          = [[William Inge]], Best Story and Screenplay Written Directly for the Screen winner
+| image8            = Henry Mancini.jpg
+| caption8          = [[Henry Mancini]], Best Music Score of a Dramatic or Comedy Picture winner and Best Song co-winner
+| image9            = Johnny Mercer, New York, N.Y., between 1946 and 1948 (William P. Gottlieb 06121).jpg
+| caption9          = [[Johnny Mercer]], Best Song co-winner
+| image10            = Boris Leven on West Side Story set.jpg
+| caption10          = [[Boris Leven]], Best Art Direction, Color co-winner
+}}
+
+Nominations are announced on February 26, 1962. Winners are listed first and highlighted with '''boldface'''.<ref name="Oscars1962">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1962 |title=The 34th Academy Awards (1962) Nominees and Winners |access-date=February 19, 2015 |work=oscars.org |date=October 5, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150215223044/http://www.oscars.org/oscars/ceremonies/1962 |archive-date=February 15, 2015 }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+* ''' ''[[West Side Story (1961 film)|West Side Story]]''&nbsp;– [[Robert Wise]], producer'''
+** ''[[Fanny (1961 film)|Fanny]]''&nbsp;– [[Joshua Logan]], producer
+** ''[[The Guns of Navarone (film)|The Guns of Navarone]]''&nbsp;– [[Carl Foreman]], producer
+** ''[[The Hustler]]''&nbsp;– [[Robert Rossen]], producer
+** ''[[Judgment at Nuremberg]]''&nbsp;– [[Stanley Kramer]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Robert Wise]] and [[Jerome Robbins]]&nbsp;– ''[[West Side Story (1961 film)|West Side Story]]'' '''
+** [[Federico Fellini]]&nbsp;– ''[[La Dolce Vita]]''
+** [[J. Lee Thompson]]&nbsp;– ''[[The Guns of Navarone (film)|The Guns of Navarone]]''
+** [[Robert Rossen]]&nbsp;– ''[[The Hustler]]''
+** [[Stanley Kramer]]&nbsp;– ''[[Judgment at Nuremberg]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+* ''' [[Maximilian Schell]]&nbsp;– ''[[Judgment at Nuremberg]]'' as Hans Rolfe'''
+** [[Charles Boyer]]&nbsp;– ''[[Fanny (1961 film)|Fanny]]'' as César
+** [[Paul Newman]]&nbsp;– ''[[The Hustler]]'' as Eddie Felson
+** [[Spencer Tracy]]&nbsp;– ''[[Judgment at Nuremberg]]'' as Dan Haywood
+** [[Stuart Whitman]]&nbsp;– ''[[The Mark (1961 film)|The Mark]]'' as Jim Fuller
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+* ''' [[Sophia Loren]]&nbsp;– ''[[Two Women]]'' as Cesira'''
+** [[Audrey Hepburn]]&nbsp;– ''[[Breakfast at Tiffany's (film)|Breakfast at Tiffany's]]'' as Holly Golightly
+** [[Piper Laurie]]&nbsp;– ''[[The Hustler]]'' as Sarah Packard
+** [[Geraldine Page]]&nbsp;– ''[[Summer and Smoke (film)|Summer and Smoke]]'' as Alma Winemiller
+** [[Natalie Wood]]&nbsp;– ''[[Splendor in the Grass]]'' as Wilma Dean "Deanie" Loomis
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* ''' [[George Chakiris]]&nbsp;– ''[[West Side Story (1961 film)|West Side Story]]'' as Bernardo'''
+** [[Montgomery Clift]]&nbsp;– ''[[Judgment at Nuremberg]]'' as Rudolph Peterson
+** [[Peter Falk]]&nbsp;– ''[[Pocketful of Miracles]]'' as Joy Boy
+** [[Jackie Gleason]]&nbsp;– ''[[The Hustler]]'' as [[Minnesota Fats (character)|Minnesota Fats]]
+** [[George C. Scott]]&nbsp;– ''[[The Hustler]]'' as Bert Gordon
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* ''' [[Rita Moreno]]&nbsp;– ''[[West Side Story (1961 film)|West Side Story]]'' as Anita'''
+** [[Fay Bainter]]&nbsp;– ''[[The Children's Hour (film)|The Children's Hour]]'' as Mrs. Amelia Tilford
+** [[Judy Garland]]&nbsp;– ''[[Judgment at Nuremberg]]'' as Irene Hoffmann-Wallner
+** [[Lotte Lenya]]&nbsp;– ''[[The Roman Spring of Mrs. Stone]]'' as Contessa
+** [[Una Merkel]]&nbsp;– ''[[Summer and Smoke (film)|Summer and Smoke]]'' as Mrs. Winemiller
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+* ''' ''[[Splendor in the Grass]]''&nbsp;– [[William Inge]]'''
+** ''[[Ballad of a Soldier]]''&nbsp;– [[Valentin Yezhov]] and [[Grigory Chukhray|Grigori Chukhrai]]
+** ''[[La Dolce Vita]]''&nbsp;– [[Federico Fellini]], [[Tullio Pinelli]], [[Ennio Flaiano]] and [[Brunello Rondi]]
+** ''[[General Della Rovere]]''&nbsp;– [[Sergio Amidei]], [[Diego Fabbri]] and [[Indro Montanelli]]
+** ''[[Lover Come Back (1961 film)|Lover Come Back]]''&nbsp;– [[Stanley Shapiro]] and [[Paul Henning]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+* ''' ''[[Judgment at Nuremberg]]''&nbsp;– [[Abby Mann]]'''
+** ''[[Breakfast at Tiffany's (film)|Breakfast at Tiffany's]]''&nbsp;– [[George Axelrod]] 
+** ''[[The Guns of Navarone (film)|The Guns of Navarone]]''&nbsp;– [[Carl Foreman]]
+** ''[[The Hustler]]''&nbsp;– [[Robert Rossen]] and [[Sidney Carroll]]
+** ''[[West Side Story (1961 film)|West Side Story]]''&nbsp;– [[Ernest Lehman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 34th Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+* ''' ''[[Through a Glass Darkly (film)|Through a Glass Darkly]]'' ([[Sweden]])'''
+** ''[[Harry and the Butler]]'' ([[Denmark]])
+** ''[[Immortal Love (film)|Immortal Love]]'' ([[Japan]])
+** ''[[Ánimas Trujano (film)|The Important Man]]'' ([[Mexico]])
+** ''[[Plácido (film)|Plácido]]'' ([[Spain]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Sky Above and Mud Beneath]]''&nbsp;– [[Arthur Cohn]] and René Lafuite'''
+** ''[[The Grand Olympics]]''&nbsp;– [[Istituto Luce|dell Istituto Nazionale Luce]], Comitato Organizzatore Del Giochi Della XVII Olimpiade
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Project Hope (film)|Project Hope]]''&nbsp;– Frank P. Bibas'''
+** ''[[Breaking the Language Barrier]]''&nbsp;– [[United States Air Force]]
+** ''[[Cradle of Genius]]''&nbsp;– Jim O'Connor and Tom Hayes
+** ''[[Kahl (film)|Kahl]]''&nbsp;– Dido-Film-GmbH
+** ''[[The Man in Gray]]''&nbsp;– Benedetto Benedetti
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+* '''''[[Seawards the Great Ships]]''&nbsp;– Templar Film Studios'''
+** ''The Face of Jesus''&nbsp;– John D. Jennings
+** ''Play Ball!''&nbsp;– Ciné-Documents
+** ''Rooftops of New York''&nbsp;– Robert Gaffney
+** ''[[Very Nice, Very Nice]]''&nbsp;– [[National Film Board of Canada]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[Surogat]]''&nbsp;– [[Zagreb Film]]'''
+** ''[[Aquamania]]''&nbsp;– [[Walt Disney]]
+** ''[[Beep Prepared]]''&nbsp;– [[Chuck Jones]]
+** ''[[Nelly's Folly]]''&nbsp;– [[Chuck Jones]]
+** ''[[The Pied Piper of Guadalupe]]''&nbsp;– [[Friz Freleng]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+* ''' ''[[Breakfast at Tiffany's (film)|Breakfast at Tiffany's]]''&nbsp;– [[Henry Mancini]]'''
+** ''[[El Cid (film)|El Cid]]''&nbsp;– [[Miklós Rózsa]]
+** ''[[Fanny (1961 film)|Fanny]]''&nbsp;– [[Morris Stoloff]] and [[Harry Sukman]]
+** ''[[The Guns of Navarone (film)|The Guns of Navarone]]''&nbsp;– [[Dimitri Tiomkin]]
+** ''[[Summer and Smoke (film)|Summer and Smoke]]''&nbsp;– [[Elmer Bernstein]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+* ''' ''[[West Side Story (1961 film)|West Side Story]]''&nbsp;– [[Saul Chaplin]], [[Johnny Green]], [[Sid Ramin]] and [[Irwin Kostal]]'''
+** ''[[Babes in Toyland (1961 film)|Babes in Toyland]]''&nbsp;– [[George Bruns]]
+** ''[[Flower Drum Song (film)|Flower Drum Song]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]] and [[Ken Darby]]
+** ''[[Khovanshchina (film)|Khovanshchina]]''&nbsp;– [[Dmitri Shostakovich]]
+** ''[[Paris Blues]]''&nbsp;– [[Duke Ellington]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+* ''' "[[Moon River]]" from ''[[Breakfast at Tiffany's (film)|Breakfast at Tiffany's]]''&nbsp;– Music by [[Henry Mancini]]; Lyric by [[Johnny Mercer]]'''
+** "Bachelor in Paradise" from ''[[Bachelor in Paradise (film)|Bachelor in Paradise]]''&nbsp;– Music by [[Henry Mancini]]; Lyric by [[Mack David]]
+** "Love Theme from El Cid (The Falcon and the Dove)" from ''[[El Cid (film)|El Cid]]''&nbsp;– Music by [[Miklós Rózsa]]; Lyric by [[Paul Francis Webster]]
+** "Pocketful of Miracles" from ''[[Pocketful of Miracles]]''&nbsp;– Music by [[Jimmy Van Heusen]]; Lyric by [[Sammy Cahn]]
+** "[[Town Without Pity (song)|Town Without Pity]]" from ''[[Town Without Pity]]''&nbsp;– Music by [[Dimitri Tiomkin]]; Lyric by [[Ned Washington]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+* ''' ''[[West Side Story (1961 film)|West Side Story]]''&nbsp;– [[Gordon E. Sawyer]] and [[Fred Hynes]]'''
+** ''[[The Children's Hour (film)|The Children's Hour]]''&nbsp;– [[Gordon E. Sawyer]]
+** ''[[Flower Drum Song (film)|Flower Drum Song]]''&nbsp;– [[Waldon O. Watson]]
+** ''[[The Guns of Navarone (film)|The Guns of Navarone]]''&nbsp;– [[John Cox (sound engineer)|John Cox]]
+** ''[[The Parent Trap (1961 film)|The Parent Trap]]''&nbsp;– [[Robert O. Cook]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* ''' ''[[The Hustler]]''&nbsp;– Art Direction: [[Harry Horner]]; Set Decoration: [[Gene Callahan]] '''
+** ''[[The Absent-Minded Professor]]''&nbsp;– Art Direction: [[Carroll Clark]]; Set Decoration: [[Emile Kuri]] and [[Hal Gausman]]
+** ''[[The Children's Hour (film)|The Children's Hour]]''&nbsp;– Art Direction: [[Fernando Carrere]]; Set Decoration: [[Edward G. Boyle]]
+** ''[[La Dolce Vita]]''&nbsp;– Art Direction and Set Decoration: [[Piero Gherardi]]
+** ''[[Judgment at Nuremberg]]''&nbsp;– Art Direction: [[Rudolph Sternad]]; Set Decoration: [[George Milo]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* ''' ''[[West Side Story (1961 film)|West Side Story]]''&nbsp;– Art Direction: [[Boris Leven]]; Set Decoration: [[Victor A. Gangelin]] '''
+** ''[[Breakfast at Tiffany's (film)|Breakfast at Tiffany's]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Roland Anderson]]; Set Decoration: [[Samuel M. Comer]] and [[Ray Moyer]]
+** ''[[El Cid (film)|El Cid]]''&nbsp;– Art Direction and Set Decoration: [[Veniero Colasanti]] and [[John Moore (production designer)|John Moore]]
+** ''[[Flower Drum Song (film)|Flower Drum Song]]''&nbsp;– Art Direction: [[Alexander Golitzen]] and [[Joseph C. Wright]]; Set Decoration: [[Howard Bristol]]
+** ''[[Summer and Smoke (film)|Summer and Smoke]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Walter H. Tyler]]; Set Decoration: [[Samuel M. Comer]] and [[Arthur Krams]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* ''' ''[[The Hustler]]''&nbsp;– [[Eugen Schüfftan]] '''
+** ''[[The Absent-Minded Professor]]''&nbsp;– [[Edward Colman (cinematographer)|Edward Colman]]
+** ''[[The Children's Hour (film)|The Children's Hour]]''&nbsp;– [[Franz Planer]]
+** ''[[Judgment at Nuremberg]]''&nbsp;– [[Ernest Laszlo]]
+** ''[[One, Two, Three]]''&nbsp;– [[Daniel L. Fapp]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* ''' ''[[West Side Story (1961 film)|West Side Story]]''&nbsp;– [[Daniel L. Fapp]] '''
+** ''[[Fanny (1961 film)|Fanny]]''&nbsp;– [[Jack Cardiff]]
+** ''[[Flower Drum Song (film)|Flower Drum Song]]''&nbsp;– [[Russell Metty]]
+** ''[[A Majority of One (film)|A Majority of One]]''&nbsp;– [[Harry Stradling]]
+** ''[[One-Eyed Jacks]]''&nbsp;– [[Charles Lang]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+* ''' ''[[La Dolce Vita]]''&nbsp;– [[Piero Gherardi]] '''
+** ''[[The Children's Hour (film)|The Children's Hour]]''&nbsp;– [[Dorothy Jeakins]]
+** ''[[Claudelle Inglish]]''&nbsp;– [[Howard Shoup]]
+** ''[[Judgment at Nuremberg]]''&nbsp;– [[Jean Louis]]
+** ''[[Yojimbo]]''&nbsp;– [[Yoshirō Muraki]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+* ''' ''[[West Side Story (1961 film)|West Side Story]]''&nbsp;– [[Irene Sharaff]] '''
+** ''[[Babes in Toyland (1961 film)|Babes in Toyland]]''&nbsp;– [[Bill Thomas (costume designer)|Bill Thomas]]
+** ''[[Back Street (1961 film)|Back Street]]''&nbsp;– [[Jean Louis]]
+** ''[[Flower Drum Song (film)|Flower Drum Song]]''&nbsp;– [[Irene Sharaff]]
+** ''[[Pocketful of Miracles]]''&nbsp;– [[Edith Head]] and [[Walter Plunkett]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+* ''' ''[[West Side Story (1961 film)|West Side Story]]''&nbsp;– [[Thomas Stanford (film editor)|Thomas Stanford]] '''
+** ''[[Fanny (1961 film)|Fanny]]''&nbsp;– [[William Reynolds (film editor)|William H. Reynolds]]
+** ''[[The Guns of Navarone (film)|The Guns of Navarone]]''&nbsp;– [[Alan Osbiston]]
+** ''[[Judgment at Nuremberg]]''&nbsp;– [[Frederic Knudtson]]
+** ''[[The Parent Trap (1961 film)|The Parent Trap]]''&nbsp;– [[Philip W. Anderson (film editor)|Philip W. Anderson]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+* ''' ''[[The Guns of Navarone (film)|The Guns of Navarone]]''&nbsp;– Visual Effects by [[Bill Warrington]]; Audible Effects by [[Chris Greenham|Vivian C. Greenham]] '''
+** ''[[The Absent-Minded Professor]]''&nbsp;– Visual Effects by [[Robert A. Mattey]] and [[Eustace Lycett]]
+|}
+
+===Honorary Awards===
+* To [[William L. Hendricks]] for his outstanding patriotic service in the conception, writing and production of the Marine Corps film, ''A Force in Readiness'', which has brought honor to the Academy and the motion picture industry.
+* To Fred L. Metzler for his dedication and outstanding service to the Academy of Motion Picture Arts and Sciences.
+* To [[Jerome Robbins]] for his brilliant achievements in the art of choreography on film.
+
+===Jean Hersholt Humanitarian Award===
+* [[George Seaton]]
+
+===Irving G. Thalberg Memorial Award===
+* [[Stanley Kramer]]
+
+==Presenters and performers==
+{{More citations needed section|date=September 2015}}
+
+===Presenters===
+* [[Eddie Albert]] and [[Dina Merrill]] (Presenters: Costume Design Awards)
+* [[Fred Astaire]] (Presenter: Best Picture)
+* [[Carroll Baker]] and [[Richard Chamberlain]] (Presenters: Art Direction Awards)
+* [[Charles Brackett]] (Presenter: Jean Hersholt Humanitarian Award to [[George Seaton]])
+* [[Macdonald Carey]] and [[Shirley Knight]] (Presenters: Best Special Effects)
+* [[George Chakiris]] and [[Carolyn Jones]] (Presenters: Documentary Awards)
+* [[Cyd Charisse]] and [[Tony Martin (American singer)|Tony Martin]] (Presenters: Music Awards)
+* [[Wendell Corey]] (Presenter: Honorary Award to Fred L. Metzler)
+* [[Joan Crawford]] (Presenter: Best Actor)
+* [[Angie Dickinson]] and [[Rod Taylor]] (Presenter: Best Film Editing)
+* [[Vince Edwards]] and [[Shelley Winters]] (Presenters: Cinematography Awards)
+* [[Anthony Franciosa]] and [[Joanne Woodward]] (Presenters: Best Sound Recording)
+* [[Arthur Freed]] (Presenter: Irving G. Thalberg Memorial Award to [[Stanley Kramer]])
+* [[Greer Garson]] (Presenter: Honorary Award to [[William L. Hendricks]]
+* [[George Hamilton (actor)|George Hamilton]] and [[Glynis Johns]] (Presenters: Short Subjects Awards)
+* [[Rock Hudson]] (Presenter: Best Supporting Actress)
+* [[Eric Johnston]] (Presenter: Best Foreign Language Film)
+* [[Shirley Jones]] (Presenter: Best Supporting Actor)
+* [[Gene Kelly]] (Presenter: Honorary Award to Jerome Robbins)
+* [[Burt Lancaster]] (Presenter: Best Actress)
+* [[Jack Lemmon]] and [[Lee Remick]] (Presenters: Writing Awards)
+* [[Debbie Reynolds]] (Presenter: Best Original Song)
+* [[Rosalind Russell]] (Presenter: Best Director)
+
+===Performers===
+* [[Ann-Margret]] ("Bachelor in Paradise" from ''[[Bachelor in Paradise (film)|Bachelor in Paradise]]'')
+* [[Gogi Grant]] ("Pocketful of Miracles" from ''[[Pocketful of Miracles]]'')
+* [[Johnny Mathis]] ("Love Theme from El Cid (The Falcon and the Dove)" from ''[[El Cid (film)|El Cid]]'')
+* [[Gene Pitney]] ("Town Without Pity" from ''[[Town Without Pity]]'')
+* [[Andy Williams]] ("[[Moon River]]" from ''[[Breakfast at Tiffany's (film)|Breakfast at Tiffany's]]'')
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="2" style="text-align:center" | 11
+| ''[[Judgment at Nuremberg]]''
+|-
+| ''[[West Side Story (1961 film)|West Side Story]]''
+|-
+| rowspan="1" style="text-align:center" | 9
+| ''[[The Hustler]]''
+|-
+| rowspan="1" style="text-align:center" | 7
+| ''[[The Guns of Navarone (film)|The Guns of Navarone]]''
+|-
+| rowspan="4" style="text-align:center" | 5
+| ''[[Breakfast at Tiffany's (film)|Breakfast at Tiffany's]]''
+|-
+| ''[[The Children's Hour (film)|The Children's Hour]]''
+|-
+| ''[[Fanny (1961 film)|Fanny]]''
+|-
+| ''[[Flower Drum Song (film)|Flower Drum Song]]''
+|-
+| rowspan="2" style="text-align:center" | 4
+| ''[[La Dolce Vita]]''
+|-
+| ''[[Summer and Smoke (film)|Summer and Smoke]]''
+|-
+| rowspan="3" style="text-align:center" | 3
+| ''[[The Absent-Minded Professor]]''
+|-
+| ''[[El Cid (film)|El Cid]]''
+|-
+| ''[[Pocketful of Miracles]]''
+|-
+| rowspan="3" style="text-align:center" | 2
+| ''[[Babes in Toyland (1961 film)|Babes in Toyland]]''
+|-
+| ''[[The Parent Trap (1961 film)|The Parent Trap]]''
+|-
+| ''[[Splendor in the Grass]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 10
+| ''[[West Side Story (1961 film)|West Side Story]]''
+|-
+| rowspan="3" style="text-align:center" | 2
+| ''[[Breakfast at Tiffany's (film)|Breakfast at Tiffany's]]''
+|-
+| ''[[The Hustler]]''
+|-
+| ''[[Judgment at Nuremberg]]''
+|}
+
+{{col-float-end}}
+
+==See also==
+*[[19th Golden Globe Awards]]
+*[[1961 in film]]
+* [[4th Grammy Awards]]
+* [[13th Primetime Emmy Awards]]
+* [[14th Primetime Emmy Awards]]
+* [[15th British Academy Film Awards]]
+* [[16th Tony Awards]]
+
+==References==
+{{reflist}}
+
+==External links==
+* [https://www.imdb.com/title/tt0348518/ The 34th Annual Academy Awards] at [[IMDb]]
+* [http://www.infoplease.com/ipa/A0148869.html List of winners] at Infoplease
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 34}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1961 film awards]]
+[[Category:1961 awards in the United States]]
+[[Category:1962 in California]]
+[[Category:1962 in American cinema]]
+[[Category:April 1962 in the United States]]
+[[Category:20th century in Santa Monica, California]]

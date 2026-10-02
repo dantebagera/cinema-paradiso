@@ -81,8 +81,13 @@ def evaluate_release(candidate, target, profile, *, manual=False, blocked=False,
         reject('format_score', 'Custom format score is below the profile minimum')
     rank = RESOLUTIONS.index(claim['resolution']) if claim['resolution'] != 'unknown' else -1
     owned_ranks = measured_resolution_ranks(owned)
+    if target.get('media_type') == 'tv' and target.get('upgrade'):
+        if not owned_ranks or rank < 0 or rank <= max(owned_ranks) or not candidate.get('trusted_indexer'):
+            reject('not_strict_upgrade', 'Verified local quality and a trusted strictly better source are required')
     if owned_ranks and not manual:
-        if not profile['automatic_upgrades']:
+        if target.get('media_type') == 'tv' and target.get('upgrade'):
+            pass
+        elif not profile['automatic_upgrades']:
             reject('upgrades_disabled', 'Automatic upgrades are disabled')
         elif max(owned_ranks) >= RESOLUTIONS.index(profile['cutoff']) or rank <= max(owned_ranks):
             reject('cutoff_satisfied', 'Existing measured files already satisfy this upgrade')

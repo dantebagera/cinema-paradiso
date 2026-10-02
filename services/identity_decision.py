@@ -1122,13 +1122,14 @@ def _record_identity(record):
     }
 
 
-def resolve_collection_membership(collection, library_records):
+def resolve_collection_membership(collection, library_records, *, path_exists=None):
     parts = list((collection or {}).get("parts") or [])
     records = [_record_identity(record or {}) for record in (library_records or [])]
     owned_paths = []
     unresolved = []
     conflicts = []
     matched_record_paths = set()
+    path_availability = {}
     for part in parts:
         part_path = os.path.normcase(os.path.abspath(str(part.get("path") or ""))) if part.get("path") else ""
         part_tmdb = str(part.get("tmdb_id") or "")
@@ -1156,7 +1157,17 @@ def resolve_collection_membership(collection, library_records):
                 and record["year"] == part_year
             ):
                 matches.append(record)
-        unique = {record["path"]: record for record in matches if record["path"]}
+        unique = {}
+        for record in matches:
+            path = record["path"]
+            if not path:
+                continue
+            if path_exists is not None:
+                if path not in path_availability:
+                    path_availability[path] = bool(path_exists(path))
+                if not path_availability[path]:
+                    continue
+            unique[path] = record
         if len(unique) == 1:
             path = next(iter(unique))
             if path not in matched_record_paths:

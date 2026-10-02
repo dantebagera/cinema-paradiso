@@ -1,0 +1,377 @@
+{{oscars short description|films-year=1962}}
+{{Use mdy dates|date=July 2022}}
+{{More citations needed|date=May 2018}}
+{{Infobox film awards
+| number = 35
+| award = Academy Awards
+| image = 35th Academy Awards.jpg
+| caption = Official poster
+| date = April 8, 1963
+| site = [[Santa Monica Civic Auditorium]]
+| host = [[Frank Sinatra]]
+| producer = [[Arthur Freed]]
+| director = Richard Dunlap
+| best_picture = ''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''
+| most_wins = ''Lawrence of Arabia'' (7)
+| most_nominations = ''Lawrence of Arabia'' (10)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 
+| last = 34th
+| next = 36th
+}}
+
+The '''35th Academy Awards''', honoring the [[1962 in film|best in film for 1962]], were held on April 8, 1963, at the [[Santa Monica Civic Auditorium]] in [[Santa Monica, California]], hosted by [[Frank Sinatra]].
+
+The year's most successful film was [[David Lean]]'s ''[[Lawrence of Arabia (film)|Lawrence of Arabia]]'', with 10 nominations and 7 wins, including [[Academy Award for Best Picture|Best Picture]] and Lean's second win for [[Academy Award for Best Director|Best Director]]. For his role as [[T. E. Lawrence]], [[Peter O'Toole]] received his first of eight career nominations for [[Academy Award for Best Actor|Best Actor]], all unsuccessful; as of the [[94th Academy Awards]], O'Toole and [[Glenn Close]] share the record for the most acting nominations with no wins. 
+
+[[Arthur Penn]]'s ''[[The Miracle Worker (1962 film)|The Miracle Worker]]'' earned the rare distinction of winning two acting Oscars ([[Academy Award for Best Actress|Best Actress]] for [[Anne Bancroft]] and [[Academy Award for Best Supporting Actress|Best Supporting Actress]] for [[Patty Duke]]) ''without'' a nomination for Best Picture. The only other film to do this to date was ''[[Hud (1963 film)|Hud]]'', the [[36th Academy Awards|following year]].
+
+==Ceremony==
+The [[Academy Award for Best Actress|Best Actress]] Oscar occasioned the last act of the long-running feud between [[Joan Crawford]] and [[Bette Davis]]. They had starred together for the first time in ''[[What Ever Happened to Baby Jane? (film)|What Ever Happened to Baby Jane?]]'', a surprise hit the previous summer. Davis was nominated for her role as the title character, a faded child star who humiliates the wheelchair-using sister who eclipsed her fame in adulthood, while Crawford was not.<ref name="Slate piece">{{cite news|last=Longworth |first=Karina |title=Did Bette and Joan Really Have a ''Feud''? |url=http://www.slate.com/articles/arts/you_must_remember_this/2017/03/did_bette_and_joan_really_feud_or_was_it_a_publicity_stunt.html |newspaper=[[Slate (website)|Slate]] |date=March 10, 2017 |access-date=April 27, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170401051200/http://www.slate.com/articles/arts/you_must_remember_this/2017/03/did_bette_and_joan_really_feud_or_was_it_a_publicity_stunt.html |archive-date=April 1, 2017 }}</ref>
+
+Crawford told the other nominated actresses that, as a courtesy, she would accept their awards for them should they be unavailable on the night of the ceremony. Davis did not object as her rival had often done this, but, on the night of the ceremony, she was livid when Crawford took the stage, wearing what was described as a "radiant smile",<ref name="Oscars '62 Notes">
+{{cite book |last1=Wallechinsky |first1=David |url=https://archive.org/details/peoplesalmanac00wall/page/842/mode/2up |title=The People's Almanac |last2=Wallace |first2=Irving |date=1975 |publisher=Doubleday & Company, Inc. |isbn=0-385-04060-1 |location=Garden City, New York |page=842}}</ref> to cheerfully accept the award on behalf of [[Anne Bancroft]], who had a [[Broadway theatre|Broadway]] commitment. Davis believed that Crawford had told other Oscar voters to vote for ''[[The Miracle Worker (1962 film)|The Miracle Worker]]'' star in order to upstage her. The rekindled animosity between the two resulted in Crawford leaving the cast of ''[[Hush...Hush, Sweet Charlotte]]'', a planned follow-up to ''Baby Jane'' that began filming the next summer, early in production.<ref name="Slate piece" />
+
+== Awards ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Aankomst filmster Ann Todd en haar echtgenoot filmregisseur David Lean op Schiph, Bestanddeelnr 905-4605 (2).jpg
+| caption1          = [[David Lean]], Best Director winner
+| image2            = Gregory Peck 1948.jpg
+| caption2          = [[Gregory Peck]], Best Actor winner
+| image3            = Anne Bancroft 1952.jpg
+| caption3          = [[Anne Bancroft]], Best Actress winner
+| image4            = Ed Begley 1958.jpg
+| caption4          = [[Ed Begley]], Best Supporting Actor winner
+| image5            = Patty Duke 1975.JPG
+| caption5          = [[Patty Duke]], Best Supporting Actress winner, youngest person to receive an Oscar in a competitive category at the time<ref name=":0">{{Cite web|url=https://www.usatoday.com/story/life/movies/2016/03/29/oscar-winning-former-child-star-patty-duke-dies-age-69/82382666/|title=Oscar-winning former child star Patty Duke dies, age 69|website=USA TODAY|access-date=March 30, 2016}}</ref>
+| image6            = Pietro Germi.jpg
+| caption6          = [[Pietro Germi]], Best Story and Screenplay Written Directly for the Screen co-winner
+| image7            = Henry Mancini.jpg
+| caption7          = [[Henry Mancini]], Best Song co-winner
+| image8            = Johnny Mercer, New York, N.Y., between 1946 and 1948 (William P. Gottlieb 06121).jpg
+| caption8          = [[Johnny Mercer]], Best Song co-winner
+}}
+
+Nominations announced on February 25, 1963. Winners in each category are listed first and highlighted with '''boldface text'''.<ref name="Oscars1963">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1963 |title=The 35th Academy Awards (1963) Nominees and Winners |access-date=May 12, 2016 |work=oscars.org |date=October 5, 2014 |url-status=live |archive-url=https://web.archive.org/web/20160426053216/http://www.oscars.org/oscars/ceremonies/1963 |archive-date=April 26, 2016 }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Lawrence of Arabia (film)|Lawrence of Arabia]]'' – [[Sam Spiegel]], producer'''
+**''[[The Longest Day (film)|The Longest Day]]'' – [[Darryl F. Zanuck]], producer
+**''[[The Music Man (1962 film)|The Music Man]]'' – [[Morton DaCosta]], producer
+**''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]'' – [[Aaron Rosenberg]], producer
+**''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]'' – [[Alan J. Pakula]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[David Lean]]&nbsp;– ''[[Lawrence of Arabia (film)|Lawrence of Arabia]]'''''
+**[[Frank Perry]]&nbsp;– ''[[David and Lisa]]''
+**[[Pietro Germi]]&nbsp;– ''[[Divorce Italian Style]]''
+**[[Arthur Penn]]&nbsp;– ''[[The Miracle Worker (1962 film)|The Miracle Worker]]''
+**[[Robert Mulligan]]&nbsp;– ''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Gregory Peck]]&nbsp;– ''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]'' as [[Atticus Finch]]'''
+**[[Burt Lancaster]]&nbsp;– ''[[Birdman of Alcatraz (film)|Birdman of Alcatraz]]'' as [[Robert Stroud]]
+**[[Jack Lemmon]]&nbsp;– ''[[Days of Wine and Roses (film)|Days of Wine and Roses]]'' as Joe Clay
+**[[Marcello Mastroianni]]&nbsp;– ''[[Divorce Italian Style]]'' as Ferdinando Cefalù
+**[[Peter O'Toole]]&nbsp;– ''[[Lawrence of Arabia (film)|Lawrence of Arabia]]'' as [[T. E. Lawrence]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Anne Bancroft]]&nbsp;– ''[[The Miracle Worker (1962 film)|The Miracle Worker]]'' as [[Anne Sullivan]]'''
+**[[Bette Davis]]&nbsp;– ''[[What Ever Happened to Baby Jane? (film)|What Ever Happened to Baby Jane?]]'' as [[Baby Jane Hudson|Jane Hudson]]
+**[[Katharine Hepburn]]&nbsp;– ''[[Long Day's Journey into Night (1962 film)|Long Day's Journey into Night]]'' as Mary Tyrone
+**[[Geraldine Page]]&nbsp;– ''[[Sweet Bird of Youth (1962 film)|Sweet Bird of Youth]]'' as Alexandra Del Lago
+**[[Lee Remick]]&nbsp;– ''[[Days of Wine and Roses (film)|Days of Wine and Roses]]'' as Kirsten Arnesen-Clay
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Ed Begley]]&nbsp;– ''[[Sweet Bird of Youth (1962 film)|Sweet Bird of Youth]]'' as Tom Boss Finley'''
+**[[Victor Buono]]&nbsp;– ''[[What Ever Happened to Baby Jane? (film)|What Ever Happened to Baby Jane?]]'' as Edwin Flagg
+**[[Telly Savalas]]&nbsp;– ''[[Birdman of Alcatraz (film)|Birdman of Alcatraz]]'' as Feto Gomez
+**[[Omar Sharif]]&nbsp;– ''[[Lawrence of Arabia (film)|Lawrence of Arabia]]'' as Sherif Ali
+**[[Terence Stamp]]&nbsp;– ''[[Billy Budd (film)|Billy Budd]]'' as Billy Budd
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Patty Duke]]&nbsp;– ''[[The Miracle Worker (1962 film)|The Miracle Worker]]'' as [[Helen Keller]]'''
+**[[Mary Badham]]&nbsp;– ''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]'' as Scout
+**[[Shirley Knight]]&nbsp;– ''[[Sweet Bird of Youth (1962 film)|Sweet Bird of Youth]]'' as Heavenly Finley
+**[[Angela Lansbury]]&nbsp;– ''[[The Manchurian Candidate (1962 film)|The Manchurian Candidate]]'' as Mrs. Eleanor Iselin
+**[[Thelma Ritter]]&nbsp;– ''[[Birdman of Alcatraz (film)|Birdman of Alcatraz]]'' as Elizabeth McCartney Stroud
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay – Written Directly for the Screen)]]}}
+*'''''[[Divorce Italian Style]]''&nbsp;– [[Ennio De Concini]], [[Alfredo Giannetti]] and [[Pietro Germi]]'''
+**''[[Freud: The Secret Passion]]''&nbsp;– Story by [[Charles Kaufman (screenwriter)|Charles Kaufman]]; Screenplay by Charles Kaufman and [[Wolfgang Reinhardt (producer)|Wolfgang Reinhardt]]
+**''[[Last Year at Marienbad]]''&nbsp;– [[Alain Robbe-Grillet]]
+**''[[That Touch of Mink]]''&nbsp;– [[Stanley Shapiro]] and [[Nate Monaster]]
+**''[[Through a Glass Darkly (film)|Through a Glass Darkly]]''&nbsp;– [[Ingmar Bergman]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay – Based on Material from Another Medium)]]}}
+*'''''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]''&nbsp;– [[Horton Foote]]'''
+**''[[David and Lisa]]''&nbsp;– [[Eleanor Perry]]
+**''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''&nbsp;– [[Robert Bolt]] and [[Michael Wilson (writer)|Michael Wilson]]{{efn|[[Michael Wilson (writer)|Michael Wilson]]'s original screenplay of ''[[Lawrence of Arabia (film)|Lawrence of Arabia]]'' was rewritten by [[Robert Bolt]], retaining Wilson's characters and characterizations. Bolt received sole credit as Wilson was [[Hollywood blacklist|blacklisted]] at the time. Wilson's nomination was retroactively granted by the Academy Board of Directors on September 26, 1995.}}
+**''[[Lolita (1962 film)|Lolita]]''&nbsp;– [[Vladimir Nabokov]]
+**''[[The Miracle Worker (1962 film)|The Miracle Worker]]''&nbsp;– [[William Gibson (playwright)|William Gibson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 35th Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[Sundays and Cybele]]'' ([[France]])'''
+**''[[Electra (1962 film)|Electra]]'' ([[Greece]])
+**''[[The Four Days of Naples (film)|The Four Days of Naples]]'' ([[Italy]])
+**''[[O Pagador de Promessas|Keeper of Promises (The Given Word)]]'' ([[Brazil]])
+**''[[Tlayucan]]'' ([[Mexico]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Black Fox: The Rise and Fall of Adolf Hitler|Black Fox]]''&nbsp;– [[Louis Clyde Stoumen]]'''
+**''[[Alvorada (film)|Alvorada]]''&nbsp;– [[Hugo Niebeling]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Dylan Thomas (film)|Dylan Thomas]]''&nbsp;– [[Jack Howells]]'''
+**''[[The John Glenn Story]]''&nbsp;– [[William L. Hendricks]]
+**''[[The Road to the Wall]]''&nbsp;– [[Robert Saudek (television executive)|Robert Saudek]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[Heureux Anniversaire]]''&nbsp;– [[Pierre Étaix]] and [[Jean-Claude Carrière|J. C. Carrière]]'''
+**''Big City Blues''&nbsp;– Martina Huguenot van der Linden and Charles Huguenot van der Linden
+**''The Cadillac''&nbsp;– [[Robert Clouse]]
+**''The Cliff Dwellers''&nbsp;– Hayward Anderson
+**''Pan''&nbsp;– Herman van der Horst
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[The Hole (1962 film)|The Hole]]''&nbsp;– [[John Hubley]] and [[Faith Hubley]]'''
+**''Icarus Montgolfier Wright''&nbsp;– [[Jules Engel]]
+**''[[Now Hear This (film)|Now Hear This]]''&nbsp;– [[Warner Bros. Pictures|Warner Bros.]]
+**''Self Defense ... for Cowards''&nbsp;– [[William L. Snyder]]
+**''[[A Symposium on Popular Songs]]''&nbsp;– [[Walt Disney]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score -- Substantially Original)]]}}
+*'''''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''&nbsp;– [[Maurice Jarre]]'''
+**''[[Freud: The Secret Passion|Freud]]''&nbsp;– [[Jerry Goldsmith]]
+**''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]''&nbsp;– [[Bronisław Kaper]]
+**''[[Taras Bulba (1962 film)|Taras Bulba]]''&nbsp;– [[Franz Waxman]]
+**''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]''&nbsp;– [[Elmer Bernstein]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of Music -- Adaptation or Treatment)]]}}
+*'''''[[The Music Man (1962 film)|The Music Man]]''&nbsp;– [[Ray Heindorf]]'''
+**''[[Billy Rose's Jumbo]]''&nbsp;– [[Georgie Stoll]]
+**''[[Gigot (film)|Gigot]]''&nbsp;– [[Michel Magne]]
+**''[[Gypsy (1962 film)|Gypsy]]''&nbsp;– [[Frank Perkins (composer)|Frank Perkins]]
+**''[[The Wonderful World of the Brothers Grimm]]''&nbsp;– [[Leigh Harline]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[Days of Wine and Roses (song)|Days of Wine and Roses]]" from ''[[Days of Wine and Roses (film)|Days of Wine and Roses]]''&nbsp;– Music by [[Henry Mancini]]; Lyric by [[Johnny Mercer]]'''
+**"Love Song From Mutiny on the Bounty (Follow Me)" from ''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]''&nbsp;– Music by [[Bronisław Kaper]]; Lyric by [[Paul Francis Webster]]
+**"Song From Two for the Seesaw (Second Chance)" from ''[[Two for the Seesaw (1962 film)|Two for the Seesaw]]''&nbsp;– Music by [[André Previn]]; Lyric by [[Dory Previn|Dory Langdon]]
+**"Tender Is the Night" from ''[[Tender Is the Night (film)|Tender Is the Night]]''&nbsp;– Music by [[Sammy Fain]]; Lyric by [[Paul Francis Webster]]
+**"[[Walk on the Wild Side (David and Bernstein song)|Walk on the Wild Side]]" from ''[[Walk on the Wild Side (film)|Walk on the Wild Side]]''&nbsp;– Music by [[Elmer Bernstein]]; Lyric by [[Mack David]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound|Best Sound]]}}
+*'''''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''&nbsp;– [[John Cox (sound engineer)|John Cox]]'''
+**''[[Bon Voyage! (1962 film)|Bon Voyage!]]''&nbsp;– [[Robert O. Cook]]
+**''[[The Music Man (1962 film)|The Music Man]]''&nbsp;– [[George Groves (sound engineer)|George R. Groves]]
+**''[[That Touch of Mink]]''&nbsp;– [[Waldon O. Watson]]
+**''[[What Ever Happened to Baby Jane? (film)|What Ever Happened to Baby Jane?]]''&nbsp;– [[Joseph D. Kelly (sound engineer)|Joseph D. Kelly]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]''&nbsp;– Art Direction: [[Alexander Golitzen]] and [[Henry Bumstead]]; Set Decoration: [[Oliver Emert]]'''
+**''[[Days of Wine and Roses (film)|Days of Wine and Roses]]''&nbsp;– Art Direction: [[Joseph C. Wright]]; Set Decoration: [[George James Hopkins]]
+**''[[The Longest Day (film)|The Longest Day]]''&nbsp;– Art Direction: [[Ted Haworth]], [[Léon Barsacq]] and [[Vincent Korda]]; Set Decoration: [[Gabriel Béchir]]
+**''[[Period of Adjustment (film)|Period of Adjustment]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]] and [[Edward Carfagno]]; Set Decoration: [[Henry Grace]] and [[Richard Pefferle]]
+**''[[The Pigeon That Took Rome]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Roland Anderson]]; Set Decoration: [[Samuel M. Comer]] and [[Frank R. McKelvy]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''&nbsp;– Art Direction: [[John Box]] and [[John Stoll]]; Set Decoration: [[Dario Simoni]]'''
+**''[[The Music Man (1962 film)|The Music Man]]''&nbsp;– Art Direction: [[Paul Groesse]]; Set Decoration: [[George James Hopkins]]
+**''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]] and [[Joseph McMillan Johnson]]; Set Decoration: [[Henry Grace]] and [[Hugh Hunt]]
+**''[[That Touch of Mink]]''&nbsp;– Art Direction: [[Alexander Golitzen]] and [[Robert Clatworthy (art director)|Robert Clatworthy]]; Set Decoration: [[George Milo]]
+**''[[The Wonderful World of the Brothers Grimm]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]] and [[Edward Carfagno]]; Set Decoration: [[Henry Grace]] and [[Richard Pefferle]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[The Longest Day (film)|The Longest Day]]''&nbsp;– [[Jean Bourgoin]] and [[Walter Wottitz]]'''
+**''[[Birdman of Alcatraz (film)|Birdman of Alcatraz]]''&nbsp;– [[Burnett Guffey]]
+**''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]''&nbsp;– [[Russell Harlan]]
+**''[[Two for the Seesaw (1962 film)|Two for the Seesaw]]''&nbsp;– [[Ted D. McCord]]
+**''[[What Ever Happened to Baby Jane? (film)|What Ever Happened to Baby Jane?]]''&nbsp;– [[Ernest Haller]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''&nbsp;– [[Freddie Young]]'''
+**''[[Gypsy (1962 film)|Gypsy]]''&nbsp;– [[Harry Stradling]]
+**''[[Hatari!]]''&nbsp;– [[Russell Harlan]]
+**''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert Surtees]]
+**''[[The Wonderful World of the Brothers Grimm]]''&nbsp;– [[Paul C. Vogel]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+*'''''[[What Ever Happened to Baby Jane? (film)|What Ever Happened to Baby Jane?]]''&nbsp;– [[Norma Koch]]'''
+**''[[Days of Wine and Roses (film)|Days of Wine and Roses]]''&nbsp;– [[Donfeld|Don Feld]]
+**''[[The Man Who Shot Liberty Valance]]''&nbsp;– [[Edith Head]]
+**''[[The Miracle Worker (1962 film)|The Miracle Worker]]''&nbsp;– [[Ruth Morley]]
+**''[[Phaedra (film)|Phaedra]]''&nbsp;– Denny Vachlioti
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+*'''''[[The Wonderful World of the Brothers Grimm]]''&nbsp;– [[Mary Wills (costume designer)|Mary Wills]]'''
+**''[[Bon Voyage! (1962 film)|Bon Voyage!]]''&nbsp;– [[Bill Thomas (costume designer)|Bill Thomas]]
+**''[[Gypsy (1962 film)|Gypsy]]''&nbsp;– [[Orry-Kelly]]
+**''[[The Music Man (1962 film)|The Music Man]]''&nbsp;– [[Dorothy Jeakins]]
+**''[[My Geisha]]''&nbsp;– [[Edith Head]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''&nbsp;– [[Anne V. Coates]]'''
+**''[[The Longest Day (film)|The Longest Day]]''&nbsp;– [[Samuel E. Beetley]]
+**''[[The Manchurian Candidate (1962 film)|The Manchurian Candidate]]''&nbsp;– [[Ferris Webster]]
+**''[[The Music Man (1962 film)|The Music Man]]''&nbsp;– [[William H. Ziegler]]
+**''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]''&nbsp;– [[John McSweeney Jr.]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*'''''[[The Longest Day (film)|The Longest Day]]''&nbsp;– Visual Effects by [[Robert MacDonald (special effects artist)|Robert MacDonald]]; Audible Effects by [[Jacques Maumont]]'''
+**''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]''&nbsp;– Visual Effects by [[A. Arnold Gillespie]]; Audible Effects by [[Milo B. Lory]]
+|}
+
+=== Jean Hersholt Humanitarian Award ===
+* [[Steve Broidy]]
+
+== Presenters and performers ==
+{{More citations needed section|date=September 2015}}
+
+=== Presenters ===
+* [[George Chakiris]] (Presenter: Best Supporting Actress)
+* [[Wendell Corey]] (Presenter: Best Foreign Language Film)
+* [[Joan Crawford]] (Presenter: Best Director)
+* [[Bette Davis]] (Presenter: Writing Awards)
+* [[Olivia de Havilland]] (Presenter: Best Picture)
+* [[Van Heflin]] (Presenter: Short Subjects Awards)
+* [[Audrey Hepburn]] and [[Eva Marie Saint]] (Presenter: Best Costume Design)
+* [[Gene Kelly]] (Presenter: Best Art Direction)
+* [[Sophia Loren]] (Presenter: Best Actor)
+* [[Karl Malden]] (Presenter: Best Film Editing)
+* [[Rita Moreno]] (Presenter: Best Supporting Actor)
+* [[Donna Reed]] (Presenter: Best Cinematography)
+* [[Ginger Rogers]] (Presenter: Best Original Score)
+* [[Maximilian Schell]] (Presenter: Best Actress)
+* [[Frank Sinatra]] (Presenter: Best Original Song)
+* [[Miyoshi Umeki]] (Presenter: Documentary Awards)
+* [[Shelley Winters]] (Presenter: Best Sound Recording and Best Special Effects)
+
+=== Performers ===
+* [[Alfred Newman (composer)|Alfred Newman]] (musical director)
+* [[Robert Goulet]] ("[[Days of Wine and Roses (song)|Days of Wine and Roses]]" from ''[[Days of Wine and Roses (film)|Days of Wine and Roses]]'', "Love Song from Mutiny on the Bounty (Follow Me)" from ''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]'', "Song from Two for the Seesaw (Second Chance)" from ''[[Two for the Seesaw (1962 film)|Two for the Seesaw]]'', "Tender Is the Night" from ''[[Tender Is the Night (film)|Tender Is the Night]]'' and "[[Walk on the Wild Side (David and Bernstein song)|Walk on the Wild Side]]" from ''[[Walk on the Wild Side (film)|Walk on the Wild Side]]'')
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 10
+| ''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''
+|-
+| rowspan="1" style="text-align:center" | 8
+| ''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]''
+|-
+| rowspan="1" style="text-align:center" | 7
+| ''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]''
+|-
+| rowspan="1" style="text-align:center" | 6
+| ''[[The Music Man (1962 film)|The Music Man]]''
+|-
+| rowspan="4" style="text-align:center" | 5
+| ''[[Days of Wine and Roses (film)|Days of Wine and Roses]]''
+|-
+| ''[[The Longest Day (film)|The Longest Day]]''
+|-
+| ''[[The Miracle Worker (1962 film)|The Miracle Worker]]''
+|-
+| ''[[What Ever Happened to Baby Jane? (film)|What Ever Happened to Baby Jane?]]''
+|-
+| rowspan="2" style="text-align:center" | 4
+| ''[[Birdman of Alcatraz (film)|Birdman of Alcatraz]]''
+|-
+| ''[[The Wonderful World of the Brothers Grimm]]''
+|-
+| rowspan="4" style="text-align:center" | 3
+| ''[[Divorce Italian Style]]''
+|-
+| ''[[Gypsy (1962 film)|Gypsy]]''
+|-
+| ''[[Sweet Bird of Youth (1962 film)|Sweet Bird of Youth]]''
+|-
+| ''[[That Touch of Mink]]''
+|-
+| rowspan="5" style="text-align:center" | 2
+| ''[[Bon Voyage! (1962 film)|Bon Voyage!]]''
+|-
+| ''[[David and Lisa]]''
+|-
+| ''[[Freud: The Secret Passion]]''
+|-
+| ''[[The Manchurian Candidate (1962 film)|The Manchurian Candidate]]''
+|-
+| ''[[Two for the Seesaw (1962 film)|Two for the Seesaw]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 7
+| ''[[Lawrence of Arabia (film)|Lawrence of Arabia]]''
+|-
+| rowspan="1" style="text-align:center" | 3
+| ''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]''
+|-
+| rowspan="2" style="text-align:center" | 2
+| ''[[The Longest Day (film)|The Longest Day]]''
+|-
+| ''[[The Miracle Worker (1962 film)|The Miracle Worker]]''
+|}
+{{col-float-end}}
+
+== See also ==
+* [[5th Grammy Awards]]
+* [[14th Primetime Emmy Awards]]
+* [[15th Primetime Emmy Awards]]
+* [[16th British Academy Film Awards]]
+* [[16th Tony Awards]]
+* [[20th Golden Globe Awards]]
+* [[1962 in film]]
+
+== Notes ==
+{{notelist}}
+
+==References==
+{{Reflist}}
+
+== External links ==
+* {{IMDb title|id=0348815|title=The 35th Annual Academy Awards}}
+
+{{Academy Awards Chron}}
+{{Academy Awards lists}}
+
+{{DEFAULTSORT:Academy Awards, 35}}
+[[Category:1962 film awards]]
+[[Category:1962 awards in the United States]]
+[[Category:1963 in California]]
+[[Category:Academy Awards ceremonies]]
+[[Category:1963 in American cinema]]
+[[Category:April 1963 in the United States]]
+[[Category:20th century in Santa Monica, California]]
+[[Category:Organized events in Santa Monica, California]]

@@ -1,0 +1,3899 @@
+{
+  "provenance": {
+    "DLu": "c5e9716b7e020e70205d6b95f5a5678526c1b45f",
+    "MengtingWan": "b91f1b876390acfe0067f93f770a860f50f89267",
+    "annual_headers": "181 pinned ceremony page revisions retained in build manifest; each exact alias reviewed separately from winner counting.",
+    "plain_annual_headers": "64th Golden Globes pinned Wikipedia revision 1375560383, exact Film-table headings and paired Best Motion Picture parent; reviewed against existing distinct category instances.",
+    "prasertcbs": "8415fd4eedd124d739d75430853796e13ded1009",
+    "retired_globe_field_contract": "Pinned prasertcbs CSV revision 8415fd4eedd124d739d75430853796e13ded1009: Samuel Goldwyn rows name the winning film in film; nominee names country/director. Pinned 18th ceremony display headings distinguish Picture - Comedy, Picture - Musical and Promoting International Understanding despite shared/mistaken link targets."
+  },
+  "revision": "2026-10-02.1",
+  "schema_version": 1,
+  "sources": {
+    "annual_golden_globe": {
+      "Achievement in Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Actor in a Leading Role": {
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Actor in a Motion Picture – Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actor in a Motion Picture – Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actor in a Television Series – Drama": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Actor in a Television Series – Musical or Comedy": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Actress in a Leading Role": {
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actress in a Limited Series, Anthology Series, or Motion Picture Made for Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Actress in a Motion Picture – Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actress in a Motion Picture – Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actress in a Television Series – Drama": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Actress in a Television Series – Musical or Comedy": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Animated Feature Film": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Animated",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Animated Film": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Animated",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Cinematography (Black & White)": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Black And White",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Cinematography (Color)": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Color",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Cinematography (Colour)": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Color",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Cinematography - Black and White": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Black And White",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Cinematography - Color": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Color",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Director": {
+        "film_in_nominee": false,
+        "instance": "Best Director - Motion Picture",
+        "role": "director",
+        "scope": "film"
+      },
+      "Best Director - Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Director - Motion Picture",
+        "role": "director",
+        "scope": "film"
+      },
+      "Best Director – Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Director - Motion Picture",
+        "role": "director",
+        "scope": "film"
+      },
+      "Best English-Language Foreign Film": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Foreign Film - English Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Female Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Female Actor in a Motion Picture – Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Female Actor in a Motion Picture – Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Female Actor in a Television Series – Drama": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Female Actor in a Television Series – Musical or Comedy": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Film - Comedy": {
+        "film_selection": "first",
+        "instance": "Picture - Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Film - Musical": {
+        "film_selection": "first",
+        "instance": "Picture - Musical",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Film - Promoting International Understanding": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Promoting International Understanding",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Film Promoting International Understanding": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Promoting International Understanding",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Film to Promote International Understanding": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Promoting International Understanding",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Foreign Language Film": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Limited Series, Anthology Series, or Motion Picture Made for Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Male Actor in a Limited Series, Anthology Series, or Motion Picture Made for Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Male Actor in a Motion Picture – Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Male Actor in a Motion Picture – Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Male Actor in a Television Series – Drama": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Male Actor in a Television Series – Musical or Comedy": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Miniseries or Television Film": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Motion Picture - Animated": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Animated",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Comedy": {
+        "film_selection": "first",
+        "instance": "Picture - Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Comedy or Musical": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Drama": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Drama",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Foreign Language": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Musical": {
+        "film_selection": "first",
+        "instance": "Picture - Musical",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Musical or Comedy": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Non-English Language": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Outdoor Drama": {
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Outdoor Drama",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture :: Drama": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Drama",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture :: Musical or Comedy": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture – Animated": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Animated",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture – Drama": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Drama",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture – Musical or Comedy": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture – Non-English Language": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture, Musical or Comedy": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music, Original Score": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Original Score - Motion Picture",
+        "quoted_film_title": true,
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Score": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Original Score - Motion Picture",
+        "quoted_film_title": true,
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Score - Motion Picture": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Original Score - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Score – Motion Picture": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Original Score - Motion Picture",
+        "quoted_film_title": true,
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Song": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Original Song - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Song - Motion Picture": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Original Song - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Song – Motion Picture": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Original Song - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Performance by a Female Actor in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Female Actor in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Female Actor in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Female Actor in a Supporting Role in Any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Female Actor in a Supporting Role on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Female Actor in a Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Female Actor in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Male Actor in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Male Actor in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Male Actor in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Male Actor in a Motion Picture, Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Male Actor in a Supporting Role in Any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Male Actor in a Supporting Role on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Male Actor in a Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Male Actor in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Limited Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Limited Series, Anthology Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series, Anthology Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Miniseries or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Miniseries or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Motion Picture - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Motion Picture – Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Motion Picture – Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Supporting Role in Any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Musical-Comedy or Drama Television Series": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in a Musical-Comedy or Drama Television Series",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Series, Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in a Series, Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Supporting Role on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Television Series - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Television Supporting Role": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Supporting Role",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Limited Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Limited Series, Anthology Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series, Anthology Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Miniseries or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Miniseries or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Motion Picture - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Motion Picture – Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Motion Picture – Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Supporting Role in Any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Musical-Comedy or Drama Television Series": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in a Musical-Comedy or Drama Television Series",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Series, Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in a Series, Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Supporting Role on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Television Series - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Television Supporting Role": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Supporting Role",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance in Stand-Up Comedy on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance in Stand-Up Comedy on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Podcast": {
+        "role": null,
+        "scope": "other"
+      },
+      "Best Screenplay": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Screenplay - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Screenplay - Motion Picture": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Screenplay - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Screenplay – Motion Picture": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Screenplay - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Supporting Actor in a Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Supporting Actor on Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Supporting Actress in a Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Supporting Actress on Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Supporting Female Actor in a Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Supporting Female Actor on Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Supporting Male Actor in a Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Supporting Male Actor on Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Supporting Performance in a Television Series – Musical-Comedy or Drama :: Supporting Actor": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Supporting Performance in a Television Series – Musical-Comedy or Drama :: Supporting Actress": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Television Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Television Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Limited Series, Anthology Series, or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Television Limited Series, Anthology Series, or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series – Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series – Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series, Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series, Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Variety Series": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Cecil B. DeMille Award": {
+        "role": null,
+        "scope": "career"
+      },
+      "Cinematic and Box Office Achievement": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Cinematic and Box Office Achievement",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography - Black and White": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Black And White",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography - Color": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Color",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography – Black and White": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Black And White",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography – Color": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Color",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography — Black and White": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Black And White",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography — Color": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Color",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography — Color": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Cinematography - Color",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actor in a Motion Picture – Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actor in a Motion Picture – Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actor – Miniseries or Television Film": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Actor – Motion Picture Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actor – Motion Picture Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actor – Television Series Drama": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Actor – Television Series Musical or Comedy": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Actress in a Motion Picture – Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actress in a Motion Picture – Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actress in a Motion Picture – Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actress – Miniseries or Television Film": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Actress – Motion Picture Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actress – Motion Picture Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actress – Motion Picture Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Actress – Television Series Drama": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Actress – Television Series Musical or Comedy": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Animated Feature Film": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Animated",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Director": {
+        "film_in_nominee": false,
+        "instance": "Best Director - Motion Picture",
+        "role": "director",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Director – Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Director - Motion Picture",
+        "role": "director",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Documentary Film": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Documentary",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best English-Language Foreign Film": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Foreign Film - English Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Foreign Language Film": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Limited or Anthology Series or Television Film": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Miniseries or Television Film": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Motion Picture – Drama": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Drama",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Motion Picture – Musical or Comedy": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Motion Picture – Non-English Language": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Original Score": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Original Score - Motion Picture",
+        "quoted_film_title": true,
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Original Song": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Original Song - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Performance in Stand-Up Comedy on Television": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Podcast": {
+        "role": null,
+        "scope": "other"
+      },
+      "Golden Globe Award for Best Screenplay": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Best Screenplay - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Supporting Actor – Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Supporting Actor – Series, Miniseries or Television Film": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Supporting Actress – Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Golden Globe Award for Best Supporting Actress – Series, Miniseries or Television Film": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Television Series – Drama": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Best Television Series – Musical or Comedy": {
+        "role": null,
+        "scope": "tv"
+      },
+      "Golden Globe Award for Cinematic and Box Office Achievement": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Cinematic and Box Office Achievement",
+        "role": null,
+        "scope": "film"
+      },
+      "Golden Globe Award for New Star of the Year – Actor": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Star Of The Year - Actor",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Golden Globe Award for New Star of the Year – Actress": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Star Of The Year - Actress",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Henrietta Award (World Film Favorite)": {
+        "role": null,
+        "scope": "career"
+      },
+      "Henrietta Award (World Film Favorites)": {
+        "role": null,
+        "scope": "career"
+      },
+      "Henrietta Award (World Film Favorites) Female": {
+        "role": null,
+        "scope": "career"
+      },
+      "Henrietta Award (World Film Favorites) Male": {
+        "role": null,
+        "scope": "career"
+      },
+      "Henrietta Award (World Film Favorites) – Female": {
+        "role": null,
+        "scope": "career"
+      },
+      "Henrietta Award (World Film Favorites) – Male": {
+        "role": null,
+        "scope": "career"
+      },
+      "Hollywood Citizenship Award": {
+        "role": null,
+        "scope": "career"
+      },
+      "Honor Award": {
+        "role": null,
+        "scope": "career"
+      },
+      "Honor Awards": {
+        "role": null,
+        "scope": "career"
+      },
+      "Juvenile Performance": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Juvenile Performance",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Most Promising Newcomer – Female": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Star Of The Year - Actress",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Most Promising Newcomer – Male": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Star Of The Year - Actor",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Foreign Star of the year - Actor": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Foreign Star Of The Year - Actor",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Foreign Star of the year - Actress": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Foreign Star Of The Year - Actress",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Foreign star of the year - Actress": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Foreign Star Of The Year - Actress",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Star of the Year": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Star Of The Year",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Star of the Year – Actor": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Star Of The Year - Actor",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Star of the Year – Actress": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "New Star Of The Year - Actress",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Outstanding Merit": {
+        "role": null,
+        "scope": "career"
+      },
+      "Podcast of the Year": {
+        "film_in_nominee": false,
+        "instance": "Podcast of the Year",
+        "role": null,
+        "scope": "other"
+      },
+      "Promoting International Understanding": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Promoting International Understanding",
+        "role": null,
+        "scope": "film"
+      },
+      "Samuel Goldwyn Award": {
+        "film_selection": "first",
+        "instance": "Samuel Goldwyn International Award",
+        "role": null,
+        "scope": "film"
+      },
+      "Samuel Goldwyn International Film Award": {
+        "film_in_nominee": true,
+        "film_selection": "first",
+        "instance": "Samuel Goldwyn International Award",
+        "role": null,
+        "scope": "film"
+      },
+      "Special Achievement Award": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Special Achievement Award",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Special Achievement Awards": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Special Achievement Award",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Special Award": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Special Achievement Award",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Special Award – Best Juvenile Actor": {
+        "film_in_nominee": false,
+        "film_selection": "first",
+        "instance": "Juvenile Performance",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Special Journalistic Merit Award": {
+        "role": null,
+        "scope": "career"
+      },
+      "Television Achievement": {
+        "role": null,
+        "scope": "tv"
+      }
+    },
+    "annual_oscar": {
+      "Academy Honorary Awards": {
+        "film_selection": "first",
+        "instance": "HONORARY AWARD",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Best  Writing (Screenplay -- Original)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Actor": {
+        "instance": "ACTOR IN A LEADING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actor in a Leading Role": {
+        "instance": "ACTOR IN A LEADING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actor in a Supporting Role": {
+        "instance": "ACTOR IN A SUPPORTING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actress": {
+        "instance": "ACTRESS IN A LEADING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actress in a Leading Role": {
+        "instance": "ACTRESS IN A LEADING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Actress in a Supporting Role": {
+        "instance": "ACTRESS IN A SUPPORTING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Adaptation": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Adapted Screenplay": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Animated Feature Film": {
+        "film_selection": "first",
+        "instance": "ANIMATED FEATURE FILM",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Animated Short Film": {
+        "film_selection": "first",
+        "instance": "SHORT FILM (Animated)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Art Direction": {
+        "film_selection": "first",
+        "instance": "ART DIRECTION",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Art Direction (Black-and-White)": {
+        "film_selection": "first",
+        "instance": "ART DIRECTION (Black-and-White)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Art Direction (Color)": {
+        "film_selection": "first",
+        "instance": "ART DIRECTION (Color)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Assistant Director": {
+        "film_selection": "first",
+        "instance": "ASSISTANT DIRECTOR",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Best Casting": {
+        "film_selection": "first",
+        "instance": "CASTING",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Cinematography": {
+        "film_selection": "first",
+        "instance": "CINEMATOGRAPHY",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Cinematography (Black-and-White)": {
+        "film_selection": "first",
+        "instance": "CINEMATOGRAPHY (Black-and-White)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Cinematography (Color)": {
+        "film_selection": "first",
+        "instance": "CINEMATOGRAPHY (Color)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Costume Design": {
+        "film_selection": "first",
+        "instance": "COSTUME DESIGN",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Costume Design (Black-and-White)": {
+        "film_selection": "first",
+        "instance": "COSTUME DESIGN (Black-and-White)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Costume Design (Color)": {
+        "film_selection": "first",
+        "instance": "COSTUME DESIGN (Color)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Dance Direction": {
+        "film_selection": "all",
+        "instance": "DANCE DIRECTION",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Directing": {
+        "instance": "DIRECTING",
+        "role": "director",
+        "scope": "film"
+      },
+      "Best Directing (Comedy Picture)": {
+        "instance": "DIRECTING (Comedy Picture)",
+        "role": "director",
+        "scope": "film"
+      },
+      "Best Directing (Dramatic Picture)": {
+        "instance": "DIRECTING (Dramatic Picture)",
+        "role": "director",
+        "scope": "film"
+      },
+      "Best Director": {
+        "instance": "DIRECTING",
+        "role": "director",
+        "scope": "film"
+      },
+      "Best Documentary": {
+        "film_selection": "first",
+        "instance": "DOCUMENTARY (Feature)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Documentary (Feature)": {
+        "film_selection": "first",
+        "instance": "DOCUMENTARY (Feature)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Documentary (Short Subject)": {
+        "film_selection": "first",
+        "instance": "DOCUMENTARY (Short Subject)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Documentary Feature Film": {
+        "film_selection": "first",
+        "instance": "DOCUMENTARY (Feature)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Documentary Short Film": {
+        "film_selection": "first",
+        "instance": "DOCUMENTARY (Short Subject)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Engineering Effects": {
+        "film_selection": "first",
+        "instance": "VISUAL EFFECTS",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Film Editing": {
+        "film_selection": "first",
+        "instance": "FILM EDITING",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Foreign Language Film": {
+        "film_selection": "first",
+        "instance": "INTERNATIONAL FEATURE FILM",
+        "role": null,
+        "scope": "film"
+      },
+      "Best International Feature Film": {
+        "film_selection": "first",
+        "instance": "INTERNATIONAL FEATURE FILM",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Live Action Short Film": {
+        "film_selection": "first",
+        "instance": "SHORT FILM (Live Action)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Live Action Short Subject, Comedy": {
+        "film_selection": "first",
+        "instance": "SHORT SUBJECT (Comedy)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Live Action Short Subject, Novelty": {
+        "film_selection": "first",
+        "instance": "SHORT SUBJECT (Novelty)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Makeup": {
+        "film_selection": "first",
+        "instance": "MAKEUP AND HAIRSTYLING",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Makeup and Hairstyling": {
+        "film_selection": "first",
+        "instance": "MAKEUP AND HAIRSTYLING",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture": {
+        "film_selection": "first",
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Adaptation Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Music Score -- Substantially Original)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Music Score of a Dramatic Picture)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Music Score of a Dramatic or Comedy Picture)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Dramatic Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Music Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Musical or Comedy Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Score -- for a Motion Picture (Not a Musical))": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Song Score and Its Adaptation -or- Adaptation Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Song Score and Its Adaptation or Adaptation Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Song Score or Adaptation Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Song Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Original Song)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Score of a Musical Picture -- Original or Adaptation)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Scoring of Music -- Adaptation or Treatment)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Scoring of a Musical Picture)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Scoring)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Scoring: Adaptation and Original Song Score)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Scoring: Original Song Score and Adaptation -or- Scoring: Adaptation)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Song -- Original for the Picture)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Music (Song)": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Score": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Screenplay": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Song": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Story": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Story)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Picture": {
+        "film_selection": "first",
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Production Design": {
+        "film_selection": "first",
+        "instance": "ART DIRECTION",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Film (Animated)": {
+        "film_selection": "first",
+        "instance": "SHORT FILM (Animated)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Film (Dramatic Live Action)": {
+        "film_selection": "first",
+        "instance": "SHORT FILM (Live Action)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Film (Live Action)": {
+        "film_selection": "first",
+        "instance": "SHORT FILM (Live Action)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Subject (Animated)": {
+        "film_selection": "first",
+        "instance": "SHORT FILM (Animated)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Subject (Cartoon)": {
+        "film_selection": "first",
+        "instance": "SHORT FILM (Animated)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Subject (Color)": {
+        "film_selection": "first",
+        "instance": "SHORT SUBJECT (Color)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Subject (Comedy)": {
+        "film_selection": "first",
+        "instance": "SHORT SUBJECT (Comedy)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Subject (Live Action)": {
+        "film_selection": "first",
+        "instance": "SHORT FILM (Live Action)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Subject (Novelty)": {
+        "film_selection": "first",
+        "instance": "SHORT SUBJECT (Novelty)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Subject (One-Reel)": {
+        "film_selection": "first",
+        "instance": "SHORT SUBJECT (One-reel)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Subject (Two-Reel)": {
+        "film_selection": "first",
+        "instance": "SHORT SUBJECT (Two-reel)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Short Subject, Cartoon": {
+        "film_selection": "first",
+        "instance": "SHORT FILM (Animated)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Song Original for the Picture": {
+        "film_selection": "first",
+        "instance": "MUSIC (Original Song)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Sound": {
+        "film_selection": "first",
+        "instance": "SOUND MIXING",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Sound Editing": {
+        "film_selection": "first",
+        "instance": "SOUND EDITING",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Sound Effects": {
+        "film_selection": "first",
+        "instance": "SOUND EDITING",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Sound Effects Editing": {
+        "film_selection": "first",
+        "instance": "SOUND EDITING",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Sound Mixing": {
+        "film_selection": "first",
+        "instance": "SOUND MIXING",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Sound Recording": {
+        "film_selection": "first",
+        "instance": "SOUND RECORDING",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Best Special Effects": {
+        "film_selection": "first",
+        "instance": "VISUAL EFFECTS",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Best Special Visual Effects": {
+        "film_selection": "first",
+        "instance": "VISUAL EFFECTS",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Supporting Actor": {
+        "instance": "ACTOR IN A SUPPORTING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Supporting Actress": {
+        "instance": "ACTRESS IN A SUPPORTING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Unique and Artistic Picture": {
+        "film_selection": "first",
+        "instance": "UNIQUE AND ARTISTIC PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Visual Effects": {
+        "film_selection": "first",
+        "instance": "VISUAL EFFECTS",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Adaptation)": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Adapted Screenplay)": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Motion Picture Story)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Story)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Original Motion Picture Story)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Story)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Original Screenplay)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Original Story)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Story)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Screenplay -- Adapted)": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Screenplay -- Based on Material from Another Medium)": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Screenplay Adapted from Other Material)": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Screenplay Based on Material Previously Produced or Published)": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Screenplay Based on Material from Another Medium)": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Screenplay Written Directly for the Screen -- Based on Factual Material or on Story Material Not Previously Published or Produced)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Screenplay Written Directly for the Screen)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Screenplay – Based on Material from Another Medium)": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Screenplay)": {
+        "film_selection": "first",
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Story and Screenplay -- Based on Factual Material or Material Not Previously Published or Produced)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Story and Screenplay -- Based on Factual Material or Material NotPreviously Published or Produced)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Story and Screenplay -- Based on Material Not Previously Published or Produced)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Story and Screenplay -- Written Directly for the Screen)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Story and Screenplay – Written Directly for the Screen)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Story and Screenplay)": {
+        "film_selection": "first",
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Writing (Title Writing)": {
+        "film_selection": "first",
+        "instance": "WRITING (Title Writing)",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Honorary Academy Award": {
+        "film_selection": "first",
+        "instance": "HONORARY AWARD",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Honorary Award": {
+        "film_selection": "first",
+        "instance": "HONORARY AWARD",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Honorary Awards": {
+        "film_selection": "first",
+        "instance": "HONORARY AWARD",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Honorary Foreign Language Film Award": {
+        "film_selection": "first",
+        "instance": "INTERNATIONAL FEATURE FILM",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Irving G. Thalberg Memorial Award": {
+        "evidence": {
+          "revision": "50th ceremony verified 2026-10-02",
+          "source_url": "https://www.oscars.org/oscars/ceremonies/1978"
+        },
+        "instance": "IRVING G. THALBERG MEMORIAL AWARD",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Jean Hersholt Humanitarian Award": {
+        "evidence": {
+          "revision": "50th ceremony verified 2026-10-02",
+          "source_url": "https://www.oscars.org/oscars/ceremonies/1978"
+        },
+        "instance": "JEAN HERSHOLT HUMANITARIAN AWARD",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Outstanding Motion Picture": {
+        "film_selection": "first",
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "Outstanding Picture": {
+        "film_selection": "first",
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "Outstanding Production": {
+        "film_selection": "first",
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "Special Achievement Award": {
+        "citation_instances": [
+          {
+            "evidence": {
+              "revision": "50th ceremony verified 2026-10-02",
+              "source_url": "https://www.oscars.org/oscars/ceremonies/1978"
+            },
+            "instance": "SPECIAL ACHIEVEMENT AWARD (Sound Effects Editing)",
+            "phrase": "sound effects editing"
+          }
+        ],
+        "film_selection": "first",
+        "instance": "SPECIAL ACHIEVEMENT AWARD",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Special Achievement Award (Sound Editing)": {
+        "film_selection": "first",
+        "instance": "SPECIAL ACHIEVEMENT AWARD (Sound Editing)",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Special Achievement Award (Sound Effects Editing)": {
+        "film_selection": "first",
+        "instance": "SPECIAL ACHIEVEMENT AWARD (Sound Effects Editing)",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Special Achievement Award (Sound Effects)": {
+        "film_selection": "first",
+        "instance": "SPECIAL ACHIEVEMENT AWARD (Sound Effects)",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Special Achievement Award (Visual Effects)": {
+        "film_selection": "first",
+        "instance": "SPECIAL ACHIEVEMENT AWARD (Visual Effects)",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Special Achievement Awards (Visual Effects)": {
+        "film_selection": "first",
+        "instance": "SPECIAL ACHIEVEMENT AWARD (Visual Effects)",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Special Award": {
+        "film_selection": "first",
+        "instance": "SPECIAL AWARD",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Special Foreign Language Film Award": {
+        "film_selection": "first",
+        "instance": "SPECIAL FOREIGN LANGUAGE FILM AWARD",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      },
+      "Special awards": {
+        "film_selection": "first",
+        "instance": "SPECIAL AWARD",
+        "role": null,
+        "scope": "film_if_associated",
+        "section_winners": true
+      }
+    },
+    "dlu_oscar": {
+      "ACTOR": {
+        "instance": "ACTOR IN A LEADING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "ACTOR IN A LEADING ROLE": {
+        "instance": "ACTOR IN A LEADING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "ACTOR IN A SUPPORTING ROLE": {
+        "instance": "ACTOR IN A SUPPORTING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "ACTRESS": {
+        "instance": "ACTRESS IN A LEADING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "ACTRESS IN A LEADING ROLE": {
+        "instance": "ACTRESS IN A LEADING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "ACTRESS IN A SUPPORTING ROLE": {
+        "instance": "ACTRESS IN A SUPPORTING ROLE",
+        "role": "actor",
+        "scope": "film"
+      },
+      "ANIMATED FEATURE FILM": {
+        "instance": "ANIMATED FEATURE FILM",
+        "role": null,
+        "scope": "film"
+      },
+      "ANIMATED SHORT FILM": {
+        "instance": "SHORT FILM (Animated)",
+        "role": null,
+        "scope": "film"
+      },
+      "ART DIRECTION": {
+        "instance": "ART DIRECTION",
+        "role": null,
+        "scope": "film"
+      },
+      "ART DIRECTION (Black-and-White)": {
+        "instance": "ART DIRECTION (Black-and-White)",
+        "role": null,
+        "scope": "film"
+      },
+      "ART DIRECTION (Color)": {
+        "instance": "ART DIRECTION (Color)",
+        "role": null,
+        "scope": "film"
+      },
+      "ASSISTANT DIRECTOR": {
+        "instance": "ASSISTANT DIRECTOR",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "AWARD OF COMMENDATION": {
+        "evidence": {
+          "reason": "Scientific and Technical Awards special plaque honors a technology; a film named as its example is not a film-category winner.",
+          "source_url": "https://www.oscars.org/sci-tech/ceremonies/2023"
+        },
+        "instance": "AWARD OF COMMENDATION",
+        "role": null,
+        "scope": "other"
+      },
+      "BEST MOTION PICTURE": {
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "BEST PICTURE": {
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "CASTING": {
+        "instance": "CASTING",
+        "role": null,
+        "scope": "film"
+      },
+      "CINEMATOGRAPHY": {
+        "instance": "CINEMATOGRAPHY",
+        "role": null,
+        "scope": "film"
+      },
+      "CINEMATOGRAPHY (Black-and-White)": {
+        "instance": "CINEMATOGRAPHY (Black-and-White)",
+        "role": null,
+        "scope": "film"
+      },
+      "CINEMATOGRAPHY (Color)": {
+        "instance": "CINEMATOGRAPHY (Color)",
+        "role": null,
+        "scope": "film"
+      },
+      "COSTUME DESIGN": {
+        "instance": "COSTUME DESIGN",
+        "role": null,
+        "scope": "film"
+      },
+      "COSTUME DESIGN (Black-and-White)": {
+        "instance": "COSTUME DESIGN (Black-and-White)",
+        "role": null,
+        "scope": "film"
+      },
+      "COSTUME DESIGN (Color)": {
+        "instance": "COSTUME DESIGN (Color)",
+        "role": null,
+        "scope": "film"
+      },
+      "DANCE DIRECTION": {
+        "instance": "DANCE DIRECTION",
+        "role": null,
+        "scope": "film"
+      },
+      "DIRECTING": {
+        "instance": "DIRECTING",
+        "role": "director",
+        "scope": "film"
+      },
+      "DIRECTING (Comedy Picture)": {
+        "instance": "DIRECTING (Comedy Picture)",
+        "role": "director",
+        "scope": "film"
+      },
+      "DIRECTING (Dramatic Picture)": {
+        "instance": "DIRECTING (Dramatic Picture)",
+        "role": "director",
+        "scope": "film"
+      },
+      "DOCUMENTARY": {
+        "instance": "DOCUMENTARY (Feature)",
+        "role": null,
+        "scope": "film"
+      },
+      "DOCUMENTARY (Feature)": {
+        "instance": "DOCUMENTARY (Feature)",
+        "role": null,
+        "scope": "film"
+      },
+      "DOCUMENTARY (Short Subject)": {
+        "instance": "DOCUMENTARY (Short Subject)",
+        "role": null,
+        "scope": "film"
+      },
+      "DOCUMENTARY FEATURE FILM": {
+        "instance": "DOCUMENTARY (Feature)",
+        "role": null,
+        "scope": "film"
+      },
+      "DOCUMENTARY SHORT FILM": {
+        "instance": "DOCUMENTARY (Short Subject)",
+        "role": null,
+        "scope": "film"
+      },
+      "ENGINEERING EFFECTS": {
+        "instance": "VISUAL EFFECTS",
+        "role": null,
+        "scope": "film"
+      },
+      "FILM EDITING": {
+        "instance": "FILM EDITING",
+        "role": null,
+        "scope": "film"
+      },
+      "FOREIGN LANGUAGE FILM": {
+        "instance": "INTERNATIONAL FEATURE FILM",
+        "role": null,
+        "scope": "film"
+      },
+      "GORDON E. SAWYER AWARD": {
+        "instance": "GORDON E. SAWYER AWARD",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "HONORARY AWARD": {
+        "instance": "HONORARY AWARD",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "HONORARY FOREIGN LANGUAGE FILM AWARD": {
+        "instance": "INTERNATIONAL FEATURE FILM",
+        "role": null,
+        "scope": "film"
+      },
+      "INTERNATIONAL FEATURE FILM": {
+        "instance": "INTERNATIONAL FEATURE FILM",
+        "role": null,
+        "scope": "film"
+      },
+      "IRVING G. THALBERG MEMORIAL AWARD": {
+        "instance": "IRVING G. THALBERG MEMORIAL AWARD",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "JEAN HERSHOLT HUMANITARIAN AWARD": {
+        "instance": "JEAN HERSHOLT HUMANITARIAN AWARD",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "JOHN A. BONNER MEDAL OF COMMENDATION": {
+        "instance": "JOHN A. BONNER MEDAL OF COMMENDATION",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "LIVE ACTION SHORT FILM": {
+        "instance": "SHORT FILM (Live Action)",
+        "role": null,
+        "scope": "film"
+      },
+      "MAKEUP": {
+        "instance": "MAKEUP AND HAIRSTYLING",
+        "role": null,
+        "scope": "film"
+      },
+      "MAKEUP AND HAIRSTYLING": {
+        "instance": "MAKEUP AND HAIRSTYLING",
+        "role": null,
+        "scope": "film"
+      },
+      "MEDAL OF COMMENDATION": {
+        "instance": "MEDAL OF COMMENDATION",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "MUSIC (Adaptation Score)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Music Score of a Dramatic Picture)": {
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Music Score of a Dramatic or Comedy Picture)": {
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Music Score--substantially original)": {
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Dramatic Score)": {
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Music Score)": {
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Musical or Comedy Score)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Score)": {
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Score--for a motion picture [not a musical])": {
+        "instance": "MUSIC (Original Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Song Score and Its Adaptation -or- Adaptation Score)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Song Score and Its Adaptation or Adaptation Score)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Song Score or Adaptation Score)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Song Score)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Original Song)": {
+        "instance": "MUSIC (Original Song)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Score of a Musical Picture--original or adaptation)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Scoring of Music--adaptation or treatment)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Scoring of a Musical Picture)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Scoring)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Scoring: Adaptation and Original Song Score)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Scoring: Original Song Score and Adaptation -or- Scoring: Adaptation)": {
+        "instance": "MUSIC (Original Song Score or Adaptation Score)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Song)": {
+        "instance": "MUSIC (Original Song)",
+        "role": null,
+        "scope": "film"
+      },
+      "MUSIC (Song--Original for the Picture)": {
+        "instance": "MUSIC (Original Song)",
+        "role": null,
+        "scope": "film"
+      },
+      "OUTSTANDING MOTION PICTURE": {
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "OUTSTANDING PICTURE": {
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "OUTSTANDING PRODUCTION": {
+        "instance": "BEST PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "PRODUCTION DESIGN": {
+        "instance": "ART DIRECTION",
+        "role": null,
+        "scope": "film"
+      },
+      "SCIENTIFIC AND TECHNICAL AWARD (Academy Award of Merit)": {
+        "instance": "SCIENTIFIC AND TECHNICAL AWARD (Academy Award of Merit)",
+        "role": null,
+        "scope": "other"
+      },
+      "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)": {
+        "instance": "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)",
+        "role": null,
+        "scope": "other"
+      },
+      "SCIENTIFIC AND TECHNICAL AWARD (Special Award)": {
+        "instance": "SCIENTIFIC AND TECHNICAL AWARD (Special Award)",
+        "role": null,
+        "scope": "other"
+      },
+      "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)": {
+        "instance": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+        "role": null,
+        "scope": "other"
+      },
+      "SCIENTIFIC OR TECHNICAL AWARD (Academy Award of Merit)": {
+        "instance": "SCIENTIFIC AND TECHNICAL AWARD (Academy Award of Merit)",
+        "role": null,
+        "scope": "other"
+      },
+      "SCIENTIFIC OR TECHNICAL AWARD (Class I)": {
+        "instance": "SCIENTIFIC OR TECHNICAL AWARD (Class I)",
+        "role": null,
+        "scope": "other"
+      },
+      "SCIENTIFIC OR TECHNICAL AWARD (Class II)": {
+        "instance": "SCIENTIFIC OR TECHNICAL AWARD (Class II)",
+        "role": null,
+        "scope": "other"
+      },
+      "SCIENTIFIC OR TECHNICAL AWARD (Class III)": {
+        "instance": "SCIENTIFIC OR TECHNICAL AWARD (Class III)",
+        "role": null,
+        "scope": "other"
+      },
+      "SCIENTIFIC OR TECHNICAL AWARD (Scientific and Engineering Award)": {
+        "instance": "SCIENTIFIC AND TECHNICAL AWARD (Scientific and Engineering Award)",
+        "role": null,
+        "scope": "other"
+      },
+      "SCIENTIFIC OR TECHNICAL AWARD (Technical Achievement Award)": {
+        "instance": "SCIENTIFIC AND TECHNICAL AWARD (Technical Achievement Award)",
+        "role": null,
+        "scope": "other"
+      },
+      "SHORT FILM (Animated)": {
+        "instance": "SHORT FILM (Animated)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT FILM (Dramatic Live Action)": {
+        "instance": "SHORT FILM (Live Action)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT FILM (Live Action)": {
+        "instance": "SHORT FILM (Live Action)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT SUBJECT (Animated)": {
+        "instance": "SHORT FILM (Animated)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT SUBJECT (Cartoon)": {
+        "instance": "SHORT FILM (Animated)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT SUBJECT (Color)": {
+        "instance": "SHORT SUBJECT (Color)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT SUBJECT (Comedy)": {
+        "instance": "SHORT SUBJECT (Comedy)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT SUBJECT (Live Action)": {
+        "instance": "SHORT FILM (Live Action)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT SUBJECT (Novelty)": {
+        "instance": "SHORT SUBJECT (Novelty)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT SUBJECT (One-reel)": {
+        "instance": "SHORT SUBJECT (One-reel)",
+        "role": null,
+        "scope": "film"
+      },
+      "SHORT SUBJECT (Two-reel)": {
+        "instance": "SHORT SUBJECT (Two-reel)",
+        "role": null,
+        "scope": "film"
+      },
+      "SOUND": {
+        "instance": "SOUND MIXING",
+        "role": null,
+        "scope": "film"
+      },
+      "SOUND EDITING": {
+        "instance": "SOUND EDITING",
+        "role": null,
+        "scope": "film"
+      },
+      "SOUND EFFECTS": {
+        "instance": "SOUND EDITING",
+        "role": null,
+        "scope": "film"
+      },
+      "SOUND EFFECTS EDITING": {
+        "instance": "SOUND EDITING",
+        "role": null,
+        "scope": "film"
+      },
+      "SOUND MIXING": {
+        "instance": "SOUND MIXING",
+        "role": null,
+        "scope": "film"
+      },
+      "SOUND RECORDING": {
+        "instance": "SOUND RECORDING",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "SPECIAL ACHIEVEMENT AWARD": {
+        "instance": "SPECIAL ACHIEVEMENT AWARD",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "SPECIAL ACHIEVEMENT AWARD (Sound Editing)": {
+        "instance": "SPECIAL ACHIEVEMENT AWARD (Sound Editing)",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "SPECIAL ACHIEVEMENT AWARD (Sound Effects Editing)": {
+        "instance": "SPECIAL ACHIEVEMENT AWARD (Sound Effects Editing)",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "SPECIAL ACHIEVEMENT AWARD (Sound Effects)": {
+        "instance": "SPECIAL ACHIEVEMENT AWARD (Sound Effects)",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "SPECIAL ACHIEVEMENT AWARD (Visual Effects)": {
+        "instance": "SPECIAL ACHIEVEMENT AWARD (Visual Effects)",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "SPECIAL AWARD": {
+        "instance": "SPECIAL AWARD",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "SPECIAL EFFECTS": {
+        "instance": "VISUAL EFFECTS",
+        "role": null,
+        "scope": "film"
+      },
+      "SPECIAL FOREIGN LANGUAGE FILM AWARD": {
+        "instance": "SPECIAL FOREIGN LANGUAGE FILM AWARD",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "SPECIAL VISUAL EFFECTS": {
+        "instance": "VISUAL EFFECTS",
+        "role": null,
+        "scope": "film"
+      },
+      "UNIQUE AND ARTISTIC PICTURE": {
+        "instance": "UNIQUE AND ARTISTIC PICTURE",
+        "role": null,
+        "scope": "film"
+      },
+      "VISUAL EFFECTS": {
+        "instance": "VISUAL EFFECTS",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING": {
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Adaptation)": {
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Adapted Screenplay)": {
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Motion Picture Story)": {
+        "instance": "WRITING (Original Story)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Original Motion Picture Story)": {
+        "instance": "WRITING (Original Story)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Original Screenplay)": {
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Original Story)": {
+        "instance": "WRITING (Original Story)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Screenplay Adapted from Other Material)": {
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Screenplay Based on Material Previously Produced or Published)": {
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Screenplay Based on Material from Another Medium)": {
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Screenplay Written Directly for the Screen)": {
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Screenplay Written Directly for the Screen--based on factual material or on story material not previously published or produced)": {
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Screenplay)": {
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Screenplay--Adapted)": {
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Screenplay--Original)": {
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Screenplay--based on material from another medium)": {
+        "instance": "WRITING (Adapted Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Story and Screenplay)": {
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Story and Screenplay--based on factual material or material not previously published or produced)": {
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Story and Screenplay--based on material not previously published or produced)": {
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Story and Screenplay--written directly for the screen)": {
+        "instance": "WRITING (Original Screenplay)",
+        "role": null,
+        "scope": "film"
+      },
+      "WRITING (Title Writing)": {
+        "instance": "WRITING (Title Writing)",
+        "role": null,
+        "scope": "film_if_associated"
+      }
+    },
+    "historical_globe": {
+      "Actor In A Leading Role": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Actor In A Leading Role - Drama Series Or Television Movie": {
+        "film_in_nominee": false,
+        "instance": "Actor In A Leading Role - Drama Series Or Television Movie",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actor In A Leading Role - Musical Or Comedy Series Or Television Movie": {
+        "film_in_nominee": false,
+        "instance": "Actor In A Leading Role - Musical Or Comedy Series Or Television Movie",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actor In A Supporting Role - Series Or Television Movie": {
+        "film_in_nominee": false,
+        "instance": "Actor In A Supporting Role - Series Or Television Movie",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actor In A Supporting Role - Television Series": {
+        "film_in_nominee": false,
+        "instance": "Actor In A Supporting Role - Television Series",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actor In A Television Series": {
+        "film_in_nominee": false,
+        "instance": "Actor In A Television Series",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actor In A Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Actor In A Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actor In A Television Series - Musical Or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Actor In A Television Series - Musical Or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actress In A Leading Role": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Actress In A Leading Role - Drama Series Or Television Movie": {
+        "film_in_nominee": false,
+        "instance": "Actress In A Leading Role - Drama Series Or Television Movie",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actress In A Leading Role - Musical Or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Actress In A Leading Role - Musical Or Comedy Series Or Television Movie": {
+        "film_in_nominee": false,
+        "instance": "Actress In A Leading Role - Musical Or Comedy Series Or Television Movie",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actress In A Supporting Role - Series Or Television Movie": {
+        "film_in_nominee": false,
+        "instance": "Actress In A Supporting Role - Series Or Television Movie",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actress In A Supporting Role - Television Series": {
+        "film_in_nominee": false,
+        "instance": "Actress In A Supporting Role - Television Series",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actress In A Television Series": {
+        "film_in_nominee": false,
+        "instance": "Actress In A Television Series",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actress In A Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Actress In A Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Actress In A Television Series - Musical Or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Actress In A Television Series - Musical Or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Director - Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Director - Motion Picture",
+        "role": "director",
+        "scope": "film"
+      },
+      "Best Motion Picture - Animated": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Animated",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Drama": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Drama",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Foreign Language": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Musical or Comedy": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Score - Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Original Score - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Song - Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Original Song - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Performance by an Actor In A Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor In A Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Limited Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Supporting Role in any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress In A Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress In A Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Limited Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Supporting Role in any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Screenplay - Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Screenplay - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Television Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Television Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Carol Burnett Award": {
+        "film_in_nominee": false,
+        "instance": "Carol Burnett Award",
+        "role": null,
+        "scope": "career"
+      },
+      "Cecil B. deMille Award": {
+        "film_in_nominee": false,
+        "instance": "Cecil B. deMille Award",
+        "role": null,
+        "scope": "career"
+      },
+      "Cinematography": {
+        "film_in_nominee": false,
+        "instance": "Cinematography",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography - Black And White": {
+        "film_in_nominee": false,
+        "instance": "Cinematography - Black And White",
+        "role": null,
+        "scope": "film"
+      },
+      "Cinematography - Color": {
+        "film_in_nominee": false,
+        "instance": "Cinematography - Color",
+        "role": null,
+        "scope": "film"
+      },
+      "Documentary": {
+        "film_in_nominee": true,
+        "instance": "Documentary",
+        "role": null,
+        "scope": "film"
+      },
+      "Famous Silent Filmstars": {
+        "film_in_nominee": false,
+        "instance": "Famous Silent Filmstars",
+        "role": null,
+        "scope": "career"
+      },
+      "Foreign Film - English Language": {
+        "film_in_nominee": false,
+        "instance": "Foreign Film - English Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Foreign Film - Foreign Language": {
+        "film_in_nominee": false,
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Henrietta Award (World Film Favorite)": {
+        "film_in_nominee": false,
+        "instance": "Henrietta Award (World Film Favorite)",
+        "role": null,
+        "scope": "career"
+      },
+      "Henrietta Award (World Film Favorites)": {
+        "film_in_nominee": false,
+        "instance": "Henrietta Award (World Film Favorites)",
+        "role": null,
+        "scope": "career"
+      },
+      "Hollywood Citizenship Award": {
+        "film_in_nominee": false,
+        "instance": "Hollywood Citizenship Award",
+        "role": null,
+        "scope": "career"
+      },
+      "International News Coverage": {
+        "film_in_nominee": false,
+        "instance": "International News Coverage",
+        "role": null,
+        "scope": "tv"
+      },
+      "Juvenile Performance": {
+        "film_in_nominee": false,
+        "instance": "Juvenile Performance",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Foreign Star Of The Year - Actor": {
+        "film_in_nominee": false,
+        "instance": "New Foreign Star Of The Year - Actor",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Foreign Star Of The Year - Actress": {
+        "film_in_nominee": false,
+        "instance": "New Foreign Star Of The Year - Actress",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Star Of The Year": {
+        "film_in_nominee": false,
+        "instance": "New Star Of The Year",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Star Of The Year - Actor": {
+        "film_in_nominee": false,
+        "instance": "New Star Of The Year - Actor",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "New Star Of The Year - Actress": {
+        "film_in_nominee": false,
+        "instance": "New Star Of The Year - Actress",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Outstanding Use Of Color": {
+        "film_in_nominee": true,
+        "instance": "Outstanding Use Of Color",
+        "role": null,
+        "scope": "film"
+      },
+      "Picture": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Drama",
+        "role": null,
+        "scope": "film"
+      },
+      "Picture - Comedy": {
+        "film_in_nominee": true,
+        "instance": "Picture - Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Picture - Musical": {
+        "film_in_nominee": true,
+        "instance": "Picture - Musical",
+        "role": null,
+        "scope": "film"
+      },
+      "Promoting International Understanding": {
+        "film_in_nominee": false,
+        "instance": "Promoting International Understanding",
+        "role": null,
+        "scope": "film"
+      },
+      "Samuel Goldwyn International Award": {
+        "film_in_nominee": false,
+        "instance": "Samuel Goldwyn International Award",
+        "role": null,
+        "scope": "film"
+      },
+      "Special Achievement Award": {
+        "film_in_nominee": false,
+        "instance": "Special Achievement Award",
+        "role": null,
+        "scope": "film_if_associated"
+      },
+      "Television Achievement": {
+        "film_in_nominee": false,
+        "instance": "Television Achievement",
+        "role": null,
+        "scope": "tv"
+      },
+      "Television Movie": {
+        "film_in_nominee": false,
+        "instance": "Television Movie",
+        "role": null,
+        "scope": "tv"
+      },
+      "Television Producer/Director": {
+        "film_in_nominee": false,
+        "instance": "Television Producer/Director",
+        "role": null,
+        "scope": "tv"
+      },
+      "Television Program": {
+        "film_in_nominee": false,
+        "instance": "Television Program",
+        "role": null,
+        "scope": "tv"
+      },
+      "Television Series": {
+        "film_in_nominee": false,
+        "instance": "Television Series",
+        "role": null,
+        "scope": "tv"
+      },
+      "Television Series - Comedy": {
+        "film_in_nominee": false,
+        "instance": "Television Series - Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Television Series - Variety": {
+        "film_in_nominee": false,
+        "instance": "Television Series - Variety",
+        "role": null,
+        "scope": "tv"
+      },
+      "Television Special - Variety Or Musical": {
+        "film_in_nominee": false,
+        "instance": "Television Special - Variety Or Musical",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Outdoor Drama": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Outdoor Drama",
+        "role": null,
+        "scope": "film"
+      }
+    },
+    "modern_globe": {
+      "Best Animated Feature Film": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Animated",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Animated Film": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Animated",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Director - Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Director - Motion Picture",
+        "role": "director",
+        "scope": "film"
+      },
+      "Best Foreign Language Film": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Motion Picture - Animated": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Animated",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Comedy or Musical": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Drama": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Drama",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Foreign Language": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Musical or Comedy": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture - Non-English Language": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Foreign Language",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Motion Picture, Musical or Comedy": {
+        "film_in_nominee": true,
+        "instance": "Best Motion Picture - Musical or Comedy",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Score - Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Original Score - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Original Song - Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Original Song - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Performance by a Female Actor in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Female Actor in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Female Actor in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Female Actor in a Supporting Role in Any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Female Actor in a Supporting Role on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Female Actor in a Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Female Actor in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Male Actor in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Male Actor in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Male Actor in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Male Actor in a Motion Picture, Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Male Actor in a Supporting Role in Any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by a Male Actor in a Supporting Role on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Male Actor in a Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by a Male Actor in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Limited Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Limited Series, Anthology Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Limited Series, Anthology Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Miniseries or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Miniseries or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Motion Picture - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Supporting Role in Any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Musical-Comedy or Drama Television Series": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in a Musical-Comedy or Drama Television Series",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Supporting Role in a Series, Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role in a Series, Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Supporting Role on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Supporting Role on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Television Series - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actor in a Television Supporting Role": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actor in a Television Supporting Role",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Limited Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Limited Series, Anthology Series or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Limited Series, Anthology Series or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Miniseries or a Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Miniseries or a Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Motion Picture - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Motion Picture - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Drama",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Motion Picture - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Motion Picture - Musical or Comedy",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Supporting Role in Any Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in a Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in Any Motion Picture",
+        "role": "actor",
+        "scope": "film"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Musical-Comedy or Drama Television Series": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in a Musical-Comedy or Drama Television Series",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in a Series, Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Supporting Role in a Series, Miniseries or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role in a Series, Miniseries or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Supporting Role on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Supporting Role on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Television Series - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance by an Actress in a Television Supporting Role": {
+        "film_in_nominee": false,
+        "instance": "Best Performance by an Actress in a Television Supporting Role",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Performance in Stand-Up Comedy on Television": {
+        "film_in_nominee": false,
+        "instance": "Best Performance in Stand-Up Comedy on Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Screenplay - Motion Picture": {
+        "film_in_nominee": false,
+        "instance": "Best Screenplay - Motion Picture",
+        "role": null,
+        "scope": "film"
+      },
+      "Best Television Limited Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Television Limited Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Limited Series, Anthology Series or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Television Limited Series, Anthology Series or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Limited Series, Anthology Series, or Motion Picture Made for Television": {
+        "film_in_nominee": false,
+        "instance": "Best Television Limited Series, Anthology Series, or Motion Picture Made for Television",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series - Comedy or Musical": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series - Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series - Musical or Comedy": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series - Musical or Comedy",
+        "role": null,
+        "scope": "tv"
+      },
+      "Best Television Series, Drama": {
+        "film_in_nominee": false,
+        "instance": "Best Television Series, Drama",
+        "role": null,
+        "scope": "tv"
+      },
+      "Cinematic and Box Office Achievement": {
+        "film_in_nominee": true,
+        "instance": "Cinematic and Box Office Achievement",
+        "role": null,
+        "scope": "film"
+      },
+      "Podcast of the Year": {
+        "film_in_nominee": false,
+        "instance": "Podcast of the Year",
+        "role": null,
+        "scope": "other"
+      }
+    }
+  },
+  "subjects": [
+    {
+      "evidence": {
+        "reason": "The special honor names the collective newsreel series, without an individual winning film.",
+        "revision": 1376554498,
+        "source_url": "https://en.wikipedia.org/w/index.php?title=9th_Academy_Awards&oldid=1376554498",
+        "subject_url": "https://en.wikipedia.org/wiki/The_March_of_Time"
+      },
+      "imdb_id": "tt3034436",
+      "kind": "film_series",
+      "source_aliases": [
+        {
+          "category": "Special awards",
+          "ceremony": 9,
+          "source": "annual_wikitext",
+          "title": "The March of Time"
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "reason": "Special-honor citation names a non-individual-film subject; the primary ceremony record does not designate an individual winning film.",
+        "revision": 1376328736,
+        "source_url": "https://en.wikipedia.org/w/index.php?title=10th_Academy_Awards&oldid=1376328736"
+      },
+      "kind": "character",
+      "source_aliases": [
+        {
+          "category": "Special awards",
+          "ceremony": 10,
+          "source": "annual_wikitext",
+          "title": "Charlie McCarthy"
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "reason": "Special-honor citation names a non-individual-film subject; the primary ceremony record does not designate an individual winning film.",
+        "revision": 1357588331,
+        "source_url": "https://en.wikipedia.org/w/index.php?title=15th_Academy_Awards&oldid=1357588331"
+      },
+      "kind": "film_series",
+      "source_aliases": [
+        {
+          "category": "Special awards",
+          "ceremony": 15,
+          "source": "annual_wikitext",
+          "title": "Andy Hardy"
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "reason": "Special-honor citation names a non-individual-film subject; the primary ceremony record does not designate an individual winning film.",
+        "revision": 1364361507,
+        "source_url": "https://en.wikipedia.org/w/index.php?title=26th_Academy_Awards&oldid=1364361507"
+      },
+      "kind": "film_series",
+      "source_aliases": [
+        {
+          "category": "Honorary Awards",
+          "ceremony": 26,
+          "source": "annual_wikitext",
+          "title": "Pete Smith Specialties"
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "reason": "Special-honor citation names a non-individual-film subject; the primary ceremony record does not designate an individual winning film.",
+        "revision": 1377060897,
+        "source_url": "https://en.wikipedia.org/w/index.php?title=46th_Academy_Awards&oldid=1377060897"
+      },
+      "kind": "person_group",
+      "source_aliases": [
+        {
+          "category": "Honorary Awards",
+          "ceremony": 46,
+          "source": "annual_wikitext",
+          "title": "Marx Brothers"
+        }
+      ]
+    }
+  ]
+}

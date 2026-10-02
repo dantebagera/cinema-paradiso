@@ -978,6 +978,20 @@ class IdentityDecisionServiceTest(unittest.TestCase):
         self.assertEqual(len(result["owned_paths"]), 3)
         self.assertEqual(result["unresolved_parts"], [])
 
+    def test_collection_resolution_ignores_missing_files_before_declaring_a_conflict(self):
+        collection = {"parts": [{"tmdb_id": "11", "title": "Example", "year": "2024"}]}
+        library = [
+            {"path": "E:/Movies/Present.mkv", "tmdb_id": "11", "title": "Example", "year": "2024"},
+            {"path": "E:/Movies/Missing.mkv", "tmdb_id": "11", "title": "Example", "year": "2024"},
+        ]
+
+        result = resolve_collection_membership(
+            collection, library, path_exists=lambda path: path.endswith("Present.mkv"),
+        )
+
+        self.assertEqual(result["owned_paths"], ["E:/Movies/Present.mkv"])
+        self.assertEqual(result["conflicts"], [])
+
 
 if __name__ == "__main__":
     unittest.main()

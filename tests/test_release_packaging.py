@@ -99,6 +99,12 @@ class PortableReleasePackagingTests(unittest.TestCase):
             (project / ".agents" / "private.txt").write_text("private-agent-data", encoding="utf-8")
             (project / "runtime").mkdir()
             (project / "runtime" / "old.exe").write_bytes(b"old")
+            awards = project / "static" / "movie-awards"
+            awards.mkdir(parents=True)
+            award_payloads = {'seed.json': b'{"schema_version":1}', 'manifest.json': b'{"ready":true}',
+                              'oscar.png': b'oscar-icon', 'golden_globe.png': b'globe-icon'}
+            for name, payload in award_payloads.items():
+                (awards / name).write_bytes(payload)
             (qbt / "qbittorrent.exe").write_bytes(b"exe")
 
             zip_path = build_release_zip(
@@ -111,6 +117,9 @@ class PortableReleasePackagingTests(unittest.TestCase):
             with zipfile.ZipFile(zip_path) as archive:
                 names = set(archive.namelist())
                 archive_payload = b"\n".join(archive.read(name) for name in names)
+                for name, payload in award_payloads.items():
+                    target = next(path for path in names if path.endswith('static/movie-awards/' + name))
+                    self.assertEqual(archive.read(target), payload)
 
         self.assertEqual(zip_path.name, "Cinema-Paradiso-9.9.9-Portable.zip")
         self.assertTrue(any(name.endswith("README.md") for name in names))

@@ -1,0 +1,357 @@
+{{oscars short description|films-year=1948}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 21
+| award            = Academy Awards
+| date             = March 24, 1949
+| site             = Academy Awards Theatre, [[West Hollywood]], [[California, USA]]
+| host             = [[Robert Montgomery (actor)|Robert Montgomery]]<ref name="oscars.org">{{cite web |url=http://www.oscars.org/oscars/ceremonies/1949/memorable-moments |title=The 21st Academy Awards Memorable Moments |publisher=[[Academy of Motion Picture Arts and Sciences]]}}</ref>
+| best_picture     = ''[[Hamlet (1948 film)|Hamlet]]''
+| most_wins        = ''Hamlet'' (4)
+| most_nominations = ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' (12)
+| last             = 20th
+| next             = 22nd
+}}
+
+The '''21st Academy Awards''' were held on March 24, 1949, honoring the films of [[1948 in film|1948]]. The ceremony was moved from the Shrine Auditorium to the Academy's own theater, primarily because the major Hollywood studios had withdrawn their financial support in order to address rumors that they had been trying to influence voters.<ref>Freeman, B. (1999, Mar 21). [https://www.proquest.com/docview/421559183 "OSCARS '99; unforgettable in every way; A winner's wife recalls the excitement of the awards in 1949, despite that year's humble venue."] ''Los Angeles Times''</ref> This year marked the first time a non-Hollywood production ([[Laurence Olivier]]'s ''[[Hamlet (1948 film)|Hamlet]]'') won Best Picture, and the first time an individual (Olivier) directed himself in an Oscar-winning performance.
+
+The [[Academy Award for Best Costume Design]] was introduced this year.<ref name="oscars.org">{{cite web |url=http://www.oscars.org/oscars/ceremonies/1949/memorable-moments |title=The 21st Academy Awards Memorable Moments |publisher=[[Academy of Motion Picture Arts and Sciences]]}}</ref> Like [[Academy Award for Best Cinematography|Best Cinematography]] and [[Academy Award for Best Production Design|Best Set Decoration]], it was split into Color and Black & White categories.
+
+[[John Huston]] directed his father, [[Walter Huston]], to the [[Academy Award for Best Supporting Actor]] for his role as Howard in ''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]'', a unique accomplishment. The Huston family won three Oscars that evening (John won for [[Academy Award for Best Director|Best Director]] and [[Academy Award for Best Adapted Screenplay|Best Screenplay]], both for the same film). [[Humphrey Bogart]]'s lack of a nomination for Best Actor has been since considered one of the Academy's greatest slights.<ref>{{cite magazine|url=http://www.ew.com/ew/gallery/0,,20007870_20164474_20179108_22,00.html |title=100 Worst Oscar Snubs Ever: Humphrey Bogart, The Treasure of the Sierra Madre |author=Entertainment Weekly |magazine=[[Entertainment Weekly]] |access-date=2009-09-01 |url-status=dead |archive-url=https://web.archive.org/web/20090227040930/http://www.ew.com/ew/gallery/0%2C%2C20007870_20164474_20179108_22%2C00.html |archive-date=2009-02-27 }}</ref><ref name=dirks>{{cite web|url=http://www.filmsite.org/aa48.html |title=1948 Academy Awards Winners and History|publisher=FilmSite.org ([[American Movie Classics]]) |first=Tim |last=Dirks |access-date=2009-09-01 | archive-date=April 19, 2015 | archive-url = https://web.archive.org/web/20150419062852/http://www.filmsite.org/aa48.html | url-status=live}}</ref>
+
+''[[Joan of Arc (1948 film)|Joan of Arc]]'' set a record by receiving seven nominations without being nominated for Best Picture; this stood until ''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' ([[1969 in film|1969]]) received nine nominations at the [[42nd Academy Awards]] without one for Best Picture. [[Walter Wanger]], producer of the film, was not pleased to see the film avoid a Best Picture nomination, and turned down a special Oscar designed to make up for this slight.<ref name="Oscars '48 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/838/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=838 |isbn=0-385-04060-1}}</ref>
+
+''Hamlet'' became the fifth film to win Best Picture without a screenwriting nomination; the next to do so would be ''[[The Sound of Music (film)|The Sound of Music]]'' at the [[38th Academy Awards]]. [[Jane Wyman]] became the first performer since the silent era to win an Oscar for a performance with no lines;<ref name=dirks /> ''Johnny Belinda'' was the fourth film to receive [[List of films with all four Academy Award acting nominations|nominations in all four acting categories]].
+
+In addition, ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' set the record for most Oscars lost with 11 (1 for 12). It has since been tied with ''[[Becket (1964 film)|Becket]]'' (1 for 12), ''[[The Turning Point (1977 film)|The Turning Point]]'' (0 for 11), ''[[The Color Purple (1985 film)|The Color Purple]]'' (0 for 11), ''[[The Power of the Dog (film)|The Power of the Dog]]'' (1 for 12), and ''[[Emilia Pérez]]'' (2 for 13). However, its record was broken at the [[98th Academy Awards]] by ''[[Sinners (2025 film)|Sinners]]'' (4 for 16).
+
+''[[I Remember Mama (film)|I Remember Mama]]'' received four acting nominations but not one for Best Picture, tying the record set by ''[[My Man Godfrey]]'' in [[9th Academy Awards|1936]]. Two more films to date have tied this record: ''[[Othello (1965 British film)|Othello]]'' ([[38th Academy Awards|1965]]) and ''[[Doubt (2008 film)|Doubt]]'' ([[81st Academy Awards|2008]]).
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Lord Olivier 18 Allan Warren.jpg
+| caption1          = [[Laurence Olivier]]; Best Picture and Best Actor winner
+|alt1=head and shoulder shot of man in late middle age, slightly balding, with pencil moustache
+| image2            = John Huston 1979.jpg
+| caption2          = [[John Huston]]; Best Director and Best Screenplay winner
+| image3            = Jane Wyman.jpg
+| caption3          = [[Jane Wyman]]; Best Actress winner
+| image4            = Walter Huston - 1950.jpg
+| caption4          = [[Walter Huston]]; Best Supporting Actor winner
+| image5            = Claire Trevor-still.jpg
+| caption5          = [[Claire Trevor]]; Best Supporting Actress winner
+| image6            = Walt Disney 1946.JPG
+| caption6          = [[Walt Disney]]; Best Live Action Short Subject, Two Reel winner
+| image7            = VA Karinska.JPG
+| caption7          = [[Barbara Karinska]]; Best Costume Design, Color co-winner
+| image8            = Paul Eagler - Nov 1920 EH.jpg
+| caption8          = [[Paul Eagler]]; Best Special Effects co-winner
+}}
+=== Awards ===
+Nominees were announced on February 10, 1949. Winners are listed first and highlighted in boldface.<ref name="Oscars1949">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1949 |title=The 21st Academy Awards (1949) Nominees and Winners |access-date=2011-08-18 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093808/http://www.oscars.org/awards/academyawards/legacy/ceremony/21st-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[Hamlet (1948 film)|Hamlet]]'' – [[Laurence Olivier]] for [[Universal Pictures|Universal Studios]] and [[Rank Organisation|General Film Distributors, Ltd.]]'''
+** ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' – [[Jerry Wald]] for [[Warner Bros.]]
+** ''[[The Red Shoes (1948 film)|The Red Shoes]]'' – [[Michael Powell]] and [[Emeric Pressburger]] for [[Eagle-Lion Films]] and [[Rank Organisation|General Film Distributors, Ltd.]]
+** ''[[The Snake Pit]]'' – [[Anatole Litvak]] and [[Robert Bassler]] for [[20th Century Fox]]
+** ''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]'' – [[Henry Blanke]] for [[Warner Bros.]] 
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Director|Best Directing]]}}
+* '''[[John Huston]] – ''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]'''''
+** [[Laurence Olivier]] – ''[[Hamlet (1948 film)|Hamlet]]''
+** [[Jean Negulesco]] – ''[[Johnny Belinda (1948 film)|Johnny Belinda]]''
+** [[Fred Zinnemann]] – ''[[The Search (1948 film)|The Search]]''
+** [[Anatole Litvak]] – ''[[The Snake Pit]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Laurence Olivier]] – ''[[Hamlet (1948 film)|Hamlet]]'' as [[Prince Hamlet|Hamlet]]'''
+** [[Lew Ayres]] – ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' as Dr. Robert Richardson
+** [[Montgomery Clift]] – ''[[The Search (1948 film)|The Search]]'' as Ralph "Steve" Stevenson
+** [[Dan Dailey]] – ''[[When My Baby Smiles at Me (film)|When My Baby Smiles at Me]]'' as "Skid" Johnson
+** [[Clifton Webb]] – ''[[Sitting Pretty (1948 film)|Sitting Pretty]]'' as [[Lynn Aloysius Belvedere|Lynn Belvedere]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Jane Wyman]] – ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' as Belinda MacDonald'''
+** [[Ingrid Bergman]] – ''[[Joan of Arc (1948 film)|Joan of Arc]]'' as [[Joan of Arc|Jeanne d'Arc]]
+** [[Olivia de Havilland]] – ''[[The Snake Pit]]'' as Virginia Stuart Cunningham
+** [[Irene Dunne]] – ''[[I Remember Mama (film)|I Remember Mama]]'' as Marta "Mama" Hanson
+** [[Barbara Stanwyck]] – ''[[Sorry, Wrong Number]]'' as Leona Stevenson
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Walter Huston]] – ''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]'' as Howard'''
+** [[Charles Bickford]] – ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' as Black MacDonald
+** [[José Ferrer]] – ''[[Joan of Arc (1948 film)|Joan of Arc]]'' as [[Dauphin of France|The Dauphin]], later [[Charles VII of France]]
+** [[Oscar Homolka]] – ''[[I Remember Mama (film)|I Remember Mama]]'' as Uncle Chris Halvorsen
+** [[Cecil Kellaway]] – ''[[The Luck of the Irish (1948 film)|The Luck of the Irish]]'' as Horace
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Claire Trevor]] – ''[[Key Largo (film)|Key Largo]]'' as Gaye Dawn'''
+** [[Barbara Bel Geddes]] – ''[[I Remember Mama (film)|I Remember Mama]]'' as Katrin Hanson
+** [[Ellen Corby]] – ''I Remember Mama'' as Aunt Trina
+** [[Agnes Moorehead]] – ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' as Aggie MacDonald
+** [[Jean Simmons]] – ''[[Hamlet (1948 film)|Hamlet]]'' as [[Ophelia]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+* '''''[[The Search (1948 film)|The Search]]'' – [[Richard Schweizer]] and {{ill|David Wechsler (writer)|de|3=David Wechsler (Autor)|lt=David Wechsler}}'''
+** ''[[Louisiana Story]]'' – [[Robert Flaherty]] and [[Frances H. Flaherty|Frances Flaherty]]
+** ''[[The Naked City]]'' – [[Malvin Wald]]
+** ''[[Red River (1948 film)|Red River]]'' – [[Borden Chase]]
+** ''[[The Red Shoes (1948 film)|The Red Shoes]]'' – [[Emeric Pressburger]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* '''''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]'' – [[John Huston]] from ''[[The Treasure of the Sierra Madre]]'' by [[B. Traven]]'''
+** ''[[A Foreign Affair]]'' – [[Charles Brackett]], [[Billy Wilder]], and [[Richard L. Breen]] from a story by David Shaw
+** ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' – [[Irma von Cube]] and [[Allen Vincent]] from ''[[Johnny Belinda (play)|Johnny Belinda]]'' by [[Elmer Blaney Harris]]
+** ''[[The Search (1948 film)|The Search]]'' – [[Richard Schweizer]] and {{ill|David Wechsler (writer)|de|3=David Wechsler (Autor)|lt=David Wechsler}}
+** ''[[The Snake Pit]]'' – [[Frank Partos]] and [[Millen Brand]] from ''The Snake Pit''  by [[Mary Jane Ward]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[The Secret Land]]'' – [[Orville O. Dull]]'''
+** ''[[The Quiet One (film)|The Quiet One]]'' – [[Janice Loeb]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Toward Independence]]'' – [[United States Army]]'''
+** ''[[Heart to Heart (1949 film)|Heart to Heart]]'' – Herbert Morgan
+** ''[[Operation Vittles (film)|Operation Vittles]]'' – [[United States Army Air Forces|United States Army Air Force]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[Symphony of a City]]'' – [[Edmund Reek|Edmund H. Reek]]'''
+** ''Annie Was a Wonder'' – [[Herbert Moulton]]
+** ''Cinderella Horse'' – [[Gordon Hollingshead]]
+** ''So You Want to Be on the Radio'' – [[Gordon Hollingshead]]
+** ''You Can't Win'' – [[Pete Smith (film producer)|Pete Smith]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[Seal Island (film)|Seal Island]]'' – [[Walt Disney]]'''
+** ''[[Calgary Stampede]]'' – [[Gordon Hollingshead]]
+** ''Going to Blazes'' – Herbert Morgan
+** ''Samba-Mania'' – [[Harry Grey]]
+** ''[[Snow Capers]]'' – Thomas Mead
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[The Little Orphan]]'' – [[Fred Quimby]]'''
+** ''[[Mickey and the Seal]]'' – [[Walt Disney]]
+** ''[[Mouse Wreckers]]'' – [[Edward Selzer]]
+** ''Robin Hoodlum'' – [[United Productions of America]]
+** ''[[Tea for Two Hundred]]'' – Walt Disney
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+* '''''[[The Red Shoes (1948 film)|The Red Shoes]]'' – [[Brian Easdale]]'''
+** ''[[Hamlet (1948 film)|Hamlet]]'' – [[William Walton]]
+** ''[[Joan of Arc (1948 film)|Joan of Arc]]'' – [[Hugo Friedhofer]]
+** ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' – [[Max Steiner]]
+** ''[[The Snake Pit]]'' – [[Alfred Newman (composer)|Alfred Newman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+* '''''[[Easter Parade (film)|Easter Parade]]'' – [[Johnny Green]] and [[Roger Edens]]'''
+** ''[[The Emperor Waltz]]'' – [[Victor Young]]
+** ''[[The Pirate (1948 film)|The Pirate]]'' – [[Lennie Hayton]]
+** ''[[Romance on the High Seas]]'' – [[Ray Heindorf]]
+** ''[[When My Baby Smiles at Me (film)|When My Baby Smiles at Me]]'' – [[Alfred Newman (composer)|Alfred Newman]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[Buttons and Bows]]" from ''[[The Paleface (1948 film)|The Paleface]]'' – Music and Lyrics by [[Jay Livingston]] and [[Ray Evans]]'''
+** "For Every Man There's a Woman" from ''[[Casbah (film)|Casbah]]'' – Music by [[Harold Arlen]]; Lyrics by [[Leo Robin]]
+** "[[It's Magic]]" from ''[[Romance on the High Seas]]'' – Music by [[Jule Styne]]; Lyrics by [[Sammy Cahn]]
+** "This is the Moment" from ''[[That Lady in Ermine]]'' – Music by [[Friedrich Hollaender|Frederick Hollander]]; Lyrics by [[Leo Robin]]
+** "The [[Woody Woodpecker]] Song" from ''[[Wet Blanket Policy]]'' – Music and Lyrics by [[Ramey Idriss]] and [[George Tibbles]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+* '''''[[The Snake Pit]]'' – [[Thomas T. Moulton]]'''
+** ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' – [[Nathan Levinson]]
+** ''[[Moonrise (film)|Moonrise]]'' – [[Daniel J. Bloomberg]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[Hamlet (1948 film)|Hamlet]]'' – Art Direction: [[Roger K. Furse]]; Set Decoration: [[Carmen Dillon]]'''
+** ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' – Art Direction: [[Robert M. Haas]]; Set Decoration: [[William O. Wallace]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[The Red Shoes (1948 film)|The Red Shoes]]'' – Art Direction: [[Hein Heckroth]]; Set Decoration: [[Arthur Lawson (designer)|Arthur Lawson]]'''
+** ''[[Joan of Arc (1948 film)|Joan of Arc]]'' – Art Direction: [[Richard Day (art director)|Richard Day]]; Set Decoration: [[Casey Roberts]] and [[Joseph Kish]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[The Naked City]]'' – [[William Daniels (cinematographer)|William Daniels]]'''
+** ''[[A Foreign Affair]]'' – [[Charles Lang]]
+** ''[[I Remember Mama (film)|I Remember Mama]]'' – [[Nicholas Musuraca]]
+** ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' – [[Ted D. McCord]]
+** ''[[Portrait of Jennie]]'' – [[Joseph August]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[Joan of Arc (1948 film)|Joan of Arc]]'' – [[Joseph Valentine]], [[William V. Skall]], and [[Winton C. Hoch]]'''
+** ''[[Green Grass of Wyoming]]'' – [[Charles G. Clarke]]
+** ''[[The Loves of Carmen (1948 film)|The Loves of Carmen]]'' – [[William E. Snyder (cinematographer)|William Snyder]]
+** ''[[The Three Musketeers (1948 film)|The Three Musketeers]]'' – [[Robert Planck]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+* '''''[[Hamlet (1948 film)|Hamlet]]'' – [[Roger K. Furse]]'''
+** ''[[B.F.'s Daughter]]'' – [[Irene Lentz]]  
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+* '''''[[Joan of Arc (1948 film)|Joan of Arc]]'' – [[Dorothy Jeakins]] and [[Barbara Karinska]]'''
+** ''[[The Emperor Waltz]]'' – [[Edith Head]] and [[Gile Steele]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Naked City]]'' – [[Paul Weatherwax]]'''
+** ''[[Joan of Arc (1948 film)|Joan of Arc]]'' – [[Frank Sullivan (film editor)|Frank Sullivan]]
+** ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' – [[David Weisbart]]
+** ''[[Red River (1948 film)|Red River]]'' – [[Christian Nyby]]
+** ''[[The Red Shoes (1948 film)|The Red Shoes]]'' – [[Reginald Mills]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+* '''''[[Portrait of Jennie]]'' – Special Visual Effects: [[Paul Eagler]], [[Joseph McMillan Johnson]], [[Russell Shearman]] and [[Clarence Slifer]]; Special Audible Effects: [[Charles L. Freeman]] and [[James G. Stewart]]'''
+** ''[[Deep Waters (1948 film)|Deep Waters]]'' – Special Visual Effects: [[Ralph Hammeras]], [[Fred Sersen]] and [[Edward Snyder (cinematographer)|Edward Snyder]]; Special Audible Effects: [[Roger Heman Sr.]]
+|}
+
+===Special Foreign Language Film Award===
+*To ''[[Monsieur Vincent]]'' ([[France]]) - voted by the Academy Board of Governors as the most outstanding foreign language film released in the United States during 1948.
+
+===Special awards===
+*To [[Ivan Jandl]], for the outstanding juvenile performance of 1948, as Karel Malik in ''[[The Search (1948 film)|The Search]]''.
+*To [[Sid Grauman]], master showman, who raised the standard of exhibition of motion pictures.
+*To [[Adolph Zukor]], a man who has been called the father of the feature film in America, for his services to the industry over a period of forty years.
+*To [[Walter Wanger]] for distinguished service to the industry in adding to its moral stature in the world community by his production of the picture ''[[Joan of Arc (1948 film)|Joan of Arc]]''.
+*To [[Jean Hersholt]] - in recognition of his service to the Academy during four terms as president.
+
+===Irving G. Thalberg Memorial Award===
+*[[Jerry Wald]]
+
+== Presenters and performers ==
+=== Presenters ===
+*[[Ethel Barrymore]] (Presenter: Best Motion Picture)
+*[[Ann Blyth]] (Presenter: Best Sound Recording)
+*[[Frank Borzage]] (Presenter: Best Director)
+*[[Ronald Colman]] (Presenter: Best Actress)
+*[[Wendell Corey]] (Presenter: Best Film Editing)
+*[[Jeanne Crain]] (Presenter: Short Subject Awards)
+*[[Arlene Dahl]] (Presenter: Best Art Direction)
+*[[Glenn Ford]] (Presenter: Best Special Effects)
+*[[Ava Gardner]] (Presenter: Documentary Awards)
+*[[Kathryn Grayson]] (Presenter: Music Awards)
+*[[Edmund Gwenn]] (Presenter: Best Supporting Actress)
+*[[Jean Hersholt]] (Presenter: Honorary Awards)
+*[[Celeste Holm]] (Presenter: Best Supporting Actor)
+*[[Louis Jourdan]] (Presenter: Best Foreign Film)
+*[[Deborah Kerr]] (Presenter: Writing Awards)
+*[[George Murphy]] (Presenter: Scientific & Technical Awards)
+*[[Robert Ryan]] (Presenter: Best Cinematography)
+*[[Elizabeth Taylor]] (Presenter: Best Costume Design)
+*[[Loretta Young]] (Presenter: Best Actor)
+
+=== Performers ===
+*[[Harry Babbitt]] and [[Gloria Wood]] ("The Woody Woodpecker Song")
+*[[Doris Day]] ("[[It's Magic]]" from ''[[Romance on the High Seas]]'')
+*[[Gordon MacRae]] ("For Every Man There's a Woman" from ''[[Casbah (film)|Casbah]]'')
+*[[Jane Russell]] ("[[Buttons and Bows]]" from ''[[The Paleface (1948 film)|The Paleface]]'')
+*[[Jo Stafford]] ("This Is the Moment" from ''[[That Lady in Ermine]]'')
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 12
+| ''[[Johnny Belinda (1948 film)|Johnny Belinda]]''
+|-
+| rowspan="2" style="text-align:center" | 7
+| ''[[Hamlet (1948 film)|Hamlet]]''
+|-
+| ''[[Joan of Arc (1948 film)|Joan of Arc]]''
+|-
+| rowspan="1" style="text-align:center" | 6 
+| ''[[The Snake Pit]]''
+|-
+| rowspan="2" style="text-align:center" | 5
+| ''[[I Remember Mama (film)|I Remember Mama]]''
+|-
+| ''[[The Red Shoes (1948 film)|The Red Shoes]]''
+|-
+| rowspan="2" style="text-align:center" | 4
+| ''[[The Search (1948 film)|The Search]]''
+|-
+| ''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]''
+|-
+| rowspan="1" style="text-align:center" | 3
+| ''[[The Naked City]]''
+|-
+| rowspan="6" style="text-align:center" | 2
+| ''[[The Emperor Waltz]]''
+|-
+| ''[[A Foreign Affair]]''
+|-
+| ''[[Portrait of Jennie]]''
+|-
+| ''[[Red River (1948 film)|Red River]]''
+|-
+| ''[[Romance on the High Seas]]''
+|-
+| ''[[When My Baby Smiles at Me (film)|When My Baby Smiles at Me]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 4
+| ''[[Hamlet (1948 film)|Hamlet]]''
+|-
+| rowspan=1, style="text-align:center" | 3
+| ''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]''
+|-
+| rowspan=3, style="text-align:center" | 2
+| ''[[Joan of Arc (1948 film)|Joan of Arc]]''
+|-
+| ''[[The Naked City]]''
+|-
+| ''[[The Red Shoes (1948 film)|The Red Shoes]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+*[[6th Golden Globe Awards]]
+*[[1948 in film]]
+* [[1st Primetime Emmy Awards]]
+* [[2nd British Academy Film Awards]]
+* [[3rd Tony Awards]]
+
+==References==
+<references/>
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 21}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1948 film awards]]
+[[Category:1949 in Los Angeles]]
+[[Category:1949 in American cinema]]
+[[Category:March 1949 in the United States]]

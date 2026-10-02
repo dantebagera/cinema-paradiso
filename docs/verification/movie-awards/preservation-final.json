@@ -1,0 +1,22 @@
+{
+  "recorded_files": 98,
+  "approved_changed_files": [
+    "app.py",
+    "src/App.jsx",
+    "src/components/SharedMovieCards.jsx",
+    "src/components/movie-card/MovieCard.jsx",
+    "src/features/ai-control/AIControlWorkspace.jsx",
+    "src/features/discover/DiscoverWorkspace.jsx",
+    "src/features/library/LibraryWorkspace.jsx",
+    "src/features/movie-lists/MovieListsWorkspace.jsx",
+    "tests/e2e/app-smoke.spec.js",
+    "tests/test_startup_background.py",
+    "tests/test_unified_movie_card_ui.py",
+    "docs/plans/2026-10-02-movie-awards-implementation-plan.md"
+  ],
+  "unrelated_changed_files": [],
+  "dist_index_sha256": "f6db43f83bc0875a98a70e5ad88bd48a007cdf56bb904d22eb5940e640a8d860",
+  "served_html_sha256": "f6db43f83bc0875a98a70e5ad88bd48a007cdf56bb904d22eb5940e640a8d860",
+  "live_awards_api_status": 404,
+  "shutdown_scheduled_by_task": false
+}

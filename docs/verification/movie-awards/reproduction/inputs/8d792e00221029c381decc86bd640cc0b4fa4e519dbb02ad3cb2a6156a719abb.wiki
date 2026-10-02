@@ -1,0 +1,61 @@
+{{Short description|1957 Japanese film}}
+{{Use dmy dates|date=June 2023}}
+{{Infobox film
+| name           = Yellow Crow
+| image          = File:Yellow Crow 1957 poster.jpg
+| caption        = Film poster
+| director       = [[Heinosuke Gosho]]
+| producer       = {{ubl|Jirō Kaga|Yoshishige Uchiyama}}
+| writer         = {{ubl|Keiji Hasebe|Kennosuke Tateoka|[[Shigeko Yuki]] (dialogue)}}
+| narrator       =
+| starring       = {{plainlist|
+* [[Chikage Awashima]]
+* [[Yūnosuke Itō]]
+* Kōji Shitara
+* [[Yoshiko Kuga]]
+* [[Kinuyo Tanaka]]
+}}
+| music          = [[Yasushi Akutagawa]]
+| cinematography = [[Yoshio Miyajima]]
+| editing        = Makoto Nagata
+| production_companies = [[Kabuki-za]]
+| distributor    = [[Shochiku]]
+| released       = {{Film date|1957|02|27|Japan|ref1=<ref name="jmdb">{{cite web|url=http://www.jmdb.ne.jp/1957/cg000880.htm |title=黄色いからす |website=Japanese Movie Database |language=ja |access-date=14 June 2023}}</ref><ref name="shochiku">{{cite web|url=https://www.shochiku.co.jp/cinema/database/03065/ |title=黄色いからす |website=Shochiku |language=ja |access-date=14 June 2023}}</ref>|df=y}}
+| runtime        = 103 minutes
+| country        = Japan
+| language       = Japanese
+}}
+{{nihongo|'''''Yellow Crow'''''|黄色いからす|Kiiroi Karasu|lead=yes}} is a 1957 Japanese [[Drama (film and television)|drama film]] directed by [[Heinosuke Gosho]].<ref name="jmdb" /><ref name="shochiku" /><ref name="Kinenote">{{cite web|url=http://www.kinenote.com/main/public/cinema/detail.aspx?cinema_id=25189 |title=黄色いからす |language=ja |publisher=Kinenote |access-date=27 December 2020}}</ref>
+
+==Plot==
+Kiyoshi Yoshida is a 9 year old boy who loves to draw. Although he shows some talent, his teacher is worried because he draws only in black and yellow, which can mean according to [[color psychology]] that the child has no parents or is unhappy in his family.
+
+==Cast==
+* [[Chikage Awashima]] as Machiko Yoshida
+* [[Kinuyo Tanaka]] as Yukiko Mataumoto
+* [[Koji Shitara]] as Kiyoshi Yoshida
+* [[Yūnosuke Itō]] as Ichirō Yoshida
+* [[Yoshiko Kuga]] as Yasuko Achihara
+* [[Iida Chōko|Chōko Iida]] as grandmother
+* [[Yoichi Numata|Yōichi Numata]] as Murakami
+
+==Awards==
+* [[Golden Globe Award for Best Foreign Language Film]] 1958<ref>{{cite web|url=https://www.goldenglobes.com/film/kiiroi-karasu-yellow-crow |title=Kiiroi karasu (Yellow Crow) |website=Golden Globe Awards |access-date=14 June 2023}}</ref>
+
+==Legacy==
+''Yellow Crow'' was screened at the [[Museum of Modern Art]] in 2022 as part of its "Beyond Ozu: Hidden Gems of Shochiku Studios" retrospective.<ref name="moma">{{cite web|url=https://www.moma.org/calendar/events/7893 |title=Kiiroi karasu (Yellow Crow/Behold Thy Son). 1957. Directed by Heinosuke Gosho |website=Museum of Modern Art |access-date=19 July 2023}}</ref>
+
+==References==
+{{Reflist}}
+
+==External links==
+* {{IMDb title|id=0050591}}
+
+{{Heinosuke Gosho}}
+{{Golden Globe Award for Best Foreign Language Film}}
+
+[[Category:1957 films]]
+[[Category:1957 Japanese-language films]]
+[[Category:Films directed by Heinosuke Gosho]]
+[[Category:Japanese drama films]]
+[[Category:1957 drama films]]

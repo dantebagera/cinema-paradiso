@@ -1,0 +1,423 @@
+{{oscars short description|films-year=1943}} 
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 16
+| award            = Academy Awards
+| date             = March 2, 1944
+| image            = 16th Academy Awards.jpg
+| caption          = Official pamphlet cover
+| site             = [[Grauman's Chinese Theatre]]<br />[[Hollywood, Los Angeles, California]]
+| host             = [[Jack Benny]]
+| best_picture     = ''[[Casablanca (film)|Casablanca]]''
+| most_wins        = ''[[The Song of Bernadette (film)|The Song of Bernadette]]'' (4)
+| most_nominations = ''The Song of Bernadette'' (12)
+| last             = 15th
+| next             = 17th
+}}
+
+The '''16th Academy Awards''' were held on March 2, 1944, to honor the films of [[1943 in film|1943]]. This was the first Oscar ceremony held at a large public venue, [[Grauman's Chinese Theatre]], and the first ceremony without a banquet as part of the festivities.<ref name="Oscars '43 Notes"/><ref>{{cite news |title=History of the Oscars Presentation |url=https://www.oscars.org/sites/oscars/files/88aa_presentation_history.pdf |access-date=May 3, 2023 |work=Oscars.org}}</ref> The ceremony was broadcast locally on [[KFWB]], and internationally by [[CBS Radio]] via [[Shortwave radio|shortwave]]. [[Jack Benny]] hosted the event, which lasted one hour and 42 minutes.<ref name="Cinema Sight">{{cite web |url=http://cinemasight.com/awards-history/16th-academy-awards-1943/16th-academy-awards-1943-the-ceremony/ |title=16th Academy Awards (1943): The Ceremony |date=April 22, 2018 |edition=Revised |access-date=March 14, 2023}}</ref> This was the first ceremony to welcome admissions from the general public.<ref name="Oscars '43 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/836/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=836 |isbn=0-385-04060-1}}</ref>
+
+For the first time, winners for [[Academy Award for Best Supporting Actor|Best Supporting Actor]] and [[Academy Award for Best Supporting Actress|Best Supporting Actress]] were awarded full-size statuettes, instead of smaller-sized awards mounted on a plaque.<ref>{{cite web |url=https://www.bbc.com/culture/article/20180305-strange-tales-of-the-vanished-oscars |title=Strange tales of the vanished Oscars|date=March 6, 2018 }}</ref> This was the last year until [[82nd Academy Awards|2009]] to have 10 nominations for Best Picture; ''[[The Ox-Bow Incident]]'' is, {{as of|2025|lc=y}}, the last film to be nominated solely in that category.
+
+''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]'' was the third film to receive [[List of films with all four Academy Award acting nominations|nominations in all four acting categories]]. This was the first year in which each acting category had at least one nominee from a color film.
+
+The ''[[Tom and Jerry]]'' cartoon series won its first Oscar this year for ''[[The Yankee Doodle Mouse]]''; it would go on to win another six Oscars, including three in a row over the next three years, from a total of 13 nominations.
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Curtiz 1928 portrait.jpg
+| caption1          = [[Michael Curtiz]], Best Director winner
+| image2            = Paul Lukas - 1950.jpg
+| caption2          = [[Paul Lukas]], Best Actor winner
+| image3            = Jennifer Jones still, 'Song of Bernadette'.jpg
+| caption3          = [[Jennifer Jones]], Best Actress winner
+| image4            = Charles Coburn in Road to Singapore trailer.jpg
+| caption4          = [[Charles Coburn]], Best Supporting Actor winner
+| image5            = Katina Paxinou 1945 Hollywood Vintage (cropped).jpg
+| caption5          = [[Katina Paxinou]], Best Supporting Actress winner
+| image6            = Julius Epstein.jpg
+| caption6          = [[Julius J. Epstein]], Best Screenplay co-winner
+| image7            = William Saroyan 1970s.jpg
+| caption7          = [[William Saroyan]], Best Original Motion Picture Story winner
+| image8            = Hal Mohr cinematographer.jpg
+| caption8          = [[Hal Mohr]], Best Cinematography, Color co-winner
+| image9            = George Pal (1979).jpg
+| caption9          = [[George Pal]], Honorary Academy Award recipient
+}}
+
+=== Awards ===
+Nominees were announced on February 6, 1944. Winners are listed first and highlighted in boldface.<ref name="Oscars1944">{{cite web |url=http://www.oscars.org/oscars/ceremonies/1944 |title=The 16th Academy Awards (1944) Nominees and Winners |access-date=October 13, 2013 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20131014001522/http://www.oscars.org/awards/academyawards/legacy/ceremony/16th-winners.html |archive-date=October 14, 2013 |url-status=live}}</ref>
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Motion Picture]]}}
+* '''''[[Casablanca (film)|Casablanca]]'' – [[Hal B. Wallis]] for [[Warner Bros.]]'''
+** ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]'' – [[Sam Wood]] for [[Paramount Pictures|Paramount]]
+** ''[[Heaven Can Wait (1943 film)|Heaven Can Wait]]'' – [[Ernst Lubitsch]] for [[20th Century Studios|20th Century Fox]]
+** ''[[The Human Comedy (film)|The Human Comedy]]'' – [[Clarence Brown]] for [[Metro-Goldwyn-Mayer]]
+** ''[[In Which We Serve]]'' – [[Noël Coward]] for [[Two Cities Films]]
+** ''[[Madame Curie (film)|Madame Curie]]'' – [[Sidney Franklin (director)|Sidney Franklin]] for Metro-Goldwyn-Mayer
+** ''[[The More the Merrier]]'' – [[George Stevens]] for [[Columbia Pictures|Columbia]]
+** ''[[The Ox-Bow Incident]]'' – [[Lamar Trotti]] for 20th Century Fox
+** ''[[The Song of Bernadette (film)|The Song of Bernadette]]'' – [[William Perlberg]] for 20th Century Fox
+** ''[[Watch on the Rhine]]'' – [[Hal B. Wallis]] for Warner Bros.
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Michael Curtiz]]&nbsp;– ''[[Casablanca (film)|Casablanca]]'''''
+** [[Ernst Lubitsch]]&nbsp;– ''[[Heaven Can Wait (1943 film)|Heaven Can Wait]]''
+** [[Clarence Brown]]&nbsp;– ''[[The Human Comedy (film)|The Human Comedy]]''
+** [[George Stevens]]&nbsp;– ''[[The More the Merrier]]''
+** [[Henry King (director)|Henry King]]&nbsp;– ''[[The Song of Bernadette (film)|The Song of Bernadette]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Paul Lukas]]&nbsp;– ''[[Watch on the Rhine]]'' as Kurt Muller'''
+** [[Humphrey Bogart]]&nbsp;– ''[[Casablanca (film)|Casablanca]]'' as Rick Blaine
+** [[Gary Cooper]]&nbsp;– ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]'' as Robert Jordan
+** [[Walter Pidgeon]]&nbsp;– ''[[Madame Curie (film)|Madame Curie]]'' as [[Pierre Curie]]
+** [[Mickey Rooney]]&nbsp;– ''[[The Human Comedy (film)|The Human Comedy]]'' as Homer Macauley
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Jennifer Jones]]&nbsp;– ''[[The Song of Bernadette (film)|The Song of Bernadette]]'' as [[Bernadette Soubirous]]'''
+** [[Jean Arthur]]&nbsp;– ''[[The More the Merrier]]'' as Constance Milligan
+** [[Ingrid Bergman]]&nbsp;– ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]'' as María
+** [[Joan Fontaine]]&nbsp;– ''[[The Constant Nymph (1943 film)|The Constant Nymph]]'' as Tessa Sanger
+** [[Greer Garson]]&nbsp;– ''[[Madame Curie (film)|Madame Curie]]'' as [[Marie Curie]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Charles Coburn]]&nbsp;– ''[[The More the Merrier]]'' as Benjamin Dingle'''
+** [[Charles Bickford]]&nbsp;– ''[[The Song of Bernadette (film)|The Song of Bernadette]]'' as [[Abbé]] [[Dominique Peyramale]]
+** [[J. Carrol Naish]]&nbsp;– ''[[Sahara (1943 American film)|Sahara]]'' as Giuseppe
+** [[Claude Rains]]&nbsp;– ''[[Casablanca (film)|Casablanca]]'' as Captain Louis Renault
+** [[Akim Tamiroff]]&nbsp;– ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]'' as Pablo
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Katina Paxinou]]&nbsp;– ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]'' as Pilar'''
+** [[Gladys Cooper]]&nbsp;– ''[[The Song of Bernadette (film)|The Song of Bernadette]]'' as Marie Therese Vauzou
+** [[Paulette Goddard]]&nbsp;– ''[[So Proudly We Hail!]]'' as Lt. Joan O'Doul
+** [[Anne Revere]]&nbsp;– ''The Song of Bernadette'' as Louise Casterot Soubirous
+** [[Lucile Watson]]&nbsp;– ''[[Watch on the Rhine]]'' as Fanny Farrelly
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Motion Picture Story)]]}}
+* '''''[[The Human Comedy (film)|The Human Comedy]]''&nbsp;– [[William Saroyan]]'''
+** ''[[Action in the North Atlantic]]''&nbsp;– [[Guy Gilpatric]]
+** ''[[Destination Tokyo]]''&nbsp;– [[Steve Fisher (writer)|Steve Fisher]]
+** ''[[The More the Merrier]]''&nbsp;– [[Robert W. Russell|Robert Russell]] and [[Frank Ross (producer)|Frank Ross]]
+** ''[[Shadow of a Doubt]]''&nbsp;– Gordon McDonell
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Princess O'Rourke]]''&nbsp;– [[Norman Krasna]]'''
+** ''[[Air Force (film)|Air Force]]''&nbsp;– [[Dudley Nichols]]
+** ''[[In Which We Serve]]''&nbsp;– [[Noël Coward]]
+** ''[[The North Star (1943 film)|The North Star]]''&nbsp;– [[Lillian Hellman]]
+** ''[[So Proudly We Hail!]]''&nbsp;– [[Allan Scott (American screenwriter)|Allan Scott]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* '''''[[Casablanca (film)|Casablanca]]''&nbsp;– [[Julius J. Epstein]], [[Philip G. Epstein]], and [[Howard Koch (screenwriter)|Howard E. Koch]], based on ''[[Everybody Comes to Rick's]]'' by [[Murray Burnett]] and [[Joan Alison]]'''
+** ''[[Holy Matrimony (1943 film)|Holy Matrimony]]''&nbsp;– [[Nunnally Johnson]], based on ''[[Buried Alive (novel)|Buried Alive]]'' by [[Arnold Bennett]]
+** ''[[The More the Merrier]]''&nbsp;– Richard Flournoy, [[Lewis R. Foster]], [[Frank Ross (producer)|Frank Ross]], and [[Robert W. Russell|Robert Russell]], based on a story by Frank Ross and Robert Russell
+** ''[[The Song of Bernadette (film)|The Song of Bernadette]]''&nbsp;– [[George Seaton]], based on [[The Song of Bernadette (novel)|the novel]] by [[Franz Werfel]]
+** ''[[Watch on the Rhine]]''&nbsp;– [[Dashiell Hammett]], based on [[Watch on the Rhine (play)|the play]] by [[Lillian Hellman]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature Film|Best Documentary (Feature)]]}}
+* '''''[[Desert Victory]]'' – [[Ministry of Information (United Kingdom)|British Ministry of Information]]'''
+** ''[[Baptism of Fire (1943 film)|Baptism of Fire]]'' – [[United States Army]]
+** ''[[The Battle of Russia]]'' – [[United States Department of War|United States Department of War, Special Service Division]]
+** ''[[Report from the Aleutians]]'' – [[United States Army|United States Army Pictorial Service]]
+** ''[[War Department Report]]'' – [[Office of Strategic Services|United States Office of Strategic Services, Field Photographic Bureau]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Short Film|Best Documentary (Short Subject)]]}}
+* '''''[[December 7th: The Movie|December 7th]]'' – [[John Ford]] and [[United States Navy]]'''
+** ''[[Children of Mars]]'' – [[RKO Pictures|RKO Radio]]
+** ''[[Plan for Destruction]]'' – [[Metro-Goldwyn-Mayer]]
+** ''[[Swedes in America]]'' – [[United States Office of War Information|United States Office of War Information, Overseas Motion Picture Bureau]]
+** ''[[To the People of the United States]]'' – [[Walter Wanger]]
+** ''[[Tomorrow We Fly]]'' – [[United States Navy|United States Navy Bureau of Aeronautics]]
+** ''[[Youth in Crisis]]'' – [[The March of Time (radio program)|The March of Time]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[Amphibious Fighters]]''&nbsp;– [[Grantland Rice]]'''
+** ''[[Cavalcade of Dance]]''&nbsp;– [[Gordon Hollingshead]]
+** ''[[Champions Carry On]]''&nbsp;– Edmund Reek
+** ''[[Hollywood in Uniform]]''&nbsp;– [[Ralph Staub]]
+** ''[[Seeing Hands]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[Heavenly Music]]''&nbsp;– [[Jerry Bresler (film producer)|Jerry Bresler]] and [[Sam Coslow]]'''
+** ''[[Letter to a Hero]]''&nbsp;– Frederic Ullman Jr.
+** ''[[Mardi Gras (1943 film)|Mardi Gras]]''&nbsp;– Walter MacEwen
+** ''[[Women at War]]''&nbsp;– [[Gordon Hollingshead]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[The Yankee Doodle Mouse]]'' – [[Fred Quimby]]'''
+** ''The 500 Hats of Bartholomew Cubbins'' – [[George Pal]]
+** ''[[The Dizzy Acrobat]]'' – [[Walter Lantz]]
+** ''[[Greetings Bait|Greetings, Bait!]]'' – [[Leon Schlesinger]]
+** ''Imagination'' – [[Dave Fleischer]]
+** ''[[Reason and Emotion]]'' – [[Walt Disney]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+* '''''[[The Song of Bernadette (film)|The Song of Bernadette]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]'''
+** ''[[The Amazing Mrs. Holliday]]''&nbsp;– [[Hans J. Salter]] and [[Frank Skinner (composer)|Frank Skinner]]
+** ''[[Casablanca (film)|Casablanca]]''&nbsp;– [[Max Steiner]]
+** ''[[Commandos Strike at Dawn]]''&nbsp;– [[Louis Gruenberg]] and [[Morris Stoloff]]
+** ''[[The Fallen Sparrow]]''&nbsp;– [[Constantin Bakaleinikoff|C. Bakaleinikoff]] and [[Roy Webb]]
+** ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]''&nbsp;– [[Victor Young]]
+** ''[[Hangmen Also Die!]]''&nbsp;– [[Hanns Eisler]]
+** ''[[Hi Diddle Diddle]]''&nbsp;– [[Phil Boutelje|Philip Boutelje]]
+** ''[[In Old Oklahoma]]''&nbsp;– [[Walter Scharf]]
+** ''[[Johnny Come Lately]]''&nbsp;– [[Leigh Harline]]
+** ''[[The Kansan (film)|The Kansan]]''&nbsp;– [[Gerard Carbonara]]
+** ''[[Lady of Burlesque]]''&nbsp;– [[Arthur Lange]]
+** ''[[Madame Curie (film)|Madame Curie]]''&nbsp;– [[Herbert Stothart]]
+** ''[[The Moon and Sixpence (film)|The Moon and Sixpence]]''&nbsp;– [[Dimitri Tiomkin]]
+** ''[[The North Star (1943 film)|The North Star]]''&nbsp;– [[Aaron Copland]]
+** ''[[Victory Through Air Power (film)|Victory Through Air Power]]''&nbsp;– [[Edward H. Plumb]], [[Paul Smith (composer)|Paul J. Smith]], and [[Oliver Wallace]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+* '''''[[This Is the Army]]''&nbsp;– [[Ray Heindorf]]'''
+** ''[[Coney Island (1943 film)|Coney Island]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[Hit Parade of 1943]]''&nbsp;– [[Walter Scharf]]
+** ''[[Phantom of the Opera (1943 film)|Phantom of the Opera]]''&nbsp;– [[Edward Ward (composer)|Edward Ward]]
+** ''[[Saludos Amigos]]''&nbsp;– [[Edward H. Plumb]], [[Paul Smith (composer)|Paul J. Smith]], and [[Charles Wolcott]]
+** ''[[The Sky's the Limit (1943 film)|The Sky's the Limit]]''&nbsp;– [[Leigh Harline]]
+** ''[[Something to Shout About (film)|Something to Shout About]]''&nbsp;– [[Morris Stoloff]]
+** ''[[Stage Door Canteen (film)|Stage Door Canteen]]''&nbsp;– [[Fred Rich|Frederic E. Rich]]
+** ''[[Star Spangled Rhythm]]''&nbsp;– [[Robert E. Dolan|Robert Emmett Dolan]]
+** ''[[Thousands Cheer]]''&nbsp;– [[Herbert Stothart]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[You'll Never Know]]" from ''[[Hello, Frisco, Hello]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Mack Gordon]]'''
+** "A Change of Heart" from ''[[Hit Parade of 1943]]''&nbsp;– Music by [[Jule Styne]]; Lyrics by [[Harold Adamson]]
+** "[[Happiness is a Thing Called Joe]]" from ''[[Cabin in the Sky (film)|Cabin in the Sky]]''&nbsp;– Music by [[Harold Arlen]]; Lyrics by [[Yip Harburg|E. Y. Harburg]]
+** "[[My Shining Hour]]" from ''[[The Sky's the Limit (1943 film)|The Sky's the Limit]]''&nbsp;– Music by [[Harold Arlen]]; Lyrics by [[Johnny Mercer]]
+** "Saludos Amigos" from ''[[Saludos Amigos]]''&nbsp;– Music by [[Charles Wolcott]]; Lyrics by [[Ned Washington]]
+** "Say a Pray'r for the Boys Over There" from ''[[Hers to Hold]]''&nbsp;– Music by [[Jimmy McHugh]]; Lyrics by [[Herb Magidson]]
+** "[[That Old Black Magic]]" from ''[[Star Spangled Rhythm]]''&nbsp;– Music by [[Harold Arlen]]; Lyrics by [[Johnny Mercer]]
+** "They're Either Too Young or Too Old" from ''[[Thank Your Lucky Stars (film)|Thank Your Lucky Stars]]''&nbsp;– Music by [[Arthur Schwartz]]; Lyrics by [[Frank Loesser]]
+** "We Mustn't Say Goodbye" from ''[[Stage Door Canteen (film)|Stage Door Canteen]]''&nbsp;– Music by [[James V. Monaco]]; Lyrics by [[Al Dubin]]
+** "[[You'd Be So Nice to Come Home To]]" from ''[[Something to Shout About (film)|Something to Shout About]]''&nbsp;– Music and Lyrics by [[Cole Porter]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound Recording]]}}
+* '''''[[This Land Is Mine (film)|This Land Is Mine]]''&nbsp;– [[Stephen Dunn (sound engineer)|Stephen Dunn]]'''
+** ''[[Hangmen Also Die!]]''&nbsp;– [[Jack Whitney]]
+** ''[[In Old Oklahoma]]''&nbsp;– [[Daniel J. Bloomberg]]
+** ''[[Madame Curie (film)|Madame Curie]]''&nbsp;– [[Douglas Shearer]]
+** ''[[The North Star (1943 film)|The North Star]]''&nbsp;– [[Thomas T. Moulton]]
+** ''[[Phantom of the Opera (1943 film)|Phantom of the Opera]]''&nbsp;– [[Bernard B. Brown]]
+** ''[[Riding High (1943 film)|Riding High]]''&nbsp;– [[Loren L. Ryder]]
+** ''[[Sahara (1943 American film)|Sahara]]''&nbsp;– [[John P. Livadary]]
+** ''[[Saludos Amigos]]''&nbsp;– [[Sam Slyfield|C. O. Slyfield]]
+** ''[[So This Is Washington]]''&nbsp;– [[James L. Fields|J. L. Fields]]
+** ''[[The Song of Bernadette (film)|The Song of Bernadette]]''&nbsp;– [[Edmund H. Hansen|E. H. Hansen]]
+** ''[[This Is the Army]]''&nbsp;– [[Nathan Levinson]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[The Song of Bernadette (film)|The Song of Bernadette]]''&nbsp;– Art Direction: [[James Basevi]] and [[William S. Darling]]; Interior Decoration: [[Thomas Little]]'''
+** ''[[Five Graves to Cairo]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Ernst Fegté]]; Interior Decoration: [[Bertram C. Granger|Bertram Granger]]
+** ''[[Flight for Freedom]]''&nbsp;– Art Direction: [[Albert S. D'Agostino]] and [[Carroll Clark]]; Interior Decoration: [[Darrell Silvera]] and [[Harley Miller]]
+** ''[[Madame Curie (film)|Madame Curie]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Paul Groesse]]; Interior Decoration: [[Edwin B. Willis]] and [[Hugh Hunt]]
+** ''[[Mission to Moscow]]''&nbsp;– Art Direction: [[Carl Jules Weyl]]; Interior Decoration: [[George James Hopkins]]
+** ''[[The North Star (1943 film)|The North Star]]''&nbsp;– Art Direction: [[Perry Ferguson]]; Interior Decoration: [[Howard Bristol]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[Phantom of the Opera (1943 film)|Phantom of the Opera]]''&nbsp;– Art Direction: [[Alexander Golitzen]] and [[John B. Goodman (art director)|John B. Goodman]]; Interior Decoration: [[Russell A. Gausman]] and [[Ira S. Webb]]'''
+** ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Haldane Douglas]]; Interior Decoration: [[Bertram C. Granger|Bertram Granger]]
+** ''[[The Gang's All Here (1943 film)|The Gang's All Here]]''&nbsp;– Art Direction: [[James Basevi]] and [[Joseph C. Wright]]; Interior Decoration: [[Thomas Little]]
+** ''[[This Is the Army]]''&nbsp;– Art Direction: [[John Hughes (art director)|John Hughes]] and Lt. John Koenig; Interior Decoration: [[George James Hopkins]]
+** ''[[Thousands Cheer]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Daniel B. Cathcart]]; Interior Decoration: [[Edwin B. Willis]] and [[Jacques Mersereau]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[The Song of Bernadette (film)|The Song of Bernadette]]''&nbsp;– [[Arthur Miller (cinematographer)|Arthur C. Miller]]'''
+** ''[[Air Force (film)|Air Force]]''&nbsp;– [[James Wong Howe]], [[Elmer Dyer]] and [[Charles A. Marshall]]
+** ''[[Casablanca (film)|Casablanca]]''&nbsp;– [[Arthur Edeson]]
+** ''[[Corvette K-225]]''&nbsp;– [[Tony Gaudio]]
+** ''[[Five Graves to Cairo]]''&nbsp;– [[John F. Seitz]]
+** ''[[The Human Comedy (film)|The Human Comedy]]''&nbsp;– [[Harry Stradling]]
+** ''[[Madame Curie (film)|Madame Curie]]''&nbsp;– [[Joseph Ruttenberg]]
+** ''[[The North Star (1943 film)|The North Star]]''&nbsp;– [[James Wong Howe]]
+** ''[[Sahara (1943 American film)|Sahara]]''&nbsp;– [[Rudolph Maté]]
+** ''[[So Proudly We Hail!]]''&nbsp;– [[Charles Lang]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[Phantom of the Opera (1943 film)|Phantom of the Opera]]''&nbsp;– [[Hal Mohr]] and [[W. Howard Greene]]'''
+** ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]''&nbsp;– [[Ray Rennahan]]
+** ''[[Heaven Can Wait (1943 film)|Heaven Can Wait]]''&nbsp;– [[Edward Cronjager]]
+** ''[[Hello, Frisco, Hello]]''&nbsp;– [[Charles G. Clarke]] and Allen Davey
+** ''[[Lassie Come Home]]''&nbsp;– [[Leonard Smith (cinematographer)|Leonard Smith]]
+** ''[[Thousands Cheer]]''&nbsp;– [[George Folsey (cinematographer)|George J. Folsey]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Air Force (film)|Air Force]]''&nbsp;– [[George Amy]]'''
+** ''[[Casablanca (film)|Casablanca]]''&nbsp;– [[Owen Marks]]
+** ''[[Five Graves to Cairo]]''&nbsp;– [[Doane Harrison]]
+** ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]''&nbsp;– Sherman Todd and [[John F. Link Sr.]]
+** ''[[The Song of Bernadette (film)|The Song of Bernadette]]''&nbsp;– [[Barbara McLean]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+* '''''[[Crash Dive]]''&nbsp;– Photographic Effects: [[Fred Sersen]]; Sound Effects: [[Roger Heman Sr.|Roger Heman]]'''
+** ''[[Air Force (film)|Air Force]]''&nbsp;– Photographic Effects: [[H. F. Koenekamp|Hans F. Koenekamp]] and [[Rex Wimpy]]; Sound Effects: [[Nathan Levinson]]
+** ''[[Bombardier (film)|Bombardier]]''&nbsp;– Photographic Effects: [[Vernon L. Walker]]; Sound Effects [[James G. Stewart]] and [[Roy Granville]]
+** ''[[The North Star (1943 film)|The North Star]]''&nbsp;– Photographic Effects: [[Clarence Slifer]] and [[Ray Binger]]; Sound Effects: [[Thomas T. Moulton]]
+** ''[[So Proudly We Hail!]]''&nbsp;– Photographic Effects: [[Farciot Edouart]] and [[Gordon Jennings]]; Sound Effects: [[George Dutton]]
+** ''[[Stand By for Action]]''&nbsp;– Photographic Effects: [[A. Arnold Gillespie]] and [[Donald Jahraus]]; Sound Effects: [[Michael Steinore]]
+|}
+
+===Special Award===
+* To [[George Pal]] for the development of novel methods and techniques in the production of short subjects known as [[Puppetoons]].
+
+===Irving G. Thalberg Memorial Award===
+* [[Hal B. Wallis]]
+
+== Presenters and performers ==
+===Presenters===
+* [[Donald Crisp]] (Presenter: Best Supporting Actor)
+* [[Howard Estabrook]] (Presenter: Documentary Awards)
+* [[Sidney Franklin (director)|Sidney Franklin]] (Presenter: Outstanding Motion Picture)
+* [[Y. Frank Freeman]] (Presenter: Best Film Editing, Best Sound Recording, Best Special Effects and the Scientific & Technical Awards)
+* [[Greer Garson]] (Presenter: Best Actress)
+* [[James Hilton (novelist)|James Hilton]] (Presenter: Writing Awards)
+* [[Carole Landis]] (Presenter: Best Art Direction)
+* [[George Murphy]] (Presenter: Best Actor)
+* [[Rosalind Russell]] (Presenter: Best Cinematography)
+* [[Mark Sandrich]] (Presenter: Best Director)
+* [[Dinah Shore]] (Presenter: Music Awards)
+* [[Walter Wanger]] (Presenter: Short Subject Awards and the Honorary Award)
+* [[Teresa Wright]] (Presenter: Best Supporting Actress)
+* [[Darryl F. Zanuck]] (Presenter: Irving G. Thalberg Memorial Award)
+
+===Performers===
+* [[Edgar Bergen]] & [[Charlie McCarthy]]
+* [[Ray Bolger]]
+* [[Susanna Foster]]
+* [[Mitzi Gaynor|Mitzi Gerber]]
+* [[Lena Horne]]
+* [[Betty Hutton]]
+* [[Kay Kyser]] & His Band
+* [[Red Skelton]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 12
+| ''[[The Song of Bernadette (film)|The Song of Bernadette]]''
+|-
+| rowspan="1" style="text-align:center" | 9
+| ''[[For Whom the Bell Tolls (film)|For Whom the Bell Tolls]]''
+|-
+| rowspan="1" style="text-align:center" | 8
+| ''[[Casablanca (film)|Casablanca]]''
+|-
+| rowspan="1" style="text-align:center" | 7
+| ''[[Madame Curie (film)|Madame Curie]]''
+|-
+| rowspan="2" style="text-align:center" | 6
+| ''[[The More the Merrier]]''
+|-
+| ''[[The North Star (1943 film)|The North Star]]''
+|-
+| rowspan="1" style="text-align:center" | 5
+| ''[[The Human Comedy (film)|The Human Comedy]]''
+|-
+| rowspan="4" style="text-align:center" | 4
+| ''[[Air Force (film)|Air Force]]''
+|-
+| ''[[Phantom of the Opera (1943 film)|Phantom of the Opera]]''
+|-
+| ''[[So Proudly We Hail!]]''
+|-
+| ''[[Watch on the Rhine]]''
+|-
+| rowspan="6" style="text-align:center" | 3
+| ''[[Five Graves to Cairo]]''
+|-
+| ''[[Heaven Can Wait (1943 film)|Heaven Can Wait]]''
+|-
+| ''[[Sahara (1943 American film)|Sahara]]''
+|-
+| ''[[Saludos Amigos]]''
+|-
+| ''[[This Is the Army]]''
+|-
+| ''[[Thousands Cheer]]''
+|-
+| rowspan="9" style="text-align:center" | 2
+| ''[[Hangmen Also Die!]]''
+|-
+| ''[[Hello, Frisco, Hello]]''
+|-
+| ''[[Hit Parade of 1943]]''
+|-
+| ''[[In Old Oklahoma]]''
+|-
+| ''[[In Which We Serve]]''
+|-
+| ''[[The Sky's the Limit (1943 film)|The Sky's the Limit]]''
+|-
+| ''[[Something to Shout About (film)|Something to Shout About]]''
+|-
+| ''[[Stage Door Canteen (film)|Stage Door Canteen]]''
+|-
+| ''[[Star Spangled Rhythm]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 4
+| ''[[The Song of Bernadette (film)|The Song of Bernadette]]''
+|-
+| rowspan=1, style="text-align:center" | 3 
+| ''[[Casablanca (film)|Casablanca]]''
+|-
+| rowspan=1, style="text-align:center" | 2
+| ''[[Phantom of the Opera (1943 film)|Phantom of the Opera]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+* [[1st Golden Globe Awards]]
+* [[1943 in film]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 16}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1943 film awards]]
+[[Category:1944 in Los Angeles]]
+[[Category:1944 in American cinema]]
+[[Category:CBS Radio programs]]
+[[Category:March 1944 in the United States]]

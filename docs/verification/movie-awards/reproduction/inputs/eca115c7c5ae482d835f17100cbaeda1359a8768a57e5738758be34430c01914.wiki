@@ -1,0 +1,607 @@
+{{Oscars short description|films-year=2021}}
+{{Featured list}}
+{{Use mdy dates|date=March 2022}}
+{{Use American English|date=March 2022}}
+{{Infobox film awards
+| number           = 94
+| award            = Academy Awards
+| image            = 94 Oscars.jpg
+| alt              = Official poster for the 94th Academy Awards
+| caption          = Official poster
+| date             = March 27, 2022
+| site             = [[Dolby Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], Los Angeles, California, U.S.
+| host             = {{plainlist|
+* [[Regina Hall]]
+* [[Amy Schumer]]
+* [[Wanda Sykes]]
+}}
+| preshow          = {{plainlist|
+* [[Vanessa Hudgens]]
+* [[Terrence J]]
+* [[Brandon Maxwell]]
+* [[Sofia Carson]]<ref>{{cite news |last1=Cordero |first1=Rosy |title=Oscars Sets Vanessa Hudgens, Terrence J & Brandon Maxwell As Red Carpet Hosts |url=https://deadline.com/2022/03/oscars-vanessa-hudgens-terrence-j-brandon-maxwell-red-carpet-hosts-1234984936/ |access-date=September 12, 2022 |work=[[Deadline Hollywood]] |date=March 23, 2022 |archive-date=September 21, 2022 |archive-url=https://web.archive.org/web/20220921223600/https://deadline.com/2022/03/oscars-vanessa-hudgens-terrence-j-brandon-maxwell-red-carpet-hosts-1234984936/ |url-status=live}}</ref>
+}}
+| producer         = {{plainlist|
+* [[Will Packer]]
+* Shayla Cowan
+}}
+| director         = [[Glenn Weiss]]
+| best_picture     = ''[[CODA (2021 film)|CODA]]''
+| most_wins        = ''[[Dune (2021 film)|Dune]]'' (6)
+| network          = [[American Broadcasting Company|ABC]]
+| most_nominations = ''[[The Power of the Dog (film)|The Power of the Dog]]'' (12)
+| duration         = 3 hours, 40 minutes<ref name="THRRatings">{{cite web |url=https://www.hollywoodreporter.com/tv/tv-news/oscars-tv-ratings-sunday-march-27-2022-1235120758/ |title=TV Ratings: Oscars Rebound from Historic Lows |last=Porter |first=Rick |date=March 28, 2022 |work=[[The Hollywood Reporter]] |access-date=March 28, 2022 |archive-date=March 31, 2022 |archive-url=https://web.archive.org/web/20220331013312/https://www.hollywoodreporter.com/tv/tv-news/oscars-tv-ratings-sunday-march-27-2022-1235120758/ |url-status=live}}</ref>
+| ratings          = {{plainlist|
+*16.62&nbsp;million<ref name="THRRatings"/>
+*9.0% ([[Nielsen ratings]])
+}}
+| last             = 93rd
+| next             = 95th
+}}
+
+The '''94th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), took place on March 27, 2022, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]]. The awards were scheduled after their usual late February date to avoid conflicting with both the [[2022 Winter Olympics]] and [[Super Bowl LVI]], with the latter being held in nearby [[Inglewood, California]].<ref name="FeinbergDates">{{cite news |last1=Feinberg |first1=Scott |title=Oscars: Academy Announces Date for 94th Oscars and Key Events Leading Up to It |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-2022-date-1234960021/ |access-date=February 7, 2022 |work=[[The Hollywood Reporter]] |date=May 27, 2021 |archive-date=October 16, 2021 |archive-url=https://web.archive.org/web/20211016100101/https://www.hollywoodreporter.com/movies/movie-news/oscars-2022-date-1234960021/ |url-status=live}}</ref> During the gala, the AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 23 categories honoring films released from March 1 to December 31, 2021. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Will Packer]] and Shayla Cowan and was directed by [[Glenn Weiss]].<ref name="Verhoeven">{{cite news |last1=Verhoeven |first1=Beatrice |title=Will Packer Addresses 'Misconceptions' Over Decision to Not Present Craft Categories Live at Oscars |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-will-packer-crafts-categories-1235118284/ |access-date=May 23, 2022 |work=[[The Hollywood Reporter]] |date=March 24, 2022 |archive-date=May 11, 2022 |archive-url=https://web.archive.org/web/20220511022919/https://www.hollywoodreporter.com/movies/movie-news/oscars-will-packer-crafts-categories-1235118284/ |url-status=live}}</ref> Actresses [[Regina Hall]], [[Amy Schumer]], and [[Wanda Sykes]] hosted the show for the first time.<ref name="NBC Oscar Hosts">{{cite news |last1=Wong |first1=Wilson |title=Oscars 2022: Wanda Sykes, Amy Schumer and Regina Hall to Host |url=https://www.nbcnews.com/pop-culture/pop-culture-news/oscars-2022-wanda-sykes-amy-schumer-regina-hall-host-rcna16276 |access-date=June 15, 2022 |agency=[[NBC News]] |date=February 15, 2022 |archive-date=June 18, 2022 |archive-url=https://web.archive.org/web/20220618034725/https://www.nbcnews.com/pop-culture/pop-culture-news/oscars-2022-wanda-sykes-amy-schumer-regina-hall-host-rcna16276 |url-status=live}}</ref> Two days earlier, in an event held at the Ray Dolby Ballroom of the [[Ovation Hollywood]] complex in Hollywood, the Academy held its 12th annual [[Governors Awards]] ceremony.<ref name="Hammond">{{cite news |last1=Hammond |first1=Pete |title=Governors Awards Starts Oscar Weekend On A High With Samuel L. Jackson, Liv Ullmann, Elaine May, And Danny Glover |url=https://deadline.com/2022/03/governors-awards-samuel-l-jackson-liv-ullmann-elaine-may-and-danny-glover-1234987515/ |access-date=May 13, 2022 |work=[[Deadline Hollywood]] |date=March 26, 2022 |archive-date=April 20, 2022 |archive-url=https://web.archive.org/web/20220420154623/https://deadline.com/2022/03/governors-awards-samuel-l-jackson-liv-ullmann-elaine-may-and-danny-glover-1234987515/ |url-status=live}}</ref>
+
+''[[CODA (2021 film)|CODA]]'' won three awards, including [[Academy Award for Best Picture|Best Picture]]. Other winners included ''[[Dune (2021 film)|Dune]]'' with six awards, ''[[The Eyes of Tammy Faye (2021 film)|The Eyes of Tammy Faye]]'' with two, and ''[[Belfast (film)|Belfast]]'', ''[[Cruella (film)|Cruella]]'', ''[[Drive My Car (film)|Drive My Car]]'', ''[[Encanto]]'', ''[[King Richard (film)|King Richard]]'', ''[[The Long Goodbye (Riz Ahmed album)|The Long Goodbye]]'', ''[[No Time to Die]]'', ''[[The Power of the Dog (film)|The Power of the Dog]]'', ''[[The Queen of Basketball]]'', ''[[Summer of Soul]]'', ''[[West Side Story (2021 film)|West Side Story]]'' and ''[[The Windshield Wiper]]'' with one each.<ref>{{cite magazine |last1=Couch |first1=Aaron |title=Oscars: The Winners by Film |url=https://www.hollywoodreporter.com/movies/movie-news/dune-wins-six-oscars-2022-1235119654/ |access-date=September 12, 2022 |magazine=[[The Hollywood Reporter]] |date=March 27, 2022 |archive-date=March 31, 2022 |archive-url=https://web.archive.org/web/20220331105847/https://www.hollywoodreporter.com/movies/movie-news/dune-wins-six-oscars-2022-1235119654/ |url-status=live}}</ref> 
+
+The ceremony received negative reviews due to a controversial incident in which Best Actor winner [[Chris Rock–Will Smith slapping incident|Will Smith slapped comedian Chris Rock]] after Rock made a joke about Smith's wife, [[Jada Pinkett Smith]], who shaved her head due to [[alopecia areata]]. In response, the Academy banned Smith from attending its events for a decade as punishment. Criticism was also directed toward the decision to present eight categories separate from the main telecast. The telecast drew 16.62&nbsp;million viewers in the United States.
+
+==Winners and nominees==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 94th Academy Awards were announced on February 8, 2022, by actors [[Leslie Jordan]] and [[Tracee Ellis Ross]].<ref>{{cite news |last1=Hipes |first1=Patrick |title=Watch the Oscars Nominations Livestream |url=https://deadline.com/2022/02/2022-oscar-nominations-livestream-how-to-watch-1234927719/ |access-date=August 4, 2022 |work=[[Deadline Hollywood]] |date=February 8, 2022 |archive-date=August 5, 2022 |archive-url=https://web.archive.org/web/20220805014913/https://deadline.com/2022/02/2022-oscar-nominations-livestream-how-to-watch-1234927719/ |url-status=live}}</ref> ''[[The Power of the Dog (film)|The Power of the Dog]]'' led all nominees with twelve nominations; ''[[Dune (2021 film)|Dune]]'' came in second with ten.<ref>{{cite news |last1=Faughdner |first1=Ryan |title=Oscars 2022: Netflix Leads Nominations as Streamers Prevail |url=https://www.latimes.com/entertainment-arts/business/story/2022-02-08/oscars-2022-netflix-leads-nominations-in-another-streaming-heavy-year |url-access=limited |access-date=February 8, 2022 |work=[[Los Angeles Times]] |date=February 8, 2022 |archive-date=February 8, 2022 |archive-url=https://web.archive.org/web/20220208155613/https://www.latimes.com/entertainment-arts/business/story/2022-02-08/oscars-2022-netflix-leads-nominations-in-another-streaming-heavy-year |url-status=live}}</ref> The winners were announced during the awards ceremony on March 27.<ref>{{cite news |last1=Cohn |first1=Gabe |title=2022 Oscar Winners: Complete List |url=https://www.nytimes.com/2022/03/27/movies/oscars-winner-list.html |url-access=limited |access-date=June 15, 2022 |work=[[The New York Times]] |date=March 27, 2022 |archive-date=June 15, 2022 |archive-url=https://web.archive.org/web/20220615121744/https://www.nytimes.com/2022/03/27/movies/oscars-winner-list.html |url-status=live}}</ref>
+
+''[[CODA (2021 film)|CODA]]'' became the first Best Picture winner to be distributed via a [[streaming platform]] and the first one starring a primarily [[deaf]] cast.<ref name="CODA">{{cite news |last1=Coyle |first1=Jake |title=At a Pugnacious Oscars, Apple's Feel-Good ''CODA'' Triumphs |url=https://apnews.com/article/2022-oscars-show-9a69424884de11649b68a12a284353a1 |access-date=May 13, 2022 |publisher=[[Associated Press]] |date=March 28, 2022 |archive-date=March 28, 2022 |archive-url=https://web.archive.org/web/20220328005634/https://apnews.com/article/2022-oscars-show-9a69424884de11649b68a12a284353a1 |url-status=live}}</ref> Its three nominations were the fewest for any Best Picture winner since 1932's ''[[Grand Hotel (1932 film)|Grand Hotel]]'', and it was the first Best Picture winner without directing or film editing nominations since the aforementioned film. Furthermore, it became the first without any nominations in the [[Below-the-line (filmmaking)|below-the-line]] categories since 1980's ''[[Ordinary People]]''.<ref>{{cite news |last1=Means |first1=Sean P. |title=How ''CODA'' Made History for the Sundance Film Festival with Best Picture Oscar Win |url=https://www.sltrib.com/artsliving/2022/03/27/how-coda-made-history/ |access-date=May 13, 2022 |work=[[The Salt Lake Tribune]] |date=March 28, 2022 |archive-date=May 10, 2022 |archive-url=https://web.archive.org/web/20220510232132/https://www.sltrib.com/artsliving/2022/03/27/how-coda-made-history/ |url-status=live}}</ref>
+
+Best Director winner [[Jane Campion]] was the [[List of female Academy Award winners and nominees for non-gendered categories#Best Director|third woman to win the award and the first woman to be nominated twice]], having previously been nominated for 1993's ''[[The Piano]]''.<ref>{{cite news |last1=Arkin |first1=Daniel |title=Jane Campion Becomes Third Woman to Win Best Director Oscar |url=https://www.nbcnews.com/pop-culture/awards/jane-campion-becomes-third-woman-win-best-director-oscar-rcna18904 |access-date=July 24, 2022 |agency=[[NBC News]] |date=March 27, 2022 |archive-date=June 15, 2022 |archive-url=https://web.archive.org/web/20220615220213/https://www.nbcnews.com/pop-culture/awards/jane-campion-becomes-third-woman-win-best-director-oscar-rcna18904 |url-status=live}}</ref> ''The Power of the Dog'' became the first film to win Best Director as its sole award since 1967's ''[[The Graduate]]''.<ref>{{cite news |last1=Feinberg |first1=Scott |title=Oscars Analysis: How ''CODA'' Won and Will Smith Lost It |url=https://www.hollywoodreporter.com/movies/movie-news/2022-oscars-analysis-feinberg-1235120654/ |access-date=September 12, 2022 |work=[[The Hollywood Reporter]] |date=March 28, 2022 |archive-date=September 21, 2022 |archive-url=https://web.archive.org/web/20220921223601/https://www.hollywoodreporter.com/movies/movie-news/2022-oscars-analysis-feinberg-1235120654/ |url-status=live}}</ref> Best Original Screenplay winner [[Kenneth Branagh]] was the first person to have been nominated in seven different categories throughout his career, having also been nominated as director and as one of the producers for ''[[Belfast (film)|Belfast]]''.<ref>{{cite news |last1=Fleming |first1=Ryan |title=Kenneth Branagh Breaks Oscar Record with Seven Nominations in Seven Different Categories |url=https://deadline.com/2022/02/kenneth-branagh-belfast-oscar-nomination-record-1234928334/ |access-date=July 2, 2022 |work=[[Deadline Hollywood]] |date=February 8, 2022 |archive-date=June 15, 2022 |archive-url=https://web.archive.org/web/20220615220213/https://deadline.com/2022/02/kenneth-branagh-belfast-oscar-nomination-record-1234928334/ |url-status=live}}</ref>
+
+Best Supporting Actor winner [[Troy Kotsur]] became the first deaf man and second deaf individual overall to win an acting award.{{efn|name=Kotsur|Kotsur's co-star [[Marlee Matlin]] was the first deaf performer to earn an acting award, having won Best Actress for her performance in 1986's ''[[Children of a Lesser God (film)|Children of a Lesser God]]''.<ref>{{cite news |last1=Gelt |first1=Jessica |title=Marlee Matlin Sees Deaf Culture Flowing into the Hollywood Mainstream. 'Keep Making It Happen' |url=https://www.latimes.com/entertainment-arts/story/2022-03-28/marlee-matlin-coda-deaf-actors |url-access=subscription |access-date=June 15, 2022 |work=[[Los Angeles Times]] |date=March 28, 2022 |archive-date=June 14, 2022 |archive-url=https://web.archive.org/web/20220614222346/https://www.latimes.com/entertainment-arts/story/2022-03-28/marlee-matlin-coda-deaf-actors |url-status=live}}</ref>}} Best Supporting Actress winner [[Ariana DeBose]] was the first [[Afro-Latina]] person and first openly [[queer]] woman of color to win an acting Oscar.<ref name="Ariana">{{cite news |last1=Elbert |first1=Lynn |title=Ariana DeBose Wins Oscar for Best Supporting Actress |url=https://abcnews.com/GMA/Culture/oscars-2022-ariana-debose-wins-best-supporting-actress/story?id=83675818 |access-date=August 19, 2026 |work=[[ABC News (United States)|ABC News]] |date=March 27, 2022 |archive-date=May 14, 2022 |archive-url=https://web.archive.org/web/20220514105230/https://abcnews.go.com/Entertainment/wireStory/ariana-debose-wins-oscar-best-supporting-actress-83708747 |url-status=live}}</ref> Furthermore, as a result of her win for portraying Anita in the [[West Side Story (2021 film)|2021 film adaptation]] of the Broadway musical ''[[West Side Story]]'', she and [[Rita Moreno]], who previously won for playing the same character in the [[West Side Story (1961 film)|1961 film adaptation]], became the third pair of actors to win for portraying the same character in two different films.{{efn|name=DeBose|[[Marlon Brando]] and [[Robert De Niro]] were the first pair of actors to achieve this feat. Brando won Best Actor for portraying [[Vito Corleone]] in 1972's ''[[The Godfather]]''; De Niro won Best Supporting Actor for portraying a younger version of the same character in 1974's ''[[The Godfather Part II]]''. [[Heath Ledger]] and [[Joaquin Phoenix]] later repeated this feat by virtue of their wins for their performances as the [[Joker (character)|Joker]] in 2008's ''[[The Dark Knight]]'' and 2019's ''[[Joker (2019 film)|Joker]]'', respectively.<ref name="Ariana"/>}}
+
+Nominated for their performances as Leda Caruso in ''[[The Lost Daughter (film)|The Lost Daughter]]'', Best Actress nominee [[Olivia Colman]] and Best Supporting Actress nominee [[Jessie Buckley]] were the third pair of actresses nominated for portraying the same character in the same film.{{efn|name=Lost Daughter|Previously, [[Kate Winslet]] and [[Gloria Stuart]] first achieved this distinction by virtue of their nominations for their performances as two versions of Rose DeWitt Bukater in 1997's ''[[Titanic (1997 film)|Titanic]]''. Winslet would again achieve this distinction with [[Judi Dench]] for their performances as two different versions of the [[Iris Murdoch|titular character]] in 2001's ''[[Iris (2001 film)|Iris]]''.<ref>{{cite magazine |last1=Nolfi |first1=Joey |title=Olivia Colman and Jessie Buckley score Oscar nods for playing same character in same movie |url=https://ew.com/awards/oscars/olivia-colman-jessie-buckley-lost-daughter-oscar-nominated-playing-same-character/ |access-date=August 4, 2022 |magazine=[[Entertainment Weekly]] |date=February 8, 2022 |archive-date=August 5, 2022 |archive-url=https://web.archive.org/web/20220805014913/https://ew.com/awards/oscars/olivia-colman-jessie-buckley-lost-daughter-oscar-nominated-playing-same-character/ |url-status=live}}</ref>}} ''[[Flee (film)|Flee]]'' became the first film to be nominated for Best Animated Feature, Best International Feature Film, and Best Documentary Feature in the same year.<ref>{{cite news |last1=Yamato |first1=Jen |title=Danish Animated Doc ''Flee'' Makes Oscars History with Triple Nominations |url=https://www.latimes.com/entertainment-arts/movies/story/2022-02-08/oscars-nomination-flee-history-documentary-animation |url-access=subscription |access-date=June 15, 2022 |work=[[Los Angeles Times]] |date=February 8, 2022 |archive-date=June 6, 2022 |archive-url=https://web.archive.org/web/20220606212227/https://www.latimes.com/entertainment-arts/movies/story/2022-02-08/oscars-nomination-flee-history-documentary-animation |url-status=live}}</ref>
+
+===Awards===
+
+[[File:Jane Campion DNZM (cropped).jpg|thumb|right|upright=0.68|alt=Jane Campion in 2016.|[[Jane Campion]], Best Director winner]]
+[[File:TechCrunch Disrupt San Francisco 2019 - Day 1 (48834070763) (cropped).jpg|thumb|right|upright=0.68|alt=Will Smith in 2019.|[[Will Smith]], Best Actor winner]]
+[[File:SDCC 2015 - Jessica Chastain (19111308673) (cropped).jpg|thumb|right|upright=0.68|alt=Jessica Chastain in 2015.|[[Jessica Chastain]], Best Actress winner]]
+[[File:Troy kotsur 2022 1.jpg|thumb|right|upright=0.68|alt=Troy Kotsur at the 2022 Santa Barbara International Film Festival.|[[Troy Kotsur]], Best Supporting Actor winner]]
+[[File:Ariana DeBose Tow-053 (cropped).jpg|thumb|right|upright=0.68|alt=Ariana DeBose in 2025.|[[Ariana DeBose]], Best Supporting Actress winner]]
+[[File:KennethBranaghApr2011.jpg|thumb|right|upright=0.68|alt=Kenneth Branagh in 2011.|[[Kenneth Branagh]], Best Original Screenplay winner]]
+[[File:Sian Heder during an interview, March 2022.jpg|thumb|right|upright=0.68|alt=Sian Heder in March 2022.|[[Sian Heder]], Best Adapted Screenplay winner]]
+[[File:Ryusuke Hamaguchi (HKAFF2018) (cropped).png|thumb|right|upright=0.68|alt=Ryusuke Hamaguchi in 2018.|[[Ryusuke Hamaguchi]], Best International Feature Film winner]]
+[[File:QuestloveatBarnes&Noble02.JPG|thumb|right|upright=0.68|alt=Questlove in 2011.|[[Questlove]], Best Documentary Feature co-winner]]
+[[File:Riz Ahmed by Gage Skidmore.jpg|thumb|right|upright=0.68|alt=Riz Ahmed in 2018.|[[Riz Ahmed]], Best Live Action Short Film co-winner]]
+[[File:Hans-Zimmer-profile (cropped).jpg|thumb|right|upright=0.68|alt=Hans Zimmer in 2018.|[[Hans Zimmer]], Best Original Score winner]]
+[[File:Billie Eilish and FINNEAS 2017 (cropped).jpg|thumb|right|upright=0.68|alt=Billie Eilish in 2017.|[[Billie Eilish]] and [[Finneas O'Connell]], Best Original Song winners]]
+[[File:Greig Fraser.jpg|thumb|right|upright=0.68|alt=Greig Fraser in 2022.|[[Greig Fraser]], Best Cinematography winner]]
+[[File:Editor Joe Walker interviewed, 2018 (291032063).jpg|thumb|right|upright=0.68|alt=Joe Walker in 2018.|[[Joe Walker (film editor)|Joe Walker]], Best Film Editing winner]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger (‡).<ref>{{cite web |url=https://www.oscars.org/oscars/ceremonies/2022 |title=The 94th Academy Awards (2022) {{!}} Nominees and Winners |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=March 28, 2022 |archive-date=March 25, 2022 |archive-url=https://web.archive.org/web/20220325152056/https://www.oscars.org/oscars/ceremonies/2022 |url-status=live}}</ref>
+
+{| class="wikitable" role="presentation"
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[CODA (2021 film)|CODA]]''&nbsp;– [[Philippe Rousselet]], Fabrice Gianfermi and Patrick Wachsberger, producers'''{{double dagger}}
+** ''[[Belfast (film)|Belfast]]''&nbsp;– Laura Berwick, [[Kenneth Branagh]], Becca Kovacik and Tamar Thomas, producers
+** ''[[Don't Look Up]]''&nbsp;– [[Adam McKay]] and [[Kevin Messick]], producers
+** ''[[Drive My Car (film)|Drive My Car]]''&nbsp;– Teruhisa Yamamoto, producer
+** ''[[Dune (2021 film)|Dune]]''&nbsp;– [[Mary Parent]], [[Denis Villeneuve]] and [[Cale Boyter]], producers
+** ''[[King Richard (film)|King Richard]]''&nbsp;– [[Tim White (American producer)|Tim White]], [[Trevor White (producer)|Trevor White]] and [[Will Smith]], producers
+** ''[[Licorice Pizza]]''&nbsp;– [[Sara Murphy (film producer)|Sara Murphy]], [[Adam Somner]] and [[Paul Thomas Anderson]], producers
+** ''[[Nightmare Alley (2021 film)|Nightmare Alley]]''&nbsp;– [[Guillermo del Toro]], [[J. Miles Dale]] and [[Bradley Cooper]], producers
+** ''[[The Power of the Dog (film)|The Power of the Dog]]''&nbsp;– [[Jane Campion]], [[Tanya Seghatchian]], [[Emile Sherman]], [[Iain Canning]] and [[Roger Frappier]], producers
+** ''[[West Side Story (2021 film)|West Side Story]]''&nbsp;– [[Steven Spielberg]] and [[Kristie Macosko Krieger]], producers
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Jane Campion]]&nbsp;– ''[[The Power of the Dog (film)|The Power of the Dog]]'''''{{double dagger}}
+** [[Kenneth Branagh]]&nbsp;– ''[[Belfast (film)|Belfast]]''
+** [[Ryusuke Hamaguchi]]&nbsp;– ''[[Drive My Car (film)|Drive My Car]]''
+** [[Paul Thomas Anderson]]&nbsp;– ''[[Licorice Pizza]]''
+** [[Steven Spielberg]]&nbsp;– ''[[West Side Story (2021 film)|West Side Story]]''
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Best Actor in a Leading Role]]}}
+* '''[[Will Smith]]&nbsp;– ''[[King Richard (film)|King Richard]]'' as [[Richard Williams (tennis coach)|Richard Williams]]'''{{double dagger}}
+** [[Javier Bardem]]&nbsp;– ''[[Being the Ricardos]]'' as [[Desi Arnaz]]
+** [[Benedict Cumberbatch]]&nbsp;– ''[[The Power of the Dog (film)|The Power of the Dog]]'' as Phil Burbank
+** [[Andrew Garfield]]&nbsp;– ''[[Tick, Tick... Boom! (film)|Tick, Tick... Boom!]]'' as [[Jonathan Larson]]
+** [[Denzel Washington]]&nbsp;– ''[[The Tragedy of Macbeth (2021 film)|The Tragedy of Macbeth]]'' as [[Lord Macbeth]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Best Actress in a Leading Role]]}}
+* '''[[Jessica Chastain]]&nbsp;– ''[[The Eyes of Tammy Faye (2021 film)|The Eyes of Tammy Faye]]'' as [[Tammy Faye Bakker]]'''{{double dagger}}
+** [[Olivia Colman]]&nbsp;– ''[[The Lost Daughter (film)|The Lost Daughter]]'' as Leda Caruso
+** [[Penélope Cruz]]&nbsp;– ''[[Parallel Mothers]]'' as Janis Martínez Moreno
+** [[Nicole Kidman]]&nbsp;– ''[[Being the Ricardos]]'' as [[Lucille Ball]]
+** [[Kristen Stewart]]&nbsp;– ''[[Spencer (film)|Spencer]]'' as [[Diana Spencer]]<!-- per official credits of "Spencer" -->
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Troy Kotsur]]&nbsp;– ''[[CODA (2021 film)|CODA]]'' as Frank Rossi'''{{double dagger}}
+** [[Ciarán Hinds]]&nbsp;– ''[[Belfast (film)|Belfast]]'' as Pop
+** [[Jesse Plemons]]&nbsp;– ''[[The Power of the Dog (film)|The Power of the Dog]]'' as George Burbank
+** [[J. K. Simmons]]&nbsp;– ''[[Being the Ricardos]]'' as [[William Frawley]]
+** [[Kodi Smit-McPhee]]&nbsp;– ''[[The Power of the Dog (film)|The Power of the Dog]]'' as Peter Gordon
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Ariana DeBose]]&nbsp;– ''[[West Side Story (2021 film)|West Side Story]]'' as Anita'''{{double dagger}}
+** [[Jessie Buckley]]&nbsp;– ''[[The Lost Daughter (film)|The Lost Daughter]]'' as young Leda Caruso
+** [[Judi Dench]]&nbsp;– ''[[Belfast (film)|Belfast]]'' as Granny
+** [[Kirsten Dunst]]&nbsp;– ''[[The Power of the Dog (film)|The Power of the Dog]]'' as Rose Gordon
+** [[Aunjanue Ellis]]&nbsp;– ''[[King Richard (film)|King Richard]]'' as [[Oracene Price|Oracene "Brandy" Price]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Belfast (film)|Belfast]]''&nbsp;– [[Kenneth Branagh]]'''{{Double-dagger}}
+** ''[[Don't Look Up]]''&nbsp;– Screenplay by [[Adam McKay]]; Story by Adam McKay and [[David Sirota]]
+** ''[[King Richard (film)|King Richard]]''&nbsp;– [[Zach Baylin]]
+** ''[[Licorice Pizza]]''&nbsp;– [[Paul Thomas Anderson]]
+** ''[[The Worst Person in the World]]''&nbsp;– [[Eskil Vogt]] and [[Joachim Trier]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[CODA (2021 film)|CODA]]''&nbsp;– [[Sian Heder]]; based on the original motion picture screenplay ''[[La Famille Bélier]]'' written by [[Victoria Bedos]], [[Thomas Bidegain]], Stanislas Carré de Malberg and [[Éric Lartigau]]'''{{Double-dagger}}
+** ''[[Drive My Car (film)|Drive My Car]]''&nbsp;– [[Ryusuke Hamaguchi]] and [[Takamasa Oe]]; based on [[Men Without Women (Murakami short story collection)#"Drive My Car"|the short story]] by [[Haruki Murakami]]
+** ''[[Dune (2021 film)|Dune]]''&nbsp;– [[Jon Spaihts]], [[Denis Villeneuve]] and [[Eric Roth]]; based on [[Dune (novel)|the novel]] by [[Frank Herbert]]
+** ''[[The Lost Daughter (film)|The Lost Daughter]]''&nbsp;– [[Maggie Gyllenhaal]]; based on [[The Lost Daughter (novel)|the novel]] by [[Elena Ferrante]]
+** ''[[The Power of the Dog (film)|The Power of the Dog]]''&nbsp;– [[Jane Campion]]; based on [[The Power of the Dog (Savage novel)|the novel]] by [[Thomas Savage (novelist)|Thomas Savage]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Encanto]]''&nbsp;– [[Jared Bush]], [[Byron Howard]], [[Yvett Merino]] and [[Clark Spencer]]'''{{Double-dagger}}
+** ''[[Flee (film)|Flee]]''&nbsp;– [[Jonas Poher Rasmussen]], [[Monica Hellström]], [[Signe Byrge Sørensen]] and [[Charlotte de la Gournerie]]
+** ''[[Luca (2021 film)|Luca]]''&nbsp;– [[Enrico Casarosa]] and Andrea Warren
+** ''[[The Mitchells vs. the Machines]]''&nbsp;– [[Mike Rianda]], [[Phil Lord and Christopher Miller|Phil Lord, Christopher Miller]] and Kurt Albrecht
+** ''[[Raya and the Last Dragon]]''&nbsp;– [[Don Hall (filmmaker)|Don Hall]], [[Carlos López Estrada]], [[Osnat Shurer]] and [[Peter Del Vecho]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Best International Feature Film]]}}
+* '''''[[Drive My Car (film)|Drive My Car]]'' ([[List of Japanese submissions for the Academy Award for Best International Feature Film|Japan]]) in [[Japanese language|Japanese]] – directed by [[Ryusuke Hamaguchi]]'''{{Double-dagger}}
+** ''[[Flee (film)|Flee]]'' ([[List of Danish submissions for the Academy Award for Best International Feature Film|Denmark]]) in [[Danish language|Danish]] – directed by [[Jonas Poher Rasmussen]]
+** ''[[The Hand of God (film)|The Hand of God]]'' ([[List of Italian submissions for the Academy Award for Best International Feature Film|Italy]]) in [[Italian language|Italian]] – directed by [[Paolo Sorrentino]]
+** ''[[Lunana: A Yak in the Classroom]]'' ([[List of Bhutanese submissions for the Academy Award for Best International Feature Film|Bhutan]]) in [[Dzongkha]] – directed by [[Pawo Choyning Dorji]]
+** ''[[The Worst Person in the World]]'' ([[List of Norwegian submissions for the Academy Award for Best International Feature Film|Norway]]) in [[Norwegian language|Norwegian]] – directed by [[Joachim Trier]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Documentary Feature Film|Best Documentary (Feature)]]}}
+* '''''[[Summer of Soul (...Or, When the Revolution Could Not Be Televised)]]''&nbsp;– [[Ahmir "Questlove" Thompson]], [[Joseph Patel]], [[Robert Fyvolent]] and David Dinerstein'''{{Double-dagger}}
+** ''[[Ascension (film)|Ascension]]''&nbsp;– [[Jessica Kingdon]], [[Kira Simon-Kennedy]] and [[Nathan Truesdell]]
+** ''[[Attica (2021 film)|Attica]]''&nbsp;– [[Stanley Nelson]] and Traci A. Curry
+** ''[[Flee (film)|Flee]]''&nbsp;– [[Jonas Poher Rasmussen]], [[Monica Hellström]], [[Signe Byrge Sørensen]] and [[Charlotte de la Gournerie]]
+** ''[[Writing with Fire]]''&nbsp;– [[Rintu Thomas]] and [[Sushmit Ghosh]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Documentary Short Film|Best Documentary (Short Subject)]]}}
+* '''''[[The Queen of Basketball]]''&nbsp;– [[Ben Proudfoot]]'''{{Double-dagger}}
+** ''[[Audible (film)|Audible]]''&nbsp;– [[Matthew Ogens]] and Geoff McLean
+** ''[[Lead Me Home]]''&nbsp;– [[Pedro Kos]] and [[Jon Shenk]]
+** ''[[Three Songs for Benazir]]''&nbsp;– Elizabeth Mirzaei and Gulistan Mirzaei
+** ''[[When We Were Bullies]]''&nbsp;– [[Jay Rosenblatt (filmmaker)|Jay Rosenblatt]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[The Long Goodbye (Riz Ahmed album)|The Long Goodbye]]''&nbsp;– Aneil Karia and [[Riz Ahmed]]'''{{Double-dagger}}
+** ''[[Ala Kachuu – Take and Run]]''&nbsp;– [[Maria Brendle]] and [[Nadine Lüchinger]]
+** ''[[The Dress (2020 film)|The Dress]]''&nbsp;– [[Tadeusz Lysiak|Tadeusz Łysiak]] and [[Maciej Ślesicki]]
+** ''[[On My Mind (film)|On My Mind]]''&nbsp;– Martin Strange-Hansen and [[Kim Magnusson]]
+** ''[[Please Hold]]''&nbsp;– [[K.D. Dávila]] and Levin Menekse
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[The Windshield Wiper]]''&nbsp;– [[Alberto Mielgo]] and Leo Sanchez'''{{Double-dagger}}
+** ''[[Affairs of the Art]]''&nbsp;– [[Joanna Quinn]] and Les Mills
+** ''[[Bestia (2021 film)|Bestia]]''&nbsp;– Hugo Covarrubias and Tevo Díaz
+** ''[[Boxballet]]''&nbsp;– Anton Dyakov
+** ''[[Robin Robin]]''&nbsp;– Dan Ojari and [[Mikey Please]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Dune (2021 film)|Dune]]''&nbsp;– [[Hans Zimmer]]'''{{Double-dagger}}
+** ''[[Don't Look Up]]''&nbsp;– [[Nicholas Britell]]
+** ''[[Encanto]]''&nbsp;– [[Germaine Franco]]
+** ''[[Parallel Mothers]]''&nbsp;– [[Alberto Iglesias]]
+** ''[[The Power of the Dog (film)|The Power of the Dog]]''&nbsp;– [[Jonny Greenwood]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[No Time to Die (song)|No Time to Die]]" from ''[[No Time to Die]]''&nbsp;– Music and lyrics by [[Billie Eilish]] and [[Finneas O'Connell]]'''{{Double-dagger}}
+** "[[Be Alive]]" from ''[[King Richard (film)|King Richard]]''&nbsp;– Music and lyrics by [[DIXSON]] and [[Beyoncé Knowles-Carter]]
+** "[[Dos Oruguitas]]" from ''[[Encanto]]''&nbsp;– Music and lyrics by [[Lin-Manuel Miranda]]
+** "Down to Joy" from ''[[Belfast (film)|Belfast]]''&nbsp;– Music and lyrics by [[Van Morrison]]
+** "Somehow You Do" from ''[[Four Good Days]]''&nbsp;– Music and lyrics by [[Diane Warren]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Sound|Best Sound]]}}
+* '''''[[Dune (2021 film)|Dune]]''&nbsp;– [[Mac Ruth]], [[Mark Mangini]], [[Theo Green]], [[Doug Hemphill]] and [[Ron Bartlett]]'''{{Double-dagger}}
+** ''[[Belfast (film)|Belfast]]''&nbsp;– [[Denise Yarde]], [[Simon Chase]], [[James Mather (sound editor)|James Mather]] and [[Niv Adiri]]
+** ''[[No Time to Die]]''&nbsp;– [[Simon Hayes (sound engineer)|Simon Hayes]], [[Oliver Tarney]], [[James Harrison (sound editor)|James Harrison]], [[Paul Massey (sound engineer)|Paul Massey]] and [[Mark Taylor (sound engineer)|Mark Taylor]]
+** ''[[The Power of the Dog (film)|The Power of the Dog]]''&nbsp;– [[Richard Flynn (sound engineer)|Richard Flynn]], [[Robert Mackenzie (sound engineer)|Robert Mackenzie]] and [[Tara Webb]]
+** ''[[West Side Story (2021 film)|West Side Story]]''&nbsp;– [[Tod A. Maitland]], [[Gary Rydstrom]], [[Brian Chumney]], [[Andy Nelson (sound engineer)|Andy Nelson]] and [[Shawn Murphy (sound engineer)|Shawn Murphy]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Production Design|Best Production Design]]}}
+* '''''[[Dune (2021 film)|Dune]]''&nbsp;– Production Design: [[Patrice Vermette]]; Set Decoration: [[Zsuzsanna Sipos]]'''{{Double-dagger}}
+** ''[[Nightmare Alley (2021 film)|Nightmare Alley]]''&nbsp;– Production Design: [[Tamara Deverell]]; Set Decoration: [[Shane Vieau]]
+** ''[[The Power of the Dog (film)|The Power of the Dog]]''&nbsp;– Production Design: [[Grant Major]]; Set Decoration: [[Amber Richards (set decorator)|Amber Richards]]
+** ''[[The Tragedy of Macbeth (2021 film)|The Tragedy of Macbeth]]''&nbsp;– Production Design: [[Stefan Dechant]]; Set Decoration: [[Nancy Haigh]]
+** ''[[West Side Story (2021 film)|West Side Story]]''&nbsp;– Production Design: [[Adam Stockhausen]]; Set Decoration: [[Rena DeAngelo]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Dune (2021 film)|Dune]]''&nbsp;– [[Greig Fraser]]'''{{Double-dagger}}
+** ''[[Nightmare Alley (2021 film)|Nightmare Alley]]''&nbsp;– [[Dan Laustsen]]
+** ''[[The Power of the Dog (film)|The Power of the Dog]]''&nbsp;– [[Ari Wegner]]
+** ''[[The Tragedy of Macbeth (2021 film)|The Tragedy of Macbeth]]''&nbsp;– [[Bruno Delbonnel]]
+** ''[[West Side Story (2021 film)|West Side Story]]''&nbsp;– [[Janusz Kamiński]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* '''''[[The Eyes of Tammy Faye (2021 film)|The Eyes of Tammy Faye]]''&nbsp;– [[Linda Dowds]], [[Stephanie Ingram]] and [[Justin Raleigh]]'''{{Double-dagger}}
+** ''[[Coming 2 America]]''&nbsp;– [[Mike Marino (make-up artist)|Mike Marino]], [[Stacey Morris]] and [[Carla Farmer]]
+** ''[[Cruella (film)|Cruella]]''&nbsp;– [[Nadia Stacey]], [[Naomi Donne]] and [[Julia Vernon]]
+** ''[[Dune (2021 film)|Dune]]''&nbsp;– [[Donald Mowat]], [[Love Larson]] and [[Eva von Bahr (make-up artist)|Eva von Bahr]]
+** ''[[House of Gucci]]''&nbsp;– [[Göran Lundström]], [[Anna Carin Lock]] and [[Frederic Aspiras]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Cruella (film)|Cruella]]''&nbsp;– [[Jenny Beavan]]'''{{Double-dagger}}
+** ''[[Cyrano (film)|Cyrano]]''&nbsp;– [[Massimo Cantini Parrini]] and [[Jacqueline Durran]]
+** ''[[Dune (2021 film)|Dune]]''&nbsp;– [[Jacqueline West]] and [[Bob Morgan (costume designer)|Robert Morgan]]
+** ''[[Nightmare Alley (2021 film)|Nightmare Alley]]''&nbsp;– [[Luis Sequeira]]
+** ''[[West Side Story (2021 film)|West Side Story]]''&nbsp;– [[Paul Tazewell]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Dune (2021 film)|Dune]]''&nbsp;– [[Joe Walker (film editor)|Joe Walker]]'''{{Double-dagger}}
+** ''[[Don't Look Up]]''&nbsp;– [[Hank Corwin]]
+** ''[[King Richard (film)|King Richard]]''&nbsp;– [[Pamela Martin (film editor)|Pamela Martin]]
+** ''[[The Power of the Dog (film)|The Power of the Dog]]''&nbsp;– [[Peter Sciberras]]
+** ''[[Tick, Tick... Boom! (film)|Tick, Tick... Boom!]]''&nbsp;– [[Myron Kerstein]] and [[Andrew Weisblum]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Dune (2021 film)|Dune]]''&nbsp;– [[Paul Lambert (special effects artist)|Paul Lambert]], [[Tristan Myles]], [[Brian Connor (visual effects artist)|Brian Connor]] and [[Gerd Nefzer]]'''{{Double-dagger}}
+** ''[[Free Guy]]''&nbsp;– [[Swen Gillberg]], [[Bryan Grill]], [[Nikos Kalaitzidis]] and [[Dan Sudick]]
+** ''[[No Time to Die]]''&nbsp;– [[Charlie Noble (visual effects artist)|Charlie Noble]], [[Joel Green (visual effects artist)|Joel Green]], [[Jonathan Fawkner]] and [[Chris Corbould]]
+** ''[[Shang-Chi and the Legend of the Ten Rings]]''&nbsp;– [[Christopher Townsend]], [[Joe Farrell (visual effects artist)|Joe Farrell]], [[Sean Noel Walker]] and [[Dan Oliver]]
+** ''[[Spider-Man: No Way Home]]''&nbsp;– [[Kelly Port]], [[Chris Waegner]], [[Scott Edelstein]] and [[Dan Sudick]]
+|}
+
+===Governors Awards===
+The Academy held its 12th annual Governors Awards ceremony on March 25, 2022, during which the following awards were presented:<ref name="Hammond"/>
+
+====Honorary Awards====
+* To [[Samuel L. Jackson]], whose dynamic performances resonate across genres and generations of audiences worldwide.<ref name="Hammond"/>
+* To [[Elaine May]], writer, director, performer, pioneer whose bracing comedic spark illuminates us all.<ref name="Hammond"/>
+* To [[Liv Ullmann]], for her deeply affecting screen portrayals and lifelong commitment to exploring the human condition.<ref name="Hammond"/>
+
+====Jean Hersholt Humanitarian Award====
+* [[Danny Glover]] {{en dash}} "For [his] decades-long advocacy for justice and human rights reflects his dedication to recognizing our shared humanity on and off the screen."<ref name="Hammond"/>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}
+{{col-1-of-2}}
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 12
+| ''[[The Power of the Dog (film)|The Power of the Dog]]''
+|-
+| scope="row" style="text-align:center"| 10
+| ''[[Dune (2021 film)|Dune]]''
+|-
+| scope="row" rowspan="2" style="text-align:center;"| 7
+| ''[[Belfast (film)|Belfast]]''
+|-
+| ''[[West Side Story (2021 film)|West Side Story]]''
+|-
+| scope="row" style="text-align:center"| 6
+| ''[[King Richard (film)|King Richard]]''
+|-
+| scope="row" rowspan="3" style="text-align:center;"| 4
+| ''[[Don't Look Up]]''
+|-
+| ''[[Drive My Car (film)|Drive My Car]]''
+|-
+| ''[[Nightmare Alley (2021 film)|Nightmare Alley]]''
+|-
+| scope="row" rowspan="8" style="text-align:center;"| 3
+| ''[[Being the Ricardos]]''
+|-
+| ''[[CODA (2021 film)|CODA]]''
+|-
+| ''[[Encanto]]''
+|-
+| ''[[Flee (film)|Flee]]''
+|-
+| ''[[Licorice Pizza]]''
+|-
+| ''[[The Lost Daughter (film)|The Lost Daughter]]''
+|-
+| ''[[No Time to Die]]''
+|-
+| ''[[The Tragedy of Macbeth (2021 film)|The Tragedy of Macbeth]]''
+|-
+| scope="row" rowspan="5" style="text-align:center;"| 2
+| ''[[Cruella (film)|Cruella]]''
+|-
+| ''[[The Eyes of Tammy Faye (2021 film)|The Eyes of Tammy Faye]]''
+|-
+| ''[[Parallel Mothers]]''
+|-
+| ''[[Tick, Tick... Boom! (film)|Tick, Tick... Boom!]]''
+|-
+| ''[[The Worst Person in the World]]''
+|}
+{{col-break}}
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 6
+| ''[[Dune (2021 film)|Dune]]''
+|-
+| scope="row" style="text-align:center;"| 3
+| ''[[CODA (2021 film)|CODA]]''
+|-
+| scope="row" style="text-align:center;"| 2
+| ''[[The Eyes of Tammy Faye (2021 film)|The Eyes of Tammy Faye]]''
+|}
+{{col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>Multiple sources:
+
+* {{cite magazine |last1=Travis |first1=Ben |date=March 27, 2022 |title=Oscars 2022 Live Blog |url=https://www.empireonline.com/movies/features/oscars-2022-live-blog/ |url-status=live |magazine=[[Empire (magazine)|Empire]] |archive-url=https://web.archive.org/web/20220504052400/https://www.empireonline.com/movies/features/oscars-2022-live-blog/ |archive-date=May 4, 2022 |access-date=May 12, 2022}}
+* {{cite news |last1=Acevedo |first1=Nicole |last2=Arkin |first2=Daniel |last3=Blakenstein |first3=Andrew |last4=Brand |first4=Anna |last5=Da Silva |first5=Chantal |last6=Goode |first6=Justine |last7=Hamedy |first7=Saba |last8=Murphy |first8=Joe |last9=Patton |first9=Elaina |date=March 27, 2022 |title=What Happened at the Oscars |agency=[[NBC News]] |url=https://www.nbcnews.com/pop-culture/awards/live-blog/live-blog-oscars-2022-live-updates-n1293280 |url-status=live |access-date=May 23, 2022 |archive-url=https://web.archive.org/web/20220512070844/https://www.nbcnews.com/pop-culture/awards/live-blog/live-blog-oscars-2022-live-updates-n1293280 |archive-date=May 12, 2022 |last10=Richardson |first10=Randi |last11=Romero |first11=Dennis |last12=Smith |first12=Savannah}}
+* {{cite news |date=March 27, 2022 |title=Oscars 2022: All the Best Photos from the Academy Awards Show |work=[[USA Today]] |url=https://www.usatoday.com/picture-gallery/entertainment/movies/2022/03/28/oscars-all-best-celebrity-photos-academy-awards-show/7175637001/ |url-status=live |access-date=September 12, 2022 |archive-url=https://web.archive.org/web/20220818083550/https://www.usatoday.com/picture-gallery/entertainment/movies/2022/03/28/oscars-all-best-celebrity-photos-academy-awards-show/7175637001/ |archive-date=August 18, 2022}}
+* {{cite news |last1=Schaffstall |first1=Katherine |date=March 27, 2022 |title=Oscars: ''Encanto'' Cast Delivers First Live Performance of 'We Don't Talk About Bruno' With New Megan Thee Stallion Verse |work=[[The Hollywood Reporter]] |url=https://www.hollywoodreporter.com/movies/movie-news/we-dont-talk-about-bruno-encanto-2022-oscars-performance-1235120132/ |url-status=live |access-date=May 21, 2022 |archive-url=https://web.archive.org/web/20220602103830/https://www.hollywoodreporter.com/movies/movie-news/we-dont-talk-about-bruno-encanto-2022-oscars-performance-1235120132/ |archive-date=June 2, 2022}}</ref>
+
+{| class="wikitable plainrowheaders sortable"
+|+ Presenters
+|-
+! scope="col" | Name(s)
+! scope="col" | Role
+|-
+| scope="row" | {{sortname|Janora|McDuffie|nolink=1}}<ref>{{cite news |last1=Ciletti |first1=Nick |title=Janora McDuffie Preps for Huge Role As Oscars Voice |url=https://www.abc15.com/entertainment/television/oscars/janora-mcduffie-preps-for-huge-role-as-oscars-voice |access-date=June 15, 2022 |agency=[[KNXV-TV]] |date=March 23, 2022 |archive-date=April 13, 2022 |archive-url=https://web.archive.org/web/20220413140330/https://www.abc15.com//entertainment/television/oscars/janora-mcduffie-preps-for-huge-role-as-oscars-voice |url-status=live}}</ref>
+| Served as announcer for the 94th Academy Awards 
+|-
+| scope="row" | {{sortname|Serena|Williams}}<br />{{sortname|Venus|Williams}}
+| Introduced the performance of "[[Be Alive]]"
+|-
+| scope="row" | {{sortname|DJ|Khaled}}
+| Introduced hosts Regina Hall, Amy Schumer, and Wanda Sykes
+|-
+| scope="row" | {{sortname|Daniel|Kaluuya}}<br />[[H.E.R.]]
+| Presented the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| scope="row" | {{sortname|Josh|Brolin}}<br />[[Jason Momoa]]
+| Presented the following awards filmed before the telecast:<br />[[Best Animated Short Film]]<br />[[Best Documentary Short Subject]]<br />[[Academy Award for Best Film Editing|Best Film Editing]]<br />[[Best Live Action Short Film]]<br />[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]<br />[[Academy Award for Best Original Score|Best Original Score]]<br />[[Academy Award for Best Production Design|Best Production Design]]<br />[[Academy Award for Best Sound|Best Sound]]
+|-
+| scope="row" | {{sortname|Woody|Harrelson}}<br />[[Rosie Perez]]<br />[[Wesley Snipes]]
+| Presented the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| scope="row" | {{sortname|Jacob|Elordi}}<br />[[Rachel Zegler]]
+| Presented the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| scope="row" | {{sortname|Tony|Hawk}}<br />[[Kelly Slater]]<br />[[Shaun White]]
+| Presented the 60th anniversary tribute to the [[List of James Bond films|''James Bond'' series]]
+|-
+| scope="row" | {{sortname|Stephanie|Beatriz}}
+| Introduced the performance of "[[Dos Oruguitas]]"
+|-
+| scope="row" | {{sortname|Halle|Bailey}}<br />[[Lily James]]<br />[[Naomi Scott]]
+| Presented the award for [[Academy Award for Best Animated Feature|Best Animated Feature]]
+|-
+| scope="row" | {{sortname|Youn|Yuh-jung}}
+| Presented the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| scope="row" | {{sortname|Tiffany|Haddish}}<br />[[Simu Liu]]
+| Presented the award for [[Best International Feature Film]]
+|-
+| scope="row" | {{sortname|Mila|Kunis}}
+| Introduced the performance of "Somehow You Do"
+|-
+| scope="row" | {{sortname|Ruth E.|Carter}}<br />[[Lupita Nyong'o]]
+| Presented the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| scope="row" | {{sortname|John|Leguizamo}}
+| Introduced the performance of "[[We Don't Talk About Bruno]]"
+|-
+| scope="row" | {{sortname|Jennifer|Garner}}<br />[[Elliot Page]]<br />[[J. K. Simmons]]
+| Presented the award for [[Best Original Screenplay]]
+|-
+| scope="row" | {{sortname|Shawn|Mendes}}<br />[[Tracee Ellis Ross]]
+| Presented the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| scope="row" | {{sortname|Rami|Malek}}
+| Introduced the performance of "[[No Time to Die (song)|No Time to Die]]"
+|-
+| scope="row" | {{sortname|Chris|Rock}}
+| Presented the award for [[Academy Award for Best Documentary Feature Film|Best Documentary Feature]]
+|-
+| scope="row" | {{sortname|Sean|Combs}}
+| Presented the 50th anniversary tribute to [[The Godfather (film series)|''The Godfather'' trilogy]]
+|-
+| scope="row" | {{sortname|Tyler|Perry}}<br />[[Bill Murray]]<br />[[Jamie Lee Curtis]]
+| Presented eulogies to [[Sidney Poitier]], [[Ivan Reitman]], and [[Betty White]] during the "In Memoriam" segment
+|-
+| scope="row" | {{sortname|Jake|Gyllenhaal}}<br />[[Zoë Kravitz]]
+| Presented the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| scope="row" | {{sortname|Kevin|Costner}}
+| Presented the award for [[Academy Award for Best Director|Best Director]]
+|-
+| scope="row" | {{sortname|John|Travolta}}<br>[[Samuel L. Jackson]]<br>[[Uma Thurman]]
+| Presented the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| scope="row" | {{sortname|Anthony|Hopkins}}
+| Presented the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| scope="row" | {{sortname|Lady|Gaga}}<br>[[Liza Minnelli]]
+| Presented the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+{| class="wikitable plainrowheaders sortable"
+|+ Performers
+|-
+! scope="col" | Name
+! scope="col" | Role
+! scope="col" | Work
+|-
+| scope="row" | {{sortname|Adam|Blackstone}}
+| {{plainlist|
+* Musical arranger
+* Conductor
+}}
+| Orchestral
+|-
+| scope="row" | [[Beyoncé]]
+| Performer
+| "[[Be Alive]]" from ''[[King Richard (film)|King Richard]]''{{efn|[[Beyoncé]]{{'s}} performance was pre-recorded at the Venus and Serena Williams Court of Champions in [[Compton, California]].<ref>{{cite news |last1=Aswad |first1=Jem |last2=Angermiller |first2=Michele Amabile |title=Beyonce Opens the Oscars With Tennis-Themed Performance at Venus and Serena Williams' Hometown Court |url=https://variety.com/2022/film/news/beyonce-oscars-venus-serena-williams-1235215956/ |access-date=August 19, 2026 |work=[[Variety (magazine)|Variety]] |date=March 27, 2022 |archive-date=May 10, 2022 |archive-url=https://web.archive.org/web/20220510222518/https://variety.com/2022/film/news/beyonce-oscars-venus-serena-williams-1235215956/ |url-status=live}}</ref>}}
+|-
+| scope="row" | {{sortname|Sebastián|Yatra}}
+| Performer
+| "[[Dos Oruguitas]]" from ''[[Encanto]]''
+|-
+| scope="row" | {{sortname|Reba|McEntire}}
+| Performer
+| "Somehow You Do" from ''[[Four Good Days]]''
+|-
+| scope="row" | [[Adassa]]<br>[[Stephanie Beatriz]]<br>Mauro Castillo<br>[[Carolina Gaitán]]<br>[[Diane Guerrero]]<br>[[Becky G]]<br>[[Luis Fonsi]]<br>[[Megan Thee Stallion]]
+| Performers
+| "[[We Don't Talk About Bruno]]" from ''Encanto''
+|-
+| scope="row" | {{sortname|Billie|Eilish}}<br>{{sortname|Finneas|O'Connell}}
+| Performers
+| "[[No Time to Die (song)|No Time to Die]]" from ''[[No Time to Die]]''
+|-
+| scope="row" | [[Sunday Service Choir|The Samples]]<ref name="AFrame">{{cite magazine |last=Kreps |first=Daniel |date=March 18, 2022 |title=Oscars Announce First Wave of Performers, Including Unlikely All-Star Band |url=https://www.rollingstone.com/music/music-news/oscars-performers-all-star-band-d-nice-travis-barker-robert-glasper-1323650/ |access-date=March 22, 2022 |magazine=[[Rolling Stone]] |archive-date=March 22, 2022 |archive-url=https://web.archive.org/web/20220322145905/https://www.rollingstone.com/music/music-news/oscars-performers-all-star-band-d-nice-travis-barker-robert-glasper-1323650/ |url-status=live}}</ref><br>[[Jill Scott (singer)|Jill Scott]]
+| Performers
+| "[[I Will Remember You (Sarah McLachlan song)|I Will Remember You]]", "[[Spirit in the Sky]]", and "[[Thank You for Being a Friend]]" during the annual "In Memoriam" tribute<ref>Multiple sources:
+*{{cite news |last1=Dickey |first1=Josh |title=Oscars 'In Memoriam' Segment Celebrates Sidney Poitier, Sparks Bob Saget Outrage |url=https://www.thewrap.com/oscars-in-memoriam-segment-sidney-poitier-outrage-bob-saget/ |access-date=September 12, 2022 |work=[[TheWrap]] |date=March 27, 2022 |archive-date=April 20, 2022 |archive-url=https://web.archive.org/web/20220420005429/https://www.thewrap.com/oscars-in-memoriam-segment-sidney-poitier-outrage-bob-saget/ |url-status=live}}
+*{{cite magazine |last1=Highfill |first1=Samantha |title=Bob Saget left out of Oscars In Memoriam segment |url=https://ew.com/awards/oscars/in-memoriam-bob-saget-missing-oscars-2022/ |access-date=September 12, 2022 |magazine=[[Entertainment Weekly]] |date=March 28, 2022 |archive-date=May 29, 2022 |archive-url=https://web.archive.org/web/20220529175649/https://ew.com/awards/oscars/in-memoriam-bob-saget-missing-oscars-2022/ |url-status=live}}
+*{{cite news |last1=Saperstein |first1=Pat |title=Oscars In Memoriam: Bob Saget, Ed Asner Among Omissions |url=https://variety.com/2022/film/news/oscars-in-memoriam-bob-saget-forgotten-1235210996/ |access-date=September 12, 2022 |work=Variety |date=March 27, 2022 |archive-date=March 28, 2022 |archive-url=https://web.archive.org/web/20220328094540/https://variety.com/2022/film/news/oscars-in-memoriam-bob-saget-forgotten-1235210996/ |url-status=live}}
+*{{cite news |last1=Kuperinsky |first1=Amy |title='Pawfect.' John Travolta, Son Adopt Dog from Jamie Lee Curtis Oscars Tribute to Betty White. |url=https://www.nj.com/entertainment/2022/03/pawfect-john-travolta-son-adopt-dog-from-jamie-lee-curtis-oscars-tribute-to-betty-white.html |access-date=May 13, 2022 |work=[[The Star-Ledger]] |date=March 30, 2022 |archive-date=April 1, 2022 |archive-url=https://web.archive.org/web/20220401115320/https://www.nj.com/entertainment/2022/03/pawfect-john-travolta-son-adopt-dog-from-jamie-lee-curtis-oscars-tribute-to-betty-white.html |url-status=live}}</ref>
+|}
+
+==Ceremony information==
+{{Multiple image|perrow=3|total_width=340
+| image1 = Regina Hall NY 2019 (02) (cropped).jpg
+| alt1   = Regina Hall in 2019
+| image2 = Amy Schumer by Mario Santor.jpg
+| image3 = Wanda Sykes 2010 GLAAD Media Awards.jpg
+| alt3   = Wanda Sykes in 2010
+| footer = [[Regina Hall]] (left), [[Amy Schumer]] (center), and [[Wanda Sykes]] (right) hosted 94th Academy Awards.
+}}
+
+In October 2021, the Academy hired film director and producer [[Will Packer]] and his production company chief of staff Shayla Cowan to oversee production of the 2022 ceremony.<ref name="Packer">{{cite news |last1=Hammond |first1=Pete |title=Oscars: Will Packer Set To Produce 2022 Academy Awards |url=https://deadline.com/2021/10/oscars-producer-will-packer-2022-academy-awards-1234850118/ |access-date=February 7, 2022 |work=[[Deadline Hollywood]] |date=October 5, 2021 |archive-date=February 1, 2022 |archive-url=https://web.archive.org/web/20220201050635/https://deadline.com/2021/10/oscars-producer-will-packer-2022-academy-awards-1234850118/ |url-status=live}}</ref> "Will is a powerhouse producer who has enjoyed success across all movie genres! He's already bringing a boundless energy and a focus on innovation to this year's Oscars, to entertain the widest spectrum of fans. Many wonderful surprises ahead," remarked Academy president David Rubin and CEO [[Dawn Hudson]]. In response, Packer expressed his gratitude, saying: "The power, the beauty, the romance of the imagery in movies has always attracted me. I'm fully embracing the challenge of bringing an ode to one of the most iconic mediums in the world to life. What an honor."<ref name="Packer"/> Four months later, actresses and comedians [[Regina Hall]], [[Amy Schumer]], and [[Wanda Sykes]] were announced as hosts of the gala during an interview with Packer on ''[[Good Morning America]]''.<ref name="NBC Oscar Hosts"/> This marked the first time that three people had shared hosting duties for the Oscars since [[Chevy Chase]], [[Goldie Hawn]], and [[Paul Hogan]] presided over the [[59th Academy Awards|59th ceremony]] held in 1987.<ref>{{cite news |last1=Rao |first1=Sonia |title=Regina Hall, Amy Schumer and Wanda Sykes Will Host the Oscars Ceremony |url=https://www.washingtonpost.com/arts-entertainment/2022/02/15/oscars-hosts-hall-schumer-sykes/ |url-access=subscription |access-date=May 21, 2022 |newspaper=[[The Washington Post]] |date=February 15, 2022 |archive-date=August 13, 2022 |archive-url=https://web.archive.org/web/20220813004031/https://www.washingtonpost.com/arts-entertainment/2022/02/15/oscars-hosts-hall-schumer-sykes/ |url-status=live}}</ref>
+
+This year, the show was centered around the theme "Movie Lovers Unite".<ref>{{cite news |last1=Richwine |first1=Lisa |title=Oscars Face a Make-or-Break Moment to Build Audience |url=https://www.reuters.com/lifestyle/oscars-face-make-or-break-moment-build-audience-2022-03-24/ |access-date=March 27, 2022 |work=[[Reuters]] |date=March 24, 2022 |archive-date=March 25, 2022 |archive-url=https://web.archive.org/web/20220325194536/https://www.reuters.com/lifestyle/oscars-face-make-or-break-moment-build-audience-2022-03-24/ |url-status=live}}</ref> In an interview with the ''[[Los Angeles Times]]'', Packer explained his reasoning behind the theme, stating: "Some are movie lovers who have seen every single one of the nominated movies, and they've got very specific opinions about who wins. And then you have people who are just casual moviegoers, who perhaps have not seen the awards fare but who also love movies. I'm inviting them in as well. They're just as important to me as a viewer. And I think we can have a show that does both. We can walk and chew gum at the same time."<ref>{{cite news |last1=Rottenberg |first1=Josh |title=Oscars Producer Will Packer Defends Plan Amid Controversy: 'I Take Wild Swings' |url=https://www.latimes.com/entertainment-arts/movies/story/2022-03-17/oscars-controversy-show-plans-producer-will-packer |url-access=subscription |access-date=July 12, 2022 |work=[[Los Angeles Times]] |date=March 17, 2022 |archive-date=July 22, 2022 |archive-url=https://web.archive.org/web/20220722230245/https://www.latimes.com/entertainment-arts/movies/story/2022-03-17/oscars-controversy-show-plans-producer-will-packer |url-status=live}}</ref> In tandem with the theme, several people from different backgrounds, such as firefighters and healthcare workers, participated in the nominations announcement.<ref>{{cite news |last1=McNamara |first1=Mary |author-link=Mary McNamara |title=After Two Years of a Pandemic, Is It Any Wonder that Family Dominates the Oscar Nods? |url=https://www.latimes.com/entertainment-arts/story/2022-02-08/column-after-two-years-of-a-pandemic-is-it-any-wonder-that-family-dominates-the-oscar-noms |url-access=subscription |access-date=May 21, 2022 |work=[[Los Angeles Times]] |date=February 8, 2022 |archive-date=April 2, 2022 |archive-url=https://web.archive.org/web/20220402171059/https://www.latimes.com/entertainment-arts/story/2022-02-08/column-after-two-years-of-a-pandemic-is-it-any-wonder-that-family-dominates-the-oscar-noms |url-status=live}}</ref> [[DJ Khaled]] introduced the hosts at the beginning of the telecast, and athletes [[Tony Hawk]], [[Kelly Slater]], and [[Shaun White]] introduced a montage saluting the 60th anniversary of the [[List of James Bond films|James Bond film franchise]].<ref>{{cite news |last1=Stevens |first1=Matt |title=Shaun White, Tony Hawk and Kelly Slater Have a G.O.A.T. Debate at the Oscars. |url=https://www.nytimes.com/live/2022/03/27/movies/oscars-academy-awards#shaun-white-tony-hawk-and-kelly-slater-have-a-goat-debate-the-oscars |url-access=limited |access-date=June 15, 2022 |work=[[The New York Times]] |date=March 27, 2022 |archive-date=June 15, 2022 |archive-url=https://web.archive.org/web/20220615111410/https://www.nytimes.com/live/2022/03/27/movies/oscars-academy-awards#shaun-white-tony-hawk-and-kelly-slater-have-a-goat-debate-the-oscars |url-status=live}}</ref><ref>{{cite news |last1=Andrews |first1=Travis M. |title=Oscars 2022: A Celeb-Packed Night Interrupted by a Slap Heard 'Round the World |url=https://www.washingtonpost.com/arts-entertainment/2022/03/28/academy-awards-oscars-2022-recap/ |access-date=July 12, 2022 |url-access=subscription |newspaper=[[The Washington Post]] |date=March 28, 2022 |archive-date=March 29, 2022 |archive-url=https://web.archive.org/web/20220329132941/https://www.washingtonpost.com/arts-entertainment/2022/03/28/academy-awards-oscars-2022-recap/ |url-status=live}}</ref>
+
+Also tying in with the ceremony's theme of "Movie Lovers Unite", the Academy teamed up with [[Twitter]] to host an "{{visible anchor|Oscars Fan Favorite}}" contest, where Twitter users could vote for their favorite film of the year and their favorite movie moment.<ref>{{cite web |url=https://www.hollywoodreporter.com/business/digital/oscars-twitter-2022-1235092124/ |title=Oscars: Twitter's Top Fan-Voted Film Will Be Recognized During Broadcast (Exclusive) |first=J. Clara |last=Chan |work=[[The Hollywood Reporter]] |date=February 14, 2022 |access-date=February 14, 2022 |archive-date=February 14, 2022 |archive-url=https://web.archive.org/web/20220214171209/https://www.hollywoodreporter.com/business/digital/oscars-twitter-2022-1235092124/ |url-status=live}}</ref> The contest drew a predominantly negative reaction from Academy members, with some comparing it to the "[[Academy Award for Outstanding Achievement in Popular Film|Popular Film]]" category initially proposed for the [[91st Academy Awards|91st ceremony]] held in 2019, and others viewing it as an attempt to recognize ''[[Spider-Man: No Way Home]]'' and its box office performance.<ref>{{cite web |url=https://www.latimes.com/entertainment-arts/movies/story/2022-03-27/oscars-fan-favorite-award-explained-twitter-vote |title=Oscars Fan Favorite Award Explained: No, Not a Real Oscar |first=Josh |last=Rottenberg |work=[[Los Angeles Times]] |url-access=subscription |date=March 27, 2022 |access-date=August 4, 2022 |archive-date=June 9, 2022 |archive-url=https://web.archive.org/web/20220609022832/https://www.latimes.com/entertainment-arts/movies/story/2022-03-27/oscars-fan-favorite-award-explained-twitter-vote |url-status=live}}</ref> Ultimately, ''[[Army of the Dead]]'' was named the Oscars Fan Favorite, while the Oscars Cheer Moment went to ''[[Zack Snyder's Justice League]]'' for "[[Barry Allen (DC Extended Universe)|The Flash]] Enters the Speed Force".<ref>{{cite web |url=https://variety.com/2022/awards/awards/army-of-the-dead-oscars-zack-snyder-1235214985/ |title=Zack Snyder's ''Army of the Dead'' Wins Fan-Favorite Oscar |first=Jordan |last=Moreau |work=[[Variety (magazine)|Variety]] |date=March 27, 2022 |access-date=March 27, 2022 |archive-date=March 28, 2022 |archive-url=https://web.archive.org/web/20220328094651/https://variety.com/2022/awards/awards/army-of-the-dead-oscars-zack-snyder-1235214985/ |url-status=live}}</ref> According to ''[[TheWrap]]'', the most active voters were [[Twitter bot|autonomous web programs]], although the Academy denied this claim.<ref>{{cite web |url=https://www.thewrap.com/zack-snyder-oscar-fan-favorite-rig-vote-bots/ |title=Did Zack Snyder Stans Rig the Oscar 'Fan Favorite' Vote With Online Bots? (Exclusive) |first=Umberto |last=Gonzalez |work=[[TheWrap]] |date=May 12, 2022 |access-date=May 13, 2022 |archive-date=May 14, 2022 |archive-url=https://web.archive.org/web/20220514085609/https://www.thewrap.com/zack-snyder-oscar-fan-favorite-rig-vote-bots/ |url-status=live}}</ref><ref>{{cite magazine |url=https://www.vanityfair.com/hollywood/2022/05/zack-snyders-oscars-fan-wins-may-have-been-rigged-by-bots |title=Zack Snyder's Fan-Voted Oscar Wins May Have Been Rigged by Bots |first=Savannah |last=Walsh |magazine=[[Vanity Fair (magazine)|Vanity Fair]] |date=May 13, 2022 |access-date=March 12, 2023 |archive-date=February 2, 2023 |archive-url=https://web.archive.org/web/20230202044819/https://www.vanityfair.com/hollywood/2022/05/zack-snyders-oscars-fan-wins-may-have-been-rigged-by-bots |url-access=limited |url-status=live}}</ref>
+
+The festivities marked their return to the [[Dolby Theatre]] after a one-year absence due to the [[COVID-19 pandemic]].<ref name="Coyle">{{cite news |last1=Coyle |first1=Jake |title=Oscar Preview: Five Big Questions Ahead of Sunday's Awards |url=https://apnews.com/article/2022-oscars-preview-54353ec422d1a124d296624025b733c4 |access-date=July 12, 2022 |publisher=[[Associated Press]] |date=March 22, 2022 |archive-date=August 4, 2022 |archive-url=https://web.archive.org/web/20220804171042/https://apnews.com/article/2022-oscars-preview-54353ec422d1a124d296624025b733c4 |url-status=live}}</ref> In compliance with [[Los Angeles County]] health and safety standards, AMPAS announced that attending nominees and guests would need to show [[proof of vaccination]] or a valid medical exemption, and two negative [[Polymerase chain reaction#Infectious disease applications|PCR tests]], in order to attend. Presenters and performers underwent "rigorous testing" but were not required to be vaccinated.<ref name="Coyle"/> Audience members in sections closest to the stage were [[Social distancing|seated further apart]] but were not required to wear [[Cloth face mask|face masks]]. Masks were required for attendees in the [[mezzanine]].<ref name="Coyle"/> Additionally, the annual [[Governors Awards]] was held on March 25, two days before the main ceremony, after previously being postponed from its original January 15 date due to concerns due to health and safety concerns related to the [[SARS-CoV-2 Omicron variant]].<ref name="Hammond"/>
+
+Production designer [[David Korins]] designed a new stage for the show.<ref>{{cite magazine |last1=Grein |first1=Paul |title=Adam Blackstone Named Music Director of 2022 Oscars |url=https://www.billboard.com/music/awards/oscars-adam-blackstone-music-director-1235042104/ |access-date=May 13, 2022 |magazine=[[Billboard (magazine)|Billboard]] |date=March 9, 2022 |archive-date=March 9, 2022 |archive-url=https://web.archive.org/web/20220309202111/https://www.billboard.com/music/awards/oscars-adam-blackstone-music-director-1235042104/ |url-status=live}}</ref> Music producer and songwriter [[Adam Blackstone]] served as musical director for the telecast and conductor for the orchestra, which featured musicians [[Travis Barker]], [[Sheila E.]], and [[Robert Glasper]]. Rapper [[D-Nice]] served as an in-house DJ during the gala.<ref>{{cite news |last1=Coates |first1=Tyler |title=Travis Barker, Sheila E, DJ D-Nice to Perform at Oscars |url=https://www.hollywoodreporter.com/movies/movie-news/travis-barker-sheila-e-d-nice-oscars-2022-1235114569/ |access-date=July 12, 2022 |work=[[The Hollywood Reporter]] |date=March 18, 2022 |archive-date=March 30, 2022 |archive-url=https://web.archive.org/web/20220330053637/https://www.hollywoodreporter.com/movies/movie-news/travis-barker-sheila-e-d-nice-oscars-2022-1235114569/ |url-status=live}}</ref> As part of a continued focus on enhancing inclusion and accommodations for disabilities, the Academy offered a live feed of [[American Sign Language]] (ASL) interpretation for the ceremony through the Academy Awards' [[YouTube]] channel.<ref>{{cite news |last1=White |first1=Abbey |title=Oscars Telecast Will Feature Free Live ASL Interpretation on The Academy's YouTube Channel |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-2022-show-asl-interpretation-live-stream-accessibility-disability-1235118372/ |access-date=June 15, 2022 |work=[[The Hollywood Reporter]] |date=March 25, 2022 |archive-date=March 27, 2022 |archive-url=https://web.archive.org/web/20220327194529/https://www.hollywoodreporter.com/movies/movie-news/oscars-2022-show-asl-interpretation-live-stream-accessibility-disability-1235118372/ |url-status=live}}</ref>
+
+===Rule and eligibility period changes===
+In June 2020, the Academy announced that, starting with the 94th awards, a fixed number of ten films would once again be nominated for Best Picture.<ref>{{cite news |last1=Sperling |first1=Nicole |title=The Oscars Will Add a Diversity Requirement for Eligibility |url=https://www.nytimes.com/2020/06/12/movies/oscars-diversity-rule.html |url-access=limited |access-date=February 7, 2022 |work=[[The New York Times]] |date=June 12, 2020 |archive-date=March 27, 2022 |archive-url=https://web.archive.org/web/20220327033837/https://www.nytimes.com/2020/06/12/movies/oscars-diversity-rule.html |url-status=live}}</ref> According to ''[[The Hollywood Reporter]]'', this rule change was initiated in order "to maximize the diversity of the films that are nominated for the Academy's highest honor" as part of the organization's Academy Aperture 2025 equity and inclusion initiative.<ref>{{cite news |last1=Feinberg |first1=Scott |title=Oscars to Set Inclusion Requirements for Eligibility, Will Guarantee 10 Best Picture Nominees |url=https://www.hollywoodreporter.com/news/general-news/oscars-set-diversity-requirements-eligibility-will-guarantee-10-best-picture-nominees-1298089/ |access-date=February 7, 2022 |work=[[The Hollywood Reporter]] |date=June 12, 2022 |archive-date=April 26, 2022 |archive-url=https://web.archive.org/web/20220426192111/https://www.hollywoodreporter.com/news/general-news/oscars-set-diversity-requirements-eligibility-will-guarantee-10-best-picture-nominees-1298089/ |url-status=live}}</ref> Previously, AMPAS had experimented with a ten-film Best Picture slate for two years beginning with the [[82nd Academy Awards|82nd ceremony]] in 2010 before changing the rules two years later so that a fluctuating number of films would be nominated depending on the nomination voting results.<ref>{{cite news |last1=Kilday |first1=Gregg |title=Academy Revises Best Picture Rules; Can Be 5 to 10 Nominees |url=https://www.hollywoodreporter.com/news/general-news/academy-revises-best-picture-rules-201404/ |access-date=February 7, 2022 |work=[[The Hollywood Reporter]] |date=June 14, 2011 |archive-date=August 13, 2022 |archive-url=https://web.archive.org/web/20220813004024/https://www.hollywoodreporter.com/news/general-news/academy-revises-best-picture-rules-201404/ |url-status=live}}</ref>
+
+Due to continued concerns stemming from the COVID-19 pandemic, the Academy decided once again to allow films that were released via [[video on demand]] or [[streaming]] to be eligible for the awards on the condition that said films were originally scheduled to have a theatrical release prior to the start of the pandemic. However, only feature films released during the ten-month period in 2021 from March 1 to December 31 would be eligible for awards consideration.<ref name="FeinbergDates"/>
+
+===Removal of categories from the broadcast===
+The presentations and acceptance of eight awards ([[Best Animated Short Film]], [[Best Documentary Short Subject]], [[Academy Award for Best Film Editing|Best Film Editing]], [[Best Live Action Short Film]], [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]], [[Academy Award for Best Original Score|Best Original Score]], [[Academy Award for Best Production Design|Best Production Design]], and [[Academy Award for Best Sound|Best Sound]]) were not broadcast live but instead pre-taped an hour before the start of the telecast, in an attempt to "allow more time for comedy, film clips and musical numbers", and to shorten the ceremony; a similar move had been attempted for the [[91st Academy Awards]] in 2019 but had been reversed after being negatively received.<ref>{{cite web |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-several-awards-wont-be-telecast-live-this-year-exclusive-1235097888/ |title=Oscars: Eight Awards Won't Be Telecast Live This Year (Exclusive) |first=Scott |last=Feinberg |work=[[The Hollywood Reporter]] |date=February 22, 2022 |access-date=February 22, 2022 |archive-date=February 22, 2022 |archive-url=https://web.archive.org/web/20220222225615/https://www.hollywoodreporter.com/movies/movie-news/oscars-several-awards-wont-be-telecast-live-this-year-exclusive-1235097888/ |url-status=live}}</ref> The decision was reportedly made under pressure from [[American Broadcasting Company|ABC]] executives, who had initially demanded that 12 categories be moved off the live broadcast, under the possible penalty of not airing the ceremony at all.<ref>{{cite web |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-infighting-over-excluding-categories-1235103324/ |title=Oscars: Academy Infighting Mounting Over Categories Controversy (Exclusive) |first=Scott |last=Feinberg |work=[[The Hollywood Reporter]] |date=March 4, 2022 |access-date=March 12, 2022 |archive-date=March 12, 2022 |archive-url=https://web.archive.org/web/20220312055226/https://www.hollywoodreporter.com/movies/movie-news/oscars-infighting-over-excluding-categories-1235103324/ |url-status=live}}</ref> [[Josh Brolin]] and [[Jason Momoa]] presented the awards off the air.<ref>{{cite web |url=https://deadline.com/2022/03/oscars-josh-brolin-jason-mamoa-oscar-preshow-1234987420/ |title=Oscars: Jason Momoa & Josh Brolin Confirmed To Present Categories To Be Taped Before Live Telecast |first=Pete |last=Hammond |work=[[Deadline Hollywood]] |date=March 25, 2022 |access-date=March 25, 2022 |archive-date=April 25, 2022 |archive-url=https://web.archive.org/web/20220425083806/https://deadline.com/2022/03/oscars-josh-brolin-jason-mamoa-oscar-preshow-1234987420/ |url-status=live}}</ref>
+
+The move was quickly met with significant backlash.<ref>{{cite news |last1=Patten |first1=Dominic |last2=Carey |first2=Matthew |last3=Pedersen |first3=Erik |title=Oscar Telecast Shakeup & The 'Setup' Zoom Call That Preceded It Face Backlash: 'This Is Not The Answer' |url=https://deadline.com/2022/02/oscars-categories-changes-backlash-movie-industry-reactions-1234958682/ |access-date=April 10, 2022 |work=[[Deadline Hollywood]] |date=February 23, 2022 |archive-date=March 23, 2022 |archive-url=https://web.archive.org/web/20220323005955/https://deadline.com/2022/02/oscars-categories-changes-backlash-movie-industry-reactions-1234958682/ |url-status=live}}</ref> Following the announcement, [[Steven Spielberg]] said: "All of us are on the same line bringing the best of us to tell the best stories we possibly can. And that means for me we should all have a seat at the supper table together ''live'' at 5."<ref>{{cite web |url=https://deadline.com/2022/03/steven-spielberg-oscars-controversy-statement-reaction-1234972587/ |title=Steven Spielberg Disagrees With Decision To Pre-Record Eight Oscar Categories, Not Optimistic About A Reversal |first=Pete |last=Hammond |work=[[Deadline Hollywood]] |date=March 7, 2022 |access-date=March 8, 2022 |archive-date=March 8, 2022 |archive-url=https://web.archive.org/web/20220308002217/https://deadline.com/2022/03/steven-spielberg-oscars-controversy-statement-reaction-1234972587/ |url-status=live}}</ref> More than 70 prominent film professionals—including [[Guillermo del Toro]], [[James Cameron]], [[Jane Campion]], [[Denis Villeneuve]], and [[John Williams]]—issued a letter urging the Academy to reverse the plan, which they argued would relegate some nominees to "the status of [[second-class citizen]]s". Addressed to Academy President [[David Rubin (casting director)|David Rubin]], the letter claimed that the decision would do "irreparable damage" to the Oscars' reputation by "demeaning the very crafts that, in their most outstanding expressions, make the art of filmmaking worthy of celebration".<ref>{{cite web |url=https://www.latimes.com/entertainment-arts/movies/story/2022-03-09/oscars-controversy-live-show-open-letter-james-cameron |title=Over 70 Hollywood heavy-hitters slam controversial Oscar changes in open letter |first=Josh |last=Rottenberg |work=[[Los Angeles Times]] |date=March 9, 2022 |access-date=March 9, 2022 |archive-date=March 9, 2022 |archive-url=https://web.archive.org/web/20220309201332/https://www.latimes.com/entertainment-arts/movies/story/2022-03-09/oscars-controversy-live-show-open-letter-james-cameron |url-status=live |url-access=subscription}}</ref> Best Actress nominee (and eventual winner) [[Jessica Chastain]] decided to skip the red carpet and other press to ensure she was in the theater during the Makeup and Hairstyling category to support the team who worked with her on ''[[The Eyes of Tammy Faye (2021 film)|The Eyes of Tammy Faye]]'', stating: "The most important thing for me is to honor the incredible artisans who work in our industry."<ref>{{cite magazine |url=https://ew.com/awards/oscars/jessica-chastain-oscars-red-carpet-tammy-faye-makeup-team/ |title=Jessica Chastain says she'd skip Oscars red carpet to support ''Tammy Faye'' makeup team |first=Joey |last=Nolfi |date=March 17, 2022 |magazine=[[Entertainment Weekly]] |access-date=March 18, 2022 |archive-date=March 18, 2022 |archive-url=https://web.archive.org/web/20220318150114/https://ew.com/awards/oscars/jessica-chastain-oscars-red-carpet-tammy-faye-makeup-team/ |url-status=live}}</ref> [[Sound engineer]] [[Tom Fleischman]] and [[production sound mixer]] [[Peter Kurland]] resigned from the Academy in protest of the new policy.<ref>{{cite news |last1=Pedersen |first1=Erik |title=CAS Board Member Peter Kurland Quits AMPAS Over Pre-Taped Oscar Categories Flap |url=https://deadline.com/2022/03/oscar-controversy-sound-man-quits-movie-academy-over-taped-categories-1234985458/ |access-date=June 15, 2022 |work=[[Deadline Hollywood]] |date=March 23, 2022 |archive-date=June 4, 2022 |archive-url=https://web.archive.org/web/20220604183047/https://deadline.com/2022/03/oscar-controversy-sound-man-quits-movie-academy-over-taped-categories-1234985458/ |url-status=live}}</ref>
+
+===Chris Rock–Will Smith slapping incident===
+{{Main|Chris Rock–Will Smith slapping incident}}
+
+During the presentation for [[Academy Award for Best Documentary Feature Film|Best Documentary Feature]], actor [[Will Smith]] walked onstage and slapped presenter and comedian [[Chris Rock]] over a joke about the former's wife, [[Jada Pinkett Smith]]. Rock remarked: "Jada, I love you. ''G.I. Jane 2'', can't wait to see it," referencing the 1997 film ''[[G.I. Jane]]'' in which [[Demi Moore]]'s character wears her hair in a [[buzz cut]].<ref name="Melbourneweaver">{{cite news |last1=Melbourneweaver |first1=Samantha |title=This Is What Will Smith and Chris Rock Said During the Oscars Slap |url=https://www.latimes.com/entertainment-arts/story/2022-03-27/oscars-2022-what-did-will-smith-say-to-chris-rock |url-access=subscription |access-date=June 15, 2022 |work=[[Los Angeles Times]] |date=March 27, 2022 |archive-date=June 14, 2022 |archive-url=https://web.archive.org/web/20220614231424/https://www.latimes.com/entertainment-arts/story/2022-03-27/oscars-2022-what-did-will-smith-say-to-chris-rock |url-status=live}}</ref> Pinkett Smith was diagnosed with [[alopecia]] in 2018 and shaved her head due to the condition.<ref>{{cite news |last=Bellamy |first=Claretta |date=January 7, 2022 |title=How Jada Pinkett Smith is Uplifting Black Women with Alopecia |agency=[[NBC News]] |url=https://www.nbcnews.com/news/nbcblk/jada-pinkett-smith-uplifting-black-women-alopecia-rcna11273 |url-status=live |archive-url=https://web.archive.org/web/20220328034022/https://www.nbcnews.com/news/nbcblk/jada-pinkett-smith-uplifting-black-women-alopecia-rcna11273 |archive-date=March 28, 2022 |access-date=March 28, 2022}}</ref> The joke was ad-libbed by Rock and not part of his scripted remarks.<ref name="Donnelly">{{cite web |url=https://variety.com/2022/film/news/why-will-smith-wasnt-ejected-from-oscars-chris-rock-slap-1235217098/ |title=Why Will Smith Wasn't Ejected From the Oscars After Chris Rock Slap |last=Donnelly |first=Matt |date=March 28, 2022 |access-date=March 28, 2022 |work=[[Variety (magazine)|Variety]] |archive-date=March 29, 2022 |archive-url=https://web.archive.org/web/20220329025321/https://variety.com/2022/film/news/why-will-smith-wasnt-ejected-from-oscars-chris-rock-slap-1235217098/ |url-status=live}}</ref> After initially laughing, Smith rose from his seat near the stage, walked up to Rock, slapped him, and returned to his seat.<ref name="Melbourneweaver"/> Rock said: "Will Smith just smacked the shit out of me." After Smith returned to his seat, he shouted to Rock, twice: "Keep my wife's name out your fucking mouth!" Rock replied: "I'm going to, okay?" to Smith and joked that it was the "greatest night in the history of television" before presenting the award.<ref name="Rottenberg">{{cite news |last1=Rottenberg |first1=Josh |title=A Joke, a slap, Then Chaos: How Will Smith's Attack on Chris Rock Upended the Oscars |url=https://www.latimes.com/entertainment-arts/movies/story/2022-03-28/oscars-2022-will-smith-chris-rock-slap-ticktock |url-access=subscription |access-date=May 13, 2022 |work=[[Los Angeles Times]] |date=March 28, 2022 |archive-date=May 12, 2022 |archive-url=https://web.archive.org/web/20220512165017/https://www.latimes.com/entertainment-arts/movies/story/2022-03-28/oscars-2022-will-smith-chris-rock-slap-ticktock |url-status=live}}</ref> Commentators noted that although Rock appeared to fumble his subsequent lines, he maintained his composure in the midst of chaos.<ref name="Rottenberg"/><ref>{{cite web |url=https://www.nytimes.com/2022/03/28/movies/the-oscars-2022.html |title=Onstage Slap Rattles Oscars, Before ''CODA'' Triumphs |work=[[The New York Times]] |last1=Barnes |first1=Brooks |last2=Sperling |first2=Nicole |date=March 28, 2022 |url-access=limited |access-date=August 4, 2022 |archive-date=March 28, 2022 |archive-url=https://web.archive.org/web/20220328051648/https://www.nytimes.com/2022/03/28/movies/the-oscars-2022.html |url-status=live}}</ref>
+
+An Academy librarian said the altercation was likely the first incident of on-stage violence in Academy Awards history.<ref name="Vanity Fair">{{cite magazine |last=Desta |first=Yohana |date=March 28, 2022 |title=Will Smith Slaps Chris Rock at Oscars 2022 After Joke Gone Wrong |url=https://www.vanityfair.com/hollywood/2022/03/will-smith-chris-rock-oscars |url-access=limited |url-status=live |magazine=Vanity Fair |archive-url=https://web.archive.org/web/20220328033949/https://www.vanityfair.com/hollywood/2022/03/will-smith-chris-rock-oscars |archive-date=March 28, 2022 |access-date=March 28, 2022}}</ref> In the United States, ABC muted the audio due to [[Censorship in the United States#Broadcast censorship|federal broadcast profanity regulations]]; however, many international broadcasters use a clear feed and did not censor it, and uncensored recordings of the event went viral on social media.<ref>{{cite web |last=Bellware |first=Kim |date=March 28, 2022 |title=ABC Tried to Censor the Oscars Slap; It Spread Unedited Anyway |url=https://www.washingtonpost.com/arts-entertainment/2022/03/28/oscars-slap-editing/ |url-access=subscription |url-status=live |archive-url=https://web.archive.org/web/20220330005504/https://www.washingtonpost.com/arts-entertainment/2022/03/28/oscars-slap-editing/ |archive-date=March 30, 2022 |access-date=March 29, 2022 |language=en-US |newspaper=[[The Washington Post]]}}</ref> About forty minutes later, Smith won the award for [[Academy Award for Best Actor|Best Actor]] for his portrayal of [[Richard Williams (tennis coach)|Richard Williams]] in ''[[King Richard (film)|King Richard]]''. He focused his speech on his need to protect those around him and apologized to the Academy and to the other nominees, but not to Rock; he received a standing ovation.<ref name="Whipp">{{cite news |last1=Whipp |first1=Glenn |last2=Rottenberg |first2=Josh |url-access=subscription |date=April 7, 2022 |title=Here's What Really Happened After Will Smith Slapped Chris Rock at the Oscars |language=en-US |work=[[Los Angeles Times]] |url=https://www.latimes.com/entertainment-arts/movies/story/2022-04-07/will-smith-oscars-slap-timeline-chris-rock |access-date=May 13, 2022 |archive-date=April 10, 2022 |archive-url=https://web.archive.org/web/20220410154018/https://www.latimes.com/entertainment-arts/movies/story/2022-04-07/will-smith-oscars-slap-timeline-chris-rock |url-status=live}}</ref> ''[[The Economist]]'' described his acceptance speech, in which he appealed to God calling on him to do "crazy things" in the name of love, as "dangerous, self-serving [[wikt:cant|cant]]".<ref name="The Economist">{{cite news |title=Have the Oscars Lost Their Way? |url=https://www.economist.com/culture/2022/03/28/have-the-oscars-lost-their-way |access-date=March 28, 2022 |newspaper=[[The Economist]] |date=March 28, 2022 |url-access=subscription |archive-date=March 28, 2022 |archive-url=https://web.archive.org/web/20220328214928/https://www.economist.com/culture/2022/03/28/have-the-oscars-lost-their-way |url-status=live}}</ref>
+
+Many celebrities expressed shock, disappointment, and outrage over the incident.<ref>{{cite news |last1=Da Silva |first1=Chantal |date=March 28, 2022 |title=Celebrities React to Will Smith Slapping Chris Rock at the Oscars |agency=[[NBC News]] |url=https://www.nbcnews.com/pop-culture/pop-culture-news/celebrities-react-will-smith-slap-chris-rock-oscars-2022-rcna21781 |url-status=live |access-date=June 15, 2022 |archive-url=https://web.archive.org/web/20220425164321/https://www.nbcnews.com/pop-culture/pop-culture-news/celebrities-react-will-smith-slap-chris-rock-oscars-2022-rcna21781 |archive-date=April 25, 2022}}</ref> The show's production team decided not to remove Smith from the theater, due to time constraints and the desire to avoid another disruption.<ref name="Donnelly"/><ref name="NYT Slap">{{cite web |url=https://www.nytimes.com/2022/03/28/movies/oscars-will-smith-slap-reactions.html |title=Academy Condemns Will Smith for Slap at Oscars and Opens Inquiry |work=[[The New York Times]] |date=March 28, 2022 |access-date=March 28, 2022 |last1=Sperling |first1=Nicole |last2=Stevens |first2=Matt |last3=Jacobs |first3=Julia |url-access=limited |archive-date=March 31, 2022 |archive-url=https://web.archive.org/web/20220331013321/https://www.nytimes.com/2022/03/28/movies/oscars-will-smith-slap-reactions.html |url-status=live}}</ref> Rock did not file a police report over the incident.<ref>{{cite web |last=Sharf |first=Zack |date=March 28, 2022 |title=Chris Rock Declines to File Police Report After Will Smith Slap at Oscars, LAPD Says |url=https://variety.com/2022/film/news/chris-rock-police-report-will-smith-slap-oscars-1235216542/ |access-date=March 28, 2022 |work=[[Variety (magazine)|Variety]] |language=en-US |archive-date=March 28, 2022 |archive-url=https://web.archive.org/web/20220328050505/https://variety.com/2022/film/news/chris-rock-police-report-will-smith-slap-oscars-1235216542/ |url-status=live}}</ref> The day after the ceremony, the Academy released a statement condemning Smith's actions and announced an internal review.<ref name="NYT Slap"/> The same day, Smith formally apologized to Rock, the Academy, the Williams family, and the cast and crew of ''King Richard'' in Instagram and [[Facebook]] posts; he described his behavior as "unacceptable and inexcusable".<ref>{{cite web |last=Shafer |first=Ellise |date=March 28, 2022 |title=Will Smith Apologizes to Chris Rock for Oscars Slap: 'I Was Out of Line and I Was Wrong' |url=https://variety.com/2022/film/news/will-smith-apologizes-chris-rock-slap-oscars-statement-1235216526/ |access-date=March 29, 2022 |work=[[Variety (magazine)|Variety]] |archive-date=March 28, 2022 |archive-url=https://web.archive.org/web/20220328235719/https://variety.com/2022/film/news/will-smith-apologizes-chris-rock-slap-oscars-statement-1235216526/ |url-status=live}}</ref> Smith later announced his [[Academy of Motion Picture Arts and Sciences#Resignations|resignation from the Academy]] on the Friday following the gala. One week later, the Board of Governors banned Smith from all Academy events, including the Academy Awards, for ten years effective that day.<ref name="Whipp"/>
+
+===Critical reviews===
+Television critic Daniel Fienberg of ''[[The Hollywood Reporter]]'' wrote: "After a fairly promising first hour, the show had begun to flag in basically the same ways Oscar telecasts always flag, proving conclusively that producer Will Packer's attempt to fix the event was barely a Band-Aid." He concluded by stating: "The 94th Academy Awards{{Snd}}which should have provided either a pleasant distraction from a world starting to emerge from a pandemic or the opportunity for advocacy relating to [[Russian invasion of Ukraine|Russia's invasion of Ukraine]] and discriminatory laws being passed around the country{{Snd}}will just be remembered as a moment of toxic awfulness and subsequent infection."<ref>{{cite news |last1=Fienberg |first1=Daniel |title=Critic's Notebook: The 94th Academy Awards Were Already Bad, but Then They Got Worse |url=https://www.hollywoodreporter.com/tv/tv-reviews/academy-awards-show-review-1235120455/ |access-date=July 12, 2022 |work=[[The Hollywood Reporter]] |date=March 27, 2022 |archive-date=April 19, 2022 |archive-url=https://web.archive.org/web/20220419202803/https://www.hollywoodreporter.com/tv/tv-reviews/academy-awards-show-review-1235120455/ |url-status=live}}</ref> ''[[Variety (magazine)|Variety]]'' columnist Caroline Framke quipped: "No matter how desperately ABC and the Academy wanted the ceremony to be a well-oiled machine, this year's Oscars proved the power of live TV, for better and for deeply uncomfortable worse."<ref>{{cite news |last1=Framke |first1=Caroline |title=With One Slap, a Carefully Constructed Oscars Fell Spectacularly to Pieces: TV Review |url=https://variety.com/2022/tv/reviews/oscars-2022-review-will-smith-chris-rock-1235216567/ |access-date=May 13, 2022 |work=[[Variety (magazine)|Variety]] |date=March 27, 2022 |archive-date=April 21, 2022 |archive-url=https://web.archive.org/web/20220421135013/https://variety.com/2022/tv/reviews/oscars-2022-review-will-smith-chris-rock-1235216567/ |url-status=live}}</ref> Kelly Lawler of ''[[USA Today]]'' commented that despite the attempts by AMPAS and broadcaster ABC to shorten the ceremony while making it more entertaining for viewers at home, remarking: "It was equal parts boring and terrifying, cringe-worthy and interminable."<ref>{{cite news |last1=Lawler |first1=Kelly |title=A Slap, A Dog and Chaos: The Oscars Were a Train Wreck We Couldn't Look Away From |url=https://www.usatoday.com/story/entertainment/tv/2022/03/28/oscars-2022-were-train-wreck-we-couldnt-look-away/7187062001/ |access-date=June 15, 2022 |work=[[USA Today]] |date=March 28, 2022 |archive-date=March 30, 2022 |archive-url=https://web.archive.org/web/20220330031657/https://www.usatoday.com/story/entertainment/tv/2022/03/28/oscars-2022-were-train-wreck-we-couldnt-look-away/7187062001/ |url-status=live}}</ref>
+
+''[[Los Angeles Times]]'' television critic Lorraine Ali wrote: "Overall, the production was much tighter and brighter than in recent years, thanks in large part to powerful music numbers, a diverse mixture of guests, and the bitingly funny trio of hosts, Wanda Sykes, Amy Schumer and Regina Hall."<ref>{{cite news |last1=Ali |first1=Lorraine |title=Review: The Oscars Promised High Drama. They Got More Than They Bargained For |url=https://www.latimes.com/entertainment-arts/tv/story/2022-03-27/oscars-2022-will-smith-chris-rock-abc-tv-review |url-access=subscription |access-date=May 21, 2022 |work=[[Los Angeles Times]] |date=March 27, 2022 |archive-date=March 31, 2022 |archive-url=https://web.archive.org/web/20220331042846/https://www.latimes.com/entertainment-arts/tv/story/2022-03-27/oscars-2022-will-smith-chris-rock-abc-tv-review |url-status=live}}</ref> Film critic [[Richard Roeper]] of the ''[[Chicago Sun-Times]]'' praised the hosts' performances, writing: "It was funny, albeit relatively safe stuff." He also noted that despite the Smith–Rock incident disrupting the momentum of the proceedings, the telecast was "one of the most uplifting, groundbreaking, amazing Oscars ever".<ref>{{cite news |last1=Roeper |first1=Richard |author-link=Richard Roeper |title=Oscars 2022: Will Smith's Slap of Chris Rock Disrupts a Mostly Upbeat Night |url=https://chicago.suntimes.com/movies-and-tv/2022/3/27/22999153/oscars-2022-will-smith-chris-rock-slap-jessica-chastain-academy-awards |access-date=May 13, 2022 |work=[[Chicago Sun-Times]] |date=March 27, 2022 |archive-date=April 19, 2022 |archive-url=https://web.archive.org/web/20220419233251/https://chicago.suntimes.com/movies-and-tv/2022/3/27/22999153/oscars-2022-will-smith-chris-rock-slap-jessica-chastain-academy-awards |url-status=live}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 16.62&nbsp;million people over its length, which was a 60% increase from the previous year's ceremony.<ref name="THRRatings"/> The show also earned higher [[Nielsen ratings]] compared to the previous ceremony with 9.0% of households watching the ceremony.<ref name="TVB">{{cite web |title=Academy Awards Ratings |url=https://www.tvb.org/wp-content/uploads/2021/10/Academy_Awards_Nielsen.pdf |publisher=[[Television Bureau of Advertising]] |access-date=May 21, 2022 |archive-date=August 13, 2022 |archive-url=https://web.archive.org/web/20220813004023/https://www.tvb.org/wp-content/uploads/2021/10/Academy_Awards_Nielsen.pdf |url-status=live}}</ref> In addition, it garnered a higher 18–49 demo rating with a 3.76 rating, or 77% viewers in that demographic.<ref name="THRRatings"/> It drew 17.561&nbsp;million viewers in Live+7 ratings, which made it the 23rd most watched telecast in the United States in 2022, behind only sport events.<ref>{{cite news |last=Schneider |first=Michael |title=Top 100 Telecasts of 2022: 'Yellowstone' Rules, Oscars Recover, NFL Dominates and Amazon Makes History |url=https://variety.com/2022/tv/news/top-rated-shows-2022-yellowstone-ncis-oscars-fbi-super-bowl-1235475629/ |access-date=August 19, 2026 |work=[[Variety (magazine)|Variety]] |date=December 30, 2022 |archive-date=December 30, 2022 |archive-url=https://web.archive.org/web/20221230170024/https://variety.com/2022/tv/news/top-rated-shows-2022-yellowstone-ncis-oscars-fbi-super-bowl-1235475629/ |url-status=live}}</ref>
+
+In July 2022, the broadcast was nominated for three awards at the [[74th Primetime Emmy Awards|74th Primetime Emmys]], but it failed to win any of its nominations.<ref>{{cite news |last1=Moreau |first1=Jordan |last2=Schneider |first2=Michael |title=Emmys 2022: The Complete Nominations List |url=https://variety.com/2022/tv/awards/emmys-nominations-list-2022-1235313788/ |work=[[Variety (magazine)|Variety]] |date=July 12, 2022 |access-date=August 4, 2022 |archive-date=July 12, 2022 |archive-url=https://web.archive.org/web/20220712193223/https://variety.com/2022/tv/awards/emmys-nominations-list-2022-1235313788/ |url-status=live}}</ref><ref>{{cite magazine |title=2022 Creative Arts Emmys: See full winners list |url=https://ew.com/awards/emmys/2022-creative-arts-emmys-winners-list/ |access-date=September 12, 2022 |magazine=[[Entertainment Weekly]] |date=September 4, 2022 |archive-date=September 8, 2022 |archive-url=https://web.archive.org/web/20220908184408/https://ew.com/awards/emmys/2022-creative-arts-emmys-winners-list/ |url-status=live}}</ref>
+
+=="In Memoriam"==
+The "In Memoriam" tribute, accompanied by a musical medley performed by musical group [[Sunday Service Choir|The Samples]], paid tribute to the following individuals.<ref name="AFrame In Memoriam">{{cite web |title=94th Oscars In Memoriam: Look Back on Those We Lost Through 2022 |url=https://aframe.oscars.org/news/post/94th-oscars-in-memoriam-2022 |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=June 15, 2022 |date=March 27, 2022 |archive-date=April 20, 2022 |archive-url=https://web.archive.org/web/20220420194044/https://aframe.oscars.org/news/post/94th-oscars-in-memoriam-2022 |url-status=live}}</ref><ref>{{cite web |title=El 'in memoriam' de los Premios Oscar 2022: de Betty White a Ivan Reitman |trans-title=The 2022 Oscars 'in memoriam': from Betty White to Ivan Reitman |url=https://www.elconfidencial.com/cultura/cine/premios-oscar/2022-03-28/in-memoriam-premios-oscar-2022_3396078/ |language=es |work=[[El Confidencial]] |access-date=June 15, 2022 |date=March 28, 2022 |archive-date=April 21, 2022 |archive-url=https://web.archive.org/web/20220421194023/https://www.elconfidencial.com/cultura/cine/premios-oscar/2022-03-28/in-memoriam-premios-oscar-2022_3396078/ |url-status=live}}</ref>
+
+{{div col|colwidth=22em}}
+
+* [[Sidney Poitier]] – actor, director
+* [[Olympia Dukakis]] – actress
+* [[William Hurt]] – actor
+* [[Stephen Sondheim]] – composer
+* [[Halyna Hutchins]] – cinematographer
+* [[Ned Beatty]] – actor
+* [[Peter Bogdanovich]] – actor, director, writer
+* [[Clarence Williams III]] – actor
+* Chris Huvane – talent manager
+* [[Michael K. Williams]] – actor
+* [[Jerome Hellman]] – producer
+* [[Jean-Paul Belmondo]] – actor
+* [[David H. DePatie]] – producer
+* [[Martha De Laurentiis]] – producer
+* [[Irwin Young|Irwin W. Young]] – film laboratory executive, producer
+* [[Sally Kellerman]] – actress
+* [[Richard Donner]] – director
+* [[Ivan Reitman]] – director, producer
+* [[Emi Wada]] – costume designer
+* [[Yvette Mimieux]] – actress
+* [[Sonny Chiba]] – actor, martial artist
+* [[Lina Wertmüller]] – director, writer
+* [[Douglas Trumbull]] – visual effects, director, producer
+* [[Brian Goldner]] – producer
+* [[Robert Blalack]] – visual effects supervisor
+* [[Felipe Cazals]] – director, writer
+* [[Saginaw Grant]] – actor
+* [[Jon Gregory (film editor)|Jon Gregory]] – film editor
+* [[Dorothy Steel (actress)|Dorothy Steel]] – actress
+* [[Dean Stockwell]] – actor
+* [[Melvin Van Peebles]] – director, producer, writer, actor
+* [[Alan Ladd Jr.]] – producer, executive
+* [[David Brenner (film editor)|David Brenner]] – film editor
+* [[Don Phillips (casting director)|Don Phillips]] – casting director, producer
+* [[Bill Taylor (visual effects artist)|Bill Taylor]] – visual effects supervisor, cinematographer
+* [[Norman Lloyd]] – actor
+* [[Ruthie Tompson]] – animator
+* [[Brad Allan]] – stunt performer, stunt coordinator
+* [[Mikis Theodorakis]] – composer
+* [[Max Julien]] – actor, writer, producer
+* Lewis Erskine – film editor
+* [[Tony Walton]] – production designer, costume designer
+* [[Steve Schapiro]] – photographer
+* [[Mace Neufeld]] – producer, talent manager
+* [[Carmen Salinas]] – actress
+* [[Paul Mooney (comedian)|Paul Mooney]] – comedian, actor, writer
+* [[Betty White]] – actress
+* [[Marilyn Bergman]] – lyricist
+* [[Leslie Bricusse]] – songwriter, writer
+* [[Marcia Nasatir]] – executive producer
+* [[Buddy Van Horn]] – stunt performer, stunt coordinator, director
+* [[Diane Weyermann]] – producer, executive
+* [[Jane Powell]] – actress, singer
+* [[Jean-Marc Vallée]] – director, producer, writer, film editor
+* [[Charles Grodin]] – actor
+
+{{div col end}}
+
+During the montage, actors [[Tyler Perry]], [[Bill Murray]], and [[Jamie Lee Curtis]] eulogized Poitier, Reitman, and White, respectively.<ref name="AFrame In Memoriam"/> Furthermore, a [[moment of silence]] was observed at the end of [[Reba McEntire]]'s performance of Best Song nominee "Somehow You Do" in light of the [[2022 Russian invasion of Ukraine|Russian invasion of Ukraine]].<ref>{{cite news |last1=Hamedy |first1=Saba |last2=Patton |first2=Elaina |title=Oscars Holds a Moment of Silence for Ukraine |url=https://www.nbcnews.com/news/world/blog/ukraine-russia-war-live-updates-zelenskyy-open-neutrality-putin-presses-n1293353/ncrd1293355#blogHeader |access-date=June 15, 2022 |agency=[[NBC News]] |date=March 28, 2022 |archive-date=August 4, 2022 |archive-url=https://web.archive.org/web/20220804171134/https://www.nbcnews.com/news/world/blog/ukraine-russia-war-live-updates-zelenskyy-open-neutrality-putin-presses-n1293353/ncrd1293355#blogHeader |url-status=live}}</ref>
+
+==See also==
+* [[List of submissions to the 94th Academy Awards for Best International Feature Film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+==External links==
+* {{Official website|http://oscar.go.com/|Academy Awards official website}}
+* {{Official website|http://www.oscars.org/|The Academy of Motion Picture Arts and Sciences official website}}
+* [https://www.youtube.com/user/Oscars Oscars Channel] {{Webarchive|url=https://web.archive.org/web/20190226082028/https://www.youtube.com/user/Oscars |date=February 26, 2019 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+'''News resources'''
+* [https://www.bbc.com/news/entertainment_and_arts Oscars 2022] {{Webarchive|url=https://web.archive.org/web/20220328040836/https://www.bbc.com/news/entertainment_and_arts |date=March 28, 2022 }} at [[BBC News]]
+* [https://www.theguardian.com/film/oscars-2022 Oscars 2022] {{Webarchive|url=https://web.archive.org/web/20220328042431/https://www.theguardian.com/film/oscars-2022 |date=March 28, 2022 }} at ''[[The Guardian]]''
+
+'''Other resources'''
+* {{IMDb title|10471904|The Oscars (2022)}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 94}}
+[[Category:2021 film awards]]
+[[Category:2021 awards in the United States]]
+[[Category:2022 awards in the United States]]
+[[Category:2022 in Los Angeles]]
+[[Category:March 2022 in the United States]]
+[[Category:Academy Awards ceremonies]]
+[[Category:Television shows directed by Glenn Weiss]]
+[[Category:Impact of the COVID-19 pandemic on cinema]]
+[[Category:2022 in American cinema]]
+[[Category:2022 in American television]]

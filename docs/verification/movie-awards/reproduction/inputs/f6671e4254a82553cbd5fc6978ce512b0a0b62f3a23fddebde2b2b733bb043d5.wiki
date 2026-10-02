@@ -1,0 +1,379 @@
+{{oscars short description|films-year=1964}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number = 37
+| award = Academy Awards
+| date = April 5, 1965
+| image = 37th Academy Awards.jpg
+| caption = Official poster
+| site = [[Santa Monica Civic Auditorium]], [[Santa Monica, California]]
+| host = [[Bob Hope]]
+| producer = [[Joe Pasternak]]
+| director = Richard Dunlap
+| best_picture = ''[[My Fair Lady (film)|My Fair Lady]]''
+| most_wins = ''My Fair Lady'' (8)
+| most_nominations = ''[[Mary Poppins (film)|Mary Poppins]]'' (13)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 
+| last = 36th
+| next = 38th
+}}
+
+The '''37th Academy Awards''' were held on April 5, 1965, to honor [[1964 in film|film achievements of 1964]]. The ceremony was produced by [[Metro-Goldwyn-Mayer|MGM]]'s [[Joe Pasternak]] and hosted, for the 14th time, by [[Bob Hope]].
+ 
+The Best Picture winner, [[George Cukor]]'s ''[[My Fair Lady (film)|My Fair Lady]]'', was an adaptation of a 1956 [[My Fair Lady|stage musical of the same name]], which was itself based on [[George Bernard Shaw]]'s ''[[Pygmalion (1938 film)|Pygmalion]]'', which had been nominated for Best Picture in [[11th Academy Awards|1938]]. [[Audrey Hepburn]] was controversially not nominated for [[Academy Award for Best Actress|Best Actress]] for her starring role as [[Eliza Doolittle]];<ref name="Oscars '64 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/842/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=843 |isbn=0-385-04060-1}}</ref>  the unpopularity of her replacing [[Julie Andrews]]—who had originated the role on Broadway, and who was seen by producer [[Jack L. Warner|Jack Warner]] as having lacked star quality<ref name="Oscars '64 Notes"/>—as well as the revelation that the majority of her singing was dubbed by [[Marni Nixon]] (which wasn't approved by Hepburn herself) were seen as the main reasons for the snub. This was said to have "split the committee into two camps, pro and con, for and against the two ladies", and even led to talk of a write-in campaign for Hepburn.<ref name="Oscars '64 Notes"/> Despite her having not been nominated, Hepburn was in attendance at the ceremony, with camera work playing up the tension between the two considerably.<ref name="Oscars '64 Notes"/> Andrews won the Best Actress Oscar, but ''My Fair Lady'' was said to have "made off awfully well, too."<ref name="Oscars '64 Notes"/>
+
+The ceremony saw the first recipient of the [[Academy Award for Best Makeup and Hairstyling]], [[William J. Tuttle]] for ''[[7 Faces of Dr. Lao]]'', albeit as an [[Academy Honorary Award|Honorary Award]]; it would not become a competitive category until [[54th Academy Awards|1981]].
+
+This year was the first in which three films received 10 or more nominations (repeated at the [[50th Academy Awards|50th]], [[92nd Academy Awards|92nd]] and [[96th Academy Awards]]), and the only time in Oscar history that three films received 12 or more nominations: ''[[Becket (1964 film)|Becket]]'' and ''[[My Fair Lady (film)|My Fair Lady]]'' each received 12, while ''[[Mary Poppins (film)|Mary Poppins]]'' received 13. Also, the five Best Director nominees corresponded to their films in the Best Picture category, for only the second occurrence throughout the era (1944–2008) in Oscar history, where the latter category was limited to five nominees only. Additionally, for the first time all Best Picture nominees received corresponding directing and writing nominations.<ref>{{cite news |last1=Collins |first1=Keith |title=Oscar facts & figures |url=https://variety.com/2006/film/awards/oscar-facts-figures-1117918228/ |access-date=June 15, 2026 |work=Variety |date=February 21, 2006 |url-status=live |archive-url=https://web.archive.org/web/20190605184741/https://variety.com/2006/film/awards/oscar-facts-figures-1117918228/ |archive-date=June 5, 2019 }}</ref>
+
+''Becket'' tied the record set by ''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' for most Oscars losses with 11 (both movies won 1 out of 12 nominations). It was later equalled by ''[[The Turning Point (1977 film)|The Turning Point]]'' in [[50th Academy Awards|1977]] (0 for 11), ''[[The Color Purple (1985 film)|The Color Purple]]'' in [[57th Academy Awards|1985]] (0 for 11), ''[[The Power of the Dog (film)|The Power of the Dog]]'' in [[94th Academy Awards|2021]] (1 for 12), and ''[[Emilia Pérez]]'' in [[97th Academy Awards|2024]] (2 for 13).
+
+==Awards==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Jack Warner portrait copy.jpg
+| caption1          = [[Jack L. Warner]], Best Picture winner
+| image2            = George Cukor - 1946.jpg
+| caption2          = [[George Cukor]], Best Director winner
+| image3            = Rex Harrison Allan Warren.jpg
+| caption3          = [[Rex Harrison]], Best Actor winner
+| image4            = Julie Andrews 1970.JPG
+| caption4          = [[Julie Andrews]], Best Actress winner
+| image5            = Sir Peter Ustinov portrait Allan Warren.jpg
+| caption5          = [[Peter Ustinov]], Best Supporting Actor winner
+| image6            = Lila Kedrova (1965).jpg
+| caption6          = [[Lila Kedrova]], Best Supporting Actress winner
+| image7            = Richard M Sherman april 2014 retouched cropped.jpg
+| caption7          = [[Richard M. Sherman]], Best Song and Best Music Score - Substantially Original co-winner
+| image8            = Robert Sherman 2002.jpg
+| caption8          = [[Robert B. Sherman]], Best Song and Best Music Score - Substantially Original co-winner
+| image9            = André Previn.jpg
+| caption9          = [[André Previn]], Best Scoring of Music - Adaptation or Treatment winner
+| image10           = Cecil Beaton Photographs- General; Beaton, Cecil IB4287C cropped.jpg
+| caption10         = [[Cecil Beaton]], Best Costume Design, Color winner and Best Art Direction, Color co-winner
+| image11           = Walter Lassally 2006.jpg
+| caption11         = [[Walter Lassally]], Best Cinematography, Black-and-White winner
+}}
+Nominations were announced on February 23, 1965. Winners are listed first and highlighted in boldface.<ref name="Oscars1965">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1965 |title=The 37th Academy Awards (1965) Nominees and Winners |access-date=2011-08-24 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20141031093059/http://www.oscars.org/oscars/ceremonies/1965 |archive-date=2014-10-31 }}</ref><ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1964" in the "Award Year(s)" drop-down menu and press "Search".</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[My Fair Lady (film)|My Fair Lady]]'' – [[Jack L. Warner]], producer'''
+** ''[[Becket (1964 film)|Becket]]'' – [[Hal B. Wallis]], producer
+** ''[[Dr. Strangelove|Dr. Strangelove, or: How I Learned to Stop Worrying and Love the Bomb]]'' – [[Stanley Kubrick]], producer
+** ''[[Mary Poppins (film)|Mary Poppins]]'' – [[Walt Disney]] and [[Bill Walsh (producer)|Bill Walsh]], producers
+** ''[[Zorba the Greek (film)|Zorba the Greek]]'' – [[Michael Cacoyannis]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[George Cukor]]&nbsp;– ''[[My Fair Lady (film)|My Fair Lady]]'''''
+** [[Peter Glenville]]&nbsp;– ''[[Becket (1964 film)|Becket]]''
+** [[Stanley Kubrick]]&nbsp;– ''[[Dr. Strangelove|Dr. Strangelove, or: How I Learned to Stop Worrying and Love the Bomb]]''
+** [[Robert Stevenson (director)|Robert Stevenson]]&nbsp;– ''[[Mary Poppins (film)|Mary Poppins]]''
+** [[Michael Cacoyannis]]&nbsp;– ''[[Zorba the Greek (film)|Zorba the Greek]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Rex Harrison]]&nbsp;– ''[[My Fair Lady (film)|My Fair Lady]]'' as Professor Henry Higgins'''
+** [[Richard Burton]]&nbsp;– ''[[Becket (1964 film)|Becket]]'' as [[Thomas Becket]]
+** [[Peter O'Toole]]&nbsp;– ''[[Becket (1964 film)|Becket]]'' as [[Henry II of England|King Henry II of England]]
+** [[Anthony Quinn]]&nbsp;– ''[[Zorba the Greek (film)|Zorba the Greek]]'' as Alexis Zorba 
+** [[Peter Sellers]]&nbsp;– ''[[Dr. Strangelove|Dr. Strangelove, or: How I Learned to Stop Worrying and Love the Bomb]]'' as Captain Lionel Mandrake / President Merkin Muffley / Dr. Strangelove
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Julie Andrews]]&nbsp;– ''[[Mary Poppins (film)|Mary Poppins]]'' as [[Mary Poppins (character)|Mary Poppins]]'''
+** [[Anne Bancroft]]&nbsp;– ''[[The Pumpkin Eater]]'' as Jo Armitage
+** [[Sophia Loren]]&nbsp;– ''[[Marriage Italian Style]]'' as [[Filumena Marturano]]
+** [[Debbie Reynolds]]&nbsp;– ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]'' as [[Margaret Brown|Molly Brown]]
+** [[Kim Stanley]]&nbsp;– ''[[Séance on a Wet Afternoon]]'' as Myra Savage
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Peter Ustinov]]&nbsp;– ''[[Topkapi (film)|Topkapi]]'' as Arthur Simon Simpson'''
+** [[John Gielgud]]&nbsp;– ''[[Becket (1964 film)|Becket]]'' as [[Louis VII of France|King Louis VII of France]]
+** [[Stanley Holloway]]&nbsp;– ''[[My Fair Lady (film)|My Fair Lady]]'' as Alfred P. Doolittle
+** [[Edmond O'Brien]]&nbsp;– ''[[Seven Days in May]]'' as Senator Ray Clark
+** [[Lee Tracy]]&nbsp;– ''[[The Best Man (1964 film)|The Best Man]]'' as Art Hockstader
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Lila Kedrova]]&nbsp;– ''[[Zorba the Greek (film)|Zorba the Greek]]'' as Madame Hortense'''
+** [[Gladys Cooper]]&nbsp;– ''[[My Fair Lady (film)|My Fair Lady]]'' as Mrs. Higgins
+** [[Edith Evans]]&nbsp;– ''[[The Chalk Garden (film)|The Chalk Garden]]'' as Mrs. St. Maugham
+** [[Grayson Hall]]&nbsp;– ''[[The Night of the Iguana (film)|The Night of the Iguana]]'' as Judith Fellowes
+** [[Agnes Moorehead]]&nbsp;– ''[[Hush...Hush, Sweet Charlotte]]'' as Velma Cruther
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+* '''''[[Father Goose (film)|Father Goose]]''&nbsp;– [[S. H. Barnett]], [[Peter Stone (writer)|Peter Stone]], and [[Frank Tarloff]]'''
+** ''[[A Hard Day's Night (film)|A Hard Day's Night]]''&nbsp;– [[Alun Owen]]
+** ''[[One Potato, Two Potato]]''&nbsp;– [[Orville H. Hampton]] and Raphael Hayes
+** ''[[The Organizer]]''&nbsp;– [[Agenore Incrocci]], [[Furio Scarpelli]], and [[Mario Monicelli]]
+** ''[[That Man from Rio]]''&nbsp;– [[Jean-Paul Rappeneau]], [[Ariane Mnouchkine]], [[Daniel Boulanger]], and [[Philippe de Broca]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+* '''''[[Becket (1964 film)|Becket]]''&nbsp;– [[Edward Anhalt]] from ''[[Becket (play)|Becket]]'' by [[Jean Anouilh]]'''
+** ''[[Dr. Strangelove|Dr. Strangelove, or: How I Learned to Stop Worrying and Love the Bomb]]''&nbsp;– [[Stanley Kubrick]], [[Terry Southern]], and [[Peter George (author)|Peter George]] from ''[[Red Alert (novel)|Red Alert]]'' by Peter George
+** ''[[Mary Poppins (film)|Mary Poppins]]''&nbsp;– [[Bill Walsh (producer)|Bill Walsh]] and [[Don DaGradi]] from ''[[Mary Poppins (book series)|Mary Poppins]]'' by [[P. L. Travers]]
+** ''[[My Fair Lady (film)|My Fair Lady]]''&nbsp;– [[Alan Jay Lerner]] from ''[[My Fair Lady]]'' by Alan Jay Lerner and ''[[Pygmalion (play)|Pygmalion]]'' by [[George Bernard Shaw]]
+** ''[[Zorba the Greek (film)|Zorba the Greek]]''&nbsp;– [[Michael Cacoyannis]] from ''[[Zorba the Greek|The Life of Alexis Zorba]]'' by [[Nikos Kazantzakis]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[Yesterday, Today and Tomorrow]]'' ([[Italy]])'''
+** ''[[Raven's End]]'' ([[Sweden]])
+** ''[[Sallah Shabati]]'' ([[Israel]])
+** ''[[The Umbrellas of Cherbourg]]'' ([[France]])
+** ''[[Woman in the Dunes]]'' ([[Japan]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[World Without Sun|Jacques-Yves Cousteau's World Without Sun]]''&nbsp;– [[Jacques Cousteau|Jacques-Yves Cousteau]]'''
+** ''[[14-18]]''&nbsp;– [[Jean Aurel]]
+** ''[[The Finest Hours (1964 film)|The Finest Hours]]''&nbsp;– [[Jack Levin (producer)|Jack Le Vien]]
+** ''[[Four Days in November]]''&nbsp;– [[Mel Stuart]]
+** ''[[The Human Dutch]]''&nbsp;– [[Bert Haanstra]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Nine from Little Rock]]''&nbsp;– [[Charles Guggenheim]]'''
+** ''[[140 Days Under the World]]''&nbsp;– Geoffrey Scott and Oxley Hughan
+** ''[[Breaking the Habit (film)|Breaking the Habit]]''&nbsp;– [[Henry Jacobs]] and [[John Korty]]
+** ''[[Children Without]]''&nbsp;– [[Charles Guggenheim]]
+** ''[[Eskimo Artist: Kenojuak]]''&nbsp;– [[National Film Board of Canada]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+* '''''[[Casals Conducts: 1964]]''&nbsp;– Edward Schreiber'''
+** ''[[Help! My Snowman's Burning Down]]''&nbsp;– [[Carson Davidson]]
+** ''[[The Legend of Jimmy Blue Eyes]]''&nbsp;– [[Robert Clouse]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[The Pink Phink]]''&nbsp;– [[David H. DePatie]] and [[Friz Freleng]]'''
+** ''[[Christmas Cracker (film)|Christmas Cracker]]''&nbsp;– [[National Film Board of Canada]]
+** ''How to Avoid Friendship''&nbsp;– [[William L. Snyder]]
+** ''[[Nudnik|Nudnik #2]]''&nbsp;– [[William L. Snyder]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score -- Substantially Original)]]}}
+* '''''[[Mary Poppins (film)|Mary Poppins]]''&nbsp;– [[Richard M. Sherman]] and [[Robert B. Sherman]]'''
+** ''[[Becket (1964 film)|Becket]]''&nbsp;– [[Laurence Rosenthal]]
+** ''[[The Fall of the Roman Empire (film)|The Fall of the Roman Empire]]''&nbsp;– [[Dimitri Tiomkin]]
+** ''[[Hush...Hush, Sweet Charlotte]]''&nbsp;– [[Frank De Vol]]
+** ''[[The Pink Panther (1963 film)|The Pink Panther]]''&nbsp;– [[Henry Mancini]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of Music -- Adaptation or Treatment)]]}}
+* '''''[[My Fair Lady (film)|My Fair Lady]]''&nbsp;– [[André Previn]]'''
+** ''[[A Hard Day's Night (film)|A Hard Day's Night]]''&nbsp;– [[George Martin]]
+** ''[[Mary Poppins (film)|Mary Poppins]]''&nbsp;– [[Irwin Kostal]]
+** ''[[Robin and the 7 Hoods]]''&nbsp;– [[Nelson Riddle]]
+** ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]''&nbsp;– [[Robert Armbruster]], [[Leo Arnaud]], [[Jack Elliott (composer)|Jack Elliott]], [[Jack Hayes (composer)|Jack Hayes]], [[Calvin Jackson (pianist)|Calvin Jackson]], and [[Leo Shuken]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[Chim Chim Cher-ee]]" from ''[[Mary Poppins (film)|Mary Poppins]]''&nbsp;– Music and Lyrics by [[Richard M. Sherman]] and [[Robert B. Sherman]]'''
+** "[[Dear Heart (song)|Dear Heart]]" from ''[[Dear Heart]]''&nbsp;– Music by [[Henry Mancini]]; Lyrics by [[Jay Livingston]] and [[Ray Evans]]
+** "[[Hush, Hush, Sweet Charlotte (song)|Hush, Hush, Sweet Charlotte]]" from ''[[Hush...Hush, Sweet Charlotte]]''&nbsp;– Music by [[Frank De Vol]]; Lyrics by [[Mack David]]
+** "[[My Kind of Town]]" from ''[[Robin and the 7 Hoods]]''&nbsp;– Music by [[Jimmy Van Heusen]]; Lyrics by [[Sammy Cahn]]
+** "Where Love Has Gone" from ''[[Where Love Has Gone (film)|Where Love Has Gone]]''&nbsp;– Music by [[Jimmy Van Heusen]]; Lyrics by [[Sammy Cahn]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+* '''''[[My Fair Lady (film)|My Fair Lady]]''&nbsp;– [[George Groves (sound engineer)|George Groves]]'''
+** ''[[Becket (1964 film)|Becket]]'' – [[John Cox (sound engineer)|John Cox]]
+** ''[[Father Goose (film)|Father Goose]]'' – [[Waldon O. Watson]]
+** ''[[Mary Poppins (film)|Mary Poppins]]'' – [[Robert O. Cook]]
+** ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]'' – [[Franklin Milton]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Editing|Best Sound Effects]]}}
+* '''''[[Goldfinger (film)|Goldfinger]]''&nbsp;– [[Norman Wanstall]]'''
+** ''[[The Lively Set]]''&nbsp;– [[Robert Bratton (sound editor)|Robert Bratton]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[Zorba the Greek (film)|Zorba the Greek]]''&nbsp;– Art Direction and Set Decoration: [[Vassilis Photopoulos]]'''
+** ''[[The Americanization of Emily]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]], [[Hans Peters (art director)|Hans Peters]], and [[Elliot Scott]]; Set Decoration: [[Henry Grace]] and [[Robert R. Benton]]
+** ''[[Hush...Hush, Sweet Charlotte]]''&nbsp;– Art Direction: [[William Glasgow (art director)|William Glasgow]]; Set Decoration: [[Raphaël Bretton]]
+** ''[[The Night of the Iguana (film)|The Night of the Iguana]]''&nbsp;– Art Direction and Set Decoration: [[Stephen B. Grimes]]
+** ''[[Seven Days in May]]''&nbsp;– Art Direction: [[Cary Odell]]; Set Decoration: [[Edward G. Boyle]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[My Fair Lady (film)|My Fair Lady]]''&nbsp;– Art Direction: [[Gene Allen (art director)|Gene Allen]] and [[Cecil Beaton]]; Set Decoration: [[George James Hopkins]]'''
+** ''[[Becket (1964 film)|Becket]]''&nbsp;– Art Direction: [[John Bryan (art director)|John Bryan]] and [[Maurice Carter (production designer)|Maurice Carter]]; Set Decoration: [[Patrick McLoughlin (set decorator)|Patrick McLoughlin]] and [[Robert Cartwright]]
+** ''[[Mary Poppins (film)|Mary Poppins]]''&nbsp;– Art Direction: [[Carroll Clark]] and [[William H. Tuntke]]; Set Decoration: [[Emile Kuri]] and [[Hal Gausman]]
+** ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]] and [[E. Preston Ames]]; Set Decoration: [[Henry Grace]] and [[Hugh Hunt]]
+** ''[[What a Way to Go!]]''&nbsp;– Art Direction: [[Jack Martin Smith]] and [[Ted Haworth]]; Set Decoration: [[Walter M. Scott]] and [[Stuart A. Reiss]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[Zorba the Greek (film)|Zorba the Greek]]''&nbsp;– [[Walter Lassally]]'''
+** ''[[The Americanization of Emily]]''&nbsp;– [[Philip H. Lathrop]]
+** ''[[Fate Is the Hunter (film)|Fate Is the Hunter]]''&nbsp;– [[Milton Krasner]]
+** ''[[Hush...Hush, Sweet Charlotte]]''&nbsp;– [[Joseph Biroc]]
+** ''[[The Night of the Iguana (film)|The Night of the Iguana]]''&nbsp;– [[Gabriel Figueroa]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[My Fair Lady (film)|My Fair Lady]]''&nbsp;– [[Harry Stradling]]'''
+** ''[[Becket (1964 film)|Becket]]''&nbsp;– [[Geoffrey Unsworth]]
+** ''[[Cheyenne Autumn]]''&nbsp;– [[William Clothier (cinematographer)|William Clothier]]
+** ''[[Mary Poppins (film)|Mary Poppins]]''&nbsp;– [[Edward Colman (cinematographer)|Edward Colman]]
+** ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]''&nbsp;– [[Daniel L. Fapp]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+* '''''[[The Night of the Iguana (film)|The Night of the Iguana]]''&nbsp;– [[Dorothy Jeakins]]'''
+** ''[[A House Is Not a Home (film)|A House Is Not a Home]]''&nbsp;– [[Edith Head]]
+** ''[[Hush...Hush, Sweet Charlotte]]''&nbsp;– [[Norma Koch]]
+** ''[[Kisses for My President]]''&nbsp;– [[Howard Shoup]]
+** ''[[The Visit (1964 film)|The Visit]]''&nbsp;– [[René Hubert (costume designer)|René Hubert]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+* '''''[[My Fair Lady (film)|My Fair Lady]]''&nbsp;– [[Cecil Beaton]]'''
+** ''[[Becket (1964 film)|Becket]]''&nbsp;– [[Margaret Furse]]
+** ''[[Mary Poppins (film)|Mary Poppins]]''&nbsp;– [[Tony Walton]]
+** ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]''&nbsp;– [[Morton Haack]]
+** ''[[What a Way to Go!]]''&nbsp;– [[Edith Head]] and [[Moss Mabry]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Mary Poppins (film)|Mary Poppins]]''&nbsp;– [[Cotton Warburton]]'''
+** ''[[Becket (1964 film)|Becket]]''&nbsp;– [[Anne V. Coates]]
+** ''[[Father Goose (film)|Father Goose]]''&nbsp;– [[Ted J. Kent]]
+** ''[[Hush...Hush, Sweet Charlotte]]''&nbsp;– [[Michael Luciano]]
+** ''[[My Fair Lady (film)|My Fair Lady]]''&nbsp;– [[William Ziegler (film editor)|William Ziegler]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Visual Effects]]}}
+* '''''[[Mary Poppins (film)|Mary Poppins]]''&nbsp;– [[Peter Ellenshaw]], [[Eustace Lycett]], and [[Hamilton Luske]]'''
+** ''[[7 Faces of Dr. Lao]]''&nbsp;– [[Jim Danforth]]
+|}
+
+===Honorary Award===
+* To [[William J. Tuttle|William Tuttle]] for his outstanding make-up achievement for ''[[7 Faces of Dr. Lao]]''.
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>{{Cite book |last=Wiley |first=Mason |title=Inside Oscar: the unofficial history of the Academy Awards |last2=Bona |first2=Damien |date=1996 |publisher=Ballantine Books |isbn=978-0-345-40053-6 |edition=10. anniversary rev. ed., with new chapters on the winners, heartbreaks, and behind-the-scenes surprises |location=New York, NY |pages=374}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name !! Role
+|-
+| {{sortname|Hank|Simms}} || Announcer for the 37th Academy Awards
+|-
+| {{sortname|Arthur|Freed}} (AMPAS President) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Claudia|Cardinale}}<br /> [[Steve McQueen]] || Presenters of the awards for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|Angie|Dickinson}} || Presenter of the award for [[Academy Award for Best Sound Editing|Best Sound Effects]]
+|-
+| {{sortname|Alain|Delon}} || Presenter of the award for [[Academy Award for Best Visual Effects|Best Special Visual Effects]]
+|-
+| {{sortname|Angela|Lansbury}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Jimmy|Durante}}<br />[[Martha Raye]] || Presenters of the awards for [[Academy Award for Best Documentary Feature|Best Documentary Feature]] and [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]]
+|-
+| [[Merle Oberon]] || Presenter of the awards for [[Academy Award for Best Live Action Short Film|Best Live Action Short Subject]] and [[Academy Award for Best Animated Short Film|Best Short Subject — Cartoons]]
+|-
+| {{sortname|Greer|Garson}}<br />[[Dick Van Dyke]] || Presenters of the awards for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Debbie|Reynolds}} || Presenter of the awards for [[Academy Award for Best Original Score|Best Music Score — Substantially Original]] and [[Academy Award for Best Original Score|Best Scoring of Music — Adaptation or Treatment]]
+|-
+| {{sortname|Anthony|Franciosa}} || Presenter of the Scientific or Technical Awards
+|-
+| {{sortname|Rex|Harrison}} || Presenter of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Rosalind|Russell}} || Presenter of the Honorary Award to William Tuttle
+|-
+| {{sortname|Karl|Malden}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Richard|Chamberlain}}<br />[[Vince Edwards]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Rock|Hudson}}<br />[[Jean Simmons]] || Presenters of the awards for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Elizabeth|Ashley}}<br />[[Macdonald Carey]] || Presenters of the awards for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Gene|Kelly}} || Introducer of the performance of the tribute to [[Cole Porter]] 
+|-
+| {{sortname|Fred|Astaire}} || Presenter of the award for [[Academy Award for Best Original Song|Best Song]]
+|-
+| {{sortname|Deborah|Kerr}} || Presenter of the awards for [[Academy Award for Best Original Screenplay|Best Story and Screenplay Written Directly for the Screen]] and [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material from Another Medium]]
+|-
+| {{sortname|Audrey|Hepburn}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Sidney|Poitier}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Joan|Crawford}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Gregory|Peck}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name !! Role !! Performed
+|-
+| {{sortname|Johnny|Green}}<br />[[Roger Edens]] || Musical arrangers || Orchestral
+|-
+| {{sortname|The|New Christy Minstrels}} || Performers || "[[Chim Chim Cher-ee]]" from ''[[Mary Poppins (film)|Mary Poppins]]''
+|-
+| {{sortname|Andy|Williams}} || Performer || "Dear Heart" from ''Dear Heart''
+|-
+| {{sortname|Patti|Page}} || Performer || "[[Hush, Hush, Sweet Charlotte (song)|Hush, Hush, Sweet Charlotte]]" from ''[[Hush...Hush, Sweet Charlotte]]''
+|-
+| {{sortname|Nancy|Wilson|Nancy Wilson (jazz singer)}} || Performer || "[[My Kind of Town]]" from ''[[Robin and the 7 Hoods]]''
+|-
+| {{sortname|Jack|Jones|Jack Jones (singer)}} || Performer || "Where Love Has Gone" from ''[[Where Love Has Gone (film)|Where Love Has Gone]]''
+|-
+| {{sortname|Judy|Garland}} || Performer || [[Cole Porter]] Medley:<br>"Use Your Imagination"<br>"[[Night and Day (song)|Night and Day]]"<br>"[[I Get a Kick Out of You]]"<br>"[[You're the Top]]"<br>"[[Let's Do It, Let's Fall in Love]]"<br>"[[Don't Fence Me In (song)|Don't Fence Me In]]"<br>"[[You'd Be So Nice to Come Home To]]"<br>"[[It's De-Lovely]]"<br>"[[My Heart Belongs to Daddy]]"<br>"[[So in Love]]"<br>"[[From This Moment On (Cole Porter song)|From This Moment On]]"<br>"Night and Day" (reprise)
+|-
+| {{sortname||Academy Awards Orchestra|nolink=0}} || Performers || "[[That's Entertainment! (song)|That's Entertainment]]" during the closing credits
+|}
+
+==Multiple nominations and awards==
+{{Col-begin}}
+{{Col-1-of-2}}
+These films had multiple nominations:
+
+* ''13 nominations:'' ''[[Mary Poppins (film)|Mary Poppins]]''
+* ''12 nominations:'' ''[[Becket (1964 film)|Becket]]'' and ''[[My Fair Lady (film)|My Fair Lady]]''
+* ''7 nominations:'' ''[[Hush...Hush, Sweet Charlotte]]'' and ''[[Zorba the Greek (film)|Zorba the Greek]]''
+* ''6 nominations:'' ''[[The Unsinkable Molly Brown (film)|The Unsinkable Molly Brown]]''
+* ''4 nominations:'' ''[[Dr. Strangelove|Dr. Strangelove, or: How I Learned to Stop Worrying and Love the Bomb]]'' and ''[[The Night of the Iguana (film)|The Night of the Iguana]]''
+* ''3 nominations:'' ''[[Father Goose (film)|Father Goose]]''
+* ''2 nominations:'' ''[[The Americanization of Emily]]'', ''[[A Hard Day's Night (film)|A Hard Day's Night]]'', ''[[Robin and the 7 Hoods]]'', ''[[Seven Days in May]]'', and ''[[What a Way to Go!]]''
+
+{{Col-2-of-2}}
+The following films received multiple awards.
+
+* ''8 wins:'' ''[[My Fair Lady (film)|My Fair Lady]]''
+* ''5 wins:'' ''[[Mary Poppins (film)|Mary Poppins]]''
+* ''3 wins:'' ''[[Zorba the Greek (film)|Zorba the Greek]]''
+
+{{Col-end}}
+
+== See also ==
+*[[22nd Golden Globe Awards]]
+*[[1964 in film]]
+* [[7th Grammy Awards]]
+* [[16th Primetime Emmy Awards]]
+* [[17th Primetime Emmy Awards]]
+* [[18th British Academy Film Awards]]
+* [[18th Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 37}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1964 film awards]]
+[[Category:1964 awards in the United States]]
+[[Category:1965 in California]]
+[[Category:1965 in American cinema]]
+[[Category:April 1965 in the United States]]
+[[Category:Organized events in Santa Monica, California]]
+[[Category:20th century in Santa Monica, California]]

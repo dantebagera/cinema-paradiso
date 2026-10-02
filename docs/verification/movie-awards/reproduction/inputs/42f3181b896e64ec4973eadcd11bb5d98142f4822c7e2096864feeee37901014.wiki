@@ -1,0 +1,55 @@
+{{Short description|Film award ceremony in 1946}}
+{{Coord|34|6|8.6|N|118|19|40.2|W|display=title}}
+{{Infobox film awards
+| number = 3
+| award = Golden Globe Awards
+| image = 
+| caption = 
+| announced_date = {{Start date|1946|03|06}} 
+| presented_date = {{Start date|1946|03|30}} 
+| site = [[Knickerbocker Hotel (Los Angeles)|Knickerbocker Hotel]]
+| best_picture = ''[[The Lost Weekend]]''
+| most_awards = ''[[The Lost Weekend]]'' (3)
+| last = 2nd
+| next = 4th
+}}
+The '''3rd [[Golden Globe Award]]s''', honoring the best achievements in [[1945 in film|1945 filmmaking]], were announced March 6 and held on March 30, 1946 at the [[Knickerbocker Hotel (Los Angeles)]] in [[Los Angeles]], [[California]].
+
+==Winners==
+
+===[[Golden Globe Award for Best Motion Picture – Drama|Best Picture]]=== 
+*''[[The Lost Weekend]]'' directed by [[Billy Wilder]]<ref>"Best Picture" http://www.goldenglobes.org/browse/year/1945 {{Webarchive|url=https://web.archive.org/web/20120415111739/http://www.goldenglobes.org/browse/year/1945 |date=2012-04-15 }}</ref>
+
+===[[Golden Globe Award for Best Actor – Motion Picture Drama|Best Actor in a Leading Role]]=== 
+*[[Ray Milland]] – ''[[The Lost Weekend]]''<ref>"Best Actor in a Leading Role" http://www.goldenglobes.org/browse/year/1945 {{Webarchive|url=https://web.archive.org/web/20120415111739/http://www.goldenglobes.org/browse/year/1945 |date=2012-04-15 }}</ref>
+
+===[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Leading Role]]=== 
+*[[Ingrid Bergman]] – ''[[The Bells of St. Mary's]]''<ref>"Best Actress in a Leading Role" http://www.goldenglobes.org/browse/year/1945 {{Webarchive|url=https://web.archive.org/web/20120415111739/http://www.goldenglobes.org/browse/year/1945 |date=2012-04-15 }}</ref>
+
+===[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Performance by an Actor in a Supporting Role in a Motion Picture]]=== 
+*[[J. Carrol Naish]] – ''[[A Medal for Benny]]''<ref>"Best Performance by an Actor in a Supporting Role in a Motion Picture" http://www.goldenglobes.org/browse/year/1945 {{Webarchive|url=https://web.archive.org/web/20120415111739/http://www.goldenglobes.org/browse/year/1945 |date=2012-04-15 }}</ref>
+
+===[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Performance by an Actress in a Supporting Role in a Motion Picture]]=== 
+*[[Angela Lansbury]] – ''[[The Picture of Dorian Gray (1945 film)|The Picture of Dorian Gray]]''<ref>"Best Performance by an Actress in a Supporting Role in a Motion Picture" http://www.goldenglobes.org/browse/year/1945 {{Webarchive|url=https://web.archive.org/web/20120415111739/http://www.goldenglobes.org/browse/year/1945 |date=2012-04-15 }}</ref>
+
+===[[Golden Globe Award for Best Director|Best Director-Motion Picture]]=== 
+*[[Billy Wilder]] – ''[[The Lost Weekend]]''<ref>"Best Director-Motion Picture" http://www.goldenglobes.org/browse/year/1945 {{Webarchive|url=https://web.archive.org/web/20120415111739/http://www.goldenglobes.org/browse/year/1945 |date=2012-04-15 }}</ref>
+
+===Best Film Promoting International Understanding===
+*''[[The House I Live In (1945 film)|The House I Live In]]''
+
+==See also==
+* [[Hollywood Foreign Press Association]]
+* [[18th Academy Awards]]
+* [[1945 in film]]
+
+==References==
+{{Reflist}}
+
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards 003}}
+[[Category:Golden Globe Awards ceremonies|*003]]
+[[Category:1945 film awards]]
+[[Category:1945 television awards]]
+[[Category:January 1946 in the United States]]

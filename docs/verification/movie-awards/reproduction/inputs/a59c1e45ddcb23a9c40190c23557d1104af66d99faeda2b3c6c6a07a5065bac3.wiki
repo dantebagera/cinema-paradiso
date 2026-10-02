@@ -1,0 +1,360 @@
+{{oscars short description|films-year=1968}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number = 41
+| award = Academy Awards
+| date = April 14, 1969
+| site = [[Dorothy Chandler Pavilion]], [[Los Angeles]]
+| image = 41st Academy Awards.jpg
+| host = 
+| producer = [[Gower Champion]]
+| director = Richard Dunlap<br>[[Gower Champion]]
+| best_picture = ''[[Oliver! (film)|Oliver!]]''
+| most_wins = ''Oliver!'' (5)
+| most_nominations = ''Oliver!'' (11)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 
+| last = 40th
+| next = 42nd
+}}
+The '''41st Academy Awards''' were presented on April 14, 1969, to honor the [[1968 in film|films of 1968]]. They were the first Oscars to be staged at the [[Dorothy Chandler Pavilion]], [[Los Angeles]],<ref>{{Cite news |last=Champlin |first=Charles |date=April 15, 1969 |title=Streisand and Hepburn Tie; Robertson Voted Best Actor |work=[[Los Angeles Times]] |pages=1}}</ref> and the first with no host since the [[20th Academy Awards]].<ref name=":14">{{Cite web |date=January 22, 2024 |title=Every Oscar Host in History: See the Full List From Douglas Fairbanks to Jimmy Kimmel |url=https://aframe.oscars.org/news/post/every-oscar-host-in-history-see-the-full-list |url-status=live |archive-url=https://archive.today/20240527144802/https://aframe.oscars.org/news/post/every-oscar-host-in-history-see-the-full-list |archive-date=May 27, 2024 |access-date=May 27, 2024 |website=[[Oscars.org]]}}</ref>
+
+''[[Oliver! (film)|Oliver!]]'' became the only [[Academy Award for Best Picture|Best Picture]] winner to have received a [[Motion Picture Association film rating system|G-rating]] prior to winning, the ratings system having replaced the old [[Hays Code]] on November 1, 1968 (though a number of Best Picture winners have received the rating retroactively). It was the last British film to win Best Picture until ''[[Chariots of Fire]]'' in [[54th Academy Awards|1982]], and the last musical to win until ''[[Chicago (2002 film)|Chicago]]'' in [[75th Academy Awards|2003]].
+
+The year was notable for the first&mdash;and so far, only&mdash;tie for [[Academy Award for Best Actress|Best Actress]]: [[Katharine Hepburn]] and [[Barbra Streisand]] shared the award, for their performances in ''[[The Lion in Winter (1968 film)|The Lion in Winter]]'' and ''[[Funny Girl (film)|Funny Girl]]'', respectively, marking the third occurrence of a tie in Oscar history.<ref name="Oscars1969" /> Hepburn became the second actress and third performer to win an acting Oscar two years in a row (having won for ''[[Guess Who's Coming to Dinner]]'' the [[40th Academy Awards|previous year]]), after [[Luise Rainer]] in [[9th Academy Awards|1937]] (''[[The Great Ziegfeld]]'') and [[10th Academy Awards|1938]] (''[[The Good Earth (film)|The Good Earth]]''), and [[Spencer Tracy]] in 1938 (''[[Captains Courageous (1937 film)|Captains Courageous]]'') and [[11th Academy Awards|1939]] (''[[Boys Town (film)|Boys Town]]''). She also became the first to win three acting Oscars in lead categories (an achievement later matched by [[Daniel Day-Lewis]] and [[Frances McDormand]]).
+
+[[Stanley Kubrick]] received his only career Oscar this year, for [[Academy Award for Best Visual Effects|Best Visual Effects]] as special effects director and designer for ''[[2001: A Space Odyssey (film)|2001: A Space Odyssey]]''.<ref>{{cite web|url=https://www.imdb.com/name/nm0000040/awards |title=Awards for Stanley Kubrick |author=Internet Movie Database |website=[[IMDb]] |access-date=2009-09-06 |url-status=live |archive-url=https://web.archive.org/web/20090107224119/http://www.imdb.com/name/nm0000040/awards |archive-date=2009-01-07 }}</ref>
+
+[[Cliff Robertson]]'s performance in ''[[Charly (1968 film)|Charly]]'', which had received a mixed reception from critics and audiences, engendered controversy when he won the [[Academy Award for Best Actor]]. Less than two weeks after the ceremony, ''[[Time (magazine)|TIME]]'' mentioned the Academy's generalized concerns over "excessive and vulgar solicitation of votes" and said "many members agreed that Robertson's award was based more on promotion than on performance."<ref>{{cite magazine|title=The Trade: Grand Illusion|magazine=[[Time (magazine)|TIME]]|url=http://www.time.com/time/printout/0,8816,840086,00.html|archive-url=https://archive.today/20120914135653/http://www.time.com/time/printout/0,8816,840086,00.html|url-status=dead|archive-date=September 14, 2012|date=April 25, 1969|access-date= November 19, 2013}}</ref>
+
+A few people griped over the failure of [[Paul Newman]] to get an Academy Award nomination for his direction of the film ''[[Rachel, Rachel]]'', despite him receiving a Best Director award from the [[New York Film Critics Circle]].<ref name="Oscars '68 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/846/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=845 |isbn=0-385-04060-1}}</ref>
+
+Also notable this year was the only instance to date of the Academy revoking an Oscar after the ceremony: ''[[Young Americans (1967 film)|Young Americans]]'' won the award for [[Academy Award for Best Documentary Feature Film|Best Documentary Feature Film]], but on May 7, 1969, it was discovered that it had premiered in October 1967, thus making it ineligible. ''[[Journey into Self (1968 film)|Journey into Self]]'', the first runner-up, was awarded the Oscar the following day.<ref>{{Cite magazine |last=Breznican |first=Anthony |date=January 29, 2014 |title='Alone Yet Not Alone': The OTHER Oscar nominees who lost their bids |url=https://ew.com/article/2014/01/29/alone-yet-not-alone-the-other-nominees-who-had-their-oscars-revoked/ |magazine=[[Entertainment Weekly]]}}</ref><ref>{{Cite web |title='Journey Into Self' Wins Oscar After Ineligibility Ruling |url=https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2905/rec/6 |url-status=live |archive-url=https://archive.today/20240626015656/https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2905/rec/3 |archive-date=June 26, 2024 |website=Margaret Herrick Library Digital Collections |publisher=[[Oscars.org]]}}</ref>
+
+==Controversy over the Tonight Show announcing the winners hours before the ceremony==
+
+A minor controversy was created when, in a sketch on ''[[The Tonight Show]]'', which was recorded three hours before the awards ceremony, [[Johnny Carson]] and [[Buddy Hackett]] announced ''[[Oliver! (film)|Oliver!]]'' as the winner for Best Picture and [[Jack Albertson]] as [[Academy Award for Best Supporting Actor|Best Supporting Actor]].<ref>{{Cite news |date=April 15, 1969 |title=Carson Names 'Oliver!' Long Before It's Official |url=https://www.nytimes.com/1969/04/15/archives/carson-names-oliver-long-before-its-official.html |work=[[New York Times]] |page=40}}</ref> Columnist [[Frances Drake]] claimed that most observers believed Carson and Hackett "were playing a huge practical joke or happened to make a lucky guess".<ref>{{cite news |newspaper=Galveston Daily News |date=April 21, 1969 |url=https://www.newspapers.com/newspage/23009298/ |title=Hackett, Carson On Inside Track? |page=7 |access-date=2015-10-22 |url-status=live |archive-url=https://web.archive.org/web/20160304205011/https://www.newspapers.com/newspage/23009298/ |archive-date=2016-03-04 }}</ref> Referring to it as "The Great Carson Hoax", PricewaterhouseCoopers stated in a 2004 press release that it was "later proven that Carson and Hackett made a few lucky guesses for their routine, dispelling rumors of a security breach and keeping the integrity of the balloting process intact".<ref>{{cite press release |date=February 12, 2004 |url=http://www.prnewswire.com/news-releases/pricewaterhousecoopers-celebrates-70th-anniversary-managing-academy-awardsr-balloting-58979397.html |title=PricewaterhouseCoopers Celebrates 70th Anniversary Managing Academy Awards(R) Balloting |access-date=2014-03-01 |url-status=live |archive-url=https://web.archive.org/web/20140301120623/http://www.prnewswire.com/news-releases/pricewaterhousecoopers-celebrates-70th-anniversary-managing-academy-awardsr-balloting-58979397.html |archive-date=2014-03-01 }}</ref> Carson would go on to host the ceremony five times.<ref name=":14" />
+
+==The televised ceremony==
+{{overly detailed|section|date=July 2026}}
+On the day after the broadcast, the live [[American Broadcasting Company|ABC]] television audience was estimated at 60 million in the United States.<ref name=":0">{{Cite news |date=April 15, 1969 |title=Hepburn and Streisand Share Top Oscars |url=https://www.nytimes.com/1969/04/15/archives/hepburn-and-streisand-share-top-oscars.html |access-date=June 25, 2024 |work=[[New York Times]] |page=40}}</ref> It was the first Oscars to be widely telecast throughout the world – live in the United States, Canada and Mexico,<ref>{{Cite web |date=April 1, 1969 |title=32 Countries will Telecast Oscar Show |url=https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2875/rec/1 |url-status=live |archive-url=https://archive.today/20240625190605/https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2875/rec/1 |archive-date=June 25, 2024 |website=Margaret Herrick Library Digital Collections |publisher=[[Oscars.org]] |pages=1–2}}</ref> and licensed for delayed broadcast{{efn|As per the [https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2907/rec/8 Academy Report] Volume 12 Number 2, December 1969 from the Margaret Herrick Library Digital Collections at [[Oscars.org]], "The broadcast was presented abroad in an abbreviated, one-hour form on a trial basis."}} in at least 30 other countries.{{efn|As of publication prior to the April 14, 1969 broadcast, the 30 countries were: "United Kingdom, Australia, Korea, Venezuela, Argentina, Austria, Greece, Holland, Finland, Italy, New Zealand, Uruguay, Chile, Costa Rica, Guatemala, Panama, Nicaragua, the Dominican Republic, Ecuador, San Salvador, Honduras, Norway, Spain, Portugal, Belgium, Switzerland, Thailand, Singapore, Hong Kong and the Philippines" as per the [https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2876/rec/2 Academy Report], Volume 12 Number 1, April 1969 from the Margaret Herrick Library Digital Collections at [[Oscars.org]]. But the article noted that "several other countries may soon be added to the roster".}}{{efn|As per the [[Academy Museum]]  [https://oscars.academymuseum.org/timelines/the-ceremony website]: the 1969 show "is broadcast to 37 countries in a 56-minute 'capsule' version."}}
+
+The show opened outdoors at night in downtown Los Angeles. English actors [[Ron Moody]] and sixteen-year-old [[Jack Wild]] were in character as Fagin and the Artful Dodger, from Best Picture nominee ''[[Oliver! (film)|Oliver]]!.'' Fagin assured Dodger that if they didn't win the golden statuette, they would "pinch it."<ref name=":2">{{Cite journal |last=Purdum |first=Todd S |date=February 21, 2009 |title=The 1969 Academy Awards Captured a Shifting Moment in Movie History |url=https://www.theatlantic.com/entertainment/archive/2019/02/2019-oscars-odd-parallels-1969-awards/583177/ |journal=[[The Atlantic]] |archive-url=https://archive.today/20210404043852/https://www.theatlantic.com/entertainment/archive/2019/02/2019-oscars-odd-parallels-1969-awards/583177/ |archive-date=April 4, 2021}}</ref><ref name=":3">{{Cite web |title=The Opening of the Academy Awards: 1969 Oscars |url=https://www.youtube.com/watch?v=rcmNN3BJdTM |access-date=May 24, 2024 |website=[[YouTube]] | date=February 4, 2016 |via=[[Oscars.org]]}}</ref>
+
+The president of the academy, [[Gregory Peck]], taped a pre-recorded opening{{efn|The stage manager Selig Frank's 41st Academy Awards 1969 production binder script on eBay has handwritten notes indicating that both the opening Oliver! skit and Gregory Peck's intro were "pre-taped".}} in the empty lobby of the new venue, the [[Dorothy Chandler Pavilion]].<ref name=":4">{{Cite magazine |last=Schulman |first=Michael |date=January 10, 2023 |title=How the Oscars Got Groovy – The unlikely alliance that rescued the Academy Awards/Bridging the Generation Gap at the Oscars |url=https://www.newyorker.com/culture/culture-desk/bridging-the-generation-gap-at-the-oscars |archive-url=https://archive.today/20230110131401/https://www.newyorker.com/culture/culture-desk/bridging-the-generation-gap-at-the-oscars |archive-date=January 10, 2023 |magazine=[[The New Yorker]]}}</ref> Peck introduced [[Ingrid Bergman]], the first of ten "friends of Oscar."<ref name=":0" />  Each actor presented the next in turn, with [[Jane Fonda]] introducing [[Frank Sinatra]] as "[[Nancy Sinatra]]'s dad." Sinatra responded by thanking "[[Henry Fonda]] Junior."<ref name=":3" /> [[Tony Curtis]] was a last-minute replacement for [[Warren Beatty]], who had the mumps.<ref name=":2" /><ref name=":5">{{Cite news |last=Warga |first=Wayne |date=April 15, 1969 |title=Old Excitement Lives as Oscar Finds New Home |work=[[Los Angeles Times]] |page=29}}</ref>
+
+[[Jack Albertson]] was presented with the first award of the night – Best Supporting Actor. Albertson got choked up thanking [[Frank D. Gilroy]], the screenwriter of ''[[The Subject Was Roses (film)|The Subject Was Roses]]''.<ref>{{Cite web |date=May 29, 2024 |title=Jack Albertson Wins Supporting Actor: 1969 Oscars |url=https://www.youtube.com/watch?v=nVYZeZUKvv0 |access-date=May 29, 2024 |website=[[YouTube]] |via=[[Oscars.org]]}}</ref>
+
+The [[teleprompter]] was not yet invented, so the presenters read off of handwritten [[cue card]]s.<ref name=":2" /><ref>{{Cite web |title=Frank Sinatra onstage at the 41st Academy Awards Ceremony |url=https://collections.new.oscars.org/Details/Archive/70177964 |url-status=live |archive-url=https://archive.today/20240702014002/https://collections.new.oscars.org/Details/Archive/70177964 |archive-date=July 2, 2024 |website=[[Margaret Herrick Library]] Digital Collections |publisher=[[Oscars.org]]}}</ref> During the Best Original Screenplay presentation (which was won by [[Mel Brooks]] for ''[[The Producers (1967 film)|The Producers]]''), comedian [[Don Rickles]] carried a cue card up to Frank Sinatra at the podium.<ref>{{Cite web |date=May 24, 2024 |title=Mel Brooks Wins Original Screenplay: 1969 Oscars |url=https://www.youtube.com/watch?v=TcnSXEvzULk |access-date=May 24, 2024 |website=[[YouTube]] |via=[[Oscars.org]]}}</ref>
+
+A surprise "friend of Oscar" was revealed by [[Walter Matthau]]; a little monkey dressed in a tux brought [[John Chambers (make-up artist)|John Chambers]] the statuette for special achievement in makeup for [[Planet of the Apes (1968 film)|''Planet of the Apes'']].<ref name=":0" /><ref>{{Cite web |date=May 24, 2024 |title=John Chambers Receives an Honorary Award: 1969 Oscars |url=https://www.youtube.com/watch?v=7LCNNNGane4&t=59s |access-date=May 24, 2024 |website=[[YouTube]] |via=[[Oscars.org]]}}</ref>
+
+Ten-year-old [[Mark Lester]], who portrayed the title role of ''Oliver!'', handed an honorary Oscar to the musical's Canadian choreographer, [[Onna White]].<ref>{{Cite web |date=May 24, 2024 |title=Onna White Receives an Honorary Award: 1969 Oscars |url=https://www.youtube.com/watch?v=TU_yqquu5z4&t=43s |access-date=May 24, 2024 |website=[[YouTube]] |via=[[Oscars.org]]}}</ref>
+
+Towards the end of the ceremony, [[Bob Hope]] presented an emotional [[Martha Raye]] with the [[Jean Hersholt Humanitarian Award]].{{efn|As per the [https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2907/rec/8 Academy Report], Volume 12 Number 2, December 1969, Raye was the first woman to win the Jean Hersholt Humanitarian Award.}} Hope, the host of seventeen previous Oscar shows,<ref name=":14" /> quipped "I finally made it," adding that he had been waiting at the [[Santa Monica Civic Auditorium]], the Oscar home from 1961 to 1968.<ref name=":5" /><ref>{{Cite magazine |last=Lenker |first=Maureen Lee |date=March 18, 2021 |title=All the locations the Oscars have called home |url=https://ew.com/awards/oscars/academy-awards-locations-through-the-years/ |magazine=[[Entertainment Weekly]] |archive-url=https://archive.today/20240527150814/https://ew.com/awards/oscars/academy-awards-locations-through-the-years/ |archive-date=May 27, 2024}}</ref>
+
+Hope later observed that "Oscar is more naked than usual...They're doing things on the screen today I wouldn't do in bed, even if I had the chance."<ref>{{Cite web |date=May 24, 2024 |title=Martha Raye Receives the Jean Hersholt Humanitarian Award: 1969 Oscars |url=https://www.youtube.com/watch?v=vdWO-FsbJQs&t=255s |access-date=May 24, 2024 |website=[[YouTube]] |via=[[Oscars.org]]}}</ref>
+
+[[Ruth Gordon]] won Best Supporting Actress as the nosy neighbour in [[Roman Polanski]]'s [[Rosemary's Baby (film)|''Rosemary's Baby'']].<ref name=":0" /> The 72-year-old actress exclaimed, "I can't tell you how encouraging a thing like this is!" In closing Gordon said, "thank all of you who voted for me, and all of you who didn't – please excuse me."<ref name=":6">{{Cite news |last=Skolsky |first=Sidney |date=April 15, 1969 |title=Quake – And a Kiss! |work=[[Hollywood Citizen-News]] |page=5 Academy Awards Section}}</ref><ref>{{Cite web |date=May 24, 2024 |title=Ruth Gordon Wins Supporting Actress: 1969 Oscars |url=https://www.youtube.com/watch?v=oxsLNhH0yjA |access-date=May 24, 2024 |website=[[YouTube]] |via=[[Oscars.org]]}}</ref>
+
+The director and choreographer [[Gower Champion]] wanted the show to appeal to a younger audience.<ref name=":2" /><ref name=":4" /> He relaxed the dress code from [[white tie]] and tails to [[black tie]] and tuxedos.<ref name=":2" /><ref name=":7">{{Cite news |last=Scott |first=Vernon |date=April 15, 1969 |title=Katie, Barbra Tie in Rare Oscar Vote |work=[[Philadelphia Daily News]] |page=56}}</ref> He reduced the show's length to two hours, partly by easing access to the stage with a wide center ramp over the orchestra pit.<ref name=":5" /> The brevity of several speeches also contributed to the overall running time.<ref name=":0" /><ref>{{Cite news |last=Scott |first=Vernon |date=April 15, 1969 |title=Katharine and Barbra Tie; Robertson 'Best Actor' |work=[[Pittsburgh Press]] |page=15}}</ref><ref>{{Cite web |date=May 30, 2024 |title=Oliver! Wins Art Direction: 1969 Oscars |url=https://www.youtube.com/watch?v=DhyJyCSGuIw&t=118s |website=[[YouTube]] |via=[[Oscars.org]]}}</ref>
+
+Champion also targeted the youth market "with a little help from" Jane Fonda's friends, ''The Soul Rascals''.{{efn|[[Jane Fonda]]'s scripted line in the show production script was "with a little help from my friends, The Soul Rascals."}} The rock group played cover songs as choreographed dancers displayed the Best Costume designs. [[Danilo Donati]], the costume designer for [[Franco Zeffirelli]]'s [[Romeo and Juliet (1968 film)|''Romeo and Juliet'']], was not present, so Fonda handed the Oscar to the dancers portraying the star-crossed lovers as a "symbolic" gesture.<ref name=":8">{{Cite news |last=Gerstel |first=Judith |date=April 15, 1969 |title=Aging Oscar show goes teeny-bopper |work=[[Minneapolis Star]] |page=9}}</ref><ref>{{Cite news |last=Aghayan |first=Ray |date=April 15, 1969 |title=Oscar Style Expert Tells Aims |work=[[Hollywood Citizen-News]] |page=10 Academy Awards Section |pages=}}</ref><ref>{{Cite web |last=Vary |first=Adam B |date=February 28, 2014 |title=The Best Worst Moment in Oscar History |url=https://www.buzzfeed.com/adambvary/the-best-worst-moment-in-oscar-history |url-status=live |archive-url=https://archive.today/20240525014240/https://www.buzzfeed.com/adambvary/the-best-worst-moment-in-oscar-history |archive-date=May 25, 2024 |access-date=May 25, 2024 |website=[[BuzzFeed]]}}</ref>
+
+Throughout the ceremony Champion introduced rear-screen projection of photos and film excerpts onto five movable screens that filled the stage.<ref name=":2" /><ref name=":9">{{Cite news |last=Allen |first=Rich |date=April 15, 1969 |title=Oscar TV Show Missed Bob Hope |work=[[Hollywood Citizen-News]] |page=12 Academy Awards Section}}</ref><ref name=":15">{{Cite news |date=April 12, 1969 |title=Academy Award Night Monday With Stars Galore On CBC - TV |work=[[Winnipeg Free Press]] |page=152}}</ref>
+
+This rear projection was used to set-up the Best Actress category. A "choreographed" photo montage of [[Katharine Hepburn]] in [[The Lion in Winter (1968 film)|''The Lion in Winter'']], [[Patricia Neal]] in [[The Subject Was Roses (film)|''The Subject Was Roses'']], [[Vanessa Redgrave]]{{efn|Best Actress nominee, [[Vanessa Redgrave]] was pregnant and attended the awards ceremony with actor [[Franco Nero]], the father of [[Carlo Gabriel Nero|Carlo Gabriel Redgrave Nero]], as per this [https://collections.new.oscars.org/Details/Archive/70035614 photo] from the Academy Awards show photographs, Margaret Herrick Library, Academy of Motion Picture Arts and Sciences.}} in [[Isadora (film)|''Isadora'']], [[Barbra Streisand]] in [[Funny Girl (film)|''Funny Girl'']] and [[Joanne Woodward]] in ''[[Rachel, Rachel]]'', was displayed on the massive screens. The orchestra, conducted by music director [[Henry Mancini]],<ref>{{Cite web |title=41st Annual Academy Awards Program '69 (with Mancini listed as Music Director) |url=https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/3667/rec/2 |url-status=live |archive-url=https://archive.today/20240702002357/https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/3667/rec/2 |archive-date=July 2, 2024 |website=[[Margaret Herrick Library]] Digital Collections |publisher=[[Oscars.org]]}}</ref><ref>{{Cite web |title=Champion Completes Production Staff; Show Plans on Schedule |url=https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2876/rec/2 |url-status=live |archive-url=https://archive.today/20240625192359/https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2876/rec/2 |archive-date=June 25, 2024 |website=Margaret Herrick Library Digital Collection |publisher=[[Oscars.org]]}}</ref> played an instrumental arrangement of [[Lew Spence]] and [[Alan and Marilyn Bergman|Alan Bergman]]'s 1957 song "That Face."<ref name=":13">{{Cite web |title=Katharine Hepburn and Barbra Streisand Tie for Best Actress: 1969 Oscars |url=https://www.youtube.com/watch?v=PoNdQxkI-0w |access-date=May 24, 2024 |website=[[YouTube]] | date=October 26, 2010 |via=[[Oscars.org]]}}</ref>{{efn|In the show production script this segment is described as a "choreographed montage of slides of the five nominees for best actress projected on the screens onstage, underscored as a cinematic ballet". Ingrid Bergman enters to podium left and says, "There they are...the best actresses of 1968."}}
+
+Announcing the best actress winners, Ingrid Bergman gasped "It's a tie!"<ref name=":13" /> According to an Academy spokesperson in 1969, the actual vote count by the 3,030 eligible Academy members was "never divulged".<ref name=":0" />{{efn|As per the [[Turner Classic Movies]]  [https://web.archive.org/web/20110722174726/http://www.tcm.com/tcmdb/title/25128/Funny-Girl/#articles-reviews Funny Girl trivia article] on its website, "The accounting firm of Price Waterhouse confirmed that they counted and re-counted the votes, and it was an exact tie."}}
+
+Katharine Hepburn was not in attendance, so 38-year-old [[Anthony Harvey]], the English director of ''The Lion in Winter,'' accepted on her behalf.<ref name=":10">{{Cite news |last=Warga |first=Wayne |date=April 15, 1969 |title=Old Excitement Lives as Oscar Finds New Home |work=[[Los Angeles Times]] |page=3}}</ref>
+
+Twenty-six year old Barbra Streisand briefly tripped, stepping on the bell-bottomed leg of her [[Arnold Scaasi]]-designed pantsuit, en route to the stage.<ref name=":6" /><ref name=":11">{{Cite book |last=Streisand |first=Barbra |title=My Name is Barbra Chapter 15, Hello, Gorgeous |publisher=[[Viking]] an imprint of Penguin Random House LLC |year=2023 |isbn=9780698405257 |pages=314–315}}</ref><ref>{{Cite news |last=Graham |first=Sheilah |date=April 15, 1969 |title=Oscar's Love – 'Tis Capricious |work=[[Hollywood Citizen-News]] |page=9 Academy Awards Section}}</ref><ref>{{Cite web |last1=Bartlett |first1=Rhett |last2=Barnes |first2=Mike |date=November 29, 2017 |title=Anthony Harvey, Oscar-Nominated Director of 'The Lion in Winter,' Dies at 87 |url=https://www.hollywoodreporter.com/news/general-news/anthony-harvey-dead-lion-winter-director-kurick-editor-was-87-1062509/ |url-status=live |archive-url=https://archive.today/20240718001050/https://www.hollywoodreporter.com/news/general-news/anthony-harvey-dead-lion-winter-director-kurick-editor-was-87-1062509/ |archive-date=July 18, 2024 |website=[[The Hollywood Reporter]]}}</ref>{{efn|[[Anthony Harvey]] claimed that he "stood on her [Streisand's] dress, and it ripped," as per [https://www.hollywoodreporter.com/news/general-news/anthony-harvey-dead-lion-winter-director-kurick-editor-was-87-1062509/ The Hollywood Reporter]}}
+
+Streisand was shocked to discover her Scaasi suit appeared transparent under the stage lights and  photographers' flashes.<ref name=":10" /><ref name=":11" /><ref>{{Cite web |last=Gray |first=Renée Nicole |date=November 22, 2023 |title=1969 Academy Awards in Arnold Scaasi |url=https://streisandstylefiles.com/1969-academy-awards-in-scaasi-nude-illusion-evening-pajamas/ |url-status=live |archive-url=https://archive.today/20240527111643/https://streisandstylefiles.com/1969-academy-awards-in-scaasi-nude-illusion-evening-pajamas/ |archive-date=May 27, 2024 |access-date=May 27, 2024 |website=Streisand Style Files}}</ref>
+
+Looking down at her Oscar, Streisand said "[[Funny Girl (film)#"Hello, gorgeous"|Hello, gorgeous]]!" – her opening line from ''Funny Girl.''<ref name=":2" /> She acknowledged the honor of "being in such magnificent company as Katharine Hepburn."<ref name=":7" />
+
+[[Sidney Poitier]] had the distinction of presenting Best Picture, the final award of the night, declaring that "1968 was really a vintage year for motion pictures."<ref>{{Cite web |date=May 24, 2024 |title=Oliver! And Carol Reed Win Best Picture and Directing: 1969 Oscars |url=https://www.youtube.com/watch?v=pWRT_eFHoIA&t=165s |access-date=May 24, 2024 |website=[[YouTube]] |via=[[Oscars.org]]}}</ref>
+
+Later that night at the Governors Ball held in the [[The Beverly Hilton|Beverly Hilton]] Hotel, the show's producer, director and choreographer Gower Champion<ref name=":15" /> was applauded for his achievement.<ref name=":12">{{Cite news |last=Greenberg |first=Abe |date=April 15, 1969 |title=Best Actress Tie Brings Gasps |work=[[Hollywood Citizen-News]] |page=2 Academy Awards Section}}</ref> The show earned mostly favourable reviews for its informality, look and pace, but some critics lamented the lack of glamour of previous Oscar nights.<ref name=":4" /><ref name=":8" /><ref name=":9" /><ref name=":10" /><ref name=":12" /><ref>{{Cite news |last=Champlin |first=Charles |date=April 15, 1969 |title=Top Oscars Won by 'Oliver!', Robertson, Streisand, Hepburn |work=[[Los Angeles Times]] |pages=1, 3}}</ref>{{efn|The show was written by [[Tom Waldman]] and his brother [[Frank Waldman]] as per the article "Champion Completes Production Staff; Show Plans on Schedule" in the [https://digitalcollections.oscars.org/digital/collection/p15759coll4/id/2876/rec/2 Academy Report] in the Margaret Herrick Library Digital Collection at [[Oscars.org]]}}
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Fillmregisseur Carol Reed (van de film The Third Man) in Amsterdam, Bestanddeelnr 903-7970 (cropped).png
+| caption1          = [[Carol Reed]], Best Director winner
+| image2            = Cliffrobertson (cropped).jpg
+| caption2          = [[Cliff Robertson]], Best Actor winner
+| image3            = Katharine Hepburn publicity photograph.jpg
+| caption3          = [[Katharine Hepburn]], Best Actress co-winner
+| image4            = Barbra Streisand Ed Sullivan Show 1969 (cropped).jpg
+| caption4          = [[Barbra Streisand]], Best Actress co-winner
+| image5            = Jack Albertson 1971.JPG
+| caption5          = [[Jack Albertson]], Best Supporting Actor winner
+| image6            = Ruth-Gordon-1930.jpg
+| caption6          = [[Ruth Gordon]], Best Supporting Actress winner
+| image7            = MelBrooksApr10.jpg
+| caption7          = [[Mel Brooks]], Best Original Screenplay winner
+| image8            = Walt Disney 1946.JPG
+| caption8          = [[Walt Disney]], Best Animated Short Film winner
+| image9            = John-barry-2006.jpg
+| caption9          = [[John Barry (composer)|John Barry]], Best Original Score (Not a Musical) winner
+| image10            = Michel Legrand Cabourg 2015.jpg
+| caption10          = [[Michel Legrand]], Best Original Song co-winner
+| image11           = Stanley Kubrick in Dr. Strangelove Trailer (4) Cropped.jpg
+| caption11         = [[Stanley Kubrick]], Best Visual Effects winner
+}}
+Nominees were announced on February 24, 1969. Winners are listed first and highlighted in boldface.<ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1968" in the "Award Year(s)" drop-down menu and press "Search".</ref><ref name="Oscars1969">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1969 |title=The 41st Academy Awards (1969) Nominees and Winners |access-date=2011-10-13 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20141221054339/http://www.oscars.org/oscars/ceremonies/1969 |archive-date=2014-12-21 }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Oliver! (film)|Oliver!]]''&nbsp;– [[John and James Woolf|John Woolf]], producer'''
+**''[[Funny Girl (film)|Funny Girl]]''&nbsp;– [[Ray Stark]], producer
+**''[[The Lion in Winter (1968 film)|The Lion in Winter]]''&nbsp;– [[Martin Poll]], producer
+**''[[Rachel, Rachel]]''&nbsp;– [[Paul Newman]], producer
+**''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]''&nbsp;– [[John Brabourne]] and [[Anthony Havelock-Allan]], producers
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Carol Reed]]&nbsp;– ''[[Oliver! (film)|Oliver!]]'''''
+**[[Stanley Kubrick]]&nbsp;– ''[[2001: A Space Odyssey (film)|2001: A Space Odyssey]]''
+**[[Gillo Pontecorvo]]&nbsp;– ''[[The Battle of Algiers]]''
+**[[Anthony Harvey]]&nbsp;– ''[[The Lion in Winter (1968 film)|The Lion in Winter]]''
+**[[Franco Zeffirelli]]&nbsp;– ''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Cliff Robertson]]&nbsp;– ''[[Charly (1968 film)|Charly]]'' as Charly Gordon'''
+**[[Alan Arkin]]&nbsp;– ''[[The Heart Is a Lonely Hunter (film)|The Heart Is a Lonely Hunter]]'' as John Singer
+**[[Alan Bates]]&nbsp;– ''[[The Fixer (1968 film)|The Fixer]]'' as Yakov Bok
+**[[Ron Moody]]&nbsp;– ''[[Oliver! (film)|Oliver!]]'' as [[Fagin]]
+**[[Peter O'Toole]]&nbsp;– ''[[The Lion in Winter (1968 film)|The Lion in Winter]]'' as [[King Henry II of England]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Katharine Hepburn]]&nbsp;– ''[[The Lion in Winter (1968 film)|The Lion in Winter]]'' as [[Eleanor of Aquitaine]]'''
+*''' [[Barbra Streisand]]&nbsp;– ''[[Funny Girl (film)|Funny Girl]]'' as [[Fanny Brice]]'''
+**[[Patricia Neal]]&nbsp;– ''[[The Subject Was Roses (film)|The Subject Was Roses]]'' as Nettie Cleary
+**[[Vanessa Redgrave]]&nbsp;– ''[[Isadora (film)|Isadora]]'' as [[Isadora Duncan]]
+**[[Joanne Woodward]]&nbsp;– ''[[Rachel, Rachel]]'' as Rachel Cameron
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Jack Albertson]]&nbsp;– ''[[The Subject Was Roses (film)|The Subject Was Roses]]'' as John Cleary'''
+**[[Seymour Cassel]]&nbsp;– ''[[Faces (1968 film)|Faces]]'' as Chet
+**[[Daniel Massey (actor)|Daniel Massey]]&nbsp;– ''[[Star! (film)|Star!]]'' as [[Noël Coward]]
+**[[Jack Wild]]&nbsp;– ''[[Oliver! (film)|Oliver!]]'' as [[Artful Dodger|Jack Dawkins ("The Artful Dodger")]]
+**[[Gene Wilder]]&nbsp;– ''[[The Producers (1967 film)|The Producers]]'' as Leo Bloom
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Ruth Gordon]]&nbsp;– ''[[Rosemary's Baby (film)|Rosemary's Baby]]'' as Minnie Castevet'''
+**[[Lynn Carlin]]&nbsp;– ''[[Faces (1968 film)|Faces]]'' as Maria Frost
+**[[Sondra Locke]]&nbsp;– ''[[The Heart Is a Lonely Hunter (film)|The Heart Is a Lonely Hunter]]'' as Mick Kelly
+**[[Kay Medford]]&nbsp;– ''[[Funny Girl (film)|Funny Girl]]'' as [[Fanny Brice|Rose Stern Borach]] 
+**[[Estelle Parsons]]&nbsp;– ''[[Rachel, Rachel]]'' as Calla Mackie
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+*'''''[[The Producers (1967 film)|The Producers]]''&nbsp;– [[Mel Brooks]]'''
+**''[[2001: A Space Odyssey (film)|2001: A Space Odyssey]]'' – [[Stanley Kubrick]] and [[Arthur C. Clarke]]
+**''[[The Battle of Algiers]]''&nbsp;– [[Franco Solinas]] and [[Gillo Pontecorvo]]
+**''[[Faces (1968 film)|Faces]]''&nbsp;– [[John Cassavetes]]
+**''[[Hot Millions]]''&nbsp;– [[Ira Wallach (writer)|Ira Wallach]] and [[Peter Ustinov]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*'''''[[The Lion in Winter (1968 film)|The Lion in Winter]]''&nbsp;– [[James Goldman]] based on [[The Lion in Winter|his play]]'''
+**''[[The Odd Couple (film)|The Odd Couple]]''&nbsp;– [[Neil Simon]] based on [[The Odd Couple (play)|his play]]
+**''[[Oliver! (film)|Oliver!]]''&nbsp;– [[Vernon Harris]] based on [[Oliver!|the stage musical]] by [[Lionel Bart]] and ''[[Oliver Twist]]'' by [[Charles Dickens]]
+**''[[Rachel, Rachel]]''&nbsp;– [[Stewart Stern]] based on the novel ''[[A Jest of God]]'' by [[Margaret Laurence]]
+**''[[Rosemary's Baby (film)|Rosemary's Baby]]''&nbsp;– [[Roman Polanski]] based on [[Rosemary's Baby (novel)|the novel]] by [[Ira Levin]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 41st Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[War and Peace (film series)|War and Peace]]''&nbsp;– [[U.S.S.R.]]'''
+**''[[The Boys of Paul Street]]''&nbsp;– [[Hungary]]
+**''[[The Firemen's Ball]]''&nbsp;– [[Czechoslovakia]]
+**''[[The Girl with the Pistol]]''&nbsp;– [[Italy]]
+**''[[Stolen Kisses]]''&nbsp;– [[France]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Journey into Self (1968 film)|Journey into Self]]''&nbsp;– Bill McGaw'''{{efn|Awarded on May 8, 1969, as the runner-up}}
+*<s>'''''[[Young Americans (1967 film)|Young Americans]]''&nbsp;– [[Robert Cohn]] and [[Alex Grasshoff]]'''</s> (award revoked)
+**''[[A Few Notes on Our Food Problem]]''&nbsp;– [[U.S. Information Agency]]
+**''[[Legendary Champions]]''&nbsp;– William Cayton
+**''[[Other Voices (1970 film)|Other Voices]]''&nbsp;– David H. Sawyer
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Why Man Creates]]''&nbsp;– [[Saul Bass]]'''
+**''[[The House That Ananda Built]]''&nbsp;– Films Division, Government of India
+**''[[The Revolving Door]]''&nbsp;– Vision Associates Production for the American Foundation Institute of Corrections
+**''[[A Space to Grow]]&nbsp;– [[Office of Economic Opportunity]]'' for Project Upward Bound
+**''[[A Way Out of the Wilderness]]''&nbsp;– Dan E. Weisburd
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[Robert Kennedy Remembered]]''&nbsp;– Guggenheim Productions'''
+**''[[The Dove (1968 film)|The Dove]]''&nbsp;– Coe-Davis Ltd.
+**''[[Pas de deux (film)|Duo]]''&nbsp;– [[National Film Board of Canada]]
+**''Prelude''&nbsp;– Prelude Co.
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Winnie the Pooh and the Blustery Day]]''&nbsp;– [[Walt Disney]]''' <small>([[List of posthumous Academy Award winners and nominees|posthumous award]])</small>
+**''[[The House That Jack Built (1967 film)|The House That Jack Built]]''&nbsp;– [[National Film Board of Canada]]
+**''[[The Magic Pear Tree]]''&nbsp;– Murakami-Wolf Films
+**''Windy Day''&nbsp;– [[Hubley Studios]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Score -- for a Motion Picture (Not a Musical))]]}}
+*'''''[[The Lion in Winter (1968 film)|The Lion in Winter]]''&nbsp;– [[John Barry (composer)|John Barry]]'''
+**''[[The Fox (1967 film)|The Fox]]''&nbsp;– [[Lalo Schifrin]]
+**''[[Planet of the Apes (1968 film)|Planet of the Apes]]''&nbsp;– [[Jerry Goldsmith]]
+**''[[The Shoes of the Fisherman (movie)|The Shoes of the Fisherman]]''&nbsp;– [[Alex North]]
+**''[[The Thomas Crown Affair (1968 film)|The Thomas Crown Affair]]''&nbsp;– [[Michel Legrand]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Score of a Musical Picture -- Original or Adaptation)]]}}
+*'''''[[Oliver! (film)|Oliver!]]''&nbsp;– [[Johnny Green]]'''
+**''[[Finian's Rainbow (1968 film)|Finian's Rainbow]]''&nbsp;– [[Ray Heindorf]]
+**''[[Funny Girl (film)|Funny Girl]]''&nbsp;– [[Walter Scharf]]
+**''[[Star! (film)|Star!]]''&nbsp;– [[Lennie Hayton]]
+**''[[The Young Girls of Rochefort]]''&nbsp;– Adaptation: [[Michel Legrand]]; Song Score: Michel Legrand and [[Jacques Demy]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Song Original for the Picture]]}}
+*'''"[[The Windmills of Your Mind]]" from ''[[The Thomas Crown Affair (1968 film)|The Thomas Crown Affair]]''&nbsp;– Music by [[Michel Legrand]]; Lyrics by [[Alan and Marilyn Bergman]]'''
+**"[[Chitty Chitty Bang Bang (song)|Chitty Chitty Bang Bang]]" from ''[[Chitty Chitty Bang Bang]]''&nbsp;– Music and Lyrics by The [[Sherman Brothers]]: [[Richard M. Sherman]] and [[Robert B. Sherman]]
+**"[[For Love of Ivy]]" from ''[[For Love of Ivy]]''&nbsp;– Music by [[Quincy Jones]]; Lyrics by [[Bob Russell (songwriter)|Bob Russell]]
+**"Funny Girl" from ''[[Funny Girl (film)|Funny Girl]]''&nbsp;– Music by [[Jule Styne]]; Lyrics by [[Bob Merrill]]
+**"Star!" from ''[[Star! (film)|Star!]]''&nbsp;– Music by [[Jimmy Van Heusen]]; Lyrics by [[Sammy Cahn]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[Oliver! (film)|Oliver!]]''&nbsp;– [[Shepperton Studios|Shepperton Studio]] Sound Dept.'''
+**''[[Bullitt]]''&nbsp;– [[Warner Bros.-Seven Arts|Warner Bros.-Seven Arts Studio]] Sound Dept.
+**''[[Finian's Rainbow (1968 film)|Finian's Rainbow]]''&nbsp;– [[Warner Bros.-Seven Arts|Warner Bros.-Seven Arts Studio]] Sound Dept.
+**''[[Funny Girl (film)|Funny Girl]]''&nbsp;– [[Columbia Pictures|Columbia]] Studio Sound Dept.
+**''[[Star! (film)|Star!]]''&nbsp;– [[Twentieth Century-Fox]] Studio Sound Dept.
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Oliver! (film)|Oliver!]]''&nbsp;– Art Direction: [[John Box]] and [[Terence Marsh]]; Set Decoration: [[Vernon Dixon]] and [[Ken Muggleston]]'''
+**''[[2001: A Space Odyssey (film)|2001: A Space Odyssey]]''&nbsp;– Art Direction and Set Decoration: [[Anthony Masters]], [[Harry Lange]] and [[Ernest Archer (art director)|Ernest Archer]]
+**''[[The Shoes of the Fisherman (movie)|The Shoes of the Fisherman]]''&nbsp;– Art Direction and Set Decoration: [[George Davis (art director)|George W. Davis]] and [[Edward Carfagno]]
+**''[[Star! (film)|Star!]]''&nbsp;– Art Direction: [[Boris Leven]]; Set Decoration: [[Walter M. Scott]] and [[Howard Bristol]]
+**''[[War and Peace (film series)|War and Peace]]''&nbsp;– Art Direction: [[Mikhail Bogdanov (artist)|Mikhail Bogdanov]] and [[Gennady Myasnikov]]; Set Decoration: [[Georgi Koshelev|G. Koshelev]] and [[V. Uvarov]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]''&nbsp;– [[Pasqualino De Santis]]'''
+**''[[Funny Girl (film)|Funny Girl]]''&nbsp;– [[Harry Stradling]]
+**''[[Ice Station Zebra]]''&nbsp;– [[Daniel L. Fapp]]
+**''[[Oliver! (film)|Oliver!]]''&nbsp;– [[Oswald Morris]]
+**''[[Star! (film)|Star!]]''&nbsp;– [[Ernest Laszlo]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]''&nbsp;– [[Danilo Donati]]'''
+**''[[The Lion in Winter (1968 film)|The Lion in Winter]]''&nbsp;– [[Margaret Furse]]
+**''[[Oliver! (film)|Oliver!]]''&nbsp;– [[Phyllis Dalton]]
+**''[[Planet of the Apes (1968 film)|Planet of the Apes]]''&nbsp;– [[Morton Haack]]
+**''[[Star! (film)|Star!]]''&nbsp;– [[Donald Brooks]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Bullitt]]''&nbsp;– [[Frank P. Keller]]'''
+**''[[Funny Girl (film)|Funny Girl]]''&nbsp;– [[Robert Swink]], [[Maury Winetrobe]] and William Sands
+**''[[The Odd Couple (film)|The Odd Couple]]''&nbsp;– [[Frank Bracht]]
+**''[[Oliver! (film)|Oliver!]]''&nbsp;– [[Ralph Kemplen]]
+**''[[Wild in the Streets]]''&nbsp;– Fred R. Feitshans Jr. and [[Eve Newman]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Visual Effects]]}}
+*'''''[[2001: A Space Odyssey (film)|2001: A Space Odyssey]]''&nbsp;– [[Stanley Kubrick]]'''
+**''[[Ice Station Zebra]]''&nbsp;– [[Hal Millar]] and [[Joseph McMillan Johnson]]
+|}
+
+===Honorary Awards===
+*To [[John Chambers (make-up artist)|John Chambers]] for his outstanding makeup achievement for ''[[Planet of the Apes (1968 film)|Planet of the Apes]]''.
+*To [[Onna White]] for her outstanding choreography achievement for ''[[Oliver! (film)|Oliver!]]''.
+
+===Jean Hersholt Humanitarian Award===
+*[[Martha Raye]]
+
+===Multiple nominations and awards===
+{{Col-begin|width=80%}}
+
+{{Col-1-of-2}}
+These films had multiple nominations:
+*11 nominations: ''[[Oliver! (film)|Oliver!]]''{{efn|name=Oliver|Not including the Honorary Award for ''Oliver!''.}}
+*8 nominations: ''[[Funny Girl (film)|Funny Girl]]''
+*7 nominations: ''[[The Lion in Winter (1968 film)|The Lion in Winter]]'' and ''[[Star! (film)|Star!]]''
+*4 nominations: ''[[2001: A Space Odyssey (film)|2001: A Space Odyssey]]'', ''[[Rachel, Rachel]]'', and ''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]''
+*3 nominations: ''[[Faces (1968 film)|Faces]]''
+*2 nominations: ''[[The Battle of Algiers]]'', ''[[Bullitt]]'', ''[[Finian's Rainbow (1968 film)|Finian's Rainbow]]'', ''[[The Heart Is a Lonely Hunter (film)|The Heart Is a Lonely Hunter]]'', ''[[Ice Station Zebra]]'', ''[[The Odd Couple (film)|The Odd Couple]]'', ''[[Planet of the Apes (1968 film)|Planet of the Apes]]'', ''[[The Producers (1967 film)|The Producers]]'', ''[[Rosemary's Baby (film)|Rosemary's Baby]]'', ''[[The Shoes of the Fisherman (movie)|The Shoes of the Fisherman]]'', ''[[The Subject Was Roses (film)|The Subject Was Roses]]'', ''[[The Thomas Crown Affair (1968 film)|The Thomas Crown Affair]]'', and ''[[War and Peace (film series)|War and Peace]]''
+
+{{Col-2-of-2}}
+The following films received multiple awards:
+*5 wins: ''[[Oliver! (film)|Oliver!]]''{{efn|name=Oliver}}
+*3 wins: ''[[The Lion in Winter (1968 film)|The Lion in Winter]]''
+*2 wins: ''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]''
+{{Col-end}}
+
+===Presenters===
+*[[Ingrid Bergman]] (Presenter: Best Actress and Best Cinematography)
+*[[Ingrid Bergman]], [[Diahann Carroll]], [[Jane Fonda]], [[Rosalind Russell]] and [[Natalie Wood]] (Presenters: Best Director)
+*[[Diahann Carroll]] (Presenter: Best Special Visual Effects, Documentary Awards & the Honorary Award to Onna White)
+*[[Tony Curtis]] (Presenter: Best Supporting Actress, Short Subjects Awards and Documentary Awards)
+*[[Jane Fonda]] (Presenter: Best Foreign Language Film, Best Costume Design and Short Subjects Awards)
+*[[Bob Hope]] (Presenter: Jean Hersholt Humanitarian Award to Martha Raye)
+*[[Burt Lancaster]] (Presenter: Best Actor, Best Special Visual Effects and the Scientific or Technical Awards)
+*[[Mark Lester]] (Presenter: Honorary Academy Award to Onna White)
+*[[Henry Mancini]] and [[Marni Nixon]] (Presenter: Best Original or Adaptation Score)
+*[[Walter Matthau]] (Presenter: Best Film Editing & the Honorary Award to John Chambers)
+*[[Gregory Peck]] (Presenter: Best Original Score for a Motion Picture (Not a Musical))
+*[[The Pink Panther (character)|Pink Panther]] (Presentation: Best Short Subject – Cartoons)<ref>{{cite web|url=http://d23.disney.go.com/news/2010/02/all-facts-no-fluff-and-stuff/ |title=All Facts, No Fluff And Stuff |author=Jim Fanning |access-date=2012-01-21 |url-status=live |archive-url=https://web.archive.org/web/20120306102633/http://d23.disney.go.com/news/2010/02/all-facts-no-fluff-and-stuff/ |archive-date=2012-03-06 }}</ref>
+*[[Sidney Poitier]] (Presenter: Best Picture)
+*[[Don Rickles]] (Presenter: Best Story and Screenplay Written Directly for the Screen)
+*[[Rosalind Russell]] (Presenter: Best Original Score for a Motion Picture (Not a Musical), Best Sound and Screenplay Based on Material from Another Medium Awards)
+*[[Frank Sinatra]] (Presenter: Best Supporting Actor, Best Song Original for the Picture and Writing Awards)
+*[[Natalie Wood]] (Presenter: Best Art Direction and the Scientific or Technical Awards)
+
+===Performers===
+Source<ref>{{Cite web |title=The Performers, Official Program 41st Academy Awards |url=https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/3669 |website=Margaret Herrick Library Digital Collections |publisher=[[Oscars.org]]}}</ref>
+*[[José Feliciano]] ("[[The Windmills of Your Mind]]" from ''[[The Thomas Crown Affair (1968 film)|The Thomas Crown Affair]]'') 
+*[[Aretha Franklin]] ("Funny Girl" from ''[[Funny Girl (film)|Funny Girl]]'')
+*[[Abbey Lincoln]] ("For Love of Ivy" from ''[[For Love of Ivy]]'')
+*[[Paula Kelly (actress)|Paula Kelly]] and the [[UCLA Band]] ("Chitty Chitty Bang Bang" from ''[[Chitty Chitty Bang Bang (film)|Chitty Chitty Bang Bang]]'')
+*[[Frank Sinatra]] ("Star!" from ''[[Star! (film)|Star!]]'')
+
+== See also ==
+* [[1968 in film]]
+* [[11th Grammy Awards]]
+* [[20th Primetime Emmy Awards]]
+* [[21st Primetime Emmy Awards]]
+* [[22nd British Academy Film Awards]]
+* [[23rd Tony Awards]]
+* [[26th Golden Globe Awards]]
+
+==Notes==
+{{notelist}}
+
+==References==
+<references/>
+
+== External links ==
+
+* [https://www.oscars.org/ Academy of Motion Pictures Arts and Sciences official website]
+* [https://www.oscars.org/oscars/ceremonies/1969 41st Academy Awards Highlights] at [[Oscars.org]]
+* [https://www.youtube.com/user/Oscars Oscars Channel] at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+* [https://www.academymuseum.org/en Academy Museum of Motion Pictures official website]
+* [https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/3665/ Official Program, 41st Academy Awards] at [[Oscars.org]]
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 41}}
+[[Category:1968 film awards]]
+[[Category:1968 awards in the United States]]
+[[Category:1969 in Los Angeles]]
+[[Category:1969 in American cinema]]
+[[Category:April 1969 in the United States]]
+[[Category:1969 controversies in the United States]]
+[[Category:Academy Awards ceremonies]]

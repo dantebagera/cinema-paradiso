@@ -1,0 +1,6 @@
+{| class="wikitable"
+{{Award category|#F9EFAA|[[Golden Globe Award for Best Motion Picture – Drama|Best Motion Picture – Drama]]}}
+* '''''[[The Brutalist]]'''''
+{{Award category|#F9EFAA|[[Golden Globe Award for Best Actor in a Motion Picture – Drama|Best Actor in a Motion Picture – Drama]]}}
+* '''[[Adrien Brody]] – ''[[The Brutalist]]'' as László Tóth'''<!-- Do NOT wikilink to real-life individual! They are NOT the same character. -->
+|}

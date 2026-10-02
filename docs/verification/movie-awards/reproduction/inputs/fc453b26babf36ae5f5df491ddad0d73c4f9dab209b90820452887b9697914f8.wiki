@@ -1,0 +1,302 @@
+{{oscars short description|films-year=1969}}
+{{Use mdy dates|date=July 2022}}
+{{More citations needed|date=September 2015}}
+{{Infobox film awards
+| number = 42
+| award = Academy Awards
+| date = April 7, 1970
+| image = 42nd Academy Awards.jpg
+| site = [[Dorothy Chandler Pavilion]], Los Angeles
+| producer = [[M. J. Frankovich]]
+| director = Richard Dunlap<br>[[Jack Haley Jr.]]
+| best_picture = ''[[Midnight Cowboy]]''
+| most_wins = ''[[Butch Cassidy and the Sundance Kid]]'' (4)
+| most_nominations = ''[[Anne of the Thousand Days]]'' (10)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 2 hours, 25 minutes
+| ratings = 43.4% ([[Nielsen ratings]])
+| last = 41st
+| next = 43rd
+}}
+
+The '''42nd Academy Awards''' were presented April 7, 1970, at the [[Dorothy Chandler Pavilion]] in Los Angeles, California.  For the second year in a row, there was no official host. This was the first Academy Awards ceremony to be broadcast via satellite to an international audience, although Brazil was the only country outside North America to air the event live.<ref>{{YouTube|id=hEnAY6tqSBA|title=The Opening of the Academy Awards in 1970|link=no}} At 5:30 mark. {{retrieved|access-date=March 27, 2016}}</ref>
+
+One year after ''[[Oliver! (film)|Oliver!]]'' became the only [[Motion Picture Association film rating system|G-rated]] film to win [[Academy Award for Best Picture|Best Picture]], ''[[Midnight Cowboy]]'' became the first and only [[X-rated]] film to win, though its rating was changed in 1971 to [[Motion Picture Association of America film rating system|R]] after the [[Motion Picture Association|MPAA]] revised its ratings criteria. Only one other X-rated film has been nominated for Best Picture since, [[Stanley Kubrick]]'s ''[[A Clockwork Orange (film)|A Clockwork Orange]]'' ([[44th Academy Awards|1971]]), which was also subsequently downgraded to an R rating (though this was a result of cuts to the original film).
+
+''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' set an Oscar record by receiving nine nominations without one for Best Picture. This was the last time until the [[68th Academy Awards]] wherein none of the four winning performances came from Best Picture nominated films, as well as the first ceremony in which every acting nomination was in color. [[Jack Nicholson]], who would go on to become the [[List of actors with more than one Academy Award nomination in the acting categories|most-nominated male performer]] in Oscars history, received his first nomination, for [[Academy Award for Best Supporting Actor|Best Supporting Actor]] for ''[[Easy Rider]]''.
+
+==The ceremony==
+This was the first Academy Award ceremony intended to be broadcast via satellite worldwide, but according to Klaus Lehmann, a foreign sales executive of the [[American Broadcasting Company|ABC]] television network, in addition to Canada and Mexico (countries which had broadcast the event since [[25th Academy Awards|1953]], and carried it live since [[36th Academy Awards|1964]]), only two South American countries, Chile and Brazil, roughly in the Oscars' time zone, were interested in the live coverage. The Chilean television rights to the Oscars were sold by ABC International to [[Televisión Nacional de Chile]] while the Brazilian rights were sold to [[Rede Tupi|TV Tupi]]. The latter country's rights to the TV broadcast of the Oscars were moved to a joint venture of [[Rede Bandeirantes|TV Bandeirantes]] and [[Rede Record|TV Record]]. 
+
+Since at the time [[television standards conversion]] was difficult, about 50 other countries broadcast the Oscars on a delay. Furthermore, in Europe, most TV broadcasters signed off at or just after midnight; thus the Oscars were not broadcast live and were recorded on film and then shipped to broadcasters with a minimum four-day delay from the awards' broadcast date. An early attempt to change the Academy Awards presentation's start time to 1 p.m. to fit European television audiences was rejected by AMPAS executives. 
+
+In terms of performances, in-between presenting the documentary awards, [[Bob Hope]] and [[Fred Astaire]] discussed how Astaire had never danced on the Academy Awards broadcast before, with Astaire claiming to have "given it [dancing] up" the previous year. Cuing the orchestra, Hope then left the stage as Astaire began an ‘‘impromptu’’ dance performance (actually scripted and rehearsed), first in a modern jazz style before ending with traditional tap dancing (this would not be Astaire's final dance performance as he would dance in the film ''[[That's Entertainment, Part II]]'' six years later). ''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' holds the record for having the most nominations for a film without a Best Picture nomination, receiving 9 nominations.
+
+[[Cary Grant]]'s award was described as the most popular of the evening; the audience was described as having "went wild" over his receiving the Academy Honorary Award.<ref name="Oscars '69 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/846/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=845 |isbn=0-385-04060-1}}</ref>
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = 
+| caption1          = [[John Schlesinger]], Best Director winner
+| image2            =John Wayne - still portrait.jpg
+| caption2          = [[John Wayne]], Best Actor winner
+| image3            = Maggie Smith - Vintage (trim).jpg
+| caption3          = [[Maggie Smith]], Best Actress winner
+| image4            = Gig Young - 1953.jpg
+| caption4          = [[Gig Young]], Best Supporting Actor winner
+| image5            = Goldie Hawn - 1970.jpg
+| caption5          = [[Goldie Hawn]], Best Supporting Actress winner
+| image6            = William Goldman.jpg
+| caption6          = [[William Goldman]], Best Original Screenplay winner
+| image7            = Burt Bacharach 2000.jpg
+| caption7          = [[Burt Bacharach]], Best Original Score (Not a Musical) winner & Best Original Song co-winner
+}}
+Nominees were announced on February 16, 1970. Winners are listed first and highlighted in boldface.<ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1969" in the "Award Year(s)" drop-down menu and press "Search".</ref><ref name="Oscars1969">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1970 |title=The 42nd Academy Awards (1970) Nominees and Winners |access-date=2011-01-11 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20141228193311/http://www.oscars.org/oscars/ceremonies/1970 |archive-date=2014-12-28 }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Midnight Cowboy]]'' – [[Jerome Hellman]], producer'''
+**''[[Anne of the Thousand Days]]'' – [[Hal B. Wallis]], producer
+**''[[Butch Cassidy and the Sundance Kid]]'' – [[John Foreman (producer)|John Foreman]], producer
+**''[[Hello, Dolly! (film)|Hello, Dolly!]]'' – [[Ernest Lehman]], producer
+**''[[Z (1969 film)|Z]]'' – [[Jacques Perrin]] and [[Ahmed Rachedi (film director)|Ahmed Rachedi]], producers
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[John Schlesinger]] – ''[[Midnight Cowboy]]'''''
+**[[Arthur Penn]] – ''[[Alice's Restaurant (film)|Alice's Restaurant]]''
+**[[George Roy Hill]] – ''[[Butch Cassidy and the Sundance Kid]]''
+**[[Sydney Pollack]] – ''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]''
+**[[Costa-Gavras]] – ''[[Z (1969 film)|Z]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[John Wayne]] – ''[[True Grit (1969 film)|True Grit]]'' as [[Rooster Cogburn (character)|Rooster Cogburn]]'''
+**[[Richard Burton]] – ''[[Anne of the Thousand Days]]'' as [[Henry VIII|King Henry VIII of England]]
+**[[Dustin Hoffman]] – ''[[Midnight Cowboy]]'' as Enrico "Ratso" Rizzo
+**[[Peter O'Toole]] – ''[[Goodbye, Mr. Chips (1969 film)|Goodbye, Mr. Chips]]'' as Arthur Chipping
+**[[Jon Voight]] – ''[[Midnight Cowboy]]'' as Joe Buck
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Maggie Smith]] – ''[[The Prime of Miss Jean Brodie (film)|The Prime of Miss Jean Brodie]]'' as [[Jean Brodie]]'''
+**[[Geneviève Bujold]] – ''[[Anne of the Thousand Days]]'' as [[Anne Boleyn]]
+**[[Jane Fonda]] – ''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' as Gloria Beatty
+**[[Liza Minnelli]] – ''[[The Sterile Cuckoo]]'' as Mary Ann "Pookie" Adams
+**[[Jean Simmons]] – ''[[The Happy Ending]]'' as Mary Wilson
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Gig Young]] – ''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' as Rocky'''
+**[[Rupert Crosse]] – ''[[The Reivers (film)|The Reivers]]'' as Ned
+**[[Elliott Gould]] – ''[[Bob & Carol & Ted & Alice]]'' as Ted Henderson
+**[[Jack Nicholson]] – ''[[Easy Rider]]'' as George Hanson
+**[[Anthony Quayle]] – ''[[Anne of the Thousand Days]]'' as [[Thomas Wolsey]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Goldie Hawn]] – ''[[Cactus Flower (film)|Cactus Flower]]'' as Toni Simmons'''
+**[[Catherine Burns]] – ''[[Last Summer (1969 film)|Last Summer]]'' as Rhoda
+**[[Dyan Cannon]] – ''[[Bob & Carol & Ted & Alice]]'' as Alice Henderson
+**[[Sylvia Miles]] – ''[[Midnight Cowboy]]'' as Cass
+**[[Susannah York]] – ''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' as Alice LeBlanc
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Based on Material Not Previously Published or Produced)]]}}
+*'''''[[Butch Cassidy and the Sundance Kid]]'' – [[William Goldman]]'''
+**''[[Bob & Carol & Ted & Alice]]'' – [[Paul Mazursky]] and [[Larry Tucker (screenwriter)|Larry Tucker]]
+**''[[The Damned (1969 film)|The Damned]]'' – Story by [[Nicola Badalucco]]; Screenplay by Nicola Badalucco, [[Enrico Medioli]], and [[Luchino Visconti]]
+**''[[Easy Rider]]'' – [[Peter Fonda]], [[Dennis Hopper]] and [[Terry Southern]]
+**''[[The Wild Bunch]]'' – Story by [[Walon Green]] and [[Roy N. Sickner]]; Screenplay by Walon Green and [[Sam Peckinpah]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*'''''[[Midnight Cowboy]]'' – [[Waldo Salt]] based on [[Midnight Cowboy (novel)|the novel]] by [[James Leo Herlihy]]'''
+**''[[Anne of the Thousand Days]]'' – Screenplay by John Hale and [[Bridget Boland]]; Adaptation by Richard Sokolove based on the play by [[Maxwell Anderson]]
+**''[[Goodbye, Columbus (film)|Goodbye, Columbus]]'' – [[Arnold Schulman]] based on [[Goodbye, Columbus|the novel]] by [[Philip Roth]]
+**''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' – [[James Poe]] and [[Robert E. Thompson (screenwriter)|Robert E. Thompson]] based on [[They Shoot Horses, Don't They? (novel)|the novel]] by [[Horace McCoy]]
+**''[[Z (1969 film)|Z]]'' – [[Jorge Semprún]] and [[Costa-Gavras]] based on the novel by [[Vassilis Vassilikos]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 42nd Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[Z (1969 film)|Z]]'' ([[Algeria]])'''
+**''[[Ådalen 31]]'' ([[Sweden]])
+**''[[Battle of Neretva (film)|Battle of Neretva]]'' ([[Yugoslavia]])
+**''[[The Brothers Karamazov (1969 film)|The Brothers Karamazov]]'' ([[Soviet Union]])
+**''[[My Night at Maud's]]'' ([[France]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Arthur Rubinstein – The Love of Life]]'' – Bernard Chevry'''
+**''[[Before the Mountain Was Moved]]'' – [[Robert K. Sharpe]]
+**''[[In the Year of the Pig]]'' – [[Emile de Antonio]]
+**''[[The Olympics in Mexico]]'' – Comite Organizador de los [[1968 Summer Olympics|Juegos de la XIX Olimpiada]]
+**''[[The Wolf Men]]'' – [[Irwin Rosten]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Czechoslovakia 1968]]'' – [[Denis Sanders]] and [[Robert M. Fresco]]'''
+**''[[An Impression of John Steinbeck: Writer]]'' – [[Donald Wrye]]
+**''[[Jenny Is a Good Thing]]'' – Joan Horvath
+**''[[Leo Beuerman]]'' – Arthur H. Wolf and Russell A. Mosser
+**''[[The Magic Machines]]'' – [[Joan Keller Stern]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[The Magic Machines]]'' – [[Joan Keller Stern]]'''
+**''[[Blake (film)|Blake]]'' – [[Douglas Jackson (filmmaker)|Doug Jackson]]
+**''People Soup'' – Marc Merson
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[It's Tough to Be a Bird]]'' – [[Ward Kimball]]'''
+**''Of Men and Demons'' – [[John Hubley]] and [[Faith Hubley]]
+**''[[Walking (1968 film)|Walking]]'' – [[Ryan Larkin]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Score -- for a Motion Picture (Not a Musical))]]}}
+*'''''[[Butch Cassidy and the Sundance Kid]]'' – [[Burt Bacharach]]'''
+** ''[[Anne of the Thousand Days]]'' – [[Georges Delerue]]
+** ''[[The Reivers (film)|The Reivers]]'' – [[John Williams]]
+** ''[[The Secret of Santa Vittoria]]'' – [[Ernest Gold (composer)|Ernest Gold]]
+** ''[[The Wild Bunch]]'' – [[Jerry Fielding]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Score of a Musical Picture -- Original or Adaptation)]]}}
+*'''''[[Hello, Dolly! (film)|Hello, Dolly!]]'' – Adaptation score by [[Lennie Hayton]] and [[Lionel Newman]]'''
+** ''[[Goodbye, Mr. Chips (1969 film)|Goodbye, Mr. Chips]]'' – Music and Lyrics by [[Leslie Bricusse]]; Adaptation score by [[John Williams]]
+** ''[[Paint Your Wagon (film)|Paint Your Wagon]]'' – Adaptation score by [[Nelson Riddle]]
+** ''[[Sweet Charity (film)|Sweet Charity]]'' – Adaptation score by [[Cy Coleman]]
+** ''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' – Adaptation score by [[Johnny Green]] and [[Albert Woodbury]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song -- Original for the Picture)]]}}
+*'''"[[Raindrops Keep Fallin' on My Head]]" from ''[[Butch Cassidy and the Sundance Kid]]'' – Music by [[Burt Bacharach]]; Lyrics by [[Hal David]]'''
+**"[[Come Saturday Morning (song)|Come Saturday Morning]]" from ''[[The Sterile Cuckoo]]'' – Music by [[Fred Karlin]]; Lyrics by [[Dory Previn]]
+**"[[Jean (song)|Jean]]" from ''[[The Prime of Miss Jean Brodie (film)|The Prime of Miss Jean Brodie]]'' – Music and Lyrics by [[Rod McKuen]]
+**"[[True Grit (song)|True Grit]]" from ''[[True Grit (1969 film)|True Grit]]'' – Music by [[Elmer Bernstein]]; Lyrics by [[Don Black (lyricist)|Don Black]]
+**"[[What Are You Doing the Rest of Your Life?]]" from ''[[The Happy Ending]]'' – Music by [[Michel Legrand]]; Lyrics by [[Alan and Marilyn Bergman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound|Best Sound]]}}
+*'''''[[Hello, Dolly! (film)|Hello, Dolly!]]'' – [[Jack Solomon (sound engineer)|Jack Solomon]] and [[Murray Spivack]]'''
+**''[[Anne of the Thousand Days]]'' – [[John Aldred (sound engineer)|John Aldred]]
+**''[[Butch Cassidy and the Sundance Kid]]'' – [[William Edmondson (sound engineer)|William Edmondson]] and [[David Dockendorf]]
+**''[[Gaily, Gaily]]'' – [[Robert Martin (audio engineer)|Robert Martin]] and [[Clem Portman]]
+**''[[Marooned (1969 film)|Marooned]]'' – [[Les Fresholtz]] and [[Arthur Piantadosi]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Hello, Dolly! (film)|Hello, Dolly!]]'' – Art Direction: [[John DeCuir]], [[Jack Martin Smith]], and [[Herman A. Blumenthal]]; Set Decoration: [[Walter M. Scott]], [[George James Hopkins]], and [[Raphaël Bretton]]'''
+**''[[Anne of the Thousand Days]]'' – Art Direction: [[Maurice Carter (production designer)|Maurice Carter]] and [[Lionel Couch]]; Set Decoration: [[Patrick McLoughlin (set decorator)|Patrick McLoughlin]]
+**''[[Gaily, Gaily]]'' – Art Direction: [[Robert F. Boyle]] and [[George B. Chan]]; Set Decoration: [[Edward G. Boyle]] and [[Carl Biddiscombe]]
+**''[[Sweet Charity (film)|Sweet Charity]]'' &ndash; Art Direction: [[Alexander Golitzen]] and [[George C. Webb]]; Set Decoration: [[Jack D. Moore]]
+**''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' – Art Direction: [[Harry Horner]]; Set Decoration: [[Frank R. McKelvy]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Butch Cassidy and the Sundance Kid]]'' – [[Conrad Hall]]'''
+**''[[Anne of the Thousand Days]]'' – [[Arthur Ibbetson]]
+**''[[Bob & Carol & Ted & Alice]]'' – [[Charles Lang]]
+**''[[Hello, Dolly! (film)|Hello, Dolly!]]'' – [[Harry Stradling]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]])
+**''[[Marooned (1969 film)|Marooned]]'' – [[Daniel L. Fapp]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Anne of the Thousand Days]]'' – [[Margaret Furse]]'''
+**''[[Gaily, Gaily]]'' – [[Ray Aghayan]]
+**''[[Hello, Dolly! (film)|Hello, Dolly!]]'' – [[Irene Sharaff]]
+**''[[Sweet Charity (film)|Sweet Charity]]'' – [[Edith Head]]
+**''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' – [[Donfeld]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Z (1969 film)|Z]]'' — [[Françoise Bonnot]]'''
+** ''[[Hello, Dolly! (film)|Hello, Dolly!]]'' — [[William Reynolds (film editor)|William H. Reynolds]]
+** ''[[Midnight Cowboy]]'' — [[Hugh A. Robertson]]
+** ''[[The Secret of Santa Vittoria]]'' — [[William Lyon (film editor)|William Lyon]] and [[Earle Herdan]]
+** ''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]'' — [[Fredric Steinkamp]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Visual Effects]]}}
+*'''''[[Marooned (1969 film)|Marooned]]'' – [[Robbie Robertson (visual effects artist)|Robbie Robertson]]'''
+**''[[Krakatoa, East of Java]]'' – [[Eugène Lourié]] and [[Alex Weldon]]
+|}
+
+=== Honorary Award ===
+
+* To [[Cary Grant]] for his unique mastery of the art of screen acting with the respect and affection of his colleagues.<ref>{{Cite web |date=2014-07-17 |title=Honorary Award {{!}} Oscars.org {{!}} Academy of Motion Picture Arts and Sciences |url=https://www.oscars.org/governors/honorary |access-date=2022-11-27 |website=www.oscars.org |language=en}}</ref>
+
+=== Jean Hersholt Humanitarian Award ===
+
+* [[George Jessel (actor)|George Jessel]]<ref>{{Cite web |title=1970 {{!}} Oscars.org {{!}} Academy of Motion Picture Arts and Sciences |url=https://www.oscars.org/oscars/ceremonies/1970 |access-date=2022-11-27 |website=www.oscars.org |date=October 4, 2014 |language=en}}</ref>
+
+===Multiple nominations and awards===
+{{Col-begin}}
+{{Col-1-of-2}}
+These films had multiple nominations:
+*''10 nominations'': ''[[Anne of the Thousand Days]]'' 
+*''9 nominations'': ''[[They Shoot Horses, Don't They? (film)|They Shoot Horses, Don't They?]]''
+*''7 nominations'': ''[[Butch Cassidy and the Sundance Kid]]'', ''[[Hello, Dolly! (film)|Hello, Dolly!]]'' and ''[[Midnight Cowboy]]''
+*''5 nominations'': ''[[Z (1969 film)|Z]]''
+*''4 nominations'': ''[[Bob & Carol & Ted & Alice]]''
+*''3 nominations'': ''[[Gaily, Gaily]]'', ''[[Marooned (1969 film)|Marooned]]'' and ''[[Sweet Charity (film)|Sweet Charity]]''
+*''2 nominations'': ''[[Easy Rider]]'', ''[[Goodbye, Mr. Chips (1969 film)|Goodbye, Mr. Chips]]'', ''[[The Happy Ending]]'', ''[[The Magic Machines]]'', ''[[The Prime of Miss Jean Brodie (film)|The Prime of Miss Jean Brodie]]'', ''[[The Reivers (film)|The Reivers]]'', ''[[The Secret of Santa Vittoria]]'', ''[[The Sterile Cuckoo]]'', ''[[True Grit (1969 film)|True Grit]]'' and ''[[The Wild Bunch]]''
+
+{{Col-2-of-2}}
+The following films received multiple awards.
+*''4 wins'': ''[[Butch Cassidy and the Sundance Kid]]''
+*''3 wins'': ''[[Hello, Dolly! (film)|Hello, Dolly!]]'' and ''[[Midnight Cowboy]]''
+*''2 wins'': ''[[Z (1969 film)|Z]]''
+{{Col-end}}
+
+==Presenters and performers==
+
+Source:<ref>{{Cite book |last=Wiley |first=Mason |title=Inside Oscar |publisher=Ballantine Books |year=1986 |isbn=9780345314239 |location=New York |pages=437}}</ref>
+*[[Fred Astaire]] (Presenter: Best Supporting Actress and Documentary Awards)
+*[[Candice Bergen]] (Presenter: Best Sound, Best Costume Design and Best Song Original for the Picture)
+*[[Elmer Bernstein]] (Presenter: Best Original Score for a Musical Picture Original or Adaptation)
+*[[Claudia Cardinale]] (Presenter: Best Film Editing and Best Foreign Language Film)
+*[[Clint Eastwood]] (Presenter: Best Foreign Language Film)
+*[[Elliott Gould]] (Presenter: Best Sound)
+*[[Bob Hope]] (Presenter: Jean Hersholt Humanitarian Award and Documentary Awards)
+*[[James Earl Jones]] (Presenter: Best Film Editing and Best Story and Screenplay Based on Factual Material or Material Not Previously Published or Produced)
+*[[Myrna Loy]] (Presenter: Best Short Subjects, Best Art Direction and Best Director)
+*[[Ali MacGraw]] (Presenter: Best Story and Screenplay Based on Factual Material or Material Not Previously Published or Produced)
+*[[Barbara McNair]] (Presenter: Best Original Score for a Motion Picture (Non-Musical))
+*[[Cliff Robertson]] (Presenter: Best Actress, Best Original Score for a Motion Picture (Not a Musical) & Short Subjects Awards)
+*[[Katharine Ross]] (Presenter: Best Supporting Actor and Best Screenplay Based on Material from Another Medium)
+*[[Frank Sinatra]] (Presenter: Honorary Award to [[Cary Grant]])
+*[[Barbra Streisand]] (Presenter: Best Actor)
+*[[Elizabeth Taylor]] (Presenter: Best Picture)
+*[[Jon Voight]] (Presenter: Best Art Direction and Best Screenplay Based on Material from Another Medium)
+*[[Shani Wallis]] (Presenter: Best Original Score for a Musical Picture Original or Adaptation)
+*[[John Wayne]] (Presenter: Best Cinematography)
+*[[Raquel Welch]] (Presenter: Best Special Visual Effects)
+
+===Performers===
+*[[Glen Campbell]] ("[[True Grit (song)|True Grit]]" from ''[[True Grit (1969 film)|True Grit]]'')
+*[[Michel Legrand]] ("[[What Are You Doing the Rest of Your Life?]]" from ''[[The Happy Ending]]'')
+*[[Lou Rawls]] ("[[Jean (song)|Jean]]" from ''[[The Prime of Miss Jean Brodie (film)|The Prime of Miss Jean Brodie]]'')
+*[[The Sandpipers]] ("[[Come Saturday Morning (song)|Come Saturday Morning]]" from ''[[The Sterile Cuckoo]]'')
+*[[B. J. Thomas]] ("[[Raindrops Keep Fallin' on My Head]]" from ''[[Butch Cassidy and the Sundance Kid]]'')
+*Fred Astaire (untitled dance in-between presentation of the two documentary awards)<ref>”[https://m.youtube.com/watch?v=CnrbdNjf-aw Fred Astaire Cuts Loose: 1970 Oscars]”, YouTube.</ref>
+
+== See also ==
+* [[List of most watched television broadcasts]]
+* [[27th Golden Globe Awards]]
+* [[1969 in film]]
+* [[12th Grammy Awards]]
+* [[21st Primetime Emmy Awards]]
+* [[22nd Primetime Emmy Awards]]
+* [[23rd British Academy Film Awards]]
+* [[24th Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 42}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1969 film awards]]
+[[Category:1969 awards in the United States]]
+[[Category:1970 in Los Angeles]]
+[[Category:Television shows directed by Jack Haley Jr.]]
+[[Category:1970 in American cinema]]
+[[Category:April 1970 in the United States]]

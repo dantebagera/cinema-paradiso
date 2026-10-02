@@ -1,5 +1,5 @@
 {
-  "series": {"tmdb_id": 900001, "title": "Harbor Signals", "first_air_date": "2020-01-01", "last_air_date": "2021-01-03", "status": "Ended", "genres": ["Drama", "Mystery"], "rating": 8.2, "votes": 1200},
+  "series": {"tmdb_id": 900001, "title": "Harbor Signals", "first_air_date": "2020-01-01", "last_air_date": "2021-01-03", "status": "Ended", "genres": ["Drama", "Mystery"], "rating": 8.2, "votes": 1200, "seasons": [{"season_number": 0, "episode_count": 1}, {"season_number": 1, "episode_count": 3}, {"season_number": 2, "episode_count": 2}]},
   "episodes": [
     {"season_number": 0, "episode_number": 1, "title": "Before the Harbor", "air_date": "2019-12-25", "runtime": 25},
     {"season_number": 1, "episode_number": 1, "title": "Arrival", "air_date": "2020-01-01", "runtime": 45},

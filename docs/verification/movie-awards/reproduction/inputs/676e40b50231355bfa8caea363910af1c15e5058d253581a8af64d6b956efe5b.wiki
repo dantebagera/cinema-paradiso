@@ -1,0 +1,389 @@
+{{oscars short description|films-year=1951}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 24
+| award            = Academy Awards
+| date             = March 20, 1952
+| site             = [[RKO Pantages Theatre]], [[Hollywood, Los Angeles, California|Hollywood, California]]
+| host             = [[Danny Kaye]]
+| best_picture     = ''[[An American in Paris (film)|An American in Paris]]''
+| most_wins        = ''An American in Paris'' and ''[[A Place in the Sun (1951 film)|A Place in the Sun]]'' (6)
+| most_nominations = ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' (12)
+| last             = 23rd
+| next             = 25th
+}}
+
+The '''24th Academy Awards''' were held on March 20, 1952, honoring the films from [[1951 in film|1951]] and the ceremony was hosted by [[Danny Kaye]].
+
+''[[An American in Paris (film)|An American in Paris]]'' and ''[[A Place in the Sun (1951 film)|A Place in the Sun]]'' each received six Oscars, splitting [[Academy Award for Best Picture|Best Picture]] and [[Academy Award for Best Director|Best Director]], respectively. ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' won four Oscars, including [[List of films with all four Academy Award acting nominations|three of the four acting awards]] for which it was nominated. The film's only unsuccessful acting nomination was that of [[Marlon Brando]], whose performance as [[Stanley Kowalski]] was later considered one of the most influential of modern film acting.<ref>{{cite news
+ |url=http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/19931112/REVIEWS/311120304/1023 
+ |title=Review: 'A Streetcar Named Desire' 
+ |author=Roger Ebert 
+ |work=Chicago Sun-Times 
+ |url-status=live 
+ |access-date=2004-07-02 
+ |archive-url=https://web.archive.org/web/20050413045830/http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=%2F19931112%2FREVIEWS%2F311120304%2F1023 
+ |archive-date=2005-04-13 
+}}</ref><!--ref>{{cite web
+|url=//www.youtube.com/watch?v=dFOtE1FF2wQ
+ |archive-url=https://ghostarchive.org/varchive/youtube/20211221/dFOtE1FF2wQ |archive-date=2021-12-21 |url-status=live|title=Critics' Picks: A Streetcar Named Desire
+|author=A. O. Scott
+|access-date=2009-08-12}}{{cbignore}}</ref><ref>{{cite news
+|url=https://www.washingtonpost.com/wp-dyn/articles/A23157-2004Jul2.html
+|title=Actor Marlon Brando, 80, Dies
+|author=Adam Bernstein
+|work=The Washington Post
+|date=2004-07-02
+|access-date=2004-07-02}}</ref-->
+
+[[Humphrey Bogart]] was the last man born in the 19th century to win [[Academy Award for Best Actor|Best Actor]]. He won it over favored winner Marlon Brando, by the logic of the former being too long overlooked and the latter being a newcomer.<ref name="Oscars '51 Notes"/> The next day, Bogart remarked that "awards don't mean a thing unless every actor plays [[Hamlet]] and then who is best is decided."<ref name="Oscars '51 Notes"/>
+
+''[[An American in Paris (film)|An American in Paris]]'' became the second color film to win Best Picture, and was the first film since ''[[Grand Hotel (1932 film)|Grand Hotel]]'' to win Best Picture without any acting nominations.<ref>{{cite web |last1=Shaw |first1=Gabbi |title='Parasite' is the 12th movie in history to win Best Picture with no acting nominations — here are the other 11 |url=https://www.insider.com/movies-that-won-best-picture-oscars-with-no-acting-nominations |website=Insider |publisher=Insider Inc. |access-date=27 March 2023}}</ref> Its win was a surprise, as either ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' or ''[[A Place in the Sun (1951 film)|A Place in the Sun]]'' was expected to win. Some reflected that it may have won due to the number of Academy voters employed by [[Metro-Goldwyn-Mayer]] at the time.<ref name="Oscars '51 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/838/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=839 |isbn=0-385-04060-1}}</ref>
+
+==Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = George Stevens with Oscar for Giant.jpg
+| caption1          = [[George Stevens]]; Best Director winner
+| image2            =Humphrey Bogart 1940.jpg
+| caption2          = [[Humphrey Bogart]]; Best Actor winner
+| image3            = Vivien Leigh Scarlet.jpg
+| caption3          = [[Vivien Leigh]]; Best Actress winner
+| image4            = Karl Malden - autographed.jpg
+| caption4          = [[Karl Malden]]; Best Supporting Actor winner
+| image5            = Kim Hunter. cph.3b23243.jpg
+| caption5          = [[Kim Hunter]]; Best Supporting Actress winner
+| image6            = Hoagy Carmichael - 1947.jpg
+| caption6          = [[Hoagy Carmichael]]; Best Song co-winner
+| image7            = Johnny Mercer, New York, N.Y., between 1946 and 1948 (William P. Gottlieb 06121).jpg
+| caption7          = [[Johnny Mercer]]; Best Song co-winner
+| image8            = Cedric-Gibbons-1936.jpg
+| caption8          = [[Cedric Gibbons]]; Best Art Direction, Color, co-winner
+| image9            = Gene kelly.jpg
+| caption9          = [[Gene Kelly]]; Academy Honorary Award recipient
+}}
+
+=== Awards ===
+Nominations were announced on February 11, 1952. Winners are listed first and highlighted in boldface.<ref name="Oscars1952">{{Cite web |url=http://www.oscars.org/oscars/ceremonies/1952 |title=The 24th Academy Awards (1952) Nominees and Winners |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |access-date=2011-08-19 |archive-url=https://web.archive.org/web/20110706093825/http://www.oscars.org/awards/academyawards/legacy/ceremony/24th-winners.html |archive-date=July 6, 2011 |url-status=live |df=dmy-all}}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[An American in Paris (film)|An American in Paris]]'' – [[Arthur Freed]] for [[Metro-Goldwyn-Mayer]]&nbsp;'''
+**''[[Decision Before Dawn]]'' – [[Anatole Litvak]] and [[Frank McCarthy (producer)|Frank McCarthy]] for [[20th Century Fox]]&nbsp; 
+**''[[A Place in the Sun (1951 film)|A Place in the Sun]]'' – [[George Stevens]] for [[Paramount Pictures]]&nbsp; 
+**''[[Quo Vadis (1951 film)|Quo Vadis]]'' – [[Sam Zimbalist]] for [[Metro-Goldwyn-Mayer]]&nbsp; 
+**''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' – [[Charles K. Feldman]] for [[Warner Bros.]]&nbsp; 
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[George Stevens]]&nbsp;– ''[[A Place in the Sun (1951 film)|A Place in the Sun]]'''''
+**[[John Huston]]&nbsp;– ''[[The African Queen (film)|The African Queen]]''
+**[[Vincente Minnelli]]&nbsp;– ''[[An American in Paris (film)|An American in Paris]]''
+**[[William Wyler]]&nbsp;– ''[[Detective Story (1951 film)|Detective Story]]''
+**[[Elia Kazan]]&nbsp;– ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Humphrey Bogart]]&nbsp;– ''[[The African Queen (film)|The African Queen]]'' as Charlie Allnut'''
+**[[Marlon Brando]]&nbsp;– ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' as [[Stanley Kowalski]]
+**[[Montgomery Clift]]&nbsp;– ''[[A Place in the Sun (1951 film)|A Place in the Sun]]'' as George Eastman
+**[[Arthur Kennedy]]&nbsp;– ''[[Bright Victory]]'' as Larry Nevins
+**[[Fredric March]]&nbsp;– ''[[Death of a Salesman (1951 film)|Death of a Salesman]]'' as [[Willy Loman]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Vivien Leigh]]&nbsp;– ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' as [[Blanche DuBois|Blanche Dubois]]'''
+**[[Katharine Hepburn]]&nbsp;– ''[[The African Queen (film)|The African Queen]]'' as Rose Sayer
+**[[Eleanor Parker]]&nbsp;– ''[[Detective Story (1951 film)|Detective Story]]'' as Mary McLeod
+**[[Shelley Winters]]&nbsp;– ''[[A Place in the Sun (1951 film)|A Place in the Sun]]'' as Alice Tripp
+**[[Jane Wyman]]&nbsp;– ''[[The Blue Veil (1951 film)|The Blue Veil]]'' as LouLou Mason
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Karl Malden]]&nbsp;– ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' as Harold "Mitch" Mitchell'''
+**[[Leo Genn]]&nbsp;– ''[[Quo Vadis (1951 film)|Quo Vadis]]'' as [[Petronius]]
+**[[Kevin McCarthy (actor)|Kevin McCarthy]]&nbsp;– ''[[Death of a Salesman (1951 film)|Death of a Salesman]]'' as Biff Loman
+**[[Peter Ustinov]]&nbsp;– ''[[Quo Vadis (1951 film)|Quo Vadis]]'' as [[Nero]]
+**[[Gig Young]]&nbsp;– ''[[Come Fill the Cup]]'' as Boyd Copeland
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Kim Hunter]]&nbsp;– ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' as [[Stella Kowalski]]'''
+**[[Joan Blondell]]&nbsp;– ''[[The Blue Veil (1951 film)|The Blue Veil]]'' as Annie Rawlins
+**[[Mildred Dunnock]]&nbsp;– ''[[Death of a Salesman (1951 film)|Death of a Salesman]]'' as Linda Loman
+**[[Lee Grant]]&nbsp;– ''[[Detective Story (1951 film)|Detective Story]]'' as Shoplifter
+**[[Thelma Ritter]]&nbsp;– ''[[The Mating Season (film)|The Mating Season]]'' as Ellen McNulty
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+*'''''[[Seven Days to Noon]]''&nbsp;– [[Paul Dehn]] and [[James Bernard (composer)|James Bernard]]'''
+**''[[Bullfighter and the Lady]]''&nbsp;– [[Budd Boetticher]] and [[Ray Nazarro]]
+**''[[The Frogmen]]''&nbsp;– [[Oscar Millard]]
+**''[[Here Comes the Groom (1951 film)|Here Comes the Groom]]''&nbsp;– [[Robert Riskin]] and [[Liam O'Brien (screenwriter)|Liam O'Brien]]
+**''[[Teresa (1951 film)|Teresa]]''&nbsp;– [[Alfred Hayes (writer)|Alfred Hayes]] and [[Stewart Stern]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay)]]}}
+*'''''[[An American in Paris (film)|An American in Paris]]''&nbsp;– [[Alan Jay Lerner]]'''
+**''[[Ace in the Hole (1951 film)|Ace in the Hole]]''&nbsp;– [[Billy Wilder]], [[Lesser Samuels]] and [[Walter Newman (screenwriter)|Walter Newman]]
+**''[[David and Bathsheba (film)|David and Bathsheba]]''&nbsp;– [[Philip Dunne (writer)|Philip Dunne]]
+**''[[Go for Broke! (1951 film)|Go for Broke!]]''&nbsp;– [[Robert Pirosh]]
+**''[[The Well (1951 film)|The Well]]''&nbsp;– [[Clarence Greene]] and [[Russell Rouse]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[A Place in the Sun (1951 film)|A Place in the Sun]]''&nbsp;– [[Michael Wilson (writer)|Michael Wilson]] and [[Harry Brown (writer)|Harry Brown]] from ''[[An American Tragedy]]'' by [[Theodore Dreiser]]'''
+**''[[The African Queen (film)|The African Queen]]''&nbsp;– [[James Agee]] and [[John Huston]] from ''[[The African Queen (novel)|The African Queen]]'' by [[C. S. Forester]]
+**''[[Detective Story (1951 film)|Detective Story]]''&nbsp;– [[Philip Yordan]] and [[Robert Wyler]] from ''[[Detective Story (play)|Detective Story]]'' by [[Sidney Kingsley]]
+**''[[La Ronde (1950 film)|La Ronde]]''&nbsp;– [[Jacques Natanson]] and [[Max Ophüls]] from ''[[Reigen (play)|Reigen]]'' by [[Arthur Schnitzler]]
+**''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]''&nbsp;– [[Tennessee Williams]] from ''[[A Streetcar Named Desire]]'' by [[Tennessee Williams]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Kon-Tiki (1950 film)|Kon-Tiki]]''&nbsp;– [[Olle Nordemar]]'''
+**''[[I Was a Communist for the FBI]]''&nbsp;– [[Bryan Foy]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Benjy (film)|Benjy]]''&nbsp;– [[Fred Zinnemann]], with the cooperation of [[Paramount Pictures|Paramount Pictures Corporation]] for the Los Angeles Orthopaedic Hospital'''
+**''[[One Who Came Back]]''&nbsp;– [[Owen Crump]]
+**''[[The Seeing Eye (film)|The Seeing Eye]]''&nbsp;– [[Gordon Hollingshead]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[World of Kids]]''&nbsp;– [[Robert Youngson]]'''
+**''Ridin' the Rails''&nbsp;– [[Jack Eaton]]
+**''The Story of Time''&nbsp;– Robert G. Leffingwell
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[Nature's Half Acre]]''&nbsp;– [[Walt Disney]]'''
+**''Balzac''&nbsp;– [[Roger Leenhardt|Les Films du Compass]]
+**''Danger Under the Sea''&nbsp;– Tom Mead
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[The Two Mouseketeers]]''&nbsp;– [[Fred Quimby]]'''
+**''[[Lambert the Sheepish Lion]]''&nbsp;– [[Walt Disney]]
+**''[[Rooty Toot Toot]]''&nbsp;– [[Stephen Bosustow]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*'''''[[A Place in the Sun (1951 film)|A Place in the Sun]]''&nbsp;– [[Franz Waxman]]'''
+**''[[David and Bathsheba (film)|David and Bathsheba]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+**''[[Death of a Salesman (1951 film)|Death of a Salesman]]''&nbsp;– [[Alex North]]
+**''[[Quo Vadis (1951 film)|Quo Vadis]]''&nbsp;– [[Miklós Rózsa]]
+**''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]''&nbsp;– [[Alex North]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*'''''[[An American in Paris (film)|An American in Paris]]''&nbsp;– [[Johnny Green]] and [[Saul Chaplin]]'''
+**''[[Alice in Wonderland (1951 film)|Alice in Wonderland]]''&nbsp;– [[Oliver Wallace]]
+**''[[The Great Caruso]]''&nbsp;– [[Peter Herman Adler]] and [[Johnny Green]]
+**''[[On the Riviera]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+**''[[Show Boat (1951 film)|Show Boat]]''&nbsp;– [[Adolph Deutsch]] and [[Conrad Salinger]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[In the Cool, Cool, Cool of the Evening]]" from ''[[Here Comes the Groom (1951 film)|Here Comes the Groom]]''&nbsp;– Music by [[Hoagy Carmichael]]; Lyrics by [[Johnny Mercer]]'''
+**"[[A Kiss to Build a Dream On]]" from ''[[The Strip (1951 film)|The Strip]]''&nbsp;– Music and Lyrics by [[Bert Kalmar]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]]), [[Harry Ruby]] and [[Oscar Hammerstein II]]
+**"Never" from ''[[Golden Girl (film)|Golden Girl]]''&nbsp;– Music by [[Lionel Newman]]; Lyrics by [[Eliot Daniel]]
+**"Too Late Now" from ''[[Royal Wedding]]''&nbsp;– Music by [[Burton Lane]]; Lyrics by [[Alan Jay Lerner]]
+**"[[Wonder Why (song)|Wonder Why]]" from ''[[Rich, Young and Pretty]]''&nbsp;– Music by [[Nicholas Brodszky]]; Lyrics by [[Sammy Cahn]]	
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[The Great Caruso]]''&nbsp;– [[Douglas Shearer]]'''
+**''[[Bright Victory]]''&nbsp;– [[Leslie I. Carey]]
+**''[[I Want You (1951 film)|I Want You]]''&nbsp;– [[Gordon E. Sawyer]]
+**''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]''&nbsp;– [[Nathan Levinson]]
+**''[[Two Tickets to Broadway]]''&nbsp;– [[John O. Aalberg]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]''&nbsp;– Art Direction: [[Richard Day (art director)|Richard Day]]; Set Decoration: [[George James Hopkins]]'''
+**''[[Fourteen Hours]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Leland Fuller]]; Set Decoration: [[Thomas Little]] and [[Fred J. Rode]]
+**''[[The House on Telegraph Hill]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[John DeCuir]]; Set Decoration: [[Thomas Little]] and [[Paul S. Fox]]
+**''[[La Ronde (1950 film)|La Ronde]]''&nbsp;– Art Direction and Set Decoration: [[Jean d'Eaubonne|D'Eaubonne]]
+**''[[Too Young to Kiss]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Paul Groesse]]; Set Decoration: [[Edwin B. Willis]] and [[Jack D. Moore]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[An American in Paris (film)|An American in Paris]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[E. Preston Ames]]; Set Decoration: [[Edwin B. Willis]] and [[F. Keogh Gleason]]'''
+**''[[David and Bathsheba (film)|David and Bathsheba]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[George Davis (art director)|George Davis]]; Set Decoration: [[Thomas Little]] and [[Paul S. Fox]]
+**''[[On the Riviera]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Leland Fuller]]; Set Decoration: [[Thomas Little]] and [[Walter M. Scott]]; Musical Settings: [[Joseph C. Wright]]
+**''[[Quo Vadis (1951 film)|Quo Vadis]]''&nbsp;– Art Direction: [[William A. Horning]], [[Cedric Gibbons]] and [[Edward Carfagno]]; Set Decoration: [[Hugh Hunt]]
+**''[[The Tales of Hoffmann (film)|Tales of Hoffmann]]''&nbsp;– Art Direction and Set Decoration: [[Hein Heckroth]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[A Place in the Sun (1951 film)|A Place in the Sun]]''&nbsp;– [[William C. Mellor]]'''
+**''[[Death of a Salesman (1951 film)|Death of a Salesman]]''&nbsp;– [[Franz Planer]]
+**''[[The Frogmen]]''&nbsp;– [[Norbert Brodine]]
+**''[[Strangers on a Train (film)|Strangers on a Train]]''&nbsp;– [[Robert Burks]]
+**''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]''&nbsp;– [[Harry Stradling]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[An American in Paris (film)|An American in Paris]]''&nbsp;– [[Alfred Gilks]]; Ballet Photography by [[John Alton]]'''
+**''[[David and Bathsheba (film)|David and Bathsheba]]''&nbsp;– [[Leon Shamroy]]
+**''[[Quo Vadis (1951 film)|Quo Vadis]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert Surtees]] and [[William V. Skall]]
+**''[[Show Boat (1951 film)|Show Boat]]''&nbsp;– [[Charles Rosher]]
+**''[[When Worlds Collide (1951 film)|When Worlds Collide]]''&nbsp;– [[John F. Seitz]] and [[W. Howard Greene]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+*'''''[[A Place in the Sun (1951 film)|A Place in the Sun]]''&nbsp;– [[Edith Head]]'''
+**''[[Kind Lady (1951 film)|Kind Lady]]''&nbsp;– [[Walter Plunkett]] and [[Gile Steele]] (posthumous nomination)
+**''[[The Model and the Marriage Broker]]''&nbsp;– [[Charles LeMaire]] and [[Renié]]
+**''[[The Mudlark]]''&nbsp;– [[Edward Stevenson (costume designer)|Edward Stevenson]] and [[Margaret Furse]]
+**''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]''&nbsp;– [[Lucinda Ballard]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+*'''''[[An American in Paris (film)|An American in Paris]]''&nbsp;– [[Orry-Kelly]], [[Walter Plunkett]] and [[Irene Sharaff]]'''
+**''[[David and Bathsheba (film)|David and Bathsheba]]''&nbsp;– [[Charles LeMaire]] and [[Edward Stevenson (costume designer)|Edward Stevenson]]
+**''[[The Great Caruso]]''&nbsp;– [[Helen Rose]] and [[Gile Steele]] (posthumous nomination)
+**''[[Quo Vadis (1951 film)|Quo Vadis]]''&nbsp;– [[Herschel McCoy]]
+**''[[The Tales of Hoffmann (film)|Tales of Hoffmann]]''&nbsp;– [[Hein Heckroth]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[A Place in the Sun (1951 film)|A Place in the Sun]]''&nbsp;– [[William Hornbeck]]'''
+**''[[An American in Paris (film)|An American in Paris]]''&nbsp;– [[Adrienne Fazan]]
+**''[[Decision Before Dawn]]''&nbsp;– [[Dorothy Spencer]]
+**''[[Quo Vadis (1951 film)|Quo Vadis]]''&nbsp;– [[Ralph E. Winters]]
+**''[[The Well (1951 film)|The Well]]''&nbsp;– [[Chester Schaeffer]]
+|}
+
+===Best Special Effects===
+* ''[[When Worlds Collide (1951 film)|When Worlds Collide]]'' – [[Paramount Pictures|Paramount]].
+
+===Honorary Foreign Language Film Award===
+*To ''[[Rashomon]]'' - voted by the Board of Governors as the most outstanding foreign language film released in the United States during 1951.
+
+===Honorary Award===
+*To [[Gene Kelly]] in appreciation of his versatility as an actor, singer, director and dancer, and specifically for his brilliant achievements in the art of choreography on film.
+
+===Irving G. Thalberg Memorial Award===
+*[[Arthur Freed]]
+
+== Presenters and performers ==
+=== Presenters ===
+*[[Lucille Ball]] (Presenter: Short Subject Awards)
+*[[Charles Brackett]] (Presenter: Honorary Award to Gene Kelly)
+*[[Leslie Caron]] (Presenter: Best Foreign Language Film)
+*[[Marge Champion|Marge]] and [[Gower Champion]] (Presenters: Best Art Direction)
+*[[Cyd Charisse]] (Presenter: Best Sound Recording)
+*[[Ronald Colman]] (Presenter: Best Actress)
+*[[Sally Forrest]] (Presenter: Best Special Effects)
+*[[Zsa Zsa Gabor]] (Presenter: Best Costume Design)
+*[[Greer Garson]] (Presenter: Best Actor)
+*[[Jesse L. Lasky]] (Presenter: Best Motion Picture)
+*[[Claire Luce]] (Presenter: Writing Awards)
+*[[Joseph L. Mankiewicz]] (Presenter: Best Director)
+*[[George Murphy]] (Presenter: Scientific or Technical Awards)
+*[[Donald O'Connor]] (Presenter: Music Awards)
+*[[Janice Rule]] (Presenter: Documentary Awards)
+*[[George Sanders]] (Presenter: Best Supporting Actress)
+*[[Constance Smith]] (Presenter: Best Film Editing)
+*[[Claire Trevor]] (Presenter: Best Supporting Actor)
+*[[Vera-Ellen]] (Presenter: Best Cinematography)
+*[[Darryl F. Zanuck]] (Presenter: Irving G. Thalberg Memorial Award)
+
+=== Performers ===
+*[[Kay Brown (singer)|Kay Brown]]
+*[[Dick Haymes]]
+*[[Howard Keel]] and [[Jane Powell]]
+*[[Jane Wyman]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" |12
+| ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]''
+|-
+|  rowspan="1" style="text-align:center" |9 
+| ''[[A Place in the Sun (1951 film)|A Place in the Sun]]''
+|-
+|  rowspan="2" style="text-align:center" |8
+| ''[[An American in Paris (film)|An American in Paris]]''
+|-
+| ''[[Quo Vadis (1951 film)|Quo Vadis]]''
+|-
+| rowspan="2" style="text-align:center" | 5
+| ''[[David and Bathsheba (film)|David and Bathsheba]]''
+|-
+| ''[[Death of a Salesman (1951 film)|Death of a Salesman]]''
+|-
+| rowspan="2" style="text-align:center" |4
+| ''[[The African Queen (film)|The African Queen]]''
+|-
+| ''[[Detective Story (1951 film)|Detective Story]]''
+|-
+| rowspan="1" style="text-align:center" | 3
+| ''[[The Great Caruso]]''
+|-
+| rowspan="10" style="text-align:center" | 2
+| ''[[The Blue Veil (1951 film)|The Blue Veil]]''
+|-
+| ''[[Bright Victory]]''
+|-
+| ''[[Decision Before Dawn]]''
+|-
+| ''[[The Frogmen]]''
+|-
+| ''[[Here Comes the Groom (1951 film)|Here Comes the Groom]]''
+|-
+| ''[[La Ronde (1950 film)|La Ronde]]''
+|-
+| ''[[On the Riviera]]''
+|-
+| ''[[Show Boat (1951 film)|Show Boat]]''
+|-
+| ''[[The Tales of Hoffmann (film)|The Tales of Hoffmann]]''
+|-
+| ''[[The Well (1951 film)|The Well]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=2, style="text-align:center" | 6
+| ''[[An American in Paris (film)|An American in Paris]]''
+|-
+| ''[[A Place in the Sun (1951 film)|A Place in the Sun]]''
+|-
+| rowspan=1, style="text-align:center" | 4
+| ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]''
+|-
+|}
+
+{{Col-float-end}}
+
+==See also==
+*[[9th Golden Globe Awards]]
+*[[1951 in film]]
+* [[3rd Primetime Emmy Awards]]
+* [[4th Primetime Emmy Awards]]
+* [[5th British Academy Film Awards]]
+* [[6th Tony Awards]]
+
+==References==
+
+<references/>
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 24}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1951 film awards]]
+[[Category:1951 awards in the United States]]
+[[Category:1952 in American cinema]]
+[[Category:1952 in Los Angeles]]
+[[Category:March 1952 in the United States]]

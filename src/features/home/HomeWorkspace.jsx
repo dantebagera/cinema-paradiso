@@ -8,6 +8,7 @@ import Rating from '../../components/Rating.jsx';
 import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
 import { OwnedFileDetailsButton, PosterEditButton, PosterStateControls } from '../../components/SharedMovieCards.jsx';
 import { ContinueMovieCard, UnifiedMovieCard, UpcomingMovieCard } from '../../components/movie-card/MovieCard.jsx';
+import { useMovieAwardCounts } from '../../components/MovieAwardsContext.jsx';
 import useCardGridMetrics from '../../hooks/useCardGridMetrics.js';
 import { cx, formatCount, movieKey, sortFollowedReleases } from '../../utils/appUtils.js';
 import { canonicalOwnedMovie, listsForDiscoverMovie, ownedMovieFor } from '../../discoverUtils.js';
@@ -692,13 +693,15 @@ function SmartMovieCard(props) {
   } = props;
   const ownedItem = owned?.canonical_card || owned?.library_item || owned || {};
   const displayMovie = canonicalOwnedMovie(movie, owned);
+  const awardCounts = useMovieAwardCounts(displayMovie, { enabled: true });
   const lowQuality = Boolean(owned?.maintenance_upgrade_candidate);
   const unreleased = !owned && isUnreleasedMovie(displayMovie);
   const genres = (displayMovie.genres || []).slice(0, 2);
 
   return (
     <UnifiedMovieCard
-      className="home-smart-movie-card"
+      className="home-smart-movie-card movie-awards-consumer"
+      awardCounts={awardCounts}
       title={displayMovie.title}
       year={displayMovie.year}
       posterUrl={displayMovie.poster_url}

@@ -1,0 +1,357 @@
+{{oscars short description|films-year=1946}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number           = 19
+| award            = Academy Awards
+| date             = March 13, 1947
+| image            = 19th Academy Awards.jpg
+| caption          = Official pamphlet cover
+| site             = [[Shrine Auditorium]], [[Los Angeles]], [[California, USA]]
+| host             = [[Jack Benny]]
+| best_picture     = ''[[The Best Years of Our Lives]]''
+| most_wins        = ''The Best Years of Our Lives'' (7)
+| most_nominations = ''The Best Years of Our Lives'' (8)
+| last             = 18th
+| next             = 20th
+}}
+
+The '''19th Academy Awards''' were held on March 13, 1947, honoring the best in film of [[1946 in film|1946]]. The top awards portion of the ceremony was hosted by [[Jack Benny]].
+
+''[[The Best Years of Our Lives]]'' won seven of its eight nominations, including [[Academy Award for Best Picture|Best Picture]], [[Academy Award for Best Director|Best Director]], and both male acting Oscars. The academy awarded [[Harold Russell]]—a [[World War II]] veteran who had lost both hands in the war—an [[Honorary Academy Award]] for "bringing hope and courage to his fellow veterans" for his role as Homer Parrish, believing that, as a non-actor, he would not win the [[Academy Award for Best Supporting Actor|Best Supporting Actor]] award for which he was nominated. Russell also won the competitive award, making him the only person in Academy history to receive two Oscars for the same performance.
+
+When [[Olivia de Havilland]] won the Best Actress Oscar, her sister, [[Joan Fontaine]], attempted to shake her hand, but she refused the handshake, saying "I don't know why she does that when she knows how I feel."<ref name="Oscars '46 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/836/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=837 |isbn=0-385-04060-1}}</ref>
+
+This was the first time since the [[2nd Academy Awards]] that every category had, at most, five nominations.
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Samuel Goldwyn - Jul 1919 EH.jpg
+| caption1          = [[Samuel Goldwyn]]; Best Picture winner
+| image2            =William Wyler portrait.jpg
+| caption2          = [[William Wyler]]; Best Director winner|alt=William Wyler portrait.jpg
+| image3            = Fredric March face.jpg
+| caption3          = [[Fredric March]]; Best Actor winner
+| image4            = Olivia DeHavilland-2.JPG
+| caption4          = [[Olivia de Havilland]]; Best Actress winner
+| image5            = Harold Russell still.jpg
+| caption5          = [[Harold Russell]]; Best Supporting Actor winner and Honorary Academy Award recipient
+| image6            = Anne Baxter publicity photo.JPG
+| caption6          = [[Anne Baxter]]; Best Supporting Actress winner
+| image7            = Robert-Sherwood-1928.jpg
+| caption7          = [[Robert E. Sherwood]]; Best Screenplay winner
+| image8            = Clemence Dane 01.jpg
+| caption8          = [[Clemence Dane|Winifred Ashton]] (as '''Clemence Dane'''); Best Story winner
+| image9            = Johnny Mercer, New York, N.Y., between 1946 and 1948 (William P. Gottlieb 06121).jpg
+| caption9          = [[Johnny Mercer]]; Best Original Song co-winner
+| image10            = Cedric-Gibbons-1936.jpg
+| caption10          = [[Cedric Gibbons]]; Best Art Direction, Color co-winner
+}}
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = CharlesRosher.jpg
+| caption1          = [[Charles Rosher]]; Best Cinematography, Color co-winner
+| image2            =Lord Olivier 18 Allan Warren.jpg
+| caption2          = [[Laurence Olivier]]; Honorary Academy Award recipient
+| image3            = Ernst_Lubitsch_01.jpg
+| caption3          = [[Ernst Lubitsch]]; Honorary Academy Award recipient
+}}
+
+=== Awards ===
+Nominees were announced on February 9, 1947. Winners are listed first and highlighted in boldface.<ref name="Oscars1947">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1947 |title=The 19th Academy Awards (1947) Nominees and Winners |access-date=2011-08-19 |work=oscars.org |archive-url=https://web.archive.org/web/20110706093757/http://www.oscars.org/awards/academyawards/legacy/ceremony/19th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[The Best Years of Our Lives]]'' – [[Samuel Goldwyn]] for [[RKO Radio Pictures]]'''
+**''[[Henry V (1944 film)|Henry V]]'' – [[Laurence Olivier]] for [[United Artists]]
+**''[[It's a Wonderful Life]]'' – [[Frank Capra]] for [[RKO Radio Pictures]]
+**''[[The Razor's Edge (1946 film)|The Razor's Edge]]'' – [[Darryl F. Zanuck]] for [[20th Century Fox]]
+**''[[The Yearling (1946 film)|The Yearling]]'' – [[Sidney Franklin (director)|Sidney Franklin]] for [[Metro-Goldwyn-Mayer]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[William Wyler]] – ''[[The Best Years of Our Lives]]'''''
+**[[David Lean]] – ''[[Brief Encounter]]''
+**[[Frank Capra]] – ''[[It's a Wonderful Life]]''
+**[[Robert Siodmak]] – ''[[The Killers (1946 film)|The Killers]]''
+**[[Clarence Brown]] – ''[[The Yearling (1946 film)|The Yearling]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Fredric March]] – ''[[The Best Years of Our Lives]]'' as Platoon Sergeant Al Stephenson'''
+**[[Laurence Olivier]] – ''[[Henry V (1944 film)|Henry V]]'' as [[Henry V of England|King Henry V of England]]
+**[[Larry Parks]] – ''[[The Jolson Story]]'' as [[Al Jolson]]
+**[[Gregory Peck]] – ''[[The Yearling (1946 film)|The Yearling]]'' as Ezra "Penny" Baxter
+**[[James Stewart]] – ''[[It's a Wonderful Life]]'' as [[George Bailey (It's a Wonderful Life)|George Bailey]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Olivia de Havilland]] – ''[[To Each His Own (1946 film)|To Each His Own]]'' as Miss Josephine "Jody" Norris'''
+**[[Celia Johnson]] – ''[[Brief Encounter]]'' as Laura Jesson
+**[[Jennifer Jones]] – ''[[Duel in the Sun (film)|Duel in the Sun]]'' as Pearl Chavez
+**[[Rosalind Russell]] – ''[[Sister Kenny]]'' as [[Elizabeth Kenny]]
+**[[Jane Wyman]] – ''[[The Yearling (1946 film)|The Yearling]]'' as Ora Baxter
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Harold Russell]] – ''[[The Best Years of Our Lives]]'' as Petty Officer 2nd Class Homer Parrish'''
+**[[Charles Coburn]] – ''[[The Green Years (film)|The Green Years]]'' as Alexander Gow
+**[[William Demarest]] – ''[[The Jolson Story]]'' as Steve Martin
+**[[Claude Rains]] – ''[[Notorious (1946 film)|Notorious]]'' as Alexander Sebastian
+**[[Clifton Webb]] – ''[[The Razor's Edge (1946 film)|The Razor's Edge]]'' as Elliott Templeton
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Anne Baxter]] – ''[[The Razor's Edge (1946 film)|The Razor's Edge]]'' as Sophie MacDonald'''
+**[[Ethel Barrymore]] – ''[[The Spiral Staircase (1946 film)|The Spiral Staircase]]'' as Mrs Warren
+**[[Lillian Gish]] – ''[[Duel in the Sun (film)|Duel in the Sun]]'' as Laura Belle McCanles
+**[[Flora Robson]] – ''[[Saratoga Trunk]]'' as Angelique Buiton
+**[[Gale Sondergaard]] – ''[[Anna and the King of Siam (film)|Anna and the King of Siam]]'' as Lady Thiang
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Motion Picture Story)]]}}
+*'''''[[Perfect Strangers (1945 film)|Vacation From Marriage]]'' – [[Clemence Dane]]'''
+**''[[The Dark Mirror (1946 film)|The Dark Mirror]]'' – [[Vladimir Solomonovich Pozner|Vladimir Pozner]]
+**''[[The Strange Love of Martha Ivers]]'' – [[John Patrick (dramatist)|Jack Patrick]]
+**''[[The Stranger (1946 film)|The Stranger]]'' – [[Victor Trivas]]
+**''[[To Each His Own (1946 film)|To Each His Own]]'' – [[Charles Brackett]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[The Seventh Veil]]'' – [[Muriel Box]] and [[Sydney Box]]'''
+**''[[The Blue Dahlia]]'' – [[Raymond Chandler]] 
+**''[[Children of Paradise]]'' – [[Jacques Prévert]] 
+**''[[Notorious (1946 film)|Notorious]]'' – [[Ben Hecht]]
+**''[[Road to Utopia]]'' – [[Norman Panama]] and [[Melvin Frank]] 
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[The Best Years of Our Lives]]'' – [[Robert E. Sherwood]] from ''Glory For Me'' by [[MacKinlay Kantor]]'''
+**''[[Anna and the King of Siam (film)|Anna and the King of Siam]]'' – [[Sally Benson]] and [[Talbot Jennings]] from ''[[Anna and the King of Siam (novel)|Anna and the King of Siam]]'' by [[Margaret Landon]]
+**''[[Brief Encounter]]'' – [[Anthony Havelock-Allan]], [[David Lean]] and [[Ronald Neame]] from ''[[Still Life (play)|Still Life]]'' by [[Noël Coward]]
+**''[[The Killers (1946 film)|The Killers]]'' – [[Anthony Veiller]] from "[[The Killers (Hemingway short story)|The Killers]]" by [[Ernest Hemingway]]
+**''[[Rome, Open City]]'' – [[Sergio Amidei]] and [[Federico Fellini]]<ref>{{cite web|url=http://www.oscars.org/oscars/ceremonies/1947 |title=19th Academy Awards Winners &#124; Oscar Legacy &#124; Academy of Motion Picture Arts and Sciences |access-date=2015-01-08 |url-status=live |archive-url=https://web.archive.org/web/20110706093757/http://www.oscars.org/awards/academyawards/legacy/ceremony/19th-winners.html |archive-date=2011-07-06 }} Open City on 19th Oscars website</ref> from a story by Sergio Amidei and Alberto Consiglio
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Seeds of Destiny]]'' – [[United States Department of War]]'''
+**''[[Atomic Power (film)|Atomic Power]]'' – ''[[The March of Time]]''
+**''[[Life at the Zoo]]'' – [[Nicola Napoli|Artkino]]
+**''[[Paramount News Issue#37]]'' – [[Paramount Pictures|Paramount]]
+**''[[Traffic with the Devil]]'' – Herbert Morgan
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[Facing Your Danger]]'' – [[Gordon Hollingshead]]'''
+**''Dive-Hi Champs'' – [[Jack Eaton]]
+**''Golden Horses'' – [[Edmund Reek]]
+**''Smart as a Fox'' – [[Gordon Hollingshead]]
+**''Sure Cures'' – [[Pete Smith (film producer)|Pete Smith]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[A Boy and His Dog (1946 film)|A Boy and His Dog]]'' – [[Gordon Hollingshead]]'''
+**''College Queen'' – George B. Templeton
+**''[[Hiss and Yell]]'' – [[Jules White]]
+**''The Luckiest Guy in the World'' – [[Jerry Bresler (film producer)|Jerry Bresler]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[The Cat Concerto]]'' – [[Fred Quimby]]'''
+**''[[John Henry and the Inky-Poo]]'' – [[George Pal]]
+**''[[Musical Moments from Chopin]]'' – [[Walter Lantz]]
+**''[[Squatter's Rights]]'' – [[Walt Disney]]
+**''[[Walky Talky Hawky]]'' – [[Edward Selzer]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*'''''[[The Best Years of Our Lives]]'' – [[Hugo Friedhofer]]'''
+**''[[Anna and the King of Siam (film)|Anna and the King of Siam]]'' – [[Bernard Herrmann]]
+**''[[Henry V (1944 film)|Henry V]]'' – [[William Walton]]
+**''[[Humoresque (1946 film)|Humoresque]]'' – [[Franz Waxman]]
+**''[[The Killers (1946 film)|The Killers]]'' – [[Miklós Rózsa]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*'''''[[The Jolson Story]]'' – [[Morris Stoloff]]'''
+**''[[Blue Skies (1946 film)|Blue Skies]]'' – [[Robert E. Dolan|Robert Emmett Dolan]]
+**''[[Centennial Summer]]'' – [[Alfred Newman (composer)|Alfred Newman]]
+**''[[The Harvey Girls]]'' – [[Lennie Hayton]]
+**''[[Night and Day (1946 film)|Night and Day]]'' – [[Ray Heindorf]] and [[Max Steiner]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[On the Atchison, Topeka and the Santa Fe]]" from ''[[The Harvey Girls]]'' – Music by [[Harry Warren]]; Lyrics by [[Johnny Mercer]]'''
+**"All Through the Day" from ''[[Centennial Summer]]'' – Music by [[Jerome Kern]] (posthumous nomination); Lyrics by [[Oscar Hammerstein II]]
+**"[[I Can't Begin to Tell You]]" from ''[[The Dolly Sisters (film)|The Dolly Sisters]]'' – Music by [[James V. Monaco]] (posthumous nomination); Lyrics by [[Mack Gordon]]
+**"[[Ole Buttermilk Sky]]" from ''[[Canyon Passage]]'' – Music by [[Hoagy Carmichael]]; Lyrics by [[Jack Brooks (lyricist)|Jack Brooks]]
+**"[[You Keep Coming Back Like a Song]]" from ''[[Blue Skies (1946 film)|Blue Skies]]'' – Music and Lyrics by [[Irving Berlin]]
+**<s>"[[This Is Always (song)|This Is Always]]" from ''[[Three Little Girls in Blue]]'' – Music by [[Harry Warren]] and Lyrics by [[Mack Gordon]]</s> (nomination revoked)
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[The Jolson Story]]'' – [[John P. Livadary]]'''
+**''[[The Best Years of Our Lives]]'' – [[Gordon E. Sawyer]]
+**''[[It's a Wonderful Life]]'' – [[John O. Aalberg]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[Anna and the King of Siam (film)|Anna and the King of Siam]]'' – Art Direction: [[Lyle R. Wheeler]] and [[William S. Darling]]; Interior Decoration: [[Thomas Little]] and [[Frank E. Hughes]]'''
+**''[[Kitty (1945 film)|Kitty]]'' – Art Direction: [[Hans Dreier]] and [[Walter H. Tyler|Walter Tyler]]; Interior Decoration: [[Samuel M. Comer]] and [[Ray Moyer]]
+**''[[The Razor's Edge (1946 film)|The Razor's Edge]]'' – Art Direction: [[Richard Day (art director)|Richard Day]] and [[Nathan Juran|Nathan H. Juran]]; Interior Decoration: [[Thomas Little]] and [[Paul S. Fox]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[The Yearling (1946 film)|The Yearling]]'' – Art Direction: [[Cedric Gibbons]] and [[Paul Groesse]]; Interior Decoration: [[Edwin B. Willis]]'''
+**''[[Caesar and Cleopatra (film)|Caesar and Cleopatra]]'' – Art Direction and Interior Decoration: [[John Bryan (art director)|John Bryan]]
+**''[[Henry V (1944 film)|Henry V]]'' – Art Direction and Interior Decoration: [[Paul Sheriff]] and [[Carmen Dillon]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[Anna and the King of Siam (film)|Anna and the King of Siam]]'' – [[Arthur Miller (cinematographer)|Arthur Miller]]'''
+**''[[The Green Years (film)|The Green Years]]'' – [[George Folsey (cinematographer)|George J. Folsey]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[The Yearling (1946 film)|The Yearling]]'' – [[Charles Rosher]], [[Leonard Smith (cinematographer)|Leonard Smith]] and [[Arthur Arling]]'''
+**''[[The Jolson Story]]'' – [[Joseph Walker (cinematographer)|Joseph Walker]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[The Best Years of Our Lives]]'' – [[Daniel Mandell]]'''
+**''[[It's a Wonderful Life]]'' – [[William Hornbeck]]
+**''[[The Jolson Story]]'' – [[William Lyon (film editor)|William Lyon]]
+**''[[The Killers (1946 film)|The Killers]]'' – [[Arthur Hilton]]
+**''[[The Yearling (1946 film)|The Yearling]]'' – [[Harold F. Kress]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*'''''[[Blithe Spirit (1945 film)|Blithe Spirit]]'' – [[Tom Howard (special effects)|Tom Howard]]'''
+**''[[A Stolen Life (1946 film)|A Stolen Life]]'' – [[William C. McGann]]; Special Audible Effects: [[Nathan Levinson]]
+|-
+|}
+
+=== Special awards ===
+
+* To [[Laurence Olivier]] for his outstanding achievement as actor, producer and director in bringing ''[[Henry V (1944 film)|Henry V]]'' to the screen.
+* To [[Harold Russell]] for bringing hope and courage to his fellow veterans through his appearance in ''[[The Best Years of Our Lives]]''.
+* To [[Ernst Lubitsch]] for his distinguished contributions to the art of the motion picture.
+* To [[Claude Jarman, Jr.]], outstanding child actor of 1946.
+
+===Irving G. Thalberg Memorial Award===
+*[[Samuel Goldwyn]]
+
+== Presenters and performers ==
+
+===Presenters===
+
+(in order of appearance)<ref>{{cite web |url=https://www.youtube.com/watch?v=RcoDWGDXUbs&t=4263s |title=Academy Award Ceremony 1947 |date=May 29, 2020 |website=YouTube |publisher=SuperNoava |access-date=February 21, 2024}}</ref>
+
+*[[Jean Hersholt]] (Presenter: Academy Honorary Award to Laurence Olivier)
+*[[Douglas Fairbanks Jr.]] (Presenter: Short Subject & Scientific & Technical Awards)
+*[[Rex Harrison]] (Presenter: Production Awards)
+*[[Lana Turner]] (Presenter: Scoring Awards)
+*[[Greer Garson]] (Presenter: Best Art Direction-Interior Decoration)
+*[[Ann Sheridan]] (Presenter: Best Cinematography)
+*[[Van Johnson]] (Presenter: Best Original Song)
+*[[Robert Montgomery (actor)|Robert Montgomery]] (Presenter: Writing Awards)
+*[[Shirley Temple]] (Presenter: Academy Juvenile Award to Claude Jarman Jr. and Academy Honorary Award to Harold Russell)
+*[[Mervyn LeRoy]] (Presenter: Academy Honorary Award to Ernst Lubitsch)
+*[[Ronald Reagan]] (Presenter: Academy Cavalcade of Past Oscar Winners and Academy Parade of Stars)
+*[[Billy Wilder]] (Presenter: Best Director)
+*[[Eric Johnston]] (Presenter: Best Motion Picture)
+*[[Donald M. Nelson|Donald Nelson]] (Presenter: Irving G. Thalberg Memorial Award to Samuel Goldwyn)
+*[[Anne Revere]] (Presenter: Best Supporting Actor)
+*[[Lionel Barrymore]] (Presenter: Best Supporting Actress)
+*[[Joan Fontaine]] (Presenter: Best Actor)
+*[[Ray Milland]] (Presenter: Best Actress)
+
+===Performers===
+*[[Hoagy Carmichael]] (who was accidentally introduced by [[Samuel Goldwyn|Sam Goldwyn]] as Hugo Carmicheal<ref>{{Citation |title=Jack Benny - JB 1947-03-16 Jack's New Quartet | date=January 8, 2018 |url=https://www.youtube.com/watch?v=J6_XVgf_HSk |access-date=2023-04-09 |language=en}}</ref>)
+*[[Dick Haymes]]
+*[[Andy Russell (singer)|Andy Russell]]
+*[[Dinah Shore]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" |8
+| ''[[The Best Years of Our Lives]]''
+|-
+| rowspan="1" style="text-align:center" |7
+| ''[[The Yearling (1946 film)|The Yearling]]''
+|-
+| rowspan="1" style="text-align:center" |6
+| ''[[The Jolson Story]]''
+|-
+| rowspan="2" style="text-align:center" |5
+| ''[[Anna and the King of Siam (film)|Anna and the King of Siam]]''
+|-
+| ''[[It's a Wonderful Life]]''
+|-
+| rowspan="3" style="text-align:center" | 4
+| ''[[Henry V (1944 film)|Henry V]]''
+|-
+| ''[[The Killers (1946 film)|The Killers]]''
+|-
+| ''[[The Razor's Edge (1946 film)|The Razor's Edge]]''
+|-
+| rowspan="1" style="text-align:center" | 3
+| ''[[Brief Encounter]]''
+|-
+| rowspan="7" style="text-align:center" |2
+| ''[[Blue Skies (1946 film)|Blue Skies]]''
+|-
+| ''[[Centennial Summer]]''
+|-
+| ''[[Duel in the Sun (film)|Duel in the Sun]]''
+|-
+| ''[[The Green Years (film)|The Green Years]]''
+|-
+| ''[[The Harvey Girls]]''
+|-
+| ''[[Notorious (1946 film)|Notorious]]''
+|-
+| ''[[To Each His Own (1946 film)|To Each His Own]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" |7
+| ''[[The Best Years of Our Lives]]''
+|-
+| rowspan=3, style="text-align:center" | 2 
+| ''[[Anna and the King of Siam (film)|Anna and the King of Siam]]''
+|-
+| ''[[The Jolson Story]]''
+|-
+| ''[[The Yearling (1946 film)|The Yearling]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+*[[4th Golden Globe Awards]]
+*[[1946 in film]]
+* [[1st Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 19}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1946 film awards]]
+[[Category:1947 in Los Angeles]]
+[[Category:1947 in American cinema]]
+[[Category:March 1947 in the United States]]

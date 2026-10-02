@@ -1,0 +1,632 @@
+{{Oscars short description|films-year=2015}}
+{{Featured list}}
+{{Use American English|date=June 2023}}
+{{Use mdy dates|date=February 2016}}
+{{Infobox film awards
+| number           = 88
+| award            = Academy Awards
+| image            = Oscars poster 2016.jpg
+| alt              = Official poster promoting the 88th Academy Awards in 2016.
+| caption          = Official poster
+| date             = February 28, 2016
+| site             = [[Dolby Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], California, U.S.
+| host             = [[Chris Rock]]
+| preshow          = {{plain list|
+* Jess Cagle
+* [[Amy Robach]]
+* [[Robin Roberts (newscaster)|Robin Roberts]]
+* [[Lara Spencer]]
+* [[Michael Strahan]]
+* [[Joe Zee]]<ref>{{cite news|first=Hal |last=Boedeker |title=Robin Roberts & Michael Strahan Host ABC's Oscars Opening Ceremony: Live From The Red Carpet Today |url=http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-robin-roberts-michael-strahan-host-opening-ceremony-20160224-story.html |access-date=July 28, 2016 |work=[[Orlando Sentinel]] |date=February 24, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160818030320/http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-robin-roberts-michael-strahan-host-opening-ceremony-20160224-story.html |archive-date=August 18, 2016}}</ref>
+}}
+| producer         = [[David Hill (producer)|David Hill]]<br />[[Reginald Hudlin]]
+| director         = [[Glenn Weiss]]
+| best_picture     = ''[[Spotlight (film)|Spotlight]]''
+| most_wins        = ''[[Mad Max: Fury Road]]'' (6)
+| network          = [[American Broadcasting Company|ABC]]
+| most_nominations = ''[[The Revenant (2015 film)|The Revenant]]'' (12)
+| duration         = 3 hours, 37 minutes<ref name="Variety">{{cite news|title=TV Review: 'The 88th Academy Awards' |url=https://variety.com/2016/tv/reviews/oscars-2016-review-chris-rock-academy-awards-leonardo-dicaprio-spotlight-oscarssowhite-1201716087/ |first=Brian |last=Lowry |work=[[Variety (magazine)|Variety]] |date=February 28, 2016 |access-date=February 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160301092207/http://variety.com/2016/tv/reviews/oscars-2016-review-chris-rock-academy-awards-leonardo-dicaprio-spotlight-oscarssowhite-1201716087/ |archive-date=March 1, 2016}}</ref>
+| ratings          = 34.425 million<br />23.4% ([[Nielsen ratings]])
+| last             = [[87th Academy Awards|87th]]
+| next             = [[89th Academy Awards|89th]]
+}}
+
+The '''88th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2015 in film|films of 2015]] and took place on February 28, 2016, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]], 5:30&nbsp;p.m. [[Pacific Time Zone|PST]]. During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[David Hill (producer)|David Hill]] and [[Reginald Hudlin]] and directed by [[Glenn Weiss]].<ref name="HillHudlin"/><ref name="Weiss"/> Actor [[Chris Rock]] hosted the show for the second time, having previously hosted the [[77th Academy Awards|77th ceremony]] held in 2005.<ref name="Rock"/>
+
+In related events, the academy held its 7th Annual [[Governors Awards]] ceremony at the Grand Ballroom of the [[Hollywood and Highland Center]] on November 14, 2015.<ref name="Governor Awards LA TIMES">{{cite news|last=Whipp |first=Glenn |title=Governors Awards: Academy bestows honors, announces new diversity initiative |url=https://www.latimes.com/entertainment/envelope/goldstandard/la-et-mn-governors-awards-oscars-20151115-column.html |access-date=February 4, 2016 |work=[[Los Angeles Times]] |date=November 15, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160204102114/http://www.latimes.com/entertainment/envelope/goldstandard/la-et-mn-governors-awards-oscars-20151115-column.html |archive-date=February 4, 2016}}</ref> On February 13, 2016, in a ceremony at the [[Beverly Wilshire Hotel]] in [[Beverly Hills, California]], the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by hosts [[Olivia Munn]] and [[Jason Segel]].<ref>{{cite news|first=Sarah |last=Huggins |url=http://oscar.go.com/news/oscar-news/olivia-munn-and-jason-segel-to-host-academys-sci-tech-awards |title=Olivia Munn and Jason Segel To Host 2016 Sci-Tech Awards |access-date=January 29, 2015 |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |date=January 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160210031457/http://oscar.go.com/news/oscar-news/olivia-munn-and-jason-segel-to-host-academys-sci-tech-awards |archive-date=February 10, 2016}}</ref>
+
+[[Spotlight (film)|''Spotlight'']] won two awards, including [[Academy Award for Best Picture|Best Picture]], making it the first film since [[The Greatest Show on Earth (film)|''The Greatest Show on Earth'']] to win Best Picture while only winning one other award. ''[[Mad Max: Fury Road]]'' won six awards, the most for the evening.<ref name="Spotlight">{{cite news|title="Spotlight" wins best picture |url=http://www.denverpost.com/2016/02/28/spotlight-wins-best-picture/ |access-date=July 18, 2016 |work=[[The Denver Post]] |date=February 28, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160817202607/http://www.denverpost.com/2016/02/28/spotlight-wins-best-picture/ |archive-date=August 17, 2016}}</ref> ''[[The Revenant (2015 film)|The Revenant]]'' earned three awards including [[Academy Award for Best Director|Best Director]] for [[Alejandro G. Iñárritu]] and [[Academy Award for Best Actor|Best Actor]] for [[Leonardo DiCaprio]], his first win after five previous nominations spanning two decades. [[Brie Larson]] won [[Academy Award for Best Actress|Best Actress]] for ''[[Room (2015 film)|Room]]'', while [[Mark Rylance]] and [[Alicia Vikander]] won supporting acting honors for ''[[Bridge of Spies (film)|Bridge of Spies]]'' and ''[[The Danish Girl (film)|The Danish Girl]]'', respectively. The telecast garnered 34.425 million viewers in the United States.<ref name="Oscar ratings">{{cite news|last1=Kissell |first1=Rick |title=Final Oscar Ratings: 34.4 Million Viewers, Down Only 2% Among Blacks |url=https://variety.com/2016/tv/news/oscars-ratings-snapshot-34-4-million-slight-decline-among-blacks-1201719378/ |access-date=July 31, 2016 |work=Variety |date=March 1, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160818085944/http://variety.com/2016/tv/news/oscars-ratings-snapshot-34-4-million-slight-decline-among-blacks-1201719378/ |archive-date=August 18, 2016}}</ref>
+
+== Winners and nominees ==
+<!--Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed.-->
+
+The nominees for the 88th Academy Awards were announced on January 14, 2016, at 5:30&nbsp;a.m. PST (13:30 [[UTC]]), at the [[Samuel Goldwyn Theater]] in Beverly Hills, California, by directors [[Guillermo del Toro]] and [[Ang Lee]], Academy president [[Cheryl Boone Isaacs]], and actor [[John Krasinski]].<ref>{{cite news|last=Galuppo |first=Mia |title=Oscars: Guillermo del Toro, John Krasinski to Announce Nominees |url=https://www.hollywoodreporter.com/movies/movie-news/oscars-guillermo-del-toro-john-854646/ |access-date=August 2, 2026 |magazine=[[The Hollywood Reporter]] |date=January 11, 2016 |url-status=live |archive-url=https://web.archive.org/web/20210508024214/https://www.hollywoodreporter.com/movies/movie-news/oscars-guillermo-del-toro-john-854646/ |archive-date=May 8, 2021}}</ref> ''[[The Revenant (2015 film)|The Revenant]]'' led all nominees with twelve nominations; ''[[Mad Max: Fury Road]]'' came in second with ten.<ref>{{cite news|last1=Rottenberg |first1=Josh |title=Oscars 2016: 'The Revenant' and 'Mad Max: Fury Road' lead the pack in Oscar nominations |url=http://www.orlandosentinel.com/la-et-mn-the-revenant-mad-max-fury-road-oscar-nominations-20160114-story.html |access-date=June 16, 2016 |work=Orlando Sentinel |date=January 14, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160818144737/http://www.orlandosentinel.com/la-et-mn-the-revenant-mad-max-fury-road-oscar-nominations-20160114-story.html |archive-date=August 18, 2016}}</ref>
+
+The winners were announced during the awards ceremony on February 28, 2016.<ref>{{cite news|last1=Phillips |first1=Michael |title='Spotlight' takes best picture, DiCaprio wins first Oscar |url=https://www.chicagotribune.com/entertainment/movies/ct-oscars-2016-20160228-story.html |access-date=July 14, 2016 |work=[[Chicago Tribune]] |date=February 28, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160711093318/http://www.chicagotribune.com/entertainment/movies/ct-oscars-2016-20160228-story.html |archive-date=July 11, 2016}}</ref> With two Oscars, ''Spotlight'' was the first film since 1952's ''[[The Greatest Show on Earth (film)|The Greatest Show on Earth]]'' to win Best Picture with only one other award.<ref>{{cite news|title='Spotlight' Wins Oscar For Best Picture; Pope Challenged By Producer From Stage |url=https://deadline.com/2016/02/spotlight-oscar-winner-best-picture-2016-academy-award-tom-mccarthy-1201710767/ |first=Donald |last=Clarke |website=Deadline Hollywood |date=February 28, 2016 |access-date=February 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160301092119/http://deadline.com/2016/02/spotlight-oscar-winner-best-picture-2016-academy-award-tom-mccarthy-1201710767/ |archive-date=March 1, 2016}}</ref> [[Alejandro G. Iñárritu]] became the third individual to win two consecutive Oscars for [[Academy Award for Best Director|Best Director]].{{refn|name=Consecutive win for Director|group=N|The two previous directors to have done so are: [[John Ford]] and [[Joseph L. Mankiewicz]]<ref name="Spotlight"/>}}<ref name="Spotlight"/> By virtue of his previous nomination for his portrayal of the [[Rocky Balboa|titular character]] in 1976's ''[[Rocky]]'', Best Supporting Actor nominee [[Sylvester Stallone]] was the sixth person to be nominated for playing the same role in two different films.<ref>{{cite news|title=Oscars 2016: Sylvester Stallone is thrilled to be back in Oscar ring after 39 years |url=https://www.latimes.com/entertainment/tv/showtracker/la-et-mn-oscars-2016-sylvester-stallone-returns-to-oscar-ring-after-39-years-20160114-story.html |date=January 14, 2016 |work=Los Angeles Times |first=Susan |last=King |access-date=March 24, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160401224137/http://www.latimes.com/entertainment/tv/showtracker/la-et-mn-oscars-2016-sylvester-stallone-returns-to-oscar-ring-after-39-years-20160114-story.html |archive-date=April 1, 2016}}</ref> At 25, [[Jennifer Lawrence]] became the youngest person to earn their fourth acting nomination.<ref>{{cite news|last=Gray |first=Tim |title=Oscar Nominations: Surprising Factoids About 2016's Contenders |url=https://variety.com/2016/film/news/oscar-nominations-2016-facts-1201680087/ |access-date=August 2, 2026 |magazine=[[Variety (magazine)|Variety]] |date=January 14, 2016 |url-status=live |archive-url=https://web.archive.org/web/20210610193944/https://variety.com/2016/film/news/oscar-nominations-2016-facts-1201680087/ |archive-date=June 10, 2021}}</ref>
+
+At the age of 87, [[Ennio Morricone]] was believed to be the oldest competitive winner in Oscar history.{{refn|name=Oldest Oscar win|group=N|An Academy spokeswoman said, "We do not have this kind of data for the other competitive categories." However she also acknowledged that they have no knowledge of any competitive winner older than 87.<ref name="Morricone"/>}}<ref name="Morricone">{{cite news|title=Oscar win at 87 may make Ennio Morricone the oldest winner ever |url=https://www.latimes.com/entertainment/arts/culture/la-et-cm-ennio-morricone-oldest-oscar-winner-hateful-eight-20160228-story.html |first=David |last=Ng |work=Los Angeles Times |date=February 28, 2016 |access-date=March 2, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160302015403/http://www.latimes.com/entertainment/arts/culture/la-et-cm-ennio-morricone-oldest-oscar-winner-hateful-eight-20160228-story.html |archive-date=March 2, 2016}}</ref> Having previously won for ''[[Gravity (2013 film)|Gravity]]'' and ''[[Birdman (film)|Birdman]]'', [[Emmanuel Lubezki]] became the first person to win three consecutive [[Academy Award for Best Cinematography|Best Cinematography]] awards.<ref>{{cite news|title=Oscars: Emmanuel Lubezki Becomes First Cinematographer to Win Three Consecutive Academy Awards |url=https://www.hollywoodreporter.com/news/2016-oscars-cinematography-award-goes-869427 |last1=Giardina |first1=Carolyn |last2=Szalai |first2=George |work=The Hollywood Reporter |date=February 28, 2016 |access-date=March 2, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160302201321/http://www.hollywoodreporter.com/news/2016-oscars-cinematography-award-goes-869427 |archive-date=March 2, 2016}}</ref>
+
+=== Awards ===
+Winners are listed first and highlighted in boldface and marked with a double-dagger ('''‡)'''.<ref>{{cite news|url=http://www.oscars.org/oscars/ceremonies/2016 |title=The 88th Academy Awards (2016) Nominees and Winners |access-date=February 23, 2015 |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20160125161918/http://www.oscars.org/oscars/ceremonies/2016 |archive-date=January 25, 2016}}</ref>
+
+[[File:Alejandro González Iñárritu 2014.jpg|right|thumb|150px|[[Alejandro González Iñárritu]], Best Director winner]]
+[[File:Leonardo Dicaprio Cannes 2019 2.jpg|right|thumb|150px|[[Leonardo DiCaprio]], Best Actor winner]]
+[[File:Brie Larson (cropped).jpg|right|thumb|150px|[[Brie Larson]], Best Actress winner]]
+[[File:Mark Rylance Cannes 2016.jpg|right|thumb|150px|[[Mark Rylance]], Best Supporting Actor winner]]
+[[File:Alicia Vikander - Tokyo International Film Festival 2019 (49013506278) (cropped).jpg|right|thumb|150px|[[Alicia Vikander]], Best Supporting Actress winner]]
+[[File:Tom McCarthy (cropped).jpg|right|thumb|150px|[[Tom McCarthy (director)|Tom McCarthy]], Best Original Screenplay co-winner]]
+[[File:Josh Singer in 2018.jpg|right|thumb|150px|[[Josh Singer]], Best Original Screenplay co-winner]]
+[[File:Adam McKay-7784 (cropped).jpg|thumb|right|150px|[[Adam McKay]], Best Adapted Screenplay co-winner]]
+[[File:Pete Docter cropped 2009.jpg|right|thumb|150px|[[Pete Docter]], Best Animated Feature Film co-winner]]
+[[File:Annecy Festival 2019, screening event Toy Story 4 - Jonas Rivera.jpg|right|thumb|150px|[[Jonas Rivera]], Best Animated Feature Film co-winner]]
+[[File:Nemes Jeles László-portré.jpg|right|thumb|150px|[[László Nemes]], Best Foreign Language Film winner]]
+[[File:Ennio Morricone Cannes 2007.jpg|right|thumb|150px|[[Ennio Morricone]], Best Original Score winner]]
+[[File:SamSmith-byPhilipRomano.jpg|right|thumb|150px|[[Sam Smith]], Best Original Song co-winner]]
+
+{| class=wikitable
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Spotlight (film)|Spotlight]]''&nbsp;– [[Michael Sugar]], [[Steve Golin]], [[Nicole Rocklin]] and [[Blye Pagon Faust]], producers‡'''
+** ''[[The Big Short (film)|The Big Short]]''&nbsp;– [[Brad Pitt]], [[Dede Gardner]] and [[Jeremy Kleiner]], producers
+** ''[[Bridge of Spies (film)|Bridge of Spies]]''&nbsp;– [[Steven Spielberg]], [[Marc Platt (producer)|Marc Platt]] and [[Kristie Macosko Krieger]], producers
+** ''[[Brooklyn (film)|Brooklyn]]''&nbsp;– [[Finola Dwyer]] and [[Amanda Posey]], producers
+** ''[[Mad Max: Fury Road]]''&nbsp;– [[Doug Mitchell (film producer)|Doug Mitchell]] and [[George Miller (filmmaker)|George Miller]], producers
+** ''[[The Martian (film)|The Martian]]''&nbsp;– [[Simon Kinberg]], [[Ridley Scott]], [[Michael Schaefer (producer)|Michael Schaefer]] and [[Mark Huffam]], producers
+** ''[[The Revenant (2015 film)|The Revenant]]''&nbsp;– [[Arnon Milchan]], [[Steve Golin]], [[Alejandro G. Iñárritu]], [[Mary Parent]] and [[Keith Redmon]], producers
+** ''[[Room (2015 film)|Room]]''&nbsp;– [[Ed Guiney]], producer
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Alejandro G. Iñárritu]]&nbsp;– ''[[The Revenant (2015 film)|The Revenant]]‡'''''
+** [[Adam McKay]]&nbsp;– ''[[The Big Short (film)|The Big Short]]''
+** [[George Miller (filmmaker)|George Miller]]&nbsp;– ''[[Mad Max: Fury Road]]''
+** [[Lenny Abrahamson]]&nbsp;– ''[[Room (2015 film)|Room]]''
+** [[Tom McCarthy (director)|Tom McCarthy]]&nbsp;– ''[[Spotlight (film)|Spotlight]]''
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+* '''[[Leonardo DiCaprio]]&nbsp;– ''[[The Revenant (2015 film)|The Revenant]]'' as [[Hugh Glass]]‡'''
+** [[Bryan Cranston]]&nbsp;– ''[[Trumbo (2015 film)|Trumbo]]'' as [[Dalton Trumbo]]
+** [[Matt Damon]]&nbsp;– ''[[The Martian (film)|The Martian]]'' as Mark Watney
+** [[Michael Fassbender]]&nbsp;– ''[[Steve Jobs (film)|Steve Jobs]]'' as [[Steve Jobs]]
+** [[Eddie Redmayne]]&nbsp;– ''[[The Danish Girl (film)|The Danish Girl]]'' as [[Lili Elbe]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+* '''[[Brie Larson]]&nbsp;– ''[[Room (2015 film)|Room]]'' as Joy "Ma" Newsome‡'''
+** [[Cate Blanchett]]&nbsp;– ''[[Carol (film)|Carol]]'' as Carol Aird
+** [[Jennifer Lawrence]]&nbsp;– ''[[Joy (2015 film)|Joy]]'' as [[Joy Mangano]]
+** [[Charlotte Rampling]]&nbsp;– ''[[45 Years]]'' as Kate Mercer
+** [[Saoirse Ronan]]&nbsp;– ''[[Brooklyn (film)|Brooklyn]]'' as Eilis Lacey
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Mark Rylance]]&nbsp;– ''[[Bridge of Spies (film)|Bridge of Spies]]'' as [[Rudolf Abel]]‡'''
+** [[Christian Bale]]&nbsp;– ''[[The Big Short (film)|The Big Short]]'' as [[Michael Burry]]
+** [[Tom Hardy]]&nbsp;– ''[[The Revenant (2015 film)|The Revenant]]'' as John Fitzgerald
+** [[Mark Ruffalo]]&nbsp;– ''[[Spotlight (film)|Spotlight]]'' as [[Michael Rezendes]]
+** [[Sylvester Stallone]]&nbsp;– ''[[Creed (film)|Creed]]'' as [[Rocky Balboa]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Alicia Vikander]]&nbsp;– ''[[The Danish Girl (film)|The Danish Girl]]'' as [[Gerda Wegener]]‡'''
+** [[Jennifer Jason Leigh]]&nbsp;– ''[[The Hateful Eight]]'' as Daisy Domergue
+** [[Rooney Mara]]&nbsp;– ''[[Carol (film)|Carol]]'' as Therese Belivet
+** [[Rachel McAdams]]&nbsp;– ''[[Spotlight (film)|Spotlight]]'' as [[Sacha Pfeiffer]]
+** [[Kate Winslet]]&nbsp;– ''[[Steve Jobs (film)|Steve Jobs]]'' as [[Joanna Hoffman]]
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* ''' ''[[Spotlight (film)|Spotlight]]''&nbsp;– [[Josh Singer]] and [[Tom McCarthy (director)|Tom McCarthy]]‡'''
+** ''[[Bridge of Spies (film)|Bridge of Spies]]''&nbsp;– [[Matt Charman]], [[Coen brothers|Ethan Coen]] & [[Coen brothers|Joel Coen]]
+** ''[[Ex Machina (film)|Ex Machina]]''&nbsp;– [[Alex Garland]]
+** ''[[Inside Out]]''&nbsp;– [[Pete Docter]], [[Meg LeFauve]] and [[Josh Cooley]]; Original story by [[Pete Docter]] and [[Ronnie del Carmen]]
+** ''[[Straight Outta Compton (film)|Straight Outta Compton]]''&nbsp;– [[Jonathan Herman]] and [[Andrea Berloff]]; Story by [[S. Leigh Savidge]], [[Alan Wenkus]] and [[Andrea Berloff]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* ''' ''[[The Big Short (film)|The Big Short]]''&nbsp;– [[Charles Randolph]] and [[Adam McKay]]; {{small|based on [[The Big Short|the book]] by [[Michael Lewis]]}}'''‡
+** ''[[Brooklyn (film)|Brooklyn]]''&nbsp;– [[Nick Hornby]]; {{small|based on [[Brooklyn (novel)|the novel]] by [[Colm Tóibín]]}}
+** ''[[Carol (film)|Carol]]''&nbsp;– [[Phyllis Nagy]]; {{small|based on the novel ''[[The Price of Salt]]'' by [[Patricia Highsmith]]}}
+** ''[[The Martian (film)|The Martian]]''&nbsp;– [[Drew Goddard]]; {{small|based on [[The Martian (Weir novel)|the novel]] by [[Andy Weir]]}}
+** ''[[Room (2015 film)|Room]]''&nbsp;– [[Emma Donoghue]]; {{small|based on [[Room (novel)|her novel]]}}
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* ''' ''[[Inside Out]]''&nbsp;– [[Pete Docter]] and [[Jonas Rivera]]‡'''
+** ''[[Anomalisa]]''&nbsp;– [[Charlie Kaufman]], [[Duke Johnson (director)|Duke Johnson]] and [[Rosa Tran]]
+** ''[[Boy and the World]]''&nbsp;– [[Alê Abreu]]
+** ''[[Shaun the Sheep Movie]]''&nbsp;– [[Mark Burton (filmmaker)|Mark Burton]] and [[Richard Starzak]]
+** ''[[When Marnie Was There (film)|When Marnie Was There]]''&nbsp;– [[Hiromasa Yonebayashi]] and [[Yoshiaki Nishimura]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* ''' ''[[Son of Saul]]'' ([[List of Hungarian submissions for the Academy Award for Best Foreign Language Film|Hungary]]) in [[Hungarian language|Hungarian]]&nbsp;– Directed by [[László Nemes]]‡'''
+** ''[[Embrace of the Serpent]]'' ([[List of Colombian submissions for the Academy Award for Best Foreign Language Film|Colombia]]) in [[Spanish language|Spanish]]&nbsp;– Directed by [[Ciro Guerra]]
+** ''[[Mustang (film)|Mustang]]'' ([[List of French submissions for the Academy Award for Best Foreign Language Film|France]]) in [[Turkish language|Turkish]]&nbsp;– Directed by [[Deniz Gamze Ergüven]]
+** ''[[Theeb]]'' ([[List of Jordanian submissions for the Academy Award for Best Foreign Language Film|Jordan]]) in [[Arabic]]&nbsp;– Directed by [[Naji Abu Nowar]]
+** ''[[A War]]'' ([[List of Danish submissions for the Academy Award for Best Foreign Language Film|Denmark]]) in [[Danish language|Danish]]&nbsp;– Directed by [[Tobias Lindholm]]
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* ''' ''[[Amy (2015 film)|Amy]]''&nbsp;– [[Asif Kapadia]] and [[James Gay-Rees]]‡'''
+** ''[[Cartel Land]]''&nbsp;– [[Matthew Heineman]] and [[Tom Yellin]]
+** ''[[The Look of Silence]]''&nbsp;– [[Joshua Oppenheimer]] and [[Signe Byrge Sørensen]]
+** ''[[What Happened, Miss Simone?]]''&nbsp;– [[Liz Garbus]], [[Amy Hobby]] and [[Justin Wilkes]]
+** ''[[Winter on Fire: Ukraine's Fight for Freedom]]''&nbsp;– [[Evgeny Afineevsky]] and [[Den Tolmor]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* ''' ''[[A Girl in the River: The Price of Forgiveness]]''&nbsp;– [[Sharmeen Obaid-Chinoy]]‡'''
+** ''[[Body Team 12]]''&nbsp;– [[David Darg]] and [[Bryn Mooser]]
+** ''[[Chau, Beyond the Lines]]''&nbsp;– [[Courtney Marsh]] and [[Jerry Franck]]
+** ''[[Claude Lanzmann: Spectres of the Shoah]]''&nbsp;– [[Adam Benzine]]
+** ''[[Last Day of Freedom]]''&nbsp;– [[Dee Hibbert-Jones]] and [[Nomi Talisman]]
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* ''' ''[[Stutterer (film)|Stutterer]]''&nbsp;– [[Benjamin Cleary]] and [[Serena Armitage]]‡'''
+** ''[[Ave Maria (2015 film)|Ave Maria]]''&nbsp;– [[Basil Khalil]] and [[Eric Dupont (producer)|Eric Dupont]]
+** ''[[Day One (2015 film)|Day One]]''&nbsp;– [[Henry Hughes (director)|Henry Hughes]]
+** ''[[Everything Will Be Okay]]''&nbsp;– [[Patrick Vollrath]]
+** ''[[Shok (film)|Shok]]''&nbsp;– [[Jamie Donoughue]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Bear Story]]''&nbsp;– [[Gabriel Osorio Vargas|Gabriel Osorio]] and [[Pato Escala Pierart|Pato Escala]]‡'''
+** ''[[Prologue (2015 film)|Prologue]]''&nbsp;– [[Richard Williams (animator)|Richard Williams]] and [[Imogen Sutton]]
+** ''[[Sanjay's Super Team]]''&nbsp;– [[Sanjay Patel]] and [[Nicole Paradis Grindle|Nicole Grindle]]
+** ''[[We Can't Live Without Cosmos]]''&nbsp;– [[Konstantin Bronzit]]
+** ''[[World of Tomorrow (film)|World of Tomorrow]]''&nbsp;– [[Don Hertzfeldt]]
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* ''' ''[[The Hateful Eight]]''&nbsp;– [[Ennio Morricone]]‡'''
+** ''[[Bridge of Spies (film)|Bridge of Spies]]''&nbsp;– [[Thomas Newman]]
+** ''[[Carol (film)|Carol]]''&nbsp;– [[Carter Burwell]]
+** ''[[Sicario (2015 film)|Sicario]]''&nbsp;– [[Jóhann Jóhannsson]]
+** ''[[Star Wars: The Force Awakens]]''&nbsp;– [[John Williams]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Writing's on the Wall (Sam Smith song)|Writing's on the Wall]]" from ''[[Spectre (2015 film)|Spectre]]''&nbsp;– Music and Lyric by [[Jimmy Napes]] and [[Sam Smith]]‡'''
+** "[[Earned It]]" from ''[[Fifty Shades of Grey (film)|Fifty Shades of Grey]]''&nbsp;– Music and Lyric by [[The Weeknd]], [[Ahmad Balshe]], [[Jason Quenneville]] and [[Stephan Moccio]]
+** "[[Manta Ray (song)|Manta Ray]]" from ''[[Racing Extinction]]''&nbsp;– Music by [[J. Ralph]]; Lyric by [[Anohni]]
+** "[[Simple Song Number 3|Simple Song #3]]" from ''[[Youth (2015 film)|Youth]]''&nbsp;– Music and Lyric by [[David Lang (composer)|David Lang]]
+** "[[Til It Happens to You]]" from ''[[The Hunting Ground]]''&nbsp;– Music and Lyric by [[Lady Gaga]] and [[Diane Warren]]
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* ''' ''[[Mad Max: Fury Road]]''&nbsp;– [[Mark A. Mangini|Mark Mangini]] and [[David White (sound editor)|David White]]‡'''
+** ''[[The Martian (film)|The Martian]]''&nbsp;– [[Oliver Tarney]]
+** ''[[The Revenant (2015 film)|The Revenant]]''&nbsp;– [[Martin Hernández]] and [[Lon Bender]]
+** ''[[Sicario (2015 film)|Sicario]]''&nbsp;– [[Alan Robert Murray]]
+** ''[[Star Wars: The Force Awakens]]''&nbsp;– [[Matthew Wood (sound editor)|Matthew Wood]] and [[David Acord]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Best Sound Mixing]]}}
+* ''' ''[[Mad Max: Fury Road]]''&nbsp;– [[Chris Jenkins (sound engineer)|Chris Jenkins]], [[Gregg Rudloff]] and [[Ben Osmo]]‡'''
+** ''[[Bridge of Spies (film)|Bridge of Spies]]''&nbsp;– [[Andy Nelson (sound engineer)|Andy Nelson]], [[Gary Rydstrom]] and [[Drew Kunin]]
+** ''[[The Martian (film)|The Martian]]''&nbsp;– [[Paul Massey (sound engineer)|Paul Massey]], [[Mark Taylor (sound engineer)|Mark Taylor]] and [[Mac Ruth]]
+** ''[[The Revenant (2015 film)|The Revenant]]''&nbsp;– [[Jon Taylor (sound mixer)|Jon Taylor]], [[Frank A. Montaño]], [[Randy Thom]] and [[Chris Duesterdiek]]
+** ''[[Star Wars: The Force Awakens]]''&nbsp;– [[Andy Nelson (sound engineer)|Andy Nelson]], [[Christopher Scarabosio]] and [[Stuart Wilson (sound engineer)|Stuart Wilson]]
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+* ''' ''[[Mad Max: Fury Road]]''&nbsp;– Production Design: [[Colin Gibson (production designer)|Colin Gibson]]; Set Decoration: [[Lisa Thompson (set decorator)|Lisa Thompson]]‡'''
+** ''[[Bridge of Spies (film)|Bridge of Spies]]''&nbsp;– Production Design: [[Adam Stockhausen]]; Set Decoration: [[Rena DeAngelo]] and [[Bernhard Henrich]]
+** ''[[The Danish Girl (film)|The Danish Girl]]''&nbsp;– Production Design: [[Eve Stewart]]; Set Decoration: [[Michael Standish]]
+** ''[[The Martian (film)|The Martian]]''&nbsp;– Production Design: [[Arthur Max]]; Set Decoration: [[Celia Bobak]]
+** ''[[The Revenant (2015 film)|The Revenant]]''&nbsp;– Production Design: [[Jack Fisk]]; Set Decoration: [[Hamish Purdy]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* ''' ''[[The Revenant (2015 film)|The Revenant]]''&nbsp;– [[Emmanuel Lubezki]]‡'''
+** ''[[Carol (film)|Carol]]''&nbsp;– [[Edward Lachman|Ed Lachman]]
+** ''[[The Hateful Eight]]''&nbsp;– [[Robert Richardson (cinematographer)|Robert Richardson]]
+** ''[[Mad Max: Fury Road]]''&nbsp;– [[John Seale]]
+** ''[[Sicario (2015 film)|Sicario]]''&nbsp;– [[Roger Deakins]]
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* ''' ''[[Mad Max: Fury Road]]''&nbsp;– [[Lesley Vanderwalt]], [[Elka Wardega]] and [[Damian Martin (make-up artist)|Damian Martin]]‡'''
+** ''[[The Hundred-Year-Old Man Who Climbed Out of the Window and Disappeared (film)|The 100-Year-Old Man Who Climbed Out the Window and Disappeared]]''&nbsp;– [[Love Larson]] and [[Eva von Bahr (make-up artist)|Eva von Bahr]]<!-- Film title without “of” per oscars.org listing -->
+** ''[[The Revenant (2015 film)|The Revenant]]''&nbsp;– [[Siân Grigg]], [[Duncan Jarman]] and [[Robert Pandini]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* ''' ''[[Mad Max: Fury Road]]''&nbsp;– [[Jenny Beavan]]‡'''
+** ''[[Carol (film)|Carol]]''&nbsp;– [[Sandy Powell (costume designer)|Sandy Powell]]
+** ''[[Cinderella (2015 American film)|Cinderella]]''&nbsp;– [[Sandy Powell (costume designer)|Sandy Powell]]
+** ''[[The Danish Girl (film)|The Danish Girl]]''&nbsp;– [[Paco Delgado]]
+** ''[[The Revenant (2015 film)|The Revenant]]''&nbsp;– [[Jacqueline West]]
+|-
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* ''' ''[[Mad Max: Fury Road]]''&nbsp;– [[Margaret Sixel]]‡'''
+** ''[[The Big Short (film)|The Big Short]]''&nbsp;– [[Hank Corwin]]
+** ''[[The Revenant (2015 film)|The Revenant]]''&nbsp;– [[Stephen Mirrione]]
+** ''[[Spotlight (film)|Spotlight]]''&nbsp;– [[Tom McArdle]]
+** ''[[Star Wars: The Force Awakens]]''&nbsp;– [[Maryann Brandon]] and [[Mary Jo Markey]]
+| valign="top" width="50%"|
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* ''' ''[[Ex Machina (film)|Ex Machina]]''&nbsp;– [[Andrew Whitehurst]], [[Paul Norris (visual effects)|Paul Norris]], [[Mark Ardington]] and [[Sara Bennett]]‡'''
+** ''[[Mad Max: Fury Road]]''&nbsp;– [[Andrew Jackson (visual effects)|Andrew Jackson]], [[Tom Wood (visual effects)|Tom Wood]], [[Dan Oliver]] and [[Andy Williams (visual effects)|Andy Williams]]
+** ''[[The Martian (film)|The Martian]]''&nbsp;– [[Richard Stammers]], [[Anders Langlands]], [[Chris Lawrence (visual effects)|Chris Lawrence]] and [[Steven Warner]]
+** ''[[The Revenant (2015 film)|The Revenant]]''&nbsp;– [[Rich McBride]], [[Matthew Shumway]], [[Jason Smith (visual effects)|Jason Smith]] and [[Cameron Waldbauer]]
+** ''[[Star Wars: The Force Awakens]]''&nbsp;– [[Roger Guyett]], [[Patrick Tubach]], [[Neal Scanlan]] and [[Chris Corbould]]
+|}
+
+=== Governors Awards ===
+The academy held its 7th Annual [[Governors Awards]] ceremony on November 14, 2015, during which the following awards were presented:<ref name="Governor Awards LA TIMES" />
+
+====Honorary Awards====
+* To [[Spike Lee]], filmmaker, educator, motivator, iconoclast, artist.<ref name="Honorary">{{cite news|title=Academy Awards Acceptance Speech Databases: 2015 (88th) Academy Awards |url=http://aaspeechesdb.oscars.org/results.aspx?QY=find%20(year%20term%20ct%202015)&AC=QBE_QUERY&RF=WebReportList&DF=WebReportOscars&MR=0&BU=/index.aspx |publisher=Academy of Motion Picture Arts and Sciences |access-date=March 2, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160629143943/http://aaspeechesdb.oscars.org/results.aspx?QY=find%20%28year%20term%20ct%202015%29&AC=QBE_QUERY&RF=WebReportList&DF=WebReportOscars&MR=0&BU=%2Findex.aspx |archive-date=June 29, 2016}}</ref>
+* To [[Gena Rowlands]], who has illuminated the human experience through her brilliant, passionate and fearless performances.<ref name="Honorary"/>
+
+====Jean Hersholt Humanitarian Award====
+* [[Debbie Reynolds]] {{em-dash}} For her charitable contributions and tireless efforts towards mental health as founding member of [[The Thalians]].<ref name="Governors">{{cite news|url=http://www.oscars.org/news/spike-lee-debbie-reynolds-and-gena-rowlands-receive-academys-2015-governors-awards |title=Spike Lee, Debbie Reynolds And Gena Rowlands To Receive Academy's 2015 Governors Awards |date=August 27, 2015 |access-date=September 1, 2015 |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20150831052936/http://www.oscars.org/news/spike-lee-debbie-reynolds-and-gena-rowlands-receive-academys-2015-governors-awards |archive-date=August 31, 2015}}</ref>
+
+=== Films with multiple nominations and awards ===
+{{col-begin|width=80%}}{{col-1-of-2}}
+{| class="wikitable" style="text-align: center;"
+|+ Films that received multiple nominations<ref>{{cite web|title=Oscar Nominations: Noms By The Numbers |url=https://deadline.com/2016/01/oscar-nominations-2016-lists-films-studios-1201682825/ |first=Patrick |last=Hipes |website=Deadline Hollywood |date=January 14, 2016 |access-date=September 24, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160905234131/http://deadline.com/2016/01/oscar-nominations-2016-lists-films-studios-1201682825/ |archive-date=September 5, 2016}}</ref>
+|-
+! scope="col"|Nominations
+! scope="col"|Film
+|-
+|12
+|''[[The Revenant (2015 film)|The Revenant]]''
+|-
+|10
+|''[[Mad Max: Fury Road]]''
+|-
+|7
+|''[[The Martian (film)|The Martian]]''
+|-
+|rowspan=3 style="text-align:center;" |6
+|''[[Bridge of Spies (film)|Bridge of Spies]]''
+|-
+|''[[Carol (film)|Carol]]''
+|-
+|''[[Spotlight (film)|Spotlight]]''
+|-
+|rowspan=2 style="text-align:center;" |5
+|''[[Star Wars: The Force Awakens]]''
+|-
+|''[[The Big Short (film)|The Big Short]]''
+|-
+|rowspan=2 style="text-align:center;" |4
+|''[[Room (2015 film)|Room]]''
+|-
+|''[[The Danish Girl (film)|The Danish Girl]]''
+|-
+|rowspan=3 style="text-align:center;" |3
+|''[[Brooklyn (film)|Brooklyn]]''
+|-
+|''[[Sicario (2015 film)|Sicario]]''
+|-
+|''[[The Hateful Eight]]''
+|-
+|rowspan=3 style="text-align:center;" |2
+|''[[Ex Machina (film)|Ex Machina]]''
+|-
+|''[[Inside Out]]''
+|-
+|''[[Steve Jobs (film)|Steve Jobs]]''
+|}
+{{col-2}}
+{| class="wikitable" style="text-align: center;"
+|+ Films that received multiple awards<ref>{{cite web|title=Oscar Winners By Film & Studio – Chart |url=https://deadline.com/2016/02/oscars-2016-winners-mad-max-fury-road-most-wins-1201711224/ |first=Matthew |last=Grobar |website=Deadline Hollywood |date=February 28, 2016 |access-date=September 24, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160927181638/http://deadline.com/2016/02/oscars-2016-winners-mad-max-fury-road-most-wins-1201711224/ |archive-date=September 27, 2016}}</ref>
+|-
+! scope="col"|Awards
+! scope="col"|Film
+|-
+|6
+|''[[Mad Max: Fury Road]]''
+|-
+|3
+|''[[The Revenant (2015 film)|The Revenant]]''
+|-
+|2
+|''[[Spotlight (film)|Spotlight]]''
+|}
+{{col-end}}
+
+== Presenters and performers ==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>{{cite news|last1=McDonnell |first1=Brandy |title=Transcript: BAM's Live Blog during the 2016 Academy Awards show |url=http://newsok.com/article/5481418 |access-date=June 12, 2016 |work=[[The Oklahoman]] |date=February 28, 2016 |url-status=dead |archive-url=https://web.archive.org/web/20160304231641/http://newsok.com/article/5481418 |archive-date=March 4, 2016}}</ref><ref name="Boedeker">{{cite news|last1=Boedeker |first1=Hal |title=Oscars: Chris Rock kills it |url=http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-chris-rock-kills-its-20160228-story.html |access-date=July 31, 2016 |work=Orlando Sentinel |date=February 28, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160818063636/http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-chris-rock-kills-its-20160228-story.html |archive-date=August 18, 2016}}</ref><ref name="FMS">{{cite news|last1=Burlingame |first1=Jon |title=Morricone Wins Oscar Music Gold At Last |url=http://www.filmmusicsociety.org/news_events/features/2016/022916.html |access-date=May 20, 2016 |publisher=[[The Film Music Society]] |date=February 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160406155948/http://filmmusicsociety.org/news_events/features/2016/022916.html |archive-date=April 6, 2016}}</ref>
+
+=== Presenters ===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+|{{sortname|Ellen|K}} || Announcer for the 88th annual Academy Awards
+|-
+|{{sortname|Emily|Blunt}}<br />{{sortname|Charlize|Theron}} || Presenters of the award for [[Best Original Screenplay]]
+|-
+|{{sortname|Russell|Crowe}}<br />{{sortname|Ryan|Gosling}} || Presenters of the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+|{{sortname|Sarah|Silverman}} || Introducer of the performance of Best Original Song nominee "[[Writing's on the Wall (Sam Smith song)|Writing's on the Wall]]"
+|-
+|{{sortname|Henry|Cavill}}<br />{{sortname|Kerry|Washington}} || Presenters of the films ''[[The Martian (film)|The Martian]]'' and ''[[The Big Short (film)|The Big Short]]'' on the Best Picture segment
+|-
+|{{sortname|J. K.|Simmons}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+|{{sortname|Cate|Blanchett}} || Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+|{{sortname|Steve|Carell}}<br />{{sortname|Tina|Fey}} || Presenters of the award for [[Academy Award for Best Production Design|Best Production Design]]
+|-
+|{{sortname|Jared|Leto}}<br />{{sortname|Margot|Robbie}} || Presenters of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]
+|-
+|{{sortname|Benicio|del Toro}}<br />{{sortname|Jennifer|Garner}} || Presenters of the films ''[[The Revenant (2015 film)|The Revenant]]'' and ''[[Mad Max: Fury Road]]'' on the Best Picture segment
+|-
+|{{sortname|Michael|B. Jordan}}<br />{{sortname|Rachel|McAdams}} || Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+|{{sortname|Priyanka|Chopra}}<br />{{sortname|Liev|Schreiber}} || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+|{{sortname|Chadwick|Boseman}}<br />{{sortname||Chris Evans|Chris Evans (actor)|Chris Evans}} || Presenters of the awards for [[Academy Award for Best Sound Editing|Best Sound Editing]] and [[Best Sound Mixing]]
+|-
+|{{sortname|Andy|Serkis}} || Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+|{{sortname|Olivia|Munn}}<br />{{sortname|Jason|Segel}} || Presenters of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]]
+|-
+|{{sortname||Kevin, Stuart, and Bob|Minions (Despicable Me)|Kevin, Stuart, and Bob}} (Voiced by [[Pierre Coffin]])|| Presenters of the award for [[Best Animated Short Film]]
+|-
+|{{sortname||Sheriff Woody}} ([[Tom Hanks]])<br />{{sortname|Buzz|Lightyear}} ([[Tim Allen]])|| Presenters of the award for [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+|{{sortname|Kevin|Hart}} || Introducer of the performance of Best Original Song nominee "[[Earned It]]"
+|-
+|{{sortname|Kate|Winslet}}<br />{{sortname|Reese|Witherspoon}} || Presenters of the films ''[[Bridge of Spies (film)|Bridge of Spies]]'' and ''[[Spotlight (film)|Spotlight]]'' on the Best Picture segment
+|-
+|{{sortname|Patricia|Arquette}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+|{{sortname|Louis|C.K.}} || Presenter of the award for [[Best Documentary Short Subject]]
+|-
+|{{sortname|Dev|Patel}}<br />{{sortname|Daisy|Ridley}} || Presenters of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+|{{sortname|Whoopi|Goldberg}} || Presenter of the segment of the [[Honorary Academy Award]]s and [[Jean Hersholt Humanitarian Award]]
+|-
+|{{sortname|Cheryl Boone|Isaacs}}<br />(AMPAS president) || Special presentation highlighting the benefits of film and diversity
+|-
+|{{sortname|Louis|Gossett Jr.}} || Presenter of the ''[[In memoriam segment|In Memoriam]]'' tribute
+|-
+|{{sortname|Abraham|Attah}}<br />{{sortname|Jacob|Tremblay}} || Presenters of the award for [[Best Live Action Short Film]]
+|-
+|{{sortname|Lee|Byung-hun}}<br />{{sortname|Sofía|Vergara}} || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+|{{sortname|Joe|Biden}} || Introducer of the performance of Best Original Song nominee "[[Til It Happens to You]]"
+|-
+|{{sortname|Quincy|Jones}}<br />{{sortname|Pharrell|Williams}} || Presenters of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+|[[Common (rapper)|Common]]<br />{{sortname|John|Legend}} || Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+|{{sortname|Sacha Baron|Cohen}} (as [[Ali G]])<br />{{sortname|Olivia|Wilde}}|| Presenters of the films ''[[Room (2015 film)|Room]]'' and ''[[Brooklyn (film)|Brooklyn]]'' on the Best Picture segment
+|-
+|{{sortname|J. J. |Abrams}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+|{{sortname|Eddie|Redmayne}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+|{{sortname|Julianne|Moore}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+|{{sortname|Morgan|Freeman}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+=== Performers ===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+|{{sortname|Harold|Wheeler|Harold Wheeler (musician)}} || Musical arranger and conductor || Orchestral
+|-
+|{{sortname|Sam|Smith}} || Performer || "[[Writing's on the Wall (Sam Smith song)|Writing's on the Wall]]" from ''[[Spectre (2015 film)|Spectre]]''
+|-
+|{{sort|Weeknd|[[The Weeknd]]}} || Performer || "[[Earned It]]" from ''[[Fifty Shades of Grey (film)|Fifty Shades of Grey]]''
+|-
+|{{sortname|Dave|Grohl}} || Performer || "[[Blackbird (Beatles song)|Blackbird]]" during the annual ''[[In memoriam segment|In Memoriam]]'' tribute
+|-
+|[[Lady Gaga]] || Performer || "[[Til It Happens to You]]" from ''[[The Hunting Ground]]''
+|}
+
+== Ceremony information ==
+[[File:Chris Rock 2014.jpg|thumb|upright|[[Chris Rock]] hosted the 88th Academy Awards.|alt=Picture of actor and comedian Chris Rock in 2012.]]
+
+Due to the mixed reception and lower ratings resulting from the [[87th Academy Awards|previous year's ceremony]], producers [[Neil Meron]] and [[Craig Zadan]] declined to helm the upcoming festivities.<ref>{{cite news|last1=Hammond |first1=Pete |title=Oscars: Craig Zadan & Neil Meron Not Returning In 2016; Academy Starts New Producer Search |url=https://deadline.com/2015/03/craig-zadan-neil-meron-not-returning-oscars-2016-producers-1201399124/ |access-date=July 29, 2016 |website=Deadline Hollywood |date=March 25, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160427030100/http://deadline.com/2015/03/craig-zadan-neil-meron-not-returning-oscars-2016-producers-1201399124/ |archive-date=April 27, 2016}}</ref> Shortly afterwards, actor [[Neil Patrick Harris]] announced that he would not host the Oscars for a second time. In an interview released from ''[[The Huffington Post]]'', he said "I don't know that my family nor my soul could take it. It's a beast. It was fun to check off the list, but for the amount of time spent and the understandable opinionated response, I don't know that it's a delightful balance to do every year or even again."<ref>{{cite news|last=Bradley |first=Bill |title=Neil Patrick Harris Doesn't Know If His 'Family Or Soul' Could Take Another Oscars |url=https://www.huffingtonpost.com/entry/neil-patrick-harris-oscars_n_6795084.html |access-date=September 2, 2015 |work=The Huffington Post |date=March 4, 2015 |url-status=live |archive-url=https://web.archive.org/web/20150904000717/https://www.huffingtonpost.com/entry/neil-patrick-harris-oscars_n_6795084.html |archive-date=September 4, 2015}}</ref> In September 2015, AMPAS recruited [[David Hill (producer)|David Hill]] and [[Reginald Hudlin]] as producers of the ceremony.<ref name="HillHudlin">{{cite news|last1=Whipp |first1=Glenn |title=And the Oscar producer job goes to ... David Hill and Reginald Hudlin |url=https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-oscar-producers-20150901-story.html |access-date=July 29, 2016 |work=[[Los Angeles Times]] |date=September 1, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160817102353/http://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-oscar-producers-20150901-story.html |archive-date=August 17, 2016}}</ref> "We're delighted to have this talented team on board," AMPAS president [[Cheryl Boone Isaacs]] said in a press release announcing the decision, "David is a true innovator with a dynamic personality. His vast experience as a live events producer, coupled with Reginald's energy, creativity and talent as a filmmaker, is sure to make this year's Oscar telecast a memorable one."<ref>{{cite news|last1=Kilday |first1=Gregg |title=Oscars: David Hill and Reginald Hudlin to Produce |url=https://www.hollywoodreporter.com/news/oscars-david-hill-reginald-hudlin-819527 |access-date=July 29, 2016 |work=The Hollywood Reporter |date=September 1, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160819155049/http://www.hollywoodreporter.com/news/oscars-david-hill-reginald-hudlin-819527 |archive-date=August 19, 2016}}</ref>
+
+The following month, Hill and Hudlin selected actor and comedian [[Chris Rock]] to host the 2016 telecast. They explained their decision to hire Rock back as host saying, "Chris Rock is truly the MVP of the entertainment industry. Comedian, actor, writer, producer, director, documentarian&nbsp;— he's done it all. He's going to be a phenomenal Oscar host!"<ref name="Rock">{{cite news|last1=Moraski |first1=Lauren |title=Chris Rock will host the 2016 Oscars |url=https://www.cbsnews.com/news/chris-rock-will-host-2016-oscars/ |access-date=February 7, 2016 |work=[[CBS News]] |date=October 21, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160117215313/http://www.cbsnews.com/news/chris-rock-will-host-2016-oscars/ |archive-date=January 17, 2016}}</ref> Rock expressed that he was thrilled to be selected to emcee the gala again, commenting, "I'm so glad to be hosting the Oscars, it's great to be back."<ref>{{cite web|title=Chris Rock – Your 2016 Oscars Host!|url=http://oscar.go.com/news/oscar-news/chris-rock-officially-announced-to-host-the-88th-oscars-in-2016|publisher=[[Academy of Motion Picture Arts and Sciences]] |date=October 21, 2015|access-date=November 30, 2015 |url-status=live |archive-url=https://web.archive.org/web/20161220095209/http://oscar.go.com/news/oscar-news/chris-rock-officially-announced-to-host-the-88th-oscars-in-2016|archive-date=December 20, 2016}}</ref>
+
+The key art and marketing for the ceremony featured the tagline "We all dream in gold", with print advertising featuring photography of past winners. AMPAS chief marketing officer Christina Kounelias explained that it was meant to reflect the Academy Awards as being both "a symbol of excellence but also this idea of 'If you can dream it, you can achieve it'".<ref>{{Cite web |last=Nudd |first=Tim |date=2016-01-12 |title=The Academy Unveils a Dreamy Advertising Campaign for This Year's Oscars |url=https://www.adweek.com/brand-marketing/academy-unveils-dreamy-advertising-campaign-years-oscars-168961/ |archive-url=https://web.archive.org/web/20170609064136/https://www.adweek.com/brand-marketing/academy-unveils-dreamy-advertising-campaign-years-oscars-168961/ |archive-date=2017-06-09 |access-date=2023-03-01 |website=Adweek |language=en-US}}</ref><ref>{{Cite web |last=Brennan |first=Matt |date=2016-01-12 |title=Watch: On Oscar Night 'We All Dream in Gold,' 88th Academy Awards Ad Spot, Posters Promise |url=https://www.indiewire.com/2016/01/watch-on-oscar-night-we-all-dream-in-gold-88th-academy-awards-ad-spot-posters-promise-175305/ |access-date=2023-03-01 |website=IndieWire |language=en |archive-date=March 1, 2023 |archive-url=https://web.archive.org/web/20230301041935/https://www.indiewire.com/2016/01/watch-on-oscar-night-we-all-dream-in-gold-88th-academy-awards-ad-spot-posters-promise-175305/ |url-status=live }}</ref>
+
+Several other individuals participated in the production of the ceremony. [[Billy Kimball]] was the head writer.<ref name="Weiss"/> Radio [[disc jockey]] and personality [[Ellen K]] served as announcer for the show.<ref>{{cite magazine|last1=Caulfield |first1=Keith |title=Ellen K Exits 'On Air With Ryan Seacrest' for Her Own KOST L.A. Show |url=https://www.billboard.com/articles/business/6722002/ellen-k-leaves-on-air-with-ryan-seacrest |access-date=June 16, 2016 |magazine=[[Billboard (magazine)|Billboard]] |date=October 7, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160611192639/http://www.billboard.com/articles/business/6722002/ellen-k-leaves-on-air-with-ryan-seacrest |archive-date=June 11, 2016}}</ref> Byron Phillips and [[Harold Wheeler (musician)|Harold Wheeler]] were hired as music producer and music director respectively.<ref name="Weiss">{{cite news|title=Oscars: Glenn Weiss to Direct the Show, Billy Kimball to Write |url=https://www.hollywoodreporter.com/news/oscars-glenn-weiss-direct-show-867586 |access-date=June 12, 2016 |work=[[The Hollywood Reporter]] |date=February 19, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160326020849/http://www.hollywoodreporter.com/news/oscars-glenn-weiss-direct-show-867586 |archive-date=March 26, 2016}}</ref> For a fourth consecutive year [[Derek McLane]] returned to design a new set for the show.<ref name="Weiss"/> [[Fatima Robinson]] was in charge of choreography for the broadcast.<ref name="Weiss"/> For the first time, the Oscar statuettes were manufactured by Polich Tallix Fine Art Foundry in [[Rock Tavern, New York]].<ref>{{cite news|last1=Kilday |first1=Greg |title=Oscar Statuette Gets a Face-Lift |url=https://www.hollywoodreporter.com/news/oscar-statuette-gets-a-face-866321 |access-date=April 27, 2016 |work=The Hollywood Reporter |date=February 16, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160505081009/http://www.hollywoodreporter.com/news/oscar-statuette-gets-a-face-866321 |archive-date=May 5, 2016}}</ref> In a further effort to streamline acceptance speeches, dedications were displayed on an on-screen [[news ticker|ticker]], rather than read by the winner.<ref name="usatoday-thankyouscroll">{{cite news|title=Can the 'thank-you scroll' save Oscar speeches? |url=https://www.usatoday.com/story/life/movies/2016/02/25/thank-you-scroll-oscars-telecast/80840490/ |first=Bryan |last=Alexander |work=[[USA Today]] |date=February 25, 2016 |access-date=February 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160228195632/http://www.usatoday.com/story/life/movies/2016/02/25/thank-you-scroll-oscars-telecast/80840490/ |archive-date=February 28, 2016}}</ref> Prior to introducing singer [[Lady Gaga]]'s performance of Best Original Song nominee "[[Til It Happens to You]]" from the documentary film ''[[The Hunting Ground]]'', [[U.S. Vice President]] [[Joe Biden]] pleaded with viewers to sign an online pledge supporting "It's On Us" to end [[campus sexual assault]].<ref>{{cite news|last1=Mallin |first1=Alexander |title=Vice President Biden Calls on Oscars Audience to Sign Anti-Sexual Assault Pledge |url=https://abcnews.go.com/Politics/vice-president-biden-calls-oscars-audience-sign-anti/story?id=37248031 |access-date=May 10, 2016 |work=[[ABC News (United States)|ABC News]] |date=February 28, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160504090900/http://abcnews.go.com/Politics/vice-president-biden-calls-oscars-audience-sign-anti/story?id=37248031 |archive-date=May 4, 2016}}</ref>
+
+On February 19, 2016, ''[[Variety (magazine)|Variety]]'' reported that due to time constraints only three of five songs nominated for [[Academy Award for Best Original Song|Best Original Song]] would be performed live during the ceremony.<ref>{{cite news|last1=Tapley |first1=Kristopher |title=Oscars: Two Original Song Performances Nixed From Broadcast (EXCLUSIVE) |url=https://variety.com/2016/film/awards/oscars-song-performances-youth-racing-extinction-1201710638/ |access-date=August 2, 2026 |work=Variety |date=February 19, 2016 |url-status=live |archive-url=https://web.archive.org/web/20220809015607/https://variety.com/2016/film/awards/oscars-song-performances-youth-racing-extinction-1201710638/ |archive-date=August 9, 2022}}</ref> One of two omitted songs was "[[Manta Ray (song)|Manta Ray]]", performed and co-written by [[Anohni]], the first [[transgender]] person to be nominated for an Academy Award for Best Original Song. She boycotted the ceremony, stating: "Everyone told me that I still ought to attend, that a walk down the red carpet would still be 'good for my career'. Last night I tried to force myself to get on the plane to fly to LA for all the nominee events, but the feelings of embarrassment and anger knocked me back, and I couldn't get on the plane." She also added: "I imagined how it would feel for me to sit amongst all those Hollywood stars, some of the brave ones approaching me with sad faces and condolences. There I was, feeling a sting of shame that reminded me of America's earliest affirmations of my inadequacy as a transperson. I turned around at the airport and went back home."<ref>{{Cite web|first=Tim|last=Jonze|date=February 26, 2016|title=Oscars 2016: Anohni boycotts 'degrading' ceremony|url=http://www.theguardian.com/music/2016/feb/26/anohni-boycotts-oscars-ceremony-transgender-diversity|access-date=December 18, 2021|magazine=The Guardian|archive-date=February 27, 2016|archive-url=https://web.archive.org/web/20160227061808/http://www.theguardian.com/music/2016/feb/26/anohni-boycotts-oscars-ceremony-transgender-diversity|url-status=live}}</ref>
+
+=== Box office performance of nominated films ===
+{| class="wikitable sortable" style="width:350px; font-size:90%; float:right; clear:right; margin-left:10px"
+|+North American box office gross for Best Picture nominees<ref name="BOM">{{cite web|title=2015 Academy Award Nominations and Winner for Best Picture |url=https://www.boxofficemojo.com/oscar/chart/?yr=2015&view=fulldetail&p=.htm |website=[[Box Office Mojo]] |access-date=June 12, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160822102231/http://www.boxofficemojo.com/oscar/chart/?yr=2015&view=fulldetail&p=.htm |archive-date=August 22, 2016}}</ref>
+|-
+! scope="col" data-sort-type="text" | Film
+! scope="col" data-sort-type="number" | Pre-nomination<br />(before Jan. 14)
+! scope="col" data-sort-type="number" | Post-nomination<br />(Jan. 14&nbsp;– Feb. 28)
+! scope="col" data-sort-type="number" | Post-awards<br />(after Feb. 28)
+! scope="col" data-sort-type="number" | Total
+|-
+| data-sort-value="Martian" | ''The Martian''
+| data-sort-value="2266e5" | $226.6 million
+| data-sort-value="18e5" | $1.8 million
+| data-sort-value="53548" | $53,548
+| data-sort-value="2284e5" | $228.4 million
+|-
+| data-sort-value="Revenant" |''The Revenant''
+| data-sort-value="541e5" | $54.1 million
+| data-sort-value="1165e5" | $116.5 million
+| data-sort-value="96e5" | $11.9 million
+| data-sort-value="1812e5" | $182.6 million
+|-
+|''Mad Max: Fury Road''
+| data-sort-value="1536e5" | $153.6 million
+| --
+| --
+| data-sort-value="1536e5" | $153.6 million
+|-
+|''Bridge of Spies''
+| data-sort-value="708e5" | $70.8 million
+| data-sort-value="14e5"  | $1.4 million
+| data-sort-value="49549" | $49,549
+| data-sort-value="723e5" | $72.3 million
+|-
+| data-sort-value="Big Short" | ''The Big Short''
+| data-sort-value="446e5" | $44.6 million
+| data-sort-value="239e5" | $23.9 million
+| data-sort-value="14e5"  | $1.7 million
+| data-sort-value="701e5" | $70.2 million
+|-
+|''Spotlight''
+| data-sort-value="288e5" | $28.8 million
+| data-sort-value="103e5" | $10.3 million
+| data-sort-value="46e5"  | $5.5 million
+| data-sort-value="44e6"  | $44.6 million
+|-
+|''Brooklyn''
+| data-sort-value="228e5" | $22.8 million
+| data-sort-value="137e5" | $13.7 million
+| data-sort-value="13e5"  | $1.6 million
+| data-sort-value="379e5" | $38.1 million
+|-
+|''Room''
+| data-sort-value="52e5"  | $5.2 million
+| data-sort-value="82e5"  | $8.2 million
+| data-sort-value="910965"| $1.2 million
+| data-sort-value="145e5" | $14.7 million
+|}
+
+At the time of the nominations announcement on January 14, 2016, the combined gross of the eight Best Picture nominees at the American and Canadian box offices was $607 million, with an average of $75.8 million per film.<ref name="BOMOscarchart">{{cite web|title=2015 Academy Award Nominations and Winner for Best Picture |url=https://www.boxofficemojo.com/oscar/chart/?yr=2015&view=fulldetail&p=.htm |website=Box Office Mojo |access-date=June 12, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160822102231/http://www.boxofficemojo.com/oscar/chart/?yr=2015&view=fulldetail&p=.htm |archive-date=August 22, 2016}}</ref> When the nominations were announced on January 14, 2016, ''The Martian'' was the highest-grossing film among the Best Picture nominees with $226.6 million in domestic box office receipts.<ref name="BOM"/> ''Mad Max: Fury Road'' was the second-highest-grossing film with $153.6 million; this was followed by ''Bridge of Spies'' ($70.7 million), ''The Revenant'' ($54.1 million), ''The Big Short'' ($44.6 million), ''Spotlight'' ($28.8 million), ''Brooklyn'' ($22.7 million), and ''Room'' ($5.1 million).<ref name="BOM"/>
+
+Of the top 50 grossing movies of the year, 46 nominations went to 11 films on the list. Only ''Inside Out'' (4th), ''The Martian'' (8th), ''Straight Outta Compton'' (18th), ''The Revenant'' (15th), ''Mad Max: Fury Road'' (21st), ''Creed'' (29th), and ''Bridge of Spies'' (42nd) were nominated for Best Picture, Best Animated Feature, or any of the directing, acting, or screenwriting awards. The other top 50 box office hits that earned nominations were ''Star Wars: The Force Awakens'' (1st), ''Cinderella'' (9th), ''Spectre'' (10th), and ''Fifty Shades of Grey'' (17th).<ref>{{Cite web |title=Domestic Box Office For 2015 |url=https://www.boxofficemojo.com/year/2015/?grossesOption=totalGrosses |url-status=live |archive-url=https://web.archive.org/web/20210108071113/https://www.boxofficemojo.com/year/2015/?grossesOption=totalGrosses |archive-date=January 8, 2021 |access-date=June 12, 2023 |website=Box Office Mojo}}</ref>
+
+=== Criticism regarding lack of diversity ===
+{{Main article|OscarsSoWhite}}
+Shortly after the nominations were announced, many news media outlets observed that there was a lack of racial diversity amongst the nominees in major categories. For the second consecutive year, all twenty acting nominees and four out of the five directors nominated were [[Caucasian race|Caucasian]], despite the Academy president saying the previous year that they would take steps to be more representative of different ethnicities.<ref>{{cite news|last1=Keegan |first1=Rebecca |last2=Zeitchik |first2=Steven |title=Oscars 2016: Here's why the nominees are so white -- again |url=https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-all-white-oscar-acting-nominees-20160114-story.html |access-date=June 12, 2016 |work=Los Angeles Times |date=January 14, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160612100254/http://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-all-white-oscar-acting-nominees-20160114-story.html |archive-date=June 12, 2016}}</ref><ref>{{Cite web |agency=[[The Associated Press]] |date=2015-01-17 |title=Oscars 2015: Film academy president responds to firestorm over lack of diversity |url=https://www.syracuse.com/entertainment/2015/01/oscars_2015.html |access-date=2024-03-11 |website=syracuse |language=en |archive-date=March 11, 2024 |archive-url=https://web.archive.org/web/20240311003423/https://www.syracuse.com/entertainment/2015/01/oscars_2015.html |url-status=live }}</ref> Activist and former attorney [[April Reign]], who was credited with starting the [[hashtag]] #OscarsSoWhite, tweeted, "It's actually worse than last year. Best Documentary and Best Original Screenplay. That's it. #OscarsSoWhite." She also noted that while the Caucasian screenwriters of the film ''[[Straight Outta Compton (film)|Straight Outta Compton]]'' earned nominations, the [[African American]] cast of the film was overlooked.<ref>{{cite news|last1=Griggs |first1=Brandon |title=Once again, #OscarsSoWhite |url=http://www.cnn.com/2016/01/14/entertainment/oscars-so-white-protest-nominations-feat/ |access-date=July 31, 2016 |publisher=[[CNN]] |date=January 14, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160731073854/http://www.cnn.com/2016/01/14/entertainment/oscars-so-white-protest-nominations-feat |archive-date=July 31, 2016}}</ref> As a result, the academy was ridiculed again over social media with the aforementioned hashtag.<ref>{{cite news|last1=Vincent |first1=Alice |title=#OscarsSoWhite, again: the best tweets on the Oscars' whitest year yet |url=https://www.telegraph.co.uk/film/movie-news/oscarssowhite-no-black-nominees-2016/ |access-date=June 12, 2016 |work=[[The Daily Telegraph]] |date=January 14, 2016 |url-status=dead |archive-url=https://web.archive.org/web/20160713132047/http://www.telegraph.co.uk/film/movie-news/oscarssowhite-no-black-nominees-2016/ |archive-date=July 13, 2016}}</ref> Moreover, actress [[Jada Pinkett Smith]] and director and newly minted [[Honorary Oscar]] recipient [[Spike Lee]] announced plans to boycott the ceremony and encouraged others to not watch the telecast in protest of the lack of diversity.<ref>{{cite news|title=Spike Lee, Jada Pinkett Smith Call for Oscar Boycott |url=https://variety.com/2016/film/awards/spike-lee-jada-pinkett-smith-oscar-boycott-1201682165/ |access-date=July 30, 2016 |work=Variety |date=January 18, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160730045305/http://variety.com/2016/film/awards/spike-lee-jada-pinkett-smith-oscar-boycott-1201682165/ |archive-date=July 30, 2016}}</ref> Actor and model [[Tyrese Gibson]] and rapper [[50 Cent]] also pressured Chris Rock to drop out of his Oscar hosting duties.<ref>{{cite news|last1=Konerman |first1=Jennifer |title=50 Cent, Tyrese Gibson Call for Chris Rock to Step Down as Oscars Host |url=https://www.hollywoodreporter.com/news/stephen-frears-be-honored-at-915620 |access-date=July 31, 2016 |work=The Hollywood Reporter |date=January 20, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160730154748/http://www.hollywoodreporter.com/news/stephen-frears-be-honored-at-915620 |archive-date=July 30, 2016}}</ref>
+
+In response to the criticism, several individuals including AMPAS members voiced their opinions regarding the lack of diversity. Some members defended the academy saying that the nominations are based on performance and merit, not race. Actress [[Penelope Ann Miller]] responded to the criticism by stating "I voted for a number of black performers, and I was sorry they weren't nominated. To imply that this is because all of us are racists is extremely offensive. I don't want to be lumped into a category of being a racist because I'm certainly not and because I support and benefit from the talent of black people in this business. It was just an incredibly competitive year."<ref>{{cite news|last=Feinberg |first=Scott |title=Academy Members Defend Their Oscar Votes: "To Imply We Are Racists Is Extremely Offensive" |url=https://www.hollywoodreporter.com/race/oscarssowhite-academy-members-defend-oscar-857416 |work=The Hollywood Reporter |date=January 20, 2016 |access-date=January 29, 2015 |url-status=live |archive-url=https://web.archive.org/web/20160120164715/http://www.hollywoodreporter.com/race/oscarssowhite-academy-members-defend-oscar-857416 |archive-date=January 20, 2016}}</ref> In an interview with a French radio station, Best Actress nominee [[Charlotte Rampling]] said efforts to stage a boycott of the Oscars were "racist to whites."<ref>{{cite news|last1=Donadio |first1=Rachel |title=Charlotte Rampling Says Oscars 'Boycott' Is 'Racist Against Whites' |url=https://www.nytimes.com/2016/01/23/movies/charlotte-rampling-says-oscars-furor-is-racist-against-whites.html |access-date=July 26, 2016 |work=The New York Times |date=January 22, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160708064633/http://www.nytimes.com/2016/01/23/movies/charlotte-rampling-says-oscars-furor-is-racist-against-whites.html |archive-date=July 8, 2016}}</ref> Oscar winning producer [[Gerald R. Molen]] commented, "There is no racism except for those who create an issue. That is the worst kind. Using such an ugly way of complaining," He also denounced members criticizing the academy's choices as "spoiled brats."<ref>{{cite news|last1=Bond |first1=Paul |title=Oscar-Winning Producer Denounces "Spoiled Brats" Crying "Racism" |url=https://www.hollywoodreporter.com/news/oscar-winning-producer-denounces-spoiled-858207 |access-date=April 15, 2016 |work=The Hollywood Reporter |date=January 22, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160406033830/http://www.hollywoodreporter.com/news/oscar-winning-producer-denounces-spoiled-858207 |archive-date=April 6, 2016}}</ref>
+
+Others agreed that the academy had a diversity problem and supported efforts towards change. Best Supporting Actress winner [[Lupita Nyong'o]] wrote, "I am disappointed by the lack of inclusion in this year's Academy Awards nominations. It has me thinking about unconscious prejudice and what merits prestige in our culture." She concluded by saying, "I stand with my peers who are calling for change in expanding the stories that are told and recognition of the people who tell them."<ref>{{cite news|last1=Khatchahtourian |first1=Maana |title=Lupita Nyong'o 'Disappointed' With Lack of Oscar Diversity, Calls for Change |url=https://variety.com/2016/film/news/lupita-nyongo-white-oscars-1201683878/ |access-date=May 25, 2016 |work=Variety |date=January 20, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160529065619/http://variety.com/2016/film/news/lupita-nyongo-white-oscars-1201683878/ |archive-date=May 29, 2016}}</ref> In a [[Facebook]] post, Best Actress winner [[Reese Witherspoon]] expressed her frustration with the lack of diversity among the nominees and added, "Nothing can diminish the quality of their work, but these filmmakers deserve recognition. As an Academy member, I would love to see a more diverse voting membership."<ref>{{cite magazine|last1=Falcone |first1=Dana Rose |title=Reese Witherspoon would 'love to see a more diverse' Academy voting membership |url=https://www.ew.com/article/2016/01/22/oscars-reese-witherspoon |access-date=May 22, 2016 |magazine=Entertainment Weekly |date=January 22, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160603102936/http://www.ew.com/article/2016/01/22/oscars-reese-witherspoon |archive-date=June 3, 2016}}</ref> During an interview with a reporter, [[President of the United States|President]] [[Barack Obama]] commented on the controversy saying, "I think when everybody's story is told, then that makes for better art. That makes for better entertainment. It makes everybody feel part of one American family. So I think, as a whole, the industry should do what every other industry should do, which is to look for talent, provide opportunity to everybody."<ref>{{cite magazine|last1=Rosen |first1=Christopher |title=Barack Obama weighs in on Oscars diversity issue |url=https://www.ew.com/article/2016/01/28/oscars-barack-obama |access-date=July 21, 2016 |magazine=Entertainment Weekly |date=January 28, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160511223103/http://www.ew.com/article/2016/01/28/oscars-barack-obama |archive-date=May 11, 2016}}</ref>
+
+A week after the nominations announcement, the academy announced several rules changes regarding membership in hopes of increasing the number of women and non-white members in the membership by 2020. Beginning in 2016, new members would earn Oscar voting privileges for the next ten years. After that time period, those members may retain voting privileges for another ten years if they have remained active in the motion picture industry. Members would earn lifetime voting privileges if they have served three consecutive ten-year voting eligibility terms or have earned or won an Academy Award.<ref>{{cite news|url=http://oscar.go.com/news/oscar-news/the-academy-introduces-plan-to-improve-oscar-diversity |title=The Academy Introduces Plan to Improve Oscar Diversity |first=Sarah |last=Huggins |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |date=January 27, 2016 |access-date=January 28, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160126222645/http://oscar.go.com/news/oscar-news/the-academy-introduces-plan-to-improve-oscar-diversity |archive-date=January 26, 2016}}</ref> Issacs justified the academy's decision to overhaul the membership requirements saying, "The Academy is going to lead and not wait for the industry to catch up; these new measures regarding governance and voting will have an immediate impact and begin the process of significantly changing our membership composition."<ref>{{cite news|url=http://www.oscars.org/news/academy-takes-historic-action-increase-diversity |title=Academy Takes Historic Action To Increase Diversity |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |date=January 22, 2016 |access-date=January 22, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160123094038/http://www.oscars.org/news/academy-takes-historic-action-increase-diversity |archive-date=January 23, 2016}}</ref> Furthermore, the academy would establish three new governor seats that will be nominated by Isaacs and confirmed by the Board.<ref>{{cite news|url=https://variety.com/2016/film/awards/oscars-diversity-academy-emergency-meeting-1201685630/ |title=Academy Overhauls Membership, Voting Rules to Promote Oscar Diversity |first=Tim |last=Gray |work=Variety |date=January 22, 2016 |access-date=January 22, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160122215745/http://variety.com/2016/film/awards/oscars-diversity-academy-emergency-meeting-1201685630/ |archive-date=January 22, 2016}}</ref> However, the academy's actions also include taking away the membership rights of academy members who have not recently worked in the industry, such as actor [[Bill Mumy]] and award-winning screenwriter [[Patricia Resnick]]. "Replacing sexism and racism with [[ageism]] is not the answer," Resnick said.<ref>{{cite news| title=Gay Female Oscar Voter to Academy: Don't Kick Me out "to Help You Deal With a Publicity Nightmare| url=https://www.hollywoodreporter.com/race/gay-female-oscar-voter-academy-860236| work=The Hollywood Reporter| date=January 28, 2016| access-date=February 21, 2020| archive-date=September 18, 2020| archive-url=https://web.archive.org/web/20200918144551/https://www.hollywoodreporter.com/race/gay-female-oscar-voter-academy-860236| url-status=live}}</ref>
+
+On the morning of the Oscars, the [[National Action Network]] led by civil rights activist [[Al Sharpton]] held a protest a few blocks from the [[Dolby Theatre]] regarding the Oscar's diversity problems. "You are out of time," Sharpton said in a rebuke to the academy. "We are not going to allow the Oscars to continue. This will be the last night of an all-white Oscars."<ref>{{cite news|last1=Johnson |first1=Ted |title=Al Sharpton at Diversity Protest: 'This Will Be the Last Night of an All-White Oscars' |url=https://variety.com/2016/film/news/al-sharpton-oscars-diversity-protest-1201717537/ |access-date=May 20, 2016 |work=Variety |date=February 28, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160525053137/http://variety.com/2016/film/news/al-sharpton-oscars-diversity-protest-1201717537/ |archive-date=May 25, 2016}}</ref> In addition, African-American filmmakers [[Ryan Coogler]] and [[Ava DuVernay]] held a charity event addressing the [[Flint water crisis|water crisis]] in [[Flint, Michigan]], called [[JusticeForFlint|#JusticeForFlint]], on the same night as the Oscars.<ref>{{cite news|last1=McNary |first1=Dave |author-link1=Dave McNary |title=Ava DuVernay, Ryan Coogler to Headline Flint Benefit on Oscars Night |url=https://variety.com/2016/film/news/ava-duvernay-ryan-coogler-flint-oscar-night-event-1201712969/ |access-date=May 22, 2016 |work=Variety |date=February 23, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160512004017/http://variety.com/2016/film/news/ava-duvernay-ryan-coogler-flint-oscar-night-event-1201712969/ |archive-date=May 12, 2016}}</ref> Despite organizers insisting that the event was being held almost simultaneously with the Oscars, many viewed it as an alternative to watching the ceremony.<ref>{{cite news|last1=Smith |first1=Nigel M. |title=Ava DuVernay and Ryan Coogler to attend Flint benefit instead of Oscars |url=https://www.theguardian.com/film/2016/feb/23/ava-duvernay-ryan-coogler-flint-water-crisis-benefit-oscars |access-date=May 28, 2016 |work=[[The Guardian]] |date=February 23, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160520163043/http://www.theguardian.com/film/2016/feb/23/ava-duvernay-ryan-coogler-flint-water-crisis-benefit-oscars |archive-date=May 20, 2016}}</ref>
+
+=== ''Carol'' omissions ===
+The omission of ''[[Carol (film)|Carol]]'' from Best Picture and Best Director categories prompted speculation from journalists about the perceived indifference of the [[Academy of Motion Picture Arts and Sciences]] toward female- and LGBT-centered films.<ref>{{cite web|last=Lang|first=Nico|title=Oscar snubs that hurt: The Academy Awards still aren't designed for anyone who isn't white, straight, and male|url=http://www.salon.com/2016/01/14/oscar_snubs_that_hurt_the_academy_awards_still_arent_designed_for_anyone_who_isnt_white_straight_and_male/|website=[[Salon (website)|Salon]]|date=January 14, 2016|accessdate=February 8, 2016|archive-date=January 19, 2016|archive-url=https://web.archive.org/web/20160119061314/http://www.salon.com/2016/01/14/oscar_snubs_that_hurt_the_academy_awards_still_arent_designed_for_anyone_who_isnt_white_straight_and_male/|url-status=live}}</ref><ref>{{cite web|last=Harris|first=Aisha|title=No Carol for Best Picture, and This Year's Other Big Oscar Nomination Surprises|url=http://www.slate.com/blogs/browbeat/2016/01/14/the_2016_oscar_nominations_biggest_surprises_including_carol_s_best_picture.html|website=[[Slate (magazine)|Slate]]|date=January 14, 2016|accessdate=February 8, 2016|archive-date=February 7, 2016|archive-url=https://web.archive.org/web/20160207223901/http://www.slate.com/blogs/browbeat/2016/01/14/the_2016_oscar_nominations_biggest_surprises_including_carol_s_best_picture.html|url-status=live}}</ref><ref>{{cite web|last=Farber|first=Stephen|title=Not only is #OscarsSoWhite, it's also #OscarsSoStraight with 'Carol' snub|url=http://www.latimes.com/entertainment/movies/la-ca-mn-oscars-gay-movies-20160207-story.html|work=[[Los Angeles Times]]|date=February 4, 2016|accessdate=February 8, 2016|archive-date=April 19, 2022|archive-url=https://web.archive.org/web/20220419160438/https://www.latimes.com/entertainment/movies/la-ca-mn-oscars-gay-movies-20160207-story.html|url-status=live}}</ref><ref>{{cite web|last=Helligar|first=Jeremy|title=Carol's Best Picture Oscar snub: Is the lesbian romance too 'normal' for the Academy?|url=http://thefix.nine.com.au/2016/01/15/09/10/fix150116why-carol-left-out-of-oscar-best-picture-race|website=[[Nine.com.au|TheFix]]|date=January 14, 2016|accessdate=February 9, 2016|archive-date=August 6, 2017|archive-url=https://web.archive.org/web/20170806101111/http://thefix.nine.com.au/2016/01/15/09/10/fix150116why-carol-left-out-of-oscar-best-picture-race|url-status=live}}</ref> Nate Scott of ''[[USA Today]]'' called it "the standout snub" of the ceremony, "one made all the more ridiculous because of the bloated Best Picture field".<ref>{{cite web|last=Scott|first=Nate|title=9 biggest snubs of the 2016 Oscar nominations|url=http://ftw.usatoday.com/2016/01/9-biggest-snubs-in-the-2016-oscars-nominations|work=[[USA Today]]|date=January 14, 2016|accessdate=January 24, 2016|archive-date=January 23, 2016|archive-url=https://web.archive.org/web/20160123071246/http://ftw.usatoday.com/2016/01/9-biggest-snubs-in-the-2016-oscars-nominations|url-status=live}}</ref> Nico Lang of ''[[The A.V. Club]]'' said that despite the film having been considered a "lock" for a Best Picture nomination, the omission "shouldn't have been a major shock" given the controversy over ''[[Brokeback Mountain]]''{{'s}} loss a decade earlier.<ref>{{cite web|last=Lang|first=Nico|title=By mostly snubbing ''Carol'', the Oscars continue to exclude queer cinema|url=http://www.avclub.com/article/mostly-snubbing-carol-oscars-continue-exclude-quee-230826|website=[[The A.V. Club]]|date=January 19, 2016|accessdate=January 24, 2016|archive-date=August 18, 2017|archive-url=https://web.archive.org/web/20170818065754/http://www.avclub.com/article/mostly-snubbing-carol-oscars-continue-exclude-quee-230826|url-status=live}}</ref> Jason Bailey of ''[[Flavorwire]]'' said that most Best Picture nominees that include gay themes "put them firmly in the realm of subplots". "''Carol''{{'s}} most transgressive quality", he declared, "is its refusal to engage in such shenanigans; this is a film about full-blooded gay lives, not tragic gay deaths."<ref>{{cite web|last=Bailey|first=Jason|title=How 'Carol' Got Screwed|url=http://flavorwire.com/556038/how-carol-got-screwed|website=[[Flavorwire]]|date=January 14, 2016|accessdate=February 9, 2016|archive-date=February 8, 2016|archive-url=https://web.archive.org/web/20160208233019/http://flavorwire.com/556038/how-carol-got-screwed|url-status=live}}</ref>
+
+At ''[[HitFix]]'', [[Louis Virtel]] suggested that Academy members' reception of the film was hurt by its focus on self-determined women.<ref>{{cite web |last=Virtel |first=Louis |author-link=Louis Virtel |date=January 15, 2016 |title=5 myths that prevented 'Carol' from getting a Best Picture nomination |url=http://www.hitfix.com/news/5-myths-that-prevented-carol-from-getting-a-best-picture-nomination |url-status=dead |archiveurl=https://web.archive.org/web/20160122142427/http://www.hitfix.com/news/5-myths-that-prevented-carol-from-getting-a-best-picture-nomination |archivedate=January 22, 2016 |accessdate=January 24, 2016 |website=[[HitFix]]}}</ref> Matthew Jacobs of ''[[The Huffington Post]]'' expressed similar sentiments and felt that the academy's artistic tastes were "too conventional to recognize its brilliance".<ref>{{cite web|last=Jacobs|first=Matthew|title=Oscar Nominations Snub 'Carol,' Idris Elba, 'Star Wars,' Quentin Tarantino And More|url=http://www.huffingtonpost.com/entry/oscar-snubs-and-surprises-2016_us_56971cc6e4b0b4eb759d3ba5|website=[[The Huffington Post]]|date=January 14, 2016|accessdate=January 14, 2016|archive-date=October 11, 2017|archive-url=https://web.archive.org/web/20171011152131/https://www.huffingtonpost.com/entry/oscar-snubs-and-surprises-2016_us_56971cc6e4b0b4eb759d3ba5|url-status=live}}</ref> Richard Lawson of ''[[Vanity Fair (magazine)|Vanity Fair]]'' said that although its "themes of passion and heartache may be universal" the film may be "too gay", speaking "in a vernacular that, I'd guess, only queer people are fully fluent in." He added that the lack of "gushing melodrama" put the film at a disadvantage.<ref>{{cite web|last=Lawson|first=Richard|title=Why Did Carol Get Shut Out of Oscar's Biggest Categories?|url=http://www.vanityfair.com/hollywood/2016/01/carol-shut-out-best-picture-best-director|work=[[Vanity Fair (magazine)|Vanity Fair]]|date=January 14, 2016|accessdate=February 8, 2016|archive-date=February 3, 2016|archive-url=https://web.archive.org/web/20160203161129/http://www.vanityfair.com/hollywood/2016/01/carol-shut-out-best-picture-best-director|url-status=live}}</ref> Dorothy Snarker of ''[[IndieWire]]'' attributed the omissions to the academy's demographics. Snarker agreed that ''Carol'' may be too gay and too female "for the largely old white male voting base" to connect with. She also considered that the successes of the LGBT rights movement in the U.S. may have partly been responsible for the lack of "political urgency" around the film.<ref>{{cite web|last=Snarker|first=Dorothy|title=Why 'Carol' Failed to Become the Lesbian 'Brokeback'|url=http://blogs.indiewire.com/womenandhollywood/why-carol-failed-to-become-the-lesbian-brokeback-20160115|work=[[IndieWire]]|date=January 15, 2016|accessdate=February 8, 2016|archive-date=February 15, 2016|archive-url=https://web.archive.org/web/20160215032056/http://blogs.indiewire.com/womenandhollywood/why-carol-failed-to-become-the-lesbian-brokeback-20160115|url-status=live}}</ref>
+
+At ''[[The Advocate (LGBT magazine)|The Advocate]]'', Rebekah Allen argued that "there are those who simply do not want to see a lesbian love story on screen."<ref>{{cite web|last=Allen|first=Rebekah|title=The ''Carol'' Curse: Why Hollywood Still Can't Take a Lesbian Love Story Seriously|url=http://www.advocate.com/2016/1/14/carol-curse-why-hollywood-still-cant-take-lesbian-love-story-seriously|work=[[The Advocate (LGBT magazine)|The Advocate]]|date=January 14, 2016|accessdate=February 9, 2016|archive-date=February 9, 2016|archive-url=https://web.archive.org/web/20160209204057/http://www.advocate.com/2016/1/14/carol-curse-why-hollywood-still-cant-take-lesbian-love-story-seriously|url-status=live}}</ref> Trish Bendix of ''[[AfterEllen]]'' said that the Best Picture snub was a "reminder of the patriarchal society we continue to live in, where films that create a space for women to live happily without men and without punishment will not be rewarded."<ref>{{cite web|last=Bendix|first=Trish|title="Carol" was snubbed by the Oscars for the very same reason it was written|url=http://www.afterellen.com/movies/469565-carol-snubbed-oscars-reason-written|website=[[AfterEllen]]|date=January 14, 2016|accessdate=August 6, 2017|archive-date=August 6, 2017|archive-url=https://web.archive.org/web/20170806180844/http://www.afterellen.com/movies/469565-carol-snubbed-oscars-reason-written|url-status=live}}</ref> Marcie Bianco of ''[[Quartz (publication)|Quartz]]'' described the film as "centered around women's desire" and structured in a way that "elevates the power of women's gaze". The omission from Best Picture, she concluded, illustrates "yet again how sexism operates in the world, and in the Academy specifically, as the refusal to see women as protagonists and agents of desire."<ref>{{cite web|last=Bianco|first=Marcie|title=2016's biggest Oscar snub proves Hollywood overlords cannot deal with female sexual desire|url=http://qz.com/594857/2016s-biggest-oscar-snub-proves-hollywood-overlords-cannot-deal-with-female-sexual-desire/|website=[[Quartz (publication)|Quartz]]|date=January 14, 2016|accessdate=February 8, 2016|archive-date=January 28, 2016|archive-url=https://web.archive.org/web/20160128074259/http://qz.com/594857/2016s-biggest-oscar-snub-proves-hollywood-overlords-cannot-deal-with-female-sexual-desire/|url-status=live}}</ref> In ''[[Paper (magazine)|Paper]]'' magazine, Carey O'Donnell observed that gay romances are only "Oscar surefires" when they use the tragedy-desolation-demise "equation", and that "a depiction of two strong women in love with each other ... seems to still be troubling to many".<ref>{{cite news|last=O'Donnell|first=Carey|title='Carol's' Best Picture Snub: Pop Culture Is Not Ready For LGBT Contentment|url=http://www.papermag.com/carols-best-picture-snub-america-is-not-ready-for-lgbt-contentment-1554014715.html|work=[[Paper (magazine)|Paper]]|date=January 14, 2016|accessdate=February 9, 2016|archive-date=February 9, 2016|archive-url=https://web.archive.org/web/20160209095955/http://www.papermag.com/carols-best-picture-snub-america-is-not-ready-for-lgbt-contentment-1554014715.html|url-status=live}}</ref> David Ehrlich of ''[[Rolling Stone]]'' wrote that the film's "patience and precision" did not conform to Academy tastes, but its legacy "will doubtlessly survive this year's most egregious snub".<ref>{{cite magazine|last=Ehrlich|first=David|title=Oscars 2016: 12 Major Nomination Snubs|url=https://www.rollingstone.com/movies/news/oscars-2016-12-major-nomination-snubs-20160114|magazine=[[Rolling Stone]]|date=January 14, 2016|accessdate=February 9, 2016|archive-date=February 9, 2016|archive-url=https://web.archive.org/web/20160209100245/http://www.rollingstone.com/movies/news/oscars-2016-12-major-nomination-snubs-20160114|url-status=live}}</ref> Todd Haynes said that he thought having two female leads was "a factor" in the omission.<ref>{{cite web|last1=MacKenzie|first1=Steven|title=Todd Haynes Interview: Cinema still has a problem with women|url=http://www.bigissue.com/features/interviews/6422/todd-haynes-interview-cinema-still-has-a-problem-with-women|work=[[The Big Issue]]|date=April 6, 2016|accessdate=February 16, 2017|archive-date=February 16, 2017|archive-url=https://web.archive.org/web/20170216133151/http://www.bigissue.com/features/interviews/6422/todd-haynes-interview-cinema-still-has-a-problem-with-women|url-status=dead}}</ref>
+
+=== Asian accountants joke ===
+During the show, Rock introduced onstage three children of Asian heritage posing as accountants for [[PricewaterhouseCoopers]], saying: "They sent us their most dedicated, accurate, and hard-working representatives... Please welcome Ming Zhu, Bao Ling and David Moskowitz." He also added, "If anybody's upset about that joke, just tweet about it on your phone that was also made by these kids."<ref>{{cite news|last1=Roberts |first1=Randall |title=Chris Rock's Oscars joke about Asian American accountants stirs outrage |url=https://www.latimes.com/entertainment/tv/showtracker/la-et-st-chris-rock-oscars-asian-american-accountants-outrage-20160229-story.html |access-date=July 29, 2016 |work=Los Angeles Times |date=February 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160801175211/http://www.latimes.com/entertainment/tv/showtracker/la-et-st-chris-rock-oscars-asian-american-accountants-outrage-20160229-story.html |archive-date=August 1, 2016}}</ref> In response to the segment, U.S. Congresswoman [[Judy Chu]] expressed her disappointment at Rock, broadcaster ABC, and AMPAS in a press release that read, "It is not right to protest the exclusion of one group by making jokes at the expense of another. I am so disappointed that the Academy and ABC would rely on such offensive characterizations, especially given the controversy over the lack of diversity."<ref>{{cite news|last1=Chu |first1=Judy |author-link=Judy Chu |title=Rep. Chu Condemns Anti-Asian Racist Joke at the Oscars |url=https://chu.house.gov/press-release/rep-chu-condemns-anti-asian-racist-joke-oscars |access-date=July 29, 2016 |publisher=[[U.S. House of Representatives]] |url-status=dead |archive-url=https://web.archive.org/web/20160819083519/https://chu.house.gov/press-release/rep-chu-condemns-anti-asian-racist-joke-oscars |archive-date=August 19, 2016}}</ref> Actress [[Constance Wu]] tweeted, "To parade little kids on stage [with] no speaking lines merely to be the butt of a racist joke is reductive & gross."<ref>{{cite news|last1=Ryzik |first1=Melina |title=Chris Rock's Asian Joke at Oscars Provokes Backlash |url=https://www.nytimes.com/2016/03/01/movies/chris-rocks-asian-joke-at-oscars-provokes-backlash.html |access-date=May 27, 2016 |work=[[The New York Times]] |date=February 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160420125421/http://www.nytimes.com/2016/03/01/movies/chris-rocks-asian-joke-at-oscars-provokes-backlash.html |archive-date=April 20, 2016}}</ref> Furthermore, 25 AMPAS members of Asian descent, including actors [[Nancy Kwan]], [[Sandra Oh]], and [[George Takei]], and director [[Ang Lee]], signed a letter condemning Rock's skit, saying: "In light of criticism over #OscarsSoWhite, we were hopeful that the telecast would provide the Academy a way forward and the chance to present a spectacular example of inclusion and diversity. Instead, the Oscars show was marred by a tone-deaf approach to its portrayal of Asians."<ref>{{cite news|last1=Feinberg |first1=Scott |title=Ang Lee, George Takei Among 25 Academy Members Protesting Oscars' Asian Jokes |url=https://www.hollywoodreporter.com/race/ang-lee-george-takei-25-875772 |access-date=July 29, 2016 |work=The Hollywood Reporter |date=March 15, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160624232721/http://www.hollywoodreporter.com/race/ang-lee-george-takei-25-875772 |archive-date=June 24, 2016}}</ref>
+
+In a phone interview with the [[Associated Press]], Academy President Isaacs apologized for the joke, stating, "I can understand the feelings, and we are setting up a meeting to discuss, because, as you well know, no one sets out to be offensive, and I'm very sorry that has happened. I think so much is achieved with dialogue, so much is achieved. And that is what we'll continue to do: have dialogue, listen, and just keep fixing."<ref>{{cite news|last1=Deerwester |first1=Jayme |title=Academy apologizes for Asian joke at Oscars, announces new leadership roles |url=https://www.usatoday.com/story/life/movies/2016/03/16/motion-picture-academy-apology-diversity-membership-leadership-changes/81860722/ |access-date=July 29, 2016 |work=USA Today |date=March 16, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160723211403/http://www.usatoday.com/story/life/movies/2016/03/16/motion-picture-academy-apology-diversity-membership-leadership-changes/81860722/ |archive-date=July 23, 2016}}</ref>
+
+=== Critical reception and television ratings ===
+The show received a mixed reception from media publications. A few media outlets reviewed the broadcast more positively with some praise for Rock. Television critic [[Mary McNamara]] of the ''[[Los Angeles Times]]'' remarked: "Rock's Oscars had some of the most powerful moments seen in the telecast's history." She concluded that, "After years of being dissed for its irrelevance, this year's Oscars took action. The results were mixed, to be sure, and Rock did not ever settle into his usual balance of outrage and humanity."<ref>{{cite news|title=Chris Rock's hot mess of an Oscars show: powerful, confounding, possibly revolutionary |url=https://www.latimes.com/entertainment/envelope/la-et-mn-oscars-tv-review-20160229-column.html |first=Mary |last=McNamara |author-link1=Mary McNamara |work=Los Angeles Times |date=February 28, 2016 |access-date=March 1, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160229222059/http://www.latimes.com/entertainment/envelope/la-et-mn-oscars-tv-review-20160229-column.html |archive-date=February 29, 2016}}</ref> ''[[The New York Times]]'' columnist [[James Poniewozik]] commented, "With Chris Rock, the Oscars find a lucky pairing of host and subject." In addition, he wrote, "His performance was an example of something the industry is still trying to learn: that you can achieve both inclusion and entertainment by giving the right person just the right opportunity."<ref>{{cite news|title=Review: With Chris Rock, the Oscars Find a Lucky Pairing of Host and Subject |url=https://www.nytimes.com/2016/02/29/movies/chris-rock-oscars-review.html |first=James |last=Poniewozik |author-link=James Poniewozik |work=The New York Times |date=February 28, 2016 |access-date=March 1, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160301044131/http://www.nytimes.com/2016/02/29/movies/chris-rock-oscars-review.html |archive-date=March 1, 2016}}</ref> ''[[The Denver Post]]''{{'}}s Joanne Ostrow wrote, "Chris Rock poked the elephant in the room at the 2016 Academy Awards, prodded it again and again, and never let up."<ref>{{cite news|last1=Ostrow |first1=Joanne |title=Chris Rock nails Oscars 2016 focus on race |url=http://blogs.denverpost.com/ostrow/2016/02/28/24149/24149/ |access-date=July 29, 2016 |work=The Denver Post |date=February 28, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160817203853/http://blogs.denverpost.com/ostrow/2016/02/28/24149/24149/ |archive-date=August 17, 2016}}</ref>
+
+Others were more critical of the show. ''[[The Hollywood Reporter]]'' columnist Daniel Feinberg remarked, "Chris Rock led a telecast that had important things to say, but still felt endless." In addition, Feinberg called the ceremony "overstuffed" and the on-screen running scroll a "total failure".<ref>{{cite news|title=The 88th Annual Academy Awards: TV Review |url=https://www.hollywoodreporter.com/review/chris-rock-hosted-oscars-2016-871255 |first=Daniel |last=Fienberg |work=The Hollywood Reporter |date=February 28, 2016 |access-date=March 1, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160301011915/http://www.hollywoodreporter.com/review/chris-rock-hosted-oscars-2016-871255 |archive-date=March 1, 2016}}</ref> Frazier Moore of the [[Associated Press]] quipped, "When Rock was absent, languor prevailed." He added, "One other beef: The attempt to banish the names of those thanked by winners to a text crawl at the bottom of the screen. If viewers wanted to watch a channel with annoying and distracting text at the bottom of the screen, they'd just tune to a cable-news channel."<ref>{{cite news |last1=Moore |first1=Frazier |title=Review: Rock rocks with Oscars monologue; show's a snooze |url=http://www.times-standard.com/article/ZZ/20160228/NEWS/160225518 |access-date=February 28, 2016 |work=[[Times-Standard]] |date=March 1, 2016 |url-status=dead |archive-url=https://web.archive.org/web/20160825190247/http://www.times-standard.com/article/ZZ/20160228/NEWS/160225518 |archive-date=August 25, 2016 |df=mdy-all}}</ref> ''[[Orlando Sentinel]]'' television critic Hal Boedeker gave high marks toward Rock but commented, "No host, no matter how gifted, can transform the lumbering format into a scintillating event." He ended his comments by stating, "Staging a more entertaining Oscar telecast. Why must the show be a slog?"<ref>{{cite news|last1=Boederk |first1=Hal |title=Oscars: Cutting Rock, boring show |url=http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-cutting-rock-boring-show-20160228-story.html |access-date=July 29, 2016 |work=Orlando Sentinel |date=February 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160818095243/http://www.orlandosentinel.com/entertainment/tv/tv-guy/os-oscars-cutting-rock-boring-show-20160228-story.html |archive-date=August 18, 2016}}</ref>
+
+The American telecast on ABC drew 34.425 million people over its length, which was a 4% decrease from the [[87th Academy Awards|previous year's ceremony]].<ref name="Oscar ratings"/> An estimated 58 million total viewers watched all or part of the awards.<ref>{{cite news |title=Oscars witnesses lowest audience since 2008 |url=https://uk.news.yahoo.com/oscars-witnesses-lowest-audience-since-2008-021426924.html |access-date=September 20, 2016 |publisher=Yahoo! |date=March 1, 2016 |url-status=dead |archive-url=https://web.archive.org/web/20160927140015/https://uk.news.yahoo.com/oscars-witnesses-lowest-audience-since-2008-021426924.html |archive-date=September 27, 2016}}</ref> The telecast also garnered lower [[Nielsen ratings]] compared to the previous ceremony with a 23.4 household rating.<ref name="TVB Oscars">{{cite news|title=Academy Awards ratings |publisher=[[Television Bureau of Advertising]] |url=https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=live |archive-url=https://web.archive.org/web/20160808235818/https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |archive-date=August 8, 2016}}</ref> In addition, the program scored lower in the 18-49 demo rating with a 10.5 rating over a 31% share.<ref name="Oscar ratings" /> It was the lowest viewership for an Academy Awards telecast since the [[80th Academy Awards|80th ceremony]], held in 2008.<ref name="Oscar ratings" />
+
+In July 2016, the ceremony presentation received five nominations for the [[68th Primetime Emmy Awards|68th Primetime Emmys]].<ref>{{cite web|url=https://www.latimes.com/entertainment/tv/la-et-st-emmys-2016-nominees-winners-list-20160714-snap-story.html|title=Nominations for the 68th Primetime Emmy Awards|last=Lewis|first=Dave|date=July 14, 2016|work=[[Los Angeles Times]]|access-date=July 14, 2016|archive-date=August 30, 2019|archive-url=https://web.archive.org/web/20190830221505/https://www.latimes.com/entertainment/tv/la-et-st-emmys-2016-nominees-winners-list-20160714-snap-story.html|url-status=live}}</ref> The following month, the ceremony did not win any of the nominations.<ref>{{cite web|url=https://deadline.com/2016/09/emmy-awards-2016-winners-creative-arts-night-2-list-1201817427/|title=Creative Arts Emmys: 'Murderer' & 'Grease Live' Lead The Field On Night 2|date=September 11, 2016|website=[[Deadline Hollywood]]|access-date=September 12, 2016|archive-date=September 12, 2016|archive-url=https://web.archive.org/web/20160912174121/http://deadline.com/2016/09/emmy-awards-2016-winners-creative-arts-night-2-list-1201817427/|url-status=live}}</ref>
+
+==''In Memoriam''==
+The annual ''[[In memoriam segment|In Memoriam]]'' tribute was presented by actor [[Louis Gossett Jr.]]<ref name="Boedeker"/><ref>{{cite news|last1=Brito |first1=Chris |title=Full list: Oscars 2016 In Memoriam |url=http://pix11.com/2016/02/29/full-list-oscars-2016-in-memoriam/ |access-date=July 29, 2016 |publisher=[[WPIX]] |date=February 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160609090625/http://pix11.com/2016/02/29/full-list-oscars-2016-in-memoriam/ |archive-date=June 9, 2016}}</ref> Singer [[Dave Grohl]] performed [[The Beatles]]' song "[[Blackbird (Beatles song)|Blackbird]]" during the tribute.<ref name="FMS"/>
+
+{{div col}}
+<!--All artists are in order of appearance at Oscar presentation-->
+* [[Wes Craven]] – Director 
+* [[Stan Freberg]] – Voice actor
+* [[Saeed Jaffrey]] – Actor
+* [[Miroslav Ondricek]] – Cinematographer
+* [[Robert Balser]] – Animation director
+* [[Lizabeth Scott]] – Actress
+* [[Stuart Reiss]] – Set decorator
+* [[Chantal Akerman]] – Director, writer
+* [[Christopher Lee]] – Actor
+* [[Robert Chartoff]] – Producer
+* Murray Weissman – Publicist
+* [[Jerry Weintraub]] – Producer
+* [[James L. White (screenwriter)|James L. White]] – Writer
+* [[Theodore Bikel]] – Actor
+* [[Robert Loggia]] – Actor
+* [[Barbara Brogliatti]] – Public relations executive
+* [[Maureen O'Hara]] – Actress
+* [[Gene Allen (art director)|Gene Allen]] – Production designer, Academy president 1983–1985
+* [[Omar Sharif]] – Actor
+* [[Louis DiGiaimo]] – Casting director
+* [[Patricia Norris]] – Costume designer
+* [[Dean Jones (actor)|Dean Jones]] – Actor
+* [[Ettore Scola]] – Director, writer
+* [[Alan Rickman]] – Actor
+* [[Haskell Wexler]] – Cinematographer
+* [[Karolyn Ali]] – Producer
+* [[Tex Rudloff]] – Sound mixer
+* [[Richard Corliss]] – Film critic
+* [[John B. Mansbridge]] – Art director
+* [[Alex Rocco]] – Actor
+* [[Kirk Kerkorian]] – Executive
+* [[Bob Minkler]] – Sound mixer
+* [[Douglas Slocombe]] – Cinematographer
+* David W. Samuelson – Cameraman, inventor
+* [[James Horner]] – Composer
+* [[Bruce Sinofsky]] – Documentarian
+* [[Frank D. Gilroy]] – Writer
+* [[Holly Woodlawn]] – Actress
+* [[James Elmo Williams]] – Film editor, producer, executive
+* [[Howard A. Anderson, Jr.|Howard A. Anderson]] – Visual effects
+* [[Roger L. Mayer]] – Executive, film preservation advocate
+* [[Albert Maysles]] – Documentarian
+* [[Melissa Mathison]] – Writer
+* [[Richard Glatzer]] – Director, writer
+* [[David Bowie]] – Musician, actor
+* [[Vilmos Zsigmond]] – Cinematographer
+* [[Daniel Gerson]] – Writer, voice actor
+* [[Leonard Nimoy]] – Actor
+
+{{div col end}}
+
+== See also ==
+* [[22nd Screen Actors Guild Awards]]
+* [[36th Golden Raspberry Awards]]
+* [[58th Grammy Awards]]
+* [[68th Primetime Emmy Awards]]
+* [[69th British Academy Film Awards]]
+* [[70th Tony Awards]]
+* [[73rd Golden Globe Awards]]
+* [[List of submissions to the 88th Academy Awards for Best Foreign Language Film]]
+
+== Notes and references ==
+
+=== Notes ===
+{{reflist|group=N}}
+
+=== References ===
+{{Reflist}}
+
+== External links ==
+<!-- {{Commons category|2015 Academy Awards|88th Academy Awards}} -->
+
+'''Official websites'''
+* [http://oscar.go.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20140909025935/http://oscar.go.com/ |date=September 9, 2014 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/user/Oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20190226082028/https://www.youtube.com/user/Oscars |date=February 26, 2019 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+'''News resources'''
+* [https://www.bbc.com/news/entertainment-arts-35310418 Oscars 2016] {{Webarchive|url=https://web.archive.org/web/20201108124530/https://www.bbc.com/news/entertainment-arts-35310418 |date=November 8, 2020 }} at [[BBC News]]
+* [https://www.theguardian.com/film/2016/jan/13/oscar-nominee-predictions-academy-awards-2016 Oscars 2016] at ''[[The Guardian]]''
+
+'''Analysis'''
+* [https://www.imdb.com/awards-central/oscars Academy Awards, USA: 2016] {{Webarchive|url=https://web.archive.org/web/20161224173042/http://www.imdb.com/awards-central/oscars |date=December 24, 2016 }} [[IMDb]]
+* [http://www.filmsite.org/aa2015.html 2015 Academy Awards winners and History] {{Webarchive|url=https://web.archive.org/web/20160305085940/http://www.filmsite.org/aa2015.html |date=March 5, 2016 }} at the [[Filmsite.org]]
+
+'''Other resources'''
+* {{IMDb title|4991632|The Oscars (2016)}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 88}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2015 film awards]]
+[[Category:2016 awards in the United States]]
+[[Category:2016 in American cinema]]
+[[Category:February 2016 in the United States]]
+[[Category:2016 in Los Angeles]]
+[[Category:Television shows directed by Glenn Weiss]]

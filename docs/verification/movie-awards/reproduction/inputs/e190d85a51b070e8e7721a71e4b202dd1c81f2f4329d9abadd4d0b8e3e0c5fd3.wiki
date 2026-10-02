@@ -1,0 +1,65 @@
+{{Short description|Film award ceremony in 1949}}
+{{Infobox film awards
+| number = 6
+| award = Golden Globe Awards
+| image = 
+| caption = 
+| date = March 16, 1949
+| best_picture = ''[[Johnny Belinda (1948 film)|Johnny Belinda]]''<br/>''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]''
+| most_awards = ''The Treasure of the Sierra Madre''<br/>''[[The Search (1948 film)|The Search]]'' (3)
+| last = 5th
+| next = 7th
+}}
+
+The '''6th [[Golden Globe Award]]s''', honoring the best in [[film]] for [[1948 in film|1948]] films, were held on March 16, 1949.
+
+==Winners==
+
+===[[Golden Globe Award for Best Motion Picture – Drama|Best Picture (tie)]]===
+*''[[Johnny Belinda (1948 film)|Johnny Belinda]]'' directed by [[Jean Negulesco]] and ''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]'' directed by [[John Huston]]<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=Best Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Actor – Motion Picture Drama|Best Actor in a Leading Role]]===
+*[[Laurence Olivier]] – ''[[Hamlet (1948 film)|Hamlet]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=Best Actor in a Leading Role |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Actress in a Motion Picture – Drama|Best Actress in a Leading Role]]===
+*[[Jane Wyman]] – ''[[Johnny Belinda (1948 film)|Johnny Belinda]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=Best Actress in a Leading Role |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Supporting Actor – Motion Picture|Best Performance by an Actor in a Supporting Role in a Motion Picture]]===
+*[[Walter Huston]] – ''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=Best Performance by an Actor in a Supporting Role in a Motion Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Supporting Actress – Motion Picture|Best Performance by an Actress in a Supporting Role in a Motion Picture]]===
+*[[Ellen Corby]] – ''[[I Remember Mama (film)|I Remember Mama]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=Best Performance by an Actress in a Supporting Role in a Motion Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Director|Best Director – Motion Picture]]===
+*[[John Huston]] – ''[[The Treasure of the Sierra Madre (film)|The Treasure of the Sierra Madre]]''<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=Best Director-Motion Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Screenplay|Best Screenplay – Motion Picture]]===
+*''[[The Search (1948 film)|The Search]]'' written by [[Richard Schweizer]]<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=Best Screenplay in a Motion Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=2010-11-24 }}</ref>
+
+===[[Golden Globe Award for Best Original Score|Best Music, Original Score – Motion Picture]]===
+*''[[The Red Shoes (1948 film)|The Red Shoes]]'' composed by [[Brian Easdale]]<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=Best Original Score in a Motion Picture |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=2010-11-24 }}</ref>
+
+===Cinematography===
+*''[[La perla (film)|La perla]]'' photographed by [[Gabriel Figueroa]]<ref>{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=Cinematography |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=2010-11-24 }}</ref>
+
+===Special Award – Best Juvenile Actor===
+*[[Ivan Jandl]] in ''[[The Search (1948 film)|The Search]]''<ref>"Best Juvenile Actor(Previous Award Given)"https://www.imdb.com/event/ev0000292/1948</ref>
+
+===Promoting International Understanding===
+*''[[The Search (1948 film)|The Search]]'' directed by [[Fred Zinnemann]]<ref>"Promoting International Understanding(Previous Award Given)"https://www.imdb.com/event/ev0000292/1948</ref>
+
+==See also==
+* [[Hollywood Foreign Press Association]]
+* [[2nd British Academy Film Awards]]
+* [[21st Academy Awards]]
+* [[1948 in film]]
+
+==References==
+{{reflist}}
+{{Golden Globe Awards Chron}}
+
+{{DEFAULTSORT:Golden Globe Awards 006}}
+[[Category:Golden Globe Awards ceremonies|*006]]
+[[Category:1948 film awards]]
+[[Category:1948 television awards]]
+[[Category:March 1949 in the United States]]

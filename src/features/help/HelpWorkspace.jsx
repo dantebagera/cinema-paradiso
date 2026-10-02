@@ -96,8 +96,8 @@ const manualSections = [
   },
   {
     key: 'movie-lists-workspace',
-    title: 'Movie Lists workspace',
-    summary: 'Movie Lists is the mixed owned and wanted list area: custom lists, protected system lists, missing titles, upgrade candidates, copy/export, and selected source reviews.',
+    title: 'Lists workspace',
+    summary: 'The Movies tab mixes owned and wanted titles in custom and system lists. The TV Shows tab keeps separate TV lists and watch history.',
     details: [
       {
         title: 'What CP does',
@@ -118,7 +118,7 @@ const manualSections = [
       {
         title: 'Common mistakes',
         items: [
-          'Using Library filters for wanted movies; Movie Lists is where owned and missing titles can live together.',
+          'Using Library filters for wanted movies; Lists → Movies is where owned and missing titles can live together.',
           'Expecting protected Watched or Watchlist lists to be renamed or deleted like custom lists.',
           'Running a source review before choosing trusted release indexers and download defaults in Settings.'
         ]
@@ -246,7 +246,7 @@ const manualSections = [
         title: 'Common mistakes',
         items: [
           'Expecting every playlist row to work; providers often leave dead channels and broken artwork in active lists.',
-          'Expecting IPTV My Lists to appear in Cinema Paradiso Movie Lists; the two catalogs deliberately remain separate.',
+          'Expecting IPTV My Lists to appear in Cinema Paradiso Lists; the IPTV catalog remains separate.',
           'Enabling invalid TLS certificates for a provider that already has a valid certificate.',
           'Closing CP while a stream is playing and expecting the local playback session to continue.'
         ]

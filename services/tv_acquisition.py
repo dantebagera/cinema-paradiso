@@ -58,7 +58,7 @@ class TVAcquisition:
         elif episode is not None:
             rows = [r for r in rows if r['episode_number'] == int(episode)]
         else:
-            rows = [r for r in rows if r['released']]
+            rows = [r for r in rows if r['released'] and r['season_number'] > 0]
         if missing_only and not upgrade:
             with self.acquisition.connection() as db:
                 queued = {r[0] for r in db.execute('SELECT target FROM intent_claims')}
@@ -69,7 +69,8 @@ class TVAcquisition:
             digest = hashlib.sha256(json.dumps([(r['season_number'], r['episode_number']) for r in rows], sort_keys=True).encode()).hexdigest()[:16]
             key = f"selection:tmdb:tv:{series['tmdb_id']}:{digest}"
         return {'key': key, 'media_type': 'tv', 'series_id': series.get('id'), 'tmdb_id': series['tmdb_id'], 'season': season, 'episode': episode,
-                'episode_ids': [r['id'] for r in rows], 'released': bool(rows) and all(r['released'] and not r.get('reconciliation_required') for r in rows)}, series, rows
+                'episode_ids': [r['id'] for r in rows], 'upgrade': bool(upgrade),
+                'released': bool(rows) and all(r['released'] and not r.get('reconciliation_required') for r in rows)}, series, rows
 
     @staticmethod
     def _state(decision):

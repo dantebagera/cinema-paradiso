@@ -1,0 +1,547 @@
+{{Short description|Award ceremony for 2025 films}}
+{{Oscars short description|films-year=2025}}
+{{Featured list}}
+{{Use American English|date=March 2026}}
+{{Use mdy dates|date=March 2026}}
+{{Infobox film awards
+| number = 98
+| award = Academy Awards
+| image = 98th Academy Awards poster.png
+| image_size = 220px
+| caption = Official poster
+| alt = Official poster for the 98th Academy Awards
+| date = March 15, 2026
+| site = [[Dolby Theatre]],<br>[[Hollywood, Los Angeles]], California, U.S.
+| host = [[Conan O'Brien]]
+| preshow = [[Tamron Hall]]<br>[[Jesse Palmer]]<ref name="Pre-show">{{cite web |url=https://www.thewrap.com/industry-news/awards/tamron-hall-jesse-palmer-oscars-red-carpet-hosts-abc/ |title=Tamron Hall and Jesse Palmer to Host Oscars Red Carpet on ABC |last=Patton |first=Tess |website=[[TheWrap]] |date=March 9, 2026 |access-date=March 11, 2026 |archive-url=https://web.archive.org/web/20260311073844/https://www.thewrap.com/industry-news/awards/tamron-hall-jesse-palmer-oscars-red-carpet-hosts-abc/ |archive-date=March 11, 2026 |url-status=live}}</ref>
+| producer = Raj Kapoor<br>Katy Mullan
+| director = [[Hamish Hamilton (director)|Hamish Hamilton]]
+| best_picture = ''[[One Battle After Another]]''
+| most_wins = ''One Battle After Another'' (6)
+| most_nominations = ''[[Sinners (2025 film)|Sinners]]'' (16)
+| network = [[American Broadcasting Company|ABC]]<br>[[Hulu]]
+| duration = 3 hours, 40 minutes<ref>{{cite news |title=What Happened at the Oscars? Best Picture Announced, Historic Winner shouts out ‘Little Girls Who Look Like Me’ |url=https://www.ctvnews.ca/entertainment/article/stars-walk-the-red-carpet-at-the-2026-academy-awards-live-updates-here/ |date=March 15, 2026 |access-date=May 5, 2026 |agency=[[CTV News]] |publisher=[[Associated Press]] |archive-url=https://web.archive.org/web/20260607172154/https://www.ctvnews.ca/entertainment/article/stars-walk-the-red-carpet-at-the-2026-academy-awards-live-updates-here/ |archive-date=June 7, 2026 |language=en-CAN |url-status=live}}</ref>
+| ratings = 17.86&nbsp;million<br>{{nowrap|8.4% ([[Nielsen Media Research#Nielsen TV ratings|Nielsen ratings]])}}<ref name="PDF">{{cite news |url=https://www.tvb.org/wp-content/uploads/2021/10/Academy_Awards_Nielsen.pdf |title=Academy Awards Ratings |publisher=[[Television Bureau of Advertising]] |format=PDF |access-date=March 28, 2025 |archive-date=June 12, 2026 |archive-url=https://web.archive.org/web/20260612110205/https://www.tvb.org/wp-content/uploads/2021/10/Academy_Awards_Nielsen.pdf |url-status=live}}</ref>
+| last = 97th
+| next = 99th
+}}
+
+The '''98th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), took place on March 15, 2026, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]]. During the gala, the AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories honoring [[2025 in film|films released in 2025]]. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]] and streamed on [[Hulu]], was produced by Raj Kapoor and Katy Mullan, and was directed by [[Hamish Hamilton (director)|Hamish Hamilton]].<ref>{{cite news |url=https://www.thewrap.com/industry-news/awards/oscars-2026-director-writers-choreographer/ |title=Oscars Unveil Production Team, Director and Writing Staff for 2026 Ceremony |last=Patton |first=Tess |work=[[TheWrap]] |date=February 3, 2026 |access-date=February 3, 2026 |archive-url=https://web.archive.org/web/20260203163916/https://www.thewrap.com/industry-news/awards/oscars-2026-director-writers-choreographer/ |archive-date=February 3, 2026 |url-status=live}}</ref> Comedian [[Conan O'Brien]] hosted the show for the second consecutive year.<ref>{{cite news |title=Conan O'Brien Will Be Back As the Oscars Host in 2026 |url=https://www.nbcnews.com/pop-culture/movies/conan-obrien-oscars-host-2026-rcna196684 |access-date=February 8, 2026 |agency=[[NBC News]] |publisher=[[Associated Press]] |date=March 17, 2025 |archive-url=https://web.archive.org/web/20251114000454/https://www.nbcnews.com/pop-culture/movies/conan-obrien-oscars-host-2026-rcna196684 |archive-date=November 14, 2025 |language=en-US |url-status=live}}</ref>
+
+In related events, the Academy held its 16th [[Governors Awards]] ceremony at the Ray Dolby Ballroom of the [[Ovation Hollywood]] complex in Hollywood on November 16, 2025.<ref name="Governors Awards">{{cite web |url=https://www.indiewire.com/awards/industry/governors-awards-recap-tom-cruise-honorary-oscar-1235161116/ |title=At the Governors Awards, Celebrating Tom Cruise While Reckoning with an Uncertain Future |last=Thompson |first=Anne |author-link=Anne Thompson (film journalist) |website=[[IndieWire]] |date=November 17, 2025 |access-date=January 22, 2026 |archive-url=https://web.archive.org/web/20260103073539/https://www.indiewire.com/awards/industry/governors-awards-recap-tom-cruise-honorary-oscar-1235161116/ |archive-date=January 3, 2026 |url-status=live}}</ref> The [[Academy Scientific and Technical Award]]s were presented by host [[Sofia Carson]] on April 28, 2026, in a ceremony at the [[Academy Museum of Motion Pictures]] in Los Angeles.<ref>{{cite news |last1=Faulkner |first1=Clara |title=Academy Celebrates 15 Scientific and Technical Achievements at Annual Sci-Tech Awards |date=April 29, 2026 |url=https://abc7news.com/post/academy-honors-movie-innovators-2026-scientific-technical-awards-hosted-sofia-carson/18999749/ |access-date=June 1, 2026 |agency=[[KGO-TV]] |archive-url=https://web.archive.org/web/20260430024142/https://abc7news.com/post/academy-honors-movie-innovators-2026-scientific-technical-awards-hosted-sofia-carson/18999749/ |archive-date=April 30, 2026 |language=en-US |url-status=live}}</ref>
+
+''[[One Battle After Another]]'' won the most awards with six, including [[Academy Award for Best Picture|Best Picture]] and the inaugural award for [[Academy Award for Achievement in Casting|Best Casting]].<ref name="Guardian Oscar winners list">{{cite newspaper |last1=Lee |first1=Benjamin |title=One Battle After Another Sweeps the Oscars as Michael B Jordan and Jessie Buckley win Big |url=https://www.theguardian.com/film/2026/mar/15/oscars-2026-best-picture-one-battle-after-another-win |access-date=May 1, 2026 |newspaper=[[The Guardian]] |date=March 15, 2026 |archive-url=https://web.archive.org/web/20260503030246/https://www.theguardian.com/film/2026/mar/15/oscars-2026-best-picture-one-battle-after-another-win |archive-date=May 3, 2026 |language=en-UK |url-status=live}}</ref> ''[[Sinners (2025 film)|Sinners]]'' received a record sixteen nominations and won four awards. Other winners included ''[[Frankenstein (2025 film)|Frankenstein]]'' with three; ''[[KPop Demon Hunters]]'' with two; and ''[[All the Empty Rooms]]'', ''[[Avatar: Fire and Ash]]'', ''[[F1 (film)|F1]]'', ''[[The Girl Who Cried Pearls]]'', ''[[Hamnet (film)|Hamnet]]'', ''[[Mr Nobody Against Putin]]'', ''[[Sentimental Value]]'', ''[[The Singers]]'', ''[[Two People Exchanging Saliva]]'', and ''[[Weapons (2025 film)|Weapons]]'' with one each.<ref name="Guardian Oscar winners list" /> The telecast drew 17.86&nbsp;million viewers in the United States.
+
+==Winners and nominees==
+<!-- PLEASE DO NOT add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+The nominees for the 98th Academy Awards were announced on January 22, 2026, at the [[Samuel Goldwyn Theater]] in [[Beverly Hills]], by actress [[Danielle Brooks]] and actor [[Lewis Pullman]].<ref name="LA Times Oscar nominees list 2026">{{cite news |last1=Brown |first1=Tracy |title=2026 Oscar Nominations: The Complete List of Nominees |url=https://www.latimes.com/entertainment-arts/awards/story/2026-01-22/oscar-nominations-2026-list-nominees |access-date=March 5, 2026 |work=[[Los Angeles Times]] |date=January 22, 2026 |archive-url=https://web.archive.org/web/20260305213838/https://www.latimes.com/entertainment-arts/awards/story/2026-01-22/oscar-nominations-2026-list-nominees |archive-date=March 5, 2026 |language=en-US |url-status=live}}</ref> ''Sinners'' led with sixteen nominations, the most in Oscar history; ''One Battle After Another'' came in second with thirteen.<ref>{{cite magazine |url=https://www.hollywoodreporter.com/movies/movie-news/sinners-most-nominated-movie-oscars-history-2026-1236480942/ |title=''Sinners'' Gets Most Oscar Nominations Ever |last=Canfield |first=David |magazine=[[The Hollywood Reporter]] |date=January 22, 2026 |access-date=January 22, 2026 |archive-url=https://web.archive.org/web/20260124013816/https://www.hollywoodreporter.com/movies/movie-news/sinners-most-nominated-movie-oscars-history-2026-1236480942/ |archive-date=January 24, 2026 |url-status=live}}</ref> The winners were announced during the awards ceremony on March 15.<ref>{{cite news |title=Complete List of 2026 Academy Awards Winners |url=https://apnews.com/article/2026-oscars-winners-list-5d9f5670eda0440276377a5f6c8b60b9 |access-date=April 14, 2026 |agency=[[Associated Press]] |date=March 15, 2026 |archive-url=https://web.archive.org/web/20260401103312/https://apnews.com/article/2026-oscars-winners-list-5d9f5670eda0440276377a5f6c8b60b9 |archive-date=April 1, 2026 |language=en-US |url-status=live}}</ref>
+
+[[Michael B. Jordan]] became the second actor to win an Oscar for a [[dual role]] after [[Lee Marvin]] for ''[[Cat Ballou]]'' (1965).<ref>{{cite web |last=Loving |first=Casey |date=March 15, 2026 |title=Michael B. Jordan is the 2nd Actor to Win Oscar for Playing Twins |url=https://www.thewrap.com/industry-news/awards/michael-b-jordan-wins-oscar-playing-twins/ |access-date=March 16, 2026 |website=[[TheWrap]]}}</ref> At the age of 30, [[Timothée Chalamet]] became the youngest actor to earn three acting nominations since [[Marlon Brando]], and also became the youngest person to be nominated for both acting and producing in the same year.<ref>{{cite news |url=https://deadline.com/2026/01/timothee-chalamet-youngest-best-actor-3-oscar-nominations-1236692822/ |title=Timothée Chalamet Becomes Youngest Male Actor to Score 3 Oscar Nominations Since Marlon Brando |last=Andreeva |first=Nellie |work=[[Deadline Hollywood]] |date=January 22, 2026 |access-date=January 24, 2026 |archive-url=https://web.archive.org/web/20260123213132/https://deadline.com/2026/01/timothee-chalamet-youngest-best-actor-3-oscar-nominations-1236692822/ |archive-date=January 23, 2026 |url-status=live}}</ref> The 40-year span between [[Amy Madigan]]'s first nomination, for her supporting role in ''[[Twice in a Lifetime (film)|Twice in a Lifetime]]'' (1985), and her recent nomination for ''Weapons'', set the record for the longest gap between Oscar nominations for an actress.<ref>{{cite news |last1=Loving |first1=Casey |last2=McGovern |first2=Joe |title=Oscars 2026 Milestones: Amy Madigan, Wagner Moura and More Make History |url=https://www.thewrap.com/industry-news/awards/oscar-nominations-records-milestones-2026/ |access-date=January 24, 2026 |work=[[TheWrap]] |date=January 22, 2026 |archive-url=https://web.archive.org/web/20260124121613/https://www.thewrap.com/industry-news/awards/oscar-nominations-records-milestones-2026/ |archive-date=January 24, 2026 |language=en-US |url-status=live}}</ref> With her fifth [[Academy Award for Best Costume Design|Best Costume Design]] nomination, [[Ruth E. Carter]] became the most-nominated Black woman in Oscar history across all categories.<ref>{{cite magazine |url=https://variety.com/2026/film/awards/ruth-e-carter-most-nominated-black-woman-oscars-history-1236632808/ |title=''Sinners'' Costume Designer Ruth E. Carter Becomes Most-Nominated Black Woman in Oscar History |last=Davis |first=Clayton |magazine=[[Variety (magazine)|Variety]] |date=January 22, 2026 |access-date=January 25, 2026 |archive-url=https://web.archive.org/web/20260122150726/https://variety.com/2026/film/awards/ruth-e-carter-most-nominated-black-woman-oscars-history-1236632808/ |archive-date=January 22, 2026 |url-status=live}}</ref> Best Cinematography winner [[Autumn Durald Arkapaw]] became the first female and Black winner in the category as well as the first Filipino winner; she was also the first woman of color to be nominated in the category.<ref>{{cite news |last1=Wang |first1=Mel |title=Fil-Am Cinematographer Autumn Durald Arkapaw Makes Historical Oscar Win for ''Sinners'' |url=https://rollingstonephilippines.com/culture/film/autumn-durald-arkapaw-oscar-win-2026/ |access-date=June 11, 2026 |work=[[Rolling Stone Philippines]] |date=March 16, 2026 |archive-url=https://web.archive.org/web/20260612092621/https://rollingstonephilippines.com/culture/film/autumn-durald-arkapaw-oscar-win-2026/ |archive-date=June 12, 2026 |language=en-US |url-status=live}}</ref><ref>{{cite magazine |url=https://variety.com/2026/artisans/news/autumn-arkapaw-oscar-nomination-first-woman-of-color-cinematography-1236632784/ |title=''Sinners'' DP Autumn Durald Arkapaw Makes Oscar History as First Woman of Color Nominated for Best Cinematography |last=Tangcay |first=Jazz |magazine=[[Variety (magazine)|Variety]] |date=January 22, 2026 |access-date=January 24, 2026 |archive-url=https://web.archive.org/web/20260123102938/https://variety.com/2026/artisans/news/autumn-arkapaw-oscar-nomination-first-woman-of-color-cinematography-1236632784/ |archive-date=January 23, 2026 |url-status=live}}</ref> The joint win by ''[[The Singers]]'' and ''[[Two People Exchanging Saliva]]'' for Best Live Action Short Film marked the first occurrence of a tie since the [[85th Academy Awards|85th ceremony]] in 2013, and the seventh tie overall.<ref>{{cite magazine |last=Rubin |first=Rebecca |date=March 15, 2026 |title=Oscars Surprise: Live-Action Short Results in Seventh Tie in Academy Awards' History |url=https://variety.com/2026/film/awards/oscars-tie-seventh-time-history-live-action-short-1236689370/ |access-date=March 16, 2026 |magazine=[[Variety (magazine)|Variety]] |archive-url=https://web.archive.org/web/20260316124451/https://variety.com/2026/film/awards/oscars-tie-seventh-time-history-live-action-short-1236689370/ |archive-date=March 16, 2026 |url-status=live}}</ref>
+
+===Awards===
+[[File:Paul Thomas Anderson in 2025.jpg|thumb|right|150px|alt=Paul Thomas Anderson in 2025.|[[Paul Thomas Anderson]], Best Picture co-winner, and Best Director and Best Adapted Screenplay winner]]
+[[File:Michael B Jordan - Sinners (cropped).jpg|thumb|right|150px|alt=Michael B. Jordan in 2025.|[[Michael B. Jordan]], Best Actor winner]]
+[[File:Jessie Buckley at the Toronto International Film Festival 01.jpg (Cropped & Centered).jpg|thumb|right|150px|alt=Jessie Buckley in 2025.|[[Jessie Buckley]], Best Actress winner]]
+[[File:Superpower (2023)-60523 (cropped).jpg|thumb|right|150px|alt=Sean Penn in 2023.|[[Sean Penn]], Best Supporting Actor winner]]
+[[File:Amy Madigan (40389212382).jpg|thumb|right|150px|alt=Amy Madigan in 2018.|[[Amy Madigan]], Best Supporting Actress winner]]
+[[File:Ryan Coogler - Sinners 2025 (cropped).jpg|thumb|right|150px|alt=Ryan Coogler in 2025.|[[Ryan Coogler]], Best Original Screenplay winner]]
+[[File:Maggie Kang - Kpop Demon Hunters.jpg|thumb|right|150px|alt=Maggie Kang in 2025.|[[Maggie Kang]], Best Animated Feature Film co-winner]]
+[[File:Joachim Trier-9987 (cropped).jpg|thumb|right|150px|alt=Joachim Trier in 2025.|[[Joachim Trier]], Best International Feature Film winner]]
+[[File:David Borenstein på Sundance Film Festival 2025 (cropped).jpg|thumb|right|150px|alt=David Borenstein in 2025.|[[David Borenstein]], Best Documentary Feature Film co-winner]]
+[[File:Autumn Durald Arkapaw - Sinners (cropped).jpg|thumb|right|150px|alt=Autumn Durald Arkapaw in 2025.|[[Autumn Durald Arkapaw]], Best Cinematography winner]]
+[[File:Ludwig Göransson in 2018.jpg|thumb|right|150px|alt=Ludwig Göransson in 2018.|[[Ludwig Göransson]], Best Original Score winner]]
+[[File:EJAE Apr 2026 w Oscar.jpg|thumb|right|150px|alt=Ejae in 2026.|[[Ejae]], Best Original Song co-winner]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger (‡).<ref>{{cite web |url=https://www.oscars.org/oscars/ceremonies/2026 |title=The 98th Academy Awards {{!}} (2026) |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=January 22, 2026 |archive-url=https://web.archive.org/web/20260208212003/https://www.oscars.org/oscars/ceremonies/2026 |archive-date=February 8, 2026 |url-status=live}}</ref>
+
+{{Table vertical alignment}}
+
+{| class="wikitable defaulttop" role="presentation"
+| style="width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[One Battle After Another]]'' – [[Adam Somner]] <small>([[List of posthumous Academy Award winners and nominees|{{abbr|posth.|posthumously}}]])</small>, [[Sara Murphy (film producer)|Sara Murphy]], and [[Paul Thomas Anderson]], producers ‡'''
+** ''[[Bugonia (film)|Bugonia]]'' – [[Ed Guiney]], [[Andrew Lowe (producer)|Andrew Lowe]], [[Yorgos Lanthimos]], [[Emma Stone]], and [[Lars Knudsen (producer)|Lars Knudsen]], producers
+** ''[[F1 (film)|F1]]'' – [[Chad Oman]], [[Brad Pitt]], [[Dede Gardner]], [[Jeremy Kleiner]], [[Joseph Kosinski]], and [[Jerry Bruckheimer]], producers
+** ''[[Frankenstein (2025 film)|Frankenstein]]'' – [[Guillermo del Toro]], [[J. Miles Dale]], and [[Scott Stuber]], producers
+** ''[[Hamnet (film)|Hamnet]]'' – [[Liza Marshall]], [[Pippa Harris]], [[Nicolas Gonda]], [[Steven Spielberg]], and [[Sam Mendes]], producers 	
+** ''[[Marty Supreme]]'' – [[Eli Bush]], [[Ronald Bronstein]], [[Josh Safdie]], [[Anthony Katagas]], and [[Timothée Chalamet]], producers
+** ''[[The Secret Agent (2025 film)|The Secret Agent]]'' – [[Emilie Lesclaux]], producer
+** ''[[Sentimental Value]]'' – [[Maria Ekerhovd]] and [[Andrea Berentsen Ottmar]], producers
+** ''[[Sinners (2025 film)|Sinners]]'' – [[Zinzi Coogler]], [[Sev Ohanian]], and [[Ryan Coogler]], producers
+** ''[[Train Dreams (film)|Train Dreams]]'' – [[McMahon family|Marissa McMahon]], [[Teddy Schwarzman]], [[Will Janowitz]], [[Ashley Schlaifer]], and [[Michael Heimler]], producers
+| style="width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Paul Thomas Anderson]] – ''[[One Battle After Another]]'' ‡'''
+** [[Chloé Zhao]] – ''[[Hamnet (film)|Hamnet]]''
+** [[Josh Safdie]] – ''[[Marty Supreme]]''
+** [[Joachim Trier]] – ''[[Sentimental Value]]''
+** [[Ryan Coogler]] – ''[[Sinners (2025 film)|Sinners]]''
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Michael B. Jordan]] – ''[[Sinners (2025 film)|Sinners]]'' as Elijah "Smoke" Moore / Elias "Stack" Moore ‡'''
+** [[Timothée Chalamet]] – ''[[Marty Supreme]]'' as Marty Mauser
+** [[Leonardo DiCaprio]] – ''[[One Battle After Another]]'' as Bob Ferguson
+** [[Ethan Hawke]] – ''[[Blue Moon (2025 film)|Blue Moon]]'' as [[Lorenz Hart]]
+** [[Wagner Moura]] – ''[[The Secret Agent (2025 film)|The Secret Agent]]'' as {{ill|Armando Solimões / Marcelo Alves|pt|Marcelo (O Agente Secreto)}} / Fernando Solimões
+| {{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Jessie Buckley]] – ''[[Hamnet (film)|Hamnet]]'' as [[Anne Hathaway (wife of Shakespeare)|Agnes Shakespeare]] ‡'''
+** [[Rose Byrne]] – ''[[If I Had Legs I'd Kick You]]'' as Linda
+** [[Kate Hudson]] – ''[[Song Sung Blue (2025 film)|Song Sung Blue]]'' as [[Claire Sardina]]
+** [[Renate Reinsve]] – ''[[Sentimental Value]]'' as Nora Borg
+** [[Emma Stone]] – ''[[Bugonia (film)|Bugonia]]'' as Michelle Fuller
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Sean Penn]] – ''[[One Battle After Another]]'' as Col. Steven J. Lockjaw ‡'''
+** [[Benicio del Toro]] – ''One Battle After Another'' as Sensei Sergio St. Carlos
+** [[Jacob Elordi]] – ''[[Frankenstein (2025 film)|Frankenstein]]'' as [[Frankenstein's monster|The Creature]]
+** [[Delroy Lindo]] – ''[[Sinners (2025 film)|Sinners]]'' as Delta Slim
+** [[Stellan Skarsgård]] – ''[[Sentimental Value]]'' as Gustav Borg
+| {{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Amy Madigan]] – ''[[Weapons (2025 film)|Weapons]]'' as [[Aunt Gladys]] ‡'''
+** [[Elle Fanning]] – ''[[Sentimental Value]]'' as Rachel Kemp
+** [[Inga Ibsdotter Lilleaas]] – ''Sentimental Value'' as Agnes Borg Pettersen
+** [[Wunmi Mosaku]] – ''[[Sinners (2025 film)|Sinners]]'' as Annie
+** [[Teyana Taylor]] – ''[[One Battle After Another]]'' as Perfidia Beverly Hills
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Sinners (2025 film)|Sinners]]'' – [[Ryan Coogler]] ‡'''
+** ''[[Blue Moon (2025 film)|Blue Moon]]'' – [[Robert Kaplow]]
+** ''[[It Was Just an Accident]]'' – [[Jafar Panahi]]; in collaboration with [[Nader Saïvar]], [[Shadmehr Rastin]], and {{ill|Mehdi Mahmoudian|fa|مهدی محمودیان}}
+** ''[[Marty Supreme]]'' – [[Ronald Bronstein]] and [[Josh Safdie]]
+** ''[[Sentimental Value]]'' – [[Eskil Vogt]] and [[Joachim Trier]]
+| {{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[One Battle After Another]]'' – [[Paul Thomas Anderson]]; based on the novel ''[[Vineland]]'' by [[Thomas Pynchon]] ‡'''
+** ''[[Bugonia (film)|Bugonia]]'' – [[Will Tracy]]; based on the film ''[[Save the Green Planet!]]'' by [[Jang Joon-hwan]]
+** ''[[Frankenstein (2025 film)|Frankenstein]]'' – [[Guillermo del Toro]]; based on [[Frankenstein|the novel]] by [[Mary Shelley]]
+** ''[[Hamnet (film)|Hamnet]]'' – [[Chloé Zhao]] and [[Maggie O'Farrell]]; based on [[Hamnet (novel)|the novel]] by Maggie O'Farrell
+** ''[[Train Dreams (film)|Train Dreams]]'' – [[Clint Bentley]] and [[Greg Kwedar]]; based on [[Train Dreams|the novella]] by [[Denis Johnson]]
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[KPop Demon Hunters]]'' – [[Maggie Kang]], [[Chris Appelhans]], and [[Michelle L.M. Wong]] ‡'''
+** ''[[Arco (film)|Arco]]'' – [[Ugo Bienvenu]], {{ill|Félix de Givry|fr}}, [[Sophie Mas]], and [[Natalie Portman]]
+** ''[[Elio (film)|Elio]]'' – [[Madeline Sharafian]], [[Domee Shi]], [[Adrian Molina]], and [[Mary Alice Drumm]]
+** ''[[Little Amélie or the Character of Rain]]'' – [[Maïlys Vallade]], [[Liane-Cho Han]], [[Nidia Santiago]], and [[Henri Magalon]]
+** ''[[Zootopia 2]]'' – [[Jared Bush]], [[Byron Howard]], and [[Yvett Merino]]
+| {{Award category|#F9EFAA|[[Academy Award for Best International Feature Film|Best International Feature Film]]}}
+* '''''[[Sentimental Value]]'' ([[List of Norwegian submissions for the Academy Award for Best International Feature Film|Norway]]) in [[Norwegian language|Norwegian]], [[Swedish language|Swedish]], and [[English language|English]] – directed by [[Joachim Trier]] ‡'''
+** ''[[It Was Just an Accident]]'' ([[List of French submissions for the Academy Award for Best International Feature Film|France]]) in [[Persian language|Persian]] and [[Azerbaijani language|Azerbaijani]] – directed by [[Jafar Panahi]]
+** ''[[The Secret Agent (2025 film)|The Secret Agent]]'' ([[List of Brazilian submissions for the Academy Award for Best International Feature Film|Brazil]]) in [[Portuguese language|Portuguese]] and [[German language|German]] – directed by [[Kleber Mendonça Filho]]
+** ''[[Sirāt]]'' ([[List of Spanish submissions for the Academy Award for Best International Feature Film|Spain]]) in [[Spanish language|Spanish]], [[French language|French]], and [[Arabic]] – directed by [[Oliver Laxe]]
+** ''[[The Voice of Hind Rajab]]'' ([[List of Tunisian submissions for the Academy Award for Best International Feature Film|Tunisia]]) in Arabic – directed by [[Kaouther Ben Hania]]
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature Film|Best Documentary Feature Film]]}}
+* '''''[[Mr Nobody Against Putin]]'' – [[David Borenstein]], [[Pavel Talankin]], [[Helle Faber]], and [[Alžběta Karásková]] ‡'''
+** ''[[The Alabama Solution]]'' – [[Andrew Jarecki]] and [[Charlotte Kaufman]]
+** ''[[Come See Me in the Good Light]]'' – [[Ryan White (filmmaker)|Ryan White]], [[Jessica Hargrave]], [[Tig Notaro]], and [[Stef Willen]]
+** ''[[Cutting Through Rocks]]'' – {{ill|Sara Khaki|de}} and [[Mohammadreza Eyni]]
+** ''[[The Perfect Neighbor]]'' – [[Geeta Gandbhir]], [[Alisa Payne]], [[Nikon Kwantu]], and [[Sam Bisbee]]
+| {{Award category|#F9EFAA|[[Academy Award for Best Documentary Short Film|Best Documentary Short Film]]}}
+* '''''[[All the Empty Rooms]]'' – [[Joshua Seftel]] and [[Conall Jones]] ‡'''
+** ''[[Armed Only with a Camera: The Life and Death of Brent Renaud]]'' – [[Craig Renaud]] and [[Juan Arredondo (journalist)|Juan Arredondo]]
+** ''{{ill|Children No More: "Were and Are Gone"|de|Children No More: Were and are Gone|es|Children No More: Were and are Gone}}'' – [[Hilla Medalia]] and [[Sheila Nevins]]
+** ''[[The Devil Is Busy]]'' – [[Christalyn Hampton]] and [[Geeta Gandbhir]]
+** ''[[Perfectly a Strangeness]]'' – [[Alison McAlpine]]
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]}}
+* '''''[[The Singers]]'' – [[Sam A. Davis]] and [[Jack Piatt]] ‡'''
+* '''''[[Two People Exchanging Saliva]]'' – [[Alexandre Singh]] and [[Natalie Musteata]] ‡'''
+** ''{{ill|Butcher's Stain|de|Butcher’s Stain|es|Butcher’s Stain}}'' – {{ill|Meyer Levinson-Blount|de}} and [[Oron Caspi]]
+** ''[[A Friend of Dorothy]]'' – [[Lee Knight]] and [[James Dean (producer)|James Dean]]
+** ''[[Jane Austen's Period Drama]]'' – [[Julia Aks]] and [[Steve Pinder]]
+| {{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Animated Short Film]]}}
+* '''''[[The Girl Who Cried Pearls]]'' – [[Chris Lavis]] and [[Maciek Szczerbowski]] ‡'''
+** ''[[Butterfly (2024 film)|Butterfly]]'' – [[Florence Miailhe]] and [[Ron Dyens]]
+** ''[[Forevergreen (film)|Forevergreen]]'' – [[Nathan Engelhardt]] and [[Jeremy Spears]]
+** ''[[Retirement Plan (film)|Retirement Plan]]'' – [[John Kelly (filmmaker)|John Kelly]] and [[Andrew Freedman (producer)|Andrew Freedman]]
+** ''[[The Three Sisters (2024 film)|The Three Sisters]]'' – [[Konstantin Bronzit]]
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Sinners (2025 film)|Sinners]]'' – [[Ludwig Göransson]] ‡'''
+** ''[[Bugonia (film)|Bugonia]]'' – [[Jerskin Fendrix]]
+** ''[[Frankenstein (2025 film)|Frankenstein]]'' – [[Alexandre Desplat]]
+** ''[[Hamnet (film)|Hamnet]]'' – [[Max Richter]]
+** ''[[One Battle After Another]]'' – [[Jonny Greenwood]]
+| {{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Golden (Huntrix song)|Golden]]" from ''[[KPop Demon Hunters]]'' – Music and lyrics by [[Ejae]], [[Mark Sonnenblick]], {{ill|Joong Gyu Kwak|it|Zhun}}, {{ill|Yu Han Lee|it|Yuhan}}, [[Hee Dong Nam]], [[Jeong Hoon Seo]], and [[Teddy Park]] ‡'''
+** "Dear Me" from ''[[Diane Warren: Relentless]]'' – Music and lyrics by [[Diane Warren]]
+** "[[I Lied to You]]" from ''[[Sinners (2025 film)|Sinners]]'' – Music and lyrics by [[Raphael Saadiq]] and [[Ludwig Göransson]]
+** "{{ill|Sweet Dreams of Joy|de}}" from ''[[Viva Verdi!]]'' – Music and lyrics by [[Nicholas Pike]]
+** "Train Dreams" from ''[[Train Dreams (film)|Train Dreams]]'' – Music by [[Nick Cave]] and [[Bryce Dessner]]; lyrics by Nick Cave
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound]]}}
+* '''''[[F1 (film)|F1]]'' – [[Gareth John (sound engineer)|Gareth John]], [[Al Nelson (sound engineer)|Al Nelson]], [[Gwendolyn Yates Whittle]], [[Gary Rizzo|Gary A. Rizzo]], and [[Juan Peralta (sound engineer)|Juan Peralta]] ‡'''
+** ''[[Frankenstein (2025 film)|Frankenstein]]'' – [[Greg Chapman]], [[Nathan Robitaille]], [[Nelson Ferreira (sound editor)|Nelson Ferreira]], [[Christian Cooke (sound engineer)|Christian Cooke]], and [[Brad Zoern]]
+** ''[[One Battle After Another]]'' – [[José Antonio García (sound mixer)|José Antonio García]], [[Christopher Scarabosio]], and [[Tony Villaflor]]
+** ''[[Sinners (2025 film)|Sinners]]'' – [[Chris Welcker]], [[Benjamin A. Burtt]], [[Felipe Pacheco]], [[Brandon Proctor]], and [[Steve Boeddeker]]
+** ''[[Sirāt]]'' – [[Amanda Villavieja]], [[Laia Casanovas]], and [[Yasmina Praderas]]
+| {{Award category|#F9EFAA|[[Academy Award for Achievement in Casting|Best Casting]]}}
+* '''''[[One Battle After Another]]'' – [[Cassandra Kulukundis]] ‡'''
+** ''[[Hamnet (film)|Hamnet]]'' – [[Nina Gold]]
+** ''[[Marty Supreme]]'' – [[Jennifer Venditti]]
+** ''[[The Secret Agent (2025 film)|The Secret Agent]]'' – [[Gabriel Domingues]]
+** ''[[Sinners (2025 film)|Sinners]]'' – [[Francine Maisler]]
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+* '''''[[Frankenstein (2025 film)|Frankenstein]]'' – Production Design: [[Tamara Deverell]]; Set Decoration: [[Shane Vieau]] ‡'''
+** ''[[Hamnet (film)|Hamnet]]'' – Production Design: [[Fiona Crombie]]; Set Decoration: [[Alice Felton]]
+** ''[[Marty Supreme]]'' – Production Design: [[Jack Fisk]]; Set Decoration: [[Adam Willis (set decorator)|Adam Willis]]
+** ''[[One Battle After Another]]'' – Production Design: [[Florencia Martin]]; Set Decoration: [[Anthony Carlino]]
+** ''[[Sinners (2025 film)|Sinners]]'' – Production Design: [[Hannah Beachler]]; Set Decoration: [[Monique Champagne]]
+| {{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Sinners (2025 film)|Sinners]]'' – [[Autumn Durald Arkapaw]] ‡'''
+** ''[[Frankenstein (2025 film)|Frankenstein]]'' – [[Dan Laustsen]]
+** ''[[Marty Supreme]]'' – [[Darius Khondji]]
+** ''[[One Battle After Another]]'' – [[Michael Bauman (cinematographer)|Michael Bauman]]
+** ''[[Train Dreams (film)|Train Dreams]]'' – [[Adolpho Veloso]]
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* '''''[[Frankenstein (2025 film)|Frankenstein]]'' – [[Mike Hill (make-up artist)|Mike Hill]], [[Jordan Samuel]], and [[Cliona Furey]] ‡'''
+** ''[[Kokuho (film)|Kokuho]]'' – [[Kyoko Toyokawa]], [[Naomi Hibino]], and [[Tadashi Nishimatsu]]
+** ''[[Sinners (2025 film)|Sinners]]'' – [[Ken Diaz]], [[Mike Fontaine]], and [[Shunika Terry]]
+** ''[[The Smashing Machine (2025 film)|The Smashing Machine]]'' – [[Kazu Hiro]], [[Glen P. Griffin|Glen Griffin]], and [[Bjoern Rehbein]]
+** ''[[The Ugly Stepsister]]'' – [[Thomas Foldberg]] and [[Anne Cathrine Sauerberg]]
+| {{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Frankenstein (2025 film)|Frankenstein]]'' – [[Kate Hawley]] ‡'''
+** ''[[Avatar: Fire and Ash]]'' – [[Deborah Lynn Scott|Deborah L. Scott]]
+** ''[[Hamnet (film)|Hamnet]]'' – [[Malgosia Turzanska]]
+** ''[[Marty Supreme]]'' – [[Miyako Bellizzi]]
+** ''[[Sinners (2025 film)|Sinners]]'' – [[Ruth E. Carter]]
+|-
+| {{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[One Battle After Another]]'' – [[Andy Jurgensen]] ‡'''
+** ''[[F1 (film)|F1]]'' – [[Stephen Mirrione]]
+** ''[[Marty Supreme]]'' – [[Ronald Bronstein]] and [[Josh Safdie]]
+** ''[[Sentimental Value]]'' – [[Olivier Bugge Coutté]]
+** ''[[Sinners (2025 film)|Sinners]]'' – [[Michael Shawver|Michael P. Shawver]]
+| {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Avatar: Fire and Ash]]'' – [[Joe Letteri]], [[Richard Baneham]], [[Eric Saindon]], and [[Daniel Barrett (visual effects supervisor)|Daniel Barrett]] ‡'''
+** ''[[F1 (film)|F1]]'' – [[Ryan Tudhope]], [[Nicolas Chevallier]], [[Robert Harrington (visual effects artist)|Robert Harrington]], and [[Keith Dawson]]
+** ''[[Jurassic World Rebirth]]'' – [[David Vickery]], [[Stephen Aplin]], [[Charmaine Chan]], and [[Neil Corbould]]
+** ''[[The Lost Bus]]'' – [[Charlie Noble (visual effects artist)|Charlie Noble]], [[David Zaretti]], [[Russell Bowen]], and [[Brandon K. McLaughlin]]
+** ''[[Sinners (2025 film)|Sinners]]'' – [[Michael Ralla]], [[Espen Nordahl]], [[Guido Wolter]], and [[Donnie Dean]]
+|}
+
+===Governors Awards===
+The Academy held its 16th annual [[Governors Awards]] ceremony on November 16, 2025, during which the following awards were presented:<ref name="Governors Awards"/>
+
+====Academy Honorary Awards====
+* [[Debbie Allen]]{{snd}}"A trailblazing choreographer and actor, whose work has captivated generations and crossed genres".<ref name="Honorary"/>
+* [[Tom Cruise]]{{snd}}For his "incredible commitment to [the] filmmaking community, to the theatrical experience, and to the stunts community".<ref name="Honorary"/>
+* [[Wynn Thomas]]{{snd}}"Production designer [who] has brought some of the most enduring films to life through a visionary eye and mastery of his craft".<ref name="Honorary"/>
+
+====Jean Hersholt Humanitarian Award====
+* [[Dolly Parton]]{{snd}}A "beloved performer [who] exemplifies the spirit of the [[Jean Hersholt Humanitarian Award]] through her unwavering dedication to charitable efforts".<ref name="Honorary">{{cite press release |url=https://press.oscars.org/news/academy-honor-debbie-allen-tom-cruise-dolly-parton-and-wynn-thomas-2025-governors-awards |title=The Academy to Honor Debbie Allen, Tom Cruise, Dolly Parton, and Wynn Thomas at the 2025 Governors Awards |publisher=[[Academy of Motion Picture Arts and Sciences]] |date=June 17, 2025 |access-date=January 22, 2026 |archive-url=https://web.archive.org/web/20251231165621/https://press.oscars.org/news/academy-honor-debbie-allen-tom-cruise-dolly-parton-and-wynn-thomas-2025-governors-awards |archive-date=December 31, 2025 |url-status=live}}</ref>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=70%}}
+
+{{col-1-of-2}}
+
+{| class="wikitable plainrowheaders sortable" style="text-align: center; margin-right:1em;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;text-align:center;" | Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+! scope="row" style="text-align: center"| 16
+| ''[[Sinners (2025 film)|Sinners]]''
+|-
+! scope="row" style="text-align: center"| 13
+| ''[[One Battle After Another]]''
+|-
+! scope="rowgroup" rowspan="3" style="text-align: center"| 9
+| ''[[Frankenstein (2025 film)|Frankenstein]]''
+|-
+| ''[[Marty Supreme]]''
+|-
+| ''[[Sentimental Value]]''
+|-
+! scope="row" style="text-align: center"| 8
+| ''[[Hamnet (film)|Hamnet]]''
+|-
+! scope="rowgroup" rowspan="4" style="text-align: center"| 4
+| ''[[Bugonia (film)|Bugonia]]''
+|-
+| ''[[F1 (film)|F1]]''
+|-
+| ''[[The Secret Agent (2025 film)|The Secret Agent]]''
+|-
+| ''[[Train Dreams (film)|Train Dreams]]''
+|-
+! scope="rowgroup" rowspan="5" style="text-align: center"| 2
+| ''[[Avatar: Fire and Ash]]''
+|-
+| ''[[Blue Moon (2025 film)|Blue Moon]]''
+|-
+| ''[[It Was Just an Accident]]''
+|-
+| ''[[KPop Demon Hunters]]''
+|-
+| ''[[Sirāt]]''
+|}
+
+{{col-2-of-2}}
+
+{| class="wikitable plainrowheaders sortable" style="text-align: center; margin-right:1em;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+! scope="row" style="text-align: center"| 6
+| ''[[One Battle After Another]]''
+|-
+! scope="row" style="text-align: center"| 4
+| ''[[Sinners (2025 film)|Sinners]]''
+|-
+! scope="row" style="text-align: center"| 3
+| ''[[Frankenstein (2025 film)|Frankenstein]]''
+|-
+! scope="row" style="text-align: center"| 2
+| ''[[KPop Demon Hunters]]''
+|}
+
+{{col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers:{{efn|Attributed to multiple references:<ref>{{cite magazine |url=https://www.empireonline.com/movies/features/oscars-2026-live-blog/ |title=Oscars Live Blog 2026: Every Winner, As It Happens |last=Travis |first=Ben |magazine=[[Empire (magazine)|Empire]] |date=March 17, 2026 |access-date=March 31, 2026 |archive-url=https://web.archive.org/web/20260318200037/https://www.empireonline.com/movies/features/oscars-2026-live-blog/ |archive-date=March 18, 2026 |url-status=live}}</ref><ref>{{cite news |url=https://www.today.com/popculture/awards/live-blog/oscars-2026-live-updates-rcna261431 |title=Oscars 2026 Recap: ''One Battle After Another'' Wins Best Picture; Michael B. Jordan, Jessie Buckley Win Best Actor, Actress |last1=Brockington |first1=Ariana |last2=Vivinetto |first2=Gina |last3=Ellis |first3=Maddie |last4=Calvario |first4=Liz |agency=[[NBC News]] |date=March 15, 2026 |access-date=March 31, 2026 |archive-url=https://web.archive.org/web/20260329083831/https://www.today.com/popculture/awards/live-blog/oscars-2026-live-updates-rcna261431 |archive-date=March 29, 2026 |url-status=live}}</ref><ref>{{cite web |url=https://www.nbcnews.com/pop-culture/pop-culture-news/live-blog/oscars-2026-winners-academy-awards-red-carpet-host-watch-live-updates-rcna261828 |title=Oscars 2026 highlights: 'One Battle After Another' Wins Best Picture; Michael B. Jordan Wins for 'Sinners' |last1=Keegan |first1=Rebecca |last2=Arkin |first2=Daniel |last3=Yang |first3=Angela |last4=Acevedo |first4=Nicole |last5=Cohen |first5=Rebecca |last6=Nadkarni |first6=Rohan |last7=Melas |first7=Chloe |publisher=[[NBC News]] |date=March 15, 2026 |access-date=March 31, 2026 |archive-url=https://web.archive.org/web/20260317162204/https://www.nbcnews.com/pop-culture/pop-culture-news/live-blog/oscars-2026-winners-academy-awards-red-carpet-host-watch-live-updates-rcna261828 |archive-date=March 17, 2026 |url-status=live}}</ref><ref>{{cite magazine |url=https://www.billboard.com/lists/best-2026-oscars-music-moments-you-didnt-see-on-tv/security-at-the-oscars/ |title=7 Best 2026 Oscars Music Moments You Didn't See on TV |last=Grein |first=Paul |magazine=[[Billboard (magazine)|Billboard]] |date=March 16, 2026 |access-date=March 31, 2026 |archive-url=https://web.archive.org/web/20260317162204/https://www.billboard.com/lists/best-2026-oscars-music-moments-you-didnt-see-on-tv/security-at-the-oscars/ |archive-date=March 17, 2026 |url-status=live}}</ref><ref>{{cite web |url=https://creators.yahoo.com/lifestyle/story/the-oscars-emotional-in-memoriam-tribute-had-everyone-in-tears-055857844.html |title=The Oscars' Emotional 'In Memoriam' Tribute Had Everyone in Tears |last=Jet |first=Johnny |publisher=[[Yahoo]] |date=March 16, 2026 |access-date=March 31, 2026 |archive-url=https://web.archive.org/web/20260331161219/https://creators.yahoo.com/lifestyle/story/the-oscars-emotional-in-memoriam-tribute-had-everyone-in-tears-055857844.html |archive-date=March 31, 2026 |url-status=live}}</ref><ref>{{cite web |title=History Writes Itself at the 98th Academy Awards |url=https://www.uscannenbergmedia.com/2026/03/16/history-writes-itself-at-the-98th-academy-awards/ |access-date=June 13, 2026 |publisher=[[USC Annenberg School for Communication and Journalism]] |date=March 16, 2026 |archive-url=https://web.archive.org/web/20260317083010/https://www.uscannenbergmedia.com/2026/03/16/history-writes-itself-at-the-98th-academy-awards/ |archive-date=March 17, 2026 |language=en-US |url-status=live}}</ref><ref>{{cite magazine |url=https://www.hollywoodreporter.com/music/film-tv-music-news/golden-kpop-demon-hunters-oscars-2026-performance-1236533577/ |title=''KPop Demon Hunters'' Trio Dazzle Oscars Crowd with Cinematic 'Golden' Performance |last=Fell |first=Nicole |magazine=[[The Hollywood Reporter]] |date=March 15, 2026 |access-date=March 31, 2026 |archive-url=https://web.archive.org/web/20260317012709/https://www.hollywoodreporter.com/music/film-tv-music-news/golden-kpop-demon-hunters-oscars-2026-performance-1236533577/ |archive-date=March 17, 2026 |url-status=live}}</ref>}}
+
+{| class="wikitable plainrowheaders sortable"
+|+ Presenters
+|-
+! scope="col"| Name(s)
+! scope="col" class="unsortable"| Role
+|-
+! scope="row" | {{sortname|Matt|Berry}}
+| Served as announcer for the 98th Academy Awards
+|-
+! scope="row" | {{sortname|Zoe|Saldaña}}
+| Presented the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+! scope="row" | {{sortname|Will|Arnett}}<br>{{sortname|Channing|Tatum}}
+| Presented the awards for [[Academy Award for Best Animated Feature|Best Animated Feature]] and [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+! scope="row" | {{sortname|Anne|Hathaway}}<br>{{sortname|Anna|Wintour}}
+| Presented the awards for [[Academy Award for Best Costume Design|Best Costume Design]] and [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]
+|-
+! scope="row" | {{sortname|Paul|Mescal}}<br>{{sortname|Gwyneth|Paltrow}}<br>{{sortname|Chase|Infiniti}}<br>{{sortname|Wagner|Moura}}<br>{{sortname|Delroy|Lindo}}
+| Presented the award for [[Academy Award for Achievement in Casting|Best Casting]]
+|-
+! scope="row" | {{sortname|Kumail|Nanjiani}}
+| Presented the award for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+! scope="row" | {{sortname|Kieran|Culkin}}
+| Presented the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+! scope="row" | {{sortname|Robert|Downey Jr.}}<br>[[Chris Evans (actor)|Chris Evans]]
+| Presented the awards for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]] and [[Academy Award for Best Original Screenplay|Best Original Screenplay]]
+|-
+! scope="row" | {{sortname|Billy|Crystal}}<br>[[Rachel McAdams]]<br>[[Barbra Streisand]]
+| Presented eulogies to [[Rob Reiner|Rob]] and [[Michele Reiner]], [[Catherine O'Hara]], [[Diane Keaton]], and [[Robert Redford]]
+|-
+! scope="row" | {{sortname|Pedro|Pascal}}<br>{{sortname|Sigourney|Weaver}}
+| Presented the awards for [[Academy Award for Best Production Design|Best Production Design]] and [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+! scope="row" | {{sortname|Jimmy|Kimmel}}
+| Presented the awards for [[Academy Award for Best Documentary Short Film|Best Documentary Short Film]] and [[Academy Award for Best Documentary Feature Film|Best Documentary Feature Film]]
+|-
+! scope="row" | {{sortname|Melissa|McCarthy}}<br>{{sortname|Rose|Byrne}}<br>{{sortname|Kristen|Wiig}}<br>{{sortname|Maya|Rudolph}}<br>{{sortname|Ellie|Kemper}}
+| Presented the awards for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Sound|Best Sound]]
+|-
+! scope="row" | {{sortname|Lynette Howell|Taylor}} (AMPAS president)
+| Presented speech about the Academy's educational programs and film preservation ventures
+|-
+! scope="row" | {{sortname|Bill|Pullman}}<br>{{sortname|Lewis|Pullman}}
+| Presented the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+! scope="row"| {{sortname|Demi|Moore}}
+| Presented the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+! scope="row"| {{sortname|Javier|Bardem}}<br>{{sortname|Priyanka|Chopra Jonas|Priyanka Chopra}}
+| Presented the award for [[Academy Award for Best International Feature Film|Best International Feature Film]]
+|-
+! scope="row" | {{sortname|Lionel|Richie}}
+| Presented the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+! scope="row"| {{sortname|Robert|Pattinson}}<br>[[Zendaya]]
+| Presented the award for [[Academy Award for Best Director|Best Director]]
+|-
+! scope="row"| {{sortname|Adrien|Brody}}
+| Presented the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+! scope="row"| {{sortname|Mikey|Madison}}
+| Presented the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+! scope="row" | {{sortname|Nicole|Kidman}}<br>{{sortname|Ewan|McGregor}}
+| Presented the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+{| class="wikitable plainrowheaders sortable"
+|+ Performers
+|-
+! scope="col"| Name
+! scope="col" class="unsortable"| Role
+! scope="col" class="unsortable"| Performance
+|-
+! scope="row" | {{sortname|Michael|Bearden}}
+| Conductor<br>Musical director
+| Orchestral
+|-
+! scope="row" | {{sortname|Conan|O'Brien}}<br>[[Josh Groban]]
+| Performers
+| "I Won" during the opening monologue
+|-
+! scope="row" | {{sortname|Miles|Caton}}<br>[[Misty Copeland]]<br>[[Eric Gales]]<br>[[Buddy Guy]]<br>[[Brittany Howard]]<br>[[Christone "Kingfish" Ingram]]<br>[[Jayme Lawson]]<br>[[Li Jun Li]]<br>[[Bobby Rush (musician)|Bobby Rush]]<br>[[Raphael Saadiq]]<br>[[Shaboozey]]<br>[[Alice Smith]]
+| Performers
+| "[[I Lied to You]]" from ''[[Sinners (2025 film)|Sinners]]''
+|-
+! scope="row" | [[Los Angeles Master Chorale]]
+| Performers
+| "Storybook Love" from ''[[The Princess Bride (film)|The Princess Bride]]'' and "[[Amazing Grace]]" during the "In Memoriam" segment
+|-
+! scope="row" | {{sortname|Barbra|Streisand}}
+| Performer
+| "[[The Way We Were (song)|The Way We Were]]" from ''[[The Way We Were]]'' during the Robert Redford tribute
+|-
+! scope="row" | Lauren Han<br>[[Ejae]]<br>[[Audrey Nuna]]<br>[[Rei Ami]]
+| Performers
+| "Prologue (Hunter's Mantra)" and "[[Golden (Huntrix song)|Golden]]" from ''[[KPop Demon Hunters]]''
+|}
+
+==Ceremony information==
+[[File:Conan O'Brien at the 2025 Sundance Film Festival 03 (cropped).jpg|thumb|upright|[[Conan O'Brien]] hosted the 98th Academy Awards.|alt=Photo of Conan O'Brien in January 2025.]]
+
+In March 2025, the Academy hired television producers Raj Kapoor and Katy Mullan, for the third year in a row, to oversee production of the 2026 ceremony, with comedian and former talk show host [[Conan O'Brien]] as host of the event for the second consecutive year. Jeff Ross and Mike Sweeney, long-time collaborators of O'Brien, also returned as producers for a second time; Sweeney also served as a writer.<ref>{{cite news |last1=Nolfi |first1=Joey |title=Conan O'Brien Returning as 2026 Oscars Host, 98th Academy Awards Date Set |url=https://ew.com/conan-obrien-returning-2026-oscars-date-revealed-11697987 |access-date=January 31, 2026 |work=[[Entertainment Weekly]] |date=March 17, 2025 |archive-url=https://web.archive.org/web/20250430213336/https://ew.com/conan-obrien-returning-2026-oscars-date-revealed-11697987 |archive-date=April 30, 2025 |url-status=live}}</ref> "We are thrilled to bring back Conan, Raj, Katy, Jeff, and Mike for the 98th Oscars," stated AMPAS CEO [[Bill Kramer (executive)|Bill Kramer]] and then-AMPAS president [[Janet Yang]] in a press release. "[Last] year, they produced a hugely entertaining and visually stunning show that celebrated our nominees and the global film community in the most beautiful and impactful way. Conan was the perfect host — skillfully guiding us through the evening with humor, warmth and reverence. It is an honor to be working with them again."<ref>{{cite news |last1=Lincoln |first1=Ross A. |title=Conan O’Brien to Return as Oscars Host in 2026 |url=https://www.thewrap.com/conan-obrien-to-return-as-oscars-host-in-2026/ |access-date=January 31, 2026 |work=[[TheWrap]] |date=March 17, 2025 |archive-url=https://web.archive.org/web/20251120015638/https://www.thewrap.com/conan-obrien-to-return-as-oscars-host-in-2026/ |archive-date=November 20, 2025 |language=en-US |url-status=live}}</ref> In response, Kapoor and Mullan stated in a press release, "We are both so honored to be returning in our roles for the 98th Oscars. We can't wait to work with Conan and his entire team as we continue to explore even more special and heartfelt opportunities to celebrate next year's nominees and the impact of film around the world."<ref>{{cite news |last1=France |first1=Lisa Respers |title=Conan O’Brien Will Return to Host the Oscars |url=https://www.cnn.com/2025/03/17/entertainment/conan-obrien-oscars-host-return |access-date=January 31, 2026 |agency=[[CNN]] |date=March 17, 2025 |archive-url=https://web.archive.org/web/20260612104821/https://www.cnn.com/2025/03/17/entertainment/conan-obrien-oscars-host-return |archive-date=June 12, 2026 |language=en-US |url-status=live}}</ref>
+
+Several others participated in the production of the ceremony and related events. Musician Michael Bearden was the musical director for the telecast; production designers Alana Billingsley and Misty Buckley designed a new stage for the show.<ref name="Team">{{cite news |url=https://deadline.com/2026/02/oscar-producers-announce-team-hamish-hamilton-director-1236706872/ |title=Oscar Producers Announce Team; Hamish Hamilton to Return as Director |last=Hammond |first=Pete |work=[[Deadline Hollywood]] |date=February 3, 2026 |access-date=February 3, 2026 |archive-url=https://web.archive.org/web/20260203153602/https://deadline.com/2026/02/oscar-producers-announce-team-hamish-hamilton-director-1236706872/ |archive-date=February 3, 2026 |url-status=live}}</ref><ref>{{cite news |last1=Simons |first1=Katie |title=An Exclusive Look Behind the Scenes as Dolby Theatre Transforms for the Oscars |url=https://www.latimes.com/entertainment-arts/awards/story/2026-03-13/oscars-2026-photos-dolby-theatre-behind-scenes |access-date=July 8, 2026 |work=[[Los Angeles Times]] |date=March 13, 2026 |archive-url=https://web.archive.org/web/20260315182154/https://www.latimes.com/entertainment-arts/awards/story/2026-03-13/oscars-2026-photos-dolby-theatre-behind-scenes |archive-date=March 15, 2026 |language=en-US |url-status=live}}</ref> According to Buckley and Billingsley in an article published by ''[[Vanity Fair (magazine)|Vanity Fair]]'', the stage was designed to resemble a garden courtyard made out of glass, metal, and stone adorned with handmade trees and plants. The stage was also equipped with moving components, including mechanized LED panels that could move around the stage and reveal new spaces.<ref>{{cite magazine |url=https://www.vanityfair.com/hollywood/story/oscars-2026-first-look-stage-design |title=Oscars 2026 First Look: This Year, the Stage is a 'Sanctuary of Celebration' |last=Ford |first=Rebecca |magazine=[[Vanity Fair (magazine)|Vanity Fair]] |date=March 14, 2026 |access-date=March 14, 2026 |archive-url=https://web.archive.org/web/20260314183242/https://www.vanityfair.com/hollywood/story/oscars-2026-first-look-stage-design |archive-date=March 14, 2026 |url-status=live}}</ref> Comedian and journalist [[Amelia Dimoldenberg]] served as the social media and red carpet correspondent for the Oscars' online outlets.<ref>{{cite magazine |url=https://www.hollywoodreporter.com/movies/movie-news/amelia-dimoldenberg-oscars-2026-red-carpet-social-media-1236485121/ |title=Amelia Dimoldenberg Set for Third Stint as Oscars' Social Media Ambassador and Red Carpet Correspondent |last=Feinberg |first=Scott |magazine=[[The Hollywood Reporter]] |date=January 26, 2026 |access-date=January 26, 2026 |archive-url=https://web.archive.org/web/20260126223541/https://www.hollywoodreporter.com/movies/movie-news/amelia-dimoldenberg-oscars-2026-red-carpet-social-media-1236485121/ |archive-date=January 26, 2026 |url-status=live}}</ref> Choreographer Mandy Moore oversaw performances of the Best Original Song nominees "[[Golden (Huntrix song)|Golden]]" from ''[[KPop Demon Hunters]]'' and "[[I Lied to You]]" from ''Sinners''; the latter featured cameos from [[Buddy Guy]], [[Shaboozey]], [[Brittany Howard]], [[Christone "Kingfish" Ingram]], [[Bobby Rush (musician)|Bobby Rush]], Alice Smith, [[Eric Gales]], and [[Misty Copeland]].<ref>{{cite news |last1=Sherman |first1=Maria |title=''KPop Demon Hunters'', ''Sinners'' and more: Oscars choreographer Mandy Moore Breaks Down the Show |url=https://apnews.com/article/oscars-2026-sinners-kpop-demon-hunters-performances-209c29cc74b8fbc3a4a3cd3afdaa1053 |access-date=April 27, 2026 |agency=[[Associated Press]] |date=March 15, 2026 |archive-url=https://web.archive.org/web/20260317000750/https://apnews.com/article/oscars-2026-sinners-kpop-demon-hunters-performances-209c29cc74b8fbc3a4a3cd3afdaa1053 |archive-date=March 17, 2026 |language=en-US |url-status=live}}</ref> [[Josh Groban]], [[Jane Lynch]], [[Sterling K. Brown]], [[Ashley Nicole Black]], and [[Jim Downey (comedian)|Jim Downey]] appeared in scripted [[Sketch comedy|sketches]], the latter reprising his role from ''One Battle After Another''.<ref>{{cite news |last1=Schneider |first1=Michael |title=Inside the Oscars: Execs Explain In Memoriam Omissions, Playing Off ''KPop Demon Hunters'' Winners and Bringing Back Conan O’Brien as Host |url=https://variety.com/2026/tv/news/oscar-producers-in-memoriam-explained-conan-obrien-return-1236689787/ |access-date=June 12, 2026 |work=[[Variety (magazine)|Variety]] |date=March 16, 2026 |archive-url=https://web.archive.org/web/20260603180126/https://variety.com/2026/tv/news/oscar-producers-in-memoriam-explained-conan-obrien-return-1236689787/ |archive-date=June 3, 2026 |language=en-US |url-status=live}}</ref><ref name="Fienberg">{{cite magazine |last=Fienberg |first=Daniel |date=March 15, 2026 |url=https://www.hollywoodreporter.com/tv/tv-reviews/oscars-2026-review-conan-o-brien-one-battle-after-another-1236534113/ |title=Critic's Notebook: Conan O'Brien's Deft Hosting and Several Sincere Moments Help Save Technically Sloppy Oscars Telecast |magazine=[[The Hollywood Reporter]] |access-date=March 30, 2026 |archive-date=March 17, 2026 |archive-url=https://web.archive.org/web/20260317180254/https://www.hollywoodreporter.com/tv/tv-reviews/oscars-2026-review-conan-o-brien-one-battle-after-another-1236534113/ |url-status=live}}</ref>
+
+===Introduction of Best Casting award and other rule changes===
+Beginning with this ceremony, AMPAS introduced a new competitive award that would honor [[Casting (performing arts)#Casting director|casting directors]]. The award was announced in a February 2024 press release with Academy CEO Kramer and then-AMPAS president Yang stating, "Casting directors play an essential role in filmmaking, and as the Academy evolves, we are proud to add casting to the disciplines that we recognize and celebrate."<ref name="Casting">{{cite web |url=https://deadline.com/2024/02/motion-picture-academy-creates-casting-category-first-new-competitive-oscar-since-2001-1235819319/ |title=Motion Picture Academy Creates Casting Category, First New Competitive Oscar Since 2001 |last=Hammond |first=Pete |website=[[Deadline Hollywood]] |date=February 8, 2024 |access-date=January 22, 2026 |archive-url=https://web.archive.org/web/20240208181203/https://deadline.com/2024/02/motion-picture-academy-creates-casting-category-first-new-competitive-oscar-since-2001-1235819319/ |archive-date=February 8, 2024 |url-status=live}}</ref> Nominees would be initially voted in a preliminary round to determine a shortlist consisting of ten films. Each of the shortlisted films would have its respective casting director showcase their work in a shortlist presentation utilizing written notes highlighting the process, film reel clips, and a Q&A with members of the Casting branch. The members in that branch would narrow down the roster to five nominees, and the entire membership would then vote for the winner.<ref>{{cite news |last1=Davis |first1=Clayton |title=Nobody Knows How to Win It: Inside Oscar’s Most Mysterious New Casting Category |url=https://variety.com/2025/film/columns/oscars-new-casting-category-explained-1236585195/ |access-date=February 8, 2026 |work=[[Variety (magazine)|Variety]] |date=November 20, 2025 |archive-url=https://web.archive.org/web/20251230104614/https://variety.com/2025/film/columns/oscars-new-casting-category-explained-1236585195/ |archive-date=December 30, 2025 |language=en-US |url-status=live}}</ref> A category to award achievement in casting had previously been rejected by the Academy in 1999.<ref>{{cite news |last1=Geraets |first1=Nell |title=Casting directors Find the Stars We Love. Now They Are Finally Getting Their Own Oscar |url=https://www.smh.com.au/culture/movies/casting-directors-find-the-stars-we-love-now-they-are-finally-getting-their-own-oscar-20260223-p5o4q4.html |access-date=May 16, 2026 |work=[[The Sydney Morning Herald]] |date=March 15, 2026 |archive-url=https://web.archive.org/web/20260315015653/https://www.smh.com.au/culture/movies/casting-directors-find-the-stars-we-love-now-they-are-finally-getting-their-own-oscar-20260223-p5o4q4.html |archive-date=March 15, 2026 |language=en-AUS |url-status=live}}</ref>
+
+Additional rule changes approved by the AMPAS Board of Governors in April 2025 included:<ref>{{cite magazine |url=https://variety.com/2025/film/awards/oscars-required-viewing-explained-process-1236375352/ |title=Oscars New Voting Rule Explained: How the Academy Plans to Enforce Mandatory Viewing |last=Davis |first=Clayton |magazine=[[Variety (magazine)|Variety]] |date=April 22, 2025 |access-date=January 22, 2026 |archive-url=https://web.archive.org/web/20251218033309/https://variety.com/2025/film/awards/oscars-required-viewing-explained-process-1236375352/ |archive-date=December 18, 2025 |url-status=live}}</ref><ref>{{cite news |last1=Hammond |first1=Pete |title=Oscars: Academy Sets Timeline, New Rules for 98th Edition, and Now Requires Voters to See All Films in a Category |url=https://deadline.com/2025/04/oscars-2026-timeline-rules-98th-academy-awards-1236372961/ |access-date=March 5, 2026 |work=[[Deadline Hollywood]] |date=April 21, 2025 |archive-url=https://web.archive.org/web/20251210142344/https://deadline.com/2025/04/oscars-2026-timeline-rules-98th-academy-awards-1236372961/ |archive-date=December 10, 2025 |language=en-US |url-status=live}}</ref>
+*Voters must now watch each of the nominated films in each category in order to vote for the winners of said category. Academy members could fulfill this requirement by watching the nominees on the Academy's streaming platform or uploading a ticket stub or any form of documentation stating that the member watched the film.
+*In accordance with recommendations by the Academy’s Science and Technology Council regarding usage of Generative Artificial Intelligence in the filmmaking process, the group determined that the tools neither helped nor harmed a film's chances for receiving a nomination. The Academy and its branches would judge each achievement "taking into account the degree to which a human was at the heart of the creative authorship when choosing which movie to award."
+*In the Best Picture category, films released in the first six months of the year must have shown proof of submission for [[Producers Guild of America]] (PGA) mark certification or awards-only determination by September 10, 2025; films released in the remaining months of the year must submit proof of submission for the PGA by November 13.
+*For Best Animated Short Film, all Academy members were invited to participate in the nominations round. 
+*The Best Cinematography category would first have a preliminary short list featured ten to twenty films which would later be narrowed down to five nominees.
+*For International Feature Film, eligibility rules regarding creative control now were updated in consideration of filmmakers with refugee or asylum status. The submitting country must confirm that creative control of the film was largely in the hands of citizens, residents, or individuals with refugee or asylum status in said submitting country.
+
+===Box office performance of Best Picture nominees===
+When the nominations were announced, eight of the ten films nominated for Best Picture had earned a combined gross of nearly $661.7&nbsp;million at the American and Canadian box offices at the time. ''Sinners'' was the highest-grossing film among the Best Picture nominees with $280&nbsp;million in domestic box office receipts.<ref>{{cite news |last1=Rottenberg |first1=Josh |title=Oscar Best Picture Nominees See 18% Drop in Global Box Office from Last Year |url=https://www.latimes.com/entertainment-arts/awards/story/2026-01-22/best-picture-oscar-nominations-2026-box-office-major-drop |access-date=March 5, 2026 |work=[[Los Angeles Times]] |date=January 22, 2026 |archive-url=https://web.archive.org/web/20260305213841/https://www.latimes.com/entertainment-arts/awards/story/2026-01-22/best-picture-oscar-nominations-2026-box-office-major-drop |archive-date=March 5, 2026 |language=en-US |url-status=live}}</ref> ''F1'' came in second with $189.6&nbsp;million; this was followed by ''Marty Supreme'' ($80.6&nbsp;million), ''One Battle After Another'' ($71.6&nbsp;million), ''Bugonia'' ($17.7&nbsp;million), ''Hamnet'' ($15.3&nbsp;million), ''Sentimental Value'' ($4.3&nbsp;million), and ''The Secret Agent'' ($2.6&nbsp;million). The box office figures for ''Frankenstein'' and ''Train Dreams'' were unavailable due to distributor Netflix's policy of refusing to release such figures.<ref>{{cite news |title=A Breakdown of How Oscar Best Picture Nominees Fared at the Box Office and Which Studios Dominated |url=https://apnews.com/article/oscar-nominees-2026-box-office-studio-db8e1bc285fd31d064f270aeb1406cb1 |access-date=March 5, 2026 |agency=[[Associated Press]] |date=January 22, 2026 |archive-url=https://web.archive.org/web/20260130065919/https://apnews.com/article/oscar-nominees-2026-box-office-studio-db8e1bc285fd31d064f270aeb1406cb1 |archive-date=January 30, 2026 |language=en-US |url-status=live}}</ref>
+
+===Critical reviews===
+Robert Lloyd of the ''[[Los Angeles Times]]'' wrote, "With Conan O'Brien returning as host in 2026, the ceremony was much in the spirit of his first go in 2025, except this was all in all a livelier, funnier show." He also gave high marks toward the Best Original Song performances and the presentation of the "In Memoriam" segment.<ref>{{cite news |last=Lloyd |first=Robert |date=March 15, 2026 |url=https://www.latimes.com/entertainment-arts/tv/story/2026-03-15/oscars-2026-review-broadcast-conan-obrien |title=All Hail Conan O'Brien, who could host the Oscars forever and we wouldn't mind |newspaper=[[Los Angeles Times]] |access-date=March 30, 2026 |archive-date=March 17, 2026 |archive-url=https://web.archive.org/web/20260317124833/https://www.latimes.com/entertainment-arts/tv/story/2026-03-15/oscars-2026-review-broadcast-conan-obrien |url-status=live |url-access=limited}}</ref> [[Rob Sheffield]] of ''[[Rolling Stone]]'' complimented the "surprise wins, timely jokes, poignant speeches", host O'Brien's "right amount of bratty irreverence" and the Redford tribute by Streisand, describing it as "the kind of Oscar magic that could only happen on this award show".<ref>{{cite magazine |last=Sheffield |first=Rob |author-link=Rob Sheffield |date=March 16, 2026 |url=https://www.rollingstone.com/tv-movies/tv-movie-reviews/oscars-2026-conan-obrien-barbra-streisand-sinners-review-1235531437/ |title=Oscars 2026: Conan, Barbra, 'Sinners', and One Awesomely Messy Night |magazine=[[Rolling Stone]] |access-date=March 30, 2026 |archive-date=March 16, 2026 |archive-url=https://web.archive.org/web/20260316153823/https://www.rollingstone.com/tv-movies/tv-movie-reviews/oscars-2026-conan-obrien-barbra-streisand-sinners-review-1235531437/ |url-status=live |url-access=subscription}}</ref> Ben Travers of ''[[IndieWire]]'' opined that the show "felt like the first in a long time that were made with cinephiles top of mind," adding that O'Brien "brought his signature silliness and deft professionalism to a ceremony that thrived by giving film fans what they want".<ref>{{cite web |last=Travers |first=Ben |date=March 16, 2026 |url=https://www.indiewire.com/criticism/culture/2026-academy-awards-review-1235184557/ |title=Oscars Review: Conan O'Brien Does It Again — This Time, for the Cinephiles |website=[[IndieWire]] |access-date=March 30, 2026 |archive-date=March 17, 2026 |archive-url=https://web.archive.org/web/20260317080900/https://www.indiewire.com/criticism/culture/2026-academy-awards-review-1235184557/ |url-status=live}}</ref> 
+
+''[[Variety (magazine)|Variety]]'' chief film critic [[Owen Gleiberman]] called the show "a tasteful and overly safe show sustained by just enough suspense". He described the production design as "pleasingly bland and comfortable and a bit generic, like the show itself" and criticized the lack of a "more explicit salute" to Best Picture winner ''One Battle After Another''.<ref>{{cite magazine |last=Gleiberman |first=Owen |author-link=Owen Gleiberman |date=March 15, 2026 |url=https://variety.com/2026/tv/reviews/2026-oscars-review-one-battle-after-another-sinners-1236683584/ |title=The 2026 Oscars Review: A Tasteful and Overly Safe Show Sustained by Just Enough Suspense |magazine=[[Variety (magazine)|Variety]] |access-date=March 30, 2026 |archive-date=March 18, 2026 |archive-url=https://web.archive.org/web/20260318013254/https://variety.com/2026/tv/reviews/2026-oscars-review-one-battle-after-another-sinners-1236683584/ |url-status=live}}</ref> Television critic Daniel Fienberg of ''The Hollywood Reporter'' complimented O'Brien's hosting and "stirring history-making wins," but pointed out the technical issues.<ref name="Fienberg" /> Television critic Judy Berman of ''[[Time (magazine)|Time]]'' criticized prioritizing "devastating news headlines or late-night-style topical zingers or impassioned hand-wringing of any variety" over "a celebration of film artistry do what art does better than almost anything else". However, she did reserve praise for O'Brien's hosting performances and several of the winners' acceptance speeches.<ref>{{cite magazine |last=Berman |first=Judy |date=March 16, 2026 |url=https://time.com/article/2026/03/15/oscars-2026-review-conan-obrien-one-battle-after-another/ |title=The 2026 Oscars Embodied the Hard-Won Optimism of 'One Battle After Another' |magazine=[[Time (magazine)|Time]] |access-date=March 30, 2026 |archive-date=March 30, 2026 |archive-url=https://web.archive.org/web/20260330173258/https://time.com/article/2026/03/15/oscars-2026-review-conan-obrien-one-battle-after-another/ |url-status=live}}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 17.86&nbsp;million people over its length, which was a 9% decrease from the previous year's ceremony.<ref>{{cite news |last1=Longeretta |first1=Emily |title=Oscars Ratings Hit 17.9 Million Viewers, Down 9% From Last Year and Lowest Since 2022 |url=https://variety.com/2026/awards/awards/oscars-ratings-17-9-million-down-1236691799/ |access-date=June 5, 2026 |work=[[Variety (magazine)|Variety]] |date=March 17, 2026 |archive-url=https://web.archive.org/web/20260320033506/https://variety.com/2026/awards/awards/oscars-ratings-17-9-million-down-1236691799/ |archive-date=March 20, 2026 |language=en-US |url-status=live}}</ref> The show also had 8.4% of households watching the ceremony based on [[Nielsen Media Research|Nielsen]] estimates, which was lower than the previous ceremony.<ref name="PDF"/> Additionally, it garnered a lower 18–49 demo rating with a 3.92 rating among viewers in that demographic.<ref>{{cite newspaper |last1=Shoard |first1=Catherine |title=Oscars Ratings in US Dip to Four-Year Low, Defying Expectations |url=https://www.theguardian.com/film/2026/mar/18/oscars-ratings-in-us-dip-to-four-year-low-defying-expectations |access-date=April 5, 2026 |newspaper=[[The Guardian]] |date=March 18, 2026 |archive-url=https://web.archive.org/web/20260319134114/https://www.theguardian.com/film/2026/mar/18/oscars-ratings-in-us-dip-to-four-year-low-defying-expectations |archive-date=March 19, 2026 |language=en-UK |url-status=live}}</ref>
+
+In July 2026, the broadcast was nominated for six awards at the [[78th Primetime Emmy Awards]].<ref>{{cite news |last1=Gomez |first1=Dessi |last2=Hipes |first2=Patrick |last3=Pedersen |first3=Erik |title=Emmy Nominations 2026: The Complete List |url=https://deadline.com/lists/emmy-nominations-full-list-nominees-scorecard/ |access-date=July 8, 2026 |work=[[Deadline Hollywood]] |date=July 8, 2026 |archive-url=https://web.archive.org/web/20260709010419/https://deadline.com/lists/emmy-nominations-full-list-nominees-scorecard/2026-creative-arts-emmy-nominations-list/ |archive-date=July 9, 2026 |url-status=live}}</ref>
+
+=="In Memoriam"==
+The annual "In Memoriam" tribute honored the following individuals.<ref name="Winners">{{cite web |url=https://deadline.com/lists/2026-oscars-winners-list-academy-awards/ |title=Oscars: ''One Battle After Another'' Takes Best Picture, Director & Four Others; Jordan & Buckley Win Lead Acting Prizes: Full List |last=Pedersen |first=Erik |website=[[Deadline Hollywood]] |date=March 15, 2026 |access-date=March 16, 2026}}</ref>
+
+{{div col}}
+
+* [[Rob Reiner]] – actor, filmmaker
+* [[Michele Singer Reiner]] – producer
+* [[Isiah Whitlock Jr.]] – actor
+* [[Homayoun Ershadi]] – actor
+* [[Tom Stoppard]] – screenwriter, playwright
+* [[Jackie Burch]] – casting director
+* [[Stuart Craig]] – production designer
+* [[Terence Stamp]] – actor
+* [[Sally Kirkland]] – actress
+* [[Lalo Schifrin]] – composer, musician
+* [[T. K. Carter]] – actor
+* [[Allie Light]] – documentary filmmaker
+* [[Donald C. Rogers|Don Rogers]] – sound
+* [[Arthur Cohn]] – producer
+* [[Rosanna Norton]] – costume designer
+* [[Lee Tamahori]] – director
+* [[Claudia Cardinale]] – actress
+* [[Béla Tarr]] – director
+* [[Tatsuya Nakadai]] – actor
+* [[Peter Kwong (actor)|Peter Kwong]] – actor
+* [[Udo Kier]] – actor
+* [[Christine Choy]] – documentary filmmaker
+* [[Eduardo Serra]] – cinematographer
+* [[Mark Peploe]] – writer
+* [[Leslie Dilley]] – production designer
+* [[Roger Allers]] – animator
+* [[Loren Carpenter]] – animator, founding employee of [[Pixar]]
+* [[Joel Sill]] – music supervisor
+* [[Mary Cybulski]] – script supervisor
+* David Steinberg – manager
+* [[Andrew Karpen]] – executive
+* [[Jeremy Larner]] – writer, author
+* [[Giorgio Armani]] – fashion designer
+* [[Michèle Burke]] – makeup artist
+* [[Billy Williams (cinematographer)|Billy Williams]] – cinematographer
+* [[Robert Benton|Robert D. Benton]] – writer, director
+* [[Diane Ladd]] – actress
+* [[Diane Keaton]] – actress
+* [[Catherine O'Hara]] – actress
+* [[Stanley R. Jaffe]] – producer, executive
+* [[Frederick Wiseman]] – documentary filmmaker
+* [[Pauline Collins]] – actress
+* [[Michael Madsen]] – actor
+* [[Arthur Hamilton]] – songwriter
+* [[Marcel Ophuls]] – documentary filmmaker
+* [[Marvin Levy (publicist)|Marvin Levy]] – publicist, marketing executive
+* [[Mohammad Bakri]] – actor, director
+* [[Kirk Francis (sound engineer)|Kirk Francis]] – production mixer
+* [[Don Hall (sound editor)|Don Hall]] – sound editor
+* [[Skip Brittenham]] – lawyer
+* [[Con Pederson]] – visual effects
+* [[Drew Struzan]] – poster artist
+* Nancy Seltzer – publicist
+* [[Richard Kahn (marketing executive)|Richard Kahn]] – marketing executive, past Academy president
+* [[Frank Price]] – executive
+* [[Don Zimmerman (film editor)|Don Zimmerman]] – film editor
+* [[William Steinkamp|Wiliam Steinkamp]] – film editor
+* [[Greg Cannom]] – makeup artist
+* [[Theodor Pištěk (artist)|Theodor Pištěk]] – costume designer
+* [[Cary-Hiroyuki Tagawa]] – actor
+* [[Susie Figgis]] – casting director
+* [[Alan Bergman]] – songwriter, lyricist
+* [[Gianni Quaranta]] – production designer
+* [[Graham Greene (actor)|Graham Greene]] – actor
+* [[Val Kilmer]] – actor
+* [[Robert Duvall]] – actor
+* [[Robert Redford]] – actor, filmmaker
+
+{{div col end}}
+
+During the tribute, [[Billy Crystal]] presented a tribute to [[Rob Reiner]], [[Rachel McAdams]] eulogized [[Diane Keaton]] and [[Catherine O'Hara]], and [[Barbra Streisand]] honored [[Robert Redford]].<ref>{{cite news |last1=Welch |first1=Alex |title=Oscars: Billy Crystal, Meg Ryan and Others Honor Rob Reiner in Moving Tribute |url=https://www.thewrap.com/industry-news/awards/oscars-2026-in-memoriam-rob-reiner-tribute-robert-redford-diane-keaton/ |access-date=June 13, 2026 |work=[[TheWrap]] |date=March 15, 2026 |archive-url=https://web.archive.org/web/20260316054113/https://www.thewrap.com/industry-news/awards/oscars-2026-in-memoriam-rob-reiner-tribute-robert-redford-diane-keaton/ |archive-date=March 16, 2026 |language=en-US |url-status=live}}</ref> Crystal's tribute to Reiner was joined by [[Kathy Bates]], [[Annette Bening]], [[John Cusack]], [[Cary Elwes]], [[Christopher Guest]], [[Carol Kane]], [[Michael McKean]], [[Demi Moore]], [[Jerry O'Connell]], [[Mandy Patinkin]], [[Kevin Pollak]], [[Meg Ryan]], [[Fred Savage]], [[Kiefer Sutherland]], [[Wil Wheaton]], and [[Daphne Zuniga]].<ref>{{cite magazine |last=Nolfi |first=Joey |date=March 15, 2026 |title=Oscars unite 17 Rob Reiner stars for emotional tribute: Here's who appeared on stage |url=https://ew.com/oscars-2026-rob-reiner-tribute-meg-ryan-billy-crystal-11925481 |access-date=March 16, 2026 |magazine=[[Entertainment Weekly]] |archive-url=https://web.archive.org/web/20260316151512/https://ew.com/oscars-2026-rob-reiner-tribute-meg-ryan-billy-crystal-11925481 |archive-date=March 16, 2026 |url-status=live}}</ref>
+
+==Notes==
+{{notelist}}
+
+==See also==
+* [[List of submissions for the Academy Award for Best Animated Feature#2025|List of submissions to the 98th Academy Awards for Best Animated Feature]]
+* [[Submissions for the Academy Award for Best Documentary Feature#2025|List of submissions to the 98th Academy Awards for Best Documentary Feature]]
+* [[List of submissions to the 98th Academy Awards for Best International Feature Film]]
+
+==References==
+{{reflist}}
+
+==External links==
+* {{Official website|https://oscar.go.com/|Academy Awards official website}}
+* {{Official website|https://www.oscars.org/|The Academy of Motion Picture Arts and Sciences official website}}
+* [https://www.youtube.com/user/Oscars Oscars Channel] at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+'''Other resources'''
+* {{IMDb title|36205360|The Oscars (2026)}}
+
+{{Academy Awards}}
+{{Portal bar|Film|Lists|Greater Los Angeles|California|United States}}
+
+{{DEFAULTSORT:Academy Awards, 98}}
+[[Category:2025 film awards]]
+[[Category:2026 awards in the United States]]
+[[Category:2026 in American cinema]]
+[[Category:2026 in Los Angeles]]
+[[Category:2026 in the United States]]
+[[Category:Academy Awards ceremonies]]
+[[Category:March 2026 in the United States]]
+[[Category:Television shows directed by Hamish Hamilton (director)]]

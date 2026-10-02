@@ -1,0 +1,551 @@
+{{Featured list}}
+{{oscars short description|films-year=1983}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number           = 56
+| award            = Academy Awards
+| image            = Oscar-1983.jpg
+| caption          = Official poster
+| alt              = Official poster promoting the 56th Academy Awards in 1984
+| date             = April 9, 1984
+| site             = [[Dorothy Chandler Pavilion]]<br>[[Los Angeles]], California, U.S.
+| host             = [[Johnny Carson]]
+| producer         = [[Jack Haley Jr.]]
+| director         = [[Marty Pasetta]]
+| best_picture     = ''[[Terms of Endearment]]''
+| most_wins        = ''Terms of Endearment'' (5)
+| most_nominations = ''Terms of Endearment'' (11)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 45 minutes<ref>{{harvnb|Holden|1993|p=622}}</ref>
+| ratings          = 42.1&nbsp;million<br>30.3% ([[Nielsen ratings]])
+| last             = 55th
+| next             = 57th
+}}
+
+The '''56th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[1983 in film|films of 1983]] and took place on April 9, 1984, at the [[Dorothy Chandler Pavilion]] in [[Los Angeles]], beginning at 6:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 9:00&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 22 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Jack Haley Jr.]] and directed by [[Marty Pasetta]].<ref name="Pasetta">{{harvnb|Osborne|1999|p=341}}</ref> Comedian and talk show emcee Johnny Carson hosted the show for the fifth time. He first presided over the [[51st Academy Awards|51st ceremony]] held in 1979 and last hosted the [[54th Academy Awards|54th ceremony]] held in 1982.<ref>{{cite web |last=Steinberg |first=David |title=The Gold Standard |url=https://www.latimes.com/la-mag-feb082009-theear-story.html |url-access=limited |access-date=March 23, 2020 |work=[[Los Angeles Times]] |date=January 30, 2009 |archive-date=April 4, 2020 |archive-url=https://web.archive.org/web/20200404051915/https://www.latimes.com/la-mag-feb082009-theear-story.html |url-status=live}}</ref> Nine days earlier, in a ceremony held at [[The Beverly Hilton]] in [[Beverly Hills, California]], on March 31, the [[Academy Scientific and Technical Awards]] were presented by hosts [[Joan Collins]] and [[Arnold Schwarzenegger]].<ref>{{cite web |title=Past Scientific & Technical Awards Ceremonies |url=http://www.oscars.org/awards/scitech/pastawards.html |access-date=July 31, 2013 |publisher=[[Academy of Motion Picture Arts and Sciences]] |archive-url=https://web.archive.org/web/20140213185729/http://www.oscars.org/awards/scitech/pastawards.html |archive-date=February 13, 2014}}</ref>
+
+''[[Terms of Endearment]]'' won five awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite web |last=Harmetz |first=Aljean |title='Terms' Wins Best Picture; Duvall and Miss MacLaine Honored |url=https://www.nytimes.com/1984/04/10/movies/terms-wins-best-picture-oscar-duvall-and-miss-maclaine-honored.html |access-date=June 29, 2020 |work=[[The New York Times]] |date=April 10, 1984 |archive-date=June 29, 2020 |archive-url=https://web.archive.org/web/20200629192300/https://www.nytimes.com/1984/04/10/movies/terms-wins-best-picture-oscar-duvall-and-miss-maclaine-honored.html |url-access=limited |url-status=live}}</ref> Other winners included ''[[Fanny and Alexander]]'' and ''[[The Right Stuff (film)|The Right Stuff]]'' with four awards, ''[[Tender Mercies]]'' with two awards, and ''[[Return of the Jedi]]'', ''[[Boys and Girls (1983 film)|Boys and Girls]]'', ''[[Flamenco at 5:15]]'', ''[[Flashdance]]'', ''[[He Makes Me Feel Like Dancin']]'', ''[[Sundae in New York]]'', ''[[The Year of Living Dangerously (film)|The Year of Living Dangerously]]'', and ''[[Yentl (film)|Yentl]]'' with one. The telecast garnered 42.1&nbsp;million viewers in the United States.
+
+==Winners and nominees==
+The nominees for the 56th Academy Awards were announced on February 16, 1984, by Academy president [[Gene Allen (art director)|Gene Allen]] and actor [[Mickey Rooney]].<ref>{{cite web |title=Oscar Nominations Are Due |work=[[Baytown Sun]] |url=https://www.newspapers.com/clip/83350953/oscar-nominations-are-due/ |access-date=July 12, 2021 |date=February 16, 1984 |page=2-A |publisher=[[Newspapers.com]] |archive-date=August 13, 2021 |archive-url=https://web.archive.org/web/20210813083114/https://www.newspapers.com/clip/83350953/oscar-nominations-are-due/ |url-status=live}}</ref> ''[[Terms of Endearment]]'' earned the most nominations with eleven; ''[[The Right Stuff (film)|The Right Stuff]]'' came in second with eight.<ref>{{cite web |last=Harmetz |first=Aljean |author-link=Aljean Harmetz |title='Endearment' Tops Oscar Nominations |url=https://www.nytimes.com/1984/02/17/movies/endearment-tops-oscar-nominations.html |access-date=June 29, 2020 |work=[[The New York Times]] |date=February 17, 1984 |archive-date=July 1, 2017 |archive-url=https://web.archive.org/web/20170701012308/http://www.nytimes.com/1984/02/17/movies/endearment-tops-oscar-nominations.html |url-status=live |url-access=limited}}</ref> The winners were announced at the awards ceremony on April 9. [[James L. Brooks]] was the third writer-director-producer to win three Oscars for the same film.<ref>{{harvnb|Jones|1999|p=250}}</ref> With four wins, ''[[Fanny and Alexander]]'' became the [[List of Academy Award–winning foreign-language films|most awarded foreign language film]] in Academy Award history at the time.<ref name="HonoraryOscars">{{harvnb|Kinn|Piazza|2002|p=237}}</ref>{{efn|name=Fanny|''[[Crouching Tiger, Hidden Dragon]]'' (2000), ''[[Parasite (2019 film)|Parasite]]'' (2019), and ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' (2022) have since equaled this record with four wins apiece.<ref>{{cite web |last=Seibold |first=Witney |title='All Quiet on the Western Front's Oscar-Nominated Screenplay Was Kept Alive by Triathlons |url=https://www.slashfilm.com/1231758/all-quiet-on-the-western-fronts-oscar-nominated-screenplay-was-kept-alive-by-triathlons/ |access-date=July 18, 2024 |work=[[/Film]] |date=March 17, 2023 |archive-date=March 27, 2023 |archive-url=https://web.archive.org/web/20230327020529/https://www.slashfilm.com/1231758/all-quiet-on-the-western-fronts-oscar-nominated-screenplay-was-kept-alive-by-triathlons/ |url-status=live}}</ref>}} [[Linda Hunt]] is the only person to win an Oscar for playing a character of the opposite sex.<ref>{{harvnb|Wiley|Bona|1996|p=1145}}</ref> Best Original Song co-winner [[Irene Cara]] became the first black woman to win an Oscar in a non-acting category.<ref>{{cite web |last=Scott |first=Mike |title=It Was a Big Night for 'Green Book'; It Was a Bigger One for the N.O. Film Industry |url=https://www.nola.com/entertainment_life/article_0453dd3e-719b-58aa-947d-2257fdd1cb23.html |access-date=April 25, 2021 |work=[[The Times-Picayune/The New Orleans Advocate|The Times-Picayune]] |date=February 25, 2019 |archive-date=July 12, 2021 |archive-url=https://web.archive.org/web/20210712091635/https://www.nola.com/entertainment_life/article_0453dd3e-719b-58aa-947d-2257fdd1cb23.html |url-status=live}}</ref>
+
+===Awards===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Jameslbrooks.jpg
+| caption1          = [[James L. Brooks]], Best Picture, Best Director and Best Adapted Screenplay winner
+| image2            = Robert Duvall (actor, at home, New York City apartment, 1984) (cropped).jpg
+| caption2          = [[Robert Duvall]], Best Actor winner
+| image3            = Shirley MacLaine - 1960.jpg
+| caption3          = [[Shirley MacLaine]], Best Actress winner
+| image4            = Jack Nicholson 2001.jpg
+| caption4          = [[Jack Nicholson]], Best Supporting Actor winner
+| image5            = Linda Hunt.jpg
+| caption5          = [[Linda Hunt]], Best Supporting Actress winner
+| image6            = Ingmar Bergman (1966).jpg
+| caption6          = [[Ingmar Bergman]], Best Foreign Language Film winner
+| image7            = Bill Conti.jpg
+| caption7          = [[Bill Conti]], Best Original Score winner
+| image8            = Michel Legrand Cabourg 2015.jpg
+| caption8          = [[Michel Legrand]], Best Original Song Score co-winner
+| image9            = Irene Cara (1987 Elektra publicity photo) (cropped).jpg
+| caption9          = [[Irene Cara]], Best Original Song co-winner
+| image10           = Giorgio Moroder (2).jpg
+| caption10         = [[Giorgio Moroder]], Best Original Song co-winner
+}}
+
+Winners are listed first, highlighted in '''boldface''' and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars1984">{{cite web |url=http://www.oscars.org/oscars/ceremonies/1984 |title=The 56th Academy Awards (1984) Nominees and Winners |access-date=October 9, 2011 |publisher=[[Academy of Motion Picture Arts and Sciences]] |url-status=live |archive-url=https://web.archive.org/web/20141111074432/http://www.oscars.org/oscars/ceremonies/1984 |archive-date=November 11, 2014}}</ref>
+
+{| role="presentation" class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Terms of Endearment]]''&nbsp;– [[James L. Brooks]], producer'''{{double-dagger}}
+**''[[The Big Chill (film)|The Big Chill]]''&nbsp;– [[Michael Shamberg]], producer
+**''[[The Dresser (1983 film)|The Dresser]]''&nbsp;– [[Peter Yates]], producer
+**''[[The Right Stuff (film)|The Right Stuff]]''&nbsp;– [[Robert Chartoff]] and [[Irwin Winkler]], producers
+**''[[Tender Mercies]]''&nbsp;– [[Philip Hobel|Philip S. Hobel]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[James L. Brooks]]&nbsp;– ''[[Terms of Endearment]]'''''{{double-dagger}}
+**[[Peter Yates]]&nbsp;– ''[[The Dresser (1983 film)|The Dresser]]''
+**[[Ingmar Bergman]]&nbsp;– ''[[Fanny and Alexander]]''
+**[[Mike Nichols]]&nbsp;– ''[[Silkwood]]''
+**[[Bruce Beresford]]&nbsp;– ''[[Tender Mercies]]''
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+*'''[[Robert Duvall]]&nbsp;– ''[[Tender Mercies]]'' as Mac Sledge'''{{double-dagger}}
+**[[Michael Caine]]&nbsp;– ''[[Educating Rita (film)|Educating Rita]]'' as Prof. Frank Bryant
+**[[Tom Conti]]&nbsp;– ''[[Reuben, Reuben]]'' as Gowan McGland
+**[[Tom Courtenay]]&nbsp;– ''[[The Dresser (1983 film)|The Dresser]]'' as Norman
+**[[Albert Finney]]&nbsp;– ''The Dresser'' as Sir
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+*'''[[Shirley MacLaine]]&nbsp;– ''[[Terms of Endearment]]'' as Aurora Greenway'''{{double-dagger}}
+**[[Jane Alexander]]&nbsp;– ''[[Testament (1983 film)|Testament]]'' as Carol Wetherly
+**[[Meryl Streep]]&nbsp;– ''[[Silkwood]]'' as [[Karen Silkwood]]
+**[[Julie Walters]]&nbsp;– ''[[Educating Rita (film)|Educating Rita]]'' as Susan "Rita" White
+**[[Debra Winger]]&nbsp;– ''Terms of Endearment'' as Emma Greenway-Horton
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Jack Nicholson]]&nbsp;– ''[[Terms of Endearment]]'' as Garrett Breedlove'''{{double-dagger}}
+**[[Charles Durning]]&nbsp;– ''[[To Be or Not to Be (1983 film)|To Be or Not to Be]]'' as S.S. Colonel Erhardt
+**[[John Lithgow]]&nbsp;– ''Terms of Endearment'' as Sam Burns
+**[[Sam Shepard]]&nbsp;– ''[[The Right Stuff (film)|The Right Stuff]]'' as [[Chuck Yeager]]
+**[[Rip Torn]]&nbsp;– ''[[Cross Creek (film)|Cross Creek]]'' as Marsh Turner
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Linda Hunt]]&nbsp;– ''[[The Year of Living Dangerously (film)|The Year of Living Dangerously]]'' as Billy Kwan'''{{double-dagger}}
+**[[Cher]]&nbsp;– ''[[Silkwood]]'' as [[Dusty Ellis|Dolly Pelliker]]
+**[[Glenn Close]]&nbsp;– ''[[The Big Chill (film)|The Big Chill]]'' as Sarah Cooper
+**[[Amy Irving]]&nbsp;– ''[[Yentl (film)|Yentl]]'' as Hadass Vishkower
+**[[Alfre Woodard]]&nbsp;– ''[[Cross Creek (film)|Cross Creek]]'' as [[Marjorie Kinnan Rawlings|Beatrice "Geechee"]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+*'''''[[Tender Mercies]]''&nbsp;– [[Horton Foote]]'''{{double-dagger}}
+**''[[The Big Chill (film)|The Big Chill]]''&nbsp;– [[Lawrence Kasdan]] and [[Barbara Benedek]]
+**''[[Fanny and Alexander]]''&nbsp;– [[Ingmar Bergman]]
+**''[[Silkwood]]''&nbsp;– [[Nora Ephron]] and [[Alice Arlen]]
+**''[[WarGames]]''&nbsp;– [[Lawrence Lasker]] and [[Walter Parkes]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material from Another Medium)]]}}
+*'''''[[Terms of Endearment]]''&nbsp;– [[James L. Brooks]] based on [[Terms of Endearment (novel)|the novel]] by [[Larry McMurtry]]'''{{Double-dagger}}
+**''[[Betrayal (1983 film)|Betrayal]]''&nbsp;– [[Harold Pinter]] based on [[Betrayal (play)|his play]]
+**''[[The Dresser (1983 film)|The Dresser]]''&nbsp;– [[Ronald Harwood]] based on [[The Dresser|his play]]
+**''[[Educating Rita (film)|Educating Rita]]''&nbsp;– [[Willy Russell]] based on [[Educating Rita|his play]]
+**''[[Reuben, Reuben]]''&nbsp;– [[Julius J. Epstein]] based on the play ''[[Spofford (play)|Spofford]]'' by [[Herman Shumlin]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best International Feature Film|Best Foreign Language Film]]}}
+*'''''[[Fanny and Alexander]]'' ([[List of Swedish submissions for the Academy Award for Best International Feature Film|Sweden]]) in [[Swedish language|Swedish]]&nbsp;– directed by [[Ingmar Bergman]]'''{{double-dagger}}
+**''[[Le Bal (1983 film)|Le Bal]]'' ([[List of Algerian submissions for the Academy Award for Best International Feature Film|Algeria]]) with no dialogue&nbsp;– directed by [[Ettore Scola]]
+**''[[Carmen (1983 film)|Carmen]]'' ([[List of Spanish submissions for the Academy Award for Best International Feature Film|Spain]]) in [[Spanish language|Spanish]]&nbsp;– directed by [[Carlos Saura]]
+**''[[Entre Nous (film)|Entre Nous]]'' ([[List of French submissions for the Academy Award for Best International Feature Film|France]]) in [[French language|French]]&nbsp;– directed by [[Diane Kurys]]
+**''[[The Revolt of Job|Job's Revolt]]'' ([[List of Hungarian submissions for the Academy Award for Best International Feature Film|Hungary]]) in [[Hungarian language|Hungarian]]&nbsp;– directed by [[Imre Gyöngyössy]] and [[Barna Kabay]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[He Makes Me Feel Like Dancin']]''&nbsp;– [[Emile Ardolino]]'''{{double-dagger}}
+**''[[Children of Darkness]]''&nbsp;– [[Richard Kotuk]] and Ara Chekmayan
+**''[[First Contact (1983 film)|First Contact]]''&nbsp;– [[Bob Connolly]] and [[Robin Anderson (filmmaker)|Robin Anderson]]
+**''[[The Profession of Arms (1983 film)|The Profession of Arms]]''&nbsp;– Michael Bryans and Tina Viljoen
+**''[[Seeing Red (1983 film)|Seeing Red]]''&nbsp;– James Klein and [[Julia Reichert]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[Flamenco at 5:15]]''&nbsp;– [[Cynthia Scott]] and Adam Symansky'''{{double-dagger}}
+**''[[In the Nuclear Shadow: What Can the Children Tell Us?]]''&nbsp;– Vivienne Verdon-Roe and Eric Thiermann
+**''[[Sewing Woman]]''&nbsp;– [[Arthur Dong]]
+**''[[Spaces: The Architecture of Paul Rudolph]]''&nbsp;– Robert Eisenhardt
+**''[[You Are Free (film)|You Are Free (Ihr Zent Frei)]]''&nbsp;– Dea Brokman and Ilene Landis
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+*'''''[[Boys and Girls (1983 film)|Boys and Girls]]''&nbsp;– Janice L. Platt'''{{double-dagger}}
+**''Goodie-Two-Shoes''&nbsp;– [[Ian Emes]]
+**''Overnight Sensation''&nbsp;– Jon N. Bloom
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+*'''''[[Sundae in New York]]''&nbsp;– [[Jimmy Picker]]'''{{double-dagger}}
+**''[[Mickey's Christmas Carol]]''&nbsp;– [[Burny Mattinson]]
+**''Sound of Sunshine – Sound of Rain''&nbsp;– Eda Godel Hallinan
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[The Right Stuff (film)|The Right Stuff]]''&nbsp;– [[Bill Conti]]'''{{double-dagger}}
+**''[[Cross Creek (film)|Cross Creek]]''&nbsp;– [[Leonard Rosenman]]
+**''[[Return of the Jedi]]''&nbsp;– [[John Williams]]
+**''[[Terms of Endearment]]''&nbsp;– [[Michael Gore]]
+**''[[Under Fire (1983 film)|Under Fire]]''&nbsp;– [[Jerry Goldsmith]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Song Score or Adaptation Score)]]}}
+*'''''[[Yentl (film)|Yentl]]''&nbsp;– Song Score by [[Michel Legrand]] and [[Alan and Marilyn Bergman]]'''{{double-dagger}}
+**''[[The Sting II]]''&nbsp;– Adaptation Score by [[Lalo Schifrin]]
+**''[[Trading Places]]''&nbsp;– Adaptation Score by [[Elmer Bernstein]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+*'''"[[Flashdance... What a Feeling]]" from ''[[Flashdance]]''&nbsp;– Music by [[Giorgio Moroder]]; Lyrics by [[Keith Forsey]] and [[Irene Cara]]'''{{double-dagger}}
+**"[[Maniac (Michael Sembello song)|Maniac]]" from ''[[Flashdance]]''&nbsp;– Music and Lyrics by [[Michael Sembello]] and Dennis Matkosky
+**"[[Over You (Tender Mercies song)|Over You]]" from ''[[Tender Mercies]]''&nbsp;– Music and Lyrics by [[Austin Roberts (singer)|Austin Roberts]] and [[Boyce and Hart|Bobby Hart]]
+**"[[Papa, Can You Hear Me?]]" from ''[[Yentl (film)|Yentl]]''&nbsp;– Music by [[Michel Legrand]]; Lyrics by [[Alan and Marilyn Bergman]]
+**"[[The Way He Makes Me Feel]]" from ''[[Yentl (film)|Yentl]]''&nbsp;– Music by [[Michel Legrand]]; Lyrics by [[Alan and Marilyn Bergman]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound]]}}
+*'''''[[The Right Stuff (film)|The Right Stuff]]''&nbsp;– [[Mark Berger (sound engineer)|Mark Berger]], [[Tom Scott (sound engineer)|Tom Scott]], [[Randy Thom]] and [[David MacMillan (sound engineer)|David MacMillan]]'''{{double-dagger}}
+**''[[Never Cry Wolf (film)|Never Cry Wolf]]''&nbsp;– [[Alan Splet]], [[Todd Boekelheide]], [[Randy Thom]] and [[David Parker (sound engineer)|David Parker]]
+**''[[Return of the Jedi]]''&nbsp;– [[Ben Burtt]], [[Gary Summers]], [[Randy Thom]] and [[Tony Dawe]]
+**''[[Terms of Endearment]]''&nbsp;– [[Donald O. Mitchell]], [[Rick Kline]], [[Kevin O'Connell (sound mixer)|Kevin O'Connell]] and [[James R. Alexander]]
+**''[[WarGames]]''&nbsp;– [[Michael J. Kohut]], [[Carlos Delarios]], [[Aaron Rochin]] and [[Willie D. Burton]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Effects Editing]]}}
+*'''''[[The Right Stuff (film)|The Right Stuff]]''&nbsp;– [[Jay Boekelheide]]'''{{double-dagger}}
+**''[[Return of the Jedi]]''&nbsp;– [[Ben Burtt]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[Fanny and Alexander]]''&nbsp;– Art Direction and Set Decoration: [[Anna Asp]]'''{{double-dagger}}
+**''[[Return of the Jedi]]''&nbsp;– Art Direction: [[Norman Reynolds]], [[Fred Hole]] and [[James L. Schoppe]]; Set Decoration: [[Michael D. Ford]]
+**''[[The Right Stuff (film)|The Right Stuff]]''&nbsp;– Art Direction: [[Geoffrey Kirkland]], [[Richard Lawrence (art director)|Richard Lawrence]], [[W. Stewart Campbell]] and [[Peter R. Romero]]; Set Decoration: [[Jim Poynter|Pat Pending]] and [[George R. Nelson]]
+**''[[Terms of Endearment]]''&nbsp;– Art Direction: [[Polly Platt]] and [[Harold Michelson]]; Set Decoration: [[Tom Pedigo]] and [[Anthony Mondell]]o
+**''[[Yentl (film)|Yentl]]''&nbsp;– Art Direction: [[Roy Walker (production designer)|Roy Walker]] and [[Leslie Tomkins]]; Set Decoration: [[Tessa Davies]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[Fanny and Alexander]]''&nbsp;– [[Sven Nykvist]]'''{{double-dagger}}
+**''[[Flashdance]]''&nbsp;– [[Donald Peterman]]
+**''[[The Right Stuff (film)|The Right Stuff]]''&nbsp;– [[Caleb Deschanel]]
+**''[[WarGames]]''&nbsp;– [[William A. Fraker]]
+**''[[Zelig]]''&nbsp;– [[Gordon Willis]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Fanny and Alexander]]''&nbsp;– [[Marik Vos-Lundh|Marik Vos]]'''{{double-dagger}}
+**''[[Cross Creek (film)|Cross Creek]]''&nbsp;– [[Joe I. Tompkins]]
+**''[[Heart Like a Wheel (film)|Heart Like a Wheel]]''&nbsp;– [[William Ware Theiss]]
+**''[[The Return of Martin Guerre]]''&nbsp;– [[Anne-Marie Marchand]]
+**''[[Zelig]]''&nbsp;– [[Santo Loquasto]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[The Right Stuff (film)|The Right Stuff]]''&nbsp;– [[Glenn Farr]], [[Lisa Fruchtman]], [[Tom Rolf]], [[Stephen A. Rotter]], and [[Douglas Stewart (film editor)|Douglas Stewart]]'''{{double-dagger}}
+**''[[Blue Thunder]]''&nbsp;– [[Frank Morriss]] and [[Edward M. Abroms]]
+**''[[Flashdance]]''&nbsp;– [[Bud S. Smith]] and [[Walt Mulconery]]
+**''[[Silkwood]]''&nbsp;– [[Sam O'Steen]]
+**''[[Terms of Endearment]]''&nbsp;– [[Richard Marks]]
+|}
+
+===Special Achievement Award (Visual Effects)===
+* ''[[Return of the Jedi]]'' – [[Richard Edlund]], [[Dennis Muren]], [[Ken Ralston]] and [[Phil Tippett]].<ref>{{cite web |title=The Oscar Winners for 1984 |url=https://www.newspapers.com/clip/83350999/the-oscar-winners-for-1984/ |work=[[The Philadelphia Inquirer]] |access-date=March 23, 2021 |date=April 10, 1984 |page=7A |publisher=[[Newspapers.com]] |archive-date=August 13, 2021 |archive-url=https://web.archive.org/web/20210813083113/https://www.newspapers.com/clip/83350999/the-oscar-winners-for-1984/ |url-status=live}}</ref>
+
+=== Honorary Award ===
+* To [[Hal Roach]], in recognition of his unparalleled record of distinguished contributions to the motion picture art form.<ref name="HonoraryandSpecial">{{cite web |title=Academy Awards Acceptance Speech Database |url=http://aaspeechesdb.oscars.org/results.aspx?QB5=AND&QF5=transcript+%7c+acceptorlink+%7c+ed+note+%7c+name+%7c+film+title+%7c+song+title+%7c+category+index+%7c+acceptor+statement+%7c+category+exact+%7c+name+authority+%7c+winner+statement+%7c+year+term&QI5=&QB1=AND&QF1=name+%7c+winner+statement+%7c+name+authority&QI1=&QB2=AND&QF2=film+title&QI2=&QB3=AND&QF3=category+index&QI3=&QB0=AND&QF0=year+term&QI0=%3d%221983+56th%22&QF6=video+link&AC=QBE_QUERY&TN=aatrans&RF=WebReportList&DF=WebReportOscars&MR=0&BU=http%3a%2f%2faaspeechesdb.oscars.org%2findex.aspx& |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=June 29, 2020 |archive-date=June 29, 2020 |archive-url=https://web.archive.org/web/20200629195055/http://aaspeechesdb.oscars.org/results.aspx?QB5=AND&QF5=transcript+%7C+acceptorlink+%7C+ed+note+%7C+name+%7C+film+title+%7C+song+title+%7C+category+index+%7C+acceptor+statement+%7C+category+exact+%7C+name+authority+%7C+winner+statement+%7C+year+term&QI5=&QB1=AND&QF1=name+%7C+winner+statement+%7C+name+authority&QI1=&QB2=AND&QF2=film+title&QI2=&QB3=AND&QF3=category+index&QI3=&QB0=AND&QF0=year+term&QI0=%3D%221983+56th%22&QF6=video+link&AC=QBE_QUERY&TN=aatrans&RF=WebReportList&DF=WebReportOscars&MR=0&BU=http%3A%2F%2Faaspeechesdb.oscars.org%2Findex.aspx& |url-status=live}}</ref>
+
+=== Jean Hersholt Humanitarian Award ===
+The award recognizes individuals whose humanitarian efforts have brought credit to the motion picture industry.<ref name="Hersholt">{{cite web |last=MacMinn |first=Aleene |title=Morning Report: Movies |url=https://www.latimes.com/archives/la-xpm-1993-01-14-ca-1327-story.html |access-date=February 25, 2014 |work=[[Los Angeles Times]] |date=January 14, 1993 |url-status=live |archive-url=https://web.archive.org/web/20140307233304/http://articles.latimes.com/1993-01-14/entertainment/ca-1327_1_hersholt-award |archive-date=March 7, 2014}}</ref>
+
+* [[M. J. Frankovich]]<ref>{{cite web |title=Hal Roach to Receive Oscar for Life's Work |url=https://www.nytimes.com/1984/02/16/movies/hal-roach-to-receive-oscar-for-life-s-work.html |access-date=November 15, 2020 |work=[[The New York Times]] |date=February 16, 1984 |archive-date=July 29, 2021 |archive-url=https://web.archive.org/web/20210729093801/https://www.nytimes.com/1984/02/16/movies/hal-roach-to-receive-oscar-for-life-s-work.html |url-status=live}}</ref>
+
+=== Films with multiple nominations and awards ===
+{{col-float}}
+
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 11
+|''[[Terms of Endearment]]''
+|-
+| scope="row" style="text-align:center"| 8
+|''[[The Right Stuff (film)|The Right Stuff]]''
+|-
+| scope="row" style="text-align:center"| 6
+| ''[[Fanny and Alexander]]''
+|-
+| rowspan="4" scope="row" style="text-align:center"| 5
+| ''[[The Dresser (1983 film)|The Dresser]]''
+|-
+| ''[[Silkwood]]''
+|-
+| ''[[Tender Mercies]]''
+|-
+| ''[[Yentl (film)|Yentl]]''
+|-
+| rowspan="3" scope="row" style="text-align:center"| 4
+| ''[[Cross Creek (film)|Cross Creek]]''
+|-
+| ''[[Flashdance]]''
+|-
+| ''[[Return of the Jedi]]''{{efn|Not counting the non-competitive Special Achievement Award for ''Return of the Jedi''.}}
+|-
+| rowspan="3" scope="row" style="text-align:center"| 3
+| ''[[The Big Chill (film)|The Big Chill]]''
+|-
+| ''[[Educating Rita (film)|Educating Rita]]''
+|-
+| ''[[WarGames]]''
+|-
+| rowspan="2" scope="row" style="text-align:center"| 2
+| ''[[Reuben, Reuben]]''
+|-
+| ''[[Zelig]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 5
+| ''[[Terms of Endearment]]''
+|-
+| rowspan="2" scope="row" style="text-align:center"| 4
+| ''[[Fanny and Alexander]]''
+|-
+| ''[[The Right Stuff (film)|The Right Stuff]]''
+|-
+| 2
+| ''[[Tender Mercies]]''
+|}
+
+{{col-float-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers:<ref name="MFEO">{{harvnb|Wiley|Bona|1996|p=578}}</ref>
+
+{| class="wikitable plainrowheaders sortable"
+|+ Presenters
+|-
+! scope="col" | Name(s)
+! scope="col" class="unsortable" | Role
+|-
+| scope="row" | {{sortname|Hank|Simms}}<ref>{{harvnb|Terrance|2013|p=14}}</ref>
+| Announcer of the 56th Annual Academy Awards
+|-
+| scope="row" | {{sortname|Gene|Allen|Gene Allen (art director)}} (AMPAS President)
+| Gave opening remarks welcoming guests to the awards ceremony
+|-
+| scope="row" | {{sortname|Sammy|Davis Jr.}}
+| Introduced [[Shirley Temple]]
+|-
+| scope="row" | {{sortname|Shirley|Temple}}
+| Speech about her winning [[Academy Juvenile Award]] at the [[7th Academy Awards]] in 1935
+|-
+| scope="row" | {{sortname|Gene|Allen|Gene Allen (art director)}} (AMPAS President)
+| Gave opening remarks welcoming guests to the awards ceremony
+|-
+| scope="row" | {{sortname|Timothy|Hutton}}<br>[[Mary Tyler Moore]]
+| Presenters of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| scope="row" | {{sortname|Kevin|Bacon}}<br>[[Daryl Hannah]]
+| Presenters of the award for [[Academy Award for Best Sound Editing|Best Sound Effects Editing]]
+|-
+| scope="row" | {{sortname|Jane|Alexander}}<br>[[Michael Caine]]
+| Presenters of the [[Academy Award for Best Animated Short Film|Best Animated Short Film]] and [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]]
+|-
+| scope="row" | {{sortname|Joan|Collins}}<br>[[Arnold Schwarzenegger]]
+| Presenters of the segment of the [[Academy Scientific and Technical Award]]s
+|-
+| scope="row" | {{sortname|Robert|Wise}}
+| Presenter of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| scope="row" | {{sortname|Christie|Brinkley}}<br>[[Michael Keaton]]
+| Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| scope="row" | {{sortname|Anthony|Franciosa}}<br>[[Joanna Pacuła]]
+| Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| scope="row" | {{sortname|John|Gavin}}<br>[[Jack Valenti]]
+| Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| scope="row" | {{sortname|Holly|Palance}}<br>[[Jack Palance]]
+| Presenters of the awards for [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| scope="row" | {{sortname|Tommy|Chong}}<br>[[Cheech Marin]] || Presenters of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| scope="row" | {{sortname|Tommy|Tune}}<br>[[Twiggy]]
+| Presenters of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| scope="row" | {{sortname|Ricardo|Montalbán}}<br>[[Jane Powell]]
+| Presenters of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| scope="row" | {{sortname|Jennifer|Beals}}<br>[[Matthew Broderick]]
+| Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| scope="row" | {{sortname|Ray|Bolger}}<br>[[Gene Kelly]]
+| Presenters of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| scope="row" | {{sortname|Neil|Diamond}}
+| Presenter of the award for [[Academy Award for Best Original Score|Best Adapted Score]]
+|-
+| scope="row" | {{sortname|Dyan|Cannon}}<br>[[Gene Hackman]]
+| Presenters of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| scope="row" | {{sortname|Mel|Gibson}}<br>[[Sissy Spacek]]
+| Presenters of the awards for [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen]] and [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material from Another Medium]]
+|-
+| scope="row" | {{sortname|Frank|Sinatra}}
+| Presenter of the [[Jean Hersholt Humanitarian Award]] to [[M. J. Frankovich]]
+|-
+| scope="row" | {{sortname|Richard|Attenborough}}
+| Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| scope="row" | {{sortname|Jackie|Cooper}}<br>[[George McFarland]]
+| Presenters of the Honorary Award to [[Hal Roach]]
+|-
+| scope="row" | {{sortname|Dolly|Parton}}<br>[[Sylvester Stallone]]
+| Presenters of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| scope="row" | {{sortname|Rock|Hudson}}<br>[[Liza Minnelli]]
+| Presenters of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| scope="row" | {{sortname|Frank|Capra}}
+| Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+{| class="wikitable plainrowheaders sortable"
+|+ Performers
+|-
+! scope="col" | Name
+! scope="col" class="unsortable" | Role
+! scope="col" class="unsortable" | Performed
+|-
+| scope="row" | {{sortname|Quincy|Jones}}
+| Musical arranger<br>Conductor
+| Orchestral
+|-
+| scope="row" | {{sortname|Irene|Cara}}<br>[[National Dance Institute]]
+| Performers
+| "[[Flashdance... What a Feeling]]" from ''[[Flashdance]]''
+|-
+| scope="row" | {{sortname|Herb|Alpert}}<br>[[Lani Hall]]
+| Performers
+| "[[Maniac (Michael Sembello song)|Maniac]]" from ''[[Flashdance]]''
+|-
+| scope="row" | {{sortname|Mac|Davis}}
+| Performer
+| "Over You" from ''[[Tender Mercies]]''
+|-
+| scope="row" | {{sortname|Donna|Summer}}
+| Performer
+| "[[Papa, Can You Hear Me?]]" from ''[[Yentl (film)|Yentl]]''
+|-
+| scope="row" | {{sortname|Jennifer|Holliday}}
+| Performer
+| "[[The Way He Makes Me Feel]]" from ''[[Yentl (film)|Yentl]]''
+|-
+| scope="row" | {{sortname|Sammy|Davis Jr.}}<br>[[Liza Minnelli]]
+| Performers
+| "[[There's No Business Like Show Business]]"
+|}
+
+==Ceremony information==
+[[File:Johnny Carson 1970.JPG|thumb|left|alt=Johnny Carson in 1970|[[Johnny Carson]] hosted the 56th Academy Awards.]]
+In September 1983, the Academy hired film producer [[Jack Haley Jr.]] to produce the telecast for the third time.<ref>{{cite news |last=Anderson |first=George |title=Triangle Tattler: 'Cats', 'Dreamgirls,' '42nd Street' to Tour |work=[[Pittsburgh Post-Gazette]] |date=September 20, 1984 |page=24}}</ref> "We are excited to have Jack Haley Jr. back on the Academy Awards program this year," said AMPAS President Gene Allen in a press release announcing the selection. "We know that his outstanding talents will ensure an innovative and entertaining approach to the presentation of the Oscar."<ref>{{cite web |title=Jack Haley Jr. to Produce the 56th Academy Awards Show |url=https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/7985/rec/13 |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=July 29, 2021 |page=1 |date=September 12, 1983 |archive-date=July 29, 2021 |archive-url=https://web.archive.org/web/20210729082044/https://digitalcollections.oscars.org/digital/collection/p15759coll9/id/7985/rec/13 |url-status=live}}</ref> That same month, it was announced that comedian and ''[[The Tonight Show Starring Johnny Carson|The Tonight Show Starring]]'' host [[Johnny Carson]] would preside over emceeing duties for the 1984 ceremony. Allen explained the decision to hire Carson, saying, "In past years, Johnny has been a vital element in the ever-increasing success and popularity of the Oscar presentations. We are extremely pleased that we will be able to draw once again on his wit and charisma to host this special entertainment event."<ref>{{cite news |title=People: Here's Johnny Once Again on Oscar Show |work=[[Akron Beacon Journal]] |date=September 11, 1983 |page=2}}</ref>
+
+Several other people were involved with the production of the ceremony. Musician [[Quincy Jones]] served as musical director for the ceremony, where he conducted an overture performed by the orchestra at the beginning of the show.<ref>{{cite news |last=Shull |first=Richard K. |title=Oscars Not So Endearing |page=15 |work=[[The Indianapolis News]] |date=April 10, 1984}}</ref> Former child actress [[Shirley Temple]] made a special appearance at the beginning of the telecast to discuss her memories of the [[7th Academy Awards|7th ceremony]] in 1935, where she received the [[Academy Juvenile Award]].<ref>{{harvnb|Wiley|Bona|1996|p=639}}</ref> Singers [[Sammy Davis Jr.]] and [[Liza Minnelli]] performed "[[There's No Business Like Show Business]]" at the conclusion of the telecast.<ref name="Gag">{{harvnb|Wiley|Bona|1996|p=641}}</ref> [[Marty Pasetta]] served as director for the telecast.<ref name="Pasetta"/> Notably, this was the first Oscars ceremony where the voting rules were announced at the end of the telecast as opposed to the beginning.<ref name="Gag"/>
+
+===Box office performance of Best Picture nominees===
+At the time of the nominations announcement on February 16, the combined gross of the five Best Picture nominees at the US box office was $151 million.<ref name=BoxOfficeOscars>{{cite web |title=1983 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=1983&p=.htm |access-date=June 17, 2014 |publisher=[[Box Office Mojo]] |url-status=dead |archive-url=https://web.archive.org/web/20140614052200/http://boxofficemojo.com/oscar/chart/?yr=1983&p=.htm |archive-date=June 14, 2014}}</ref> ''Terms of Endearment'' was the highest earner among the Best Picture nominees, with $72.9&nbsp;million in domestic box office receipts. The film was followed by ''The Big Chill'' ($52.5&nbsp;million), ''The Right Stuff'' ($15.7&nbsp;million), ''Tender Mercies'' ($8.44&nbsp;million), and ''The Dresser'' ($562,623).<ref name=BoxOfficeOscars/>
+
+===Critical reviews===
+Columnist Jerry Coffey from the ''[[Fort Worth Star-Telegram]]'' wrote, "Nothing that goes on during an Oscarcast is worth the tedium dumbly endured by the ever-gullible audience for moviedom's annual spasm of gross self-indulgence."<ref>{{cite web |last=Coffey |first=Jerry |url=https://www.newspapers.com/clip/83351171/gullible-viewers-hooked-again-by/ |title=Gullible Viewers Hooked Again by Tedious Academy Awards |work=[[Fort Worth Star-Telegram]] |date=April 11, 1984 |access-date=August 26, 2020 |page=7D |via=Newspapers.com |archive-date=August 13, 2021 |archive-url=https://web.archive.org/web/20210813083114/https://www.newspapers.com/clip/83351171/gullible-viewers-hooked-again-by/ |url-status=live}}</ref> ''[[Austin American-Statesman]]'' film critic Patrick Taggart commented, "By now after a week after the fact, it is a matter of record that Monday's Academy Awards show was without the dullest ever." He added, "The Oscar went to the predictable choice in every case, and not only were there no surprises among the awards, there weren't even any of those deliciously embarrassing moments that make live television what it is."<ref>{{cite web |last=Taggart |first=Patrick |url=https://www.newspapers.com/clip/83351179/unrewarding-oscar-shows-bright-spots/ |title=Unrewarding: Oscar Show's Bright Spots Few and Far Between |work=[[Austin American-Statesman]] |access-date=May 28, 2021 |date=April 15, 1984 |page=221 |via=Newspapers.com |archive-date=August 13, 2021 |archive-url=https://web.archive.org/web/20210813083116/https://www.newspapers.com/clip/83351179/unrewarding-oscar-shows-bright-spots/ |url-status=live}}</ref> Television critic [[Howard Rosenberg]] of the ''[[Los Angeles Times]]'' noted, "Be honest. This was not one of your more electrifying Academy Awards telecasts. The three hours and 40 minutes passed as swiftly as ''[[Barry Lyndon]]''." He also said, "And the tradition of squeezing nearly all of the major, most glamorous awards into the last half hour again proved mistaken, ill conceived, and just plain dumb."<ref>{{cite news |url=https://latimes.newspapers.com/newspage/390910976/ |access-date=April 12, 2026 |last=Rosenberg |first=Howard |author-link=Howard Rosenberg |title=It Was Not an Endearing Oscarcast |work=[[Los Angeles Times]] |date=April 11, 1984 |page=85 |via=[[Newspapers.com]]}}</ref>
+
+Other media outlets received the broadcast more positively. Television columnist [[John J. O'Connor (journalist)|John J. O'Connor]] of ''[[The New York Times]]'' wrote, "The tone of the proceedings was set and maintained by a spiritedly genial Mr. Carson." He also added that Carson was able to "provide with eternally boyish grace his typical comedy mix."<ref>{{cite web |last=O'Connor |first=John J. |title=Oscar Program: Long, But Different |url=https://www.nytimes.com/1984/04/11/arts/tv-review-oscar-program-different-but-long.html |url-access=limited |access-date=February 29, 2020 |work=[[The New York Times]] |date=April 11, 1984 |archive-date=July 19, 2021 |archive-url=https://web.archive.org/web/20210719092738/https://www.nytimes.com/1984/04/11/arts/tv-review-oscar-program-different-but-long.html |url-status=live}}</ref> ''[[The Baltimore Sun]]'' film critic Stephen Hunter quipped, "The show, one of the crispest and most swiftly-paced in recent years, enjoyed its greatest asset in the return of Johnny Carson to the role of master of ceremonies. Mr. Carson was in top form."<ref>{{cite web |last=Hunter |first=Stephen |url=https://www.newspapers.com/clip/83350915/endearment-wins-oscars-as-best-picture/ |title='Endearment' Wins Oscars as Best Picture |work=[[The Baltimore Sun]] |access-date=November 19, 2020 |date=April 10, 1984 |pages=A8 |via=Newspapers.com |archive-date=August 13, 2021 |archive-url=https://web.archive.org/web/20210813083115/https://www.newspapers.com/clip/83350915/endearment-wins-oscars-as-best-picture/ |url-status=live}}</ref> Mike Duffy of the ''[[Detroit Free Press]]'' wrote, "Johnny Carson, once again the invaluable host, added some much needed spice with well-timed zingers. And I especially enjoyed Jack Nicholson's impersonation of a [[The Blues Brothers|Blues Brother]] behind those black be-bopper shades."<ref>{{cite web |last=Duffy |first=Mike |url=https://www.newspapers.com/clip/83351193/sure-they-drag-but-the-oscars-are/ |title=Sure They Drag, but The Oscars Are Always Fun |page=9D |work=[[Detroit Free Press]] |date=April 11, 1984 |via=Newspapers.com |access-date=July 28, 2021 |archive-date=August 13, 2021 |archive-url=https://web.archive.org/web/20210813083116/https://www.newspapers.com/clip/83351193/sure-they-drag-but-the-oscars-are/ |url-status=live}}</ref>
+
+===Ratings and reception===
+The American telecast on [[American Broadcasting Company|ABC]] drew in an average of 42.1&nbsp;million people over the length of the entire ceremony, which was a 21% decrease from the [[55th Academy Awards|previous year's ceremony]].<ref name=var1>{{cite web |url=https://variety.com/2012/tv/news/crystal-social-media-fuel-oscar-ratings-1118050758/ |title=Crystal, social media fuel Oscar ratings |last=Kissell |first=Rick |date=February 27, 2012 |access-date=April 26, 2012 |work=[[Variety (magazine)|Variety]] |url-status=live |archive-url=https://web.archive.org/web/20130926040411/http://variety.com/2012/tv/news/crystal-social-media-fuel-oscar-ratings-1118050758/ |archive-date=September 26, 2013}}</ref> Moreover, the show drew lower [[Nielsen ratings]] compared to the previous ceremony, with 30.3% of households watching with a 50% share.<ref>{{cite news |title=Nielsen Ratings |work=[[The Philadelphia Inquirer]] |date=April 18, 1984 |pages=E12}}</ref> Nevertheless, the ceremony presentation received four nominations at the [[36th Primetime Emmy Awards]] in August 1984.<ref>{{cite web |title=The 56th Annual Academy Awards–Emmy Awards, Nominations and Wins |url=https://www.emmys.com/shows/56th-annual-academy-awards |publisher=[[Academy of Television Arts and Sciences]] |access-date=November 16, 2020 |archive-date=March 3, 2021 |archive-url=https://web.archive.org/web/20210303215809/https://www.emmys.com/shows/56th-annual-academy-awards |url-status=live}}</ref> The following month, the ceremony won one of those nominations for Outstanding Art Direction for a Variety Program (Roy Christopher).<ref>{{cite web |last=Margulies |first=Lee |url=https://www.newspapers.com/clip/83351226/first-round-emmys-presented-moyers/ |title=First-Round Emmys Presented: Moyers' 'Walk', J.F.K. Special Honored |work=[[Los Angeles Times]] |date=September 19, 1984 |page=I10 |via=Newspapers.com |access-date=May 23, 2021 |archive-date=August 13, 2021 |archive-url=https://web.archive.org/web/20210813083114/https://www.newspapers.com/clip/83351226/first-round-emmys-presented-moyers/ |url-status=live}}</ref>
+
+==See also==
+* [[List of submissions to the 56th Academy Awards for Best Foreign Language Film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{Reflist}}
+
+==Bibliography==
+{{Refbegin}}
+
+*{{citation
+ |last=Holden
+ |first=Anthony
+ |title=Behind the Oscar: The Secret History of the Academy Awards
+ |year=1993
+ |isbn=978-0-6717-0129-1
+ |location=New York, New York, United States
+ |edition=
+ |oclc=
+ |publisher=[[Simon & Schuster]]
+ |url=https://archive.org/details/behindoscarsecre00hold
+}}
+*{{cite book
+ |last=Jones
+ |first=Arnold Wayne
+ |title=The Envelope, Please: The Ultimate Academy Awards Trivia Book
+ |year=1999
+ |isbn=978-0-3807-9944-2
+ |location=New York, New York, United States
+ |edition=
+ |oclc=
+ |publisher=[[HarperCollins]]
+ }}
+*{{citation
+ |last1=Kinn
+ |first1=Gail
+ |last2=Piazza
+ |first2=Jim
+ |title=The Academy Awards: The Complete Unofficial History
+ |year=2002
+ |isbn=978-1-5791-2396-3 |location=New York, New York, United States
+ |edition=
+ |oclc=
+ |publisher=[[Workman Publishing Company]]
+}}
+*{{citation
+ |last=Osborne
+ |first=Robert
+ |title=70 Years of the Oscar: The Complete History of the Academy Awards
+ |year=1999
+ |isbn=978-0-7892-1142-2
+ |location=New York, New York, United States
+ |edition=
+ |oclc=
+ |publisher=[[Abbeville Publishing Group]]
+ }}
+* {{citation
+ |last=Terrance
+ |first=Vincent
+ |title=Television Specials: 5,336 Entertainment Programs, 1936–2012
+ |year=2013
+ |isbn=978-1-4766-1240-9
+ |location=Jefferson, North Carolina, United States
+ |edition=5
+ |oclc=844373010
+ |publisher=[[Ballantine Books]], [[McFarland & Company]]
+}}
+*{{citation
+ |last1=Wiley
+ |first1=Mason
+ |last2=Bona
+ |first2=Damien
+ |title=Inside Oscar: The Unofficial History of the Academy Awards
+ |year=1996
+ |isbn=978-0-3454-0053-6 |location=New York, New York, United States
+ |edition=5
+ |oclc=779680732
+ |publisher=[[Ballantine Books]]
+}}
+
+{{Refend}}
+
+== External links ==
+;Official websites
+* [http://www.oscar.com/ Academy Awards official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009}}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009}}
+
+;Analysis
+* [http://www.filmsite.org/aa83.html 1983 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20060501223436/http://www.filmsite.org/aa83.html |date=May 1, 2006}} at [[Filmsite]]
+* [https://www.imdb.com/event/ev0000003/1984 Academy Awards, USA: 1984] {{Webarchive|url=https://web.archive.org/web/20171128195606/http://www.imdb.com/event/ev0000003/1984 |date=November 28, 2017}} at [[Internet Movie Database|IMDb]]
+
+;Other resources
+* {{IMDb title|0353136|The 56th Annual Academy Awards}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 56}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1983 film awards]]
+[[Category:1984 in Los Angeles]]
+[[Category:1984 in American cinema]]
+[[Category:April 1984 in the United States]]
+[[Category:1983 awards in the United States|Academy]]
+[[Category:Television shows directed by Marty Pasetta]]

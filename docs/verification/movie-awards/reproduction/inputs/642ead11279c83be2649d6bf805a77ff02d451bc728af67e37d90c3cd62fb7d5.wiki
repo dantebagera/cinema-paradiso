@@ -1,0 +1,381 @@
+{{oscars short description|films-year=1970}}
+{{Use mdy dates|date=July 2022}}
+{{Refimprove|date=September 2015}}
+
+{{Infobox film awards
+| number = 43
+| award = Academy Awards
+| date = April 15, 1971
+| image = 43rd Academy Awards.jpg
+| site = [[Dorothy Chandler Pavilion]], [[Los Angeles]], [[California]]
+| host = 
+| producer = [[Robert Wise]]
+| director = Richard Dunlap
+| best_picture = ''[[Patton (film)|Patton]]''
+| most_wins = ''Patton'' (7)
+| most_nominations = ''[[Airport (1970 film)|Airport]]'' and ''Patton'' (10)
+| network = [[NBC]]
+| duration = 
+| last = 42nd
+| next = 44th
+}}
+
+The '''43rd Academy Awards''' ceremony, presented by [[Academy of Motion Picture Arts and Sciences]], was held on April 15, 1971, and took place at the [[Dorothy Chandler Pavilion]] to honor the best [[1970 in film|films of 1970]]. The Awards, without a host for the third consecutive year, were broadcast by [[NBC]] for the first time in 11 years.
+
+[[George C. Scott]], winner of [[Academy Award for Best Actor|Best Actor]] for ''[[Patton (film)|Patton]]'', became the first actor to decline an Oscar, having previously protested his nomination for [[Academy Award for Best Supporting Actor|Best Supporting Actor]] for ''[[The Hustler]]'' ([[34th Academy Awards|1961]]) and quoted as saying that the Academy Awards were "a two-hour meat parade, a public display with contrived suspense for economic reasons".<ref>{{cite web|url=http://www.totalfilm.com/reviews/dvd/patton |title=Review of Patton |author=TotalFilm |access-date=2006-04-24 |url-status=dead |archive-url=https://web.archive.org/web/20110705124124/http://www.totalfilm.com/reviews/dvd/patton |archive-date=July 5, 2011 }}</ref> He also maintained that it was "degrading for actors to compete against one another".<ref name="Oscars '70 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/844/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=845 |isbn=0-385-04060-1|author-link=David Wallechinsky|author-link2=Irving Wallace}}</ref> Co-star [[Karl Malden]] agreed, but felt that Scott could have made his denunciation more subtly.<ref name="Oscars '70 Notes"/>
+
+With her [[Academy Award for Best Supporting Actress|Best Supporting Actress]] win for ''[[Airport (1970 film)|Airport]]'', [[Helen Hayes]] became the first performer to win Oscars in both lead and supporting categories (having won Best Actress [[5th Academy Awards|39 years before]] for ''[[The Sin of Madelon Claudet]]''). Her win set a record for the biggest gap between acting wins, subsequently broken by [[Katharine Hepburn]] (48 years between her [[6th Academy Awards|first]] and [[54th Academy Awards|last]] wins).
+
+The documentary film ''[[Woodstock (film)|Woodstock]]'' garnered three Oscar nominations, making it the most nominated documentary film in Oscar history (its record was later tied by ''[[Flee (film)|Flee]]'', [[94th Academy Awards|51 years later]]).
+
+This was the only time since the [[6th Academy Awards]] that all five nominees for Best Actress were first-time nominees, and was the last time that either lead acting category was entirely composed of new nominees until the [[95th Academy Awards]]. It was also the first time since the [[7th Academy Awards]] in which none of the nominees for the [[Academy Award for Best Actor|Best Actor]] had a previous nomination in that category.
+
+As of 2024, this is the most recent ceremony in which the 4 highest-grossing films of the year were nominated for Best Picture (''Love Story'', ''Airport'', ''M*A*S*H'' and ''Patton'').
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Franklin J. Schaffner.jpg
+| caption1          = [[Franklin J. Schaffner]], Best Director winner
+| image2            = George C. Scott - publicity.JPG
+| caption2          = [[George C. Scott]], Best Actor winner
+| image3            = Glenda Jackson.JPG
+| caption3          = [[Glenda Jackson]], Best Actress winner
+| image4            = John Mills Dundee and the Culhane 1967 CBS publicity.jpg
+| caption4          = [[John Mills]], Best Supporting Actor winner
+| image5            = Promotional photograph of Helen Hayes.jpg
+| caption5          = [[Helen Hayes]], Best Supporting Actress winner
+| image6            = Francis Ford Coppola -1976.jpg
+| caption6          = [[Francis Ford Coppola]], Best Screenplay Based on Factual Material or Material Not Previously Published or Produced co-winner
+| image7            = Beatles_ad_1965_just_the_beatles_crop.jpg
+| caption7          = [[The Beatles]], Best Original Song Score winners
+| image8            = Robb Royer and Cerney Ink Art.JPG
+| caption8          = [[Robb Royer]], Best Original Song co-winner
+}}
+
+Nominees were announced on February 23, 1971. Winners are listed first and highlighted in boldface.<ref>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1970" in the "Award Year(s)" drop-down menu and press "Search".</ref><ref name="Oscars1971">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1971 |title=The 43rd Academy Awards (1971) Nominees and Winners |access-date=July 4, 2015 |work=oscars.org |date=October 4, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150702005544/http://www.oscars.org/oscars/ceremonies/1971 |archive-date=July 2, 2015 }}</ref>
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+*'''''[[Patton (film)|Patton]]'' – [[Frank McCarthy (producer)|Frank McCarthy]], producer'''
+**''[[Airport (1970 film)|Airport]]'' – [[Ross Hunter]], producer
+**''[[Five Easy Pieces]]'' – [[Bob Rafelson]] and Richard Wechsler, producers
+**''[[Love Story (1970 film)|Love Story]]'' – [[Howard G. Minsky]], producer
+**''[[M*A*S*H (film)|M*A*S*H]]'' – [[Ingo Preminger]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Franklin J. Schaffner]] – ''[[Patton (film)|Patton]]'''''
+**[[Federico Fellini]] – ''[[Fellini Satyricon]]''
+**[[Arthur Hiller]] – ''[[Love Story (1970 film)|Love Story]]''
+**[[Robert Altman]] – ''[[M*A*S*H (film)|M*A*S*H]]''
+**[[Ken Russell]] – ''[[Women in Love (film)|Women in Love]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[George C. Scott]] – ''[[Patton (film)|Patton]]'' as [[George S. Patton|General George S. Patton]] (declined)'''
+**[[Melvyn Douglas]] – ''[[I Never Sang for My Father]]'' as Tom Garrison
+**[[James Earl Jones]] – ''[[The Great White Hope (film)|The Great White Hope]]'' as Jack Jefferson
+**[[Jack Nicholson]] – ''[[Five Easy Pieces]]'' as Robert Eroica Dupea
+**[[Ryan O'Neal]] – ''[[Love Story (1970 film)|Love Story]]'' as Oliver Barrett IV
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Glenda Jackson]] – ''[[Women in Love (film)|Women in Love]]'' as Gudrun Brangwen'''
+**[[Jane Alexander]] – ''[[The Great White Hope (film)|The Great White Hope]]'' as Eleanor Backman
+**[[Ali MacGraw]] – ''[[Love Story (1970 film)|Love Story]]'' as Jennifer "Jenny" Cavalleri
+**[[Sarah Miles]] – ''[[Ryan's Daughter]]'' as Rosy Ryan
+**[[Carrie Snodgress]] – ''[[Diary of a Mad Housewife]]'' as Bettina "Tina" Balser
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[John Mills]] – ''[[Ryan's Daughter]]'' as Michael'''
+**[[Richard S. Castellano]] – ''[[Lovers and Other Strangers]]'' as Frank Vecchio
+**[[Chief Dan George]] – ''[[Little Big Man (film)|Little Big Man]]'' as Old Lodge Skins
+**[[Gene Hackman]] – ''[[I Never Sang for My Father]]'' as Gene Garrison
+**[[John Marley]] – ''[[Love Story (1970 film)|Love Story]]'' as Phil Cavalleri
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Helen Hayes]] – ''[[Airport (1970 film)|Airport]]'' as Ada Quonsett'''
+**[[Karen Black]] – ''[[Five Easy Pieces]]'' as Rayette Dipesto
+**[[Lee Grant]] – ''[[The Landlord]]'' as Joyce Enders
+**[[Sally Kellerman]] – ''[[M*A*S*H (film)|M*A*S*H]]'' as [[Margaret Houlihan|Margaret "Hot Lips" Houlihan]]
+**[[Maureen Stapleton]] – ''[[Airport (1970 film)|Airport]]'' as Inez Guerrero
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Based on Factual Material or Material Not Previously Published or Produced)]]}}
+*'''''[[Patton (film)|Patton]]'' – [[Francis Ford Coppola]] and [[Edmund H. North]]'''
+**''[[Five Easy Pieces]]'' – Screenplay by [[Carole Eastman|Adrien Joyce]]; Story by [[Bob Rafelson]] and [[Carole Eastman|Adrien Joyce]]
+**''[[Joe (1970 film)|Joe]]'' – [[Norman Wexler]]
+**''[[Love Story (1970 film)|Love Story]]'' – [[Erich Segal]]
+**''[[My Night at Maud's]]'' – [[Éric Rohmer]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*'''''[[M*A*S*H (film)|M*A*S*H]]'' – [[Ring Lardner Jr.]] based on [[MASH: A Novel About Three Army Doctors|the novel]] by [[Richard Hooker (author)|Richard Hooker]]'''
+**''[[Airport (1970 film)|Airport]]'' – [[George Seaton]] based on [[Airport (Hailey novel)|the novel]] by [[Arthur Hailey]]
+**''[[I Never Sang for My Father]]'' – [[Robert Anderson (playwright)|Robert Woodruff Anderson]] based on his play
+**''[[Lovers and Other Strangers]]'' – [[Renée Taylor]], [[Joseph Bologna]] and [[David Zelag Goodman]] based on the play by Joseph Bologna and [[Renée Taylor]]
+**''[[Women in Love (film)|Women in Love]]'' – [[Larry Kramer]] based on [[Women in Love|the novel]] by [[D. H. Lawrence]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 43rd Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*'''''[[Investigation of a Citizen Above Suspicion]]'' (Italy)'''
+**''[[First Love (1970 film)|First Love]]'' (Switzerland)
+**''[[Hoa-Binh (film)|Hoa-Binh]]'' (France)
+**''[[Peace in the Fields|Paix sur les champs]]'' (Belgium)
+**''[[Tristana (film)|Tristana]]'' (Spain)
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[Woodstock (film)|Woodstock]]''&nbsp;– Bob Maurice'''
+**''[[Chariots of the Gods (film)|Erinnerungen an die Zukunft]]''&nbsp;– [[Harald Reinl]] (Released in English-language version under title "Chariots of the Gods?")
+**''[[Jack Johnson (film)|Jack Johnson]]''&nbsp;– [[Jimmy Jacobs (handballer)|Jimmy Jacobs]]
+**''[[King: A Filmed Record... Montgomery to Memphis]]''&nbsp;– [[Ely Landau]]
+**''[[Say Goodbye (film)|Say Goodbye]]''&nbsp;– David H. Vowell
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*''' ''[[Interviews with My Lai Veterans]]'' – [[Joseph Strick]]'''
+**''[[The Gifts]]'' – Robert McBride
+**''[[A Long Way from Nowhere]]'' – Bob Aller
+**''[[Oisín (film)|Oisín]]'' – [[Patrick Carey (cinematographer)|Patrick Carey]] and Vivien Carey
+**''[[Time Is Running Out (film)|Time Is Running Out]]'' – Horst Dallmayr and Robert Ménégoz
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*'''''[[The Resurrection of Broncho Billy]]''&nbsp;– [[John Longenecker]]'''
+**''Shut Up...I'm Crying''&nbsp;– Robert Siegler
+**''Sticky My Fingers...Fleet My Feet''&nbsp;– [[John D. Hancock]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Is It Always Right to Be Right?]]''&nbsp;– Nick Bosustow'''
+**''[[The Further Adventures of Uncle Sam|The Further Adventures of Uncle Sam: Part Two]]''&nbsp;– Robert Mitchell and [[Dale Case]]
+**''The Shepherd''&nbsp;– Cameron Guess
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+*'''''[[Love Story (1970 film)|Love Story]]''&nbsp;– [[Francis Lai]]'''
+**''[[Airport (1970 film)|Airport]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]])
+**''[[Cromwell (film)|Cromwell]]''&nbsp;– [[Frank Cordell]]
+**''[[Patton (film)|Patton]]''&nbsp;– [[Jerry Goldsmith]]
+**''[[Sunflower (1970 film)|Sunflower]]''&nbsp;– [[Henry Mancini]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Original Song Score)]]}}
+*'''''[[Let It Be (1970 film)|Let It Be]]''&nbsp;– Music and Lyrics by [[The Beatles]]: [[John Lennon]], [[Paul McCartney]], [[George Harrison]], and [[Ringo Starr]]'''
+**''[[The Baby Maker]]''&nbsp;– Music by [[Fred Karlin]]; Lyrics by Tylwyth Kymry
+**''[[A Boy Named Charlie Brown]]''&nbsp;– Music by [[Rod McKuen]] and [[John Scott Trotter]]; Lyrics by [[Rod McKuen]], [[Bill Melendez]], and Al Shean; Adapted by [[Vince Guaraldi]]
+**''[[Darling Lili]]''&nbsp;– Music by [[Henry Mancini]]; Lyrics by [[Johnny Mercer]]
+**''[[Scrooge (1970 film)|Scrooge]]''&nbsp;– Music and Lyrics by [[Leslie Bricusse]]; Adapted by [[Ian Fraser (composer)|Ian Fraser]] and [[Herbert W. Spencer]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song -- Original for the Picture)]]}}
+*'''"[[For All We Know (1970 song)|For All We Know]]"&nbsp;– ''[[Lovers and Other Strangers]]''; Music by [[Fred Karlin]]; Lyrics by [[Robb Royer]] (Robb Wilson) and [[Jimmy Griffin]] (Arthur James)'''
+**"[[Pieces of Dreams (song)|Pieces of Dreams]]"&nbsp;– ''[[Pieces of Dreams (film)|Pieces of Dreams]]''; Music by [[Michel Legrand]]; Lyrics by [[Alan and Marilyn Bergman|Alan Bergman]] and [[Alan and Marilyn Bergman|Marilyn Bergman]]
+**"Thank You Very Much"&nbsp;– ''[[Scrooge (1970 film)|Scrooge]]''; Music and Lyrics by [[Leslie Bricusse]]
+**"Till Love Touches Your Life"&nbsp;–  ''[[Madron (film)|Madron]]''; Music by [[Riz Ortolani]]; Lyrics by [[Arthur Hamilton]]
+**"[[Whistling Away the Dark]]"&nbsp;–  ''[[Darling Lili]]''; Music by [[Henry Mancini]]; Lyrics by [[Johnny Mercer]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+*'''''[[Patton (film)|Patton]]'' – [[Douglas Williams (sound engineer)|Douglas Williams]] and [[Don Bassman]]'''
+**''[[Airport (1970 film)|Airport]]'' – [[Ronald Pierce (sound engineer)|Ronald Pierce]] and [[David H. Moriarty]]
+**''[[Ryan's Daughter]]'' –  [[Gordon McCallum]] and [[John Bramall]]
+**''[[Tora! Tora! Tora!]]'' – [[Murray Spivack]] and [[Herman Lewis]]
+**''[[Woodstock (film)|Woodstock]]'' – [[Dan Wallin]] and [[Larry Johnson (film producer)|Larry Johnson]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*''' ''[[Patton (film)|Patton]]'' – Art Direction: [[Urie McCleary]] and [[Gil Parrondo]]; Set Decoration: [[Antonio Mateos]] and [[Pierre-Louis Thévenet]]'''
+**''[[Airport (1970 film)|Airport]]'' – Art Direction: [[Alexander Golitzen]] and [[E. Preston Ames]]; Set Decoration: [[Jack D. Moore]] and [[Mickey S. Michaels]]
+**''[[The Molly Maguires (film)|The Molly Maguires]]'' – Art Direction: [[Tambi Larsen]]; Set Decoration: [[Darrell Silvera]]
+**''[[Scrooge (1970 film)|Scrooge]]'' – Art Direction: [[Terence Marsh]] and [[Bob Cartwright]]; Set Decoration: [[Pamela Cornell]]
+**''[[Tora! Tora! Tora!]]'' – Art Direction: [[Jack Martin Smith]], [[Yoshirō Muraki]], [[Richard Day (art director)|Richard Day]], and [[Taizoh Kawashima]]; Set Decoration: [[Walter M. Scott]], [[Norman Rockett]] and [[Carl Biddiscombe]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*''' ''[[Ryan's Daughter]]'' – [[Freddie Young]]'''
+**''[[Airport (1970 film)|Airport]]'' – [[Ernest Laszlo]]
+**''[[Patton (film)|Patton]]'' – [[Fred J. Koenekamp]]
+**''[[Tora! Tora! Tora!]]'' – [[Charles F. Wheeler]], [[Osamu Furuya]], [[Shinsaku Himeda]], and [[Masamichi Satoh]] 
+**''[[Women in Love (film)|Women in Love]]'' – [[Billy Williams (cinematographer)|Billy Williams]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*'''''[[Cromwell (film)|Cromwell]]'' – [[Vittorio Nino Novarese]]'''
+**''[[Airport (1970 film)|Airport]]'' – [[Edith Head]]
+**''[[Darling Lili]]'' – [[Donald Brooks]] and [[Jack Bear]]
+**''[[The Hawaiians (film)|The Hawaiians]]'' – [[Bill Thomas (costume designer)|Bill Thomas]]
+**''[[Scrooge (1970 film)|Scrooge]]'' – [[Margaret Furse]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[Patton (film)|Patton]]'' – [[Hugh S. Fowler]]'''
+**''[[Airport (1970 film)|Airport]]'' – [[Stuart Gilmore]]
+**''[[M*A*S*H (film)|M*A*S*H]]'' – [[Danford B. Greene]]
+**''[[Tora! Tora! Tora!]]'' – [[James E. Newcom]], [[Pembroke J. Herring]], and [[Inoue Chikaya]]
+**''[[Woodstock (film)|Woodstock]]'' – [[Thelma Schoonmaker]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Visual Effects]]}}
+*'''''[[Tora! Tora! Tora!]]'' – [[A. D. Flowers]] and [[L. B. Abbott]]'''
+**''[[Patton (film)|Patton]]'' – [[Alex Weldon]]
+|}
+
+===Honorary Awards===
+* To [[Lillian Gish]] for superlative artistry and for distinguished contribution to the progress of motion pictures.
+* To [[Orson Welles]] for superlative artistry and versatility in the creation of motion pictures.
+
+===Jean Hersholt Humanitarian Award===
+* [[Frank Sinatra]]
+
+===Irving G. Thalberg Memorial Award===
+* [[Ingmar Bergman]]
+
+===Films with multiple wins and nominations===
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films that received multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="2" style="text-align:center" |10
+| ''[[Airport (1970 film)|Airport]]''
+|-
+| ''[[Patton (film)|Patton]]''
+|-
+| style="text-align:center" |7
+| ''[[Love Story (1970 film)|Love Story]]''
+|-
+| rowspan="2" style="text-align:center" |5
+| ''[[M*A*S*H (film)|M*A*S*H]]''
+|-
+| ''[[Tora! Tora! Tora!]]''
+|-
+| rowspan="4" style="text-align:center" |4
+| ''[[Five Easy Pieces]]''
+|-
+| ''[[Ryan's Daughter]]''
+|-
+| ''[[Scrooge (1970 film)|Scrooge]]''
+|-
+| ''[[Women in Love (film)|Women in Love]]''
+|-
+| rowspan="4" style="text-align:center" |3
+| ''[[Darling Lili]]''
+|-
+| ''[[I Never Sang for My Father]]''
+|-
+| ''[[Lovers and Other Strangers]]''
+|-
+| ''[[Woodstock (film)|Woodstock]]''
+|-
+| rowspan="2" style="text-align:center" |2
+| ''[[Cromwell (film)|Cromwell]]''
+|-
+| ''[[The Great White Hope (film)|The Great White Hope]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films that received multiple awards
+|-
+! scope="col" style="width:55px;" |Wins
+! scope="col" style="text-align:center;" |Film
+|-
+| style="text-align:center" |7
+| ''[[Patton (film)|Patton]]''
+|-
+| style="text-align:center" |2
+| ''[[Ryan's Daughter]]''
+|}
+
+{{col-float-end}}
+
+==Presenters and performers==
+The following individuals presented awards or performed musical numbers.
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| [[Shirley Jones]]<br>[[John Marley]] || Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| [[Maggie Smith]] || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| [[John Huston]] || Presenter of the [[Academy Honorary Award]] to [[Orson Welles]]
+|-
+| [[Gregory Peck]] || Presenter of the [[Jean Hersholt Humanitarian Award]] to [[Frank Sinatra]]
+|-
+| [[Melvyn Douglas]] || Presenter of the [[Academy Honorary Award]] to [[Lillian Gish]]
+|-
+| [[Gig Young]] || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| [[Richard Benjamin]]<br>[[Paula Prentiss]] || Presenters of the award for [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| [[Jim Brown]]<br>[[Sally Kellerman]] || Presenters of the award for [[Academy Award for Best Animated Short Film|Best Short Subject – Cartoons]] and [[Academy Award for Best Live Action Short Film|Best Live Action Short Subject]]
+|-
+| [[Merle Oberon]] <br>[[George Segal ]] || Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| [[Lola Falana]]<br>[[Juliet Prowse]] || Presenters of the award for [[Academy Award for Best Visual Effects|Best Special Visual Effects]]
+|-
+| [[Geneviève Bujold]]<br>[[James Earl Jones]] || Presenters of the award for [[Academy Award for Best Cinematography|Best Cinematography]] and [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| [[Petula Clark]] || Presenter of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| [[Ricardo Montalbán]]<br>[[Jeanne Moreau]] || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| [[Joan Blondell]]<br>[[Glen Campbell]] || Presenters of the award for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Original Score|Best Original Song Score]]
+|-
+| [[Burt Lancaster]] || Presenter of the [[Irving G. Thalberg Memorial Award]] to [[Ingmar Bergman]]
+|-
+| [[Burt Bacharach]]<br>[[Angie Dickinson]] || Presenters of the award for  [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| [[Janet Gaynor]]<br>[[Ryan O'Neal]] || Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| [[Harry Belafonte]]<br>[[Eva Marie Saint]] || Presenters of the award for [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material from Another Medium]]
+|-
+|[[Sarah Miles]]<br>[[George Segal]] || Presenters of the award for [[Academy Award for Best Original Screenplay|Best Screenplay Based on Factual Material or Material Not Previously Produced or Published]]
+|-
+| [[Goldie Hawn]] || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| [[Walter Matthau]] || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| [[Steve McQueen]] || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+|{{sortname|Glen|Campbell}} || Performer || "Pieces of Dreams" from ''[[Pieces of Dreams (film)|Pieces of Dreams]]''
+|-
+|{{sortname|Petula|Clark}} || Performer || "[[For All We Know (1970 song)|For All We Know]]" from ''[[Lovers and Other Strangers]]''
+|-
+|Petula Clark<br>[[Sally Kellerman]]<br>[[Burt Lancaster]]<br>[[Ricardo Montalbán]] || Performers || "Thank You Very Much" from ''[[Scrooge (1970 film)|Scrooge]]''
+|-
+|{{sortname|Lola|Falana}} || Performer || "Till Love Touches Your Life" from ''[[Madron (film)|Madron]]''
+|-
+|{{sortname|Shirley|Jones}} || Performer || "Whistling Away the Dark" from ''[[Darling Lili]]''
+|}
+
+==See also==
+* [[28th Golden Globe Awards]]
+* [[1970 in film]]
+* [[13th Grammy Awards]]
+* [[22nd Primetime Emmy Awards]]
+* [[23rd Primetime Emmy Awards]]
+* [[24th British Academy Film Awards]]
+* [[25th Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 43}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1970 film awards]]
+[[Category:1971 in Los Angeles]]
+[[Category:1971 in American cinema]]
+[[Category:April 1971 in the United States]]

@@ -1,0 +1,33 @@
+{{wiktionary|Wichita}}
+'''Wichita''' ({{IPAc-en|'|w|I|tS|I|t|O:|,_|-|t|a:}} {{respell|WITCH|ih|taw|,_-|tah}}) may refer to:
+
+{{TOC right}}
+
+==People==
+*[[Wichita people]], a Native American tribe
+*[[Wichita language]], the language of the tribe
+
+==Places in the United States==
+* [[Wichita, Kansas]], a city located in Sedgwick County
+* [[Wichita County, Kansas]], a county in western Kansas
+* [[Wichita Falls, Texas]], a city
+* [[Wichita County, Texas]]
+* [[Wichita Mountains]]
+
+==In the military==
+*{{Sclass|Wichita|cruiser|2}}, a heavy cruiser class of the US Navy
+**{{USS|Wichita|CA-45}}, the only ship of the class; active in World War II
+*{{Sclass|Wichita|replenishment oiler|2}}, a class of US Navy oilers from the late 1960s to the mid-1990s 
+**{{USS|Wichita|AOR-1}}, the lead ship of the class; in service from 1969 to 1993
+*[[Beechcraft AT-10 Wichita]], a World War II trainer airplane for the United States Army Air Forces
+
+==In entertainment==
+*[[Wichita (1955 film)|''Wichita'' (1955 film)]], a 1955 American Western movie directed by Jacques Tourneur
+*''Wichita'', early title of a proposed movie, eventually made as ''[[Knight and Day]]'' starring Cameron Diaz and Tom Cruise
+*[[Wichita Recordings]], a London-based independent record label
+
+==See also==
+*[[Ouachita (disambiguation)]]
+*[[Washita (disambiguation)]]
+
+{{disambiguation|geo}}

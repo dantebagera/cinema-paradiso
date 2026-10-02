@@ -1,0 +1,262 @@
+{{oscars short description|films-year=1935}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 8
+| award            = Academy Awards
+| date             = March 5, 1936
+| image            = 8th Academy Awards.jpg
+| caption          = Official ticket design
+| site             = [[Millennium Biltmore Hotel|Biltmore Hotel]]
+| host             = [[Frank Capra]]
+| best_picture     = ''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]''
+| most_wins        = ''[[The Informer (1935 film)|The Informer]]'' (4)
+| most_nominations = ''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]'' (8)
+| last             = 7th
+| next             = 9th
+}}
+
+The '''8th Academy Awards''' to honour films released during 1935 were held on March 5, 1936, at the [[Millennium Biltmore Hotel|Biltmore Hotel]] in [[Los Angeles]], [[California]] and hosted by [[Academy of Motion Picture Arts and Sciences|AMPAS]] president [[Frank Capra]]. This was the first year in which the awards were called "Oscars".
+
+The Academy voters, who felt guilty about not awarding [[Bette Davis]] a Best Actress award the previous year, assigned her one for ''[[Dangerous (1935 film)|Dangerous]]'', which was viewed as a lesser picture.<ref name="Oscars '35 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/832/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=833 |isbn=0-385-04060-1}}</ref> Davis, who showed up to the posh formal ceremony in an informal checkered dress, felt it was a consolation prize that should have been awarded to [[Katharine Hepburn]].<ref name="Oscars '35 Notes"/>
+
+Despite receiving eight nominations, the most of the year, ''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]'' became the last film to date to win Best Picture and nothing else (following ''[[The Broadway Melody]]'' and ''[[Grand Hotel (1932 film)|Grand Hotel]]''), and the only film to receive three nominations for Best Actor.
+
+This was the second and last year that write-in votes were permitted; ''[[A Midsummer Night's Dream (1935 film)|A Midsummer Night's Dream]]'' became the only film to win a write-in Oscar, for [[Academy Award for Best Cinematography|Best Cinematography]]. Miriam Hopkins' Best Actress nomination for ''[[Becky Sharp (film)|Becky Sharp]]'' was the first acting nomination for a color film.
+
+The short-lived category of [[Academy Award for Best Dance Direction|Best Dance Direction]] was introduced this year; it lasted just three years before the [[Directors Guild of America]] successfully lobbied for its elimination.
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Frank Lloyd, Boxoffice Barometer, 1939.jpg
+| caption1          = [[Frank Lloyd]]; Best Picture co-winner
+| image2            = Thalberg-portrait-LATimes.jpg
+| caption2          = [[Irving Thalberg]]; Best Picture co-winner
+| image3            = John Ford 1946.jpg
+| caption3          = [[John Ford]]; Best Director winner
+| image4            = Victor McLaglen in Sea Devils trailer.jpg
+| caption4          = [[Victor McLaglen]]; Best Actor winner
+| image5            = Bette Davis - portrait.jpg
+| caption5          = [[Bette Davis]]; Best Actress winner
+| image6            = Ben Hecht Billboard.jpg
+| caption6          = [[Ben Hecht]]; Best Original Story co-winner
+| image7            = Hal Mohr cinematographer.jpg
+| caption7          = [[Hal Mohr]]; Best Cinematography (write-in) winner
+| image8            = David Wark Griffith portrait.jpg
+| caption8          = [[D. W. Griffith]]; Honorary Academy Award recipient
+
+}}
+=== Awards ===
+Nominees were announced on February 7, 1936. Winners are listed first and highlighted in boldface.<ref name="Oscars1936">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1936 |title=The 8th Academy Awards (1936) Nominees and Winners |access-date=2011-08-07 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093707/http://www.oscars.org/awards/academyawards/legacy/ceremony/8th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref><ref name=database>{{cite web|title=The Official Academy Awards Database|publisher=[[Academy of Motion Picture Arts and Sciences]]|url=http://awardsdatabase.oscars.org/}} Select "1935" in the "Award Year(s)" drop-down menu and press "Search".</ref>
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+*'''''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]''''' '''– [[Frank Lloyd]] and [[Irving Thalberg]] for [[Metro-Goldwyn-Mayer]]'''
+** ''[[Alice Adams (1935 film)|Alice Adams]]'' – [[Pandro S. Berman]] for [[RKO Pictures]] 
+** ''[[Broadway Melody of 1936]]'' – [[John W. Considine Jr.]] for Metro-Goldwyn-Mayer 
+** ''[[Captain Blood (1935 film)|Captain Blood]]'' – [[Hal B. Wallis]], [[Harry Joe Brown]], and [[Gordon Hollingshead]] for [[Warner Bros.]] and [[Cosmopolitan Productions|Cosmopolitan]] 
+** ''[[David Copperfield (1935 film)|David Copperfield]]'' – [[David O. Selznick]] for Metro-Goldwyn-Mayer 
+** ''[[The Informer (1935 film)|The Informer]]'' – [[Cliff Reid]] for RKO Pictures 
+** ''[[The Lives of a Bengal Lancer (film)|The Lives of a Bengal Lancer]]'' – [[Louis D. Lighton]] for [[Paramount Pictures|Paramount]] 
+** ''[[A Midsummer Night's Dream (1935 film)|A Midsummer Night's Dream]]'' – [[Henry Blanke]] for Warner Bros. 
+** ''[[Les Misérables (1935 film)|Les Misérables]]'' – [[Darryl F. Zanuck]] for [[Twentieth Century Pictures|20th Century]] and [[United Artists]] 
+** ''[[Naughty Marietta (film)|Naughty Marietta]]'' – [[Hunt Stromberg]] for Metro-Goldwyn-Mayer 
+** ''[[Ruggles of Red Gap]]'' – [[Arthur Hornblow Jr.]] for Paramount 
+** ''[[Top Hat]]'' – Pandro S. Berman for RKO Pictures 
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[John Ford]]&nbsp;– ''[[The Informer (1935 film)|The Informer]]'''''
+** [[Michael Curtiz]]&nbsp;– ''[[Captain Blood (1935 film)|Captain Blood]]'' (write-in, not official nomination)<ref name=database/>
+** [[Henry Hathaway]]&nbsp;– ''[[The Lives of a Bengal Lancer (film)|The Lives of a Bengal Lancer]]''
+** [[Frank Lloyd]]&nbsp;– ''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Victor McLaglen]]&nbsp;– ''[[The Informer (1935 film)|The Informer]]'' as "Gypo" Nolan'''
+** [[Clark Gable]]&nbsp;– ''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]'' as [[Fletcher Christian]]
+** [[Charles Laughton]]&nbsp;– ''Mutiny on the Bounty'' as [[William Bligh|Captain Bligh]]
+** [[Paul Muni]]&nbsp;– ''[[Black Fury (film)|Black Fury]]'' as Joe Radek (write-in, not official nomination)<ref name=database/>
+** [[Franchot Tone]]&nbsp;– ''Mutiny on the Bounty'' as Byam
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Bette Davis]]&nbsp;– ''[[Dangerous (1935 film)|Dangerous]]'' as Joyce Heath'''
+** [[Elisabeth Bergner]]&nbsp;– ''[[Escape Me Never (1935 film)|Escape Me Never]]'' as Gemma Jones
+** [[Claudette Colbert]]&nbsp;– ''[[Private Worlds]]'' as Dr. Jane Everest
+** [[Katharine Hepburn]]&nbsp;– ''[[Alice Adams (1935 film)|Alice Adams]]'' as Alice Adams
+** [[Miriam Hopkins]]&nbsp;– ''[[Becky Sharp (film)|Becky Sharp]]'' as Becky Sharp
+** [[Merle Oberon]]&nbsp;– ''[[The Dark Angel (1935 film)|The Dark Angel]]'' as Kitty Vane
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+*'''''[[The Scoundrel (1935 film)|The Scoundrel]]''&nbsp;– [[Ben Hecht]] and [[Charles MacArthur]]'''
+** ''[[Broadway Melody of 1936]]''&nbsp;– [[Moss Hart]]
+** ''[[G Men]]''&nbsp;– Gregory Rogers (pseudonym of [[Darryl F. Zanuck]]) (write-in, not official nomination)<ref name=database/>
+** ''[[The Gay Deception]]''&nbsp;– [[Don Hartman]] and [[Stephen Morehouse Avery]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[The Informer (1935 film)|The Informer]]''&nbsp;– [[Dudley Nichols]] (refused), based on [[the Informer (O'Flaherty novel)|the novel]] by [[Liam O'Flaherty]]'''
+**''[[Captain Blood (1935 film)|Captain Blood]]'' &nbsp;– [[Casey Robinson]], based on [[Captain Blood (novel)|the novel]] by [[Rafael Sabatini]] (write-in, not official nomination)
+** ''[[The Lives of a Bengal Lancer (film)|The Lives of a Bengal Lancer]]''&nbsp;– [[Achmed Abdullah]], [[John L. Balderston]], [[Waldemar Young]], [[Grover Jones]] and [[William Slavens McNutt]], based on [[The Lives of a Bengal Lancer (book)|the autobiography]] of [[Francis Yeats-Brown]]
+** ''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]''&nbsp;– [[Jules Furthman]], [[Talbot Jennings]] and [[Carey Wilson (writer)|Carey Wilson]], based on [[Mutiny on the Bounty (novel)|the novel]] by [[Charles Nordhoff]] and [[James Norman Hall]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Comedy)]]}}
+*'''''[[How to Sleep]]''&nbsp;– [[Jack Chertok]] and [[MGM]]'''
+** ''[[Oh, My Nerves]]''&nbsp;– [[Jules White]] and [[Columbia Studios|Columbia]]
+** ''[[Tit for Tat (1935 film)|Tit for Tat]]''&nbsp;– [[Hal Roach]] and MGM
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Novelty)]]}}
+*'''''[[Wings Over Everest]]''&nbsp;– [[Gaumont British Films|Gaumont British]] and [[Skibo Productions]]'''
+** ''[[Audioscopiks]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]] and [[MGM]]
+** ''[[Camera Thrills]]''&nbsp;– [[Universal Pictures|Universal]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Three Orphan Kittens]]''&nbsp;– [[Walt Disney Productions]] and [[United Artists]]'''
+** ''[[The Calico Dragon]]''&nbsp;– [[Harman-Ising]] and [[MGM]]
+** ''[[Who Killed Cock Robin? (1935 film)|Who Killed Cock Robin?]]''&nbsp;– Walt Disney Productions and United Artists
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring)]]}}
+*'''''[[The Informer (1935 film)|The Informer]]''&nbsp;– [[RKO Pictures|RKO Radio Studio Music Department]]'''
+** ''[[Captain Blood (1935 film)|Captain Blood]]''&nbsp;– [[Warner Bros.|Warner Bros.-First National Studio Music Department]] (write-in, not official nomination)
+** ''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]''&nbsp;– [[MGM|MGM Studio Music Department]]
+** ''[[Peter Ibbetson (film)|Peter Ibbetson]]''&nbsp;– [[Paramount Studio|Paramount Studio Music Department]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[Lullaby of Broadway (song)|Lullaby of Broadway]]" from ''[[Gold Diggers of 1935]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Al Dubin]]'''
+** "[[Cheek to Cheek]]" from ''[[Top Hat]]''&nbsp;– Music and Lyrics by [[Irving Berlin]]
+** "Lovely to Look At" from ''[[Roberta (1935 film)|Roberta]]''&nbsp;– Music by [[Jerome Kern]]; Lyrics by [[Dorothy Fields]] and [[Jimmy McHugh]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[Naughty Marietta (film)|Naughty Marietta]]''&nbsp;– [[Douglas Shearer]]'''
+** ''[[1,000 Dollars a Minute|$1,000 a Minute]]''&nbsp;– [[Republic Pictures|Republic Studio Sound Department]]
+** ''[[Bride of Frankenstein]]''&nbsp;– [[Gilbert Kurland]] 
+** ''[[Captain Blood (1935 film)|Captain Blood]]''&nbsp;– [[Nathan Levinson]]
+** ''[[The Dark Angel (1935 film)|The Dark Angel]]''&nbsp;– [[Thomas T. Moulton]]
+** ''[[I Dream Too Much (1935 film)|I Dream Too Much]]''&nbsp;– [[Carl Dreher]]
+** ''[[The Lives of a Bengal Lancer (film)|The Lives of a Bengal Lancer]]''&nbsp;– [[Franklin Hansen]]
+** ''[[Love Me Forever (film)|Love Me Forever]]''&nbsp;– [[John P. Livadary]]
+** ''[[Thanks a Million]]''&nbsp;– [[Edmund H. Hansen|E. H. Hansen]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Dance Direction|Best Dance Direction]]}}
+*'''''[[Broadway Melody of 1936]]'' and ''[[Folies Bergère de Paris]]''&nbsp;– [[Dave Gould]]'''
+** ''[[All the King's Horses (1935 film)|All the King's Horses]]'' and ''[[The Big Broadcast of 1936]]''&nbsp;– [[LeRoy Prinz]]
+** ''[[Broadway Hostess]]'' and ''[[Go into Your Dance]]''&nbsp;– [[Bobby Connolly]]
+** ''[[Gold Diggers of 1935]]''&nbsp;– [[Busby Berkeley]]
+** ''[[King of Burlesque]]''&nbsp;– [[Sammy Lee (choreographer)|Sammy Lee]]
+** ''[[She (1935 film)|She]]''&nbsp;– [[Benjamin Zemach]]
+** ''[[Top Hat]]''&nbsp;– [[Hermes Pan (choreographer)|Hermes Pan]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Assistant Director|Best Assistant Director]]}}
+*'''''[[The Lives of a Bengal Lancer (film)|The Lives of a Bengal Lancer]]''&nbsp;– [[Clem Beauchamp]] and [[Paul Wing]]'''
+** ''[[David Copperfield (1935 film)|David Copperfield]]''&nbsp;– [[Joseph M. Newman]]
+** ''[[Les Misérables (1935 film)|Les Misérables]]''&nbsp;– [[Eric G. Stacey|Eric Stacey]]
+** ''[[A Midsummer Night's Dream (1935 film)|A Midsummer Night's Dream]]''&nbsp;– [[Sherry Shourds]] (write-in, not official nomination)
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+*'''''[[The Dark Angel (1935 film)|The Dark Angel]]''&nbsp;– [[Richard Day (art director)|Richard Day]]'''
+** ''[[The Lives of a Bengal Lancer (film)|The Lives of a Bengal Lancer]]''&nbsp;– [[Hans Dreier]] and [[Roland Anderson]]
+** ''[[Top Hat]]''&nbsp;– [[Carroll Clark]] and [[Van Nest Polglase]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+*'''''[[A Midsummer Night's Dream (1935 film)|A Midsummer Night's Dream]]''&nbsp;– [[Hal Mohr]]''' (write-in, not official nomination)<ref name=database/>
+** ''[[Barbary Coast (film)|Barbary Coast]]''&nbsp;– [[Ray June]]
+** ''[[The Crusades (1935 film)|The Crusades]]''&nbsp;– [[Victor Milner]]
+** ''[[Les Misérables (1935 film)|Les Misérables]]''&nbsp;– [[Gregg Toland]]
+|-
+| colspan="2" valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[A Midsummer Night's Dream (1935 film)|A Midsummer Night's Dream]]''&nbsp;– [[Ralph Dawson]]'''
+** ''[[David Copperfield (1935 film)|David Copperfield]]''&nbsp;– [[Robert J. Kern]]
+** ''[[The Informer (1935 film)|The Informer]]''&nbsp;– [[George Hively]]
+** ''[[The Lives of a Bengal Lancer (film)|The Lives of a Bengal Lancer]]''&nbsp;– [[Ellsworth Hoagland]]
+** ''[[Les Misérables (1935 film)|Les Misérables]]''&nbsp;– [[Barbara McLean]]
+** ''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]''&nbsp;– [[Margaret Booth]]
+|}
+
+=== Special Award ===
+
+* To [[D. W. Griffith|David Wark Griffith]], for his distinguished creative achievements as director and producer and his invaluable initiative and lasting contributions to the progress of the motion picture arts.
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+|8
+|''[[Mutiny on the Bounty (1935 film)|Mutiny on the Bounty]]''
+|-
+|7
+|''[[The Lives of a Bengal Lancer (film)|The Lives of a Bengal Lancer]]''
+|-
+|6
+|''[[The Informer (1935 film)|The Informer]]''
+|-
+|5
+|''[[Captain Blood (1935 film)|Captain Blood]]''
+|-
+| scope="row" rowspan="3" style="text-align:center"| 4
+|''[[Les Misérables (1935 film)|Les Misérables]]''
+|-
+|''[[A Midsummer Night's Dream (1935 film)|A Midsummer Night's Dream]]''
+|-
+|''[[Top Hat]]''
+|-
+| scope="row" rowspan="3" style="text-align:center"| 3
+|''[[Broadway Melody of 1936]]''
+|-
+|''[[David Copperfield (1935 film)|David Copperfield]]''
+|-
+|''[[The Dark Angel (1935 film)|The Dark Angel]]''
+|-
+| scope="row" rowspan="3" style="text-align:center"| 2
+|''[[Alice Adams (1935 film)|Alice Adams]]''
+|-
+|''[[Naughty Marietta (film)|Naughty Marietta]]''
+|-
+|''[[Gold Diggers of 1935]]''
+|}
+
+{{col-float-break}}
+
+{| class="wikitable plainrowheaders" style="text-align: center; margin-right:1em;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Wins
+! scope="col" style="text-align:center;"| Film
+|-
+|4
+|''[[The Informer (1935 film)|The Informer]]''
+|-
+|2
+|''[[A Midsummer Night's Dream (1935 film)|A Midsummer Night's Dream]]''
+|}
+
+{{col-float-end}}
+
+== See also ==
+
+* [[1935 in film]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 08}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1935 film awards]]
+[[Category:1936 in Los Angeles]]
+[[Category:1936 in American cinema]]
+[[Category:March 1936 in the United States]]

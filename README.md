@@ -6,7 +6,7 @@ Cinema Paradiso is a self-hosted movie and TV library manager for people with la
 
 Your library catalog, settings, and operational state stay on your machine. Optional services such as Plex, TMDB, Prowlarr, streaming providers, and Ollama cloud models are contacted only when configured for their corresponding features.
 
-**Current local development version: v3.0.0-beta.1** - September 2026
+**Current local development version: v3.0.0-beta.2** - October 2026
 
 **Latest public release: v2.8.5** - August 2026
 

@@ -695,6 +695,69 @@ class SqlMigrationParityTest(unittest.TestCase):
         self.assertEqual(payload["owned_count"], 1)
         self.assertEqual(payload["parts"][0]["tmdb_id"], "400")
 
+    def test_collection_count_keeps_edited_owned_parts_without_full_library_projection(self):
+        client = app.app.test_client()
+        original = client.get("/api/library/collection/44").get_json()
+        edited_part = {
+            "tmdb_id": "500", "title": "Custom Poster", "year": "2023",
+            "poster_url": "https://poster.example/original.jpg",
+        }
+        app._curation_store().save_collection_override("44", original, [*original["parts"], edited_part])
+
+        with patch.object(
+            type(self.store.catalog.store), "library_projection",
+            side_effect=AssertionError("collection count must not project the whole library"),
+        ):
+            response = client.get("/api/library/collection/44")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.get_json()
+        self.assertTrue(payload["is_edited"])
+        self.assertEqual({part["tmdb_id"] for part in payload["parts"]}, {"400", "500"})
+        self.assertEqual(payload["owned_count"], 2)
+        self.assertEqual(set(payload["owned_paths"]), {
+            str(self.paths["collection"]), str(self.paths["custom_poster"]),
+        })
+
+    def test_collection_count_excludes_a_missing_local_file(self):
+        present = self._accepted_movie(
+            "Second.Collection.Movie.2024.mkv",
+            {
+                "tmdb_id": "401", "title": "Second Collection Movie", "year": "2024",
+                "collection": {"id": "44", "name": "Parity Collection"},
+            },
+        )
+        self.paths["collection"].unlink()
+        with patch.object(
+            type(self.store.catalog.store), "library_projection",
+            side_effect=AssertionError("collection count must not project the whole library"),
+        ):
+            response = app.app.test_client().get("/api/library/collection/44")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.get_json()["owned_paths"], [str(present)])
+        self.assertEqual(response.get_json()["owned_count"], 1)
+
+    def test_collection_count_keeps_duplicate_identity_in_review(self):
+        duplicate = self._accepted_movie(
+            "Duplicate.Collection.Movie.2022.mkv",
+            {
+                "tmdb_id": "400", "title": "Collection Movie", "year": "2022",
+                "collection": {"id": "44", "name": "Parity Collection"},
+            },
+        )
+
+        response = app.app.test_client().get("/api/library/collection/44")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.get_json()
+        self.assertEqual(len(payload["parts"]), 1)
+        self.assertEqual(payload["owned_count"], 0)
+        self.assertEqual(len(payload["conflicts"]), 1)
+        self.assertEqual(set(payload["conflicts"][0]["paths"]), {
+            str(self.paths["collection"]), str(duplicate),
+        })
+
     def test_manual_identity_and_overrides_refresh_library_ownership_stats_and_maintenance(self):
         client = app.app.test_client()
         before_generation = self.store.catalog.generation("media")

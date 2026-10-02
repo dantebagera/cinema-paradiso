@@ -1,0 +1,409 @@
+{{oscars short description|films-year=1956}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 29
+| award            = Academy Awards
+| date             = March 27, 1957
+| site             = [[Pantages Theatre (Hollywood)|RKO Pantages Theatre]]<br>[[Hollywood, California]]<br>[[NBC Century Theatre]]<br>[[New York City]], [[New York (state)|New York]]
+| host             = [[Jerry Lewis]] (Hollywood)<br>[[Celeste Holm]] (New York City)
+| producer         = [[Valentine Davies]]
+| director         = Bill Bennington<br>[[Max O. Miller (director)|Max Miller]]
+| best_picture     = ''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''
+| most_wins        = ''Around the World in 80 Days'' and ''[[The King and I (1956 film)|The King and I]]'' (5)
+| most_nominations = ''[[Giant (1956 film)|Giant]]'' (10)
+| network          = [[NBC]]
+| duration         = 
+| last             = 28th
+| next             = 30th
+}}
+
+The '''29th Academy Awards''' were held on March 27, 1957, to honor the [[1956 in film|films of 1956]].
+
+In this year, [[Academy Award for Best Foreign Language Film|Best International Feature Film]] became a competitive category, having been given as a Special Achievement Award since [[20th Academy Awards|1947]]. The first competitive winner was [[List of Italian submissions for the Academy Award for Best International Feature Film|Italy]], for [[Federico Fellini]]'s ''[[La Strada]]'', which received a further nomination for [[Academy Award for Best Original Screenplay|Best Original Screenplay]].
+
+This was the first year (and last until [[40th Academy Awards|1967]]) in which all Best Picture nominees were in color, and all were large-scale epics: ''[[The King and I (1956 film)|The King and I]]'', ''[[Giant (1956 film)|Giant]]'', ''[[The Ten Commandments (1956 film)|The Ten Commandments]]'' (the highest-grossing film of the year), ''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]'', and the winner, ''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''. This established a trend toward blockbusters and colorful spectaculars in the category, with ''[[The Bridge on the River Kwai]]'', ''[[Gigi (1958 film)|Gigi]]'', and ''[[Ben-Hur (1959 film)|Ben-Hur]]'' following as Best Picture winners.
+
+The [[Academy Award for Best Story|Best Original Story]] category was noteworthy this year for several reasons. The winner, Robert Rich (for ''[[The Brave One (1956 film)|The Brave One]]'') was in fact a pseudonym of [[Dalton Trumbo]], who was blacklisted at the time and thus unable to receive credit under his own name. Edward Bernds and Elwood Ullman withdrew their names from consideration for their work on ''High Society'', as the nomination had been intended for [[High Society (1956 film)|the musical]] starring [[Grace Kelly]], while Bernds and Ullman had instead written a [[The Bowery Boys|Bowery Boys]] film of the [[High Society (1955 film)|same name]] the year before. The nomination was a double mistake, as ''High Society'' (1956) was based on the play and film ''[[The Philadelphia Story (film)|The Philadelphia Story]]'' and did not qualify as an original story.
+
+[[James Dean]] became the only actor to receive a second posthumous nomination for acting. [[Ingrid Bergman]] was not present to collect her award for Best Actress: [[Cary Grant]] accepted on her behalf. Bergman, who was doing a play in [[Paris]], praised her own victory, saying that the Oscar is "the most wished-for award by all movie artists because it comes from your co-workers".<ref name="Oscars '56 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/840/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=841 |isbn=0-385-04060-1}}</ref> She later listed the nominees for Best Director via the same pre-recorded segment, while the winner was announced by host [[Jerry Lewis]].
+
+Director [[John Ford]]'s classic western ''[[The Searchers]]'', widely seen as [[List of films considered the best|one of the best American films of all time]], failed to receive a single nomination.
+
+This was the second time since the introduction of the Supporting Actor and Actress awards that Best Picture, Best Director, and all four acting Oscars were given to different films. This would not happen again until the [[78th Academy Awards]]. ''Around the World in 80 Days'' became the sixth film to win Best Picture without any acting nominations and the most recent to win Best Picture without winning Best Director or any acting nominations.<ref>{{cite web |last1=Shaw |first1=Gabbi |title='Parasite' is the 12th movie in history to win Best Picture with no acting nominations — here are the other 11 |url=https://www.insider.com/movies-that-won-best-picture-oscars-with-no-acting-nominations |website=Insider |publisher=Insider Inc. |access-date=27 March 2023}}</ref> It was also the last film to win Best Picture without winning Best Director or any of the acting categories until ''[[Chariots of Fire]]'' in [[54th Academy Awards|1981]].
+
+[[Stephen Bosustow]] became the only producer in Academy history to receive every nomination in a category (Short Subjects-Cartoons).
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Miketodd.jpg
+| caption1          = [[Mike Todd]]; Best Picture winner
+| image2            = George Stevens with Oscar for Giant.jpg
+| caption2          = [[George Stevens]]; Best Director winner
+| image3            = Publicity press photo of Yul Brynner in 1960 (cropped).jpg
+| caption3          = [[Yul Brynner]]; Best Actor winner
+| image4            = Ingrid Bergman, Gaslight 1944.jpg
+| caption4          = [[Ingrid Bergman]]; Best Actress winner
+| image5            = Anthony Quinn signed.JPG
+| caption5          = [[Anthony Quinn]]; Best Supporting Actor winner
+| image6            = Dorothy Malone (1963).jpg
+| caption6          = [[Dorothy Malone]]; Best Supporting Actress winner
+| image7            = 1947 Dalton Trumbo (cropped).jpg
+| caption7          = [[Dalton Trumbo]]; Best Story winner
+| image8            = Cedric-Gibbons-1936.jpg
+| caption8          = [[Cedric Gibbons]]; Best Art Direction, Black-and-White co-winner
+}}
+
+=== Awards ===
+Nominees were announced on February 18, 1957. Winners are listed first and highlighted in boldface.<ref name="Oscars1957">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1957 |title=The 29th Academy Awards (1957) Nominees and Winners |access-date=2011-08-21 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706094056/http://www.oscars.org/awards/academyawards/legacy/ceremony/29th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class="wikitable"
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''&nbsp;– [[Mike Todd]], producer'''
+**''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]''&nbsp;– [[William Wyler]], producer
+**''[[Giant (1956 film)|Giant]]''&nbsp;– [[George Stevens]] and [[Henry Ginsberg]], producers
+**''[[The King and I (1956 film)|The King and I]]''&nbsp;– [[Charles Brackett]], producer
+**''[[The Ten Commandments (1956 film)|The Ten Commandments]]''&nbsp;– [[Cecil B. DeMille]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Director|Best Directing]]}}
+*''' [[George Stevens]]&nbsp;– ''[[Giant (1956 film)|Giant]]'''''
+**[[Michael Anderson (director)|Michael Anderson]]&nbsp;– ''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''
+**[[William Wyler]]&nbsp;– ''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]''
+**[[Walter Lang]]&nbsp;– ''[[The King and I (1956 film)|The King and I]]''
+**[[King Vidor]]&nbsp;– ''[[War and Peace (1956 film)|War and Peace]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actor|Best Actor]]}}
+*''' [[Yul Brynner]]&nbsp;– ''[[The King and I (1956 film)|The King and I]]'' as [[Mongkut|King Mongkut of Siam]]'''
+**[[James Dean]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]])&nbsp;– ''[[Giant (1956 film)|Giant]]'' as Jett Rink
+**[[Kirk Douglas]]&nbsp;– ''[[Lust for Life (1956 film)|Lust for Life]]'' as [[Vincent van Gogh]]
+**[[Rock Hudson]]&nbsp;– ''[[Giant (1956 film)|Giant]]'' as Jordan "Bick" Benedict Jr.
+**[[Laurence Olivier]]&nbsp;– ''[[Richard III (1955 film)|Richard III]]'' as [[Richard III of England|Richard]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Ingrid Bergman]]&nbsp;– ''[[Anastasia (1956 film)|Anastasia]]'' as Anna Koreff'''
+**[[Carroll Baker]]&nbsp;– ''[[Baby Doll]]'' as Baby Doll Meighan
+**[[Katharine Hepburn]]&nbsp;– ''[[The Rainmaker (1956 film)|The Rainmaker]]'' as Lizzie Curry
+**[[Nancy Kelly]]&nbsp;– ''[[The Bad Seed (1956 film)|The Bad Seed]]'' as Christine Penmark
+**[[Deborah Kerr]]&nbsp;– ''[[The King and I (1956 film)|The King and I]]'' as [[Anna Leonowens]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*''' [[Anthony Quinn]]&nbsp;– ''[[Lust for Life (1956 film)|Lust for Life]]'' as [[Paul Gauguin]]'''
+**[[Don Murray (actor)|Don Murray]]&nbsp;– ''[[Bus Stop (1956 film)|Bus Stop]]'' as Beauregard Decker
+**[[Anthony Perkins]]&nbsp;– ''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]'' as Josh Birdwell
+**[[Mickey Rooney]]&nbsp;– ''[[The Bold and the Brave]]'' as Dooley
+**[[Robert Stack]]&nbsp;– ''[[Written on the Wind]]'' as Kyle Hadley
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*''' [[Dorothy Malone]]&nbsp;– ''[[Written on the Wind]]'' as Marylee Hadley'''
+**[[Mildred Dunnock]]&nbsp;– ''[[Baby Doll]]'' as Aunt Rose Comfort
+**[[Eileen Heckart]]&nbsp;– ''[[The Bad Seed (1956 film)|The Bad Seed]]'' as Hortense Daigle
+**[[Mercedes McCambridge]]&nbsp;– ''[[Giant (1956 film)|Giant]]'' as Luz Benedict
+**[[Patty McCormack]]&nbsp;– ''[[The Bad Seed (1956 film)|The Bad Seed]]'' as Rhoda Penmark
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+*''' ''[[The Brave One (1956 film)|The Brave One]]''&nbsp;– [[Dalton Trumbo]]'''
+**''[[The Eddy Duchin Story]]''&nbsp;– [[Leo Katcher]]
+**''[[Les Orgueilleux|The Proud and the Beautiful]]''&nbsp;– [[Jean-Paul Sartre]]
+**''[[Umberto D.]]''&nbsp;– [[Cesare Zavattini]]
+**<s>''[[High Society (1955 film)|High Society]]''&nbsp;– [[Edward Bernds]] and [[Elwood Ullman]]</s> (nomination revoked)
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Original Screenplay|Best  Writing (Screenplay -- Original)]]}}
+*''' ''[[The Red Balloon]]''&nbsp;– [[Albert Lamorisse]]'''
+**''[[The Bold and the Brave]]''&nbsp;– [[Robert Lewin (screenwriter)|Robert Lewin]]
+**''[[Julie (1956 film)|Julie]]''&nbsp;– [[Andrew L. Stone]]
+**''[[The Ladykillers (1955 film)|The Ladykillers]]''&nbsp;– [[William Rose (screenwriter)|William Rose]]
+**''[[La Strada]]''&nbsp;– [[Federico Fellini]] and [[Tullio Pinelli]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Adapted)]]}}
+*''' ''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''&nbsp;– [[James Poe]], [[John Farrow]] and [[S. J. Perelman]] based on [[Around the World in Eighty Days|the novel]] by [[Jules Verne]]'''
+**''[[Baby Doll]]''&nbsp;– [[Tennessee Williams]] based on his short plays ''[[Twenty-seven Wagons Full of Cotton]]'' and ''The Unsatisfactory Supper''
+**''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]''&nbsp;– [[Michael Wilson (writer)|Michael Wilson]] based on [[The Friendly Persuasion|the novel]] by [[Jessamyn West (writer)|Jessamyn West]]
+**''[[Giant (1956 film)|Giant]]''&nbsp;– [[Ivan Moffat]] and [[Fred Guiol]] based on the novel by [[Edna Ferber]]
+**''[[Lust for Life (1956 film)|Lust for Life]]''&nbsp;– [[Norman Corwin]] based on [[Lust for Life (novel)|the novel]] by [[Irving Stone]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[List of submissions to the 29th Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*''' ''[[La Strada]]'' ([[Italy]]) – [[Dino De Laurentiis]] and [[Carlo Ponti]], producers'''
+**[[The Captain from Köpenick (1956 film)|''The Captain of Kopenick'']] ([[West Germany]]) – [[Gyula Trebitsch]] and [[Walter Koppel]], producers
+**[[Gervaise (film)|''Gervaise'']] ([[France]]) – [[Agnès Delahaie|Annie Dorfmann]], producer
+**''[[The Burmese Harp (1956 film)|Harp of Burma]]'' ([[Japan]]) – [[Masayuki Takagi]], producer
+**''[[Qivitoq - Fjeldgængeren|Qivitoq]]'' ([[Denmark]]) – [[Olaf Dalsgaard-Olsen|O. Dalsgaard-Olsen]], producer
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*''' ''[[The Silent World]]''&nbsp;– [[Jacques Cousteau|Jacques-Yves Cousteau]]'''
+**''[[The Naked Eye (1956 film)|The Naked Eye]]''&nbsp;– [[Louis Clyde Stoumen]]
+**''[[Where Mountains Float]]''&nbsp;– The Government Film Committee of Denmark
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*''' ''[[The True Story of the Civil War]]''&nbsp;– [[Louis Clyde Stoumen]]'''
+**''[[A City Decides]]''&nbsp;– [[Charles Guggenheim|Charles Guggenheim & Associates, Inc.]]
+**''[[The Dark Wave]]''&nbsp;– John Healy
+**''[[The House Without a Name]]''&nbsp;– [[Valentine Davies]]
+**''[[Man in Space]]''&nbsp;– [[Ward Kimball]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*''' ''[[Crashing the Water Barrier]]''&nbsp;– [[Konstantin Kalser]]'''
+**''[[I Never Forget a Face]]''&nbsp;– [[Robert Youngson]]
+**''[[Time Stood Still (film)|Time Stood Still]]''&nbsp;– Cedric Francis
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*''' ''[[The Bespoke Overcoat]]''&nbsp;– [[John and James Woolf|Romulus Films]]'''
+**''Cow Dog''&nbsp;– [[Larry Lansburgh]]
+**''[[The Dark Wave]]''&nbsp;– John Healy
+**''Samoa''&nbsp;– [[Walt Disney]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*''' ''[[Magoo's Puddle Jumper]]''&nbsp;– [[Stephen Bosustow]]'''
+**''Gerald McBoing-Boing on Planet Moo''&nbsp;– [[Stephen Bosustow]]
+**''The Jay Walker''&nbsp;– [[Stephen Bosustow]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*''' ''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''&nbsp;– [[Victor Young]] ([[List of posthumous Academy Award winners and nominees|posthumous award]])'''
+**''[[Anastasia (1956 film)|Anastasia]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+**''[[Between Heaven and Hell (film)|Between Heaven and Hell]]''&nbsp;– [[Hugo Friedhofer]]
+**''[[Giant (1956 film)|Giant]]''&nbsp;– [[Dimitri Tiomkin]]
+**''[[The Rainmaker (1956 film)|The Rainmaker]]''&nbsp;– [[Alex North]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*''' ''[[The King and I (1956 film)|The King and I]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]] and [[Ken Darby]]'''
+**''[[The Best Things in Life Are Free (film)|The Best Things in Life Are Free]]''&nbsp;– [[Lionel Newman]]
+**''[[The Eddy Duchin Story]]''&nbsp;– [[Morris Stoloff]] and [[George Duning]]
+**''[[High Society (1956 film)|High Society]]''&nbsp;– [[Johnny Green]] and [[Saul Chaplin]]
+**''[[Meet Me in Las Vegas]]''&nbsp;– [[Georgie Stoll]] and [[Johnny Green]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*''' "[[Que Sera, Sera (Whatever Will Be, Will Be)]]" from ''[[The Man Who Knew Too Much (1956 film)|The Man Who Knew Too Much]]''&nbsp;– Music and Lyrics by [[Jay Livingston]] and [[Ray Evans]]'''
+**"[[Friendly Persuasion (Thee I Love)]]" from ''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]''&nbsp;– Music by [[Dimitri Tiomkin]]; Lyrics by [[Paul Francis Webster]]
+**"Julie" from ''[[Julie (1956 film)|Julie]]''&nbsp;– Music by [[Leith Stevens]]; Lyrics by [[Tom Adair]]
+**"[[True Love (Cole Porter song)|True Love]]" from ''[[High Society (1956 film)|High Society]]''&nbsp;– Music and Lyrics by [[Cole Porter]]
+**"Written on the Wind" from ''[[Written on the Wind]]''&nbsp;– Music by [[Victor Young]] (posthumous nomination); Lyrics by [[Sammy Cahn]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*''' ''[[The King and I (1956 film)|The King and I]]''&nbsp;– [[Carlton W. Faulkner]]'''
+**''[[The Brave One (1956 film)|The Brave One]]''&nbsp;– [[Buddy Myers]]
+**''[[The Eddy Duchin Story]]''&nbsp;– [[John P. Livadary]]
+**''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]''&nbsp;– [[Gordon R. Glennan]] and [[Gordon E. Sawyer]]
+**''[[The Ten Commandments (1956 film)|The Ten Commandments]]''&nbsp;– [[Loren L. Ryder]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*''' ''[[Somebody Up There Likes Me (1956 film)|Somebody Up There Likes Me]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Malcolm Brown (art director)|Malcolm Brown]]; Set Decoration: [[Edwin B. Willis]] and [[F. Keogh Gleason]]'''
+**''[[The Proud and Profane]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[A. Earl Hedrick]]; Set Decoration: [[Samuel M. Comer]] and [[Frank R. McKelvy]]
+**''[[Seven Samurai]]''&nbsp;– Art Direction and Set Decoration: [[So Matsuyama]]
+**''[[The Solid Gold Cadillac]]''&nbsp;– Art Direction: [[Ross Bellah]]; Set Decoration: [[William Kiernan]] and [[Louis Diage]]
+**''[[Teenage Rebel]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Jack Martin Smith]]; Set Decoration: [[Walter M. Scott]] and [[Stuart A. Reiss]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*''' ''[[The King and I (1956 film)|The King and I]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[John DeCuir]]; Set Decoration: [[Walter M. Scott]] and [[Paul S. Fox]]'''
+**''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''&nbsp;– Art Direction: [[James W. Sullivan]] and [[Ken Adam]]; Set Decoration: [[Ross Dowd]]
+**''[[Giant (1956 film)|Giant]]''&nbsp;– Art Direction: [[Boris Leven]]; Set Decoration: [[Ralph S. Hurst]]
+**''[[Lust for Life (1956 film)|Lust for Life]]''&nbsp;– Art Direction: [[Cedric Gibbons]], [[Hans Peters (art director)|Hans Peters]] and [[E. Preston Ames]]; Set Decoration: [[Edwin B. Willis]] and [[F. Keogh Gleason]]
+**''[[The Ten Commandments (1956 film)|The Ten Commandments]]''&nbsp;– Art Direction: [[Hal Pereira]], [[Walter H. Tyler]] and [[Albert Nozaki]]; Set Decoration: [[Samuel M. Comer]] and [[Ray Moyer]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*''' ''[[Somebody Up There Likes Me (1956 film)|Somebody Up There Likes Me]]''&nbsp;– [[Joseph Ruttenberg]]'''
+**''[[Baby Doll]]''&nbsp;– [[Boris Kaufman]]
+**''[[The Bad Seed (1956 film)|The Bad Seed]]''&nbsp;– [[Harold Rosson]]
+**''[[The Harder They Fall (1956 film)|The Harder They Fall]]''&nbsp;– [[Burnett Guffey]]
+**''[[Stagecoach to Fury]]''&nbsp;– [[Walter Strenge]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*''' ''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''&nbsp;– [[Lionel Lindon]]'''
+**''[[The Eddy Duchin Story]]''&nbsp;– [[Harry Stradling]]
+**''[[The King and I (1956 film)|The King and I]]''&nbsp;– [[Leon Shamroy]]
+**''[[The Ten Commandments (1956 film)|The Ten Commandments]]''&nbsp;– [[Loyal Griggs]]
+**''[[War and Peace (1956 film)|War and Peace]]''&nbsp;– [[Jack Cardiff]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+*''' ''[[The Solid Gold Cadillac]]''&nbsp;– [[Jean Louis]]'''
+**''[[The Power and the Prize]]''&nbsp;– [[Helen Rose]]
+**''[[The Proud and Profane]]''&nbsp;– [[Edith Head]]
+**''[[Seven Samurai]]''&nbsp;– [[Kohei Ezaki]]
+**''[[Teenage Rebel]]''&nbsp;– [[Charles LeMaire]] and [[Mary Wills (costume designer)|Mary Wills]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+*''' ''[[The King and I (1956 film)|The King and I]]''&nbsp;– [[Irene Sharaff]]'''
+**''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''&nbsp;– [[Miles White]]
+**''[[Giant (1956 film)|Giant]]''&nbsp;– [[Moss Mabry]] and [[Marjorie Best]]
+**''[[The Ten Commandments (1956 film)|The Ten Commandments]]''&nbsp;– [[Edith Head]], [[Ralph Jester]], [[John Jensen (costume designer)|John Jensen]], [[Dorothy Jeakins]] and [[Arnold Friberg]]
+**''[[War and Peace (1956 film)|War and Peace]]''&nbsp;– [[Maria De Matteis]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*''' ''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''&nbsp;– [[Gene Ruggiero]] and [[Paul Weatherwax]]'''
+**''[[The Brave One (1956 film)|The Brave One]]''&nbsp;– [[Merrill G. White]]
+**''[[Giant (1956 film)|Giant]]''&nbsp;– [[William Hornbeck]], [[Philip W. Anderson (film editor)|Philip W. Anderson]] and [[Fred Bohanan]]
+**''[[Somebody Up There Likes Me (1956 film)|Somebody Up There Likes Me]]''&nbsp;– [[Albert Akst]]
+**''[[The Ten Commandments (1956 film)|The Ten Commandments]]''&nbsp;– [[Anne Bauchens]]
+|-
+| colspan="2" valign="top" |
+ {{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*''' ''[[The Ten Commandments (1956 film)|The Ten Commandments]]''&nbsp;– [[John P. Fulton]]'''
+**''[[Forbidden Planet]]''&nbsp;– [[A. Arnold Gillespie]], [[Irving G. Ries]] and [[Wesley C. Miller]]
+|}
+
+===Honorary Award===
+*To [[Eddie Cantor]] for distinguished service to the film industry.
+
+===Jean Hersholt Humanitarian Award===
+*[[Y. Frank Freeman]]
+
+===Irving G. Thalberg Memorial Award===
+*[[Buddy Adler]]
+
+==Presenters and performers==
+{{Refimprove section|date=September 2015}}
+
+===Presenters===
+*[[Carroll Baker]] (Presenter: Best Original Song)
+*[[Ingrid Bergman]] (Presenter: Best Director)
+*[[Ernest Borgnine]] (Presenter: Best Actress)
+*[[Gower Champion]] and [[Marge Champion]] (Presenters: Art Direction Awards)
+*[[Dorothy Dandridge]] (Presenter: Best Visual Effects)
+*[[Kirk Douglas]] (Presenter: Best Film Editing)
+*[[Janet Gaynor]] (Presenter: Best Motion Picture)
+*[[Rock Hudson]] and [[Eva Marie Saint]] (Presenters: Best Musical Score and Best Dramatic or Comedy Score)
+*[[Nancy Kelly]] (Presenter: Best Supporting Actor)
+*[[Deborah Kerr]] (Presenter: Writing Awards)
+*[[Jack Lemmon]] (Presenter: Best Supporting Actress)
+*[[Anna Magnani]] (Presenter: Best Actor)
+*[[Dorothy Malone]] (Presenter: Best Sound Recording)
+*[[Mercedes McCambridge]] and [[Robert Stack]] (Presenters: Documentary Awards)
+*[[Patty McCormack]] and [[Mickey Rooney]] (Presenters: Short Subject Awards)
+*[[George Seaton]] (Presenter: Best Foreign Language Film, Honorary Award, the Irving G. Thalberg Award and the Jean Hersholt Humanitarian Award)
+*[[Elizabeth Taylor]] (Presenter: Costume Design Awards)
+*[[Claire Trevor]] (Presenter: Cinematography Awards)
+
+===Performers===
+*[[Johnny Green]] – Conductor the Academy Awards orchestra
+*[[Bing Crosby]] ("[[True Love (Cole Porter song)|True Love]]" from ''[[High Society (1956 film)|High Society]]'')
+*[[Dorothy Dandridge]] ("Julie" from ''[[Julie (1956 film)|Julie]]'')
+*[[The Four Aces]] ("Written on the Wind" from ''[[Written on the Wind]]'')
+*[[Gogi Grant]] ("[[Que Sera, Sera (Whatever Will Be, Will Be)]]" from ''[[The Man Who Knew Too Much (1956 film)|The Man Who Knew Too Much]]'')
+*[[Tommy Sands (entertainer)|Tommy Sands]] ("[[Friendly Persuasion (song)|Friendly Persuasion (Thee I Love)]]" from ''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]'')
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 10 
+| ''[[Giant (1956 film)|Giant]]''
+|-
+| rowspan="1" style="text-align:center" | 9
+| ''[[The King and I (1956 film)|The King and I]]''
+|-
+| rowspan="1" style="text-align:center" | 8
+| ''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''
+|-
+| rowspan="1" style="text-align:center" | 7
+| ''[[The Ten Commandments (1956 film)|The Ten Commandments]]''
+|-
+| rowspan="1" style="text-align:center" | 6
+| ''[[Friendly Persuasion (1956 film)|Friendly Persuasion]]''
+|-
+| rowspan="4" style="text-align:center" |4
+| ''[[Baby Doll]]''
+|-
+| ''[[The Bad Seed (1956 film)|The Bad Seed]]''
+|-
+| ''[[The Eddy Duchin Story]]''
+|-
+| ''[[Lust for Life (1956 film)|Lust for Life]]''
+|-
+| rowspan="4" style="text-align:center" |3
+| ''[[The Brave One (1956 film)|The Brave One]]''
+|-
+| ''[[Somebody Up There Likes Me (1956 film)|Somebody Up There Likes Me]]''
+|-
+| ''[[War and Peace (1956 film)|War and Peace]]''
+|-
+| ''[[Written on the Wind]]''
+|-
+| rowspan="11" style="text-align:center" | 2
+| ''[[Anastasia (1956 film)|Anastasia]]''
+|-
+| ''[[The Bold and the Brave]]''
+|-
+| ''[[The Dark Wave]]''
+|-
+| ''[[High Society (1956 film)|High Society]]''
+|-
+| ''[[Julie (1956 film)|Julie]]''
+|-
+| ''[[La Strada]]''
+|-
+| ''[[The Proud and Profane]]''
+|-
+| ''[[The Rainmaker (1956 film)|The Rainmaker]]''
+|-
+| ''[[Seven Samurai]]''
+|-
+| ''[[The Solid Gold Cadillac]]''
+|-
+| ''[[Teenage Rebel]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=2, style="text-align:center" | 5
+| ''[[Around the World in 80 Days (1956 film)|Around the World in 80 Days]]''
+|-
+| ''[[The King and I (1956 film)|The King and I]]''
+|-
+| rowspan=1, style="text-align:center" | 2
+| ''[[Somebody Up There Likes Me (1956 film)|Somebody Up There Likes Me]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+*[[14th Golden Globe Awards]]
+*[[1956 in film]]
+* [[8th Primetime Emmy Awards]]
+* [[9th Primetime Emmy Awards]]
+* [[10th British Academy Film Awards]]
+* [[11th Tony Awards]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 29}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1956 film awards]]
+[[Category:1956 awards in the United States]]
+[[Category:1957 in Los Angeles]]
+[[Category:1957 in New York City]]
+[[Category:1957 in American cinema]]
+[[Category:March 1957 in the United States]]
+[[Category:Organized events in New York City]]
+[[Category:1950s in Manhattan]]

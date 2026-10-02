@@ -10,7 +10,7 @@ test('TV library uses CP cards, preserves movie state and opens a dedicated seri
   await page.goto('/library');
   const switcher = page.getByRole('tablist', { name: 'Library media' });
   await switcher.getByRole('button', { name: 'TV Shows', exact: true }).click();
-  await expect(page.getByRole('link', { name: 'Open Harbor Signals' })).toContainText('2 seasons · 6 episodes');
+  await expect(page.getByRole('link', { name: 'Open Harbor Signals' })).toContainText('2 seasons · 4 episodes');
   await expect(page.getByRole('link', { name: 'Open Harbor Signals' })).toContainText('Mixed quality');
   await page.getByRole('textbox', { name: 'Search TV shows', exact: true }).fill('Harbor');
   await page.getByRole('button', { name: 'Search TV', exact: true }).click();
@@ -28,6 +28,38 @@ test('TV library uses CP cards, preserves movie state and opens a dedicated seri
   await expect(page.getByRole('article', { name: 'S00E01 Before the Harbor' })).toBeVisible();
 });
 
+test('TV selection previews exact local deletion and one-shot download without executing either', async ({ page, request }) => {
+  const before = await (await request.get('/api/tv/tasks')).json();
+  await page.goto('/library');
+  await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'TV Shows', exact: true }).click();
+  await page.getByRole('checkbox', { name: 'Select Harbor Signals' }).locator('..').click();
+  await page.getByRole('button', { name: 'Delete local files' }).click();
+  const deletion = page.getByRole('dialog', { name: 'Review TV file deletion' });
+  await expect(deletion).toContainText('Recycle Bin');
+  await expect(deletion.locator('.tv-bulk-paths')).toContainText('Harbor');
+  await deletion.getByRole('button', { name: 'Cancel' }).click();
+  await page.getByRole('button', { name: 'Download released episodes' }).click();
+  const download = page.getByRole('dialog', { name: 'Review TV bulk download' });
+  await expect(download).toContainText('future episodes are not followed');
+  await expect(download).toContainText('missing');
+  await download.getByRole('button', { name: 'Cancel' }).click();
+  const after = await (await request.get('/api/tv/tasks')).json();
+  expect(after.total).toBe(before.total);
+});
+
+test('Follow preview and saved draft never start a transfer', async ({ page, request }) => {
+  const before = await (await request.get('/api/tv/tasks')).json();
+  await page.goto('/tv/series/1');
+  const follow = page.getByRole('region', { name: 'Follow and download' });
+  await follow.getByRole('button', { name: 'Preview targets' }).click();
+  await expect(follow.getByRole('status')).toContainText('target episodes');
+  await follow.getByRole('button', { name: 'Save draft' }).click();
+  await expect(follow.locator('.tv-follow-task').last()).toContainText('draft');
+  const after = await (await request.get('/api/tv/tasks')).json();
+  expect(after.total).toBe(before.total + 1);
+  expect(after.items[0].state).toBe('draft');
+});
+
 test('episode streaming targets exact released episode without marking watched', async ({ page, request }) => {
   await page.route('https://example.invalid/**', (route) => route.fulfill({ body: '<p>Fixture stream</p>', contentType: 'text/html' }));
   await page.goto('/tv/series/1');
@@ -41,26 +73,24 @@ test('episode streaming targets exact released episode without marking watched',
   await expect(row.getByRole('button', { name: 'Stream', exact: true })).toBeFocused();
 });
 
-test('episode completion derives Play next without skipping missing episodes', async ({ page }) => {
+test('manual episode completion does not move the durable Play cursor', async ({ page }) => {
   await page.goto('/tv/series/1');
   const row = page.getByRole('article', { name: 'S01E01 Arrival' });
   await row.getByRole('button', { name: 'Versions (1)', exact: true }).click();
   await expect(page.getByRole('dialog', { name: 'S01E01 versions' })).toContainText('1080p');
   await page.getByRole('button', { name: 'Close', exact: true }).click();
   await row.getByRole('button', { name: 'Mark watched', exact: true }).click();
-  await expect(page.getByRole('button', { name: 'Play next', exact: true })).toBeDisabled();
+  await expect(page.locator('.tv-series-header .card-actions').getByRole('button', { name: 'Start', exact: true })).toBeEnabled();
   await expect(page.getByRole('article', { name: 'S01E02 The Signal' })).toContainText('Unwatched');
 });
 
 
-test('TV Home progress stays typed and opening a missing next episode navigates to its series', async ({ page, request }) => {
+test('TV Home keeps manual watch edits separate from the next Play target', async ({ page, request }) => {
   await request.post('/api/tv/episodes/2/progress', { data: { completed: true } });
   await page.goto('/');
   const rail = page.getByRole('region', { name: 'Continue Watching movies and TV shows' });
-  await expect(rail).toContainText('Play next · S01E02 · The Signal · Missing locally');
-  await rail.getByRole('button', { name: 'Play Harbor Signals', exact: true }).click();
-  await expect(page).toHaveURL(/tv\/series\/1$/);
-  await expect(page.getByRole('heading', { name: 'Harbor Signals', exact: true })).toBeVisible();
+  await expect(rail).toContainText('Start · S01E01 · Arrival');
+  await expect(rail.getByRole('button', { name: 'Play Harbor Signals', exact: true })).toBeEnabled();
 });
 
 test('TV release review explains rejected capture and submits only the accepted fixture', async ({ page }) => {

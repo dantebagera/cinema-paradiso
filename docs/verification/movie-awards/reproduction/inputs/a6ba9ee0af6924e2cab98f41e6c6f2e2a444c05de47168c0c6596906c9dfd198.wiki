@@ -1,0 +1,419 @@
+{{oscars short description|films-year=1942}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number           = 15
+| award            = Academy Awards
+| date             = March 4, 1943
+| site             = [[Cocoanut Grove (Ambassador Hotel)|Cocoanut Grove]], [[Ambassador Hotel (Los Angeles)|The Ambassador Hotel]], [[Los Angeles]], [[California]], [[United States|USA]]
+| host             = [[Bob Hope]]
+| best_picture     = ''[[Mrs. Miniver]]''
+| most_wins        = ''Mrs. Miniver'' (6)
+| most_nominations = ''Mrs. Miniver'' (12)
+| last             = 14th
+| next             = 16th
+}}
+
+The '''15th Academy Awards''' was held in the [[Cocoanut Grove (Ambassador Hotel)|Cocoanut Grove]] at [[Ambassador Hotel (Los Angeles)|The Ambassador Hotel]] in [[Los Angeles]] on March 4, 1943, honoring the [[1942 in film|films of 1942]].<ref name="Oscars1943">{{cite web |url=https://www.nytimes.com/1943/03/05/archives/film-oscar-prize-for-mrs-miniver-the-mgm-picture-featuring-greer.html |title=FILM 'OSCAR' PRIZE FOR 'MRS. MINIVER'; The MGM Picture, Featuring Greer Garson and Walter Pidgeon, Best for 1942 |work=[[The New York Times]] |date=March 5, 1943 |access-date=August 15, 2023}}</ref> The ceremony is most famous for the speech by [[Greer Garson]]. Accepting the award for [[Academy Award for Best Actress|Best Actress]], Garson spoke for approximately 5 minutes and 30 seconds, which was the [[Oscar speech|longest acceptance speech in Oscars history]] until [[Adrien Brody]] won for [[Academy Award for Best Actor|Best Actor]] in [[97th Academy Awards|2025]].<ref name="Oscars '42 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/836/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=836 |isbn=0-385-04060-1}}</ref><ref>{{cite web |url=https://www.belfasttelegraph.co.uk/life/features/and-the-oscar-for-the-longest-speech-goes-to-greer-garson/35516692.html |title=And the Oscar for the longest speech goes to ... Greer Garson |work=[[Belfast Telegraph]] |date=March 11, 2017 |access-date=March 3, 2020}}</ref> A portion of the ceremony was broadcast by [[CBS Radio]].<ref>{{cite book |url=https://books.google.com/books?id=EwtRbXNca0oC&dq=%22The+Academy+Awards+Show%22&pg=PA4 |title=On the Air: The Encyclopedia of Old-Time Radio |last=Dunning |first=John |author-link=John Dunning (detective fiction author) |date=1998 |publisher=[[Oxford University Press]] |location=[[New York City|New York, NY]] |isbn=978-0-19-507678-3 |pages=4–5 |edition=Revised |access-date=September 9, 2019}}</ref>
+
+''[[Mrs. Miniver]]'' was the second film (after ''[[My Man Godfrey]]'' in [[8th Academy Awards|1936]]) to receive [[List of films with all four Academy Award acting nominations|nominations in all four acting categories]], as well as the first film to receive five acting nominations; it won six of its twelve nominations, including [[Academy Award for Best Picture|Best Picture]] and [[William Wyler]]'s first of three [[Academy Award for Best Director|Best Director]] awards.<ref name="Oscars1943"/><ref>{{cite magazine |url=https://ew.com/oscars/2018/03/04/oscar-flashback-mrs-miniver-won-big-75-years-ago-and-its-message-of-resistance-endures/ |title=Oscar Flashback: 'Mrs. Miniver' won big 75 years ago — and its message of resistance endures |last=Breznican |first=Anthony |magazine=[[Entertainment Weekly]] |date=March 3, 2018 |access-date=August 15, 2023}}</ref><ref>{{cite web |url=https://www.goldderby.com/article/2022/oscars-1943/ |title=Oscars flashback to 1943: Patriotic fare fares well |last=King |first=Susan |publisher=GoldDerby |date=September 18, 2022 |access-date=August 15, 2023}}</ref><ref>{{cite web |url=https://collider.com/directors-with-most-oscars/#william-wyler-mdash-three-awards |title=10 Directors Who Have Won More Than One Directing Oscar |last=Ciriaco |first=Andrea |work=[[Collider (website)|Collider]] |date=February 1, 2023 |access-date=August 15, 2023}}</ref>
+
+[[Irving Berlin]] presented the [[Academy Award for Best Original Song]], which he ended up winning himself for "[[White Christmas (song)|White Christmas]]".<ref>{{cite web |url=https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-oscars-2016-the-winner-is-me-20160228-story.html |title=For Oscars presenter Irving Berlin, the original-song winner was like an old friend |last=King |first=Susan |work=[[Los Angeles Times]] |date=February 28, 2016 |access-date=August 15, 2023}}</ref> There was also a four-way tie for [[Academy Award for Best Documentary Feature Film|Best Documentary Feature]], a unique occurrence.<ref>{{cite web |url=https://www.goldderby.com/article/2023/1943-oscars-history/ |title=Oscars flashback to the first documentary race: 25 nominees and 4 winners in 1943 |last=King |first=Susan |publisher=GoldDerby |date=January 25, 2023 |access-date=August 15, 2023}}</ref>
+
+==Winners and nominees==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Sidney Franklin - Jun 1920 MPN.jpg
+| caption1          = [[Sidney Franklin (director)|Sidney Franklin]], Outstanding Motion Picture winner
+| image2            = William Wyler portrait.jpg
+| caption2          = [[William Wyler]], Best Director winner
+| image3            = James cagney promo photo (cropped, centered).jpg
+| caption3          = [[James Cagney]], Best Actor winner
+| image4            = Greer Garson-publicity.JPG
+| caption4          = [[Greer Garson]], Best Actress winner
+| image5            = Van Heflin - 1941.jpg
+| caption5          = [[Van Heflin]], Best Supporting Actor winner
+| image6            = Teresa Wright1953.jpg
+| caption6          = [[Teresa Wright]], Best Supporting Actress winner
+| image7            = Ring Lardner Jr. (cropped).jpg
+| caption7          = [[Ring Lardner Jr.]], Best Original Screenplay co-winner
+| image8            = Froeschel-george-in-50-jahre-ullstein-1877-1927-berlin-ullstein-1927-s301.jpg
+| caption8          = [[George Froeschel]], Best Screenplay co-winner
+| image9            = Walt Disney 1946.JPG
+| caption9          = [[Walt Disney]], Best Short Subjects – Cartoons winner
+| image10           = Irving Berlin NYWTS.jpg
+| caption10         = [[Irving Berlin]], Best Original Song winner
+| image11           = William Pereira (1941) breaking ground for Motion Picture Relief Fund House.jpeg
+| caption11         = [[William Pereira]], Best Special Effects co-winner
+}}
+
+=== Awards ===
+Nominees were announced on February 8, 1943. Winners are listed first and highlighted in boldface.<ref>{{cite web |url=https://www.oscars.org/oscars/ceremonies/1943 |title=The 15th Academy Awards (1943) Nominees and Winners |access-date=August 13, 2011 |publisher=Oscars.org |archive-url=https://web.archive.org/web/20110706093739/https://www.oscars.org/awards/academyawards/legacy/ceremony/15th-winners.html |archive-date=July 6, 2011 |url-status=live}}</ref>
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Motion Picture]]}}
+* '''''[[Mrs. Miniver]]''&nbsp;– [[Sidney Franklin (director)|Sidney Franklin]] for [[Metro-Goldwyn-Mayer]]'''
+** ''[[49th Parallel (film)|49th Parallel]]''&nbsp;– [[Michael Powell]] for Ortus
+** ''[[Kings Row]]''&nbsp;– [[Hal B. Wallis]] for [[Warner Bros.]]
+** ''[[The Magnificent Ambersons (film)|The Magnificent Ambersons]]''&nbsp;– [[Orson Welles]] for [[Mercury Theatre|Mercury]] and [[RKO Pictures|RKO Radio]]
+** ''[[The Pied Piper (1942 film)|The Pied Piper]]''&nbsp;– [[Nunnally Johnson]] for [[20th Century Studios|20th Century Fox]]
+** ''[[The Pride of the Yankees]]''&nbsp;– [[Samuel Goldwyn]] for [[Samuel Goldwyn Productions]] and RKO Radio
+** ''[[Random Harvest (film)|Random Harvest]]''&nbsp;– [[Sidney Franklin (director)|Sidney Franklin]] for Metro-Goldwyn-Mayer
+** ''[[The Talk of the Town (1942 film)|The Talk of the Town]]''&nbsp;– [[George Stevens]] for [[Columbia Pictures|Columbia]]
+** ''[[Wake Island (film)|Wake Island]]''&nbsp;– Joseph Sistrom for [[Paramount Pictures|Paramount]]
+** ''[[Yankee Doodle Dandy]]''&nbsp;– [[Jack L. Warner]], [[Hal B. Wallis]], and [[William Cagney]] for Warner Bros.
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[William Wyler]]&nbsp;– ''[[Mrs. Miniver]]'''''
+** [[Sam Wood]]&nbsp;– ''[[Kings Row]]''
+** [[Mervyn LeRoy]]&nbsp;– ''[[Random Harvest (film)|Random Harvest]]''
+** [[John Farrow]]&nbsp;– ''[[Wake Island (film)|Wake Island]]''
+** [[Michael Curtiz]]&nbsp;– ''[[Yankee Doodle Dandy]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+* '''[[James Cagney]]&nbsp;– ''[[Yankee Doodle Dandy]]'' as [[George M. Cohan]]'''
+** [[Ronald Colman]]&nbsp;– ''[[Random Harvest (film)|Random Harvest]]'' as Charles Rainier
+** [[Gary Cooper]]&nbsp;– ''[[The Pride of the Yankees]]'' as [[Lou Gehrig]]
+** [[Walter Pidgeon]]&nbsp;– ''[[Mrs. Miniver]]'' as Clem Miniver
+** [[Monty Woolley]]&nbsp;– ''[[The Pied Piper (1942 film)|The Pied Piper]]'' as Howard
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Greer Garson]]&nbsp;– ''[[Mrs. Miniver]]'' as [[Mrs. Miniver (character)|Kay Miniver]]'''
+** [[Bette Davis]]&nbsp;– ''[[Now, Voyager]]'' as Charlotte Vale
+** [[Katharine Hepburn]]&nbsp;– ''[[Woman of the Year]]'' as Tess Harding
+** [[Rosalind Russell]]&nbsp;– ''[[My Sister Eileen (1942 film)|My Sister Eileen]]'' as Ruth Sherwood
+** [[Teresa Wright]]&nbsp;– ''[[The Pride of the Yankees]]'' as [[Eleanor Gehrig|Eleanor Twitchell Gehrig]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Van Heflin]]&nbsp;– ''[[Johnny Eager]]'' as Jeff Hartnett'''
+** [[William Bendix]]&nbsp;– ''[[Wake Island (film)|Wake Island]]'' as [[Private (rank)|Private]] Aloysius K. Randall
+** [[Walter Huston]]&nbsp;– ''[[Yankee Doodle Dandy]]'' as Jerry Cohan
+** [[Frank Morgan]]&nbsp;– ''[[Tortilla Flat (film)|Tortilla Flat]]'' as The Pirate
+** [[Henry Travers]]&nbsp;– ''[[Mrs. Miniver]]'' as James Ballard
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Teresa Wright]]&nbsp;– ''[[Mrs. Miniver]]'' as Carol Beldon'''
+** [[Gladys Cooper]]&nbsp;– ''[[Now, Voyager]]'' as Windle Vale
+** [[Agnes Moorehead]]&nbsp;– ''[[The Magnificent Ambersons (film)|The Magnificent Ambersons]]'' as Fanny Minafer
+** [[Susan Peters]]&nbsp;– ''[[Random Harvest (film)|Random Harvest]]'' as Kitty Chilcet
+** [[May Whitty]]&nbsp;– ''Mrs. Miniver'' as Lady Beldon
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Motion Picture Story)]]}}
+* '''''[[49th Parallel (film)|49th Parallel]]''&nbsp;– [[Emeric Pressburger]]'''
+** ''[[Holiday Inn (film)|Holiday Inn]]''&nbsp;– [[Irving Berlin]]
+** ''[[The Pride of the Yankees]]''&nbsp;– [[Paul Gallico]]
+** ''[[The Talk of the Town (1942 film)|The Talk of the Town]]''&nbsp;– [[Sidney Harmon]]
+** ''[[Yankee Doodle Dandy]]''&nbsp;– [[Robert Buckner]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Woman of the Year]]''&nbsp;– [[Michael Kanin]] and [[Ring Lardner Jr.]]'''
+** ''[[One of Our Aircraft Is Missing]]''&nbsp;– [[Michael Powell]] and [[Emeric Pressburger]]
+** ''[[Road to Morocco]]''&nbsp;– [[Frank Butler (writer)|Frank Butler]] and [[Don Hartman]]
+** ''[[Wake Island (film)|Wake Island]]''&nbsp;– [[W. R. Burnett]] and [[Frank Butler (writer)|Frank Butler]]
+** ''[[The War Against Mrs. Hadley]]''&nbsp;– [[George Oppenheimer]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* '''''[[Mrs. Miniver]]''&nbsp;– [[George Froeschel]], [[James Hilton (novelist)|James Hilton]], [[Claudine West]], and [[Arthur Wimperis]], based on the [[Mrs. Miniver (character)|Mrs. Miniver]] newspaper columns by [[Jan Struther]]'''
+** ''[[49th Parallel (film)|49th Parallel]]''&nbsp;– [[Rodney Ackland]] and [[Emeric Pressburger]], based on a story by Emeric Pressburger
+** ''[[The Pride of the Yankees]]''&nbsp;– [[Herman J. Mankiewicz]] and [[Jo Swerling]], based on a story by [[Paul Gallico]]
+** ''[[Random Harvest (film)|Random Harvest]]''&nbsp;– [[George Froeschel]], [[Claudine West]], and [[Arthur Wimperis]], based on [[Random Harvest|the novel]] by [[James Hilton (novelist)|James Hilton]]
+** ''[[The Talk of the Town (1942 film)|The Talk of the Town]]''&nbsp;– [[Sidney Buchman]] and [[Irwin Shaw]], based on a story by [[Sidney Harmon]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature Film|Best Documentary]]}}
+* '''''[[The Battle of Midway (film)|The Battle of Midway]]''&nbsp;– [[John Ford]] and [[United States Navy]]'''
+* '''''[[Kokoda Front Line!]]''&nbsp;– [[Ken G. Hall]] and [[Australian Information Service|Australian News and Information Bureau]]'''
+* '''''[[Moscow Strikes Back]]''&nbsp;– [[Nicola Napoli|Artkino]]'''
+* '''''[[Prelude to War]]''&nbsp;– [[Frank Capra]] and [[United States Army]] [[Special Services (entertainment)|Special Services]]'''
+** ''[[Africa, Prelude to Victory]]''&nbsp;– [[The March of Time (radio program)|The March of Time]]
+** ''[[Combat Report]]''&nbsp;– [[United States Army Signal Corps]]
+** ''[[Conquer by the Clock]]''&nbsp;– Frederic Ullman Jr. [[Slavko Vorkapich]]
+** ''[[The Grain That Built a Hemisphere]]''&nbsp;– [[Walt Disney]]
+** ''[[Henry Browne, Farmer]]''&nbsp;– [[United States Department of Agriculture]]
+** ''High Over the Borders''&nbsp;– [[National Film Board of Canada]]
+** ''High Stakes in the East''&nbsp;– The Netherlands Information Bureau
+** ''[[Inside Fighting China]]''&nbsp;– National Film Board of Canada
+** ''[[It's Everybody's War]]''&nbsp;– [[United States Office of War Information]]
+** ''[[Listen to Britain]]''&nbsp;– [[Ministry of Information (United Kingdom)|British Ministry of Information]]
+** ''Little Belgium''&nbsp;– Belgian Ministry of Information
+** ''Little Isles of Freedom''&nbsp;– [[Victor Stoloff]] and Edgar Loew
+** ''Mr. Blabbermouth!''&nbsp;– United States Office of War Information
+** ''Mr. Gardenia Jones''&nbsp;– United States Office of War Information
+** ''[[The New Spirit]]''&nbsp;– Walt Disney
+** ''[[The Price of Victory]]''&nbsp;– [[Pine-Thomas Productions|William H. Pine]]
+** ''[[A Ship Is Born]]''&nbsp;– [[United States Merchant Marine]]
+** ''Twenty-One Miles''&nbsp;– British Ministry of Information
+** ''We Refuse to Die''&nbsp;– [[Pine-Thomas Productions|William C. Thomas]]
+** ''White Eagle''&nbsp;– Concanen Films
+** ''[[Winning Your Wings]]''&nbsp;– [[United States Army Air Forces|United States Army Air Force]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[Speaking of Animals and Their Families]]''&nbsp;– [[Paramount Pictures|Paramount]]'''
+** ''[[Desert Wonderland]]''&nbsp;– [[20th Century Studios|20th Century Fox]]
+** ''[[Marines in the Making]]''&nbsp;– [[Pete Smith (film producer)|Pete Smith]]
+** ''[[United States Marine Band (film)|United States Marine Band]]''&nbsp;– [[Warner Bros.]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[Beyond the Line of Duty]]''&nbsp;– [[Warner Bros.]]'''
+** ''[[Don't Talk (film)|Don't Talk]]''&nbsp;– [[Metro-Goldwyn-Mayer]]
+** ''[[Private Smith of the U.S.A.]]''&nbsp;– [[RKO Pictures|RKO Radio]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[Der Fuehrer's Face]]''&nbsp;– [[Walt Disney]]'''
+** ''All Out for "V"''&nbsp;– [[Paul Terry (cartoonist)|Paul Terry]]
+** ''[[Blitz Wolf]]''&nbsp;– [[Fred Quimby]]
+** ''Juke Box Jamboree''&nbsp;– [[Walter Lantz]]
+** ''[[Pigs in a Polka]]''&nbsp;– [[Leon Schlesinger]]
+** ''[[Tulips Shall Grow]]''&nbsp;– [[George Pal]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+* '''''[[Now, Voyager]]''&nbsp;– [[Max Steiner]]'''
+** ''[[Arabian Nights (1942 film)|Arabian Nights]]''&nbsp;– [[Frank Skinner (composer)|Frank Skinner]]
+** ''[[Bambi]]''&nbsp;– [[Frank Churchill]] (posthumous nomination) and [[Edward H. Plumb]]
+** ''[[The Black Swan (film)|The Black Swan]]''&nbsp;– [[Alfred Newman]]
+** ''[[The Corsican Brothers (1941 film)|The Corsican Brothers]]''&nbsp;– [[Dimitri Tiomkin]]
+** ''[[Flying Tigers (film)|Flying Tigers]]''&nbsp;– [[Victor Young]]
+** ''[[The Gold Rush]]''&nbsp;– [[Max Terr]]
+** ''[[I Married a Witch]]''&nbsp;– [[Roy Webb]]
+** ''[[Joan of Paris]]''&nbsp;– [[Roy Webb]]
+** ''[[Rudyard Kipling's Jungle Book|Jungle Book]]''&nbsp;– [[Miklós Rózsa]]
+** ''[[Klondike Fury]]''&nbsp;– [[Edward J. Kay]]
+** ''[[The Pride of the Yankees]]''&nbsp;– [[Leigh Harline]]
+** ''[[Random Harvest (film)|Random Harvest]]''&nbsp;– [[Herbert Stothart]]
+** ''[[The Shanghai Gesture]]''&nbsp;– [[Richard Hageman]]
+** ''[[Silver Queen]]''&nbsp;– [[Victor Young]]
+** ''[[Take a Letter, Darling]]''&nbsp;– [[Victor Young]]
+** ''[[The Talk of the Town (1942 film)|The Talk of the Town]]''&nbsp;– [[Friedrich Hollaender|Frederick Hollander]] and [[Morris Stoloff]]
+** ''[[To Be or Not to Be (1942 film)|To Be or Not to Be]]''&nbsp;– [[Werner R. Heymann]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+* '''''[[Yankee Doodle Dandy]]''&nbsp;– [[Ray Heindorf]] and [[Heinz Roemheld]]'''
+** ''[[Flying with Music]]''&nbsp;– [[Edward Ward (composer)|Edward Ward]]
+** ''[[For Me and My Gal (film)|For Me and My Gal]]''&nbsp;– [[Roger Edens]] and [[Georgie Stoll]]
+** ''[[Holiday Inn (film)|Holiday Inn]]''&nbsp;– [[Robert E. Dolan]]
+** ''[[It Started with Eve]]''&nbsp;– [[Charles Previn]] and [[Hans J. Salter]]
+** ''[[Johnny Doughboy]]''&nbsp;– [[Walter Scharf]]
+** ''[[My Gal Sal]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[You Were Never Lovelier]]''&nbsp;– [[Leigh Harline]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[White Christmas (song)|White Christmas]]" from ''[[Holiday Inn (film)|Holiday Inn]]''&nbsp;– Music and Lyrics by [[Irving Berlin]]'''
+** "Always in My Heart" from ''[[Always in My Heart (film)|Always in My Heart]]''&nbsp;– Music by [[Ernesto Lecuona]]; Lyrics by [[Kim Gannon]]
+** "Dearly Beloved" from ''[[You Were Never Lovelier]]''&nbsp;– Music by [[Jerome Kern]]; Lyrics by [[Johnny Mercer]]
+** "[[How About You?]]" from ''[[Babes on Broadway]]''&nbsp;– Music by [[Burton Lane]]; Lyrics by [[Ralph Freed]]
+** "[[(I've Got a Gal In) Kalamazoo|I've Got a Gal in Kalamazoo]]" from ''[[Orchestra Wives]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Mack Gordon]]
+** "[[I've Heard That Song Before]]" from ''[[Youth on Parade]]''&nbsp;– Music by [[Jule Styne]]; Lyrics by [[Sammy Cahn]]
+** "Love Is a Song" from ''[[Bambi]]''&nbsp;– Music by [[Frank Churchill]] (posthumous nomination); Lyrics by [[Larry Morey]]
+** "Pennies for Peppino" from ''[[Flying with Music]]''&nbsp;– Music by [[Edward Ward (composer)|Edward Ward]]; Lyrics by [[George Forrest (author)|Chet Forrest]] and [[Robert Wright (musical writer)|Bob Wright]]
+** "Pig Foot Pete" from ''[[Hellzapoppin' (film)|Hellzapoppin']]''&nbsp;– Music by [[Gene de Paul]]; Lyrics by [[Don Raye]]
+** "There's a Breeze on Lake Louise" from ''[[The Mayor of 44th Street]]''&nbsp;– Music by [[Harry Revel]]; Lyrics by Mort Greene
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound Recording]]}}
+* '''''[[Yankee Doodle Dandy]]''&nbsp;– [[Nathan Levinson]]'''
+** ''[[Arabian Nights (1942 film)|Arabian Nights]]''&nbsp;– [[Bernard B. Brown]]
+** ''[[Bambi]]''&nbsp;– [[Sam Slyfield]]
+** ''[[Flying Tigers (film)|Flying Tigers]]''&nbsp;– [[Daniel J. Bloomberg]]
+** ''[[Friendly Enemies (1942 film)|Friendly Enemies]]''&nbsp;– [[Jack Whitney]]
+** ''[[The Gold Rush]]''&nbsp;– [[James L. Fields]]
+** ''[[Mrs. Miniver]]''&nbsp;– [[Douglas Shearer]]
+** ''[[Once Upon a Honeymoon]]''&nbsp;– [[Stephen Dunn (sound engineer)|Stephen Dunn]]
+** ''[[The Pride of the Yankees]]''&nbsp;– [[Thomas T. Moulton]]
+** ''[[Road to Morocco]]''&nbsp;– [[Loren L. Ryder]]
+** ''[[This Above All (film)|This Above All]]''&nbsp;– [[Edmund H. Hansen|E. H. Hansen]]
+** ''[[You Were Never Lovelier]]''&nbsp;– [[John P. Livadary]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[This Above All (film)|This Above All]]''&nbsp;– Art Direction: [[Richard Day (art director)|Richard Day]] and [[Joseph C. Wright]]; Interior Decoration: [[Thomas Little]]'''
+** ''[[George Washington Slept Here]]''&nbsp;– Art Direction: [[Max Parker (art director)|Max Parker]] and [[Mark-Lee Kirk]]; Interior Decoration: [[Casey Roberts]]
+** ''[[The Magnificent Ambersons (film)|The Magnificent Ambersons]]''&nbsp;– Art Direction: [[Albert S. D'Agostino]]; Interior Decoration: [[A. Roland Fields|Al Fields]] and [[Darrell Silvera]]
+** ''[[The Pride of the Yankees]]''&nbsp;– Art Direction: [[Perry Ferguson]]; Interior Decoration: [[Howard Bristol]]
+** ''[[Random Harvest (film)|Random Harvest]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Randall Duell]]; Interior Decoration: [[Edwin B. Willis]] and [[Jack D. Moore]]
+** ''[[The Shanghai Gesture]]''&nbsp;– Art Direction and Interior Decoration: [[Boris Leven]]
+** ''[[Silver Queen]]''&nbsp;– Art Direction: [[Ralph Berger]]; Interior Decoration: [[Emile Kuri]]
+** ''[[The Spoilers (1942 film)|The Spoilers]]''&nbsp;– Art Direction: [[Jack Otterson]] and [[John B. Goodman (art director)|John B. Goodman]]; Interior Decoration: [[Russell A. Gausman]] and [[Edward Ray Robinson|Edward R. Robinson]]
+** ''[[Take a Letter, Darling]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Roland Anderson]]; Interior Decoration: [[Samuel M. Comer]]
+** ''[[The Talk of the Town (1942 film)|The Talk of the Town]]''&nbsp;– Art Direction: [[Lionel Banks]] and [[Rudolph Sternad]]; Interior Decoration: [[Fay Babcock]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[My Gal Sal]]''&nbsp;– Art Direction: [[Richard Day (art director)|Richard Day]] and [[Joseph C. Wright]]; Interior Decoration: [[Thomas Little]]'''
+** ''[[Arabian Nights (1942 film)|Arabian Nights]]''&nbsp;– Art Direction: [[Alexander Golitzen]] and [[Jack Otterson]]; Interior Decoration: [[Russell A. Gausman]] and [[Ira S. Webb]]
+** ''[[Captains of the Clouds]]''&nbsp;– Art Direction: [[Ted Smith (art director)|Ted Smith]]; Interior Decoration: [[Casey Roberts]]
+** ''[[Rudyard Kipling's Jungle Book|Jungle Book]]''&nbsp;– Art Direction: [[Vincent Korda]]; Interior Decoration: [[Julia Heron]]
+** ''[[Reap the Wild Wind]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Roland Anderson]]; Interior Decoration: [[George Sawley]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[Mrs. Miniver]]''&nbsp;– [[Joseph Ruttenberg]]'''
+** ''[[Kings Row]]''&nbsp;– [[James Wong Howe]]
+** ''[[The Magnificent Ambersons (film)|The Magnificent Ambersons]]''&nbsp;– [[Stanley Cortez]]
+** ''[[Moontide]]''&nbsp;– [[Charles G. Clarke]]
+** ''[[The Pied Piper (1942 film)|The Pied Piper]]''&nbsp;– [[Edward Cronjager]]
+** ''[[The Pride of the Yankees]]''&nbsp;– [[Rudolph Maté]]
+** ''[[Take a Letter, Darling]]''&nbsp;– [[John J. Mescall]]
+** ''[[The Talk of the Town (1942 film)|The Talk of the Town]]''&nbsp;– [[Ted Tetzlaff]]
+** ''[[Ten Gentlemen from West Point]]''&nbsp;– [[Leon Shamroy]]
+** ''[[This Above All (film)|This Above All]]''&nbsp;– [[Arthur Miller (cinematographer)|Arthur C. Miller]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[The Black Swan (film)|The Black Swan]]''&nbsp;– [[Leon Shamroy]]'''
+** ''[[Arabian Nights (1942 film)|Arabian Nights]]''&nbsp;– [[Milton Krasner]], [[William V. Skall]], and [[W. Howard Greene]]
+** ''[[Captains of the Clouds]]''&nbsp;– [[Sol Polito]]
+** ''[[Rudyard Kipling's Jungle Book|Jungle Book]]''&nbsp;– [[W. Howard Greene]]
+** ''[[Reap the Wild Wind]]''&nbsp;– [[Victor Milner]] and [[William V. Skall]]
+** ''[[To the Shores of Tripoli]]''&nbsp;– [[Edward Cronjager]] and [[William V. Skall]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Pride of the Yankees]]''&nbsp;– [[Daniel Mandell]]'''
+** ''[[Mrs. Miniver]]''&nbsp;– [[Harold F. Kress]]
+** ''[[The Talk of the Town (1942 film)|The Talk of the Town]]''&nbsp;– [[Otto Meyer (film editor)|Otto Meyer]]
+** ''[[This Above All (film)|This Above All]]''&nbsp;– [[Walter A. Thompson]]
+** ''[[Yankee Doodle Dandy]]''&nbsp;– [[George Amy]]
+|-
+| colspan="2" valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+* '''''[[Reap the Wild Wind]]''&nbsp;– Photographic Effects: [[Farciot Edouart]], [[Gordon Jennings]], and [[William Pereira]]; Sound Effects: [[Louis Mesenkop]]'''
+** ''[[The Black Swan (film)|The Black Swan]]''&nbsp;– Photographic Effects: [[Fred Sersen]]; Sound Effects: [[Roger Heman Sr.|Roger Heman, Sr.]] and [[George Leverett]]
+** ''[[Desperate Journey]]''&nbsp;– Photographic Effects: [[Byron Haskin]]; Sound Effects: [[Nathan Levinson]]
+** ''[[Flying Tigers (film)|Flying Tigers]]''&nbsp;– Photographic Effects: [[Lydecker brothers|Howard Lydecker]]; Sound Effects: [[Daniel J. Bloomberg]]
+** ''[[Invisible Agent]]''&nbsp;– Photographic Effects: [[John P. Fulton]]; Sound Effects: [[Bernard B. Brown]]
+** ''[[Rudyard Kipling's Jungle Book|Jungle Book]]''&nbsp;– Photographic Effects: [[Lawrence W. Butler]]; Sound Effects: [[William H. Wilmarth]]
+** ''[[Mrs. Miniver]]''&nbsp;– Photographic Effects: [[A. Arnold Gillespie]] and [[Warren Newcombe]]; Sound Effects: [[Douglas Shearer]]
+** ''[[The Navy Comes Through]]''&nbsp;– Photographic Effects: [[Vernon L. Walker]]; Sound Effects: [[James G. Stewart]]
+** ''[[One of Our Aircraft Is Missing]]''&nbsp;– Photographic Effects: [[Ronald Neame]]; Sound Effects: [[C. C. Stevens]]
+** ''[[The Pride of the Yankees]]''&nbsp;– Photographic Effects: [[Jack Cosgrove (special effects artist)|Jack Cosgrove]] and [[Ray Binger]]; Sound Effects: [[Thomas T. Moulton]]
+|}
+
+===Special awards===
+* To [[Charles Boyer]] for his progressive cultural achievement in establishing the French Research Foundation in Los Angeles as a source of reference for the [[Cinema of the United States|Hollywood Motion Picture Industry]].
+* To [[Noël Coward]] for his outstanding production achievement in ''[[In Which We Serve]]''.
+* To [[Metro-Goldwyn-Mayer]] for its achievement in representing the American Way of Life in the production of the ''[[Andy Hardy]]'' series of films.
+
+===Irving G. Thalberg Memorial Award===
+* [[Sidney Franklin (director)|Sidney Franklin]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 12 
+| ''[[Mrs. Miniver]]''
+|-
+| rowspan="1" style="text-align:center" | 11
+| ''[[The Pride of the Yankees]]''
+|-
+| rowspan="1" style="text-align:center" | 8 
+| ''[[Yankee Doodle Dandy]]''
+|-
+| rowspan="2" style="text-align:center" | 7 
+| ''[[Random Harvest (film)|Random Harvest]]''
+|-
+| ''[[The Talk of the Town (1942 film)|The Talk of the Town]]''
+|-
+| rowspan="5" style="text-align:center" | 4
+| ''[[Arabian Nights (1942 film)|Arabian Nights]]''
+|-
+| ''[[Rudyard Kipling's Jungle Book|Jungle Book]]''
+|-
+| ''[[The Magnificent Ambersons (film)|The Magnificent Ambersons]]''
+|-
+| ''[[This Above All (film)|This Above All]]''
+|-
+| ''[[Wake Island (film)|Wake Island]]''
+|-
+| rowspan="11" style="text-align:center" |3
+| ''[[Bambi]]''
+|-
+| ''[[The Black Swan (film)|The Black Swan]]''
+|-
+| ''[[Flying Tigers (film)|Flying Tigers]]''
+|-
+| ''[[49th Parallel (film)|49th Parallel]]''
+|-
+| ''[[Holiday Inn (film)|Holiday Inn]]''
+|-
+| ''[[Kings Row]]''
+|-
+| ''[[Now, Voyager]]''
+|-
+| ''[[The Pied Piper (1942 film)|The Pied Piper]]''
+|-
+| ''[[Reap the Wild Wind]]''
+|-
+| ''[[Take a Letter, Darling]]''
+|-
+| ''[[You Were Never Lovelier]]''
+|-
+| rowspan="9" style="text-align:center" |2
+| ''[[Captains of the Clouds]]''
+|-
+| ''[[Flying with Music]]''
+|-
+| ''[[The Gold Rush]]''
+|-
+| ''[[My Gal Sal]]''
+|-
+| ''[[One of Our Aircraft Is Missing]]''
+|-
+| ''[[Road to Morocco]]''
+|-
+| ''[[The Shanghai Gesture]]''
+|-
+| ''[[Silver Queen]]''
+|-
+| ''[[Woman of the Year]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 6 
+| ''[[Mrs. Miniver]]''
+|-
+| rowspan=1, style="text-align:center" | 3 
+| ''[[Yankee Doodle Dandy]]''
+|-
+|}
+
+{{col-float-end}}
+
+== Ceremony information ==
+William Wyler was the first person born in 20th century to win the best director. This ceremony was the last to include a banquet as part of the festivities due to increased attendance and the continuance of [[World War II]]. Ceremonies would be held in theaters starting with the [[16th Academy Awards]] in 1944.<ref>{{cite web |url=https://www.oscars.org/sites/oscars/files/88aa_presentation_history.pdf |title=History of the Oscars Presentation |publisher=Oscars.org |access-date=May 3, 2023}}</ref> Because of wartime commitments, the usually gold-plated Oscar was made of plaster for this ceremony.<ref name="Oscars '42 Notes"/>
+
+==See also==
+* [[1942 in film]]
+
+==References==
+{{Reflist|2}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 15}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1942 film awards]]
+[[Category:1943 in Los Angeles]]
+[[Category:1943 in American cinema]]
+[[Category:CBS Radio programs]]
+[[Category:March 1943 in the United States]]

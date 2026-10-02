@@ -171,14 +171,14 @@ export default function AdvancedSearchBuilder({
   const hasTitle = used.has('title');
   const hasTitleUnsupported = used.has('keyword') || used.has('runtime');
   const available = criteriaForScope(scope).filter((definition) => {
-    if (definition.type === 'sort' || (tv && definition.type === 'movie_list')) return false;
+    if (definition.type === 'sort' || (tv && definition.type === 'movie_list') || (!tv && definition.type === 'tv_status')) return false;
     if (used.has(definition.type) && !definition.repeatable) return false;
     if (!tv && scope === 'discover' && ((hasTitle && ['keyword', 'runtime'].includes(definition.type)) || (definition.type === 'title' && hasTitleUnsupported))) return false;
     return true;
   });
   const selectedDefinition = criterionFor(scope, addType);
   const selectedOptions = fixedOptions[addType] || options[addType] || [];
-  const requiresOptions = ['genre', 'language', 'country', 'movie_list', 'library_source', 'resolution', 'viewing_status', 'availability'].includes(addType);
+  const requiresOptions = ['genre', 'language', 'country', 'movie_list', 'library_source', 'resolution', 'viewing_status', 'availability', 'tv_status'].includes(addType);
 
   function updateGroup(type, values) {
     try {

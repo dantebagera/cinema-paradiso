@@ -1,6 +1,8 @@
 import { CalendarDays, ChevronDown, ChevronRight, Film, Loader2, MoreHorizontal, Play, RotateCcw, Star, X } from 'lucide-react';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { centeredWorkspaceScroll } from './expandedCardViewport.js';
+import { MovieAwards } from '../MovieAwards.jsx';
+import { positiveAwards } from '../../api/movieAwards.js';
 
 function cx(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -28,6 +30,8 @@ export function UnifiedMoviePoster({
   children,
   showPlayOverlay,
   onPlay,
+  playLabel,
+  playTitle,
   playPending = false
 }) {
   const [imageFailed, setImageFailed] = useState(false);
@@ -46,9 +50,9 @@ export function UnifiedMoviePoster({
         <button
           type="button"
           className={cx('movie-card-play-overlay', playPending && 'movie-card-play-overlay-pending')}
-          aria-label={playPending ? `Opening ${title} in Cinema Paradiso Player` : `Play ${title}`}
+          aria-label={playPending ? `Opening ${title} in Cinema Paradiso Player` : playLabel || `Play ${title}`}
           aria-busy={playPending || undefined}
-          title={playPending ? 'Opening playerâ€¦' : 'Play'}
+          title={playPending ? 'Opening playerâ€¦' : playTitle || 'Play'}
           disabled={playPending}
           onClick={(event) => {
             event.stopPropagation();
@@ -70,6 +74,7 @@ export function UnifiedMovieCard({
   posterUrl,
   rating,
   voteCount,
+  awardCounts = null,
   chips = [],
   mutedChips = [],
   statusLabel = '',
@@ -86,6 +91,8 @@ export function UnifiedMovieCard({
   metadataActions,
   showPlayOverlay = false,
   onPlay,
+  playLabel,
+  playTitle,
   playPending = false,
   onToggle,
   navigation = false,
@@ -193,6 +200,8 @@ export function UnifiedMovieCard({
         className={posterClassName}
         showPlayOverlay={showPlayOverlay}
         onPlay={onPlay}
+        playLabel={playLabel}
+        playTitle={playTitle}
         playPending={playPending}
         large={expanded}
       >
@@ -208,6 +217,7 @@ export function UnifiedMovieCard({
             <span>{year || 'Unknown year'}</span>
           </div>
           <div className="unified-movie-header-meta">
+            {expanded ? <MovieAwards counts={awardCounts} /> : null}
             {rating && expanded ? <ExpandedRating rating={rating} voteCount={voteCount} /> : null}
             {headerActions ? (
               <span className="unified-header-actions" onClick={stopCardToggle}>
@@ -262,12 +272,13 @@ export function UnifiedMovieCard({
           </div>
         ) : null}
 
-        {rating && !expanded ? (
+        {!expanded && (rating || positiveAwards(awardCounts).length) ? (
           <div className="unified-rating-row">
-            <span className="unified-rating">
+            {rating ? <span className="unified-rating">
               <Star size={16} fill="currentColor" />
               {rating}{voteCount ? ` - ${voteCount}` : ''}
-            </span>
+            </span> : null}
+            <MovieAwards counts={awardCounts} />
           </div>
         ) : null}
       </div>

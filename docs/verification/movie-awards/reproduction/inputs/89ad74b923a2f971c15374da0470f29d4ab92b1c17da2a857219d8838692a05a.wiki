@@ -1,0 +1,557 @@
+{{Use American English|date=October 2019}}
+{{Use mdy dates|date=March 2023}}
+{{oscars short description|films-year=2019}}
+{{Infobox film awards
+| number = 92
+| award = Academy Awards
+| image = 92nd Academy Awards.png
+| alt = Official poster for the 92nd Academy Awards
+| caption = Official poster
+| date = February 9, 2020
+| site = {{unbulleted list|[[Dolby Theatre]]|[[Los Angeles]], California, U.S.}}
+| preshow = {{plain list|
+* [[Lily Aldridge]]
+* [[Tamron Hall]]
+* [[Elvis Mitchell]]
+* [[Billy Porter]]
+* [[Ryan Seacrest]]<ref>{{cite news |last=Bennett |first=Anita |title=How to Watch the Oscars Online and on TV |url=https://deadline.com/2020/02/watch-2020-oscars-how-to-watch-academy-awards-1202850386/ |access-date=March 4, 2020 |work=[[Deadline Hollywood]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212344/https://deadline.com/2020/02/watch-2020-oscars-how-to-watch-academy-awards-1202850386/ |url-status=live}}</ref>}}
+| producer = [[Stephanie Allain]]<br />[[Lynette Howell Taylor]]<ref name="Producers"/>
+| director = [[Glenn Weiss]]<ref name="Weiss"/>
+| best_picture = ''[[Parasite (2019 film)|Parasite]]''
+| most_wins = ''Parasite'' (4)
+| network = [[American Broadcasting Company|ABC]]
+| most_nominations = ''[[Joker (2019 film)|Joker]]'' (11)
+| duration = 3 hours, 36 minutes<ref>{{cite news |last=Andreeva |first=Nellie |title=Oscar Viewership Hits All-Time Low with 23.6 Million |url=https://deadline.com/2020/02/oscar-ratings-new-all-time-low-viewership-1202854581/ |access-date=March 4, 2020 |work=[[Deadline Hollywood]] |date=February 10, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212348/https://deadline.com/2020/02/oscar-ratings-new-all-time-low-viewership-1202854581/ |url-status=live}}</ref>
+| ratings = 23.64&nbsp;million<ref name="2019-20 ratings">{{cite news |last=Porter |first=Rick |title=Broadcast TV's Ratings Winners and Losers of 2019-20 |url=https://www.hollywoodreporter.com/live-feed/broadcast-tvs-ratings-winners-losers-2019-20-1295395 |access-date=May 22, 2020 |work=[[The Hollywood Reporter]] |date=May 20, 2020 |archive-date=May 21, 2020 |archive-url=https://web.archive.org/web/20200521044004/https://www.hollywoodreporter.com/live-feed/broadcast-tvs-ratings-winners-losers-2019-20-1295395 |url-status=live}}</ref><br />13.6% ([[Nielsen ratings]])<ref name="TVB">{{cite news |title=Academy Awards ratings |publisher=[[Television Bureau of Advertising]] |url=https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |access-date=March 13, 2020 |archive-date=August 8, 2016 |archive-url=https://web.archive.org/web/20160808235818/https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |url-status=live}}</ref>
+| last = 91st
+| next = 93rd
+}}
+
+The '''92nd Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored [[2019 in film|films released in 2019]] and took place on February 9, 2020, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]], beginning at 5:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 8:00&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, the AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Stephanie Allain]] and [[Lynette Howell Taylor]] and was directed by [[Glenn Weiss]].<ref name="Producers" /><ref name="Weiss" /> Three months earlier in a ceremony at the Ray Dolby Ballroom of the [[Hollywood & Highland Center]] in Hollywood held on October 27, 2019, the Academy held its 11th Annual [[Governors Awards]] ceremony.<ref name="Governors"/>
+
+''[[Parasite (2019 film)|Parasite]]'' won four awards including [[Academy Award for Best Picture|Best Picture]], becoming the first non-English language film to win that award.<ref name="Parasite-firstforeign"/> Other winners included ''[[1917 (2019 film)|1917]]'' with three awards, ''[[Ford v Ferrari]]'', ''[[Joker (2019 film)|Joker]]'', and ''[[Once Upon a Time in Hollywood]]'' with two awards, and ''[[American Factory]]'', ''[[Bombshell (2019 film)|Bombshell]]'', ''[[Hair Love]]'', ''[[Jojo Rabbit]]'', ''[[Judy (film)|Judy]]'', ''[[Learning to Skateboard in a Warzone (If You're a Girl)]]'', ''[[Little Women (2019 film)|Little Women]]'', ''[[Marriage Story]]'', ''[[The Neighbors' Window]]'', ''[[Rocketman (film)|Rocketman]]'', and ''[[Toy Story 4]]'' with one. The telecast garnered 23.64&nbsp;million viewers. 
+
+== Winners and nominees ==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+The nominees for the 92nd Academy Awards were announced on January 13, 2020, at the David Geffen Theater of the [[Academy Museum of Motion Pictures]] in Los Angeles, California, by actors [[John Cho]] and [[Issa Rae]].<ref>{{cite news |last=Hipes |first=Patrick |title=Watch The Oscar Nominations Live Stream |url=https://deadline.com/2020/01/watch-2020-oscar-nominations-live-stream-academy-awards-announcement-1202826467/ |access-date=February 4, 2020 |work=[[Deadline Hollywood]] |date=January 13, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212449/https://deadline.com/2020/01/watch-2020-oscar-nominations-live-stream-academy-awards-announcement-1202826467/ |url-status=live}}</ref><ref>{{cite news |last=Verhoeven |first=Beatrice |title='Joker' Leads With 11 Oscar Nominations, Followed by 'Irishman,' '1917' and 'Once Upon a Time' |url=https://www.thewrap.com/joker-leads-with-11-oscar-nominations-irishman-1917-once-upon-a-time/ |access-date=March 26, 2020 |work=[[TheWrap]] |date=January 13, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212454/https://www.thewrap.com/joker-leads-with-11-oscar-nominations-irishman-1917-once-upon-a-time/ |url-status=live}}</ref> ''[[Joker (2019 film)|Joker]]'' led all nominees with eleven nominations; ''[[The Irishman]]'', ''[[1917 (2019 film)|1917]]'', and ''[[Once Upon a Time in Hollywood]]'' tied for second with ten nominations each. This marked the first time in Oscars' history that four films each earned ten or more nominations.<ref>{{cite news |last=Hammond |first=Pete |title=Oscars: A Record Four Movies With 10+ Nominations & The 'Parasite' Factor Means This Thing Is As Wide Open As It Gets – Analysis |url=https://deadline.com/2020/01/oscars-wide-open-race-sets-record-nominations-joker-parasite-1202828765/ |access-date=June 15, 2020 |work=[[Deadline Hollywood]] |date=January 13, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212350/https://deadline.com/2020/01/oscars-wide-open-race-sets-record-nominations-joker-parasite-1202828765/ |url-status=live}}</ref>
+
+The winners were announced during the awards ceremony on February 9, 2020. ''[[Parasite (2019 film)|Parasite]]'' became the first non-English language film to win Best Picture.<ref name="Parasite-firstforeign">{{cite news |url=https://www.hollywoodreporter.com/news/oscars-bong-joon-hos-parasite-wins-south-koreas-first-oscar-1277161 |title=Oscars: Bong Joon Ho's 'Parasite' Makes History Winning South Korea's First Oscars |first=Patrick |last=Brzeski |date=February 9, 2020 |access-date=February 9, 2020 |work=[[The Hollywood Reporter]] |archive-date=March 7, 2020 |archive-url=https://web.archive.org/web/20200307040603/https://www.hollywoodreporter.com/news/oscars-bong-joon-hos-parasite-wins-south-koreas-first-oscar-1277161 |url-status=live}}</ref>{{efn|name=Parasite|Although ''Parasite'' was the first non-English speaking film to win Best Picture at the Oscars, it is not to be confused with the first ''foreign'' film (produced by a company of a country that does not have English as its primary language) to win Best Picture, which was achieved by ''[[The Artist (film)|The Artist]]'' in [[84th Academy Awards|2012]]. The French-produced film was largely silent with French [[intertitle]]s and contained a few spoken lines in English.<ref name="Guardian clarification">{{cite news |url=https://www.theguardian.com/film/2020/feb/10/parasite-best-picture-new-era-for-oscars |title=Parasite's best picture Oscar could kickstart a new era of internationalism |first=Phil |last=Hoad |date=February 11, 2020 |work=[[The Guardian]] |access-date=June 11, 2020 |archive-date=June 18, 2020 |archive-url=https://web.archive.org/web/20200618003809/https://www.theguardian.com/film/2020/feb/10/parasite-best-picture-new-era-for-oscars |url-status=live}}</ref> The Academy dictates foreign language as the main qualification for international film, hence ''The Artist'' did not qualify.<ref>{{cite news |url=https://www.oscars.org/oscars/rules-eligibility |title=Rules & Eligibility |date=July 28, 2014 |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=April 30, 2020 |archive-url=https://web.archive.org/web/20200108163338/https://www.oscars.org/oscars/rules-eligibility |archive-date=January 8, 2020 |url-status=live}}</ref> Further, while prior winners ''[[The Last Emperor]]'' and ''[[Slumdog Millionaire]]'' included significant amounts of non-English dialogue, they were considered as domestic productions.<ref name="Guardian clarification" />}} It was also the sixth film nominated for both Best Picture and Best International Feature in the same year.<ref name="International">{{cite news |last=Galuppo |first=Mia |title=Oscars: 'Parasite' Becomes Sixth Movie to Be Nominated for Both Best Picture, International Feature |url=https://www.hollywoodreporter.com/news/oscars-parasite-becomes-sixth-movie-be-nominated-best-picture-international-feature-1267963 |access-date=February 4, 2020 |work=[[The Hollywood Reporter]] |date=January 13, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212437/https://www.hollywoodreporter.com/news/oscars-parasite-becomes-sixth-movie-be-nominated-best-picture-international-feature-1267963 |url-status=live}}</ref>{{efn|name=Foreign|''[[Z (1969 film)|Z]]'', ''[[Life Is Beautiful]]'', ''[[Crouching Tiger, Hidden Dragon]]'', ''[[Amour (2012 film)|Amour]]'', and ''[[Roma (2018 film)|Roma]]'' were the films that previously accomplished this feat.<ref name="International" />}} Its four wins tied it with ''[[Fanny and Alexander]]'' and ''[[Crouching Tiger, Hidden Dragon]]'' as the [[List of Academy Award–winning foreign-language films|most-awarded foreign language films]] in Academy Awards history.<ref name="ERecords">{{cite news |last=Nilles |first=Billy |title=All the History Made at the 2020 Oscars |url=https://www.eonline.com/news/1121093/all-the-history-made-at-the-2020-oscars |access-date=March 26, 2020 |publisher=[[E!]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212351/https://www.eonline.com/news/1121093/all-the-history-made-at-the-2020-oscars |url-status=live}}</ref> ''Parasite'' became the 12th film to win Best Picture without an acting nomination. With his wins in Best Picture, Director, and Original Screenplay, as well as his accepting of the award for International Feature Film on behalf of [[South Korea]], [[Bong Joon Ho]] was the second person to collect four statuettes in a single ceremony since [[Walt Disney]] at the [[26th Academy Awards]] held in 1954 and the first to do so for a single film.<ref>{{cite news |last=Roy |first=Natasha |title='Parasite' cast and crew celebrate Oscars wins in L.A.'s Koreatown |url=https://www.nbcnews.com/news/asian-america/parasite-cast-crew-celebrates-oscar-wins-la-s-koreatown-n1134991 |access-date=March 31, 2020 |publisher=[[NBC News]] |date=February 11, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212504/https://www.nbcnews.com/news/asian-america/parasite-cast-crew-celebrates-oscar-wins-la-s-koreatown-n1134991 |url-status=live}}</ref>{{efn|name=Bong-Joon-ho|Technically, the country of the film is recognized as winner of the Best International Feature award.<ref>{{cite news |last=Ordoña |first=Michael |title=Why Bong Joon-ho won three Oscars this year, not four |url=https://www.latimes.com/entertainment-arts/movies/story/2020-02-10/oscars-bong-joon-ho-parasite-wins |access-date=March 13, 2020 |work=[[Los Angeles Times]] |date=February 10, 2020 |archive-date=February 11, 2020 |archive-url=https://web.archive.org/web/20200211113849/https://www.latimes.com/entertainment-arts/movies/story/2020-02-10/oscars-bong-joon-ho-parasite-wins |url-status=live}}</ref> However, the award is accepted by the director on behalf of the country, and since 2014, the director's name is engraved on the statuette.<ref>{{cite news |url=https://www.thewrap.com/oscars-to-add-winning-foreign-language-directors-name-on-statuette/ |title=Oscars to Add Winning Foreign Language Director's Name on Statuette |date=September 18, 2014 |work=[[TheWrap]] |access-date=February 12, 2020 |archive-url=https://web.archive.org/web/20180815121318/https://www.thewrap.com/oscars-to-add-winning-foreign-language-directors-name-on-statuette/ |archive-date=August 15, 2018 |url-status=live}}</ref>}}
+
+As a result of [[Joaquin Phoenix]] winning Best Actor for his performance as the [[Joker (character)|titular character]] in the film ''Joker'', he and [[Heath Ledger]], who previously won for playing the same character in 2008's ''[[The Dark Knight]]'', became the second pair of actors to win for [[List of superlative Academy Award winners and nominees#Performances of the same character|portraying the same character in two different films]].<ref>{{cite news |last=Tassi |first=Paul |title=Two Jokers, Two Oscar Winners: So, Which Is Better? |url=https://www.forbes.com/sites/paultassi/2020/02/10/two-jokers-two-oscar-winners-so-which-is-better/ |access-date=June 14, 2020 |work=[[Forbes]] |date=February 10, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212523/https://www.forbes.com/sites/paultassi/2020/02/10/two-jokers-two-oscar-winners-so-which-is-better/ |url-status=live}}</ref>{{efn|name=Joker|[[Marlon Brando]] and [[Robert De Niro]] were the first pair of actors to achieve this feat. Brando won Best Actor for portraying [[Vito Corleone]] in 1972's ''[[The Godfather]]''; De Niro won Best Supporting Actor for portraying a younger version of the same character in 1974's ''[[The Godfather Part II]]''.<ref>{{cite news |last=Truitt |first=Brian |title=Who will Oscar history remember as the best Joker, Heath Ledger or Joaquin Phoenix? |url=https://www.usatoday.com/story/entertainment/movies/oscars/2020/02/05/oscars-best-joker-joaquin-phoenix-or-heath-ledger/4657717002/ |access-date=April 13, 2020 |work=[[USA Today]] |date=February 5, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212435/https://www.usatoday.com/story/entertainment/movies/oscars/2020/02/05/oscars-best-joker-joaquin-phoenix-or-heath-ledger/4657717002/ |url-status=live}}</ref>}} [[Scarlett Johansson]] was the twelfth actor to receive [[List of actors nominated for multiple Academy Awards in the same year|double acting nominations in the same year]].<ref>{{cite magazine |last=Aquilina |first=Tyler |title=Scarlett Johansson joins an exclusive club with these Oscar-nominated actors and actresses |url=https://ew.com/oscars/actors-and-actresses-nominated-two-oscars-same-year/ |access-date=June 17, 2020 |magazine=[[Entertainment Weekly]] |date=January 23, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212358/https://ew.com/oscars/actors-and-actresses-nominated-two-oscars-same-year/ |url-status=live}}</ref> With her nominations in Best Actress and Best Original Song for ''[[Harriet (film)|Harriet]]'', [[Cynthia Erivo]] became the third consecutive and overall person to earn acting and songwriting nominations for the same film after [[Mary J. Blige]] for 2017's ''[[Mudbound (film)|Mudbound]]'' and [[Lady Gaga]] for 2018's ''[[A Star Is Born (2018 film)|A Star Is Born]]'', and the second consecutive and overall person (and the first [[person of color]] ever) to do so in a leading role.<ref>{{cite news |last=Dalton |first=Andrew |date=January 13, 2020 |title=ScarJo and Erivo go for 2, and other Oscar facts and figures |url=https://abcnews.go.com/Entertainment/wireStory/scarjo-erivo-oscar-facts-figures-68249386 |url-status= |archive-url=https://web.archive.org/web/20201116212441/https://abcnews.go.com/Entertainment/wireStory/scarjo-erivo-oscar-facts-figures-68249386 |archive-date=November 16, 2020 |access-date=January 19, 2020 |agency=ABC News}}</ref> Best Original Score winner [[Hildur Guðnadóttir]] was the third woman to win for composing a musical score and the first one to do so for a dramatic musical score.<ref>{{cite news |last=Burlingame |first=Jon |title=Hildur Guðnadóttir Wraps Up Her Sweep of an Entire Season's Worth of Scoring Awards |url=https://variety.com/2020/music/news/hildur-gudnadottir-sweep-film-score-awards-oscars-1203500198/ |access-date=February 26, 2020 |work=[[Variety (magazine)|Variety]] |date=February 10, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212527/https://variety.com/2020/music/news/hildur-gudnadottir-sweep-film-score-awards-oscars-1203500198/ |url-status=live}}</ref>{{efn|name=Hildur|From [[68th Academy Awards|the 68th ceremony in 1996]] until [[71st Academy Awards|the 71st in 1999]], the Best Original Score award was split into two categories: Best Original Dramatic Score and Best Original Comedy or Musical Score. During that time, composers [[Rachel Portman]] and [[Anne Dudley]] won awards in the Best Original Comedy or Musical Score category for their work on 1996's ''[[Emma (1996 theatrical film)|Emma]]'' and 1997's ''[[The Full Monty]]'', respectively.<ref>{{cite news |last=Wilson |first=Jordan |title=Oscars: 'Joker's' Hildur Gudnadóttir Becomes First Woman to Win Best Original Score |url=https://www.hollywoodreporter.com/news/oscars-hildur-gudnadottir-becomes-first-woman-win-best-original-score-1276317 |access-date=March 4, 2020 |work=[[The Hollywood Reporter]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212359/https://www.hollywoodreporter.com/news/oscars-hildur-gudnadottir-becomes-first-woman-win-best-original-score-1276317 |url-status=live}}</ref>}} ''[[Honeyland]]'' became the first film to be nominated for both Best International Feature Film and Best Documentary Feature.<ref>{{cite news |last=Rogers |first=John |title=South Korea's 'Parasite' wins international feature Oscar |url=https://www.seattletimes.com/entertainment/south-koreas-parasite-wins-international-feature-oscar/ |access-date=June 16, 2020 |work=[[The Seattle Times]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212519/https://www.seattletimes.com/entertainment/south-koreas-parasite-wins-international-feature-oscar/ |url-status=live}}</ref> [[John Williams]] became the first person to receive Oscar nominations in seven different decades (he was nominated in each decade from the 1960s to the 2020s).<ref name="ERecords"/>
+
+=== Awards ===
+[[File:Bong Joon-ho 2017.jpg|thumb|right|upright=0.68|[[Bong Joon Ho]], Best Picture and Best Original Screenplay co-winner, and Best Director and Best International Feature Film winner]]
+[[File:Joaquin Phoenix in 2018.jpg|thumb|right|upright=0.68|[[Joaquin Phoenix]], Best Actor winner]]
+[[File:Renée Zellweger Berlinale 2010 (cropped).jpg|thumb|right|upright=0.68|[[Renée Zellweger]], Best Actress winner]]
+[[File:Brad Pitt 2019 by Glenn Francis.jpg|thumb|right|upright=0.68|[[Brad Pitt]], Best Supporting Actor winner]]
+[[File:Laura Dern Deauville 2017.jpg|thumb|right|upright=0.68|[[Laura Dern]], Best Supporting Actress winner]]
+[[File:Taika Waititi photo by pouria afkhami (cropped).jpg|thumb|right|upright=0.68|[[Taika Waititi]], Best Adapted Screenplay winner]]
+[[File:Josh Cooley by Gage Skidmore.jpg|thumb|right|upright=0.68|[[Josh Cooley]], Best Animated Feature Film co-winner]]
+[[File:Annecy Festival 2019, screening event Toy Story 4 - Jonas Rivera.jpg|thumb|right|upright=0.68|[[Jonas Rivera]], Best Animated Feature Film co-winner]]
+[[File:Marshall Curry at the 2009 Tribeca Film Festival (cropped).jpg|thumb|right|upright=0.68|[[Marshall Curry]], Best Live Action Short Film winner]]
+[[File:MKr26481 Hildur Guðnadóttir (Tár, Berlinale 2023).jpg|thumb|right|upright=0.68|[[Hildur Guðnadóttir]], Best Original Score winner]]
+[[File:Elton John Cannes 2019.jpg|thumb|right|upright=0.68|[[Elton John]], Best Original Song co-winner]]
+[[File:Bernie Taupin - Gershwin Prize 2024 (20240321SM1181) (cropped).jpg|thumb|right|upright=0.68|[[Bernie Taupin]], Best Original Song co-winner]]
+[[File:RogDeakinsBFI120921 (16 of 17) (51473086144) (cropped).jpg|thumb|right|upright=0.68|[[Roger Deakins]], Best Cinematography winner]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars2020">{{cite news |url=https://www.oscars.org/oscars/ceremonies/2020 |title=The 92nd Academy Awards {{!}} 2020 |access-date=July 13, 2020 |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |archive-date=February 25, 2019 |archive-url=https://web.archive.org/web/20190225030534/https://www.oscars.org/oscars/ceremonies/2020 |url-status=live}}</ref>
+
+{| class=wikitable role="presentation"
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+<!-- Nominated producers per https://oscar.go.com/nominees/best-picture -->
+* '''''[[Parasite (2019 film)|Parasite]]''&nbsp;– [[Kwak Sin-ae|Kwak Sin Ae]] and [[Bong Joon Ho]], producers'''{{double dagger}}
+** ''[[Ford v Ferrari]]''&nbsp;– [[Peter Chernin]], [[Jenno Topping]] and [[James Mangold]], producers
+** ''[[The Irishman]]''&nbsp;– [[Martin Scorsese]], [[Robert De Niro]], [[Jane Rosenthal]] and [[Emma Tillinger Koskoff]], producers
+** ''[[Jojo Rabbit]]''&nbsp;– [[Carthew Neal]], [[Taika Waititi]] and [[Chelsea Winstanley]], producers
+** ''[[Joker (2019 film)|Joker]]''&nbsp;– [[Todd Phillips]], [[Bradley Cooper]] and [[Emma Tillinger Koskoff]], producers
+** ''[[Little Women (2019 film)|Little Women]]''&nbsp;– [[Amy Pascal]], producer
+** ''[[Marriage Story]]''&nbsp;– [[Noah Baumbach]] and [[David Heyman]], producers
+** ''[[1917 (2019 film)|1917]]''&nbsp;– [[Sam Mendes]], [[Pippa Harris]], Jayne-Ann Tenggren and Callum McDougall, producers
+** ''[[Once Upon a Time in Hollywood]]''&nbsp;– [[David Heyman]], [[Shannon McIntosh (filmmaker)|Shannon McIntosh]] and [[Quentin Tarantino]], producers
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Bong Joon Ho]]&nbsp;– ''[[Parasite (2019 film)|Parasite]]'''''{{double dagger}}
+** [[Martin Scorsese]]&nbsp;– ''[[The Irishman]]''
+** [[Todd Phillips]]&nbsp;– ''[[Joker (2019 film)|Joker]]''
+** [[Sam Mendes]]&nbsp;– ''[[1917 (2019 film)|1917]]''
+** [[Quentin Tarantino]]&nbsp;– ''[[Once Upon a Time in Hollywood]]''
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+* '''[[Joaquin Phoenix]]&nbsp;– ''[[Joker (2019 film)|Joker]]'' as [[Joker (character)|Arthur Fleck / Joker]]'''{{double dagger}}
+** [[Antonio Banderas]]&nbsp;– ''[[Pain and Glory]]'' as Salvador Mallo
+** [[Leonardo DiCaprio]]&nbsp;– ''[[Once Upon a Time in Hollywood]]'' as Rick Dalton
+** [[Adam Driver]]&nbsp;– ''[[Marriage Story]]'' as Charlie Barber
+** [[Jonathan Pryce]]&nbsp;– ''[[The Two Popes]]'' as [[Cardinal Jorge Mario Bergoglio]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+* '''[[Renée Zellweger]]&nbsp;– ''[[Judy (film)|Judy]]'' as [[Judy Garland]]'''{{double dagger}}
+** [[Cynthia Erivo]]&nbsp;– ''[[Harriet (film)|Harriet]]'' as [[Harriet Tubman]]
+** [[Scarlett Johansson]]&nbsp;– ''[[Marriage Story]]'' as Nicole Barber
+** [[Saoirse Ronan]]&nbsp;– ''[[Little Women (2019 film)|Little Women]]'' as [[Little Women#Josephine "Jo" March|Josephine "Jo" March]]
+** [[Charlize Theron]]&nbsp;– ''[[Bombshell (2019 film)|Bombshell]]'' as [[Megyn Kelly]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Brad Pitt]]&nbsp;– ''[[Once Upon a Time in Hollywood]]'' as Cliff Booth'''{{double dagger}}
+** [[Tom Hanks]]&nbsp;– ''[[A Beautiful Day in the Neighborhood]]'' as [[Fred Rogers]]
+** [[Anthony Hopkins]]&nbsp;– ''[[The Two Popes]]'' as [[Pope Benedict XVI]]
+** [[Al Pacino]]&nbsp;– ''[[The Irishman]]'' as [[Jimmy Hoffa]]
+** [[Joe Pesci]]&nbsp;– ''The Irishman'' as [[Russell Bufalino]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Laura Dern]]&nbsp;– ''[[Marriage Story]]'' as Nora Fanshaw'''{{double dagger}}
+** [[Kathy Bates]]&nbsp;– ''[[Richard Jewell (film)|Richard Jewell]]'' as Barbara "Bobi" Jewell
+** [[Scarlett Johansson]]&nbsp;– ''[[Jojo Rabbit]]'' as Rosie Betzler
+** [[Florence Pugh]]&nbsp;– ''[[Little Women (2019 film)|Little Women]]'' as [[Amy March]]
+** [[Margot Robbie]]&nbsp;– ''[[Bombshell (2019 film)|Bombshell]]'' as Kayla Pospisil
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Parasite (2019 film)|Parasite]]''&nbsp;– Screenplay by [[Bong Joon Ho]] and [[Han Jin-won|Han Jin Won]]; story by Bong Joon Ho'''{{double dagger}}
+** ''[[Knives Out]]''&nbsp;– [[Rian Johnson]]
+** ''[[Marriage Story]]''&nbsp;– [[Noah Baumbach]]
+** ''[[1917 (2019 film)|1917]]''&nbsp;– [[Sam Mendes]] and [[Krysty Wilson-Cairns]]
+** ''[[Once Upon a Time in Hollywood]]''&nbsp;– [[Quentin Tarantino]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[Jojo Rabbit]]''&nbsp;– [[Taika Waititi]]; {{small|based on the novel ''Caging Skies'' by [[Christine Leunens]]{{double dagger}}}}'''
+** ''[[The Irishman]]''&nbsp;– [[Steven Zaillian]]; {{small|based on the book ''[[I Heard You Paint Houses]]'' by [[Charles Brandt]]}}
+** ''[[Joker (2019 film)|Joker]]''&nbsp;– [[Todd Phillips]] and [[Scott Silver]]; {{small|based on characters created by [[Bill Finger]], [[Bob Kane]] and [[Jerry Robinson]]}}
+** ''[[Little Women (2019 film)|Little Women]]''&nbsp;– [[Greta Gerwig]]; {{small|based on the [[Little Women|novel]] by [[Louisa May Alcott]]}}
+** ''[[The Two Popes]]''&nbsp;– [[Anthony McCarten]]; {{small|based on his play ''The Pope''}}
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Toy Story 4]]''&nbsp;– [[Josh Cooley]], Mark Nielsen and [[Jonas Rivera]]'''{{double dagger}}
+** ''[[How to Train Your Dragon: The Hidden World]]''&nbsp;– [[Dean DeBlois]], [[Brad Lewis|Bradford Lewis]] and [[Bonnie Arnold]]
+** ''[[I Lost My Body]]''&nbsp;– Jérémy Clapin and [[Marc du Pontavice]]
+** ''[[Klaus (film)|Klaus]]''&nbsp;– [[Sergio Pablos]], Jinko Gotoh and Marisa Román
+** ''[[Missing Link (2019 film)|Missing Link]]''&nbsp;– [[Chris Butler (filmmaker)|Chris Butler]], [[Arianne Sutner]] and [[Travis Knight]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best International Feature Film]]}}
+* '''''[[Parasite (2019 film)|Parasite]]'' ([[List of South Korean submissions for the Academy Award for Best International Feature Film|South Korea]]) in [[Korean language|Korean]]&nbsp;– directed by [[Bong Joon Ho]]'''{{double dagger}}
+** ''[[Corpus Christi (2019 film)|Corpus Christi]]'' ([[List of Polish submissions for the Academy Award for Best International Feature Film|Poland]]) in [[Polish language|Polish]]&nbsp;– directed by [[Jan Komasa]]
+** ''[[Honeyland]]'' ([[List of Macedonian submissions for the Academy Award for Best International Feature Film|North Macedonia]]) in [[Turkish language|Turkish]] and [[Macedonian language|Macedonian]]<ref>{{cite news |url=https://www.idfa.nl/en/film/1691a01a-a8ad-4544-bb70-2f2eed700eab/honeyland |title=Honeyland |publisher=[[International Documentary Film Festival Amsterdam]] |access-date=January 13, 2020 |archive-url=https://web.archive.org/web/20200113200514/https://www.idfa.nl/en/film/1691a01a-a8ad-4544-bb70-2f2eed700eab/honeyland |archive-date=January 13, 2020 |url-status=live}}</ref>&nbsp;– directed by [[Tamara Kotevska]] and [[Ljubomir Stefanov]]
+** ''[[Les Misérables (2019 film)|Les Misérables]]'' ([[List of French submissions for the Academy Award for Best International Feature Film|France]]) in [[French language|French]]&nbsp;– directed by [[Ladj Ly]]
+** ''[[Pain and Glory]]'' ([[List of Spanish submissions for the Academy Award for Best International Feature Film|Spain]]) in [[Spanish language|Spanish]]&nbsp;– directed by [[Pedro Almodóvar]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature Film|Best Documentary (Feature)]]}}
+* '''''[[American Factory]]''&nbsp;– [[Steven Bognar]], [[Julia Reichert]] and Jeff Reichert'''{{double dagger}}
+** ''[[The Cave (2019 Syrian film)|The Cave]]''&nbsp;– [[Feras Fayyad]], [[Kirstine Barfod]] and [[Sigrid Dyekjær]]
+** ''[[The Edge of Democracy]]''&nbsp;– [[Petra Costa]], [[Joanna Natasegara]], [[Shane Boris]] and Tiago Pavan
+** ''[[For Sama]]''&nbsp;– [[Waad Al-Kateab]] and [[Edward Watts (director)|Edward Watts]]
+** ''[[Honeyland]]''&nbsp;– [[Ljubomir Stefanov]], [[Tamara Kotevska]] and Atanas Georgiev
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Short Film|Best Documentary (Short Subject)]]}}
+* '''''[[Learning to Skateboard in a Warzone (If You're a Girl)]]''&nbsp;– [[Carol Dysinger]] and [[Elena Andreicheva]]'''{{double dagger}}
+** ''[[In the Absence]]''&nbsp;– Yi Seung-Jun and Gary Byung-Seok Kam
+** ''[[Life Overtakes Me]]''&nbsp;– John Haptas and [[Kristine Samuelson]]
+** ''[[St. Louis Superman]]''&nbsp;– [[Smriti Mundhra]] and [[Sami Khan (filmmaker)|Sami Khan]]
+** ''[[Walk Run Cha-Cha]]''&nbsp;– Laura Nix and Colette Sandstedt
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[The Neighbors' Window]]''&nbsp;– [[Marshall Curry]]'''{{double dagger}}
+** ''[[Brotherhood (2018 film)|Brotherhood]]''&nbsp;– [[Meryam Joobeur]] and [[Maria Gracia Turgeon]]
+** ''[[Nefta Football Club]]''&nbsp;– [[Yves Piat]] and [[Damien Megherbi]]
+** ''Saria''&nbsp;– [[Bryan Buckley]] and Matt Lefebvre
+** ''[[A Sister]]''&nbsp;– [[Delphine Girard]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Hair Love]]''&nbsp;– [[Matthew A. Cherry]] and [[Karen Rupert Toliver]]'''{{double dagger}}
+** ''[[Dcera (Daughter)]]''&nbsp;– [[Daria Kashcheeva]]
+** ''[[Kitbull]]''&nbsp;– [[Rosana Sullivan]] and Kathryn Hendrickson
+** ''[[Mémorable]]''&nbsp;– Bruno Collet and Jean-François Le Corre
+** ''[[Sister (2018 film)|Sister]]''&nbsp;– [[Siqi Song]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Joker (2019 film)|Joker]]''&nbsp;– [[Hildur Guðnadóttir]]'''{{double dagger}}
+** ''[[Little Women (2019 film)|Little Women]]''&nbsp;– [[Alexandre Desplat]]
+** ''[[Marriage Story]]''&nbsp;– [[Randy Newman]]
+** ''[[1917 (2019 film)|1917]]''&nbsp;– [[Thomas Newman]]
+** ''[[Star Wars: The Rise of Skywalker]]''&nbsp;– [[John Williams]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[(I'm Gonna) Love Me Again]]" from ''[[Rocketman (film)|Rocketman]]''&nbsp;– Music by [[Elton John]]; lyrics by [[Bernie Taupin]]'''{{double dagger}}
+** "I Can't Let You Throw Yourself Away" from ''[[Toy Story 4]]''&nbsp;– Music and lyrics by [[Randy Newman]]
+** "I'm Standing with You" from ''[[Breakthrough (2019 film)|Breakthrough]]''&nbsp;– Music and lyrics by [[Diane Warren]]
+** "[[Into the Unknown (song)|Into the Unknown]]" from ''[[Frozen 2]]''&nbsp;– Music and lyrics by [[Kristen Anderson-Lopez]] and [[Robert Lopez]]
+** "[[Stand Up (Cynthia Erivo song)|Stand Up]]" from ''[[Harriet (film)|Harriet]]''&nbsp;– Music and lyrics by Joshuah Brian Campbell and [[Cynthia Erivo]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound Editing]]}}
+* '''''[[Ford v Ferrari]]''&nbsp;– [[Donald Sylvester]]'''{{double dagger}}
+** ''[[Joker (2019 film)|Joker]]''&nbsp;– [[Alan Robert Murray]]
+** ''[[1917 (2019 film)|1917]]''&nbsp;– [[Oliver Tarney]] and [[Rachael Tate]]
+** ''[[Once Upon a Time in Hollywood]]''&nbsp;– [[Wylie Stateman]]
+** ''[[Star Wars: The Rise of Skywalker]]''&nbsp;– [[Matthew Wood (sound editor)|Matthew Wood]] and [[David Acord]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Sound Mixing]]}}
+* '''''[[1917 (2019 film)|1917]]''&nbsp;– [[Mark Taylor (sound engineer)|Mark Taylor]] and [[Stuart Wilson (sound engineer)|Stuart Wilson]]'''{{double dagger}}
+** ''[[Ad Astra (film)|Ad Astra]]''&nbsp;– [[Gary Rydstrom]], [[Tom Johnson (sound engineer)|Tom Johnson]] and [[Mark Ulano]]
+** ''[[Ford v Ferrari]]''&nbsp;– [[Paul Massey (sound engineer)|Paul Massey]], [[David Giammarco (sound engineer)|David Giammarco]] and [[Steven A. Morrow]]
+** ''[[Joker (2019 film)|Joker]]''&nbsp;– [[Tom Ozanich]], [[Dean Zupancic]] and [[Tod Maitland]]
+** ''[[Once Upon a Time in Hollywood]]''&nbsp;– [[Michael Minkler]], [[Christian P. Minkler]] and [[Mark Ulano]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+* '''''[[Once Upon a Time in Hollywood]]''&nbsp;– Production Design: [[Barbara Ling]]; Set Decoration: [[Nancy Haigh]]'''{{double dagger}}
+** ''[[The Irishman]]''&nbsp;– Production Design: [[Bob Shaw (production designer)|Bob Shaw]]; Set Decoration: [[Regina Graves]]
+** ''[[Jojo Rabbit]]''&nbsp;– Production Design: [[Ra Vincent]]; Set Decoration: [[Nora Sopková]]
+** ''[[1917 (2019 film)|1917]]''&nbsp;– Production Design: [[Dennis Gassner]]; Set Decoration: [[Lee Sandales]]
+** ''[[Parasite (2019 film)|Parasite]]''&nbsp;– Production Design: [[Lee Ha-jun|Lee Ha Jun]]; Set Decoration: Cho Won Woo
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[1917 (2019 film)|1917]]''&nbsp;– [[Roger Deakins]]'''{{double dagger}}
+** ''[[The Irishman]]''&nbsp;– [[Rodrigo Prieto]]
+** ''[[Joker (2019 film)|Joker]]''&nbsp;– [[Lawrence Sher]]
+** ''[[The Lighthouse (2019 film)|The Lighthouse]]''&nbsp;– [[Jarin Blaschke]]
+** ''[[Once Upon a Time in Hollywood]]''&nbsp;– [[Robert Richardson (cinematographer)|Robert Richardson]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* '''''[[Bombshell (2019 film)|Bombshell]]''&nbsp;– [[Kazu Hiro]], [[Anne Morgan (make-up artist)|Anne Morgan]] and [[Vivian Baker]]'''{{double dagger}}
+** ''[[Joker (2019 film)|Joker]]''&nbsp;– [[Nicki Ledermann]] and [[Kay Georgiou]]
+** ''[[Judy (film)|Judy]]''&nbsp;– [[Jeremy Woodhead]]
+** ''[[Maleficent: Mistress of Evil]]''&nbsp;– [[Paul Gooch]], [[Arjen Tuiten]] and [[David White (make-up artist)|David White]]
+** ''[[1917 (2019 film)|1917]]''&nbsp;– [[Naomi Donne]], [[Tristan Versluis]] and [[Rebecca Cole (make-up artist)|Rebecca Cole]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Little Women (2019 film)|Little Women]]''&nbsp;– [[Jacqueline Durran]]'''{{double dagger}}
+** ''[[The Irishman]]''&nbsp;– [[Sandy Powell (costume designer)|Sandy Powell]] and [[Christopher Peterson (costume designer)|Christopher Peterson]]
+** ''[[Jojo Rabbit]]''&nbsp;– [[Mayes C. Rubeo]]
+** ''[[Joker (2019 film)|Joker]]''&nbsp;– [[Mark Bridges (costume designer)|Mark Bridges]]
+** ''[[Once Upon a Time in Hollywood]]''&nbsp;– [[Arianne Phillips]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Ford v Ferrari]]''&nbsp;– [[Michael McCusker]] and [[Andrew Buckland (film editor)|Andrew Buckland]]'''{{double dagger}}
+** ''[[The Irishman]]''&nbsp;– [[Thelma Schoonmaker]]
+** ''[[Jojo Rabbit]]''&nbsp;– [[Tom Eagles]]
+** ''[[Joker (2019 film)|Joker]]''&nbsp;– [[Jeff Groth (film editor)|Jeff Groth]]
+** ''[[Parasite (2019 film)|Parasite]]''&nbsp;– [[Yang Jin-mo]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[1917 (2019 film)|1917]]''&nbsp;– [[Guillaume Rocheron]], [[Greg Butler (visual effects supervisor)|Greg Butler]] and [[Dominic Tuohy]]'''{{double dagger}}
+** ''[[Avengers: Endgame]]''&nbsp;– [[Dan DeLeeuw]], [[Russell Earl]], [[Matt Aitken (special effects artist)|Matt Aitken]] and [[Dan Sudick]]
+** ''[[The Irishman]]''&nbsp;– [[Pablo Helman]], [[Leandro Estebecorena]], [[Nelson Sepulveda-Fauser]] and [[Stephane Grabli]]
+** ''[[The Lion King (2019 film)|The Lion King]]''&nbsp;– [[Robert Legato]], [[Adam Valdez]], [[Andrew R. Jones]] and [[Elliot Newman]]
+** ''[[Star Wars: The Rise of Skywalker]]''&nbsp;– [[Roger Guyett]], [[Neal Scanlan]], [[Patrick Tubach]] and [[Dominic Tuohy]]
+|}
+
+=== Governors Awards ===
+The Academy held its 11th annual Governors Awards ceremony on October 27, 2019, during which the following awards were presented:<ref name="Governors">{{cite news |last=Keegan |first=Rebecca |title=Governors Awards: Honorees Lina Wertmüller, Geena Davis Call for Gender Parity in Hollywood |url=https://www.hollywoodreporter.com/news/academy-honors-geena-davis-david-lynch-wes-studi-lina-wertmuller-1250327 |access-date=February 4, 2020 |work=[[The Hollywood Reporter]] |date=October 27, 2019 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212404/https://www.hollywoodreporter.com/news/academy-honors-geena-davis-david-lynch-wes-studi-lina-wertmuller-1250327 |url-status=live}}</ref>
+
+====Honorary Awards====
+* [[David Lynch]] {{en dash}} "For fearlessly breaking boundaries in pursuit of his singular cinematic vision."<ref name="HonoraryandSpecial">{{cite news |title=Academy Awards Acceptance Speech Database |url=http://aaspeechesdb.oscars.org/results.aspx?QY=find%20(year%20term%20ct%202019)&AC=QBE_QUERY&RF=WebReportList&DF=WebReportOscars&MR=0&BU=/index.aspx |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |access-date=February 4, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212419/http://aaspeechesdb.oscars.org/results.aspx?QY=find+%28year+term+ct+2019%29&AC=QBE_QUERY&RF=WebReportList&DF=WebReportOscars&MR=0&BU=%2Findex.aspx |url-status=live}}</ref>
+* [[Wes Studi]] {{en dash}} "In recognition of the power and craft he brings to his indelible film portrayals and for his steadfast support of the Native American community."<ref name="HonoraryandSpecial" />
+* [[Lina Wertmüller]] {{en dash}} "For her provocative disruption of political and social norms delivered with bravery through her weapon of choice: the camera lens."<ref name="HonoraryandSpecial" />
+
+====Jean Hersholt Humanitarian Award====
+* [[Geena Davis]] {{en dash}} For her work fighting for gender-parity in media through her [[Geena Davis Institute on Gender in Media]].<ref>{{cite news |last=Malkin |first=Marc |title=Academy's Governors Awards Puts Spotlight on Gender Parity |url=https://variety.com/2019/film/news/academys-governors-awards-puts-spotlight-on-gender-parity-1203385113/ |access-date=January 19, 2020 |work=[[Variety (magazine)|Variety]] |date=October 27, 2019 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212403/https://variety.com/2019/film/news/academys-governors-awards-puts-spotlight-on-gender-parity-1203385113/ |url-status=live}}</ref>
+
+=== Films with multiple nominations and awards ===
+{{col-begin|width=80%}}
+{{col-1-of-2}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films that received multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 11
+| ''[[Joker (2019 film)|Joker]]''
+|-
+| rowspan="3" scope="row" style="text-align:center"| 10
+| ''[[The Irishman]]''
+|-
+| ''[[1917 (2019 film)|1917]]''
+|-
+| ''[[Once Upon a Time in Hollywood]]''
+|-
+| scope="row" rowspan="4" style="text-align:center;"| 6
+| ''[[Jojo Rabbit]]''
+|-
+| ''[[Little Women (2019 film)|Little Women]]''
+|-
+| ''[[Marriage Story]]''
+|-
+| ''[[Parasite (2019 film)|Parasite]]''
+|-
+| scope="row" style="text-align:center;"| 4
+| ''[[Ford v Ferrari]]''
+|-
+| scope="row" rowspan="3" style="text-align:center;"| 3
+| ''[[Bombshell (2019 film)|Bombshell]]''
+|-
+| ''[[Star Wars: The Rise of Skywalker]]''
+|-
+| ''[[The Two Popes]]''
+|-
+| scope="row" rowspan="5" style="text-align:center;"| 2
+| ''[[Harriet (film)|Harriet]]''
+|-
+| ''[[Honeyland]]''
+|-
+| ''[[Judy (film)|Judy]]''
+|-
+| ''[[Pain and Glory]]''
+|-
+| ''[[Toy Story 4]]''
+|}
+{{col-break}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films that received multiple awards
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 4
+| ''[[Parasite (2019 film)|Parasite]]''
+|-
+| scope="row" style="text-align:center"| 3
+| ''[[1917 (2019 film)|1917]]''
+|-
+| scope="row" style="text-align:center" rowspan="3" | 2
+| ''[[Ford v Ferrari]]''
+|-
+| ''[[Joker (2019 film)|Joker]]''
+|-
+| ''[[Once Upon a Time in Hollywood]]''
+|}
+{{col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>{{cite news |last1=Buckley |first1=Cara |last2=Itzkoff |first2=Dave |last3=Morris |first3=Wesley |title=Oscars 2020: Highlights and Analysis |url=https://www.nytimes.com/interactive/2020/02/09/movies/oscars-academy-awards-live.html |access-date=June 13, 2020 |work=[[The New York Times]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212405/https://www.nytimes.com/interactive/2020/02/09/movies/oscars-academy-awards-live.html |url-status=live}}</ref><ref>{{cite news |last1=Fleming |first1=Mike Jr. |last2=Utechi |first2=Joe |title=Deadline's Oscars Live Blog |url=https://deadline.com/2020/02/oscars-live-blog-2020-1202855078/ |access-date=June 13, 2020 |work=[[Deadline Hollywood]] |date=February 9, 2020 |archive-date=February 13, 2020 |archive-url=https://web.archive.org/web/20200213071631/https://deadline.com/2020/02/oscars-live-blog-2020-1202855078/ |url-status=live}}</ref><ref>{{cite news |last=Bell |first=Diane |title=Column: Oscars role of 'Star Wars' actress fuels fan reaction |url=https://www.sandiegouniontribune.com/columnists/story/2020-02-10/column-star-wars-actress-oscar-role-fuels-fan-reaction |access-date=June 13, 2020 |work=[[The San Diego Union-Tribune]] |date=February 10, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212410/https://www.sandiegouniontribune.com/columnists/story/2020-02-10/column-star-wars-actress-oscar-role-fuels-fan-reaction |url-status=live}}</ref><ref>{{cite magazine |last=Hughes |first=Hillary |title=Cynthia Erivo Soared Through 'Harriet' Song 'Stand Up' at 2020 Oscars: Watch |url=https://www.billboard.com/articles/news/awards/8550533/cynthia-erivo-2020-oscars-performance-stand-up-harriet |access-date=March 4, 2020 |magazine=[[Billboard (magazine)|Billboard]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212404/https://www.billboard.com/articles/news/awards/8550533/cynthia-erivo-2020-oscars-performance-stand-up-harriet |url-status=live}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name !! Role
+|-
+| data-sort-value="Disney, Melissa" | [[Melissa Disney]] || Served as announcer for the 92nd annual Academy Awards
+|-
+| data-sort-value="Martin, Steve" | [[Steve Martin]]<br />[[Chris Rock]] || Performed opening comedy dialogue and introduced presenter [[Regina King]]
+|-
+| data-sort-value="King, Regina" | [[Regina King]] || Presented the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| data-sort-value="Feldstein, Beanie" | [[Beanie Feldstein]] || Introduced presenter [[Mindy Kaling]]
+|-
+| data-sort-value="Kaling, Mindy" | [[Mindy Kaling]] || Presented the awards for [[Academy Award for Best Animated Feature|Best Animated Feature]] and [[Best Animated Short Film]]
+|-
+| data-sort-value="Gad, Josh" | [[Josh Gad]] || Introduced the performance of Best Original Song nominee "[[Into the Unknown (song)|Into the Unknown]]"
+|-
+| data-sort-value="Tran, Kelly Marie" | [[Kelly Marie Tran]] || Introduced presenters [[Diane Keaton]] and [[Keanu Reeves]]
+|-
+| data-sort-value="Keaton, Diane" | [[Diane Keaton]]<br />[[Keanu Reeves]] || Presented the award for [[Best Original Screenplay]]
+|-
+| data-sort-value="Chalamet, Timothée" | [[Timothée Chalamet]]<br />[[Natalie Portman]] || Presented the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| data-sort-value="LaBeouf, Shia" | [[Shia LaBeouf]]<br />[[Zack Gottsagen]] || Presented the award for [[Best Live Action Short Film]]
+|-
+| data-sort-value="Rudolph, Maya" | [[Maya Rudolph]]<br />[[Kristen Wiig]] || Presented the awards for [[Academy Award for Best Production Design|Best Production Design]] and [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| data-sort-value="Ruffalo, Mark" | [[Mark Ruffalo]] || Presented the awards for [[Academy Award for Best Documentary Feature Film|Best Documentary Feature]] and [[Best Documentary Short Subject]]
+|-
+| data-sort-value="Ali, Mahershala" | [[Mahershala Ali]] || Presented the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| data-sort-value="Ramos, Anthony" | [[Anthony Ramos]] || Introduced presenter [[Lin-Manuel Miranda]]
+|-
+| data-sort-value="Miranda, Lin-Manuel" | [[Lin-Manuel Miranda]] || Presented the "Music in Film" montage
+|-
+| data-sort-value="Hayek Pinault, Salma" | [[Salma Hayek Pinault]]<!-- That's how she was introduced on air; don't change. --><br />[[Oscar Isaac]] || Presented the awards for [[Academy Award for Best Sound|Best Sound Editing]] and [[Best Sound Mixing]]
+|-
+| data-sort-value="Ambudkar, Utkarsh" | [[Utkarsh Ambudkar]] || Introduced presenters [[Will Ferrell]] and [[Julia Louis-Dreyfus]]
+|-
+| data-sort-value="Ferrell, Will" | [[Will Ferrell]]<br />[[Julia Louis-Dreyfus]] || Presented the awards for [[Academy Award for Best Cinematography|Best Cinematography]] and [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| data-sort-value="Rubin, David" | [[David Rubin (casting director)|David Rubin]] (AMPAS president) || Introduced presenter Tom Hanks
+|-
+| data-sort-value="Hanks, Tom" | [[Tom Hanks]] || Presented a segment announcing the opening of the [[Academy Museum of Motion Pictures]]
+|-
+| data-sort-value="Beetz, Zazie" | [[Zazie Beetz]] || Introduced the performance of Best Original Song nominee "[[Stand Up (Cynthia Erivo song)|Stand Up]]"
+|-
+| data-sort-value="Corden, James" | [[James Corden]]<br />[[Rebel Wilson]] || Presented the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| data-sort-value="Oh, Sandra" | [[Sandra Oh]]<br />[[Ray Romano]] || Presented the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]
+|-
+| data-sort-value="Cruz, Penélope" | [[Penélope Cruz]] || Presented the award for [[Best International Feature Film]]
+|-
+| data-sort-value="Waititi, Taika" | [[Taika Waititi]] || Introduced presenters [[Gal Gadot]], [[Sigourney Weaver]] and [[Brie Larson]]
+|-
+| data-sort-value="Gadot, Gal" | [[Gal Gadot]]<br />[[Brie Larson]]<br />[[Sigourney Weaver]] || Presented the awards for [[Academy Award for Best Original Score|Best Original Score]] and [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| data-sort-value="Lee, Spike" | [[Spike Lee]] || Presented the award for [[Academy Award for Best Director|Best Director]]
+|-
+| data-sort-value="Spielberg, Steven" | [[Steven Spielberg]] || Presented the "[[#"In Memoriam"|In Memoriam]]" tribute
+|-
+| data-sort-value="MacKay, George" | [[George MacKay (actor)|George MacKay]] || Introduced presenter [[Olivia Colman]]
+|-
+| data-sort-value="Colman, Olivia" | [[Olivia Colman]] || Presented the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| data-sort-value="Malek, Rami" | [[Rami Malek]] || Presented the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| data-sort-value="Fonda, Jane" | [[Jane Fonda]] || Presented the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+!Name(s)
+!Role
+!Performed
+|-
+| [[Rickey Minor]] || Musical director<br />Conductor || Orchestral
+|-
+| data-sort-value="Monáe, Janelle" | [[Janelle Monáe]]<br />[[Billy Porter]] || Performers || "[[Mister Rogers' Neighborhood|Won't You Be My Neighbor?]]"<br />"[[Come Alive (The War of the Roses)]]"<br />"[[I'm Still Standing]]"
+|-
+| data-sort-value="Menzel, Idina" | [[Idina Menzel]]<br />[[Aurora (singer)|Aurora]]<br />[[Maria Lucia Heiberg Rosenberg]]<br />[[Willemijn Verkaik]]<br />[[Takako Matsu]]<br />[[Carmen Sarahí|Carmen García Sáenz]]<br />[[Lisa Stokke]]<br />[[Kasia Łaska]]<br />Anna Buturlina<br />[[Gisela (singer)|Gisela]]<br />[[Gam Wichayanee]] || Performers|| "[[Into the Unknown (song)|Into the Unknown]]" from ''[[Frozen 2]]''
+|-
+| data-sort-value="Metz, Chrissy" | [[Chrissy Metz]] || Performer || "I'm Standing with You" from ''[[Breakthrough (2019 film)|Breakthrough]]''
+|-
+| [[Eminem]] || Performer || "[[Lose Yourself]]" as part of the "Music in Film" tribute
+|-
+| data-sort-value="Newman, Randy" | [[Randy Newman]] || Performer ||"I Can't Let You Throw Yourself Away" from ''[[Toy Story 4]]''
+|-
+| data-sort-value="Ambudkar, Utkarsh" | [[Utkarsh Ambudkar]] || Performer ||"Oscars Recap Rap"
+|-
+| data-sort-value="Erivo, Cynthia" | [[Cynthia Erivo]] || Performer || "[[Stand Up (Cynthia Erivo song)|Stand Up]]" from ''[[Harriet (film)|Harriet]]''
+|-
+| data-sort-value="John, Elton" | [[Elton John]] || Performer || "[[(I'm Gonna) Love Me Again]]" from ''[[Rocketman (film)|Rocketman]]''
+|-
+| data-sort-value="Noone, Eímear" | [[Eímear Noone]] || Conductor || Conducted orchestra during performance of selections of Best Original Score nominees
+|-
+| data-sort-value="Eilish, Billie" | [[Billie Eilish]]<br />[[Finneas O'Connell]] || Performers || "[[Yesterday (song)|Yesterday]]" during the annual "In Memoriam" tribute
+|}
+
+== Ceremony ==
+Originally in April 2017, the Academy had scheduled the 92nd ceremony for February 23, 2020.<ref>{{cite news |last=Hipes |first=Patrick |title=Oscars Dates Set For 2018 And Beyond |url=https://deadline.com/2017/04/oscars-2018-airdate-abc-academy-awards-dates-1202061171/ |access-date=June 22, 2020 |work=[[Deadline Hollywood]] |date=April 4, 2017 |archive-date=April 5, 2017 |archive-url=https://web.archive.org/web/20170405053317/https://deadline.com/2017/04/oscars-2018-airdate-abc-academy-awards-dates-1202061171/ |url-status=live}}</ref> However, due to record low television viewership and ratings attained by recent Oscar broadcasts, the AMPAS Board of Governors decided to move the date for the 2020 gala by two weeks to February 9 in hopes of combating [[film awards season]] fatigue.<ref>{{cite news |last=Feinberg |first=Scott |title=Oscars Won't Televise All Awards Live, Adds "Popular" Film Category |url=https://www.hollywoodreporter.com/race/academy-plans-three-hour-oscars-telecast-adds-popular-film-category-1133138 |access-date=January 19, 2020 |work=[[The Hollywood Reporter]] |date=August 8, 2018 |archive-date=November 3, 2016 |archive-url=https://web.archive.org/web/20161103125108/https://www.hollywoodreporter.com/race/academy-plans-three-hour-oscars-telecast-adds-popular-film-category-1133138 |url-status=live}}</ref> This marked the earliest date on which the ceremony has been held.<ref>{{cite news |last=Pond |first=Steve |title=Academy Adds 'Popular Film' Award, Vows to Shorten Oscars |url=https://www.thewrap.com/academy-adds-popular-film-award-vows-shorten-oscars/ |access-date=February 4, 2020 |work=[[TheWrap]] |date=August 8, 2018 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212404/https://www.thewrap.com/academy-adds-popular-film-award-vows-shorten-oscars/ |url-status=live}}</ref> In November 2019, the Academy announced that the show would be produced by [[Stephanie Allain]] and [[Lynette Howell Taylor]].<ref name="Producers">{{cite news |last1=Kilkenny |first1=Katie |last2=Feinberg |first2=Scott |title=Lynette Howell Taylor and Stephanie Allain Tapped to Produce 92nd Oscars |url=https://www.hollywoodreporter.com/news/lynette-howell-taylor-stephanie-allain-tapped-produce-92nd-oscars-1255310 |access-date=December 27, 2019 |work=[[The Hollywood Reporter]] |date=November 15, 2019 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212345/https://www.hollywoodreporter.com/news/lynette-howell-taylor-stephanie-allain-tapped-produce-92nd-oscars-1255310 |url-status=live}}</ref> In January 2020, [[Glenn Weiss]] was announced as the director for the fifth year in a row.<ref name="Weiss">{{cite news |last=Feinberg |first=Scott |title=Glenn Weiss to Return as Director of Oscars Telecast |url=https://www.hollywoodreporter.com/race/glenn-weiss-return-as-director-oscars-telecast-1267610 |access-date=January 19, 2020 |work=[[The Hollywood Reporter]] |date=January 7, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212355/https://www.hollywoodreporter.com/race/glenn-weiss-return-as-director-oscars-telecast-1267610 |url-status=live}}</ref> Furthermore, in light of the recent success of [[91st Academy Awards|last year's hostless ceremony]] that resulted in an improvement in ratings, ABC entertainment president Karey Burke announced in January 2020 that the event would proceed without a host for the second consecutive year. Burke stated the ceremony would feature "huge entertainment values, big musical numbers, comedy, and star power".<ref>{{cite news |url=https://deadline.com/2020/01/the-oscar-telecast-2020-no-ho-abcst-second-straight-year-tca-1202824503/ |title=The Oscar Telecast Won't Have Traditional Host For Second Straight Year – TCA |last=Andreeva |first=Nellie |date=January 8, 2020 |work=[[Deadline Hollywood]] |access-date=January 11, 2020 |archive-url=https://web.archive.org/web/20200111064025/https://deadline.com/2020/01/the-oscar-telecast-2020-no-ho-abcst-second-straight-year-tca-1202824503/ |archive-date=January 11, 2020 |url-status=live}}</ref>
+
+Several other people participated in the production of the ceremony. Production designer Jason Sherwood designed an ambitiously technological stage design for the ceremony which prominently featured a sculptural shell that protruded toward the audience and 1,100 [[Swarovski]] crystals. Furthermore, the stage itself was used to display movie clips and nominations graphics packages instead of projecting those images onto a regular rectangular screen.<ref>{{cite news |last=Pener |first=Degen |title=Oscars 2020: The Academy Awards' New Set and Green Room Revealed |url=https://www.hollywoodreporter.com/news/oscars-2020-academy-awards-new-set-green-room-revealed-1276600 |access-date=June 15, 2020 |date=February 5, 2020 |work=[[The Hollywood Reporter]] |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212404/https://www.hollywoodreporter.com/news/oscars-2020-academy-awards-new-set-green-room-revealed-1276600 |url-status=live}}</ref> [[Rickey Minor]] served as musical director and conductor for the ceremony.<ref>{{cite news |last=Pedersen |first=Erik |title=Oscars: Academy Adds Writers, Producers & Crew To Telecast's Production Team |url=https://deadline.com/2020/01/oscars-2020-telecast-production-team-announced-1202826999/ |access-date=June 16, 2020 |work=[[Deadline Hollywood]] |date=January 10, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212405/https://deadline.com/2020/01/oscars-2020-telecast-production-team-announced-1202826999/ |url-status=live}}</ref> Musician [[Questlove]] served as an in-house DJ during the gala.<ref>{{cite news |last=Fienberg |first=Daniel |title=92nd Academy Awards Telecast: TV Review |url=https://www.hollywoodreporter.com/review/92nd-academy-awards-review-1278332 |access-date=March 4, 2020 |work=[[The Hollywood Reporter]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212407/https://www.hollywoodreporter.com/review/92nd-academy-awards-review-1278332 |url-status=live}}</ref> Rapper [[Eminem]] made a surprise appearance during the ceremony to perform his Oscar-winning song "[[Lose Yourself]]" from the 2002 film ''[[8 Mile (film)|8 Mile]]'' after being absent from the [[75th Academy Awards|75th ceremony]] in 2003 to perform the song.<ref>{{cite news |last=Yasharoff |first=Hannah |title=Eminem explains how he pulled off his surprise 'Lose Yourself' performance at the Oscars |url=https://www.usatoday.com/story/entertainment/movies/oscars/2020/02/11/oscars-2020-eminem-explains-how-he-pulled-off-surprise-performance/4721480002/ |access-date=June 19, 2020 |work=[[USA Today]] |date=February 11, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212417/https://www.usatoday.com/story/entertainment/movies/oscars/2020/02/11/oscars-2020-eminem-explains-how-he-pulled-off-surprise-performance/4721480002/ |url-status=live}}</ref> During the performance of "[[Into the Unknown (song)|Into the Unknown]]", several foreign language excerpts were sung by the actresses who performed it in local versions.<ref>{{cite news |last=Weatherby |first=Taylor |title=Watch Idina Menzel Sing 'Into the Unknown' With Nine Other Elsas at 2020 Oscars |url=https://www.billboard.com/music/awards/idina-menzel-performs-into-the-unknown-2020-oscars-8550530/ |access-date=August 16, 2016 |work=[[Billboard (magazine)|Billboard]] |date=February 9, 2020 |archive-date=December 5, 2021 |archive-url=https://web.archive.org/web/20211205140008/https://www.billboard.com/music/awards/idina-menzel-performs-into-the-unknown-2020-oscars-8550530/ |url-status=live}}</ref> During the performance of excerpts from the Best Original Score nominees, [[Eímear Noone]] became the first woman to conduct the orchestra during an Oscar ceremony.<ref>{{cite news |last=Crist |first=Allison |title=Oscars: Women Make History With Score Win, Composing Gig |url=https://www.hollywoodreporter.com/news/oscars-women-make-history-score-win-composing-gig-1271002 |access-date=June 19, 2020 |work=[[The Hollywood Reporter]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212406/https://www.hollywoodreporter.com/news/oscars-women-make-history-score-win-composing-gig-1271002 |url-status=live}}</ref>
+
+===Category renaming and rule changes===
+During its board of directors meeting in April 2019, the Academy voted to rename the Best Foreign Language Film category to [[Best International Feature Film]]. In a press release justifying the name change, International Feature Film Committee co-chairs [[Larry Karaszewski]] and [[Diane Weyermann]] stated, "We have noted that the reference to 'foreign' is outdated within the global filmmaking community. We believe that international feature film better represents this category, and promotes a positive and inclusive view of filmmaking, and the art of film as a universal experience."<ref>{{cite news |url=https://variety.com/2019/film/news/netflix-can-chill-academy-rules-no-change-in-streaming-oscar-eligibility-1203196351/ |title=Netflix Can Chill: Academy Rules No Change in Streaming Oscar Eligibility |last=Donnelly |first=Matt |date=April 24, 2019 |work=[[Variety (magazine)|Variety]] |access-date=April 24, 2019 |archive-url=https://web.archive.org/web/20190424070202/https://variety.com/2019/film/news/netflix-can-chill-academy-rules-no-change-in-streaming-oscar-eligibility-1203196351/ |archive-date=April 24, 2019 |url-status=live}}</ref><ref name="HRNetflix">{{cite news |last=Feinberg |first=Scott |title=Academy Board Does Not Pass New Rule Targeting Netflix |url=https://www.hollywoodreporter.com/race/academy-board-does-not-pass-new-rule-targeting-netflix-1204295 |access-date=February 4, 2020 |work=[[The Hollywood Reporter]] |date=April 23, 2019 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212418/https://www.hollywoodreporter.com/race/academy-board-does-not-pass-new-rule-targeting-netflix-1204295 |url-status=live}}</ref> However, the requirement for nominees to have the majority of their dialogue be in a language other than [[English language|English]] remained in force.<ref>{{cite news |last=Tartaglione |first=Nancy |title=Oscars: International Feature Film Exec Committee's Larry Karaszewski Clarifies Nigeria's 'Lionheart' Disqualification |url=https://deadline.com/2019/11/oscars-nigeria-lionheart-academy-response-international-feature-film-category-disqualification-1202778347/ |access-date=January 19, 2020 |work=[[Deadline Hollywood]] |date=November 5, 2019 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212435/https://deadline.com/2019/11/oscars-nigeria-lionheart-academy-response-international-feature-film-category-disqualification-1202778347/ |url-status=live}}</ref>
+
+Rule changes were also approved by the AMPAS Board of Directors. The category of [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]] was expanded from a roster consisting of three nominees to five nominees, with the pre-nominations shortlist also expanded from seven films to ten. In addition, the Academy voted to drop the requirement of eight theatrically-released animated feature films in a calendar year in order for the category of [[Academy Award for Best Animated Feature|Best Animated Feature]] to be activated, and nominations voting in that category would be open to all active Short Films and Animation Branch members. Finally, prospective nominees for [[Best Animated Short Film]] and [[Best Live Action Short Film]] could now premiere theatrically in either [[Los Angeles County]] or [[New York City]] in order to be eligible for consideration.<ref name="HRNetflix"/>
+
+===Box office performance of Best Picture nominees===
+When the nominations were announced, seven of the nine films nominated for Best Picture had earned a combined gross of $747.2&nbsp;million at the American and Canadian box offices at the time.<ref>{{cite news |last=Whitten |first=Sarah |title=Best picture nominees for the 2020 Oscars brought in more than $700 million at the US box office |url=https://www.cnbc.com/2020/01/14/best-picture-nominees-at-2020-oscars-rang-up-more-than-700-million.html |access-date=June 22, 2020 |agency=[[CNBC]] |date=January 14, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212457/https://www.cnbc.com/2020/01/14/best-picture-nominees-at-2020-oscars-rang-up-more-than-700-million.html |url-status=live}}</ref> ''Joker'' was the highest-grossing film among the Best Picture nominees with $334&nbsp;million in domestic box office receipts. ''Once Upon a Time in Hollywood'' came in second with $141.1&nbsp;million; this was followed by ''Ford v. Ferrari'' ($111&nbsp;million), ''Little Women'' ($74&nbsp;million), ''1917'' ($39.2&nbsp;million), ''Parasite'' ($25.4&nbsp;million), and ''Jojo Rabbit'' ($22&nbsp;million).<ref>{{cite magazine |last=Canfield |first=David |title=Joker, Parasite are box office winners among Best Picture nominees |url=https://ew.com/oscars/2020/01/13/joker-parasite-oscar-box-office/ |access-date=February 4, 2020 |magazine=[[Entertainment Weekly]] |date=January 13, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212409/https://ew.com/oscars/2020/01/13/joker-parasite-oscar-box-office/ |url-status=live}}</ref> Box office grosses for ''The Irishman'' and ''Marriage Story'' were unavailable due to their distributor [[Netflix]]'s policy of refusing to release such figures.<ref>{{cite news |last=McClintock |first=Pamela |title=Oscars 2020: Best Picture Nominees Are No Box Office Slouches |url=https://www.hollywoodreporter.com/news/oscars-2020-best-picture-nominees-are-no-box-office-slouches-1269177 |access-date=February 4, 2020 |work=[[The Hollywood Reporter]] |date=January 13, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212422/https://www.hollywoodreporter.com/news/oscars-2020-best-picture-nominees-are-no-box-office-slouches-1269177 |url-status=live}}</ref>
+
+===Critical reviews===
+The show received a mixed reception from media publications. Some media outlets received the broadcast positively. Television critic [[James Poniewozik]] of ''[[The New York Times]]'' wrote, "The ceremony was most effective when it simply got out of the way of its stars' shine." He added, "At its absolute best, this Oscars succeeded with what you can't script: great artists being recognized, and recognizing others."<ref>{{cite news |last=Poniewozik |first=James |author-link=James Poniewozik |title=A Driverless Oscars Takes a Winding Road |url=https://www.nytimes.com/2020/02/09/arts/television/oscars-academy-awards-review.html |url-access=subscription |access-date=April 30, 2020 |work=[[The New York Times]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212438/https://www.nytimes.com/2020/02/09/arts/television/oscars-academy-awards-review.html |url-status=live}}</ref> Matthew Gilbert from ''[[The Boston Globe]]'' commented, "Sometimes, a few good moments are enough to get you there. And there were a few good ones throughout the Oscarcast Sunday night, which, like every Oscarcast ever, hosted or host-free, predictable or filled with surprises, jubilant or downbeat, was longer than it needed to be."<ref>{{cite news |last=Gilbert |first=Matthew |title=An Oscars with just enough winning moments |url=https://www.bostonglobe.com/2020/02/10/arts/non-hosts-steve-martin-chris-rock-show-oscars-how-its-done/ |url-access=subscription |access-date=March 4, 2020 |work=[[The Boston Globe]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212410/https://www.bostonglobe.com/2020/02/10/arts/non-hosts-steve-martin-chris-rock-show-oscars-how-its-done/ |url-status=live}}</ref> ''[[Entertainment Weekly]]'' columnist Darren Franlch remarked, "The 2020 Oscars were a bit of a shambles, and we can definitely lose all the introducers next year. But the last hour had the quality of a well-deserved coronation. Four wins for ''Parasite''? I was so happy that I lost myself."<ref>{{cite magazine |last=Franlch |first=Darren |title=A scattershot Oscars had some pleasant surprises: Review |url=https://ew.com/oscars/2020/02/10/oscars-2020-review/ |access-date=March 26, 2020 |magazine=[[Entertainment Weekly]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212414/https://ew.com/oscars/2020/02/10/oscars-2020-review/ |url-status=live}}</ref>
+
+Others were more critical of the show. Columnist Kristin Turnquist of ''[[The Oregonian]]'' quipped, "If the 2020 Oscars broadcast was competing for a 'Most Confusing Mess of an Awards Show' trophy, it really hit the mark. But that's the best that can be said for the 92nd Annual Academy Awards, which, despite a few surprises, was mostly predictable and seemed to go on forever."<ref>{{cite news |last=Turnquist |first=Kristi |title=Oscars 2020 show: A few surprises can't save a mostly predictable, overlong snooze (review) |url=https://www.oregonlive.com/entertainment/2020/02/oscars-2020-show-a-few-surprises-cant-save-a-mostly-predictable-overlong-snooze-review.html |access-date=February 26, 2020 |work=[[The Oregonian]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212411/https://www.oregonlive.com/entertainment/2020/02/oscars-2020-show-a-few-surprises-cant-save-a-mostly-predictable-overlong-snooze-review.html |url-status=live}}</ref> Television critic [[Lorraine Ali]] from the ''[[Los Angeles Times]]'' wrote, "This year's Oscars ceremony showed an art form in dire need of a relevancy check. Instead we got the biggest rap act of 2002 and a whole lot of jokes about the industry's inability to see its own stasis."<ref>{{cite news |last=Ali |first=Lorraine |author-link=Lorraine Ali |title=Review: The Oscars ceremony fights its own irrelevance — by drawing attention to it |url=https://www.latimes.com/entertainment-arts/tv/story/2020-02-09/oscars-2020-ceremony-eminem-janelle-monae |access-date=March 13, 2020 |work=[[Los Angeles Times]] |date=February 9, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212424/https://www.latimes.com/entertainment-arts/tv/story/2020-02-09/oscars-2020-ceremony-eminem-janelle-monae |url-status=live}}</ref> Entertainment editor Bruce Miller of the ''[[Sioux City Journal]]'' noted, "Because it lacked focus (a host was needed), this year's Academy Awards rambled as much as Zellweger and Phoenix. Someone like Jimmy Kimmel or Ellen DeGeneres could have prevented some of the train wrecks and made more of its wins.<ref>{{cite news |last=Miller |first=Bruce |title=Oscars Review: 'Parasite' makes history; actors ramble |url=https://siouxcityjournal.com/entertainment/movies/review-parasite-makes-oscar-history-actors-ramble/article_23160dd0-d80d-5a7c-a130-e54a96e65743.html |access-date=March 4, 2020 |work=[[Sioux City Journal]] |date=February 9, 2020
+|archive-url=https://web.archive.org/web/20200630011309/https://siouxcityjournal.com/entertainment/movies/review-parasite-makes-oscar-history-actors-ramble/article_23160dd0-d80d-5a7c-a130-e54a96e65743.html |archive-date=June 30, 2020}}</ref>
+
+=== Ratings and reception ===
+The American telecast on ABC drew in an average of 23.64&nbsp;million people over its length, which was a 20% decrease from the previous year's ceremony.<ref name="2019-20 ratings" /><ref name="THR Oscar Ratings">{{cite news |last=Porter |first=Ricky |title=TV Ratings: Oscars Fall to All-Time Lows |url=https://www.hollywoodreporter.com/live-feed/oscars-hit-all-time-low-tv-ratings-sunday-feb-9-2020-1278364 |access-date=March 26, 2020 |work=[[The Hollywood Reporter]] |date=February 10, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212416/https://www.hollywoodreporter.com/live-feed/oscars-hit-all-time-low-tv-ratings-sunday-feb-9-2020-1278364 |url-status=live}}</ref> The show also earned lower [[Nielsen ratings]] compared to the previous ceremony with 13.6% of households watching the ceremony.<ref name="TVB" /> In addition, it garnered a lower rating among viewers between ages 18-49 with a 5.3 rating among viewers in that demographic.<ref>{{cite news |last=Barney |first=Chuck |title=Oscars TV ratings: How many people didn't watch the show |url=https://www.mercurynews.com/2020/02/10/oscars-tv-ratings-how-many-people-didnt-watch-the-show/ |access-date=March 26, 2020 |work=[[The Mercury News]] |date=February 10, 2010 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212419/https://www.mercurynews.com/2020/02/10/oscars-tv-ratings-how-many-people-didnt-watch-the-show/ |url-status=live}}</ref> Furthermore, some media outlets pointed out that the [[62nd Grammy Awards]] that were broadcast on [[CBS]] two weeks earlier earned a higher 18-49 demographic rating with a 5.4 figure.<ref name="THR Oscar Ratings" /><ref>{{cite news |last=Maglio |first=Tony |title=Oscars Lose 6 Million Viewers From Last Year, Set New All-Time Lows in Ratings |url=https://www.thewrap.com/oscars-all-time-low-ratings-audience-viewers/ |access-date=June 29, 2020 |work=[[TheWrap]] |date=February 10, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212424/https://www.thewrap.com/oscars-all-time-low-ratings-audience-viewers/ |url-status=live}}</ref> It earned the lowest viewership for an Academy Award telecast since figures were compiled beginning with the [[46th Academy Awards|46th ceremony]] in 1974.<ref name="Bloomberg">{{cite news |last=Golum |first=Rob |title=Oscars Draw Record Low Audience With 23.6 Million Viewers |url=https://www.bloomberg.com/news/articles/2020-02-10/oscars-draw-lowest-audience-on-record-with-23-6-million-viewers |access-date=March 4, 2020 |work=[[Bloomberg Businessweek]] |date=February 10, 2020 |archive-url=https://web.archive.org/web/20200624030249/https://www.bloomberg.com/news/articles/2020-02-10/oscars-draw-lowest-audience-on-record-with-23-6-million-viewers |archive-date=June 24, 2020 |url-status=live}}</ref> However, it was the tenth most watched telecast in the United States in 2020, behind only sport events and ''[[The Masked Singer (American TV series)|The Masked Singer]]'' [[The Masked Singer (American TV series) season 3|season 3]] premiere.<ref>{{cite news |last=Andreeva |first=Nellie |title=Football, 'Yellowstone' & 'This Is Us' Top Lists Of Most Watched & Time-Shifted Linear TV Programs In 2020 |url=https://deadline.com/2020/12/football-yellowstone-this-is-us-top-10-lists-most-watched-time-shifted-linear-tv-programs-2020-1234655403/ |access-date=August 16, 2026 |work=[[Deadline Hollywood]] |date=December 14, 2020 |archive-url=https://web.archive.org/web/20201214130136/https://deadline.com/2020/12/football-yellowstone-this-is-us-top-10-lists-most-watched-time-shifted-linear-tv-programs-2020-1234655403/ |archive-date=December 14, 2020 |url-status=live}}</ref>
+
+In July 2020, the show received nine nominations at the [[72nd Primetime Creative Arts Emmy Awards|72nd Primetime Creative Arts Emmys]].<ref>{{cite news |title=Emmys 2020: Nominations Scorecard by Program, Platform and Studio |url=https://variety.com/2020/tv/awards/emmys-2020-nominations-scorecard-program-tv-platform-1234718284/ |work=[[Variety (magazine)|Variety]] |access-date=September 17, 2020 |date=July 28, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212455/https://variety.com/2020/tv/awards/emmys-2020-nominations-scorecard-program-tv-platform-1234718284/ |url-status=live}}</ref> Two months later, the ceremony won two of those nominations for [[Primetime Emmy Award for Outstanding Production Design for a Variety Special|Outstanding Production Design for a Variety Special]] (Jason Sherwood and Alana Billingsley) and [[Primetime Emmy Award for Outstanding Sound Mixing for a Variety Series or Special|Outstanding Sound Mixing for a Variety Series or Special]] (Paul Sandweiss, [[Tommy Vicari]], Biff Dawes, Pablo Munguia, Kristian Pedregon, Patrick Baltzell, Michael Parker, [[Christian Schrader]], John Perez, Marc Repp, and Thomas Pesa).<ref>{{cite news |last=Otterson |first=Joe |title=Creative Arts Emmys Night 2: 'Last Week Tonight,' 'SNL' Pick Up Wins (Full Winners List) |url=https://variety.com/2020/tv/news/creative-arts-emmys-night-2-winners-list-1234771376/ |access-date=September 17, 2020 |work=[[Variety (magazine)|Variety]] |date=September 15, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212512/https://variety.com/2020/tv/news/creative-arts-emmys-night-2-winners-list-1234771376/ |url-status=live}}</ref>
+
+=="In Memoriam"==
+The annual "In Memoriam" segment was presented by [[Steven Spielberg]]. Singers [[Billie Eilish]] and [[Finneas O'Connell]] performed [[the Beatles]] song "[[Yesterday (song)|Yesterday]]" during the tribute.<ref>{{cite news |url=https://variety.com/2020/film/news/billie-eilish-oscars-academy-awards-beatles-yesterday-1203497650/ |title=Watch Billie Eilish Perform the Beatles' 'Yesterday' at the Oscars |first=Jem |last=Aswad |date=February 9, 2020 |access-date=February 9, 2020 |work=[[Variety (magazine)|Variety]] |archive-date=February 10, 2020 |archive-url=https://web.archive.org/web/20200210141349/https://variety.com/2020/film/news/billie-eilish-oscars-academy-awards-beatles-yesterday-1203497650/ |url-status=live}}</ref><ref>{{cite news |last=MacDonald |first=Lindsay |title=The Academy Explains Why Luke Perry and Cameron Boyce Weren't Included in Oscars In Memoriam |url=https://www.tvguide.com/news/oscars-2020-luke-perry-left-out-of-in-memoriam-once-upon-a-time-in-hollywood/ |access-date=June 19, 2020 |publisher=[[TV Guide]] |date=February 11, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212430/https://www.tvguide.com/news/oscars-2020-luke-perry-left-out-of-in-memoriam-once-upon-a-time-in-hollywood/ |url-status=live}}</ref>
+
+{{div col|colwidth=22em}}
+
+* [[Kobe Bryant]] – athlete, producer
+* [[Rip Torn]] – actor
+* [[Barbara Hammer]] – filmmaker
+* Patricia Blau – visual effects
+* Bernie Pollack – costume designer
+* [[Steve Golin]] – producer, executive
+* [[Paul LeBlanc (hairstylist)|Paul LeBlanc]] – hairstylist
+* [[John Briley]] – writer
+* [[Diahann Carroll]] – actress, singer
+* [[Terry Jones]] – writer, director, actor
+* [[Catherine Burns]] – actress
+* [[Agnès Varda]] – director, writer
+* [[Wayne Fitzgerald]] – title designer
+* [[David Foster (film producer)|David Foster]] – producer
+* [[Danny Aiello]] – actor
+* [[Buck Henry]] – writer, actor, director
+* [[Stanley Donen]] – director, choreographer
+* [[David V. Picker]] – producer, executive
+* [[Barry Malkin]] – film editor
+* [[Robert Forster]] – actor
+* [[Robert Evans]] – producer, executive, actor
+* [[Richard Williams (animator)|Richard Williams]] – animator
+* [[Machiko Kyō]] – actress
+* [[James R. Alexander]] – sound mixer
+* [[Anna Karina]] – actress
+* [[D. A. Pennebaker]] – documentarian
+* [[Leonard Goldberg]] – producer, executive
+* [[Fernando Luján]] – actor
+* [[André Previn]] – composer, conductor
+* [[Peter Mayhew]] – actor
+* [[Sylvia Miles]] – actress
+* [[William J. Creber]] – production designer
+* [[Godfrey Gao]] – actor
+* [[Bibi Andersson]] – actress
+* [[Michael Lynne]] – executive, producer
+* [[Gene Warren Jr.]] – special effects, visual effects
+* [[Alvin Sargent]] – writer
+* [[Doris Day]] – actress
+* [[Anna Udvardy]] – producer
+* [[Sid Ramin]] – composer, arranger
+* Michelle Guish – casting director
+* [[Sidney Sheinberg]] – executive, producer
+* [[Ben Barenholtz]] – distributor, executive, producer
+* [[Joss Williams]] – special effects
+* [[Piero Tosi]] – costume designer
+* Kenneth Walker – hairstylist
+* [[Rutger Hauer]] – actor
+* [[Syd Mead]] – designer, concept artist
+* [[Harriet Frank Jr.]] – writer
+* [[Franco Zeffirelli]] – director
+* [[John Witherspoon (actor)|John Witherspoon]] – actor
+* Bernard Chevry – producer
+* [[Seymour Cassel]] – actor
+* [[Peter Fonda]] – actor, director, writer
+* [[Branko Lustig]] – producer
+* Gerry Smith – marketing executive
+* [[John Singleton]] – director, writer, producer
+* [[Kirk Douglas]] – actor, producer
+
+{{div col end}}
+
+== See also ==
+{{Portal|Film}}
+* [[Autograph suit of Sandy Powell]]
+* [[List of submissions to the 92nd Academy Awards for Best International Feature Film]]
+* [[List of most watched United States television broadcasts of 2020]]
+
+== Notes ==
+{{notelist}}
+
+== References ==
+{{Reflist}}
+
+== External links ==
+
+===Official websites===
+* {{Official website|https://oscar.go.com/|Academy Awards official website}}
+* {{Official website|https://www.oscars.org/|The Academy of Motion Picture Arts and Sciences official website}}
+* [https://www.youtube.com/user/Oscars Oscars Channel] {{Webarchive|url=https://web.archive.org/web/20190226082028/https://www.youtube.com/user/Oscars |date=February 26, 2019 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+===News resources===
+* [https://www.bbc.com/news/topics/ceq40e9pmywt/the-oscars Oscars 2020] {{Webarchive|url=https://web.archive.org/web/20190215051851/https://www.bbc.com/news/topics/ceq40e9pmywt/the-oscars |date=February 15, 2019 }} at [[BBC News]]
+* [https://www.theguardian.com/film/oscars-2020 Oscars 2020] at ''[[The Guardian]]''
+
+'''Other resources'''
+* {{IMDb title||The Oscars (2020)}}
+
+{{Academy Awards}}
+{{featured list}}
+
+{{DEFAULTSORT:Academy Awards, 92}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2019 film awards]]
+[[Category:2020 in Los Angeles]]
+[[Category:2020 awards in the United States]]
+[[Category:Television shows directed by Glenn Weiss]]
+[[Category:February 2020 in the United States]]

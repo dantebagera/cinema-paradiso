@@ -1,0 +1,642 @@
+{{Oscars short description|films-year=2016}}
+{{Featured list}}
+{{Use American English|date=June 2023}}
+{{Use mdy dates |date=February 2017}}
+{{Infobox film awards
+| number           = 89
+| award            = Academy Awards
+| image            = 2017 Oscars poster.jpg
+| caption          = Official poster
+| date             = February 26, 2017
+| site             = [[Dolby Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], California, U.S.
+| host             = [[Jimmy Kimmel]]
+| preshow          = {{plain list|
+* Jess Cagle
+* [[Robin Roberts (newscaster)|Robin Roberts]]
+* [[Lara Spencer]]
+* [[Michael Strahan]]
+* [[Nina García]]
+* Krista Smith<ref>{{cite web |title=Go Behind the Scenes of the Oscars' Red Carpet with PEOPLE's Jess Cagle |url=https://people.com/awards/oscars-2017-jess-cagle-red-carpet-behind-scenes/ |magazine=[[People (magazine)|People]] |first=Maria Mercedes |last=Lara |date=February 25, 2017 |access-date=August 8, 2026 |url-status=live |archive-url=https://web.archive.org/web/20170226034129/http://people.com/awards/oscars-2017-jess-cagle-red-carpet-behind-scenes/ |archive-date=February 26, 2017}}</ref>
+}}
+| director         = [[Glenn Weiss]]
+| producer         = {{plainlist|
+* [[Michael De Luca]]
+* [[Jennifer Todd]]
+}}
+| best_picture     = ''[[Moonlight (2016 film)|Moonlight]]''
+|most_wins        = ''[[La La Land]]'' (6)
+| network          = [[American Broadcasting Company|ABC]]
+| most_nominations = ''La La Land'' (14)
+| duration         = 3 hours, 49 minutes<ref name="Oscar ratings" />
+| ratings          = 32.9 million<ref name="Oscar ratings" /><br />22.4% ([[Nielsen ratings]])<ref name="Oscar ratings" />
+| last             = 88th
+| next             = 90th
+}}
+
+The '''89th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2016 in film|films of 2016]], and took place on February 26, 2017, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]], California, at 5:30&nbsp;p.m. PST. During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 24 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Michael De Luca]] and [[Jennifer Todd]] and directed by [[Glenn Weiss]].<ref name="DeLucaTodd"/><ref name="Weiss"/> Comedian [[Jimmy Kimmel]] hosted the ceremony for the first time.<ref name="Kimmel"/>
+
+Relatedly, the academy held its 8th Annual [[Governors Awards]] ceremony at the Grand Ballroom of the [[Hollywood and Highland Center]] on November 12, 2016.<ref>{{cite web |title=Jackie Chan, Anne V. Coates, Lynn Stalmaster and Frederick Wisemen to receive Academy's 2016 Governs Awards |url=http://www.oscars.org/news/jackie-chan-anne-v-coates-lynn-stalmaster-and-frederick-wiseman-receive-academys-2016-Governors |first=Micheline |last=Goldstein |publisher=Academy of Motion Picture Arts and Sciences |date=September 1, 2016 |access-date=September 17, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160914191832/http://oscars.org/news/jackie-chan-anne-v-coates-lynn-stalmaster-and-frederick-wiseman-receive-academys-2016-governors |archive-date=September 14, 2016}}</ref> On November 25, 2016, the AMPAS announced that no anime shorts would be considered for this year's ceremony.<ref>{{cite web|url= https://www.animenewsnetwork.com/daily-briefs/2016-11-25/no-anime-in-consideration-for-this-year-animated-short-oscar/.109180|title= No Anime in Consideration for This Year's Animated Short Oscar|date= November 25, 2016|access-date= November 29, 2020|work= [[Anime News Network]]|archive-date= December 9, 2020|archive-url= https://web.archive.org/web/20201209053215/https://www.animenewsnetwork.com/daily-briefs/2016-11-25/no-anime-in-consideration-for-this-year-animated-short-oscar/.109180|url-status= live}}</ref> On February 11, 2017, in a ceremony at the [[Beverly Wilshire Hotel]] in Beverly Hills, California,<ref>{{cite news |title=The jokes, the scene (oh, and the winners) at the film academy's Scientific and Technical Awards |work=[[Los Angeles Times]] |first=Josh |last=Rottenberg |date=February 12, 2017 |access-date=February 20, 2017 |url=https://www.latimes.com/entertainment/movies/la-et-mn-oscars-sci-tech-awards-2017-story.html |url-status=live |archive-url=https://web.archive.org/web/20170220050514/http://www.latimes.com/entertainment/movies/la-et-mn-oscars-sci-tech-awards-2017-story.html |archive-date=February 20, 2017}}</ref> the [[Academy Scientific and Technical Award]]s were presented by hosts [[John Cho]] and [[Leslie Mann]].<ref>{{cite news |work=[[USA Today]] |url=https://www.usatoday.com/story/life/movies/2017/02/12/john-cho-leslie-mann-pay-respect-films-great-brains-sci-tech-awards/97823144/ |title=John Cho, Leslie Mann pay respect to film's great brains at Sci-Tech Awards |date=February 12, 2017 |access-date=February 20, 2017 |first=Bryan |last=Alexander |url-status=live |archive-url=https://web.archive.org/web/20170221113331/http://www.usatoday.com/story/life/movies/2017/02/12/john-cho-leslie-mann-pay-respect-films-great-brains-sci-tech-awards/97823144/ |archive-date=February 21, 2017}}</ref>
+
+In the main ceremony, ''[[Moonlight (2016 film)|Moonlight]]'' won three awards including [[Academy Award for Best Picture|Best Picture]]—after ''[[La La Land]]'' was mistakenly announced as the winner<ref name="France">{{cite news |publisher=[[CNN]] |url=http://www.cnn.com/2017/02/26/entertainment/oscars-2017/index.html |title=Oscars 2017: 'Moonlight' wins Best Picture after some confusion |last=France |first=Lisa Respers |date=February 26, 2017 |access-date=February 26, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227022702/http://www.cnn.com/2017/02/26/entertainment/oscars-2017/index.html |archive-date=February 27, 2017}}</ref>—as well as [[Academy Award for Best Supporting Actor|Best Supporting Actor]] for [[Mahershala Ali]]. ''La La Land'' won six awards, the most for the evening, out of its record-tying 14 nominations, including [[Academy Award for Best Actress|Best Actress]] for [[Emma Stone]] and [[Academy Award for Best Director|Best Director]] for [[Damien Chazelle]]. ''[[Hacksaw Ridge]]'' and ''[[Manchester by the Sea (film)|Manchester by the Sea]]'' won two awards each with [[Casey Affleck]] winning [[Academy Award for Best Actor|Best Actor]] for the latter. [[Viola Davis]] won the [[Academy Award for Best Supporting Actress|Best Supporting Actress]] honor for ''[[Fences (film)|Fences]]''. The telecast was viewed by 32.9 million people in the United States.<ref name="Oscar ratings"/>
+
+==Winners and nominees==
+<!--Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed.-->
+
+The nominees for the 89th Academy Awards were announced on January 24, 2017, via global live stream from the academy.<ref>{{cite web |first=Patrick |last=Hipes |title=Oscar Nominations:'La La Land' Ties Record With 14 Nominations; 'Arrival' & 'Moonlight' Snag 8 Apiece |url=https://deadline.com/2017/01/oscar-nominations-2017-academy-award-nominees-1201893000/ |website=[[Deadline Hollywood]] |date=January 24, 2017 |access-date=February 21, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170220104835/http://deadline.com/2017/01/oscar-nominations-2017-academy-award-nominees-1201893000/ |archive-date=February 20, 2017}}</ref> ''[[La La Land]]'' received the most nominations with a record-tying fourteen (1950's ''[[All About Eve]]'' and 1997's ''[[Titanic (1997 film)|Titanic]]'' also achieved this distinction);<ref name="LALALANDnomination">{{cite web |title=La La Land equals record for most Oscar nominations |url=https://www.theguardian.com/film/2017/jan/24/la-la-land-equals-record-for-most-oscar-nominations |first=Catherine |last=Shoard |work=[[The Guardian]] |location=London |date=January 24, 2017 |access-date=January 24, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170307144255/https://www.theguardian.com/film/2017/jan/24/la-la-land-equals-record-for-most-oscar-nominations |archive-date=March 7, 2017}}</ref> ''[[Arrival (film)|Arrival]]'' and ''[[Moonlight (2016 film)|Moonlight]]'' came in second with eight apiece.<ref>{{cite news |title=La La Land, Moonlight land top Oscar nominations La La Land matches Titanic, All About Eve for most nominations |agency=Associated Press |url=http://www.torontosun.com/2017/01/24/la-la-land-moonlight-and-arrival-land-top-oscar-nominations |newspaper=[[Toronto Sun]] |date=January 24, 2017 |access-date=January 24, 2017 |archive-date=October 11, 2017 |archive-url=https://web.archive.org/web/20171011223018/http://www.torontosun.com/2017/01/24/la-la-land-moonlight-and-arrival-land-top-oscar-nominations |url-status=live }}</ref><ref>{{cite web |title=The 2017 Academy Award nominations: 'La La Land' ties Oscars record with 14 nominations |url=https://www.latimes.com/entertainment/la-et-oscar-nominations-2017-live-updates-academy-awards-20170124-htmlstory.html |work=Los Angeles Times |date=January 24, 2017 |access-date=January 24, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170124185351/http://www.latimes.com/entertainment/la-et-oscar-nominations-2017-live-updates-academy-awards-20170124-htmlstory.html |archive-date=January 24, 2017}}</ref> ''La La Land''{{'}}s Best Picture loss to ''Moonlight'' meant it set a record for most nominations without winning Best Picture.<ref>{{cite news |url=http://www.goldderby.com/article/2017/la-la-land-wins-most-oscars-but-loses-best-picture-cabaret-news-135790864/ |title='La La Land' wins most Oscars but loses Best Picture just like 'Cabaret' did in 1972 |last=Kare |first=Jeffrey |date=2017-02-27 |work=[[Gold Derby]] |access-date=April 15, 2018 |language=en-US |archive-date=April 15, 2018 |archive-url=https://web.archive.org/web/20180415125026/http://www.goldderby.com/article/2017/la-la-land-wins-most-oscars-but-loses-best-picture-cabaret-news-135790864/ |url-status=live }}</ref> Four of the five nominations for [[Academy Award for Best Original Score|Best Original Score]] were by first-time nominees, the highest figure since [[39th Academy Awards|1967]].<ref>{{Cite news |last=Burlingame |first=Jon |date=9 February 2017 |title=Oscar Score Contenders Provide an Infusion of New Blood |work=Variety |url=https://variety.com/2017/film/features/oscar-original-score-nominees-1201982060/ |access-date=25 May 2022 |archive-date=May 25, 2022 |archive-url=https://web.archive.org/web/20220525102252/https://variety.com/2017/film/features/oscar-original-score-nominees-1201982060/ |url-status=live }}</ref>
+
+The winners were announced during the awards ceremony on February 26, 2017.<ref>{{cite news |url=https://www.chicagotribune.com/entertainment/movies/ct-oscars-2017-winners-list-20170226-story.html |title=Oscars 2017: Complete list of winners |agency=Associated Press |work=[[Chicago Tribune]] |date=February 26, 2017 |access-date=April 4, 2018|language=en-US |url-status=live|archive-url=https://web.archive.org/web/20180311101414/http://www.chicagotribune.com/entertainment/movies/ct-oscars-2017-winners-list-20170226-story.html|archive-date=March 11, 2018}}</ref> ''Moonlight'' became the first film with an all-black cast and the first [[LGBT]]-themed film to win Best Picture.<ref name="theguardian1">{{cite news |url=https://www.theguardian.com/film/filmblog/2017/feb/27/dont-let-that-oscars-blunder-overshadow-moonlights-monumental-achievement |title=Don't let that Oscars blunder overshadow Moonlight's monumental achievement |last=Rose |first=Steve |work=The Guardian |access-date=February 27, 2017 |url-status=live|archive-url=https://web.archive.org/web/20170228090757/https://www.theguardian.com/film/filmblog/2017/feb/27/dont-let-that-oscars-blunder-overshadow-moonlights-monumental-achievement|archive-date=February 28, 2017}}</ref><ref name="france1">{{cite web |url=http://www.cnn.com/2017/02/27/entertainment/moonlight-oscars-win/index.html |title=Oscar mistake overshadows historic moment for 'Moonlight' |last=France |first=Lisa Respers |date=February 28, 2017 |website=CNN|archive-url=https://web.archive.org/web/20170301035813/http://www.cnn.com/2017/02/27/entertainment/moonlight-oscars-win/index.html|archive-date=March 1, 2017 |url-status=live |access-date=March 1, 2017}}</ref> In an event unprecedented in the history of the Oscars, ''La La Land'' was incorrectly announced as the Best Picture, and, a few minutes later, the error was corrected and ''Moonlight'' was declared the winner.<ref name="DonnellyOscar">{{cite news |last1=Donnelly |first1=Jim |title=Moonlight Wins Best Picture After 2017, Oscars Envelope Mishap |url=http://oscar.go.com/news/winners/after-oscars-2017-mishap-moonlight-wins-best-picture |publisher=Academy of Motion Picture Arts and Sciences |date=February 26, 2017 |access-date=February 27, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227232035/http://oscar.go.com/news/winners/after-oscars-2017-mishap-moonlight-wins-best-picture |archive-date=February 27, 2017}}</ref> ''[[O.J.: Made in America]]'', at 467 minutes, became the longest film to win an Academy Award, surpassing the 431-minute long ''[[War and Peace (film series)|War and Peace]],'' which won the [[Academy Award for Best Foreign Language Film]] in [[41st Academy Awards|1969]].<ref>{{cite web |title='O.J.: Made in America' is now the longest film to ever win an Oscar |last1=Roy |first1=Jessica |url=https://www.latimes.com/entertainment/la-oscars-2017-89th-academy-awards-o-j-made-in-america-is-now-the-1488162045-htmlstory.html |work=Los Angeles Times |date=February 27, 2017 |access-date=February 27, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227035306/http://www.latimes.com/entertainment/la-oscars-2017-89th-academy-awards-o-j-made-in-america-is-now-the-1488162045-htmlstory.html |archive-date=February 27, 2017}}</ref> Following the five-part documentary's win, new academy rules barred any "multi-part or limited series" from being eligible for documentary categories.<ref>{{cite news |url=https://variety.com/2017/film/news/oscars-new-rules-documentary-oj-made-in-america-barred-1202026406/ |title=Oscars: New Rules Bar Multi-Part Documentaries Like 'O.J.: Made in America' |last1=McNary |first1=Dave |author-link1=Dave McNary |date=April 7, 2017 |work=Variety |access-date=December 6, 2017 |language=en-US |archive-date=April 15, 2017 |archive-url=https://web.archive.org/web/20170415012418/http://variety.com/2017/film/news/oscars-new-rules-documentary-oj-made-in-america-barred-1202026406/ |url-status=live }}</ref> With [[Casey Affleck]] winning the Oscar for Best Actor, he and his older brother, [[Ben Affleck]], became the 16th pair of siblings to win Academy Awards.<ref>{{cite news |url=https://www.hollywoodreporter.com/lists/casey-affleck-ben-affleck-more-oscar-winning-siblings-965775 |title=Oscars: Ben and Casey Affleck Among 16 Pairs of Oscar-Winning Siblings |last1=Howard |first1=Annie |work=The Hollywood Reporter |date=January 24, 2017 |access-date=April 15, 2018 |language=en |archive-date=April 1, 2018 |archive-url=https://web.archive.org/web/20180401204120/https://www.hollywoodreporter.com/lists/casey-affleck-ben-affleck-more-oscar-winning-siblings-965775 |url-status=live }}</ref> [[Mahershala Ali]] became the first [[Ahmadiyya Muslim|Muslim]] actor to win an Oscar.<ref name=":0">{{cite news |last1=Crum |first1=Maddie |title=Mahershala Ali Becomes The First Muslim Actor To Win An Oscar |url=https://www.huffingtonpost.com/entry/mahershala-ali-becomes-the-first-muslim-actor-to-win-an-oscar_us_58b3866fe4b060480e0905d3 |access-date=February 27, 2017 |work=[[The Huffington Post]] |date=February 26, 2017 |archive-date=February 27, 2017 |archive-url=https://web.archive.org/web/20170227045534/http://www.huffingtonpost.com/entry/mahershala-ali-becomes-the-first-muslim-actor-to-win-an-oscar_us_58b3866fe4b060480e0905d3 |url-status=live }}</ref> [[Viola Davis]] became the first black person to achieve the [[Triple Crown of Acting]] with her Oscar, Emmy, and Tony wins.<ref>{{cite web|author=Lisa Ryan |url=https://nymag.com/thecut/2017/02/viola-davis-first-black-actor-to-win-oscar-emmy-and-tony.html |title=Viola Davis, First Black Actor to Win Oscar, Emmy, and Tony |work=[[New York (magazine)|New York]] |date=February 27, 2017 |access-date=February 27, 2017 |url-status=live|archive-url=https://web.archive.org/web/20170228083503/http://nymag.com/thecut/2017/02/viola-davis-first-black-actor-to-win-oscar-emmy-and-tony.html|archive-date=February 28, 2017}}</ref>
+
+At the age of thirty-two years and thirty-eight days, [[Damien Chazelle]] became the youngest person to win Best Director; [[Norman Taurog]] was only two hundred and twenty-two days older than Chazelle when he won Best Director for the 1931 comedy ''[[Skippy (film)|Skippy]]''.<ref>{{cite web |url=https://www.theguardian.com/film/2017/feb/27/damien-chazelle-wins-best-director-oscar-la-la-land-academy-awards-2017 |title=Damien Chazelle wins best director Oscar for La La Land |last1=Pulver |first1=Andrew |date=February 27, 2017 |work=[[The Guardian]] |language=en |access-date=April 15, 2018 |archive-date=April 18, 2017 |archive-url=https://web.archive.org/web/20170418190824/https://www.theguardian.com/film/2017/feb/27/damien-chazelle-wins-best-director-oscar-la-la-land-academy-awards-2017 |url-status=live }}</ref><ref>{{cite web |url=https://www.latimes.com/entertainment/movies/la-et-mn-oscars-2017-director-winner-20170226-story.html |title=Damien Chazelle becomes youngest-ever winner of director Oscar for 'La La Land' |last1=Olsen |first1=Mark |work=Los Angeles Times |date=February 27, 2017 |access-date=April 15, 2018 |archive-date=April 15, 2018 |archive-url=https://web.archive.org/web/20180415190250/http://www.latimes.com/entertainment/movies/la-et-mn-oscars-2017-director-winner-20170226-story.html |url-status=live }}</ref><ref>{{cite news |url=https://www.vulture.com/2017/02/damien-chazelle-just-won-an-oscar-for-la-la-land-now-what.html |title=So, Damien Chazelle, You Just Won Best Director in Your 30s — Now What? |last=Lincoln |first=Kevin |date=February 27, 2017 |work=Vulture |access-date=June 17, 2018|language=en |url-status=live|archive-url=https://web.archive.org/web/20180214100702/http://www.vulture.com/2017/02/damien-chazelle-just-won-an-oscar-for-la-la-land-now-what.html|archive-date=February 14, 2018}}</ref> [[Kevin O'Connell (sound mixer)|Kevin O'Connell]] ended the longest losing streak in Oscar history after 20 unsuccessful nominations for sound mixing, winning for ''[[Hacksaw Ridge]]''.<ref name=yahoomovies>{{cite web |url=https://www.yahoo.com/movies/kevin-oconnell-oscars-biggest-loser-finally-wins-on-21st-try-033208298.html |title=Kevin O'Connell, Oscar's Biggest Loser, Finally Wins on 21st Try |publisher=[[Yahoo! Movies]] |date=February 26, 2017 |access-date=February 27, 2017|archive-date=February 27, 2017|archive-url=https://web.archive.org/web/20170227145714/https://www.yahoo.com/movies/kevin-oconnell-oscars-biggest-loser-finally-wins-on-21st-try-033208298.html |url-status=live}}</ref> ''Moonlight''{{'}}s [[Dede Gardner]] became the first woman to win twice for producing, following her previous Best Picture win for ''[[12 Years a Slave (film)|12 Years a Slave]]''.<ref>{{cite news |url=https://www.thewrap.com/dede-gardner-first-female-producer-2-best-picture-oscars/ |title=With 'Moonlight' Win, Dede Gardner Becomes First Female Producer With 2 Best Picture Oscars |last1=Ge |first1=Linda |date=February 26, 2017 |work=[[TheWrap]] |access-date=April 15, 2018|language=en-US |url-status=live| archive-url=https://web.archive.org/web/20180415190527/https://www.thewrap.com/dede-gardner-first-female-producer-2-best-picture-oscars/|archive-date=April 15, 2018}}</ref>
+
+=== Awards ===
+[[File:Damien Chazelle (cropped).jpg|right|thumb|150px|[[Damien Chazelle]], Best Director winner|alt=Photo of Damien Chazelle in 2014.]]
+[[File:Casey Affleck at the Manchester by the Sea premiere (30199719155) (cropped).jpg|right|thumb|150px|[[Casey Affleck]], Best Actor winner|alt=Photo of Casey Affleck in 2016.]]
+[[File:Emma Stone at the 2024 New York Film Festival 2 (cropped).jpg|right|thumb|150px|[[Emma Stone]], Best Actress winner|alt=Photo of Emma Stone in 2024.]]
+[[File:Mahershala Ali by Gage Skidmore (cropped).jpg|right|thumb|150px|[[Mahershala Ali]], Best Supporting Actor winner|alt=Photo of Mahershala Ali in 2019.]]
+[[File:Viola Davis (28601043285) (cropped).jpg|right|thumb|150px|[[Viola Davis]], Best Supporting Actress winner|alt=Photo of Viola Davis in 2016.]]
+[[File:Kenneth Lonergan Viennale 2016 opening 4 (cropped).jpg|right|thumb|150px|[[Kenneth Lonergan]], Best Original Screenplay winner|alt=Photos of Kenneth Lonergan in 2016.]]
+[[File:Barry Jenkins (cropped).jpg|right|thumb|150px|[[Barry Jenkins]], Best Adapted Screenplay co-winner|alt=Photo of Barry Jenkins in 2009.]]
+[[File:Asghar Farhadi in 2018-2 (cropped).jpg|right|thumb|150px|[[Asghar Farhadi]], Best Foreign Language Film winner|alt=Photo of Asghar Farhadi in 2018.]]
+[[File:Joanna Natasegara 01.jpg|right|thumb|150px|[[Joanna Natasegara]], Best Documentary Short Subject co-winner|alt=Photo of Joanna Natasegara in 2017.]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref>{{cite news |url=http://www.oscars.org/oscars/ceremonies/2017 |title=The 89th Academy Awards (2017) Nominees and Winners |access-date=February 26, 2017 |publisher=Academy of Motion Picture Arts and Sciences |url-status=live |archive-url=https://web.archive.org/web/20170227001154/http://oscars.org/oscars/ceremonies/2017|archive-date=February 27, 2017}}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Moonlight (2016 film)|Moonlight]]''&nbsp;– [[Adele Romanski]], [[Dede Gardner]] and [[Jeremy Kleiner]]'''{{double-dagger}}
+** ''[[Arrival (film)|Arrival]]''&nbsp;– [[Shawn Levy]], [[Dan Levine]], [[Aaron Ryder]] and [[David Linde]]
+** ''[[Fences (film)|Fences]]''&nbsp;– [[Scott Rudin]], [[Denzel Washington]] and [[Todd Black]]
+** ''[[Hacksaw Ridge]]''&nbsp;– [[Bill Mechanic]] and [[David Permut]]
+** ''[[Hell or High Water (film)|Hell or High Water]]''&nbsp;– [[Carla Hacken]] and [[Julie Yorn]]
+** ''[[Hidden Figures]]''&nbsp;– [[Donna Gigliotti]], [[Peter Chernin]], [[Jenno Topping]], [[Pharrell Williams]] and [[Theodore Melfi]]
+** ''[[La La Land]]''&nbsp;– [[Fred Berger (producer)|Fred Berger]], [[Jordan Horowitz]] and [[Marc Platt (producer)|Marc Platt]]
+** ''[[Lion (2016 film)|Lion]]''&nbsp;– [[Emile Sherman]], [[Iain Canning]] and [[Angie Fielder]]
+** ''[[Manchester by the Sea (film)|Manchester by the Sea]]''&nbsp;– [[Matt Damon]], [[Kimberly Steward]], [[Chris Moore (film producer)|Chris Moore]], [[Lauren Beck]] and [[Kevin J. Walsh]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Damien Chazelle]]&nbsp;– ''[[La La Land]]'''''{{double-dagger}}
+** [[Denis Villeneuve]]&nbsp;– ''[[Arrival (film)|Arrival]]''
+** [[Mel Gibson]]&nbsp;– ''[[Hacksaw Ridge]]''
+** [[Kenneth Lonergan]]&nbsp;– ''[[Manchester by the Sea (film)|Manchester by the Sea]]''
+** [[Barry Jenkins]]&nbsp;– ''[[Moonlight (2016 film)|Moonlight]]''
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+* '''[[Casey Affleck]]&nbsp;– ''[[Manchester by the Sea (film)|Manchester by the Sea]]'' as Lee Chandler'''{{double-dagger}}
+** [[Andrew Garfield]]&nbsp;– ''[[Hacksaw Ridge]]'' as [[Desmond Doss]]
+** [[Ryan Gosling]]&nbsp;– ''[[La La Land]]'' as Sebastian "Seb" Wilder
+** [[Viggo Mortensen]]&nbsp;– ''[[Captain Fantastic (film)|Captain Fantastic]]'' as Ben Cash
+** [[Denzel Washington]]&nbsp;– ''[[Fences (film)|Fences]]'' as Troy Maxson
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+* '''[[Emma Stone]]&nbsp;– ''[[La La Land]]'' as Amelia "Mia" Dolan'''{{double-dagger}}
+** [[Isabelle Huppert]]&nbsp;– ''[[Elle (film)|Elle]]'' as Michèle Leblanc
+** [[Ruth Negga]]&nbsp;– ''[[Loving (2016 film)|Loving]]'' as [[Mildred Loving]]
+** [[Natalie Portman]]&nbsp;– ''[[Jackie (2016 film)|Jackie]]'' as [[Jacqueline Kennedy Onassis|Jacqueline "Jackie" Kennedy]]
+** [[Meryl Streep]]&nbsp;– ''[[Florence Foster Jenkins (film)|Florence Foster Jenkins]]'' as [[Florence Foster Jenkins]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Mahershala Ali]]&nbsp;– ''[[Moonlight (2016 film)|Moonlight]]'' as Juan'''{{double-dagger}}
+** [[Jeff Bridges]]&nbsp;– ''[[Hell or High Water (film)|Hell or High Water]]'' as Marcus Hamilton
+** [[Lucas Hedges]]&nbsp;– ''[[Manchester by the Sea (film)|Manchester by the Sea]]'' as Patrick Chandler
+** [[Dev Patel]]&nbsp;– ''[[Lion (2016 film)|Lion]]'' as [[Saroo Brierley]]
+** [[Michael Shannon]]&nbsp;– ''[[Nocturnal Animals]]'' as Detective Bobby Andes
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Viola Davis]]&nbsp;– ''[[Fences (film)|Fences]]'' as Rose Maxson'''{{double-dagger}}
+** [[Naomie Harris]]&nbsp;– ''[[Moonlight (2016 film)|Moonlight]]'' as Paula
+** [[Nicole Kidman]]&nbsp;– ''[[Lion (2016 film)|Lion]]'' as Sue Brierley
+** [[Octavia Spencer]]&nbsp;– ''[[Hidden Figures]]'' as [[Dorothy Vaughan]]
+** [[Michelle Williams (actress)|Michelle Williams]]&nbsp;– ''[[Manchester by the Sea (film)|Manchester by the Sea]]'' as Randi Chandler
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Manchester by the Sea (film)|Manchester by the Sea]]''&nbsp;– [[Kenneth Lonergan]]'''{{double-dagger}}
+** ''[[20th Century Women]]''&nbsp;– [[Mike Mills (director)|Mike Mills]]
+** ''[[Hell or High Water (film)|Hell or High Water]]''&nbsp;– [[Taylor Sheridan]]
+** ''[[La La Land]]''&nbsp;– [[Damien Chazelle]]
+** ''[[The Lobster]]''&nbsp;– [[Yorgos Lanthimos]] and [[Efthimis Filippou]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[Moonlight (2016 film)|Moonlight]]''&nbsp;– [[Barry Jenkins]]; story by [[Tarell Alvin McCraney]]; based on the play ''In Moonlight Black Boys Look Blue'' by Tarell Alvin McCraney{{double-dagger}}'''
+** ''[[Arrival (film)|Arrival]]''&nbsp;– [[Eric Heisserer]]; based on the short story "[[Story of Your Life]]" written by [[Ted Chiang]]
+** ''[[Fences (film)|Fences]]''&nbsp;– [[August Wilson]] (posthumous nomination); based on [[Fences (play)|his play]]
+** ''[[Hidden Figures]]''&nbsp;– [[Allison Schroeder]] and [[Theodore Melfi]]; based on [[Hidden Figures (book)|the book]] by [[Margot Lee Shetterly]]
+** ''[[Lion (2016 film)|Lion]]''&nbsp;– [[Luke Davies]]; based on the book ''[[A Long Way Home (book)|A Long Way Home]]'' by [[Saroo Brierley]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Zootopia]]''&nbsp;– [[Byron Howard]], [[Rich Moore]] and [[Clark Spencer]]'''{{double-dagger}}
+** ''[[Kubo and the Two Strings]]''&nbsp;– [[Travis Knight]] and [[Arianne Sutner]]
+** ''[[Moana (2016 film)|Moana]]''&nbsp;– [[John Musker]], [[Ron Clements]] and [[Osnat Shurer]]
+** ''[[My Life as a Zucchini]]''&nbsp;– [[Claude Barras]] and [[Max Karli]]
+** ''[[The Red Turtle]]''&nbsp;– [[Michaël Dudok de Wit]] and [[Toshio Suzuki]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[The Salesman (2016 film)|The Salesman]]'' ([[List of Iranian submissions for the Academy Award for Best Foreign Language Film|Iran]]) in [[Persian language|Persian]]&nbsp;– Directed by [[Asghar Farhadi]]'''{{double-dagger}}
+** ''[[Land of Mine]]'' ([[List of Danish submissions for the Academy Award for Best Foreign Language Film|Denmark]]) in [[Danish language|Danish]]&nbsp;– Directed by [[Martin Zandvliet]]
+** ''[[A Man Called Ove (film)|A Man Called Ove]]'' ([[List of Swedish submissions for the Academy Award for Best Foreign Language Film|Sweden]]) in [[Swedish language|Swedish]]&nbsp;– Directed by [[Hannes Holm]]
+** ''[[Tanna (film)|Tanna]]'' ([[List of Australian submissions for the Academy Award for Best Foreign Language Film|Australia]]) in [[Nauvhal]]&nbsp;– Directed by [[Martin Butler (director)|Martin Butler]] and [[Bentley Dean]]
+** ''[[Toni Erdmann]]'' ([[List of German submissions for the Academy Award for Best Foreign Language Film|Germany]]) in [[German language|German]]&nbsp;– Directed by [[Maren Ade]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[O.J.: Made in America]]''&nbsp;– [[Ezra Edelman]] and [[Caroline Waterlow]]'''{{double-dagger}}
+** ''[[13th (film)|13th]]''&nbsp;– [[Ava DuVernay]], [[Spencer Averick]] and [[Howard Barish]]
+** ''[[Fire at Sea]]''&nbsp;– [[Gianfranco Rosi]] and [[Donatella Palermo]]
+** ''[[I Am Not Your Negro]]''&nbsp;– [[Raoul Peck]], [[Rémi Grellety]] and [[Hébert Peck]]
+** ''[[Life, Animated]]''&nbsp;– [[Roger Ross Williams]] and [[Julie Goldman (producer)|Julie Goldman]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[The White Helmets (film)|The White Helmets]]''&nbsp;– [[Orlando von Einsiedel]] and [[Joanna Natasegara]]'''{{double-dagger}}
+** ''[[4.1 Miles]]''&nbsp;– [[Daphne Matziaraki]]
+** ''[[Extremis (film)|Extremis]]''&nbsp;– [[Dan Krauss]]
+** ''[[Joe's Violin]]''&nbsp;– [[Kahane Cooperman]] and [[Raphaela Neihausen]]
+** ''[[Watani: My Homeland]]''&nbsp;– [[Marcel Mettelsiefen]] and [[Stephen Ellis (film editor)|Stephen Ellis]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Sing (2016 Hungarian film)|Sing]]''&nbsp;– [[Kristóf Deák]] and [[Anna Udvardy]]'''{{double-dagger}}
+** ''[[Ennemis intérieurs]]''&nbsp;– [[Sélim Azzazi]]
+** ''[[La femme et le TGV]]''&nbsp;– [[Timo von Gunten]] and [[Giacun Caduff]]
+** ''[[Silent Nights (film)|Silent Nights]]''&nbsp;– [[Aske Bang]] and [[Kim Magnusson]]
+** ''[[Timecode (2016 film)|Timecode]]''&nbsp;– [[Juanjo Giménez]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Piper (film)|Piper]]''&nbsp;– [[Alan Barillaro]] and [[Marc Sondheimer]]'''{{double-dagger}}
+** ''[[Blind Vaysha]]''&nbsp;– [[Theodore Ushev]]
+** ''[[Borrowed Time (film)|Borrowed Time]]''&nbsp;– [[Andrew Coats (director)|Andrew Coats]] and [[Lou Hamou-Lhadj]]
+** ''[[Pear Cider and Cigarettes]]''&nbsp;– [[Robert Valley]] and [[Cara Speller]]
+** ''[[Pearl (2016 film)|Pearl]]''&nbsp;– [[Patrick Osborne (animator)|Patrick Osborne]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[La La Land]]''&nbsp;– [[Justin Hurwitz]]'''{{double-dagger}}
+** ''[[Jackie (2016 film)|Jackie]]''&nbsp;– [[Mica Levi]]
+** ''[[Lion (2016 film)|Lion]]''&nbsp;– [[Dustin O'Halloran]] and [[Hauschka]]
+** ''[[Moonlight (2016 film)|Moonlight]]''&nbsp;– [[Nicholas Britell]]
+** ''[[Passengers (2016 film)|Passengers]]''&nbsp;– [[Thomas Newman]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[City of Stars]]" from ''[[La La Land]]''&nbsp;– Music by [[Justin Hurwitz]]; lyrics by [[Benj Pasek]] and [[Justin Paul]]'''<!--DO NOT CHANGE TO "PASEK & PAUL", AS THAT IS NOT HOW THEIR NAMES APPEARED IN THE OFFICIAL NOMINATION-->{{double-dagger}}
+** "[[Audition (The Fools Who Dream)]]" from ''[[La La Land]]''&nbsp;– Music by [[Justin Hurwitz]]; lyrics by [[Benj Pasek]] and [[Justin Paul]]<!--DO NOT CHANGE TO "PASEK & PAUL", AS THAT IS NOT HOW THEIR NAMES APPEARED IN THE OFFICIAL NOMINATION-->
+** "[[Can't Stop the Feeling!]]" from ''[[Trolls (film)|Trolls]]''&nbsp;– Music and lyrics by [[Justin Timberlake]], [[Max Martin]] and [[Karl Johan Schuster]]
+** "[[The Empty Chair (song)|The Empty Chair]]" from ''[[Jim: The James Foley Story]]''&nbsp;– Music and lyrics by [[J. Ralph]] and [[Sting (musician)|Sting]]
+** "[[How Far I'll Go]]" from ''[[Moana (2016 film)|Moana]]''&nbsp;– Music and lyrics by [[Lin-Manuel Miranda]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[Arrival (film)|Arrival]]''&nbsp;– [[Sylvain Bellemare]]'''{{double-dagger}}
+** ''[[Deepwater Horizon (film)|Deepwater Horizon]]''&nbsp;– [[Wylie Stateman]] and [[Renée Tondelli]]
+** ''[[Hacksaw Ridge]]''&nbsp;– [[Robert Mackenzie (sound engineer)|Robert Mackenzie]] and [[Andy Wright (sound engineer)|Andy Wright]]
+** ''[[La La Land]]''&nbsp;– [[Ai-Ling Lee]] and [[Mildred Iatrou Morgan]]
+** ''[[Sully (film)|Sully]]''&nbsp;– [[Alan Robert Murray]] and [[Bub Asman]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Best Sound Mixing]]}}
+* '''''[[Hacksaw Ridge]]''&nbsp;– [[Kevin O'Connell (sound mixer)|Kevin O'Connell]], [[Andy Wright (sound engineer)|Andy Wright]], [[Robert Mackenzie (sound engineer)|Robert Mackenzie]] and [[Peter Grace (sound engineer)|Peter Grace]]'''{{double-dagger}}
+** ''[[13 Hours: The Secret Soldiers of Benghazi]]''&nbsp;– [[Greg P. Russell]],{{efn|name=nomination revoked|AMPAS revoked Russell's nomination after discovering that he had contacted voters for the award by telephone in violation of campaigning regulations.<ref name="russellnomination" />}}<ref name=russellnomination>{{cite web |url=https://www.hollywoodreporter.com/news/academy-rescinds-oscar-nomination-violation-campaign-rules-979979 |title=Academy Rescinds Oscar Nomination for Violation of Campaign Rules |work=The Hollywood Reporter |date=February 25, 2017 |url-status=live|archive-url=https://web.archive.org/web/20170226013949/http://www.hollywoodreporter.com/news/academy-rescinds-oscar-nomination-violation-campaign-rules-979979 |archive-date=February 26, 2017}}</ref> [[Gary Summers]], [[Jeffrey J. Haboush]] and [[Mac Ruth]]
+** ''[[Arrival (film)|Arrival]]''&nbsp;– [[Bernard Gariépy Strobl]] and [[Claude La Haye]]
+** ''[[La La Land]]''&nbsp;– [[Andy Nelson (sound engineer)|Andy Nelson]], [[Ai-Ling Lee]] and [[Steven A. Morrow]]
+** ''[[Rogue One: A Star Wars Story]]''&nbsp;– [[David Parker (sound engineer)|David Parker]], [[Christopher Scarabosio]] and [[Stuart Wilson (sound engineer)|Stuart Wilson]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Production Design]]}}
+* '''''[[La La Land]]''&nbsp;– Production design: [[David Wasco]]; set decoration: [[Sandy Reynolds-Wasco]]'''{{double-dagger}}
+** ''[[Arrival (film)|Arrival]]''&nbsp;– Production design: [[Patrice Vermette]]; set decoration: [[Paul Hotte]]
+** ''[[Fantastic Beasts and Where to Find Them (film)|Fantastic Beasts and Where to Find Them]]''&nbsp;– Production design: [[Stuart Craig]]; set decoration: [[Anna Pinnock]]
+** ''[[Hail, Caesar!]]''&nbsp;– Production design: [[Jess Gonchor]]; set decoration: [[Nancy Haigh]]
+** ''[[Passengers (2016 film)|Passengers]]''&nbsp;– Production design: [[Guy Hendrix Dyas]]; set decoration: [[Gene Serdena]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[La La Land]]''&nbsp;– [[Linus Sandgren]]'''{{double-dagger}}
+** ''[[Arrival (film)|Arrival]]''&nbsp;– [[Bradford Young]]
+** ''[[Lion (2016 film)|Lion]]''&nbsp;– [[Greig Fraser]]
+** ''[[Moonlight (2016 film)|Moonlight]]''&nbsp;– [[James Laxton]]
+** ''[[Silence (2016 film)|Silence]]''&nbsp;– [[Rodrigo Prieto]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* '''''[[Suicide Squad (2016 film)|Suicide Squad]]''&nbsp;– [[Alessandro Bertolazzi]], [[Giorgio Gregorini]] and [[Christopher Nelson (make-up artist)|Christopher Nelson]]'''{{double-dagger}}
+** ''[[A Man Called Ove (film)|A Man Called Ove]]''&nbsp;– [[Eva von Bahr (make-up artist)|Eva von Bahr]] and [[Love Larson]]
+** ''[[Star Trek Beyond]]''&nbsp;– [[Joel Harlow]] and [[Richard Alonzo (make-up artist)|Richard Alonzo]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Fantastic Beasts and Where to Find Them (film)|Fantastic Beasts and Where to Find Them]]''&nbsp;– [[Colleen Atwood]]'''{{double-dagger}}
+** ''[[Allied (film)|Allied]]''&nbsp;– [[Joanna Johnston]]
+** ''[[Florence Foster Jenkins (film)|Florence Foster Jenkins]]''&nbsp;– [[Consolata Boyle]]
+** ''[[Jackie (2016 film)|Jackie]]''&nbsp;– [[Madeline Fontaine]]
+** ''[[La La Land]]''&nbsp;– [[Mary Zophres]]
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Hacksaw Ridge]]''&nbsp;– [[John Gilbert (film editor)|John Gilbert]]'''{{double-dagger}}
+** ''[[Arrival (film)|Arrival]]''&nbsp;– [[Joe Walker (film editor)|Joe Walker]]
+** ''[[Hell or High Water (film)|Hell or High Water]]''&nbsp;– [[Jake Roberts (film editor)|Jake Roberts]]
+** ''[[La La Land]]''&nbsp;– [[Tom Cross (film editor)|Tom Cross]]
+** ''[[Moonlight (2016 film)|Moonlight]]''&nbsp;– [[Nat Sanders]] and [[Joi McMillon]]
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[The Jungle Book (2016 film)|The Jungle Book]]''&nbsp;– [[Robert Legato]], [[Adam Valdez]], [[Andrew R. Jones]] and [[Dan Lemmon]]'''{{double-dagger}}
+** ''[[Deepwater Horizon (film)|Deepwater Horizon]]''&nbsp;– [[Craig Hammack]], [[Jason Snell (visual effects artist)|Jason Snell]], [[Jason Billington]] and [[Burt Dalton]]
+** ''[[Doctor Strange (2016 film)|Doctor Strange]]''&nbsp;– [[Stephane Ceretti]], [[Richard Bluff]], [[Vincent Cirelli]] and [[Paul Corbould]]
+** ''[[Kubo and the Two Strings]]''&nbsp;– [[Steve Emerson (visual effects artist)|Steve Emerson]], [[Oliver Jones (visual effects artist)|Oliver Jones]], [[Brian McLean (visual effects artist)|Brian McLean]] and [[Brad Schiff]]
+** ''[[Rogue One: A Star Wars Story]]''&nbsp;– [[John Knoll]], [[Mohen Leo]], [[Hal Hickel]] and [[Neil Corbould]]
+|}
+
+===Governors Awards===
+The academy held its 8th annual [[Governors Awards]] ceremony on November 12, 2016, during which the following awards were presented:<ref>{{cite news |url=http://oscar.go.com/news/2016/academy-announces-jackie-chan-3-others-will-receive-2016-governors-awards |date=September 1, 2016 |title=Academy announces Jackie Chan, Anne V. Coates, Lynn Stalmaster and Frederick Wisemen will receive Governs awards |access-date=September 23, 2016 |publisher=Academy of Motion Picture Arts and Sciences |url-status=live |archive-url=https://web.archive.org/web/20160918082946/http://oscar.go.com/news/2016/academy-announces-jackie-chan-3-others-will-receive-2016-governors-awards |archive-date=September 18, 2016}}</ref>
+
+====Honorary Awards====
+* To [[Jackie Chan]], an international film star who has captivated millions with his wit, boundless energy and unparalleled athletic artistry.<ref>{{cite news |url=https://www.bbc.com/news/entertainment-arts-37253382 |title=Jackie Chan awarded honorary Oscar |date=September 2, 2016 |access-date=September 23, 2016 |work=[[BBC News]] |url-status=live|archive-url=https://web.archive.org/web/20160923041456/http://www.bbc.com/news/entertainment-arts-37253382 |archive-date=September 23, 2016}}</ref>
+* To [[Anne V. Coates]], in recognition of a film editing career of remarkable breadth and exceptional collaborative achievement.<ref>{{cite news |url=https://www.hollywoodreporter.com/news/jackie-chan-film-editor-anne-924394 |title=Jackie Chan, Film Editor Anne V. Coates to Get Honorary Oscars |date=September 1, 2016 |first=Gregg |last=Kilday| access-date=September 23, 2016 |work=The Hollywood Reporter |url-status=live |archive-url=https://web.archive.org/web/20160910052758/http://www.hollywoodreporter.com/news/jackie-chan-film-editor-anne-924394 |archive-date=September 10, 2016}}</ref>
+* To [[Lynn Stalmaster]], a true pioneer whose keen insight and inspired creativity transformed the art of motion picture casting.<ref>{{cite news |url=https://deadline.com/2016/09/governors-awards-2016-jackie-chan-frederick-wiseman-anne-coates-lynn-stalmaster-1201811321/ |title=Governors Awards Honorees: Jackie Chan, Anne V Coates, Frederick Wiseman & Lynn Stalmaster |date=September 1, 2016 |access-date=September 23, 2016 |website=Deadline Hollywood |first1=Patrick |last1=Hipes |first2=Greg |last2=Evans |url-status=live|archive-url=https://web.archive.org/web/20160924190214/http://deadline.com/2016/09/governors-awards-2016-jackie-chan-frederick-wiseman-anne-coates-lynn-stalmaster-1201811321/|archive-date=September 24, 2016}}</ref>
+* To [[Frederick Wiseman]], whose masterful and distinctive documentaries examine the familiar and reveal the unexpected.<ref>{{cite news |url=https://www.thewrap.com/jackie-chan-frederick-wiseman-to-receive-honorary-oscars/ |title=Jackie Chan, Frederick Wiseman to Receive Honorary Oscars |date=September 1, 2016 |access-date=September 23, 2016 |work=TheWrap |first=Steve |last=Pond |url-status=live |archive-url=https://web.archive.org/web/20160909210551/http://www.thewrap.com/jackie-chan-frederick-wiseman-to-receive-honorary-oscars/ |archive-date=September 9, 2016}}</ref>
+
+===Films with multiple nominations and awards===
+{{columns-start|width=80%}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films that received multiple nominations<ref name="auto">{{cite web |title=2017 Oscars - Winners & Nominees |url=http://www.oscars.org/oscars/ceremonies/2017 |publisher=Academy of Motion Picture Arts and Sciences |url-status=live |archive-url=https://web.archive.org/web/20170227001154/http://oscars.org/oscars/ceremonies/2017 |archive-date=February 27, 2017}}</ref>
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| scope="row" style="text-align:center" | 14
+| ''[[La La Land]]''
+|-
+| scope="row" rowspan="2" style="text-align:center;" | 8
+| ''[[Arrival (film)|Arrival]]''
+|-
+| ''[[Moonlight (2016 film)|Moonlight]]''
+|-
+| scope="row" rowspan="3" style="text-align:center;" | 6
+| ''[[Hacksaw Ridge]]''
+|-
+| ''[[Lion (2016 film)|Lion]]''
+|-
+| ''[[Manchester by the Sea (film)|Manchester by the Sea]]''
+|-
+| scope="row" rowspan="2" style="text-align:center;" | 4
+| ''[[Fences (film)|Fences]]''
+|-
+| ''[[Hell or High Water (film)|Hell or High Water]]''
+|-
+| scope="row" rowspan="2" style="text-align:center;" | 3
+| ''[[Hidden Figures]]''
+|-
+| ''[[Jackie (2016 film)|Jackie]]''
+|-
+| scope="row" rowspan="8" style="text-align:center;" | 2
+| ''[[A Man Called Ove (film)|A Man Called Ove]]''
+|-
+| ''[[Deepwater Horizon (film)|Deepwater Horizon]]''
+|-
+| ''[[Fantastic Beasts and Where to Find Them (film)|Fantastic Beasts and Where to Find Them]]''
+|-
+| ''[[Florence Foster Jenkins (film)|Florence Foster Jenkins]]''
+|-
+| ''[[Kubo and the Two Strings]]''
+|-
+| ''[[Moana (2016 film)|Moana]]''
+|-
+| ''[[Passengers (2016 film)|Passengers]]''
+|-
+| ''[[Rogue One: A Star Wars Story]]''
+|}
+{{column}}
+{| class="wikitable plainrowheaders" style="text-align: center;"
+|+ Films that received multiple awards<ref name="auto"/>
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| scope="row" style="text-align:center" | 6
+| ''[[La La Land]]''
+|-
+| scope="row" style="text-align:center" | 3
+| ''[[Moonlight (2016 film)|Moonlight]]''
+|-
+| scope="row" rowspan="2" style="text-align:center;" | 2
+| ''[[Hacksaw Ridge]]''
+|-
+| ''[[Manchester by the Sea (film)|Manchester by the Sea]]''
+|}
+{{columns-end}}
+
+{{clear}}
+
+== Presenters and performers ==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>{{cite web |last1=Thrower |first1=Emma |title=Oscars 2017 Live Blog |url=https://www.empireonline.com/movies/features/oscars-2017-live-blog/ |magazine=[[Empire (magazine)|Empire]] |date=February 26, 2017 |access-date=August 8, 2026 |url-status=live |archive-url=https://web.archive.org/web/20170301041709/http://www.empireonline.com/movies/features/oscars-2017-live-blog/ |archive-date=March 1, 2017}}</ref><ref>{{cite web |title=Oscars 2017 Live Blog: Jimmy Kimmel, Speeches, Winners and More! |url=https://extratv.com/2017/02/26/oscars-2017-live-blog-jimmy-kimmel-speeches-winners-and-more/ |publisher=[[Extra (American TV program)|Extra]] |date=February 26, 2017 |access-date=August 8, 2026 |url-status=live |archive-url=https://web.archive.org/web/20170228003758/http://extratv.com/2017/02/26/oscars-2017-live-blog-jimmy-kimmel-speeches-winners-and-more/ |archive-date=February 28, 2017}}</ref><ref>{{cite web |last1=Wood |first1=Mikael |title=In a wild Oscars show, the music could’ve been wilder |url=https://www.latimes.com/entertainment/music/la-et-ms-oscars-music-20170226-story.html |magazine=[[Los Angeles Times]] |date=February 26, 2017 |access-date=August 8, 2026 |url-status=live |archive-url=https://web.archive.org/web/20170301040746/http://www.latimes.com/entertainment/music/la-et-ms-oscars-music-20170226-story.html |archive-date=March 1, 2017}}</ref>
+
+=== Presenters ===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Randy|Thomas|nolink=1}} || Served as announcer for the 89th annual Academy Awards
+|-
+| {{sortname|Alicia|Vikander}} || Presented the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Jason|Bateman}}<br >{{sortname|Kate|McKinnon}} || Presented the awards for [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]] and [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Taraji P.|Henson}}<br />{{sortname|Janelle|Monáe}}<br />{{sortname|Octavia|Spencer}} || Presented the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Dwayne|Johnson}} || Introduced the performance of Best Original Song nominee "[[How Far I'll Go]]"
+|-
+| {{sortname|Cheryl|Boone Isaacs}}<br />(AMPAS president) || Introduced a special presentation highlighting the benefits of film and diversity
+|-
+| {{sortname|Sofia|Boutella}}<br />{{sortname|Chris|Evans|Chris Evans (actor)}} || Presented the awards for [[Academy Award for Best Sound Editing|Best Sound Editing]] and [[Best Sound Mixing]]
+|-
+| {{sortname|Vince|Vaughn}} || Presented the [[Governors Awards|Governor Award]]
+|-
+| {{sortname|Mark|Rylance}} || Presented the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Shirley|MacLaine}}<br/>{{sortname|Charlize|Theron}} || Presented the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Dev|Patel}} || Introduced the performance of Best Original Song nominee "[[The Empty Chair (song)|The Empty Chair]]"
+|-
+| {{sortname|Gael|García Bernal}}<br/>{{sortname|Hailee|Steinfeld}} || Presented the awards for [[Best Animated Short Film]] and [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+| {{sortname|Jamie|Dornan}}<br/>{{sortname|Dakota|Johnson}} || Presented the award for [[Academy Award for Best Production Design|Best Production Design]]
+|-
+| {{sortname|Riz|Ahmed}}<br/>{{sortname|Felicity|Jones}} || Presented the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Michael J.|Fox}}<br />{{sortname|Seth|Rogen}} || Presented the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Salma|Hayek}}<br />{{sortname|David|Oyelowo}} || Presented the awards for [[Best Documentary Short Subject]] and [[Best Live Action Short Film]]
+|-
+| {{sortname|John|Cho}}<br />{{sortname|Leslie|Mann}} || Presented the segment of the [[Academy Scientific and Technical Award]]s
+|-
+| {{sortname|Javier|Bardem}}<br />{{sortname|Meryl|Streep}} || Presented the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Ryan|Gosling}}<br/>{{sortname|Emma|Stone}} || Introduced the performance of Best Original Song nominees "[[Audition (The Fools Who Dream)]]" and "[[City of Stars]]"
+|-
+| {{sortname|Samuel L.|Jackson}} || Presented the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| {{sortname|Scarlett|Johansson}} || Presented the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Jennifer|Aniston}} || Presented the "[[In memoriam segment|In Memoriam]]" tribute
+|-
+| {{sortname|Ben|Affleck}}<br />[[Matt Damon]]{{efn|name=Matt Damon Skit|Referred to only as Ben Affleck's "guest" in this segment.<ref name="matt damon joke">{{cite magazine |url=https://ew.com/awards/2017/02/27/oscars-2017-jimmy-kimmel-matt-damon-ben-affleck/ |title=Jimmy Kimmel Belittles Matt Damon at Oscars with Help from Ben Affleck |last1=Rosen |first1=Christopher |magazine=[[Entertainment Weekly]] |date=February 27, 2017 |access-date=April 16, 2018 |archive-date=April 17, 2018 |archive-url=https://web.archive.org/web/20180417191900/http://ew.com/awards/2017/02/27/oscars-2017-jimmy-kimmel-matt-damon-ben-affleck/ |url-status=dead }}</ref>}} || Presented the award for [[Best Original Screenplay]]
+|-
+| {{sortname|Amy|Adams}} || Presented the award for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| {{sortname|Halle|Berry}} || Presented the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Brie|Larson}} || Presented the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Leonardo|DiCaprio}} || Presented the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Warren|Beatty}}<br />{{sortname|Faye|Dunaway}} || Presented the award for [[Academy Award for Best Picture|Best Picture]]<!--No other names need to be added to this row; only two people were hired by producers to present this award; this has been discussed in Talk.-->
+|}
+
+=== Performers ===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+| {{sortname|Harold|Wheeler|Harold Wheeler (musician)}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname|Justin|Timberlake}} || Performer || Opening number: "[[Can't Stop the Feeling!]]" from ''[[Trolls (film)|Trolls]]'' and "[[Lovely Day]]"
+|-
+| {{sortname|Auliʻi|Cravalho}}<br />{{sortname|Lin-Manuel|Miranda}} || Performers || "[[How Far I'll Go]]" from ''[[Moana (2016 film)|Moana]]''
+|-
+| {{sortname||Sting|Sting (musician)}} || Performer || "[[The Empty Chair (song)|The Empty Chair]]" from ''[[Jim: The James Foley Story]]''
+|-
+| {{sortname|John|Legend}} || Performer || "[[City of Stars]]" and "[[Audition (The Fools Who Dream)]]" from ''[[La La Land]]''
+|-
+| {{sortname|Sara|Bareilles}} || Performer || "[[Both Sides, Now]]" during the annual "[[In memoriam segment|In Memoriam]]" tribute
+|}
+
+==Ceremony information==
+[[File:Jimmy Kimmel in 2015.jpg|thumb|upright|right|[[Jimmy Kimmel]] hosted the 89th Academy Awards|alt=Picture of comedian and host Jimmy Kimmel in 2015.]]
+
+On August 31, 2016, AMPAS renewed their deal with [[American Broadcasting Company|ABC]] to broadcast the Academy Awards through 2028.<ref>{{cite web |first=Daniel |last=Holloway |date=August 31, 2016 |title=Inside the Oscars Deal: What it Means for ABC and the Academy |url=https://variety.com/2016/tv/news/abc-oscars-deal-status-quo-1201849487/ |url-status=live |archive-url=https://web.archive.org/web/20160901184910/http://variety.com/2016/tv/news/abc-oscars-deal-status-quo-1201849487/ |archive-date=September 1, 2016 |access-date=August 8, 2026 |magazine=Variety}}</ref> ''[[The Hollywood Reporter]]'' reported that the producers of the [[88th Academy Awards|previous year's ceremony]], [[David Hill (producer)|David Hill]] and [[Reginald Hudlin]], were not asked to return.<ref>{{cite news |last1=Feinberg |first1=Scott |title=Oscars: David Hill, Reginald Hudlin Not Returning as Producers (Exclusive) |url=https://www.hollywoodreporter.com/race/oscars-david-hill-reginald-hudlin-not-returning-as-producers-943272 |access-date=November 4, 2016 |work=The Hollywood Reporter |date=November 2, 2016 |url-status=live |archive-url=https://web.archive.org/web/20161103125108/http://www.hollywoodreporter.com/race/oscars-david-hill-reginald-hudlin-not-returning-as-producers-943272 |archive-date=November 3, 2016}}</ref> Its host [[Chris Rock]] told ''[[Variety (magazine)|Variety]]'' regarding whether he would return to host, "someone else will do it."<ref>{{cite news |last1=Littleton |first1=Cynthia |title=Chris Rock Weighs in on 2017 Oscars Host, Says Comics Should Appeal to People Who 'Look Like Them First' |url=https://variety.com/2016/tv/news/chris-rock-oscars-louie-blair-breard-stuart-cornfeld-chris-moore-1201904395/ |access-date=November 4, 2016 |work=Variety |date=October 29, 2016 |url-status=live |archive-url=https://web.archive.org/web/20161105032558/http://variety.com/2016/tv/news/chris-rock-oscars-louie-blair-breard-stuart-cornfeld-chris-moore-1201904395/ |archive-date=November 5, 2016}}</ref> On November 4, 2016, [[Michael De Luca]] and [[Jennifer Todd]] were announced as the producers of the 89th ceremony.<ref name="DeLucaTodd">{{cite news |last1=Birnbaum |first1=Debra |title=It's Official: Michael De Luca and Jennifer Todd to Produce 2017 Oscars |url=https://variety.com/2016/film/news/michael-de-luca-jennifer-todd-producer-2017-oscars-1201909857/ |access-date=November 4, 2016 |work=Variety |date=November 4, 2016 |url-status=live |archive-url=https://web.archive.org/web/20161105032344/http://variety.com/2016/film/news/michael-de-luca-jennifer-todd-producer-2017-oscars-1201909857/ |archive-date=November 5, 2016}}</ref> On December 5, 2016, it was announced that [[Jimmy Kimmel]] would host the ceremony. ''The Hollywood Reporter'' reported that [[Disney Entertainment Television|Disney–ABC Television Group]] urged AMPAS to consider him, as he was the host of the ABC's ''[[Jimmy Kimmel Live!]]''.<ref name="Kimmel">{{cite web |title=Oscars: Jimmy Kimmel to Host This Year's Ceremony (Exclusive) |url=https://www.hollywoodreporter.com/news/oscars-jimmy-kimmel-host-years-ceremony-952662 |work=[[The Hollywood Reporter]] |first=Gregg |last=Kilday |date=December 5, 2016 |access-date=February 14, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170214182948/http://www.hollywoodreporter.com/news/oscars-jimmy-kimmel-host-years-ceremony-952662 |archive-date=February 14, 2017}}</ref> Kimmel expressed that it was truly an honor and a thrill to be asked to host Academy Awards, commenting "Mike and Jennifer have an excellent plan and their enthusiasm is infectious. I am honored to have been chosen to host the 89th and final Oscars."<ref>{{cite news |title=Jimmy Kimmel Announced His Oscars Hosting Gig with a Donald Trump Burn |url=https://www.vanityfair.com/hollywood/2016/12/jimmy-kimmel-oscars-host-donald-trump-taiwan |last1=Bradely |first1=Laura| access-date=February 20, 2017 |work=[[Vanity Fair (magazine)|Vanity Fair]] |date=December 8, 2016 |url-status=live |archive-url=https://web.archive.org/web/20161212115046/http://www.vanityfair.com/hollywood/2016/12/jimmy-kimmel-oscars-host-donald-trump-taiwan |archive-date=December 12, 2016}}</ref>
+
+On February 8, 2017, [[Glenn Weiss]] was announced as the director, for the second year in a row.<ref name="Weiss">{{cite web |title=Glenn Weiss to Direct Oscar Ceremony for Second Consecutive Year |url=https://variety.com/2017/tv/news/oscars-2017-director-glenn-weiss-1201981531/ |work=Variety |first=Maane |last=Khatchatourian |date=February 8, 2017 |access-date=February 14, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170214180636/http://variety.com/2017/tv/news/oscars-2017-director-glenn-weiss-1201981531/ |archive-date=February 14, 2017}}</ref> On February 14, 2017, producers announced the creative team, including the production designer [[Derek McLane]] (for his fifth consecutive year), writers [[Billy Kimball]] and Jon Macks, musical director [[Harold Wheeler (musician)|Harold Wheeler]] and lighting designer [[Robert Dickinson (lighting designer)|Robert Dickinson]].<ref>{{cite web |title=Oscars Ceremony Sets Production Team |url=https://www.hollywoodreporter.com/news/general-news/oscars-ceremony-sets-production-team-976180/ |work=The Hollywood Reporter |date=February 14, 2017 |access-date=August 8, 2026 |url-status=live |archive-url=https://web.archive.org/web/20170215002928/https://www.hollywoodreporter.com/news/oscars-ceremony-sets-production-team-976180/ |archive-date=February 15, 2017}}</ref> Due to Kimmel's hosting duties, ABC did not broadcast a special episode of ''[[Jimmy Kimmel Live!]]'' following the ceremony, as in past years. Instead, ABC aired ''Live from Hollywood: The After Party'', co-hosted by [[Anthony Anderson]] and [[Lara Spencer]] of ''[[Good Morning America]]''.<ref name="deadline-afterparty">{{cite web |title=Anthony Anderson To Host ABC's Post-Oscar Special, 'Live From Hollywood: The After Party' |url=https://deadline.com/2017/02/anthony-anderson-post-oscars-special-live-from-hollywood-1201955342/ |website=Deadline Hollywood |date=February 23, 2017 |access-date=February 27, 2017 |url-status=dead |archive-url=https://web.archive.org/web/20170227231651/http://deadline.com/2017/02/anthony-anderson-post-oscars-special-live-from-hollywood-1201955342/ |archive-date=February 27, 2017}}</ref>
+
+===Box office performance of nominated films===
+{| class="wikitable sortable" style="width:350px; font-size:90%; float:right; clear:right; margin-left:10px"
+|+North American box office gross for Best Picture nominees<ref name="BOM">{{cite web |title=2016 Academy Award Nominations and Winner for Best Picture |url=https://www.boxofficemojo.com/oscar/chart/?yr=2016&view=fulldetail&p=.htm |website=[[Box Office Mojo]] |access-date=March 5, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170216165419/http://www.boxofficemojo.com/oscar/chart/?yr=2016&view=fulldetail&p=.htm |archive-date=February 16, 2017}}</ref>
+|-
+! scope="col" data-sort-type="text" | Film
+! scope="col" data-sort-type="currency" | Pre-nomination<br />(before Jan. 24)
+! scope="col" data-sort-type="currency" | Post-nomination<br />(Jan. 24&nbsp;– Feb. 26)
+! scope="col" data-sort-type="currency" | Post-awards<br />(after Feb. 26)
+! scope="col" data-sort-type="currency" | Total
+|-
+| ''Hidden Figures''
+| $85 million
+| $67.7 million
+| $16.5 million
+| $169.3 million
+|-
+| ''La La Land''
+| $90.5 million
+| $50.5 million
+| $10.2 million
+| $151.1 million
+|-
+| ''Arrival''
+| $95.7 million
+| $4.6 million
+| $210,648
+| $100.5 million
+|-
+| ''Hacksaw Ridge''
+| $65.5 million
+| $1.4 million
+| $274,090
+| $67.2 million
+|-
+| ''Fences''
+| $48.8 million
+| $7.7 million
+| $1.1 million
+| $57.7 million
+|-
+| ''Lion''
+| $16.5 million
+| $26.3 million
+| $8.9 million
+| $51.7 million
+|-
+| ''Manchester by the Sea''
+| $39 million
+| $7.9 million
+| $819,980
+| $47.7 million
+|-
+| ''Moonlight''
+| $15.9 million
+| $6.4 million
+| $5.6 million
+| $27.9 million
+|-
+| ''Hell or High Water''
+| $27 million
+| –
+| –
+| $27 million
+|-
+! Total
+! $483.9 million
+! $172.4 million
+! $43.6 million
+! $700.1 million
+|-
+! Average
+! $53.8 million
+! $19.2 million
+! $4.8 million
+! $77.8 million
+|}
+
+At the time of the nominations announcement on January 24, 2017, the combined gross of the nine Best Picture nominees at the North American box offices was $483.8 million, with an average of $53.8 million per film.<ref name=BOM/> When the nominations were announced, ''Arrival'' was the highest-grossing film among the Best Picture nominees with $95.7 million in domestic box office receipts.<ref>{{cite web |url=https://www.latimes.com/entertainment/la-et-oscar-nominations-2017-live-none-of-the-best-picture-nominees-have-1485263901-htmlstory.html |title=None of the best picture nominees has grossed more than $100 million |last=Bernardin |first=Marc |date=January 24, 2017 |work=Loss Angeles Times |access-date=June 17, 2018 |url-status=live|archive-url=https://web.archive.org/web/20171016021207/http://www.latimes.com/entertainment/la-et-oscar-nominations-2017-live-none-of-the-best-picture-nominees-have-1485263901-htmlstory.html|archive-date=October 16, 2017|df=mdy-all}}</ref> ''La La Land'' was the second-highest-grossing film with $90.5 million,<ref>{{cite magazine |url=https://ew.com/awards/2017/02/26/oscars-2017-best-picture-box-office/ |title=How Oscar Nods Boosted 2017's Best Picture Contenders at the Box Office |first1=Nolfi |last1=Joey |date=February 26, 2017 |magazine=Entertainment Weekly |access-date=June 17, 2018|language=en |url-status=live|archive-url=https://web.archive.org/web/20180116032059/http://ew.com/awards/2017/02/26/oscars-2017-best-picture-box-office/|archive-date=January 16, 2018}}</ref> followed by ''Hidden Figures'' ($85 million), ''Hacksaw Ridge'' ($65.5 million), ''Fences'' ($48.8 million), ''Manchester by the Sea'' ($39 million), ''Hell or High Water'' ($27 million), ''Lion'' ($16.5 million) and ''Moonlight'' ($15.8 million).<ref>{{cite news |url=http://www.dailyherald.com/article/20170124/entlife/301249859 |title=Box office performance of the 9 best picture Oscar nominees |agency=Associated Press |date=March 24, 2017 |work=[[Daily Herald (Arlington Heights)|Daily Herald]] |access-date=June 17, 2018 |language=en-US |archive-date=June 17, 2018 |archive-url=https://web.archive.org/web/20180617165735/http://www.dailyherald.com/article/20170124/entlife/301249859 |url-status=live }}</ref> ''Moonlight'' became the second-lowest-grossing film to win Best Picture award.<ref>{{cite news |url=http://fortune.com/2017/02/27/moonlight-oscars-low-budget-box-office/ |title='Moonlight' Is Among the Lowest-Grossing Oscar Winners Ever |first1=Huddleston Jr. |last1=Tom |date=February 27, 2017 |work=[[Fortune (magazine)|Fortune]] |access-date=June 17, 2018|language=en |url-status=live|archive-url=https://web.archive.org/web/20180306033945/http://fortune.com/2017/02/27/moonlight-oscars-low-budget-box-office/|archive-date=March 6, 2018}}</ref><ref>{{cite web |url=https://www.boxofficemojo.com/oscar/?sort=gross&order=DESC&p=.htm |title=Academy Award Winners, Nominees, Games and Box Office Breakdowns |website=Boxoffice Mojo |language=en |access-date=June 17, 2018 |archive-date=June 17, 2018 |archive-url=https://web.archive.org/web/20180617170121/http://www.boxofficemojo.com/oscar/?sort=gross&order=DESC&p=.htm |url-status=dead}}</ref>
+<!--These ranking indicates when the nominations were revealed-->
+
+Thirty-five nominations went to 13 films on the list of the top 50 grossing movies of the year. Of those 13 films, only ''Zootopia'' (3rd), ''Moana'' (15th), ''La La Land'' (45th), and ''Arrival'' (48th) were nominated for Best Picture, Best Animated Feature or any of the directing, acting or screenwriting awards.<ref>{{cite web |url=https://www.boxofficemojo.com/oscar/chart/?view=allmovies&yr=2016&p=.htm |title=2016 Academy Awards Nominees and Wins by Movie |website=www.boxofficemojo.com |language=en |access-date=June 22, 2018 |archive-date=June 22, 2018 |archive-url=https://web.archive.org/web/20180622164724/http://www.boxofficemojo.com/oscar/chart/?view=allmovies&yr=2016&p=.htm |url-status=live }}</ref> The other top 50 box-office hits that earned nominations were ''Rogue One: A Star Wars Story'' (4th), ''The Jungle Book'' (5th), ''Fantastic Beasts and Where to Find Them'' (8th), ''Suicide Squad'' (10th), ''Doctor Strange'' (11th), ''Star Trek Beyond'' (24th), ''Trolls'' (25th), ''Passengers'' (30th), and ''Sully'' (32nd).<ref>{{cite web |url=https://www.boxofficemojo.com/yearly/chart/?yr=2016&p=.htm |title=2016 Yearly Box Office Results - Box Office Mojo |website=www.boxofficemojo.com |language=en |access-date=June 22, 2018 |archive-date=December 27, 2016 |archive-url=https://web.archive.org/web/20161227225622/http://www.boxofficemojo.com/yearly/chart/?yr=2016&p=.htm |url-status=live }}</ref>
+
+===Racial diversity===
+In the previous two years, the awards had come under scrutiny for the lack of racial diversity among the nominees in major categories, which included no actors of color being nominated.<ref>{{cite news |last1=Keegan |first1=Rebecca |last2=Zeitchik |first2=Steven |title=Oscars 2016: Here's why the nominees are so white-again |url=https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-all-white-oscar-acting-nominees-20160114-story.html |access-date=June 12, 2016 |work=Los Angeles Times |date=January 14, 2016 |url-status=live |archive-url=https://web.archive.org/web/20160612100254/http://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-all-white-oscar-acting-nominees-20160114-story.html |archive-date=June 12, 2016}}</ref> After the nominees for the 89th Awards were announced on January 24, many media outlets noted the diversity of the nominations, which included a record-tying seven non-white actors and a record-setting six black actors.<ref name=Diversity>{{cite news |last1=Riley |first1=Jenelle |title=Oscars: Record Six Black Actors Nominated, Diversity Improves After Controversy |url=https://variety.com/2017/film/news/2017-oscars-diversity-denzel-washington-viola-davis-octavia-spencer-1201968125/ |access-date=January 24, 2017 |work=Variety |date=January 24, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170126151557/http://variety.com/2017/film/news/2017-oscars-diversity-denzel-washington-viola-davis-octavia-spencer-1201968125/ |archive-date=January 26, 2017}}</ref><ref name=Diversity2>{{cite news |last1=Krishnakumar |first1=Priya |title=Are the Oscars still #SoWhite? A look at the diversity among this year's nominees |url=https://www.latimes.com/projects/la-et-oscars-nominations-2017/ |access-date=January 24, 2017 |work=Los Angeles Times |date=January 24, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170124185353/http://www.latimes.com/projects/la-et-oscars-nominations-2017/|archive-date=January 24, 2017}}</ref><ref name=Diversity3>{{cite news |title=Oscar nominations more diverse after #OscarsSoWhite row |url=http://www.aljazeera.com/news/2017/01/oscar-nominations-diverse-oscarssowhite-row-170124144104777.html |access-date=January 24, 2017 |publisher=[[Aljazeera Publishing]] |date=January 24, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170124185401/http://www.aljazeera.com/news/2017/01/oscar-nominations-diverse-oscarssowhite-row-170124144104777.html |archive-date=January 24, 2017}}</ref> For the first time in the academy's history, each acting category had black actors, with three nominated in the Best Supporting Actress category and three black screenwriters nominated in the Best Adapted Screenplay category in the same year. Also nominated was one black director, the fourth in Oscar history.<ref>{{cite web |last1=Capatides |first1=Christina |url=https://www.cbsnews.com/news/for-the-first-time-ever-3-black-actresses-were-nominated-in-the-same-oscars-category/ |title=For the first time ever, 3 black actresses were nominated in the same Oscars category |work=[[CBS News]] |date=February 25, 2007 |access-date=January 25, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170125013740/http://www.cbsnews.com/news/for-the-first-time-ever-3-black-actresses-were-nominated-in-the-same-oscars-category/ |archive-date=January 25, 2017}}</ref><ref>{{cite web |last=Verhoeven |first=Beatrice |url=https://www.thewrap.com/oscars-2017-two-black-screenwriters-fences-moonlight/ |title=Oscars 2017: 3 Black Screenwriters Earn Oscar Noms for First Time Ever |work=TheWrap |date=January 24, 2017 |access-date=January 25, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170206053216/http://www.thewrap.com/oscars-2017-two-black-screenwriters-fences-moonlight/ |archive-date=February 6, 2017}}</ref><ref>{{cite web |first=Stacy |last=Lambe |url=http://www.etonline.com/awards/oscars/208328_oscars_2017_nominate_black_actors_every_acting_category/ |title=Black Actors Nominated in Every Acting Category for First Time in Oscar History |work=[[Entertainment Tonight]] |access-date=January 25, 2017 |url-status=live|archive-url=https://web.archive.org/web/20170126132814/http://www.etonline.com/awards/oscars/208328_oscars_2017_nominate_black_actors_every_acting_category/ |archive-date=January 26, 2017}}</ref>
+
+The awards continued to be criticized by actors and media organizations representing non-black minorities in America. The [[National Hispanic Media Coalition]] stated that Latino actors were "not getting the opportunities to work in front of camera, and with few exceptions, in back of the camera as well." Daniel Mayeda, chair of the Asian Pacific American Media Coalition, stated that the omission of Asian actors from the nominations list (with only one actor, [[Dev Patel]], nominated) reflected "the continued lack of real opportunities for Asians in Hollywood".<ref>{{cite news |last=Puente |first=Maria |date=January 24, 2017 |title=Oscar nominations 2017: Diversity is not a simple black-or-white issue |url=https://www.usatoday.com/story/life/movies/2017/01/24/oscar-diversity-more-than-black-or-white-latinos-asians-excluded/96951730/ |work=USA Today |access-date=February 26, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170225124803/http://www.usatoday.com/story/life/movies/2017/01/24/oscar-diversity-more-than-black-or-white-latinos-asians-excluded/96951730/ |archive-date=February 25, 2017}}</ref> A skit performed during the ceremony, in which a group of tourists enter the theater, led to criticism of host Kimmel when he was accused of mocking an Asian woman's name.<ref>{{cite news |last=Verhoeven |first=Beatrice |date=February 26, 2017 |title=Jimmy Kimmel Slammed for Mocking Asian Woman's Name at Oscars |url=https://www.thewrap.com/jimmy-kimmel-slammed-mocking-asian-oscars/ |work=TheWrap |access-date=February 26, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227090754/http://www.thewrap.com/jimmy-kimmel-slammed-mocking-asian-oscars/ |archive-date=February 27, 2017}}</ref>
+
+Having previously been nominated for ''[[Doubt (2008 film)|Doubt]]'' (2008) and ''[[The Help (film)|The Help]]'' (2011), [[Viola Davis]] became the first African-American actress to garner three Academy Award nominations.<ref>{{cite magazine |first=Tim P. |last=Whit |url=https://ew.com/awards/2017/01/24/viola-davis-first-black-actress-three-oscar-nominations/ |title=Viola Davis becomes first black actress to earn 3 Oscar nominations |magazine=Entertainment Weekly |date=January 24, 2017 |access-date=January 25, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170125011128/http://ew.com/awards/2017/01/24/viola-davis-first-black-actress-three-oscar-nominations/ |archive-date=January 25, 2017}}</ref><ref>{{cite news |first=Bethonie |last=Butler |url=https://www.washingtonpost.com/news/arts-and-entertainment/wp/2017/01/24/viola-daviss-historic-oscar-nod-could-lead-to-a-win-and-another-great-speech/ |title=Viola Davis makes history with her third Oscar nod. We might be in for an epic speech. |newspaper=[[The Washington Post]] |date=January 24, 2017 |access-date=January 25, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170125030948/https://www.washingtonpost.com/news/arts-and-entertainment/wp/2017/01/24/viola-daviss-historic-oscar-nod-could-lead-to-a-win-and-another-great-speech/ |archive-date=January 25, 2017}}</ref> She went on to win the award, making her the first African-American to achieve the Triple Crown of Acting: winning a competitive [[Emmy]], [[Tony Awards|Tony]], and Oscar in acting categories. [[Bradford Young]] became the first African-American to be nominated for [[Academy Award for Best Cinematography|Best Cinematography]], while [[Joi McMillon]] became the first African-American to be nominated for [[Academy Award for Best Film Editing|Best Film Editing]] since [[Hugh A. Robertson]] for ''[[Midnight Cowboy]]'', as well as the first black woman to be nominated for that award.<ref>{{cite web |first=Carolyn |last=Giardina |url=https://www.hollywoodreporter.com/behind-screen/oscars-moonlight-editing-nomination-marks-a-first-967940 |title=Oscars: 'Moonlight' Editing Nomination Marks a First |work=The Hollywood Reporter |date=January 24, 2017 |access-date=January 24, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170124212600/http://www.hollywoodreporter.com/behind-screen/oscars-moonlight-editing-nomination-marks-a-first-967940 |archive-date=January 24, 2017}}</ref><ref>{{cite news |url=http://www.vogue.com/projects/13514953/moonlight-cinematographer-james-laxton/ |title=''Moonlight's'' Cinematographer on Filming the Most Exquisite Movie of the Year |last=Aguirre |first=Abby |work=[[Vogue (magazine)|Vogue]] |language=en-US |access-date=January 7, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170108001842/http://www.vogue.com/projects/13514953/moonlight-cinematographer-james-laxton/ |archive-date=January 8, 2017}}</ref><ref>{{cite web |work=The Huffington Post |url=https://www.huffingtonpost.com/entry/joi-mcmillon-moonlight-first-black-woman-oscar-nomination_us_588acd7ce4b0230ce61b2061 |title=Meet Joi McMillon, The First Black Female Oscar Nominee For Film Editing |date=January 27, 2017 |last=Williams |first=Brennan |url-status=live |archive-url=https://web.archive.org/web/20170127185430/http://www.huffingtonpost.com/entry/joi-mcmillon-moonlight-first-black-woman-oscar-nomination_us_588acd7ce4b0230ce61b2061 |archive-date=January 27, 2017}}</ref> [[Octavia Spencer]] became the first African-American actress to be nominated after having already won before.<ref name="ew">{{cite magazine |first=Joey |last=Nolfi |title=Oscars: Octavia Spencer makes history with The Shape of Water nomination |url=https://ew.com/awards/2018/01/23/oscars-octavia-spencer-makes-history-shape-of-water-nomination/ |access-date=2018-01-23 |magazine=Entertainment Weekly |date=2018-01-23 |archive-date=January 24, 2018 |archive-url=https://web.archive.org/web/20180124005804/http://ew.com/awards/2018/01/23/oscars-octavia-spencer-makes-history-shape-of-water-nomination/ |url-status=dead }}</ref> ''Moonlight'' became the first film with an all-black cast to win the Best Picture award.<ref name="france1"/> Additionally, the ceremony had the most black winners of the Academy Awards ever.<ref>{{cite magazine |first=Joey |last=Nolfi |url=https://ew.com/awards/2017/02/26/oscars-2017-black-acting-winners/ |title=Oscars 2017: History made with most black winners ever |magazine=Entertainment Weekly |date=26 February 2017 |access-date=March 1, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170228071429/http://ew.com/awards/2017/02/26/oscars-2017-black-acting-winners/ |archive-date=February 28, 2017}}</ref>
+
+===Travel ban controversy===
+Iranian director [[Asghar Farhadi]], who won the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]] for ''[[The Salesman (2016 film)|The Salesman]]'', was revealed to initially be unable to attend the ceremony due to [[President of the United States|President]] [[Donald Trump]]'s [[Executive Order 13769|immigration ban]]. He boycotted the event, saying, "I have decided to not attend the Academy Awards ceremony alongside my fellow members of the cinematic community."<ref>{{cite web |first=Julia |last=Brucculieri |title=Oscar-Nominated Iranian Director Asghar Farhadi Will Not Attend Awards Ceremony |url=http://www.huffingtonpost.in/entry/iranian-director-asghar-farhadi-oscars_us_588e4a98e4b08a14f7e6ac7c |work=The Huffington Post |date=January 30, 2017 |access-date=February 5, 2017 |url-status=live|archive-url=https://web.archive.org/web/20170204003220/http://www.huffingtonpost.in/entry/iranian-director-asghar-farhadi-oscars_us_588e4a98e4b08a14f7e6ac7c |archive-date=February 4, 2017}}</ref> The academy president [[Cheryl Boone Isaacs]] reacted to the travel ban, saying, "America should always be not a barrier but a beacon and each and every one of us knows that there are some empty chairs in this room which has made academy artists into activists."<ref>{{cite web |first=Lanre |last=Bakare |title=Academy president on Oscars boycott: Trump ban made 'artists into activists' |url=https://www.theguardian.com/film/2017/feb/06/oscars-boycott-trump-cheryl-boone-isaacs |work=The Guardian |date=January 27, 2017 |access-date=February 11, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170211075514/https://www.theguardian.com/film/2017/feb/06/oscars-boycott-trump-cheryl-boone-isaacs |archive-date=February 11, 2017}}</ref>
+
+Two prominent [[Iranian Americans]] &ndash; engineer [[Anousheh Ansari]], known as the first female [[space tourist]], and [[Firouz Naderi]], a former director of Solar Systems Exploration at [[NASA]] &ndash; accepted Asghar Farhadi's Oscar on his behalf at the ceremony.<ref>{{cite web |last1=Vivarelli |first1=Nick |title=Asghar Farhadi to Be Represented at Oscars by First Female Space Tourist and Former NASA Scientist |url=https://variety.com/2017/film/awards/asghar-farhadi-to-be-represented-by-first-female-space-tourist-and-nasa-exec-at-oscars-1201995676/ |work=Variety |date=February 24, 2017 |access-date=February 26, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170226050348/http://variety.com/2017/film/awards/asghar-farhadi-to-be-represented-by-first-female-space-tourist-and-nasa-exec-at-oscars-1201995676/ |archive-date=February 26, 2017}}</ref> Congratulations which had initially been tweeted to the Iranian people from the [[US State Department]]'s official Persian-language Twitter account were deleted following the acceptance speech given by Firouz Naderi in which President Trump's travel ban was described as "inhumane".<ref>{{cite web |last1=Smith |first1=Neil |title=Oscars 2017: Truth behind 'Envelopegate' emerges |url=https://www.bbc.com/news/entertainment-arts-39112851 |work=BBC News |access-date=28 February 2017 |date=28 February 2017 |url-status=live |archive-url=https://web.archive.org/web/20170228214718/http://www.bbc.com/news/entertainment-arts-39112851 |archive-date=February 28, 2017}}</ref>
+
+===Best Picture announcement error===
+[[Warren Beatty]] and [[Faye Dunaway]] came onstage to present the award for [[Academy Award for Best Picture|Best Picture]], in celebration of the 50th anniversary of ''[[Bonnie and Clyde (film)|Bonnie and Clyde]]''.<ref>{{cite news |url=https://www.hollywoodreporter.com/race/oscars-warren-beatty-faye-dunaway-planning-bonnie-clyde-reunion-972762 |title=Oscars: Warren Beatty and Faye Dunaway Planning 'Bonnie and Clyde' Reunion (Exclusive) |first1=Feinberg |last1=Scott |first2=Gardner |last2=Chris |date=February 16, 2017 |work=The Hollywood Reporter |access-date=June 17, 2018|language=en |url-status=live|archive-url=https://web.archive.org/web/20170816203601/http://www.hollywoodreporter.com/race/oscars-warren-beatty-faye-dunaway-planning-bonnie-clyde-reunion-972762|archive-date=August 16, 2017}}</ref> After opening the envelope, Beatty hesitated, eventually showing it to Dunaway, who glanced at it and declared ''[[La La Land]]'' to be the winner.<ref>{{cite news |url=https://www.independent.co.uk/arts-entertainment/films/news/oscars-2018-warren-beatty-faye-dunaway-best-picture-moonlight-la-la-land-a8240011.html |title=Warren Beatty and Faye Dunaway joke about Oscars mix-up when handing out best picture |first=Shepherd |last=Jack |date=March 5, 2018 |work=The Independent |access-date=June 17, 2018|language=en-GB= |url-status=live|archive-url=https://web.archive.org/web/20180305223527/https://www.independent.co.uk/arts-entertainment/films/news/oscars-2018-warren-beatty-faye-dunaway-best-picture-moonlight-la-la-land-a8240011.html|archive-date=March 5, 2018}}</ref> However, more than two minutes later, as the producers of ''La La Land'' were making their acceptance speeches, Oscar crew members came on stage and took the envelopes from those assembled, explaining to them that there had been a mistake. ''La La Land'' producer [[Fred Berger (producer)|Fred Berger]], having heard the news, concluded his brief speech by saying, "We lost, by the way".<ref>{{cite news |url=https://www.washingtonpost.com/news/arts-and-entertainment/wp/2017/02/27/la-la-land-producer-jordan-horowitz-is-the-truth-teller-we-need-right-now/ |title='La La Land' producer Jordan Horowitz is the truth-teller we need right now |last1=Merry |first1=Stephanie |date=February 27, 2017 |newspaper=The Washington Post |access-date=June 17, 2018 |last2=Bever |first2=Lindsey|language=en-US|issn=0190-8286 |url-status=live|archive-url=https://web.archive.org/web/20180108081143/https://www.washingtonpost.com/news/arts-and-entertainment/wp/2017/02/27/la-la-land-producer-jordan-horowitz-is-the-truth-teller-we-need-right-now/|archive-date=January 8, 2018}}</ref><ref>{{cite news |url=https://www.timesofisrael.com/jewish-la-la-land-producer-makes-announcement-on-oscars-gaffe/ |title=Jewish 'La La Land' producer takes starring role in Oscars gaffe |date=February 27, 2017 |work=[[The Times of Israel]] |access-date=June 17, 2018|language=en-US |url-status=live|archive-url=https://web.archive.org/web/20170920031913/http://www.timesofisrael.com/jewish-la-la-land-producer-makes-announcement-on-oscars-gaffe/|archive-date=September 20, 2017}}</ref>
+
+Beatty was then given the correct opened envelope as ''La La Land'' producer [[Jordan Horowitz]] stepped to the microphone, announced the error, stated that ''[[Moonlight (2016 film)|Moonlight]]'' had actually won the award, and took the card bearing the film's title from Beatty's hand and showed it to the camera and the audience as proof. The ''La La Land'' team, particularly Horowitz, would later be praised for their professional handling of the situation. Beatty returned to the microphone and explained that the envelope he had initially been given named [[Emma Stone]] for her actress performance in ''La La Land'', hence his confused pause, and confirmed that ''Moonlight'' was the winner. The producers of ''Moonlight'' then came onstage, Horowitz presented the Best Picture award given to them, and they gave their acceptance speeches.<ref name="DonnellyOscar" /><ref>{{cite news |url=https://abcnews.go.com/Entertainment/moonlight-wins-best-picture-mistake-presenter-warren-beatty/story?id=45769592 |title='Moonlight' wins best picture after 'La La Land' mistakenly announced |first1=Michael |last1=Rothman |first2=Michael Edison |last2=Hayden |date=February 27, 2017 |work=[[ABC News (United States)|ABC News]] |access-date=February 27, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227052424/http://abcnews.go.com/Entertainment/moonlight-wins-best-picture-mistake-presenter-warren-beatty/story?id=45769592 |archive-date=February 27, 2017}}</ref><ref>{{cite web |last1=Garvey |first1=Megan |url=https://www.latimes.com/entertainment/la-oscars-2017-89th-academy-awards-la-la-land-wins-best-1488172121-htmlstory.html |title=Oscars 2017 live updates: 'Moonlight' wins best picture after 'La La Land' incorrectly called |work=Los Angeles Times |date=February 26, 2017 |access-date=February 26, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227085131/http://www.latimes.com/entertainment/la-oscars-2017-89th-academy-awards-la-la-land-wins-best-1488172121-htmlstory.html |archive-date=February 27, 2017}}</ref>
+
+According to ''[[The Hollywood Reporter]]'', [[PricewaterhouseCoopers]] (PwC) &ndash; the accounting firm responsible for tabulating results, preparing the envelopes, and handing them to presenters – creates two sets of envelopes, which are kept on opposite sides of the stage.<ref>{{cite news |last1=Kilday |first1=Gregg |url=https://www.hollywoodreporter.com/news/oscars-how-wrong-envelope-triggered-a-best-picture-fiasco-980910 |title=Oscars: How the Wrong Envelope Triggered a Best Picture Fiasco |work=The Hollywood Reporter |access-date=February 27, 2017 |language=en |url-status=live |archive-url=https://web.archive.org/web/20170227102803/http://www.hollywoodreporter.com/news/oscars-how-wrong-envelope-triggered-a-best-picture-fiasco-980910 |archive-date=February 27, 2017}}</ref> It is intended that each award has one primary envelope and one backup envelope that remains with one of the PwC staff in the wings. (An emergency third set of envelopes is kept at an undisclosed location until the first two sets of envelopes are confirmed to have arrived at the Oscars ceremony location safely.) Video stills from the broadcast show that Beatty and Dunaway had been given the single remaining still-unopened backup envelope for the [[Academy Award for Best Actress|Best Actress]] award as they walked onto the stage.<ref>{{cite news |url=http://www.cnn.com/2017/02/27/entertainment/academy-awards-mistake-what-happened/index.html |title=It was 'Moonlight,' not 'La La Land': A timeline of a historic Oscars blunder |last=Gonzalez |first=Sandra |publisher=CNN |date=February 27, 2017 |access-date=February 27, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227232200/http://www.cnn.com/2017/02/27/entertainment/academy-awards-mistake-what-happened/index.html |archive-date=February 27, 2017}}</ref>
+
+PwC issued a statement apologizing for this error:
+
+{{cquote|text=We sincerely apologize to ''Moonlight'', ''La La Land'', Warren Beatty, Faye Dunaway, and Oscar viewers for the error that was made during the award announcement for Best Picture. The presenters had mistakenly been given the wrong category envelope and when discovered, was immediately corrected. We are currently investigating how this could have happened, and deeply regret that this occurred. We appreciate the grace with which the nominees, the Academy, ABC, and Jimmy Kimmel handled the situation.<ref>{{cite web |url=http://www.oscars.org/news/statement-pricewaterhousecoopers |title=Statement from PwC |date=February 27, 2017 |publisher=Academy of Motion Picture Arts and Sciences |access-date=February 27, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227115922/https://www.oscars.org/news/statement-pricewaterhousecoopers |archive-date=February 27, 2017}}</ref>}}
+
+An article from ''[[The New York Times]]'' explained:
+
+{{cquote|text=The design of the envelopes could have been a factor. The envelopes were redesigned this year to feature red paper with gold lettering that specified the award enclosed, rather than gold paper with dark lettering. That could have made the lettering harder to read. The Academy of Motion Picture Arts and Sciences, not PwC, is responsible for the design and procurement of the envelopes.<ref>{{cite news |last1=Gelles |first1=David |last2=Maheshwari |first2=Sapna |title=Oscars Mistake Casts Unwanted Spotlight on PwC |url=https://www.nytimes.com/2017/02/27/business/media/pwc-oscars-best-picture.html |work=[[The New York Times]] |date=February 27, 2017 |access-date=February 28, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170228032107/https://www.nytimes.com/2017/02/27/business/media/pwc-oscars-best-picture.html |archive-date=February 28, 2017}}</ref>}}
+
+Brian Cullinan, the PwC accountant who gave the wrong envelope to Beatty, had been instructed not to use social media during the event; however, moments after handing over the envelope, he had [[Twitter|tweeted]] a snapshot of Stone standing backstage.<ref>{{cite news |last=Mandell |first=Andrea |title=PwC rep was told not to tweet during Oscars |url=https://www.usatoday.com/story/life/movies/2017/02/28/pwc-academy-awards-wrong-envelope-told-not-to-tweet/98544462/ |work=USA Today |date=February 28, 2017 |access-date=March 2, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170302101825/http://www.usatoday.com/story/life/movies/2017/02/28/pwc-academy-awards-wrong-envelope-told-not-to-tweet/98544462/ |archive-date=March 2, 2017}}</ref> [[Variety (magazine)|''Variety'']] published photographs of Cullinan that were taken at the time which showed him backstage while tweeting the image.<ref name="Varietywrongenvelope">{{cite news |last1=Yee |first1=Lawrence |last2=Oldham |first2=Stuart |last3=Bryant |first3=Jacob |title=New Photos Show PWC Accountant Tweeting, Mixing Envelopes Backstage at Oscars (exclusive) |url=https://variety.com/2017/film/news/oscar-best-picture-gaffe-brian-cullinan-envelope-1201999283/ |magazine=Variety |date=March 1, 2017 |access-date=March 2, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170302000801/https://variety.com/2017/film/news/oscar-best-picture-gaffe-brian-cullinan-envelope-1201999283/ |archive-date=March 2, 2017}}</ref>
+
+=== Critical reviews ===
+The show received a mixed reception from media publications. Some media outlets were more critical and complained of repetitive jokes; Jeff Jensen of ''[[Entertainment Weekly]]'' complained that the show "didn't know when to stop and didn't know when to bail on stuff that wasn't working",<ref>{{cite magazine |last1=Jensen |first1=Jeff |title=The Oscars fumble: EW review |url=https://ew.com/awards/2017/02/27/oscars-2017-ew-review/ |access-date=April 23, 2017 |magazine=Entertainment Weekly |date=February 27, 2017 |archive-date=April 24, 2017 |archive-url=https://web.archive.org/web/20170424182553/http://ew.com/awards/2017/02/27/oscars-2017-ew-review/ |url-status=live }}</ref> and Kristi Turnquist of ''[[The Oregonian]]'' agreed and especially noted the repeated segments featuring actors discussing their favorite films at length to be "tedious and ill-advised".<ref>{{cite news |last1=Turnquist |first1=Kristi |title=In incredible Oscars switch, 'Moonlight' wins best picture |url=http://www.oregonlive.com/entertainment/index.ssf/2017/02/in_incredible_oscars_switch_mo.html |access-date=August 23, 2017 |work=[[The Oregonian]] |date=February 27, 2017 |archive-date=September 13, 2017 |archive-url=https://web.archive.org/web/20170913135034/http://www.oregonlive.com/entertainment/index.ssf/2017/02/in_incredible_oscars_switch_mo.html |url-status=live }}</ref> Writing for ''[[Time (magazine)|Time]]'' television critic Daniel D'Addario bemoaned that, "It was unfortunate that the evening's host didn't seem to share the evening's general embrace of humanity."<ref>{{cite magazine |title=Review: A Lively Oscars Show Ended With the Mother of All Mix-Ups |url=https://time.com/4683402/oscars-2017-recap-review/ |first=Daniel |last=D'Addario |magazine=[[Time (magazine)|Time]] |date=February 27, 2017 |access-date=April 23, 2017 |archive-date=April 25, 2017 |archive-url=https://web.archive.org/web/20170425010934/http://time.com/4683402/oscars-2017-recap-review/ |url-status=live }}</ref>
+
+Some media outlets reviewed the broadcast more positively with some praise for Kimmel. ''[[Variety (magazine)|Variety]]'' television critic Sonia Saraiya praised Kimmel's performance writing that he "found a way to balance the telecast between that sensibility &ndash; the treacly self-satisfaction of sweeping orchestrals and tap dancing starlets."<ref>{{cite news |title=TV Review: Oscars Celebrate Cinema Through the Messy Power of Live Television |first=Sonia |last=Saraiya |url=https://variety.com/2017/film/news/2017-oscars-review-the-academy-awards-mess-cinema-la-la-land-moonlight-jimmy-kimmel-1201997497/| magazine=Variety |date=February 26, 2017 |access-date=March 14, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170315085248/https://variety.com/2017/film/news/2017-oscars-review-the-academy-awards-mess-cinema-la-la-land-moonlight-jimmy-kimmel-1201997497/ |archive-date=March 15, 2017}}</ref> Chief television critics, Robert Bianco of ''[[USA Today]]'' and [[Frazier Moore]] from [[Associated Press]] applauded Kimmel's hosting saying he "was up to the challenge" while Moore added that the ceremony's induction of the montage of moviegoers shows that "Hollywood can surmount its share of walls."<ref>{{cite news |last1=Bianco |first1=Robert |url=https://www.usatoday.com/story/life/tv/2017/02/26/oscars-quick-take-review-jimmy-kimmel-justin-timberlake-robert-bianco/98458314/ |title=Review: Kimmel comes out comfortable and swinging in debut as Oscars host |work=USA Today |access-date=March 15, 2017 |language=en |url-status=live |archive-url=https://web.archive.org/web/20170302200950/http://www.usatoday.com/story/life/tv/2017/02/26/oscars-quick-take-review-jimmy-kimmel-justin-timberlake-robert-bianco/98458314/|archive-date=March 2, 2017}}</ref><ref>{{cite news |last1=Moore |first1=Frazier |url=https://newsok.com/article/feed/1174942/review-what-happened-oscar-host-kimmel-was-unflappable |title=Review: What happened? Oscar host Kimmel was unflappable |work=[[The Associated Press]] |publisher=[[The Oklahoman]] |date=February 27, 2017 |access-date=May 15, 2018 |language=en-US |archive-date=May 16, 2018 |archive-url=https://web.archive.org/web/20180516104029/https://newsok.com/article/feed/1174942/review-what-happened-oscar-host-kimmel-was-unflappable |url-status=dead}}</ref> Brian Lowry of [[CNN]] gave an average critique of the ceremony but acclaimed Kimmel's hosting.<ref>{{cite news |last1=Lowry |first1=Brian |title=Oscars mix politics, silliness and shocking twist ending |url=http://www.cnn.com/2017/02/27/tv-shows/academy-awards-2017-review/ |access-date=August 23, 2017 |publisher=CNN |date=February 27, 2017 |archive-date=September 13, 2017 |archive-url=https://web.archive.org/web/20170913135059/http://www.cnn.com/2017/02/27/tv-shows/academy-awards-2017-review/ |url-status=live }}</ref> Many critics praised the playful jabs between Kimmel and [[Matt Damon]], who was introduced as [[Ben Affleck]]'s unnamed guest as well as music being played over him.<ref>{{Cite web|url=https://www.hollywoodreporter.com/news/jimmy-kimmel-matt-damon-feud-escalates-at-oscars-2017-watch-980423|title=Oscars: Host Jimmy Kimmel Brings Long-Running Matt Damon Feud to the Stage|website=[[The Hollywood Reporter]]|date=February 26, 2017|access-date=September 20, 2020|archive-date=December 8, 2020|archive-url=https://web.archive.org/web/20201208145551/https://www.hollywoodreporter.com/news/jimmy-kimmel-matt-damon-feud-escalates-at-oscars-2017-watch-980423|url-status=live}}</ref>
+
+=== Rating and reception ===
+The American telecast on ABC drew an average of 32.9 million people over its length, which was a 4% decrease from the [[88th Academy Awards|previous year]]. The show also earned lower [[Nielsen ratings]] compared to the previous ceremony with 22.4% of households watching over a 36 share.<ref name="Oscar ratings">{{cite news |last1=O'Connell |first1=Michael |url=https://www.hollywoodreporter.com/live-feed/tv-ratings-oscars-drop-again-early-numbers-980854 |title=TV Ratings: Oscars Drop to 32.9M Viewers, Telecast Takes a Bigger Hit With Younger Set |work=The Hollywood Reporter |access-date=May 15, 2018 |language=en |archive-date=April 13, 2021 |archive-url=https://web.archive.org/web/20210413200126/https://www.hollywoodreporter.com/live-feed/tv-ratings-oscars-drop-again-early-numbers-980854 |url-status=live }}</ref> In addition, it received a lower 18–49 demo rating with a 9.1 rating over a 26 share.<ref>{{cite news |url=https://www.indiewire.com/2017/02/oscars-ratings-jimmy-kimmel-abc-moonlight-la-la-land-1201787923/ |title=Final Oscars Ratings: La La Lousy Numbers, as This Year's Telecast Dips From Last Year (Updated) |last=Schneider |first=Michael |date=February 27, 2017 |work=[[IndieWire]] |access-date=May 15, 2018 |language=en-US |archive-date=May 16, 2018 |archive-url=https://web.archive.org/web/20180516103936/http://www.indiewire.com/2017/02/oscars-ratings-jimmy-kimmel-abc-moonlight-la-la-land-1201787923/ |url-status=live }}</ref> It also had the lowest U.S. viewership since the [[80th Academy Awards|80th ceremony]] in 2008, which averaged 32 million viewers.<ref name="Oscar ratings"/> Nonetheless, it was the eighth most watched television broadcast in the United States in 2017, behind only sport events and the [[2017 Donald Trump speech to a joint session of Congress|Donald Trump speech to a joint session of Congress]].<ref>{{cite web |last1=Crupi |first1=Anthony |title=Despite Another Ratings Slump, the NFL Remains TV's Top Dog |url=http://adage.com/article/media/ratings-slum/311777/ |url-access=subscription |publisher=[[Advertising Age]] |date=January 2, 2018 |access-date=January 26, 2018 |archive-date=February 3, 2018 |archive-url=https://web.archive.org/web/20180203162434/http://adage.com/article/media/ratings-slum/311777/ |url-status=live }}</ref>
+
+In July 2017, the ceremony presentation received six nominations for the [[69th Primetime Creative Arts Emmy Awards|69th Primetime Creative Arts Emmys]].<ref>{{cite web |url=https://variety.com/2017/tv/news/2017-emmy-nominees-list-nominations-1202494465/ |title=Emmys 2017: Full List of Nominations |date=July 13, 2017 |work=Variety |access-date=July 13, 2017 |archive-date=June 26, 2019 |archive-url=https://web.archive.org/web/20190626194627/https://variety.com/2017/tv/news/2017-emmy-nominees-list-nominations-1202494465/ |url-status=live }}</ref> The following month, the ceremony won two of those nominations for [[Primetime Emmy Award for Outstanding Interactive Program|Outstanding Creative Achievement In Interactive Media within an Unscripted Program]] and for [[Primetime Emmy Award for Outstanding Directing for a Variety Special|Outstanding Directing for a Variety Special]] (Glenn Weiss).<ref>{{cite web |last1=Chow |first1=Andrew R. |url=https://www.nytimes.com/2017/09/17/arts/television/emmy-winners-list.html |title=Emmys 2017 Winners List |date=September 17, 2017 |work=The New York Times |access-date=September 18, 2017 |archive-date=January 6, 2018 |archive-url=https://web.archive.org/web/20180106073636/https://www.nytimes.com/2017/09/17/arts/television/emmy-winners-list.html |url-status=live }}</ref>
+
+== "In Memoriam" ==
+The annual "[[In memoriam segment|In Memoriam]]" segment was introduced by [[Jennifer Aniston]], with [[Sara Bareilles]] performing a rendition of the [[Joni Mitchell]] song "[[Both Sides, Now]]" during the montage. Beforehand, Aniston paid verbal tribute to actor [[Bill Paxton]], who died the day before the ceremony.<ref>{{cite web |first=Patrick |last=Shanley |url=https://www.hollywoodreporter.com/news/sara-bareilles-s-memoriam-oscars-2017-performance-watch-980211 |title=Oscars: Sara Bareilles Performs Joni Mitchell's "Both Sides Now" During In Memoriam Segment |work=The Hollywood Reporter |date=February 26, 2017 |access-date=February 27, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227151453/http://www.hollywoodreporter.com/news/sara-bareilles-s-memoriam-oscars-2017-performance-watch-980211 |archive-date=February 27, 2017}}</ref> The segment paid tribute to:<ref>{{cite web |first=Chris |last=Beachum |url=https://www.goldderby.com/film/2017/oscars-2017-memoriam-segment-to-honor-debbie-reynolds-prince-patty-duke-george-kennedy/ |title=Oscars 2017: Memoriam segment to honor Debbie Reynolds, Prince, Patty Duke, George Kennedy |work=[[Gold Derby]] |date=February 26, 2017 |access-date=August 8, 2026 |url-status=live |archive-url=https://web.archive.org/web/20260808130958/https://www.goldderby.com/film/2017/oscars-2017-memoriam-segment-to-honor-debbie-reynolds-prince-patty-duke-george-kennedy/ |archive-date=August 8, 2026}}</ref>
+
+{{div col}}
+
+* [[Arthur Hiller]] &ndash; Director, Academy president 1993–1997 <!--All artists are in order of appearance-->
+* [[Ken Adam]] &ndash; Production designer
+* [[Tracy Scott]] &ndash; Script supervisor
+* [[Bill Nunn]] &ndash; Actor
+* [[Alice Arlen]] &ndash; Screenwriter
+* [[George Kennedy]] &ndash; Actor
+* [[Gene Wilder]] &ndash; Actor, director, producer, screenwriter
+* Donald P. Harris &ndash; Film executive
+* [[Paul Sylbert]] &ndash; Production designer, set decorator
+* [[Michael Cimino]] &ndash; Director, producer, screenwriter
+* [[Andrzej Wajda]] &ndash; Theater director
+* [[Patty Duke]] &ndash; Actress
+* [[Garry Marshall]] &ndash; Actor, director, producer
+* Wilma Baker &ndash; Animator
+* [[Emmanuelle Riva]] &ndash; Actress
+* [[Janet Patterson]] &ndash; Costume designer, production designer
+* [[Anton Yelchin]] &ndash; Actor
+* [[Mary Tyler Moore]] &ndash; Actress
+* [[Prince (musician)|Prince]] &ndash; Singer-songwriter, record producer
+* [[Kenny Baker (English actor)|Kenny Baker]] &ndash; Actor, musician
+* [[John Hurt]] &ndash; Actor
+* [[Jim Clark (film editor)|Jim Clark]] &ndash; Editor
+* [[Norma Moriceau]] &ndash; Costume designer, production designer
+* [[Fern Buchner]] &ndash; Makeup artist
+* [[Kit West]] &ndash; Special effects artist
+* [[Lupita Tovar]] &ndash; Actress
+* [[Manlio Rocchetti]] &ndash; Makeup artist
+* [[Pat Conroy]] &ndash; Author
+* [[Nancy Davis Reagan]] &ndash; Actress, [[First Lady of the United States]] 1981-89
+* [[Abbas Kiarostami]] &ndash; Director, screenwriter, producer
+* [[William Peter Blatty]] &ndash; Writer, filmmaker
+* [[Ken Howard]] &ndash; Actor
+* [[Tyrus Wong]] &ndash; Artist
+* [[Héctor Babenco]] &ndash; Actor, director, producer
+* [[Curtis Hanson]] &ndash; Director, producer, screenwriter
+* [[Marni Nixon]] &ndash; Singer, actress
+* [[Ray West]] &ndash; Sound engineer
+* [[Raoul Coutard]] &ndash; Cinematographer
+* [[Zsa Zsa Gabor]] &ndash; Actress, socialite
+* [[Antony Gibbs]] &ndash; Editor
+* [[Om Puri]] &ndash; Actor
+* [[Andrea Jaffe]] &ndash; Publicist
+* [[Richard Portman]] &ndash; Sound editor
+* [[Debbie Reynolds]] &ndash; Actress, singer, humanitarian
+* [[Carrie Fisher]] &ndash; Actress, writer, humorist
+
+{{div col end}}
+
+The slide for [[Janet Patterson]], an Australian costume designer, mistakenly used a photograph of Australian producer [[Jan Chapman]], who is still alive.<ref>{{cite magazine |last=Samuelson |first=Kate |url=https://time.com/4683643/jan-chapman-in-memoriam-oscars/ |title='I Am Alive and Well.' Australian Producer Mistakenly Included in Oscars 'In Memoriam' Segment |magazine=Time |date=February 27, 2017 |access-date=February 27, 2017 |url-status=live |archive-url=https://web.archive.org/web/20170227120121/http://time.com/4683643/jan-chapman-in-memoriam-oscars/ |archive-date=February 27, 2017}}</ref>
+
+==See also==
+
+* [[22nd Critics' Choice Awards]]
+* [[37th Golden Raspberry Awards]]
+* [[59th Grammy Awards]]
+* [[69th Primetime Emmy Awards]]
+* [[70th British Academy Film Awards]]
+* [[71st Tony Awards]]
+* [[74th Golden Globe Awards]]
+* [[List of submissions to the 89th Academy Awards for Best Foreign Language Film]]
+
+== Notes ==
+{{notelist}}
+
+== References ==
+{{reflist}}
+
+== External links ==
+<!-- Per [[WP:ELMINOFFICIAL]], choose one official website only -->
+<!-- {{Commons category|2015 Academy Awards|88th Academy Awards}} -->
+'''Official websites'''
+* {{Official website|http://oscar.go.com/|Academy Awards official website}}
+* {{Official website|http://www.oscars.org/|The Academy of Motion Picture Arts and Sciences official website}}
+
+'''News resources'''
+* [https://www.bbc.com/news/entertainment-arts-38680606 Oscars 2017] {{Webarchive|url=https://web.archive.org/web/20180310031722/http://www.bbc.com/news/entertainment-arts-38680606 |date=March 10, 2018 }} at [[BBC News]]
+* [https://www.theguardian.com/film/oscars-2017 Oscars 2017] {{Webarchive|url=https://web.archive.org/web/20170228042547/https://www.theguardian.com/film/oscars-2017 |date=February 28, 2017 }} at ''[[The Guardian]]''
+
+'''Analysis'''
+* [https://www.imdb.com/awards-central/oscars Academy Awards, USA: 2017] {{Webarchive|url=https://web.archive.org/web/20161224173042/http://www.imdb.com/awards-central/oscars |date=December 24, 2016 }} [[IMDb]]
+* [http://www.filmsite.org/aa2016.html 2016 Academy Awards winners and History] {{Webarchive|url=https://web.archive.org/web/20170228075529/http://www.filmsite.org/aa2016.html |date=February 28, 2017 }} at the [[Filmsite.org]]
+
+'''Other resources'''
+* {{IMDb title||The Oscars (2017)}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 89}}
+[[Category:2016 film awards]]
+[[Category:2017 awards in the United States]]
+[[Category:2017 controversies in the United States]]
+[[Category:2017 in American cinema]]
+[[Category:2017 in Los Angeles]]
+[[Category:Academy Awards ceremonies]]
+[[Category:February 2017 in the United States]]
+[[Category:Television shows directed by Glenn Weiss]]
+[[Category:2017 television specials]]

@@ -1,0 +1,535 @@
+{{oscars short description|films-year=2000}}
+{{Use mdy dates|date=February 2025}}
+{{Infobox film awards
+| number = 73
+| award = Academy Awards
+| image = Oscars ceremony poster 73.jpg
+| alt = Official poster promoting the 73rd Academy Awards in 2001.
+| caption = Official poster by Alex Swart<ref>{{cite news |last=Phillips |first=Braden |title=Positive reaction to Oscar's look |url=https://variety.com/2002/more/news/positive-reaction-to-oscar-s-look-1117859021/ |access-date=January 19, 2026 |work=Variety |date=January 23, 2002}}</ref>
+| date = March 25, 2001
+| site = [[Shrine Auditorium]] <br />[[Los Angeles]], California, U.S.
+| preshow = [[Chris Connelly (journalist)|Chris Connelly]]<br />[[Julie Moran]]<br />[[Jim Moret]]<ref>{{cite news|title=Oscar Watch: Moran, Connelly, Moret to 'Countdown' |url=https://variety.com/2001/film/news/oscar-watch-203-1117795289/ |access-date=June 19, 2014 |work=[[Variety (magazine)|Variety]]  |date=March 13, 2001 |url-status=dead |archive-url=https://web.archive.org/web/20150403012634/http://variety.com/2001/film/news/oscar-watch-203-1117795289/ |archive-date=April 3, 2015 }}</ref>
+| host = [[Steve Martin]]<ref name="Martin"/>
+| producer = [[Gilbert Cates|Gil Cates]]<ref>{{cite news|last1=Snow |first1=Shauna |title=Morning Report |url=https://www.latimes.com/archives/la-xpm-2000-dec-14-ca-65223-story.html |access-date=June 12, 2014 |work=[[Los Angeles Times]]  |date=December 13, 2000 |url-status=live |archive-url=https://web.archive.org/web/20150617051347/http://articles.latimes.com/2000/dec/14/entertainment/ca-65223 |archive-date=June 17, 2015 }}</ref>
+| director = [[Louis J. Horvitz]]<ref>{{cite news|title=Oscar Watch: Horvitz to direct 2001 kudocast |url=https://variety.com/2001/film/news/oscar-watch-181-1117791511/ |access-date=June 18, 2014 |work=Variety  |date=January 8, 2001 |url-status=dead |archive-url=https://web.archive.org/web/20150402115416/http://variety.com/2001/film/news/oscar-watch-181-1117791511/ |archive-date=April 2, 2015 }}</ref>
+| best_picture = ''[[Gladiator (2000 film)|Gladiator]]''
+| most_wins = ''Gladiator'' (5)
+| most_nominations = ''Gladiator'' (12)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 3 hours, 23 minutes<ref>{{cite news|last1=Gallo |first1=Phil |title=Review: 'The 73rd annual Academy Awards' |url=https://variety.com/2001/film/reviews/the-73rd-annual-academy-awards-1200467116/ |access-date=June 18, 2014 |work=Variety  |date=March 25, 2001 |url-status=live |archive-url=https://web.archive.org/web/20150402133413/http://variety.com/2001/film/reviews/the-73rd-annual-academy-awards-1200467116/ |archive-date=April 2, 2015 }}</ref>
+| ratings = 42.9 million<br />26.2% ([[Nielsen ratings]])<ref>{{Cite news|first=Kissell |last=Rick |title=ABC Oscarcast Proves No Ratings Gladiator |url=https://variety.com/2001/film/awards/abc-oscarcast-proves-no-ratings-gladiator-1117796020/ |work=Variety  |date=March 26, 2001 |access-date=June 12, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150604222910/http://variety.com/2001/film/awards/abc-oscarcast-proves-no-ratings-gladiator-1117796020/ |archive-date=June 4, 2015 }}</ref>
+| last = 72nd
+| next = 74th
+}}
+
+The '''73rd Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best of [[2000 in film]] and took place on March 25, 2001, at the [[Shrine Auditorium]] in [[Los Angeles]], beginning at 5:30&nbsp;p.m. [[Pacific Time Zone|PST]] / 8:30&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, AMPAS presented [[Academy Awards]] (commonly referred to as Oscars) in 23 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Gil Cates]] and was directed by [[Louis J. Horvitz]].<ref>{{cite news|title=73rd Annual Academy Awards |url=https://www.nytimes.com/tv/show/38935/73rd-Annual-Academy-Awards/details |access-date=June 18, 2014 |work=[[The New York Times]]  |url-status=live |archive-url=https://web.archive.org/web/20140715192322/http://www.nytimes.com/tv/show/38935/73rd-Annual-Academy-Awards/details |archive-date=July 15, 2014 }}</ref> Actor [[Steve Martin]] hosted the show for the first time.<ref>{{cite news|title=Steve Martin To Host Oscars |url=https://www.cbsnews.com/news/steve-martin-to-host-oscars/ |access-date=June 17, 2014 |publisher=[[CBS News]] ([[CBS Corporation]]) |date=December 19, 2001 |url-status=live |archive-url=https://web.archive.org/web/20140714215254/http://www.cbsnews.com/news/steve-martin-to-host-oscars/ |archive-date=July 14, 2014 }}</ref> Three weeks earlier in a ceremony at the [[Beverly Wilshire Hotel|Regent Beverly Wilshire Hotel]] in [[Beverly Hills, California]] held on March 3, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Renée Zellweger]].<ref>{{cite news|title=Oscar Watch: 'Betty's' Zellweger to present Sci-Tech kudos |url=https://variety.com/2001/film/news/oscar-watch-182-1117794450/ |access-date=June 17, 2014 |work=Variety  |date=February 27, 2001 |url-status=live |archive-url=https://web.archive.org/web/20140715010756/http://variety.com/2001/film/news/oscar-watch-182-1117794450/ |archive-date=July 15, 2014 }}</ref>
+
+''[[Gladiator (2000 film)|Gladiator]]'' won five awards, including [[Academy Award for Best Picture|Best Picture]].<ref name=Rickey>{{cite news|last1=Rickey|first1=Carrie|title=Oscar triumphs for Roberts, 'Gladiator' The Roman epic and its star, Russell Crowe, both won awards. Julia Roberts took best-actress honors, for "Erin Brockovich."|page=A1|work=[[The Philadelphia Inquirer]]|date=March 26, 2001}}</ref> Other winners included ''[[Crouching Tiger, Hidden Dragon]]'' and ''[[Traffic (2000 film)|Traffic]]'' with four awards and ''[[Almost Famous]]'', ''[[Big Mama (film)|Big Mama]]'', ''[[Erin Brockovich (film)|Erin Brockovich]]'', ''[[Father and Daughter (film)|Father and Daughter]]'', ''[[How the Grinch Stole Christmas (2000 film)|How the Grinch Stole Christmas]]'', ''[[Into the Arms of Strangers: Stories of the Kindertransport]]'', ''[[Pollock (film)|Pollock]]'', ''[[Quiero ser (I want to be...)|Quiero Ser]]'', ''[[U-571 (film)|U-571]]'', and ''[[Wonder Boys (film)|Wonder Boys]]'' with one. The telecast garnered almost 43 million viewers in the United States.
+
+==Winners and nominees==
+The nominees for the 73rd Academy Awards were announced on February 13, 2001, by [[Robert Rehme]], president of the academy, and Academy Award-winning actress [[Kathy Bates]].<ref>{{cite news |title=Academy announces Oscar nominations |url=http://www.cnn.com/2001/SHOWBIZ/Movies/02/13/academy.awards/ |access-date=June 18, 2014 |publisher=[[CNN]] ([[Time Warner]]) |date=February 13, 2001 |archive-date=August 2, 2017 |archive-url=https://web.archive.org/web/20170802204557/http://www.cnn.com/2001/SHOWBIZ/Movies/02/13/academy.awards/ |url-status=live }}</ref> ''[[Gladiator (2000 film)|Gladiator]]'' received the most nominations with twelve. ''[[Crouching Tiger, Hidden Dragon]]'' came in second with ten.<ref>{{cite news|last1=Kaltenbach |first1=Chris |title=It's Soderbergh vs. Soderbergh |url=https://www.baltimoresun.com/2001/02/14/its-soderbergh-vs-soderbergh/ |access-date=June 18, 2014 |work=[[The Baltimore Sun]]  |date=February 14, 2001 |url-status=live |archive-url=https://web.archive.org/web/20150402092048/http://articles.baltimoresun.com/2001-02-14/features/0102140292_1_gladiator-soderbergh-nominations |archive-date=April 2, 2015 }}</ref><ref name=Z/>
+
+The winners were announced during the awards ceremony on March 25, 2001.<ref name=Rickey /> ''Gladiator'' became the first film to win Best Picture without a directing or screenwriting win since 1949's ''[[All the King's Men (1949 film)|All the King's Men]]''.<ref>{{harvnb|Bona|2002|p=374}}</ref> Best Director winner [[Steven Soderbergh]], who received nominations for both ''[[Erin Brockovich (film)|Erin Brockovich]]'' and ''[[Traffic (2000 film)|Traffic]]'' (for which he won the award), was the second person to receive double directing nominations in the same year.{{efn|Previously [[Michael Curtiz]] received two nominations in [[11th Academy Awards|1939]].<ref name="Z" /> Additionally, in [[2nd Academy Awards|1930]] [[Frank Lloyd]] received a single nomination for directing three separate films and won for one of them.<ref name=BEDO>{{harvnb|Bona|2002|p=351}}</ref>}}<ref name=Z/> ''Crouching Tiger, Hidden Dragon'' became the third film nominated simultaneously for Best Picture and Best Foreign Language Film in the same year.{{efn|''[[Z (1969 film)|Z]]'' and ''[[Life Is Beautiful]]'' were the two previous films to have accomplished this feat.<ref name=Z/>}}<ref name=Z>{{cite news|title=Gladiator Leads with 12 Oscar Nods |url=https://abcnews.go.com/Entertainment/story?id=109596 |access-date=June 12, 2014 |publisher=[[ABC News (United States)|ABC News]] ([[The Walt Disney Company]]) |date=February 13, 2001 |url-status=live |archive-url=https://web.archive.org/web/20140531031012/http://abcnews.go.com/Entertainment/story?id=109596 |archive-date=May 31, 2014 }}</ref> With four wins, the film tied with ''[[Fanny and Alexander]]'' as the [[List of Academy Award-winning foreign-language films|most awarded foreign language film]] in Academy Awards history{{efn|Subsequently, the record has been also tied by ''[[Parasite (2019 film)|Parasite]]'' (2019) and ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' (2022).<ref name="allquiet">{{cite news |last1=Seibold |first1=Witney |title=''All Quiet On The Western Front''{{'}}s Oscar-Nominated Screenplay Was Kept Alive by Triathlons |url=https://www.slashfilm.com/1231758/all-quiet-on-the-western-fronts-oscar-nominated-screenplay-was-kept-alive-by-triathlons/ |access-date=March 10, 2024 |work=[[/Film]] |date=March 17, 2023 |archive-date=March 27, 2023 |archive-url=https://web.archive.org/web/20230327020529/https://www.slashfilm.com/1231758/all-quiet-on-the-western-fronts-oscar-nominated-screenplay-was-kept-alive-by-triathlons/ |url-status=live }}</ref>}}<ref>{{harvnb|Bona|2002|p=407}}</ref> By virtue of his brother's Best Supporting Actor nomination for 1988's ''[[Running on Empty (1988 film)|Running on Empty]]'', Best Supporting Actor nominee [[Joaquin Phoenix]] and [[River Phoenix|River]] became the first pair of brothers to earn acting nominations.<ref>{{harvnb|Crouse|2005|p=54}}</ref>
+
+===Awards===
+[[File:Steven Soderbergh 66ème Festival de Venise (Mostra).jpg|thumb|right|150px|[[Steven Soderbergh]], Best Director winner]]
+[[File:Russell Crowe - Flickr - Eva Rinaldi Celebrity and Live Music Photographer (2).jpg|thumb|right|150px|[[Russell Crowe]], Best Actor winner]]
+[[File:Julia Roberts Delivers Remarks at the 2022 Kennedy Center Honors Dinner (52542372884) (cropped).jpg|thumb|right|150px|[[Julia Roberts]], Best Actress winner]]
+[[File:Benicio Del Toro by Gage Skidmore.jpg|thumb|right|150px|[[Benicio del Toro]], Best Supporting Actor winner]]
+[[File:MarciaGayHarden07TIFF.jpg|thumb|right|150px|[[Marcia Gay Harden]], Best Supporting Actress winner]]
+[[File:CameronCrowe.jpg|right|thumb|150px|[[Cameron Crowe]], Best Original Screenplay winner]]
+[[File:2016 NAB Show's The Future of Cinema Conference, produced in partnership with SMPTE (26717112630) (cropped).jpg|thumb|right|150px|[[Ang Lee]], Best Foreign Language Film winner]]
+[[File:Bob Dylan - Azkena Rock Festival 2010 2.jpg|thumb|right|150px|[[Bob Dylan]], Best Original Song winner]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double dagger}}).<ref name="Oscars2001">{{Cite news|url=http://www.oscars.org/oscars/ceremonies/2001 |title=The 73rd Academy Awards (2001) Nominees and Winners |access-date=November 19, 2011 |publisher=Academy of Motion Picture Arts and Sciences (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20141110020848/http://www.oscars.org/oscars/ceremonies/2001 |archive-date=November 10, 2014 }}</ref>
+
+{| class=wikitable role="presentation"
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Gladiator (2000 film)|Gladiator]]'' – [[Douglas Wick]], [[David Franzoni]], and [[Branko Lustig]], producers{{double dagger}}'''
+**''[[Chocolat (2000 film)|Chocolat]]'' – [[David Brown (producer)|David Brown]], Kit Golden, and Leslie Holleran, producers
+** ''[[Crouching Tiger, Hidden Dragon]]'' – [[William Kong|Bill Kong]], [[Hsu Li-kong]], and [[Ang Lee]], producers
+** ''[[Erin Brockovich (film)|Erin Brockovich]]'' – [[Danny DeVito]], [[Michael Shamberg]], and [[Stacey Sher]], producers
+** ''[[Traffic (2000 film)|Traffic]]'' – [[Marshall Herskovitz]], [[Edward Zwick]], and [[Laura Bickford]], producers
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Steven Soderbergh]]&nbsp;– ''[[Traffic (2000 film)|Traffic]]'''''{{double dagger}}
+** [[Stephen Daldry]]&nbsp;– ''[[Billy Elliot]]''
+** [[Ang Lee]]&nbsp;– ''[[Crouching Tiger, Hidden Dragon]]''
+** [[Steven Soderbergh]]&nbsp;– ''[[Erin Brockovich (film)|Erin Brockovich]]''
+** [[Ridley Scott]]&nbsp;– ''[[Gladiator (2000 film)|Gladiator]]''
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Russell Crowe]]&nbsp;– ''[[Gladiator (2000 film)|Gladiator]]'' as General Maximus Decimus Meridius'''{{double dagger}}
+** [[Javier Bardem]]&nbsp;– ''[[Before Night Falls (film)|Before Night Falls]]'' as [[Reinaldo Arenas]]
+** [[Tom Hanks]]&nbsp;– ''[[Cast Away]]'' as Chuck Noland
+** [[Ed Harris]]&nbsp;– ''[[Pollock (film)|Pollock]]'' as [[Jackson Pollock]]
+** [[Geoffrey Rush]]&nbsp;– ''[[Quills (film)|Quills]]'' as the [[Marquis de Sade]]
+| valign="top" width="50%"|{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Julia Roberts]]&nbsp;– ''[[Erin Brockovich (film)|Erin Brockovich]]'' as [[Erin Brockovich]]'''{{double dagger}}
+** [[Joan Allen]]&nbsp;– ''[[The Contender (2000 film)|The Contender]]'' as Laine Hanson
+** [[Juliette Binoche]]&nbsp;– ''[[Chocolat (2000 film)|Chocolat]]'' as Vianne Rocher
+** [[Ellen Burstyn]]&nbsp;– ''[[Requiem for a Dream]]'' as Sara Goldfarb
+** [[Laura Linney]]&nbsp;– ''[[You Can Count on Me]]'' as Sammy Prescott
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Benicio del Toro]]&nbsp;– ''[[Traffic (2000 film)|Traffic]]'' as Javier Rodriguez'''{{double dagger}}
+** [[Jeff Bridges]]&nbsp;– ''[[The Contender (2000 film)|The Contender]]'' as President Jackson Evans
+** [[Willem Dafoe]]&nbsp;– ''[[Shadow of the Vampire]]'' as [[Max Schreck]]
+** [[Albert Finney]]&nbsp;– ''[[Erin Brockovich (film)|Erin Brockovich]]'' as [[Edward L. Masry]]
+** [[Joaquin Phoenix]]&nbsp;– ''[[Gladiator (2000 film)|Gladiator]]'' as [[Commodus]]
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Marcia Gay Harden]]&nbsp;– ''[[Pollock (film)|Pollock]]'' as [[Lee Krasner]]'''{{double dagger}}
+** [[Judi Dench]]&nbsp;– ''[[Chocolat (2000 film)|Chocolat]]'' as Armande Voizin
+** [[Kate Hudson]]&nbsp;– ''[[Almost Famous]]'' as [[Pennie Lane Trumbull|Penny Lane]]
+** [[Frances McDormand]]&nbsp;– ''Almost Famous'' as Elaine Miller
+** [[Julie Walters]]&nbsp;– ''[[Billy Elliot]]'' as Miss Wilkinson
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+* '''''[[Almost Famous]]''&nbsp;– [[Cameron Crowe]]'''{{double dagger}}
+**''[[Billy Elliot]]''&nbsp;– [[Lee Hall (playwright)|Lee Hall]]
+** ''[[Erin Brockovich (film)|Erin Brockovich]]''&nbsp;– [[Susannah Grant]]
+** ''[[Gladiator (2000 film)|Gladiator]]''&nbsp;– Screenplay by [[David Franzoni]], [[John Logan (writer)|John Logan]], and [[William Nicholson (writer)|William Nicholson]]; Story by David Franzoni
+** ''[[You Can Count on Me]]''&nbsp;– [[Kenneth Lonergan]]
+| valign="top" width="50%"|{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material Previously Produced or Published)]]}}
+* '''''[[Traffic (2000 film)|Traffic]]''&nbsp;– [[Stephen Gaghan]] based on the British TV series ''[[Traffik]]'' created by [[Simon Moore (writer)|Simon Moore]]'''{{double dagger}}
+**''[[Chocolat (2000 film)|Chocolat]]''&nbsp;– [[Robert Nelson Jacobs]] based on [[Chocolat (novel)|the novel]] by [[Joanne Harris]]
+** ''[[Crouching Tiger, Hidden Dragon]]''&nbsp;– [[James Schamus]], [[Wang Hui-ling|Hui-Ling Wang]], and Kuo Jung Tsai based on [[Crouching Tiger, Hidden Dragon (novel)|the book]] by [[Wang Dulu]]
+** ''[[O Brother, Where Art Thou?]]''&nbsp;– [[Coen brothers|Joel Coen]] and [[Coen brothers|Ethan Coen]] based on the ''[[Odyssey]]'' by [[Homer]]
+** ''[[Wonder Boys (film)|Wonder Boys]]''&nbsp;– [[Steve Kloves]] based on [[Wonder Boys|the novel]] by [[Michael Chabon]]
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[Crouching Tiger, Hidden Dragon]]'' ([[List of Taiwanese submissions for the Academy Award for Best Foreign Language Film|Taiwan]]) in [[Mandarin Chinese|Mandarin]]&nbsp;– [[Ang Lee]]'''{{double dagger}}
+** ''[[Amores perros|Amores Perros]]'' ([[List of Mexican submissions for the Academy Award for Best Foreign Language Film|Mexico]]) in Spanish&nbsp;– [[Alejandro González Iñárritu]]
+** ''[[Divided We Fall (film)|Divided We Fall]]'' ([[List of Czech submissions for the Academy Award for Best Foreign Language Film|Czech Republic]]) in [[Czech language|Czech]]&nbsp;– [[Jan Hřebejk]]
+** ''[[Everybody's Famous!]]'' ([[List of Belgian submissions for the Academy Award for Best Foreign Language Film|Belgium]]) in [[Dutch language|Dutch]] and English&nbsp;– [[Dominique Deruddere]]
+** ''[[The Taste of Others]]'' ([[List of French submissions for the Academy Award for Best Foreign Language Film|France]]) in [[French language|French]]&nbsp;– [[Agnès Jaoui]]
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Into the Arms of Strangers: Stories of the Kindertransport]]''&nbsp;– [[Mark Jonathan Harris]] and [[Deborah Oppenheimer]]'''{{double dagger}}
+** ''[[Legacy (2000 film)|Legacy]]''&nbsp;– [[Tod Lending]]
+** ''[[Long Night's Journey into Day]]''&nbsp;– [[Frances Reid (director)|Frances Reid]] and [[Deborah Hoffmann]]
+** ''[[Scottsboro: An American Tragedy]]''&nbsp;– Barak Goodman and Daniel Anker
+** ''[[Sound and Fury (2000 film)|Sound and Fury]]''&nbsp;– Josh Aronson and Roger Weisberg
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Big Mama (film)|Big Mama]]''&nbsp;– [[Tracy Seretean]]'''{{double dagger}}
+** ''[[Curtain Call (2000 film)|Curtain Call]]''&nbsp;– [[Charles Braverman|Chuck Braverman]] and Steve Kalafer
+** ''[[Dolphins (2000 film)|Dolphins]]''&nbsp;– [[Greg MacGillivray]] and [[Alec Lorimore]]
+** ''[[The Man on Lincoln's Nose]]''&nbsp;– Daniel Raim
+** ''[[On Tiptoe: Gentle Steps to Freedom]]''&nbsp;– [[Eric Simonson]] and [[Leelai Demoz]]
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Quiero ser (I want to be...)]]''&nbsp;– [[Florian Gallenberger]]'''{{double dagger}}
+** ''By Courier''&nbsp;– [[Peter Riegert]] and Ericka Frederick
+** ''One Day Crossing''&nbsp;– Joan Stein and Christina Lazaridi
+** ''Seraglio''&nbsp;– Gail Lerner and Colin Campbell
+** ''A Soccer Story''&nbsp;– Paulo Machline
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Father and Daughter (film)|Father and Daughter]]''&nbsp;– [[Michaël Dudok de Wit]]'''{{double dagger}}
+** ''[[Periwig Maker]]''&nbsp;– Steffen Schäffler and Annette Schäffler
+** ''[[Rejected]]''&nbsp;– [[Don Hertzfeldt]]
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Crouching Tiger, Hidden Dragon]]''&nbsp;– [[Tan Dun]]'''{{double dagger}}
+** ''[[Chocolat (2000 film)|Chocolat]]''&nbsp;– [[Rachel Portman]]
+** ''[[Gladiator (2000 film)|Gladiator]]''&nbsp;– [[Hans Zimmer]]
+** ''[[Malèna (film)|Malèna]]''&nbsp;– [[Ennio Morricone]]
+** ''[[The Patriot (2000 film)|The Patriot]]''&nbsp;– [[John Williams]]
+|-
+| valign="top" | {{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Things Have Changed]]" from ''[[Wonder Boys (film)|Wonder Boys]]''&nbsp;– Music and Lyrics by [[Bob Dylan]]'''{{double dagger}}
+** "A Fool In Love" from ''[[Meet the Parents]]''&nbsp;– Music and Lyrics by [[Randy Newman]]
+** "[[I've Seen It All]]" from ''[[Dancer in the Dark]]''&nbsp;– Music by [[Björk]]; Lyrics by [[Lars von Trier]] and [[Sjón|Sjón Sigurðsson]]
+** "[[A Love Before Time]]" from ''[[Crouching Tiger, Hidden Dragon]]''&nbsp;– Music by [[Jorge Calandrelli]] and [[Tan Dun]]; Lyrics by [[James Schamus]]
+** "[[My Funny Friend and Me]]" from ''[[The Emperor's New Groove]]''&nbsp;– Music by [[Sting (musician)|Sting]] and [[David Hartley (musician)|David Hartley]]; Lyrics by [[Sting (musician)|Sting]]
+| valign="top" | {{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound]]}}
+* '''''[[Gladiator (2000 film)|Gladiator]]''&nbsp;– [[Scott Millan]], [[Bob Beemer]], and [[Ken Weston]]'''{{double dagger}}
+**''[[Cast Away]]''&nbsp;– [[Randy Thom]], [[Tom Johnson (sound engineer)|Tom Johnson]], [[Dennis S. Sands|Dennis Sands]], and [[William B. Kaplan]]
+** ''[[The Patriot (2000 film)|The Patriot]]''&nbsp;– [[Kevin O'Connell (sound mixer)|Kevin O'Connell]], [[Greg P. Russell]], and [[Lee Orloff]]
+** ''[[The Perfect Storm (film)|The Perfect Storm]]''&nbsp;– [[John T. Reitz|John Reitz]], [[Gregg Rudloff]], [[David E. Campbell (sound engineer)|David Campbell]], and [[Keith A. Wester]]
+** ''[[U-571 (film)|U-571]]'' &nbsp;– [[Steve Maslow]], [[Gregg Landaker]], [[Rick Kline]], and [[Ivan Sharrock]]
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[U-571 (film)|U-571]]''&nbsp;– [[Jon Johnson]]'''{{double dagger}}
+** ''[[Space Cowboys]]''&nbsp;– [[Alan Robert Murray]] and [[Bub Asman]]
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Crouching Tiger, Hidden Dragon]]''&nbsp;– Art Direction and Set Decoration: [[Timmy Yip]]'''{{double dagger}}
+** ''[[Gladiator (2000 film)|Gladiator]]''&nbsp;– Art Direction: [[Arthur Max]]; Set Decoration: [[Crispian Sallis]]
+** ''[[How the Grinch Stole Christmas (2000 film)|How the Grinch Stole Christmas]]''&nbsp;– Art Direction: [[Michael Corenblith]]; Set Decoration: [[Merideth Boswell]]
+** ''[[Quills (film)|Quills]]''&nbsp;– Art Direction: [[Martin Childs]]; Set Decoration: [[Jill Quertier]]
+** ''[[Vatel (film)|Vatel]]''&nbsp;– Art Direction: [[Jean Rabasse]]; Set Decoration: Françoise Benoît-Fresco
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Crouching Tiger, Hidden Dragon]]''&nbsp;– [[Peter Pau]]'''{{double dagger}}
+** ''[[Gladiator (2000 film)|Gladiator]]''&nbsp;– [[John Mathieson (cinematographer)|John Mathieson]]
+** ''[[Malèna (film)|Malèna]]''&nbsp;– [[Lajos Koltai]]
+** ''[[O Brother, Where Art Thou?]]''&nbsp;– [[Roger Deakins]]
+** ''[[The Patriot (2000 film)|The Patriot]]''&nbsp;– [[Caleb Deschanel]]
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[How the Grinch Stole Christmas (2000 film)|How the Grinch Stole Christmas]]''&nbsp;– [[Rick Baker]] and [[Gail Ryan|Gail Rowell-Ryan]]'''{{double dagger}}
+** ''[[The Cell (film)|The Cell]]''&nbsp;– [[Michèle Burke]] and [[Edouard F. Henriques|Edouard Henriques]]
+** ''[[Shadow of the Vampire]]''&nbsp;– [[Ann Buchanan]] and [[Amber Sibley]]
+|-
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Gladiator (2000 film)|Gladiator]]''&nbsp;– [[Janty Yates]]'''{{double dagger}}
+** ''[[102 Dalmatians]]''&nbsp;– [[Anthony Powell (designer)|Anthony Powell]]
+** ''[[Crouching Tiger, Hidden Dragon]]''&nbsp;– [[Timmy Yip]]
+** ''[[How the Grinch Stole Christmas (2000 film)|How the Grinch Stole Christmas]]''&nbsp;– [[Rita Ryack]]
+** ''[[Quills (film)|Quills]]''&nbsp;– [[Jacqueline West]]
+| valign="top" width="50%"| {{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Traffic (2000 film)|Traffic]]''&nbsp;– [[Stephen Mirrione]]'''{{double dagger}}
+** ''[[Almost Famous]]''&nbsp;– [[Joe Hutshing]] and [[Saar Klein]]
+** ''[[Crouching Tiger, Hidden Dragon]]''&nbsp;– [[Tim Squyres]]
+** ''[[Gladiator (2000 film)|Gladiator]]''&nbsp;– [[Pietro Scalia]]
+** ''[[Wonder Boys (film)|Wonder Boys]]''&nbsp;– [[Dede Allen]]
+|-
+| colspan="2" valign="top" width="50%"| 
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Gladiator (2000 film)|Gladiator]]''&nbsp;– [[John Nelson (visual effects artist)|John Nelson]], [[Neil Corbould]], [[Tim Burke (visual effects supervisor)|Tim Burke]], and [[Rob Harvey (special effects artist)|Rob Harvey]]'''{{double dagger}}
+**''[[Hollow Man]]''&nbsp;– [[Scott E. Anderson]], [[Craig Hayes]], [[Scott Stokdyk]], and [[Stan Parks]]
+** ''[[The Perfect Storm (film)|The Perfect Storm]]''&nbsp;– [[Stefen Fangmeier]], [[Habib Zargarpour]], [[John Frazier]], and [[Walt Conti]]
+|}
+
+===Honorary Awards===
+*To [[Jack Cardiff]], master of light and color.<ref>{{cite news|last1=Feiwell |first1=Jill |title=Acad to Salute Lehman with Honorary Oscar |url=https://variety.com/2001/film/news/acad-to-salute-lehman-with-honorary-oscar-1117792714/ |access-date=June 18, 2014 |work=Variety  |date=January 25, 2001 |url-status=live |archive-url=https://web.archive.org/web/20150402152728/http://variety.com/2001/film/news/acad-to-salute-lehman-with-honorary-oscar-1117792714/ |archive-date=April 2, 2015 }}</ref>
+*To [[Ernest Lehman]], in appreciation of a body of varied and enduring work.<ref>{{cite news|last1=Feiwell |first1=Jill |title=Acad to Honor Cardiff |url=https://variety.com/2001/film/news/acad-to-honor-cardiff-1117792787/ |access-date=June 18, 2014 |work=Variety  |date=January 18, 2001 |url-status=live |archive-url=https://web.archive.org/web/20150402223136/http://variety.com/2001/film/news/acad-to-honor-cardiff-1117792787/ |archive-date=April 2, 2015 }}</ref>
+
+===Irving G. Thalberg Memorial Award===
+*[[Dino De Laurentiis]]<ref>{{cite news|last1=Feiwell |first1=Jill |title=De Laurentiis kudos |url=https://variety.com/2001/film/news/de-laurentiis-kudos-1117792613/ |access-date=June 18, 2014 |work=Variety  |date=January 23, 2001 |url-status=live |archive-url=https://web.archive.org/web/20150402111309/http://variety.com/2001/film/news/de-laurentiis-kudos-1117792613/ |archive-date=April 2, 2015 }}</ref>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}{{col-1-of-2}}
+The following 20 films received multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 12
+| ''[[Gladiator (2000 film)|Gladiator]]''
+|-
+| style="text-align: center;" | 10
+| ''[[Crouching Tiger, Hidden Dragon]]''
+|-
+| rowspan=3 style="text-align:center" | 5
+| ''[[Chocolat (2000 film)|Chocolat]]''
+|-
+| ''[[Erin Brockovich (film)|Erin Brockovich]]''
+|-
+| ''[[Traffic (2000 film)|Traffic]]''
+|-
+| style="text-align:center" | 4
+| ''[[Almost Famous]]''
+|-
+| rowspan=5 style="text-align:center" | 3
+| ''[[Billy Elliot]]''
+|-
+| ''[[How the Grinch Stole Christmas (2000 film)|How the Grinch Stole Christmas]]''
+|-
+| ''[[The Patriot (2000 film)|The Patriot]]''
+|-
+| ''[[Quills (film)|Quills]]''
+|-
+| ''[[Wonder Boys (film)|Wonder Boys]]''
+|-
+| rowspan=9 style="text-align:center" | 2
+| ''[[Cast Away]]''
+|-
+| ''[[The Contender (2000 film)|The Contender]]''
+|-
+| ''[[Malèna (film)|Malèna]]''
+|-
+| ''[[O Brother, Where Art Thou?]]''
+|-
+| ''[[The Perfect Storm (film)|The Perfect Storm]]''
+|-
+| ''[[Pollock (film)|Pollock]]''
+|-
+| ''[[Shadow of the Vampire]]''
+|-
+| ''[[U-571 (film)|U-571]]''
+|-
+| ''[[You Can Count on Me]]''
+|}
+
+{{col-2-of-2}}
+
+The following three films received multiple awards:
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 5
+| ''[[Gladiator (2000 film)|Gladiator]]''
+|-
+|rowspan=2 style="text-align:center" | 4
+| ''[[Crouching Tiger, Hidden Dragon]]''
+|-
+| ''[[Traffic (2000 film)|Traffic]]''
+|}
+
+{{col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.<ref>{{harvnb|Bona|2002|p=361}}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Gina|Tuttle}}<ref>{{harvnb|Terrance|2013|p=14}}</ref> || Announcer for the 73rd annual Academy Awards
+|-
+| {{sortname|Susan J.|Helms}}<br />[[Yury Usachov]]<br />[[James S. Voss]] || Introducers of host Steve Martin
+|-
+| {{sortname|Catherine|Zeta-Jones}} || Presenter of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Nicolas|Cage}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Russell|Crowe}} || Presenter of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Ben|Stiller}} || Presenter of the award for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]] and [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Halle|Berry}} || Introducer of the performance of Best Original Song nominee "[[My Funny Friend and Me]]"
+|-
+| {{sortname|Annette|Bening}} || Presenter of the film ''[[Erin Brockovich (film)|Erin Brockovich]]'' on the Best Picture segment
+|-
+| {{sortname|Penélope|Cruz}} || Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Robert|Rehme}} (AMPAS president) || Giver of remarks announcing the end of his tenure as president of AMPAS
+|-
+| {{sortname|Angelina|Jolie}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+| {{sortname|Mike|Myers}} || Presenter of the awards [[Academy Award for Best Sound Mixing|Best Sound]] and [[Academy Award for Best Sound Editing|Best Sound Editing]]
+|-
+| {{sortname|Ben|Affleck}} || Presenter of the film ''[[Traffic (2000 film)|Traffic]]'' on the Best Picture segment
+|-
+| {{sortname|Julia|Stiles}} || Introducer of the performance of Best Original Song nominee "[[A Love Before Time]]"
+|-
+| {{sortname|Julia|Roberts}} || Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Morgan|Freeman}} || Presenter of the film ''[[Crouching Tiger, Hidden Dragon]]'' on the Best Picture segment
+|-
+| {{sortname|Kate|Hudson}} || Presenter of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Dustin|Hoffman}} || Presenter of the [[Honorary Academy Award]] to [[Jack Cardiff]]
+|-
+| {{sortname|Samuel L.|Jackson}} || Presenter of the awards for [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Sarah Jessica|Parker}} || Introducer of the performance of Best Original Song nominee "A Fool in Love"
+|-
+| {{sortname|Michelle|Yeoh}}<br />[[Chow Yun-fat]] || Presenter of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Renée|Zellweger}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Sigourney|Weaver}} || Presenter of the film ''[[Gladiator (2000 film)|Gladiator]]'' on the Best Picture segment
+|-
+| {{sortname|Goldie|Hawn}} || Introducer of the performance of excerpts of the nominees for Best Original Score and presenter of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| {{sortname|Anthony|Hopkins}} || Presenter of the [[Irving G. Thalberg Memorial Award]] to [[Dino De Laurentiis]]
+|-
+| {{sortname|Winona|Ryder}} || Introducer of the performance of Best Original Song nominee "[[I've Seen It All]]"
+|-
+| {{sortname|John|Travolta}} || Presenter of the ''[[List of Latin phrases: I#in memoriam|In Memoriam]]'' tribute
+|-
+| {{sortname|Juliette|Binoche}}<br />[[Jack Valenti]] || Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Jennifer|Lopez}} || Introducer of the performance of Best Original Song nominee "[[Things Have Changed]]" and presenter of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Hilary|Swank}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Ashley|Judd}} || Presenter of the film ''[[Chocolat (2000 film)|Chocolat]]'' on the Best Picture segment
+|-
+| {{sortname|Julie|Andrews}} || Presenter of the Honorary Academy Award for [[Ernest Lehman]]
+|-
+| {{sortname|Kevin|Spacey}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Tom|Hanks}} || Introducer of presenter Arthur C. Clarke
+|-
+| {{sortname|Arthur C.|Clarke}} || Presenter of the award for [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material Previously Produced or Published]]
+|-
+| {{sortname|Tom|Hanks|nolink=1}} || Presenter of the award for [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen/Original Screenplay]]
+|-
+| {{sortname|Tom|Cruise}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Michael|Douglas}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+
+{| class="wikitable sortable"
+|-
+! Role
+! Name(s) !! Performed
+|-
+| Musical Arranger and Conductor
+|{{sortname|Bill|Conti}}|| Orchestral
+|-
+| Performer
+|{{sortname||Sting|Sting (musician)|Sting}}|| "[[My Funny Friend and Me]]" from ''[[The Emperor's New Groove]]''
+|-
+| Performer
+|{{sortname|Coco|Lee}}|| "[[A Love Before Time]]" from ''[[Crouching Tiger, Hidden Dragon]]''
+|-
+| Performers
+|{{sortname|Susanna|Hoffs}}<br />[[Randy Newman]]|| "A Fool in Love" from ''[[Meet the Parents]]''
+|-
+| Performers
+|{{sortname|Yo-Yo|Ma}}<br />[[Itzhak Perlman]]
+| Performed selections from the Best Original Score nominees
+|-
+| Performer
+|{{sortname|Björk||Björk}}|| "[[I've Seen It All]]" from ''[[Dancer in the Dark]]''
+|-
+| Performer
+|{{sortname|Bob|Dylan}}|| "[[Things Have Changed]]" from ''[[Wonder Boys (film)|Wonder Boys]]''
+|}
+
+==Ceremony information==
+[[File:Steve Martin 2011.jpg|thumbnail|right|alt=Photo of Steve Martin at the 120th Anniversary of Carnegie Hall in April 2011.|[[Steve Martin]] hosted the 73rd Academy Awards]]
+
+Despite earning both critical praise and increased viewership from [[72nd Academy Awards|last year's ceremony]], actor [[Billy Crystal]] announced that he would not host the ceremony for a second consecutive year.<ref>{{cite news|title=Crystal clear: He's not up for Oscars |url=https://variety.com/2000/tv/news/crystal-clear-he-s-not-up-for-oscars-1117790195/ |access-date=June 18, 2014 |work=Variety  |date=December 6, 2000 |url-status=dead |archive-url=https://web.archive.org/web/20140714202616/https://variety.com/2000/tv/news/crystal-clear-he-s-not-up-for-oscars-1117790195/ |archive-date=July 14, 2014 }}</ref> He listed his role in the film ''[[America's Sweethearts]]'' and his directing and producing duties for the [[Television film|made-for-television film]] ''[[61*]]'' as obstacles preventing him from reprising his role as emcee.<ref>{{cite news|last1=Armstrong |first1=Mark |title=Oscar Gets Martinized! |url=http://www.eonline.com/news/40888/oscars-get-martin-ized |access-date=June 12, 2014 |publisher=[[E!]] ([[NBCUniversal]]) |date=December 18, 2000 |url-status=live |archive-url=https://web.archive.org/web/20140714150203/http://www.eonline.com/news/40888/oscars-get-martin-ized |archive-date=July 14, 2014 }}</ref> Shortly after being selected as producer for the awards gala, [[Gil Cates]] hired actor and comedian [[Steve Martin]] as host for the 2001 telecast.<ref name="Martin">{{cite news|last1=Munoz |first1=Lorena |title=Martin Will Host Oscars, Saying, 'If You Can't Win 'Em, Join 'Em' |url=https://www.latimes.com/archives/la-xpm-2000-dec-19-ca-1772-story.html |access-date=June 18, 2014 |work=Los Angeles Times  |date=December 19, 2000 |url-status=live |archive-url=https://web.archive.org/web/20140714141512/http://articles.latimes.com/2000/dec/19/entertainment/ca-1772 |archive-date=July 14, 2014 }}</ref> Cates explained his choice of Martin as host saying, "He's a movie star, he's funny, he's classy, he's literate — he'll be a wonderful host."<ref>{{harvnb|Bona|2002|p=343}}</ref> Additionally, AMPAS president [[Robert Rehme]] approved of the selection stating, "Steve is a man of great style. I am simply elated to have him on board. He was at the top of our list, we offered and he accepted; it was as simple as that."<ref>{{cite news|last1=Feiwell |first1=Jill |title=The Oscar Gig Goes to... |url=https://variety.com/2000/film/news/the-oscar-gig-goes-to-1117790716/ |access-date=19 June 2014 |work=Variety  |date=December 17, 2000 |url-status=live |archive-url=https://web.archive.org/web/20140714183144/http://variety.com/2000/film/news/the-oscar-gig-goes-to-1117790716/ |archive-date=14 July 2014 }}</ref> Martin expressed his delight in hosting the gala jokingly retorting, "If you can't win 'em, join 'em."<ref>{{cite news|title=Steve Martin To Host Academy Awards |url=https://www.chicagotribune.com/2000/12/19/steve-martin-to-host-academy-awards/ |access-date=June 12, 2014 |work=Chicago Tribune  |date=December 19, 2000 |url-status=live |archive-url=https://web.archive.org/web/20150415103343/http://articles.chicagotribune.com/2000-12-19/news/0012200031_1_73rd-academy-awards-oscar-nominations-steve-martin |archive-date=April 15, 2015 }}</ref>
+
+In view of the gala taking place in the year 2001, Cates christened the show with a theme saluting the [[Stanley Kubrick]] science fiction film ''[[2001: A Space Odyssey (film)|2001: A Space Odyssey]]''.<ref>{{cite news|last1=Goddard|first1=Peter|title=The show's other Best Director; Louis J. Horvitz is the helmer behind the scenes|work=[[Toronto Star]]|date=March 25, 2001|page=10}}</ref> In tandem with the theme, astronauts [[Susan J. Helms]], [[Yury Usachov]], and [[James S. Voss]] who were inside the [[International Space Station]] Alpha Destiny module during [[Expedition 2]] appeared at the beginning of the telecast via satellite to introduce host Martin.<ref>{{cite news|last1=Jacobs |first1=Bob |title=Oscars Go Global with International Introduction from Space |url=http://spaceflight.nasa.gov/spacenews/releases/2001/H01-55.html |access-date=June 19, 2014 |publisher=[[National Aeronautics and Space Administration]] (NASA) |date=March 26, 2001 |url-status=dead |archive-url=https://web.archive.org/web/20160305014552/http://spaceflight.nasa.gov/spacenews/releases/2001/H01-55.html |archive-date=March 5, 2016 }}</ref> Throughout the broadcast, the orchestra conducted by film composer [[Bill Conti]] performed a remixed version of "[[Also Sprach Zarathustra (2001)]]" composed by Brazilian jazz musician [[Eumir Deodato]].<ref>{{harvnb|Bona|2002|p=366}}</ref> Furthermore, ''2001'' author [[Arthur C. Clarke]] presented the Best Adapted Screenplay award from his home in [[Sri Lanka]].<ref>{{harvnb|Bona|2002|p=373}}</ref><ref>{{harvnb|Pond|2005|p=280}}</ref>
+
+Several others participated in the production of the ceremony. Production designer Roy Christopher designed a new stage for the show which featured gigantic louvered cove that curved from the stage floor to the ceiling via the auditorium's backstage wall. Many media outlets described the set design resembling a cross section of a [[space capsule]].<ref name="Set2001">{{cite news|last1=Wethington |first1=Jessica |title=Christopher's sets set his work apart |url=https://variety.com/2001/film/news/christopher-s-sets-set-his-work-apart-1117794654/ |access-date=June 12, 2014 |work=Variety  |date=February 28, 2001 |url-status=live |archive-url=https://web.archive.org/web/20150616115221/http://variety.com/2001/film/news/christopher-s-sets-set-his-work-apart-1117794654/ |archive-date=June 16, 2015 }}</ref> In addition, four [[stainless steel]] arcs each carved with a silhouette of the Oscar statuette were flanked at the front and back of the stage allowing presenters and winners to pass through them.<ref name="Set2001"/> Dancer [[Debbie Allen]] choreographed the performances of the Best Original Song nominees.<ref>{{cite magazine|last1=Cruz |first1=Clarissa |title=Puh-leeze, Academy |url=https://ew.com/article/2001/03/07/how-have-wild-and-crazy-oscar-telecast/ |access-date=June 12, 2014 |magazine=[[Entertainment Weekly]]  |date=March 7, 2001 |url-status=live |archive-url=https://web.archive.org/web/20090421113933/http://www.ew.com/ew/article/0%2C%2C101498%2C00.html |archive-date=April 21, 2009 }}</ref> Musicians [[Yo-Yo Ma]] and [[Itzhak Perlman]] performed excerpts from the five nominees for Best Original Score.<ref>{{harvnb|Bona|2002|p=370}}</ref><ref>{{harvnb|Pond|2005|p=276}}</ref>
+
+===Box office performance of nominees===
+Before the nominees were announced on February 13, the combined gross of the five Best Picture nominees was $471 million with an average of $94 million per film.<ref name=BoxOfficeOscars>{{cite news|title=2000 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=2001&view=fulldetail&p=.htm |access-date=June 18, 2014 |website=[[Box Office Mojo]] |url-status=live |archive-url=https://web.archive.org/web/20140509045044/http://www.boxofficemojo.com/oscar/chart/?yr=2001&view=fulldetail&p=.htm |archive-date=May 9, 2014 }}</ref> ''Gladiator'' was the highest earner among the Best Picture nominees with $186.6 million in domestic box office receipts. The film was followed by ''Erin Brockovich'' ($125.5 million), ''Traffic'' ($71.2 million), ''Crouching Tiger, Hidden Dragon'' ($60.7 million) and finally, ''Chocolat'' ($27 million).<ref name=BoxOfficeOscars />
+
+Of the top 50 grossing movies of the year, 49 nominations went to 15 films on the list. Only ''Cast Away'' (3rd), ''Gladiator'' (4th), ''Erin Brockovich'' (12th), ''Traffic'' (31st), and ''Crouching Tiger, Hidden Dragon'' (41st) directing, acting, screenwriting, or Best Picture.<ref name="boxofficemojooscars">{{cite news|url=https://boxofficemojo.com/yearly/chart/?asof=2001-02-12&view=releasedate&view2=domestic&yr=2000&sort=gross&order=DESC&p=.htm |title=2000 Domestic Grosses |website=Box Office Mojo |access-date=June 15, 2014 |url-status=live |archive-url=https://web.archive.org/web/20150705115119/http://www.boxofficemojo.com/yearly/chart/?asof=2001-02-12&view=releasedate&view2=domestic&yr=2000&sort=gross&order=DESC&p=.htm |archive-date=July 5, 2015 }}</ref> The other top 50 box office hits that earned nominations were ''Dr. Seuss' How the Grinch Stole Christmas'' (1st), ''The Perfect Storm'' (5th), ''Meet the Parents'' (7th), ''The Patriot'' (17th), ''Space Cowboys'' (23rd), ''The Emperor's New Groove'' (25th), ''U-571'' (26th), ''Hollow Man'' (30th), ''102 Dalmatians'' (38th), and ''The Cell'' (40th).<ref name="boxofficemojooscars"/>
+
+===Critical reviews===
+The show received a positive reception from most media outlets. Television critic [[Ken Tucker]] of ''[[Entertainment Weekly]]'' wrote, "As host, Martin was typically dapper and comfortably low-key, pacing himself throughout the evening." He also added, "The Oscars seemed as bouncy and well oiled as Russell Crowe's 'do—a '50s [[Gene Vincent]]-style quiff that made for a cool rock & roll segue into Dylan's Best Song performance."<ref>{{cite news|last1=Tucker|first1=Ken|title=Act 2 of the Oscars: The Show|url=http://www.ew.com/article/2001/04/06/act-2-oscars-show|access-date=June 12, 2014|work=Entertainment Weekly|date=April 6, 2000|url-status=live|archive-url=https://web.archive.org/web/20150205051212/https://ew.com/article/2001/04/06/act-2-oscars-show/|archive-date=February 5, 2015}}</ref> ''[[USA Today]]'' critic Robert Bianco gave an average review of the telecast but commended the host stating, "Martin was a droll delight — as amusing as Oscar star Billy Crystal, but in an entirely different way. Where Crystal was all hard work and good humor, the more deadpan and deceptively proper Martin let his nastier jokes sneak up on you."<ref>{{cite news|last1=Bianco |first1=Robert |title=Martin's drollery keeps fast-moving Oscars on track |url=http://usatoday30.usatoday.com/life/movies/oscar2001/2001-03-26-steve-martin.htm |access-date=June 11, 2014 |work=[[USA Today]]  |date=March 26, 2001 |url-status=dead |archive-url=https://web.archive.org/web/20150205052817/http://usatoday30.usatoday.com/life/movies/oscar2001/2001-03-26-steve-martin.htm |archive-date=February 5, 2015 }}</ref> [[Tom Shales]] from ''[[The Washington Post]]'' commented Martin was "the best Oscar host since [[Johnny Carson]]." In addition, he quipped that "The show was almost too dignified for its own good, yet it remained exciting and entertaining even at its loftier and more pretentious moments."<ref>{{cite news|last1=Shales |first1=Tom |title=With Our Favorite Martin, Our Oscars Are a Class |url=https://www.washingtonpost.com/wp-dyn/articles/A57782-2001Mar26.html |access-date=June 19, 2014 |newspaper=[[The Washington Post]]  |date=March 27, 2001 |url-status=live |archive-url=https://web.archive.org/web/20150205010715/http://www.washingtonpost.com/wp-dyn/articles/A57782-2001Mar26.html |archive-date=February 5, 2015 }}</ref>
+
+Some media outlets were more critical of the show. Barry Garron of ''[[The Hollywood Reporter]]'' commented, "Here was veteran producer Gil Cates presiding over one of the few Academy Award presentations that ended on time and still managed to be too long." Additionally, he quipped "If nothing else, tonight's show proved that, despite the many Awards most viewers have no interest in, the show can be done in three and a half hours."<ref>{{harvnb|Bona|2002|p=382}}</ref> ''[[The Atlanta Journal-Constitution]]'' columnist Steve Murray remarked, "It wasn't just that Martin lacked the impish, insider energy of Billy Crystal – or even [[Whoopi Goldberg]]'s hypnotically awful self-satisfaction. No, the 73rd annual Academy Awards still seemed to go on forever, even though it was one of the shortest in years."<ref>{{cite news|last1=Murray|first1=Steve|title=They came, we saw, we conked out 'Gladiator,' 'Tiger,' 'Traffic' shared honors in snoozer of a show|work=[[The Atlanta Journal-Constitution]]|date=March 26, 2001|page=C1}}</ref> Television critic John Carman of the ''[[San Francisco Chronicle]]'' wrote, "Even with a rookie host, Steve Martin, the Academy Awards show was long on decorum and disappointingly short on verve."<ref>{{cite news|last1=Carman |first1=John |title=Quick But Dull / Disappointing lack of gaffes, tears during shorter show |url=http://www.sfgate.com/entertainment/article/Quick-But-Dull-Disappointing-lack-of-gaffes-2938260.php |date=March 26, 2001 |access-date=June 9, 2014 |work=[[San Francisco Chronicle]]  |url-status=live |archive-url=https://web.archive.org/web/20140714203240/http://www.sfgate.com/entertainment/article/Quick-But-Dull-Disappointing-lack-of-gaffes-2938260.php |archive-date=July 14, 2014 }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 42.9 million people over its length, which was a 7% decrease from the [[72nd Academy Awards|previous year's ceremony]].<ref>{{cite news|last=Carter |first=Bill |title=ABC Strikes Gold With the Oscars |url=https://www.nytimes.com/2001/03/27/movies/and-the-loser-is-abc-an-all-time-low-for-viewers.html |access-date=June 12, 2014 |work=The New York Times |date=March 27, 2001 |url-status=live |archive-url=https://web.archive.org/web/20140714165621/http://www.nytimes.com/2001/03/27/movies/and-the-loser-is-abc-an-all-time-low-for-viewers.html |archive-date=July 14, 2014 }}</ref><ref name="LA Times">{{cite news|last1=Lowry |first1=Brian |title=Awards Show's Ratings Slip, Early Figures Show |url=https://www.latimes.com/archives/la-xpm-2001-mar-27-ca-43109-story.html |access-date=November 4, 2013 |work=Los Angeles Times  |date=March 27, 2001 |url-status=live |archive-url=https://web.archive.org/web/20140714235914/http://articles.latimes.com/2001/mar/27/entertainment/ca-43109 |archive-date=July 14, 2014 }}</ref> An estimated 72.2 million total viewers watched all or part of the awards.<ref name="LA Times"/> The show also earned lower [[Nielsen ratings]] compared to the previous ceremony with 26.2% of households watching over a 40 share.<ref name="TVB Oscars">{{cite news|title=Academy Awards ratings |publisher=[[Television Bureau of Advertising]] |url=http://www.tvb.org/media/file/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130515152338/http://www.tvb.org/media/file/Academy_Awards.pdf |archive-date=May 15, 2013 }}</ref> In addition, it garnered a lower 18{{ndash}}49 demo rating with a 17.8 rating among viewers in that demographic.<ref name="TVB Oscars" />
+
+In July 2001, the ceremony presentation received eight nominations at the [[53rd Primetime Emmy Awards|53rd Primetime Emmys]].<ref>{{cite news|title=Primetime Emmy Award database |url=http://www.emmys.com/shows/73rd-annual-academy-awards |access-date=June 14, 2014 |publisher=[[Academy of Television Arts and Sciences]] (ATAS) |url-status=live |archive-url=https://web.archive.org/web/20140714215317/http://www.emmys.com/shows/73rd-annual-academy-awards |archive-date=July 14, 2014 }}</ref> Two months later, the ceremony won one of those nominations for Outstanding Sound Mixing For A Variety Or Music Series Or Special (Edward J. Greene, Tom Vicari, Bob Douglass).<ref>{{cite news|last=Braxton |first=Greg |title=The Winners in Creative Arts Fields |url=https://www.latimes.com/archives/la-xpm-2001-nov-05-ca-498-story.html |access-date=June 14, 2014 |work=Los Angeles Times  |date=November 5, 2001 |url-status=live |archive-url=https://web.archive.org/web/20140715013548/http://articles.latimes.com/2001/nov/05/entertainment/ca-498 |archive-date=July 15, 2014 }}</ref>
+
+=="In Memoriam"==
+The annual "In Memoriam" tribute, presented by actor [[John Travolta]], honored the following people.<ref>{{harvnb|Bona|2002|p=371}}</ref>
+
+{{div col|colwidth=22em}}
+*[[Douglas Fairbanks Jr.]] – Actor
+*[[Marie Windsor]] – Actress
+*[[Beah Richards]] – Actress
+*[[Edward Anhalt]] – Screenwriter
+*[[Billy Barty]] – Actor
+*[[Julius J. Epstein|Julius Epstein]] – Screenwriter
+*[[George Montgomery (actor)|George Montgomery]] – Actor
+*[[Ring Lardner Jr.]] – Screenwriter
+*[[Steve Reeves]] – Actor and body builder
+*[[Jean Peters]] – Actress
+*[[Vittorio Gassman]] – Actor
+*[[Jean-Pierre Aumont]] – Actor
+*[[Dale Evans]] – Actress and singer
+*[[Gwen Verdon]] – Actress and dancer
+*[[Stanley Kramer]] – Producer, Director
+*[[Jack Nitzsche]] – Composer
+*[[Harold Nicholas]] – Tap dancer
+*[[Howard W. Koch]] – Producer, Academy President
+*[[Loretta Young]] – Actress
+*[[Richard Farnsworth]] – Actor and stuntman
+*[[John Gielgud]] – Actor
+*[[Jason Robards|Jason Robards Jr.]] – Actor
+*[[Claire Trevor]] – Actress
+*[[Alec Guinness]] – Actor
+*[[Walter Matthau]] – Actor and comedian
+{{div col end}}
+
+==See also==
+
+* [[7th Screen Actors Guild Awards]]
+* [[21st Golden Raspberry Awards]]
+* [[43rd Grammy Awards]]
+* [[53rd Primetime Emmy Awards]]
+* [[54th British Academy Film Awards]]
+* [[55th Tony Awards]]
+* [[58th Golden Globe Awards]]
+* [[List of submissions to the 73rd Academy Awards for Best Foreign Language Film]]
+
+== Notes ==
+{{notelist}}
+
+==References==
+{{reflist|30em}}
+
+==Bibliography==
+{{refbegin}}
+*{{Citation
+ |last=Bona
+ |first=Damien
+ |title=Inside Oscar 2
+ |year=2002
+ |isbn=0-345-44970-3
+ |location=New York, United States
+ |publisher=[[Ballantine Books]]
+ |url-access=registration
+ |url=https://archive.org/details/insideoscar200bona
+ }}
+*{{Citation
+ |last=Crouse
+ |first=Richard
+ |title=Reel Winners: Movie Award Trivia
+ |year=2005
+ |isbn=1-550-02574-0
+ |location=Toronto, Canada
+ |publisher=[[Dundurn Press]]
+ |url-access=registration
+ |url=https://archive.org/details/reelwinnersmovie0000crou
+ }}
+*{{Citation
+ |last=Pond
+ |first=Steve
+ |title=The Big Show: High Times and Dirty Dealings Backstage at the Academy Awards
+ |year=2005
+ |isbn=0-571-21193-3
+ |location=New York, United States
+ |publisher=[[Faber and Faber]]
+ |url-access=registration
+ |url=https://archive.org/details/bigshowhightimes00pond
+ }}
+* {{Cite book
+ |last=Terrance
+ |first=Vincent
+ |title=Television Specials: 5,336 Entertainment Programs, 1936–2012
+ |year=2013
+ |isbn=978-1-4766-1240-9
+ |location=Jefferson, North Carolina, United States
+ |edition=5
+ |oclc=844373010
+ |publisher=[[Ballantine Books]], [[McFarland & Company]]
+ }}
+
+{{refend}}
+
+==External links==
+'''Official websites'''
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=2009-03-04 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=2009-01-22 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=2018-10-02 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+* {{IMDb title|0280387}}
+
+'''News resources'''
+* [https://news.bbc.co.uk/2/hi/in_depth/entertainment/2001/oscars_2001/default.stm Oscars 2001]  [[BBC News]]
+* [http://www.cnn.com/SHOWBIZ/specials/2001/oscars/ Academy Awards coverage] {{Webarchive|url=https://web.archive.org/web/20150924190203/http://www.cnn.com/SHOWBIZ/specials/2001/oscars/ |date=2015-09-24 }} [[CNN]]
+
+'''Analysis'''
+* [http://www.filmsite.org/aa00.html 2000 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20150905113109/http://www.filmsite.org/aa00.html |date=2015-09-05 }} Filmsite
+* [https://www.imdb.com/event/ev0000003/2001 Academy Awards, USA: 2001] {{Webarchive|url=https://web.archive.org/web/20171114210648/http://www.imdb.com/event/ev0000003/2001 |date=2017-11-14 }} Internet Movie Database
+
+{{Academy Awards}}
+
+{{featured list}}
+
+{{DEFAULTSORT:Academy Awards, 73}}
+[[Category:2000 film awards]]
+[[Category:2001 in American cinema]]
+[[Category:Academy Awards ceremonies]]
+[[Category:2001 in Los Angeles]]
+[[Category:March 2001 in the United States]]
+[[Category:2001 awards in the United States]]
+[[Category:Television shows directed by Louis J. Horvitz]]

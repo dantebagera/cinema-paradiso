@@ -1,0 +1,481 @@
+{{oscars short description|films-year=1991}}
+{{Use mdy dates|date=July 2022}}
+{{featured list}}
+
+{{Infobox film awards
+| number           = 64
+| award            = Academy Awards
+| image            = 64th Academy Awards.jpg
+| caption          = Official poster by Dana Duncan<ref>{{cite news |last=Smith |first=Star |title=Dana Duncan – Designed Academy Awards Poster |url=https://www.newspapers.com/article/camarillo-star-dana-duncan-designed-ac/189291374/ |access-date=January 19, 2026 |work=Camarillo Star |date=January 2, 1992 |pages=20}}</ref>
+| date             = March 30, 1992
+| site             = [[Dorothy Chandler Pavilion]]<br />[[Los Angeles]], California, U.S.
+| host             = [[Billy Crystal]]<ref>{{cite news |last=Fox |first=David J. |title=Billy Crystal Will Host Oscar Telecast for Third Year |url=https://www.latimes.com/archives/la-xpm-1992-02-08-ca-1468-story.html |access-date=May 7, 2026 |work=[[Los Angeles Times]] |date=February 8, 1992 |url-status=live |archive-url=https://web.archive.org/web/20260507190259/https://www.latimes.com/archives/la-xpm-1992-02-08-ca-1468-story.html |archive-date=May 7, 2026 }}</ref>
+| producer         = [[Gilbert Cates|Gil Cates]]<ref>{{cite news |title=Oscar veteran to direct awards show |url=https://news.google.com/newspapers?id=dQ0gAAAAIBAJ&pg=3337,4891131 |access-date=September 5, 2013 |work=[[Sun Journal (Lewiston)|Sun Journal]] |date=October 21, 1991 |page=18 |archive-date=February 24, 2021 |archive-url=https://web.archive.org/web/20210224181441/https://news.google.com/newspapers?id=dQ0gAAAAIBAJ&pg=3337,4891131 |url-status=live }}</ref>
+| director         = [[Jeff Margolis]]<ref>{{cite news |last=Kleid |first=Beth |title=Morning Report: Television |url=https://www.latimes.com/archives/la-xpm-1991-10-21-ca-63-story.html |access-date=August 21, 2013 |work=Los Angeles Times |date=October 21, 1991 |url-status=live |archive-url=https://web.archive.org/web/20131005004312/http://articles.latimes.com/1991-10-21/entertainment/ca-63_1_academy-awards-telecast |archive-date=October 5, 2013 }}</ref>
+| best_picture     = ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]''
+| most_wins        = ''The Silence of the Lambs'' (5)
+| most_nominations = ''[[Bugsy]]'' (10)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 33 minutes<ref>{{cite magazine |last=Meyers |first=Kate |title=We Need to Know This? |url=https://ew.com/article/1992/04/10/oscar-numbers/ |access-date=September 5, 2013 |magazine=[[Entertainment Weekly]] |date=April 10, 1992 |url-status=dead |archive-url=https://web.archive.org/web/20131005004746/http://www.ew.com/ew/article/0,,310142,00.html|archive-date=October 5, 2013}}</ref>
+| ratings          = 44.44 million<br />29.84% ([[Nielsen ratings]])<ref>{{cite news |last=Gorman |first=Bill |title=With No Blockbusters Up For Best Picture, Expect 'Academy Awards' Viewership To Fall; Ratings History + Your Guess For This Year (Poll) |url=http://tvbythenumbers.zap2it.com/2012/02/24/with-no-blockbusters-up-for-best-picture-expect-academy-awards-viewership-to-fall-ratings-history-your-guess-for-this-year-poll/120239/ |access-date=September 5, 2013 |work=[[TV by the Numbers]] |date=February 24, 2012 |url-status=dead |archive-url=https://web.archive.org/web/20131210015818/http://tvbythenumbers.zap2it.com/2012/02/24/with-no-blockbusters-up-for-best-picture-expect-academy-awards-viewership-to-fall-ratings-history-your-guess-for-this-year-poll/120239/ |archive-date=December 10, 2013 }}</ref>
+| last             = 63rd
+| next             = 65th
+}}
+
+The '''64th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[1991 in film|films of 1991]] in the United States and took place on March 30, 1992, at the [[Dorothy Chandler Pavilion]] in [[Los Angeles]] beginning at 6:00&nbsp;p.m. [[Pacific Time Zone|PST]] / 9:00&nbsp;p.m. [[Eastern Time Zone|EST]]. During the ceremony, the Academy of Motion Picture Arts and Sciences presented [[Academy Awards]] (commonly referred to as Oscars) in 23 categories. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Gil Cates]] and directed by [[Jeff Margolis]]. Actor [[Billy Crystal]] hosted the show for the third consecutive year.<ref>{{cite news |title=Billy Crystal: Academy glad to have him back |url=https://news.google.com/newspapers?id=16ksAAAAIBAJ&pg=1634,2531033 |access-date=September 5, 2013 |work=[[Star-News]] |date=February 8, 1992 |page=2A |archive-date=February 25, 2021 |archive-url=https://web.archive.org/web/20210225001703/https://news.google.com/newspapers?id=16ksAAAAIBAJ&pg=1634,2531033 |url-status=live }}</ref> Three weeks earlier, in a ceremony held at the [[Century Plaza Hotel]] in Los Angeles on March 7, the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Tom Hanks]].<ref>{{cite news |title=Past Scientific & Technical Awards Ceremonies |url=http://www.oscars.org/awards/scitech/pastawards.html |access-date=July 31, 2013 |publisher=[[Academy of Motion Picture Arts and Sciences]] |archive-url=https://web.archive.org/web/20140213185729/http://www.oscars.org/awards/scitech/pastawards.html |archive-date=February 13, 2014}}</ref>
+
+''[[The Silence of the Lambs (film)|The Silence of the Lambs]]'' won five awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news |last1=Hall |first1=Carla |title=The Triumph of the Lambs |url=https://www.washingtonpost.com/archive/lifestyle/1992/03/31/the-triumph-of-the-lambs/afbc3636-881a-4918-ba0f-eb11045f7175/ |access-date=February 4, 2020 |newspaper=[[The Washington Post]] |date=March 31, 1992 |archive-date=June 13, 2019 |archive-url=https://web.archive.org/web/20190613163554/https://www.washingtonpost.com/archive/lifestyle/1992/03/31/the-triumph-of-the-lambs/afbc3636-881a-4918-ba0f-eb11045f7175/ |url-status=live }}</ref><ref>{{cite news |last=Pristin |first=Terry |title='Silence of the Lambs' Sweeps 5 Major Oscars : Movies: Thriller is only the third film to take all key categories. Palance, Ruehl win for supporting roles |url=https://www.latimes.com/archives/la-xpm-1992-03-31-mn-104-story.html |access-date=August 21, 2013 |date=March 31, 1992 |work=Los Angeles Times |url-status=live |archive-url=https://web.archive.org/web/20130927135420/http://articles.latimes.com/1992-03-31/news/mn-104_1_jack-palance |archive-date=September 27, 2013 }}</ref> Other winners included ''[[Terminator 2: Judgment Day]]'' with four awards, ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]'', ''[[Bugsy]]'', and ''[[JFK (film)|JFK]]'' with two, and ''[[City Slickers]]'', ''[[Deadly Deception: General Electric, Nuclear Weapons and Our Environment]]'', ''[[The Fisher King]]'', ''[[In the Shadow of the Stars]]'', ''[[Manipulation (film)|Manipulation]]'', ''[[Mediterraneo]]'', ''[[Session Man (film)|Session Man]]'', and ''[[Thelma & Louise]]'' with one. The telecast garnered more than 44 million viewers in the United States.
+
+== Winners and nominees ==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 64th Academy Awards were announced on February 19, 1992, at 5:38&nbsp;a.m. [[Pacific Time Zone|PST]] (13:38 [[UTC]]) at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]], by [[Karl Malden]], president of the Academy, and actress [[Kathleen Turner]].<ref>{{cite news |last=O' Malley |first=Kathy |title=Here they come Word around New Hampshire is that the... |url=https://www.chicagotribune.com/1992/02/18/here-they-comeword-around-new-hampshire-is/ |access-date=August 25, 2013 |work=[[Chicago Tribune]] |date=February 18, 1992 |url-status=live |archive-url=https://web.archive.org/web/20131004223647/http://articles.chicagotribune.com/1992-02-18/news/9201150900_1_cuomo-write-in-effort-spin-patrol-new-hampshire |archive-date=October 4, 2013 }}</ref> ''[[Bugsy]]'' led all nominees with ten nominations; ''[[JFK (film)|JFK]]'' came in second with eight.<ref>{{cite news |last=Weinraub |first=Bernard |title='Bugsy' a Big Winner In Oscar Nominations Rife With Surprise |url=https://www.nytimes.com/1992/02/20/movies/bugsy-a-big-winner-in-oscar-nominations-rife-with-surprise.html |access-date=September 5, 2013 |work=[[The New York Times]] |date=February 20, 1992 |url-status=live |archive-url=https://web.archive.org/web/20131005022754/http://www.nytimes.com/1992/02/20/movies/bugsy-a-big-winner-in-oscar-nominations-rife-with-surprise.html |archive-date=October 5, 2013 }}</ref>
+
+The winners were announced during the awards ceremony on March 30, 1992. ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]'' became the first horror film to win [[Academy Award for Best Picture|Best Picture]] and the first film to be released on home video prior to winning that award.<ref name="BOO">{{harvnb|Wiley|Bona|1996|p=1170}}</ref> Moreover, it was the third film to win the "[[List of Big Five Academy Award winners and nominees|Big Five]]" major categories for picture, directing, lead acting performances, and screenwriting. The other two films to achieve this feat were 1934's ''[[It Happened One Night]]'' and 1975's ''[[One Flew Over the Cuckoo's Nest (film)|One Flew Over the Cuckoo's Nest]]''.<ref name="Seattle Times Oscar">{{cite news |last=Hartl |first=John |title='Silence' Makes Big Noise At Oscars -- In An Evening Of Firsts, Horror Film Walks Off With All Five Top Honors At Academy Awards |url=https://archive.seattletimes.com/archive/19920331/1483921/silence-makes-big-noise-at-oscars----in-an-evening-of-firsts-horror-film-walks-off-with-all-five-top-honors-at-academy-awards |access-date=September 12, 2013 |work=[[The Seattle Times]] |date=March 31, 1992 |url-status=live |archive-url=https://web.archive.org/web/20130928054544/http://community.seattletimes.nwsource.com/archive/?date=19920331&slug=1483921 |archive-date=September 28, 2013 }}</ref><ref>{{cite news |last=Weinraub |first=Bernard |title=Media Business; Can Ninja Turtle Owner Rescue Orion Pictures? |url=https://www.nytimes.com/1992/04/01/business/media-business-can-ninja-turtle-owner-rescue-orion-pictures.html |access-date=August 23, 2013 |work=The New York Times |date=April 1, 1992 |url-status=live |archive-url=https://web.archive.org/web/20130929042523/http://www.nytimes.com/1992/04/01/business/media-business-can-ninja-turtle-owner-rescue-orion-pictures.html |archive-date=September 29, 2013 }}</ref> ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]'' became the first animated film to be nominated for Best Picture<ref>{{cite news |last=Reardon |first=Patrick T. |title=Gaston A Figment Of '90s Animation |url=https://www.chicagotribune.com/1992/03/25/gaston-a-figment-of-90s-animation/ |access-date=August 26, 2013 |work=Chicago Tribune |date=March 25, 1992 |url-status=live |archive-url=https://web.archive.org/web/20130928185117/http://articles.chicagotribune.com/1992-03-25/news/9201270602_1_fairy-tale-gaston-betsy-hearne |archive-date=September 28, 2013 }}</ref> and the first film with three nominations for [[Academy Award for Best Original Song|Best Original Song]].<ref name="BOO"/> ''[[Boyz n the Hood]]'''s [[John Singleton]] became the first African-American to be nominated for Best Director and the youngest nominee in that category.<ref name="BOO" /> Nominated for Best Supporting Actress and Best Actress, respectively, [[Diane Ladd]] and [[Laura Dern]] became the first mother and daughter nominated in the same year.<ref name="BOO" />
+
+=== Awards ===
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Jonathan Demme May 2015.jpg
+| caption1          = [[Jonathan Demme]], Best Director winner
+| image2            = ANTHONY HOPKINS White house correspondents dinner Wash. D.C. 1996 (5113175432).jpg
+| caption2          = [[Anthony Hopkins]], Best Actor winner
+| image3            = Jodie Foster-8667.jpg
+| caption3          = [[Jodie Foster]], Best Actress winner
+| image4            = Jack Palance - 1954.jpg
+| caption4          = [[Jack Palance]], Best Supporting Actor winner
+| image5            = Mercedes-Ruehl-eh.jpg
+| caption5          = [[Mercedes Ruehl]], Best Supporting Actress winner
+| image6            = Callie Khouri at PaleyFest 2013.jpg
+| caption6          = [[Callie Khouri]], Best Original Screenplay winner
+| image7            = Gabriele Salvatores - Lucca Comics & Games 2014.JPG
+| caption7          = [[Gabriele Salvatores]], Best Foreign Language Film winner
+| image8            = Debra Chasnoff, GroundSpark (5039270281) (cropped).jpg
+| caption8          = [[Debra Chasnoff]], Best Documentary Short Subject winner
+| image9            = Alan Menken 2013 (cropped).jpg
+| caption9          = [[Alan Menken]], Best Original Score winner and Best Original Song co-winner
+| image10           = Robert Richardson 2019 by Glenn Francis.jpg
+| caption10         = [[Robert Richardson (cinematographer)|Robert Richardson]], Best Cinematography winner
+| image11           = Albert Wolsky 2016.png
+| caption11         = [[Albert Wolsky]], Best Costume Design winner
+| image12           = Dennis Muren.jpg
+| caption12         = [[Dennis Muren]], Best Visual Effects co-winner
+}}
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger ({{double-dagger}}).<ref name="Oscars1992">{{Cite web |url=http://www.oscars.org/oscars/ceremonies/1992 |title=The 64th Academy Awards (1992) Nominees and Winners |access-date=October 22, 2011 |publisher=Academy of Motion Picture Arts and Sciences |url-status=live |archive-url=https://web.archive.org/web/20110706095833/http://www.oscars.org/awards/academyawards/legacy/ceremony/64th-winners.html |archive-date=July 6, 2011 }}</ref>
+
+{| class=wikitable role="presentation"
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[The Silence of the Lambs (film)|The Silence of the Lambs]]''&nbsp;– [[Edward Saxon]], [[Kenneth Utt]] and [[Ron Bozman]], producers'''{{double dagger}}
+** ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''&nbsp;– [[Don Hahn]], producer
+** ''[[Bugsy]]''&nbsp;– [[Mark Johnson (producer)|Mark Johnson]], [[Barry Levinson]] and [[Warren Beatty]], producers
+** ''[[JFK (film)|JFK]]''&nbsp;– [[A. Kitman Ho]] and [[Oliver Stone]], producers
+** ''[[The Prince of Tides]]''&nbsp;– [[Barbra Streisand]] and [[Andrew S. Karsch]], producers
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Jonathan Demme]]&nbsp;– ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]'''''{{double dagger}}
+** [[John Singleton]]&nbsp;– ''[[Boyz n the Hood]]''
+** [[Barry Levinson]]&nbsp;– ''[[Bugsy]]''
+** [[Oliver Stone]]&nbsp;– ''[[JFK (film)|JFK]]''
+** [[Ridley Scott]]&nbsp;– ''[[Thelma & Louise]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor in a Leading Role]]}}
+* '''[[Anthony Hopkins]]&nbsp;– ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]'' as [[Dr. Hannibal Lecter]]'''{{double dagger}}
+** [[Warren Beatty]]&nbsp;– ''[[Bugsy]]'' as [[Bugsy Siegel|Benjamin "Bugsy" Siegel]]
+** [[Robert De Niro]]&nbsp;– ''[[Cape Fear (1991 film)|Cape Fear]]'' as [[Max Cady|Maximilian "Max" Cady]]
+** [[Nick Nolte]]&nbsp;– ''[[The Prince of Tides]]'' as Tom Wingo
+** [[Robin Williams]]&nbsp;– ''[[The Fisher King]]'' as Henry "Parry" Sagan
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress in a Leading Role]]}}
+* '''[[Jodie Foster]]&nbsp;– ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]'' as [[Clarice Starling]]'''{{double dagger}}
+** [[Geena Davis]]&nbsp;– ''[[Thelma & Louise]]'' as Thelma Dickinson
+** [[Laura Dern]]&nbsp;– ''[[Rambling Rose (film)|Rambling Rose]]'' as Rose
+** [[Bette Midler]]&nbsp;– ''[[For the Boys]]'' as Dixie Leonard
+** [[Susan Sarandon]]&nbsp;– ''Thelma & Louise'' as Louise Sawyer
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Jack Palance]]&nbsp;– ''[[City Slickers]]'' as Curly Washburn'''{{double dagger}}
+** [[Tommy Lee Jones]]&nbsp;– ''[[JFK (film)|JFK]]'' as [[Clay Shaw]]/Clay Bertrand
+** [[Harvey Keitel]]&nbsp;– ''[[Bugsy]]'' as [[Mickey Cohen]]
+** [[Ben Kingsley]]&nbsp;– ''Bugsy'' as [[Meyer Lansky]]
+** [[Michael Lerner (actor)|Michael Lerner]]&nbsp;– ''[[Barton Fink]]'' as Jack Lipnick
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Mercedes Ruehl]]&nbsp;– ''[[The Fisher King]]'' as Anne Napolitano'''{{double dagger}}
+** [[Diane Ladd]]&nbsp;– ''[[Rambling Rose (film)|Rambling Rose]]'' as Mother
+** [[Juliette Lewis]]&nbsp;– ''[[Cape Fear (1991 film)|Cape Fear]]'' as Danielle Bowden
+** [[Kate Nelligan]]&nbsp;– ''[[The Prince of Tides]]'' as Lila Wingo Newbury
+** [[Jessica Tandy]]&nbsp;– ''[[Fried Green Tomatoes]]'' as Virginia "Ninny" Threadgoode
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Screenplay Written Directly for the Screen)]]}}
+* '''''[[Thelma & Louise]]''&nbsp;– [[Callie Khouri]]'''{{double dagger}}
+** ''[[Boyz n the Hood]]''&nbsp;– [[John Singleton]]
+** ''[[Bugsy]]''&nbsp;– [[James Toback]]
+** ''[[The Fisher King]]''&nbsp;– [[Richard LaGravenese]]
+** ''[[Grand Canyon (1991 film)|Grand Canyon]]''&nbsp;– [[Lawrence Kasdan]] and Meg Kasdan
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay Based on Material Previously Produced or Published)]]}}
+* '''''[[The Silence of the Lambs (film)|The Silence of the Lambs]]''&nbsp;– [[Ted Tally]] based on [[The Silence of the Lambs (novel)|the novel]] by [[Thomas Harris]]'''{{double dagger}}
+** ''[[Europa Europa]]''&nbsp;– [[Agnieszka Holland]] based on the memoirs of [[Solomon Perel]]
+** ''[[Fried Green Tomatoes]]''&nbsp;– [[Fannie Flagg]] and [[Carol Sobieski]] (posthumous nomination) based on the novel ''[[Fried Green Tomatoes at the Whistle Stop Cafe]]'' by Fannie Flagg
+** ''[[JFK (film)|JFK]]''&nbsp;– [[Oliver Stone]] and Zachary Sklar based on the books ''Crossfire: The Plot That Killed Kennedy'' by [[Jim Marrs]] and ''[[On the Trail of the Assassins]]'' by [[Jim Garrison]]
+** ''[[The Prince of Tides]]''&nbsp;– [[Pat Conroy]] and [[Becky Johnston]] based on [[The Prince of Tides (novel)|the novel]] by Pat Conroy
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[Mediterraneo]]'' ([[List of Italian submissions for the Academy Award for Best Foreign Language Film|Italy]]) in [[Italian language|Italian]]&nbsp;– [[Gabriele Salvatores]]'''{{double dagger}}
+** ''[[Children of Nature]]'' ([[List of Icelandic submissions for the Academy Award for Best Foreign Language Film|Iceland]]) in [[Icelandic language|Icelandic]]&nbsp;– [[Friðrik Þór Friðriksson]]
+** ''[[The Elementary School]]'' ([[List of Czech submissions for the Academy Award for Best Foreign Language Film|Czechoslovakia]]) in [[Czech language|Czech]]&nbsp;– [[Jan Svěrák]]
+** ''[[The Ox (film)|The Ox]]'' ([[List of Swedish submissions for the Academy Award for Best Foreign Language Film|Sweden]]) in [[Swedish language|Swedish]]&nbsp;– [[Sven Nykvist]]
+** ''[[Raise the Red Lantern]]'' ([[List of Hong Kong submissions for the Academy Award for Best Foreign Language Film|Hong Kong]]) in [[Mandarin Chinese|Mandarin]]&nbsp;– [[Zhang Yimou]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[In the Shadow of the Stars]]''&nbsp;– [[Allie Light]] and [[Irving Saraf]], producers'''{{double dagger}}
+** ''[[Death on the Job]]''&nbsp;– Vince DiPersio and [[Bill Guttentag|William Guttentag]], producers
+** ''[[Doing Time: Life Inside the Big House]]''&nbsp;– Alan Raymond and Susan Raymond, producers
+** ''[[The Restless Conscience: Resistance to Hitler Within Germany 1933–1945]]''&nbsp;– [[Hava Kohav Beller]], producer
+** ''[[Wild by Law]]''&nbsp;– [[Lawrence Hott]] and Diane Garey, producers
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Deadly Deception: General Electric, Nuclear Weapons and Our Environment]]''&nbsp;– [[Debra Chasnoff]], producer'''{{double dagger}}
+** ''[[Birdnesters of Thailand]]'' aka ''Shadowhunters'' &nbsp;– [[Éric Valli]] and Alain Majani, producers
+** ''[[A Little Vicious]]''&nbsp;– [[Immy Humes]], producer
+** ''[[The Mark of the Maker]]''&nbsp;– David McGowan, producer
+** ''[[Memorial: Letters from American Soldiers]]''&nbsp;– [[Bill Couturié]] and Bernard Edelman, producers
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[Session Man (film)|Session Man]]''&nbsp;– [[Seth Winston]] and [[Robert N. Fried|Rob Fried]]'''{{double dagger}}
+** ''Birch Street Gym''&nbsp;– Stephen Kessler and Thomas R. Conroy
+** ''Last Breeze of Summer''&nbsp;– [[David Massey (director)|David M. Massey]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[Manipulation (film)|Manipulation]]''&nbsp;– Daniel Greaves'''{{double dagger}}
+** ''[[Blackfly (film)|Blackfly]]''&nbsp;– [[Christopher Hinton (animator)|Christopher Hinton]]
+** ''[[Strings (1991 film)|Strings]]''&nbsp;– [[Wendy Tilby and Amanda Forbis|Wendy Tilby]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''&nbsp;– [[Alan Menken]]'''{{double dagger}}
+** ''[[Bugsy]]''&nbsp;– [[Ennio Morricone]]
+** ''[[The Fisher King]]''&nbsp;– [[George Fenton]]
+** ''[[JFK (film)|JFK]]''&nbsp;– [[John Williams]]
+** ''[[The Prince of Tides]]''&nbsp;– [[James Newton Howard]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Beauty and the Beast (Disney song)|Beauty and the Beast]]" from ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Howard Ashman]] [[List of posthumous Academy Award winners and nominees|(posthumous award)]]'''{{double dagger}}
+** "[[Be Our Guest]]" from ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Howard Ashman]] (posthumous nomination)
+** "[[Belle (Disney song)|Belle]]" from ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Howard Ashman]] (posthumous nomination)
+** "[[(Everything I Do) I Do It for You]]" from ''[[Robin Hood: Prince of Thieves]]''&nbsp;– Music by [[Michael Kamen]]; Lyrics by [[Bryan Adams]] and [[Robert John "Mutt" Lange]]
+** "When You're Alone" from ''[[Hook (film)|Hook]]''&nbsp;– Music by [[John Williams]]; Lyrics by [[Leslie Bricusse]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound|Best Sound]]}}
+* '''''[[Terminator 2: Judgment Day]]''&nbsp;– [[Gary Rydstrom]], [[Tom Johnson (sound engineer)|Tom Johnson]], [[Gary Summers]] and [[Lee Orloff]]'''{{double dagger}}
+** ''[[Backdraft (film)|Backdraft]]''&nbsp;– [[Gary Rydstrom]], [[Randy Thom]], [[Gary Summers]] and [[Glenn Williams (sound engineer)|Glenn Williams]]
+** ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''&nbsp;– [[Terry Porter (sound engineer)|Terry Porter]], [[Mel Metcalfe]], [[David J. Hudson]] and [[Doc Kane]]
+** ''[[JFK (film)|JFK]]''&nbsp;– [[Michael Minkler]], [[Gregg Landaker]] and [[Tod A. Maitland]]
+** ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]''&nbsp;– [[Tom Fleischman]] and [[Chris Newman (sound engineer)|Christopher Newman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Effects Editing]]}}
+* '''''[[Terminator 2: Judgment Day]]''&nbsp;– [[Gary Rydstrom]] and [[Gloria S. Borders]]'''{{double dagger}}
+** ''[[Backdraft (film)|Backdraft]]''&nbsp;– [[Gary Rydstrom]] and [[Richard Hymns]]
+** ''[[Star Trek VI: The Undiscovered Country]]''&nbsp;– [[George Watters II]] and [[F. Hudson Miller]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[Bugsy]]''&nbsp;– Art Direction: [[Dennis Gassner]]; Set Decoration: [[Nancy Haigh]]'''{{double dagger}}
+** ''[[Barton Fink]]''&nbsp;– Art Direction: [[Dennis Gassner]]; Set Decoration: [[Nancy Haigh]]
+** ''[[The Fisher King]]''&nbsp;– Art Direction: [[Mel Bourne]]; Set Decoration: [[Cindy Carr]]
+** ''[[Hook (film)|Hook]]''&nbsp;– Art Direction: [[Norman Garwood]]; Set Decoration: [[Garrett Lewis]]
+** ''[[The Prince of Tides]]''&nbsp;– Art Direction: [[Paul Sylbert]]; Set Decoration: [[Caryl Heller]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[JFK (film)|JFK]]''&nbsp;– [[Robert Richardson (cinematographer)|Robert Richardson]]'''{{double dagger}}
+** ''[[Bugsy]]''&nbsp;– [[Allen Daviau]]
+** ''[[The Prince of Tides]]''&nbsp;– [[Stephen Goldblatt]]
+** ''[[Terminator 2: Judgment Day]]''&nbsp;– [[Adam Greenberg (cinematographer)|Adam Greenberg]]
+** ''[[Thelma & Louise]]''&nbsp;– [[Adrian Biddle]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[Terminator 2: Judgment Day]]''&nbsp;– [[Stan Winston]] and [[Jeff Dawn]]'''{{double dagger}}
+** ''[[Hook (film)|Hook]]''&nbsp;– [[Christina Smith (make-up artist)|Christina Smith]], [[Monty Westmore]] and [[Greg Cannom]]
+** ''[[Star Trek VI: The Undiscovered Country]]''&nbsp;– [[Michael Mills (make-up artist)|Michael Mills]], [[Edward French (make-up artist)|Edward French]] and [[Richard Snell (make-up artist)|Richard Snell]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Bugsy]]''&nbsp;– [[Albert Wolsky]]'''{{double dagger}}
+** ''[[The Addams Family (1991 film)|The Addams Family]]''&nbsp;– [[Ruth Myers (costume designer)|Ruth Myers]]
+** ''[[Barton Fink]]''&nbsp;– [[Richard Hornung]]
+** ''[[Hook (film)|Hook]]''&nbsp;– [[Anthony Powell (designer)|Anthony Powell]]
+** ''[[Madame Bovary (1991 film)|Madame Bovary]]''&nbsp;– [[Corinne Jorry]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[JFK (film)|JFK]]''&nbsp;– [[Pietro Scalia]] and [[Joe Hutshing]]'''{{double dagger}}
+** ''[[The Commitments (film)|The Commitments]]''&nbsp;– [[Gerry Hambling]]
+** ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]''&nbsp;– [[Craig McKay (film editor)|Craig McKay]]
+** ''[[Terminator 2: Judgment Day]]''&nbsp;– [[Conrad Buff IV|Conrad Buff]], [[Mark Goldblatt]] and [[Richard A. Harris]]
+** ''[[Thelma & Louise]]''&nbsp;– [[Thom Noble]]
+|-
+| valign="top" colspan="2"|
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Terminator 2: Judgment Day]]''&nbsp;– [[Dennis Muren]], [[Stan Winston]], [[Gene Warren Jr.]] and [[Robert Skotak]]'''{{double dagger}}
+** ''[[Backdraft (film)|Backdraft]]''&nbsp;– [[Mikael Salomon]], [[Allen Hall (special effects artist)|Allen Hall]], [[Clay Pinney]] and [[Scott Farrar]]
+** ''[[Hook (film)|Hook]]''&nbsp;– [[Eric Brevig]], [[Harley Jessup]], [[Mark Sullivan (visual effects artist)|Mark Sullivan]] and [[Michael Lantieri]]
+|}
+
+=== Honorary Award ===
+* To [[Satyajit Ray]], in recognition of his rare mastery of the art of motion pictures, and of his profound humanitarian outlook, which has had an indelible influence on filmmakers and audiences throughout the world.<ref>{{cite news |last=Gargan |first=Edward A. |title=Film: Satyajit Ray Honored, Without Profit in His Land |url=https://www.nytimes.com/1992/02/16/movies/film-satyajit-ray-honored-without-profit-in-his-land.html |access-date=August 21, 2013 |work=The New York Times |date=February 16, 1992 |url-status=live |archive-url=https://web.archive.org/web/20131006023550/http://www.nytimes.com/1992/02/16/movies/film-satyajit-ray-honored-without-profit-in-his-land.html |archive-date=October 6, 2013 }}</ref>
+
+=== Irving G. Thalberg Memorial Award ===
+* [[George Lucas]]<ref>{{cite news |title=Academy to Give Thalberg Award to George Lucas |url=https://www.latimes.com/archives/la-xpm-1992-02-02-mn-2012-story.html |access-date=August 21, 2013 |date=February 2, 1992 |work=Los Angeles Times |url-status=live |archive-url=https://web.archive.org/web/20131006023723/http://articles.latimes.com/1992-02-02/news/mn-2012_1_george-lucas |archive-date=October 6, 2013 }}</ref>
+
+=== Films with multiple nominations and awards ===
+{{Col-begin|width=80%}}
+{{Col-1-of-2}}
+The following 16 films had multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Nominations
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 10
+| ''[[Bugsy]]''
+|-
+| style="text-align: center;" | 8
+| ''[[JFK (film)|JFK]]''
+|-
+| rowspan=2 style="text-align:center" | 7
+| ''[[The Prince of Tides]]''
+|-
+| ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]''
+|-
+| rowspan=3 style="text-align:center" | 6
+| ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''
+|-
+| ''[[Terminator 2: Judgment Day]]''
+|-
+| ''[[Thelma & Louise]]''
+|-
+|rowspan=2 style="text-align:center" | 5
+| ''[[The Fisher King]]''
+|-
+| ''[[Hook (film)|Hook]]''
+|-
+|rowspan=2 style="text-align:center" | 3
+| ''[[Backdraft (film)|Backdraft]]''
+|-
+| ''[[Barton Fink]]''
+|-
+|rowspan=5 style="text-align:center" | 2
+| ''[[Boyz n the Hood]]''
+|-
+| ''[[Cape Fear (1991 film)|Cape Fear]]''
+|-
+| ''[[Fried Green Tomatoes]]''
+|-
+| ''[[Rambling Rose (film)|Rambling Rose]]''
+|-
+| ''[[Star Trek VI: The Undiscovered Country]]''
+|}
+
+{{Col-2-of-2}}
+The following five films received multiple awards:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" width="55" | Awards
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 5
+| ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]''
+|-
+| style="text-align: center;" | 4
+| ''[[Terminator 2: Judgment Day]]''
+|-
+|rowspan=3 style="text-align:center" | 2
+| ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''
+|-
+| ''[[Bugsy]]''
+|-
+| ''[[JFK (film)|JFK]]''
+|}
+{{Col-end}}
+
+== Presenters and performers ==
+The following individuals presented awards or performed musical numbers:<ref name="MFEO">{{harvnb|Wiley|Bona|1996|p=838}}</ref>
+
+=== Presenters (in order of appearance) ===
+
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| {{sortname|Les|Marshak|nolink=1}} || Announcer for the 64th annual Academy Awards
+|-
+| {{sortname|Karl|Malden}} (AMPAS President) || Giver of opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Whoopi|Goldberg}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|- Hosted
+| {{sortname|Kathleen|Turner}} || Presenter of the film ''[[Bugsy]]'' on the Best Picture segment
+|-
+| {{sortname|Rebecca|De Mornay}}<br />[[Christopher Lloyd]] || Presenters of the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]]
+|-
+| {{sortname|Angela|Lansbury}} || Introducer of the performances of the Best Original Song nominees "Belle" and "Be Our Guest"
+|-
+| {{sortname|Joe|Pesci}} || Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| {{sortname|Annette|Bening}} || Presenter of the award for [[Academy Award for Best Production Design|Best Art Direction]]
+|-
+| {{sortname|Steven|Spielberg}} || Presenter of the [[Irving G. Thalberg Memorial Award]] to [[George Lucas]]
+|-
+| {{sortname|Nicole|Kidman}} || Introducer of the performance of Best Original Song nominee "Everything I Do (I Do It For You)"
+|-
+| {{sortname|Antonio|Banderas}}<br />[[Sharon Stone]] || Presenters of the award for [[Academy Award for Best Sound Editing|Best Sound Effects Editing]]
+|-
+| {{sortname|Denzel|Washington}} || Presenter of the film ''[[JFK (film)|JFK]]'' on the Best Picture segment
+|-
+| {{sortname|Geena|Davis}}<br />[[Susan Sarandon]] || Presenters of the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| {{sortname|Dana|Carvey}}<br />[[Mike Myers]] || Presenters of the award for [[Academy Award for Best Live Action Short Film|Best Live Action Short Film]] and introduced Belle and Beast
+|-
+| {{sortname||Belle|Belle (Disney)|Belle}} ([[Paige O'Hara]]) <br />[[Beast (Disney character)|Beast]] ([[Robby Benson]]) <br />Chip ([[Bradley Pierce|Bradley Pearce]])|| Presentations of the award for [[Academy Award for Best Animated Short Film|Best Animated Short Film]]
+|-
+| {{sortname|Demi|Moore}} || Presenter of the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| {{sortname|Sylvester|Stallone}} || Presenter of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+| {{sortname|Daryl|Hannah}}<br />[[Edward James Olmos]] || Presenters of the award for [[Academy Award for Best Sound Mixing|Best Sound]]
+|-
+| {{sortname|John|Candy}} || Introducer of the performance of Best Original Song nominee "When You're Alone"
+|-
+| {{sortname|Tom|Hanks}} || Presenter of the segment of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] and the [[Gordon E. Sawyer Award]]
+|-
+| {{sortname|Spike|Lee}}<br />[[John Singleton]] || Presenters of the awards for [[Academy Award for Best Documentary (Short Subject)|Best Documentary Short Subject]] and [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+| {{sortname|Sally|Field}} || Presenter of the film ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]'' on the Best Picture segment
+|-
+| {{sortname|Richard|Gere}} || Presenter of the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| {{sortname|Laura|Dern}}<br />[[Diane Ladd]] || Presenters of the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| {{sortname|Patrick|Swayze}} || Introducer of the special dance number to the tune of the [[Academy Award for Best Original Score|Best Original Score]] nominees and presenter of the award for Best Original Score
+|-
+| {{sortname|Jack|Valenti}} || Introducer of presenter, Audrey Hepburn
+|-
+| {{sortname|Audrey|Hepburn}} || Presenter of the [[Honorary Academy Award]] to [[Satyajit Ray]]
+|-
+| {{sortname|John|Lithgow}} || Presenter of the film ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]'' on the Best Picture segment
+|-
+| {{sortname|Robert|Duvall}}<br />[[Anjelica Huston]] || Presenters of the awards for [[Academy Award for Best Original Screenplay|Best Screenplay Written Directly for the Screen]] and [[Academy Award for Best Adapted Screenplay|Best Screenplay Based on Material Previously Produced or Published]]
+|-
+| {{sortname|Kathy|Bates}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+| {{sortname|Shirley|MacLaine}}<br />[[Liza Minnelli]] || Presenters of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| {{sortname|Michael|Douglas}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+| {{sortname|Jessica|Tandy}} || Presenter of the film ''[[The Prince of Tides]]'' on the Best Picture segment
+|-
+| {{sortname|Kevin|Costner}} || Presenter of the award for [[Academy Award for Best Director|Best Director]]
+|-
+| {{sortname|Paul|Newman}}<br />[[Elizabeth Taylor]] || Presenters of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+=== Performers (in order of appearance) ===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+| {{sortname|Bill|Conti}} || Musical arranger || Orchestral
+|-
+| {{sortname|Billy|Crystal}} || Performer || Opening number: <br />''Beauty and the Beast'' (to the tune of the [[The Patty Duke Show#Music|theme song]] from ''[[The Patty Duke Show]]''), <br />''The Silence of the Lambs'' (to the tune of "[[The Shadow of Your Smile]]" from ''[[The Sandpiper]]''), <br />''Bugsy'' (to the tune of "[[Toot, Toot, Tootsie (Goo' Bye!)|Toot Toot Tootsie Goo' Bye]]" from ''[[The Jazz Singer]]''),<br />''JFK'' (to the tune of "[[Three Coins in the Fountain (song)|Three Coins in the Fountain]]" from ''[[Three Coins in the Fountain (film)|Three Coins in the Fountain]]''), and <br />''The Prince of Tides'' (to the tune of "[[Don't Rain on My Parade]]" from ''[[Funny Girl (film)|Funny Girl]]'')<ref name="Wiley 1996 840">{{harvnb|Wiley|Bona|1996|p=840}}</ref>
+|-
+| {{sortname|Paige|O'Hara}}<br />[[Richard White (actor)|Richard White]] || Performers || "Belle" from ''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''
+|-
+| {{sortname|Jerry|Orbach}} || Performer || "[[Be Our Guest]]" from ''Beauty and the Beast''
+|-
+| {{sortname|Bryan|Adams}} || Performer || "[[(Everything I Do) I Do It for You]]" from ''[[Robin Hood: Prince of Thieves]]''
+|-
+| {{sortname|Amber|Scott}} || Performer || "When You're Alone" from ''[[Hook (film)|Hook]]''
+|-
+| {{sortname|Peabo|Bryson}}<br />[[Celine Dion]]<br />[[Angela Lansbury]] || Performers || "[[Beauty and the Beast (Disney song)|Beauty and the Beast]]" from ''Beauty and the Beast''
+|}
+
+== Ceremony information ==
+[[File:Billy Crystal VF 2012 Shankbone.JPG|thumb|upright|[[Billy Crystal]] hosted the 64th Academy Awards.|alt=Photo of Billy Crystal in 2012.]]
+
+Riding on the success of the [[63rd Academy Awards|previous year's ceremony]] which won several Emmys, AMPAS rehired [[Gil Cates]] for the third consecutive year.<ref>{{cite news |title='Cheers' Draws Cheers, 4 Emmys |url=http://www.deseretnews.com/article/179875/CHEERS-DRAWS-CHEERS-4-EMMYS.html |access-date=September 9, 2013 |work=[[Deseret News]] |date=August 26, 1991 |url-status=dead |archive-url=https://web.archive.org/web/20130921053414/http://www.deseretnews.com/article/179875/CHEERS-DRAWS-CHEERS-4-EMMYS.html |archive-date=September 21, 2013 }}</ref><ref>{{cite news |last=Landis |first=Dave |title=More Misha |work=[[USA Today]] |date=October 10, 1991 |page=1D}}</ref> He christened the 1992 ceremony with the theme "Pure Joy of the Movies," explaining that "Motion pictures provide us with laughter, romance, adventure and a deeper understanding of ourselves. With all the extraordinary events that are taking place today, it's wonderful that we can still get away to see a film."<ref>{{cite news |last=McKerrow |first=Steve |title=Academy Awards Show Sign Of The Times |url=https://www.baltimoresun.com/1992/03/30/academy-awards-show-sign-of-the-times/ |access-date=September 9, 2013 |work=[[The Baltimore Sun]] |date=March 30, 1992 |url-status=live |archive-url=https://web.archive.org/web/20131015192612/http://articles.baltimoresun.com/1992-03-30/features/1992090098_1_academy-awards-show-cates-oscar |archive-date=October 15, 2013 }}</ref>
+
+A month before the festivities, Cates recruited actor and comedian [[Billy Crystal]] to host the ceremony for the third straight year.<ref>{{cite news |title=Crystal back in the saddle as Oscar awards host |url=https://news.google.com/newspapers?id=d75YAAAAIBAJ&pg=5173,2641263 |access-date=September 9, 2013 |work=[[The Gainesville Sun]] |date=February 9, 1992 |archive-date=February 25, 2021 |archive-url=https://web.archive.org/web/20210225175124/https://news.google.com/newspapers?id=d75YAAAAIBAJ&pg=5173,2641263 |url-status=live }}</ref> Shortly before the ceremony, Crystal got the flu, so Cates asked [[Tom Hanks]] for a possible replacement. Hanks agreed, but ultimately Crystal informed the producers that he would be able to host.<ref>{{cite news|last=Matthews |first=Jack |title=Commentary: Who Will Host the Oscars? It's Not Crystal Clear |url=https://www.latimes.com/archives/la-xpm-1994-01-22-ca-14265-story.html |access-date=December 7, 2013 |work=Los Angeles Times |date=January 22, 1994 |url-status=live |archive-url=https://web.archive.org/web/20131218102251/http://articles.latimes.com/1994-01-22/entertainment/ca-14265_1_oscar-host |archive-date=December 18, 2013 }}</ref> According to ''[[Variety (magazine)|Variety]]'' columnist [[Army Archerd]], Crystal planned to perform a bungee jump stunt as part of his entrance at the beginning of the ceremony. However, the act was scrapped due to high insurance costs for the AMPAS and Crystal coming down with the flu.<ref name="Stunt">{{harvnb|Wiley|Bona|1996|p=836}}</ref> Instead, Crystal, who was wearing [[Hannibal Lecter]]'s mask from ''[[The Silence of the Lambs (film)|The Silence of the Lambs]]'', was hauled onto the stage by two men.<ref name="Wiley 1996 840" />
+
+Several other people were involved in the production of the ceremony. Choreographer [[Debbie Allen]] supervised the Best Song nominee performances and the Best Original Score dance number.<ref>{{cite news |last=Dunning |first=Jennifer |title=Television: Debbie Allen Chips Away At the Glass Ceiling |url=https://www.nytimes.com/1992/03/29/arts/television-debbie-allen-chips-away-at-the-glass-ceiling.html |access-date=September 10, 2013 |work=The New York Times |date=March 29, 1992 |url-status=live |archive-url=https://web.archive.org/web/20150610230257/http://www.nytimes.com/1992/03/29/arts/television-debbie-allen-chips-away-at-the-glass-ceiling.html |archive-date=June 10, 2015 }}</ref> Film composer and musician [[Bill Conti]] served as musical director of the ceremony.<ref name="Conti">{{harvnb|Wiley|Bona|1996|p=845}}</ref> In tandem with the theme of the ceremony, [[Chuck Workman]] produced a montage highlighting famous comedy movie scenes from past and present.<ref name="Wiley 1996 840" />
+=== Box office performance of nominees ===
+At the time of the nominations announcement on February 19, the combined gross of the five Best Picture nominees at the US box office was $393&nbsp;million with an average of $78.7&nbsp;million per film.<ref name=BoxOfficeOscars>{{cite news |title=1991 Academy Award Nominations and Winner for Best Picture |url=https://boxofficemojo.com/oscar/chart/?yr=1991&p=.htm |access-date=September 5, 2013 |work=[[Box Office Mojo]] |url-status=live |archive-url=https://web.archive.org/web/20130921053842/http://boxofficemojo.com/oscar/chart/?yr=1991&p=.htm |archive-date=September 21, 2013 }}</ref> ''The Silence of the Lambs'' was the highest earner among the Best Picture nominees, with $130.7&nbsp;million in domestic box office receipts.<ref name=BoxOfficeOscars /> The film was followed by ''Beauty and the Beast'' ($106.6&nbsp;million), ''The Prince of Tides'' ($59.3&nbsp;million), ''JFK'' ($58.1&nbsp;million), and finally ''Bugsy'' ($38.9&nbsp;million).<ref name=BoxOfficeOscars />
+
+Of the 50 top-grossing movies of the year, 72 nominations went to 15 of them. Only ''Silence of the Lambs'' (3rd), ''Beauty and the Beast'' (6th), ''Cape Fear'' (10th), ''The Prince of Tides'' (18th), ''JFK'' (21st), ''Boyz n the Hood'' (22nd), ''Thelma and Louise'' (27th), ''The Fisher King'' (30th), and ''Bugsy'' (32nd) were nominated for Best Picture, directing, acting, or screenwriting. The other top 50 box office hits that earned nominations were ''Terminator 2: Judgment Day'' (1st), ''Robin Hood: Prince of Thieves'' (2nd), ''Hook'' (5th), ''The Addams Family'' (7th), ''Backdraft'' (12th), and ''Star Trek VI: the Undiscovery Country'' (13th).<ref>{{cite news |title=1991 Box Office Grosses (as of February 19, 1992) |url=https://www.boxofficemojo.com/yearly/chart/?asof=1992-02-19&view=releasedate&view2=domestic&yr=1991&sort=gross&order=DESC&p=.htm |access-date=February 14, 2014 |work=Box Office Mojo |url-status=live |archive-url=https://web.archive.org/web/20160817072008/http://www.boxofficemojo.com/yearly/chart/?asof=1992-02-19&view=releasedate&view2=domestic&yr=1991&sort=gross&order=DESC&p=.htm |archive-date=August 17, 2016 }}</ref>
+
+=== LGBT in film protest ===
+Several days before the ceremony, [[LGBT]] activist groups such as [[Queer Nation]] and Out in Film announced plans to stage a protest outside the [[Dorothy Chandler Pavilion]].<ref name="Protest">{{harvnb|Wiley|Bona|1996|p=834}}</ref> The organizations were voicing their complaints regarding derogatory and unflattering portrayals of homosexuals in film such as ''The Silence of the Lambs'', ''JFK'', and the upcoming film ''[[Basic Instinct]]''.<ref name="EW">{{cite magazine |last=Wells |first=Jeffrey |title=Up the Academy |url=https://www.ew.com/ew/article/0,,309999,00.html |access-date=September 12, 2013 |magazine=Entertainment Weekly |date=March 27, 1992 |url-status=dead |archive-url=https://web.archive.org/web/20131003050529/http://www.ew.com/ew/article/0%2C%2C309999%2C00.html |archive-date=October 3, 2013 }}</ref><ref>{{cite news |last=Weir |first=John |title=Film: Gay-Bashing, Villainy and the Oscars |url=https://www.nytimes.com/1992/03/29/movies/film-gay-bashing-villainy-and-the-oscars.html |access-date=September 11, 2013 |work=The New York Times |date=March 29, 1992 |url-status=live |archive-url=https://web.archive.org/web/20131002212107/http://www.nytimes.com/1992/03/29/movies/film-gay-bashing-villainy-and-the-oscars.html |archive-date=October 2, 2013 }}</ref> Queer Nation spokesman Rick Wilson said that the demonstrators "would stop cars from getting to the Oscars. It'll be a stall-in". Wilson also announced plans to disrupt the proceedings inside the theater.<ref name="Demonstration">{{cite news |last=Fox |first=David J. |title=What Impact on Oscar for Gay Protest?: Movies: Activists may stage disturbances at Academy Awards over demands for positive portrayals. |url=https://www.latimes.com/archives/la-xpm-1992-03-16-ca-2819-story.html |access-date=September 11, 2013 |work=Los Angeles Times |date=March 16, 1992 |url-status=live |archive-url=https://web.archive.org/web/20150221224721/http://articles.latimes.com/1992-03-16/entertainment/ca-2819_1_academy-awards |archive-date=February 21, 2015 }}</ref> In response, producer Gil Cates stated, "Anyone can protest about anything they want outside the show." But he said that the standard, "generic response" to something happening during the ceremony on camera, "would be to cut to a commercial."<ref name="Demonstration" /> Moreover, Academy spokesman Bob Werden reiterated that while security plans would not be as stringent as the previous year, firemen and police officers would be on hand in case of fallout from the protests.<ref name="EW" />
+
+On the day of the telecast, several protesters carried various signs that contained statements such as "Stop Hollywood's Homophobia" and "Hollywood Stop Censoring Our True Queer Lives."<ref name="APO">{{harvnb|Levy|2003|p=354}}</ref> One man who had purchased tickets to the ceremony yelled statistics regarding [[AIDS]] in protest as [[John Candy]] was introducing a Best Song performance.<ref name="LGBT">{{harvnb|Wiley|Bona|1996|p=843}}</ref> Without making any arrests or having his comments heard during the broadcast, security immediately escorted the protester out.<ref name="APO" />
+
+=== Critical reviews ===
+The show received a positive reception from most media publications. ''[[The New York Times]]'' film critic [[Janet Maslin]] raved that the telecast was "uncharacteristically lively". She also praised host Crystal, saying that his opening monologue "set the evening's clever and iconoclastic tone."<ref>{{cite news |last=Maslin |first=Janet |title=Review/Television; A Very Different Oscars Broadcast |url=https://www.nytimes.com/1992/04/01/movies/review-television-a-very-different-oscars-broadcast.html |access-date=September 5, 2013 |work=The New York Times |date=April 1, 1992 |url-status=live |archive-url=https://web.archive.org/web/20130921054717/http://www.nytimes.com/1992/04/01/movies/review-television-a-very-different-oscars-broadcast.html |archive-date=September 21, 2013 }}</ref> Columnist Scott Williams of the [[Associated Press]] wrote that "Crystal was charming from the moment he was wheeled onstage and strolled into the audience wearing the face mask of the demonic Hannibal 'The Cannibal' Lecter from ''The Silence of the Lambs,'' which was named best picture."<ref>{{cite news |last=Williams |first=Scott |title=Cue the Shuttle: It's the 64th Annual Academy Awards With AM-Oscars, Bjt |url=https://apnews.com/e3e447a03c3dc9e22c4c876aeee7b44b |access-date=September 5, 2013 |work=[[Associated Press News]] |date=March 31, 1992 |url-status=live |archive-url=https://web.archive.org/web/20130921053437/http://www.apnewsarchive.com/1992/Cue-the-Shuttle-It-s-the-64th-Annual-Academy-Awards-With-AM-Oscars-Bjt/id-e3e447a03c3dc9e22c4c876aeee7b44b |archive-date=September 21, 2013 }}</ref> Ray Richmond from the ''[[Orange County Register]]'' commented that Crystal "is such a magnificent Oscar host that the job should be his as long as he wants it."<ref>{{cite news |last=Richmond |first=Ray |title=It's Crystal clear that comedian gilds the Oscars |work=[[Orange County Register]] |publisher=[[Freedom Communications]] |date=March 31, 1991 |page=F2}}</ref>
+
+=== Ratings and reception ===
+The American telecast on ABC drew in an average of 44.44 million people over its length, which was a 5% increase from the [[63rd Academy Awards|previous year's ceremony]].<ref>{{cite news |last=Johnson |first=Greg |title=Call It the Glamour Bowl |url=https://articles.latimes.com/1999/mar/18/business/fi-18458/2 |access-date=August 26, 2013 |work=Los Angeles Times |date=March 18, 1999 |url-status=dead |archive-url=https://web.archive.org/web/20130928053918/http://articles.latimes.com/1999/mar/18/business/fi-18458/2 |archive-date=September 28, 2013 }}</ref> The show also drew higher [[Nielsen ratings]] compared to the previous ceremony, with 29.84% of households watching over a 50.26 share.<ref name="TVB Oscars">{{cite news |title=Academy Awards ratings |work=Television Bureau of Advertising |url=http://www.tvb.org/media/file/Academy_Awards.pdf |access-date=June 27, 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130515152338/http://www.tvb.org/media/file/Academy_Awards.pdf |archive-date=May 15, 2013 }}</ref> In addition, it also drew a higher 18–49 demo rating with a 20.71 rating over a 39.51 share among viewers in that demographic.<ref name="TVB Oscars" />
+
+In July 1992, the ceremony presentation received nine nominations at the [[44th Primetime Emmy Awards|44th Primetime Emmys]].<ref>{{cite news |title=Primetime Emmy Award database |url=http://www.emmys.com/shows/64th-annual-academy-awards |access-date=September 5, 2013 |publisher=[[Academy of Television Arts and Sciences]] |url-status=live |archive-url=https://web.archive.org/web/20131203014913/http://www.emmys.com/shows/64th-annual-academy-awards |archive-date=December 3, 2013 }}</ref> The following month, the ceremony won three of those nominations for [[Primetime Emmy Award for Outstanding Writing for a Variety Special|Outstanding Writing for a Variety Program]] ([[Hal Kanter]], [[Buz Kohan]], Billy Crystal, [[Marc Shaiman]], [[David Steinberg]], [[Robert Wuhl]], [[Bruce Vilanch]]), [[Primetime Emmy Award for Outstanding Music Direction|Outstanding Music Direction]] ([[Bill Conti]], [[Jack Eskew]], [[Julie Giroux]], Ashley Irwin, and [[Hummie Mann]]), and [[Primetime Emmy Award for Outstanding Costumes for a Variety, Nonfiction, or Reality Programming|Outstanding Costume Design for a Variety or Music Program]] (Raymond Aghayan).<ref>{{cite news |title=1992 Emmy Winners |url=https://www.nytimes.com/1992/09/01/news/1992-emmy-winners.html |access-date=September 5, 2013 |work=The New York Times |date=September 1, 1992 |url-status=live |archive-url=https://web.archive.org/web/20131002203335/http://www.nytimes.com/1992/09/01/news/1992-emmy-winners.html |archive-date=October 2, 2013 }}</ref>
+
+== See also ==
+* [[12th Golden Raspberry Awards]]
+* [[34th Grammy Awards]]
+* [[44th Primetime Emmy Awards]]
+* [[45th British Academy Film Awards]]
+* [[46th Tony Awards]]
+* [[49th Golden Globe Awards]]
+* [[List of submissions to the 64th Academy Awards for Best Foreign Language Film]]
+* [[1991 in film ]]
+
+== References ==
+{{Reflist|30em}}
+
+== Bibliography ==
+{{Refbegin}}
+* {{Cite book |last=Levy |first=Emanuel |title=All About Oscar: The History and Politics of the Academy Awards |year=2003 |isbn=0-8264-1452-4 |location=New York, United States |publisher=[[Continuum International Publishing Group]] }}
+* {{Cite book |last1=Wiley |first1=Mason |last2=Bona |first2=Damien |title=Inside Oscar: The Unofficial History of the Academy Awards |year=1996 |isbn=0-345-40053-4 |location=New York, United States |edition=5 |oclc=779680732 |publisher=[[Ballantine Books]] }}
+{{refend}}
+
+== External links ==
+;Official websites
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+
+;Analysis
+* [http://www.filmsite.org/aa91.html 1991 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20131005004500/http://www.filmsite.org/aa91.html |date=October 5, 2013 }} [[Filmsite]]
+* [https://www.imdb.com/event/ev0000003/1992 Academy Awards, USA: 1992] {{Webarchive|url=https://web.archive.org/web/20171115062247/http://www.imdb.com/event/ev0000003/1992 |date=November 15, 2017 }} [[Internet Movie Database]]
+
+;Other resources
+* {{IMDb title|0266219|The 64th Annual Academy Awards}}
+
+{{Academy Awards Chron}}
+{{TCA Award for Outstanding Achievement in Movies, Miniseries and Specials}}
+
+{{DEFAULTSORT:Academy Awards, 64th}}
+[[Category:1991 film awards]]
+[[Category:Academy Awards ceremonies]]
+[[Category:1992 in Los Angeles]]
+[[Category:1992 in American cinema]]
+[[Category:March 1992 in the United States]]
+[[Category:1992 awards in the United States|Academy]]
+[[Category:Television shows directed by Jeff Margolis]]

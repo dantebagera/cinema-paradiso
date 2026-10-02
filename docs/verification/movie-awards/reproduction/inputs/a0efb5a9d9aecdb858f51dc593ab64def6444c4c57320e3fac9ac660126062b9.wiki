@@ -1,0 +1,153 @@
+{{Short description|1961 film directed by Guy Green}}
+{{About|the 1961 film|the book in the Left Behind series|The Mark (novel)}}
+{{Use British English|date=March 2016}}
+{{Use dmy dates|date=March 2016}}
+{{Infobox film
+| name           = The Mark
+| image          = The Mark (film).jpg
+| caption        = Home video cover
+| director       = [[Guy Green (filmmaker)|Guy Green]]
+| producer       = [[Raymond Stross]]
+| writer         = {{plainlist|
+* [[Sidney Buchman]]
+* [[Stanley Mann]]
+}}
+| based_on       = {{based on |''The Mark''<br />(1951 novel)|Charles E. Israel}}
+| narrator       = 
+| starring       = {{plainlist|
+* [[Maria Schell]]
+* [[Stuart Whitman]]
+* [[Rod Steiger]]}}
+| music          = [[Richard Rodney Bennett]]
+| cinematography = [[Douglas Slocombe]]
+| editing        = [[Peter Taylor (film editor)|Peter Taylor]]
+| studio         = Raymond Stross Productions
+| distributor    = [[20th Century Fox]]
+| released       = {{Film date|1961|01|26|London|ref1=<ref name=TCMnotes/>|df=y}}
+| runtime        = 127 minutes
+| country        = United Kingdom
+| language       = English
+| budget         = £260,000<ref>{{cite news|title=Zero night for Stross and his banned film|url=https://www.newspapers.com/image/789245753/?terms=%22john%20davis%22%20%22rank%20film%22&match=1|newspaper=[[Daily Herald (United Kingdom)|Daily Herald]]|date=9 May 1961|page= 8}}</ref>
+}}
+
+'''''The Mark''''' is a 1961 British [[drama film]] directed by [[Guy Green (filmmaker)|Guy Green]], produced by [[Raymond Stross]], and starring [[Stuart Whitman]], [[Maria Schell]], [[Rod Steiger]] and [[Brenda De Banzie]]. It is adapted by [[Sidney Buchman]] and [[Stanley Mann]] from a 1951 novel by American writer Charles E. Israel. The film concerns a convicted sex offender trying to rebuild his life after a prison sentence (Whitman), but is suspected in the [[sexual assault]] of a child.
+
+The film's controversial subject matter limited its commercial prospects, though it was generally well-received by critics. It was nominated for the [[Palme d'Or]] at the [[1961 Cannes Film Festival]], and Stuart Whitman was nominated for an [[Academy Award for Best Actor]].
+
+==Plot==
+Jim Fuller is released from prison after serving time for intent to commit child molestation. He attempts to return to society while dealing with his psychological demons with the help of psychiatrist Dr. McNally.
+
+After finding employment, Jim begins a romantic relationship with Ruth Leighton, the company's secretary, and he appears to be on the way to a better life. However, when a child is reported as a possible abuse victim, Jim is picked up for questioning by the police. He has a genuine alibi, and is eventually cleared, but a tabloid reporter exposes Jim's previous conviction, and he becomes a pariah in his new community.
+
+==Cast==
+{{castlist|
+* [[Stuart Whitman]] as Jim Fuller
+* [[Rod Steiger]] as Dr. Edmund McNally
+* [[Maria Schell]] as Ruth Leighton
+* [[Brenda de Banzie]] as Gertrude Cartwright
+* [[Donald Houston]] as Austin
+* [[Donald Wolfit]] as Andrew Clive 
+* [[Paul Rogers (actor)|Paul Rogers]] as Roy Milne
+* [[Maurice Denham]] as Arnold Cartwright
+* Amanda Black as Janie Leighton
+* Bandana Das Gupta as Inez
+* [[Eddie Byrne]] as Akers
+* [[Harry Baird (actor)|Harry Baird]] as Cole
+* [[Al Mulock]] as Convict
+* [[John Welsh (actor)|John Welsh]] and [[Russell Napier]] as Plainclothes officers}}
+
+==Production==
+
+=== Casting ===
+Each of the three main characters was played by an actor not originally slated for the role. Stuart Whitman was a last-minute replacement for [[Richard Burton]]<ref name="whit">{{cite magazine|date=6 February 2026|access-date=6 February 2026|first=Stephen|last=Vagg|magazine=Variety|url=https://www.filmink.com.au/not-quite-movie-stars-stuart-whitman/|title=Not Quite Movie Stars: Stuart Whitman}}</ref>; Maria Schell took over for [[Jean Simmons]], who was supposed to have played Ruth; and the role of the prison psychiatrist was intended for [[Trevor Howard]] before Rod Steiger was cast.<ref name="TCMarticle"/><ref name="guy">{{cite web|url=https://historyproject.org.uk/interview/guy-green|website=British Entertainment History Project|title=Interview with Guy Green side 3|date=19 November 1991|first=Arnold|last= Schwartzman}}</ref>
+
+According to an interview given by Steiger many years later, he had visited an analyst himself in the 1950s and observed how he conducted himself. He played McNally as an Irishman to avoid stereotyping and added touches to impart more humanity to the character. Steiger claimed that the portrayal was so well received by psychiatric professionals that he was invited to speak at a convention by a psychiatric society.<ref name="Henderson"/>
+
+=== Filming ===
+Though a British production, the film's controversial subject matter led principal photography to take place in [[Republic of Ireland|Ireland]]. Shooting at [[Ardmore Studios]].<ref>{{Cite web |title=Early Years of Ardmore Studios |url=https://www.louiselliman.com/about/early-years-of-ardmore-studios/ |access-date=2026-06-10 |website=Louis Elliman |language=en}}</ref>
+
+==Release==
+John Davis of the [[The Rank Organisation|Rank Organisation]] refused to allow the film to be shown in Rank's cinemas saying "I have seen it and disliked it intensely."<ref>{{cite news|title=At the Cannes film festival|newspaper=Daily Herald|date=9 May 1961|page=8}}</ref>
+
+''The Mark'' premiered in London on 26 January 1961 at 20th Century Fox's Carlton Theatre in Haymarket, London and opened in New York City that October. It was screened in-competition at the [[1961 Cannes Film Festival]].<ref name=":0">{{Cite web |title=The Mark |url=https://www.festival-cannes.com/f/the-mark/ |access-date=10 March 2025 |website=Festival de Cannes}}</ref>
+
+== Reception ==
+
+=== Critical response ===
+The film's subject matter made it controversial, and it was criticised for making a [[pedophile|paedophile]] too sympathetic.<ref name="TCMarticle" /><ref name="BuhleWagner" /> However, it also received favourable reviews for its treatment of a difficult subject and praise for the acting, writing and directing.<ref name="NYTrvw" /><ref name="SRrvw" /> Green said the film was highly regarded in Hollywood, as was his previous film, ''[[The Angry Silence]]'' (1960), and led to Hollywood offers such as ''[[Light in the Piazza (film)|Light in the Piazza]]'' (1962).<ref name="guy" />
+
+''[[The Monthly Film Bulletin]]'' wrote: "This film makes a brave attempt at portraying abnormality sensibly, but gets no further. There is seriousness and care (always excepting such unconvincing episodes as Fuller's psychiatric treatment in prison, and the newspaper-man's extraordinarily irresponsible libel), but neither boldness nor passion. Too many issues are soft-pedalled. &nbsp;... Glamorous stars and expensive settings are altogether too obvious an edulcoration. There is, admittedly, much competent acting: Donald Wolfit is sound and solid as Clive, Paul Rogers convincing as the shifty executive assistant, Milne, and Donald Houston's journalist catches the eye. But the most compelling performance comes from Rod Steiger."<ref>{{Cite journal |date=1 January 1961 |title=The Mark |volume=28 |issue=324 |pages=31 |id={{ProQuest|1305829079}} |magazine=[[The Monthly Film Bulletin]]}}</ref>
+
+''The [[Radio Times]] Guide to Films'' gave the film 3/5 stars, writing: "Pitched as a rather sentimentalised melodrama, this is still an unusually frank and adult treatment of a serious topic, set in Britain but performed by two major Hollywood stars."<ref>{{Cite book |title=Radio Times Guide to Films |publisher=[[Immediate Media Company]] |year=2017 |isbn=9780992936440 |edition=18th |location=London |pages=593}}</ref>
+
+''[[Variety (magazine)|Variety]]'' wrote: "Producer [[Raymond Stross]] in the past has made a number of pix which have tended to rough up sex in equal mixtures of naivete and sleaziness. With ''The Mark'', Stross still clings to an undeniable belief in sex as an ingredient that interests adult filmgoers. But, this time, he's set his sights higher. Result is an overlong, sometimes plodding, but honest, interesting glimpse at a sex dilemma.&nbsp;... There are one or two obvious flaws in the story line and some of the flashbacks are irritating. But quietly it makes engrossing impact."<ref>{{Cite journal |date=1 February 1961 |title=The Mark |volume=221 |issue=10 |pages=6 |id={{ProQuest|962715994}} |magazine=[[Variety (magazine)|Variety]]}}</ref>
+
+=== Awards and nominations ===
+{| class="wikitable"
+|+
+!Institution
+!Year
+!Category
+!Nominee
+!Result
+!{{Abbr|Ref.|Reference(s)}}
+|-
+|[[Academy Awards]]
+|[[34th Academy Awards|1962]]
+|[[Academy Award for Best Actor|Best Actor]]
+|[[Stuart Whitman]]
+|{{nom}}
+|<ref>{{Cite web |title=The Mark |url=https://awardsdatabase.oscars.org/Search/Nominations?filmId=3105&view=2-Film%20Title-Alpha |access-date=10 March 2025 |website=Academy Awards (1961)}}</ref>
+|-
+|[[Cannes Film Festival]]
+|[[1961 Cannes Film Festival|1961]]
+|[[Palme d'Or]]
+|[[Guy Green (filmmaker)|Guy Green]]
+|{{nom}}
+|<ref name=":0" />
+|-
+|[[Golden Globes|Golden Globe Awards]]
+|[[19th Golden Globe Awards|1962]]
+|Samuel Goldwyn International Award{{Efn|This was not the predecessor but rather a companion award to the Golden Globe Award for Best Foreign Language Film and Golden Globe Award for Best English-Language Foreign Film categories.}}
+|{{N/A}}
+|{{won}}
+|<ref>{{Cite web |title=''The Mark'' – Golden Globes |url=https://goldenglobes.com/film/the-mark |date=1962-03-05 |access-date=2025-08-18 |website=[[Golden Globe Awards|GoldenGlobes.com]]}}</ref>
+|}
+
+==References==
+<references>
+
+<ref name=TCMnotes>{{cite web |title=The Mark (1961) – Notes |website=Turner Classic Movies |url=https://www.tcm.com/tcmdb/title/82926/the-mark#notes |archive-url=https://web.archive.org/web/20110927201547/http://www.tcm.com/tcmdb/title/82926/The-Mark/#notes |url-status=dead |archive-date=27 September 2011 |access-date=26 September 2015}}</ref>
+<ref name=TCMarticle>{{cite web |last=Sterritt |first=David |title=Article: The Mark (1961) |website=Turner Classic Movies |url=https://www.tcm.com/tcmdb/title/82926/the-mark#articles-reviews |archive-url=https://web.archive.org/web/20110927201547/http://www.tcm.com/tcmdb/title/82926/The-Mark/#articles-reviews |url-status=dead |archive-date=27 September 2011 |access-date=26 September 2015}}</ref>
+<ref name=Henderson>{{cite interview |last=Steiger |first=Rod |title=Rod Steiger on "The Mark" |publication-date=9 June 2013 |interviewer=John W. Henderson |publisher=Henderson's Film Industries |url=https://www.youtube.com/watch?v=IisVWeKDClw | archive-url=https://web.archive.org/web/20160102032557/https://www.youtube.com/watch?v=IisVWeKDClw| archive-date=2016-01-02 | url-status=dead|access-date=22 July 2015 |via=YouTube}}</ref>
+<ref name=BuhleWagner>{{cite book |last1=Buhle |first1=Paul |last2=Wagner |first2=Dave |title=Hide in Plain Sight: The Hollywood Blacklistees in Film and Television, 1950–2002 |url=https://books.google.com/books?id=kQtfBwAAQBAJ&pg=PA298 |year=2015 |publisher=St. Martin's Press |location=New York City |isbn=978-1-250-08313-5 |pages=298–299}} See note 69.</ref>
+<ref name=NYTrvw>{{cite news |last=Weiler |first=A.H. |author-link=A.H. Weiler |title='The Mark': Psychiatric Film Has Premiere at Sutton |newspaper=[[The New York Times]] |department=The Screen |date=3 October 1961 |url=https://www.nytimes.com/movie/review?res=9805E5DF143CEE32A25750C0A9669D946091D6CF |access-date=26 September 2015}}</ref>
+<ref name=SRrvw>{{cite journal |last=Alpert |first=Hollis |author-link=Hollis Alpert |title=Life Situation |department=SR Goes to the Movies |journal=[[Saturday Review (U.S. magazine)|Saturday Review]] |date=12 August 1961 |page=29}}</ref>
+
+</references>
+
+== Notes ==
+{{Notelist}}
+
+==External links==
+* [https://web.archive.org/web/20120713160555/http://explore.bfi.org.uk/4ce2b6b00491a ''The Mark'' (1961)] at [[British Film Institute|BFI]]
+* {{IMDb title|0055146|The Mark}}
+
+{{Guy Green}}
+
+{{DEFAULTSORT:Mark, The}}
+[[Category:1961 films]]
+[[Category:Films shot in the Republic of Ireland]]
+[[Category:Films directed by Guy Green]]
+[[Category:British CinemaScope films]]
+[[Category:1961 drama films]]
+[[Category:British drama films]]
+[[Category:Films scored by Richard Rodney Bennett]]
+[[Category:Films with screenplays by Sidney Buchman]]
+[[Category:Films with screenplays by Stanley Mann]]
+[[Category:Films about child sexual abuse]]
+[[Category:Films about pedophilia]]
+[[Category:1961 English-language films]]
+[[Category:1961 British films]]
+[[Category:English-language drama films]]
+[[Category:British black-and-white films]]

@@ -28,6 +28,7 @@ const libraryOnly = [
 ];
 
 const discoverOnly = [
+  { type: 'tv_status', label: 'Series status', editor: 'controlled', repeatable: false },
   { type: 'minimum_votes', label: 'Minimum votes', editor: 'minimum-votes', repeatable: false },
   { type: 'availability', label: 'Availability', editor: 'availability', repeatable: false }
 ];

@@ -1,0 +1,333 @@
+{{oscars short description|films-year=1957}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+|image =
+| number           = 30
+| award            = Academy Awards
+| date             = March 26, 1958
+| site             = [[RKO Pantages Theatre]], [[Hollywood, Los Angeles|Hollywood]], [[California]], United States
+| host             = [[Bob Hope]]<br />[[Rosalind Russell]]<br />[[David Niven]]<br />[[James Stewart]]<br />[[Jack Lemmon]]<br />[[Donald Duck]] (voice of [[Clarence Nash]] by premade animation)
+| producer         = [[Jerry Wald]]
+| director         = Trevor Newman
+| best_picture     = ''[[The Bridge on the River Kwai]]''
+| most_wins        = ''The Bridge on the River Kwai'' (7)
+| most_nominations = ''[[Sayonara (1957 film)|Sayonara]]'' (10)
+| network          = [[NBC]]
+| duration         = 
+| last             = 29th
+| next             = 31st
+}}
+
+The '''30th Academy Awards''' ceremony was held on March 26, 1958, to honor the best films of [[1957 in film|1957]].
+
+Two violent deaths surrounded the Oscars during this ceremony. A plane crash took the life of producer [[Mike Todd]], ending the then-latest marriage of [[Elizabeth Taylor]], at that time a contender for the film ''[[Raintree County (film)|Raintree County]]''. [[Lana Turner]], in the running for ''[[Peyton Place (film)|Peyton Place]]'', would soon be embroiled in a major scandal when [[Johnny Stompanato]], her boyfriend, was killed in her Beverly Hills home.<ref name="Oscars '57 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/840/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=841 |isbn=0-385-04060-1}}</ref> The Best Actress award, however, was won by a relative newcomer, [[Joanne Woodward]], who made her own dress for the occasion, causing presenter [[Joan Crawford]] to remark that she was "setting the cause of Hollywood glamour back twenty years by making her own clothes".<ref name="Oscars '57 Notes"/>
+
+As in [[29th Academy Awards|the previous year]], the [[Hollywood blacklist|blacklisting]] of certain writers led to anomalies in the writing awards. The [[Academy Award for Best Adapted Screenplay|Academy Award for Best Screenplay Based on Material from Another Medium]] was awarded to [[Pierre Boulle]] for ''[[The Bridge on the River Kwai]]'', despite the fact that he did not speak English, because the actual writers, [[Carl Foreman]] and [[Michael Wilson (writer)|Michael Wilson]], were blacklisted at the time and had not received screen credit. Foreman and Wilson have since been acknowledged by the academy as the true recipients of the award, though Boulle remains listed as an official winner.
+
+''[[Peyton Place (film)|Peyton Place]]'' tied the record for the most nominations without a win (9) set by ''[[The Little Foxes (film)|The Little Foxes]]'' (1941). This record would stand until 1977 when ''[[The Turning Point (1977 film)|The Turning Point]]'' received 11 nominations without a win, which is the record to date (''[[The Color Purple (1985 film)|The Color Purple]]'' tied the record in 1985).  ''Peyton Place'' also set the record for most unsuccessful acting nominations, with five; this record has been tied once, by ''[[Tom Jones (1963 film)|Tom Jones]]'' at the [[36th Academy Awards]].
+
+For the first time in Oscar history, during the time period (1944–2008) when Best Picture was limited to five nominees, the Best Director nominees aligned completely with the Best Picture nominees. This would only occur four more times before the Best Picture category's re-expansion in 2009. As of the [[97th Academy Awards]], ''[[Designing Woman]]'' is the last film to win the Oscar for [[Academy Award for Best Original Screenplay|Best Original Screenplay]] when nominated solely in that category.
+
+==Awards==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = DavidLean1965.jpg
+| caption1          = [[David Lean]]; Best Director winner
+| image2            =Sir Alec Guinness Allan Warren (2).jpg
+| caption2          = [[Alec Guinness]]; Best Actor winner
+| image3            = Joanne Woodward 1971.jpg
+| caption3          = [[Joanne Woodward]]; Best Actress winner
+| image4            = Red Buttons - 1959.jpg
+| caption4          = [[Red Buttons]]; Best Supporting Actor winner
+| image5            = Miyoshi Umeki.jpg
+| caption5          = [[Miyoshi Umeki]]; Best Supporting Actress winner
+| image6            = Carl Foreman 1961.jpg
+| caption6          = [[Carl Foreman]]; Best Adapted Screenplay co-winner
+| image7            = Jimmy Van Heusen (2).jpg
+| caption7          = [[Jimmy Van Heusen]]; Best Original Song co-winner
+| image8            = Sammy Cahn 1950s.JPG
+| caption8          = [[Sammy Cahn]]; Best Original Song co-winner
+}}
+Nominees were announced on February 18, 1958. Winners are listed first and highlighted in boldface.<ref name="Oscars1958">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1958 |title=The 30th Academy Awards (1958) Nominees and Winners |access-date=2011-08-21 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706094132/http://www.oscars.org/awards/academyawards/legacy/ceremony/30th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*''' ''[[The Bridge on the River Kwai]]'' – [[Sam Spiegel]], producer'''
+**''[[12 Angry Men (1957 film)|12 Angry Men]]'' – [[Henry Fonda]] and [[Reginald Rose]], producers
+**''[[Peyton Place (film)|Peyton Place]]'' – [[Jerry Wald]], producer
+**''[[Sayonara (1957 film)|Sayonara]]'' – [[William Goetz]], producer
+**''[[Witness for the Prosecution (1957 film)|Witness for the Prosecution]]'' – [[Arthur Hornblow Jr.]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*''' [[David Lean]]&nbsp;– ''[[The Bridge on the River Kwai]]'''''
+**[[Sidney Lumet]]&nbsp;– ''[[12 Angry Men (1957 film)|12 Angry Men]]''
+**[[Mark Robson (film director)|Mark Robson]]&nbsp;– ''[[Peyton Place (film)|Peyton Place]]''
+**[[Joshua Logan]]&nbsp;– ''[[Sayonara (1957 film)|Sayonara]]''
+**[[Billy Wilder]]&nbsp;– ''[[Witness for the Prosecution (1957 film)|Witness for the Prosecution]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+*''' [[Alec Guinness]]&nbsp;– ''[[The Bridge on the River Kwai]]'' as Colonel Nicholson'''
+**[[Marlon Brando]]&nbsp;– ''[[Sayonara (1957 film)|Sayonara]]'' as Major Lloyd "Ace" Gruver
+**[[Anthony Franciosa]]&nbsp;– ''[[A Hatful of Rain]]'' as Polo Pope
+**[[Charles Laughton]]&nbsp;– ''[[Witness for the Prosecution (1957 film)|Witness for the Prosecution]]'' as Sir Wilfrid Robarts Q.C.
+**[[Anthony Quinn]]&nbsp;– ''[[Wild Is the Wind (1957 film)|Wild Is the Wind]]'' as Gino
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+*''' [[Joanne Woodward]]&nbsp;– ''[[The Three Faces of Eve]]''  as Eve White/Eve Black/Jane'''
+**[[Deborah Kerr]]&nbsp;– ''[[Heaven Knows, Mr. Allison]]'' as Sister Angela
+**[[Anna Magnani]]&nbsp;– ''[[Wild Is the Wind (1957 film)|Wild Is the Wind]]'' as Gioia
+**[[Elizabeth Taylor]]&nbsp;– ''[[Raintree County (film)|Raintree County]]'' as Susanna Drake
+**[[Lana Turner]]&nbsp;– ''[[Peyton Place (film)|Peyton Place]]'' as [[Constance MacKenzie]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*''' [[Red Buttons]]&nbsp;– ''[[Sayonara (1957 film)|Sayonara]]'' as Airman Joe Kelly'''
+**[[Vittorio De Sica]]&nbsp;– ''[[A Farewell to Arms (1957 film)|A Farewell to Arms]]'' as Major Alessandro Rinaldi
+**[[Sessue Hayakawa]]&nbsp;– ''[[The Bridge on the River Kwai]]'' as Colonel Saito
+**[[Arthur Kennedy]]&nbsp;– ''[[Peyton Place (film)|Peyton Place]]'' as [[Lucas Cross]]
+**[[Russ Tamblyn]]&nbsp;– ''[[Peyton Place (film)|Peyton Place]]'' as Norman Page
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*''' [[Miyoshi Umeki]]&nbsp;– ''[[Sayonara (1957 film)|Sayonara]]'' as Katsumi Kelly'''
+**[[Carolyn Jones]]&nbsp;– ''[[The Bachelor Party]]'' as The Girl
+**[[Elsa Lanchester]]&nbsp;– ''[[Witness for the Prosecution (1957 film)|Witness for the Prosecution]]'' as Miss Plimsoll
+**[[Hope Lange]]&nbsp;– ''[[Peyton Place (film)|Peyton Place]]'' as [[Selena Cross]]
+**[[Diane Varsi]]&nbsp;– ''[[Peyton Place (film)|Peyton Place]]'' as [[Allison MacKenzie]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+*''' ''[[Designing Woman]]''&nbsp;– [[George Wells (screenwriter)|George Wells]]'''
+**''[[Funny Face]]''&nbsp;– [[Leonard Gershe]]
+**''[[I Vitelloni]]''&nbsp;– [[Federico Fellini]], [[Tullio Pinelli]] and [[Ennio Flaiano]]
+**''[[Man of a Thousand Faces (film)|Man of a Thousand Faces]]''&nbsp;– [[Ralph Wheelwright]], [[Robert Wright Campbell|R. Wright Campbell]], [[Ivan Goff]] and [[Ben Roberts (writer)|Ben Roberts]]
+**''[[The Tin Star]]''&nbsp;– Barney Slater, Joel Kane and [[Dudley Nichols]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+*''' ''[[The Bridge on the River Kwai]]''&nbsp;– [[Michael Wilson (writer)|Michael Wilson]], [[Carl Foreman]] and [[Pierre Boulle]] based on [[The Bridge over the River Kwai|the novel]] by Pierre Boulle'''
+**''[[12 Angry Men (1957 film)|12 Angry Men]]''&nbsp;– [[Reginald Rose]] based on his teleplay
+**''[[Heaven Knows, Mr. Allison]]''&nbsp;– [[John Lee Mahin]] and [[John Huston]] from [[Heaven Knows, Mr. Allison (novel)|the novel]] by [[Charles Shaw (writer)|Charles Shaw]]
+**''[[Peyton Place (film)|Peyton Place]]''&nbsp;– [[John Michael Hayes]] based on [[Peyton Place (novel)|the novel]] by [[Grace Metalious]]
+**''[[Sayonara (1957 film)|Sayonara]]''&nbsp;– [[Paul Osborn]] based on [[Sayonara (novel)|the novel]] by [[James A. Michener|James Michener]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[List of submissions to the 29th Academy Awards for Best Foreign Language Film|Best Foreign Language Film]]}}
+*''' ''[[Nights of Cabiria]]'' ([[Italy]])'''
+**''[[Mother India]]'' ([[India]]) 
+**''[[The Devil Strikes at Night]]'' ([[West Germany]])
+**''[[Gates of Paris (film)|Gates of Paris]]'' ([[France]])
+**''[[Nine Lives (1957 film)|Nine Lives]]'' ([[Norway]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*''' ''[[Albert Schweitzer (film)|Albert Schweitzer]]''&nbsp;– [[Jerome Hill]]'''
+**''[[On the Bowery]]''&nbsp;– [[Lionel Rogosin]]
+**''[[Torero! (film)|Torero!]]''&nbsp;– [[Manuel Barbachano Ponce]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+*''' ''[[The Wetback Hound]]''&nbsp;– [[Larry Lansburgh]]'''
+**''[[A Chairy Tale]]''&nbsp;– [[Norman McLaren]]
+**''[[City of Gold (1957 film)|City of Gold]]''&nbsp;– [[Tom Daly (filmmaker)|Tom Daly]]
+**''Foothold on Antarctica''&nbsp;– James Carr
+**''Portugal''&nbsp;– [[Ben Sharpsteen]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*''' ''[[Birds Anonymous]]''&nbsp;– [[Edward Selzer]]'''
+**''[[One Droopy Knight]]''&nbsp;– [[William Hanna]] and [[Joseph Barbera]]
+**''[[Tabasco Road]]''&nbsp;– [[Edward Selzer]]
+**''Trees and Jamaica Daddy''&nbsp;– [[Stephen Bosustow]]
+**''[[The Truth About Mother Goose]]''&nbsp;– [[Walt Disney]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring)]]}}
+*''' ''[[The Bridge on the River Kwai]]''&nbsp;– [[Malcolm Arnold]]'''
+**''[[An Affair to Remember]]''&nbsp;– [[Hugo Friedhofer]]
+**''[[Boy on a Dolphin]]''&nbsp;– [[Hugo Friedhofer]]
+**''[[Perri (film)|Perri]]''&nbsp;– [[Paul Smith (composer)|Paul J. Smith]]
+**''[[Raintree County (film)|Raintree County]]''&nbsp;– [[Johnny Green]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*''' "[[All the Way (Frank Sinatra song)|All the Way]]" from ''[[The Joker Is Wild]]''&nbsp;– Music by [[Jimmy Van Heusen]]; Lyrics by [[Sammy Cahn]]'''
+**"[[An Affair to Remember (Our Love Affair)|An Affair to Remember]]" from ''[[An Affair to Remember]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Leo McCarey]] and [[Harold Adamson]]
+**"[[April Love (song)|April Love]]" from ''[[April Love (film)|April Love]]''&nbsp;– Music by [[Sammy Fain]]; Lyrics by [[Paul Francis Webster]]
+**"[[Tammy (song)|Tammy]]" from ''[[Tammy and the Bachelor]]''&nbsp;– Music and Lyrics by [[Ray Evans]] and [[Jay Livingston|Johnny Livingston]]
+**"[[Wild Is the Wind (song)|Wild Is the Wind]]" from ''[[Wild Is the Wind (1957 film)|Wild Is the Wind]]''&nbsp;– Music by [[Dimitri Tiomkin]]; Lyrics by [[Ned Washington]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*''' ''[[Sayonara (1957 film)|Sayonara]]''&nbsp;– [[George Groves (sound engineer)|George Groves]]'''
+**''[[Gunfight at the O.K. Corral (film)|Gunfight at the O.K. Corral]]''&nbsp;– [[George Dutton]]
+**''[[Les Girls]]''&nbsp;– [[Wesley C. Miller]]
+**''[[Pal Joey (film)|Pal Joey]]''&nbsp;– [[John P. Livadary]]
+**''[[Witness for the Prosecution (1957 film)|Witness for the Prosecution]]''&nbsp;– [[Gordon E. Sawyer]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction]]}}
+*''' ''[[Sayonara (1957 film)|Sayonara]]''&nbsp;– Art Direction: [[Ted Haworth]]; Set Decoration: [[Robert Priestley]]'''
+**''[[Funny Face]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[George Davis (art director)|George W. Davis]]; Set Decoration: [[Samuel M. Comer]] and [[Ray Moyer]]
+**''[[Les Girls]]''&nbsp;– Art Direction: [[William A. Horning]] and [[Gene Allen (art director)|Gene Allen]]; Set Decoration: [[Edwin B. Willis]] and [[Richard Pefferle]]
+**''[[Pal Joey (film)|Pal Joey]]''&nbsp;– Art Direction: [[Walter Holscher]]; Set Decoration: [[William Kiernan]] and [[Louis Diage]]
+**''[[Raintree County (film)|Raintree County]]''&nbsp;– Art Direction: [[William A. Horning]] and [[Urie McCleary]]; Set Decoration: [[Edwin B. Willis]] and [[Hugh Hunt]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography]]}}
+*''' ''[[The Bridge on the River Kwai]]''&nbsp;– [[Jack Hildyard]]'''
+**''[[An Affair to Remember]]''&nbsp;– [[Milton Krasner]]
+**''[[Funny Face]]''&nbsp;– [[Ray June]]
+**''[[Peyton Place (film)|Peyton Place]]''&nbsp;– [[William C. Mellor]]
+**''[[Sayonara (1957 film)|Sayonara]]''&nbsp;– [[Ellsworth Fredericks]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design]]}}
+*''' ''[[Les Girls]]''&nbsp;– [[Orry-Kelly]]'''
+**''[[An Affair to Remember]]''&nbsp;– [[Charles LeMaire]]
+**''[[Funny Face]]''&nbsp;– [[Edith Head]] and [[Hubert de Givenchy]]
+**''[[Pal Joey (film)|Pal Joey]]''&nbsp;– [[Jean Louis]]
+**''[[Raintree County (film)|Raintree County]]''&nbsp;– [[Walter Plunkett]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+*''' ''[[The Bridge on the River Kwai]]''&nbsp;– [[Peter Taylor (film editor)|Peter Taylor]]'''
+**''[[Gunfight at the O.K. Corral (film)|Gunfight at the O.K. Corral]]''&nbsp;– [[Warren Low]]
+**''[[Pal Joey (film)|Pal Joey]]''&nbsp;– [[Viola Lawrence]] and [[Jerome Thoms]]
+**''[[Sayonara (1957 film)|Sayonara]]''&nbsp;– [[Arthur P. Schmidt]] and [[Philip W. Anderson (film editor)|Philip W. Anderson]]
+**''[[Witness for the Prosecution (1957 film)|Witness for the Prosecution]]''&nbsp;– [[Daniel Mandell]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*''' ''[[The Enemy Below]]''&nbsp;– [[Walter Rossi (sound editor)|Walter Rossi]]'''
+**''[[The Spirit of St. Louis (film)|The Spirit of St. Louis]]''&nbsp;– [[Louis Lichtenfield]]
+|}
+
+===Honorary Awards===
+*To [[Charles Brackett]] for outstanding service to the Academy. 
+*To [[B. B. Kahane]] for distinguished service to the motion picture industry.
+*To [[Gilbert M. Anderson|Gilbert M. "Broncho Billy" Anderson]], motion picture pioneer, for his contributions to the development of motion pictures as entertainment.
+*To [[Society of Motion Picture and Television Engineers|The Society of Motion Picture and Television Engineers]] for their contributions to the advancement of the motion picture industry.
+
+===Jean Hersholt Humanitarian Award===
+*[[Samuel Goldwyn]]
+
+==Presenters and performers==
+
+{{More citations needed|section|date=September 2015}}
+
+===Presenters===
+*[[June Allyson]] (Presenter: Best Special Effects)
+*[[Fred Astaire]] and [[Dana Wynter]] (Presenters: Best Foreign Language Film)
+*[[Ernest Borgnine]] and [[Cyd Charisse]] (Presenters: Best Documentary)
+*[[Joan Collins]] (Presenter: Cinematography Award)
+*[[Gary Cooper]] (Presenter: Best Picture)
+*[[Wendell Corey]] and [[Robert Ryan]] (Presenters: Costume Design Award)
+*[[Bette Davis]] (Presenter: Honorary Awards)
+*[[Doris Day]] and [[Clark Gable]] (Presenters: Writing Awards)
+*[[Anita Ekberg]] and [[Vincent Price]] (Presenters: Best Scoring)
+*[[Cary Grant]] (Presenter: Best Actor)
+*[[Rock Hudson]] and [[Jennifer Jones]] (Presenters: Short Subjects Awards)
+*[[Van Johnson]] and [[Dorothy Malone]] (Presenters: Best Sound Recording)
+*[[Hope Lange]] and [[Ronald Reagan]] (Presenters: Scientific and Technical Awards)
+*[[Sophia Loren]] (Presenter: Best Director)
+*[[Paul Newman]] and [[Joanne Woodward]] (Presenters: Best Film Editing)
+*[[Gregory Peck]] and [[Eva Marie Saint]] (Presenters: Best Art Direction)
+*[[Anthony Quinn]] (Presenter: Best Supporting Actress)
+*[[Lana Turner]] (Presenter: Best Supporting Actor)
+*[[John Wayne]] (Presenter: Best Actress)
+
+===Performers===
+*[[Anna Maria Alberghetti]], [[Ann Blyth]], [[Shirley Jones]], [[Tab Hunter]], [[Jimmie Rodgers (pop singer)|Jimmie Rodgers]] and [[Tommy Sands (entertainer)|Tommy Sands]] ("[[April Love (song)|April Love]]" from ''[[April Love (film)|April Love]]'')
+*[[Vic Damone]] ("An Affair to Remember" from ''[[An Affair to Remember]]'')
+*[[Kirk Douglas]] and [[Burt Lancaster]] ("It's Great Not to Be Nominated")
+*[[Rock Hudson]] and [[Mae West]] ("[[Baby, It's Cold Outside]]")
+*[[Dean Martin]] ("[[All the Way (Frank Sinatra song)|All the Way]]" from ''[[The Joker Is Wild]]'')<ref>{{cite web |title=The 30th Annual Academy Awards (1958 TV Special) Soundtracks |url=https://www.imdb.com/title/tt0343334/soundtrack |website=imdb.com |access-date=March 6, 2019}}</ref>
+*[[Johnny Mathis]] ("[[Wild Is the Wind (song)|Wild Is the Wind]]" from ''[[Wild Is the Wind (1957 film)|Wild Is the Wind]]'')
+*[[Debbie Reynolds]] ("[[Tammy (song)|Tammy]]" from ''[[Tammy and the Bachelor]]'')
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 10 
+| ''[[Sayonara (1957 film)|Sayonara]]''
+|-
+| rowspan="1" style="text-align:center" | 9
+| ''[[Peyton Place (film)|Peyton Place]]''
+|-
+| rowspan="1" style="text-align:center" | 8
+| ''[[The Bridge on the River Kwai]]''
+|-
+| rowspan="1" style="text-align:center" | 6
+| ''[[Witness for the Prosecution (1957 film)|Witness for the Prosecution]]''
+|-
+| rowspan="4" style="text-align:center" |4
+| ''[[An Affair to Remember]]''
+|-
+| ''[[Funny Face]]''
+|-
+| ''[[Pal Joey (film)|Pal Joey]]''
+|-
+| ''[[Raintree County (film)|Raintree County]]''
+|-
+| rowspan="3" style="text-align:center" |3
+| ''[[12 Angry Men (1957 film)|12 Angry Men]]''
+|-
+| ''[[Les Girls]]''
+|-
+| ''[[Wild Is the Wind (1957 film)|Wild is the Wind]]''
+|-
+| rowspan="3" style="text-align:center" | 2
+| ''[[Gunfight at the O.K. Corral (film)|Gunfight at the O.K. Corral]]''
+|-
+| ''[[Heaven Knows, Mr. Allison]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 7
+| ''[[The Bridge on the River Kwai]]''
+|-
+| rowspan=1, style="text-align:center" | 4
+| ''[[Sayonara (1957 film)|Sayonara]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+* [[15th Golden Globe Awards]]
+* [[1957 in film]]
+* [[9th Primetime Emmy Awards]]
+* [[10th Primetime Emmy Awards]]
+* [[11th British Academy Film Awards]]
+* [[12th Tony Awards]]
+
+==References==
+{{reflist}}
+
+==External links==
+* {{IMDb title|id=0343334|title=The 33rd Annual Academy Awards}}
+* [https://www.imdb.com/Sections/Awards/Academy_Awards_USA/1958 Results] at the [[Internet Movie Database]]
+* [http://www.infoplease.com/ipa/A0148736.html 1957 Academy Awards] at [[Infoplease]]
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 30}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1957 film awards]]
+[[Category:1957 awards in the United States]]
+[[Category:1958 in Los Angeles]]
+[[Category:1958 in American cinema]]
+[[Category:March 1958 in the United States]]

@@ -1,0 +1,535 @@
+{{oscars short description|films-year=2010}}
+{{pp-move}}
+{{Use mdy dates|date=March 2012}}
+{{Infobox film awards
+| number           = 83
+| award            = Academy Awards
+| image            = 83rd Academy Awards official poster.png
+| alt              = Official poster promoting the 83rd Academy Awards in 2011.
+| caption          = Official poster
+| date             = February 27, 2011
+| site             = [[Kodak Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], [[Los Angeles]], California, U.S.
+| preshow          = [[Tim Gunn]]<br />[[Maria Menounos]]<br />[[Robin Roberts (newscaster)|Robin Roberts]]<br />Krista Smith<ref>{{cite news|url=https://abcnews.go.com/Entertainment/Oscars/robin-roberts-tim-gunn-host-abcs-oscar-pre/story?id=12911255 |title=Robin Roberts, Tim Gunn to Host ABC's Oscar Pre-Show |publisher=[[ABC News (United States)|ABC News]] ([[The Walt Disney Company]]) |date=February 14, 2011 |access-date=February 15, 2011 |url-status=live |archive-url=https://web.archive.org/web/20110226110017/http://abcnews.go.com/Entertainment/Oscars/robin-roberts-tim-gunn-host-abcs-oscar-pre/story?id=12911255 |archive-date=February 26, 2011 }}</ref>
+| host             = [[James Franco]]<br />[[Anne Hathaway]]<ref name="Hosts">{{cite web|publisher=[[BBC News]] ([[BBC]]) |title=James Franco and Anne Hathaway to co-host 2011 Oscars |url=https://www.bbc.co.uk/news/entertainment-arts-11870282 |date=November 29, 2010 |access-date=November 29, 2010 |archive-url=https://web.archive.org/web/20101130043717/http://www.bbc.co.uk/news/entertainment-arts-11870282 |archive-date=November 30, 2010 |url-status=live |df=mdy}}</ref>
+| producer         = [[Bruce Cohen]]<br />[[Don Mischer]]<ref name="Producers">{{cite magazine|last1=Young |first1=John |title=Oscars: Academy picks Bruce Cohen and Don Mischer to produce 83rd Academy Awards |url=https://www.ew.com/article/2010/06/22/oscars-academy-awards-bruce-cohen |access-date=July 14, 2014 |magazine=[[Entertainment Weekly]]  |date=June 22, 2010 |url-status=live |archive-url=https://web.archive.org/web/20150402094228/http://www.ew.com/article/2010/06/22/oscars-academy-awards-bruce-cohen |archive-date=April 2, 2015 }}</ref>
+| director         = Don Mischer<ref name="Producers"/>
+| best_picture     = ''[[The King's Speech]]''
+| most_wins        = ''[[Inception]]'' and ''The King's Speech'' (4)
+| most_nominations = ''The King's Speech'' (12)
+| network          = [[American Broadcasting Company|ABC]]
+| duration         = 3 hours, 16 minutes<ref>{{cite news|url=https://www.variety.com/review/VE1117944731?refCatId=32 |title=The 83rd Annual Academy Awards |last=Lowry |first=Brian |date=February 27, 2011 |work=Variety  |access-date=February 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20110303125502/http://www.variety.com/review/VE1117944731?refCatId=32 |archive-date=March 3, 2011 }}</ref>
+| ratings          = 37.9 million<br />21.2% ([[Nielsen ratings]])<ref name="Bloomberg Business">{{cite news|last1=Golum |first1=Robert |title=U.S. Broadcast Television Ratings for the Week Ended Feb. 27 |url=https://www.bloomberg.com/news/articles/2011-03-01/u-s-broadcast-television-ratings-for-the-week-ended-feb-27 |access-date=September 19, 2011 |publisher=[[Bloomberg Businessweek]] ([[Bloomberg L.P.]]) |date=March 1, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150402131229/http://www.bloomberg.com/news/articles/2011-03-01/u-s-broadcast-television-ratings-for-the-week-ended-feb-27 |archive-date=April 2, 2015 }}</ref>
+| last             = 82nd
+| next             = 84th
+}}
+
+The '''83rd Academy Awards''' ceremony, organized by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), honored the best [[2010 in film|films of 2010]] in the United States and took place on February 27, 2011, at the [[Kodak Theatre]] in [[Hollywood, Los Angeles]], beginning at 5:30&nbsp;p.m. [[Pacific Time Zone|PST]] (8:30&nbsp;p.m. [[Eastern Time Zone|EST]]). During the ceremony, [[Academy Awards]] (commonly called the Oscars) were presented in 24 competitive categories. The ceremony was televised in the United States by [[American Broadcasting Company|ABC]], and produced by [[Bruce Cohen]] and [[Don Mischer]], with Mischer also serving as director.<ref>{{cite news|last1=Littleton |first1=Cynthia |last2=McNairy |first2=Dave |title=Academy taps Oscar producers |url=https://variety.com/2010/film/news/academy-taps-oscar-producers-1118020935/ |access-date=August 6, 2014 |work=Variety  |date=June 22, 2010 |url-status=live |archive-url=https://web.archive.org/web/20140812202338/http://variety.com/2010/film/news/academy-taps-oscar-producers-1118020935/ |archive-date=August 12, 2014 }}</ref><ref>{{cite news|last1=Young |first1=John |title=Oscars: Academy picks Bruce Cohen and Don Mischer to produce 83rd Academy Awards |url=http://news-briefs.ew.com/2010/06/22/oscars-academy-awards-bruce-cohen/ |access-date=August 4, 2014 |work=Entertainment Weekly . |date=June 22, 2010 |url-status=live |archive-url=https://web.archive.org/web/20140808051731/http://news-briefs.ew.com/2010/06/22/oscars-academy-awards-bruce-cohen/ |archive-date=August 8, 2014 }}</ref> Actors [[James Franco]] and [[Anne Hathaway]] co-hosted the ceremony, marking the first time for each.<ref>{{cite news|last=O'Connor |first=Clint |title=Anne Hathaway and James Franco to team as Oscar hosts |access-date=August 1, 2013 |url=http://www.cleveland.com/moviebuff/index.ssf/2010/11/anne_hathaway_and_james_franco.html |work=[[The Plain Dealer]]  |date=November 29, 2010 |url-status=live |archive-url=https://web.archive.org/web/20131230232907/http://www.cleveland.com/moviebuff/index.ssf/2010/11/anne_hathaway_and_james_franco.html |archive-date=December 30, 2013 }}</ref>
+
+In related events, the Academy held its second annual [[Governors Awards]] ceremony at the Grand Ballroom of the [[Hollywood and Highland Center]] on November 13, 2010.<ref>{{cite magazine|last=Vary |first=Adam B. |title=The Governors Awards: The stars come out to honor cinema greats&nbsp;— and maybe snag an Oscar nod in the process |url=http://insidemovies.ew.com/2010/11/14/governors-awards-godard-wallach-brownlow-coppola/ |access-date=October 12, 2013 |magazine=Entertainment Weekly|date=November 14, 2010 |url-status=live |archive-url=https://web.archive.org/web/20131014092049/http://insidemovies.ew.com/2010/11/14/governors-awards-godard-wallach-brownlow-coppola/ |archive-date=October 14, 2013 }}</ref> On February 12, 2011, in a ceremony at the [[Beverly Wilshire Hotel]] in [[Beverly Hills, California]], the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]] were presented by host [[Marisa Tomei]].<ref>{{cite news|url=https://variety.com/2011/film/news/tomei-to-host-academy-s-science-tech-awards-1118031595/ |title=Marisa Tomei to host Sci-Tech Oscars |first=Alexa |last=Harrison |date=February 4, 2011  |work=Variety |access-date=October 12, 2013 |url-status=live |archive-url=https://web.archive.org/web/20131022025438/http://variety.com/2011/film/news/tomei-to-host-academy-s-science-tech-awards-1118031595/ |archive-date=October 22, 2013 }}</ref>
+
+''[[The King's Speech]]'' won four awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last1=Dudek |first1=Duane |title=Oscar plays it safe, crowns 'King's Speech' |url=http://www.jsonline.com/entertainment/movies/117036058.html |access-date=August 5, 2014 |work=[[Milwaukee Journal Sentinel]]  |date=February 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20140811073051/http://www.jsonline.com/entertainment/movies/117036058.html |archive-date=August 11, 2014 }}</ref><ref>{{cite news|last1=Vognar |first1=Chris |title='The King's Speech' takes home a royal bounty at Oscars |url=http://www.dallasnews.com/entertainment/columnists/chris-vognar/20110228-the-kings-speech_takes-home-a-royal-bounty-at-oscars.ece |access-date=September 19, 2011 |work=[[The Dallas Morning News]]  |date=February 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20110304112527/http://www.dallasnews.com/entertainment/columnists/chris-vognar/20110228-the-kings-speech_takes-home-a-royal-bounty-at-oscars.ece |archive-date=March 4, 2011 }}</ref><ref>{{cite news|last1=Germain|first1=David|title='King's Speech' claims best-picture Oscar|url=https://www.stltoday.com/entertainment/movies/king-s-speech-claims-best-picture-oscar/article_3e16613a-42f5-11e0-8c10-0017a4a78c22.html|access-date=August 4, 2014|work=[[St. Louis Post-Dispatch]]|date=February 27, 2011|archive-date=June 22, 2017|archive-url=https://web.archive.org/web/20170622044129/http://www.stltoday.com/entertainment/movies/king-s-speech-claims-best-picture-oscar/article_3e16613a-42f5-11e0-8c10-0017a4a78c22.html|url-status=live}}</ref> Other winners included ''[[Inception]]'' with four awards, ''[[The Social Network]]'' with three, ''[[Alice in Wonderland (2010 film)|Alice in Wonderland]]'', ''[[The Fighter]]'', and ''[[Toy Story 3]]'' with two, and ''[[Black Swan (film)|Black Swan]]'', ''[[God of Love (film)|God of Love]]'', ''[[In a Better World]]'', ''[[Inside Job (2010 film)|Inside Job]]'', ''[[The Lost Thing#2010 film|The Lost Thing]]'', ''[[Strangers No More]]'', and ''[[The Wolfman (2010 film)|The Wolfman]]'' with one. The telecast garnered almost 38 million viewers in the United States.
+
+==Winners and nominees==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+The nominees for the 83rd Academy Awards were announced on January 25, 2011, at 5:38&nbsp;a.m. [[Pacific Time Zone|PST]] at the [[Samuel Goldwyn Theater]] in [[Beverly Hills, California]] by [[Tom Sherak]], president of the Academy, and actress [[Mo'Nique]].<ref>{{cite magazine|last=Labrecque |first=Jeff |title=Mo'Nique to announce Oscar nominations on Jan. 25 |url=http://insidemovies.ew.com/2011/01/05/monique-oscars/ |access-date=October 11, 2013 |magazine=Entertainment Weekly|date=January 5, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20131014084814/http://insidemovies.ew.com/2011/01/05/monique-oscars/ |archive-date=October 14, 2013 }}</ref> ''[[The King's Speech]]'' led the nominations with twelve, followed by ''[[True Grit (2010 film)|True Grit]]'' with ten.<ref>{{cite news|last=Williams |first=Joe |title=Oscar nominations confirm it's good to be 'King' |url=https://www.stltoday.com/entertainment/movies/joe-williams/oscar-nominations-confirm-it-s-good-to-be-king/article_db16724e-2889-11e0-af2f-00127992bc8b.html |access-date=October 12, 2013 |work=St. Louis Post-Dispatch  |date=January 25, 2011 |url-status=live |archive-url=https://web.archive.org/web/20140824135550/http://www.stltoday.com/entertainment/movies/joe-williams/oscar-nominations-confirm-it-s-good-to-be-king/article_db16724e-2889-11e0-af2f-00127992bc8b.html |archive-date=August 24, 2014 }}</ref><ref>{{cite news|last1=Germain |first1=David |title='King's Speech' rules with 12 Oscar nominations |url=http://web.utsandiego.com/news/2011/Jan/25/kings-speech-rules-with-12-oscar-nominations/2/ |access-date=August 7, 2014 |work=U-T San Diego  |date=January 25, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20150402104406/http://web.utsandiego.com/news/2011/Jan/25/kings-speech-rules-with-12-oscar-nominations/2/ |archive-date=April 2, 2015 }}</ref>
+
+The winners were announced during the awards ceremony on February 27, 2011.<ref>{{cite news|url=http://marquee.blogs.cnn.com/2011/02/27/83rd-annual-academy-awards-winners-list/ |title=List of Academy Award nominations |date=January 25, 2011 |publisher=[[CNN]] ([[Time Warner]]) |access-date=March 1, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20110301025505/http://marquee.blogs.cnn.com/2011/02/27/83rd-annual-academy-awards-winners-list/ |archive-date=March 1, 2011 }}</ref> ''[[Toy Story 3]]'' became the third animated film to be nominated for [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news|last=Lang |first=Derek J. |title=John Lasseter wins lifetime achievement award |url=https://www.washingtonpost.com/wp-dyn/content/article/2011/02/26/AR2011022600870.html |access-date=October 12, 2013 |newspaper=[[The Washington Post]]  |date=February 26, 2011 |url-status=live |archive-url=https://web.archive.org/web/20131101183054/http://www.washingtonpost.com/wp-dyn/content/article/2011/02/26/AR2011022600870.html |archive-date=November 1, 2013 }}</ref><ref>{{cite news|last1=Venutolo |first1=Anthony |title=Oscars 2011: 'Toy Story 3' wins Best Animated Feature |url=http://www.nj.com/oscar-awards/index.ssf/2011/02/oscars_2011_toy_story_3_wins_best_animated_feature.html |access-date=August 1, 2014 |work=[[The Star-Ledger]]  |date=February 27, 2011 |url-status=live |archive-url=https://web.archive.org/web/20140812052920/http://www.nj.com/oscar-awards/index.ssf/2011/02/oscars_2011_toy_story_3_wins_best_animated_feature.html |archive-date=August 12, 2014 }}</ref> ''[[True Grit (2010 film)|True Grit]]'' was the second film after 2002's ''[[Gangs of New York]]'' to lose all ten of its nominations.<ref>{{cite news|last=Fritz |first=Ben |title='True Grit' goes 0-for-10 at Oscars |url=https://www.latimes.com/entertainment/la-xpm-2011-feb-28-la-et-oscar-snubs-surprises-20110228-story.html |access-date=October 12, 2013 |work=Los Angeles Times |date=February 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20131022132711/http://articles.latimes.com/2011/feb/28/entertainment/la-et-oscar-snubs-surprises-20110228 |archive-date=October 22, 2013 }}</ref> By virtue of his nomination for Best Actor in ''[[127 Hours]]'', host [[James Franco]] became the first person since [[Paul Hogan]], who was a co-host and a Best Original Screenplay nominee during the [[59th Academy Awards|59th ceremony]] in 1987, to host the ceremony while receiving a nomination in the same year.<ref>{{cite news|last1=Graser |first1=Marc |title='The King's Speech' tops Oscar noms |url=https://variety.com/2011/film/news/the-king-s-speech-tops-oscar-noms-1118030820/ |access-date=July 14, 2011 |work=Variety  |date=January 25, 2011 |url-status=live |archive-url=https://web.archive.org/web/20130926171222/http://variety.com/2011/film/news/the-king-s-speech-tops-oscar-noms-1118030820/ |archive-date=September 26, 2013 }}</ref><ref name="Franco">{{cite news|last1=Levine |first1=Stuart |last2=Justin |first2=Kroll |title=Franco, Hathaway to host Oscars |url=https://variety.com/2010/film/news/franco-hathaway-to-host-oscars-1118028082/ |access-date=August 5, 2014 |work=Variety  |date=November 29, 2010 |url-status=live |archive-url=https://web.archive.org/web/20140812202411/http://variety.com/2010/film/news/franco-hathaway-to-host-oscars-1118028082/ |archive-date=August 12, 2014 }}</ref> He was also the first acting nominee since [[Michael Caine]] at the [[45th Academy Awards|45th ceremony]] in 1973 to achieve this distinction.<ref>{{cite news|last1=Schwartz |first1=Terry |title=James Franco Isn't The First Oscar-Nominated Oscar Host! |url=http://moviesblog.mtv.com/2011/01/25/james-franco-isnt-the-first-oscar-nominated-oscar-host/ |access-date=August 6, 2014 |publisher=MTV (Viacom) |date=January 25, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20140809183452/http://moviesblog.mtv.com/2011/01/25/james-franco-isnt-the-first-oscar-nominated-oscar-host/ |archive-date=August 9, 2014 }}</ref> With [[Christian Bale]] and [[Melissa Leo]]'s respective wins in the Best Supporting Actor and Best Supporting Actress categories, ''[[The Fighter]]'' became the first film since 1986's ''[[Hannah and Her Sisters]]'' to win both supporting acting categories.<ref>{{cite news|last1=Glanfield |first1=Tim |title=Oscar coronation for Colin Firth and The King's Speech |url=http://www.radiotimes.com/news/2011-02-28/oscar-coronation-for-colin-firth-and-the-kings-speech |access-date=August 4, 2014 |work=[[Radio Times]]  |date=February 28, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20140808053353/http://www.radiotimes.com/news/2011-02-28/oscar-coronation-for-colin-firth-and-the-kings-speech |archive-date=August 8, 2014 }}</ref>
+
+===Awards===
+[[File:Tom Hooper - Flickr - Eva Rinaldi Celebrity and Live Music Photographer (1).jpg|thumb|right|150px|[[Tom Hooper]], Best Director winner]]
+[[File:Colin Firth by Gage Skidmore 2.jpg|thumb|right|150px|[[Colin Firth]], Best Actor winner]]
+[[File:Natalie Portman 2023.jpg|thumb|right|150px|[[Natalie Portman]], Best Actress winner]]
+[[File:Christian Bale-7837.jpg|thumb|right|150px|[[Christian Bale]], Best Supporting Actor winner]]
+[[File:Melissa Leo at the 2009 Tribeca Film Festival.jpg|thumb|right|150px|[[Melissa Leo]], Best Supporting Actress winner]]
+[[File:Aaron Sorkin at PaleyFest 2013.jpg|thumb|right|150px|[[Aaron Sorkin]], Best Adapted Screenplay winner]]
+[[File:Susanne Bier.jpg|thumb|right|150px|[[Susanne Bier]], Best Foreign Language Film winner]]
+[[File:Charles Ferguson (Representational Pictures, Inc.).jpg|thumb|right|150px|[[Charles Ferguson (filmmaker)|Charles Ferguson]], Best Documentary Feature co-winner]]
+[[File:Trent Reznor-FEB2008 (cropped, but higher quality) (2).jpg|thumb|right|150px|[[Trent Reznor]], Best Original Score co-winner]]
+[[File:Randy Newman HWOF Aug 2012 (levels adjusted).jpg|thumb|right|150px|[[Randy Newman]], Best Original Song winner]]
+[[File:Richard King 1 (cropped1).jpg|thumb|right|150px|[[Richard King (sound designer)|Richard King]], Best Sound Editing winner]]
+[[File:Rick Baker at Saturn Awards.jpg|thumb|right|150px|[[Rick Baker]], Best Makeup co-winner]]
+[[File:Dave Elsey.png|thumb|right|150px|[[Dave Elsey]], Best Makeup co-winner]]
+
+Winners<ref name="Oscars2011">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/2011 |title=The 83rd Academy Awards (2011) Nominees and Winners |access-date=November 11, 2011 |publisher=[[Academy of Motion Picture Arts and Sciences]] (AMPAS) |url-status=live |archive-url=https://web.archive.org/web/20110605132752/http://www.oscars.org/awards/academyawards/83/nominees.html |archive-date=June 5, 2011 }}</ref> are listed first, highlighted in '''boldface''', and indicated with a double-dagger ({{double-dagger}}).
+
+{| class="wikitable"
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[The King's Speech]]''&nbsp;– [[Iain Canning]], [[Emile Sherman]] and [[Gareth Unwin]], producers'''{{double dagger}}
+** ''[[127 Hours]]''&nbsp;– [[Christian Colson]], [[Danny Boyle]] and [[John Smithson]], producers
+** ''[[Black Swan (film)|Black Swan]]''&nbsp;– [[Mike Medavoy]], [[Brian Oliver (producer)|Brian Oliver]] and [[Scott Franklin (producer)|Scott Franklin]], producers
+** ''[[The Fighter]]''&nbsp;– [[David Hoberman]], [[Todd Lieberman]] and [[Mark Wahlberg]], producers
+** ''[[Inception]]''&nbsp;– [[Emma Thomas]] and [[Christopher Nolan]], producers
+** ''[[The Kids Are All Right (film)|The Kids Are All Right]]''&nbsp;– [[Gary Gilbert]], [[Jeff Levy-Hinte|Jeffrey Levy-Hinte]] and [[Celine Rattray]], producers
+** ''[[The Social Network]]''&nbsp;– [[Scott Rudin]], [[Dana Brunetti]], [[Michael De Luca]] and [[Ceán Chaffin]], producers
+** ''[[Toy Story 3]]''&nbsp;– [[Darla K. Anderson]], producer
+** ''[[True Grit (2010 film)|True Grit]]''&nbsp;– [[Scott Rudin]], [[Coen brothers|Ethan Coen]] and [[Coen brothers|Joel Coen]], producers
+** ''[[Winter's Bone]]''&nbsp;– [[Anne Rosellini]] and [[Alix Madigan-Yorkin]], producers
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Tom Hooper]]&nbsp;– ''[[The King's Speech]]'''''{{double dagger}}
+** [[Darren Aronofsky]]&nbsp;– ''[[Black Swan (film)|Black Swan]]''
+** [[David O. Russell]]&nbsp;– ''[[The Fighter]]''
+** [[David Fincher]]&nbsp;– ''[[The Social Network]]''
+** [[Coen brothers|Joel Coen and Ethan Coen]]&nbsp;– ''[[True Grit (2010 film)|True Grit]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Actor in a Leading Role]]}}
+* '''[[Colin Firth]]&nbsp;– ''[[The King's Speech]]'' as [[King George VI]]'''{{double dagger}}
+** [[Javier Bardem]]&nbsp;– ''[[Biutiful]]'' as Uxbal
+** [[Jeff Bridges]]&nbsp;– ''[[True Grit (2010 film)|True Grit]]'' as [[Rooster Cogburn (character)|Rooster Cogburn]]
+** [[Jesse Eisenberg]]&nbsp;– ''[[The Social Network]]'' as [[Mark Zuckerberg]]
+** [[James Franco]]&nbsp;– ''[[127 Hours]]'' as [[Aron Ralston]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Actress in a Leading Role]]}}
+* '''[[Natalie Portman]]&nbsp;– ''[[Black Swan (film)|Black Swan]]'' as Nina Sayers'''{{double dagger}}
+** [[Annette Bening]]&nbsp;– ''[[The Kids Are All Right (film)|The Kids Are All Right]]'' as Dr. Nicole "Nic" Allgood
+** [[Nicole Kidman]]&nbsp;– ''[[Rabbit Hole (2010 film)|Rabbit Hole]]'' as Becca Corbett
+** [[Jennifer Lawrence]]&nbsp;– ''[[Winter's Bone]]'' as Ree Dolly
+** [[Michelle Williams (actress)|Michelle Williams]]&nbsp;– ''[[Blue Valentine (film)|Blue Valentine]]'' as Cynthia "Cindy" Heller
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Christian Bale]]&nbsp;– ''[[The Fighter]]'' as [[Dicky Eklund]]'''{{double dagger}}
+** [[John Hawkes (actor)|John Hawkes]]&nbsp;– ''[[Winter's Bone]]'' as Teardrop Dolly
+** [[Jeremy Renner]]&nbsp;– ''[[The Town (2010 film)|The Town]]'' as James "Jem" Coughlin
+** [[Mark Ruffalo]]&nbsp;– ''[[The Kids Are All Right (film)|The Kids Are All Right]]'' as Paul Hatfield
+** [[Geoffrey Rush]]&nbsp;– ''[[The King's Speech]]'' as [[Lionel Logue]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Melissa Leo]]&nbsp;– ''[[The Fighter]]'' as Alice Eklund-Ward'''{{double dagger}}
+** [[Amy Adams]]&nbsp;– ''The Fighter'' as Charlene Fleming
+** [[Helena Bonham Carter]]&nbsp;– ''[[The King's Speech]]'' as [[Queen Elizabeth The Queen Mother|Queen Elizabeth]]
+** [[Hailee Steinfeld]]&nbsp;– ''[[True Grit (2010 film)|True Grit]]'' as Mattalyn "Mattie" Ross
+** [[Jacki Weaver]]&nbsp;– ''[[Animal Kingdom (film)|Animal Kingdom]]'' as [[Kath Pettingill|Janine "Smurf" Cody]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[The King's Speech]]''&nbsp;– [[David Seidler]]'''{{double dagger}}
+** ''[[Another Year (film)|Another Year]]''&nbsp;– [[Mike Leigh]]
+** ''[[The Fighter]]''&nbsp;– Screenplay by [[Scott Silver]], Paul Tamasy and Eric Johnson; Story by Keith Dorrington, Paul Tamasy and Eric Johnson
+** ''[[Inception]]''&nbsp;– [[Christopher Nolan]]
+** ''[[The Kids Are All Right (film)|The Kids Are All Right]]''&nbsp;– [[Lisa Cholodenko]] and [[Stuart Blumberg]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[The Social Network]]''&nbsp;– [[Aaron Sorkin]]; {{small|based on the book ''[[The Accidental Billionaires]]'' by [[Ben Mezrich]]}}'''{{double dagger}}
+** ''[[127 Hours]]''&nbsp;– [[Danny Boyle]] and [[Simon Beaufoy]]; {{small|based on the book ''[[Between a Rock and a Hard Place (book)|Between a Rock and a Hard Place]]'' by [[Aron Ralston]]}}
+** ''[[Toy Story 3]]''&nbsp;– Screenplay by [[Michael Arndt]]; Story by [[John Lasseter]], [[Andrew Stanton]] and [[Lee Unkrich]]; {{small|based on the previous films ''[[Toy Story]]'' and ''[[Toy Story 2]]''}}
+** ''[[True Grit (2010 film)|True Grit]]''&nbsp;– [[Coen brothers|Joel Coen and Ethan Coen]]; {{small|based on [[True Grit (novel)|the novel]] by [[Charles Portis]]}}
+** ''[[Winter's Bone]]''&nbsp;– [[Debra Granik]] and [[Anne Rosellini]]; {{small|based on the novel by [[Daniel Woodrell]]}}
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Toy Story 3]]''&nbsp;– Directed by [[Lee Unkrich]]'''{{double dagger}}
+** ''[[How to Train Your Dragon (2010 film)|How to Train Your Dragon]]''&nbsp;– Directed by [[Chris Sanders]] and [[Dean DeBlois]]
+** ''[[The Illusionist (2010 film)|The Illusionist]]''&nbsp;– Directed by [[Sylvain Chomet]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[In a Better World]]'' ([[List of Danish submissions for the Academy Award for Best Foreign Language Film|Denmark]]) in [[Danish language|Danish]]&nbsp;– [[Susanne Bier]]'''{{double dagger}}
+** ''[[Biutiful]]'' ([[List of Mexican submissions for the Academy Award for Best Foreign Language Film|Mexico]]) in [[Spanish language|Spanish]]&nbsp;– [[Alejandro González Iñárritu]]
+** ''[[Dogtooth (film)|Dogtooth]]'' ([[List of Greek submissions for the Academy Award for Best Foreign Language Film|Greece]]) in [[Greek language|Greek]]&nbsp;– [[Yorgos Lanthimos]]
+** ''[[Incendies]]'' ([[List of Canadian submissions for the Academy Award for Best Foreign Language Film|Canada]]) in [[French language|French]]&nbsp;– [[Denis Villeneuve]]
+** ''[[Outside the Law (2010 film)|Outside the Law]]'' ([[List of Algerian submissions for the Academy Award for Best Foreign Language Film|Algeria]]) in [[Arabic]]&nbsp;– [[Rachid Bouchareb]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[Inside Job (2010 film)|Inside Job]]''&nbsp;– [[Charles Ferguson (filmmaker)|Charles Ferguson]] and [[Audrey Marrs]]'''{{double dagger}}
+** ''[[Exit Through the Gift Shop]]''&nbsp;– [[Banksy]] and [[Jaimie D'Cruz]]
+** ''[[Gasland]]''&nbsp;– [[Josh Fox]] and [[Trish Adlesic]]
+** ''[[Restrepo (film)|Restrepo]]''&nbsp;– [[Tim Hetherington]] and [[Sebastian Junger]]
+** ''[[Waste Land (film)|Waste Land]]''&nbsp;– [[Lucy Walker (director)|Lucy Walker]] and Angus Aynsley
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[Strangers No More]]''&nbsp;– [[Karen Goodman]] and [[Kirk Simon]]'''{{double dagger}}
+** ''[[Killing in the Name (film)|Killing in the Name]]''&nbsp;– Jed Rothstein
+** ''[[Poster Girl (film)|Poster Girl]]''&nbsp;– Sara Nesson and [[Mitchell Block|Mitchell W. Block]]
+** ''[[Sun Come Up (film)|Sun Come Up]]''&nbsp;– [[Jennifer Redfearn]] and Tim Metzger
+** ''[[The Warriors of Qiugang]]''&nbsp;– [[Ruby Yang]] and [[Thomas Lennon (filmmaker)|Thomas Lennon]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[God of Love (film)|God of Love]]''&nbsp;– [[Luke Matheny]]'''{{double dagger}}
+** ''[[The Confession (2010 film)|The Confession]]''&nbsp;– [[Tanel Toom]]
+** ''[[The Crush (2010 film)|The Crush]]''&nbsp;– Michael Creagh
+** ''[[Na Wewe]]''&nbsp;– Ivan Goldschmidt
+** ''[[Wish 143]]''&nbsp;– Ian Barnes and Samantha Waite
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[The Lost Thing#2010 film|The Lost Thing]]''&nbsp;– [[Shaun Tan]] and [[Andrew Ruhemann]]'''{{double dagger}}
+** ''[[Day & Night (2010 film)|Day & Night]]''&nbsp;– [[Teddy Newton]]
+** ''[[The Gruffalo (film)|The Gruffalo]]''&nbsp;– [[Jakob Schuh]] and [[Max Lang]]
+** ''[[Let's Pollute]]''&nbsp;– [[Geefwee Boedoe]]
+** ''[[Madagascar, a Journey Diary]]''&nbsp;– Bastien Dubois
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[The Social Network]]''&nbsp;– [[Trent Reznor]] and [[Atticus Ross]]'''{{double dagger}}
+** ''[[127 Hours]]''&nbsp;– [[A. R. Rahman]]
+** ''[[How to Train Your Dragon (2010 film)|How to Train Your Dragon]]''&nbsp;– [[John Powell (film composer)|John Powell]]
+** ''[[Inception]]''&nbsp;– [[Hans Zimmer]]
+** ''[[The King's Speech]]''&nbsp;– [[Alexandre Desplat]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[We Belong Together (Randy Newman song)|We Belong Together]]" from ''[[Toy Story 3]]''&nbsp;– Music and Lyrics by [[Randy Newman]]'''{{double dagger}}
+** "Coming Home" from ''[[Country Strong]]''&nbsp;– Music and Lyrics by [[Tom Douglas (songwriter)|Tom Douglas]], [[Troy Verges]] and [[Hillary Lindsey]]
+** "[[I See the Light]]" from ''[[Tangled]]''&nbsp;– Music by [[Alan Menken]]; Lyrics by [[Glenn Slater]]
+** "[[If I Rise]]" from ''[[127 Hours]]''&nbsp;– Music by [[A. R. Rahman]]; Lyrics by [[Dido (singer)|Dido]] and [[Rollo Armstrong]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Editing|Best Sound Editing]]}}
+* '''''[[Inception]]''&nbsp;– [[Richard King (sound designer)|Richard King]]'''{{double dagger}}
+** ''[[Toy Story 3]]''&nbsp;– [[Tom Myers (sound engineer)|Tom Myers]] and [[Michael Silvers]]
+** ''[[Tron: Legacy]]''&nbsp;– [[Gwendolyn Yates Whittle]] and [[Addison Teague]]
+** ''[[True Grit (2010 film)|True Grit]]''&nbsp;– [[Skip Lievsay]] and [[Craig Berkey]]
+** ''[[Unstoppable (2010 film)|Unstoppable]]''&nbsp;– [[Mark P. Stoeckinger]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Sound Mixing]]}}
+* '''''[[Inception]]''&nbsp;– [[Lora Hirschberg]], [[Gary A. Rizzo]] and [[Ed Novick]]'''{{double dagger}}
+** ''[[The King's Speech]]''&nbsp;– [[Paul Hamblin]], [[Martin Jensen (sound engineer)|Martin Jensen]] and [[John Midgley]]
+** ''[[Salt (2010 film)|Salt]]''&nbsp;– [[Jeffrey J. Haboush]], [[Greg P. Russell]], [[Scott Millan]] and [[William Sarokin]]
+** ''[[The Social Network]]''&nbsp;– [[Ren Klyce]], [[David Parker (sound engineer)|David Parker]], [[Michael Semanick]] and [[Mark Weingarten]]
+** ''[[True Grit (2010 film)|True Grit]]''&nbsp;– [[Skip Lievsay]], [[Craig Berkey]], [[Greg Orloff]] and [[Peter Kurland]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Best Art Direction]]}}
+* '''''[[Alice in Wonderland (2010 film)|Alice in Wonderland]]''&nbsp;– Art Direction: [[Robert Stromberg]]; Set Decoration: [[Karen O'Hara]]'''{{double dagger}}
+** ''[[Harry Potter and the Deathly Hallows – Part 1]]''&nbsp;– Art Direction: [[Stuart Craig]]; Set Decoration: [[Stephenie McMillan]]
+** ''[[Inception]]''&nbsp;– Art Direction: [[Guy Hendrix Dyas]]; Set Decoration: [[Larry Dias]] and [[Doug Mowat (set decorator)|Doug Mowat]]
+** ''[[The King's Speech]]''&nbsp;– Art Direction: [[Eve Stewart]]; Set Decoration: [[Judy Farr (set decorator)|Judy Farr]]
+** ''[[True Grit (2010 film)|True Grit]]''&nbsp;– Art Direction: [[Jess Gonchor]]; Set Decoration: [[Nancy Haigh]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[Inception]]''&nbsp;– [[Wally Pfister]]'''{{double dagger}}
+** ''[[Black Swan (film)|Black Swan]]''&nbsp;– [[Matthew Libatique]]
+** ''[[The King's Speech]]''&nbsp;– [[Danny Cohen (cinematographer)|Danny Cohen]]
+** ''[[The Social Network]]''&nbsp;– [[Jeff Cronenweth]]
+** ''[[True Grit (2010 film)|True Grit]]''&nbsp;– [[Roger Deakins]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Makeup and Hairstyling|Best Makeup]]}}
+* '''''[[The Wolfman (2010 film)|The Wolfman]]''&nbsp;– [[Rick Baker]] and [[Dave Elsey]]'''{{double dagger}}
+** ''[[Barney's Version (film)|Barney's Version]]''&nbsp;– [[Adrien Morot]]
+** ''[[The Way Back (2010 film)|The Way Back]]''&nbsp;– [[Edouard F. Henriques]], [[Gregory Funk]] and [[Yolanda Toussieng]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Alice in Wonderland (2010 film)|Alice in Wonderland]]''&nbsp;– [[Colleen Atwood]]'''{{double dagger}}
+** ''[[I Am Love (film)|I Am Love]]''&nbsp;– [[Antonella Cannarozzi]]
+** ''[[The King's Speech]]''&nbsp;– [[Jenny Beavan]]
+** ''[[The Tempest (2010 film)|The Tempest]]''&nbsp;– [[Sandy Powell (costume designer)|Sandy Powell]]
+** ''[[True Grit (2010 film)|True Grit]]''&nbsp;– [[Mary Zophres]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Social Network]]''&nbsp;– [[Angus Wall]] and [[Kirk Baxter]]'''{{double dagger}}
+** ''[[127 Hours]]''&nbsp;– [[Jon Harris (director)|Jon Harris]]
+** ''[[Black Swan (film)|Black Swan]]''&nbsp;– [[Andrew Weisblum]]
+** ''[[The Fighter]]''&nbsp;– [[Pamela Martin (film editor)|Pamela Martin]]
+** ''[[The King's Speech]]''&nbsp;– [[Tariq Anwar (film editor)|Tariq Anwar]]
+| valign="top" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Inception]]''&nbsp;– [[Paul Franklin (visual effects supervisor)|Paul Franklin]], [[Chris Corbould]], [[Andrew Lockley]] and [[Peter Bebb]]'''{{double dagger}}
+** ''[[Alice in Wonderland (2010 film)|Alice in Wonderland]]''&nbsp;– [[Ken Ralston]], [[David Schaub]], [[Carey Villegas]] and [[Sean Phillips (visual effects artist)|Sean Phillips]]
+** ''[[Harry Potter and the Deathly Hallows – Part 1]]''&nbsp;– [[Tim Burke (visual effects supervisor)|Tim Burke]], [[John Richardson (special effects designer)|John Richardson]], [[Christian Manz]] and [[Nicolas Aithadi]]
+** ''[[Hereafter (film)|Hereafter]]''&nbsp;– [[Michael Owens (visual effects artist)|Michael Owens]], [[Bryan Grill]], [[Stephan Trojansky]] and [[Joe Farrell (visual effects artist)|Joe Farrell]]
+** ''[[Iron Man 2]]''&nbsp;– [[Janek Sirrs]], [[Ben Snow]], [[Ged Wright]] and [[Dan Sudick]]
+|}
+
+=== Governors Awards ===
+The Academy held its Second Annual [[Governors Awards]] ceremony on November 13, 2010, during which the following awards were presented:<ref>{{cite news|url=http://www.orlandosentinel.com/la-ca-eli-wallach-20101107-story.html#page=1 |last=McNulty |first=Charles |title=The Actor's Craft: The Eli Wallach method |work=[[Orlando Sentinel]]  |date=November 7, 2010 |access-date=April 27, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150402090941/http://www.orlandosentinel.com/la-ca-eli-wallach-20101107-story.html |archive-date=April 2, 2015 }}</ref><ref>{{cite news|last1=Kilday |first1=Greg |title=Academy Honors Francis Ford Coppola, Eli Wallach; Sidesteps Jean-Luc Godard Controversy |url=https://www.hollywoodreporter.com/news/academy-honors-francis-ford-coppola-45193 |access-date=September 18, 2011 |work=[[The Hollywood Reporter]]  |date=November 14, 2010 |url-status=live |archive-url=https://web.archive.org/web/20101117002537/http://www.hollywoodreporter.com/news/academy-honors-francis-ford-coppola-45193 |archive-date=November 17, 2010 }}</ref><ref>{{cite magazine|last1=Svetkey |first1=Benjamin |title=Francis Ford Coppola, Eli Wallach, and Jean-Luc Godard win Oscars (but not on TV) |url=https://www.ew.com/article/2010/08/25/francis-ford-coppola-eli-wallach-and-jean-luc-godard-win-oscars-but-not-on-tv |access-date=July 14, 2011 |magazine=Entertainment Weekly|date=August 25, 2010 |url-status=live |archive-url=https://web.archive.org/web/20150402111403/http://www.ew.com/article/2010/08/25/francis-ford-coppola-eli-wallach-and-jean-luc-godard-win-oscars-but-not-on-tv |archive-date=April 2, 2015 }}</ref>
+
+====Honorary Awards====
+*To [[Kevin Brownlow]] for the wise and devoted chronicling of the cinematic parade.
+*To [[Jean-Luc Godard]] for passion. For confrontation. For a new kind of cinema.
+*To [[Eli Wallach]] for a lifetime's worth of indelible screen characters.
+
+====Irving G. Thalberg Memorial Award====
+*[[Francis Ford Coppola]]
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}{{col-1-of-2}}
+The following 14 films received multiple nominations:
+
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" | Nominations
+! scope="col" align="center" | Film
+|-
+| style="text-align: center;" | 12
+| ''[[The King's Speech]]''
+|-
+| style="text-align: center;" | 10
+| ''[[True Grit (2010 film)|True Grit]]''
+|-
+| rowspan=2 style="text-align:center" | 8
+| ''[[Inception]]''
+|-
+| ''[[The Social Network]]''
+|-
+| style="text-align: center;" | 7
+| ''[[The Fighter]]''
+|-
+| style="text-align: center;" | 6
+| ''[[127 Hours]]''
+|-
+|rowspan=2 style="text-align:center" | 5
+| ''[[Black Swan (film)|Black Swan]]''
+|-
+| ''[[Toy Story 3]]''
+|-
+|rowspan=2 style="text-align:center" | 4
+| ''[[The Kids Are All Right (film)|The Kids Are All Right]]''
+|-
+| ''[[Winter's Bone]]''
+|-
+| style="text-align: center;" | 3
+| ''[[Alice in Wonderland (2010 film)|Alice in Wonderland]]''
+|-
+|rowspan=3 style="text-align:center" | 2
+| ''[[Biutiful]]''
+|-
+| ''[[Harry Potter and the Deathly Hallows – Part 1]]''
+|-
+| ''[[How to Train Your Dragon (2010 film)|How to Train Your Dragon]]''
+|}
+{{col-2}}
+The following six films received multiple awards:
+{| class="wikitable" style="text-align: center;"
+|-
+! scope="col" | Awards
+! scope="col" align="center" | Film
+|-
+| rowspan=2 style="text-align:center" | 4
+| ''[[Inception]]''
+|-
+| ''[[The King's Speech]]''
+|-
+| style="text-align: center;" | 3
+| ''[[The Social Network]]''
+|-
+| rowspan=3 style="text-align:center" | 2
+| ''[[Alice in Wonderland (2010 film)|Alice in Wonderland]]''
+|-
+| ''[[The Fighter]]''
+|-
+| ''[[Toy Story 3]]''
+|}
+{{col-end}}
+
+==Presenters and performers==
+The following individuals presented awards or performed musical numbers.<ref name="Oscar live blog">{{cite web|last=Sheehan |first=Paul |title=Live Blog: The 83rd Annual Academy Awards |url=http://www.goldderby.com/news/1222/live-blog-the-83rd-annual-academy-awards.html |publisher=Gold Derby |access-date=July 19, 2013 |date=February 27, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20140222184339/http://www.goldderby.com/news/1222/live-blog-the-83rd-annual-academy-awards.html |archive-date=February 22, 2014 }}</ref><ref>{{cite news|last1=McDonnell |first1=Brandy |title=Live blog: 83rd Annual Academy Awards |url=http://newsok.com/live-blog-83rd-annual-academy-awards/article/3827301 |access-date=March 26, 2015 |work=[[The Oklahoman]]  |date=February 27, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20150402112424/http://newsok.com/live-blog-83rd-annual-academy-awards/article/3827301 |archive-date=April 2, 2015 }}</ref><ref>{{cite news |title=Oscars 2011: live coverage of the 83rd Academy Awards |url=https://www.theguardian.com/film/filmblog/2011/feb/27/oscars-2011-live-coverage-academy-awards |access-date=July 1, 2026 |work=[[The Guardian]]  |date=February 27, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150222232137/http://www.theguardian.com/film/filmblog/2011/feb/27/oscars-2011-live-coverage-academy-awards |archive-date=February 22, 2015 }}</ref>
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+|{{sortname|Tom|Kane}}<ref>{{cite news|title=The 83rd Annual Academy Awards |url=http://www.hollywood.com/tv/55488805/the-83rd-annual-academy-awards |access-date=March 19, 2015 |publisher=[[Hollywood.com]] (Hollywood.com, LLC) |url-status=live |archive-url=https://web.archive.org/web/20150402100724/http://www.hollywood.com/tv/55488805/the-83rd-annual-academy-awards |archive-date=April 2, 2015 }}</ref> || Announcer for the 83rd Academy Awards
+|-
+|{{sortname|Tom|Hanks}} || Presenter of the awards for [[Best Art Direction]] and [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+|{{sortname|Kirk|Douglas}}|| Presenter of the award for [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+|{{sortname|Mila|Kunis}} <br> [[Justin Timberlake]]|| Presenters of the awards for [[Best Animated Short Film]] and [[Academy Award for Best Animated Feature|Best Animated Feature Film]]
+|-
+|{{sortname|Javier|Bardem}} <br> [[Josh Brolin]]|| Presenters of the awards for [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]] and [[Best Original Screenplay]]
+|-
+|{{sortname|Russell|Brand}} <br> [[Helen Mirren]]|| Presenters of the award for [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]
+|-
+|{{sortname|Reese|Witherspoon}} || Presenter of the award for [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+|-
+|{{sortname|Tom|Sherak}} (AMPAS President)<br />[[Anne Sweeney]] ([[Disney–ABC Television Group]] President) || Presenters of a special presentation acknowledging the renewal of a television distribution contract between [[American Broadcasting Company|ABC]] and AMPAS
+|-
+|{{sortname|Hugh|Jackman}} <br> [[Nicole Kidman]]|| Introducers of a medley of past film scores and presenters of the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+|{{sortname|Scarlett|Johansson}} <br> [[Matthew McConaughey]]|| Presenters of the awards for [[Best Sound Mixing]] and [[Academy Award for Best Sound Editing|Best Sound Editing]]
+|-
+|{{sortname|Marisa|Tomei}} || Presenter of the [[Academy Award for Technical Achievement|Academy Awards for Technical Achievement]]
+|-
+|{{sortname|Cate|Blanchett}} || Presenter of the awards for [[Academy Award for Best Makeup and Hairstyling|Best Makeup]] and [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+|{{sortname|Kevin|Spacey}} || Introducer of the performance of Best Original Song nominees "[[We Belong Together (Randy Newman song)|We Belong Together]]" and "[[I See the Light]]"
+|-
+|{{sortname|Amy|Adams}} <br> [[Jake Gyllenhaal]]|| Presenters of the awards for [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]] and [[Best Live Action Short Film]]
+|-
+|{{sortname|Oprah|Winfrey}} || Presenter of the award for [[Academy Award for Best Documentary Feature|Best Documentary Feature]]
+|-
+|{{sortname|Billy|Crystal}} || Introducer of a digital projection of previous host [[Bob Hope]] at the [[25th Academy Awards]]
+|-
+|{{sortname|Bob|Hope}} (archive footage/digital projection) || Introducer of presenters Robert Downey Jr. and Jude Law
+|-
+|{{sortname|Robert|Downey Jr.}} <br> [[Jude Law]]|| Presenters of the awards for [[Academy Award for Best Visual Effects|Best Visual Effects]] and [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+|{{sortname|Jennifer|Hudson}} || Introducer of the performance of Best Original Song nominees "[[If I Rise]]" and "Coming Home" and presenter of the award for [[Academy Award for Best Original Song|Best Original Song]]
+|-
+|{{sortname|Halle|Berry}} || Presenter of the [[Lena Horne]] tribute
+|-
+|{{sortname|Kathryn|Bigelow}} <br> [[Hilary Swank]]|| Presenters of the award for [[Academy Award for Best Director|Best Director]]
+|-
+|{{sortname|Annette|Bening}} || Presenter of the [[Academy Honorary Award]]s and the [[Irving G. Thalberg Memorial Award]]
+|-
+|{{sortname|Jeff|Bridges}} || Presenter of the award for [[Academy Award for Best Actress|Best Actress]]
+|-
+|{{sortname|Sandra|Bullock}} || Presenter of the award for [[Academy Award for Best Actor|Best Actor]]
+|-
+|{{sortname|Steven|Spielberg}} || Presenter of the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role !! Performed
+|-
+|{{sortname|William|Ross|William Ross (composer)|William Ross}} || Musical arranger and conductor|| Orchestral
+|-
+|{{sortname|Anne|Hathaway}} || Performer || "[[On My Own (Les Misérables song)|On My Own]]" from ''[[Les Misérables (musical)|Les Misérables]]''
+|-
+|{{sortname|Randy|Newman}} || Performer || "[[We Belong Together (Randy Newman song)|We Belong Together]]'" from ''[[Toy Story 3]]''
+|-
+|{{sortname|Zachary|Levi}}<br />[[Alan Menken]]<br />[[Mandy Moore]] || Performers || "[[I See the Light]]" from ''[[Tangled]]''
+|-
+|{{sortname|A. R.|Rahman}}<br />[[Florence Welch]] || Performers || "[[If I Rise]]" from ''[[127 Hours]]''
+|-
+|{{sortname|Gwyneth|Paltrow}} || Performer || "[[Country Strong (soundtrack)|Coming Home]]" from ''[[Country Strong]]''
+|-
+|{{sortname|Celine|Dion}} || Performer || "[[Smile (Charlie Chaplin song)|Smile]]" during the annual "In Memoriam" tribute
+|-
+|{{sortname||PS22 Chorus}} || Performers || "[[Over the Rainbow]]" from ''[[The Wizard of Oz]]'' during the closing segment
+|}
+
+==Ceremony information==
+{{multiple image
+| align = right
+| image1 = James Franco (Cropped).jpg
+| width1 = 172
+| alt1 = Photo of James Franco at the Austin Film Festival in 2011.
+| caption1 = 
+| image2 = Anne Hathaway at MIFF.jpg
+| width2 = 155
+| alt2 = Photo of Anne Hathaway at the Miami International Film Festival in 2014.
+| caption2 = 
+| footer = [[James Franco]] (''left'') and [[Anne Hathaway]] (''right'') co-hosted the 83rd Academy Awards
+}}
+
+In June 2010, the AMPAS hired Oscar-winning producer [[Bruce Cohen]] and veteran television producer [[Don Mischer]] to oversee production of the telecast.<ref>{{cite news|last1=Kilday |first1=Greg |title=Bruce Cohen, Don Mischer to produce Oscars |url=https://www.hollywoodreporter.com/news/bruce-cohen-don-mischer-produce-24887 |access-date=August 5, 2013 |work=The Hollywood Reporter |date=June 22, 2010 |url-status=live |archive-url=https://web.archive.org/web/20140808051226/http://www.hollywoodreporter.com/news/bruce-cohen-don-mischer-produce-24887 |archive-date=August 8, 2014 }}</ref> "I'm absolutely ecstatic that Bruce and Don have accepted my invitation to produce and direct the 83rd Academy Awards telecast," remarked Academy president [[Tom Sherak]]. "Their work in producing the Academy's inaugural Governors Awards was exceptional and I am confident they will bring their creative vision and extraordinary talent to produce/direct a most memorable Oscar show."<ref>{{cite news|last1=Finke |first1=Nikki |title=83rd Oscar Telecast Producers Announced |url=https://deadline.com/2010/06/huh-abc-announces-83rd-oscar-telecast-producers-48672/ |access-date=August 5, 2014 |website=Deadline Hollywood  |date=June 22, 2010 |url-status=live |archive-url=https://web.archive.org/web/20140829222839/http://deadline.com/2010/06/huh-abc-announces-83rd-oscar-telecast-producers-48672/ |archive-date=August 29, 2014 }}</ref> Although the [[82nd Academy Awards|prior ceremony]] hosted by [[Alec Baldwin]] and [[Steve Martin]] had the highest ratings in five years, their combined age was 116 years and the producers wanted to focus on a younger demographic.<ref name="ringer">{{Cite web|last=Reinstein|first=Mara|date=2021-04-14|title=The Behind-the-Scenes Story of the James Franco–Anne Hathaway Oscars Debacle|url=https://www.theringer.com/movies/2021/4/14/22381783/2011-oscars-james-franco-anne-hathaway-behind-the-scenes-story|access-date=2021-04-17|website=The Ringer|language=en|archive-date=April 17, 2021|archive-url=https://web.archive.org/web/20210417220650/https://www.theringer.com/movies/2021/4/14/22381783/2011-oscars-james-franco-anne-hathaway-behind-the-scenes-story|url-status=live}}</ref> The unofficial first choice was [[Justin Timberlake]] but he declined, feeling it was at least a year too early for him.<ref name="ringer" />
+
+Opting for younger faces for the ceremony, Cohen and Mischer hired actor [[James Franco]] and actress [[Anne Hathaway]] as co-hosts of the 2011 ceremony.<ref name="ringer" /><ref>{{cite news|title=Franco and Hathaway hope to add vitality and viewers to Oscar telecast|url=https://www.stltoday.com/entertainment/movies/joe-williams/franco-and-hathaway-hope-to-add-vitality-and-viewers-to/article_f70b3212-fc58-11df-b628-0017a4a78c22.html|access-date=August 5, 2014|work=St. Louis Post Dispatch|date=November 30, 2010|archive-date=June 22, 2017|archive-url=https://web.archive.org/web/20170622044129/http://www.stltoday.com/entertainment/movies/joe-williams/franco-and-hathaway-hope-to-add-vitality-and-viewers-to/article_f70b3212-fc58-11df-b628-0017a4a78c22.html|url-status=live}}</ref> "James Franco and Anne Hathaway personify the next generation of Hollywood icons&nbsp;— fresh, exciting and multi-talented. We hope to create an Oscar broadcast that will both showcase their incredible talents and entertain the world on February 27," said Cohen and Mischer regarding their selections to host the gala. "We are completely thrilled that James and Anne will be joining forces with our brilliant creative team to do just that."<ref>{{cite magazine|last1=Levy |first1=Steve |title=The Most Unexpected Oscar Hosts Yet: James Franco and Anne Hathaway |url=https://newsfeed.time.com/2010/11/29/the-most-unexpected-oscar-hosts-yet-james-franco-and-anne-hathaway/ |access-date=August 5, 2014 |magazine=[[Time (magazine)|Time]] |date=November 29, 2010 |url-status=live |archive-url=https://web.archive.org/web/20140813005358/http://newsfeed.time.com/2010/11/29/the-most-unexpected-oscar-hosts-yet-james-franco-and-anne-hathaway/ |archive-date=August 13, 2014 }}</ref> Franco and Hathaway became the first male-female duo to co-host the awards show since comedian [[Jerry Lewis]] and actress [[Celeste Holm]] presided over the [[29th Academy Awards|29th ceremony]] in 1957.<ref name="Franco" /><ref>{{cite news|first=Brandy |last=McDonnell |title=Hugh Jackman gives Anne Hathaway, James Franco Oscar hosting advice |url=http://newsok.com/hugh-jackman-gives-anne-hathaway-james-franco-oscar-hosting-advice/article/3827298 |access-date=August 5, 2014 |work=The Oklahoman  |url-status=live |archive-url=https://web.archive.org/web/20150402100410/http://newsok.com/hugh-jackman-gives-anne-hathaway-james-franco-oscar-hosting-advice/article/3827298 |archive-date=April 2, 2015 }}</ref> At age 28, Hathaway was also the youngest person to host an Oscar ceremony.<ref>{{cite news|last1=Pierce |first1=Scott |title=This weekend on TV: The Oscar hosts are getting younger |url=http://www.sltrib.com/sltrib/blogstv/51316798-63/cbs-hathaway-hosts-awards.html.csp |access-date=August 7, 2014 |work=[[The Salt Lake Tribune]]  |date=January 27, 2011 |url-status=live |archive-url=https://web.archive.org/web/20140810063224/http://www.sltrib.com/sltrib/blogstv/51316798-63/cbs-hathaway-hosts-awards.html.csp |archive-date=August 10, 2014 }}</ref>
+
+Furthermore, AMPAS announced that this year's ceremony was "the most interactive awards show in history". The Academy revamped their official website oscar.com to include lists of all the nominees and winners, as well as film trailers and exclusive video content produced by both AMPAS and Oscar telecaster ABC.<ref name="TheWrap">{{cite news|last1=Pond |first1=Steve |title=A Guide to the Academy's Interactive Oscar Features |url=https://www.thewrap.com/awards/column-post/guide-academys-interactive-oscar-features-25050/ |access-date=August 7, 2014 |website=[[TheWrap]] |date=February 25, 2011 |url-status=live |archive-url=https://web.archive.org/web/20140810125801/http://www.thewrap.com/awards/column-post/guide-academys-interactive-oscar-features-25050/ |archive-date=August 10, 2014 }}</ref> Also, via the Academy's Twitter and Facebook pages, people could post questions for any actor or celebrity attending the festivities to answer. One of the four Oscar pre-show co-hosts would then pose selected questions to both nominees and attendees alike.<ref name="TheWrap" /> For a fee of US$4.99, users had online access to two dozen video streams that would take them from the red carpet, through the ceremony and on to the post-telecast Governors Ball. Several of the cameras utilized 360-degree views that viewers could direct.<ref>{{cite web|author=Sheehan, Paul |title=Oscars offer unprecedented backstage access |url=http://www.goldderby.com/films/news/1166/oscars-offer-unprecedented-backstage-access.html |publisher=Gold Derby. |date=February 18, 2011 |access-date=April 19, 2011 |url-status=live |archive-url=https://web.archive.org/web/20110222191518/http://www.goldderby.com/films/news/1166/oscars-offer-unprecedented-backstage-access.html |archive-date=February 22, 2011 }}</ref>
+
+Several other people participated in the production of the ceremony. For a younger writer, Franco consulted [[Judd Apatow]], who suggested [[Jordan Rubin]] who brought in [[Megan Amram]].<ref name="ringer" /> [[William Ross (composer)|William Ross]] served as musical director and conductor for the ceremony.<ref>{{cite news|title=William Ross to Conduct Oscars This Year |url=https://www.hollywoodreporter.com/news/william-ross-conduct-oscars-year-160718 |access-date=September 18, 2011 |work=The Hollywood Reporter  |date=February 23, 2011 |url-status=live |archive-url=https://web.archive.org/web/20110226042247/http://www.hollywoodreporter.com/news/william-ross-conduct-oscars-year-160718 |archive-date=February 26, 2011 }}</ref> Production designer Steve Bass built a new stage design for the ceremony.<ref>{{cite news|last1=Kilday |first1=Greg |title=Steve Bass hired for Oscar show |access-date=August 7, 2014 |url=https://www.hollywoodreporter.com/news/steve-bass-hired-oscar-show-28254 |work=The Hollywood Reporter  |date=September 23, 2010 |url-status=live |archive-url=https://web.archive.org/web/20140808082357/http://www.hollywoodreporter.com/news/steve-bass-hired-oscar-show-28254 |archive-date=August 8, 2014 }}</ref> ''[[Entertainment Weekly]]'' columnist and TV personality Dave Karger greeted guests entering the red carpet.<ref>{{cite news|title=Dave Karger Takes Army Archerd's Old Red-Carpet Oscar Post |url=https://www.thewrap.com/dave-karger-takes-army-archerds-old-red-carpet-oscar-post-24971/ |access-date=August 5, 2014 |first=Steve |last=Pond |website=TheWrap |date=February 23, 2011 |url-status=live |archive-url=https://web.archive.org/web/20161223093712/http://www.thewrap.com/dave-karger-takes-army-archerds-old-red-carpet-oscar-post-24971/ |archive-date=December 23, 2016 }}</ref> Designer Marc Friedland designed a new envelope heralding the winner of each category made from a high-gloss iridescent metallic gold paper stock, with red-lacquered lining that featured the Oscar statuette stamped in satin gold leaf.<ref>{{cite magazine|author=Levy, Glen |title=Just What the Oscars Need: A New Envelope |url=https://newsfeed.time.com/2011/02/17/just-what-the-oscars-need-a-new-envelope/ |magazine=Time |date=February 17, 2011 |access-date=April 19, 2011 |url-status=live |archive-url=https://web.archive.org/web/20110421084605/http://newsfeed.time.com/2011/02/17/just-what-the-oscars-need-a-new-envelope/ |archive-date=April 21, 2011 }}</ref><ref>{{cite news|url=http://latimesblogs.latimes.com/awards/2011/02/oscars-the-envelope-gets-a-new-design-.html |title=Oscars: The envelope gets a new design |last=King |first=Susan |work=Los Angeles Times |date=February 16, 2011 |access-date=April 19, 2011 |url-status=live |archive-url=https://web.archive.org/web/20110319045708/http://latimesblogs.latimes.com/awards/2011/02/oscars-the-envelope-gets-a-new-design-.html |archive-date=March 19, 2011 }}</ref> During the run-up to the ceremony, television personality [[Chris Harrison]] hosted "Road to the Oscars", a weekly behind-the-scenes video blog.<ref>{{cite magazine|last1=Karger |first1=Dave |title=Academy launches 'The Road to the Oscars' |url=https://www.ew.com/article/2011/02/18/academy-launches-the-road-to-the-oscars |access-date=July 14, 2011 |magazine=Entertainment Weekly|date=February 18, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150402145547/http://www.ew.com/article/2011/02/18/academy-launches-the-road-to-the-oscars |archive-date=April 2, 2015 }}</ref> [[Ben Mankiewicz]] hosted the official ABC pre-show, giving professional betting odds for the winners.<ref name="ringer" /> [[PS22 Chorus]] children's choir performed "[[Over the Rainbow]]" from ''[[The Wizard of Oz]]'' at the end of the ceremony.<ref>{{cite news|last1=Maerz |first1=Melissa |title=New York's P.S. 22 choir to go 'Over the Rainbow' at the Oscars |url=https://www.latimes.com/entertainment/la-xpm-2011-feb-14-la-et-oscar-choir-20110214-story.html |access-date=March 25, 2015 |work=Los Angeles Times |date=February 14, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150402125528/http://articles.latimes.com/2011/feb/14/entertainment/la-et-oscar-choir-20110214 |archive-date=April 2, 2015 }}</ref>
+
+According to Rubin, Hathaway was heavily involved during the month of preparation.<ref name="ringer" /> Franco on the other hand was busy shooting movies, while teaching a class and getting both his masters and his PhD.<ref name="ringer" /> When filming started, Hathaway was focused and determined while Franco was more laid back, causing friction.<ref name="ringer" /> In the closing weeks, Franco went back to Apatow who hired four additional writers; in response, Hathaway brought in [[Liz Feldman]].<ref name="ringer" /> This resulted in last-minute scrambling. According to Amram, "[a] lot of stuff that made it into the show was written a few days beforehand."<ref name="ringer" /> Franco immediately left after the show ended, catching a flight to make a morning seminar on medieval manuscripts at [[Yale]].<ref>{{Cite news|last=Foderaro|first=Lisa W.|date=2011-03-04|title=James Franco Straddles Two Roles at Yale|language=en-US|work=The New York Times|url=https://www.nytimes.com/2011/03/04/nyregion/04franco.html|access-date=2021-04-17|issn=0362-4331|archive-date=April 17, 2021|archive-url=https://web.archive.org/web/20210417224544/https://www.nytimes.com/2011/03/04/nyregion/04franco.html|url-status=live}}</ref>
+
+===Box office performance of nominated films===
+For the second consecutive year, the field of major nominees included at least one [[Blockbuster (entertainment)|blockbuster]] at the American and Canadian box offices. However, only three of the nominees had grossed over $100&nbsp;million before the nominations were announced, compared with five from the previous year.<ref name="boxofficeoscars83">{{cite news|last1=Subers |first1=Ray |title=2010 Academy Award Nominations |url=https://www.boxofficemojo.com/news/?id=3057&p=.htm |access-date=August 7, 2014 |website=[[Box Office Mojo]] ([[Amazon.com]]) |date=January 25, 2011 |url-status=live |archive-url=https://web.archive.org/web/20140714204309/http://boxofficemojo.com/news/?id=3057&p=.htm |archive-date=July 14, 2014 }}</ref> The combined gross of the ten Best Picture nominees when the Oscars were announced was $1.2 billion, the second-highest ever behind 2009. The average gross was $119.3 million.<ref name="boxofficeoscars83" />
+
+Two of the ten Best Picture nominees were among the top ten releases in box office during the nominations. At the time of the announcement of nominations on January 25, ''Toy Story 3'' was the highest-grossing film among the Best Picture nominees with $414.9&nbsp;million in domestic box office receipts.<ref name="Oklahoma">{{cite news|url=http://newsok.com/box-office-numbers-for-oscar-best-picture-nominees/article/feed/237509 |work=The Oklahoman |title=Box-office numbers for Oscar best-picture nominees |access-date=January 27, 2011 |date=January 25, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150402114604/http://newsok.com/box-office-numbers-for-oscar-best-picture-nominees/article/feed/237509 |archive-date=April 2, 2015 }}</ref> The only other top ten box office hit to receive a nomination was ''Inception'' which earned $292.5&nbsp;million. Among the remaining eight nominees, ''True Grit'' was the next-highest-grossing film with $137.9&nbsp;million followed by ''The Social Network'' ($95.4&nbsp;million), ''Black Swan'' ($83.2&nbsp;million), ''The Fighter'' ($72.6&nbsp;million), ''The King's Speech'' ($57.3&nbsp;million), ''The Kids Are All Right'' ($20.8&nbsp;million), ''127 Hours'' ($11.2&nbsp;million), and finally ''Winter's Bone'' ($6.2&nbsp;million).<ref name="Oklahoma" />
+
+Of the top 50 grossing movies of the year, 55 nominations went to 15 films on the list. Only ''Toy Story 3'' (1st), ''Inception'' (5th), ''How to Train Your Dragon'' (9th), ''True Grit'' (17th), ''The Social Network'' (29th), ''The Town'' (32nd), ''Black Swan'' (38th), and ''The Fighter'' (45th) were nominated for directing, acting, screenwriting, Best Picture or Animated Feature.<ref name="boxofficemojooscars">{{cite web|url=https://boxofficemojo.com/yearly/chart/?asof=2011-01-24&view=releasedate&view2=domestic&yr=2010&sort=gross&order=DESC&p=.htm |title=2010 Box Office Grosses (as of January 24, 2011) |website=Box Office Mojo (Amazon.com) |access-date=April 22, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150415163247/http://www.boxofficemojo.com/yearly/chart/?asof=2011-01-24&view=releasedate&view2=domestic&yr=2010&sort=gross&order=DESC&p=.htm |archive-date=April 15, 2015 }}</ref> The other top-50 box office hits that earned nominations were ''Alice in Wonderland'' (2nd), ''Iron Man 2'' (3rd), ''Harry Potter and the Deathly Hallows&nbsp;— Part 1'' (6th), ''Tangled'' (10th), ''Tron: Legacy'' (12th), ''Salt'' (21st), and ''Unstoppable'' (39th).<ref name="boxofficemojooscars"/>
+
+===Critical reviews===
+The show received a negative reception from most media publications. According to writer [[Bruce Vilanch]], the crowd enjoyed the starting short film, but when Franco and Hathaway came on stage, it shifted. According to Rubin, Hathaway "was embracing their arrival on stage" while Franco was filming the crowd on his phone.<ref name="ringer" /> Mara Reinstein of ''[[The Ringer (website)|The Ringer]]'' said there was no single moment of failure but described the broadcast as "death by a thousand paper cuts."<ref name="ringer" />
+
+Film critic [[Roger Ebert]] said, "Despite the many worthy nominated films, the Oscarcast was painfully dull, slow, witless, and hosted by the ill-matched James Franco and Anne Hathaway. She might have made a delightful foil for another partner, but Franco had a deer-in-the-headlights manner and read his lines robotically." He went on to praise the winners of the night, but he ended his review with the words, "Dead. In. The. Water."<ref>{{cite news|url=http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/20110227/OSCARS/110229986 |title=Oscars: "King" wins, show loses |author-link=Roger Ebert |last=Ebert |first=Roger |access-date=February 28, 2011 |date=February 27, 2011 |work=Chicago Sun-Times  |url-status=dead |archive-url=https://web.archive.org/web/20110302092730/http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=%2F20110227%2FOSCARS%2F110229986 |archive-date=March 2, 2011 }}</ref> Writer [[David Wild]] called it "the world's most uncomfortable blind date between the cool rocker stoner kid and the adorable theater camp cheerleader."<ref name="ringer" />
+
+Television critic Tim Goodman of ''[[The Hollywood Reporter]]'' commented, "In what could go down as one of the worst Oscar telecasts in history, a bad and risky idea&nbsp;— letting two actors host&nbsp;— played out in spectacularly unwatchable fashion on the biggest of all nights for the film world." He also added, "These Oscars were a bore-fest that seemed to drag on relentlessly but listlessly."<ref>{{cite news|url=https://www.hollywoodreporter.com/review/franco-bombs-at-oscars-makes-162234 |title=83rd Annual Academy Awards: Television Review |first1=Tim |last1=Goodman |work=The Hollywood Reporter  |date=February 28, 2011 |access-date=February 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20110301161603/http://www.hollywoodreporter.com/review/franco-bombs-at-oscars-makes-162234 |archive-date=March 1, 2011 }}</ref> Gail Pennington of the ''[[St. Louis Post-Dispatch]]'' wrote that the ceremony "felt a little like a bad night on ''[[Saturday Night Live]]''&nbsp;— awkward, slow and not particularly entertaining." Regarding the hosts, she quipped that Hathaway "at least tried", but she remarked, "Franco seemed half asleep, or possibly stoned."<ref>{{cite news|last1=Pennington|first1=Gail|title=Oscar show goes on (and on)|url=https://www.stltoday.com/entertainment/television/gail-pennington/oscar-show-goes-on-and-on/article_2825d3d6-42e3-11e0-8a17-0017a4a78c22.html|access-date=September 18, 2011|work=St. Louis Post-Dispatch|date=February 28, 2011|archive-date=June 22, 2017|archive-url=https://web.archive.org/web/20170622044129/http://www.stltoday.com/entertainment/television/gail-pennington/oscar-show-goes-on-and-on/article_2825d3d6-42e3-11e0-8a17-0017a4a78c22.html|url-status=live}}</ref>
+
+Some media outlets received the broadcast more positively. ''[[Entertainment Weekly]]'' television critic [[Ken Tucker]] stated that the show was "Funny, poised, relaxed, and smart, Anne Hathaway and James Franco made for marvelous Oscar hosts. Their combination of respect and informality struck the right tone for the night, a happily surprising production that had its share of fine moments both planned and ad-libbed." On the overall aspect of the ceremony, they concluded "all in all, it was a fun, briskly paced night."<ref>{{cite magazine|url=https://ew.com/article/2011/02/28/oscars-kings-speech-franco-hathaway/ |title=The Oscar telecast review: The hosts, the speeches, the mistakes, the ad-libs... |magazine=Entertainment Weekly|first=Ken |last=Tucker |author-link=Ken Tucker |date=February 28, 2011 |access-date=February 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150403045917/http://www.ew.com/article/2011/02/28/oscars-kings-speech-franco-hathaway |archive-date=April 3, 2015 }}</ref>
+
+Mary McNamara from the ''[[Los Angeles Times]]'' commented, "The two seemed to be following the directive to "first do no harm," as if they knew they couldn't score as big as [[Jimmy Fallon]] did with the [[62nd Primetime Emmy Awards|Emmy Awards]], but were determined to avoid becoming morning show fodder like [[Ricky Gervais]] was after [[68th Golden Globe Awards|this year's Golden Globes]]. The result was a show that moved along, with a few draggy bits and high notes, like precisely what it was: a very long and fancy awards show." Her review further said "Overall, the evening had an oddly business-like feel, a mind-numbing evenness that was exacerbated by the relentless predictability of the winners, and the fact that none of the acting winners were played off no matter how long their "thank-yous" went."<ref>{{cite news|url=https://www.latimes.com/entertainment/tv/la-et-oscar-tv-20110228-story.html |title=Television Review: Anne Hathaway and James Franco play it safe |first=Mary |last=McNamara |work=Los Angeles Times |date=February 28, 2011 |access-date=February 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20110308153750/http://articles.latimes.com/2011/feb/28/entertainment/la-et-oscar-tv-20110228 |archive-date=March 8, 2011 }}</ref>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 37.9 million people over its length, which was a 9% decrease from the previous year's ceremony.<ref name=zapratings>{{cite news |title=37.9M viewers pick up Oscars  |url=http://usatoday30.usatoday.com/LIFE/usaedition/2011-03-02-nielchatter02_ST_U.htm  |work=[[USA Today]] |date=March 1, 2011  |access-date=March 1, 2011  |url-status=dead |archive-url=https://web.archive.org/web/20150403081627/http://usatoday30.usatoday.com/LIFE/usaedition/2011-03-02-nielchatter02_ST_U.htm  |archive-date=April 3, 2015 }}</ref><ref>{{cite news|url=https://www.latimes.com/archives/la-xpm-2011-mar-01-la-et-0301-oscar-ratings-20110301-story.html |title=For better or worse |last=Collins |first=Scott |work=Los Angeles Times |access-date=March 1, 2011 |url-status=live |archive-url=https://web.archive.org/web/20140812204050/http://articles.latimes.com/2011/mar/01/entertainment/la-et-0301-oscar-ratings-20110301 |archive-date=August 12, 2014 }}</ref> An estimated 71.3 million total viewers watched all or part of the awards.<ref>{{cite news |title=Disney's ABC Reports Revised Nielsen Ratings for Academy Awards |url=https://www.bloomberg.com/apps/news?pid=conewsstory&tkr=DIS*:MM&sid=af9zSXvQRHZw |access-date=7 August 2014 |work=[[Bloomberg News]]|date=March 1, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20150402165456/http://www.bloomberg.com/apps/news?pid=conewsstory&tkr=DIS%2A%3AMM&sid=af9zSXvQRHZw |archive-date=April 2, 2015 }}</ref> The show also drew lower [[Nielsen ratings]] compared to the two previous ceremonies, with 21.2% of households watching over a 33 share.<ref name="Bloomberg Business" /> In addition, the program scored an 11.8 rating over a 30 share among the 18–49 demographic, which was a 12 percent decrease over last year's demographic numbers.<ref>{{cite news|last1=Kissell |first1=Rick |title=Oscars ratings down from last year |url=https://variety.com/2011/tv/news/oscar-ratings-down-from-last-year-1118033008/ |access-date=August 4, 2014 |work=Variety  |date=February 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20140812202530/http://variety.com/2011/tv/news/oscar-ratings-down-from-last-year-1118033008/ |archive-date=August 12, 2014 }}</ref>
+
+== "In Memoriam" ==
+The "[[In memoriam segment|In Memoriam]]" tribute, which featured [[Celine Dion]] performing the [[Charlie Chaplin]] song "[[Smile (Charlie Chaplin song)|Smile]]", paid tribute to the following individuals.<ref>{{cite news |last1=Burson |first1=Jeff |title=Reviewing the Black Carpet at 2011 Oscars |url=https://www.al.com/finaltaxi/2011/03/reviewing_the_black_carpet_at.html |access-date=March 25, 2021 |work=[[The Birmingham News]] |date=March 1, 2011 |archive-date=April 18, 2021 |archive-url=https://web.archive.org/web/20210418082647/https://www.al.com/finaltaxi/2011/03/reviewing_the_black_carpet_at.html |url-status=live }}</ref>
+{{div col|colwidth=22em}}
+* [[John Barry (composer)|John Barry]] – Composer
+* [[Grant McCune]] – Visual effects
+* [[Tony Curtis]] – Actor
+* [[Edward Limato]] – Agent
+* [[Tom Mankiewicz]] – Writer
+* [[Gloria Stuart]] – Actress
+* [[William Fraker]] – Cinematographer
+* [[Joseph Strick]] – Director
+* [[Lionel Jeffries]] – Actor
+* [[Sally Menke]] – Editor
+* [[Ronni Chasen]] – Publicist
+* [[Leslie Nielsen]] – Actor
+* [[Robert Radnitz]] – Producer
+* [[Claude Chabrol]] – Director
+* [[Pete Postlethwaite]] – Actor
+* [[Bill Littlejohn]] – Animator
+* [[Pierre Guffroy]] – Art director
+* [[Patricia Neal]] – Actress
+* [[George Hickenlooper]] – Director
+* [[Irving Ravetch]] – Writer
+* [[Robert Culp]] – Actor
+* [[Robert F. Boyle|Bob Boyle]] – Art director
+* [[Mario Monicelli]] – Director
+* [[Lynn Redgrave]] – Actress
+* [[Elliott Kastner]] – Producer
+* [[Dede Allen]] – Editor
+* [[Peter Yates]] – Producer, director
+* [[Anne Francis]] – Actress
+* [[Arthur Penn]] – Producer, director
+* [[Theoni Aldredge]] – Costume designer
+* [[Susannah York]] – Actress
+* [[Ronald Neame]] – Director
+* [[David Wolper]] – Producer
+* [[Jill Clayburgh]] – Actress
+* [[Alan Hume]] – Cinematographer
+* [[Irvin Kershner]] – Director
+* [[Dennis Hopper]] – Actor
+* [[Dino De Laurentiis]] – Producer
+* [[Blake Edwards]] – Writer, director
+* [[Kevin McCarthy (actor)|Kevin McCarthy]] – Actor
+* [[Lena Horne]] – Singer, actress
+{{div col end}}
+
+At the end of the montage, [[Halle Berry]] paid special tribute to Horne and introduced a film clip of her singing the [[Stormy Weather (song)|titular song]] from the film ''[[Stormy Weather (1943 film)|Stormy Weather]]''.<ref>{{cite news|last=Saleh |first=Ian |title='In Memoriam': Lena Horne honored at Academy Awards |url=https://www.washingtonpost.com/wp-dyn/content/article/2011/02/28/AR2011022804043.html |access-date=October 12, 2013 |newspaper=The Washington Post  |date=February 28, 2011 |url-status=live |archive-url=https://web.archive.org/web/20150402171313/http://www.washingtonpost.com/wp-dyn/content/article/2011/02/28/AR2011022804043.html |archive-date=April 2, 2015 }}</ref>
+
+==See also==
+* [[17th Screen Actors Guild Awards]]
+* [[31st Golden Raspberry Awards]]
+* [[31st Brit Awards]]
+* [[53rd Annual Grammy Awards]]
+* [[63rd Primetime Emmy Awards]]
+* [[64th British Academy Film Awards]]
+* [[2011 Laurence Olivier Awards|35th Laurence Olivier Awards]]
+* [[65th Tony Awards]]
+* [[68th Golden Globe Awards]]
+* [[List of submissions to the 83rd Academy Awards for Best Foreign Language Film]]
+
+==References==
+{{reflist}}
+
+==External links==
+;Official sites
+* [http://www.oscar.com/ Academy Awards Official website] {{Webarchive|url=https://web.archive.org/web/20090304014303/http://www.oscar.com/ |date=March 4, 2009 }}
+* [http://www.oscars.org/ The Academy of Motion Picture Arts and Sciences Official website] {{Webarchive|url=https://web.archive.org/web/20090122140142/http://awardsdatabase.oscars.org/ampas_awards/ |date=January 22, 2009 }}
+* [https://www.youtube.com/oscars Oscar's Channel] {{Webarchive|url=https://web.archive.org/web/20181002230230/https://www.youtube.com/oscars |date=October 2, 2018 }} at YouTube (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+;News resources
+* [https://www.bbc.co.uk/news/entertainment-arts-12252017 Oscars 2011] {{Webarchive|url=https://web.archive.org/web/20180915110152/https://www.bbc.co.uk/news/entertainment-arts-12252017 |date=September 15, 2018 }} [[BBC]]
+* [http://www.cnn.com/SPECIALS/2011/academy.awards/index.html Academy Awards coverage] {{Webarchive|url=https://web.archive.org/web/20110628234431/http://www.cnn.com/SPECIALS/2011/academy.awards/index.html |date=June 28, 2011 }} [[CNN]]
+* [https://www.theguardian.com/film/oscars-2011 Oscars 2011] ''[[The Guardian]]''
+
+;Analysis
+* [http://www.filmsite.org/aa2010.html 2010 Academy Awards Winners and History] {{Webarchive|url=https://web.archive.org/web/20150419072229/http://www.filmsite.org/aa2010.html |date=April 19, 2015 }} Filmsite
+* [https://www.imdb.com/Sections/Awards/Academy_Awards_USA/2011 Academy Awards, USA: 2011] {{Webarchive|url=https://web.archive.org/web/20100407071741/http://www.imdb.com/Sections/Awards/Academy_Awards_USA/2011 |date=April 7, 2010 }} Internet Movie Database
+
+;Other resources
+* {{IMDb title|1625351|The 83rd Annual Academy Awards}}
+
+{{Academy Awards}}
+{{featured list}}
+
+{{DEFAULTSORT:Academy Awards, 83}}
+[[Category:Academy Awards ceremonies]]
+[[Category:2010 film awards]]
+[[Category:2011 in Los Angeles]]
+[[Category:2011 in American cinema]]
+[[Category:2011 awards in the United States]]
+[[Category:February 2011 in the United States]]
+[[Category:Television shows directed by Don Mischer]]

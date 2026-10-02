@@ -1,0 +1,10 @@
+C:\Program Files\Python312\Lib\json\encoder.py:414: ResourceWarning: unclosed file <_io.FileIO name='C:\\Users\\dante\\AppData\\Local\\Temp\\tmpulh0ja5x' mode='rb+' closefd=True>
+  def _iterencode(o, _current_indent_level):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Program Files\Python312\Lib\unittest\case.py:589: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\dante\\Desktop\\cinema paradiso\\dist/index.html'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+----------------------------------------------------------------------
+Ran 1530 tests in 318.112s
+
+OK

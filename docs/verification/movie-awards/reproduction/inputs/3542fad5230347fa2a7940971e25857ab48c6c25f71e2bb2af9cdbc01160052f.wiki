@@ -1,0 +1,426 @@
+{{oscars short description|films-year=1953}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 26
+| award            = Academy Awards
+| image            = 26th Annual Academy Awards at RKO Pantages Theater in Los Angeles, 1954.jpg
+| caption          = 
+| date             = March 25, 1954
+| site             = [[Pantages Theatre (Hollywood)|RKO Pantages Theatre]]<br>[[Hollywood, California]] <br>[[Center Theatre (New York City)|NBC Center Theatre]]<br>[[New York City]], New York
+| host             = [[Donald O'Connor]] (Hollywood)<br>[[Fredric March]] (New York City)
+| best_picture     = ''[[From Here to Eternity]]''
+| most_wins        = ''From Here to Eternity'' (8)
+| most_nominations = ''From Here to Eternity'' (13)
+| network          = [[NBC]]
+| duration         = 
+| last             = 25th
+| next             = 27th
+}}
+
+The '''26th Academy Awards''' were held on March 25, 1954, simultaneously at the [[Pantages Theatre (Hollywood)|RKO Pantages Theatre]] in [[Hollywood, Los Angeles|Hollywood]] (hosted by [[Donald O'Connor]]), and the [[Center Theatre (New York City)|NBC Center Theatre]] in New York City (hosted by [[Fredric March]]).
+
+The second national telecast of the Awards show drew an estimated 43 million viewers. [[Shirley Booth]], appearing in a play in Philadelphia, presented the [[Academy Award for Best Actor]] through a live broadcast cut-in, having privately received the winner's name over the telephone from O'Connor. [[Gary Cooper]] pre-recorded his presentation of the [[Academy Award for Best Actress]] while on location in [[Mexico]] shooting ''[[Garden of Evil]]'', with O'Connor then announcing the winner's name live.
+
+All the major winners in this year were black-and-white films. [[Fred Zinnemann]]'s ''[[From Here to Eternity]]'' won eight awards from its thirteen nominations: [[Academy Award for Best Picture|Best Picture]], [[Academy Award for Best Supporting Actor|Best Supporting Actor]], [[Academy Award for Best Supporting Actress|Best Supporting Actress]], [[Academy Award for Best Director]], [[Academy Award for Best Adapted Screenplay|Best Screenplay]] ([[Daniel Taradash]]), [[Academy Award for Best Cinematography|Best Cinematography, Black-and-White]] ([[Burnett Guffey]]), [[Academy Award for Best Sound|Best Sound Recording]], and [[Academy Award for Best Film Editing|Best Film Editing]]. It was the third film to receive five acting nominations. Its eight awards matched the record set by ''[[Gone with the Wind (film)|Gone with the Wind]]'' in [[12th Academy Awards|1939]]. [[Walt Disney]] won four awards, a record shared by him and [[Sean Baker]] for most Oscars won by a single person in the same year ([[Bong Joon Ho]] won three at the [[92nd Academy Awards]]<ref>{{cite news |last1=Roy |first1=Natasha |title='Parasite' cast and crew celebrate Oscars wins in L.A.'s Koreatown |url=https://www.nbcnews.com/news/asian-america/parasite-cast-crew-celebrates-oscar-wins-la-s-koreatown-n1134991 |access-date=March 31, 2020 |work=[[NBC News]] |date=February 11, 2020 |archive-date=November 16, 2020 |archive-url=https://web.archive.org/web/20201116212504/https://www.nbcnews.com/news/asian-america/parasite-cast-crew-celebrates-oscar-wins-la-s-koreatown-n1134991 |url-status=live }}</ref>{{efn|name=Bong-Joon-ho|Technically, the country of the film is recognized as winner of the Best International Feature award.<ref>{{cite news |last1=Ordoña |first1=Michael |title=Why Bong Joon-ho won three Oscars this year, not four |url=https://www.latimes.com/entertainment-arts/movies/story/2020-02-10/oscars-bong-joon-ho-parasite-wins |access-date=March 13, 2020 |work=Los Angeles Times |date=February 10, 2020 |archive-date=February 11, 2020 |archive-url=https://web.archive.org/web/20200211113849/https://www.latimes.com/entertainment-arts/movies/story/2020-02-10/oscars-bong-joon-ho-parasite-wins |url-status=live }}</ref> However, the award is accepted by the director on behalf of the country, and since 2014, the director's name is engraved on the statuette.<ref>{{cite web |url=https://www.thewrap.com/oscars-to-add-winning-foreign-language-directors-name-on-statuette/ |title=Oscars to Add Winning Foreign Language Director's Name on Statuette |date=September 18, 2014 |work=TheWrap |language=en-US |access-date=February 12, 2020 |archive-url=https://web.archive.org/web/20180815121318/https://www.thewrap.com/oscars-to-add-winning-foreign-language-directors-name-on-statuette/ |archive-date=15 August 2018 |url-status=live}}</ref>}} and accepted a fourth for Best International Feature on behalf of South Korea.)
+
+[[William Holden]]'s acceptance speech for [[Academy Award for Best Actor|Best Actor]] for ''[[Stalag 17]]'' was simply "Thank You", making it one of the shortest speeches on record, as it was cut short by the broadcast cut to a commercial. Holden, frustrated, later personally paid for advertisements in the Hollywood trade publications to thank everyone he had wanted to in his speech, remarked that he felt that either [[Burt Lancaster]] or [[Montgomery Clift]] should have won the Oscar for ''[[From Here to Eternity]]'' instead of him, and expounded backstage on a system he felt valued commercials over program content;<ref name="Oscars '53 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/838/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=839 |isbn=0-385-04060-1}}</ref> NBC had cut to commercials during the middle of other acceptance speeches as well that evening.<ref name="Oscars '53 Notes"/>
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Fred Zinnemann 1940s.jpg
+| caption1          = [[Fred Zinnemann]]; Best Director winner
+| image2            = WILLIAMHolden.jpg
+| caption2          = [[William Holden]]; Best Actor winner
+| image3            = Audrey Hepburn 1956om (3x4 cropped).jpg
+| caption3          = [[Audrey Hepburn]]; Best Actress winner
+| image4            = Frank Sinatra '57.jpg
+| caption4          = [[Frank Sinatra]]; Best Supporting Actor winner
+| image5            = DOnnaREed.jpg
+| caption5          = [[Donna Reed]]; Best Supporting Actress winner
+| image6            = Charles Brackett.jpg
+| caption6          = [[Charles Brackett]]; Best Story and Screenplay co-winner
+| image7            = 1947 Dalton Trumbo (cropped).jpg
+| caption7          = [[Dalton Trumbo]]; Best Story winner
+| image8            = Walt Disney 1946.JPG
+| caption8          = [[Walt Disney]]; Best Animated Short Film, Best Documentary Feature, Best Documentary Short Subject and Best Live Action Short Subject, Two-Reel winner
+| image9            = Cedric-Gibbons-1936.jpg
+| caption9          = [[Cedric Gibbons]]; Best Art Direction, Black-and-White co-winner
+| image10           = Charles LeMaire.jpg
+| caption10         = [[Charles LeMaire]]; Best Costume Design, Color winner
+}}
+
+=== Awards ===
+Nominees were announced on February 15, 1954. Winners are listed first and highlighted in boldface.<ref name="Oscars1954">{{Cite web |url=https://www.oscars.org/oscars/ceremonies/1954 |title=The 26th Academy Awards (1954) Nominees and Winners |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]])  |access-date=May 31, 2015 |archive-url=https://web.archive.org/web/20110706093858/https://www.oscars.org/oscars/ceremonies/1954.html |archive-date=July 6, 2011 |url-status=live}}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[From Here to Eternity]] – ''[[Buddy Adler]] for [[Columbia Pictures]]&nbsp;'''
+**''[[Julius Caesar (1953 film)|Julius Caesar]] – ''[[John Houseman]] for [[Metro-Goldwyn-Mayer]]&nbsp; 
+**''[[The Robe (film)|The Robe]] – ''[[Frank Ross (producer)|Frank Ross]] for [[20th Century Fox]]&nbsp; 
+**''[[Roman Holiday]] – ''[[William Wyler]] for [[Paramount Pictures]]&nbsp; 
+**''[[Shane (film)|Shane]] – ''[[George Stevens]] for Paramount Pictures&nbsp; 
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Fred Zinnemann]]&nbsp;– ''[[From Here to Eternity]]'''''
+**[[Charles Walters]]&nbsp;– ''[[Lili (1953 film)|Lili]]''
+**[[William Wyler]]&nbsp;– ''[[Roman Holiday]]''
+**[[George Stevens]]&nbsp;– ''[[Shane (film)|Shane]]''
+**[[Billy Wilder]]&nbsp;– ''[[Stalag 17]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actor|Best Actor]]}}
+*'''[[William Holden]]&nbsp;– ''[[Stalag 17]]'' as J. J. Sefton'''
+**[[Marlon Brando]]&nbsp;– ''[[Julius Caesar (1953 film)|Julius Caesar]]'' as [[Mark Antony]]
+**[[Richard Burton]]&nbsp;– ''[[The Robe (film)|The Robe]]'' as Marcellus Gallio
+**[[Montgomery Clift]]&nbsp;– ''[[From Here to Eternity]]'' as Private Robert E. Lee "Prew" Prewitt
+**[[Burt Lancaster]]&nbsp;– ''[[From Here to Eternity]]'' as First Sergeant Milton Warden
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Audrey Hepburn]]&nbsp;– ''[[Roman Holiday]]'' as Princess Ann'''
+**[[Leslie Caron]]&nbsp;– ''[[Lili (1953 film)|Lili]]'' as Lili Daurier
+**[[Ava Gardner]]&nbsp;– ''[[Mogambo]]'' as Eloise Kelly
+**[[Deborah Kerr]]&nbsp;– ''[[From Here to Eternity]]'' as Karen Holmes
+**[[Maggie McNamara]]&nbsp;– ''[[The Moon Is Blue (film)|The Moon Is Blue]]'' as Patty O'Neill
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Frank Sinatra]]&nbsp;– ''[[From Here to Eternity]]'' as Private Angelo Maggio'''
+**[[Eddie Albert]]&nbsp;– ''[[Roman Holiday]]'' as Irving Radovich
+**[[Brandon deWilde]]&nbsp;– ''[[Shane (film)|Shane]]'' as Joey Starrett
+**[[Jack Palance]]&nbsp;– ''[[Shane (film)|Shane]]'' as Jack Wilson
+**[[Robert Strauss (actor)|Robert Strauss]]&nbsp;– ''[[Stalag 17]]'' as Stanislas "Animal" Kuzawa
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Donna Reed]]&nbsp;– ''[[From Here to Eternity]]'' as Alma Burke/Lorene'''
+**[[Grace Kelly]]&nbsp;– ''[[Mogambo]]'' as Linda Nordley
+**[[Geraldine Page]]&nbsp;– ''[[Hondo (film)|Hondo]]'' as Angie Lowe
+**[[Marjorie Rambeau]]&nbsp;– ''[[Torch Song (1953 film)|Torch Song]]'' as Mrs. Stewart
+**[[Thelma Ritter]]&nbsp;– ''[[Pickup on South Street]]'' as Moe
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Story|Best Writing (Motion Picture Story)]]}}
+*'''''[[Roman Holiday]]''&nbsp;– [[Dalton Trumbo]]''' (awarded posthumously as Trumbo was on the [[Hollywood blacklist]])
+**''[[Above and Beyond (1952 film)|Above and Beyond]]''&nbsp;– [[Beirne Lay Jr.]]
+**''[[The Captain's Paradise]]''&nbsp;– [[Alec Coppel]]
+**<s>''[[Hondo (film)|Hondo]]''&nbsp;–  [[Louis L'Amour]]</s> (nomination revoked)
+**''[[Little Fugitive (1953 film)|Little Fugitive]]''&nbsp;– [[Ray Ashley]], [[Morris Engel]], and [[Ruth Orkin]]
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay)]]}}
+*'''''[[Titanic (1953 film)|Titanic]]''&nbsp;– [[Charles Brackett]], [[Walter Reisch]] and [[Richard L. Breen]]'''
+**''[[The Band Wagon]]''&nbsp;– [[Betty Comden]] and [[Adolph Green]]
+**''[[The Desert Rats (film)|The Desert Rats]]''&nbsp;– [[Richard Murphy (screenwriter)|Richard Murphy]]
+**''[[The Naked Spur]]''&nbsp;– [[Sam Rolfe]] and [[Harold Jack Bloom]]
+**''[[Take the High Ground!]]''&nbsp;– [[Millard Kaufman]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA|  [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[From Here to Eternity]]''&nbsp;– [[Daniel Taradash]] from ''[[From Here to Eternity (novel)|From Here to Eternity]]'' by [[James Jones (author)|James Jones]]'''
+**''[[The Cruel Sea (1953 film)|The Cruel Sea]]''&nbsp;– [[Eric Ambler]] from ''[[The Cruel Sea (novel)|The Cruel Sea]]'' by [[Nicholas Monsarrat]]
+**''[[Lili (1953 film)|Lili]]''&nbsp;– [[Helen Deutsch]] from "Love of Seven Dolls" by [[Paul Gallico]]
+**''[[Roman Holiday]]''&nbsp;– [[Ian McLellan Hunter]] and [[John Dighton]] from a story by [[Dalton Trumbo]]
+**''[[Shane (film)|Shane]]''&nbsp;– [[A.B. Guthrie Jr.]] from ''[[Shane (novel)|Shane]]'' by [[Jack Schaefer]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[The Living Desert]]''&nbsp;– [[Walt Disney]]'''
+**''[[The Conquest of Everest]]''&nbsp;– [[John Taylor (documentary filmmaker)|John Taylor]], [[Leon Clore]] and Grahame Tharp
+**''[[A Queen Is Crowned]]''&nbsp;– [[Castleton Knight]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[The Alaskan Eskimo]]''&nbsp;– [[Walt Disney]]'''
+**''[[The Living City]]''&nbsp;– [[John Barnes (film producer)|John Barnes]]
+**''[[Operation Blue Jay]]''&nbsp;– [[United States Army Signal Corps]]
+**''[[They Planted a Stone]]''&nbsp;– James Carr
+**''[[The Word (1953 film)|The Word]]''&nbsp;– John Healy and John Adams
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[Overture to The Merry Wives of Windsor]]''&nbsp;– [[Johnny Green]]'''
+**''Christ Among the Primitives''&nbsp;– Vincenzo Lucci-Chiarissi
+**''[[Herring Hunt]]''&nbsp;– [[National Film Board of Canada]]
+**''Joy of Living''&nbsp;– [[Boris Vermont]]
+**''Wee Water Wonders''&nbsp;– [[Jack Eaton]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[Bear Country (1953 film)|Bear Country]]''&nbsp;– [[Walt Disney]]'''
+**''[[Ben and Me]]''&nbsp;– [[Walt Disney]]
+**''[[Return to Glennascaul]]''&nbsp;– [[Gate Theatre|Dublin Gate Theatre Productions]]
+**''Vesuvius Express''&nbsp;– [[Otto Lang (film producer)|Otto Lang]]
+**''Winter Paradise''&nbsp;– Cedric Francis
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Toot, Whistle, Plunk and Boom]]''&nbsp;– [[Walt Disney]]'''
+**''Christopher Crumpet''&nbsp;– [[Stephen Bosustow]]
+**''[[From A to Z-Z-Z-Z]]''&nbsp;– [[Edward Selzer]]
+**''[[Rugged Bear]]''&nbsp;– [[Walt Disney]]
+**''[[The Tell-Tale Heart (1953 American film)|The Tell-Tale Heart]]''&nbsp;– [[Stephen Bosustow]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*'''''[[Lili (1953 film)|Lili]]''&nbsp;– [[Bronisław Kaper]]'''
+**''[[Above and Beyond (1952 film)|Above and Beyond]]''&nbsp;– [[Hugo Friedhofer]]
+**''[[From Here to Eternity]]''&nbsp;– [[Morris Stoloff]] and [[George Duning]]
+**''[[Julius Caesar (1953 film)|Julius Caesar]]''&nbsp;– [[Miklós Rózsa]]
+**''[[This Is Cinerama]]''&nbsp;– Louis Forbes
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*'''''[[Call Me Madam (film)|Call Me Madam]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]'''
+**''[[The 5,000 Fingers of Dr. T.]]''&nbsp;– [[Friedrich Hollaender|Frederick Hollander]] and [[Morris Stoloff]]
+**''[[The Band Wagon]]''&nbsp;– [[Adolph Deutsch]]
+**''[[Calamity Jane (1953 film)|Calamity Jane]]''&nbsp;– [[Ray Heindorf]]
+**''[[Kiss Me Kate (film)|Kiss Me Kate]]''&nbsp;– [[André Previn]] and [[Saul Chaplin]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[Secret Love (1953 song)|Secret Love]]" from ''[[Calamity Jane (1953 film)|Calamity Jane]]''&nbsp;– Music by [[Sammy Fain]]; Lyrics by [[Paul Francis Webster]]'''
+**"The Moon Is Blue" from ''[[The Moon Is Blue (film)|The Moon Is Blue]]''&nbsp;– Music by [[Herschel Burke Gilbert]]; Lyrics by [[Sylvia Fine]]
+**"My Flaming Heart" from ''[[Small Town Girl (1953 film)|Small Town Girl]]''&nbsp;– Music by [[Nicholas Brodszky]]; Lyrics by [[Leo Robin]]
+**"Sadie Thompson's Song" from ''[[Miss Sadie Thompson]]''&nbsp;– Music by Lester Lee; Lyrics by [[Ned Washington]]
+**"[[That's Amore (song)|That's Amore]]" from ''[[The Caddy (film)|The Caddy]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Jack Brooks (lyricist)|Jack Brooks]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[From Here to Eternity]]''&nbsp;– [[John P. Livadary]]'''
+**''[[Calamity Jane (1953 film)|Calamity Jane]]''&nbsp;– [[William A. Mueller]]
+**''[[Knights of the Round Table (film)|Knights of the Round Table]]''&nbsp;– [[A. W. Watkins]]
+**''[[The Mississippi Gambler (1953 film)|The Mississippi Gambler]]''&nbsp;– [[Leslie I. Carey]]
+**''[[The War of the Worlds (1953 film)|The War of the Worlds]]''&nbsp;– [[Loren L. Ryder]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[Julius Caesar (1953 film)|Julius Caesar]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Edward Carfagno]]; Set Decoration: [[Edwin B. Willis]] and [[Hugh Hunt]]'''
+**''[[Martin Luther (1953 film)|Martin Luther]]''&nbsp;– Art Direction and Set Decoration: [[Fritz Maurischat]] and [[Paul Markwitz]]
+**''[[The President's Lady]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Leland Fuller]]; Set Decoration: [[Paul S. Fox]]
+**''[[Roman Holiday]]''&nbsp;– Art Direction and Set Decoration: [[Hal Pereira]] and [[Walter H. Tyler|Walter Tyler]]
+**''[[Titanic (1953 film)|Titanic]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Maurice Ransford]]; Set Decoration: [[Stuart A. Reiss]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[The Robe (film)|The Robe]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[George Davis (art director)|George Davis]]; Set Decoration: [[Walter M. Scott]] and [[Paul S. Fox]]'''
+**''[[Knights of the Round Table (film)|Knights of the Round Table]]''&nbsp;– Art Direction: [[Alfred Junge]] and [[Hans Peters (art director)|Hans Peters]]; Set Decoration: [[John Jarvis (set decorator)|John Jarvis]]
+**''[[Lili (1953 film)|Lili]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Paul Groesse]]; Set Decoration: [[Edwin B. Willis]] and [[Arthur Krams]]
+**''[[The Story of Three Loves]]''&nbsp;– Art Direction: [[Cedric Gibbons]], [[E. Preston Ames]], [[Edward Carfagno]] and [[Gabriel Scognamillo]]; Set Decoration: [[Edwin B. Willis]], [[F. Keogh Gleason]], [[Arthur Krams]] and [[Jack D. Moore]]
+**''[[Young Bess]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Urie McCleary]]; Set Decoration: [[Edwin B. Willis]] and [[Jack D. Moore]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[From Here to Eternity]]''&nbsp;– [[Burnett Guffey]]'''
+**''[[The Four Poster (1952 film)|The Four Poster]]''&nbsp;– [[Hal Mohr]]
+**''[[Julius Caesar (1953 film)|Julius Caesar]]''&nbsp;– [[Joseph Ruttenberg]]
+**''[[Martin Luther (1953 film)|Martin Luther]]''&nbsp;– [[Joseph C. Brun]]
+**''[[Roman Holiday]]''&nbsp;– [[Franz Planer]] and [[Henri Alekan]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[Shane (film)|Shane]]''&nbsp;– [[Loyal Griggs]]'''
+**''[[All the Brothers Were Valiant]]''&nbsp;– [[George Folsey (cinematographer)|George Folsey]]
+**''[[Beneath the 12-Mile Reef]]''&nbsp;– [[Edward Cronjager]]
+**''[[Lili (1953 film)|Lili]]''&nbsp;– [[Robert H. Planck]]
+**''[[The Robe (film)|The Robe]]''&nbsp;– [[Leon Shamroy]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+* '''''[[Roman Holiday]]''&nbsp;– [[Edith Head]]'''
+** ''[[The Actress]]''&nbsp;– [[Walter Plunkett]]
+** ''[[Dream Wife]]''&nbsp;– [[Helen Rose]] and [[Herschel McCoy]]
+** ''[[From Here to Eternity]]''&nbsp;– [[Jean Louis]]
+** ''[[The President's Lady]]''&nbsp;–  [[Charles LeMaire]] and [[Renié]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+* '''''[[The Robe (film)|The Robe]]''&nbsp;– [[Charles LeMaire]] and [[Emile Santiago]]'''
+** ''[[The Band Wagon]]''&nbsp;– [[Mary Ann Nyberg]]
+** ''[[Call Me Madam (film)|Call Me Madam]]''&nbsp;– [[Irene Sharaff]]
+** ''[[How to Marry a Millionaire]]''&nbsp;– [[Charles LeMaire]] and [[William Travilla]]
+** ''[[Young Bess]]''&nbsp;– [[Walter Plunkett]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+*'''''[[From Here to Eternity]]''&nbsp;– [[William Lyon (film editor)|William Lyon]]'''
+**''[[Crazylegs (film)|Crazylegs]]''&nbsp;– [[Cotton Warburton|Irvine (Cotton) Warburton]]
+**''[[The Moon Is Blue (film)|The Moon Is Blue]]''&nbsp;– [[Otto Ludwig (film editor)|Otto Ludwig]]
+**''[[Roman Holiday]]''&nbsp;– [[Robert Swink]]
+**''[[The War of the Worlds (1953 film)|The War of the Worlds]]''&nbsp;– [[Everett Douglas]]
+|}
+
+===Best Special Effects===
+* ''[[The War of the Worlds (1953 film)|The War of the Worlds]]'' – [[Paramount Pictures|Paramount Studio]].
+
+===Honorary Awards===
+* To [[Pete Smith (film producer)|Pete Smith]] for his witty and pungent observations on the American scene in his series of ''Pete Smith Specialties''.
+* To [[20th Century Fox|20th Century-Fox Film Corporation]] in recognition of their imagination, showmanship and foresight in introducing the revolutionary process known as [[CinemaScope]].
+* To [[Joseph Breen|Joseph I. Breen]] for his conscientious, open-minded and dignified management of the Motion Picture Production Code. 
+* To [[Bell & Howell|Bell and Howell Company]] for their pioneering and basic achievements in the advancement of the motion picture industry.
+
+===Irving G. Thalberg Memorial Award===
+* [[George Stevens]]
+
+==Presenters and performers==
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| [[Elizabeth Taylor]] and [[Michael Wilding (actor)|Michael Wilding]] || Presenters of the Documentary Awards
+|-
+| [[Jack Webb]] || Presenter of the award for Best Sound Recording
+|-
+| [[Keefe Brasselle]] and [[Marilyn Erskine]] || Presenters of the Short Subject Awards
+|-
+| [[Esther Williams]] || Presenter of the award for Best Film Editing
+|-
+| [[Gene Tierney]] || Presenter of the awards for Costume Design
+|-
+| [[Gower Champion]] <Br/> [[Marge Champion]] || Presenters of the award for Art Direction
+|-
+| [[Lex Barker]] and [[Lana Turner]] || Presenters of the awards for Cinematography
+|-
+| [[Kirk Douglas]] || Presenter of the Writing awards
+|-
+| [[Irene Dunne]] || Presenter of the award for Best Director
+|-
+| [[Walter Brennan]] || Presenter of the award for Best Supporting Actress
+|-
+| [[Mercedes McCambridge]] || Presenter of the award for Best Supporting Actor
+|-
+| [[Arthur Freed]] || Presenter of the Music awards
+|-
+| [[Gary Cooper]] || Presenter of the award for Best Actress
+|-
+| [[Shirley Booth]] || Presenter of the award for Best Actor
+|-
+| [[Cecil B. DeMille]] || Presenter of the award for Best Motion Picture
+|-
+| [[Merle Oberon]] || Presenter of the award for Best Special Effects
+|-
+| [[Charles Brackett]] || Presenter of the Honorary Awards
+|-
+| [[Tyrone Power]] || Presenter of the Scientific & Technical Awards
+|-
+| [[David O. Selznick]] || Presenter of the Irving G. Thalberg Award
+|-
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name(s) !! Role
+|-
+| [[André Previn]] || Conductor the Academy Awards orchestra
+|-
+| [[Mitzi Gaynor]] and [[Donald O'Connor]] || Performers of "The Moon Is Blue" from ''[[The Moon Is Blue (film)|The Moon Is Blue]]''
+|-
+| [[Connie Russell]] || Performer of "Sadie Thompson's Song (Blue Pacific Blues)" from ''[[Miss Sadie Thompson]]''
+|-
+|[[Ann Blyth]] || Performer of "[[Secret Love (1953 song)|Secret Love]]" from ''[[Calamity Jane (1953 film)|Calamity Jane]]''
+|-
+|[[Dean Martin]] || Performer of "[[That's Amore]]" from ''[[The Caddy (film)|The Caddy]]''
+|-
+|}
+
+==Multiple nominations and awards==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 13
+| ''[[From Here to Eternity]]''
+|-
+| rowspan="1" style="text-align:center" | 10
+| ''[[Roman Holiday]]''
+|-
+| rowspan="2" style="text-align:center" | 6
+| ''[[Lili (1953 film)|Lili]]''
+|-
+| ''[[Shane (film)|Shane]]''
+|-
+| rowspan="2" style="text-align:center" | 5
+| ''[[Julius Caesar (1953 film)|Julius Caesar]]''
+|-
+| ''[[The Robe (film)|The Robe]]''
+|-
+| rowspan="4" style="text-align:center" | 3
+| ''[[The Band Wagon]]''
+|-
+| ''[[Calamity Jane (1953 film)|Calamity Jane]]''
+|-
+| ''[[The Moon Is Blue (film)|The Moon Is Blue]]''
+|-
+| ''[[Stalag 17]]''
+|-
+| rowspan="9" style="text-align:center" | 2
+| ''[[Above and Beyond (1952 film)|Above and Beyond]]''
+|-
+| ''[[Call Me Madam (film)|Call Me Madam]]''
+|-
+| ''[[Knights of the Round Table (film)|Knights of the Round Table]]''
+|-
+| ''[[Martin Luther (1953 film)|Martin Luther]]''
+|-
+| ''[[Mogambo]]''
+|-
+| ''[[The President's Lady]]''
+|-
+| ''[[Titanic (1953 film)|Titanic]]''
+|-
+| ''[[The War of the Worlds (1953 film)|The War of the Worlds]]''{{efn|Not counting the non-competitive Best Special Effects Award for ''The War of the Worlds''.}}
+|-
+| ''[[Young Bess]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 8
+| ''[[From Here to Eternity]]''
+|-
+| rowspan=1, style="text-align:center" | 3
+| ''[[Roman Holiday]]''
+|-
+| rowspan=1, style="text-align:center" | 2
+| ''[[The Robe (film)|The Robe]]''
+|-
+|}
+
+{{Col-float-end}}
+
+
+==See also==
+*[[11th Golden Globe Awards]]
+*[[1953 in film]]
+* [[5th Primetime Emmy Awards]]
+* [[6th Primetime Emmy Awards]]
+* [[7th British Academy Film Awards]]
+* [[8th Tony Awards]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 26}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1953 film awards]]
+[[Category:1953 awards in the United States]]
+[[Category:1954 in Los Angeles]]
+[[Category:1954 in New York City]]
+[[Category:1954 in American cinema]]
+[[Category:March 1954 in the United States]]
+[[Category:Organized events in New York City]]
+[[Category:1950s in Manhattan]]

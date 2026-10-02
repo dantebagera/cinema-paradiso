@@ -1,0 +1,360 @@
+{{oscars short description|films-year=1938}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 11
+| award            = Academy Awards
+| date             = February 23, 1939
+| site             = [[Millennium Biltmore Hotel|Biltmore Hotel]]
+| host             = [[Frank Capra]]
+| best_picture     = ''[[You Can't Take It with You (film)|You Can't Take It with You]]''
+| most_wins        = ''[[The Adventures of Robin Hood]]'' (3)
+| most_nominations = ''You Can't Take it with You'' (7)
+| last             = 10th
+| next             = 12th
+}}
+
+[[File:Harry Cohn and Frank Capra Oscar 1938.jpg|thumb|[[Harry Cohn]] and [[Frank Capra]]]]
+The '''11th Academy Awards''' were held on February 23, 1939, at the [[Millennium Biltmore Hotel|Biltmore Hotel]] in [[Los Angeles, California]],<ref name="Oscars1939">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1939 |title=The 11th Academy Awards (1939) Nominees and Winners |access-date=2011-08-10 |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]]) |archive-url=https://web.archive.org/web/20110706093716/http://www.oscars.org/awards/academyawards/legacy/ceremony/11th-winners.html |archive-date=July 6, 2011 |url-status=dead }}</ref> and hosted by Frank Capra.<ref>{{Cite web|url=https://aframe.oscars.org/news/post/every-oscar-host-in-history-see-the-full-list | title=Every Oscar Host in History: See the Full List From Douglas Fairbanks to Jimmy Kimmel |publisher=Oscars.org ([[Academy of Motion Picture Arts and Sciences]])}}</ref>
+
+[[Frank Capra]] became the first person to win three Best Director awards, to be followed by [[John Ford]] (who would go on to win four) and [[William Wyler]]. ''[[La Grande Illusion]]'' was the first non-English language film to be nominated for [[Academy Award for Best Picture|Best Picture]].
+
+This was the first of only two times in Oscar history in which three of the four acting winners had won before; only [[Fay Bainter]] was a first-time award winner. The only other time that this happened was at the [[67th Academy Awards]] in 1994. Fay Bainter was the first performer in the Oscars history to receive [[List of actors nominated for two Academy Awards in the same year|two acting nominations in the same year]], while [[Spencer Tracy]] became the first of two actors to win [[Academy Award for Best Actor|Best Actor]] two years in a row; the other, [[Tom Hanks]], also did so in 1994. 
+
+[[George Bernard Shaw]]'s screenplay win for ''[[Pygmalion (1938 film)|Pygmalion]]'' made him the first—and, for over 77 years, only—person to win both a [[Nobel Prize]] and an Academy Award until [[Bob Dylan]] received [[Nobel Prize in Literature]] in 2016 after having won the [[Academy Award for Best Original Song]] in 2001. Shaw protested his win, roaring, from London: {{cquote|It's an insult! It's perfect nonsense. My position as playwright is known throughout the world. To offer me an award of this sort is an insult, as if they have never heard of me before—and it's very likely they never have.<ref name="Oscars '38 Notes">{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/834/mode/2up |location=Garden City, New York |publisher=[[Doubleday (publisher)|Doubleday & Company, Inc.]] |page=834 |isbn=0-385-04060-1}}</ref><ref>{{cite book |last=Holroyd |first=Michael |title=Bernard Shaw: The One-Volume Definitive Edition |year=1997 |location=London |publisher=[[Chatto & Windus]] |isbn=978-0-7011-6279-5 |url=https://archive.org/details/bernardshaw00holr }}</ref>{{refn|This did not prevent him from putting the award—a golden figurine—on his mantelpiece.<ref>{{cite book |last=Pascal |first=Valerie |title=The Disciple and his Devil: Gabriel Pascal and Bernard Shaw |url=https://archive.org/details/disciplehisdevil0000pasc |url-access=registration |year=1971 |location=London |publisher=[[Michael Joseph (publisher)|Michael Joseph]] |oclc=740749440 }}</ref> Shaw was one of four to receive the award, along with [[Ian Dalrymple]], [[Cecil Arthur Lewis|Cecil Lewis]] and [[W. P. Lipscomb]], who had also worked on adapting Shaw's text.<ref>{{cite book | title=Historical Dictionary of British Cinema | publisher=[[Lexington Books|Scarecrow Press]] | location=[[Lanham, Maryland]] | isbn=978-0-81-088026-9 | first1=Alan | last1=Burton | first2=Steve | last2=Chibnall | date=11 July 2013 |page=715}}</ref>|group=n}}}}
+
+Radio coverage was banned at the ceremony. A reporter, George Fischer from Los Angeles' [[Mutual Broadcasting System|Mutual Radio Network]] station, [[KHJ (AM)|KHJ]], which had been reporting from the Academy Awards since 1930, locked himself in a booth and was able to broadcast for about 12 minutes before security guards broke down the door. Partial radio coverage was subsequently permitted again, beginning with the 1942 ceremony.<ref name="Dunning">{{cite book |url=https://books.google.com/books?id=EwtRbXNca0oC&dq=%22The+Academy+Awards+Show%22&pg=PA4 |last=Dunning| first=John| author-link=John Dunning (detective fiction author) | title=On the Air: The Encyclopedia of Old-Time Radio| date=1998| publisher=[[Oxford University Press]]| location=New York, NY| isbn=978-0-19-507678-3| pages=4–5 | edition=Revised| access-date=2019-09-10}} </ref>
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Frank Capra.jpg
+| caption1          = [[Frank Capra]]; Best Picture and Best Director winner
+| image2            = Spencer tracy state of the union.jpg
+| caption2          = [[Spencer Tracy]]; Best Actor winner
+| image3            = Bette Davis - portrait.jpg
+| caption3          = [[Bette Davis]]; Best Actress winner
+| image4            = Walter brennan real mccoys 1958.JPG
+| caption4          = [[Walter Brennan]]; Best Supporting Actor winner
+| image5            = Fay Bainter circa 1950s.jpg
+| caption5          = [[Fay Bainter]]; Best Supporting Actress winner
+| image6            = Bernard-Shaw-ILN-1911-original.jpg
+| caption6          = [[George Bernard Shaw]]; Best Screenplay co-winner
+| image7            = Erich Wolfgang Korngold 01.jpg
+| caption7          = [[Erich Wolfgang Korngold]]; Best Original Score winner
+| image8            = Walt Disney 1946.JPG
+| caption8          = [[Walt Disney]]; Honorary Academy Award recipient
+| image9            = Harry Warner - Feb 1919 MPW.jpg
+| caption9          = [[Harry Warner]]; Honorary Academy Award recipient
+| image10           = Deanna Durbin in Yank Magazine.jpg
+| caption10         = [[Deanna Durbin]]; Juvenile Academy Award recipient
+| image11           = Mickey Rooney 2 Allan Warren.jpg
+| caption11         = [[Mickey Rooney]]; Juvenile Academy Award recipient
+
+}}
+
+=== Awards ===
+Nominees were announced on February 5, 1939. Winners are listed first and highlighted in boldface.
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Outstanding Production]]}}
+* '''''[[You Can't Take It with You (film)|You Can't Take It with You]]''''' '''– [[Frank Capra]] for [[Columbia Pictures|Columbia]]'''
+** ''[[The Adventures of Robin Hood]]'' – [[Hal B. Wallis]] and [[Henry Blanke]] for [[Warner Bros.]]
+** ''[[Alexander's Ragtime Band (film)|Alexander's Ragtime Band]]'' – [[Darryl F. Zanuck]] and [[Harry Joe Brown]] for [[20th Century Fox]]
+** ''[[Boys Town (film)|Boys Town]]'' – [[John W. Considine Jr.]] for [[Metro-Goldwyn-Mayer]]
+** ''[[The Citadel (1938 film)|The Citadel]]'' – [[Victor Saville]] for Metro-Goldwyn-Mayer
+** ''[[Four Daughters (1938 film)|Four Daughters]]'' – Hal B. Wallis and Henry Blanke for Warner Bros. and [[First National Pictures|First National]]
+** ''[[La Grande Illusion|Grand Illusion]]'' – Frank Rollmer and Albert Pinkovitch for [[Réalisation d'art cinématographique|R. A. C.]] and World Pictures
+** ''[[Jezebel (1938 film)|Jezebel]]'' – Hal B. Wallis and Henry Blanke for Warner Bros.
+** ''[[Pygmalion (1938 film)|Pygmalion]]'' – [[Gabriel Pascal]] for Pascal Film Productions
+** ''[[Test Pilot (film)|Test Pilot]]'' – [[Louis D. Lighton]] for Metro-Goldwyn-Mayer
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Frank Capra]]&nbsp;– ''[[You Can't Take It with You (film)|You Can't Take It with You]]'''''
+** [[Michael Curtiz]]&nbsp;– ''[[Angels with Dirty Faces]]''
+** [[Norman Taurog]]&nbsp;– ''[[Boys Town (film)|Boys Town]]''
+** [[King Vidor]]&nbsp;– ''[[The Citadel (1938 film)|The Citadel]]''
+** Michael Curtiz&nbsp;– ''[[Four Daughters (1938 film)|Four Daughters]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Spencer Tracy]]&nbsp;– ''[[Boys Town (film)|Boys Town]]'' as [[Father Edward J. Flanagan]]'''
+** [[Charles Boyer]]&nbsp;– ''[[Algiers (1938 film)|Algiers]]'' as Pepe le Moko
+** [[James Cagney]]&nbsp;– ''[[Angels with Dirty Faces]]'' as William "Rocky" Sullivan
+** [[Robert Donat]]&nbsp;– ''[[The Citadel (1938 film)|The Citadel]]'' as Dr Andrew Manson
+** [[Leslie Howard]]&nbsp;– ''[[Pygmalion (1938 film)|Pygmalion]]'' as Professor Henry Higgins
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Bette Davis]]&nbsp;– ''[[Jezebel (1938 film)|Jezebel]]'' as Julie Marsden'''
+** [[Fay Bainter]]&nbsp;– ''[[White Banners]]'' as Hannah Parmalee
+** [[Wendy Hiller]]&nbsp;– ''[[Pygmalion (1938 film)|Pygmalion]]'' as [[Eliza Doolittle]]
+** [[Norma Shearer]]&nbsp;– ''[[Marie Antoinette (1938 film)|Marie Antoinette]]'' as [[Marie Antoinette]]
+** [[Margaret Sullavan]]&nbsp;– ''[[Three Comrades (1938 film)|Three Comrades]]'' as Patricia Hollmann
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Walter Brennan]]&nbsp;– ''[[Kentucky (film)|Kentucky]]'' as Peter Goodwin'''
+** [[John Garfield]]&nbsp;– ''[[Four Daughters (1938 film)|Four Daughters]]'' as Mickey Borden
+** [[Gene Lockhart]]&nbsp;– ''[[Algiers (1938 film)|Algiers]]'' as Regis
+** [[Robert Morley]]&nbsp;– ''[[Marie Antoinette (1938 film)|Marie Antoinette]]'' as King [[Louis XVI]]
+** [[Basil Rathbone]]&nbsp;– ''[[If I Were King]]'' as King [[Louis XI]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Fay Bainter]]&nbsp;– ''[[Jezebel (1938 film)|Jezebel]]'' as Aunt Belle Massey'''
+** [[Beulah Bondi]]&nbsp;– ''[[Of Human Hearts]]'' as Mary Wilkins
+** [[Billie Burke]]&nbsp;– ''[[Merrily We Live]]'' as Emily Kilbourne
+** [[Spring Byington]]&nbsp;– ''[[You Can't Take It with You (film)|You Can't Take It with You]]'' as Penelope "Penny" Sycamore
+** [[Miliza Korjus]]&nbsp;– ''[[The Great Waltz (1938 film)|The Great Waltz]]'' as Carla Donner
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Story)]]}}
+* '''''[[Boys Town (film)|Boys Town]]''&nbsp;– [[Eleanore Griffin]] and [[Dore Schary]]'''
+** ''[[Alexander's Ragtime Band (film)|Alexander's Ragtime Band]]''&nbsp;– [[Irving Berlin]]
+** ''[[Angels with Dirty Faces]]''&nbsp;– [[Rowland Brown]]
+** ''[[Blockade (1938 film)|Blockade]]''&nbsp;– [[John Howard Lawson]]
+** ''[[Mad About Music]]''&nbsp;– Marcella Burke and [[Frederick Kohner]]
+** ''[[Test Pilot (film)|Test Pilot]]''&nbsp;– [[Frank Wead]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+* '''''[[Pygmalion (1938 film)|Pygmalion]]''&nbsp;– screenplay and dialogue: [[George Bernard Shaw]]; adaptation: [[Ian Dalrymple]], [[Cecil Arthur Lewis|Cecil Lewis]], and [[W. P. Lipscomb]], based on [[Pygmalion (play)|the play]] by Shaw'''
+** ''[[Boys Town (film)|Boys Town]]''&nbsp;– [[John Meehan (screenwriter)|John Meehan]] and [[Dore Schary]], based on a story by Schary and [[Eleanore Griffin]]
+** ''[[The Citadel (1938 film)|The Citadel]]''&nbsp;– [[Ian Dalrymple]], [[Elizabeth Hill (screenwriter)|Elizabeth Hill]] and [[Frank Wead]], based on [[The Citadel (novel)|the novel]] by [[A. J. Cronin]]
+** ''[[Four Daughters (1938 film)|Four Daughters]]''&nbsp;– [[Lenore Coffee]] and [[Julius J. Epstein]], based on the short story "Sister Act" by [[Fannie Hurst]]
+** ''[[You Can't Take It with You (film)|You Can't Take It with You]]''&nbsp;– [[Robert Riskin]], based on [[You Can't Take It with You (play)|the play]] by [[George S. Kaufman]] and [[Moss Hart]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+* '''''[[That Mothers Might Live]]''&nbsp;– [[MGM]]'''
+** ''[[The Great Heart]]''&nbsp;– MGM
+** ''[[Timber Toppers]]''&nbsp;– [[20th Century Fox]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+* '''''[[Declaration of Independence (film)|Declaration of Independence]]''&nbsp;– [[Warner Bros.]]'''
+** ''[[Swingtime in the Movies]]''&nbsp;– Warner Bros.
+** ''[[They're Always Caught]]''&nbsp;– [[MGM]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[Ferdinand the Bull (film)|Ferdinand the Bull]]''&nbsp;– [[Walt Disney Productions]] and [[RKO Radio]]'''
+** ''[[Brave Little Tailor]]''&nbsp;– Walt Disney Productions and RKO Radio
+** ''[[Good Scouts]]''&nbsp;– Walt Disney Productions and RKO Radio
+** ''[[Hunky and Spunky]]''&nbsp;– [[Paramount Pictures|Paramount]]
+** ''[[Mother Goose Goes Hollywood]]''&nbsp;– Walt Disney Productions and RKO Radio
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[The Adventures of Robin Hood]]''&nbsp;– [[Erich Wolfgang Korngold]]'''
+** ''[[Army Girl]]''&nbsp;– [[Victor Young]]
+** ''[[Block-Heads]]''&nbsp;– [[Marvin Hatley]]
+** ''[[Blockade (1938 film)|Blockade]]''&nbsp;– [[Werner Janssen]]
+** ''[[Breaking the Ice (film)|Breaking the Ice]]''&nbsp;– Victor Young
+** ''[[The Cowboy and the Lady (1938 film)|The Cowboy and the Lady]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[If I Were King]]''&nbsp;– [[Richard Hageman]]
+** ''[[Marie Antoinette (1938 film)|Marie Antoinette]]''&nbsp;– [[Herbert Stothart]]
+** ''[[Pacific Liner]]''&nbsp;– [[Robert Russell Bennett|Russell Bennett]]
+** ''[[Suez (film)|Suez]]''&nbsp;– [[Louis Silvers]]
+** ''[[The Young in Heart]]''&nbsp;– [[Franz Waxman]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring)]]}}
+* '''''[[Alexander's Ragtime Band (film)|Alexander's Ragtime Band]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]'''
+** ''[[Carefree (film)|Carefree]]''&nbsp;– [[Victor Baravalle]]
+** ''[[Girls' School (1938 film)|Girls' School]]''&nbsp;– [[Morris Stoloff]] and Gregory Stone
+** ''[[The Goldwyn Follies]]''&nbsp;– Alfred Newman
+** ''[[Jezebel (1938 film)|Jezebel]]''&nbsp;– [[Max Steiner]]
+** ''[[Mad About Music]]''&nbsp;– [[Charles Previn]] and [[Frank Skinner (composer)|Frank Skinner]]
+** ''[[Storm Over Bengal]]''&nbsp;– [[Cy Feuer]]
+** ''[[Sweethearts (1938 film)|Sweethearts]]''&nbsp;– [[Herbert Stothart]]
+** ''[[There Goes My Heart (film)|There Goes My Heart]]''&nbsp;– [[Marvin Hatley]]
+** ''[[Tropic Holiday]]''&nbsp;– [[Boris Morros]]
+** ''[[The Young in Heart]]''&nbsp;– [[Franz Waxman]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[Thanks for the Memory]]" from ''[[The Big Broadcast of 1938]]''&nbsp;– Music by [[Ralph Rainger]]; Lyrics by [[Leo Robin]]'''
+** "Always and Always" from ''[[Mannequin (1937 film)|Mannequin]]''&nbsp;– Music by [[Edward Ward (composer)|Edward Ward]]; Lyrics by [[George Forrest (author)|Chet Forrest]] and [[Robert Wright (writer)|Bob Wright]]
+** "[[Change Partners]]" from ''[[Carefree (film)|Carefree]]''&nbsp;– Music and Lyrics by [[Irving Berlin]]
+** "The Cowboy and the Lady" from ''[[The Cowboy and the Lady (1938 film)|The Cowboy and the Lady]]''&nbsp;– Music by [[Lionel Newman]]; Lyrics by Arthur Quenzer
+** "Dust" from ''[[Under Western Stars]]''&nbsp;– Music and Lyrics by [[Johnny Marvin]]
+** "[[Jeepers Creepers (song)|Jeepers Creepers]]" from ''[[Going Places (1938 film)|Going Places]]''&nbsp;– Music by [[Harry Warren]]; Lyrics by [[Johnny Mercer]]
+** "Merrily We Live" from ''[[Merrily We Live]]''&nbsp;– Music by [[Phil Charig]]; Lyrics by Arthur Quenzer
+** "A Mist Over the Moon" from ''[[The Lady Objects]]''&nbsp;– Music by [[Ben Oakland]]; Lyrics by [[Oscar Hammerstein II]]
+** "My Own" from ''[[That Certain Age]]''&nbsp;– Music by [[Jimmy McHugh]]; Lyrics by [[Harold Adamson]]
+** "[[Now It Can Be Told]]" from ''[[Alexander's Ragtime Band (film)|Alexander's Ragtime Band]]''&nbsp;– Music and Lyrics by Irving Berlin
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+* '''''[[The Cowboy and the Lady (1938 film)|The Cowboy and the Lady]]''&nbsp;– [[Thomas T. Moulton]]'''
+** ''[[Army Girl]]''&nbsp;– [[Charles L. Lootens]]
+** ''[[Four Daughters (1938 film)|Four Daughters]]''&nbsp;– [[Nathan Levinson]]
+** ''[[If I Were King]]''&nbsp;– [[Loren L. Ryder]]
+** ''[[Merrily We Live]]''&nbsp;– [[Elmer Raguse]]
+** ''[[Suez (film)|Suez]]''&nbsp;– [[Edmund H. Hansen]]
+** ''[[Sweethearts (1938 film)|Sweethearts]]''&nbsp;– [[Douglas Shearer]]
+** ''[[That Certain Age]]''&nbsp;– [[Bernard B. Brown]]
+** ''[[Vivacious Lady]]''&nbsp;– [[John O. Aalberg]]
+** ''[[You Can't Take It with You (film)|You Can't Take It with You]]''&nbsp;– [[John P. Livadary]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction]]}}
+* '''''[[The Adventures of Robin Hood]]''&nbsp;– [[Carl Jules Weyl]]'''
+** ''[[The Adventures of Tom Sawyer (1938 film)|The Adventures of Tom Sawyer]]''&nbsp;– [[Lyle R. Wheeler]]
+** ''[[Alexander's Ragtime Band (film)|Alexander's Ragtime Band]]''&nbsp;– [[Bernard Herzbrun]] and [[Boris Leven]]
+** ''[[Algiers (1938 film)|Algiers]]''&nbsp;– [[Alexander Toluboff]]
+** ''[[Carefree (film)|Carefree]]''&nbsp;– [[Van Nest Polglase]]
+** ''[[The Goldwyn Follies]]''&nbsp;– [[Richard Day (art director)|Richard Day]]
+** ''[[Holiday (1938 film)|Holiday]]''&nbsp;– [[Stephen Goosson]] and [[Lionel Banks]]
+** ''[[If I Were King]]''&nbsp;– [[Hans Dreier]] and [[John B. Goodman (art director)|John B. Goodman]]
+** ''[[Mad About Music]]''&nbsp;– [[Jack Otterson]]
+** ''[[Marie Antoinette (1938 film)|Marie Antoinette]]''&nbsp;– [[Cedric Gibbons]]
+** ''[[Merrily We Live]]''&nbsp;– [[Charles D. Hall]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[The Great Waltz (1938 film)|The Great Waltz]]''&nbsp;– [[Joseph Ruttenberg]]'''
+** ''[[Algiers (1938 film)|Algiers]]''&nbsp;– [[James Wong Howe]]
+** ''[[Army Girl]]''&nbsp;– [[Ernest Miller (cinematographer)|Ernest Miller]] and [[Harry J. Wild]]
+** ''[[The Buccaneer (1938 film)|The Buccaneer]]''&nbsp;– [[Victor Milner]]
+** ''[[Jezebel (1938 film)|Jezebel]]''&nbsp;– [[Ernest Haller]]
+** ''[[Mad About Music]]''&nbsp;– [[Joseph Valentine]]
+** ''[[Merrily We Live]]''&nbsp;– [[Norbert Brodine]]
+** ''[[Suez (film)|Suez]]''&nbsp;– [[Peverell Marley]]
+** ''[[Vivacious Lady]]''&nbsp;– [[Robert De Grasse]]
+** ''[[You Can't Take It with You (film)|You Can't Take It with You]]''&nbsp;– [[Joseph Walker (cinematographer)|Joseph Walker]]
+** ''[[The Young in Heart]]''&nbsp;– [[Leon Shamroy]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Adventures of Robin Hood]]''&nbsp;– [[Ralph Dawson]]'''
+** ''[[Alexander's Ragtime Band (film)|Alexander's Ragtime Band]]''&nbsp;– [[Barbara McLean]]
+** ''[[The Great Waltz (1938 film)|The Great Waltz]]''&nbsp;– [[Tom Held]]
+** ''[[Test Pilot (film)|Test Pilot]]''&nbsp;– Tom Held
+** ''[[You Can't Take It with You (film)|You Can't Take It with You]]''&nbsp;– [[Gene Havlick]]
+|}
+
+=== Special awards ===
+
+* To [[Deanna Durbin]] and [[Mickey Rooney]] for their significant contribution in bringing to the screen the spirit and personification of youth, and as juvenile players setting a high standard of ability and achievement. (Shared; miniature statuette)
+* To [[Harry M. Warner]] in recognition of patriotic service in the production of historical short subjects presenting significant episodes in the early struggle of the American people for liberty. (Scroll)
+* To [[Walt Disney]] for ''[[Snow White and the Seven Dwarfs (film)|Snow White and the Seven Dwarfs]]'', recognized as a significant screen innovation which has charmed millions and pioneered a great new entertainment field for the motion picture cartoon. (One statuette and seven miniature statuettes, representing the [[Seven Dwarfs]], on a stepped base.) This is a rare case of a film being recognized in two succeeding ceremonies, as the film was also nominated for Best Score the previous year at the [[10th Academy Awards]].
+* To [[Oliver T. Marsh|Oliver Marsh]] and [[Allen M. Davey|Allen Davey]] for the color cinematography of the [[Metro-Goldwyn-Mayer]] production, ''[[Sweethearts (1938 film)|Sweethearts]]''. (Plaque)
+* For outstanding achievement in creating Special Photographic and Sound Effects in the [[Paramount Pictures|Paramount]] production, ''[[Spawn of the North]]''. Special Effects by [[Gordon Jennings]], assisted by [[Jan Domela]], Dev Jennings, Irmin Roberts and Art Smith. Transparencies by [[Farciot Edouart]], assisted by [[Loyal Griggs]]. Sound Effects by [[Loren Ryder]], assisted by Harry Mills, [[Louis Mesenkop|Louis H. Mesenkop]] and Walter Oberst. (Plaque)
+* To [[Joseph A. Ball (inventor)|J. Arthur Ball]] for his outstanding contributions to the advancement of color in Motion Picture Photography. (Scroll)
+
+=== Irving G. Thalberg Memorial Award ===
+
+* [[Hal B. Wallis]]
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="1" style="text-align:center" | 7
+| ''[[You Can't Take It with You (film)|You Can't Take It with You]]''
+|-
+| rowspan="1" style="text-align:center" | 6
+| ''[[Alexander's Ragtime Band (film)|Alexander's Ragtime Band]]''
+|-
+| rowspan="4" style="text-align:center" | 5
+| ''[[Boys Town (film)|Boys Town]]''
+|-
+| ''[[Four Daughters (1938 film)|Four Daughters]]''
+|-
+| ''[[Jezebel (1938 film)|Jezebel]]''
+|-
+| ''[[Merrily We Live]]''
+|-
+| rowspan="7" style="text-align:center" |4 
+| ''[[The Adventures of Robin Hood]]''
+|-
+| ''[[Algiers (1938 film)|Algiers]]''
+|-
+| ''[[The Citadel (1938 film)|The Citadel]]''
+|-
+| ''[[If I Were King]]''
+|-
+| ''[[Mad About Music]]''
+|-
+| ''[[Marie Antoinette (1938 film)|Marie Antoinette]]'' 
+|-
+| ''[[Pygmalion (1938 film)|Pygmalion]]''
+|-
+|rowspan="8" style="text-align:center" | 3 
+| ''[[Angels with Dirty Faces]]''
+|-
+| ''[[Army Girl]]''
+|-
+| ''[[Carefree (film)|Carefree]]''
+|-
+| ''[[The Cowboy and the Lady (1938 film)|The Cowboy and the Lady]]''
+|-
+| ''[[The Great Waltz (1938 film)|The Great Waltz]]''
+|-
+| ''[[Suez (film)|Suez]]''
+|-
+| ''[[Test Pilot (film)|Test Pilot]]''
+|-
+| ''[[The Young in Heart]]''
+|-
+|rowspan="5" style="text-align:center" | 2
+| ''[[Blockade (1938 film)|Blockade]]''
+|-
+| ''[[The Goldwyn Follies]]''
+|-
+| ''[[Sweethearts (1938 film)|Sweethearts]]''
+|-
+| ''[[That Certain Age]]''
+|-
+| ''[[Vivacious Lady]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ Films with multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 3 
+| ''[[The Adventures of Robin Hood]]''
+|-
+| rowspan=3, style="text-align:center" | 2
+| ''[[Boys Town (film)|Boys Town]]''
+|-
+| ''[[Jezebel (1938 film)|Jezebel]]''
+|-
+| ''[[You Can't Take It with You (film)|You Can't Take It with You]]''
+|-
+|}
+
+{{col-float-end}}
+
+== See also ==
+
+* [[1938 in film]]
+
+== References ==
+
+{{reflist}}
+
+== Notes ==
+{{Reflist|group=n}}
+
+== External links ==
+* [http://www.oscar.com/ Official Website of the Academy of Motion Picture Arts and Sciences]
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 11}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1938 film awards]]
+[[Category:1939 in Los Angeles]]
+[[Category:1938 in American cinema]]
+[[Category:February 1939 in the United States]]

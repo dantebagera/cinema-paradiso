@@ -1,4 +1,5 @@
 import MediaWorkspace from './features/tv/MediaWorkspace.jsx';
+import NotificationWindow from './features/notifications/NotificationWindow.jsx';
 import { buildTvStreamTemplateUrl } from './utils/appUtils.js';
 import {
   AlertTriangle,
@@ -75,7 +76,7 @@ import { buildUpcomingHomeMovies, uniqueHomeMovies } from './utils/homeMovies.js
 
 const HelpWorkspace = lazy(() => import('./features/help/HelpWorkspace.jsx'));
 const LibraryWorkspace = lazy(() => import('./features/library/LibraryWorkspace.jsx'));
-const MovieListsWorkspace = lazy(() => import('./features/movie-lists/MovieListsWorkspace.jsx'));
+const MovieListsWorkspace = lazy(() => import('./features/movie-lists/ListsWorkspace.jsx'));
 const DiscoverWorkspace = lazy(() => import('./features/discover/DiscoverWorkspace.jsx'));
 const AIControlWorkspace = lazy(() => import('./features/ai-control/AIControlWorkspace.jsx'));
 const IPTVWorkspace = lazy(() => import('./features/iptv/IPTVWorkspace.jsx'));
@@ -101,7 +102,7 @@ const navItems = [
   },
   {
     id: 'movie-lists',
-    label: 'Movie Lists',
+    label: 'Lists',
     icon: Bookmark,
     accent: 'gold'
   },
@@ -877,13 +878,17 @@ function ArchiveApp() {
     setActiveSection(id);
   }
 
-  function openPersonInDiscover(movie, role, person) {
+  function openPersonInDiscover(movie, role, person, { fullFilmography = false, award = null } = {}) {
     if (!person?.id) return;
+    if (award && (!['actor','director'].includes(role) || !['oscar','golden_globe'].includes(award))) return;
     setDiscoverActiveTab('explore');
     setDiscoverRelationshipRequest((current) => ({
       requestId: Number(current?.requestId || 0) + 1,
-      type: 'person',
+      type: award ? 'person-awards' : 'person',
       source: 'Library',
+      fullFilmography,
+      award,
+      ...(award ? {origin:{section:activeSectionRef.current,label:movie?.title || 'Movies'}} : {}),
       movie: {
         title: movie?.title || 'Movie',
         year: movie?.year || ''
@@ -1266,7 +1271,7 @@ function ArchiveApp() {
         {mountedSections.has('library') && (
           <div className="workspace-panel" hidden={activeSection !== 'library'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
-              <MediaWorkspace enabled={tvEnabled} context="library" streaming={streamingConfig} onStream={streamEpisode} onTrailer={(series, url) => openYouTubeVideo({ title: series.title, year: series.first_air_date?.slice(0, 4) || '', sourceUrl: url, kicker: 'TV Trailer' })} notify={notify}>
+              <MediaWorkspace enabled={tvEnabled} context="library" streaming={streamingConfig} onStream={streamEpisode} onTrailer={(series, url) => openYouTubeVideo({ title: series.title, year: series.first_air_date?.slice(0, 4) || '', sourceUrl: url, kicker: 'TV Trailer' })} notify={notify} onOpenMaintenance={() => openCleanupTab('tv')}>
               <LibraryWorkspace
                 onPlay={playLocal}
                 onFindTorrent={findTorrent}
@@ -1291,6 +1296,7 @@ function ArchiveApp() {
           <div className="workspace-panel" hidden={activeSection !== 'movie-lists'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <MovieListsWorkspace
+                tvEnabled={tvEnabled}
                 notify={notify}
                 onPlay={playLocal}
                 onFindTorrent={findTorrent}
@@ -1556,6 +1562,7 @@ function Sidebar({
         })}
       </nav>
       <div className={cx('sidebar-power-zone', planActive && 'sidebar-power-zone-active')}>
+        <NotificationWindow collapsed={collapsed} />
         <button
           type="button"
           className="sidebar-power-button"

@@ -1,0 +1,68 @@
+{{short description|1958 film}}
+{{Use dmy dates|date=May 2020}}
+{{Infobox film
+| name           = Girl and the River
+| image          = File:Girl_and_the_River,_L'Eau_vive_1958_Movie_Poster.jpg
+| caption        = 
+| director       = [[François Villiers]]
+| producer       = [[Claude Clert]]
+| writer         = [[Alain Allioux]]<br>[[Jean Giono]]
+| starring       = [[Pascale Audret]]
+| music          = [[Guy Béart]]
+| cinematography = Paul Soulignac
+| editing        = Edouard Berne
+| distributor    = [[Gaumont Distribution]]
+| released       = {{film date|df=yes|1958|5|}}
+| runtime        = 96 minutes
+| country        = France
+| language       = French
+}}
+'''''Girl and the River''''' ({{langx|fr|'''L'Eau vive'''|lit=Living Water}}) is a 1958 French [[drama film]] directed by [[François Villiers]]. It was entered into the [[1958 Cannes Film Festival]].<ref name="festival-cannes.com">{{cite web|url=http://www.festival-cannes.com/en/archives/ficheFilm/id/3483/year/1958.html |title=Festival de Cannes: Girl and the River |access-date=10 February 2009 |work=festival-cannes.com |url-status=dead |archive-url=https://web.archive.org/web/20120915023120/http://www.festival-cannes.com/en/archives/ficheFilm/id/3483/year/1958.html |archive-date=15 September 2012  }}</ref>  
+
+==Cast==
+<small>In alphabetical order by surname</small>
+* [[Henri Arius]] - The uncle from Cavaillon
+* [[Pascale Audret]] - Hortense
+* [[Odette Barencey]] - Joséphine
+* [[Charles Blavette]] - L'oncle Simon
+* [[Jean Clarens]] - Le notaire
+* [[Andrée Debar]] - The cousin from Rochebrune
+* [[Hubert de Lapparent]] - Elie, a peasant
+* [[Hélène Gerber]] - La femme d'Elie
+* [[Jean Giono]] - Le récitant (voice)
+* [[Harry-Max]] - Le juge de paix
+* [[Germaine Kerjean]] - The aunt from Rochebrune
+* [[Robert Lombard]] - Le cousin de Rochebrune
+* [[Milly Mathis]] - The aunt from Cavaillon
+* [[Pierre Moncorbier]] - L'oncle vigneron
+* [[Jean Panisse]] - The butcher
+* [[Maurice Sarfati]] - The cousin from Cavaillon
+* [[Dany Saval]]
+* [[Jean-Marie Serreau]] - Le Jéhovah de Perthuis
+* [[Madeleine Sylvain]] - La bouchère
+* [[Arlette Thomas]] - La femme de Dabisse
+
+==Reception==
+
+[[Jean-Luc Godard]] considered it the best French film of 1958.<ref>Jean-Luc Godard, ''Godard par Godard'' (Flammarion, 1989; ISBN 978-2-08-081516-3), pp. 179-180.</ref>
+
+==References==
+{{reflist}}
+
+==External links==
+*{{imdb title|id=0050346|title=Girl and the River}}
+
+{{Golden Globe Award for Best Foreign Language Film}}
+
+{{DEFAULTSORT:Girl And The River}}
+[[Category:1958 films]]
+[[Category:1958 French-language films]]
+[[Category:1958 drama films]]
+[[Category:Films based on works by Jean Giono]]
+[[Category:Films directed by François Villiers]]
+[[Category:French drama films]]
+[[Category:1958 French films]]
+[[Category:French-language drama films]]
+
+
+{{1950s-France-film-stub}}

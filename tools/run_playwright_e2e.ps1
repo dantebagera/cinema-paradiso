@@ -24,11 +24,16 @@ $env:CP_TEST_DIST_DIR = $isolatedDist
 Write-Output "CP_TEST_ROOT=$isolatedRoot"
 
 try {
+    if (Get-NetTCPConnection -LocalPort 5117 -State Listen -ErrorAction SilentlyContinue) {
+        throw 'Port 5117 is already owned by another process.'
+    }
     $python = Join-Path $projectRoot '.venv\Scripts\python.exe'
     & $python -m tests.seed_iptv_e2e $isolatedRoot
     if ($LASTEXITCODE -ne 0) {
         throw "Could not create isolated IPTV provider fixtures."
     }
+    & $python -m tests.seed_movie_awards_e2e $isolatedRoot
+    if ($LASTEXITCODE -ne 0) { throw 'Could not create isolated awards fixtures.' }
     & npm.cmd run build -- --outDir $isolatedDist
     if ($LASTEXITCODE -ne 0) {
         throw "Could not build the isolated Playwright frontend."

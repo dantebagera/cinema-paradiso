@@ -1,0 +1,983 @@
+{{Short description|Award}}
+{{Infobox award
+| name = [[Golden Globes|Golden Globe]] for Best Original Score
+| image = LudwigGoransson-byPhilipRomano.jpg
+| image_caption = Current award holder: Ludwig Göransson
+| awarded_for = Best Score Written for a Motion Picture
+| presenter = [[Dick Clark Productions]]
+| location = [[United States]]
+| holder = [[Ludwig Göransson]] for ''[[Sinners (2025 film)|Sinners]]'' (2025)
+| website = {{url|goldenglobes.com}}
+}}
+
+The '''Golden Globe Award for Best Original Score'''<ref name=awardshomepage>{{cite web |url=http://www.hfpa.org/browse/years |title=HFPS Golden Globes Page |access-date=2007-06-26 |publisher=[[Hollywood Foreign Press Association]] |url-status=dead |archive-url=https://web.archive.org/web/20070715210543/http://www.hfpa.org/browse/years |archive-date=2007-07-15}}</ref> is a [[Golden Globes|Golden Globe Award]] presented by the [[Hollywood Foreign Press Association]] (HFPA), an organization of journalists who cover the [[United States]] [[film industry]], but are affiliated with publications outside North America, since its institution in 1947.
+
+==History==
+Since the [[5th Golden Globe Awards]] (1947), the award is presented annually, except from 1953 to 1958. The nominations from 1947 and 1948 are not available.<ref name=nonoms47>{{cite web|url=http://www.hfpa.org/browse/year/1947 |title=The 5th Annual Golden Globe Awards (1948) |access-date=2007-06-26 |publisher=Hollywood Foreign Press Association |url-status=dead |archive-url=https://web.archive.org/web/20070607223818/http://www1.hfpa.org/browse/year/1947 |archive-date=2007-06-07 }} Nominations for 1947 are not available.</ref><ref name=nonoms48>{{cite web|url=http://www.hfpa.org/browse/year/1948 |title=The 6th Annual Golden Globe Awards (1949) |access-date=2007-06-26 |publisher=Hollywood Foreign Press Association |url-status=dead |archive-url=https://web.archive.org/web/20070608000234/http://www1.hfpa.org/browse/year/1948 |archive-date=2007-06-08 }} Nominations for 1948 are not available.</ref> The first Best Original Score award went to [[Max Steiner]] for his compositional work on ''[[Life with Father (film)|Life with Father]]''.
+
+[[John Williams]] is the artist with the most nominations (24); those resulted in 4 wins. [[Dimitri Tiomkin]] had the same number of wins, but out of only 5 nominations. Other notable achievers include [[Maurice Jarre]] (10 nominations, 4 wins), [[Alan Menken]] (5 nominations, 3 wins), [[Hans Zimmer]] (15 nominations, 3 wins),  [[Justin Hurwitz]] (3 nominations, 3 wins) and [[Alexandre Desplat]] (15 nominations, 2 wins). 
+
+Artists like [[Jerry Goldsmith]] (9 nominations) and [[Michel Legrand]] (7 nominations) were nominated several times but never received the award. Dimitri Tiomkin, [[Alan Menken]] and [[Howard Shore]] are the only composers to win two consecutive awards. Additionally, Dimitri Tiomkin received ''Special Achievement Awards'' for his services to film music in 1955 and 1957, as did [[Hugo Friedhofer]] in 1958. The most recent recipient of this award was [[Ludwig Göransson]] for ''[[Sinners (2025 film)|Sinners]]''.
+
+==Winners and nominees==
+;Key
+{| class="wikitable"
+|-
+! scope="col" | Sign
+! scope="col" | Meaning
+|-
+| style="background:#B0C4DE;"|
+| Indicates the winner
+|}
+
+=== 1940s ===
+{| class="wikitable sortable unsortable" style="width:95%;"
+|-
+! scope="col" style="width:70pt" | Year{{ref|a|1}}
+! scope="col" style="width:40%" | Film
+! scope="col" | Composer(s)
+! scope="col" class="unsortable" style="width:30pt"| Ref.
+|-
+! style="text-align:center;" | [[5th Golden Globe Awards|1947]]
+| style="background:#B0C4DE;" | ''[[Life with Father (film)|'''Life with Father''']]'' || style="background:#B0C4DE;" | '''{{sortname|Max|Steiner}}''' || <ref name="a">{{cite web|url=http://www.goldenglobes.org/browse/year/1946 |title=The 4th Annual Golden Globe Awards (1947) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174049/http://www.goldenglobes.org/browse/year/1946 |archive-date=November 24, 2010 }}</ref>
+|-
+! style="text-align:center;" | [[6th Golden Globe Awards|1948]]
+| style="background:#B0C4DE;" | ''[[The Red Shoes (1948 film)|'''The Red Shoes''']]'' || style="background:#B0C4DE;" | '''{{sortname|Brian|Easdale}}''' ||<ref name="b">{{cite web|url=http://www.goldenglobes.org/browse/year/1947 |title=The 5th Annual Golden Globe Awards (1948) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174244/http://www.goldenglobes.org/browse/year/1947 |archive-date=November 24, 2010 }}</ref>
+|-
+! rowspan="2" style="text-align:center;" | [[7th Golden Globe Awards|1949]] 
+| style="background:#B0C4DE;" | ''[[The Inspector General (1949 film)|'''The Inspector General''']]'' || style="background:#B0C4DE;" | '''{{sortname|Johnny|Green}}''' || rowspan="2" |<ref name="c">{{cite web|url=http://www.goldenglobes.org/browse/year/1948 |title=The 6th Annual Golden Globe Awards (1949) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174249/http://www.goldenglobes.org/browse/year/1948 |archive-date=November 24, 2010 }}</ref>
+|-
+| ''[[All the King's Men (1949 film)|All the King's Men]]'' || {{sortname|Louis|Gruenberg}} 
+|}
+
+=== 1950s ===
+{| class="wikitable sortable unsortable" style="width:95%;"
+|-
+! scope="col" style="width:70pt" | Year{{ref|a|1}}
+! scope="col" style="width:40%"| Film
+! scope="col" | Composer(s)
+! scope="col" class="unsortable" style="width:30pt" | Ref.
+|-
+! rowspan="3" style="text-align:center;" | [[8th Golden Globe Awards|1950]]
+| style="background:#B0C4DE;" | '''''[[Sunset Boulevard (film)|Sunset Boulevard]]''''' || style="background:#B0C4DE;" | '''{{sortname|Franz|Waxman}}''' || rowspan="3" |<ref name="d">{{cite web|url=http://www.goldenglobes.org/browse/year/1949 |title=The 7th Annual Golden Globe Awards (1950) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174256/http://www.goldenglobes.org/browse/year/1949 |archive-date=November 24, 2010 }}</ref>
+|-
+| ''[[A Life of Her Own]]'' || {{sortname|Bronisław|Kaper}} 
+|-
+| ''[[Destination Moon (film)|Destination Moon]]'' || {{sortname|Leith|Stevens}}
+|-
+! rowspan="3" style="text-align:center;" | [[9th Golden Globe Awards|1951]]
+| style="background:#B0C4DE;" | '''''[[September Affair]]''''' || style="background:#B0C4DE;" | '''{{sortname|Victor|Young}}''' || rowspan="3" |<ref name="e">{{cite web|url=http://www.goldenglobes.org/browse/year/1950 |title=The 8th Annual Golden Globe Awards (1951) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174301/http://www.goldenglobes.org/browse/year/1950 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[The Day the Earth Stood Still]]'' || {{sortname|Bernard|Herrmann}} 
+|-
+|''[[The Well (1951 film)|The Well]]'' || {{sortname|Dimitri|Tiomkin}} 
+|-
+! rowspan="3" style="text-align:center;" | [[10th Golden Globe Awards|1952]]
+| style="background:#B0C4DE;" | '''''[[High Noon]]''''' || style="background:#B0C4DE;" | '''{{sortname|Dimitri|Tiomkin}}''' || rowspan="3" |<ref name="f">{{cite web|url=http://www.goldenglobes.org/browse/year/1951 |title=The 9th Annual Golden Globe Awards (1952) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174054/http://www.goldenglobes.org/browse/year/1951 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Ivanhoe (1952 film)|Ivanhoe]]'' || {{sortname|Miklós|Rózsa}}
+|-
+|''[[The Quiet Man]]'' || {{sortname|Victor|Young}} 
+|-
+! style="text-align:center;" |[[11th Golden Globe Awards|1953]]–[[16th Golden Globe Awards|1958]]!! colspan="3" style="text-align:center;" |No award given<ref name="noaw">{{cite web |title=HFPS Golden Globes Page |url=http://www.hfpa.org/browse/years |url-status=dead |archive-url=https://web.archive.org/web/20070715210543/http://www.hfpa.org/browse/years |archive-date=2007-07-15 |access-date=2007-06-26 |publisher=Hollywood Foreign Press Association}} The Original Score Award was not given from 1953 to 1958, according to the individual yearly award pages.</ref>
+|-
+! style="text-align:center;" | [[17th Golden Globe Awards|1959]]
+| style="background:#B0C4DE;" | '''''[[On the Beach (1959 film)|On the Beach]]''''' || style="background:#B0C4DE;" | '''{{sortname|Ernest|Gold|Ernest Gold (composer)}}''' ||<ref name="g">{{cite web|url=http://www.goldenglobes.org/browse/year/1959 |title=The 17th Annual Golden Globe Awards (1960) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174121/http://www.goldenglobes.org/browse/year/1959 |archive-date=November 24, 2010 }}</ref>
+|-
+! rowspan="5" style="text-align:center;" | [[18th Golden Globe Awards|1960]]
+| style="background:#B0C4DE;" | '''''[[The Alamo (1960 film)|The Alamo]]''''' || style="background:#B0C4DE;" | '''{{sortname|Dimitri|Tiomkin}}''' || rowspan="5" |<ref name="h">{{cite web|url=http://www.goldenglobes.org/browse/year/1960 |title=The 18th Annual Golden Globe Awards (1961) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174323/http://www.goldenglobes.org/browse/year/1960 |archive-date=November 24, 2010 }}</ref>
+|-
+| ''[[Exodus (1960 film)|Exodus]]'' || {{sortname|Ernest|Gold|Ernest Gold (composer)}}
+|-
+|''[[Pepe (1960 film)|Pepe]]'' || {{sortname|Johnny|Green}}
+|-
+|''[[Spartacus (film)|Spartacus]]'' || {{sortname|Alex|North}}
+|-
+|''[[The World of Suzie Wong (film)|The World of Suzie Wong]]'' || {{sortname|George|Duning}} 
+|}
+
+=== 1960s ===
+{| class="wikitable sortable unsortable" style="width:95%;"
+|-
+! scope="col" style="width:70pt" | Year{{ref|a|1}}
+! scope="col" style="width:40%"| Film
+! scope="col" | Composer(s)
+! scope="col" class="unsortable" style="width:30pt"| Ref.
+|-
+! rowspan="5" style="text-align:center;" | [[19th Golden Globe Awards|1961]]
+| style="background:#B0C4DE;" | '''''[[The Guns of Navarone (film)|The Guns of Navarone]]''''' || style="background:#B0C4DE;" | '''{{sortname|Dimitri|Tiomkin}}''' || rowspan="5" |<ref name="i">{{cite web|url=http://www.goldenglobes.org/browse/year/1961 |title=The 19th Annual Golden Globe Awards (1962) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20120308232030/http://www.goldenglobes.org/browse/year/1961 |archive-date=March 8, 2012 }}</ref>
+|-
+|''[[El Cid (film)|El Cid]]'' || {{sortname|Miklós|Rózsa}}
+|-
+|''[[Fanny (1961 film)|Fanny]]'' || {{sortname|Harold|Rome}}
+|-
+|''[[King of Kings (1961 film)|King of Kings]]'' || {{sortname|Miklós|Rózsa}} 
+|-
+|''[[Summer and Smoke (film)|Summer and Smoke]]'' || {{sortname|Elmer|Bernstein}}
+|-
+! rowspan="5" style="text-align:center;" | [[20th Golden Globe Awards|1962]]
+| style="background:#B0C4DE;" | '''''[[To Kill a Mockingbird (film)|To Kill a Mockingbird]]''''' || style="background:#B0C4DE;" | '''{{sortname|Elmer|Bernstein}}''' || rowspan="5" |<ref name="j">{{cite web|url=http://www.goldenglobes.org/browse/year/1962 |title=The 20th Annual Golden Globe Awards (1963) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174328/http://www.goldenglobes.org/browse/year/1962 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Lawrence of Arabia (film)|Lawrence of Arabia]]'' || {{sortname|Maurice|Jarre}}
+|-
+|''[[Mutiny on the Bounty (1962 film)|Mutiny on the Bounty]]'' || {{sortname|Bronisław|Kaper}}
+|-
+|''[[Taras Bulba (1962 film)|Taras Bulba]]'' || {{sortname|Franz|Waxman}}
+|-
+|''[[The Music Man (1962 film)|The Music Man]]'' || {{sortname|Meredith|Willson}} 
+|-
+! style="text-align:center;" |[[21st Golden Globe Awards|1963]]!! colspan="3" style="text-align:center;" |No award given<ref name="noaw" />
+|-
+! rowspan="5" style="text-align:center;" | [[22nd Golden Globe Awards|1964]]
+| style="background:#B0C4DE;" | '''''[[The Fall of the Roman Empire (film)|The Fall of the Roman Empire]]''''' || style="background:#B0C4DE;" | '''{{sortname|Dimitri|Tiomkin}}''' || rowspan="5" |<ref name="k">{{cite web|url=http://www.goldenglobes.org/browse/year/1963 |title=The 22nd Annual Golden Globe Awards (1964) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174333/http://www.goldenglobes.org/browse/year/1963 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Becket (1964 film)|Becket]]'' || {{sortname|Laurence|Rosenthal}}
+|-
+|''[[Mary Poppins (film)|Mary Poppins]]'' || {{sortname|Sherman|Brothers}} 
+|-
+|''[[Seven Days in May]]'' || {{sortname|Jerry|Goldsmith}} 
+|-
+|''[[Zorba the Greek (film)|Zorba the Greek (Alexis Zorbas)]]'' || {{sortname|Mikis|Theodorakis}} 
+|-
+! rowspan="5" style="text-align:center;" | [[23rd Golden Globe Awards|1965]]
+| style="background:#B0C4DE;" | '''''[[Doctor Zhivago (film)|Doctor Zhivago]]''''' || style="background:#B0C4DE;" | '''{{sortname|Maurice|Jarre}}''' || rowspan="5" |<ref name="l">{{cite web|url=http://www.goldenglobes.org/browse/year/1964 |title=The 23rd Annual Golden Globe Awards (1965) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174338/http://www.goldenglobes.org/browse/year/1964 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Battle of the Bulge (1965 film)|Battle of the Bulge]]'' || {{sortname|Benjamin|Frankel}} 
+|-
+|''[[The Great Race]]'' || {{sortname|Henry|Mancini}} 
+|-
+|''[[The Sandpiper]]'' || {{sortname|Johnny|Mandel}} 
+|-
+|''[[The Yellow Rolls-Royce]]'' || {{sortname|Riz|Ortolani}} 
+|-
+! rowspan="5" style="text-align:center;" | [[24th Golden Globe Awards|1966]]
+| style="background:#B0C4DE;" | '''''[[Hawaii (1966 film)|Hawaii]]''''' || style="background:#B0C4DE;" | '''{{sortname|Elmer|Bernstein}}''' || rowspan="5" |<ref name="m">{{cite web|url=http://www.goldenglobes.org/browse/year/1965 |title=The 24th Annual Golden Globe Awards (1966) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174131/http://www.goldenglobes.org/browse/year/1965 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[A Man and a Woman]]'' || {{sortname|Francis|Lai}} 
+|-
+|''[[Is Paris Burning? (film)|Is Paris Burning? (Paris brûle-t-il?)]]'' || {{sortname|Maurice|Jarre}} 
+|-
+|''[[The Bible: In the Beginning...]]'' || {{sortname|Toshiro|Mayuzumi}}
+|-
+|''[[The Sand Pebbles (film)|The Sand Pebbles]]'' || {{sortname|Jerry|Goldsmith}}
+|-
+! rowspan="5" style="text-align:center;" | [[25th Golden Globe Awards|1967]]
+| style="background:#B0C4DE;" | '''''[[Camelot (film)|Camelot]]''''' || style="background:#B0C4DE;" | '''{{sortname|Frederick|Loewe}}''' || rowspan="5" |<ref name="n">{{cite web|url=http://www.goldenglobes.org/browse/year/1966 |title=The 25th Annual Golden Globe Awards (1967) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174343/http://www.goldenglobes.org/browse/year/1966 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Doctor Dolittle (1967 film)|Doctor Dolittle]]'' || {{sortname|Leslie|Bricusse}}
+|-
+|''[[Live for Life|Live for Life (Vivre Pour Vivre)]]'' || {{sortname|Francis|Lai}} 
+|-
+|''[[Thoroughly Modern Millie]]'' || {{sortname|Elmer|Bernstein}} 
+|-
+|''[[Two for the Road (film)|Two for the Road]]'' || {{sortname|Henry|Mancini}} 
+|-
+! rowspan="7" style="text-align:center;" | [[26th Golden Globe Awards|1968]]
+| style="background:#B0C4DE;" | '''''[[The Shoes of the Fisherman (movie)|The Shoes of the Fisherman]]''''' || style="background:#B0C4DE;" | '''{{sortname|Alex|North}}''' || rowspan="6" |<ref name="o">{{cite web|url=http://www.goldenglobes.org/browse/year/1967 |title=The 26th Annual Golden Globe Awards (1968) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174136/http://www.goldenglobes.org/browse/year/1967 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Chitty Chitty Bang Bang (film)|Chitty Chitty Bang Bang]]'' || {{sortname|Sherman|Brothers}} 
+|-
+| style="background:#AAAAAA;" | ''[[Oliver! (film)|Oliver!]]'' || style="background:#AAAAAA;" | {{sortname|Lionel|Bart}} (declared ineligible and removed from ballot)<ref name=lionelbart>{{cite news|url=http://theenvelope.latimes.com/extras/lostmind/year/1968/1968gg.htm |title=1968 Golden Globes |access-date=2007-06-29 |publisher=Los Angeles Times Envelope Awards Site |archive-url=https://web.archive.org/web/20070518055856/http://theenvelope.latimes.com/extras/lostmind/year/1968/1968gg.htm |archive-date=2007-05-18 |url-status=dead }}</ref>
+|-
+|''[[Romeo and Juliet (1968 film)|Romeo and Juliet]]'' || {{sortname|Nino|Rota}} 
+|-
+|''[[Rosemary's Baby (film)|Rosemary's Baby]]'' || {{sortname|Krzysztof|Komeda}} 
+|-
+|''[[The Lion in Winter (1968 film)|The Lion in Winter]]'' || {{sortname|John|Barry|John Barry (composer)}}
+|-
+|''[[The Thomas Crown Affair (1968 film)|The Thomas Crown Affair]]'' || {{sortname|Michel|Legrand}}
+|-
+! rowspan="5" style="text-align:center;" | [[27th Golden Globe Awards|1969]]
+| style="background:#B0C4DE;" | '''''[[Butch Cassidy and the Sundance Kid]]''''' || style="background:#B0C4DE;" | '''{{sortname|Burt|Bacharach}}''' || rowspan="5" |<ref name="p">{{cite web|url=http://www.goldenglobes.org/browse/year/1968 |title=The 27th Annual Golden Globe Awards (1969) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174348/http://www.goldenglobes.org/browse/year/1968 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Anne of the Thousand Days]]'' || {{sortname|Georges|Delerue}}
+|-
+|''[[Goodbye, Mr. Chips (1969 film)|Goodbye, Mr. Chips]]'' || {{sortname|Leslie|Bricusse}}
+|-
+|''[[The Happy Ending]]'' || {{sortname|Michel|Legrand}} 
+|-
+|''[[The Secret of Santa Vittoria]]'' || {{sortname|Ernest|Gold|Ernest Gold (composer)}}
+|}
+
+===1970s ===
+{| class="wikitable sortable unsortable" style="width:95%;"
+|-
+! scope="col" style="width:70pt" | Year{{ref|a|1}}
+! scope="col" style="width:40%" | Film
+! scope="col" | Composer(s)
+! scope="col" class="unsortable" style="width:30pt" | Ref.
+|-
+! rowspan="5" style="text-align:center;" | [[28th Golden Globe Awards|1970]]
+| style="background:#B0C4DE;" | '''''[[Love Story (1970 film)|Love Story]]''''' || style="background:#B0C4DE;" | '''{{sortname|Francis|Lai}}''' || rowspan="5" |<ref name="q">{{cite web|url=http://www.goldenglobes.org/browse/year/1969 |title=The 28th Annual Golden Globe Awards (1970) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174353/http://www.goldenglobes.org/browse/year/1969 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Airport (1970 film)|Airport]]'' || {{sortname|Alfred|Newman|Alfred Newman (composer)}}
+|-
+|''[[Cromwell (film)|Cromwell]]'' || {{sortname|Frank|Cordell|Frank Cordell (musician)}}
+|-
+|''[[Scrooge (1970 film)|Scrooge]]'' || {{sortname|Leslie|Bricusse}}
+|-
+|''[[Wuthering Heights (1970 film)|Wuthering Heights]]'' || {{sortname|Michel|Legrand}} 
+|-
+! rowspan="5" style="text-align:center;" | [[29th Golden Globe Awards|1971]]
+| style="background:#B0C4DE;" | '''''[[Shaft (1971 film)|Shaft]]''''' || style="background:#B0C4DE;" | '''{{sortname|Isaac|Hayes}}''' || rowspan="5" |<ref name="r">{{cite web|url=http://www.goldenglobes.org/browse/year/1970 |title=The 29th Annual Golden Globe Awards (1971) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174141/http://www.goldenglobes.org/browse/year/1970 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Le Mans (film)|Le Mans]]'' || {{sortname|Michel|Legrand}} 
+|-
+|''[[Mary, Queen of Scots (1971 film)|Mary, Queen of Scots]]'' || {{sortname|John|Barry|John Barry (composer)}}
+|-
+|''[[Summer of '42]]'' || {{sortname|Michel|Legrand}}
+|-
+|''[[The Andromeda Strain (film)|The Andromeda Strain]]'' || {{sortname|Gil|Melle}} 
+|-
+! rowspan="5" style="text-align:center;" | [[30th Golden Globe Awards|1972]]
+| style="background:#B0C4DE;" | '''''[[The Godfather]]''''' || style="background:#B0C4DE;" | '''{{sortname|Nino|Rota}}''' || rowspan="5" |<ref name="s">{{cite web|url=http://www.goldenglobes.org/browse/year/1971 |title=The 30th Annual Golden Globe Awards (1972) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174146/http://www.goldenglobes.org/browse/year/1971 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Frenzy]]'' || {{sortname|Ron|Goodwin}} 
+|-
+|''[[The Getaway (1972 film)|The Getaway]]'' || {{sortname|Quincy|Jones}} 
+|-
+|''[[Lady Sings the Blues (film)|Lady Sings the Blues]]'' || {{sortname|Michel|Legrand}}
+|-
+|''[[The Poseidon Adventure (1972 film)|The Poseidon Adventure]]'' || {{sortname|John|Williams}}
+|-
+! rowspan="6" style="text-align:center;" | [[31st Golden Globe Awards|1973]]
+| style="background:#B0C4DE;" | '''''[[Jonathan Livingston Seagull]]''''' || style="background:#B0C4DE;" | '''{{sortname|Neil|Diamond}}''' || rowspan="6" |<ref name="t">{{cite web|url=http://www.goldenglobes.org/browse/year/1972 |title=The 31st Annual Golden Globe Awards (1973) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174151/http://www.goldenglobes.org/browse/year/1972 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Breezy]]'' || {{sortname|Michel|Legrand}} 
+|-
+|''[[Cinderella Liberty]]'' || {{sortname|John|Williams}}
+|-
+|''[[O Lucky Man!]]'' || {{sortname|Alan|Price}} 
+|-
+|''[[The Day of the Dolphin]]'' || {{sortname|Georges|Delerue}}
+|-
+|''[[Tom Sawyer (1973 film)|Tom Sawyer]]'' || {{sortname|Sherman|Brothers}}, {{sortname|John|Williams}}
+|-
+! rowspan="5" style="text-align:center;" | [[32nd Golden Globe Awards|1974]]
+| style="background:#B0C4DE;" | '''''[[The Little Prince (1974 film)|The Little Prince]]''''' || style="background:#B0C4DE;" | '''{{sortname|Alan Jay|Lerner}}, {{sortname|Frederick|Loewe}}''' || rowspan="5" |<ref name="u">{{cite web|url=http://www.goldenglobes.org/browse/year/1973 |title=The 32nd Annual Golden Globe Awards (1974) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20080430182800/http://www.goldenglobes.org/browse/year/1973 |archive-date=April 30, 2008 }}</ref>
+|-
+|''[[Chinatown (1974 film)|Chinatown]]'' || {{sortname|Jerry|Goldsmith}}
+|-
+|''[[Earthquake (1974 film)|Earthquake]]'' || {{sortname|John|Williams}}
+|-
+|''[[Phantom of the Paradise]]'' || {{sortname|Paul|Williams|Paul Williams (songwriter)}} 
+|-
+|''[[The Godfather Part II]]'' || {{sortname|Carmine|Coppola}}, {{sortname|Nino|Rota}} 
+|-
+! rowspan="5" style="text-align:center;" | [[33rd Golden Globe Awards|1975]]
+| style="background:#B0C4DE;" | '''''[[Jaws (film)|Jaws]]''''' || style="background:#B0C4DE;" | '''{{sortname|John|Williams}}''' || rowspan="5" |<ref name="v">{{cite web|url=http://www.goldenglobes.org/browse/year/1974 |title=The 33rd Annual Golden Globe Awards (1975) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174407/http://www.goldenglobes.org/browse/year/1974 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Funny Lady]]'' || {{sortname|Fred|Ebb}}, {{sortname|John|Kander}}
+|-
+|''[[The Man Who Would Be King (film)|The Man Who Would Be King]]'' || {{sortname|Maurice|Jarre}} 
+|-
+|''[[The Other Side of the Mountain]]'' || {{sortname|Charles|Fox|Charles Fox (composer)}} 
+|-
+|''[[The Return of the Pink Panther]]'' || {{sortname|Henry|Mancini}} 
+|-
+! rowspan="5" style="text-align:center;" | [[34th Golden Globe Awards|1976]]
+| style="background:#B0C4DE;" | '''''[[A Star Is Born (1976 film)|A Star is Born]]''''' || style="background:#B0C4DE;" | '''{{sortname|Kenneth|Ascher}}, {{sortname|Paul|Williams|Paul Williams (songwriter)}}''' || rowspan="5" |<ref name="w">{{cite web|url=http://www.goldenglobes.org/browse/year/1975 |title=The 34th Annual Golden Globe Awards (1976) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174412/http://www.goldenglobes.org/browse/year/1975 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Bugsy Malone]]'' || {{sortname|Paul|Williams|Paul Williams (songwriter)}}
+|-
+|''[[Rocky]]'' || {{sortname|Bill|Conti}} 
+|-
+|''[[The Slipper and the Rose]]'' || {{sortname|Sherman|Brothers}} 
+|-
+|''[[Voyage of the Damned]]'' || {{sortname|Lalo|Schifrin}}
+|-
+! rowspan="5" style="text-align:center;" | [[35th Golden Globe Awards|1977]]
+| style="background:#B0C4DE;" | '''''[[Star Wars (film)|Star Wars]]''''' || style="background:#B0C4DE;" | '''{{sortname|John|Williams}}''' || rowspan="5" |<ref name="x">{{cite web|url=http://www.goldenglobes.org/browse/year/1976 |title=The 35th Annual Golden Globe Awards (1977) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174156/http://www.goldenglobes.org/browse/year/1976 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Close Encounters of the Third Kind]]'' || {{sortname|John|Williams}}
+|-
+|''[[Pete's Dragon (1977 film)|Pete's Dragon]]'' || {{sortname|Joel|Hirschhorn}}, {{sortname|Al|Kasha}}
+|-
+|''[[Saturday Night Fever]]'' || {{sortname|Barry|Gibb}}, {{sortname|Maurice|Gibb}}, {{sortname|Robin|Gibb}}, {{sortname|David|Shire}} 
+|-
+|''[[The Spy Who Loved Me (film)|The Spy Who Loved Me]]'' || {{sortname|Marvin|Hamlisch}}
+|-
+! rowspan="5" style="text-align:center;" | [[36th Golden Globe Awards|1978]]
+| style="background:#B0C4DE;" | '''''[[Midnight Express (film)|Midnight Express]]''''' || style="background:#B0C4DE;" | '''{{sortname|Giorgio|Moroder}}''' || rowspan="5" |<ref name="y">{{cite web|url=http://www.goldenglobes.org/browse/year/1977 |title=The 36th Annual Golden Globe Awards (1978) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174418/http://www.goldenglobes.org/browse/year/1977 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[An Unmarried Woman]]'' || {{sortname|Bill|Conti}} 
+|-
+|''[[Superman (1978 film)|Superman]]'' || {{sortname|John|Williams}}
+|-
+|''[[The Children of Sanchez (film)|The Children of Sanchez]]'' || {{sortname|Chuck|Mangione}} 
+|-
+|''[[The Lord of the Rings (1978 film)|The Lord of the Rings]]'' || {{sortname|Leonard|Rosenman}} 
+|-
+! rowspan="7" style="text-align:center;" | [[37th Golden Globe Awards|1979]]
+| style="background:#B0C4DE;" | '''''[[Apocalypse Now]]''''' || style="background:#B0C4DE;" | '''{{sortname|Carmine|Coppola}}, {{sortname|Francis Ford|Coppola}}''' || rowspan="7" |<ref name="z">{{cite web|url=http://www.goldenglobes.org/browse/year/1978 |title=The 37th Annual Golden Globe Awards (1979) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174423/http://www.goldenglobes.org/browse/year/1978 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[10 (1979 film)|10]]'' || {{sortname|Henry|Mancini}}
+|-
+|''[[A Little Romance]]'' || {{sortname|Georges|Delerue}}
+|-
+|''[[Alien (film)|Alien]]'' || {{sortname|Jerry|Goldsmith}} 
+|-
+|''[[The Black Stallion (film)|The Black Stallion]]'' || {{sortname|Carmine|Coppola}} 
+|-
+|''[[Star Trek: The Motion Picture]]'' || {{sortname|Jerry|Goldsmith}}
+|-
+|''[[The Amityville Horror (1979 film)|The Amityville Horror]]'' || {{sortname|Lalo|Schifrin}}
+|}
+
+=== 1980s ===
+{| class="wikitable sortable unsortable" style="width:95%;"
+|-
+! scope="col" style="width:70pt" | Year{{ref|a|1}}
+! scope="col" style="width:40%" | Film
+! scope="col" | Composer(s)
+! scope="col" class="unsortable" style="width:30pt" | Ref.
+|-
+! rowspan="6" style="text-align:center;" | [[38th Golden Globe Awards|1980]]
+| style="background:#B0C4DE;" | '''''[[The Stunt Man]]''''' || style="background:#B0C4DE;" | '''{{sortname|Dominic|Frontiere}}''' || rowspan="6" |<ref name="aa">{{cite web|url=http://www.goldenglobes.org/browse/year/1979 |title=The 38th Annual Golden Globe Awards (1980) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174201/http://www.goldenglobes.org/browse/year/1979 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[American Gigolo]]'' || {{sortname|Giorgio|Moroder}} 
+|-
+|''[[Fame (1980 film)|Fame]]'' || {{sortname|Michael|Gore}}
+|-
+|''[[Somewhere in Time (film)|Somewhere in Time]]'' ||{{sortname|John|Barry|John Barry (composer)}} 
+|-
+|''[[The Empire Strikes Back]]'' || {{sortname|John|Williams}}
+|-
+|''[[The Competition (1980 film)|The Competition]]'' || {{sortname|Lalo|Schifrin}} 
+|-
+! rowspan="5" style="text-align:center;" | [[40th Golden Globe Awards|1982]]
+| style="background:#B0C4DE;" | '''''[[E.T. the Extra-Terrestrial]]''''' || style="background:#B0C4DE;" | '''{{sortname|John|Williams}}''' || rowspan="5" |<ref name="ab">{{cite web|url=http://www.goldenglobes.org/browse/year/1981 |title=The 40th Annual Golden Globe Awards (1982) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174212/http://www.goldenglobes.org/browse/year/1981 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Blade Runner]]'' || [[Vangelis]] 
+|-
+|''[[Cat People (1982 film)|Cat People]]'' || {{sortname|Giorgio|Moroder}} 
+|-
+|''[[Six Weeks]]'' || {{sortname|Dudley|Moore}} 
+|-
+|''[[Victor/Victoria]]'' || {{sortname|Henry|Mancini}} 
+|-
+! rowspan="5" style="text-align:center;" | [[41st Golden Globe Awards|1983]]
+| style="background:#B0C4DE;" | '''''[[Flashdance]]''''' || style="background:#B0C4DE;" | '''{{sortname|Giorgio|Moroder}}''' || rowspan="5" |<ref name="ac">{{cite web|url=http://www.goldenglobes.org/browse/year/1982 |title=The 41st Annual Golden Globe Awards (1983) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174218/http://www.goldenglobes.org/browse/year/1982 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Rumble Fish]]'' || {{sortname|Stewart|Copeland}} 
+|-
+|''[[Scarface (1983 film)|Scarface]]'' || {{sortname|Giorgio|Moroder}} 
+|-
+|''[[Under Fire (1983 film)|Under Fire]]'' || {{sortname|Jerry|Goldsmith}}
+|-
+|''[[Yentl (film)|Yentl]]'' || [[Alan and Marilyn Bergman|Alan & Marilyn Bergman]], {{sortname|Michel|Legrand}} 
+|-
+! rowspan="5" style="text-align:center;" | [[42nd Golden Globe Awards|1984]]
+| style="background:#B0C4DE;" | '''''[[A Passage to India (film)|A Passage to India]]''''' || style="background:#B0C4DE;" | '''{{sortname|Maurice|Jarre}}''' || rowspan="5" |<ref name="ad">{{cite web|url=http://www.goldenglobes.org/browse/year/1983 |title=The 42nd Annual Golden Globe Awards (1984) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174224/http://www.goldenglobes.org/browse/year/1983 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Starman (1984 film)|Starman]]'' || {{sortname|Jack|Nitzsche}} 
+|-
+|''[[Once Upon a Time in America]]'' || {{sortname|Ennio|Morricone}} 
+|-
+|''[[The Killing Fields (film)|The Killing Fields]]'' || {{sortname|Mike|Oldfield}} 
+|-
+|''[[The River (1984 film)|The River]]'' || {{sortname|John|Williams}}
+|-
+! rowspan="5" style="text-align:center;" | [[43rd Golden Globe Awards|1985]]
+| style="background:#B0C4DE;" | '''''[[Out of Africa (film)|Out of Africa]]''''' ||  style="background:#B0C4DE;" | '''{{sortname|John|Barry|John Barry (composer)}}''' || rowspan="5" |<ref name="ae">{{cite web|url=http://www.goldenglobes.org/browse/year/1984 |title=The 43rd Annual Golden Globe Awards (1985) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174229/http://www.goldenglobes.org/browse/year/1984 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[The Color Purple (1985 film)|The Color Purple]]'' || {{sortname|Quincy|Jones}}
+|-
+|''[[White Nights (1985 film)|White Nights]]'' || {{sortname|Michel|Colombier}} 
+|-
+|''[[Witness (1985 film)|Witness]]'' || {{sortname|Maurice|Jarre}}
+|-
+|''[[Year of the Dragon (1985 film)|Year of the Dragon]]'' || {{sortname|David|Mansfield}} 
+|-
+! rowspan="5" style="text-align:center;" | [[44th Golden Globe Awards|1986]]
+| style="background:#B0C4DE;" | '''''[[The Mission (1986 film)|The Mission]]''''' || style="background:#B0C4DE;" | '''{{sortname|Ennio|Morricone}}''' || rowspan="5" |<ref name="af">{{cite web|url=http://www.goldenglobes.org/browse/year/1985 |title=The 44th Annual Golden Globe Awards (1986) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174429/http://www.goldenglobes.org/browse/year/1985 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Little Shop of Horrors (film)|Little Shop of Horrors]]'' || {{sortname|Miles|Goodman}} 
+|-
+|''[[Round Midnight (film)|Round Midnight]]'' || {{sortname|Herbie|Hancock}} 
+|-
+|''[[The Mosquito Coast (film)|The Mosquito Coast]]'' || {{sortname|Maurice|Jarre}} 
+|-
+|''[[Top Gun]]'' || {{sortname|Harold|Faltermeyer}} 
+|-
+! rowspan="5" style="text-align:center;" | [[45th Golden Globe Awards|1987]]
+| style="background:#B0C4DE;" | '''''[[The Last Emperor]]''''' || style="background:#B0C4DE;" | '''{{sortname|David|Byrne}}, {{sortname|Ryuichi|Sakamoto}}, {{sortname|Cong|Su}}''' || rowspan="5" |<ref name="ag">{{cite web|url=http://www.goldenglobes.org/browse/year/1986 |title=The 45th Annual Golden Globe Awards (1987) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174434/http://www.goldenglobes.org/browse/year/1986 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Cry Freedom]]'' || {{sortname|George|Fenton}}, {{sortname|Jonas|Gwangwa}}
+|-
+|''[[Empire of the Sun (film)|Empire of the Sun]]'' || {{sortname|John|Williams}}
+|-
+|''[[The Glass Menagerie (1987 film)|The Glass Menagerie]]'' || {{sortname|Henry|Mancini}} 
+|-
+|''[[The Untouchables (film)|The Untouchables]]'' || {{sortname|Ennio|Morricone}}
+|-
+! rowspan="5" style="text-align:center;" | [[46th Golden Globe Awards|1988]]
+| style="background:#B0C4DE;" | '''''[[Gorillas in the Mist]]''''' || style="background:#B0C4DE;" | '''{{sortname|Maurice|Jarre}}''' || rowspan="5" |<ref name="ah">{{cite web|url=http://www.goldenglobes.org/browse/year/1987 |title=The 46th Annual Golden Globe Awards (1988) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174439/http://www.goldenglobes.org/browse/year/1987 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Madame Sousatzka]]'' || {{sortname|Gerald|Gouriet|nolink=1}} 
+|-
+|''[[The Accidental Tourist (film)|The Accidental Tourist]]'' || {{sortname|John|Williams}}
+|-
+|''[[The Last Temptation of Christ (film)|The Last Temptation of Christ]]'' || {{sortname|Peter|Gabriel}} 
+|-
+|''[[The Milagro Beanfield War]]'' || {{sortname|Dave|Grusin}} 
+|-
+! rowspan="5" style="text-align:center;" | [[47th Golden Globe Awards|1989]]
+| style="background:#B0C4DE;" | '''''[[The Little Mermaid (1989 film)|The Little Mermaid]]''''' || style="background:#B0C4DE;" | '''{{sortname|Alan|Menken}}''' || rowspan="5" |<ref name="ai">{{cite web|url=http://www.goldenglobes.org/browse/year/1988 |title=The 47th Annual Golden Globe Awards (1989) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101124174445/http://www.goldenglobes.org/browse/year/1988 |archive-date=November 24, 2010 }}</ref>
+|-
+|''[[Born on the Fourth of July (film)|Born on the Fourth of July]]'' || {{sortname|John|Williams}}
+|-
+|''[[Casualties of War]]'' || {{sortname|Ennio|Morricone}} 
+|-
+|''[[Glory (1989 film)|Glory]]'' || {{sortname|James|Horner}} 
+|-
+|''[[The Fabulous Baker Boys]]'' || {{sortname|Dave|Grusin}}
+|}
+
+=== 1990s ===
+{| class="wikitable sortable unsortable" style="width:95%;"
+|-
+! scope="col" style="width:70pt" | Year{{ref|a|1}}
+! scope="col" style="width:40%" | Film
+! scope="col" | Composer(s)
+! scope="col" class="unsortable" style="width:30pt" | Ref.
+|-
+! rowspan="5" style="text-align:center;" | [[48th Golden Globe Awards|1990]]
+| style="background:#B0C4DE;" | '''''[[The Sheltering Sky (film)|The Sheltering Sky]]''''' || style="background:#B0C4DE;" | '''[[Richard Horowitz]], {{sortname|Ryuichi|Sakamoto}}''' || rowspan="5" |<ref name="aj">{{cite web|url=http://www.goldenglobes.org/browse/year/1989 |title=The 48th Annual Golden Globe Awards (1990) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20110527014121/http://www.goldenglobes.org/browse/year/1989 |archive-date=May 27, 2011 }}</ref>
+|-
+|''[[Avalon (1990 film)|Avalon]]'' || {{sortname|Randy|Newman}}
+|-
+|''[[Dances with Wolves]]'' || {{sortname|John|Barry|John Barry (composer)}} 
+|-
+|''[[Havana (film)|Havana]]'' || {{sortname|Dave|Grusin}}
+|-
+|''[[The Godfather Part III]]'' || {{sortname|Carmine|Coppola}} 
+|-
+! rowspan="6" style="text-align:center;" | [[49th Golden Globe Awards|1991]]
+| style="background:#B0C4DE;" | '''''[[Beauty and the Beast (1991 film)|Beauty and the Beast]]''''' || style="background:#B0C4DE;" | '''{{sortname|Alan|Menken}}''' || rowspan="6" |<ref name="ak">{{cite web|url=http://www.goldenglobes.org/browse/year/1990 |title=The 49th Annual Golden Globe Awards (1991) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101007100021/http://www.goldenglobes.org/browse/year/1990 |archive-date=October 7, 2010 }}</ref>
+|-
+|''[[At Play in the Fields of the Lord]]'' || {{sortname|Zbigniew|Preisner}} 
+|-
+|''[[Bugsy]]'' || {{sortname|Ennio|Morricone}}
+|-
+|''[[Dead Again]]'' || {{sortname|Patrick|Doyle}} 
+|-
+|''[[For the Boys]]'' || {{sortname|Dave|Grusin}} 
+|-
+|''[[Robin Hood: Prince of Thieves]]'' || {{sortname|Michael|Kamen}} 
+|-
+! rowspan="5" style="text-align:center;" | [[50th Golden Globe Awards|1992]]
+| style="background:#B0C4DE;" | '''''[[Aladdin (1992 Disney film)|Aladdin]]''''' || style="background:#B0C4DE;" | '''{{sortname|Alan|Menken}}''' || rowspan="5" |<ref name="al">{{cite web|url=http://www.goldenglobes.org/browse/year/1991 |title=The 50th Annual Golden Globe Awards (1992) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101007102216/http://www.goldenglobes.org/browse/year/1991 |archive-date=October 7, 2010 }}</ref>
+|-
+|''{{ntsh|1492}}[[1492: Conquest of Paradise]]'' || [[Vangelis]] 
+|-
+|''[[Basic Instinct]]'' || {{sortname|Jerry|Goldsmith}}
+|-
+|''[[Chaplin (film)|Chaplin]]'' || {{sortname|John|Barry|John Barry (composer)}}
+|-
+|''[[The Last of the Mohicans (1992 film)|The Last of the Mohicans]]'' || {{sortname|Randy|Edelman}}, {{sortname|Trevor|Jones|Trevor Jones (composer)}} 
+|-
+! rowspan="5" style="text-align:center;" | [[51st Golden Globe Awards|1993]]
+| style="background:#B0C4DE;" | '''''[[Heaven & Earth (1993 film)|Heaven & Earth]]''''' || style="background:#B0C4DE;" | '''[[Kitarō]]''' || rowspan="5" |<ref name="am">{{cite web|url=http://www.goldenglobes.org/browse/year/1992 |title=The 51st Annual Golden Globe Awards (1993) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20110705081355/http://www.goldenglobes.org/browse/year/1992 |archive-date=July 5, 2011 }}</ref>
+|-
+|''[[Three Colors: Blue (soundtrack)|Three Colors: Blue]]'' || {{sortname|Zbigniew|Preisner}} 
+|-
+|''[[Schindler's List]]'' || {{sortname|John|Williams}} 
+|-
+|''[[The Piano]]'' || {{sortname|Michael|Nyman}} 
+|-
+|''[[The Nightmare Before Christmas]]'' || {{sortname|Danny|Elfman}} 
+|-
+! rowspan="5" style="text-align:center;" | [[52nd Golden Globe Awards|1994]]
+| style="background:#B0C4DE;" | '''''[[The Lion King]]''''' || style="background:#B0C4DE;" | '''{{sortname|Hans|Zimmer}}''' || rowspan="5" |<ref name="an">{{cite web|url=http://www.goldenglobes.org/browse/year/1993 |title=The 52nd Annual Golden Globe Awards (1994) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101007105537/http://www.goldenglobes.org/browse/year/1993 |archive-date=October 7, 2010 }}</ref>
+|-
+|''[[Forrest Gump]]'' || {{sortname|Alan|Silvestri}}
+|-
+|''[[Interview with the Vampire (film)|Interview with the Vampire]]'' || {{sortname|Elliot|Goldenthal}}
+|-
+|''[[Legends of the Fall]]'' || {{sortname|James|Horner}} 
+|-
+|''[[Nell (film)|Nell]]'' || {{sortname|Mark|Isham}} 
+|-
+! rowspan="5" style="text-align:center;" | [[53rd Golden Globe Awards|1995]]
+| style="background:#B0C4DE;" | '''''[[A Walk in the Clouds]]''''' || style="background:#B0C4DE;" | '''{{sortname|Maurice|Jarre}}''' || rowspan="5" |<ref name="ao">{{cite web|url=http://www.goldenglobes.org/browse/year/1994 |title=The 53rd Annual Golden Globe Awards (1995) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229124115/http://www.goldenglobes.org/browse/year/1994 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[Braveheart]]'' || {{sortname|James|Horner}}
+|-
+|''[[Don Juan DeMarco]]'' || {{sortname|Michael|Kamen}} 
+|-
+|''[[Pocahontas (1995 film)|Pocahontas]]'' || {{sortname|Alan|Menken}} 
+|-
+|''[[Sense and Sensibility (1995 film)|Sense and Sensibility]]'' || {{sortname|Patrick|Doyle}}
+|-
+! rowspan="5" style="text-align:center;" | [[54th Golden Globe Awards|1996]]
+| style="background:#B0C4DE;" | '''''[[The English Patient (film)|The English Patient]]''''' || style="background:#B0C4DE;" | '''{{sortname|Gabriel|Yared}}''' || rowspan="5" |<ref name="ap">{{cite web|url=http://www.goldenglobes.org/browse/year/1995 |title=The 54th Annual Golden Globe Awards (1996) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229135248/http://www.goldenglobes.org/browse/year/1995 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[Michael Collins (film)|Michael Collins]]'' || {{sortname|Elliot|Goldenthal}}
+|-
+|''[[Shine (film)|Shine]]'' || {{sortname|David|Hirschfelder}}
+|-
+|''[[The Hunchback of Notre Dame (1996 film)|The Hunchback of Notre Dame]]''|| {{sortname|Alan|Menken}} 
+|-
+|''[[The Mirror Has Two Faces]]'' || {{sortname|Marvin|Hamlisch}} 
+|-
+! rowspan="5" style="text-align:center;" | [[55th Golden Globe Awards|1997]]
+| style="background:#B0C4DE;" | '''''[[Titanic (1997 film)|Titanic]]''''' || style="background:#B0C4DE;" | '''{{sortname|James|Horner}}''' || rowspan="5" |<ref name="aq">{{cite web|url=http://www.goldenglobes.org/browse/year/1996 |title=The 55th Annual Golden Globe Awards (1997) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101007100026/http://www.goldenglobes.org/browse/year/1996 |archive-date=October 7, 2010 }}</ref>
+|-
+|''[[Gattaca]]'' || {{sortname|Michael|Nyman}} 
+|-
+|''[[Kundun]]'' || {{sortname|Philip|Glass}} 
+|-
+|''[[L.A. Confidential (film)|L.A. Confidential]]'' || {{sortname|Jerry|Goldsmith}}
+|-
+|''[[Seven Years in Tibet (1997 film)|Seven Years in Tibet]]'' || {{sortname|John|Williams}} 
+|-
+! rowspan="5" style="text-align:center;" | [[56th Golden Globe Awards|1998]]
+| style="background:#B0C4DE;" | '''''[[The Truman Show]]''''' || style="background:#B0C4DE;" | '''{{sortname|Burkhard|Dallwitz}}, {{sortname|Philip|Glass}}''' || rowspan="5" |<ref name="ar">{{cite web|url=http://www.goldenglobes.org/browse/year/1997 |title=The 56th Annual Golden Globe Awards (1998) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229124155/http://www.goldenglobes.org/browse/year/1997 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[A Bug's Life]]'' || {{sortname|Randy|Newman}} 
+|-
+|''[[Mulan (1998 film)|Mulan]]'' || {{sortname|Jerry|Goldsmith}} 
+|-
+|''[[Saving Private Ryan]]'' || {{sortname|John|Williams}} 
+|-
+|''[[The Prince of Egypt]]'' || {{sortname|Stephen|Schwartz|Stephen Schwartz (composer)}}, {{sortname|Hans|Zimmer}} 
+|-
+! rowspan="9" style="text-align:center;" | [[57th Golden Globe Awards|1999]]
+| style="background:#B0C4DE;" | '''''[[The Legend of 1900]]''''' || style="background:#B0C4DE;" | '''{{sortname|Ennio|Morricone}}''' || rowspan="9" |<ref name="as">{{cite web|url=http://www.goldenglobes.org/browse/year/1998 |title=The 57th Annual Golden Globe Awards (1999) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229131729/http://www.goldenglobes.org/browse/year/1998 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[American Beauty (1999 film)|American Beauty]]'' || {{sortname|Thomas|Newman}} 
+|-
+|''[[Angela's Ashes (film)|Angela's Ashes]]'' || {{sortname|John|Williams}} 
+|-
+|''[[Anna and the King]]'' || {{sortname|George|Fenton}} 
+|-
+|''[[The End of the Affair (1999 film)|The End of the Affair]]'' || {{sortname|Michael|Nyman}} 
+|-
+|''[[Eyes Wide Shut]]'' || {{sortname|Jocelyn|Pook}} 
+|-
+|''[[The Insider (film)|The Insider]]'' || {{sortname|Pieter|Bourke}}, {{sortname|Lisa|Gerrard}} 
+|-
+|''[[The Straight Story]]'' || {{sortname|Angelo|Badalamenti}} 
+|-
+|''[[The Talented Mr. Ripley (film)|The Talented Mr. Ripley]]'' || {{sortname|Gabriel|Yared}} 
+|}
+
+=== 2000s ===
+{| class="wikitable sortable unsortable" style="width:95%;"
+|-
+! scope="col" style="width:70pt" | Year{{ref|a|1}}
+! scope="col" style="width:40%" | Film
+! scope="col" | Composer(s)
+! scope="col" class="unsortable" style="width:30pt" | Ref.
+|-
+! rowspan="6" style="text-align:center;" | [[58th Golden Globe Awards|2000]]
+| style="background:#B0C4DE;" | '''''[[Gladiator (2000 film)|Gladiator]]''''' || style="background:#B0C4DE;" | '''{{sortname|Hans|Zimmer}}, {{sortname|Lisa|Gerrard}}''' || rowspan="6" |<ref name="at">{{cite web|url=http://www.goldenglobes.org/browse/year/1999 |title=The 58th Annual Golden Globe Awards (2000) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229135040/http://www.goldenglobes.org/browse/year/1999 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[All the Pretty Horses (film)|All the Pretty Horses]]'' || {{sortname|Larry|Paxton|nolink=1}}, {{sortname|Marty|Stuart}}, {{sortname|Kristin|Wilkinson|nolink=1}} 
+|-
+|''[[Chocolat (2000 film)|Chocolat]]'' || {{sortname|Rachel|Portman}}
+|-
+|''[[Crouching Tiger, Hidden Dragon|Crouching Tiger, Hidden Dragon (Wo hu cang long)]]'' || {{sortname|Tan|Dun}} 
+|-
+|''[[Malèna (film)|Malèna]]'' || {{sortname|Ennio|Morricone}}
+|-
+|''[[Sunshine (1999 film)|Sunshine]]'' || {{sortname|Maurice|Jarre}} 
+|-
+! rowspan="8" style="text-align:center;" | [[59th Golden Globe Awards|2001]]
+| style="background:#B0C4DE;" | '''''[[Moulin Rouge!]]''''' || style="background:#B0C4DE;" | '''{{sortname|Craig|Armstrong|Craig Armstrong (composer)}}''' || rowspan="8" |<ref name="au">{{cite web|url=http://www.goldenglobes.org/browse/year/2000 |title=The 59th Annual Golden Globe Awards (2001) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229135635/http://www.goldenglobes.org/browse/year/2000 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[A Beautiful Mind]]'' || {{sortname|James|Horner}}
+|-
+|''[[A.I. Artificial Intelligence]]'' || {{sortname|John|Williams}}
+|-
+|''[[Ali (2001 film)|Ali]]'' || {{sortname|Pieter|Bourke}}, {{sortname|Lisa|Gerrard}} 
+|-
+|''[[The Lord of the Rings: The Fellowship of the Ring]]'' ||  {{sortname|Howard|Shore}}
+|-
+|''[[Mulholland Drive (soundtrack)|Mulholland Drive]]'' || {{sortname|Angelo|Badalamenti}} 
+|-
+|''[[Pearl Harbor (film)|Pearl Harbor]]'' || {{sortname|Hans|Zimmer}} 
+|-
+|''[[The Shipping News (film)|The Shipping News]]'' || {{sortname|Christopher|Young}} 
+|-
+! rowspan="5" style="text-align:center;" | [[60th Golden Globe Awards|2002]]
+| style="background:#B0C4DE;" | '''''[[Frida (2002 film)|Frida]]''''' || style="background:#B0C4DE;" | '''{{sortname|Elliot|Goldenthal}}''' || rowspan="5" |<ref name="av">{{cite web|url=http://www.goldenglobes.org/browse/year/2001 |title=The 60th Annual Golden Globe Awards (2002) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20110509124302/http://www.goldenglobes.org/browse/year/2001 |archive-date=May 9, 2011 }}</ref>
+|-
+|''[[25th Hour]]'' || {{sortname|Terence|Blanchard}} 
+|-
+|''[[Far from Heaven]]'' || {{sortname|Elmer|Bernstein}}
+|-
+|''[[Rabbit-Proof Fence (film)|Rabbit-Proof Fence]]'' || {{sortname|Peter|Gabriel}} 
+|-
+|''[[The Hours (film)|The Hours]]'' || {{sortname|Philip|Glass}}
+|-
+! rowspan="5" style="text-align:center;" | [[61st Golden Globe Awards|2003]]
+| style="background:#B0C4DE;" | '''''[[The Lord of the Rings: The Return of the King]]''''' || style="background:#B0C4DE;" | '''{{sortname|Howard|Shore}}''' || rowspan="5" |<ref name="aw">{{cite web|url=http://www.goldenglobes.org/browse/year/2002 |title=The 61st Annual Golden Globe Awards (2003) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229122316/http://www.goldenglobes.org/browse/year/2002 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[Big Fish]]'' || {{sortname|Danny|Elfman}}
+|-
+|''[[Cold Mountain (film)|Cold Mountain]]'' || {{sortname|Gabriel|Yared}}
+|-
+|''[[Girl with a Pearl Earring (film)|Girl With a Pearl Earring]]'' || {{sortname|Alexandre|Desplat}} 
+|-
+|''[[The Last Samurai]]'' || {{sortname|Hans|Zimmer}} 
+|-
+! rowspan="5" style="text-align:center;" | [[62nd Golden Globe Awards|2004]]
+| style="background:#B0C4DE;" | '''''[[The Aviator (2004 film)|The Aviator]]''''' || style="background:#B0C4DE;" | '''{{sortname|Howard|Shore}}''' || rowspan="5" |<ref name="ax">{{cite web|url=http://www.goldenglobes.org/browse/year/2003 |title=The 62nd Annual Golden Globe Awards (2004) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229131535/http://www.goldenglobes.org/browse/year/2003 |archive-date=December 29, 2010 }}</ref>
+|-
+| ''[[Finding Neverland (film)|Finding Neverland]]'' || {{sortname|Jan A. P.|Kaczmarek}}
+|-
+|''[[Million Dollar Baby]]'' || {{sortname|Clint|Eastwood}} 
+|-
+|''[[Sideways]]'' || {{sortname|Rolfe|Kent}} 
+|-
+|''[[Spanglish (film)|Spanglish]]'' || {{sortname|Hans|Zimmer}} 
+|-
+! rowspan="5" style="text-align:center;" | [[63rd Golden Globe Awards|2005]]
+| style="background:#B0C4DE;" | '''''[[Memoirs of a Geisha (film)|Memoirs of a Geisha]]''''' || style="background:#B0C4DE;" | '''{{sortname|John|Williams}}''' || rowspan="5" |<ref name="ay">{{cite web|url=http://www.goldenglobes.org/browse/year/2004 |title=The 63rd Annual Golden Globe Awards (2005) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229132342/http://www.goldenglobes.org/browse/year/2004 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[Brokeback Mountain]]'' || {{sortname|Gustavo|Santaolalla}} 
+|-
+|''[[King Kong (2005 film)|King Kong]]'' || {{sortname|James Newton|Howard}} 
+|-
+|''[[Syriana]]'' || {{sortname|Alexandre|Desplat}} 
+|-
+|''[[The Chronicles of Narnia: The Lion, the Witch and the Wardrobe]]'' || {{sortname|Harry|Gregson-Williams}} 
+|-
+! rowspan="5" style="text-align:center;" | [[64th Golden Globe Awards|2006]]
+| style="background:#B0C4DE;" | '''''[[The Painted Veil (2006 film)|The Painted Veil]]''''' || style="background:#B0C4DE;" | '''{{sortname|Alexandre|Desplat}}''' || rowspan="5" |<ref name="az">{{cite web|url=http://www.goldenglobes.org/browse/year/2005 |title=The 64th Annual Golden Globe Awards (2006) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229135518/http://www.goldenglobes.org/browse/year/2005 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[Babel (2006 film)|Babel]]'' || {{sortname|Gustavo|Santaolalla}} 
+|-
+|''[[Nomad (2006 film)|Nomad]]'' || {{sortname|Carlo|Siliotto}} 
+|-
+|''[[The Da Vinci Code (film)|The Da Vinci Code]]'' || {{sortname|Hans|Zimmer}} 
+|-
+|''[[The Fountain (film)|The Fountain]]'' || {{sortname|Clint|Mansell}} 
+|-
+! rowspan="5" style="text-align:center;" | [[65th Golden Globe Awards|2007]]
+| style="background:#B0C4DE;" | '''''[[Atonement (2007 film)|Atonement]]''''' || style="background:#B0C4DE;" | '''{{sortname|Dario|Marianelli}}''' || rowspan="5" |<ref name="ba">{{cite web|url=http://www.goldenglobes.org/browse/year/2006 |title=The 65th Annual Golden Globe Awards (2007) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20110318140951/http://www.goldenglobes.org/browse/year/2006 |archive-date=March 18, 2011 }}</ref>
+|-
+|''[[Eastern Promises]]'' || {{sortname|Howard|Shore}} 
+|-
+|''[[Grace Is Gone (film)|Grace Is Gone]]'' || {{sortname|Clint|Eastwood}} 
+|-
+|''[[Into the Wild (film)|Into the Wild]]'' || {{sortname|Michael|Brook}}, {{sortname|Kaki|King}}, {{sortname|Eddie|Vedder}} 
+|-
+|''[[The Kite Runner (film)|The Kite Runner]]'' || {{sortname|Alberto|Iglesias}}
+|-
+! rowspan="5" style="text-align:center;" | [[66th Golden Globe Awards|2008]]
+| style="background:#B0C4DE;" | '''''[[Slumdog Millionaire]]''''' || style="background:#B0C4DE;" | '''{{sortname|A. R.|Rahman}}''' || rowspan="5" |<ref name="bb">{{cite web|url=http://www.goldenglobes.org/browse/year/2007 |title=The 66th Annual Golden Globe Awards (2008) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229131544/http://www.goldenglobes.org/browse/year/2007 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[Changeling (film)|Changeling]]'' || {{sortname|Clint|Eastwood}} 
+|-
+|''[[The Curious Case of Benjamin Button (film)|The Curious Case of Benjamin Button]]'' ||{{sortname|Alexandre|Desplat}}
+|-
+|''[[Defiance (2008 film)|Defiance]]'' || {{sortname|James Newton|Howard}}
+|-
+|''[[Frost/Nixon (film)|Frost/Nixon]]'' || {{sortname|Hans|Zimmer}} 
+|-
+! rowspan="5" style="text-align:center;" | [[67th Golden Globe Awards|2009]]
+| style="background:#B0C4DE;" |'''''[[Up (2009 film)|Up]]'''''|| style="background:#B0C4DE;" | '''{{sortname|Michael|Giacchino}}''' || rowspan="5" |<ref name="bc">{{cite web|url=http://www.goldenglobes.org/browse/year/2008 |title=The 67th Annual Golden Globe Awards (2009) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229130656/http://www.goldenglobes.org/browse/year/2008 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[A Single Man]]'' || {{sortname|Abel|Korzeniowski}} 
+|-
+|''[[Avatar (2009 film)|Avatar]]'' || {{sortname|James|Horner}}
+|-
+|''[[The Informant!]]'' || {{sortname|Marvin|Hamlisch}} 
+|-
+|''[[Where the Wild Things Are (film)|Where the Wild Things Are]]'' || [[Karen O]], {{sortname|Carter|Burwell}} 
+|}
+
+=== 2010s ===
+{| class="wikitable sortable unsortable" style="width:95%;"
+|-
+! scope="col" style="width:70pt" | Year{{ref|a|1}}
+! scope="col" style="width:40%" | Film
+! scope="col" | Composer(s)
+! scope="col" class="unsortable" style="width:30pt" | Ref.
+|-
+! rowspan="5" style="text-align:center;" | [[68th Golden Globe Awards|2010]]
+| style="background:#B0C4DE;" | '''''[[The Social Network]]''''' || style="background:#B0C4DE;" | '''{{sortname|Trent|Reznor}}, {{sortname|Atticus|Ross}}''' || rowspan="5" |<ref name="68th">{{cite web|url=http://www.goldenglobes.org/browse/year/2009 |title=The 68th Annual Golden Globe Awards (2010) |publisher=Hollywood Foreign Press Association |access-date=2011-06-14 |url-status=dead |archive-url=https://web.archive.org/web/20101229131606/http://www.goldenglobes.org/browse/year/2009 |archive-date=December 29, 2010 }}</ref>
+|-
+|''[[127 Hours]]'' || {{sortname|A. R.|Rahman}}
+|-
+|''[[Alice in Wonderland (2010 film)|Alice in Wonderland]]'' || {{sortname|Danny|Elfman}} 
+|-
+|''[[Inception]]'' || {{sortname|Hans|Zimmer}}
+|-
+|''[[The King's Speech]]'' || {{sortname|Alexandre|Desplat}}
+|-
+! rowspan="5" style="text-align:center;" | [[69th Golden Globe Awards|2011]] 
+| style="background:#B0C4DE;" | '''''[[The Artist (film)|The Artist]]''''' || style="background:#B0C4DE;" |  '''{{sortname|Ludovic|Bource}}''' || rowspan="5" |<ref name="69th">{{cite web|url=http://www.goldenglobes.com/browse/year/2010 |title=The 69th Annual Golden Globe Awards (2011) |publisher=Hollywood Foreign Press Association |access-date=2011-12-15 |url-status=dead |archive-url=https://web.archive.org/web/20131004224132/http://www.goldenglobes.com/browse/?param=%2Fyear%2F2010 |archive-date=October 4, 2013 }}</ref>
+|-
+|''[[The Girl with the Dragon Tattoo (2011 film)|The Girl with the Dragon Tattoo]]'' || {{sortname|Trent|Reznor}}, {{sortname|Atticus|Ross}} 
+|-
+|''[[Hugo (film)|Hugo]]'' || {{sortname|Howard|Shore}}
+|-
+|''[[War Horse (film)|War Horse]]'' || {{sortname|John|Williams}}
+|-
+|''[[W.E. (film)|W.E.]]'' || {{sortname|Abel|Korzeniowski}} 
+|-
+! rowspan="5" style="text-align:center;" | [[70th Golden Globe Awards|2012]] 
+| style="background:#B0C4DE;" | '''''[[Life of Pi (film)|Life of Pi]]''''' ||  style="background:#B0C4DE;" | '''{{sortname|Mychael|Danna}}''' || rowspan="5" | <ref name="70th">{{cite web|url=http://www.goldenglobes.org/2012/12/nominations-2013/ |title=Nominations 2013 — Golden Globe Awards |date=December 13, 2012 |work=goldenglobes.org |access-date=December 13, 2012 |url-status=dead |archive-url=https://web.archive.org/web/20121214105703/http://www.goldenglobes.org/2012/12/nominations-2013/ |archive-date=December 14, 2012 }}</ref>
+|-
+|''[[Anna Karenina (2012 film)|Anna Karenina]]'' ||  {{sortname|Dario|Marianelli}}
+|-
+|''[[Argo (2012 film)|Argo]]'' || {{sortname|Alexandre|Desplat}}
+|-
+|''[[Lincoln (film)|Lincoln]]'' || {{sortname|John|Williams}}
+|-
+|''[[Cloud Atlas (film)|Cloud Atlas]]'' || {{sortname|Tom|Tykwer}}, {{sortname|Johnny|Klimek}}, {{sortname|Reinhold|Heil}} 
+|-
+! rowspan="5" style="text-align:center;" | [[71st Golden Globe Awards|2013]] 
+| style="background:#B0C4DE;" | '''''[[All Is Lost]]''''' || style="background:#B0C4DE;" | '''{{sortname|Alex|Ebert}}''' || rowspan="5" | <ref name="71st">{{cite web|url=http://www.goldenglobes.com/2012/12/nominations-2013/|title=Nominations 2014 — Golden Globe Awards|date=December 12, 2013|work=goldenglobes.org|access-date=December 12, 2013|archive-date=September 13, 2015|archive-url=https://web.archive.org/web/20150913230512/http://www.goldenglobes.com/2012/12/nominations-2013|url-status=dead}}</ref>
+|-
+|''[[12 Years a Slave (film)|12 Years a Slave]]'' ||  {{sortname|Hans|Zimmer}} 
+|-
+|''[[The Book Thief (film)|The Book Thief]]'' || {{sortname|John|Williams}}
+|-
+|''[[Gravity (2013 film)|Gravity]]'' || {{sortname|Steven|Price|Steven Price (composer)}}
+|-
+|''[[Mandela: Long Walk to Freedom]]'' || {{sortname|Alex|Heffes}} 
+|-
+! rowspan="5" style="text-align:center;" | [[72nd Golden Globe Awards|2014]]
+| style="background:#B0C4DE;" | '''''[[The Theory of Everything (2014 film)|The Theory of Everything]]''''' || style="background:#B0C4DE;" | '''{{sortname|Jóhann|Jóhannsson}}''' || rowspan="5" | <ref name="72nd">{{cite web|url=http://www.goldenglobes.com/2015_72nd_Golden_Globes_Nominees |title=Nominations 2015 — Golden Globe Awards |date=December 11, 2014 |work=goldenglobes.org |access-date=December 11, 2014 |url-status=dead |archive-url=https://web.archive.org/web/20141212145440/http://www.goldenglobes.com/2015_72nd_Golden_Globes_Nominees |archive-date=December 12, 2014 }}</ref>
+|-
+|''[[Birdman (film)|Birdman]]'' ||  {{sortname|Antonio|Sánchez|Antonio Sánchez (drummer)}} 
+|-
+|''[[Gone Girl (film)|Gone Girl]]'' ||  {{sortname|Trent|Reznor}}, {{sortname|Atticus|Ross}} 
+|-
+|''[[The Imitation Game]]'' || {{sortname|Alexandre|Desplat}}
+|-
+|''[[Interstellar (film)|Interstellar]]'' || {{sortname|Hans|Zimmer}}
+|-
+! rowspan="5" style="text-align:center;" | [[73rd Golden Globe Awards|2015]]
+| style="background:#B0C4DE;" | '''''[[The Hateful Eight]]''''' || style="background:#B0C4DE;" | '''{{sortname|Ennio|Morricone}}''' || rowspan="5" | <ref name="73rd">{{cite web |url=http://www.goldenglobes.com/winners-nominees/2016/all#category-67 |title=Winners & Nominees 2016 |access-date=June 5, 2016 |archive-date=January 11, 2016 |archive-url=https://web.archive.org/web/20160111081024/http://www.goldenglobes.com/winners-nominees/2016/all#category-67 |url-status=dead }}</ref>
+|-
+| ''[[Carol (film)|Carol]]'' || {{sortname|Carter|Burwell}}
+|-
+| ''[[The Danish Girl (film)|The Danish Girl]]'' || {{sortname|Alexandre|Desplat}} 
+|-
+| ''[[The Revenant (2015 film)|The Revenant]]'' ||   {{sortname|Ryuichi|Sakamoto}}, {{sortname|Alva|Noto}} 
+|-
+| ''[[Steve Jobs (film)|Steve Jobs]]'' || {{sortname|Daniel|Pemberton}}
+|-
+! rowspan="5" style="text-align:center;" | [[74th Golden Globe Awards|2016]]
+| style="background:#B0C4DE;" | '''''[[La La Land]]''''' || style="background:#B0C4DE;" | '''{{sortname|Justin|Hurwitz}}''' || rowspan="5" | <ref name="74th">{{cite web|url=http://www.goldenglobes.com/winners-nominees/2017/|title=Winners & Nominees 2017|access-date=December 12, 2016|archive-date=January 8, 2017|archive-url=https://web.archive.org/web/20170108192524/http://www.goldenglobes.com/winners-nominees/2017|url-status=dead}}</ref>
+|-
+| ''[[Arrival (film)|Arrival]]'' || {{sortname|Jóhann|Jóhannsson}} 
+|-
+| ''[[Hidden Figures]]'' || {{sortname|Hans|Zimmer}}, {{sortname|Pharrell|Williams}}, {{sortname|Benjamin|Wallfisch}} 
+|-
+| ''[[Lion (2016 film)|Lion]]'' || {{sortname|Dustin|O'Halloran}}, [[Hauschka]]
+|-
+| ''[[Moonlight (2016 film)|Moonlight]]'' ||   {{sortname|Nicholas|Britell}}
+|-
+! rowspan="5" style="text-align:center;" | [[75th Golden Globe Awards|2017]]
+| style="background:#B0C4DE;" | '''''[[The Shape of Water]]''''' || style="background:#B0C4DE;" | '''{{sortname|Alexandre|Desplat}}''' || rowspan="5" | <ref name="75th">{{cite web|url=http://www.goldenglobes.com/winners-nominees/2018/|title=Winners & Nominees 2018|access-date=January 7, 2018|archive-date=April 10, 2019|archive-url=https://web.archive.org/web/20190410155641/https://www.goldenglobes.com/winners-nominees/2018|url-status=dead}}</ref>
+|-
+| ''[[Dunkirk (2017 film)|Dunkirk]]'' || {{sortname|Hans|Zimmer}}
+|-
+| ''[[Phantom Thread]]'' || {{sortname|Jonny|Greenwood}}
+|-
+| ''[[The Post (film)|The Post]]'' || {{sortname|John|Williams}}
+|-
+| ''[[Three Billboards Outside Ebbing, Missouri]]'' || {{sortname|Carter|Burwell}} 
+|-
+! rowspan="5" style="text-align:center;" | [[76th Golden Globe Awards|2018]]
+| style="background:#B0C4DE;" | '''''[[First Man (film)|First Man]]''''' || style="background:#B0C4DE;" | '''{{sortname|Justin|Hurwitz}}''' || rowspan="5" |<ref name=":0">{{Cite web|url=https://www.goldenglobes.com/winners-nominees|title=Winners & Nominees 2019|website=www.goldenglobes.com|language=en|access-date=2019-01-07|archive-date=2019-08-02|archive-url=https://web.archive.org/web/20190802210349/https://www.goldenglobes.com/winners-nominees|url-status=live}}</ref>
+|-
+| ''[[Black Panther (film)|Black Panther]]''||{{sortname|Ludwig| Göransson}}
+|-
+| ''[[Isle of Dogs (film)|Isle of Dogs]]'' || {{sortname|Alexandre|Desplat}} 
+|-
+| ''[[Mary Poppins Returns]]'' || {{sortname|Marc|Shaiman}}
+|-
+| ''[[A Quiet Place (film)|A Quiet Place]]'' || {{sortname|Marco|Beltrami}} 
+|-
+! rowspan="5" style="text-align:center;" |[[77th Golden Globe Awards|2019]]
+| style="background:#B0C4DE;" |'''''[[Joker (2019 film)|''Joker'']]'''''
+| style="background:#B0C4DE;" |'''[[Hildur Guðnadóttir]]'''
+| rowspan="5" |<ref>{{Cite web|url=https://www.goldenglobes.com/winners-nominees|title=Winners & Nominees 2020|website=www.goldenglobes.com|language=en|access-date=2019-12-12|archive-date=2019-08-02|archive-url=https://web.archive.org/web/20190802210349/https://www.goldenglobes.com/winners-nominees|url-status=live}}</ref>
+|-
+|''[[1917 (2019 film)|1917]]''
+|{{sortname|Thomas|Newman}}
+|-
+|[[Little Women (2019 film)|''Little Women'']]
+|{{sortname|Alexandre|Desplat}}
+|-
+|''[[Marriage Story]]''
+|{{sortname|Randy|Newman}}
+|-
+|[[Motherless Brooklyn (film)|''Motherless Brooklyn'']]
+|[[Daniel Pemberton]]
+|}
+
+=== 2020s ===
+{| class="wikitable sortable unsortable" style="width:95%;"
+|-
+! scope="col" style="width:70pt" | Year{{ref|a|1}}
+! scope="col" style="width:40%" | Film
+! scope="col" | Composer(s)
+! scope="col" class="unsortable" style="width:30pt" | Ref.
+|-
+! rowspan="5" |[[78th Golden Globe Awards|2020]]
+| style="background:#B0C4DE;" | '''[[Soul (2020 film)|''Soul'']]''' || style="background:#B0C4DE;" | '''{{sortname|Jon|Batiste}}, {{sortname|Trent|Reznor}} & {{sortname|Atticus|Ross}}'''
+| rowspan="5" |<ref>{{Cite web|url=https://www.goldenglobes.com/winners-nominees|title=Winners & Nominees 2021|website=www.goldenglobes.com|language=en|access-date=2021-02-03|archive-date=2019-08-02|archive-url=https://web.archive.org/web/20190802210349/https://www.goldenglobes.com/winners-nominees|url-status=live}}</ref>
+|-
+|''[[Mank]]''	
+| Reznor & Ross	
+|-
+|''[[The Midnight Sky]]''
+|{{sortname|Alexandre|Desplat}}	
+|-
+|[[News of the World (film)|''News of the World'']]
+|{{sortname|James Newton|Howard}}
+|-
+|[[Tenet (2020 film)|''Tenet'']]
+|{{sortname|Ludwig|Göransson}}
+|-
+! rowspan="5" |[[79th Golden Globe Awards|2021]]
+| style="background:#B0C4DE;" | '''''[[Dune (2021 film)|Dune]]''''' || style="background:#B0C4DE;" |'''[[Hans Zimmer]]'''
+| rowspan="5" |<ref>{{Cite web |url=https://www.bbc.com/news/entertainment-arts-59638152 |title=Golden Globes 2022: The winners and nominees - BBC |date=13 December 2021 |access-date=2022-07-05 |archive-date=2022-02-08 |archive-url=https://web.archive.org/web/20220208141507/https://www.bbc.com/news/entertainment-arts-59638152 |url-status=live }}</ref>
+|-
+|''[[Encanto]]''
+|[[Germaine Franco]]
+|-
+|''[[The French Dispatch]]''
+|[[Alexandre Desplat]]
+|-
+|''[[Parallel Mothers]]''
+|[[Alberto Iglesias]]
+|-
+|''[[The Power of the Dog (film)|The Power of the Dog]]''
+|[[Jonny Greenwood]]
+|-
+! rowspan="5" |[[80th Golden Globe Awards|2022]]
+| style="background:#B0C4DE;" | '''''[[Babylon (2022 film)|Babylon]]'''''
+|style="background:#B0C4DE;"| '''[[Justin Hurwitz]]'''
+| rowspan="5" |<ref>{{Cite web|url=https://www.goldenglobes.com/winners-nominees|title=Winners & Nominees 2023|website=www.goldenglobes.com|language=en|access-date=2022-12-12|archive-date=2019-08-02|archive-url=https://web.archive.org/web/20190802210349/https://www.goldenglobes.com/winners-nominees|url-status=live}}</ref>
+|-
+|''[[The Banshees of Inisherin]]''
+|[[Carter Burwell]]
+|-
+|''[[The Fabelmans]]''
+|[[John Williams]]
+|-
+|''[[Guillermo del Toro's Pinocchio]]''
+|[[Alexandre Desplat]]
+|-
+|''[[Women Talking (film)|Women Talking]]''
+|[[Hildur Guðnadóttir]]
+|-
+! rowspan="6" |[[81st Golden Globe Awards|2023]]
+| style="background:#B0C4DE;" |''[[Oppenheimer (film)|'''Oppenheimer''']]''
+| style="background:#B0C4DE;" |'''[[Ludwig Göransson]]'''
+| rowspan="6" |<ref>{{Cite web|url=https://www.goldenglobes.com/winners-nominees|title=Winners & Nominees 2024|website=www.goldenglobes.com|language=en|access-date=2024-01-08|archive-date=2019-08-02|archive-url=https://web.archive.org/web/20190802210349/https://www.goldenglobes.com/winners-nominees|url-status=live}}</ref>
+|-
+|''[[The Boy and the Heron]]''
+|[[Joe Hisaishi]]
+|-
+|''[[Killers of the Flower Moon]]''
+|[[Robbie Robertson]] <small>(posthumous)</small>
+|-
+|''[[Poor Things (film)|Poor Things]]''
+|[[Jerskin Fendrix]] 
+|-
+|''[[Spider-Man: Across the Spider-Verse]]''
+|[[Daniel Pemberton]]
+|-
+|''[[The Zone of Interest (film)|The Zone of Interest]]''
+|[[Mica Levi]]
+|-
+! rowspan="6" |[[82nd Golden Globe Awards|2024]]
+| style="background:#B0C4DE;" |''[[Challengers (film)|'''Challengers''']]''
+| style="background:#B0C4DE;" |'''[[Trent Reznor]] and [[Atticus Ross]]'''
+| rowspan="6" |<ref>{{Cite web |url=https://www.vanityfair.com/hollywood/story/2025-golden-globe-nominations-full-list |title=2025 Golden Globe Nominations: See the Full List{{!}}Vanity Fair |access-date=2024-12-10 |archive-date=2026-07-28 |archive-url=https://web.archive.org/web/20260728031144/https://www.vanityfair.com/hollywood/story/2025-golden-globe-nominations-full-list |url-status=live }}</ref><ref>{{Cite web |url=https://www.cnn.com/2025/01/05/entertainment/award-winners-list-golden-globes/index.html |title=Award winners-list: See which Golden Globes nominees won{{!}}CNN |access-date=2025-01-06 |archive-date=2025-01-06 |archive-url=https://web.archive.org/web/20250106021923/https://www.cnn.com/2025/01/05/entertainment/award-winners-list-golden-globes/index.html |url-status=live }}</ref>
+|-
+|''[[The Brutalist]]''
+|[[Daniel Blumberg]]
+|-
+|''[[Conclave (film)|Conclave]]''
+|[[Hauschka|Volker Bertelmann]]
+|-
+|''[[Dune: Part Two]]''
+|[[Hans Zimmer]]
+|-
+|''[[Emilia Pérez]]''
+|[[Clément Ducol]] and [[Camille (French singer)|Camille]]
+|-
+|''[[The Wild Robot]]''
+|[[Kris Bowers]]
+|-
+! rowspan="6" |[[83rd Golden Globe Awards|2025]]
+| style="background:#B0C4DE;" | '''[[Sinners (2025 film)|''Sinners'']]''' || style="background:#B0C4DE;" | '''[[Ludwig Göransson]]''' || rowspan="6" |<ref>{{cite web|url= https://www.hollywoodreporter.com/movies/movie-news/golden-globes-nominations-2026-nominees-list-1236444421/|title= Golden Globe Nominations: 'One Battle After Another' Leads Film Noms, 'The White Lotus' Tops in TV|website= [[The Hollywood Reporter]]|date= 8 December 2025|access-date= December 8, 2025|archive-date= 8 December 2025|archive-url= https://web.archive.org/web/20251208134350/https://www.hollywoodreporter.com/movies/movie-news/golden-globes-nominations-2026-nominees-list-1236444421/|url-status= live}}</ref><ref>{{Cite magazine |last=Atkinson |first=Katie |date=2026-01-12 |title=Here Are the 2026 Golden Globes Winners: Full List (Updating Live) |url=https://www.billboard.com/lists/2026-golden-globes-winners-list/ |access-date=2026-01-12 |magazine=Billboard |language=en-US |archive-date=2026-01-12 |archive-url=https://web.archive.org/web/20260112032011/https://www.billboard.com/lists/2026-golden-globes-winners-list/ |url-status=live }}</ref>
+|-
+|''[[F1 (film)|F1]]''
+|[[Hans Zimmer]]
+|-
+|''[[Frankenstein (2025 film)|Frankenstein]]''
+|[[Alexandre Desplat]]
+|-
+|''[[Hamnet (film)|Hamnet]]''
+|[[Max Richter]]
+|-
+|''[[One Battle After Another]]''
+|[[Jonny Greenwood]]
+|-
+|''[[Sirāt]]''
+|[[Kangding Ray]]
+|}
+
+== Multiple wins ==
+4 wins:
+
+* [[Maurice Jarre]]
+* [[Dimitri Tiomkin]]
+* [[John Williams]]
+
+3 wins:
+
+* [[Justin Hurwitz]]
+* [[Alan Menken]]
+* [[Ennio Morricone]]
+* [[Trent Reznor]]
+* [[Atticus Ross]]
+* [[Hans Zimmer]]
+
+2 wins:
+
+* [[Elmer Bernstein]]
+* [[Alexandre Desplat]]
+* [[Ludwig Göransson]]
+* [[Frederick Loewe]]
+* [[Giorgio Moroder]]
+* [[Howard Shore]]
+
+==See also==
+* [[Academy Award for Best Original Score]]
+* [[BAFTA Award for Best Film Music]]
+* [[Critics' Choice Movie Award for Best Score]]
+* [[Grammy Award for Best Score Soundtrack for Visual Media]]
+* [[Grammy Award for Best Compilation Soundtrack for Visual Media]]
+
+==Notes==
+:1.{{note|a}} The year indicates the period for which the awards are given and not the year in which the ceremony took place.
+
+==References==
+;Specific
+{{reflist|30em}}
+;General
+* {{cite web|url=http://www.hfpa.org/browse/years |title=HFPS Golden Globes Page |publisher=[[Hollywood Foreign Press Association]] |access-date=2007-07-02 |url-status=dead |archive-url=https://web.archive.org/web/20070715210543/http://www.hfpa.org/browse/years |archive-date=2007-07-15 }}
+
+{{Golden Globe Awards Chron}}
+{{Golden Globe Award for Best Original Score}}
+
+{{featured list}}
+
+[[Category:Film awards for best score]]
+[[Category:Golden Globe Awards|Score Original]]
+[[Category:Lists of films by award]]
+[[Category:Awards established in 1948]]

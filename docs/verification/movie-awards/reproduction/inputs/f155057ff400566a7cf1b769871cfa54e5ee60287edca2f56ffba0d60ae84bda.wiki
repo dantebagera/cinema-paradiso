@@ -1,0 +1,422 @@
+{{oscars short description|films-year=1944}}
+{{Use mdy dates|date=July 2022}}
+
+{{Infobox film awards
+| number           = 17
+| award            = Academy Awards
+| date             = March 15, 1945
+| site             = [[Grauman's Chinese Theatre]], [[Hollywood, Los Angeles|Hollywood]], [[California]]
+| host             = [[John Cromwell (director)|John Cromwell]]<br>[[Bob Hope]]{{citation needed|date=September 2015}}
+| best_picture     = ''[[Going My Way]]''
+| most_wins        = ''Going My Way'' (7)
+| most_nominations = ''Going My Way'' and ''[[Wilson (1944 film)|Wilson]]'' (10)
+| last             = 16th
+| next             = 18th
+}}
+
+The '''17th Academy Awards''' were held on March 15, 1945, at [[Grauman's Chinese Theatre]], honoring the films of [[1944 in film|1944]]. This was the first time the complete awards ceremony was broadcast nationally, on the [[Blue Network]] (later [[Cumulus Media Networks|ABC Radio]]). [[Bob Hope]] hosted the 70-minute broadcast, which included film clips that required explanation for the radio audience.<ref name="Dunning">{{cite book |url=https://books.google.com/books?id=EwtRbXNca0oC&dq=%22The+Academy+Awards+Show%22&pg=PA4 |last=Dunning| first=John| author-link=John Dunning (detective fiction author) | title=On the Air: The Encyclopedia of Old-Time Radio| date=1998| publisher=Oxford University Press| location=New York, NY| isbn=978-0-19-507678-3| pages=4–5 | edition=Revised| access-date=2019-10-01}}</ref>
+
+[[Darryl F. Zanuck]] and [[20th Century-Fox]] spent a fortune promoting ''[[Wilson (1944 film)|Wilson]]'' out of determination to have it win the Best Picture Oscar, but it lost to ''Going My Way'', which made Zanuck bitter.<ref name="Oscars '44 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/836/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=836 |isbn=0-385-04060-1}}</ref>
+
+This year was notable for being the only time an individual was nominated for two acting awards for the ''same role'' in the ''same film'': [[Barry Fitzgerald]] received nominations for both [[Academy Award for Best Actor|Best Actor]] and [[Academy Award for Best Supporting Actor|Best Supporting Actor]] for his performance as Father Fitzgibbon in the Best Picture winner ''[[Going My Way]]''. Fitzgerald won for Best Supporting Actor, while his co-star [[Bing Crosby]] won Best Actor.
+
+== Winners and nominees ==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Leo McCarey 1930s portrait photo (cropped).jpg
+| caption1          = Leo McCarey, Best Picture, Best Director and Best Writing (Original Motion Picture Story) winner
+| image2            = Bing Crosby 1951.jpg
+| caption2          = [[Bing Crosby]]; Best Actor winner
+|alt1=Bing Crosby 1951.jpg
+| image3            =Ingrid Bergman, Gaslight 1944.jpg
+| caption3          = [[Ingrid Bergman]]; Best Actress winner
+|alt2=Ingrid Bergman, Gaslight 1944.jpg
+| image4            = Barry Fitzgerald 1945.jpg
+| caption4          = [[Barry Fitzgerald]]; Best Supporting Actor winner
+| image5            = Ethel Barrymore LOC.jpg
+| caption5          = [[Ethel Barrymore]]; Best Supporting Actress winner
+| image6            = Carmen Dragon 1953.JPG
+| caption6          = [[Carmen Dragon]]; Best Scoring of a Musical Picture co-winner
+| image7            = Jimmy Van Heusen (2).jpg
+| caption7          = [[Jimmy Van Heusen]]; Best Song co-winner
+| image8            = Cedric-Gibbons-1936.jpg
+| caption8          = [[Cedric Gibbons]]; Best Art Direction, Black-and-White co-winner
+| image9            = Bob Hope, 1978.jpg
+| caption9          = [[Bob Hope]]; Academy Honorary Award recipient
+| image10            = Eiganotomo-margaretobrien-nov1952.jpg
+| caption10          = [[Margaret O'Brien]]; Juvenile Academy Award recipient
+| image11            = Darryl F. Zanuck 1964.jpg
+| caption11         = [[Darryl F. Zanuck]]; Irving G. Thalberg Memorial Award recipient
+}}
+
+=== Awards ===
+Nominees were announced on February 3, 1945. Winners are listed first and highlighted in boldface.<ref name="Oscars1945">{{Cite web|url=http://www.oscars.org/oscars/ceremonies/1945 |title=The 17th Academy Awards (1945) Nominees and Winners |access-date=2011-08-14 |work=oscars.org |archive-url=https://web.archive.org/web/20110706093748/http://www.oscars.org/awards/academyawards/legacy/ceremony/17th-winners.html |archive-date=July 6, 2011 |url-status=live }}</ref>
+
+{| class=wikitable
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Motion Picture]]}}
+*'''''[[Going My Way]]'' – [[Leo McCarey]] for [[Paramount Pictures|Paramount]]'''
+**''[[Double Indemnity]]'' – Joseph Sistrom for Paramount
+**''[[Gaslight (1944 film)|Gaslight]]'' – [[Arthur Hornblow Jr.]] for [[Metro-Goldwyn-Mayer]]
+**''[[Since You Went Away]]'' – [[David O. Selznick]] for [[United Artists]]
+**''[[Wilson (1944 film)|Wilson]]'' – [[Darryl F. Zanuck]] for [[20th Century Fox]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+*'''[[Leo McCarey]]&nbsp;– ''[[Going My Way]]'''''
+**[[Billy Wilder]]&nbsp;– ''[[Double Indemnity]]''
+**[[Otto Preminger]]&nbsp;– ''[[Laura (1944 film)|Laura]]''
+**[[Alfred Hitchcock]]&nbsp;– ''[[Lifeboat (1944 film)|Lifeboat]] ''
+**[[Henry King (director)|Henry King]]&nbsp;– ''[[Wilson (1944 film)|Wilson]]''
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actor|Best Actor]]}}
+*'''[[Bing Crosby]]&nbsp;– ''[[Going My Way]]'' as Father Chuck O'Malley'''
+**[[Charles Boyer]]&nbsp;– ''[[Gaslight (1944 film)|Gaslight]]'' as Gregory Anton/Sergius Bauer
+**[[Barry Fitzgerald]]&nbsp;– ''[[Going My Way]]'' as Father Fitzgibbon
+**[[Cary Grant]]&nbsp;– ''[[None but the Lonely Heart (film)|None but the Lonely Heart]]'' as Ernie Mott
+**[[Alexander Knox]]&nbsp;– ''[[Wilson (1944 film)|Wilson]]'' as [[Woodrow Wilson]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Actress|Best Actress]]}}
+*'''[[Ingrid Bergman]]&nbsp;– ''[[Gaslight (1944 film)|Gaslight]]'' as Paula Alquist Anton'''
+**[[Claudette Colbert]]&nbsp;– ''[[Since You Went Away]]'' as Mrs Anne Hilton
+**[[Bette Davis]]&nbsp;– ''[[Mr. Skeffington]]'' as Frances Beatrice "Fanny" Trellis Skeffington
+**[[Greer Garson]]&nbsp;– ''[[Mrs. Parkington]]'' as Susie Parkington
+**[[Barbara Stanwyck]]&nbsp;– ''[[Double Indemnity]]'' as [[Phyllis Dietrichson]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+*'''[[Barry Fitzgerald]]&nbsp;– ''[[Going My Way]]'' as Father Fitzgibbon'''
+**[[Hume Cronyn]]&nbsp;– ''[[The Seventh Cross (film)|The Seventh Cross]]'' as Paul Roeder
+**[[Claude Rains]]&nbsp;– ''[[Mr. Skeffington]]'' as Job Skeffington
+**[[Clifton Webb]]&nbsp;– ''[[Laura (1944 film)|Laura]] ''as Waldo Lydecker
+**[[Monty Woolley]]&nbsp;– ''[[Since You Went Away]]'' as [[Colonel]] William G. Smollett
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+*'''[[Ethel Barrymore]]&nbsp;– ''[[None but the Lonely Heart (film)|None but the Lonely Heart]]'' as Ma Mott'''
+**[[Jennifer Jones]]&nbsp;– ''[[Since You Went Away]]'' as Jane Deborah Hilton
+**[[Angela Lansbury]]&nbsp;– ''[[Gaslight (1944 film)|Gaslight]]'' as Nancy Oliver
+**[[Aline MacMahon]]&nbsp;– ''[[Dragon Seed (film)|Dragon Seed]]'' as Ling Tan's Wife
+**[[Agnes Moorehead]]&nbsp;– ''[[Mrs. Parkington]]'' as Baroness Aspasia Conti
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Story|Best Writing (Original Motion Picture Story)]]}}
+*'''''[[Going My Way]]''&nbsp;– [[Leo McCarey]]'''
+**''[[A Guy Named Joe]]''&nbsp;– [[David Boehm]] and [[Chandler Sprague]]
+**''[[Lifeboat (1944 film)|Lifeboat]]''&nbsp;– [[John Steinbeck]]
+**''[[None Shall Escape]]''&nbsp;– [[Alfred Neumann (writer)|Alfred Neumann]] and Joseph Than
+**''[[The Fighting Sullivans|The Sullivans]]''&nbsp;– [[Eddie Doherty|Edward Doherty]] and Jules Schermer
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+*'''''[[Wilson (1944 film)|Wilson]]''&nbsp;– [[Lamar Trotti]]'''
+**''[[Hail the Conquering Hero]]''&nbsp;– [[Preston Sturges]]
+**''[[The Miracle of Morgan's Creek]]''&nbsp;– [[Preston Sturges]]
+**''[[Two Girls and a Sailor]]''&nbsp;– [[Richard Connell]] and [[Gladys Lehman]]
+**''[[Wing and a Prayer, The Story of Carrier X]]''&nbsp;– [[Jerome Cady]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay)]]}}
+*'''''[[Going My Way]]''&nbsp;– [[Frank Butler (writer)|Frank Butler]] and [[Frank Cavett]], based on a story by [[Leo McCarey]]'''
+**''[[Double Indemnity]]''&nbsp;– [[Raymond Chandler]] and [[Billy Wilder]], based on ''[[Double Indemnity (novel)|Double Indemnity in Three of a Kind]]'' by [[James M. Cain]]
+**''[[Gaslight (1944 film)|Gaslight]]''&nbsp;– [[John L. Balderston]], [[Walter Reisch]], and [[John Van Druten]], based on ''[[Gaslight (play)|Angel Street]]'' by [[Patrick Hamilton (writer)|Patrick Hamilton]]
+**''[[Laura (1944 film)|Laura]]''&nbsp;– [[Jay Dratler]], [[Samuel Hoffenstein]], and [[Elizabeth Reinhardt|Betty Reinhardt]], based on [[Laura (novel)|the novel]] by [[Vera Caspary]]
+**''[[Meet Me in St. Louis]]''&nbsp;– [[Irving Brecher]] and [[Fred F. Finklehoffe]], based on [[Meet Me in St. Louis (novel)|the novel]] by [[Sally Benson]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+*'''''[[The Fighting Lady]]''''' '''– [[United States Navy]]'''
+**''[[Resisting Enemy Interrogation]]'' – [[United States Army Air Forces|United States Army Air Force]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+*'''''[[With the Marines at Tarawa]]''''' '''– [[United States Marine Corps]]'''
+**''[[Hymn of the Nations]]'' – [[United States Office of War Information|United States Office of War Information, Overseas Motion Picture Bureau]]
+**''[[New Americans (film)|New Americans]]'' – [[RKO Pictures|RKO Radio]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (One-Reel)]]}}
+*'''''[[Who's Who in Animal Land]]''&nbsp;– [[Jerry Fairbanks]]'''
+**''Blue Grass Gentlemen''&nbsp;– [[Edmund Reek]]
+**''[[Jammin' the Blues]]''&nbsp;– [[Gordon Hollingshead]]
+**''Movie Pests''&nbsp;– [[Pete Smith (film producer)|Pete Smith]]
+**''Screen Snapshots' 50th Anniversary of Motion Pictures''&nbsp;– [[Ralph Staub]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Live Action Short Film|Best Short Subject (Two-Reel)]]}}
+*'''''[[I Won't Play]]''&nbsp;– [[Gordon Hollingshead]]'''
+**''Bombalera''&nbsp;– Louis Harris
+**''Main Street Today''&nbsp;– [[Jerry Bresler (film producer)|Jerry Bresler]] and [[Herbert Moulton]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+*'''''[[Mouse Trouble]]''&nbsp;– [[Fred Quimby]]'''
+**''And to Think I Saw It on Mulberry Street''&nbsp;– [[George Pal]]
+**''Dog, Cat and Canary''&nbsp;– Raymond Katz
+**''[[Fish Fry (film)|Fish Fry]]''&nbsp;– [[Walter Lantz]]
+**''[[How to Play Football]]''&nbsp;– [[Walt Disney]]
+**''My Boy, Johnny''&nbsp;– [[Paul Terry (cartoonist)|Paul Terry]]
+**''[[Swooner Crooner]]''&nbsp;– [[Edward Selzer]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Music Score of a Dramatic or Comedy Picture)]]}}
+*'''''[[Since You Went Away]]''&nbsp;– [[Max Steiner]]'''
+**''[[Address Unknown (1944 film)|Address Unknown]]''&nbsp;– [[Morris Stoloff]] and [[Ernst Toch]]
+**''[[The Adventures of Mark Twain (1944 film)|The Adventures of Mark Twain]]''&nbsp;– Max Steiner
+**''[[The Bridge of San Luis Rey (1944 film)|The Bridge of San Luis Rey]]''&nbsp;– [[Dimitri Tiomkin]]
+**''[[Casanova Brown]]''&nbsp;– [[Arthur Lange]]
+**''[[Christmas Holiday]]''&nbsp;– [[Hans J. Salter|H. J. Salter]]
+**''[[Double Indemnity]]''&nbsp;– [[Miklós Rózsa]]
+**''[[The Fighting Seabees]]''&nbsp;– [[Walter Scharf]] and [[Roy Webb]]
+**''[[The Hairy Ape (film)|The Hairy Ape]]''&nbsp;– Edward Paul and [[Michel Michelet]]
+**''[[It Happened Tomorrow]]''&nbsp;– [[Robert Stolz]]
+**''[[Jack London (film)|Jack London]]''&nbsp;– [[Fred Rich|Frederic Efrem Rich]]
+**''[[Kismet (1944 film)|Kismet]]''&nbsp;– [[Herbert Stothart]]
+**''[[None but the Lonely Heart (film)|None but the Lonely Heart]]''&nbsp;– [[Hanns Eisler]] and [[Constantin Bakaleinikoff|C. Bakaleinikoff]]
+**''[[The Princess and the Pirate]]''&nbsp;– [[David Rose (songwriter)|David Rose]]
+**''[[Summer Storm (1944 film)|Summer Storm]]''&nbsp;– [[Karl Hajos]]
+**''[[Three Russian Girls]]''&nbsp;– [[W. Franke Harling|Franke Harling]]
+**''[[Up in Mabel's Room (1944 film)|Up in Mabel's Room]]''&nbsp;– Edward Paul
+**''[[Voice in the Wind]]''&nbsp;– Michel Michelet
+**''[[Wilson (1944 film)|Wilson]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+**''[[The Woman of the Town]]''&nbsp;– Miklós Rózsa
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Score|Best Music (Scoring of a Musical Picture)]]}}
+*'''''[[Cover Girl (film)|Cover Girl]]''&nbsp;– [[Morris Stoloff]] and [[Carmen Dragon]]'''
+**''[[Brazil (1944 film)|Brazil]]''&nbsp;– [[Walter Scharf]]
+**''[[Higher and Higher (film)|Higher and Higher]]''&nbsp;– [[Constantin Bakaleinikoff|C. Bakaleinikoff]]
+**''[[Hollywood Canteen (film)|Hollywood Canteen]]''&nbsp;– [[Ray Heindorf]]
+**''[[Irish Eyes Are Smiling]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+**''[[Knickerbocker Holiday (film)|Knickerbocker Holiday]]''&nbsp;– [[Werner R. Heymann]] and [[Kurt Weill]]
+**''[[Lady in the Dark (film)|Lady in the Dark]]''&nbsp;– [[Robert E. Dolan|Robert Emmett Dolan]]
+**''[[Lady, Let's Dance]]''&nbsp;– [[Edward J. Kay|Edward Kay]]
+**''[[Meet Me in St. Louis]]''&nbsp;– [[Georgie Stoll]]
+**''[[The Merry Monahans]]''&nbsp;– [[Hans J. Salter|H. J. Salter]]
+**''[[Minstrel Man (film)|Minstrel Man]]''&nbsp;– [[Ferde Grofé]] and [[Leo Erdody]]
+**''[[Sensations of 1945]]''&nbsp;– Mahlon Merrick
+**''[[Song of the Open Road]]''&nbsp;– [[Charles Previn]]
+**''[[Up in Arms]]''&nbsp;– Ray Heindorf and [[Louis Forbes]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Original Song|Best Music (Song)]]}}
+*'''"[[Swinging on a Star]]" from ''[[Going My Way]]''&nbsp;– Music by [[Jimmy Van Heusen|James Van Heusen]]; Lyrics by [[Johnny Burke (lyricist)|Johnny Burke]]'''
+**"I Couldn't Sleep a Wink Last Night" from ''[[Higher and Higher (film)|Higher and Higher]]''&nbsp;– Music by [[Jimmy McHugh]]; Lyrics by [[Harold Adamson]]
+**"[[I'll Walk Alone]]" from ''[[Follow the Boys (1944 film)|Follow the Boys]]''&nbsp;– Music by [[Jule Styne]]; Lyrics by [[Sammy Cahn]]
+**"[[I'm Making Believe]]" from ''[[Sweet and Low-Down|Sweet and Lowdown]]''&nbsp;– Music by [[James V. Monaco]]; Lyrics by [[Mack Gordon]]
+**"[[Long Ago (and Far Away)|Long Ago and Far Away]]" from ''[[Cover Girl (film)|Cover Girl]]''&nbsp;– Music by [[Jerome Kern]]; Lyrics by [[Ira Gershwin]]
+**"Now I Know" from ''[[Up in Arms]]''&nbsp;– Music by [[Harold Arlen]]; Lyrics by [[Ted Koehler]]
+**"Remember Me to Carolina" from ''[[Minstrel Man (film)|Minstrel Man]]''&nbsp;– Music by [[Harry Revel]]; Lyrics by [[Paul Francis Webster|Paul Webster]]
+**"Rio de Janeiro" from ''[[Brazil (1944 film)|Brazil]]''&nbsp;– Music by [[Ary Barroso]]; Lyrics by [[Ned Washington]]
+**"Silver Shadows and Golden Dreams" from ''[[Lady, Let's Dance]]''&nbsp;– Music by [[Lew Pollack]]; Lyrics by Charles Newman
+**"Sweet Dreams Sweetheart" from ''[[Hollywood Canteen (film)|Hollywood Canteen]]''&nbsp;– Music by M. K. Jerome; Lyrics by [[Ted Koehler]]
+**"Too Much in Love" from ''[[Song of the Open Road]]''&nbsp;– Music by [[Walter Kent]]; Lyrics by [[Kim Gannon]]
+**"[[The Trolley Song]]" from ''[[Meet Me in St. Louis]]''&nbsp;– Music and Lyrics by [[Ralph Blane]] and [[Hugh Martin]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Sound Mixing|Best Sound Recording]]}}
+*'''''[[Wilson (1944 film)|Wilson]]''&nbsp;– [[Edmund H. Hansen]]'''
+**''[[Brazil (1944 film)|Brazil]]''&nbsp;– [[Daniel J. Bloomberg]]
+**''[[Casanova Brown]]''&nbsp;– [[Thomas T. Moulton]]
+**''[[Cover Girl (film)|Cover Girl]]''&nbsp;– [[John P. Livadary]]
+**''[[Double Indemnity]]''&nbsp;– [[Loren L. Ryder]]
+**''[[His Butler's Sister]]''&nbsp;– [[Bernard B. Brown]]
+**''[[Hollywood Canteen (film)|Hollywood Canteen]]''&nbsp;– [[Nathan Levinson]]
+**''[[It Happened Tomorrow]]''&nbsp;– [[Jack Whitney]]
+**''[[Kismet (1944 film)|Kismet]]''&nbsp;– [[Douglas Shearer]]
+**''[[Music in Manhattan]]''&nbsp;– [[Stephen Dunn (sound engineer)|Stephen Dunn]]
+**''[[Voice in the Wind]]''&nbsp;– [[Mac Dalgleish|W. M. Dalgleish]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+*'''''[[Gaslight (1944 film)|Gaslight]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[William Ferrari]]; Interior Decoration: [[Paul Huldschinsky]] and [[Edwin B. Willis]]'''
+**''[[Address Unknown (1944 film)|Address Unknown]]''&nbsp;– Art Direction: [[Lionel Banks]] and [[Walter Holscher]]; Interior Decoration: [[Joseph Kish]]
+**''[[The Adventures of Mark Twain (1944 film)|The Adventures of Mark Twain]]''&nbsp;– Art Direction: [[John Hughes (art director)|John Hughes]]; Interior Decoration: [[Fred M. MacLean]]
+**''[[Casanova Brown]]''&nbsp;– Art Direction: [[Perry Ferguson]]; Interior Decoration: [[Julia Heron]]
+**''[[Laura (1944 film)|Laura]]''&nbsp;– Art Direction: [[Lyle R. Wheeler]] and [[Leland Fuller]]; Interior Decoration: [[Thomas Little]]
+**''[[No Time for Love (1943 film)|No Time for Love]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Robert Usher]]; Interior Decoration: [[Samuel M. Comer]]
+**''[[Since You Went Away]]''&nbsp;– Art Direction: [[Mark-Lee Kirk]]; Interior Decoration: [[Victor A. Gangelin]]
+**''[[Step Lively (1944 film)|Step Lively]]''&nbsp;– Art Direction: [[Albert S. D'Agostino]] and [[Carroll Clark]]; Interior Decoration: [[Darrell Silvera]] and [[Claude Carpenter]]
+**<s>''[[Song of the Open Road]]''&nbsp;– N/A</s> (nomination withdrawn by production company)
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+*'''''[[Wilson (1944 film)|Wilson]]''&nbsp;– Art Direction: [[Wiard Ihnen]]; Interior Decoration: [[Thomas Little]]'''
+**''[[The Climax (1944 film)|The Climax]]''&nbsp;– Art Direction: [[John B. Goodman (art director)|John B. Goodman]] and [[Alexander Golitzen]]; Interior Decoration: [[Russell A. Gausman]] and [[Ira S. Webb]]
+**''[[Cover Girl (film)|Cover Girl]]''&nbsp;– Art Direction: [[Lionel Banks]] and [[Cary Odell]]; Interior Decoration: [[Fay Babcock]]
+**''[[The Desert Song (1943 film)|The Desert Song]]''&nbsp;– Art Direction: [[Charles Novi]]; Interior Decoration: [[Jack McConaghy]]
+**''[[Kismet (1944 film)|Kismet]]''&nbsp;– Art Direction: [[Cedric Gibbons]] and [[Daniel B. Cathcart]]; Interior Decoration: [[Edwin B. Willis]] and [[Richard Pefferle]]
+**''[[Lady in the Dark (film)|Lady in the Dark]]''&nbsp;– Art Direction: [[Hans Dreier]] and [[Raoul Pene Du Bois]]; Interior Decoration: [[Ray Moyer]]
+**''[[The Princess and the Pirate]]''&nbsp;– Art Direction: [[Ernst Fegté]]; Interior Decoration: [[Howard Bristol]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+*'''''[[Laura (1944 film)|Laura]]''&nbsp;– [[Joseph LaShelle]]'''
+**''[[Double Indemnity]]''&nbsp;– [[John F. Seitz]]
+**''[[Dragon Seed (film)|Dragon Seed]]''&nbsp;– [[Sidney Wagner (cinematographer)|Sidney Wagner]]
+**''[[Gaslight (1944 film)|Gaslight]]''&nbsp;– [[Joseph Ruttenberg]]
+**''[[Going My Way]]''&nbsp;– [[Lionel Lindon]]
+**''[[Lifeboat (1944 film)|Lifeboat]]''&nbsp;– [[Glen MacWilliams]]
+**''[[Since You Went Away]]''&nbsp;– [[Stanley Cortez]] and [[Lee Garmes]]
+**''[[Thirty Seconds Over Tokyo]]''&nbsp;– [[Robert Surtees (cinematographer)|Robert L. Surtees]] and [[Harold Rosson]]
+**''[[The Uninvited (1944 film)|The Uninvited]]''&nbsp;– [[Charles Lang]]
+**''[[The White Cliffs of Dover (film)|The White Cliffs of Dover]]''&nbsp;– [[George Folsey (cinematographer)|George J. Folsey]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+*'''''[[Wilson (1944 film)|Wilson]]''&nbsp;– [[Leon Shamroy]]'''
+**''[[Cover Girl (film)|Cover Girl]]''&nbsp;–  [[Rudolph Maté]] and [[Allen M. Davey]]
+**''[[Home in Indiana]]''&nbsp;– [[Edward Cronjager]]
+**''[[Kismet (1944 film)|Kismet]]''&nbsp;– [[Charles Rosher]]
+**''[[Lady in the Dark (film)|Lady in the Dark]]''&nbsp;– [[Ray Rennahan]]
+**''[[Meet Me in St. Louis]]''&nbsp;– [[George Folsey (cinematographer)|George J. Folsey]]
+|-
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Wilson (1944 film)|Wilson]]''&nbsp;– [[Barbara McLean]]'''
+**''[[Going My Way]]''&nbsp;– [[LeRoy Stone|Leroy Stone]]
+**''[[Janie (1944 film)|Janie]]''&nbsp;– [[Owen Marks]]
+**''[[None but the Lonely Heart (film)|None but the Lonely Heart]]''&nbsp;– [[Roland Gross]]
+**''[[Since You Went Away]]''&nbsp;– [[Hal C. Kern]] and [[James E. Newcom]]
+| valign="top" width="50%" |
+{{Award category|#F9EFAA|[[Academy Award for Best Visual Effects|Best Special Effects]]}}
+*'''''[[Thirty Seconds Over Tokyo]]''&nbsp;– Photographic Effects: [[A. Arnold Gillespie]], [[Donald Jahraus]] and [[Warren Newcombe]]; Sound Effects: [[Douglas Shearer]]'''
+**''[[The Adventures of Mark Twain (1944 film)|The Adventures of Mark Twain]]''&nbsp;– Photographic Effects: [[Paul Detlefsen]] and [[John Crouse]]; Sound Effects: [[Nathan Levinson]]
+**''[[Days of Glory (1944 film)|Days of Glory]]''&nbsp;– Photographic Effects: [[Vernon L. Walker]]; Sound Effects: [[James G. Stewart]] and [[Roy Granville]]
+**''[[Secret Command]]''&nbsp;– Photographic Effects: [[David Allen (special effects artist)|David Allen]], [[Ray Cory]] and [[Robert Wright (special effects artist)|Robert Wright]]; Sound Effects: [[Russell Malmgren]] and [[Harry Kusnick]]
+**''[[Since You Went Away]]''&nbsp;– Photographic Effects: [[Jack Cosgrove (special effects artist)|John R. Cosgrove]]; Sound Effects: [[Arthur Johns (sound engineer)|Arthur Johns]]
+**''[[The Story of Dr. Wassell]]''&nbsp;– Photographic Effects: [[Farciot Edouart]] and [[Gordon Jennings]]; Sound Effects: [[George Dutton]]
+**''[[Wilson (1944 film)|Wilson]]''&nbsp;– Photographic Effects: [[Fred Sersen]]; Sound Effects: [[Roger Heman Sr.]]
+|}
+
+===Special awards===
+* To [[Margaret O'Brien]], outstanding child actress of 1944.
+* To [[Bob Hope]] for his many services to the Academy.
+
+===Irving G. Thalberg Memorial Award===
+*[[Darryl F. Zanuck]]
+
+== Presenters and performers ==
+===Presenters===
+''(in order of appearance)''<ref>{{cite web |url=https://www.youtube.com/watch?v=_MBiGDFppYw&t=2352s |title=1945 Academy Awards Radio Broadcast |date=December 29, 2018 |website=YouTube |publisher=Old Is Best |access-date=February 20, 2024}}</ref>
+
+*[[Walter Wanger]] (Presenter: Academy Honorary Award to Bob Hope)
+*[[Bob Hope]] (Presenter: Best Art Direction (Black-and-White), Best Art Direction (Color), Best Cinematography (Black-and-White), Best Cinematography (Color), Best Documentary Feature, Best Documentary Short Subject, Best Film Editing, Best Live Action Short Subject (One-Reel), Best Scoring of a Musical Picture, Best Scoring of a Dramatic or Comedy Picture, Best Song, Best Sound Recording, Best Special Effects, and the Scientific & Technical Awards)
+*[[Hugo Butler]] (Presenter: Best Screenplay, Best Original Screenplay, and Best Original Motion Picture Story)
+*[[Mervyn LeRoy]] (Presenter: Best Director)
+*[[Hal B. Wallis]] (Presenter: Best Picture)
+*[[Norma Shearer]] (Presenter: Irving G. Thalberg Memorial Award)
+*[[Bob Hope]] (Presenter: Academy Juvenile Award)
+*[[Charles Coburn]] (Presenter: Best Supporting Actor)
+*[[Teresa Wright]] (Presenter: Best Supporting Actress)
+*[[Gary Cooper]] (Presenter: Best Actor)
+*[[Jennifer Jones]] (Presenter: Best Actress)
+
+== Multiple nominations and awards ==
+{{col-float}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ multiple nominations
+|-
+! scope="col" style="width:55px;" |Nominations
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan="2" style="text-align:center" | 10 
+| ''[[Going My Way]]''
+|-
+| ''[[Wilson (1944 film)|Wilson]]''
+|-
+| rowspan="1" style="text-align:center" |  9
+| ''[[Since You Went Away]]''
+|-
+| rowspan="2" style="text-align:center" | 7
+| ''[[Double Indemnity]]''
+|-
+| ''[[Gaslight (1944 film)|Gaslight]]''
+|-
+| rowspan="2" style="text-align:center" | 5
+| ''[[Cover Girl (film)|Cover Girl]]''
+|-
+| ''[[Laura (1944 film)|Laura]]''
+|-
+| rowspan="3" style="text-align:center" | 4
+| ''[[Kismet (1944 film)|Kismet]]''
+|-
+| ''[[Meet Me in St. Louis]]''
+|-
+| ''[[None but the Lonely Heart (film)|None but the Lonely Heart]]''
+|-
+| rowspan="6" style="text-align:center" | 3
+| ''[[The Adventures of Mark Twain (1944 film)|The Adventures of Mark Twain]]''
+|-
+| ''[[Brazil (1944 film)|Brazil]]''
+|-
+| ''[[Casanova Brown]]''
+|-
+| ''[[Hollywood Canteen (film)|Hollywood Canteen]]''
+|-
+| ''[[Lady in the Dark (film)|Lady in the Dark]]''
+|-
+| ''[[Lifeboat (1944 film)|Lifeboat]]''
+|-
+| rowspan="13" style="text-align:center" | 2
+| ''[[Address Unknown (1944 film)|Address Unknown]]''
+|-
+| ''[[Dragon Seed (film)|Dragon Seed]]''
+|-
+| ''[[Higher and Higher (film)|Higher and Higher]]''
+|-
+| ''[[It Happened Tomorrow]]''
+|-
+| ''[[Lady, Let's Dance]]''
+|-
+| ''[[Minstrel Man (film)|Minstrel Man]]''
+|-
+| ''[[Mr. Skeffington]]''
+|-
+| ''[[Mrs. Parkington]]''
+|-
+| ''[[The Princess and the Pirate]]''
+|-
+| ''[[Song of the Open Road]]''
+|-
+| ''[[Thirty Seconds Over Tokyo]]''
+|-
+| ''[[Up in Arms]]''
+|-
+| ''[[Voice in the Wind]]''
+|-
+|}
+
+{{col-float-break}}
+
+{| class="wikitable" rowspan="2" style="text-align:center;"
+|+ multiple awards
+|-
+! scope="col" style="width:55px;" |Awards
+! scope="col" style="text-align:center;" |Film
+|-
+| rowspan=1, style="text-align:center" | 7
+| ''[[Going My Way]]''
+|-
+| rowspan=1, style="text-align:center" | 5
+| ''[[Wilson (1944 film)|Wilson]]''
+|-
+| rowspan=1, style="text-align:center" | 2
+| ''[[Gaslight (1944 film)|Gaslight]]''
+|-
+|}
+
+{{col-float-end}}
+
+==See also==
+*[[2nd Golden Globe Awards]]
+*[[1944 in film]]
+
+==References==
+{{reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 17}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1944 film awards]]
+[[Category:1945 in American cinema]]
+[[Category:1945 in Los Angeles]]
+[[Category:ABC radio programs]]
+[[Category:March 1945 in the United States]]

@@ -88,6 +88,8 @@ class TVSearchTests(unittest.TestCase):
                     'seasons': [{'season_number': 1, 'air_date': '2020-01-01'}],
                     'videos': {'results': [{'key': 'abc123', 'site': 'YouTube', 'type': 'Trailer', 'official': True}]}}
         self.id = self.repo.refresh(self.metadata.normalize(self.raw), [{'season_number': 1, 'episode_number': 1, 'title': 'Pilot', 'air_date': '2020-01-01'}], self.metadata.credits(self.raw))
+        assigned = self.root / 'Café Harbor'; assigned.mkdir()
+        self.repo.approve_path(assigned, 'folder', self.id)
 
     def test_combined_criteria_original_title_and_accent_normalization(self):
         criteria = {'title': [{'text': 'cafe'}], 'genre': [{'id': '18', 'label': 'Drama'}],
@@ -145,8 +147,10 @@ class TVSearchTests(unittest.TestCase):
         self.assertEqual(self.search.identities('library','keyword','sea'), [{'id':'55','label':'Sea'}])
 
     def test_sort_accepts_zero_values_and_unknown_metadata(self):
-        self.repo.refresh({'tmdb_id': 8, 'title': 'Zero', 'rating': 0}, [])
-        self.repo.refresh({'tmdb_id': 9, 'title': 'Unknown'}, [])
+        for row in ({'tmdb_id': 8, 'title': 'Zero', 'rating': 0}, {'tmdb_id': 9, 'title': 'Unknown'}):
+            series_id = self.repo.refresh(row, [])
+            folder = self.root / row['title']; folder.mkdir()
+            self.repo.approve_path(folder, 'folder', series_id)
         result = self.search.library({**query(), 'sort': {'key': 'rating', 'direction': 'desc'}})
         self.assertEqual([r['title'] for r in result['items']], ['Café Harbor', 'Zero', 'Unknown'])
         self.assertEqual(self.search.library(query(runtime=[{'preset':'short'}]))['total'], 1)
@@ -163,6 +167,44 @@ class TVSearchTests(unittest.TestCase):
         q=TVSearch.normalize(query('discover',viewing_status=[{'id':'watched','label':'Watched'}]),'discover')
         self.assertTrue(matches({'released_count':3,'completed_count':3,'listed_episode_count':10},q))
         self.assertFalse(matches({'released_count':3,'completed_count':2,'listed_episode_count':10},q))
+
+    def test_series_status_is_tv_discover_only_and_uses_tmdb_status_ids(self):
+        status = {'id': '3', 'label': 'Ended'}
+        with self.assertRaises(ValueError):
+            normalize_query(query('discover', tv_status=[status]))
+        with self.assertRaises(ValueError):
+            TVSearch.normalize(query('library', tv_status=[status]), 'library')
+        with self.assertRaises(ValueError):
+            TVSearch.normalize(query('discover', tv_status=[{'id': '6', 'label': 'Other'}]), 'discover')
+        self.metadata.request = Mock(return_value={
+            'results': [{**self.raw, 'status': ''}], 'total_pages': 1, 'total_results': 1,
+        })
+        self.metadata.display = lambda row, deadline=None: row
+        result = self.search.discover(query('discover', tv_status=[status]))
+        self.assertEqual(result['total'], 1)
+        self.assertEqual(result['items'][0]['status'], 'Ended')
+        provider_call = next(call for call in self.metadata.request.call_args_list if call.args[0] == '/discover/tv')
+        self.assertEqual(provider_call.kwargs['with_status'], '3')
+
+    def test_title_plus_status_checks_series_detail_before_counting_matches(self):
+        status = {'id': '3', 'label': 'Ended'}
+        summary = {key: value for key, value in self.raw.items() if key != 'status'}
+        def request(path, **params):
+            if path == '/search/tv':
+                results = [summary] if params['page'] == 1 else [{**summary, 'id': 8, 'name': 'Harbor Two'}]
+                return {'results': results, 'total_pages': 2, 'total_results': 2}
+            if path.startswith('/tv/'):
+                return {**self.raw, 'id': int(path.rsplit('/', 1)[1]),
+                        'status': 'Ended' if path.endswith('/8') else 'Returning Series'}
+            raise AssertionError(path)
+        self.metadata.request = request
+        self.metadata.display = lambda row, deadline=None: row
+        result = self.search.discover(query('discover', title=[{'text': 'Harbor'}], tv_status=[status]), page_size=1)
+        self.assertTrue(result['complete'])
+        self.assertEqual(result['total'], 1)
+        self.assertEqual(result['total_pages'], 1)
+        self.assertFalse(result['has_next'])
+        self.assertEqual([row['tmdb_id'] for row in result['items']], [8])
 
     def test_local_legacy_query_works_without_metadata_client(self):
         result=TVReadModel(self.repo).library()
@@ -277,7 +319,7 @@ class TVSearchTests(unittest.TestCase):
         self.repo.store.backup(old_backup)
         reopened = TVCatalogRepository(self.root/'tv.sqlite')
         self.assertTrue(reopened.episodes(self.id)[0]['completed'])
-        self.assertEqual(reopened.store.audit()['schema_version'],2)
+        self.assertEqual(reopened.store.audit()['schema_version'],4)
         reopened.store.restore(old_backup)
         self.assertTrue(reopened.episodes(self.id)[0]['completed'])
         self.assertFalse(reopened.series(self.id)['watchlisted'])

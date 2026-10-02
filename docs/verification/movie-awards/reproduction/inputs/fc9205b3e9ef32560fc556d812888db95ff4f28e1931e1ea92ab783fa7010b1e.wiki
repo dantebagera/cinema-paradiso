@@ -1,0 +1,368 @@
+{{oscars short description|films-year=1965}}
+{{Use mdy dates|date=July 2022}}
+{{Infobox film awards
+| number = 38
+| award = Academy Awards
+| date = April 18, 1966
+| image = 38th Academy Awards.jpg
+| caption = Official poster
+| site = [[Santa Monica Civic Auditorium]] in [[Santa Monica, California]]
+| host = [[Bob Hope]]
+| producer = [[Joe Pasternak]]
+| director = Richard Dunlap
+| best_picture = ''[[The Sound of Music (film)|The Sound of Music]]''
+| most_wins = ''[[Doctor Zhivago (film)|Doctor Zhivago]]'' and ''The Sound of Music'' (5)
+| most_nominations = ''Doctor Zhivago'' and ''The Sound of Music'' (10)
+| network = [[American Broadcasting Company|ABC]]
+| duration = 
+| last = 37th
+| next = 39th
+}}
+
+The '''38th [[Academy Awards]]''', honoring the [[1965 in film|best in film for 1965]], were held on April 18, 1966, at the [[Santa Monica Civic Auditorium]] in [[Santa Monica, California]].  They were hosted by [[Bob Hope]], and were the first Oscars to be broadcast live [[Color television|in color]].<ref name="Oscars '65 Notes"/> [[Lynda Bird Johnson Robb|Lynda Bird Johnson]], daughter of [[Lyndon B. Johnson|President Lyndon B. Johnson]], attended the ceremony, escorted by actor [[George Hamilton (actor)|George Hamilton]].<ref name="Oscars '65 Notes">
+{{cite book |last1=Wallechinsky |first1=David |last2=Wallace |first2=Irving |date=1975 |title=The People's Almanac |url=https://archive.org/details/peoplesalmanac00wall/page/844/mode/2up |location=Garden City, New York |publisher=Doubleday & Company, Inc. |page=844 |isbn=0-385-04060-1}}</ref>
+
+The most successful films of the year were ''[[The Sound of Music (film)|The Sound of Music]]'' and ''[[Doctor Zhivago (film)|Doctor Zhivago]]'', each with ten nominations and five wins, with the former winning [[Academy Award for Best Picture|Best Picture]]. Both films are in the top 10 inflation-adjusted  commercially successful films ever made,<ref>{{cite web|url=http://www.boxofficemojo.com/alltime/adjusted.htm |title=All Time Box Office Adjusted for Ticket Price Inflation |publisher=Boxofficemojo.com |access-date=2012-08-14 |url-status=live |archive-url=https://web.archive.org/web/20090504000735/http://www.boxofficemojo.com/alltime/adjusted.htm |archive-date=2009-05-04 }}</ref> and both would go on to appear on the [[American Film Institute]] list of the [[AFI's 100 Years...100 Movies|greatest American films of the twentieth century]].
+
+''The Sound of Music'' was the first Best Picture winner without a screenwriting nomination since ''[[Hamlet (1948 film)|Hamlet]]'', and would be the last until ''[[Titanic (1997 film)|Titanic]]'' at the [[70th Academy Awards]]. ''[[Othello (1965 British film)|Othello]]'' became the third film (of four to date) to receive four acting nominations without one for Best Picture. [[William Wyler]] received the last of his record twelve [[Academy Award for Best Director|Best Director]] nominations for ''[[The Collector (1965 film)|The Collector]]''.
+
+==Awards==
+{{multiple image
+| align             = right
+| direction         = vertical
+| total_width       = 150
+| image1            = Robert wise 1990.jpg
+| caption1          = [[Robert Wise]], Best Picture and Best Director winner
+| image2            = Lee Marvin 1980b.jpg
+| caption2          = [[Lee Marvin]], Best Actor winner
+| image3            = Julie Christie - 1965.jpg
+| caption3          = [[Julie Christie]], Best Actress winner
+| image4            = Martin Balsam Film Still.jpg
+| caption4          = [[Martin Balsam]], Best Supporting Actor winner
+| image5            = SHelleywinters.jpg
+| caption5          = [[Shelley Winters]], Best Supporting Actress winner
+}}
+
+Nominees were announced on February 21, 1966. Winners are listed first and highlighted in boldface.<ref name="Oscars1966">{{cite web|url=http://www.oscars.org/oscars/ceremonies/1966 |title=The 38th Academy Awards (1966) Nominees and Winners |access-date=2011-08-24 |work=oscars.org |url-status=live |archive-url=https://web.archive.org/web/20150111233714/http://www.oscars.org/oscars/ceremonies/1966 |archive-date=2015-01-11 }}</ref>
+
+{| class=wikitable
+|-
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[The Sound of Music (film)|The Sound of Music]]'' – [[Robert Wise]], producer'''
+** ''[[Darling (1965 film)|Darling]]'' – [[Joseph Janni]], producer
+** ''[[Doctor Zhivago (film)|Doctor Zhivago]]'' – [[Carlo Ponti]], producer
+** ''[[Ship of Fools (film)|Ship of Fools]]'' – [[Stanley Kramer]], producer
+** ''[[A Thousand Clowns]]'' – [[Fred Coe]], producer
+| style="vertical-align:top; width:50%;"|
+{{Award category|#F9EFAA|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Robert Wise]]&nbsp;– ''[[The Sound of Music (film)|The Sound of Music]]'''''
+** [[William Wyler]]&nbsp;– ''[[The Collector (1965 film)|The Collector]]''
+** [[John Schlesinger]]&nbsp;– ''[[Darling (1965 film)|Darling]]''
+** [[David Lean]]&nbsp;– ''[[Doctor Zhivago (film)|Doctor Zhivago]]''
+** [[Hiroshi Teshigahara]]&nbsp;– ''[[Woman in the Dunes]]''
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actor|Best Actor]]}}
+* '''[[Lee Marvin]]&nbsp;– ''[[Cat Ballou]]'' as Kid Shelleen / Tim Strawn'''
+** [[Richard Burton]]&nbsp;– ''[[The Spy Who Came In from the Cold (film)|The Spy Who Came In from the Cold]]'' as Alec Leamas
+** [[Laurence Olivier]]&nbsp;– ''[[Othello (1965 British film)|Othello]]'' as [[Othello (character)|Othello]]
+** [[Rod Steiger]]&nbsp;– ''[[The Pawnbroker (film)|The Pawnbroker]]'' as Sol Nazerman
+** [[Oskar Werner]]&nbsp;– ''[[Ship of Fools (film)|Ship of Fools]]'' as Dr. Wilhelm "Willi" Schumann
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Actress|Best Actress]]}}
+* '''[[Julie Christie]]&nbsp;– ''[[Darling (1965 film)|Darling]]'' as Diana Scott'''
+** [[Julie Andrews]]&nbsp;– ''[[The Sound of Music (film)|The Sound of Music]]'' as [[Maria von Trapp]]
+** [[Samantha Eggar]]&nbsp;– ''[[The Collector (1965 film)|The Collector]]'' as Miranda Grey
+** [[Elizabeth Hartman]]&nbsp;– ''[[A Patch of Blue]]'' as Selina D'Arcey
+** [[Simone Signoret]]&nbsp;– ''[[Ship of Fools (film)|Ship of Fools]]'' as La Condesa
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Martin Balsam]]&nbsp;– ''[[A Thousand Clowns]]'' as Arnold Burns'''
+** [[Ian Bannen]]&nbsp;– ''[[The Flight of the Phoenix (1965 film)|The Flight of the Phoenix]]'' as "Ratbags" Crow
+** [[Tom Courtenay]]&nbsp;– ''[[Doctor Zhivago (film)|Doctor Zhivago]]'' as Pavel "Pasha" Antipov
+** [[Michael Dunn (actor)|Michael Dunn]]&nbsp;– ''[[Ship of Fools (film)|Ship of Fools]]'' as Carl Glocken
+** [[Frank Finlay]]&nbsp;– ''[[Othello (1965 British film)|Othello]]'' as [[Iago]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Shelley Winters]]&nbsp;– ''[[A Patch of Blue]]'' as Rose-Ann D'Arcey'''
+** [[Ruth Gordon]]&nbsp;– ''[[Inside Daisy Clover]]'' as Lucile Clover
+** [[Joyce Redman]]&nbsp;– ''[[Othello (1965 British film)|Othello]]'' as [[Emilia (Othello)|Emilia]] 
+** [[Maggie Smith]]&nbsp;– ''[[Othello (1965 British film)|Othello]]'' as [[Desdemona]]
+** [[Peggy Wood]]&nbsp;– ''[[The Sound of Music (film)|The Sound of Music]]'' as [[Virgilia, Mother Abbess|the Mother Abbess]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Screenplay|Best Writing (Story and Screenplay -- Written Directly for the Screen)]]}}
+* '''''[[Darling (1965 film)|Darling]]''&nbsp;– [[Frederic Raphael]]'''
+** ''[[Casanova 70]]''&nbsp;– [[Agenore Incrocci]], [[Furio Scarpelli]], [[Mario Monicelli]], [[Tonino Guerra]], Giorgio Salvioni and [[Suso Cecchi d'Amico]]
+** ''[[Those Magnificent Men in their Flying Machines]]''&nbsp;– [[Jack Davies (screenwriter)|Jack Davies]] and [[Ken Annakin]]
+** ''[[The Train (1964 film)|The Train]]''&nbsp;– Franklin Coen and Frank Davis
+** ''[[The Umbrellas of Cherbourg]]''&nbsp;– [[Jacques Demy]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Adapted Screenplay|Best Writing (Screenplay -- Based on Material from Another Medium)]]}}
+* '''''[[Doctor Zhivago (film)|Doctor Zhivago]]''&nbsp;– [[Robert Bolt]] from ''[[Doctor Zhivago (novel)|Doctor Zhivago]]'' by [[Boris Pasternak]]'''
+** ''[[Cat Ballou]]''&nbsp;– [[Walter Newman (screenwriter)|Walter Newman]] and [[Frank Pierson]] from ''The Ballad of Cat Ballou'' by Roy Chanslor
+** ''[[The Collector (1965 film)|The Collector]]''&nbsp;– [[Stanley Mann]] and [[John Kohn]] from ''[[The Collector]]'' by [[John Fowles]]
+** ''[[Ship of Fools (film)|Ship of Fools]]''&nbsp;– [[Abby Mann]] from ''[[Ship of Fools (Porter novel)|Ship of Fools]]'' by [[Katherine Anne Porter]]
+** ''[[A Thousand Clowns]]''&nbsp;– [[Herb Gardner]] from ''A Thousand Clowns'' by [[Herb Gardner]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Foreign Language Film|Best Foreign Language Film]]}}
+* '''''[[The Shop on Main Street]]'' ([[Czechoslovakia]])'''
+** ''[[Blood on the Land]]'' ([[Greece]])
+** ''[[Dear John (1964 film)|Dear John]]'' ([[Sweden]])
+** ''[[Kwaidan (film)|Kwaidan]]'' ([[Japan]])
+** ''[[Marriage Italian Style]]'' ([[Italy]])
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary Feature|Best Documentary (Feature)]]}}
+* '''''[[The Eleanor Roosevelt Story]]''&nbsp;– [[Sidney Glazier]]'''
+** ''[[The Battle of the Bulge... The Brave Rifles]]''&nbsp;– Laurence E. Mascott
+** ''[[The Forth Road Bridge]]''&nbsp;– Peter Mills
+** ''[[Let My People Go: The Story of Israel]]''&nbsp;– [[Marshall Flaum]]
+** ''[[To Die in Madrid]]''&nbsp;– [[Frédéric Rossif]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Documentary (Short Subject)|Best Documentary (Short Subject)]]}}
+* '''''[[To Be Alive!]]''&nbsp;– [[Francis Thompson (film director)|Francis Thompson]]'''
+** ''[[Mural on Our Street]]''&nbsp;– Kirk Smallman
+** ''[[Overture (1965 film)|Nyitany]]''&nbsp;– [[Pannonia Film Studio|Mafilm Productions]]
+** ''[[Point of View (film)|Point of View]]''&nbsp;– Vision Associates Productions
+** ''[[Yeats Country]]''&nbsp;– [[Patrick Carey (cinematographer)|Patrick Carey]] and Joe Mendoza
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Live Action Short Film|Best Short Subject (Live Action)]]}}
+* '''''[[The Chicken (film)|The Chicken]]''&nbsp;– [[Claude Berri]]'''
+** ''[[Fortress of Peace]]''&nbsp;– [[Lothar Wolff]]
+** ''[[Skaterdater]]''&nbsp;– Marshall Backlar and [[Noel Black]]
+** ''[[Snow (1963 film)|Snow]]''&nbsp;– [[Edgar Anstey]]
+** ''[[Time Piece]]''&nbsp;– [[Jim Henson]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Animated Short Film|Best Short Subject (Cartoon)]]}}
+* '''''[[The Dot and the Line]]''&nbsp;– [[Chuck Jones]] and Les Goldman'''
+** ''Clay or the Origin of Species''&nbsp;– [[Eli Noyes|Eliot Noyes Jr.]]
+** ''The Thieving Magpie''&nbsp;– [[Emanuele Luzzati]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Music Score -- Substantially Original)]]}}
+* '''''[[Doctor Zhivago (film)|Doctor Zhivago]]''&nbsp;– [[Maurice Jarre]]'''
+** ''[[The Agony and the Ecstasy (film)|The Agony and the Ecstasy]]''&nbsp;– [[Alex North]]
+** ''[[The Greatest Story Ever Told]]''&nbsp;– [[Alfred Newman (composer)|Alfred Newman]]
+** ''[[A Patch of Blue]]''&nbsp;– [[Jerry Goldsmith]]
+** ''[[The Umbrellas of Cherbourg]]''&nbsp;– [[Michel Legrand]] and [[Jacques Demy]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Score|Best Music (Scoring of Music -- Adaptation or Treatment)]]}}
+* '''''[[The Sound of Music (film)|The Sound of Music]]''&nbsp;– [[Irwin Kostal]]'''
+** ''[[Cat Ballou]]''&nbsp;– [[Frank De Vol]]
+** ''[[The Pleasure Seekers (1964 film)|The Pleasure Seekers]]''&nbsp;– [[Lionel Newman]] and [[Alexander Courage]]
+** ''[[A Thousand Clowns]]''&nbsp;– [[Don Walker (orchestrator)|Don Walker]]
+** ''[[The Umbrellas of Cherbourg]]''&nbsp;– [[Michel Legrand]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Original Song|Best Music (Song)]]}}
+* '''"[[The Shadow of Your Smile]]" from ''[[The Sandpiper]]''&nbsp;– Music by [[Johnny Mandel]]; Lyrics by [[Paul Francis Webster]]'''
+** "The Ballad of Cat Ballou" from ''[[Cat Ballou]]''&nbsp;– Music by [[Jerry Livingston]]; Lyrics by [[Mack David]]
+** "[[I Will Wait for You]]" from ''[[The Umbrellas of Cherbourg]]''&nbsp;– Music by [[Michel Legrand]]; Lyrics by [[Jacques Demy]]
+** "[[The Sweetheart Tree]]" from ''[[The Great Race]]''&nbsp;– Music by [[Henry Mancini]]; Lyrics by [[Johnny Mercer]]
+** "[[What's New Pussycat? (song)|What's New Pussycat?]]" from ''[[What's New Pussycat?]]''&nbsp;– Music by [[Burt Bacharach]]; Lyrics by [[Hal David]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Mixing|Best Sound]]}}
+* ''' ''[[The Sound of Music (film)|The Sound of Music]]''&nbsp;– [[James Corcoran (sound engineer)|James Corcoran]] and [[Fred Hynes]] '''
+** ''[[The Agony and the Ecstasy (film)|The Agony and the Ecstasy]]''&nbsp;– [[James Corcoran (sound engineer)|James Corcoran]]
+** ''[[Doctor Zhivago (film)|Doctor Zhivago]]''&nbsp;– [[A. W. Watkins]] and [[Franklin Milton]]
+** ''[[The Great Race]]''&nbsp;– [[George Groves (sound engineer)|George Groves]]
+** ''[[Shenandoah (film)|Shenandoah]]''&nbsp;– [[Waldon O. Watson]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Sound Editing|Best Sound Effects]]}}
+* ''' ''[[The Great Race]]''&nbsp;– [[Treg Brown]] '''
+** ''[[Von Ryan's Express]]''&nbsp;– [[Walter Rossi (sound editor)|Walter Rossi]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Black-and-White)]]}}
+* '''''[[Ship of Fools (film)|Ship of Fools]]''&nbsp;– Art Direction: [[Robert Clatworthy (art director)|Robert Clatworthy]]; Set Decoration: [[Joseph Kish]]'''
+** ''[[King Rat (film)|King Rat]]''&nbsp;– Art Direction: [[Robert Emmet Smith]]; Set Decoration: [[Frank Tuttle (set decorator)|Frank Tuttle]]
+** ''[[A Patch of Blue]]''&nbsp;– Art Direction: [[George Davis (art director)|George Davis]] and [[Urie McCleary]]; Set Decoration: [[Henry Grace]] and [[Charles S. Thompson (set decorator)|Charles S. Thompson]]
+** ''[[The Slender Thread]]''&nbsp;– Art Direction: [[Hal Pereira]] and [[Jack Poplin]]; Set Decoration: [[Robert R. Benton]] and [[Joseph Kish]]
+** ''[[The Spy Who Came In from the Cold (film)|The Spy Who Came In from the Cold]]''&nbsp;– Art Direction: [[Hal Pereira]], [[Tambi Larsen]] and [[Ted Marshall]]; Set Decoration: [[Josie MacAvin]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Production Design|Best Art Direction (Color)]]}}
+* '''''[[Doctor Zhivago (film)|Doctor Zhivago]]''&nbsp;– Art Direction: [[John Box]] and [[Terence Marsh]]; Set Decoration: [[Dario Simoni]]'''
+** ''[[The Agony and the Ecstasy (film)|The Agony and the Ecstasy]]''&nbsp;– Art Direction: [[John DeCuir]] and [[Jack Martin Smith]]; Set Decoration: [[Dario Simoni]]
+** ''[[The Greatest Story Ever Told]]''&nbsp;– Art Direction: [[Richard Day (art director)|Richard Day]], [[William J. Creber]] and [[David S. Hall (art director)|David S. Hall]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]]); Set Decoration: [[Ray Moyer]], [[Fred M. MacLean]] and [[Norman Rockett]]
+** ''[[Inside Daisy Clover]]''&nbsp;– Art Direction: [[Robert Clatworthy (art director)|Robert Clatworthy]]; Set Decoration: [[George James Hopkins]]
+** ''[[The Sound of Music (film)|The Sound of Music]]''&nbsp;– Art Direction: [[Boris Leven]]; Set Decoration: [[Walter M. Scott]] and [[Ruby R. Levitt|Ruby Levitt]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Black-and-White)]]}}
+* '''''[[Ship of Fools (film)|Ship of Fools]]''&nbsp;– [[Ernest Laszlo]]'''
+** ''[[In Harm's Way]]''&nbsp;– [[Loyal Griggs]]
+** ''[[King Rat (film)|King Rat]]''&nbsp;– [[Burnett Guffey]]
+** ''[[Morituri (1965 film)|Morituri]]''&nbsp;– [[Conrad Hall]]
+** ''[[A Patch of Blue]]''&nbsp;– [[Robert Burks]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Cinematography|Best Cinematography (Color)]]}}
+* '''''[[Doctor Zhivago (film)|Doctor Zhivago]]''&nbsp;– [[Freddie Young]]'''
+** ''[[The Agony and the Ecstasy (film)|The Agony and the Ecstasy]]''&nbsp;– [[Leon Shamroy]]
+** ''[[The Great Race]]''&nbsp;– [[Russell Harlan]]
+** ''[[The Greatest Story Ever Told]]''&nbsp;– [[William C. Mellor]] ([[List of posthumous Academy Award winners and nominees|posthumous nomination]]) and [[Loyal Griggs]]
+** ''[[The Sound of Music (film)|The Sound of Music]]''&nbsp;– [[Ted McCord (cinematographer)|Ted D. McCord]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Black-and-White)]]}}
+* '''''[[Darling (1965 film)|Darling]]''&nbsp;– [[Julie Harris (costume designer)|Julie Harris]]'''
+** ''[[Morituri (1965 film)|Morituri]]''&nbsp;– [[Moss Mabry]]
+** ''[[A Rage to Live]]''&nbsp;– [[Howard Shoup]]
+** ''[[Ship of Fools (film)|Ship of Fools]]''&nbsp;– [[Jean Louis]] and [[Bill Thomas (costume designer)|Bill Thomas]]
+** ''[[The Slender Thread]]''&nbsp;– [[Edith Head]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Costume Design|Best Costume Design (Color)]]}}
+* '''''[[Doctor Zhivago (film)|Doctor Zhivago]]''&nbsp;– [[Phyllis Dalton]]'''
+** ''[[The Agony and the Ecstasy (film)|The Agony and the Ecstasy]]''&nbsp;– [[Vittorio Nino Novarese]]
+** ''[[The Greatest Story Ever Told]]''&nbsp;– [[Marjorie Best]] and [[Vittorio Nino Novarese]]
+** ''[[Inside Daisy Clover]]''&nbsp;– [[Edith Head]] and [[Bill Thomas (costume designer)|Bill Thomas]]
+** ''[[The Sound of Music (film)|The Sound of Music]]''&nbsp;– [[Dorothy Jeakins]]
+|-
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[The Sound of Music (film)|The Sound of Music]]''&nbsp;– [[William Reynolds (film editor)|William H. Reynolds]]'''
+** ''[[Cat Ballou]]''&nbsp;– [[Charles Nelson (film editor)|Charles Nelson]]
+** ''[[Doctor Zhivago (film)|Doctor Zhivago]]''&nbsp;– [[Norman Savage]]
+** ''[[The Flight of the Phoenix (1965 film)|The Flight of the Phoenix]]''&nbsp;– [[Michael Luciano]]
+** ''[[The Great Race]]''&nbsp;– [[Ralph E. Winters]]
+| valign="top" |
+{{Award category|#F9EFAA| [[Academy Award for Best Visual Effects|Best Special Visual Effects]]}}
+* '''''[[Thunderball (film)|Thunderball]]''&nbsp;– [[John Stears]]'''
+** ''[[The Greatest Story Ever Told]]''&nbsp;– [[Joseph McMillan Johnson|J. McMillan Johnson]]
+|}
+
+===Honorary Award===
+* To [[Bob Hope]] for unique and distinguished service to our industry and the academy.
+
+===Jean Hersholt Humanitarian Award===
+* [[Edmond L. DePatie]]
+
+===Irving G. Thalberg Memorial Award===
+* [[William Wyler]]
+
+== Multiple nominations and awards ==
+{{Col-begin}}
+{{Col-1-of-2}}
+These films had multiple nominations:
+
+*''10 nominations'': ''[[Doctor Zhivago (film)|Doctor Zhivago]]'' and ''[[The Sound of Music (film)|The Sound of Music]]''
+*''8 nominations:'' ''[[Ship of Fools (film)|Ship of Fools]]''
+*''5 nominations:'' ''[[The Agony and the Ecstasy (film)|The Agony and the Ecstasy]]'', ''[[Cat Ballou]]'', ''[[Darling (1965 film)|Darling]]'', ''[[The Great Race]]'', ''[[The Greatest Story Ever Told]]'' and ''[[A Patch of Blue]]''
+*''4 nominations:'' ''[[Othello (1965 British film)|Othello]]'', ''[[A Thousand Clowns]]'' and ''[[The Umbrellas of Cherbourg]]''
+*''3 nominations:'' ''[[The Collector (1965 film)|The Collector]]'' and ''[[Inside Daisy Clover]]''
+*''2 nominations:'' ''[[The Flight of the Phoenix (1965 film)|The Flight of the Phoenix]]'', ''[[King Rat (film)|King Rat]]'', ''[[Morituri (1965 film)|Morituri]]'', ''[[The Slender Thread]]'' and ''[[The Spy Who Came In from the Cold (film)|The Spy Who Came In from the Cold]]''
+
+{{Col-2-of-2}}
+The following films received multiple awards.
+
+*''5 wins'': ''[[Doctor Zhivago (film)|Doctor Zhivago]]'' and ''[[The Sound of Music (film)|The Sound of Music]]''
+*''3 wins'': ''[[Darling (1965 film)|Darling]]''
+*''2 wins:'' ''[[Ship of Fools (film)|Ship of Fools]]''
+
+{{Col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers.
+
+===Presenters===
+{| class="wikitable sortable"
+|-
+! Name !! Role
+|-
+| {{sortname|Hank|Simms|nolink=0}} || Announcer for the 38th Academy Awards
+|-
+| {{sortname|Arthur|Freed}} (AMPAS President) || Gave opening remarks welcoming guests to the awards ceremony
+|-
+| {{sortname|Patty|Duke}}<br />[[George Hamilton (actor)|George Hamilton]] || Presenters of the award for Best Sound
+|-
+| {{sortname|Dorothy|Malone}} || Presenter of the award for Best Special Visual Effects
+|-
+| {{sortname|Lila|Kedrova}} || Presenter of the award for Best Supporting Actor
+|-
+| {{sortname|Yvette|Mimieux}} || Presenter of the award for Best Sound Effects
+|-
+| {{sortname|Lana|Turner}}<br />[[James Garner]] || Presenters of the Costume Design Awards
+|-
+| {{sortname|Milton|Berle}}<br />[[Phyllis Diller]] || Presenters of the Documentary Awards
+|-
+| {{sortname|Don|Knotts}}<br />[[Elke Sommer]] || Presenters of the Short Subjects Awards
+|-
+| {{sortname|Peter|Ustinov}} || Presenter of the award for Best Supporting Actress
+|-
+| {{sortname|Jason|Robards}} || Presenter of the award for Best Film Editing
+|-
+| {{sortname|Warren|Beatty}}<br />[[Debbie Reynolds]] || Presenters of the awards for Best Art Direction
+|-
+| {{sortname|Angie|Dickinson}} || Presenter of the Jean Hersholt Humanitarian Award to Edmond L. DePatie
+|-
+| {{sortname|Richard|Johnson|Richard Johnson (actor)}}<br />[[Kim Novak]] || Presenters of the awards for Best Cinematography
+|-
+| {{sortname|James|Coburn}}<br />[[Virna Lisi]] || Presenters of the Music Awards
+|-
+| {{sortname|Gregory|Peck}} || Presenter of the award for Best Foreign Language Film
+|-
+| {{sortname|Natalie|Wood}} || Presenter of the award for Best Song
+|-
+| {{sortname|Shirley|MacLaine}} || Presenter of the award for Best Director
+|-
+| {{sortname|George|Peppard}}<br />[[Joanne Woodward]] || Presenters of the Writing Awards
+|-
+| Arthur Freed || Presenter of the Irving J. Thalberg Memorial Award to William Wyler
+|-
+| {{sortname|Julie|Andrews}} || Presenter of the award for Best Actor
+|-
+| {{sortname|Rex|Harrison}} || Presenter of the award for Best Actress
+|-
+| Arthur Freed || Presenter of the Honorary Gold Medal to Bob Hope
+|-
+| {{sortname|Jack|Lemmon}} || Presenter of the award for Best Picture
+|}
+
+===Performers===
+{| class="wikitable sortable"
+|-
+! Name !! Role !! Performed
+|-
+| {{sortname|Johnny|Green}} || Musical arranger and conductor || Orchestral
+|-
+| {{sortname||Academy Awards Chorus|nolink=1}} || Performers || “The Academy Awards Song (Mr. Oscar)” during the opening presentation
+|-
+| The [[Smothers Brothers]] || Performers || "The Ballad of Cat Ballou" from ''[[Cat Ballou]]''
+|-
+| {{sortname|Michel|Legrand}}<br />[[Jane Morgan]] || Performers || "[[I Will Wait for You]]" from ''[[The Umbrellas of Cherbourg]]''
+|-
+| {{sortname|Barbara|McNair}} || Performer || "[[The Shadow of Your Smile]]" from ''[[The Sandpiper]]''
+|-
+| {{sortname|Robert|Goulet}} || Performer || "[[The Sweetheart Tree]]" from ''[[The Great Race]]''
+|-
+| {{sortname|Liza|Minnelli}} || Performer || "[[What's New Pussycat? (song)|What's New Pussycat?]]" from ''[[What's New Pussycat?]]''
+|}
+
+==See also==
+*[[23rd Golden Globe Awards]]
+*[[1965 in film]]
+* [[8th Grammy Awards]]
+* [[17th Primetime Emmy Awards]]
+* [[18th Primetime Emmy Awards]]
+* [[19th British Academy Film Awards]]
+* [[20th Tony Awards]]
+* [[List of submissions to the 38th Academy Awards for Best Foreign Language Film]]
+
+==References==
+{{Reflist}}
+
+{{Academy Awards Chron}}
+
+{{DEFAULTSORT:Academy Awards, 38}}
+[[Category:Academy Awards ceremonies]]
+[[Category:1965 film awards]]
+[[Category:1965 awards in the United States]]
+[[Category:1966 in California]]
+[[Category:1966 in American cinema]]
+[[Category:April 1966 in the United States]]
+[[Category:Organized events in Santa Monica, California]]
+[[Category:20th century in Santa Monica, California]]

@@ -1,0 +1,587 @@
+{{Oscars short description|films-year=2022}}
+{{Redirect|Oscars 95|the ceremony held in 1995|67th Academy Awards|the ceremony for films released in 1995|68th Academy Awards}}
+{{Featured list}}
+{{Use American English|date=May 2022}}
+{{Use mdy dates|date=May 2022}}
+{{Infobox film awards
+| number           = 95
+| award            = Academy Awards
+| image            = 95th Academy Awards poster.jpg
+| alt              = Official poster for the 95th Academy Awards
+| caption          = Official poster
+| date             = March 12, 2023
+| site             = [[Dolby Theatre]]<br />[[Hollywood, Los Angeles|Hollywood]], Los Angeles, California, U.S.
+| host             = [[Jimmy Kimmel]]
+| preshow          = {{plainlist|
+* [[Ashley Graham (model)|Ashley Graham]]
+* [[Vanessa Hudgens]]
+* [[Lilly Singh]]<ref>{{cite news |last=Flam |first=Charna |title=Vanessa Hudgens, Ashley Graham, Lilly Singh to Host ABC's ''Countdown to the Oscars'' Pre-Show |url=https://variety.com/2023/awards/news/oscars-pre-show-vanessa-hudgens-1235542238/ |access-date=March 8, 2023 |work=[[Variety (magazine)|Variety]] |date=March 3, 2023 |archive-date=March 6, 2023 |archive-url=https://web.archive.org/web/20230306160903/https://variety.com/2023/awards/news/oscars-pre-show-vanessa-hudgens-1235542238/ |url-status=live}}</ref>
+}}
+| producer         = {{plainlist|
+* [[Glenn Weiss]]
+* [[Ricky Kirshner]]
+}}
+| director         = Glenn Weiss
+| best_picture     = ''[[Everything Everywhere All at Once]]''
+| most_wins        = ''Everything Everywhere All at Once'' (7)
+| network          = [[American Broadcasting Company|ABC]]
+| most_nominations = ''Everything Everywhere All at Once'' (11)
+| duration         = 3 hours, 37 minutes<ref>{{cite news |last=Santilli |first=Tom |title=Oscars 2023 Aftermath: A Safe and Focused Show Gets the Awards Show Back on Track |url=https://www.wxyz.com/entertainment/movies/movie-reviews/oscars-2023-aftermath-a-safe-and-focused-show-gets-the-awards-show-back-on-track |access-date=April 25, 2023 |agency=[[WXYZ-TV]] |date=March 13, 2023 |archive-date=March 13, 2023 |archive-url=https://web.archive.org/web/20230313145658/https://www.wxyz.com/entertainment/movies/movie-reviews/oscars-2023-aftermath-a-safe-and-focused-show-gets-the-awards-show-back-on-track |url-status=live}}</ref>
+| ratings          = {{plainlist|
+* 18.75&nbsp;million<ref name="Viewership">{{cite news |title=With Viewership Up 12% from Last Year, Oscars Win the Ratings Week |url=https://www.latimes.com/entertainment-arts/tv/story/2023-03-15/with-viewership-up-12-from-last-year-oscars-win-the-ratings-week |access-date=March 15, 2023 |work=[[Los Angeles Times]] |date=March 15, 2023 |archive-date=March 15, 2023 |archive-url=https://web.archive.org/web/20230315175213/https://www.latimes.com/entertainment-arts/tv/story/2023-03-15/with-viewership-up-12-from-last-year-oscars-win-the-ratings-week |url-status=live}}</ref>
+* 9.9% ([[Nielsen ratings]])
+}}
+| last             = 94th
+| next             = 96th
+}}
+
+The '''95th Academy Awards''' ceremony, presented by the [[Academy of Motion Picture Arts and Sciences]] (AMPAS), took place on March 12, 2023, at the [[Dolby Theatre]] in [[Hollywood, Los Angeles]]. During the gala, the AMPAS presented Academy Awards (commonly referred to as Oscars) in 23 categories honoring [[2022 in film|films released in 2022]]. The ceremony, televised in the United States by [[American Broadcasting Company|ABC]], was produced by [[Glenn Weiss]] and [[Ricky Kirshner]], with Weiss also serving as director. Comedian [[Jimmy Kimmel]] hosted the show for the third time, following the [[89th Academy Awards|89th ceremony]] in 2017 and the [[90th Academy Awards|90th ceremony]] in 2018.<ref name="WeissKirschner"/><ref name="Kimmel"/>
+
+In related events, the Academy held its 13th annual Governors Awards ceremony at the [[Fairmont Century Plaza]] Hotel in [[Century City]], California, on November 19, 2022.<ref name="Governors"/> The [[Academy Scientific and Technical Award]]s were presented by host [[Simu Liu]] on February 24, 2023, in a ceremony at the [[Academy Museum of Motion Pictures]] in Los Angeles.<ref>{{cite news |last=Giardina |first=Carolyn |title=Academy Sci Tech Awards Make a "Triumphant Return" as Lens Designer Iain Neil Accepts Oscar |url=https://www.hollywoodreporter.com/movies/movie-news/academy-scitech-awards-2023-winners-1235330368/ |access-date=March 6, 2023 |work=[[The Hollywood Reporter]] |date=February 24, 2023 |archive-date=March 6, 2023 |archive-url=https://web.archive.org/web/20230306041319/https://www.hollywoodreporter.com/movies/movie-news/academy-scitech-awards-2023-winners-1235330368/ |url-status=live}}</ref>
+
+''[[Everything Everywhere All at Once]]'' won seven awards, including [[Academy Award for Best Picture|Best Picture]].<ref>{{cite news |title=''Everything Everywhere'' Dominates the Oscars. Here's the Full List of Winners |url=https://buffalonews.com/entertainment/everything-everywhere-dominates-the-oscars-heres-the-full-list-of-winners/article_178d7682-22ea-58bb-a6f6-92389fbd53cd.html |access-date=April 21, 2023 |work=[[The Buffalo News]] |date=March 12, 2023 |archive-date=March 14, 2023 |archive-url=https://web.archive.org/web/20230314164649/https://buffalonews.com/entertainment/everything-everywhere-dominates-the-oscars-heres-the-full-list-of-winners/article_178d7682-22ea-58bb-a6f6-92389fbd53cd.html |url-status=live}}</ref><ref>{{cite news |title=Oscars 2023: ''Everything Everywhere All at Once'' wins big at 95th Academy Awards |url=https://www.cbsnews.com/news/oscars-2023-everything-everywhere-all-at-once-most-awards/ |access-date=March 18, 2023 |agency=[[CBS News]] |date=March 13, 2023 |archive-date=July 29, 2023 |archive-url=https://web.archive.org/web/20230729021534/https://www.cbsnews.com/news/oscars-2023-everything-everywhere-all-at-once-most-awards/ |url-status=live}}</ref> Other winners included ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' with four awards, ''[[The Whale (2022 film)|The Whale]]'' with two, and ''[[Avatar: The Way of Water]]'', ''[[Black Panther: Wakanda Forever]]'', ''[[The Boy, the Mole, the Fox and the Horse (film)|The Boy, the Mole, the Fox and the Horse]]'', ''[[The Elephant Whisperers]]'', ''[[Guillermo del Toro's Pinocchio]]'', ''[[An Irish Goodbye]]'', ''[[Navalny (film)|Navalny]]'', ''[[RRR]]'', ''[[Top Gun: Maverick]]'', and ''[[Women Talking (film)|Women Talking]]'' with one. The telecast drew 18.75&nbsp;million viewers in the United States.<ref name="Viewership"/>
+
+== Winners and nominees ==
+<!-- Please do not add any fact or statement below unless you have a credible source verifying it. Otherwise, it will be promptly removed. -->
+
+The nominees for the 95th Academy Awards were announced on January 24, 2023, at the [[Samuel Goldwyn Theater]] in Beverly Hills, by actors [[Riz Ahmed]] and [[Allison Williams]].<ref>{{cite news |last=Chuba |first=Kristen |title=Inside the Oscar Noms as Press and Publicists Return for In-Person Announcement |url=https://www.hollywoodreporter.com/movies/movie-news/oscar-nominations-announcement-in-person-event-1235308214/ |access-date=January 31, 2023 |work=[[The Hollywood Reporter]] |date=January 24, 2023 |archive-date=January 31, 2023 |archive-url=https://web.archive.org/web/20230131084615/https://www.hollywoodreporter.com/movies/movie-news/oscar-nominations-announcement-in-person-event-1235308214/ |url-status=live}}</ref> ''[[Everything Everywhere All at Once]]'' led all nominees with eleven nominations; ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' and ''[[The Banshees of Inisherin]]'' tied for second with nine nominations each.<ref>{{cite news |title=''Everything Everywhere'' tops Oscar nominations with 11 nods |url=https://www.tampabay.com/life-culture/arts/movies/2023/01/24/everything-everywhere-tops-oscar-nominations-with-11-nods/ |access-date=February 15, 2023 |work=[[Tampa Bay Times]] |date=January 24, 2023 |archive-date=February 7, 2023 |archive-url=https://web.archive.org/web/20230207063511/https://www.tampabay.com/life-culture/arts/movies/2023/01/24/everything-everywhere-tops-oscar-nominations-with-11-nods/ |url-status=live}}</ref><ref>{{cite news |last=Williams |first=Ebony |title=Grab the Popcorn! Here's Where to Stream This Year's Oscar Nominated Movies |url=https://www.ajc.com/life/grab-the-popcorn-heres-where-to-stream-this-years-oscar-nominated-movies/LD2QGZ3ESJFL7H7YPI4Z7NOEGM/ |access-date=April 21, 2023 |work=[[The Atlanta Journal-Constitution]] |date=March 10, 2023 |archive-date=March 26, 2023 |archive-url=https://web.archive.org/web/20230326133011/https://www.ajc.com/life/grab-the-popcorn-heres-where-to-stream-this-years-oscar-nominated-movies/LD2QGZ3ESJFL7H7YPI4Z7NOEGM/ |url-status=live}}</ref>
+
+The winners were announced during the awards ceremony on March 12, 2023. ''Everything Everywhere All at Once'' became the first [[science fiction film]] to win Best Picture,<ref>Multiple sources:
+* {{cite news |title=''Everything Everywhere All at Once'' wins Best Picture at Oscars |url=https://abcnews.go.com/GMA/Culture/video/wins-best-picture-oscars-97819726 |access-date=March 15, 2023 |work=[[ABC News (United States)|ABC News]] |date=March 13, 2023 |archive-date=March 15, 2023 |archive-url=https://web.archive.org/web/20230315110514/https://abcnews.go.com/GMA/Culture/video/wins-best-picture-oscars-97819726 |url-status=live}}
+* {{cite news |last=Deggans |first=Eric |date=March 13, 2023 |title=Breaking Down Last Night's Oscars |publisher=[[NPR]] |url=https://www.npr.org/2023/03/13/1163164128/breaking-down-last-nights-oscars |access-date=March 15, 2023 |archive-date=March 15, 2023 |archive-url=https://web.archive.org/web/20230315004904/https://www.npr.org/2023/03/13/1163164128/breaking-down-last-nights-oscars |url-status=live}}
+* {{cite news |last=Ettenhofer |first=Valerie |date=March 13, 2023 |title=Jimmy Kimmel Really Beat a Dead Horse at the Oscars with Too Many Will Smith Jokes |work=[[/Film]] |url=https://www.slashfilm.com/1225658/every-time-jimmy-kimmel-mocked-will-smith-at-the-2023-oscars/ |access-date=March 15, 2023 |archive-date=March 13, 2023 |archive-url=https://web.archive.org/web/20230313053743/https://www.slashfilm.com/1225658/every-time-jimmy-kimmel-mocked-will-smith-at-the-2023-oscars/ |url-status=live}}
+* {{cite magazine |last=Teo |first=Sharlene |title=The Oscar success of ''Everything Everywhere All at Once'' is the ultimate validation of Asian narratives |url=https://www.harpersbazaar.com/uk/culture/entertainment/a43328105/oscars-success-everything-everywhere-all-at-once/ |access-date=April 1, 2023 |magazine=[[Harper's Bazaar]] |date=March 16, 2023 |archive-date=April 1, 2023 |archive-url=https://web.archive.org/web/20230401095545/https://www.harpersbazaar.com/uk/culture/entertainment/a43328105/oscars-success-everything-everywhere-all-at-once/ |url-status=live}}</ref> and became the third film, alongside ''[[A Streetcar Named Desire (1951 film)|A Streetcar Named Desire]]'' (1951) and ''[[Network (1976 film)|Network]]'' (1976), to win three acting awards.<ref name="Billboard">{{cite magazine |last=Grein |first=Paul |title=Record-Setters at the 2023 Oscars |url=https://www.billboard.com/music/awards/brendan-fraser-more-record-setters-at-2023-oscars-1235284791/ |access-date=March 19, 2023 |magazine=[[Billboard (magazine)|Billboard]] |date=March 13, 2023 |archive-date=March 20, 2023 |archive-url=https://web.archive.org/web/20230320050057/https://www.billboard.com/music/awards/brendan-fraser-more-record-setters-at-2023-oscars-1235284791/ |url-status=live}}</ref> Best Director winners [[Daniel Kwan and Daniel Scheinert]] became the third pair of directors to win for the same film.{{efn|name=Daniels|[[Jerome Robbins]] and [[Robert Wise]] first achieved this distinction for co-directing ''[[West Side Story (1961 film)|West Side Story]]'' (1961). Brothers [[Coen brothers|Joel Coen and Ethan Coen]] later earned this same feat for their direction of ''[[No Country for Old Men]]'' (2007).<ref name="Billboard"/>}} For the first time since the [[7th Academy Awards|7th ceremony]] in 1935, all five Best Actor nominees were first-time nominees.<ref name="Wichita">{{cite news |last=Pocowatchit |first=Rod |title=Movie Maniac: Trivia Tidbits Heading into the 95th Oscars on Sunday |url=https://www.kansas.com/entertainment/tv-movies/academy-awards/article272895920.html |access-date=March 10, 2023 |work=[[The Wichita Eagle]] |date=March 10, 2023 |archive-date=March 11, 2023 |archive-url=https://web.archive.org/web/20230311191359/https://www.kansas.com/entertainment/tv-movies/academy-awards/article272895920.html |url-status=live}}</ref> [[Michelle Yeoh]] became the first Asian winner for Best Actress and the second [[woman of color]] overall after [[Halle Berry]], who won for her performance in ''[[Monster's Ball]]'' (2001).<ref name="Yeoh">Multiple sources:
+* {{cite magazine |last=Nolfi |first=Joey |title=Michelle Yeoh makes history as 1st Asian woman to win Best Actress at Oscars: 'This is a beacon of hope' |url=https://ew.com/awards/oscars/michelle-yeoh-first-asian-woman-best-actress-oscars-2023/ |access-date=April 25, 2023 |magazine=[[Entertainment Weekly]] |date=March 13, 2023 |archive-date=April 27, 2023 |archive-url=https://web.archive.org/web/20230427185727/https://ew.com/awards/oscars/michelle-yeoh-first-asian-woman-best-actress-oscars-2023/ |url-status=live}}
+* {{cite news |last=Sun |first=Rebecca |title=Oscars: Michelle Yeoh Makes History as First Asian Best Actress Nominee |url=https://www.hollywoodreporter.com/movies/movie-news/michelle-yeoh-first-asian-actress-oscar-nominee-2023-1235308034/ |access-date=February 18, 2023 |work=[[The Hollywood Reporter]] |date=January 24, 2023 |archive-date=March 22, 2023 |archive-url=https://web.archive.org/web/20230322045146/https://www.hollywoodreporter.com/movies/movie-news/michelle-yeoh-first-asian-actress-oscar-nominee-2023-1235308034/ |url-status=live}}
+* {{cite news |last=Yam |first=Kimmy |title=Michelle Yeoh becomes first Asian to win best actress Oscar |url=https://www.nbcnews.com/news/asian-america/michelle-yeoh-becomes-first-asian-win-best-actress-oscar-rcna73582 |access-date=November 15, 2023 |publisher=[[NBC News]] |date=March 13, 2023 |archive-date=October 5, 2023 |archive-url=https://web.archive.org/web/20231005022219/https://www.nbcnews.com/news/asian-america/michelle-yeoh-becomes-first-asian-win-best-actress-oscar-rcna73582 |url-status=live}}</ref> Furthermore, she became the first woman to identify as Asian to be nominated in that category.{{efn|name=Yeoh|Many consider [[Merle Oberon]], who was nominated for her role in ''[[The Dark Angel (1935 film)|The Dark Angel]]'' (1935), to be the first Asian nominee in this category, but she hid her mixed-race heritage due to fears regarding discrimination and the impact it would have on her career.<ref name="Yeoh"/>}} [[Ke Huy Quan]] became the first Vietnamese person to win an Oscar and the second Asian winner for Best Supporting Actor after [[Haing S. Ngor]], who won for his role in ''[[The Killing Fields (film)|The Killing Fields]]'' (1984).<ref>{{cite news |last1=Head |first1=Jonathan |last2=Vo |first2=Tran |title=Why Vietnam Doesn't Want to Claim Ke Huy Quan |url=https://www.bbc.com/news/world-asia-64963161 |access-date=April 25, 2023 |agency=[[BBC News]] |date=March 15, 2023 |archive-date=May 6, 2023 |archive-url=https://web.archive.org/web/20230506000442/https://www.bbc.com/news/world-asia-64963161 |url-status=live}}</ref><ref>{{cite news |last=Sun |first=Rebecca |title=Ke Huy Quan Wins Best Supporting Actor Oscar After Decades-Long Absence From Screens: 'This is the American Dream' |url=https://www.hollywoodreporter.com/movies/movie-news/ke-huy-quan-oscar-supporting-actor-everything-everywhere-all-at-once-1235348425/ |access-date=March 28, 2023 |work=[[The Hollywood Reporter]] |date=March 12, 2023 |archive-date=March 31, 2023 |archive-url=https://web.archive.org/web/20230331015152/https://www.hollywoodreporter.com/movies/movie-news/ke-huy-quan-oscar-supporting-actor-everything-everywhere-all-at-once-1235348425/ |url-status=live}}</ref>
+
+The 42-year span between [[Judd Hirsch]]'s first nomination, for his supporting role in ''[[Ordinary People]]'' (1980), and his second, for ''[[The Fabelmans]]'', set the record for the longest gap between Oscar nominations.<ref name="Wichita"/> At age 90, Best Original Score nominee [[John Williams]] became the oldest person nominated competitively in Oscars history.<ref name="Wichita"/> Best Costume Design winner [[Ruth E. Carter]] became the first Black woman to win two Oscars.<ref>{{cite news |last=Tangcay |first=Jazz |title=Ruth E. Carter Becomes First Black Woman to Win Two Oscars |url=https://variety.com/2023/artisans/news/ruth-carter-oscars-record-black-woman-winners-1235545868/ |access-date=April 4, 2023 |work=[[Variety (magazine)|Variety]] |date=March 12, 2023 |archive-date=March 29, 2023 |archive-url=https://web.archive.org/web/20230329110114/https://variety.com/2023/artisans/news/ruth-carter-oscars-record-black-woman-winners-1235545868/ |url-status=live}}</ref>
+
+===Awards===
+[[File:Daniels 2016.jpg|thumb|right|upright=0.68|alt=Daniel Scheinert and Daniel Kwan in 2016.|[[Daniels (directors)|Daniel Scheinert and Daniel Kwan]], Best Picture co-winners, and Best Director and Best Original Screenplay winners]]
+[[File:Brendan Fraser October 2022.jpg|thumb|right|upright=0.68|alt=Brendan Fraser in 2022.|[[Brendan Fraser]], Best Actor winner]]
+[[File:Michelle Yeoh at EC (2023) 2.jpg|thumb|right|upright=0.68|alt=Michelle Yeoh in 2015.|[[Michelle Yeoh]], Best Actress winner]]
+[[File:Ke Huy Quan at the White House (52902390767) (cropped).jpg|thumb|right|upright=0.68|alt=Ke Huy Quan in 2023.|[[Ke Huy Quan]], Best Supporting Actor winner]]
+[[File:Jamie Lee Curtis (41851191720) (cropped).jpg|thumb|right|upright=0.68|alt=Jamie Lee Curtis in 2018.|[[Jamie Lee Curtis]], Best Supporting Actress winner]]
+[[File:Sarah Polley cropped 2009.jpg|thumb|right|upright=0.68|alt=Sarah Polley in 2009.|[[Sarah Polley]], Best Adapted Screenplay winner]]
+[[File:Guillermo del Toro 2023 (cropped).jpg|thumb|right|upright=0.68|alt=Guillermo del Toro in 2023.|[[Guillermo del Toro]], Best Animated Feature co-winner]]
+[[File:MJK 12711 Edward Berger (The Terror, Berlinale 2018).jpg|thumb|right|upright=0.68|alt=Edward Berger in 2018.|[[Edward Berger]], Best International Feature Film winner]]
+[[File:Odessa Rae on the Green Carpet at the 2025 Zurich Film Festival 01.jpg|thumb|right|upright=0.68|alt=Odessa Rae in 2025.|[[Odessa Rae]], Best Documentary Feature Film co-winner]]
+[[File:Shane Boris 2023.jpg|thumb|right|upright=0.68|alt=Shane Boris in 2023.|[[Shane Boris]], Best Documentary Feature Film co-winner]]
+[[File:Kartiki Priscilla Gonsalves Oscar Dolby LA Mar23 IMG 8335.jpg|thumb|right|upright=0.68|alt=Kartiki Gonsalves in 2023.|[[Kartiki Gonsalves]] (''left''), Best Documentary Short Film co-winner, holding her award]]
+[[File:Gunnet Monga.jpg|thumb|right|upright=0.68|alt=Guneet Monga in 2018.|[[Guneet Monga]], Best Documentary Short Film co-winner]]
+[[File:Volker Bertelmann A House of Dynamite-05 (cropped).jpg|thumb|right|upright=0.68|alt=Volker Bertelmann in 2025.|[[Volker Bertelmann]], Best Original Score winner]]
+[[File:M. M. Keeravani at Inji Iduppazhagi Audio Launch (cropped).jpg|thumb|right|upright=0.68|alt=M. M. Keeravani in 2015.|[[M. M. Keeravani]], Best Original Song co-winner]]
+[[File:Chandrabose with Academy Award 2023.jpg|thumb|right|upright=0.68|alt=Chandrabose in 2023.|[[Chandrabose (lyricist)|Chandrabose]], Best Original Song co-winner, holding his award]]
+[[File:Ruth E. Carter by Gage Skidmore.jpg|thumb|right|upright=0.68|alt=Ruth E. Carter in 2018.|[[Ruth E. Carter]], Best Costume Design winner]]
+
+Winners are listed first, highlighted in '''boldface''', and indicated with a double dagger (‡).<ref>{{cite news |url=https://www.oscars.org/oscars/ceremonies/2023 |title=The 95th Academy Awards (2023) {{!}} Nominees and Winners |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=March 12, 2023 |archive-date=March 24, 2023 |archive-url=https://web.archive.org/web/20230324075747/https://www.oscars.org/oscars/ceremonies/2023 |url-status=live}}</ref>
+
+{| class="wikitable" role="presentation"
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Picture|Best Picture]]}}
+* '''''[[Everything Everywhere All at Once]]'' – [[Daniels (directors)|Daniel Kwan, Daniel Scheinert]], and [[Jonathan Wang]], producers'''{{double dagger}}
+** ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' – [[Malte Grunert]], producer
+** ''[[Avatar: The Way of Water]]'' – [[James Cameron]] and [[Jon Landau (film producer)|Jon Landau]], producers
+** ''[[The Banshees of Inisherin]]'' – [[Graham Broadbent]], [[Peter Czernin|Pete Czernin]], and [[Martin McDonagh]], producers
+** ''[[Elvis (2022 film)|Elvis]]'' – [[Baz Luhrmann]], [[Catherine Martin (designer)|Catherine Martin]], [[Gail Berman]], Patrick McCormick, and Schuyler Weiss, producers
+** ''[[The Fabelmans]]'' – [[Kristie Macosko Krieger]], [[Steven Spielberg]], and [[Tony Kushner]], producers
+** ''[[Tár]]'' – [[Todd Field]], [[Alexandra Milchan]], and Scott Lambert, producers
+** ''[[Top Gun: Maverick]]'' – [[Tom Cruise]], [[Christopher McQuarrie]], [[David Ellison]], and [[Jerry Bruckheimer]], producers
+** ''[[Triangle of Sadness]]'' – Erik Hemmendorff and Philippe Bober, producers
+** ''[[Women Talking (film)|Women Talking]]'' – [[Dede Gardner]], [[Jeremy Kleiner]], and [[Frances McDormand]], producers
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Director|Best Directing]]}}
+* '''[[Daniel Kwan and Daniel Scheinert]] – ''[[Everything Everywhere All at Once]]'''''{{double dagger}}
+** [[Martin McDonagh]] – ''[[The Banshees of Inisherin]]''
+** [[Steven Spielberg]] – ''[[The Fabelmans]]''
+** [[Todd Field]] – ''[[Tár]]''
+** [[Ruben Östlund]] – ''[[Triangle of Sadness]]''
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Best Actor in a Leading Role]]}}
+* '''[[Brendan Fraser]] – ''[[The Whale (2022 film)|The Whale]]'' as Charlie'''{{double dagger}}
+** [[Austin Butler]] – ''[[Elvis (2022 film)|Elvis]]'' as [[Elvis Presley]]
+** [[Colin Farrell]] – ''[[The Banshees of Inisherin]]'' as Pádraic Súilleabháin
+** [[Paul Mescal]] – ''[[Aftersun]]'' as Calum Patterson
+** [[Bill Nighy]] – ''[[Living (2022 film)|Living]]'' as Mr. Rodney Williams
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Best Actress in a Leading Role]]}}
+* '''[[Michelle Yeoh]] – ''[[Everything Everywhere All at Once]]'' as [[Evelyn Quan Wang]]'''{{double dagger}}
+** [[Cate Blanchett]] – ''[[Tár]]'' as Lydia Tár
+** [[Ana de Armas]] – ''[[Blonde (2022 film)|Blonde]]'' as [[Norma Jeane]]
+** [[Andrea Riseborough]] – ''[[To Leslie]]'' as Leslie Rowlands
+** [[Michelle Williams (actress)|Michelle Williams]] – ''[[The Fabelmans]]'' as Mitzi Fabelman<!-- Per official credits of "The Fabelmans" -->
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Supporting Actor|Best Actor in a Supporting Role]]}}
+* '''[[Ke Huy Quan]] – ''[[Everything Everywhere All at Once]]'' as Waymond Wang'''{{double dagger}}
+** [[Brendan Gleeson]] – ''[[The Banshees of Inisherin]]'' as Colm Doherty
+** [[Brian Tyree Henry]] – ''[[Causeway (film)|Causeway]]'' as James Aucoin
+** [[Judd Hirsch]] – ''[[The Fabelmans]]'' as Uncle Boris<!-- Per official credits of "The Fabelmans" -->
+** [[Barry Keoghan]] – ''[[The Banshees of Inisherin]]'' as Dominic Kearney
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Supporting Actress|Best Actress in a Supporting Role]]}}
+* '''[[Jamie Lee Curtis]] – ''[[Everything Everywhere All at Once]]'' as Deirdre Beaubeirdre'''{{double dagger}}
+** [[Angela Bassett]] – ''[[Black Panther: Wakanda Forever]]'' as [[Ramonda (Marvel Cinematic Universe)|Queen Ramonda]]
+** [[Hong Chau]] – ''[[The Whale (2022 film)|The Whale]]'' as Liz
+** [[Kerry Condon]] – ''[[The Banshees of Inisherin]]'' as Siobhán Súilleabháin
+** [[Stephanie Hsu]] – ''[[Everything Everywhere All at Once]]'' as Joy Wang / Jobu Tupaki
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Original Screenplay|Best Writing (Original Screenplay)]]}}
+* '''''[[Everything Everywhere All at Once]]'' – [[Daniel Kwan and Daniel Scheinert]]'''{{double dagger}}
+** ''[[The Banshees of Inisherin]]'' – [[Martin McDonagh]]
+** ''[[The Fabelmans]]'' – [[Steven Spielberg]] and [[Tony Kushner]]
+** ''[[Tár]]'' – [[Todd Field]]
+** ''[[Triangle of Sadness]]'' – [[Ruben Östlund]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Adapted Screenplay|Best Writing (Adapted Screenplay)]]}}
+* '''''[[Women Talking (film)|Women Talking]]'' – [[Sarah Polley]]; based on [[Women Talking (novel)|the novel]] by [[Miriam Toews]]'''{{double dagger}}
+** ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' – [[Edward Berger]], [[Lesley Paterson]], and Ian Stokell; based on [[All Quiet on the Western Front|the novel]] by [[Erich Maria Remarque]]
+** ''[[Glass Onion: A Knives Out Mystery]]'' – [[Rian Johnson]]; based on characters created by Johnson and the film ''[[Knives Out]]''
+** ''[[Living (2022 film)|Living]]'' – [[Kazuo Ishiguro]]; based on the original motion picture screenplay ''[[Ikiru]]'' by [[Akira Kurosawa]], [[Shinobu Hashimoto]], and [[Hideo Oguni]]
+** ''[[Top Gun: Maverick]]'' – Screenplay by [[Ehren Kruger]], [[Eric Warren Singer]], and [[Christopher McQuarrie]]; story by [[Peter Craig]] and [[Justin Marks (writer)|Justin Marks]]; based on the film ''[[Top Gun]]'' written by [[Jim Cash]] and [[Jack Epps Jr.]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Animated Feature|Best Animated Feature Film]]}}
+* '''''[[Guillermo del Toro's Pinocchio]]'' – [[Guillermo del Toro]], [[Mark Gustafson]], Gary Ungar, and [[Alex Bulkley]]'''{{double dagger}}
+** ''[[Marcel the Shell with Shoes On (2021 film)|Marcel the Shell with Shoes On]]'' – [[Dean Fleischer Camp]], [[Elisabeth Holm]], Andrew Goldman, [[Caroline Kaplan]], and [[Paul Mezey]]
+** ''[[Puss in Boots: The Last Wish]]'' – [[Joel Crawford (director)|Joel Crawford]] and Mark Swift
+** ''[[The Sea Beast (2022 film)|The Sea Beast]]'' – [[Chris Williams (director)|Chris Williams]] and Jed Schlanger
+** ''[[Turning Red]]'' – [[Domee Shi]] and Lindsey Collins
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Best International Feature Film]]}}
+* '''''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' ([[List of German submissions for the Academy Award for Best International Feature Film|Germany]]) – directed by [[Edward Berger]]'''{{double dagger}}
+** ''[[Argentina, 1985]]'' ([[List of Argentine submissions for the Academy Award for Best International Feature Film|Argentina]]) – directed by [[Santiago Mitre]]
+** ''[[Close (2022 film)|Close]]'' ([[List of Belgian submissions for the Academy Award for Best International Feature Film|Belgium]]) – directed by [[Lukas Dhont]]
+** ''[[EO (film)|EO]]'' ([[List of Polish submissions for the Academy Award for Best International Feature Film|Poland]]) – directed by [[Jerzy Skolimowski]]
+** ''[[The Quiet Girl]]'' ([[List of Irish submissions for the Academy Award for Best International Feature Film|Ireland]]) – directed by [[Colm Bairéad]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Documentary Feature Film|Best Documentary Feature Film]]}}
+* '''''[[Navalny (film)|Navalny]]'' – [[Daniel Roher]], [[Odessa Rae]], [[Diane Becker]], [[Melanie Miller (producer)|Melanie Miller]], and [[Shane Boris]]'''{{double dagger}}
+** ''[[All That Breathes]]'' – [[Shaunak Sen]], Aman Mann, and [[Teddy Leifer]]
+** ''[[All the Beauty and the Bloodshed]]'' – [[Laura Poitras]], [[Howard Gertler]], John Lyons, [[Nan Goldin]], and Yoni Golijov
+** ''[[Fire of Love (2022 film)|Fire of Love]]'' – [[Sara Dosa]], [[Shane Boris]], and [[Ina Fichman]]
+** ''[[A House Made of Splinters]]'' – Simon Lereng Wilmont and [[Monica Hellström]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Documentary Short Film|Best Documentary Short Film]]}}
+* '''''[[The Elephant Whisperers]]'' – [[Kartiki Gonsalves]] and [[Guneet Monga]]'''{{double dagger}}
+** ''[[Haulout (film)|Haulout]]'' – [[Evgenia Arbugaeva]] and Maxim Arbugaev
+** ''[[How Do You Measure a Year?]]'' – [[Jay Rosenblatt (filmmaker)|Jay Rosenblatt]]
+** ''[[The Martha Mitchell Effect]]'' – Anne Alvergue and [[Beth Levison]]
+** ''[[Stranger at the Gate]]'' – [[Joshua Seftel]] and Conall Jones
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Live Action Short Film|Best Short Film (Live Action)]]}}
+* '''''[[An Irish Goodbye]]'' – Tom Berkeley and Ross White'''{{double dagger}}
+** ''[[Ivalu (film)|Ivalu]]'' – [[Anders Walter]] and Rebecca Pruzan
+** ''[[Le pupille]]'' – [[Alice Rohrwacher]] and [[Alfonso Cuarón]]
+** ''[[Night Ride (2020 film)|Night Ride]]'' – Eirik Tveiten and Gaute Lid Larssen
+** ''[[The Red Suitcase]]'' – Cyrus Neshvad
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Animated Short Film|Best Short Film (Animated)]]}}
+* '''''[[The Boy, the Mole, the Fox and the Horse (film)|The Boy, the Mole, the Fox and the Horse]]'' – [[Charlie Mackesy]] and [[Matthew Freud]]'''{{double dagger}}
+** ''[[The Flying Sailor]]'' – [[Wendy Tilby and Amanda Forbis|Amanda Forbis and Wendy Tilby]]
+** ''[[Ice Merchants]]'' – [[João Gonzalez]] and Bruno Caetano
+** ''[[My Year of Dicks]]'' – [[Sara Gunnarsdóttir]] and [[Pamela Ribon]]
+** ''[[An Ostrich Told Me the World Is Fake and I Think I Believe It]]'' – [[Lachlan Pendragon]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Original Score|Best Music (Original Score)]]}}
+* '''''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' – [[Volker Bertelmann]]'''{{double dagger}}
+** ''[[Babylon (2022 film)|Babylon]]'' – [[Justin Hurwitz]]
+** ''[[The Banshees of Inisherin]]'' – [[Carter Burwell]]
+** ''[[Everything Everywhere All at Once]]'' – [[Son Lux]]
+** ''[[The Fabelmans]]'' – [[John Williams]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Original Song|Best Music (Original Song)]]}}
+* '''"[[Naatu Naatu]]" from ''[[RRR]]'' – Music by [[M. M. Keeravani]]; lyrics by [[Chandrabose (lyricist)|Chandrabose]]'''{{double dagger}}
+** "Applause" from ''[[Tell It Like a Woman]]'' – Music and lyrics by [[Diane Warren]]
+** "[[Hold My Hand (Lady Gaga song)|Hold My Hand]]" from ''[[Top Gun: Maverick]]'' – Music and lyrics by [[Lady Gaga]] and [[BloodPop]]
+** "[[Lift Me Up (Rihanna song)|Lift Me Up]]" from ''[[Black Panther: Wakanda Forever]]'' – Music by [[Tems]], [[Rihanna]], [[Ryan Coogler]], and [[Ludwig Göransson]]; lyrics by Tems and Ryan Coogler
+** "This Is a Life" from ''[[Everything Everywhere All at Once]]'' – Music by [[Ryan Lott]], [[David Byrne]], and [[Mitski]]; lyrics by Ryan Lott and David Byrne
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Sound|Best Sound]]}}
+* '''''[[Top Gun: Maverick]]'' – [[Mark Weingarten]], [[James H. Mather]], [[Al Nelson (sound engineer)|Al Nelson]], [[Chris Burdon]], and [[Mark Taylor (sound engineer)|Mark Taylor]]'''{{double dagger}}
+** ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' – [[Viktor Prášil]], [[Frank Kruse]], [[Markus Stemler]], [[Lars Ginzel]], and [[Stefan Korte]]
+** ''[[Avatar: The Way of Water]]'' – [[Julian Howarth]], [[Gwendolyn Yates Whittle]], [[Dick Bernstein]], [[Christopher Boyes]], [[Gary Summers]], and [[Michael Hedges (sound engineer)|Michael Hedges]]
+** ''[[The Batman (film)|The Batman]]'' – [[Stuart Wilson (sound engineer)|Stuart Wilson]], [[William Files]], [[Douglas Murray (sound editor)|Douglas Murray]], and [[Andy Nelson (sound engineer)|Andy Nelson]]
+** ''[[Elvis (2022 film)|Elvis]]'' – [[David Lee (Australian sound engineer)|David Lee]], [[Wayne Pashley]], [[Andy Nelson (sound engineer)|Andy Nelson]], and [[Michael Keller (sound engineer)|Michael Keller]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Production Design|Best Production Design]]}}
+* '''''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' – Production design: [[Christian M. Goldbeck]]; set decoration: [[Ernestine Hipper]]'''{{double dagger}}
+** ''[[Avatar: The Way of Water]]'' – Production design: [[Dylan Cole]] and [[Ben Procter (production designer)|Ben Procter]]; set decoration: Vanessa Cole
+** ''[[Babylon (2022 film)|Babylon]]'' – Production design: [[Florencia Martin]]; set decoration: [[Anthony Carlino]]
+** ''[[Elvis (2022 film)|Elvis]]'' – Production design: [[Catherine Martin (designer)|Catherine Martin]] and Karen Murphy; set decoration: [[Beverley Dunn (set decorator)|Bev Dunn]]
+** ''[[The Fabelmans]]'' – Production design: [[Rick Carter]]; set decoration: [[Karen O'Hara]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Cinematography|Best Cinematography]]}}
+* '''''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' – [[James Friend]]'''{{double dagger}}
+** ''[[Bardo, False Chronicle of a Handful of Truths]]'' – [[Darius Khondji]]
+** ''[[Elvis (2022 film)|Elvis]]'' – [[Mandy Walker]]
+** ''[[Empire of Light]]'' – [[Roger Deakins]]
+** ''[[Tár]]'' – [[Florian Hoffmeister]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]}}
+* '''''[[The Whale (2022 film)|The Whale]]'' – [[Adrien Morot]], [[Judy Chin]], and [[Annemarie Bradley]]'''{{double dagger}}
+** ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' – [[Heike Merker]] and [[Linda Eisenhamerová]]
+** ''[[The Batman (film)|The Batman]]'' – [[Naomi Donne]], [[Mike Marino (make-up artist)|Mike Marino]], and [[Mike Fontaine]]
+** ''[[Black Panther: Wakanda Forever]]'' – [[Camille Friend]] and [[Joel Harlow]]
+** ''[[Elvis (2022 film)|Elvis]]'' – [[Mark Coulier]], [[Jason Baird]], and [[Aldo Signoretti]]
+|-
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Costume Design|Best Costume Design]]}}
+* '''''[[Black Panther: Wakanda Forever]]'' – [[Ruth E. Carter|Ruth Carter]]'''{{double dagger}}
+** ''[[Babylon (2022 film)|Babylon]]'' – [[Mary Zophres]]
+** ''[[Elvis (2022 film)|Elvis]]'' – [[Catherine Martin (designer)|Catherine Martin]]
+** ''[[Everything Everywhere All at Once]]'' – [[Shirley Kurata]]
+** ''[[Mrs. Harris Goes to Paris]]'' – [[Jenny Beavan]]
+| style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Film Editing|Best Film Editing]]}}
+* '''''[[Everything Everywhere All at Once]]'' – [[Paul Rogers (film editor)|Paul Rogers]]'''{{double dagger}}
+** ''[[The Banshees of Inisherin]]'' – [[Mikkel E. G. Nielsen]]
+** ''[[Elvis (2022 film)|Elvis]]'' – [[Matt Villa]] and [[Jonathan Redmond]]
+** ''[[Tár]]'' – [[Monika Willi]]
+** ''[[Top Gun: Maverick]]'' – [[Eddie Hamilton]]
+|-
+| colspan="2" style="vertical-align:top; width:50%;"| {{Award category|{{Academy Awards/color}}|[[Academy Award for Best Visual Effects|Best Visual Effects]]}}
+* '''''[[Avatar: The Way of Water]]'' – [[Joe Letteri]], [[Richard Baneham]], [[Eric Saindon]], and [[Daniel Barrett (visual effects supervisor)|Daniel Barrett]]'''{{double dagger}}
+** ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]'' – [[Frank Petzold (visual effects artist)|Frank Petzold]], [[Viktor Müller (visual effects artist)|Viktor Müller]], [[Markus Frank (visual effects artist)|Markus Frank]], and [[Kamil Jafar]]
+** ''[[The Batman (film)|The Batman]]'' – [[Dan Lemmon]], [[Russell Earl]], [[Anders Langlands]], and [[Dominic Tuohy]]
+** ''[[Black Panther: Wakanda Forever]]'' – [[Geoffrey Baumann]], [[Craig Hammack]], [[R. Christopher White]], and [[Dan Sudick]]
+** ''[[Top Gun: Maverick]]'' – [[Ryan Tudhope]], [[Seth Hill]], [[Bryan Litson]], and [[Scott R. Fisher]]
+|}
+
+===Governors Awards===
+The Academy held its 13th annual Governors Awards ceremony on November 19, 2022, during which the following awards were presented:<ref>{{cite news |last=Feinberg |first=Scott |title=Academy's Governors Awards: Michael J. Fox Tapped for Hersholt Award, Diane Warren, Peter Weir and Euzhan Palcy Set for Honorary Oscars |url=https://www.hollywoodreporter.com/movies/movie-news/governors-awards-honor-michael-j-fox-diane-warren-euzhan-palcy-peter-weir-1235169274/ |access-date=October 5, 2022 |work=[[The Hollywood Reporter]] |date=June 21, 2022 |archive-date=October 15, 2022 |archive-url=https://web.archive.org/web/20221015221717/https://www.hollywoodreporter.com/movies/movie-news/governors-awards-honor-michael-j-fox-diane-warren-euzhan-palcy-peter-weir-1235169274/ |url-status=live}}</ref><ref name="Governors">{{cite news |last=Saperstein |first=Pat |title=Governors Awards: Michael J. Fox, Diane Warren, Peter Weir, Euzhan Palcy Honored By Academy at Memorable Ceremony |url=https://variety.com/2022/awards/news/governors-awards-michael-j-fox-diane-warren-peter-weir-euzhan-palcy-academy-1235437895/ |access-date=August 21, 2026 |work=[[Variety (magazine)|Variety]] |date=November 19, 2022 |archive-date=November 20, 2022 |archive-url=https://web.archive.org/web/20221120054907/https://variety.com/2022/awards/news/governors-awards-michael-j-fox-diane-warren-peter-weir-euzhan-palcy-academy-1235437895/ |url-status=live}}</ref>
+
+====Honorary Awards====
+* To [[Euzhan Palcy]], a masterful filmmaker who broke ground for Black women directors and inspired storytellers of all kinds across the globe.<ref name="HonoraryandSpecial">{{cite news |title=Academy Awards Acceptance Speech Database |url=https://awardsdatabase.oscars.org/Search/Nominations?awardShowFrom=95&view=3-Award%20Category-Chron |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=July 12, 2023}}</ref>
+* To [[Diane Warren]], for her genius, generosity and passionate commitment to the power of song in film.<ref name="HonoraryandSpecial"/>
+* To [[Peter Weir]], a fearless and consummate filmmaker who has illuminated the human experience with his unique and expansive body of work.<ref name="HonoraryandSpecial"/>
+
+====Jean Hersholt Humanitarian Award====
+* [[Michael J. Fox]]{{snd}}"For his tireless advocacy of research on Parkinson's disease alongside his boundless optimism exemplifies the impact of one person in changing the future for millions."<ref>{{cite news |last=Tuccillo |first=Andrea |title=Michael J. Fox to Receive Jean Hersholt Humanitarian Award |url=https://abcnews.go.com/GMA/Culture/michael-fox-receive-jean-hersholt-humanitarian-award/story?id=85555080 |access-date=February 15, 2023 |work=[[ABC News (United States)|ABC News]] |date=June 22, 2022 |archive-date=June 24, 2022 |archive-url=https://web.archive.org/web/20220624134423/https://abcnews.go.com/GMA/Culture/michael-fox-receive-jean-hersholt-humanitarian-award/story?id=85555080 |url-status=live}}</ref>
+
+===Films with multiple nominations and awards===
+{{col-begin|width=80%}}
+{{col-1-of-2}}
+{| class="wikitable plainrowheaders" style="text-align: center; float:left; margin-right:1em;"
+|+ Films with multiple nominations
+|-
+! scope="col" style="width:55px;"| Nominations
+! scope="col" style="text-align:center;"| Film
+|-
+| scope="row" style="text-align:center"| 11
+| ''[[Everything Everywhere All at Once]]''
+|-
+| scope="row" rowspan="2" style="text-align:center"| 9
+| ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]''
+|-
+| ''[[The Banshees of Inisherin]]''
+|-
+| scope="row" style="text-align:center"| 8
+| ''[[Elvis (2022 film)|Elvis]]''
+|-
+| scope="row" style="text-align:center"| 7
+| ''[[The Fabelmans]]''
+|-
+| scope="row" rowspan="2" style="text-align:center"| 6
+| ''[[Tár]]''
+|-
+| ''[[Top Gun: Maverick]]''
+|-
+| scope="row" style="text-align:center"| 5
+| ''[[Black Panther: Wakanda Forever]]''
+|-
+| scope="row" style="text-align:center"| 4
+| ''[[Avatar: The Way of Water]]''
+|-
+| scope="row" rowspan="4" style="text-align:center"| 3
+| ''[[Babylon (2022 film)|Babylon]]''
+|-
+| ''[[The Batman (film)|The Batman]]''
+|-
+| ''[[Triangle of Sadness]]''
+|-
+| ''[[The Whale (2022 film)|The Whale]]''
+|-
+| scope="row" rowspan="2" style="text-align:center"| 2
+| ''[[Living (2022 film)|Living]]''
+|-
+| ''[[Women Talking (film)|Women Talking]]''
+|}
+{{col-break}}
+{| class="wikitable plainrowheaders" style="text-align: center; float:left; margin-right:1em;"
+|+ Films with multiple wins
+|-
+! scope="col" style="width:55px;"| Awards
+! scope="col" style="text-align:center;"| Film
+|-
+| 7
+| ''[[Everything Everywhere All at Once]]''
+|-
+| 4
+| ''[[All Quiet on the Western Front (2022 film)|All Quiet on the Western Front]]''
+|-
+| 2
+| ''[[The Whale (2022 film)|The Whale]]''
+|}
+{{col-end}}
+
+==Presenters and performers==
+The following individuals, listed in order of appearance, presented awards or performed musical numbers:<ref>Multiple sources:
+* {{cite news |last=Travis |first=Ben |title=Oscars 2023 Live Blog |url=https://www.empireonline.com/movies/features/oscars-2023-live-blog/ |access-date=March 15, 2023 |work=[[Empire (magazine)|Empire]] |date=March 12, 2023 |archive-date=March 13, 2023 |archive-url=https://web.archive.org/web/20230313022102/https://www.empireonline.com/movies/features/oscars-2023-live-blog/ |url-status=live}}
+* {{cite magazine |last1=Busis |first1=Hillary |last2=Breznican |first2=Anthony |last3=Cai |first3=Delia |last4=Canfield |first4=David |last5=Coughlan |first5=Maggie |last6=Donnelly |first6=Liza |last7=Ford |first7=Rebecca |last8=Freeman |first8=Nate |last9=Jarvey |first9=Nate |last10=Jong-Fast |first10=Molly |last11=Kirkpatrick |first11=Emily |last12=Lawson |first12=Richard |last13=Press |first13=Joy |last14=Regensdorf |first14=Laura |last15=Rich |first15=Katey |last16=Vanderhoof |first16=Erin |last17=Walsh |first17=Savannah |last18=Wickman |first18=Kase |title=Oscars 2023 Recap: Red Carpet, Winners & More |url=https://www.vanityfair.com/live/oscars-2023-live-updates |access-date=March 14, 2023 |magazine=[[Vanity Fair (magazine)|Vanity Fair]] |date=March 12, 2023 |archive-date=March 13, 2023 |archive-url=https://web.archive.org/web/20230313162626/https://www.vanityfair.com/live/oscars-2023-live-updates |url-status=live}}
+* {{cite news |last1=Hayes |first1=Mike |last2=Meyer |first2=Matt |last3=O'Murchú |first3=Seán Federico |last4=Powell |first4=Tori B. |title=Oscars 2023: The 95th Academy Awards |url=https://edition.cnn.com/entertainment/live-news/oscars-2023/index.html |access-date=March 15, 2023 |agency=[[CNN]] |date=March 12, 2023 |archive-date=March 15, 2023 |archive-url=https://web.archive.org/web/20230315060443/https://edition.cnn.com/entertainment/live-news/oscars-2023/index.html |url-status=live}}
+* {{cite news |last1=Bahr |first1=Sarah |last2=Barnes |first2=Brooks |last3=Buchanan |first3=Kyle |last4=Chai |first4=Barbara |last5=Coleman |first5=Nancy |last6=Garcia |first6=Sandra E. |last7=Goodman |first7=Stephanie |last8=Jacobs |first8=Julia |last9=Lee |first9=Anna Grace |last10=Morris |first10=Wesley |last11=Richardson |first11=Kalia |last12=Ryzik |first12=Melana |last13=Sperling |first13=Nicole |last14=Stevens |first14=Matt |last15=Testa |first15=Jessica |last16=Ugwu |first16=Reggie |last17=Zuckerman |first17=Esther |title=Oscars 2023 Highlights: ''Everything Everywhere All at Once'' Wins Seven Academy Awards, Including Best Picture |url=https://www.nytimes.com/live/2023/03/12/movies/oscars-academy-awards |access-date=March 13, 2023 |work=[[The New York Times]] |date=March 12, 2023 |archive-date=March 12, 2023 |archive-url=https://web.archive.org/web/20230312230537/https://www.nytimes.com/live/2023/03/12/movies/oscars-academy-awards |url-status=live}}</ref>
+
+{| class="wikitable plainrowheaders sortable"
+|+ Presenters
+|-
+! scope="col" | Name(s)
+! scope="col" | Role
+|-
+| scope="row" | {{sortname|Sylvia|Villagran|nolink=1}}
+| Served as announcer for the 95th Academy Awards<ref>{{cite news |last=Granda |first=Carlos |title=Sylvia Villagran Set to Make History as Oscars' First Latina In-Show Announcer |url=https://abc7.com/oscars-academy-awards-latina-announcer/12939918/ |access-date=March 15, 2023 |agency=[[KABC-TV]] |date=March 11, 2023 |archive-date=March 14, 2023 |archive-url=https://web.archive.org/web/20230314065707/https://abc7.com/oscars-academy-awards-latina-announcer/12939918/ |url-status=live}}</ref>
+|-
+| {{plainlist|
+* {{sortname|Emily|Blunt}}
+* [[Dwayne Johnson]]
+}}
+| Presented the award for [[Academy Award for Best Animated Feature|Best Animated Feature]]
+|-
+| scope="row" | {{plainlist|
+* {{sortname|Ariana|DeBose}}
+* [[Troy Kotsur]]
+}}
+| Presented the awards for [[Academy Award for Best Supporting Actor|Best Supporting Actor]] and [[Academy Award for Best Supporting Actress|Best Supporting Actress]]
+|-
+| scope="row" | {{sortname|Cara|Delevingne}}
+| Introduced the performance of "Applause"
+|-
+| scope="row" | {{plainlist|
+* {{sortname|Riz|Ahmed}}
+* [[Ahmir "Questlove" Thompson]]
+}}
+| Presented the awards for [[Academy Award for Best Documentary Feature Film|Best Documentary Feature Film]] and [[Best Live Action Short Film]]
+|-
+| scope="row" | {{plainlist|
+* {{sortname|Halle|Bailey}}
+* [[Melissa McCarthy]]
+}}
+| Presented the trailer for ''[[The Little Mermaid (2023 film)|The Little Mermaid]]''
+|-
+| scope="row" | {{sortname|Michael B.|Jordan}}<br />{{sortname|Jonathan|Majors}}
+| Presented the award for [[Academy Award for Best Cinematography|Best Cinematography]]
+|-
+| scope="row" | {{sortname|Donnie|Yen}}
+| Introduced the performance of "This Is a Life"
+|-
+| scope="row" | {{sortname|Jennifer|Connelly}}<br />{{sortname|Samuel L.|Jackson}}
+| Presented the award for [[Academy Award for Best Makeup and Hairstyling|Best Makeup and Hairstyling]]
+|-
+| scope="row" | {{sortname|Morgan|Freeman}}<br />{{sortname|Margot|Robbie}}
+| Presented the [[Warner Bros.]] 100 Years tribute
+|-
+| scope="row" | {{sortname|Paul|Dano}}<br />{{sortname|Julia|Louis-Dreyfus}}
+| Presented the award for [[Academy Award for Best Costume Design|Best Costume Design]]
+|-
+| scope="row" | {{sortname|Deepika|Padukone}}
+| Introduced the performance of "[[Naatu Naatu]]"
+|-
+| scope="row" | {{sortname|Eva|Longoria}}<br />{{sortname|Janet|Yang}}
+| Presented a montage promoting the [[Academy Museum of Motion Pictures]]
+|-
+| scope="row" | {{sortname|Antonio|Banderas}}<br />[[Salma Hayek Pinault]]
+| Presented the award for [[Best International Feature Film]]
+|-
+| scope="row" | {{sortname|Elizabeth|Olsen}}<br />{{sortname|Pedro|Pascal}}
+| Presented the awards for [[Academy Award for Best Documentary Short Film|Best Documentary Short Film]] and [[Best Animated Short Film]]
+|-
+| scope="row" | {{sortname|Hugh|Grant}}<br />{{sortname|Andie|MacDowell}}
+| Presented the award for [[Academy Award for Best Production Design|Best Production Design]]
+|-
+| scope="row" | {{sortname|John|Cho}}<br />{{sortname|Mindy|Kaling}}
+| Presented the award for [[Academy Award for Best Original Score|Best Original Score]]
+|-
+| scope="row" | {{sortname|Elizabeth|Banks}}
+| Presented the award for [[Academy Award for Best Visual Effects|Best Visual Effects]]
+|-
+| scope="row" | {{sortname|Danai|Gurira}}
+| Introduced the performance of "[[Lift Me Up (Rihanna song)|Lift Me Up]]"
+|-
+| scope="row" | {{sortname|Andrew|Garfield}}<br />{{sortname|Florence|Pugh}}
+| Presented the awards for [[Best Original Screenplay]] and [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]]
+|-
+| scope="row" | {{sortname|Kate|Hudson}}<br />{{sortname|Janelle|Monáe}}
+| Presented the awards for [[Academy Award for Best Sound|Best Sound]] and [[Academy Award for Best Original Song|Best Original Song]]
+|-
+| scope="row" | {{sortname|John|Travolta}}
+| Presented the "In Memoriam" segment
+|-
+| scope="row" | {{sortname|Zoe|Saldaña}}<br />{{sortname|Sigourney|Weaver}}
+| Presented the award for [[Academy Award for Best Film Editing|Best Film Editing]]
+|-
+| scope="row" | {{sortname|Idris|Elba}}<br />{{sortname|Nicole|Kidman}}
+| Presented the award for [[Academy Award for Best Director|Best Director]]
+|-
+| scope="row" | {{sortname|Halle|Berry}}<br />{{sortname|Jessica|Chastain}}
+| Presented the awards for [[Academy Award for Best Actor|Best Actor]] and [[Academy Award for Best Actress|Best Actress]]
+|-
+| scope="row" | {{sortname|Harrison|Ford}}
+| Presented the award for [[Academy Award for Best Picture|Best Picture]]
+|}
+
+{| class="wikitable plainrowheaders sortable"
+|+ Performers
+|-
+! scope="col" | Name
+! scope="col" | Role
+! scope="col" | Work
+|-
+| scope="row" | {{sortname|Rickey|Minor}}
+| {{plainlist|
+* Music director
+* Conductor
+}}
+| Orchestral
+|-
+| scope="row" | {{plainlist|
+* {{sortname|Sofia|Carson}}
+* [[Diane Warren]]
+}}
+| Performers
+| "Applause" from ''[[Tell It Like a Woman]]''
+|-
+| scope="row" | {{plainlist|
+* {{sortname|David|Byrne}}
+* [[Stephanie Hsu]]
+* [[Son Lux]]
+}}
+| Performers
+| "This Is a Life" from ''[[Everything Everywhere All at Once]]''<ref>{{cite news |url=https://deadline.com/2023/02/oscars-david-byrne-stephanie-hsu-son-lux-perform-this-is-a-life-everything-everywhere-all-at-once-ceremony-1235273011/ |access-date=February 27, 2023 |work=[[Deadline Hollywood]] |last1=Petski |first1=Denise |last2=D'Alessandro |first2=Anthony |title=Oscars: David Byrne, Stephanie Hsu & Son Lux to Perform "This Is a Life" During Ceremony |archive-date=March 5, 2023 |archive-url=https://web.archive.org/web/20230305191929/https://deadline.com/2023/02/oscars-david-byrne-stephanie-hsu-son-lux-perform-this-is-a-life-everything-everywhere-all-at-once-ceremony-1235273011/ |url-status=live}}</ref>
+|-
+| scope="row" | {{plainlist|
+* {{sortname|Kaala|Bhairava}}
+* [[Rahul Sipligunj]]
+}}
+| Performers
+| "[[Naatu Naatu]]" from ''[[RRR]]''
+|-
+| scope="row" | [[Lady Gaga]]
+| Performer
+| "[[Hold My Hand (Lady Gaga song)|Hold My Hand]]" from ''[[Top Gun: Maverick]]''
+|-
+| scope="row" | [[Rihanna]]
+| Performer
+| "[[Lift Me Up (Rihanna song)|Lift Me Up]]" from ''[[Black Panther: Wakanda Forever]]''
+|-
+| scope="row" | {{sortname|Lenny|Kravitz}}
+| Performer
+| "[[Calling All Angels (Lenny Kravitz song)|Calling All Angels]]" during the annual "In Memoriam" tribute
+|}
+
+==Ceremony information==
+[[File:Jimmy Kimmel June 2022.jpg|thumb|upright|[[Jimmy Kimmel]] hosted the 95th Academy Awards.|alt=Photo of Jimmy Kimmel in 2022.]]
+In September 2022, the Academy hired television producers [[Glenn Weiss]] and [[Ricky Kirshner]] to oversee production of the 2023 ceremony. Additionally, Weiss was set to direct it for an eighth consecutive year. AMPAS president [[Janet Yang]] and CEO [[Bill Kramer (executive)|Bill Kramer]] remarked that they looked "to deliver an exciting and energized show" with Weiss and Kirshner.<ref name="WeissKirschner">{{cite news |last=Murphy |first=J. Kim |title=Academy Names Glenn Weiss and Ricky Kirshner as Producers for 95th Oscars, Plans to Explore Streaming Options and 'Reinvigorate' Ceremony |url=https://variety.com/2022/awards/awards/oscars-2023-producers-glenn-weiss-ricky-kirshner-1235375779/ |access-date=January 31, 2023 |work=[[Variety (magazine)|Variety]] |date=September 17, 2022 |archive-date=January 8, 2023 |archive-url=https://web.archive.org/web/20230108232546/https://variety.com/2022/awards/awards/oscars-2023-producers-glenn-weiss-ricky-kirshner-1235375779/ |url-status=live}}</ref> Two months later, comedian and talk show host [[Jimmy Kimmel]] was announced as host of the gala. "Being invited to host the Oscars for a third time is either a great honor or a trap," Kimmel stated in a press release regarding his selection. "Either way, I am grateful to the Academy for asking me so quickly after everyone good said no", he concluded.<ref name="Kimmel">{{cite news |last=France |first=Lisa Respers |title=Jimmy Kimmel to Host the 2023 Oscars |url=https://www.cnn.com/2022/11/07/entertainment/jimy-kimmel-oscars/index.html |access-date=February 14, 2023 |agency=[[CNN]] |date=November 7, 2022 |archive-date=January 21, 2023 |archive-url=https://web.archive.org/web/20230121091515/https://www.cnn.com/2022/11/07/entertainment/jimy-kimmel-oscars/index.html |url-status=live}}</ref> Furthermore, AMPAS announced that all 23 categories would be presented live during the gala. The announcement came in response to an internal survey which indicated negative feedback regarding the previous year's decision to present eight [[Below-the-line (filmmaking)|below-the-line]] categories prior to the live portion of [[94th Academy Awards|last year's gala]].<ref>{{cite magazine |last=Nolfi |first=Joey |title=2023 Oscars Will Present All 23 Categories Live During 95th Academy Awards Broadcast |url=https://ew.com/awards/2023-oscars-will-present-all-23-category-winners-live/ |access-date=February 14, 2023 |magazine=[[Entertainment Weekly]] |date=November 29, 2022 |archive-date=February 14, 2023 |archive-url=https://web.archive.org/web/20230214210244/https://ew.com/awards/2023-oscars-will-present-all-23-category-winners-live/ |url-status=live}}</ref>
+
+In light of the [[Chris Rock–Will Smith slapping incident]] during the previous year's telecast, AMPAS announced that the organization hired a "crisis team" in the event a similar altercation or if an unexpected fiasco arose.<ref>{{cite news |last=Sharf |first=Zach |title=Academy Adds Oscars 'Crisis Team' After Will Smith Slap: 'We'll Be Prepared for Anything We May Not Anticipate' |url=https://variety.com/2023/film/news/oscars-crisis-team-will-smith-slap-academy-awards-1235532480/ |access-date=February 28, 2023 |work=[[Variety (magazine)|Variety]] |date=February 22, 2023 |archive-date=February 27, 2023 |archive-url=https://web.archive.org/web/20230227194113/https://variety.com/2023/film/news/oscars-crisis-team-will-smith-slap-academy-awards-1235532480/ |url-status=live}}</ref> In an interview published by ''[[Time (magazine)|Time]]'' magazine, Kramer explained: "We have a whole crisis team, something we've never had before, and many plans in place. We've run many scenarios. So it is our hope that we will be prepared for anything that we may not anticipate right now but that we're planning for just in case it does happen."<ref>{{cite magazine |last=Dockterman |first=Eliana |title=Exclusive: The Oscars Will Add a New 'Crisis Team' to Handle Future Fiascos Like the 'Slap' |url=https://time.com/6257126/oscars-ceo-bill-kramer-slap-interview/ |access-date=February 28, 2023 |magazine=[[Time (magazine)|Time]] |date=February 21, 2023 |archive-date=February 27, 2023 |archive-url=https://web.archive.org/web/20230227170747/https://time.com/6257126/oscars-ceo-bill-kramer-slap-interview/ |url-status=live}}</ref>
+[[File:Dolby Theatre Oscars Los Angeles USA Mar23 IMG 8321 (cropped).jpg|thumb|The Dolby Theatre stage on the day of the ceremony]]
+Several others participated in the production of the ceremony and related events. [[Rickey Minor]] served as musical director for the ceremony.<ref>{{cite magazine |last=Grein |first=Paul |title=Rickey Minor is Music Director for 2023 Oscars |url=https://www.billboard.com/music/awards/2023-oscars-rickey-minor-music-director-raj-kapoor-producer-1235251369/ |access-date=February 14, 2023 |magazine=[[Billboard (magazine)|Billboard]] |date=February 9, 2023 |archive-date=February 12, 2023 |archive-url=https://web.archive.org/web/20230212052732/https://www.billboard.com/music/awards/2023-oscars-rickey-minor-music-director-raj-kapoor-producer-1235251369/ |url-status=live}}</ref> Production designers Misty Buckley and Alana Billingsley, who were the first women-led design team for an Oscars telecast, designed a new stage for the show.<ref name="WeissKirschner"/> According to Buckley and Billingsley, the stage was designed to resemble [[Art Deco]] movie palaces from the [[Golden Age of Hollywood]].<ref>{{cite news |last=Giardina |first=Carolyn |title=How the Oscars Celebrated Cinema and Its Crafts |url=https://www.hollywoodreporter.com/tv/tv-features/2023-oscars-production-design-1235512028/ |access-date=July 18, 2023 |work=[[The Hollywood Reporter]] |date=June 17, 2023 |archive-date=June 22, 2023 |archive-url=https://web.archive.org/web/20230622011059/https://www.hollywoodreporter.com/tv/tv-features/2023-oscars-production-design-1235512028/ |url-status=live}}</ref> Additionally, the set utilized several [[LED panels]] that were used to display the category names, winners' names, or images from the nominated films.<ref>{{cite news |last=Reinstein |first=Mara |title=The Oscars 2023 Stage is the First Ever Designed by Women |url=https://www.architecturaldigest.com/story/oscars-2023-stage-is-first-ever-designed-by-women |access-date=July 12, 2023 |work=[[Architectural Digest]] |date=March 12, 2023 |archive-date=March 31, 2023 |archive-url=https://web.archive.org/web/20230331221117/https://www.architecturaldigest.com/story/oscars-2023-stage-is-first-ever-designed-by-women |url-status=live}}</ref> Notably, the arrivals area along [[Hollywood Boulevard]] outside the [[Dolby Theatre]] was lined with a champagne-colored carpet, marking the first time since the [[32nd Academy Awards|32nd ceremony]] in 1960 that a non-red colored carpet was utilized for the gala. According to red carpet consultant Lisa Love, the production team chose a lighter shade of carpet color in order to not clash with a sienna-colored tent erected to shield attendees from the sun or potential rain. She also added that the shades of color for both the carpet and tent were inspired by "watching the sunset on a white-sand beach at the 'golden hour' with a glass of champagne in hand, evoking calm and peacefulness".<ref>{{cite news |last=Bahr |first=Sarah |title=Hey, That Red Carpet Isn't Red! |url=https://www.nytimes.com/2023/03/10/style/oscars-red-carpet-champagne.html |access-date=March 10, 2023 |work=[[The New York Times]] |date=March 10, 2023 |archive-date=March 10, 2023 |archive-url=https://web.archive.org/web/20230310205546/https://www.nytimes.com/2023/03/10/style/oscars-red-carpet-champagne.html |url-status=live}}</ref>
+
+[[Lady Gaga]] was initially not scheduled to perform her nominated song "[[Hold My Hand (Lady Gaga song)|Hold My Hand]]" from ''[[Top Gun: Maverick]]'' due to prior commitments involving her role in ''[[Joker: Folie à Deux]]''. On the morning of the ceremony, however, it was reported that Gaga would perform at the ceremony.<ref>{{cite news |last1=Garcia |first1=Thania |last2=Malkin |first2=Marc |last3=Tangcay |first3=Jazz |date=March 12, 2023 |title=Surprise! Lady Gaga is Performing "Hold My Hand" at the Oscars After All (Exclusive) |url=https://variety.com/2023/awards/news/lady-gaga-performing-oscars-hold-my-hand-1235550918/ |url-status=live |archive-url=https://web.archive.org/web/20230312180501/https://variety.com/2023/awards/news/lady-gaga-performing-oscars-hold-my-hand-1235550918/ |archive-date=March 12, 2023 |access-date=March 12, 2023 |work=[[Variety (magazine)|Variety]]}}</ref> Meanwhile, actress [[Glenn Close]], who was originally scheduled as a presenter during the gala, canceled her appearance due to a positive [[COVID-19]] test.<ref>{{cite news |last=Haring |first=Bruce |date=March 12, 2023 |title=Glenn Close Will Not Attend Tonight's Academy Awards, Cites Positive Covid-19 Test |url=https://deadline.com/2023/03/glenn-close-will-not-attend-tonights-academy-awards-cites-positive-covid-19-test-as-reason-1235287002/ |url-status=live |archive-url=https://web.archive.org/web/20230312182419/https://deadline.com/2023/03/glenn-close-will-not-attend-tonights-academy-awards-cites-positive-covid-19-test-as-reason-1235287002/ |archive-date=March 12, 2023 |access-date=March 12, 2023 |work=[[Deadline Hollywood]]}}</ref>
+
+===Box office performance of Best Picture nominees===
+When the nominations were announced, nine of the ten films nominated for Best Picture had earned a combined gross of $1.57 billion at the American and Canadian box offices at the time. ''Top Gun: Maverick'' was the highest-grossing film among the Best Picture nominees with $718.7&nbsp;million in domestic box office receipts.<ref>{{cite news |last1=Whitten |first1=Sarah |last2=Calia |first2=Mike |title=Oscar nominations: ''Everything Everywhere All at Once'', ''Top Gun: Maverick'' among leaders |url=https://www.cnbc.com/2023/01/24/oscar-nominations-list.html |access-date=February 15, 2023 |agency=[[CNBC]] |date=January 24, 2023 |archive-date=February 14, 2023 |archive-url=https://web.archive.org/web/20230214193850/https://www.cnbc.com/2023/01/24/oscar-nominations-list.html |url-status=live}}</ref> ''Avatar: The Way of Water'' came in second with $598.4&nbsp;million; this was followed by ''Elvis'' ($151&nbsp;million), ''Everything Everywhere All at Once'' ($70&nbsp;million), ''The Fabelmans'' ($15&nbsp;million), ''The Banshees of Inisherin'' ($9&nbsp;million), ''Tar'' ($5.6&nbsp;million), ''Triangle of Sadness'' ($4.2&nbsp;million), and ''Women Talking'' ($1.1&nbsp;million). The box office figures for ''All Quiet on the Western Front'' were unavailable due to their distributor [[Netflix]]'s policy of refusing to release such figures.<ref>{{cite news |last=McClintock |first=Pamela |title=2023 Oscar Best Picture Nominees Are History's Top-Grossing Class |url=https://www.hollywoodreporter.com/movies/movie-news/2023-oscar-best-picture-nominations-top-grossing-1235307723/ |access-date=February 19, 2023 |work=[[The Hollywood Reporter]] |date=January 24, 2023 |archive-date=January 27, 2023 |archive-url=https://web.archive.org/web/20230127190822/https://www.hollywoodreporter.com/movies/movie-news/2023-oscar-best-picture-nominations-top-grossing-1235307723/ |url-status=live}}</ref> Furthermore, by virtue of ''Avatar: The Way of Water'' and ''Top Gun: Maverick'''s Best Picture nominations, it marked the first time since the [[55th Academy Awards|55th ceremony]] in 1983 that the two highest grossing films of the year were both nominated in the aforementioned category.<ref>{{cite news |last=Goldstein |first=Gary |title=Oscar 2023 Nominations: Firsts, Flukes, Figures and Other Fun Facts |url=https://www.latimes.com/entertainment-arts/awards/story/2023-02-07/oscar-2023-nominations-fun-facts |access-date=February 14, 2023 |work=[[Los Angeles Times]] |date=February 7, 2023 |archive-date=February 14, 2023 |archive-url=https://web.archive.org/web/20230214031027/https://www.latimes.com/entertainment-arts/awards/story/2023-02-07/oscar-2023-nominations-fun-facts |url-status=live}}</ref>
+
+===Andrea Riseborough's nomination and controversy===
+[[Andrea Riseborough]]'s Best Actress nomination for ''[[To Leslie]]'' was controversial amongst critics and pundits, as [[Momentum Pictures]], the film's distributor, did not fund a conventional [[For Your Consideration (advertising)|advertising-driven awards campaign]] for the film. Instead, director [[Michael Morris (director)|Michael Morris]] and his wife, actress [[Mary McCormack]], organized a "celeb-backed campaign" to get Riseborough nominated.<ref>{{cite news |url=https://variety.com/2023/awards/awards/andrea-riseborough-oscar-nomination-campaign-to-leslie-1235500488/ |title=How Andrea Riseborough Got That Surprise Oscar Nomination for ''To Leslie'' |last=Malkin |first=Marc |work=[[Variety (magazine)|Variety]] |date=January 24, 2023 |access-date=January 25, 2023 |archive-date=January 25, 2023 |archive-url=https://web.archive.org/web/20230125002112/https://variety.com/2023/awards/awards/andrea-riseborough-oscar-nomination-campaign-to-leslie-1235500488/ |url-status=live}}</ref><ref>{{cite news |url=https://deadline.com/2023/01/oscars-controversy-over-to-leslie-campaign-heats-up-but-is-it-all-much-ado-about-nothing-1235243077/ |title=Oscars: Controversy Over ''To Leslie'' Campaign Heats Up But Is It All Much Ado About Nothing? |last=Hammond |first=Pete |work=[[Deadline Hollywood]] |date=January 27, 2023 |access-date=February 2, 2023 |archive-date=February 2, 2023 |archive-url=https://web.archive.org/web/20230202002245/https://deadline.com/2023/01/oscars-controversy-over-to-leslie-campaign-heats-up-but-is-it-all-much-ado-about-nothing-1235243077/ |url-status=live}}</ref> They contacted friends and colleagues in the entertainment industry, asking them to view the film and share it with others if they enjoyed it.<ref name="Whipp">{{cite news |url=https://www.latimes.com/entertainment-arts/awards/story/2023-01-24/oscars-nominations-2023-how-andrea-riseborough-pulled-off-that-shocking-oscar-nomination |title=How Andrea Riseborough pulled off that shocking Oscar nomination |work=[[Los Angeles Times]] |date=January 24, 2023 |access-date=January 28, 2023 |last=Whipp |first=Glenn |archive-date=January 28, 2023 |archive-url=https://web.archive.org/web/20230128003843/https://www.latimes.com/entertainment-arts/awards/story/2023-01-24/oscars-nominations-2023-how-andrea-riseborough-pulled-off-that-shocking-oscar-nomination |url-status=live}}</ref> Morris and Riseborough also hired publicists to coordinate the efforts. While not initially regarded as a serious contender, the campaign raised Riseborough's profile; dozens of celebrities praised her performance on social media, and some hosted screenings of the film during voting for the Academy Award nominations in January 2023.<ref>{{cite news |last=Gardner |first=Chris |title=Why Stars Like Jennifer Aniston, Sarah Paulson and Charlize Theron are Backing Andrea Riseborough in ''To Leslie'' |url=https://www.hollywoodreporter.com/movies/movie-news/jennifer-aniston-sarah-paulson-andrea-riseborough-to-leslie-1235294300/ |access-date=February 14, 2023 |work=[[The Hollywood Reporter]] |date=January 12, 2023 |archive-date=February 14, 2023 |archive-url=https://web.archive.org/web/20230214005509/https://www.hollywoodreporter.com/movies/movie-news/jennifer-aniston-sarah-paulson-andrea-riseborough-to-leslie-1235294300/ |url-status=live}}</ref><ref>{{cite news |last=Buchanan |first=Kyle |title=The Oscars' Andrea Riseborough Controversy, Thoroughly Explained |url=https://www.nytimes.com/2023/02/08/movies/andrea-riseborough-to-leslie-oscars-controversy.html |access-date=March 19, 2023 |work=[[The New York Times]] |date=February 21, 2023 |archive-date=March 18, 2023 |archive-url=https://web.archive.org/web/20230318205752/https://www.nytimes.com/2023/02/08/movies/andrea-riseborough-to-leslie-oscars-controversy.html |url-status=live}}</ref> Riseborough's nomination was announced on January 24, which the ''[[Los Angeles Times]]'' called "one of the most shocking nominations in Oscar history".<ref name="Whipp"/>
+
+After her nomination was announced, speculation arose that the tactics might have violated AMPAS rules against directly lobbying voters.<ref>{{cite news |last1=Lopez |first1=Kristen |last2=Lambert |first2=Harper |title=Andrea Riseborough Oscar Nom Inquiry: Grassroots Campaign or Illegal Lobbying? |url=https://www.thewrap.com/andrea-riseborough-oscar-nom-academy-rule-violation/ |access-date=February 15, 2023 |work=[[TheWrap]] |date=January 28, 2023 |archive-date=February 15, 2023 |archive-url=https://web.archive.org/web/20230215180828/https://www.thewrap.com/andrea-riseborough-oscar-nom-academy-rule-violation/ |url-status=live}}</ref> A post on the film's [[Instagram]] account was noted by several AMPAS members for possibly violating a rule prohibiting "[singling] out 'the competition' by name" by featuring a quote from film critic [[Richard Roeper]], who praised Riseborough's performance as better than [[Cate Blanchett]]'s in ''Tár'', a fellow nominee for Best Actress.<ref>{{cite news |url=https://variety.com/2023/awards/awards/to-leslie-andrea-riseborough-instagram-post-1235505104/ |title=''To Leslie'' Instagram Post Referencing Cate Blanchett Could Factor into Academy Board Meeting |last=Davis |first=Clayton |date=January 27, 2023 |access-date=February 2, 2023 |work=[[Variety (magazine)|Variety]] |archive-date=February 2, 2023 |archive-url=https://web.archive.org/web/20230202002247/https://variety.com/2023/awards/awards/to-leslie-andrea-riseborough-instagram-post-1235505104/ |url-status=live}}</ref> On January 27, the Academy announced a review of the year's campaigns "to ensure that no guidelines were violated, and to inform us whether changes to the guidelines may be needed in a new era of social media and digital communication".<ref name="Riseborough">{{cite news |url=https://variety.com/2023/awards/awards/andrea-riseborough-to-leslie-oscars-academy-review-1235504914/ |title=Academy 'Conducting Review' After Andrea Riseborough's Surprise Oscar Nomination |last=Davis |first=Clayton |work=[[Variety (magazine)|Variety]] |date=January 27, 2023 |access-date=January 28, 2023 |archive-date=January 28, 2023 |archive-url=https://web.archive.org/web/20230128002434/https://variety.com/2023/awards/awards/andrea-riseborough-to-leslie-oscars-academy-review-1235504914/ |url-status=live}}</ref>
+
+The Academy has rescinded nominations for nominees who participated in unsanctioned campaigning. However, there were no reports that Riseborough had been involved in such, or that any Academy members had lodged formal complaints about the campaign's behavior.<ref name="Riseborough"/> On January 31, the Academy concluded its review by pledging to address "social media and outreach campaigning tactics" which they said caused "concern", but confirming that Riseborough's nomination would be retained.<ref>{{cite news |url=https://variety.com/2023/awards/news/andrea-riseborough-keeps-oscar-nomination-to-leslie-investigation-1235507099/ |title=Andrea Riseborough Will Retain Oscar Nomination, but Social Media Offenders Will be Addressed by Film Academy |first1=Clayton |last1=Davis |first2=Matt |last2=Donnelly |work=[[Variety (magazine)|Variety]] |date=January 31, 2023 |access-date=February 1, 2023 |archive-date=January 31, 2023 |archive-url=https://web.archive.org/web/20230131233908/https://variety.com/2023/awards/news/andrea-riseborough-keeps-oscar-nomination-to-leslie-investigation-1235507099/ |url-status=live}}</ref> Following the controversy, the Academy introduced new campaigning rules and clarifications in May 2023.<ref>{{cite news |url=https://www.theguardian.com/film/2023/may/02/academy-awards-oscars-rules-changes-for-2024-social-media |title=Academy Awards changes rules around social media after this year's Oscars controversies |last=Cain |first=Sian |work=[[The Guardian]] |date=May 2, 2023 |access-date=May 19, 2023 |archive-date=May 19, 2023 |archive-url=https://web.archive.org/web/20230519195643/https://www.theguardian.com/film/2023/may/02/academy-awards-oscars-rules-changes-for-2024-social-media |url-status=live}}</ref>
+
+===Critical reviews===
+''[[Variety (magazine)|Variety]]'' columnist [[Owen Gleiberman]] wrote: "It didn't rock the boat, it didn't overstay its welcome, and it left you feeling that the world's preeminent awards show, all doom-saying punditry to the contrary, is still, on balance, a very good thing." He also added that the wins received by ''Everything Everywhere All at Once'' "lent the evening a rare emotional unity".<ref>{{cite news |last=Gleiberman |first=Owen |title=The Oscars Were Safe, Conventional and Old-Fashioned, Which Made Them an Ideal Vehicle for One Movie's Triumph: TV Review |url=https://variety.com/2023/tv/reviews/the-oscars-review-everything-everywhere-all-at-once-1235551641/ |access-date=March 16, 2023 |work=[[Variety (magazine)|Variety]] |date=March 12, 2023 |archive-date=March 16, 2023 |archive-url=https://web.archive.org/web/20230316070237/https://variety.com/2023/tv/reviews/the-oscars-review-everything-everywhere-all-at-once-1235551641/ |url-status=live}}</ref> Television critic Daniel Fienberg of ''[[The Hollywood Reporter]]'' similarly praised the show's emotional beats and found its flaws "were mitigated more gracefully than just about any Oscars telecast" he could recall.<ref>{{cite news |last=Fienberg |first=Daniel |title=Critic's Notebook: The 95th Academy Awards Were Mercifully Low on Drama, Movingly High on Emotion |url=https://www.hollywoodreporter.com/tv/tv-reviews/2023-oscars-review-jimmy-kimmel-telecast-1235350534/ |access-date=March 13, 2023 |work=[[The Hollywood Reporter]] |date=March 12, 2023 |archive-date=March 13, 2023 |archive-url=https://web.archive.org/web/20230313061502/https://www.hollywoodreporter.com/tv/tv-reviews/2023-oscars-review-jimmy-kimmel-telecast-1235350534/ |url-status=live}}</ref> [[Mick LaSalle]] of the ''[[San Francisco Chronicle]]'' commended Kimmel's stint as host stating: "He was establishing that 2023 would not be a repeat of 2022 — and it wasn't. It was such a relief to see something, anything, actually get better."<ref>{{cite news |last=LaSalle |first=Mick |author-link=Mick LaSalle |title=Oscars 2023 Was a Nice, Mellow night — and Exactly What We All Needed |url=https://datebook.sfchronicle.com/movies-tv/kimmel-will-smith-quan-yeoh-fraser-jamie-lee-17835262 |access-date=April 25, 2023 |work=[[San Francisco Chronicle]] |date=March 12, 2023 |archive-date=March 27, 2023 |archive-url=https://web.archive.org/web/20230327000639/https://datebook.sfchronicle.com/movies-tv/kimmel-will-smith-quan-yeoh-fraser-jamie-lee-17835262 |url-status=live}}</ref>
+
+Mike Hale of ''[[The New York Times]]'' remarked on "the ordinariness and sameness of the ABC broadcast" compared to the prior year,<ref name="NYT">{{cite news |last=Hale |first=Mike |title=Review: The Increasingly Ordinary Oscars |url=https://www.nytimes.com/2023/03/12/arts/television/oscars-academy-awards-ceremony-broadcast.html |access-date=March 28, 2023 |work=[[The New York Times]] |date=March 12, 2023 |archive-date=March 20, 2023 |archive-url=https://web.archive.org/web/20230320042816/https://www.nytimes.com/2023/03/12/arts/television/oscars-academy-awards-ceremony-broadcast.html |url-status=live}}</ref> while ''[[USA Today]]''{{'}}s Kelly Lawler criticized it as "terribly fake" and felt that Kimmel's role "felt phoned in, or at least maybe monitored by corporate overlords looking to avoid controversy" despite some of his jokes tackling controversial subjects such as the [[January 6 United States Capitol attack]] and [[Tom Cruise]]'s [[Scientology]] advocacy.<ref>{{cite news |last=Lawler |first=Kelly |title=Review: No Slap, No Problems? The Oscars Would Like to Pretend That Everything, Everywhere is Fine |url=https://www.usatoday.com/story/entertainment/tv/2023/03/13/oscars-2023-review-pretend-everything-everywhere-is-fine/11462121002/ |access-date=April 21, 2023 |work=[[USA Today]] |date=March 13, 2023 |archive-date=March 29, 2023 |archive-url=https://web.archive.org/web/20230329042803/https://www.usatoday.com/story/entertainment/tv/2023/03/13/oscars-2023-review-pretend-everything-everywhere-is-fine/11462121002/ |url-status=live}}</ref> Hale added that "the modern Oscars have become something more to be endured than enjoyed".<ref name="NYT"/>
+
+===Ratings and reception===
+The American telecast on ABC drew in an average of 18.75&nbsp;million people over its length, which was a 13% increase from the previous year's ceremony and marked the first time that the Academy Awards experienced consecutive years of viewership increase since the [[86th Academy Awards]] in 2014.<ref name="Viewership"/> The show also earned higher [[Nielsen ratings]] compared to the previous ceremony with 9.9% of households watching the ceremony.<ref>{{cite news |title=Academy Awards ratings |publisher=[[Television Bureau of Advertising]] |url=https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |access-date=July 16, 2019 |archive-date=August 8, 2016 |archive-url=https://web.archive.org/web/20160808235818/https://www.tvb.org/Portals/0/media/file/tracts/Academy_Awards.pdf |url-status=live}}</ref> In addition, it garnered a higher 18–49 demo rating with a 4.43 rating among viewers in that demographic.<ref>{{cite news |last=Bell |first=Breanna |title=Oscars Draw 18.8 Million Viewers, Up 13% from Last Year |url=https://variety.com/2023/tv/news/2023-oscar-ratings-academy-awards-audience-1235550070/ |access-date=March 15, 2023 |work=[[Variety (magazine)|Variety]] |date=March 13, 2023 |archive-date=March 13, 2023 |archive-url=https://web.archive.org/web/20230313221631/https://variety.com/2023/tv/news/2023-oscar-ratings-academy-awards-audience-1235550070/ |url-status=live}}</ref> It was the 15th most-watched [[prime time]] broadcast of 2023 in the United States, behind only sport events.<ref>{{cite web |url=https://variety.com/2023/tv/news/most-watched-shows-2023-ncis-oscars-blue-bloods-super-bowl-yellowstone-1235854795/ |title=The 100 Most-Watched Telecasts of 2023: NFL, Oscars, Gordon Ramsay, ''NCIS'' and a Single ''Yellowstone'' Episode |last=Schneider |first=Michael |date=December 29, 2023 |work=[[Variety (magazine)|Variety]] |access-date=December 29, 2023 |archive-date=December 29, 2023 |archive-url=https://web.archive.org/web/20231229191852/https://variety.com/2023/tv/news/most-watched-shows-2023-ncis-oscars-blue-bloods-super-bowl-yellowstone-1235854795/ |url-status=live }}</ref> In July 2023, the broadcast was nominated for four awards at the [[75th Primetime Creative Arts Emmy Awards|75th Primetime Creative Arts Emmys]] but failed to win in any of the categories for which it was nominated.<ref>{{cite news |last1=Schneider |first1=Michael |title=Emmys 2023: The Complete Nominations List |url=https://variety.com/2023/tv/news/2023-emmy-nominations-list-1235666521/ |access-date=August 21, 2026 |work=[[Variety (magazine)|Variety]] |date=July 12, 2023 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108044621/https://variety.com/2023/tv/news/2023-emmy-nominations-list-1235666521/ |url-status=live }}</ref><ref>{{cite news |last1=Giardina |first1=Carolyn |last2=Lewis |first2=Hilary |last3=Dresden |first3=Hilton |title=Creative Arts Emmys: Complete Winners List |url=https://www.hollywoodreporter.com/tv/tv-news/2023-creative-arts-emmys-winners-list-night-two-1235780934/ |access-date=January 15, 2024 |work=[[The Hollywood Reporter]] |date=January 7, 2024 |archive-date=January 8, 2024 |archive-url=https://web.archive.org/web/20240108011052/https://www.hollywoodreporter.com/tv/tv-news/2023-creative-arts-emmys-winners-list-night-two-1235780934/ |url-status=live }}</ref>
+
+=="In Memoriam"==
+The annual "In Memoriam" segment was introduced by [[John Travolta]]. Singer [[Lenny Kravitz]] performed his song "[[Calling All Angels (Lenny Kravitz song)|Calling All Angels]]" during the tribute.<ref>{{cite magazine |last=Lynch |first=Joe |title=John Travolta Tears Up Saluting Olivia Newton-John Ahead of Lenny Kravitz's Oscars In Memoriam Performance |url=https://www.billboard.com/music/awards/john-travolta-lenny-kravitz-in-memorium-2023-oscars-1235284332/ |access-date=April 12, 2023 |magazine=[[Billboard (magazine)|Billboard]] |date=March 12, 2023 |archive-date=March 24, 2023 |archive-url=https://web.archive.org/web/20230324001526/https://www.billboard.com/music/awards/john-travolta-lenny-kravitz-in-memorium-2023-oscars-1235284332/ |url-status=live}}</ref><ref>{{cite news |title=95th Oscars In Memoriam Pays Tribute to Angela Lansbury, Burt Bacharach and More Late Stars |url=https://aframe.oscars.org/news/post/95th-oscars-in-memoriam-watch |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=April 12, 2023 |archive-date=March 27, 2023 |archive-url=https://web.archive.org/web/20230327031406/https://aframe.oscars.org/news/post/95th-oscars-in-memoriam-watch |url-status=live}}</ref><ref>{{cite magazine |title=In Memoriam: Diese deutschen Verstorbenen wurden bei den Oscars geehrt |url=https://www.rollingstone.de/in-memoriam-diese-deutschen-verstorbenen-wurden-bei-den-oscars-geehrt-2566269/ |trans-title=In Memoriam: These deceased Germans were honored at the Oscars |access-date=August 21, 2016 |magazine=[[Rolling Stone|Rolling Stone Germany]] |date=March 14, 2023 |archive-date=March 22, 2023 |archive-url=https://web.archive.org/web/20230322213016/https://www.rollingstone.de/in-memoriam-diese-deutschen-verstorbenen-wurden-bei-den-oscars-geehrt-2566269/ |url-status=live |language=de}}</ref>
+
+{{div col|colwidth=22em}}
+
+* [[Olivia Newton-John]] – singer, actress
+* [[John Korty]] – director, producer
+* [[May Routh]] – costume designer
+* [[Louise Fletcher]] – actress
+* [[John Zaritsky]] – cinematographer
+* [[Albert Brenner]] – production designer
+* [[Irene Papas]] – actress
+* Mitchell Goldman – executive
+* [[Bob Rafelson]] – director, writer, producer
+* Albert Saiki – design engineer
+* [[Ian Whittaker]] – set decorator
+* [[Robbie Coltrane]] – actor
+* [[Kirstie Alley]] – actress
+* [[Ray Liotta]] – actor
+* Vicky Eguia – publicity executive
+* [[Angelo Badalamenti]] – composer
+* [[Greg Jein]] – visual effects artist, model maker
+* [[Neal Jimenez]] – writer, director
+* [[Mike Hill (film editor)|Mike Hill]] – film editor
+* [[Tom Luddy]] – producer, film festival co-founder
+* [[Marina Goldovskaya]] – director, cinematographer, educator
+* [[Christopher Tucker]] – special effects makeup artist
+* [[Irene Cara]] – actress, singer, songwriter
+* [[Gregory Allen Howard]] – writer, producer
+* [[Owen Roizman]] – cinematographer
+* Luster Bayless – costume designer
+* [[Gray Frederickson]] – producer
+* [[Robert Dalva]] – film editor
+* [[Nichelle Nichols]] – actress
+* [[Edward R. Pressman]] – producer
+* [[Douglas McGrath]] – writer, director, actor
+* [[Julia Reichert]] – producer, director
+* [[Edie Landau]] – producer, executive
+* Mike Moder – assistant director, producer
+* [[Jean-Luc Godard]] – director, writer
+* [[Ralph Eggleston]] – animator, production designer
+* [[Marvin March]] – set decorator
+* [[Burt Bacharach]] – composer
+* Nick Bosustow – producer
+* [[Clay Pinney|Clayton Pinney]] – special effects artist
+* Simone Bär – casting director
+* [[Donn Cambern]] – film editor
+* [[Tom Whitlock]] – songwriter
+* [[Amanda Mackey]] – casting director
+* [[Angela Lansbury]] – actress
+* [[Wolfgang Petersen]] – director, writer, producer
+* John Dartigue – publicity executive
+* [[Burny Mattinson]] – animator
+* [[Maurizio Silvi]] – makeup artist
+* [[Jacques Perrin]] – actor, producer, director
+* [[Mary Alice]] – actress
+* [[Gina Lollobrigida]] – actress
+* Carl Bell – animator
+* [[Douglas Kirkland]] – photographer
+* [[Vangelis]] – composer, musician
+* [[James Caan]] – actor, producer
+* [[Raquel Welch]] – actress
+* [[Walter Mirisch]] – producer, former President of the Academy
+
+{{div col end}}
+
+==See also==
+* [[List of submissions to the 95th Academy Awards for Best International Feature Film]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{reflist}}
+
+==External links==
+* {{Official website|https://abc.com/show/0a6328a2-6451-46e7-a55a-fa84ddbb9541|Academy Awards official website}}
+* {{Official website|https://www.oscars.org|The Academy of Motion Picture Arts and Sciences official website}}
+* [https://www.youtube.com/user/Oscars Oscars Channel] {{Webarchive|url=https://web.archive.org/web/20190226082028/https://www.youtube.com/user/Oscars |date=February 26, 2019 }} at [[YouTube]] (run by the [[Academy of Motion Picture Arts and Sciences]])
+
+'''Other resources'''
+* {{IMDb title|20231352|The Oscars (2023)}}
+
+{{Academy Awards}}
+
+{{DEFAULTSORT:Academy Awards, 95}}
+[[Category:2022 film awards]]
+[[Category:2023 in Los Angeles]]
+[[Category:2023 in American cinema]]
+[[Category:Academy Awards ceremonies]]
+[[Category:2023 awards in the United States]]
+[[Category:March 2023 in the United States]]
+[[Category:Television shows directed by Glenn Weiss]]

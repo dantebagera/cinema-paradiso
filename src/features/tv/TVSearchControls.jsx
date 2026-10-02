@@ -16,7 +16,8 @@ export default function TVSearchControls({ scope, query, status, onStatusChange,
   useEffect(()=>{setDraft(query);setText(query.groups.find(g=>g.type==='title')?.values[0]?.text || ''); const year=query.groups.find(g=>g.type==='year')?.values[0];setYears(year ? [year.from ?? (year.operator==='at_most' ? '' : year.value),year.to ?? (year.operator==='at_least' ? '' : year.value)] : ['','']);},[query]);
   useEffect(()=>{const controller=new AbortController();fetchJson(`/api/tv/catalog/options?scope=${scope}`,{signal:controller.signal}).then(setOptions).catch(e=>{if(e.name!=='AbortError')setError(e.message);});return ()=>controller.abort();},[scope,retry]);
   const identities=useCallback(async(type,value,context,signal)=>(await fetchJson(`/api/tv/catalog/identities?${new URLSearchParams({scope,type,query:value})}`,{signal})).items,[scope]);
-  function run(next){setError('');setDraft(next);onRun(next);}
+  function catalogForStatus(next){return scope==='discover' && next.groups.some(group=>group.type==='tv_status') ? {...next,feed:'catalog'} : next;}
+  function run(next){const ready=catalogForStatus(next);setError('');setDraft(ready);onRun(ready);}
   function criterion(type,value){try {const base={...draft,mode:mode==='advanced'?'advanced':'simple',groups:draft.groups.filter(g=>g.type!==type)};run(value ? withCriterion(base,type,value) : base);}catch(e){setError(e.message);}}
   function reset(){const next=emptyTVQuery(scope);setMode('title');setText('');setYears(['','']);onClear?.();run(next);}
   function search(){if(mode==='title')criterion('title',text.trim()?{text:text.trim()}:null);else run(draft);}
@@ -35,23 +36,22 @@ export default function TVSearchControls({ scope, query, status, onStatusChange,
   const hasDiscoverFilters = draft.groups.length > 0 || draft.feed !== 'trending_week' || draft.sort.key !== 'auto';
   return <div className="tv-search-controls">
     <form className={`${scope==='library'?'library-search-panel':'discover-search-panel'} tv-search-panel`} data-people-search={scope==='library'||undefined} onSubmit={e=>{e.preventDefault();search();}}>
-      {mode==='advanced' ? <AdvancedSearchBuilder mediaType="tv" scope={scope} query={draft} onChange={setDraft} onRun={()=>run(draft)} onReset={reset} options={options} searchIdentities={identities} loading={loading}/> : mode==='title' ? <SearchField className={scope==='library'?'library-main-search':'discover-main-search'}><Search size={17}/><input aria-label="Search TV shows" placeholder={scope==='library'?'Search your TV library…':'Search TV shows…'} value={text} onChange={e=>setText(e.target.value)}/></SearchField> : <IdentityPicker scope={scope} type={mode} searchIdentities={identities} onPick={value=>{const next=withCriterion(draft,mode,mode==='person'?{...value,role:'actor'}:value);setMode('advanced');run({...next,mode:'advanced'});}}/>}
+      {mode==='advanced' ? <AdvancedSearchBuilder mediaType="tv" scope={scope} query={draft} onChange={next=>setDraft(catalogForStatus(next))} onRun={()=>run(draft)} onReset={reset} options={options} searchIdentities={identities} loading={loading}/> : mode==='title' ? <SearchField className={scope==='library'?'library-main-search':'discover-main-search'}><Search size={17}/><input aria-label="Search TV shows" placeholder={scope==='library'?'Search your TV library…':'Search TV shows…'} value={text} onChange={e=>setText(e.target.value)}/></SearchField> : <IdentityPicker scope={scope} type={mode} searchIdentities={identities} onPick={value=>{const next=withCriterion(draft,mode,mode==='person'?{...value,role:'actor'}:value);setMode('advanced');run({...next,mode:'advanced'});}}/>}
       <select aria-label="TV search type" value={mode} onChange={e=>changeMode(e.target.value)}><option value="title">TV shows</option><option value="person">People</option><option value="keyword">Keywords</option><option value="advanced">Advanced</option></select>
-      <button type="submit" className={`btn btn-primary ${scope==='library'?'library-search-submit':'discover-search-submit'}${mode==='advanced'?' advanced-search-submit':''}`} disabled={loading} aria-label="Search TV"><Search size={16}/>Search</button>
+      <button type="submit" className={`btn btn-primary ${scope==='library'?'library-search-submit':'discover-search-submit'}${mode==='advanced'?' advanced-search-submit':''}`} aria-label="Search TV"><Search size={16}/>Search</button>
     </form>
     {scope === 'library' && !filtersOpen ? <div className="library-toolbar library-filter-toolbar library-filter-toolbar-collapsed">
-      <span>Filters collapsed: resolution, source, genre, viewing state, language, status, country, year, rating, sort</span>
+      <span>Filters collapsed: resolution, source, genre, viewing state, status, country, year, rating, sort</span>
       <button type="button" className="btn btn-secondary library-filter-icon-button" onClick={() => setFiltersOpen(true)} aria-label="Open filters" title="Open filters"><Filter size={17}/></button>
     </div> : <div className={scope === 'discover' ? 'discover-toolbar tv-discover-toolbar' : 'library-toolbar library-filter-toolbar library-filter-toolbar-tv'}>
       {scope === 'discover' && <>
-        <select aria-label="TV Discover feed" value={draft.feed} onChange={e=>run({...draft,feed:e.target.value})}>{[['trending_week','Trending week'],['trending_today','Trending today'],['popular','Popular'],['top_rated','Top rated'],['now_playing','On the air'],['upcoming','Airing today'],['catalog','Catalog']].map(([value,label])=><option key={value} value={value}>{label}</option>)}</select>
+        <select aria-label="TV Discover feed" value={draft.feed} onChange={e=>run({...draft,feed:e.target.value,groups:e.target.value==='catalog'?draft.groups:draft.groups.filter(group=>group.type!=='tv_status')})}>{[['trending_week','Trending week'],['trending_today','Trending today'],['popular','Popular'],['top_rated','Top rated'],['now_playing','On the air'],['upcoming','Airing today'],['catalog','Catalog']].map(([value,label])=><option key={value} value={value}>{label}</option>)}</select>
         {select('availability','Ownership',[{id:'owned',label:'Available locally'},{id:'unowned',label:'Not owned'}])}
       </>}
       {scope === 'library' && <>{select('resolution','Resolutions',resolution)}{select('library_source','Sources',options.library_source||[])}</>}
       {select('genre','Genres',options.genre||[])}
       {scope === 'library' && viewingFilter()}
-      {select('language','Original language',options.language||[])}
-      {scope === 'discover' && <>{select('country','Countries',options.country||[])}{viewingFilter()}</>}
+      {scope === 'discover' && <>{select('tv_status','Series status',options.tv_status||[])}{select('country','Countries',options.country||[])}{viewingFilter()}</>}
       {scope === 'library' && <>
         <select aria-label="TV Status" value={status} onChange={e=>onStatusChange(e.target.value)}><option value="">All statuses</option>{['Continuing','Ended','Limited Series','Status Unknown'].map(value=><option key={value} value={value}>{value}</option>)}</select>
         {select('country','Countries',options.country||[])}

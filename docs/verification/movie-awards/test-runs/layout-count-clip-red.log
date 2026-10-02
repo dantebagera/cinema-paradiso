@@ -1,0 +1,170 @@
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3
+
+> cinema-paradiso-frontend@3.0.0-beta.1 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1690 modules transformed.
+rendering chunks...
+computing gzip size...
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/manifest-BSGbUmFO.webmanifest          0.55 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/index.html                                    1.86 kB │ gzip:   0.84 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/TVWorkspace-C0qIaGNz.css              10.46 kB │ gzip:   2.78 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/IPTVWorkspace-Cx_ZMdzz.css            39.79 kB │ gzip:   6.54 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/index-CjF8Edx0.css                   207.67 kB │ gzip:  35.52 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/header-CbieqaTQ.js                     0.05 kB │ gzip:   0.07 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/moviePresentation-Di650b9v.js          0.70 kB │ gzip:   0.44 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/Pagination-DCkiYZXl.js                 0.88 kB │ gzip:   0.49 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/DiscoverResultGrid-DpXNjtkj.js         0.88 kB │ gzip:   0.41 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/WorkspacePathBar-B5uETC_B.js           2.50 kB │ gzip:   0.96 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/LibraryControls-C3GcpyCa.js            2.83 kB │ gzip:   0.91 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/DownloadsWorkspace-CUOwWi_E.js         3.38 kB │ gzip:   1.40 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/iptv-BJKRsUnj.js                       6.50 kB │ gzip:   1.38 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/MetadataCorrectionModal-D67Z9Kt5.js    9.97 kB │ gzip:   3.27 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/StyleGuide--fpgmDmD.js                10.43 kB │ gzip:   3.01 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/CardLab-BnQ5cWay.js                   11.48 kB │ gzip:   4.12 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/useMovieCollectionCache-DY48ZgGQ.js   12.11 kB │ gzip:   4.16 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/AIControlWorkspace-MiZgBUxS.js        16.57 kB │ gzip:   5.74 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/HelpWorkspace-Cb2BtTya.js             21.47 kB │ gzip:   6.96 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/HomeWorkspace-C0MzbqtS.js             22.10 kB │ gzip:   6.58 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/SearchField-C9aLr90M.js               27.27 kB │ gzip:   8.45 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/vendor-icons-BISePPUw.js              32.69 kB │ gzip:   6.62 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/ListsWorkspace-DeZezkwg.js            32.94 kB │ gzip:   9.34 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/useCardGridMetrics-BeXtPAA4.js        36.76 kB │ gzip:  11.43 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/LibraryWorkspace-ChtakC0U.js          47.09 kB │ gzip:  13.96 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/TVWorkspace-DNM0Hs7j.js               61.25 kB │ gzip:  17.74 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/CleanupWorkspace-DVcnmf-Q.js          63.68 kB │ gzip:  16.78 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/DiscoverWorkspace-DpXbFQYB.js         63.93 kB │ gzip:  18.69 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/SettingsWorkspace-nxbKWLHG.js         84.80 kB │ gzip:  20.51 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/IPTVWorkspace-Iqkp4Qfm.js             96.11 kB │ gzip:  25.51 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/index-DzsBQg56.js                    113.47 kB │ gzip:  34.57 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.17s
+
+Running 4 tests using 1 worker
+
+(node:43512) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\movie-awards.spec.js:46:3 › desktop geometry 1920x1080 (1.5s)
+(node:44816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\movie-awards.spec.js:46:3 › desktop geometry 1600x1000 (1.5s)
+(node:11092) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 tests\e2e\movie-awards.spec.js:46:3 › desktop geometry 1366x900 (1.5s)
+  ok 4 tests\e2e\movie-awards.spec.js:46:3 › desktop geometry 1366x768 (540ms)
+
+
+  1) tests\e2e\movie-awards.spec.js:46:3 › desktop geometry 1920x1080 ──────────────────────────────
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      74 |     expect(geometry.slot).toBe(238);expect(geometry.portraitDelta).toBeLessThanOrEqual(1);
+      75 |     for(const person of geometry.awarded) {
+    > 76 |       for(const pair of person.pairs){expect(pair.width).toBeLessThanOrEqual(28);expect(pair.fits).toBeTruthy();expect(pair.numberLeft).toBeTruthy();expect(pair.contained).toBeTruthy();expect(pair.countUnclipped).toBeTruthy();}
+         |                                                                                                                                                                                                                      ^
+      77 |       if(person.pairs.length===2)expect(person.pairs[0].bottom).toBeLessThanOrEqual(person.pairs[1].top-2);
+      78 |     }
+      79 |     if(size.width===1920) for(const person of geometry.awarded){expect(Math.round(person.width)).toBe(106);expect(Math.round(person.height)).toBe(132);}
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\movie-awards.spec.js:76:214
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\movie-awards-desktop-geometry-1920x1080\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\movie-awards-desktop-geometry-1920x1080\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\movie-awards-desktop-geometry-1920x1080\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\movie-awards-desktop-geometry-1920x1080\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\movie-awards.spec.js:46:3 › desktop geometry 1600x1000 ──────────────────────────────
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      74 |     expect(geometry.slot).toBe(238);expect(geometry.portraitDelta).toBeLessThanOrEqual(1);
+      75 |     for(const person of geometry.awarded) {
+    > 76 |       for(const pair of person.pairs){expect(pair.width).toBeLessThanOrEqual(28);expect(pair.fits).toBeTruthy();expect(pair.numberLeft).toBeTruthy();expect(pair.contained).toBeTruthy();expect(pair.countUnclipped).toBeTruthy();}
+         |                                                                                                                                                                                                                      ^
+      77 |       if(person.pairs.length===2)expect(person.pairs[0].bottom).toBeLessThanOrEqual(person.pairs[1].top-2);
+      78 |     }
+      79 |     if(size.width===1920) for(const person of geometry.awarded){expect(Math.round(person.width)).toBe(106);expect(Math.round(person.height)).toBe(132);}
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\movie-awards.spec.js:76:214
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\movie-awards-desktop-geometry-1600x1000\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\movie-awards-desktop-geometry-1600x1000\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\movie-awards-desktop-geometry-1600x1000\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\movie-awards-desktop-geometry-1600x1000\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    tests\e2e\movie-awards.spec.js:46:3 › desktop geometry 1920x1080 ───────────────────────────────
+    tests\e2e\movie-awards.spec.js:46:3 › desktop geometry 1600x1000 ───────────────────────────────
+  2 passed (8.1s)
+Playwright failure data retained at C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-643db88fc19e4aa9a13d98c73c8051c3
+127.0.0.1 - - [02/Oct/2026 13:46:59] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:46:59] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:46:59] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:46:59] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:46:59] "GET /api/user/followed-releases HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:46:59] "GET /api/tmdb/filter-options HTTP/1.1" 400 -
+127.0.0.1 - - [02/Oct/2026 13:46:59] "POST /api/user/followed-releases/check HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:46:59] "GET /api/movie-awards/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:46:59] "GET /static/movie-awards/oscar.png HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:46:59] "GET /static/movie-awards/golden_globe.png HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /static/movie-awards/oscar.png HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /static/movie-awards/golden_globe.png HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /discover HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/index-DzsBQg56.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/vendor-Bb8JjhAW.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/vendor-react-CJZMWplS.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/index-CjF8Edx0.css HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/vendor-icons-BISePPUw.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/DiscoverWorkspace-DpXbFQYB.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/SearchField-C9aLr90M.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/useCardGridMetrics-BeXtPAA4.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/moviePresentation-Di650b9v.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/useMovieCollectionCache-DY48ZgGQ.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/DiscoverResultGrid-DpXNjtkj.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/Pagination-DCkiYZXl.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /assets/WorkspacePathBar-B5uETC_B.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /api/tv/capabilities HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /api/user/followed-releases HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "POST /api/user/followed-releases/check HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /api/tmdb/filter-options HTTP/1.1" 400 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /api/movie-awards/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /static/movie-awards/oscar.png HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /static/movie-awards/golden_globe.png HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /static/movie-awards/oscar.png HTTP/1.1" 200 -
+127.0.0.1 - - [02/Oct/2026 13:47:00] "GET /static/movie-awards/golden_globe.png HTTP/1.1" 200 -

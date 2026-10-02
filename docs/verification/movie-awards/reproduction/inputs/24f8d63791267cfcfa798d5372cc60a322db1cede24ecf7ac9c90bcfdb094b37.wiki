@@ -1,0 +1,372 @@
+{{Short description|1946 American drama film directed by William Wyler}}
+{{Other uses}}
+{{Use American English|date=January 2025}}
+{{Use mdy dates|date=February 2016}}
+<!-- This article is a part of [[Wikipedia:WikiProject Aircraft]]. Please see [[Wikipedia:WikiProject Aircraft/page content]] for recommended layout. -->
+{{Infobox film
+| name           = The Best Years of Our Lives
+| image          = The Best Years of Our Lives (1946 poster).jpg
+
+| alt            = 
+| caption        = Theatrical release poster
+| director       = [[William Wyler]]
+| producer       = [[Samuel Goldwyn]]
+| screenplay     = [[Robert E. Sherwood]]
+| based_on       = {{based on|''Glory for Me''<br />1945 novella|[[MacKinlay Kantor]]}}
+| starring       = {{Plainlist|
+* [[Myrna Loy]]
+* [[Fredric March]]
+* [[Dana Andrews]]
+* [[Teresa Wright]]
+* [[Virginia Mayo]]
+}}
+| music          = {{Plainlist|
+* [[Hugo Friedhofer]] (composer)
+* [[Emil Newman]] (musical director)
+}}
+| cinematography = [[Gregg Toland]]
+| editing        = [[Daniel Mandell]]
+| studio         = [[Samuel Goldwyn Productions]]
+| distributor    = [[RKO Radio Pictures]]
+| released       = {{Film date|1946|11|21|[[New York City]], premiere}}
+| runtime        = 172 minutes
+| country        = United States
+| language       = English
+| budget         = $2.1 million<ref name="david">Thomson 1993, pp. 490–491.</ref> or $3 million<ref>{{cite web | url=https://archive.org/stream/variety165-1947-01#page/n85/mode/1up | title=Variety (January 1947) | year=1947 }}</ref>
+| gross          = $23.7 million<ref>[https://www.boxofficemojo.com/movies/?id=bestyearsofourlives.htm " 'Best Years of Our Lives' (1946)."] ''Box Office Mojo''. Retrieved: February 4, 2010.</ref>
+}}
+[[File:Best Years of Our Lives.jpg|thumb|262px|Standing (left to right): [[Fredric March]], [[Myrna Loy]], [[Dana Andrews]], [[Teresa Wright]]; seated at piano: [[Hoagy Carmichael]]]]
+
+'''''The Best Years of Our Lives''''' (also known as '''''Glory for Me''''' and '''''Home Again''''') is a 1946 American epic [[Drama (film and television)|drama film]] directed by [[William Wyler]] and starring [[Myrna Loy]], [[Fredric March]], [[Dana Andrews]], [[Teresa Wright]], [[Virginia Mayo]] and [[Harold Russell]]. The film depicts three [[United States military|United States servicemen]] returning from [[World War II]] and re-adjusting to societal changes and civilian life. The men come from different military branches, with different ranks that do not correspond with their civilian social class backgrounds.
+
+The film is credited for its portrayal of post-World War II era hardships and of reincorporation of veterans into society after their often traumatic terms in the US military. It is one of the earliest films to address such issues, dealing with concerns such as [[Post-traumatic stress disorder|PTSD]]<ref>Dephalese, Arnaud, (2026) ''Trauma & PTSD in American Cinema''</ref> and a resurgence of [[Isolationism|isolationist]] policy. There are prescient references to nuclear destruction, and to reintegration policies with veterans that extended into the Vietnam [[Vietnam War|War]] era and beyond.
+
+''The Best Years of Our Lives'' was a critical and commercial success, winning seven [[Academy Awards]]: [[Academy Award for Best Picture|Best Picture]], [[Academy Award for Best Director|Best Director]] (William Wyler), [[Academy Award for Best Actor|Best Actor]] (Fredric March),  [[Academy Award for Best Film Editing|Best Film Editing]] ([[Daniel Mandell]]), [[Academy Award for Best Adapted Screenplay|Best Adapted Screenplay]] ([[Robert E. Sherwood]]), and [[Academy Award for Best Original Score|Best Original Score]] ([[Hugo Friedhofer]]).<ref name="Oscars1947">{{Cite web |url=http://www.oscars.org/oscars/ceremonies/1947 |title=The 19th Academy Awards (1947) Nominees and Winners |publisher=[[Academy of Motion Picture Arts and Sciences]] |access-date=August 19, 2011 |archive-url=https://web.archive.org/web/20110706093757/http://www.oscars.org/awards/academyawards/legacy/ceremony/19th-winners.html |archive-date=July 6, 2011 |url-status=live}}</ref> In addition, for his role as Parrish, Russell won the [[Academy Award for Best Supporting Actor]]. He had received an honorary Oscar for <nowiki>''bringing aid and comfort to disabled veterans through the medium of motion pictures.''</nowiki><ref name=":0" /> The special award was created because the Board of Governors wanted to salute Russell, a non-professional actor, but assumed he had little chance for a competitive win.<ref>{{Cite web|last=Montgomery|first=Mark|date=2016-12-10|title=Remembering Harold Russell, the soldier-actor who won two Oscars for 'Best Years of Our Lives'|url=https://www.latimes.com/entertainment/movies/la-ca-classic-hollywood-harold-russell-20161130-story.html|access-date=2020-11-12|website=Los Angeles Times|language=en-US}}</ref> It was the only time in Oscar history that the academy awarded two Oscars for the same performance.<ref>{{Cite web|last=Stilwell|first=Blake|date=2019-12-23|title=This Disabled WWII Veteran Was the Only Actor to Win 2 Oscars for the Same Part|url=https://www.military.com/off-duty/2019/12/23/disabled-wwii-veteran-was-only-actor-win-2-oscars-same-part.html|access-date=2020-11-12|website=Military.com|language=en}}</ref>
+
+In 1989, ''The Best Years of Our Lives'' was one of the first 25 films selected by the [[Library of Congress]] for preservation in the United States [[National Film Registry]] for being "culturally, historically, or aesthetically significant".<ref>{{cite news |date=September 19, 1989 |title=ENTERTAINMENT: Film Registry Picks First 25 Movies|work=[[Los Angeles Times]] |url=https://www.latimes.com/archives/la-xpm-1989-09-19-mn-347-story.html|access-date=April 22, 2020}}</ref><ref name=":0">{{Cite web |title=Complete National Film Registry Listing |url=https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/ |access-date=May 19, 2020 |publisher=[[Library of Congress]]}}</ref> It was the highest-grossing film in both the United States and United Kingdom since the release of ''[[Gone with the Wind (film)|Gone with the Wind]]''. In 2004, it was named the sixth most-attended film of all time in the UK, with over 20 million tickets sold.<ref>{{cite web |date=28 November 2004|title=The Ultimate Chart: 1–100 |url=http://old.bfi.org.uk/features/ultimatefilm/chart/complete.php |url-status=dead |archive-url=https://web.archive.org/web/20120803005826/http://old.bfi.org.uk/features/ultimatefilm/chart/complete.php |archive-date=3 August 2012 |publisher=[[British Film Institute]] |access-date=11 June 2019}}</ref>
+
+{{TOC limit|limit=2}}
+
+==Plot==
+Three returning [[World War II]] veterans meet on a flight to their [[Midwestern United States|midwestern]] hometown of Boone City. [[United States Army Air Forces|USAAF]] [[Bombardier (aircrew)|bombardier]] [[Captain (United States O-3)|captain]] Fred Derry had been a drugstore [[soda jerk]] who lived with his father and stepmother on the wrong side of the tracks. Before shipping out, Fred married gold-digger Marie after a whirlwind romance. Marie has since been working in a nightclub to fill her time (and her nightlife) in spite of Fred's generous combat pay as an Air Force officer. [[United States Army|U.S. Army]] [[Sergeant#United States|sergeant]] Al Stephenson is a bank executive; he, his wife Milly and their children Peggy and Rob live in a luxury apartment. [[United States Navy|U.S. Navy]] [[petty officer#United States|petty officer]] Homer Parrish was a star high school athlete living with his middle-class parents and younger sister, and dating his next-door neighbor Wilma, whom he intended to marry upon his return from the war.
+
+Each man faces challenges integrating back into civilian life. Homer lost both hands in the war; he is reluctant to return home and face his well-meaning parents and their friends, who have a hard time seeing past his disability. Homer can deftly use his [[prosthesis#Hooks|mechanical hooks]], but hesitates to display affection for Wilma as he cannot believe she will still want to marry him. Al, tired and jaded, returns to the bank and is given a promotion, but wrestles with alcohol. Fred suffers from [[Post-traumatic stress disorder|PTSD]] [[Flashback (psychology)|flashbacks]] by night.
+
+Unable to locate Marie, Fred goes out on the town with the Stephensons. Both Al and Fred become drunk and Fred spends the night in the Stephenson home. Fred and Peggy develop a mutual attraction. After meeting Marie during an outing orchestrated by Peggy, she concludes Marie is shallow and materialistic, and Peggy determines to break up Fred's marriage, much to Al's consternation.
+
+Frustrated and depressed by his loss of independence; and concerned that Wilma doesn't fully understand the difficulties of being married to him, Homer demonstrates how she'll need to assist him when he removes his prosthetic hands at bedtime, leaving him helpless. Wilma reaffirms her love and vows her commitment to a grateful and emotional Homer, who finally embraces her.
+
+Widely respected by the bank's senior management for his past business acumen, Al is admonished after approving an unsecured loan to a farmer and fellow veteran without collateral (never realizing the land the farmer wishes to purchase could be collateral for the loan). With inhibitions lowered by [[Binge drinking|excessive drinking]], Al gives a speech at a work banquet that satirizes requiring a veteran to provide collateral before risking his life to take a hill in battle.
+
+With little work experience and unable to find a better job than soda jerk, Fred returns to the same drugstore and is now supervised by his former protege. Fred and Peggy's attraction grows stronger, increasing tensions with Al. When Homer visits Fred at the drugstore, another customer criticizes US involvement in the war, telling Homer his injuries were unnecessary. Homer responds angrily, and Fred punches the customer, for which he's fired. Marie, frustrated with Fred's lack of financial success and missing her past nightlife, seeks a divorce.
+
+Bitter and seeing no future in Boone City, especially with Al telling him to stay away from Peggy, Fred decides to catch the next plane out. While waiting at the airport, Fred walks into an [[aircraft graveyard]], climbing into the bombardier's seat of a decommissioned [[Boeing B-17 Flying Fortress|B-17]] bomber. He's roused from a painful flashback by a work crew foreman, who tells him the planes are being demolished for use in the growing prefab housing industry. Fred asks if they need help in the budding business and is hired.
+
+Al, Milly, and Peggy attend Homer and Wilma's wedding, where Fred is best man. Now divorced, Fred reunites with Peggy after the ceremony and expresses his love but says things may be financially difficult if she stays with him. Peggy's smile expresses her joy and she and Fred kiss.
+
+==Cast==
+<!--- Entire credited cast, per closing credits --->
+{{Cast listing|
+* [[Myrna Loy]] as Milly Stephenson
+* [[Fredric March]] as Technical Sergeant Al Stephenson
+* [[Dana Andrews]] as Captain Fred Derry
+* [[Teresa Wright]] as Peggy Stephenson
+* [[Virginia Mayo]] as Marie Derry
+* [[Cathy O'Donnell]] as Wilma Cameron
+* [[Hoagy Carmichael]] as Butch Engle, Homer's uncle
+* [[Harold Russell]] as Petty Officer 2nd Class Homer Parrish
+* [[Gladys George]] as Hortense Derry
+* [[Roman Bohnen]] as Pat Derry
+* [[Ray Collins (actor)|Ray Collins]] as Mr. Milton
+* [[Minna Gombell]] as Mrs. Parrish
+* [[Walter Baldwin]] as Mr. Parrish
+* [[Steve Cochran]] as Cliff
+* [[Dorothy Adams]] as Mrs. Cameron
+* [[Don Beddoe]] as Mr. Cameron
+* Marlene Aames as Luella Parrish
+* [[Charles Halton]] as Prew
+* [[Ray Teal]] as Mr. Mollett
+* [[Howland Chamberlain]] as Thorpe
+* Dean White as Novak
+* [[Erskine Sanford]] as Bullard
+* [[Michael Hall (actor, born 1926)|Michael Hall]] as Rob Stephenson
+* Victor Cutler as Woody Merrill
+* [[Leo Penn]] as ATC Corporal (uncredited)
+}}
+
+Casting brought together established stars as well as character actors and relative unknowns. Jazz drummer [[Gene Krupa]] was seen in archival footage, while [[Tennessee Ernie Ford]], later a TV star, appeared as an uncredited "hillbilly singer" (in the first of his only three film appearances).{{#tag:ref|At the time the film was shot, Ford was unknown as a singer. He worked in [[San Bernardino]] as a radio announcer-[[disc jockey]].|group=Note}}
+
+[[Blake Edwards]], later a film producer and director, appeared fleetingly as an uncredited "Corporal". Wyler's daughters, Catherine and Judy, were cast as uncredited customers seen in the drug store where Fred Derry works. [[Sean Penn]]'s father, [[Leo Penn|Leo]], played the uncredited part of the soldier working as a scheduling clerk in the [[Air Transport Command]] Office at the beginning of the film.
+
+[[Teresa Wright]] was only 13 years younger than her on-screen mother, played by [[Myrna Loy]].
+
+[[Michael Hall (actor, born 1926)|Michael Hall]] (1926–2020), who played Rob Stephenson, was the last surviving credited cast member at the time of his death. However, he is only seen in the first third of the film. Hall's contract with Goldwyn ended during filming, but the producer was reluctant to pay extra money to rehire him.<ref>{{cite web | url=https://www.apollo-magazine.com/michael-hall-collector-1926-2020/ |title=In memory of Michael Hall, a committed connoisseur and an unforgettable character|date=June 16, 2020|access-date=November 6, 2022}}</ref>
+
+==Production==
+[[Samuel Goldwyn]] was inspired to produce a film about veterans after reading an August 7, 1944, article in ''[[Time (magazine)|Time]]'' about the difficulties experienced by men returning to civilian life. Goldwyn hired former [[war correspondent]] [[MacKinlay Kantor]] to write a screenplay. His work was first published as a novella, ''Glory for Me'', which Kantor wrote in [[blank verse]].<ref>{{cite book|last=Kantor|first=MacKinlay|title=Glory for Me|date=1945|publisher=Coward-McCann|oclc=773996}}</ref><ref>{{cite book|last=Easton|first=Carol|title=The Search for Sam Goldwyn|date=2014|publisher=Univ. Press of Mississippi|others=Carl Rollyson (contributor)|isbn=978-1-62674-132-4|chapter=The Best Years|quote=Andrews looked at the onionskin pages and asked, 'Mac, why did you write this in blank verse?' 'Dana', said Kantor with a wry smile, 'I can't afford to write in blank verse, because nobody buys anything written in blank verse. But when Sam asked me to write this story, he didn't tell me not to write it in blank verse!'|chapter-url=https://books.google.com/books?id=AfkaBwAAQBAJ&pg=PT158}}</ref><ref name="Orriss 1984, p. 119">Orriss 1984, p. 119.</ref><ref name="emanuellevy.com">{{cite web|last=Levy|first=Emanuel|author-link=Emanuel Levy|date=April 4, 2015|title=Oscar History: Best Picture–Best Years of Our Lives (1946)|url=http://emanuellevy.com/review/oscar-history-best-picture-best-years-of-our-lives-1946/|url-status=dead|archive-url=https://web.archive.org/web/20170118050301/http://emanuellevy.com/review/oscar-history-best-picture-best-years-of-our-lives-1946/|archive-date=January 18, 2017|access-date=2017-01-16|work=Emanuel Levy: Cinema 24/7|format=review|df=mdy-all}}</ref> [[Robert E. Sherwood]] then adapted the novella as a screenplay.<ref name="emanuellevy.com" />
+
+Director Wyler had flown combat missions over Europe in filming ''[[Memphis Belle: A Story of a Flying Fortress|Memphis Belle]]'' (1944), and worked hard to get accurate depictions of the combat veterans he had encountered. Wyler changed the original casting, which had featured a veteran suffering from [[post-traumatic stress disorder]], and sought out Harold Russell, a non-actor, to take on the exacting role of Homer Parrish.<ref name="Orriss p. 121" />
+
+For ''The Best Years of Our Lives'', he asked the principal actors to purchase their own clothes, in order to connect with daily life and produce an authentic feeling. Other Wyler touches included constructing life-size sets, which went against the standard larger sets that were more suited to camera positions. The impact for the audience was immediate, as each scene played out in a realistic, natural way.<ref name="Orriss p. 121">Orriss 1984, p. 121.</ref>
+
+Recounting the interrelated story of three veterans right after the end of [[World War II]], ''The Best Years of Our Lives'' began filming just over seven months after the war's end, starting on April 15, 1946, at a variety of locations, including the [[Los Angeles County Arboretum and Botanic Garden]], [[Ontario International Airport]] in [[Ontario, California]], Raleigh Studios in [[Hollywood, Los Angeles|Hollywood]], and the Samuel Goldwyn/Warner Hollywood Studios.<ref name="Orriss p. 121" />
+
+In ''The Best Years of Our Lives'' [[cinematographer]] [[Gregg Toland]] used [[deep focus]] photography, in which objects both close to and distant from the camera are in sharp [[Focus (optics)|focus]].<ref name=Dave_Kehr>Kehr, Dave. [https://chicagoreader.com/film/the-best-years-of-our-lives/ "'The Best Years of Our Lives'."] ''[[The Chicago Reader]]''. Retrieved: November 6, 2022.</ref> For the passage of Fred Derry's reliving a combat mission while sitting in the remains of a former bomber, Wyler used "zoom" effects to simulate Derry's subjective state.<ref>Orriss 1984, pp. 121–122.</ref>
+
+The fictional Boone City was patterned after [[Cincinnati]], [[Ohio]].<ref name="Orriss 1984, p. 119" /> The "Jackson High" football stadium seen early in aerial footage of the bomber flying over the Boone City is [[Corcoran Stadium]] located at Xavier University in Cincinnati. A few seconds later Walnut Hills High School with its dome and football field can be seen along with the downtown Cincinnati skyline ([[Carew Tower]] and [[Fourth and Vine Tower]]) in the background.<ref>[https://web.archive.org/web/20110921092123/http://www.tcm.com/tcmdb/title/68507/The-Best-Years-of-Our-Lives/#trivia "Trivia: 'The Best Years of Our Lives'."] ''Turner Classic Movies''. Retrieved: November 6, 2022.</ref>
+
+After the war, the combat aircraft featured in the film were being destroyed and disassembled for reuse as scrap material. The scene of Derry's walking among aircraft ruins was filmed at the [[Ontario Air National Guard Station|Ontario Army Air Field]] in Ontario, California. The former training facility had been converted into a scrap yard, housing nearly 2,000 former combat aircraft in various states of disassembly and reclamation.<ref name="Orriss p. 121" />
+
+==Reception==
+===Critical response===
+Upon its release, ''The Best Years of Our Lives'' received extremely positive reviews from critics. Shortly after its premiere at the [[Astor Theatre (New York City)|Astor Theater, New York]], [[Bosley Crowther]], film critic for ''[[The New York Times]]'', hailed the film as a masterpiece. He wrote,
+{{blockquote|It is seldom that there comes a motion picture which can be wholly and enthusiastically endorsed not only as superlative entertainment, but as food for quiet and humanizing thought... In working out their solutions, Mr. Sherwood and Mr. Wyler have achieved some of the most beautiful and inspiring demonstrations of human fortitude that we have had in films." He also said the [[ensemble cast]]ing gave the "'best' performance in this best film this year from Hollywood".<ref>{{cite news |last=Crowther |first=Bosley |author-link=Bosley Crowther |date=November 22, 1946 |title=The Best Years of our Lives |url=https://archive.nytimes.com/www.nytimes.com/packages/html/movies/bestpictures/years-re.html |newspaper=[[The New York Times]] |publisher=[[The New York Times Company]] |issn=0362-4331 |oclc=1645522 |access-date=April 26, 2007}}</ref>}}
+
+[[File:Best Years of Our Lives 01 bar.jpg|thumb|left|alt=Deep focus framing.|Director Wyler and cinematographer Toland used deep focus to keep Fred visible in the phone booth in the far background of the frame.]]
+French film critic [[André Bazin]] used examples of Toland's and Wyler's deep-focus visual style to illuminate his theory of realism in film{{--}}going into detail about the scene in which Fred uses the phone booth in the far background while Homer and Butch play piano in the foreground. Bazin explains how deep focus functions in this scene:
+{{blockquote|The action in the foreground is secondary, although interesting and peculiar enough to require our keen attention since it occupies a privileged place and surface on the screen. Paradoxically, the true action, the one that constitutes at this precise moment a turning point in the story, develops almost clandestinely in a tiny rectangle at the back of the room{{--}}in the left corner of the screen.... Thus the viewer is induced actively to participate in the drama planned by the director.<ref name="Bazin">{{Cite book |last=Bazin |first=André |chapter-url=https://books.google.com/books?id=jrQmDSH1omEC&q=%2522andre+bazin%2522+%2522best+years+of+our+lives%2522&pg=PA11 |title=Bazin at Work: Major Essays & Reviews from the Forties & Fifties |publisher=Routledge |year=1997 |isbn=978-0-415-90018-8 |editor-last=Cardullo |editor-first=Bert |location=New York |pages=14–15 |language=en |chapter=William Wyler, or the Jansenist of Directing}}</ref>}}
+
+Professor and author Gabriel Miller discusses briefly the use of deep-focus in both the bar scene and the wedding scene at the end of the picture in an article written for the National Film Preservation Board.<ref>Gabriel Miller, ''The Best Years of Our Lives'', https://www.loc.gov/static/programs/national-film-preservation-board/documents/best_years.pdf Accessed 11/14/2022</ref>
+
+From ''[[The Nation (magazine)|The Nation]]'' in 1946, critic [[James Agee]] wrote, "In fact, it would be possible, I don't doubt, to call the whole picture just one long pious piece of deceit and self-deceit, embarrassed by hot flashes of talent, conscience, truthfulness, and dignity. And it is anyhow more than possible, it is unhappily obligatory, to observe that a good deal which might have been very fine, even great, and which is handled mainly by people who could have done, and done perfectly, all the best that could have been developed out of the idea, is here either murdered in its cradle or reduced to manageable good citizenship in the early stages of grade school. Yet I feel a hundred times more liking and admiration for the film than distaste or disappointment."<ref>Agee, James - ''Agee on Film Vol.1'' © 1958 by The James Agee Trust.</ref>
+
+Several decades later, film critic [[David Thomson (film critic)|David Thomson]] offered tempered praise: "I would concede that ''Best Years'' is decent and humane... acutely observed, despite being so meticulous a package. It would have taken uncommon genius and daring at that time to sneak a view of an untidy or unresolved America past Goldwyn or the public."<ref>Thomson, 2002, p. 949. 4th Edition; the first edition was published in 1975. See {{cite book |title=A Biographical Dictionary of the Cinema |last=Thomson |first=David |publisher=Secker & Warburg |location=London |date=1975 |oclc=1959828}}</ref> [[Pauline Kael]] wrote, "Despite its seven Academy Awards, it's not a great picture; it's too schematic and it drags on after you get the points. However, episodes and details stand out and help to compensate for the soggy plot strands and there's something absorbing about the banality of its large-scale good intentions; it's compulsively watchable."<ref>[[Pauline Kael|Kael, Pauline]] - ''5001 Nights at the Movies'' 1991 ISBN 0-8050-1366-0</ref>
+
+''The Best Years of Our Lives'' has a 97% "Fresh" rating at [[Rotten Tomatoes]], based on 105 reviews. The critical consensus states: "An engrossing look at the triumphs and travails of war veterans, ''The Best Years of Our Lives'' is concerned specifically with the aftermath of World War II, but its messages speak to the overall American experience."<ref>{{Cite web |title=The Best Years of Our Lives |url=https://www.rottentomatoes.com/m/best_years_of_our_lives |access-date=2026-02-04 |website=[[Rotten Tomatoes]] |publisher=[[Fandango Media]] |language=en}}</ref> On [[Metacritic]], the film holds a weighted average score of 93 out of 100 based on 17 critics, indicating "universal acclaim".<ref>{{Cite web |title=The Best Years of Our Lives Reviews |url=https://www.metacritic.com/movie/the-best-years-of-our-lives |access-date=August 13, 2023 |website=[[Metacritic]] |publisher=[[Fandom, Inc.]]}}</ref>
+
+''[[Chicago Sun-Times]]'' film critic [[Roger Ebert]] put the film on his "Great Movies" list in 2007, calling it "modern, lean, and honest".<ref>{{cite web |last=Ebert |first=Roger |author-link=Roger Ebert |date=December 29, 2007 |title=The Best Years of Our Lives (1946) |url=https://www.rogerebert.com/reviews/the-best-years-of-our-lives-1946 |work=[[RogerEbert.com]] |publisher=Ebert Digital LLC |via=[[Chicago Sun-Times|Chicago Sun Times]] |access-date=May 1, 2021}}</ref>
+{{clear}}
+
+===Popular response===
+''The Best Years of Our Lives'' was a massive commercial success. It opened to the public at the [[Astor Theatre (New York City)|Astor Theatre]] in New York City on November 22, 1946, and grossed $52,236 in its first week. Its length restricted the film to six shows a day, cutting down on total ticket sales, and initially suffered by having a top midweek ticket price of $2.40, ($37.75 today)<ref>{{Cite web |title=CPI Inflation Calculator : U.S. Bureau of Labor Statistics |url=https://www.bls.gov/data/inflation_calculator.htm |access-date=2026-09-18 |website=Bureau of Labor Statistics |language=en}}</ref> reducing gross revenue. It opened at the [[Woods Theatre]] in Chicago on December 18 before a [[roadshow theatrical release]] in Boston and Los Angeles, starting on the evening of Christmas Day.<ref>{{cite magazine|magazine=[[Variety (magazine)|Variety]]|date=January 15, 1947|page=9|title=Goldwyn Points to Wow 'Best Years' Biz To Refute Selznick Nix of 'Problem' Pix|url=https://archive.org/details/variety165-1947-01/page/n347/mode/2up?view=theater|via=[[Internet Archive]]|access-date=January 12, 2024}}</ref> After 12 weeks at the Astor, the film had grossed $584,000 and at that point had grossed $1.37 million from six theatres in five cities from 45 play weeks.<ref>{{cite magazine|magazine=[[Variety (magazine)|Variety]]|date=January 15, 1947|page=9|title='Best Years' 750G Take In 5 Cities|url=https://archive.org/details/variety165-1947-02/page/n124/mode/1up?view=theater|via=[[Internet Archive]]|access-date=January 13, 2024}}</ref>
+
+The picture earned $7.65 million in [[theatrical rental]]s at the U.S. and Canadian box office during its initial theatrical run,<ref name=Jewell>{{cite news | title=Richard B. Jewell's RKO film grosses, 1929–51: The C. J. Trevlin Ledger: A comment. | publisher=[[Historical Journal of Film, Radio and Television]], Volume 14, Issue 1, 1994}}</ref> ultimately benefiting from much larger admission prices (reflecting its exceptional length) than the majority of films released that year, which accounted for almost 70% of its earnings.<ref>{{cite magazine|url=https://archive.org/stream/variety169-1948-01#page/n62/mode/1up|title=Upped Scale Films Cop 'Win, Place, Show' Spots in Gross Sweepstakes|magazine=[[Variety (magazine)|Variety]]|date=January 7, 1948|page=63|access-date=June 11, 2019|via=[[Archive.org]]}}</ref> When box office figures are adjusted for inflation, it remains one of the top 100 grossing films in U.S. history.
+
+Among films released before 1950, only ''[[Gone with the Wind (film)|Gone With the Wind]]'', ''[[The Bells of St. Mary's]]'', ''[[The Big Parade]]'' and four Disney titles have done more total business, in part due to later re-releases. (Reliable box office figures for certain early films such as ''[[The Birth of a Nation]]'' and [[Charlie Chaplin]]'s comedies are unavailable.)<ref>[https://boxofficemojo.com/alltime/adjusted.htm "All-time Films (adjusted)."] ''[[Box Office Mojo]]''. Retrieved: September 19, 2010.</ref>
+
+However, because of the distribution arrangement RKO had with Goldwyn, RKO recorded a loss of $660,000 on the film.<ref name="uni">Richard B. Jewell, ''Slow Fade to Black: The Decline of RKO Radio Pictures'', [[University of California|Uni of California]], 2016</ref>
+
+==Awards and honors==
+In spite of his role, [[Harold Russell]] was not a professional actor. As the Academy Board of Governors considered him a long shot to win the [[Academy Award for Best Supporting Actor|Best Supporting Actor]] Oscar he had been nominated for, they gave him an [[Academy Honorary Award]] "for bringing hope and courage to his fellow veterans through his appearance". When Russell in fact won as supporting actor, there was an enthusiastic response. He is the only actor to have received two [[Academy Awards]] for the same performance. In 1992, Russell sold his Best Supporting Actor statuette at auction for $60,500 (${{Inflation|US|60500|1992|r=-2|fmt=c}} today), to pay his wife's medical bills.<ref name=obit>Bergan, Ronald. [https://www.theguardian.com/news/2002/feb/06/guardianobituaries "Obituary: Harold Russell; Brave actor whose artificial hands helped him win two Oscars"]. ''[[The Guardian]]'', February 6, 2002. Retrieved June 12, 2012.</ref>
+
+{| class="wikitable plainrowheaders"
+|-
+! Award
+! Category
+! Nominee(s)
+! Result
+! Ref.
+|-
+| rowspan="10"| [[19th Academy Awards|Academy Awards]]
+| [[Academy Award for Best Picture|Best Motion Picture]]
+| [[Samuel Goldwyn Productions]] 
+| {{won}}
+| align="center" rowspan="10"| <ref name="Oscars1947"/>
+|-
+| [[Academy Award for Best Director|Best Director]]
+| [[William Wyler]]
+| {{won}}
+|-
+| [[Academy Award for Best Actor|Best Actor]]
+| [[Fredric March]]
+| {{won}}
+|-
+| [[Academy Award for Best Supporting Actor|Best Supporting Actor]]
+| [[Harold Russell]]
+| {{won}}
+|-
+| [[Academy Award for Best Adapted Screenplay|Best Screenplay]]
+| [[Robert E. Sherwood]]
+| {{won}}
+|-
+| [[Academy Award for Best Film Editing|Best Film Editing]]
+| [[Daniel Mandell]]
+| {{won}}
+|-
+| [[Academy Award for Best Original Score|Best Scoring of a Dramatic or Comedy Picture]]
+| [[Hugo Friedhofer]]
+| {{won}}
+|-
+| [[Academy Award for Best Sound|Best Sound Recording]]
+| [[Gordon E. Sawyer]]
+| {{nom}}
+|-
+| [[Academy Honorary Award]]
+| Harold Russell
+| {{won}}
+|-
+| [[Irving G. Thalberg Memorial Award]]
+| [[Samuel Goldwyn]]
+| {{won}}
+|-
+| [[1st Bodil Awards|Bodil Awards]]
+| [[Bodil Award for Best American Film|Best American Film]]
+| William Wyler
+| {{won}}
+| align="center"| <ref>{{cite web |url=https://www.bodilprisen.dk/aar-for-aar/1948-2/ |title=The Bodil Prize 1948 |publisher=[[Bodil Awards]] |access-date=November 11, 2024}}</ref>
+|-
+| [[1st British Academy Film Awards|British Academy Film Awards]]
+| colspan="2"| [[BAFTA Award for Best Film|Best Film from any Source]]
+| {{won}}
+| align="center"| <ref>{{cite web |url=http://awards.bafta.org/award/1949/film |title=BAFTA Awards: Film in 1949 |publisher=[[British Academy Film Awards]] |access-date=November 11, 2024}}</ref>
+|-
+| Brussels World Film Festival
+| Best Actress
+| [[Myrna Loy]]
+| {{won}}
+| align="center"| 
+|-
+| [[Círculo de Escritores Cinematográficos|Cinema Writers Circle Awards]]
+| colspan="2"| Best Foreign Film
+| {{won}}
+| align="center"| 
+|-
+| rowspan="2"| [[4th Golden Globe Awards|Golden Globe Awards]]
+| colspan="2"| [[Golden Globe Award for Best Motion Picture – Drama|Best Picture]]
+| {{won}}
+| align="center" rowspan="2"| <ref>{{cite web |url=https://goldenglobes.com/film/the-best-years-of-our-lives/ |title=The Best Years of Our Lives |publisher=[[Golden Globe Awards]] |access-date=November 11, 2024}}</ref>
+|-
+| Special Achievement Award
+| Harold Russell
+| {{won}}
+|-
+| rowspan="3"| [[Karlovy Vary International Film Festival]]
+| [[Crystal Globe (Karlovy Vary International Film Festival)|Crystal Globe]]
+| rowspan="2"| William Wyler
+| {{nom}}
+| align="center" rowspan="3"| 
+|-
+| [[Best Director Award (Karlovy Vary IFF)|Best Director]]
+| {{won}}
+|-
+| Best Screenplay
+| Robert E. Sherwood
+| {{won}}
+|-
+| rowspan="2"| [[National Board of Review Awards 1946|National Board of Review Awards]]
+| colspan="2"| [[National Board of Review: Top Ten Films|Top Ten Films]]
+| {{draw|3rd Place}}
+| align="center" rowspan="2"| <ref>{{cite web |url=https://nationalboardofreview.org/award-years/1946/ |title=1946 Award Winners |publisher=[[National Board of Review]] |access-date=November 11, 2024}}</ref>
+|-
+| [[National Board of Review Award for Best Director|Best Director]]
+| William Wyler
+| {{won}}
+|-
+| [[National Film Preservation Board]]
+| colspan="2"| [[National Film Registry]]
+| {{won|Inducted}}
+| align="center"| <ref name=":0" />
+|-
+| rowspan="3"| [[1946 New York Film Critics Circle Awards|New York Film Critics Circle Awards]]
+| colspan="2"| [[New York Film Critics Circle Award for Best Film|Best Film]]
+| {{won}}
+| align="center" rowspan="3"| 
+|-
+| [[New York Film Critics Circle Award for Best Director|Best Director]]
+| William Wyler
+| {{won}}
+|-
+| [[New York Film Critics Circle Award for Best Actor|Best Actor]]
+| Fredric March
+| {{nom}}
+|-
+| Online Film & Television Association Awards
+| colspan="2"| Film Hall of Fame: Productions
+| {{won}}
+| align="center"| <ref>{{cite web |url=https://www.oftaawards.com/film-hall-of-fame/film-hall-of-fame-productions/ |title=Film Hall of Fame: Productions |publisher=Online Film & Television Association |access-date=November 11, 2024}}</ref>
+|}
+
+===[[American Film Institute]]===
+* [[AFI's 100 Years...100 Movies]]: #37<ref>{{Cite web |title=American Film Institute's list of the 100 Greatest Movies |url=http://connect.afi.com/site/DocServer/movies100.pdf?docID=264 |archive-url=https://web.archive.org/web/20100214191259/http://connect.afi.com/site/DocServer/movies100.pdf?docID=264 |archive-date=2010-02-14 |access-date=2026-01-02 |website=connect.afi.com}}</ref>
+* [[AFI's 100 Years...100 Cheers]]: #11<ref>{{Cite web |title=AFI's 100 YEARS...100 CHEERS |url=http://connect.afi.com/site/DocServer/cheers100.pdf?docID=202 |archive-url=https://web.archive.org/web/20091122102933/http://connect.afi.com/site/DocServer/cheers100.pdf?docID=202 |archive-date=2009-11-22 |access-date=2026-01-02 |website=connect.afi.com}}</ref>
+* [[AFI's 100 Years...100 Movies (10th Anniversary Edition)]]: #37<ref>{{Cite web |title=AFI's 100 YEARS...100 MOVIES - 10TH ANNIVERSARY EDITION |url=http://connect.afi.com/site/DocServer/100Movies.pdf?docID=301 |archive-url=https://web.archive.org/web/20090407071354/http://connect.afi.com/site/DocServer/100Movies.pdf?docID=301 |archive-date=2009-04-07 |access-date=2026-01-02 |website=connect.afi.com}}</ref>
+In 2006, [[Writers Guild of America West]] ranked its screenplay 44th in WGA's list of 101 Greatest Screenplays.<ref>{{Cite news |title=101 Greatest Screenplays |url=https://www.wga.org/writers-room/101-best-lists/101-greatest-screenplays/list |archive-url=https://web.archive.org/web/20210518183340/https://www.wga.org/writers-room/101-best-lists/101-greatest-screenplays/list |archive-date=2021-05-18 |access-date=2026-01-02 |language=en}}</ref>
+
+==Radio adaptations==
+The picture received four half-hour radio adaptations during 1947 and 1949: on [[Hedda Hopper]]'s ''[[Hedda Hopper#Radio and television|This Is Hollywood]]'', ''[[The Screen Guild Theater]]'' (two) and ''[[Screen Directors Playhouse]]''. In each case various actors reprised their film roles.<ref>{{cite web|url=http://www.classicmoviehub.com/facts-and-trivia/film/the-best-years-of-our-lives-1946/page/1/|title=The Best Years of Our Lives|website=Classic Movie Hub}}</ref><ref>{{cite magazine|title=Those Were the Days|magazine=Nostalgia Digest|date=Autumn 2012|volume=38|issue=4|page=35}}</ref>
+
+==References==
+
+===Informational notes===
+{{Reflist|group=Note}}
+
+===Citations===
+{{Reflist}}
+
+===Bibliography===
+{{Refbegin}}
+* Dolan, Edward F. Jr. ''Hollywood Goes to War''. London: Bison Books, 1985. {{ISBN|0-86124-229-7}}.
+* Dephalese, Arnaud. ''Trauma & PTSD in American Cinema'', Coneuwe, 2016. {{ISBN|2-95923-702-1}}.
+* Eagan, Daniel. ''The Best Years of Our Lives'', in [https://books.google.com/books/about/America_s_Film_Legacy.html?id=deq3xI8OmCkC ''America's Film Legacy: The Authoritative Guide to the Landmark Movies in the National Film Registry'']. A&C Black, 2010 {{ISBN|0826429777}}, pp.&nbsp;399–401.
+* Flood, Richard. "Reel crank – critic Manny Farber." ''[[Artforum]]'', Volume 37, Issue 1, September 1998. {{ISSN|0004-3532}}.
+* Hardwick, Jack and Ed Schnepf. "A Viewer's Guide to Aviation Movies", in ''The Making of the Great Aviation Films''. General Aviation Series, Volume 2, 1989.
+* Kinn, Gail and Jim Piazza. ''The Academy Awards: The Complete Unofficial History''. New York: Black Dog & Leventhal, 2008. {{ISBN|978-1-57912-772-5}}.
+* Orriss, Bruce. ''When Hollywood Ruled the Skies: The Aviation Film Classics of World War II''. Hawthorn, California: Aero Associates Inc., 1984. {{ISBN|0-9613088-0-X}}; {{OCLC |11709474}}.
+* Thomson, David. ''Showman: The Life of David O. Selznick''. London: Abacus, 1993. {{ISBN|978-0-2339-8791-0}}.
+* Thomson, David. "Wyler, William". ''The New Biographical Dictionary of Film''. 4th Edition. London: Little, Brown, 2002. {{ISBN|0-316-85905-2}}.
+* Tibbetts, John C., and James M. Welsh, eds. ''The Encyclopedia of Novels Into Film'' (2nd ed. 2005) pp.&nbsp;152–153.
+{{Refend}}
+
+==External links==
+{{Wikiquote}}
+{{Commons category}}
+* {{IMDb title|0036868}}
+* [http://www.filmsite.org/besty.html ''The Best Years of Our Lives''] at [[Filmsite.org]]
+* [http://www.reelclassics.com/Movies/BestYears/bestyears.htm ''The Best Years of Our Lives''] at Reel Classics
+* {{Rotten Tomatoes|best_years_of_our_lives}}
+* [https://www.loc.gov/static/programs/national-film-preservation-board/documents/best_years.pdf ''The Best Years of Our Lives''] at [[National Film Registry]]
+* {{TCMDb title|68507}}
+* [http://www.americanmusicpreservation.com/BestYearsofOurLivestribute.htm ''The Best Years of Our Lives''] at American Music Preservation
+* {{AFI film|24693}}
+
+;Streaming audio
+* [https://archive.org/download/ScreenGuildTheater/Sgt_47-11-24_ep363_The_Best_Years_of_Our_Lives.mp3 ''The Best Years of Our Lives''] on [[Screen Guild Theater]]: November 24, 1947
+* [https://archive.org/download/ScreenDirectorsPlayhouse/SDP_49-04-17_ep015-The_Best_Years_of_Our_Lives.mp3 ''The Best Years of Our Lives''] on [[Screen Directors Playhouse]]: April 17, 1949
+
+{{William Wyler}}
+{{Samuel Goldwyn}}
+{{Navboxes
+|title = Awards for ''The Best Years of Our Lives''
+|list =
+{{AcademyAwardBestPicture 1941–1960}}
+{{BAFTA Best Film 1948–1960}}
+{{Golden Globe Award Best Motion Picture Drama}}
+{{New York Film Critics Circle Award for Best Film}}
+}}
+
+{{Authority control}}
+
+{{DEFAULTSORT:Best Years Of Our Lives, The}}
+[[Category:1946 films]]
+[[Category:1946 American films]]
+[[Category:1946 English-language films]]
+[[Category:1946 war drama films]]
+[[Category:American aviation films]]
+[[Category:American black-and-white films]]
+[[Category:American war drama films]]
+[[Category:American World War II films]]
+[[Category:Best Drama Picture Golden Globe winners]]
+[[Category:Best Film BAFTA Award winners]]
+[[Category:Best Picture Academy Award winners]]
+[[Category:Films about alcoholism]]
+[[Category:Films about amputees]]
+[[Category:Films about marriage]]
+[[Category:Films about post-traumatic stress disorder]]
+[[Category:Films about veterans]]
+[[Category:Films about weddings in the United States]]
+[[Category:Films based on American novels]]
+[[Category:Films based on military novels]]
+[[Category:Films based on works by MacKinlay Kantor]]
+[[Category:Films directed by William Wyler]]
+[[Category:Films featuring a Best Actor Academy Award–winning performance]]
+[[Category:Films featuring a Best Supporting Actor Academy Award–winning performance]]
+[[Category:Films scored by Hugo Friedhofer]]
+[[Category:Films that won the Best Original Score Academy Award]]
+[[Category:Films whose director won the Best Directing Academy Award]]
+[[Category:Films whose editor won the Best Film Editing Academy Award]]
+[[Category:Films whose writer won the Best Adapted Screenplay Academy Award]]
+[[Category:RKO Pictures films]]
+[[Category:Samuel Goldwyn Productions films]]
+[[Category:United States National Film Registry films inducted in 1989]]
+[[Category:Films about disability in the United States]]
+[[Category:English-language war drama films]]
