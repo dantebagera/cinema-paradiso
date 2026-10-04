@@ -2141,12 +2141,10 @@ function StreamPlayerModal({ state, onClose }) {
   const { title, year, embedUrl } = state;
   const titleLabel = [title, year].filter(Boolean).join(' ');
   const [streamStatusVisible, setStreamStatusVisible] = useState(true);
-  const [streamLoaded, setStreamLoaded] = useState(false);
   const [streamSlow, setStreamSlow] = useState(false);
 
   useEffect(() => {
     setStreamStatusVisible(true);
-    setStreamLoaded(false);
     setStreamSlow(false);
     const slowTimer = window.setTimeout(() => setStreamSlow(true), 12000);
     const hideTimer = window.setTimeout(() => setStreamStatusVisible(false), 30000);
@@ -2156,10 +2154,9 @@ function StreamPlayerModal({ state, onClose }) {
     };
   }, [embedUrl]);
 
-  const statusTitle = streamLoaded ? 'Preparing stream...' : 'Loading stream...';
   const statusDetail = streamSlow
-    ? 'This stream is taking longer than usual. You can keep waiting or close the player.'
-    : 'The player can take a moment to initialize.';
+    ? 'The streaming page is taking longer than usual. You can keep waiting or close the player.'
+    : 'The streaming page can take a moment to load.';
 
   return (
     <div className="modal-backdrop trailer-backdrop" role="presentation" onClick={onClose}>
@@ -2175,9 +2172,9 @@ function StreamPlayerModal({ state, onClose }) {
         </div>
         <div className="trailer-player-shell stream-player-shell">
           {streamStatusVisible && (
-            <div className={`stream-loading-overlay ${streamLoaded ? 'is-compact' : ''}`} role="status" aria-live="polite">
+            <div className="stream-loading-overlay" role="status" aria-live="polite">
               <Loader2 size={28} className="spin" />
-              <strong>{statusTitle}</strong>
+              <strong>Loading stream page...</strong>
               <span className="stream-loading-bar" aria-hidden="true"><span /></span>
               <small>{statusDetail}</small>
             </div>
@@ -2187,7 +2184,8 @@ function StreamPlayerModal({ state, onClose }) {
             title={`${titleLabel} stream`}
             src={embedUrl}
             allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
-            onLoad={() => setStreamLoaded(true)}
+            // Page load does not report video playback inside the external player.
+            onLoad={() => setStreamStatusVisible(false)}
             allowFullScreen
           />
         </div>

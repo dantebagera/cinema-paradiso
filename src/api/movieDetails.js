@@ -156,13 +156,22 @@ export async function fetchTransientMovieLanguage(tmdbId, language = 'ar-SA') {
   );
 }
 
+function firstPlotText(...values) {
+  return values.find(value => typeof value === 'string' && value.trim()) || '';
+}
+
 export function mergeTransientMovieLanguage(movie, details, localized) {
-  if (!localized) return { displayMovie: movie, displayDetails: details };
+  const moviePlot = firstPlotText(movie?.summary, movie?.plot);
+  const englishPlot = moviePlot || firstPlotText(details?.summary, details?.plot);
+  const displayMovie = englishPlot && !firstPlotText(movie?.summary || movie?.plot)
+    ? { ...(movie || {}), summary: englishPlot, plot: englishPlot }
+    : movie;
+  if (!localized) return { displayMovie, displayDetails: details };
   return {
     displayMovie: {
-      ...(movie || {}),
+      ...(displayMovie || {}),
       ...localized,
-      summary: localized.summary || localized.plot || movie?.summary || movie?.plot || ''
+      summary: firstPlotText(localized.summary, localized.plot) || englishPlot
     },
     displayDetails: {
       ...(details || {}),

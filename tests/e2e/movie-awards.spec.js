@@ -14,8 +14,60 @@ async function fixtures(page) {
   await page.route('**/api/user/lists',route=>route.fulfill({json:{lists:[],curation_generation:1}}));
 }
 const expanded=page=>page.locator('.unified-movie-card-expanded:visible');
-const evidence=filename=>{const directory=path.resolve('docs/verification/movie-awards/desktop');fs.mkdirSync(directory,{recursive:true});return path.join(directory,filename);};
+const evidence=filename=>{const directory=path.resolve(process.env.CP_E2E_AWARDS_EVIDENCE_DIR || 'docs/verification/movie-awards/desktop');fs.mkdirSync(directory,{recursive:true});return path.join(directory,filename);};
 async function open(page) {await fixtures(page);await page.goto('/discover');await page.getByRole('heading',{name:'Award fixture',exact:true}).click();await expect(expanded(page).locator('.person-card')).toHaveCount(10);}
+
+for (const award of ['Oscars', 'Golden Globe']) {
+  test(`${award} navigation restores detail-only plots through Arabic, repeated awards, and history`, async ({ page, request }, testInfo) => {
+    await fixtures(page);
+    const organization = award === 'Oscars' ? 'oscar' : 'golden_globe';
+    const awardResponse = await request.get(`/api/movie-awards/person-films?person_id=100&role=actor&award=${organization}`);
+    expect(awardResponse.ok()).toBeTruthy();
+    const winning = (await awardResponse.json()).results.find(row => String(row.tmdb_id) === '2');
+    expect(winning).toBeTruthy();
+    expect(winning.summary || winning.plot || '').toBe('');
+
+    await page.route('**/api/tmdb/details**', route => {
+      const params = new URL(route.request().url()).searchParams;
+      const id = Number(params.get('tmdb_id'));
+      const arabic = params.get('language') === 'ar-SA';
+      const { summary, ...base } = movie(id);
+      return route.fulfill({ json: {
+        ...base, ...people, runtime: 110,
+        ...(arabic ? { title: `فيلم الجوائز ${id}` } : {}),
+        plot: arabic ? `قصة الفيلم ${id}` : `Full English plot for winning film ${id}.`
+      } });
+    });
+
+    await page.goto('/discover');
+    await page.getByRole('heading', { name: 'Award fixture', exact: true }).click();
+    await expect(expanded(page).locator('.person-card')).toHaveCount(10);
+    await expect(expanded(page).locator('.movie-card-plot')).toHaveText('A movie awards fixture.');
+
+    const actor = () => expanded(page).locator('.person-card').filter({ has: page.getByText('Actor 0', { exact: true }) });
+    await actor().getByRole('button', { name: award, exact: true }).click();
+    await page.getByRole('heading', { name: 'Winning film 2', exact: true }).click();
+    const plot = () => expanded(page).locator('.movie-card-plot');
+    await expect(plot()).toHaveText('Full English plot for winning film 2.');
+    await expect(expanded(page).locator('.person-card')).toHaveCount(10);
+    await expanded(page).getByRole('button', { name: 'العربية', exact: true }).click();
+    await expect(plot()).toHaveText('قصة الفيلم 2');
+    await expanded(page).getByRole('button', { name: 'English', exact: true }).click();
+    await expect(plot()).toHaveText('Full English plot for winning film 2.');
+
+    await actor().getByRole('button', { name: award === 'Oscars' ? 'Golden Globe' : 'Oscars', exact: true }).click();
+    await page.getByRole('heading', { name: 'Winning film 1', exact: true }).click();
+    await expect(plot()).toHaveText('Full English plot for winning film 1.');
+    await page.getByLabel('Discovery path').getByRole('button', { name: 'Back', exact: true }).click();
+    await expect(expanded(page).getByRole('heading', { name: 'Winning film 2', exact: true })).toBeVisible();
+    await expect(plot()).toHaveText('Full English plot for winning film 2.');
+    await page.goForward();
+    await expect(page.getByRole('heading', { name: 'Winning film 1', exact: true })).toBeVisible();
+    await page.getByRole('heading', { name: 'Winning film 1', exact: true }).click();
+    await expect(plot()).toHaveText('Full English plot for winning film 1.');
+    await expanded(page).screenshot({ path: testInfo.outputPath('restored-winning-plot.png') });
+  });
+}
 
 test('real awards API: number-left icons, award-only footer, exact actor/director films and Back',async({page,request})=>{
   const api=await request.get('/api/movie-awards/person-films?person_id=100&role=actor&award=oscar');
@@ -77,8 +129,7 @@ for(const size of [{width:1920,height:1080},{width:1600,height:1000},{width:1366
       if(person.pairs.length===2)expect(person.pairs[0].bottom).toBeLessThanOrEqual(person.pairs[1].top-2);
     }
     if(size.width===1920) for(const person of geometry.awarded){expect(Math.round(person.width)).toBe(106);expect(Math.round(person.height)).toBe(132);}
-    const output=path.resolve('docs/verification/movie-awards/desktop');fs.mkdirSync(output,{recursive:true});
-    await expanded(page).screenshot({path:path.join(output,`expanded-${size.width}x${size.height}.png`)});
+    await expanded(page).screenshot({path:evidence(`expanded-${size.width}x${size.height}.png`)});
   });
 }
 

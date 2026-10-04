@@ -6991,32 +6991,8 @@ kbd {
   padding: 24px;
 }
 
-.stream-loading-overlay.is-compact {
-  inset: 14px 14px auto auto;
-  width: min(360px, calc(100% - 28px));
-  min-height: 0;
-  place-items: start;
-  align-content: start;
-  gap: 8px;
-  border: 1px solid #ffffff24;
-  border-radius: var(--radius-md);
-  background: #08090de8;
-  box-shadow: var(--shadow-lg);
-  text-align: left;
-  padding: 12px;
-}
-
-.stream-loading-overlay.is-compact svg {
-  width: 18px;
-  height: 18px;
-}
-
 .stream-loading-overlay strong {
   font-size: 1rem;
-}
-
-.stream-loading-overlay.is-compact strong {
-  font-size: 0.88rem;
 }
 
 .stream-loading-overlay small {
@@ -7025,21 +7001,12 @@ kbd {
   line-height: 1.45;
 }
 
-.stream-loading-overlay.is-compact small {
-  font-size: 0.78rem;
-}
-
 .stream-loading-bar {
   width: min(320px, 70%);
   height: 5px;
   overflow: hidden;
   border-radius: 999px;
   background: #ffffff18;
-}
-
-.stream-loading-overlay.is-compact .stream-loading-bar {
-  width: 100%;
-  height: 4px;
 }
 
 .stream-loading-bar span {

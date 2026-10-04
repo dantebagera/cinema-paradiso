@@ -119,6 +119,78 @@ test('transient language overlay replaces display fields without mutating canoni
   assert.equal(details.tagline, 'English tagline');
 });
 
+for (const field of ['summary', 'plot']) {
+  test(`sparse movie cards display the loaded detail ${field} without changing their identity`, () => {
+    const movie = Object.freeze({ tmdb_id: '429197', title: 'Vice', summary: '', plot: '', poster_url: 'vice.jpg' });
+    const details = Object.freeze({ tmdb_id: '429197', title: 'Provider title', [field]: 'The available English plot.' });
+    const result = mergeTransientMovieLanguage(movie, details, null);
+
+    assert.equal(result.displayMovie.summary || result.displayMovie.plot, 'The available English plot.');
+    assert.equal(result.displayMovie.title, 'Vice');
+    assert.equal(result.displayMovie.tmdb_id, '429197');
+    assert.equal(result.displayMovie.poster_url, 'vice.jpg');
+    assert.equal(result.displayDetails, details);
+    assert.equal(movie.plot, '');
+    assert.equal(movie.summary, '');
+  });
+}
+
+test('blank initial descriptions use the available detail plot', () => {
+  const result = mergeTransientMovieLanguage(
+    { title: 'Vice', summary: '  ', plot: '\n' },
+    { summary: '', plot: '  Available plot with preserved spacing.  ' },
+    null
+  );
+  assert.equal(result.displayMovie.summary, '  Available plot with preserved spacing.  ');
+});
+
+test('a blank summary does not hide an existing movie plot', () => {
+  const movie = Object.freeze({ title: 'Vice', summary: ' ', plot: 'Existing movie plot.' });
+  const result = mergeTransientMovieLanguage(movie, { plot: 'Provider plot.' }, null);
+  assert.equal(result.displayMovie.summary || result.displayMovie.plot, 'Existing movie plot.');
+  assert.equal(movie.summary, ' ');
+});
+
+for (const field of ['summary', 'plot']) {
+  test(`an existing accepted movie ${field} keeps priority over the provider description`, () => {
+    const movie = Object.freeze({ title: 'Accepted title', accepted: true, [field]: 'Accepted plot.' });
+    const result = mergeTransientMovieLanguage(movie, { summary: 'Provider plot.', plot: 'Provider plot.' }, null);
+
+    assert.equal(result.displayMovie.summary || result.displayMovie.plot, 'Accepted plot.');
+    assert.equal(result.displayMovie, movie);
+  });
+}
+
+test('Arabic switching restores a detail-only English plot and leaves canonical inputs unchanged', () => {
+  const movie = Object.freeze({ tmdb_id: '429197', title: 'Vice', plot: '' });
+  const details = Object.freeze({ plot: 'Loaded English plot.' });
+  const arabic = Object.freeze({ title: 'فايس', plot: 'حبكة عربية' });
+
+  assert.equal(mergeTransientMovieLanguage(movie, details, arabic).displayMovie.summary, 'حبكة عربية');
+  assert.equal(mergeTransientMovieLanguage(movie, details, null).displayMovie.summary, 'Loaded English plot.');
+  assert.equal(movie.plot, '');
+  assert.equal(details.plot, 'Loaded English plot.');
+});
+
+test('a missing Arabic description falls back to the resolved English detail plot', () => {
+  const result = mergeTransientMovieLanguage(
+    { title: 'Vice', plot: '' },
+    { plot: 'Loaded English plot.' },
+    { title: 'فايس', summary: ' ', plot: '' }
+  );
+  assert.equal(result.displayMovie.summary, 'Loaded English plot.');
+  assert.equal(result.displayMovie.title, 'فايس');
+});
+
+test('missing, loading, failed, and empty details preserve the original description state', () => {
+  for (const details of [null, { loading: true }, { error: 'Unavailable' }, { summary: '', plot: '' }]) {
+    const existing = { title: 'Known movie', plot: 'Existing plot.' };
+    assert.equal(mergeTransientMovieLanguage(existing, details, null).displayMovie, existing);
+    const sparse = { title: 'Sparse movie', plot: '' };
+    assert.equal(mergeTransientMovieLanguage(sparse, details, null).displayMovie, sparse);
+  }
+});
+
 test('collection caches keep Library and TMDB payloads separate for the same collection', () => {
   const libraryDetails = {
     detail_source: 'library_sql',
