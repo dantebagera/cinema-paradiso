@@ -4,15 +4,15 @@ import json
 import os
 from pathlib import Path
 import signal
+import shutil
 import socket
 import subprocess
 import sys
 import time
 import urllib.error
 import urllib.request
-import webbrowser
 
-PORTS = {'CP': 15000, 'Ollama': 21434, 'Prowlarr': 19696, 'FlareSolverr': 18191,
+PORTS = {'CP': 15000, 'Prowlarr': 19696, 'FlareSolverr': 18191,
          'qBittorrent': 18686}
 
 
@@ -47,7 +47,7 @@ def prepare_config(root):
             config[key] = relocate(config[key])
     for key in ('movies_dirs', 'tv_roots'):
         config[key] = [relocate(value) for value in config.get(key, [])]
-    for relative in ('library/movies', 'library/tv', 'cache', 'data/runtime', 'data/ollama-home', 'data/ollama-models'):
+    for relative in ('library/movies', 'library/tv', 'cache', 'data/runtime'):
         (root / relative).mkdir(parents=True, exist_ok=True)
     write_json(config_path, config)
     write_json(marker, {'root': str(root)})
@@ -65,16 +65,31 @@ def require_free_ports(ports):
                 raise RuntimeError(f'{name} port {port} is occupied. Close the conflicting app or ask Codex to diagnose it. No existing process was stopped.') from error
 
 
-def ollama_environment(root):
-    root = Path(root).resolve()
+def external_ollama_available(url):
+    """Read-only check. Missing optional AI must not prevent CP from opening."""
+    if not url:
+        return False
+    try:
+        with urllib.request.urlopen(url.rstrip('/') + '/api/version', timeout=3) as response:
+            payload = json.load(response)
+            return isinstance(payload, dict) and bool(payload.get('version'))
+    except (OSError, ValueError, urllib.error.URLError):
+        return False
+
+
+def signin_external_ollama(root):
+    executable = shutil.which('ollama')
+    if not executable:
+        installed = Path(os.environ.get('LOCALAPPDATA', '')) / 'Programs/Ollama/ollama.exe'
+        if installed.is_file():
+            executable = str(installed)
+    if not executable:
+        raise RuntimeError('Ollama is not installed or cannot be found. Follow the Ollama setup section in CODEX-HANDOVER.md.')
+    config = json.loads((root / 'config.json').read_text(encoding='utf-8-sig'))
     env = os.environ.copy()
-    env.update(OLLAMA_HOST=f'127.0.0.1:{PORTS["Ollama"]}',
-               OLLAMA_MODELS=str(root / 'data/ollama-models'),
-               USERPROFILE=str(root / 'data/ollama-home'), HOME=str(root / 'data/ollama-home'))
-    # Host-wide settings must not silently disable the preserved cloud model.
-    for key in ('OLLAMA_API_KEY', 'OLLAMA_NO_CLOUD'):
-        env.pop(key, None)
-    return env
+    env['OLLAMA_HOST'] = config.get('ollama_url') or 'http://127.0.0.1:11434'
+    # Use the recipient's existing account/model storage; CP does not own it.
+    return subprocess.call([executable, 'signin'], cwd=root, env=env)
 
 
 def cp_environment(root):
@@ -252,7 +267,7 @@ def main():
         stop.touch()
         return 0
     if args.signin:
-        return subprocess.call([str(root / 'runtime/ollama/ollama.exe'), 'signin'], cwd=root, env=ollama_environment(root))
+        return signin_external_ollama(root)
     lock = None
     owned = None
     window_started = False
@@ -273,6 +288,11 @@ def main():
                 raise RuntimeError('This test package is already running. Use its existing window or Stop CP.bat.') from error
         require_free_ports(PORTS)
         config = prepare_config(root)
+        ollama_url = config.get('ollama_url', '')
+        if external_ollama_available(ollama_url):
+            print(f'Connected to your installed Ollama at {ollama_url}. CP will not start or stop it.', flush=True)
+        else:
+            print('Ollama is unavailable. CP will still open; start/install Ollama and connect it through Settings. See CODEX-HANDOVER.md.', flush=True)
         stop.unlink(missing_ok=True)
         owned = OwnedProcesses(root / 'data/runtime/friend')
         env = cp_environment(root)
@@ -287,9 +307,6 @@ def main():
         wait_ready(prowlarr, 'Prowlarr', f'http://127.0.0.1:{PORTS["Prowlarr"]}/api/v1/system/status',
                    headers={'X-Api-Key': config['prowlarr_key']})
         print('Prowlarr ready.', flush=True)
-        ollama = owned.start('Ollama', [str(root / 'runtime/ollama/ollama.exe'), 'serve'], root / 'runtime/ollama', ollama_environment(root))
-        wait_ready(ollama, 'Ollama', f'http://127.0.0.1:{PORTS["Ollama"]}/api/version')
-        print('Ollama ready. Cloud AI requires internet and a signed-in account.', flush=True)
         env['CP_PORT'] = str(PORTS['CP'])
         while True:
             cp = owned.start('CP', [sys.executable, str(root / 'app.py')], root, env)
@@ -305,7 +322,7 @@ def main():
                 window_started = True
             print(f'CP ready: http://127.0.0.1:{PORTS["CP"]}/ — keep this window open. Ctrl+C or Stop CP.bat stops the package.', flush=True)
             while cp.poll() is None and not stop.exists():
-                for name, service in [('Ollama', ollama), ('Prowlarr', prowlarr), ('FlareSolverr', flare)]:
+                for name, service in [('Prowlarr', prowlarr), ('FlareSolverr', flare)]:
                     if service.poll() is not None:
                         raise RuntimeError(f'{name} stopped unexpectedly; see data/runtime/friend/{name}.log')
                 time.sleep(.5)

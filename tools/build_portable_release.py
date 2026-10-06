@@ -275,7 +275,7 @@ def friend_test_config(original):
     config = copy.deepcopy(original)
     config.update(movies_dir="library/movies", movies_dirs=["library/movies"],
                   tv_roots=["library/tv"], user_data_dir="data", tmdb_cache_dir="cache",
-                  prowlarr_url="http://127.0.0.1:19696", ollama_url="http://127.0.0.1:21434",
+                  prowlarr_url="http://127.0.0.1:19696", ollama_url="http://127.0.0.1:11434",
                   qbt_mode="embedded", qbt_download_dir="", qbt_incomplete_dir="", qbt_webui_port=18686)
     # Physical screen position belongs to the recipient's monitor.
     if isinstance(config.get("player"), dict):
@@ -306,16 +306,15 @@ def copy_prowlarr_settings(source, destination):
     config.write(destination / "config.xml", encoding="utf-8", xml_declaration=True)
 
 
-def build_friend_test_folder(project_root, destination, *, ollama_source, prowlarr_source,
-                             flaresolverr_source, ffmpeg_source, dist_source,
-                             ollama_identity_source=None):
+def build_friend_test_folder(project_root, destination, *, prowlarr_source,
+                             flaresolverr_source, ffmpeg_source, dist_source):
     """Explicit private export. Never called by the public ZIP command."""
     root, target = Path(project_root).resolve(), Path(destination).resolve()
     if target.exists():
         raise FileExistsError(f"Private test destination already exists: {target}")
     if target == root or root in target.parents:
         raise ValueError("Private export must be outside the source checkout")
-    required = [(Path(ollama_source) / "ollama.exe"), (Path(prowlarr_source) / "bin/Prowlarr.Console.exe"),
+    required = [(Path(prowlarr_source) / "bin/Prowlarr.Console.exe"),
                 (Path(flaresolverr_source) / "flaresolverr.exe"), Path(dist_source) / "index.html"]
     for executable in required:
         if not executable.is_file():
@@ -332,10 +331,6 @@ def build_friend_test_folder(project_root, destination, *, ollama_source, prowla
                      app_version=read_project_version(root))
     copy_player_runtime(player, target / "runtime/player")
     copy_ffmpeg_runtime(ffmpeg_source, target / "runtime/ffmpeg", app_version=read_project_version(root))
-    ollama = Path(ollama_source)
-    (target / "runtime/ollama").mkdir(parents=True)
-    shutil.copy2(ollama / "ollama.exe", target / "runtime/ollama/ollama.exe")
-    shutil.copytree(ollama / "lib", target / "runtime/ollama/lib")
     shutil.copytree(Path(prowlarr_source) / "bin", target / "runtime/prowlarr",
                     ignore=shutil.ignore_patterns("*.pdb", "*.log"))
     copy_prowlarr_settings(prowlarr_source, target / "data/prowlarr")
@@ -359,12 +354,7 @@ def build_friend_test_folder(project_root, destination, *, ollama_source, prowla
             dest = target / "data/iptv/providers" / provider_id
             dest.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, dest / "provider.json")
-    if ollama_identity_source is not None:
-        home = target / "data/ollama-home/.ollama"
-        home.mkdir(parents=True, exist_ok=True)
-        for name in ("id_ed25519", "id_ed25519.pub"):
-            shutil.copy2(Path(ollama_identity_source) / name, home / name)
-    for relative in ("library/movies", "library/tv", "cache", "data/ollama-models"):
+    for relative in ("library/movies", "library/tv", "cache"):
         (target / relative).mkdir(parents=True, exist_ok=True)
     # Private launcher replaces the public development launcher only in this copy.
     shutil.copy2(root / "tools/friend_test_run.bat", target / "run.bat")
@@ -377,15 +367,15 @@ def build_friend_test_folder(project_root, destination, *, ollama_source, prowla
     commit = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], text=True).strip()
     manifest = {"kind": "private-friend-test", "source_commit": commit,
                 "cp_version": read_project_version(root), "cloud_model": settings.get("ollama_model"),
-                "ollama_account_included": ollama_identity_source is not None,
+                "ollama_account_included": False, "ollama_runtime": "external; recipient-owned",
                 "libraries": "empty; no media/catalog/jobs copied", "ports": {
-                    "CP": 15000, "Ollama": 21434, "Prowlarr": 19696, "FlareSolverr": 18191, "qBittorrent": 18686}}
+                    "CP": 15000, "Ollama": 11434, "Prowlarr": 19696, "FlareSolverr": 18191, "qBittorrent": 18686}}
     (target / "TEST-PACKAGE.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     notices = target / "THIRD-PARTY-NOTICES.md"
     with notices.open('a', encoding='utf-8') as output:
         output.write('\n\n## Private test services\n\n'
-                     'This private folder additionally bundles Ollama (MIT, https://github.com/ollama/ollama), '
-                     'Prowlarr (GPL-3.0, https://github.com/Prowlarr/Prowlarr), and FlareSolverr '
+                     'This private folder additionally bundles Prowlarr '
+                     '(GPL-3.0, https://github.com/Prowlarr/Prowlarr), and FlareSolverr '
                      '(MIT, https://github.com/FlareSolverr/FlareSolverr), including its browser dependencies. '
                      'Their notices/licenses accompany the runtimes. Cloud services and indexer accounts remain external.\n')
     return target

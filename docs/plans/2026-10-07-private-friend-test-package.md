@@ -2,6 +2,23 @@
 
 **Status:** Approved for implementation, 2026-10-07. Dante approved the stated package scope with "you can go": local source checkpoint, private copy under OneDrive/E7na/Cinema paradiso test, saved service/API settings, bundled Ollama/Prowlarr, launcher and Codex handover. No push, public release, live restart or live data changes.
 
+**Approved amendment, 2026-10-07:** Dante: "my friend has olama so delete it and write in the hand over isntructions to connect to his olama or ask him to download and intigrate one". This supersedes bundled Ollama/private Ollama identity and port 21434 throughout the original plan below. Source is clean master at 38d339a before this amendment; delivered folder is 4.709 GB, of which Ollama is 2.957 GB. Original CP/Ollama remain PID 28380/34956 on 5000/11434; no live source, settings, data or served frontend changes.
+
+### Amendment behavior and execution
+
+- Existing owners: `build_friend_test_folder` stops requiring/copying Ollama or identity/models; `friend_test_config` defaults to external URL 11434 with saved model unchanged. `friend_test_launcher` removes owned Ollama startup, port reservation, monitoring and private environment. It checks configured `/api/version` once (3-second timeout); missing AI prints setup guidance and CP continues. CP's existing Ollama API/Settings retain URL/model persistence and model validation. No frontend change or competing AI owner.
+- Recipient address edits survive restart/relocation. External Ollama is never added to the Windows Job Object and never stopped by CP. Sign-in helper finds recipient CLI on PATH or its standard per-user install; it sets only OLLAMA_HOST from CP settings and retains recipient identity/models. Missing CLI gives handover guidance. No automatic installation, account login or model downloads.
+- Handover instructs recipient Codex to inspect/reuse existing service, start it, install from official Windows download if absent, use own login, run CP's Test Model and Save Ollama. Other bundled services, private CP roots, credentials and public ZIP behavior stay as approved.
+- Delivery: remove only copied `runtime/ollama` and package Ollama data directories; synchronize changed source/tests/handover, revise quick start/notices/manifest and runtime hashes. Original installation is excluded from removal. Existing manifest checks remain historical; amendment verification is recorded separately.
+- Acceptance: external available -> CP starts and connects; absent -> CP starts with notice; custom URL -> retained; Stop CP -> external PID/listener survives; no runtime/ollama or identity/model directories; private assembly needs no Ollama source; public ZIP still excludes credentials. Verify focused private/public tests, Ollama owner tests, actual packaged start/stop and remaining runtime hash inventory. Full Python's known streamLoaded failure remains prior evidence, not a new full-suite claim.
+
+### Amendment verification, 2026-10-07
+
+- Baseline private/public suite: 18/18. New regressions failed before changing the owners (old port, copied identity directories, required Ollama source, missing external integration). Revised private/public/Ollama recommendation suite: 31/31 passed in isolated OS-temp.
+- Actual revised folder started CP/Prowlarr/FlareSolverr against existing Ollama at 11434, then against an unavailable custom address. Both returned the configured URL through `/api/ollama/config`, started CP successfully and shut down owned services with exit 0. Original Ollama PID 34956/11434 and CP PID 28380/5000 remained. No inference/account change or torrent download performed.
+- Remaining 2,550 runtime files hash-verified; 1,720,801,116 runtime bytes. Whole revised delivery approximately 1.75 GB. Smoke data/bytecode moved to OS-temp and pre-smoke package data restored; no .venv, Ollama runtime, account or model directories delivered. No UI source/bundle change or new full-suite claim.
+- Automatic review blocked recursive deletion without a detailed reason. Safer removal from delivery succeeded by moving only the copied Ollama files to `C:/Users/dante/AppData/Local/Temp/cp-removed-bundled-ollama-eea4e45a29b14fa6a7994c3a54f3d602`, outside OneDrive. This recovery copy is not distributed; no global Ollama installation was touched.
+
 ## Problem and decision
 
 - Current run.bat installs dependencies and rebuilds UI, but assumes external Ollama/Prowlarr and this machine's paths. config.json points at E:/Movies, G:/TV and Dante's source data/cache.

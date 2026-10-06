@@ -5,7 +5,7 @@ import tempfile
 import unittest
 import subprocess
 import sys
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 from pathlib import Path
 from contextlib import closing
 
@@ -24,6 +24,7 @@ class FriendTestPackageTests(unittest.TestCase):
         self.assertEqual(copied['tv_roots'], ['library/tv'])
         self.assertEqual(copied['user_data_dir'], 'data')
         self.assertEqual(copied['qbt_webui_port'], 18686)
+        self.assertEqual(copied['ollama_url'], 'http://127.0.0.1:11434')
         self.assertEqual(original['movies_dirs'], ['E:/Movies'])
 
     def test_relocation_rebases_owned_paths_and_preserves_friend_external_paths(self):
@@ -35,7 +36,8 @@ class FriendTestPackageTests(unittest.TestCase):
             external = Path(tmp) / 'friends own TV'
             cfg = {'movies_dir': str(old / 'library/movies'), 'movies_dirs': [str(old / 'library/movies')],
                    'tv_roots': [str(external)], 'user_data_dir': str(old / 'data'),
-                   'tmdb_cache_dir': str(old / 'cache'), 'tmdb_key': 'keep-secret'}
+                   'tmdb_cache_dir': str(old / 'cache'), 'tmdb_key': 'keep-secret',
+                   'ollama_url': 'http://127.0.0.1:22434'}
             (new / 'config.json').write_text(json.dumps(cfg))
             (new / 'data').mkdir()
             (new / 'data/friend-root.json').write_text(json.dumps({'root': str(old)}))
@@ -44,6 +46,8 @@ class FriendTestPackageTests(unittest.TestCase):
             self.assertEqual(result['tv_roots'], [str(external)])
             self.assertEqual(result['user_data_dir'], str(new / 'data'))
             self.assertEqual(result['tmdb_key'], 'keep-secret')
+            self.assertEqual(result['ollama_url'], 'http://127.0.0.1:22434')
+            self.assertFalse((new / 'data/ollama-home').exists())
 
     def test_busy_port_fails_without_closing_existing_listener(self):
         from tools.friend_test_launcher import require_free_ports
@@ -78,14 +82,61 @@ class FriendTestPackageTests(unittest.TestCase):
             self.assertEqual(config.findtext('Port'), '19696')
             self.assertEqual(config.findtext('BindAddress'), '127.0.0.1')
 
-    def test_ollama_environment_does_not_use_host_identity(self):
-        from tools.friend_test_launcher import ollama_environment
+    def test_signin_uses_recipient_installation_and_configured_server(self):
+        from tools.friend_test_launcher import main
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            env = ollama_environment(root)
-            self.assertEqual(env['USERPROFILE'], str(root / 'data/ollama-home'))
-            self.assertEqual(env['OLLAMA_MODELS'], str(root / 'data/ollama-models'))
-            self.assertEqual(env['OLLAMA_HOST'], '127.0.0.1:21434')
+            (root / 'TEST-PACKAGE.json').write_text('{}')
+            (root / 'config.json').write_text('{"ollama_url":"http://127.0.0.1:22434"}')
+            with patch('sys.argv', ['launcher', '--root', tmp, '--signin']), \
+                 patch('tools.friend_test_launcher.shutil.which', return_value='recipient-ollama.exe'), \
+                 patch.dict('os.environ', {'USERPROFILE': 'recipient-home', 'OLLAMA_MODELS': 'recipient-models'}), \
+                 patch('tools.friend_test_launcher.subprocess.call', return_value=0) as call:
+                self.assertEqual(main(), 0)
+            self.assertEqual(call.call_args.args[0], ['recipient-ollama.exe', 'signin'])
+            env = call.call_args.kwargs['env']
+            self.assertEqual(env['OLLAMA_HOST'], 'http://127.0.0.1:22434')
+            self.assertEqual(env['USERPROFILE'], 'recipient-home')
+            self.assertEqual(env['OLLAMA_MODELS'], 'recipient-models')
+
+    def test_external_ollama_probe_requires_ollama_version_and_handles_missing_server(self):
+        from tools.friend_test_launcher import external_ollama_available
+        import urllib.error
+        response = MagicMock()
+        response.__enter__.return_value.read.return_value = b'{"version":"0.35.1"}'
+        with patch('tools.friend_test_launcher.urllib.request.urlopen', return_value=response) as request:
+            self.assertTrue(external_ollama_available('http://127.0.0.1:22434/'))
+            self.assertEqual(request.call_args.args[0], 'http://127.0.0.1:22434/api/version')
+        response.__enter__.return_value.read.return_value = b'{"unrelated":"service"}'
+        with patch('tools.friend_test_launcher.urllib.request.urlopen', return_value=response):
+            self.assertFalse(external_ollama_available('http://127.0.0.1:22434'))
+        with patch('tools.friend_test_launcher.urllib.request.urlopen', side_effect=urllib.error.URLError('offline')):
+            self.assertFalse(external_ollama_available('http://127.0.0.1:22434'))
+
+    def test_launcher_starts_cp_with_or_without_external_ollama_and_never_owns_it(self):
+        from tools.friend_test_launcher import main
+        for available in (True, False):
+            with self.subTest(available=available), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                (root / 'TEST-PACKAGE.json').write_text('{}')
+                (root / 'config.json').write_text('{"ollama_url":"http://127.0.0.1:22434","prowlarr_key":"fixture"}')
+                owner = MagicMock()
+                cp = MagicMock(returncode=0)
+                cp.poll.return_value = 0
+                owner.start.return_value = cp
+                with patch('sys.argv', ['launcher', '--root', tmp, '--no-browser']), \
+                     patch('tools.friend_test_launcher.OwnedProcesses', return_value=owner), \
+                     patch('tools.friend_test_launcher.require_free_ports') as ports, \
+                     patch('tools.friend_test_launcher.wait_ready'), \
+                     patch('tools.friend_test_launcher.external_ollama_available', return_value=available) as probe, \
+                     patch('builtins.print') as output:
+                    self.assertEqual(main(), 0)
+                self.assertEqual([call.args[0] for call in owner.start.call_args_list], ['FlareSolverr', 'Prowlarr', 'CP'])
+                self.assertNotIn('Ollama', ports.call_args.args[0])
+                probe.assert_called_once_with('http://127.0.0.1:22434')
+                owner.close.assert_called_once()
+                if not available:
+                    self.assertTrue(any('CODEX-HANDOVER.md' in str(call) for call in output.call_args_list))
 
     def test_portable_catalog_is_inside_data_and_has_stable_name_after_relocation(self):
         from services.catalog_repository import catalog_database_path
@@ -166,10 +217,7 @@ class FriendTestPackageTests(unittest.TestCase):
             (root / 'data/qbittorrent/versions/5.2.2/qbittorrent.exe').write_bytes(b'qbt')
             player = create_player_runtime_bundle(root / 'runtime/player/versions', app_version='9.9.9')
             (root / 'runtime/player/current.json').write_text('{"schema":"cinema-paradiso-player-selector-v1","bundle_version":"player-test-1"}')
-            ollama, prowlarr, flare = [Path(tmp) / name for name in ('ollama', 'prowlarr', 'flare')]
-            (ollama / 'lib').mkdir(parents=True)
-            (ollama / 'ollama.exe').write_bytes(b'ollama')
-            (ollama / 'lib/backend.dll').write_bytes(b'backend')
+            prowlarr, flare = [Path(tmp) / name for name in ('prowlarr', 'flare')]
             (prowlarr / 'bin').mkdir(parents=True)
             (prowlarr / 'bin/Prowlarr.Console.exe').write_bytes(b'prowlarr')
             (prowlarr / 'config.xml').write_text('<Config><ApiKey>api</ApiKey></Config>')
@@ -185,7 +233,7 @@ class FriendTestPackageTests(unittest.TestCase):
             dist.mkdir()
             (dist / 'index.html').write_text('compiled-ui')
             with patch('tools.build_portable_release.subprocess.check_output', return_value='checkpoint\n'):
-                build_friend_test_folder(root, out, ollama_source=ollama, prowlarr_source=prowlarr,
+                build_friend_test_folder(root, out, prowlarr_source=prowlarr,
                     flaresolverr_source=flare, ffmpeg_source=ffmpeg, dist_source=dist)
             config = json.loads((out / 'config.json').read_text())
             self.assertEqual(config['tmdb_key'], 'fixture-secret')
@@ -195,9 +243,13 @@ class FriendTestPackageTests(unittest.TestCase):
             self.assertTrue((out / 'Stop CP.bat').is_file())
             self.assertFalse((out / 'data/jobs.json').exists())
             self.assertFalse((out / 'data/ollama-home/.ollama/id_ed25519').exists())
+            self.assertFalse((out / 'runtime/ollama').exists())
+            self.assertFalse((out / 'data/ollama-models').exists())
+            self.assertEqual(config['ollama_url'], 'http://127.0.0.1:11434')
+            self.assertEqual(json.loads((out / 'TEST-PACKAGE.json').read_text())['ollama_runtime'], 'external; recipient-owned')
             self.assertFalse((out / '.git').exists())
             with self.assertRaises(FileExistsError):
-                build_friend_test_folder(root, out, ollama_source=ollama, prowlarr_source=prowlarr,
+                build_friend_test_folder(root, out, prowlarr_source=prowlarr,
                     flaresolverr_source=flare, ffmpeg_source=ffmpeg, dist_source=dist)
 
 
