@@ -381,6 +381,13 @@ def build_friend_test_folder(project_root, destination, *, ollama_source, prowla
                 "libraries": "empty; no media/catalog/jobs copied", "ports": {
                     "CP": 15000, "Ollama": 21434, "Prowlarr": 19696, "FlareSolverr": 18191, "qBittorrent": 18686}}
     (target / "TEST-PACKAGE.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    notices = target / "THIRD-PARTY-NOTICES.md"
+    with notices.open('a', encoding='utf-8') as output:
+        output.write('\n\n## Private test services\n\n'
+                     'This private folder additionally bundles Ollama (MIT, https://github.com/ollama/ollama), '
+                     'Prowlarr (GPL-3.0, https://github.com/Prowlarr/Prowlarr), and FlareSolverr '
+                     '(MIT, https://github.com/FlareSolverr/FlareSolverr), including its browser dependencies. '
+                     'Their notices/licenses accompany the runtimes. Cloud services and indexer accounts remain external.\n')
     return target
 
 

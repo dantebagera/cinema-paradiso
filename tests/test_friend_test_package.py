@@ -102,6 +102,32 @@ class FriendTestPackageTests(unittest.TestCase):
             self.assertEqual(env['LOCALAPPDATA'], str(root / 'data/localappdata'))
             self.assertEqual(env['CP_PORTABLE_DATA'], '1')
 
+    def test_cached_poster_survives_moving_used_package(self):
+        from services.catalog_repository import CatalogRepository
+        from services.media_assets import MediaAssetService
+        import shutil
+        with tempfile.TemporaryDirectory() as tmp:
+            old, new = Path(tmp) / 'old', Path(tmp) / 'new'
+            repository = CatalogRepository(old / 'data', database_path=old / 'data/catalog.sqlite')
+            service = MediaAssetService(repository, old / 'data/localappdata/Metadata')
+            checksum = 'a' * 64
+            asset_path = service._final_path(checksum, 'image/png')
+            asset_path.parent.mkdir(parents=True, exist_ok=True)
+            asset_path.write_bytes(b'fixture-poster')
+            with repository.store.transaction() as db:
+                db.execute("INSERT INTO media_assets(asset_key,asset_type,provider,source_url,status,local_path,checksum,mime_type,byte_size,width,height,retention_class,created_at,updated_at) VALUES('fixture','poster','tmdb','https://example.com/p.png','ready',?,?, 'image/png',14,1,1,'saved',0,0)", (str(asset_path), checksum))
+            repository.close()
+            shutil.move(str(old), str(new))
+            moved = CatalogRepository(new / 'data', database_path=new / 'data/catalog.sqlite')
+            try:
+                MediaAssetService(moved, new / 'data/localappdata/Metadata')
+                with closing(moved.store.connect()) as db:
+                    actual = Path(db.execute("SELECT local_path FROM media_assets WHERE asset_key='fixture'").fetchone()[0])
+                self.assertTrue(actual.is_file())
+                self.assertTrue(actual.is_relative_to(new))
+            finally:
+                moved.close()
+
     def test_owned_process_is_stopped_on_startup_failure(self):
         from tools.friend_test_launcher import OwnedProcesses, wait_ready
         with tempfile.TemporaryDirectory() as tmp:

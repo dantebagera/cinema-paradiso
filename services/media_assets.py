@@ -4,6 +4,7 @@ import hashlib
 import io
 import json
 import os
+import re
 import shutil
 import tempfile
 import threading
@@ -56,6 +57,21 @@ class MediaAssetService:
         self._state = {"status": "idle", "queued": 0, "completed": 0, "failed": 0, "started_at": 0, "updated_at": 0}
         self.assets_root.mkdir(parents=True, exist_ok=True)
         self.temporary_root.mkdir(parents=True, exist_ok=True)
+        self._reconcile_asset_paths()
+
+    def _reconcile_asset_paths(self):
+        """The checksum store remains authoritative when its root is relocated."""
+        with self.repository.store.transaction() as connection:
+            changed = False
+            for asset in connection.execute("SELECT asset_key,local_path,checksum,mime_type FROM media_assets WHERE status='ready'").fetchall():
+                if not re.fullmatch(r'[0-9a-f]{64}', asset['checksum'] or '') or asset['mime_type'] not in MIME_EXTENSIONS:
+                    continue
+                path = self._final_path(asset['checksum'], asset['mime_type'])
+                if str(path) != asset['local_path'] and path.is_file():
+                    connection.execute("UPDATE media_assets SET local_path=? WHERE asset_key=?", (str(path), asset['asset_key']))
+                    changed = True
+            if changed:
+                self._bump_generation(connection)
 
     @staticmethod
     def _bump_generation(connection):

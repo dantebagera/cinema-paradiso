@@ -256,6 +256,7 @@ def main():
     lock = None
     owned = None
     window_started = False
+    window_helper = None
     try:
         (root / 'data').mkdir(parents=True, exist_ok=True)
         lock = open(root / 'data/friend-launch.lock', 'a+b')
@@ -294,9 +295,13 @@ def main():
             cp = owned.start('CP', [sys.executable, str(root / 'app.py')], root, env)
             wait_ready(cp, 'CP', f'http://127.0.0.1:{PORTS["CP"]}/')
             if not args.no_browser:
-                owned.start('Window', ['powershell.exe', '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass',
+                # Edge can share its process with unrelated browser windows. The
+                # existing helper owns one window; never place Edge in our job.
+                window_helper = subprocess.Popen(['powershell.exe', '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass',
                                   '-File', str(root / 'tools/cp_window.ps1'), '-Action', 'Launch',
-                                  '-ProjectRoot', str(root), '-Port', str(PORTS['CP'])], root)
+                                  '-ProjectRoot', str(root), '-Port', str(PORTS['CP'])], cwd=root,
+                                  stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                  creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
                 window_started = True
             print(f'CP ready: http://127.0.0.1:{PORTS["CP"]}/ — keep this window open. Ctrl+C or Stop CP.bat stops the package.', flush=True)
             while cp.poll() is None and not stop.exists():
@@ -317,7 +322,10 @@ def main():
                                 '-Port', str(PORTS['CP'])], cwd=root, timeout=20, capture_output=True,
                                creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
             except (OSError, subprocess.TimeoutExpired):
-                pass  # The owned process job still closes every helper/descendant.
+                pass
+        if window_helper and window_helper.poll() is None:
+            window_helper.terminate()  # Only the helper, never its browser tree.
+            window_helper.wait(timeout=5)
         if owned:
             owned.close()
         if lock:
