@@ -29,7 +29,7 @@ test('Discover and Library use the in-page media rows and TV File View shows nat
   await expect(discoverTabs.getByRole('button', { name: 'Browse Indexers' })).toBeVisible();
   await expect(discoverTabs.getByRole('button', { name: 'Pick My Movie' })).toBeVisible();
   await expect(page.locator('.tv-media-switch')).toHaveCount(0);
-  await page.screenshot({ path: 'docs/verification/tv-parity/discover-media-row.png' });
+  await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/discover-media-row.png' });
   await discoverTabs.getByRole('button', { name: 'Explore Shows' }).click();
   await expect(page.getByRole('region', { name: 'Discover TV Shows' })).toBeVisible();
   await discoverTabs.getByRole('button', { name: 'Browse Indexers' }).click();
@@ -55,7 +55,7 @@ test('Discover and Library use the in-page media rows and TV File View shows nat
   await page.locator('.tv-file-view .library-file-row').first().getByRole('button', { name: /Expand file details/ }).click();
   await expect(page.locator('.tv-file-view .library-file-row').first().getByText('Episode bindings')).toBeVisible();
   await expect(page.locator('.tv-file-view .library-file-row').first().getByRole('button', { name: 'Play episode' })).toBeVisible();
-  await page.screenshot({ path: 'docs/verification/tv-parity/tv-file-view.png' });
+  await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/tv-file-view.png' });
   const response = await request.get('/api/tv/files');
   expect(response.ok()).toBeTruthy();
   expect((await response.json()).items).toHaveLength(2);
@@ -266,7 +266,7 @@ for (const viewport of [{width:1920,height:1080},{width:1920,height:720},{width:
     const card=page.getByRole('link',{name:'Open Dark Matter',exact:true});
     await expect(card).toContainText('Sci-Fi & Fantasy');await expect(card).toContainText('English');await expect(card).toContainText('US');
     await expect.poll(()=>card.locator('img').first().evaluate(img=>img.complete&&img.naturalWidth>0)).toBeTruthy();
-    await page.screenshot({path:`docs/verification/tv-parity/discover-${viewport.width}x${viewport.height}.png`,fullPage:true});
+    await page.screenshot({path:`docs/verification/tv-normal-import/parity/discover-${viewport.width}x${viewport.height}.png`,fullPage:true});
     const before=await (await request.get('/api/tv/series')).json();
     await card.click();
     await expect(page.getByRole('region',{name:'Series cast'})).toContainText('Joel Edgerton');
@@ -281,7 +281,7 @@ for (const viewport of [{width:1920,height:1080},{width:1920,height:720},{width:
     await dialog.getByRole('button',{name:'Close TV release review'}).click();
     expect((await (await request.get('/api/tv/series')).json()).total).toBe(before.total);
     await page.getByRole('heading',{name:'Dark Matter',exact:true}).scrollIntoViewIfNeeded();
-    await page.screenshot({path:`docs/verification/tv-parity/dark-matter-${viewport.width}x${viewport.height}.png`,fullPage:true});
+    await page.screenshot({path:`docs/verification/tv-normal-import/parity/dark-matter-${viewport.width}x${viewport.height}.png`,fullPage:true});
   });
 }
 
@@ -294,6 +294,7 @@ test('Born Again exposes season downloads and main cast without adding the serie
 });
 
 test('selected Simpsons episodes resolve missing hashes and queue once without enabling monitoring',async({page,request})=>{
+  expect((await request.post('/__tv_fixture/approved-home/456')).ok()).toBeTruthy();
   await discover(page,'The Simpsons');
   await page.getByRole('link',{name:'Open The Simpsons',exact:true}).click();
   await page.getByLabel('Select S01E01',{exact:true}).check();await page.getByLabel('Select S01E02',{exact:true}).check();
@@ -309,7 +310,7 @@ test('selected Simpsons episodes resolve missing hashes and queue once without e
   expect(seriesId).toBeTruthy();
   const monitoring=await (await request.get(`/api/tv/series/${seriesId}/monitor`)).json();
   expect(monitoring.rules).toHaveLength(0);
-  await page.screenshot({path:'docs/verification/tv-parity/simpsons-selected-downloads.png',fullPage:true});
+  await page.screenshot({path:'docs/verification/tv-normal-import/parity/simpsons-selected-downloads.png',fullPage:true});
 });
 
 test('top and bottom TV pagination share state',async({page})=>{

@@ -1,0 +1,497 @@
+{
+  "id": "e8ef565db57c4e2983649670f651ea29",
+  "state": "complete",
+  "created_at": 1791158492.1140037,
+  "catalog": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\tv-catalog.sqlite",
+  "roots": [
+    "G:\\TV"
+  ],
+  "folders": [
+    {
+      "old": "G:\\TV\\2190",
+      "home": "G:\\TV\\South Park",
+      "series_id": 33,
+      "title": "South Park",
+      "seasons": [
+        "G:\\TV\\South Park\\Season 27"
+      ]
+    },
+    {
+      "old": "G:\\TV\\196322",
+      "home": "G:\\TV\\Dark Matter (2024)",
+      "series_id": 4,
+      "title": "Dark Matter",
+      "seasons": [
+        "G:\\TV\\Dark Matter (2024)\\Season 01"
+      ]
+    },
+    {
+      "old": "G:\\TV\\95480",
+      "home": "G:\\TV\\Slow Horses",
+      "series_id": 5,
+      "title": "Slow Horses",
+      "seasons": [
+        "G:\\TV\\Slow Horses\\Season 01"
+      ]
+    }
+  ],
+  "moves": [
+    {
+      "source": "G:\\TV\\2190\\South.Park.S27E03.1080p.x265-ELiTE.mkv",
+      "target": "G:\\TV\\South Park\\Season 27\\South.Park.S27E03.1080p.x265-ELiTE.mkv",
+      "file_id": 1118,
+      "series_id": 33,
+      "size": 288619227,
+      "modified_ns": 1790512767391054100,
+      "sha256": "7ea6200927599a163c6855c2d6a19763ad1c04554b500a20d7652931c5e604fb",
+      "bindings": [
+        {
+          "episode_id": 2921,
+          "file_id": 1118,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 33,
+          "season_number": 27,
+          "episode_number": 3,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "cb74c6f8dc48528e6cb26cc849dcf5a6055d8e42"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\2190\\South.Park.S27E04.1080p.x265-ELiTE.mkv",
+      "target": "G:\\TV\\South Park\\Season 27\\South.Park.S27E04.1080p.x265-ELiTE.mkv",
+      "file_id": 1119,
+      "series_id": 33,
+      "size": 320613291,
+      "modified_ns": 1790512774421762900,
+      "sha256": "ce4efcaa58eb8610ce9da8dddcc1cc697008b11b525426c3e172600326a4efbb",
+      "bindings": [
+        {
+          "episode_id": 2922,
+          "file_id": 1119,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 33,
+          "season_number": 27,
+          "episode_number": 4,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "cb74c6f8dc48528e6cb26cc849dcf5a6055d8e42"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\2190\\South.Park.S27E05.1080p.x265-ELiTE.mkv",
+      "target": "G:\\TV\\South Park\\Season 27\\South.Park.S27E05.1080p.x265-ELiTE.mkv",
+      "file_id": 1120,
+      "series_id": 33,
+      "size": 277213179,
+      "modified_ns": 1790512781092020800,
+      "sha256": "96f810576f14ffbd84548adbbb7de2269c897c7186a206893eddda7ea3276569",
+      "bindings": [
+        {
+          "episode_id": 2923,
+          "file_id": 1120,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 33,
+          "season_number": 27,
+          "episode_number": 5,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "cb74c6f8dc48528e6cb26cc849dcf5a6055d8e42"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\196322\\Dark.Matter.2024.S01E07.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "target": "G:\\TV\\Dark Matter (2024)\\Season 01\\Dark.Matter.2024.S01E07.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "file_id": 7,
+      "series_id": 4,
+      "size": 707880681,
+      "modified_ns": 1789759781538372000,
+      "sha256": "d544a690e3517905c591c33fb3d8e7d9d779a7f3e98020b6193bc8a1239d7aa9",
+      "bindings": [
+        {
+          "episode_id": 1040,
+          "file_id": 7,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 4,
+          "season_number": 1,
+          "episode_number": 7,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "134f98fb2a4dc9441bdd3d10b527c1e68c56ec7f"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\196322\\Dark.Matter.2024.S01E02.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "target": "G:\\TV\\Dark Matter (2024)\\Season 01\\Dark.Matter.2024.S01E02.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "file_id": 8,
+      "series_id": 4,
+      "size": 657439649,
+      "modified_ns": 1789759797071476800,
+      "sha256": "c3132dba6922c4d7a2f4c0e0ba5f8bb35799ee5dd32b8271b7741c6a433d0862",
+      "bindings": [
+        {
+          "episode_id": 1035,
+          "file_id": 8,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 4,
+          "season_number": 1,
+          "episode_number": 2,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "134f98fb2a4dc9441bdd3d10b527c1e68c56ec7f"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\196322\\Dark.Matter.2024.S01E03.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "target": "G:\\TV\\Dark Matter (2024)\\Season 01\\Dark.Matter.2024.S01E03.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "file_id": 9,
+      "series_id": 4,
+      "size": 575993309,
+      "modified_ns": 1789759810605569400,
+      "sha256": "e5c2bd4ec9f663e4e05a48e7aa50ff2a52c2b9a99987b385015c65ec0853ea40",
+      "bindings": [
+        {
+          "episode_id": 1036,
+          "file_id": 9,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 4,
+          "season_number": 1,
+          "episode_number": 3,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "134f98fb2a4dc9441bdd3d10b527c1e68c56ec7f"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\196322\\Dark.Matter.2024.S01E04.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "target": "G:\\TV\\Dark Matter (2024)\\Season 01\\Dark.Matter.2024.S01E04.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "file_id": 10,
+      "series_id": 4,
+      "size": 700932565,
+      "modified_ns": 1789759824024167200,
+      "sha256": "730fa110d2e94e2357bce44b0ab93994cd394a28ad8bd725909a76b92c480a8e",
+      "bindings": [
+        {
+          "episode_id": 1037,
+          "file_id": 10,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 4,
+          "season_number": 1,
+          "episode_number": 4,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "134f98fb2a4dc9441bdd3d10b527c1e68c56ec7f"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\196322\\Dark.Matter.2024.S01E05.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "target": "G:\\TV\\Dark Matter (2024)\\Season 01\\Dark.Matter.2024.S01E05.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "file_id": 11,
+      "series_id": 4,
+      "size": 610864010,
+      "modified_ns": 1789759838351701100,
+      "sha256": "d03f48c08cd4aa66443e5d8cc02224f353cf57563ef372d8ef17cbb53afbfcbd",
+      "bindings": [
+        {
+          "episode_id": 1038,
+          "file_id": 11,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 4,
+          "season_number": 1,
+          "episode_number": 5,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "134f98fb2a4dc9441bdd3d10b527c1e68c56ec7f"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\196322\\Dark.Matter.2024.S01E06.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "target": "G:\\TV\\Dark Matter (2024)\\Season 01\\Dark.Matter.2024.S01E06.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "file_id": 12,
+      "series_id": 4,
+      "size": 589306969,
+      "modified_ns": 1789759852199333500,
+      "sha256": "3fa8436a2787bb518834b614e1808f0d57cc254d81e237c10e1fd872a4497d0c",
+      "bindings": [
+        {
+          "episode_id": 1039,
+          "file_id": 12,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 4,
+          "season_number": 1,
+          "episode_number": 6,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "134f98fb2a4dc9441bdd3d10b527c1e68c56ec7f"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\196322\\Dark.Matter.2024.S01E01.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "target": "G:\\TV\\Dark Matter (2024)\\Season 01\\Dark.Matter.2024.S01E01.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "file_id": 13,
+      "series_id": 4,
+      "size": 580250486,
+      "modified_ns": 1789759864766877100,
+      "sha256": "e1bd2fe81ac2ea9d3014e19ae4a7ab4e3b51f9ae0e3c85773593d0339638f493",
+      "bindings": [
+        {
+          "episode_id": 1034,
+          "file_id": 13,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 4,
+          "season_number": 1,
+          "episode_number": 1,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "134f98fb2a4dc9441bdd3d10b527c1e68c56ec7f"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\196322\\Dark.Matter.2024.S01E08.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "target": "G:\\TV\\Dark Matter (2024)\\Season 01\\Dark.Matter.2024.S01E08.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "file_id": 14,
+      "series_id": 4,
+      "size": 573647906,
+      "modified_ns": 1789759877143844700,
+      "sha256": "c8ef0fc0f31c0eaad1b2e3a11561c19ef6508a95d65fa2bac4c707f69a8c0d1f",
+      "bindings": [
+        {
+          "episode_id": 1041,
+          "file_id": 14,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 4,
+          "season_number": 1,
+          "episode_number": 8,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "134f98fb2a4dc9441bdd3d10b527c1e68c56ec7f"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\196322\\Dark.Matter.2024.S01E09.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "target": "G:\\TV\\Dark Matter (2024)\\Season 01\\Dark.Matter.2024.S01E09.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv",
+      "file_id": 15,
+      "series_id": 4,
+      "size": 650761369,
+      "modified_ns": 1789759889661712400,
+      "sha256": "6afa6bed5c3319999281a16533b2a7b2ad4bb5f168f0ac35931ddccf549d409b",
+      "bindings": [
+        {
+          "episode_id": 1042,
+          "file_id": 15,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 4,
+          "season_number": 1,
+          "episode_number": 9,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "134f98fb2a4dc9441bdd3d10b527c1e68c56ec7f"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\95480\\Slow.Horses.S01E06.Follies.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "target": "G:\\TV\\Slow Horses\\Season 01\\Slow.Horses.S01E06.Follies.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "file_id": 1,
+      "series_id": 5,
+      "size": 936121908,
+      "modified_ns": 1789758066223005300,
+      "sha256": "84542a4fdfc1689f5361ef339f78777ba75485739d54164a1749dd6443a8d953",
+      "bindings": [
+        {
+          "episode_id": 1058,
+          "file_id": 1,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 5,
+          "season_number": 1,
+          "episode_number": 6,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "02bbc79072220a9d56cd1e21b9b74a2f0a5e0b0a"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\95480\\Slow.Horses.S01E02.Work.Drinks.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "target": "G:\\TV\\Slow Horses\\Season 01\\Slow.Horses.S01E02.Work.Drinks.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "file_id": 2,
+      "series_id": 5,
+      "size": 606201911,
+      "modified_ns": 1789758083475240300,
+      "sha256": "49985a8129c9ea85b34a93f4e96b4d6e77cdd26090dee8dae9040b813085a64c",
+      "bindings": [
+        {
+          "episode_id": 1054,
+          "file_id": 2,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 5,
+          "season_number": 1,
+          "episode_number": 2,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "02bbc79072220a9d56cd1e21b9b74a2f0a5e0b0a"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\95480\\Slow.Horses.S01E03.Bad.Tradecraft.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "target": "G:\\TV\\Slow Horses\\Season 01\\Slow.Horses.S01E03.Bad.Tradecraft.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "file_id": 3,
+      "series_id": 5,
+      "size": 493171077,
+      "modified_ns": 1789758095940323100,
+      "sha256": "222f3da989dff5df2e888074301da951b95c32a5ce17cccab8a05b5e697472bd",
+      "bindings": [
+        {
+          "episode_id": 1055,
+          "file_id": 3,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 5,
+          "season_number": 1,
+          "episode_number": 3,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "02bbc79072220a9d56cd1e21b9b74a2f0a5e0b0a"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\95480\\Slow.Horses.S01E04.Visiting.Hours.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "target": "G:\\TV\\Slow Horses\\Season 01\\Slow.Horses.S01E04.Visiting.Hours.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "file_id": 4,
+      "series_id": 5,
+      "size": 562252826,
+      "modified_ns": 1789758107418795200,
+      "sha256": "c452ee5ef0f62192cd8403ecc7a8c5129dae55ab62596f883c2b9dad78ef6c1c",
+      "bindings": [
+        {
+          "episode_id": 1056,
+          "file_id": 4,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 5,
+          "season_number": 1,
+          "episode_number": 4,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "02bbc79072220a9d56cd1e21b9b74a2f0a5e0b0a"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\95480\\Slow.Horses.S01E05.Fiasco.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "target": "G:\\TV\\Slow Horses\\Season 01\\Slow.Horses.S01E05.Fiasco.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "file_id": 5,
+      "series_id": 5,
+      "size": 542911176,
+      "modified_ns": 1789758119669037100,
+      "sha256": "0bd668b02cc30d49096f4e363555413620ff391bfb1b35f26f3080c8546051c4",
+      "bindings": [
+        {
+          "episode_id": 1057,
+          "file_id": 5,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 5,
+          "season_number": 1,
+          "episode_number": 5,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "02bbc79072220a9d56cd1e21b9b74a2f0a5e0b0a"
+      ],
+      "move_state": "moved"
+    },
+    {
+      "source": "G:\\TV\\95480\\Slow.Horses.S01E01.Failures.Contagious.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "target": "G:\\TV\\Slow Horses\\Season 01\\Slow.Horses.S01E01.Failures.Contagious.1080p.ITA-ENG.WEBRip.x265.AAC-V3SP4EV3R.mkv",
+      "file_id": 6,
+      "series_id": 5,
+      "size": 736971467,
+      "modified_ns": 1789758132560239300,
+      "sha256": "1ade179c2ff66745e81e0bf4cd0a98e32a74db0a249b81c26aa774eaf8e8569b",
+      "bindings": [
+        {
+          "episode_id": 1053,
+          "file_id": 6,
+          "segment_start_ms": null,
+          "segment_end_ms": null,
+          "series_id": 5,
+          "season_number": 1,
+          "episode_number": 1,
+          "reconciliation_required": 0
+        }
+      ],
+      "jobs": [
+        "02bbc79072220a9d56cd1e21b9b74a2f0a5e0b0a"
+      ],
+      "move_state": "moved"
+    }
+  ],
+  "backup_dir": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\backups\\tv-numeric-repair-e8ef565db57c4e2983649670f651ea29",
+  "backup_hashes": {
+    "acquisition.sqlite": "d3eadc16e1abe17510fb72d5b85ecff1617647e97af1a5a1ab108653d986d6f8",
+    "config.json": "5c1d830d700d72a3900281ecc7ccb029e10f46a91fe6c3c589d88f6804ff858b",
+    "jobs.json": "84e034b712fcd95f92ddf2db8ce957bd2d6330cb0e07b353442a74a04373cdb7",
+    "tv-catalog.sqlite": "f00e8bf0a47d88dc8ffa1b5d1829705cddf67b7322b32244716ba59e357a5336"
+  }
+}

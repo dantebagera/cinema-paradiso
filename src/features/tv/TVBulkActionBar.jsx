@@ -30,7 +30,8 @@ export default function TVBulkActionBar({ seriesIds, onClear, onChanged, notify,
         {preview.shows.map(show => <div key={show.series_id}><strong>{show.title}</strong>{show.blocked && <p role="alert">Blocked: {show.reasons.join('; ')}</p>}</div>)}
         <ul className="tv-bulk-paths">{preview.files.map(item => <li key={item.path}>{item.kind}: {item.path}</li>)}</ul></>}
       {dialog === 'download' && preview && <><p>This searches released regular episodes once. Episodes with no source are reported in task history; future episodes are not followed.</p>
-        {preview.items.map(item => <p key={item.series_id}>Show {item.series_id}: {item.counts.released_missing} missing · {item.counts.owned} owned · {item.counts.review} needs review · {item.counts.queued} queued{!item.metadata_complete ? ' · metadata incomplete' : ''}</p>)}</>}
+        <p>Verified episodes move into the season folder. Completed downloads are removed from qBittorrent.</p>
+        {preview.items.map(item => <div key={item.series_id}><p>Show {item.series_id}: {item.counts.released_missing} missing · {item.counts.owned} owned · {item.counts.review} needs review · {item.counts.queued} queued{!item.metadata_complete ? ' · metadata incomplete' : ''}</p>{item.import_destinations?.map(destination=><p key={destination.season}>Season {destination.season}: {destination.state==='ready'?destination.path:destination.reason}</p>)}</div>)}</>}
       <div className="tv-actions"><button type="button" onClick={() => { setDialog(null); setError(''); }}>Cancel</button><button type="button" className="primary-button" disabled={busy || !preview || (dialog === 'delete' && (preview.blocked || !preview.video_count)) || (dialog === 'download' && preview.items.some(item => !item.metadata_complete || item.counts.review))} onClick={confirm}>{dialog === 'delete' ? 'Move listed files to Recycle Bin' : 'Start one-shot downloads'}</button></div>
     </section></div>}
   </div>;

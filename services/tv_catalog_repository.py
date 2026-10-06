@@ -3,6 +3,7 @@ from datetime import date
 from contextlib import nullcontext
 import hashlib
 import json
+import re
 from pathlib import Path
 import time
 import uuid
@@ -31,6 +32,104 @@ class TVCatalogRepository:
             return [dict(row) for row in db.execute(
                 'SELECT a.path,a.kind,a.series_id,s.tmdb_id,s.title FROM tv_path_assignments a '
                 'JOIN series s ON s.id=a.series_id ORDER BY a.path')]
+
+    def _import_path_allowed(self, path, series_id, roots, *, show_home=False):
+        path = guarded_path(path)
+        roots = [Path(root).resolve() for root in roots if Path(root).is_dir()]
+        if not any(root in path.parents for root in roots):
+            return False
+        for item in self.exclusions():
+            excluded = Path(item['path']).resolve()
+            # Excluded extras do not disqualify their whole show home. Actual
+            # season destinations remain conservative about excluded contents.
+            if path == excluded or excluded in path.parents or (not show_home and path in excluded.parents):
+                return False
+        for item in self.path_assignments():
+            assigned = Path(item['path']).resolve()
+            if item['series_id'] != int(series_id) and (path == assigned or assigned in path.parents or path in assigned.parents):
+                return False
+        return True
+
+    def set_import_home(self, series_id, path, roots):
+        self.series(series_id)
+        path = guarded_path(path)
+        if not path.is_dir() or not self._import_path_allowed(path, series_id, roots, show_home=True):
+            raise ValueError('Choose an approved TV show folder inside the configured TV roots')
+        with self.store.transaction() as db:
+            assignment = db.execute("SELECT 1 FROM tv_path_assignments WHERE path=? AND kind='folder' AND series_id=?",
+                                    (str(path), int(series_id))).fetchone()
+            if not assignment:
+                raise ValueError('Choose an approved TV show folder belonging to this series')
+            db.execute('INSERT INTO tv_import_homes VALUES(?,?) ON CONFLICT(series_id) DO UPDATE SET path=excluded.path',
+                       (int(series_id), str(path)))
+        return {'series_id': int(series_id), 'show_home': str(path)}
+
+    def resolve_import_destination(self, series_id, season, roots):
+        result = {'state': 'needs_home', 'show_home': None, 'season': season, 'path': None,
+                  'candidates': [], 'reason': 'Choose an approved TV show folder before downloading'}
+        if not series_id or season is None:
+            return result
+        self.series(series_id)
+        season = int(season)
+        if season < 0:
+            raise ValueError('Choose a valid TV season')
+        with self.store.connection() as db:
+            preferred = db.execute('SELECT path FROM tv_import_homes WHERE series_id=?', (int(series_id),)).fetchone()
+            bindings = [(Path(row['path']).resolve(), row['season_number']) for row in db.execute(
+                'SELECT DISTINCT f.path,e.season_number FROM media_files f JOIN episode_file_bindings b ON b.file_id=f.id '
+                'JOIN episodes e ON e.id=b.episode_id WHERE e.series_id=?', (int(series_id),))]
+        approved = [Path(row['path']).resolve() for row in self.path_assignments()
+                    if row['series_id'] == int(series_id) and row['kind'] == 'folder'
+                    and Path(row['path']).is_dir() and self._import_path_allowed(row['path'], series_id, roots, show_home=True)]
+
+        def season_number(folder):
+            match = re.fullmatch(r'(Season )(\d+)', folder.name, re.IGNORECASE)
+            return int(match[2]) if match else 0 if folder.name.casefold() == 'specials' else None
+
+        credible = [home for home in approved if any(path.parent.parent == home and
+                    season_number(path.parent) == number for path, number in bindings)]
+        result['candidates'] = sorted(str(path) for path in credible)
+        if preferred:
+            home = Path(preferred[0]).resolve()
+            if home not in approved:
+                return {**result, 'reason': 'The chosen TV show folder is no longer approved or safe; review its destination'}
+        elif len(credible) == 1:
+            home = credible[0]
+        elif len(credible) > 1:
+            return {**result, 'state': 'needs_choice', 'reason': 'Choose between the approved TV show folders'}
+        else:
+            return result
+        result['show_home'] = str(home)
+        associated = {path.parent for path, number in bindings if number == season and
+                      path.parent.parent == home and season_number(path.parent) == season}
+        directories = [folder for folder in home.iterdir() if folder.is_dir() and season_number(folder) is not None]
+        matching = {folder.resolve() for folder in directories if season_number(folder) == season}
+        choices = associated or matching
+        if len(choices) == 1:
+            destination = next(iter(choices))
+        elif choices:
+            return {**result, 'state': 'needs_choice', 'reason': 'Multiple season folders require destination review'}
+        else:
+            # A leading zero proves padding; an unpadded small number proves no padding.
+            # Two-digit seasons alone do not contradict a padded convention.
+            styles = set()
+            prefixes = set()
+            for folder in directories:
+                match = re.fullmatch(r'(Season )(\d+)', folder.name, re.IGNORECASE)
+                if not match or int(match[2]) == 0:
+                    continue
+                prefixes.add(match[1])
+                if match[2].startswith('0'):
+                    styles.add(len(match[2]))
+                elif len(match[2]) == 1:
+                    styles.add(1)
+            if season == 0 or len(prefixes) != 1 or len(styles) > 1 or not directories:
+                return {**result, 'state': 'needs_choice', 'reason': 'Season folder convention requires destination review'}
+            width = next(iter(styles), 1)
+            destination = home / f'{next(iter(prefixes))}{season:0{width}d}'
+        if not self._import_path_allowed(destination, series_id, roots):
+            return {**result, 'reason': 'The season destination is excluded, outside TV roots, or belongs to another series'}
+        return {**result, 'state': 'ready', 'season': season, 'path': str(destination), 'reason': ''}
 
     def exclusions(self):
         with self.store.connection() as db:
@@ -78,6 +177,11 @@ class TVCatalogRepository:
             return {**dict(row), 'series_ids': {item[0] for item in db.execute(
                 'SELECT DISTINCT e.series_id FROM episode_file_bindings b '
                 'JOIN episodes e ON e.id=b.episode_id WHERE b.file_id=?', (row['id'],))}}
+
+    def binding_episode_ids(self, path):
+        with self.store.connection() as db:
+            return {row[0] for row in db.execute('SELECT b.episode_id FROM episode_file_bindings b '
+                'JOIN media_files f ON f.id=b.file_id WHERE f.path=? AND f.available=1', (str(path),))}
 
     def approve_path(self, path, kind, series_id):
         path = guarded_path(path)

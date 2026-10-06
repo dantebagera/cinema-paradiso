@@ -319,7 +319,7 @@ class TVSearchTests(unittest.TestCase):
         self.repo.store.backup(old_backup)
         reopened = TVCatalogRepository(self.root/'tv.sqlite')
         self.assertTrue(reopened.episodes(self.id)[0]['completed'])
-        self.assertEqual(reopened.store.audit()['schema_version'],4)
+        self.assertEqual(reopened.store.audit()['schema_version'],5)
         reopened.store.restore(old_backup)
         self.assertTrue(reopened.episodes(self.id)[0]['completed'])
         self.assertFalse(reopened.series(self.id)['watchlisted'])

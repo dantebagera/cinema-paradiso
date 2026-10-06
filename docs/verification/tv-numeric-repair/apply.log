@@ -1,0 +1,16 @@
+{
+  "state": "complete",
+  "files": 18,
+  "manifest": "C:\\Users\\dante\\Desktop\\cinema paradiso\\docs\\verification\\tv-numeric-repair\\manifest.json",
+  "destinations": [
+    [
+      "G:\\TV\\South Park\\Season 27"
+    ],
+    [
+      "G:\\TV\\Dark Matter (2024)\\Season 01"
+    ],
+    [
+      "G:\\TV\\Slow Horses\\Season 01"
+    ]
+  ]
+}

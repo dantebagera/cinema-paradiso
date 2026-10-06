@@ -149,7 +149,7 @@ class AdvancedDiscoverApiTest(unittest.TestCase):
         ), patch.object(app, "_ensure_tmdb_genres"), patch.object(
             app, "_tmdb_fetch_provider_page", side_effect=fetch_page
         ) as page_fetch:
-            app._tmdb_dense_window_cache.clear()
+            app._tmdb_discover_window_cache.clear()
             response = self.client.post(
                 "/api/tmdb/discover/advanced",
                 json={"query": query, "page": 1, "page_size": 39},
@@ -173,7 +173,7 @@ class AdvancedDiscoverApiTest(unittest.TestCase):
         ), patch.object(
             app, "_tmdb_filter_local_movies", side_effect=lambda movies, groups: [movie for movie in movies if int(movie["id"]) % 2 == 0]
         ):
-            app._tmdb_dense_window_cache.clear()
+            app._tmdb_discover_window_cache.clear()
             response = self.client.post("/api/tmdb/discover/advanced", json={"query": query})
         payload = response.get_json()
         self.assertEqual(response.status_code, 200)
@@ -201,7 +201,7 @@ class AdvancedDiscoverApiTest(unittest.TestCase):
         ), patch.object(app, "_ensure_tmdb_genres"), patch.object(
             app, "_tmdb_fetch_provider_page", side_effect=fetch_page
         ) as page_fetch:
-            app._tmdb_dense_window_cache.clear()
+            app._tmdb_discover_window_cache.clear()
             response = self.client.post(
                 "/api/tmdb/discover/advanced",
                 json={"query": query, "page": 1, "page_size": 39},

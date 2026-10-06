@@ -40,7 +40,7 @@ try {
     }
     $server = Start-Process `
         -FilePath $python `
-        -ArgumentList $(if ($env:CP_TV_E2E -eq '1') { '-m tests.native_tv_server' } else { 'app.py' }) `
+        -ArgumentList $(if ($env:CP_DISCOVER_PAGING_E2E -eq '1') { '-m tests.discover_paging_server' } elseif ($env:CP_TV_E2E -eq '1') { '-m tests.native_tv_server' } else { 'app.py' }) `
         -WorkingDirectory $projectRoot `
         -WindowStyle Hidden `
         -RedirectStandardOutput $stdoutPath `

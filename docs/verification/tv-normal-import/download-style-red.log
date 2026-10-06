@@ -1,0 +1,132 @@
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1690 modules transformed.
+rendering chunks...
+computing gzip size...
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/manifest-BSGbUmFO.webmanifest          0.55 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/index.html                                    1.86 kB │ gzip:   0.84 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/TVWorkspace-C0qIaGNz.css              10.46 kB │ gzip:   2.78 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/IPTVWorkspace-Cx_ZMdzz.css            39.79 kB │ gzip:   6.54 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/index-DmKtwgPZ.css                   207.19 kB │ gzip:  35.43 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/header-CbieqaTQ.js                     0.05 kB │ gzip:   0.07 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/moviePresentation-Di650b9v.js          0.70 kB │ gzip:   0.44 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/Pagination-FRbffFgG.js                 0.88 kB │ gzip:   0.49 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/DiscoverResultGrid-CNnNMR5z.js         0.88 kB │ gzip:   0.41 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/WorkspacePathBar-B5uETC_B.js           2.50 kB │ gzip:   0.96 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/LibraryControls-CiQOyIEs.js            2.83 kB │ gzip:   0.91 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/DownloadsWorkspace-4Lq902md.js         3.80 kB │ gzip:   1.56 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/iptv-Dpog_HAM.js                       6.50 kB │ gzip:   1.38 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/MetadataCorrectionModal-CK7CYj9T.js    9.97 kB │ gzip:   3.27 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/StyleGuide-C0EQ2sQK.js                10.43 kB │ gzip:   3.01 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/CardLab-BbZK96Y4.js                   11.48 kB │ gzip:   4.12 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/useMovieCollectionCache-DgKD-5Zq.js   12.11 kB │ gzip:   4.16 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/AIControlWorkspace-10SD98Tv.js        16.57 kB │ gzip:   5.74 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/HelpWorkspace-Cb2BtTya.js             21.47 kB │ gzip:   6.96 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/HomeWorkspace-Du7xSx-7.js             22.22 kB │ gzip:   6.61 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/SearchField-C9aLr90M.js               27.27 kB │ gzip:   8.45 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/vendor-icons-BISePPUw.js              32.69 kB │ gzip:   6.62 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/ListsWorkspace-DqTsc1TO.js            32.94 kB │ gzip:   9.34 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/useCardGridMetrics-8wVHozqP.js        36.97 kB │ gzip:  11.46 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/LibraryWorkspace-B2Y51zD0.js          47.09 kB │ gzip:  13.96 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/TVWorkspace-MBwC1jas.js               62.70 kB │ gzip:  18.07 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/CleanupWorkspace-DkKcighR.js          63.68 kB │ gzip:  16.78 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/DiscoverWorkspace-BBIEFnqJ.js         63.93 kB │ gzip:  18.69 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/SettingsWorkspace-7Je1kheg.js         84.80 kB │ gzip:  20.51 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/IPTVWorkspace-DtTpoEB-.js             96.11 kB │ gzip:  25.51 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/index-COYbQt2B.js                    114.00 kB │ gzip:  34.77 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.20s
+
+Running 1 test using 1 worker
+
+(node:25496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\tv-normal-import.spec.js:52:1 › real isolated completion returns the season binding and renders completed status without rollback (16.3s)
+
+
+  1) tests\e2e\tv-normal-import.spec.js:52:1 › real isolated completion returns the season binding and renders completed status without rollback 
+
+    Error: expect(locator).toHaveCSS(expected) failed
+
+    Locator:  getByRole('region', { name: 'TV Downloads' }).locator('article').filter({ hasText: 'Harbor.Signals.S02E01.1080p.WEB-DL.mkv' })
+    Expected: "rgb(18, 19, 23)"
+    Received: "rgba(0, 0, 0, 0)"
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveCSS" with timeout 15000ms
+      - waiting for getByRole('region', { name: 'TV Downloads' }).locator('article').filter({ hasText: 'Harbor.Signals.S02E01.1080p.WEB-DL.mkv' })
+        33 × locator resolved to <article class="tv-episode">…</article>
+           - unexpected value "rgba(0, 0, 0, 0)"
+
+
+      65 |     await expect(row).toContainText('Transfer: imported');
+      66 |     await expect(row).toContainText(`Destination: ${result.job.destination}`);
+    > 67 |     await expect(row).toHaveCSS('background-color', 'rgb(18, 19, 23)');
+         |                       ^
+      68 |     await expect(row).toHaveCSS('border-top-style', 'solid');
+      69 |     await expect(row.getByRole('button', { name: 'Roll back imported files' })).toHaveCount(0);
+      70 |     const rollback = await request.post(`/api/tv/acquisitions/${result.intent_id}/action`, { data: { action: 'rollback' } });
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\tv-normal-import.spec.js:67:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-normal-import-real-isol-570d4-ted-status-without-rollback\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-normal-import-real-isol-570d4-ted-status-without-rollback\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-normal-import-real-isol-570d4-ted-status-without-rollback\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-normal-import-real-isol-570d4-ted-status-without-rollback\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\tv-normal-import.spec.js:52:1 › real isolated completion returns the season binding and renders completed status without rollback 
+Playwright failure data retained at C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-c406d55f22f040078540a3c4a34eff36
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5117
+Press CTRL+C to quit
+127.0.0.1 - - [05/Oct/2026 02:38:27] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "POST /__tv_fixture/complete-normal HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /downloads HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /assets/index-DmKtwgPZ.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /assets/index-COYbQt2B.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /assets/vendor-Bb8JjhAW.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /assets/vendor-react-CJZMWplS.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /assets/vendor-icons-BISePPUw.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /assets/DownloadsWorkspace-4Lq902md.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /qbittorrent/images/qbittorrent32.png HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /api/tv/capabilities HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /qbittorrent/ HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "GET /api/user/followed-releases HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:28] "POST /api/user/followed-releases/check HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:29] "GET /api/tv/acquisitions HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:33] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:34] "GET /api/tv/acquisitions HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:38] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:39] "GET /api/tv/acquisitions HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:43] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:44] "GET /api/tv/acquisitions HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:38:44] "POST /__tv_fixture/reset-normal HTTP/1.1" 200 -

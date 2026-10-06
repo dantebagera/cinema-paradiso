@@ -19,6 +19,10 @@ class JsonResponse:
 
 
 class TmdbDetailsTransformTest(unittest.TestCase):
+    def setUp(self):
+        app._tmdb_discover_window_cache.clear()
+        self.addCleanup(app._tmdb_discover_window_cache.clear)
+
     def test_extracts_director_cast_and_collection(self):
         payload = {
             "runtime": 117,
@@ -338,6 +342,9 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         app._tmdb_genres = {878: "Sci-Fi"}
 
         class FakeResponse:
+            def __init__(self, page):
+                self.page = page
+
             def __enter__(self):
                 return self
 
@@ -346,11 +353,11 @@ class TmdbDetailsTransformTest(unittest.TestCase):
 
             def read(self):
                 return app._json.dumps({
-                    "page": 2,
+                    "page": self.page,
                     "total_pages": 3,
-                    "total_results": 1,
+                    "total_results": 41,
                     "results": [{
-                        "id": 10,
+                        "id": (self.page - 1) * 20 + index,
                         "title": "Temporal Feature",
                         "release_date": "2024-01-02",
                         "poster_path": "/temporal.jpg",
@@ -359,14 +366,15 @@ class TmdbDetailsTransformTest(unittest.TestCase):
                         "vote_count": 1200,
                         "overview": "Time folds.",
                         "original_language": "en",
-                    }],
+                    } for index in range(1, (2 if self.page == 3 else 21))],
                 }).encode()
 
         requested_urls = []
 
         def fake_urlopen(request, timeout=0):
             requested_urls.append(request.full_url)
-            return FakeResponse()
+            page = int(app.urllib.parse.parse_qs(app.urllib.parse.urlparse(request.full_url).query)["page"][0])
+            return FakeResponse(page)
 
         try:
             with patch("app._ensure_tmdb_genres"), \
@@ -385,7 +393,7 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         requested = requested_urls[0]
         self.assertIn("/discover/movie?", requested)
         self.assertIn("with_keywords=501", requested)
-        self.assertIn("page=2", requested)
+        self.assertTrue(any("page=2" in url for url in requested_urls))
         self.assertNotIn("/search/movie", requested)
         self.assertIn("with_genres=878", requested)
         self.assertIn("with_original_language=en", requested)
@@ -573,14 +581,14 @@ class TmdbDetailsTransformTest(unittest.TestCase):
                 "total_pages": 24,
                 "total_results": 477,
                 "results": [{
-                    "id": 1000 + page,
+                    "id": 1000 + (page - 1) * 20 + index,
                     "title": f"Remote Movie {page}",
                     "release_date": "2024-01-01",
                     "genre_ids": [878],
                     "vote_average": 8.0,
                     "vote_count": 200,
                     "original_language": "en",
-                }],
+                } for index in range(1, 18 if page == 24 else 21)],
             })
 
         try:
@@ -612,16 +620,16 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         self.assertTrue(search_payload["criteria_applied"])
         self.assertEqual(search_payload["results"][0]["genres"], ["Sci-Fi"])
         self.assertIn("with_keywords=501", requested_urls[0])
-        self.assertIn("page=11", requested_urls[0])
-        self.assertIn("/search/movie?", requested_urls[1])
-        self.assertIn("page=13", requested_urls[1])
+        self.assertTrue(any("page=11" in url for url in requested_urls))
+        self.assertIn("/search/movie?", requested_urls[-1])
+        self.assertIn("page=13", requested_urls[-1])
 
     def test_page_size_forty_maps_provider_pages_and_skips_missing_partial_page(self):
         original_key = app._tmdb_key
         original_genres = app._tmdb_genres
         app._tmdb_key = "tmdb-key"
         app._tmdb_genres = {}
-        app._tmdb_discover_snapshot_cache.clear()
+        app._tmdb_discover_window_cache.clear()
         requested_pages = []
 
         def fake_urlopen(request, timeout=0):
@@ -633,14 +641,14 @@ class TmdbDetailsTransformTest(unittest.TestCase):
                 "total_pages": 23,
                 "total_results": 451,
                 "results": [{
-                    "id": page,
+                    "id": (page - 1) * 20 + index,
                     "title": f"Movie {page}",
                     "release_date": "2024-01-01",
                     "genre_ids": [],
                     "vote_average": 7.0,
                     "vote_count": 100,
                     "original_language": "en",
-                }],
+                } for index in range(1, 12 if page == 23 else 21)],
             })
 
         try:
@@ -655,11 +663,11 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         finally:
             app._tmdb_key = original_key
             app._tmdb_genres = original_genres
-            app._tmdb_discover_snapshot_cache.clear()
+            app._tmdb_discover_window_cache.clear()
 
         self.assertEqual(middle_response.status_code, 200)
         middle_payload = middle_response.get_json()
-        self.assertEqual([movie["title"] for movie in middle_payload["results"]], ["Movie 21", "Movie 22"])
+        self.assertEqual([movie["title"] for movie in middle_payload["results"]], ["Movie 21"] * 20 + ["Movie 22"] * 20)
         self.assertEqual(middle_payload["page"], 11)
         self.assertEqual(middle_payload["page_size"], 40)
         self.assertEqual(middle_payload["provider_total_pages"], 23)
@@ -667,10 +675,12 @@ class TmdbDetailsTransformTest(unittest.TestCase):
 
         self.assertEqual(last_response.status_code, 200)
         last_payload = last_response.get_json()
-        self.assertEqual([movie["title"] for movie in last_payload["results"]], ["Movie 23"])
+        self.assertEqual([movie["title"] for movie in last_payload["results"]], ["Movie 23"] * 11)
         self.assertEqual(last_payload["page"], 12)
         self.assertEqual(last_payload["total_pages"], 12)
-        self.assertEqual(requested_pages, [21, 22, 23])
+        self.assertEqual(requested_pages, [21, 22] + list(range(1, 24)))
+        self.assertFalse(last_payload["has_next"])
+        self.assertEqual(last_payload["total_results"], 451)
 
     def test_tmdb_provider_limit_caps_reachability_without_capping_provider_totals(self):
         native_metadata = app._tmdb_page_metadata(700, 20)
@@ -690,7 +700,7 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         original_genres = app._tmdb_genres
         app._tmdb_key = "tmdb-key"
         app._tmdb_genres = {}
-        app._tmdb_discover_snapshot_cache.clear()
+        app._tmdb_discover_window_cache.clear()
         requested_pages = []
 
         def fake_urlopen(request, timeout=0):
@@ -725,7 +735,7 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         finally:
             app._tmdb_key = original_key
             app._tmdb_genres = original_genres
-            app._tmdb_discover_snapshot_cache.clear()
+            app._tmdb_discover_window_cache.clear()
 
         self.assertEqual(first_response.status_code, 200)
         self.assertEqual(second_response.status_code, 200)
@@ -734,14 +744,14 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         self.assertEqual(first_ids, list(range(1, 40)))
         self.assertEqual(second_ids, list(range(40, 79)))
         self.assertFalse(set(first_ids) & set(second_ids))
-        self.assertEqual(requested_pages, [1, 2, 2, 3, 4])
+        self.assertEqual(requested_pages, [1, 2, 3, 4])
 
-    def test_discover_removes_overlapping_provider_movies_without_extra_fetches(self):
+    def test_discover_replaces_overlapping_provider_movies_to_fill_both_pages(self):
         original_key = app._tmdb_key
         original_genres = app._tmdb_genres
         app._tmdb_key = "tmdb-key"
         app._tmdb_genres = {}
-        app._tmdb_discover_snapshot_cache.clear()
+        app._tmdb_discover_window_cache.clear()
         requested_pages = []
 
         def provider_movie(movie_id):
@@ -759,7 +769,7 @@ class TmdbDetailsTransformTest(unittest.TestCase):
             query = app.urllib.parse.parse_qs(app.urllib.parse.urlparse(request.full_url).query)
             provider_page = int(query["page"][0])
             requested_pages.append(provider_page)
-            first_id = {1: 1, 2: 20, 3: 40, 4: 59}[provider_page]
+            first_id = {1: 1, 2: 20, 3: 40, 4: 59}.get(provider_page, (provider_page - 1) * 20 - 1)
             return JsonResponse({
                 "page": provider_page,
                 "total_pages": 25,
@@ -779,18 +789,18 @@ class TmdbDetailsTransformTest(unittest.TestCase):
         finally:
             app._tmdb_key = original_key
             app._tmdb_genres = original_genres
-            app._tmdb_discover_snapshot_cache.clear()
+            app._tmdb_discover_window_cache.clear()
 
         self.assertEqual(first_response.status_code, 200)
         self.assertEqual(second_response.status_code, 200)
         first_ids = [movie["tmdb_id"] for movie in first_response.get_json()["results"]]
         second_ids = [movie["tmdb_id"] for movie in second_response.get_json()["results"]]
-        self.assertEqual(len(first_ids), 39)
-        self.assertEqual(len(second_ids), 39)
+        self.assertEqual(first_ids, list(range(1, 41)))
+        self.assertEqual(second_ids, list(range(41, 81)))
         self.assertEqual(len(first_ids), len(set(first_ids)))
         self.assertEqual(len(second_ids), len(set(second_ids)))
         self.assertFalse(set(first_ids) & set(second_ids))
-        self.assertEqual(requested_pages, [1, 2, 3, 4])
+        self.assertEqual(requested_pages, [1, 2, 3, 4, 5])
 
     def test_tmdb_pagination_improves_existing_routes_without_duplicate_owners(self):
         route_counts = {}

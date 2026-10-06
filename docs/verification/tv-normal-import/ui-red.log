@@ -1,0 +1,228 @@
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1690 modules transformed.
+rendering chunks...
+computing gzip size...
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/manifest-BSGbUmFO.webmanifest          0.55 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/index.html                                    1.86 kB │ gzip:   0.84 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/TVWorkspace-C0qIaGNz.css              10.46 kB │ gzip:   2.78 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/IPTVWorkspace-Cx_ZMdzz.css            39.79 kB │ gzip:   6.54 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/index-DmKtwgPZ.css                   207.19 kB │ gzip:  35.43 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/header-CbieqaTQ.js                     0.05 kB │ gzip:   0.07 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/moviePresentation-Di650b9v.js          0.70 kB │ gzip:   0.44 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/Pagination-IiSMaQlf.js                 0.88 kB │ gzip:   0.49 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/DiscoverResultGrid-CACuLcGX.js         0.88 kB │ gzip:   0.41 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/WorkspacePathBar-B5uETC_B.js           2.50 kB │ gzip:   0.96 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/LibraryControls-CaJNxrzJ.js            2.83 kB │ gzip:   0.91 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/DownloadsWorkspace-Dw9pbkjF.js         3.38 kB │ gzip:   1.40 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/iptv-GS3W94Nf.js                       6.50 kB │ gzip:   1.38 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/MetadataCorrectionModal-_cBtzrri.js    9.97 kB │ gzip:   3.27 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/StyleGuide-BZFqN5vR.js                10.43 kB │ gzip:   3.01 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/CardLab-C4-Epd-R.js                   11.48 kB │ gzip:   4.12 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/useMovieCollectionCache-BGUz6hNu.js   12.11 kB │ gzip:   4.16 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/AIControlWorkspace-MecIlqmT.js        16.57 kB │ gzip:   5.74 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/HelpWorkspace-Cb2BtTya.js             21.47 kB │ gzip:   6.96 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/HomeWorkspace-BHAdC7oI.js             22.22 kB │ gzip:   6.61 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/SearchField-C9aLr90M.js               27.27 kB │ gzip:   8.45 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/vendor-icons-BISePPUw.js              32.69 kB │ gzip:   6.62 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/ListsWorkspace-wEo75jAv.js            32.94 kB │ gzip:   9.33 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/useCardGridMetrics-6iUFL1br.js        36.97 kB │ gzip:  11.46 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/LibraryWorkspace-aBpW-hWj.js          47.09 kB │ gzip:  13.96 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/TVWorkspace-ySr9yGJE.js               61.25 kB │ gzip:  17.74 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/CleanupWorkspace-CHqXzFLI.js          63.68 kB │ gzip:  16.78 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/DiscoverWorkspace-BXSUT5vn.js         63.93 kB │ gzip:  18.69 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/SettingsWorkspace-C8FJj2iK.js         84.80 kB │ gzip:  20.51 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/IPTVWorkspace-CvLk7DLd.js             96.11 kB │ gzip:  25.51 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/index-vJjXGZME.js                    114.00 kB │ gzip:  34.76 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../AppData/Local/Temp/cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.56s
+
+Running 3 tests using 1 worker
+
+(node:42184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\tv-normal-import.spec.js:5:1 › review renders the backend season destination and normal lifecycle in existing desktop dialog (16.3s)
+(node:6080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\tv-normal-import.spec.js:21:1 › untracked show retains source browsing while missing approved home disables download (16.9s)
+(node:50224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 tests\e2e\tv-normal-import.spec.js:35:1 › Downloads distinguishes cleanup failure and hides rollback after cleanup begins (18.0s)
+
+
+  1) tests\e2e\tv-normal-import.spec.js:5:1 › review renders the backend season destination and normal lifecycle in existing desktop dialog 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('dialog', { name: 'TV release review' }).getByText('Destination: C:\\Users\\dante\\AppData\\Local\\Temp\\cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c\\tv\\Harbor Signals\\Season 01', { exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByRole('dialog', { name: 'TV release review' }).getByText('Destination: C:\\Users\\dante\\AppData\\Local\\Temp\\cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c\\tv\\Harbor Signals\\Season 01', { exact: true })
+
+
+      12 |   await page.getByRole('article', { name: 'S01E02 The Signal' }).getByRole('button', { name: 'Download episode' }).click();
+      13 |   const dialog = page.getByRole('dialog', { name: 'TV release review' });
+    > 14 |   await expect(dialog.getByText(`Destination: ${review.import_destination.path}`, { exact: true })).toBeVisible();
+         |                                                                                                     ^
+      15 |   await expect(dialog).toContainText('Verified episodes move into the season folder. Completed downloads are removed from qBittorrent.');
+      16 |   await expect(dialog.getByRole('button', { name: 'Download selected releases' })).toBeEnabled();
+      17 |   expect(await dialog.evaluate(element => element.scrollWidth <= element.clientWidth)).toBe(true);
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\tv-normal-import.spec.js:14:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-normal-import-review-re-37809--in-existing-desktop-dialog\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-normal-import-review-re-37809--in-existing-desktop-dialog\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-normal-import-review-re-37809--in-existing-desktop-dialog\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-normal-import-review-re-37809--in-existing-desktop-dialog\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\tv-normal-import.spec.js:21:1 › untracked show retains source browsing while missing approved home disables download 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('dialog', { name: 'TV release review' })
+    Expected substring: "Choose an approved TV show folder before downloading"
+    Received string:    "Choose TV downloadsSeason 1CloseQuality profile CP CompatibilitySafe HD3 releases · 3 of 9 episodes · 0.00 GBNot covered: S01E04, S01E05, S01E06, S01E07, S01E08, S01E09Allow extra episodes only when inseparable from selected episodes in one fileDownload availableSeason-pack coverage is checked against its actual files before downloading. Unselected separate files are skipped.Show blocked releases (0)Daredevil:.Born.Again.S01E01.1080p.WEB-DLEpisodes 1 · 1080p · web dl · 0.00 GB · 10 seeders · Fixture TVTorrent link will be resolved before queuing.Details and reasonsSeries title and available year evidence matchA valid torrent identity is requiredDaredevil:.Born.Again.S01E02.1080p.WEB-DLEpisodes 2 · 1080p · web dl · 0.00 GB · 10 seeders · Fixture TVTorrent link will be resolved before queuing.Details and reasonsSeries title and available year evidence matchA valid torrent identity is requiredDaredevil:.Born.Again.S01E03.1080p.WEB-DLEpisodes 3 · 1080p · web dl · 0.00 GB · 10 seeders · Fixture TVTorrent link will be resolved before queuing.Details and reasonsSeries title and available year evidence matchA valid torrent identity is required"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 15000ms
+      - waiting for getByRole('dialog', { name: 'TV release review' })
+        4 × locator resolved to <dialog open="" aria-label="TV release review" class="tv-version-dialog tv-release-dialog">…</dialog>
+          - unexpected value "Choose TV downloadsSeason 1CloseQuality profile CP CompatibilitySafe HDSearching TV sources…"
+        29 × locator resolved to <dialog open="" aria-label="TV release review" class="tv-version-dialog tv-release-dialog">…</dialog>
+           - unexpected value "Choose TV downloadsSeason 1CloseQuality profile CP CompatibilitySafe HD3 releases · 3 of 9 episodes · 0.00 GBNot covered: S01E04, S01E05, S01E06, S01E07, S01E08, S01E09Allow extra episodes only when inseparable from selected episodes in one fileDownload availableSeason-pack coverage is checked against its actual files before downloading. Unselected separate files are skipped.Show blocked releases (0)Daredevil:.Born.Again.S01E01.1080p.WEB-DLEpisodes 1 · 1080p · web dl · 0.00 GB · 10 seeders · Fixture TVTorrent link will be resolved before queuing.Details and reasonsSeries title and available year evidence matchA valid torrent identity is requiredDaredevil:.Born.Again.S01E02.1080p.WEB-DLEpisodes 2 · 1080p · web dl · 0.00 GB · 10 seeders · Fixture TVTorrent link will be resolved before queuing.Details and reasonsSeries title and available year evidence matchA valid torrent identity is requiredDaredevil:.Born.Again.S01E03.1080p.WEB-DLEpisodes 3 · 1080p · web dl · 0.00 GB · 10 seeders · Fixture TVTorrent link will be resolved before queuing.Details and reasonsSeries title and available year evidence matchA valid torrent identity is required"
+
+
+      27 |   await page.getByRole('button', { name: 'Download season', exact: true }).click();
+      28 |   const dialog = page.getByRole('dialog', { name: 'TV release review' });
+    > 29 |   await expect(dialog).toContainText('Choose an approved TV show folder before downloading');
+         |                        ^
+      30 |   await expect(dialog.getByRole('button', { name: /Download selected releases|Download available/ })).toBeDisabled();
+      31 |   await expect(dialog.locator('.tv-release-row').first()).toBeVisible();
+      32 |   await page.screenshot({ path: 'docs/verification/tv-normal-import/no-home.png' });
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\tv-normal-import.spec.js:29:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-normal-import-untracked-3df8d-oved-home-disables-download\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-normal-import-untracked-3df8d-oved-home-disables-download\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-normal-import-untracked-3df8d-oved-home-disables-download\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-normal-import-untracked-3df8d-oved-home-disables-download\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests\e2e\tv-normal-import.spec.js:35:1 › Downloads distinguishes cleanup failure and hides rollback after cleanup begins 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('region', { name: 'TV Downloads' })
+    Expected substring: "Cleanup failed"
+    Received string:    "TV DownloadsVerified fixture episodeepisode:tmdb:tv:999:1:1Acquisition: import_pending · Transfer: cleanup_failed1 imported · 0 failedqBittorrent unavailableRoll back imported filesHistory"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 15000ms
+      - waiting for getByRole('region', { name: 'TV Downloads' })
+        33 × locator resolved to <section aria-label="TV Downloads">…</section>
+           - unexpected value "TV DownloadsVerified fixture episodeepisode:tmdb:tv:999:1:1Acquisition: import_pending · Transfer: cleanup_failed1 imported · 0 failedqBittorrent unavailableRoll back imported filesHistory"
+
+
+      44 |   await page.getByRole('button', { name: 'TV Shows', exact: true }).click();
+      45 |   const downloads = page.getByRole('region', { name: 'TV Downloads' });
+    > 46 |   await expect(downloads).toContainText('Cleanup failed');
+         |                           ^
+      47 |   await expect(downloads.getByRole('button', { name: 'Retry cleanup', exact: true })).toBeVisible();
+      48 |   await expect(downloads.getByRole('button', { name: 'Roll back imported files' })).toHaveCount(0);
+      49 | });
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\tv-normal-import.spec.js:46:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-normal-import-Downloads-1a286-llback-after-cleanup-begins\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-normal-import-Downloads-1a286-llback-after-cleanup-begins\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-normal-import-Downloads-1a286-llback-after-cleanup-begins\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-normal-import-Downloads-1a286-llback-after-cleanup-begins\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    tests\e2e\tv-normal-import.spec.js:5:1 › review renders the backend season destination and normal lifecycle in existing desktop dialog 
+    tests\e2e\tv-normal-import.spec.js:21:1 › untracked show retains source browsing while missing approved home disables download 
+    tests\e2e\tv-normal-import.spec.js:35:1 › Downloads distinguishes cleanup failure and hides rollback after cleanup begins 
+Playwright failure data retained at C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-217fc7b505024a679d87dce8fa83246c
+127.0.0.1 - - [05/Oct/2026 02:26:43] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:43] "GET /api/user/followed-releases HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:43] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:43] "GET /api/tmdb/filter-options HTTP/1.1" 400 -
+127.0.0.1 - - [05/Oct/2026 02:26:43] "POST /api/tmdb/discover/advanced HTTP/1.1" 400 -
+127.0.0.1 - - [05/Oct/2026 02:26:43] "GET /api/user/lists HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:43] "POST /api/user/followed-releases/check HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:44] "GET /assets/TVWorkspace-ySr9yGJE.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:44] "GET /assets/TVWorkspace-C0qIaGNz.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:45] "GET /api/tv/catalog/options?scope=discover HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:45] "POST /api/tv/catalog/search HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:45] "POST /api/tv/catalog/search HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:45] "GET /api/tv/preview/202555 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:45] "GET /api/tv/preview/202555/seasons/1?page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:45] "GET /api/tv/related?tmdb_id=202555&source=recommendations&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:45] "GET /api/acquisition/profiles HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:45] "POST /api/tv/search HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:48] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:53] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:26:58] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:03] "GET /downloads HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:03] "GET /assets/index-vJjXGZME.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:03] "GET /assets/vendor-Bb8JjhAW.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:03] "GET /assets/index-DmKtwgPZ.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:03] "GET /assets/vendor-react-CJZMWplS.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:03] "GET /assets/vendor-icons-BISePPUw.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /assets/DownloadsWorkspace-Dw9pbkjF.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /qbittorrent/images/qbittorrent32.png HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /api/tv/capabilities HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /qbittorrent/ HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "GET /api/user/followed-releases HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:04] "POST /api/user/followed-releases/check HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:09] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:14] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [05/Oct/2026 02:27:19] "GET /api/power/status HTTP/1.1" 200 -

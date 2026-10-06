@@ -13,6 +13,7 @@ port = int(os.environ.get('CP_PORT', '5127'))
 if port == 5000:
     raise RuntimeError('Production port is prohibited')
 
+os.environ['CP_TEST_QBT_MODE'] = 'embedded'
 import app
 from tests.seed_iptv_e2e import catalog
 
@@ -25,8 +26,13 @@ repository = services['repository']
 series_id = repository.refresh({**fixture['series'], 'overview': 'A coastal town follows a mysterious radio signal.', 'seasons': [{'season_number': n} for n in (0, 1, 2)]}, fixture['episodes'], [{'tmdb_id': 123, 'name': 'Mira Stone', 'role': 'Creator'}])
 media = root / 'tv'
 media.mkdir(parents=True, exist_ok=True)
+home = media / 'Harbor Signals'
+season_home = home / 'Season 01'
+season_home.mkdir(parents=True)
+repository.approve_path(home, 'folder', series_id)
+repository.set_import_home(series_id, home, [media])
 for number, quality in ((1, '1080p'), (3, '720p')):
-    path = media / f'Harbor.Signals.S01E{number:02d}.{quality}.mkv'
+    path = season_home / f'Harbor.Signals.S01E{number:02d}.{quality}.mkv'
     path.write_bytes(b'SYNTHETIC TEST MEDIA - NOT FOR REAL PLAYBACK')
     episode = next(row for row in repository.episodes(series_id, 1) if row['episode_number'] == number)
     repository.bind_file(path, [episode['id']], {'probe_status': 'ok', 'quality_class': quality, 'video_codec': 'HEVC', 'audio_language': 'English'}, [media])
@@ -75,6 +81,7 @@ metadata.request = tmdb_fixture
 from types import SimpleNamespace
 from unittest.mock import Mock
 owner = app._tv_acquisition()
+owner.roots = lambda: [media]
 owner.prowlarr = lambda: SimpleNamespace(base_url='http://fixture.invalid', search_tv=lambda **kw: [
     {'title': f"Harbor.Signals.S{kw.get('season') or 1:02d}E{kw.get('episode') or 2:02d}.1080p.WEB-DL", 'tmdbId': 900001, 'infoHash': 'a'*40, 'magnetUrl': 'magnet:?xt=urn:btih:'+'a'*40, 'indexerId': 7, 'seeders': 12, 'size': 1000},
     {'title': 'Harbor.Signals.S01E02.1080p.HDCAM', 'tmdbId': 900001, 'infoHash': 'b'*40, 'magnetUrl': 'magnet:?xt=urn:btih:'+'b'*40, 'indexerId': 7, 'seeders': 10, 'size': 1000}])
@@ -103,6 +110,79 @@ manager.proxy = Mock(side_effect=lambda path, **_: (
     (200, {'Content-Type':'text/html'}, b'<html><body><p>Fixture qBittorrent</p></body></html>')
 ))
 owner.submit_candidate = lambda manager, candidate, metadata: manager.submit_magnet(candidate['magnet_url'], metadata)
+
+# Explicit test-only setup for provider shows whose download tests need approved homes.
+@app.app.post('/__tv_fixture/approved-home/<int:tmdb_id>')
+def fixture_home(tmdb_id):
+    identity = metadata.refresh(tmdb_id, season_scope={1})
+    folder = media / f'Approved fixture {tmdb_id}'
+    (folder / 'Season 01').mkdir(parents=True, exist_ok=True)
+    repository.approve_path(folder, 'folder', identity)
+    repository.set_import_home(identity, folder, [media])
+    return {'series_id': identity, 'path': str(folder)}
+
+@app.app.post('/__tv_fixture/complete-normal')
+def fixture_complete_normal():
+    """Run the real submission, manifest validation, publication and cleanup owners."""
+    digest = 'c' * 40
+    original_provider, original_probe = owner.prowlarr, owner.probe
+    name = 'Harbor.Signals.S02E01.1080p.WEB-DL.mkv'
+    payload = manager.staging_dir / 'normal-fixture'
+    payload.mkdir(parents=True, exist_ok=True)
+    source = payload / name
+    source.write_bytes(b'SYNTHETIC VERIFIED TV STORAGE FIXTURE')
+    files = [{'name': name, 'size': source.stat().st_size}]
+    torrent = {'hash': digest, 'name': name, 'progress': 1, 'save_path': str(payload)}
+    owner.prowlarr = lambda: SimpleNamespace(base_url='http://fixture.invalid', search_tv=lambda **_: [
+        {'title': name, 'tmdbId': 900001, 'infoHash': digest, 'magnetUrl': 'magnet:?xt=urn:btih:'+digest,
+         'size': source.stat().st_size, 'seeders': 20, 'indexerId': 7}])
+    owner.probe = lambda _: {'probe_status': 'ok', 'quality_class': '1080p'}
+    original_files = manager.client.files.side_effect
+    manager.client.files.side_effect = lambda _: files
+    try:
+        with manager._completion_lock:
+            review = owner.search(series_id, 2, 1)
+            submitted = owner.submit(review['decisions'][0]['decision_token'], 'normal-fixture-completion')
+            job = manager._process_pending_magnet_validation(digest, submitted['job'], torrent)
+            result = owner.process_completed(manager, digest, job, torrent)
+        return {'job': result, 'intent_id': submitted['intent']['id'], 'source_exists': source.exists(),
+                'binding_paths': [row['path'] for row in repository.episodes(series_id, 2)[0]['versions']]}
+    finally:
+        owner.prowlarr, owner.probe = original_provider, original_probe
+        manager.client.files.side_effect = original_files
+
+@app.app.post('/__tv_fixture/reset-normal')
+def fixture_reset_normal():
+    job = manager.jobs.get('c' * 40)
+    if job:
+        for path in job.get('imported_paths') or []:
+            with repository.store.transaction() as db:
+                file_row = db.execute('SELECT id FROM media_files WHERE path=?', (path,)).fetchone()
+                if file_row:
+                    db.execute('DELETE FROM episode_file_bindings WHERE file_id=?', (file_row[0],))
+                    db.execute('DELETE FROM media_files WHERE id=?', (file_row[0],))
+            Path(path).unlink(missing_ok=True)
+    return {'reset': True}
+
+@app.app.post('/__tv_fixture/ambiguous-home')
+def fixture_ambiguous_home():
+    repository.store.backup(root / 'before-home-choice.sqlite')
+    second = media / ('Second approved collection with a long folder name ' + 'x' * 65)
+    season = second / 'Season 01'
+    season.mkdir(parents=True, exist_ok=True)
+    path = season / 'owned.mkv'
+    path.write_bytes(b'SYNTHETIC OWNED EPISODE')
+    repository.approve_path(second, 'folder', series_id)
+    episode = repository.episodes(series_id, 1)[0]
+    repository.bind_file(path, [episode['id']], {}, [media])
+    with repository.store.transaction() as db:
+        db.execute('DELETE FROM tv_import_homes WHERE series_id=?', (series_id,))
+    return {'home': str(second), 'destination': str(second / 'Season 02')}
+
+@app.app.post('/__tv_fixture/reset-home')
+def fixture_reset_home():
+    repository.store.restore(root / 'before-home-choice.sqlite')
+    return {'reset': True}
 # Use the real metadata refresh owner against fixture transport, including scoped preview persistence.
 print(f'TV fixture series_id={series_id}, root={root}', flush=True)
 app.app.run(host='127.0.0.1', port=port, use_reloader=False, debug=False)

@@ -7,7 +7,7 @@ import tempfile
 import threading
 
 
-TV_SCHEMA_VERSION = 4
+TV_SCHEMA_VERSION = 5
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS tv_meta(key TEXT PRIMARY KEY, value TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS series(
@@ -69,6 +69,9 @@ CREATE TABLE IF NOT EXISTS ingestion_candidates(
 CREATE TABLE IF NOT EXISTS tv_path_assignments(
  path TEXT PRIMARY KEY, kind TEXT NOT NULL CHECK(kind IN ('folder','file')),
  series_id INTEGER NOT NULL REFERENCES series(id), approved_at REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS tv_import_homes(
+ series_id INTEGER PRIMARY KEY REFERENCES series(id),
+ path TEXT NOT NULL REFERENCES tv_path_assignments(path));
 CREATE TABLE IF NOT EXISTS tv_discovery_units(
  path TEXT PRIMARY KEY, state TEXT NOT NULL, payload TEXT NOT NULL,
  updated_at REAL NOT NULL);
@@ -159,7 +162,7 @@ class TVCatalogStore:
         with self._lock, closing(sqlite3.connect(f'{source.as_uri()}?mode=ro', uri=True)) as backup:
             if backup.execute('PRAGMA integrity_check').fetchone()[0] != 'ok':
                 raise ValueError('Backup integrity failed')
-            if backup.execute('PRAGMA user_version').fetchone()[0] not in {1, 2, 3, TV_SCHEMA_VERSION}:
+            if backup.execute('PRAGMA user_version').fetchone()[0] not in {1, 2, 3, 4, TV_SCHEMA_VERSION}:
                 raise ValueError('Backup schema mismatch')
             if backup.execute('PRAGMA foreign_key_check').fetchall():
                 raise ValueError('Backup relationships are invalid')

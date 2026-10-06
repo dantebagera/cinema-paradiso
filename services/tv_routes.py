@@ -368,6 +368,11 @@ def register_tv_routes(app, services, enabled, player_manager, acquisition=None,
         data = request.get_json(silent=True) or {}
         return action(lambda: acquisition().search(**{key: data[key] for key in ('series_id', 'tmdb_id', 'season', 'episode', 'episode_numbers', 'missing_only', 'upgrade', 'profile_id') if key in data}))
 
+    @app.post('/api/tv/series/<int:series_id>/import-home')
+    def tv_import_home(series_id):
+        data = request.get_json(silent=True) or {}
+        return action(lambda: services()['repository'].set_import_home(series_id, data['path'], acquisition().roots()))
+
     @app.post('/api/tv/releases/prepare')
     def tv_prepare_release():
         data = request.get_json(silent=True) or {}
@@ -393,7 +398,7 @@ def register_tv_routes(app, services, enabled, player_manager, acquisition=None,
                 for row in rows:
                     row['history'] = [dict(event) for event in db.execute('SELECT event,payload,created_at FROM events WHERE intent_id=? ORDER BY id DESC LIMIT 30', (row['id'],))]
             jobs = owner.manager().jobs.all()
-            return {'items': [{**row, 'job': jobs.get(row['info_hash'])} for row in rows]}
+            return {'items': [{**row, 'job': owner.job_status(jobs.get(row['info_hash']))} for row in rows]}
         return action(read)
 
     @app.get('/api/tv/series/<int:series_id>/monitor')

@@ -205,7 +205,18 @@ class TVDownloadWorkflowTests(unittest.TestCase):
             with self.tv.store.connection() as db:return db.execute('SELECT COUNT(*) FROM series').fetchone()[0]
         self.assertEqual(count(),1)
         submitted=self.service.submit_batch(result['recommended'],'preview')
-        self.assertTrue(submitted['complete'],submitted);self.assertEqual(count(),2)
+        self.assertFalse(submitted['complete'], submitted)
+        self.assertIn('approved TV show folder', submitted['items'][0]['message'])
+        self.assertEqual(count(), 1)
+        saved = metadata.refresh(99, season_scope={1})
+        home = self.library / 'Second approved collection'
+        (home / 'Season 01').mkdir(parents=True)
+        self.tv.approve_path(home, 'folder', saved)
+        self.tv.set_import_home(saved, home, [self.library])
+        result = self.service.search(saved, 1, episode_numbers=[1])
+        submitted = self.service.submit_batch(result['recommended'], 'approved-preview')
+        self.assertTrue(submitted['complete'], submitted)
+        self.assertEqual(count(), 2)
         with self.tv.store.connection() as db:saved=db.execute('SELECT id FROM series WHERE tmdb_id=99').fetchone()[0]
         self.assertEqual([s['number'] for s in TVReadModel(self.tv).detail(saved)['seasons']],[1,2])
         self.assertEqual(len(self.tv.episodes(saved)),1)

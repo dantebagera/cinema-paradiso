@@ -21,6 +21,7 @@ import json as _json
 import gzip
 import xml.etree.ElementTree as _ET
 from pathlib import Path
+from contextlib import contextmanager
 
 from services.movie_identity import (
     group_identity_records,
@@ -6990,17 +6991,13 @@ TMDB_PROVIDER_PAGE_SIZE = 20
 TMDB_LOGICAL_PAGE_SIZE_LIMIT = 100
 TMDB_PAGE_WINDOW_CACHE_TTL_SECONDS = 60
 TMDB_PAGE_WINDOW_CACHE_LIMIT = 256
-TMDB_DISCOVER_SNAPSHOT_CACHE_TTL_SECONDS = 60
-TMDB_DISCOVER_SNAPSHOT_CACHE_LIMIT = 64
 TMDB_DENSE_SCAN_PAGE_BUDGET = 10
-TMDB_DENSE_WINDOW_CACHE_TTL_SECONDS = 120
-TMDB_DENSE_WINDOW_CACHE_LIMIT = 64
+TMDB_DISCOVER_WINDOW_CACHE_TTL_SECONDS = 120
+TMDB_DISCOVER_WINDOW_CACHE_LIMIT = 64
 _tmdb_page_window_cache = {}
 _tmdb_page_window_cache_lock = threading.Lock()
-_tmdb_discover_snapshot_cache = {}
-_tmdb_discover_snapshot_cache_lock = threading.Lock()
-_tmdb_dense_window_cache = {}
-_tmdb_dense_window_cache_lock = threading.Lock()
+_tmdb_discover_window_cache = {}
+_tmdb_discover_window_cache_lock = threading.Condition()
 
 
 def _validated_page_value(value, label, maximum=None):
@@ -7128,7 +7125,7 @@ def _tmdb_fetch_page_window(first_url, provider_pages):
     return data
 
 
-def _tmdb_discover_snapshot_key(first_url, page_size):
+def _tmdb_discover_snapshot_key(first_url):
     """Identify one short-lived logical Discover feed without retaining its API key."""
     parsed = urllib.parse.urlsplit(first_url)
     query = [
@@ -7143,52 +7140,7 @@ def _tmdb_discover_snapshot_key(first_url, page_size):
         urllib.parse.urlencode(sorted(query)),
         '',
     ))
-    return hashlib.sha256(f'{source}|page_size={page_size}'.encode('utf-8')).hexdigest()
-
-
-def _tmdb_unique_discover_window(snapshot_key, page, data, provider_offset, page_size):
-    """Remove TMDB page overlap while keeping consecutive Discover pages stable.
-
-    Popular and trending lists can reorder between TMDB provider pages.  The
-    snapshot is intentionally short-lived and only remembers IDs CP has
-    already displayed for the same query; it never causes an extra TMDB fetch.
-    """
-    provider_window = list((data.get('results', []) or [])[provider_offset:provider_offset + page_size])
-    now = time.monotonic()
-    with _tmdb_discover_snapshot_cache_lock:
-        expired = [
-            key for key, entry in _tmdb_discover_snapshot_cache.items()
-            if now - entry['touched_at'] >= TMDB_DISCOVER_SNAPSHOT_CACHE_TTL_SECONDS
-        ]
-        for key in expired:
-            _tmdb_discover_snapshot_cache.pop(key, None)
-        entry = _tmdb_discover_snapshot_cache.get(snapshot_key)
-        if entry is None:
-            while len(_tmdb_discover_snapshot_cache) >= TMDB_DISCOVER_SNAPSHOT_CACHE_LIMIT:
-                oldest = min(
-                    _tmdb_discover_snapshot_cache,
-                    key=lambda key: _tmdb_discover_snapshot_cache[key]['touched_at'],
-                )
-                _tmdb_discover_snapshot_cache.pop(oldest, None)
-            entry = {'seen': set(), 'pages': {}, 'touched_at': now}
-            _tmdb_discover_snapshot_cache[snapshot_key] = entry
-        entry['touched_at'] = now
-        cached = entry['pages'].get(page)
-        if cached is not None:
-            return copy.deepcopy(cached)
-
-        page_seen = set()
-        unique = []
-        for movie in provider_window:
-            movie_id = _tmdb_movie_id(movie)
-            if movie_id and (movie_id in entry['seen'] or movie_id in page_seen):
-                continue
-            if movie_id:
-                page_seen.add(movie_id)
-            unique.append(movie)
-        entry['seen'].update(page_seen)
-        entry['pages'][page] = copy.deepcopy(unique)
-        return unique
+    return hashlib.sha256(source.encode('utf-8')).hexdigest()
 
 
 def _tmdb_person_credit_ids(person_id, role):
@@ -7307,89 +7259,114 @@ def _tmdb_person_seed_movies(plan):
     return _tmdb_sort_summaries(movies, plan.query['sort']['key'])
 
 
-def _tmdb_dense_cache_entry(cache_key):
-    now = time.monotonic()
-    with _tmdb_dense_window_cache_lock:
-        entry = _tmdb_dense_window_cache.get(cache_key)
-        if entry and now - entry['touched_at'] < TMDB_DENSE_WINDOW_CACHE_TTL_SECONDS:
+@contextmanager
+def _tmdb_discover_cache_entry(cache_key):
+    """Pin active/queued query snapshots so expiry cannot split one stream."""
+    with _tmdb_discover_window_cache_lock:
+        while True:
+            now = time.monotonic()
+            entry = _tmdb_discover_window_cache.get(cache_key)
+            if (entry and not entry['users']
+                    and now - entry['touched_at'] >= TMDB_DISCOVER_WINDOW_CACHE_TTL_SECONDS):
+                _tmdb_discover_window_cache.pop(cache_key)
+                entry = None
+            if entry is None:
+                if len(_tmdb_discover_window_cache) >= TMDB_DISCOVER_WINDOW_CACHE_LIMIT:
+                    idle = [key for key, value in _tmdb_discover_window_cache.items() if not value['users']]
+                    if not idle:
+                        _tmdb_discover_window_cache_lock.wait()
+                        continue
+                    oldest = min(idle, key=lambda key: _tmdb_discover_window_cache[key]['touched_at'])
+                    _tmdb_discover_window_cache.pop(oldest)
+                entry = {
+                    'matches': [], 'seen': set(), 'next_provider_page': 1,
+                    'provider_total_pages': None, 'provider_total_results': None,
+                    'provider_exhausted': False, 'touched_at': now,
+                    'lock': threading.Lock(), 'users': 0,
+                }
+                _tmdb_discover_window_cache[cache_key] = entry
+            entry['users'] += 1
             entry['touched_at'] = now
-            return entry
-        if entry:
-            _tmdb_dense_window_cache.pop(cache_key, None)
-        while len(_tmdb_dense_window_cache) >= TMDB_DENSE_WINDOW_CACHE_LIMIT:
-            oldest = min(_tmdb_dense_window_cache, key=lambda key: _tmdb_dense_window_cache[key]['touched_at'])
-            _tmdb_dense_window_cache.pop(oldest, None)
-        entry = {
-            'matches': [],
-            'seen': set(),
-            'next_provider_page': 1,
-            'provider_total_pages': None,
-            'provider_total_results': None,
-            'provider_exhausted': False,
-            'touched_at': now,
+            break
+    try:
+        yield entry
+    finally:
+        with _tmdb_discover_window_cache_lock:
+            entry['users'] -= 1
+            entry['touched_at'] = time.monotonic()
+            _tmdb_discover_window_cache_lock.notify_all()
+
+
+def _tmdb_discover_window(plan, page, page_size, people_ids=None, *, first_url=None):
+    """Accumulate unique matching results before slicing a Discover page.
+
+    Query snapshots are independent of page size and request order. Only a
+    proven final page may be short; unfinished filtered scans stay retryable.
+    """
+    filtered = bool(plan and (plan.strategy == 'title' or plan.local_groups or people_ids is not None))
+    first_url = first_url or _tmdb_advanced_url(plan, 1)
+    cache_key = (
+        f"filtered:{advanced_search_signature(plan.query, 'discover')}|adult={_tmdb_include_adult_value()}"
+        if filtered else f'native:{_tmdb_discover_snapshot_key(first_url)}'
+    )
+    # A locally requested sort needs all matches before its first page is stable.
+    complete_order_required = filtered and plan.query['sort']['key'] != 'auto'
+    start, end = (page - 1) * page_size, page * page_size
+    with _tmdb_discover_cache_entry(cache_key) as entry, entry['lock']:
+        fetched_this_request = 0
+        while (complete_order_required or len(entry['matches']) <= end) and not entry['provider_exhausted']:
+            if filtered and fetched_this_request >= TMDB_DENSE_SCAN_PAGE_BUDGET:
+                break
+            provider_page = entry['next_provider_page']
+            page_url = re.sub(r'([?&])page=\d+', rf'\g<1>page={provider_page}', first_url)
+            data = _tmdb_fetch_provider_page(page_url)
+            batch = list(data.get('results', []) or [])
+            if plan and plan.strategy == 'title' and plan.summary_groups:
+                batch = [movie for movie in batch if movie_matches_summary(movie, plan.summary_groups, _LANG_COUNTRY)]
+            if people_ids is not None:
+                batch = [movie for movie in batch if _tmdb_movie_id(movie) in people_ids]
+            if plan and plan.local_groups:
+                batch = _tmdb_filter_local_movies(batch, plan.local_groups)
+            # Commit a batch only after fetching and filtering succeeded.
+            entry['provider_total_pages'] = max(1, int(data.get('total_pages', 1) or 1))
+            entry['provider_total_results'] = max(0, int(data.get('total_results', 0) or 0))
+            for movie in batch:
+                movie_id = _tmdb_movie_id(movie)
+                if not movie_id or movie_id in entry['seen']:
+                    continue
+                entry['seen'].add(movie_id)
+                entry['matches'].append(copy.deepcopy(movie))
+            fetched_this_request += 1
+            entry['next_provider_page'] = provider_page + 1
+            if (not data.get('results') or provider_page >= min(
+                    entry['provider_total_pages'], TMDB_PROVIDER_PAGE_LIMIT)):
+                entry['provider_exhausted'] = True
+        entry['touched_at'] = time.monotonic()
+        ordered = (_tmdb_sort_summaries(entry['matches'], plan.query['sort']['key'])
+                   if filtered else entry['matches'])
+        exhausted = entry['provider_exhausted']
+        metadata = _tmdb_page_metadata(entry['provider_total_pages'], page_size, entry['provider_total_results'])
+        total_results = len(ordered) if exhausted else (None if filtered else entry['provider_total_results'])
+        total_pages = (max(1, (len(ordered) + page_size - 1) // page_size) if exhausted
+                       else (None if filtered else metadata['total_pages']))
+        budget_exhausted = not exhausted and (len(ordered) < end or complete_order_required)
+        return {
+            **metadata,
+            'results': [] if budget_exhausted else copy.deepcopy(ordered[start:end]),
+            'page': page,
+            'total_scope': 'exact' if exhausted else ('bounded' if filtered else 'provider'),
+            'total_results': total_results,
+            'total_pages': total_pages,
+            'has_previous': page > 1,
+            'has_next': len(ordered) > end or not exhausted,
+            'provider_exhausted': exhausted,
+            'provider_total_results': entry['provider_total_results'],
+            'provider_pages_fetched': fetched_this_request,
+            'budget_exhausted': budget_exhausted,
+            'retryable': budget_exhausted,
+            'total_label': (f'{len(ordered)} TMDB matches' if exhausted else (
+                f'{len(ordered)} matches collected from TMDB' if filtered else 'TMDB results')),
         }
-        _tmdb_dense_window_cache[cache_key] = entry
-        return entry
-
-
-def _tmdb_dense_window(plan, page, page_size, people_ids=None):
-    cache_key = f"{advanced_search_signature(plan.query, 'discover')}|adult={_tmdb_include_adult_value()}"
-    entry = _tmdb_dense_cache_entry(cache_key)
-    required_end = page * page_size
-    fetched_this_request = 0
-    while (
-        len(entry['matches']) <= required_end
-        and not entry['provider_exhausted']
-        and fetched_this_request < TMDB_DENSE_SCAN_PAGE_BUDGET
-    ):
-        provider_page = entry['next_provider_page']
-        data = _tmdb_fetch_provider_page(_tmdb_advanced_url(plan, provider_page))
-        fetched_this_request += 1
-        entry['provider_total_pages'] = max(1, int(data.get('total_pages', 1) or 1))
-        entry['provider_total_results'] = max(0, int(data.get('total_results', 0) or 0))
-        batch = list(data.get('results', []) or [])
-        if plan.strategy == 'title' and plan.summary_groups:
-            batch = [movie for movie in batch if movie_matches_summary(movie, plan.summary_groups, _LANG_COUNTRY)]
-        if people_ids is not None:
-            batch = [movie for movie in batch if _tmdb_movie_id(movie) in people_ids]
-        batch = _tmdb_filter_local_movies(batch, plan.local_groups)
-        for movie in batch:
-            movie_id = _tmdb_movie_id(movie)
-            if not movie_id or movie_id in entry['seen']:
-                continue
-            entry['seen'].add(movie_id)
-            entry['matches'].append(movie)
-        entry['next_provider_page'] = provider_page + 1
-        if not data.get('results') or provider_page >= entry['provider_total_pages']:
-            entry['provider_exhausted'] = True
-    entry['touched_at'] = time.monotonic()
-    ordered = _tmdb_sort_summaries(entry['matches'], plan.query['sort']['key'])
-    start = (page - 1) * page_size
-    end = start + page_size
-    exhausted = entry['provider_exhausted']
-    total_results = len(ordered) if exhausted else None
-    total_pages = max(1, (len(ordered) + page_size - 1) // page_size) if exhausted else None
-    budget_exhausted = not exhausted and fetched_this_request >= TMDB_DENSE_SCAN_PAGE_BUDGET and len(ordered) < end
-    return {
-        'results': ordered[start:end],
-        'page': page,
-        'page_size': page_size,
-        'total_scope': 'exact' if exhausted else 'bounded',
-        'total_results': total_results,
-        'total_pages': total_pages,
-        'has_previous': page > 1,
-        'has_next': len(ordered) > end or not exhausted,
-        'provider_exhausted': exhausted,
-        'provider_total_pages': entry['provider_total_pages'],
-        'provider_total_results': entry['provider_total_results'],
-        'provider_pages_fetched': fetched_this_request,
-        'budget_exhausted': budget_exhausted,
-        'retryable': budget_exhausted,
-        'total_label': (
-            f'{len(ordered)} matches collected from TMDB'
-            if not exhausted else f'{len(ordered)} TMDB matches'
-        ),
-    }
 
 
 def _tmdb_advanced_url(plan, provider_page):
@@ -7461,7 +7438,7 @@ def advanced_tmdb_discover():
                 _tmdb_people_match_ids(plan.people, people_group.get('join', 'or'))
                 if person_requires_provider_stream else None
             )
-            dense = _tmdb_dense_window(plan, page, page_size, people_ids=people_ids)
+            dense = _tmdb_discover_window(plan, page, page_size, people_ids=people_ids)
             return jsonify({
                 **dense,
                 'results': [_normalize_tmdb_movie_summary(movie) for movie in dense['results']],
@@ -7470,37 +7447,12 @@ def advanced_tmdb_discover():
                 'strategy': 'dense_window',
             })
 
-        first_url = _tmdb_advanced_url(plan, provider_pages[0])
-        data = _tmdb_fetch_page_window(first_url, provider_pages)
-        provider_window = _tmdb_unique_discover_window(
-            _tmdb_discover_snapshot_key(first_url, page_size),
-            page,
-            data,
-            provider_offset,
-            page_size,
-        )
-        movies = [_normalize_tmdb_movie_summary(movie) for movie in provider_window]
-
-        metadata = _tmdb_page_metadata(
-            data.get('total_pages', 1),
-            page_size,
-            data.get('total_results'),
-        )
+        window = _tmdb_discover_window(plan, page, page_size)
+        movies = [_normalize_tmdb_movie_summary(movie) for movie in window['results']]
         return jsonify({
+            **window,
             'results': movies,
-            'page': page,
-            'page_size': page_size,
-            'total_pages': metadata['total_pages'],
-            'provider_total_pages': metadata['provider_total_pages'],
-            'provider_page_limit': metadata['provider_page_limit'],
-            'provider_total_results': data.get('total_results', 0),
-            'total_results': data.get('total_results', len(movies)),
             'page_match_count': len(movies),
-            'total_scope': 'provider',
-            'total_label': 'TMDB results',
-            'has_previous': page > 1,
-            'has_next': page < metadata['total_pages'],
-            'provider_exhausted': page >= metadata['total_pages'],
             'local_criteria': list(plan.local_groups),
             'query_signature': advanced_search_signature(plan.query, 'discover'),
             'strategy': plan.strategy,
@@ -7813,16 +7765,9 @@ def tmdb_discover():
             base_url = endpoint_map.get(list_name, endpoint_map['trending_week'])
             url = f"{base_url}?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US&page={tmdb_pages[0]}"
 
-        data = _tmdb_fetch_page_window(url, tmdb_pages)
-        provider_window = _tmdb_unique_discover_window(
-            _tmdb_discover_snapshot_key(url, page_size),
-            page,
-            data,
-            provider_offset,
-            page_size,
-        )
+        window = _tmdb_discover_window(None, page, page_size, first_url=url)
         movies = []
-        for m in provider_window:
+        for m in window['results']:
             poster_path = m.get('poster_path', '')
             release = m.get('release_date', '') or ''
             year    = release[:4] if release else ''
@@ -7847,16 +7792,7 @@ def tmdb_discover():
                 'release_date': release,
                 'adult': bool(m.get('adult', False)),
             })
-        payload = {
-            'results': movies,
-            'page': page,
-            'total_results': data.get('total_results', len(movies)),
-            **_tmdb_page_metadata(
-                data.get('total_pages', 1),
-                page_size,
-                data.get('total_results'),
-            ),
-        }
+        payload = {**window, 'results': movies}
         if keyword_id:
             payload['keyword'] = {
                 'tmdb_id': keyword_id,

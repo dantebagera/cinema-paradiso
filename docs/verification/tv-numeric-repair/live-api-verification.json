@@ -1,0 +1,56 @@
+{
+  "state": "live_api_verified",
+  "shows": [
+    {
+      "show": "South Park",
+      "season": 27,
+      "verified_available_files": 3,
+      "destination": "G:\\TV\\South Park\\Season 27"
+    },
+    {
+      "show": "Dark Matter",
+      "season": 1,
+      "verified_available_files": 9,
+      "destination": "G:\\TV\\Dark Matter (2024)\\Season 01"
+    },
+    {
+      "show": "Slow Horses",
+      "season": 1,
+      "verified_available_files": 6,
+      "destination": "G:\\TV\\Slow Horses\\Season 01"
+    }
+  ],
+  "tv_config": {
+    "enabled": true,
+    "roots": [
+      "G:\\TV"
+    ]
+  },
+  "served_scripts": [
+    "/assets/index-BL38s9_4.js",
+    "/assets/vendor-Bb8JjhAW.js",
+    "/assets/vendor-react-CJZMWplS.js",
+    "/assets/vendor-icons-BISePPUw.js"
+  ],
+  "qbt_torrents": 0,
+  "legacy_job_states": [
+    {
+      "title": "South Park S27 1080p x265 ELiTE",
+      "state": "seed_complete",
+      "destination": "G:\\TV\\South Park\\Season 27",
+      "source_retained": true
+    },
+    {
+      "title": "Dark.Matter.2024.S01.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA",
+      "state": "imported",
+      "destination": "G:\\TV\\Dark Matter (2024)\\Season 01",
+      "source_retained": true
+    },
+    {
+      "title": "Slow.Horses.S01.1080p.ITA ENG.WEBRip.x265.AAC-V3SP4EV3R",
+      "state": "needs_review",
+      "destination": "G:\\TV\\Slow Horses\\Season 01",
+      "source_retained": true
+    }
+  ]
+}

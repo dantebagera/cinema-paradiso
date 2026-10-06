@@ -1,0 +1,47 @@
+{
+  "state": "offline_verified",
+  "moved_files": 18,
+  "bytes": 10411153006,
+  "preserved_staging_files": 18,
+  "unrelated_jobs_unchanged": 493,
+  "preserved_catalog_tables": [
+    "tv_meta",
+    "series",
+    "series_external_ids",
+    "seasons",
+    "episodes",
+    "people",
+    "series_credits",
+    "episode_credits",
+    "episode_file_bindings",
+    "playback_progress",
+    "watch_events",
+    "ingestion_candidates",
+    "metadata_events",
+    "series_curation",
+    "series_hydration",
+    "series_viewing_cursor",
+    "series_watched_actions",
+    "series_watched_action_marks",
+    "series_poster_overrides",
+    "tv_custom_lists",
+    "tv_custom_list_members",
+    "tv_exclusions",
+    "tv_bulk_actions"
+  ],
+  "destinations": [
+    {
+      "show": "South Park",
+      "path": "G:\\TV\\South Park\\Season 27"
+    },
+    {
+      "show": "Dark Matter",
+      "path": "G:\\TV\\Dark Matter (2024)\\Season 01"
+    },
+    {
+      "show": "Slow Horses",
+      "path": "G:\\TV\\Slow Horses\\Season 01"
+    }
+  ],
+  "backup": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\backups\\tv-numeric-repair-e8ef565db57c4e2983649670f651ea29"
+}

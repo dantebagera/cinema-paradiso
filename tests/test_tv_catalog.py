@@ -39,7 +39,7 @@ class TVCatalogTests(unittest.TestCase):
         reopened.store.restore(backup)
         self.assertFalse(reopened.episodes(self.series_id, 1)[0]['completed'])
         self.assertEqual(reopened.store.audit(), {
-            'integrity': 'ok', 'foreign_keys': [], 'schema_version': 4,
+            'integrity': 'ok', 'foreign_keys': [], 'schema_version': 5,
             'orphans': {'episodes': 0, 'files': 0, 'bindings': 0, 'identities': 0, 'progress': 0},
         })
         self.assertFalse((self.root / 'catalog.sqlite').exists())

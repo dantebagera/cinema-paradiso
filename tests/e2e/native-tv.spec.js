@@ -18,12 +18,12 @@ test('TV library uses CP cards, preserves movie state and opens a dedicated seri
   await expect(page.getByText('Movie View', { exact: true }).first()).toBeVisible();
   await switcher.getByRole('button', { name: 'TV Shows', exact: true }).click();
   await expect(page.getByRole('textbox', { name: 'Search TV shows', exact: true })).toHaveValue('Harbor');
-  await page.screenshot({ path: 'docs/verification/tv-parity/library.png', fullPage: true });
+  await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/library.png', fullPage: true });
   await page.getByRole('link', { name: 'Open Harbor Signals' }).click();
   await expect(page).toHaveURL(/\/tv\/series\/1$/);
   await expect(page.getByRole('heading', { name: 'Harbor Signals', exact: true })).toBeVisible();
   await expect(page.getByRole('article', { name: 'S01E02 The Signal' })).toContainText('Missing locally');
-  await page.screenshot({ path: 'docs/verification/tv-parity/series.png', fullPage: true });
+  await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/series.png', fullPage: true });
   await page.getByLabel('TV season').selectOption('0');
   await expect(page.getByRole('article', { name: 'S00E01 Before the Harbor' })).toBeVisible();
 });
@@ -100,7 +100,7 @@ test('TV release review explains rejected capture and submits only the accepted 
   await expect(dialog.getByRole('button', { name: 'Download selected releases' })).toBeEnabled();
   await dialog.getByLabel(/Show blocked releases/).check();
   await expect(dialog).toContainText('HDCAM');
-  await page.screenshot({ path: 'docs/verification/tv-parity/release-review.png', fullPage: true });
+  await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/release-review.png', fullPage: true });
   await dialog.getByRole('button', { name: 'Download selected releases' }).click();
   await expect(dialog.getByRole('button', { name: 'Queued', exact:true })).toBeVisible();
   await dialog.getByRole('button', { name: 'Close TV release review' }).click();
@@ -108,5 +108,5 @@ test('TV release review explains rejected capture and submits only the accepted 
   await page.getByRole('button', { name: 'TV Shows', exact: true }).click();
   await expect(page.getByRole('region', { name: 'TV Downloads' })).toContainText('validating');
   await expect(page.getByTitle('qBittorrent Downloads')).toHaveCount(0);
-  await page.screenshot({ path: 'docs/verification/tv-parity/downloads.png', fullPage: true });
+  await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/downloads.png', fullPage: true });
 });

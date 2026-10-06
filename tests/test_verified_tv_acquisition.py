@@ -66,6 +66,10 @@ class TVAcquisitionTests(unittest.TestCase):
         fixture=json.loads((Path(__file__).parent/'fixtures/native_tv_cases.json').read_text())
         self.tv=TVCatalogRepository(self.root/'tv-catalog.sqlite'); self.series=self.tv.refresh(fixture['series'],fixture['episodes'])
         self.library=self.root/'tv'; self.library.mkdir()
+        self.home = self.library / 'Harbor Signals'
+        (self.home / 'Season 01').mkdir(parents=True)
+        self.tv.approve_path(self.home, 'folder', self.series)
+        self.tv.set_import_home(self.series, self.home, [self.library])
         self.store=AcquisitionRepository(self.root/'acquisition.sqlite')
         self.manager=QBittorrentManager(self.root/'data',{},[self.root/'movies'])
         self.manager.staging_dir.mkdir(parents=True)
@@ -168,8 +172,17 @@ class TVAcquisitionTests(unittest.TestCase):
         self.assertTrue(decision['accepted'],decision['reasons'])
         return self.service.submit(decision['decision_token'],'request-1')
 
+    def submit_legacy(self):
+        result = self.submit()
+        profile = self.store.profile('safe-hd')
+        result['job'] = self.manager.jobs.upsert(self.hash, {'tv_lifecycle_version': None, 'import_mode': 'hardlink_copy',
+            'import_destination': None, 'tv_download_staging_root': None,
+            'destination': str(self.library / 'Legacy recorded placement'),
+            'seeding_policy': {key: profile[key] for key in ('seeding_mode', 'seed_ratio', 'seed_time_seconds')}})
+        return result
+
     def test_fake_client_single_episode_validates_before_resume_and_retains_seeding(self):
-        result=self.submit()
+        result=self.submit_legacy()
         self.assertEqual(result['job']['state'],'validating')
         self.manager.client.resume.assert_not_called()
         self.manager.process_completed()
@@ -218,7 +231,7 @@ class TVAcquisitionTests(unittest.TestCase):
         self.assertTrue(all(row['mode']=='none' for row in monitoring.describe(self.series)['episodes'] if self.tv.episode(row['episode_id'])['season_number']==1))
 
     def test_import_recovery_without_torrent_and_rollback_preserve_source(self):
-        result = self.submit()
+        result = self.submit_legacy()
         self.manager.process_completed()
         job = self.manager.jobs.get(self.hash)
         mapping = self.service.validate_manifest(job, self.files)
@@ -295,7 +308,7 @@ class TVAcquisitionTests(unittest.TestCase):
         profile = self.store.profile('safe-hd')
         profile.update(seeding_mode='ratio', seed_ratio=1.5)
         self.store.save_profile(profile)
-        self.submit()
+        self.submit_legacy()
         self.manager.process_completed()
         self.torrent.update(progress=1, ratio=1.0, seeding_time=30)
         imported = self.manager.process_completed()[0]
@@ -346,6 +359,8 @@ class TVAcquisitionTests(unittest.TestCase):
         episodes = self.tv.episodes(self.series, 1)
         self.assertEqual([row['available'] for row in episodes], [True, False, True])
         self.assertTrue((self.manager.staging_dir/self.files[1]['name']).exists())
+        self.manager.client.pause.assert_called_with(self.hash)
+        self.manager.client.remove_without_files.assert_not_called()
 
     def test_repeat_search_does_not_replace_a_referenced_decision(self):
         self.provider.search_tv.return_value[0]['published_at'] = 1

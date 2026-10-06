@@ -18,7 +18,7 @@ test('shared TV criteria filter the real catalog and reset restores results', as
   await tv.getByRole('button', { name: 'Open filters' }).click();
   await tv.getByRole('button', { name: 'Reset filters' }).click();
   await expect(tv.getByRole('link', { name: 'Open Harbor Signals' })).toBeVisible();
-  await page.screenshot({ path: 'docs/verification/tv-parity/library-filters.png', fullPage: true });
+  await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/library-filters.png', fullPage: true });
 });
 
 test('TV status and in-progress viewing state filter from the main Library bar', async ({ page }) => {
@@ -67,7 +67,7 @@ test('discover preview is read-only and trailers use the shared player without m
   await expect(page.locator('iframe[src*="abc12345678"]')).toHaveCount(0);
   const rows = await (await request.get('/api/tv/series')).json();
   expect(rows.total).toBe(catalogBefore.total);
-  await page.screenshot({ path: 'docs/verification/tv-parity/preview-details.png', fullPage: true });
+  await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/preview-details.png', fullPage: true });
   await page.goBack();
   await expect(page.getByRole('link', { name: 'Open Open Water' })).toBeVisible();
 });

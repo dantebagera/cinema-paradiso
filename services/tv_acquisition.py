@@ -14,7 +14,7 @@ from services.media_file_facts import probe_media_file
 from services.qbittorrent import magnet_hash, normalize_torrent_info_hash, is_allowed_prowlarr_url, TorrentValidationError
 from services.quality_catalog import release_claims
 from services.tv_filename_parser import parse_episode_name, resolve_episode_claim, series_identity, title_key, VIDEO_EXTENSIONS
-from services.verified_import import import_verified_files, rollback_verified_files
+from services.verified_import import import_verified_files, rollback_verified_files, finalize_verified_move, verified_rollback_available
 
 
 class TVAcquisition:
@@ -80,6 +80,28 @@ class TVAcquisition:
         state = 'blocked' if hard or identity.get('state') == 'conflict' else 'identity_review' if identity.get('state') == 'review' else 'resolve' if not decision['candidate']['info_hash'] else 'eligible'
         return {**decision, 'state': state, 'selectable': state in {'eligible', 'resolve'}}
 
+    @staticmethod
+    def import_policy():
+        return {'version': 1, 'mode': 'move', 'seeding_mode': 'none'}
+
+    @staticmethod
+    def _same_destination(left, right):
+        return bool(left and right) and all(left.get(key) == right.get(key) for key in ('state', 'show_home', 'season', 'path'))
+
+    @staticmethod
+    def job_status(job):
+        if job and job.get('tv_lifecycle_version') == 1:
+            return {**job, 'rollback_available': verified_rollback_available(job)}
+        return job
+
+    def _record_tv_decision(self, decision, series):
+        destination = self.repository.resolve_import_destination(series.get('id'), decision['request']['season'], self.roots())
+        decision.update(import_destination=destination, import_policy=self.import_policy())
+        # Destination is part of review identity. A home change cannot reuse an old token.
+        decision['decision_token'] = hashlib.sha256((decision['decision_token'] + json.dumps(destination, sort_keys=True)).encode()).hexdigest()
+        self.acquisition.record_decision(decision)
+        return decision
+
     def search(self, series_id=None, season=None, episode=None, profile_id='safe-hd', *, manual=True, tmdb_id=None, episode_numbers=None, missing_only=False, upgrade=False):
         deadline = time.monotonic() + 30
         request = dict(series_id=series_id, tmdb_id=tmdb_id, season=season, episode=episode, episode_numbers=episode_numbers, missing_only=missing_only, upgrade=upgrade)
@@ -128,6 +150,8 @@ class TVAcquisition:
             if row['selectable'] and coverage and coverage <= uncovered:
                 recommended.append(row['decision_token']); uncovered -= coverage
         return {'mode': 'manual' if manual else 'automatic', 'target': target, 'decisions': ranked, 'search': report,
+                'import_destination': self.repository.resolve_import_destination(series.get('id'), season, self.roots()),
+                'import_policy': self.import_policy(),
                 'recommended': recommended, 'missing_episodes': sorted(uncovered),
                 'episodes': [{'id': ep['id'], 'number': ep['episode_number'], 'code': ep.get('code') or f"S{ep['season_number']:02d}E{ep['episode_number']:02d}"} for ep in episodes]}
 
@@ -174,7 +198,7 @@ class TVAcquisition:
             decision = evaluate_release(candidate, own_target, profile, manual=manual, owned=owned, blocked=self.acquisition.blocked(own_target['key'], info_hash), now=self.clock())
             decision.update(request=candidate_request, search_request=request, wanted_episodes=target['episode_ids'], requested_episodes=[{'id': ep['id'], 'number': ep['episode_number'], 'provider_id': ep.get('provider_id')} for ep in own_episodes])
             decision = self._state(decision)
-            self.acquisition.record_decision(decision)
+            self._record_tv_decision(decision, series)
             decisions.append(decision)
         return decisions
 
@@ -190,7 +214,10 @@ class TVAcquisition:
             if candidate.get('info_hash') and candidate['info_hash'] != resolved.get('info_hash'):
                 raise ValueError('Resolved torrent identity differs from the selected release; search again')
             candidate.update(resolved)
-        target, _, episodes = self.target(**decision['request'])
+        target, series, episodes = self.target(**decision['request'])
+        destination = self.repository.resolve_import_destination(series.get('id'), decision['request']['season'], self.roots())
+        if not self._same_destination(decision.get('import_destination'), destination):
+            raise ValueError('Destination changed; search and review again')
         original = {(r['number'], str(r.get('provider_id'))) for r in decision.get('requested_episodes', [])}
         current = {(r['episode_number'], str(r.get('provider_id'))) for r in episodes}
         if original and original != current: raise ValueError('Episode identity changed; search again')
@@ -204,7 +231,7 @@ class TVAcquisition:
                                   blocked=self.acquisition.blocked(target['key'], candidate.get('info_hash')))
         result.update(request=decision['request'], search_request=decision.get('search_request'), wanted_episodes=decision.get('wanted_episodes', []), requested_episodes=decision.get('requested_episodes', []))
         result = self._state(result)
-        self.acquisition.record_decision(result)
+        self._record_tv_decision(result, series)
         return result
 
     def _materialize(self, decision):
@@ -217,7 +244,7 @@ class TVAcquisition:
         else:
             series_id = series['id']
         new_request = {**request, 'series_id': series_id}
-        new_target, _, new_rows = self.target(**new_request)
+        new_target, new_series, new_rows = self.target(**new_request)
         original = decision.get('requested_episodes')
         if original and {(r['number'], str(r.get('provider_id'))) for r in original} != {(r['episode_number'], str(r.get('provider_id'))) for r in new_rows}:
             raise ValueError('Episode identity changed; search and review again')
@@ -226,7 +253,7 @@ class TVAcquisition:
         candidate = {**decision['candidate'], 'episode_ids': new_target['episode_ids']}
         result = evaluate_release(candidate, new_target, self.acquisition.profile(decision['profile_id']), manual=decision['manual'])
         result.update(request=new_request, origin_token=decision['decision_token'])
-        self.acquisition.record_decision(result)
+        self._record_tv_decision(result, new_series)
         return result
 
     def submit_batch(self, tokens, request_key, *, allow_partial=False, allow_extras=False):
@@ -313,12 +340,18 @@ class TVAcquisition:
             if not current['accepted']:
                 raise ValueError('; '.join(row['message'] for row in current['reasons']))
             roots = [Path(root).resolve() for root in self.roots()]
-            if not roots or not roots[0].is_dir():
+            if not any(root.is_dir() for root in roots):
                 raise ValueError('Configure an existing TV library root before download')
             manager = self.manager()
             staging = manager.staging_dir.resolve()
-            if staging == roots[0] or staging in roots[0].parents or roots[0] in staging.parents:
+            if any(staging == root or staging in root.parents or root in staging.parents for root in roots):
                 raise ValueError('TV library and torrent staging must be separate')
+            destination = self.repository.resolve_import_destination(series.get('id'), decision['request']['season'], roots)
+            recorded = self.acquisition.decision(prior['decision_token'], max_age=365*86400) if prior else decision
+            if not self._same_destination(recorded.get('import_destination'), destination):
+                raise ValueError('Destination changed; search and review again')
+            if destination['state'] != 'ready':
+                raise ValueError(destination['reason'])
             staging.mkdir(parents=True, exist_ok=True)
             pending = sum(int(item.get('expected_size') or 0) for item in manager.jobs.all().values() if item.get('state') not in {'imported', 'cancelled', 'rolled_back', 'validation_failed'} and item.get('expected_info_hash') != current['candidate']['info_hash'])
             unreserved = max(0, shutil.disk_usage(staging).free - pending)
@@ -331,6 +364,7 @@ class TVAcquisition:
             # tracked local rows. Ordinary search/resolve remains read-only.
             decision = self._materialize(decision)
             target, series, episodes = self.target(**decision['request'])
+            self.repository.set_import_home(series['id'], destination['show_home'], roots)
             intent = self.acquisition.intent(request_key, decision)
             existing = manager.jobs.get(intent['info_hash'])
             if existing:
@@ -343,8 +377,10 @@ class TVAcquisition:
                         'submission_retry': bool(prior),
                         'profile_id': profile['id'], 'profile_version': profile['version'], 'decision_token': token,
                         'title': decision['candidate']['title'], 'expected_info_hash': intent['info_hash'], 'expected_size': current['estimated_bytes'],
-                        'destination': str(roots[0] / f"{series['tmdb_id']}"), 'import_mode': 'copy' if profile['import_mode'] == 'copy' else 'hardlink_copy',
-                        'seeding_policy': {key: profile[key] for key in ('seeding_mode', 'seed_ratio', 'seed_time_seconds')},
+                        'destination': destination['path'], 'import_destination': destination,
+                        'tv_download_staging_root': str(staging),
+                        'tv_lifecycle_version': 1, 'import_mode': 'move',
+                        'seeding_policy': {'seeding_mode': 'none'},
                         'retry_policy': {key: profile[key] for key in ('retry_max_attempts', 'retry_backoff_seconds')}}
             try:
                 job = self.submit_candidate(manager, decision['candidate'], metadata) if self.submit_candidate else manager.submit_magnet(decision['candidate']['magnet_url'], metadata)
@@ -394,6 +430,8 @@ class TVAcquisition:
         return {'mappings': mappings, 'episode_ids': sorted(covered), 'skipped_files': skipped}
 
     def process_completed(self, manager, torrent_hash, job, torrent):
+        if job.get('tv_lifecycle_version') == 1:
+            return self.complete_normal_import(manager, torrent_hash, job, torrent)
         if job.get('state') in {'imported', 'partial_import'}:
             return self.maintain_seeding(manager, torrent_hash, job, torrent)
         if job.get('state') == 'retry_wait':
@@ -465,6 +503,109 @@ class TVAcquisition:
             self.acquisition.event(job['acquisition_id'], 'import_needs_review', {'reason': str(error)}, state='import_pending')
             return manager.jobs.upsert(torrent_hash, {'state': 'needs_review', 'last_error': str(error)})
 
+    def complete_normal_import(self, manager, torrent_hash, job, torrent):
+        if job.get('state') in {'imported', 'partial_import', 'cleanup_failed', 'rolled_back', 'cancelled', 'validation_failed', 'needs_review'}:
+            return job
+        if job.get('state') == 'retry_wait':
+            if self.clock() < float(job.get('next_retry_at') or 0):
+                return job
+            job = manager.jobs.upsert(torrent_hash, {'state': 'importing', 'last_error': ''})
+        if not job.get('tv_selected_files') and (not torrent or float(torrent.get('progress') or 0) < 1):
+            return job
+        try:
+            target, series, _ = self.target(**job['tv_request'])
+            current = self.repository.resolve_import_destination(series['id'], job['tv_request']['season'], self.roots())
+            if not self._same_destination(current, job['import_destination']) or current['state'] != 'ready' or current['path'] != job['destination']:
+                raise ValueError('Snapshotted destination changed or is no longer approved; review required')
+            if self.acquisition.blocked(job['target_key'], torrent_hash):
+                raise ValueError('This release is blocklisted; cleanup requires review')
+            selected = job.get('tv_selected_files')
+            if not selected:
+                mapping = self.validate_manifest(job, manager.client.files(torrent_hash))
+                source_root = Path(torrent.get('save_path') or manager.staging_dir).resolve()
+                if source_root != manager.staging_dir.resolve() and manager.staging_dir.resolve() not in source_root.parents:
+                    raise ValueError('Completed payload escaped staging')
+                selected, failures = [], []
+                claimed = release_claims(job['title'])['resolution']
+                for item in mapping['mappings']:
+                    source = (source_root / item['name']).resolve()
+                    if manager.staging_dir.resolve() not in source.parents:
+                        raise ValueError('Completed file escaped staging')
+                    measured = self.probe(str(source))
+                    measured = asdict(measured) if is_dataclass(measured) else dict(measured)
+                    actual = '2160p' if measured.get('quality_class') == '4K' else measured.get('quality_class')
+                    if measured.get('probe_status') != 'ok' or (claimed != 'unknown' and actual != claimed):
+                        failures.append({'name': item['name'], 'reason': 'Completed video could not be verified' if measured.get('probe_status') != 'ok' else 'Measured resolution contradicts the selected release'})
+                    else:
+                        selected.append({**item, 'source': str(source), 'facts': measured})
+                job = manager.jobs.upsert(torrent_hash, {'tv_selected_files': selected, 'tv_staging_root': str(source_root),
+                    'tv_verified_mapping': {'mappings': selected, 'episode_ids': sorted({ep for row in selected for ep in row['episode_ids']})},
+                    'tv_import': {'imported_files': 0, 'verified_files': len(selected), 'failed_files': len(failures), 'failures': failures,
+                                  'covered_episodes': sorted({ep for row in selected for ep in row['episode_ids']})}})
+                if not selected:
+                    raise ValueError(failures[0]['reason'] if failures else 'No verified video files remain')
+            publication = job.get('tv_publication') or {}
+            if publication.get('state') != 'committed':
+                imported = import_verified_files(manager.jobs, torrent_hash, [row['source'] for row in selected],
+                    manager.staging_dir, job['destination'], mode='move', upgrade=bool(job['tv_request'].get('upgrade')))
+                plan = imported['preserving_import_plan']
+                entries = []
+                for row, item in zip(plan, selected):
+                    existing = self.repository.binding_episode_ids(row['target'])
+                    row.setdefault('binding_pre_existing', bool(existing))
+                    manager.jobs.upsert(torrent_hash, {'preserving_import_plan': plan})
+                    if existing and existing != set(item['episode_ids']):
+                        raise ValueError('Destination has conflicting TV episode bindings; review required')
+                    # Preserve this fact across a crash after binding but before its journal checkpoint.
+                    entries.append({'path': row['target'], 'episode_ids': item['episode_ids'], 'facts': item['facts']})
+                manager.jobs.upsert(torrent_hash, {'preserving_import_plan': plan, 'tv_publication': {'state': 'prepared', 'entries': entries}})
+                self.repository.bind_files(entries, self.roots())
+                job = manager.jobs.upsert(torrent_hash, {'tv_publication': {'state': 'committed', 'entries': entries},
+                    'tv_import': {**job['tv_import'], 'imported_files': len(selected)},
+                    'library_scan_pending': False, 'identity_handoff': {'state': 'tv_published'}})
+            else:
+                entries = publication['entries']
+            for entry in entries:
+                if self.repository.binding_episode_ids(entry['path']) != set(entry['episode_ids']):
+                    raise ValueError('Committed TV binding changed; cleanup requires review')
+            if job['tv_import']['failed_files']:
+                if torrent:
+                    manager.client.pause(torrent_hash)
+                self.acquisition.event(job['acquisition_id'], 'partial_import', job['tv_import'], state='ready')
+                return manager.jobs.upsert(torrent_hash, {'state': 'partial_import', 'source_retained': True,
+                    'rollback_available': True, 'last_error': 'Partial import; recovery sources retained'})
+            # From here a rollback cannot restore a removed transfer. Recovery finishes cleanup.
+            if not job.get('torrent_removed'):
+                job = manager.jobs.upsert(torrent_hash, {'cleanup_started': True, 'rollback_available': False,
+                                                       'torrent_removal_started': True})
+                if torrent:
+                    manager.client.pause(torrent_hash)
+                    manager.client.remove_without_files(torrent_hash)
+                job = manager.jobs.upsert(torrent_hash, {'torrent_removed': True})
+            result = finalize_verified_move(manager.jobs, torrent_hash, manager.staging_dir)
+            self.acquisition.event(job['acquisition_id'], 'imported', job['tv_import'], state='ready')
+            return result
+        except Exception as error:
+            latest = manager.jobs.get(torrent_hash)
+            if torrent and float(torrent.get('progress') or 0) >= 1 and not latest.get('torrent_removed'):
+                try:
+                    manager.client.pause(torrent_hash)
+                except Exception as pause_error:
+                    manager.jobs.upsert(torrent_hash, {'pause_error': str(pause_error)})
+            if latest.get('tv_publication', {}).get('state') == 'committed' and not latest.get('tv_import', {}).get('failed_files'):
+                self.acquisition.event(job['acquisition_id'], 'cleanup_failed', {'reason': str(error)}, state='import_pending')
+                return manager.jobs.upsert(torrent_hash, {'state': 'cleanup_failed', 'last_error': str(error)})
+            if isinstance(error, OSError):
+                policy = job.get('retry_policy') or {'retry_max_attempts': 3, 'retry_backoff_seconds': 300}
+                attempts = int(job.get('retry_attempts') or 0) + 1
+                if attempts <= int(policy.get('retry_max_attempts') or 0):
+                    delay = int(policy.get('retry_backoff_seconds') or 300) * 2 ** (attempts - 1)
+                    self.acquisition.event(job['acquisition_id'], 'import_retry_scheduled', {'reason': str(error), 'attempt': attempts}, state='import_pending')
+                    return manager.jobs.upsert(torrent_hash, {'state': 'retry_wait', 'last_error': str(error), 'retry_attempts': attempts, 'next_retry_at': self.clock() + delay})
+                self.acquisition.block(job['target_key'], torrent_hash, 'Import retry limit reached')
+            self.acquisition.event(job['acquisition_id'], 'import_needs_review', {'reason': str(error)}, state='import_pending')
+            return manager.jobs.upsert(torrent_hash, {'state': 'needs_review', 'last_error': str(error)})
+
     def maintain_seeding(self, manager, torrent_hash, job, torrent):
         policy = job.get('seeding_policy') or {'seeding_mode': 'forever', 'seed_ratio': 1.0, 'seed_time_seconds': 0}
         mode = policy.get('seeding_mode', 'forever')
@@ -500,7 +641,7 @@ class TVAcquisition:
                 if not job or job.get('acquisition_id') != intent_id:
                     raise ValueError('No matching transfer job; search again before retrying')
                 if operation == 'retry':
-                    if job['state'] not in {'needs_review', 'validation_failed'}:
+                    if job['state'] not in {'needs_review', 'validation_failed', 'cleanup_failed'}:
                         raise ValueError('Only a failed or review transfer can be retried')
                     if self.acquisition.blocked(row['target'], row['info_hash']):
                         raise ValueError('This release is blocklisted; search for another candidate')
@@ -515,6 +656,13 @@ class TVAcquisition:
                 if operation == 'rollback':
                     def unpublish(paths):
                         with self.repository.store.transaction() as db:
+                            if job.get('tv_lifecycle_version') == 1:
+                                expected = {row['path']: set(row['episode_ids']) for row in (job.get('tv_publication') or {}).get('entries', [])}
+                                for path in paths:
+                                    existing = {row[0] for row in db.execute('SELECT b.episode_id FROM episode_file_bindings b '
+                                        'JOIN media_files f ON f.id=b.file_id WHERE f.path=?', (path,))}
+                                    if existing and existing != expected.get(path, set()):
+                                        raise ValueError('TV binding changed; rollback requires review')
                             for path in paths:
                                 db.execute('UPDATE media_files SET available=0 WHERE path=?', (path,))
                     result = rollback_verified_files(manager.jobs, row['info_hash'], unpublish=unpublish)

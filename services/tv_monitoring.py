@@ -120,6 +120,9 @@ class TVMonitoring:
             elif action == 'missing' and row['released'] and not row['available'] and not withheld:
                 candidates.append(row['id'])
         return {'series_id': int(series_id), 'tmdb_id': series['tmdb_id'], 'scope': scope,
+                'import_destinations': [self.tv.resolve_import_destination(series_id, number, self.acquisition.roots())
+                    for number in sorted({row['season_number'] for row in rows if row['id'] in candidates})],
+                'import_policy': self.acquisition.import_policy(),
                 'action': action, 'season': season, 'profile_id': profile_id, 'counts': counts,
                 'target_episode_ids': candidates, 'metadata_complete': self.tv.hydration(series_id)['status'] == 'complete'}
 
