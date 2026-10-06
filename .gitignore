@@ -51,6 +51,10 @@ winapp/
 runtime/qbittorrent/
 runtime/ffmpeg/
 runtime/player/
+runtime/ollama/
+runtime/prowlarr/
+runtime/flaresolverr/
+library/
 release/
 *.zip
 

@@ -61,6 +61,10 @@ def _document_domain(name):
 
 def catalog_database_path(user_data_dir, local_app_data=None):
     user_data_dir = Path(user_data_dir).resolve()
+    # Portable launchers keep authoritative state with the selected data folder.
+    # Installed CP retains its existing per-data-root LocalAppData database.
+    if os.environ.get("CP_PORTABLE_DATA") == "1":
+        return user_data_dir / "catalog.sqlite"
     root = Path(local_app_data or os.environ.get("LOCALAPPDATA") or (Path.home() / ".cinema-paradiso"))
     key = hashlib.blake2b(str(user_data_dir).encode("utf-8", errors="surrogatepass"), digest_size=8).hexdigest()
     return (root / "Cinema Paradiso" / "Catalog" / f"catalog-read-{key}.sqlite").resolve()

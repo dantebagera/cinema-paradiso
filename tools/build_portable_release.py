@@ -3,6 +3,11 @@ import json
 import shutil
 import sys
 import zipfile
+import copy
+import sqlite3
+import subprocess
+import xml.etree.ElementTree as ET
+from contextlib import closing
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -189,19 +194,13 @@ def copy_player_runtime(source, destination):
     return manifest
 
 
-def build_release_zip(project_root, qbt_source=None, ffmpeg_source=None, output_dir=None, player_source=None):
+def copy_application_files(project_root, staging, dist_source=None):
+    """One allowlist for public releases and explicitly private test folders."""
     project_root = Path(project_root).resolve()
-    app_version = read_project_version(project_root)
-    qbt_source = Path(qbt_source or (project_root / "data" / "qbittorrent" / "versions" / QBT_VERSION)).resolve()
-    player_source = resolve_player_bundle_source(project_root, player_source)
-    default_ffmpeg_source = project_root / "runtime" / "ffmpeg"
-    ffmpeg_source = Path(ffmpeg_source).resolve() if ffmpeg_source else (default_ffmpeg_source.resolve() if default_ffmpeg_source.exists() else None)
-    output_dir = Path(output_dir or (project_root / "release")).resolve()
-    staging = output_dir / f"Cinema-Paradiso-{app_version}-Portable"
-    if staging.exists():
-        shutil.rmtree(staging)
-    staging.mkdir(parents=True, exist_ok=True)
+    staging = Path(staging)
     for item in project_root.iterdir():
+        if item.name == "dist" and dist_source is not None:
+            continue
         if item.is_file() and item.name not in PORTABLE_ROOT_FILES:
             continue
         if item.is_dir() and item.name not in PORTABLE_ROOT_DIRECTORIES:
@@ -215,6 +214,8 @@ def build_release_zip(project_root, qbt_source=None, ffmpeg_source=None, output_
             )
         else:
             shutil.copy2(item, target)
+    if dist_source is not None:
+        shutil.copytree(dist_source, staging / "dist")
     native_root = project_root / "native"
     if native_root.is_dir():
         native_destination = staging / "native"
@@ -227,6 +228,21 @@ def build_release_zip(project_root, qbt_source=None, ffmpeg_source=None, output_
                     native_destination / directory_name,
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "*.pdb"),
                 )
+
+
+def build_release_zip(project_root, qbt_source=None, ffmpeg_source=None, output_dir=None, player_source=None):
+    project_root = Path(project_root).resolve()
+    app_version = read_project_version(project_root)
+    qbt_source = Path(qbt_source or (project_root / "data" / "qbittorrent" / "versions" / QBT_VERSION)).resolve()
+    player_source = resolve_player_bundle_source(project_root, player_source)
+    default_ffmpeg_source = project_root / "runtime" / "ffmpeg"
+    ffmpeg_source = Path(ffmpeg_source).resolve() if ffmpeg_source else (default_ffmpeg_source.resolve() if default_ffmpeg_source.exists() else None)
+    output_dir = Path(output_dir or (project_root / "release")).resolve()
+    staging = output_dir / f"Cinema-Paradiso-{app_version}-Portable"
+    if staging.exists():
+        shutil.rmtree(staging)
+    staging.mkdir(parents=True, exist_ok=True)
+    copy_application_files(project_root, staging)
     copy_qbt_runtime(
         qbt_source,
         staging / "runtime" / "qbittorrent" / "versions" / QBT_VERSION,
@@ -252,6 +268,120 @@ def build_release_zip(project_root, qbt_source=None, ffmpeg_source=None, output_
             if file_path.is_file():
                 archive.write(file_path, file_path.relative_to(staging.parent))
     return zip_path
+
+
+def friend_test_config(original):
+    """Keep service credentials/preferences, replace machine-specific storage."""
+    config = copy.deepcopy(original)
+    config.update(movies_dir="library/movies", movies_dirs=["library/movies"],
+                  tv_roots=["library/tv"], user_data_dir="data", tmdb_cache_dir="cache",
+                  prowlarr_url="http://127.0.0.1:19696", ollama_url="http://127.0.0.1:21434",
+                  qbt_mode="embedded", qbt_download_dir="", qbt_incomplete_dir="", qbt_webui_port=18686)
+    # Physical screen position belongs to the recipient's monitor.
+    if isinstance(config.get("player"), dict):
+        config["player"].pop("window_state", None)
+    return config
+
+
+def copy_prowlarr_settings(source, destination):
+    source, destination = Path(source), Path(destination)
+    destination.mkdir(parents=True, exist_ok=True)
+    with closing(sqlite3.connect(f"{(source / 'prowlarr.db').resolve().as_uri()}?mode=ro", uri=True)) as live:
+        with closing(sqlite3.connect(destination / "prowlarr.db")) as snapshot:
+            live.backup(snapshot)
+            if snapshot.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+                raise ValueError("Prowlarr settings snapshot failed integrity check")
+            for row_id, settings in snapshot.execute("SELECT Id,Settings FROM IndexerProxies WHERE Implementation='FlareSolverr'").fetchall():
+                payload = json.loads(settings)
+                payload["host"] = "http://127.0.0.1:18191/"
+                snapshot.execute("UPDATE IndexerProxies SET Settings=? WHERE Id=?", (json.dumps(payload), row_id))
+            snapshot.commit()
+    config = ET.parse(source / "config.xml")
+    for key, value in {"Port": "19696", "BindAddress": "127.0.0.1", "UrlBase": "",
+                       "EnableSsl": "False", "LaunchBrowser": "False", "UpdateAutomatically": "False"}.items():
+        node = config.getroot().find(key)
+        if node is None:
+            node = ET.SubElement(config.getroot(), key)
+        node.text = value
+    config.write(destination / "config.xml", encoding="utf-8", xml_declaration=True)
+
+
+def build_friend_test_folder(project_root, destination, *, ollama_source, prowlarr_source,
+                             flaresolverr_source, ffmpeg_source, dist_source,
+                             ollama_identity_source=None):
+    """Explicit private export. Never called by the public ZIP command."""
+    root, target = Path(project_root).resolve(), Path(destination).resolve()
+    if target.exists():
+        raise FileExistsError(f"Private test destination already exists: {target}")
+    if target == root or root in target.parents:
+        raise ValueError("Private export must be outside the source checkout")
+    required = [(Path(ollama_source) / "ollama.exe"), (Path(prowlarr_source) / "bin/Prowlarr.Console.exe"),
+                (Path(flaresolverr_source) / "flaresolverr.exe"), Path(dist_source) / "index.html"]
+    for executable in required:
+        if not executable.is_file():
+            raise FileNotFoundError(executable)
+    settings = json.loads((root / "config.json").read_text(encoding="utf-8-sig"))
+    player = resolve_player_bundle_source(root)
+    # Validate hashes before starting a large copy.
+    validate_player_manifest(player, verify_hashes=True)
+    target.mkdir(parents=True)
+    copy_application_files(root, target, dist_source=dist_source)
+    (target / "config.json").write_text(json.dumps(friend_test_config(settings), indent=2), encoding="utf-8")
+    copy_qbt_runtime(root / "data/qbittorrent/versions" / QBT_VERSION,
+                     target / "runtime/qbittorrent/versions" / QBT_VERSION,
+                     app_version=read_project_version(root))
+    copy_player_runtime(player, target / "runtime/player")
+    copy_ffmpeg_runtime(ffmpeg_source, target / "runtime/ffmpeg", app_version=read_project_version(root))
+    ollama = Path(ollama_source)
+    (target / "runtime/ollama").mkdir(parents=True)
+    shutil.copy2(ollama / "ollama.exe", target / "runtime/ollama/ollama.exe")
+    shutil.copytree(ollama / "lib", target / "runtime/ollama/lib")
+    shutil.copytree(Path(prowlarr_source) / "bin", target / "runtime/prowlarr",
+                    ignore=shutil.ignore_patterns("*.pdb", "*.log"))
+    copy_prowlarr_settings(prowlarr_source, target / "data/prowlarr")
+    flare = Path(flaresolverr_source)
+    (target / "runtime/flaresolverr").mkdir(parents=True)
+    shutil.copy2(flare / "flaresolverr.exe", target / "runtime/flaresolverr/flaresolverr.exe")
+    shutil.copytree(flare / "_internal", target / "runtime/flaresolverr/_internal",
+                    ignore=shutil.ignore_patterns("*.log", "__pycache__"))
+    data = Path(settings.get("user_data_dir") or root / "data")
+    iptv = data / "iptv"
+    for relative in [Path("providers.json"), Path("metadata-settings.json")]:
+        if (iptv / relative).is_file():
+            (target / "data/iptv").mkdir(parents=True, exist_ok=True)
+            shutil.copy2(iptv / relative, target / "data/iptv" / relative)
+    if (iptv / "providers.json").is_file():
+        for provider in json.loads((iptv / "providers.json").read_text())["providers"]:
+            provider_id = provider["provider_id"]
+            if not provider_id.isalnum():
+                raise ValueError("Invalid IPTV provider ID")
+            source = iptv / "providers" / provider_id / "provider.json"
+            dest = target / "data/iptv/providers" / provider_id
+            dest.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, dest / "provider.json")
+    if ollama_identity_source is not None:
+        home = target / "data/ollama-home/.ollama"
+        home.mkdir(parents=True, exist_ok=True)
+        for name in ("id_ed25519", "id_ed25519.pub"):
+            shutil.copy2(Path(ollama_identity_source) / name, home / name)
+    for relative in ("library/movies", "library/tv", "cache", "data/ollama-models"):
+        (target / relative).mkdir(parents=True, exist_ok=True)
+    # Private launcher replaces the public development launcher only in this copy.
+    shutil.copy2(root / "tools/friend_test_run.bat", target / "run.bat")
+    shutil.copy2(root / "tools/friend_test_signin.bat", target / "Ollama sign in.bat")
+    shutil.copy2(root / "tools/friend_test_stop.bat", target / "Stop CP.bat")
+    shutil.copy2(root / "tools/friend_test_handover.md", target / "CODEX-HANDOVER.md")
+    for name in ("AGENTS.md", ".gitignore"):
+        shutil.copy2(root / name, target / name)
+    shutil.copytree(root / "tests", target / "tests", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    commit = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], text=True).strip()
+    manifest = {"kind": "private-friend-test", "source_commit": commit,
+                "cp_version": read_project_version(root), "cloud_model": settings.get("ollama_model"),
+                "ollama_account_included": ollama_identity_source is not None,
+                "libraries": "empty; no media/catalog/jobs copied", "ports": {
+                    "CP": 15000, "Ollama": 21434, "Prowlarr": 19696, "FlareSolverr": 18191, "qBittorrent": 18686}}
+    (target / "TEST-PACKAGE.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    return target
 
 
 def main():
