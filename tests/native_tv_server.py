@@ -48,6 +48,11 @@ raw_series = {'id': 900001, 'name': 'Harbor Signals', 'original_name': 'Harbor S
 metadata = services['metadata']
 repository.refresh({**metadata.normalize(raw_series), 'overview': 'A coastal town follows a mysterious radio signal.'}, fixture['episodes'], metadata.credits(raw_series))
 provider_examples = json.loads((Path(__file__).parent/'fixtures/tv_provider_parity.json').read_text(encoding='utf-8'))
+provider_examples['910003'] = {
+    'detail': {**raw_series, 'id':910003, 'name':'Louie Fixture', 'original_name':'Louie Fixture', 'first_air_date':'2010-06-29',
+               'number_of_seasons':1, 'number_of_episodes':3, 'seasons':[{'season_number':1,'air_date':'2010-06-29','episode_count':3}],
+               'external_ids':{'imdb_id':'tt9100030'}},
+    'season': {'episodes':[{'id':9100030+n,'season_number':1,'episode_number':n,'name':f'Fixture {n}','air_date':'2010-06-29'} for n in (1,2,3)]}}
 def tmdb_fixture(path, **params):
     pieces=path.split('/')
     if len(pieces)>2 and pieces[1]=='tv' and pieces[2] in provider_examples:
@@ -82,8 +87,12 @@ from types import SimpleNamespace
 from unittest.mock import Mock
 owner = app._tv_acquisition()
 owner.roots = lambda: [media]
+app._prowlarr_url, app._prowlarr_key = 'http://fixture.invalid', 'fixture'
+app._fetch_enabled_prowlarr_indexers = lambda: [{'id': 2, 'name': 'YTS'}, {'id': 7, 'name': 'LimeTorrents'}, {'id': 9, 'name': '1337x'}]
+app._download_trusted_indexers, app._download_trusted_indexers_configured = ['2'], True
+app._tv_download_trusted_indexers, app._tv_download_trusted_indexers_configured = ['7', '9'], True
 owner.prowlarr = lambda: SimpleNamespace(base_url='http://fixture.invalid', search_tv=lambda **kw: [
-    {'title': f"Harbor.Signals.S{kw.get('season') or 1:02d}E{kw.get('episode') or 2:02d}.1080p.WEB-DL", 'tmdbId': 900001, 'infoHash': 'a'*40, 'magnetUrl': 'magnet:?xt=urn:btih:'+'a'*40, 'indexerId': 7, 'seeders': 12, 'size': 1000},
+    {'title': f"Harbor.Signals.S{kw.get('season') or 1:02d}E{kw.get('episode') or (1 if kw.get('season') == 2 else 2):02d}.1080p.WEB-DL", 'tmdbId': 900001, 'infoHash': ('d' if kw.get('season') == 2 else 'a')*40, 'magnetUrl': 'magnet:?xt=urn:btih:'+('d' if kw.get('season') == 2 else 'a')*40, 'indexerId': 7, 'seeders': 12, 'size': 1000},
     {'title': 'Harbor.Signals.S01E02.1080p.HDCAM', 'tmdbId': 900001, 'infoHash': 'b'*40, 'magnetUrl': 'magnet:?xt=urn:btih:'+'b'*40, 'indexerId': 7, 'seeders': 10, 'size': 1000}])
 original_provider = owner.prowlarr
 
@@ -98,7 +107,7 @@ def parity_provider():
 owner.prowlarr=parity_provider
 import hashlib
 owner.resolve_candidate=lambda candidate: {'info_hash':hashlib.sha1(candidate['title'].encode()).hexdigest(),'magnet_url':'magnet:?xt=urn:btih:'+hashlib.sha1(candidate['title'].encode()).hexdigest(),'download_url':'','transport_verified':True}
-owner.trusted_indexers = lambda: [7]
+owner.trusted_indexers = app._effective_tv_download_trusted_indexer_ids
 manager = app._get_qbittorrent_manager()
 manager.ensure_running = Mock(return_value=True)
 manager.client = Mock()
@@ -183,6 +192,78 @@ def fixture_ambiguous_home():
 def fixture_reset_home():
     repository.store.restore(root / 'before-home-choice.sqlite')
     return {'reset': True}
+
+@app.app.post('/__tv_fixture/new-home/begin')
+def fixture_new_begin():
+    repository.store.backup(root / 'before-new-home.sqlite')
+    return {'tmdb_id':910003}
+
+@app.app.get('/__tv_fixture/new-home/state')
+def fixture_new_state():
+    with repository.store.connection() as db:
+        tracked = db.execute('SELECT id FROM series WHERE tmdb_id=910003').fetchone()
+    return {'tracked':bool(tracked),'home_exists':(media / 'Louie Fixture (2010)').exists()}
+
+@app.app.post('/__tv_fixture/source-policy')
+def fixture_source_policy():
+    original = owner.prowlarr
+    provider, calls = original(), []
+    def search(**kwargs):
+        calls.append(kwargs.get('indexer_ids'))
+        return provider.search_tv(**kwargs)
+    owner.prowlarr = lambda: SimpleNamespace(base_url=provider.base_url, search_tv=search)
+    try:
+        owner.search(series_id, 1, 2, manual=False)
+        automatic = calls[-1]
+        owner.search(series_id, 1, 2, manual=True)
+        return {'automatic_indexers':automatic,'manual_indexers':calls[-1]}
+    finally: owner.prowlarr = original
+
+@app.app.post('/__tv_fixture/new-home/complete')
+def fixture_new_complete():
+    digest = hashlib.sha1(b'Louie.Fixture.S01E01.1080p.WEB-DL').hexdigest()
+    job = manager.jobs.get(digest)
+    if not job: raise ValueError('Use the desktop Download action first')
+    path = manager.staging_dir / 'Louie.Fixture.S01E01.1080p.WEB-DL.mkv'
+    path.write_bytes(b'x'*100000)
+    files = [{'name':path.name, 'size':path.stat().st_size}]
+    torrent = {'hash':digest,'name':path.name,'progress':1,'save_path':str(manager.staging_dir)}
+    original_probe, original_files = owner.probe, manager.client.files.side_effect
+    owner.probe = lambda _: {'probe_status':'ok','quality_class':'1080p'}
+    manager.client.files.side_effect = lambda _: files
+    try:
+        with manager._completion_lock:
+            validated = manager._process_pending_magnet_validation(digest, job, torrent)
+            result = owner.process_completed(manager, digest, validated, torrent)
+        episode = repository.episodes(job['tv_request']['series_id'], 1)[0]
+        return {'job':result,'source_exists':path.exists(),'binding_paths':[v['path'] for v in episode['versions']]}
+    finally:
+        owner.probe, manager.client.files.side_effect = original_probe, original_files
+
+@app.app.post('/__tv_fixture/new-home/flat')
+def fixture_new_flat():
+    identity = metadata.refresh(910003)
+    folder = media / 'Flat fixture'; folder.mkdir(exist_ok=True)
+    path = folder / 'Louie.Fixture.S01E01.mkv'; path.write_bytes(b'flat fixture')
+    repository.approve_path(folder, 'folder', identity)
+    repository.bind_file(path, [repository.episodes(identity, 1)[0]['id']], {}, [media])
+    return {'series_id':identity,'path':str(path)}
+
+@app.app.post('/__tv_fixture/new-home/reset')
+def fixture_new_reset():
+    digest = hashlib.sha1(b'Louie.Fixture.S01E01.1080p.WEB-DL').hexdigest()
+    job = manager.jobs.get(digest)
+    if job:
+        for value in job.get('imported_paths', []):
+            path = Path(value).resolve()
+            if media not in path.parents: raise ValueError('Fixture cleanup escaped temporary media')
+            path.unlink(missing_ok=True)
+        owner.acquisition.event(job['acquisition_id'], 'cancel', state='cancelled')
+        manager.jobs.upsert(digest, {'state':'cancelled'})
+    repository.store.restore(root / 'before-new-home.sqlite')
+    flat = media / 'Flat fixture' / 'Louie.Fixture.S01E01.mkv'
+    flat.unlink(missing_ok=True)
+    return {'reset':True}
 # Use the real metadata refresh owner against fixture transport, including scoped preview persistence.
 print(f'TV fixture series_id={series_id}, root={root}', flush=True)
 app.app.run(host='127.0.0.1', port=port, use_reloader=False, debug=False)

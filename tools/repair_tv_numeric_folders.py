@@ -194,7 +194,7 @@ def apply(repository, jobs, roots, manifest_path, *, offline_check=require_offli
                 for folder in plan['folders']:
                     db.execute("INSERT INTO tv_path_assignments VALUES(?,'folder',?,?) ON CONFLICT(path) DO NOTHING",
                                (folder['home'], folder['series_id'], time.time()))
-                    db.execute('INSERT INTO tv_import_homes VALUES(?,?) ON CONFLICT(series_id) DO UPDATE SET path=excluded.path',
+                    db.execute("INSERT INTO tv_import_homes(series_id,path,origin) VALUES(?,?,'existing') ON CONFLICT(series_id) DO UPDATE SET path=excluded.path,origin='existing'",
                                (folder['series_id'], folder['home']))
                     db.execute('DELETE FROM tv_path_assignments WHERE path=? AND series_id=?', (folder['old'], folder['series_id']))
                     db.execute("UPDATE tv_discovery_units SET state='resolved',updated_at=? WHERE path=?", (time.time(), folder['old']))

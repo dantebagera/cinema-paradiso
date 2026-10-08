@@ -1096,7 +1096,14 @@ class QBittorrentManager:
         if not torrent_hash:
             raise QBittorrentError("Magnet does not contain a usable torrent identity")
         now = time.time()
-        self.client.add_magnet(magnet, str(self.staging_dir), stop_after_metadata=True)
+        recover_tv_add = (metadata or {}).get('media_type') == 'tv' and (metadata or {}).get('submission_retry')
+        present = recover_tv_add and any(str(item.get('hash', '')).lower() == torrent_hash for item in self.client.torrents())
+        if present:
+            # A durable TV intent predates this retry. Keep the recovered transfer
+            # stopped until the ordinary manifest owner verifies its file scope.
+            self.client.pause(torrent_hash)
+        else:
+            self.client.add_magnet(magnet, str(self.staging_dir), stop_after_metadata=True)
         queued = self._submission_patch(metadata, "magnet", now, resubmitted=bool(existing))
         queued.update({
             "state": "validating",

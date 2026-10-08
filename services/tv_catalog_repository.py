@@ -60,26 +60,30 @@ class TVCatalogRepository:
                                     (str(path), int(series_id))).fetchone()
             if not assignment:
                 raise ValueError('Choose an approved TV show folder belonging to this series')
-            db.execute('INSERT INTO tv_import_homes VALUES(?,?) ON CONFLICT(series_id) DO UPDATE SET path=excluded.path',
+            db.execute("INSERT INTO tv_import_homes(series_id,path,origin) VALUES(?,?,'existing') ON CONFLICT(series_id) DO UPDATE SET path=excluded.path,origin='existing'",
                        (int(series_id), str(path)))
         return {'series_id': int(series_id), 'show_home': str(path)}
 
-    def resolve_import_destination(self, series_id, season, roots):
+    def resolve_import_destination(self, series_id, season, roots, *, metadata=None, publication=None):
         result = {'state': 'needs_home', 'show_home': None, 'season': season, 'path': None,
+                  'origin': 'existing', 'requires_creation': False,
                   'candidates': [], 'reason': 'Choose an approved TV show folder before downloading'}
-        if not series_id or season is None:
+        if season is None:
             return result
-        self.series(series_id)
+        if series_id:
+            metadata = self.series(series_id)
         season = int(season)
         if season < 0:
             raise ValueError('Choose a valid TV season')
         with self.store.connection() as db:
-            preferred = db.execute('SELECT path FROM tv_import_homes WHERE series_id=?', (int(series_id),)).fetchone()
+            preferred = db.execute('SELECT path,origin FROM tv_import_homes WHERE series_id=?', (int(series_id or 0),)).fetchone()
             bindings = [(Path(row['path']).resolve(), row['season_number']) for row in db.execute(
                 'SELECT DISTINCT f.path,e.season_number FROM media_files f JOIN episode_file_bindings b ON b.file_id=f.id '
-                'JOIN episodes e ON e.id=b.episode_id WHERE e.series_id=?', (int(series_id),))]
+                'JOIN episodes e ON e.id=b.episode_id WHERE e.series_id=?', (int(series_id or 0),))]
+        if preferred and preferred['origin'] == 'metadata':
+            return self._metadata_destination(result, series_id, season, roots, metadata, home=Path(preferred['path']), bindings=bindings, publication=publication)
         approved = [Path(row['path']).resolve() for row in self.path_assignments()
-                    if row['series_id'] == int(series_id) and row['kind'] == 'folder'
+                    if row['series_id'] == int(series_id or 0) and row['kind'] == 'folder'
                     and Path(row['path']).is_dir() and self._import_path_allowed(row['path'], series_id, roots, show_home=True)]
 
         def season_number(folder):
@@ -98,7 +102,10 @@ class TVCatalogRepository:
         elif len(credible) > 1:
             return {**result, 'state': 'needs_choice', 'reason': 'Choose between the approved TV show folders'}
         else:
-            return result
+            assignments = [row for row in self.path_assignments() if row['series_id'] == series_id]
+            if bindings or assignments:
+                return {**result, 'reason': 'Existing flat or unresolved TV collection requires destination review'}
+            return self._metadata_destination(result, series_id, season, roots, metadata)
         result['show_home'] = str(home)
         associated = {path.parent for path, number in bindings if number == season and
                       path.parent.parent == home and season_number(path.parent) == season}
@@ -129,7 +136,65 @@ class TVCatalogRepository:
             destination = home / f'{next(iter(prefixes))}{season:0{width}d}'
         if not self._import_path_allowed(destination, series_id, roots):
             return {**result, 'reason': 'The season destination is excluded, outside TV roots, or belongs to another series'}
-        return {**result, 'state': 'ready', 'season': season, 'path': str(destination), 'reason': ''}
+        return {**result, 'state': 'ready', 'season': season, 'path': str(destination), 'requires_creation': not destination.exists(), 'reason': ''}
+
+    @staticmethod
+    def _path_key(path):
+        return str(Path(path).resolve()).casefold()
+
+    def _metadata_destination(self, result, series_id, season, roots, metadata, *, home=None, bindings=(), publication=None):
+        result = {**result, 'origin': 'metadata'}
+        def blocked(reason): return {**result, 'reason': reason}
+        if season <= 0: return blocked('New TV collections require a regular season; Specials need destination review')
+        roots = list(dict.fromkeys(Path(root).resolve() for root in roots))
+        if home is None:
+            if len(roots) != 1 or not roots[0].is_dir(): return blocked('Choose one existing TV library root before creating a collection')
+            title = str((metadata or {}).get('canonical_title') or (metadata or {}).get('title') or '')
+            first_air = str((metadata or {}).get('first_air_date') or '')
+            try: year = date.fromisoformat(first_air).year
+            except ValueError: return blocked('Canonical show title and full first-air date are required for a new TV collection')
+            if not title or title != title.strip() or title.endswith('.') or re.search(r'[<>:"/\\|?*\x00-\x1f]', title) or re.fullmatch(r'(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\..*)?', title, re.I):
+                return blocked('The canonical show name is unsafe on Windows; destination review is required')
+            home = roots[0] / f'{title} ({year:04d})'
+        home = home.resolve()
+        destination = home / f'Season {season:02d}'
+        result.update(show_home=str(home), path=str(destination), requires_creation=not destination.exists())
+        if not self._import_path_allowed(home, series_id or 0, roots, show_home=True) or not self._import_path_allowed(destination, series_id or 0, roots):
+            return blocked('Destination is excluded, outside TV roots, or belongs to another series')
+        owned = any(home in path.parents for path, _ in bindings)
+        published_home = (publication or {}).get('tv_created_home') == str(home)
+        # A reservation establishes database ownership, never ownership of an externally created directory.
+        if home.parent.is_dir():
+            collisions = [child for child in home.parent.iterdir() if child.name.casefold() == home.name.casefold()]
+            if collisions and (not owned and not published_home or any(child.resolve() != home for child in collisions)):
+                return blocked('An unowned or externally created show folder collides with this destination; review required')
+        if home.exists() and not home.is_dir(): return blocked('The show destination is not a directory')
+        if home.is_dir():
+            collisions = [child for child in home.iterdir() if child.name.casefold() == destination.name.casefold()]
+            created_seasons = (publication or {}).get('tv_created_seasons', [])
+            season_owned = any(path.parent == destination and number == season for path, number in bindings)
+            if collisions and (not season_owned and str(destination) not in created_seasons or any(child.resolve() != destination for child in collisions)):
+                return blocked('An unowned season folder collides with this destination; review required')
+        return {**result, 'state': 'ready', 'reason': ''}
+
+    def reserve_import_home(self, series_id, destination, roots):
+        self.series(series_id)
+        if destination.get('origin') != 'metadata':
+            return self.set_import_home(series_id, destination['show_home'], roots)
+        with self.store.transaction() as db:
+            current = self.resolve_import_destination(series_id, destination['season'], roots)
+            if current['state'] != 'ready' or any(current[key] != destination[key] for key in ('show_home', 'path')):
+                raise ValueError(current['reason'] or 'Destination changed; review again')
+            home = current['show_home']
+            existing = db.execute('SELECT path FROM tv_import_homes WHERE series_id=?', (series_id,)).fetchone()
+            if existing and self._path_key(existing['path']) != self._path_key(home):
+                raise ValueError('A different show home is already reserved')
+            for row in db.execute('SELECT path,series_id FROM tv_path_assignments'):
+                if self._path_key(row['path']) == self._path_key(home) and row['series_id'] != series_id:
+                    raise ValueError('This show home belongs to another series')
+            db.execute("INSERT OR IGNORE INTO tv_path_assignments VALUES(?,'folder',?,?)", (home, series_id, self.clock()))
+            db.execute("INSERT OR IGNORE INTO tv_import_homes(series_id,path,origin) VALUES(?,?,'metadata')", (series_id, home))
+        return current
 
     def exclusions(self):
         with self.store.connection() as db:
@@ -432,7 +497,7 @@ class TVCatalogRepository:
                 raise LookupError('Episode not found')
             return dict(row)
 
-    def episodes(self, series_id, season=None, *, limit=None, offset=0):
+    def episodes(self, series_id, season=None, *, limit=None, offset=0, today=None):
         query, args = 'SELECT e.*,p.position_ms,p.duration_ms,p.completed,p.last_played,p.file_id AS selected_file_id FROM episodes e LEFT JOIN playback_progress p ON p.episode_id=e.id WHERE e.series_id=?', [series_id]
         if season is not None:
             query += ' AND e.season_number=?'
@@ -457,7 +522,7 @@ class TVCatalogRepository:
                 row['overview'] = json.loads(row['metadata']).get('overview', '')
                 row['versions'] = versions.get(row['id'], [])
                 row['available'] = any(v['available'] for v in row['versions'])
-                row['released'] = released(row['air_date'])
+                row['released'] = released(row['air_date'], today)
                 row['code'] = f"S{row['season_number']:02d}E{row['episode_number']:02d}"
             return rows
 

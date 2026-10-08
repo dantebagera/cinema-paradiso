@@ -373,6 +373,11 @@ def register_tv_routes(app, services, enabled, player_manager, acquisition=None,
         data = request.get_json(silent=True) or {}
         return action(lambda: services()['repository'].set_import_home(series_id, data['path'], acquisition().roots()))
 
+    @app.post('/api/tv/search/seasons')
+    def tv_search_seasons():
+        data = request.get_json(silent=True) or {}
+        return action(lambda: acquisition().search_seasons(**{key: data[key] for key in ('series_id', 'tmdb_id', 'seasons', 'profile_id') if key in data}))
+
     @app.post('/api/tv/releases/prepare')
     def tv_prepare_release():
         data = request.get_json(silent=True) or {}

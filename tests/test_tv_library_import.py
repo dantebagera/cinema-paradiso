@@ -173,14 +173,14 @@ class TVLibraryImportTests(unittest.TestCase):
         self.ingestion.approve(folder, 'folder', self.harbor)
         reopened = TVCatalogRepository(self.root / 'tv-catalog.sqlite')
         self.assertEqual(reopened.path_assignments()[0]['series_id'], self.harbor)
-        self.assertEqual(reopened.store.audit()['schema_version'], 5)
+        self.assertEqual(reopened.store.audit()['schema_version'], 6)
 
     def test_v2_catalog_migrates_without_losing_episodes(self):
         with self.repo.store.connection() as db:
             db.execute('DROP TABLE tv_path_assignments')
             db.execute('PRAGMA user_version=2')
         reopened = TVCatalogRepository(self.root / 'tv-catalog.sqlite')
-        self.assertEqual(reopened.store.audit()['schema_version'], 5)
+        self.assertEqual(reopened.store.audit()['schema_version'], 6)
         self.assertEqual(len(reopened.episodes(self.harbor, 1)), 3)
         self.assertEqual(reopened.path_assignments(), [])
 

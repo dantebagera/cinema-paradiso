@@ -601,8 +601,8 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("TrustedIndexerDialog", self.source)
         self.assertIn("trusted-indexer-summary", self.source)
         self.assertIn('label="Trusted indexers"', self.source)
-        self.assertIn("const saved = await onSave();", self.source)
-        self.assertIn("if (saved) onClose();", self.source)
+        self.assertIn("if (await onSave(draft)) onClose();", self.source)
+        self.assertIn("else setError('Selection was not saved.", self.source)
         self.assertIn("Trusted release watchlist indexers", self.source)
         self.assertIn("No trusted indexers selected", self.source)
 
@@ -747,7 +747,8 @@ class LibraryActionUxTest(unittest.TestCase):
         self.assertIn("download_indexer_mode", self.source)
         self.assertIn("Automation defaults", self.source)
         self.assertIn("Default download quality", self.source)
-        self.assertIn("Use release trusted indexers", self.source)
+        self.assertIn("Movie trusted indexers", self.source)
+        self.assertIn("TV trusted indexers", self.source)
 
     def test_source_search_loading_warns_that_prowlarr_indexers_can_take_time(self):
         self.assertIn("Connecting to Prowlarr indexers", self.source)

@@ -34,7 +34,7 @@ class AiControlUiTest(unittest.TestCase):
 
     def test_ai_control_trusted_indexers_use_dialog_not_inline_long_list(self):
         self.assertIn("aiControlIndexerDialogOpen", APP_SOURCE)
-        self.assertIn("AIControlIndexerDialog", APP_SOURCE)
+        self.assertIn("TrustedIndexerDialog", APP_SOURCE)
         self.assertIn("AI Control download trust", APP_SOURCE)
         self.assertIn("AI Control trusted indexers", APP_SOURCE)
         self.assertNotIn("ai-control-indexer-list", APP_SOURCE)

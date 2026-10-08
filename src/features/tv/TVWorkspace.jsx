@@ -4,7 +4,7 @@ import TVIngestion from './TVIngestion.jsx';
 import TVLibraryImport from './TVLibraryImport.jsx';
 import TVBulkActionBar from './TVBulkActionBar.jsx';
 import TVPosterEditor from './TVPosterEditor.jsx';
-import TVAcquisitionReview, { TVMonitoringControls } from './TVAcquisitionReview.jsx';
+import TVAcquisitionReview, { TVMonitoringControls, TVSeasonSelection } from './TVAcquisitionReview.jsx';
 import TVFileView from './TVFileView.jsx';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, Bookmark, Clapperboard, Film, Folder, MonitorPlay, Play, Plus, RefreshCw, Search, Tv } from 'lucide-react';
@@ -83,9 +83,12 @@ export function TVSeriesPage({ id, tmdbId, onAdded, onBack, onPlay, onStream, on
   const [castLimit,setCastLimit] = useState(20);
   const { personBio, openPersonBio, closePersonBio } = usePersonBiography();
   const [selected,setSelected] = useState([]), [includeOwned,setIncludeOwned] = useState(false);
+  const [choosingSeasons, setChoosingSeasons] = useState(false);
   const languageView = useTransientTVLanguage(baseSeries);
   const series = languageView.displaySeries;
   const downloadTarget = (extra={}) => ({...(id?{series_id:id}:{tmdb_id:tmdbId}),season,missing_only:!includeOwned,upgrade:includeOwned,...extra});
+  const reviewSeasons = seasons => { setChoosingSeasons(false); setSearchTarget({...(id ? {series_id:id} : {tmdb_id:tmdbId}), seasons}); };
+  useEffect(() => { setSearchTarget(null); setChoosingSeasons(false); setSelected([]); setIncludeOwned(false); }, [id, tmdbId]);
   async function selectEpisodes(missing) {
     try {
       const data = await fetchJson(id ? `/api/tv/series/${id}/selection?season=${season}` : `/api/tv/preview/${tmdbId}/seasons/${season}`);
@@ -129,10 +132,10 @@ export function TVSeriesPage({ id, tmdbId, onAdded, onBack, onPlay, onStream, on
       return <PersonCreditCard key={`${credit.tmdb_id}-${credit.role}-${i}`} person={person} role={role} canBrowse={Boolean(credit.tmdb_id && onPersonCredits)} onBrowse={onPersonCredits} onDiscover={onPersonCredits} onBio={openPersonBio}/>;
     })}</div>{series.cast.length>castLimit&&<button className="secondary-button tv-more-cast" onClick={()=>setCastLimit(n=>n+20)}>More cast</button>}</> : <p>{series.metadata_notice ? 'Cast could not be loaded.' : 'No cast information available.'}</p>}</section>
     <RelatedMovieRail movie={series} mediaType="tv" onNavigate={onRelatedOpen} onViewAll={({source})=>onRelatedViewAll?.({tmdbId:series.tmdb_id,title:series.title,source})}/>
-    {id && <TVMonitoringControls seriesId={id} series={series} season={season} notify={notify} />}
+    {id && <TVMonitoringControls key={id} seriesId={id} series={series} season={season} notify={notify} />}
     <label className="tv-season-label">Season <select aria-label="TV season" value={season ?? ''} onChange={(e) => { const nextSeason=Number(e.target.value); setSeason(nextSeason); onSeasonChange?.(nextSeason); setPage(1); setSelected([]); }}>
       {series.seasons.map((item) => <option key={item.number} value={item.number}>{item.title} · {item.available}/{item.episodes} available · {item.completed} watched</option>)}
-    </select><button className="primary-button" disabled={season===null} onClick={()=>setSearchTarget(downloadTarget())}>Download season</button></label>
+    </select><button className="primary-button" disabled={season===null} onClick={()=>setSearchTarget(downloadTarget())}>Download season</button><button className="primary-button" disabled={!series.seasons.some(item => item.number > 0)} onClick={() => reviewSeasons(series.seasons.filter(item => item.number > 0).map(item => item.number))}>Download all seasons</button><button className="secondary-button" onClick={() => setChoosingSeasons(true)}>Choose seasons…</button></label>
     <div className="tv-actions tv-episode-selection"><button onClick={()=>selectEpisodes(false)}>Select all released</button><button onClick={()=>selectEpisodes(true)}>Select missing</button><button onClick={()=>setSelected([])} disabled={!selected.length}>Clear selection</button><span>{selected.length} episodes selected</span><label><input type="checkbox" checked={includeOwned} onChange={e=>setIncludeOwned(e.target.checked)}/>Include owned episodes (upgrade)</label><button className="primary-button" disabled={!selected.length} onClick={()=>setSearchTarget(downloadTarget({episode_numbers:selected}))}>Download selected</button></div>
     <Pagination page={page} totalPages={pages} ariaLabel="Episodes page controls above results" onPageChange={setPage} summary={`Season ${season}`}/>
 
@@ -158,6 +161,7 @@ export function TVSeriesPage({ id, tmdbId, onAdded, onBack, onPlay, onStream, on
     <Pagination page={page} totalPages={pages} ariaLabel="Episodes pagination" onPageChange={setPage} summary={`Season ${season}`}/>
 
     {searchTarget && <TVAcquisitionReview target={searchTarget} onClose={() => setSearchTarget(null)} notify={notify} />}
+    {choosingSeasons && <TVSeasonSelection series={baseSeries} seriesId={id} tmdbId={tmdbId} onReview={reviewSeasons} onClose={() => setChoosingSeasons(false)} />}
     {versions && <EpisodeVersions episode={versions} onClose={() => setVersions(null)} onPlay={onPlay} />}
     {personBio && <PersonBioModal state={personBio} onClose={closePersonBio}/>}
   </section>;

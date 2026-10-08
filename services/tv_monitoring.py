@@ -1,10 +1,12 @@
 """Durable TV Follow and one-shot download tasks over the existing acquisition owner."""
-from datetime import date
+from datetime import date, datetime, time as day_time
 import hashlib
 import json
 from pathlib import Path
 import time
 import uuid
+import threading
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from send2trash import send2trash
 
 
@@ -12,10 +14,39 @@ class TVMonitoring:
     ACTIONS = {'missing', 'future', 'upgrade', 'selected'}
     SCOPES = {'series', 'season', 'episodes'}
 
-    def __init__(self, tv, store, acquisition, clock=time.time, active_media_path=lambda: '', trash_file=send2trash):
+    def __init__(self, tv, store, acquisition, clock=time.time, active_media_path=lambda: '', trash_file=send2trash, timezone='Africa/Cairo'):
         self.tv, self.store, self.acquisition, self.clock = tv, store, acquisition, clock
         self.active_media_path, self.trash_file = active_media_path, trash_file
+        self.timezone, self.timezone_error = timezone, ''
+        try: self.zone = ZoneInfo(timezone)
+        except ZoneInfoNotFoundError:
+            self.zone = None
+            self.timezone_error = 'Install the declared tzdata dependency to enable Africa/Cairo scheduling'
+        self.owner, self._run_lock = uuid.uuid4().hex, threading.Lock()
+        if self.zone: self.acquisition.release_date = self._today
         self._resolve_legacy_drafts()
+
+    def _today(self):
+        if not self.zone: raise ValueError(self.timezone_error)
+        return datetime.fromtimestamp(self.clock(), self.zone).date()
+
+    def _eligible_at(self, air_date):
+        if not self.zone: raise ValueError(self.timezone_error)
+        try: return datetime.combine(date.fromisoformat(str(air_date)), day_time.min, self.zone).timestamp()
+        except (TypeError, ValueError): return None
+
+    @staticmethod
+    def _source_retry(task):
+        return 18000 if task['kind'] == 'follow' and task['action'] in {'missing', 'future'} else 3600
+
+    def _readiness(self, series_id, seasons, *, require_metadata=True):
+        blockers = []
+        if self.timezone_error: blockers.append(self.timezone_error)
+        if not self.acquisition.trusted_indexers(): blockers.append('Select TV trusted indexers in Settings')
+        if require_metadata and self.tv.hydration(series_id)['status'] != 'complete': blockers.append('Complete regular-season metadata is required before Start')
+        destinations = [self.tv.resolve_import_destination(series_id, number, self.acquisition.roots()) for number in sorted(set(seasons))]
+        blockers.extend(f"Season {row['season']}: {row['reason']}" for row in destinations if row['state'] != 'ready')
+        return {'ready': not blockers, 'blockers': blockers}, destinations
 
     def _resolve_legacy_drafts(self):
         """Attach saved old rules to local identities without activating downloads."""
@@ -50,7 +81,7 @@ class TVMonitoring:
         return self.tv.series(int(series_id))
 
     def _rows(self, series_id, scope, season=None, selected_episodes=()):
-        rows = [row for row in self.tv.episodes(series_id) if row['season_number'] > 0 or scope == 'episodes']
+        rows = [row for row in self.tv.episodes(series_id, today=self._today() if self.zone else None) if row['season_number'] > 0 or scope == 'episodes']
         if scope == 'season':
             rows = [row for row in rows if row['season_number'] == int(season)]
         elif scope == 'episodes':
@@ -119,9 +150,10 @@ class TVMonitoring:
                 candidates.append(row['id'])
             elif action == 'missing' and row['released'] and not row['available'] and not withheld:
                 candidates.append(row['id'])
+        readiness, destinations = self._readiness(series_id, [row['season_number'] for row in rows if row['id'] in candidates])
         return {'series_id': int(series_id), 'tmdb_id': series['tmdb_id'], 'scope': scope,
-                'import_destinations': [self.tv.resolve_import_destination(series_id, number, self.acquisition.roots())
-                    for number in sorted({row['season_number'] for row in rows if row['id'] in candidates})],
+                'readiness': readiness, 'scheduling_timezone': self.timezone, 'source_retry_seconds': 18000,
+                'import_destinations': destinations,
                 'import_policy': self.acquisition.import_policy(),
                 'action': action, 'season': season, 'profile_id': profile_id, 'counts': counts,
                 'target_episode_ids': candidates, 'metadata_complete': self.tv.hydration(series_id)['status'] == 'complete'}
@@ -151,6 +183,14 @@ class TVMonitoring:
         result['selected_episodes'] = json.loads(result['selected_episodes'])
         result['target_episode_ids'] = json.loads(result['target_episode_ids'])
         result['episodes'] = episodes
+        details = {item['id']: item for item in self.tv.episodes(result['series_id'])} if result['series_id'] else {}
+        for item in episodes:
+            item['code'] = details.get(item['episode_id'], {}).get('code', f"Episode {item['episode_id']}")
+        result['counts'] = {key: sum(item['state'] in states for item in episodes) for key, states in {
+            'acquired': {'acquired'}, 'queued': {'queued'}, 'waiting': {'waiting','waiting_release','retry'}, 'review': {'needs_review'}}.items()}
+        result['counts']['targets'] = len(result['target_episode_ids'])
+        result['next_eligible_search'] = min((item['next_retry'] for item in episodes if item['state'] not in {'acquired','queued'}), default=None)
+        result['scheduling_timezone'] = self.timezone
         return result
 
     def list_tasks(self, series_id=None, *, history=False, page=1, page_size=50):
@@ -167,6 +207,15 @@ class TVMonitoring:
                 'total_pages': max(1, (total+page_size-1)//page_size)}
 
     def start_task(self, task_id):
+        try:
+            with self.acquisition._lock:
+                return self._start_task(task_id)
+        except (ValueError, OSError, LookupError) as error:
+            with self.store.transaction() as db:
+                db.execute('UPDATE tv_tasks SET error=?,updated_at=? WHERE id=? AND state="draft"', (str(error)[:500], self.clock(), task_id))
+            raise
+
+    def _start_task(self, task_id):
         task = self.task(task_id)
         if task['state'] != 'draft':
             raise ValueError('Only a saved draft can be started')
@@ -182,19 +231,29 @@ class TVMonitoring:
                 raise ValueError('TV metadata refresh failed; the draft remains saved') from error
         preview = self.preview(task['series_id'], scope=task['scope'], action=task['action'],
             season=task['season'], selected_episodes=task['selected_episodes'], profile_id=task['profile_id'])
-        if not preview['metadata_complete']:
-            raise ValueError('Complete regular-season metadata is required before Start')
+        if not preview['readiness']['ready']:
+            message = '; '.join(preview['readiness']['blockers'])
+            with self.store.transaction() as db:
+                db.execute('UPDATE tv_tasks SET error=?,updated_at=? WHERE id=?', (message[:500], self.clock(), task_id))
+            raise ValueError(message)
         if task['action'] == 'future':
-            started = date.fromtimestamp(self.clock()).isoformat()
+            started = self._today().isoformat()
             released_missing = self.preview(task['series_id'], scope=task['scope'], action='missing',
-                season=task['season'], profile_id=task['profile_id'])['target_episode_ids']
+                season=task['season'], selected_episodes=task['selected_episodes'], profile_id=task['profile_id'])['target_episode_ids']
             preview['target_episode_ids'] = list(dict.fromkeys(preview['target_episode_ids'] + [row['id']
-                for row in self._rows(task['series_id'], task['scope'], task['season'])
+                for row in self._rows(task['series_id'], task['scope'], task['season'], task['selected_episodes'])
                 if row['id'] in released_missing and row['air_date'] and row['air_date'] >= started]))
         if task['kind'] == 'bulk' and not preview['target_episode_ids']:
             raise ValueError('No released missing regular episodes need download')
         now = self.clock()
+        destinations = [self.tv.resolve_import_destination(task['series_id'], row['season_number'], self.acquisition.roots()) for row in self._rows(task['series_id'], task['scope'], task['season'], task['selected_episodes']) if row['id'] in preview['target_episode_ids']]
+        if any(row['state'] != 'ready' for row in destinations):
+            raise ValueError('; '.join(row['reason'] for row in destinations if row['state'] != 'ready'))
+        for destination in {row['season']: row for row in destinations}.values():
+            self.tv.reserve_import_home(task['series_id'], destination, self.acquisition.roots())
         with self.store.transaction() as db:
+            current = db.execute('SELECT state FROM tv_tasks WHERE id=?', (task_id,)).fetchone()
+            if not current or current['state'] != 'draft': raise ValueError('Only a saved draft can be started')
             db.execute('UPDATE tv_tasks SET state="running",target_episode_ids=?,started_at=?,updated_at=?,next_due=?,last_refresh=?,error="" WHERE id=?',
                        (json.dumps(preview['target_episode_ids']), now, now, now, now, task_id))
             for episode_id in preview['target_episode_ids']:
@@ -376,6 +435,14 @@ class TVMonitoring:
         return {'task': self.task(task_id), 'outcome': outcome}
 
     def run_once(self, *, limit=10, submit=False):
+        if not self._run_lock.acquire(blocking=False): return []
+        try:
+            if not self.store.lease('tv-monitoring-pass', self.owner, ttl=1800): return []
+            try: return self._run_once(limit=limit, submit=submit)
+            finally: self.store.release_lease('tv-monitoring-pass', self.owner)
+        finally: self._run_lock.release()
+
+    def _run_once(self, *, limit=10, submit=False):
         now, results = self.clock(), []
         with self.store.connection() as db:
             ids = [row[0] for row in db.execute("SELECT id FROM tv_tasks WHERE state IN ('running','waiting','waiting_season_end','needs_review') "
@@ -383,6 +450,10 @@ class TVMonitoring:
         for task_id in ids:
             task = self.task(task_id)
             if not task['series_id']:
+                continue
+            if self.timezone_error:
+                with self.store.transaction() as db:
+                    db.execute('UPDATE tv_tasks SET state="needs_review",error=?,next_due=? WHERE id=?', (self.timezone_error, now+60, task_id))
                 continue
             series = self._series(task['series_id'])
             if task['action'] == 'future' and now - (task['last_refresh'] or 0) >= 21600:
@@ -398,7 +469,7 @@ class TVMonitoring:
                         continue
                 current = self._rows(task['series_id'], task['scope'], task['season'], task['selected_episodes'])
                 known = set(task['target_episode_ids'])
-                started = date.fromtimestamp(task['started_at']).isoformat()
+                started = datetime.fromtimestamp(task['started_at'], self.zone).date().isoformat()
                 added = [row['id'] for row in current if row['id'] not in known and not row['available']
                          and row['air_date'] and row['air_date'] >= started]
                 if added:
@@ -414,7 +485,7 @@ class TVMonitoring:
                             title='New TV episode announced', body=series['title'],
                             link=f'/tv/series/{task["series_id"]}')
             pending, uncertain = self._pending(task['series_id'])
-            rows = {row['id']: row for row in self.tv.episodes(task['series_id'])}
+            rows = {row['id']: row for row in self.tv.episodes(task['series_id'], today=self._today() if self.zone else None)}
             with self.store.connection() as db:
                 excluded_seasons = {row[0] for row in db.execute('SELECT season FROM tv_task_exclusions WHERE task_id=?', (task_id,))}
             for item in task['episodes']:
@@ -426,12 +497,29 @@ class TVMonitoring:
                 if not row or row['season_number'] in excluded_seasons:
                     continue
                 intent_id = None
-                if item['state'] == 'queued' and item['intent_id']:
+                if item['state'] in {'queued', 'needs_review'} and item['intent_id']:
                     with self.store.connection() as db:
-                        intent = db.execute('SELECT state FROM intents WHERE id=?', (item['intent_id'],)).fetchone()
+                        intent = db.execute('SELECT * FROM intents WHERE id=?', (item['intent_id'],)).fetchone()
+                    if intent and intent['state'] == 'selected':
+                        if not submit or item['next_retry'] > now: continue
+                        try:
+                            self.acquisition.submit(intent['decision_token'], intent['request_key'])
+                            with self.store.transaction() as db:
+                                db.execute('UPDATE tv_task_episodes SET state="queued",error="",next_retry=? WHERE task_id=? AND episode_id=?', (now+3600, task_id, row['id']))
+                        except Exception as error:
+                            with self.store.transaction() as db:
+                                db.execute('UPDATE tv_task_episodes SET state="needs_review",error=?,next_retry=? WHERE task_id=? AND episode_id=?', (str(error)[:500], now+self._source_retry(task), task_id, row['id']))
+                        continue
                     if intent and intent['state'] == 'ready':
+                        job = self.acquisition.manager().jobs.get(intent['info_hash']) or {}
+                        covered = job.get('tv_import', {}).get('covered_episodes', [])
+                        if not row['available'] or task['action'] == 'upgrade' and row['id'] not in covered:
+                            with self.store.transaction() as db:
+                                db.execute('UPDATE tv_task_episodes SET state="needs_review",error=? WHERE task_id=? AND episode_id=?',
+                                    ('The acquisition finished without a verified import for this episode; review required', task_id, row['id']))
+                            continue
                         with self.store.transaction() as db:
-                            db.execute('UPDATE tv_task_episodes SET state="acquired",next_retry=0 WHERE task_id=? AND episode_id=?',
+                            db.execute('UPDATE tv_task_episodes SET state="acquired",next_retry=0,error="" WHERE task_id=? AND episode_id=?',
                                 (task_id, row['id']))
                         self.store.notify(media_type='tv', source='follow', task_id=task_id, episode_key=row['code'],
                             event_key=f'task:{task_id}:{row["id"]}:acquired', severity='info',
@@ -449,13 +537,21 @@ class TVMonitoring:
                         continue
                 if row['available'] and task['action'] != 'upgrade':
                     state, retry = 'acquired', 0
-                elif not row['released'] or not row['air_date']:
-                    state, retry = 'waiting_release', now+3600
+                elif not row['air_date'] or self.zone and (self._eligible_at(row['air_date']) is None or self._eligible_at(row['air_date']) > now):
+                    state, retry = 'waiting_release', (self._eligible_at(row['air_date']) or 0) if self.zone and row['air_date'] else 0
                 elif row['reconciliation_required'] or uncertain or (row['season_number'], row['episode_number']) in pending:
                     state, retry = 'needs_review', now+3600
                 elif item['state'] == 'queued' or item['next_retry'] > now:
                     continue
                 else:
+                    readiness, _ = self._readiness(task['series_id'], [row['season_number']], require_metadata=False)
+                    if not readiness['ready']:
+                        message = '; '.join(readiness['blockers'])[:500]
+                        with self.store.transaction() as db:
+                            db.execute('UPDATE tv_task_episodes SET state="needs_review",error=?,next_retry=? WHERE task_id=? AND episode_id=?', (message, now+60, task_id, row['id']))
+                            db.execute('UPDATE tv_tasks SET state="needs_review",error=?,next_due=? WHERE id=?', (message, now+60, task_id))
+                        continue
+                    submission_key = None
                     try:
                         if item['state'] == 'waiting_release' and task['action'] in {'future', 'selected'}:
                             self.store.notify(media_type='tv', source='follow', task_id=task_id,
@@ -464,13 +560,14 @@ class TVMonitoring:
                                 body=series['title'], link=f'/tv/series/{task["series_id"]}')
                         review = self.acquisition.search(task['series_id'], row['season_number'], row['episode_number'],
                             task['profile_id'], manual=False, missing_only=task['action'] != 'upgrade', upgrade=task['action'] == 'upgrade')
-                        accepted = next((decision for decision in review['decisions'] if decision['accepted']), None)
-                        submitted = self.acquisition.submit(accepted['decision_token'],
-                            f'task:{task_id}:{row["id"]}:{accepted["decision_token"][:24]}') if accepted and submit else None
+                        selection = self.acquisition.select_automatic(review)
+                        accepted = selection['decision']
+                        submission_key = f'task:{task_id}:{row["id"]}:{accepted["decision_token"][:24]}' if accepted and submit else None
+                        submitted = self.acquisition.submit(accepted['decision_token'], submission_key) if submission_key else None
                         results.append({'task_id': task_id, 'episode_id': row['id'], 'decision': accepted,
-                                        'submitted': bool(submitted), 'error': '' if accepted else 'No source found'})
+                                        'submitted': bool(submitted), 'source_state': selection['state'], 'error': '' if accepted else selection['error']})
                         intent_id = submitted['intent']['id'] if submitted else None
-                        state, retry = ('queued', now+3600) if accepted and submit else ('retry', now+3600)
+                        state, retry = ('queued', now+3600) if accepted and submit else ('retry', now+self._source_retry(task))
                         if accepted:
                             self.store.notify(media_type='tv', source='follow', task_id=task_id,
                                 episode_key=row['code'], event_key=f'task:{task_id}:{row["id"]}:source', severity='info',
@@ -480,19 +577,24 @@ class TVMonitoring:
                                 episode_key=row['code'], event_key=f'task:{task_id}:{row["id"]}:retry', severity='warning',
                                 title=f'No source yet for {row["code"]}', body=series['title'], link=f'/tv/series/{task["series_id"]}')
                     except Exception as error:
-                        state, retry = 'retry', now+3600
+                        state, retry = 'retry', now+self._source_retry(task)
                         results.append({'task_id': task_id, 'episode_id': row['id'], 'error': str(error), 'submitted': False})
-                        intent_id = None
+                        with self.store.connection() as db:
+                            prior = db.execute('SELECT id FROM intents WHERE request_key=?', (submission_key,)).fetchone() if submission_key else None
+                        intent_id = prior['id'] if prior else None
+                        if prior: state = 'needs_review'
                 with self.store.transaction() as db:
                     db.execute('UPDATE tv_task_episodes SET state=?,next_retry=?,last_search=?,error=?,intent_id=COALESCE(?,intent_id) WHERE task_id=? AND episode_id=?',
                                (state, retry, now if state in {'queued','retry'} else item['last_search'],
                                 results[-1].get('error', '') if results and results[-1].get('episode_id') == row['id'] else '',
-                                intent_id if state in {'queued','retry'} else None, task_id, row['id']))
+                                intent_id, task_id, row['id']))
                     if state in {'queued','retry'}:
                         db.execute('UPDATE tv_tasks SET last_search=? WHERE id=?', (now, task_id))
             self._settle(task_id)
+            next_times = [row['next_retry'] for row in self.task(task_id)['episodes'] if row['state'] not in {'acquired','queued'} and row['next_retry'] and row['next_retry'] > now]
+            next_due = min([now+60, *next_times])
             with self.store.transaction() as db:
-                db.execute('UPDATE tv_tasks SET next_due=?,updated_at=? WHERE id=?', (now+60, now, task_id))
+                db.execute('UPDATE tv_tasks SET next_due=?,updated_at=? WHERE id=?', (next_due, now, task_id))
         return results
 
     def _settle(self, task_id):
@@ -514,10 +616,10 @@ class TVMonitoring:
             series = self._series(task['series_id'])
             state = 'completed' if str(series.get('status') or '').casefold() == 'ended' and self.tv.hydration(task['series_id'])['status'] == 'complete' else 'waiting'
         else:
-            state = 'running'
+            state = 'needs_review' if any(item == 'needs_review' for item in states) else 'running'
         if state != task['state']:
             with self.store.transaction() as db:
-                db.execute('UPDATE tv_tasks SET state=?,updated_at=? WHERE id=?', (state, self.clock(), task_id))
+                db.execute('UPDATE tv_tasks SET state=?,updated_at=?,error=CASE WHEN ?="needs_review" THEN error ELSE "" END WHERE id=?', (state, self.clock(), state, task_id))
             if state == 'completed':
                 self.store.notify(media_type='tv', source='follow', task_id=task_id,
                     event_key=f'task:{task_id}:completed', severity='info', title='TV task completed',

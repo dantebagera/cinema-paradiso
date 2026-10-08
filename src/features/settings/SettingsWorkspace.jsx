@@ -217,6 +217,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
   const [iptvProviders, setIPTVProviders] = useState([]);
   const [selectedIPTVProviderId, setSelectedIPTVProviderId] = useState('');
   const [addingIPTVProvider, setAddingIPTVProvider] = useState(false);
+  const [downloadIndexerDialog, setDownloadIndexerDialog] = useState(null);
   const [trustedIndexerDialogOpen, setTrustedIndexerDialogOpen] = useState(false);
   const [aiControlIndexerDialogOpen, setAiControlIndexerDialogOpen] = useState(false);
   const [ollamaModelCatalog, setOllamaModelCatalog] = useState({
@@ -287,7 +288,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           indexers: prowlarr.value.indexers || [],
           trusted_release_indexers: prowlarr.value.trusted_release_indexers || [],
           download_default_quality: prowlarr.value.download_default_quality || '1080p',
-          download_indexer_mode: prowlarr.value.download_indexer_mode || 'release'
+          ...downloadPolicyForm(prowlarr.value)
         } : emptySettingsState.prowlarr,
         qbittorrent: qbittorrent.status === 'fulfilled' ? qbittorrent.value : emptySettingsState.qbittorrent,
         tmdb: tmdb.status === 'fulfilled' ? { key: tmdb.value.key || '', includeAdult: Boolean(tmdb.value.include_adult) } : { key: '', includeAdult: false },
@@ -466,43 +467,6 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
     }
   }
 
-  function updateTrustedReleaseIndexer(indexerId, checked) {
-    editedFieldsRef.current.add('prowlarr.trusted_release_indexers');
-    setForms((state) => {
-      const current = new Set(state.prowlarr.trusted_release_indexers || []);
-      if (checked) {
-        current.add(indexerId);
-      } else {
-        current.delete(indexerId);
-      }
-      return {
-        ...state,
-        prowlarr: {
-          ...state.prowlarr,
-          trusted_release_indexers: Array.from(current)
-        }
-      };
-    });
-  }
-
-  function updateAiControlTrustedIndexer(indexerId, checked) {
-    editedFieldsRef.current.add('aiControl.trusted_indexers');
-    setForms((state) => {
-      const current = new Set(state.aiControl.trusted_indexers || []);
-      if (checked) {
-        current.add(indexerId);
-      } else {
-        current.delete(indexerId);
-      }
-      return {
-        ...state,
-        aiControl: {
-          ...state.aiControl,
-          trusted_indexers: Array.from(current)
-        }
-      };
-    });
-  }
 
   function updateLibraryDirectory(index, value) {
     editedFieldsRef.current.add('library.directory');
@@ -598,7 +562,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
     }
   }
 
-  async function saveIntegration(service) {
+  async function saveIntegration(service, overrides = {}) {
     const endpoints = {
       plex: '/api/plex/config',
       prowlarr: '/api/prowlarr/config',
@@ -614,7 +578,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
         key: forms.prowlarr.key,
         trusted_release_indexers: forms.prowlarr.trusted_release_indexers || [],
         download_default_quality: forms.prowlarr.download_default_quality || '1080p',
-        download_indexer_mode: forms.prowlarr.download_indexer_mode || 'release'
+        ...overrides
       },
       tmdb: { key: forms.tmdb.key, include_adult: Boolean(forms.tmdb.includeAdult) },
       youtube: { key: forms.youtube.key, trailer_region: forms.youtube.trailerRegion || 'EG' },
@@ -656,7 +620,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
             indexers: config.indexers || [],
             trusted_release_indexers: config.trusted_release_indexers || [],
             download_default_quality: config.download_default_quality || '1080p',
-            download_indexer_mode: config.download_indexer_mode || 'release'
+            ...downloadPolicyForm(config)
           },
           aiControl: aiControlConfig ? {
             ...state.aiControl,
@@ -984,7 +948,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
         ollama_curated_lists: Boolean(forms.aiControl.ollama_curated_lists)
       };
       if (includeTrusted) {
-        payload.trusted_indexers = forms.aiControl.trusted_indexers || [];
+        payload.trusted_indexers = options.selectedIds ?? forms.aiControl.trusted_indexers ?? [];
       }
       const data = await fetchJson('/api/ai-control/config', {
         method: 'POST',
@@ -1608,16 +1572,12 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
                       <option value="4K">4K</option>
                     </select>
                   </label>
-                  <label className="dialog-field">
-                    <span>Download trusted indexers</span>
-                    <select
-                      value={forms.prowlarr.download_indexer_mode || 'release'}
-                      onChange={(event) => updateField('prowlarr', 'download_indexer_mode', event.target.value)}
-                    >
-                      <option value="release">Use release trusted indexers</option>
-                      <option value="all">Use all enabled indexers</option>
-                    </select>
-                  </label>
+                  {['movie', 'tv'].map(domain => <div className="dialog-field" key={domain}>
+                    <span>{domain === 'movie' ? 'Movie trusted indexers' : 'TV trusted indexers'}</span>
+                    <strong>{downloadIndexerSummary(forms.prowlarr, domain)}</strong>
+                    <button type="button" className="btn btn-secondary" disabled={loading} onClick={() => setDownloadIndexerDialog(domain)}>{loading ? 'Loading indexers…' : 'Select indexers'}</button>
+                  </div>)}
+                  {forms.prowlarr.indexersError && <p role="alert">{forms.prowlarr.indexersError}</p>}
                 </div>
               </div>
             </>
@@ -2032,136 +1992,80 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           )}
         />
       </div>
-      {trustedIndexerDialogOpen ? (
-        <TrustedIndexerDialog
-          prowlarr={forms.prowlarr}
-          saving={Boolean(saving['prowlarr-save'])}
-          onToggle={updateTrustedReleaseIndexer}
-          onSave={() => saveIntegration('prowlarr')}
-          onClose={() => setTrustedIndexerDialogOpen(false)}
-        />
-      ) : null}
-      {aiControlIndexerDialogOpen ? (
-        <AIControlIndexerDialog
-          aiControl={forms.aiControl}
-          saving={Boolean(saving['ai-control-save'])}
-          onToggle={updateAiControlTrustedIndexer}
-          onSave={() => saveAiControl({ includeTrusted: true })}
-          onClose={() => setAiControlIndexerDialogOpen(false)}
-        />
-      ) : null}
+      {downloadIndexerDialog && <TrustedIndexerDialog
+        key={downloadIndexerDialog}
+        title={downloadIndexerDialog === 'movie' ? 'Movie trusted indexers' : 'TV trusted indexers'}
+        description="Only selected enabled sources may supply automatic downloads. Manual review can search all enabled sources; validation still applies."
+        indexers={forms.prowlarr.indexers || []}
+        loadError={forms.prowlarr.indexersError}
+        selectedIds={forms.prowlarr[downloadIndexerDialog === 'movie' ? 'movieDownloadIds' : 'tvDownloadIds'] || []}
+        onSave={ids => saveIntegration('prowlarr', {[downloadIndexerDialog === 'movie' ? 'download_trusted_indexers' : 'tv_download_trusted_indexers']: ids})}
+        onClose={() => setDownloadIndexerDialog(null)} />}
+      {trustedIndexerDialogOpen && <TrustedIndexerDialog title="Trusted release watchlist indexers"
+        description="Only selected indexers can mark followed movies as Available. Normal Discover and torrent search still use Prowlarr normally."
+        indexers={forms.prowlarr.indexers || []} selectedIds={forms.prowlarr.trusted_release_indexers || []}
+        onSave={ids => saveIntegration('prowlarr', {trusted_release_indexers: ids})} onClose={() => setTrustedIndexerDialogOpen(false)} />}
+      {aiControlIndexerDialogOpen && <TrustedIndexerDialog title="AI Control trusted indexers"
+        description="Only selected indexers are used when AI Control plans downloads. YTS/YIFY is the default when no AI-specific selection is saved."
+        defaultSourceDescription="Default AI Control download source."
+        indexers={forms.aiControl.indexers || []} selectedIds={forms.aiControl.trusted_indexers || []}
+        onSave={ids => saveAiControl({includeTrusted: true, selectedIds: ids})} onClose={() => setAiControlIndexerDialogOpen(false)} />}
     </section>
   );
 }
 
-function TrustedIndexerDialog({ prowlarr, saving, onToggle, onSave, onClose }) {
-  const indexers = prowlarr.indexers || [];
-  const trustedIds = prowlarr.trusted_release_indexers || [];
-
-  async function saveAndClose() {
-    const saved = await onSave();
-    if (saved) onClose();
-  }
-
-  return (
-    <div className="modal-backdrop trusted-indexer-backdrop" role="presentation" onClick={onClose}>
-      <section className="small-dialog trusted-indexer-dialog" role="dialog" aria-modal="true" aria-label="Trusted release watchlist indexers" onClick={(event) => event.stopPropagation()}>
-        <header className="dialog-header">
-          <div>
-            <p className="screen-kicker">Prowlarr</p>
-            <h2>Trusted release watchlist indexers</h2>
-          </div>
-          <button type="button" className="icon-button" onClick={onClose} aria-label="Close trusted indexers">
-            <X size={20} />
-          </button>
-        </header>
-        <p className="trusted-indexer-detail">Only selected indexers can mark followed movies as Available. Normal Discover and torrent search still use Prowlarr normally.</p>
-        <div className="settings-checkbox-group trusted-indexer-list">
-          {indexers.length ? (
-            indexers.map((indexer) => (
-              <label className="settings-checkbox-field" key={indexer.id}>
-                <input
-                  type="checkbox"
-                  checked={trustedIds.includes(String(indexer.id))}
-                  onChange={(event) => onToggle(String(indexer.id), event.target.checked)}
-                />
-                <span>
-                  <strong>{indexer.name || `Indexer ${indexer.id}`}</strong>
-                  <small>{/yts|yify/i.test(indexer.name || '') ? 'Default trusted release source.' : 'Manual trust for followed-release availability.'}</small>
-                </span>
-              </label>
-            ))
-          ) : (
-            <p className="settings-empty-note">Save and test Prowlarr to load enabled indexers. No trusted indexers selected.</p>
-          )}
-          {indexers.length && !trustedIds.length ? (
-            <p className="settings-empty-note">No trusted indexers selected. Followed releases will stay Watching.</p>
-          ) : null}
-        </div>
-        <div className="dialog-actions">
-          <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
-          <button type="button" className="btn btn-primary" onClick={saveAndClose} disabled={saving}>
-            {saving ? <Loader2 size={15} className="spin" /> : <Save size={15} />} Save trusted indexers
-          </button>
-        </div>
-      </section>
-    </div>
-  );
+function downloadPolicyForm(config) {
+  return {movieDownloadIds: config.download_trusted_indexers_configured ? config.download_trusted_indexers || [] : config.effective_download_trusted_indexers || [],
+    tvDownloadIds: config.tv_download_trusted_indexers || [],
+    indexersError: config.indexers_error || '',
+    download_indexer_mode: config.download_indexer_mode};
 }
-
-function AIControlIndexerDialog({ aiControl, saving, onToggle, onSave, onClose }) {
-  const indexers = aiControl.indexers || [];
-  const trustedIds = aiControl.trusted_indexers || [];
-
-  async function saveAndClose() {
-    const saved = await onSave();
-    if (saved) onClose();
+function downloadIndexerSummary(config, domain) {
+  const ids = config[domain === 'movie' ? 'movieDownloadIds' : 'tvDownloadIds'] || [];
+  return ids.length ? ids.map(id => config.indexers?.find(ix => String(ix.id) === id)?.name || `Unavailable indexer ${id}`).join(', ') : 'No trusted indexers selected';
+}
+function TrustedIndexerDialog({ title, description, indexers, selectedIds, loadError, defaultSourceDescription, onSave, onClose }) {
+  const [draft, setDraft] = useState(() => [...selectedIds]);
+  const [busy, setBusy] = useState(false), [error, setError] = useState('');
+  const panel = useRef(null);
+  const current = useRef({busy, onClose}); current.current = {busy, onClose};
+  useEffect(() => {
+    const previous = document.activeElement; panel.current?.querySelector('button')?.focus();
+    const close = event => {
+      if (event.key === 'Escape' && !current.current.busy) current.current.onClose();
+      if (event.key === 'Tab') {
+        const controls = Array.from(panel.current?.querySelectorAll('button:not(:disabled), input:not(:disabled)') || []);
+        const first = controls[0], last = controls[controls.length - 1];
+        if (!first) { event.preventDefault(); return; }
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    };
+    document.addEventListener('keydown', close);
+    return () => { document.removeEventListener('keydown', close); previous?.focus(); };
+  }, []);
+  const unavailable = draft.filter(id => !indexers.some(ix => String(ix.id) === id));
+  const toggle = (id, checked) => setDraft(values => checked ? [...values, id] : values.filter(value => value !== id));
+  async function save() {
+    setBusy(true); setError('');
+    try { if (await onSave(draft)) onClose(); else setError('Selection was not saved. Review the connection or unavailable indexers and retry.'); }
+    catch (cause) { setError(cause.message); } finally { setBusy(false); }
   }
-
-  return (
-    <div className="modal-backdrop trusted-indexer-backdrop" role="presentation" onClick={onClose}>
-      <section className="small-dialog trusted-indexer-dialog" role="dialog" aria-modal="true" aria-label="AI Control trusted indexers" onClick={(event) => event.stopPropagation()}>
-        <header className="dialog-header">
-          <div>
-            <p className="screen-kicker">AI Control download trust</p>
-            <h2>AI Control trusted indexers</h2>
-          </div>
-          <button type="button" className="icon-button" onClick={onClose} aria-label="Close AI Control trusted indexers">
-            <X size={20} />
-          </button>
-        </header>
-        <p className="trusted-indexer-detail">Only selected indexers are used when AI Control plans downloads. YTS/YIFY is the default when no AI-specific selection is saved.</p>
-        <div className="settings-checkbox-group trusted-indexer-list">
-          {indexers.length ? (
-            indexers.map((indexer) => (
-              <label className="settings-checkbox-field" key={`ai-control-indexer-${indexer.id}`}>
-                <input
-                  type="checkbox"
-                  checked={trustedIds.includes(String(indexer.id))}
-                  onChange={(event) => onToggle(String(indexer.id), event.target.checked)}
-                />
-                <span>
-                  <strong>{indexer.name || `Indexer ${indexer.id}`}</strong>
-                  <small>{/yts|yify/i.test(indexer.name || '') ? 'Default AI Control download source.' : 'Manual trust for AI Control download planning.'}</small>
-                </span>
-              </label>
-            ))
-          ) : (
-            <p className="settings-empty-note">Save and test Prowlarr to load enabled indexers. YTS/YIFY is used by default when available.</p>
-          )}
-          {indexers.length && !trustedIds.length && aiControl.trusted_indexers_configured ? (
-            <p className="settings-empty-note">No AI Control trusted indexers selected. Download commands will be blocked.</p>
-          ) : null}
-        </div>
-        <div className="dialog-actions">
-          <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
-          <button type="button" className="btn btn-primary" onClick={saveAndClose} disabled={saving}>
-            {saving ? <Loader2 size={15} className="spin" /> : <Save size={15} />} Save AI Control indexers
-          </button>
-        </div>
-      </section>
-    </div>
-  );
+  return <div className="modal-backdrop trusted-indexer-backdrop" role="presentation" onClick={() => !busy && onClose()}>
+    <section ref={panel} className="small-dialog trusted-indexer-dialog" role="dialog" aria-modal="true" aria-label={title} onClick={event => event.stopPropagation()}>
+      <header className="dialog-header"><div><p className="screen-kicker">Prowlarr</p><h2>{title}</h2></div><button type="button" className="icon-button" disabled={busy} onClick={onClose} aria-label={`Close ${title}`}><X size={20}/></button></header>
+      <p className="trusted-indexer-detail">{description}</p>
+      {error && <p role="alert">{error}</p>}
+      {loadError && <p role="alert">{loadError}</p>}
+      <div className="settings-checkbox-group trusted-indexer-list">
+        {indexers.map(indexer => <label className="settings-checkbox-field" key={indexer.id}><input type="checkbox" disabled={busy} checked={draft.includes(String(indexer.id))} onChange={event => toggle(String(indexer.id), event.target.checked)}/><span><strong>{indexer.name || `Indexer ${indexer.id}`}</strong>{defaultSourceDescription && /yts|yify/i.test(indexer.name || '') && <small>{defaultSourceDescription}</small>}</span></label>)}
+        {unavailable.map(id => <label className="settings-checkbox-field" key={id}><input type="checkbox" disabled={busy} checked onChange={() => toggle(id, false)}/><span>Unavailable indexer {id} — remove or restore it before saving</span></label>)}
+        {!indexers.length && <p className="settings-empty-note">Save and test Prowlarr to load enabled indexers.</p>}
+        {!draft.length && <p className="settings-empty-note">No trusted indexers selected.</p>}
+      </div>
+      <div className="dialog-actions"><button type="button" className="btn btn-secondary" disabled={busy} onClick={onClose}>Cancel</button><button type="button" className="btn btn-primary" disabled={busy} onClick={save}>{busy ? <Loader2 size={15} className="spin"/> : <Save size={15}/>} Save trusted indexers</button></div>
+    </section>
+  </div>;
 }
 
 function serviceLabel(service) {

@@ -84,6 +84,74 @@ class TVImportDestinationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.tv.set_import_home(self.series, self.library / 'unapproved', [self.library])
 
+    def test_new_metadata_home_preview_reservation_reopen_and_stable_name(self):
+        metadata = {'tmdb_id': 812, 'title': 'Louie', 'first_air_date': '2010-06-29'}
+        preview = self.tv.resolve_import_destination(None, 1, [self.library], metadata=metadata)
+        self.assertEqual(preview['state'], 'ready')
+        self.assertEqual(preview['origin'], 'metadata')
+        self.assertEqual(preview['path'], str(self.library / 'Louie (2010)' / 'Season 01'))
+        self.assertFalse(Path(preview['show_home']).exists())
+        with self.tv.store.connection() as db:
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM tv_import_homes').fetchone()[0], 0)
+        series = self.tv.refresh(metadata, [])
+        self.tv.reserve_import_home(series, preview, [self.library])
+        self.tv.refresh({**metadata, 'title': 'Changed title'}, [])
+        reopened = TVCatalogRepository(self.tv.store.path)
+        later = reopened.resolve_import_destination(series, 2, [self.library])
+        self.assertEqual(later['path'], str(self.library / 'Louie (2010)' / 'Season 02'))
+        self.assertFalse(Path(preview['show_home']).exists())
+
+    def test_unsafe_metadata_ambiguous_root_collision_and_flat_collection_block(self):
+        for title in ('CON', 'Bad:Name', 'Trailing.', 'Trailing ', 'aux.txt'):
+            result = self.tv.resolve_import_destination(None, 1, [self.library], metadata={'title': title, 'first_air_date': '2010-01-01'})
+            self.assertNotEqual(result['state'], 'ready', title)
+        metadata = {'title': 'Louie', 'first_air_date': '2010-01-01'}
+        other = self.root / 'other'; other.mkdir()
+        self.assertNotEqual(self.tv.resolve_import_destination(None, 1, [self.library, other], metadata=metadata)['state'], 'ready')
+        (self.library / 'LOUIE (2010)').mkdir()
+        self.assertNotEqual(self.tv.resolve_import_destination(None, 1, [self.library], metadata=metadata)['state'], 'ready')
+        self.tv.refresh({'tmdb_id': 823456, **metadata}, [{'season_number': 1, 'episode_number': 1, 'air_date': '2020-01-01'}])
+        self.home(season_name='flat', season=1)
+        self.assertNotEqual(self.resolve(2)['state'], 'ready')
+
+    def test_competing_reservation_and_external_folder_after_reservation_block(self):
+        metadata = {'title': 'Louie', 'first_air_date': '2010-01-01'}
+        first = self.tv.refresh({'tmdb_id': 812, **metadata}, [])
+        second = self.tv.refresh({'tmdb_id': 813, **metadata}, [])
+        proposal = self.tv.resolve_import_destination(first, 1, [self.library])
+        self.tv.reserve_import_home(first, proposal, [self.library])
+        with self.assertRaises(ValueError):
+            self.tv.reserve_import_home(second, proposal, [self.library])
+        Path(proposal['show_home']).mkdir()
+        self.assertNotEqual(self.tv.resolve_import_destination(first, 1, [self.library])['state'], 'ready')
+
+    def test_schema_five_migration_and_restore_keep_existing_home_origin(self):
+        home, _ = self.home()
+        self.tv.set_import_home(self.series, home, [self.library])
+        backup = self.root / 'v5.sqlite'; self.tv.store.backup(backup)
+        with closing(sqlite3.connect(backup)) as db:
+            db.execute('ALTER TABLE tv_import_homes DROP COLUMN origin')
+            db.execute('PRAGMA user_version=5'); db.commit()
+        upgraded = TVCatalogRepository(backup)
+        self.assertEqual(upgraded.store.audit()['schema_version'], 6)
+        self.assertEqual(upgraded.resolve_import_destination(self.series, 28, [self.library])['origin'], 'existing')
+        self.tv.store.restore(backup)
+        self.assertEqual(self.resolve()['show_home'], str(home))
+
+    def test_concurrent_separate_repositories_cannot_reserve_another_series_home(self):
+        from concurrent.futures import ThreadPoolExecutor
+        metadata = {'title':'Concurrent', 'first_air_date':'2020-01-01'}
+        identities = [self.tv.refresh({'tmdb_id':number, **metadata}, []) for number in (111,112)]
+        proposals = [self.tv.resolve_import_destination(identity, 1, [self.library]) for identity in identities]
+        def reserve(index):
+            try:
+                TVCatalogRepository(self.tv.store.path).reserve_import_home(identities[index], proposals[index], [self.library])
+                return True
+            except ValueError: return False
+        with ThreadPoolExecutor(max_workers=2) as pool: results = list(pool.map(reserve, [0,1]))
+        self.assertEqual(sorted(results), [False,True])
+        self.assertFalse(Path(proposals[0]['show_home']).exists())
+
     def test_excluded_or_outside_home_is_not_usable(self):
         home, folder = self.home()
         self.tv.set_import_home(self.series, home, [self.library])
@@ -127,12 +195,12 @@ class TVImportDestinationTests(unittest.TestCase):
             db.execute('PRAGMA user_version=4')
             db.commit()
         upgraded = TVCatalogRepository(backup)
-        self.assertEqual(upgraded.store.audit()['schema_version'], 5)
+        self.assertEqual(upgraded.store.audit()['schema_version'], 6)
         self.assertTrue(upgraded.episodes(self.series, 27)[0]['available'])
         with closing(sqlite3.connect(backup)) as db:
             db.execute('DROP TABLE tv_import_homes')
             db.execute('PRAGMA user_version=4')
             db.commit()
         self.tv.store.restore(backup)
-        self.assertEqual(self.tv.store.audit()['schema_version'], 5)
+        self.assertEqual(self.tv.store.audit()['schema_version'], 6)
         self.assertEqual(self.resolve()['state'], 'ready')

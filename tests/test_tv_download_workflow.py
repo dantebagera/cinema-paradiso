@@ -41,6 +41,73 @@ class TVDownloadWorkflowTests(unittest.TestCase):
         self.assertTrue(all(d['accepted'] for d in result['decisions']))
         self.assertEqual(len({d['target'] for d in result['decisions']}), 3)
 
+    def test_multi_season_review_only_released_missing_and_explicit_submit(self):
+        def releases(**kw):
+            season = kw['season']
+            return [{**self.release(), 'title': f'Harbor.Signals.S{season:02d}.1080p.WEB-DL', 'infoHash': chr(96+season)*40,
+                     'magnetUrl': 'magnet:?xt=urn:btih:'+chr(96+season)*40}]
+        self.provider.search_tv.side_effect = releases
+        review = self.service.search_seasons(self.series, seasons=[2, 1, 2])
+        self.assertEqual(review['selected_seasons'], [1, 2])
+        self.assertEqual(review['scope_counts']['targets'], 4)
+        self.assertEqual(len(review['season_reviews']), 2)
+        self.manager.client.add_magnet.assert_not_called()
+        with self.store.connection() as db:
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM tv_tasks').fetchone()[0], 0)
+        result = self.service.submit_batch(review['recommended'], 'multi-season')
+        self.assertTrue(result['complete'], result)
+        self.assertEqual(self.manager.client.add_magnet.call_count, 2)
+        self.service.submit_batch(review['recommended'], 'multi-season')
+        self.assertEqual(self.manager.client.add_magnet.call_count, 2)
+
+    def test_preparing_multi_season_release_keeps_its_stored_scope_after_single_review(self):
+        self.service.prepare(self.service.search(self.series, 1, missing_only=True)['decisions'][0]['decision_token'])
+        multi = self.service.search_seasons(self.series, seasons=[1])
+        prepared = self.service.prepare(multi['decisions'][0]['decision_token'])
+        stored = self.store.decision(prepared['decision_token'])
+        self.assertEqual(stored.get('multi_season_scope'), multi['decisions'][0]['multi_season_scope'])
+        self.assertEqual(stored.get('covered_episode_keys'), prepared['covered_episode_keys'])
+
+    def test_multi_season_validation_and_partial_provider_failure_are_visible(self):
+        for seasons in ([], [0], [99], '1', list(range(1, 152))):
+            with self.assertRaises(ValueError): self.service.search_seasons(self.series, seasons=seasons)
+        def releases(**kw):
+            if kw['season'] == 2: raise TimeoutError('fixture provider timeout')
+            return [self.release()]
+        self.provider.search_tv.side_effect = releases
+        review = self.service.search_seasons(self.series, seasons=[1, 2])
+        self.assertTrue(review['search']['partial'])
+        self.assertIn('timeout', review['season_reviews'][1]['search']['error'])
+        self.assertEqual(len(review['recommended']), 1)
+
+    def test_multi_season_cancellation_does_not_search_remaining_seasons(self):
+        calls = []
+        def releases(**kw): calls.append(kw); return [self.release()]
+        self.provider.search_tv.side_effect = releases
+        result = self.service.search_seasons(self.series, seasons=[1,2], cancelled=lambda: bool(calls))
+        self.assertEqual(len(calls), 1)
+        self.assertTrue(result['search']['partial'])
+        self.assertIn('cancelled', result['season_reviews'][1]['search']['error'])
+        self.manager.client.add_magnet.assert_not_called()
+
+    def test_multi_season_preview_uses_composite_keys_when_provider_preview_ids_repeat(self):
+        from services.tv_metadata import TVMetadata
+        metadata = TVMetadata(self.tv, lambda:'fixture')
+        raw = {'id':99, 'name':'New Harbor', 'first_air_date':'2020-01-01',
+               'seasons':[{'season_number':n,'episode_count':1} for n in (1,2)]}
+        def request(path, **kw):
+            if path == '/tv/99': return raw
+            if path == '/search/tv': return {'results':[raw]}
+            return {'episodes':[{'id':101,'season_number':int(path.rsplit('/',1)[1]), 'episode_number':1,'name':'Pilot','air_date':'2020-01-01'}]}
+        metadata.request = request; self.service.metadata = metadata
+        self.provider.search_tv.side_effect = lambda **kw: [{**self.release(digest=chr(96+kw['season'])), 'tmdbId':99, 'title':f"New.Harbor.S{kw['season']:02d}E01.1080p.WEB-DL"}]
+        result = self.service.search_seasons(tmdb_id=99, seasons=[1,2])
+        self.assertEqual([row['id'] for row in result['episodes']], [-101,-101])
+        self.assertEqual(len({row['key'] for row in result['episodes']}), 2)
+        self.assertEqual(len(result['recommended']), 2)
+        with self.tv.store.connection() as db:
+            self.assertFalse(db.execute('SELECT 1 FROM series WHERE tmdb_id=99').fetchone())
+
     def test_batch_retries_only_failed_member(self):
         self.provider.search_tv.return_value = [self.release(1, 'a'), self.release(2, 'b')]
         result = self.service.search(self.series, 1, episode_numbers=[1, 2])
@@ -205,17 +272,9 @@ class TVDownloadWorkflowTests(unittest.TestCase):
             with self.tv.store.connection() as db:return db.execute('SELECT COUNT(*) FROM series').fetchone()[0]
         self.assertEqual(count(),1)
         submitted=self.service.submit_batch(result['recommended'],'preview')
-        self.assertFalse(submitted['complete'], submitted)
-        self.assertIn('approved TV show folder', submitted['items'][0]['message'])
-        self.assertEqual(count(), 1)
-        saved = metadata.refresh(99, season_scope={1})
-        home = self.library / 'Second approved collection'
-        (home / 'Season 01').mkdir(parents=True)
-        self.tv.approve_path(home, 'folder', saved)
-        self.tv.set_import_home(saved, home, [self.library])
-        result = self.service.search(saved, 1, episode_numbers=[1])
-        submitted = self.service.submit_batch(result['recommended'], 'approved-preview')
         self.assertTrue(submitted['complete'], submitted)
+        self.assertEqual(count(), 2)
+        self.assertFalse((self.library / 'Harbor Signals (2020)').exists())
         self.assertEqual(count(), 2)
         with self.tv.store.connection() as db:saved=db.execute('SELECT id FROM series WHERE tmdb_id=99').fetchone()[0]
         self.assertEqual([s['number'] for s in TVReadModel(self.tv).detail(saved)['seasons']],[1,2])

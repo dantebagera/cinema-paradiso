@@ -7,7 +7,7 @@ import tempfile
 import threading
 
 
-TV_SCHEMA_VERSION = 5
+TV_SCHEMA_VERSION = 6
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS tv_meta(key TEXT PRIMARY KEY, value TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS series(
@@ -71,7 +71,8 @@ CREATE TABLE IF NOT EXISTS tv_path_assignments(
  series_id INTEGER NOT NULL REFERENCES series(id), approved_at REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS tv_import_homes(
  series_id INTEGER PRIMARY KEY REFERENCES series(id),
- path TEXT NOT NULL REFERENCES tv_path_assignments(path));
+ path TEXT NOT NULL REFERENCES tv_path_assignments(path),
+ origin TEXT NOT NULL DEFAULT 'existing' CHECK(origin IN ('existing','metadata')));
 CREATE TABLE IF NOT EXISTS tv_discovery_units(
  path TEXT PRIMARY KEY, state TEXT NOT NULL, payload TEXT NOT NULL,
  updated_at REAL NOT NULL);
@@ -106,8 +107,13 @@ class TVCatalogStore:
             version = connection.execute('PRAGMA user_version').fetchone()[0]
             if version > TV_SCHEMA_VERSION:
                 raise ValueError('TV database is newer than this application')
-            connection.executescript('BEGIN IMMEDIATE;\n' + SCHEMA +
+            connection.executescript('BEGIN IMMEDIATE;\n' + SCHEMA + self._home_migration(connection) +
                                      f'\nPRAGMA user_version={TV_SCHEMA_VERSION};\nCOMMIT;')
+
+    @staticmethod
+    def _home_migration(connection):
+        columns = {row[1] for row in connection.execute('PRAGMA table_info(tv_import_homes)')}
+        return "\nALTER TABLE tv_import_homes ADD COLUMN origin TEXT NOT NULL DEFAULT 'existing';" if columns and 'origin' not in columns else ''
 
     @contextmanager
     def connection(self):
@@ -162,7 +168,7 @@ class TVCatalogStore:
         with self._lock, closing(sqlite3.connect(f'{source.as_uri()}?mode=ro', uri=True)) as backup:
             if backup.execute('PRAGMA integrity_check').fetchone()[0] != 'ok':
                 raise ValueError('Backup integrity failed')
-            if backup.execute('PRAGMA user_version').fetchone()[0] not in {1, 2, 3, 4, TV_SCHEMA_VERSION}:
+            if backup.execute('PRAGMA user_version').fetchone()[0] not in {1, 2, 3, 4, 5, TV_SCHEMA_VERSION}:
                 raise ValueError('Backup schema mismatch')
             if backup.execute('PRAGMA foreign_key_check').fetchall():
                 raise ValueError('Backup relationships are invalid')
@@ -170,5 +176,5 @@ class TVCatalogStore:
                 raise ValueError('Not a TV backup')
             with self.connection() as destination:
                 backup.backup(destination)
-                destination.executescript('BEGIN IMMEDIATE;\n' + SCHEMA +
+                destination.executescript('BEGIN IMMEDIATE;\n' + SCHEMA + self._home_migration(destination) +
                                           f'\nPRAGMA user_version={TV_SCHEMA_VERSION};\nCOMMIT;')

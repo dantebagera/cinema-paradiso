@@ -240,11 +240,20 @@ def _load_config():
     return {}
 
 def _save_config(data):
+    temporary = None
     try:
-        with open(_CONFIG_FILE, 'w', encoding='utf-8') as f:
+        import tempfile
+        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=Path(_CONFIG_FILE).parent, prefix='cp-config-', suffix='.tmp', delete=False) as f:
+            temporary = f.name
             _json.dump(data, f, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(temporary, _CONFIG_FILE)
+        return True
     except Exception:
-        pass
+        return False
+    finally:
+        if temporary and os.path.exists(temporary): os.unlink(temporary)
 
 _cfg = _load_config()
 _player_config = PlayerConfig(_cfg.get('player'))
@@ -359,6 +368,10 @@ _trusted_release_indexers_configured = 'trusted_release_indexers' in _cfg
 _download_default_quality = str(_cfg.get('download_default_quality', '1080p') or '1080p').strip() or '1080p'
 _download_indexer_mode = str(_cfg.get('download_indexer_mode', 'release') or 'release').strip() or 'release'
 _download_trusted_indexers = [str(value).strip() for value in _cfg.get('download_trusted_indexers', []) if str(value).strip()]
+_download_trusted_indexers_configured = bool(_cfg.get('download_trusted_indexers_configured', False))
+_download_legacy_policy_configured = bool(_cfg.get('download_legacy_policy_configured', 'download_indexer_mode' in _cfg or 'download_trusted_indexers' in _cfg))
+_tv_download_trusted_indexers = list(dict.fromkeys(str(value).strip() for value in _cfg.get('tv_download_trusted_indexers', []) if str(value).strip()))
+_tv_download_trusted_indexers_configured = bool(_cfg.get('tv_download_trusted_indexers_configured', 'tv_download_trusted_indexers' in _cfg))
 _yts_rss_feeds = [
     str(value).strip()
     for value in _cfg.get('yts_rss_feeds', ['https://yts.gg/rss', 'https://yts.bz/rss', 'https://yts.lt/rss'])
@@ -2531,6 +2544,10 @@ def _all_config():
         'download_default_quality': _download_default_quality,
         'download_indexer_mode': _download_indexer_mode,
         'download_trusted_indexers': _download_trusted_indexers,
+        'download_trusted_indexers_configured': _download_trusted_indexers_configured,
+        'download_legacy_policy_configured': _download_legacy_policy_configured,
+        'tv_download_trusted_indexers': _tv_download_trusted_indexers,
+        'tv_download_trusted_indexers_configured': _tv_download_trusted_indexers_configured,
         'player': _player_config.storage_payload(),
     }
     if _ai_control_trusted_indexers_configured:
@@ -4427,20 +4444,30 @@ def app_data_config():
 @app.route('/api/prowlarr/config', methods=['GET'])
 def get_prowlarr_config():
     indexers = []
+    indexers_error = ''
     if _prowlarr_url and _prowlarr_key:
         try:
             indexers = sorted(_fetch_enabled_prowlarr_indexers(), key=lambda ix: ix['name'].lower())
-        except Exception:
+        except Exception as error:
             indexers = []
+            indexers_error = f'Enabled indexers could not be loaded: {error}'
     return jsonify({
         'url': _prowlarr_url,
         'key': _prowlarr_key,
         'indexers': indexers,
+        'indexers_error': indexers_error,
         'trusted_release_indexers': _effective_trusted_release_indexer_ids(indexers),
         'trusted_release_indexers_configured': _trusted_release_indexers_configured,
         'download_default_quality': _download_default_quality,
         'download_indexer_mode': _download_indexer_mode,
         'download_trusted_indexers': _download_trusted_indexers,
+        'download_trusted_indexers_configured': _download_trusted_indexers_configured,
+        'tv_download_trusted_indexers': _tv_download_trusted_indexers,
+        'tv_download_trusted_indexers_configured': _tv_download_trusted_indexers_configured,
+        'effective_download_trusted_indexers': _effective_download_trusted_indexer_ids(indexers),
+        'effective_tv_download_trusted_indexers': _effective_tv_download_trusted_indexer_ids(indexers),
+        'unavailable_download_trusted_indexers': [value for value in _download_trusted_indexers if value not in {str(ix['id']) for ix in indexers}],
+        'unavailable_tv_download_trusted_indexers': [value for value in _tv_download_trusted_indexers if value not in {str(ix['id']) for ix in indexers}],
     })
 
 
@@ -4448,27 +4475,47 @@ def get_prowlarr_config():
 def set_prowlarr_config():
     global _prowlarr_url, _prowlarr_key, _trusted_release_indexers, _trusted_release_indexers_configured
     global _download_default_quality, _download_indexer_mode, _download_trusted_indexers
+    global _download_trusted_indexers_configured, _tv_download_trusted_indexers, _tv_download_trusted_indexers_configured
     data = request.get_json(silent=True)
     if not data:
         return jsonify({'error': 'No data provided'}), 400
-    _prowlarr_url = data.get('url', '').rstrip('/')
-    _prowlarr_key = data.get('key', '')
-    _trusted_release_indexers = [
-        str(value).strip()
-        for value in data.get('trusted_release_indexers', [])
-        if str(value).strip()
-    ]
-    _trusted_release_indexers_configured = True
+    previous = (_prowlarr_url, _prowlarr_key, _trusted_release_indexers, _trusted_release_indexers_configured,
+                _download_default_quality, _download_indexer_mode, _download_trusted_indexers, _download_trusted_indexers_configured,
+                _tv_download_trusted_indexers, _tv_download_trusted_indexers_configured)
+    selections = {}
+    try:
+        fields = ('download_trusted_indexers', 'tv_download_trusted_indexers')
+        if any(field in data for field in fields):
+            enabled = {str(ix['id']) for ix in _fetch_enabled_prowlarr_indexers()}
+            for field in fields:
+                if field not in data: continue
+                if not isinstance(data[field], list): raise ValueError(f'{field} must be a list')
+                selections[field] = list(dict.fromkeys(str(value).strip() for value in data[field] if str(value).strip()))
+                if not set(selections[field]) <= enabled: raise ValueError('Select known enabled indexers; unavailable selections need review')
+    except (ValueError, OSError, RuntimeError) as error:
+        return jsonify({'error': str(error)}), 400
+    _prowlarr_url = data.get('url', _prowlarr_url).rstrip('/')
+    _prowlarr_key = data.get('key', _prowlarr_key)
+    if 'trusted_release_indexers' in data:
+        _trusted_release_indexers = list(dict.fromkeys(str(value).strip() for value in data['trusted_release_indexers'] if str(value).strip()))
+        _trusted_release_indexers_configured = True
     quality = str(data.get('download_default_quality', _download_default_quality) or '1080p').strip()
     _download_default_quality = '4K' if quality.lower() in {'4k', '2160p'} else '1080p'
     mode = str(data.get('download_indexer_mode', _download_indexer_mode) or 'release').strip().lower()
     _download_indexer_mode = mode if mode in {'release', 'all', 'custom'} else 'release'
-    _download_trusted_indexers = [
-        str(value).strip()
-        for value in data.get('download_trusted_indexers', _download_trusted_indexers)
-        if str(value).strip()
-    ]
-    _save_config(_all_config())
+    if 'download_trusted_indexers' in selections:
+        _download_trusted_indexers = selections['download_trusted_indexers']
+        _download_trusted_indexers_configured = True
+    if 'tv_download_trusted_indexers' in selections:
+        _tv_download_trusted_indexers = selections['tv_download_trusted_indexers']
+        _tv_download_trusted_indexers_configured = True
+    try:
+        if _save_config(_all_config()) is False: raise OSError('Prowlarr settings could not be saved')
+    except OSError as error:
+        (_prowlarr_url, _prowlarr_key, _trusted_release_indexers, _trusted_release_indexers_configured,
+         _download_default_quality, _download_indexer_mode, _download_trusted_indexers, _download_trusted_indexers_configured,
+         _tv_download_trusted_indexers, _tv_download_trusted_indexers_configured) = previous
+        return jsonify({'error': str(error)}), 500
     return jsonify({'success': True})
 
 
@@ -12078,17 +12125,27 @@ def _download_variant_quality(value):
 
 
 def _effective_download_trusted_indexer_ids(indexers=None):
-    if _download_indexer_mode == 'custom':
-        return [str(value) for value in _download_trusted_indexers if str(value).strip()]
     available = indexers
     if available is None:
         try:
             available = _fetch_enabled_prowlarr_indexers()
         except Exception:
             available = []
+    enabled = {str(ix.get('id')) for ix in available}
+    if _download_trusted_indexers_configured or _download_indexer_mode == 'custom':
+        return [value for value in _download_trusted_indexers if value in enabled]
     if _download_indexer_mode == 'all':
         return [str(indexer.get('id')) for indexer in available if indexer.get('id') is not None]
+    # Compatibility decoder only for saved legacy Movie policies. TV never reads this mode.
+    if not _download_legacy_policy_configured:
+        return [str(ix['id']) for ix in available if _is_ai_control_default_indexer(ix)]
     return _effective_trusted_release_indexer_ids(available)
+
+
+def _effective_tv_download_trusted_indexer_ids(indexers=None):
+    available = _ai_control_available_indexers() if indexers is None else indexers
+    enabled = {str(ix.get('id')) for ix in available}
+    return [value for value in _tv_download_trusted_indexers if value in enabled]
 
 
 
@@ -13078,8 +13135,8 @@ def _tv_acquisition():
     with _acquisition_lock:
         if 'acquisition' not in services:
             services['acquisition'] = TVAcquisition(services['repository'], _acquisition_repository(), _prowlarr_client,
-                _get_qbittorrent_manager, lambda: _tv_roots, trusted_indexers=lambda: _download_trusted_indexers,
-            search_indexers=lambda: _download_trusted_indexers if _download_indexer_mode == 'custom' else None,
+                _get_qbittorrent_manager, lambda: _tv_roots, trusted_indexers=_effective_tv_download_trusted_indexer_ids,
+                search_indexers=lambda: None,
                 submit_candidate=_submit_qbittorrent_candidate, metadata=services['metadata'], resolve_candidate=_resolve_tv_candidate)
         return services['acquisition']
 

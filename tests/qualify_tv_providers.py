@@ -27,7 +27,7 @@ def main():
         raise AssertionError('Provider qualification must never request a transfer client')
     owner = TVAcquisition(repo, AcquisitionRepository(root/'acquisition.sqlite'), lambda:provider,
         no_client, lambda:[], metadata=metadata, resolve_candidate=app._resolve_tv_candidate,
-        search_indexers=lambda:config.get('download_trusted_indexers', []) if config.get('download_indexer_mode') == 'custom' else None)
+        trusted_indexers=lambda:config.get('tv_download_trusted_indexers', []), search_indexers=lambda:None)
     results = []
     for identity in (196322, 202555, 456):
         started = time.monotonic()

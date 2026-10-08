@@ -19,7 +19,7 @@ test('review renders the backend season destination and normal lifecycle in exis
   await page.screenshot({ path: 'docs/verification/tv-normal-import/review.png' });
 });
 
-test('untracked show retains source browsing while missing approved home disables download', async ({ page }) => {
+test('unsafe canonical show name retains source browsing while destination review blocks download', async ({ page }) => {
   await page.goto('/discover');
   await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'Explore Shows' }).click();
   await page.getByRole('textbox', { name: 'Search TV shows', exact: true }).fill('Daredevil: Born Again');
@@ -27,7 +27,7 @@ test('untracked show retains source browsing while missing approved home disable
   await page.getByRole('link', { name: 'Open Daredevil: Born Again', exact: true }).click();
   await page.getByRole('button', { name: 'Download season', exact: true }).click();
   const dialog = page.getByRole('dialog', { name: 'TV release review' });
-  await expect(dialog).toContainText('Choose an approved TV show folder before downloading');
+  await expect(dialog).toContainText('canonical show name is unsafe on Windows');
   await expect(dialog.getByRole('button', { name: /Download selected releases|Download available/ })).toBeDisabled();
   await expect(dialog.locator('.tv-release-row').first()).toBeVisible();
   await page.screenshot({ path: 'docs/verification/tv-normal-import/no-home.png' });

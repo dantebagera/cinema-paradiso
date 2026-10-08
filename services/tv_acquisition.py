@@ -1,6 +1,6 @@
 """TV search/intent composition; qBittorrent alone executes transfers."""
 from dataclasses import asdict, is_dataclass
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 import hashlib
 import json
@@ -25,6 +25,7 @@ class TVAcquisition:
         self.metadata, self.resolve_candidate = metadata, resolve_candidate
         self._lock = threading.RLock()
         self.owner = uuid.uuid4().hex
+        self.release_date = date.today
 
     def target(self, series_id=None, season=None, episode=None, *, tmdb_id=None, episode_numbers=None, missing_only=False, upgrade=False, allow_extras=False):
         if episode is not None and season is None:
@@ -40,7 +41,7 @@ class TVAcquisition:
             series = self.repository.series(int(series_id))
             if tmdb_id and int(tmdb_id) != series['tmdb_id']:
                 raise ValueError('Series identity changed')
-            rows = self.repository.episodes(series['id'], season)
+            rows = self.repository.episodes(series['id'], season, today=self.release_date())
             if not rows and season is not None and self.metadata:
                 rows = [{**r, 'provider_id': str(r['id']), 'id': -int(r['id']), 'reconciliation_required': False}
                         for r in self.metadata.preview_season(series['tmdb_id'], int(season))['items']]
@@ -48,6 +49,8 @@ class TVAcquisition:
             series = self.metadata.preview(int(tmdb_id))
             rows = [{**r, 'provider_id': str(r['id']), 'id': -int(r['id']), 'reconciliation_required': False}
                     for r in self.metadata.preview_season(int(tmdb_id), int(season))['items']]
+        from services.tv_catalog_repository import released
+        rows = [{**row, 'released': released(row.get('air_date'), self.release_date())} for row in rows]
         if episode_numbers is not None:
             if season is None or not isinstance(episode_numbers, list) or len(episode_numbers) > 500:
                 raise ValueError('Select up to 500 episodes within one season')
@@ -95,10 +98,13 @@ class TVAcquisition:
         return job
 
     def _record_tv_decision(self, decision, series):
-        destination = self.repository.resolve_import_destination(series.get('id'), decision['request']['season'], self.roots())
+        destination = self.repository.resolve_import_destination(series.get('id'), decision['request']['season'], self.roots(), metadata=series)
         decision.update(import_destination=destination, import_policy=self.import_policy())
         # Destination is part of review identity. A home change cannot reuse an old token.
-        decision['decision_token'] = hashlib.sha256((decision['decision_token'] + json.dumps(destination, sort_keys=True)).encode()).hexdigest()
+        identity = decision['decision_token'] + json.dumps(destination, sort_keys=True)
+        if decision.get('multi_season_scope'):
+            identity += json.dumps(decision['multi_season_scope'], sort_keys=True)
+        decision['decision_token'] = hashlib.sha256(identity.encode()).hexdigest()
         self.acquisition.record_decision(decision)
         return decision
 
@@ -108,7 +114,9 @@ class TVAcquisition:
         target, series, episodes = self.target(**request)
         profile, provider = self.acquisition.profile(profile_id), self.prowlarr()
         arguments = dict(tmdb_tv_id=series['tmdb_id'], title=series['title'], season=season, episode=episode)
-        report = provider.search_tv_report(**arguments, indexer_ids=self.search_indexers()) if hasattr(provider, 'search_tv_report') else {'items': provider.search_tv(**arguments, indexer_ids=self.trusted_indexers())}
+        trusted_ids = {str(value) for value in self.trusted_indexers()}
+        indexers = self.search_indexers() if manual else sorted(trusted_ids)
+        report = provider.search_tv_report(**arguments, indexer_ids=indexers) if hasattr(provider, 'search_tv_report') else {'items': provider.search_tv(**arguments, indexer_ids=indexers)}
         raw, report = list(report.get('items', [])), {k: v for k, v in report.items() if k != 'items'}
         all_episodes = self.repository.episodes(series['id']) if series.get('id') else []
         known = {ep['id'] for ep in all_episodes}
@@ -120,7 +128,7 @@ class TVAcquisition:
                 ambiguous = len({r['id'] for r in matches if title_key(r.get('name')) == title_key(series['title'])}) > 1
             except (OSError, ValueError, KeyError):
                 ambiguous = True
-        decisions = self._release_decisions(raw, request, target, series, episodes, all_episodes, profile, provider, manual, ambiguous)
+        decisions = self._release_decisions(raw, request, target, series, episodes, all_episodes, profile, provider, manual, ambiguous, trusted_ids)
         # Bounded episode fallback shares the season search's overall budget.
         # Only providers with an explicit budget contract can be expanded here.
         if manual and season is not None and episode is None and hasattr(provider, 'search_tv_report'):
@@ -142,7 +150,7 @@ class TVAcquisition:
             if len(searches) < len(missing) or any(r.get('partial') for r in searches):
                 report.update(partial=True, notice='Available results are shown. Some episode searches remain incomplete; narrow the selection or retry.')
         if report.get('episode_searches'):
-            decisions = self._release_decisions(raw, request, target, series, episodes, all_episodes, profile, provider, manual, ambiguous)
+            decisions = self._release_decisions(raw, request, target, series, episodes, all_episodes, profile, provider, manual, ambiguous, trusted_ids)
         ranked = rank_releases(decisions)
         uncovered, recommended = set(target['episode_ids']), []
         for row in sorted(ranked, key=lambda d: (not d['selectable'], d['sort_key'][1:4], -len(d['covered_episodes']), d['sort_key'])):
@@ -150,12 +158,12 @@ class TVAcquisition:
             if row['selectable'] and coverage and coverage <= uncovered:
                 recommended.append(row['decision_token']); uncovered -= coverage
         return {'mode': 'manual' if manual else 'automatic', 'target': target, 'decisions': ranked, 'search': report,
-                'import_destination': self.repository.resolve_import_destination(series.get('id'), season, self.roots()),
+                'import_destination': self.repository.resolve_import_destination(series.get('id'), season, self.roots(), metadata=series),
                 'import_policy': self.import_policy(),
                 'recommended': recommended, 'missing_episodes': sorted(uncovered),
                 'episodes': [{'id': ep['id'], 'number': ep['episode_number'], 'code': ep.get('code') or f"S{ep['season_number']:02d}E{ep['episode_number']:02d}"} for ep in episodes]}
 
-    def _release_decisions(self, raw, request, target, series, episodes, all_episodes, profile, provider, manual, ambiguous):
+    def _release_decisions(self, raw, request, target, series, episodes, all_episodes, profile, provider, manual, ambiguous, trusted_ids):
         # Round-robin sources before the bound; a noisy indexer cannot monopolize review.
         sources = {}
         for row in raw: sources.setdefault(str(row.get('indexerId') or row.get('indexer') or ''), []).append(row)
@@ -184,7 +192,7 @@ class TVAcquisition:
                 'size_bytes': int(row.get('size') or 0), 'seeders': int(row.get('seeders') or 0),
                 'episode_ids': sorted(coverage), 'identity_verified': identity['state'] == 'matched', 'identity_evidence': identity,
                 'transport_verified': bool((magnet_hash(magnet) and magnet_hash(magnet) == info_hash) or (download and is_allowed_prowlarr_url(download, provider.base_url))),
-                'trusted_indexer': str(row.get('indexerId') or '') in {str(value) for value in self.trusted_indexers()},
+                'trusted_indexer': str(row.get('indexerId') or '') in trusted_ids,
                 'availability_verified': target['released'], 'published_at': row.get('published_at') or self.clock(),
                 'coverage_claim': 'season_pack' if claim['scope'] == 'season' else 'episodes',
                 'selection_context': request,
@@ -202,6 +210,79 @@ class TVAcquisition:
             decisions.append(decision)
         return decisions
 
+    @staticmethod
+    def episode_key(tmdb_id, season, number, provider_id):
+        return json.dumps([int(tmdb_id), int(season), int(number), str(provider_id or '')], separators=(',', ':'))
+
+    def select_automatic(self, review, *, resolution_limit=5):
+        decisions = review.get('decisions', [])
+        attempts, errors = 0, []
+        trusted_ids = {str(value) for value in self.trusted_indexers()}
+        for decision in rank_releases(decisions):
+            if decision.get('manual'): continue
+            candidate = decision['candidate']
+            codes = {reason['code'] for reason in decision['reasons']}
+            if codes - {'hash_invalid'}: continue
+            if not candidate.get('identity_verified') or not candidate.get('transport_verified') or not candidate.get('availability_verified'):
+                continue
+            if str(candidate.get('indexer_id') or '') not in trusted_ids: continue
+            if decision.get('import_destination', {}).get('state') != 'ready': continue
+            unresolved = 'hash_invalid' in codes
+            if unresolved and (not candidate.get('download_url') or attempts >= max(0, min(5, int(resolution_limit)))): continue
+            try:
+                if unresolved: attempts += 1
+                prepared = self.prepare(decision['decision_token'])
+                if prepared['accepted']:
+                    return {'decision': prepared, 'state': 'accepted', 'result_count': len(decisions), 'resolution_count': attempts, 'error': ''}
+            except (ValueError, LookupError, OSError, RuntimeError) as error:
+                errors.append(str(error))
+        source_failure = review.get('search', {}).get('partial') or review.get('search', {}).get('error')
+        state = 'preparation_failed' if errors else 'provider_failed' if source_failure else 'rejected_sources' if decisions else 'no_results'
+        message = '; '.join(dict.fromkeys(errors)) if errors else 'Provider search did not complete' if source_failure else f'{len(decisions)} releases found; none passed automatic validation' if decisions else 'No source found'
+        if decisions and not errors:
+            reasons = list(dict.fromkeys(reason['message'] for decision in decisions for reason in decision['reasons']))
+            if reasons: message += ': ' + '; '.join(reasons[:3])
+        return {'decision': None, 'state': state, 'result_count': len(decisions), 'resolution_count': attempts, 'error': message[:500]}
+
+    def search_seasons(self, series_id=None, *, tmdb_id=None, seasons, profile_id='safe-hd', cancelled=lambda: False):
+        if not isinstance(seasons, list) or not 1 <= len(seasons) <= 150 or any(isinstance(n, bool) or not isinstance(n, int) or n <= 0 for n in seasons):
+            raise ValueError('Select 1 to 150 regular seasons')
+        seasons = sorted(set(seasons))
+        _, series, _ = self.target(series_id, seasons[0], tmdb_id=tmdb_id)
+        known = {int(row.get('season_number', row.get('number', -1))) for row in series.get('seasons', [])}
+        if not known:
+            known = {row['season_number'] for row in self.repository.episodes(series['id'])} if series.get('id') else set()
+        if not set(seasons) <= known: raise ValueError('Selected regular seasons must belong to this show')
+        scope = {'tmdb_id': series['tmdb_id'], 'seasons': seasons, 'profile_id': profile_id, 'missing_only': True}
+        reviews, episodes, deadline = [], [], time.monotonic() + 90
+        for number in seasons:
+            target, projections = {'series_id':series.get('id'), 'tmdb_id':series['tmdb_id'], 'season':number}, []
+            try:
+                if cancelled() or time.monotonic() >= deadline: raise TimeoutError('Season search cancelled or work budget reached; retry remaining seasons')
+                target, _, rows = self.target(series_id, number, tmdb_id=tmdb_id, missing_only=True)
+                projections = [{'id': row['id'], 'key': self.episode_key(series['tmdb_id'], number, row['episode_number'], row.get('provider_id')),
+                                'number': row['episode_number'], 'code': row.get('code') or f"S{number:02d}E{row['episode_number']:02d}"} for row in rows]
+                review = self.search(series_id, number, tmdb_id=tmdb_id, profile_id=profile_id, manual=True, missing_only=True, upgrade=False)
+            except (OSError, ValueError, RuntimeError) as error:
+                review = {'target': target, 'decisions': [], 'recommended': [], 'search': {'partial': True, 'error': str(error)},
+                          'import_destination': self.repository.resolve_import_destination(series.get('id'), number, self.roots(), metadata=series)}
+            review['episodes'] = projections
+            reviews.append(review); episodes.extend(projections)
+        wanted = [row['key'] for row in episodes]
+        decisions, recommended = [], []
+        for review in reviews:
+            for decision in review['decisions']:
+                original_token = decision['decision_token']
+                keys = [self.episode_key(series['tmdb_id'], decision['request']['season'], ep['number'], ep.get('provider_id')) for ep in decision['requested_episodes']]
+                decision.update(multi_season_scope=scope, covered_episode_keys=keys, wanted_episode_keys=wanted)
+                decision['decision_token'] = hashlib.sha256((original_token + json.dumps(scope, sort_keys=True)).encode()).hexdigest()
+                self.acquisition.record_decision(decision)
+                if original_token in review['recommended'] and review['import_destination']['state'] == 'ready': recommended.append(decision['decision_token'])
+                decisions.append(decision)
+        return {'season_reviews': reviews, 'selected_seasons': seasons, 'scope_counts': {'targets': len(episodes), 'seasons': len(seasons)},
+                'search': {'partial': any(review['search'].get('partial') for review in reviews)}, 'episodes': episodes,
+                'decisions': decisions, 'recommended': recommended, 'target': {'series_id': series.get('id'), 'tmdb_id': series['tmdb_id']}}
+
     def prepare(self, token, *, confirm_identity=False, allow_extras=False, max_age=900):
         decision = self.acquisition.decision(token, max_age=max_age)
         candidate = dict(decision['candidate'])
@@ -215,7 +296,7 @@ class TVAcquisition:
                 raise ValueError('Resolved torrent identity differs from the selected release; search again')
             candidate.update(resolved)
         target, series, episodes = self.target(**decision['request'])
-        destination = self.repository.resolve_import_destination(series.get('id'), decision['request']['season'], self.roots())
+        destination = self.repository.resolve_import_destination(series.get('id'), decision['request']['season'], self.roots(), metadata=series)
         if not self._same_destination(decision.get('import_destination'), destination):
             raise ValueError('Destination changed; search and review again')
         original = {(r['number'], str(r.get('provider_id'))) for r in decision.get('requested_episodes', [])}
@@ -224,12 +305,15 @@ class TVAcquisition:
         if original:
             candidate['episode_ids'] = target['episode_ids']
         profile = self.acquisition.profile(decision['profile_id'])
+        candidate['trusted_indexer'] = str(candidate.get('indexer_id') or '') in {str(value) for value in self.trusted_indexers()}
         if profile['version'] != decision['profile_version']: raise ValueError('Profile changed; review the release again')
         owned = [v['facts'] for ep in episodes for v in ep['versions'] if v['available']]
         candidate['allow_extras'] = bool(allow_extras)
         result = evaluate_release(candidate, target, profile, manual=decision['manual'], owned=owned,
                                   blocked=self.acquisition.blocked(target['key'], candidate.get('info_hash')))
         result.update(request=decision['request'], search_request=decision.get('search_request'), wanted_episodes=decision.get('wanted_episodes', []), requested_episodes=decision.get('requested_episodes', []))
+        for key in ('multi_season_scope', 'covered_episode_keys', 'wanted_episode_keys'):
+            if key in decision: result[key] = decision[key]
         result = self._state(result)
         self._record_tv_decision(result, series)
         return result
@@ -253,6 +337,8 @@ class TVAcquisition:
         candidate = {**decision['candidate'], 'episode_ids': new_target['episode_ids']}
         result = evaluate_release(candidate, new_target, self.acquisition.profile(decision['profile_id']), manual=decision['manual'])
         result.update(request=new_request, origin_token=decision['decision_token'])
+        for key in ('multi_season_scope', 'covered_episode_keys', 'wanted_episode_keys'):
+            if key in decision: result[key] = decision[key]
         self._record_tv_decision(result, new_series)
         return result
 
@@ -268,10 +354,12 @@ class TVAcquisition:
             previous = {r['token']: r for r in result['items']}
             decisions = [self.acquisition.decision(t, max_age=365*86400 if retry else 900) for t in tokens]
             groups = {json.dumps(d.get('search_request'), sort_keys=True) for d in decisions}
-            if len(groups) != 1: raise ValueError('Selections must belong to the same episode search')
-            wanted, covered = set(decisions[0].get('wanted_episodes', [])), set()
+            multi = decisions[0].get('multi_season_scope')
+            if multi and any(d.get('multi_season_scope') != multi for d in decisions): raise ValueError('Selections must belong to the same season review')
+            if len(groups) != 1 and not multi: raise ValueError('Selections must belong to the same episode search')
+            wanted, covered = set(decisions[0].get('wanted_episode_keys' if multi else 'wanted_episodes', [])), set()
             for decision in decisions:
-                scope = set(decision['covered_episodes'])
+                scope = set(decision['covered_episode_keys'] if multi else decision['covered_episodes'])
                 if scope & covered: raise ValueError('Selected releases overlap; choose one release per episode')
                 covered |= scope
             if wanted - covered and not allow_partial: raise ValueError('Some episodes are missing; review and choose Download available')
@@ -336,7 +424,10 @@ class TVAcquisition:
             if any(claims.get(f"tv:episode:{ep['id']}") not in {None, prior['id'] if prior else None} for ep in episodes):
                 raise ValueError('An acquisition is already outstanding for an episode; search again for the remaining episodes')
             owned = [version['facts'] for ep in episodes for version in ep['versions'] if version['available']]
-            current = evaluate_release(decision['candidate'], target, profile, manual=decision.get('manual', True), owned=owned, blocked=self.acquisition.blocked(target['key'], decision['candidate']['info_hash']))
+            candidate = dict(decision['candidate'])
+            if not decision.get('manual', True):
+                candidate['trusted_indexer'] = str(candidate.get('indexer_id') or '') in {str(value) for value in self.trusted_indexers()}
+            current = evaluate_release(candidate, target, profile, manual=decision.get('manual', True), owned=owned, blocked=self.acquisition.blocked(target['key'], decision['candidate']['info_hash']))
             if not current['accepted']:
                 raise ValueError('; '.join(row['message'] for row in current['reasons']))
             roots = [Path(root).resolve() for root in self.roots()]
@@ -346,7 +437,7 @@ class TVAcquisition:
             staging = manager.staging_dir.resolve()
             if any(staging == root or staging in root.parents or root in staging.parents for root in roots):
                 raise ValueError('TV library and torrent staging must be separate')
-            destination = self.repository.resolve_import_destination(series.get('id'), decision['request']['season'], roots)
+            destination = self.repository.resolve_import_destination(series.get('id'), decision['request']['season'], roots, metadata=series)
             recorded = self.acquisition.decision(prior['decision_token'], max_age=365*86400) if prior else decision
             if not self._same_destination(recorded.get('import_destination'), destination):
                 raise ValueError('Destination changed; search and review again')
@@ -364,7 +455,10 @@ class TVAcquisition:
             # tracked local rows. Ordinary search/resolve remains read-only.
             decision = self._materialize(decision)
             target, series, episodes = self.target(**decision['request'])
-            self.repository.set_import_home(series['id'], destination['show_home'], roots)
+            materialized = self.repository.resolve_import_destination(series['id'], decision['request']['season'], roots)
+            if not self._same_destination(destination, materialized):
+                raise ValueError('Destination changed after metadata refresh; search and review again')
+            self.repository.reserve_import_home(series['id'], materialized, roots)
             intent = self.acquisition.intent(request_key, decision)
             existing = manager.jobs.get(intent['info_hash'])
             if existing:
@@ -514,7 +608,7 @@ class TVAcquisition:
             return job
         try:
             target, series, _ = self.target(**job['tv_request'])
-            current = self.repository.resolve_import_destination(series['id'], job['tv_request']['season'], self.roots())
+            current = self.repository.resolve_import_destination(series['id'], job['tv_request']['season'], self.roots(), publication=job)
             if not self._same_destination(current, job['import_destination']) or current['state'] != 'ready' or current['path'] != job['destination']:
                 raise ValueError('Snapshotted destination changed or is no longer approved; review required')
             if self.acquisition.blocked(job['target_key'], torrent_hash):
@@ -544,6 +638,16 @@ class TVAcquisition:
                                   'covered_episodes': sorted({ep for row in selected for ep in row['episode_ids']})}})
                 if not selected:
                     raise ValueError(failures[0]['reason'] if failures else 'No verified video files remain')
+            if current.get('origin') == 'metadata':
+                home, folder = Path(current['show_home']), Path(current['path'])
+                if not home.exists():
+                    manager.jobs.upsert(torrent_hash, {'tv_home_creation': {'state': 'planned', 'path': str(home)}})
+                    home.mkdir(exist_ok=False)
+                    job = manager.jobs.upsert(torrent_hash, {'tv_created_home': str(home), 'tv_home_creation': {'state': 'created', 'path': str(home)}})
+                if not folder.exists():
+                    manager.jobs.upsert(torrent_hash, {'tv_season_creation': {'state': 'planned', 'path': str(folder)}})
+                    folder.mkdir(exist_ok=False)
+                    job = manager.jobs.upsert(torrent_hash, {'tv_created_seasons': list(dict.fromkeys(job.get('tv_created_seasons', []) + [str(folder)])), 'tv_season_creation': {'state': 'created', 'path': str(folder)}})
             publication = job.get('tv_publication') or {}
             if publication.get('state') != 'committed':
                 imported = import_verified_files(manager.jobs, torrent_hash, [row['source'] for row in selected],

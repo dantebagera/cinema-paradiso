@@ -37,14 +37,46 @@ class TVNormalImportTests(unittest.TestCase):
         with self.tv.store.transaction() as db:
             db.execute('DELETE FROM tv_import_homes')
             db.execute('DELETE FROM tv_path_assignments')
+        flat = self.library / 'Flat collection'
+        flat.mkdir()
+        self.tv.approve_path(flat, 'folder', self.series)
         review = self.service.search(self.series, 1, 1)
         self.assertEqual(review['import_destination']['state'], 'needs_home')
-        with self.assertRaisesRegex(ValueError, 'approved TV show folder'):
+        with self.assertRaisesRegex(ValueError, 'destination review'):
             self.service.submit(review['decisions'][0]['decision_token'], 'blocked')
         with self.store.connection() as db:
             self.assertEqual(db.execute('SELECT COUNT(*) FROM intents').fetchone()[0], 0)
             self.assertEqual(db.execute('SELECT COUNT(*) FROM intent_claims').fetchone()[0], 0)
         self.assertFalse(self.manager.jobs.all())
+
+    def test_genuinely_new_metadata_home_is_reserved_on_submit_and_created_only_on_import(self):
+        with self.tv.store.transaction() as db:
+            db.execute('DELETE FROM tv_import_homes')
+            db.execute('DELETE FROM tv_path_assignments')
+        destination = self.library / 'Harbor Signals (2020)' / 'Season 01'
+        review = self.service.search(self.series, 1, 1)
+        self.assertEqual(review['import_destination']['path'], str(destination))
+        self.assertFalse(destination.parent.exists())
+        result = self.service.submit(review['decisions'][0]['decision_token'], 'new-home')
+        self.assertFalse(destination.parent.exists())
+        self.assertEqual(result['job']['import_destination']['origin'], 'metadata')
+        completed = self.complete()
+        self.assertEqual(completed['state'], 'imported', completed.get('last_error'))
+        self.assertEqual(self.tv.episodes(self.series, 1)[0]['versions'][0]['path'], str(destination / self.filename))
+        self.assertFalse(self.file.exists())
+
+    def test_external_folder_created_after_reservation_cannot_be_adopted(self):
+        with self.tv.store.transaction() as db:
+            db.execute('DELETE FROM tv_import_homes')
+            db.execute('DELETE FROM tv_path_assignments')
+        review = self.service.search(self.series, 1, 1)
+        self.service.submit(review['decisions'][0]['decision_token'], 'new-home')
+        home = Path(review['import_destination']['show_home']); home.mkdir()
+        unrelated = home / 'unrelated.txt'; unrelated.write_text('external')
+        result = self.complete()
+        self.assertEqual(result['state'], 'needs_review')
+        self.assertEqual(unrelated.read_text(), 'external')
+        self.assertTrue(self.file.exists())
 
     def test_home_change_invalidates_old_review_and_new_request_snapshots_choice(self):
         old = self.service.search(self.series, 1, 1)
@@ -309,15 +341,16 @@ class TVNormalImportTests(unittest.TestCase):
         self.assertEqual(job['tv_lifecycle_version'], 1)
         self.assertEqual(job['seeding_policy']['seeding_mode'], 'none')
 
-    def test_bulk_without_destination_reports_failure_without_creating_claim(self):
+    def test_bulk_without_destination_keeps_blocked_draft_without_claim(self):
         with self.tv.store.transaction() as db:
             db.execute('DELETE FROM tv_import_homes')
             db.execute('DELETE FROM tv_path_assignments')
+        flat = self.library / 'Flat'; flat.mkdir()
+        self.tv.approve_path(flat, 'folder', self.series)
         monitor = TVMonitoring(self.tv, self.store, self.service)
-        monitor.start_task(monitor.save_task(self.series, kind='bulk')['id'])
-        results = monitor.run_once(limit=1, submit=True)
-        self.assertFalse(results[0]['submitted'])
-        self.assertIn('approved TV show folder', results[0]['error'])
+        draft = monitor.save_task(self.series, kind='bulk')
+        with self.assertRaisesRegex(ValueError, 'destination review'): monitor.start_task(draft['id'])
+        self.assertEqual(monitor.task(draft['id'])['state'], 'draft')
         self.assertFalse(self.manager.jobs.all())
         with self.store.connection() as db:
             self.assertEqual(db.execute('SELECT COUNT(*) FROM intent_claims').fetchone()[0], 0)
