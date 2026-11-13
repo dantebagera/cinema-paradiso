@@ -2,6 +2,10 @@
 
 These rules apply to every future Cinema Paradiso investigation, plan, and implementation. Read them before proposing work. The user's instructions and explicit decisions take precedence. Do not treat a previous plan, a passing test, or this file as permission to make a change.
 
+## CP knowledge guides
+
+Start with the [CP knowledge index](docs/README.md) when reviewing or changing a mapped feature. Use the Second Brain to find decisions and the Atlas to trace code and tests. Check their references against the current checkout before relying on them. Follow the linked maintenance workflow within the scope Dante approved.
+
 ## 1. Understand the request before deciding
 
 - Restate the requested behavior in concrete terms. If a detail would change the product behavior or implementation, ask Dante a focused question before deciding it. Do not fill a consequential gap with an invented default.

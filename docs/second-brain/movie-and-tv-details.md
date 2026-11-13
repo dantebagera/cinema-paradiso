@@ -1,0 +1,27 @@
+# Movie and TV detail feature decisions
+
+[Movie and TV detail features code map](../atlas/movie-and-tv-details.md) · [Second Brain index](README.md) · [Update log](log.md)
+
+## Approved behavior
+
+| Decision | Rule | Authority |
+| --- | --- | --- |
+| TV expanded page, 2026-09-22 | Reuse the Movie visual design for TV detail and credit presentation. Preserve TV episodes, season navigation, and saved versus preview actions. Provider detail failures leave existing local TV actions usable. | [TV expanded parity plan](../plans/tv-expanded-page-movie-parity-zero-regression-plan.md#intended-behavior) |
+| Movie collections, 2026-10-01 | Discover shows the collection's provider members with deliberate refinements, clears the previous title search, and restores the original state on Back. Library counts only valid local owned files and reports unresolved parts and conflicts. | [Collection contract](../plans/movie-collection-navigation-and-count-plan.md#exact-behavior-contract) |
+| Movie filmography, 2026-10-01 | The small Filmography button opens full credits with cleared Discover criteria. The credit card body retains contextual refinements. Back restores the prior search, filters, and expansion. TV uses its own credits query. | [Filmography contract](../plans/movie-credit-filmography-button-plan.md#exact-behavior-contract) |
+| Movie related browse, 2026-10-01 | The compact rail shows at most 16 posters. View all exposes up to 100 unique Recommended and 100 unique Similar movies. All backfills Similar duplicates where possible. A failed total keeps healthy pages and navigation usable. | [Related browse contract](../plans/movie-related-browse-limit-plan.md#exact-behavior-contract) |
+| Movie awards, 2026-10-02 | Count verified individual-film wins once per film, category, and ceremony. Person totals and winning-film browsing are role-specific. Display positive counts on approved Movie surfaces and fit the icons in the existing credit area without shrinking portraits. Awards navigation preserves origin and canonical identity. | [Recorded decisions](../plans/2026-10-02-movie-awards-implementation-plan.md#what-dante-wants--recorded-decisions) · [Placement clarification](../verification/movie-awards/implementation-report.md#placement-clarification-and-sizing-correction) |
+| Plot restoration, 2026-10-04 | Use a loaded detail plot when a card summary lacks it. Keep valid canonical plots, restore the English description after Arabic display, and preserve the ordinary placeholder for a truly missing description. | [Plot repair contract](../plans/2026-10-04-award-navigation-missing-plots.md#exact-behavior-contract) |
+| Movie artwork loading, 2026-10-12 | Defer offscreen artwork through the shared card owner while preserving visible imagery and the desktop design. The later main integration preserves the adopted shared cards and performance changes. | [Artwork performance contract](../plans/2026-10-12-mostafa-performance-plan.md#contracts-affected-and-contract-change-decision) · [Main integration](../plans/2026-10-14-new-ui-main-integration.md#contracts-affected-and-contract-change-decision) |
+
+## Evidence and limits
+
+- **Observed in source on 2026-11-13** · Owned and provider-only Movies use the shared details client. TV uses typed routes and its own catalog. Poster overrides, ordinary artwork loading, and award data each have a distinct owner. The map records current source paths for TV posters and shared artwork, whose behavior should be checked independently of the older Movie relationship approvals. [Code map](../atlas/movie-and-tv-details.md)
+- **Historical verification** · The 2026-10-01 plans record isolated results and separately authorized local deployment at that time for Movie collection, related browse, and filmography. TV expanded parity and the 2026-10-04 plot repair record isolated results for their stated scopes. [Collection record](../plans/movie-collection-navigation-and-count-plan.md) · [Related record](../plans/movie-related-browse-limit-plan.md) · [Filmography record](../plans/movie-credit-filmography-button-plan.md) · [TV expanded verification](../plans/tv-expanded-page-movie-parity-zero-regression-plan.md) · [Plot evidence](../plans/2026-10-04-award-navigation-missing-plots.md#execution-evidence)
+- **Historical awards evidence** · The 2026-10-02 report records isolated API, compiled desktop and historical seed verification, including 1,563 Python passes in that run. It records source coverage and its installation boundary. The current checkout and active awards generation were outside this pass. [Awards verification](../verification/movie-awards/implementation-report.md#current-verification)
+- **Live status unverified** · Current served bundle, local poster availability, TMDB results, and active awards coverage were outside this documentation pass. No single current fixture result establishes all four.
+
+## Cold-start questions
+
+- **Why are there fewer owned collection members than provider parts?** Confirm the route, which records have real owned files, unresolved parts, and any active Discover criteria. [Collection scenario](../atlas/movie-and-tv-details.md#scenario-pointers)
+- **Why does an award, credit, or related link land on an unexpected page?** Start with the origin and accepted identity. Then inspect the domain, person role or related source, and the saved navigation context. [Details and relationships](../atlas/movie-and-tv-details.md#collections-related-awards-and-artwork)

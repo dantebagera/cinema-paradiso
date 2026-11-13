@@ -1,0 +1,23 @@
+# TV Library and Maintenance decisions
+
+[Code map](../atlas/tv-library-and-maintenance.md) · [Second Brain index](README.md) · [Update log](log.md)
+
+For a file in the Movie catalog, see [Movie Library and Identity Review decisions](movie-library-and-identity-review.md).
+
+## Decisions and evidence
+
+The TV contract protects show and episode identity and existing file bindings. The historical inventory documents why this matters for mixed folders and similar show titles. The current implementation details below are observations about the checkout. [TV identity protection](../tv-contracts.md#existing-storage-contracts) · [Historical inventory](../verification/tv-library-import-preview.md)
+
+| Question | Current source behavior and reason |
+| --- | --- |
+| When can CP identify a folder? | Discovery may assign a folder when the TMDB TV candidate is unique under its title, year, and episode-evidence checks and metadata import succeeds. Ambiguous or insufficient evidence goes to folder review. Provider lookup failure goes to scan error. A folder assignment identifies the show and gives the assigned-file scan a starting point. [Discovery owner](../../services/tv_library_discovery.py) |
+| What happens in a mixed folder? | The assigned-file scan chooses the most specific matching folder or file assignment. It holds files in a conflicting nested folder for explicit review instead of claiming them under the parent show. The assignment API supports folder and individual file scope. Current Maintenance offers folder assignment and per-file episode linking for files already in review. [Assigned scan](../../services/tv_ingestion.py) · [Maintenance controls](../../src/features/cleanup/TVMaintenanceTab.jsx) · [Mixed-folder tests](../../tests/test_tv_library_import.py) |
+| When can CP link the episode? | The scan checks the filename and local episode metadata, then verifies the file and media facts before saving its episode binding. Ambiguous numbering, a title conflict, or a failed media check can leave an episode-file review. An explicit episode mapping still needs verified playable media and valid local episode IDs for the same series. [Matching and review](../../services/tv_ingestion.py) · [Binding checks](../../services/tv_catalog_repository.py) |
+| What does an exclusion do? | An excluded folder or file is skipped by the assigned scan. Certain clearly named nested extra folders also cause the scan to record an exclusion for their files. Maintenance displays exclusions and can remove them. The exclusion record controls scanning, so existing binding availability is a separate check. [Scan rules](../../services/tv_ingestion.py) · [Exclusion records](../../services/tv_catalog_repository.py) · [Maintenance projection](../../services/tv_read_model.py) |
+| When is the episode available? | An episode has an available version when its binding points to a cataloged file marked available that still exists at the saved path. A file on disk without an episode binding cannot supply a version for that episode. The **Versions** view shows the cataloged paths for the exact episode. [Episode read](../../services/tv_catalog_repository.py) · [Versions UI](../../src/features/tv/TVWorkspace.jsx) |
+
+## Historical proposal and verification limits
+
+- **Historical proposal** · The September completeness plan contains individually agreed decisions alongside defaults proposed for one full-plan approval. It proposes a unified, durable TV Identity queue and complete file accounting. Use it for the intended direction and preserve its approval distinctions. The current Atlas names what the code actually exposes. [Maintenance proposal](../plans/tv-library-completeness-maintenance-and-coverage-plan.md#where-unidentified-tv-goes) · [Decision status](../plans/tv-library-completeness-maintenance-and-coverage-plan.md#decision-status-for-the-single-approval)
+- **Historical observation** · The September inventory used a temporary database and found mixed-show folders and ambiguous filenames. Its counts describe that inventory. The test definitions cover discovery, assigned scanning, mixed folders, and unavailable versions. [Inventory evidence](../verification/tv-library-import-preview.md) · [Discovery tests](../../tests/test_tv_library_discovery.py) · [Import tests](../../tests/test_tv_library_import.py) · [Catalog tests](../../tests/test_tv_catalog.py)
+- **Live behavior unverified** · The documentation pass observed source and the homepage bundle. The results of live discovery, scanning, or episode linking are unverified. For a completed torrent, use the separate [TV Downloads and Import decisions](tv-downloads-and-import.md). [Checkout stamp](../atlas/tv-library-and-maintenance.md)
