@@ -92,3 +92,8 @@ Dante explicitly approved adding the permanent reuse rule and proceeding with th
 ## 2026-11-14 · Shared UI bundle activated
 
 Dante separately authorized installation of the reviewed frontend. Installed the exact tested candidate, preserved a full rollback backup and previous assets, verified live JS/CSS byte hashes, and visually checked the live StyleGuide including green Play/Stream. Existing CP windows need refresh; backend and data were unchanged. [Activation evidence and rollback](../verification/shared-ui-2026-11-14/report.md#authorized-live-installation--2026-11-14-1753-cairo).
+
+
+## 2026-11-15 · v3.0.0 public documentation correction
+
+The published v3.0.0 commit was `7002d7e`, but the README still described v2.8.5 as the latest release, the changelog ended at beta.2, and the repository default remained `master`. Corrected the [project README](../../README.md) and [changelog](../../CHANGELOG.md) against the v2.8.5-to-v3.0.0 source delta and feature guides, and prepared matching expanded GitHub release notes. Coverage includes TV, desktop/Home, ChatGPT, IPTV matching, ratings/awards, playback/streaming, and performance/recovery. Publication validation remains scoped to the checks actually run; this documentation change adds no claim of full regression or live playback validation.

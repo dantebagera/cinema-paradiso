@@ -1,5 +1,80 @@
 # Changelog
 
+## v3.0.0 - November 15, 2026
+
+This is the first stable release of the work developed through the 3.0 betas. Compared with v2.8.5, CP adds a complete TV workflow, ChatGPT integration, a redesigned desktop, substantially expanded IPTV matching, richer movie details, and new playback and streaming choices.
+
+### TV becomes a full part of Cinema Paradiso
+
+- **TV Library and Discover:** browse series, seasons, episodes, cast, and available files, with TV-specific search, filters, lists, poster editing, and bulk actions.
+- **Import an existing TV collection:** discover show folders, assign series identities, match episodes, and review ambiguous or conflicting files in TV Maintenance. Movie and TV catalogs remain separate.
+- **Follow missing and future episodes:** save the scope and quality you want, then explicitly Start the task. Persistent tasks search for missing releases and newly aired episodes, retain their progress, and expose review and cancellation controls.
+- **Season-pack support:** eligible missing-season tasks search complete season packs as well as individual episodes, while checking episode coverage, identity, and quality.
+- **Download and import review:** inspect candidate releases before manual submission; track transfer, verification, and Library publication separately, with recovery for interrupted imports.
+- **TV playback and Continue Watching:** play the selected local episode version and retain episode progress in the TV catalog.
+
+### A redesigned desktop and Home
+
+- Reworked sidebar, workspace headers, search controls, filters, cards, lists, dialogs, and selection bars across Movies, TV, IPTV, and Settings.
+- Shared buttons, badges, tabs, fields, empty states, and dialog components give common actions a consistent appearance. The Style Guide renders those same production components.
+- A projector-themed Home header and revised dashboard bring Continue Watching, followed releases, trailers, Trending, and Upcoming together.
+- Following has clearer filters, availability counts, expanded details, and a Download action that opens review for available movies.
+- Home retains resolved content during refresh; Trending and Upcoming can finish independently. Upcoming is a preview of up to 20 eligible films, with View all opening Discover.
+- Continue Watching adds View card and keeps only one action menu open at a time. Shared horizontal rails and reveal-on-interaction scrollbars improve navigation.
+
+### ChatGPT alongside Ollama
+
+- Choose ChatGPT or Ollama in Settings. ChatGPT has account sign-in, model selection, connection checks, and feature-readiness messages; existing Ollama workflows remain available.
+- **Pick My Movie:** request a number of recommendations, inspect progress, and continue saved ChatGPT jobs. CP verifies suggested titles against TMDB and reports shortfalls instead of filling the list with duplicates or uncertain matches.
+- **AI Control:** ask for catalog information or prepare Movie, TV, and IPTV actions. Changes use the corresponding native review and confirmation workflows.
+- **Movie Smart Match:** ChatGPT can assist with identity proposals, while CP checks candidates and presents changes for review.
+- **IPTV assistance:** ChatGPT can classify listings and suggest candidate identities, including the resumable bulk workflow below.
+- **Explicit evidence permissions:** Movie identity hints and IPTV title samples have separate opt-in settings. Full file paths, stream URLs, and credentials are excluded from model evidence.
+
+### A larger IPTV metadata and browsing workflow
+
+- Manage multiple configured Xtream providers with separate catalogs, lists, history, and metadata state.
+- Improved first-pass enrichment checks provider IDs and falls back to title/year matching when needed. Accepted identities and manual locks are protected during catalog refresh.
+- Maintenance brings unresolved titles into one Unmatched queue, with filters and consistent selection for follow-up work.
+- Bulk ChatGPT matching has saved progress, request budgets, pause/continue/cancel controls, and recovery after interruption. New bulk jobs automatically apply independently verified matches; uncertain results remain for review.
+- Continue can resume eligible unfinished work after provider sync. Saved search-limited proposals can be rechecked against TMDB without asking ChatGPT to interpret them again.
+- Cast portraits browse movies in the selected provider. The separate Filmography action opens full Movie Discover credits, including titles outside that provider.
+- Discover cards can show IPTV availability from saved provider catalogs. A badge means the title is listed in the saved catalog; it is not a live stream-health check.
+
+### More useful movie cards and discovery
+
+- **Rotten Tomatoes ratings through Plex:** critic and audience scores appear when Plex supplies them. Saved scores for owned movies remain usable offline; missing scores do not block cards or become invented ratings.
+- **Movie awards:** verified film wins appear on supported cards and detail views, with navigation to winning films and role-specific people results.
+- **Collections and related movies:** richer collection browsing, owned-part counts, Recommended/Similar rails, and View all navigation.
+- **People and filmography:** contextual credit browsing and a separate full-filmography action, with return navigation that restores the originating browse state.
+- **Arabic movie defaults:** Arabic films use their Arabic presentation by default where metadata is available, with English still selectable.
+- **Upcoming date filtering:** Home and Discover exclude titles whose known release date is already in the past.
+
+### More playback and streaming choices
+
+- Native player **0.1.37**, up from **0.1.26** in v2.8.5, adds playlists, Previous/Next file controls, visible settings, and a cancellable Up next countdown.
+- Episode queues keep season order and stop at a missing immediate next episode rather than silently skipping it. Playlist controls are hidden for a single item.
+- Native-player menu dismissal, scrolling, Windows window controls, and Unicode file-path handling were improved.
+- Movie Stream opens a source chooser across Home, Library, Discover, and Lists. Configured IPTV sources remain selectable even when web streaming is disabled.
+- Web streaming supports the saved StreamIMDB or VSEmbed choice and custom templates; TV keeps exact episode targeting.
+- **YouTube movie search:** search from Movie Stream using the movie title and runtime. Results must be within ±5% of the known runtime; Arabic films use Arabic search names. Search more and optional Use GPT controls are available. Ordinary search does not invoke GPT, and a duration match alone does not prove that a video is the correct film.
+
+### Loading, downloads, and recovery
+
+- Shared artwork scheduling loads visible posters before backdrops and defers offscreen artwork.
+- Library search coalesces superseded requests; TV prioritizes visible-card enrichment. List filtering and sorting happen before pagination.
+- Completed Movie downloads refresh Library and Following after catalog publication. Import retries retain progress instead of treating transfer completion as proof that a movie is ready.
+- Hybrid torrent identifiers receive more reliable ownership and recovery handling.
+- Embedded qBittorrent Content and Peers requests preserve their query parameters.
+
+### Release package and verification
+
+- Published from source commit `7002d7e` on `main`, tagged `v3.0.0`.
+- Windows portable ZIP includes native player 0.1.37, qBittorrent 5.2.2, FFmpeg 8.1.1, and the production frontend. Python and Node.js are separate prerequisites.
+- ZIP and SHA-256 checksum are attached to the GitHub release. Five generated Windows cache databases were excluded from the packaged player copy; runtime binary hashes were preserved.
+- Publication checks passed: production build, shared UI reuse gate, 15 shared UI tests, 9 packaging tests, native-player manifest/hash validation, and ZIP integrity/content checks.
+- The full regression suite and a fresh-machine installation/playback test were not run for publication. Historical beta notes below describe their original checkpoints, not current release limitations.
+
 ## v3.0.0-beta.2 - October 2026
 
 Local checkpoint of the current project, including the pending work since beta.1.
